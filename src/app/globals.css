@@ -1,17 +1,26 @@
 @import "tailwindcss";
 
+/*
+  Color Palette — Kerala × Germany
+  Kerala: Deep greens (backwaters), temple gold, warm earth tones
+  Germany: Flag red, clean whites, structured blues
+  Game feel: Bold, chunky, satisfying — think Duolingo meets Kerala
+*/
+
 :root {
-  --background: #1a1a2e;
-  --foreground: #ffffff;
-  --primary: #ff6b9d;
-  --secondary: #c44569;
-  --accent: #f8b500;
-  --success: #00d9a5;
-  --warning: #ffd93d;
-  --danger: #ff6b6b;
-  --purple: #a855f7;
-  --blue: #3b82f6;
-  --cyan: #06b6d4;
+  --background: #1b2d1b;
+  --foreground: #f5f0e8;
+  --primary: #d4a520;        /* Kerala temple gold */
+  --primary-dark: #b8891a;
+  --secondary: #c0392b;      /* German red */
+  --secondary-dark: #962d22;
+  --success: #27ae60;        /* Kerala paddy green */
+  --success-dark: #1e8449;
+  --warning: #e8a817;        /* Warm amber */
+  --danger: #c0392b;
+  --muted: #4a5e3a;          /* Mossy green */
+  --card-bg: rgba(245, 240, 232, 0.08);
+  --card-border: rgba(245, 240, 232, 0.12);
 }
 
 @theme inline {
@@ -30,7 +39,10 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: #1b2d1b;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(39, 174, 96, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(212, 165, 32, 0.04) 0%, transparent 50%);
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans), 'Segoe UI', system-ui, sans-serif;
@@ -44,15 +56,16 @@ body {
   background: transparent;
 }
 
-/* Game-style Animations */
+/* ==================== GAME ANIMATIONS ==================== */
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes bounce {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  50% { transform: scale(1.08); }
 }
 
 @keyframes wiggle {
@@ -61,8 +74,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 157, 0.4); }
-  50% { box-shadow: 0 0 40px rgba(255, 107, 157, 0.8); }
+  0%, 100% { box-shadow: 0 0 15px rgba(212, 165, 32, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(212, 165, 32, 0.6); }
 }
 
 @keyframes sparkle {
@@ -71,18 +84,18 @@ body {
 }
 
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slide-in-right {
-  from { opacity: 0; transform: translateX(50px); }
+  from { opacity: 0; transform: translateX(30px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes pop {
   0% { transform: scale(0); }
-  70% { transform: scale(1.2); }
+  70% { transform: scale(1.15); }
   100% { transform: scale(1); }
 }
 
@@ -93,25 +106,20 @@ body {
 
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-8px); }
-  40%, 80% { transform: translateX(8px); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
 }
 
 @keyframes heart-beat {
   0%, 100% { transform: scale(1); }
-  25% { transform: scale(1.15); }
+  25% { transform: scale(1.12); }
   50% { transform: scale(1); }
-  75% { transform: scale(1.15); }
-}
-
-@keyframes rainbow {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
+  75% { transform: scale(1.12); }
 }
 
 @keyframes glow-pulse {
-  0%, 100% { filter: drop-shadow(0 0 10px currentColor); }
-  50% { filter: drop-shadow(0 0 25px currentColor); }
+  0%, 100% { filter: drop-shadow(0 0 8px currentColor); }
+  50% { filter: drop-shadow(0 0 18px currentColor); }
 }
 
 /* Animation Classes */
@@ -123,7 +131,6 @@ body {
 .animate-slide-up { animation: slide-up 0.5s ease-out; }
 .animate-shake { animation: shake 0.5s ease-in-out; }
 .animate-heart-beat { animation: heart-beat 1s ease-in-out infinite; }
-.animate-rainbow { animation: rainbow 3s linear infinite; }
 .animate-glow { animation: glow-pulse 2s ease-in-out infinite; }
 
 /* Delay utilities */
@@ -133,80 +140,98 @@ body {
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
 
-/* Game Button Styles */
+/* ==================== GAME BUTTONS ==================== */
+/* Chunky, 3D press-down buttons — game feel */
+
 .game-button {
-  background: linear-gradient(180deg, #ff6b9d 0%, #c44569 100%);
+  background: linear-gradient(180deg, #d4a520 0%, #b8891a 100%);
   border: none;
-  border-radius: 16px;
+  border-radius: 14px;
   box-shadow:
-    0 6px 0 #9b2c4a,
-    0 8px 20px rgba(0,0,0,0.3);
-  color: white;
-  font-weight: 700;
-  padding: 16px 32px;
+    0 5px 0 #8a6412,
+    0 7px 16px rgba(0,0,0,0.3);
+  color: #1b2d1b;
+  font-weight: 800;
+  padding: 14px 28px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: all 0.1s ease;
   cursor: pointer;
 }
 
 .game-button:active {
   box-shadow:
-    0 2px 0 #9b2c4a,
-    0 4px 10px rgba(0,0,0,0.3);
-  transform: translateY(4px);
+    0 2px 0 #8a6412,
+    0 3px 8px rgba(0,0,0,0.3);
+  transform: translateY(3px);
 }
 
 .game-button-secondary {
-  background: linear-gradient(180deg, #a855f7 0%, #7c3aed 100%);
+  background: linear-gradient(180deg, #c0392b 0%, #962d22 100%);
   box-shadow:
-    0 6px 0 #5b21b6,
-    0 8px 20px rgba(0,0,0,0.3);
+    0 5px 0 #6b1f17,
+    0 7px 16px rgba(0,0,0,0.3);
+  color: white;
 }
 
 .game-button-success {
-  background: linear-gradient(180deg, #00d9a5 0%, #00b388 100%);
+  background: linear-gradient(180deg, #27ae60 0%, #1e8449 100%);
   box-shadow:
-    0 6px 0 #008060,
-    0 8px 20px rgba(0,0,0,0.3);
+    0 5px 0 #14572b,
+    0 7px 16px rgba(0,0,0,0.3);
+  color: white;
 }
 
-/* Glass Card Effect */
+/* ==================== CARDS ==================== */
+
 .glass-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
 }
 
-/* Gradient Text */
+/* Solid card variant — more game-like */
+.game-card {
+  background: rgba(39, 62, 39, 0.6);
+  border: 2px solid rgba(212, 165, 32, 0.15);
+  border-radius: 16px;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+
 .gradient-text {
-  background: linear-gradient(135deg, #ff6b9d 0%, #f8b500 50%, #00d9a5 100%);
+  background: linear-gradient(135deg, #d4a520 0%, #e8c54a 50%, #d4a520 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Path/Journey Line */
+.text-gold { color: #d4a520; }
+.text-kerala-green { color: #27ae60; }
+.text-german-red { color: #c0392b; }
+
+/* ==================== JOURNEY ==================== */
+
 .journey-line {
   background: linear-gradient(180deg,
-    rgba(255,107,157,0.3) 0%,
-    rgba(168,85,247,0.3) 50%,
-    rgba(0,217,165,0.3) 100%
+    rgba(39, 174, 96, 0.3) 0%,
+    rgba(212, 165, 32, 0.3) 50%,
+    rgba(192, 57, 43, 0.3) 100%
   );
-  width: 8px;
-  border-radius: 4px;
+  width: 6px;
+  border-radius: 3px;
 }
 
 /* Lesson Node Styles */
 .lesson-node {
-  width: 70px;
-  height: 70px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -214,29 +239,29 @@ body {
 }
 
 .lesson-node-active {
-  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+  background: linear-gradient(135deg, #d4a520 0%, #b8891a 100%);
   box-shadow:
-    0 0 0 6px rgba(255,107,157,0.3),
-    0 0 30px rgba(255,107,157,0.5);
+    0 0 0 5px rgba(212, 165, 32, 0.2),
+    0 0 20px rgba(212, 165, 32, 0.3);
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
 .lesson-node-completed {
-  background: linear-gradient(135deg, #00d9a5 0%, #00b388 100%);
-  box-shadow: 0 4px 15px rgba(0,217,165,0.4);
+  background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
 }
 
 .lesson-node-locked {
-  background: rgba(255,255,255,0.1);
-  opacity: 0.5;
+  background: rgba(245, 240, 232, 0.08);
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
-/* Star Rating */
-.star-filled { color: #ffd93d; filter: drop-shadow(0 0 5px rgba(255,217,61,0.5)); }
-.star-empty { color: rgba(255,255,255,0.2); }
+/* ==================== MISC GAME UI ==================== */
 
-/* XP Popup */
+.star-filled { color: #d4a520; filter: drop-shadow(0 0 4px rgba(212, 165, 32, 0.4)); }
+.star-empty { color: rgba(245, 240, 232, 0.15); }
+
 .xp-popup {
   animation: pop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
              float 2s ease-in-out infinite 0.4s;
@@ -254,34 +279,59 @@ body {
   animation: confetti-fall 3s linear forwards;
 }
 
-/* Mascot speech bubble */
+/* ==================== SPEECH BUBBLES ==================== */
+
 .speech-bubble {
-  background: white;
-  border-radius: 20px;
-  padding: 16px 20px;
+  background: #f5f0e8;
+  border-radius: 16px;
+  padding: 14px 18px;
   position: relative;
-  color: #1a1a2e;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  color: #1b2d1b;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+.speech-bubble-arrow-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 28px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #f5f0e8;
+}
+
+.speech-bubble-arrow-top::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 28px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f5f0e8;
 }
 
 .speech-bubble::after {
   content: '';
   position: absolute;
   bottom: -10px;
-  left: 30px;
+  left: 28px;
   width: 0;
   height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 15px solid white;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #f5f0e8;
 }
 
-/* Progress Ring */
+/* ==================== PROGRESS ==================== */
+
 .progress-ring {
   transform: rotate(-90deg);
 }
 
-/* Streak Fire Effect */
 .streak-fire {
-  text-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b, 0 0 30px #ff6b6b;
+  text-shadow: 0 0 8px #c0392b, 0 0 16px #c0392b;
 }

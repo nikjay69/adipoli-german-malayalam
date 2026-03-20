@@ -9,6 +9,10 @@ export interface Video {
   keyVocabulary: string[];
   learningObjectives: string[];
   placeholderThumbnail: string;
+  /** Full video script for recording/generation */
+  script?: string;
+  /** URL once video is uploaded */
+  videoUrl?: string;
 }
 
 export interface Exercise {

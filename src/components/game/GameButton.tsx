@@ -35,31 +35,31 @@ export function GameButton({
 
   const variants = {
     primary: `
-      bg-gradient-to-b from-[#ff6b9d] to-[#c44569]
-      shadow-[0_6px_0_#9b2c4a,0_8px_20px_rgba(0,0,0,0.3)]
-      active:shadow-[0_2px_0_#9b2c4a,0_4px_10px_rgba(0,0,0,0.3)]
-      active:translate-y-1
-      text-white
+      bg-gradient-to-b from-[#d4a520] to-[#b8891a]
+      shadow-[0_5px_0_#8a6412,0_7px_16px_rgba(0,0,0,0.3)]
+      active:shadow-[0_2px_0_#8a6412,0_3px_8px_rgba(0,0,0,0.3)]
+      active:translate-y-[3px]
+      text-[#1b2d1b]
     `,
     secondary: `
-      bg-gradient-to-b from-[#a855f7] to-[#7c3aed]
-      shadow-[0_6px_0_#5b21b6,0_8px_20px_rgba(0,0,0,0.3)]
-      active:shadow-[0_2px_0_#5b21b6,0_4px_10px_rgba(0,0,0,0.3)]
-      active:translate-y-1
+      bg-gradient-to-b from-[#c0392b] to-[#962d22]
+      shadow-[0_5px_0_#6b1f17,0_7px_16px_rgba(0,0,0,0.3)]
+      active:shadow-[0_2px_0_#6b1f17,0_3px_8px_rgba(0,0,0,0.3)]
+      active:translate-y-[3px]
       text-white
     `,
     success: `
-      bg-gradient-to-b from-[#00d9a5] to-[#00b388]
-      shadow-[0_6px_0_#008060,0_8px_20px_rgba(0,0,0,0.3)]
-      active:shadow-[0_2px_0_#008060,0_4px_10px_rgba(0,0,0,0.3)]
-      active:translate-y-1
+      bg-gradient-to-b from-[#27ae60] to-[#1e8449]
+      shadow-[0_5px_0_#14572b,0_7px_16px_rgba(0,0,0,0.3)]
+      active:shadow-[0_2px_0_#14572b,0_3px_8px_rgba(0,0,0,0.3)]
+      active:translate-y-[3px]
       text-white
     `,
     ghost: `
-      bg-white/10 backdrop-blur-sm
-      border-2 border-white/30
-      text-white
-      hover:bg-white/20
+      bg-[var(--card-bg)]
+      border-2 border-[var(--card-border)]
+      text-[var(--foreground)]
+      hover:bg-[var(--foreground)]/10
     `,
   };
 
@@ -103,10 +103,10 @@ interface ChoiceButtonProps {
 
 export function ChoiceButton({ children, onClick, state = 'default', disabled = false }: ChoiceButtonProps) {
   const stateStyles = {
-    default: 'bg-white/10 border-white/30 hover:bg-white/20 hover:border-white/50',
-    selected: 'bg-[#a855f7]/30 border-[#a855f7]',
-    correct: 'bg-[#00d9a5]/30 border-[#00d9a5] animate-pop',
-    incorrect: 'bg-[#ff6b6b]/30 border-[#ff6b6b] animate-shake',
+    default: 'bg-[var(--card-bg)] border-[var(--card-border)] hover:bg-[var(--foreground)]/10 hover:border-[var(--foreground)]/20',
+    selected: 'bg-[#d4a520]/15 border-[#d4a520]',
+    correct: 'bg-[#27ae60]/20 border-[#27ae60] animate-pop',
+    incorrect: 'bg-[#c0392b]/20 border-[#c0392b] animate-shake',
   };
 
   return (
@@ -115,7 +115,7 @@ export function ChoiceButton({ children, onClick, state = 'default', disabled = 
       disabled={disabled}
       whileTap={disabled ? undefined : { scale: 0.98 }}
       className={clsx(
-        'w-full p-4 rounded-xl border-2 text-left font-medium text-white transition-all',
+        'w-full p-4 rounded-xl border-2 text-left font-medium transition-all',
         stateStyles[state],
         disabled && 'cursor-not-allowed'
       )}

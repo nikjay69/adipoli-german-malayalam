@@ -39,6 +39,11 @@ export interface UserProgress {
   totalTimeSpent: number; // in minutes
   gamesPlayed: number;
   quizzesTaken: number;
+  // Journey state
+  hasSeenIntro: boolean;
+  currentJourneyLocation: string;
+  journeyMilestones: string[];
+  soundEnabled: boolean;
 }
 
 // Level thresholds
@@ -94,6 +99,10 @@ interface GameState {
   addTimeSpent: (minutes: number) => void;
   setCurrentModule: (moduleId: number) => void;
   setCurrentLesson: (lessonId: number) => void;
+  markIntroSeen: () => void;
+  setJourneyLocation: (locationId: string) => void;
+  unlockMilestone: (milestoneId: string) => void;
+  toggleSound: () => void;
   resetProgress: () => void;
 }
 
@@ -108,6 +117,10 @@ const getInitialProgress = (): UserProgress => ({
   totalTimeSpent: 0,
   gamesPlayed: 0,
   quizzesTaken: 0,
+  hasSeenIntro: false,
+  currentJourneyLocation: 'kerala-village',
+  journeyMilestones: [],
+  soundEnabled: true,
 });
 
 const calculateLevel = (xp: number): number => {
@@ -299,6 +312,36 @@ export const useGameStore = create<GameState>()(
 
       setCurrentLesson: (lessonId: number) => {
         set({ currentLesson: lessonId });
+      },
+
+      markIntroSeen: () => {
+        set((state) => ({
+          userProgress: { ...state.userProgress, hasSeenIntro: true },
+        }));
+      },
+
+      setJourneyLocation: (locationId: string) => {
+        set((state) => ({
+          userProgress: { ...state.userProgress, currentJourneyLocation: locationId },
+        }));
+      },
+
+      unlockMilestone: (milestoneId: string) => {
+        set((state) => {
+          if (state.userProgress.journeyMilestones.includes(milestoneId)) return state;
+          return {
+            userProgress: {
+              ...state.userProgress,
+              journeyMilestones: [...state.userProgress.journeyMilestones, milestoneId],
+            },
+          };
+        });
+      },
+
+      toggleSound: () => {
+        set((state) => ({
+          userProgress: { ...state.userProgress, soundEnabled: !state.userProgress.soundEnabled },
+        }));
       },
 
       resetProgress: () => {

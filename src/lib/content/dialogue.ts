@@ -1,0 +1,127 @@
+import type { KuttanMood } from '@/components/character/Kuttan';
+import type { AppuMood } from '@/components/character/Appu';
+import type { DialogueLine } from '@/components/character/CharacterGuide';
+
+// All Kuttan & Appu dialogue, organized by context
+// Manglish for conversational text, English for UI labels
+
+export const DIALOGUE = {
+  welcome: [
+    "Namaskaram! Njan Kuttan. German padikkano? Njan help cheyyam.",
+    "Hey! German padikkal fun aanu. Ready?",
+    "Welcome machaa! Germany-lekku ninte first step.",
+  ],
+  comeback: [
+    "Ethi! Streak break aakandey pokam.",
+    "Back aayee! Adipoli. Continue cheyyam?",
+    "Missed you machaa! Ninte streak wait cheyyunnu.",
+  ],
+  correct: [
+    "Adipoli! Nailed it.",
+    "Sheriyaayi! Perfect answer.",
+    "Wunderbar! Ithanu German-il 'Adipoli'.",
+    "Richtig! Nee too good da.",
+    "Super ayi! Keep going.",
+  ],
+  wrong: [
+    "Aiyyo! Almost there. Try once more.",
+    "Paravaala machaa! Mistakes = learning.",
+    "Enthu patti? Don't give up. You got this.",
+    "Onnum illa. Oru more try.",
+  ],
+  encourage: [
+    "Nee super aanu. Keep it up.",
+    "Adipoli ayi poidundu! Almost done.",
+    "Ninte German super aakum. Just keep going.",
+    "I believe in you machaa. Pokam.",
+  ],
+  celebrate: [
+    "ADIPOLI! Nee cheythu!",
+    "Fantastisch! German-il ithanu 'Super'.",
+    "Kando? Nee actual German hero aanu.",
+    "Malayali German Pro — that's you.",
+  ],
+  lesson_start: [
+    "Puthiya padam! Something exciting today.",
+    "Ready? Pokam!",
+    "Ithum fun aakum. Promise.",
+  ],
+  lesson_complete: [
+    "Lesson teernu! Adipoli da.",
+    "Oru more step to German fluency.",
+    "Nee doing great. Streak alive aanu.",
+  ],
+  intro: [
+    "Namaskaram! Njan Kuttan. Ith ente koottukaaran Appu.",
+    "Njangal ninne Kerala-il ninnu Germany-lekku kondu pokum.",
+    "German padikkal adipoli fun aakum.",
+    "Ready? Let's start.",
+  ],
+  journey: [
+    "Nammude yatra. Kerala to Germany.",
+    "Oru step at a time — nammal ethum.",
+    "Every lesson = oru step closer.",
+  ],
+} as const;
+
+export type DialogueContext = keyof typeof DIALOGUE;
+
+/** Get a random message for a given context */
+export function getRandomMessage(context: DialogueContext): string {
+  const messages = DIALOGUE[context];
+  return messages[Math.floor(Math.random() * messages.length)];
+}
+
+/** Get mood appropriate for a dialogue context */
+export function getMoodForContext(context: DialogueContext): KuttanMood {
+  const moodMap: Record<DialogueContext, KuttanMood> = {
+    welcome: 'waving',
+    comeback: 'excited',
+    correct: 'celebrating',
+    wrong: 'sad',
+    encourage: 'happy',
+    celebrate: 'celebrating',
+    lesson_start: 'excited',
+    lesson_complete: 'celebrating',
+    intro: 'waving',
+    journey: 'pointing',
+  };
+  return moodMap[context];
+}
+
+/** Get Appu's mood for a dialogue context */
+export function getAppuMoodForContext(context: DialogueContext): AppuMood {
+  const moodMap: Record<DialogueContext, AppuMood> = {
+    welcome: 'happy',
+    comeback: 'happy',
+    correct: 'celebrating',
+    wrong: 'idle',
+    encourage: 'happy',
+    celebrate: 'celebrating',
+    lesson_start: 'happy',
+    lesson_complete: 'celebrating',
+    intro: 'happy',
+    journey: 'idle',
+  };
+  return moodMap[context];
+}
+
+/** Build a full DialogueLine with appropriate moods */
+export function buildDialogueLine(context: DialogueContext, text?: string): DialogueLine {
+  return {
+    text: text || getRandomMessage(context),
+    mood: getMoodForContext(context),
+    appuMood: getAppuMoodForContext(context),
+    showAppu: context === 'celebrate' || context === 'lesson_complete' || context === 'intro',
+  };
+}
+
+/** Get intro sequence as DialogueLine array */
+export function getIntroDialogue(): DialogueLine[] {
+  return DIALOGUE.intro.map((text, i) => ({
+    text,
+    mood: i === 0 ? 'waving' as KuttanMood : i === 3 ? 'excited' as KuttanMood : 'happy' as KuttanMood,
+    appuMood: i === 0 ? 'happy' as AppuMood : i === 3 ? 'celebrating' as AppuMood : 'idle' as AppuMood,
+    showAppu: i === 0 || i === 3,
+  }));
+}
