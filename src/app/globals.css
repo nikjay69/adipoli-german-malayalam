@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+:root {
+  --background: #1a1a2e;
+  --foreground: #ffffff;
+  --primary: #ff6b9d;
+  --secondary: #c44569;
+  --accent: #f8b500;
+  --success: #00d9a5;
+  --warning: #ffd93d;
+  --danger: #ff6b6b;
+  --purple: #a855f7;
+  --blue: #3b82f6;
+  --cyan: #06b6d4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: var(--font-sans), 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Game-style Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 157, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(255, 107, 157, 0.8); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.15); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.15); }
+}
+
+@keyframes rainbow {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 10px currentColor); }
+  50% { filter: drop-shadow(0 0 25px currentColor); }
+}
+
+/* Animation Classes */
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-bounce-slow { animation: bounce 2s ease-in-out infinite; }
+.animate-wiggle { animation: wiggle 0.5s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-pop { animation: pop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.animate-slide-up { animation: slide-up 0.5s ease-out; }
+.animate-shake { animation: shake 0.5s ease-in-out; }
+.animate-heart-beat { animation: heart-beat 1s ease-in-out infinite; }
+.animate-rainbow { animation: rainbow 3s linear infinite; }
+.animate-glow { animation: glow-pulse 2s ease-in-out infinite; }
+
+/* Delay utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Game Button Styles */
+.game-button {
+  background: linear-gradient(180deg, #ff6b9d 0%, #c44569 100%);
+  border: none;
+  border-radius: 16px;
+  box-shadow:
+    0 6px 0 #9b2c4a,
+    0 8px 20px rgba(0,0,0,0.3);
+  color: white;
+  font-weight: 700;
+  padding: 16px 32px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.game-button:active {
+  box-shadow:
+    0 2px 0 #9b2c4a,
+    0 4px 10px rgba(0,0,0,0.3);
+  transform: translateY(4px);
+}
+
+.game-button-secondary {
+  background: linear-gradient(180deg, #a855f7 0%, #7c3aed 100%);
+  box-shadow:
+    0 6px 0 #5b21b6,
+    0 8px 20px rgba(0,0,0,0.3);
+}
+
+.game-button-success {
+  background: linear-gradient(180deg, #00d9a5 0%, #00b388 100%);
+  box-shadow:
+    0 6px 0 #008060,
+    0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Glass Card Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #ff6b9d 0%, #f8b500 50%, #00d9a5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Path/Journey Line */
+.journey-line {
+  background: linear-gradient(180deg,
+    rgba(255,107,157,0.3) 0%,
+    rgba(168,85,247,0.3) 50%,
+    rgba(0,217,165,0.3) 100%
+  );
+  width: 8px;
+  border-radius: 4px;
+}
+
+/* Lesson Node Styles */
+.lesson-node {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.lesson-node-active {
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+  box-shadow:
+    0 0 0 6px rgba(255,107,157,0.3),
+    0 0 30px rgba(255,107,157,0.5);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.lesson-node-completed {
+  background: linear-gradient(135deg, #00d9a5 0%, #00b388 100%);
+  box-shadow: 0 4px 15px rgba(0,217,165,0.4);
+}
+
+.lesson-node-locked {
+  background: rgba(255,255,255,0.1);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Star Rating */
+.star-filled { color: #ffd93d; filter: drop-shadow(0 0 5px rgba(255,217,61,0.5)); }
+.star-empty { color: rgba(255,255,255,0.2); }
+
+/* XP Popup */
+.xp-popup {
+  animation: pop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+             float 2s ease-in-out infinite 0.4s;
+}
+
+/* Safe areas for mobile */
+.safe-top { padding-top: env(safe-area-inset-top, 0); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom, 20px); }
+
+/* Confetti Piece */
+.confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  animation: confetti-fall 3s linear forwards;
+}
+
+/* Mascot speech bubble */
+.speech-bubble {
+  background: white;
+  border-radius: 20px;
+  padding: 16px 20px;
+  position: relative;
+  color: #1a1a2e;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid white;
+}
+
+/* Progress Ring */
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+/* Streak Fire Effect */
+.streak-fire {
+  text-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b, 0 0 30px #ff6b6b;
+}

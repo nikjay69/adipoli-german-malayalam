@@ -1,0 +1,48 @@
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import { Navigation } from "@/components/layout/Navigation";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "German Malayalam - Learn German, Kerala Style",
+  description: "An interactive German A1 course designed for Malayalam speakers from Kerala. Learn German with fun games, Kerala cultural references, and Malayalam translations.",
+  keywords: ["German", "Malayalam", "Kerala", "Learn German", "A1 German", "German for Indians"],
+  authors: [{ name: "German Malayalam" }],
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#1a1a2e",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <main className="min-h-screen pb-24">
+          {children}
+        </main>
+        <Navigation />
+      </body>
+    </html>
+  );
+}
