@@ -182,13 +182,13 @@ export default function Home() {
             className="w-full max-w-sm mb-4"
           >
             {(() => {
-              const totalLessons = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
-              const totalVocab = getAllVocabulary().length;
-              const readiness = calculateExamReadiness({
+              const tl = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
+              const tv = getAllVocabulary().length;
+              const r = calculateExamReadiness({
                 completedLessons: userProgress.completedLessons,
-                totalLessons,
+                totalLessons: tl,
                 learnedVocabulary: userProgress.learnedVocabulary.length,
-                totalVocabulary: totalVocab,
+                totalVocabulary: tv,
                 streak: userProgress.streak,
                 gamesPlayed: userProgress.gamesPlayed,
                 quizzesTaken: userProgress.quizzesTaken,
@@ -197,28 +197,46 @@ export default function Home() {
                 <div className="game-card p-3">
                   <div className="flex items-center justify-between mb-1.5">
                     <div className="flex items-center gap-1.5">
-                      <Award className="w-4 h-4" style={{ color: readiness.color }} />
-                      <span className="text-xs font-bold" style={{ color: readiness.color }}>
+                      <Award className="w-4 h-4" style={{ color: r.color }} />
+                      <span className="text-xs font-bold" style={{ color: r.color }}>
                         A1 Exam Readiness
                       </span>
                     </div>
-                    <span className="text-sm font-bold" style={{ color: readiness.color }}>
-                      {readiness.score}%
+                    <span className="text-sm font-bold" style={{ color: r.color }}>
+                      {r.score}%
                     </span>
                   </div>
-                  <div className="h-2 bg-[var(--foreground)]/8 rounded-full overflow-hidden">
+                  {/* Stacked bar: course (solid) + supplementary (lighter) */}
+                  <div className="h-2.5 bg-[var(--foreground)]/8 rounded-full overflow-hidden flex">
                     <motion.div
-                      className="h-full rounded-full"
-                      style={{ backgroundColor: readiness.color }}
+                      className="h-full rounded-l-full"
+                      style={{ backgroundColor: r.color }}
                       initial={{ width: 0 }}
-                      animate={{ width: `${readiness.score}%` }}
-                      transition={{ duration: 1, ease: 'easeOut' }}
+                      animate={{ width: `${r.courseScore}%` }}
+                      transition={{ duration: 0.8, ease: 'easeOut' }}
                     />
+                    {r.supplementaryScore > 0 && (
+                      <motion.div
+                        className="h-full"
+                        style={{ backgroundColor: r.color, opacity: 0.4 }}
+                        initial={{ width: 0 }}
+                        animate={{ width: `${r.supplementaryScore}%` }}
+                        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
+                      />
+                    )}
                   </div>
                   <div className="flex items-center justify-between mt-1">
-                    <span className="text-[9px] text-[var(--foreground)]/30">{readiness.label}</span>
-                    <span className="text-[9px] text-[var(--foreground)]/30">60% to pass</span>
+                    <span className="text-[9px] text-[var(--foreground)]/30">{r.label}</span>
+                    <span className="text-[9px] text-[var(--foreground)]/30">
+                      <span style={{ color: r.color }}>■</span> Course {r.courseScore}/80
+                      {' · '}
+                      <span style={{ color: r.color, opacity: 0.5 }}>■</span> Extras {r.supplementaryScore}/20
+                    </span>
                   </div>
+                  {/* Smart next action */}
+                  <p className="text-[10px] text-[var(--foreground)]/40 mt-1.5 leading-tight">
+                    💡 {r.nextAction}
+                  </p>
                 </div>
               );
             })()}

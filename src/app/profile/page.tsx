@@ -286,31 +286,52 @@ export default function ProfilePage() {
                 <span className="text-2xl font-bold" style={{ color: readiness.color }}>{readiness.score}%</span>
               </div>
               <ProgressBar progress={readiness.score} color={readiness.score >= 60 ? 'success' : 'warning'} size="md" />
-              <p className="text-xs text-gray-500 mt-1 mb-3">{readiness.label} · 60% needed to pass Goethe A1</p>
+              <p className="text-xs text-gray-500 mt-1 mb-4">{readiness.label} · 60% needed to pass Goethe A1</p>
 
-              <div className="grid grid-cols-5 gap-1 mb-3">
-                {[
-                  { label: 'Lessons', value: readiness.breakdown.progress },
-                  { label: 'Vocab', value: readiness.breakdown.vocabulary },
-                  { label: 'Accuracy', value: readiness.breakdown.accuracy },
-                  { label: 'Streak', value: readiness.breakdown.consistency },
-                  { label: 'Practice', value: readiness.breakdown.practice },
-                ].map(item => (
-                  <div key={item.label} className="text-center">
-                    <div className="text-sm font-bold text-gray-700 dark:text-gray-300">{item.value}%</div>
-                    <div className="text-[9px] text-gray-400">{item.label}</div>
+              {/* Course vs Supplementary */}
+              <div className="grid grid-cols-2 gap-3 mb-4">
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center">
+                  <div className="text-xl font-bold" style={{ color: readiness.color }}>{readiness.courseScore}/80</div>
+                  <div className="text-[10px] text-gray-400 mt-0.5">Course Path</div>
+                  <div className="flex justify-center gap-1 mt-2">
+                    {[
+                      { label: 'Lessons', value: readiness.breakdown.lessons, max: 35 },
+                      { label: 'Vocab', value: readiness.breakdown.vocabulary, max: 20 },
+                      { label: 'Accuracy', value: readiness.breakdown.accuracy, max: 25 },
+                    ].map(item => (
+                      <div key={item.label} className="text-center">
+                        <div className="text-xs font-bold text-gray-700 dark:text-gray-300">{item.value}</div>
+                        <div className="text-[8px] text-gray-400">/{item.max}</div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center">
+                  <div className="text-xl font-bold" style={{ color: readiness.color, opacity: 0.7 }}>{readiness.supplementaryScore}/20</div>
+                  <div className="text-[10px] text-gray-400 mt-0.5">Extras</div>
+                  <div className="flex justify-center gap-1 mt-2">
+                    {[
+                      { label: 'Games', value: readiness.breakdown.games, max: 8 },
+                      { label: 'Tests', value: readiness.breakdown.tests, max: 7 },
+                      { label: 'Streak', value: readiness.breakdown.streak, max: 5 },
+                    ].map(item => (
+                      <div key={item.label} className="text-center">
+                        <div className="text-xs font-bold text-gray-700 dark:text-gray-300">{item.value}</div>
+                        <div className="text-[8px] text-gray-400">/{item.max}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              {readiness.tips.length > 0 && (
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
-                  <p className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Tips to improve:</p>
-                  {readiness.tips.slice(0, 3).map((tip, i) => (
-                    <p key={i} className="text-xs text-gray-500 dark:text-gray-400">• {tip}</p>
-                  ))}
-                </div>
-              )}
+              {/* Next action + tips */}
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
+                <p className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">💡 Next step:</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">{readiness.nextAction}</p>
+                {readiness.tips.length > 0 && readiness.tips.map((tip, i) => (
+                  <p key={i} className="text-[10px] text-gray-400">• {tip}</p>
+                ))}
+              </div>
             </Card>
           );
         })()}
