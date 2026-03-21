@@ -23,7 +23,7 @@ export function Navigation() {
   }, []);
 
   // Hide navigation on immersive pages
-  if (pathname.startsWith('/play') || pathname.startsWith('/learn/') || pathname.startsWith('/intro')) {
+  if (pathname.startsWith('/play') || pathname.startsWith('/learn/') || pathname.startsWith('/intro') || pathname.startsWith('/scripts')) {
     return null;
   }
 

@@ -13,7 +13,9 @@ import {
   Gamepad2,
   Award,
   RefreshCw,
-  ChevronRight
+  ChevronRight,
+  FileText,
+  Download
 } from 'lucide-react';
 import { Card, Button, Badge, ProgressBar } from '@/components/ui';
 import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS, ACHIEVEMENTS_DATA } from '@/lib/store';
@@ -258,6 +260,21 @@ export default function ProfilePage() {
               </div>
             ))}
           </div>
+        </Card>
+
+        {/* Lesson Scripts */}
+        <Card>
+          <h2 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+            <FileText className="w-4 h-4 text-[#d4a520]" />
+            Lesson Scripts
+          </h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+            Download complete lesson scripts as PDF for offline study.
+          </p>
+          <a href="/scripts" className="inline-flex items-center gap-2 bg-[#d4a520]/10 text-[#d4a520] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#d4a520]/20 transition-colors">
+            <Download className="w-4 h-4" />
+            View & Download Scripts
+          </a>
         </Card>
 
         {/* Reset Progress */}
