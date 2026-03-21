@@ -503,6 +503,44 @@ export const MODULE_18: Module = {
           correctAnswer: "Meine Familie ist groß. Ich habe zwei Schwestern und einen Bruder.",
           explanation: "Give a complete, detailed answer: 'Meine Familie ist groß. Ich habe zwei Schwestern und einen Bruder.' Note: 'Schwestern' (plural of Schwester), 'einen Bruder' (accusative).",
           xpReward: 15
+        },
+        {
+          id: "ex18-3-9",
+          type: "fill-blank",
+          question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Beruf?'\n\nYou are a student (male). Complete: 'Ich bin ___ .'",
+          correctAnswer: "Student",
+          explanation: "'Ich bin Student.' (male) or 'Ich bin Studentin.' (female). No article needed for professions after 'sein'.",
+          xpReward: 15
+        },
+        {
+          id: "ex18-3-10",
+          type: "multiple-choice",
+          question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Hobbys?'\n\nWhich answer sounds natural and complete?",
+          options: [
+            "Ich lese gern B\u00fccher und spiele gern Cricket.",
+            "Hobby Lesen Cricket.",
+            "Ja, Hobbys.",
+            "Ich bin Hobbys."
+          ],
+          correctAnswer: "Ich lese gern B\u00fccher und spiele gern Cricket.",
+          explanation: "'Ich lese gern' = I like to read, 'spiele gern Cricket' = like to play cricket. Natural and complete!",
+          xpReward: 15
+        },
+        {
+          id: "ex18-3-11",
+          type: "ordering",
+          question: "🎤 Put these self-introduction sentences in logical order:",
+          correctAnswer: ["Ich hei\u00dfe Rahul Menon.", "Ich bin 23 Jahre alt.", "Ich komme aus Indien, aus Kerala.", "Ich spreche Malayalam, Englisch und Deutsch.", "Ich bin Ingenieur von Beruf."],
+          explanation: "Natural order: Name \u2192 Alter \u2192 Herkunft \u2192 Sprachen \u2192 Beruf.",
+          xpReward: 20
+        },
+        {
+          id: "ex18-3-12",
+          type: "fill-blank",
+          question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Land?'\n\nComplete: 'Ich komme aus Indien, ___ Kerala.'",
+          correctAnswer: "aus",
+          explanation: "'Ich komme aus Indien, aus Kerala.' You can specify both country and state using 'aus'.",
+          xpReward: 15
         }
       ],
       vocabulary: [
@@ -883,6 +921,56 @@ export const MODULE_18: Module = {
           ],
           correctAnswer: "Könnten Sie mir bitte helfen?",
           explanation: "'Könnten Sie mir bitte helfen?' uses Konjunktiv II ('könnten' = could) + 'bitte' (please). This is the most polite form. Politeness scale: 'Helfen Sie!' (command) < 'Können Sie...?' (can you) < 'Könnten Sie bitte...?' (could you please).",
+          xpReward: 15
+        },
+        {
+          id: "ex18-5-9",
+          type: "fill-blank",
+          question: "🎤 SPRECHEN TEIL 3 — You want to ask if you may sit here:\n\n'___ ich mich hier setzen?'",
+          correctAnswer: "Darf",
+          explanation: "'Darf ich mich hier setzen?' = May I sit here? 'Darf ich...' is for asking permission to do something.",
+          xpReward: 15
+        },
+        {
+          id: "ex18-5-10",
+          type: "multiple-choice",
+          question: "🎤 SPRECHEN TEIL 3 — Situationskarte:\n'Sie sind im Hotel. Sie brauchen ein Handtuch.'\n\nWhich request is best?",
+          options: [
+            "Entschuldigung, k\u00f6nnten Sie mir bitte ein Handtuch bringen?",
+            "Handtuch! Jetzt!",
+            "Ich brauche.",
+            "Wo ist Handtuch?"
+          ],
+          correctAnswer: "Entschuldigung, k\u00f6nnten Sie mir bitte ein Handtuch bringen?",
+          explanation: "'Entschuldigung' + 'k\u00f6nnten Sie' + 'bitte' = maximum politeness for a hotel request.",
+          xpReward: 15
+        },
+        {
+          id: "ex18-5-11",
+          type: "multiple-choice",
+          question: "🎤 SPRECHEN TEIL 3 — Partner asks: 'K\u00f6nnen Sie bitte das Licht anmachen?'\n\nHow do you respond?",
+          options: [
+            "Ja, nat\u00fcrlich! Einen Moment bitte.",
+            "Licht.",
+            "Warum?",
+            "Nein, ich m\u00f6chte nicht."
+          ],
+          correctAnswer: "Ja, nat\u00fcrlich! Einen Moment bitte.",
+          explanation: "'Ja, nat\u00fcrlich! Einen Moment bitte.' = Yes, of course! One moment please. Friendly and helpful!",
+          xpReward: 15
+        },
+        {
+          id: "ex18-5-12",
+          type: "multiple-choice",
+          question: "🎤 SPRECHEN TEIL 3 — You cannot fulfill a request. How do you politely decline?",
+          options: [
+            "Nein!",
+            "Tut mir leid, das geht leider nicht. Aber fragen Sie bitte an der Rezeption.",
+            "Ich will nicht.",
+            "Warum?"
+          ],
+          correctAnswer: "Tut mir leid, das geht leider nicht. Aber fragen Sie bitte an der Rezeption.",
+          explanation: "'Tut mir leid, das geht leider nicht.' = I'm sorry, that's not possible. Then offer an alternative!",
           xpReward: 15
         }
       ],

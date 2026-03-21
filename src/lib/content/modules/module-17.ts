@@ -130,6 +130,23 @@ export const MODULE_17: Module = {
           correctAnswer: "60%",
           explanation: "You need at least 60% (60 out of 100 points) to pass the Goethe A1 exam. Each of the 4 sections is worth 25 points.",
           xpReward: 10
+        },
+        {
+          id: "ex17-1-9",
+          type: "matching",
+          question: "Match each exam section to its duration:",
+          options: ["H\u00f6ren", "Lesen", "Schreiben", "Sprechen"],
+          correctAnswer: ["20 Minuten", "25 Minuten", "20 Minuten", "15 Minuten"],
+          xpReward: 15
+        },
+        {
+          id: "ex17-1-10",
+          type: "multiple-choice",
+          question: "If you don't know an answer on the exam, what should you do?",
+          options: ["Leave it blank", "Make your best guess and move on", "Spend 10 minutes thinking about it", "Ask the examiner for help"],
+          correctAnswer: "Make your best guess and move on",
+          explanation: "Never leave an answer blank \u2014 you have at least a 25% or 50% chance of guessing correctly! Mark your best guess, then move on. Time management is crucial.",
+          xpReward: 10
         }
       ],
       vocabulary: [
