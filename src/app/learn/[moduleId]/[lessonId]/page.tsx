@@ -18,14 +18,14 @@ import {
 } from 'lucide-react';
 import { Card, Button, ProgressBar, Badge } from '@/components/ui';
 import { useGameStore } from '@/lib/store';
-import { getLessonById, getModuleById, type Lesson, type Exercise, type VocabItem } from '@/lib/content/modules';
+import { ALL_MODULES, getLessonById, getModuleById, type Lesson, type Exercise, type VocabItem } from '@/lib/content/modules';
 
 type LessonSection = 'overview' | 'video' | 'vocabulary' | 'exercises' | 'complete';
 
 export default function LessonPage({ params }: { params: Promise<{ moduleId: string; lessonId: string }> }) {
   const { moduleId, lessonId } = use(params);
   const router = useRouter();
-  const { userProgress, addXP, completeLesson, learnVocabulary } = useGameStore();
+  const { userProgress, addXP, completeLesson, learnVocabulary, clearCheckpoint } = useGameStore();
 
   const [mounted, setMounted] = useState(false);
   const [currentSection, setCurrentSection] = useState<LessonSection>('overview');
@@ -36,6 +36,7 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
   const [showResult, setShowResult] = useState(false);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [showVocabMeaning, setShowVocabMeaning] = useState(false);
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -43,6 +44,55 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
 
   const module = getModuleById(parseInt(moduleId));
   const lesson = getLessonById(lessonId);
+
+  // --- Fix 1: Lesson unlock validation ---
+  useEffect(() => {
+    if (!mounted || !module || !lesson) return;
+
+    const moduleIdNum = parseInt(moduleId);
+
+    // First lesson of first module is always unlocked
+    if (moduleIdNum === 1) {
+      const lessonIndex = module.lessons.findIndex(l => l.id === lessonId);
+      if (lessonIndex === 0) return; // First lesson always unlocked
+
+      // Check if the previous lesson in this module is completed
+      const prevLesson = module.lessons[lessonIndex - 1];
+      const prevCompleted = userProgress.completedLessons.some(
+        cl => cl.lessonId === prevLesson.id && cl.completed
+      );
+      if (!prevCompleted) {
+        router.replace('/learn');
+        return;
+      }
+      return;
+    }
+
+    // For modules after the first: check if previous module is fully complete
+    const prevModule = ALL_MODULES.find(m => m.id === moduleIdNum - 1);
+    if (prevModule) {
+      const allPrevLessonsDone = prevModule.lessons.every(pl =>
+        userProgress.completedLessons.some(cl => cl.lessonId === pl.id && cl.completed)
+      );
+      if (!allPrevLessonsDone) {
+        router.replace('/learn');
+        return;
+      }
+    }
+
+    // Within the current module, check if the previous lesson is completed
+    const lessonIndex = module.lessons.findIndex(l => l.id === lessonId);
+    if (lessonIndex > 0) {
+      const prevLesson = module.lessons[lessonIndex - 1];
+      const prevCompleted = userProgress.completedLessons.some(
+        cl => cl.lessonId === prevLesson.id && cl.completed
+      );
+      if (!prevCompleted) {
+        router.replace('/learn');
+        return;
+      }
+    }
+  }, [mounted, module, lesson, moduleId, lessonId, userProgress.completedLessons, router]);
 
   if (!mounted) {
     return (
@@ -73,6 +123,26 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
     totalSteps;
 
   const progress = (currentStep / totalSteps) * 100;
+
+  // --- Fix 2: Exit confirmation logic ---
+  const isMidLesson = currentSection !== 'overview' && currentSection !== 'complete';
+
+  const handleExitClick = () => {
+    if (isMidLesson) {
+      setShowExitConfirm(true);
+    } else {
+      router.back();
+    }
+  };
+
+  const handleConfirmExit = () => {
+    setShowExitConfirm(false);
+    router.push('/learn');
+  };
+
+  const handleCancelExit = () => {
+    setShowExitConfirm(false);
+  };
 
   const handleVideoComplete = () => {
     if (currentVideoIndex < lesson.videos.length - 1) {
@@ -121,6 +191,8 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
       const score = Math.round((correctAnswers / lesson.exercises.length) * 100);
       completeLesson(lesson.id, score);
       addXP(lesson.xpReward);
+      // --- Fix 3: Clear checkpoint on lesson complete ---
+      clearCheckpoint();
       setCurrentSection('complete');
     }
   };
@@ -131,12 +203,56 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
+      {/* Exit Confirmation Modal */}
+      <AnimatePresence>
+        {showExitConfirm && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm px-4"
+            onClick={handleCancelExit}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white dark:bg-gray-900 rounded-2xl p-6 max-w-sm w-full shadow-xl border border-gray-200 dark:border-gray-700"
+            >
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                Leave lesson?
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                Your progress in this lesson will be lost. Are you sure you want to exit?
+              </p>
+              <div className="flex gap-3">
+                <Button
+                  variant="ghost"
+                  onClick={handleCancelExit}
+                  fullWidth
+                >
+                  Stay
+                </Button>
+                <Button
+                  onClick={handleConfirmExit}
+                  fullWidth
+                  className="!bg-red-500 hover:!bg-red-600"
+                >
+                  Leave
+                </Button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Header */}
       <div className="sticky top-14 md:top-16 z-40 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-3">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <button
-              onClick={() => router.back()}
+              onClick={handleExitClick}
               className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <X className="w-5 h-5" />

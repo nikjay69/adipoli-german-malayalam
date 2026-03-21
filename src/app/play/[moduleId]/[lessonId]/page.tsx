@@ -10,7 +10,7 @@ import { VideoPlayer } from '@/components/media/VideoPlayer';
 import { getRandomMessage } from '@/lib/content/dialogue';
 import { getVideoScript } from '@/lib/content/video-scripts';
 import { useGameStore } from '@/lib/store';
-import { getLessonById, getModuleById } from '@/lib/content/modules';
+import { getLessonById, getModuleById, ALL_MODULES } from '@/lib/content/modules';
 
 type Step =
   | { type: 'intro' }
@@ -22,7 +22,7 @@ type Step =
 export default function PlayLesson({ params }: { params: Promise<{ moduleId: string; lessonId: string }> }) {
   const { moduleId, lessonId } = use(params);
   const router = useRouter();
-  const { addXP, completeLesson, learnVocabulary } = useGameStore();
+  const { addXP, completeLesson, learnVocabulary, saveCheckpoint, clearCheckpoint, userProgress } = useGameStore();
 
   const [mounted, setMounted] = useState(false);
   const [step, setStep] = useState<Step>({ type: 'intro' });
@@ -35,11 +35,41 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const [xpAmount, setXpAmount] = useState(0);
   const [showCelebration, setShowCelebration] = useState(false);
   const [kuttanMsg, setKuttanMsg] = useState('');
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
 
   useEffect(() => { setMounted(true); }, []);
 
   const module = getModuleById(parseInt(moduleId));
   const lesson = getLessonById(lessonId);
+
+  // Resume from checkpoint on mount
+  useEffect(() => {
+    const checkpoint = userProgress.activeLessonCheckpoint;
+    if (checkpoint && checkpoint.lessonId === lessonId) {
+      setStep({ type: checkpoint.stepType, index: checkpoint.stepIndex });
+      setCorrectCount(checkpoint.correctCount);
+      setHearts(checkpoint.hearts);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Only on mount
+
+  // Save checkpoint on step changes
+  useEffect(() => {
+    if (step.type !== 'intro' && step.type !== 'complete' && module && lesson) {
+      saveCheckpoint({
+        lessonId: lesson.id,
+        moduleId: module.id,
+        stepType: step.type,
+        stepIndex: (step as { type: string; index: number }).index ?? 0,
+        correctCount,
+        hearts,
+        xpEarned: 0,
+        vocabLearned: [],
+        startedAt: Date.now(),
+      });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step]);
 
   useEffect(() => {
     if (mounted && step.type === 'intro') {
@@ -68,6 +98,34 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
         </div>
       </div>
     );
+  }
+
+  // Check if lesson is unlocked
+  const isLessonUnlocked = (() => {
+    const moduleIndex = ALL_MODULES.findIndex(m => m.id === module.id);
+    // First module, first lesson always unlocked
+    if (moduleIndex === 0) {
+      const lessonIndex = module.lessons.findIndex(l => l.id === lesson.id);
+      if (lessonIndex === 0) return true;
+      // Check previous lesson completed
+      return userProgress.completedLessons.some(cl => cl.lessonId === module.lessons[lessonIndex - 1].id);
+    }
+    // Check previous module complete
+    const prevModule = ALL_MODULES[moduleIndex - 1];
+    const prevModuleComplete = prevModule.lessons.every(l =>
+      userProgress.completedLessons.some(cl => cl.lessonId === l.id)
+    );
+    if (!prevModuleComplete) return false;
+    // Check previous lesson in current module
+    const lessonIndex = module.lessons.findIndex(l => l.id === lesson.id);
+    if (lessonIndex === 0) return true;
+    return userProgress.completedLessons.some(cl => cl.lessonId === module.lessons[lessonIndex - 1].id);
+  })();
+
+  // If locked, redirect
+  if (!isLessonUnlocked) {
+    router.replace('/learn');
+    return null;
   }
 
   const totalSteps = 1 + lesson.videos.length + lesson.vocabulary.length + lesson.exercises.length + 1;
@@ -109,6 +167,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const finishLesson = () => {
     const score = lesson.exercises.length > 0 ? Math.round((correctCount / lesson.exercises.length) * 100) : 100;
     completeLesson(lesson.id, score);
+    clearCheckpoint();
     addXP(lesson.xpReward);
     setStep({ type: 'complete' });
     setShowCelebration(true);
@@ -143,6 +202,36 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
 
   return (
     <div className="min-h-screen flex flex-col safe-top safe-bottom">
+      {showExitConfirm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-6 mx-4 max-w-sm w-full text-center"
+          >
+            <p className="text-2xl mb-2">🤔</p>
+            <h3 className="font-bold text-lg mb-1">Leave lesson?</h3>
+            <p className="text-sm text-[var(--foreground)]/50 mb-4">
+              Your progress is saved. You can resume later.
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setShowExitConfirm(false)}
+                className="flex-1 py-2.5 rounded-xl bg-[var(--foreground)]/10 font-medium text-sm"
+              >
+                Stay
+              </button>
+              <button
+                onClick={() => router.push('/')}
+                className="flex-1 py-2.5 rounded-xl bg-[#c0392b] text-white font-medium text-sm"
+              >
+                Leave
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
       <Confetti isActive={answerState === 'correct'} duration={1500} />
       <XPGain amount={xpAmount} isVisible={showXP} />
       <Celebration
@@ -158,7 +247,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
         <div className="flex items-center justify-between mb-2">
           <motion.button
             whileTap={{ scale: 0.9 }}
-            onClick={() => router.push('/')}
+            onClick={() => setShowExitConfirm(true)}
             className="w-10 h-10 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
           >
             <X className="w-5 h-5 text-[var(--foreground)]/60" />

@@ -44,6 +44,17 @@ export interface UserProgress {
   currentJourneyLocation: string;
   journeyMilestones: string[];
   soundEnabled: boolean;
+  activeLessonCheckpoint?: {
+    lessonId: string;
+    moduleId: number;
+    stepType: 'intro' | 'video' | 'vocab' | 'exercise' | 'complete';
+    stepIndex: number;
+    correctCount: number;
+    hearts: number;
+    xpEarned: number;
+    vocabLearned: string[];
+    startedAt: number;
+  };
 }
 
 // Level thresholds
@@ -104,6 +115,8 @@ interface GameState {
   unlockMilestone: (milestoneId: string) => void;
   toggleSound: () => void;
   resetProgress: () => void;
+  saveCheckpoint: (checkpoint: UserProgress['activeLessonCheckpoint']) => void;
+  clearCheckpoint: () => void;
 }
 
 const getInitialProgress = (): UserProgress => ({
@@ -121,6 +134,7 @@ const getInitialProgress = (): UserProgress => ({
   currentJourneyLocation: 'kerala-village',
   journeyMilestones: [],
   soundEnabled: true,
+  activeLessonCheckpoint: undefined,
 });
 
 const calculateLevel = (xp: number): number => {
@@ -341,6 +355,24 @@ export const useGameStore = create<GameState>()(
       toggleSound: () => {
         set((state) => ({
           userProgress: { ...state.userProgress, soundEnabled: !state.userProgress.soundEnabled },
+        }));
+      },
+
+      saveCheckpoint: (checkpoint) => {
+        set((state) => ({
+          userProgress: {
+            ...state.userProgress,
+            activeLessonCheckpoint: checkpoint,
+          },
+        }));
+      },
+
+      clearCheckpoint: () => {
+        set((state) => ({
+          userProgress: {
+            ...state.userProgress,
+            activeLessonCheckpoint: undefined,
+          },
         }));
       },
 
