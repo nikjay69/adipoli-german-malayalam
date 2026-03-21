@@ -100,6 +100,7 @@ export const MODULE_3: Module = {
           id: "ex3-1-3",
           type: "fill-blank",
           question: "Complete the pattern: dreizehn (13), vierzehn (14), _____ (15)",
+          options: ["fünfzehn", "sechzehn", "fünfzig", "fünf"],
           correctAnswer: "fünfzehn",
           explanation: "The pattern for 13-19 is: unit + zehn. So 15 = fünf + zehn = fünfzehn.",
           xpReward: 20
@@ -131,6 +132,7 @@ export const MODULE_3: Module = {
           id: "ex3-1-6",
           type: "fill-blank",
           question: "Write the German word for 20: _____",
+          options: ["zwanzig", "zweiundzwanzig", "zwölf", "dreißig"],
           correctAnswer: "zwanzig",
           explanation: "Zwanzig (20) is the first 'tens' number. It comes from 'zwanz' (related to zwei/two) + '-zig' (the tens suffix).",
           xpReward: 20
@@ -289,6 +291,7 @@ export const MODULE_3: Module = {
           id: "ex3-2-2",
           type: "fill-blank",
           question: "67 in German is sieben_____sechzig.",
+          options: ["und", "oder", "mit", "von"],
           correctAnswer: "und",
           explanation: "German two-digit numbers use 'und' (and) between the ones and tens: siebenundsechzig.",
           xpReward: 15
@@ -315,6 +318,7 @@ export const MODULE_3: Module = {
           id: "ex3-2-5",
           type: "fill-blank",
           question: "Write 83 in German: _____",
+          options: ["dreiundachtzig", "achtunddreißig", "dreizehn", "achtzig"],
           correctAnswer: "dreiundachtzig",
           explanation: "83 = drei (3) + und + achtzig (80) = dreiundachtzig. Ones first, then 'und', then tens!",
           xpReward: 25
@@ -660,6 +664,7 @@ export const MODULE_3: Module = {
           id: "ex3-4-3",
           type: "fill-blank",
           question: "The German word for March is: _____",
+          options: ["März", "Mai", "Montag", "Mittwoch"],
           correctAnswer: "März",
           explanation: "März = March. Note the Umlaut (ä) — it's pronounced like 'mairts'.",
           xpReward: 15

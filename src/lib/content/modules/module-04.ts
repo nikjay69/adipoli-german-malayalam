@@ -202,7 +202,7 @@ export const MODULE_4: Module = {
           id: "vocab4-1-8",
           german: "die Tante",
           english: "the aunt",
-          malayalam: "അമ്മായി / പെരിയമ്മ",
+          malayalam: "അമ്മായി / വലിയമ്മ",
           pronunciation: "dee tahn-tuh",
           example: "Meine Tante hat drei Kinder.",
           exampleTranslation: "My aunt has three children."

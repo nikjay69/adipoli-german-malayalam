@@ -304,7 +304,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-2-7",
           type: "multiple-choice",
-          question: "📢 You hear:\n\'Sehr geehrte Fahrgäste, der Flug LH 417 nach Istanbul hat eine Verspätung von 45 Minuten. Neuer Abflug: 16:15 Uhr. Wir bitten um Entschuldigung.\'\n\n📝 Statement: Der Flug nach Istanbul ist pünktlich.",
+          question: "📢 You hear:\n\'Sehr geehrte Fluggäste, der Flug LH 417 nach Istanbul hat eine Verspätung von 45 Minuten. Neuer Abflug: 16:15 Uhr. Wir bitten um Entschuldigung.\'\n\n📝 Statement: Der Flug nach Istanbul ist pünktlich.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Verspätung von 45 Minuten' means a delay of 45 minutes. The flight is NOT on time (pünktlich). → Falsch",

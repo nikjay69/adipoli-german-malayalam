@@ -142,11 +142,11 @@ export const MODULE_6: Module = {
         },
         {
           id: "ex6-1-6",
-          type: "fill-blank",
-          question: "Mein Lieblingsessen ist _____. (Fill in your favourite food in German!)",
-          correctAnswer: "Biryani",
-          explanation:
-            "'Mein Lieblingsessen' = my favourite food. Any food works here! Biryani, Curry, Dosa...",
+          type: "multiple-choice",
+          question: "What does 'Mein Lieblingsessen' mean?",
+          options: ["My favourite food", "My breakfast", "My cooking", "My restaurant"],
+          correctAnswer: "My favourite food",
+          explanation: "'Mein' = my, 'Lieblings-' = favourite, 'Essen' = food. Together: 'My favourite food'. You can say 'Mein Lieblingsessen ist Biryani!'",
           xpReward: 10
         }
       ],

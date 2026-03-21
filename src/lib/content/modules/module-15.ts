@@ -666,7 +666,7 @@ export const MODULE_15: Module = {
           english: "don't feel like it (slang)",
           malayalam: "മൂഡ് ഇല്ല (slang)",
           pronunciation: "kyne bok",
-          example: "Ich habe kein Bock auf Hausaufgaben.",
+          example: "Ich habe keinen Bock auf Hausaufgaben.",
           exampleTranslation: "I don't feel like doing homework."
         },
         {

@@ -484,8 +484,8 @@ export const MODULE_2: Module = {
           id: "ex2-3-6",
           type: "ordering",
           question: "Arrange the 'sein' conjugation in order: ich, du, er/sie/es, wir, ihr, sie/Sie",
-          options: ["seid", "bin", "sind", "ist", "bist"],
-          correctAnswer: ["bin", "bist", "ist", "sind", "seid", "sind"],
+          options: ["seid", "bin", "sind (wir)", "ist", "bist", "sind (sie)"],
+          correctAnswer: ["bin", "bist", "ist", "sind (wir)", "seid", "sind (sie)"],
           xpReward: 20
         },
         {
