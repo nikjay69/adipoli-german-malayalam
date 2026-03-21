@@ -3,10 +3,24 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Flame, Star, Zap, Trophy, Lock } from 'lucide-react';
+import { Flame, Star, Zap, Trophy, Lock, BookOpen } from 'lucide-react';
 import { useGameStore } from '@/lib/store';
+import { ALL_MODULES } from '@/lib/content/modules';
 
-const games = [
+interface GameDef {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  color: string;
+  difficulty: 'Easy' | 'Medium' | 'Hard';
+  xpReward: number;
+  timeEstimate: string;
+  unlockModule: number; // 0 = always unlocked
+  tag?: string;
+}
+
+const games: GameDef[] = [
   {
     id: 'word-match',
     name: 'Word Match',
@@ -16,29 +30,7 @@ const games = [
     difficulty: 'Easy',
     xpReward: 20,
     timeEstimate: '2-3 min',
-    unlocked: true,
-  },
-  {
-    id: 'memory',
-    name: 'Memory Cards',
-    description: 'Find matching pairs. Brain training with German words.',
-    icon: '🃏',
-    color: '#27ae60',
-    difficulty: 'Medium',
-    xpReward: 30,
-    timeEstimate: '3-5 min',
-    unlocked: true,
-  },
-  {
-    id: 'speed-quiz',
-    name: 'Speed Quiz',
-    description: 'Answer before time runs out. How many can you get?',
-    icon: '⚡',
-    color: '#c0392b',
-    difficulty: 'Hard',
-    xpReward: 50,
-    timeEstimate: '1-2 min',
-    unlocked: true,
+    unlockModule: 0,
   },
   {
     id: 'greeting-time',
@@ -49,31 +41,77 @@ const games = [
     difficulty: 'Easy',
     xpReward: 15,
     timeEstimate: '1-2 min',
-    unlocked: true,
+    unlockModule: 0,
+  },
+  {
+    id: 'memory',
+    name: 'Memory Cards',
+    description: 'Find matching pairs. Brain training with German words.',
+    icon: '🃏',
+    color: '#27ae60',
+    difficulty: 'Medium',
+    xpReward: 30,
+    timeEstimate: '3-5 min',
+    unlockModule: 0,
+  },
+  {
+    id: 'fill-the-gap',
+    name: 'Fill the Gap',
+    description: 'Complete German sentences with the missing word. No timer pressure!',
+    icon: '✏️',
+    color: '#8b5cf6',
+    difficulty: 'Medium',
+    xpReward: 35,
+    timeEstimate: '3-4 min',
+    unlockModule: 2,
+    tag: 'NEW',
   },
   {
     id: 'sentence-builder',
     name: 'Sentence Builder',
-    description: 'Arrange words in the correct German word order.',
+    description: 'Arrange words in the correct German word order. Tap to build!',
     icon: '🧩',
     color: '#d4a520',
     difficulty: 'Medium',
     xpReward: 35,
     timeEstimate: '3-4 min',
-    unlocked: false,
-    unlockAt: 'Complete Module 2',
+    unlockModule: 3,
+    tag: 'NEW',
   },
   {
-    id: 'pronunciation',
-    name: 'Pronunciation Battle',
-    description: 'Practice saying German words correctly.',
-    icon: '🎤',
+    id: 'article-blitz',
+    name: 'Article Blitz',
+    description: 'der, die, or das? The ultimate article speed challenge!',
+    icon: '⚡',
+    color: '#ec4899',
+    difficulty: 'Medium',
+    xpReward: 40,
+    timeEstimate: '2-3 min',
+    unlockModule: 4,
+    tag: 'NEW',
+  },
+  {
+    id: 'verb-rush',
+    name: 'Verb Rush',
+    description: 'Conjugate verbs at lightning speed. Build combos for bonus XP!',
+    icon: '🔥',
+    color: '#ef4444',
+    difficulty: 'Hard',
+    xpReward: 50,
+    timeEstimate: '2-3 min',
+    unlockModule: 5,
+    tag: 'NEW',
+  },
+  {
+    id: 'speed-quiz',
+    name: 'Speed Quiz',
+    description: 'Answer before time runs out. How many can you get?',
+    icon: '🏆',
     color: '#c0392b',
     difficulty: 'Hard',
-    xpReward: 60,
-    timeEstimate: '2-3 min',
-    unlocked: false,
-    unlockAt: 'Learn 50 words',
+    xpReward: 50,
+    timeEstimate: '1-2 min',
+    unlockModule: 0,
   },
 ];
 
@@ -89,6 +127,16 @@ export default function GamesPage() {
 
   useEffect(() => { setMounted(true); }, []);
 
+  // Calculate completed modules
+  const completedModules = mounted ? ALL_MODULES.filter(m =>
+    m.lessons.every(l => userProgress.completedLessons.some(cl => cl.lessonId === l.id))
+  ).length : 0;
+
+  const isGameUnlocked = (game: GameDef) => {
+    if (game.unlockModule === 0) return true;
+    return completedModules >= game.unlockModule;
+  };
+
   if (!mounted) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -100,6 +148,9 @@ export default function GamesPage() {
       </div>
     );
   }
+
+  const unlockedGames = games.filter(g => isGameUnlocked(g));
+  const lockedGames = games.filter(g => !isGameUnlocked(g));
 
   return (
     <div className="min-h-screen px-4 py-6 safe-top safe-bottom">
@@ -147,79 +198,109 @@ export default function GamesPage() {
         </div>
       </motion.div>
 
-      {/* Games */}
+      {/* Unlocked Games */}
       <div className="space-y-3">
-        {games.map((game, index) => (
+        {unlockedGames.map((game, index) => (
           <motion.div
             key={game.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 + index * 0.05 }}
           >
-            {game.unlocked ? (
-              <Link href={`/games/${game.id}`}>
-                <motion.div
-                  whileTap={{ scale: 0.98 }}
-                  className="game-card p-4 cursor-pointer transition-all active:bg-[var(--foreground)]/5"
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
-                      style={{ backgroundColor: `${game.color}15`, border: `2px solid ${game.color}30` }}
-                    >
-                      {game.icon}
-                    </div>
-
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-bold text-base leading-tight mb-1">
-                        {game.name}
-                      </h3>
-                      <p className="text-[var(--foreground)]/40 text-xs mb-2 leading-relaxed">
-                        {game.description}
-                      </p>
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${difficultyColors[game.difficulty]}`}>
-                          {game.difficulty}
-                        </span>
-                        <span className="flex items-center gap-1 text-[10px] text-[#d4a520] font-bold">
-                          <Zap className="w-3 h-3" />
-                          +{game.xpReward} XP
-                        </span>
-                        <span className="text-[10px] text-[var(--foreground)]/30">
-                          {game.timeEstimate}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div
-                      className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: `${game.color}20` }}
-                    >
-                      <span className="font-bold text-sm" style={{ color: game.color }}>→</span>
-                    </div>
-                  </div>
-                </motion.div>
-              </Link>
-            ) : (
-              <div className="game-card p-4 opacity-40">
+            <Link href={`/games/${game.id}`}>
+              <motion.div
+                whileTap={{ scale: 0.98 }}
+                className="game-card p-4 cursor-pointer transition-all active:bg-[var(--foreground)]/5"
+              >
                 <div className="flex items-center gap-3">
-                  <div className="w-14 h-14 rounded-xl bg-[var(--card-bg)] flex items-center justify-center text-2xl flex-shrink-0">
+                  <div
+                    className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
+                    style={{ backgroundColor: `${game.color}15`, border: `2px solid ${game.color}30` }}
+                  >
                     {game.icon}
                   </div>
+
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-base leading-tight mb-1">{game.name}</h3>
-                    <div className="flex items-center gap-2">
-                      <Lock className="w-3 h-3 text-[var(--foreground)]/30" />
-                      <span className="text-xs text-[var(--foreground)]/30">{game.unlockAt}</span>
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-bold text-base leading-tight">
+                        {game.name}
+                      </h3>
+                      {game.tag && (
+                        <span className="text-[9px] font-bold bg-[#ff6b9d]/20 text-[#ff6b9d] px-1.5 py-0.5 rounded-full">
+                          {game.tag}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-[var(--foreground)]/40 text-xs mb-2 leading-relaxed">
+                      {game.description}
+                    </p>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${difficultyColors[game.difficulty]}`}>
+                        {game.difficulty}
+                      </span>
+                      <span className="flex items-center gap-1 text-[10px] text-[#d4a520] font-bold">
+                        <Zap className="w-3 h-3" />
+                        +{game.xpReward} XP
+                      </span>
+                      <span className="text-[10px] text-[var(--foreground)]/30">
+                        {game.timeEstimate}
+                      </span>
                     </div>
                   </div>
-                  <Lock className="w-5 h-5 text-[var(--foreground)]/20 flex-shrink-0" />
+
+                  <div
+                    className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: `${game.color}20` }}
+                  >
+                    <span className="font-bold text-sm" style={{ color: game.color }}>→</span>
+                  </div>
                 </div>
-              </div>
-            )}
+              </motion.div>
+            </Link>
           </motion.div>
         ))}
       </div>
+
+      {/* Locked Games */}
+      {lockedGames.length > 0 && (
+        <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="flex items-center gap-2 mt-6 mb-3"
+          >
+            <Lock className="w-4 h-4 text-[var(--foreground)]/30" />
+            <span className="text-sm font-medium text-[var(--foreground)]/40">Unlock by learning</span>
+          </motion.div>
+          <div className="space-y-3">
+            {lockedGames.map((game, index) => (
+              <motion.div
+                key={game.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.45 + index * 0.05 }}
+              >
+                <div className="game-card p-4 opacity-40">
+                  <div className="flex items-center gap-3">
+                    <div className="w-14 h-14 rounded-xl bg-[var(--card-bg)] flex items-center justify-center text-2xl flex-shrink-0 grayscale">
+                      {game.icon}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold text-base leading-tight mb-1">{game.name}</h3>
+                      <div className="flex items-center gap-2">
+                        <BookOpen className="w-3 h-3 text-[var(--foreground)]/30" />
+                        <span className="text-xs text-[var(--foreground)]/30">Complete Module {game.unlockModule}</span>
+                      </div>
+                    </div>
+                    <Lock className="w-5 h-5 text-[var(--foreground)]/20 flex-shrink-0" />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </>
+      )}
 
       {/* Daily Challenge */}
       <motion.div
@@ -241,6 +322,11 @@ export default function GamesPage() {
           </span>
         </div>
       </motion.div>
+
+      {/* Games count */}
+      <p className="text-center text-[var(--foreground)]/20 text-xs mt-4">
+        {unlockedGames.length} of {games.length} games unlocked
+      </p>
     </div>
   );
 }
