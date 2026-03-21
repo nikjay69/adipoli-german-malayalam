@@ -1,6 +1,6 @@
 'use client';
 
-import { use, useState, useEffect } from 'react';
+import { use, useState, useEffect, type ReactNode } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -95,6 +95,49 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
       }
     }
   }, [mounted, module, lesson, moduleId, lessonId, userProgress.completedLessons, router]);
+
+  // Helper: highlight German phrases in exercise questions
+  const highlightGerman = (text: string) => {
+    // First try: match quoted phrases (most reliable indicator of German in English questions)
+    const quotePattern = /(".*?"|„.*?"|«.*?»)/g;
+    const quoteParts = text.split(quotePattern);
+    if (quoteParts.length > 1) {
+      return (
+        <>
+          {quoteParts.map((part: string, i: number) => {
+            if ((part.startsWith('"') && part.endsWith('"')) ||
+                (part.startsWith('„') && part.endsWith('"')) ||
+                (part.startsWith('«') && part.endsWith('»'))) {
+              return (
+                <span key={i} className="bg-[#d4a520]/10 text-[#d4a520] font-semibold px-1 rounded">
+                  {part}
+                </span>
+              );
+            }
+            return <span key={i}>{part}</span>;
+          })}
+        </>
+      );
+    }
+    // Fallback: highlight common German words (case-sensitive to avoid false positives)
+    const germanWords = /\b(Ich|Du|Er|Sie|Wir|Ihr|Wie|Was|Wo|Wer|Hallo|Guten|Danke|Bitte|Ja|Nein|Mein|Dein|Haben|Sein|Ist|Sind|Heißt|Heißen|Sprechen|Kommen|Gehe|Morgen|Abend|Tag|Nacht|Tschüss|Entschuldigung|Herr|Frau|Deutsch|Deutschland|Auf Wiedersehen)\b/g;
+    const matches = [...text.matchAll(germanWords)];
+    if (matches.length === 0) return <>{text}</>;
+    const result: ReactNode[] = [];
+    let lastIdx = 0;
+    for (const match of matches) {
+      const idx = match.index!;
+      if (idx > lastIdx) result.push(<span key={`t-${lastIdx}`}>{text.slice(lastIdx, idx)}</span>);
+      result.push(
+        <span key={`g-${idx}`} className="bg-[#d4a520]/10 text-[#d4a520] px-1 rounded">
+          {match[0]}
+        </span>
+      );
+      lastIdx = idx + match[0].length;
+    }
+    if (lastIdx < text.length) result.push(<span key={`t-${lastIdx}`}>{text.slice(lastIdx)}</span>);
+    return <>{result}</>;
+  };
 
   if (!mounted) {
     return (
@@ -469,7 +512,7 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                 </Badge>
 
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
-                  {currentExercise.question}
+                  {highlightGerman(currentExercise.question)}
                 </h2>
 
                 <div className="space-y-3 mb-6">

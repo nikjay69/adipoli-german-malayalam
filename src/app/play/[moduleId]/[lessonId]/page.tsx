@@ -1,6 +1,6 @@
 'use client';
 
-import { use, useState, useEffect } from 'react';
+import { use, useState, useEffect, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Volume2, Heart, Loader2 } from 'lucide-react';
@@ -89,6 +89,52 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       </div>
     );
   }
+
+  // Helper: highlight German phrases in exercise questions
+  // Detects quoted text and common German word patterns
+  const highlightGerman = (text: string) => {
+    // First try: match quoted phrases (most reliable indicator of German in English questions)
+    const quotePattern = /(".*?"|„.*?"|«.*?»)/g;
+    const quoteParts = text.split(quotePattern);
+    if (quoteParts.length > 1) {
+      return (
+        <>
+          {quoteParts.map((part, i) => {
+            if ((part.startsWith('"') && part.endsWith('"')) ||
+                (part.startsWith('„') && part.endsWith('"')) ||
+                (part.startsWith('«') && part.endsWith('»'))) {
+              return (
+                <span key={i} className="bg-[#d4a520]/10 text-[#d4a520] font-semibold px-1 rounded">
+                  {part}
+                </span>
+              );
+            }
+            return <span key={i}>{part}</span>;
+          })}
+        </>
+      );
+    }
+    // Fallback: highlight common German words (case-sensitive to avoid false positives)
+    const germanWords = /\b(Ich|Du|Er|Sie|Wir|Ihr|Wie|Was|Wo|Wer|Hallo|Guten|Danke|Bitte|Ja|Nein|Mein|Dein|Haben|Sein|Ist|Sind|Heißt|Heißen|Sprechen|Kommen|Gehe|Morgen|Abend|Tag|Nacht|Tschüss|Entschuldigung|Herr|Frau|Deutsch|Deutschland|Auf Wiedersehen)\b/g;
+    const wordParts = text.split(germanWords);
+    if (wordParts.length <= 1) return <>{text}</>;
+    // Use matchAll to know which parts are German words
+    const matches = [...text.matchAll(germanWords)];
+    const result: ReactNode[] = [];
+    let lastIdx = 0;
+    for (const match of matches) {
+      const idx = match.index!;
+      if (idx > lastIdx) result.push(<span key={`t-${lastIdx}`}>{text.slice(lastIdx, idx)}</span>);
+      result.push(
+        <span key={`g-${idx}`} className="bg-[#d4a520]/10 text-[#d4a520] px-1 rounded">
+          {match[0]}
+        </span>
+      );
+      lastIdx = idx + match[0].length;
+    }
+    if (lastIdx < text.length) result.push(<span key={`t-${lastIdx}`}>{text.slice(lastIdx)}</span>);
+    return <>{result}</>;
+  };
 
   if (!module || !lesson) {
     return (
@@ -431,7 +477,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               {/* Question */}
               <div className="flex-1 flex flex-col justify-center">
                 <h2 className="text-xl font-bold text-center mb-6 leading-snug">
-                  {lesson.exercises[step.index].question}
+                  {highlightGerman(lesson.exercises[step.index].question)}
                 </h2>
 
                 {/* Options */}
@@ -463,6 +509,20 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                     );
                   })}
                 </div>
+
+                {/* Explanation — shown after answering */}
+                {answerState !== 'default' && lesson.exercises[step.index].explanation && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 px-4 py-3"
+                  >
+                    <p className="text-xs text-[var(--foreground)]/60 leading-relaxed">
+                      <span className="font-semibold text-[#d4a520]">Explanation:</span>{' '}
+                      {lesson.exercises[step.index].explanation}
+                    </p>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
           )}
