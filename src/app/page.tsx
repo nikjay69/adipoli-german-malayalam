@@ -9,7 +9,7 @@ import { CharacterGuide } from '@/components/character';
 import { getRandomMessage } from '@/lib/content/dialogue';
 import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
-import { JOURNEY_LOCATIONS } from '@/lib/journey';
+import { JOURNEY_LOCATIONS, getCurrentLocation } from '@/lib/journey';
 
 export default function Home() {
   const router = useRouter();
@@ -237,15 +237,21 @@ export default function Home() {
         <p className="text-[var(--foreground)]/40 text-sm text-center mb-4">Kerala → Germany</p>
 
         {/* Location nodes */}
-        <div className="flex justify-between items-center px-1 mb-3">
+        <div className="flex justify-between items-center px-1 mb-3 overflow-x-auto">
           {JOURNEY_LOCATIONS.map((loc, i) => {
-            const isReached = i === 0 || i <= Math.floor(completedCount / 2);
-            const isCurrent = i === Math.floor(completedCount / 2);
+            // Calculate completed modules count
+            const completedModules = ALL_MODULES.filter(m =>
+              m.lessons.every(l => userProgress.completedLessons.some(cl => cl.lessonId === l.id))
+            ).length;
+            const currentLoc = getCurrentLocation(completedModules);
+            const currentLocIndex = JOURNEY_LOCATIONS.findIndex(l => l.id === currentLoc.id);
+            const isReached = i <= currentLocIndex;
+            const isCurrent = i === currentLocIndex;
             return (
-              <div key={loc.id} className="flex flex-col items-center gap-1 flex-1">
+              <div key={loc.id} className="flex flex-col items-center gap-1 flex-1 min-w-0">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className={`w-9 h-9 rounded-full flex items-center justify-center text-sm flex-shrink-0
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-xs flex-shrink-0
                     ${isCurrent
                       ? 'bg-[#d4a520]/20 border-2 border-[#d4a520] shadow-md shadow-[#d4a520]/20'
                       : isReached
@@ -255,7 +261,7 @@ export default function Home() {
                 >
                   {loc.icon}
                 </motion.div>
-                <span className={`text-[8px] text-center leading-tight
+                <span className={`text-[7px] text-center leading-tight truncate w-full
                   ${isCurrent ? 'text-[#d4a520] font-bold' : isReached ? 'text-[var(--foreground)]/50' : 'text-[var(--foreground)]/25'}`}
                 >
                   {loc.name.split(' ')[0]}
@@ -265,25 +271,37 @@ export default function Home() {
           })}
         </div>
 
-        {/* Lesson dots */}
-        <div className="flex justify-center items-center gap-1.5 pb-2">
-          {ALL_MODULES.flatMap(module =>
-            module.lessons.map((lesson) => {
-              const isCompleted = userProgress.completedLessons.some(l => l.lessonId === lesson.id);
-              const isNext = nextLesson?.lesson.id === lesson.id;
-              return (
-                <motion.div
-                  key={lesson.id}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={() => {
-                    if (isCompleted || isNext) router.push(`/play/${module.id}/${lesson.id}`);
-                  }}
-                  className={`w-2.5 h-2.5 rounded-full cursor-pointer flex-shrink-0 transition-all
-                    ${isCompleted ? 'bg-[#27ae60]' : isNext ? 'bg-[#d4a520] animate-pulse-glow' : 'bg-[var(--foreground)]/10'}`}
-                />
-              );
-            })
-          )}
+        {/* Module progress bar (replaces individual lesson dots for better scaling) */}
+        <div className="flex justify-center items-center gap-0.5 pb-2 flex-wrap max-w-sm mx-auto">
+          {ALL_MODULES.map(module => {
+            const moduleLessons = module.lessons.length;
+            const completedInModule = module.lessons.filter(
+              l => userProgress.completedLessons.some(cl => cl.lessonId === l.id)
+            ).length;
+            const isModuleComplete = completedInModule === moduleLessons;
+            const isModuleActive = completedInModule > 0 && !isModuleComplete;
+            const hasNext = module.lessons.some(l => l.id === nextLesson?.lesson.id);
+            return (
+              <motion.div
+                key={module.id}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  if (isModuleComplete || isModuleActive || hasNext)
+                    router.push(`/learn/${module.id}`);
+                }}
+                className={`h-2 rounded-full cursor-pointer transition-all
+                  ${isModuleComplete
+                    ? 'bg-[#27ae60] w-4'
+                    : hasNext
+                    ? 'bg-[#d4a520] animate-pulse-glow w-5'
+                    : isModuleActive
+                    ? 'bg-[#d4a520]/60 w-3'
+                    : 'bg-[var(--foreground)]/10 w-2'
+                  }`}
+                title={`Module ${module.id}: ${module.title}`}
+              />
+            );
+          })}
         </div>
 
         <p className="text-center text-[var(--foreground)]/30 text-xs mt-1">

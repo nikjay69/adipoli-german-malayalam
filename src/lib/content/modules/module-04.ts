@@ -1,0 +1,1065 @@
+import type { Module } from '../types';
+
+// Module 4: My Family & People
+export const MODULE_4: Module = {
+  id: 4,
+  title: "My Family & People",
+  titleGerman: "Meine Familie",
+  description: "Talk about your family, describe people, and tackle German articles and possessive pronouns. Kerala families are big — now describe yours in German!",
+  icon: "👨‍👩‍👧‍👦",
+  color: "#8b5cf6",
+  totalHours: 12,
+  unlockRequirement: "Complete Module 3",
+  lessons: [
+    // ─── Lesson 4-1: Family Members ───
+    {
+      id: "4-1",
+      title: "Family Members",
+      titleGerman: "Familienmitglieder",
+      description: "Meet the German family — from Mutter and Vater to Onkel and Tante. Kerala kudumbam, now in German!",
+      duration: "60 min",
+      xpReward: 150,
+      videos: [
+        {
+          id: "v4-1-1",
+          title: "Meet the German Family",
+          duration: "12:00",
+          description: "Learn the core family members in German — parents, siblings, and grandparents.",
+          scriptOutline: [
+            "Opening: 'Family is everything — in Kerala and in Germany! Let's learn to talk about yours.'",
+            "die Mutter (mother) — 'Amma' in Malayalam, 'Mutter' in German. Both start with 'M'!",
+            "der Vater (father) — 'Achan' in Malayalam. 'Vater' sounds like English 'father' with a V",
+            "die Eltern (parents) — plural, always 'die'",
+            "der Bruder (brother) — 'broo-der', similar to English 'brother'",
+            "die Schwester (sister) — 'shves-ter', a bit tricky to pronounce",
+            "die Geschwister (siblings) — useful collective word",
+            "die Großmutter / die Oma (grandmother) — Oma is casual, like 'Ammoomma'",
+            "der Großvater / der Opa (grandfather) — Opa is casual, like 'Appooppan'",
+            "die Großeltern (grandparents)",
+            "das Kind (child), die Kinder (children)",
+            "Kerala connection: Like how we say Amma, Achan, Chechi, Chettan — German has equally warm family words!",
+            "Practice: Describe YOUR family — 'Ich habe einen Bruder und eine Schwester'"
+          ],
+          keyVocabulary: ["die Mutter", "der Vater", "der Bruder", "die Schwester", "die Großmutter", "der Großvater"],
+          learningObjectives: [
+            "Name immediate family members in German",
+            "Name grandparents and siblings",
+            "Talk about your own family using simple sentences"
+          ],
+          placeholderThumbnail: "/images/thumbnails/family-core.jpg"
+        },
+        {
+          id: "v4-1-2",
+          title: "Extended Family & Relationships",
+          duration: "10:00",
+          description: "Uncles, aunts, cousins, and more — the bigger family circle in German.",
+          scriptOutline: [
+            "Opening: 'Kerala families are BIG! Uncles, aunts, cousins everywhere. Let's learn all of them!'",
+            "der Onkel (uncle) — 'on-kel', sounds like English 'uncle'",
+            "die Tante (aunt) — 'tahn-tuh', like French 'tante'",
+            "der Cousin (male cousin) — pronounced French-style: 'koo-zaN'",
+            "die Cousine (female cousin) — 'koo-zee-nuh'",
+            "der Neffe (nephew), die Nichte (niece)",
+            "der Schwiegervater (father-in-law), die Schwiegermutter (mother-in-law)",
+            "Kerala parallel: We have different words for maternal/paternal uncle (Ammavan vs Chittappan). German just uses 'Onkel' for all!",
+            "der Mann (husband), die Frau (wife) — also means 'man' and 'woman'",
+            "Family tree activity: Draw and label a family tree in German",
+            "Practice dialogue: 'Das ist mein Onkel. Er heißt Thomas.'"
+          ],
+          keyVocabulary: ["der Onkel", "die Tante", "der Cousin", "die Cousine", "der Neffe", "die Nichte"],
+          learningObjectives: [
+            "Name extended family members in German",
+            "Understand the difference between Malayalam and German family terminology",
+            "Introduce family members in simple sentences"
+          ],
+          placeholderThumbnail: "/images/thumbnails/family-extended.jpg"
+        }
+      ],
+      exercises: [
+        {
+          id: "ex4-1-1",
+          type: "matching",
+          question: "Match the German family words with their English meanings:",
+          options: ["die Mutter → mother", "der Vater → father", "der Bruder → brother", "die Schwester → sister", "die Oma → grandmother", "der Opa → grandfather"],
+          correctAnswer: ["die Mutter → mother", "der Vater → father", "der Bruder → brother", "die Schwester → sister", "die Oma → grandmother", "der Opa → grandfather"],
+          explanation: "These are the core family members. Notice each has an article: der (masculine), die (feminine).",
+          xpReward: 20
+        },
+        {
+          id: "ex4-1-2",
+          type: "multiple-choice",
+          question: "What is the casual/informal word for 'Großmutter'?",
+          options: ["Mutti", "Oma", "Tante", "Nichte"],
+          correctAnswer: "Oma",
+          explanation: "Oma is the casual word for Großmutter (grandmother), like 'Ammoomma' in Malayalam.",
+          xpReward: 15
+        },
+        {
+          id: "ex4-1-3",
+          type: "fill-blank",
+          question: "'I have a brother and a sister': Ich habe einen Bruder und eine _____.",
+          correctAnswer: "Schwester",
+          explanation: "Die Schwester = sister. 'Eine Schwester' because Schwester is feminine.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-1-4",
+          type: "multiple-choice",
+          question: "In German, how is the word for uncle different from Malayalam?",
+          options: [
+            "German has no word for uncle",
+            "German uses one word 'Onkel' for all uncles, while Malayalam has different words for maternal/paternal uncle",
+            "German has more words for uncle than Malayalam",
+            "They are exactly the same"
+          ],
+          correctAnswer: "German uses one word 'Onkel' for all uncles, while Malayalam has different words for maternal/paternal uncle",
+          explanation: "Malayalam has Ammavan (maternal uncle), Chittappan/Valiyachan (paternal uncle), etc. German just uses 'Onkel' for all!",
+          xpReward: 20
+        },
+        {
+          id: "ex4-1-5",
+          type: "fill-blank",
+          question: "'That is my aunt': Das ist meine _____.",
+          correctAnswer: "Tante",
+          explanation: "Die Tante = aunt. 'Meine Tante' because Tante is feminine.",
+          xpReward: 15
+        },
+        {
+          id: "ex4-1-6",
+          type: "multiple-choice",
+          question: "What does 'die Geschwister' mean?",
+          options: ["The sisters", "The brothers", "The siblings", "The parents"],
+          correctAnswer: "The siblings",
+          explanation: "'Die Geschwister' is a collective word meaning siblings (brothers and sisters together).",
+          xpReward: 15
+        }
+      ],
+      vocabulary: [
+        {
+          id: "vocab4-1-1",
+          german: "die Mutter",
+          english: "the mother",
+          malayalam: "അമ്മ",
+          pronunciation: "dee moo-ter",
+          example: "Meine Mutter kocht sehr gut.",
+          exampleTranslation: "My mother cooks very well."
+        },
+        {
+          id: "vocab4-1-2",
+          german: "der Vater",
+          english: "the father",
+          malayalam: "അച്ഛൻ",
+          pronunciation: "dehr fah-ter",
+          example: "Mein Vater arbeitet in Kochi.",
+          exampleTranslation: "My father works in Kochi."
+        },
+        {
+          id: "vocab4-1-3",
+          german: "der Bruder",
+          english: "the brother",
+          malayalam: "സഹോദരൻ",
+          pronunciation: "dehr broo-der",
+          example: "Mein Bruder ist älter als ich.",
+          exampleTranslation: "My brother is older than me."
+        },
+        {
+          id: "vocab4-1-4",
+          german: "die Schwester",
+          english: "the sister",
+          malayalam: "സഹോദരി",
+          pronunciation: "dee shves-ter",
+          example: "Meine Schwester studiert Medizin.",
+          exampleTranslation: "My sister studies medicine."
+        },
+        {
+          id: "vocab4-1-5",
+          german: "die Großmutter",
+          english: "the grandmother",
+          malayalam: "മുത്തശ്ശി",
+          pronunciation: "dee grohs-moo-ter",
+          example: "Meine Großmutter erzählt schöne Geschichten.",
+          exampleTranslation: "My grandmother tells beautiful stories."
+        },
+        {
+          id: "vocab4-1-6",
+          german: "der Großvater",
+          english: "the grandfather",
+          malayalam: "മുത്തച്ഛൻ",
+          pronunciation: "dehr grohs-fah-ter",
+          example: "Mein Großvater ist achtzig Jahre alt.",
+          exampleTranslation: "My grandfather is eighty years old."
+        },
+        {
+          id: "vocab4-1-7",
+          german: "der Onkel",
+          english: "the uncle",
+          malayalam: "അമ്മാവൻ / ചിറ്റപ്പൻ",
+          pronunciation: "dehr on-kel",
+          example: "Mein Onkel wohnt in Berlin.",
+          exampleTranslation: "My uncle lives in Berlin."
+        },
+        {
+          id: "vocab4-1-8",
+          german: "die Tante",
+          english: "the aunt",
+          malayalam: "അമ്മായി / പെരിയമ്മ",
+          pronunciation: "dee tahn-tuh",
+          example: "Meine Tante hat drei Kinder.",
+          exampleTranslation: "My aunt has three children."
+        },
+        {
+          id: "vocab4-1-9",
+          german: "der Cousin",
+          english: "the cousin (male)",
+          malayalam: "കസിൻ (ആൺ)",
+          pronunciation: "dehr koo-zaN",
+          example: "Mein Cousin kommt aus Mumbai.",
+          exampleTranslation: "My cousin comes from Mumbai."
+        },
+        {
+          id: "vocab4-1-10",
+          german: "die Cousine",
+          english: "the cousin (female)",
+          malayalam: "കസിൻ (പെൺ)",
+          pronunciation: "dee koo-zee-nuh",
+          example: "Meine Cousine spricht drei Sprachen.",
+          exampleTranslation: "My cousin speaks three languages."
+        }
+      ]
+    },
+
+    // ─── Lesson 4-2: Describing People ───
+    {
+      id: "4-2",
+      title: "Describing People",
+      titleGerman: "Menschen beschreiben",
+      description: "Learn to describe how people look and their personality traits — from groß to klein, from nett to lustig!",
+      duration: "60 min",
+      xpReward: 150,
+      videos: [
+        {
+          id: "v4-2-1",
+          title: "How People Look",
+          duration: "12:00",
+          description: "Physical descriptions — height, build, hair, eyes, and age in German.",
+          scriptOutline: [
+            "Opening: 'How would you describe your best friend? Let's learn the words!'",
+            "Height: groß (tall/big) vs klein (short/small)",
+            "Age: alt (old) vs jung (young)",
+            "Build: dick (fat/thick) vs dünn (thin) — careful, 'dick' can be rude!",
+            "Better alternatives: schlank (slim), sportlich (athletic)",
+            "Hair: die Haare — blonde Haare, braune Haare, schwarze Haare, rote Haare",
+            "Long vs short: lange Haare vs kurze Haare",
+            "Eyes: die Augen — blaue Augen, braune Augen, grüne Augen",
+            "Kerala connection: Most of us have 'schwarze Haare und braune Augen' (black hair and brown eyes)!",
+            "Sentence pattern: 'Er/Sie ist groß und hat schwarze Haare'",
+            "He/She is... and has...",
+            "Practice: Describe a Bollywood actor or cricket player in German!"
+          ],
+          keyVocabulary: ["groß", "klein", "alt", "jung", "die Haare", "die Augen", "schwarze", "braune"],
+          learningObjectives: [
+            "Describe physical appearance in German",
+            "Use basic adjectives for height, age, and build",
+            "Talk about hair colour and eye colour",
+            "Form sentences with 'ist' and 'hat'"
+          ],
+          placeholderThumbnail: "/images/thumbnails/describe-looks.jpg"
+        },
+        {
+          id: "v4-2-2",
+          title: "Personality & Character",
+          duration: "10:00",
+          description: "Go beyond looks — describe someone's personality and character in German.",
+          scriptOutline: [
+            "Opening: 'Looks are one thing, but personality matters more! Let's learn character words.'",
+            "Positive traits:",
+            "nett (nice) — 'net', short and sweet",
+            "freundlich (friendly) — 'froynt-likh', from 'Freund' (friend)",
+            "lustig (funny) — 'loos-tig', someone who makes you laugh",
+            "intelligent (intelligent) — same as English, just German pronunciation!",
+            "fleißig (hard-working/diligent) — very valued in German culture!",
+            "ehrlich (honest), hilfsbereit (helpful), geduldig (patient)",
+            "Negative traits (use carefully!):",
+            "faul (lazy), langweilig (boring), streng (strict)",
+            "Kerala parallel: 'Fleißig' is like our 'kashtappedunna aallu' — Germans really respect hard work!",
+            "Sentence patterns: 'Sie ist sehr freundlich' (She is very friendly)",
+            "'Er ist lustig und intelligent' (He is funny and intelligent)",
+            "Practice: Describe three family members using personality words"
+          ],
+          keyVocabulary: ["nett", "freundlich", "lustig", "intelligent", "fleißig", "ehrlich"],
+          learningObjectives: [
+            "Use personality adjectives in German",
+            "Combine physical and personality descriptions",
+            "Form longer descriptive sentences"
+          ],
+          placeholderThumbnail: "/images/thumbnails/describe-personality.jpg"
+        }
+      ],
+      exercises: [
+        {
+          id: "ex4-2-1",
+          type: "matching",
+          question: "Match the opposites:",
+          options: ["groß → klein", "alt → jung", "dick → dünn", "lang → kurz"],
+          correctAnswer: ["groß → klein", "alt → jung", "dick → dünn", "lang → kurz"],
+          explanation: "groß/klein (big/small), alt/jung (old/young), dick/dünn (fat/thin), lang/kurz (long/short).",
+          xpReward: 20
+        },
+        {
+          id: "ex4-2-2",
+          type: "fill-blank",
+          question: "'She is tall and has brown eyes': Sie ist groß und hat _____ Augen.",
+          correctAnswer: "braune",
+          explanation: "Braune Augen = brown eyes. The adjective 'braun' takes an '-e' ending before a plural noun.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-2-3",
+          type: "multiple-choice",
+          question: "What does 'fleißig' mean?",
+          options: ["lazy", "funny", "hard-working", "friendly"],
+          correctAnswer: "hard-working",
+          explanation: "'Fleißig' means hard-working/diligent. It's one of the most valued traits in German culture!",
+          xpReward: 15
+        },
+        {
+          id: "ex4-2-4",
+          type: "multiple-choice",
+          question: "How do you say 'He is funny and nice' in German?",
+          options: [
+            "Er ist lustig und nett.",
+            "Er hat lustig und nett.",
+            "Er ist lustig oder nett.",
+            "Er bist lustig und nett."
+          ],
+          correctAnswer: "Er ist lustig und nett.",
+          explanation: "'Er ist' (he is) + adjectives joined with 'und' (and). 'Bist' is only for 'du'.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-2-5",
+          type: "fill-blank",
+          question: "'My mother has black hair': Meine Mutter hat _____ Haare.",
+          correctAnswer: "schwarze",
+          explanation: "Schwarze Haare = black hair. Adjective 'schwarz' + '-e' before plural noun 'Haare'.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-2-6",
+          type: "ordering",
+          question: "Arrange these words to form a correct sentence: 'ist / mein Bruder / und / groß / sportlich'",
+          options: ["Mein Bruder", "ist", "groß", "und", "sportlich"],
+          correctAnswer: ["Mein Bruder", "ist", "groß", "und", "sportlich"],
+          explanation: "'Mein Bruder ist groß und sportlich.' = My brother is tall and athletic.",
+          xpReward: 25
+        }
+      ],
+      vocabulary: [
+        {
+          id: "vocab4-2-1",
+          german: "groß",
+          english: "tall / big",
+          malayalam: "ഉയരമുള്ള / വലിയ",
+          pronunciation: "grohs",
+          example: "Mein Vater ist sehr groß.",
+          exampleTranslation: "My father is very tall."
+        },
+        {
+          id: "vocab4-2-2",
+          german: "klein",
+          english: "short / small",
+          malayalam: "ചെറിയ / ഉയരം കുറഞ്ഞ",
+          pronunciation: "kline",
+          example: "Das Kind ist noch klein.",
+          exampleTranslation: "The child is still small."
+        },
+        {
+          id: "vocab4-2-3",
+          german: "jung",
+          english: "young",
+          malayalam: "ചെറുപ്പമുള്ള",
+          pronunciation: "yoong",
+          example: "Sie ist jung und sportlich.",
+          exampleTranslation: "She is young and athletic."
+        },
+        {
+          id: "vocab4-2-4",
+          german: "die Haare",
+          english: "the hair",
+          malayalam: "മുടി",
+          pronunciation: "dee hah-ruh",
+          example: "Sie hat lange, schwarze Haare.",
+          exampleTranslation: "She has long, black hair."
+        },
+        {
+          id: "vocab4-2-5",
+          german: "nett",
+          english: "nice",
+          malayalam: "നല്ല",
+          pronunciation: "net",
+          example: "Unsere Nachbarn sind sehr nett.",
+          exampleTranslation: "Our neighbours are very nice."
+        },
+        {
+          id: "vocab4-2-6",
+          german: "freundlich",
+          english: "friendly",
+          malayalam: "സൗഹൃദപരമായ",
+          pronunciation: "froynt-likh",
+          example: "Die Lehrerin ist freundlich.",
+          exampleTranslation: "The teacher is friendly."
+        },
+        {
+          id: "vocab4-2-7",
+          german: "lustig",
+          english: "funny",
+          malayalam: "തമാശക്കാരൻ",
+          pronunciation: "loos-tig",
+          example: "Mein Onkel ist sehr lustig.",
+          exampleTranslation: "My uncle is very funny."
+        },
+        {
+          id: "vocab4-2-8",
+          german: "intelligent",
+          english: "intelligent",
+          malayalam: "ബുദ്ധിമാൻ",
+          pronunciation: "in-teh-li-gent",
+          example: "Meine Schwester ist intelligent.",
+          exampleTranslation: "My sister is intelligent."
+        },
+        {
+          id: "vocab4-2-9",
+          german: "fleißig",
+          english: "hard-working / diligent",
+          malayalam: "കഠിനാധ്വാനി",
+          pronunciation: "fly-sig",
+          example: "Deutsche Studenten sind fleißig.",
+          exampleTranslation: "German students are hard-working."
+        },
+        {
+          id: "vocab4-2-10",
+          german: "schön",
+          english: "beautiful / pretty",
+          malayalam: "സുന്ദരമായ",
+          pronunciation: "shoehn",
+          example: "Kerala ist sehr schön.",
+          exampleTranslation: "Kerala is very beautiful."
+        }
+      ]
+    },
+
+    // ─── Lesson 4-3: Possessive Pronouns ───
+    {
+      id: "4-3",
+      title: "Possessive Pronouns",
+      titleGerman: "Possessivpronomen",
+      description: "My, your, his, her — learn how to say who owns what in German. Spoiler: possessives change with gender!",
+      duration: "60 min",
+      xpReward: 150,
+      videos: [
+        {
+          id: "v4-3-1",
+          title: "Mein, Dein, Sein, Ihr - Whose is it?",
+          duration: "15:00",
+          description: "Master German possessive pronouns — and understand why they change endings.",
+          scriptOutline: [
+            "Opening: 'Mein Buch, dein Stift, sein Handy — whose is it? Let's sort it out!'",
+            "The possessive pronouns:",
+            "mein (my) — 'mine', from 'ich'",
+            "dein (your, informal) — from 'du'",
+            "sein (his/its) — from 'er/es'",
+            "ihr (her) — from 'sie' (she). Also 'ihr' = your (formal)/their!",
+            "unser (our) — from 'wir'",
+            "euer (your, plural informal) — from 'ihr'",
+            "The TWIST: Endings change based on the gender of the THING owned!",
+            "Masculine/Neuter: mein Bruder (my brother), mein Kind (my child)",
+            "Feminine: meine Schwester (my sister) — adds '-e'",
+            "Plural: meine Eltern (my parents) — also adds '-e'",
+            "Pattern applies to ALL possessives: dein/deine, sein/seine, ihr/ihre, unser/unsere",
+            "Kerala parallel: Malayalam uses 'ente', 'ninte', 'avante', 'avalude' — but they don't change based on what follows! German does.",
+            "Practice sentences: 'Das ist mein Bruder' / 'Das ist meine Schwester'",
+            "Common mistakes: Using 'mein' when you need 'meine' for feminine nouns",
+            "Real-life practice: Introducing family with possessives"
+          ],
+          keyVocabulary: ["mein", "meine", "dein", "deine", "sein", "seine", "ihr", "ihre", "unser", "unsere"],
+          learningObjectives: [
+            "Use all German possessive pronouns correctly",
+            "Apply the correct ending based on noun gender",
+            "Distinguish between 'mein' (masculine/neuter) and 'meine' (feminine/plural)",
+            "Form sentences about possession and family"
+          ],
+          placeholderThumbnail: "/images/thumbnails/possessives.jpg"
+        }
+      ],
+      exercises: [
+        {
+          id: "ex4-3-1",
+          type: "multiple-choice",
+          question: "'That is my sister' — which is correct?",
+          options: [
+            "Das ist mein Schwester.",
+            "Das ist meine Schwester.",
+            "Das ist meiner Schwester.",
+            "Das ist meines Schwester."
+          ],
+          correctAnswer: "Das ist meine Schwester.",
+          explanation: "Schwester is feminine (die Schwester), so the possessive needs an '-e': meine Schwester.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-3-2",
+          type: "fill-blank",
+          question: "'His mother is nice': _____ Mutter ist nett.",
+          correctAnswer: "Seine",
+          explanation: "Mutter is feminine (die Mutter), so 'sein' becomes 'seine'. Seine Mutter = his mother.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-3-3",
+          type: "multiple-choice",
+          question: "Which possessive pronoun means 'our'?",
+          options: ["mein", "euer", "unser", "ihr"],
+          correctAnswer: "unser",
+          explanation: "'Unser' means 'our', from 'wir' (we).",
+          xpReward: 15
+        },
+        {
+          id: "ex4-3-4",
+          type: "fill-blank",
+          question: "'Your (informal) brother': _____ Bruder.",
+          correctAnswer: "Dein",
+          explanation: "Bruder is masculine (der Bruder), so 'dein' stays unchanged: dein Bruder.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-3-5",
+          type: "matching",
+          question: "Match the possessive with the correct form:",
+          options: ["mein Vater → my father", "meine Mutter → my mother", "sein Bruder → his brother", "ihre Schwester → her sister"],
+          correctAnswer: ["mein Vater → my father", "meine Mutter → my mother", "sein Bruder → his brother", "ihre Schwester → her sister"],
+          explanation: "Masculine nouns get mein/sein, feminine nouns get meine/seine/ihre.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-3-6",
+          type: "multiple-choice",
+          question: "'Our parents are in Kerala.' — Translate to German:",
+          options: [
+            "Unser Eltern sind in Kerala.",
+            "Unsere Eltern sind in Kerala.",
+            "Unseren Eltern sind in Kerala.",
+            "Unserer Eltern sind in Kerala."
+          ],
+          correctAnswer: "Unsere Eltern sind in Kerala.",
+          explanation: "Eltern is plural, so 'unser' becomes 'unsere'. Unsere Eltern = our parents.",
+          xpReward: 25
+        },
+        {
+          id: "ex4-3-7",
+          type: "fill-blank",
+          question: "'Her name is Anna': _____ Name ist Anna.",
+          correctAnswer: "Ihr",
+          explanation: "Name is masculine (der Name), so 'ihr' stays unchanged: Ihr Name. (Note: 'Ihr' is capitalised at the start of a sentence.)",
+          xpReward: 20
+        }
+      ],
+      vocabulary: [
+        {
+          id: "vocab4-3-1",
+          german: "mein / meine",
+          english: "my",
+          malayalam: "എന്റെ",
+          pronunciation: "mine / mine-uh",
+          example: "Das ist mein Haus.",
+          exampleTranslation: "That is my house."
+        },
+        {
+          id: "vocab4-3-2",
+          german: "dein / deine",
+          english: "your (informal)",
+          malayalam: "നിന്റെ",
+          pronunciation: "dine / dine-uh",
+          example: "Ist das deine Tasche?",
+          exampleTranslation: "Is that your bag?"
+        },
+        {
+          id: "vocab4-3-3",
+          german: "sein / seine",
+          english: "his / its",
+          malayalam: "അവന്റെ",
+          pronunciation: "zine / zine-uh",
+          example: "Sein Vater ist Arzt.",
+          exampleTranslation: "His father is a doctor."
+        },
+        {
+          id: "vocab4-3-4",
+          german: "ihr / ihre",
+          english: "her / their",
+          malayalam: "അവളുടെ / അവരുടെ",
+          pronunciation: "eer / eer-uh",
+          example: "Ihre Schwester wohnt in Deutschland.",
+          exampleTranslation: "Her sister lives in Germany."
+        },
+        {
+          id: "vocab4-3-5",
+          german: "unser / unsere",
+          english: "our",
+          malayalam: "നമ്മുടെ",
+          pronunciation: "oon-zer / oon-zeh-ruh",
+          example: "Unsere Familie ist groß.",
+          exampleTranslation: "Our family is big."
+        },
+        {
+          id: "vocab4-3-6",
+          german: "die Familie",
+          english: "the family",
+          malayalam: "കുടുംബം",
+          pronunciation: "dee fah-mee-lee-uh",
+          example: "Meine Familie kommt aus Kerala.",
+          exampleTranslation: "My family comes from Kerala."
+        },
+        {
+          id: "vocab4-3-7",
+          german: "das Haus",
+          english: "the house",
+          malayalam: "വീട്",
+          pronunciation: "das hows",
+          example: "Unser Haus ist in Kochi.",
+          exampleTranslation: "Our house is in Kochi."
+        },
+        {
+          id: "vocab4-3-8",
+          german: "gehören",
+          english: "to belong to",
+          malayalam: "ഉടമസ്ഥമായിരിക്കുക",
+          pronunciation: "geh-hoer-en",
+          example: "Das Buch gehört mir.",
+          exampleTranslation: "The book belongs to me."
+        }
+      ]
+    },
+
+    // ─── Lesson 4-4: Articles - der, die, das ───
+    {
+      id: "4-4",
+      title: "Articles - der, die, das",
+      titleGerman: "Artikel - der, die, das",
+      description: "The most famous challenge in German! Three words for 'the' — and you have to memorise which one goes with which noun. Let's crack the code!",
+      duration: "60 min",
+      xpReward: 180,
+      videos: [
+        {
+          id: "v4-4-1",
+          title: "The Hardest Part of German!",
+          duration: "14:00",
+          description: "Why does German have THREE words for 'the'? Let's understand the system.",
+          scriptOutline: [
+            "Opening: 'der, die, das — three tiny words that give everyone headaches. But we'll figure them out!'",
+            "What are grammatical genders?",
+            "der = masculine (männlich): der Mann (the man), der Tisch (the table)",
+            "die = feminine (weiblich): die Frau (the woman), die Lampe (the lamp)",
+            "das = neuter (sächlich): das Kind (the child), das Buch (the book)",
+            "die = ALSO plural! die Männer (the men), die Frauen (the women)",
+            "Kerala parallel: Malayalam DOESN'T have articles — no 'the' at all! So this is completely new.",
+            "In English, it's simple: just 'the'. In German, you need to know the gender of EVERY noun.",
+            "The genders are often NOT logical: 'das Mädchen' (the girl) is NEUTER, not feminine!",
+            "Why? Because '-chen' (a diminutive suffix) is always neuter!",
+            "ein/eine/ein: 'a/an' also changes — ein Mann, eine Frau, ein Kind",
+            "This will take time and practice. Don't stress — even Germans sometimes disagree!",
+            "Strategy: Always learn nouns WITH their article: not just 'Tisch' but 'der Tisch'"
+          ],
+          keyVocabulary: ["der", "die", "das", "ein", "eine", "männlich", "weiblich", "sächlich"],
+          learningObjectives: [
+            "Understand the concept of grammatical gender in German",
+            "Know the three definite articles: der, die, das",
+            "Know the indefinite articles: ein, eine",
+            "Understand why this concept is challenging for Malayalam speakers"
+          ],
+          placeholderThumbnail: "/images/thumbnails/articles-intro.jpg"
+        },
+        {
+          id: "v4-4-2",
+          title: "Tips to Remember Articles",
+          duration: "12:00",
+          description: "Handy rules and patterns to guess the right article — it's not all random!",
+          scriptOutline: [
+            "Opening: 'Good news — there ARE patterns! Let's learn the cheat codes.'",
+            "MASCULINE (der) patterns:",
+            "Male people: der Mann, der Junge, der Vater",
+            "Days, months, seasons: der Montag, der Januar, der Sommer",
+            "Words ending in -er (often): der Computer, der Lehrer",
+            "Words ending in -ling: der Frühling, der Schmetterling",
+            "FEMININE (die) patterns:",
+            "Female people: die Frau, die Mutter, die Schwester",
+            "Words ending in -ung: die Wohnung, die Zeitung, die Übung (ALWAYS die!)",
+            "Words ending in -heit/-keit: die Freiheit, die Möglichkeit",
+            "Words ending in -ie: die Energie, die Melodie",
+            "Words ending in -tion: die Nation, die Situation",
+            "NEUTER (das) patterns:",
+            "Words ending in -ment: das Dokument, das Instrument",
+            "Words ending in -chen/-lein (diminutives): das Mädchen, das Brötchen",
+            "Words ending in -um: das Museum, das Datum",
+            "Infinitives used as nouns: das Essen (eating/food), das Lernen (learning)",
+            "Memory tip: Colour-code! Write der words in blue, die in red, das in green.",
+            "Practice: Guess the article game!"
+          ],
+          keyVocabulary: ["-ung", "-heit", "-keit", "-ment", "-chen", "-lein"],
+          learningObjectives: [
+            "Know common patterns for masculine nouns",
+            "Know common patterns for feminine nouns",
+            "Know common patterns for neuter nouns",
+            "Apply pattern recognition to guess articles for new words"
+          ],
+          placeholderThumbnail: "/images/thumbnails/articles-tips.jpg"
+        }
+      ],
+      exercises: [
+        {
+          id: "ex4-4-1",
+          type: "multiple-choice",
+          question: "What article goes with 'Wohnung' (apartment)?",
+          options: ["der", "die", "das"],
+          correctAnswer: "die",
+          explanation: "Words ending in '-ung' are ALWAYS feminine: die Wohnung.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-4-2",
+          type: "multiple-choice",
+          question: "Why is 'das Mädchen' (the girl) neuter and not feminine?",
+          options: [
+            "It's a German tradition",
+            "Because '-chen' (diminutive) is always neuter",
+            "Because girls are neither masculine nor feminine",
+            "It's an exception with no reason"
+          ],
+          correctAnswer: "Because '-chen' (diminutive) is always neuter",
+          explanation: "The suffix '-chen' makes any word neuter, regardless of meaning. Das Mädchen, das Brötchen, etc.",
+          xpReward: 25
+        },
+        {
+          id: "ex4-4-3",
+          type: "matching",
+          question: "Match nouns to their correct article:",
+          options: ["der Mann → masculine", "die Frau → feminine", "das Kind → neuter", "die Kinder → plural"],
+          correctAnswer: ["der Mann → masculine", "die Frau → feminine", "das Kind → neuter", "die Kinder → plural"],
+          explanation: "der (masc.), die (fem.), das (neuter), die (plural) — four forms of 'the'.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-4-4",
+          type: "fill-blank",
+          question: "_____ Zeitung (the newspaper) — which article?",
+          correctAnswer: "Die",
+          explanation: "'Zeitung' ends in '-ung', which is always feminine: die Zeitung.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-4-5",
+          type: "multiple-choice",
+          question: "Which ending almost ALWAYS indicates a feminine noun?",
+          options: ["-er", "-ung", "-chen", "-ment"],
+          correctAnswer: "-ung",
+          explanation: "Nouns ending in '-ung' are virtually always feminine (die). This is one of the most reliable rules!",
+          xpReward: 20
+        },
+        {
+          id: "ex4-4-6",
+          type: "multiple-choice",
+          question: "What is the indefinite article for 'Buch' (book)?",
+          options: ["ein Buch", "eine Buch", "einer Buch"],
+          correctAnswer: "ein Buch",
+          explanation: "Buch is neuter (das Buch), so the indefinite article is 'ein': ein Buch.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-4-7",
+          type: "fill-blank",
+          question: "'I need a pen': Ich brauche _____ Stift. (der Stift = the pen)",
+          correctAnswer: "einen",
+          explanation: "Stift is masculine. In accusative case (after 'brauche'), 'ein' becomes 'einen': einen Stift.",
+          xpReward: 25
+        },
+        {
+          id: "ex4-4-8",
+          type: "multiple-choice",
+          question: "Malayalam doesn't have articles. What's the best strategy for learning German articles?",
+          options: [
+            "Ignore them — people will understand anyway",
+            "Always learn a noun WITH its article (der Tisch, not just Tisch)",
+            "Just use 'die' for everything",
+            "Only learn articles for exam words"
+          ],
+          correctAnswer: "Always learn a noun WITH its article (der Tisch, not just Tisch)",
+          explanation: "The best strategy is to learn every noun with its article from day one. Think of the article as part of the word!",
+          xpReward: 15
+        }
+      ],
+      vocabulary: [
+        {
+          id: "vocab4-4-1",
+          german: "der (masculine)",
+          english: "the (for masculine nouns)",
+          malayalam: "ആർട്ടിക്കിൾ (പുല്ലിംഗം)",
+          pronunciation: "dehr",
+          example: "Der Mann trinkt Kaffee.",
+          exampleTranslation: "The man drinks coffee."
+        },
+        {
+          id: "vocab4-4-2",
+          german: "die (feminine)",
+          english: "the (for feminine nouns)",
+          malayalam: "ആർട്ടിക്കിൾ (സ്ത്രീലിംഗം)",
+          pronunciation: "dee",
+          example: "Die Frau liest ein Buch.",
+          exampleTranslation: "The woman reads a book."
+        },
+        {
+          id: "vocab4-4-3",
+          german: "das (neuter)",
+          english: "the (for neuter nouns)",
+          malayalam: "ആർട്ടിക്കിൾ (നപുംസകലിംഗം)",
+          pronunciation: "das",
+          example: "Das Kind spielt im Garten.",
+          exampleTranslation: "The child plays in the garden."
+        },
+        {
+          id: "vocab4-4-4",
+          german: "ein / eine",
+          english: "a / an",
+          malayalam: "ഒരു",
+          pronunciation: "eye-n / eye-nuh",
+          example: "Ich habe ein Buch und eine Tasche.",
+          exampleTranslation: "I have a book and a bag."
+        },
+        {
+          id: "vocab4-4-5",
+          german: "die Wohnung",
+          english: "the apartment",
+          malayalam: "അപ്പാർട്ട്മെന്റ്",
+          pronunciation: "dee voh-noong",
+          example: "Die Wohnung ist groß.",
+          exampleTranslation: "The apartment is big."
+        },
+        {
+          id: "vocab4-4-6",
+          german: "das Mädchen",
+          english: "the girl",
+          malayalam: "പെൺകുട്ടി",
+          pronunciation: "das mayt-khen",
+          example: "Das Mädchen ist zehn Jahre alt.",
+          exampleTranslation: "The girl is ten years old."
+        },
+        {
+          id: "vocab4-4-7",
+          german: "der Junge",
+          english: "the boy",
+          malayalam: "ആൺകുട്ടി",
+          pronunciation: "dehr yoong-uh",
+          example: "Der Junge spielt Fußball.",
+          exampleTranslation: "The boy plays football."
+        },
+        {
+          id: "vocab4-4-8",
+          german: "die Zeitung",
+          english: "the newspaper",
+          malayalam: "പത്രം",
+          pronunciation: "dee tsy-toong",
+          example: "Mein Vater liest die Zeitung.",
+          exampleTranslation: "My father reads the newspaper."
+        }
+      ]
+    },
+
+    // ─── Lesson 4-5: Talking About Your Family ───
+    {
+      id: "4-5",
+      title: "Talking About Your Family",
+      titleGerman: "Über deine Familie sprechen",
+      description: "Put it ALL together — describe your family using everything you've learned: family words, descriptions, possessives, and articles!",
+      duration: "45 min",
+      xpReward: 200,
+      videos: [
+        {
+          id: "v4-5-1",
+          title: "Meine Familie - A Full Family Description",
+          duration: "14:00",
+          description: "Watch a complete family description and learn to create your own — bringing together all Module 4 skills.",
+          scriptOutline: [
+            "Opening: 'Let's bring everything together! By the end of this lesson, you can talk about your whole family!'",
+            "Model description — listen and follow along:",
+            "'Ich komme aus Kerala. Meine Familie ist groß.'",
+            "'Mein Vater heißt Rajesh. Er ist groß und freundlich. Er kommt aus Kochi.'",
+            "'Meine Mutter heißt Lakshmi. Sie ist nett und intelligent. Sie ist Lehrerin.'",
+            "'Ich habe einen Bruder. Mein Bruder heißt Arjun. Er ist jung und lustig.'",
+            "'Ich habe eine Schwester. Meine Schwester heißt Priya. Sie hat lange, schwarze Haare.'",
+            "'Meine Großmutter — wir sagen Ammoomma — wohnt bei uns. Sie ist alt und weise.'",
+            "'Mein Onkel wohnt in Deutschland. Er ist Ingenieur bei Bosch.'",
+            "Breaking down the structure: introduction → each person → name → description",
+            "Grammar review: possessives match gender (mein Bruder / meine Schwester)",
+            "Grammar review: 'ist' for descriptions, 'hat' for possession",
+            "Kerala parallel: Like how we introduce family at weddings — 'Ithu ente Achan, Amma, Chechi...'",
+            "Your turn: Write and practice YOUR family description!",
+            "Challenge: Record yourself describing your family in German"
+          ],
+          keyVocabulary: ["Ich komme aus", "er/sie heißt", "er/sie ist", "er/sie hat", "wohnt"],
+          learningObjectives: [
+            "Give a complete family description in German",
+            "Combine possessives, descriptions, and family vocabulary",
+            "Use proper article and possessive agreement",
+            "Speak multiple connected sentences about family"
+          ],
+          placeholderThumbnail: "/images/thumbnails/family-description.jpg"
+        }
+      ],
+      exercises: [
+        {
+          id: "ex4-5-1",
+          type: "ordering",
+          question: "Arrange these words into a correct sentence: 'heißt / meine / Maria / Mutter'",
+          options: ["Meine", "Mutter", "heißt", "Maria"],
+          correctAnswer: ["Meine", "Mutter", "heißt", "Maria"],
+          explanation: "'Meine Mutter heißt Maria.' = My mother is called Maria.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-5-2",
+          type: "fill-blank",
+          question: "'My father is tall and friendly': Mein Vater ist _____ und _____.",
+          correctAnswer: ["groß", "freundlich"],
+          explanation: "Groß (tall) und freundlich (friendly) — adjectives after 'ist' don't need endings!",
+          xpReward: 25
+        },
+        {
+          id: "ex4-5-3",
+          type: "multiple-choice",
+          question: "Which sentence correctly says 'I have a sister'?",
+          options: [
+            "Ich habe ein Schwester.",
+            "Ich habe eine Schwester.",
+            "Ich habe einer Schwester.",
+            "Ich bin eine Schwester."
+          ],
+          correctAnswer: "Ich habe eine Schwester.",
+          explanation: "Schwester is feminine → eine Schwester. 'Ich habe' (I have) + eine (a, feminine).",
+          xpReward: 20
+        },
+        {
+          id: "ex4-5-4",
+          type: "fill-blank",
+          question: "'She lives in Germany': Sie _____ in Deutschland.",
+          correctAnswer: "wohnt",
+          explanation: "'Wohnen' (to live/reside) → 'sie wohnt'. She lives = Sie wohnt.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-5-5",
+          type: "multiple-choice",
+          question: "How would you say 'He comes from Kerala'?",
+          options: [
+            "Er kommen aus Kerala.",
+            "Er kommt von Kerala.",
+            "Er kommt aus Kerala.",
+            "Er ist aus Kerala kommt."
+          ],
+          correctAnswer: "Er kommt aus Kerala.",
+          explanation: "'Er kommt aus Kerala.' — 'kommen aus' means 'to come from'. 'Er kommt' is the correct conjugation.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-5-6",
+          type: "ordering",
+          question: "Put these sentences in a logical order for a family description:",
+          options: [
+            "Mein Bruder heißt Arjun.",
+            "Ich komme aus Kerala.",
+            "Er ist zwanzig Jahre alt.",
+            "Meine Familie ist groß."
+          ],
+          correctAnswer: [
+            "Ich komme aus Kerala.",
+            "Meine Familie ist groß.",
+            "Mein Bruder heißt Arjun.",
+            "Er ist zwanzig Jahre alt."
+          ],
+          explanation: "A good family description starts broad (where you're from, family size) then describes individual members.",
+          xpReward: 30
+        }
+      ],
+      vocabulary: [
+        {
+          id: "vocab4-5-1",
+          german: "kommen aus",
+          english: "to come from",
+          malayalam: "... ൽ നിന്ന് വരുക",
+          pronunciation: "kom-men ows",
+          example: "Ich komme aus Thiruvananthapuram.",
+          exampleTranslation: "I come from Thiruvananthapuram."
+        },
+        {
+          id: "vocab4-5-2",
+          german: "wohnen",
+          english: "to live / to reside",
+          malayalam: "താമസിക്കുക",
+          pronunciation: "voh-nen",
+          example: "Wir wohnen in Kochi.",
+          exampleTranslation: "We live in Kochi."
+        },
+        {
+          id: "vocab4-5-3",
+          german: "heißen",
+          english: "to be called / to be named",
+          malayalam: "... എന്ന് പേരുള്ള",
+          pronunciation: "hy-sen",
+          example: "Meine Schwester heißt Priya.",
+          exampleTranslation: "My sister is called Priya."
+        },
+        {
+          id: "vocab4-5-4",
+          german: "arbeiten",
+          english: "to work",
+          malayalam: "ജോലി ചെയ്യുക",
+          pronunciation: "ar-by-ten",
+          example: "Mein Vater arbeitet als Ingenieur.",
+          exampleTranslation: "My father works as an engineer."
+        },
+        {
+          id: "vocab4-5-5",
+          german: "studieren",
+          english: "to study (at university)",
+          malayalam: "പഠിക്കുക (സർവ്വകലാശാലയിൽ)",
+          pronunciation: "shtoo-dee-ren",
+          example: "Mein Bruder studiert in München.",
+          exampleTranslation: "My brother studies in Munich."
+        },
+        {
+          id: "vocab4-5-6",
+          german: "zusammen",
+          english: "together",
+          malayalam: "ഒരുമിച്ച്",
+          pronunciation: "tsoo-zah-men",
+          example: "Wir leben zusammen in einem Haus.",
+          exampleTranslation: "We live together in a house."
+        },
+        {
+          id: "vocab4-5-7",
+          german: "der Ingenieur",
+          english: "the engineer",
+          malayalam: "എഞ്ചിനീയർ",
+          pronunciation: "dehr in-zheh-nyoer",
+          example: "Mein Onkel ist Ingenieur bei Bosch.",
+          exampleTranslation: "My uncle is an engineer at Bosch."
+        },
+        {
+          id: "vocab4-5-8",
+          german: "die Lehrerin",
+          english: "the teacher (female)",
+          malayalam: "അധ്യാപിക",
+          pronunciation: "dee leh-reh-rin",
+          example: "Meine Mutter ist Lehrerin.",
+          exampleTranslation: "My mother is a teacher."
+        }
+      ]
+    }
+  ]
+};
