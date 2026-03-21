@@ -3,13 +3,14 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Flame, Star, Zap } from 'lucide-react';
+import { Flame, Star, Zap, Award } from 'lucide-react';
 import { GameButton } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
 import { getRandomMessage } from '@/lib/content/dialogue';
 import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS } from '@/lib/store';
-import { ALL_MODULES } from '@/lib/content/modules';
+import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { JOURNEY_LOCATIONS, getCurrentLocation } from '@/lib/journey';
+import { calculateExamReadiness } from '@/lib/exam-readiness';
 
 export default function Home() {
   const router = useRouter();
@@ -171,6 +172,58 @@ export default function Home() {
             </div>
           )}
         </motion.div>
+
+        {/* Exam Readiness Bar */}
+        {completedCount > 0 && (
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.45 }}
+            className="w-full max-w-sm mb-4"
+          >
+            {(() => {
+              const totalLessons = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
+              const totalVocab = getAllVocabulary().length;
+              const readiness = calculateExamReadiness({
+                completedLessons: userProgress.completedLessons,
+                totalLessons,
+                learnedVocabulary: userProgress.learnedVocabulary.length,
+                totalVocabulary: totalVocab,
+                streak: userProgress.streak,
+                gamesPlayed: userProgress.gamesPlayed,
+                quizzesTaken: userProgress.quizzesTaken,
+              });
+              return (
+                <div className="game-card p-3">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <div className="flex items-center gap-1.5">
+                      <Award className="w-4 h-4" style={{ color: readiness.color }} />
+                      <span className="text-xs font-bold" style={{ color: readiness.color }}>
+                        A1 Exam Readiness
+                      </span>
+                    </div>
+                    <span className="text-sm font-bold" style={{ color: readiness.color }}>
+                      {readiness.score}%
+                    </span>
+                  </div>
+                  <div className="h-2 bg-[var(--foreground)]/8 rounded-full overflow-hidden">
+                    <motion.div
+                      className="h-full rounded-full"
+                      style={{ backgroundColor: readiness.color }}
+                      initial={{ width: 0 }}
+                      animate={{ width: `${readiness.score}%` }}
+                      transition={{ duration: 1, ease: 'easeOut' }}
+                    />
+                  </div>
+                  <div className="flex items-center justify-between mt-1">
+                    <span className="text-[9px] text-[var(--foreground)]/30">{readiness.label}</span>
+                    <span className="text-[9px] text-[var(--foreground)]/30">60% to pass</span>
+                  </div>
+                </div>
+              );
+            })()}
+          </motion.div>
+        )}
 
         {/* Next Lesson */}
         {nextLesson && (

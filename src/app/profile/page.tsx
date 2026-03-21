@@ -19,7 +19,8 @@ import {
 } from 'lucide-react';
 import { Card, Button, Badge, ProgressBar } from '@/components/ui';
 import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS, ACHIEVEMENTS_DATA } from '@/lib/store';
-import { ALL_MODULES } from '@/lib/content/modules';
+import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
+import { calculateExamReadiness } from '@/lib/exam-readiness';
 
 export default function ProfilePage() {
   const { userProgress, resetProgress } = useGameStore();
@@ -261,6 +262,58 @@ export default function ProfilePage() {
             ))}
           </div>
         </Card>
+
+        {/* Exam Readiness */}
+        {userProgress.completedLessons.length > 0 && (() => {
+          const totalLessons = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
+          const totalVocab = getAllVocabulary().length;
+          const readiness = calculateExamReadiness({
+            completedLessons: userProgress.completedLessons,
+            totalLessons,
+            learnedVocabulary: userProgress.learnedVocabulary.length,
+            totalVocabulary: totalVocab,
+            streak: userProgress.streak,
+            gamesPlayed: userProgress.gamesPlayed,
+            quizzesTaken: userProgress.quizzesTaken,
+          });
+          return (
+            <Card>
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                  <Award className="w-5 h-5" style={{ color: readiness.color }} />
+                  A1 Exam Readiness
+                </h2>
+                <span className="text-2xl font-bold" style={{ color: readiness.color }}>{readiness.score}%</span>
+              </div>
+              <ProgressBar progress={readiness.score} color={readiness.score >= 60 ? 'success' : 'warning'} size="md" />
+              <p className="text-xs text-gray-500 mt-1 mb-3">{readiness.label} · 60% needed to pass Goethe A1</p>
+
+              <div className="grid grid-cols-5 gap-1 mb-3">
+                {[
+                  { label: 'Lessons', value: readiness.breakdown.progress },
+                  { label: 'Vocab', value: readiness.breakdown.vocabulary },
+                  { label: 'Accuracy', value: readiness.breakdown.accuracy },
+                  { label: 'Streak', value: readiness.breakdown.consistency },
+                  { label: 'Practice', value: readiness.breakdown.practice },
+                ].map(item => (
+                  <div key={item.label} className="text-center">
+                    <div className="text-sm font-bold text-gray-700 dark:text-gray-300">{item.value}%</div>
+                    <div className="text-[9px] text-gray-400">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              {readiness.tips.length > 0 && (
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
+                  <p className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Tips to improve:</p>
+                  {readiness.tips.slice(0, 3).map((tip, i) => (
+                    <p key={i} className="text-xs text-gray-500 dark:text-gray-400">• {tip}</p>
+                  ))}
+                </div>
+              )}
+            </Card>
+          );
+        })()}
 
         {/* Lesson Scripts */}
         <Card>
