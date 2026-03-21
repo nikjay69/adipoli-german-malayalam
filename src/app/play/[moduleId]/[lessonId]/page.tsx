@@ -3,7 +3,8 @@
 import { use, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Volume2, Heart } from 'lucide-react';
+import { X, Volume2, Heart, Loader2 } from 'lucide-react';
+import { playVocabAudio, playExampleAudio } from '@/lib/audio';
 import { GameButton, ChoiceButton, Confetti, XPGain, Celebration } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
 import { VideoPlayer } from '@/components/media/VideoPlayer';
@@ -395,12 +396,13 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 </motion.div>
               </motion.div>
 
-              {/* Audio placeholder */}
+              {/* Audio playback */}
               <motion.button
                 whileTap={{ scale: 0.95 }}
-                className="mt-5 w-12 h-12 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
+                onClick={() => playVocabAudio(lesson.vocabulary[step.index].id)}
+                className="mt-5 w-12 h-12 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center hover:bg-[var(--foreground)]/5 transition-colors"
               >
-                <Volume2 className="w-5 h-5 text-[var(--foreground)]/50" />
+                <Volume2 className="w-5 h-5 text-[#d4a520]" />
               </motion.button>
             </motion.div>
           )}

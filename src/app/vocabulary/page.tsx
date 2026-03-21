@@ -16,6 +16,7 @@ import {
 import { Card, Button, Badge, ProgressBar } from '@/components/ui';
 import { useGameStore } from '@/lib/store';
 import { getAllVocabulary, ALL_MODULES, type VocabItem } from '@/lib/content/modules';
+import { playVocabAudio } from '@/lib/audio';
 
 type ViewMode = 'flashcards' | 'list';
 type FilterMode = 'all' | 'learned' | 'unlearned';
@@ -221,7 +222,13 @@ export default function VocabularyPage() {
                   >
                     <h2 className="text-3xl md:text-4xl font-bold mb-2">{currentCard.german}</h2>
                     <p className="text-white/70 text-lg">/{currentCard.pronunciation}/</p>
-                    <p className="text-white/50 text-sm mt-4">Tap to flip</p>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); playVocabAudio(currentCard.id); }}
+                      className="mt-3 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto hover:bg-white/20 transition-colors"
+                    >
+                      <Volume2 className="w-4 h-4 text-[#d4a520]" />
+                    </button>
+                    <p className="text-white/50 text-sm mt-3">Tap to flip</p>
 
                     {userProgress.learnedVocabulary.includes(currentCard.id) && (
                       <div className="absolute top-4 right-4">
@@ -291,6 +298,12 @@ export default function VocabularyPage() {
               return (
                 <Card key={word.id} padding="sm" className={isLearned ? 'border-l-4 border-emerald-500' : ''}>
                   <div className="flex items-center gap-4">
+                    <button
+                      onClick={() => playVocabAudio(word.id)}
+                      className="w-9 h-9 rounded-full bg-[#d4a520]/10 border border-[#d4a520]/20 flex items-center justify-center flex-shrink-0 hover:bg-[#d4a520]/20 transition-colors"
+                    >
+                      <Volume2 className="w-4 h-4 text-[#d4a520]" />
+                    </button>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <h3 className="font-semibold text-gray-900 dark:text-white">

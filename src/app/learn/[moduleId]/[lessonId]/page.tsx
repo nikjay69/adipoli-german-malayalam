@@ -14,9 +14,11 @@ import {
   HelpCircle,
   Star,
   Trophy,
-  X
+  X,
+  Volume2
 } from 'lucide-react';
 import { Card, Button, ProgressBar, Badge } from '@/components/ui';
+import { playVocabAudio } from '@/lib/audio';
 import { useGameStore } from '@/lib/store';
 import { ALL_MODULES, getLessonById, getModuleById, type Lesson, type Exercise, type VocabItem } from '@/lib/content/modules';
 
@@ -414,7 +416,13 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                         <p className="text-white/70 text-sm">
                           /{currentVocab.pronunciation}/
                         </p>
-                        <p className="text-white/50 text-xs mt-4">Tap to see meaning</p>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); playVocabAudio(currentVocab.id); }}
+                          className="mt-3 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto hover:bg-white/20 transition-colors"
+                        >
+                          <Volume2 className="w-4 h-4 text-[#d4a520]" />
+                        </button>
+                        <p className="text-white/50 text-xs mt-3">Tap to see meaning</p>
                       </motion.div>
                     ) : (
                       <motion.div
