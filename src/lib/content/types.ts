@@ -46,6 +46,10 @@ export interface VocabItem {
   example: string;
   exampleTranslation: string;
   audioPlaceholder?: string;
+  /** Path to pronunciation audio file */
+  audioUrl?: string;
+  /** Path to example sentence audio */
+  exampleAudioUrl?: string;
 }
 
 export interface Module {
