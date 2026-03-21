@@ -925,8 +925,9 @@ export const MODULE_4: Module = {
         {
           id: "ex4-5-2",
           type: "fill-blank",
-          question: "'My father is tall and friendly': Mein Vater ist _____ und _____.",
-          correctAnswer: ["groß", "freundlich"],
+          question: "'My father is tall and friendly': Mein Vater ist groß und _____.",
+          options: ["freundlich", "freundliche", "freundlicher", "freund"],
+          correctAnswer: "freundlich",
           explanation: "Groß (tall) und freundlich (friendly) — adjectives after 'ist' don't need endings!",
           xpReward: 25
         },

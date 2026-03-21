@@ -251,7 +251,7 @@ export const MODULE_17: Module = {
           id: "ex17-2-1",
           type: "multiple-choice",
           question: "📢 You hear:\n\'Achtung! Der Zug nach München fährt heute von Gleis 5, nicht von Gleis 3. Ich wiederhole: Gleis 5.\'\n\n📝 Statement: Der Zug nach München fährt von Gleis 3.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "The announcement says 'von Gleis 5, NICHT von Gleis 3' — from platform 5, NOT platform 3. The statement says platform 3, which is explicitly corrected. → Falsch",
           xpReward: 15
@@ -260,7 +260,7 @@ export const MODULE_17: Module = {
           id: "ex17-2-2",
           type: "multiple-choice",
           question: "📢 You hear:\n\'Hallo Frau Schmidt, hier ist die Arztpraxis Dr. Meier. Ihr Termin am Mittwoch um 10 Uhr muss leider verschoben werden. Können Sie stattdessen am Donnerstag um 14 Uhr kommen? Bitte rufen Sie uns zurück.\'\n\n📝 Statement: Der Termin am Mittwoch findet wie geplant statt.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Muss leider verschoben werden' means must unfortunately be postponed. The Wednesday appointment does NOT take place as planned — they suggest Thursday at 14:00 instead. → Falsch",
           xpReward: 15
@@ -269,7 +269,7 @@ export const MODULE_17: Module = {
           id: "ex17-2-3",
           type: "multiple-choice",
           question: "📢 You hear:\n\'Hallo Thomas, hier ist Petra. Ich möchte dich zu meiner Geburtstagsfeier am Samstag einladen. Die Party beginnt um 19 Uhr bei mir zu Hause. Bring bitte etwas zu trinken mit!\'\n\n📝 Statement: Die Party beginnt um 19 Uhr.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Richtig",
           explanation: "Petra says 'Die Party beginnt um 19 Uhr' — the party starts at 19:00 (7 PM). The statement matches exactly. → Richtig",
           xpReward: 15
@@ -278,7 +278,7 @@ export const MODULE_17: Module = {
           id: "ex17-2-4",
           type: "multiple-choice",
           question: "📢 You hear:\n\'Liebe Kunden, unser Geschäft ist heute wegen Inventur geschlossen. Ab morgen sind wir wieder zu den normalen Öffnungszeiten für Sie da. Vielen Dank für Ihr Verständnis.\'\n\n📝 Statement: Das Geschäft hat heute normal geöffnet.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Heute wegen Inventur geschlossen' — today closed due to inventory. The store is NOT open normally today. → Falsch",
           xpReward: 15
@@ -287,7 +287,7 @@ export const MODULE_17: Module = {
           id: "ex17-2-5",
           type: "multiple-choice",
           question: "📢 You hear:\n\'Guten Tag, hier ist Ihre Hausverwaltung. Am Montag, den 15. März, wird zwischen 9 und 14 Uhr das Wasser abgestellt. Bitte füllen Sie vorher genug Wasser ab.\'\n\n📝 Statement: Das Wasser wird am Montag für einige Stunden abgestellt.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Richtig",
           explanation: "'Am Montag zwischen 9 und 14 Uhr das Wasser abgestellt' — water shut off on Monday from 9 to 14 (5 hours). The statement says 'for some hours' which is correct. → Richtig",
           xpReward: 15
@@ -296,7 +296,7 @@ export const MODULE_17: Module = {
           id: "ex17-2-6",
           type: "multiple-choice",
           question: "📢 You hear:\n\'Hallo Markus, hier ist Julia. Ich habe zwei Karten für das Konzert am Freitag. Hast du Lust mitzukommen? Es fängt um 20 Uhr an. Ruf mich bitte heute noch an!\'\n\n📝 Statement: Julia hat keine Karten für das Konzert.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "Julia says 'Ich habe zwei Karten' — she HAS two tickets. The statement says she has NO tickets (keine Karten). → Falsch",
           xpReward: 15
@@ -305,7 +305,7 @@ export const MODULE_17: Module = {
           id: "ex17-2-7",
           type: "multiple-choice",
           question: "📢 You hear:\n\'Sehr geehrte Fahrgäste, der Flug LH 417 nach Istanbul hat eine Verspätung von 45 Minuten. Neuer Abflug: 16:15 Uhr. Wir bitten um Entschuldigung.\'\n\n📝 Statement: Der Flug nach Istanbul ist pünktlich.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Verspätung von 45 Minuten' means a delay of 45 minutes. The flight is NOT on time (pünktlich). → Falsch",
           xpReward: 15
@@ -314,7 +314,7 @@ export const MODULE_17: Module = {
           id: "ex17-2-8",
           type: "multiple-choice",
           question: "📢 You hear:\n\'Hallo Herr Weber, hier ist das Reisebüro SunTravel. Ihre Reise nach Spanien ist gebucht. Abflug ist am 15. Juni um 8:30 Uhr ab Frankfurt. Bitte seien Sie zwei Stunden vorher am Flughafen.\'\n\n📝 Statement: Herr Weber soll um 6:30 Uhr am Flughafen sein.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Richtig",
           explanation: "Flight at 8:30, 'zwei Stunden vorher' (two hours before) = 6:30 Uhr. The statement is correct. → Richtig",
           xpReward: 15
@@ -323,7 +323,7 @@ export const MODULE_17: Module = {
           id: "ex17-2-9",
           type: "multiple-choice",
           question: "📢 You hear:\n\'Hallo Sabine, hier ist deine Mutter. Ich komme morgen nicht zu Besuch, weil ich erkältet bin. Ich komme nächste Woche, wenn es mir besser geht. Bis dann!\'\n\n📝 Statement: Sabines Mutter kommt morgen zu Besuch.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Ich komme morgen NICHT zu Besuch' — she is NOT coming tomorrow because she has a cold. She'll come next week. → Falsch",
           xpReward: 15
@@ -332,7 +332,7 @@ export const MODULE_17: Module = {
           id: "ex17-2-10",
           type: "multiple-choice",
           question: "📢 You hear:\n\'Liebe Schüler, der Mathematik-Unterricht fällt morgen aus. Stattdessen haben wir zwei Stunden Deutsch. Bitte bringt eure Deutschbücher mit.\'\n\n📝 Statement: Morgen haben die Schüler Mathematik-Unterricht.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Der Mathematik-Unterricht fällt morgen aus' — math class is CANCELLED tomorrow. Instead they have German class. → Falsch",
           xpReward: 15
@@ -806,7 +806,7 @@ export const MODULE_17: Module = {
           id: "ex17-5-1",
           type: "multiple-choice",
           question: "📰 Read the classified ad:\n\n\'Verkaufe Fahrrad, 3 Jahre alt, guter Zustand.\nFarbe: blau. Preis: 120 €.\nNur Abholung in München-Schwabing.\nTel: 0176-555-8901 (abends ab 18 Uhr)\'\n\n📝 Statement: Das Fahrrad kann man sich liefern lassen.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Nur Abholung' = pickup only. The bike cannot be delivered — you must pick it up yourself in München-Schwabing. 'Liefern lassen' (have it delivered) is not possible.",
           xpReward: 15
@@ -815,7 +815,7 @@ export const MODULE_17: Module = {
           id: "ex17-5-2",
           type: "multiple-choice",
           question: "📰 Read the classified ad:\n\n\'Restaurant Napoli sucht Kellner/in\nTeilzeit, 20 Std./Woche\nArbeitszeit: Do–So, 17:00–22:00 Uhr\nErfahrung in der Gastronomie erwünscht\nGute Deutschkenntnisse erforderlich\nBewerbung an: napoli@restaurant.de\'\n\n📝 Statement: Man arbeitet auch am Montag.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Do–So' means Thursday to Sunday. Monday (Montag) is NOT included in the work days. You work Thursday through Sunday evenings.",
           xpReward: 15
@@ -824,7 +824,7 @@ export const MODULE_17: Module = {
           id: "ex17-5-3",
           type: "multiple-choice",
           question: "📰 Read the ad:\n\n\'Wohnung zu vermieten:\n3 Zimmer, Küche, Bad\n72 m², 3. OG (kein Aufzug)\nMiete: 580 € + 120 € NK\nAb 01.05. frei\nKontakt: Hausverwaltung Müller, 0761-444-5678\'\n\n📝 Statement: Die Gesamtmiete beträgt 580 Euro pro Monat.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'580 € + 120 € NK' = rent 580 plus utilities (Nebenkosten) 120 = total 700 € per month. The statement says 580 €, which is only the base rent without NK. → Falsch",
           xpReward: 15
@@ -833,7 +833,7 @@ export const MODULE_17: Module = {
           id: "ex17-5-4",
           type: "multiple-choice",
           question: "📰 Read the ad:\n\n\'Deutschkurs für Anfänger (A1)\nVolkshochschule Frankfurt\nStart: 10. April, jeden Dienstag und Donnerstag\n18:00–20:00 Uhr\n12 Wochen, Kursgebühr: 180 €\nAnmeldung online: www.vhs-frankfurt.de\'\n\n📝 Statement: Der Kurs findet dreimal pro Woche statt.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Jeden Dienstag und Donnerstag' = every Tuesday and Thursday — that's TWICE a week, not three times. The course runs for 12 weeks.",
           xpReward: 15
@@ -842,7 +842,7 @@ export const MODULE_17: Module = {
           id: "ex17-5-5",
           type: "multiple-choice",
           question: "📰 Read the ad:\n\n\'Babysitter gesucht!\nFür zwei Kinder (3 und 6 Jahre)\nMontag und Mittwoch, 14:00–18:00 Uhr\n12 € pro Stunde\nNichtraucher/in, Erfahrung mit Kindern\nFamilie Schmidt, Tel: 0151-222-3456\'\n\n📝 Statement: Die Familie sucht einen Babysitter für ein Kind.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Für zwei Kinder (3 und 6 Jahre)' = for TWO children aged 3 and 6. The statement says one child (ein Kind), but it's two. → Falsch",
           xpReward: 15
@@ -987,7 +987,7 @@ export const MODULE_17: Module = {
           id: "ex17-6-1",
           type: "multiple-choice",
           question: "📢 [Hören Teil 1, Nr. 1]\nYou hear:\n\'Guten Tag, hier ist die Zahnarztpraxis Dr. Hoffmann. Frau Meier, Ihr Termin am Freitag um 9 Uhr ist bestätigt. Bitte bringen Sie Ihre Versicherungskarte mit. Bis Freitag!\'\n\n📝 Statement: Frau Meier hat einen Termin am Donnerstag.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "The message says 'am Freitag um 9 Uhr' — the appointment is on FRIDAY, not Thursday (Donnerstag). → Falsch",
           xpReward: 15
@@ -996,7 +996,7 @@ export const MODULE_17: Module = {
           id: "ex17-6-2",
           type: "multiple-choice",
           question: "📢 [Hören Teil 1, Nr. 2]\nYou hear:\n\'Achtung, liebe Fahrgäste! Wegen Bauarbeiten fährt die U-Bahn-Linie 3 heute nur bis Marienplatz. Ab Marienplatz fahren Ersatzbusse. Wir bitten um Verständnis.\'\n\n📝 Statement: Die U-Bahn-Linie 3 fährt heute die ganze Strecke.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Fährt nur bis Marienplatz' — the U-Bahn only goes TO Marienplatz, not the full route. Replacement buses (Ersatzbusse) run from there. → Falsch",
           xpReward: 15
@@ -1005,7 +1005,7 @@ export const MODULE_17: Module = {
           id: "ex17-6-3",
           type: "multiple-choice",
           question: "📢 [Hören Teil 1, Nr. 3]\nYou hear:\n\'Hallo Stefan, hier ist Claudia. Unser Flug nach Rom am Sonntag geht um 7:15 Uhr morgens. Wir müssen also schon um 5 Uhr am Flughafen sein. Ich hole dich um 4:30 Uhr ab. Bitte sei pünktlich!\'\n\n📝 Statement: Claudia holt Stefan um 4:30 Uhr ab.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Richtig",
           explanation: "'Ich hole dich um 4:30 Uhr ab' = I'll pick you up at 4:30. The statement matches exactly. → Richtig",
           xpReward: 15
@@ -1083,7 +1083,7 @@ export const MODULE_17: Module = {
           id: "ex17-6-10",
           type: "multiple-choice",
           question: "📰 [Lesen Teil 2, Nr. 1]\nRead the ad:\n\n\'Biete Klavierunterricht\nfür Kinder und Erwachsene\nAnfänger und Fortgeschrittene\n25 € / 45 Minuten\nBei Ihnen zu Hause oder bei mir\nKontakt: Frau Schneider, 0157-888-9012\'\n\n📝 Statement: Der Unterricht ist nur für Kinder.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Für Kinder und Erwachsene' = for children AND adults. The lessons are for both, not just children. → Falsch",
           xpReward: 15
@@ -1092,7 +1092,7 @@ export const MODULE_17: Module = {
           id: "ex17-6-11",
           type: "multiple-choice",
           question: "📰 [Lesen Teil 2, Nr. 2]\nRead the ad:\n\n\'Yoga im Park — kostenlos!\nJeden Samstag, 10:00–11:00 Uhr\nStadtpark, bei der großen Eiche\nAlle Levels willkommen\nBitte Matte und Wasser mitbringen\nBei Regen fällt der Kurs aus.\'\n\n📝 Statement: Der Yoga-Kurs kostet 10 Euro.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
           explanation: "'Kostenlos' = free of charge! The yoga class costs nothing. The statement says it costs 10 euros, which is wrong. → Falsch",
           xpReward: 15
@@ -1101,7 +1101,7 @@ export const MODULE_17: Module = {
           id: "ex17-6-12",
           type: "multiple-choice",
           question: "📰 [Lesen Teil 2, Nr. 3]\nRead the ad:\n\n\'Suche 2-Zimmer-Wohnung in Köln\nMaximal 600 € warm\nMit Balkon oder Garten\nAb August\nNichtraucher, keine Haustiere\nMelden Sie sich bei: Lars, koeln-wohnung@mail.de\'\n\n📝 Statement: Lars sucht eine Wohnung ab August.",
-          options: ["Richtig", "Falsch"],
+          options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Richtig",
           explanation: "'Ab August' = from August. Lars is looking for an apartment starting in August. The statement matches. → Richtig",
           xpReward: 15

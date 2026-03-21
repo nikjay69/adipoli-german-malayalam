@@ -1011,8 +1011,9 @@ export const MODULE_3: Module = {
         {
           id: "ex3-6-3",
           type: "fill-blank",
-          question: "'From 2 to 4 o'clock' in German: _____ zwei _____ vier Uhr.",
-          correctAnswer: ["Von", "bis"],
+          question: "'From 2 to 4 o'clock' in German: _____ zwei bis vier Uhr.",
+          options: ["Von", "Um", "Am", "Bis"],
+          correctAnswer: "Von",
           explanation: "'Von...bis...' = 'From...to...' is used for time ranges.",
           xpReward: 20
         },

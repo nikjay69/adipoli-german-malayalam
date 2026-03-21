@@ -485,7 +485,8 @@ export const MODULE_18: Module = {
         {
           id: "ex18-3-7",
           type: "ordering",
-          question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Hobbys?'\n\nPut these words in order: 'sind / Meine / Kochen / Hobbys / und / Schwimmen'",
+          question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Hobbys?' — Put these words in order:",
+          options: ["Kochen", "Hobbys", "und", "Meine", "Schwimmen", "sind"],
           correctAnswer: ["Meine", "Hobbys", "sind", "Kochen", "und", "Schwimmen"],
           explanation: "'Meine Hobbys sind Kochen und Schwimmen.' = My hobbies are cooking and swimming. You can also say: 'Ich koche gern und ich schwimme gern.'",
           xpReward: 15
@@ -530,7 +531,8 @@ export const MODULE_18: Module = {
           id: "ex18-3-11",
           type: "ordering",
           question: "🎤 Put these self-introduction sentences in logical order:",
-          correctAnswer: ["Ich hei\u00dfe Rahul Menon.", "Ich bin 23 Jahre alt.", "Ich komme aus Indien, aus Kerala.", "Ich spreche Malayalam, Englisch und Deutsch.", "Ich bin Ingenieur von Beruf."],
+          options: ["Ich bin Ingenieur von Beruf.", "Ich heiße Rahul Menon.", "Ich spreche Malayalam, Englisch und Deutsch.", "Ich bin 23 Jahre alt.", "Ich komme aus Indien, aus Kerala."],
+          correctAnswer: ["Ich heiße Rahul Menon.", "Ich bin 23 Jahre alt.", "Ich komme aus Indien, aus Kerala.", "Ich spreche Malayalam, Englisch und Deutsch.", "Ich bin Ingenieur von Beruf."],
           explanation: "Natural order: Name \u2192 Alter \u2192 Herkunft \u2192 Sprachen \u2192 Beruf.",
           xpReward: 20
         },
@@ -738,7 +740,8 @@ export const MODULE_18: Module = {
         {
           id: "ex18-4-10",
           type: "ordering",
-          question: "🎤 SPRECHEN TEIL 2 — Put these words in order to ask where someone works:\n\n'arbeiten / Wo / Sie / ?'",
+          question: "🎤 SPRECHEN TEIL 2 — Put these words in order to ask where someone works:",
+          options: ["Sie", "arbeiten", "?", "Wo"],
           correctAnswer: ["Wo", "arbeiten", "Sie", "?"],
           explanation: "'Wo arbeiten Sie?' = Where do you work? In W-Fragen, the word order is: W-Wort + Verb + Subjekt. This is a standard question structure for Sprechen Teil 2.",
           xpReward: 15
@@ -1203,7 +1206,8 @@ export const MODULE_18: Module = {
         {
           id: "ex18-6-14",
           type: "ordering",
-          question: "🎤 SPRECHEN — Teil 1 (Sich vorstellen)\n\nPut these self-introduction sentences in a logical order:\n\n'Ich spreche Malayalam, Englisch und ein bisschen Deutsch.' / 'Ich heiße Meera Nair.' / 'Ich komme aus Indien, aus Kerala.' / 'Ich bin 24 Jahre alt.' / 'Meine Hobbys sind Lesen und Tanzen.'",
+          question: "🎤 SPRECHEN — Teil 1: Put these self-introduction sentences in a logical order:",
+          options: ["Ich spreche Malayalam, Englisch und ein bisschen Deutsch.", "Ich heiße Meera Nair.", "Meine Hobbys sind Lesen und Tanzen.", "Ich komme aus Indien, aus Kerala.", "Ich bin 24 Jahre alt."],
           correctAnswer: ["Ich heiße Meera Nair.", "Ich bin 24 Jahre alt.", "Ich komme aus Indien, aus Kerala.", "Ich spreche Malayalam, Englisch und ein bisschen Deutsch.", "Meine Hobbys sind Lesen und Tanzen."],
           explanation: "A natural Vorstellung (self-introduction) follows this order: Name → Alter → Herkunft (origin) → Sprachen → Hobbys. This is the expected flow for Sprechen Teil 1. Each sentence covers one Wortkarte topic.",
           xpReward: 20
