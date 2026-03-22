@@ -4,8 +4,10 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Mail, Lock, LogIn, Eye, EyeOff, AlertCircle, Info } from 'lucide-react';
+import { Mail, Lock, LogIn, Eye, EyeOff, AlertCircle, Info, Fingerprint } from 'lucide-react';
 import { useAuthStore, isSupabaseReady } from '@/lib/auth-store';
+import { startAuthentication } from '@simplewebauthn/browser';
+import { createClient } from '@/lib/supabase';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -17,12 +19,17 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
+  const [passkeyLoading, setPasskeyLoading] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [supabaseActive, setSupabaseActive] = useState(false);
+  const [webAuthnSupported, setWebAuthnSupported] = useState(false);
 
   useEffect(() => {
     setMounted(true);
     setSupabaseActive(isSupabaseReady());
+    setWebAuthnSupported(
+      typeof window !== 'undefined' && !!window.PublicKeyCredential
+    );
     initAuth();
   }, [initAuth]);
 
@@ -62,6 +69,99 @@ export default function LoginPage() {
 
     if (!result.success) {
       setError(result.error || 'Google login failed');
+    }
+  };
+
+  const handlePasskeyLogin = async () => {
+    setError('');
+    setPasskeyLoading(true);
+
+    try {
+      // Step 1: Get authentication options from the server
+      const optionsRes = await fetch('/api/auth/passkey/auth-options', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}), // No email = discoverable credential flow
+      });
+
+      if (!optionsRes.ok) {
+        const errData = await optionsRes.json();
+        throw new Error(errData.error || 'Failed to start passkey login');
+      }
+
+      const options = await optionsRes.json();
+
+      // Step 2: Prompt the user's biometric / passkey
+      const authResponse = await startAuthentication({ optionsJSON: options });
+
+      // Step 3: Verify the response with the server
+      const verifyRes = await fetch('/api/auth/passkey/auth-verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(authResponse),
+      });
+
+      if (!verifyRes.ok) {
+        const errData = await verifyRes.json();
+        throw new Error(errData.error || 'Passkey verification failed');
+      }
+
+      const verifyData = await verifyRes.json();
+
+      if (verifyData.verified) {
+        if (verifyData.sessionMethod === 'otp' && verifyData.tokenHash) {
+          // Use the OTP token to create a real Supabase session
+          const supabase = createClient();
+          const { error: otpError } = await supabase.auth.verifyOtp({
+            token_hash: verifyData.tokenHash,
+            type: 'magiclink',
+          });
+
+          if (otpError) {
+            console.error('OTP verification error:', otpError);
+            // Fallback to manual session
+            useAuthStore.setState({
+              user: {
+                id: verifyData.user.id,
+                name: verifyData.user.name,
+                username: verifyData.user.username,
+                email: verifyData.user.email,
+                isAdmin: verifyData.user.isAdmin,
+                plan: verifyData.user.plan,
+                createdAt: Date.now(),
+              },
+              isLoggedIn: true,
+            });
+          }
+          // Auth state change listener will update the store for OTP success
+        } else {
+          // Manual session: set user directly in the store
+          useAuthStore.setState({
+            user: {
+              id: verifyData.user.id,
+              name: verifyData.user.name,
+              username: verifyData.user.username,
+              email: verifyData.user.email,
+              isAdmin: verifyData.user.isAdmin,
+              plan: verifyData.user.plan,
+              createdAt: Date.now(),
+            },
+            isLoggedIn: true,
+          });
+        }
+
+        router.push('/');
+      }
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Passkey login failed';
+      // User cancelled the biometric prompt
+      if (message.includes('cancelled') || message.includes('canceled') || message.includes('AbortError') || message.includes('NotAllowedError')) {
+        setError('Biometric authentication was cancelled');
+      } else {
+        setError(message);
+      }
+    } finally {
+      setPasskeyLoading(false);
     }
   };
 
@@ -190,6 +290,38 @@ export default function LoginPage() {
               )}
             </motion.button>
           </form>
+
+          {/* Passkey Login */}
+          {supabaseActive && webAuthnSupported && (
+            <>
+              <div className="relative my-6">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-[var(--foreground)]/10" />
+                </div>
+                <div className="relative flex justify-center text-xs">
+                  <span className="px-3 bg-[var(--card-bg,#1a1a2e)] text-[var(--foreground)]/30">or</span>
+                </div>
+              </div>
+
+              <motion.button
+                type="button"
+                onClick={handlePasskeyLogin}
+                disabled={passkeyLoading}
+                whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.01 }}
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-[#d4a520]/10 to-[#27ae60]/10 border border-[#d4a520]/30 rounded-xl text-[var(--foreground)] text-sm font-medium hover:from-[#d4a520]/20 hover:to-[#27ae60]/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {passkeyLoading ? (
+                  <div className="w-5 h-5 border-2 border-[#d4a520]/30 border-t-[#d4a520] rounded-full animate-spin" />
+                ) : (
+                  <>
+                    <Fingerprint className="w-5 h-5 text-[#d4a520]" />
+                    Sign in with Fingerprint / Face ID
+                  </>
+                )}
+              </motion.button>
+            </>
+          )}
 
           {/* Divider */}
           {supabaseActive && (

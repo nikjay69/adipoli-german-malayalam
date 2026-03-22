@@ -24,6 +24,10 @@ import {
   Shield,
   ArrowUpRight,
   Mail,
+  Fingerprint,
+  Check,
+  Trash2,
+  AlertTriangle,
 } from 'lucide-react';
 import { Card, Button, Badge, ProgressBar } from '@/components/ui';
 import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS, ACHIEVEMENTS_DATA } from '@/lib/store';
@@ -40,9 +44,150 @@ export default function ProfilePage() {
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
 
+  // Passkey state
+  const [webAuthnSupported, setWebAuthnSupported] = useState(false);
+  const [passkeyRegistered, setPasskeyRegistered] = useState(false);
+  const [passkeyLoading, setPasskeyLoading] = useState(false);
+  const [passkeyError, setPasskeyError] = useState('');
+  const [passkeySuccess, setPasskeySuccess] = useState('');
+  const [showRemovePasskey, setShowRemovePasskey] = useState(false);
+  const [passkeyCount, setPasskeyCount] = useState(0);
+
   useEffect(() => {
     setMounted(true);
+    setWebAuthnSupported(
+      typeof window !== 'undefined' && !!window.PublicKeyCredential
+    );
   }, []);
+
+  // Check if user has passkeys registered
+  useEffect(() => {
+    if (!isLoggedIn || !user) return;
+
+    const checkPasskeys = async () => {
+      try {
+        const { createClient } = await import('@/lib/supabase');
+        const supabase = createClient();
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) return;
+
+        const { data: creds } = await supabase
+          .from('passkey_credentials')
+          .select('id')
+          .eq('user_id', user.id);
+
+        if (creds && creds.length > 0) {
+          setPasskeyRegistered(true);
+          setPasskeyCount(creds.length);
+        }
+      } catch {
+        // Silently fail — passkeys are optional
+      }
+    };
+
+    checkPasskeys();
+  }, [isLoggedIn, user]);
+
+  const handleRegisterPasskey = async () => {
+    if (!user) return;
+    setPasskeyError('');
+    setPasskeySuccess('');
+    setPasskeyLoading(true);
+
+    try {
+      const { createClient } = await import('@/lib/supabase');
+      const supabase = createClient();
+      const { data: { session } } = await supabase.auth.getSession();
+
+      if (!session?.access_token) {
+        throw new Error('Please log in again to set up biometric login');
+      }
+
+      // Step 1: Get registration options
+      const optionsRes = await fetch('/api/auth/passkey/register-options', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${session.access_token}`,
+        },
+      });
+
+      if (!optionsRes.ok) {
+        const errData = await optionsRes.json();
+        throw new Error(errData.error || 'Failed to start registration');
+      }
+
+      const options = await optionsRes.json();
+
+      // Step 2: Prompt the user's biometric
+      const { startRegistration } = await import('@simplewebauthn/browser');
+      const registrationResponse = await startRegistration({ optionsJSON: options });
+
+      // Step 3: Verify the registration
+      const verifyRes = await fetch('/api/auth/passkey/register-verify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify(registrationResponse),
+      });
+
+      if (!verifyRes.ok) {
+        const errData = await verifyRes.json();
+        throw new Error(errData.error || 'Registration verification failed');
+      }
+
+      const verifyData = await verifyRes.json();
+
+      if (verifyData.verified) {
+        setPasskeyRegistered(true);
+        setPasskeyCount((prev) => prev + 1);
+        setPasskeySuccess('Biometric login set up successfully!');
+      }
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Failed to set up biometric login';
+      if (message.includes('cancelled') || message.includes('canceled') || message.includes('AbortError') || message.includes('NotAllowedError')) {
+        setPasskeyError('Setup was cancelled');
+      } else {
+        setPasskeyError(message);
+      }
+    } finally {
+      setPasskeyLoading(false);
+    }
+  };
+
+  const handleRemovePasskeys = async () => {
+    if (!user) return;
+    setPasskeyError('');
+    setPasskeySuccess('');
+    setPasskeyLoading(true);
+
+    try {
+      const { createClient } = await import('@/lib/supabase');
+      const supabase = createClient();
+
+      // Delete all passkeys for this user
+      const { error: deleteError } = await supabase
+        .from('passkey_credentials')
+        .delete()
+        .eq('user_id', user.id);
+
+      if (deleteError) {
+        throw new Error('Failed to remove passkeys');
+      }
+
+      setPasskeyRegistered(false);
+      setPasskeyCount(0);
+      setShowRemovePasskey(false);
+      setPasskeySuccess('All passkeys removed');
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Failed to remove passkeys';
+      setPasskeyError(message);
+    } finally {
+      setPasskeyLoading(false);
+    }
+  };
 
   if (!mounted) {
     return (
@@ -456,6 +601,119 @@ export default function ProfilePage() {
             </Card>
           );
         })()}
+
+        {/* Biometric Login */}
+        {isLoggedIn && (
+          <Card className="mb-6">
+            <h2 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+              <Fingerprint className="w-4 h-4 text-[#d4a520]" />
+              Biometric Login
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+              Use your fingerprint or Face ID to log in without a password.
+            </p>
+
+            {!webAuthnSupported ? (
+              <div className="flex items-center gap-2 bg-gray-500/10 border border-gray-500/20 text-gray-400 px-4 py-3 rounded-xl text-sm">
+                <AlertTriangle className="w-4 h-4 flex-shrink-0" />
+                Not supported on this browser
+              </div>
+            ) : passkeyRegistered ? (
+              <div className="space-y-3">
+                <motion.div
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-4 py-3 rounded-xl text-sm"
+                >
+                  <Check className="w-4 h-4 flex-shrink-0" />
+                  Passkey registered ({passkeyCount} {passkeyCount === 1 ? 'device' : 'devices'})
+                </motion.div>
+
+                <div className="flex gap-2">
+                  <motion.button
+                    onClick={handleRegisterPasskey}
+                    disabled={passkeyLoading}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex items-center gap-2 px-4 py-2 bg-[#d4a520]/10 text-[#d4a520] rounded-lg text-sm font-medium hover:bg-[#d4a520]/20 transition-colors disabled:opacity-50"
+                  >
+                    <Fingerprint className="w-4 h-4" />
+                    Add another device
+                  </motion.button>
+
+                  {!showRemovePasskey ? (
+                    <motion.button
+                      onClick={() => setShowRemovePasskey(true)}
+                      whileTap={{ scale: 0.97 }}
+                      className="flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-400 rounded-lg text-sm font-medium hover:bg-red-500/20 transition-colors"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                      Remove
+                    </motion.button>
+                  ) : (
+                    <div className="flex gap-2">
+                      <motion.button
+                        onClick={() => setShowRemovePasskey(false)}
+                        whileTap={{ scale: 0.97 }}
+                        className="px-4 py-2 bg-gray-500/10 text-gray-400 rounded-lg text-sm font-medium hover:bg-gray-500/20 transition-colors"
+                      >
+                        Cancel
+                      </motion.button>
+                      <motion.button
+                        onClick={handleRemovePasskeys}
+                        disabled={passkeyLoading}
+                        whileTap={{ scale: 0.97 }}
+                        className="px-4 py-2 bg-red-500 text-white rounded-lg text-sm font-medium hover:bg-red-600 transition-colors disabled:opacity-50"
+                      >
+                        Confirm Remove
+                      </motion.button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <motion.button
+                onClick={handleRegisterPasskey}
+                disabled={passkeyLoading}
+                whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.01 }}
+                className="flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-[#d4a520]/10 to-[#27ae60]/10 border border-[#d4a520]/30 rounded-xl text-[var(--foreground)] text-sm font-medium hover:from-[#d4a520]/20 hover:to-[#27ae60]/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {passkeyLoading ? (
+                  <div className="w-5 h-5 border-2 border-[#d4a520]/30 border-t-[#d4a520] rounded-full animate-spin" />
+                ) : (
+                  <>
+                    <Fingerprint className="w-5 h-5 text-[#d4a520]" />
+                    Set up Biometric Login
+                  </>
+                )}
+              </motion.button>
+            )}
+
+            {/* Passkey error */}
+            {passkeyError && (
+              <motion.div
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-3 flex items-center gap-2 bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-2.5 rounded-xl text-sm"
+              >
+                <AlertTriangle className="w-4 h-4 flex-shrink-0" />
+                {passkeyError}
+              </motion.div>
+            )}
+
+            {/* Passkey success */}
+            {passkeySuccess && (
+              <motion.div
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-3 flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-4 py-2.5 rounded-xl text-sm"
+              >
+                <Check className="w-4 h-4 flex-shrink-0" />
+                {passkeySuccess}
+              </motion.div>
+            )}
+          </Card>
+        )}
 
         {/* Lesson Scripts */}
         <Card>
