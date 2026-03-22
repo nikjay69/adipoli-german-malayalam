@@ -151,6 +151,7 @@ export default function GamesPage() {
 
   const unlockedGames = games.filter(g => isGameUnlocked(g));
   const lockedGames = games.filter(g => !isGameUnlocked(g));
+  const recommendedGame = unlockedGames[unlockedGames.length - 1] || unlockedGames[0];
 
   return (
     <div className="min-h-screen px-4 py-6 safe-top safe-bottom">
@@ -197,6 +198,33 @@ export default function GamesPage() {
           <div className="text-[10px] text-[var(--foreground)]/40">Words</div>
         </div>
       </motion.div>
+
+      {recommendedGame && (
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.12 }}
+          className="game-card p-4 mb-5 border border-[#d4a520]/20"
+        >
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-[10px] uppercase tracking-wide text-[#d4a520] font-bold mb-1">Recommended next game</p>
+              <h2 className="font-bold text-sm mb-1 flex items-center gap-2">
+                <span>{recommendedGame.icon}</span>
+                {recommendedGame.name}
+              </h2>
+              <p className="text-xs text-[var(--foreground)]/50 leading-relaxed">
+                {completedModules === 0
+                  ? 'Start with a lighter game to reinforce your first few lessons without pressure.'
+                  : `You have completed ${completedModules} module${completedModules === 1 ? '' : 's'}. This game matches your current level well.`}
+              </p>
+            </div>
+            <Link href={`/games/${recommendedGame.id}`} className="shrink-0 rounded-xl bg-[#d4a520]/15 px-3 py-2 text-xs font-bold text-[#d4a520] border border-[#d4a520]/20">
+              Play now
+            </Link>
+          </div>
+        </motion.div>
+      )}
 
       {/* Unlocked Games */}
       <div className="space-y-3">

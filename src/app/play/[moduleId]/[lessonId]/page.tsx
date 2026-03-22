@@ -359,8 +359,31 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               >
                 <div className="text-4xl mb-3">{module.icon}</div>
                 <h1 className="text-2xl font-bold mb-1">{lesson.title}</h1>
-                <p className="text-[var(--foreground)]/40 text-base mb-1">{lesson.titleGerman}</p>
-                <span className="inline-block bg-[#27ae60]/15 text-[#27ae60] text-sm font-bold px-4 py-1.5 rounded-full border border-[#27ae60]/20 mt-3">
+                <p className="text-[var(--foreground)]/40 text-base mb-3">{lesson.titleGerman}</p>
+                <p className="max-w-md text-sm leading-relaxed text-[var(--foreground)]/60 px-2">
+                  {lesson.description}
+                </p>
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs">
+                  <span className="rounded-full border border-[#3b82f6]/20 bg-[#3b82f6]/10 px-3 py-1 text-[#93c5fd]">
+                    🎬 {lesson.videos.length} video{lesson.videos.length === 1 ? '' : 's'}
+                  </span>
+                  <span className="rounded-full border border-[#d4a520]/20 bg-[#d4a520]/10 px-3 py-1 text-[#d4a520]">
+                    📚 {lesson.vocabulary.length} words
+                  </span>
+                  <span className="rounded-full border border-[#27ae60]/20 bg-[#27ae60]/10 px-3 py-1 text-[#86efac]">
+                    📝 {lesson.exercises.length} exercise{lesson.exercises.length === 1 ? '' : 's'}
+                  </span>
+                </div>
+                <div className="mt-4 rounded-2xl border border-[var(--foreground)]/10 bg-[var(--foreground)]/5 p-4 text-left max-w-md mx-auto">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[var(--foreground)]/40 mb-2">How this lesson works</p>
+                  <ul className="space-y-1.5 text-sm text-[var(--foreground)]/60">
+                    <li>• Watch the short teaching videos first</li>
+                    <li>• Flip through vocabulary with audio</li>
+                    <li>• Finish the exercises to lock it in</li>
+                    <li>• Mistakes are okay — hearts are there to help you focus</li>
+                  </ul>
+                </div>
+                <span className="inline-block bg-[#27ae60]/15 text-[#27ae60] text-sm font-bold px-4 py-1.5 rounded-full border border-[#27ae60]/20 mt-4">
                   +{lesson.xpReward} XP
                 </span>
               </motion.div>

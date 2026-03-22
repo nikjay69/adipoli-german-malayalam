@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import { ALL_MODULES } from '@/lib/content/modules';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Mic, MessageCircle, Headphones, Radio } from 'lucide-react';
@@ -89,6 +90,36 @@ export default function PracticePage() {
     return getDueCount(userProgress.srsCards);
   }, [mounted, userProgress.srsCards]);
 
+  const completedLessons = userProgress.completedLessons.length;
+  const totalLessons = ALL_MODULES.reduce((sum, module) => sum + module.lessons.length, 0);
+
+  const recommendedPractice = useMemo(() => {
+    if (dueCount > 0) {
+      return {
+        title: 'Daily Review is your highest-value practice right now',
+        body: `You have ${dueCount} card${dueCount === 1 ? '' : 's'} due. A quick review session will strengthen long-term memory before you do anything else.`,
+        href: '/practice/review',
+        cta: 'Review now',
+      };
+    }
+
+    if (completedLessons < 5) {
+      return {
+        title: 'Start with Speak & Check',
+        body: 'Early on, repeating short phrases out loud builds confidence much faster than passive reading.',
+        href: '/practice/speak',
+        cta: 'Start speaking',
+      };
+    }
+
+    return {
+      title: 'Mix speaking with writing this week',
+      body: 'You already have some lesson momentum. Alternate one speaking session with one writing session to make the language stick.',
+      href: '/practice/write',
+      cta: 'Open writing practice',
+    };
+  }, [dueCount, completedLessons]);
+
   if (!mounted) return (
     <div className="min-h-screen flex items-center justify-center">
       <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
@@ -108,6 +139,32 @@ export default function PracticePage() {
         <p className="text-[var(--foreground)]/40 text-sm mb-6">
           Two-way practice — speak, listen, and get feedback
         </p>
+      </motion.div>
+
+      {/* Recommended next practice */}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.08 }}
+        className="game-card p-4 mb-4 border border-[#d4a520]/20"
+      >
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-[10px] uppercase tracking-wide text-[#d4a520] font-bold mb-1">Recommended next</p>
+            <h3 className="font-bold text-sm mb-1">{recommendedPractice.title}</h3>
+            <p className="text-xs text-[var(--foreground)]/50 leading-relaxed">{recommendedPractice.body}</p>
+          </div>
+          <Link href={recommendedPractice.href} className="shrink-0 rounded-xl bg-[#d4a520]/15 px-3 py-2 text-xs font-bold text-[#d4a520] border border-[#d4a520]/20">
+            {recommendedPractice.cta}
+          </Link>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2 text-[10px] text-[var(--foreground)]/35">
+          <span>{completedLessons}/{totalLessons} lessons completed</span>
+          <span>•</span>
+          <span>{userProgress.learnedVocabulary.length} words learned</span>
+          <span>•</span>
+          <span>{dueCount} review due</span>
+        </div>
       </motion.div>
 
       {/* How it works */}
@@ -180,14 +237,15 @@ export default function PracticePage() {
         ))}
       </div>
 
-      {/* Stats */}
+      {/* Practice notes */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
-        className="mt-6 text-center text-[var(--foreground)]/20 text-xs"
+        className="mt-6 space-y-2 text-center text-xs text-[var(--foreground)]/30"
       >
-        Pronunciation uses your browser's speech recognition (no data sent to servers)
+        <p>Speech-based practice uses your browser microphone tools, so Chrome on desktop/mobile usually works best.</p>
+        <p>Best rhythm: 5 min review → 10 min speaking → 5 min writing.</p>
       </motion.div>
     </div>
   );

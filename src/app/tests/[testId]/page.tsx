@@ -179,6 +179,31 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
     addXP(Math.max(20, correct * 5));
   };
 
+  const totalScorePercent = Math.round((totalCorrect / Math.max(1, totalQuestions)) * 100);
+  const passed = totalScorePercent >= 60;
+
+  const getSectionScore = (kind: 'hoeren' | 'lesen') => {
+    if (!test) return { correct: 0, total: 0, percent: 0 };
+    let correct = 0;
+    let total = 0;
+    for (const part of ['teil1', 'teil2', 'teil3'] as Teil[]) {
+      const qs = test[kind]?.[part] || [];
+      qs.forEach((q: any) => {
+        total++;
+        const userAns = answers[q.id];
+        if (userAns === q.correct) correct++;
+      });
+    }
+    return {
+      correct,
+      total,
+      percent: Math.round((correct / Math.max(1, total)) * 100),
+    };
+  };
+
+  const hoerenScore = getSectionScore('hoeren');
+  const lesenScore = getSectionScore('lesen');
+
   if (!test) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4">
@@ -221,7 +246,7 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
               <p className="text-[var(--foreground)]/40 text-sm mt-1">{test.description}</p>
             </div>
 
-            <div className="space-y-3 mb-6">
+            <div className="space-y-3 mb-4">
               {[
                 { icon: '🎧', label: 'Hören', desc: '15 Fragen · 20 Min', color: '#3b82f6', section: 'hoeren' as Section },
                 { icon: '📖', label: 'Lesen', desc: '15 Fragen · 25 Min', color: '#27ae60', section: 'lesen' as Section },
@@ -237,6 +262,16 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                 </div>
               ))}
             </div>
+
+            <Card className="mb-6">
+              <h3 className="font-bold text-sm mb-2">Smart test strategy</h3>
+              <ul className="space-y-2 text-xs text-[var(--foreground)]/50 leading-relaxed">
+                <li>• In Hören, listen once for the main idea and once for the exact detail.</li>
+                <li>• In Lesen, underline names, times, prices, places, and negatives like <em>nicht</em>.</li>
+                <li>• In Schreiben, cover all 3 points even with short simple sentences.</li>
+                <li>• In Sprechen, clear A1 German beats fancy German. Short and correct wins.</li>
+              </ul>
+            </Card>
 
             <Button onClick={() => startSection('hoeren')} size="lg" fullWidth>
               Start Test
@@ -529,13 +564,13 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
             <div className="text-center mb-6">
               <motion.p initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', delay: 0.2 }}
                 className="text-6xl mb-3">
-                {totalCorrect / totalQuestions >= 0.6 ? '🎉' : '💪'}
+                {passed ? '🎉' : '💪'}
               </motion.p>
               <h1 className="text-2xl font-bold mb-1">
-                {totalCorrect / totalQuestions >= 0.6 ? 'Bestanden!' : 'Weiter üben!'}
+                {passed ? 'Bestanden!' : 'Weiter üben!'}
               </h1>
               <p className="text-[var(--foreground)]/40 text-sm">
-                {totalCorrect / totalQuestions >= 0.6
+                {passed
                   ? 'Adipoli! You passed the Goethe A1 simulation!'
                   : 'You need 60% to pass. Keep practicing — you\'ll get there!'}
               </p>
@@ -553,16 +588,47 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-[#d4a520]">
-                    {Math.round((totalCorrect / Math.max(1, totalQuestions)) * 100)}%
+                    {totalScorePercent}%
                   </div>
                   <div className="text-xs text-[var(--foreground)]/40">Score</div>
                 </div>
               </div>
               <div className="mt-3">
-                <ProgressBar progress={(totalCorrect / Math.max(1, totalQuestions)) * 100}
-                  color={totalCorrect / totalQuestions >= 0.6 ? 'success' : 'warning'} size="md" />
+                <ProgressBar progress={totalScorePercent}
+                  color={passed ? 'success' : 'warning'} size="md" />
                 <p className="text-xs text-center text-[var(--foreground)]/30 mt-1">60% needed to pass</p>
               </div>
+            </Card>
+
+            <Card className="mb-4">
+              <h3 className="font-bold text-sm mb-3">Section breakdown</h3>
+              <div className="space-y-3 text-sm">
+                <div>
+                  <div className="mb-1 flex items-center justify-between">
+                    <span className="text-[#3b82f6] font-semibold">🎧 Hören</span>
+                    <span className="text-[var(--foreground)]/60">{hoerenScore.correct}/{hoerenScore.total} · {hoerenScore.percent}%</span>
+                  </div>
+                  <ProgressBar progress={hoerenScore.percent} color={hoerenScore.percent >= 60 ? 'success' : 'warning'} size="sm" />
+                </div>
+                <div>
+                  <div className="mb-1 flex items-center justify-between">
+                    <span className="text-[#27ae60] font-semibold">📖 Lesen</span>
+                    <span className="text-[var(--foreground)]/60">{lesenScore.correct}/{lesenScore.total} · {lesenScore.percent}%</span>
+                  </div>
+                  <ProgressBar progress={lesenScore.percent} color={lesenScore.percent >= 60 ? 'success' : 'warning'} size="sm" />
+                </div>
+              </div>
+            </Card>
+
+            <Card className="mb-4">
+              <h3 className="font-bold text-sm mb-2">What to do next</h3>
+              <p className="text-xs text-[var(--foreground)]/50 leading-relaxed">
+                {passed
+                  ? 'Great job. Now strengthen weak spots by replaying one speaking practice and one writing task before your next mock test.'
+                  : hoerenScore.percent < lesenScore.percent
+                  ? 'Your listening is weaker than your reading right now. Spend the next session on vocabulary audio, short listening loops, and repeat-after-audio practice.'
+                  : 'Your reading needs more support right now. Focus on short texts, exam-style scanning, and sentence-level grammar review before the next test.'}
+              </p>
             </Card>
 
             <div className="flex flex-col gap-2">
