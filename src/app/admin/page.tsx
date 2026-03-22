@@ -23,6 +23,7 @@ import {
   MessageSquare,
   CreditCard,
   Info,
+  ClipboardList,
 } from 'lucide-react';
 import { useAuthStore, isSupabaseReady } from '@/lib/auth-store';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
@@ -82,8 +83,24 @@ export default function AdminPage() {
   const [payments, setPayments] = useState<PaymentRecord[]>([]);
   const [supabaseActive, setSupabaseActive] = useState(false);
   const [loadingUsers, setLoadingUsers] = useState(true);
+  const [planContent, setPlanContent] = useState('');
+  const [loadingPlan, setLoadingPlan] = useState(true);
+  const [savingPlan, setSavingPlan] = useState(false);
+  const [planMessage, setPlanMessage] = useState('');
 
   const fetchData = useCallback(async () => {
+    try {
+      const res = await fetch('/api/admin/plan');
+      if (res.ok) {
+        const data = await res.json();
+        setPlanContent(data.content || '');
+      }
+    } catch {
+      // ignore plan loading errors here; UI will show fallback state
+    } finally {
+      setLoadingPlan(false);
+    }
+
     if (isSupabaseReady()) {
       setSupabaseActive(true);
       try {
@@ -208,6 +225,29 @@ export default function AdminPage() {
     users.forEach((u) => counts[u.plan]++);
     return counts;
   }, [users]);
+
+  const savePlan = async () => {
+    setPlanMessage('');
+    setSavingPlan(true);
+    try {
+      const res = await fetch('/api/admin/plan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: planContent }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || 'Could not save the plan');
+      }
+
+      setPlanMessage('Plan saved successfully.');
+    } catch (error) {
+      setPlanMessage(error instanceof Error ? error.message : 'Could not save the plan');
+    } finally {
+      setSavingPlan(false);
+    }
+  };
 
   if (!mounted || !isLoggedIn || !user?.isAdmin) {
     return (
@@ -568,11 +608,62 @@ export default function AdminPage() {
         </motion.div>
       )}
 
-      {/* Quick Links */}
+      {/* Course Plan */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
+        className="mb-6"
+      >
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-sm font-semibold text-[var(--foreground)]/60 uppercase tracking-wider flex items-center gap-2">
+            <ClipboardList className="w-4 h-4" /> Course Plan
+          </h2>
+          <span className="text-xs text-[var(--foreground)]/30">docs/COURSE_PLAN_10_10.md</span>
+        </div>
+
+        <div className="game-card overflow-hidden">
+          {loadingPlan ? (
+            <div className="p-6 text-sm text-[var(--foreground)]/40">Loading plan...</div>
+          ) : !planContent ? (
+            <div className="p-6 text-sm text-[var(--foreground)]/40">Could not load the plan file.</div>
+          ) : (
+            <div className="p-4">
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <p className="text-xs text-[var(--foreground)]/40">
+                  Edit the markdown directly here and save when ready.
+                </p>
+                <button
+                  onClick={savePlan}
+                  disabled={savingPlan}
+                  className="rounded-xl border border-[#d4a520]/20 bg-[#d4a520]/10 px-3 py-2 text-xs font-bold text-[#d4a520] disabled:opacity-50"
+                >
+                  {savingPlan ? 'Saving...' : 'Save Plan'}
+                </button>
+              </div>
+
+              {planMessage && (
+                <div className="mb-3 rounded-xl border border-[var(--foreground)]/10 bg-[var(--foreground)]/5 px-3 py-2 text-xs text-[var(--foreground)]/60">
+                  {planMessage}
+                </div>
+              )}
+
+              <textarea
+                value={planContent}
+                onChange={(e) => setPlanContent(e.target.value)}
+                className="min-h-[32rem] w-full rounded-xl border border-[var(--foreground)]/10 bg-[var(--foreground)]/5 p-4 font-mono text-xs leading-6 text-[var(--foreground)]/85 outline-none focus:border-[#d4a520]/40"
+                spellCheck={false}
+              />
+            </div>
+          )}
+        </div>
+      </motion.div>
+
+      {/* Quick Links */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.45 }}
       >
         <h2 className="text-sm font-semibold text-[var(--foreground)]/60 uppercase tracking-wider mb-3">
           Quick Links

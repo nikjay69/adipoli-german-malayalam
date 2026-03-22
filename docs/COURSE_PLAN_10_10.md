@@ -287,11 +287,74 @@ Must finish before mass content or media generation:
 ### Stage 1 — make the course teach, not just test
 **Launch-critical:** yes
 
-Build in this order:
-1. real listening comprehension
-2. lesson/video script layer for the core modules
-3. production exercises in the highest-value modules
-4. wire SRS into the lesson loop
+#### Official build order
+
+##### 1. Real listening comprehension
+**Why first:** Goethe A1 Hören is impossible to train honestly if text is still visible.
+
+**Done means:**
+- all Goethe mock Hören items use playable audio instead of visible source text
+- transcript stays hidden until after answering
+- replay behavior matches intended exam practice rules
+- at least one sample listening pattern exists in normal lessons, not only in mocks
+
+**Do not start next item at full scale until:**
+- Hören works as actual listening, not reading disguised as listening
+
+---
+
+##### 2. Lesson / video script layer for core modules
+**Why second:** the app is built around lesson teaching, and scripts are the cheapest high-leverage asset for later video/audio production.
+
+**Done means:**
+- each priority lesson has a clear teaching goal
+- each lesson has a usable script or structured script plan
+- scripts are editable, reviewable, and reusable across app/video/audio
+- high-impact foundational lessons are covered first
+
+**Priority coverage first:**
+- Modules 1–6
+- Module 14
+- Modules 17–18
+
+**Do not start bulk video generation until:**
+- the script layer is trusted and stable
+
+---
+
+##### 3. Production exercises in the highest-value modules
+**Why third:** learners do not pass A1 by recognition alone.
+
+**Done means:**
+- priority lessons contain free-text / dictation / guided output tasks
+- exercises train short safe A1 answers, not fancy output
+- AI checks are rubric-assisted where possible
+- production tasks cover both life-useful and exam-useful patterns
+
+**Priority coverage first:**
+- self-introduction
+- personal information
+- numbers/time
+- forms/messages
+- requests/questions
+- core exam tasks
+
+**Do not scale to all modules until:**
+- the first production patterns feel reliable and useful
+
+---
+
+##### 4. Wire SRS into the lesson loop
+**Why fourth:** learning collapses if vocabulary is not retained.
+
+**Done means:**
+- new vocab is automatically added to review
+- review demand shows up in the learner flow
+- SRS is not a side feature; it is part of the habit loop
+- students are nudged back into review before forgetting compounds
+
+**Do not treat SRS as done until:**
+- lesson completion actually feeds the review system automatically
 
 **Why first:** these are the features most directly tied to actual learning and A1 pass probability.
 
