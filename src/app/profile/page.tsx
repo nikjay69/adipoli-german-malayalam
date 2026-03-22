@@ -197,7 +197,7 @@ export default function ProfilePage() {
                       : 'bg-gray-100 dark:bg-gray-800 opacity-50'
                   }`}
                 >
-                  <div className="text-3xl mb-1">{isUnlocked ? achievement.icon : '🔒'}</div>
+                  <div className={`text-3xl mb-1${isUnlocked ? ' animate-unlock' : ''}`}>{isUnlocked ? achievement.icon : '🔒'}</div>
                   <h3 className={`text-xs font-medium ${
                     isUnlocked ? 'text-gray-900 dark:text-white' : 'text-gray-500'
                   }`}>
@@ -283,7 +283,7 @@ export default function ProfilePage() {
                   <Award className="w-5 h-5" style={{ color: readiness.color }} />
                   A1 Exam Readiness
                 </h2>
-                <span className="text-2xl font-bold" style={{ color: readiness.color }}>{readiness.score}%</span>
+                <span className={`text-2xl font-bold${readiness.score >= 60 ? ' animate-shimmer' : ''}`} style={{ color: readiness.color }}>{readiness.score}%</span>
               </div>
               <ProgressBar progress={readiness.score} color={readiness.score >= 60 ? 'success' : 'warning'} size="md" />
               <p className="text-xs text-gray-500 mt-1 mb-4">{readiness.label} · 60% needed to pass Goethe A1</p>

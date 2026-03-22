@@ -66,7 +66,7 @@ export default function LearnPage() {
                 {/* Module Header */}
                 <div className="flex items-start gap-4 mb-4">
                   <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
+                    className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl flex-shrink-0${moduleProgress === 100 ? ' animate-lamp' : ''}`}
                     style={{ backgroundColor: module.color + '20' }}
                   >
                     {isModuleLocked ? <Lock className="w-6 h-6 text-gray-400" /> : module.icon}
@@ -156,7 +156,7 @@ export default function LearnPage() {
                                 ) : isCompleted ? (
                                   <CheckCircle className="w-4 h-4 text-white" />
                                 ) : (
-                                  <span className="text-white text-sm font-bold">{lessonIndex + 1}</span>
+                                  <span className={`text-white text-sm font-bold${lessonIndex === 0 || isPreviousLessonComplete ? ' animate-unlock' : ''}`}>{lessonIndex + 1}</span>
                                 )}
                               </div>
                               <div className="flex-1 min-w-0">

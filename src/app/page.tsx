@@ -113,7 +113,7 @@ export default function Home() {
         {/* XP */}
         <div className="flex items-center gap-2 bg-[#d4a520]/15 border border-[#d4a520]/30 rounded-full px-4 py-2">
           <Star className="w-4 h-4 text-[#d4a520] fill-[#d4a520]" />
-          <span className="font-bold text-[#d4a520]">{userProgress.xp}</span>
+          <span className={`font-bold text-[#d4a520]${userProgress.xp > 0 ? ' animate-shimmer' : ''}`}>{userProgress.xp}</span>
         </div>
       </motion.div>
 
@@ -202,7 +202,7 @@ export default function Home() {
                         A1 Exam Readiness
                       </span>
                     </div>
-                    <span className="text-sm font-bold" style={{ color: r.color }}>
+                    <span className={`text-sm font-bold${r.score >= 60 ? ' animate-shimmer' : ''}`} style={{ color: r.color }}>
                       {r.score}%
                     </span>
                   </div>
@@ -306,11 +306,11 @@ export default function Home() {
         className="mt-6"
       >
         <p className="text-[var(--foreground)]/40 text-sm text-center mb-4">
-          <span className="text-[#27ae60]">Kerala</span>
-          <span className="mx-1 text-[var(--foreground)]/20">→</span>
-          <span className="text-[#d4a520]">Airport Gate</span>
-          <span className="mx-1 text-[var(--foreground)]/20">→</span>
-          <span className="text-[var(--foreground)]/20">Germany ✈️</span>
+          <span className="text-[#27ae60]">Home 🏠</span>
+          <span className="mx-1.5 text-[var(--foreground)]/15">···</span>
+          <span className="text-[#d4a520]">Gate ✈️</span>
+          <span className="mx-1.5 text-[var(--foreground)]/15">···</span>
+          <span className="text-[var(--foreground)]/20">Germany 🇩🇪</span>
         </p>
 
         {/* Location nodes */}
@@ -330,7 +330,7 @@ export default function Home() {
                   whileHover={{ scale: 1.1 }}
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-xs flex-shrink-0
                     ${isCurrent
-                      ? 'bg-[#d4a520]/20 border-2 border-[#d4a520] shadow-md shadow-[#d4a520]/20'
+                      ? 'bg-[#d4a520]/20 border-2 border-[#d4a520] shadow-md shadow-[#d4a520]/20 animate-marker'
                       : isReached
                       ? 'bg-[#27ae60]/20 border-2 border-[#27ae60]/50'
                       : 'bg-[var(--card-bg)] border border-[var(--card-border)]'
@@ -341,7 +341,7 @@ export default function Home() {
                 <span className={`text-[7px] text-center leading-tight truncate w-full
                   ${isCurrent ? 'text-[#d4a520] font-bold' : isReached ? 'text-[var(--foreground)]/50' : 'text-[var(--foreground)]/25'}`}
                 >
-                  {loc.name.split(' ')[0]}
+                  {loc.shortName}
                 </span>
               </div>
             );

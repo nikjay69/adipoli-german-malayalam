@@ -185,7 +185,7 @@ export default function GamesPage() {
         <div className="game-card p-3 text-center">
           <div className="flex items-center justify-center gap-1 mb-1">
             <Star className="w-4 h-4 text-[#d4a520] fill-[#d4a520]" />
-            <span className="text-lg font-bold">{userProgress.xp}</span>
+            <span className="text-lg font-bold animate-shimmer">{userProgress.xp}</span>
           </div>
           <div className="text-[10px] text-[var(--foreground)]/40">XP</div>
         </div>
@@ -226,7 +226,7 @@ export default function GamesPage() {
                         {game.name}
                       </h3>
                       {game.tag && (
-                        <span className="text-[9px] font-bold bg-[#ff6b9d]/20 text-[#ff6b9d] px-1.5 py-0.5 rounded-full">
+                        <span className={`text-[9px] font-bold bg-[#ff6b9d]/20 text-[#ff6b9d] px-1.5 py-0.5 rounded-full${game.tag === 'NEW' ? ' animate-rickshaw' : ''}`}>
                           {game.tag}
                         </span>
                       )}

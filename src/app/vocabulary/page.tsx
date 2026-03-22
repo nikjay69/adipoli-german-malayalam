@@ -315,7 +315,7 @@ export default function VocabularyPage() {
                       <p className="text-sm text-[#e94560]">{word.malayalam}</p>
                     </div>
                     {isLearned ? (
-                      <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 animate-lamp" />
                     ) : (
                       <button
                         onClick={() => { learnVocabulary(word.id); addXP(5); }}

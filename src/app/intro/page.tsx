@@ -128,7 +128,7 @@ export default function IntroPage() {
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, type: 'spring' }}
-              className="flex items-end gap-3 mb-6"
+              className="flex items-end gap-3 mb-6 animate-palm"
             >
               <Kuttan mood="waving" size="lg" />
               <Appu mood="happy" size="sm" />
@@ -238,9 +238,9 @@ export default function IntroPage() {
                   <div className="flex flex-col items-center w-8">
                     <div className={`w-7 h-7 rounded-full flex items-center justify-center text-sm
                       ${i === 0
-                        ? 'bg-[#27ae60]/20 border-2 border-[#27ae60]'
+                        ? 'bg-[#27ae60]/20 border-2 border-[#27ae60] animate-boat'
                         : i === JOURNEY_LOCATIONS.length - 1
-                        ? 'bg-[#d4a520]/20 border-2 border-[#d4a520]'
+                        ? 'bg-[#d4a520]/20 border-2 border-[#d4a520] animate-takeoff'
                         : 'bg-[var(--card-bg)] border border-[var(--card-border)]'
                       }`}
                     >
