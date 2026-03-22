@@ -305,7 +305,13 @@ export default function Home() {
         transition={{ delay: 0.7 }}
         className="mt-6"
       >
-        <p className="text-[var(--foreground)]/40 text-sm text-center mb-4">Kerala → Germany</p>
+        <p className="text-[var(--foreground)]/40 text-sm text-center mb-4">
+          <span className="text-[#27ae60]">Kerala</span>
+          <span className="mx-1 text-[var(--foreground)]/20">→</span>
+          <span className="text-[#d4a520]">Airport Gate</span>
+          <span className="mx-1 text-[var(--foreground)]/20">→</span>
+          <span className="text-[var(--foreground)]/20">Germany ✈️</span>
+        </p>
 
         {/* Location nodes */}
         <div className="flex justify-between items-center px-1 mb-3 overflow-x-auto">

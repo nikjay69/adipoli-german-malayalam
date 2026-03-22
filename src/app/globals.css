@@ -336,6 +336,123 @@ body {
   text-shadow: 0 0 8px #c0392b, 0 0 16px #c0392b;
 }
 
+/* ==================== KERALA THEMED ANIMATIONS ==================== */
+
+/* Coconut palm sway */
+@keyframes palm-sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+.animate-palm { animation: palm-sway 4s ease-in-out infinite; transform-origin: bottom center; }
+
+/* Backwater ripple */
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+.animate-ripple { animation: ripple 2s ease-out infinite; }
+
+/* Kathakali eye blink */
+@keyframes eye-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+.animate-blink { animation: eye-blink 4s ease-in-out infinite; }
+
+/* Autorickshaw bounce */
+@keyframes rickshaw {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(0.5deg); }
+  75% { transform: translateY(-2px) rotate(-0.5deg); }
+}
+.animate-rickshaw { animation: rickshaw 0.8s ease-in-out infinite; }
+
+/* Lesson unlock burst */
+@keyframes unlock-burst {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-unlock { animation: unlock-burst 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+/* Score counter tick up */
+@keyframes count-up {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.animate-count { animation: count-up 0.3s ease-out; }
+
+/* Journey path pulse (dotted line between locations) */
+@keyframes path-flow {
+  0% { stroke-dashoffset: 20; }
+  100% { stroke-dashoffset: 0; }
+}
+.animate-path { animation: path-flow 1s linear infinite; }
+
+/* Boat glide on backwaters */
+@keyframes boat-glide {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(3px) translateY(-1px); }
+  50% { transform: translateX(0) translateY(-2px); }
+  75% { transform: translateX(-3px) translateY(-1px); }
+}
+.animate-boat { animation: boat-glide 3s ease-in-out infinite; }
+
+/* Temple lamp flicker */
+@keyframes lamp-flicker {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.85; filter: brightness(1.2); }
+}
+.animate-lamp { animation: lamp-flicker 2s ease-in-out infinite; }
+
+/* Plane takeoff (for airport gate) */
+@keyframes takeoff {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  100% { transform: translateX(30px) translateY(-20px) rotate(-10deg); opacity: 0; }
+}
+.animate-takeoff { animation: takeoff 2s ease-in forwards; }
+
+/* Gold shimmer (for XP and achievements) */
+@keyframes gold-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, #d4a520 0%, #ffd93d 25%, #d4a520 50%, #ffd93d 75%, #d4a520 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gold-shimmer 3s linear infinite;
+}
+
+/* Mundu wave (traditional Kerala cloth) */
+@keyframes mundu-wave {
+  0%, 100% { transform: skewX(0deg); }
+  25% { transform: skewX(1deg); }
+  75% { transform: skewX(-1deg); }
+}
+.animate-mundu { animation: mundu-wave 3s ease-in-out infinite; }
+
+/* Correct answer celebration sparkle */
+@keyframes sparkle-burst {
+  0% { transform: scale(0) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1) rotate(180deg); opacity: 1; }
+  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+/* Location marker bounce */
+@keyframes marker-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-marker { animation: marker-bounce 1.5s ease-in-out infinite; }
+
+/* Journey map connection line drawing */
+@keyframes draw-line {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}
+
 /* ==============================================
    PRINT STYLES — Lesson Script PDFs
    ============================================== */

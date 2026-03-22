@@ -14,12 +14,23 @@ export interface JourneyLocation {
   };
 }
 
+/**
+ * A1 Journey: Entirely in Kerala
+ *
+ * The user starts in a village and ends at the airport gate,
+ * READY to fly to Germany — but not yet there.
+ *
+ * Germany is the dream on the horizon:
+ * - A1: Kerala Village → Kochi Airport Gate (learning, preparing)
+ * - A2: The Flight → Landing → First Weeks in Germany
+ * - B1: Settling → Working → Thriving in Germany
+ */
 export const JOURNEY_LOCATIONS: JourneyLocation[] = [
   {
-    id: 'kerala-village',
+    id: 'village',
     name: 'Kerala Village',
     nameManglish: 'Nammude gramam',
-    description: 'Your journey begins here in a small Kerala village',
+    description: 'Your journey begins at home — dreaming of Germany',
     icon: '\u{1F334}',
     position: { x: 5, y: 90 },
     moduleRange: [0, 0],
@@ -29,127 +40,126 @@ export const JOURNEY_LOCATIONS: JourneyLocation[] = [
     },
   },
   {
+    id: 'backwaters',
+    name: 'Backwaters',
+    nameManglish: 'Kayalil thudangaam!',
+    description: 'First words, sounds, greetings — your German begins',
+    icon: '\u{1F6F6}',
+    position: { x: 12, y: 82 },
+    moduleRange: [1, 2],
+    theme: {
+      bgGradient: 'linear-gradient(135deg, #0d3b2a 0%, #1a4a3a 100%)',
+      accent: '#22d3ee',
+    },
+  },
+  {
+    id: 'temple-town',
+    name: 'Temple Town',
+    nameManglish: 'Ambalam kazhinju!',
+    description: 'Numbers, time, family — your world expands',
+    icon: '\u{1F6D5}',
+    position: { x: 22, y: 73 },
+    moduleRange: [3, 4],
+    theme: {
+      bgGradient: 'linear-gradient(135deg, #4a3000 0%, #6b4400 100%)',
+      accent: '#fbbf24',
+    },
+  },
+  {
     id: 'kochi',
     name: 'Kochi',
-    nameManglish: 'Kochiyil ethi!',
-    description: 'Learn the basics — greetings, sounds, first words',
-    icon: '\u{1F3D8}\uFE0F',
-    position: { x: 15, y: 80 },
-    moduleRange: [1, 2],
+    nameManglish: 'Fort Kochi ethi!',
+    description: 'Daily life, food, shopping — you can talk about your day',
+    icon: '\u{1F3D7}\uFE0F',
+    position: { x: 33, y: 64 },
+    moduleRange: [5, 6],
     theme: {
       bgGradient: 'linear-gradient(135deg, #1a1a3e 0%, #16213e 100%)',
       accent: '#ff6b9d',
     },
   },
   {
-    id: 'kochi-city',
-    name: 'Kochi City',
-    nameManglish: 'City-il ready!',
-    description: 'Numbers, time, family — building your foundation',
-    icon: '\u{1F3D9}\uFE0F',
-    position: { x: 25, y: 70 },
-    moduleRange: [3, 4],
-    theme: {
-      bgGradient: 'linear-gradient(135deg, #3d2e00 0%, #5a4400 100%)',
-      accent: '#ffd93d',
-    },
-  },
-  {
-    id: 'kochi-airport',
-    name: 'Kochi Airport',
-    nameManglish: 'Airport ready!',
-    description: 'Daily routines and food — preparing for Germany',
-    icon: '\u2708\uFE0F',
-    position: { x: 35, y: 60 },
-    moduleRange: [5, 6],
-    theme: {
-      bgGradient: 'linear-gradient(135deg, #4a2800 0%, #6b3a00 100%)',
-      accent: '#f59e0b',
-    },
-  },
-  {
-    id: 'departure',
-    name: 'Departure',
-    nameManglish: 'Pokam! Ready aanu!',
-    description: 'Shopping and housing — getting ready to leave',
-    icon: '\u{1F6EB}',
-    position: { x: 45, y: 50 },
+    id: 'marine-drive',
+    name: 'Marine Drive',
+    nameManglish: 'Shopping & life ready!',
+    description: 'Money, housing, writing — getting practical',
+    icon: '\u{1F307}',
+    position: { x: 44, y: 55 },
     moduleRange: [7, 8],
     theme: {
-      bgGradient: 'linear-gradient(135deg, #5a2000 0%, #7a3000 100%)',
-      accent: '#ea580c',
+      bgGradient: 'linear-gradient(135deg, #1e2a4a 0%, #2a3a5e 100%)',
+      accent: '#f97316',
     },
   },
   {
-    id: 'in-flight',
-    name: 'In Flight',
-    nameManglish: 'Sky-il aanu!',
-    description: 'Travel, directions, and health — survival German',
-    icon: '\u2601\uFE0F',
-    position: { x: 55, y: 40 },
+    id: 'german-class',
+    name: 'German Class',
+    nameManglish: 'Class-il padikkaam!',
+    description: 'Travel, health, directions — survival German mastered',
+    icon: '\u{1F4DA}',
+    position: { x: 55, y: 46 },
     moduleRange: [9, 10],
     theme: {
-      bgGradient: 'linear-gradient(135deg, #1e3a5f 0%, #2a5298 100%)',
+      bgGradient: 'linear-gradient(135deg, #2d1b4e 0%, #3d2b5e 100%)',
+      accent: '#a78bfa',
+    },
+  },
+  {
+    id: 'embassy',
+    name: 'German Embassy',
+    nameManglish: 'Visa interview!',
+    description: 'Work, hobbies, past tense — speaking about your life',
+    icon: '\u{1F3E2}',
+    position: { x: 65, y: 37 },
+    moduleRange: [11, 12],
+    theme: {
+      bgGradient: 'linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)',
       accent: '#3b82f6',
     },
   },
   {
-    id: 'frankfurt',
-    name: 'Frankfurt Airport',
-    nameManglish: 'Germany ethi!',
-    description: 'Work, study, and hobbies — arriving in Germany',
-    icon: '\u{1F1E9}\u{1F1EA}',
-    position: { x: 65, y: 32 },
-    moduleRange: [11, 12],
+    id: 'visa-office',
+    name: 'Visa Approved!',
+    nameManglish: 'Visa kitti machane!',
+    description: 'Formal German, bureaucracy, letters — Germany paperwork ready',
+    icon: '\u{1F4C4}',
+    position: { x: 74, y: 28 },
+    moduleRange: [13, 14],
     theme: {
-      bgGradient: 'linear-gradient(135deg, #4a0e0e 0%, #6b1010 100%)',
+      bgGradient: 'linear-gradient(135deg, #0a2a0a 0%, #1a4a1a 100%)',
+      accent: '#22c55e',
+    },
+  },
+  {
+    id: 'packing',
+    name: 'Packing Bags',
+    nameManglish: 'Bag pack cheyyaam!',
+    description: 'Culture prep, slang, A2 bridge — almost there',
+    icon: '\u{1F9F3}',
+    position: { x: 83, y: 19 },
+    moduleRange: [15, 16],
+    theme: {
+      bgGradient: 'linear-gradient(135deg, #3d1a1a 0%, #4a2020 100%)',
       accent: '#ef4444',
     },
   },
   {
-    id: 'train-to-berlin',
-    name: 'Train to Berlin',
-    nameManglish: 'Berlin-lekku train!',
-    description: 'Past tense and bureaucracy — navigating German life',
-    icon: '\u{1F682}',
-    position: { x: 75, y: 24 },
-    moduleRange: [13, 14],
-    theme: {
-      bgGradient: 'linear-gradient(135deg, #2d1b4e 0%, #1a1040 100%)',
-      accent: '#a855f7',
-    },
-  },
-  {
-    id: 'berlin',
-    name: 'Berlin',
-    nameManglish: 'Berlin-il settled!',
-    description: 'German culture and A2.1 bridge — you belong here now',
-    icon: '\u{1F3DB}\uFE0F',
-    position: { x: 85, y: 16 },
-    moduleRange: [15, 16],
-    theme: {
-      bgGradient: 'linear-gradient(135deg, #3d3d00 0%, #5a5a00 100%)',
-      accent: '#ffd93d',
-    },
-  },
-  {
-    id: 'exam-hall',
-    name: 'Exam Hall',
-    nameManglish: 'Prüfung time!',
-    description: 'Goethe A1 exam prep — prove what you\'ve learned!',
-    icon: '\u{1F393}',
-    position: { x: 93, y: 8 },
+    id: 'airport-gate',
+    name: 'Airport Gate',
+    nameManglish: 'Gate-il ready! Germany vilikkunnu!',
+    description: 'Goethe A1 exam prep — prove you\'re ready to fly!',
+    icon: '\u{2708}\uFE0F',
+    position: { x: 93, y: 10 },
     moduleRange: [17, 18],
     theme: {
-      bgGradient: 'linear-gradient(135deg, #0d3b0d 0%, #1a5a1a 100%)',
-      accent: '#4ade80',
+      bgGradient: 'linear-gradient(135deg, #d4a520 0%, #b8891a 100%)',
+      accent: '#fbbf24',
     },
   },
 ];
 
 /** Get the current journey location based on completed modules */
 export function getCurrentLocation(completedModuleCount: number): JourneyLocation {
-  // Find the last location whose module range start is <= completed count
   for (let i = JOURNEY_LOCATIONS.length - 1; i >= 0; i--) {
     if (completedModuleCount >= JOURNEY_LOCATIONS[i].moduleRange[0]) {
       return JOURNEY_LOCATIONS[i];
