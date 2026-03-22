@@ -4,7 +4,7 @@ export const MODULE_2: Module = {
   id: 2,
   title: "Who Are You?",
   titleGerman: "Wer bist du?",
-  description: "Learn to introduce yourself fully — name, origin, profession, and languages you speak! By the end, you'll be giving full self-introductions like a pro.",
+  description: "This module builds the personal-information core of A1: name, origin, profession, languages, and simple identity statements. It should directly strengthen form filling, self-introduction, and short exam-style conversations.",
   icon: "🙋",
   color: "#0f3460",
   totalHours: 12,
@@ -17,7 +17,7 @@ export const MODULE_2: Module = {
       id: "2-1",
       title: "What's Your Name?",
       titleGerman: "Wie heißt du?",
-      description: "Learn to ask and tell names in German — plus how to help Germans pronounce your Kerala name without turning it into a tongue-twister!",
+      description: "A1 learners must control this cold: asking names, saying their own name, spelling it clearly, and reacting politely. This lesson should move learners from recognition to actual spoken self-introduction.",
       duration: "60 min",
       xpReward: 150,
       videos: [
@@ -179,7 +179,7 @@ export const MODULE_2: Module = {
       id: "2-2",
       title: "Where Are You From?",
       titleGerman: "Woher kommst du?",
-      description: "Countries, nationalities, continents — and the grammar behind 'Ich komme aus'. Malayali globe-trotters, this one's for you!",
+      description: "Keep the focus on usable A1 output: where are you from, what nationality are you, and what languages do you speak. The lesson should prioritize exam- and life-useful self-description over decorative geography.",
       duration: "60 min",
       xpReward: 150,
       videos: [

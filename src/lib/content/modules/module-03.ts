@@ -5,7 +5,7 @@ export const MODULE_3: Module = {
   id: 3,
   title: "Numbers & Time",
   titleGerman: "Zahlen und Zeit",
-  description: "Master German numbers, tell time like a pro, and learn days, months, and dates. Numbers in German have a fun twist — they're said backwards compared to English!",
+  description: "Numbers, time, dates, and scheduling are essential A1 survival skills. This module should help learners handle prices, phone numbers, appointments, birthdays, and simple exam listening tasks without freezing.",
   icon: "🔢",
   color: "#10b981",
   totalHours: 12,
@@ -16,7 +16,7 @@ export const MODULE_3: Module = {
       id: "3-1",
       title: "Numbers 0-20",
       titleGerman: "Zahlen 0-20",
-      description: "Learn to count from zero to twenty in German. Malayalam speakers will find some number sounds surprisingly familiar!",
+      description: "This lesson should make 0–20 automatic enough for prices, phone numbers, ages, and simple listening tasks. The goal is not just recognition, but fast retrieval under light pressure.",
       duration: "60 min",
       xpReward: 150,
       videos: [

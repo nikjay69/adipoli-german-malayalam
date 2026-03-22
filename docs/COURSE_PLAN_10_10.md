@@ -17,6 +17,32 @@ Critical self-assessment rated the course 5.5/10 for actually passing Goethe A1.
 
 ---
 
+## Re-prioritized roadmap (exam leverage first)
+
+### Tier A — Must-have for >90% A1 pass probability
+1. **Real listening comprehension**
+2. **Production exercises**
+3. **Spaced repetition (SRS) actually in the learning loop**
+4. **Free-form writing with A1-safe feedback**
+5. **Extended speaking drills with structured scoring**
+6. **Goethe Wortliste coverage check + gap filling**
+7. **Exam-readiness checkpoints**
+
+### Tier B — Strong premium uplift, but not the first bottleneck
+8. **Adaptive remediation / difficulty control**
+9. **Selective video production using scripts + controlled templates**
+10. **Engagement science extras** (weekly reports, mastery visuals, forgetting curve, streak protection)
+
+### Design principles to preserve while building
+- **AI should assist, not become the judge of truth.** Use rubrics, acceptable answer bands, and pattern checks wherever possible.
+- **Train safe A1 output.** Short, correct, high-probability answers beat fancy German.
+- **Use fewer deeper loops.** Reuse the same core sentence patterns across listening, speaking, writing, and review.
+- **Measure readiness.** Add checkpoints that prove the learner can pass, not just consume content.
+- **Do not assume AI video is reliable enough for bulk course production.** Use it selectively for prototyping, short explainers, promo assets, and high-impact lessons — not as the blind default for hours of teaching.
+- **Protect the credit budget.** The €250 Google credit pool should be reserved for high-leverage media tasks that are hard to replace cheaply, not spent on mass generation with uncertain output quality.
+
+---
+
 ## PHASE 1: Real Listening Comprehension (Hören Fix)
 
 **Problem:** Hören exercises show text on screen. Real exam plays audio you can't read.
@@ -48,40 +74,41 @@ Critical self-assessment rated the course 5.5/10 for actually passing Goethe A1.
 
 ---
 
-## PHASE 2: Actual Video Lessons (Remotion)
+## PHASE 2: Script Layer + Controlled Video Strategy
 
-**Problem:** 146 videos are placeholder outlines. No actual teaching.
+**Problem:** 146 videos are placeholder outlines, but bulk AI video generation is not reliable enough to trust for hours of final teaching content.
 
-**Solution:** Generate animated lesson videos using Remotion (React-based video renderer).
+**Solution:** Prioritize robust scripts and controlled visual templates first, then use credits selectively for high-impact video production.
 
 ### What to build:
-1. **Remotion video project** (`video/` directory):
-   - Install Remotion
-   - Create video templates that reuse the app's design system
-   - Templates: Title slide, Vocabulary table, Grammar chart, Dialogue, Cultural comparison, Practice prompt
+1. **Video script generation** (already have `scripts/generate-scripts.ts`):
+   - Generate full narration scripts for all unscripted videos
+   - Keep scripts editable, auditable, and reusable across app/video/audio
+   - Use Gemini Flash only where it saves real time
 
-2. **Video script generation** (already have `scripts/generate-scripts.ts`):
-   - Generate full narration scripts for all 140 unscripted videos
-   - Use Gemini Flash (costs ~€1)
+2. **Controlled visual lesson system**:
+   - Reuse app design for structured lesson visuals
+   - Templates: title slide, vocabulary table, grammar chart, dialogue, cultural comparison, practice prompt
+   - Favor deterministic templates over fully generative visuals
 
-3. **Video composition pipeline**:
-   - Script → edge-tts audio (Manglish narration + German pronunciation)
-   - Script sections → Remotion slides (animated React components)
-   - Combine into MP4
-   - Upload to YouTube as unlisted
+3. **Pilot video composition pipeline**:
+   - Script → narration/audio
+   - Script sections → controlled visual scenes
+   - Combine into a small set of MP4 pilots
+   - Validate quality before scaling
 
-4. **Priority: Generate videos for modules 1-6 first** (foundations):
-   - ~50 videos covering basics
-   - Students need these before exercises make sense
+4. **Priority: Pilot a few high-impact foundational lessons first**
+   - Start with modules 1-3 or other high-leverage explainers
+   - Prove the workflow before trying to produce dozens of videos
 
-### Per video output:
-- 8-12 minute MP4 with:
-  - Animated title/section slides
-  - Vocabulary tables with pronunciation
-  - Grammar charts with highlighting
-  - Example dialogues
-  - Cultural parallels
-  - Narrated in Manglish with German audio segments
+### Per video output goal:
+- Clear, teachable, low-error lesson video with:
+  - structured visuals
+  - accurate vocabulary support
+  - grammar highlighting
+  - example dialogues
+  - cultural bridges where useful
+  - narration that can later be reused or replaced
 
 ---
 
@@ -246,31 +273,122 @@ Critical self-assessment rated the course 5.5/10 for actually passing Goethe A1.
 
 ## Implementation Order (What I Can Build Now)
 
-### Batch 1 (Buildable immediately — code changes):
-- [x] SRS engine + daily review page ✅ (SM-2 algorithm, /practice/review)
-- [x] Free-text exercise type + AI correction API ✅ (/api/check-german)
-- [ ] Dictation exercise type
-- [x] Writing practice page (/practice/write) ✅ (20 Schreiben prompts)
-- [x] Self-introduction drill (/practice/intro) ✅ (6 topics, 2-min timer)
-- [ ] Goethe Wortliste cross-reference
-- [ ] Mastery indicators
-- [ ] Adaptive difficulty in lesson player
+## Official execution roadmap
 
-### Batch 2 (Needs script generation — uses Gemini):
-- [x] Generate Hören audio clips (edge-tts, free) ✅ (script ready)
+### Stage 0 — lock the teaching architecture
+**Goal:** avoid blind building and wasted credits.
+
+Must finish before mass content or media generation:
+- finalize the priority order
+- keep video generation script-first, not bulk-first
+- define that AI video is selective, not default
+- keep exam success as the north star, not feature count
+
+### Stage 1 — make the course teach, not just test
+**Launch-critical:** yes
+
+Build in this order:
+1. real listening comprehension
+2. lesson/video script layer for the core modules
+3. production exercises in the highest-value modules
+4. wire SRS into the lesson loop
+
+**Why first:** these are the features most directly tied to actual learning and A1 pass probability.
+
+### Stage 2 — strengthen exam performance loops
+**Launch-critical:** yes
+
+Build in this order:
+5. free-form writing with safer scoring rubrics
+6. structured speaking drills for exam tasks
+7. Goethe Wortliste cross-reference + coverage patching
+8. exam-readiness checkpoints before full mocks
+
+**Why second:** these convert broad course coverage into actual Goethe A1 performance readiness.
+
+### Stage 3 — raise consistency and retention
+**Launch-critical:** maybe, depending on timeline
+
+Build in this order:
+9. adaptive remediation / difficulty control
+10. mastery indicators per topic
+11. conversation simulator / shadowing upgrades
+
+**Why third:** these improve outcomes and polish, but are less foundational than listening, scripts, production, writing, and speaking.
+
+### Stage 4 — selective media expansion
+**Launch-critical:** no, unless tied to your chosen launch format
+
+Build in this order:
+12. controlled visual/video templates
+13. pilot a small high-impact video set
+14. spend Google credits only on validated high-leverage media work
+15. scale video production only after quality is proven
+
+**Why fourth:** credits are limited, AI video is error-prone, and bulk generation before validation is wasteful.
+
+### Stage 5 — engagement extras
+**Launch-critical:** no
+
+Build in this order:
+16. weekly reports
+17. forgetting curve visualization
+18. streak protection / motivational extras
+
+**Why last:** good product enhancements, but not the main reason a learner passes or fails Goethe A1.
+
+### Dependency rules
+- Do not mass-produce videos before the script layer is trusted.
+- Do not scale writing/speaking AI before rubrics are stable.
+- Do not claim >90% pass confidence before readiness checkpoints and Wortliste coverage are in place.
+- Do not spend credits broadly before a pilot proves the workflow.
+
+### Resource split
+**Mostly code / content work I can do directly:**
+- scripts
+- production exercises
+- SRS integration
+- writing prompts
+- speaking drills
+- Wortliste cross-check
+- exam checkpoints
+
+**Best use of your Google credits / home production workflow:**
+- selective animation/video generation
+- high-impact explainers
+- validated pilot lessons
+- premium media assets after the script layer is stable
+
+---
+
+## Actionable todo list (in the new order)
+
+### NOW — direct exam leverage
 - [x] Update test UI to audio-only Hören ✅ (2 replays, transcript hidden)
-- [ ] Generate 140 video scripts (Gemini Flash, ~€1)
-- [ ] Add production exercises to all 18 modules
+- [ ] Generate and wire all Hören audio for Goethe tests + lesson listening tasks
+- [ ] Add dictation exercise type
+- [ ] Add production exercises to high-priority lessons first (Modules 1–6, 14, 17, 18)
+- [x] SRS engine + daily review page ✅ (SM-2 algorithm, /practice/review)
+- [ ] Auto-enqueue new vocab into SRS from lessons
+- [x] Writing practice page (/practice/write) ✅ (20 Schreiben prompts)
+- [ ] Add A1-safe scoring rubrics / model-answer bands for writing checks
+- [x] Self-introduction drill (/practice/intro) ✅ (6 topics, 2-min timer)
+- [ ] Add structured speaking drills for requests / question-answer / examiner-style prompts
+- [ ] Cross-reference against Goethe Wortliste and patch missing words
+- [ ] Add exam-readiness checkpoints before full mock tests
 
-### Batch 3 (Needs Remotion setup):
-- [ ] Remotion video project setup
-- [ ] Video templates (title, vocab, grammar, dialogue)
-- [ ] Generate module 1-6 videos first
-- [ ] YouTube upload + URL integration
-
-### Batch 4 (Polish):
+### NEXT — raise pass rate and consistency
+- [ ] Adaptive difficulty in lesson player
+- [ ] Mastery indicators per topic
 - [ ] Conversation simulator with AI
 - [ ] Shadowing mode
+
+### LATER — premium depth / engagement uplift
+- [ ] Generate the script layer for all lessons (cheap, reusable, controlled)
+- [ ] Build controlled visual/video templates first (slides, vocab, grammar, dialogue)
+- [ ] Use credits selectively for high-impact lessons, demos, and explainers
+- [ ] Pilot video production on a small set before scaling
+- [ ] YouTube upload + URL integration
 - [ ] Weekly progress reports
 - [ ] Forgetting curve visualization
 - [ ] Streak protection

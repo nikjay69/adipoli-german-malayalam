@@ -4,7 +4,8 @@ export const MODULE_1: Module = {
   id: 1,
   title: "Welcome to German!",
   titleGerman: "Willkommen!",
-  description: "Your first steps into the German language — from sounds to your first conversation! Think of it as your Erste Klasse ticket to Deutschland.",
+  description: "Your true beginner foundation: motivation, core sounds, greetings, and first conversation patterns. This module is designed to reduce fear, build correct pronunciation early, and prepare learners for basic A1 speaking and listening tasks.",
+
   icon: "👋",
   color: "#e94560",
   totalHours: 12,
@@ -14,7 +15,7 @@ export const MODULE_1: Module = {
       id: "1-1",
       title: "Why Learn German?",
       titleGerman: "Warum Deutsch lernen?",
-      description: "Discover why German is a gateway to opportunities in Europe and how Malayalis are thriving in Germany. Spoiler: free education + fat salary = adipoli combo!",
+      description: "Start with motivation and practical context, but keep the real goal clear: learners should leave this lesson able to say a few core German words confidently and understand why A1 matters for real Germany pathways.",
       duration: "45 min",
       xpReward: 100,
       videos: [
@@ -101,7 +102,7 @@ export const MODULE_1: Module = {
       id: "1-2",
       title: "German Sounds for Malayalam Speakers",
       titleGerman: "Deutsche Laute für Malayalam-Sprecher",
-      description: "Discover the sounds you already know and learn the new ones! Your Malayalam background gives you a serious advantage — nammude bhasha is more helpful than you think!",
+      description: "Build pronunciation deliberately from day one. This lesson should make Malayalam speakers notice what already transfers well, what needs extra care, and why sound accuracy matters for A1 listening and speaking confidence.",
       duration: "60 min",
       xpReward: 150,
       videos: [
@@ -190,7 +191,7 @@ export const MODULE_1: Module = {
       id: "1-3",
       title: "Basic Greetings",
       titleGerman: "Grundlegende Begrüßungen",
-      description: "Learn to say hello, goodbye, and basic greetings in German — with Kerala-style explanations! Think of it like learning the German version of 'Sugamaano?'",
+      description: "Teach greetings as real communication, not just word lists. By the end, learners should be able to greet, respond, and choose between formal and informal situations with confidence — exactly the kind of control A1 speaking expects.",
       duration: "60 min",
       xpReward: 150,
       videos: [

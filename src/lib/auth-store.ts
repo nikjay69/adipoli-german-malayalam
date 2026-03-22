@@ -207,13 +207,23 @@ export const useAuthStore = create<AuthState>()(
         // Supabase auth
         try {
           const supabase = createClient();
-          let email = emailOrUsername;
+          let email = emailOrUsername.trim();
 
-          // If input doesn't look like an email, try to resolve username to email
-          if (!emailOrUsername.includes('@')) {
-            // Username login not directly supported by Supabase —
-            // inform user to use email instead
-            return { success: false, error: 'Please use your email address to log in' };
+          // Resolve username → email through a safe DB function
+          if (!email.includes('@')) {
+            const { data: resolvedEmail, error: resolveError } = await supabase.rpc('get_login_email', {
+              lookup_username: email,
+            });
+
+            if (resolveError) {
+              return { success: false, error: 'Could not resolve username. Please try your email instead.' };
+            }
+
+            if (!resolvedEmail) {
+              return { success: false, error: 'No account found with this username' };
+            }
+
+            email = resolvedEmail;
           }
 
           const { error } = await supabase.auth.signInWithPassword({
