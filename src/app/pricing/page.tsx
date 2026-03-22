@@ -29,6 +29,10 @@ interface Plan {
   tagline: string;
   priceINR: string;
   priceEUR: string;
+  taxINR: string;       // GST amount
+  taxEUR: string;       // VAT amount (estimated)
+  totalINR: string;     // Price + GST
+  totalEUR: string;     // Price + VAT
   periodINR: string;
   periodEUR: string;
   features: PlanFeature[];
@@ -47,6 +51,10 @@ const plans: Plan[] = [
     tagline: 'Get started with the basics',
     priceINR: '0',
     priceEUR: '0',
+    taxINR: '0',
+    taxEUR: '0',
+    totalINR: '0',
+    totalEUR: '0',
     periodINR: '',
     periodEUR: '',
     icon: Star,
@@ -69,8 +77,12 @@ const plans: Plan[] = [
     id: 'pro',
     name: 'Pro',
     tagline: 'Unlock full learning power',
-    priceINR: '499',
-    priceEUR: '9.99',
+    priceINR: '423',
+    priceEUR: '8.39',
+    taxINR: '76',
+    taxEUR: '1.60',
+    totalINR: '499',
+    totalEUR: '9.99',
     periodINR: '/month',
     periodEUR: '/month',
     recommended: true,
@@ -94,8 +106,12 @@ const plans: Plan[] = [
     id: 'premium',
     name: 'Premium',
     tagline: 'The complete German mastery package',
-    priceINR: '999',
-    priceEUR: '19.99',
+    priceINR: '847',
+    priceEUR: '16.66',
+    taxINR: '152',
+    taxEUR: '3.33',
+    totalINR: '999',
+    totalEUR: '19.99',
     periodINR: '/month',
     periodEUR: '/month',
     icon: Crown,
@@ -222,9 +238,12 @@ export default function PricingPage() {
       <div className="grid md:grid-cols-3 gap-4 md:gap-5">
         {plans.map((plan, index) => {
           const Icon = plan.icon;
-          const price = currency === 'inr' ? plan.priceINR : plan.priceEUR;
+          const total = currency === 'inr' ? plan.totalINR : plan.totalEUR;
+          const basePrice = currency === 'inr' ? plan.priceINR : plan.priceEUR;
+          const tax = currency === 'inr' ? plan.taxINR : plan.taxEUR;
           const symbol = currency === 'inr' ? '\u20B9' : '\u20AC';
           const period = currency === 'inr' ? plan.periodINR : plan.periodEUR;
+          const taxLabel = currency === 'inr' ? 'GST 18%' : 'VAT ~19%';
           const paymentLabel =
             plan.id === 'free'
               ? isLoggedIn
@@ -274,26 +293,33 @@ export default function PricingPage() {
                 <p className="text-xs text-[var(--foreground)]/40">{plan.tagline}</p>
               </div>
 
-              {/* Price */}
+              {/* Price with tax breakdown */}
               <div className="mb-5">
                 <div className="flex items-baseline gap-1">
-                  {price === '0' ? (
+                  {total === '0' ? (
                     <span className="text-3xl font-bold text-[#27ae60]">Free</span>
                   ) : (
                     <>
                       <span className="text-sm text-[var(--foreground)]/50">{symbol}</span>
-                      <span className="text-3xl font-bold text-[var(--foreground)]">{price}</span>
+                      <span className="text-3xl font-bold text-[var(--foreground)]">{total}</span>
                       <span className="text-sm text-[var(--foreground)]/40">{period}</span>
                     </>
                   )}
                 </div>
+                {/* Tax breakdown */}
+                {total !== '0' && (
+                  <div className="mt-1 text-[10px] text-[var(--foreground)]/30">
+                    {symbol}{basePrice} + {symbol}{tax} {taxLabel}
+                    <span className="block mt-0.5">Price inclusive of all taxes</span>
+                  </div>
+                )}
                 {/* Show alternate price */}
-                {price !== '0' && (
+                {total !== '0' && (
                   <p className="text-[10px] text-[var(--foreground)]/25 mt-1">
-                    Also available:{' '}
+                    Also:{' '}
                     {currency === 'inr'
-                      ? `\u20AC${plan.priceEUR}${plan.periodEUR}`
-                      : `\u20B9${plan.priceINR}${plan.periodINR}`}
+                      ? `\u20AC${plan.totalEUR}${plan.periodEUR} (incl. VAT)`
+                      : `\u20B9${plan.totalINR}${plan.periodINR} (incl. GST)`}
                   </p>
                 )}
               </div>
@@ -354,6 +380,12 @@ export default function PricingPage() {
         <p className="text-xs text-[var(--foreground)]/20">
           Cancel anytime. No questions asked. Your progress is always saved.
         </p>
+        <div className="mt-3 text-[10px] text-[var(--foreground)]/15 max-w-md text-center">
+          <p>All prices are inclusive of applicable taxes.</p>
+          <p>India: 18% GST on digital services (CGST 9% + SGST 9%).</p>
+          <p>EU: VAT as per your country (processed via Stripe Tax, auto-calculated).</p>
+          <p>Tax invoices generated automatically for every payment.</p>
+        </div>
         {!isLoggedIn && (
           <p className="text-xs text-[var(--foreground)]/30 mt-4">
             <Link href="/auth/signup" className="text-[#d4a520] hover:underline">

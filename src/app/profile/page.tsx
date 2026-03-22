@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   User,
@@ -14,17 +16,28 @@ import {
   Award,
   RefreshCw,
   FileText,
-  Download
+  Download,
+  LogOut,
+  LogIn,
+  UserPlus,
+  Crown,
+  Shield,
+  ArrowUpRight,
+  Mail,
 } from 'lucide-react';
 import { Card, Button, Badge, ProgressBar } from '@/components/ui';
 import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS, ACHIEVEMENTS_DATA } from '@/lib/store';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { calculateExamReadiness } from '@/lib/exam-readiness';
+import { useAuthStore } from '@/lib/auth-store';
 
 export default function ProfilePage() {
+  const router = useRouter();
   const { userProgress, resetProgress } = useGameStore();
+  const { user, isLoggedIn, logout } = useAuthStore();
   const [mounted, setMounted] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -59,6 +72,18 @@ export default function ProfilePage() {
     setShowResetConfirm(false);
   };
 
+  const handleLogout = () => {
+    logout();
+    setShowLogoutConfirm(false);
+    router.push('/');
+  };
+
+  const planColors = {
+    free: { bg: 'bg-gray-500/20', text: 'text-gray-300', border: 'border-gray-500/30' },
+    pro: { bg: 'bg-[#d4a520]/20', text: 'text-[#d4a520]', border: 'border-[#d4a520]/30' },
+    premium: { bg: 'bg-purple-500/20', text: 'text-purple-300', border: 'border-purple-500/30' },
+  };
+
   return (
     <div className="px-4 py-6 max-w-4xl mx-auto">
       {/* Header */}
@@ -67,31 +92,119 @@ export default function ProfilePage() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-6"
       >
-        {/* Profile Card */}
-        <Card className="text-center mb-6">
-          <div className="w-24 h-24 bg-gradient-to-br from-[#e94560] to-[#0f3460] rounded-full flex items-center justify-center mx-auto mb-4">
-            <User className="w-12 h-12 text-white" />
-          </div>
-
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
-            German Learner
-          </h1>
-
-          <Badge variant="secondary" size="md" className="mb-4">
-            Level {userProgress.level}: {LEVEL_NAMES[userProgress.level - 1]}
-          </Badge>
-
-          {/* Level Progress */}
-          <div className="max-w-xs mx-auto">
-            <div className="flex items-center justify-between text-sm mb-1">
-              <span className="text-gray-500 dark:text-gray-400">Progress to Level {userProgress.level + 1}</span>
-              <span className="font-medium text-gray-700 dark:text-gray-300">
-                {userProgress.xp - currentLevelXP} / {nextLevelXP - currentLevelXP} XP
+        {/* Account Section - Auth aware */}
+        {isLoggedIn && user ? (
+          /* Logged In Profile Card */
+          <Card className="text-center mb-6">
+            <div className="w-24 h-24 bg-gradient-to-br from-[#d4a520] to-[#27ae60] rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-4xl font-bold text-white">
+                {user.name.charAt(0).toUpperCase()}
               </span>
             </div>
-            <ProgressBar progress={progressToNextLevel} color="primary" size="lg" />
-          </div>
-        </Card>
+
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+              {user.name}
+            </h1>
+
+            <div className="flex items-center justify-center gap-1 text-sm text-gray-500 dark:text-gray-400 mb-3">
+              <Mail className="w-3.5 h-3.5" />
+              {user.email}
+            </div>
+
+            {/* Plan Badge */}
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <span
+                className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold border ${planColors[user.plan].bg} ${planColors[user.plan].text} ${planColors[user.plan].border}`}
+              >
+                <Crown className="w-3 h-3" />
+                {user.plan.charAt(0).toUpperCase() + user.plan.slice(1)} Plan
+              </span>
+              {user.plan === 'free' && (
+                <Link
+                  href="/pricing"
+                  className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-[#d4a520]/20 text-[#d4a520] border border-[#d4a520]/30 hover:bg-[#d4a520]/30 transition-colors"
+                >
+                  <ArrowUpRight className="w-3 h-3" />
+                  Upgrade
+                </Link>
+              )}
+            </div>
+
+            {/* Admin link */}
+            {user.isAdmin && (
+              <Link
+                href="/admin"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#c0392b]/10 text-[#c0392b] hover:bg-[#c0392b]/20 transition-colors mb-3"
+              >
+                <Shield className="w-3.5 h-3.5" />
+                Admin Panel
+              </Link>
+            )}
+
+            {/* Level Badge */}
+            <Badge variant="secondary" size="md" className="mb-4">
+              Level {userProgress.level}: {LEVEL_NAMES[userProgress.level - 1]}
+            </Badge>
+
+            {/* Level Progress */}
+            <div className="max-w-xs mx-auto">
+              <div className="flex items-center justify-between text-sm mb-1">
+                <span className="text-gray-500 dark:text-gray-400">Progress to Level {userProgress.level + 1}</span>
+                <span className="font-medium text-gray-700 dark:text-gray-300">
+                  {userProgress.xp - currentLevelXP} / {nextLevelXP - currentLevelXP} XP
+                </span>
+              </div>
+              <ProgressBar progress={progressToNextLevel} color="primary" size="lg" />
+            </div>
+          </Card>
+        ) : (
+          /* Not Logged In */
+          <Card className="text-center mb-6">
+            <div className="w-24 h-24 bg-gradient-to-br from-[#e94560] to-[#0f3460] rounded-full flex items-center justify-center mx-auto mb-4">
+              <User className="w-12 h-12 text-white" />
+            </div>
+
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              German Learner
+            </h1>
+
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">
+              Create an account to save progress across devices, unlock premium features, and track your journey.
+            </p>
+
+            <div className="flex items-center justify-center gap-3">
+              <Link href="/auth/login">
+                <Button variant="ghost" size="md">
+                  <LogIn className="w-4 h-4" />
+                  Log In
+                </Button>
+              </Link>
+              <Link href="/auth/signup">
+                <Button variant="primary" size="md">
+                  <UserPlus className="w-4 h-4" />
+                  Sign Up
+                </Button>
+              </Link>
+            </div>
+
+            {/* Level badge still shows for non-logged users */}
+            <div className="mt-5 pt-5 border-t border-gray-200 dark:border-gray-700">
+              <Badge variant="secondary" size="md" className="mb-4">
+                Level {userProgress.level}: {LEVEL_NAMES[userProgress.level - 1]}
+              </Badge>
+
+              <div className="max-w-xs mx-auto">
+                <div className="flex items-center justify-between text-sm mb-1">
+                  <span className="text-gray-500 dark:text-gray-400">Progress to Level {userProgress.level + 1}</span>
+                  <span className="font-medium text-gray-700 dark:text-gray-300">
+                    {userProgress.xp - currentLevelXP} / {nextLevelXP - currentLevelXP} XP
+                  </span>
+                </div>
+                <ProgressBar progress={progressToNextLevel} color="primary" size="lg" />
+              </div>
+            </div>
+          </Card>
+        )}
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
@@ -264,11 +377,11 @@ export default function ProfilePage() {
 
         {/* Exam Readiness */}
         {userProgress.completedLessons.length > 0 && (() => {
-          const totalLessons = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
+          const totalLessonsCalc = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
           const totalVocab = getAllVocabulary().length;
           const readiness = calculateExamReadiness({
             completedLessons: userProgress.completedLessons,
-            totalLessons,
+            totalLessons: totalLessonsCalc,
             learnedVocabulary: userProgress.learnedVocabulary.length,
             totalVocabulary: totalVocab,
             streak: userProgress.streak,
@@ -325,10 +438,10 @@ export default function ProfilePage() {
 
               {/* Next action + tips */}
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
-                <p className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">💡 Next step:</p>
+                <p className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Next step:</p>
                 <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">{readiness.nextAction}</p>
                 {readiness.tips.length > 0 && readiness.tips.map((tip, i) => (
-                  <p key={i} className="text-[10px] text-gray-400">• {tip}</p>
+                  <p key={i} className="text-[10px] text-gray-400">- {tip}</p>
                 ))}
               </div>
             </Card>
@@ -349,6 +462,32 @@ export default function ProfilePage() {
             View & Download Scripts
           </a>
         </Card>
+
+        {/* Logout Button - only for logged in users */}
+        {isLoggedIn && (
+          <Card className="border-orange-200 dark:border-orange-800">
+            <h2 className="font-semibold text-gray-900 dark:text-white mb-2">Account</h2>
+            {!showLogoutConfirm ? (
+              <Button variant="ghost" onClick={() => setShowLogoutConfirm(true)} className="text-orange-500 hover:bg-orange-50 dark:hover:bg-orange-900/20">
+                <LogOut className="w-4 h-4" />
+                Log Out
+              </Button>
+            ) : (
+              <div className="flex items-center gap-2">
+                <Button variant="ghost" onClick={() => setShowLogoutConfirm(false)} className="flex-1">
+                  Cancel
+                </Button>
+                <Button
+                  variant="warning"
+                  onClick={handleLogout}
+                  className="flex-1 bg-orange-500 hover:bg-orange-600"
+                >
+                  Confirm Logout
+                </Button>
+              </div>
+            )}
+          </Card>
+        )}
 
         {/* Reset Progress */}
         <Card className="border-red-200 dark:border-red-800">
