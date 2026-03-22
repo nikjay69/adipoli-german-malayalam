@@ -65,7 +65,7 @@ export default function Home() {
   const totalLessons = ALL_MODULES.reduce((acc, m) => acc + m.lessons.length, 0);
   const currentLevelXP = LEVEL_THRESHOLDS[userProgress.level - 1] || 0;
   const nextLevelXP = LEVEL_THRESHOLDS[userProgress.level] || LEVEL_THRESHOLDS[LEVEL_THRESHOLDS.length - 1];
-  const xpProgress = ((userProgress.xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100;
+  const xpProgress = nextLevelXP > currentLevelXP ? ((userProgress.xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100 : 100;
 
   const handleContinue = () => {
     if (nextLesson) {

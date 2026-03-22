@@ -716,7 +716,7 @@ export default function SpeakPracticePage() {
                 Stay
               </button>
               <button
-                onClick={() => router.push('/games')}
+                onClick={() => router.push('/practice')}
                 className="flex-1 py-2.5 rounded-xl bg-[#c0392b] text-white font-medium text-sm"
               >
                 Leave
@@ -733,7 +733,7 @@ export default function SpeakPracticePage() {
         title={hearts > 0 ? "Session Complete!" : "Game Over"}
         subtitle={`${results.filter(r => r.score >= 70).length}/${results.length} phrases correct`}
         xpEarned={totalXP}
-        onContinue={() => { setShowCelebration(false); router.push('/games'); }}
+        onContinue={() => { setShowCelebration(false); router.push('/practice'); }}
       />
 
       {/* ─── Header ──────────────────────────────────────────── */}
@@ -799,7 +799,7 @@ export default function SpeakPracticePage() {
               {/* Back button */}
               <motion.button
                 whileTap={{ scale: 0.9 }}
-                onClick={() => router.push('/games')}
+                onClick={() => router.push('/practice')}
                 className="absolute top-4 left-4 w-10 h-10 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
               >
                 <ArrowLeft className="w-5 h-5 text-[var(--foreground)]/60" />

@@ -1,9 +1,9 @@
 'use client';
 
-import { use, useState, useEffect, useCallback } from 'react';
+import { use, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Clock, ChevronRight, CheckCircle, XCircle, Award, BookOpen, Volume2, Pen, MessageCircle } from 'lucide-react';
+import { ArrowLeft, Clock, ChevronRight, Award } from 'lucide-react';
 import { Card, Button, ProgressBar } from '@/components/ui';
 import { Confetti } from '@/components/game';
 import { useGameStore } from '@/lib/store';
@@ -116,9 +116,9 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4">
         <p className="text-6xl mb-4">📝</p>
-        <h1 className="text-xl font-bold mb-2">Test Loading...</h1>
+        <h1 className="text-xl font-bold mb-2">Test not found</h1>
         <p className="text-[var(--foreground)]/40 text-sm mb-4 text-center">
-          Goethe test data is being generated. Check back soon!
+          This test doesn't exist or hasn't been created yet.
         </p>
         <Button onClick={() => router.push('/tests')}>Back to Tests</Button>
       </div>

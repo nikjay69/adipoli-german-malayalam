@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, BookOpen, FileText } from 'lucide-react';
+import { ArrowLeft, Download, FileText } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { ALL_MODULES } from '@/lib/content/modules';
 
@@ -13,7 +13,7 @@ export default function ScriptsPage() {
   return (
     <div className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto">
       <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-        <button onClick={() => router.push('/')} className="flex items-center gap-2 text-[var(--foreground)]/50 mb-4 text-sm">
+        <button onClick={() => router.push('/profile')} className="flex items-center gap-2 text-[var(--foreground)]/50 mb-4 text-sm">
           <ArrowLeft className="w-4 h-4" /> Back
         </button>
         <h1 className="text-2xl font-bold mb-1">

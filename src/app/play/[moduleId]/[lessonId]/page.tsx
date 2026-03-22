@@ -26,6 +26,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const { addXP, completeLesson, learnVocabulary, saveCheckpoint, clearCheckpoint, userProgress } = useGameStore();
 
   const [mounted, setMounted] = useState(false);
+  const [isBlocked, setIsBlocked] = useState(false);
   const [step, setStep] = useState<Step>({ type: 'intro' });
   const [hearts, setHearts] = useState(3);
   const [showVocabMeaning, setShowVocabMeaning] = useState(false);
@@ -42,6 +43,37 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
 
   const module = getModuleById(parseInt(moduleId));
   const lesson = getLessonById(lessonId);
+
+  // Check if lesson is unlocked (computed before hooks to avoid conditional hook calls)
+  const isLessonUnlocked = (() => {
+    if (!module || !lesson) return true; // will be caught by the not-found check below
+    const moduleIndex = ALL_MODULES.findIndex(m => m.id === module.id);
+    // First module, first lesson always unlocked
+    if (moduleIndex === 0) {
+      const lessonIndex = module.lessons.findIndex(l => l.id === lesson.id);
+      if (lessonIndex === 0) return true;
+      // Check previous lesson completed
+      return userProgress.completedLessons.some(cl => cl.lessonId === module.lessons[lessonIndex - 1].id);
+    }
+    // Check previous module complete
+    const prevModule = ALL_MODULES[moduleIndex - 1];
+    const prevModuleComplete = prevModule.lessons.every(l =>
+      userProgress.completedLessons.some(cl => cl.lessonId === l.id)
+    );
+    if (!prevModuleComplete) return false;
+    // Check previous lesson in current module
+    const lessonIndex = module.lessons.findIndex(l => l.id === lesson.id);
+    if (lessonIndex === 0) return true;
+    return userProgress.completedLessons.some(cl => cl.lessonId === module.lessons[lessonIndex - 1].id);
+  })();
+
+  // If locked, redirect (wrapped in effect to avoid calling router during render)
+  useEffect(() => {
+    if (mounted && !isLessonUnlocked) {
+      setIsBlocked(true);
+      router.replace('/learn');
+    }
+  }, [mounted, isLessonUnlocked, router]);
 
   // Resume from checkpoint on mount
   useEffect(() => {
@@ -78,7 +110,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     }
   }, [mounted, step.type]);
 
-  if (!mounted) {
+  if (!mounted || isBlocked) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <motion.div
@@ -147,34 +179,6 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     );
   }
 
-  // Check if lesson is unlocked
-  const isLessonUnlocked = (() => {
-    const moduleIndex = ALL_MODULES.findIndex(m => m.id === module.id);
-    // First module, first lesson always unlocked
-    if (moduleIndex === 0) {
-      const lessonIndex = module.lessons.findIndex(l => l.id === lesson.id);
-      if (lessonIndex === 0) return true;
-      // Check previous lesson completed
-      return userProgress.completedLessons.some(cl => cl.lessonId === module.lessons[lessonIndex - 1].id);
-    }
-    // Check previous module complete
-    const prevModule = ALL_MODULES[moduleIndex - 1];
-    const prevModuleComplete = prevModule.lessons.every(l =>
-      userProgress.completedLessons.some(cl => cl.lessonId === l.id)
-    );
-    if (!prevModuleComplete) return false;
-    // Check previous lesson in current module
-    const lessonIndex = module.lessons.findIndex(l => l.id === lesson.id);
-    if (lessonIndex === 0) return true;
-    return userProgress.completedLessons.some(cl => cl.lessonId === module.lessons[lessonIndex - 1].id);
-  })();
-
-  // If locked, redirect
-  if (!isLessonUnlocked) {
-    router.replace('/learn');
-    return null;
-  }
-
   const totalSteps = 1 + lesson.videos.length + lesson.vocabulary.length + lesson.exercises.length + 1;
   const currentStepNumber =
     step.type === 'intro' ? 1 :
@@ -237,12 +241,17 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       setTimeout(() => { setShowXP(false); goNext(); }, 1400);
     } else {
       setAnswerState('incorrect');
-      setHearts(prev => Math.max(0, prev - 1));
       setKuttanMsg(getRandomMessage('wrong'));
+      setHearts(prev => {
+        const newHearts = Math.max(0, prev - 1);
+        if (newHearts === 0) {
+          setTimeout(() => router.push('/'), 500);
+        }
+        return newHearts;
+      });
       setTimeout(() => {
         setAnswerState('default');
         setSelectedAnswer(null);
-        if (hearts <= 1) router.push('/');
       }, 1400);
     }
   };
@@ -537,6 +546,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             size="lg"
             fullWidth
             variant={step.type === 'vocab' && showVocabMeaning ? 'success' : 'primary'}
+            disabled={step.type === 'vocab' && !showVocabMeaning}
           >
             {step.type === 'intro' ? "Let's Start" :
              step.type === 'video' ? 'Continue' :

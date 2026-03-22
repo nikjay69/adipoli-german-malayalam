@@ -9,7 +9,6 @@ import {
   Volume2,
   RefreshCw,
   Search,
-  Filter,
   CheckCircle,
   Shuffle
 } from 'lucide-react';

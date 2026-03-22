@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Mic, MessageCircle, Headphones, Radio, Clock } from 'lucide-react';
+import { ArrowLeft, Mic, MessageCircle, Headphones, Radio } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
 

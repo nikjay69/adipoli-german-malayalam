@@ -507,8 +507,8 @@ export default function PronunciationPage() {
                   <RefreshCw className="w-5 h-5" />
                   Practice Again
                 </Button>
-                <Button variant="ghost" onClick={() => router.push('/games')} fullWidth>
-                  Back to Games
+                <Button variant="ghost" onClick={() => router.push('/practice')} fullWidth>
+                  Back to Practice
                 </Button>
               </div>
             </Card>

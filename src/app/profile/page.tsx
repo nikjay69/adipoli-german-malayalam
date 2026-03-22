@@ -13,7 +13,6 @@ import {
   Gamepad2,
   Award,
   RefreshCw,
-  ChevronRight,
   FileText,
   Download
 } from 'lucide-react';
@@ -43,7 +42,7 @@ export default function ProfilePage() {
 
   const currentLevelXP = LEVEL_THRESHOLDS[userProgress.level - 1] || 0;
   const nextLevelXP = LEVEL_THRESHOLDS[userProgress.level] || LEVEL_THRESHOLDS[LEVEL_THRESHOLDS.length - 1];
-  const progressToNextLevel = ((userProgress.xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100;
+  const progressToNextLevel = nextLevelXP > currentLevelXP ? ((userProgress.xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100 : 100;
 
   const totalLessons = ALL_MODULES.reduce((acc, m) => acc + m.lessons.length, 0);
   const completedLessons = userProgress.completedLessons.length;
