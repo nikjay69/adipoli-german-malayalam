@@ -12,6 +12,7 @@ import { getRandomMessage } from '@/lib/content/dialogue';
 import { getVideoScript } from '@/lib/content/video-scripts';
 import { useGameStore } from '@/lib/store';
 import { getLessonById, getModuleById, ALL_MODULES } from '@/lib/content/modules';
+import { isLessonUnlocked as checkLessonUnlocked } from '@/lib/curriculum';
 
 type Step =
   | { type: 'intro' }
@@ -46,25 +47,8 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
 
   // Check if lesson is unlocked (computed before hooks to avoid conditional hook calls)
   const isLessonUnlocked = (() => {
-    if (!module || !lesson) return true; // will be caught by the not-found check below
-    const moduleIndex = ALL_MODULES.findIndex(m => m.id === module.id);
-    // First module, first lesson always unlocked
-    if (moduleIndex === 0) {
-      const lessonIndex = module.lessons.findIndex(l => l.id === lesson.id);
-      if (lessonIndex === 0) return true;
-      // Check previous lesson completed
-      return userProgress.completedLessons.some(cl => cl.lessonId === module.lessons[lessonIndex - 1].id);
-    }
-    // Check previous module complete
-    const prevModule = ALL_MODULES[moduleIndex - 1];
-    const prevModuleComplete = prevModule.lessons.every(l =>
-      userProgress.completedLessons.some(cl => cl.lessonId === l.id)
-    );
-    if (!prevModuleComplete) return false;
-    // Check previous lesson in current module
-    const lessonIndex = module.lessons.findIndex(l => l.id === lesson.id);
-    if (lessonIndex === 0) return true;
-    return userProgress.completedLessons.some(cl => cl.lessonId === module.lessons[lessonIndex - 1].id);
+    if (!module || !lesson) return true;
+    return checkLessonUnlocked(module.id, lesson.id, userProgress.completedLessons);
   })();
 
   // If locked, redirect (wrapped in effect to avoid calling router during render)

@@ -4,11 +4,11 @@ export const MODULE_17: Module = {
   id: 17,
   title: "Goethe A1 Exam — Hören & Lesen",
   titleGerman: "Goethe A1 Prüfung — Hören & Lesen",
-  description: "Master the Hören (Listening) and Lesen (Reading) sections of the Goethe A1 Start Deutsch 1 exam with authentic practice exercises in real exam format.",
+  description: "Core Goethe A1 exam prep for Hören and Lesen. This should come right after the A1 foundations, even if learners skip the optional A1+ bridge.",
   icon: "🎧",
   color: "#b91c1c",
   totalHours: 12,
-  unlockRequirement: "Complete Module 16",
+  unlockRequirement: "Complete Module 15 (Module 16 is optional)",
   lessons: [
 
     // ==================== LESSON 17-1: Exam Format Overview & Tips ====================

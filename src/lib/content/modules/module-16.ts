@@ -2,9 +2,9 @@ import type { Module } from '../types';
 
 export const MODULE_16: Module = {
   id: 16,
-  title: "A2.1 Bridge",
-  titleGerman: "Nächste Schritte",
-  description: "Bridge to A2 — master dative case, two-way prepositions, reflexive verbs, and complex sentences!",
+  title: "A1+ Bonus Bridge (Optional)",
+  titleGerman: "Nächste Schritte (Optional)",
+  description: "Optional bridge after the A1 core: strengthen grammar that helps the jump to A2, but don’t treat this as required before the main Goethe A1 exam-prep modules.",
   icon: "🌉",
   color: "#0d9488",
   totalHours: 12,

@@ -7,6 +7,7 @@ import { ChevronRight, Lock, CheckCircle, Clock, Star } from 'lucide-react';
 import { Card, ProgressBar, Badge } from '@/components/ui';
 import { useGameStore } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
+import { isModuleUnlocked, OPTIONAL_MODULE_IDS } from '@/lib/curriculum';
 
 export default function LearnPage() {
   const { userProgress } = useGameStore();
@@ -47,13 +48,8 @@ export default function LearnPage() {
           ).length;
           const moduleProgress = (completedModuleLessons / moduleLessons) * 100;
 
-          // Check if previous module is complete
-          const isPreviousModuleComplete = moduleIndex === 0 ||
-            ALL_MODULES[moduleIndex - 1].lessons.every(
-              l => userProgress.completedLessons.some(cl => cl.lessonId === l.id)
-            );
-
-          const isModuleLocked = !isPreviousModuleComplete;
+          const isModuleLocked = !isModuleUnlocked(module.id, userProgress.completedLessons);
+          const isOptionalBridge = OPTIONAL_MODULE_IDS.has(module.id);
 
           return (
             <motion.div
@@ -76,6 +72,9 @@ export default function LearnPage() {
                       <h2 className="text-lg font-bold text-gray-900 dark:text-white">
                         Module {module.id}: {module.title}
                       </h2>
+                      {isOptionalBridge && (
+                        <Badge variant="warning" size="sm">Optional bridge</Badge>
+                      )}
                       {moduleProgress === 100 && (
                         <Badge variant="success" size="sm">
                           <CheckCircle className="w-3 h-3 mr-1" /> Complete
@@ -85,6 +84,11 @@ export default function LearnPage() {
                     <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
                       {module.description}
                     </p>
+                    {isOptionalBridge && (
+                      <p className="mt-1 text-xs text-amber-600 dark:text-amber-400">
+                        Helpful after A1 basics — not required before exam-prep modules.
+                      </p>
+                    )}
                     <div className="flex items-center gap-4 mt-2 text-xs text-gray-500 dark:text-gray-400">
                       <span className="flex items-center gap-1">
                         <Clock className="w-3 h-3" /> {module.totalHours} hours

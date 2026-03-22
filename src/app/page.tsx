@@ -9,6 +9,7 @@ import { CharacterGuide } from '@/components/character';
 import { getRandomMessage } from '@/lib/content/dialogue';
 import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS } from '@/lib/store';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
+import { getNextCoreLesson } from '@/lib/curriculum';
 import { JOURNEY_LOCATIONS, getCurrentLocation } from '@/lib/journey';
 import { calculateExamReadiness } from '@/lib/exam-readiness';
 
@@ -49,18 +50,7 @@ export default function Home() {
     );
   }
 
-  const getNextLesson = () => {
-    for (const module of ALL_MODULES) {
-      for (const lesson of module.lessons) {
-        if (!userProgress.completedLessons.some(l => l.lessonId === lesson.id)) {
-          return { module, lesson };
-        }
-      }
-    }
-    return null;
-  };
-
-  const nextLesson = getNextLesson();
+  const nextLesson = getNextCoreLesson(userProgress.completedLessons);
   const completedCount = userProgress.completedLessons.length;
   const totalLessons = ALL_MODULES.reduce((acc, m) => acc + m.lessons.length, 0);
   const currentLevelXP = LEVEL_THRESHOLDS[userProgress.level - 1] || 0;
