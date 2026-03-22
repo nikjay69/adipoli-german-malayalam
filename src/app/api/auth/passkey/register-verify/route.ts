@@ -3,10 +3,15 @@ import { verifyRegistrationResponse } from '@simplewebauthn/server';
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-function getServiceSupabase() {
-  return createClient(supabaseUrl, supabaseServiceKey);
+/**
+ * Create a Supabase client authenticated with the user's JWT.
+ */
+function getUserSupabase(token: string) {
+  return createClient(supabaseUrl, supabaseAnonKey, {
+    global: { headers: { Authorization: `Bearer ${token}` } },
+  });
 }
 
 export async function POST(request: NextRequest) {
@@ -23,14 +28,8 @@ export async function POST(request: NextRequest) {
     const token = authHeader.replace('Bearer ', '');
 
     // Verify the user via Supabase auth
-    const { createClient: createAnonClient } = await import('@supabase/supabase-js');
-    const supabaseAnon = createAnonClient(
-      supabaseUrl,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      { global: { headers: { Authorization: `Bearer ${token}` } } }
-    );
-
-    const { data: { user }, error: userError } = await supabaseAnon.auth.getUser();
+    const supabase = getUserSupabase(token);
+    const { data: { user }, error: userError } = await supabase.auth.getUser();
     if (userError || !user) {
       return NextResponse.json(
         { error: 'Invalid session' },
@@ -47,7 +46,7 @@ export async function POST(request: NextRequest) {
     const origin = `${protocol}://${host}`;
 
     // Retrieve the stored challenge
-    const supabase = getServiceSupabase();
+    // RLS: "Anyone can manage challenges" allows this
     const { data: challengeRow, error: challengeError } = await supabase
       .from('passkey_challenges')
       .select('challenge')
@@ -85,6 +84,7 @@ export async function POST(request: NextRequest) {
     const credentialIdBase64 = Buffer.from(credential.id).toString('base64url');
     const publicKeyBase64 = Buffer.from(credential.publicKey).toString('base64url');
 
+    // RLS: "Users create passkeys" allows INSERT where auth.uid() = user_id
     const { error: insertError } = await supabase
       .from('passkey_credentials')
       .insert({

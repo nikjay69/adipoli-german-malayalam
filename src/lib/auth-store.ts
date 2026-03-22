@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { createClient } from '@/lib/supabase';
+import type { AuthChangeEvent, Session } from '@supabase/supabase-js';
+import { createClient, isSupabaseConfigured } from '@/lib/supabase';
 
 export interface User {
   id: string;
@@ -36,19 +37,6 @@ interface AuthState {
 }
 
 const USERS_STORAGE_KEY = 'german-app-users';
-
-// Check if Supabase is properly configured
-function isSupabaseConfigured(): boolean {
-  if (typeof window === 'undefined') return false;
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  return !!(
-    url &&
-    key &&
-    url !== 'your-supabase-url' &&
-    key !== 'your-supabase-anon-key'
-  );
-}
 
 // Export for UI components to show demo mode badge
 export function isSupabaseReady(): boolean {
@@ -88,11 +76,27 @@ function generateId(): string {
 const ADMIN_EMAIL = 'admin';
 const ADMIN_PASSWORD = 'Admin123';
 
+// Track whether onAuthStateChange has been set up
+let authListenerActive = false;
+
+// Helper: build a User object from a Supabase session + profile
+function buildUser(sessionUser: { id: string; email?: string; created_at: string; user_metadata?: Record<string, string> }, profile: Record<string, unknown> | null): User {
+  return {
+    id: sessionUser.id,
+    name: (profile?.full_name as string) || sessionUser.user_metadata?.full_name || 'User',
+    username: (profile?.username as string) || sessionUser.user_metadata?.username,
+    email: sessionUser.email || '',
+    isAdmin: !!(profile?.is_admin) || (profile?.username === 'admin'),
+    plan: ((profile?.plan as string) || 'free') as 'free' | 'pro' | 'premium',
+    createdAt: new Date(sessionUser.created_at).getTime(),
+  };
+}
+
 // ─── Store ──────────────────────────────────────────────────────────────────
 
 export const useAuthStore = create<AuthState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       user: null,
       isLoggedIn: false,
       isLoading: true,
@@ -100,6 +104,8 @@ export const useAuthStore = create<AuthState>()(
       // ── Initialize auth (call on app mount) ────────────────────────────
       initAuth: async () => {
         if (!isSupabaseConfigured()) {
+          // In demo mode, keep the persisted user from localStorage (zustand persist).
+          // Just clear the loading flag.
           set({ isLoading: false });
           return;
         }
@@ -115,45 +121,38 @@ export const useAuthStore = create<AuthState>()(
               .eq('id', session.user.id)
               .single();
 
-            const user: User = {
-              id: session.user.id,
-              name: profile?.full_name || session.user.user_metadata?.full_name || 'User',
-              username: profile?.username || session.user.user_metadata?.username,
-              email: session.user.email || '',
-              isAdmin: profile?.is_admin || profile?.username === 'admin',
-              plan: profile?.plan || 'free',
-              createdAt: new Date(session.user.created_at).getTime(),
-            };
-
+            const user = buildUser(session.user, profile);
             set({ user, isLoggedIn: true, isLoading: false });
           } else {
+            // No active session — clear any stale persisted state
             set({ user: null, isLoggedIn: false, isLoading: false });
           }
 
-          // Listen for auth changes
-          supabase.auth.onAuthStateChange(async (event: string, session: any) => {
-            if (event === 'SIGNED_IN' && session?.user) {
-              const { data: profile } = await supabase
-                .from('profiles')
-                .select('*')
-                .eq('id', session.user.id)
-                .single();
+          // Set up the auth state change listener (only once)
+          if (!authListenerActive) {
+            authListenerActive = true;
 
-              const user: User = {
-                id: session.user.id,
-                name: profile?.full_name || session.user.user_metadata?.full_name || 'User',
-                username: profile?.username || session.user.user_metadata?.username,
-                email: session.user.email || '',
-                isAdmin: profile?.is_admin || profile?.username === 'admin',
-                plan: profile?.plan || 'free',
-                createdAt: new Date(session.user.created_at).getTime(),
-              };
+            supabase.auth.onAuthStateChange(async (event: AuthChangeEvent, session: Session | null) => {
+              if ((event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') && session?.user) {
+                // Avoid re-fetching if the user hasn't changed
+                const currentUser = get().user;
+                if (currentUser?.id === session.user.id && event === 'TOKEN_REFRESHED') {
+                  return;
+                }
 
-              set({ user, isLoggedIn: true, isLoading: false });
-            } else if (event === 'SIGNED_OUT') {
-              set({ user: null, isLoggedIn: false, isLoading: false });
-            }
-          });
+                const { data: profile } = await supabase
+                  .from('profiles')
+                  .select('*')
+                  .eq('id', session.user.id)
+                  .single();
+
+                const user = buildUser(session.user, profile);
+                set({ user, isLoggedIn: true, isLoading: false });
+              } else if (event === 'SIGNED_OUT') {
+                set({ user: null, isLoggedIn: false, isLoading: false });
+              }
+            });
+          }
         } catch {
           set({ isLoading: false });
         }
@@ -209,13 +208,14 @@ export const useAuthStore = create<AuthState>()(
           const supabase = createClient();
           let email = emailOrUsername.trim();
 
-          // Resolve username → email through a safe DB function
+          // Resolve username -> email through a safe DB function
           if (!email.includes('@')) {
             const { data: resolvedEmail, error: resolveError } = await supabase.rpc('get_login_email', {
               lookup_username: email,
             });
 
             if (resolveError) {
+              console.error('Username resolve error:', resolveError);
               return { success: false, error: 'Could not resolve username. Please try your email instead.' };
             }
 
@@ -232,10 +232,30 @@ export const useAuthStore = create<AuthState>()(
           });
 
           if (error) {
+            // Map common Supabase error messages to user-friendly ones
+            if (error.message.includes('Invalid login credentials')) {
+              return { success: false, error: 'Incorrect email or password' };
+            }
+            if (error.message.includes('Email not confirmed')) {
+              return { success: false, error: 'Please check your email and confirm your account first' };
+            }
             return { success: false, error: error.message };
           }
 
           // Auth state change listener will update the store
+          // But also fetch immediately for faster UX
+          const { data: { session } } = await supabase.auth.getSession();
+          if (session?.user) {
+            const { data: profile } = await supabase
+              .from('profiles')
+              .select('*')
+              .eq('id', session.user.id)
+              .single();
+
+            const user = buildUser(session.user, profile);
+            set({ user, isLoggedIn: true });
+          }
+
           return { success: true };
         } catch {
           return { success: false, error: 'Login failed. Please try again.' };
@@ -298,14 +318,14 @@ export const useAuthStore = create<AuthState>()(
               .from('profiles')
               .select('id')
               .eq('username', username)
-              .single();
+              .maybeSingle();
 
             if (existing) {
               return { success: false, error: 'This username is already taken' };
             }
           }
 
-          const { error } = await supabase.auth.signUp({
+          const { data, error } = await supabase.auth.signUp({
             email,
             password,
             options: {
@@ -317,10 +337,29 @@ export const useAuthStore = create<AuthState>()(
           });
 
           if (error) {
+            if (error.message.includes('already registered')) {
+              return { success: false, error: 'An account with this email already exists' };
+            }
             return { success: false, error: error.message };
           }
 
-          // Auth state change listener will update the store
+          // If email confirmation is required, Supabase returns a user but no session
+          if (data.user && !data.session) {
+            return { success: true };
+          }
+
+          // If auto-confirm is on, we get a session immediately
+          if (data.session?.user) {
+            const { data: profile } = await supabase
+              .from('profiles')
+              .select('*')
+              .eq('id', data.session.user.id)
+              .single();
+
+            const user = buildUser(data.session.user, profile);
+            set({ user, isLoggedIn: true });
+          }
+
           return { success: true };
         } catch {
           return { success: false, error: 'Signup failed. Please try again.' };
@@ -357,6 +396,7 @@ export const useAuthStore = create<AuthState>()(
         if (isSupabaseConfigured()) {
           try {
             const supabase = createClient();
+            // Fire and forget — the onAuthStateChange listener handles state
             supabase.auth.signOut();
           } catch {
             // Fall through to local cleanup

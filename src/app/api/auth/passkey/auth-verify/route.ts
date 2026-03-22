@@ -3,10 +3,17 @@ import { verifyAuthenticationResponse } from '@simplewebauthn/server';
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-function getServiceSupabase() {
-  return createClient(supabaseUrl, supabaseServiceKey);
+/**
+ * Create a Supabase client with the anon key.
+ * We rely on:
+ * - Anon RLS policy on passkey_credentials for reading
+ * - SECURITY DEFINER RPC functions for cross-table lookups
+ * - "Anyone can manage" policy on passkey_challenges
+ */
+function getAnonSupabase() {
+  return createClient(supabaseUrl, supabaseAnonKey);
 }
 
 export async function POST(request: NextRequest) {
@@ -19,13 +26,14 @@ export async function POST(request: NextRequest) {
     const protocol = host.includes('localhost') ? 'http' : 'https';
     const origin = `${protocol}://${host}`;
 
-    const supabase = getServiceSupabase();
+    const supabase = getAnonSupabase();
 
     // The credential ID from the response tells us which credential was used
     // body.id is already base64url-encoded by the browser
     const credentialId = body.id;
 
     // Look up the credential in our database
+    // RLS: anon can read passkey_credentials
     const { data: credential, error: credError } = await supabase
       .from('passkey_credentials')
       .select('*')
@@ -83,10 +91,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Update the credential counter to prevent replay attacks
-    await supabase
-      .from('passkey_credentials')
-      .update({ counter: verification.authenticationInfo.newCounter })
-      .eq('id', credentialId);
+    // Use RPC function (SECURITY DEFINER) since anon can't UPDATE passkey_credentials
+    await supabase.rpc('update_passkey_counter', {
+      cred_id: credentialId,
+      new_counter: verification.authenticationInfo.newCounter,
+    });
 
     // Clean up the used challenge
     await supabase
@@ -94,61 +103,25 @@ export async function POST(request: NextRequest) {
       .delete()
       .eq('id', challengeRow.id);
 
-    // Look up the user's profile to return user data
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('id', credential.user_id)
-      .single();
-
-    // Get the user's email from Supabase auth
-    const { data: { user: authUser } } = await supabase.auth.admin.getUserById(
-      credential.user_id
-    );
-
-    // Generate a magic link / session token for the user
-    // Since we can't directly create a session, we generate a magic link token
-    // that the client can use to sign in
-    const { data: magicLink, error: magicLinkError } = await supabase.auth.admin.generateLink({
-      type: 'magiclink',
-      email: authUser?.email || '',
+    // Look up the user's profile and email using RPC (SECURITY DEFINER)
+    const { data: userInfo } = await supabase.rpc('get_passkey_user_info', {
+      lookup_user_id: credential.user_id,
     });
 
-    if (magicLinkError) {
-      // Fallback: return user data and let client handle session differently
-      console.error('Magic link generation failed:', magicLinkError);
-      return NextResponse.json({
-        verified: true,
-        user: {
-          id: credential.user_id,
-          email: authUser?.email || '',
-          name: profile?.full_name || authUser?.user_metadata?.full_name || 'User',
-          username: profile?.username || authUser?.user_metadata?.username,
-          isAdmin: profile?.is_admin || false,
-          plan: profile?.plan || 'free',
-        },
-        // No session token available — client must handle this
-        sessionMethod: 'manual',
-      });
-    }
-
-    // Extract the token hash and type from the generated link properties
-    const tokenHash = magicLink.properties?.hashed_token;
-    const emailRedirectTo = magicLink.properties?.redirect_to;
-
+    // Return user data for manual session (without service role key,
+    // we cannot generate a magic link / real Supabase session).
+    // The client-side code will set the user in the auth store directly.
     return NextResponse.json({
       verified: true,
       user: {
         id: credential.user_id,
-        email: authUser?.email || '',
-        name: profile?.full_name || authUser?.user_metadata?.full_name || 'User',
-        username: profile?.username || authUser?.user_metadata?.username,
-        isAdmin: profile?.is_admin || false,
-        plan: profile?.plan || 'free',
+        email: userInfo?.email || '',
+        name: userInfo?.full_name || 'User',
+        username: userInfo?.username,
+        isAdmin: userInfo?.is_admin || false,
+        plan: userInfo?.plan || 'free',
       },
-      sessionMethod: 'otp',
-      tokenHash,
-      email: authUser?.email || '',
+      sessionMethod: 'manual',
     });
   } catch (error) {
     console.error('Auth verify error:', error);

@@ -4,10 +4,15 @@ import type { AuthenticatorTransportFuture } from '@simplewebauthn/server';
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-function getServiceSupabase() {
-  return createClient(supabaseUrl, supabaseServiceKey);
+/**
+ * Create a Supabase client with the anon key (no user auth).
+ * We use RPC functions with SECURITY DEFINER to access data across users.
+ * For passkey_credentials and passkey_challenges, RLS policies allow anon access.
+ */
+function getAnonSupabase() {
+  return createClient(supabaseUrl, supabaseAnonKey);
 }
 
 export async function POST(request: NextRequest) {
@@ -19,38 +24,38 @@ export async function POST(request: NextRequest) {
     const host = request.headers.get('host') || 'localhost';
     const rpID = host.split(':')[0];
 
-    const supabase = getServiceSupabase();
+    const supabase = getAnonSupabase();
 
     // If an email is provided, look up the user's credentials to narrow down
     let allowCredentials: { id: string; transports?: AuthenticatorTransportFuture[] }[] | undefined;
 
     if (email) {
-      // Look up the user by email using Supabase admin API
-      const { data: usersData } = await supabase.auth.admin.listUsers();
-      const matchedUser = usersData?.users?.find(
-        (u) => u.email === email
-      );
+      // Use RPC to resolve email -> user_id (SECURITY DEFINER bypasses RLS)
+      const { data: userId, error: resolveError } = await supabase.rpc('get_user_id_by_email', {
+        lookup_email: email,
+      });
 
-      if (matchedUser) {
-        const { data: creds } = await supabase
-          .from('passkey_credentials')
-          .select('id, transports')
-          .eq('user_id', matchedUser.id);
-
-        if (creds && creds.length > 0) {
-          allowCredentials = creds.map((c) => ({
-            id: c.id,
-            transports: (c.transports || []) as AuthenticatorTransportFuture[],
-          }));
-        } else {
-          return NextResponse.json(
-            { error: 'No passkeys registered for this email' },
-            { status: 404 }
-          );
-        }
-      } else {
+      if (resolveError || !userId) {
         return NextResponse.json(
           { error: 'No account found with this email' },
+          { status: 404 }
+        );
+      }
+
+      // Read credentials — anon RLS policy allows reading
+      const { data: creds } = await supabase
+        .from('passkey_credentials')
+        .select('id, transports')
+        .eq('user_id', userId);
+
+      if (creds && creds.length > 0) {
+        allowCredentials = creds.map((c: { id: string; transports?: string[] }) => ({
+          id: c.id,
+          transports: (c.transports || []) as AuthenticatorTransportFuture[],
+        }));
+      } else {
+        return NextResponse.json(
+          { error: 'No passkeys registered for this email' },
           { status: 404 }
         );
       }
@@ -65,6 +70,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Store the challenge for verification lookup later
+    // RLS: "Anyone can manage challenges" allows this
     await supabase
       .from('passkey_challenges')
       .insert({

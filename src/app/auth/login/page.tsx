@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 import { Mail, Lock, LogIn, Eye, EyeOff, AlertCircle, Info, Fingerprint } from 'lucide-react';
 import { useAuthStore, isSupabaseReady } from '@/lib/auth-store';
 import { startAuthentication } from '@simplewebauthn/browser';
-import { createClient } from '@/lib/supabase';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -108,47 +107,20 @@ export default function LoginPage() {
 
       const verifyData = await verifyRes.json();
 
-      if (verifyData.verified) {
-        if (verifyData.sessionMethod === 'otp' && verifyData.tokenHash) {
-          // Use the OTP token to create a real Supabase session
-          const supabase = createClient();
-          const { error: otpError } = await supabase.auth.verifyOtp({
-            token_hash: verifyData.tokenHash,
-            type: 'magiclink',
-          });
-
-          if (otpError) {
-            console.error('OTP verification error:', otpError);
-            // Fallback to manual session
-            useAuthStore.setState({
-              user: {
-                id: verifyData.user.id,
-                name: verifyData.user.name,
-                username: verifyData.user.username,
-                email: verifyData.user.email,
-                isAdmin: verifyData.user.isAdmin,
-                plan: verifyData.user.plan,
-                createdAt: Date.now(),
-              },
-              isLoggedIn: true,
-            });
-          }
-          // Auth state change listener will update the store for OTP success
-        } else {
-          // Manual session: set user directly in the store
-          useAuthStore.setState({
-            user: {
-              id: verifyData.user.id,
-              name: verifyData.user.name,
-              username: verifyData.user.username,
-              email: verifyData.user.email,
-              isAdmin: verifyData.user.isAdmin,
-              plan: verifyData.user.plan,
-              createdAt: Date.now(),
-            },
-            isLoggedIn: true,
-          });
-        }
+      if (verifyData.verified && verifyData.user) {
+        // Set user directly in the store (manual session)
+        useAuthStore.setState({
+          user: {
+            id: verifyData.user.id,
+            name: verifyData.user.name,
+            username: verifyData.user.username,
+            email: verifyData.user.email,
+            isAdmin: verifyData.user.isAdmin,
+            plan: verifyData.user.plan,
+            createdAt: Date.now(),
+          },
+          isLoggedIn: true,
+        });
 
         router.push('/');
       }

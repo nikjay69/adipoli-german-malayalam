@@ -1,12 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateRegistrationOptions } from '@simplewebauthn/server';
+import type { AuthenticatorTransportFuture } from '@simplewebauthn/server';
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-function getServiceSupabase() {
-  return createClient(supabaseUrl, supabaseServiceKey);
+/**
+ * Create a Supabase client authenticated with the user's JWT.
+ * This respects RLS policies — the user can only access their own data.
+ */
+function getUserSupabase(token: string) {
+  return createClient(supabaseUrl, supabaseAnonKey, {
+    global: { headers: { Authorization: `Bearer ${token}` } },
+  });
 }
 
 export async function POST(request: NextRequest) {
@@ -22,15 +29,9 @@ export async function POST(request: NextRequest) {
 
     const token = authHeader.replace('Bearer ', '');
 
-    // Verify the user via Supabase auth using the anon key + JWT
-    const { createClient: createAnonClient } = await import('@supabase/supabase-js');
-    const supabaseAnon = createAnonClient(
-      supabaseUrl,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      { global: { headers: { Authorization: `Bearer ${token}` } } }
-    );
-
-    const { data: { user }, error: userError } = await supabaseAnon.auth.getUser();
+    // Verify the user via Supabase auth
+    const supabase = getUserSupabase(token);
+    const { data: { user }, error: userError } = await supabase.auth.getUser();
     if (userError || !user) {
       return NextResponse.json(
         { error: 'Invalid session' },
@@ -45,15 +46,15 @@ export async function POST(request: NextRequest) {
     const origin = `${protocol}://${host}`;
 
     // Fetch existing credentials for this user (to exclude them)
-    const supabase = getServiceSupabase();
+    // RLS policy: "Users read own passkeys" allows this
     const { data: existingCreds } = await supabase
       .from('passkey_credentials')
       .select('id, transports')
       .eq('user_id', user.id);
 
-    const excludeCredentials = (existingCreds || []).map((cred) => ({
+    const excludeCredentials = (existingCreds || []).map((cred: { id: string; transports?: string[] }) => ({
       id: cred.id,
-      transports: cred.transports || [],
+      transports: (cred.transports || []) as AuthenticatorTransportFuture[],
     }));
 
     // Generate registration options
@@ -71,6 +72,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Store the challenge for verification
+    // RLS policy: "Anyone can manage challenges" allows this
     await supabase
       .from('passkey_challenges')
       .insert({
