@@ -319,6 +319,7 @@ export const MODULE_6: Module = {
           id: "ex6-2-3",
           type: "fill-blank",
           question: "Ich hätte _____ einen Orangensaft, bitte. (I would like)",
+          options: ["gern", "nicht", "auch", "sehr"],
           correctAnswer: "gern",
           explanation:
             "'Ich hätte gern ...' is the polite way to order something: 'I would like ...'",
@@ -338,6 +339,7 @@ export const MODULE_6: Module = {
           type: "fill-blank",
           question:
             "Ich trinke _____ gern Bier. (not — to say you don't like it)",
+          options: ["nicht", "kein", "nie", "sehr"],
           correctAnswer: "nicht",
           explanation:
             "To express dislike: 'nicht gern'. Ich trinke nicht gern Bier. (I don't like to drink beer.)",
@@ -758,6 +760,7 @@ export const MODULE_6: Module = {
           id: "ex6-4-2",
           type: "fill-blank",
           question: "Ich mag _____ Fleisch. Ich bin Vegetarier. (no/not any)",
+          options: ["kein", "nicht", "keinen", "keine"],
           correctAnswer: "kein",
           explanation:
             "'Kein' negates a noun: 'Ich mag kein Fleisch.' = I don't like meat. ('Fleisch' is neuter → kein.)",
@@ -799,6 +802,7 @@ export const MODULE_6: Module = {
           id: "ex6-4-5",
           type: "fill-blank",
           question: "Ich esse _____ gern Fisch. (not — I don't enjoy eating fish)",
+          options: ["nicht", "kein", "nie", "sehr"],
           correctAnswer: "nicht",
           explanation:
             "'Nicht gern' expresses disliking an activity: 'Ich esse nicht gern Fisch.' = I don't like eating fish.",
@@ -1050,6 +1054,7 @@ export const MODULE_6: Module = {
           id: "ex6-5-8",
           type: "fill-blank",
           question: "Ich esse _____ Fleisch. Ich bin Vegetarier. (no/not any — neuter)",
+          options: ["kein", "keinen", "keine", "nicht"],
           correctAnswer: "kein",
           explanation:
             "'Fleisch' is neuter. Neuter kein doesn't change in accusative: 'Ich esse kein Fleisch.'",

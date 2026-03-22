@@ -312,7 +312,7 @@ export const MODULE_3: Module = {
           options: ["neunzig", "dreißig", "sechzig", "hundert", "fünfzig"],
           correctAnswer: ["dreißig", "fünfzig", "sechzig", "neunzig", "hundert"],
           explanation: "dreißig (30), fünfzig (50), sechzig (60), neunzig (90), hundert (100).",
-          xpReward: 25
+          xpReward: 20
         },
         {
           id: "ex3-2-5",
@@ -646,7 +646,7 @@ export const MODULE_3: Module = {
           options: ["Freitag", "Mittwoch", "Montag", "Donnerstag", "Dienstag"],
           correctAnswer: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"],
           explanation: "The German work week: Montag, Dienstag, Mittwoch, Donnerstag, Freitag.",
-          xpReward: 25
+          xpReward: 20
         },
         {
           id: "ex3-4-2",
