@@ -1,13 +1,14 @@
 'use client';
 
-import { use, useState, useEffect } from 'react';
+import { use, useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Clock, ChevronRight, Award } from 'lucide-react';
+import { ArrowLeft, Clock, ChevronRight, Award, ChevronDown } from 'lucide-react';
 import { Card, Button, ProgressBar } from '@/components/ui';
 import { Confetti } from '@/components/game';
 import { useGameStore } from '@/lib/store';
 import { GOETHE_TESTS, getTestById } from '@/lib/content/goethe-tests';
+import { playAudio, stopAudio } from '@/lib/audio';
 
 type Section = 'overview' | 'hoeren' | 'lesen' | 'schreiben' | 'sprechen' | 'results';
 type Teil = 'teil1' | 'teil2' | 'teil3';
@@ -26,6 +27,12 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
   const [totalCorrect, setTotalCorrect] = useState(0);
   const [totalQuestions, setTotalQuestions] = useState(0);
 
+  // Hören audio state
+  const [playsLeft, setPlaysLeft] = useState(2);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [audioAvailable, setAudioAvailable] = useState<boolean | null>(null); // null = not checked yet
+  const [showTranscript, setShowTranscript] = useState(false);
+
   const test = getTestById(testId);
 
   // Timer
@@ -36,6 +43,39 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
     }
   }, [section, timeLeft]);
 
+  // Reset audio state when question changes
+  useEffect(() => {
+    setPlaysLeft(2);
+    setIsPlayingAudio(false);
+    setAudioAvailable(null);
+    setShowTranscript(false);
+    stopAudio();
+  }, [questionIndex, teil, section]);
+
+  // Check if audio file exists for current Hören question
+  useEffect(() => {
+    if (section !== 'hoeren' || !test) return;
+
+    const questions = getCurrentQuestionsStatic();
+    const currentQuestion = questions[questionIndex];
+    if (!currentQuestion?.audio_text) {
+      setAudioAvailable(false);
+      return;
+    }
+
+    const audioUrl = `/audio/hoeren/${testId}-${currentQuestion.id}.mp3`;
+
+    // Check if audio file exists by trying to fetch it
+    fetch(audioUrl, { method: 'HEAD' })
+      .then(res => {
+        setAudioAvailable(res.ok);
+      })
+      .catch(() => {
+        setAudioAvailable(false);
+      });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [section, teil, questionIndex, testId]);
+
   const formatTime = (s: number) => `${Math.floor(s / 60)}:${(s % 60).toString().padStart(2, '0')}`;
 
   const startSection = (s: Section) => {
@@ -44,6 +84,14 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
     setQuestionIndex(0);
     setShowResult(false);
     setTimeLeft(s === 'hoeren' ? 20 * 60 : s === 'lesen' ? 25 * 60 : s === 'schreiben' ? 20 * 60 : 15 * 60);
+  };
+
+  // Static version for use in useEffect (no dependency on section state at call time)
+  const getCurrentQuestionsStatic = (): any[] => {
+    if (!test) return [];
+    if (section === 'hoeren') return (test.hoeren as any)?.[teil] || [];
+    if (section === 'lesen') return (test.lesen as any)?.[teil] || [];
+    return [];
   };
 
   const getCurrentQuestions = (): any[] => {
@@ -56,9 +104,28 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
   const questions = getCurrentQuestions();
   const currentQ = questions[questionIndex];
 
+  // Play Hören audio
+  const playHoerenAudio = useCallback(async () => {
+    if (!currentQ || playsLeft <= 0 || isPlayingAudio) return;
+
+    const audioUrl = `/audio/hoeren/${testId}-${currentQ.id}.mp3`;
+    setIsPlayingAudio(true);
+
+    try {
+      await playAudio(audioUrl);
+    } catch {
+      // Audio failed — will fall back to text display
+      setAudioAvailable(false);
+    } finally {
+      setIsPlayingAudio(false);
+      setPlaysLeft(prev => prev - 1);
+    }
+  }, [currentQ, playsLeft, isPlayingAudio, testId]);
+
   const handleAnswer = (qId: string, answer: string | boolean) => {
     setAnswers(prev => ({ ...prev, [qId]: answer }));
     setShowResult(true);
+    stopAudio();
 
     setTimeout(() => {
       setShowResult(false);
@@ -118,7 +185,7 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
         <p className="text-6xl mb-4">📝</p>
         <h1 className="text-xl font-bold mb-2">Test not found</h1>
         <p className="text-[var(--foreground)]/40 text-sm mb-4 text-center">
-          This test doesn't exist or hasn't been created yet.
+          This test doesn&apos;t exist or hasn&apos;t been created yet.
         </p>
         <Button onClick={() => router.push('/tests')}>Back to Tests</Button>
       </div>
@@ -196,14 +263,85 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
             {/* Audio text / Reading text */}
             <Card className="mb-4">
               <div className="text-sm leading-relaxed">
-                {currentQ.audio_text && (
+                {/* Hören section: audio playback or text fallback */}
+                {currentQ.audio_text && section === 'hoeren' && (
                   <div className="mb-3 p-3 bg-[var(--foreground)]/5 rounded-lg">
-                    <p className="text-xs text-[var(--foreground)]/40 mb-1">
-                      {section === 'hoeren' ? '🎧 You hear:' : '📖 Read:'}
-                    </p>
+                    {audioAvailable === null ? (
+                      // Still checking audio availability
+                      <div className="text-center py-2">
+                        <p className="text-xs text-[var(--foreground)]/40 animate-pulse">Loading audio...</p>
+                      </div>
+                    ) : audioAvailable ? (
+                      // Audio available — show play button
+                      <div className="text-center">
+                        <p className="text-xs text-[var(--foreground)]/40 mb-2">🎧 Listen to the audio</p>
+                        <motion.button
+                          whileTap={{ scale: 0.95 }}
+                          onClick={playHoerenAudio}
+                          disabled={playsLeft === 0 || isPlayingAudio}
+                          className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${
+                            isPlayingAudio
+                              ? 'bg-[#3b82f6]/20 text-[#3b82f6] border-2 border-[#3b82f6]/40 animate-pulse'
+                              : playsLeft > 0
+                              ? 'bg-[#3b82f6]/10 text-[#3b82f6] border-2 border-[#3b82f6]/30 hover:bg-[#3b82f6]/20 hover:border-[#3b82f6]/50'
+                              : 'bg-[var(--foreground)]/5 text-[var(--foreground)]/30 border-2 border-[var(--foreground)]/10 cursor-not-allowed'
+                          }`}
+                        >
+                          {isPlayingAudio ? (
+                            <span>🔊 Playing...</span>
+                          ) : playsLeft > 0 ? (
+                            <span>🎧 Play Audio ({playsLeft} {playsLeft === 1 ? 'play' : 'plays'} left)</span>
+                          ) : (
+                            <span>No plays remaining</span>
+                          )}
+                        </motion.button>
+                        {playsLeft < 2 && playsLeft > 0 && (
+                          <p className="text-xs text-[#d4a520] mt-1.5">You can listen one more time</p>
+                        )}
+                        {playsLeft === 0 && !showResult && (
+                          <p className="text-xs text-[var(--foreground)]/30 mt-1.5">Like the real exam — 2 plays only!</p>
+                        )}
+
+                        {/* Show Transcript toggle — appears after answering */}
+                        {showResult && (
+                          <div className="mt-3">
+                            <button
+                              onClick={() => setShowTranscript(prev => !prev)}
+                              className="flex items-center gap-1 mx-auto text-xs text-[var(--foreground)]/50 hover:text-[var(--foreground)]/70 transition-colors"
+                            >
+                              <ChevronDown className={`w-3 h-3 transition-transform ${showTranscript ? 'rotate-180' : ''}`} />
+                              {showTranscript ? 'Hide Transcript' : 'Show Transcript'}
+                            </button>
+                            {showTranscript && (
+                              <motion.p
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                className="text-sm italic text-[var(--foreground)]/60 mt-2 text-left whitespace-pre-line"
+                              >
+                                {currentQ.audio_text}
+                              </motion.p>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      // Audio NOT available — fall back to showing text (backward compatible)
+                      <>
+                        <p className="text-xs text-[var(--foreground)]/40 mb-1">🎧 You hear:</p>
+                        <p className="text-sm italic">{currentQ.audio_text}</p>
+                      </>
+                    )}
+                  </div>
+                )}
+
+                {/* Lesen section: always show audio_text as readable text */}
+                {currentQ.audio_text && section === 'lesen' && (
+                  <div className="mb-3 p-3 bg-[var(--foreground)]/5 rounded-lg">
+                    <p className="text-xs text-[var(--foreground)]/40 mb-1">📖 Read:</p>
                     <p className="text-sm italic">{currentQ.audio_text}</p>
                   </div>
                 )}
+
                 {currentQ.text && (
                   <div className="mb-3 p-3 bg-[var(--foreground)]/5 rounded-lg">
                     <p className="text-xs text-[var(--foreground)]/40 mb-1">📖 Read:</p>
@@ -373,7 +511,7 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                 {test.sprechen?.teil3?.map((item: any, i: number) => (
                   <div key={i} className="text-sm">
                     <p className="text-[var(--foreground)]/40 text-xs">{item.situation}</p>
-                    <p className="font-medium text-[#d4a520] italic">"{item.sample_request}"</p>
+                    <p className="font-medium text-[#d4a520] italic">&quot;{item.sample_request}&quot;</p>
                   </div>
                 ))}
               </div>

@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import type { SRSCard } from './srs';
 
 // Types
 export interface VocabularyItem {
@@ -55,6 +56,7 @@ export interface UserProgress {
     vocabLearned: string[];
     startedAt: number;
   };
+  srsCards: Record<string, SRSCard>;
 }
 
 // Level thresholds
@@ -118,6 +120,8 @@ interface GameState {
   resetProgress: () => void;
   saveCheckpoint: (checkpoint: UserProgress['activeLessonCheckpoint']) => void;
   clearCheckpoint: () => void;
+  updateSRSCard: (vocabId: string, card: SRSCard) => void;
+  addSRSCard: (card: SRSCard) => void;
 }
 
 const getInitialProgress = (): UserProgress => ({
@@ -136,6 +140,7 @@ const getInitialProgress = (): UserProgress => ({
   journeyMilestones: [],
   soundEnabled: true,
   activeLessonCheckpoint: undefined,
+  srsCards: {},
 });
 
 const calculateLevel = (xp: number): number => {
@@ -375,6 +380,34 @@ export const useGameStore = create<GameState>()(
             activeLessonCheckpoint: undefined,
           },
         }));
+      },
+
+      updateSRSCard: (vocabId: string, card: SRSCard) => {
+        set((state) => ({
+          userProgress: {
+            ...state.userProgress,
+            srsCards: {
+              ...state.userProgress.srsCards,
+              [vocabId]: card,
+            },
+          },
+        }));
+      },
+
+      addSRSCard: (card: SRSCard) => {
+        set((state) => {
+          // Don't overwrite existing cards
+          if (state.userProgress.srsCards[card.vocabId]) return state;
+          return {
+            userProgress: {
+              ...state.userProgress,
+              srsCards: {
+                ...state.userProgress.srsCards,
+                [card.vocabId]: card,
+              },
+            },
+          };
+        });
       },
 
       resetProgress: () => {

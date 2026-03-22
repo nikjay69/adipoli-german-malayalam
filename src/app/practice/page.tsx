@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Mic, MessageCircle, Headphones, Radio } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
+import { getDueCount } from '@/lib/srs';
 
 const practices = [
   {
@@ -31,6 +32,17 @@ const practices = [
     href: '/practice/speak',
   },
   {
+    id: 'review',
+    name: 'Daily Review',
+    description: 'Spaced repetition flashcards. Review vocab at the perfect time to lock it in forever.',
+    icon: '🧠',
+    color: '#d4a520',
+    badge: 'SRS',
+    badgeColor: '#d4a520',
+    detail: 'SM-2 algorithm · Anki-style intervals',
+    href: '/practice/review',
+  },
+  {
     id: 'chat',
     name: 'Ask Kuttan',
     description: 'Chat with your AI German tutor. Ask grammar questions, practice sentences, clear doubts.',
@@ -49,6 +61,11 @@ export default function PracticePage() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => { setMounted(true); }, []);
+
+  const dueCount = useMemo(() => {
+    if (!mounted) return 0;
+    return getDueCount(userProgress.srsCards);
+  }, [mounted, userProgress.srsCards]);
 
   if (!mounted) return (
     <div className="min-h-screen flex items-center justify-center">
@@ -125,7 +142,14 @@ export default function PracticePage() {
                       </span>
                     </div>
                     <p className="text-xs text-[var(--foreground)]/40 leading-relaxed mb-1">{p.description}</p>
-                    <p className="text-[10px] text-[var(--foreground)]/25">{p.detail}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-[10px] text-[var(--foreground)]/25">{p.detail}</p>
+                      {p.id === 'review' && dueCount > 0 && (
+                        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[#c0392b]/20 text-[#c0392b]">
+                          {dueCount} due
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               </motion.div>
