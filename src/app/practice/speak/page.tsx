@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Volume2, Mic, MicOff, Heart, ArrowLeft, RotateCcw } from 'lucide-react';
+import { X, Volume2, Mic, MicOff, Heart, ArrowLeft } from 'lucide-react';
 import { GameButton } from '@/components/game';
 import { Confetti, XPGain, Celebration } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
@@ -360,10 +360,8 @@ export default function SpeakPracticePage() {
     setMounted(true);
 
     // Check for speech recognition support
-    const SpeechRecognition = (window as unknown as { SpeechRecognition?: typeof window.SpeechRecognition; webkitSpeechRecognition?: typeof window.SpeechRecognition }).SpeechRecognition
-      || (window as unknown as { webkitSpeechRecognition?: typeof window.SpeechRecognition }).webkitSpeechRecognition;
-
-    if (!SpeechRecognition) {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) {
       setMicSupported(false);
     }
 
@@ -456,12 +454,10 @@ export default function SpeakPracticePage() {
   // ─── Speech Recognition ─────────────────────────────────────
 
   const startRecording = useCallback(() => {
-    const SpeechRecognition = (window as unknown as { SpeechRecognition?: typeof window.SpeechRecognition; webkitSpeechRecognition?: typeof window.SpeechRecognition }).SpeechRecognition
-      || (window as unknown as { webkitSpeechRecognition?: typeof window.SpeechRecognition }).webkitSpeechRecognition;
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) return;
 
-    if (!SpeechRecognition) return;
-
-    const recognition = new SpeechRecognition();
+    const recognition = new SR();
     recognition.lang = 'de-DE';
     recognition.interimResults = true;
     recognition.maxAlternatives = 3;
