@@ -9,14 +9,14 @@ import { useGameStore } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
 
 const tests = [
-  { id: 'test-1', name: 'Übungstest 1', topic: 'Self-introduction, Personal Info & Shopping', icon: '🎯' },
-  { id: 'test-2', name: 'Übungstest 2', topic: 'Daily Routine, Time & Appointments', icon: '⏰' },
-  { id: 'test-3', name: 'Übungstest 3', topic: 'Family, Descriptions & Housing', icon: '👨‍👩‍👧' },
-  { id: 'test-4', name: 'Übungstest 4', topic: 'Food, Restaurant & Preferences', icon: '🍽️' },
-  { id: 'test-5', name: 'Übungstest 5', topic: 'Travel, Directions & Transport', icon: '✈️' },
-  { id: 'test-6', name: 'Übungstest 6', topic: 'Health, Body & Doctor Visits', icon: '🏥' },
-  { id: 'test-7', name: 'Übungstest 7', topic: 'Work, Study & Skills', icon: '💼' },
-  { id: 'test-8', name: 'Übungstest 8', topic: 'Culture, Weather & Free Time', icon: '🇩🇪' },
+  { id: 'goethe-a1-test-1', name: 'Übungstest 1', topic: 'Self-introduction, Personal Info & Shopping', icon: '🎯' },
+  { id: 'goethe-a1-test-2', name: 'Übungstest 2', topic: 'Daily Routine, Time & Appointments', icon: '⏰' },
+  { id: 'goethe-a1-test-3', name: 'Übungstest 3', topic: 'Family, Descriptions & Housing', icon: '👨‍👩‍👧' },
+  { id: 'goethe-a1-test-4', name: 'Übungstest 4', topic: 'Food, Restaurant & Preferences', icon: '🍽️' },
+  { id: 'goethe-a1-test-5', name: 'Übungstest 5', topic: 'Travel, Directions & Transport', icon: '✈️' },
+  { id: 'goethe-a1-test-6', name: 'Übungstest 6', topic: 'Health, Body & Doctor Visits', icon: '🏥' },
+  { id: 'goethe-a1-test-7', name: 'Übungstest 7', topic: 'Work, Study & Skills', icon: '💼' },
+  { id: 'goethe-a1-test-8', name: 'Übungstest 8', topic: 'Culture, Weather & Free Time', icon: '🇩🇪' },
 ];
 
 export default function TestsPage() {
