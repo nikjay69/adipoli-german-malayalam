@@ -20,40 +20,40 @@ const sizes = {
 export function Kuttan({ mood = 'idle', size = 'md', className = '' }: KuttanProps) {
   const s = sizes[size];
 
-  // Body animations per mood
+  // Body animations per mood — gentle and friendly, NOT scary
   const bodyAnim = {
-    idle: { y: [0, -4, 0], transition: { duration: 3, repeat: Infinity, ease: 'easeInOut' as const } },
-    happy: { y: [0, -6, 0], transition: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' as const } },
-    excited: { y: [0, -12, 0], scale: [1, 1.05, 1], transition: { duration: 0.6, repeat: Infinity, ease: 'easeInOut' as const } },
-    thinking: { rotate: [0, -2, 0], transition: { duration: 2, repeat: Infinity, ease: 'easeInOut' as const } },
-    celebrating: { y: [0, -15, 0], rotate: [0, -3, 3, 0], transition: { duration: 0.8, repeat: Infinity, ease: 'easeInOut' as const } },
-    sad: { y: [0, 2, 0], transition: { duration: 3, repeat: Infinity, ease: 'easeInOut' as const } },
-    pointing: { x: [0, 3, 0], transition: { duration: 2, repeat: Infinity, ease: 'easeInOut' as const } },
-    waving: { rotate: [0, -2, 2, 0], transition: { duration: 1.2, repeat: Infinity, ease: 'easeInOut' as const } },
+    idle: { y: [0, -3, 0], transition: { duration: 3, repeat: Infinity, ease: 'easeInOut' as const } },
+    happy: { y: [0, -4, 0], transition: { duration: 2, repeat: Infinity, ease: 'easeInOut' as const } },
+    excited: { y: [0, -6, 0], scale: [1, 1.03, 1], transition: { duration: 1, repeat: Infinity, ease: 'easeInOut' as const } },
+    thinking: { rotate: [0, -1, 0], transition: { duration: 3, repeat: Infinity, ease: 'easeInOut' as const } },
+    celebrating: { y: [0, -8, 0], scale: [1, 1.04, 1], transition: { duration: 1.2, repeat: Infinity, ease: 'easeInOut' as const } },
+    sad: { y: [0, 1, 0], transition: { duration: 3, repeat: Infinity, ease: 'easeInOut' as const } },
+    pointing: { x: [0, 2, 0], transition: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' as const } },
+    waving: { rotate: [0, -1, 1, 0], transition: { duration: 2, repeat: Infinity, ease: 'easeInOut' as const } },
   };
 
-  // Left arm animation
+  // Left arm animation — subtle, no wild swinging
   const leftArmAnim = {
     idle: { rotate: 0 },
-    happy: { rotate: [0, -10, 0], transition: { duration: 1.5, repeat: Infinity } },
-    excited: { rotate: [0, -30, 0], transition: { duration: 0.5, repeat: Infinity } },
-    thinking: { rotate: -45, y: -5 },
-    celebrating: { rotate: [0, -45, 0], transition: { duration: 0.6, repeat: Infinity } },
-    sad: { rotate: 5 },
+    happy: { rotate: [0, -5, 0], transition: { duration: 2, repeat: Infinity, ease: 'easeInOut' as const } },
+    excited: { rotate: [0, -10, 0], transition: { duration: 1.2, repeat: Infinity, ease: 'easeInOut' as const } },
+    thinking: { rotate: -20, y: -3, transition: { duration: 0.5 } },
+    celebrating: { rotate: [0, -15, 0], transition: { duration: 1.2, repeat: Infinity, ease: 'easeInOut' as const } },
+    sad: { rotate: 3 },
     pointing: { rotate: 0 },
-    waving: { rotate: [0, -10, 0], transition: { duration: 1, repeat: Infinity } },
+    waving: { rotate: [0, -5, 0], transition: { duration: 2, repeat: Infinity, ease: 'easeInOut' as const } },
   };
 
-  // Right arm animation
+  // Right arm animation — gentle movements
   const rightArmAnim = {
     idle: { rotate: 0 },
-    happy: { rotate: [0, 10, 0], transition: { duration: 1.5, repeat: Infinity } },
-    excited: { rotate: [0, 30, 0], transition: { duration: 0.5, repeat: Infinity } },
+    happy: { rotate: [0, 5, 0], transition: { duration: 2, repeat: Infinity, ease: 'easeInOut' as const } },
+    excited: { rotate: [0, 10, 0], transition: { duration: 1.2, repeat: Infinity, ease: 'easeInOut' as const } },
     thinking: { rotate: 0 },
-    celebrating: { rotate: [0, 45, 0], transition: { duration: 0.6, repeat: Infinity } },
-    sad: { rotate: -5 },
-    pointing: { rotate: [-60, -65, -60], transition: { duration: 1, repeat: Infinity } },
-    waving: { rotate: [-40, -60, -40], transition: { duration: 0.5, repeat: Infinity } },
+    celebrating: { rotate: [0, 15, 0], transition: { duration: 1.2, repeat: Infinity, ease: 'easeInOut' as const } },
+    sad: { rotate: -3 },
+    pointing: { rotate: [-50, -55, -50], transition: { duration: 2, repeat: Infinity, ease: 'easeInOut' as const } },
+    waving: { rotate: [-30, -45, -30], transition: { duration: 1, repeat: Infinity, ease: 'easeInOut' as const } },
   };
 
   // Eye expressions
