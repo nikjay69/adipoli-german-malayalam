@@ -23,6 +23,7 @@ import {
   MessageSquare,
 } from 'lucide-react';
 import { useAuthStore } from '@/lib/auth-store';
+import { FEATURE_FLAGS } from '@/lib/app-config';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 
 interface StoredUser {
@@ -36,7 +37,7 @@ interface StoredUser {
 }
 
 function getStoredUsers(): StoredUser[] {
-  if (typeof window === 'undefined') return [];
+  if (typeof window === 'undefined' || !FEATURE_FLAGS.demoAuthEnabled) return [];
   try {
     const data = localStorage.getItem('german-app-users');
     return data ? JSON.parse(data) : [];
@@ -112,6 +113,19 @@ export default function AdminPage() {
     users.forEach((u) => counts[u.plan]++);
     return counts;
   }, [users]);
+
+  if (!FEATURE_FLAGS.demoAuthEnabled) {
+    return (
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <div className="max-w-md rounded-2xl border border-amber-500/20 bg-amber-500/10 p-6 text-center">
+          <h1 className="mb-2 text-xl font-bold">Admin disabled</h1>
+          <p className="text-sm text-[var(--foreground)]/70">
+            The public app does not ship with a client-side admin panel. Enable demo auth only for local testing, or wire real server-side admin access first.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (!mounted || !isLoggedIn || !user?.isAdmin) {
     return (

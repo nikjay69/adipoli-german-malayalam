@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Lock, LogIn, Eye, EyeOff, AlertCircle } from 'lucide-react';
 import { useAuthStore } from '@/lib/auth-store';
+import { FEATURE_FLAGS, getAuthStatusMessage } from '@/lib/app-config';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -90,6 +91,16 @@ export default function LoginPage() {
           transition={{ delay: 0.3, duration: 0.4 }}
           className="game-card p-6"
         >
+          {!FEATURE_FLAGS.canCreateAccounts && (
+            <div className="mb-5 rounded-xl border border-amber-500/20 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+              {getAuthStatusMessage()}
+            </div>
+          )}
+          {FEATURE_FLAGS.demoAuthEnabled && (
+            <div className="mb-5 rounded-xl border border-blue-500/20 bg-blue-500/10 px-4 py-3 text-sm text-blue-200">
+              Demo auth is enabled for local testing only. Do not use a real password here.
+            </div>
+          )}
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Error Display */}
             {error && (
@@ -115,7 +126,8 @@ export default function LoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full pl-11 pr-4 py-3 bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 rounded-xl text-[var(--foreground)] placeholder:text-[var(--foreground)]/25 focus:outline-none focus:border-[#d4a520]/50 focus:ring-1 focus:ring-[#d4a520]/30 transition-all"
+                  disabled={!FEATURE_FLAGS.canCreateAccounts}
+                  className="w-full pl-11 pr-4 py-3 bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 rounded-xl text-[var(--foreground)] placeholder:text-[var(--foreground)]/25 focus:outline-none focus:border-[#d4a520]/50 focus:ring-1 focus:ring-[#d4a520]/30 transition-all disabled:opacity-50"
                   autoComplete="email"
                 />
               </div>
@@ -133,7 +145,8 @@ export default function LoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
-                  className="w-full pl-11 pr-12 py-3 bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 rounded-xl text-[var(--foreground)] placeholder:text-[var(--foreground)]/25 focus:outline-none focus:border-[#d4a520]/50 focus:ring-1 focus:ring-[#d4a520]/30 transition-all"
+                  disabled={!FEATURE_FLAGS.canCreateAccounts}
+                  className="w-full pl-11 pr-12 py-3 bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 rounded-xl text-[var(--foreground)] placeholder:text-[var(--foreground)]/25 focus:outline-none focus:border-[#d4a520]/50 focus:ring-1 focus:ring-[#d4a520]/30 transition-all disabled:opacity-50"
                   autoComplete="current-password"
                 />
                 <button
@@ -149,7 +162,7 @@ export default function LoginPage() {
             {/* Submit */}
             <motion.button
               type="submit"
-              disabled={loading}
+              disabled={loading || !FEATURE_FLAGS.canCreateAccounts}
               whileTap={{ scale: 0.97 }}
               whileHover={{ scale: 1.01 }}
               className="game-button w-full flex items-center justify-center gap-2 text-base disabled:opacity-50 disabled:cursor-not-allowed"

@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { FEATURE_FLAGS, getAuthStatusMessage } from './app-config';
 
 export interface User {
   id: string;
@@ -14,7 +15,7 @@ interface StoredUser {
   id: string;
   name: string;
   email: string;
-  password: string; // btoa encoded (MVP only)
+  password: string; // demo-only, never for production use
   isAdmin: boolean;
   plan: 'free' | 'pro' | 'premium';
   createdAt: number;
@@ -29,14 +30,10 @@ interface AuthState {
   upgradePlan: (plan: 'pro' | 'premium') => void;
 }
 
-const USERS_STORAGE_KEY = 'german-app-users';
-
-// Admin credentials (hardcoded for MVP)
-const ADMIN_EMAIL = 'admin';
-const ADMIN_PASSWORD = 'Admin123';
+const USERS_STORAGE_KEY = 'german-app-demo-users';
 
 function getStoredUsers(): StoredUser[] {
-  if (typeof window === 'undefined') return [];
+  if (typeof window === 'undefined' || !FEATURE_FLAGS.demoAuthEnabled) return [];
   try {
     const data = localStorage.getItem(USERS_STORAGE_KEY);
     return data ? JSON.parse(data) : [];
@@ -46,7 +43,7 @@ function getStoredUsers(): StoredUser[] {
 }
 
 function saveStoredUsers(users: StoredUser[]) {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined' || !FEATURE_FLAGS.demoAuthEnabled) return;
   localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
 }
 
@@ -59,7 +56,7 @@ function verifyPassword(password: string, encoded: string): boolean {
 }
 
 function generateId(): string {
-  return Date.now().toString(36) + Math.random().toString(36).substr(2, 9);
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 9);
 }
 
 export const useAuthStore = create<AuthState>()(
@@ -69,26 +66,19 @@ export const useAuthStore = create<AuthState>()(
       isLoggedIn: false,
 
       login: async (email: string, password: string) => {
-        // Check admin credentials
-        if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-          const adminUser: User = {
-            id: 'admin-001',
-            name: 'Admin',
-            email: ADMIN_EMAIL,
-            isAdmin: true,
-            plan: 'premium',
-            createdAt: Date.now(),
-          };
-          set({ user: adminUser, isLoggedIn: true });
-          return { success: true };
+        if (!FEATURE_FLAGS.canCreateAccounts) {
+          return { success: false, error: getAuthStatusMessage() };
         }
 
-        // Check stored users
+        if (!FEATURE_FLAGS.demoAuthEnabled) {
+          return { success: false, error: 'Real auth is not configured yet.' };
+        }
+
         const users = getStoredUsers();
         const found = users.find((u) => u.email === email);
 
         if (!found) {
-          return { success: false, error: 'No account found with this email' };
+          return { success: false, error: 'No demo account found with this email' };
         }
 
         if (!verifyPassword(password, found.password)) {
@@ -99,7 +89,7 @@ export const useAuthStore = create<AuthState>()(
           id: found.id,
           name: found.name,
           email: found.email,
-          isAdmin: found.isAdmin,
+          isAdmin: false,
           plan: found.plan,
           createdAt: found.createdAt,
         };
@@ -109,16 +99,17 @@ export const useAuthStore = create<AuthState>()(
       },
 
       signup: async (name: string, email: string, password: string) => {
-        const users = getStoredUsers();
-
-        // Check if email already exists
-        if (users.find((u) => u.email === email)) {
-          return { success: false, error: 'An account with this email already exists' };
+        if (!FEATURE_FLAGS.canCreateAccounts) {
+          return { success: false, error: getAuthStatusMessage() };
         }
 
-        // Block 'admin' email from signup
-        if (email === ADMIN_EMAIL) {
-          return { success: false, error: 'This email is reserved' };
+        if (!FEATURE_FLAGS.demoAuthEnabled) {
+          return { success: false, error: 'Real auth is not configured yet.' };
+        }
+
+        const users = getStoredUsers();
+        if (users.find((u) => u.email === email)) {
+          return { success: false, error: 'An account with this email already exists' };
         }
 
         const newUser: StoredUser = {
@@ -138,7 +129,7 @@ export const useAuthStore = create<AuthState>()(
           id: newUser.id,
           name: newUser.name,
           email: newUser.email,
-          isAdmin: newUser.isAdmin,
+          isAdmin: false,
           plan: newUser.plan,
           createdAt: newUser.createdAt,
         };
@@ -155,7 +146,10 @@ export const useAuthStore = create<AuthState>()(
         set((state) => {
           if (!state.user) return state;
 
-          // Also update in stored users
+          if (!FEATURE_FLAGS.demoAuthEnabled) {
+            return state;
+          }
+
           const users = getStoredUsers();
           const idx = users.findIndex((u) => u.id === state.user!.id);
           if (idx !== -1) {

@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { Home, Gamepad2, Mic, FileText, User } from 'lucide-react';
 import { clsx } from 'clsx';
 import { useAuthStore } from '@/lib/auth-store';
+import { FEATURE_FLAGS } from '@/lib/app-config';
 
 const navItems = [
   { href: '/', icon: Home, label: 'Home' },
@@ -42,8 +43,8 @@ export function Navigation() {
               const Icon = item.icon;
               const isProfileTab = item.href === '/profile';
 
-              // Profile tab: if not logged in, link to login page
-              const href = isProfileTab && !isLoggedIn ? '/auth/login' : item.href;
+              // Profile tab: if auth is not live, keep users in guest profile instead of fake login.
+              const href = isProfileTab && !isLoggedIn && FEATURE_FLAGS.canCreateAccounts ? '/auth/login' : item.href;
 
               return (
                 <Link key={item.href} href={href} className="flex-1">

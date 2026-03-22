@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Lock, User, UserPlus, Eye, EyeOff, AlertCircle, Check } from 'lucide-react';
 import { useAuthStore } from '@/lib/auth-store';
+import { FEATURE_FLAGS, getAuthStatusMessage } from '@/lib/app-config';
 
 export default function SignupPage() {
   const router = useRouter();
@@ -107,6 +108,16 @@ export default function SignupPage() {
           transition={{ delay: 0.3, duration: 0.4 }}
           className="game-card p-6"
         >
+          {!FEATURE_FLAGS.canCreateAccounts && (
+            <div className="mb-5 rounded-xl border border-amber-500/20 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+              {getAuthStatusMessage()}
+            </div>
+          )}
+          {FEATURE_FLAGS.demoAuthEnabled && (
+            <div className="mb-5 rounded-xl border border-blue-500/20 bg-blue-500/10 px-4 py-3 text-sm text-blue-200">
+              Demo auth is enabled for local testing only. Do not use a real password here.
+            </div>
+          )}
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Error Display */}
             {error && (
@@ -226,7 +237,7 @@ export default function SignupPage() {
             {/* Submit */}
             <motion.button
               type="submit"
-              disabled={loading}
+              disabled={loading || !FEATURE_FLAGS.canCreateAccounts}
               whileTap={{ scale: 0.97 }}
               whileHover={{ scale: 1.01 }}
               className="game-button game-button-success w-full flex items-center justify-center gap-2 text-base disabled:opacity-50 disabled:cursor-not-allowed"

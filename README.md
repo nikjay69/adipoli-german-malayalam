@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Adipoli German
 
-## Getting Started
+German learning platform for Malayalam speakers, built with Next.js.
 
-First, run the development server:
+Live app: https://adipoli-german.vercel.app/
 
+## Stack
+- Next.js 16
+- React 19
+- Tailwind 4
+- Zustand
+- Framer Motion
+
+## Current product shape
+- 18 learning modules
+- games and practice modes
+- vocabulary audio + thumbnails
+- Goethe A1 test prep
+- AI tutor route (when Gemini is configured)
+
+## Important runtime truth
+This repo currently ships in **guest-first mode** by default.
+
+That means:
+- learners can use the course without accounts
+- progress is stored on the current device/browser
+- auth is intentionally **disabled by default** until real backend auth is wired
+- payments are **preview-only** until real checkout is wired
+- demo auth can be enabled locally for testing, but should not be used in production
+
+This is deliberate: fake client-side auth is worse than honest guest mode.
+
+## Environment variables
+
+### Optional / current
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# AI tutor
+GEMINI_API_KEY=
+
+# Demo auth for local testing only
+NEXT_PUBLIC_ENABLE_DEMO_AUTH=false
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Planned real auth
+```bash
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Planned payments
+```bash
+NEXT_PUBLIC_RAZORPAY_KEY_ID=
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Getting started
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Open http://localhost:3000
 
-To learn more about Next.js, take a look at the following resources:
+## Build
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Recommended next steps
+1. Replace guest/demo auth with real Supabase or Firebase auth
+2. Move progress sync to a real database
+3. Wire Razorpay / Stripe checkout + webhooks
+4. Move generated media to object storage/CDN over time
+5. Keep marketing copy aligned with what is truly live

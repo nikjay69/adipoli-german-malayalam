@@ -30,6 +30,7 @@ import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS, ACHIEVEMENTS_DATA } from '
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { calculateExamReadiness } from '@/lib/exam-readiness';
 import { useAuthStore } from '@/lib/auth-store';
+import { FEATURE_FLAGS, getAuthStatusMessage } from '@/lib/app-config';
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -169,23 +170,31 @@ export default function ProfilePage() {
             </h1>
 
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">
-              Create an account to save progress across devices, unlock premium features, and track your journey.
+              {FEATURE_FLAGS.canCreateAccounts
+                ? 'Create an account to save progress across devices, unlock premium features, and track your journey.'
+                : 'You are using guest mode right now. Progress stays on this device until real accounts go live.'}
             </p>
 
-            <div className="flex items-center justify-center gap-3">
-              <Link href="/auth/login">
-                <Button variant="ghost" size="md">
-                  <LogIn className="w-4 h-4" />
-                  Log In
-                </Button>
-              </Link>
-              <Link href="/auth/signup">
-                <Button variant="primary" size="md">
-                  <UserPlus className="w-4 h-4" />
-                  Sign Up
-                </Button>
-              </Link>
-            </div>
+            {FEATURE_FLAGS.canCreateAccounts ? (
+              <div className="flex items-center justify-center gap-3">
+                <Link href="/auth/login">
+                  <Button variant="ghost" size="md">
+                    <LogIn className="w-4 h-4" />
+                    Log In
+                  </Button>
+                </Link>
+                <Link href="/auth/signup">
+                  <Button variant="primary" size="md">
+                    <UserPlus className="w-4 h-4" />
+                    Sign Up
+                  </Button>
+                </Link>
+              </div>
+            ) : (
+              <div className="inline-flex items-center rounded-xl border border-amber-500/20 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+                {getAuthStatusMessage()}
+              </div>
+            )}
 
             {/* Level badge still shows for non-logged users */}
             <div className="mt-5 pt-5 border-t border-gray-200 dark:border-gray-700">

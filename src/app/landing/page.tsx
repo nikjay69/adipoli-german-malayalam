@@ -71,7 +71,7 @@ const features = [
   {
     icon: <Mic className="w-7 h-7" />,
     title: 'Speak & Practice',
-    description: 'Pronunciation checker, Pimsleur-style drills, AI tutor.',
+    description: 'Speaking drills, browser-based pronunciation practice, and an AI tutor where available.',
     color: '#d4a520',
   },
   {
@@ -94,8 +94,8 @@ const features = [
   },
   {
     icon: <WifiOff className="w-7 h-7" />,
-    title: 'Works Offline',
-    description: 'Download scripts and audio files. Study on the train, bus, or backwaters.',
+    title: 'Mobile Friendly',
+    description: 'Use it comfortably on your phone, with downloadable scripts and lots of built-in audio.',
     color: '#2980b9',
   },
 ];
@@ -118,7 +118,7 @@ const pricing = [
     priceINR: 'Free',
     priceEUR: 'Free',
     period: 'forever',
-    features: ['3 modules', '4 games', 'Basic practice', 'Free forever'],
+    features: ['3 modules', '4 games', 'Basic practice', 'Free starter access'],
     cta: 'Start Free',
     recommended: false,
     color: '#27ae60',
@@ -128,7 +128,7 @@ const pricing = [
     priceINR: '499',
     priceEUR: '9.99',
     period: '/mo',
-    features: ['All 18 modules', 'All 8 games', 'AI tutor', 'Pronunciation checker'],
+    features: ['All 18 modules', 'All 8 games', 'AI tutor access', 'Pronunciation practice (beta)'],
     cta: 'Go Pro',
     recommended: true,
     color: '#d4a520',
@@ -138,7 +138,7 @@ const pricing = [
     priceINR: '999',
     priceEUR: '19.99',
     period: '/mo',
-    features: ['Everything in Pro', '8 Goethe mock tests', 'PDF scripts', 'Voice practice', 'Certificate'],
+    features: ['Everything in Pro', '8 Goethe mock tests', 'PDF scripts', 'Voice practice', 'Completion badge'],
     cta: 'Go Premium',
     recommended: false,
     color: '#c0392b',

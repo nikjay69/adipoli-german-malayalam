@@ -15,6 +15,7 @@ import {
   IndianRupee,
 } from 'lucide-react';
 import { useAuthStore } from '@/lib/auth-store';
+import { FEATURE_FLAGS } from '@/lib/app-config';
 
 type Currency = 'inr' | 'eur';
 
@@ -95,8 +96,8 @@ const plans: Plan[] = [
       { text: 'All 18 modules', included: true },
       { text: 'All 8 games', included: true },
       { text: 'Unlimited vocab audio', included: true },
-      { text: 'AI tutor (20 msgs/day)', included: true },
-      { text: 'Pronunciation checker', included: true },
+      { text: 'AI tutor access (where configured)', included: true },
+      { text: 'Pronunciation practice (beta)', included: true },
       { text: 'Goethe mock tests', included: false },
       { text: 'PDF lesson scripts', included: false },
       { text: 'Certificate', included: false },
@@ -123,9 +124,9 @@ const plans: Plan[] = [
       { text: 'Everything in Pro', included: true },
       { text: '8 Goethe A1 mock tests', included: true },
       { text: 'PDF lesson scripts', included: true },
-      { text: 'Priority AI tutor (50 msgs/day)', included: true },
+      { text: 'Priority AI tutor access (where configured)', included: true },
       { text: 'Voice practice mode', included: true },
-      { text: 'Certificate on completion', included: true },
+      { text: 'Completion badge', included: true },
       { text: 'Direct doubt clearing', included: true },
       { text: 'Early access to new content', included: true },
     ],
@@ -152,12 +153,18 @@ export default function PricingPage() {
 
   const handlePayment = (planId: 'free' | 'pro' | 'premium') => {
     if (planId === 'free') {
-      if (!isLoggedIn) {
+      if (!isLoggedIn && FEATURE_FLAGS.canCreateAccounts) {
         window.location.href = '/auth/signup';
       }
       return;
     }
-    alert('Payment integration coming soon! Contact admin.');
+
+    if (!FEATURE_FLAGS.paymentsReady) {
+      alert('Payments are not live yet. Use the free course for now while checkout is being wired up.');
+      return;
+    }
+
+    alert('Payment provider detected, but checkout flow is not wired yet.');
   };
 
   if (!mounted) {
@@ -194,6 +201,12 @@ export default function PricingPage() {
         <p className="text-[var(--foreground)]/50 text-sm max-w-md mx-auto">
           Learn German the Kerala way. Pick a plan that fits your goals.
         </p>
+
+        {!FEATURE_FLAGS.paymentsReady && (
+          <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-1.5 text-xs text-amber-200">
+            Pricing is preview-only right now. Checkout is not live yet.
+          </div>
+        )}
 
         {/* Current plan indicator */}
         {isLoggedIn && user && (
@@ -249,9 +262,11 @@ export default function PricingPage() {
               ? isLoggedIn
                 ? 'Current Plan'
                 : 'Get Started'
-              : currency === 'inr'
-              ? 'Pay with Razorpay'
-              : 'Pay with Stripe';
+              : FEATURE_FLAGS.paymentsReady
+              ? currency === 'inr'
+                ? 'Pay with Razorpay'
+                : 'Pay with Stripe'
+              : 'Join Waitlist';
           const isCurrentPlan = isLoggedIn && user?.plan === plan.id;
 
           return (
