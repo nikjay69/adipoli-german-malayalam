@@ -276,16 +276,25 @@ export default function ProfilePage() {
               )}
             </div>
 
-            {/* Admin link */}
-            {user.isAdmin && (
+            <div className="mb-3 flex flex-wrap items-center justify-center gap-2">
               <Link
-                href="/admin"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#c0392b]/10 text-[#c0392b] hover:bg-[#c0392b]/20 transition-colors mb-3"
+                href="/plan"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#d4a520]/10 text-[#d4a520] hover:bg-[#d4a520]/20 transition-colors"
               >
-                <Shield className="w-3.5 h-3.5" />
-                Admin Panel
+                <FileText className="w-3.5 h-3.5" />
+                Course Plan
               </Link>
-            )}
+
+              {user.isAdmin && (
+                <Link
+                  href="/admin"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#c0392b]/10 text-[#c0392b] hover:bg-[#c0392b]/20 transition-colors"
+                >
+                  <Shield className="w-3.5 h-3.5" />
+                  Admin Panel
+                </Link>
+              )}
+            </div>
 
             {/* Level Badge */}
             <Badge variant="secondary" size="md" className="mb-4">
