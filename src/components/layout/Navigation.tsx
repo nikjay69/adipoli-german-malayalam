@@ -4,14 +4,14 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Home, Gamepad2, BookOpen, User, FileText } from 'lucide-react';
+import { Home, Gamepad2, Mic, FileText, User } from 'lucide-react';
 import { clsx } from 'clsx';
 
 const navItems = [
   { href: '/', icon: Home, label: 'Home' },
   { href: '/games', icon: Gamepad2, label: 'Games' },
+  { href: '/practice', icon: Mic, label: 'Practice' },
   { href: '/tests', icon: FileText, label: 'Tests' },
-  { href: '/vocabulary', icon: BookOpen, label: 'Words' },
   { href: '/profile', icon: User, label: 'Me' },
 ];
 
@@ -24,7 +24,7 @@ export function Navigation() {
   }, []);
 
   // Hide navigation on immersive pages
-  if (pathname.startsWith('/play') || pathname.startsWith('/learn/') || pathname.startsWith('/intro') || pathname.startsWith('/scripts') || (pathname.startsWith('/tests/') && pathname !== '/tests')) {
+  if (pathname.startsWith('/play') || pathname.startsWith('/learn/') || pathname.startsWith('/intro') || pathname.startsWith('/scripts') || (pathname.startsWith('/tests/') && pathname !== '/tests') || (pathname.startsWith('/practice/') && pathname !== '/practice')) {
     return null;
   }
 
