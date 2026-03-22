@@ -64,34 +64,35 @@ export const LEVEL_THRESHOLDS = [
   19200, 21200, 23300, 25500, 27800, 30200, 32700, 35300, 38000, 41000
 ];
 
-// Kerala-themed level names
+// Level names — clean, no forced cultural cringe
 export const LEVEL_NAMES = [
-  "Theyyam Beginner", "Kathakali Novice", "Mohiniyattam Student",
-  "Onam Learner", "Vishu Explorer", "Backwater Traveler",
-  "Munnar Climber", "Periyar Adventurer", "Alleppey Voyager",
-  "Cochin Navigator", "Kozhikode Scholar", "Thrissur Achiever",
-  "Wayanad Wanderer", "Kovalam Surfer", "Varkala Seeker",
-  "Athirapally Explorer", "Thekkady Tracker", "Kumarakom Cruiser",
-  "Bekal Champion", "Ponmudi Pioneer", "Idukki Climber",
-  "Poovar Pro", "Marari Master", "Cherai Champion",
-  "Fort Kochi Expert", "Mattancherry Maven", "Jew Town Genius",
-  "Sabarimala Sage", "Guruvayur Guide", "Kathakali Master"
+  "Beginner", "Starter", "Learner",
+  "Explorer", "Builder", "Speaker",
+  "Communicator", "Achiever", "Adventurer",
+  "Navigator", "Scholar", "Practitioner",
+  "Performer", "Expert", "Specialist",
+  "Advanced", "Professional", "Champion",
+  "Master", "Pioneer", "Virtuoso",
+  "Elite", "Legend", "Prodigy",
+  "Wizard", "Sage", "Guru",
+  "Genius", "Titan", "Grandmaster"
 ];
 
-// Achievements data
+// Milestones — clear, motivating, not cringe
 export const ACHIEVEMENTS_DATA: Achievement[] = [
-  { id: 'first_chai', name: 'First Chai', description: 'Complete your first lesson', icon: '☕' },
-  { id: 'backwater_explorer', name: 'Backwater Explorer', description: 'Complete Module 1', icon: '🚣' },
-  { id: 'sadya_scholar', name: 'Sadya Scholar', description: 'Learn 50 vocabulary words', icon: '🍛' },
-  { id: 'munnar_master', name: 'Munnar Master', description: 'Achieve a 7-day streak', icon: '🏔️' },
-  { id: 'onam_champion', name: 'Onam Champion', description: 'Complete all modules', icon: '🎉' },
-  { id: 'malayali_pro', name: 'Malayali German Pro', description: '100% course completion', icon: '🏆' },
-  { id: 'word_wizard', name: 'Word Wizard', description: 'Learn 100 vocabulary words', icon: '📚' },
-  { id: 'game_guru', name: 'Game Guru', description: 'Play 50 games', icon: '🎮' },
-  { id: 'quiz_king', name: 'Quiz King', description: 'Score 100% on 10 quizzes', icon: '👑' },
-  { id: 'streak_star', name: 'Streak Star', description: 'Achieve a 30-day streak', icon: '⭐' },
-  { id: 'early_bird', name: 'Early Bird', description: 'Complete a lesson before 8 AM', icon: '🌅' },
-  { id: 'night_owl', name: 'Night Owl', description: 'Complete a lesson after 10 PM', icon: '🦉' },
+  { id: 'first_lesson', name: 'First Step', description: 'Complete your first lesson', icon: '🎯' },
+  { id: 'module_1', name: 'Module 1 Done', description: 'Complete Module 1', icon: '✅' },
+  { id: 'vocab_50', name: '50 Words', description: 'Learn 50 vocabulary words', icon: '📖' },
+  { id: 'streak_7', name: '7-Day Streak', description: 'Learn 7 days in a row', icon: '🔥' },
+  { id: 'all_modules', name: 'Course Complete', description: 'Complete all 18 modules', icon: '🏆' },
+  { id: 'perfect_course', name: 'Perfect Score', description: '100% on every lesson', icon: '💎' },
+  { id: 'vocab_100', name: '100 Words', description: 'Learn 100 vocabulary words', icon: '📚' },
+  { id: 'games_50', name: '50 Games', description: 'Play 50 games', icon: '🎮' },
+  { id: 'accuracy_90', name: 'Sharp Mind', description: 'Average 90%+ accuracy', icon: '🎯' },
+  { id: 'streak_30', name: '30-Day Streak', description: 'Learn 30 days straight', icon: '⭐' },
+  { id: 'vocab_300', name: '300 Words', description: 'Learn 300 vocabulary words', icon: '🧠' },
+  { id: 'halfway', name: 'Halfway There', description: 'Complete 9 of 18 modules', icon: '⚡' },
+  { id: 'exam_ready', name: 'Exam Ready', description: 'Reach 60% readiness score', icon: '📝' },
 ];
 
 interface GameState {
@@ -189,8 +190,8 @@ export const useGameStore = create<GameState>()(
 
           // Check for first lesson achievement
           const achievements = [...state.userProgress.achievements];
-          if (!achievements.includes('first_chai') && completedLessons.length === 1) {
-            achievements.push('first_chai');
+          if (!achievements.includes('first_lesson') && completedLessons.length === 1) {
+            achievements.push('first_lesson');
           }
 
           return {
@@ -213,11 +214,11 @@ export const useGameStore = create<GameState>()(
           const achievements = [...state.userProgress.achievements];
 
           // Check vocabulary achievements
-          if (learnedVocabulary.length >= 50 && !achievements.includes('sadya_scholar')) {
-            achievements.push('sadya_scholar');
+          if (learnedVocabulary.length >= 50 && !achievements.includes('vocab_50')) {
+            achievements.push('vocab_50');
           }
-          if (learnedVocabulary.length >= 100 && !achievements.includes('word_wizard')) {
-            achievements.push('word_wizard');
+          if (learnedVocabulary.length >= 100 && !achievements.includes('vocab_100')) {
+            achievements.push('vocab_100');
           }
 
           return {
@@ -265,11 +266,11 @@ export const useGameStore = create<GameState>()(
           }
 
           const achievements = [...state.userProgress.achievements];
-          if (newStreak >= 7 && !achievements.includes('munnar_master')) {
-            achievements.push('munnar_master');
+          if (newStreak >= 7 && !achievements.includes('streak_7')) {
+            achievements.push('streak_7');
           }
-          if (newStreak >= 30 && !achievements.includes('streak_star')) {
-            achievements.push('streak_star');
+          if (newStreak >= 30 && !achievements.includes('streak_30')) {
+            achievements.push('streak_30');
           }
 
           return {
@@ -288,8 +289,8 @@ export const useGameStore = create<GameState>()(
           const gamesPlayed = state.userProgress.gamesPlayed + 1;
           const achievements = [...state.userProgress.achievements];
 
-          if (gamesPlayed >= 50 && !achievements.includes('game_guru')) {
-            achievements.push('game_guru');
+          if (gamesPlayed >= 50 && !achievements.includes('games_50')) {
+            achievements.push('games_50');
           }
 
           return {
