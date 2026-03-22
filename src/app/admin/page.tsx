@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -21,14 +21,39 @@ import {
   Layers,
   GraduationCap,
   MessageSquare,
+  CreditCard,
+  Info,
 } from 'lucide-react';
-import { useAuthStore } from '@/lib/auth-store';
-import { FEATURE_FLAGS } from '@/lib/app-config';
+import { useAuthStore, isSupabaseReady } from '@/lib/auth-store';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
+import { createClient } from '@/lib/supabase';
 
+// Unified user shape for admin display
+interface AdminUser {
+  id: string;
+  name: string;
+  username?: string;
+  email: string;
+  plan: 'free' | 'pro' | 'premium';
+  createdAt: number;
+}
+
+interface PaymentRecord {
+  id: string;
+  user_id: string;
+  amount: number;
+  currency: string;
+  plan: string;
+  provider: string;
+  status: string;
+  created_at: string;
+}
+
+// localStorage fallback types
 interface StoredUser {
   id: string;
   name: string;
+  username?: string;
   email: string;
   password: string;
   isAdmin: boolean;
@@ -36,8 +61,8 @@ interface StoredUser {
   createdAt: number;
 }
 
-function getStoredUsers(): StoredUser[] {
-  if (typeof window === 'undefined' || !FEATURE_FLAGS.demoAuthEnabled) return [];
+function getLocalStorageUsers(): StoredUser[] {
+  if (typeof window === 'undefined') return [];
   try {
     const data = localStorage.getItem('german-app-users');
     return data ? JSON.parse(data) : [];
@@ -53,12 +78,81 @@ export default function AdminPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<'name' | 'date' | 'plan'>('date');
   const [sortAsc, setSortAsc] = useState(false);
-  const [users, setUsers] = useState<StoredUser[]>([]);
+  const [users, setUsers] = useState<AdminUser[]>([]);
+  const [payments, setPayments] = useState<PaymentRecord[]>([]);
+  const [supabaseActive, setSupabaseActive] = useState(false);
+  const [loadingUsers, setLoadingUsers] = useState(true);
+
+  const fetchData = useCallback(async () => {
+    if (isSupabaseReady()) {
+      setSupabaseActive(true);
+      try {
+        const supabase = createClient();
+
+        // Fetch profiles
+        const { data: profiles } = await supabase
+          .from('profiles')
+          .select('*')
+          .order('created_at', { ascending: false });
+
+        if (profiles) {
+          setUsers(
+            profiles.map((p: { id: string; full_name?: string; username?: string; plan?: string; created_at?: string }) => ({
+              id: p.id,
+              name: p.full_name || 'Unknown',
+              username: p.username,
+              email: '', // email lives in auth.users, not accessible from client
+              plan: (p.plan || 'free') as 'free' | 'pro' | 'premium',
+              createdAt: p.created_at ? new Date(p.created_at).getTime() : Date.now(),
+            }))
+          );
+        }
+
+        // Fetch payments
+        const { data: paymentData } = await supabase
+          .from('payments')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(50);
+
+        if (paymentData) {
+          setPayments(paymentData as PaymentRecord[]);
+        }
+      } catch {
+        // Fall back to localStorage on error
+        const local = getLocalStorageUsers();
+        setUsers(
+          local.map((u) => ({
+            id: u.id,
+            name: u.name,
+            username: u.username,
+            email: u.email,
+            plan: u.plan,
+            createdAt: u.createdAt,
+          }))
+        );
+      }
+    } else {
+      // localStorage fallback
+      const local = getLocalStorageUsers();
+      setUsers(
+        local.map((u) => ({
+          id: u.id,
+          name: u.name,
+          username: u.username,
+          email: u.email,
+          plan: u.plan,
+          createdAt: u.createdAt,
+        }))
+      );
+    }
+    setLoadingUsers(false);
+  }, []);
 
   useEffect(() => {
     setMounted(true);
-    setUsers(getStoredUsers());
-  }, []);
+    fetchData();
+  }, [fetchData]);
 
   useEffect(() => {
     if (mounted && (!isLoggedIn || !user?.isAdmin)) {
@@ -91,7 +185,8 @@ export default function AdminPage() {
       list = list.filter(
         (u) =>
           u.name.toLowerCase().includes(q) ||
-          u.email.toLowerCase().includes(q)
+          u.email.toLowerCase().includes(q) ||
+          (u.username && u.username.toLowerCase().includes(q))
       );
     }
 
@@ -114,19 +209,6 @@ export default function AdminPage() {
     return counts;
   }, [users]);
 
-  if (!FEATURE_FLAGS.demoAuthEnabled) {
-    return (
-      <div className="min-h-screen flex items-center justify-center px-4">
-        <div className="max-w-md rounded-2xl border border-amber-500/20 bg-amber-500/10 p-6 text-center">
-          <h1 className="mb-2 text-xl font-bold">Admin disabled</h1>
-          <p className="text-sm text-[var(--foreground)]/70">
-            The public app does not ship with a client-side admin panel. Enable demo auth only for local testing, or wire real server-side admin access first.
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   if (!mounted || !isLoggedIn || !user?.isAdmin) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -145,10 +227,25 @@ export default function AdminPage() {
     });
   };
 
-  const planBadgeColors = {
+  const formatDateStr = (dateStr: string) => {
+    return new Date(dateStr).toLocaleDateString('en-IN', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    });
+  };
+
+  const planBadgeColors: Record<string, string> = {
     free: 'bg-gray-500/20 text-gray-300 border-gray-500/30',
     pro: 'bg-[#d4a520]/20 text-[#d4a520] border-[#d4a520]/30',
     premium: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+  };
+
+  const statusColors: Record<string, string> = {
+    completed: 'bg-[#27ae60]/20 text-[#27ae60] border-[#27ae60]/30',
+    pending: 'bg-[#d4a520]/20 text-[#d4a520] border-[#d4a520]/30',
+    failed: 'bg-red-500/20 text-red-400 border-red-500/30',
+    refunded: 'bg-gray-500/20 text-gray-300 border-gray-500/30',
   };
 
   const quickLinks = [
@@ -196,6 +293,18 @@ export default function AdminPage() {
             </p>
           </div>
         </div>
+
+        {/* Data source badge */}
+        <div className="flex items-center gap-2 mt-3">
+          <span className={`inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full border ${
+            supabaseActive
+              ? 'bg-[#27ae60]/10 text-[#27ae60] border-[#27ae60]/20'
+              : 'bg-[#d4a520]/10 text-[#d4a520] border-[#d4a520]/20'
+          }`}>
+            <Info className="w-3 h-3" />
+            {supabaseActive ? 'Supabase connected' : 'Local storage (demo mode)'}
+          </span>
+        </div>
       </motion.div>
 
       {/* Stats Overview */}
@@ -211,12 +320,16 @@ export default function AdminPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           <div className="game-card p-4 text-center">
             <Users className="w-6 h-6 text-[#d4a520] mx-auto mb-2" />
-            <div className="text-2xl font-bold text-[var(--foreground)]">{users.length}</div>
+            <div className="text-2xl font-bold text-[var(--foreground)]">
+              {loadingUsers ? '-' : users.length}
+            </div>
             <div className="text-xs text-[var(--foreground)]/40">Total Users</div>
           </div>
           <div className="game-card p-4 text-center">
             <Crown className="w-6 h-6 text-purple-400 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-[var(--foreground)]">{planCounts.pro + planCounts.premium}</div>
+            <div className="text-2xl font-bold text-[var(--foreground)]">
+              {loadingUsers ? '-' : planCounts.pro + planCounts.premium}
+            </div>
             <div className="text-xs text-[var(--foreground)]/40">Paid Users</div>
           </div>
           <div className="game-card p-4 text-center">
@@ -232,7 +345,7 @@ export default function AdminPage() {
           <div className="game-card p-4 text-center">
             <Calendar className="w-6 h-6 text-[#27ae60] mx-auto mb-2" />
             <div className="text-2xl font-bold text-[var(--foreground)]">
-              {users.filter((u) => Date.now() - u.createdAt < 7 * 24 * 60 * 60 * 1000).length}
+              {loadingUsers ? '-' : users.filter((u) => Date.now() - u.createdAt < 7 * 24 * 60 * 60 * 1000).length}
             </div>
             <div className="text-xs text-[var(--foreground)]/40">New (7 days)</div>
           </div>
@@ -299,14 +412,18 @@ export default function AdminPage() {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search by name or email..."
+            placeholder="Search by name, username, or email..."
             className="w-full pl-10 pr-4 py-2.5 bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 rounded-xl text-sm text-[var(--foreground)] placeholder:text-[var(--foreground)]/25 focus:outline-none focus:border-[#d4a520]/50 transition-all"
           />
         </div>
 
         {/* Table */}
         <div className="game-card overflow-hidden">
-          {filteredUsers.length === 0 ? (
+          {loadingUsers ? (
+            <div className="p-8 text-center text-[var(--foreground)]/30 text-sm">
+              Loading users...
+            </div>
+          ) : filteredUsers.length === 0 ? (
             <div className="p-8 text-center text-[var(--foreground)]/30 text-sm">
               {users.length === 0 ? 'No users registered yet' : 'No users match your search'}
             </div>
@@ -322,7 +439,7 @@ export default function AdminPage() {
                       Name <SortIcon field="name" />
                     </th>
                     <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
-                      Email
+                      {supabaseActive ? 'Username' : 'Email'}
                     </th>
                     <th
                       onClick={() => toggleSort('plan')}
@@ -355,10 +472,12 @@ export default function AdminPage() {
                           <span className="font-medium text-[var(--foreground)]">{u.name}</span>
                         </div>
                       </td>
-                      <td className="px-4 py-3 text-[var(--foreground)]/50">{u.email}</td>
+                      <td className="px-4 py-3 text-[var(--foreground)]/50">
+                        {supabaseActive ? (u.username || '-') : u.email}
+                      </td>
                       <td className="px-4 py-3">
                         <span
-                          className={`px-2 py-0.5 rounded-full text-xs font-medium border ${planBadgeColors[u.plan]}`}
+                          className={`px-2 py-0.5 rounded-full text-xs font-medium border ${planBadgeColors[u.plan] || planBadgeColors.free}`}
                         >
                           {u.plan.charAt(0).toUpperCase() + u.plan.slice(1)}
                         </span>
@@ -374,6 +493,80 @@ export default function AdminPage() {
           )}
         </div>
       </motion.div>
+
+      {/* Payments Table (Supabase only) */}
+      {supabaseActive && payments.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+          className="mb-6"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-sm font-semibold text-[var(--foreground)]/60 uppercase tracking-wider flex items-center gap-2">
+              <CreditCard className="w-4 h-4" /> Recent Payments
+            </h2>
+            <span className="text-xs text-[var(--foreground)]/30">{payments.length} records</span>
+          </div>
+
+          <div className="game-card overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-[var(--foreground)]/10">
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
+                      Amount
+                    </th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
+                      Plan
+                    </th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
+                      Provider
+                    </th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
+                      Status
+                    </th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {payments.map((p, i) => (
+                    <motion.tr
+                      key={p.id}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.03 }}
+                      className="border-b border-[var(--foreground)]/5 hover:bg-[var(--foreground)]/3 transition-colors"
+                    >
+                      <td className="px-4 py-3 font-medium text-[var(--foreground)]">
+                        {p.currency === 'INR' ? '\u20B9' : '\u20AC'}{p.amount}
+                      </td>
+                      <td className="px-4 py-3">
+                        <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${planBadgeColors[p.plan] || planBadgeColors.free}`}>
+                          {p.plan.charAt(0).toUpperCase() + p.plan.slice(1)}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-[var(--foreground)]/50 capitalize">
+                        {p.provider}
+                      </td>
+                      <td className="px-4 py-3">
+                        <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${statusColors[p.status] || statusColors.pending}`}>
+                          {p.status.charAt(0).toUpperCase() + p.status.slice(1)}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-[var(--foreground)]/40 text-xs">
+                        {formatDateStr(p.created_at)}
+                      </td>
+                    </motion.tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </motion.div>
+      )}
 
       {/* Quick Links */}
       <motion.div
