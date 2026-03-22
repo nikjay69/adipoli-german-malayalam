@@ -108,6 +108,7 @@ export const MODULE_8: Module = {
           id: "ex8-1-3",
           type: "fill-blank",
           question: "Complete: 'Der Tisch ist in der _____.' (The table is in the kitchen.)",
+          options: ["Küche", "Wohnzimmer", "Flur", "Balkon"],
           correctAnswer: "Küche",
           explanation: "'in der Küche' — Küche is feminine (die Küche), so with dative 'in', it becomes 'in der Küche'.",
           xpReward: 15
@@ -333,6 +334,7 @@ export const MODULE_8: Module = {
           id: "ex8-2-2",
           type: "fill-blank",
           question: "Complete: 'Die Lampe ist auf _____ Tisch.' (The lamp is on the table.)",
+          options: ["dem", "der", "den", "das"],
           correctAnswer: "dem",
           explanation: "With location prepositions, 'der Tisch' (masculine) changes to 'dem Tisch' in dative. auf + dem = on the.",
           xpReward: 15
@@ -380,6 +382,7 @@ export const MODULE_8: Module = {
           id: "ex8-2-6",
           type: "fill-blank",
           question: "Complete: 'Das Bild hängt _____ dem Sofa.' (The picture hangs above the sofa.)",
+          options: ["über", "unter", "neben", "auf"],
           correctAnswer: "über",
           explanation: "'über' = above/over. 'Das Bild hängt über dem Sofa.' = The picture hangs above the sofa.",
           xpReward: 10
@@ -578,6 +581,7 @@ export const MODULE_8: Module = {
           id: "ex8-3-3",
           type: "fill-blank",
           question: "In a housing ad, 'qm' stands for _____ (square meters).",
+          options: ["Quadratmeter", "Quartal", "Qualität", "Quartier"],
           correctAnswer: "Quadratmeter",
           explanation: "'qm' = Quadratmeter = square meters. This tells you the size of the apartment.",
           xpReward: 10
@@ -751,6 +755,7 @@ export const MODULE_8: Module = {
           id: "ex8-4-2",
           type: "fill-blank",
           question: "Complete: '_____ freundlichen Grüßen' (With friendly regards — formal closing)",
+          options: ["Mit", "Von", "Für", "Aus"],
           correctAnswer: "Mit",
           explanation: "'Mit freundlichen Grüßen' = 'With friendly regards' — the most common formal closing in German letters.",
           xpReward: 10
@@ -789,6 +794,7 @@ export const MODULE_8: Module = {
           id: "ex8-4-5",
           type: "fill-blank",
           question: "Complete: 'Gibt _____ noch ein freies Zimmer?' (Is there still a free room?)",
+          options: ["es", "er", "sie", "das"],
           correctAnswer: "es",
           explanation: "'Gibt es...?' = 'Is there...?' — the question form of 'es gibt'. The 'es' comes after the verb in questions.",
           xpReward: 15

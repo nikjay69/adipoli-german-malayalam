@@ -112,7 +112,7 @@ export const MODULE_3: Module = {
           options: ["neun", "drei", "sieben", "eins", "fünf"],
           correctAnswer: ["eins", "drei", "fünf", "sieben", "neun"],
           explanation: "eins (1), drei (3), fünf (5), sieben (7), neun (9) — all the odd numbers!",
-          xpReward: 25
+          xpReward: 20
         },
         {
           id: "ex3-1-5",
@@ -321,7 +321,7 @@ export const MODULE_3: Module = {
           options: ["dreiundachtzig", "achtunddreißig", "dreizehn", "achtzig"],
           correctAnswer: "dreiundachtzig",
           explanation: "83 = drei (3) + und + achtzig (80) = dreiundachtzig. Ones first, then 'und', then tens!",
-          xpReward: 25
+          xpReward: 20
         }
       ],
       vocabulary: [
@@ -475,6 +475,7 @@ export const MODULE_3: Module = {
           id: "ex3-3-2",
           type: "fill-blank",
           question: "3:15 in German is 'Viertel _____ drei'.",
+          options: ["nach", "vor", "halb", "um"],
           correctAnswer: "nach",
           explanation: "Viertel nach drei = quarter AFTER three = 3:15. 'Nach' means after.",
           xpReward: 15
@@ -497,6 +498,7 @@ export const MODULE_3: Module = {
           id: "ex3-3-4",
           type: "fill-blank",
           question: "'It is five o'clock' in German: Es ist fünf _____.",
+          options: ["Uhr", "Stunde", "Zeit", "Minuten"],
           correctAnswer: "Uhr",
           explanation: "'Uhr' means 'clock' or 'o'clock'. 'Es ist fünf Uhr' = It is five o'clock.",
           xpReward: 15
@@ -859,9 +861,10 @@ export const MODULE_3: Module = {
           id: "ex3-5-2",
           type: "fill-blank",
           question: "Complete the conjugation: ich habe, du _____, er hat.",
+          options: ["hast", "habe", "hat", "haben"],
           correctAnswer: "hast",
           explanation: "'Haben' conjugation: ich habe, du hast, er/sie/es hat.",
-          xpReward: 20
+          xpReward: 15
         },
         {
           id: "ex3-5-3",
@@ -876,9 +879,10 @@ export const MODULE_3: Module = {
           id: "ex3-5-4",
           type: "fill-blank",
           question: "Wann _____ du Geburtstag? — When is your birthday?",
+          options: ["hast", "habe", "hat", "bist"],
           correctAnswer: "hast",
           explanation: "'Wann hast du Geburtstag?' uses 'du hast' (you have). German says 'you have birthday' not 'your birthday is'.",
-          xpReward: 20
+          xpReward: 15
         },
         {
           id: "ex3-5-5",
@@ -1003,12 +1007,13 @@ export const MODULE_3: Module = {
           ],
           correctAnswer: "Um wie viel Uhr?",
           explanation: "'Um wie viel Uhr?' = 'At what time?'. 'Wie spät ist es?' asks 'What time is it now?'",
-          xpReward: 20
+          xpReward: 15
         },
         {
           id: "ex3-6-2",
           type: "fill-blank",
           question: "'On Monday at 3 o'clock' in German: _____ Montag um drei Uhr.",
+          options: ["Am", "Im", "Um", "An"],
           correctAnswer: "Am",
           explanation: "'Am' is used before days of the week: 'Am Montag' (On Monday).",
           xpReward: 15
@@ -1029,7 +1034,7 @@ export const MODULE_3: Module = {
           options: ["2:30", "3:30", "2:00", "3:00"],
           correctAnswer: "2:30",
           explanation: "'Halb drei' = half (way to) three = 2:30. In Germany, be on time — not even 5 minutes late!",
-          xpReward: 25
+          xpReward: 20
         },
         {
           id: "ex3-6-5",
@@ -1044,6 +1049,7 @@ export const MODULE_3: Module = {
           id: "ex3-6-6",
           type: "fill-blank",
           question: "'_____ lange dauert der Film?' (How long does the movie last?)",
+          options: ["Wie", "Was", "Wo", "Wann"],
           correctAnswer: "Wie",
           explanation: "'Wie lange?' = 'How long?' is used to ask about duration.",
           xpReward: 15

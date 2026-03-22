@@ -298,7 +298,7 @@ console.log(`  Helper functions: all tested`);
 // ============================================================
 section('7. JOURNEY MAP');
 
-assert(JOURNEY_LOCATIONS.length === 10, `Expected 10 journey locations, got ${JOURNEY_LOCATIONS.length}`);
+assert(JOURNEY_LOCATIONS.length === 8, `Expected 8 journey locations, got ${JOURNEY_LOCATIONS.length}`);
 
 const locationIds = new Set<string>();
 for (const loc of JOURNEY_LOCATIONS) {
@@ -324,8 +324,8 @@ for (let m = 1; m <= 18; m++) {
 }
 
 // getCurrentLocation
-assert(getCurrentLocation(0).id === 'kerala-village', 'Start location should be Kerala Village');
-assert(getCurrentLocation(18).id === 'exam-hall', 'After 18 modules should be at Exam Hall');
+assert(getCurrentLocation(0).id === 'home', 'Start location should be Home');
+assert(getCurrentLocation(18).id === 'gate', 'After 18 modules should be at Gate');
 
 // getJourneyProgress
 assert(getJourneyProgress(0) === 0, 'Progress at 0 modules should be 0%');
@@ -333,8 +333,8 @@ assert(getJourneyProgress(18) === 100, 'Progress at 18 modules should be 100%');
 assert(getJourneyProgress(9) === 50, 'Progress at 9 modules should be 50%');
 
 // getLocationForModule
-assert(getLocationForModule(1).id === 'kochi', 'Module 1 should be in Kochi');
-assert(getLocationForModule(17).id === 'exam-hall', 'Module 17 should be in Exam Hall');
+assert(getLocationForModule(1).id === 'basics', 'Module 1 should be in Basics');
+assert(getLocationForModule(17).id === 'gate', 'Module 17 should be at Gate');
 
 console.log(`  Journey map: all tested`);
 

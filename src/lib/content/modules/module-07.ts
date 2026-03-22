@@ -61,6 +61,7 @@ export const MODULE_7: Module = {
           id: "ex7-1-2",
           type: "fill-blank",
           question: "Complete: '_____ finde ich die Milch?' (Where can I find the milk?)",
+          options: ["Wo", "Was", "Wie", "Wer"],
           correctAnswer: "Wo",
           explanation: "'Wo finde ich...?' means 'Where can I find...?' — Wo = Where.",
           xpReward: 10
@@ -219,6 +220,7 @@ export const MODULE_7: Module = {
           id: "ex7-2-2",
           type: "fill-blank",
           question: "Complete: 'Das _____ fünf Euro.' (That costs five euros.)",
+          options: ["kostet", "kosten", "kauft", "gibt"],
           correctAnswer: "kostet",
           explanation: "'Das kostet...' = 'That costs...' — kostet is the verb 'kosten' conjugated for es/das.",
           xpReward: 10
@@ -416,6 +418,7 @@ export const MODULE_7: Module = {
           id: "ex7-3-3",
           type: "fill-blank",
           question: "Complete: 'Das _____ Kleid ist schön.' (The red dress is beautiful.)",
+          options: ["rote", "rot", "roter", "rotes"],
           correctAnswer: "rote",
           explanation: "After 'das' (neuter definite article), the adjective takes the ending '-e': das rote Kleid.",
           xpReward: 15
@@ -610,6 +613,7 @@ export const MODULE_7: Module = {
           id: "ex7-4-2",
           type: "fill-blank",
           question: "Complete: 'Ich _____ ein schwarzes Hemd.' (I am looking for a black shirt.)",
+          options: ["suche", "finde", "kaufe", "brauche"],
           correctAnswer: "suche",
           explanation: "'Ich suche...' = 'I am looking for...' — suche is the ich-form of 'suchen' (to search/look for).",
           xpReward: 10
@@ -657,6 +661,7 @@ export const MODULE_7: Module = {
           id: "ex7-4-6",
           type: "fill-blank",
           question: "Complete: 'Haben Sie das in _____ L?' (Do you have this in size L?)",
+          options: ["Größe", "Farbe", "Nummer", "Länge"],
           correctAnswer: "Größe",
           explanation: "'Größe' means 'size'. 'Haben Sie das in Größe L?' is how you ask about available sizes.",
           xpReward: 10
@@ -780,6 +785,7 @@ export const MODULE_7: Module = {
           id: "ex7-5-1",
           type: "fill-blank",
           question: "Complete: 'Berlin ist _____ als München.' (Berlin is bigger than Munich.)",
+          options: ["größer", "großer", "größter", "groß"],
           correctAnswer: "größer",
           explanation: "'groß' (big) → 'größer' (bigger). The 'o' gets an umlaut in the comparative form.",
           xpReward: 15
@@ -806,6 +812,7 @@ export const MODULE_7: Module = {
           id: "ex7-5-4",
           type: "fill-blank",
           question: "Complete: 'Dieses Handy ist teurer _____ das andere.' (This phone is more expensive than the other one.)",
+          options: ["als", "wie", "und", "oder"],
           correctAnswer: "als",
           explanation: "'als' = 'than' in comparisons. Always use 'als' (not 'wie') when comparing with '-er' forms.",
           xpReward: 10

@@ -98,9 +98,10 @@ export const MODULE_4: Module = {
           id: "ex4-1-3",
           type: "fill-blank",
           question: "'I have a brother and a sister': Ich habe einen Bruder und eine _____.",
+          options: ["Schwester", "Bruder", "Mutter", "Tante"],
           correctAnswer: "Schwester",
           explanation: "Die Schwester = sister. 'Eine Schwester' because Schwester is feminine.",
-          xpReward: 20
+          xpReward: 15
         },
         {
           id: "ex4-1-4",
@@ -120,6 +121,7 @@ export const MODULE_4: Module = {
           id: "ex4-1-5",
           type: "fill-blank",
           question: "'That is my aunt': Das ist meine _____.",
+          options: ["Tante", "Onkel", "Schwester", "Cousine"],
           correctAnswer: "Tante",
           explanation: "Die Tante = aunt. 'Meine Tante' because Tante is feminine.",
           xpReward: 15
@@ -309,9 +311,10 @@ export const MODULE_4: Module = {
           id: "ex4-2-2",
           type: "fill-blank",
           question: "'She is tall and has brown eyes': Sie ist groß und hat _____ Augen.",
+          options: ["braune", "braun", "brauner", "braunem"],
           correctAnswer: "braune",
           explanation: "Braune Augen = brown eyes. The adjective 'braun' takes an '-e' ending before a plural noun.",
-          xpReward: 20
+          xpReward: 15
         },
         {
           id: "ex4-2-3",
@@ -340,9 +343,10 @@ export const MODULE_4: Module = {
           id: "ex4-2-5",
           type: "fill-blank",
           question: "'My mother has black hair': Meine Mutter hat _____ Haare.",
+          options: ["schwarze", "schwarz", "schwarzer", "schwarzem"],
           correctAnswer: "schwarze",
           explanation: "Schwarze Haare = black hair. Adjective 'schwarz' + '-e' before plural noun 'Haare'.",
-          xpReward: 20
+          xpReward: 15
         },
         {
           id: "ex4-2-6",
@@ -351,7 +355,7 @@ export const MODULE_4: Module = {
           options: ["Mein Bruder", "ist", "groß", "und", "sportlich"],
           correctAnswer: ["Mein Bruder", "ist", "groß", "und", "sportlich"],
           explanation: "'Mein Bruder ist groß und sportlich.' = My brother is tall and athletic.",
-          xpReward: 25
+          xpReward: 20
         }
       ],
       vocabulary: [
@@ -510,9 +514,10 @@ export const MODULE_4: Module = {
           id: "ex4-3-2",
           type: "fill-blank",
           question: "'His mother is nice': _____ Mutter ist nett.",
+          options: ["Seine", "Sein", "Seiner", "Seinem"],
           correctAnswer: "Seine",
           explanation: "Mutter is feminine (die Mutter), so 'sein' becomes 'seine'. Seine Mutter = his mother.",
-          xpReward: 20
+          xpReward: 15
         },
         {
           id: "ex4-3-3",
@@ -527,9 +532,10 @@ export const MODULE_4: Module = {
           id: "ex4-3-4",
           type: "fill-blank",
           question: "'Your (informal) brother': _____ Bruder.",
+          options: ["Dein", "Deine", "Deinem", "Deinen"],
           correctAnswer: "Dein",
           explanation: "Bruder is masculine (der Bruder), so 'dein' stays unchanged: dein Bruder.",
-          xpReward: 20
+          xpReward: 15
         },
         {
           id: "ex4-3-5",
@@ -552,15 +558,16 @@ export const MODULE_4: Module = {
           ],
           correctAnswer: "Unsere Eltern sind in Kerala.",
           explanation: "Eltern is plural, so 'unser' becomes 'unsere'. Unsere Eltern = our parents.",
-          xpReward: 25
+          xpReward: 20
         },
         {
           id: "ex4-3-7",
           type: "fill-blank",
           question: "'Her name is Anna': _____ Name ist Anna.",
+          options: ["Ihr", "Ihre", "Ihrem", "Ihren"],
           correctAnswer: "Ihr",
           explanation: "Name is masculine (der Name), so 'ihr' stays unchanged: Ihr Name. (Note: 'Ihr' is capitalised at the start of a sentence.)",
-          xpReward: 20
+          xpReward: 15
         }
       ],
       vocabulary: [
@@ -735,7 +742,7 @@ export const MODULE_4: Module = {
           ],
           correctAnswer: "Because '-chen' (diminutive) is always neuter",
           explanation: "The suffix '-chen' makes any word neuter, regardless of meaning. Das Mädchen, das Brötchen, etc.",
-          xpReward: 25
+          xpReward: 20
         },
         {
           id: "ex4-4-3",
@@ -750,9 +757,10 @@ export const MODULE_4: Module = {
           id: "ex4-4-4",
           type: "fill-blank",
           question: "_____ Zeitung (the newspaper) — which article?",
+          options: ["Die", "Der", "Das", "Ein"],
           correctAnswer: "Die",
           explanation: "'Zeitung' ends in '-ung', which is always feminine: die Zeitung.",
-          xpReward: 20
+          xpReward: 15
         },
         {
           id: "ex4-4-5",
@@ -776,9 +784,10 @@ export const MODULE_4: Module = {
           id: "ex4-4-7",
           type: "fill-blank",
           question: "'I need a pen': Ich brauche _____ Stift. (der Stift = the pen)",
+          options: ["einen", "ein", "eine", "einer"],
           correctAnswer: "einen",
           explanation: "Stift is masculine. In accusative case (after 'brauche'), 'ein' becomes 'einen': einen Stift.",
-          xpReward: 25
+          xpReward: 15
         },
         {
           id: "ex4-4-8",
@@ -929,7 +938,7 @@ export const MODULE_4: Module = {
           options: ["freundlich", "freundliche", "freundlicher", "freund"],
           correctAnswer: "freundlich",
           explanation: "Groß (tall) und freundlich (friendly) — adjectives after 'ist' don't need endings!",
-          xpReward: 25
+          xpReward: 15
         },
         {
           id: "ex4-5-3",
@@ -949,9 +958,10 @@ export const MODULE_4: Module = {
           id: "ex4-5-4",
           type: "fill-blank",
           question: "'She lives in Germany': Sie _____ in Deutschland.",
+          options: ["wohnt", "wohne", "wohnen", "wohnst"],
           correctAnswer: "wohnt",
           explanation: "'Wohnen' (to live/reside) → 'sie wohnt'. She lives = Sie wohnt.",
-          xpReward: 20
+          xpReward: 15
         },
         {
           id: "ex4-5-5",
@@ -984,7 +994,7 @@ export const MODULE_4: Module = {
             "Er ist zwanzig Jahre alt."
           ],
           explanation: "A good family description starts broad (where you're from, family size) then describes individual members.",
-          xpReward: 30
+          xpReward: 20
         }
       ],
       vocabulary: [

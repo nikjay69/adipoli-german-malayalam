@@ -87,6 +87,7 @@ export const MODULE_5: Module = {
           id: "ex5-1-2",
           type: "fill-blank",
           question: "Du _____ in Berlin. (wohnen — to live)",
+          options: ["wohnst", "wohne", "wohnen", "wohnt"],
           correctAnswer: "wohnst",
           explanation:
             "For 'du' (you), the ending is -st. Stem 'wohn-' + '-st' = 'wohnst'.",
@@ -114,6 +115,7 @@ export const MODULE_5: Module = {
           id: "ex5-1-5",
           type: "fill-blank",
           question: "Wir _____ Deutsch. (lernen — to learn)",
+          options: ["lernen", "lerne", "lernst", "lernt"],
           correctAnswer: "lernen",
           explanation:
             "For 'wir' (we), the verb keeps the infinitive form: wir lernen.",
@@ -310,6 +312,7 @@ export const MODULE_5: Module = {
           id: "ex5-2-2",
           type: "fill-blank",
           question: "Ich _____ um 6 Uhr _____. (aufstehen — to get up)",
+          options: ["stehe ... auf", "aufstehe ...", "stehe ... an", "auf ... stehe"],
           correctAnswer: "stehe ... auf",
           explanation:
             "'Aufstehen' is a separable verb. The prefix 'auf' goes to the end: Ich stehe um 6 Uhr auf.",
@@ -344,6 +347,7 @@ export const MODULE_5: Module = {
           id: "ex5-2-5",
           type: "fill-blank",
           question: "Ich ziehe _____ an. (reflexive pronoun for 'ich')",
+          options: ["mich", "mir", "sich", "dich"],
           correctAnswer: "mich",
           explanation:
             "The reflexive pronoun for 'ich' is 'mich': Ich ziehe mich an. (I get dressed.)",
@@ -500,6 +504,7 @@ export const MODULE_5: Module = {
           id: "ex5-3-1",
           type: "fill-blank",
           question: "Ich _____ jeden Tag um 7 Uhr _____. (aufstehen)",
+          options: ["stehe ... auf", "aufstehe ...", "stehe ... an", "auf ... stehe"],
           correctAnswer: "stehe ... auf",
           explanation:
             "Separable verb: the conjugated part 'stehe' stays in position 2, the prefix 'auf' goes to the end.",
@@ -524,6 +529,7 @@ export const MODULE_5: Module = {
           id: "ex5-3-3",
           type: "fill-blank",
           question: "Abends _____ ich _____. (fernsehen — to watch TV)",
+          options: ["sehe ... fern", "fernsehe ...", "sehe ... an", "fern ... sehe"],
           correctAnswer: "sehe ... fern",
           explanation:
             "'Fernsehen' splits into 'sehe' (conjugated) and 'fern' (prefix at the end).",
@@ -566,6 +572,7 @@ export const MODULE_5: Module = {
           id: "ex5-3-7",
           type: "fill-blank",
           question: "_____ du morgen _____? (mitkommen — to come along)",
+          options: ["Kommst ... mit", "Mitkommst ...", "Kommt ... mit", "Mit ... kommst"],
           correctAnswer: "Kommst ... mit",
           explanation:
             "In a yes/no question, the verb comes first: Kommst du morgen mit?",
@@ -718,6 +725,7 @@ export const MODULE_5: Module = {
           id: "ex5-4-2",
           type: "fill-blank",
           question: "Um 10 Uhr gehe ich ins _____. (bed)",
+          options: ["Bett", "Haus", "Zimmer", "Bad"],
           correctAnswer: "Bett",
           explanation:
             "'Ins Bett gehen' means 'to go to bed'. 'Ins' = in + das (contraction).",
@@ -758,6 +766,7 @@ export const MODULE_5: Module = {
           id: "ex5-4-5",
           type: "fill-blank",
           question: "_____ koche ich Abendessen. (after that)",
+          options: ["Danach", "Zuerst", "Dann", "Morgens"],
           correctAnswer: "Danach",
           explanation:
             "'Danach' means 'after that' — perfect for sequencing daily activities.",
@@ -924,6 +933,7 @@ export const MODULE_5: Module = {
           id: "ex5-5-2",
           type: "fill-blank",
           question: "_____ Montag arbeite ich. (on)",
+          options: ["Am", "Im", "Um", "An"],
           correctAnswer: "Am",
           explanation:
             "Use 'am' (an + dem) before days of the week: Am Montag, Am Dienstag, etc.",
@@ -955,6 +965,7 @@ export const MODULE_5: Module = {
           type: "fill-blank",
           question:
             "Am Wochenende _____ ich lange. (schlafen — to sleep, ich form)",
+          options: ["schlafe", "schläfst", "schlafen", "schläft"],
           correctAnswer: "schlafe",
           explanation:
             "'Schlafen' conjugated for 'ich': ich schlafe. Am Wochenende schlafe ich lange. (On the weekend I sleep long.)",

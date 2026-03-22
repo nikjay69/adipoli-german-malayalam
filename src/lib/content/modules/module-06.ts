@@ -125,6 +125,7 @@ export const MODULE_6: Module = {
           id: "ex6-1-4",
           type: "fill-blank",
           question: "Die _____ sind wie Parippu/Dal! (lentils)",
+          options: ["Linsen", "Kartoffeln", "Bohnen", "Erbsen"],
           correctAnswer: "Linsen",
           explanation:
             "'Die Linsen' (plural) = lentils. In Kerala, that's our beloved parippu!",
@@ -511,6 +512,7 @@ export const MODULE_6: Module = {
           id: "ex6-3-2",
           type: "fill-blank",
           question: "Ich _____ gern das Schnitzel. (I would like)",
+          options: ["hätte", "habe", "hatte", "hat"],
           correctAnswer: "hätte",
           explanation:
             "'Ich hätte gern ...' = 'I would like ...' — the polite way to order in restaurants.",
@@ -573,6 +575,7 @@ export const MODULE_6: Module = {
           id: "ex6-3-6",
           type: "fill-blank",
           question: "Das war sehr _____! (delicious)",
+          options: ["lecker", "schlecht", "teuer", "scharf"],
           correctAnswer: "lecker",
           explanation:
             "'Lecker' means 'delicious/yummy'. 'Das war sehr lecker!' = 'That was very delicious!'",
@@ -992,6 +995,7 @@ export const MODULE_6: Module = {
           id: "ex6-5-3",
           type: "fill-blank",
           question: "Ich nehme _____ Brot. (das Brot — neuter, with ein)",
+          options: ["ein", "einen", "eine", "einem"],
           correctAnswer: "ein",
           explanation:
             "'Brot' is neuter. Neuter doesn't change in accusative: ein Brot.",
@@ -1012,6 +1016,7 @@ export const MODULE_6: Module = {
           id: "ex6-5-5",
           type: "fill-blank",
           question: "Ich habe _____ Hunger. (no/not any — Hunger is masculine)",
+          options: ["keinen", "kein", "keine", "keinem"],
           correctAnswer: "keinen",
           explanation:
             "'Hunger' is masculine. In accusative: kein → keinen. 'Ich habe keinen Hunger.' = I'm not hungry.",

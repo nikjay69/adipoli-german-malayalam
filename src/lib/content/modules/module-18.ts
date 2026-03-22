@@ -53,6 +53,7 @@ export const MODULE_18: Module = {
           id: "ex18-1-1",
           type: "fill-blank",
           question: "📋 ANMELDEFORMULAR — Volkshochschule Berlin\n\nYou are registering for a German course. Your name is Arun Krishnan Nair.\n\nForm field: 'Vorname' → ___",
+          options: ["Arun Krishnan", "Nair", "Arun Krishnan Nair", "Krishnan"],
           correctAnswer: "Arun Krishnan",
           explanation: "'Vorname' means first name (given name). In German forms, your first name(s) go here. Your Vorname is 'Arun Krishnan'. Your Familienname/Nachname would be 'Nair'.",
           xpReward: 12
@@ -61,6 +62,7 @@ export const MODULE_18: Module = {
           id: "ex18-1-2",
           type: "fill-blank",
           question: "📋 ANMELDEFORMULAR — Volkshochschule Berlin\n\nYou are Priya Menon, born 23rd March 1999.\n\nForm field: 'Familienname' → ___",
+          options: ["Menon", "Priya", "Priya Menon", "Nair"],
           correctAnswer: "Menon",
           explanation: "'Familienname' (also 'Nachname') means family name / surname. Your surname is 'Menon'. Remember: Vorname = first name, Familienname = last name.",
           xpReward: 12
@@ -69,6 +71,7 @@ export const MODULE_18: Module = {
           id: "ex18-1-3",
           type: "fill-blank",
           question: "📋 ANMELDEFORMULAR — Sprachkurs\n\nYou were born on 7th November 2001.\n\nForm field: 'Geburtsdatum' → ___",
+          options: ["07.11.2001", "11.07.2001", "7/11/2001", "2001-11-07"],
           correctAnswer: "07.11.2001",
           explanation: "German date format is TT.MM.JJJJ (Tag.Monat.Jahr). 7th November 2001 = 07.11.2001. Always use two digits for day and month, four for year, separated by dots.",
           xpReward: 12
@@ -77,6 +80,7 @@ export const MODULE_18: Module = {
           id: "ex18-1-4",
           type: "fill-blank",
           question: "📋 BIBLIOTHEKSAUSWEIS — Stadtbibliothek München\n\nYou live at Schillerstraße 24 in München. The postal code is 80336.\n\nForm field: 'Straße, Hausnummer' → ___",
+          options: ["Schillerstraße 24", "24 Schillerstraße", "80336 München", "München Schillerstraße"],
           correctAnswer: "Schillerstraße 24",
           explanation: "In German addresses, you write the street name first, then the house number: 'Schillerstraße 24'. The PLZ (postal code) and Stadt (city) go in separate fields.",
           xpReward: 12
@@ -85,6 +89,7 @@ export const MODULE_18: Module = {
           id: "ex18-1-5",
           type: "fill-blank",
           question: "📋 BIBLIOTHEKSAUSWEIS — Stadtbibliothek München\n\nYou live at Schillerstraße 24, 80336 München.\n\nForm field: 'PLZ, Ort' → ___",
+          options: ["80336 München", "Schillerstraße 24", "München 80336", "80336"],
           correctAnswer: "80336 München",
           explanation: "'PLZ' = Postleitzahl (postal code), 'Ort' = place/city. Write them together: '80336 München'. German PLZ codes are always 5 digits.",
           xpReward: 12
@@ -102,6 +107,7 @@ export const MODULE_18: Module = {
           id: "ex18-1-7",
           type: "fill-blank",
           question: "📋 SPRACHKURS-ANMELDUNG — Goethe-Institut\n\nYou are a software engineer (male).\n\nForm field: 'Beruf' → ___",
+          options: ["Softwareentwickler", "Software", "Ingenieur", "Programm"],
           correctAnswer: "Softwareentwickler",
           explanation: "'Beruf' means profession/occupation. A male software engineer is 'Softwareentwickler' (female: 'Softwareentwicklerin'). Other common answers: Student/Studentin, Ingenieur/Ingenieurin, Krankenpfleger/Krankenschwester.",
           xpReward: 12
@@ -119,6 +125,7 @@ export const MODULE_18: Module = {
           id: "ex18-1-9",
           type: "fill-blank",
           question: "📋 BIBLIOTHEKSAUSWEIS — Antrag\n\nForm field: 'Telefonnummer' — Your German mobile number is 0152 3847 6521.\n\nWhat do you write? → ___",
+          options: ["0152 3847 6521", "3847 6521", "+49 152 3847 6521", "0152"],
           correctAnswer: "0152 3847 6521",
           explanation: "'Telefonnummer' = telephone number. Write your full number including the mobile prefix (0152, 0176, 0170, etc.). German mobile numbers start with 015x, 016x, or 017x.",
           xpReward: 12
@@ -237,6 +244,7 @@ export const MODULE_18: Module = {
           id: "ex18-2-2",
           type: "fill-blank",
           question: "📝 SCHREIBEN TEIL 2\n\nYou are writing to your friend Tom to invite him to dinner.\n\nComplete the greeting: '___ Tom, ich möchte dich zum Abendessen einladen.'",
+          options: ["Lieber", "Liebe", "Sehr geehrter", "Hallo"],
           correctAnswer: "Lieber",
           explanation: "'Lieber' is used for a male friend (Lieber Tom). For a female friend, use 'Liebe' (Liebe Anna). For formal letters, use 'Sehr geehrter Herr...' or 'Sehr geehrte Frau...'.",
           xpReward: 15
@@ -259,6 +267,7 @@ export const MODULE_18: Module = {
           id: "ex18-2-4",
           type: "fill-blank",
           question: "📝 SCHREIBEN TEIL 2\n\nYou want to apologize for not coming: 'Es tut mir ___, ich kann leider nicht kommen.'",
+          options: ["leid", "Leid", "schlecht", "traurig"],
           correctAnswer: "leid",
           explanation: "'Es tut mir leid' = I'm sorry. This is the standard apology phrase. In Schreiben Teil 2, you'll often need this when writing about cancellations or absences.",
           xpReward: 15
@@ -295,6 +304,7 @@ export const MODULE_18: Module = {
           id: "ex18-2-7",
           type: "fill-blank",
           question: "📝 SCHREIBEN TEIL 2\n\nYou want to suggest meeting on a different day: 'Können wir ___ am Freitag treffen?'",
+          options: ["uns", "sich", "euch", "mich"],
           correctAnswer: "uns",
           explanation: "'Können wir uns treffen?' = Can we meet? 'sich treffen' is a reflexive verb — you need 'uns' (ourselves) for 'wir'. This is a very useful phrase for suggesting alternatives in Schreiben Teil 2.",
           xpReward: 15
@@ -326,6 +336,7 @@ export const MODULE_18: Module = {
           id: "ex18-2-10",
           type: "fill-blank",
           question: "📝 SCHREIBEN TEIL 2\n\nYou want to change an appointment: 'Ich möchte meinen Termin gern ___.'",
+          options: ["verschieben", "absagen", "machen", "bestätigen"],
           correctAnswer: "verschieben",
           explanation: "'verschieben' = to postpone/reschedule. 'Ich möchte meinen Termin verschieben' = I would like to reschedule my appointment. Very common in Schreiben Teil 2 tasks about changing plans.",
           xpReward: 15
@@ -428,6 +439,7 @@ export const MODULE_18: Module = {
           id: "ex18-3-2",
           type: "fill-blank",
           question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Alter?'\n\nYou are 25 years old. Complete: 'Ich ___ 25 Jahre alt.'",
+          options: ["bin", "habe", "ist", "war"],
           correctAnswer: "bin",
           explanation: "'Ich bin ... Jahre alt' = I am ... years old. Use 'bin' (the ich-form of 'sein') with age. This is different from English where we 'have' years — in German you 'are' years old.",
           xpReward: 15
@@ -450,6 +462,7 @@ export const MODULE_18: Module = {
           id: "ex18-3-4",
           type: "fill-blank",
           question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Sprachen?'\n\nComplete: 'Ich ___ Malayalam, Englisch und ein bisschen Deutsch.'",
+          options: ["spreche", "rede", "sage", "habe"],
           correctAnswer: "spreche",
           explanation: "'Ich spreche ...' = I speak. Use 'sprechen' to talk about languages. 'Ein bisschen' = a little — useful for languages you're still learning!",
           xpReward: 15
@@ -509,6 +522,7 @@ export const MODULE_18: Module = {
           id: "ex18-3-9",
           type: "fill-blank",
           question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Beruf?'\n\nYou are a student (male). Complete: 'Ich bin ___ .'",
+          options: ["Student", "Studentin", "Schüler", "Lehrer"],
           correctAnswer: "Student",
           explanation: "'Ich bin Student.' (male) or 'Ich bin Studentin.' (female). No article needed for professions after 'sein'.",
           xpReward: 15
@@ -540,6 +554,7 @@ export const MODULE_18: Module = {
           id: "ex18-3-12",
           type: "fill-blank",
           question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Land?'\n\nComplete: 'Ich komme aus Indien, ___ Kerala.'",
+          options: ["aus", "von", "in", "nach"],
           correctAnswer: "aus",
           explanation: "'Ich komme aus Indien, aus Kerala.' You can specify both country and state using 'aus'.",
           xpReward: 15
@@ -653,6 +668,7 @@ export const MODULE_18: Module = {
           id: "ex18-4-2",
           type: "fill-blank",
           question: "🎤 SPRECHEN TEIL 2 — Wortkarte: 'Essen'\n\nAsk what your partner likes to eat: '___ essen Sie gern?'",
+          options: ["Was", "Wo", "Wann", "Wie"],
           correctAnswer: "Was",
           explanation: "'Was essen Sie gern?' = What do you like to eat? 'Was' (what) is the correct W-Frage word for asking about food preferences. A good answer would be: 'Ich esse gern Reis mit Curry.'",
           xpReward: 15
@@ -675,6 +691,7 @@ export const MODULE_18: Module = {
           id: "ex18-4-4",
           type: "fill-blank",
           question: "🎤 SPRECHEN TEIL 2 — Wortkarte: 'Wohnung'\n\nAsk about your partner's living situation: '___ wohnen Sie, in einer Wohnung oder in einem Haus?'",
+          options: ["Wo", "Was", "Wie", "Wann"],
           correctAnswer: "Wo",
           explanation: "'Wo wohnen Sie?' = Where do you live? Adding 'in einer Wohnung oder in einem Haus?' makes it more specific. 'Wo' (where) is the question word for location.",
           xpReward: 15
@@ -711,6 +728,7 @@ export const MODULE_18: Module = {
           id: "ex18-4-7",
           type: "fill-blank",
           question: "🎤 SPRECHEN TEIL 2 — Wortkarte: 'Arbeit'\n\nAsk about someone's job: 'Was sind Sie von ___?'",
+          options: ["Beruf", "Arbeit", "Job", "Stelle"],
           correctAnswer: "Beruf",
           explanation: "'Was sind Sie von Beruf?' = What is your profession? / What do you do for a living? 'Von Beruf' = by profession. You can also ask: 'Wo arbeiten Sie?' (Where do you work?)",
           xpReward: 15
@@ -733,6 +751,7 @@ export const MODULE_18: Module = {
           id: "ex18-4-9",
           type: "fill-blank",
           question: "🎤 SPRECHEN TEIL 2\n\nYou didn't understand the question. Say: 'Können Sie das bitte ___?'",
+          options: ["wiederholen", "erklären", "sagen", "schreiben"],
           correctAnswer: "wiederholen",
           explanation: "'Können Sie das bitte wiederholen?' = Can you please repeat that? This is an essential exam phrase! The examiners won't mark you down for asking them to repeat once.",
           xpReward: 15
@@ -844,6 +863,7 @@ export const MODULE_18: Module = {
           id: "ex18-5-2",
           type: "fill-blank",
           question: "🎤 SPRECHEN TEIL 3 — Situationskarte:\n'Sie möchten das Fenster öffnen.'\n\nAsk for permission: '___ ich das Fenster öffnen?'",
+          options: ["Darf", "Kann", "Soll", "Muss"],
           correctAnswer: "Darf",
           explanation: "'Darf ich das Fenster öffnen?' = May I open the window? 'Darf ich...?' is used to ask for permission to do something yourself. 'Können Sie...?' is for asking someone else to do something.",
           xpReward: 15
@@ -880,6 +900,7 @@ export const MODULE_18: Module = {
           id: "ex18-5-5",
           type: "fill-blank",
           question: "🎤 SPRECHEN TEIL 3 — Situationskarte:\n'Sie brauchen einen Stift.'\n\nMake a polite request: 'Können Sie mir bitte einen Stift ___?'",
+          options: ["leihen", "geben", "kaufen", "zeigen"],
           correctAnswer: "leihen",
           explanation: "'Können Sie mir bitte einen Stift leihen?' = Can you please lend me a pen? 'leihen' = to lend/borrow. This is the polite way to borrow something in German.",
           xpReward: 15
@@ -930,6 +951,7 @@ export const MODULE_18: Module = {
           id: "ex18-5-9",
           type: "fill-blank",
           question: "🎤 SPRECHEN TEIL 3 — You want to ask if you may sit here:\n\n'___ ich mich hier setzen?'",
+          options: ["Darf", "Kann", "Soll", "Will"],
           correctAnswer: "Darf",
           explanation: "'Darf ich mich hier setzen?' = May I sit here? 'Darf ich...' is for asking permission to do something.",
           xpReward: 15
@@ -1176,6 +1198,7 @@ export const MODULE_18: Module = {
           id: "ex18-6-11",
           type: "fill-blank",
           question: "✍️ SCHREIBEN — Teil 1 (Formular)\n\n📋 ANMELDUNG ZUM DEUTSCHKURS — Goethe-Institut\n\nYou are filling out a registration form. You were born on 25th December 2000.\n\nForm field: 'Geburtsdatum' → ___",
+          options: ["25.12.2000", "12.25.2000", "2000-12-25", "25/12/2000"],
           correctAnswer: "25.12.2000",
           explanation: "German date format: TT.MM.JJJJ = 25.12.2000 (25th December 2000). Day first, then month, then year, separated by dots. This is one of the most common form fields in Schreiben Teil 1!",
           xpReward: 18
@@ -1184,6 +1207,7 @@ export const MODULE_18: Module = {
           id: "ex18-6-12",
           type: "fill-blank",
           question: "✍️ SCHREIBEN — Teil 1 (Formular)\n\n📋 ANMELDUNG ZUM DEUTSCHKURS — Goethe-Institut\n\nYou live at Mozartstraße 15, 80336 München.\n\nForm field: 'Straße, Hausnummer' → ___",
+          options: ["Mozartstraße 15", "15 Mozartstraße", "80336 München", "München Mozartstraße"],
           correctAnswer: "Mozartstraße 15",
           explanation: "German address format: Street name + house number. 'Mozartstraße 15'. The PLZ (80336) and Stadt (München) go in separate fields. Don't mix them up!",
           xpReward: 18
