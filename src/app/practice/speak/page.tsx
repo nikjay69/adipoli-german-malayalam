@@ -7,7 +7,7 @@ import { X, Volume2, Mic, MicOff, Heart, ArrowLeft } from 'lucide-react';
 import { GameButton } from '@/components/game';
 import { Confetti, XPGain, Celebration } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
-import { getRandomMessage } from '@/lib/content/dialogue';
+
 import { useGameStore } from '@/lib/store';
 
 // ─── Web Speech API Types ───────────────────────────────────────

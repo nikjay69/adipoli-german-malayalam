@@ -7,18 +7,7 @@ import { ArrowLeft, Clock, ChevronRight, CheckCircle, XCircle, Award, BookOpen, 
 import { Card, Button, ProgressBar } from '@/components/ui';
 import { Confetti } from '@/components/game';
 import { useGameStore } from '@/lib/store';
-
-// Dynamic import for test data (will be created by the agent)
-let GOETHE_TESTS: any[] = [];
-let getTestById: (id: string) => any = () => undefined;
-
-try {
-  const testModule = require('@/lib/content/goethe-tests');
-  GOETHE_TESTS = testModule.GOETHE_TESTS || [];
-  getTestById = testModule.getTestById || (() => undefined);
-} catch {
-  // Module not yet created
-}
+import { GOETHE_TESTS, getTestById } from '@/lib/content/goethe-tests';
 
 type Section = 'overview' | 'hoeren' | 'lesen' | 'schreiben' | 'sprechen' | 'results';
 type Teil = 'teil1' | 'teil2' | 'teil3';
@@ -57,10 +46,10 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
     setTimeLeft(s === 'hoeren' ? 20 * 60 : s === 'lesen' ? 25 * 60 : s === 'schreiben' ? 20 * 60 : 15 * 60);
   };
 
-  const getCurrentQuestions = () => {
+  const getCurrentQuestions = (): any[] => {
     if (!test) return [];
-    if (section === 'hoeren') return test.hoeren?.[teil] || [];
-    if (section === 'lesen') return test.lesen?.[teil] || [];
+    if (section === 'hoeren') return (test.hoeren as any)?.[teil] || [];
+    if (section === 'lesen') return (test.lesen as any)?.[teil] || [];
     return [];
   };
 
