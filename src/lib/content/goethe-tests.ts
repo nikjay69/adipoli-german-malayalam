@@ -50,21 +50,31 @@ export interface HoerenTeil3Question {
   explanation: string;
 }
 
+// Real Goethe A1 Lesen format:
+//   Teil 1 (5 items): Read short emails/messages → Richtig/Falsch
+//   Teil 2 (5 items): Read ads/notices → match purpose (multiple choice a/b/c)
+//   Teil 3 (5 items): Read signs/short notices → Richtig/Falsch
+//
+// Note: Our Teil 1 uses MC (a/b/c) and Teil 2 uses R/F — close enough for practice,
+// the content topics and ordering now match the real exam.
+export type LesenQuestion = LesenEmailQuestion | LesenAdQuestion | LesenSignQuestion;
+
 export interface LesenSection {
-  teil1: LesenTeil1Question[];
-  teil2: LesenTeil2Question[];
-  teil3: LesenTeil3Question[];
+  teil1: LesenQuestion[];
+  teil2: LesenQuestion[];
+  teil3: LesenQuestion[];
 }
 
-export interface LesenTeil1Question {
+export interface LesenEmailQuestion {
   id: string;
-  text: string;
-  statement: string;
-  correct: boolean;
+  email_text: string;
+  question: string;
+  options: [string, string, string];
+  correct: 'a' | 'b' | 'c';
   explanation: string;
 }
 
-export interface LesenTeil2Question {
+export interface LesenAdQuestion {
   id: string;
   ad_text: string;
   statement: string;
@@ -72,12 +82,11 @@ export interface LesenTeil2Question {
   explanation: string;
 }
 
-export interface LesenTeil3Question {
+export interface LesenSignQuestion {
   id: string;
-  email_text: string;
-  question: string;
-  options: [string, string, string];
-  correct: 'a' | 'b' | 'c';
+  text: string;
+  statement: string;
+  correct: boolean;
   explanation: string;
 }
 
@@ -241,38 +250,52 @@ const test1: GoetheTest = {
     teil1: [
       {
         id: 't1-l1-1',
-        text: 'ÖFFNUNGSZEITEN\nMontag – Freitag: 8:00 – 20:00\nSamstag: 8:00 – 16:00\nSonntag: geschlossen',
-        statement: 'Am Sonntag kann man hier einkaufen.',
-        correct: false,
-        explanation: 'The sign says Sunday is closed (geschlossen).',
+        email_text:
+          'Liebe Frau Meier,\nvielen Dank für Ihre E-Mail. Ja, der Deutschkurs beginnt am 5. Oktober. Der Kurs ist montags und mittwochs von 18 bis 20 Uhr. Bitte bringen Sie Ihren Ausweis mit.\nMit freundlichen Grüßen\nVHS Stuttgart',
+        question: 'Wann ist der Deutschkurs?',
+        options: ['Montag und Mittwoch abends', 'Dienstag und Donnerstag abends', 'Montag bis Freitag morgens'],
+        correct: 'a',
+        explanation: 'The course is on Mondays and Wednesdays from 18:00 to 20:00 (evenings).',
       },
       {
         id: 't1-l1-2',
-        text: 'Bitte hier nicht rauchen!\nDanke für Ihr Verständnis.',
-        statement: 'Man darf hier nicht rauchen.',
-        correct: true,
-        explanation: '"Bitte hier nicht rauchen" means smoking is not allowed here.',
+        email_text:
+          'Hallo Tom,\nich habe am Samstag eine Party! Sie beginnt um 19 Uhr. Kannst du einen Salat mitbringen? Meine Adresse ist Blumenstraße 5.\nBis Samstag!\nLisa',
+        question: 'Was soll Tom mitbringen?',
+        options: ['Einen Kuchen', 'Einen Salat', 'Getränke'],
+        correct: 'b',
+        explanation: 'Lisa asks Tom to bring a salad (Kannst du einen Salat mitbringen?).',
       },
       {
         id: 't1-l1-3',
-        text: 'AUSVERKAUF!\nAlle Winterjacken 50 % reduziert!\nNur diese Woche!',
-        statement: 'Die Winterjacken sind billiger.',
-        correct: true,
-        explanation: '50% reduziert means the winter jackets are cheaper (reduced by half).',
+        email_text:
+          'Sehr geehrter Herr Klein,\nIhr Paket ist da. Sie können es ab morgen in unserer Filiale in der Hauptstraße 10 abholen. Bitte bringen Sie Ihren Personalausweis mit. Die Filiale ist von 9 bis 17 Uhr geöffnet.\nMit freundlichen Grüßen\nDHL',
+        question: 'Was muss Herr Klein mitbringen?',
+        options: ['Sein Paket', 'Seinen Personalausweis', 'Einen Brief'],
+        correct: 'b',
+        explanation: 'He must bring his ID card (Personalausweis) to pick up the package.',
       },
       {
         id: 't1-l1-4',
-        text: 'Fahrstuhl außer Betrieb.\nBitte benutzen Sie die Treppe.',
-        statement: 'Der Fahrstuhl funktioniert.',
-        correct: false,
-        explanation: '"Außer Betrieb" means out of order — the elevator does not work.',
+        email_text:
+          'Liebe Maria,\nleider kann ich morgen nicht zum Kino kommen. Ich bin krank. Können wir nächste Woche gehen? Vielleicht am Freitag?\nLiebe Grüße\nSofia',
+        question: 'Warum kann Sofia nicht ins Kino gehen?',
+        options: ['Sie hat keine Zeit.', 'Sie ist krank.', 'Sie hat kein Geld.'],
+        correct: 'b',
+        explanation: 'Sofia says she is sick (Ich bin krank).',
       },
       {
         id: 't1-l1-5',
-        text: 'Parkplatz nur für Kunden!\nMax. 2 Stunden.',
-        statement: 'Jeder darf hier parken.',
-        correct: false,
-        explanation: 'The parking is only for customers (nur für Kunden), not everyone.',
+        email_text:
+          'Hallo Frau Weber,\nder Termin am Dienstag um 10 Uhr ist leider nicht mehr frei. Können Sie am Mittwoch um 14 Uhr kommen? Bitte rufen Sie uns an.\nPraxis Dr. Schulz',
+        question: 'Was ist das Problem?',
+        options: [
+          'Der Arzt ist krank.',
+          'Der Termin am Dienstag ist nicht frei.',
+          'Die Praxis ist geschlossen.',
+        ],
+        correct: 'b',
+        explanation: 'The Tuesday appointment at 10:00 is no longer available.',
       },
     ],
     teil2: [
@@ -315,52 +338,38 @@ const test1: GoetheTest = {
     teil3: [
       {
         id: 't1-l3-1',
-        email_text:
-          'Liebe Frau Meier,\nvielen Dank für Ihre E-Mail. Ja, der Deutschkurs beginnt am 5. Oktober. Der Kurs ist montags und mittwochs von 18 bis 20 Uhr. Bitte bringen Sie Ihren Ausweis mit.\nMit freundlichen Grüßen\nVHS Stuttgart',
-        question: 'Wann ist der Deutschkurs?',
-        options: ['Montag und Mittwoch abends', 'Dienstag und Donnerstag abends', 'Montag bis Freitag morgens'],
-        correct: 'a',
-        explanation: 'The course is on Mondays and Wednesdays from 18:00 to 20:00 (evenings).',
+        text: 'ÖFFNUNGSZEITEN\nMontag – Freitag: 8:00 – 20:00\nSamstag: 8:00 – 16:00\nSonntag: geschlossen',
+        statement: 'Am Sonntag kann man hier einkaufen.',
+        correct: false,
+        explanation: 'The sign says Sunday is closed (geschlossen).',
       },
       {
         id: 't1-l3-2',
-        email_text:
-          'Hallo Tom,\nich habe am Samstag eine Party! Sie beginnt um 19 Uhr. Kannst du einen Salat mitbringen? Meine Adresse ist Blumenstraße 5.\nBis Samstag!\nLisa',
-        question: 'Was soll Tom mitbringen?',
-        options: ['Einen Kuchen', 'Einen Salat', 'Getränke'],
-        correct: 'b',
-        explanation: 'Lisa asks Tom to bring a salad (Kannst du einen Salat mitbringen?).',
+        text: 'Bitte hier nicht rauchen!\nDanke für Ihr Verständnis.',
+        statement: 'Man darf hier nicht rauchen.',
+        correct: true,
+        explanation: '"Bitte hier nicht rauchen" means smoking is not allowed here.',
       },
       {
         id: 't1-l3-3',
-        email_text:
-          'Sehr geehrter Herr Klein,\nIhr Paket ist da. Sie können es ab morgen in unserer Filiale in der Hauptstraße 10 abholen. Bitte bringen Sie Ihren Personalausweis mit. Die Filiale ist von 9 bis 17 Uhr geöffnet.\nMit freundlichen Grüßen\nDHL',
-        question: 'Was muss Herr Klein mitbringen?',
-        options: ['Sein Paket', 'Seinen Personalausweis', 'Einen Brief'],
-        correct: 'b',
-        explanation: 'He must bring his ID card (Personalausweis) to pick up the package.',
+        text: 'AUSVERKAUF!\nAlle Winterjacken 50 % reduziert!\nNur diese Woche!',
+        statement: 'Die Winterjacken sind billiger.',
+        correct: true,
+        explanation: '50% reduziert means the winter jackets are cheaper (reduced by half).',
       },
       {
         id: 't1-l3-4',
-        email_text:
-          'Liebe Maria,\nleider kann ich morgen nicht zum Kino kommen. Ich bin krank. Können wir nächste Woche gehen? Vielleicht am Freitag?\nLiebe Grüße\nSofia',
-        question: 'Warum kann Sofia nicht ins Kino gehen?',
-        options: ['Sie hat keine Zeit.', 'Sie ist krank.', 'Sie hat kein Geld.'],
-        correct: 'b',
-        explanation: 'Sofia says she is sick (Ich bin krank).',
+        text: 'Fahrstuhl außer Betrieb.\nBitte benutzen Sie die Treppe.',
+        statement: 'Der Fahrstuhl funktioniert.',
+        correct: false,
+        explanation: '"Außer Betrieb" means out of order — the elevator does not work.',
       },
       {
         id: 't1-l3-5',
-        email_text:
-          'Hallo Frau Weber,\nder Termin am Dienstag um 10 Uhr ist leider nicht mehr frei. Können Sie am Mittwoch um 14 Uhr kommen? Bitte rufen Sie uns an.\nPraxis Dr. Schulz',
-        question: 'Was ist das Problem?',
-        options: [
-          'Der Arzt ist krank.',
-          'Der Termin am Dienstag ist nicht frei.',
-          'Die Praxis ist geschlossen.',
-        ],
-        correct: 'b',
-        explanation: 'The Tuesday appointment at 10:00 is no longer available.',
+        text: 'Parkplatz nur für Kunden!\nMax. 2 Stunden.',
+        statement: 'Jeder darf hier parken.',
+        correct: false,
+        explanation: 'The parking is only for customers (nur für Kunden), not everyone.',
       },
     ],
   },
@@ -569,38 +578,52 @@ const test2: GoetheTest = {
     teil1: [
       {
         id: 't2-l1-1',
-        text: 'Sprechzeiten Praxis Dr. Lang:\nMo, Di, Do: 8:00–12:00 und 14:00–18:00\nMi, Fr: 8:00–12:00\nTermin nur nach Vereinbarung.',
-        statement: 'Am Mittwoch kann man auch am Nachmittag zum Arzt gehen.',
-        correct: false,
-        explanation: 'On Wednesday (Mi) the practice is only open from 8:00 to 12:00 — no afternoon hours.',
+        email_text:
+          'Hallo Peter,\nkannst du morgen um 8 Uhr zum Friseur gehen? Ich habe einen Termin, aber ich kann leider nicht kommen. Der Friseur ist in der Schillerstraße 5. Sag bitte Bescheid!\nViele Grüße\nMarkus',
+        question: 'Was soll Peter machen?',
+        options: [
+          'Den Friseurtermin absagen',
+          'Zum Friseur gehen',
+          'Markus anrufen',
+        ],
+        correct: 'b',
+        explanation: 'Markus asks Peter to go to the hairdresser in his place.',
       },
       {
         id: 't2-l1-2',
-        text: 'ACHTUNG!\nAm 15. Oktober kein Wasser von 9:00 bis 14:00 Uhr.\nWir bitten um Verständnis.',
-        statement: 'Am 15. Oktober gibt es am Vormittag kein Wasser.',
-        correct: true,
-        explanation: 'There is no water from 9:00 to 14:00, which includes the morning (Vormittag).',
+        email_text:
+          'Liebe Frau Hansen,\nhiermit bestätige ich Ihren Termin am Montag, den 14. März, um 10:30 Uhr. Bitte bringen Sie Ihre Versichertenkarte mit.\nMit freundlichen Grüßen\nDr. Neumann',
+        question: 'Was soll Frau Hansen mitbringen?',
+        options: ['Ihren Personalausweis', 'Ihre Versichertenkarte', 'Einen Brief'],
+        correct: 'b',
+        explanation: 'She should bring her insurance card (Versichertenkarte).',
       },
       {
         id: 't2-l1-3',
-        text: 'Fundbüro\nÖffnungszeiten: Mo–Fr 9:00–16:00\nTelefon: 089 233-96045\nRathaus, Zimmer 12',
-        statement: 'Das Fundbüro ist auch am Samstag geöffnet.',
-        correct: false,
-        explanation: 'The lost-and-found office is only open Monday to Friday (Mo–Fr).',
+        email_text:
+          'Hallo zusammen,\nunsere Besprechung am Mittwoch wird von 14 Uhr auf 16 Uhr verschoben. Der Raum bleibt gleich: Raum 305.\nViele Grüße\nHerr Fischer',
+        question: 'Was ändert sich?',
+        options: ['Der Raum', 'Die Uhrzeit', 'Der Tag'],
+        correct: 'b',
+        explanation: 'The time changes from 14:00 to 16:00; the room stays the same.',
       },
       {
         id: 't2-l1-4',
-        text: 'Kurs: Deutsch A1 Intensiv\nDauer: 4 Wochen\nZeit: Mo–Fr, 9:00–13:00\nPreis: 320 Euro\nAnmeldung an der Rezeption',
-        statement: 'Der Kurs dauert einen Monat.',
-        correct: true,
-        explanation: '4 Wochen (4 weeks) is approximately one month (ein Monat).',
+        email_text:
+          'Lieber Tim,\nich fahre am Wochenende zu meinen Eltern nach Köln. Kannst du bitte meine Blumen gießen? Der Schlüssel liegt unter der Fußmatte.\nDanke dir!\nSara',
+        question: 'Wo ist der Schlüssel?',
+        options: ['Bei den Nachbarn', 'Unter der Fußmatte', 'Im Briefkasten'],
+        correct: 'b',
+        explanation: 'The key is under the doormat (unter der Fußmatte).',
       },
       {
         id: 't2-l1-5',
-        text: 'Bitte bis 22 Uhr leise sein.\nAb 22 Uhr: Nachtruhe!\nVielen Dank, Ihre Hausverwaltung.',
-        statement: 'Man soll nach 22 Uhr keinen Lärm machen.',
-        correct: true,
-        explanation: 'Nachtruhe (quiet hours) starts at 22:00 — one should not make noise after that.',
+        email_text:
+          'Sehr geehrter Herr Bauer,\nIhre Bestellung ist unterwegs. Die Lieferung kommt voraussichtlich am Donnerstag zwischen 10 und 14 Uhr. Bitte seien Sie zu Hause.\nFreundliche Grüße\nOnline-Shop24',
+        question: 'Wann kommt die Lieferung?',
+        options: ['Am Mittwoch', 'Am Donnerstag', 'Am Freitag'],
+        correct: 'b',
+        explanation: 'The delivery is expected on Thursday (Donnerstag).',
       },
     ],
     teil2: [
@@ -643,52 +666,38 @@ const test2: GoetheTest = {
     teil3: [
       {
         id: 't2-l3-1',
-        email_text:
-          'Hallo Peter,\nkannst du morgen um 8 Uhr zum Friseur gehen? Ich habe einen Termin, aber ich kann leider nicht kommen. Der Friseur ist in der Schillerstraße 5. Sag bitte Bescheid!\nViele Grüße\nMarkus',
-        question: 'Was soll Peter machen?',
-        options: [
-          'Den Friseurtermin absagen',
-          'Zum Friseur gehen',
-          'Markus anrufen',
-        ],
-        correct: 'b',
-        explanation: 'Markus asks Peter to go to the hairdresser in his place.',
+        text: 'Sprechzeiten Praxis Dr. Lang:\nMo, Di, Do: 8:00–12:00 und 14:00–18:00\nMi, Fr: 8:00–12:00\nTermin nur nach Vereinbarung.',
+        statement: 'Am Mittwoch kann man auch am Nachmittag zum Arzt gehen.',
+        correct: false,
+        explanation: 'On Wednesday (Mi) the practice is only open from 8:00 to 12:00 — no afternoon hours.',
       },
       {
         id: 't2-l3-2',
-        email_text:
-          'Liebe Frau Hansen,\nhiermit bestätige ich Ihren Termin am Montag, den 14. März, um 10:30 Uhr. Bitte bringen Sie Ihre Versichertenkarte mit.\nMit freundlichen Grüßen\nDr. Neumann',
-        question: 'Was soll Frau Hansen mitbringen?',
-        options: ['Ihren Personalausweis', 'Ihre Versichertenkarte', 'Einen Brief'],
-        correct: 'b',
-        explanation: 'She should bring her insurance card (Versichertenkarte).',
+        text: 'ACHTUNG!\nAm 15. Oktober kein Wasser von 9:00 bis 14:00 Uhr.\nWir bitten um Verständnis.',
+        statement: 'Am 15. Oktober gibt es am Vormittag kein Wasser.',
+        correct: true,
+        explanation: 'There is no water from 9:00 to 14:00, which includes the morning (Vormittag).',
       },
       {
         id: 't2-l3-3',
-        email_text:
-          'Hallo zusammen,\nunsere Besprechung am Mittwoch wird von 14 Uhr auf 16 Uhr verschoben. Der Raum bleibt gleich: Raum 305.\nViele Grüße\nHerr Fischer',
-        question: 'Was ändert sich?',
-        options: ['Der Raum', 'Die Uhrzeit', 'Der Tag'],
-        correct: 'b',
-        explanation: 'The time changes from 14:00 to 16:00; the room stays the same.',
+        text: 'Fundbüro\nÖffnungszeiten: Mo–Fr 9:00–16:00\nTelefon: 089 233-96045\nRathaus, Zimmer 12',
+        statement: 'Das Fundbüro ist auch am Samstag geöffnet.',
+        correct: false,
+        explanation: 'The lost-and-found office is only open Monday to Friday (Mo–Fr).',
       },
       {
         id: 't2-l3-4',
-        email_text:
-          'Lieber Tim,\nich fahre am Wochenende zu meinen Eltern nach Köln. Kannst du bitte meine Blumen gießen? Der Schlüssel liegt unter der Fußmatte.\nDanke dir!\nSara',
-        question: 'Wo ist der Schlüssel?',
-        options: ['Bei den Nachbarn', 'Unter der Fußmatte', 'Im Briefkasten'],
-        correct: 'b',
-        explanation: 'The key is under the doormat (unter der Fußmatte).',
+        text: 'Kurs: Deutsch A1 Intensiv\nDauer: 4 Wochen\nZeit: Mo–Fr, 9:00–13:00\nPreis: 320 Euro\nAnmeldung an der Rezeption',
+        statement: 'Der Kurs dauert einen Monat.',
+        correct: true,
+        explanation: '4 Wochen (4 weeks) is approximately one month (ein Monat).',
       },
       {
         id: 't2-l3-5',
-        email_text:
-          'Sehr geehrter Herr Bauer,\nIhre Bestellung ist unterwegs. Die Lieferung kommt voraussichtlich am Donnerstag zwischen 10 und 14 Uhr. Bitte seien Sie zu Hause.\nFreundliche Grüße\nOnline-Shop24',
-        question: 'Wann kommt die Lieferung?',
-        options: ['Am Mittwoch', 'Am Donnerstag', 'Am Freitag'],
-        correct: 'b',
-        explanation: 'The delivery is expected on Thursday (Donnerstag).',
+        text: 'Bitte bis 22 Uhr leise sein.\nAb 22 Uhr: Nachtruhe!\nVielen Dank, Ihre Hausverwaltung.',
+        statement: 'Man soll nach 22 Uhr keinen Lärm machen.',
+        correct: true,
+        explanation: 'Nachtruhe (quiet hours) starts at 22:00 — one should not make noise after that.',
       },
     ],
   },
@@ -897,38 +906,60 @@ const test3: GoetheTest = {
     teil1: [
       {
         id: 't3-l1-1',
-        text: 'Zu vermieten:\n2-Zimmer-Wohnung, 55 m²\n3. Stock, kein Fahrstuhl\nMiete: 490 € + 120 € Nebenkosten\nAb 1. April frei',
-        statement: 'In dem Haus gibt es einen Aufzug.',
-        correct: false,
-        explanation: '"Kein Fahrstuhl" means there is no elevator.',
+        email_text:
+          'Lieber Herr Kumar,\nIhre neue Wohnung in der Bergstraße 7 ist ab dem 1. März fertig. Bitte kommen Sie am 28. Februar um 10 Uhr ins Büro. Dann bekommen Sie die Schlüssel. Bringen Sie bitte Ihren Personalausweis und die Kaution (1400 Euro) mit.\nMit freundlichen Grüßen\nHausverwaltung Schmid',
+        question: 'Was soll Herr Kumar am 28. Februar machen?',
+        options: [
+          'Die Wohnung besichtigen',
+          'Die Schlüssel abholen',
+          'Die Wohnung renovieren',
+        ],
+        correct: 'b',
+        explanation: 'He should come to the office to receive the keys (Schlüssel bekommen).',
       },
       {
         id: 't3-l1-2',
-        text: 'Hausordnung:\nRuhezeiten: 13:00–15:00 Uhr und 22:00–7:00 Uhr\nHaustiere nur mit Erlaubnis des Vermieters.',
-        statement: 'Man darf immer ein Haustier haben.',
-        correct: false,
-        explanation: 'Pets are only allowed with the landlord\'s permission (nur mit Erlaubnis).',
+        email_text:
+          'Hallo Nina,\nmein Bruder und seine Frau kommen am Wochenende zu Besuch. Ich möchte am Sonntag für alle kochen. Hast du Lust zu kommen? Wir essen um 13 Uhr.\nLiebe Grüße\nElena',
+        question: 'Wer kommt am Wochenende zu Elena?',
+        options: ['Ihre Eltern', 'Ihr Bruder und seine Frau', 'Ihre Freundin Nina'],
+        correct: 'b',
+        explanation: 'Elena\'s brother and his wife are coming to visit.',
       },
       {
         id: 't3-l1-3',
-        text: 'Möbelhaus König\nGroßer Sommerschlussverkauf!\nAlle Sofas 30 % günstiger\n1. Juli bis 31. Juli',
-        statement: 'Der Verkauf ist im Juli.',
-        correct: true,
-        explanation: 'The summer sale runs from July 1 to July 31.',
+        email_text:
+          'Sehr geehrte Mieter,\nab nächsten Monat gibt es neue Mülltonnen: Grün für Biomüll, Blau für Papier, Gelb für Plastik. Bitte trennen Sie Ihren Müll. Die alten Tonnen werden am 30. September abgeholt.\nMit freundlichen Grüßen\nHausverwaltung',
+        question: 'Was sollen die Mieter machen?',
+        options: [
+          'Die alten Tonnen verkaufen',
+          'Den Müll trennen',
+          'Neue Tonnen kaufen',
+        ],
+        correct: 'b',
+        explanation: 'The tenants should separate their waste (Müll trennen).',
       },
       {
         id: 't3-l1-4',
-        text: 'EINGANG NUR FÜR BEWOHNER\nBitte Tür immer schließen!',
-        statement: 'Gäste dürfen diesen Eingang benutzen.',
-        correct: false,
-        explanation: 'The entrance is only for residents (nur für Bewohner).',
+        email_text:
+          'Hallo Jan,\nkannst du mir helfen? Ich ziehe nächste Woche um und brauche jemanden mit einem Auto. Ich habe nicht so viele Möbel — nur ein Bett, einen Schreibtisch und ein paar Kisten. Es dauert vielleicht zwei Stunden.\nViele Grüße\nMax',
+        question: 'Warum schreibt Max an Jan?',
+        options: [
+          'Er möchte Möbel kaufen.',
+          'Er braucht Hilfe beim Umzug.',
+          'Er hat ein neues Auto.',
+        ],
+        correct: 'b',
+        explanation: 'Max is moving and needs help (Hilfe beim Umzug).',
       },
       {
         id: 't3-l1-5',
-        text: 'Treppenhausreinigung:\nJede Woche ist eine andere Familie dran.\nDiese Woche: Familie Özdemir (2. OG)',
-        statement: 'Alle Familien putzen jede Woche zusammen.',
-        correct: false,
-        explanation: 'Each week a different family cleans (jede Woche ist eine andere Familie dran), not all together.',
+        email_text:
+          'Liebe Frau Yilmaz,\nwillkommen in unserem Haus! Hier ein paar Infos: Ihre Post ist im Briefkasten im Erdgeschoss. Der Waschkeller ist im Untergeschoss. Der Müll kommt montags. Bei Fragen können Sie mich gern anrufen.\nViele Grüße\nIhr Nachbar, Herr Wolff',
+        question: 'Wo ist der Waschkeller?',
+        options: ['Im Erdgeschoss', 'Im Untergeschoss', 'Im ersten Stock'],
+        correct: 'b',
+        explanation: 'The laundry room is in the basement (Untergeschoss).',
       },
     ],
     teil2: [
@@ -971,60 +1002,38 @@ const test3: GoetheTest = {
     teil3: [
       {
         id: 't3-l3-1',
-        email_text:
-          'Lieber Herr Kumar,\nIhre neue Wohnung in der Bergstraße 7 ist ab dem 1. März fertig. Bitte kommen Sie am 28. Februar um 10 Uhr ins Büro. Dann bekommen Sie die Schlüssel. Bringen Sie bitte Ihren Personalausweis und die Kaution (1400 Euro) mit.\nMit freundlichen Grüßen\nHausverwaltung Schmid',
-        question: 'Was soll Herr Kumar am 28. Februar machen?',
-        options: [
-          'Die Wohnung besichtigen',
-          'Die Schlüssel abholen',
-          'Die Wohnung renovieren',
-        ],
-        correct: 'b',
-        explanation: 'He should come to the office to receive the keys (Schlüssel bekommen).',
+        text: 'Zu vermieten:\n2-Zimmer-Wohnung, 55 m²\n3. Stock, kein Fahrstuhl\nMiete: 490 € + 120 € Nebenkosten\nAb 1. April frei',
+        statement: 'In dem Haus gibt es einen Aufzug.',
+        correct: false,
+        explanation: '"Kein Fahrstuhl" means there is no elevator.',
       },
       {
         id: 't3-l3-2',
-        email_text:
-          'Hallo Nina,\nmein Bruder und seine Frau kommen am Wochenende zu Besuch. Ich möchte am Sonntag für alle kochen. Hast du Lust zu kommen? Wir essen um 13 Uhr.\nLiebe Grüße\nElena',
-        question: 'Wer kommt am Wochenende zu Elena?',
-        options: ['Ihre Eltern', 'Ihr Bruder und seine Frau', 'Ihre Freundin Nina'],
-        correct: 'b',
-        explanation: 'Elena\'s brother and his wife are coming to visit.',
+        text: 'Hausordnung:\nRuhezeiten: 13:00–15:00 Uhr und 22:00–7:00 Uhr\nHaustiere nur mit Erlaubnis des Vermieters.',
+        statement: 'Man darf immer ein Haustier haben.',
+        correct: false,
+        explanation: 'Pets are only allowed with the landlord\'s permission (nur mit Erlaubnis).',
       },
       {
         id: 't3-l3-3',
-        email_text:
-          'Sehr geehrte Mieter,\nab nächsten Monat gibt es neue Mülltonnen: Grün für Biomüll, Blau für Papier, Gelb für Plastik. Bitte trennen Sie Ihren Müll. Die alten Tonnen werden am 30. September abgeholt.\nMit freundlichen Grüßen\nHausverwaltung',
-        question: 'Was sollen die Mieter machen?',
-        options: [
-          'Die alten Tonnen verkaufen',
-          'Den Müll trennen',
-          'Neue Tonnen kaufen',
-        ],
-        correct: 'b',
-        explanation: 'The tenants should separate their waste (Müll trennen).',
+        text: 'Möbelhaus König\nGroßer Sommerschlussverkauf!\nAlle Sofas 30 % günstiger\n1. Juli bis 31. Juli',
+        statement: 'Der Verkauf ist im Juli.',
+        correct: true,
+        explanation: 'The summer sale runs from July 1 to July 31.',
       },
       {
         id: 't3-l3-4',
-        email_text:
-          'Hallo Jan,\nkannst du mir helfen? Ich ziehe nächste Woche um und brauche jemanden mit einem Auto. Ich habe nicht so viele Möbel — nur ein Bett, einen Schreibtisch und ein paar Kisten. Es dauert vielleicht zwei Stunden.\nViele Grüße\nMax',
-        question: 'Warum schreibt Max an Jan?',
-        options: [
-          'Er möchte Möbel kaufen.',
-          'Er braucht Hilfe beim Umzug.',
-          'Er hat ein neues Auto.',
-        ],
-        correct: 'b',
-        explanation: 'Max is moving and needs help (Hilfe beim Umzug).',
+        text: 'EINGANG NUR FÜR BEWOHNER\nBitte Tür immer schließen!',
+        statement: 'Gäste dürfen diesen Eingang benutzen.',
+        correct: false,
+        explanation: 'The entrance is only for residents (nur für Bewohner).',
       },
       {
         id: 't3-l3-5',
-        email_text:
-          'Liebe Frau Yilmaz,\nwillkommen in unserem Haus! Hier ein paar Infos: Ihre Post ist im Briefkasten im Erdgeschoss. Der Waschkeller ist im Untergeschoss. Der Müll kommt montags. Bei Fragen können Sie mich gern anrufen.\nViele Grüße\nIhr Nachbar, Herr Wolff',
-        question: 'Wo ist der Waschkeller?',
-        options: ['Im Erdgeschoss', 'Im Untergeschoss', 'Im ersten Stock'],
-        correct: 'b',
-        explanation: 'The laundry room is in the basement (Untergeschoss).',
+        text: 'Treppenhausreinigung:\nJede Woche ist eine andere Familie dran.\nDiese Woche: Familie Özdemir (2. OG)',
+        statement: 'Alle Familien putzen jede Woche zusammen.',
+        correct: false,
+        explanation: 'Each week a different family cleans (jede Woche ist eine andere Familie dran), not all together.',
       },
     ],
   },
@@ -1237,38 +1246,52 @@ const test4: GoetheTest = {
     teil1: [
       {
         id: 't4-l1-1',
-        text: 'SPEISEKARTE\nMittagsmenü (11:30–14:00)\nSuppe + Hauptgericht: 7,50 €\nGetränke nicht inklusive',
-        statement: 'Das Mittagsmenü kostet 7,50 Euro mit Getränk.',
-        correct: false,
-        explanation: 'Drinks are not included (Getränke nicht inklusive).',
+        email_text:
+          'Hallo Leute,\nich lade euch am Freitag zu mir ein! Ich koche indisches Curry. Wer möchte, kann Nachtisch mitbringen. Bitte sagt mir bis Mittwoch Bescheid, ob ihr kommt.\nViele Grüße\nRavi',
+        question: 'Was sollen die Freunde mitbringen?',
+        options: ['Getränke', 'Nachtisch', 'Reis'],
+        correct: 'b',
+        explanation: 'Ravi suggests that whoever wants to can bring dessert (Nachtisch).',
       },
       {
         id: 't4-l1-2',
-        text: 'Bäckerei Fischer\nTäglich frische Brötchen ab 6 Uhr!\nMontag bis Samstag\nSonn- und Feiertage: geschlossen',
-        statement: 'Am Sonntag kann man hier Brötchen kaufen.',
-        correct: false,
-        explanation: 'The bakery is closed on Sundays and holidays.',
+        email_text:
+          'Liebe Frau Nair,\nvielen Dank für Ihre Reservierung. Wir haben einen Tisch für vier Personen am Samstagabend um 19 Uhr für Sie reserviert. Bei Änderungen rufen Sie uns bitte an.\nMit freundlichen Grüßen\nRestaurant Rheinblick',
+        question: 'Für wie viele Personen ist der Tisch?',
+        options: ['Zwei', 'Vier', 'Sechs'],
+        correct: 'b',
+        explanation: 'The table is reserved for four persons (vier Personen).',
       },
       {
         id: 't4-l1-3',
-        text: 'ACHTUNG: NUSSALLERGIE!\nDieses Produkt enthält Spuren von Nüssen.',
-        statement: 'Dieses Produkt ist für Menschen mit Nussallergie gefährlich.',
-        correct: true,
-        explanation: '"Enthält Spuren von Nüssen" means it contains traces of nuts — dangerous for people with nut allergies.',
+        email_text:
+          'Hallo Sarah,\nich habe das Rezept für den Schokoladenkuchen gefunden. Du brauchst: 200 g Butter, 200 g Zucker, 4 Eier, 200 g Schokolade und 150 g Mehl. Der Kuchen muss 45 Minuten im Ofen backen.\nViele Grüße\nMama',
+        question: 'Wie lange muss der Kuchen backen?',
+        options: ['30 Minuten', '45 Minuten', '60 Minuten'],
+        correct: 'b',
+        explanation: 'The cake must bake for 45 minutes.',
       },
       {
         id: 't4-l1-4',
-        text: 'Eiscafé Venezia\nNeu: Veganes Eis! 🌱\n2 Kugeln: 3,00 €\n3 Kugeln: 4,00 €',
-        statement: 'Drei Kugeln Eis kosten 4 Euro.',
-        correct: true,
-        explanation: '3 scoops cost 4 Euro as stated on the sign.',
+        email_text:
+          'Lieber Herr Petrov,\nleider können wir Ihre Bestellung nicht liefern. Die Tomatensuppe ist ausverkauft. Wir können Ihnen stattdessen Kartoffelsuppe schicken. Ist das in Ordnung? Bitte antworten Sie.\nIhr Lieferservice',
+        question: 'Was ist das Problem?',
+        options: [
+          'Der Lieferservice hat geschlossen.',
+          'Die Tomatensuppe ist nicht mehr da.',
+          'Die Adresse ist falsch.',
+        ],
+        correct: 'b',
+        explanation: 'The tomato soup is sold out (ausverkauft).',
       },
       {
         id: 't4-l1-5',
-        text: 'Kein Essen und Trinken in der Bibliothek!\nDanke für Ihr Verständnis.',
-        statement: 'Man darf in der Bibliothek essen.',
-        correct: false,
-        explanation: 'No eating or drinking is allowed in the library.',
+        email_text:
+          'Hallo zusammen,\nam Sonntag machen wir ein Picknick im Park. Jeder bringt etwas mit: Tom bringt Brot und Käse, ich bringe Obst und Saft. Könnt ihr vielleicht Kuchen mitbringen? Wir treffen uns um 12 Uhr am Eingang.\nBis Sonntag!\nKlara',
+        question: 'Was bringt Klara mit?',
+        options: ['Brot und Käse', 'Obst und Saft', 'Kuchen'],
+        correct: 'b',
+        explanation: 'Klara says she brings fruit and juice (Obst und Saft).',
       },
     ],
     teil2: [
@@ -1311,52 +1334,38 @@ const test4: GoetheTest = {
     teil3: [
       {
         id: 't4-l3-1',
-        email_text:
-          'Hallo Leute,\nich lade euch am Freitag zu mir ein! Ich koche indisches Curry. Wer möchte, kann Nachtisch mitbringen. Bitte sagt mir bis Mittwoch Bescheid, ob ihr kommt.\nViele Grüße\nRavi',
-        question: 'Was sollen die Freunde mitbringen?',
-        options: ['Getränke', 'Nachtisch', 'Reis'],
-        correct: 'b',
-        explanation: 'Ravi suggests that whoever wants to can bring dessert (Nachtisch).',
+        text: 'SPEISEKARTE\nMittagsmenü (11:30–14:00)\nSuppe + Hauptgericht: 7,50 €\nGetränke nicht inklusive',
+        statement: 'Das Mittagsmenü kostet 7,50 Euro mit Getränk.',
+        correct: false,
+        explanation: 'Drinks are not included (Getränke nicht inklusive).',
       },
       {
         id: 't4-l3-2',
-        email_text:
-          'Liebe Frau Nair,\nvielen Dank für Ihre Reservierung. Wir haben einen Tisch für vier Personen am Samstagabend um 19 Uhr für Sie reserviert. Bei Änderungen rufen Sie uns bitte an.\nMit freundlichen Grüßen\nRestaurant Rheinblick',
-        question: 'Für wie viele Personen ist der Tisch?',
-        options: ['Zwei', 'Vier', 'Sechs'],
-        correct: 'b',
-        explanation: 'The table is reserved for four persons (vier Personen).',
+        text: 'Bäckerei Fischer\nTäglich frische Brötchen ab 6 Uhr!\nMontag bis Samstag\nSonn- und Feiertage: geschlossen',
+        statement: 'Am Sonntag kann man hier Brötchen kaufen.',
+        correct: false,
+        explanation: 'The bakery is closed on Sundays and holidays.',
       },
       {
         id: 't4-l3-3',
-        email_text:
-          'Hallo Sarah,\nich habe das Rezept für den Schokoladenkuchen gefunden. Du brauchst: 200 g Butter, 200 g Zucker, 4 Eier, 200 g Schokolade und 150 g Mehl. Der Kuchen muss 45 Minuten im Ofen backen.\nViele Grüße\nMama',
-        question: 'Wie lange muss der Kuchen backen?',
-        options: ['30 Minuten', '45 Minuten', '60 Minuten'],
-        correct: 'b',
-        explanation: 'The cake must bake for 45 minutes.',
+        text: 'ACHTUNG: NUSSALLERGIE!\nDieses Produkt enthält Spuren von Nüssen.',
+        statement: 'Dieses Produkt ist für Menschen mit Nussallergie gefährlich.',
+        correct: true,
+        explanation: '"Enthält Spuren von Nüssen" means it contains traces of nuts — dangerous for people with nut allergies.',
       },
       {
         id: 't4-l3-4',
-        email_text:
-          'Lieber Herr Petrov,\nleider können wir Ihre Bestellung nicht liefern. Die Tomatensuppe ist ausverkauft. Wir können Ihnen stattdessen Kartoffelsuppe schicken. Ist das in Ordnung? Bitte antworten Sie.\nIhr Lieferservice',
-        question: 'Was ist das Problem?',
-        options: [
-          'Der Lieferservice hat geschlossen.',
-          'Die Tomatensuppe ist nicht mehr da.',
-          'Die Adresse ist falsch.',
-        ],
-        correct: 'b',
-        explanation: 'The tomato soup is sold out (ausverkauft).',
+        text: 'Eiscafé Venezia\nNeu: Veganes Eis! 🌱\n2 Kugeln: 3,00 €\n3 Kugeln: 4,00 €',
+        statement: 'Drei Kugeln Eis kosten 4 Euro.',
+        correct: true,
+        explanation: '3 scoops cost 4 Euro as stated on the sign.',
       },
       {
         id: 't4-l3-5',
-        email_text:
-          'Hallo zusammen,\nam Sonntag machen wir ein Picknick im Park. Jeder bringt etwas mit: Tom bringt Brot und Käse, ich bringe Obst und Saft. Könnt ihr vielleicht Kuchen mitbringen? Wir treffen uns um 12 Uhr am Eingang.\nBis Sonntag!\nKlara',
-        question: 'Was bringt Klara mit?',
-        options: ['Brot und Käse', 'Obst und Saft', 'Kuchen'],
-        correct: 'b',
-        explanation: 'Klara says she brings fruit and juice (Obst und Saft).',
+        text: 'Kein Essen und Trinken in der Bibliothek!\nDanke für Ihr Verständnis.',
+        statement: 'Man darf in der Bibliothek essen.',
+        correct: false,
+        explanation: 'No eating or drinking is allowed in the library.',
       },
     ],
   },
@@ -1565,38 +1574,48 @@ const test5: GoetheTest = {
     teil1: [
       {
         id: 't5-l1-1',
-        text: 'Fahrradverleih am Bahnhof\nMo–So: 7:00–21:00\nPreise: 1 Stunde 3 €, 1 Tag 12 €\nAusweis erforderlich!',
-        statement: 'Man kann Fahrräder auch am Sonntag mieten.',
-        correct: true,
-        explanation: 'The rental is open Monday through Sunday (Mo–So).',
+        email_text:
+          'Sehr geehrter Herr Nair,\nvielen Dank für Ihre Buchung. Hier Ihre Reisedaten: Flug LH 1234, München → Delhi, am 20. Dezember um 22:10 Uhr. Bitte seien Sie 2 Stunden vor Abflug am Flughafen. Ihr E-Ticket ist im Anhang.\nMit freundlichen Grüßen\nLufthansa',
+        question: 'Wann muss Herr Nair am Flughafen sein?',
+        options: ['Um 20:10 Uhr', 'Um 20:00 Uhr', 'Um 22:10 Uhr'],
+        correct: 'a',
+        explanation: 'The flight is at 22:10, and he should be there 2 hours early — so around 20:10.',
       },
       {
         id: 't5-l1-2',
-        text: 'EINBAHNSTRASSE\nDurchfahrt nur in Pfeilrichtung!\nGegenverkehr verboten.',
-        statement: 'Man darf in beide Richtungen fahren.',
-        correct: false,
-        explanation: 'It\'s a one-way street — traffic in the opposite direction is forbidden.',
+        email_text:
+          'Liebe Julia,\nwir sind in Wien! Die Stadt ist wunderschön. Gestern haben wir das Schloss Schönbrunn besucht. Das Wetter ist leider nicht so gut — es regnet. Morgen fahren wir weiter nach Salzburg.\nLiebe Grüße\nAnna und Max',
+        question: 'Wie ist das Wetter in Wien?',
+        options: ['Sonnig', 'Es regnet.', 'Es schneit.'],
+        correct: 'b',
+        explanation: 'It is raining in Vienna (es regnet).',
       },
       {
         id: 't5-l1-3',
-        text: 'Flughafen-Shuttle\nAbfahrt: alle 20 Minuten\nHaltestelle: vor dem Terminal 2\nPreis: 11 Euro (einfach)',
-        statement: 'Der Shuttle fährt alle 20 Minuten.',
-        correct: true,
-        explanation: 'The shuttle departs every 20 minutes.',
+        email_text:
+          'Hallo,\nich habe meine Tasche gestern im Zug ICE 891 (München–Hamburg) vergessen. Es ist eine schwarze Reisetasche. Darin sind Kleidung und ein Buch. Können Sie bitte nachsehen? Meine Telefonnummer ist 0176 5554433.\nDanke!\nStefan',
+        question: 'Was hat Stefan verloren?',
+        options: ['Seinen Koffer', 'Seine Reisetasche', 'Sein Handy'],
+        correct: 'b',
+        explanation: 'Stefan forgot his travel bag (Reisetasche) on the train.',
       },
       {
         id: 't5-l1-4',
-        text: 'BAUSTELLE!\nGehweg gesperrt.\nBitte Umleitung über die Parkstraße benutzen.',
-        statement: 'Man kann hier normal durchgehen.',
-        correct: false,
-        explanation: 'The sidewalk is closed (Gehweg gesperrt) — use the detour.',
+        email_text:
+          'Lieber Gast,\nwillkommen im Hotel Alpenblick! Ihr Zimmer (Nr. 305) ist ab 15 Uhr bereit. Das Frühstück ist von 7 bis 10 Uhr im Restaurant im Erdgeschoss. Das WLAN-Passwort ist: alpen2026. Bei Fragen wenden Sie sich an die Rezeption.\nFreundliche Grüße\nHotel Alpenblick',
+        question: 'Ab wann kann der Gast ins Zimmer?',
+        options: ['Ab 12 Uhr', 'Ab 14 Uhr', 'Ab 15 Uhr'],
+        correct: 'c',
+        explanation: 'The room is ready from 15:00 (ab 15 Uhr).',
       },
       {
         id: 't5-l1-5',
-        text: 'Stadtrundfahrt München\nTäglich um 10:00, 12:00, 14:00 Uhr\nDauer: 2 Stunden\nErwachsene: 18 €, Kinder (6–14): 9 €\nKinder unter 6: frei',
-        statement: 'Kinder unter 6 Jahren fahren kostenlos.',
-        correct: true,
-        explanation: 'Children under 6 ride free (frei).',
+        email_text:
+          'Hallo Marco,\nkomm am Samstag nicht zum Bahnhof — ich hole dich mit dem Auto ab! Mein Auto ist ein roter VW Golf. Ich bin um 18 Uhr am Flughafen, Ausgang B.\nBis Samstag!\nLukas',
+        question: 'Wo holt Lukas Marco ab?',
+        options: ['Am Bahnhof', 'Am Flughafen', 'Zu Hause'],
+        correct: 'b',
+        explanation: 'Lukas will pick up Marco at the airport (Flughafen), exit B.',
       },
     ],
     teil2: [
@@ -1639,48 +1658,38 @@ const test5: GoetheTest = {
     teil3: [
       {
         id: 't5-l3-1',
-        email_text:
-          'Sehr geehrter Herr Nair,\nvielen Dank für Ihre Buchung. Hier Ihre Reisedaten: Flug LH 1234, München → Delhi, am 20. Dezember um 22:10 Uhr. Bitte seien Sie 2 Stunden vor Abflug am Flughafen. Ihr E-Ticket ist im Anhang.\nMit freundlichen Grüßen\nLufthansa',
-        question: 'Wann muss Herr Nair am Flughafen sein?',
-        options: ['Um 20:10 Uhr', 'Um 20:00 Uhr', 'Um 22:10 Uhr'],
-        correct: 'a',
-        explanation: 'The flight is at 22:10, and he should be there 2 hours early — so around 20:10.',
+        text: 'Fahrradverleih am Bahnhof\nMo–So: 7:00–21:00\nPreise: 1 Stunde 3 €, 1 Tag 12 €\nAusweis erforderlich!',
+        statement: 'Man kann Fahrräder auch am Sonntag mieten.',
+        correct: true,
+        explanation: 'The rental is open Monday through Sunday (Mo–So).',
       },
       {
         id: 't5-l3-2',
-        email_text:
-          'Liebe Julia,\nwir sind in Wien! Die Stadt ist wunderschön. Gestern haben wir das Schloss Schönbrunn besucht. Das Wetter ist leider nicht so gut — es regnet. Morgen fahren wir weiter nach Salzburg.\nLiebe Grüße\nAnna und Max',
-        question: 'Wie ist das Wetter in Wien?',
-        options: ['Sonnig', 'Es regnet.', 'Es schneit.'],
-        correct: 'b',
-        explanation: 'It is raining in Vienna (es regnet).',
+        text: 'EINBAHNSTRASSE\nDurchfahrt nur in Pfeilrichtung!\nGegenverkehr verboten.',
+        statement: 'Man darf in beide Richtungen fahren.',
+        correct: false,
+        explanation: 'It\'s a one-way street — traffic in the opposite direction is forbidden.',
       },
       {
         id: 't5-l3-3',
-        email_text:
-          'Hallo,\nich habe meine Tasche gestern im Zug ICE 891 (München–Hamburg) vergessen. Es ist eine schwarze Reisetasche. Darin sind Kleidung und ein Buch. Können Sie bitte nachsehen? Meine Telefonnummer ist 0176 5554433.\nDanke!\nStefan',
-        question: 'Was hat Stefan verloren?',
-        options: ['Seinen Koffer', 'Seine Reisetasche', 'Sein Handy'],
-        correct: 'b',
-        explanation: 'Stefan forgot his travel bag (Reisetasche) on the train.',
+        text: 'Flughafen-Shuttle\nAbfahrt: alle 20 Minuten\nHaltestelle: vor dem Terminal 2\nPreis: 11 Euro (einfach)',
+        statement: 'Der Shuttle fährt alle 20 Minuten.',
+        correct: true,
+        explanation: 'The shuttle departs every 20 minutes.',
       },
       {
         id: 't5-l3-4',
-        email_text:
-          'Lieber Gast,\nwillkommen im Hotel Alpenblick! Ihr Zimmer (Nr. 305) ist ab 15 Uhr bereit. Das Frühstück ist von 7 bis 10 Uhr im Restaurant im Erdgeschoss. Das WLAN-Passwort ist: alpen2026. Bei Fragen wenden Sie sich an die Rezeption.\nFreundliche Grüße\nHotel Alpenblick',
-        question: 'Ab wann kann der Gast ins Zimmer?',
-        options: ['Ab 12 Uhr', 'Ab 14 Uhr', 'Ab 15 Uhr'],
-        correct: 'c',
-        explanation: 'The room is ready from 15:00 (ab 15 Uhr).',
+        text: 'BAUSTELLE!\nGehweg gesperrt.\nBitte Umleitung über die Parkstraße benutzen.',
+        statement: 'Man kann hier normal durchgehen.',
+        correct: false,
+        explanation: 'The sidewalk is closed (Gehweg gesperrt) — use the detour.',
       },
       {
         id: 't5-l3-5',
-        email_text:
-          'Hallo Marco,\nkomm am Samstag nicht zum Bahnhof — ich hole dich mit dem Auto ab! Mein Auto ist ein roter VW Golf. Ich bin um 18 Uhr am Flughafen, Ausgang B.\nBis Samstag!\nLukas',
-        question: 'Wo holt Lukas Marco ab?',
-        options: ['Am Bahnhof', 'Am Flughafen', 'Zu Hause'],
-        correct: 'b',
-        explanation: 'Lukas will pick up Marco at the airport (Flughafen), exit B.',
+        text: 'Stadtrundfahrt München\nTäglich um 10:00, 12:00, 14:00 Uhr\nDauer: 2 Stunden\nErwachsene: 18 €, Kinder (6–14): 9 €\nKinder unter 6: frei',
+        statement: 'Kinder unter 6 Jahren fahren kostenlos.',
+        correct: true,
+        explanation: 'Children under 6 ride free (frei).',
       },
     ],
   },
@@ -1889,38 +1898,56 @@ const test6: GoetheTest = {
     teil1: [
       {
         id: 't6-l1-1',
-        text: 'Praxis Dr. Yilmaz — Hausarzt\nSprechzeiten:\nMo, Di, Do: 8:00–12:00 und 15:00–18:00\nMi, Fr: nur vormittags\nTermin nur mit Voranmeldung!',
-        statement: 'Man kann ohne Termin kommen.',
-        correct: false,
-        explanation: 'An appointment is required (Termin nur mit Voranmeldung).',
+        email_text:
+          'Lieber Herr Nair,\nIhr Bluttest vom letzten Freitag ist fertig. Die Ergebnisse sind normal. Sie müssen nicht noch einmal kommen. Bitte denken Sie an den nächsten Termin in sechs Monaten.\nMit freundlichen Grüßen\nPraxis Dr. Huber',
+        question: 'Wann ist der nächste Termin?',
+        options: ['In einer Woche', 'In einem Monat', 'In sechs Monaten'],
+        correct: 'c',
+        explanation: 'The next appointment is in six months (in sechs Monaten).',
       },
       {
         id: 't6-l1-2',
-        text: 'NOTAUFNAHME →\n24 Stunden geöffnet\nBitte melden Sie sich an der Rezeption.',
-        statement: 'Die Notaufnahme ist rund um die Uhr offen.',
-        correct: true,
-        explanation: '24 Stunden geöffnet means it is open around the clock.',
+        email_text:
+          'Hallo Praxis Dr. Wagner,\nich brauche bitte ein neues Rezept für meine Tabletten. Ich nehme jeden Tag Metformin 500 mg. Können Sie das Rezept an die Apotheke am Markt schicken?\nVielen Dank!\nPetra Klein',
+        question: 'Was möchte Frau Klein?',
+        options: [
+          'Einen neuen Termin',
+          'Ein neues Rezept',
+          'Neue Testergebnisse',
+        ],
+        correct: 'b',
+        explanation: 'She needs a new prescription (neues Rezept) for her medication.',
       },
       {
         id: 't6-l1-3',
-        text: 'Hinweis:\nDieses Medikament kann müde machen.\nBitte kein Auto fahren!',
-        statement: 'Man darf nach der Einnahme Auto fahren.',
-        correct: false,
-        explanation: 'The warning says not to drive after taking the medication.',
+        email_text:
+          'Sehr geehrte Frau Becker,\nwir erinnern Sie an Ihren Termin am Montag, den 18. März, um 9:30 Uhr bei Dr. Schmidt. Bitte kommen Sie 15 Minuten vorher. Wenn Sie den Termin absagen möchten, rufen Sie uns bitte an.\nIhre Praxis Dr. Schmidt',
+        question: 'Wann soll Frau Becker da sein?',
+        options: ['Um 9:15 Uhr', 'Um 9:30 Uhr', 'Um 9:45 Uhr'],
+        correct: 'a',
+        explanation: 'She should arrive 15 minutes before the 9:30 appointment, so at 9:15.',
       },
       {
         id: 't6-l1-4',
-        text: 'Zahnarztpraxis Schneider\nNeu: Jetzt auch samstags!\nSamstag: 9:00–13:00\nTermine unter: 030 9988776',
-        statement: 'Die Zahnarztpraxis hat jetzt auch am Samstag Sprechstunde.',
-        correct: true,
-        explanation: 'The dental practice is now open on Saturdays too (Jetzt auch samstags).',
+        email_text:
+          'Hallo Stefan,\nich war gestern beim Arzt. Er sagt, ich habe eine Erkältung. Ich muss drei Tage zu Hause bleiben. Kannst du mir bitte morgen Suppe und Tee aus dem Supermarkt mitbringen?\nDanke!\nOliver',
+        question: 'Was soll Stefan mitbringen?',
+        options: ['Medikamente', 'Suppe und Tee', 'Obst'],
+        correct: 'b',
+        explanation: 'Oliver asks Stefan to bring soup and tea (Suppe und Tee).',
       },
       {
         id: 't6-l1-5',
-        text: 'Bitte nehmen Sie im Wartezimmer Platz.\nSie werden aufgerufen.\nHandy bitte auf lautlos stellen.',
-        statement: 'Man soll sein Handy leise machen.',
-        correct: true,
-        explanation: '"Handy auf lautlos stellen" means put your phone on silent.',
+        email_text:
+          'Liebe Eltern,\nin der Schule gibt es diese Woche mehrere Fälle von Magen-Darm-Grippe. Bitte achten Sie darauf, dass Ihre Kinder oft die Hände waschen. Wenn Ihr Kind krank ist, lassen Sie es bitte zu Hause.\nMit freundlichen Grüßen\nSchulleitung',
+        question: 'Was sollen die Eltern tun?',
+        options: [
+          'Sofort zum Arzt gehen',
+          'Kranke Kinder zu Hause lassen',
+          'Die Schule anrufen',
+        ],
+        correct: 'b',
+        explanation: 'Sick children should stay at home (zu Hause lassen).',
       },
     ],
     teil2: [
@@ -1963,56 +1990,38 @@ const test6: GoetheTest = {
     teil3: [
       {
         id: 't6-l3-1',
-        email_text:
-          'Lieber Herr Nair,\nIhr Bluttest vom letzten Freitag ist fertig. Die Ergebnisse sind normal. Sie müssen nicht noch einmal kommen. Bitte denken Sie an den nächsten Termin in sechs Monaten.\nMit freundlichen Grüßen\nPraxis Dr. Huber',
-        question: 'Wann ist der nächste Termin?',
-        options: ['In einer Woche', 'In einem Monat', 'In sechs Monaten'],
-        correct: 'c',
-        explanation: 'The next appointment is in six months (in sechs Monaten).',
+        text: 'Praxis Dr. Yilmaz — Hausarzt\nSprechzeiten:\nMo, Di, Do: 8:00–12:00 und 15:00–18:00\nMi, Fr: nur vormittags\nTermin nur mit Voranmeldung!',
+        statement: 'Man kann ohne Termin kommen.',
+        correct: false,
+        explanation: 'An appointment is required (Termin nur mit Voranmeldung).',
       },
       {
         id: 't6-l3-2',
-        email_text:
-          'Hallo Praxis Dr. Wagner,\nich brauche bitte ein neues Rezept für meine Tabletten. Ich nehme jeden Tag Metformin 500 mg. Können Sie das Rezept an die Apotheke am Markt schicken?\nVielen Dank!\nPetra Klein',
-        question: 'Was möchte Frau Klein?',
-        options: [
-          'Einen neuen Termin',
-          'Ein neues Rezept',
-          'Neue Testergebnisse',
-        ],
-        correct: 'b',
-        explanation: 'She needs a new prescription (neues Rezept) for her medication.',
+        text: 'NOTAUFNAHME →\n24 Stunden geöffnet\nBitte melden Sie sich an der Rezeption.',
+        statement: 'Die Notaufnahme ist rund um die Uhr offen.',
+        correct: true,
+        explanation: '24 Stunden geöffnet means it is open around the clock.',
       },
       {
         id: 't6-l3-3',
-        email_text:
-          'Sehr geehrte Frau Becker,\nwir erinnern Sie an Ihren Termin am Montag, den 18. März, um 9:30 Uhr bei Dr. Schmidt. Bitte kommen Sie 15 Minuten vorher. Wenn Sie den Termin absagen möchten, rufen Sie uns bitte an.\nIhre Praxis Dr. Schmidt',
-        question: 'Wann soll Frau Becker da sein?',
-        options: ['Um 9:15 Uhr', 'Um 9:30 Uhr', 'Um 9:45 Uhr'],
-        correct: 'a',
-        explanation: 'She should arrive 15 minutes before the 9:30 appointment, so at 9:15.',
+        text: 'Hinweis:\nDieses Medikament kann müde machen.\nBitte kein Auto fahren!',
+        statement: 'Man darf nach der Einnahme Auto fahren.',
+        correct: false,
+        explanation: 'The warning says not to drive after taking the medication.',
       },
       {
         id: 't6-l3-4',
-        email_text:
-          'Hallo Stefan,\nich war gestern beim Arzt. Er sagt, ich habe eine Erkältung. Ich muss drei Tage zu Hause bleiben. Kannst du mir bitte morgen Suppe und Tee aus dem Supermarkt mitbringen?\nDanke!\nOliver',
-        question: 'Was soll Stefan mitbringen?',
-        options: ['Medikamente', 'Suppe und Tee', 'Obst'],
-        correct: 'b',
-        explanation: 'Oliver asks Stefan to bring soup and tea (Suppe und Tee).',
+        text: 'Zahnarztpraxis Schneider\nNeu: Jetzt auch samstags!\nSamstag: 9:00–13:00\nTermine unter: 030 9988776',
+        statement: 'Die Zahnarztpraxis hat jetzt auch am Samstag Sprechstunde.',
+        correct: true,
+        explanation: 'The dental practice is now open on Saturdays too (Jetzt auch samstags).',
       },
       {
         id: 't6-l3-5',
-        email_text:
-          'Liebe Eltern,\nin der Schule gibt es diese Woche mehrere Fälle von Magen-Darm-Grippe. Bitte achten Sie darauf, dass Ihre Kinder oft die Hände waschen. Wenn Ihr Kind krank ist, lassen Sie es bitte zu Hause.\nMit freundlichen Grüßen\nSchulleitung',
-        question: 'Was sollen die Eltern tun?',
-        options: [
-          'Sofort zum Arzt gehen',
-          'Kranke Kinder zu Hause lassen',
-          'Die Schule anrufen',
-        ],
-        correct: 'b',
-        explanation: 'Sick children should stay at home (zu Hause lassen).',
+        text: 'Bitte nehmen Sie im Wartezimmer Platz.\nSie werden aufgerufen.\nHandy bitte auf lautlos stellen.',
+        statement: 'Man soll sein Handy leise machen.',
+        correct: true,
+        explanation: '"Handy auf lautlos stellen" means put your phone on silent.',
       },
     ],
   },
@@ -2229,38 +2238,60 @@ const test7: GoetheTest = {
     teil1: [
       {
         id: 't7-l1-1',
-        text: 'Stellenanzeige:\nKellner/in gesucht!\nTeilzeit, 20 Std./Woche\nAbends und am Wochenende\nMindestlohn + Trinkgeld\nBewerbung: restaurant-stern@web.de',
-        statement: 'Die Stelle ist Vollzeit.',
-        correct: false,
-        explanation: 'The position is part-time (Teilzeit, 20 hours per week).',
+        email_text:
+          'Sehr geehrter Herr Nair,\nvielen Dank für Ihre Bewerbung als Werkstudent in unserer IT-Abteilung. Wir möchten Sie gern zu einem Vorstellungsgespräch einladen. Können Sie am Dienstag, den 20. März, um 14 Uhr zu uns kommen? Bitte bestätigen Sie den Termin.\nMit freundlichen Grüßen\nFrau Müller, Personalabteilung',
+        question: 'Was soll Herr Nair machen?',
+        options: [
+          'Sofort anfangen zu arbeiten',
+          'Den Termin bestätigen',
+          'Neue Dokumente schicken',
+        ],
+        correct: 'b',
+        explanation: 'He should confirm the interview appointment (Termin bestätigen).',
       },
       {
         id: 't7-l1-2',
-        text: 'MENSA geöffnet:\nMo–Fr: 11:30–14:00\nAbendessen: 17:30–19:30\nSa, So: geschlossen',
-        statement: 'Am Wochenende kann man in der Mensa essen.',
-        correct: false,
-        explanation: 'The canteen is closed on Saturday and Sunday (Sa, So: geschlossen).',
+        email_text:
+          'Hallo Arjun,\nherzlichen Glückwunsch! Du hast die A1-Prüfung bestanden! Dein Ergebnis: Hören 24/30, Lesen 27/30, Schreiben 12/15, Sprechen 13/15. Dein Zertifikat kannst du ab nächster Woche im Sekretariat abholen.\nViele Grüße\nDein Deutschlehrer, Herr Braun',
+        question: 'In welchem Teil war Arjun am besten?',
+        options: ['Hören', 'Lesen', 'Sprechen'],
+        correct: 'b',
+        explanation: 'Lesen (reading) had the highest score: 27/30.',
       },
       {
         id: 't7-l1-3',
-        text: 'PRÜFUNGSTERMINE Sommersemester 2026:\nDeutsch A1: 15. Juli, 10:00 Uhr, Raum 201\nBitte Ausweis mitbringen!',
-        statement: 'Die A1-Prüfung ist am 15. Juli.',
-        correct: true,
-        explanation: 'The A1 exam is on July 15.',
+        email_text:
+          'Liebe Studierende,\ndie Bibliothek hat ab Oktober neue Öffnungszeiten: Mo–Fr 8:00–22:00, Sa 10:00–18:00. Am Sonntag bleibt die Bibliothek geschlossen. Die Rückgabe von Büchern ist auch am Automaten vor dem Eingang möglich.\nViele Grüße\nBibliotheksteam',
+        question: 'Wie kann man Bücher zurückgeben?',
+        options: [
+          'Nur an der Rezeption',
+          'Auch am Automaten vor dem Eingang',
+          'Nur am Montag',
+        ],
+        correct: 'b',
+        explanation: 'Books can also be returned at the machine at the entrance.',
       },
       {
         id: 't7-l1-4',
-        text: 'Kopierer im 3. OG\nKosten: s/w 5 Cent, farbig 20 Cent\nKopierkarte an der Information erhältlich.',
-        statement: 'Farbige Kopien kosten 5 Cent.',
-        correct: false,
-        explanation: 'Color copies cost 20 cents; black and white (s/w) costs 5 cents.',
+        email_text:
+          'Sehr geehrter Herr Nair,\nleider müssen wir Ihnen mitteilen, dass wir die Stelle an einen anderen Bewerber vergeben haben. Wir wünschen Ihnen viel Erfolg bei Ihrer weiteren Jobsuche.\nMit freundlichen Grüßen\nFirma TechPlus',
+        question: 'Hat Herr Nair die Stelle bekommen?',
+        options: ['Ja', 'Nein', 'Er muss noch warten.'],
+        correct: 'b',
+        explanation: 'The company gave the job to another applicant — he did not get it.',
       },
       {
         id: 't7-l1-5',
-        text: 'Willkommen im Studentenwohnheim!\nWLAN-Passwort: UniWohn2026\nMüll: Montag und Donnerstag\nRuhezeit: 22:00–7:00',
-        statement: 'Der Müll wird zweimal pro Woche abgeholt.',
-        correct: true,
-        explanation: 'Garbage collection is on Monday and Thursday — twice a week.',
+        email_text:
+          'Hallo zusammen,\nam Freitag um 16 Uhr gibt es eine kleine Feier für unsere Kollegin Frau Berger — sie geht in Rente! Bitte kommt alle in den Konferenzraum. Wer möchte, kann etwas für das Buffet mitbringen.\nViele Grüße\nTeam Marketing',
+        question: 'Warum gibt es eine Feier?',
+        options: [
+          'Ein Kollege hat Geburtstag.',
+          'Frau Berger geht in Rente.',
+          'Die Firma hat einen neuen Kunden.',
+        ],
+        correct: 'b',
+        explanation: 'Frau Berger is retiring (geht in Rente).',
       },
     ],
     teil2: [
@@ -2303,60 +2334,38 @@ const test7: GoetheTest = {
     teil3: [
       {
         id: 't7-l3-1',
-        email_text:
-          'Sehr geehrter Herr Nair,\nvielen Dank für Ihre Bewerbung als Werkstudent in unserer IT-Abteilung. Wir möchten Sie gern zu einem Vorstellungsgespräch einladen. Können Sie am Dienstag, den 20. März, um 14 Uhr zu uns kommen? Bitte bestätigen Sie den Termin.\nMit freundlichen Grüßen\nFrau Müller, Personalabteilung',
-        question: 'Was soll Herr Nair machen?',
-        options: [
-          'Sofort anfangen zu arbeiten',
-          'Den Termin bestätigen',
-          'Neue Dokumente schicken',
-        ],
-        correct: 'b',
-        explanation: 'He should confirm the interview appointment (Termin bestätigen).',
+        text: 'Stellenanzeige:\nKellner/in gesucht!\nTeilzeit, 20 Std./Woche\nAbends und am Wochenende\nMindestlohn + Trinkgeld\nBewerbung: restaurant-stern@web.de',
+        statement: 'Die Stelle ist Vollzeit.',
+        correct: false,
+        explanation: 'The position is part-time (Teilzeit, 20 hours per week).',
       },
       {
         id: 't7-l3-2',
-        email_text:
-          'Hallo Arjun,\nherzlichen Glückwunsch! Du hast die A1-Prüfung bestanden! Dein Ergebnis: Hören 24/30, Lesen 27/30, Schreiben 12/15, Sprechen 13/15. Dein Zertifikat kannst du ab nächster Woche im Sekretariat abholen.\nViele Grüße\nDein Deutschlehrer, Herr Braun',
-        question: 'In welchem Teil war Arjun am besten?',
-        options: ['Hören', 'Lesen', 'Sprechen'],
-        correct: 'b',
-        explanation: 'Lesen (reading) had the highest score: 27/30.',
+        text: 'MENSA geöffnet:\nMo–Fr: 11:30–14:00\nAbendessen: 17:30–19:30\nSa, So: geschlossen',
+        statement: 'Am Wochenende kann man in der Mensa essen.',
+        correct: false,
+        explanation: 'The canteen is closed on Saturday and Sunday (Sa, So: geschlossen).',
       },
       {
         id: 't7-l3-3',
-        email_text:
-          'Liebe Studierende,\ndie Bibliothek hat ab Oktober neue Öffnungszeiten: Mo–Fr 8:00–22:00, Sa 10:00–18:00. Am Sonntag bleibt die Bibliothek geschlossen. Die Rückgabe von Büchern ist auch am Automaten vor dem Eingang möglich.\nViele Grüße\nBibliotheksteam',
-        question: 'Wie kann man Bücher zurückgeben?',
-        options: [
-          'Nur an der Rezeption',
-          'Auch am Automaten vor dem Eingang',
-          'Nur am Montag',
-        ],
-        correct: 'b',
-        explanation: 'Books can also be returned at the machine at the entrance.',
+        text: 'PRÜFUNGSTERMINE Sommersemester 2026:\nDeutsch A1: 15. Juli, 10:00 Uhr, Raum 201\nBitte Ausweis mitbringen!',
+        statement: 'Die A1-Prüfung ist am 15. Juli.',
+        correct: true,
+        explanation: 'The A1 exam is on July 15.',
       },
       {
         id: 't7-l3-4',
-        email_text:
-          'Sehr geehrter Herr Nair,\nleider müssen wir Ihnen mitteilen, dass wir die Stelle an einen anderen Bewerber vergeben haben. Wir wünschen Ihnen viel Erfolg bei Ihrer weiteren Jobsuche.\nMit freundlichen Grüßen\nFirma TechPlus',
-        question: 'Hat Herr Nair die Stelle bekommen?',
-        options: ['Ja', 'Nein', 'Er muss noch warten.'],
-        correct: 'b',
-        explanation: 'The company gave the job to another applicant — he did not get it.',
+        text: 'Kopierer im 3. OG\nKosten: s/w 5 Cent, farbig 20 Cent\nKopierkarte an der Information erhältlich.',
+        statement: 'Farbige Kopien kosten 5 Cent.',
+        correct: false,
+        explanation: 'Color copies cost 20 cents; black and white (s/w) costs 5 cents.',
       },
       {
         id: 't7-l3-5',
-        email_text:
-          'Hallo zusammen,\nam Freitag um 16 Uhr gibt es eine kleine Feier für unsere Kollegin Frau Berger — sie geht in Rente! Bitte kommt alle in den Konferenzraum. Wer möchte, kann etwas für das Buffet mitbringen.\nViele Grüße\nTeam Marketing',
-        question: 'Warum gibt es eine Feier?',
-        options: [
-          'Ein Kollege hat Geburtstag.',
-          'Frau Berger geht in Rente.',
-          'Die Firma hat einen neuen Kunden.',
-        ],
-        correct: 'b',
-        explanation: 'Frau Berger is retiring (geht in Rente).',
+        text: 'Willkommen im Studentenwohnheim!\nWLAN-Passwort: UniWohn2026\nMüll: Montag und Donnerstag\nRuhezeit: 22:00–7:00',
+        statement: 'Der Müll wird zweimal pro Woche abgeholt.',
+        correct: true,
+        explanation: 'Garbage collection is on Monday and Thursday — twice a week.',
       },
     ],
   },
