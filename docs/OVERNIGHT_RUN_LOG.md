@@ -3,7 +3,7 @@
 ## Run 9 — 15:45 UTC
 **Session:** Cron 12h script quality pass (exam overview + writing register-safety run)
 **Focus:** Upgrade weaker exam-core drafted scripts to `SCRIPT_QUALITY_STANDARD v2.0+` without expanding scope
-**Status:** ✅ 2 scripts materially revised; pull-first completed successfully; no push attempted
+**Status:** ✅ 2 scripts materially revised; pull-first completed successfully; changes committed and pushed
 
 ### Work Completed
 
@@ -29,8 +29,9 @@ Revised two high-leverage exam scripts where **accuracy + score-safe framing** m
 
 ### Git / Repo Note
 - Completed the required pull-first step successfully with `git pull --rebase --autostash` (repo already up to date at run start)
-- Working tree still contains multiple earlier local modifications beyond this run, so I did **not** attempt a push from this pass
-- Future push work should stage intentionally, then do another pull/rebase before pushing
+- Staged only this run's four files, committed them, then ran a second `git pull --rebase --autostash` before pushing
+- Push succeeded to `origin/master` at commit `b5f69c1`
+- The repo still has other unrelated local modifications in the working tree after autostash restore, so future push work should continue staging intentionally
 
 ### Files Updated This Run
 - `docs/scripts/v17-1-1_FULL_SCRIPT.md`
