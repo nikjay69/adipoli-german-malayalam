@@ -2,7 +2,7 @@
 
 > Master planning doc: teaching goals, A1 exam relevance, lesson/video script needs, essential outcomes, and future script direction for each module.
 >
-> **Last updated:** 2026-03-23 03:00 UTC (overnight cron — modules 1–18 blueprints + Wave 4 architecture complete)
+> **Last updated:** 2026-03-23 04:00 UTC (overnight cron — ALL 18 module blueprints + ALL 5 wave architectures complete)
 
 ---
 
@@ -709,6 +709,103 @@ Direct exam preparation for writing and speaking. Form-filling practice, short m
 
 ---
 
+## Module 15: German Culture & Integration (Kultur)
+**Icon:** 🇩🇪 | **Hours:** 8 | **Priority:** LOW (enrichment + integration)
+
+### Teaching Goal
+German customs, festivals, social norms, and colloquial language. Cultural fluency that helps learners integrate and understand cultural references in exam materials. Also teaches practical survival rules (Anmeldung, Mülltrennung, Ruhezeit) and everyday slang for social integration.
+
+### A1 Exam Relevance
+- **Lesen:** Cultural references in reading passages, abbreviations in everyday texts
+- **Hören:** Understanding social situations, recognizing register
+- **Sprechen:** Cultural awareness helps in all oral communication
+- **Indirect:** Understanding German context makes exam materials less confusing
+
+### Lessons & Video Script Needs
+| Lesson | Title | Script Status | Script Priority |
+|--------|-------|---------------|-----------------|
+| 15-1 | German Customs (Pünktlichkeit, Mülltrennung, Ruhezeit) | Outline only | MEDIUM — practical survival |
+| 15-2 | Festivals & Holidays (Weihnachten, Oktoberfest, Feiertage) | Outline only | LOW — nice to know |
+| 15-3 | Kerala vs Germany Cultural Differences | Outline only | MEDIUM — cultural preparation |
+| 15-4 | Useful Slang & Colloquial German (Umgangssprache) | Outline only | LOW — fun reward content |
+
+### Essential Outcomes
+- [ ] Understand Pünktlichkeit, Mülltrennung (5-bin system), Sonntagsruhe, Ruhezeit
+- [ ] Know major German holidays: Weihnachten, Ostern, Silvester, Tag der Deutschen Einheit
+- [ ] Navigate social norms: Handschlag, Duzen/Siezen, personal space, no drop-by visits
+- [ ] Know practical rules: Anmeldung, Versicherung, Pfand system, Bargeld culture
+- [ ] Recognize common slang (geil, krass, Alter, Na?, Kein Bock, Keine Ahnung)
+- [ ] Distinguish formal/informal/slang registers and know when each is appropriate
+- [ ] Compare Kerala and German cultural values constructively
+- [ ] Understand text abbreviations: LG, MfG, vllt
+
+### Future Script Direction
+- **Lesson 15-1:** Documentary-style practical content. Mülltrennung diagram and Ruhezeit rules are things students WILL encounter in week one. Kerala ↔ Germany value comparisons keep engagement.
+- **Lesson 15-2:** Light, enjoyable content. Oktoberfest ↔ Onam parallel (both harvest festivals) is a strong hook. Weihnachtsmarkt descriptions are vivid and engaging.
+- **Lesson 15-3:** Balanced cultural comparison — never mocking either culture. Food shock (Abendbrot = cold dinner!), social space, directness, privacy boundaries. Humour as vehicle for real preparation.
+- **Lesson 15-4:** FUN reward lesson. Slang with Malayalam parallels (Alter = Machane!, Geil = Adipoli!). Register awareness (WhatsApp vs Email vs Interview). WARNING about formal contexts is essential.
+- Scripts can be more conversational/documentary style throughout — less exam-driven, more life-preparation.
+
+### Production Exercise Opportunities
+- Multiple-choice: Cultural scenario questions ("What should you do when...?")
+- Matching: German customs ↔ Kerala parallels
+- Free-text: "Write 3 sentences about visiting a Weihnachtsmarkt"
+- Discussion: Cultural comparison prompts
+
+---
+
+## Module 16: A1+ Bonus Bridge (Optional)
+**Icon:** 🌉 | **Hours:** 12 | **Priority:** LOW (optional A2 bridge)
+
+### Teaching Goal
+Deeper grammar for students who want to bridge to A2: Dativ deep dive (full article system + dativ verbs + pronouns), Wechselpräpositionen (two-way prepositions with movement/location case switching), reflexive verbs (daily routine + feelings), subordinate clauses (weil/dass/wenn/als/ob with verb-at-end), and reading comprehension practice. OPTIONAL — students can pass A1 without this.
+
+### A1 Exam Relevance
+- **Indirect:** Stronger grammar → fewer errors in all sections
+- **Not required:** Everything needed for A1 is covered in Modules 1–15 and 17–18
+- **A2 preparation:** Sets up the next level for ambitious students
+- **Reading strategies (16-5):** Universally useful for Lesen section
+
+### Lessons & Video Script Needs
+| Lesson | Title | Script Status | Script Priority |
+|--------|-------|---------------|-----------------|
+| 16-1 | Dative Case Deep Dive (articles + pronouns + dativ verbs) | Outline only | LOW — beyond A1 strict scope |
+| 16-2 | Wechselpräpositionen (in/an/auf + Akk or Dat, verb pairs) | Outline only | LOW — A2 preview |
+| 16-3 | Reflexive Verbs (sich waschen, sich freuen, sich vorstellen) | Outline only | LOW — A2 preview |
+| 16-4 | Subordinate Clauses (weil, dass, wenn, als, ob + verb-end) | Outline only | LOW — extends Module 12 |
+| 16-5 | Reading Comprehension Practice (strategies + real texts) | Outline only | MEDIUM — universally useful |
+
+### Essential Outcomes
+- [ ] Master full Dativ article system: der→dem, die→der, das→dem, die(pl)→den(+n)
+- [ ] Know dativ personal pronouns: mir, dir, ihm, ihr, uns, euch, ihnen
+- [ ] Use dativ verbs correctly: helfen, gefallen, gehören, danken, folgen, antworten
+- [ ] Name all 9 Wechselpräpositionen: in, an, auf, über, unter, vor, hinter, neben, zwischen
+- [ ] Apply Wo?→Dativ / Wohin?→Akkusativ rule consistently
+- [ ] Know verb pairs: liegen/legen, stehen/stellen, sitzen/setzen
+- [ ] Conjugate reflexive verbs: sich waschen, sich anziehen, sich freuen, sich vorstellen
+- [ ] Distinguish Akkusativ vs Dativ reflexive pronouns
+- [ ] Build subordinate clauses with weil, dass, wenn, als, ob (verb at end)
+- [ ] Distinguish als (one-time past) vs wenn (present/repeated)
+- [ ] Read and comprehend real German texts: emails, ads, blog posts, schedules
+
+### Future Script Direction
+- **Lesson 16-1:** Builds on Module 9 (mit+Dativ) and Module 10 (Mir ist...). Full article table + dativ verbs + pronouns. Colour-coded visuals essential. Malayalam parallel: -kku suffix = Dativ concept.
+- **Lesson 16-2:** Builds on Module 8 (basic prepositions). The Wo/Wohin question is THE key. Verb pairs (liegen/legen) are the anchor for understanding. Animation-style visuals work best.
+- **Lesson 16-3:** Connects to Module 5 (daily routine) — same topic, upgraded grammar. Morning routine with reflexive verbs is the natural script frame.
+- **Lesson 16-4:** Extends Module 12 (weil intro). Malayalam parallel is GOLD: verb-at-end in subordinate clauses = normal Malayalam word order! Students find this encouraging.
+- **Lesson 16-5:** CULMINATION lesson — pulls vocabulary and grammar from ALL modules. Practice texts should reference familiar contexts. Emotional closing celebrates the student's full journey.
+- Only create scripts after all Modules 1–15 and 17–18 are done.
+
+### Production Exercise Opportunities
+- Grammar drills: Dativ article and pronoun transformations
+- Fill-in: Wechselpräposition case choice (Dativ or Akkusativ)
+- Free-text: "Describe your morning routine with 4 reflexive verbs"
+- Sentence combining: Join clauses with weil/dass/wenn/als
+- Reading comprehension: Texts → questions (emails, ads, blog posts)
+- Speaking: "Tell me about a childhood memory using 'als'"
+
+---
+
 ## Cross-Module Script Production Priority
 
 Based on A1 exam impact, the recommended script creation order is:
@@ -760,6 +857,8 @@ Based on A1 exam impact, the recommended script creation order is:
 | Wave 2 | 5, 13, 3 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE2.md` | Not started |
 | Wave 3 | 6, 9, 10, 4 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE3.md` | Not started |
 | Wave 4 | 1, 7, 8, 11, 12 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE4.md` | Not started |
-| Wave 5 | 15, 16 | Not started | Not started |
+| Wave 5 | 15, 16 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE5.md` | Not started |
 
-*Next overnight session should: build Wave 5 script architectures (Modules 15, 16 — culture + A1+ bridge) to complete the full architecture, OR begin writing the first full script for Module 18 Lesson 18-1 v18-1-1 (form-filling — highest exam ROI). Consider also piloting a golden dialogue full script (Module 6 restaurant or Module 10 doctor). Wave 4 completed 2026-03-23.*
+**🎉 ALL 18 MODULES NOW HAVE COMPLETE SCRIPT ARCHITECTURES (Waves 1–5).**
+
+*Next priorities: (1) Write first FULL script for Module 18 Lesson 18-1 v18-1-1 (form-filling — easiest exam points, highest ROI). (2) Write first golden dialogue full script (Module 6 restaurant v6-3-1 or Module 10 doctor v10-3-1). (3) Wire edge-tts audio pipeline for Hören exercises. (4) Implement production exercise types (free-text, dictation) in Exercise interface. Wave 5 architecture completed 2026-03-23.*
