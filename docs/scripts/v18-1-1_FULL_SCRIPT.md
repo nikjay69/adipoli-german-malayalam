@@ -3,8 +3,8 @@
 > **Module:** 18 | **Lesson:** 18-1 | **Duration:** 10:00 target
 > **Teaching Goal:** Master Schreiben Teil 1 — fill out any German form correctly for guaranteed exam points
 > **A1 Exam Link:** Schreiben Teil 1 (50% of writing score = 12.5% of total exam)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
@@ -12,182 +12,143 @@
 
 ### Visual: [Course intro animation / Adipoli German branding]
 ### Narration:
-"Willkommen bei Adipoli German! Today — the EASIEST points in the entire Goethe A1 exam."
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — Why This Is Free Marks (0:15–1:00)
+## Section 1: Hook — Here's Your Exam Form (0:15–0:50)
 
-### Visual: [SLIDE: "Schreiben Teil 1 = FREE POINTS 🎯" with exam scoring pie chart showing 12.5%]
-### Narration:
-"Machane, listen carefully. Schreiben Teil 1 is LITERALLY the easiest section of the whole Goethe A1 exam.
+### Visual: [FORM: actual Goethe A1 Schreiben Teil 1 sample — blank form with 5 fields. Exam score indicator: "12.5% of total"]
+### Narration: [ENERGY: confident, direct]
+"This is what you'll see on exam day. Five blank fields. Your personal information. Fill them correctly — that's 12.5% of the entire exam. Done.
 
-You get a form. You fill in 5 fields. That's it. No creativity. No grammar. Just facts about yourself.
+No grammar, no creativity, no tricks. Just facts about yourself that you already know.
 
-*Ithu kittiya free marks aanu — miss cheyyalle!*
+*Ningalude peru, date of birth, address — athu mathram. Ithu miss cheythaal silly aanu!*
 
-This one section is 50% of your writing score — that's 12.5% of the TOTAL exam. Get this right and you're already one-eighth of the way to passing. Let me show you exactly how to ace this every single time."
-
----
-
-## Section 2: The 5 Golden Fields (1:00–2:30)
-
-### Visual: [FORM: blank Anmeldeformular with fields appearing one by one, golden highlights]
-### Narration:
-"Every Goethe A1 form asks for some combination of what I call the 5 Golden Fields. Learn these five, and you'll NEVER lose a single point on Schreiben Teil 1.
-
-Here they are:
-
-### Key Vocabulary Overlay:
-- **Familienname** — family name / surname
-- **Vorname** — first name / given name
-- **Geburtsdatum** — date of birth
-- **Wohnort / Adresse** — place of residence / address
-- **Kontakt** — phone number or email
-
-[SLIDE: 5 Golden Fields listed with golden icons]
-
-That's it. Five fields. Five pieces of information about YOU that you already know. Let's go through each one so you never, EVER make a mistake."
+Let me show you the 5 fields, the 3 traps, and then we'll practice on real forms."
 
 ---
 
-## Section 3: Field 1 — Familienname (2:30–3:15)
+## Section 2: Field 1 — Familienname vs Vorname (0:50–2:00)
 
-### Visual: [FORM: Familienname field highlighted with zoom]
-### Narration:
-"Number 1: **Familienname**. Your family name. Your surname. The name your whole family shares.
+### Visual: [FORM zoomed: Familienname field highlighted. Then animated swap showing the #1 mistake]
+### Narration: [ENERGY: teaching, clear]
+"Field 1 and 2 always appear together, so let's tackle them as a pair.
 
-*Nammude veettu peru* — Nair, Menon, Pillai, Kurup, Jayanth...
+**Familienname** = surname — the name your whole family shares.
+**Vorname** = first name — the name your parents chose for you.
 
-[A1-SAFE] Write it exactly as it appears on your passport.
+*'Familienname' = veettu peru. 'Vorname' = swa-ntham peru.*
 
-⏸️ What's YOUR Familienname? Say it out loud now!
+[SLIDE: ❌ Familienname: Nikhil | Vorname: Jayanth → SWAPPED!]
+[SLIDE: ✅ Familienname: Jayanth | Vorname: Nikhil → CORRECT!]
 
-### Practice Pause: ⏸️ (3 seconds — student says their surname)
+⚠️ **TRAP #1 — The Name Swap.** This is the single most common mistake on the entire exam. Students see 'Name' and write their first name. Don't.
 
-⚠️ TRAP ALERT — and this is the NUMBER ONE mistake students make:
+Quick check — what's YOUR Familienname? Say it now.
 
-[SLIDE: ❌ Familienname: Nikhil | ❌ Vorname: Jayanth → SWAPPED!]
-[SLIDE: ✅ Familienname: Jayanth | ✅ Vorname: Nikhil → CORRECT!]
+### Practice Pause: ⏸️ (2 seconds)
 
-Familienname is NOT your first name! Many students write their first name here because they see 'Name' and start writing. Don't do it!
+Good. And your Vorname?
 
-**Familienname = last name = surname = *veettu peru*.**"
+### Practice Pause: ⏸️ (2 seconds)
 
----
-
-## Section 4: Field 2 — Vorname (3:15–3:45)
-
-### Visual: [FORM: Vorname field highlighted]
-### Narration:
-"Number 2: **Vorname**. Your given name. Your first name. The name YOUR parents chose just for you.
-
-*Nammude swa-ntham peru* — Nikhil, Akhil, Lakshmi, Reshma, Arun...
-
-Simple, right? Just make sure it's in the RIGHT box.
-
-[EXAM-TIP] If the form says 'Name, Vorname' on ONE line with a comma — they want both! Write: Jayanth, Nikhil. Last name FIRST, then first name."
+[EXAM-TIP] If the form says **'Name, Vorname'** on one line with a comma — they want surname first: **Jayanth, Nikhil**."
 
 ---
 
-## Section 5: Field 3 — Geburtsdatum (3:45–5:00)
+## Section 3: Field 3 — Geburtsdatum (2:00–3:15)
 
-### Visual: [HIGHLIGHT: date format comparison — Indian vs German vs American]
-### Narration:
-"Number 3: **Geburtsdatum**. Date of birth. And THIS is where I need your full attention because this is the most common mistake after the name swap.
+### Visual: [DIAGRAM: Date format comparison — large, clear. Indian: 15/03/1995 → German: 15.03.1995. American crossed out.]
+### Narration: [ENERGY: careful, precise]
+"**Geburtsdatum** — date of birth. The format matters.
 
-German date format is: **TT.MM.JJJJ** — Tag, Monat, Jahr.
+German dates use **dots, not slashes**: **TT.MM.JJJJ** — Tag.Monat.Jahr.
 
-Day FIRST. Then month. Then year. With DOTS between them, not slashes.
+[SLIDE: Format side by side]
+- ✅ German: **15.03.1995** — dots
+- ❌ Indian style: 15/03/1995 — slashes
+- ❌ American: 03/15/1995 — month first
 
-[SLIDE: Format comparison]
-- 🇮🇳 Indian: 15/03/1995 — day first, slashes ✅ order, ❌ dots
-- 🇩🇪 German: **15.03.1995** — day first, DOTS ✅✅
-- 🇺🇸 American: 03/15/1995 — month first ❌❌ WRONG!
+Good news: India and Germany both put the day first. Just swap slashes for dots.
 
-Good news for Malayalis: we already write day first in India! Just replace the slashes with dots.
+⏸️ Write YOUR Geburtsdatum in German format now. Day-dot-month-dot-year.
 
-⏸️ Write YOUR Geburtsdatum in German format now. Say it out loud: 'Ich bin am [Tag]ten [Monat] [Jahr] geboren.'
+### Practice Pause: ⏸️ (4 seconds)
 
-### Practice Pause: ⏸️ (5 seconds)
+⚠️ **TRAP #2 — Geburtsdatum vs Geburtsort vs Datum.**
 
-Examples:
-- March 15, 1995 → **15.03.1995** ✅
-- NOT 03/15/1995 ❌ (that's American!)
-- NOT 15/03/1995 ❌ (close, but use dots!)
+- Geburts**datum** = your birthday (15.03.1995)
+- Geburts**ort** = your birthplace (Kochi, Thrissur)
+- **Datum** (at the bottom of a form) = TODAY's date — not your birthday!
 
-[EXAM-TIP] If they ask for **Geburtsort** — that's birthplace, NOT birthday! Geburts**datum** = date. Geburts**ort** = place. 'Kochi' or 'Thrissur' — your city of birth."
+*'Datum' form-nte last-il kaanum — athu INNATHTHE date aanu, birthday alla!*"
 
 ---
 
-## Section 6: Field 4 — Wohnort / Adresse (5:00–5:50)
+## Section 4: Fields 4 & 5 — Wohnort/Adresse & Kontakt (3:15–4:30)
 
-### Visual: [FORM: Wohnort and Adresse fields with examples]
-### Narration:
-"Number 4: **Wohnort** or **Adresse**. Where you live.
+### Visual: [FORM: Wohnort and Adresse fields with address anatomy diagram]
+### Narration: [ENERGY: practical, brisk]
+"**Wohnort** = just the city. Write 'Berlin' or 'München'. Done.
 
-Now, pay attention to which word they use:
+**Adresse** = full address. German format:
 
-**Wohnort** = just the city. Write: 'Berlin' or 'München' or 'Kochi'. That's it. Don't overthink it!
-
-**Adresse** = full address. Write: 'Hauptstraße 15, 10115 Berlin'
-
-German address format:
 [SLIDE: Address anatomy]
 **Straße + Hausnummer** → Hauptstraße 15
-**PLZ + Ort** → 10115 Berlin
+**PLZ + Stadt** → 10115 Berlin
 
-PLZ = *Postleitzahl* — postal code. Always 5 digits in Germany.
+PLZ = Postleitzahl — always 5 digits in Germany.
 
-*Kerala address-il nammal veedu peru, landmark, pincode okke ezhuthum. Germany-yil simple — street number, then postal code and city. Clean and organised, like everything German!*
-
-[EXAM-TIP] If the form says 'Wohnort', just write the city. Don't waste time writing the full address when they didn't ask for it."
+[EXAM-TIP] If it says 'Wohnort', just the city. Don't waste time on a full address they didn't ask for.
 
 ---
 
-## Section 7: Field 5 — Kontakt (5:50–6:30)
+**Kontakt** — phone or email.
 
-### Visual: [FORM: Telefonnummer and E-Mail fields]
-### Narration:
-"Number 5: **Kontaktinformation**. This is usually Telefonnummer, Handynummer, or E-Mail-Adresse.
+- Telefonnummer: +49 176 12345678 (or +91 for Indian number)
+- E-Mail: write it exactly as-is. Don't translate it!
 
-**Telefonnummer**: Write with the country code if you're using an Indian number: +91 followed by your number. German mobile: +49 followed by the number.
+*Simple — ningalude phone number-um email-um, athu mathram.*
 
-**E-Mail-Adresse**: Write it exactly as it is. nikhil@gmail.com — don't get creative, don't translate it!
+⏸️ Quick: What's the difference between Wohnort and Adresse?
 
-*Simple alle? Ningalude phone number-um email-um — athrem thanne.*
+### Practice Pause: ⏸️ (3 seconds)
 
-[SLIDE: Contact examples]
-- Telefonnummer: +49 176 12345678
-- E-Mail: nikhil.nair@gmail.com"
+Right — Wohnort = city only. Adresse = full street + PLZ + city."
 
 ---
 
-## Section 8: Bonus Fields — What Else They Might Ask (6:30–7:15)
+## Section 5: Bonus Fields — The Tricky Ones (4:30–5:30)
 
-### Visual: [TABLE: Additional form fields with translations]
-### Narration:
-"Sometimes the form has extra fields beyond the Big 5. Here are the most common ones:
+### Visual: [TABLE: bonus fields with trap highlights]
+### Narration: [ENERGY: alert, watchful]
+"Sometimes you'll see extra fields beyond the Big 5:
 
-### Key Vocabulary Overlay:
-| German | English | Malayalam hint |
-|--------|---------|--------------|
-| Geschlecht | Gender | männlich (m) / weiblich (w) / divers (d) |
-| Staatsangehörigkeit | Nationality | **indisch** — NOT 'Indien'! |
-| Familienstand | Marital status | ledig / verheiratet / geschieden |
-| Beruf | Profession | What you do — Krankenpfleger, Student... |
-| Unterschrift | Signature | Sign your name |
-| Datum | Date (today's) | Today: TT.MM.JJJJ format! |
+| German | What to write | ⚠️ Trap |
+|--------|--------------|---------|
+| **Geschlecht** | männlich / weiblich / divers | — |
+| **Staatsangehörigkeit** | **indisch** | NOT 'Indien'! NOT 'Inder'! |
+| **Familienstand** | ledig / verheiratet | — |
+| **Beruf** | Student, Krankenpfleger... | — |
+| **Unterschrift** | Sign your name | — |
 
-⚠️ The BIGGEST trap here: **Staatsangehörigkeit**. Write '**indisch**' — that's the adjective form. NOT 'Indien' (that's the country name). NOT 'Inder/Inderin' (that's the person noun).
+⚠️ **TRAP #3 — Staatsangehörigkeit.** This means nationality. Write the **adjective**: **indisch**. Not the country name (Indien). Not the person noun (Inder/Inderin).
 
-*'Indisch' ezhuthuka — ithu adjective form aanu. 'Wo kommen Sie her? Indien.' But 'Staatsangehörigkeit? Indisch.'*"
+*'Indisch' — adjective form. Ithokke exam-il villichu thettunna aakalanu. Nee thettikkanda!*
+
+⏸️ Staatsangehörigkeit: what do you write? Say it.
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**Indisch.** ✅"
 
 ---
 
-## Section 9: Practice Form 1 — Bibliotheksausweis (7:15–8:00)
+## Section 6: Practice Form 1 — Bibliotheksausweis (5:30–6:40)
 
-### Visual: [FORM: Library card application — Stadtbibliothek Berlin]
+### Visual: [FORM: Library card — Stadtbibliothek Berlin]
 ```
 STADTBIBLIOTHEK BERLIN — Anmeldeformular
 
@@ -201,169 +162,179 @@ E-Mail:          ___________________
 Unterschrift:    ___________________  Datum: ___________
 ```
 
-### Narration:
-"Let's practice! Here's a Bibliotheksausweis application — a library card form.
-
-⏸️ Pause the video and fill in each field with YOUR information. Go!
-
-### Practice Pause: ⏸️ (8 seconds)
-
-Let's check together:
-
-[FORM fills in one field at a time]
-- Familienname: **Nair** ✅
-- Vorname: **Lakshmi** ✅
-- Geburtsdatum: **23.07.1998** ✅ — dots, day first!
-- Adresse: **Berliner Str. 42, 10715 Berlin** ✅ — street, number, PLZ, city
-- Telefonnummer: **+49 176 98765432** ✅
-- E-Mail: **lakshmi.nair@gmail.com** ✅
-- Unterschrift: [signature] Datum: **23.03.2026** ✅ — TODAY's date, not your birthday!
-
-That last one catches people — Datum at the bottom means TODAY'S date, not your Geburtsdatum!"
-
----
-
-## Section 10: Practice Form 2 — Sprachkurs-Anmeldung (8:00–8:40)
-
-### Visual: [FORM: Language course registration — VHS]
-```
-VOLKSHOCHSCHULE MÜNCHEN — Kursanmeldung
-
-Name:            ___________________
-Vorname:         ___________________
-Geburtsdatum:    ___________
-Staatsangehörigkeit: ___________
-Wohnort:         ___________________
-Beruf:           ___________________
-Telefon:         ___________________
-```
-
-### Narration:
-"Quick — second form! VHS Sprachkurs registration. This one adds Staatsangehörigkeit and Beruf.
-
-⏸️ Fill it in!
-
-### Practice Pause: ⏸️ (5 seconds)
-
-[FORM fills in]
-- Name: **Kumar** — here they wrote 'Name' not 'Familienname', but same thing!
-- Vorname: **Arun**
-- Geburtsdatum: **05.11.1992** — November is 11, not 10!
-- Staatsangehörigkeit: **indisch** — NOT 'Indien'!
-- Wohnort: **München** — just the city, they said Wohnort not Adresse
-- Beruf: **Krankenpfleger** — if you're a student, write 'Student' or 'Studentin'
-- Telefon: **+49 152 11223344**
-
-Easy? Good. One more — speed round!"
-
----
-
-## Section 11: Practice Form 3 — Speed Round (8:40–9:10)
-
-### Visual: [FORM: Doctor's office registration — Arztpraxis]
-```
-ARZTPRAXIS DR. SCHMIDT — Patientenaufnahme
-
-Familienname:    ___________________
-Vorname:         ___________________
-Geb.-Datum:      ___________  Geschlecht: ○ m  ○ w  ○ d
-Adresse:         ___________________
-Krankenkasse:    ___________________
-Telefon:         ___________________
-Versichertennummer: ___________________
-```
-
-### Narration:
-"Speed round — doctor's office form!
+### Narration: [ENERGY: encouraging, active]
+"Real practice. Fill this out with YOUR information. Pause the video if you need more time.
 
 ⏸️ Go!
 
+### Practice Pause: ⏸️ (10 seconds)
+
+Let's check with an example:
+
+[FORM fills in one field at a time — each with a ✅ or brief note]
+- Familienname: **Nair** ✅
+- Vorname: **Lakshmi** ✅
+- Geburtsdatum: **23.07.1998** ✅ dots, day first
+- Adresse: **Berliner Str. 42** / **10715 Berlin** ✅ street+number, then PLZ+city
+- Telefonnummer: **+49 176 98765432** ✅
+- E-Mail: **lakshmi.nair@gmail.com** ✅
+- Unterschrift: [signature] — Datum: **23.03.2026** ✅
+
+Did you catch that last one? **Datum** at the bottom = today's date, not your birthday. That's Trap #2 in action."
+
+---
+
+## Section 7: Practice Form 2 — VHS Sprachkurs (6:40–7:40)
+
+### Visual: [FORM: VHS course registration with Staatsangehörigkeit and Beruf fields]
+```
+VOLKSHOCHSCHULE MÜNCHEN — Kursanmeldung
+
+Name:                  ___________________
+Vorname:               ___________________
+Geburtsdatum:          ___________
+Staatsangehörigkeit:   ___________
+Wohnort:               ___________________
+Beruf:                 ___________________
+Telefon:               ___________________
+```
+
+### Narration: [ENERGY: slightly faster, building confidence]
+"Second form — notice it says 'Name' instead of 'Familienname'. Same thing — your surname.
+
+⏸️ Fill it in!
+
+### Practice Pause: ⏸️ (8 seconds)
+
+Check:
+- Name: **Kumar** — 'Name' alone = Familienname
+- Vorname: **Arun**
+- Geburtsdatum: **05.11.1992** — November is 11, not 10
+- Staatsangehörigkeit: **indisch** ✅ — Trap #3 avoided!
+- Wohnort: **München** — just the city, not full address
+- Beruf: **Krankenpfleger** — or 'Student' / 'Studentin'
+- Telefon: **+49 152 11223344**
+
+*Rendu forms cheythu kazhinjhu. Oru ennam koodi — speed round!*"
+
+---
+
+## Section 8: Speed Round — Arztpraxis Form (7:40–8:30)
+
+### Visual: [FORM: Doctor's office — includes abbreviated fields]
+```
+ARZTPRAXIS DR. SCHMIDT — Patientenaufnahme
+
+Familienname:       ___________________
+Vorname:            ___________________
+Geb.-Datum:         ___________  Geschlecht: ○ m  ○ w  ○ d
+Adresse:            ___________________
+Krankenkasse:       ___________________
+Telefon:            ___________________
+```
+
+### Narration: [ENERGY: brisk, challenge mode]
+"Speed round! 20 seconds. Go!
+
+### Practice Pause: ⏸️ (8 seconds)
+
+New things here:
+- **Geb.-Datum** = abbreviated Geburtsdatum. Same thing — don't panic at abbreviations.
+- **Geschlecht** = gender. Circle the right one: **m** (männlich), **w** (weiblich), **d** (divers).
+- **Krankenkasse** = health insurance company (AOK, TK, etc.)
+
+[EXAM-TIP] The real exam won't ask Krankenkasse — that's too specific. But you'll see it in German daily life. For the exam, stick to the Big 5 + Staatsangehörigkeit."
+
+---
+
+## Section 9: Active Recall Summary (8:30–9:30)
+
+### Visual: [SLIDE: 5 blank boxes — student fills them mentally before they appear]
+### Narration: [ENERGY: calm, consolidating]
+"Before I show you the summary — can you remember all 5 Golden Fields without looking?
+
+⏸️ Name them. Five fields.
+
+### Practice Pause: ⏸️ (6 seconds)
+
+[Fields appear one by one as the student confirms]
+1. **Familienname** → your surname
+2. **Vorname** → your first name
+3. **Geburtsdatum** → TT.MM.JJJJ (dots!)
+4. **Wohnort / Adresse** → city or full address
+5. **Kontakt** → phone or email
+
+And the 3 traps:
+
+⏸️ What are the 3 traps? Try to recall them.
+
 ### Practice Pause: ⏸️ (5 seconds)
 
-New fields here:
-- **Geb.-Datum** = abbreviated Geburtsdatum — same thing!
-- **Geschlecht** = gender — check the right circle
-- **Krankenkasse** = health insurance company (AOK, TK, etc.)
-- **Versichertennummer** = insurance number — just copy it from your card
+1. **Name Swap** — Familienname ≠ Vorname
+2. **Date Confusion** — Geburtsdatum ≠ Datum (today)
+3. **Staatsangehörigkeit** — write **indisch**, not Indien
 
-[EXAM-TIP] In the REAL exam, they won't ask Krankenkasse or Versichertennummer — those are too specific. But you'll see them in real German life!"
+*Munnumai trap-um arinjalum miss cheyyunna aalkal undu. Nee avare pole aakanda!*
 
----
-
-## Section 12: Exam Tips & Summary (9:10–9:45)
-
-### Visual: [SLIDE: 4 golden exam tips with icons]
-### Narration:
-"Four tips that guarantee you NEVER lose points on Schreiben Teil 1:
-
-**Tip 1:** 📖 Read the form TWICE before writing anything. Make sure you know what each field is asking.
-
-**Tip 2:** 🔄 Check: did I put Familienname and Vorname in the RIGHT fields? This is the #1 mistake!
-
-**Tip 3:** 📅 Date format: TT.MM.JJJJ — ALWAYS with dots. And check: is it asking for YOUR birthday or TODAY's date?
-
-**Tip 4:** 🌍 Staatsangehörigkeit = **indisch** — the adjective! Not the country name!
-
-[SLIDE: Summary card]
-### Key Vocabulary Overlay:
-**The 5 Golden Fields:**
-1. Familienname → your surname
-2. Vorname → your first name
-3. Geburtsdatum → TT.MM.JJJJ
-4. Wohnort/Adresse → city or full address
-5. Kontakt → phone or email
-
-*Ithu exam-il miss cheythal kurach silly aayirikkum — so don't! Practice 3 forms today and you'll never lose these points.*"
+### Your exam strategy:
+- Read every field label twice before writing
+- Check Familienname/Vorname are in the right boxes
+- Dates: dots, day first
+- Spend maximum 5 minutes on Teil 1 — save time for Teil 2"
 
 ---
 
-## Section 13: Outro (9:45–10:00)
+## Section 10: Outro (9:30–10:00)
 
-### Visual: [Course branding + next lesson preview]
-### Narration:
-"You just mastered Schreiben Teil 1. That's 12.5% of the exam — DONE.
+### Visual: [Course branding + next lesson card: "Schreiben Teil 2 — Kurze Mitteilung"]
+### Narration: [ENERGY: warm, forward-looking]
+"12.5% of the exam — secured. Three forms practiced. Three traps memorized.
 
-Next lesson: Schreiben Teil 2 — writing short messages. A little more creative, but just as learnable.
+Your homework: fill out one more form with your real information. Write it on paper. Time yourself — under 5 minutes.
+
+Next lesson: **Schreiben Teil 2** — writing short messages. That's where you write 30 words to a friend, teacher, or colleague. A little more creative, but just as learnable.
 
 Bis zum nächsten Mal! Tschüss!"
 
-## Post-roll
-[Next lesson teaser: "Schreiben Teil 2 — Kurze Mitteilung"]
+---
+
+## Script Quality Checklist (v2.0)
+
+- [x] Hook under 60 seconds, states concrete payoff (12.5% of exam)
+- [x] No monologue block exceeds 90 seconds
+- [x] Teach → Drill → Apply cycle in each section (not stacked)
+- [x] Malayalam bridges are structural parallels, not dictionary entries
+- [x] Practice pauses have specific prompts and answer reveals (10 pauses)
+- [x] 3 exam traps taught with dedicated attention (not buried in text)
+- [x] Active recall summary (student recalls before seeing answers)
+- [x] All German grammatically verified
+- [x] Visual cues are producible and tagged
+- [x] Energy/tone cues marked at section transitions
+- [x] 3 complete form practice walkthroughs
+- [x] Exam tips limited to 3 inline `[EXAM-TIP]` markers
+- [x] Duration realistic for 10:00 (~9:55 scripted)
+- [x] No A2+ content
 
 ---
 
-## Script Completion Checklist
+## Revision Notes (v1.0 → v2.0)
 
-- [x] Teaching goal clearly stated
-- [x] A1 exam section linked (Schreiben Teil 1, 12.5% of total)
-- [x] All German examples are grammatically correct
-- [x] Malayalam/Manglish bridges feel natural, not forced
-- [x] Practice pauses included (6 pauses — 3 form practice + 3 micro-pauses)
-- [x] Key vocabulary overlay cues present (5 Golden Fields + bonus fields table)
-- [x] Timing is realistic for 10:00 target (~9:55 scripted)
-- [x] Summary section recaps the 5 Golden Fields + 4 exam tips
-- [x] No A2+ content
-- [x] Exam tips marked with [EXAM-TIP] (4 main + 3 inline)
-- [x] Practice forms: 3 complete walkthroughs (library, VHS, doctor)
+- **Hook tightened:** Cut from 60s of hype to 35s of concrete exam-form visual + payoff
+- **Traps given structure:** 3 numbered traps instead of scattered warnings — easier to remember
+- **Pacing improved:** Merged Familienname + Vorname into one section (they're always paired)
+- **Merged Wohnort + Kontakt:** These are simpler fields, don't need 50s each
+- **Practice pauses made specific:** Every pause has a clear prompt and expected output
+- **Active recall summary:** Student tries to name fields/traps before they appear (vs. passive bullet list)
+- **Energy cues added:** Each section has a tone marker for narrator guidance
+- **Malayalam bridges trimmed:** Removed pure translations, kept structural parallels
+- **Removed "Free marks" hype language:** Replaced with concrete scoring facts
+- **Word count reduced ~15%:** Tighter narration = better pacing at target duration
 
 ---
 
 ## Production Notes
 
-**Audio generation needs:**
-- German narration for form field names (clear, slow pronunciation)
-- Could use edge-tts `de-DE-ConradNeural` for German words, manual/recorded for English + Malayalam
-
-**Visual asset needs:**
-- 3 complete form mockups (Bibliothek, VHS, Arztpraxis)
-- Date format comparison graphic (IN vs DE vs US)
-- 5 Golden Fields summary card
-- Address anatomy diagram
-- Exam tips summary slide
-
-**Exercise tie-ins:**
-- Existing exercises in module-18.ts: ex18-1-1 through ex18-1-10+ (form-filling MC)
-- Future: Add free-text form-filling exercises when production exercise type is implemented
-- Direct connection to Module 14 Lesson 14-1 (Anmeldung walkthrough)
-
-**Estimated production time:** ~4-6 hours for video with prepared templates
+**Audio:** German field names need clear, slow pronunciation. Use de-DE-ConradNeural or recorded voice.
+**Visuals:** 3 form mockups (library, VHS, doctor), date format comparison, address anatomy diagram, 5 Golden Fields summary.
+**Exercise tie-ins:** module-18.ts exercises ex18-1-1 through ex18-1-10+ (form-filling MC). Direct connection to Module 14 Lesson 14-1 (Anmeldung walkthrough).
+**Estimated production time:** ~4 hours with prepared templates.
