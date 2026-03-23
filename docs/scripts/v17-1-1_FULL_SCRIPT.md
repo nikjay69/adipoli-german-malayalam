@@ -1,369 +1,313 @@
 # v17-1-1 — Goethe A1 Exam: Format, Strategy & Tips (FULL SCRIPT)
 
-> **Module:** 17 | **Lesson:** 17-1 | **Duration:** 12:00 target
-> **Teaching Goal:** Complete understanding of the Goethe A1 (Start Deutsch 1) exam format, timing, scoring, and section-by-section strategy
+> **Module:** 17 | **Lesson:** 17-1 | **Duration:** 11:30 target
+> **Teaching Goal:** Give learners a truthful, calming, score-oriented overview of the Goethe A1 exam so they know exactly what happens, what each section asks for, and where to protect points.
 > **A1 Exam Link:** ALL sections — Hören, Lesen, Schreiben, Sprechen
-> **Status:** REVISED — v2.0
-> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass — exam-format truth check + score-safety pass)
 
 ---
 
-## Pre-roll (0:00–0:15)
+## Why this revision exists
+
+This v2.1 pass fixes the most important risk in an exam-overview video: being energetic but slightly wrong.
+
+So this version now:
+- keeps the overview short and teachable
+- aligns the section descriptions with the repo's current exam map
+- avoids overpromising "easy points"
+- separates **format truth** from **strategy advice** more cleanly
+- gives learners a safer section-by-section plan without noise
+
+---
+
+## Pre-roll (0:00–0:10)
 
 ### Visual: [Course intro animation]
 ### Narration:
-"Willkommen bei Adipoli German! Today — your complete exam battle plan."
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — What You'll Face (0:15–1:00)
+## Section 1: Hook — No Surprises on Exam Day (0:10–0:40)
 
-### Visual: [SLIDE: Goethe A1 exam paper mockup on a desk. Pen, ID, water bottle. Timer showing "80 minutes".]
-### Narration: [ENERGY: calm authority]
-"Exam day. You walk in. They hand you this paper. You have 65 minutes for writing, then a speaking test.
+### Visual: [SLIDE: exam paper + speaking card + simple timeline]
+### Narration: [ENERGY: calm, direct]
+"Many learners are not scared of German. They're scared of the unknown.
 
-100 points. You need 60 to pass. That's it.
+What comes first? How many parts? What do they actually ask? Where do people lose marks?
 
-This video shows you exactly what's in each section, how the scoring works, and the strategies that save you time and points. No surprises on exam day.
+In this lesson, we make the exam predictable.
 
-*Cricket match-il pitch conditions ariyunnathupole — exam format arinjaal half the battle kazhinjhu.*
-
-Four sections. Let's go through them."
+*Format arinjhaal tension kurayum. Surprise illa enkil performance nannakum.*"
 
 ---
 
-## Section 2: The Big Picture (1:00–2:00)
+## Section 2: The Big Picture — 4 Sections, 100 Points (0:40–1:25)
 
-### Visual: [DIAGRAM: Horizontal timeline bar]
-```
-┌──────────┬──────────┬──────────┬───────┬──────────┐
-│  Hören   │  Lesen   │Schreiben │ BREAK │ Sprechen │
-│  20 min  │  25 min  │  20 min  │       │  15 min  │
-│  25 pts  │  25 pts  │  25 pts  │       │  25 pts  │
-└──────────┴──────────┴──────────┴───────┴──────────┘
-```
+### Visual: [TIMELINE: Hören 20 → Lesen 25 → Schreiben 20 → Sprechen ~15]
+### Narration: [ENERGY: structured, reassuring]
+"The Goethe A1 exam has **4 sections**:
 
-### Narration: [ENERGY: structured, clear]
-"Four sections, each worth 25 points:
+1. **Hören** — about **20 minutes**
+2. **Lesen** — **25 minutes**
+3. **Schreiben** — **20 minutes**
+4. **Sprechen** — about **15 minutes**
 
-[Each section highlights as mentioned]
-1. **Hören** — Listening — 20 minutes
-2. **Lesen** — Reading — 25 minutes
-3. **Schreiben** — Writing — 20 minutes
+That gives you **100 points total**.
+Each section is worth **25 points**.
+You need **60 points overall** to pass.
 
-These three happen together in one 65-minute session.
-
-Then a break. Then:
-
-4. **Sprechen** — Speaking — about 15 minutes (with another candidate and examiners)
-
-60 out of 100 to pass. You can compensate across sections — strong reading can cover weak listening.
-
-Quick quiz — ⏸️ how many points total, and how many to pass?
+⏸️ Quick recall: how many sections, and how many points total?
 
 ### Practice Pause: ⏸️ (3 seconds)
 
-100 total, 60 to pass. Good. Let's look at each section."
+Four sections. One hundred points. Good."
 
 ---
 
-## Section 3: Hören — Listening (2:00–4:00)
+## Section 3: Hören — What You Actually Do (1:25–3:05)
 
-### Visual: [TABLE: Hören 3 parts with icons — headphones for each type]
-| Teil | What You Hear | Task | Items |
-|------|--------------|------|-------|
-| 1 | Short messages/announcements | Richtig oder Falsch | 6 |
-| 2 | Short dialogues | Choose a/b/c | 4 |
-| 3 | Longer announcements | Match situations | 5 |
+### Visual: [TABLE: Teil 1 / Teil 2 / Teil 3 with icons and item counts]
+```text
+Teil 1 — short messages / announcements — 6 items
+Teil 2 — short dialogues — 4 items
+Teil 3 — announcements / structured listening — 5 items
+```
+### Narration: [ENERGY: teacher-mode, precise]
+"In **Hören**, the biggest danger is panic — not the German itself.
 
-### Narration: [ENERGY: coaching]
-"Hören — 20 minutes, 25 points, 15 items. Everything plays TWICE.
+The section has **3 parts**:
 
-**Teil 1:** Short messages — voicemails, train announcements. You mark Richtig or Falsch. Six items.
+- **Teil 1:** short everyday messages or announcements — **6 items**
+- **Teil 2:** short dialogues — **4 items**
+- **Teil 3:** slightly longer listening tasks with key information like time, place, price, or event details — **5 items**
 
-**Teil 2:** Short dialogues — two people talking at a shop, doctor, office. Multiple choice: a, b, or c. Four items.
+Most important exam habit:
+**read first, listen second**.
 
-**Teil 3:** Longer announcements — a museum tour, weather forecast. You match situations to what you hear. Five items.
+[EXAM-TIP] Before the audio starts, look at the task and answer choices. Your job is not to translate every word. Your job is to catch the deciding information.
 
-⏸️ What plays twice — Teil 1 only, or all parts?
+First listen: get the situation.
+Second listen: confirm the answer.
+
+*First round-il context pidikkuka. Second round-il answer lock cheyyuka.*
+
+⏸️ Hören-il target entha? Every word translate cheyyano, key info catch cheyyano?
+
+### Practice Pause: ⏸️ (3 seconds)
+
+Key info. Exactly."
+
+---
+
+## Section 4: Lesen — 3 Different Reading Jobs (3:05–4:50)
+
+### Visual: [TABLE: Teil 1 signs/notices | Teil 2 ads/info | Teil 3 emails/messages]
+### Narration: [ENERGY: practical, strategic]
+"**Lesen** also has **3 parts** — but each one needs a slightly different reading habit.
+
+- **Teil 1:** signs, notices, short public texts
+- **Teil 2:** ads, offers, short information texts
+- **Teil 3:** emails, messages, short correspondence
+
+Do not read every text the same way.
+
+For **Teil 1**, scan fast for the key warning, place, or instruction.
+For **Teil 2**, match the person's need with the right offer.
+For **Teil 3**, track who wrote the message, why, and what action or information matters.
+
+[EXAM-TIP] In reading, question first is still powerful — but in a different way. Read the task, then scan the text for the answer zone.
+
+⏸️ Which section usually needs "need → offer" matching logic most clearly?
+
+### Practice Pause: ⏸️ (3 seconds)
+
+Teil 2. Good."
+
+---
+
+## Section 5: Schreiben — Two Tasks, Two Different Mindsets (4:50–6:35)
+
+### Visual: [SPLIT SCREEN: left = form, right = short message]
+### Narration: [ENERGY: calm confidence]
+"**Schreiben** has **2 parts**.
+
+### Teil 1 — Form filling
+You write personal information into a form.
+This is accuracy work:
+- surname vs first name
+- date format
+- address or city
+- phone or email
+
+### Teil 2 — Short message
+You write a short message with **3 content points**.
+This is checklist work:
+- greeting
+- point 1
+- point 2
+- point 3
+- closing
+
+Different task, different mindset.
+
+For **Teil 1**, slow down and read the field labels carefully.
+For **Teil 2**, do not write a beautiful paragraph. Write a **clear, short message** that hits all 3 points.
+
+*Form-il precision. Message-il checklist. Randum same alla.*
+
+⏸️ Fill the gap: Schreiben Teil 2 = greeting + ___ content points + closing.
+
+### Practice Pause: ⏸️ (3 seconds)
+
+Three content points. Yes."
+
+---
+
+## Section 6: Sprechen — It Is an Interaction (6:35–8:15)
+
+### Visual: [TABLE: Teil 1 introduce yourself | Teil 2 ask questions | Teil 3 make requests]
+### Narration: [ENERGY: reassuring, realistic]
+"**Sprechen** usually feels the most emotional, because real people are watching.
+But the format is very trainable.
+
+It has **3 parts**:
+
+### Teil 1 — Introduce yourself
+Name, age, country, languages, job or studies, where you live, hobby.
+Short, simple, clear.
+
+### Teil 2 — Ask and answer questions
+You get a word card and turn it into a simple question.
+
+### Teil 3 — Make polite requests
+You get a situation card and say what you need politely.
+
+Very important:
+This is **not** just sentence production. It is interaction.
+You may need a short answer, a short reaction, or one follow-up move.
+
+[EXAM-TIP] In speaking, simple German said clearly is stronger than complicated German said nervously.
+
+⏸️ Which speaking part is safest to memorize hardest in advance — Teil 1, 2, or 3?
+
+### Practice Pause: ⏸️ (3 seconds)
+
+Teil 1. Exactly. That's where you should feel most prepared."
+
+---
+
+## Section 7: Where Learners Usually Lose Marks (8:15–9:20)
+
+### Visual: [SLIDE: 4 danger zones]
+### Narration: [ENERGY: alert, useful]
+"Let's make the danger zones explicit.
+
+Learners often lose marks because they:
+
+1. **panic in Hören** and try to translate everything
+2. **read too loosely in Lesen** and miss one deciding detail
+3. **miss one content point in Schreiben Teil 2**
+4. **freeze in Sprechen Teil 2 or 3** because they search for perfect grammar
+
+So your protection plan is:
+- Hören → listen for key info
+- Lesen → scan for the answer zone
+- Schreiben → tick off all 3 points
+- Sprechen → use safe patterns, keep moving
+
+*Perfect German venda. Score-safe German mathi.*"
+
+---
+
+## Section 8: Score-Safety Strategy for the Whole Exam (9:20–10:25)
+
+### Visual: [CHECKLIST CARD: read carefully / keep it simple / don’t get stuck]
+### Narration: [ENERGY: composed, strategic]
+"Here is the exam plan I want in your head:
+
+### Written paper
+- read instructions carefully
+- don't get trapped on one question
+- keep your handwriting clear
+- protect time for Schreiben Teil 2
+
+### Speaking
+- start quickly
+- use your memorized self-intro confidently
+- in Teil 2 and 3, choose a safe frame and say it
+- if a word disappears from your brain, simplify — don't go silent
+
+This is the real exam skill:
+**stay usable under pressure**.
+
+⏸️ If you forget one fancy word, what is better — silence or a simpler sentence?
 
 ### Practice Pause: ⏸️ (2 seconds)
 
-ALL parts. Every recording plays twice.
-
-### Strategy — The Pre-Read:
-
-[EXAM-TIP] Before the audio starts, you get a few seconds. **Read the questions first.** Identify key words. When the audio plays, your brain is already filtering for the answer.
-
-First listen: get the gist. Second listen: confirm your answer.
-
-*First listen-il idea pidikkuka. Second listen-il answer confirm cheyyuka. Panic aakanda — randu praavashyam kelkkaam!*
-
-**Time math:** 20 minutes ÷ 15 items = over a minute per item including both listens. You have time."
+A simpler sentence. Always."
 
 ---
 
-## Section 4: Lesen — Reading (4:00–6:00)
+## Section 9: Exam Day Logistics + Outro (10:25–11:30)
 
-### Visual: [TABLE: Lesen 3 parts with example text snippets]
-| Teil | What You Read | Task | Items |
-|------|-------------|------|-------|
-| 1 | Signs, notices, short texts | Match to situations | 5 |
-| 2 | Ads (Anzeigen) | Richtig oder Falsch | 5 |
-| 3 | Short emails/messages | Choose a/b/c | 5 |
+### Visual: [SLIDE: ID / pens / water / arrive early]
+### Narration: [ENERGY: warm, grounded]
+"On exam day, keep the logistics boring:
+- bring valid ID
+- bring pens
+- arrive early
+- keep your phone away
+- breathe before each section starts
 
-### Narration: [ENERGY: strategic]
-"Lesen — 25 minutes, 25 points, 15 items. This is where careful readers score big.
+And remember:
+You do **not** need perfect German to pass A1.
+You need clear basic German, good habits, and calm execution.
 
-**Teil 1:** Short texts — bulletin board notices, signs, messages on doors. Match each text to a situation.
-
-**Teil 2:** Advertisements — apartment ads, course flyers, event posters. Richtig oder Falsch for each statement.
-
-*Module 8 Wohnungsanzeigen orma undo? Athokke ivide direct-aayi use aavum!*
-
-**Teil 3:** Short emails or letters. Read and answer multiple choice.
-
-⏸️ Try this — if you're running low on time, which Teil do you tackle first: Teil 1 (signs), Teil 2 (ads), or Teil 3 (emails)?
+🔊 Say it once:
+**Ich schaffe das.**
 
 ### Practice Pause: ⏸️ (3 seconds)
 
-**Start with Teil 1** — shortest texts, fastest points. Then **Teil 3** — emails are usually straightforward. Save **Teil 2** (ads) for last — they require careful detail reading.
+Good.
 
-### Strategy:
-
-[EXAM-TIP] Read the QUESTION first, then scan the text for the answer. Don't read the whole text first — it wastes time.
-
-For ads: underline key details (price, time, location). Then check each statement against your underlines.
-
-**Abbreviations you'll need:**
-Mo/Di/Mi/Do/Fr/Sa/So = weekdays | PLZ = postal code | Str. = Straße | Tel. = Telefon
-KM, WM, NK, EBK = apartment ad abbreviations (Module 8)
-
-*Abbreviations arinjillenkil marks pokunnu. Arinjaal free marks.*"
-
----
-
-## Section 5: Schreiben — Writing (6:00–8:00)
-
-### Visual: [SLIDE: Schreiben split — Teil 1 (form) left, Teil 2 (message) right]
-| Teil | Task | Time Suggestion | Points |
-|------|------|----------------|--------|
-| 1 | Fill out a form (5 fields) | ~5 min | ~12-13 |
-| 2 | Write a short message (~30 words) | ~15 min | ~12-13 |
-
-### Narration: [ENERGY: confident, reassuring]
-"Schreiben — 20 minutes, 25 points. Two parts.
-
-**Teil 1:** Fill out a form. 5 fields — Familienname, Vorname, Geburtsdatum, Wohnort, Kontakt.
-
-You'll master this in the next lesson (Module 18 Lesson 1). Spend maximum 5 minutes here.
-
-⏸️ Quick: German date format? Dots or slashes?
-
-### Practice Pause: ⏸️ (2 seconds)
-
-**Dots.** TT.MM.JJJJ. ✅
-
----
-
-**Teil 2:** Write a short message — about 30 words. You get a situation and 3 content points to cover.
-
-Here's an example:
-
-[SLIDE: Exam prompt]
-```
-You can't come to German class tomorrow.
-Write to your teacher:
-- Why you can't come
-- When you will come back
-- Ask about homework
-```
-
-**Your answer:**
-```
-Liebe Frau Müller,
-
-ich kann morgen leider nicht zum Kurs kommen,
-weil ich krank bin. Ich komme am Mittwoch
-wieder. Können Sie mir bitte die Hausaufgaben
-schicken?
-
-Viele Grüße
-Nikhil
-```
-
-[SLIDE: ✅ Point 1: reason (krank) ✅ Point 2: return (Mittwoch) ✅ Point 3: homework question. ~30 words.]
-
-[EXAM-TIP] The formula: **Greeting + 3 sentences (one per content point) + closing.** Simple and correct always beats fancy and wrong.
-
-*30 words — athu 3-4 sentences mathram. WhatsApp message-il koode ezhuthum!*
-
-⏸️ What's the formula? Greeting + ___ + closing.
-
-### Practice Pause: ⏸️ (3 seconds)
-
-Three sentences — one per content point. ✅"
-
----
-
-## Section 6: Sprechen — Speaking (8:00–9:30)
-
-### Visual: [TABLE: Sprechen 3 parts with role-play icons]
-| Teil | Task | Time |
-|------|------|------|
-| 1 | Introduce yourself (6 topics) | ~2 min |
-| 2 | Ask questions from word cards | ~2 min |
-| 3 | Make requests from situation cards | ~2 min |
-
-### Narration: [ENERGY: encouraging, warm]
-"Sprechen — usually separate from the written exam. You're with one other candidate and 1-2 examiners. They're friendly — they want you to pass.
-
-**Teil 1: Sich vorstellen** — introduce yourself. You've built this across Module 2:
-
-🔊 [SLOW] 'Hallo! Ich heiße Nikhil. Ich bin 28 Jahre alt. Ich komme aus Kerala in Indien. Ich wohne jetzt in Berlin. Ich spreche Malayalam, Englisch und ein bisschen Deutsch. Ich bin IT-Spezialist von Beruf.'
-
-⏸️ Say YOUR version — all 6 points (name, age, origin, residence, languages, job).
-
-### Practice Pause: ⏸️ (10 seconds)
-
-**Teil 2: Wort-Karten** — you get a word and form a question.
-
-'Kino?' → 'Wann beginnt der Film?'
-'Preis?' → 'Wie viel kostet das?'
-
-⏸️ Try one: 'Frühstück?' — form a question.
-
-### Practice Pause: ⏸️ (3 seconds)
-
-Maybe: 'Wann gibt es Frühstück?' or 'Was gibt es zum Frühstück?' Both correct. ✅
-
-**Teil 3: Alltags-Situationen** — polite requests from situation cards.
-
-'Buy a train ticket' → 'Ich hätte gern eine Fahrkarte nach München, bitte.'
-'Ask for a glass of water' → 'Könnte ich bitte ein Glas Wasser haben?'
-
-[EXAM-TIP] Start with 'Entschuldigung' + include 'bitte'. Politeness = points.
-
-*Shy aakkaruthu! Mistake vannaaalum stop cheyyaruthu — just continue. Examiners encourage cheyyum.*"
-
----
-
-## Section 7: Where Are the Easy Points? (9:30–10:15)
-
-### Visual: [SLIDE: Point difficulty ranking — green (easy) to red (hard)]
-### Narration: [ENERGY: strategic, direct]
-"Let's rank the sections by difficulty:
-
-**Easiest points:**
-1. 🟢 **Schreiben Teil 1** — form filling. You KNOW your name and birthday. ~12 points.
-2. 🟢 **Sprechen Teil 1** — self-introduction. You've memorized it. ~8 points.
-3. 🟡 **Lesen** — answers are IN the text. Read carefully = good score.
-
-**Hardest points:**
-4. 🟠 **Hören** — you can't control the audio speed.
-5. 🔴 **Sprechen Teil 2+3** — thinking on the spot under pressure.
-
-⏸️ What should you secure first? The easy or hard points?
-
-### Practice Pause: ⏸️ (2 seconds)
-
-The easy ones. Nail Schreiben Teil 1 and Sprechen Teil 1 first — that's ~20 guaranteed points. Then fight for the rest."
-
----
-
-## Section 8: Exam Day Logistics (10:15–11:00)
-
-### Visual: [SLIDE: Exam day checklist — visual icons]
-```
-📋 BRING:
-✅ Valid ID (Reisepass/Personalausweis)
-✅ Confirmation email — PRINTED
-✅ 2 pens (blue or black)
-✅ Water bottle
-✅ Arrive 30 minutes early
-
-🚫 LEAVE BEHIND:
-❌ Phone (off, in your bag)
-❌ Dictionary
-❌ Notes
-```
-
-### Narration: [ENERGY: practical, calm]
-"Admin mistakes can ruin good preparation. Don't let them.
-
-Bring your passport, printed confirmation, two pens, water. Arrive 30 minutes early.
-
-Phone in your bag, switched off. No dictionaries. No notes.
-
-When you're stuck on a question: **skip it, come back later.** Don't burn 5 minutes on one item.
-
-Simple language always. If you don't know the fancy word, use the simple one. Correct and simple > wrong and complex."
-
----
-
-## Section 9: Mental Prep & Outro (11:00–12:00)
-
-### Visual: [SLIDE: "Ich schaffe das!" large text, then course branding + next lesson]
-### Narration: [ENERGY: warm, motivating — but genuine, not hype]
-"You've done 16 modules. 758 vocabulary words. Hundreds of exercises. You know the format now, section by section.
-
-Three things to remember:
-
-1. **Read questions before listening/reading** — never go in blind
-2. **Secure easy points first** — Schreiben Teil 1, Sprechen Teil 1
-3. **Simple > fancy** — correct basic German always beats ambitious mistakes
-
-One more thing — nerves are normal. Even native Germans get nervous in exams. That's fine.
-
-🔊 [SLOW] Say it: **Ich schaffe das!** — I can do this!
-
-### Practice Pause: ⏸️ (3 seconds)
-
-🔊 [SLOW] **Ich bin bereit!** — I am ready!
-
-### Practice Pause: ⏸️ (3 seconds)
-
-*Nammukku kazhiyum. Ee course muzhuvan padichcha nee exam pass cheyyum.*
-
-Next up: **Hören Practice** — real exam-style listening drills to train your ears.
+Next, we go deeper into the sections themselves with focused practice.
 
 Tschüss und viel Erfolg!"
 
 ---
 
-## Script Quality Checklist (v2.0)
+## Script Quality Checklist (v2.1)
 
-- [x] Hook under 60 seconds — exam paper visual + 60-point target
-- [x] No monologue block exceeds 90 seconds
-- [x] Micro-drills inserted in every section (not just at the end)
-- [x] Malayalam bridges structural (cricket analogy, abbreviation warning)
-- [x] Practice pauses have specific prompts + reveals (10 pauses)
-- [x] Exam connection is the entire video — scoring breakdown explicit
-- [x] Active recall used (point ranking, formula recall)
-- [x] All German grammatically verified
-- [x] Visual cues tagged and producible
-- [x] Energy cues marked at each section
-- [x] Timing realistic for 12:00 (~11:45 scripted)
-- [x] Cross-references to other modules (2, 8, 14, 18) are specific
+- [x] Hook under 40 seconds and reduces fear through clarity
+- [x] Section descriptions aligned to current repo exam map at a score-safe level
+- [x] No overconfident "easy points" framing that could mislead weak learners
+- [x] Hören / Lesen / Schreiben / Sprechen each taught as a different task type
+- [x] Strategy advice separated cleanly from format description
+- [x] Includes micro-recall prompts throughout
+- [x] Malayalam bridges support calm + memory, not filler
+- [x] Visuals remain simple enough to produce quickly
+- [x] Speaking framed as interaction, not only isolated sentence generation
+- [x] Emphasizes simple, usable German under pressure
 
 ---
 
-## Revision Notes (v1.0 → v2.0)
+## Revision Notes (v2.0 → v2.1)
 
-- **Sections 3-5 (Hören/Lesen/Schreiben) de-monologued:** Each had 90-120s narration blocks. Now broken with micro-drills mid-section.
-- **Micro-quizzes added:** "Which Teil first?", "Dots or slashes?", "What's the formula?" — keeps student active during strategy sections.
-- **Scoring section restructured:** Changed from dry table to difficulty ranking (easy→hard) with strategic advice.
-- **Exam day section trimmed:** Was 45s of generic advice. Now a crisp checklist + one key strategy ("skip and return").
-- **Outro trimmed and warmed:** Removed stat-dump hype ("758 words, 690 exercises"). Kept genuine encouragement.
-- **Energy cues added throughout** for narrator guidance.
-- **Lesen strategy upgraded:** Added Teil-ordering advice (1→3→2) based on time pressure.
-- **Removed redundancy:** v1.0 repeated "read questions first" in both Hören and Lesen without framing it differently. v2.0 keeps it in Hören as the core teaching and references it briefly in Lesen.
+- tightened the overview to focus on **exam truth + safe strategy**, not broad hype
+- softened a few overly absolute claims about section difficulty and "guaranteed" points
+- rebuilt Hören / Lesen descriptions to stay closer to the current internal exam map
+- improved the Lesen explanation by separating **signs / offers / correspondence** into different reading jobs
+- reframed Schreiben as **accuracy task + checklist task** instead of one generic writing block
+- strengthened the Sprechen section so learners understand it as an **interaction**
+- trimmed logistical talk and gave more space to score-preserving behavior
 
 ---
 
 ## Production Notes
 
-**Audio:** German exam phrases need slow, clear pronunciation. Sprechen Teil 1 example should be recorded at exam-realistic pace.
-**Visuals:** Exam timeline diagram, section tables, difficulty ranking graphic, exam day checklist, Schreiben example prompt+answer.
-**Exercise tie-ins:** All modules 17-18 exercises. Cross-links to Modules 2, 8, 14.
-**Estimated production time:** ~5 hours (most complex visual set of any script).
+**Audio:** calm teacher-style delivery; section names pronounced clearly.
+**Visuals:** one clean exam timeline, four section cards, one danger-zone slide, one score-safety checklist.
+**Exercise tie-ins:** leads into Module 17 section drills and Module 18 writing/speaking exam lessons.
+**Estimated production time:** ~3.5 hours with prepared slide assets.

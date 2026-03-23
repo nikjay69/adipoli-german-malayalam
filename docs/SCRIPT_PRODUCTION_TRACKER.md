@@ -4,7 +4,7 @@
 > Architecture docs (Wave 1–5) define the scene-level structure.
 > This tracker records which scripts have been written as full, production-ready narration.
 >
-> **Last updated:** 2026-03-23 10:45 UTC (overnight cron — module planning run)
+> **Last updated:** 2026-03-23 15:45 UTC (quality pass cron — exam overview accuracy + Schreiben Teil 2 register-safety revision run)
 
 ---
 
@@ -195,4 +195,4 @@
 
 ---
 
-*Track updated by quality pass cron 2026-03-23 13:30 UTC — revised 4 more scripts from v1.0 → v2.0: v6-1-1 (German Foods — vocab blocks restructured into teach-3-drill cycles, accusative woven into vocab practice, 15% word reduction), v9-2-1 (Buying Tickets — hook tightened to 30s, counter questions merged into one section, Golden Dialogue made active with predict-before-reveal, 12→11min), v10-2-1 (Doctor Symptoms — symptoms split into 2 mini-blocks with drills, Golden Dialogue restructured as fill-in-the-patient exercise, 15% cut), v4-2-1 (Describing People — ist/hat pattern introduced from Section 2, personality traits trimmed to 5+3 most useful, description built incrementally layer-by-layer, 12→11min), v8-1-1 (Rooms & Furniture — Zimmer compound pattern made a "superpower" moment, teach-3-drill cycles, Es gibt woven into furniture practice, 12% cut). **Total: 52 full scripts, 38 confirmed at v2.0 quality** (previous 33 + v6-1-1, v9-2-1, v10-2-1, v4-2-1, v8-1-1). Consistent quality pass patterns: hooks under 40s with concrete payoff, teach→drill→apply cycles (no stacking), active recall before summaries, energy cues every section, Malayalam bridges as structural parallels, 10-20% word count reductions, specific practice pauses with prompts+reveals, Golden Dialogues use predict-then-reveal instead of passive listening.*
+*Track updated by quality pass cron 2026-03-23 15:45 UTC — revised 2 more core exam scripts for **accuracy + score-safe production use**: v17-1-1 (Exam overview — rebuilt around cleaner exam-format truth, safer section-by-section strategy, and less misleading "easy points" framing), v18-2-1 (Schreiben Teil 2 — rebuilt around read/plan/write/check workflow, stronger formal-vs-informal handling, and a safer formal model message for official contexts). **Total: 52 full scripts, 48 confirmed at v2.0+ quality**. This run started with a successful `git pull --rebase --autostash`; repo remains locally dirty from prior uncommitted docs/script work, so no push was attempted in this pass.*

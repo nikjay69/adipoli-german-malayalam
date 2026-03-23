@@ -1,5 +1,143 @@
 # Overnight Run Log — 2026-03-23
 
+## Run 9 — 15:45 UTC
+**Session:** Cron 12h script quality pass (exam overview + writing register-safety run)
+**Focus:** Upgrade weaker exam-core drafted scripts to `SCRIPT_QUALITY_STANDARD v2.0+` without expanding scope
+**Status:** ✅ 2 scripts materially revised; pull-first completed successfully; no push attempted
+
+### Work Completed
+
+Revised two high-leverage exam scripts where **accuracy + score-safe framing** mattered more than adding new content:
+
+1. **`v17-1-1_FULL_SCRIPT.md` — Goethe A1 Exam: Format, Strategy & Tips**
+   - Rebuilt the overview around a stricter **exam-format truth check** so the video does not teach fuzzy or overconfident section descriptions
+   - Simplified the section-by-section teaching into cleaner jobs: Hören = key info, Lesen = different reading tasks, Schreiben = form accuracy + 3-point checklist, Sprechen = interaction
+   - Removed some misleading "easy points" energy and replaced it with safer score-preservation guidance
+   - Strengthened the speaking explanation so learners understand Teil 2/3 as **interaction**, not just isolated sentence production
+   - Tightened logistics and strategy so the script is easier to film and less talk-heavy
+
+2. **`v18-2-1_FULL_SCRIPT.md` — Schreiben Teil 2: Short Messages**
+   - Rebuilt the lesson around a cleaner **read → plan → write → check** workflow
+   - Strengthened the **formal vs informal** decision rule so learners do not overapply one friendly template everywhere
+   - Revised the teacher/course example toward a safer **formal register** model for official/professional contexts
+   - Reduced word-count fixation and centered the script on the real scoring priority: **all 3 content points covered clearly**
+   - Added a stronger final 20-second self-check to reduce incomplete or register-mismatched answers
+
+### Tracker Update
+- Updated `docs/SCRIPT_PRODUCTION_TRACKER.md` to reflect this quality-pass run
+- Confirmed total remains **52 full scripts**, now **48 confirmed at v2.0+ quality**
+
+### Git / Repo Note
+- Completed the required pull-first step successfully with `git pull --rebase --autostash` (repo already up to date at run start)
+- Working tree still contains multiple earlier local modifications beyond this run, so I did **not** attempt a push from this pass
+- Future push work should stage intentionally, then do another pull/rebase before pushing
+
+### Files Updated This Run
+- `docs/scripts/v17-1-1_FULL_SCRIPT.md`
+- `docs/scripts/v18-2-1_FULL_SCRIPT.md`
+- `docs/SCRIPT_PRODUCTION_TRACKER.md`
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. Continue exam-core quality pass on **v18-1-1** and **v18-5-1** for final accuracy/pacing tightening
+2. Revisit **v17-2-1 / v17-3-1 / v17-1-1** as a trio only if the internal exam map changes again
+3. Do a deliberate git triage/commit/push pass only after reconciling the already-dirty tree
+
+## Run 8 — 15:10 UTC
+**Session:** Cron 12h script quality pass (Module 12 revision run)
+**Focus:** Upgrade weaker first-draft exam-adjacent scripts to `SCRIPT_QUALITY_STANDARD v2.0` without expanding scope
+**Status:** ✅ 2 scripts materially revised; git pull blocked by dirty working tree
+
+### Work Completed
+
+Revised two connected Module 12 scripts that were still sitting at first-draft quality:
+
+1. **`v12-4-1_FULL_SCRIPT.md` — Invitations: Invite / Accept / Decline**
+   - Rebuilt the opening around the real Goethe A1 payoff: **3 content points + short complete message**, not "write beautifully"
+   - Tightened the three templates into cleaner, more filmable cards: invite / accept / decline
+   - Added more active learner work: repeat drills, predict-before-reveal, fill-the-gap message practice, and two exam-style writing applications
+   - Made the exam truth more explicit: **simple + complete beats long + risky**
+   - Improved speaking transfer so the lesson feeds both Schreiben and social conversation
+
+2. **`v12-4-2_FULL_SCRIPT.md` — Weil: Giving Reasons**
+   - Cut lecture weight and centered the whole script on one usable rule: **after `weil`, the conjugated verb goes to the end**
+   - Reorganized the lesson into smaller teach → drill → apply cycles
+   - Focused the practice on 5 high-frequency A1 survival reasons instead of a broader but less teachable spread
+   - Added stronger correction drills and direct exam transfer for both **Schreiben Teil 2** and **Sprechen follow-up answers**
+   - Kept the Malayalam bridge, but made it shorter and more functional
+
+### Tracker Update
+- Updated `docs/SCRIPT_PRODUCTION_TRACKER.md` to reflect this quality-pass run
+- Confirmed total remains **52 full scripts**, now **46 confirmed at v2.0+ quality**
+
+### Blocker / Git Note
+- Attempted the required pull-first step, but `git pull --rebase` failed immediately because the repo already had **multiple unstaged local changes** in the working tree.
+- To avoid trampling those in-progress edits, I did **not** stash/reset/rebase forcefully.
+- Any future push attempt should start by reviewing/staging the existing dirty-tree changes, then doing a clean pull/rebase.
+
+### Files Updated This Run
+- `docs/scripts/v12-4-1_FULL_SCRIPT.md`
+- `docs/scripts/v12-4-2_FULL_SCRIPT.md`
+- `docs/SCRIPT_PRODUCTION_TRACKER.md`
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. Continue the same v2.0 quality pass on **Module 1 first-draft social scripts** (`v1-3-1`, `v1-3-2`, `v1-4-1`)
+2. Review **v12-2-1** and **v12-3-1** if a tighter Module 12 consistency pass is needed
+3. Do a clean git triage/rebase/push only after the current dirty working tree is intentionally reconciled
+
+## Run 7 — 15:01 UTC
+**Session:** Cron overnight module plan + script architecture (seventh run)
+**Focus:** Optional modules planning consistency pass so lower-priority docs still match the current course roadmap and enriched module blueprints
+**Status:** ✅ grouped optional-modules plan rewritten to current standard
+
+### Work Completed
+
+Reworked `docs/modules/MODULES_15_16_OPTIONAL_PLAN.md` so it no longer lags behind the richer per-module plans for Modules 15 and 16.
+
+### What changed
+1. **Module 15 (Culture & Integration)**
+   - Corrected the module scope from the older simplified view to the current enriched blueprint truth: **4 lessons, 6 videos, 0/6 scripts drafted**
+   - Reframed exam relevance from "none direct" to **low direct / real indirect value**
+   - Added a lesson-by-lesson architecture table covering teaching job, A1 relevance, script need, and priority for all six videos
+   - Added explicit teaching goal, essential outcomes, script direction, minimum worthwhile production layer, and a cleaner launch decision
+   - Clarified that Module 15 is a **real-life interpretation / culture-shock prevention module**, not an exam-prep module
+
+2. **Module 16 (A1+ Bonus Bridge)**
+   - Corrected the older simplified summary to match the current blueprint truth: **5 lessons, 8 videos, 0/8 scripts drafted**
+   - Rebuilt the planning summary around the newer priority order: reading strategy first, then dative pronouns, then `wo` vs `wohin`, then reflexives
+   - Added a full lesson-by-lesson architecture table with script jobs, A1 relevance, and production priority
+   - Added essential outcomes, script direction, minimum worthwhile production layer, and optionality guardrails
+   - Corrected the gating logic so **Module 16 does NOT block access to Modules 17–18**
+
+3. **Shared strategic cleanup**
+   - Added a top-level **Non-Negotiable Launch Rules** section so optional modules cannot accidentally expand into launch blockers
+   - Added shared production guidance to keep any future work on these modules small, reusable, and subordinate to exam-critical progress
+   - Made the grouped optional-modules file explicitly point to `MODULE_15_PLAN.md` and `MODULE_16_PLAN.md` as the detailed source of truth
+
+### Why this matters
+The repo already had strong detailed plans for Modules 15 and 16, but the grouped summary file was still from an older planning phase and was now misleading in a few places:
+- old script counts
+- outdated video counts
+- over-simplified exam relevance
+- incorrect gating language for Module 16
+
+This run fixes that mismatch so future overnight planning or production work does not accidentally follow stale assumptions.
+
+### Files Updated This Run
+- `docs/modules/MODULES_15_16_OPTIONAL_PLAN.md`
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Blocker / Note
+- Attempted shell-based git verification/pull at the start of the run, but `exec` again returned no visible output in this environment, so I could not reliably confirm branch / status / push state from shell.
+- Durable progress was still left in repo docs via direct file updates.
+
+### Good follow-up candidates for next run
+1. Do the same **consistency pass** for any other grouped docs whose summary may lag behind the richer per-module plans
+2. Review `docs/modules/README.md` and `INDEX.md` language around Modules 15–16 so the grouped/summary phrasing matches the optionality guardrails exactly
+3. If shell output is healthy again, run a clean git status / add / commit / rebase / push cycle for the planning-doc changes
+
+
 ## Run 6 — 12:45 UTC
 **Session:** Cron overnight module plan + script architecture (sixth run)
 **Focus:** Enrich thinner per-module planning docs so every module plan has a clear teaching blueprint, exam map, script direction, outcomes, and next-step architecture
