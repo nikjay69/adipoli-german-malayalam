@@ -4,7 +4,7 @@
 > Architecture docs (Wave 1–5) define the scene-level structure.
 > This tracker records which scripts have been written as full, production-ready narration.
 >
-> **Last updated:** 2026-03-23 04:00 UTC (overnight cron)
+> **Last updated:** 2026-03-23 06:45 UTC (overnight cron)
 
 ---
 
@@ -28,7 +28,7 @@
 | v18-3-1 | 18 | 18-3 | Sprechen Teil 1: Self-Introduction | 🔄 DRAFT | `docs/scripts/v18-3-1_FULL_SCRIPT.md` |
 | v18-4-1 | 18 | 18-4 | Sprechen Teil 2 & 3: Questions & Requests | 🔄 DRAFT | `docs/scripts/v18-4-1_FULL_SCRIPT.md` |
 | v18-5-1 | 18 | 18-5 | Full Mock Exam Tips | 📐 ARCH | Wave 1 doc |
-| v17-1-1 | 17 | 17-1 | Exam Format Overview & Tips | 📐 ARCH | Wave 1 doc |
+| v17-1-1 | 17 | 17-1 | Exam Format Overview & Tips | 🔄 DRAFT | `docs/scripts/v17-1-1_FULL_SCRIPT.md` |
 | v17-2-1 | 17 | 17-2 | Hören Practice | 📐 ARCH | Wave 1 doc |
 | v17-3-1 | 17 | 17-3 | Lesen Practice | 📐 ARCH | Wave 1 doc |
 | v2-1-1 | 2 | 2-1 | What's Your Name? | 🔄 DRAFT | `docs/scripts/v2-1-1_FULL_SCRIPT.md` |
@@ -45,16 +45,16 @@
 |----------|--------|--------|-------|--------|
 | v5-1-1 | 5 | 5-1 | How German Verbs Work | 🔄 DRAFT |
 | v5-1-2 | 5 | 5-1 | Practice with Common Verbs | 📐 ARCH |
-| v5-2-1 | 5 | 5-2 | Daily Activities Vocabulary | 📐 ARCH |
+| v5-2-1 | 5 | 5-2 | Daily Activities Vocabulary | 🔄 DRAFT | `docs/scripts/v5-2-1_FULL_SCRIPT.md` |
 | v5-3-1 | 5 | 5-3 | Separable Verbs | 🔄 DRAFT | `docs/scripts/v5-3-1_FULL_SCRIPT.md` |
-| v5-4-1 | 5 | 5-4 | Describing Your Day | 📐 ARCH |
+| v5-4-1 | 5 | 5-4 | Describing Your Day | 🔄 DRAFT | `docs/scripts/v5-4-1_FULL_SCRIPT.md` |
 | v13-1-1 | 13 | 13-1 | Perfekt with haben | 🔄 DRAFT | `docs/scripts/v13-1-1_FULL_SCRIPT.md` |
 | v13-2-1 | 13 | 13-2 | Perfekt with sein | 🔄 DRAFT | `docs/scripts/v13-2-1_FULL_SCRIPT.md` |
-| v13-3-1 | 13 | 13-3 | Irregular Past Participles | 📐 ARCH |
-| v13-4-1 | 13 | 13-4 | Talking About Your Weekend | 📐 ARCH |
+| v13-3-1 | 13 | 13-3 | Irregular Past Participles | 🔄 DRAFT | `docs/scripts/v13-3-1_FULL_SCRIPT.md` |
+| v13-4-1 | 13 | 13-4 | Talking About Your Weekend | 🔄 DRAFT | `docs/scripts/v13-4-1_FULL_SCRIPT.md` |
 | v3-1-1 | 3 | 3-1 | Numbers 0–10 | 🔄 DRAFT | `docs/scripts/v3-1-1_FULL_SCRIPT.md` |
 | v3-2-1 | 3 | 3-2 | Numbers 21–100+ | 🔄 DRAFT | `docs/scripts/v3-2-1_FULL_SCRIPT.md` |
-| v3-3-1 | 3 | 3-3 | Telling Time | 📐 ARCH |
+| v3-3-1 | 3 | 3-3 | Telling Time | 🔄 DRAFT | `docs/scripts/v3-3-1_FULL_SCRIPT.md` |
 | v3-4-1 | 3 | 3-4 | Days, Months, Dates | 📐 ARCH |
 
 ## Wave 3 — Practical Conversations
@@ -82,19 +82,19 @@
 |----------|--------|--------|-------|--------|
 | v1-1-1 | 1 | 1-1 | Why German? A Malayali's Gateway | 📐 ARCH |
 | v1-1-2 | 1 | 1-1 | Career Paths & Life in Germany | 📐 ARCH |
-| v1-2-1 | 1 | 1-2 | German Sounds & Alphabet | 📐 ARCH |
+| v1-2-1 | 1 | 1-2 | German Sounds & Alphabet | 🔄 DRAFT | `docs/scripts/v1-2-1_FULL_SCRIPT.md` |
 | v1-2-2 | 1 | 1-2 | Tricky Sounds for Malayalis | 📐 ARCH |
-| v1-3-1 | 1 | 1-3 | Greetings & Goodbyes | 📐 ARCH |
+| v1-3-1 | 1 | 1-3 | Greetings & Goodbyes | 🔄 DRAFT | `docs/scripts/v1-3-1_FULL_SCRIPT.md` |
 | v1-4-1 | 1 | 1-4 | First Conversations | 📐 ARCH |
 | v7-1-1 | 7 | 7-1 | At the Supermarket | 📐 ARCH |
 | v7-2-1 | 7 | 7-2 | Clothes Shopping | 📐 ARCH |
 | v7-3-1 | 7 | 7-3 | Prices & Comparing | 📐 ARCH |
 | v8-1-1 | 8 | 8-1 | Rooms & Furniture | 📐 ARCH |
 | v8-2-1 | 8 | 8-2 | Describing Your Home | 📐 ARCH |
-| v8-3-1 | 8 | 8-3 | Reading Wohnungsanzeigen | 📐 ARCH |
+| v8-3-1 | 8 | 8-3 | Reading Wohnungsanzeigen | 🔄 DRAFT | `docs/scripts/v8-3-1_FULL_SCRIPT.md` |
 | v11-1-1 | 11 | 11-1 | Professions in Detail | 📐 ARCH |
 | v11-2-1 | 11 | 11-2 | Workplace Vocabulary | 📐 ARCH |
-| v11-3-1 | 11 | 11-3 | German Email Writing | 📐 ARCH |
+| v11-3-1 | 11 | 11-3 | German Email Writing | 🔄 DRAFT | `docs/scripts/v11-3-1_FULL_SCRIPT.md` |
 | v12-1-1 | 12 | 12-1 | Hobbies | 📐 ARCH |
 | v12-2-1 | 12 | 12-2 | Weather | 📐 ARCH |
 | v12-3-1 | 12 | 12-3 | Making Plans & Invitations | 📐 ARCH |
@@ -120,7 +120,7 @@
 
 | Category | Count |
 |----------|-------|
-| Full scripts (🔄 DRAFT or ✅ DONE) | **19** |
+| Full scripts (🔄 DRAFT or ✅ DONE) | **29** |
 | Scene architectures (📐 ARCH) | **~56** |
 | Outline only (⬜) | **0** — all now have at least architecture |
 
@@ -143,12 +143,22 @@
 15. ~~**v4-1-1** — Family Members (article system through family vocab)~~ ✅ DRAFTED
 16. ~~**v5-3-1** — Separable Verbs (verb frame concept)~~ ✅ DRAFTED
 17. ~~**v4-3-1** — Possessive Pronouns (mein/meine grammar)~~ ✅ DRAFTED
-18. **v8-3-1** — Reading Wohnungsanzeigen (exam-classic Lesen item)
-19. **v11-3-1** — German Email Writing (Schreiben prep)
-20. **v17-1-1** — Exam Format Overview & Tips (strategy video)
-21. **v5-2-1** — Daily Activities Vocabulary
-22. **v1-2-1** — German Sounds & Alphabet (pronunciation foundation)
+18. ~~**v8-3-1** — Reading Wohnungsanzeigen (exam-classic Lesen item)~~ ✅ DRAFTED
+19. ~~**v11-3-1** — German Email Writing (Schreiben prep)~~ ✅ DRAFTED
+20. ~~**v17-1-1** — Exam Format Overview & Tips (strategy video)~~ ✅ DRAFTED
+21. ~~**v5-2-1** — Daily Activities Vocabulary~~ ✅ DRAFTED
+22. ~~**v1-2-1** — German Sounds & Alphabet (pronunciation foundation)~~ ✅ DRAFTED
+23. ~~**v5-4-1** — Describing Your Day (ties routine together)~~ ✅ DRAFTED
+24. ~~**v13-3-1** — Irregular Past Participles~~ ✅ DRAFTED
+25. ~~**v13-4-1** — Talking About Your Weekend (Module 13 culmination)~~ ✅ DRAFTED
+26. ~~**v3-3-1** — Telling Time (halb trap, exam-critical)~~ ✅ DRAFTED
+27. ~~**v1-3-1** — Greetings & Goodbyes~~ ✅ DRAFTED
+28. **v12-4-1** — Invitation Writing (Schreiben Teil 2 core)
+29. **v3-4-1** — Days, Months, Dates (form dates, exam Geburtsdatum)
+30. **v12-4-2** — Weil-Clauses: Giving Reasons
+31. **v1-4-1** — Your First German Conversation
+32. **v1-3-2** — Auf Wiedersehen! Saying Goodbye
 
 ---
 
-*Track updated by overnight cron 2026-03-23 05:57 UTC — added v6-2-1 (Drinks & Ordering), v4-1-1 (Family Members), v5-3-1 (Separable Verbs), and v4-3-1 (Possessive Pronouns) drafts. Total: 19 full scripts drafted across Waves 1–3.*
+*Track updated by overnight cron 2026-03-23 07:00 UTC — added v5-4-1 (Describing Your Day), v13-3-1 (Irregular Past Participles), v13-4-1 (Talking About Your Weekend), v3-3-1 (Telling Time — halb trap), and v1-3-1 (German Greetings). Total: 29 full scripts drafted across Waves 1–4. Module 5 and Module 13 now have ALL lessons fully scripted. Module 3 has 3 of 4 lessons scripted (missing: v3-4-1 Days/Months/Dates).*

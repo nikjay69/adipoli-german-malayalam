@@ -2,7 +2,7 @@
 
 > Master planning doc: teaching goals, A1 exam relevance, lesson/video script needs, essential outcomes, and future script direction for each module.
 >
-> **Last updated:** 2026-03-23 06:10 UTC (overnight cron — ALL 18 module blueprints + ALL 5 wave architectures complete; 19/~60 full scripts drafted)
+> **Last updated:** 2026-03-23 07:00 UTC (overnight cron — ALL 18 module blueprints + ALL 5 wave architectures complete; 29/~60 full scripts drafted)
 
 ---
 
@@ -33,8 +33,8 @@ Reduce fear, build motivation, and establish correct German pronunciation from d
 | Lesson | Title | Script Status | Script Priority |
 |--------|-------|---------------|-----------------|
 | 1-1 | Why Learn German? | Outline only | MEDIUM — motivational, can be looser |
-| 1-2 | German Sounds & Alphabet | Outline only | HIGH — pronunciation is foundational |
-| 1-3 | Greetings & Goodbyes | Outline only | HIGH — first real German production |
+| 1-2 | German Sounds & Alphabet | 🔄 DRAFT (`docs/scripts/v1-2-1_FULL_SCRIPT.md`) | HIGH — pronunciation is foundational |
+| 1-3 | Greetings & Goodbyes | 🔄 DRAFT (`docs/scripts/v1-3-1_FULL_SCRIPT.md`) | HIGH — first real German production |
 | 1-4 | First Conversations | Outline only | HIGH — sets the pattern for all speaking |
 
 ### Essential Outcomes
@@ -112,7 +112,7 @@ Make numbers 0–100, time-telling, dates, and scheduling automatic. These appea
 |--------|-------|---------------|-----------------|
 | 3-1 | Numbers 0-20 | Outline only | HIGH — foundation for all numbers |
 | 3-2 | Numbers 21-100+ | Outline only | HIGH — reversed order is a trap |
-| 3-3 | Telling Time | Outline only | HIGH — exam-critical |
+| 3-3 | Telling Time | 🔄 DRAFT (`docs/scripts/v3-3-1_FULL_SCRIPT.md`) | HIGH — exam-critical |
 | 3-4 | Days, Months, Dates | Outline only | MEDIUM — formulaic but needed |
 
 ### Essential Outcomes
@@ -190,7 +190,7 @@ Regular verb conjugation in present tense + daily routine vocabulary. This is wh
 | 5-1 | Regular Verbs Present Tense | Outline only | CRITICAL — grammar backbone |
 | 5-2 | Daily Activities | Outline only | HIGH — routine vocabulary |
 | 5-3 | Separable Verbs | 🔄 DRAFT (`docs/scripts/v5-3-1_FULL_SCRIPT.md`) | HIGH — tricky but essential |
-| 5-4 | Describing Your Day | Outline only | HIGH — ties it all together |
+| 5-4 | Describing Your Day | 🔄 DRAFT (`docs/scripts/v5-4-1_FULL_SCRIPT.md`) | HIGH — ties it all together |
 
 ### Essential Outcomes
 - [ ] Conjugate regular verbs for all persons (ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie -en)
@@ -491,8 +491,8 @@ Perfekt tense with haben and sein. This is the most important grammar module —
 |--------|-------|---------------|-----------------|
 | 13-1 | Perfekt with haben | Outline only | CRITICAL — most common pattern |
 | 13-2 | Perfekt with sein | Outline only | CRITICAL — movement/change verbs |
-| 13-3 | Irregular Past Participles | Outline only | HIGH — memorization-heavy |
-| 13-4 | Talking About Your Weekend | Outline only | HIGH — ties grammar to production |
+| 13-3 | Irregular Past Participles | 🔄 DRAFT (`docs/scripts/v13-3-1_FULL_SCRIPT.md`) | HIGH — memorization-heavy |
+| 13-4 | Talking About Your Weekend | 🔄 DRAFT (`docs/scripts/v13-4-1_FULL_SCRIPT.md`) | HIGH — ties grammar to production |
 
 ### Essential Outcomes
 - [ ] Form Perfekt with haben: "Ich habe Deutsch gelernt" / "Ich habe gekocht"
@@ -883,4 +883,6 @@ Based on A1 exam impact, the recommended script creation order is:
 - ✅ v4-3-1 — Possessive Pronouns (FIRST DRAFT) → `docs/scripts/v4-3-1_FULL_SCRIPT.md`
 - See `docs/SCRIPT_PRODUCTION_TRACKER.md` for full status across all ~60 videos.
 
-*Next priorities: (1) Write v8-3-1 full script (Reading Wohnungsanzeigen — exam-classic Lesen item). (2) Write v11-3-1 full script (German Email Writing — Schreiben prep). (3) Write v17-1-1 full script (Exam Format Overview & Tips). (4) Write v5-2-1 full script (Daily Activities Vocabulary). (5) Wire edge-tts audio pipeline for Hören exercises. (6) Implement production exercise types (free-text, dictation) in Exercise interface.*
+*Next priorities: (1) Write v12-4-1 full script (Invitation Writing — Schreiben Teil 2 core). (2) Write v3-4-1 full script (Days, Months, Dates — form dates for exam). (3) Write v12-4-2 full script (Weil-Clauses: Giving Reasons). (4) Write v1-4-1 full script (Your First German Conversation). (5) Wire edge-tts audio pipeline for Hören exercises. (6) Implement production exercise types (free-text, dictation) in Exercise interface.*
+
+**Modules with ALL lessons fully scripted:** Module 5 (Daily Routine — 4/4), Module 13 (Past Tense — 4/4), Module 18 (Exam Schreiben & Sprechen — 4/4).
