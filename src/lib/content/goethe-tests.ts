@@ -57,12 +57,10 @@ export interface HoerenTeil3Question {
 //
 // Note: Our Teil 1 uses MC (a/b/c) and Teil 2 uses R/F — close enough for practice,
 // the content topics and ordering now match the real exam.
-export type LesenQuestion = LesenEmailQuestion | LesenAdQuestion | LesenSignQuestion;
-
 export interface LesenSection {
-  teil1: LesenQuestion[];
-  teil2: LesenQuestion[];
-  teil3: LesenQuestion[];
+  teil1: LesenEmailQuestion[];  // 5 emails/messages (MC a/b/c)
+  teil2: LesenAdQuestion[];     // 5 ads/classifieds (Richtig/Falsch)
+  teil3: LesenSignQuestion[];   // 5 signs/notices (Richtig/Falsch)
 }
 
 export interface LesenEmailQuestion {
@@ -2578,38 +2576,56 @@ const test8: GoetheTest = {
     teil1: [
       {
         id: 't8-l1-1',
-        text: 'KINO ROYAL\nHeute: „Der Untergang" — 20:00 Uhr\nEintritt: Erwachsene 10 €, ermäßigt 7 €\nMittwoch = Kinotag: alle Filme 6 €!',
-        statement: 'Am Mittwoch sind alle Filme günstiger.',
-        correct: true,
-        explanation: 'Wednesday is cinema day (Kinotag) with all films at 6 Euro — that is cheaper.',
+        email_text:
+          'Hallo Arjun,\nwir machen am Samstag einen Spieleabend bei mir zu Hause! Wir spielen Karten und Brettspiele. Kommst du auch? Wir fangen um 19 Uhr an. Bring gern Snacks mit!\nBis Samstag!\nFelix',
+        question: 'Was passiert am Samstag?',
+        options: ['Eine Geburtstagsparty', 'Ein Spieleabend', 'Ein Filmabend'],
+        correct: 'b',
+        explanation: 'Felix is hosting a game night (Spieleabend).',
       },
       {
         id: 't8-l1-2',
-        text: 'GRILLVERBOT im Stadtpark!\nGrillen nur auf dem offiziellen Grillplatz am See erlaubt.',
-        statement: 'Man darf überall im Park grillen.',
-        correct: false,
-        explanation: 'Grilling is only allowed at the official barbecue area by the lake.',
+        email_text:
+          'Liebe Nachbarn,\nam 1. Mai feiern wir unser Straßenfest! Von 14 bis 20 Uhr auf der Gartenstraße. Es gibt Grill, Kuchen und Musik. Jede Familie bringt bitte einen Kuchen oder Salat mit. Bei Regen feiern wir im Gemeindesaal.\nViele Grüße\nIhr Nachbarschaftsverein',
+        question: 'Was passiert bei Regen?',
+        options: [
+          'Das Fest fällt aus.',
+          'Sie feiern im Gemeindesaal.',
+          'Sie feiern am nächsten Tag.',
+        ],
+        correct: 'b',
+        explanation: 'If it rains, the party moves to the community hall (Gemeindesaal).',
       },
       {
         id: 't8-l1-3',
-        text: 'Volksfest Rosenheim\n12.–20. August\nEintritt frei!\nFahrgeschäfte, Bierzelt, Live-Musik\nKinderprogramm jeden Nachmittag',
-        statement: 'Das Volksfest dauert neun Tage.',
-        correct: true,
-        explanation: 'From August 12 to 20 is nine days.',
+        email_text:
+          'Hallo zusammen,\nich habe zwei Karten für das Fußballspiel FC Bayern gegen Dortmund am Samstag. Wer möchte mitkommen? Das Spiel beginnt um 15:30 Uhr in der Allianz Arena. Bitte schnell antworten — die Karten sind sehr beliebt!\nViele Grüße\nChris',
+        question: 'Wo ist das Fußballspiel?',
+        options: ['Im Olympiastadion', 'In der Allianz Arena', 'Im Westfalenstadion'],
+        correct: 'b',
+        explanation: 'The match is in the Allianz Arena.',
       },
       {
         id: 't8-l1-4',
-        text: 'HALLENBAD ÖFFNUNGSZEITEN\nMo–Fr: 6:30–21:00\nSa, So: 8:00–20:00\nDienstag ab 18 Uhr: nur für Frauen',
-        statement: 'Am Dienstagabend können Männer schwimmen.',
-        correct: false,
-        explanation: 'Tuesday from 18:00 is women only (nur für Frauen).',
+        email_text:
+          'Liebe Kursteilnehmer,\nam letzten Kurstag (Freitag, 15. Dezember) machen wir eine kleine Weihnachtsfeier. Bitte bringt etwas zu essen oder zu trinken mit — gern etwas Typisches aus eurem Land! Um 17 Uhr beginnen wir.\nViele Grüße\nEure Lehrerin, Frau Sommer',
+        question: 'Was sollen die Kursteilnehmer mitbringen?',
+        options: [
+          'Geschenke',
+          'Etwas Typisches aus ihrem Land zum Essen oder Trinken',
+          'Fotos',
+        ],
+        correct: 'b',
+        explanation: 'They should bring typical food or drink from their country.',
       },
       {
         id: 't8-l1-5',
-        text: 'Flohmarkt am Rathausplatz\nJeden ersten Sonntag im Monat\n8:00–15:00 Uhr\nStandgebühr: 10 €\nAnmeldung: flohmarkt@stadt.de',
-        statement: 'Der Flohmarkt ist jede Woche.',
-        correct: false,
-        explanation: 'The flea market is every first Sunday of the month, not every week.',
+        email_text:
+          'Hallo Priya,\ngestern war ich auf dem Tollwood-Festival in München. Die Atmosphäre war super! Es gab Live-Musik, Theater und leckeres Essen aus verschiedenen Ländern. Nächstes Mal musst du unbedingt mitkommen!\nLiebe Grüße\nMeena',
+        question: 'Wie fand Meena das Festival?',
+        options: ['Langweilig', 'Super', 'Zu teuer'],
+        correct: 'b',
+        explanation: 'Meena says the atmosphere was great (super).',
       },
     ],
     teil2: [
@@ -2652,56 +2668,38 @@ const test8: GoetheTest = {
     teil3: [
       {
         id: 't8-l3-1',
-        email_text:
-          'Hallo Arjun,\nwir machen am Samstag einen Spieleabend bei mir zu Hause! Wir spielen Karten und Brettspiele. Kommst du auch? Wir fangen um 19 Uhr an. Bring gern Snacks mit!\nBis Samstag!\nFelix',
-        question: 'Was passiert am Samstag?',
-        options: ['Eine Geburtstagsparty', 'Ein Spieleabend', 'Ein Filmabend'],
-        correct: 'b',
-        explanation: 'Felix is hosting a game night (Spieleabend).',
+        text: 'KINO ROYAL\nHeute: „Der Untergang" — 20:00 Uhr\nEintritt: Erwachsene 10 €, ermäßigt 7 €\nMittwoch = Kinotag: alle Filme 6 €!',
+        statement: 'Am Mittwoch sind alle Filme günstiger.',
+        correct: true,
+        explanation: 'Wednesday is cinema day (Kinotag) with all films at 6 Euro — that is cheaper.',
       },
       {
         id: 't8-l3-2',
-        email_text:
-          'Liebe Nachbarn,\nam 1. Mai feiern wir unser Straßenfest! Von 14 bis 20 Uhr auf der Gartenstraße. Es gibt Grill, Kuchen und Musik. Jede Familie bringt bitte einen Kuchen oder Salat mit. Bei Regen feiern wir im Gemeindesaal.\nViele Grüße\nIhr Nachbarschaftsverein',
-        question: 'Was passiert bei Regen?',
-        options: [
-          'Das Fest fällt aus.',
-          'Sie feiern im Gemeindesaal.',
-          'Sie feiern am nächsten Tag.',
-        ],
-        correct: 'b',
-        explanation: 'If it rains, the party moves to the community hall (Gemeindesaal).',
+        text: 'GRILLVERBOT im Stadtpark!\nGrillen nur auf dem offiziellen Grillplatz am See erlaubt.',
+        statement: 'Man darf überall im Park grillen.',
+        correct: false,
+        explanation: 'Grilling is only allowed at the official barbecue area by the lake.',
       },
       {
         id: 't8-l3-3',
-        email_text:
-          'Hallo zusammen,\nich habe zwei Karten für das Fußballspiel FC Bayern gegen Dortmund am Samstag. Wer möchte mitkommen? Das Spiel beginnt um 15:30 Uhr in der Allianz Arena. Bitte schnell antworten — die Karten sind sehr beliebt!\nViele Grüße\nChris',
-        question: 'Wo ist das Fußballspiel?',
-        options: ['Im Olympiastadion', 'In der Allianz Arena', 'Im Westfalenstadion'],
-        correct: 'b',
-        explanation: 'The match is in the Allianz Arena.',
+        text: 'Volksfest Rosenheim\n12.–20. August\nEintritt frei!\nFahrgeschäfte, Bierzelt, Live-Musik\nKinderprogramm jeden Nachmittag',
+        statement: 'Das Volksfest dauert neun Tage.',
+        correct: true,
+        explanation: 'From August 12 to 20 is nine days.',
       },
       {
         id: 't8-l3-4',
-        email_text:
-          'Liebe Kursteilnehmer,\nam letzten Kurstag (Freitag, 15. Dezember) machen wir eine kleine Weihnachtsfeier. Bitte bringt etwas zu essen oder zu trinken mit — gern etwas Typisches aus eurem Land! Um 17 Uhr beginnen wir.\nViele Grüße\nEure Lehrerin, Frau Sommer',
-        question: 'Was sollen die Kursteilnehmer mitbringen?',
-        options: [
-          'Geschenke',
-          'Etwas Typisches aus ihrem Land zum Essen oder Trinken',
-          'Fotos',
-        ],
-        correct: 'b',
-        explanation: 'They should bring typical food or drink from their country.',
+        text: 'HALLENBAD ÖFFNUNGSZEITEN\nMo–Fr: 6:30–21:00\nSa, So: 8:00–20:00\nDienstag ab 18 Uhr: nur für Frauen',
+        statement: 'Am Dienstagabend können Männer schwimmen.',
+        correct: false,
+        explanation: 'Tuesday from 18:00 is women only (nur für Frauen).',
       },
       {
         id: 't8-l3-5',
-        email_text:
-          'Hallo Priya,\ngestern war ich auf dem Tollwood-Festival in München. Die Atmosphäre war super! Es gab Live-Musik, Theater und leckeres Essen aus verschiedenen Ländern. Nächstes Mal musst du unbedingt mitkommen!\nLiebe Grüße\nMeena',
-        question: 'Wie fand Meena das Festival?',
-        options: ['Langweilig', 'Super', 'Zu teuer'],
-        correct: 'b',
-        explanation: 'Meena says the atmosphere was great (super).',
+        text: 'Flohmarkt am Rathausplatz\nJeden ersten Sonntag im Monat\n8:00–15:00 Uhr\nStandgebühr: 10 €\nAnmeldung: flohmarkt@stadt.de',
+        statement: 'Der Flohmarkt ist jede Woche.',
+        correct: false,
+        explanation: 'The flea market is every first Sunday of the month, not every week.',
       },
     ],
   },
