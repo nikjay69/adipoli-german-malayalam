@@ -1,10 +1,10 @@
 # v14-1-1 — Anmeldung: Your First Official Act in Germany (FULL SCRIPT)
 
-> **Module:** 14 | **Lesson:** 14-1 | **Duration:** 12:00 target
+> **Module:** 14 | **Lesson:** 14-1 | **Duration:** 10:30 target
 > **Teaching Goal:** Master the Anmeldung process and form-filling — the FIRST thing every immigrant must do in Germany
 > **A1 Exam Link:** Schreiben Teil 1 (form-filling), Lesen (official letters/notices), Hören (office conversations)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
@@ -12,329 +12,273 @@
 
 ### Visual: [Course intro animation / Adipoli German branding]
 ### Narration:
-"Willkommen bei Adipoli German! Today — the MOST important thing you'll do in your first two weeks in Germany."
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — No Anmeldung, No Life (0:15–1:30)
+## Section 1: Hook — Your First 14 Days (0:15–0:50)
 
-### Visual: [SLIDE: "ANMELDUNG = Your Golden Ticket 🎫" with a visual flowchart showing: Anmeldung → Bank Account → Phone Contract → Health Insurance → Everything Else]
-### Narration:
-"Okay machane, listen. The VERY FIRST thing you have to do when you arrive in Germany — not unpack, not find a restaurant — is register at the Bürgeramt. This is called the *Anmeldung*.
+### Visual: [FORM: Real Anmeldeformular on screen, half-filled. Counter overlay: "14 DAYS ⏰"]
+### Narration: [ENERGY: urgent, direct]
+"You land in Germany. You have exactly 14 days to fill out THIS form and register at the Bürgeramt. Miss it — fine. Get it right — bank account, phone, insurance, tax ID, everything unlocks.
 
-*India-yil Aadhaar card-nte importance ariyamallo? Germany-yil Anmeldung athilum important aanu!*
-
-Without your Anmeldung, you can't:
-- Open a bank account
-- Get a SIM card or phone contract
-- Register for health insurance
-- Get your Steuer-ID (tax number)
-- Basically do ANYTHING official
-
-And here's the scary part — you have exactly **14 days** after moving in to register. Miss it, and you could face a fine.
-
-*Pakshe pedikkenda — ithu simple aanu. Njaan kaanikkaam.*"
+After this video, you'll fill out every field correctly. Let's go."
 
 ---
 
-## Section 2: Where to Go (1:30–3:00)
+## Section 2: The Process — Where, When, What (0:50–2:30)
 
-### Visual: [SLIDE: Photo of a typical Bürgeramt/Rathaus exterior, then a screen showing online appointment booking]
-### Narration:
-"You need to go to the **Bürgeramt** or **Einwohnermeldeamt**. Some cities call it the **Rathaus** or **Bürgerbüro**. Different names, same place — the city registration office.
+### Visual: [DIAGRAM: 3-step flow: Book Termin → Gather Documents → Go to Bürgeramt]
+### Narration: [ENERGY: clear, organized]
+"Three steps. That's it.
 
-### Key Vocabulary Overlay:
-- **das Bürgeramt** — citizens' office
-- **das Einwohnermeldeamt** — residents' registration office
-- **das Rathaus** — city hall / town hall
-- **der Termin** — appointment
+**Step 1: Book a Termin.** An appointment. You CANNOT walk in without one.
 
-⚠️ CRITICAL: **You need a Termin!** In most German cities, you CANNOT just walk in. You must book an appointment online.
+*Kerala-le Collectorate aayi compare cheyyaam — but Germany-yil queue illa, system aanu. Appointment illaathavar-kku door thurakaatha system.*
 
-How to book:
-1. Search: '[Your city] Bürgeramt Termin'
-2. Select 'Anmeldung einer Wohnung'
-3. Pick a date and time
-4. Save/print the confirmation
+Search online: '[your city] Bürgeramt Termin'. Select 'Anmeldung einer Wohnung'. Pick a slot. Print the confirmation.
 
-*Kerala-le Collectorate-il line nilkkumbol pole alla — Germany-yil appointment system aanu. Appointment illenkil inside kayaraan sammatikkilla!*
+⏸️ Quick — what's the German word for appointment? Say it out loud.
 
-Some cities are booked weeks ahead — so book the DAY you arrive or even before!"
+### Practice Pause: ⏸️ (2 seconds)
 
----
+**der Termin!** Good.
 
-## Section 3: What to Bring (3:00–4:30)
+**Step 2: Gather your documents.** Four things — miss one, they send you home.
 
-### Visual: [SLIDE: Document checklist with checkboxes, each item appearing one by one with icons]
-### Narration:
-"Here's your document checklist. Bring ALL of these — if even one is missing, they'll send you home and you lose your appointment.
+[SLIDE: Document checklist appearing one by one]
 
-### Document Checklist:
-- ✅ **Reisepass** — your passport (ORIGINAL, not a copy!)
-- ✅ **Mietvertrag** — your rental contract
-- ✅ **Wohnungsgeberbestätigung** — confirmation from your landlord that you live there. This is a special German thing — your landlord MUST give you this form, filled out and signed.
-- ✅ **Terminbestätigung** — your appointment confirmation (print it!)
-- ✅ Optional: **Heiratsurkunde** — marriage certificate (if registering as married)
+1. **Reisepass** — your passport, ORIGINAL
+2. **Mietvertrag** — rental contract
+3. **Wohnungsgeberbestätigung** — your landlord's written confirmation that you live there
+4. **Terminbestätigung** — your appointment printout
 
-### Key Vocabulary Overlay:
-- **der Reisepass** — passport
-- **der Mietvertrag** — rental contract
-- **die Wohnungsgeberbestätigung** — landlord's confirmation of residence
-- **die Terminbestätigung** — appointment confirmation
+The Wohnungsgeberbestätigung is the one everyone forgets. Your landlord is legally required to give it. If they don't know — show them the form, it's downloadable.
 
-*Ithu ellaam oru folder-il eduthu vaayikkanam. Germans LOVE organisation — athu avarude bhasha aanu!*
+⏸️ Which document do people forget most? What's it called?
 
-The **Wohnungsgeberbestätigung** is the one people forget most. Your landlord is LEGALLY required to give it to you. If they don't know about it, show them — it's a standard form you can download online."
+### Practice Pause: ⏸️ (3 seconds)
+
+**die Wohnungsgeberbestätigung!** The landlord confirmation. Lock that word in.
+
+**Step 3: Go to the Bürgeramt.** Some cities call it Einwohnermeldeamt, Rathaus, or Bürgerbüro — same place. Bring your folder, fill the form, done."
 
 ---
 
-## Section 4: The Anmeldeformular — Field by Field (4:30–8:00)
+## Section 3: Form Fields — Identity Block (2:30–4:45)
 
-### Visual: [FORM: A realistic-looking Anmeldeformular appearing on screen. Each field highlights and zooms in as it's discussed.]
-### Narration:
+### Visual: [FORM: Anmeldeformular on screen. Fields 1–4 highlighted as a group.]
+### Narration: [ENERGY: teaching, precise]
+"Now the form itself — the **Anmeldeformular**. Let's fill it together. I'll teach in blocks of 3-4 fields, then you practice each block.
 
-"Now — the form itself. The **Anmeldeformular**. Let's fill it out together, field by field. I'll show you exactly what goes where.
-
----
-
-### Field 1: Familienname
+### Fields 1–2: Familienname & Vornamen
 
 [FORM: Familienname field zooms in, golden highlight]
 
-Your family name. Your surname. *Nammude veettu peru.*
+**Familienname** = your surname. The name your whole FAMILY shares.
+**Vornamen** = your first name(s). All of them, as on your passport.
 
-If your passport says 'Nikhil JAYANTH', then your Familienname is **Jayanth**.
+*Think of it like Malayalam compound names — 'veettu peru' vs 'swa-ntham peru'. Familienname is always the veettu peru.*
 
-**⚠️ TRAP:** Don't write your first name here! 'Familienname' means FAMILY name, not 'name of family member'.
-
-⏸️ Write your Familienname now!
-
-### Practice Pause: ⏸️ (3 seconds)
-
----
-
-### Field 2: Vornamen
-
-[FORM: Vornamen field highlights]
-
-Your first name(s). ALL of them, as they appear on your passport.
-
-If your passport says 'NIKHIL KRISHNA', write: **Nikhil Krishna**.
-
-*India-le passport-il middle name undenkil, athu koodi ezhuthanam!*
-
-⏸️ Write your Vornamen!
-
-### Practice Pause: ⏸️ (3 seconds)
-
----
+[SLIDE: ❌ Familienname: Nikhil → WRONG — that's Vorname!]
+[SLIDE: ✅ Familienname: Jayanth | Vornamen: Nikhil → CORRECT]
 
 ### Field 3: Geburtsdatum
 
-[FORM: Geburtsdatum field highlights]
+Date of birth. German format: **TT.MM.JJJJ** — dots, not slashes!
 
-Date of birth. And here comes the MOST IMPORTANT thing about German dates:
+*India-yilum day-first format aanu, so the ORDER is the same. Just swap your slashes for dots — that's the only change.*
 
-**German date format: TT.MM.JJJJ**
-
-That means: Day . Month . Year
-
-With DOTS, not slashes!
-
-[SLIDE: ❌ 05/15/1995 (American) → WRONG]
-[SLIDE: ❌ 15/05/1995 (Indian with slashes) → CLOSE BUT WRONG]
-[SLIDE: ✅ 15.05.1995 → CORRECT ✅]
-
-*India-yil date format almost same aanu — day first, month second. But Germany-yil slashes alla, DOTS aanu. Athum remember cheyyathe pokunnu palarum!*
-
-⏸️ Write your Geburtsdatum in German format now!
-
-### Practice Pause: ⏸️ (3 seconds)
-
----
+[DIAGRAM: 15/03/1995 → 15.03.1995 (slash becomes dot)]
 
 ### Field 4: Geburtsort
 
-[FORM: Geburtsort field highlights]
+Place of birth. Your CITY — not country, not date.
 
-Place of birth. The CITY you were born in.
+**Geburts-ORT** — Ort = place. **Geburts-DATUM** — Datum = date. The ending tells you what to write.
 
-Write: **Kochi** or **Thiruvananthapuram** or **Thrissur** — whatever is on your passport.
+*Same logic as Malayalam compound words: the second part tells you the type. 'Janma-sthalam' = birth-PLACE. 'Janma-divasam' = birth-DATE.*
 
-**⚠️ TRAP:** Geburtsort ≠ Geburtsdatum! Ort = place. Datum = date. Don't write a date here!
+⏸️ **Your turn!** Fill these 4 fields for yourself right now — on paper or in your head:
+- Familienname: ___
+- Vornamen: ___
+- Geburtsdatum: ___.___._____
+- Geburtsort: ___
 
-*'Ort' enna padam 'sthalam' ennu artham. 'Datum' aanu 'thiyyathi'. Mix cheyyaruthe!*
+### Practice Pause: ⏸️ (8 seconds)
+
+[SLIDE: Model answer — Familienname: Jayanth | Vornamen: Nikhil | Geburtsdatum: 15.08.1995 | Geburtsort: Kochi]
+
+Check yours. Did you use dots for the date? Is your surname under Familienname, not Vorname?"
 
 ---
+
+## Section 4: Form Fields — Status Block (4:45–6:30)
+
+### Visual: [FORM: Fields 5–7 highlighted]
+### Narration: [ENERGY: brisk, confident]
+"Next block — three quick fields.
 
 ### Field 5: Geschlecht
 
-[FORM: Geschlecht field highlights — showing m / w / d options]
-
-Gender. In German forms, you'll see:
+Gender. Tick one box:
 - **m** = männlich (male)
 - **w** = weiblich (female)
-- **d** = divers (diverse/non-binary)
+- **d** = divers
 
-Just tick the right box. Simple!
+Simple. Moving on.
 
----
+### Field 6: Staatsangehörigkeit — THE Trap Field ⚠️
 
-### Field 6: Staatsangehörigkeit
+Nationality. And this is where the exam catches people.
 
-[FORM: Staatsangehörigkeit field highlights]
+You must write the ADJECTIVE form: **indisch** — lowercase.
 
-Nationality. And THIS is a trap field.
+[SLIDE: ❌ Indien → WRONG (that's the country)]
+[SLIDE: ❌ Indian → WRONG (that's English)]
+[SLIDE: ✅ indisch → CORRECT ✅]
 
-[SLIDE: ❌ Indien → WRONG (that's the country name)]
-[SLIDE: ✅ indisch → CORRECT (that's the adjective form)]
+*Malayalam-il 'India' enna naadu-de peru verum, pakshe 'Indian' enna adjective verum. German-ilum same: Indien ≠ indisch. Form-il always adjective.*
 
-You must write the ADJECTIVE form: **indisch**
-
-Not 'Indien', not 'Indian', not 'Indisch' — lowercase **indisch**.
-
-*'Indien' ennu country-de peru aanu. Form-il adjective form venam — 'indisch'. Exam-lum ithu thanne chodhikkum!*
-
----
+[EXAM-TIP] In the Goethe exam, Staatsangehörigkeit appears on almost every Schreiben Teil 1 form. Always: **indisch**, lowercase, adjective.
 
 ### Field 7: Familienstand
 
-[FORM: Familienstand field highlights]
-
-Marital status. The options:
-- **ledig** — single / unmarried
+Marital status. Four options:
+- **ledig** — single
 - **verheiratet** — married
 - **geschieden** — divorced
 - **verwitwet** — widowed
 
-### Key Vocabulary Overlay:
-*ledig = vivahithan/vivahitha alla*
-*verheiratet = vivahithan/vivahitha*
+Most of you: **ledig**. If married, bring your Heiratsurkunde (marriage certificate).
+
+⏸️ **Quick drill** — I say the field name, you say what to write:
+- Staatsangehörigkeit? → ...
+- Familienstand (if you're single)? → ...
+- Geschlecht (if you're male)? → ...
+
+### Practice Pause: ⏸️ (5 seconds)
+
+**indisch** ... **ledig** ... **männlich**. Got all three? Adipoli!"
 
 ---
 
-### Field 8: Neue Wohnung — Straße, Hausnummer
+## Section 5: Form Fields — Address Block (6:30–7:45)
 
-[FORM: Address section highlights]
+### Visual: [FORM: Address section highlighted]
+### Narration: [ENERGY: careful, precise]
+"Last block — your German address.
 
-Your new address in Germany. German address format:
+### Fields 8–9: Straße + Hausnummer, PLZ + Ort
 
-**Straße + Hausnummer**
-**PLZ + Ort**
+German address format flips the house number:
 
-Example: 
+[SLIDE: ❌ 42 Berliner Straße → English style, WRONG]
+[SLIDE: ✅ Berliner Straße 42 → German style, CORRECT]
+
+*India-yil address-il number first varum — '42, MG Road'. Germany-yil street first, THEN number — 'MG Road 42'. Reverse order!*
+
+Then: 5-digit **PLZ** (Postleitzahl = postal code) + **Ort** (city).
+
+Full example:
 ```
 Berliner Straße 42
 10115 Berlin
 ```
 
-**⚠️ TRAP:** The house number comes AFTER the street name, not before!
-[SLIDE: ❌ 42 Berliner Straße → WRONG (English style)]
-[SLIDE: ✅ Berliner Straße 42 → CORRECT (German style)]
+### Field 10: Einzugsdatum
 
-*India-yile address style-il 'Number first' aanu. Germany-yil 'Street first, then number'. Marannu poyaal form thettum!*
+Move-in date. **TT.MM.JJJJ** format again — with dots! Must match your Wohnungsgeberbestätigung.
+
+⏸️ Write a practice address: Hauptstraße 10, 80331 München. Include PLZ and Ort.
+
+### Practice Pause: ⏸️ (5 seconds)
+
+[SLIDE: ✅ Hauptstraße 10, 80331 München]"
 
 ---
 
-### Field 9: PLZ + Ort
+## Section 6: What You Get Back (7:45–8:30)
 
-[FORM: PLZ and Ort fields highlight]
+### Visual: [SLIDE: Meldebescheinigung document with golden glow → flowchart of what it unlocks]
+### Narration: [ENERGY: warm, rewarding]
+"You hand in the form. They process it. You walk out with the **Meldebescheinigung** — your registration certificate. This is your golden ticket.
 
-**PLZ** = Postleitzahl = postal code (5 digits in Germany)
-**Ort** = city/town
+Bank account? Need it. Phone contract? Need it. Health insurance? Need it.
 
-Example: **10115 Berlin** or **80331 München**
+*Aadhaar card + address proof + identity proof — ellaam oru document-il. Athaanu Meldebescheinigung.*
 
-⏸️ Write your German address now if you have one! If not, practice with: Hauptstraße 10, 10115 Berlin.
+Two weeks later, a letter arrives with your **Steuer-ID** — your permanent tax number for life in Germany.
+
+**Pro tip:** Photocopy the Meldebescheinigung 5 times. Day one. You'll need it everywhere."
+
+---
+
+## Section 7: Active Recall — Trap Check (8:30–9:30)
+
+### Visual: [SLIDE: "Can you spot the traps? 🎯" — quiz-style layout]
+### Narration: [ENERGY: challenging, game-like]
+"Before we wrap up, let's test you. I'll give you a scenario — you tell me what's wrong.
+
+**Round 1:** Someone writes 'Nikhil' under Familienname. What's the problem?
+
+⏸️ Think...
 
 ### Practice Pause: ⏸️ (3 seconds)
 
----
+That's their Vorname, not Familienname! Familienname = surname.
 
-### Field 10: Einzugsdatum
+**Round 2:** The form asks for Staatsangehörigkeit. They write 'Indien'. Wrong because...?
 
-[FORM: Einzugsdatum field highlights]
+⏸️
 
-Move-in date. The date you moved into your new apartment. Again: **TT.MM.JJJJ** format with dots!
+### Practice Pause: ⏸️ (3 seconds)
 
-This must match what your landlord wrote on the Wohnungsgeberbestätigung."
+It needs the adjective form: **indisch**, lowercase.
 
----
+**Round 3:** Geburtsdatum: 15/08/1995. What's wrong?
 
-## Section 5: What You Get Back (8:00–9:30)
+⏸️
 
-### Visual: [SLIDE: Image of a Meldebescheinigung document with golden highlight, then a letter with "Steuer-ID" circled]
-### Narration:
-"After you submit the form and they process it, you get the **Meldebescheinigung** — your proof of registration. This is your GOLDEN TICKET.
+### Practice Pause: ⏸️ (2 seconds)
 
-### Key Vocabulary Overlay:
-- **die Meldebescheinigung** — registration certificate
-- **die Steuer-ID** — tax identification number
+Slashes! German dates use dots: **15.08.1995**.
 
-Keep this document SAFE. You'll need it for:
-- Opening a bank account
-- Signing a phone contract
-- University enrollment
-- Work registration
-- EVERYTHING
+**Round 4:** Someone arrives at the Bürgeramt with their Mietvertrag but no Wohnungsgeberbestätigung. What happens?
 
-About 2 weeks after your Anmeldung, you'll receive a letter with your **Steuer-ID** — your personal tax number. This is permanent and stays with you for life in Germany.
+⏸️
 
-*Meldebescheinigung = Aadhaar card + address proof + existence proof — ellaam onnich!*
+### Practice Pause: ⏸️ (2 seconds)
 
-**Pro tip:** Make 5 photocopies immediately. You'll thank me later."
+Rejected. Sent home. Termin wasted. You need BOTH documents — they're different things.
+
+[EXAM-TIP] These same four traps appear on the Goethe exam form-filling section. Nail them here, nail them there."
 
 ---
 
-## Section 6: Common Mistakes (9:30–11:00)
+## Section 8: Exam Bridge + Outro (9:30–10:30)
 
-### Visual: [SLIDE: numbered list with ❌ marks, each appearing one by one]
-### Narration:
-"Let's make sure you don't make these classic mistakes:
+### Visual: [SLIDE: "Schreiben Teil 1 = Form Filling = 12.5% of exam" with checkmark animation]
+### Narration: [ENERGY: motivating, forward-looking]
+"Here's the beautiful thing: Schreiben Teil 1 in the Goethe A1 exam IS form-filling. The exact same fields — Familienname, Geburtsdatum, Staatsangehörigkeit, Adresse.
 
-### Mistake 1: No Wohnungsgeberbestätigung
-'I brought my Mietvertrag, isn't that enough?' — NO. You need BOTH. The Mietvertrag is your rental contract. The Wohnungsgeberbestätigung is a separate form from your landlord confirming you actually moved in. Without it: rejected. Termin wasted.
+You just practiced real German life AND 12.5% of your exam score. Two birds, one stone.
 
-### Mistake 2: Wrong date format
-Using slashes instead of dots. 15/05/1995 instead of 15.05.1995. Small detail, big problem.
+⏸️ Final challenge — from memory, name the 4 documents you need for the Bürgeramt. Go!
 
-### Mistake 3: Familienname / Vorname swap
-Writing 'Nikhil' under Familienname. We've drilled this — Familienname is your SURNAME.
+### Practice Pause: ⏸️ (5 seconds)
 
-### Mistake 4: 'Indien' instead of 'indisch'
-For Staatsangehörigkeit, remember: adjective form, lowercase.
+[SLIDE revealing answers one by one]
+1. Reisepass ✅
+2. Mietvertrag ✅
+3. Wohnungsgeberbestätigung ✅
+4. Terminbestätigung ✅
 
-### Mistake 5: No Termin
-Walking into the Bürgeramt without an appointment. In most cities, they'll just turn you away. Book online first!
+[EXAM-TIP] Exam day rule: Read ALL form fields first, then fill. Check Familienname vs Vorname. Dots for dates. Adjective for nationality.
 
-### Mistake 6: Bringing copies instead of originals
-The Bürgeramt wants to see your ORIGINAL passport. Copies won't work.
+Next lesson — we'll cover ALL 20 form field words you'll see across every German form: doctor's office, library, language school, insurance. Those 20 words = every form in Germany.
 
-*Ee mistakes ellaam avoid cheythal, Anmeldung 10 minutes-il kazhiyum. Easy!*"
-
----
-
-## Section 7: Exam Connection + Outro (11:00–12:00)
-
-### Visual: [SLIDE: "Schreiben Teil 1 = Anmeldung Form 📝" with exam scoring]
-### Narration:
-"And here's the beautiful connection: Schreiben Teil 1 in the Goethe A1 exam is EXACTLY THIS — filling out a form!
-
-Every field we just practiced — Familienname, Vorname, Geburtsdatum, Adresse, Staatsangehörigkeit — these are the SAME fields that appear on the exam.
-
-So right now, you're not just learning life skills — you're practicing for 12.5% of your total exam score. Two birds, one stone!
-
-### [EXAM-TIP]
-When you see a form in the exam:
-1. Read ALL fields first — don't rush
-2. Check: Familienname vs Vorname — which is which?
-3. Dates: DOTS, not slashes — TT.MM.JJJJ
-4. Staatsangehörigkeit: adjective form — 'indisch'
-5. Write clearly — if they can't read it, you lose points!
-
-In the next lesson, we'll look at ALL the different form fields you might encounter — not just Anmeldung, but library cards, language course registrations, doctor's office forms, and more.
-
-*Nammude official German journey thudangi! Adipoli!*
+*Anmeldung kazhinjaal, Germany-yile official life thudangi! Adipoli!*
 
 Auf Wiedersehen — und vergessen Sie nicht: Anmeldung zuerst!"
 
@@ -343,23 +287,24 @@ Auf Wiedersehen — und vergessen Sie nicht: Anmeldung zuerst!"
 ## Production Notes
 
 ### Key Vocabulary This Script Covers:
-| German | English | Malayalam hint |
-|--------|---------|---------------|
-| die Anmeldung | registration | രജിസ്ട്രേഷൻ |
-| das Bürgeramt | citizens' office | സിറ്റിസൻ ഓഫീസ് |
-| der Termin | appointment | അപ്പോയ്ൻ്റ്മെൻ്റ് |
-| der Reisepass | passport | പാസ്പോർട്ട് |
+| German | English | Malayalam Context |
+|--------|---------|-----------------|
+| die Anmeldung | registration | Germany-yile "Aadhaar enrollment" |
+| das Bürgeramt | citizens' office | Collectorate equivalent |
+| der Termin | appointment | No walk-ins — system-based |
+| der Reisepass | passport | Original only, no copies |
 | der Mietvertrag | rental contract | വാടക കരാർ |
-| die Wohnungsgeberbestätigung | landlord confirmation | ഉടമയുടെ സ്ഥിരീകരണം |
-| die Meldebescheinigung | registration certificate | രജിസ്ട്രേഷൻ സർട്ടിഫിക്കറ്റ് |
-| die Steuer-ID | tax ID number | ടാക്സ് ഐഡി |
-| das Einzugsdatum | move-in date | താമസം തുടങ്ങിയ തീയതി |
-| die Staatsangehörigkeit | nationality | ദേശീയത |
-| der Familienstand | marital status | വൈവാഹിക നില |
+| die Wohnungsgeberbestätigung | landlord confirmation | Most-forgotten document |
+| die Meldebescheinigung | registration certificate | All-in-one ID+address proof |
+| die Steuer-ID | tax ID number | Permanent, arrives by post |
+| das Einzugsdatum | move-in date | Must match landlord form |
+| die Staatsangehörigkeit | nationality | Adjective form: indisch |
+| der Familienstand | marital status | ledig/verheiratet |
 
 ### Connections to Other Modules:
 - **Module 2** (Who Are You?) — personal info vocabulary introduced there
 - **Module 3** (Numbers & Time) — date format drilled there
+- **Module 14-2** (At the Office) — the Bürgeramt visit dialogue
 - **Module 18** (Exam Prep) — Schreiben Teil 1 directly tests this
 
 ### Production Exercise Tie-ins:
@@ -369,4 +314,42 @@ Auf Wiedersehen — und vergessen Sie nicht: Anmeldung zuerst!"
 
 ---
 
-*Script v1.0 — Created 2026-03-23 overnight cron. Ready for review and narration recording.*
+## Revision Notes (v1.0 → v2.0)
+
+| Change | Detail |
+|--------|--------|
+| Hook | Cut from 75s → 35s. Removed bullet list of "what you can't do without it" — now one punchy sentence |
+| Structure | Reorganized from 10 sequential fields into 3 teach→drill blocks (Identity, Status, Address) |
+| Practice pauses | Increased from 4 → 10. Each block ends with a drill |
+| Section 6 (mistakes) | Replaced passive mistake list with active recall quiz (4 rounds with prompts + reveals) |
+| Malayalam bridges | Upgraded from dictionary translations to structural parallels (compound word logic, system comparisons) |
+| Energy cues | Added [ENERGY: ...] at every section transition |
+| Duration | Cut from 12:00 → 10:30 by trimming monologue in sections 2, 3, and 5 |
+| EXAM-TIP markers | Reduced from 1 long block → 3 focused markers |
+| Outro | Added active recall (name the 4 documents) before final summary |
+| Word count | Reduced ~15% — less narration, more interaction |
+
+## Script Quality Checklist
+
+- [x] Hook under 60 seconds — concrete payoff stated at 0:25
+- [x] No monologue block exceeds 90 seconds
+- [x] Teach → Drill → Apply cycle in each section
+- [x] Duration realistic (~10:30 at 150 wpm + pauses)
+- [x] Energy/tone cues at every section transition
+- [x] Practice pauses have specific prompts with reveals (10 pauses)
+- [x] Active recall before final summary (trap quiz + document recall)
+- [x] Minimum 6 practice pauses per 10 minutes (10 total)
+- [x] No passive summary lists
+- [x] Malayalam bridges are structural parallels
+- [x] One clear teaching goal per section
+- [x] Exam connection explicit (Schreiben Teil 1, 12.5%)
+- [x] No A2+ content in A1 script
+- [x] German grammatically verified
+- [x] Visual cues tagged with [SLIDE:], [FORM:], [DIAGRAM:]
+- [x] Exam tips limited to 3 [EXAM-TIP] markers
+- [x] Outro has clear next-lesson bridge
+- [x] Homework is specific (fill a VHS form)
+
+---
+
+*Script v2.0 — Revised 2026-03-23 quality pass. Production-ready pending native speaker review.*

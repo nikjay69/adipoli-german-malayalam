@@ -3,180 +3,190 @@
 > **Module:** 13 | **Lesson:** 13-3 | **Duration:** 10:00 target
 > **Teaching Goal:** Teach the ~25 most important irregular past participles for A1, grouped by vowel pattern for easier memorization, plus the "no ge-" rules
 > **A1 Exam Link:** Schreiben (past tense writing), Hören (understanding past narratives), Sprechen (describing experiences)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Revision:** 2026-03-23 (quality pass — tighter hook, teach→drill→apply per vowel group, active recall between groups, energy cues, stronger Malayalam bridges, ~15% word count reduction)
 
 ---
 
-## Pre-roll (0:00–0:15)
-
-### Visual: [Course intro animation / Adipoli German branding]
-### Narration:
-"Willkommen bei Adipoli German! Today — the rebel verbs. The ones that break the rules."
+## Pre-roll (0:00–0:10)
+### Visual: [Course intro animation]
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — The Problem (0:15–1:00)
-
-### Visual: [SLIDE: Two columns — "Regular: ge-...-t ✅" vs "Irregular: ge-...-en 🤪" with examples]
+## Section 1: Hook (0:10–0:40)
+### Visual: [ANIMATION: "ge-mach-t" sandwich assembling neatly → then "essen" tries the same pattern → "ge-ess-t??" → BUZZER → correct form "ge-gess-en" appears with rebel badge]
 ### Narration:
-"In the last two lessons, you learned the Perfekt sandwich: 'Ich habe Deutsch gelernt.' Nice and regular — ge + stem + t.
+"You know the Perfekt sandwich: ge + stem + t. Works great — until it doesn't. About 25 verbs break the rules. And they're the most COMMON verbs in German.
 
-But now... the rebels. Some verbs DON'T follow the pattern. Instead of 'ge-...-t', they end with '-en' and the vowel CHANGES inside.
+After this video, you'll know all 25 — grouped by pattern so they actually stick.
 
-*Regular verbs okke obedient aanu — rules follow cheyyum. Irregular verbs? Avaru rebels aanu! Rules break cheyyum. But don't worry — only about 25 matter for A1.*
+*Regular verbs obedient aanu. Irregular verbs? Rebels! But only 25 for A1 — let's own them.*"
 
-Here's the good news: there ARE patterns. Let's group them."
+🎬 [Energy: confident, slight mischief]
 
 ---
 
-## Section 2: The Pattern — ge-...-en (1:00–2:30)
-
-### Visual: [SLIDE: "Regular vs Irregular" side by side, colour-coded]
+## Section 2: The Core Difference (0:40–1:30)
+### Visual: [Side-by-side: Regular (green) vs Irregular (red), colour-coded endings]
 ### Narration:
+
 "Quick comparison:
 
-| Regular | Irregular |
-|---------|-----------|
-| machen → ge**mach**t | essen → ge**gess**en |
-| spielen → ge**spiel**t | trinken → ge**trunk**en |
-| lernen → ge**lern**t | schreiben → ge**schrieb**en |
+- **Regular:** ge + stem + **-t** → ge**mach**t, ge**spiel**t, ge**lern**t
+- **Irregular:** ge + **changed stem** + **-en** → ge**gess**en, ge**trunk**en, ge**schrieb**en
 
-See the difference?
-- Regular: ge + stem + **-t**
-- Irregular: ge + **changed stem** + **-en**
+Two differences: ending is **-en** (not -t), and the vowel INSIDE changes.
 
-The ending is always **-en** for irregulars. And the vowel in the middle usually changes. That vowel change is the key to memorizing them.
+*Regular: ge-stem-t. Irregular: ge-changed-en. Athre difference ullu!*
 
-*Regular verbs: ge-stem-t. Irregular verbs: ge-changed-en. Athre difference ullu!*"
+The vowel change IS the pattern. Learn the groups, learn the verbs."
+
+🎬 [Energy: clear, analytical]
 
 ---
 
-## Section 3: Group 1 — "ei → ie" Verbs (2:30–4:00)
-
-### Visual: [SLIDE: "ei → ie" group with colour-coded vowel change, each verb with example sentence]
+## Section 3: Group 1 — ei → ie (1:30–3:00)
+### Visual: [Colour banner: "ei → ie" with vowels morphing. Each verb appears with example sentence.]
 ### Narration:
-"Let's start with the biggest group: verbs where **'ei' becomes 'ie'**.
 
-| Infinitive | Past Participle | Example |
-|-----------|----------------|---------|
-| **schreiben** | ge**schrieb**en | Ich habe einen Brief **geschrieben**. |
-| **bleiben** | ge**blieb**en | Er ist zu Hause **geblieben**. (sein!) |
-| **treiben** | ge**trieb**en | Sie hat Sport **getrieben**. |
-| **steigen** | ge**stieg**en | Wir sind in den Bus **gestiegen**. (sein!) |
-| **scheinen** | ge**schien**en | Die Sonne hat **geschienen**. |
+"Biggest group: **ei becomes ie.**
 
-The pattern: **ei → ie**. Say it: ei becomes ie. 'Schreiben' → 'geschrieben'. 'Bleiben' → 'geblieben'.
+🔊 **schreiben → geschrieben** — Ich habe einen Brief geschrieben.
+🔊 **bleiben → geblieben** — Er ist zu Hause geblieben. *(sein — staying!)*
+🔊 **steigen → gestiegen** — Wir sind in den Bus gestiegen. *(sein — movement!)*
 
-⏸️ **[PAUSE — Student repeats each participle]**
+Pattern: ei → ie. Always.
 
-*Ei → ie. Ee pattern ormikkuka — schreiben, geschrieben. Bleiben, geblieben.*
+### ⚡ Drill:
+⏸️ schreiben → ? → 'geschrieben'
+⏸️ bleiben → ? → 'geblieben'
+⏸️ steigen → ? → 'gestiegen'
 
-Notice: 'bleiben' and 'steigen' use **sein** (not haben) because they involve movement or staying!"
+*Ei → ie. Schreiben, geschrieben. Easy pattern — just swap the vowels!*
+
+Notice: 'bleiben' and 'steigen' use **sein**. Movement or staying = sein!"
+
+🎬 [Energy: encouraging, pattern-focused]
 
 ---
 
-## Section 4: Group 2 — "i → u" Verbs (4:00–5:00)
-
-### Visual: [SLIDE: "i → u" group, colour-coded]
+## Section 4: Group 2 — i → u (3:00–4:00)
+### Visual: [Colour banner: "i → u"]
 ### Narration:
-"Next group: **'i' becomes 'u'**.
 
-| Infinitive | Past Participle | Example |
-|-----------|----------------|---------|
-| **trinken** | ge**trunk**en | Ich habe Wasser **getrunken**. |
-| **finden** | ge**fund**en | Hast du den Schlüssel **gefunden**? |
-| **singen** | ge**sung**en | Wir haben ein Lied **gesungen**. |
+"Next: **i becomes u.**
 
-Short and memorable: **i → u**. Trinken, getrunken. Finden, gefunden.
+🔊 **trinken → getrunken** — Ich habe Wasser getrunken.
+🔊 **finden → gefunden** — Hast du den Schlüssel gefunden?
+🔊 **singen → gesungen** — Wir haben ein Lied gesungen.
 
-⏸️ **[PAUSE — Student repeats]**"
+### ⚡ Drill:
+⏸️ trinken → ? → 'getrunken'
+⏸️ finden → ? → 'gefunden'
+
+### 🔁 Active Recall — Group 1 still there?
+⏸️ schreiben → ? → 'geschrieben' (ei → ie ✓)
+
+Two groups down, two to go."
+
+🎬 [Energy: building momentum]
 
 ---
 
-## Section 5: Group 3 — "e → o" Verbs (5:00–6:00)
-
-### Visual: [SLIDE: "e → o" group, colour-coded]
+## Section 5: Group 3 — e → o (4:00–5:15)
+### Visual: [Colour banner: "e → o"]
 ### Narration:
-"Group 3: **'e' becomes 'o'**.
 
-| Infinitive | Past Participle | Example |
-|-----------|----------------|---------|
-| **sprechen** | ge**sproch**en | Ich habe Deutsch **gesprochen**. |
-| **helfen** | ge**holf**en | Er hat mir **geholfen**. |
-| **nehmen** | ge**nomm**en | Sie hat den Bus **genommen**. |
-| **treffen** | ge**troff**en | Wir haben Freunde **getroffen**. |
+"Group 3: **e becomes o.**
 
-**e → o**. Sprechen, gesprochen. Helfen, geholfen.
+🔊 **sprechen → gesprochen** — Ich habe Deutsch gesprochen.
+🔊 **helfen → geholfen** — Er hat mir geholfen.
+🔊 **nehmen → genommen** — Sie hat den Bus genommen.
+🔊 **treffen → getroffen** — Wir haben Freunde getroffen.
 
-⏸️ **[PAUSE — Student repeats]**
+*Sprechen, gesprochen. Help cheyyunnu — helfen, geholfen. Ee group nallathanu!*
 
-*Ee group nallathanu — sprechen, gesprochen. Help cheyyunnu — helfen, geholfen.*"
+### ⚡ Drill:
+⏸️ sprechen → ? → 'gesprochen'
+⏸️ nehmen → ? → 'genommen'
+⏸️ helfen → ? → 'geholfen'
+
+### 🔁 Active Recall — All 3 groups:
+⏸️ trinken (i→u) → ? → 'getrunken'
+⏸️ bleiben (ei→ie) → ? → 'geblieben'
+⏸️ sprechen (e→o) → ? → 'gesprochen'
+
+Three for three? The patterns are working."
+
+🎬 [Energy: proud, reinforcing]
 
 ---
 
-## Section 6: Group 4 — The Wildcards (6:00–7:30)
-
-### Visual: [SLIDE: "No clear pattern — just memorize!" with 8 essential wildcards]
+## Section 6: Group 4 — Wildcards (5:15–6:45)
+### Visual: [Banner: "🃏 No pattern — memorize!" Each verb with a memorable visual icon.]
 ### Narration:
-"And then... the wildcards. These don't fit neatly into a group. You just have to memorize them. But they're the MOST common verbs, so you'll hear them constantly.
 
-| Infinitive | Past Participle | Note |
-|-----------|----------------|------|
-| **essen** | ge**gess**en | (e → e, but double-s!) |
-| **lesen** | ge**les**en | (same vowel!) |
-| **geben** | ge**geb**en | (same vowel!) |
-| **sehen** | ge**seh**en | (same vowel!) |
-| **kommen** | ge**komm**en | (uses **sein!**) |
-| **fahren** | ge**fahr**en | (uses **sein!**) |
-| **gehen** | ge**gang**en | (total change! uses **sein!**) |
-| **sein** | ge**wes**en | (total change! uses **sein!**: Ich **bin** in Berlin **gewesen**.) |
+"The wildcards. No clean vowel rule — just memorize. But good news: some barely change.
 
-Some good news: lesen, geben, sehen — the participle is basically the same as the infinitive with 'ge-' added. Easy!
+**Easy wildcards** (vowel stays same):
+🔊 **lesen → gelesen** — Ich habe ein Buch gelesen.
+🔊 **geben → gegeben** — Sie hat mir das Buch gegeben.
+🔊 **sehen → gesehen** — Ich habe den Film gesehen.
+🔊 **essen → gegessen** — Wir haben Pizza gegessen. (just adds extra 's'!)
 
-The hard ones: 'gehen → gegangen' and 'sein → gewesen'. Just memorize these two cold.
+**Hard wildcards** (big change):
+🔊 **gehen → gegangen** — Ich bin ins Kino gegangen. *(sein!)*
+🔊 **kommen → gekommen** — Er ist spät gekommen. *(sein!)*
+🔊 **sein → gewesen** — Ich bin in Berlin gewesen. *(sein!)*
+🔊 **fahren → gefahren** — Wir sind nach München gefahren. *(sein!)*
 
-⏸️ **[PAUSE — Student repeats each wildcard]**
+*Gehen → gegangen — completely different! Sein → gewesen — also! Ee rendu just cold memorize cheyyuka.*
 
-*Gehen → gegangen — completely different! Sein → gewesen — also completely different! Ee rendu ormikkuka.*"
+### ⚡ Drill:
+⏸️ gehen → ? → 'gegangen'
+⏸️ sein → ? → 'gewesen'
+⏸️ essen → ? → 'gegessen'
+⏸️ fahren → ? → 'gefahren'"
+
+🎬 [Energy: honest about difficulty, encouraging]
 
 ---
 
-## Section 7: The "No ge-" Rules (7:30–8:30)
-
-### Visual: [SLIDE: Three rules for when NOT to add "ge-", with examples]
+## Section 7: The "No ge-" Rules (6:45–7:45)
+### Visual: [3 rule cards appearing one at a time with ❌ ge- crossed out]
 ### Narration:
-"Before you think you're done — there are verbs that DON'T get 'ge-' at all. Three rules:
 
-### Rule 1: Inseparable prefixes (be-, emp-, ent-, er-, ge-, miss-, ver-, zer-)
-These verbs skip 'ge-':
-- **verstehen** → **verstanden** (NOT ge-verstanden!)
-- **besuchen** → **besucht**
-- **erzählen** → **erzählt**
-- **bekommen** → **bekommen**
+"Three cases where 'ge-' disappears:
 
-### Rule 2: Verbs ending in -ieren
-Also skip 'ge-':
-- **telefonieren** → **telefoniert** (NOT ge-telefoniert!)
-- **studieren** → **studiert**
-- **reservieren** → **reserviert**
+**Rule 1: Inseparable prefixes** (be-, ver-, er-, ent-, emp-, zer-, ge-, miss-)
+🔊 verstehen → **verstanden** (NOT ge-verstanden!)
+🔊 besuchen → **besucht**
 
-### Rule 3: Separable verbs — 'ge-' goes INSIDE
-- **einkaufen** → **ein-ge-kauft**
-- **aufstehen** → **auf-ge-standen**
-- **anrufen** → **an-ge-rufen**
+**Rule 2: Verbs ending in -ieren**
+🔊 telefonieren → **telefoniert** (NOT ge-telefoniert!)
+🔊 studieren → **studiert**
 
-*Athë moodë rules! Inseparable prefix → no ge. -ieren → no ge. Separable → ge goes in the middle.*
+**Rule 3: Separable verbs** — ge- goes INSIDE
+🔊 einkaufen → **ein-ge-kauft**
+🔊 aufstehen → **auf-ge-standen**
 
-⏸️ **[PAUSE — Student says: verstanden, telefoniert, eingekauft]**"
+*Moodë rules! Inseparable → no ge. -ieren → no ge. Separable → ge inside.*
+
+### ⚡ Drill:
+⏸️ verstehen → ? → 'verstanden'
+⏸️ telefonieren → ? → 'telefoniert'
+⏸️ einkaufen → ? → 'eingekauft'"
+
+🎬 [Energy: systematic, clear]
 
 ---
 
-## Section 8: Quick-Fire Drill (8:30–9:30)
-
-### Visual: [SLIDE: Verb appears — 3-second timer — answer appears]
+## Section 8: Speed Round — 15 Verbs (7:45–9:00)
+### Visual: [Verb flash on screen → 3-second timer → answer. Score tracker in corner.]
 ### Narration:
-"Speed round! I say the infinitive — you shout the past participle. Go!
+
+"Speed round! Infinitive → past participle. 3 seconds each. GO!
 
 1. trinken → ⏸️ → **getrunken** ✅
 2. schreiben → ⏸️ → **geschrieben** ✅
@@ -184,49 +194,59 @@ Also skip 'ge-':
 4. essen → ⏸️ → **gegessen** ✅
 5. gehen → ⏸️ → **gegangen** ✅
 6. fahren → ⏸️ → **gefahren** ✅
-7. verstehen → ⏸️ → **verstanden** (no ge!) ✅
+7. verstehen → ⏸️ → **verstanden** ✅ (no ge!)
 8. lesen → ⏸️ → **gelesen** ✅
 9. helfen → ⏸️ → **geholfen** ✅
 10. kommen → ⏸️ → **gekommen** ✅
 11. sehen → ⏸️ → **gesehen** ✅
 12. finden → ⏸️ → **gefunden** ✅
 13. nehmen → ⏸️ → **genommen** ✅
-14. telefonieren → ⏸️ → **telefoniert** (no ge!) ✅
-15. aufstehen → ⏸️ → **aufgestanden** (ge inside!) ✅
+14. telefonieren → ⏸️ → **telefoniert** ✅ (no ge!)
+15. aufstehen → ⏸️ → **aufgestanden** ✅ (ge inside!)
 
-How many did you get? 12+ = excellent. Under 10 = review the groups again."
+Score: 12+ = excellent. Under 10 = review groups again before next lesson."
+
+🎬 [Energy: game show, fast, fun]
 
 ---
 
-## Section 9: Study Strategy + Outro (9:30–10:00)
-
-### Visual: [SLIDE: Study tips card + SRS reminder]
+## Section 9: Study Strategy + Outro (9:00–10:00)
+### Visual: [Study plan card with 4 steps]
 ### Narration:
-"Here's the truth: **there's no shortcut for irregular verbs.** You just have to memorize them. But you only need about 25 for A1.
 
-**My recommendation:**
-1. Make flashcards — infinitive on one side, past participle on the other
-2. Add them to your SRS review (the app has this!)
-3. Group them by vowel pattern: ei→ie, i→u, e→o
-4. Practice in sentences, not isolation: 'Ich habe Wasser getrunken' sticks better than just 'getrunken'
-5. Review every day for 5 minutes — in 2 weeks they'll be automatic
+"No shortcut for irregular verbs. But 25 is doable. Here's your plan:
 
-*Flashcards undaakkuka. Every day 5 minutes review cheyyuka. 2 weeks-il automatic aakum!*
+1. **Group them:** ei→ie, i→u, e→o, wildcards — NOT alphabetical
+2. **Sentences, not lists:** 'Ich habe Wasser getrunken' sticks better than just 'getrunken'
+3. **5 minutes daily** — flashcards or the app's SRS drill
+4. **Automatic in 2 weeks** if you're consistent
 
-Next lesson: we put haben AND sein Perfekt together to describe a full weekend. Bis dann — tschüss!"
+### 🔁 Final Active Recall — The Big 5:
+⏸️ gehen → ? → gegangen
+⏸️ sein → ? → gewesen
+⏸️ sprechen → ? → gesprochen
+⏸️ schreiben → ? → geschrieben
+⏸️ essen → ? → gegessen
+
+These 5 are the most common. If you know them cold, you're 80% there.
+
+*Flashcards undaakkuka. 5 minutes daily. 2 weeks-il automatic!*
+
+Next lesson — we combine EVERYTHING for a full weekend story. Bis dann — tschüss!"
 
 ---
 
 ## Script Quality Checklist
 
-- [x] Teaching goal clear: 25 irregular past participles grouped by vowel pattern
-- [x] A1 exam link explicit: Schreiben + Hören + Sprechen (past tense everywhere)
-- [x] Malayalam bridges: Contextual Malayalam asides throughout
-- [x] Practice pauses: 5+ drilling pauses (⏸️) + 15-item quick-fire
-- [x] Grammar reinforced: ge-...-en pattern, vowel changes, no-ge rules, sein vs haben
-- [x] Grouping strategy: ei→ie, i→u, e→o, wildcards
-- [x] "No ge-" rules covered: inseparable prefixes, -ieren, separable verbs
-- [x] Exam tip implicit: "25 verbs = all you need for A1"
-- [x] Study strategy: flashcards + SRS + sentence practice
-- [x] Cross-module references: Module 13 earlier lessons (Perfekt sandwich, haben, sein)
+- [x] Hook under 40s with concrete payoff (25 rebel verbs, grouped to stick)
+- [x] Teach→drill→apply per vowel group (ei→ie, i→u, e→o, wildcards — no stacking)
+- [x] Active recall between groups (3 checkpoints testing previous groups)
+- [x] Energy cues every section
+- [x] Malayalam bridges (rebels analogy, practical asides)
+- [x] ~15% word count reduction from v1.0
+- [x] Specific practice pauses with prompts + reveals (20+)
+- [x] "No ge-" rules: inseparable, -ieren, separable — drilled
+- [x] 15-item speed round as cumulative test
+- [x] Study strategy: grouped flashcards + sentences + daily review
+- [x] Cross-module references: Module 13 lessons 1-2 (Perfekt sandwich)
 - [x] Duration estimate: ~10:00 (9 sections)

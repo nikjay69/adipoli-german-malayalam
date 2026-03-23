@@ -3,124 +3,117 @@
 > **Module:** 13 | **Lesson:** 13-4 | **Duration:** 10:00 target
 > **Teaching Goal:** Combine haben and sein Perfekt with time markers to produce a sustained past-tense narrative about a weekend — the culmination of Module 13
 > **A1 Exam Link:** Schreiben Teil 2 ("Was hast du am Wochenende gemacht?"), Sprechen (describing past experiences)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Revision:** 2026-03-23 (quality pass — tighter hook, teach→drill→apply cycles, active recall, energy cues, stronger Malayalam bridges, ~15% word count reduction)
 
 ---
 
-## Pre-roll (0:00–0:15)
-
-### Visual: [Course intro animation / Adipoli German branding]
-### Narration:
-"Willkommen bei Adipoli German! Today — the question EVERY German asks on Monday."
+## Pre-roll (0:00–0:10)
+### Visual: [Course intro animation]
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — Monday Morning (0:15–1:00)
-
-### Visual: [SLIDE: Office scene, Monday morning. Colleague asks "Was hast du am Wochenende gemacht?"]
+## Section 1: Hook (0:10–0:40)
+### Visual: [ANIMATION: Monday morning office. Coffee machine. Colleague turns around and asks — speech bubble: "Was hast du am Wochenende gemacht?"]
 ### Narration:
-"It's Monday morning in Germany. Your colleague walks up to you with a coffee and asks:
+"Monday morning. Coffee machine. 'Was hast du am Wochenende gemacht?' — every German asks this. Every Monday.
 
-🔊 'Was hast du am Wochenende gemacht?'
+After this video, you'll answer fluently — 8 sentences, haben AND sein, with time markers. Module 13 finale. Let's go.
 
-What did you do on the weekend?
+*Monday morning-il Germany-il ee question guaranteed aanu. Ini nammukku shariyaayittu utharam parayaam!*"
 
-This is THE most common past-tense conversation in German life. And after this lesson, you'll answer it fluently — 8 sentences, haben AND sein, like a native.
-
-*Monday morning-il Germany-il ella aalum chodhikkum — 'Was hast du am Wochenende gemacht?' Ee lesson kazhiyumbol, ningal athinu shariyaayittu utharam parayum.*
-
-Let's build your weekend narrative."
+🎬 [Energy: relatable, confident]
 
 ---
 
-## Section 2: Model Narrative — "Mein Wochenende" (1:00–3:00)
-
-### Visual: [SLIDE: Saturday-Sunday timeline with activities illustrated. Each sentence highlights haben (blue) or sein (green).]
+## Section 2: Model Listen — "Mein Wochenende" (0:40–2:00)
+### Visual: [Saturday-Sunday split timeline. Haben sentences in BLUE, sein sentences in GREEN. Icons for each activity.]
 ### Narration:
-"Listen to a complete weekend story. Pay attention to which verbs use HABEN and which use SEIN:
 
-🔊 **[Natural speed first, then sentence by sentence]**
+"First — listen. Watch the colours: blue = haben, green = sein.
 
-**Am Samstag:**
-1. **Am Samstagmorgen habe ich lange geschlafen.** — On Saturday morning I slept in.
-2. **Dann bin ich ins Café gegangen.** — Then I went to a café. *(sein — movement!)*
-3. **Ich habe Kaffee getrunken und ein Buch gelesen.** — I drank coffee and read a book.
-4. **Nachmittags habe ich eingekauft.** — In the afternoon I went shopping.
+🔊 **Am Samstag:**
+1. 🔵 **Am Samstagmorgen habe ich lange geschlafen.**
+2. 🟢 **Dann bin ich ins Café gegangen.** *(movement!)*
+3. 🔵 **Ich habe Kaffee getrunken und ein Buch gelesen.**
+4. 🔵 **Nachmittags habe ich eingekauft.**
 
-**Am Sonntag:**
-5. **Am Sonntag bin ich nach München gefahren.** — On Sunday I drove to Munich. *(sein — movement!)*
-6. **Ich habe das Rathaus gesehen.** — I saw the town hall.
-7. **Wir haben im Restaurant gegessen.** — We ate at a restaurant.
-8. **Abends bin ich nach Hause gekommen.** — In the evening I came home. *(sein — movement!)*
+🔊 **Am Sonntag:**
+5. 🟢 **Am Sonntag bin ich nach München gefahren.** *(movement!)*
+6. 🔵 **Ich habe das Rathaus gesehen.**
+7. 🔵 **Wir haben im Restaurant gegessen.**
+8. 🟢 **Abends bin ich nach Hause gekommen.** *(movement!)*
 
-[SLIDE: Colour-coded summary — haben verbs in blue, sein verbs in green]
+The pattern:
+- 🔵 **haben:** actions you DO (schlafen, trinken, lesen, einkaufen, sehen, essen)
+- 🟢 **sein:** movement A→B (gehen, fahren, kommen)
 
-See the pattern?
-- **haben:** geschlafen, getrunken, gelesen, eingekauft, gesehen, gegessen (ACTIONS you do)
-- **sein:** gegangen, gefahren, gekommen (MOVEMENT from A to B)
+*Haben = action. Sein = movement. Module 13-1, 13-2 ormikkunnundo? Same rule!*"
 
-⏸️ **[PAUSE — Student identifies which verbs in the narrative use sein]**
-
-*Haben = action. Sein = movement. Athë rule!*"
+🎬 [Energy: calm on listen, analytical on pattern]
 
 ---
 
-## Section 3: Time Markers for Past Tense (3:00–4:30)
-
-### Visual: [SLIDE: Time marker table with past-tense indicators]
+## Section 3: Time Markers — The Glue (2:00–3:00)
+### Visual: [Two columns: "When?" markers and "Sequence" markers, appearing with icons]
 ### Narration:
-"To tell a good story, you need time markers. Here are the ones that signal PAST:
 
-### Past Time Markers:
-| German | English |
-|--------|---------|
-| **gestern** | yesterday |
-| **vorgestern** | day before yesterday |
-| **am Samstag** | on Saturday |
-| **am Wochenende** | on the weekend |
-| **letzte Woche** | last week |
-| **letzten Monat** | last month |
-| **letztes Jahr** | last year |
+"Good stories need time markers. Two types:
 
-### Sequencing Words:
-| German | English |
-|--------|---------|
-| **zuerst** | first |
-| **dann** | then |
-| **danach** | after that |
-| **später** | later |
-| **zum Schluss** | finally |
+**When? markers:**
+🔊 **gestern** — yesterday
+🔊 **am Samstag** — on Saturday
+🔊 **am Wochenende** — on the weekend
+🔊 **letzte Woche** — last week
 
-These words make your story FLOW. Instead of 8 choppy sentences, you get a connected narrative.
+**Sequence markers (to connect sentences):**
+🔊 **zuerst** — first
+🔊 **dann** — then
+🔊 **danach** — after that
+🔊 **zum Schluss** — finally
 
-⏸️ **[PAUSE — Student builds: 'Zuerst habe ich gefrühstückt. Dann bin ich einkaufen gegangen. Danach habe ich gekocht.']**
+*'Zuerst, dann, danach' — ee moodë words use cheyyumbol, choppy sentences become a STORY.*
 
-*'Zuerst, dann, danach' — ee moodë words use cheyyumbol, story smoothly flow cheyyum!*"
+### ⚡ Drill:
+⏸️ Connect: 'First I had breakfast. Then I went shopping.' → 'Zuerst habe ich gefrühstückt. Dann bin ich einkaufen gegangen.'"
+
+🎬 [Energy: practical, storytelling mode]
 
 ---
 
-## Section 4: Student Builds Their Weekend (4:30–6:00)
-
-### Visual: [SLIDE: "Build YOUR Weekend" — prompts for Saturday + Sunday with blank spaces]
+## Section 4: Build YOUR Saturday — Teach → Drill → Apply (3:00–4:45)
+### Visual: [Saturday timeline with prompts appearing one by one. Student fills in.]
 ### Narration:
-"Now it's YOUR turn. I'll give you prompts — you build the Perfekt sentences.
 
-**Saturday:**
+"Your turn. Build Saturday sentence by sentence.
 
 **Prompt 1: You woke up at 9 AM.**
-⏸️ → **Am Samstag bin ich um neun Uhr aufgestanden.** *(sein + separable verb!)*
+⏸️ → **Am Samstag bin ich um neun Uhr aufgestanden.** *(sein + separable!)*
 
 **Prompt 2: You ate breakfast.**
-⏸️ → **Ich habe gefrühstückt.** OR **Dann habe ich gefrühstückt.**
+⏸️ → **Dann habe ich gefrühstückt.**
 
-**Prompt 3: You went to the city centre.**
+**Prompt 3: You went to the city.**
 ⏸️ → **Ich bin in die Stadt gegangen.** *(sein — movement!)*
 
 **Prompt 4: You bought a new book.**
 ⏸️ → **Ich habe ein neues Buch gekauft.**
 
-**Sunday:**
+### 🔁 Active Recall:
+Which ones used sein? ⏸️ → aufgestanden, gegangen. Why? → movement/change of state!
+
+Four sentences — clean Saturday. Let's do Sunday."
+
+🎬 [Energy: coaching, building]
+
+---
+
+## Section 5: Build YOUR Sunday — Drill → Apply (4:45–6:00)
+### Visual: [Sunday timeline with prompts]
+### Narration:
+
+"Sunday — watch for inseparable verbs!
 
 **Prompt 5: You visited a friend.**
 ⏸️ → **Am Sonntag habe ich einen Freund besucht.** *(besuchen — inseparable prefix! No 'ge-'!)*
@@ -129,127 +122,117 @@ These words make your story FLOW. Instead of 8 choppy sentences, you get a conne
 ⏸️ → **Wir haben zusammen gekocht.**
 
 **Prompt 7: You watched a movie.**
-⏸️ → **Abends haben wir einen Film gesehen.** *(sehen → gesehen — irregular!)*
+⏸️ → **Abends haben wir einen Film gesehen.** *(sehen → gesehen — irregular from lesson 13-3!)*
 
 **Prompt 8: You went to bed late.**
 ⏸️ → **Ich bin spät ins Bett gegangen.**
 
-Excellent! That's 8 sentences — a COMPLETE weekend story. Notice how naturally haben and sein mix when you describe real activities."
+### 🔁 Active Recall — Full Weekend:
+How many of the 8 sentences can you recall without looking? ⏸️ Count them. 6+ = excellent."
+
+🎬 [Energy: celebratory as count grows]
 
 ---
 
-## Section 5: Dialogue Practice — Monday at Work (6:00–7:30)
-
-### Visual: [SLIDE: Two colleagues at a coffee machine. Dialogue bubbles appear sequentially.]
+## Section 6: Monday Dialogue — Full Conversation (6:00–7:15)
+### Visual: [Two colleagues at coffee machine. Dialogue appears in speech bubbles.]
 ### Narration:
-"Now let's practice the full CONVERSATION — the Monday morning exchange:
+
+"The full Monday exchange. Listen, then role-play.
 
 **A:** Hallo! Na, wie war dein Wochenende?
 **B:** Sehr schön! Am Samstag bin ich nach Hamburg gefahren.
 **A:** Oh, cool! Was hast du dort gemacht?
 **B:** Ich habe den Hafen gesehen und Fischbrötchen gegessen.
 **A:** Lecker! Und am Sonntag?
-**B:** Am Sonntag habe ich zu Hause gekocht und ein Buch gelesen. Und du?
+**B:** Am Sonntag habe ich gekocht und gelesen. Und du?
 **A:** Ich bin wandern gegangen. Das Wetter war super!
 
-[SLIDE: Key phrases highlighted]
+Key phrases:
+- **Na, wie war dein Wochenende?** — casual opener
+- **Was hast du dort gemacht?** — follow-up
+- **Und du?** — ask back! Germans expect this.
 
-Notice:
-- **Na, wie war dein Wochenende?** — casual way to ask
-- **Was hast du dort gemacht?** — follow-up question
-- **Und am Sonntag?** — transition to next day
-- **Und du?** — ask back!
+⏸️ Role-play: You're Person B. Answer with YOUR weekend.
 
-⏸️ **[PAUSE — Student role-plays Person B, then Person A]**
+*'Und du?' chodhikkanum! Reciprocity — athu German culture aanu.*"
 
-*Dialogue-il 'Und du?' chodhikkanum! Germans expect reciprocity — athu polite aanu.*"
+🎬 [Energy: conversational, natural]
 
 ---
 
-## Section 6: Writing Task — Exam-Style (7:30–8:30)
-
-### Visual: [SLIDE: Schreiben Teil 2 mock prompt]
+## Section 7: Exam Writing Task — Schreiben Teil 2 (7:15–8:30)
+### Visual: [Exam prompt card, then model answer with annotations]
 ### Narration:
-"Here's a real Schreiben Teil 2 prompt:
 
-### 📝 Exam Prompt:
+"Real Schreiben Teil 2 prompt:
+
+### 📝 Prompt:
 > 'Dein Freund Markus schreibt: Was hast du am Wochenende gemacht?
-> Schreib Markus eine Nachricht (30 Wörter).
+> Schreib eine Nachricht (30 Wörter).
 > - Was hast du am Samstag gemacht?
 > - Was hast du gegessen?
 > - Wie war das Wetter?'
 
-Three content points. 30 words. Let's write a model answer:
+3 content points. 30 words. Model:
 
-### Model Answer:
-> *Hallo Markus! Am Samstag bin ich ins Kino gegangen und habe einen tollen Film gesehen. Danach habe ich Pizza gegessen. Das Wetter war sonnig und warm! LG*
+> *Hallo Markus! Am Samstag bin ich ins Kino gegangen und habe einen tollen Film gesehen. Danach habe ich Pizza gegessen. Das Wetter war sonnig! LG*
 
-[SLIDE: Answer annotated with ✅ for each content point hit]
+✅ Samstag activity → Kino + Film
+✅ Food → Pizza
+✅ Weather → sonnig
+Word count: ~28 ✅
 
-- ✅ Samstag: Kino + Film
-- ✅ Essen: Pizza
-- ✅ Wetter: sonnig und warm
-- Word count: ~30 ✅
+⏸️ Write YOUR answer. Hit all 3 points. 30 words. Go!
 
-⏸️ **[PAUSE — Student writes their OWN answer to this prompt, hitting all 3 content points]**
+*3 points hit cheyyuka, 30 words. Short and correct > long and messy!*"
 
-*3 content points hit cheyyuka. 30 words. Short and correct beats long and messy!*"
-
----
-
-## Section 7: Common Mistakes to Avoid (8:30–9:30)
-
-### Visual: [SLIDE: ❌ common mistakes vs ✅ corrections, side by side]
-### Narration:
-"Before we finish — five mistakes EVERYONE makes with weekend stories:
-
-**Mistake 1: Wrong auxiliary**
-❌ 'Ich habe ins Kino gegangen.'
-✅ 'Ich **bin** ins Kino gegangen.' (movement → sein!)
-
-**Mistake 2: Past participle not at the end**
-❌ 'Ich habe gegessen Pizza.'
-✅ 'Ich habe Pizza **gegessen**.' (participle ALWAYS at the end!)
-
-**Mistake 3: Using Präsens instead of Perfekt**
-❌ 'Am Samstag ich gehe ins Kino.'
-✅ 'Am Samstag **bin** ich ins Kino **gegangen**.'
-
-**Mistake 4: Forgetting 'ge-' on regular verbs**
-❌ 'Ich habe Fußball spielt.'
-✅ 'Ich habe Fußball **gespielt**.'
-
-**Mistake 5: Adding 'ge-' on inseparable verbs**
-❌ 'Ich habe meine Oma gebesucht.'
-✅ 'Ich habe meine Oma **besucht**.' (be- prefix = no ge!)
-
-⏸️ **[PAUSE — Student corrects: 'Ich habe nach Berlin gefahren.' → 'Ich BIN nach Berlin gefahren.']**"
+🎬 [Energy: exam-focused, practical]
 
 ---
 
-## Section 8: Celebration + Outro (9:30–10:00)
-
-### Visual: [SLIDE: Module 13 completion badge / achievement card]
+## Section 8: Common Mistakes (8:30–9:15)
+### Visual: [❌ → ✅ corrections appearing rapid-fire]
 ### Narration:
-"🎉 Congratulations! You've completed Module 13 — Talking About the Past!
+
+"Five mistakes everyone makes. Quick corrections:
+
+❌ 'Ich habe ins Kino gegangen.' → ✅ 'Ich **bin** ins Kino gegangen.' *(movement = sein!)*
+❌ 'Ich habe gegessen Pizza.' → ✅ 'Ich habe Pizza **gegessen**.' *(participle at END!)*
+❌ 'Am Samstag ich gehe...' → ✅ 'Am Samstag **bin** ich **gegangen**.' *(Perfekt, not Präsens!)*
+❌ 'Ich habe gebesucht.' → ✅ 'Ich habe **besucht**.' *(be- = no ge-!)*
+❌ 'Ich habe gespielt Fußball.' → ✅ 'Ich habe Fußball **gespielt**.'
+
+### ⚡ Fix this:
+⏸️ 'Ich habe nach Berlin gefahren.' → 'Ich **bin** nach Berlin gefahren.'"
+
+🎬 [Energy: rapid, diagnostic]
+
+---
+
+## Section 9: Module 13 Celebration + Outro (9:15–10:00)
+### Visual: [Module 13 completion badge / achievement unlock animation]
+### Narration:
+
+"🎉 Module 13 — COMPLETE!
 
 You can now:
-- ✅ Form the Perfekt with haben AND sein
-- ✅ Use 20+ irregular past participles
-- ✅ Know the no-ge- rules
-- ✅ Describe a complete weekend in 8+ sentences
-- ✅ Handle the Monday morning question like a pro
+✅ Form Perfekt with haben AND sein
+✅ Use 20+ irregular participles
+✅ Know the no-ge- rules
+✅ Describe a full weekend in 8+ sentences
+✅ Handle the Monday question like a pro
 
-That's a MASSIVE milestone. Before Module 13, you could only speak in present tense. Now you can tell stories about the past. You've doubled your German abilities.
+Before Module 13, you only had present tense. Now you have the PAST. You've doubled your German.
 
-*Module 13 complete! Ini ningalku past tense ariyaam. Present tense + past tense = double power! 💪*
+*Present tense + past tense = double power! Module 13 adipoli! 💪*
 
-📝 **Final homework:** Write YOUR real last weekend in 8 German sentences. Use at least:
-- 3 haben verbs
-- 2 sein verbs
-- 3 time markers (gestern, am Samstag, dann, etc.)
+📝 **Homework:** Write YOUR real last weekend — 8 sentences minimum. Include:
+- ☐ 3+ haben verbs
+- ☐ 2+ sein verbs
+- ☐ 3+ time markers
 
-Then read it out loud. Then tell it to someone. Own your story!
+Then read it out loud. Then tell it to someone without notes.
 
 Bis zum nächsten Mal — tschüss!"
 
@@ -257,15 +240,18 @@ Bis zum nächsten Mal — tschüss!"
 
 ## Script Quality Checklist
 
-- [x] Teaching goal clear: Sustained past-tense weekend narrative (8+ sentences)
-- [x] A1 exam link explicit: Schreiben Teil 2 (weekend message prompt) + Sprechen
-- [x] Malayalam bridges: Multiple contextual Malayalam asides
-- [x] Practice pauses: 8+ student production pauses (⏸️)
-- [x] Model narrative: Full 8-sentence weekend story with haben/sein color-coded
-- [x] Time markers taught: Past (gestern, am Samstag) + sequencing (zuerst, dann, danach)
-- [x] Dialogue practice: Full Monday morning conversation exchange
-- [x] Exam-style writing task: Schreiben Teil 2 mock with 3 content points + model answer
-- [x] Common mistakes: 5 specific errors with corrections
-- [x] Cross-module references: Module 13 lessons 1-3 (Perfekt structure, haben, sein, irregulars)
-- [x] Celebration moment: Module completion achievement
-- [x] Duration estimate: ~10:00 (8 sections)
+- [x] Hook under 40s with concrete payoff (Monday question fluency)
+- [x] Teach→drill→apply cycles (model listen → time markers → build Saturday → build Sunday → dialogue → writing)
+- [x] Active recall checkpoints (3 — after Saturday, after Sunday, implicit in dialogue)
+- [x] Energy cues every section
+- [x] Malayalam bridges (Monday culture, reciprocity, celebration)
+- [x] ~15% word count reduction from v1.0
+- [x] Specific practice pauses with prompts + reveals (12+)
+- [x] Colour-coded haben/sein in model narrative
+- [x] Time markers taught: past (gestern, am Samstag) + sequencing (zuerst, dann, danach)
+- [x] Full dialogue practice with role-play
+- [x] Schreiben Teil 2 exam task with model answer
+- [x] 5 common mistakes with corrections
+- [x] Module completion celebration
+- [x] Cross-module refs: 13-1 (haben), 13-2 (sein), 13-3 (irregulars)
+- [x] Duration estimate: ~10:00 (9 sections)

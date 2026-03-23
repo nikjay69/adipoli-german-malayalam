@@ -3,8 +3,8 @@
 > **Module:** 2 | **Lesson:** 2-1 | **Duration:** 12:00 target
 > **Teaching Goal:** Master name introductions — formal and informal. Build the first block of the "golden self-introduction" for Sprechen Teil 1.
 > **A1 Exam Link:** Sprechen Teil 1 (self-introduction), Hören Teil 1 (personal info dialogues), Schreiben Teil 1 (name fields on forms)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
@@ -12,81 +12,73 @@
 
 ### Visual: [Course intro animation / Adipoli German branding]
 ### Narration:
-"Willkommen bei Adipoli German! Today — the very first thing anyone will ever ask you in Germany."
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook (0:15–1:30)
+## Section 1: Hook — The First Question (0:15–0:50)
 
-### Visual: [SLIDE: A split screen — German office/café on one side, exam room on the other. Both show "Wie heißen Sie?" in a speech bubble]
-### Narration:
-"Whether it's your first day at work, your first visit to a Bürgeramt, your first coffee date, or your Goethe A1 exam — the FIRST question you'll hear is:
+### Visual: [Scene: Someone walks into a German office. Receptionist looks up. Speech bubble: "Wie heißen Sie?" Exam prompt overlay: "Sprechen Teil 1 — Stellen Sie sich vor."]
+### Narration: [ENERGY: direct, confident]
+"Germany. Day one. Office, café, Bürgeramt, exam room — doesn't matter where. The first question is always the same:
 
-**'Wie heißen Sie?'** — What's your name?
+🔊 **'Wie heißen Sie?'** — What's your name?
 
-Or casually: **'Wie heißt du?'**
-
-*Germany-yil aara enna chodhikkaan vendathu — peru parayan ariyunnathanu FIRST step.*
-
-This is the foundation of EVERYTHING. Your self-introduction in the speaking exam starts here. Every form you fill out needs your name. Every conversation begins with it.
-
-Get this right, and you've already started speaking German. Let's go!"
+By the end of this video, you'll answer this three different ways — formal, casual, and exam-perfect. Let's go."
 
 ---
 
-## Section 2: Formal vs Informal — du and Sie (1:30–3:00)
+## Section 2: du vs Sie — You Already Know This (0:50–2:15)
 
-### Visual: [SLIDE: Two scenes side by side. Left: two young people at a café ("du"). Right: person at an office desk with official ("Sie"). Colour-coded: du = green, Sie = blue]
-### Narration:
-"Before we learn how to say our name, you need to understand something fundamental about German: there are TWO ways to say 'you'.
+### Visual: [Split screen. Left: two friends at café, green "du" label. Right: person at Bürgeramt desk, blue "Sie" label.]
+### Narration: [ENERGY: clear, relatable]
+"German has two words for 'you'. And you already understand the concept perfectly.
 
-**du** — informal, for friends, family, people your age, children
-**Sie** — formal, for strangers, officials, bosses, older people
+[SLIDE: du = green, Sie = blue]
 
-[SLIDE: du highlighted in green]
-'Wie heißt **du**?' — 'What's your name?' (casual)
+**du** — informal. Friends, family, kids.
+**Sie** — formal. Strangers, officials, exams.
 
-[SLIDE: Sie highlighted in blue]
-'Wie heißen **Sie**?' — 'What is your name?' (formal/respectful)
+*Ithu nammude 'നീ' vs 'നിങ്ങൾ/താങ്കൾ' thanne aanu!*
 
-### Malayalam Parallel:
-*Ithu nammude 'nee' vs 'ningal/thangal' pole thanne aanu!*
+- **du** = നീ — close people
+- **Sie** = നിങ്ങൾ — respect, distance
 
-- **du** = നീ (nee) — close friends, children
-- **Sie** = നിങ്ങൾ / താങ്കൾ (ningal/thangal) — respect, strangers
+Same concept. Different language.
 
-*Kure easy alle? Same concept!*
+So the name question comes in two versions:
 
-### When to use which:
-- At the Bürgeramt → **Sie** (always)
-- At the exam → **Sie** (always)
-- At university with other students → **du** (usually)
-- At a party → **du** (usually)
-- Not sure? → Use **Sie**. It's never wrong to be polite!
+🔊 **'Wie heißt du?'** — casual (du)
+🔊 **'Wie heißen Sie?'** — formal (Sie)
 
-[SLIDE: 'When in doubt → Sie' with a golden rule badge]
+[SLIDE: Golden Rule badge: "Not sure? → Use Sie."]
 
-*Doubt undenkil Sie use cheyyuka. Germans athinu respect tharum, irritate aavilla.*"
+*Doubt undenkil Sie use cheyyuka. Germans respect tharum, irritate aavilla.*
+
+⏸️ Quick test: Your professor asks your name. du or Sie?
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**Sie.** Always Sie with professors, officials, strangers."
 
 ---
 
-## Section 3: Three Ways to Say Your Name (3:00–5:00)
+## Section 3: Three Ways to Say Your Name (2:15–4:15)
 
-### Visual: [SLIDE: Three patterns appearing one by one, each with a colour-coded structure]
-### Narration:
-"Now — how do YOU answer? German gives you three patterns. All correct, all common:
+### Visual: [Three patterns appearing one by one, colour-coded. Pattern highlighted, example below.]
+### Narration: [ENERGY: teaching, building]
+
+"Now — how do YOU answer? Three patterns. All correct. Each fits different situations.
 
 ---
 
 ### Pattern 1: Ich heiße...
 
-[SLIDE: 'Ich heiße Nikhil.' — 'heiße' highlighted in red]
+[SLIDE: 'Ich heiße Nikhil.' — 'heiße' in red]
 
-**Ich heiße Nikhil.** — My name is Nikhil.
+🔊 **Ich heiße Nikhil.** — My name is Nikhil.
 
-Literally: 'I am called Nikhil.' The verb 'heißen' means 'to be called'.
-
-This is the MOST common way. Use it as your default.
+This is your DEFAULT. Works everywhere — formal, casual, exam.
 
 ⏸️ Say it now: 'Ich heiße [your name]!'
 
@@ -96,13 +88,13 @@ This is the MOST common way. Use it as your default.
 
 ### Pattern 2: Mein Name ist...
 
-[SLIDE: 'Mein Name ist Nikhil.' — 'Name' highlighted in red]
+[SLIDE: 'Mein Name ist Nikhil.' — 'Name' in red]
 
-**Mein Name ist Nikhil.** — My name is Nikhil.
+🔊 **Mein Name ist Nikhil.**
 
-More formal. Great for official situations, job interviews, the exam.
+More formal. Great for exams, job interviews, official settings.
 
-*'Mein' = ente (my). 'Name' = peru (name). 'ist' = aanu (is).*
+*'Mein' = ente. 'Name' = peru. 'ist' = aanu. Word-by-word same!*
 
 ⏸️ Say it: 'Mein Name ist [your name]!'
 
@@ -112,13 +104,11 @@ More formal. Great for official situations, job interviews, the exam.
 
 ### Pattern 3: Ich bin...
 
-[SLIDE: 'Ich bin Nikhil.' — 'bin' highlighted in red]
+[SLIDE: 'Ich bin Nikhil.' — 'bin' in red]
 
-**Ich bin Nikhil.** — I am Nikhil.
+🔊 **Ich bin Nikhil.** — I am Nikhil.
 
-The simplest form. Very casual. Perfect for parties, meeting friends of friends.
-
-*'Ich bin' = njaan aanu.*
+Casual. For parties, friends of friends.
 
 ⏸️ Say it: 'Ich bin [your name]!'
 
@@ -126,262 +116,263 @@ The simplest form. Very casual. Perfect for parties, meeting friends of friends.
 
 ---
 
-### Quick Summary Table:
-[SLIDE: Table with all three patterns]
-| Pattern | When to Use | Formality |
-|---------|------------|-----------|
-| Ich heiße... | Anywhere (default) | ★★★ Neutral |
-| Mein Name ist... | Formal / Exam | ★★★★ Formal |
-| Ich bin... | Casual / Party | ★★ Casual |
+⏸️ Now — WITHOUT looking, can you name all three patterns?
 
-**Pro tip for the exam:** Use 'Ich heiße...' or 'Mein Name ist...' — don't start with 'Ich bin...' because it sounds too casual for an exam setting."
+### Practice Pause: ⏸️ (4 seconds)
 
----
+[SLIDE: All three revealed]
+1. **Ich heiße...** — default ★★★
+2. **Mein Name ist...** — formal ★★★★
+3. **Ich bin...** — casual ★★
 
-## Section 4: Asking and Answering — The Full Exchange (5:00–6:30)
-
-### Visual: [DIALOGUE: Two characters, Person A (examiner/colleague) and Person B (student), with speech bubbles colour-coded]
-### Narration:
-"Now let's put it all together in a real conversation. Listen first, then practice!
+[EXAM-TIP] For the speaking exam, use Pattern 1 or 2. Pattern 3 sounds too casual for an exam."
 
 ---
 
-### Dialogue 1: Formal (Sie) — At the office
+## Section 4: Formal Dialogue — Practice It (4:15–5:30)
 
-[DIALOGUE: speech bubbles appear one by one]
+### Visual: [DIALOGUE: Two characters with colour-coded speech bubbles. Person A = examiner. Person B = YOU.]
+### Narration: [ENERGY: coaching, encouraging]
+"Let's put this into a real conversation. I'll be Person A. YOU are Person B.
 
-**Person A:** Guten Tag! Wie heißen Sie?
-**Person B:** Guten Tag! Ich heiße Nikhil Jayanth.
-**Person A:** Freut mich, Herr Jayanth.
-**Person B:** Freut mich auch!
+---
 
-### Key Vocabulary Overlay:
-- **Freut mich** — Nice to meet you (*literally: 'It pleases me'*)
+### Dialogue: Formal (Sie) — At the office
+
+[Speech bubbles appear one by one]
+
+**A:** Guten Tag! Wie heißen Sie?
+**B:** Guten Tag! Ich heiße Nikhil Jayanth.
+**A:** Freut mich, Herr Jayanth.
+**B:** Freut mich auch!
+
+### New phrases:
+- **Freut mich** — Nice to meet you *(literally: 'It pleases me')*
 - **Freut mich auch** — Nice to meet you too
-- **Herr** — Mr. / **Frau** — Ms.
+- **Herr** = Mr. / **Frau** = Ms.
 
-*'Freut mich' = 'Santhosham' — ninne kaanaan santhosham!*
+*'Freut mich' = 'Santhosham' — kaanaan santhosham!*
 
----
-
-### Dialogue 2: Informal (du) — At a party
-
-**Person A:** Hey! Wie heißt du?
-**Person B:** Hi! Ich bin Nikhil. Und du?
-**Person A:** Ich heiße Anna. Woher kommst du?
-**Person B:** Ich komme aus Indien, aus Kerala!
-
-### Key Vocabulary Overlay:
-- **Und du?** — And you?
-- **Woher kommst du?** — Where do you come from? (sneak peek for next lesson!)
-
-⏸️ Now practice BOTH dialogues. Say Person B's lines out loud!
+⏸️ Now say Person B's lines. Both of them. Go!
 
 ### Practice Pause: ⏸️ (5 seconds)"
 
 ---
 
-## Section 5: Kerala Names in German (6:30–8:00)
+## Section 5: Informal Dialogue — Practice It (5:30–6:30)
 
-### Visual: [TABLE: Common Malayali names with German pronunciation guide and Buchstabieren (spelling) column]
-### Narration:
-"Let's be real — German speakers will struggle with Malayalam names. Here's how to handle it like a pro.
+### Visual: [DIALOGUE: Party setting. Casual clothes, drinks. Green du label.]
+### Narration: [ENERGY: relaxed, fun]
+"Same thing, but casual:
 
-### Common Challenges:
+**A:** Hey! Wie heißt du?
+**B:** Hi! Ich bin Nikhil. Und du?
+**A:** Ich heiße Anna. Woher kommst du?
+**B:** Ich komme aus Indien, aus Kerala!
+
+### New phrases:
+- **Und du?** — And you?
+- **Woher kommst du?** — Where are you from? *(sneak peek — full lesson next!)*
+
+⏸️ Say Person B's lines — all of them!
+
+### Practice Pause: ⏸️ (5 seconds)
+
+*Randu dialogue practice cheythu kazhinjhu. Adipoli!*"
+
+---
+
+## Section 6: Kerala Names in Germany — Real Talk (6:30–7:45)
+
+### Visual: [TABLE: Common Malayali names with German pronunciation issues]
+### Narration: [ENERGY: practical, honest]
+"Let's be honest — Germans will struggle with Malayalam names.
+
 [TABLE appearing row by row]
 
-| Your Name | Germans Will Say | Tip |
-|-----------|-----------------|-----|
-| Nikhil | 'Nikel' (ch → k) | Correct gently: 'Nik-hil' |
-| Akhil | 'Akil' | 'AK-hil, with a soft h' |
-| Aswathy | 'Assvati' (w→v, th→t) | Accept it or offer 'Ash' |
-| Sreelakshmi | '...' (confused silence) | Offer: 'Sree' or 'Lakshmi' |
-| Vishnu | 'Vishnu' ✅ | Germans know this one! |
+| Your Name | Germans Will Say | Quick Fix |
+|-----------|-----------------|-----------|
+| Nikhil | 'Nikel' | Correct gently: 'Nik-hil' |
+| Aswathy | 'Assvati' | Offer: 'Ash' as a short form |
+| Sreelakshmi | '...' (confused) | Offer: 'Sree' |
+| Vishnu | 'Vishnu' ✅ | They know this one! |
 
-**Pro tip:** If your name is hard for Germans, have a SHORT VERSION ready. Many Indians in Germany go by a nickname. It's not giving up your identity — it's being practical!
-
-*'Ente peru Sreelakshmiyaanu' ennoru German-nu parayan budhimuttaanu. 'Sree' ennoru short form ready vekkanam!*
+**Have a short version ready.** Many Indians in Germany use one. It's practical, not giving up your identity.
 
 ---
 
 ### Buchstabieren — Spelling Your Name
 
-The examiner might ask: **'Können Sie das buchstabieren?'** — Can you spell that?
+The examiner may ask: 🔊 **'Können Sie das buchstabieren?'** — Can you spell that?
 
-This is where Module 1's alphabet comes back!
+[SLIDE: N - I - K - H - I - L, each letter in German alphabet pronunciation]
 
-[SLIDE: Spelling example]
-N - I - K - H - I - L
-[Audio cue for each letter in German alphabet pronunciation]
+⏸️ Spell YOUR name in German letter sounds now!
 
-*Exam-il peru spell cheyyaan chodhikkum. German alphabet orma undenkil easy!*
+### Practice Pause: ⏸️ (5 seconds)
 
-⏸️ Spell YOUR name in German now — letter by letter!
-
-### Practice Pause: ⏸️ (5 seconds)"
+[EXAM-TIP] Buchstabieren comes up in Sprechen Teil 1 AND Hören Teil 1. Practice your name spelling until it's automatic."
 
 ---
 
-## Section 6: Freut mich / Gleichfalls — Meeting Responses (8:00–9:00)
+## Section 7: Meeting Responses — Freut mich / Gleichfalls (7:45–8:30)
 
-### Visual: [SLIDE: Two people shaking hands, with speech bubbles showing the responses]
-### Narration:
-"After introductions, Germans say:
+### Visual: [SLIDE: Two people shaking hands. Response options shown.]
+### Narration: [ENERGY: brisk, practical]
+"After introductions:
 
-**Freut mich!** — Nice to meet you!
-or
-**Sehr erfreut!** — Very pleased! (very formal)
+🔊 **Freut mich!** — Nice to meet you!
+Response: 🔊 **Freut mich auch!** — You too!
 
-And you respond:
-**Freut mich auch!** — Nice to meet you too!
-or
-**Gleichfalls!** — Likewise!
+Or the universal shortcut:
+🔊 **Gleichfalls!** — Likewise!
 
-### Which to use:
-- Exam / formal → **Freut mich!** ... **Freut mich auch!**
-- Casual → **Hey, cool!** or just a smile and **Hi!**
-
-*'Gleichfalls' = 'Same to you'. Universal aanu — food, greetings, wishes — ellaaythinum use cheyyaam.*
+*'Gleichfalls' works for everything — greetings, wishes, 'Guten Appetit'. Oru word, pala situations!*
 
 ---
 
-### The Handshake Rule:
-In Germany, introductions usually involve a HANDSHAKE — even between young people in semi-formal settings. 
-- Firm grip (not crushing, not limp)
-- Make eye contact
-- One or two shakes, then release
+### The Handshake:
+Germany = handshake culture, even among young people in semi-formal settings.
+- Firm (not crushing)
+- Eye contact
+- One or two shakes
 
-*Kerala-yil kai kodukkunnath pole thanne — but eye contact important! Germans athu notice cheyyum.*"
+⏸️ Say 'Freut mich!' with a confident tone — like you mean it!
 
----
-
-## Section 7: Full Mini-Dialogue Practice (9:00–10:30)
-
-### Visual: [DIALOGUE: A complete first-meeting dialogue with both roles highlighted. Student practices Person B.]
-### Narration:
-"Let's do a complete first-meeting dialogue. I'll be Person A. YOU be Person B.
-
----
-
-### Complete Dialogue:
-
-**A:** Guten Tag!
-**B:** Guten Tag!
-
-**A:** Wie heißen Sie?
-**B:** Ich heiße [your name]. Und Sie?
-
-**A:** Mein Name ist Thomas. Freut mich!
-**B:** Freut mich auch, Herr Thomas!
-
----
-
-⏸️ Now let's do it again — this time I'll play the audio and YOU say Person B's lines!
-
-### Practice Pause: ⏸️ (10 seconds — full dialogue practice)
-
-Let's do one more, informal this time:
-
-**A:** Hey! Ich bin Lisa. Wie heißt du?
-**B:** Hi Lisa! Ich heiße [name]. Freut mich!
-**A:** Woher kommst du?
-**B:** Aus Indien — aus Kerala!
-**A:** Cool!
-
-⏸️ Your turn — say ALL of Person B's lines!
-
-### Practice Pause: ⏸️ (10 seconds)"
-
----
-
-## Section 8: Exam Connection (10:30–11:30)
-
-### Visual: [SLIDE: "Sprechen Teil 1 — Sich vorstellen" with the exam prompt: "Stellen Sie sich bitte vor."]
-### Narration:
-"Now here's why this matters for the exam.
-
-### [EXAM-TIP]
-In Sprechen Teil 1, the examiner says: **'Stellen Sie sich bitte vor.'** — Please introduce yourself.
-
-The FIRST thing you say is your name. This is the first impression. If you nail this smoothly, the examiner already thinks: 'This person is confident.'
-
-Your opening should be:
-
-[SLIDE: Golden opening, highlighted]
-**'Hallo! Mein Name ist [Name]. / Ich heiße [Name].'**
-
-Smooth. Confident. No hesitation.
-
-Then you continue with age, origin, profession, languages, hobbies — we'll build these in the next lessons. But the NAME is your launch pad.
-
-By the end of Module 2, you'll have a COMPLETE golden self-introduction. We're building it piece by piece, and this is piece number one.
-
-*Ithu building-nte foundation aanu. Foundation strong aayaal building strong aakum!*
-
----
-
-### Practice Your Opening (3 times!):
-
-⏸️ Round 1: 'Hallo! Ich heiße [name].' — Say it now!
-### Practice Pause: ⏸️ (3 seconds)
-
-⏸️ Round 2: Same thing, but FASTER and more confident!
-### Practice Pause: ⏸️ (3 seconds)
-
-⏸️ Round 3: Add 'Freut mich!' at the end!
 ### Practice Pause: ⏸️ (3 seconds)"
 
 ---
 
-## Section 9: Drill + Outro (11:30–12:00)
+## Section 8: Full Exam Rehearsal (8:30–10:00)
 
-### Visual: [SLIDE: Summary card with all key phrases, then course branding]
-### Narration:
-"Quick summary of everything you learned today:
+### Visual: [SLIDE: Exam prompt: "Stellen Sie sich bitte vor." Timer showing preparation.]
+### Narration: [ENERGY: coaching, focused]
+"This is what the examiner says in Sprechen Teil 1:
 
-### Today's Phrases:
-- **Wie heißen Sie? / Wie heißt du?** — What's your name?
-- **Ich heiße... / Mein Name ist... / Ich bin...** — My name is...
-- **Freut mich! / Freut mich auch!** — Nice to meet you!
-- **Und Sie? / Und du?** — And you?
+🔊 **'Stellen Sie sich bitte vor.'** — Please introduce yourself.
 
-### Homework:
-Say 'Hallo! Ich heiße [name]. Freut mich!' — five times today. Say it to your mirror. Say it to your dog. Say it to your Amma.
+Your opening — the first 5 seconds — sets the tone. If it's smooth, the examiner already thinks 'confident'.
 
-*Naalethekku — 'Woher kommen Sie?' — where are you from. We're building your golden introduction one block at a time.*
+[SLIDE: Golden opening, highlighted in gold]
+**'Hallo! Mein Name ist [Name]. / Ich heiße [Name].'**
+
+We'll add age, origin, job, and hobbies in the next lessons. But this is your launch pad.
+
+---
+
+### Rehearsal — 3 Rounds:
+
+⏸️ **Round 1:** 'Hallo! Ich heiße [name].' — Normal speed. Go!
+### Practice Pause: ⏸️ (3 seconds)
+
+⏸️ **Round 2:** Same thing — FASTER and more confident!
+### Practice Pause: ⏸️ (3 seconds)
+
+⏸️ **Round 3:** Add the meeting phrase: 'Hallo! Ich heiße [name]. Freut mich!'
+### Practice Pause: ⏸️ (3 seconds)
+
+---
+
+Now the full formal dialogue. YOU are the student. I'll be the examiner.
+
+**Examiner:** Guten Tag. Wie heißen Sie?
+**You:** ...
+
+⏸️ Answer! Full sentence!
+
+### Practice Pause: ⏸️ (4 seconds)
+
+**Examiner:** Freut mich!
+**You:** ...
+
+⏸️ Respond!
+
+### Practice Pause: ⏸️ (3 seconds)
+
+*Exam-nte first 10 seconds — secured. Building-nte foundation strong aanu!*"
+
+---
+
+## Section 9: Active Recall + Outro (10:00–10:45)
+
+### Visual: [SLIDE: Blank summary — student fills mentally before answers appear]
+### Narration: [ENERGY: calm, consolidating]
+"Before I show the summary — test yourself.
+
+⏸️ Three ways to say your name in German. What are they?
+
+### Practice Pause: ⏸️ (4 seconds)
+
+[Answers appear one by one]
+1. **Ich heiße...**
+2. **Mein Name ist...**
+3. **Ich bin...**
+
+⏸️ The formal 'you' in German?
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**Sie.** ✅
+
+⏸️ How do you respond to 'Freut mich'?
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**Freut mich auch!** or **Gleichfalls!** ✅"
+
+---
+
+## Section 10: Outro (10:45–11:15)
+
+### Visual: [Course branding + next lesson card: "Woher kommen Sie?"]
+### Narration: [ENERGY: warm, forward-looking]
+"Your homework: Say 'Hallo! Ich heiße [name]. Freut mich!' — five times today. Mirror. Dog. Amma. Doesn't matter who.
+
+Next lesson: **Woher kommen Sie?** — Where are you from? Your golden intro gets its second block.
+
+*Peru parayan pattiyaal, conversation thudangi kazhinjhu!*
 
 Tschüss und bis zum nächsten Mal!"
 
 ---
 
-## Production Notes
+## Script Quality Checklist (v2.0)
 
-### Key Vocabulary This Script Covers:
-| German | English | Malayalam hint |
-|--------|---------|---------------|
-| Wie heißen Sie? | What's your name? (formal) | നിങ്ങളുടെ പേര് എന്താണ്? |
-| Wie heißt du? | What's your name? (informal) | നിന്റെ പേര് എന്താ? |
-| Ich heiße... | My name is... | എന്റെ പേര്... |
-| Mein Name ist... | My name is... (formal) | എന്റെ പേര്... |
-| Ich bin... | I am... | ഞാൻ... ആണ് |
-| Freut mich | Nice to meet you | സന്തോഷം |
-| Gleichfalls | Likewise | അതുപോലെ |
-| Herr / Frau | Mr. / Ms. | ശ്രീ / ശ്രീമതി |
-| buchstabieren | to spell | സ്പെൽ ചെയ്യുക |
-| du / Sie | you (informal/formal) | നീ / നിങ്ങൾ |
-
-### Connections to Other Modules:
-- **Module 1** (Welcome) — Alphabet/buchstabieren, greetings used here
-- **Module 2 Lesson 2-2** (Where Are You From?) — next building block
-- **Module 14** (Forms) — Familienname/Vorname from this lesson
-- **Module 18** (Exam Prep) — Sprechen Teil 1 golden intro starts here
-
-### Production Exercise Tie-ins:
-- Free-text: "Write a 2-sentence self-introduction"
-- Speaking: Record yourself saying the formal dialogue
-- Dictation: Hear a name introduction → write what you heard
-- Form practice: Fill in Familienname + Vorname fields
+- [x] Hook under 60 seconds, states concrete payoff
+- [x] No monologue block exceeds 90 seconds
+- [x] Teach → Drill → Apply cycle in each section
+- [x] Malayalam bridges are structural parallels, not dictionary entries
+- [x] Practice pauses have specific prompts and answer reveals (14 pauses)
+- [x] Active recall summary (student recalls before seeing answers)
+- [x] All German grammatically verified
+- [x] Visual cues are producible and tagged
+- [x] Energy/tone cues marked at section transitions
+- [x] Exam tips limited to 2 inline `[EXAM-TIP]` markers
+- [x] Duration realistic for ~11:15 target
+- [x] No A2+ content
+- [x] Clear next-lesson bridge in outro
 
 ---
 
-*Script v1.0 — Created 2026-03-23 overnight cron. Ready for review and narration recording.*
+## Revision Notes (v1.0 → v2.0)
+
+- **Hook cut from 75s to 35s:** Removed motivation padding, jump straight to "Wie heißen Sie?"
+- **du/Sie section tightened:** Added mini-quiz at end ("professor asks your name — du or Sie?") instead of passive explanation
+- **Active recall added after Pattern 3:** Student recalls all 3 patterns before seeing summary
+- **Dialogues restructured:** Formal and informal separated into own sections with dedicated practice pauses
+- **Kerala Names section trimmed:** Removed overly long table, kept 4 most relevant examples
+- **Exam rehearsal expanded:** Added examiner-student roleplay with pauses, not just "say it 3 times"
+- **Summary converted to active recall:** Quiz format instead of bullet list
+- **Energy cues added to every section**
+- **Removed Section 6 (Freut mich) duplication** — was covered in dialogue, now has own compact section
+- **Word count reduced ~20%** — tighter narration, more practice time
+- **Section count: 10 → 10** but each section is more focused with clearer single goals
+
+---
+
+## Production Notes
+
+**Audio:** 'Wie heißen Sie?' and 'Wie heißt du?' need slow, clear first pronunciation, then natural speed.
+**Visuals:** du/Sie split screen, 3 patterns colour-coded, 2 dialogue scenes (office + party), exam prompt mockup, name spelling demo.
+**Exercise tie-ins:** Free-text self-introduction, speaking recording, dictation (hear name intro → write), form practice (Familienname + Vorname fields).
+**Connections:** Module 1 (alphabet for buchstabieren), Module 2-2 (origin — next block), Module 14 (forms), Module 18 (exam speaking).

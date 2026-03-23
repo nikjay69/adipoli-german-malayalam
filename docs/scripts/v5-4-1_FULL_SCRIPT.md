@@ -3,214 +3,189 @@
 > **Module:** 5 | **Lesson:** 5-4 | **Duration:** 10:00 target
 > **Teaching Goal:** Combine regular verbs, separable verbs, and time expressions into a sustained "Mein Tag" narrative — 8+ correct sentences describing a full day
 > **A1 Exam Link:** Sprechen (describe your routine), Schreiben (messages about plans/daily activities)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Revision:** 2026-03-23 (quality pass — tighter hook, teach→drill→apply cycles, active recall, energy cues, stronger Malayalam bridges, ~15% word count reduction)
 
 ---
 
-## Pre-roll (0:00–0:15)
+## Pre-roll (0:00–0:10)
+### Visual: [Course intro animation]
+"Willkommen bei Adipoli German!"
 
-### Visual: [Course intro animation / Adipoli German branding]
+---
+
+## Section 1: Hook (0:10–0:40)
+### Visual: [ANIMATION: Alarm clock rings → fast-forward montage of a day → pillow at night, with tiny German verbs floating above each scene]
 ### Narration:
-"Willkommen bei Adipoli German! Today — you describe your ENTIRE day in German."
+"After this video, you'll describe your ENTIRE day — morning to night — in 10 German sentences. That's Sprechen Teil 1, done.
+
+*Nammude full day German-il — alarm clock muthal pillow vare. Let's go!*"
+
+🎬 [Energy: confident, fast, no lingering]
 
 ---
 
-## Section 1: Hook — Why This Matters (0:15–1:00)
-
-### Visual: [SLIDE: sunrise-to-sunset timeline with German activities labeled along it]
+## Section 2: Model Listen — "Mein Tag" (0:40–2:00)
+### Visual: [Timeline graphic: sunrise→sunset, each activity icon lights up as narrator speaks. NO text dump — visuals carry it.]
 ### Narration:
-"You know how to conjugate verbs. You know separable verbs. You know time expressions. Now — we put it ALL together.
 
-By the end of this lesson, you'll describe a full day from alarm clock to pillow in 10 correct German sentences. That's not a drill — that's SPEAKING German.
+"First — just LISTEN. Follow the timeline. Don't memorize yet, just absorb.
 
-*Ini nammude full day German-il parayaam! Morning muthal night vare — ellaam German-il.*
+🔊 **[Natural speed]**
 
-Let's start with a model."
+1. **Ich stehe um halb sieben auf.**
+2. **Dann dusche ich.**
+3. **Um sieben Uhr frühstücke ich.**
+4. **Um acht Uhr fahre ich zur Arbeit.**
+5. **Ich arbeite von neun bis fünf.**
+6. **Nach der Arbeit kaufe ich ein.**
+7. **Abends koche ich und sehe fern.**
+8. **Um elf Uhr gehe ich schlafen.**
+
+*Kettiyaa? Ippo nammukku piece by piece nokkaam.*"
+
+🎬 [Energy: calm on the listen, picks up on the transition]
 
 ---
 
-## Section 2: Model Narrative — "Mein Tag" (1:00–3:00)
-
-### Visual: [SLIDE: animated timeline, each activity highlighted as narrator says it. Clock shows time for each.]
+## Section 3: Morning Block — Teach → Drill → Apply (2:00–3:30)
+### Visual: [Timeline zoomed to MORNING section only. Three activities highlighted.]
 ### Narration:
-"Listen carefully. I'm going to describe a complete day. Follow along with the timeline.
 
-🔊 **[Spoken at natural speed, then repeated slowly]**
+"Morning block. Three sentences.
 
-1. **Ich stehe um halb sieben auf.** — I get up at 6:30.
-2. **Dann dusche ich und putze meine Zähne.** — Then I shower and brush my teeth.
-3. **Um sieben Uhr frühstücke ich.** — At 7 o'clock I have breakfast.
-4. **Ich trinke Kaffee und esse Toast.** — I drink coffee and eat toast.
-5. **Um acht Uhr fahre ich zur Arbeit.** — At 8 o'clock I drive to work.
-6. **Ich arbeite von neun bis fünf.** — I work from 9 to 5.
-7. **Mittags esse ich in der Kantine.** — At lunchtime I eat in the canteen.
-8. **Nach der Arbeit kaufe ich ein.** — After work I go shopping.
-9. **Abends koche ich und sehe fern.** — In the evening I cook and watch TV.
-10. **Um elf Uhr gehe ich schlafen.** — At 11 o'clock I go to sleep.
+🔊 **Ich stehe um halb sieben auf.**
+Separable verb — 'auf' at the end. You know this from lesson 5-3!
 
-[PAUSE — replay slowly, sentence by sentence]
+🔊 **Dann dusche ich.**
+Regular verb, easy conjugation.
 
-*Kettiyaa? Ippo onnu koodë kelpikkaam — slowly.*
+🔊 **Um sieben Uhr frühstücke ich.**
+Notice: time expression FIRST, then verb, then subject. Time-Verb-Subject — German word order!
 
-Notice:
-- **Regular verbs:** dusche, frühstücke, arbeite, koche
-- **Separable verbs:** stehe...auf, kaufe...ein, sehe...fern
-- **Time expressions:** um halb sieben, um sieben Uhr, mittags, abends
+### ⚡ Drill — Your Morning:
+⏸️ You wake up at 7:00. Say it. → 'Ich stehe um sieben Uhr auf.'
+⏸️ You shower at 7:15. Say it. → 'Dann dusche ich.' OR 'Um Viertel nach sieben dusche ich.'
+⏸️ You eat breakfast at 7:30. Say it. → 'Um halb acht frühstücke ich.'
 
-That's the blueprint. Now let's build YOUR day."
+*Halb acht = 7:30 — Module 3 ormikkunnundo? Halfway TO eight!*"
+
+🎬 [Energy: coaching, encouraging]
 
 ---
 
-## Section 3: Sentence Building — Part by Part (3:00–5:00)
-
-### Visual: [SLIDE: "Build YOUR Day" — prompts appear one at a time. Blank space for student to fill mentally/verbally.]
+## Section 4: Midday Block — Teach → Drill → Apply (3:30–5:00)
+### Visual: [Timeline zoomed to MIDDAY. Work/commute icons.]
 ### Narration:
-"I'll give you a prompt. You build the German sentence BEFORE I reveal the answer. Ready?
 
-**Prompt 1: You wake up at 7:00.**
+"Midday block. Work and travel.
 
-⏸️ **[PAUSE — Student speaks]**
+🔊 **Um acht Uhr fahre ich zur Arbeit.**
+'Fahren' = drive/go by transport. If you walk: 'gehe ich zur Arbeit.'
 
-✅ **Ich wache um sieben Uhr auf.** OR **Ich stehe um sieben Uhr auf.**
+🔊 **Ich arbeite von neun bis fünf.**
+'Von...bis...' = from...to... Works for any time range.
 
-Both work! 'Aufwachen' = wake up. 'Aufstehen' = get up. Notice: prefix goes to the END.
+### ⚡ Drill — Your Midday:
+⏸️ You go to school at 8:30. Say it. → 'Um halb neun gehe ich zur Schule.' OR 'Um halb neun fahre ich zur Schule.'
+⏸️ You work from 10 to 6. Say it. → 'Ich arbeite von zehn bis sechs.'
 
----
+### 🔁 Active Recall — Quick!
+Cover the screen. Morning sentences from memory:
+1. Get up at 6:30 → ? ⏸️ → 'Ich stehe um halb sieben auf.'
+2. Breakfast at 7 → ? ⏸️ → 'Um sieben Uhr frühstücke ich.'
 
-**Prompt 2: You eat breakfast at 7:30.**
+Still remember? Good — your brain is building the pattern."
 
-⏸️ **[PAUSE — Student speaks]**
-
-✅ **Um halb acht frühstücke ich.**
-
-Wait — 'halb acht' = 7:30? Yes! Remember Module 3? Halb = halfway TO the next hour. Halb acht = halfway to 8 = 7:30. Tricky but you've got this!
-
----
-
-**Prompt 3: You go to school/work at 8:15.**
-
-⏸️ **[PAUSE — Student speaks]**
-
-✅ **Um Viertel nach acht gehe ich zur Schule.** OR **Um Viertel nach acht fahre ich zur Arbeit.**
-
-Notice: 'gehen' for walking, 'fahren' for driving/taking transport. Choose what fits YOUR life.
+🎬 [Energy: slightly faster pace, momentum building]
 
 ---
 
-**Prompt 4: You eat lunch at 12:00.**
-
-⏸️ **[PAUSE — Student speaks]**
-
-✅ **Mittags esse ich.** OR **Um zwölf Uhr esse ich Mittagessen.**
-
-'Mittags' = at noon/lunchtime. Clean and natural."
-
----
-
-## Section 4: More Prompts — Afternoon & Evening (5:00–6:30)
-
-### Visual: [SLIDE: Sunset timeline, continuing prompts]
+## Section 5: Evening Block — Teach → Drill → Apply (5:00–6:30)
+### Visual: [Timeline zoomed to EVENING. Shopping bag, TV, bed icons.]
 ### Narration:
-"Let's keep building.
 
-**Prompt 5: After work, you go shopping.**
+"Evening — three separable verbs back to back. Watch the prefixes!
 
-⏸️ **[PAUSE]**
+🔊 **Nach der Arbeit kaufe ich ein.** — einkaufen → kaufe...ein
+🔊 **Abends sehe ich fern.** — fernsehen → sehe...fern
+🔊 **Um elf Uhr gehe ich schlafen.**
 
-✅ **Nach der Arbeit kaufe ich ein.**
+*Separable verbs — prefix always at the END. Malayalam-il postpositions pole — structure last-il varum, right? Same energy.*
 
-Separable verb alert: 'einkaufen' → 'kaufe...ein'. The prefix always goes to the end.
+### ⚡ Drill — Your Evening:
+⏸️ After work you go shopping. Say it. → 'Nach der Arbeit kaufe ich ein.'
+⏸️ In the evening you watch TV. Say it. → 'Abends sehe ich fern.'
+⏸️ At 10 PM you go to bed. Say it. → 'Um zehn Uhr gehe ich schlafen.'
 
----
+### 🔁 Active Recall — Full Day Check!
+Without looking — how many of the 8 sentences can you recall?
+⏸️ [15-second pause] Count them. 6+ = great. Under 5 = rewind to Section 3."
 
-**Prompt 6: In the evening, you cook dinner.**
-
-⏸️ **[PAUSE]**
-
-✅ **Abends koche ich Abendessen.** OR **Am Abend koche ich.**
-
-'Abends' and 'am Abend' — both work. 'Abends' is more casual.
-
----
-
-**Prompt 7: At 9 PM you watch TV.**
-
-⏸️ **[PAUSE]**
-
-✅ **Um neun Uhr sehe ich fern.**
-
-Another separable verb: 'fernsehen' → 'sehe...fern'. You're getting the pattern now!
+🎬 [Energy: challenging but supportive]
 
 ---
 
-**Prompt 8: At 11 PM you go to bed.**
-
-⏸️ **[PAUSE]**
-
-✅ **Um elf Uhr gehe ich schlafen.** OR **Um elf Uhr gehe ich ins Bett.**
-
-Both are perfectly natural German."
-
----
-
-## Section 5: Variation Practice — Weekend Version (6:30–8:00)
-
-### Visual: [SLIDE: "Am Wochenende" heading with relaxed weekend imagery]
+## Section 6: Weekend Variation (6:30–7:45)
+### Visual: [Split screen: WEEKDAY timeline (left, greyed) vs WEEKEND timeline (right, colorful)]
 ### Narration:
-"Now, same exercise — but for the WEEKEND. Your routine changes, right? So does your German.
 
-**Model Weekend Day:**
+"Your weekend is different. So is your German.
 
-1. **Am Samstag schlafe ich bis zehn Uhr.** — On Saturday I sleep until 10. (Bis = until)
-2. **Dann frühstücke ich lange.** — Then I have a long breakfast.
-3. **Nachmittags treffe ich Freunde.** — In the afternoon I meet friends.
-4. **Wir gehen in ein Café.** — We go to a café.
-5. **Abends koche ich etwas Besonderes.** — In the evening I cook something special.
-6. **Ich sehe einen Film und gehe spät schlafen.** — I watch a movie and go to bed late.
+**Model weekend — 4 sentences:**
+1. **Am Samstag schlafe ich bis zehn Uhr.** — 'bis' = until
+2. **Nachmittags treffe ich Freunde.** — 'treffen' = meet (irregular!)
+3. **Wir gehen in ein Café.**
+4. **Abends sehe ich einen Film.**
 
-*Weekend different aanu, alle? German-ilum athë parayaam!*
+⏸️ Now YOUR Saturday. 4 sentences. Use at least one separable verb and one time word. Go!
 
-⏸️ **[PAUSE — Student tries describing THEIR weekend in 4-6 sentences]**
+*Weekend-il routine maarum, alle? German-ilum athë parayaam — same structures, different content!*"
 
-Your turn! Describe YOUR Saturday in 4 sentences minimum. Use at least one separable verb and one time expression."
+🎬 [Energy: relaxed, fun]
 
 ---
 
-## Section 6: Exam Connection (8:00–9:00)
-
-### Visual: [SLIDE: Exam format card — "Sprechen: Erzählen Sie von Ihrem Tag" / "Schreiben: Message about daily routine"]
+## Section 7: Exam Weapon (7:45–8:45)
+### Visual: [EXAM CARD: "Sprechen Teil 1: Erzählen Sie von Ihrem Tag." / "Schreiben: Nachricht über Ihren Tagesablauf."]
 ### Narration:
-"Here's why this lesson matters for the exam:
 
-### 📋 [EXAM-TIP box]
+"### 📋 [EXAM-TIP]
 
-**Sprechen (Speaking):** If the examiner says 'Erzählen Sie von Ihrem Tag' — you're ready. Just describe morning, afternoon, evening. 3 time blocks = easy structure.
+**Sprechen:** Examiner says 'Erzählen Sie von Ihrem Tag.' — just go morning → midday → evening. Three blocks = organized answer.
 
-**Schreiben (Writing):** If the prompt says 'Write a message about your daily routine' — use 'morgens / mittags / abends' as your framework. Hit 3 content points. Done.
+**Schreiben:** Prompt about daily routine? Use 'morgens / mittags / abends' as your framework. Hit 3 content points. Done.
 
-**The secret:** You don't need fancy German. Short, correct sentences with the right verbs and time words score FULL points.
+Short, correct sentences with right verbs + time words = FULL points. No one expects poetry.
 
-*Exam-il long sentences venda — short, correct, organized. Athre venam!*"
+*Exam-il long sentences venda — morgens, mittags, abends — 3 blocks, 3 content points. Finish!*"
+
+🎬 [Energy: practical, reassuring]
 
 ---
 
-## Section 7: Writing Prompt + Outro (9:00–10:00)
-
-### Visual: [SLIDE: Writing challenge card]
+## Section 8: Full Production Challenge + Outro (8:45–10:00)
+### Visual: [CHALLENGE CARD with checklist]
 ### Narration:
-"**Your homework:**
 
-📝 Write YOUR complete day in German. 8 sentences minimum. Include:
-- At least 2 time expressions (um... Uhr, morgens, abends)
-- At least 2 separable verbs (aufstehen, einkaufen, fernsehen, etc.)
-- At least 1 sentence about what you eat/drink
+"### 🎯 Final Challenge:
+Write YOUR complete day. 8 sentences minimum.
 
-Write it. Then READ IT OUT LOUD. Then do it again tomorrow from memory.
+Checklist:
+- ☐ At least 2 time expressions (um...Uhr, morgens, abends, von...bis...)
+- ☐ At least 2 separable verbs (aufstehen, einkaufen, fernsehen)
+- ☐ At least 1 sentence about food/drink
+- ☐ Morning → midday → evening structure
 
-This is your Sprechen Teil 1 weapon. Own it.
+Write it. Read it OUT LOUD. Do it again tomorrow from memory.
 
-*Ningalude full day German-il ezhuthuka — 8 sentences! Athu vaayikkuka — out loud! Practice makes perfect!*
+### 🔁 Final Active Recall:
+One last time — full day, no peeking.
+⏸️ Morning... ⏸️ Midday... ⏸️ Evening...
+
+If you can say 6+ sentences from memory right now, you OWN this topic.
+
+*Ningalude full day German-il — ezhuthuka, vaayikkuka, ormikkuka. This is your Sprechen weapon!*
 
 Bis zum nächsten Mal — tschüss!"
 
@@ -218,14 +193,15 @@ Bis zum nächsten Mal — tschüss!"
 
 ## Script Quality Checklist
 
-- [x] Teaching goal clear: Sustained "Mein Tag" production (8+ sentences)
-- [x] A1 exam link explicit: Sprechen (routine description) + Schreiben (daily activities message)
-- [x] Malayalam bridges: Multiple contextual Malayalam asides
-- [x] Practice pauses: 8+ student production pauses (⏸️)
-- [x] Grammar reinforced: Regular verbs, separable verbs (auf, ein, fern), time expressions
-- [x] Model provided: Full 10-sentence "Mein Tag" narrative + weekend variation
-- [x] Exam tip included: Sprechen + Schreiben strategy
-- [x] Cross-module references: Module 3 time (halb trap), Module 5 earlier lessons (conjugation, separable verbs)
-- [x] Cultural hook: Kerala day vs German day comparison
-- [x] Production homework: 8-sentence writing + speaking challenge
-- [x] Duration estimate: ~10:00 (10 scenes)
+- [x] Hook under 40s with concrete payoff (Sprechen Teil 1 promise)
+- [x] Teach→drill→apply cycle per block (morning/midday/evening — no stacking)
+- [x] Active recall checkpoints (3 — after morning, after midday, final full-day)
+- [x] Energy cues every section
+- [x] Malayalam bridges as structural parallels (postpositions ≈ separable prefixes)
+- [x] ~15% word count reduction from v1.0
+- [x] Specific practice pauses with prompts + reveals (10+)
+- [x] A1 exam link explicit: Sprechen + Schreiben strategy
+- [x] Cross-module references: Module 3 time (halb), Module 5-3 (separable verbs)
+- [x] Weekend variation for transfer practice
+- [x] Production homework with checklist
+- [x] Duration estimate: ~10:00 (8 sections)

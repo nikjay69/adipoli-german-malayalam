@@ -3,8 +3,8 @@
 > **Module:** 13 | **Lesson:** 13-2 | **Duration:** 12:00 target
 > **Teaching Goal:** Master Perfekt with sein for movement/change-of-state verbs. Learn the limited sein verb set and distinguish haben vs sein.
 > **A1 Exam Link:** Schreiben Teil 2 (past events — weekend, trip, visit), Sprechen (describing past experiences), Hören (understanding past narratives)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Revised:** 2026-03-23 (quality pass cron)
 
 ---
 
@@ -12,134 +12,132 @@
 
 ### Visual: [Course intro animation / Adipoli German branding]
 ### Narration:
-"Willkommen bei Adipoli German! Last time — Perfekt with haben. Today — the OTHER kind."
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — Why Two Helpers? (0:15–1:30)
+## Section 1: Hook — The Other Helper (0:15–0:50)
 
-### Visual: [SLIDE: Two sandwich diagrams side by side. Left: "Ich habe ... gelernt" (haben sandwich). Right: "Ich bin ... gegangen" (sein sandwich, highlighted in a different colour). Question mark between them]
+[ENERGY: intriguing, builds on prior knowledge]
+
+### Visual: [SLIDE: Two sandwich diagrams side by side. Left: "Ich habe ... gelernt" (blue). Right: "Ich bin ... gegangen" (orange, pulsing). Arrow: "NEW!"]
 ### Narration:
-"In the last lesson, you learned the Perfekt sandwich with **haben**:
+"Last lesson: 'Ich **habe** Deutsch **gelernt**.' The haben sandwich.
 
-'Ich **habe** Deutsch **gelernt**.'
-
-But now I need to tell you something: some verbs DON'T use haben. They use **sein**!
+But some verbs refuse to work with haben. They need **sein**:
 
 'Ich **bin** nach Berlin **gefahren**.'
 
-*Wait — 'Ich bin'? 'I am driven to Berlin'? Athu sense aakunnilla English-il! Pakshe German-il — ithu correct aanu!*
+*'Ich bin gefahren'? 'I am driven'? English-il sense aakilla. But in German — perfectly correct.*
 
-The question is: WHICH verbs use sein? And how do you know?
-
-Good news: it's a SMALL group. There's a clear rule. And once you learn it, you'll never mix them up. Let's go!"
+The good news: it's a SMALL group. There's one clear rule. Let's learn it."
 
 ---
 
-## Section 2: The Rule — Movement & Change (1:30–3:30)
+## Section 2: The Golden Rule (0:50–2:30)
 
-### Visual: [SLIDE: Two icons. Left: 🚶‍♂️→ arrow showing movement. Right: 🔄 showing transformation/change. Both labelled = "sein"]
+[ENERGY: clear, definitive]
+
+### Visual: [SLIDE: Two icons. 🚶‍♂️→ = movement from A to B. 🔄 = state change. Both = sein]
 ### Narration:
-"Here's the golden rule:
+"Here's the rule:
 
-[SLIDE: Rule card appearing]
-
-**A verb uses SEIN in Perfekt if:**
-1. 🚶‍♂️ The subject **MOVES** from A to B (there's a direction/destination)
-2. 🔄 The subject **CHANGES STATE** (becomes something different)
+**Use SEIN if the subject:**
+1. 🚶‍♂️ **MOVES** from point A to point B
+2. 🔄 **CHANGES STATE** — becomes something different
 
 **Everything else → haben.**
 
-### Examples of MOVEMENT:
-[SLIDE: arrows showing movement for each]
-- **gehen** (to go/walk) — you MOVE → **sein** ✅
-- **fahren** (to drive/travel) — you MOVE → **sein** ✅
-- **fliegen** (to fly) — you MOVE → **sein** ✅
-- **kommen** (to come) — you MOVE → **sein** ✅
-
-### Examples of CHANGE:
-[SLIDE: transformation icons]
-- **werden** (to become) — you CHANGE → **sein** ✅
-- **aufwachen** (to wake up) — state changes: asleep→awake → **sein** ✅
-- **sterben** (to die) — ultimate change 💀 → **sein** ✅
-
-### The easy test:
-*Ask yourself: 'Did the person move to a NEW PLACE or become SOMETHING DIFFERENT?'*
+### The Arrow Test:
+*Can you draw an arrow showing the person moving or changing?*
 *Yes → sein. No → haben.*
 
-*'Ich habe gekocht' — cooking-inu place maarunno? Illa. → haben ✅*
-*'Ich bin nach Hause gegangen' — veetilekku pokunnundo? Yes! → sein ✅*
+Let's test it:
 
-⏸️ Think about this: 'schwimmen' (to swim) — haben or sein? 
-Answer: BOTH are possible! 'Ich habe geschwommen' (I swam — activity) OR 'Ich bin zum Strand geschwommen' (I swam TO the beach — movement). But for A1: just use sein if movement is implied.
+🔊 'Ich habe gekocht.' — Cooking. Does the person MOVE somewhere? No. → **haben** ✅
+🔊 'Ich bin nach Hause gegangen.' — Going home. Person moves A→B? Yes! → **sein** ✅
 
-### Practice Pause: ⏸️ (3 seconds)"
+*Arrow varakkan pattiyaal → sein. Pattillaenkil → haben. Simple!*"
+
+⏸️ "Test: 'schwimmen' — haben or sein? Think... ⏸️ (3s) ... Both possible! 'Ich habe geschwommen' (activity) or 'Ich bin zum Strand geschwommen' (movement to beach). For A1: if there's a destination → sein."
 
 ---
 
-## Section 3: The Sein Verb List — Memorize These! (3:30–6:00)
+## Section 3: The Sein Verb List — Movement (2:30–4:15)
 
-### Visual: [TABLE building row by row, with movement icons and past participles highlighted]
+[ENERGY: systematic, drilling]
+
+### Visual: [TABLE building row by row with movement arrows]
 ### Narration:
-"There are about 12–15 common sein verbs you need for A1. Here they are — your MUST-KNOW list:
-
-[TABLE appearing with audio icon for each:]
+"About 12 common sein verbs for A1. Let's split them: movement first, then state change.
 
 ### 🚶 Movement Verbs (A → B):
 
-| Infinitiv | Partizip II | English | Memory hook |
-|-----------|-------------|---------|-------------|
-| **gehen** | **gegangen** | to go/walk | 🚶 |
-| **fahren** | **gefahren** | to drive/travel | 🚗 |
-| **fliegen** | **geflogen** | to fly | ✈️ |
-| **kommen** | **gekommen** | to come | 👋 |
-| **laufen** | **gelaufen** | to run | 🏃 |
-| **reisen** | **gereist** | to travel | 🧳 |
-| **schwimmen** | **geschwommen** | to swim | 🏊 |
-| **fallen** | **gefallen** | to fall | ⬇️ |
-| **aufstehen** | **aufgestanden** | to get up | ⬆️ |
-| **zurückkommen** | **zurückgekommen** | to come back | ↩️ |
+| Infinitiv | Partizip II | English |
+|-----------|-------------|---------|
+| **gehen** | **gegangen** | to go/walk 🚶 |
+| **fahren** | **gefahren** | to drive/travel 🚗 |
+| **fliegen** | **geflogen** | to fly ✈️ |
+| **kommen** | **gekommen** | to come 👋 |
+| **laufen** | **gelaufen** | to run 🏃 |
+| **reisen** | **gereist** | to travel 🧳 |
 
-🔊 Repeat each one:
+🔊 Repeat the pairs:
 'gehen — gegangen'
+⏸️ (2s)
 'fahren — gefahren'
+⏸️ (2s)
 'fliegen — geflogen'
+⏸️ (2s)
+'kommen — gekommen'
+⏸️ (2s)
 
-⏸️ Repeat all movement verbs!
+Four more movement verbs:
 
-### Practice Pause: ⏸️ (6 seconds)
+| **schwimmen** | **geschwommen** | to swim 🏊 |
+| **fallen** | **gefallen** | to fall ⬇️ |
+| **aufstehen** | **aufgestanden** | to get up ⬆️ |
+| **zurückkommen** | **zurückgekommen** | to come back ↩️ |
 
-### 🔄 Change of State Verbs:
-
-| Infinitiv | Partizip II | English | Memory hook |
-|-----------|-------------|---------|-------------|
-| **werden** | **geworden** | to become | 🔄 |
-| **sein** | **gewesen** | to be (past: was) | ⭐ |
-| **bleiben** | **geblieben** | to stay/remain | 📍 |
-| **sterben** | **gestorben** | to die | 💀 |
-| **aufwachen** | **aufgewacht** | to wake up | ☀️ |
-| **einschlafen** | **eingeschlafen** | to fall asleep | 😴 |
-
-⏸️ Repeat the change verbs!
-
-### Practice Pause: ⏸️ (5 seconds)
-
-*Note: 'bleiben' and 'sein' are special — they don't show movement OR change, but they still use sein. Think of them as 'existence' verbs. Just memorize them!*
-
-### 🧠 Memory trick: The ARROW test
-[SLIDE: Simple line drawing — if you can draw an arrow showing the subject moving or changing → SEIN]
-
-*Arrow varakkan pattiyaal → sein. Arrow varakkan pattillaenkil → haben. Simple!*"
+⏸️ "Quick recall — what's the Partizip II of 'gehen'? ... ⏸️ (2s) ... gegangen! ✅ And 'fahren'? ... ⏸️ (2s) ... gefahren! ✅"
 
 ---
 
-## Section 4: Sein Conjugation in Perfekt (6:00–7:30)
+## Section 4: The Sein Verb List — State Change (4:15–5:30)
 
-### Visual: [TABLE: sein conjugation + example sentence for each person]
+[ENERGY: calm, adding layer]
+
+### Visual: [TABLE: transformation icons, building on previous]
 ### Narration:
-"You already know 'sein' from Module 2. Let's see it in Perfekt sentences:
+"Now the state-change verbs — fewer, but important:
 
-[TABLE appearing:]
+### 🔄 Change of State:
+
+| Infinitiv | Partizip II | English |
+|-----------|-------------|---------|
+| **werden** | **geworden** | to become 🔄 |
+| **aufwachen** | **aufgewacht** | to wake up ☀️ |
+| **einschlafen** | **eingeschlafen** | to fall asleep 😴 |
+| **sterben** | **gestorben** | to die 💀 |
+
+### ⭐ Two special ones — memorize, don't analyze:
+
+| **sein** | **gewesen** | to be (was) ⭐ |
+| **bleiben** | **geblieben** | to stay 📍 |
+
+*'Bleiben' and 'sein' — no movement, no change, but they still use sein. Think of them as 'existence' verbs. Orkkuka — memorize cheyyuka!*"
+
+⏸️ "Name 3 sein verbs from memory — go! ... ⏸️ (5s) ... gehen, fahren, kommen, fliegen, werden — any of these! ✅"
+
+---
+
+## Section 5: Building Sentences (5:30–7:00)
+
+[ENERGY: practice-focused]
+
+### Visual: [TABLE: sein conjugation in Perfekt]
+### Narration:
+"You know 'sein' from Module 2. Here it is in Perfekt:
 
 | Person | sein | Example |
 |--------|------|---------|
@@ -150,150 +148,140 @@ Answer: BOTH are possible! 'Ich habe geschwommen' (I swam — activity) OR 'Ich 
 | ihr | **seid** | Ihr **seid** spät **aufgestanden**. |
 | sie/Sie | **sind** | Sie **sind** nach Indien **gereist**. |
 
-The sandwich is the SAME as haben — just replace haben with sein:
+Same sandwich structure — just replace haben with sein:
 
-[DIAGRAM: sein sandwich]
-Subject + **sein (conjugated)** + ... + **Partizip II (at the END)**
+**Subject + sein (conjugated) + ... + Partizip II (END)**
 
-🔊 Let's practice three core sentences:
+Let's drill three:
 
-🔊 'Ich bin nach Berlin gefahren.' — I drove/went to Berlin.
-⏸️ Repeat!
+🔊 'Ich bin nach Berlin gefahren.'
+⏸️ Repeat! ⏸️ (3s)
 
-🔊 'Wir sind um 7 Uhr aufgestanden.' — We got up at 7.
-⏸️ Repeat!
+🔊 'Wir sind um 7 Uhr aufgestanden.'
+⏸️ Repeat! ⏸️ (3s)
 
-🔊 'Sie ist gestern gekommen.' — She came yesterday.
-⏸️ Repeat!
-
-### Practice Pause: ⏸️ (5 seconds per sentence)"
+🔊 'Sie ist gestern gekommen.'
+⏸️ Repeat! ⏸️ (3s)"
 
 ---
 
-## Section 5: Haben vs Sein — Side by Side (7:30–9:00)
+## Section 6: Haben vs Sein — Side by Side (7:00–8:30)
 
-### Visual: [SLIDE: Two columns. Left = HABEN (blue). Right = SEIN (orange). Sentences in matching pairs]
+[ENERGY: comparative, analytical]
+
+### Visual: [SLIDE: Two columns. HABEN (blue) vs SEIN (orange). Paired sentences]
 ### Narration:
-"Now the crucial skill: choosing the RIGHT helper verb. Let's compare:
+"The crucial skill: choosing the RIGHT helper. Compare:
 
-[TABLE appearing pair by pair:]
-
-| HABEN (no movement) | SEIN (movement/change) |
-|---------------------|----------------------|
-| Ich **habe** Fußball **gespielt**. | Ich **bin** ins Stadion **gegangen**. |
-| Er **hat** Curry **gekocht**. | Er **ist** zum Supermarkt **gefahren**. |
+| HABEN (activity, no movement) | SEIN (movement/change) |
+|-------------------------------|----------------------|
+| Ich **habe** Curry **gekocht**. | Ich **bin** zum Supermarkt **gefahren**. |
 | Wir **haben** einen Film **gesehen**. | Wir **sind** ins Kino **gegangen**. |
 | Sie **hat** Deutsch **gelernt**. | Sie **ist** nach Deutschland **geflogen**. |
 | Ich **habe** gut **geschlafen**. | Ich **bin** spät **eingeschlafen**. |
 
-See the logic?
-- Cooking, playing, learning, watching = activities. No movement. → **haben**
-- Going, driving, flying = movement A→B. → **sein**
-
-*Last sentence nokkuka: 'schlafen' = haben (just sleeping, no movement). 'einschlafen' = sein (state CHANGES from awake to asleep!). Subtle — but the rule works!*
+*Last pair nokkuka: 'schlafen' = haben (activity). 'EINschlafen' = sein (state changes: awake→asleep!). Subtle — but the arrow test works!*
 
 ### Quick Decision Drill:
-I'll give you a verb — you shout HABEN or SEIN:
+⚡ essen (to eat) → ⏸️ (2s) → **HABEN** (activity!)
+⚡ gehen (to go) → ⏸️ (2s) → **SEIN** (movement!)
+⚡ trinken → ⏸️ (2s) → **HABEN**
+⚡ fliegen → ⏸️ (2s) → **SEIN** (movement!)
+⚡ machen → ⏸️ (2s) → **HABEN**
+⚡ werden → ⏸️ (2s) → **SEIN** (change!)
+⚡ lesen → ⏸️ (2s) → **HABEN**
+⚡ kommen → ⏸️ (2s) → **SEIN** (movement!)
 
-⚡ essen (to eat) → **HABEN** (eating is an activity, not movement)
-⚡ gehen (to go) → **SEIN** (movement!)
-⚡ trinken (to drink) → **HABEN**
-⚡ fliegen (to fly) → **SEIN** (movement!)
-⚡ machen (to do/make) → **HABEN**
-⚡ werden (to become) → **SEIN** (change of state!)
-⚡ lesen (to read) → **HABEN**
-⚡ kommen (to come) → **SEIN** (movement!)
-
-⏸️ How many did you get right?
-
-### Practice Pause: ⏸️ (3 seconds)"
+⏸️ How many did you get right? 6+ = great!"
 
 ---
 
-## Section 6: Building Sentences — Your Weekend in German (9:00–10:30)
+## Section 7: Your Weekend Story — Apply (8:30–10:00)
 
-### Visual: [SLIDE: "Mein Wochenende" — a weekend story combining haben AND sein sentences]
+[ENERGY: creative, building confidence]
+
+### Visual: [SLIDE: "Mein Wochenende" — colour-coded haben (blue) and sein (orange)]
 ### Narration:
-"Let's build a full weekend story using BOTH haben and sein:
-
-[SLIDE: Story appearing sentence by sentence, haben in blue, sein in orange]
+"Let's build a full weekend story using BOTH:
 
 **Am Samstag:**
-🔵 Ich **habe** lange **geschlafen**. (haben — sleeping = activity)
-🟠 Ich **bin** um 10 Uhr **aufgestanden**. (sein — change: asleep→awake)
-🔵 Ich **habe** gefrühstückt. (haben — eating = activity)
-🟠 Ich **bin** zum Supermarkt **gegangen**. (sein — movement A→B)
-🔵 Ich **habe** Curry **gekocht**. (haben — cooking = activity)
+🔵 Ich **habe** lange **geschlafen**. (haben — activity)
+🟠 Ich **bin** um 10 Uhr **aufgestanden**. (sein — state change)
+🔵 Ich **habe** gefrühstückt. (haben — activity)
+🟠 Ich **bin** zum Supermarkt **gegangen**. (sein — movement)
+🔵 Ich **habe** Curry **gekocht**. (haben — activity)
 
 **Am Sonntag:**
-🟠 Wir **sind** nach München **gefahren**. (sein — movement!)
-🔵 Wir **haben** den Marienplatz **besucht**. (haben — visiting = activity)
-🔵 Wir **haben** Bier **getrunken**. (haben — drinking = activity)
-🟠 Wir **sind** abends nach Hause **gekommen**. (sein — movement!)
+🟠 Wir **sind** nach München **gefahren**. (sein — movement)
+🔵 Wir **haben** den Marienplatz **besucht**. (haben — activity)
+🔵 Wir **haben** Bier **getrunken**. (haben — activity)
+🟠 Wir **sind** abends nach Hause **gekommen**. (sein — movement)
 
-🔊 Listen to the whole story once...
+🔊 Listen to the whole story...
 
-⏸️ Now try telling YOUR weekend story. Use at least 3 haben and 2 sein sentences.
+⏸️ "Now YOUR turn. Tell YOUR weekend — use at least 3 haben and 2 sein sentences. Go! ⏸️ (12s)
 
-### Practice Pause: ⏸️ (10 seconds)
-
-*Adipoli! Mixed sentences use cheyyaan kazhinjal — njan parayaam, Goethe A1 Schreiben Teil 2 njan crack cheyyum ennu!*"
+*Mixed sentences use cheyyaan kazhinjaal — Schreiben Teil 2 crack cheyyum!*"
 
 ---
 
-## Section 7: Common Mistakes & Exam Tips (10:30–11:30)
+## Section 8: Mistake Spotlight & Exam Prep (10:00–11:00)
 
-### Visual: [SLIDE: Mistake spotlight with ❌ and ✅]
+[ENERGY: warning, then practical]
+
+### Visual: [SLIDE: ❌/✅ mistake pairs]
 ### Narration:
-"Let's catch the most common mistakes before they cost you exam points:
+"Three mistakes that cost exam points:
 
-### Mistake 1: Using haben for movement
+### Mistake 1: haben for movement
 ❌ 'Ich **habe** nach Berlin **gefahren**.'
 ✅ 'Ich **bin** nach Berlin **gefahren**.'
-*Movement = sein. ALWAYS!*
 
-### Mistake 2: Forgetting to put Partizip at the END
+### Mistake 2: Partizip not at the end
 ❌ 'Ich bin gegangen nach Hause.'
 ✅ 'Ich bin nach Hause **gegangen**.'
-*Partizip II = ALWAYS at the end of the sentence!*
 
 ### Mistake 3: Wrong Partizip form
 ❌ 'Ich bin **gegeht**.'
 ✅ 'Ich bin **gegangen**.'
-*gehen is irregular — you must memorize the Partizip!*
+*Gehen is irregular — you MUST memorize the Partizip!*
 
-[EXAM-TIP] 'In Schreiben Teil 2, the prompt often asks about past events: 'Was hast du am Wochenende gemacht?' Use a MIX of haben and sein verbs — it shows the examiner you know the difference. 3 haben + 2 sein = perfect answer!'
+[EXAM-TIP] In Schreiben Teil 2, the prompt asks about past events. Use a MIX of haben and sein verbs — it shows the examiner you know the difference. Template:
 
-### For the exam writing:
-[SLIDE: A1-safe template for past-tense messages]
+**Am [Tag] bin ich [wohin] gefahren/gegangen.**
+**Ich habe [was] gemacht/besucht/gegessen.**
+**Es war sehr schön.**"
 
-**Template:**
-Am [Tag] bin ich [wohin] gefahren/gegangen.
-Ich habe [was] gemacht/besucht/gegessen.
-Es war sehr schön / Es hat Spaß gemacht.
-
-⏸️ Memorize this template — it works for ANY past-event writing prompt!"
+⏸️ "Memorize that template — it works for ANY past-event prompt."
 
 ---
 
-## Section 8: Summary & Homework (11:30–12:00)
+## Section 9: Active Recall & Homework (11:00–12:00)
 
-### Visual: [SLIDE: Summary card with the 3 key takeaways]
+[ENERGY: calm testing, then motivating]
+
+### Visual: [SLIDE: Blank recall prompts]
 ### Narration:
-"Three things to remember:
+"Test yourself before we close:
 
-[SLIDE: appearing one by one]
+⏸️ What's the golden rule for sein? ... ⏸️ (3s) ... Movement A→B or state change → sein! ✅
 
-**1.** Movement A→B or change of state → **sein** (bin/bist/ist/sind/seid/sind)
-**2.** Everything else → **haben** (habe/hast/hat/haben/habt/haben)
-**3.** The Partizip II ALWAYS goes at the END — with both haben AND sein!
+⏸️ Name 4 sein verbs... ⏸️ (4s) ... gehen, fahren, fliegen, kommen, werden, aufstehen — any four! ✅
 
-### Your homework:
-📝 Write 5 sentences about your last weekend — use at least 2 sein verbs
-📝 Memorize the 12 sein verbs from the list
-📝 Go to SRS review in the app — add all Partizip II forms to your flashcards!
+⏸️ Where does Partizip II go — with BOTH haben and sein? ... ⏸️ (3s) ... Always at the END! ✅
 
-Next lesson: Irregular past participles — the rebels! gegessen, getrunken, geschrieben... There ARE patterns, and I'll show you the tricks.
+### Visual: [SLIDE: 3 Takeaways]
+🎯 **3 Things to Remember:**
+1. Movement or state change → **sein** / Everything else → **haben**
+2. The arrow test: can you draw an arrow? → sein
+3. Partizip II = END of sentence. Always. Both helpers.
+
+### Homework:
+📝 **Write** 5 sentences about your last weekend — at least 2 with sein
+📝 **Memorize** the 12 sein verbs (movement + state change lists)
+📝 **Flashcard** all Partizip II forms from today
+
+Next lesson: irregular past participles — gegessen, getrunken, geschrieben... There ARE patterns, and I'll show you the tricks.
 
 Bis zum nächsten Mal! Tschüss!"
 
@@ -304,21 +292,39 @@ Bis zum nächsten Mal! Tschüss!"
 
 ---
 
+## Revision Notes (v1.0 → v2.0)
+- **Hook:** Cut from 75s to 35s — removed "I need to tell you something" filler, straight to the two sandwiches
+- **Teaching structure:** Split verb list into two focused sections (movement → drill → state change → drill) instead of one giant table
+- **Energy cues:** Added at every section transition
+- **Active recall:** Replaced passive summary with 3 test-yourself prompts before final takeaways
+- **Practice pauses:** Increased to 14 specific pauses with prompts and timing
+- **Malayalam bridge:** Kept arrow-test Malayalam explanation, removed the schwimmen tangent from the rule section (moved to a quick aside)
+- **haben vs sein drill:** Added 2s pauses between each — now the student actually has time to answer before the reveal
+- **Weekend story:** Added student production prompt with minimum verb count (was just "try telling")
+- **Mistake section:** Consolidated from standalone section into exam-prep flow — less preachy, more practical
+- **Exam template:** Moved inline instead of separate box — more natural flow
+- **Word count:** ~10% reduction — cut "Deep breath" style filler and redundant explanations of the sandwich concept (already taught in v13-1-1)
+- **Outro:** Active recall before summary, specific homework with measurable actions
+
 ## Script Quality Checklist
 
-- [x] Teaching goal achieved (Perfekt with sein, haben vs sein distinction)
-- [x] A1 exam section addressed (Schreiben Teil 2 past events, Sprechen)
-- [x] Malayalam/Manglish bridges included (≥5 instances)
-- [x] Practice pauses present (≥8)
-- [x] Visual cues specified for every section
-- [x] Full verb list with Partizip II forms
-- [x] Common mistakes/traps highlighted (3 specific mistakes)
-- [x] Cultural bridge included (weekend story, relatable examples)
-- [x] Exam tip included (mix haben + sein in writing)
-- [x] Homework/challenge assigned
-- [x] Builds on previous lesson (v13-1-1 haben → v13-2-1 sein)
-- [x] Quick-fire drill included (haben or sein decision)
-- [x] Duration fits ~12 minutes
+- [x] Hook under 60s with concrete payoff
+- [x] No monologue block exceeds 90s without interaction
+- [x] Teach → Drill → Apply cycle (movement verbs → drill → state verbs → drill → sentences → apply story)
+- [x] Duration realistic (~12 min at 150 wpm + pauses)
+- [x] Energy/tone cues at every section transition
+- [x] Practice pauses have specific prompts with reveals (14 total)
+- [x] Active recall summary before final card
+- [x] Minimum 6 practice pauses per 10 min ✅ (14)
+- [x] Malayalam bridges are structural parallels (arrow test analogy)
+- [x] One clear teaching goal per section
+- [x] Exam connection explicit (Schreiben Teil 2, Sprechen)
+- [x] No A2+ content
+- [x] German grammatically verified
+- [x] Visual cues producible and tagged
+- [x] Exam tips limited to 1 inline marker
+- [x] Outro has clear next-lesson bridge
+- [x] Homework is specific and doable
 
 ## Key Vocabulary for Overlay
 
@@ -332,6 +338,5 @@ Bis zum nächsten Mal! Tschüss!"
 | werden → geworden | to become → become | sein ✅ |
 | sein → gewesen | to be → been | sein ✅ |
 | bleiben → geblieben | to stay → stayed | sein ✅ |
-| Am Samstag | On Saturday | Time expression |
-| Am Sonntag | On Sunday | Time expression |
-| nach Hause | (to) home | Direction |
+| einschlafen → eingeschlafen | to fall asleep | sein ✅ |
+| aufwachen → aufgewacht | to wake up | sein ✅ |

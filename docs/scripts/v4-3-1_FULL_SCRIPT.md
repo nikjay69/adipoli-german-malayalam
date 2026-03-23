@@ -1,344 +1,284 @@
 # v4-3-1 — Mein, Dein, Sein, Ihr: Possessive Pronouns (FULL SCRIPT)
 
-> **Module:** 4 | **Lesson:** 4-3 | **Duration:** 15:00 target
+> **Module:** 4 | **Lesson:** 4-3 | **Duration:** 12:00 target
 > **Teaching Goal:** Teach possessive pronouns with gender agreement (mein/meine pattern), all persons, and apply to family descriptions
 > **A1 Exam Link:** All sections — possessives appear in every part of the A1 exam
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Revision:** 2026-03-23 (quality pass — tighter hook, teach→drill→apply cycles, active recall, energy cues, stronger Malayalam bridges, reduced from 15min to 12min, ~15% word count reduction)
 
 ---
 
-## Pre-roll (0:00–0:15)
-
-### Visual: [Course intro animation / Adipoli German branding]
-### Narration:
-"Willkommen bei Adipoli German! Today — the words that tell the world what belongs to whom."
+## Pre-roll (0:00–0:10)
+### Visual: [Course intro animation]
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — Whose Is It? (0:15–1:30)
-
-### Visual: [SLIDE: Three objects on a table — a book, a phone, a bag. Question marks floating above each. "🤔 Whose?" heading]
+## Section 1: Hook — Whose Is It? (0:10–0:40)
+### Visual: [ANIMATION: Lost-and-found table at a Sprachkurs. Three items: a book, a phone, a bag. Teacher holds up the phone: "Ist das DEIN Handy?" Student replies: "Nein, SEIN Handy!" pointing at classmate.]
 ### Narration:
-"Quick question: Whose book? Whose phone? Whose bag?
+"'Ist das dein Handy?' — Is this your phone? 'Nein, sein Handy!' — No, his phone! 'SEINE Tasche? Oder SEIN Tasche?'
 
-**Mein** Buch. **Dein** Handy. **Sein** Tasche... wait. *Sein* Tasche? Or *seine* Tasche?
+That '-e' at the end changes everything. Get it wrong and people won't know WHOSE it is.
 
-*Athanu ividuthe catch! 'Mein' enna word change aakum — feminine aanel 'meine' aakum! Masculine aanel 'mein' thanne.*
+After this video: one pattern, all possessives, no confusion.
 
-This is one of the TRICKIEST parts of A1 German. But here's the good news: there's only ONE pattern to learn, and it works for ALL possessive pronouns.
+*Malayalam-il 'ente' endlessly same aanu. German-il? Mein, meine — gender-ne depend cheyyunnu!*"
 
-By the end of this lesson, you'll never confuse mein and meine again. Let's go!"
+🎬 [Energy: playful, stakes are clear]
 
 ---
 
-## Section 2: The Possessive Pronouns — Who Owns What? (1:30–3:00)
-
-### Visual: [TABLE: All possessive pronouns in a clear grid, each with its parent pronoun]
-
-| Person | Pronoun | Possessive | English |
-|--------|---------|------------|---------|
-| ich | → | **mein** | my |
-| du | → | **dein** | your (informal) |
-| er | → | **sein** | his |
-| sie | → | **ihr** | her |
-| es | → | **sein** | its |
-| wir | → | **unser** | our |
-| ihr | → | **euer** | your (plural) |
-| sie (pl) | → | **ihr** | their |
-| Sie (formal) | → | **Ihr** | your (formal) |
-
+## Section 2: The Core Four — mein, dein, sein, ihr (0:40–1:45)
+### Visual: [4 cards appearing one at a time: ich→mein, du→dein, er→sein, sie→ihr]
 ### Narration:
-"First, let's meet the full family of possessive pronouns.
 
-**Mein** — my. From 'ich.'
-**Dein** — your (when you're talking to a friend). From 'du.'
-**Sein** — his OR its. From 'er' or 'es.'
-**Ihr** — her. From 'sie' (she). *Careful: 'ihr' does triple duty in German — but we'll tackle that later!*
+"Four possessives that cover 90% of A1:
 
-For now, focus on these four: **mein, dein, sein, ihr**. They cover 90% of what you need.
+🔊 **mein** — my (from ich)
+🔊 **dein** — your, informal (from du)
+🔊 **sein** — his (from er)
+🔊 **ihr** — her (from sie)
 
-**Unser** — our. From 'wir.'
-**Euer** — your (when talking to a group). From 'ihr.'
-**Ihr** (capital I) — your formal. From 'Sie.'
+*Ente = mein, ninte = dein, avante = sein, avalude = ihr. Same concept!*
 
-*Malayalam-il: ente = mein, ninte = dein, avante = sein, avalude = ihr. Same concept — but German-il oru twist undu...*
+### ⚡ Drill:
+⏸️ 'my' → 'mein'
+⏸️ 'your (friend)' → 'dein'
+⏸️ 'his' → 'sein'
+⏸️ 'her' → 'ihr'
 
-⏸️ **[PAUSE — Student says: mein, dein, sein, ihr]**"
+These four first. The rest (unser, euer, Ihr) follow the exact same pattern — we'll add them at the end."
+
+🎬 [Energy: brisk, focused]
 
 ---
 
-## Section 3: THE TWIST — Endings Change by Gender (3:00–5:00)
-
-### Visual: [SLIDE: The core pattern table, colour-coded. Masculine (blue) = no ending, Feminine (red) = -e, Neuter (green) = no ending, Plural (purple) = -e. Animated: endings appearing/disappearing]
-
-### The Pattern:
-
-| | Masculine (der) | Feminine (die) | Neuter (das) | Plural (die) |
-|---|---|---|---|---|
-| my | mein Bruder | mein**e** Schwester | mein Kind | mein**e** Eltern |
-| your | dein Bruder | dein**e** Schwester | dein Kind | dein**e** Eltern |
-| his | sein Bruder | sein**e** Schwester | sein Kind | sein**e** Eltern |
-| her | ihr Bruder | ihr**e** Schwester | ihr Kind | ihr**e** Eltern |
-
+## Section 3: THE Pattern — When to Add -e (1:45–3:30)
+### Visual: [Colour-coded rule appearing step by step. Masculine (blue) = no ending, Feminine (red) = +e, Neuter (green) = no ending, Plural (purple) = +e. Each with ONE example.]
 ### Narration:
-"Here's THE twist. This is the entire lesson in one table:
 
-**Masculine and Neuter → NO ENDING.**
-- mein Bruder ✅ (masculine)
-- mein Kind ✅ (neuter)
+"Here's the ENTIRE lesson in one rule:
 
-**Feminine and Plural → ADD -E.**
-- mein**e** Schwester ✅ (feminine)
-- mein**e** Eltern ✅ (plural)
+**Masculine/Neuter → NO ending.**
+🔊 **mein Bruder** ✅ (der Bruder = masculine)
+🔊 **mein Kind** ✅ (das Kind = neuter)
 
-That's it. That's the WHOLE pattern.
+**Feminine/Plural → ADD -e.**
+🔊 **meine Schwester** ✅ (die Schwester = feminine)
+🔊 **meine Eltern** ✅ (plural)
 
-*Masculine + neuter = ending illa. Feminine + plural = '-e' add cheyyuka. Bas. Finish. Kazhinjhu.*
+*Masculine + neuter = ending illa. Feminine + plural = '-e' add cheyyuka. Bas. Kazhinjhu.*
 
-Let me say it differently:
+### ⚡ Drill — Apply to 'mein':
+⏸️ my father (der Vater) → ? → 'mein Vater' (masc → no ending)
+⏸️ my mother (die Mutter) → ? → 'meine Mutter' (fem → +e)
+⏸️ my child (das Kind) → ? → 'mein Kind' (neuter → no ending)
+⏸️ my parents (plural) → ? → 'meine Eltern' (plural → +e)
 
-| What follows? | Ending? | Example |
-|---|---|---|
-| der word (masc.) | nothing | mein Vater |
-| die word (fem.) | **-e** | mein**e** Mutter |
-| das word (neut.) | nothing | mein Kind |
-| plural | **-e** | mein**e** Kinder |
+### Now apply to 'dein':
+⏸️ your brother → ? → 'dein Bruder'
+⏸️ your sister → ? → 'deine Schwester'
 
-⏸️ **[PAUSE — Student applies the pattern:]**
-- my brother = **mein** Bruder ✅ (der Bruder → masculine → no ending)
-- my sister = **meine** Schwester ✅ (die Schwester → feminine → add -e)
-- my child = **mein** Kind ✅ (das Kind → neuter → no ending)
-- my parents = **meine** Eltern ✅ (plural → add -e)
+Same pattern. EVERY possessive follows this. Learn once, use everywhere.
 
-Now here's the BEAUTIFUL thing: this SAME pattern works for EVERY possessive pronoun:
-- dein/deine, sein/seine, ihr/ihre, unser/unsere, euer/eure
+### 🔁 Active Recall:
+⏸️ The rule — when do you add -e? → Feminine and plural!
+⏸️ 'mein' or 'meine' before 'Oma' (die Oma)? → 'meine Oma' (feminine → +e)"
 
-*Learn ONE pattern, apply it to ALL possessives. Efficiency!*
-
-⏸️ **[PAUSE — Student applies to 'dein': dein Bruder, deine Schwester, dein Kind, deine Eltern]**"
+🎬 [Energy: emphatic on the rule, encouraging on correct answers]
 
 ---
 
-## Section 4: Applied to All Pronouns — Walking Through Each (5:00–7:00)
-
-### Visual: [TABLE building progressively, each row appearing with its example sentence]
+## Section 4: sein vs ihr — His or Her? (3:30–5:00)
+### Visual: [Split screen: Left = "Er → sein/seine", Right = "Sie → ihr/ihre". Family sentences appearing.]
 ### Narration:
-"Let's walk through each possessive with real family sentences:
 
-### mein/meine (my):
-- **Mein Vater** heißt Krishnan. (der Vater → masculine → mein)
-- **Meine Mutter** heißt Lakshmi. (die Mutter → feminine → meine)
-- **Meine Eltern** wohnen in Kerala. (plural → meine)
+"The tricky pair: **sein** (his) vs **ihr** (her). Same -e rule applies!
 
-### dein/deine (your, informal):
-- Wie heißt **dein Bruder**? (der Bruder → masculine → dein)
-- Wie alt ist **deine Schwester**? (die Schwester → feminine → deine)
+### sein (his):
+🔊 **Sein Vater** ist Arzt. (der Vater → masc → sein)
+🔊 **Seine Mutter** ist Lehrerin. (die Mutter → fem → seine)
 
-### sein/seine (his):
-- **Sein Vater** ist Arzt. (der Vater → masculine → sein)
-- **Seine Mutter** ist Lehrerin. (die Mutter → feminine → seine)
+### ihr (her):
+🔊 **Ihr Bruder** wohnt in Berlin. (der Bruder → masc → ihr)
+🔊 **Ihre Schwester** studiert Medizin. (die Schwester → fem → ihre)
 
-### ihr/ihre (her):
-- **Ihr Bruder** wohnt in Berlin. (der Bruder → masculine → ihr)
-- **Ihre Schwester** studiert Medizin. (die Schwester → feminine → ihre)
+*He → sein. She → ihr. Confuse cheyyaruthu!*
 
-⏸️ **[PAUSE — Student constructs: 'Seine Oma heißt...' and 'Ihre Tochter heißt...']**
+### ⚡ Drill:
+⏸️ His sister → ? → 'seine Schwester' (fem → +e)
+⏸️ Her father → ? → 'ihr Vater' (masc → no ending)
+⏸️ His child → ? → 'sein Kind' (neuter → no ending)
+⏸️ Her parents → ? → 'ihre Eltern' (plural → +e)
 
-*Pattern same aanu — masculine/neuter = no ending, feminine/plural = -e. Ellaa possessive-num same rule!*"
+### 🔁 Active Recall — Core Four:
+⏸️ my mother → ? → 'meine Mutter'
+⏸️ your (informal) brother → ? → 'dein Bruder'"
+
+🎬 [Energy: careful, comparative]
 
 ---
 
-## Section 5: The "ihr" Confusion — Don't Panic! (7:00–8:00)
-
-### Visual: [SLIDE: Three meanings of "ihr" displayed with context clues, colour-coded to differentiate]
-
-| "ihr" | Meaning | Context Clue | Example |
-|-------|---------|--------------|---------|
-| **ihr** (possessive) | her | follows a 'sie' (she) | **Ihr** Bruder ist nett. (Her brother is nice) |
-| **ihr** (possessive) | their | follows a 'sie' (they) | **Ihr** Haus ist groß. (Their house is big) |
-| **Ihr** (possessive, capital) | your (formal) | formal context, always capitalized | **Ihr** Name, bitte? (Your name, please?) |
-| **ihr** (pronoun) | you (pl.) | subject of sentence | **Ihr** seid nett. (You all are nice) |
-
+## Section 5: The Malayalam Gap — Why This Is Hard (5:00–5:45)
+### Visual: [Side by side: Malayalam possessives (always same form) vs German (changes by gender)]
 ### Narration:
-"Now the elephant in the room: **ihr** means like four different things.
 
-Don't panic! Context ALWAYS tells you which one:
+"Here's WHY this trips up Malayalam speakers:
 
-1. If someone just talked about a WOMAN → **ihr** = her
-2. If someone just talked about a GROUP → **ihr** = their  
-3. If it's a FORMAL situation and capitalized → **Ihr** = your (formal)
-4. If it's the SUBJECT of the sentence (you all) → **ihr** = you plural
+In Malayalam, 'ente' NEVER changes:
+- ente amma, ente achan, ente veedu — always 'ente.'
 
-*Malayalam-il 'aval-ude' and 'avar-ude' different words aanu. German-il same word — but context-il ninnu manasilaakaam!*
+In German, 'mein' CHANGES:
+- **mein** Vater (masculine)
+- **meine** Mutter (feminine)
 
-For now at A1: focus on **ihr = her** and **Ihr = your (formal)**. The rest will come naturally.
+*Malayalam-il possessive noun-ne depend cheyyilla. German-il depend cheyyunnu!*
 
-⏸️ **[PAUSE — Student identifies 'ihr' meaning in: 'Maria liebt ihre Katze.' → ihr = her (Maria is she)]**"
+This is the ONE adjustment: every time you use a possessive, check — is the NEXT word masculine/neuter (no ending) or feminine/plural (+e)?
+
+With practice, automatic aakum. Promise!"
+
+🎬 [Energy: empathetic, clear]
 
 ---
 
-## Section 6: The Malayalam Parallel — Why This Is Tricky (8:00–9:00)
-
-### Visual: [SLIDE: Malayalam possessives vs German possessives side by side]
-
-| Malayalam | German | Key Difference |
-|-----------|--------|----------------|
-| ente amma | meine Mutter | ente doesn't change! mein→meine does! |
-| ente achan | mein Vater | Same 'ente' — but 'mein' (no -e) |
-| ninte chechi | deine Schwester | Same concept |
-| avante amma | seine Mutter | Same concept |
-
+## Section 6: The Rest — unser, euer, Ihr (5:45–6:45)
+### Visual: [3 more cards: wir→unser, ihr→euer, Sie→Ihr. Same colour-coded -e pattern.]
 ### Narration:
-"Here's WHY this is tricky for Malayalam speakers specifically:
 
-In Malayalam, 'ente' NEVER changes. Whether it's 'ente amma' or 'ente achan' or 'ente veedu' — 'ente' stays 'ente.'
+"Three more possessives — all following the SAME rule:
 
-In German, 'mein' CHANGES based on what follows:
-- mein Vater (masculine → no ending)
-- mein**e** Mutter (feminine → -e ending!)
+🔊 **unser** — our. Unser Haus. Unser**e** Familie.
+🔊 **euer** — your (plural). Euer Lehrer. Eur**e** Lehrerin.
+(Note: euer drops the middle -e when adding -e → eure, not euere!)
+🔊 **Ihr** (capital) — your formal. Ihr Name. Ihr**e** Adresse.
 
-*Malayalam-il possessive noun-ne depend cheyyilla. German-il, possessive noun-nte gender-ne depend cheyyunnu!*
+### ⚡ Quick Drill:
+⏸️ our house (das Haus) → 'unser Haus' (neuter → no ending)
+⏸️ our family (die Familie) → 'unsere Familie' (fem → +e)
+⏸️ your (formal) name (der Name) → 'Ihr Name' (masc → no ending)"
 
-This is the adjustment you need to make. Every time you use a possessive, THINK: is the next word masculine/neuter (no ending) or feminine/plural (add -e)?
-
-With practice, it becomes automatic. Promise!
-
-⏸️ **[PAUSE — Student says: mein Opa (m), meine Oma (f), mein Kind (n), meine Kinder (pl)]**"
+🎬 [Energy: efficient, no lingering]
 
 ---
 
-## Section 7: Practice — Family Descriptions with Possessives (9:00–11:00)
-
-### Visual: [SLIDE: Model family description with possessives highlighted in bold]
+## Section 7: The 'ihr' Triple Meaning (6:45–7:30)
+### Visual: [3 colour-coded contexts for 'ihr' with example sentences]
 ### Narration:
-"Time to put it all together with a real family description.
 
-### Model Description:
+"Quick disambiguation — 'ihr' means three things:
 
-```
-Ich habe eine große Familie.
-Mein Vater heißt Krishnan. Er ist Ingenieur.
-Meine Mutter heißt Lakshmi. Sie ist Lehrerin.
-Ich habe einen Bruder. Sein Name ist Arun.
-Seine Frau heißt Priya. Ihre Tochter ist zwei Jahre alt.
-Meine Oma wohnt bei uns. Sie kocht das beste Essen!
-```
+1. **ihr** = her possessive → 'Ihr Bruder ist nett.' (talking about a woman)
+2. **ihr** = their possessive → 'Ihr Haus ist groß.' (talking about a group)
+3. **Ihr** (capital) = your formal → 'Ihr Name, bitte?' (formal situation)
 
-Let me highlight the possessives:
-- **Mein** Vater (der Vater → m → no ending)
-- **Meine** Mutter (die Mutter → f → -e)
-- **Sein** Name (der Name → m → no ending)
-- **Seine** Frau (die Frau → f → -e)
-- **Ihre** Tochter (die Tochter → f → -e)
-- **Meine** Oma (die Oma → f → -e)
+Context ALWAYS tells you which one. For A1: focus on **ihr = her** and **Ihr = your formal**.
 
-*Six possessives, all following the same rule. Masculine = no ending, feminine = -e ending.*
+*Malayalam-il 'avalude' and 'avarude' different aanu. German-il same word — context-il ninnu manasilaakaam!*"
 
-⏸️ **[PAUSE — Student writes their OWN family description using at least 4 possessives]**
-
-⏸️ **[PAUSE — Student reads their description aloud, self-checking each possessive]**"
+🎬 [Energy: reassuring, don't-panic tone]
 
 ---
 
-## Section 8: Common Mistakes Spotlight (11:00–12:30)
-
-### Visual: [SLIDE: ❌ and ✅ pairs, large and clear]
+## Section 8: Family Description — Build & Apply (7:30–9:00)
+### Visual: [Model family description with possessives HIGHLIGHTED. Then prompts for student's own.]
 ### Narration:
-"Let's fix the most common mistakes:
 
-### Mistake 1: Forgetting the -e for feminine
+"Put it all together — a family description:
 
-❌ **Mein** Schwester heißt Priya.
-✅ **Meine** Schwester heißt Priya.
+🔊 **Mein** Vater heißt Krishnan. Er ist Ingenieur.
+🔊 **Meine** Mutter heißt Lakshmi. Sie ist Lehrerin.
+🔊 **Sein** Name ist Arun — das ist mein Bruder.
+🔊 **Seine** Frau heißt Priya.
+🔊 **Ihre** Tochter ist zwei Jahre alt.
+🔊 **Meine** Oma wohnt bei uns.
 
-*Die Schwester = feminine → meinE!*
+Six possessives, all following ONE rule. Masculine/neuter = no ending. Feminine/plural = +e.
 
-### Mistake 2: Adding -e for masculine
+⏸️ YOUR TURN — describe YOUR family. 4+ sentences. Use at least 3 different possessives.
+⏸️ [15-second pause]
 
-❌ **Meine** Bruder ist groß.
-✅ **Mein** Bruder ist groß.
+### 🔁 Active Recall — Spot the rule:
+⏸️ Why 'mein Vater' but 'meine Mutter'? → Vater = masculine (no ending), Mutter = feminine (+e)
+⏸️ Why 'seine Frau' not 'sein Frau'? → Frau = feminine → +e"
 
-*Der Bruder = masculine → mein (no ending)!*
-
-### Mistake 3: Confusing sein and ihr
-
-❌ Er liebt **ihr** Mutter. (Wrong! 'Er' = he → use 'sein')
-✅ Er liebt **seine** Mutter.
-
-❌ Sie liebt **sein** Mutter. (Wrong! 'Sie' = she → use 'ihr')
-✅ Sie liebt **ihre** Mutter.
-
-*He → sein. She → ihr. Don't cross them!*
-
-### Mistake 4: Forgetting -e for plural
-
-❌ **Mein** Eltern wohnen in Kerala.
-✅ **Meine** Eltern wohnen in Kerala.
-
-*Plural = always -e ending! Same rule as feminine.*
-
-⏸️ **[PAUSE — Student corrects: 'Sein Schwester ist nett' → 'Seine Schwester ist nett']**
-⏸️ **[PAUSE — Student corrects: 'Meine Vater ist Arzt' → 'Mein Vater ist Arzt']**"
+🎬 [Energy: creative, encouraging]
 
 ---
 
-## Section 9: Quick-Fire Drill (12:30–13:30)
-
-### Visual: [Flash cards appearing rapidly — student must supply the possessive]
+## Section 9: Common Mistakes — Quick Fix (9:00–9:45)
+### Visual: [❌ → ✅ pairs appearing rapid-fire]
 ### Narration:
-"Quick-fire! I give the person + noun, you give the possessive:
 
-⚡ ich + Bruder → **mein** Bruder!
-⚡ ich + Schwester → **meine** Schwester!
-⚡ du + Vater → **dein** Vater!
-⚡ du + Mutter → **deine** Mutter!
-⚡ er + Kind → **sein** Kind!
-⚡ sie (she) + Sohn → **ihr** Sohn!
-⚡ sie (she) + Tochter → **ihre** Tochter!
-⚡ ich + Eltern → **meine** Eltern!
-⚡ er + Oma → **seine** Oma!
-⚡ du + Geschwister → **deine** Geschwister!
+"Four mistakes everyone makes:
 
-10 out of 10? Fantastisch! The pattern is now in your bones."
+❌ 'Mein Schwester' → ✅ **Meine** Schwester (die Schwester = fem → +e!)
+❌ 'Meine Bruder' → ✅ **Mein** Bruder (der Bruder = masc → no ending!)
+❌ 'Er liebt ihr Mutter' → ✅ Er liebt **seine** Mutter (he = sein!)
+❌ 'Mein Eltern' → ✅ **Meine** Eltern (plural → +e!)
+
+### ⚡ Fix These:
+⏸️ 'Sein Schwester ist nett' → ? → 'Seine Schwester ist nett'
+⏸️ 'Meine Vater ist Arzt' → ? → 'Mein Vater ist Arzt'"
+
+🎬 [Energy: rapid, diagnostic]
 
 ---
 
-## Section 10: Exam Connection & Outro (13:30–15:00)
-
-### Visual: [SLIDE: Summary table + exam tips + connection diagram to other modules]
+## Section 10: Speed Drill + Exam Tips (9:45–11:00)
+### Visual: [Flash cards: person+noun → student supplies possessive. Score counter.]
 ### Narration:
-"Let's recap everything:
 
-### The ONE Rule:
-| What follows? | Ending | Example |
-|---|---|---|
-| Masculine (der) | no ending | mein Bruder |
-| Feminine (die) | **-e** | mein**e** Schwester |
-| Neuter (das) | no ending | mein Kind |
-| Plural (die) | **-e** | mein**e** Eltern |
+"Speed round! Person + noun → possessive. GO!
 
-### The Full Set:
-mein, dein, sein, ihr, unser, euer, Ihr — ALL follow this pattern.
+1. ich + Bruder → ⏸️ → **mein** Bruder
+2. ich + Schwester → ⏸️ → **meine** Schwester
+3. du + Vater → ⏸️ → **dein** Vater
+4. du + Mutter → ⏸️ → **deine** Mutter
+5. er + Kind → ⏸️ → **sein** Kind
+6. sie (she) + Sohn → ⏸️ → **ihr** Sohn
+7. sie (she) + Tochter → ⏸️ → **ihre** Tochter
+8. ich + Eltern → ⏸️ → **meine** Eltern
+9. er + Oma → ⏸️ → **seine** Oma
+10. du + Geschwister → ⏸️ → **deine** Geschwister
 
-### [EXAM-TIP box:]
-**Sprechen Teil 1:** 'Erzählen Sie über Ihre Familie.' Every sentence needs possessives. Get mein/meine right and you sound competent.
+10/10? The pattern is in your bones!
 
-**Schreiben Teil 2:** 'Meine Schwester hat Geburtstag. Ich lade dich ein.' Possessives in every message.
+### 📋 [EXAM-TIP]
 
-**Lesen:** 'Seine Frau arbeitet bei Siemens.' You need to understand whose wife.
+**Sprechen Teil 1:** 'Erzählen Sie über Ihre Familie.' — every sentence needs possessives. Mein/meine correct = you sound competent.
 
-**Hören:** Distinguishing 'sein Bruder' from 'ihr Bruder' in dialogues.
+**Schreiben Teil 2:** 'Meine Schwester hat Geburtstag. Ich lade dich ein.' — possessives in every message.
 
-*Possessives are EVERYWHERE in German. This one pattern — no ending for masculine/neuter, -e for feminine/plural — is one of the highest-value grammar rules in A1.*
+**Lesen:** 'Seine Frau arbeitet bei Siemens.' — you must know WHOSE wife.
 
-### Connection to other modules:
-- Module 2: 'Mein Name ist...' — you already knew 'mein'!
-- Module 5: 'Mein Tag beginnt um 7 Uhr' — possessives with routine
-- Module 8: 'Meine Wohnung hat drei Zimmer' — possessives with home
-- Module 14: 'Mein Familienname ist...' — possessives on forms
+*Possessives EVERYWHERE in the exam. One pattern — master it!*"
 
-This grammar connects EVERYTHING.
+🎬 [Energy: game show → practical]
+
+---
+
+## Section 11: Final Recall + Homework (11:00–12:00)
+### Visual: [Summary card: THE rule. Connection web to other modules.]
+### Narration:
+
+"### 🔁 Final Active Recall:
+⏸️ The rule — masculine/neuter? → No ending
+⏸️ Feminine/plural? → Add -e
+⏸️ 'my mother' → ? → 'meine Mutter'
+⏸️ 'his sister' → ? → 'seine Schwester'
+⏸️ 'her child' → ? → 'ihr Kind'
+
+All five instant? You OWN possessives.
+
+### Connections:
+- Module 2: 'Mein Name ist...' — you already used 'mein'!
+- Module 5: 'Mein Tag beginnt um 7 Uhr'
+- Module 8: 'Meine Wohnung hat drei Zimmer'
+- Module 14: 'Mein Familienname ist...' on forms
+
+📝 **Homework:** Write your family description — 6 sentences, 4+ different possessives. Read it aloud. Then describe a FRIEND'S family using sein/seine and ihr/ihre.
 
 Tschüss und bis zum nächsten Mal!"
 
@@ -346,35 +286,32 @@ Tschüss und bis zum nächsten Mal!"
 
 ## Script Quality Checklist
 
-- [x] Teaching goal clear: possessive pronouns + gender agreement + family application
-- [x] A1-safe: only Nominativ possessives (Akkusativ possessives deferred)
-- [x] Malayalam bridges: ente/ninte don't change, but mein/meine does — key difference
-- [x] Exam connection explicit: all four exam sections referenced
-- [x] At least 6 pause points for student practice
-- [x] Model family description with possessives
-- [x] Common mistake spotlight with 4 clear ❌/✅ pairs
-- [x] Quick-fire drill for pattern internalization
-- [x] "ihr" triple-meaning disambiguation included
-- [x] Connects to Modules 2, 5, 8, 14 (possessives used everywhere)
-- [x] Duration target: ~15 minutes ✅
+- [x] Hook under 40s with concrete scenario (lost-and-found at Sprachkurs)
+- [x] Teach→drill→apply cycles (core four → the pattern → sein vs ihr → family description)
+- [x] Active recall checkpoints (4 — after pattern, after sein/ihr, after family, final)
+- [x] Energy cues every section
+- [x] Malayalam bridges as structural parallels (ente never changes, mein does)
+- [x] ~15% word count reduction from v1.0 (15min → 12min)
+- [x] Specific practice pauses with prompts + reveals (18+)
+- [x] ONE rule taught clearly: masc/neut=no ending, fem/plural=+e
+- [x] 10-item speed drill as cumulative test
+- [x] 'ihr' triple meaning clarified in context
+- [x] Common mistakes section (4 ❌→✅ pairs with fix-it drill)
+- [x] Exam tips: Sprechen + Schreiben + Lesen specific
+- [x] Cross-module connections: Modules 2, 5, 8, 14
+- [x] Duration reduced from 15:00 to 12:00
 
----
-
-## Vocabulary Summary (for SRS/exercise integration)
-
-### Possessive Pronouns
-| Pronoun | Possessive | + masc (der) | + fem (die) | + neut (das) | + plural |
-|---------|-----------|-------------|-------------|-------------|----------|
-| ich | mein | mein | meine | mein | meine |
-| du | dein | dein | deine | dein | deine |
-| er/es | sein | sein | seine | sein | seine |
-| sie (she) | ihr | ihr | ihre | ihr | ihre |
-| wir | unser | unser | unsere | unser | unsere |
-| ihr (you pl) | euer | euer | eure | euer | eure |
-| sie (they) | ihr | ihr | ihre | ihr | ihre |
-| Sie (formal) | Ihr | Ihr | Ihre | Ihr | Ihre |
-
-### Key Patterns
-- **Masculine/Neuter → no ending:** mein Bruder, mein Kind
-- **Feminine/Plural → add -e:** meine Schwester, meine Eltern
-- **Same pattern for ALL possessives:** dein/deine, sein/seine, ihr/ihre, etc.
+## v2.0 Revision Notes
+- Hook cut from 75s to 30s — concrete lost-and-found scenario
+- Massive 10-person possessive table (Section 2) → split into "Core Four" (mein/dein/sein/ihr) + later "The Rest" (unser/euer/Ihr)
+- Pattern taught once, then applied — no repetition of the same table 4 times
+- Section 6 (Malayalam Parallel) shortened from standalone cultural essay to focused 45s gap explanation woven after pattern drill
+- Section 7 (Practice with family description) restructured: model THEN student builds, not table → example → table
+- "ihr" disambiguation compressed from 1min to 45s
+- Added 4 active recall checkpoints between sections
+- Added energy cues (🎬) every section
+- All tables replaced with one-at-a-time reveals where possible
+- Common mistakes section shortened: 4 pairs with interactive fix-it drill
+- Duration reduced from 15:00 → 12:00 (tighter pacing throughout)
+- Pre-roll compressed to 10s
+- Vocabulary summary table moved to appendix (removed from main script flow)

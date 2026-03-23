@@ -3,196 +3,187 @@
 > **Module:** 3 | **Lesson:** 3-3 | **Duration:** 12:00 target
 > **Teaching Goal:** Master telling time in German — both colloquial (halb, Viertel, nach/vor) and official 24-hour format — with special focus on the "halb" trap
 > **A1 Exam Link:** Hören (appointment times, train announcements), Lesen (schedules, opening times), Sprechen Teil 2 (asking about times)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Revision:** 2026-03-23 (quality pass — tighter hook, teach→drill→apply per time concept, active recall, energy cues, Malayalam bridges, ~15% word count reduction)
 
 ---
 
-## Pre-roll (0:00–0:15)
-
-### Visual: [Course intro animation / Adipoli German branding]
-### Narration:
-"Willkommen bei Adipoli German! Today — time in German. And the ONE trap that catches everyone."
+## Pre-roll (0:00–0:10)
+### Visual: [Course intro animation]
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — The Halb Trap (0:15–1:00)
-
-### Visual: [SLIDE: Big clock showing 2:30 with "halb drei" and a question mark — "Wait... halb DREI = 2:30??"]
+## Section 1: Hook — The Halb Trap (0:10–0:40)
+### Visual: [ANIMATION: Person running to train platform. Sign reads "Abfahrt: halb drei." Person arrives at 3:30 — train long gone. Sad trombone.]
 ### Narration:
-"Quick quiz. 'Halb drei.' What time is it?
+"'Halb drei.' You think 3:30. You show up at 3:30. Your train left at 2:30.
 
-If you said 3:30 — you just missed your train. You're 60 minutes late.
+**Halb drei = 2:30.** This ONE mistake costs real points on the exam and real trains in Germany. Let's make sure it never catches you.
 
-**Halb drei = 2:30.** NOT 3:30.
+*Halb drei = 2:30 aanu, 3:30 alla! Ee trap-il veezhathe nokkaam.*"
 
-This is THE number one time-telling mistake for every German learner, and it catches people even after months of study. Today we'll make sure it NEVER catches you.
-
-*Halb drei = 2:30 aanu, 3:30 alla! Ee trap-il ellaarum veezham — but not you. Not after today.*"
+🎬 [Energy: urgent, attention-grabbing]
 
 ---
 
-## Section 2: Full Hours — The Easy Part (1:00–2:30)
-
-### Visual: [SLIDE: Clock faces showing full hours with German text below each]
+## Section 2: Full Hours — Build the Base (0:40–1:45)
+### Visual: [4 clock faces showing 1:00, 3:00, 6:00, 12:00 with German text appearing]
 ### Narration:
-"Let's start simple. Full hours:
 
-- **Es ist ein Uhr.** — It's 1:00. (Note: 'ein', not 'eins'!)
-- **Es ist zwei Uhr.** — It's 2:00.
-- **Es ist drei Uhr.** — It's 3:00.
-- **Es ist zwölf Uhr.** — It's 12:00.
+"Full hours first. Pattern: **Es ist [number] Uhr.**
 
-The pattern: **Es ist [number] Uhr.**
+🔊 **Es ist ein Uhr.** — 1:00. (Note: 'ein' — the 's' drops before 'Uhr'!)
+🔊 **Es ist drei Uhr.** — 3:00.
+🔊 **Es ist zwölf Uhr.** — 12:00.
 
-⏸️ **[PAUSE — Student says: Es ist sechs Uhr. Es ist neun Uhr. Es ist elf Uhr.]**
+### ⚡ Drill:
+⏸️ Say: 6 o'clock → 'Es ist sechs Uhr.'
+⏸️ Say: 9 o'clock → 'Es ist neun Uhr.'
+⏸️ Say: 11 o'clock → 'Es ist elf Uhr.'
 
-One small note: at 1:00, we say 'ein Uhr' (not 'eins Uhr'). The 's' drops when 'Uhr' follows. Every other number stays the same.
+Easy. Now the fun begins."
 
-Easy so far, right? Now — the fun begins."
+🎬 [Energy: brisk, building]
 
 ---
 
-## Section 3: Quarter Past and Quarter To (2:30–4:00)
-
-### Visual: [SLIDE: Clock at 3:15 and 3:45, with arrows showing "nach" and "vor"]
+## Section 3: Viertel nach / Viertel vor — Teach → Drill (1:45–3:15)
+### Visual: [Clock at 3:15 with green arrow clockwise = 'nach'. Clock at 3:45 with red arrow = 'vor'.]
 ### Narration:
-"Two new words:
-- **nach** = past / after
-- **vor** = to / before
 
-Like English 'quarter past' and 'quarter to':
+"Two words:
+- **nach** = past (clock goes forward)
+- **vor** = to (approaching next hour)
 
-- **Viertel nach drei** = 3:15 (quarter PAST three)
-- **Viertel vor vier** = 3:45 (quarter TO four)
+🔊 **Viertel nach drei** = 3:15 (quarter PAST three)
+🔊 **Viertel vor vier** = 3:45 (quarter TO four)
 
-[SLIDE: Clock diagrams with color arrows: green arrow from 12 clockwise to 3 = 'nach', red arrow from 12 counter-clockwise to 9 = 'vor']
+*'Nach' = kazhinju. 'Vor' = munpë. English 'quarter past/to' pole thannë!*
 
-Think of the clock in two halves:
-- Right side (minutes 1-30): use **nach** (past the hour)
-- Left side (minutes 31-59): use **vor** (to the NEXT hour)
+Right half of clock = **nach**. Left half = **vor**.
 
-*'Nach' = kazhinju, past. 'Vor' = munpë, before. English-il 'quarter past/to' parayunna pole thannë!*
+### ⚡ Drill:
+⏸️ 8:15 → 'Viertel nach acht.'
+⏸️ 9:45 → 'Viertel vor zehn.' (TO ten, not nine!)
+⏸️ 5:15 → 'Viertel nach fünf.'
+⏸️ 7:45 → 'Viertel vor acht.'
 
-⏸️ **[PAUSE — Student says: Viertel nach acht = 8:15. Viertel vor zehn = 9:45.]**
+### 🔁 Active Recall:
+Full hours still there? ⏸️ 4 o'clock → 'Es ist vier Uhr.' ✓"
 
-Good. Now the moment of truth."
+🎬 [Energy: methodical, building confidence]
 
 ---
 
-## Section 4: THE HALB TRAP — Deep Dive (4:00–6:00)
-
-### Visual: [SLIDE: GIANT clock showing 2:30. Arrow pointing to "halb drei". Red warning signs. This is the lesson's centrepiece.]
+## Section 4: THE HALB TRAP — Deep Dive (3:15–5:15)
+### Visual: [CENTREPIECE VISUAL: Road from 2:00 → 3:00. Person standing at midpoint with sign "halb drei = HERE (2:30)". Giant red X on "3:30".]
 ### Narration:
-"Here it is. The trap.
 
-**'Halb' in German means 'halfway TO the next hour.'**
+"The moment of truth.
 
-- **Halb drei** = halfway to three = **2:30** ✅
-- NOT 3:30! ❌
+**'Halb' = halfway TO the next hour.**
 
-Think of it this way: you're ON YOUR WAY to 3 o'clock, and you're HALFWAY there. So you're at 2:30.
+Imagine a road from 2:00 to 3:00. You're halfway. Where are you? **2:30.** That's 'halb drei' — halfway TO drei.
 
-[SLIDE: Visual metaphor — a road from 2:00 to 3:00, person standing at the halfway point = 2:30, with sign 'halb drei']
+🔊 **Halb drei** = 2:30 ✅ (NOT 3:30 ❌)
+🔊 **Halb sieben** = 6:30
+🔊 **Halb zwölf** = 11:30
+🔊 **Halb eins** = 12:30
 
-More examples:
-- **Halb sieben** = 6:30 (halfway to seven)
-- **Halb zwölf** = 11:30 (halfway to twelve)
-- **Halb eins** = 12:30 (halfway to one)
+### 🧮 The Survival Rule:
+**Hear 'halb [X]' → subtract 1 → add :30.**
+- Halb fünf → 5−1 = 4 → **4:30** ✅
+- Halb elf → 11−1 = 10 → **10:30** ✅
 
-⏸️ **[PAUSE — Quiz: What time is halb neun?]**
+*'Halb' ennu kelkkumbol — next hour-inte halfway aanu. Halb drei = three-inte halfway = 2:30.*
 
-✅ **Halb neun = 8:30!** You got it!
+### ⚡ Rapid Drill:
+⏸️ Halb vier → ? → **3:30**
+⏸️ Halb acht → ? → **7:30**
+⏸️ Halb zwei → ? → **1:30**
+⏸️ Halb zehn → ? → **9:30**
+⏸️ Halb eins → ? → **12:30**
 
-*'Halb' ennu parayumbol, aduthë hour-inte halfway aanu. Halb drei = three-inte halfway = 2:30. Halb neun = nine-inte halfway = 8:30.*
+All correct? If halb still feels weird, replay this section. Seriously — this is the #1 time mistake.
 
-### The Survival Rule:
-**When you hear 'halb [X]', subtract 1 from X and add :30.**
-- Halb fünf → 5-1 = 4, add :30 → **4:30** ✅
-- Halb elf → 11-1 = 10, add :30 → **10:30** ✅
+### 🔁 Active Recall:
+Quick — Viertel nach sechs? ⏸️ → 6:15. Halb neun? ⏸️ → 8:30. Both instant? You're on track."
 
-⏸️ **[PAUSE — Rapid drill: halb vier? halb acht? halb zwei? halb zehn?]**
-
-Answers: 3:30, 7:30, 1:30, 9:30."
+🎬 [Energy: emphatic on the rule, celebratory on correct drill answers]
 
 ---
 
-## Section 5: Minutes Past and Minutes To (6:00–7:30)
-
-### Visual: [SLIDE: Clock with 5-minute increments labeled in German]
+## Section 5: Minutes Past & To — Complete the Clock (5:15–6:30)
+### Visual: [Full clock face with ALL 12 common expressions around the rim, appearing one by one]
 ### Narration:
-"Beyond quarters and halb, you can say any minute:
 
-- **Fünf nach drei** = 3:05
-- **Zehn nach drei** = 3:10
-- **Zwanzig nach drei** = 3:20
-- **Fünf vor halb vier** = 3:25 (5 before half-four!)
-- **Fünf nach halb vier** = 3:35 (5 after half-four!)
-- **Zwanzig vor vier** = 3:40
-- **Zehn vor vier** = 3:50
-- **Fünf vor vier** = 3:55
+"Beyond Viertel and halb — the full minute system:
 
-[SLIDE: Full clock face with ALL common time expressions around it]
+- :05 → **fünf nach**
+- :10 → **zehn nach**
+- :15 → **Viertel nach**
+- :20 → **zwanzig nach**
+- :25 → **fünf vor halb** (5 before the half!)
+- :30 → **halb**
+- :35 → **fünf nach halb**
+- :40 → **zwanzig vor**
+- :45 → **Viertel vor**
+- :50 → **zehn vor**
+- :55 → **fünf vor**
 
-The complete clock:
-- :05 = fünf nach
-- :10 = zehn nach
-- :15 = Viertel nach
-- :20 = zwanzig nach
-- :25 = fünf vor halb
-- :30 = halb
-- :35 = fünf nach halb
-- :40 = zwanzig vor
-- :45 = Viertel vor
-- :50 = zehn vor
-- :55 = fünf vor
+The tricky ones: **fünf vor halb** and **fünf nach halb** — these reference the halb point, not the hour.
 
-⏸️ **[PAUSE — Student identifies: What is 'zehn nach sieben'? Answer: 7:10. What is 'fünf vor halb drei'? Answer: 2:25.]**
+### ⚡ Drill:
+⏸️ 7:10 → 'Zehn nach sieben.'
+⏸️ 2:25 → 'Fünf vor halb drei.'
+⏸️ 4:40 → 'Zwanzig vor fünf.'
 
-*Complex aaya venda — exam-il mostly halb, Viertel nach/vor, and full hours mathi. But ee full clock arinjaal ningal pro aanu!*"
+*Exam-il mostly halb, Viertel, and full hours varum. But full clock arinjaal ningal pro aanu!*"
+
+🎬 [Energy: steady, encyclopedic but not overwhelming]
 
 ---
 
-## Section 6: Official 24-Hour Time (7:30–8:30)
-
-### Visual: [SLIDE: Train departure board showing 24-hour times. "14:30 → Gleis 7"]
+## Section 6: 24-Hour Official Time (6:30–7:30)
+### Visual: [German train departure board: "14:30 → Gleis 7", "20:15 → Gleis 3"]
 ### Narration:
-"Everything we just learned? That's COLLOQUIAL time — how people SPEAK. But Germany also uses official 24-hour time:
 
-- **Vierzehn Uhr dreißig** = 14:30
-- **Neun Uhr fünfundvierzig** = 9:45
-- **Zwanzig Uhr fünfzehn** = 20:15
+"Official time — what you SEE on schedules. Pattern: **[hour] Uhr [minutes].**
 
-Where you'll see this:
-- 🚆 Train/bus schedules
-- 📺 TV listings
-- 🏥 Doctor appointments
-- 📋 Official documents
+🔊 **Vierzehn Uhr dreißig** = 14:30
+🔊 **Zwanzig Uhr fünfzehn** = 20:15
 
-The pattern is simple: **[hour] Uhr [minutes]**. No 'nach', no 'vor', no 'halb'.
+No 'nach', no 'vor', no 'halb'. Just numbers + Uhr.
 
-⏸️ **[PAUSE — Convert: 3:30 PM in official time? → fünfzehn Uhr dreißig.]**
+Where you'll see it: 🚆 trains, 🏥 doctor appointments, 📋 official letters.
 
 ### When to use which:
-- **Talking to friends:** 'Wir treffen uns um halb vier.' (colloquial)
-- **Reading a timetable:** 'Der Zug fährt um fünfzehn Uhr dreißig.' (official)
-- **In the exam:** You might hear EITHER — be ready for both!
+- **Friends:** 'Wir treffen uns um halb vier.' (colloquial)
+- **Timetable:** 'Der Zug fährt um fünfzehn Uhr dreißig.' (official)
+- **Exam:** You'll hear BOTH — be ready!
 
-*Train station-il '14:30' kaanum — athu official time. Friend-odum samsaarikumbol 'halb drei' parayum. Rendë ariyanum!*"
+### ⚡ Drill:
+⏸️ 3:30 PM official → 'Fünfzehn Uhr dreißig.'
+⏸️ 8:45 PM official → 'Zwanzig Uhr fünfundvierzig.'
+
+*Train station-il official time kaanum. Friend-odum colloquial parayum. Rendë ariyanum!*"
+
+🎬 [Energy: practical, real-world]
 
 ---
 
-## Section 7: Listening Drill — Can You Catch the Time? (8:30–10:00)
-
-### Visual: [SLIDE: Headphones icon. "Listen and Write" with blank boxes for answers]
+## Section 7: Listening Drill — Exam Simulation (7:30–9:00)
+### Visual: [Headphones icon. "Listen → Write the digital time." Answer box appears after each pause.]
 ### Narration:
-"This is what the Hören exam feels like. Listen carefully — write the time in digital format.
+
+"Hören exam simulation. I say a sentence — you write the time. Real exam pace.
 
 🔊 **1.** 'Der Termin ist um Viertel nach zehn.'
 ⏸️ → **10:15** ✅
 
 🔊 **2.** 'Der Film beginnt um halb neun.'
-⏸️ → **8:30** ✅ (Not 9:30! Remember the rule!)
+⏸️ → **8:30** ✅ (NOT 9:30 — the trap!)
 
 🔊 **3.** 'Das Geschäft schließt um achtzehn Uhr dreißig.'
 ⏸️ → **18:30** ✅
@@ -212,57 +203,63 @@ The pattern is simple: **[hour] Uhr [minutes]**. No 'nach', no 'vor', no 'halb'.
 🔊 **8.** 'Das Museum öffnet um zehn vor neun.'
 ⏸️ → **8:50** ✅
 
-How did you do? If the halb questions tripped you up — go back to Section 4 and drill again. Seriously."
+Score: 7-8 = exam-ready. Under 6 = replay Section 4."
+
+🎬 [Energy: exam tension, then release]
 
 ---
 
-## Section 8: Appointment Patterns for Speaking (10:00–11:00)
-
-### Visual: [SLIDE: Common appointment sentences with fill-in blanks]
+## Section 8: Speaking Patterns for Teil 2 (9:00–10:15)
+### Visual: [Conversation cards with blanks to fill]
 ### Narration:
-"For Sprechen Teil 2, you might need to ask about times. Here are the key patterns:
+
+"Sprechen Teil 2 — you'll ask and answer about times.
 
 ### Asking:
-- **Wann beginnt der Kurs?** — When does the course start?
-- **Um wie viel Uhr ist der Termin?** — What time is the appointment?
-- **Wie spät ist es?** — What time is it?
+🔊 **Wann beginnt der Kurs?** — When does the course start?
+🔊 **Um wie viel Uhr ist der Termin?** — What time is the appointment?
 
 ### Answering:
-- **Der Kurs beginnt um neun Uhr.** — The course starts at 9.
-- **Der Termin ist um halb drei.** — The appointment is at 2:30.
-- **Es ist Viertel nach vier.** — It's 4:15.
+🔊 **Der Kurs beginnt um neun Uhr.**
+🔊 **Der Termin ist um halb drei.** (= 2:30!)
 
-### Making appointments:
-- **Können wir uns um drei treffen?** — Can we meet at 3?
-- **Geht es um zehn Uhr?** — Is 10 o'clock possible?
+### Making plans:
+🔊 **Können wir uns um drei treffen?** — Can we meet at 3?
 
-⏸️ **[PAUSE — Student asks about time using one of these patterns]**
+### ⚡ Drill:
+⏸️ Ask when the train departs → 'Wann fährt der Zug?'
+⏸️ Answer: 2:30 → 'Der Zug fährt um halb drei.'
 
-*Ee patterns exam-il direct varum — especially Sprechen Teil 2-il. Practice cheyyuka!*"
+*Ee patterns Sprechen Teil 2-il direct varum!*"
+
+🎬 [Energy: conversational, practical]
 
 ---
 
-## Section 9: Exam Connection + Outro (11:00–12:00)
-
-### Visual: [SLIDE: Exam tip card + time summary chart]
+## Section 9: Exam Summary + Outro (10:15–12:00)
+### Visual: [EXAM CARD with all 3 skills. Sticky note with halb rule.]
 ### Narration:
+
 "### 📋 [EXAM-TIP]
 
-**Hören:** Time appears in nearly EVERY listening section — appointment times, train departures, shop opening hours. If you can't catch German times by ear, you lose easy points.
-
-**Lesen:** Timetables and schedules are classic reading items. Both 24-hour and colloquial formats appear.
-
-**Sprechen Teil 2:** Question cards often include 'Wann...?' or 'Um wie viel Uhr...?' — you need to ask AND answer about time.
+**Hören:** Time in nearly EVERY listening item — appointments, trains, shop hours. Catch them by ear.
+**Lesen:** Timetables + schedules. Both formats.
+**Sprechen Teil 2:** 'Wann...?' and 'Um wie viel Uhr...?' — ask and answer.
 
 **The halb rule ONE MORE TIME:**
-**Halb [X] = X minus 1, plus :30.**
-Halb drei = 2:30. Halb sieben = 6:30. Halb zwölf = 11:30.
+**Halb [X] = X − 1, plus :30.**
 
-Write this rule on a sticky note. Put it on your mirror. Look at it every morning until it's automatic.
+### 🔁 Final Active Recall:
+⏸️ Halb drei → ? → 2:30
+⏸️ Viertel nach sieben → ? → 7:15
+⏸️ Zwanzig vor fünf → ? → 4:40
+⏸️ Dreizehn Uhr fünfundvierzig → ? → 13:45
 
-📝 **Homework:** For the next 3 days, every time you check the time, say it in German — colloquial AND official. 'Es ist Viertel nach elf. Es ist elf Uhr fünfzehn.' Both versions. Every. Single. Time.
+All four instant? You own this.
 
-*Halb three alla, halb = next hour-inte halfway. Ee oru rule ormichaal, time-telling easy aanu. Practice cheyyuka!*
+📝 **Homework:** For 3 days, every time you check the time — say it in German. BOTH versions. 'Es ist Viertel nach elf. Es ist elf Uhr fünfzehn.'
+
+*Halb three alla — halb = next hour-inte halfway. Practice cheyyuka!*
 
 Bis zum nächsten Mal — tschüss!"
 
@@ -270,16 +267,17 @@ Bis zum nächsten Mal — tschüss!"
 
 ## Script Quality Checklist
 
-- [x] Teaching goal clear: Full German time-telling including halb trap
-- [x] A1 exam link explicit: Hören (announcements), Lesen (schedules), Sprechen (asking times)
-- [x] Malayalam bridges: Multiple contextual Malayalam explanations
-- [x] Practice pauses: 10+ student production pauses (⏸️) + 8-item listening drill
-- [x] THE HALB TRAP: Dedicated 2-minute section with visual metaphor, rule, and drill
-- [x] Both time systems: Colloquial (halb, Viertel, nach/vor) AND official 24-hour
-- [x] Full clock reference: All 12 common time expressions mapped
-- [x] Listening drill: 8 items simulating Hören exam conditions
-- [x] Speaking patterns: Asking and answering about time
-- [x] Exam tips: All relevant sections covered
-- [x] Homework: 3-day immersive time practice challenge
-- [x] Cross-module references: Module 3 numbers, Module 5 daily routine time expressions
+- [x] Hook under 40s with concrete stakes (missed train + exam points)
+- [x] Teach→drill→apply per concept (full hours, Viertel, halb, minutes, 24hr, speaking)
+- [x] Active recall checkpoints (3 — after Viertel, mid-halb, final)
+- [x] Energy cues every section
+- [x] Malayalam bridges as structural parallels
+- [x] ~15% word count reduction from v1.0
+- [x] Specific practice pauses with prompts + reveals (18+)
+- [x] THE HALB TRAP: dedicated 2-minute centrepiece with visual metaphor + survival rule
+- [x] Both time systems: colloquial + 24-hour official
+- [x] 8-item listening drill simulating Hören exam
+- [x] Speaking patterns for Sprechen Teil 2
+- [x] Exam tips covering Hören + Lesen + Sprechen
+- [x] Homework: 3-day immersive practice
 - [x] Duration estimate: ~12:00 (9 sections)

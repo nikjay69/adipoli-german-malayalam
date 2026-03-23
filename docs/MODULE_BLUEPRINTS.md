@@ -1,888 +1,1156 @@
 # Module Blueprints — Adipoli German für Malayalis
 
-> Master planning doc: teaching goals, A1 exam relevance, lesson/video script needs, essential outcomes, and future script direction for each module.
+> Detailed planning document for all 18 course modules. This file is the script-planning blueprint for teaching, production, exam mapping, and future content expansion.
 >
-> **Last updated:** 2026-03-23 07:30 UTC (overnight cron — ALL 18 module blueprints + ALL 5 wave architectures complete; 34/~60 full scripts drafted)
+> **Updated:** 2026-03-23
+> **Primary sources:** `docs/COURSE_PLAN_10_10.md`, `src/lib/content/modules/module-01.ts` ... `module-18.ts`
 
 ---
 
-## How to Read This Document
+## Course-Level Snapshot
 
-Each module blueprint covers:
-1. **Teaching Goal** — What the module must accomplish pedagogically
-2. **A1 Exam Relevance** — Direct mapping to Goethe A1 (Start Deutsch 1) sections
-3. **Lessons & Video Script Needs** — Current state + what scripts need
-4. **Essential Outcomes** — What a learner MUST be able to do after this module
-5. **Future Script Direction** — Priorities for video/audio script creation
-6. **Production Exercise Opportunities** — Where to add free-text/dictation/speaking tasks
+- **Modules:** 18
+- **Lessons:** 90
+- **Videos:** 146
+- **Exercises:** 690
+- **Vocabulary items:** 758
+- **Primary mission:** give Malayali learners a course that can realistically carry them through Goethe A1, not just expose them to German topics
+
+### Blueprint Reading Guide
+
+For each module, this document defines:
+- **Teaching Goal** — the real-world skill the learner should gain
+- **A1 Exam Relevance** — how the module maps to Hören / Lesen / Schreiben / Sprechen
+- **Current Content** — what already exists in the repo
+- **Lesson/Video Script Needs** — what the script layer must teach, explain, demonstrate, and repeat
+- **Essential Outcomes** — measurable learning targets
+- **Future Script Direction** — tone, Malayalam bridge, predictable learner errors, scenario guidance
+- **Production Exercise Ideas** — what should be added beyond recognition exercises
+- **Gap Analysis** — what is still missing versus Goethe A1 performance needs
 
 ---
 
 ## Module 1: Welcome to German! (Willkommen!)
-**Icon:** 👋 | **Hours:** 12 | **Priority:** HIGH (foundation)
 
-### Teaching Goal
-Reduce fear, build motivation, and establish correct German pronunciation from day one. Learners should leave Module 1 able to greet, introduce themselves at a basic level, and pronounce all German sounds correctly — including ä/ö/ü/ch/sch that don't exist in Malayalam.
+**Teaching Goal:**
+Build emotional readiness and phonetic confidence. After this module, the learner should be able to greet people, say basic polite expressions, handle a first mini-conversation, and produce core German sounds with less fear.
 
-### A1 Exam Relevance
-- **Sprechen Teil 1:** Self-introduction starts here (name, greeting)
-- **Hören:** Correct sound recognition is foundational for all listening tasks
-- **All sections:** Alphabet + pronunciation = ability to read/write/hear German accurately
+**A1 Exam Relevance:**
+- **Sprechen:** foundation for greeting, introducing yourself, and reacting politely
+- **Hören:** sound discrimination starts here; weak phonetics will damage later listening performance
+- **Lesen/Schreiben:** alphabet and sound-letter awareness support spelling, name handling, and early decoding
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 1-1 | Why Learn German? | Outline only | MEDIUM — motivational, can be looser |
-| 1-2 | German Sounds & Alphabet | 🔄 DRAFT (`docs/scripts/v1-2-1_FULL_SCRIPT.md`) | HIGH — pronunciation is foundational |
-| 1-3 | Greetings & Goodbyes | 🔄 DRAFT (`docs/scripts/v1-3-1_FULL_SCRIPT.md`) | HIGH — first real German production |
-| 1-4 | First Conversations | 🔄 DRAFT (`docs/scripts/v1-4-1_FULL_SCRIPT.md`) | HIGH — sets the pattern for all speaking |
+**Current Content:**
+- **Lessons:** 6
+  - Why Learn German?
+  - German Sounds for Malayalam Speakers
+  - Basic Greetings
+  - Goodbye & Polite Words
+  - Your First Conversation
+  - Formal vs Informal
+- **Videos:** 12
+- **Exercises:** 48
+- **Vocabulary:** 60
+- **Existing exercise types:** multiple-choice, fill-blank, matching, ordering, speaking-style prompts
+- **Current strengths:** strong motivational framing, pronunciation emphasis, early social language
 
-### Essential Outcomes
-- [ ] Pronounce all 30 German letters + ä, ö, ü, ß correctly
-- [ ] Say Guten Morgen / Guten Tag / Guten Abend / Tschüss / Auf Wiedersehen appropriately
-- [ ] Spell their own name in German (buchstabieren)
-- [ ] Produce: "Hallo! Ich heiße [Name]. Ich komme aus Kerala/Indien."
-- [ ] Recognize formal (Sie) vs informal (du) register
+**Lesson/Video Script Needs:**
+- A strong onboarding script that reduces fear and sets expectations: German is learnable, A1 is achievable, and pronunciation can be trained.
+- A careful pronunciation lesson for umlauts, `ch`, `sch`, `z`, `sp/st`, and final consonants.
+- Dialogue scripts for greeting by time of day, saying goodbye, thanking, apologizing, and meeting someone for the first time.
+- A clean, memorable formal/informal contrast: `du` vs `Sie`, `Tschüss` vs `Auf Wiedersehen`, `Hallo` vs formal greeting.
+- Repetition-heavy audio/drill scripting, not just explanation.
 
-### Future Script Direction
-- **Lesson 1-2 (Sounds):** Needs the most detailed script — every sound with Malayalam comparisons (e.g., ü = "ee with rounded lips", ch like "kh" in akhil but softer). Include common Malayali pronunciation traps.
-- **Lesson 1-3 (Greetings):** Script should include role-play dialogues (formal + informal) with clear stage directions for video.
-- **Lesson 1-4 (First Conversations):** Script should build a mini-dialogue that combines greeting + name + origin. This becomes the prototype for Sprechen Teil 1 prep.
+**Essential Outcomes:**
+- Can say and recognize common greetings and farewells appropriately.
+- Can use `Bitte`, `Danke`, `Entschuldigung`, `Ja`, `Nein` naturally.
+- Can produce a mini-dialogue: greeting + name + polite close.
+- Can distinguish formal and informal address in common situations.
+- Can pronounce core German sound patterns more accurately than a raw beginner.
 
-### Production Exercise Opportunities
-- Dictation: Hear a greeting → type it
-- Free-text: "Write a 2-sentence self-introduction"
-- Speaking: Record yourself saying greetings (Guten Tag, Tschüss, etc.)
+**Future Script Direction:**
+- Tone should be energizing, not lecture-heavy.
+- Use Malayalam comparisons constantly: familiar sound anchors, teacher reassurance, humor.
+- Address likely Malayali errors: English-style pronunciation of German words, weak umlauts, overusing informal register, and skipping final consonant clarity.
+- Use real first-week Germany scenarios: meeting a classmate, meeting a landlord, first day at Sprachschule.
+
+**Production Exercise Ideas:**
+- Dictation of greetings and polite phrases.
+- Audio imitation tasks for `ü`, `ö`, `ch`, `sch`.
+- Free-text: write a 2-line first conversation.
+- Speaking: record greeting someone formally and informally.
+- Name-spelling drill with alphabet support.
+
+**Gap Analysis:**
+- Still too recognition-heavy for a module that should create confident speech.
+- Needs stronger audio-first phonetics practice.
+- Needs more explicit alphabet/spelling output linked to office and phone-call situations.
+- Needs a clearer bridge from greeting phrases to the self-introduction work of Module 2.
 
 ---
 
 ## Module 2: Who Are You? (Wer bist du?)
-**Icon:** 🙋 | **Hours:** 12 | **Priority:** CRITICAL (direct exam content)
 
-### Teaching Goal
-Build the personal-information core: name, origin, age, profession, languages, and simple identity statements. This is THE module for Sprechen Teil 1 and Schreiben form-filling.
+**Teaching Goal:**
+Teach the full personal-information core of A1. After this module, learners should be able to introduce themselves, ask for and provide name/origin/job/language information, and begin form-filling and oral self-presentation.
 
-### A1 Exam Relevance
-- **Sprechen Teil 1:** Directly tested — "Stellen Sie sich vor" (introduce yourself)
-- **Schreiben Teil 1:** Form fields (Name, Vorname, Geburtsdatum, Beruf, Wohnort)
-- **Hören Teil 1:** Listening for personal information in short dialogues
-- **Lesen Teil 1:** Reading short personal descriptions
+**A1 Exam Relevance:**
+- **Sprechen:** direct preparation for `Sich vorstellen`
+- **Schreiben:** supports form fields like name, profession, nationality, languages
+- **Hören:** short personal-info dialogues are common
+- **Lesen:** short self-descriptions and registration-style text become easier
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 2-1 | What's Your Name? | Outline only | CRITICAL — self-intro is exam core |
-| 2-2 | Where Are You From? | Outline only | CRITICAL — origin + nationality |
-| 2-3 | Jobs & Languages | Outline only | HIGH — Beruf + Sprachen for exam |
+**Current Content:**
+- **Lessons:** 5
+  - What's Your Name?
+  - Where Are You From?
+  - What Do You Do?
+  - Languages I Speak
+  - My First Full Conversation
+- **Videos:** 10
+- **Exercises:** 40
+- **Vocabulary:** 50
+- **Current strengths:** strong exam relevance, practical identity language, early speaking potential
 
-### Essential Outcomes
-- [ ] Full self-introduction: Name + Alter + Herkunft + Beruf + Sprachen (2 minutes sustained)
-- [ ] Ask AND answer: Wie heißen Sie? Woher kommen Sie? Was sind Sie von Beruf?
-- [ ] Fill in a Goethe-style Anmeldeformular (name, address, nationality fields)
-- [ ] Understand formal vs informal question forms
-- [ ] Correctly use: ich bin, ich heiße, ich komme aus, ich spreche, ich wohne in
+**Lesson/Video Script Needs:**
+- A “golden self-introduction” script that learners can first memorize, then personalize.
+- Strong scripts for `Ich heiße`, `Mein Name ist`, `Ich komme aus`, `Ich wohne in`, `Ich bin ... von Beruf`, `Ich spreche ...`.
+- Explicit formal/informal question-answer pair drilling.
+- Spelling-name sequence for registration and office use.
+- A full conversation script combining all identity components naturally.
 
-### Future Script Direction
-- **Lesson 2-1:** Script must include a complete model self-introduction (the "golden script" students memorize). Include Kerala name pronunciation guide for Germans.
-- **Lesson 2-2:** Script needs country/nationality table + the „aus + Dativ" pattern. Include common Malayali cities mapped to German pronunciation.
-- **Lesson 2-3:** Script should cover the top 10 professions Malayalis in Germany actually do (Krankenpfleger/in, Ingenieur/in, IT-Spezialist/in, Student/in). Language names with „Ich spreche Malayalam, Englisch und ein bisschen Deutsch."
+**Essential Outcomes:**
+- Can introduce self in 5–7 simple A1 sentences.
+- Can ask and answer name, origin, residence, profession, and language questions.
+- Can say nationality and city/country of origin correctly.
+- Can spell their name aloud.
+- Can handle a very short first-meeting conversation.
 
-### Production Exercise Opportunities
-- Free-text: "Write your complete self-introduction (5 sentences)"
-- Dictation: Hear personal info → fill form fields
-- Speaking: 2-minute timed self-introduction drill (directly maps to /practice/intro)
-- Form-filling: Simulated Anmeldung form
+**Future Script Direction:**
+- This module must feel like exam gold, not generic content.
+- Use Malayali names, cities, and professions learners actually care about.
+- Address errors such as confusing country vs language vs nationality forms, and saying English-style job labels instead of German patterns.
+- Use scenarios from embassy, language school, shared apartment, office introduction, and new-friend situations.
+
+**Production Exercise Ideas:**
+- Free-text: write your full self-introduction.
+- Form-fill task from a spoken audio prompt.
+- Speaking drill: 2-minute self-intro.
+- Dictation: listen to personal details and complete fields.
+- Role-play: meet a new classmate and exchange details.
+
+**Gap Analysis:**
+- Needs more production-heavy speaking and writing; this module should not stop at recognition.
+- Needs robust form-filling simulations tied directly to Goethe A1 Schreiben Teil 1.
+- Needs better sustained speaking drills for fluency, not just isolated answer patterns.
 
 ---
 
 ## Module 3: Numbers & Time (Zahlen und Zeit)
-**Icon:** 🔢 | **Hours:** 12 | **Priority:** HIGH (exam-critical listening skill)
 
-### Teaching Goal
-Make numbers 0–100, time-telling, dates, and scheduling automatic. These appear in EVERY section of the Goethe A1 exam — prices, phone numbers, appointment times, birthdays.
+**Teaching Goal:**
+Make numbers, time, dates, and appointments automatic enough for real-life use and exam listening. After this module, the learner should handle ages, prices, times, dates, birthdays, and simple scheduling without freezing.
 
-### A1 Exam Relevance
-- **Hören:** Prices, phone numbers, appointment times are core listening items
-- **Lesen:** Schedules, event dates, opening times
-- **Schreiben:** Dates on forms (Geburtsdatum in DD.MM.YYYY format)
-- **Sprechen Teil 2:** Asking about times/prices with question cards
+**A1 Exam Relevance:**
+- **Hören:** phone numbers, times, prices, dates, appointments are core A1 listening material
+- **Lesen:** schedules, calendars, ads, notices, opening hours
+- **Schreiben:** date fields and appointment information
+- **Sprechen:** answering questions about age, birthday, time, and meeting plans
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 3-1 | Numbers 0-20 | Outline only | HIGH — foundation for all numbers |
-| 3-2 | Numbers 21-100+ | Outline only | HIGH — reversed order is a trap |
-| 3-3 | Telling Time | 🔄 DRAFT (`docs/scripts/v3-3-1_FULL_SCRIPT.md`) | HIGH — exam-critical |
-| 3-4 | Days, Months, Dates | 🔄 DRAFT (`docs/scripts/v3-4-1_FULL_SCRIPT.md`) | MEDIUM — formulaic but needed |
+**Current Content:**
+- **Lessons:** 6
+  - Numbers 0-20
+  - Numbers 21-100
+  - What Time Is It?
+  - Days of the Week & Months
+  - Dates & Birthdays
+  - Making Appointments
+- **Videos:** 8
+- **Exercises:** 33
+- **Vocabulary:** 50
+- **Current strengths:** broad practical range, strong overlap with real exam micro-skills
 
-### Essential Outcomes
-- [ ] Count 0–100 fluently (including reversed tens: "fünfundzwanzig" not "zwanzigfünf")
-- [ ] Tell time: "Es ist halb drei" = 2:30 (the halb trap!)
-- [ ] Say dates: "Ich bin am zwölften März geboren"
-- [ ] Understand prices when heard: "Das kostet neunzehn Euro fünfzig"
-- [ ] Write dates in German format (TT.MM.JJJJ)
+**Lesson/Video Script Needs:**
+- Clear script treatment of the reversed German number system (`vierundzwanzig`).
+- Strong explanation of `halb drei` and other time traps.
+- Scripted drills for birthdays, calendar language, and date format.
+- Appointment dialogue scripts for doctor, office, class, and meeting contexts.
+- Audio-heavy practice design, not only visual matching.
 
-### Future Script Direction
-- **Lesson 3-1/3-2:** Scripts need heavy audio drill sections. The reversed number system (4 und 20 = 24) is the #1 confusion point for Indian learners. Script should spend significant time on this with Malayalam parallels ("ippathinalë" — Malayalam also has some quirky number names!).
-- **Lesson 3-3:** Must cover both 12-hour colloquial ("halb drei") AND 24-hour formal ("vierzehn Uhr dreißig"). The "halb" trap (halb drei = 2:30 NOT 3:30) needs its own dedicated segment.
-- **Lesson 3-4:** Script should include birthday question-answer pairs (exam favourite).
+**Essential Outcomes:**
+- Can count confidently from 0 to 100.
+- Can understand and say clock times in common A1 patterns.
+- Can say and write dates and birthdays correctly.
+- Can understand prices and simple phone numbers.
+- Can make or respond to a simple appointment arrangement.
 
-### Production Exercise Opportunities
-- Dictation: Hear a phone number → type it
-- Dictation: Hear a price → type it
-- Free-text: "Write today's date in German format"
-- Speaking: Say your phone number, birthday, a price
+**Future Script Direction:**
+- Use call-and-response rhythm heavily.
+- Malayalam bridge: compare unusual German number building with memorized number patterns learners already know from school and multilingual life.
+- Explicitly target the biggest confusion points: 24 vs 42, `halb drei`, ordinal dates, euro-cents phrasing.
+- Scenario use: train station, clinic appointment, mobile number, grocery price, birthdate form.
+
+**Production Exercise Ideas:**
+- Audio dictation for numbers, times, dates, and prices.
+- Free-text: write today’s date and your birthday in German.
+- Speaking: say your phone number and available appointment times.
+- Listening discrimination tasks: choose the correct number after audio.
+- Fill a calendar or appointment slip from spoken input.
+
+**Gap Analysis:**
+- Needs far more listening-led drills; this topic is exam-critical in Hören.
+- Needs more output tasks using real-world formats, not just matching numbers.
+- Would benefit from short audio-only mini-tests that simulate exam pressure.
 
 ---
 
 ## Module 4: My Family & People (Meine Familie)
-**Icon:** 👨‍👩‍👧‍👦 | **Hours:** 12 | **Priority:** HIGH (exam topic + article system)
 
-### Teaching Goal
-Family vocabulary + possessive pronouns + articles (der/die/das). This module introduces the article system through emotionally engaging content (family). Learners describe family members and start using articles correctly.
+**Teaching Goal:**
+Enable learners to talk about family members and describe people while beginning to internalize articles and possessives. After this module, learners should be able to describe their family and close social circle in simple German.
 
-### A1 Exam Relevance
-- **Sprechen Teil 1:** "Erzählen Sie über Ihre Familie" is a common prompt
-- **Lesen:** Family-themed reading passages
-- **Schreiben Teil 2:** Writing about family events (birthday, visit)
-- **Grammar foundation:** Articles (der/die/das) and possessives (mein/meine) used everywhere
+**A1 Exam Relevance:**
+- **Sprechen:** family is a classic self-presentation topic
+- **Schreiben:** short messages and personal descriptions often mention family
+- **Lesen:** personal texts and social descriptions
+- **Grammar relevance:** articles and possessives are foundational across the entire level
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 4-1 | Family Members | 🔄 DRAFT (`docs/scripts/v4-1-1_FULL_SCRIPT.md`) | HIGH — core vocabulary |
-| 4-2 | Describing People | Outline only | MEDIUM — adjective basics |
-| 4-3 | Possessive Pronouns | 🔄 DRAFT (`docs/scripts/v4-3-1_FULL_SCRIPT.md`) | HIGH — grammar cornerstone |
+**Current Content:**
+- **Lessons:** 5
+  - Family Members
+  - Describing People
+  - Possessive Pronouns
+  - Articles - der, die, das
+  - Talking About Your Family
+- **Videos:** 8
+- **Exercises:** 33
+- **Vocabulary:** 44
+- **Current strengths:** emotionally accessible topic, natural route into article awareness
 
-### Essential Outcomes
-- [ ] Name all immediate + extended family members with correct articles
-- [ ] Use mein/meine/dein/deine correctly: "Meine Mutter heißt..."
-- [ ] Describe a person: age, appearance, character (3-4 sentences)
-- [ ] Produce: "Ich habe einen Bruder und eine Schwester" (Akkusativ with haben!)
-- [ ] Kerala family parallels: Amma = Mutter, Achan = Vater, Chechi = große Schwester
+**Lesson/Video Script Needs:**
+- A script sequence that moves from family nouns to article awareness without making grammar feel abstract.
+- Clear treatment of `mein/meine`, `dein/deine`, and article-linked patterns.
+- Describing-people scripts with age, appearance, and basic personality words.
+- Family-description dialogue and monologue examples.
+- Malayalam cultural bridge around extended family and kinship terms.
 
-### Future Script Direction
-- **Lesson 4-1:** Script should map Kerala family terms to German equivalents (emotionally engaging). Include the „Ich habe..." + Akkusativ pattern since it's needed for family descriptions.
-- **Lesson 4-3:** Possessive pronouns are grammar-heavy — script needs visual tables and pattern repetition. "mein Bruder / meine Schwester / mein Kind" → gender agreement is the lesson.
+**Essential Outcomes:**
+- Can name immediate and extended family members with correct articles.
+- Can say who people are and how they are related.
+- Can use simple possessives correctly in high-frequency phrases.
+- Can describe one family member in 3–4 simple sentences.
+- Can speak briefly about their family structure.
 
-### Production Exercise Opportunities
-- Free-text: "Describe your family in 4 sentences"
-- Speaking: Describe a family photo
-- Dictation: Hear a family description → answer questions
+**Future Script Direction:**
+- Use Kerala family culture as an emotional teaching anchor.
+- Address common errors: dropping articles, overgeneralizing `mein`, mixing adjective order, and confusing masculine/feminine family nouns.
+- Use photo-description and family-tree visuals.
+- Keep grammar embedded inside meaningful family talk.
+
+**Production Exercise Ideas:**
+- Free-text: describe your family in 4–5 sentences.
+- Speaking: present one family member.
+- Dictation: listen to a family description and answer questions.
+- Family-tree completion from spoken clues.
+- Article/possessive transformation exercises.
+
+**Gap Analysis:**
+- Needs stronger output work tying family vocabulary to actual speaking.
+- Article training needs more spaced and cumulative reinforcement.
+- Describing people should feed forward into oral exam tasks more explicitly.
 
 ---
 
 ## Module 5: Daily Routine (Mein Tag)
-**Icon:** ☀️ | **Hours:** 12 | **Priority:** CRITICAL (verb conjugation + time expressions)
 
-### Teaching Goal
-Regular verb conjugation in present tense + daily routine vocabulary. This is where German "clicks" — learners go from memorized phrases to constructing their own sentences. Separable verbs (aufstehen, anfangen) are introduced here.
+**Teaching Goal:**
+Turn learners from phrase-memorizers into sentence-builders. After this module, they should be able to conjugate common regular verbs, use separable verbs, and describe a full day or week in present tense.
 
-### A1 Exam Relevance
-- **Sprechen:** Describing your day is a common topic
-- **Schreiben Teil 2:** Writing about daily activities in a message
-- **Hören:** Understanding someone's schedule/routine
-- **Grammar:** Present tense conjugation is THE foundation of A1 grammar
+**A1 Exam Relevance:**
+- **Sprechen:** daily routine is one of the most standard A1 topics
+- **Schreiben:** short messages about daily activities and schedules
+- **Hören:** understanding routines and schedules
+- **Grammar relevance:** present tense verb control is the backbone of A1
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 5-1 | Regular Verbs Present Tense | Outline only | CRITICAL — grammar backbone |
-| 5-2 | Daily Activities | Outline only | HIGH — routine vocabulary |
-| 5-3 | Separable Verbs | 🔄 DRAFT (`docs/scripts/v5-3-1_FULL_SCRIPT.md`) | HIGH — tricky but essential |
-| 5-4 | Describing Your Day | 🔄 DRAFT (`docs/scripts/v5-4-1_FULL_SCRIPT.md`) | HIGH — ties it all together |
+**Current Content:**
+- **Lessons:** 5
+  - Regular Verbs Present Tense
+  - Morning Routine
+  - Separable Verbs
+  - My Day - From Morning to Night
+  - Telling About Your Week
+- **Videos:** 8
+- **Exercises:** 32
+- **Vocabulary:** 42
+- **Current strengths:** strong grammar focus, highly reusable sentence patterns, big payoff for later modules
 
-### Essential Outcomes
-- [ ] Conjugate regular verbs for all persons (ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie -en)
-- [ ] Use 10+ daily routine verbs: aufstehen, frühstücken, arbeiten, essen, schlafen...
-- [ ] Handle separable verbs: "Ich stehe um 7 Uhr auf" (verb split!)
-- [ ] Describe a full day from morning to night (8+ sentences)
-- [ ] Use time expressions: morgens, mittags, abends, um [Uhrzeit]
+**Lesson/Video Script Needs:**
+- A very clear, teacher-friendly explanation of present-tense endings.
+- Heavy scripted drills on `ich`, `du`, `er/sie`, `wir`, `ihr`, `Sie/sie` patterns.
+- Separable verb visual explanation and repetition.
+- Narrative scripts of a typical day and week.
+- Timed speaking prompts so learners move from conjugation tables to communication.
 
-### Future Script Direction
-- **Lesson 5-1:** Needs the best grammar explanation in the entire course. Malayalam parallel: verb endings change in Malayalam too ("cheyyunnu, cheyyum, cheythu"). Use conjugation tables + colour coding.
-- **Lesson 5-3:** Separable verbs are a MAJOR pain point. Script needs the "frame" metaphor: verb frame opens (Ich stehe...) and closes (...auf). Many practice examples.
-- **Lesson 5-4:** Culmination lesson — script should include a "Day in the Life" narrative that students can adapt to their own routine.
+**Essential Outcomes:**
+- Can conjugate common regular verbs in present tense.
+- Can use routine verbs in meaningful daily-life sentences.
+- Can handle key separable verbs such as `aufstehen` and `anfangen`.
+- Can describe a normal day in sequence.
+- Can talk briefly about weekly habits.
 
-### Production Exercise Opportunities
-- Free-text: "Describe your typical day in 6 sentences"
-- Conjugation drill: Given infinitive + pronoun → write conjugated form
-- Dictation: Hear a daily routine description → answer comprehension questions
-- Speaking: Describe what you did this morning
+**Future Script Direction:**
+- This module should sound like the course’s grammar turning point.
+- Malayalam bridge: verb changes already exist conceptually in Malayalam; reduce fear by showing pattern logic.
+- Likely learner errors: missing `-st`, forgetting to split separable verbs, carrying English word order into German.
+- Use relatable routines: waking up, tea/coffee, commute, work, study, dinner, sleep.
+
+**Production Exercise Ideas:**
+- Free-text: write your normal day.
+- Conjugation production tasks.
+- Speaking: 1-minute “my morning” audio.
+- Dictation of a routine paragraph.
+- Sentence ordering with separable verbs.
+
+**Gap Analysis:**
+- Needs more open writing and speaking to prove actual verb control.
+- Would benefit from cumulative review connecting time expressions from Module 3.
+- Separable verbs need more audio and real-dialogue reinforcement.
 
 ---
 
 ## Module 6: Food & Drink (Essen und Trinken)
-**Icon:** 🍽️ | **Hours:** 12 | **Priority:** HIGH (practical + exam topic)
 
-### Teaching Goal
-Food vocabulary with articles, ordering at restaurants, expressing likes/dislikes. Practical survival German + article reinforcement through high-frequency nouns.
+**Teaching Goal:**
+Give learners the vocabulary and structures needed to talk about food, order meals, express preferences, and begin using accusative objects in a practical context.
 
-### A1 Exam Relevance
-- **Hören:** Restaurant/café situations are common listening items
-- **Lesen:** Menus, recipes, food-related notices
-- **Sprechen Teil 3:** Making a request at a restaurant (Ich hätte gern...)
-- **Schreiben:** Invitations mentioning food/drinks
+**A1 Exam Relevance:**
+- **Hören:** café/restaurant/shop conversations are common
+- **Lesen:** menus, signs, simple food-related notices
+- **Sprechen:** ordering, requesting, saying likes/dislikes
+- **Grammar relevance:** accusative is highly teachable through food choices and ordering
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 6-1 | Common Foods | Outline only | HIGH — vocabulary base |
-| 6-2 | Drinks & Ordering | 🔄 DRAFT (`docs/scripts/v6-2-1_FULL_SCRIPT.md`) | HIGH — practical + exam |
-| 6-3 | Restaurant Conversations | Outline only | HIGH — dialogue scripts |
-| 6-4 | Kerala Food in German | Outline only | MEDIUM — cultural bridge |
+**Current Content:**
+- **Lessons:** 5
+  - Common Foods
+  - Drinks
+  - At the Restaurant
+  - Likes & Dislikes
+  - Accusative Case - Ich nehme EINEN Kaffee
+- **Videos:** 8
+- **Exercises:** 32
+- **Vocabulary:** 44
+- **Current strengths:** high practicality, good emotional engagement potential for Malayali learners
 
-### Essential Outcomes
-- [ ] Name 20+ foods and drinks with correct articles
-- [ ] Order food: "Ich hätte gern einen Kaffee und ein Stück Kuchen, bitte"
-- [ ] Express preferences: "Ich esse gern Reis" / "Ich trinke nicht gern Bier"
-- [ ] Understand a simple menu (Speisekarte)
-- [ ] Use Akkusativ with food: "Ich nehme einen Salat" (not "ein Salat")
+**Lesson/Video Script Needs:**
+- Clear food-vocabulary scripts with article repetition built in.
+- Restaurant dialogue scripts with ordering, asking, responding, and paying.
+- Natural teaching of `gern` / `nicht gern` and preference statements.
+- An accusative lesson that stays practical: `ich nehme`, `ich esse`, `ich trinke`, `möchten` / `hätte gern` patterns.
+- Cultural script moments comparing German and Kerala food habits.
 
-### Future Script Direction
-- **Lesson 6-2/6-3:** These need full restaurant dialogue scripts. The "Ich hätte gern..." pattern is crucial for Sprechen Teil 3. Include waiter/customer role-play scripts.
-- **Lesson 6-4:** Kerala food in German is a cultural hook — "Ich esse gern Dosa mit Chutney" — keeps learners emotionally engaged.
+**Essential Outcomes:**
+- Can name common foods and drinks with articles.
+- Can order food politely in a simple restaurant dialogue.
+- Can express likes and dislikes.
+- Can use common accusative food phrases in meaningful sentences.
+- Can understand a simple menu or order exchange.
 
-### Production Exercise Opportunities
-- Free-text: "Write your dinner order (3 items)"
-- Role-play script: Complete a restaurant dialogue
-- Dictation: Hear an order → write what they ordered
-- Speaking: Order a meal at a restaurant
+**Future Script Direction:**
+- Use food as a fun confidence-builder while quietly teaching grammar.
+- Address errors such as dropping article changes in accusative and translating directly from English.
+- Use Kerala examples like tea, rice, curry, dosa, biryani to sustain interest.
+- Teach polite service-culture interactions relevant to Germany.
+
+**Production Exercise Ideas:**
+- Speaking: order a meal and drink.
+- Free-text: write your favorite meal in German.
+- Dictation: listen to an order and note items.
+- Menu comprehension with short written responses.
+- Role-play: customer and server.
+
+**Gap Analysis:**
+- Needs much more speaking practice because service interactions are productive, not recognition-based.
+- Accusative should be reinforced more systematically beyond this module.
+- Listening tasks need real audio if this module is to prepare for Hören effectively.
 
 ---
 
 ## Module 7: Shopping & Money (Einkaufen)
-**Icon:** 🛒 | **Hours:** 10 | **Priority:** MEDIUM-HIGH (practical + numbers reinforcement)
 
-### Teaching Goal
-Shopping vocabulary, prices, comparisons, and transactional German. Reinforces numbers (prices) and Akkusativ (buying things).
+**Teaching Goal:**
+Prepare learners to handle prices, clothing, supermarket interactions, shopping dialogues, and simple comparisons in German.
 
-### A1 Exam Relevance
-- **Hören:** Price listening, store announcements
-- **Lesen:** Advertisements, shop signs, special offers
-- **Sprechen Teil 2/3:** Asking about prices, making requests in shops
-- **Numbers reinforcement:** Prices test number comprehension under pressure
+**A1 Exam Relevance:**
+- **Hören:** price information and shopping exchanges
+- **Lesen:** advertisements, offers, product labels, store signs
+- **Sprechen:** asking about items, prices, size, color, preferences
+- **Cross-module role:** reinforces numbers and accusative in practical contexts
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 7-1 | At the Supermarket | Outline only | MEDIUM — practical vocab |
-| 7-2 | Clothes Shopping | Outline only | MEDIUM — useful but not exam-core |
-| 7-3 | Prices & Comparing | Outline only | HIGH — numbers + comparatives |
+**Current Content:**
+- **Lessons:** 5
+  - At the Supermarket
+  - Prices & Currency
+  - Colors & Clothing
+  - Shopping Dialogues
+  - Comparing Things
+- **Videos:** 6
+- **Exercises:** 30
+- **Vocabulary:** 44
+- **Current strengths:** practical survival German, strong link to everyday integration
 
-### Essential Outcomes
-- [ ] Navigate a German supermarket (vocabulary for sections, items)
-- [ ] Ask for prices: "Was kostet das?" / "Wie viel kostet der Pullover?"
-- [ ] Understand prices when heard (number listening reinforcement)
-- [ ] Use basic comparatives: teuer/teurer, billig/billiger, groß/größer
-- [ ] Use "Ich brauche..." and "Ich suche..." for shopping requests
+**Lesson/Video Script Needs:**
+- Shopping walkthrough scripts for supermarket and clothing store situations.
+- Strong price and money language with euro/cents listening emphasis.
+- Color, size, and clothing dialogue practice.
+- Comparatives taught through real buying decisions, not abstract grammar tables.
+- Useful phrases like `Ich suche...`, `Haben Sie...?`, `Was kostet...?`, `Kann ich das anprobieren?`
 
-### Future Script Direction
-- Scripts should be practical/situational. Supermarket walkthrough as a "virtual tour" format.
-- Price comparison segments reinforce Module 3 numbers under real-world pressure.
+**Essential Outcomes:**
+- Can ask and understand prices.
+- Can shop for groceries and clothing with simple dialogue support.
+- Can use common colors and clothing terms.
+- Can compare simple items (`teurer`, `billiger`, `größer`).
+- Can express what they need or are looking for.
 
-### Production Exercise Opportunities
-- Dictation: Hear prices → write them
-- Free-text: "Write a shopping list for a dinner party (6 items with articles)"
-- Speaking: Ask for 3 items and their prices
+**Future Script Direction:**
+- Keep scenes concrete and visual.
+- Address likely errors: confusion between euro pronunciation and number structure, literal English transfer, weak adjective/pronoun control in shop phrases.
+- Malayalam bridge: compare supermarket, textile shop, and market behavior in Kerala vs Germany.
+- Include cultural note on self-service, checkout speed, bags, returns, and cash/card habits.
+
+**Production Exercise Ideas:**
+- Audio dictation of prices.
+- Role-play: buy a shirt and ask about size/color.
+- Free-text: write a shopping list.
+- Speaking: compare two products.
+- Reading-to-writing task from a simple supermarket offer sheet.
+
+**Gap Analysis:**
+- Needs more listening output around prices and shop announcements.
+- Needs stronger oral role-play because shopping is interaction-heavy.
+- Comparative structures may need more recycling later to stick.
 
 ---
 
 ## Module 8: My Home (Meine Wohnung)
-**Icon:** 🏠 | **Hours:** 10 | **Priority:** MEDIUM (vocabulary + prepositions)
 
-### Teaching Goal
-Home vocabulary, room descriptions, furniture, and spatial prepositions (in, auf, neben, unter). Introduces Wechselpräpositionen lightly.
+**Teaching Goal:**
+Help learners describe their home, locate objects, understand apartment language, and write simple housing-related messages.
 
-### A1 Exam Relevance
-- **Lesen:** Apartment advertisements (Wohnungsanzeigen) are a classic A1 reading item
-- **Schreiben:** Writing about your home/living situation
-- **Sprechen:** Describing where you live
-- **Hören:** Understanding apartment descriptions
+**A1 Exam Relevance:**
+- **Lesen:** apartment ads and housing notices are classic A1 reading material
+- **Schreiben:** simple notes or messages about place/home
+- **Sprechen:** describing where you live and your room/home
+- **Grammar relevance:** location language and prepositions support broader communicative ability
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 8-1 | Rooms & Furniture | Outline only | MEDIUM — vocabulary base |
-| 8-2 | Describing Your Home | Outline only | MEDIUM — production practice |
-| 8-3 | Finding an Apartment | Outline only | HIGH — Wohnungsanzeigen are exam-classic |
+**Current Content:**
+- **Lessons:** 4
+  - Rooms & Furniture
+  - Where Is It?
+  - Looking for an Apartment
+  - Writing a Simple Message
+- **Videos:** 7
+- **Exercises:** 25
+- **Vocabulary:** 38
+- **Current strengths:** useful thematic coherence, reading/writing bridge potential
 
-### Essential Outcomes
-- [ ] Name all rooms: Küche, Schlafzimmer, Wohnzimmer, Badezimmer, Flur
-- [ ] Describe your home: "Meine Wohnung hat drei Zimmer und einen Balkon"
-- [ ] Understand apartment ads: 2-Zi-Whg, KM, WM, NK, qm, EBK
-- [ ] Use basic prepositions: "Der Tisch ist in der Küche"
-- [ ] Compare German and Kerala homes for cultural context
+**Lesson/Video Script Needs:**
+- Vocabulary scripts for rooms and furniture with article repetition.
+- Clear location scripts using `in`, `auf`, `unter`, `neben`, etc.
+- Apartment-search reading support: abbreviations, ad interpretation, practical housing language.
+- A short-message writing script for home/living situations.
+- A visual-heavy explanation layer for object location.
 
-### Future Script Direction
-- **Lesson 8-3:** Needs detailed script on reading Wohnungsanzeigen — this is a guaranteed Lesen item. Abbreviation decoder is essential.
-- Visual templates work well here: labeled room diagrams for video.
+**Essential Outcomes:**
+- Can name the main rooms and common furniture items.
+- Can say where objects are in simple sentences.
+- Can understand a basic apartment ad.
+- Can describe their home or room briefly.
+- Can write a short housing-related message.
 
-### Production Exercise Opportunities
-- Free-text: "Describe your home in 4 sentences"
-- Reading + writing: Decode a Wohnungsanzeige and answer questions
-- Speaking: Virtual apartment tour
+**Future Script Direction:**
+- Use labeled room visuals and object-placement demonstrations.
+- Address preposition confusion and article dropping.
+- Malayalam bridge: compare Kerala independent houses and German flats/WGs.
+- Use scenarios like moving in, asking about rent, describing a room to a friend.
+
+**Production Exercise Ideas:**
+- Speaking: give a room tour.
+- Free-text: describe your room.
+- Reading + short answer: decode a housing ad.
+- Dictation: place objects based on spoken instructions.
+- Write a short note to a landlord or flatmate.
+
+**Gap Analysis:**
+- Needs stronger writing output if Lesson 8-4 is to support Goethe Schreiben.
+- Apartment-ad reading could be more exam-like and timed.
+- Prepositions need audio and production repetition, not only recognition.
 
 ---
 
 ## Module 9: Travel & Directions (Reisen und Wege)
-**Icon:** 🚌 | **Hours:** 12 | **Priority:** MEDIUM-HIGH (practical + exam topic)
 
-### Teaching Goal
-Transportation, giving/understanding directions, buying tickets. Uses "mit + Dativ" for transport and introduces imperative basics through directions.
+**Teaching Goal:**
+Prepare learners to travel, buy tickets, ask for and understand directions, and navigate transport infrastructure in Germany.
 
-### A1 Exam Relevance
-- **Hören:** Train/bus announcements, directions dialogues
-- **Lesen:** Timetables, station signs, travel notices
-- **Sprechen Teil 2/3:** Asking for directions, buying a ticket
-- **Grammar:** "mit + Dativ" (mit dem Bus, mit der Bahn)
+**A1 Exam Relevance:**
+- **Hören:** announcements, station/airport exchanges, route information
+- **Lesen:** timetables, signs, transport info
+- **Sprechen:** asking directions, buying tickets, asking travel questions
+- **Grammar relevance:** modal verbs and `mit + Dativ` become useful here
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 9-1 | Transportation | Outline only | HIGH — mit + Dativ pattern |
-| 9-2 | Giving Directions | Outline only | HIGH — imperative intro |
-| 9-3 | Buying Tickets | Outline only | MEDIUM — transactional German |
+**Current Content:**
+- **Lessons:** 5
+  - Transportation
+  - Buying Tickets
+  - Asking for Directions
+  - At the Airport & Train Station
+  - Modal Verbs
+- **Videos:** 10
+- **Exercises:** 40
+- **Vocabulary:** 50
+- **Current strengths:** broad practical coverage, high relocation relevance
 
-### Essential Outcomes
-- [ ] Name transport types with articles: der Bus, die Bahn, das Fahrrad, das Auto
-- [ ] Use "mit + Dativ": "Ich fahre mit dem Bus" / "Ich fahre mit der Bahn"
-- [ ] Give simple directions: geradeaus, links, rechts, die erste/zweite Straße
-- [ ] Buy a ticket: "Eine Fahrkarte nach Berlin, bitte" / "Hin und zurück"
-- [ ] Understand simple timetables and announcements
+**Lesson/Video Script Needs:**
+- Transport vocabulary scripts with article and usage context.
+- Ticket-buying dialogue scripts with destination, one-way/return, departure time.
+- Direction scripts with mini-maps and imperative-style cues.
+- Airport/station survival dialogues.
+- Modal verb teaching integrated into travel needs: `können`, `müssen`, `wollen`.
 
-### Future Script Direction
-- **Lesson 9-1:** KSRTC to Deutsche Bahn comparison is a great cultural hook. Script must drill "mit + Dativ" since it's the first real Dativ exposure.
-- **Lesson 9-2:** Directions script needs a mini-map walkthrough — verbal directions following a visual route.
+**Essential Outcomes:**
+- Can name and discuss common transport types.
+- Can ask for and buy a ticket.
+- Can ask for and give simple directions.
+- Can understand simple station or airport vocabulary.
+- Can use core modal verbs in travel situations.
 
-### Production Exercise Opportunities
-- Dictation: Hear a train announcement → write departure time/platform
-- Free-text: "Write directions from the Bahnhof to the Rathaus"
-- Speaking: Give directions to a location
-- Role-play: Buy a train ticket
+**Future Script Direction:**
+- Keep the module scene-based and practical.
+- Use KSRTC / train / auto comparisons for Malayali relatability.
+- Target errors around case after `mit`, direction word order, and over-English question structures.
+- Use real immigrant situations: first train trip, airport arrival, asking the way to office/class/hostel.
+
+**Production Exercise Ideas:**
+- Speaking: buy a train ticket.
+- Audio dictation: note platform/time from announcement.
+- Free-text: write directions from station to a place.
+- Role-play: ask someone how to reach the Bürgeramt.
+- Listening mini-tests with travel-choice responses.
+
+**Gap Analysis:**
+- Needs real listening audio to become true Hören preparation.
+- Direction-giving should include more productive speaking and map interpretation.
+- Modal verbs need cumulative revision after this module to remain usable.
 
 ---
 
 ## Module 10: Health & Body (Gesundheit)
-**Icon:** 🏥 | **Hours:** 10 | **Priority:** MEDIUM-HIGH (practical + Malayali nursing relevance)
 
-### Teaching Goal
-Body parts, symptoms, doctor visits. Highly relevant for Malayali nurses going to Germany. Introduces "tut weh" and modal verbs (müssen, sollen) in health context.
+**Teaching Goal:**
+Enable learners to describe body parts, symptoms, doctor/pharmacy needs, and emergencies in simple German.
 
-### A1 Exam Relevance
-- **Hören:** Doctor/pharmacy dialogues
-- **Lesen:** Medical forms, pharmacy signs, health notices
-- **Sprechen:** Describing symptoms is a possible exam topic
-- **Schreiben:** Writing to cancel an appointment due to illness
+**A1 Exam Relevance:**
+- **Hören:** symptom dialogues, doctor instructions, pharmacy exchanges
+- **Lesen:** health forms, signs, simple notices
+- **Sprechen:** describing how you feel is a common practical A1 task
+- **Schreiben:** messages canceling or explaining absence due to illness
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 10-1 | Body Parts | Outline only | MEDIUM — vocabulary base |
-| 10-2 | At the Doctor | Outline only | HIGH — practical dialogues |
-| 10-3 | Pharmacy & Medicine | Outline only | MEDIUM — supplementary |
+**Current Content:**
+- **Lessons:** 5
+  - Body Parts
+  - How Are You Feeling?
+  - At the Doctor
+  - At the Pharmacy
+  - Emergency!
+- **Videos:** 9
+- **Exercises:** 38
+- **Vocabulary:** 48
+- **Current strengths:** very practical for migrants, especially nurses and care workers
 
-### Essential Outcomes
-- [ ] Name 15+ body parts: Kopf, Bauch, Rücken, Arm, Bein, Hals...
-- [ ] Express pain: "Mein Kopf tut weh" / "Ich habe Bauchschmerzen"
-- [ ] Doctor dialogue: Describe symptoms, understand simple instructions
-- [ ] Use modal verbs: "Sie müssen im Bett bleiben" / "Sie sollen viel Wasser trinken"
-- [ ] Pharmacy basics: "Haben Sie etwas gegen Kopfschmerzen?"
+**Lesson/Video Script Needs:**
+- Body-part scripts with article and plural reinforcement.
+- Symptom-language teaching around `tut weh`, `ich habe...schmerzen`, `mir ist...`.
+- Doctor dialogue scripts with question-answer flow.
+- Pharmacy request scripts.
+- Emergency language scripts that stay simple but useful.
 
-### Future Script Direction
-- **Lesson 10-2:** Full doctor visit dialogue script — from reception to diagnosis. This is a perfect role-play script.
-- Scripts should highlight nursing vocabulary as bonus content for the Malayali nursing cohort.
+**Essential Outcomes:**
+- Can name major body parts.
+- Can describe common symptoms simply.
+- Can handle a basic doctor interaction.
+- Can ask for medicine or help at a pharmacy.
+- Can respond to simple emergency questions.
 
-### Production Exercise Opportunities
-- Free-text: "You're sick. Write a message to your teacher explaining why you can't come"
-- Speaking: Describe your symptoms to a doctor
-- Dictation: Hear a doctor's instructions → write what you must do
+**Future Script Direction:**
+- Strong empathy and realism in tone.
+- Malayalam bridge: use familiar family-health and clinic experiences while explaining German phrasing.
+- Address likely errors: direct English translation for pain, wrong pronoun/case patterns, overly complex symptom descriptions.
+- Include specific nursing/care relevance as a motivation hook.
+
+**Production Exercise Ideas:**
+- Speaking: explain symptoms to a doctor.
+- Free-text: write to a teacher/employer saying you are sick.
+- Dictation: doctor advice notes.
+- Role-play: pharmacy interaction.
+- Emergency-response speaking prompts.
+
+**Gap Analysis:**
+- Needs better writing integration for illness messages.
+- Needs real audio dialogues to support Hören.
+- Emergency language should stay tightly A1-safe; avoid overloading with advanced vocabulary.
 
 ---
 
 ## Module 11: Work & Study (Arbeit und Studium)
-**Icon:** 💼 | **Hours:** 10 | **Priority:** MEDIUM (relevant but less exam-dense)
 
-### Teaching Goal
-Detailed professions with gender forms, workplace vocabulary, email/letter writing basics. Directly relevant for Malayalis seeking jobs in Germany.
+**Teaching Goal:**
+Equip learners to discuss profession, workplace/study environments, skills, email basics, and entry-level interview language.
 
-### A1 Exam Relevance
-- **Sprechen Teil 1:** "Was sind Sie von Beruf?" / "Was studieren Sie?"
-- **Schreiben:** Short professional emails
-- **Lesen:** Job advertisements, course announcements
-- **Hören:** Workplace conversations
+**A1 Exam Relevance:**
+- **Sprechen:** profession/study is core self-introduction territory
+- **Schreiben:** short simple emails and practical written requests
+- **Lesen:** job ads, course notices, workplace information
+- **Hören:** workplace or school interactions
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 11-1 | Professions in Detail | Outline only | MEDIUM — gender forms |
-| 11-2 | Workplace Vocabulary | Outline only | LOW — supplementary |
-| 11-3 | Emails & Letters | Outline only | HIGH — Schreiben prep |
+**Current Content:**
+- **Lessons:** 5
+  - Professions in Detail
+  - At the Office / University
+  - Writing a Simple Email
+  - Talking About Skills
+  - Job Interview Basics
+- **Videos:** 10
+- **Exercises:** 40
+- **Vocabulary:** 50
+- **Current strengths:** highly relevant to migration goals, good thematic fit for Malayali audience
 
-### Essential Outcomes
-- [ ] Name 15+ professions with masculine + feminine forms
-- [ ] Write a simple professional email (Sehr geehrte..., Mit freundlichen Grüßen)
-- [ ] Describe your job/studies in 3-4 sentences
-- [ ] Understand a simple job advertisement
-- [ ] Use formal register consistently in professional contexts
+**Lesson/Video Script Needs:**
+- Profession scripts with masculine/feminine forms and real-life examples.
+- Workplace/study setting vocabulary and routine dialogues.
+- A1-safe email-writing script with greeting, body, and close.
+- Skill-description and interview-mini-answer patterns.
+- Formality and polite register support.
 
-### Future Script Direction
-- **Lesson 11-3:** Email writing needs a template script — greeting, body, closing. This directly supports Schreiben Teil 2 (informal messages) and real-world needs.
-- Profession scripts should prioritize the top 10 Malayali-in-Germany professions.
+**Essential Outcomes:**
+- Can say what job they do or what they study.
+- Can name common professions with correct forms.
+- Can write a simple email.
+- Can speak about basic skills and workplace/study routines.
+- Can answer entry-level interview-style questions simply.
 
-### Production Exercise Opportunities
-- Free-text: "Write a short email to your Sprachschule asking about course times"
-- Free-text: "Describe what you do at work in 3 sentences"
-- Dictation: Hear a job ad → write the key details
+**Future Script Direction:**
+- Focus on top Malayali migration pathways: nursing, IT, engineering, study, Ausbildung.
+- Address errors like overusing English job labels, weak profession gender forms, and too-formal/too-informal email tone.
+- Use scenarios like introducing yourself at work, emailing a course office, and answering “What do you do?”
+
+**Production Exercise Ideas:**
+- Free-text: write a simple professional email.
+- Speaking: describe your job/study in 4 sentences.
+- Dictation: note details from a job/course ad.
+- Role-play: brief interview exchange.
+- Writing: ask about office/class timings.
+
+**Gap Analysis:**
+- Email writing needs more structured output and correction.
+- Interview content must stay A1-simple; it risks drifting upward in difficulty.
+- More explicit Goethe-style writing linkage would strengthen this module.
 
 ---
 
 ## Module 12: Hobbies & Free Time (Freizeit)
-**Icon:** 🎮 | **Hours:** 8 | **Priority:** MEDIUM (exam topic, lighter content)
 
-### Teaching Goal
-Hobbies, weather, making plans. Uses "gern" + verb for preferences and introduces basic future planning ("Ich möchte...").
+**Teaching Goal:**
+Teach learners to talk about hobbies, weather, invitations, and making plans with friends using simple preference and reason patterns.
 
-### A1 Exam Relevance
-- **Sprechen Teil 1:** "Was machen Sie in Ihrer Freizeit?"
-- **Schreiben Teil 2:** Writing invitations for activities
-- **Hören:** Understanding plans, weather forecasts
-- **Lesen:** Event flyers, activity descriptions
+**A1 Exam Relevance:**
+- **Sprechen:** free-time interests are common personal topics
+- **Schreiben:** invitations and responses are classic A1 message-writing territory
+- **Hören:** plans and weather are common everyday topics
+- **Lesen:** event notices and short activity descriptions
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 12-1 | Hobbies | Outline only | MEDIUM — gern + verb pattern |
-| 12-2 | Weather | Outline only | LOW — simple vocabulary |
-| 12-3 | Making Plans | Outline only | HIGH — invitation writing |
+**Current Content:**
+- **Lessons:** 4
+  - Hobbies
+  - Weather & Seasons
+  - Making Plans with Friends
+  - Invitations
+- **Videos:** 8
+- **Exercises:** 32
+- **Vocabulary:** 40
+- **Current strengths:** social usefulness, natural bridge into writing short messages
 
-### Essential Outcomes
-- [ ] Express 5+ hobbies using "gern": "Ich lese gern" / "Ich spiele gern Fußball"
-- [ ] Describe weather: "Es regnet" / "Es ist sonnig und warm"
-- [ ] Make plans: "Möchtest du am Samstag ins Kino gehen?"
-- [ ] Write a short invitation (directly maps to Schreiben Teil 2)
-- [ ] Accept/decline invitations: "Ja, gern!" / "Leider kann ich nicht"
+**Lesson/Video Script Needs:**
+- Hobbies scripts with `gern` / `nicht gern` and activity verbs.
+- Weather/seasons scripts with practical daily-use patterns.
+- Plan-making and invitation dialogue scripts.
+- Short invitation-writing and response-writing models.
+- If `weil` or reason structures appear, keep them tightly controlled and A1-safe.
 
-### Future Script Direction
-- **Lesson 12-3:** Script should include invitation templates for exam prep. Writing an invitation/response is a Schreiben Teil 2 classic.
-- Hobby scripts should be fun/light — this is a breather module before heavier grammar.
+**Essential Outcomes:**
+- Can say what they like and dislike doing.
+- Can describe basic weather and seasons.
+- Can invite someone and respond to an invitation.
+- Can make simple plans for a day/time/activity.
+- Can write a short invitation or excuse.
 
-### Production Exercise Opportunities
-- Free-text: "Write an invitation to your friend for a weekend activity"
-- Free-text: "Reply declining the invitation with a reason"
-- Speaking: Describe your hobbies for 1 minute
+**Future Script Direction:**
+- Tone can be lighter and socially warm.
+- Use relatable Malayali social scenarios: film, tea, football, festival visit, study plan.
+- Address errors like wrong `gern` placement, overcomplicated time phrases, and English-calque invitation wording.
+- Connect to Goethe message-writing tasks explicitly.
+
+**Production Exercise Ideas:**
+- Free-text: invite a friend for the weekend.
+- Free-text: decline with a simple reason.
+- Speaking: talk about your hobbies for 1 minute.
+- Listening: identify date/time/activity from an invitation audio.
+- Role-play: make a plan with a friend.
+
+**Gap Analysis:**
+- Invitation writing should be more formalized as Goethe prep.
+- Needs more real production, especially paired invitation-response tasks.
+- Weather content should not take too much space away from invitation/message practice.
 
 ---
 
 ## Module 13: Talking About the Past (Was hast du gemacht?)
-**Icon:** 📅 | **Hours:** 14 | **Priority:** HIGH (grammar cornerstone)
 
-### Teaching Goal
-Perfekt tense with haben and sein. This is the most important grammar module — without Perfekt, students can only speak in present tense. A1 exam expects basic past tense usage.
+**Teaching Goal:**
+Introduce the Perfekt tense well enough for learners to describe completed actions and simple past experiences in everyday German.
 
-### A1 Exam Relevance
-- **Schreiben Teil 2:** "Was hast du am Wochenende gemacht?" — writing about past events
-- **Sprechen:** Describing past experiences
-- **Hören:** Understanding past-tense narratives
-- **Grammar:** Perfekt is THE past tense for A1
+**A1 Exam Relevance:**
+- **Sprechen:** weekend, past activity, and recent experience questions
+- **Schreiben:** simple past-event messaging
+- **Hören:** understanding everyday past-tense narration
+- **Cross-module role:** expands learner range beyond present-only German
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 13-1 | Perfekt with haben | Outline only | CRITICAL — most common pattern |
-| 13-2 | Perfekt with sein | Outline only | CRITICAL — movement/change verbs |
-| 13-3 | Irregular Past Participles | 🔄 DRAFT (`docs/scripts/v13-3-1_FULL_SCRIPT.md`) | HIGH — memorization-heavy |
-| 13-4 | Talking About Your Weekend | 🔄 DRAFT (`docs/scripts/v13-4-1_FULL_SCRIPT.md`) | HIGH — ties grammar to production |
+**Current Content:**
+- **Lessons:** 5
+  - Perfekt Tense with haben
+  - Perfekt Tense with sein
+  - Irregular Past Participles
+  - Telling Stories — My Weekend
+  - Time Expressions for the Past
+- **Videos:** 8
+- **Exercises:** 40
+- **Vocabulary:** 50
+- **Current strengths:** strong grammar range for A1/A1+, natural storytelling payoff
 
-### Essential Outcomes
-- [ ] Form Perfekt with haben: "Ich habe Deutsch gelernt" / "Ich habe gekocht"
-- [ ] Form Perfekt with sein: "Ich bin nach Berlin gefahren" / "Ich bin aufgestanden"
-- [ ] Know 20+ irregular past participles (gegessen, getrunken, geschrieben, gelesen...)
-- [ ] Describe a past weekend in 5+ sentences
-- [ ] Recognize haben vs sein verbs (movement/change of state = sein)
+**Lesson/Video Script Needs:**
+- Separate, clear explanation of `haben` vs `sein` patterns.
+- Past participle formation scripts with both regular and high-frequency irregular verbs.
+- Weekend narrative modeling.
+- Time-expression integration (`gestern`, `letzte Woche`, `am Wochenende`, etc.).
+- Controlled output tasks so learners don’t get overwhelmed.
 
-### Future Script Direction
-- **Lesson 13-1:** Script MUST use the "sandwich" metaphor clearly: haben...ge-t. Start with regular verbs only (gemacht, gespielt, gekocht, gelernt). Colour-coded sentence diagrams.
-- **Lesson 13-2:** The sein verbs are a limited set — script should present them as a memorable list (gegangen, gefahren, geflogen, gekommen, geworden, gewesen, geblieben...).
-- **Lesson 13-4:** Culmination lesson — "Mein Wochenende" narrative that combines haben + sein Perfekt.
+**Essential Outcomes:**
+- Can form simple Perfekt sentences with `haben`.
+- Can use common movement/change verbs with `sein`.
+- Can recognize and produce high-frequency irregular participles.
+- Can talk briefly about what they did yesterday or last weekend.
+- Can place past events in time.
 
-### Production Exercise Opportunities
-- Free-text: "Write what you did last weekend (5 sentences using Perfekt)"
-- Conjugation: Given infinitive → write past participle
-- Dictation: Hear a past-tense story → answer comprehension questions
-- Speaking: Describe your last holiday
+**Future Script Direction:**
+- Make this module feel like a big unlock but keep explanations simple.
+- Malayalam bridge: learners already understand past-time meaning; the challenge is the German structure, not the idea.
+- Likely errors: wrong auxiliary, missing final participle, invented participle forms, English word order.
+- Use grounded scenarios: weekend, cooking, travel, study, visit, shopping.
+
+**Production Exercise Ideas:**
+- Free-text: what did you do last weekend?
+- Speaking: 1-minute past-tense summary.
+- Dictation: short weekend story.
+- Transformation: present to Perfekt.
+- Story sequencing with time expressions.
+
+**Gap Analysis:**
+- Needs strong recycling; Perfekt is easy to forget if isolated to one module.
+- Must avoid overloading learners with too many irregulars at once.
+- More speaking and writing output is needed for true control.
 
 ---
 
 ## Module 14: Formal Life in Germany (Offizielles Leben)
-**Icon:** 📝 | **Hours:** 10 | **Priority:** CRITICAL (direct exam + real-life essential)
 
-### Teaching Goal
-German bureaucracy: filling forms, visiting offices, banking, writing formal letters. Anmeldung, Ausländerbehörde, and official German. This is ESSENTIAL for Malayalis actually moving to Germany.
+**Teaching Goal:**
+Prepare learners for forms, offices, banking, and formal written communication in Germany. This module should make bureaucracy less scary and directly support Goethe writing tasks.
 
-### A1 Exam Relevance
-- **Schreiben Teil 1:** Form-filling is 50% of the writing exam
-- **Lesen:** Official letters, notices, forms
-- **Hören:** Office/bank conversations
-- **Direct practical value:** First thing every immigrant does in Germany
+**A1 Exam Relevance:**
+- **Schreiben:** direct support for form-filling and formal everyday writing
+- **Lesen:** office letters, notices, forms, official instructions
+- **Hören:** office and bank interactions
+- **Real-life relevance:** extremely high for migrants and students arriving in Germany
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 14-1 | Filling Out Forms | Outline only | CRITICAL — Schreiben Teil 1 core |
-| 14-2 | At the Office | Outline only | HIGH — practical dialogue |
-| 14-3 | Banking & Post | Outline only | MEDIUM — supplementary |
+**Current Content:**
+- **Lessons:** 4
+  - Filling Out Forms
+  - At the Office
+  - Opening a Bank Account
+  - Writing Formal Letters & Emails
+- **Videos:** 8
+- **Exercises:** 32
+- **Vocabulary:** 40
+- **Current strengths:** high practical value, major overlap with Goethe Schreiben Teil 1
 
-### Essential Outcomes
-- [ ] Fill ANY German form: Familienname, Vorname, Geburtsdatum, Geburtsort, Staatsangehörigkeit, Familienstand, Adresse
-- [ ] Know German date format: TT.MM.JJJJ (not MM/DD/YYYY!)
-- [ ] Navigate the Ausländerbehörde: "Ich brauche einen Termin" / "Hier ist mein Reisepass"
-- [ ] Understand an official letter (appointment confirmation, Bescheid)
-- [ ] Basic banking: "Ich möchte ein Konto eröffnen"
+**Lesson/Video Script Needs:**
+- A very explicit field-by-field form-filling script.
+- Office interaction scripts for appointment, document submission, and clarification.
+- Bank account opening dialogues.
+- Formal email/letter writing templates.
+- Repetition around date format, address format, and core personal-information vocabulary.
 
-### Future Script Direction
-- **Lesson 14-1:** Needs the most practical script in the course. Include a real Anmeldung form walkthrough with every field explained. This is worth a full detailed video script.
-- **Lesson 14-2:** Bürgerbüro/Rathaus visit dialogue — waiting, being called, presenting documents.
-- Include common abbreviations: Str. (Straße), PLZ (Postleitzahl), Tel. (Telefon)
+**Essential Outcomes:**
+- Can understand and fill common personal-information form fields.
+- Can handle basic office interaction politely.
+- Can ask for or understand appointment-related language.
+- Can manage a simple bank-related conversation.
+- Can write a short formal message or email.
 
-### Production Exercise Opportunities
-- Form-filling: Complete 5+ different form types (the core Schreiben Teil 1 drill)
-- Free-text: "Write a short letter requesting an appointment"
-- Dictation: Hear personal details → fill in a form
-- Reading: Decode an official German letter
+**Future Script Direction:**
+- This module should feel like high-value migrant survival training.
+- Use examples from Anmeldung, language course registration, and bank setup.
+- Address common Malayali mistakes: wrong date format, weak surname/first-name distinction, English-first phrase transfer in formal writing.
+- Keep tone reassuring: bureaucracy is predictable once the vocabulary is known.
+
+**Production Exercise Ideas:**
+- Full form-filling drills from text and audio.
+- Free-text: write a short appointment request.
+- Role-play: office counter interaction.
+- Dictation: complete a form from spoken personal details.
+- Reading: interpret a simple official appointment notice.
+
+**Gap Analysis:**
+- This module should be even more central in exam prep because it overlaps directly with Schreiben Teil 1.
+- Needs many more varied forms, not just one or two models.
+- Formal writing should be linked more explicitly to correction rubrics and model answers.
 
 ---
 
 ## Module 15: German Culture & Integration (Kultur)
-**Icon:** 🇩🇪 | **Hours:** 8 | **Priority:** MEDIUM (enrichment + integration)
 
-### Teaching Goal
-German customs, festivals, social norms. Cultural fluency that helps learners integrate and understand cultural references in exam materials.
+**Teaching Goal:**
+Introduce learners to everyday German norms, customs, festivals, social behavior, and colloquial language so they can interpret context better and integrate with less confusion.
 
-### A1 Exam Relevance
-- **Lesen:** Cultural references in reading passages
-- **Hören:** Understanding social situations
-- **Sprechen:** Cultural awareness helps in all oral communication
-- **Indirect:** Understanding German context makes exam materials less confusing
+**A1 Exam Relevance:**
+- **Lesen/Hören:** cultural context improves interpretation of ordinary German texts and situations
+- **Sprechen:** helps learners respond more naturally and appropriately
+- **Indirect role:** supports real-world success more than direct exam mechanics
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 15-1 | German Customs | Outline only | MEDIUM — cultural literacy |
-| 15-2 | Festivals & Holidays | Outline only | LOW — nice to know |
-| 15-3 | Kerala Meets Germany | Outline only | LOW — cultural bridge |
+**Current Content:**
+- **Lessons:** 4
+  - German Customs
+  - Festivals & Holidays
+  - Differences from Kerala Culture
+  - Useful Slang & Colloquial German
+- **Videos:** 6
+- **Exercises:** 21
+- **Vocabulary:** 30
+- **Current strengths:** high engagement potential, strong cultural bridge value
 
-### Essential Outcomes
-- [ ] Understand Pünktlichkeit, Mülltrennung, Sonntagsruhe
-- [ ] Know major German holidays: Weihnachten, Ostern, Tag der Deutschen Einheit
-- [ ] Navigate social norms: Handschlag, Duzen/Siezen, Ruhezeiten
-- [ ] Compare Kerala and German cultural values constructively
-- [ ] Understand "Ruhetag" and why shops close on Sundays
+**Lesson/Video Script Needs:**
+- Scripts on punctuality, quiet hours, recycling, Sunday rules, invitations, and social expectations.
+- Festival and holiday explainer scripts with cultural meaning.
+- Comparative Kerala-vs-Germany scripts that stay respectful and practical.
+- Slang/register script with clear warning about when not to use informal expressions.
 
-### Future Script Direction
-- Scripts can be more conversational/documentary style. Visual comparisons (Kerala festival vs German festival) work well.
-- Less exam-critical, so scripts can be produced later in the pipeline.
+**Essential Outcomes:**
+- Can recognize key everyday German social norms.
+- Can understand major festival references.
+- Can compare a few German and Kerala customs simply.
+- Can identify a few colloquial expressions without misusing them.
+- Can interpret everyday behavior with less cultural shock.
 
-### Production Exercise Opportunities
-- Free-text: "You're invited to a German colleague's home. Write 3 things you should know"
-- Speaking: Describe a German holiday
-- Discussion prompts: Kerala vs Germany cultural comparisons
+**Future Script Direction:**
+- Tone should be warm, observational, and sometimes funny.
+- Use cultural contrast carefully: helpful, never mocking.
+- Highlight the things that actually surprise newcomers from Kerala.
+- Register-awareness matters: slang should be treated as bonus comprehension, not default production language.
+
+**Production Exercise Ideas:**
+- Free-text: write 3 differences between Kerala and Germany.
+- Speaking: explain one German custom.
+- Scenario response tasks: what would you do in this situation?
+- Short listening clips about rules or invitations.
+
+**Gap Analysis:**
+- Lowest direct exam priority among core modules.
+- Slang content can become distracting if overemphasized.
+- Should support integration, but not steal time from exam-critical production practice.
 
 ---
 
-## Module 16: A1+ Bonus Bridge (Optional)
-**Icon:** 🌉 | **Hours:** 12 | **Priority:** LOW (optional enrichment)
+## Module 16: A1+ Bonus Bridge (Optional) (Nächste Schritte)
 
-### Teaching Goal
-Deeper grammar for students who want to bridge to A2: Dativ deep dive, Wechselpräpositionen, subordinate clauses, and A2 preview. OPTIONAL — students can skip to Modules 17-18 for exam prep.
+**Teaching Goal:**
+Offer an optional bridge into harder grammar and reading so ambitious learners can strengthen their base before A2, without making this required for passing Goethe A1.
 
-### A1 Exam Relevance
-- **Indirect:** Stronger grammar → fewer errors in all sections
-- **Not required:** Everything needed for A1 is covered in Modules 1-15
-- **A2 preparation:** Sets up the next level
+**A1 Exam Relevance:**
+- **Indirect only:** helps reduce errors and improve reading confidence
+- **Not essential for A1 pass:** should remain optional
+- **Useful bridge:** supports stronger learners preparing to go beyond the exam
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 16-1 | Dative Case Deep Dive | Outline only | LOW — beyond A1 strict scope |
-| 16-2 | Wechselpräpositionen | Outline only | LOW — A2 preview |
-| 16-3 | Subordinate Clauses | Outline only | LOW — weil, dass, wenn |
-| 16-4 | Preview: Life at A2 | Outline only | LOW — motivational |
+**Current Content:**
+- **Lessons:** 5
+  - Dative Case Deep Dive
+  - Two-Way Prepositions
+  - Reflexive Verbs
+  - Subordinate Clauses
+  - Reading Comprehension Practice
+- **Videos:** 8
+- **Exercises:** 39
+- **Vocabulary:** 36
+- **Current strengths:** ambitious bridge material, useful for learners who want extra control
 
-### Essential Outcomes
-- [ ] Master Dativ articles: dem, der, dem, den (+n)
-- [ ] Wechselpräpositionen: "Ich gehe in die Küche" vs "Ich bin in der Küche"
-- [ ] Basic subordinate clauses: "weil ich Deutsch lerne" / "dass er kommt"
-- [ ] Awareness of what A2 requires
+**Lesson/Video Script Needs:**
+- Deep but careful scripts for dative and two-way prepositions.
+- Reflexive verb explanation with routine-life examples.
+- Subordinate-clause introduction with strong sentence-structure visuals.
+- Reading strategy lesson pulling from previous vocabulary domains.
+- Consistent messaging that this module is bonus, not required.
 
-### Future Script Direction
-- Lowest priority for script production. Only create scripts after all Modules 1-15 and 17-18 are done.
-- Content exists in the app but doesn't need video/audio urgently.
+**Essential Outcomes:**
+- Can recognize and use common dative patterns more accurately.
+- Can distinguish location vs direction in common preposition phrases.
+- Can use basic reflexive verbs.
+- Can understand simple subordinate-clause word order in controlled contexts.
+- Can approach short reading texts more strategically.
 
-### Production Exercise Opportunities
-- Grammar drills: Dativ transformations
-- Free-text: Sentence combining with weil/dass
+**Future Script Direction:**
+- This module should be framed as “confidence extension,” not a gatekeeper.
+- Malayalam bridge is especially useful for verb-final clause logic.
+- Keep examples high-frequency and familiar rather than grammar-textbook heavy.
+- Do not burden weaker learners with the feeling that they are behind if they skip it.
+
+**Production Exercise Ideas:**
+- Grammar transformation tasks.
+- Free-text with reflexive verbs.
+- Reading with short written comprehension answers.
+- Speaking: describe location/movement with prepositions.
+
+**Gap Analysis:**
+- Must remain clearly optional or it may dilute A1 focus.
+- Should not consume production bandwidth before exam modules are fully strong.
+- Needs careful scope control to avoid becoming an accidental A2 grammar dump.
 
 ---
 
 ## Module 17: Goethe A1 Exam — Hören & Lesen
-**Icon:** 🎧 | **Hours:** 12 | **Priority:** CRITICAL (exam prep)
 
-### Teaching Goal
-Direct exam preparation for the listening and reading sections. Format familiarization, strategy, timed practice. This module should simulate real exam conditions.
+**Teaching Goal:**
+Train learners explicitly for the receptive sections of the Goethe A1 exam under conditions that resemble the real test, especially audio-first listening.
 
-### A1 Exam Relevance
-- **Hören (25%):** All three parts — announcements, conversations, messages
-- **Lesen (25%):** All three parts — notices, forms, emails/ads
-- **Direct exam prep:** Format, timing, strategy
+**A1 Exam Relevance:**
+- **Hören:** direct exam training
+- **Lesen:** direct exam training
+- **Strategy relevance:** time management, scanning, keyword recognition, distractor control
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 17-1 | Exam Format Overview & Tips | Outline only | CRITICAL — strategy video |
-| 17-2 | Hören Practice | Outline only | CRITICAL — must have audio |
-| 17-3 | Lesen Practice | Outline only | HIGH — comprehension strategies |
-| 17-4 | Full Practice Test (Hören + Lesen) | Outline only | HIGH — simulation |
+**Current Content:**
+- **Lessons:** 6
+  - Exam Format Overview & Tips
+  - Hören Teil 1 — Kurze Nachrichten
+  - Hören Teil 2 & 3 — Gespräche
+  - Lesen Teil 1 — Schilder und Anzeigen
+  - Lesen Teil 2 & 3 — E-Mails und Texte
+  - Übungstest — Hören & Lesen
+- **Videos:** 6
+- **Exercises:** 65
+- **Vocabulary:** 20
+- **Current strengths:** high exam specificity, dedicated strategy focus, strong exercise volume
 
-### Essential Outcomes
-- [ ] Know the exact Goethe A1 exam format (4 sections, time limits, scoring)
-- [ ] Complete Hören Teil 1-3 under exam conditions (audio only, no text!)
-- [ ] Complete Lesen Teil 1-3 under time pressure
-- [ ] Know exam strategies: elimination, keyword listening, skimming
-- [ ] Score ≥60% on a practice Hören + Lesen test
+**Lesson/Video Script Needs:**
+- A sharp format-overview script with point distribution, timing, and survival strategy.
+- Hören scripts that teach how to listen for key info without seeing text.
+- Lesen strategy scripts for signs, ads, emails, and short practical texts.
+- A realistic mock-test framing script.
+- Crucially: audio generation and playback workflow for Hören items.
 
-### Future Script Direction
-- **Lesson 17-1:** Strategy video script — this is high-value and relatively easy to script. Include timing tips, common traps, score calculation.
-- **Lessons 17-2/17-3:** These are exercise-heavy, not video-heavy. The audio generation (edge-tts) for Hören exercises is the real deliverable here.
-- Scripts for this module are more about exam tips than teaching new German.
+**Essential Outcomes:**
+- Can explain the structure of the Hören and Lesen sections.
+- Can handle short-message listening tasks with limited replay.
+- Can identify key information in dialogues and announcements.
+- Can solve sign/ad/email reading tasks under time pressure.
+- Can complete a receptive mock test with confidence.
 
-### Production Exercise Opportunities
-- Full Hören simulation with audio-only playback
-- Timed Lesen exercises with real exam format
-- Strategy reflection: "What keywords did you hear?"
+**Future Script Direction:**
+- This module should be exam-coach style, not general teaching style.
+- Focus on traps, timing, keywords, and calmness.
+- Address likely learner problems: reading too slowly, panicking in audio, translating every word, and losing time on one question.
+- Use miniature strategy loops with immediate practice.
+
+**Production Exercise Ideas:**
+- Audio-only Hören drills with hidden transcript.
+- Timed reading sets.
+- Error-review activities: why was option B wrong?
+- Keyword listening notebooks.
+- Full mock section scoring with remediation prompts.
+
+**Gap Analysis:**
+- The biggest missing piece is still real listening audio across the Hören tasks.
+- Without audio-first delivery, this module cannot fully do its job.
+- Needs stronger performance analytics and feedback loops, not just raw exercises.
 
 ---
 
 ## Module 18: Goethe A1 Exam — Schreiben & Sprechen
-**Icon:** ✍️ | **Hours:** 12 | **Priority:** CRITICAL (exam prep)
 
-### Teaching Goal
-Direct exam preparation for writing and speaking. Form-filling practice, short message writing, self-introduction drill, question cards, and request formulation.
+**Teaching Goal:**
+Train learners directly for productive exam success: form-filling, short message writing, self-introduction, asking/answering questions, and making polite requests.
 
-### A1 Exam Relevance
-- **Schreiben Teil 1 (form-filling):** Direct practice
-- **Schreiben Teil 2 (short message):** Template + practice
-- **Sprechen Teil 1 (self-intro):** 2-minute drill
-- **Sprechen Teil 2 (question cards):** Practice asking about everyday topics
-- **Sprechen Teil 3 (requests):** Polite request formulation
+**A1 Exam Relevance:**
+- **Schreiben:** direct preparation for both writing tasks
+- **Sprechen:** direct preparation for all oral tasks
+- **Cross-module role:** converts all previous learning into exam-ready output
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 18-1 | Schreiben Teil 1 — Formulare | Outline only | CRITICAL — easiest exam points |
-| 18-2 | Schreiben Teil 2 — Kurze Mitteilung | Outline only | CRITICAL — message templates |
-| 18-3 | Sprechen Teil 1 — Sich vorstellen | Outline only | CRITICAL — self-intro |
-| 18-4 | Sprechen Teil 2 & 3 — Fragen & Bitten | Outline only | CRITICAL — question/request patterns |
-| 18-5 | Full Mock Exam | Outline only | HIGH — complete simulation |
+**Current Content:**
+- **Lessons:** 6
+  - Schreiben Teil 1 — Formulare ausfüllen
+  - Schreiben Teil 2 — Kurze Nachrichten
+  - Sprechen Teil 1 — Sich vorstellen
+  - Sprechen Teil 2 — Fragen stellen und beantworten
+  - Sprechen Teil 3 — Bitten formulieren
+  - Kompletter Übungstest — Alle 4 Teile
+- **Videos:** 6
+- **Exercises:** 70
+- **Vocabulary:** 22
+- **Current strengths:** strongest exam-targeted module for production, high exercise count, excellent capstone potential
 
-### Essential Outcomes
-- [ ] Fill out ANY Goethe A1 form correctly (5/5 fields)
-- [ ] Write a 30-word message hitting 3 content points
-- [ ] Deliver a 2-minute self-introduction covering: Name, Alter, Land, Sprachen, Beruf, Hobbys
-- [ ] Ask questions from topic cards: "Wie viel kostet...?" / "Wann beginnt...?"
-- [ ] Formulate polite requests: "Können Sie mir bitte helfen?"
-- [ ] Score ≥60% on a full mock exam
+**Lesson/Video Script Needs:**
+- Exact-writing-task walkthroughs for form filling and short messages.
+- A polished self-introduction script connected back to Module 2.
+- Question-card and answer-card drills for oral interaction.
+- Request-formation models (`Können Sie...`, `Bitte...`, `Ich hätte gern...`).
+- Full mock exam script framing with timing and behavioral advice.
 
-### Future Script Direction
-- **Lesson 18-1:** Needs template walkthroughs for every common form type. Include the "5 golden fields" students must always know.
-- **Lesson 18-2:** Message writing templates — greeting, 3 content points, closing. Include 10+ example prompts with model answers.
-- **Lesson 18-3:** Direct connection to /practice/intro feature. Script should be the same "golden self-introduction" from Module 2, now polished to exam standard.
-- **Lesson 18-4:** Question card practice — script should list the ~20 most common question patterns and request formulations.
+**Essential Outcomes:**
+- Can fill key form fields accurately and quickly.
+- Can write a short A1 message hitting all required content points.
+- Can deliver a stable self-introduction.
+- Can ask and answer simple topic-card questions.
+- Can make polite requests in everyday situations.
+- Can complete a full A1-style mock with reduced anxiety.
 
-### Production Exercise Opportunities
-- Form-filling: 10+ different form scenarios
-- Message writing: 10+ prompts with 3 content points each
-- Timed self-introduction recording
-- Question card drill (Sprechen Teil 2)
-- Request formulation (Sprechen Teil 3)
-- Full mock exam with all 4 sections
+**Future Script Direction:**
+- This module should feel laser-focused and confidence-building.
+- Use model answers, templates, and controlled sentence banks.
+- Address likely Malayali learner errors: forgetting one content point, mixing formal/informal register, writing too much, overcomplicating Sprechen answers, and freezing under timed conditions.
+- Recycle earlier topics: family, hobbies, job, home, food, appointments.
 
----
+**Production Exercise Ideas:**
+- Free-text message tasks with feedback rubric.
+- Form-fill tasks from written and audio prompts.
+- Speaking recordings for self-intro and request drills.
+- Random topic-card generator for Part 2.
+- Full mock exam performance tasks.
 
-## Module 15: German Culture & Integration (Kultur)
-**Icon:** 🇩🇪 | **Hours:** 8 | **Priority:** LOW (enrichment + integration)
-
-### Teaching Goal
-German customs, festivals, social norms, and colloquial language. Cultural fluency that helps learners integrate and understand cultural references in exam materials. Also teaches practical survival rules (Anmeldung, Mülltrennung, Ruhezeit) and everyday slang for social integration.
-
-### A1 Exam Relevance
-- **Lesen:** Cultural references in reading passages, abbreviations in everyday texts
-- **Hören:** Understanding social situations, recognizing register
-- **Sprechen:** Cultural awareness helps in all oral communication
-- **Indirect:** Understanding German context makes exam materials less confusing
-
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 15-1 | German Customs (Pünktlichkeit, Mülltrennung, Ruhezeit) | Outline only | MEDIUM — practical survival |
-| 15-2 | Festivals & Holidays (Weihnachten, Oktoberfest, Feiertage) | Outline only | LOW — nice to know |
-| 15-3 | Kerala vs Germany Cultural Differences | Outline only | MEDIUM — cultural preparation |
-| 15-4 | Useful Slang & Colloquial German (Umgangssprache) | Outline only | LOW — fun reward content |
-
-### Essential Outcomes
-- [ ] Understand Pünktlichkeit, Mülltrennung (5-bin system), Sonntagsruhe, Ruhezeit
-- [ ] Know major German holidays: Weihnachten, Ostern, Silvester, Tag der Deutschen Einheit
-- [ ] Navigate social norms: Handschlag, Duzen/Siezen, personal space, no drop-by visits
-- [ ] Know practical rules: Anmeldung, Versicherung, Pfand system, Bargeld culture
-- [ ] Recognize common slang (geil, krass, Alter, Na?, Kein Bock, Keine Ahnung)
-- [ ] Distinguish formal/informal/slang registers and know when each is appropriate
-- [ ] Compare Kerala and German cultural values constructively
-- [ ] Understand text abbreviations: LG, MfG, vllt
-
-### Future Script Direction
-- **Lesson 15-1:** Documentary-style practical content. Mülltrennung diagram and Ruhezeit rules are things students WILL encounter in week one. Kerala ↔ Germany value comparisons keep engagement.
-- **Lesson 15-2:** Light, enjoyable content. Oktoberfest ↔ Onam parallel (both harvest festivals) is a strong hook. Weihnachtsmarkt descriptions are vivid and engaging.
-- **Lesson 15-3:** Balanced cultural comparison — never mocking either culture. Food shock (Abendbrot = cold dinner!), social space, directness, privacy boundaries. Humour as vehicle for real preparation.
-- **Lesson 15-4:** FUN reward lesson. Slang with Malayalam parallels (Alter = Machane!, Geil = Adipoli!). Register awareness (WhatsApp vs Email vs Interview). WARNING about formal contexts is essential.
-- Scripts can be more conversational/documentary style throughout — less exam-driven, more life-preparation.
-
-### Production Exercise Opportunities
-- Multiple-choice: Cultural scenario questions ("What should you do when...?")
-- Matching: German customs ↔ Kerala parallels
-- Free-text: "Write 3 sentences about visiting a Weihnachtsmarkt"
-- Discussion: Cultural comparison prompts
+**Gap Analysis:**
+- Still needs the richest correction and scoring layer in the whole course.
+- Writing and speaking tasks need feedback rubrics, not just prompts.
+- Should connect tightly with `/practice/write` and `/practice/intro` so exam prep becomes repeatable habit, not one-off exposure.
 
 ---
 
-## Module 16: A1+ Bonus Bridge (Optional)
-**Icon:** 🌉 | **Hours:** 12 | **Priority:** LOW (optional A2 bridge)
+## Cross-Module Script Completion Status (Updated 2026-03-23 11:30 UTC)
 
-### Teaching Goal
-Deeper grammar for students who want to bridge to A2: Dativ deep dive (full article system + dativ verbs + pronouns), Wechselpräpositionen (two-way prepositions with movement/location case switching), reflexive verbs (daily routine + feelings), subordinate clauses (weil/dass/wenn/als/ob with verb-at-end), and reading comprehension practice. OPTIONAL — students can pass A1 without this.
+| Module | Core Scripts Drafted | Total Possible | Status | Pre-Draft Plans |
+|--------|---------------------|----------------|--------|-----------------|
+| 1 | 4 (v1-2-1, v1-3-1, v1-3-2, v1-4-1) | 7 | 3 missing: v1-1-1, v1-1-2, v1-2-2 | ✅ See REMAINING_SCRIPT_PLANS.md Tier 2 |
+| 2 | 3 (v2-1-1, v2-2-1, v2-3-1) | 4 | 1 missing: v2-1-2 (name spelling + forms) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 1 |
+| 3 | 4 (v3-1-1, v3-2-1, v3-3-1, v3-4-1) | 4 | ✅ COMPLETE | — |
+| 4 | 3 (v4-1-1, v4-2-1, v4-3-1) | 3 | ✅ COMPLETE | — |
+| 5 | 4 (v5-1-1, v5-2-1, v5-3-1, v5-4-1) | 5 | 1 missing: v5-1-2 (verb drill companion) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 1 |
+| 6 | 3 (v6-1-1, v6-2-1, v6-3-1) | 4 | 1 missing: v6-1-2 (Kerala food in German) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 1 |
+| 7 | 3 (v7-1-1, v7-2-1, v7-3-1) | 3 | ✅ COMPLETE | — |
+| 8 | 3 (v8-1-1, v8-2-1, v8-3-1) | 3 | ✅ COMPLETE | — |
+| 9 | 3 (v9-1-1, v9-2-1, v9-3-1) | 3 | ✅ COMPLETE | — |
+| 10 | 3 (v10-1-1, v10-2-1, v10-3-1) | 3 | ✅ COMPLETE | — |
+| 11 | 3 (v11-1-1, v11-2-1, v11-3-1) | 3 | ✅ COMPLETE | — |
+| 12 | 3 (v12-1-1, v12-4-1, v12-4-2) | 5 | 2 missing: v12-2-1 (weather), v12-3-1 (plans) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 3 |
+| 13 | 4 (v13-1-1, v13-2-1, v13-3-1, v13-4-1) | 4 | ✅ COMPLETE | — |
+| 14 | 3 (v14-1-1, v14-1-2, v14-2-1) | 3 | ✅ COMPLETE | — |
+| 15 | 0 | 5 | All 📐 ARCH only (Wave 5, low priority) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 4 |
+| 16 | 0 | 5 | All 📐 ARCH only (Wave 5, low priority) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 4 |
+| 17 | 3 (v17-1-1, v17-2-1, v17-3-1) | 3 | ✅ COMPLETE | — |
+| 18 | 5 (v18-1-1, v18-2-1, v18-3-1, v18-4-1, v18-5-1) | 5 | ✅ COMPLETE | — |
 
-### A1 Exam Relevance
-- **Indirect:** Stronger grammar → fewer errors in all sections
-- **Not required:** Everything needed for A1 is covered in Modules 1–15 and 17–18
-- **A2 preparation:** Sets up the next level for ambitious students
-- **Reading strategies (16-5):** Universally useful for Lesen section
+**Summary:** 52/~70 core scripts drafted. **12 modules fully complete (3, 4, 7, 8, 9, 10, 11, 13, 14, 17, 18).** Modules 2, 5, 6 each need only 1 more script. Module 1 needs 3 motivational/foundational scripts. Module 12 needs 2 scripts. Modules 15-16 (optional) have 10 scripts at architecture-only.
 
-### Lessons & Video Script Needs
-| Lesson | Title | Script Status | Script Priority |
-|--------|-------|---------------|-----------------|
-| 16-1 | Dative Case Deep Dive (articles + pronouns + dativ verbs) | Outline only | LOW — beyond A1 strict scope |
-| 16-2 | Wechselpräpositionen (in/an/auf + Akk or Dat, verb pairs) | Outline only | LOW — A2 preview |
-| 16-3 | Reflexive Verbs (sich waschen, sich freuen, sich vorstellen) | Outline only | LOW — A2 preview |
-| 16-4 | Subordinate Clauses (weil, dass, wenn, als, ob + verb-end) | Outline only | LOW — extends Module 12 |
-| 16-5 | Reading Comprehension Practice (strategies + real texts) | Outline only | MEDIUM — universally useful |
-
-### Essential Outcomes
-- [ ] Master full Dativ article system: der→dem, die→der, das→dem, die(pl)→den(+n)
-- [ ] Know dativ personal pronouns: mir, dir, ihm, ihr, uns, euch, ihnen
-- [ ] Use dativ verbs correctly: helfen, gefallen, gehören, danken, folgen, antworten
-- [ ] Name all 9 Wechselpräpositionen: in, an, auf, über, unter, vor, hinter, neben, zwischen
-- [ ] Apply Wo?→Dativ / Wohin?→Akkusativ rule consistently
-- [ ] Know verb pairs: liegen/legen, stehen/stellen, sitzen/setzen
-- [ ] Conjugate reflexive verbs: sich waschen, sich anziehen, sich freuen, sich vorstellen
-- [ ] Distinguish Akkusativ vs Dativ reflexive pronouns
-- [ ] Build subordinate clauses with weil, dass, wenn, als, ob (verb at end)
-- [ ] Distinguish als (one-time past) vs wenn (present/repeated)
-- [ ] Read and comprehend real German texts: emails, ads, blog posts, schedules
-
-### Future Script Direction
-- **Lesson 16-1:** Builds on Module 9 (mit+Dativ) and Module 10 (Mir ist...). Full article table + dativ verbs + pronouns. Colour-coded visuals essential. Malayalam parallel: -kku suffix = Dativ concept.
-- **Lesson 16-2:** Builds on Module 8 (basic prepositions). The Wo/Wohin question is THE key. Verb pairs (liegen/legen) are the anchor for understanding. Animation-style visuals work best.
-- **Lesson 16-3:** Connects to Module 5 (daily routine) — same topic, upgraded grammar. Morning routine with reflexive verbs is the natural script frame.
-- **Lesson 16-4:** Extends Module 12 (weil intro). Malayalam parallel is GOLD: verb-at-end in subordinate clauses = normal Malayalam word order! Students find this encouraging.
-- **Lesson 16-5:** CULMINATION lesson — pulls vocabulary and grammar from ALL modules. Practice texts should reference familiar contexts. Emotional closing celebrates the student's full journey.
-- Only create scripts after all Modules 1–15 and 17–18 are done.
-
-### Production Exercise Opportunities
-- Grammar drills: Dativ article and pronoun transformations
-- Fill-in: Wechselpräposition case choice (Dativ or Akkusativ)
-- Free-text: "Describe your morning routine with 4 reflexive verbs"
-- Sentence combining: Join clauses with weil/dass/wenn/als
-- Reading comprehension: Texts → questions (emails, ads, blog posts)
-- Speaking: "Tell me about a childhood memory using 'als'"
+**New:** All 18 remaining scripts now have detailed pre-draft plans in `docs/REMAINING_SCRIPT_PLANS.md` with narration beats, Malayalam bridges, exam tips, dialogue fragments, and dependencies mapped.
 
 ---
 
-## Cross-Module Script Production Priority
+## Cross-Module Dependency Map (Updated 2026-03-23)
 
-Based on A1 exam impact, the recommended script creation order is:
+Understanding what feeds into what helps prioritize script work and avoid forward references.
 
-### Wave 1 — Exam-direct scripts (highest ROI)
-1. **Module 18** (Schreiben & Sprechen exam prep) — templates students memorize
-2. **Module 17** (Hören & Lesen exam prep) — strategy + audio generation
-3. **Module 2** (Who Are You?) — self-introduction golden script
-4. **Module 14** (Formal Life) — form-filling core
+```
+Module 1 (Sounds, Greetings)
+  ├─→ Module 2 (Self-intro) ──→ Module 18 Sprechen Teil 1
+  │     └─→ Module 14 (Forms) ──→ Module 18 Schreiben Teil 1
+  ├─→ Module 3 (Numbers, Time)
+  │     ├─→ Module 7 (Shopping — prices)
+  │     ├─→ Module 12 (Plans — scheduling)
+  │     └─→ Module 17 Hören (number listening)
+  ├─→ Module 4 (Family, Articles)
+  │     └─→ Module 5 (Verbs) ──→ Module 13 (Past tense)
+  │           └─→ Module 6 (Food, Accusative)
+  │                 ├─→ Module 7 (Shopping, Accusative reinforcement)
+  │                 └─→ Module 9 (Travel, Modal verbs)
+  ├─→ Module 8 (Home, Prepositions) ──→ Module 17 Lesen (Wohnungsanzeigen)
+  ├─→ Module 10 (Health)
+  ├─→ Module 11 (Work, Email) ──→ Module 18 Schreiben Teil 2
+  └─→ Module 12 (Hobbies, Weather, Plans, weil)
+        └─→ Module 16 (Optional: Subordinate clauses)
 
-### Wave 2 — Grammar backbone scripts
-5. **Module 5** (Daily Routine) — verb conjugation is everything
-6. **Module 13** (Past Tense) — Perfekt is the second grammar pillar
-7. **Module 3** (Numbers & Time) — number listening is exam-critical
+Module 15 (Culture) — standalone, no dependencies
+Module 16 (A1+ Bridge) — builds on Modules 4-9, optional
+Module 17 (Exam Hören/Lesen) — capstone, draws from all
+Module 18 (Exam Schreiben/Sprechen) — capstone, draws from all
+```
 
-### Wave 3 — Practical conversation scripts
-8. **Module 6** (Food & Drink) — restaurant dialogues
-9. **Module 9** (Travel) — directions + tickets
-10. **Module 10** (Health) — doctor visit dialogue
-11. **Module 4** (Family) — descriptions + possessives
-
-### Wave 4 — Supporting content scripts
-12. **Module 1** (Welcome) — pronunciation foundation
-13. **Module 7** (Shopping) — price conversations
-14. **Module 8** (Home) — apartment ads
-15. **Module 11** (Work) — email writing
-16. **Module 12** (Hobbies) — invitations
-
-### Wave 5 — Optional/enrichment
-17. **Module 15** (Culture) — nice to have
-18. **Module 16** (A1+ Bridge) — only after everything else
-
----
-
-## Open Questions / Blockers
-
-1. **Audio generation pipeline:** Hören exercises need edge-tts audio. The script (`scripts/generate-hoeren-audio.ts`) is mentioned in COURSE_PLAN_10_10.md but status unclear. This blocks Module 17 effectiveness.
-2. **Video script format:** Need a standard template for full video scripts (narrator cues, visual directions, vocabulary overlays, practice pauses). Should be defined before mass script creation.
-3. **Production exercise integration:** The `free-text` and `dictation` exercise types are planned but not yet implemented in the Exercise interface. Script planning should account for these.
-4. **Goethe Wortliste cross-check:** Not yet done. May reveal vocabulary gaps that require adding words to specific modules.
+**Key implication for script writing:** Modules 1-2 scripts should never assume knowledge from later modules. Module 5 verb scripts are the gateway to everything from Module 6 onward. Exam modules 17-18 can reference any earlier module content.
 
 ---
 
-## Script Architecture Status
+## Cross-Module Priorities for Script Writers
 
-| Wave | Modules | Architecture Status | Full Scripts Status |
-|------|---------|-------------------|-------------------|
-| Wave 1 | 18, 17, 2, 14 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE1.md` | 7/~15 drafted |
-| Wave 2 | 5, 13, 3 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE2.md` | 12/~13 drafted (Modules 3, 5, 13 all complete) |
-| Wave 3 | 6, 9, 10, 4 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE3.md` | 6/~14 drafted |
-| Wave 4 | 1, 7, 8, 11, 12 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE4.md` | 9/~22 drafted |
-| Wave 5 | 15, 16 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE5.md` | Not started |
+### Highest priority modules for launch-critical script work
+1. **Module 2** — self-introduction and personal information
+2. **Module 3** — numbers, time, dates, appointments
+3. **Module 5** — present tense and daily routine
+4. **Module 6** — food, ordering, accusative basics
+5. **Module 14** — forms, offices, formal life
+6. **Module 17** — Hören/Lesen exam strategy and delivery
+7. **Module 18** — Schreiben/Sprechen exam performance
 
-**🎉 ALL 18 MODULES NOW HAVE COMPLETE SCRIPT ARCHITECTURES (Waves 1–5).**
+### Highest priority production gaps across the whole course
+- Real listening audio
+- Dictation exercises
+- Free-text writing with controlled correction
+- Speaking drills with repeatable rubrics
+- Form-filling simulations
+- Exam-readiness checkpoints
+- Better linkage from lessons into SRS and practice loops
 
-**📝 FULL SCRIPT PRODUCTION STARTED (2026-03-23):**
-- ✅ v18-1-1 — Schreiben Teil 1: Form Filling (FIRST DRAFT) → `docs/scripts/v18-1-1_FULL_SCRIPT.md`
-- ✅ v18-2-1 — Schreiben Teil 2: Short Messages (FIRST DRAFT) → `docs/scripts/v18-2-1_FULL_SCRIPT.md`
-- ✅ v18-3-1 — Sprechen Teil 1: Self-Introduction (FIRST DRAFT) → `docs/scripts/v18-3-1_FULL_SCRIPT.md`
-- ✅ v18-4-1 — Sprechen Teil 2 & 3: Questions & Requests (FIRST DRAFT) → `docs/scripts/v18-4-1_FULL_SCRIPT.md`
-- ✅ v14-1-1 — Anmeldung Form Walkthrough (FIRST DRAFT) → `docs/scripts/v14-1-1_FULL_SCRIPT.md`
-- ✅ v2-1-1 — What's Your Name? (FIRST DRAFT) → `docs/scripts/v2-1-1_FULL_SCRIPT.md`
-- ✅ v5-1-1 — How German Verbs Work (FIRST DRAFT) → `docs/scripts/v5-1-1_FULL_SCRIPT.md`
-- ✅ v6-3-1 — Restaurant Golden Dialogue (FIRST DRAFT) → `docs/scripts/v6-3-1_FULL_SCRIPT.md`
-- ✅ v10-3-1 — Doctor Visit Golden Dialogue (FIRST DRAFT) → `docs/scripts/v10-3-1_FULL_SCRIPT.md`
-- ✅ v13-1-1 — Perfekt with haben (FIRST DRAFT) → `docs/scripts/v13-1-1_FULL_SCRIPT.md`
-- ✅ v3-1-1 — Numbers 0–10 (FIRST DRAFT) → `docs/scripts/v3-1-1_FULL_SCRIPT.md`
-- ✅ v2-2-1 — Where Are You From? (FIRST DRAFT) → `docs/scripts/v2-2-1_FULL_SCRIPT.md`
-- ✅ v3-2-1 — Numbers 21–100+ (FIRST DRAFT) → `docs/scripts/v3-2-1_FULL_SCRIPT.md`
-- ✅ v13-2-1 — Perfekt with sein (FIRST DRAFT) → `docs/scripts/v13-2-1_FULL_SCRIPT.md`
-- ✅ v9-1-1 — Transportation & mit+Dativ (FIRST DRAFT) → `docs/scripts/v9-1-1_FULL_SCRIPT.md`
-- ✅ v6-2-1 — Drinks & Ordering (FIRST DRAFT) → `docs/scripts/v6-2-1_FULL_SCRIPT.md`
-- ✅ v4-1-1 — Family Members (FIRST DRAFT) → `docs/scripts/v4-1-1_FULL_SCRIPT.md`
-- ✅ v5-3-1 — Separable Verbs (FIRST DRAFT) → `docs/scripts/v5-3-1_FULL_SCRIPT.md`
-- ✅ v4-3-1 — Possessive Pronouns (FIRST DRAFT) → `docs/scripts/v4-3-1_FULL_SCRIPT.md`
-- See `docs/SCRIPT_PRODUCTION_TRACKER.md` for full status across all ~60 videos.
+### Common Malayali learner error patterns to address across scripts
+- English-led pronunciation instead of German phonetics
+- Weak article memory (`der/die/das` ignored or guessed)
+- Translating sentence structure directly from English
+- Fear of speaking unless answer is “perfect”
+- Overcomplicating A1 output instead of using short, safe sentences
+- Confusing formal and informal register
+- Number/time/date listening panic
 
-*Next priorities: (1) Write v2-3-1 full script (Jobs & Languages — Sprechen Teil 1 block 3). (2) Write v17-2-1 full script (Hören Practice — listening drills). (3) Write v17-3-1 full script (Lesen Practice — reading strategies). (4) Write v6-1-1 full script (German Foods). (5) Wire edge-tts audio pipeline for Hören exercises. (6) Implement production exercise types (free-text, dictation) in Exercise interface.*
+---
 
-**Modules with ALL lessons fully scripted:** Module 3 (Numbers & Time — 4/4), Module 5 (Daily Routine — 4/4), Module 13 (Past Tense — 4/4), Module 18 (Exam Schreiben & Sprechen — 4/4).
+## Final Planning Note
+
+The repo already has broad topic coverage and excellent scope for an A1 course. The biggest shift now is not adding more topics — it is turning existing recognition-heavy content into **teach + drill + produce + review + exam-simulate** loops. These blueprints should therefore guide script writing toward:
+
+1. **simple, teachable explanations**
+2. **dialogue-rich demonstration**
+3. **Malayalam-aware error prevention**
+4. **output-first reinforcement**
+5. **Goethe A1 task alignment**
+
+If executed well, Modules 1–18 can function not just as a themed German course, but as a genuinely exam-viable A1 path for Malayali learners.
