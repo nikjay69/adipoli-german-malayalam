@@ -1,178 +1,231 @@
-# v10-2-1 — At the Doctor: Symptoms & Complaints
-Module: 10 | Lesson: 10-2 | Duration: 10:00 target
-Teaching Goal: Teach students to describe symptoms, understand doctor questions, and handle a basic medical appointment in German.
-A1 Exam Link: Hören (doctor/pharmacy dialogues), Sprechen (describing how you feel), Schreiben (writing a sick note or cancellation message)
+# v10-2-1 — At the Doctor: Symptoms & Complaints (FULL SCRIPT)
+
+> **Module:** 10 | **Lesson:** 10-2 | **Duration:** 10:00 target
+> **Teaching Goal:** Teach students to describe symptoms with duration, understand doctor questions, and handle a basic Arztbesuch.
+> **A1 Exam Link:** Hören (doctor/pharmacy dialogues), Sprechen (describing how you feel), Schreiben (sick-day message)
+> **Status:** REVISED — v2.0
+> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
-## Pre-roll (0:00–0:15)
-[Course intro animation / branding]
-"Willkommen bei Adipoli German! Today — at the doctor. Describing symptoms and surviving your first Arztbesuch!"
+## Revision Notes (v1.0 → v2.0)
+
+| Change | Detail |
+|--------|--------|
+| Hook tightened | 75s → 30s, opens in the scenario, not explaining the scenario |
+| Symptom teaching restructured | Was 1 big table dump → 3 mini-blocks with drill after each |
+| "Ich habe" and "Mir ist" separated clearly | Were jumbled → now 2 distinct teach-drill cycles |
+| Duration phrases woven in | Was a separate block → now combined with symptoms immediately |
+| Doctor questions made active | Students predict doctor's next question before seeing it |
+| Golden Dialogue restructured | Students fill in patient lines (active recall, not passive listening) |
+| Pharmacy section compressed | 4 phrases → 3 essential, cut Drogerie tangent |
+| Sick message made a drill | Was just shown → now students write their own version |
+| Energy cues added | Every section has `[ENERGY:]` markers |
+| ~15% word count reduction | Cut redundant explanations |
 
 ---
 
-## Section 1: Hook (0:15–1:30)
+## Pre-roll (0:00–0:10)
 
-### Visual: [SLIDE: Waiting room scene in a German doctor's office]
+### Visual: [Course intro animation / Adipoli German branding]
 ### Narration:
-"You wake up sick in Germany. Fever, headache, throat pain. You need a doctor. But everything — from the receptionist to the diagnosis — is in German."
-
-"*Pani vannu, tala vedanikkunnu, throat infection... doctor-nte aduthu poyal enthokke parayum?*"
-
-"This lesson is your survival kit. The phrases here are used by THOUSANDS of Malayali nurses every day in German hospitals. And for every student — knowing these words could mean the difference between getting proper care and being misunderstood."
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 2: How Are You Feeling? — Core Symptom Phrases (1:30–4:00)
+## Section 1: Hook — You're Sick in Germany (0:10–0:40)
 
-### Visual: [TABLE: Symptom phrases with emoji indicators]
-### Narration:
+### Visual: [SLIDE: German doctor's waiting room, "🏥 Beim Arzt"]
+### Narration: [ENERGY: urgent, immersive]
+"You wake up in Germany. Fever. Headache. Throat on fire.
 
-"The doctor's first question is always: **Wie geht es Ihnen?** or **Was fehlt Ihnen?** — What's wrong?"
+You need a doctor. But from the receptionist to the diagnosis — everything's in German.
 
-"Here are the most common A1 symptom phrases:"
+*Pani, tala vedana, throat infection... doctor-nte aduthu poi enthokke parayum?*
 
-**[A1-SAFE] "Ich habe..." phrases (I have...):**
-
-| German | English | Emoji |
-|--------|---------|-------|
-| Ich habe Fieber. | I have a fever. | 🤒 |
-| Ich habe Kopfschmerzen. | I have a headache. | 🤕 |
-| Ich habe Bauchschmerzen. | I have a stomachache. | 😣 |
-| Ich habe Halsschmerzen. | I have a sore throat. | 😷 |
-| Ich habe Husten. | I have a cough. | 😮‍💨 |
-| Ich habe Schnupfen. | I have a cold/runny nose. | 🤧 |
-
-🔊 Repeat each phrase — pronunciation matters at the doctor!
-
-⏸️ "Now cover the screen and say 3 symptoms from memory."
-
-**[A1-SAFE] "Mir ist..." phrases (I feel...):**
-
-| German | English |
-|--------|---------|
-| Mir ist schlecht. | I feel nauseous. |
-| Mir ist schwindelig. | I feel dizzy. |
-| Mir ist kalt. | I'm cold. |
-| Mir ist heiß. | I'm hot. |
-
-"*'Mir ist' — this uses the dative. Don't worry about the grammar now. Just memorize these as fixed phrases.*"
-
-🔊 Repeat: "Mir ist schlecht. Mir ist schwindelig."
-
-**[A1-SAFE] Duration phrases:**
-
-| German | English |
-|--------|---------|
-| seit gestern | since yesterday |
-| seit zwei Tagen | for two days |
-| seit einer Woche | for a week |
-| seit heute Morgen | since this morning |
-
-"How to use them: 'Ich habe **seit zwei Tagen** Fieber.' = I've had a fever for two days."
-
-🔊 Repeat: "Ich habe seit gestern Kopfschmerzen."
-
-⏸️ "Combine a symptom + duration: 'Ich habe seit ___ ___schmerzen.'"
+Six phrases. That's your survival kit. Let's learn them."
 
 ---
 
-## Section 3: The Doctor's Questions (4:00–5:30)
+## Section 2: "Ich habe..." — 6 Symptom Phrases (0:40–2:30)
 
-### Visual: [SLIDE: Common doctor questions with translations]
-### Narration:
+### Visual: [TABLE builds row by row — symptoms with emoji]
+### Narration: [ENERGY: steady, teach-drill rhythm]
 
-"Now the other side — what the doctor might ask you:"
+"The doctor asks: **'Was fehlt Ihnen?'** — What's wrong?
 
-| Doctor's Question | Meaning | Your Answer Pattern |
-|-------------------|---------|---------------------|
-| Was fehlt Ihnen? | What's wrong? | Ich habe... |
-| Wo tut es weh? | Where does it hurt? | Hier. / Der ___ tut weh. |
-| Seit wann? | Since when? | Seit gestern / seit zwei Tagen. |
-| Haben Sie Fieber? | Do you have a fever? | Ja. / Nein. |
-| Nehmen Sie Medikamente? | Are you taking medication? | Ja, ich nehme... / Nein. |
-| Haben Sie Allergien? | Do you have allergies? | Ja, gegen... / Nein. |
+Your answer always starts: **'Ich habe...'**
 
-"*These questions repeat in EVERY doctor visit. Learn them once, use them forever.*"
+**Block 1 — Pain symptoms:**
+[SLIDE: 3 symptoms appear]
+- **Ich habe Kopfschmerzen.** 🤕 — headache
+- **Ich habe Bauchschmerzen.** 😣 — stomachache
+- **Ich habe Halsschmerzen.** 😷 — sore throat
 
-🎯 **EXAM TIP:** In Hören, doctor dialogues are common. If you know these question patterns, you can predict what's being asked even when you miss a word!
+*See the pattern? ___schmerzen = ___pain. Kopf=head, Bauch=belly, Hals=throat. Malayalam-il 'vedana' pole — just attach it!*
 
-⏸️ "Practice: If the doctor says 'Wo tut es weh?' — what do you answer? ... Point and say: 'Hier. Der Bauch tut weh.'"
+🔊 **Repeat all 3:** 'Ich habe Kopfschmerzen... Bauchschmerzen... Halsschmerzen...'
+
+⏸️ **Cover screen. Say all 3 from memory!**
+
+**Block 2 — Other symptoms:**
+[SLIDE: 3 more symptoms]
+- **Ich habe Fieber.** 🤒 — fever
+- **Ich habe Husten.** 😮‍💨 — cough
+- **Ich habe Schnupfen.** 🤧 — cold/runny nose
+
+🔊 **Repeat:** 'Fieber... Husten... Schnupfen...'
+
+⏸️ **All 6 now — rapid fire! Headache? ... Kopfschmerzen! Fever? ... Fieber! Sore throat? ... Halsschmerzen! Cough? ... Husten! Stomachache? ... Bauchschmerzen! Runny nose? ... Schnupfen!**
+
+Now add WHEN it started."
 
 ---
 
-## Section 4: Golden Dialogue — At the Doctor (5:30–7:30)
+## Section 3: Adding Duration — seit (2:30–3:30)
 
-### Visual: [DIALOGUE: Doctor (D) and Patient (P)]
-### Narration:
+### Visual: [SLIDE: seit + time expressions]
+### Narration: [ENERGY: practical, building on previous]
 
-"Let's hear a full doctor visit dialogue. Listen first, then we'll break it down."
+"The doctor always asks **'Seit wann?'** — Since when?
 
-🔊 [Full dialogue]:
+Your answer uses **seit**:
+- **seit gestern** — since yesterday
+- **seit zwei Tagen** — for two days
+- **seit einer Woche** — for a week
+- **seit heute Morgen** — since this morning
+
+**Combine symptom + duration:**
+'Ich habe **seit zwei Tagen** Fieber.' = I've had fever for two days.
+
+🔊 **Say it:** 'Ich habe seit gestern Kopfschmerzen.'
+
+⏸️ **Your turn: combine any symptom + any duration. Say it now!**
+
+Example: 'Ich habe seit einer Woche Husten.' Perfect."
+
+---
+
+## Section 4: "Mir ist..." — Feeling Phrases (3:30–4:30)
+
+### Visual: [SLIDE: "Mir ist..." phrases, distinct from "Ich habe"]
+### Narration: [ENERGY: clear distinction]
+
+"Different pattern now. For FEELINGS — not things you 'have', but how you FEEL:
+
+- **Mir ist schlecht.** — I feel nauseous.
+- **Mir ist schwindelig.** — I feel dizzy.
+- **Mir ist kalt.** — I'm cold.
+- **Mir ist heiß.** — I'm hot.
+
+*'Mir ist' uses dative. Don't worry about why — just memorize these 4 as fixed blocks.*
+
+🔊 **Repeat:** 'Mir ist schlecht... Mir ist schwindelig...'
+
+⏸️ **Quick: nauseous = ? ... 'Mir ist schlecht!' Dizzy = ? ... 'Mir ist schwindelig!'**
+
+Two patterns locked: 'Ich habe' for symptoms, 'Mir ist' for feelings."
+
+---
+
+## Section 5: The Doctor's Questions — Predict & Answer (4:30–6:00)
+
+### Visual: [SLIDE: Doctor questions appear one by one]
+### Narration: [ENERGY: interactive, Q&A game]
+
+"Now flip sides. The doctor asks, you answer. But first — try to PREDICT each question.
+
+The doctor wants to know what's wrong. What do they ask?
+⏸️ **Predict...**
+→ **'Was fehlt Ihnen?'** — What's wrong? → You say: 'Ich habe...'
+
+They need to know when it started:
+⏸️ **Predict...**
+→ **'Seit wann?'** — Since when? → You say: 'Seit...'
+
+They check for fever:
+→ **'Haben Sie Fieber?'** → 'Ja.' / 'Nein.'
+
+Medication check:
+→ **'Nehmen Sie Medikamente?'** — Are you taking medication? → 'Nein.' / 'Ja, ich nehme...'
+
+Allergy check:
+→ **'Haben Sie Allergien?'** — Allergies? → 'Nein, keine Allergien.' / 'Ja, gegen...'
+
+*These 5 questions repeat in EVERY doctor visit. Learn them once, use them forever.*
+
+🎯 **EXAM TIP:** In Hören, doctor dialogues are common. Know these question patterns and you can predict what's being asked even when you miss a word!"
+
+---
+
+## Section 6: Golden Dialogue — Fill in the Patient (6:00–8:00)
+
+### Visual: [DIALOGUE: Doctor (D) and Patient (P) — patient lines BLANK initially]
+### Narration: [ENERGY: role-play, active]
+
+"The full doctor visit. But I'll play the doctor — YOU fill in the patient's lines.
 
 **D:** Guten Tag! Nehmen Sie bitte Platz. Was fehlt Ihnen?
-**P:** Guten Tag. Ich habe starke Kopfschmerzen und Halsschmerzen.
+
+⏸️ **You have a bad headache and sore throat. What do you say?**
+
+**P:** ___
+→ 'Ich habe starke Kopfschmerzen und Halsschmerzen.'
+
 **D:** Seit wann haben Sie die Schmerzen?
-**P:** Seit zwei Tagen.
+
+⏸️ **It's been two days. Say it!**
+
+**P:** ___
+→ 'Seit zwei Tagen.'
+
 **D:** Haben Sie auch Fieber?
-**P:** Ja, seit gestern. 38 Grad.
+
+⏸️ **Yes, since yesterday. 38 degrees.**
+
+**P:** ___
+→ 'Ja, seit gestern. 38 Grad.'
+
 **D:** Nehmen Sie Medikamente?
-**P:** Nein, noch nicht.
+
+**P:** 'Nein, noch nicht.'
+
 **D:** Haben Sie Allergien?
-**P:** Nein, keine Allergien.
+
+**P:** 'Nein, keine Allergien.'
+
 **D:** Gut. Machen Sie bitte den Mund auf. ... Okay, Sie haben eine Erkältung. Ich verschreibe Ihnen ein Medikament. Nehmen Sie es dreimal täglich.
-**P:** Dreimal täglich. Okay. Danke, Herr Doktor.
+
+**P:** 'Dreimal täglich. Okay. Danke, Herr Doktor.'
+
 **D:** Gute Besserung!
-**P:** Danke! Auf Wiedersehen.
 
-### Visual: [SLIDE: Key phrases highlighted]
-"Let's break down the important parts:"
+**P:** 'Danke! Auf Wiedersehen.'
 
-- **"Nehmen Sie bitte Platz."** = Please take a seat. *Standard politeness.*
-- **"Was fehlt Ihnen?"** = What's wrong?
-- **"starke Kopfschmerzen"** = severe headache. *'stark' = strong/severe.*
-- **"Machen Sie bitte den Mund auf."** = Please open your mouth.
-- **"Ich verschreibe Ihnen..."** = I'll prescribe you...
-- **"dreimal täglich"** = three times daily.
-- **"Gute Besserung!"** = Get well soon! *Very common, memorize this!*
-
-🔊 Now let's repeat the patient's lines together:
-🔊 "Ich habe starke Kopfschmerzen und Halsschmerzen."
-🔊 "Seit zwei Tagen."
-🔊 "Ja, seit gestern. 38 Grad."
-🔊 "Nein, keine Allergien."
-
-⏸️ "Now role-play: YOU are the patient. Answer each question."
+**Key phrases from the doctor:**
+- **'Machen Sie den Mund auf.'** = Open your mouth.
+- **'Ich verschreibe Ihnen...'** = I'll prescribe you...
+- **'dreimal täglich'** = three times daily.
+- **'Gute Besserung!'** = Get well soon! *Memorize this — use it when ANYONE is sick!*"
 
 ---
 
-## Section 5: Pharmacy Survival Phrases (7:30–8:30)
+## Section 7: Pharmacy + Sick Message (8:00–9:30)
 
-### Visual: [SLIDE: At the Apotheke]
-### Narration:
+### Visual: [SPLIT: Apotheke phrases left, sick message template right]
+### Narration: [ENERGY: practical, brisk]
 
-"After the doctor, you go to the Apotheke — pharmacy. Quick survival phrases:"
+"After the doctor — the Apotheke (pharmacy). Three phrases:
 
-**[A1-SAFE] Pharmacy patterns:**
-- "Ich habe ein Rezept." = I have a prescription.
-- "Haben Sie etwas gegen Kopfschmerzen?" = Do you have something for headaches?
-- "Ich brauche Schmerztabletten." = I need painkillers.
+- **'Ich habe ein Rezept.'** = I have a prescription.
+- **'Haben Sie etwas gegen Kopfschmerzen?'** = Do you have something for headaches?
+- **'Ich brauche Schmerztabletten.'** = I need painkillers.
 
-"*'Apotheke' and 'Drogerie' are different in Germany! Apotheke = medicine. Drogerie (like dm, Rossmann) = shampoo, toothpaste, but NO prescription medicine.*"
+[LIFE-TIP] Germany: you can't buy most medicines at a supermarket. Apotheke (green cross sign) only!
 
-[LIFE-TIP] In Germany, you can't buy most medicines at a supermarket. You MUST go to an Apotheke (green cross sign).
+**Now — the sick message.** You can't go to class or work. This is also Schreiben Teil 2 practice:
 
----
-
-## Section 6: Writing a Sick Message + Summary (8:30–10:00)
-
-### Visual: [SLIDE: Short sick message template]
-### Narration:
-
-📝 **Bonus: Writing a sick note (useful for Schreiben too!)**
-
-"If you're sick and can't attend class or work:"
-
+[SLIDE: Template]
 ```
 Sehr geehrte Frau [Name],
 
@@ -184,24 +237,33 @@ Mit freundlichen Grüßen
 [Your Name]
 ```
 
-"*This is a REAL message you'll need in Germany. And it's also a perfect Schreiben Teil 2 practice!*"
+⏸️ **Write YOUR version now. Change the symptoms. Change the name. This is a real message you'll need in Germany AND a Schreiben exercise.**"
 
-⏸️ "Write your own sick message. Change the symptoms and the greeting."
+---
+
+## Section 8: Lock It In — Recall & Outro (9:30–10:00)
 
 ### Visual: [SLIDE: 3 Takeaways]
-🎯 **3 Things to Remember:**
-1. Symptoms: "Ich habe ___schmerzen" + "Mir ist ___" + "seit ___"
-2. Doctor questions follow a predictable pattern — learn them and you're ready for any visit AND Hören exercises.
-3. "Gute Besserung!" = Get well soon — use it when ANYONE is sick!
+### Narration: [ENERGY: confident, motivating]
 
-"Next: the full doctor visit dialogue practice and role-play! Bis dann! Tschüss!"
+"⚡ **Final drill:**
+- Headache for 2 days? → ... 'Ich habe seit zwei Tagen Kopfschmerzen!'
+- Nauseous? → ... 'Mir ist schlecht!'
+- Doctor says 'Gute Besserung!' — what does it mean? → ... Get well soon!
+
+🎯 **3 Things to Remember:**
+1. **'Ich habe ___schmerzen'** + **'Mir ist ___'** = your two symptom patterns.
+2. **seit + time** = when it started. Combine with any symptom.
+3. **'Gute Besserung!'** — say it to anyone who's sick. Germans love it.
+
+Next: the full doctor visit role-play — you'll handle the ENTIRE appointment solo. Bis dann! Tschüss!"
 
 ## Post-roll
-[Next lesson teaser: v10-3-1 — Doctor Visit Golden Dialogue (full role-play)]
+[Next lesson teaser: v10-3-1 — Doctor Visit Golden Dialogue]
 
 ---
 
 ## Exercise Tie-ins
 - **Patterns trained:** Ich habe ___schmerzen, Mir ist ___, seit ___, doctor Q&A pairs, pharmacy requests, sick message writing
-- **Exercise types needed:** symptom matching, dialogue ordering, doctor Q&A role-play, dictation from doctor dialogue, free-text sick message, speaking drill (describe symptoms for 1 minute)
+- **Exercise types needed:** symptom matching, dialogue gap-fill, doctor Q&A role-play, dictation from doctor dialogue, free-text sick message, speaking drill (describe symptoms for 1 minute)
 - **Production outcome:** Student can describe 6+ symptoms with duration, respond to standard doctor questions, write a short sick-day message

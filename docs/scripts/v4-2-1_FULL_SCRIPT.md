@@ -1,260 +1,257 @@
-# v4-2-1 — How People Look (Describing People)
+# v4-2-1 — How People Look: Describing People (FULL SCRIPT)
 
 > **Module:** 4 — My Family & People (Meine Familie)
 > **Lesson:** 4-2 — Describing People
-> **Duration:** ~12 minutes
-> **Exam relevance:** Sprechen (describing people), Lesen (person descriptions)
-> **Prerequisites:** Module 4 Lesson 1 (family vocabulary), basic articles
-> **Status:** 🔄 DRAFT
-> **Created:** 2026-03-23 (overnight cron)
+> **Duration:** ~11 minutes (trimmed from 12)
+> **Exam relevance:** Sprechen Teil 1 (describing family/people), Lesen (person descriptions)
+> **Prerequisites:** Module 4-1 (family vocabulary), basic articles
+> **Status:** REVISED — v2.0
+> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
-## Script
+## Revision Notes (v1.0 → v2.0)
 
-### Scene 1: Pre-roll (0:00–0:15)
-**[BRANDING]**
-
----
-
-### Scene 2: Hook (0:15–1:00)
-**[SLIDE: Two cartoon silhouettes — one tall, one short, both with question marks]**
-
-**Narrator:**
-> "Ningalude best friend-ne describe cheyyaan parayumbol entha parayuka? Tall? Short? Funny hair? In this lesson, we'll learn how to describe ANY person in German — appearance AND personality. After this, you can describe your Amma, your best friend, or even your favourite cricketer. In German. Let's go!"
-
----
-
-### Scene 3: Height & Age Opposites (1:00–2:30)
-**[TABLE: Opposites with icons]**
-
-| German | Meaning | Malayalam hint |
-|--------|---------|---------------|
-| groß | tall / big | valiya |
-| klein | short / small | cheriya |
-| alt | old | praayamulla |
-| jung | young | cheruppa |
-
-**Narrator:**
-> "German loves opposites. Let's start with the four most important ones for describing people."
->
-> "groß — tall, or big. 'Er ist groß.' — He is tall."
-> ⏸️ **[Repeat after me: 'Er ist groß.']**
->
-> "klein — short, or small. 'Sie ist klein.' — She is short."
-> ⏸️ **[Repeat: 'Sie ist klein.']**
->
-> "alt — old. 'Mein Großvater ist alt.' — My grandfather is old."
-> "jung — young. 'Mein Bruder ist jung.' — My brother is young."
-> ⏸️ **[Repeat both]**
->
-> "Notice: we use 'ist' — 'is' — for ALL of these. Simple!"
+| Change | Detail |
+|--------|--------|
+| Hook tightened | 45s → 30s, opens with a challenge, not a question |
+| Vocab taught in teach-3-drill cycles | Was big table dumps → now small groups with immediate practice |
+| ist/hat pattern introduced earlier | Was Scene 7 → now woven in from Scene 3 |
+| Hair + Eyes merged into one tighter section | Was 2 separate sections → combined with shared drill |
+| Personality split rebalanced | Positive traits: 5 most useful (cut 3), negative: 3 (cut 1) |
+| Complete description built incrementally | Students add one layer at a time, not given the full model cold |
+| Famous people practice made specific | Named example, not vague "describe someone" |
+| Energy cues added | Every section has `[ENERGY:]` markers |
+| ~10% duration reduction | Redundant vocab cut, drills tightened |
 
 ---
 
-### Scene 4: Build & Body (2:30–3:30)
-**[TABLE: Body build adjectives]**
+## Pre-roll (0:00–0:10)
 
-| German | Meaning | Note |
-|--------|---------|------|
-| schlank | slim | ✅ Safe to use |
-| sportlich | athletic | ✅ Compliment |
-| dick | fat/heavy | ⚠️ Can be rude! |
-| dünn | thin/skinny | ⚠️ Can sound critical |
-
-**Narrator:**
-> "Body descriptions — be CAREFUL here!"
->
-> "schlank — slim. 'Sie ist schlank.' This is a compliment."
-> "sportlich — athletic. 'Er ist sportlich.' Also a compliment."
->
-> "Now the tricky ones: dick means fat, and dünn means thin. Both exist, but in polite conversation, avoid calling someone 'dick' to their face. Same as in Malayalam — ningal aareyenkilum 'thadi' ennu direct aayi vilikkyillallo? 😄"
->
-> "Safe rule: use schlank and sportlich freely. Use dick and dünn only when describing someone who isn't present."
+### Visual: [Course intro animation / Adipoli German branding]
+### Narration:
+"Willkommen bei Adipoli German!"
 
 ---
 
-### Scene 5: Hair (3:30–5:30)
-**[SLIDE: Hair types with colour labels]**
+## Section 1: Hook — Describe in 5 Sentences (0:10–0:40)
 
-**Narrator:**
-> "die Haare — hair. Always plural in German when talking about someone's hair!"
->
-> "Colour first:"
-> **[TABLE appears row by row]**
-> "schwarze Haare — black hair. 'Nammalkkokke schwarze Haare alle? Almost every Malayali!' 😄"
-> "braune Haare — brown hair."
-> "blonde Haare — blonde hair. Very common in Germany."
-> "rote Haare — red hair. 'Red' hair in German is ROT, not 'orange'."
-> "graue Haare — grey hair."
->
-> ⏸️ **[Repeat each colour + Haare]**
->
-> "Now length:"
-> "lange Haare — long hair."
-> "kurze Haare — short hair."
-> "lockige Haare — curly hair."
-> "glatte Haare — straight hair."
->
-> "How do we say it? With 'hat' — has."
-> "'Er hat schwarze Haare.' — He has black hair."
-> "'Sie hat lange blonde Haare.' — She has long blonde hair."
->
-> ⏸️ **[Repeat: 'Sie hat lange blonde Haare.']**
->
-> "Important grammar note: see that little '-e' at the end? schwarzE Haare, langE Haare? When adjectives come before plural nouns, they usually get an '-e'. Don't worry too much about WHY yet — just copy the pattern."
+### Visual: [SLIDE: Silhouette of a person with "? ? ? ? ?" floating around, "👤 Beschreibung"]
+### Narration: [ENERGY: challenge mode]
+"By the end of this lesson, you'll describe ANY person in 5 German sentences. Appearance. Hair. Eyes. Personality. One extra detail.
+
+That's enough to impress any examiner in Sprechen Teil 1.
+
+*Ningalude amma, best friend, favourite cricketer — aareneyum describe cheyyaam.* Five sentences. Let's build them."
 
 ---
 
-### Scene 6: Eyes (5:30–6:30)
-**[SLIDE: Eye colours]**
+## Section 2: Layer 1 — ist (Appearance) (0:40–2:00)
 
-**Narrator:**
-> "die Augen — eyes. Also plural."
->
-> "blaue Augen — blue eyes. Very common in Germany."
-> "braune Augen — brown eyes. 'That's us!' 😄"
-> "grüne Augen — green eyes."
->
-> "'Er hat braune Augen.' — He has brown eyes."
-> "'Sie hat grüne Augen und blonde Haare.' — She has green eyes and blonde hair."
->
-> ⏸️ **[Repeat: 'Sie hat grüne Augen und blonde Haare.']**
+### Visual: [TABLE: Opposites with icons, building row by row]
+### Narration: [ENERGY: steady, teach-drill]
 
----
+"Layer 1: how someone IS. We use **ist**.
 
-### Scene 7: The Two-Verb Pattern — ist + hat (6:30–8:00)
-**[SLIDE: Side-by-side diagram]**
+[SLIDE: First pair]
+- **groß** — tall/big | **klein** — short/small
 
-| Pattern | Use for | Example |
-|---------|---------|---------|
-| Er/Sie **ist** ... | general appearance (tall, old, slim) | Er ist groß und schlank. |
-| Er/Sie **hat** ... | features (hair, eyes) | Er hat schwarze Haare. |
+'Er ist groß.' — He is tall.
+'Sie ist klein.' — She is short.
 
-**Narrator:**
-> "This is THE key pattern for describing people in German. Two verbs: IST and HAT."
->
-> "IST — for how someone IS. Tall, short, old, young, slim, athletic."
-> "'Er ist groß.' 'Sie ist jung.'"
->
-> "HAT — for what someone HAS. Hair, eyes, features."
-> "'Er hat schwarze Haare.' 'Sie hat blaue Augen.'"
->
-> "Now combine them!"
-> "'Er ist groß und schlank. Er hat schwarze Haare und braune Augen.'"
->
-> ⏸️ **[Repeat the full combined sentence]**
->
-> "'Sie ist klein und sportlich. Sie hat lange braune Haare und grüne Augen.'"
->
-> ⏸️ **[Repeat]**
->
-> "That's literally four sentences about one person — and you sound like you know German! This is exactly what you need for the speaking exam."
+🔊 **Repeat:** 'Er ist groß. Sie ist klein.'
+
+[SLIDE: Second pair]
+- **alt** — old | **jung** — young
+
+'Mein Großvater ist alt.' 'Mein Bruder ist jung.'
+
+[SLIDE: Third pair]
+- **schlank** — slim ✅ | **sportlich** — athletic ✅
+
+These are safe compliments. Use freely!
+
+⚠️ **dick** (fat) and **dünn** (skinny) exist — but be careful. *Ningal aareyenkilum 'thadi' ennu direct aayi vilikkyillallo? Same rule in German.* 😄
+
+⏸️ **Combine two: 'Sie ist ___ und ___.' Example: 'Sie ist groß und schlank.' Your turn — pick 2 and say it!**
+
+That's your first sentence about any person. ✅"
 
 ---
 
-### Scene 8: Personality — Positive Traits (8:00–9:30)
-**[TABLE: Positive personality adjectives]**
+## Section 3: Layer 2 — hat (Hair & Eyes) (2:00–4:00)
 
-| German | Meaning | Malayalam parallel |
-|--------|---------|-------------------|
-| nett | nice | nalla |
-| freundlich | friendly | snēhapūrvam |
-| lustig | funny | rasikkan |
-| intelligent | intelligent | budhhimaan |
-| fleißig | hard-working | kashtappedunna |
-| ehrlich | honest | neruḷḷa |
-| hilfsbereit | helpful | sahāyasannaddha |
-| geduldig | patient | kshamayuḷḷa |
+### Visual: [SLIDE: Hair colours and types, eye colours]
+### Narration: [ENERGY: visual, pattern-building]
 
-**Narrator:**
-> "Now the fun part — personality! WHO someone is, not just how they look."
->
-> "nett — nice. The most common compliment in German. 'Sie ist nett.'"
-> "freundlich — friendly. Comes from 'Freund' — friend! Easy to remember."
-> "lustig — funny. 'Mein Bruder ist sehr lustig.' — My brother is very funny."
-> "intelligent — same as English! 'Sie ist sehr intelligent.'"
->
-> ⏸️ **[Repeat each]**
->
-> "Now my FAVOURITE German word for Malayalis: fleißig — hard-working. Germans REALLY respect this quality. Call a German fleißig and they BEAM. It's like calling someone 'kashtappedunna nalla aallu' — the highest praise!"
->
-> "ehrlich — honest. hilfsbereit — helpful, literally 'help-ready'. geduldig — patient."
->
-> "Same pattern: 'Er ist fleißig.' 'Sie ist freundlich und hilfsbereit.'"
+"Layer 2: what someone HAS. We use **hat**.
 
----
+**Hair colours — die Haare (always plural!):**
+[SLIDE: Colours appear]
+- **schwarze Haare** — black hair. *Nammalkkokke!* 😄
+- **braune Haare** — brown hair.
+- **blonde Haare** — blonde. Very common in Germany.
+- **graue Haare** — grey hair.
 
-### Scene 9: Personality — Negative Traits (9:30–10:00)
-**[TABLE: Negative personality adjectives, flagged ⚠️]**
+**Hair types:**
+- **lange Haare** — long | **kurze Haare** — short
+- **lockige Haare** — curly | **glatte Haare** — straight
 
-| German | Meaning |
-|--------|---------|
-| faul | lazy |
-| langweilig | boring |
-| streng | strict |
-| ungeduldig | impatient |
+The sentence: **'Er hat schwarze Haare.'** — He has black hair.
+Combine: **'Sie hat lange blonde Haare.'** — She has long blonde hair.
 
-**Narrator:**
-> "The negative side — use carefully, just like in any language! 😄"
->
-> "faul — lazy. The opposite of fleißig."
-> "langweilig — boring. 'Der Film ist langweilig.'"
-> "streng — strict. Good for teachers! 'Mein Lehrer ist streng.'"
-> "ungeduldig — impatient. See the 'un-' prefix? Like English 'un-patient'! geduldig → UNgeduldig."
+🔊 **Repeat:** 'Sie hat lange blonde Haare.'
+
+*Notice the '-e' endings? schwarzE, langE, blondE — adjectives before plural nouns get '-e'. Don't overthink it — just copy the pattern.*
+
+**Eyes — die Augen (also plural!):**
+- **braune Augen** — brown. *That's us!*
+- **blaue Augen** — blue. Common in Germany.
+- **grüne Augen** — green.
+
+'Er hat braune Augen.'
+
+⏸️ **Now combine hair + eyes in ONE sentence: 'Sie hat ___ Haare und ___ Augen.' Describe someone you know!**
+
+Example: 'Sie hat lange schwarze Haare und braune Augen.' ✅
+
+Two layers done. ist + hat. Let's add personality."
 
 ---
 
-### Scene 10: Complete Person Description (10:00–11:00)
-**[SLIDE: Model description with highlighting]**
+## Section 4: Layer 3 — Personality (Positive) (4:00–5:30)
 
-**Narrator:**
-> "Let's put EVERYTHING together. Here's how to describe one person completely:"
->
-> **[Text appears line by line]**
-> "'Meine Schwester heißt Anjali.'"
-> "'Sie ist groß und schlank.'"
-> "'Sie hat lange schwarze Haare und braune Augen.'"
-> "'Sie ist sehr intelligent und freundlich.'"
-> "'Sie ist auch sehr fleißig — sie arbeitet als Krankenschwester.'"
->
-> "FIVE sentences. That's a complete person description. Name → appearance → features → personality → one extra detail."
->
-> ⏸️ **[Now YOU try. Describe one family member: 4–5 sentences. Pause the video and write or speak it.]**
+### Visual: [TABLE: 5 positive traits with Malayalam parallels]
+### Narration: [ENERGY: warm, engaging]
 
----
+"Layer 3: WHO someone is. Still uses **ist**.
 
-### Scene 11: Practice — Describe Famous People (11:00–11:30)
-**[SLIDE: Silhouettes of famous figures]**
+Five most useful personality words:
 
-**Narrator:**
-> "Fun practice! Describe someone famous:"
->
-> "'Sachin Tendulkar ist klein und sportlich. Er hat schwarze Haare. Er ist sehr fleißig und intelligent.'"
->
-> "Your turn — describe a Bollywood actor, a cricketer, or your favourite teacher!"
->
-> ⏸️ **[Pause and try]**
+| German | Meaning | Why it matters |
+|--------|---------|----------------|
+| **nett** | nice | Most common German compliment |
+| **freundlich** | friendly | From 'Freund' = friend! |
+| **lustig** | funny | *rasikan!* |
+| **intelligent** | intelligent | Same as English |
+| **fleißig** | hard-working | *This is the highest German praise!* |
+
+*'fleißig' — Germans RESPECT this quality above almost everything. Call someone fleißig and they beam. 'kashtappedunna nalla aalu' — that's fleißig.*
+
+🔊 **Repeat:** 'nett... freundlich... lustig... intelligent... fleißig...'
+
+'Sie ist nett und freundlich.'
+'Er ist sehr fleißig.'
+
+⏸️ **Pick 2 traits for someone you know. Say: 'Er/Sie ist ___ und ___.'**"
 
 ---
 
-### Scene 12: Exam Connection + Outro (11:30–12:00)
-**[EXAM-TIP box]**
+## Section 5: Personality (Negative) — Quick (5:30–6:00)
 
-**Narrator:**
-> "Exam tip! In Sprechen Teil 1, if the examiner asks about your family, describing ONE member well is better than listing five names. Use ist + hat + personality. Four good sentences about one person beats eight boring sentences about four people."
->
-> "In the next lesson, we unlock the grammar that holds ALL of this together — possessive pronouns. Mein, dein, sein, ihr — whose is it? Bis dann!"
+### Visual: [TABLE: 3 negative traits, ⚠️ flagged]
+### Narration: [ENERGY: quick, cautionary]
+
+"The other side — use carefully:
+
+- **faul** — lazy. Opposite of fleißig.
+- **langweilig** — boring.
+- **streng** — strict. *Good for teachers!*
+
+'Mein Lehrer ist streng.' 'Der Film ist langweilig.'
+
+Notice: **un**geduldig (impatient) = 'un-' prefix, like English 'un-patient'. *Pattern!*
+
+Quick section. Moving on."
 
 ---
 
-## Checklist
+## Section 6: Build the Complete Description (6:00–8:00)
 
-- [x] Teaching goal clear: describe people using appearance + personality vocabulary
-- [x] A1 exam connection: Sprechen Teil 1 (family/person descriptions)
-- [x] Malayalam bridges: schwarze Haare, fleißig ↔ kashtappedunna, cultural parallels
-- [x] Common Malayali errors addressed: adjective endings, polite vs rude body descriptions
-- [x] Production opportunities: describe family members, describe famous people
-- [x] Key pattern: ist (appearance) + hat (features) two-verb system
-- [x] Connects to Module 4-1 (family) and forward to 4-3 (possessives)
-- [x] Emotional engagement: famous people practice, Kerala humor
+### Visual: [SLIDE: Model builds layer by layer]
+### Narration: [ENERGY: building to climax, structured]
+
+"Now we stack ALL 3 layers. Watch how 5 sentences describe one person completely:
+
+[TEXT appears line by line, each layer colour-coded]
+
+**Layer 0 — Name:**
+'Meine Schwester heißt Anjali.' *(who)*
+
+**Layer 1 — ist (appearance):**
+'Sie ist groß und schlank.' *(how she looks)*
+
+**Layer 2 — hat (features):**
+'Sie hat lange schwarze Haare und braune Augen.' *(features)*
+
+**Layer 3 — ist (personality):**
+'Sie ist sehr intelligent und freundlich.' *(who she is)*
+
+**Layer 4 — Extra detail:**
+'Sie arbeitet als Krankenschwester.' *(one more fact)*
+
+Five sentences. Name → appearance → features → personality → extra detail. That's a complete person.
+
+⏸️ **YOUR TURN. Pause the video. Describe one family member in 4-5 sentences. Write or speak — your choice.**
+
+*Take 30 seconds. This is your Sprechen Teil 1 answer.*"
+
+---
+
+## Section 7: Practice — Sachin & You (8:00–9:15)
+
+### Visual: [SLIDE: Cricket bat icon + description template]
+### Narration: [ENERGY: playful, practice-mode]
+
+"Let me do one more, then you:
+
+'Sachin Tendulkar ist klein und sportlich.
+Er hat schwarze Haare und braune Augen.
+Er ist sehr fleißig und intelligent.
+Er kommt aus Indien.'
+
+⏸️ **Your turn: describe a Bollywood actor, a cricketer, or your best friend. 4 sentences minimum. Go!**
+
+Use the formula:
+1. Name → heißt / ist
+2. Appearance → ist + 2 adjectives
+3. Features → hat + Haare + Augen
+4. Personality → ist + 2 traits"
+
+---
+
+## Section 8: Exam Tip + Outro (9:15–11:00)
+
+### Visual: [EXAM-TIP box]
+### Narration: [ENERGY: strategic, motivating]
+
+"⚡ **Final recall drill:**
+- Tall = ? ... groß! Short = ? ... klein!
+- Black hair = ? ... schwarze Haare!
+- Hard-working = ? ... fleißig!
+- The two verbs for descriptions? ... **ist** and **hat**!
+
+🎯 **Exam tip:** In Sprechen Teil 1, describing ONE family member well beats listing five names. Use:
+- 2 ist sentences (appearance + personality)
+- 1 hat sentence (hair/eyes)
+- 1 extra detail
+
+Four good sentences about one person > eight boring sentences about four people.
+
+### Visual: [SLIDE: 3 Takeaways]
+🎯 **3 Things to Remember:**
+1. **ist** = how someone IS (groß, jung, nett). **hat** = what someone HAS (Haare, Augen).
+2. Adjective + '-e' before plural nouns: schwarz**e** Haare, braun**e** Augen. Copy the pattern.
+3. **fleißig** = the highest German compliment. Use it!
+
+Next: possessive pronouns — mein, dein, sein, ihr. The grammar that connects everything. Bis dann!"
+
+## Post-roll
+[Next lesson teaser: v4-3-1 — Possessive Pronouns]
+
+---
+
+## Exercise Tie-ins
+- **Patterns trained:** Er/Sie ist ___, Er/Sie hat ___ Haare und ___ Augen, ist (personality), 5-sentence person description
+- **Exercise types needed:** adjective matching (opposites), ist vs hat gap-fill, hair/eye description from photos, personality adjective quiz, full person description (speaking 1-min), peer description exchange
+- **Production outcome:** Student can describe any person in 4-5 structured sentences using appearance, features, and personality vocabulary
