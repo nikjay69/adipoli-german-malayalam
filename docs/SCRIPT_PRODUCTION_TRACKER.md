@@ -25,8 +25,8 @@
 |----------|--------|--------|-------|--------|------|
 | v18-1-1 | 18 | 18-1 | Schreiben Teil 1: Form Filling | 🔄 DRAFT | `docs/scripts/v18-1-1_FULL_SCRIPT.md` |
 | v18-2-1 | 18 | 18-2 | Schreiben Teil 2: Short Messages | 🔄 DRAFT | `docs/scripts/v18-2-1_FULL_SCRIPT.md` |
-| v18-3-1 | 18 | 18-3 | Sprechen Teil 1: Self-Introduction | 📐 ARCH | Wave 1 doc |
-| v18-4-1 | 18 | 18-4 | Sprechen Teil 2 & 3: Questions & Requests | 📐 ARCH | Wave 1 doc |
+| v18-3-1 | 18 | 18-3 | Sprechen Teil 1: Self-Introduction | 🔄 DRAFT | `docs/scripts/v18-3-1_FULL_SCRIPT.md` |
+| v18-4-1 | 18 | 18-4 | Sprechen Teil 2 & 3: Questions & Requests | 🔄 DRAFT | `docs/scripts/v18-4-1_FULL_SCRIPT.md` |
 | v18-5-1 | 18 | 18-5 | Full Mock Exam Tips | 📐 ARCH | Wave 1 doc |
 | v17-1-1 | 17 | 17-1 | Exam Format Overview & Tips | 📐 ARCH | Wave 1 doc |
 | v17-2-1 | 17 | 17-2 | Hören Practice | 📐 ARCH | Wave 1 doc |
@@ -120,14 +120,14 @@
 
 | Category | Count |
 |----------|-------|
-| Full scripts (🔄 DRAFT or ✅ DONE) | **2** |
+| Full scripts (🔄 DRAFT or ✅ DONE) | **4** |
 | Scene architectures (📐 ARCH) | **~60** |
 | Outline only (⬜) | **0** — all now have at least architecture |
 
 ## Next Scripts to Write (Priority Order)
 
-1. **v18-3-1** — Sprechen Teil 1: Self-Introduction (golden script students memorize)
-2. **v18-4-1** — Sprechen Teil 2 & 3: Questions & Requests
+1. ~~**v18-3-1** — Sprechen Teil 1: Self-Introduction~~ ✅ DRAFTED
+2. ~~**v18-4-1** — Sprechen Teil 2 & 3: Questions & Requests~~ ✅ DRAFTED
 3. **v14-1-1** — Anmeldung form walkthrough (practical + exam)
 4. **v2-1-1** — What's Your Name? (foundation for all self-intro)
 5. **v5-1-1** — How German Verbs Work (grammar backbone)
@@ -135,4 +135,4 @@
 
 ---
 
-*Track updated by overnight cron 2026-03-23.*
+*Track updated by overnight cron 2026-03-23 04:27 UTC — added v18-3-1 and v18-4-1 drafts.*
