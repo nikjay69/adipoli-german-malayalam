@@ -2,7 +2,7 @@
 
 > Master planning doc: teaching goals, A1 exam relevance, lesson/video script needs, essential outcomes, and future script direction for each module.
 >
-> **Last updated:** 2026-03-23 02:00 UTC (overnight cron — modules 1–18 blueprints + Wave 3 architecture complete)
+> **Last updated:** 2026-03-23 03:00 UTC (overnight cron — modules 1–18 blueprints + Wave 4 architecture complete)
 
 ---
 
@@ -759,7 +759,7 @@ Based on A1 exam impact, the recommended script creation order is:
 | Wave 1 | 18, 17, 2, 14 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE1.md` | Not started |
 | Wave 2 | 5, 13, 3 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE2.md` | Not started |
 | Wave 3 | 6, 9, 10, 4 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE3.md` | Not started |
-| Wave 4 | 1, 7, 8, 11, 12 | Not started | Not started |
+| Wave 4 | 1, 7, 8, 11, 12 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE4.md` | Not started |
 | Wave 5 | 15, 16 | Not started | Not started |
 
-*Next overnight session should: build Wave 4 script architectures (Modules 1, 7, 8, 11, 12 — supporting content) OR begin writing the first full script for Module 18 Lesson 18-1 v18-1-1 (form-filling — highest exam ROI). Consider also piloting a golden dialogue full script (Module 6 restaurant or Module 10 doctor).*
+*Next overnight session should: build Wave 5 script architectures (Modules 15, 16 — culture + A1+ bridge) to complete the full architecture, OR begin writing the first full script for Module 18 Lesson 18-1 v18-1-1 (form-filling — highest exam ROI). Consider also piloting a golden dialogue full script (Module 6 restaurant or Module 10 doctor). Wave 4 completed 2026-03-23.*
