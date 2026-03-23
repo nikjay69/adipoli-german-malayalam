@@ -1,5 +1,55 @@
 # Overnight Run Log — 2026-03-23
 
+## Run 6 — 12:45 UTC
+**Session:** Cron overnight module plan + script architecture (sixth run)
+**Focus:** Enrich thinner per-module planning docs so every module plan has a clear teaching blueprint, exam map, script direction, outcomes, and next-step architecture
+**Status:** ✅ 3 module plans significantly expanded, tracker inconsistency corrected
+
+### Work Completed
+
+Expanded three of the thinner per-module planning docs in `docs/modules/` to match the depth/structure of stronger plans like Modules 7–13:
+
+1. **MODULE_04_PLAN.md** — Module 4 (Family & People)
+   - Expanded from a short blueprint into a full launch plan
+   - Added: script status table, script priority assessment, measurable outcomes, production exercise gap analysis, audio requirements, concrete next steps, golden family/person-description dialogues, common Malayali learner error list, cross-module feed-forward, Malayalam bridge points, and recommended vocabulary additions
+   - Key architectural emphasis: articles + possessives must be taught THROUGH emotionally meaningful family language, not as abstract grammar only
+
+2. **MODULE_06_PLAN.md** — Module 6 (Food & Drink)
+   - Expanded into a full interaction-focused launch plan
+   - Added: complete script status table including outline-stage lessons, detailed ordering/accusative patterns, measurable outcomes, production exercise matrix, audio requirements, concrete next steps, café/restaurant/food-description templates, Malayali learner error list, cross-module links, Malayalam bridge points, and recommended vocabulary additions
+   - Key architectural emphasis: Module centerpiece is the golden restaurant dialogue + accusative through food ordering; Kerala food explanation is now framed as both engagement and speaking-value content
+
+3. **MODULE_14_PLAN.md** — Module 14 (Formal Life in Germany)
+   - Expanded from a concise plan into a high-detail exam/practical-survival blueprint
+   - Added: script status table, expanded 16-field mastery table, measurable outcomes, production exercise matrix, audio requirements, concrete next steps, golden office/bank/formal-email templates, official-letter reading model, common learner errors, cross-module feed-forward, Malayalam bridge points, needed form-template variations, and vocabulary additions
+   - Key architectural emphasis: this module now clearly functions as the direct bridge from Modules 2/3/4/11 into Goethe Schreiben Teil 1 + real German bureaucracy survival
+
+### Corrections Applied
+- **SCRIPT_PRODUCTION_TRACKER.md:** corrected Module 12 tracker entries so `v12-2-1` and `v12-3-1` are marked as `🔄 DRAFT` with file paths, matching the actual scripts present in `docs/scripts/`
+
+### Key Strategic Insight from This Run
+The repo already had broad module-level planning coverage, but documentation quality was uneven. Modules 4, 6, and 14 were structurally thinner than Modules 7–13. This run reduced that inconsistency by bringing those plans up to the same standard:
+- explicit script status + priority
+- measurable outcomes
+- production/audio gap mapping
+- golden dialogue/templates
+- Malayalam-aware error prevention
+- concrete next-step architecture
+
+### Files Updated This Run
+- `docs/modules/MODULE_04_PLAN.md`
+- `docs/modules/MODULE_06_PLAN.md`
+- `docs/modules/MODULE_14_PLAN.md`
+- `docs/SCRIPT_PRODUCTION_TRACKER.md`
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Follow-up candidates for next run
+1. Enrich **MODULE_05_PLAN.md** further to match the new depth standard if needed (already decent, but still thinner than Modules 7–13)
+2. Review **MODULE_01_PLAN.md** and **MODULE_02_PLAN.md** against the same template for consistency
+3. Do a consistency pass across `docs/modules/INDEX.md` and module plans so all script counts/status notes align exactly with `docs/scripts/`
+
+---
+
 ## Run 5 — 11:45 UTC
 **Session:** Cron overnight module plan + script architecture (fifth run)
 **Focus:** Per-module launch plans — bridging the gap between "scripts done" and "launch-ready"

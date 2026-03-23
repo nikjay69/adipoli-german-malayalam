@@ -1,118 +1,223 @@
-# Module 04: My Family & People (Meine Familie)
+# Module 04: My Family & People (Meine Familie) — Launch Plan
 
-## Teaching Goal
-After this module, students should be able to **name family members with correct articles**, **describe people's appearance and personality**, **use possessive pronouns** (mein/dein/sein/ihr), **handle der/die/das with common nouns**, and **talk about their family** in 4-5 simple sentences. This module introduces the article system through emotionally meaningful content.
+> **Last updated:** 2026-03-23 12:45 UTC (overnight planning cron — enriched to match Module 7+ standard)
 
-## A1 Exam Relevance
+---
 
-| Exam Section | Relevance |
-|---|---|
-| **Sprechen** | Family is a classic self-presentation and conversation topic. Examiners ask "Erzählen Sie über Ihre Familie." |
-| **Schreiben** | Short messages and personal descriptions often mention family. Familienstand appears on forms. |
-| **Lesen** | Personal texts, social descriptions, and profiles feature family vocabulary. |
-| **Grammar** | Articles (der/die/das) and possessives are foundational across the ENTIRE A1 level — this is where they click or don't. |
+## Module Identity
 
-## Current Content Inventory
-
-- **Lessons:** 5
-  - 4-1: Family Members (Familienmitglieder)
-  - 4-2: Describing People (Menschen beschreiben)
-  - 4-3: Possessive Pronouns (Possessivpronomen)
-  - 4-4: Articles - der, die, das (Artikel)
-  - 4-5: Talking About Your Family (Über deine Familie sprechen)
+- **Position:** First grammar-heavy module — articles and possessives introduced through emotionally engaging family content
+- **Lessons:** 5 (Family Members, Describing People, Possessive Pronouns, Articles, Talking About Your Family)
 - **Videos:** 8
-- **Exercises:** 33 total
-  - Multiple-choice: 15
-  - Fill-blank: 11
-  - Matching: 4
-  - Ordering: 3
-  - Speaking: 0
-- **Vocabulary:** 44 items
-- **Scripts drafted:** 3 of 3 core scripts ✅ COMPLETE (v4-1-1, v4-2-1, v4-3-1)
-- **What's already strong:** Emotionally accessible topic, natural route into article awareness, Kerala extended family culture as teaching anchor, all core scripts drafted
+- **Exercises:** 33
+- **Vocabulary:** 44
+- **Scripts drafted:** 3/3 core scripts ✅ COMPLETE (v4-1-1, v4-2-1, v4-3-1)
 
-## Lesson/Video Script Needs
+---
 
-### Lesson 4-1: Family Members
-- **Core teaching points:** Mutter/Vater, Bruder/Schwester, Sohn/Tochter, Großeltern, Onkel/Tante, articles with family nouns, extended family vocabulary
-- **Script status:** v4-1-1 drafted ✅, v4-1-2 (Extended Family) has outline
-- **Priority:** HIGH — family vocab is core A1 content
-- **Key visual/audio needs:** Family tree diagram with articles, pronunciation recordings, photo-based family identification exercises
+## Teaching Goals & Exam Map
 
-### Lesson 4-2: Describing People
-- **Core teaching points:** Appearance (groß/klein, alt/jung, Haare, Augen), personality (nett/freundlich/lustig), adjective usage in simple sentences
-- **Script status:** v4-2-1 drafted ✅ (includes detailed script), v4-2-2 (Personality) has outline
-- **Priority:** HIGH — describing people feeds into Sprechen and reading comprehension
-- **Key visual/audio needs:** Character illustrations with labeled features, comparison visuals, personality adjective cards
+| Goal | Exam Section | Weight |
+|------|-------------|--------|
+| Name family members with correct articles | Sprechen, Lesen | **HIGH** |
+| Describe people (appearance + personality) | Sprechen Teil 2 | **HIGH** |
+| Use possessive pronouns (mein/dein/sein/ihr) | ALL sections | **CRITICAL** (grammar foundation) |
+| Handle der/die/das with common nouns | ALL sections | **CRITICAL** (lifelong German skill) |
+| Talk about family in 4-5 sentences | Sprechen Teil 1 | **HIGH** |
+| Say Familienstand for forms | Schreiben Teil 1 | HIGH |
+| Answer examiner questions about family | Sprechen Teil 2 | HIGH |
 
-### Lesson 4-3: Possessive Pronouns
-- **Core teaching points:** mein/meine, dein/deine, sein/seine, ihr/ihre, patterns with masculine/feminine/neuter nouns
-- **Script status:** v4-3-1 drafted ✅
-- **Priority:** HIGH — possessives are used constantly; weak control here cripples later output
-- **Key visual/audio needs:** Possessive pattern table animation, family context examples, error correction drills
+**A1 Exam Relevance: HIGH — Family description is a classic Sprechen topic. Articles and possessives are the grammar backbone across every skill. Familienstand appears on official forms (→ Module 14).**
 
-### Lesson 4-4: Articles - der, die, das
-- **Core teaching points:** The three genders, natural vs grammatical gender, common patterns/tips, article with family and everyday nouns
-- **Script status:** v4-4-1 has outline, v4-4-2 (Tips to Remember Articles) has outline
-- **Priority:** HIGH — THE hardest German concept for most learners; needs maximum support
-- **Key visual/audio needs:** Color-coded article system, pattern rule infographics, memory trick illustrations
+---
 
-### Lesson 4-5: Talking About Your Family
-- **Core teaching points:** Combining family vocab + possessives + articles + descriptions into connected speech, family presentation model
-- **Script status:** v4-5-1 has outline only
-- **Priority:** HIGH — capstone lesson that proves students can actually USE everything
-- **Key visual/audio needs:** Model family presentation recording, family photo description exercise, speaking prompt cards
+## Script Status
 
-## Essential Outcomes
-Students must be able to **produce** (not just recognize):
-1. Name all immediate family members with correct articles (die Mutter, der Vater, die Schwester, der Bruder)
-2. Use possessives correctly: "Meine Mutter heißt..." / "Mein Bruder ist..."
-3. Describe one family member in 3-4 sentences (appearance + personality + age)
-4. Say their Familienstand (ledig/verheiratet)
-5. Assign correct articles to at least 30 common nouns
-6. Answer "Haben Sie Geschwister?" / "Erzählen Sie über Ihre Familie" fluently
+| Video ID | Title | Status | Quality | Notes |
+|----------|-------|--------|---------|-------|
+| v4-1-1 | Family Members | 🔄 DRAFT | v2.0 ✅ | Includes article reinforcement, Kerala family comparisons |
+| v4-2-1 | Describing People | 🔄 DRAFT | v1.0 | Appearance + personality adjectives |
+| v4-3-1 | Possessive Pronouns | 🔄 DRAFT | v2.0 ✅ | mein/dein/sein/ihr patterns |
+| v4-4-1 | Articles - der, die, das | ⬜ OUTLINE | — | Article system overview |
+| v4-5-1 | Talking About Your Family | ⬜ OUTLINE | — | Capstone monologue/dialogue practice |
 
-## Gap Analysis
-- **No speaking exercises** (0/33) — family description is a speaking-heavy exam topic
-- **No free-text writing** — "Describe your family in 5 sentences" is missing
-- **Article practice is recognition-only** — needs production-based article drills
-- **Only 44 vocab items** — below average; could add more personality adjectives and extended family terms
-- **Possessive practice is thin** — needs more fill-in and transformation exercises
-- **No photo/image description exercises** — describing people from pictures is a key A1 skill
-- **Missing Familienstand vocabulary** (ledig, verheiratet, geschieden) — needed for forms
-- **No bridge to Module 14** (Familienstand on official forms)
+**Status: 3/5 scripts drafted. v4-4-1 and v4-5-1 are outline-only. Core teaching is covered; article system and capstone presentation need scripts.**
 
-## Future Script Direction
+### Script Priority Assessment
 
-### Suggested Narrative Approach
-- Use Kerala family culture as the emotional hook — "Nammude veedu pole thanne, German families-um oru unit aanu!"
-- Keep grammar embedded in family talk: learn articles THROUGH family nouns, not as abstract tables
-- Photo description format: "Look at this family photo — who is who?"
-- Build toward a mini family presentation as the module's final challenge
+| Priority | Video | Why | Estimated effort |
+|----------|-------|-----|-----------------|
+| **HIGH** | v4-4-1 | Articles are THE hardest German concept for most learners; needs maximum support | 30 min |
+| **HIGH** | v4-5-1 | Capstone output lesson; without it, Module 4 teaches but doesn't test speaking | 25 min |
 
-### Malayalam Bridge Points
-- **Extended family importance** — Kerala kudumbam concept maps well; German families are smaller but the vocabulary still exists
-- **Respect terms** — Malayalam has uncle/aunt distinctions (അമ്മാവൻ vs ചേട്ടൻ) that are more specific than German; simplification is good news
-- **Gender in language** — Malayalam has grammatical gender too (though less rigid); the concept isn't entirely foreign
-- **"Ninte amma engane und?" → "Wie geht es deiner Mutter?"** — natural conversation pattern
-- **Joint family vs nuclear family** — cultural comparison that teaches vocabulary naturally
+---
 
-### Key Example Sentences/Dialogues to Feature
+## Essential Learning Outcomes (Measurable)
+
+After completing Module 4, a learner should be able to:
+
+1. ✅ **Name immediate family:** die Mutter, der Vater, die Schwester, der Bruder, die Tochter, der Sohn
+2. ✅ **Name extended family:** die Großmutter, der Großvater, der Onkel, die Tante, der Cousin, die Cousine
+3. ✅ **Use possessives correctly:** "Meine Mutter heißt..." / "Mein Bruder ist..."
+4. ✅ **Describe one person in 3-4 sentences** (appearance + personality + age)
+5. ✅ **Say Familienstand:** ledig, verheiratet, geschieden, verwitwet
+6. ✅ **Assign correct articles to 30+ common nouns** (family, body, everyday objects)
+7. 🟡 **Complete a family presentation in speaking** — outlined but no production exercise
+8. 🟡 **Write a family description** — no free-text exercise
+9. ❌ **Understand a spoken family description** — no audio exercises
+10. ❌ **Describe a person from a picture** — no image-description exercise
+
+---
+
+## Production Exercise Gap Analysis
+
+| Spec ID | Exercise | Type | Status | Priority |
+|---------|----------|------|--------|----------|
+| 4-P1 | Family Description (5 sentences) | free-text | ❌ Not built | **CRITICAL** |
+| 4-P2 | Possessive Transformation | guided production | ❌ Not built | **HIGH** |
+| 4-P3 | Family Presentation | speaking (1 min) | ❌ Not built | **HIGH** |
+| 4-P4 | Family Dictation | dictation | ❌ Not built | MEDIUM |
+| 4-P5 | Article Production Drill | typed fill-in | ❌ Not built | **HIGH** |
+
+### Audio Requirements
+
+| Audio item | Content | Tool | Status |
+|------------|---------|------|--------|
+| Family description monologue | Model: "Meine Familie ist groß..." (60 seconds) | edge-tts | ❌ |
+| Family Q&A dialogue | Examiner asks about family, student answers | edge-tts | ❌ |
+| Person description | "Meine Schwester ist groß und hat schwarze Haare..." | edge-tts | ❌ |
+| Possessive drill audio | 10 sentences with mein/dein/sein/ihr for dictation | edge-tts | ❌ |
+| Article naming drill | 20 nouns with articles spoken clearly | edge-tts | ❌ |
+
+---
+
+## Concrete Next Steps (Priority Order)
+
+### Must-do before launch
+1. [ ] Build 4-P1 family description free-text exercise (5 sentences with rubric)
+2. [ ] Build 4-P5 article production drill (type der/die/das, not choose from MC)
+3. [ ] Build 4-P2 possessive transformation exercise (mein → dein → sein switching)
+4. [ ] Build 4-P3 family presentation speaking drill (1-minute recording with checklist)
+5. [ ] Generate edge-tts audio for family description model and article drill
+
+### Should-do for quality
+6. [ ] Draft v4-4-1 (articles system overview — article tips, patterns, memory tricks)
+7. [ ] Draft v4-5-1 (capstone family presentation — model + student practice)
+8. [ ] Upgrade v4-2-1 from v1.0 to v2.0 quality
+9. [ ] Build 4-P4 family dictation exercise (listen → complete family tree)
+10. [ ] Add image-based person description exercise (describe a picture in 3 sentences)
+11. [ ] Add Familienstand form-filling mini-exercise (bridge to Module 14)
+
+### Nice-to-have
+12. [ ] Interactive family tree builder exercise
+13. [ ] Photo-description task with AI scoring
+14. [ ] "Guess the family member" listening game
+
+---
+
+## Key Dialogues & Templates
+
+### Golden Family Description (Model for speaking/writing output)
 ```
-Family Description:
-"Meine Familie ist groß. Ich habe zwei Brüder und eine Schwester.
-Meine Mutter heißt Lakshmi. Sie ist Lehrerin.
-Mein Vater heißt Gopinath. Er ist Ingenieur.
-Meine Schwester ist 22 Jahre alt. Sie studiert in München."
+Meine Familie ist groß. Wir sind fünf Personen.
+Mein Vater heißt Gopinath. Er ist 55 Jahre alt. Er ist Ingenieur.
+Meine Mutter heißt Lakshmi. Sie ist 50 Jahre alt. Sie ist Lehrerin.
+Meine Schwester heißt Anjali. Sie ist 22 Jahre alt. Sie studiert Medizin.
+Ich habe auch einen Bruder. Er heißt Arun. Er ist 18 Jahre alt.
+```
 
-Describing a Person:
-"Mein Bruder ist groß und sportlich.
+### Golden Person Description (Appearance + Personality)
+```
+Mein Bruder ist groß und sportlich.
 Er hat schwarze Haare und braune Augen.
-Er ist sehr lustig und freundlich."
+Er ist sehr lustig und freundlich.
+Er spielt gern Fußball.
+```
 
-Question-Answer:
+### Golden Family Q&A (Sprechen Teil 2 prep)
+```
 Q: Haben Sie Geschwister?
 A: Ja, ich habe einen Bruder und eine Schwester.
+
 Q: Was macht Ihre Mutter?
-A: Meine Mutter ist Krankenschwester.
+A: Meine Mutter ist Krankenschwester. Sie arbeitet in einem Krankenhaus.
+
+Q: Wo wohnt Ihre Familie?
+A: Meine Familie wohnt in Kochi, in Kerala.
+
+Q: Sind Sie verheiratet?
+A: Nein, ich bin ledig.
 ```
+
+### Article Pattern Quick-Reference (for script v4-4-1)
+```
+DER (masculine): der Vater, der Bruder, der Onkel, der Sohn, der Mann, der Tisch, der Stuhl
+DIE (feminine): die Mutter, die Schwester, die Tante, die Tochter, die Frau, die Lampe, die Küche
+DAS (neuter): das Kind, das Baby, das Mädchen (!), das Buch, das Bett, das Zimmer
+
+TIP: -chen/-lein endings → always DAS (das Mädchen, das Brötchen)
+TIP: Most -e endings → usually DIE (die Lampe, die Schule, die Straße)
+TIP: Male family = DER, Female family = DIE (makes sense! Until... das Mädchen 😅)
+```
+
+---
+
+## Common Malayali Learner Errors to Script Against
+
+1. **Dropping articles entirely:** "Mein Vater ist Ingenieur" is correct, but "Ich habe Bruder" drops the needed "einen" — accusative trap!
+2. **Overgeneralizing "mein" for all genders:** "Mein Schwester" instead of "Meine Schwester" — possessive agrees with the noun gender
+3. **Confusing sein/ihr:** "Mein Vater... ihr Name ist Gopinath" instead of "sein Name" — gender of OWNER determines sein/ihr
+4. **English adjective order:** "Mein groß Bruder" instead of "Mein großer Bruder" (though at A1, predicate adjectives are fine: "Mein Bruder ist groß")
+5. **"das Mädchen" shock:** "Girl is DAS?!" — yes, -chen makes everything neuter. Script this explicitly.
+6. **Familienstand confusion:** "single" ≠ "Single" in German — use "ledig" for forms, not "Single" (which is informal)
+7. **Mixing up Geschwister (siblings) vs Schwester (sister):** "Ich habe zwei Schwestern" vs "Ich habe Geschwister"
+8. **Forgetting Mehrzahl (plural) articles:** "die Eltern" (always plural), "die Geschwister" (always plural)
+
+---
+
+## Cross-Module Feed-Forward
+
+Module 4 content connects to:
+- **Module 2:** Self-intro extends to family intro ("Ich heiße... Meine Familie...")
+- **Module 5:** Verb subjects come from family (er/sie/wir conjugation gets personal)
+- **Module 8:** Home + family context ("Mein Zimmer", "Meine Wohnung")
+- **Module 10:** Health + family ("Meine Mutter ist krank", "Mein Vater hat Kopfschmerzen")
+- **Module 13:** Past tense stories often involve family ("Am Wochenende habe ich meine Eltern besucht")
+- **Module 14:** Familienstand on official forms (ledig/verheiratet)
+- **Module 18 Sprechen Teil 1:** Family is a standard exam topic card
+
+---
+
+## Malayalam Bridge Points
+
+- **Extended family importance:** "Kerala kudumbam ennu paranjaal — appan, amma, chettan, chechi, ammamma, appuppan, ammavan, athai... German-il words kuravaanu, but concept same aanu!"
+- **Respect terms mapping:** Malayalam distinguishes ammavan (maternal uncle) vs achan (paternal uncle context) — German just uses "der Onkel." Simplification is good news for learners.
+- **Gender in language:** "Malayalam-ilum grammatical gender und — but German-il it matters MORE because articles change everything. der Vater, die Mutter — makes sense. But das Mädchen? That's the surprise!"
+- **Joint vs nuclear family:** "Kerala-il joint family common aanu. Germany-il usually Kernfamilie (nuclear family). But the vocabulary for extended family exists — Onkel, Tante, Cousin, Cousine — same concept!"
+- **Natural conversation hook:** "Ninte amma engane und?" → "Wie geht es deiner Mutter?" — this is one of the most natural conversation starters in both languages.
+- **Photo sharing culture:** "Kerala-il wedding photos kaanikunnathu pole, Germans also share family photos. 'Das ist meine Familie. Das ist mein Bruder.' — Practice this with YOUR photos!"
+
+---
+
+## Vocabulary Additions Recommended
+
+Current: 44 items. Below course average. Recommended additions:
+
+| German | English | Why needed |
+|--------|---------|-----------|
+| ledig | single/unmarried | Familienstand on forms |
+| verheiratet | married | Familienstand on forms |
+| geschieden | divorced | Familienstand on forms |
+| die Geschwister (pl.) | siblings | Exam question: "Haben Sie Geschwister?" |
+| das Einzelkind | only child | Common answer: "Ich bin Einzelkind" |
+| die Eltern (pl.) | parents | Always plural in German |
+| nett | nice | Basic person description |
+| intelligent | intelligent | Cognate — easy win |
+| sportlich | sporty/athletic | Person description |
+| ruhig | quiet/calm | Person description |
+
+Target: 54 items (brings to course average).
+
+---
+
+*Module 4 is where German grammar starts to bite. The article system can feel overwhelming — Kerala family warmth is the perfect emotional cushion. Keep articles embedded in family stories, not abstract tables.*

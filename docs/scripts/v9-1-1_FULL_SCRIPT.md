@@ -3,188 +3,167 @@
 > **Module:** 9 | **Lesson:** 9-1 | **Duration:** 12:00 target
 > **Teaching Goal:** Learn transport vocabulary, introduce the "mit + Dativ" pattern (first Dativ exposure), and compare Kerala ↔ Germany transport systems.
 > **A1 Exam Link:** Hören (transport announcements), Lesen (timetables, signs), Sprechen Teil 2/3 (asking about transport, buying tickets)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Revision:** 2026-03-23 (quality pass — tighter hook, teach→drill→apply per vocab block, active recall, energy cues, cultural moments woven in, ~15% word count reduction)
 
 ---
 
-## Pre-roll (0:00–0:15)
-
-### Visual: [Course intro animation / Adipoli German branding]
-### Narration:
-"Willkommen bei Adipoli German! Today — how to get from A to B in Germany. And a very important new grammar rule!"
+## Pre-roll (0:00–0:10)
+### Visual: [Course intro animation]
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — KSRTC vs Deutsche Bahn (0:15–1:30)
-
-### Visual: [SLIDE: Split screen. Left: a packed KSRTC bus, colourful, chaotic. Right: a sleek Deutsche Bahn ICE train, clean, efficient. Both with humorous labels]
+## Section 1: Hook — The Monday Question (0:10–0:40)
+### Visual: [ANIMATION: Person at German Sprachkurs. Teacher asks: "Wie kommen Sie zur Schule?" — student freezes, mimes driving a car. Classmates laugh.]
 ### Narration:
-"Let's talk about one of the BIGGEST culture shocks for any Malayali going to Germany: the transport system.
+"'Wie kommen Sie zur Schule?' Your teacher asks how you get there. You know 'Bus' — but how do you say 'by bus'? Not 'by' — German uses **mit**. And mit triggers a NEW grammar case.
 
-*KSRTC super-fast bus-il keri nokkiyittundo? Hanging from the door, conductor shouting, horn blasting?*
+After this video: 10 vehicles, the mit+Dativ pattern, and a drumbeat trick you'll never forget.
 
-Well... Germany is a LITTLE different. 😄
+*KSRTC bus-il kerunna pole alla Germany-il — but grammar same pole important!*"
 
-Deutsche Bahn trains arrive on a schedule — well, MOSTLY on a schedule. You have your own seat. Nobody is hanging from anything. And the bus? The bus has a BUTTON you press when you want to get off. Revolutionary!
-
-But here's the real lesson: in German, when you say HOW you travel, you need a new grammar pattern. And this pattern introduces you to something SCARY but actually manageable — the **Dativ** case.
-
-Don't panic. Let's start with the fun stuff — the vehicles!"
+🎬 [Energy: urgent, relatable]
 
 ---
 
-## Section 2: Transport Vocabulary — Road & City (1:30–3:30)
-
-### Visual: [TABLE appearing item by item with article colour-coded: der = blue, die = red, das = green]
+## Section 2: Road Transport — 4 Vehicles (0:40–2:15)
+### Visual: [Each vehicle appears ONE AT A TIME with article colour-coded: der=blue, die=red, das=green. NO table dump.]
 ### Narration:
-"Every vehicle has an article. Let's learn them — articles MATTER here because of the grammar coming in Section 4!
 
-### Road transport:
-[TABLE building:]
+"Road vehicles. Four at a time — articles matter for the grammar coming next!
 
-| German | Article | English | Kerala comparison |
-|--------|---------|---------|------------------|
-| **der Bus** | 🔵 der | bus | Like KSRTC — but on time and no hanging! |
-| **das Auto** | 🟢 das | car | Many Malayalis get their Führerschein here |
-| **das Fahrrad** | 🟢 das | bicycle | Germany = bicycle paradise! Separate lanes! |
-| **das Taxi** | 🟢 das | taxi | Meter always works, no bargaining! |
-| **das Motorrad** | 🟢 das | motorcycle | Less common than in Kerala |
+🔊 **der Bus** — bus.
+*KSRTC bus pole — but on time. Mostly. And no door-hanging!* 😄
 
-🔊 Repeat with articles:
-'der Bus' ... 'das Auto' ... 'das Fahrrad' ... 'das Taxi'
+🔊 **das Auto** — car.
+Many Malayalis get their Führerschein (driving licence) in Germany.
 
-⏸️ Say each one!
+🔊 **das Fahrrad** — bicycle.
+Germany = bicycle paradise. Separate lanes everywhere!
 
-### Practice Pause: ⏸️ (5 seconds)
+🔊 **das Taxi** — taxi.
+Meter always works. No bargaining!
 
-### City rail transport:
-[TABLE continuing:]
+### ⚡ Drill:
+⏸️ What's 'bus'? → 'der Bus'
+⏸️ What's 'car'? → 'das Auto'
+⏸️ What's 'bicycle'? → 'das Fahrrad'
 
-| German | Article | English | What it is |
-|--------|---------|---------|-----------|
-| **der Zug** | 🔵 der | train | Long-distance |
-| **die Bahn** | 🔴 die | railway/train | General term (also = Deutsche Bahn company) |
-| **die Straßenbahn** | 🔴 die | tram | A bus on rails! Above ground |
-| **die U-Bahn** | 🔴 die | underground/metro | U = Untergrund (underground) |
-| **die S-Bahn** | 🔴 die | city rapid rail | S = Schnell (fast city rail) |
+Notice: 3 out of 4 are **das**. Only Bus is **der**."
 
-⏸️ Notice: die Bahn, die Straßenbahn, die U-Bahn, die S-Bahn — all 'die'! All feminine. Easy to remember!
-
-### Practice Pause: ⏸️ (4 seconds)
-
-### Air:
-| **das Flugzeug** | 🟢 das | airplane | 'Flug' = flight + 'Zeug' = thing = flying thing! |
-
-*'Flugzeug' literally means 'flying thing'. German is SO logical sometimes!*"
+🎬 [Energy: brisk, one-by-one reveals]
 
 ---
 
-## Section 3: U-Bahn vs S-Bahn — The Confusion Killer (3:30–4:30)
-
-### Visual: [DIAGRAM: Cross-section of a city. U-Bahn underground in tunnels. S-Bahn running on surface/above ground through suburbs. Labels and icons]
+## Section 3: Rail Transport — 4 More (2:15–3:45)
+### Visual: [Train/metro icons appearing one at a time. Quick cross-section diagram: U-Bahn underground, S-Bahn surface.]
 ### Narration:
-"Every Indian in Germany asks: 'What's the difference between U-Bahn and S-Bahn?'
 
-[DIAGRAM showing:]
+"Rail transport — Germany's bread and butter.
 
-**U-Bahn** (Untergrundbahn):
-- Underground — like a metro
-- Runs WITHIN the city center
-- Stops are close together
-- Think: city core, short distances
+🔊 **der Zug** — train (long-distance).
 
-**S-Bahn** (Stadtschnellbahn):
-- Mostly above ground
-- Connects city center to SUBURBS
-- Stops are further apart
-- Think: going to the airport, to the outskirts
+🔊 **die U-Bahn** — underground/metro. U = Untergrund.
+Runs WITHIN city centre. Stops close together.
 
-*Mumbai metro vs Mumbai local train — same concept! U-Bahn = metro, S-Bahn = local.*
+🔊 **die S-Bahn** — city rapid rail. S = Schnell.
+Connects city to SUBURBS. Stops further apart.
 
-In many cities, they share some stations — so you can transfer between them easily."
+🔊 **die Straßenbahn** — tram. A bus on rails!
+
+*Mumbai metro vs Mumbai local — same concept! U-Bahn = metro, S-Bahn = local.*
+
+💡 All three '-Bahn' words are **die**! Easy to remember.
+
+### ⚡ Drill:
+⏸️ Underground metro? → 'die U-Bahn'
+⏸️ Long-distance train? → 'der Zug'
+⏸️ City-to-suburbs rail? → 'die S-Bahn'
+
+### 🔁 Active Recall — Road block:
+⏸️ 'bicycle'? → 'das Fahrrad'
+⏸️ 'bus'? → 'der Bus'"
+
+🎬 [Energy: systematic, building]
 
 ---
 
-## Section 4: THE Grammar Lesson — mit + Dativ (4:30–7:00)
-
-### Visual: [SLIDE: Big highlighted formula: "Ich fahre mit + DEM/DER/DEM" with article transformations shown]
+## Section 4: Walking + Flying — Complete the Set (3:45–4:30)
+### Visual: [Walking icon, airplane icon]
 ### Narration:
-"Now for the MOST IMPORTANT grammar in this lesson.
 
-When you say HOW you travel, you use **mit** (with):
-'I travel BY bus' = 'Ich fahre **mit** dem Bus.'
+"Two more to complete the set:
 
-But here's the twist: **mit** ALWAYS needs the **Dativ** case.
+🔊 **das Flugzeug** — airplane. 'Flug' (flight) + 'Zeug' (thing) = flying thing! German logic. 😄
 
-*Enthaan Dativ? Articles maarunnu! 'der' maarunnu 'dem' aayittu! Let me show you:*
+And walking? No vehicle needed:
+🔊 **Ich gehe zu Fuß.** — I go on foot.
+
+**fahren** = with a vehicle. **gehen** = on foot. Don't mix them!
+
+### ⚡ Drill:
+⏸️ 'airplane'? → 'das Flugzeug'
+⏸️ 'I walk' → 'Ich gehe zu Fuß.'"
+
+🎬 [Energy: quick, light]
+
+---
+
+## Section 5: THE Grammar — mit + Dativ (4:30–7:00)
+### Visual: [Big formula: "Ich fahre mit + DEM/DER/DEM" with article arrows showing transformation]
+### Narration:
+
+"The MAIN EVENT. When you say HOW you travel, you use **mit** (with). And mit CHANGES the articles.
 
 ### The Dativ transformation:
-[TABLE with arrows showing changes, colour-coded:]
 
-| Nominativ (normal) | → Dativ (after 'mit') |
-|--------------------|----------------------|
-| 🔵 **der** Bus | → **dem** Bus |
-| 🔴 **die** Bahn | → **der** Bahn |
-| 🟢 **das** Auto | → **dem** Auto |
+**der → dem** (masculine)
+**die → der** (feminine — yes, 'der' again! Different job!)
+**das → dem** (neuter — same as masculine!)
 
-The changes:
-- **der → dem** (masculine)
-- **die → der** (feminine — yes, 'der' again! Different meaning!)
-- **das → dem** (neuter — same as masculine!)
+*Enthaan Dativ? Articles maarunnu! 'der' Bus → 'dem' Bus aakum!*
 
-⏸️ Look at the pattern: der→dem, das→dem. Masculine and neuter are THE SAME in Dativ! Only feminine is different (die→der).
+### Learn through 3 key sentences:
 
-### Practice Pause: ⏸️ (4 seconds)
+🔊 **Ich fahre mit dem Bus.** (der Bus → dem Bus)
+⏸️ Say it: 'Ich fahre mit dem Bus.'
 
-### The 3 sentences you MUST master:
+🔊 **Ich fahre mit der Bahn.** (die Bahn → der Bahn)
+⏸️ Say it: 'Ich fahre mit der Bahn.'
 
-[HIGHLIGHT: each sentence appearing with colour-coded articles]
+🔊 **Ich fahre mit dem Auto.** (das Auto → dem Auto)
+⏸️ Say it: 'Ich fahre mit dem Auto.'
 
-🔵 **Ich fahre mit dem Bus.** (der Bus → dem Bus)
-🔊 Say it: 'Ich fahre mit dem Bus.'
-⏸️
+### 🧮 The Drumbeat Trick:
+**DeM - DER - DeM** (masculine, feminine, neuter)
+Say it like a beat: DeM-DER-DeM! DeM-DER-DeM!
+⏸️ Drumbeat it 3 times!
 
-🔴 **Ich fahre mit der Bahn.** (die Bahn → der Bahn)
-🔊 Say it: 'Ich fahre mit der Bahn.'
-⏸️
+### ⚡ Drill — Apply to all vehicles:
+⏸️ by train → 'mit dem Zug' (der → dem ✓)
+⏸️ by underground → 'mit der U-Bahn' (die → der ✓)
+⏸️ by bicycle → 'mit dem Fahrrad' (das → dem ✓)
+⏸️ by tram → 'mit der Straßenbahn' (die → der ✓)
 
-🟢 **Ich fahre mit dem Auto.** (das Auto → dem Auto)
-🔊 Say it: 'Ich fahre mit dem Auto.'
-⏸️
+*Pattern kaanunundo? 'die' words mathram 'der' aakum. Baki ellam 'dem'!*
 
-### Practice Pause: ⏸️ (3 seconds per sentence)
+### 🔁 Active Recall:
+⏸️ DeM-DER-DeM — what gender is each? → masculine, feminine, neuter
+⏸️ 'by taxi'? → 'mit dem Taxi' (das → dem)
+⏸️ 'by S-Bahn'? → 'mit der S-Bahn' (die → der)
 
-*Ithu Dativ-inte first step aanu. Module 16-il nammal full Dativ padikkum. Ippol — 'mit' kazhinjal articles maarunnu ennu mathram orkkuka!*
+*Ithu Dativ-inte first step aanu. Module 16-il full Dativ padikkum. Ippol 'mit' kazhinjal articles maarunnu ennu mathram orkkuka!*"
 
-### More examples:
-[TABLE with full sentences:]
-
-| German | English |
-|--------|---------|
-| Ich fahre mit **dem** Zug. | I go by train. |
-| Ich fahre mit **der** U-Bahn. | I go by underground. |
-| Ich fahre mit **der** Straßenbahn. | I go by tram. |
-| Ich fahre mit **dem** Fahrrad. | I go by bicycle. |
-| Ich fahre mit **dem** Taxi. | I go by taxi. |
-| Ich fliege mit **dem** Flugzeug. | I fly by plane. |
-
-### Memory trick:
-**'mit' = DeM DER DeM** — say it like a drumbeat! DeM-DER-DeM! (m, f, n)
-
-⏸️ Drumbeat: DeM-DER-DeM! DeM-DER-DeM!
-
-### Practice Pause: ⏸️ (4 seconds)"
+🎬 [Energy: emphatic on the pattern, celebratory on correct drills]
 
 ---
 
-## Section 5: The Dialogue — How Do You Get to Work? (7:00–8:30)
-
-### Visual: [DIALOGUE: Two people at a Sprachkurs chatting during break. Split screen A/B]
+## Section 6: The Dialogue — How Do You Get to Work? (7:00–8:15)
+### Visual: [Two people at Sprachkurs coffee break. Speech bubbles appearing line by line.]
 ### Narration:
-"Let's use this in a real conversation:
 
-[DIALOGUE appearing line by line:]
+"Real conversation using everything:
 
 **A:** Wie fährst du zur Arbeit?
 *(How do you get to work?)*
@@ -199,154 +178,120 @@ The changes:
 *(In winter too?!)*
 
 **A:** Nein, im Winter fahre ich mit dem Bus. 😄
-*(No, in winter I go by bus.)*
 
-🔊 Listen once... now practice:
+### Key question patterns:
+🔊 **Wie fährst du zur Arbeit?** — How do you get to work?
+🔊 **Wie kommst du nach Hause?** — How do you get home?
 
-⏸️ You be B — answer with YOUR transport:
+⏸️ Role-play — answer with YOUR transport: 'Ich fahre mit...'
 
-### Practice Pause: ⏸️ (6 seconds)
+### 🔁 Active Recall:
+⏸️ What's the dative of 'die U-Bahn'? → 'der U-Bahn'
+⏸️ 'I walk' → 'Ich gehe zu Fuß.'
 
-### Bonus question patterns:
-[TABLE:]
-| Question | Meaning |
-|----------|---------|
-| Wie fährst du zur Arbeit? | How do you get to work? |
-| Wie fährst du zur Schule? | How do you get to school? |
-| Wie kommst du nach Hause? | How do you get home? |
-| Wie bist du hergekommen? | How did you get here? (Perfekt!) |
+*'Und du?' — always ask back! Reciprocity is German culture.*"
 
-*Note: 'hergekommen' — that's Module 13 Perfekt with sein! Everything connects!*"
+🎬 [Energy: conversational, natural]
 
 ---
 
-## Section 6: Zu Fuß — On Foot (8:30–9:00)
-
-### Visual: [SLIDE: Walking person icon. "Ich gehe zu Fuß." highlighted]
+## Section 7: Speed Drill — Dativ Rapid Fire (8:15–9:15)
+### Visual: [Vehicles flashing, 3-second timer per item. Score tracker.]
 ### Narration:
-"One more essential phrase. What if you WALK?
 
-[HIGHLIGHT: 'Ich gehe zu Fuß.']
+"Speed round! Vehicle appears → say 'Ich fahre mit...' with correct article. 3 seconds each. GO!
 
-**Ich gehe zu Fuß.** — I go on foot. / I walk.
+1. Bus → ⏸️ → **mit dem Bus** ✅
+2. S-Bahn → ⏸️ → **mit der S-Bahn** ✅
+3. Auto → ⏸️ → **mit dem Auto** ✅
+4. Fahrrad → ⏸️ → **mit dem Fahrrad** ✅
+5. Zug → ⏸️ → **mit dem Zug** ✅
+6. Straßenbahn → ⏸️ → **mit der Straßenbahn** ✅
+7. Taxi → ⏸️ → **mit dem Taxi** ✅
+8. U-Bahn → ⏸️ → **mit der U-Bahn** ✅
+9. Flugzeug → ⏸️ → **Ich fliege mit dem Flugzeug** ✅
 
-No 'mit' needed here — because there's no vehicle! You use **gehen** (to go/walk) instead of **fahren** (to drive/ride).
+Score: 8-9 = excellent. Under 7 = replay Section 5."
 
-**fahren** = with a vehicle
-**gehen** = on foot
-
-'Wie kommst du zur Uni?' — 'Ich gehe zu Fuß. Es sind nur 10 Minuten.'
-
-*Kerala-il 'nadannu pokum' ennanu pareyuka. German-il 'zu Fuß gehen'.*"
+🎬 [Energy: game show, fast, fun]
 
 ---
 
-## Section 7: Quick-Fire Dativ Drill (9:00–10:00)
-
-### Visual: [SLIDE: Vehicles flashing. Student must add "mit dem/der/dem"]
+## Section 8: Deutschlandticket + Exam Tips (9:15–10:30)
+### Visual: [Deutschlandticket card image → Exam tip card]
 ### Narration:
-"Speed round! I show you a vehicle — you say 'Ich fahre mit...' with the correct article. GO!
 
-⚡ Bus → 'Ich fahre mit **dem** Bus!'
-⚡ S-Bahn → 'Ich fahre mit **der** S-Bahn!'
-⚡ Auto → 'Ich fahre mit **dem** Auto!'
-⚡ Fahrrad → 'Ich fahre mit **dem** Fahrrad!'
-⚡ Zug → 'Ich fahre mit **dem** Zug!'
-⚡ Straßenbahn → 'Ich fahre mit **der** Straßenbahn!'
-⚡ Taxi → 'Ich fahre mit **dem** Taxi!'
-⚡ U-Bahn → 'Ich fahre mit **der** U-Bahn!'
-⚡ Flugzeug → 'Ich fliege mit **dem** Flugzeug!'
+"Real-world bonus: **Deutschlandticket** — €49/month for ALL local transport in ALL of Germany. Bus, U-Bahn, S-Bahn, Straßenbahn, Regionalbahn. Best deal for daily life!
 
-*Ellam correct aayo? 'die' words mathram 'der' aakum — baki ellam 'dem'!*"
+*Kerala-il ithupole oru ticket undayirunnel... KSRTC super-fast muthal Kochi Metro vare!* 😄
+
+### 📋 [EXAM-TIP]
+
+**Hören:** Transport announcements — train delays, bus stops, platform numbers. Listen for vehicle names + times.
+
+**Lesen:** Timetables and signs. Both 'Abfahrt' (departure) and 'Ankunft' (arrival).
+
+**Sprechen Teil 2:** You get a card: 'Bus?' or 'Fahrrad?' → Ask: 'Wann fährt der nächste Bus?' or 'Wo kann ich ein Fahrrad mieten?' We'll practise in lesson 9-3!
+
+*Transport exam-il guaranteed varum — Hören-ilum Sprechen-ilum!*"
+
+🎬 [Energy: practical, motivating]
 
 ---
 
-## Section 8: KSRTC vs Deutsche Bahn — Fun Comparison (10:00–11:00)
-
-### Visual: [TABLE: humorous comparison with checkmarks and emojis]
+## Section 9: Final Recall + Homework (10:30–12:00)
+### Visual: [Summary card: 3 key takeaways. Then recall drill.]
 ### Narration:
-"Let's end with the fun part — the official KSRTC vs Deutsche Bahn comparison:
 
-[TABLE appearing with humour:]
+"### 🔁 Final Active Recall — The Big Test:
 
-| Feature | KSRTC 🇮🇳 | Deutsche Bahn 🇩🇪 |
-|---------|----------|--------------|
-| On time? | Haha. | Also haha — but they apologize! |
-| Door hanging? | Classic experience | Illegal and impossible |
-| Horn usage? | Every 3 seconds | Almost never |
-| AC? | Only in Volvo | Always (sometimes too cold!) |
-| Price? | ₹50 for 100km | €30+ for 100km 😭 |
-| App? | Exists, barely works | DB Navigator — actually excellent |
-| Conductor yelling? | Essential feature | They whisper politely |
+⏸️ 'by bus' → ? → 'mit dem Bus'
+⏸️ 'by underground' → ? → 'mit der U-Bahn'
+⏸️ 'by car' → ? → 'mit dem Auto'
+⏸️ 'I walk' → ? → 'Ich gehe zu Fuß'
+⏸️ The dativ drumbeat → ? → DeM-DER-DeM
 
-*Germany-ile transport system expensive aanu — pakshe convenient aanu. 'Deutschlandticket' eduthal — €49/month full local transport! Kerala-il ithupole oru option undayirunnel...*
+All five instant? You own mit+Dativ!
 
-[SLIDE: Deutschlandticket card image]
+### 3 Things You Learned:
+1. **10 vehicles with articles** — der Bus, die U-Bahn, das Auto...
+2. **mit + Dativ** — der→dem, die→der, das→dem
+3. **DeM-DER-DeM** — the drumbeat that makes it stick
 
-**Deutschlandticket:** €49/month → ALL local transport (Bus, U-Bahn, S-Bahn, Straßenbahn, Regionalbahn) in ALL of Germany! Best deal ever for daily commuters."
+📝 **Homework:** Write 3 sentences about how you get to work/school/the shop — each with a DIFFERENT vehicle. Then ask someone: 'Wie fährst du zur Arbeit?'
 
----
-
-## Section 9: Summary & Homework (11:00–12:00)
-
-### Visual: [SLIDE: Summary card with 3 key takeaways]
-### Narration:
-"Today you learned THREE big things:
-
-[SLIDE: appearing one by one]
-
-**1.** Transport vocabulary — 10+ vehicles with correct articles ✅
-**2.** mit + Dativ — der→dem, die→der, das→dem ✅
-**3.** 'Ich fahre mit dem/der Bus/Bahn/Auto' — the essential sentence ✅
-
-### Your homework:
-📝 Write 3 sentences: How you go to work/school/the shop — each with a DIFFERENT transport
-📝 Memorize the Dativ drumbeat: DeM-DER-DeM!
-📝 Ask a German friend (or AI 😄): 'Wie fährst du zur Arbeit?'
-
-[EXAM-TIP] 'Transport is a Sprechen Teil 2 topic — you might get a card that says 'Bus?' or 'Fahrrad?' and need to ask a question about it. 'Wann fährt der nächste Bus?' or 'Wo kann ich ein Fahrrad mieten?' — we'll practice these in lesson 9-3!'
-
-Next lesson: Giving directions! Geradeaus, links, rechts — how to navigate a German city without Google Maps (well, as a backup at least).
-
-Bis zum nächsten Mal! Tschüss!"
-
----
-
-## Post-roll
-[Course outro / Next lesson teaser: "Lesson 9-2: Giving & Understanding Directions — geradeaus, links, rechts!"]
+Bis zum nächsten Mal — tschüss!"
 
 ---
 
 ## Script Quality Checklist
 
-- [x] Teaching goal achieved (transport vocab + mit + Dativ)
-- [x] A1 exam section addressed (Hören announcements, Sprechen Teil 2/3)
-- [x] Malayalam/Manglish bridges included (≥6 instances)
-- [x] Practice pauses present (≥8)
-- [x] Visual cues specified for every section
-- [x] Full vocabulary list with articles
-- [x] Grammar taught clearly (mit + Dativ with visual article changes)
-- [x] Cultural bridge included (KSRTC comparison, Deutschlandticket)
-- [x] Exam tip included (Sprechen Teil 2 transport cards)
-- [x] Homework/challenge assigned
-- [x] Quick-fire drill included (Dativ article speed round)
-- [x] Memory trick provided (DeM-DER-DeM drumbeat)
-- [x] U-Bahn vs S-Bahn confusion addressed
-- [x] Duration fits ~12 minutes
+- [x] Hook under 40s with concrete stakes (Sprachkurs question you can't answer)
+- [x] Teach→drill→apply per vocab block (road, rail, walking/flying — max 4 items before drill)
+- [x] Active recall checkpoints (3 — after rail block, after grammar, final)
+- [x] Energy cues every section
+- [x] Malayalam bridges as cultural parallels (KSRTC, Mumbai metro, Deutschlandticket)
+- [x] ~15% word count reduction from v1.0
+- [x] Specific practice pauses with prompts + reveals (15+)
+- [x] Grammar taught through 3 key sentences then generalized
+- [x] DeM-DER-DeM drumbeat memory trick
+- [x] 9-item speed drill as cumulative test
+- [x] U-Bahn vs S-Bahn clarified in context (not standalone tangent)
+- [x] Cultural moments (KSRTC, Deutschlandticket) woven into vocab/exam sections
+- [x] Exam tips: Hören + Lesen + Sprechen specific
+- [x] Dialogue with role-play
+- [x] Duration estimate: ~12:00 (9 sections)
 
-## Key Vocabulary for Overlay
-
-| German | English | Article (Dativ) |
-|--------|---------|----------------|
-| der Bus | bus | mit dem Bus |
-| die Bahn | train/railway | mit der Bahn |
-| das Auto | car | mit dem Auto |
-| das Fahrrad | bicycle | mit dem Fahrrad |
-| der Zug | train | mit dem Zug |
-| die U-Bahn | underground | mit der U-Bahn |
-| die S-Bahn | city rail | mit der S-Bahn |
-| die Straßenbahn | tram | mit der Straßenbahn |
-| das Taxi | taxi | mit dem Taxi |
-| das Flugzeug | airplane | mit dem Flugzeug |
-| zu Fuß gehen | to walk | — |
-| Wie fährst du? | How do you get there? | — |
+## v2.0 Revision Notes
+- Hook cut from 75s to 30s — concrete Sprachkurs scenario replaces long KSRTC monologue
+- Vocab split into 3 blocks of 4/4/2 (from 2 massive table dumps of 5+5+1)
+- U-Bahn vs S-Bahn woven into rail vocab block (was standalone 1-min section)
+- KSRTC vs Deutsche Bahn comparison table removed as standalone section — cultural bits distributed into vocab and exam sections
+- Grammar section restructured: 3 key sentences → drumbeat trick → apply drill → recall
+- Added 3 active recall checkpoints between sections
+- Added energy cues (🎬) every section
+- 9-item speed drill added (was 9 items but now with score threshold)
+- Deutschlandticket moved from standalone culture section into exam tips section
+- Pre-roll compressed to 10s
+- ~15% word count reduction
+- All tables replaced with one-at-a-time reveals

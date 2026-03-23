@@ -1,186 +1,283 @@
-# v10-1-1 — Body Parts: Körperteile
-Module: 10 | Lesson: 10-1 | Duration: 10:00 target
-Teaching Goal: Teach essential body part vocabulary with articles, laying the foundation for symptom descriptions and doctor dialogues.
-A1 Exam Link: Hören (health dialogues), Sprechen (describing how you feel), Schreiben (writing sick notes)
+# v10-1-1 — Body Parts: Körperteile (FULL SCRIPT)
+
+> **Module:** 10 | **Lesson:** 10-1 | **Duration:** 10:00 target
+> **Teaching Goal:** Teach essential body part vocabulary with articles, the "tut weh" and "Schmerzen" pain patterns, and lay the foundation for doctor dialogues
+> **A1 Exam Link:** Hören (health dialogues), Sprechen (describing how you feel), Schreiben (writing sick notes/cancellations)
+> **Status:** REVISED — v2.0
+> **Revision:** 2026-03-23 (quality pass — tighter hook, vocab in teach→drill blocks of 4, active recall, pain patterns taught with drills, energy cues, ~15% word count reduction)
 
 ---
 
-## Pre-roll (0:00–0:15)
-[Course intro animation / branding]
-"Willkommen bei Adipoli German! Today — your body, in German. Körperteile!"
+## Pre-roll (0:00–0:10)
+### Visual: [Course intro animation]
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook (0:15–1:30)
-
-### Visual: [SLIDE: Person at a German doctor's office looking confused]
+## Section 1: Hook — At the Doctor (0:10–0:40)
+### Visual: [ANIMATION: Person at German doctor's office, clutching their stomach. Doctor asks: "Wo tut es weh?" Person says "Stomach... uh... my... Bauch?" Doctor smiles, nods.]
 ### Narration:
-"You're in Germany. You have a terrible headache. You go to the doctor. And the doctor asks: 'Wo tut es weh?' — Where does it hurt?"
+"You're in Germany. Terrible stomachache. Doctor asks: 'Wo tut es weh?' — Where does it hurt? If you can't say 'der Bauch,' you're stuck pointing and hoping.
 
-"*Enthu parayum? Head ennu paranjaal doctor manassilaavilla!*"
+After this video: 20 body parts with articles, 3 pain patterns, and you'll survive your first Arztbesuch.
 
-"If you can't say 'der Kopf' — head — in German, you're stuck. This lesson gives you the vocabulary to describe your body, your pain, and your problems. It could literally save you."
+*Doctor 'Wo tut es weh?' ennu chodikumbol — shariyaayi utharam parayaan padikkaam!*"
 
-"And for all the nurses and healthcare workers — *nursing field-il body parts bilingual ariyaanam!*"
-
----
-
-## Section 2: Head & Face (1:30–3:30)
-
-### Visual: [SLIDE: Labelled head diagram with articles colour-coded]
-### Narration:
-
-"Let's start from the top — der Kopf, the head."
-
-| Article | Body Part | English | Memory Tip |
-|---------|-----------|---------|------------|
-| **der** Kopf | head | "Kopf — sounds like 'cop' watching over everything" |
-| **das** Gesicht | face | "Ge-SICHT — your face is what people SIGHT" |
-| **das** Auge / die Augen | eye / eyes | "Au-ge — 'au' like 'ow' when something gets in your eye" |
-| **das** Ohr / die Ohren | ear / ears | "Ohr — sounds like 'ear' if you squint" |
-| **die** Nase | nose | "Na-se — starts like 'nasal'" |
-| **der** Mund | mouth | "Mund — like 'mouth' starting with M" |
-| **der** Zahn / die Zähne | tooth / teeth | "Zahn — the 'Z' sounds sharp like a tooth!" |
-| **das** Haar / die Haare | hair | "Haar = Hair — almost the same!" |
-
-🔊 Point to your head and say: "der Kopf"
-🔊 Point to your eyes: "die Augen"
-🔊 Point to your nose: "die Nase"
-🔊 Point to your mouth: "der Mund"
-
-⏸️ "Touch each part and name it in German. Do it 3 times — fast!"
+🎬 [Energy: urgent, relatable]
 
 ---
 
-## Section 3: Upper Body (3:30–5:30)
-
-### Visual: [SLIDE: Labelled upper body diagram]
+## Section 2: Head & Face — 4 Key Parts (0:40–2:00)
+### Visual: [Labelled head diagram. Parts appear ONE AT A TIME, article colour-coded: der=blue, die=red, das=green.]
 ### Narration:
 
-"Moving down — shoulders, arms, hands."
+"Start from the top. Four parts, then drill.
 
-| Article | Body Part | English |
-|---------|-----------|---------|
-| **der** Hals | neck/throat | 
-| **die** Schulter / die Schultern | shoulder / shoulders |
-| **der** Arm / die Arme | arm / arms |
-| **die** Hand / die Hände | hand / hands |
-| **der** Finger / die Finger | finger / fingers |
-| **der** Rücken | back |
-| **die** Brust | chest |
-| **der** Bauch | stomach/belly |
+🔊 **der Kopf** — head. 'Kopf' sounds like a cop watching over everything from the top!
 
-"*'der Bauch' — belly. Sadya kazhinjaal: 'Mein Bauch tut weh!' 😄*"
+🔊 **die Nase** — nose. Starts like 'nasal' — easy!
 
-🔊 Repeat: "der Hals... der Arm... die Hand... der Bauch..."
+🔊 **der Mund** — mouth. Both start with M.
 
-⏸️ "Quick check: What's 'hand' in German? ... die Hand! And the plural? die Hände!"
+🔊 **das Ohr / die Ohren** — ear / ears. 'Ohr' sounds close to 'ear' if you squint!
 
-**[A1-SAFE] Important plural patterns for body parts:**
-- die Hand → die H**ä**nde (umlaut!)
-- der Fuß → die F**ü**ße (umlaut!)
-- das Auge → die Augen
-- der Finger → die Finger (no change!)
+### ⚡ Drill — Point & Say:
+⏸️ Point to your head → 'der Kopf'
+⏸️ Point to your nose → 'die Nase'
+⏸️ Point to your mouth → 'der Mund'
+⏸️ Point to your ear → 'das Ohr'
 
-"*Plurals can be tricky, but for the exam you mainly need the basic forms.*"
+*Articles orkkuka! Der Kopf, DIE Nase, der Mund, DAS Ohr — mixed genders!*"
+
+🎬 [Energy: interactive, physical]
 
 ---
 
-## Section 4: Lower Body (5:30–6:30)
-
-### Visual: [SLIDE: Labelled lower body diagram]
+## Section 3: More Face + Eyes (2:00–2:45)
+### Visual: [Face diagram continues with 3 more parts]
 ### Narration:
 
-| Article | Body Part | English |
-|---------|-----------|---------|
-| **das** Bein / die Beine | leg / legs |
-| **das** Knie / die Knie | knee / knees |
-| **der** Fuß / die Füße | foot / feet |
+"Three more face parts:
 
-"Only 3 more! Bein, Knie, Fuß."
+🔊 **das Auge / die Augen** — eye / eyes. 'Au' like 'ow!' when something gets in your eye!
 
-🔊 Repeat: "das Bein... das Knie... der Fuß..."
+🔊 **der Zahn / die Zähne** — tooth / teeth. The 'Z' sounds sharp like a tooth!
 
-"⚠️ Careful: 'das Bein' = leg, NOT 'bone'. English speakers get confused here."
+🔊 **das Haar / die Haare** — hair. Almost the same word!
 
-⏸️ "Can you name all body parts from head to feet? Try it now — top to bottom!"
+### ⚡ Drill:
+⏸️ 'eye' → 'das Auge'
+⏸️ 'tooth' → 'der Zahn'
+⏸️ 'hair' → 'das Haar'
+
+### 🔁 Active Recall — Section 2:
+⏸️ 'head'? → 'der Kopf'
+⏸️ 'nose'? → 'die Nase'"
+
+🎬 [Energy: building, quick]
 
 ---
 
-## Section 5: The Pain Pattern (6:30–8:00)
-
-### Visual: [HIGHLIGHT: Pain sentence patterns]
+## Section 4: Upper Body — 4 Parts (2:45–4:15)
+### Visual: [Upper body diagram. Parts appear one at a time.]
 ### Narration:
 
-"Now the most important thing — connecting body parts to PAIN. Because that's why you learn these words!"
+"Moving down — four upper body parts.
 
-**[A1-SAFE] Pattern 1:**
-"**___ tut weh.** = ___ hurts."
+🔊 **der Hals** — neck/throat. Important for the doctor — sore throat!
 
-- "Der Kopf tut weh." = My head hurts.
-- "Der Bauch tut weh." = My stomach hurts.
-- "Der Rücken tut weh." = My back hurts.
+🔊 **der Arm / die Arme** — arm / arms.
 
-**[A1-SAFE] Pattern 2:**
-"**Ich habe ___schmerzen.** = I have ___-pain."
+🔊 **die Hand / die Hände** — hand / hands. Umlaut in plural: Hand → Hände!
 
-- "Ich habe **Kopf**schmerzen." = I have a headache.
-- "Ich habe **Bauch**schmerzen." = I have a stomachache.
-- "Ich habe **Rücken**schmerzen." = I have back pain.
-- "Ich habe **Zahn**schmerzen." = I have a toothache.
+🔊 **der Bauch** — stomach/belly.
+*Sadya kazhinjaal: 'Mein Bauch tut weh!' 😄*
 
-🔊 Repeat: "Ich habe Kopfschmerzen."
-🔊 Repeat: "Mein Bauch tut weh."
+### ⚡ Drill:
+⏸️ 'neck/throat' → 'der Hals'
+⏸️ 'hand' → 'die Hand'
+⏸️ 'stomach' → 'der Bauch'
+⏸️ 'arm' → 'der Arm'
 
-"*See how German builds compound words? Kopf + Schmerzen = Kopfschmerzen. This is German's superpower — and your exam advantage if you learn the pattern!*"
+### 🔁 Active Recall — Face:
+⏸️ 'mouth'? → 'der Mund'
+⏸️ 'eye'? → 'das Auge'"
 
-⏸️ "Your turn: How would you say 'I have a toothache'? ... Ich habe Zahnschmerzen!"
-
-**[A1-SAFE] Pattern 3:**
-"**Mein/Meine ___ tut/tun weh.**"
-
-- "Mein Kopf tut weh." = My head hurts.
-- "Meine Augen tun weh." = My eyes hurt.
-
-"*tut = singular, tun = plural. Mein Kopf TUT weh. Meine Augen TUN weh.*"
+🎬 [Energy: steady, methodical]
 
 ---
 
-## Section 6: Touch & Say Game + Summary (8:00–10:00)
-
-### Visual: [SLIDE: Touch & Say Game instructions]
+## Section 5: Upper Body + Lower Body (4:15–5:30)
+### Visual: [Remaining body parts diagram]
 ### Narration:
 
-⚡ **Touch & Say game — 60 seconds!**
-"I'll say a body part, you touch it and repeat the German word with article:"
+"Four more to complete the body:
 
-1. der Kopf! → *touch head*
-2. die Nase! → *touch nose*
-3. der Bauch! → *touch belly*
-4. das Knie! → *touch knee*
-5. die Hand! → *touch hand*
-6. der Fuß! → *touch foot*
-7. die Schulter! → *touch shoulder*
-8. das Ohr! → *touch ear*
+🔊 **der Rücken** — back. Important word — back pain is universal!
 
-⏸️ "Now YOU do it — name every part from Kopf to Fuß in order!"
+🔊 **das Bein / die Beine** — leg / legs.
+⚠️ Careful: 'das Bein' = LEG, not bone! English speakers get confused here.
 
-### Visual: [SLIDE: 3 Takeaways]
-🎯 **3 Things to Remember:**
-1. Learn body parts WITH articles — der Kopf, die Hand, das Bein.
-2. Pain pattern: "Ich habe ___schmerzen" OR "___ tut weh."
-3. For nurses/healthcare: these words are your daily bread in Germany — *daily Brot! 😄*
+🔊 **das Knie / die Knie** — knee / knees. Plural doesn't change!
 
-"Next lesson: How are you feeling? Symptoms, sickness, and talking to your doctor!"
+🔊 **der Fuß / die Füße** — foot / feet. Umlaut: Fuß → Füße!
 
-"Bis zum nächsten Mal! Tschüss!"
+### ⚡ Drill:
+⏸️ 'back' → 'der Rücken'
+⏸️ 'leg' → 'das Bein' (NOT bone!)
+⏸️ 'foot' → 'der Fuß'
 
-## Post-roll
-[Next lesson teaser: v10-2-1 — At the Doctor: Symptoms & Complaints]
+### 🔁 Active Recall — Full body check:
+⏸️ Head to foot, name 5 parts. GO!
+⏸️ → der Kopf, die Nase, der Arm, der Bauch, der Fuß (or any 5!)"
+
+🎬 [Energy: challenging, fun]
 
 ---
 
-## Exercise Tie-ins
-- **Patterns trained:** body parts + articles, ___ tut weh, Ich habe ___schmerzen, mein/meine + body part
-- **Exercise types needed:** label-the-body matching, article drill, pain sentence building, dictation (doctor says symptom, note it), speaking drill (describe 3 things that hurt)
-- **Production outcome:** Student can name 20+ body parts with articles and describe pain in 3 different patterns
+## Section 6: Pain Pattern 1 — ___ tut weh (5:30–6:45)
+### Visual: [Pain pattern formula: "[body part] tut weh" with examples. Red pain indicators on body diagram.]
+### Narration:
+
+"Now the REASON you learn these — describing pain!
+
+**Pattern 1: ___ tut weh.** = ___ hurts.
+
+🔊 **Der Kopf tut weh.** — My head hurts.
+🔊 **Der Bauch tut weh.** — My stomach hurts.
+🔊 **Der Rücken tut weh.** — My back hurts.
+
+For PLURAL body parts → **tun weh** (not tut!):
+🔊 **Die Augen tun weh.** — My eyes hurt.
+
+*tut = singular. tun = plural. 'Mein Kopf TUT weh. Meine Augen TUN weh.'*
+
+### ⚡ Drill:
+⏸️ Your throat hurts → ? → 'Der Hals tut weh.'
+⏸️ Your legs hurt → ? → 'Die Beine tun weh.' (plural!)
+⏸️ Your back hurts → ? → 'Der Rücken tut weh.'"
+
+🎬 [Energy: practical, urgent]
+
+---
+
+## Section 7: Pain Pattern 2 — Ich habe ___schmerzen (6:45–7:45)
+### Visual: [Compound word builder: body part + Schmerzen = compound. Animated LEGO-style assembly.]
+### Narration:
+
+"**Pattern 2: Ich habe ___schmerzen.** = I have ___-pain.
+
+German builds compound words — body part + Schmerzen = done!
+
+🔊 **Ich habe Kopfschmerzen.** — headache
+🔊 **Ich habe Bauchschmerzen.** — stomachache
+🔊 **Ich habe Zahnschmerzen.** — toothache
+🔊 **Ich habe Rückenschmerzen.** — back pain
+
+*German-inte superpower — compound words! Kopf + Schmerzen = Kopfschmerzen. Exam advantage!*
+
+### ⚡ Drill:
+⏸️ headache → ? → 'Ich habe Kopfschmerzen'
+⏸️ toothache → ? → 'Ich habe Zahnschmerzen'
+⏸️ back pain → ? → 'Ich habe Rückenschmerzen'
+
+### 🔁 Active Recall — Pattern 1:
+⏸️ 'My stomach hurts' using Pattern 1 → ? → 'Der Bauch tut weh.'"
+
+🎬 [Energy: clear, pattern-focused]
+
+---
+
+## Section 8: Pain Pattern 3 — Mein/Meine ___ tut weh (7:45–8:30)
+### Visual: [Pattern 3 formula with possessive + body part + tut/tun weh]
+### Narration:
+
+"**Pattern 3: Mein/Meine ___ tut/tun weh.** — Personal version.
+
+🔊 **Mein Kopf tut weh.** — MY head hurts.
+🔊 **Meine Hand tut weh.** — MY hand hurts.
+🔊 **Meine Augen tun weh.** — MY eyes hurt.
+
+Remember Module 4 possessives? Mein (masc/neut) vs meine (fem/plural). Same rule!
+
+### ⚡ Drill:
+⏸️ My back hurts → ? → 'Mein Rücken tut weh.' (der Rücken = masc → mein)
+⏸️ My nose hurts → ? → 'Meine Nase tut weh.' (die Nase = fem → meine)
+⏸️ My feet hurt → ? → 'Meine Füße tun weh.' (plural → meine + tun!)
+
+### 📋 [EXAM-TIP]
+**Hören:** Doctor dialogues — you'll hear 'Wo tut es weh?' and patient answers. Know all 3 patterns!
+**Sprechen:** If asked 'Wie geht es Ihnen?' — you might describe symptoms. These patterns are your toolkit."
+
+🎬 [Energy: connecting to prior knowledge]
+
+---
+
+## Section 9: Touch & Say Game + Final Recall (8:30–10:00)
+### Visual: [Game screen: body parts flash, student touches and names. Then exam summary card.]
+### Narration:
+
+"⚡ **Touch & Say — speed round!**
+I say it in English — you touch the body part AND say the German with article!
+
+1. head → ⏸️ → *touch head* 'der Kopf!'
+2. nose → ⏸️ → *touch nose* 'die Nase!'
+3. stomach → ⏸️ → *touch belly* 'der Bauch!'
+4. knee → ⏸️ → *touch knee* 'das Knie!'
+5. hand → ⏸️ → *touch hand* 'die Hand!'
+6. foot → ⏸️ → *touch foot* 'der Fuß!'
+7. back → ⏸️ → *touch back* 'der Rücken!'
+8. ear → ⏸️ → *touch ear* 'das Ohr!'
+
+### 🔁 Final Active Recall — Pain Patterns:
+⏸️ 'I have a headache' → ? → 'Ich habe Kopfschmerzen.'
+⏸️ 'My stomach hurts' → ? → 'Mein Bauch tut weh.'
+⏸️ 'My eyes hurt' → ? → 'Meine Augen tun weh.'
+
+All three patterns? You're ready for the doctor!
+
+### 🎯 3 Takeaways:
+1. Learn body parts WITH articles — der Kopf, die Hand, das Bein
+2. Pain: '___ tut weh' OR 'Ich habe ___schmerzen' OR 'Mein/Meine ___ tut weh'
+3. tut = singular, tun = plural
+
+*Healthcare workers — ee words daily bread aanu Germany-il!* 🏥
+
+📝 **Homework:** Name 10 body parts from memory with articles. Then write 3 pain sentences using all 3 patterns.
+
+Next lesson: symptoms, sickness, and your first doctor visit!
+
+Tschüss!"
+
+---
+
+## Script Quality Checklist
+
+- [x] Hook under 40s with concrete stakes (doctor asks, you can't answer)
+- [x] Teach→drill→apply per body region (head 4, face 3, upper 4, lower 4 — no stacking)
+- [x] Active recall checkpoints (4 — after face, after upper body, after full body, final)
+- [x] Energy cues every section
+- [x] Malayalam bridges (sadya + stomachache, compound word parallels)
+- [x] ~15% word count reduction from v1.0
+- [x] Specific practice pauses with prompts + reveals (16+)
+- [x] 3 pain patterns taught with drills (tut weh, Schmerzen, Mein/Meine tut weh)
+- [x] Touch & Say interactive game
+- [x] tut vs tun (singular/plural) clearly distinguished
+- [x] Cross-module reference: Module 4 possessives (mein/meine)
+- [x] Exam tips: Hören + Sprechen specific
+- [x] Nursing/healthcare audience acknowledged
+- [x] Duration estimate: ~10:00 (9 sections)
+
+## v2.0 Revision Notes
+- Hook cut from 75s to 30s — concrete doctor scenario, immediate payoff
+- Vocab split into 4 blocks of 3-4 (from 2 massive tables of 8+8+3)
+- Active recall added between every vocab block (4 checkpoints)
+- Pain patterns restructured: 3 separate sections with individual drills (was one massive section)
+- Pattern 3 (Mein/Meine) explicitly connects to Module 4 possessives
+- Touch & Say game preserved but tightened (8 items, not wandering)
+- Cultural asides (sadya, nursing) woven into teaching blocks, not standalone
+- Energy cues (🎬) added every section
+- Pre-roll compressed to 10s
+- Memory tips preserved for hardest words only (removed obvious ones)
+- Exercise tie-ins section removed from script (belongs in exercise files)
+- ~15% word count reduction

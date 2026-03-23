@@ -97,8 +97,8 @@
 | v11-2-1 | 11 | 11-2 | Workplace Vocabulary | 🔄 DRAFT | `docs/scripts/v11-2-1_FULL_SCRIPT.md` |
 | v11-3-1 | 11 | 11-3 | German Email Writing | 🔄 DRAFT | `docs/scripts/v11-3-1_FULL_SCRIPT.md` |
 | v12-1-1 | 12 | 12-1 | Hobbies | 🔄 DRAFT | `docs/scripts/v12-1-1_FULL_SCRIPT.md` |
-| v12-2-1 | 12 | 12-2 | Weather | 📐 ARCH |
-| v12-3-1 | 12 | 12-3 | Making Plans & Invitations | 📐 ARCH |
+| v12-2-1 | 12 | 12-2 | Weather | 🔄 DRAFT | `docs/scripts/v12-2-1_FULL_SCRIPT.md` |
+| v12-3-1 | 12 | 12-3 | Making Plans & Invitations | 🔄 DRAFT | `docs/scripts/v12-3-1_FULL_SCRIPT.md` |
 | v12-4-1 | 12 | 12-4 | Invitation Writing (Schreiben Teil 2) | 🔄 DRAFT | `docs/scripts/v12-4-1_FULL_SCRIPT.md` |
 | v12-4-2 | 12 | 12-4 | Weil-Clauses: Giving Reasons | 🔄 DRAFT | `docs/scripts/v12-4-2_FULL_SCRIPT.md` |
 
@@ -195,4 +195,4 @@
 
 ---
 
-*Track updated by quality pass cron 2026-03-23 12:45 UTC — revised 3 more scripts from v1.0 → v2.0: v3-4-1 (Days/Months/Dates), v4-1-1 (Family Members), v6-2-1 (Drinks & gern). Created SCRIPT_QUALITY_STANDARD.md documenting the reusable v1.0→v2.0 revision checklist. **Total: 52 full scripts, 25 at v2.0 quality (v18-1-1, v17-1-1, v2-1-1, v2-2-1, v5-1-1, v13-1-1, v18-3-1, v18-4-1, v6-3-1, v3-1-1, v18-2-1, v17-2-1, v10-3-1, v14-1-1, v14-1-2, v14-2-1, v18-5-1, v17-3-1, v2-3-1, v5-3-1, v13-2-1, v3-2-1, v3-4-1, v4-1-1, v6-2-1).** Consistent quality pass patterns: hooks under 40s with concrete payoff, teach→drill→apply cycles (no stacking), active recall before summaries, energy cues every section, Malayalam bridges as structural parallels, 10-20% word count reductions, specific practice pauses with prompts+reveals.*
+*Track updated by quality pass cron 2026-03-23 13:00 UTC — revised 3 more scripts from v1.0 → v2.0: v9-1-1 (Transportation & mit+Dativ), v4-3-1 (Possessive Pronouns — also reduced from 15min to 12min), v10-1-1 (Body Parts — pain patterns restructured into 3 drilled sections). **Total: 52 full scripts, 28 at v2.0 quality (v18-1-1, v17-1-1, v2-1-1, v2-2-1, v5-1-1, v13-1-1, v18-3-1, v18-4-1, v6-3-1, v3-1-1, v18-2-1, v17-2-1, v10-3-1, v14-1-1, v14-1-2, v14-2-1, v18-5-1, v17-3-1, v2-3-1, v5-3-1, v13-2-1, v3-2-1, v3-4-1, v4-1-1, v6-2-1, v9-1-1, v4-3-1, v10-1-1).** Note: v5-2-1, v5-4-1, v3-3-1, v13-3-1, v13-4-1 were also found already at v2.0 in files (revised by earlier cron runs) — adding to tracked total brings it to **33 confirmed v2.0 scripts**. Consistent quality pass patterns: hooks under 40s with concrete payoff, teach→drill→apply cycles (no stacking), active recall before summaries, energy cues every section, Malayalam bridges as structural parallels, 10-20% word count reductions, specific practice pauses with prompts+reveals.*
