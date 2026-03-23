@@ -2,7 +2,7 @@
 
 > Master planning doc: teaching goals, A1 exam relevance, lesson/video script needs, essential outcomes, and future script direction for each module.
 >
-> **Last updated:** 2026-03-23 (overnight cron — modules 1–18 initial blueprints)
+> **Last updated:** 2026-03-23 02:00 UTC (overnight cron — modules 1–18 blueprints + Wave 3 architecture complete)
 
 ---
 
@@ -758,8 +758,8 @@ Based on A1 exam impact, the recommended script creation order is:
 |------|---------|-------------------|-------------------|
 | Wave 1 | 18, 17, 2, 14 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE1.md` | Not started |
 | Wave 2 | 5, 13, 3 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE2.md` | Not started |
-| Wave 3 | 6, 9, 10, 4 | Not started | Not started |
+| Wave 3 | 6, 9, 10, 4 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE3.md` | Not started |
 | Wave 4 | 1, 7, 8, 11, 12 | Not started | Not started |
 | Wave 5 | 15, 16 | Not started | Not started |
 
-*Next overnight session should: build Wave 3 script architectures (Modules 6, 9, 10, 4 — practical conversations), then begin writing the first full script for Module 18 Lesson 18-1 v18-1-1 (form-filling — highest exam ROI).*
+*Next overnight session should: build Wave 4 script architectures (Modules 1, 7, 8, 11, 12 — supporting content) OR begin writing the first full script for Module 18 Lesson 18-1 v18-1-1 (form-filling — highest exam ROI). Consider also piloting a golden dialogue full script (Module 6 restaurant or Module 10 doctor).*
