@@ -33,7 +33,7 @@
 | v17-3-1 | 17 | 17-3 | Lesen Practice | 📐 ARCH | Wave 1 doc |
 | v2-1-1 | 2 | 2-1 | What's Your Name? | 🔄 DRAFT | `docs/scripts/v2-1-1_FULL_SCRIPT.md` |
 | v2-1-2 | 2 | 2-1 | What's Your Name? (Part 2) | 📐 ARCH | Wave 1 doc |
-| v2-2-1 | 2 | 2-2 | Where Are You From? | 📐 ARCH | Wave 1 doc |
+| v2-2-1 | 2 | 2-2 | Where Are You From? | 🔄 DRAFT | `docs/scripts/v2-2-1_FULL_SCRIPT.md` |
 | v2-3-1 | 2 | 2-3 | Jobs & Languages | 📐 ARCH | Wave 1 doc |
 | v14-1-1 | 14 | 14-1 | Anmeldung Form | 🔄 DRAFT | `docs/scripts/v14-1-1_FULL_SCRIPT.md` |
 | v14-1-2 | 14 | 14-1 | All Form Fields Reference | 📐 ARCH | Wave 1 doc |
@@ -46,14 +46,14 @@
 | v5-1-1 | 5 | 5-1 | How German Verbs Work | 🔄 DRAFT |
 | v5-1-2 | 5 | 5-1 | Practice with Common Verbs | 📐 ARCH |
 | v5-2-1 | 5 | 5-2 | Daily Activities Vocabulary | 📐 ARCH |
-| v5-3-1 | 5 | 5-3 | Separable Verbs | 📐 ARCH |
+| v5-3-1 | 5 | 5-3 | Separable Verbs | 🔄 DRAFT | `docs/scripts/v5-3-1_FULL_SCRIPT.md` |
 | v5-4-1 | 5 | 5-4 | Describing Your Day | 📐 ARCH |
-| v13-1-1 | 13 | 13-1 | Perfekt with haben | 📐 ARCH |
-| v13-2-1 | 13 | 13-2 | Perfekt with sein | 📐 ARCH |
+| v13-1-1 | 13 | 13-1 | Perfekt with haben | 🔄 DRAFT | `docs/scripts/v13-1-1_FULL_SCRIPT.md` |
+| v13-2-1 | 13 | 13-2 | Perfekt with sein | 🔄 DRAFT | `docs/scripts/v13-2-1_FULL_SCRIPT.md` |
 | v13-3-1 | 13 | 13-3 | Irregular Past Participles | 📐 ARCH |
 | v13-4-1 | 13 | 13-4 | Talking About Your Weekend | 📐 ARCH |
-| v3-1-1 | 3 | 3-1 | Numbers 0–20 | 📐 ARCH |
-| v3-2-1 | 3 | 3-2 | Numbers 21–100+ | 📐 ARCH |
+| v3-1-1 | 3 | 3-1 | Numbers 0–10 | 🔄 DRAFT | `docs/scripts/v3-1-1_FULL_SCRIPT.md` |
+| v3-2-1 | 3 | 3-2 | Numbers 21–100+ | 🔄 DRAFT | `docs/scripts/v3-2-1_FULL_SCRIPT.md` |
 | v3-3-1 | 3 | 3-3 | Telling Time | 📐 ARCH |
 | v3-4-1 | 3 | 3-4 | Days, Months, Dates | 📐 ARCH |
 
@@ -63,18 +63,18 @@
 |----------|--------|--------|-------|--------|
 | v6-1-1 | 6 | 6-1 | German Foods You Should Know | 📐 ARCH |
 | v6-1-2 | 6 | 6-1 | Kerala Food in German | 📐 ARCH |
-| v6-2-1 | 6 | 6-2 | Drinks & Ordering | 📐 ARCH |
-| v6-3-1 | 6 | 6-3 | Restaurant Golden Dialogue | 📐 ARCH |
+| v6-2-1 | 6 | 6-2 | Drinks & Ordering | 🔄 DRAFT | `docs/scripts/v6-2-1_FULL_SCRIPT.md` |
+| v6-3-1 | 6 | 6-3 | Restaurant Golden Dialogue | 🔄 DRAFT | `docs/scripts/v6-3-1_FULL_SCRIPT.md` |
 | v6-4-1 | 6 | 6-4 | Kerala Food in German | 📐 ARCH |
-| v9-1-1 | 9 | 9-1 | Transportation & mit+Dativ | 📐 ARCH |
+| v9-1-1 | 9 | 9-1 | Transportation & mit+Dativ | 🔄 DRAFT | `docs/scripts/v9-1-1_FULL_SCRIPT.md` |
 | v9-2-1 | 9 | 9-2 | Giving Directions | 📐 ARCH |
 | v9-3-1 | 9 | 9-3 | Buying Tickets | 📐 ARCH |
 | v10-1-1 | 10 | 10-1 | Body Parts | 📐 ARCH |
 | v10-2-1 | 10 | 10-2 | At the Doctor (Symptoms) | 📐 ARCH |
-| v10-3-1 | 10 | 10-3 | Doctor Visit Golden Dialogue | 📐 ARCH |
-| v4-1-1 | 4 | 4-1 | Family Members | 📐 ARCH |
+| v10-3-1 | 10 | 10-3 | Doctor Visit Golden Dialogue | 🔄 DRAFT | `docs/scripts/v10-3-1_FULL_SCRIPT.md` |
+| v4-1-1 | 4 | 4-1 | Family Members | 🔄 DRAFT | `docs/scripts/v4-1-1_FULL_SCRIPT.md` |
 | v4-2-1 | 4 | 4-2 | Describing People | 📐 ARCH |
-| v4-3-1 | 4 | 4-3 | Possessive Pronouns | 📐 ARCH |
+| v4-3-1 | 4 | 4-3 | Possessive Pronouns | 🔄 DRAFT | `docs/scripts/v4-3-1_FULL_SCRIPT.md` |
 
 ## Wave 4 — Supporting Content
 
@@ -120,8 +120,8 @@
 
 | Category | Count |
 |----------|-------|
-| Full scripts (🔄 DRAFT or ✅ DONE) | **7** |
-| Scene architectures (📐 ARCH) | **~60** |
+| Full scripts (🔄 DRAFT or ✅ DONE) | **19** |
+| Scene architectures (📐 ARCH) | **~56** |
 | Outline only (⬜) | **0** — all now have at least architecture |
 
 ## Next Scripts to Write (Priority Order)
@@ -131,12 +131,24 @@
 3. ~~**v14-1-1** — Anmeldung form walkthrough (practical + exam)~~ ✅ DRAFTED
 4. ~~**v2-1-1** — What's Your Name? (foundation for all self-intro)~~ ✅ DRAFTED
 5. ~~**v5-1-1** — How German Verbs Work (grammar backbone)~~ ✅ DRAFTED
-6. **v6-3-1** — Restaurant Golden Dialogue (first practical conversation script)
-7. **v10-3-1** — Doctor Visit Golden Dialogue (second practical conversation script)
-8. **v13-1-1** — Perfekt with haben (second grammar pillar)
-9. **v3-1-1** — Numbers 0–20 (exam-critical listening foundation)
-10. **v2-2-1** — Where Are You From? (next self-intro building block)
+6. ~~**v6-3-1** — Restaurant Golden Dialogue~~ ✅ DRAFTED
+7. ~~**v10-3-1** — Doctor Visit Golden Dialogue~~ ✅ DRAFTED
+8. ~~**v13-1-1** — Perfekt with haben~~ ✅ DRAFTED
+9. ~~**v3-1-1** — Numbers 0–10~~ ✅ DRAFTED
+10. ~~**v2-2-1** — Where Are You From?~~ ✅ DRAFTED
+11. ~~**v3-2-1** — Numbers 21–100+~~ ✅ DRAFTED
+12. ~~**v13-2-1** — Perfekt with sein~~ ✅ DRAFTED
+13. ~~**v9-1-1** — Transportation & mit+Dativ~~ ✅ DRAFTED
+14. ~~**v6-2-1** — Drinks & Ordering (gern pattern + Ich hätte gern)~~ ✅ DRAFTED
+15. ~~**v4-1-1** — Family Members (article system through family vocab)~~ ✅ DRAFTED
+16. ~~**v5-3-1** — Separable Verbs (verb frame concept)~~ ✅ DRAFTED
+17. ~~**v4-3-1** — Possessive Pronouns (mein/meine grammar)~~ ✅ DRAFTED
+18. **v8-3-1** — Reading Wohnungsanzeigen (exam-classic Lesen item)
+19. **v11-3-1** — German Email Writing (Schreiben prep)
+20. **v17-1-1** — Exam Format Overview & Tips (strategy video)
+21. **v5-2-1** — Daily Activities Vocabulary
+22. **v1-2-1** — German Sounds & Alphabet (pronunciation foundation)
 
 ---
 
-*Track updated by overnight cron 2026-03-23 04:55 UTC — added v14-1-1, v2-1-1, and v5-1-1 drafts. Total: 7 full scripts drafted.*
+*Track updated by overnight cron 2026-03-23 05:57 UTC — added v6-2-1 (Drinks & Ordering), v4-1-1 (Family Members), v5-3-1 (Separable Verbs), and v4-3-1 (Possessive Pronouns) drafts. Total: 19 full scripts drafted across Waves 1–3.*

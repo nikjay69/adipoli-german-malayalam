@@ -2,7 +2,7 @@
 
 > Master planning doc: teaching goals, A1 exam relevance, lesson/video script needs, essential outcomes, and future script direction for each module.
 >
-> **Last updated:** 2026-03-23 04:55 UTC (overnight cron — ALL 18 module blueprints + ALL 5 wave architectures complete; 7/~60 full scripts drafted)
+> **Last updated:** 2026-03-23 06:10 UTC (overnight cron — ALL 18 module blueprints + ALL 5 wave architectures complete; 19/~60 full scripts drafted)
 
 ---
 
@@ -150,9 +150,9 @@ Family vocabulary + possessive pronouns + articles (der/die/das). This module in
 ### Lessons & Video Script Needs
 | Lesson | Title | Script Status | Script Priority |
 |--------|-------|---------------|-----------------|
-| 4-1 | Family Members | Outline only | HIGH — core vocabulary |
+| 4-1 | Family Members | 🔄 DRAFT (`docs/scripts/v4-1-1_FULL_SCRIPT.md`) | HIGH — core vocabulary |
 | 4-2 | Describing People | Outline only | MEDIUM — adjective basics |
-| 4-3 | Possessive Pronouns | Outline only | HIGH — grammar cornerstone |
+| 4-3 | Possessive Pronouns | 🔄 DRAFT (`docs/scripts/v4-3-1_FULL_SCRIPT.md`) | HIGH — grammar cornerstone |
 
 ### Essential Outcomes
 - [ ] Name all immediate + extended family members with correct articles
@@ -189,7 +189,7 @@ Regular verb conjugation in present tense + daily routine vocabulary. This is wh
 |--------|-------|---------------|-----------------|
 | 5-1 | Regular Verbs Present Tense | Outline only | CRITICAL — grammar backbone |
 | 5-2 | Daily Activities | Outline only | HIGH — routine vocabulary |
-| 5-3 | Separable Verbs | Outline only | HIGH — tricky but essential |
+| 5-3 | Separable Verbs | 🔄 DRAFT (`docs/scripts/v5-3-1_FULL_SCRIPT.md`) | HIGH — tricky but essential |
 | 5-4 | Describing Your Day | Outline only | HIGH — ties it all together |
 
 ### Essential Outcomes
@@ -228,7 +228,7 @@ Food vocabulary with articles, ordering at restaurants, expressing likes/dislike
 | Lesson | Title | Script Status | Script Priority |
 |--------|-------|---------------|-----------------|
 | 6-1 | Common Foods | Outline only | HIGH — vocabulary base |
-| 6-2 | Drinks & Ordering | Outline only | HIGH — practical + exam |
+| 6-2 | Drinks & Ordering | 🔄 DRAFT (`docs/scripts/v6-2-1_FULL_SCRIPT.md`) | HIGH — practical + exam |
 | 6-3 | Restaurant Conversations | Outline only | HIGH — dialogue scripts |
 | 6-4 | Kerala Food in German | Outline only | MEDIUM — cultural bridge |
 
@@ -869,6 +869,18 @@ Based on A1 exam impact, the recommended script creation order is:
 - ✅ v14-1-1 — Anmeldung Form Walkthrough (FIRST DRAFT) → `docs/scripts/v14-1-1_FULL_SCRIPT.md`
 - ✅ v2-1-1 — What's Your Name? (FIRST DRAFT) → `docs/scripts/v2-1-1_FULL_SCRIPT.md`
 - ✅ v5-1-1 — How German Verbs Work (FIRST DRAFT) → `docs/scripts/v5-1-1_FULL_SCRIPT.md`
+- ✅ v6-3-1 — Restaurant Golden Dialogue (FIRST DRAFT) → `docs/scripts/v6-3-1_FULL_SCRIPT.md`
+- ✅ v10-3-1 — Doctor Visit Golden Dialogue (FIRST DRAFT) → `docs/scripts/v10-3-1_FULL_SCRIPT.md`
+- ✅ v13-1-1 — Perfekt with haben (FIRST DRAFT) → `docs/scripts/v13-1-1_FULL_SCRIPT.md`
+- ✅ v3-1-1 — Numbers 0–10 (FIRST DRAFT) → `docs/scripts/v3-1-1_FULL_SCRIPT.md`
+- ✅ v2-2-1 — Where Are You From? (FIRST DRAFT) → `docs/scripts/v2-2-1_FULL_SCRIPT.md`
+- ✅ v3-2-1 — Numbers 21–100+ (FIRST DRAFT) → `docs/scripts/v3-2-1_FULL_SCRIPT.md`
+- ✅ v13-2-1 — Perfekt with sein (FIRST DRAFT) → `docs/scripts/v13-2-1_FULL_SCRIPT.md`
+- ✅ v9-1-1 — Transportation & mit+Dativ (FIRST DRAFT) → `docs/scripts/v9-1-1_FULL_SCRIPT.md`
+- ✅ v6-2-1 — Drinks & Ordering (FIRST DRAFT) → `docs/scripts/v6-2-1_FULL_SCRIPT.md`
+- ✅ v4-1-1 — Family Members (FIRST DRAFT) → `docs/scripts/v4-1-1_FULL_SCRIPT.md`
+- ✅ v5-3-1 — Separable Verbs (FIRST DRAFT) → `docs/scripts/v5-3-1_FULL_SCRIPT.md`
+- ✅ v4-3-1 — Possessive Pronouns (FIRST DRAFT) → `docs/scripts/v4-3-1_FULL_SCRIPT.md`
 - See `docs/SCRIPT_PRODUCTION_TRACKER.md` for full status across all ~60 videos.
 
-*Next priorities: (1) Write v6-3-1 full script (Restaurant Golden Dialogue — first practical conversation). (2) Write v10-3-1 full script (Doctor Visit Golden Dialogue). (3) Write v13-1-1 full script (Perfekt with haben — second grammar pillar). (4) Write v3-1-1 full script (Numbers 0–20). (5) Wire edge-tts audio pipeline for Hören exercises. (6) Implement production exercise types (free-text, dictation) in Exercise interface.*
+*Next priorities: (1) Write v8-3-1 full script (Reading Wohnungsanzeigen — exam-classic Lesen item). (2) Write v11-3-1 full script (German Email Writing — Schreiben prep). (3) Write v17-1-1 full script (Exam Format Overview & Tips). (4) Write v5-2-1 full script (Daily Activities Vocabulary). (5) Wire edge-tts audio pipeline for Hören exercises. (6) Implement production exercise types (free-text, dictation) in Exercise interface.*
