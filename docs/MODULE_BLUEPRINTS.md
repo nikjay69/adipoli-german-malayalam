@@ -861,4 +861,9 @@ Based on A1 exam impact, the recommended script creation order is:
 
 **🎉 ALL 18 MODULES NOW HAVE COMPLETE SCRIPT ARCHITECTURES (Waves 1–5).**
 
-*Next priorities: (1) Write first FULL script for Module 18 Lesson 18-1 v18-1-1 (form-filling — easiest exam points, highest ROI). (2) Write first golden dialogue full script (Module 6 restaurant v6-3-1 or Module 10 doctor v10-3-1). (3) Wire edge-tts audio pipeline for Hören exercises. (4) Implement production exercise types (free-text, dictation) in Exercise interface. Wave 5 architecture completed 2026-03-23.*
+**📝 FULL SCRIPT PRODUCTION STARTED (2026-03-23):**
+- ✅ v18-1-1 — Schreiben Teil 1: Form Filling (FIRST DRAFT) → `docs/scripts/v18-1-1_FULL_SCRIPT.md`
+- ✅ v18-2-1 — Schreiben Teil 2: Short Messages (FIRST DRAFT) → `docs/scripts/v18-2-1_FULL_SCRIPT.md`
+- See `docs/SCRIPT_PRODUCTION_TRACKER.md` for full status across all ~60 videos.
+
+*Next priorities: (1) Write v18-3-1 full script (Self-Introduction — Sprechen Teil 1 golden script). (2) Write v18-4-1 full script (Questions & Requests — Sprechen Teil 2/3). (3) Write v14-1-1 full script (Anmeldung form walkthrough). (4) Write first golden dialogue full script (Module 6 restaurant v6-3-1 or Module 10 doctor v10-3-1). (5) Wire edge-tts audio pipeline for Hören exercises. (6) Implement production exercise types (free-text, dictation) in Exercise interface.*
