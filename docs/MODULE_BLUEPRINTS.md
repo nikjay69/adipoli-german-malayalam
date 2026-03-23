@@ -2,7 +2,7 @@
 
 > Master planning doc: teaching goals, A1 exam relevance, lesson/video script needs, essential outcomes, and future script direction for each module.
 >
-> **Last updated:** 2026-03-23 04:30 UTC (overnight cron — ALL 18 module blueprints + ALL 5 wave architectures complete; 4/~60 full scripts drafted)
+> **Last updated:** 2026-03-23 04:55 UTC (overnight cron — ALL 18 module blueprints + ALL 5 wave architectures complete; 7/~60 full scripts drafted)
 
 ---
 
@@ -866,6 +866,9 @@ Based on A1 exam impact, the recommended script creation order is:
 - ✅ v18-2-1 — Schreiben Teil 2: Short Messages (FIRST DRAFT) → `docs/scripts/v18-2-1_FULL_SCRIPT.md`
 - ✅ v18-3-1 — Sprechen Teil 1: Self-Introduction (FIRST DRAFT) → `docs/scripts/v18-3-1_FULL_SCRIPT.md`
 - ✅ v18-4-1 — Sprechen Teil 2 & 3: Questions & Requests (FIRST DRAFT) → `docs/scripts/v18-4-1_FULL_SCRIPT.md`
+- ✅ v14-1-1 — Anmeldung Form Walkthrough (FIRST DRAFT) → `docs/scripts/v14-1-1_FULL_SCRIPT.md`
+- ✅ v2-1-1 — What's Your Name? (FIRST DRAFT) → `docs/scripts/v2-1-1_FULL_SCRIPT.md`
+- ✅ v5-1-1 — How German Verbs Work (FIRST DRAFT) → `docs/scripts/v5-1-1_FULL_SCRIPT.md`
 - See `docs/SCRIPT_PRODUCTION_TRACKER.md` for full status across all ~60 videos.
 
-*Next priorities: (1) Write v14-1-1 full script (Anmeldung form walkthrough). (2) Write v2-1-1 full script (What's Your Name — foundation self-intro). (3) Write v5-1-1 full script (How German Verbs Work — grammar backbone). (4) Write first golden dialogue full script (Module 6 restaurant v6-3-1 or Module 10 doctor v10-3-1). (5) Wire edge-tts audio pipeline for Hören exercises. (6) Implement production exercise types (free-text, dictation) in Exercise interface.*
+*Next priorities: (1) Write v6-3-1 full script (Restaurant Golden Dialogue — first practical conversation). (2) Write v10-3-1 full script (Doctor Visit Golden Dialogue). (3) Write v13-1-1 full script (Perfekt with haben — second grammar pillar). (4) Write v3-1-1 full script (Numbers 0–20). (5) Wire edge-tts audio pipeline for Hören exercises. (6) Implement production exercise types (free-text, dictation) in Exercise interface.*

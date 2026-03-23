@@ -31,11 +31,11 @@
 | v17-1-1 | 17 | 17-1 | Exam Format Overview & Tips | 📐 ARCH | Wave 1 doc |
 | v17-2-1 | 17 | 17-2 | Hören Practice | 📐 ARCH | Wave 1 doc |
 | v17-3-1 | 17 | 17-3 | Lesen Practice | 📐 ARCH | Wave 1 doc |
-| v2-1-1 | 2 | 2-1 | What's Your Name? | 📐 ARCH | Wave 1 doc |
+| v2-1-1 | 2 | 2-1 | What's Your Name? | 🔄 DRAFT | `docs/scripts/v2-1-1_FULL_SCRIPT.md` |
 | v2-1-2 | 2 | 2-1 | What's Your Name? (Part 2) | 📐 ARCH | Wave 1 doc |
 | v2-2-1 | 2 | 2-2 | Where Are You From? | 📐 ARCH | Wave 1 doc |
 | v2-3-1 | 2 | 2-3 | Jobs & Languages | 📐 ARCH | Wave 1 doc |
-| v14-1-1 | 14 | 14-1 | Anmeldung Form | 📐 ARCH | Wave 1 doc |
+| v14-1-1 | 14 | 14-1 | Anmeldung Form | 🔄 DRAFT | `docs/scripts/v14-1-1_FULL_SCRIPT.md` |
 | v14-1-2 | 14 | 14-1 | All Form Fields Reference | 📐 ARCH | Wave 1 doc |
 | v14-2-1 | 14 | 14-2 | At the Office | 📐 ARCH | Wave 1 doc |
 
@@ -43,7 +43,7 @@
 
 | Video ID | Module | Lesson | Title | Status |
 |----------|--------|--------|-------|--------|
-| v5-1-1 | 5 | 5-1 | How German Verbs Work | 📐 ARCH |
+| v5-1-1 | 5 | 5-1 | How German Verbs Work | 🔄 DRAFT |
 | v5-1-2 | 5 | 5-1 | Practice with Common Verbs | 📐 ARCH |
 | v5-2-1 | 5 | 5-2 | Daily Activities Vocabulary | 📐 ARCH |
 | v5-3-1 | 5 | 5-3 | Separable Verbs | 📐 ARCH |
@@ -120,7 +120,7 @@
 
 | Category | Count |
 |----------|-------|
-| Full scripts (🔄 DRAFT or ✅ DONE) | **4** |
+| Full scripts (🔄 DRAFT or ✅ DONE) | **7** |
 | Scene architectures (📐 ARCH) | **~60** |
 | Outline only (⬜) | **0** — all now have at least architecture |
 
@@ -128,11 +128,15 @@
 
 1. ~~**v18-3-1** — Sprechen Teil 1: Self-Introduction~~ ✅ DRAFTED
 2. ~~**v18-4-1** — Sprechen Teil 2 & 3: Questions & Requests~~ ✅ DRAFTED
-3. **v14-1-1** — Anmeldung form walkthrough (practical + exam)
-4. **v2-1-1** — What's Your Name? (foundation for all self-intro)
-5. **v5-1-1** — How German Verbs Work (grammar backbone)
-6. **v6-3-1** or **v10-3-1** — First golden dialogue (restaurant or doctor)
+3. ~~**v14-1-1** — Anmeldung form walkthrough (practical + exam)~~ ✅ DRAFTED
+4. ~~**v2-1-1** — What's Your Name? (foundation for all self-intro)~~ ✅ DRAFTED
+5. ~~**v5-1-1** — How German Verbs Work (grammar backbone)~~ ✅ DRAFTED
+6. **v6-3-1** — Restaurant Golden Dialogue (first practical conversation script)
+7. **v10-3-1** — Doctor Visit Golden Dialogue (second practical conversation script)
+8. **v13-1-1** — Perfekt with haben (second grammar pillar)
+9. **v3-1-1** — Numbers 0–20 (exam-critical listening foundation)
+10. **v2-2-1** — Where Are You From? (next self-intro building block)
 
 ---
 
-*Track updated by overnight cron 2026-03-23 04:27 UTC — added v18-3-1 and v18-4-1 drafts.*
+*Track updated by overnight cron 2026-03-23 04:55 UTC — added v14-1-1, v2-1-1, and v5-1-1 drafts. Total: 7 full scripts drafted.*
