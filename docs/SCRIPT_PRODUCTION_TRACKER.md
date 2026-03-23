@@ -4,7 +4,7 @@
 > Architecture docs (Wave 1–5) define the scene-level structure.
 > This tracker records which scripts have been written as full, production-ready narration.
 >
-> **Last updated:** 2026-03-23 16:22 UTC (quality pass cron — Module 1 greetings/goodbye social-foundation revision run)
+> **Last updated:** 2026-03-23 17:08 UTC (quality pass cron — hobbies + email revision run)
 
 ---
 
@@ -195,4 +195,4 @@
 
 ---
 
-*Track updated by quality pass cron 2026-03-23 16:22 UTC — revised 2 weaker **Module 1 social-foundation scripts** to stronger production-ready teaching shape: v1-3-1 (Greetings — cut overload down to the 4 greeting tools learners actually need first, tightened `Sie`/`du`, simplified `Wie geht's?` answers, and rebuilt around two active mini-dialogues) and v1-3-2 (Goodbyes + politeness — reduced the phrase inventory to a compact exit toolkit, clarified `Danke`/`Bitte`, and made `Entschuldigung` vs `Es tut mir leid` much safer for beginners). **Total: 52 full scripts, 52 confirmed at v2.0+ quality**. Pull-first completed successfully at run start; repo remains intentionally dirty from earlier in-progress files, so any push should continue staging only targeted work.*
+*Track updated by quality pass cron 2026-03-23 17:08 UTC — revised 2 weaker scripts to stronger production-ready teaching shape: `v12-1-1` (hobbies — cut the overgrown vocab/speech approach down to a compact `gern`-based hobby toolkit, ask-back behavior, and a real mini-conversation) and `v11-3-1` (German email writing — rebuilt around one reusable 5-part email skeleton, safer formal/informal register decisions, and shorter exam-useful models). **Total: 52 full scripts. Confirmed at v2.0+ quality: 50/52. Remaining obvious v1.0 holdouts inside the 52-script tracker set after this run: `v7-2-1`, `v7-3-1`.** Pull-first succeeded at run start (`git pull --rebase --autostash` reported already up to date); no commit/push attempted in this run.*

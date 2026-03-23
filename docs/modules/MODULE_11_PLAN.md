@@ -1,6 +1,6 @@
 # Module 11: Work & Study (Arbeit und Studium) — Launch Plan
 
-> **Last updated:** 2026-03-23 12:55 UTC
+> **Last updated:** 2026-03-23 16:45 UTC
 
 ---
 
@@ -34,11 +34,11 @@
 
 | Video ID | Title | Status | Quality | Notes |
 |----------|-------|--------|---------|-------|
-| v11-1-1 | Professions in Detail | 🔄 DRAFT | v1.0 | Gender pairs, career vocabulary |
+| v11-1-1 | Professions in Detail | 🔄 DRAFT | v2.0 ✅ | Gender pairs, career vocabulary |
 | v11-1-2 | Career Paths | ⬜ OUTLINE | — | Nursing, IT, Ausbildung pathways |
-| v11-2-1 | Workplace Vocabulary | 🔄 DRAFT | v1.0 | Office/university terms |
+| v11-2-1 | Workplace Vocabulary | 🔄 DRAFT | v2.1 ✅ | First-day survival language, help-seeking, notice-reading |
 | v11-2-2 | University Life | ⬜ OUTLINE | — | Study-specific vocab, Vorlesung, Mensa |
-| v11-3-1 | German Email Writing | 🔄 DRAFT | v1.0 | Email structure, formal register |
+| v11-3-1 | German Email Writing | 🔄 DRAFT | v2.1 ✅ | Email lesson rebuilt around one reusable 5-part skeleton, two formal models, and safer exam register decisions |
 | v11-3-2 | Email Mistakes to Avoid | ⬜ OUTLINE | — | Common email errors |
 | v11-4-1 | Skills & Abilities | ⬜ OUTLINE | — | "Ich kann gut..." patterns |
 | v11-4-2 | Talking About Experience | ⬜ OUTLINE | — | Simple work history |
@@ -184,7 +184,7 @@ Viele Grüße / Herzliche Grüße
 6. [ ] Build 11-P3 semi-formal email exercise (write to a teacher/Kursleiter)
 7. [ ] Build 11-P5 interview Q&A speaking exercise
 8. [ ] Draft v11-5-1 (Interview Basics — standard questions and safe answers)
-9. [ ] Upgrade v11-1-1, v11-2-1, v11-3-1 from v1.0 to v2.0 quality
+9. [ ] Keep future email-related additions (`v11-3-2`, exercises) aligned with the revised `v11-3-1` structure and exam-safe register rules
 10. [ ] Add 3 email prompts with different scenarios (appointment, course enrollment, absence)
 
 ### Nice-to-have

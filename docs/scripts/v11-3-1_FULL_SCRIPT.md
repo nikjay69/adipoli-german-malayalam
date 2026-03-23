@@ -1,376 +1,307 @@
-# v11-3-1 — Die perfekte E-Mail: Formal Email Structure
-Module: 11 | Lesson: 11-3 | Duration: 14:00 target
-Teaching Goal: Master formal and informal German email structure — directly supports Schreiben Teil 2 and real-life communication
-A1 Exam Link: Schreiben Teil 2 (short messages/emails), real-world Ausländerbehörde/landlord/school correspondence
+# v11-3-1 — German Email Writing (Die einfache deutsche E-Mail)
+
+> **Module:** 11 (Work & Study)
+> **Lesson:** 11-3 (Email Writing)
+> **Duration:** 11:00–12:00 target
+> **Teaching Goal:** Help learners write short, safe German emails for the exam and real life using one reliable structure instead of overcomplicated templates.
+> **A1 Exam Link:** **Direct** — Schreiben Teil 2 short message/email writing; indirect support for Lesen through email recognition
+> **Prerequisites:** Module 1 (formal/informal politeness), Module 11-1 (profession basics), Module 12-4 recommended for short-message mindset
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
 ## Pre-roll (0:00–0:15)
-### Visual: [Course intro animation]
-"Willkommen bei Adipoli German! Today — the art of the German email!"
 
----
-
-## Section 1: Hook (0:15–1:30)
-### Visual: [SLIDE: Email inbox with German subject lines — "Termin absagen", "Anmeldung Sprachkurs", "Wohnungsbewerbung"]
+### Visual: [Branding slide]
 ### Narration:
-"In Germany, you WILL write emails. To your Sprachschule, your landlord, the Ausländerbehörde, your boss, your professor — everyone.
-
-And here's the thing: Germans judge you by your email. A good email = 'Oh, this person is professional and respectful.' A bad email = straight to the trash folder.
-
-*India-yil WhatsApp message ayakkupolathoru casual approach Germany-il work aavilla!*
-
-But don't worry — German emails follow a VERY clear template. Learn the template once, use it forever. 
-
-AND — this is DIRECTLY relevant for your exam. Schreiben Teil 2 is basically writing a short message or email. Same structure, same skills.
-
-Let's learn the template that always works!"
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 2: Email Anatomy (1:30–3:00)
-### Visual: [DIAGRAM: Email anatomy with labeled sections — side by side German vs English]
-```
-┌──────────────────────────────────┐
-│ Betreff: Termin am Montag        │  ← Subject line
-├──────────────────────────────────┤
-│ Sehr geehrte Frau Schmidt,       │  ← Greeting (Anrede)
-│                                  │
-│ ich schreibe Ihnen, weil...      │  ← Body (Inhalt)
-│ Könnten Sie mir bitte...         │
-│                                  │
-│ Vielen Dank für Ihre Hilfe.      │  ← Thank you line
-│                                  │
-│ Mit freundlichen Grüßen          │  ← Closing (Grußformel)
-│ Nikhil Jayanth                   │  ← Your name
-└──────────────────────────────────┘
-```
+## Section 1: Hook — You Do Not Need Fancy German to Write a Good Email (0:15–0:45)
 
+### Visual: [Inbox with 3 simple subjects: Kurs, Termin, Frage]
 ### Narration:
-"Every German email has 5 parts. Let me show you.
+"In Germany, email is not optional.
+You write to a school, a landlord, an office, a teacher, maybe a boss.
 
-[HIGHLIGHT: Betreff]
-Number 1: Betreff — the subject line. Short and clear. 'Termin am Montag' or 'Frage zum Sprachkurs'.
+But here is the good news:
+A good A1 email is usually **short, clear, polite**.
 
-[HIGHLIGHT: Anrede]
-Number 2: Anrede — the greeting. This is where formal vs informal matters MOST.
+Not poetic.
+Not complicated.
+Not long.
 
-[HIGHLIGHT: Inhalt]
-Number 3: Inhalt — the body. Your actual message. Keep it short and clear.
-
-[HIGHLIGHT: Dank]
-Number 4: A thank-you line — almost always included in German emails. 'Vielen Dank für Ihre Hilfe.'
-
-[HIGHLIGHT: Grußformel]
-Number 5: Grußformel — the closing. Plus your name.
-
-That's it. 5 parts. Let's look at each one in detail."
+Today, I'll give you one email structure that works again and again — for the exam and for real life."
 
 ---
 
-## Section 3: Formal Greetings — Anrede (3:00–4:30)
-### Visual: [TABLE: Formal greeting options]
-| Situation | Greeting |
-|-----------|----------|
-| You know the woman's name | Sehr geehrte Frau Schmidt, |
-| You know the man's name | Sehr geehrter Herr Müller, |
-| You don't know the name | Sehr geehrte Damen und Herren, |
-| Semi-formal (know them a bit) | Guten Tag Frau Schmidt, |
+## Section 2: The 5-Part Email Skeleton (0:45–1:55)
 
+### Visual: [Large clean diagram]
 ### Narration:
-"Formal greetings — this is where German emails look VERY different from English.
+"Every simple German email has five parts:
 
-🔊 Sehr geehrte Frau Schmidt, — Dear Mrs. Schmidt. Used when writing to a woman you don't know personally.
-⏸️ Say it: Sehr geehrte Frau Schmidt.
+1. **Betreff** — subject line  
+2. **Anrede** — greeting  
+3. **Inhalt** — the message  
+4. **Schlusszeile** — one polite ending line  
+5. **Gruß + Name** — closing and your name
 
-Notice: 'geehrTE' for women, 'geehrTER' for men. The ending changes!
+### Model skeleton
+**Betreff: Frage zum Kurs**
 
-🔊 Sehr geehrter Herr Müller, — Dear Mr. Müller. For a man.
-⏸️
+**Sehr geehrte Frau Becker,**
 
-And if you DON'T know the name?
-🔊 Sehr geehrte Damen und Herren, — Dear ladies and gentlemen. The universal fallback.
-⏸️
+**ich schreibe Ihnen, weil ...**
+**Könnten Sie mir bitte ... ?**
 
-CRITICAL: there's a COMMA after the greeting in German. And the next line starts with a LOWERCASE letter! 
+**Vielen Dank für Ihre Hilfe.**
 
-'Sehr geehrte Frau Schmidt,
-ich schreibe Ihnen...'
+**Mit freundlichen Grüßen**
+**Nikhil Jayanth**
 
-See? 'ich' is lowercase! *Ithu English-il ninnu valare vyathyasthamaanu* — in English we capitalize after 'Dear...'
-
-[EXAM-TIP] For the exam, you'll usually write INFORMAL messages. But knowing formal structure helps with Lesen passages where you might read a formal letter."
+That is the whole system.
+Do not start with ten variants. Start with one reliable frame."
 
 ---
 
-## Section 4: Formal Closings — Grußformel (4:30–6:00)
-### Visual: [TABLE: Formal closing options]
-| Closing | When to use |
-|---------|-------------|
-| Mit freundlichen Grüßen | Standard formal — ALWAYS works |
-| Mit besten Grüßen | Slightly warmer, still professional |
-| Freundliche Grüße | A bit less formal |
-| Hochachtungsvoll | Very formal (rare, sounds old-fashioned) |
+## Section 3: Formal or Informal? Decide This First (1:55–3:20)
 
+### Visual: [Decision card: friend vs official person]
 ### Narration:
-"Now the closing — Grußformel.
+"Before writing, ask one question:
 
-🔊 Mit freundlichen Grüßen — With friendly regards. This is THE standard. You can NEVER go wrong with this.
-⏸️ Say it: Mit freundlichen Grüßen.
+### Am I writing to a friend — or to an official / professional person?
 
-Think of it as the German 'Best regards' — it works in every professional situation.
+If it is a friend:
+- **Liebe Anna,**
+- **Lieber Tom,**
+- **Viele Grüße** / **Liebe Grüße**
 
-🔊 Mit besten Grüßen — With best regards. Slightly warmer, still professional.
+If it is a school, office, landlord, teacher, course administrator, or unknown adult:
+- **Sehr geehrte Frau ...**
+- **Sehr geehrter Herr ...**
+- **Sehr geehrte Damen und Herren,**
+- **Mit freundlichen Grüßen**
 
-IMPORTANT: In German, there is NO comma before your name! English: 'Best regards, Nikhil' — German: 'Mit freundlichen Grüßen' then new line, then 'Nikhil Jayanth'. No comma!
+### Safe A1 rule
+If you are unsure in an official context, go formal.
+Formal is safer than too casual.
 
-Let me show you the difference:
-
-❌ WRONG: Mit freundlichen Grüßen, Nikhil Jayanth
-✅ RIGHT: Mit freundlichen Grüßen
-         Nikhil Jayanth
-
-Small detail, big impression."
+*Malayalam-il 'Respected Sir/Madam' safe aayirikkunnath pole, German-il formal opening safe aanu.*"
 
 ---
 
-## Section 5: Useful Formal Phrases (6:00–7:30)
-### Visual: [TABLE: Body text phrases for formal emails]
-| German | English | Use when... |
-|--------|---------|-------------|
-| Ich schreibe Ihnen, weil... | I'm writing to you because... | Opening your reason |
-| Ich möchte gern... | I would like to... | Making a request |
-| Könnten Sie mir bitte...? | Could you please...? | Polite request |
-| Ich hätte eine Frage zu... | I have a question about... | Asking something |
-| Vielen Dank für Ihre Hilfe. | Thank you for your help. | Before closing |
-| Ich freue mich auf Ihre Antwort. | I look forward to your reply. | Before closing |
-| Anbei finden Sie... | Attached you will find... | With attachments |
+## Section 4: The Two Greetings You Need Most (3:20–4:20)
 
+### Visual: [Two greeting cards only]
 ### Narration:
-"Now the body — the actual MESSAGE. Here are phrases you'll use again and again.
+"Don't memorize every greeting on day one.
+Memorize these two first.
 
-🔊 Ich schreibe Ihnen, weil... — I'm writing to you because...
-⏸️ This is your perfect opening sentence. Every email can start here.
+### If you know the name
+🔊 **Sehr geehrte Frau Müller,**  
+🔊 **Sehr geehrter Herr Schneider,**
 
-🔊 Ich möchte gern einen Termin vereinbaren. — I would like to arrange an appointment.
-⏸️
+### If you do not know the name
+🔊 **Sehr geehrte Damen und Herren,**
 
-🔊 Könnten Sie mir bitte die Informationen schicken? — Could you please send me the information?
-⏸️
+And for informal:
+🔊 **Liebe Maria,**  
+🔊 **Lieber Arun,**
 
-And the thank-you line that goes before your closing:
-🔊 Vielen Dank für Ihre Hilfe. — Thank you for your help.
-⏸️
+### Tiny but important email detail
+In German, there is a comma after the greeting:
 
-And if you want to sound extra professional:
-🔊 Ich freue mich auf Ihre Antwort. — I look forward to your reply.
+**Sehr geehrte Frau Müller,**
+**ich schreibe Ihnen ...**
 
-*'Sie' and 'Ihnen' and 'Ihre' — always CAPITALIZED in emails! Ithu respect kaanikkunnathanu.*"
+The next line often starts with a lowercase letter. Beginners don't need to panic about this, but you should recognize it."
 
 ---
 
-## Section 6: Example Email 1 — Writing to Sprachschule (7:30–9:00)
-### Visual: [SLIDE: Complete email, line by line highlighted as narrator reads]
-```
-Betreff: Frage zum Deutschkurs A1
+## Section 5: The 4 Body Sentences That Solve Most A1 Emails (4:20–5:45)
 
-Sehr geehrte Damen und Herren,
-
-ich möchte gern einen Deutschkurs A1 besuchen.
-Können Sie mir bitte sagen, wann der nächste Kurs beginnt?
-Wie viel kostet der Kurs?
-
-Vielen Dank für Ihre Hilfe.
-
-Mit freundlichen Grüßen
-Nikhil Jayanth
-```
-
+### Visual: [Four reusable sentence cards]
 ### Narration:
-"Let's write a REAL email together. Situation: you want to join a German language school.
+"Now the body. These four sentences do most of the work.
 
-Betreff: Frage zum Deutschkurs A1 — clear, specific subject line.
+🔊 **Ich schreibe Ihnen, weil ...**  
+I am writing to you because ...
 
-Greeting: Sehr geehrte Damen und Herren — we don't know a specific name.
+🔊 **Ich möchte gern ...**  
+I would like to ...
 
-Body — three simple sentences:
-'Ich möchte gern einen Deutschkurs A1 besuchen.' — I'd like to take an A1 German course.
-'Können Sie mir bitte sagen, wann der nächste Kurs beginnt?' — Can you please tell me when the next course starts?
-'Wie viel kostet der Kurs?' — How much does the course cost?
+🔊 **Könnten Sie mir bitte ... ?**  
+Could you please ... ?
 
-Thank-you line: 'Vielen Dank für Ihre Hilfe.'
+🔊 **Vielen Dank für Ihre Hilfe.**  
+Thank you for your help.
 
-Closing: Mit freundlichen Grüßen, and your name.
+### Example uses
+- **Ich schreibe Ihnen, weil ich eine Frage zum Kurs habe.**
+- **Ich möchte gern einen Termin vereinbaren.**
+- **Könnten Sie mir bitte die Informationen schicken?**
+- **Vielen Dank für Ihre Hilfe.**
 
-⏸️ Count the sentences in the body: just THREE! Short, clear, professional. That's the German way.
+That is already enough for many A1 situations.
 
-*Email ezhuthunna valiya secret aanu: SHORT is better. Germans hate long emails!*"
+### Drill
+Repeat the request line three times:
+**Könnten Sie mir bitte helfen?**
+⏸️ [pause]"
 
 ---
 
-## Section 7: Example Email 2 — Problem with Landlord (9:00–10:30)
-### Visual: [SLIDE: Complete email]
-```
-Betreff: Problem mit der Heizung
+## Section 6: Golden Formal Email — Ask About a Course (5:45–7:15)
 
-Sehr geehrte Frau Becker,
-
-ich bin Ihre Mieterin in der Hauptstraße 15.
-Seit gestern funktioniert die Heizung in meiner 
-Wohnung nicht. Es ist sehr kalt.
-
-Könnten Sie bitte einen Handwerker schicken?
-
-Vielen Dank im Voraus.
-
-Mit freundlichen Grüßen
-Lakshmi Nair
-```
-
+### Visual: [Full email shown line by line]
 ### Narration:
-"Email 2 — you have a REAL problem. The heating is broken!
+"Let's build one full formal email.
 
-Betreff: Problem mit der Heizung — Problem with the heating. Clear and direct.
+### Situation
+You want information about an A1 course.
 
-Greeting: We KNOW the landlady's name, so: Sehr geehrte Frau Becker.
+**Betreff: Frage zum Deutschkurs A1**
 
-Body: 
-'Ich bin Ihre Mieterin in der Hauptstraße 15.' — I'm your tenant at Hauptstraße 15. This identifies who you are.
-'Seit gestern funktioniert die Heizung in meiner Wohnung nicht.' — Since yesterday the heating doesn't work.
-'Es ist sehr kalt.' — It's very cold. Short and effective!
+**Sehr geehrte Damen und Herren,**
 
-Request: 'Könnten Sie bitte einen Handwerker schicken?' — Could you please send a repair person?
+**ich möchte gern einen Deutschkurs A1 besuchen. Könnten Sie mir bitte sagen, wann der nächste Kurs beginnt? Wie viel kostet der Kurs?**
 
-'Vielen Dank im Voraus' — Thank you in advance. A nice variation!
+**Vielen Dank für Ihre Hilfe.**
 
-⏸️ Now YOUR turn. Imagine your water isn't working. How would you start the email? What would the Betreff be?
-... Problem mit dem Wasser! And the body: 'Seit heute funktioniert das Wasser nicht.' See? Same template!"
+**Mit freundlichen Grüßen**
+**Nikhil Jayanth**
+
+### Why this works
+- clear subject line
+- correct greeting
+- short reason
+- clear question
+- polite ending
+
+No extra drama. No long paragraph. Just the job."
 
 ---
 
-## Section 8: Informal Emails — For Exam! (10:30–12:00)
-### Visual: [TABLE: Informal vs Formal comparison side by side]
-| | Formal | Informal |
-|---|--------|----------|
-| Greeting | Sehr geehrte Frau X, | Liebe Maria, / Lieber Tom, |
-| Body tone | Sie, Ihnen, Ihre | du, dir, dein |
-| Closing | Mit freundlichen Grüßen | Viele Grüße / Liebe Grüße / Bis bald |
-| Comma rule | Same: comma after greeting | Same: comma after greeting |
+## Section 7: Golden Formal Email — Real-Life Problem Message (7:15–8:25)
 
+### Visual: [Second email with landlord/heating problem]
 ### Narration:
-"Now — the part that's MOST relevant for your exam. Informal emails!
+"Now a second real-life example.
 
-Schreiben Teil 2 usually asks you to write an INFORMAL message to a friend or acquaintance.
+### Situation
+Your heating is not working.
 
-[EXAM-TIP] The informal email template = Schreiben Teil 2 template. Learn this and you've cracked the exam!
+**Betreff: Problem mit der Heizung**
 
-The greeting changes:
-🔊 Liebe Maria, — Dear Maria (female friend)
-🔊 Lieber Tom, — Dear Tom (male friend)
-⏸️
+**Sehr geehrte Frau Becker,**
 
-The body uses 'du' instead of 'Sie':
-'Wie geht es dir?' instead of 'Wie geht es Ihnen?'
-'Kannst du mir bitte helfen?' instead of 'Können Sie mir bitte helfen?'
+**seit gestern funktioniert die Heizung in meiner Wohnung nicht. Es ist sehr kalt. Könnten Sie bitte einen Handwerker schicken?**
 
-The closing changes:
-🔊 Viele Grüße — Many greetings (most common informal)
-🔊 Liebe Grüße — Lovely greetings (warm, friendly)
-🔊 Bis bald! — See you soon!
+**Vielen Dank im Voraus.**
 
-Let me show you a complete informal email:
+**Mit freundlichen Grüßen**
+**Lakshmi Nair**
 
-[SLIDE: Informal email example]
-```
-Liebe Sarah,
+This teaches an important email truth:
+A1 emails are often just:
+- problem
+- request
+- polite close
 
-danke für die Einladung! Ich komme gern
-zur Party am Samstag. Soll ich etwas 
-mitbringen? Ich kann einen Kuchen backen!
-
-Bis Samstag!
-Liebe Grüße
-Akhil
-```
-
-Short. Friendly. Hits the key points. PERFECT for the exam!
-
-*WhatsApp message ezhuthunna pole thanne — just a little more structured!*"
+That is enough."
 
 ---
 
-## Section 9: Common Abbreviations in Emails (12:00–13:00)
-### Visual: [TABLE: Email abbreviations Germans use]
-| Abbreviation | Full Form | Meaning |
-|-------------|-----------|---------|
-| LG | Liebe Grüße | Lovely greetings |
-| VG | Viele Grüße | Many greetings |
-| MfG | Mit freundlichen Grüßen | With friendly regards |
-| vllt | vielleicht | maybe |
-| bzgl. | bezüglich | regarding |
-| z.B. | zum Beispiel | for example |
+## Section 8: Exam Transfer — Informal Email Without Overwriting (8:25–9:40)
 
+### Visual: [Formal vs informal side-by-side]
 ### Narration:
-"Quick bonus: email abbreviations you'll see in real German emails.
+"Now the exam connection.
 
-LG — Liebe Grüße. Germans use this ALL the time in casual emails.
-VG — Viele Grüße. Slightly less warm than LG.
-MfG — Mit freundlichen Grüßen. The formal one abbreviated. You might see this but for the exam, write the full version!
+In Schreiben Teil 2, you will often write to a friend or acquaintance.
+So the structure stays the same, but the register changes.
 
-*Nammude 'TC' (Take Care) polathoru abbreviations!*
+### Informal model
+**Liebe Sarah,**
 
-These won't appear on the exam, but you'll see them in real emails from German friends."
+**danke für deine Einladung! Ich komme gern. Um wie viel Uhr beginnt die Party? Ich kann einen Kuchen mitbringen.**
+
+**Viele Grüße**
+**Akhil**
+
+### What changed?
+- **Liebe** instead of **Sehr geehrte**
+- **deine Einladung** instead of more formal wording
+- **Viele Grüße** instead of **Mit freundlichen Grüßen**
+
+### Main exam rule
+Do not write a big WhatsApp-style emotional paragraph.
+Write a short message that covers the required points.
+
+*Friendly aanu ennu paranju structure വിടരുത്. Short message thanne venam.*"
 
 ---
 
-## Section 10: Exam Connection & Practice (13:00–14:00)
-### Visual: [SLIDE: Summary card — "The Email Formula"]
-```
-FORMAL:                          INFORMAL:
-Sehr geehrte/r [Name],          Liebe/Lieber [Name],
-                                 
-[Body: why you write]            [Body: friendly message]
-[Your request/question]          [Hit 3 content points!]
-                                 
-Vielen Dank.                     
-                                 
-Mit freundlichen Grüßen          Viele Grüße / LG
-[Your name]                      [Your name]
-```
+## Section 9: 3 Common Email Mistakes to Avoid (9:40–10:35)
 
+### Visual: [Red X / Green check format]
 ### Narration:
-"Let's wrap up with the formula.
+"Three common beginner mistakes.
 
-Formal: Sehr geehrte → body → Vielen Dank → Mit freundlichen Grüßen → name.
-Informal: Liebe/Lieber → body → Viele Grüße / LG → name.
+### Mistake 1 — no Betreff
+German emails usually need a subject line.
 
-That's it. Two templates. They cover 99% of situations.
+### Mistake 2 — wrong register
+Writing **Hi** to a course office or landlord is risky.
+Use formal German.
 
-[EXAM-TIP] For Schreiben Teil 2: greeting + 3 content points in 3 sentences + closing = perfect score. Don't write more than 30-40 words. Simple and correct ALWAYS beats long and complicated.
+### Mistake 3 — English comma habit in the closing
+Not:
+**Mit freundlichen Grüßen, Nikhil** ❌
 
-📝 Your homework: Write TWO emails.
-1. A formal email to your Sprachschule asking about course times.
-2. An informal message to a friend inviting them to coffee.
+But:
+**Mit freundlichen Grüßen**  
+**Nikhil** ✅
 
-Use the templates. Write them by hand. Then type them. Do both!
-
-The email skill will serve you in the exam AND in your real life in Germany — every single day.
-
-Bis zum nächsten Mal! Tschüss!"
-
-## Post-roll
-[Next lesson teaser: "Next: Sample emails for every real situation — doctor, landlord, birthday!"]
+One more mini-warning:
+Do not make the email long just to sound smart.
+At A1, short and correct wins."
 
 ---
 
-## Script Checklist
-- [x] Teaching goal clearly stated
-- [x] A1 exam section linked (Schreiben Teil 2)
-- [x] All German examples grammatically correct
-- [x] Malayalam/Manglish bridges natural, not forced
-- [x] Practice pauses included (8+ pauses)
-- [x] Key vocabulary overlay cues present
-- [x] Timing realistic for 14:00 target
-- [x] Summary section recaps key points
-- [x] No A2+ content unless marked [A1-STRETCH]
-- [x] Exam tips marked with [EXAM-TIP] (3 tips)
+## Section 10: Summary + Output Challenge (10:35–11:20)
+
+### Visual: [Final email formula card]
+### Narration:
+"Today's email formula:
+
+✅ **Betreff**  
+✅ **Greeting**  
+✅ **2–3 short content lines**  
+✅ **Thank-you / polite ending line**  
+✅ **Closing + name**
+
+### Challenge
+Write two mini emails:
+1. a formal email asking about a course or appointment
+2. an informal email to a friend with one question and one clear answer
+
+Keep each one under 40 words in the body.
+
+Next, we can build on this with more professional situations — jobs, offices, and formal life in Germany.
+
+Bis bald!"
+
+---
+
+## Production Notes
+- **Quality-pass upgrades:** cut the old long lecture structure into one reusable skeleton + two formal models + one exam-relevant informal transfer; reduced greeting/closing overload to the safest high-frequency options; removed hype about being judged and centered the lesson on clear A1 writing behavior; tightened the exam link to point-coverage and register safety
+- **Audio:** subject line examples, formal greeting trio, four body-sentence anchors, two full email read-alouds, final formula recap
+- **Visuals:** 5-part skeleton diagram, register decision card, reusable sentence cards, line-by-line email reveal, mistake correction board
+- **Malayalam bridge:** kept only for register intuition and informal-message caution, not as long side commentary
+- **Exam usefulness:** explicit formal/informal decision rule, short-message truth check, compact body-length target, mistake-prevention for register and closing format
+- **Pacing note:** the lesson should feel like assembling Lego blocks, not listening to a theory lecture about email culture

@@ -1,5 +1,98 @@
 # Overnight Run Log — 2026-03-23
 
+## Run 13 — 17:08 UTC
+**Session:** Cron 12h script quality pass (hobbies + email tightening run)
+**Focus:** Upgrade two remaining first-draft scripts that were still too template-heavy / lecture-first for `SCRIPT_QUALITY_STANDARD v2.0+`
+**Status:** ✅ 2 scripts materially revised; pull-first completed successfully
+
+### Work Completed
+
+Revised two weaker scripts that were still clearly sitting at v1.0 quality:
+
+1. **`v12-1-1_FULL_SCRIPT.md` — Hobbies**
+   - upgraded to **REVISED — v2.1**
+   - cut the old 15-item hobby list down to a smaller, more teachable **6-verb `gern` toolkit**
+   - removed the overbuilt 6-sentence hobby speech as the lesson centerpiece and replaced it with a **3-sentence exam-safe speaking model**
+   - strengthened real interaction with **formal/informal hobby questions + ask-back behavior** so learners can continue the conversation instead of freezing after one answer
+   - rebuilt the main practice as a **predict-before-reveal hobby dialogue** instead of passive list learning
+
+2. **`v11-3-1_FULL_SCRIPT.md` — German Email Writing**
+   - upgraded to **REVISED — v2.1**
+   - rebuilt the lesson around one reusable **5-part email skeleton** instead of a broader lecture about email culture
+   - reduced greeting/closing overload to the safest high-frequency choices for **formal vs informal** writing
+   - tightened the two formal examples and one informal exam-transfer example around **short A1-safe body writing** instead of longer explanation
+   - added a cleaner mistake-prevention block covering **missing Betreff, wrong register, and the closing comma trap**
+
+### Tracker / Planning Updates
+- Updated `docs/SCRIPT_PRODUCTION_TRACKER.md`
+  - total remains **52 full scripts**
+  - **confirmed v2.0+ quality count raised from 48 → 50**
+  - remaining obvious tracked v1.0 holdouts now narrowed to **`v7-2-1` and `v7-3-1`**
+- Updated `docs/modules/MODULE_12_PLAN.md` so `v12-1-1` is no longer marked v1.0
+- Updated `docs/modules/MODULE_11_PLAN.md` so `v11-3-1` is no longer marked v1.0
+
+### Git / Repo Note
+- Completed the required pull-first step successfully with `git pull --rebase --autostash` (repo already up to date at run start)
+- Did **not** commit or push in this run; left durable progress directly in the script / tracker / module-plan docs
+
+### Files Updated This Run
+- `docs/scripts/v12-1-1_FULL_SCRIPT.md`
+- `docs/scripts/v11-3-1_FULL_SCRIPT.md`
+- `docs/SCRIPT_PRODUCTION_TRACKER.md`
+- `docs/modules/MODULE_12_PLAN.md`
+- `docs/modules/MODULE_11_PLAN.md`
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. Finish the remaining tracked v1.0 quality-pass cluster: **`v7-2-1` + `v7-3-1`**
+2. If the working tree is manageable, stage only targeted quality-pass files and push a small clean commit
+3. Optionally refresh any summary/readiness docs that still imply Module 11 or Module 12 core scripts are mostly unrevised
+
+## Run 12 — 16:45 UTC
+**Session:** Cron 12h script quality pass (conversation + workplace survival tightening run)
+**Focus:** Upgrade two remaining first-draft scripts that were still too list-heavy / lecture-first for `SCRIPT_QUALITY_STANDARD v2.0+`
+**Status:** ✅ 2 scripts materially revised; pull-first attempted but git crashed
+
+### Work Completed
+
+Revised two weaker scripts that were still clearly sitting at v1.0 quality:
+
+1. **`v1-4-1_FULL_SCRIPT.md` — Your First German Conversation**
+   - upgraded to **REVISED — v2.1**
+   - removed the overhyped “3 sentences = full conversation” framing and rebuilt the lesson around a cleaner **4-step survival conversation skeleton**: greet → name → origin/residence → ask back
+   - strengthened the learner’s actual interaction behavior with a dedicated **`Und Sie? / Und du?`** section so the conversation doesn’t die after one answer
+   - replaced the weaker speed-demo block with a more useful **formal vs informal decision drill**
+   - turned the main conversation into a predict-before-reveal golden dialogue instead of a passive long script block
+
+2. **`v11-2-1_FULL_SCRIPT.md` — Workplace Vocabulary**
+   - upgraded to **REVISED — v2.1**
+   - cut the old office/university dictionary dump down to **8 anchor words + 3 first-day survival questions**
+   - rebuilt the whole lesson around first-day workplace/student reality: asking for help, finding the printer, catching meeting time, and break-time social language
+   - added a compact **notice-reading / key-info extraction** segment for direct Lesen/Hören transfer
+   - reduced culture commentary to 3 high-value rules (punctuality, `Sie`, Feierabend) so pacing stays useful and filmable
+
+### Tracker Update
+- Updated `docs/SCRIPT_PRODUCTION_TRACKER.md`
+- Corrected the quality-pass count honestly: **48 / 52 listed full scripts are now confirmed at v2.0+ quality**
+- Remaining obvious v1.0 holdouts in the 52-script tracker set after this run: **`v12-1-1`, `v7-2-1`, `v7-3-1`, `v11-3-1`**
+
+### Git / Blocker Note
+- Attempted the required pull-first step with `git pull --rebase --autostash`
+- In this session, git crashed with a **bus error / core dump**, so I did **not** claim a clean pull, commit, or push
+- Durable progress was still left directly in repo files and the blocker is recorded here instead of stalling
+
+### Files Updated This Run
+- `docs/scripts/v1-4-1_FULL_SCRIPT.md`
+- `docs/scripts/v11-2-1_FULL_SCRIPT.md`
+- `docs/SCRIPT_PRODUCTION_TRACKER.md`
+- `docs/modules/MODULE_11_PLAN.md`
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. Finish the remaining obvious v1.0 quality-pass cluster: **`v7-2-1` + `v7-3-1`** or **`v12-1-1` + `v11-3-1`**
+2. If git is healthy again, retry clean pull verification before staging only targeted quality-pass files
+3. Optionally refresh the relevant module plan quality notes so they stop claiming v1.0 for already-revised scripts
+
 ## Run 11 — 16:22 UTC
 **Session:** Cron 12h script quality pass (Module 1 social-foundation tightening run)
 **Focus:** Upgrade weaker first-draft social scripts to `SCRIPT_QUALITY_STANDARD v2.0+` without expanding scope

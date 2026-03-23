@@ -35,7 +35,7 @@
 
 | Video ID | Title | Status | Quality | Notes |
 |----------|-------|--------|---------|-------|
-| v12-1-1 | Hobbies | 🔄 DRAFT | v1.0 | Hobby vocab + gern pattern |
+| v12-1-1 | Hobbies | 🔄 DRAFT | v2.1 ✅ | Hobby toolkit rebuilt around short speaking survival, ask-back behavior, and compact preference language |
 | v12-2-1 | Weather | 🔄 DRAFT | v1.0 | Weather vocab + small talk |
 | v12-3-1 | Making Plans & Invitations | 🔄 DRAFT | v1.0 | Social coordination patterns |
 | v12-4-1 | Invitation Writing | 🔄 DRAFT | v1.0 | Schreiben Teil 2 core |
@@ -193,7 +193,7 @@ Viele Grüße
 6. [ ] Build 12-P4 hobby speaking drill (talk about your hobbies for 1 minute)
 7. [ ] Build 12-P7 plan-making dialogue exercise (back-and-forth social coordination)
 8. [ ] Build 12-P5 weather description exercise (look at weather icons → write description)
-9. [ ] Upgrade all 5 scripts from v1.0 to v2.0 quality
+9. [ ] Upgrade the remaining weaker Module 12 scripts from v1.0 to v2.0 quality (`v12-2-1`, `v12-3-1`) — `v12-1-1`, `v12-4-1`, and `v12-4-2` are now revised
 10. [ ] Add 3 varied invitation prompts (birthday, movie night, BBQ, sports)
 
 ### Nice-to-have
