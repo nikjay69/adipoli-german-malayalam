@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { AuthChangeEvent, Session } from '@supabase/supabase-js';
 import { createClient, isSupabaseConfigured } from '@/lib/supabase';
+import { logSession } from './session-logger';
 
 export interface User {
   id: string;
@@ -148,10 +149,20 @@ export const useAuthStore = create<AuthState>()(
 
                 const user = buildUser(session.user, profile);
                 set({ user, isLoggedIn: true, isLoading: false });
+                logSession(user.id).catch(() => {}); // Log session on auth state change
               } else if (event === 'SIGNED_OUT') {
                 set({ user: null, isLoggedIn: false, isLoading: false });
               }
             });
+          }
+          // Log session every 30 minutes while active
+          if (typeof window !== 'undefined') {
+            setInterval(() => {
+              const state = get();
+              if (state.isLoggedIn && state.user) {
+                logSession(state.user.id).catch(() => {});
+              }
+            }, 30 * 60 * 1000);
           }
         } catch {
           set({ isLoading: false });
@@ -254,6 +265,7 @@ export const useAuthStore = create<AuthState>()(
 
             const user = buildUser(session.user, profile);
             set({ user, isLoggedIn: true });
+            logSession(user.id).catch(() => {}); // Fire and forget — log session fingerprint
           }
 
           return { success: true };

@@ -24,6 +24,11 @@ import {
   CreditCard,
   Info,
   ClipboardList,
+  AlertTriangle,
+  Eye,
+  X,
+  RefreshCw,
+  CheckCircle,
 } from 'lucide-react';
 import { useAuthStore, isSupabaseReady } from '@/lib/auth-store';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
@@ -47,6 +52,18 @@ interface PaymentRecord {
   plan: string;
   provider: string;
   status: string;
+  created_at: string;
+}
+
+interface SharingFlagRecord {
+  id: string;
+  user_id: string;
+  flag_type: string;
+  severity: 'low' | 'medium' | 'high';
+  details: Record<string, unknown>;
+  reviewed: boolean;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
   created_at: string;
 }
 
@@ -87,6 +104,11 @@ export default function AdminPage() {
   const [loadingPlan, setLoadingPlan] = useState(true);
   const [savingPlan, setSavingPlan] = useState(false);
   const [planMessage, setPlanMessage] = useState('');
+  const [sharingFlags, setSharingFlags] = useState<SharingFlagRecord[]>([]);
+  const [loadingFlags, setLoadingFlags] = useState(true);
+  const [analyzingSharing, setAnalyzingSharing] = useState(false);
+  const [analysisMessage, setAnalysisMessage] = useState('');
+  const [selectedFlag, setSelectedFlag] = useState<SharingFlagRecord | null>(null);
 
   const fetchData = useCallback(async () => {
     try {
@@ -135,6 +157,19 @@ export default function AdminPage() {
         if (paymentData) {
           setPayments(paymentData as PaymentRecord[]);
         }
+
+        // Fetch sharing flags (unreviewed)
+        const { data: flagData } = await supabase
+          .from('sharing_flags')
+          .select('*')
+          .eq('reviewed', false)
+          .order('created_at', { ascending: false })
+          .limit(100);
+
+        if (flagData) {
+          setSharingFlags(flagData as SharingFlagRecord[]);
+        }
+        setLoadingFlags(false);
       } catch {
         // Fall back to localStorage on error
         const local = getLocalStorageUsers();
@@ -148,6 +183,7 @@ export default function AdminPage() {
             createdAt: u.createdAt,
           }))
         );
+        setLoadingFlags(false);
       }
     } else {
       // localStorage fallback
@@ -162,6 +198,7 @@ export default function AdminPage() {
           createdAt: u.createdAt,
         }))
       );
+      setLoadingFlags(false);
     }
     setLoadingUsers(false);
   }, []);
@@ -247,6 +284,95 @@ export default function AdminPage() {
     } finally {
       setSavingPlan(false);
     }
+  };
+
+  const runSharingAnalysis = async () => {
+    setAnalyzingSharing(true);
+    setAnalysisMessage('');
+    try {
+      const supabase = createClient();
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session?.access_token) {
+        setAnalysisMessage('No active session. Please re-login.');
+        return;
+      }
+
+      const res = await fetch('/api/analyze-sharing', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${session.access_token}`,
+        },
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || 'Analysis failed');
+      }
+
+      setAnalysisMessage(
+        `Analysis complete: ${data.usersAnalyzed} users analyzed, ${data.flagsCreated} new flags created.`
+      );
+
+      // Refresh flags
+      const { data: flagData } = await supabase
+        .from('sharing_flags')
+        .select('*')
+        .eq('reviewed', false)
+        .order('created_at', { ascending: false })
+        .limit(100);
+
+      if (flagData) {
+        setSharingFlags(flagData as SharingFlagRecord[]);
+      }
+    } catch (error) {
+      setAnalysisMessage(error instanceof Error ? error.message : 'Analysis failed');
+    } finally {
+      setAnalyzingSharing(false);
+    }
+  };
+
+  const reviewFlag = async (flagId: string, action: 'dismiss' | 'warn') => {
+    try {
+      const supabase = createClient();
+      await supabase
+        .from('sharing_flags')
+        .update({
+          reviewed: true,
+          reviewed_by: user?.id,
+          reviewed_at: new Date().toISOString(),
+          details: action === 'warn'
+            ? { ...(sharingFlags.find((f) => f.id === flagId)?.details || {}), action: 'warned' }
+            : { ...(sharingFlags.find((f) => f.id === flagId)?.details || {}), action: 'dismissed' },
+        })
+        .eq('id', flagId);
+
+      setSharingFlags((prev) => prev.filter((f) => f.id !== flagId));
+      setSelectedFlag(null);
+    } catch {
+      // Silently fail — flag stays in the list
+    }
+  };
+
+  const getFlagLabel = (flagType: string): string => {
+    const labels: Record<string, string> = {
+      multiple_devices: 'Multiple Devices',
+      multiple_timezones: 'Multiple Timezones',
+      concurrent_sessions: 'Concurrent Sessions',
+      multiple_platforms: 'Multiple Platforms',
+    };
+    return labels[flagType] || flagType;
+  };
+
+  const severityColors: Record<string, string> = {
+    low: 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30',
+    medium: 'bg-orange-500/20 text-orange-300 border-orange-500/30',
+    high: 'bg-red-500/20 text-red-400 border-red-500/30',
+  };
+
+  const getUserName = (userId: string): string => {
+    const found = users.find((u) => u.id === userId);
+    return found?.name || found?.username || userId.slice(0, 8) + '...';
   };
 
   if (!mounted || !isLoggedIn || !user?.isAdmin) {
@@ -533,6 +659,198 @@ export default function AdminPage() {
           )}
         </div>
       </motion.div>
+
+      {/* Account Sharing Flags (Supabase only) */}
+      {supabaseActive && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.33 }}
+          className="mb-6"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-sm font-semibold text-[var(--foreground)]/60 uppercase tracking-wider flex items-center gap-2">
+              <AlertTriangle className="w-4 h-4" /> Account Sharing Flags
+            </h2>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-[var(--foreground)]/30">
+                {sharingFlags.length} unreviewed
+              </span>
+              <button
+                onClick={runSharingAnalysis}
+                disabled={analyzingSharing}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-[#c0392b]/20 bg-[#c0392b]/10 px-3 py-1.5 text-xs font-bold text-[#c0392b] disabled:opacity-50 transition-all hover:bg-[#c0392b]/20"
+              >
+                <RefreshCw className={`w-3 h-3 ${analyzingSharing ? 'animate-spin' : ''}`} />
+                {analyzingSharing ? 'Analyzing...' : 'Analyze Sessions'}
+              </button>
+            </div>
+          </div>
+
+          {analysisMessage && (
+            <div className="mb-3 rounded-xl border border-[var(--foreground)]/10 bg-[var(--foreground)]/5 px-3 py-2 text-xs text-[var(--foreground)]/60">
+              {analysisMessage}
+            </div>
+          )}
+
+          <div className="game-card overflow-hidden">
+            {loadingFlags ? (
+              <div className="p-8 text-center text-[var(--foreground)]/30 text-sm">
+                Loading flags...
+              </div>
+            ) : sharingFlags.length === 0 ? (
+              <div className="p-8 text-center text-[var(--foreground)]/30 text-sm">
+                <CheckCircle className="w-6 h-6 mx-auto mb-2 text-[#27ae60]/40" />
+                No unreviewed sharing flags. Run &quot;Analyze Sessions&quot; to check.
+              </div>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-[var(--foreground)]/10">
+                      <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
+                        User
+                      </th>
+                      <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
+                        Flag Type
+                      </th>
+                      <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
+                        Severity
+                      </th>
+                      <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
+                        Date
+                      </th>
+                      <th className="text-left px-4 py-3 text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
+                        Actions
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sharingFlags.map((flag, i) => (
+                      <motion.tr
+                        key={flag.id}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.03 }}
+                        className="border-b border-[var(--foreground)]/5 hover:bg-[var(--foreground)]/3 transition-colors"
+                      >
+                        <td className="px-4 py-3">
+                          <div className="flex items-center gap-2">
+                            <div className="w-7 h-7 rounded-full bg-[#c0392b]/20 flex items-center justify-center text-xs font-bold text-[#c0392b]">
+                              {getUserName(flag.user_id).charAt(0).toUpperCase()}
+                            </div>
+                            <span className="font-medium text-[var(--foreground)] text-xs">
+                              {getUserName(flag.user_id)}
+                            </span>
+                          </div>
+                        </td>
+                        <td className="px-4 py-3 text-[var(--foreground)]/70 text-xs">
+                          {getFlagLabel(flag.flag_type)}
+                        </td>
+                        <td className="px-4 py-3">
+                          <span
+                            className={`px-2 py-0.5 rounded-full text-xs font-medium border ${severityColors[flag.severity] || severityColors.low}`}
+                          >
+                            {flag.severity.charAt(0).toUpperCase() + flag.severity.slice(1)}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3 text-[var(--foreground)]/40 text-xs">
+                          {formatDateStr(flag.created_at)}
+                        </td>
+                        <td className="px-4 py-3">
+                          <div className="flex items-center gap-1.5">
+                            <button
+                              onClick={() => setSelectedFlag(flag)}
+                              className="p-1.5 rounded-lg bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-colors"
+                              title="View details"
+                            >
+                              <Eye className="w-3.5 h-3.5" />
+                            </button>
+                            <button
+                              onClick={() => reviewFlag(flag.id, 'dismiss')}
+                              className="p-1.5 rounded-lg bg-gray-500/10 text-gray-400 hover:bg-gray-500/20 transition-colors"
+                              title="Dismiss"
+                            >
+                              <X className="w-3.5 h-3.5" />
+                            </button>
+                            <button
+                              onClick={() => reviewFlag(flag.id, 'warn')}
+                              className="p-1.5 rounded-lg bg-orange-500/10 text-orange-400 hover:bg-orange-500/20 transition-colors"
+                              title="Warn user"
+                            >
+                              <AlertTriangle className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+                        </td>
+                      </motion.tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        </motion.div>
+      )}
+
+      {/* Sharing Flag Detail Modal */}
+      {selectedFlag && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="game-card w-full max-w-lg p-6 relative"
+          >
+            <button
+              onClick={() => setSelectedFlag(null)}
+              className="absolute top-4 right-4 p-1.5 rounded-lg bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 transition-colors"
+            >
+              <X className="w-4 h-4 text-[var(--foreground)]/50" />
+            </button>
+
+            <h3 className="text-lg font-bold text-[var(--foreground)] mb-1">
+              Flag Details
+            </h3>
+            <p className="text-xs text-[var(--foreground)]/40 mb-4">
+              {getFlagLabel(selectedFlag.flag_type)} &middot;{' '}
+              <span className={`px-1.5 py-0.5 rounded text-xs font-medium ${severityColors[selectedFlag.severity]}`}>
+                {selectedFlag.severity}
+              </span>
+            </p>
+
+            <div className="space-y-3 mb-6">
+              <div>
+                <div className="text-xs font-semibold text-[var(--foreground)]/50 uppercase mb-1">User</div>
+                <div className="text-sm text-[var(--foreground)]">{getUserName(selectedFlag.user_id)}</div>
+              </div>
+              <div>
+                <div className="text-xs font-semibold text-[var(--foreground)]/50 uppercase mb-1">Flagged</div>
+                <div className="text-sm text-[var(--foreground)]/70">{formatDateStr(selectedFlag.created_at)}</div>
+              </div>
+              <div>
+                <div className="text-xs font-semibold text-[var(--foreground)]/50 uppercase mb-1">Details</div>
+                <pre className="text-xs text-[var(--foreground)]/70 bg-[var(--foreground)]/5 rounded-xl p-3 overflow-auto max-h-48">
+                  {JSON.stringify(selectedFlag.details, null, 2)}
+                </pre>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => reviewFlag(selectedFlag.id, 'dismiss')}
+                className="flex-1 rounded-xl border border-gray-500/20 bg-gray-500/10 px-4 py-2.5 text-xs font-bold text-gray-300 hover:bg-gray-500/20 transition-colors"
+              >
+                Dismiss
+              </button>
+              <button
+                onClick={() => reviewFlag(selectedFlag.id, 'warn')}
+                className="flex-1 rounded-xl border border-orange-500/20 bg-orange-500/10 px-4 py-2.5 text-xs font-bold text-orange-400 hover:bg-orange-500/20 transition-colors"
+              >
+                Warn User
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
 
       {/* Payments Table (Supabase only) */}
       {supabaseActive && payments.length > 0 && (
