@@ -4,7 +4,7 @@
 > Architecture docs (Wave 1–5) define the scene-level structure.
 > This tracker records which scripts have been written as full, production-ready narration.
 >
-> **Last updated:** 2026-03-23 08:51 UTC (overnight cron run 2)
+> **Last updated:** 2026-03-23 10:45 UTC (overnight cron — module planning run)
 
 ---
 
@@ -27,7 +27,7 @@
 | v18-2-1 | 18 | 18-2 | Schreiben Teil 2: Short Messages | 🔄 DRAFT | `docs/scripts/v18-2-1_FULL_SCRIPT.md` |
 | v18-3-1 | 18 | 18-3 | Sprechen Teil 1: Self-Introduction | 🔄 DRAFT | `docs/scripts/v18-3-1_FULL_SCRIPT.md` |
 | v18-4-1 | 18 | 18-4 | Sprechen Teil 2 & 3: Questions & Requests | 🔄 DRAFT | `docs/scripts/v18-4-1_FULL_SCRIPT.md` |
-| v18-5-1 | 18 | 18-5 | Full Mock Exam Tips | 📐 ARCH | Wave 1 doc |
+| v18-5-1 | 18 | 18-5 | Full Mock Exam Tips | 🔄 DRAFT | `docs/scripts/v18-5-1_FULL_SCRIPT.md` |
 | v17-1-1 | 17 | 17-1 | Exam Format Overview & Tips | 🔄 DRAFT | `docs/scripts/v17-1-1_FULL_SCRIPT.md` |
 | v17-2-1 | 17 | 17-2 | Hören Practice | 🔄 DRAFT | `docs/scripts/v17-2-1_FULL_SCRIPT.md` |
 | v17-3-1 | 17 | 17-3 | Lesen Practice | 🔄 DRAFT | `docs/scripts/v17-3-1_FULL_SCRIPT.md` |
@@ -36,8 +36,8 @@
 | v2-2-1 | 2 | 2-2 | Where Are You From? | 🔄 DRAFT | `docs/scripts/v2-2-1_FULL_SCRIPT.md` |
 | v2-3-1 | 2 | 2-3 | Jobs & Languages | 🔄 DRAFT | `docs/scripts/v2-3-1_FULL_SCRIPT.md` |
 | v14-1-1 | 14 | 14-1 | Anmeldung Form | 🔄 DRAFT | `docs/scripts/v14-1-1_FULL_SCRIPT.md` |
-| v14-1-2 | 14 | 14-1 | All Form Fields Reference | 📐 ARCH | Wave 1 doc |
-| v14-2-1 | 14 | 14-2 | At the Office | 📐 ARCH | Wave 1 doc |
+| v14-1-2 | 14 | 14-1 | All Form Fields Reference | 🔄 DRAFT | `docs/scripts/v14-1-2_FULL_SCRIPT.md` |
+| v14-2-1 | 14 | 14-2 | At the Office | 🔄 DRAFT | `docs/scripts/v14-2-1_FULL_SCRIPT.md` |
 
 ## Wave 2 — Grammar Backbone
 
@@ -88,15 +88,15 @@
 | v1-3-2 | 1 | 1-3 | Auf Wiedersehen! Saying Goodbye | 🔄 DRAFT | `docs/scripts/v1-3-2_FULL_SCRIPT.md` |
 | v1-4-1 | 1 | 1-4 | First Conversations | 🔄 DRAFT | `docs/scripts/v1-4-1_FULL_SCRIPT.md` |
 | v7-1-1 | 7 | 7-1 | At the Supermarket | 🔄 DRAFT | `docs/scripts/v7-1-1_FULL_SCRIPT.md` |
-| v7-2-1 | 7 | 7-2 | Clothes Shopping | 📐 ARCH |
-| v7-3-1 | 7 | 7-3 | Prices & Comparing | 📐 ARCH |
+| v7-2-1 | 7 | 7-2 | Clothes Shopping | 🔄 DRAFT | `docs/scripts/v7-2-1_FULL_SCRIPT.md` |
+| v7-3-1 | 7 | 7-3 | Prices & Comparing | 🔄 DRAFT | `docs/scripts/v7-3-1_FULL_SCRIPT.md` |
 | v8-1-1 | 8 | 8-1 | Rooms & Furniture | 🔄 DRAFT | `docs/scripts/v8-1-1_FULL_SCRIPT.md` |
 | v8-2-1 | 8 | 8-2 | Describing Your Home | 🔄 DRAFT | `docs/scripts/v8-2-1_FULL_SCRIPT.md` |
 | v8-3-1 | 8 | 8-3 | Reading Wohnungsanzeigen | 🔄 DRAFT | `docs/scripts/v8-3-1_FULL_SCRIPT.md` |
 | v11-1-1 | 11 | 11-1 | Professions in Detail | 🔄 DRAFT | `docs/scripts/v11-1-1_FULL_SCRIPT.md` |
-| v11-2-1 | 11 | 11-2 | Workplace Vocabulary | 📐 ARCH |
+| v11-2-1 | 11 | 11-2 | Workplace Vocabulary | 🔄 DRAFT | `docs/scripts/v11-2-1_FULL_SCRIPT.md` |
 | v11-3-1 | 11 | 11-3 | German Email Writing | 🔄 DRAFT | `docs/scripts/v11-3-1_FULL_SCRIPT.md` |
-| v12-1-1 | 12 | 12-1 | Hobbies | 📐 ARCH |
+| v12-1-1 | 12 | 12-1 | Hobbies | 🔄 DRAFT | `docs/scripts/v12-1-1_FULL_SCRIPT.md` |
 | v12-2-1 | 12 | 12-2 | Weather | 📐 ARCH |
 | v12-3-1 | 12 | 12-3 | Making Plans & Invitations | 📐 ARCH |
 | v12-4-1 | 12 | 12-4 | Invitation Writing (Schreiben Teil 2) | 🔄 DRAFT | `docs/scripts/v12-4-1_FULL_SCRIPT.md` |
@@ -123,8 +123,8 @@
 
 | Category | Count |
 |----------|-------|
-| Full scripts (🔄 DRAFT or ✅ DONE) | **46** |
-| Scene architectures (📐 ARCH) | **~44** |
+| Full scripts (🔄 DRAFT or ✅ DONE) | **52** |
+| Scene architectures (📐 ARCH) | **~38** |
 | Outline only (⬜) | **0** — all now have at least architecture |
 
 ## Next Scripts to Write (Priority Order)
@@ -170,28 +170,29 @@
 
 ## Next Priority Scripts (Wave 3–4 remaining 📐 ARCH → DRAFT)
 
-39. ~~**v6-1-2** — Kerala Food in German (Wave 3, Module 6)~~ *next priority*
-40. ~~**v9-2-1** — Buying Tickets (Wave 3, Module 9)~~ ✅ DRAFTED
-41. ~~**v9-3-1** — Asking Directions (Wave 3, Module 9)~~ ✅ DRAFTED
-42. ~~**v4-2-1** — Describing People (Wave 3, Module 4)~~ ✅ DRAFTED
-43. ~~**v7-1-1** — At the Supermarket (Wave 4, Module 7)~~ ✅ DRAFTED
-44. **v7-2-1** — Clothes Shopping (Wave 4, Module 7)
-45. **v7-3-1** — Prices & Comparing (Wave 4, Module 7)
-46. ~~**v8-1-1** — Rooms & Furniture (Wave 4, Module 8)~~ ✅ DRAFTED
-47. ~~**v8-2-1** — Describing Your Home (Wave 4, Module 8)~~ ✅ DRAFTED
-48. ~~**v11-1-1** — Professions in Detail (Wave 4, Module 11)~~ ✅ DRAFTED
-49. **v11-2-1** — Workplace Vocabulary (Wave 4, Module 11)
-50. **v12-1-1** — Hobbies (Wave 4, Module 12)
-51. **v12-2-1** — Weather (Wave 4, Module 12)
-52. **v12-3-1** — Making Plans & Invitations (Wave 4, Module 12)
-53. **v1-1-1** — Why German? A Malayali's Gateway (Wave 4, Module 1)
-54. **v1-1-2** — Malayalis in Germany — Real Success Stories (Wave 4, Module 1)
-55. **v1-2-2** — Tricky Sounds for Malayalis (Wave 4, Module 1)
-56. **v14-1-2** — All Form Fields Reference (Wave 1, Module 14)
-57. **v14-2-1** — At the Office (Wave 1, Module 14)
-58. **v18-5-1** — Full Mock Exam Tips (Wave 1, Module 18)
-59. **v2-1-2** — What's Your Name? Part 2 (Wave 1, Module 2)
+> **All remaining scripts now have detailed pre-draft plans in `docs/REMAINING_SCRIPT_PLANS.md`** with narration beats, Malayalam bridges, exam tips, dialogue fragments, dependencies, and quality checklist. Estimated total writing time: ~175 min for Tiers 1-3, ~285 min for Tier 4 (optional).
+
+### Tier 1 — Complete 3 nearly-done modules (Modules 2, 5, 6)
+39. **v2-1-2** — What's Your Name? Part 2 (name spelling + forms) → completes Module 2
+40. **v5-1-2** — Practice with Common Verbs (20-verb drill) → completes Module 5
+41. **v6-1-2** — Kerala Food in German (cultural bridge) → completes Module 6
+
+### Tier 2 — Module 1 opener (motivational + phonetic foundation)
+42. **v1-1-1** — Why German? A Malayali's Gateway (motivational)
+43. **v1-1-2** — Malayalis in Germany — Real Success Stories (career paths)
+44. **v1-2-2** — Tricky Sounds / German Alphabet (buchstabieren skill)
+
+### Tier 3 — Module 12 practical social German
+45. **v12-2-1** — Weather (small talk + daily survival)
+46. **v12-3-1** — Making Plans & Invitations (social coordination)
+
+### Tier 4 — Optional modules (Modules 15-16, write only after Tiers 1-3 reviewed)
+47-56. See REMAINING_SCRIPT_PLANS.md Tier 4 for priority ordering.
+
+### Previously completed
+~~39-50. (v6-1-2 through v12-1-1)~~ ✅ DRAFTED
+~~56-58. (v14-1-2, v14-2-1, v18-5-1)~~ ✅ DRAFTED
 
 ---
 
-*Track updated by quality pass cron 2026-03-23 09:05 UTC — revised 4 scripts from v1.0 → v2.0: v2-1-1 (What's Your Name?), v2-2-1 (Where Are You From?), v5-1-1 (How German Verbs Work), v13-1-1 (Perfekt with haben). Created docs/SCRIPT_QUALITY_STANDARD.md as reusable quality reference. **Total: 46 full scripts, 6 at v2.0 quality (v18-1-1, v17-1-1, v2-1-1, v2-2-1, v5-1-1, v13-1-1).** Quality pass focus: tighter hooks (cut to <45s), specific practice pauses with prompts/reveals, active recall summaries replacing passive bullet lists, energy cues at every section, Malayalam bridges as structural parallels not dictionary entries, 15-20% word count reductions.*
+*Track updated by quality pass cron 2026-03-23 10:18 UTC — revised 4 more scripts from v1.0 → v2.0: v14-1-1 (Anmeldung), v14-1-2 (All Form Fields), v14-2-1 (At the Office), v18-5-1 (Full Mock Exam Tips), v17-3-1 (Lesen Practice). **Total: 52 full scripts, 18 at v2.0 quality (v18-1-1, v17-1-1, v2-1-1, v2-2-1, v5-1-1, v13-1-1, v18-3-1, v18-4-1, v6-3-1, v3-1-1, v18-2-1, v17-2-1, v10-3-1, v14-1-1, v14-1-2, v14-2-1, v18-5-1, v17-3-1).** Consistent quality pass patterns: hooks under 40s with concrete payoff, teach→drill→apply cycles (no stacking), active recall before summaries, energy cues every section, Malayalam bridges as structural parallels, 10-20% word count reductions, specific practice pauses with prompts+reveals.*

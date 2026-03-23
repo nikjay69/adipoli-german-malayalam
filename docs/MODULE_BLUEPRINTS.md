@@ -1050,32 +1050,65 @@ Train learners directly for productive exam success: form-filling, short message
 
 ---
 
-## Cross-Module Script Completion Status (Updated 2026-03-23 08:51 UTC)
+## Cross-Module Script Completion Status (Updated 2026-03-23 11:30 UTC)
 
-| Module | Core Scripts Drafted | Total Possible | Status |
-|--------|---------------------|----------------|--------|
-| 1 | 4 (v1-2-1, v1-3-1, v1-3-2, v1-4-1) | ~6 | Motivation vids (v1-1-1, v1-1-2) + v1-2-2 remain |
-| 2 | 3 (v2-1-1, v2-2-1, v2-3-1) | 4 | ✅ All core lessons scripted. Only v2-1-2 supplementary remains |
-| 3 | 4 (v3-1-1, v3-2-1, v3-3-1, v3-4-1) | 4 | ✅ COMPLETE — all lessons fully scripted |
-| 4 | 3 (v4-1-1, **v4-2-1** ✨, v4-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
-| 5 | 4 (v5-1-1, v5-2-1, v5-3-1, v5-4-1) | 5 | v5-1-2 supplementary remains |
-| 6 | 3 (v6-1-1, v6-2-1, v6-3-1) | 4 | Only v6-1-2 (Kerala Food) remains |
-| 7 | 3 (v7-1-1, **v7-2-1** 🌟, **v7-3-1** 🌟) | 3 | ✅ COMPLETE — all lessons fully scripted |
-| 8 | 3 (v8-1-1, v8-2-1, v8-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
-| 9 | 3 (v9-1-1, v9-2-1, v9-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
-| 10 | 3 (v10-1-1, v10-2-1, v10-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
-| 11 | 3 (v11-1-1, **v11-2-1** 🌟, v11-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
-| 12 | 5 (**v12-1-1** 🌟, **v12-2-1** 🌟, **v12-3-1** 🌟, v12-4-1, v12-4-2) | 5 | ✅ COMPLETE — all lessons fully scripted |
-| 13 | 4 (v13-1-1, v13-2-1, v13-3-1, v13-4-1) | 4 | ✅ COMPLETE — all lessons fully scripted |
-| 14 | 3 (v14-1-1, **v14-1-2** 🌟, **v14-2-1** 🌟) | 3 | ✅ COMPLETE — all lessons fully scripted |
-| 15 | 0 | ~5 | All 📐 ARCH only (Wave 5, low priority) |
-| 16 | 0 | ~5 | All 📐 ARCH only (Wave 5, low priority) |
-| 17 | 3 (v17-1-1, v17-2-1, v17-3-1) | 3 | ✅ COMPLETE — all strategy lessons scripted |
-| 18 | 5 (v18-1-1, v18-2-1, v18-3-1, v18-4-1, **v18-5-1** 🌟) | 5 | ✅ COMPLETE — all exam lessons scripted |
+| Module | Core Scripts Drafted | Total Possible | Status | Pre-Draft Plans |
+|--------|---------------------|----------------|--------|-----------------|
+| 1 | 4 (v1-2-1, v1-3-1, v1-3-2, v1-4-1) | 7 | 3 missing: v1-1-1, v1-1-2, v1-2-2 | ✅ See REMAINING_SCRIPT_PLANS.md Tier 2 |
+| 2 | 3 (v2-1-1, v2-2-1, v2-3-1) | 4 | 1 missing: v2-1-2 (name spelling + forms) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 1 |
+| 3 | 4 (v3-1-1, v3-2-1, v3-3-1, v3-4-1) | 4 | ✅ COMPLETE | — |
+| 4 | 3 (v4-1-1, v4-2-1, v4-3-1) | 3 | ✅ COMPLETE | — |
+| 5 | 4 (v5-1-1, v5-2-1, v5-3-1, v5-4-1) | 5 | 1 missing: v5-1-2 (verb drill companion) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 1 |
+| 6 | 3 (v6-1-1, v6-2-1, v6-3-1) | 4 | 1 missing: v6-1-2 (Kerala food in German) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 1 |
+| 7 | 3 (v7-1-1, v7-2-1, v7-3-1) | 3 | ✅ COMPLETE | — |
+| 8 | 3 (v8-1-1, v8-2-1, v8-3-1) | 3 | ✅ COMPLETE | — |
+| 9 | 3 (v9-1-1, v9-2-1, v9-3-1) | 3 | ✅ COMPLETE | — |
+| 10 | 3 (v10-1-1, v10-2-1, v10-3-1) | 3 | ✅ COMPLETE | — |
+| 11 | 3 (v11-1-1, v11-2-1, v11-3-1) | 3 | ✅ COMPLETE | — |
+| 12 | 3 (v12-1-1, v12-4-1, v12-4-2) | 5 | 2 missing: v12-2-1 (weather), v12-3-1 (plans) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 3 |
+| 13 | 4 (v13-1-1, v13-2-1, v13-3-1, v13-4-1) | 4 | ✅ COMPLETE | — |
+| 14 | 3 (v14-1-1, v14-1-2, v14-2-1) | 3 | ✅ COMPLETE | — |
+| 15 | 0 | 5 | All 📐 ARCH only (Wave 5, low priority) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 4 |
+| 16 | 0 | 5 | All 📐 ARCH only (Wave 5, low priority) | ✅ See REMAINING_SCRIPT_PLANS.md Tier 4 |
+| 17 | 3 (v17-1-1, v17-2-1, v17-3-1) | 3 | ✅ COMPLETE | — |
+| 18 | 5 (v18-1-1, v18-2-1, v18-3-1, v18-4-1, v18-5-1) | 5 | ✅ COMPLETE | — |
 
-🌟 = drafted in run 4 (2026-03-23 09:16 UTC)
+**Summary:** 52/~70 core scripts drafted. **12 modules fully complete (3, 4, 7, 8, 9, 10, 11, 13, 14, 17, 18).** Modules 2, 5, 6 each need only 1 more script. Module 1 needs 3 motivational/foundational scripts. Module 12 needs 2 scripts. Modules 15-16 (optional) have 10 scripts at architecture-only.
 
-**Summary:** 54/~90 scripts drafted. **13 modules fully complete (3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18).** Modules 2, 5, 6 are 1 script away from complete. Only Modules 1 (2-3 scripts), 15 (all 5), and 16 (all 5) have significant gaps remaining.
+**New:** All 18 remaining scripts now have detailed pre-draft plans in `docs/REMAINING_SCRIPT_PLANS.md` with narration beats, Malayalam bridges, exam tips, dialogue fragments, and dependencies mapped.
+
+---
+
+## Cross-Module Dependency Map (Updated 2026-03-23)
+
+Understanding what feeds into what helps prioritize script work and avoid forward references.
+
+```
+Module 1 (Sounds, Greetings)
+  ├─→ Module 2 (Self-intro) ──→ Module 18 Sprechen Teil 1
+  │     └─→ Module 14 (Forms) ──→ Module 18 Schreiben Teil 1
+  ├─→ Module 3 (Numbers, Time)
+  │     ├─→ Module 7 (Shopping — prices)
+  │     ├─→ Module 12 (Plans — scheduling)
+  │     └─→ Module 17 Hören (number listening)
+  ├─→ Module 4 (Family, Articles)
+  │     └─→ Module 5 (Verbs) ──→ Module 13 (Past tense)
+  │           └─→ Module 6 (Food, Accusative)
+  │                 ├─→ Module 7 (Shopping, Accusative reinforcement)
+  │                 └─→ Module 9 (Travel, Modal verbs)
+  ├─→ Module 8 (Home, Prepositions) ──→ Module 17 Lesen (Wohnungsanzeigen)
+  ├─→ Module 10 (Health)
+  ├─→ Module 11 (Work, Email) ──→ Module 18 Schreiben Teil 2
+  └─→ Module 12 (Hobbies, Weather, Plans, weil)
+        └─→ Module 16 (Optional: Subordinate clauses)
+
+Module 15 (Culture) — standalone, no dependencies
+Module 16 (A1+ Bridge) — builds on Modules 4-9, optional
+Module 17 (Exam Hören/Lesen) — capstone, draws from all
+Module 18 (Exam Schreiben/Sprechen) — capstone, draws from all
+```
+
+**Key implication for script writing:** Modules 1-2 scripts should never assume knowledge from later modules. Module 5 verb scripts are the gateway to everything from Module 6 onward. Exam modules 17-18 can reference any earlier module content.
 
 ---
 
