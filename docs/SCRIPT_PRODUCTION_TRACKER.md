@@ -4,7 +4,7 @@
 > Architecture docs (Wave 1–5) define the scene-level structure.
 > This tracker records which scripts have been written as full, production-ready narration.
 >
-> **Last updated:** 2026-03-23 07:30 UTC (overnight cron)
+> **Last updated:** 2026-03-23 08:31 UTC (overnight cron)
 
 ---
 
@@ -29,12 +29,12 @@
 | v18-4-1 | 18 | 18-4 | Sprechen Teil 2 & 3: Questions & Requests | 🔄 DRAFT | `docs/scripts/v18-4-1_FULL_SCRIPT.md` |
 | v18-5-1 | 18 | 18-5 | Full Mock Exam Tips | 📐 ARCH | Wave 1 doc |
 | v17-1-1 | 17 | 17-1 | Exam Format Overview & Tips | 🔄 DRAFT | `docs/scripts/v17-1-1_FULL_SCRIPT.md` |
-| v17-2-1 | 17 | 17-2 | Hören Practice | 📐 ARCH | Wave 1 doc |
-| v17-3-1 | 17 | 17-3 | Lesen Practice | 📐 ARCH | Wave 1 doc |
+| v17-2-1 | 17 | 17-2 | Hören Practice | 🔄 DRAFT | `docs/scripts/v17-2-1_FULL_SCRIPT.md` |
+| v17-3-1 | 17 | 17-3 | Lesen Practice | 🔄 DRAFT | `docs/scripts/v17-3-1_FULL_SCRIPT.md` |
 | v2-1-1 | 2 | 2-1 | What's Your Name? | 🔄 DRAFT | `docs/scripts/v2-1-1_FULL_SCRIPT.md` |
 | v2-1-2 | 2 | 2-1 | What's Your Name? (Part 2) | 📐 ARCH | Wave 1 doc |
 | v2-2-1 | 2 | 2-2 | Where Are You From? | 🔄 DRAFT | `docs/scripts/v2-2-1_FULL_SCRIPT.md` |
-| v2-3-1 | 2 | 2-3 | Jobs & Languages | 📐 ARCH | Wave 1 doc |
+| v2-3-1 | 2 | 2-3 | Jobs & Languages | 🔄 DRAFT | `docs/scripts/v2-3-1_FULL_SCRIPT.md` |
 | v14-1-1 | 14 | 14-1 | Anmeldung Form | 🔄 DRAFT | `docs/scripts/v14-1-1_FULL_SCRIPT.md` |
 | v14-1-2 | 14 | 14-1 | All Form Fields Reference | 📐 ARCH | Wave 1 doc |
 | v14-2-1 | 14 | 14-2 | At the Office | 📐 ARCH | Wave 1 doc |
@@ -61,7 +61,7 @@
 
 | Video ID | Module | Lesson | Title | Status |
 |----------|--------|--------|-------|--------|
-| v6-1-1 | 6 | 6-1 | German Foods You Should Know | 📐 ARCH |
+| v6-1-1 | 6 | 6-1 | German Foods You Should Know | 🔄 DRAFT | `docs/scripts/v6-1-1_FULL_SCRIPT.md` |
 | v6-1-2 | 6 | 6-1 | Kerala Food in German | 📐 ARCH |
 | v6-2-1 | 6 | 6-2 | Drinks & Ordering | 🔄 DRAFT | `docs/scripts/v6-2-1_FULL_SCRIPT.md` |
 | v6-3-1 | 6 | 6-3 | Restaurant Golden Dialogue | 🔄 DRAFT | `docs/scripts/v6-3-1_FULL_SCRIPT.md` |
@@ -69,8 +69,8 @@
 | v9-1-1 | 9 | 9-1 | Transportation & mit+Dativ | 🔄 DRAFT | `docs/scripts/v9-1-1_FULL_SCRIPT.md` |
 | v9-2-1 | 9 | 9-2 | Giving Directions | 📐 ARCH |
 | v9-3-1 | 9 | 9-3 | Buying Tickets | 📐 ARCH |
-| v10-1-1 | 10 | 10-1 | Body Parts | 📐 ARCH |
-| v10-2-1 | 10 | 10-2 | At the Doctor (Symptoms) | 📐 ARCH |
+| v10-1-1 | 10 | 10-1 | Body Parts | 🔄 DRAFT | `docs/scripts/v10-1-1_FULL_SCRIPT.md` |
+| v10-2-1 | 10 | 10-2 | At the Doctor (Symptoms) | 🔄 DRAFT | `docs/scripts/v10-2-1_FULL_SCRIPT.md` |
 | v10-3-1 | 10 | 10-3 | Doctor Visit Golden Dialogue | 🔄 DRAFT | `docs/scripts/v10-3-1_FULL_SCRIPT.md` |
 | v4-1-1 | 4 | 4-1 | Family Members | 🔄 DRAFT | `docs/scripts/v4-1-1_FULL_SCRIPT.md` |
 | v4-2-1 | 4 | 4-2 | Describing People | 📐 ARCH |
@@ -123,8 +123,8 @@
 
 | Category | Count |
 |----------|-------|
-| Full scripts (🔄 DRAFT or ✅ DONE) | **34** |
-| Scene architectures (📐 ARCH) | **~56** |
+| Full scripts (🔄 DRAFT or ✅ DONE) | **40** |
+| Scene architectures (📐 ARCH) | **~50** |
 | Outline only (⬜) | **0** — all now have at least architecture |
 
 ## Next Scripts to Write (Priority Order)
@@ -161,13 +161,37 @@
 30. ~~**v12-4-2** — Weil-Clauses: Giving Reasons~~ ✅ DRAFTED
 31. ~~**v1-4-1** — Your First German Conversation~~ ✅ DRAFTED
 32. ~~**v1-3-2** — Auf Wiedersehen! Saying Goodbye~~ ✅ DRAFTED
-33. **v2-3-1** — Jobs & Languages (Sprechen Teil 1 block 3)
-34. **v17-2-1** — Hören Practice (listening drills with exam format)
-35. **v17-3-1** — Lesen Practice (reading strategies)
-36. **v6-1-1** — German Foods You Should Know
-37. **v10-1-1** — Body Parts (vocabulary base for health)
-38. **v10-2-1** — At the Doctor: Symptoms & Complaints
+33. ~~**v2-3-1** — Jobs & Languages (Sprechen Teil 1 block 3)~~ ✅ DRAFTED
+34. ~~**v17-2-1** — Hören Practice (listening drills with exam format)~~ ✅ DRAFTED
+35. ~~**v17-3-1** — Lesen Practice (reading strategies)~~ ✅ DRAFTED
+36. ~~**v6-1-1** — German Foods You Should Know~~ ✅ DRAFTED
+37. ~~**v10-1-1** — Body Parts (vocabulary base for health)~~ ✅ DRAFTED
+38. ~~**v10-2-1** — At the Doctor: Symptoms & Complaints~~ ✅ DRAFTED
+
+## Next Priority Scripts (Wave 3–4 remaining 📐 ARCH → DRAFT)
+
+39. **v6-1-2** — Kerala Food in German (Wave 3, Module 6)
+40. **v9-2-1** — Giving Directions (Wave 3, Module 9)
+41. **v9-3-1** — Buying Tickets (Wave 3, Module 9)
+42. **v4-2-1** — Describing People (Wave 3, Module 4)
+43. **v7-1-1** — At the Supermarket (Wave 4, Module 7)
+44. **v7-2-1** — Clothes Shopping (Wave 4, Module 7)
+45. **v7-3-1** — Prices & Comparing (Wave 4, Module 7)
+46. **v8-1-1** — Rooms & Furniture (Wave 4, Module 8)
+47. **v8-2-1** — Describing Your Home (Wave 4, Module 8)
+48. **v11-1-1** — Professions in Detail (Wave 4, Module 11)
+49. **v11-2-1** — Workplace Vocabulary (Wave 4, Module 11)
+50. **v12-1-1** — Hobbies (Wave 4, Module 12)
+51. **v12-2-1** — Weather (Wave 4, Module 12)
+52. **v12-3-1** — Making Plans & Invitations (Wave 4, Module 12)
+53. **v1-1-1** — Why German? A Malayali's Gateway (Wave 4, Module 1)
+54. **v1-1-2** — Malayalis in Germany — Real Success Stories (Wave 4, Module 1)
+55. **v1-2-2** — Tricky Sounds for Malayalis (Wave 4, Module 1)
+56. **v14-1-2** — All Form Fields Reference (Wave 1, Module 14)
+57. **v14-2-1** — At the Office (Wave 1, Module 14)
+58. **v18-5-1** — Full Mock Exam Tips (Wave 1, Module 18)
+59. **v2-1-2** — What's Your Name? Part 2 (Wave 1, Module 2)
 
 ---
 
-*Track updated by overnight cron 2026-03-23 07:30 UTC — added 5 new scripts: v12-4-1 (Invitation Writing), v3-4-1 (Days/Months/Dates), v12-4-2 (Weil-Clauses), v1-4-1 (First German Conversation), v1-3-2 (Saying Goodbye). Total: 34 full scripts drafted across Waves 1–4. Module 3 now has ALL 4 lessons fully scripted. Module 1 has 4 of 4 lesson video scripts (v1-2-1, v1-3-1, v1-3-2, v1-4-1 — only v1-1-1/v1-1-2 motivational videos and v1-2-2/v1-4-2 supplementary remain). Module 12 Lesson 12-4 fully scripted (both v12-4-1 invitation + v12-4-2 weil-clauses).*
+*Track updated by overnight cron 2026-03-23 08:31 UTC — drafted 6 new scripts: v2-3-1 (Jobs & Languages), v17-2-1 (Hören Practice), v17-3-1 (Lesen Practice), v6-1-1 (German Foods), v10-1-1 (Body Parts), v10-2-1 (Symptoms & Complaints). **Total: 40 full scripts drafted across Waves 1–4.** All 38 highest-priority scripts now have full drafts. Module 2 now has ALL 3 core lessons fully scripted. Module 17 has 3 of 3 strategy lessons scripted. Module 10 now has 3 of 3 lesson scripts (v10-1-1, v10-2-1, v10-3-1). Module 6 has 3 of 4 lesson scripts (v6-1-1, v6-2-1, v6-3-1 — only v6-1-2 Kerala Food remains). Remaining work: 21 scene architectures (📐 ARCH) in Waves 3–5 need full script drafts.*
