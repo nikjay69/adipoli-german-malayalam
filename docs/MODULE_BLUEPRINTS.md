@@ -2,7 +2,7 @@
 
 > Master planning doc: teaching goals, A1 exam relevance, lesson/video script needs, essential outcomes, and future script direction for each module.
 >
-> **Last updated:** 2026-03-23 07:00 UTC (overnight cron — ALL 18 module blueprints + ALL 5 wave architectures complete; 29/~60 full scripts drafted)
+> **Last updated:** 2026-03-23 07:30 UTC (overnight cron — ALL 18 module blueprints + ALL 5 wave architectures complete; 34/~60 full scripts drafted)
 
 ---
 
@@ -35,7 +35,7 @@ Reduce fear, build motivation, and establish correct German pronunciation from d
 | 1-1 | Why Learn German? | Outline only | MEDIUM — motivational, can be looser |
 | 1-2 | German Sounds & Alphabet | 🔄 DRAFT (`docs/scripts/v1-2-1_FULL_SCRIPT.md`) | HIGH — pronunciation is foundational |
 | 1-3 | Greetings & Goodbyes | 🔄 DRAFT (`docs/scripts/v1-3-1_FULL_SCRIPT.md`) | HIGH — first real German production |
-| 1-4 | First Conversations | Outline only | HIGH — sets the pattern for all speaking |
+| 1-4 | First Conversations | 🔄 DRAFT (`docs/scripts/v1-4-1_FULL_SCRIPT.md`) | HIGH — sets the pattern for all speaking |
 
 ### Essential Outcomes
 - [ ] Pronounce all 30 German letters + ä, ö, ü, ß correctly
@@ -113,7 +113,7 @@ Make numbers 0–100, time-telling, dates, and scheduling automatic. These appea
 | 3-1 | Numbers 0-20 | Outline only | HIGH — foundation for all numbers |
 | 3-2 | Numbers 21-100+ | Outline only | HIGH — reversed order is a trap |
 | 3-3 | Telling Time | 🔄 DRAFT (`docs/scripts/v3-3-1_FULL_SCRIPT.md`) | HIGH — exam-critical |
-| 3-4 | Days, Months, Dates | Outline only | MEDIUM — formulaic but needed |
+| 3-4 | Days, Months, Dates | 🔄 DRAFT (`docs/scripts/v3-4-1_FULL_SCRIPT.md`) | MEDIUM — formulaic but needed |
 
 ### Essential Outcomes
 - [ ] Count 0–100 fluently (including reversed tens: "fünfundzwanzig" not "zwanzigfünf")
@@ -853,10 +853,10 @@ Based on A1 exam impact, the recommended script creation order is:
 
 | Wave | Modules | Architecture Status | Full Scripts Status |
 |------|---------|-------------------|-------------------|
-| Wave 1 | 18, 17, 2, 14 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE1.md` | Not started |
-| Wave 2 | 5, 13, 3 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE2.md` | Not started |
-| Wave 3 | 6, 9, 10, 4 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE3.md` | Not started |
-| Wave 4 | 1, 7, 8, 11, 12 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE4.md` | Not started |
+| Wave 1 | 18, 17, 2, 14 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE1.md` | 7/~15 drafted |
+| Wave 2 | 5, 13, 3 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE2.md` | 12/~13 drafted (Modules 3, 5, 13 all complete) |
+| Wave 3 | 6, 9, 10, 4 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE3.md` | 6/~14 drafted |
+| Wave 4 | 1, 7, 8, 11, 12 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE4.md` | 9/~22 drafted |
 | Wave 5 | 15, 16 | ✅ Complete — see `docs/SCRIPT_ARCHITECTURE_WAVE5.md` | Not started |
 
 **🎉 ALL 18 MODULES NOW HAVE COMPLETE SCRIPT ARCHITECTURES (Waves 1–5).**
@@ -883,6 +883,6 @@ Based on A1 exam impact, the recommended script creation order is:
 - ✅ v4-3-1 — Possessive Pronouns (FIRST DRAFT) → `docs/scripts/v4-3-1_FULL_SCRIPT.md`
 - See `docs/SCRIPT_PRODUCTION_TRACKER.md` for full status across all ~60 videos.
 
-*Next priorities: (1) Write v12-4-1 full script (Invitation Writing — Schreiben Teil 2 core). (2) Write v3-4-1 full script (Days, Months, Dates — form dates for exam). (3) Write v12-4-2 full script (Weil-Clauses: Giving Reasons). (4) Write v1-4-1 full script (Your First German Conversation). (5) Wire edge-tts audio pipeline for Hören exercises. (6) Implement production exercise types (free-text, dictation) in Exercise interface.*
+*Next priorities: (1) Write v2-3-1 full script (Jobs & Languages — Sprechen Teil 1 block 3). (2) Write v17-2-1 full script (Hören Practice — listening drills). (3) Write v17-3-1 full script (Lesen Practice — reading strategies). (4) Write v6-1-1 full script (German Foods). (5) Wire edge-tts audio pipeline for Hören exercises. (6) Implement production exercise types (free-text, dictation) in Exercise interface.*
 
-**Modules with ALL lessons fully scripted:** Module 5 (Daily Routine — 4/4), Module 13 (Past Tense — 4/4), Module 18 (Exam Schreiben & Sprechen — 4/4).
+**Modules with ALL lessons fully scripted:** Module 3 (Numbers & Time — 4/4), Module 5 (Daily Routine — 4/4), Module 13 (Past Tense — 4/4), Module 18 (Exam Schreiben & Sprechen — 4/4).

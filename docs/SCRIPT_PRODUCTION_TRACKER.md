@@ -4,7 +4,7 @@
 > Architecture docs (Wave 1–5) define the scene-level structure.
 > This tracker records which scripts have been written as full, production-ready narration.
 >
-> **Last updated:** 2026-03-23 06:45 UTC (overnight cron)
+> **Last updated:** 2026-03-23 07:30 UTC (overnight cron)
 
 ---
 
@@ -55,7 +55,7 @@
 | v3-1-1 | 3 | 3-1 | Numbers 0–10 | 🔄 DRAFT | `docs/scripts/v3-1-1_FULL_SCRIPT.md` |
 | v3-2-1 | 3 | 3-2 | Numbers 21–100+ | 🔄 DRAFT | `docs/scripts/v3-2-1_FULL_SCRIPT.md` |
 | v3-3-1 | 3 | 3-3 | Telling Time | 🔄 DRAFT | `docs/scripts/v3-3-1_FULL_SCRIPT.md` |
-| v3-4-1 | 3 | 3-4 | Days, Months, Dates | 📐 ARCH |
+| v3-4-1 | 3 | 3-4 | Days, Months, Dates | 🔄 DRAFT | `docs/scripts/v3-4-1_FULL_SCRIPT.md` |
 
 ## Wave 3 — Practical Conversations
 
@@ -85,7 +85,8 @@
 | v1-2-1 | 1 | 1-2 | German Sounds & Alphabet | 🔄 DRAFT | `docs/scripts/v1-2-1_FULL_SCRIPT.md` |
 | v1-2-2 | 1 | 1-2 | Tricky Sounds for Malayalis | 📐 ARCH |
 | v1-3-1 | 1 | 1-3 | Greetings & Goodbyes | 🔄 DRAFT | `docs/scripts/v1-3-1_FULL_SCRIPT.md` |
-| v1-4-1 | 1 | 1-4 | First Conversations | 📐 ARCH |
+| v1-3-2 | 1 | 1-3 | Auf Wiedersehen! Saying Goodbye | 🔄 DRAFT | `docs/scripts/v1-3-2_FULL_SCRIPT.md` |
+| v1-4-1 | 1 | 1-4 | First Conversations | 🔄 DRAFT | `docs/scripts/v1-4-1_FULL_SCRIPT.md` |
 | v7-1-1 | 7 | 7-1 | At the Supermarket | 📐 ARCH |
 | v7-2-1 | 7 | 7-2 | Clothes Shopping | 📐 ARCH |
 | v7-3-1 | 7 | 7-3 | Prices & Comparing | 📐 ARCH |
@@ -98,6 +99,8 @@
 | v12-1-1 | 12 | 12-1 | Hobbies | 📐 ARCH |
 | v12-2-1 | 12 | 12-2 | Weather | 📐 ARCH |
 | v12-3-1 | 12 | 12-3 | Making Plans & Invitations | 📐 ARCH |
+| v12-4-1 | 12 | 12-4 | Invitation Writing (Schreiben Teil 2) | 🔄 DRAFT | `docs/scripts/v12-4-1_FULL_SCRIPT.md` |
+| v12-4-2 | 12 | 12-4 | Weil-Clauses: Giving Reasons | 🔄 DRAFT | `docs/scripts/v12-4-2_FULL_SCRIPT.md` |
 
 ## Wave 5 — Optional / Enrichment
 
@@ -120,7 +123,7 @@
 
 | Category | Count |
 |----------|-------|
-| Full scripts (🔄 DRAFT or ✅ DONE) | **29** |
+| Full scripts (🔄 DRAFT or ✅ DONE) | **34** |
 | Scene architectures (📐 ARCH) | **~56** |
 | Outline only (⬜) | **0** — all now have at least architecture |
 
@@ -153,12 +156,18 @@
 25. ~~**v13-4-1** — Talking About Your Weekend (Module 13 culmination)~~ ✅ DRAFTED
 26. ~~**v3-3-1** — Telling Time (halb trap, exam-critical)~~ ✅ DRAFTED
 27. ~~**v1-3-1** — Greetings & Goodbyes~~ ✅ DRAFTED
-28. **v12-4-1** — Invitation Writing (Schreiben Teil 2 core)
-29. **v3-4-1** — Days, Months, Dates (form dates, exam Geburtsdatum)
-30. **v12-4-2** — Weil-Clauses: Giving Reasons
-31. **v1-4-1** — Your First German Conversation
-32. **v1-3-2** — Auf Wiedersehen! Saying Goodbye
+28. ~~**v12-4-1** — Invitation Writing (Schreiben Teil 2 core)~~ ✅ DRAFTED
+29. ~~**v3-4-1** — Days, Months, Dates (form dates, exam Geburtsdatum)~~ ✅ DRAFTED
+30. ~~**v12-4-2** — Weil-Clauses: Giving Reasons~~ ✅ DRAFTED
+31. ~~**v1-4-1** — Your First German Conversation~~ ✅ DRAFTED
+32. ~~**v1-3-2** — Auf Wiedersehen! Saying Goodbye~~ ✅ DRAFTED
+33. **v2-3-1** — Jobs & Languages (Sprechen Teil 1 block 3)
+34. **v17-2-1** — Hören Practice (listening drills with exam format)
+35. **v17-3-1** — Lesen Practice (reading strategies)
+36. **v6-1-1** — German Foods You Should Know
+37. **v10-1-1** — Body Parts (vocabulary base for health)
+38. **v10-2-1** — At the Doctor: Symptoms & Complaints
 
 ---
 
-*Track updated by overnight cron 2026-03-23 07:00 UTC — added v5-4-1 (Describing Your Day), v13-3-1 (Irregular Past Participles), v13-4-1 (Talking About Your Weekend), v3-3-1 (Telling Time — halb trap), and v1-3-1 (German Greetings). Total: 29 full scripts drafted across Waves 1–4. Module 5 and Module 13 now have ALL lessons fully scripted. Module 3 has 3 of 4 lessons scripted (missing: v3-4-1 Days/Months/Dates).*
+*Track updated by overnight cron 2026-03-23 07:30 UTC — added 5 new scripts: v12-4-1 (Invitation Writing), v3-4-1 (Days/Months/Dates), v12-4-2 (Weil-Clauses), v1-4-1 (First German Conversation), v1-3-2 (Saying Goodbye). Total: 34 full scripts drafted across Waves 1–4. Module 3 now has ALL 4 lessons fully scripted. Module 1 has 4 of 4 lesson video scripts (v1-2-1, v1-3-1, v1-3-2, v1-4-1 — only v1-1-1/v1-1-2 motivational videos and v1-2-2/v1-4-2 supplementary remain). Module 12 Lesson 12-4 fully scripted (both v12-4-1 invitation + v12-4-2 weil-clauses).*
