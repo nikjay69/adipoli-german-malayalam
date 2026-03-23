@@ -1050,32 +1050,32 @@ Train learners directly for productive exam success: form-filling, short message
 
 ---
 
-## Cross-Module Script Completion Status (Updated 2026-03-23 08:31 UTC)
+## Cross-Module Script Completion Status (Updated 2026-03-23 08:51 UTC)
 
 | Module | Core Scripts Drafted | Total Possible | Status |
 |--------|---------------------|----------------|--------|
 | 1 | 4 (v1-2-1, v1-3-1, v1-3-2, v1-4-1) | ~6 | Motivation vids (v1-1-1, v1-1-2) + v1-2-2 remain |
-| 2 | 3 (v2-1-1, v2-2-1, **v2-3-1** ✨) | 4 | ✅ All core lessons scripted. Only v2-1-2 supplementary remains |
+| 2 | 3 (v2-1-1, v2-2-1, v2-3-1) | 4 | ✅ All core lessons scripted. Only v2-1-2 supplementary remains |
 | 3 | 4 (v3-1-1, v3-2-1, v3-3-1, v3-4-1) | 4 | ✅ COMPLETE — all lessons fully scripted |
-| 4 | 2 (v4-1-1, v4-3-1) | 3 | v4-2-1 (Describing People) remains |
+| 4 | 3 (v4-1-1, **v4-2-1** ✨, v4-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
 | 5 | 4 (v5-1-1, v5-2-1, v5-3-1, v5-4-1) | 5 | v5-1-2 supplementary remains |
-| 6 | 3 (v6-2-1, v6-3-1, **v6-1-1** ✨) | 4 | Only v6-1-2 (Kerala Food) remains |
-| 7 | 0 | 3 | All 📐 ARCH only |
-| 8 | 1 (v8-3-1) | 3 | v8-1-1, v8-2-1 remain |
-| 9 | 1 (v9-1-1) | 3 | v9-2-1, v9-3-1 remain |
-| 10 | 3 (v10-3-1, **v10-1-1** ✨, **v10-2-1** ✨) | 3 | ✅ COMPLETE — all lessons fully scripted |
-| 11 | 1 (v11-3-1) | 3 | v11-1-1, v11-2-1 remain |
+| 6 | 3 (v6-1-1, v6-2-1, v6-3-1) | 4 | Only v6-1-2 (Kerala Food) remains |
+| 7 | 1 (**v7-1-1** ✨) | 3 | v7-2-1, v7-3-1 remain |
+| 8 | 3 (**v8-1-1** ✨, **v8-2-1** ✨, v8-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
+| 9 | 3 (v9-1-1, **v9-2-1** ✨, **v9-3-1** ✨) | 3 | ✅ COMPLETE — all lessons fully scripted |
+| 10 | 3 (v10-1-1, v10-2-1, v10-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
+| 11 | 2 (**v11-1-1** ✨, v11-3-1) | 3 | v11-2-1 (Workplace Vocabulary) remains |
 | 12 | 2 (v12-4-1, v12-4-2) | 5 | v12-1-1, v12-2-1, v12-3-1 remain |
 | 13 | 4 (v13-1-1, v13-2-1, v13-3-1, v13-4-1) | 4 | ✅ COMPLETE — all lessons fully scripted |
 | 14 | 1 (v14-1-1) | 3 | v14-1-2, v14-2-1 remain |
 | 15 | 0 | ~5 | All 📐 ARCH only (Wave 5, low priority) |
 | 16 | 0 | ~5 | All 📐 ARCH only (Wave 5, low priority) |
-| 17 | 3 (v17-1-1, **v17-2-1** ✨, **v17-3-1** ✨) | 3 | ✅ COMPLETE — all strategy lessons scripted |
+| 17 | 3 (v17-1-1, v17-2-1, v17-3-1) | 3 | ✅ COMPLETE — all strategy lessons scripted |
 | 18 | 4 (v18-1-1, v18-2-1, v18-3-1, v18-4-1) | 5 | v18-5-1 (Mock Exam Tips) remains |
 
-✨ = drafted in this run (2026-03-23 08:31 UTC)
+✨ = drafted in this run (2026-03-23 08:51 UTC)
 
-**Summary:** 40/~90 scripts drafted. 4 modules fully complete (3, 10, 13, 17). Modules 2, 5, 6, 18 are 1 script away from complete. The biggest remaining gaps are Modules 7, 15, and 16.
+**Summary:** 46/~90 scripts drafted. **7 modules fully complete (3, 4, 8, 9, 10, 13, 17).** Modules 2, 5, 6, 11, 18 are 1 script away from complete. The biggest remaining gaps are Modules 7 (2 scripts), 12 (3 scripts), 14 (2 scripts), 15 (all 5), and 16 (all 5).
 
 ---
 

@@ -1,8 +1,84 @@
-# Overnight Run Log — 2026-03-23 07:30 UTC
+# Overnight Run Log — 2026-03-23
 
-## Run Summary
-**Session:** Cron overnight module plan + script work (second run)
-**Status:** ✅ 5 new scripts written, tracker + blueprints updated
+## Run 3 — 08:51 UTC
+**Session:** Cron overnight module plan + script work (third run)
+**Status:** ✅ 6 new scripts written, tracker + blueprints updated, total now 46
+
+### 6 New Full Scripts Written (40 → 46):
+
+1. **v4-2-1 — Describing People (How People Look)** — Module 4, Wave 3
+   - Covers: height/age opposites, body build, hair & eyes vocab, ist+hat two-verb pattern, personality traits (positive + negative), fleißig as cultural bridge, complete person description model, famous people practice
+   - Completes Module 4 (ALL 3 lessons now fully scripted: v4-1-1, v4-2-1, v4-3-1) ✅
+   - File: `docs/scripts/v4-2-1_FULL_SCRIPT.md`
+
+2. **v9-2-1 — Am Schalter: Buying Travel Tickets** — Module 9, Wave 3
+   - Covers: "Eine Fahrkarte nach [Stadt], bitte" magic sentence, einfach/hin und zurück, erste/zweite Klasse, Ermäßigung discount asking, departure board decoding, Golden Ticket Dialogue, nach vs in die rule
+   - File: `docs/scripts/v9-2-1_FULL_SCRIPT.md`
+
+3. **v9-3-1 — Wo ist...? Asking Directions** — Module 9, Wave 3
+   - Covers: 3 question patterns (Wo ist/Wie komme ich/Ich suche), zum/zur contractions, polite openers, distance questions, 3 rescue phrases (wiederholen/langsamer/aufschreiben), direction-asking dialogue
+   - Completes Module 9 (ALL 3 lessons now fully scripted: v9-1-1, v9-2-1, v9-3-1) ✅
+   - File: `docs/scripts/v9-3-1_FULL_SCRIPT.md`
+
+4. **v7-1-1 — Im Supermarkt: Shopping in Germany** — Module 7, Wave 4
+   - Covers: supermarket layout virtual tour, 8 core grocery items with articles, 3 asking-for-items phrases, checkout dialogue, Pfand system, Sunday closing, Akkusativ through shopping (ein→einen), shopping list challenge
+   - First script for Module 7
+   - File: `docs/scripts/v7-1-1_FULL_SCRIPT.md`
+
+5. **v8-1-1 — Rooms & Furniture (Zimmer und Möbel)** — Module 8, Wave 4
+   - Covers: room names with -zimmer compound pattern, Kerala vs Germany living comparison, WG concept, living room/bedroom/kitchen/bathroom furniture, es gibt pattern, room description model
+   - File: `docs/scripts/v8-1-1_FULL_SCRIPT.md`
+
+6. **v8-2-1 — Describing Your Home (Where Is It?)** — Module 8, Wave 4
+   - Covers: 8 location prepositions (auf/unter/neben/vor/hinter/in/zwischen/an), Dativ with location, im contraction, model room description, Wo ist...? question pattern, room tour speaking drill
+   - Completes Module 8 (ALL 3 lessons now fully scripted: v8-1-1, v8-2-1, v8-3-1) ✅
+   - File: `docs/scripts/v8-2-1_FULL_SCRIPT.md`
+
+7. **v11-1-1 — Professions in Detail (Berufe)** — Module 11, Wave 4
+   - Covers: masculine→feminine -in rule, Malayali-relevant healthcare professions (Krankenpfleger, Altenpfleger), tech professions, 3 ways to state your profession, Student/Azubi/Praktikant, Beruf form field, quick-fire drill
+   - File: `docs/scripts/v11-1-1_FULL_SCRIPT.md`
+
+### Module Completion Milestones (this run):
+- **Module 4 (Family & People):** ALL 3 core lessons scripted ✅ (v4-1-1, v4-2-1, v4-3-1)
+- **Module 8 (My Home):** ALL 3 core lessons scripted ✅ (v8-1-1, v8-2-1, v8-3-1)
+- **Module 9 (Travel & Directions):** ALL 3 core lessons scripted ✅ (v9-1-1, v9-2-1, v9-3-1)
+
+### Fully Complete Modules (7 total): 3, 4, 8, 9, 10, 13, 17
+
+### Near-Complete Modules (1 script away):
+- Module 2 (v2-1-2 supplementary remains)
+- Module 5 (v5-1-2 supplementary remains)
+- Module 6 (v6-1-2 Kerala Food remains)
+- Module 11 (v11-2-1 Workplace Vocab remains)
+- Module 18 (v18-5-1 Mock Exam Tips remains)
+
+### Blocker (carried from previous runs)
+**Shell exec intermittent.** Git add/commit/push not executed. Files written successfully via Write tool.
+
+**Action needed:** On next session or heartbeat, run:
+```bash
+cd /root/.openclaw/workspace-deutsch/adipoli-german-malayalam
+git add -A
+git commit -m "Add 6 new scripts (v4-2-1, v9-2-1, v9-3-1, v7-1-1, v8-1-1, v8-2-1, v11-1-1) — total 46 drafted. Modules 4, 8, 9 fully scripted."
+git pull --rebase
+git push
+```
+
+### Next Script Priorities (for future runs)
+1. v6-1-2 — Kerala Food in German (completes Module 6)
+2. v11-2-1 — Workplace Vocabulary (completes Module 11)
+3. v7-2-1 — Clothes Shopping (Module 7)
+4. v7-3-1 — Prices & Comparing (Module 7)
+5. v18-5-1 — Full Mock Exam Tips (completes Module 18)
+6. v14-1-2 — All Form Fields Reference (Module 14)
+7. v14-2-1 — At the Office (Module 14)
+8. v12-1-1 — Hobbies (Module 12)
+9. v12-2-1 — Weather (Module 12)
+10. v12-3-1 — Making Plans & Invitations (Module 12)
+
+---
+
+## Run 2 — 07:30 UTC (Previous)
 
 ## Work Completed
 

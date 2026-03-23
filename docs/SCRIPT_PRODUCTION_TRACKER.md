@@ -4,7 +4,7 @@
 > Architecture docs (Wave 1–5) define the scene-level structure.
 > This tracker records which scripts have been written as full, production-ready narration.
 >
-> **Last updated:** 2026-03-23 08:31 UTC (overnight cron)
+> **Last updated:** 2026-03-23 08:51 UTC (overnight cron run 2)
 
 ---
 
@@ -67,13 +67,13 @@
 | v6-3-1 | 6 | 6-3 | Restaurant Golden Dialogue | 🔄 DRAFT | `docs/scripts/v6-3-1_FULL_SCRIPT.md` |
 | v6-4-1 | 6 | 6-4 | Kerala Food in German | 📐 ARCH |
 | v9-1-1 | 9 | 9-1 | Transportation & mit+Dativ | 🔄 DRAFT | `docs/scripts/v9-1-1_FULL_SCRIPT.md` |
-| v9-2-1 | 9 | 9-2 | Giving Directions | 📐 ARCH |
-| v9-3-1 | 9 | 9-3 | Buying Tickets | 📐 ARCH |
+| v9-2-1 | 9 | 9-2 | Buying Tickets | 🔄 DRAFT | `docs/scripts/v9-2-1_FULL_SCRIPT.md` |
+| v9-3-1 | 9 | 9-3 | Asking Directions | 🔄 DRAFT | `docs/scripts/v9-3-1_FULL_SCRIPT.md` |
 | v10-1-1 | 10 | 10-1 | Body Parts | 🔄 DRAFT | `docs/scripts/v10-1-1_FULL_SCRIPT.md` |
 | v10-2-1 | 10 | 10-2 | At the Doctor (Symptoms) | 🔄 DRAFT | `docs/scripts/v10-2-1_FULL_SCRIPT.md` |
 | v10-3-1 | 10 | 10-3 | Doctor Visit Golden Dialogue | 🔄 DRAFT | `docs/scripts/v10-3-1_FULL_SCRIPT.md` |
 | v4-1-1 | 4 | 4-1 | Family Members | 🔄 DRAFT | `docs/scripts/v4-1-1_FULL_SCRIPT.md` |
-| v4-2-1 | 4 | 4-2 | Describing People | 📐 ARCH |
+| v4-2-1 | 4 | 4-2 | Describing People | 🔄 DRAFT | `docs/scripts/v4-2-1_FULL_SCRIPT.md` |
 | v4-3-1 | 4 | 4-3 | Possessive Pronouns | 🔄 DRAFT | `docs/scripts/v4-3-1_FULL_SCRIPT.md` |
 
 ## Wave 4 — Supporting Content
@@ -87,13 +87,13 @@
 | v1-3-1 | 1 | 1-3 | Greetings & Goodbyes | 🔄 DRAFT | `docs/scripts/v1-3-1_FULL_SCRIPT.md` |
 | v1-3-2 | 1 | 1-3 | Auf Wiedersehen! Saying Goodbye | 🔄 DRAFT | `docs/scripts/v1-3-2_FULL_SCRIPT.md` |
 | v1-4-1 | 1 | 1-4 | First Conversations | 🔄 DRAFT | `docs/scripts/v1-4-1_FULL_SCRIPT.md` |
-| v7-1-1 | 7 | 7-1 | At the Supermarket | 📐 ARCH |
+| v7-1-1 | 7 | 7-1 | At the Supermarket | 🔄 DRAFT | `docs/scripts/v7-1-1_FULL_SCRIPT.md` |
 | v7-2-1 | 7 | 7-2 | Clothes Shopping | 📐 ARCH |
 | v7-3-1 | 7 | 7-3 | Prices & Comparing | 📐 ARCH |
-| v8-1-1 | 8 | 8-1 | Rooms & Furniture | 📐 ARCH |
-| v8-2-1 | 8 | 8-2 | Describing Your Home | 📐 ARCH |
+| v8-1-1 | 8 | 8-1 | Rooms & Furniture | 🔄 DRAFT | `docs/scripts/v8-1-1_FULL_SCRIPT.md` |
+| v8-2-1 | 8 | 8-2 | Describing Your Home | 🔄 DRAFT | `docs/scripts/v8-2-1_FULL_SCRIPT.md` |
 | v8-3-1 | 8 | 8-3 | Reading Wohnungsanzeigen | 🔄 DRAFT | `docs/scripts/v8-3-1_FULL_SCRIPT.md` |
-| v11-1-1 | 11 | 11-1 | Professions in Detail | 📐 ARCH |
+| v11-1-1 | 11 | 11-1 | Professions in Detail | 🔄 DRAFT | `docs/scripts/v11-1-1_FULL_SCRIPT.md` |
 | v11-2-1 | 11 | 11-2 | Workplace Vocabulary | 📐 ARCH |
 | v11-3-1 | 11 | 11-3 | German Email Writing | 🔄 DRAFT | `docs/scripts/v11-3-1_FULL_SCRIPT.md` |
 | v12-1-1 | 12 | 12-1 | Hobbies | 📐 ARCH |
@@ -123,8 +123,8 @@
 
 | Category | Count |
 |----------|-------|
-| Full scripts (🔄 DRAFT or ✅ DONE) | **40** |
-| Scene architectures (📐 ARCH) | **~50** |
+| Full scripts (🔄 DRAFT or ✅ DONE) | **46** |
+| Scene architectures (📐 ARCH) | **~44** |
 | Outline only (⬜) | **0** — all now have at least architecture |
 
 ## Next Scripts to Write (Priority Order)
@@ -170,16 +170,16 @@
 
 ## Next Priority Scripts (Wave 3–4 remaining 📐 ARCH → DRAFT)
 
-39. **v6-1-2** — Kerala Food in German (Wave 3, Module 6)
-40. **v9-2-1** — Giving Directions (Wave 3, Module 9)
-41. **v9-3-1** — Buying Tickets (Wave 3, Module 9)
-42. **v4-2-1** — Describing People (Wave 3, Module 4)
-43. **v7-1-1** — At the Supermarket (Wave 4, Module 7)
+39. ~~**v6-1-2** — Kerala Food in German (Wave 3, Module 6)~~ *next priority*
+40. ~~**v9-2-1** — Buying Tickets (Wave 3, Module 9)~~ ✅ DRAFTED
+41. ~~**v9-3-1** — Asking Directions (Wave 3, Module 9)~~ ✅ DRAFTED
+42. ~~**v4-2-1** — Describing People (Wave 3, Module 4)~~ ✅ DRAFTED
+43. ~~**v7-1-1** — At the Supermarket (Wave 4, Module 7)~~ ✅ DRAFTED
 44. **v7-2-1** — Clothes Shopping (Wave 4, Module 7)
 45. **v7-3-1** — Prices & Comparing (Wave 4, Module 7)
-46. **v8-1-1** — Rooms & Furniture (Wave 4, Module 8)
-47. **v8-2-1** — Describing Your Home (Wave 4, Module 8)
-48. **v11-1-1** — Professions in Detail (Wave 4, Module 11)
+46. ~~**v8-1-1** — Rooms & Furniture (Wave 4, Module 8)~~ ✅ DRAFTED
+47. ~~**v8-2-1** — Describing Your Home (Wave 4, Module 8)~~ ✅ DRAFTED
+48. ~~**v11-1-1** — Professions in Detail (Wave 4, Module 11)~~ ✅ DRAFTED
 49. **v11-2-1** — Workplace Vocabulary (Wave 4, Module 11)
 50. **v12-1-1** — Hobbies (Wave 4, Module 12)
 51. **v12-2-1** — Weather (Wave 4, Module 12)
@@ -194,4 +194,4 @@
 
 ---
 
-*Track updated by overnight cron 2026-03-23 08:31 UTC — drafted 6 new scripts: v2-3-1 (Jobs & Languages), v17-2-1 (Hören Practice), v17-3-1 (Lesen Practice), v6-1-1 (German Foods), v10-1-1 (Body Parts), v10-2-1 (Symptoms & Complaints). **Total: 40 full scripts drafted across Waves 1–4.** All 38 highest-priority scripts now have full drafts. Module 2 now has ALL 3 core lessons fully scripted. Module 17 has 3 of 3 strategy lessons scripted. Module 10 now has 3 of 3 lesson scripts (v10-1-1, v10-2-1, v10-3-1). Module 6 has 3 of 4 lesson scripts (v6-1-1, v6-2-1, v6-3-1 — only v6-1-2 Kerala Food remains). Remaining work: 21 scene architectures (📐 ARCH) in Waves 3–5 need full script drafts.*
+*Track updated by quality pass cron 2026-03-23 09:05 UTC — revised 4 scripts from v1.0 → v2.0: v2-1-1 (What's Your Name?), v2-2-1 (Where Are You From?), v5-1-1 (How German Verbs Work), v13-1-1 (Perfekt with haben). Created docs/SCRIPT_QUALITY_STANDARD.md as reusable quality reference. **Total: 46 full scripts, 6 at v2.0 quality (v18-1-1, v17-1-1, v2-1-1, v2-2-1, v5-1-1, v13-1-1).** Quality pass focus: tighter hooks (cut to <45s), specific practice pauses with prompts/reveals, active recall summaries replacing passive bullet lists, energy cues at every section, Malayalam bridges as structural parallels not dictionary entries, 15-20% word count reductions.*
