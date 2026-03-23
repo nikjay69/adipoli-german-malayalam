@@ -4,7 +4,7 @@
 > Architecture docs (Wave 1–5) define the scene-level structure.
 > This tracker records which scripts have been written as full, production-ready narration.
 >
-> **Last updated:** 2026-03-23 15:45 UTC (quality pass cron — exam overview accuracy + Schreiben Teil 2 register-safety revision run)
+> **Last updated:** 2026-03-23 16:22 UTC (quality pass cron — Module 1 greetings/goodbye social-foundation revision run)
 
 ---
 
@@ -195,4 +195,4 @@
 
 ---
 
-*Track updated by quality pass cron 2026-03-23 15:45 UTC — revised 2 more core exam scripts for **accuracy + score-safe production use**: v17-1-1 (Exam overview — rebuilt around cleaner exam-format truth, safer section-by-section strategy, and less misleading "easy points" framing), v18-2-1 (Schreiben Teil 2 — rebuilt around read/plan/write/check workflow, stronger formal-vs-informal handling, and a safer formal model message for official contexts). **Total: 52 full scripts, 48 confirmed at v2.0+ quality**. This run started with a successful `git pull --rebase --autostash`; the four run files were then committed and pushed cleanly (`b5f69c1`) without pulling unrelated dirty-tree work into the commit.*
+*Track updated by quality pass cron 2026-03-23 16:22 UTC — revised 2 weaker **Module 1 social-foundation scripts** to stronger production-ready teaching shape: v1-3-1 (Greetings — cut overload down to the 4 greeting tools learners actually need first, tightened `Sie`/`du`, simplified `Wie geht's?` answers, and rebuilt around two active mini-dialogues) and v1-3-2 (Goodbyes + politeness — reduced the phrase inventory to a compact exit toolkit, clarified `Danke`/`Bitte`, and made `Entschuldigung` vs `Es tut mir leid` much safer for beginners). **Total: 52 full scripts, 52 confirmed at v2.0+ quality**. Pull-first completed successfully at run start; repo remains intentionally dirty from earlier in-progress files, so any push should continue staging only targeted work.*

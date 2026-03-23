@@ -1,305 +1,299 @@
-# v1-3-1 — Guten Tag! German Greetings for Every Situation (FULL SCRIPT)
+# v1-3-1 — Guten Tag! German Greetings for Real Life (FULL SCRIPT)
 
-> **Module:** 1 | **Lesson:** 1-3 | **Duration:** 12:00 target
-> **Teaching Goal:** Master time-based greetings, formal vs informal register, "Wie geht's?" responses, and greeting dialogues — the student's first real German production
-> **A1 Exam Link:** Sprechen Teil 1 (greeting the examiner), Hören Teil 1 (greeting recognition in dialogues)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Module:** 1 | **Lesson:** 1-3 | **Duration:** 10:30 target
+> **Teaching Goal:** Teach the 4 greeting tools beginners actually need first: time-based greetings, `Hallo`, formal vs informal greeting behavior, and safe `Wie geht's?` responses.
+> **A1 Exam Link:** Sprechen Teil 1 (greeting the examiner), Hören Teil 1 (recognizing greeting context in short dialogues)
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
-## Pre-roll (0:00–0:15)
+## Pre-roll (0:00–0:12)
 
 ### Visual: [Course intro animation / Adipoli German branding]
 ### Narration:
-"Willkommen bei Adipoli German! Today — every greeting you'll ever need in Germany."
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — First Impressions (0:15–1:00)
+## Section 1: Hook — The First 5 Seconds Matter (0:12–0:40)
 
-### Visual: [SLIDE: Two people meeting — one smiling confidently, one looking unsure. "First Impression = First Greeting"]
-### Narration:
-"Every German conversation starts the same way: a greeting. Get it right and you've already made a good first impression. Get it wrong and... well, they'll know you're new.
+### Visual: [Split screen: exam room / shop / office desk. Same speech bubble in each: "Guten Tag!"]
+### Narration: [ENERGY: direct, practical]
+"In Germany, many conversations are decided in the first five seconds.
 
-The good news? German greetings follow simple rules. Time of day + who you're talking to = correct greeting. That's it.
+Walk into an exam room. A shop. An office. Someone looks at you.
+What do you say?
 
-*Ella German conversation-um oru greeting-il thudangum. Athu shariyaayaal, nalla first impression! Ee lesson kazhiyumbol, ningal confidently greet cheyyaam — formal-um informal-um.*
-
-Let's start!"
-
----
-
-## Section 2: Time-Based Greetings (1:00–2:30)
-
-### Visual: [SLIDE: Clock divided into three zones with greetings — morning (sunrise, warm colors), day (blue sky), evening (sunset)]
-### Narration:
-"German has three main greetings based on time of day:
-
-### 🌅 Morning (until ~11:00):
-**Guten Morgen!** — Good morning!
-
-### ☀️ Daytime (~11:00–18:00):
-**Guten Tag!** — Good day! (The most universal greeting)
-
-### 🌆 Evening (after ~18:00):
-**Guten Abend!** — Good evening!
-
-[SLIDE: Clock diagram with three colored zones]
-
-Simple, right? Just like English 'good morning / good afternoon / good evening.' The only difference: Germans don't really say 'good afternoon' — 'Guten Tag' covers the whole middle of the day.
-
-⏸️ **[PAUSE — Student repeats: Guten Morgen! Guten Tag! Guten Abend!]**
-
-Let's pronounce them properly:
-- **Guten** — 'GOO-ten' (the 'u' is like 'oo' in 'food')
-- **Morgen** — 'MOR-gen' (the 'g' is hard, like 'go')
-- **Tag** — 'Tahk' (short and crisp, the 'g' at the end sounds like 'k')
-- **Abend** — 'AH-bent' (the 'd' at the end sounds like 't')
-
-⏸️ **[PAUSE — Student repeats with correct pronunciation]**
-
-*'Good morning' parayunna pole thannë — Guten Morgen. Easy!*"
+By the end of this video, you'll handle that moment safely and naturally — without overthinking."
 
 ---
 
-## Section 3: The Universal Greeting — Hallo! (2:30–3:30)
+## Section 2: The 4 Greeting Tools You Need First (0:40–2:10)
 
-### Visual: [SLIDE: Big friendly "Hallo!" with a waving hand emoji 👋]
-### Narration:
-"Now, the ONE greeting that works EVERYWHERE, ANYTIME, with ANYONE:
+### Visual: [Card stack appears one by one: Guten Morgen / Guten Tag / Guten Abend / Hallo]
+### Narration: [ENERGY: clean, structured]
+"Forget ten greetings. Start with FOUR.
 
-**Hallo!** 👋
+### 1. **Guten Morgen!**
+Use it in the morning.
 
-Hallo is like 'Hi' in English. It's friendly, safe, and universal. Not too formal, not too casual. If you're ever unsure which greeting to use — just say Hallo.
+### 2. **Guten Tag!**
+Your safest daytime greeting. Office, shop, exam, stranger — excellent default.
 
-You can also say:
-- **Hi!** — yes, Germans use 'Hi' too! Very casual.
-- **Hey!** — among friends, very informal.
+### 3. **Guten Abend!**
+Use it in the evening.
 
-⏸️ **[PAUSE — Student says: Hallo!]**
+### 4. **Hallo!**
+Friendly, neutral, works almost everywhere.
 
-For the exam: **Hallo** or **Guten Tag** are both perfect for greeting the examiner. Either works. Both are safe.
+[SLIDE: Morning / Day / Evening / Anytime]
 
-*Confusion aayal — just say Hallo! Athu safe aanu, anywhere works!*"
+If you freeze, remember this:
+- Morning → **Guten Morgen**
+- Daytime / formal safe default → **Guten Tag**
+- Evening → **Guten Abend**
+- Unsure? → **Hallo** or **Guten Tag**
 
----
+*Confusion aayal random aayi panikaruthu. `Guten Tag` ennu paranjaal usually safe aanu.*
 
-## Section 4: Regional Greetings — Bonus Color (3:30–5:00)
-
-### Visual: [SLIDE: Map of Germany/Austria/Switzerland with regional greetings pinned to locations]
-### Narration:
-"Germany is full of regional greetings. You don't need to USE them, but you should RECOGNIZE them:
-
-### 🏔️ Bavaria & Austria:
-**Grüß Gott!** — Literally 'Greet God!' Used like 'Guten Tag'.
-
-### 🌊 Northern Germany:
-**Moin!** (or **Moin Moin!**) — Used ALL day, not just mornings! Hamburg's favourite word.
-
-### 🏔️ South (Bavaria/Austria again):
-**Servus!** — Hello AND goodbye! Like 'Aloha' in Hawaii or 'Namaskaram' in Malayalam!
-
-### 🇮🇹 Informal everywhere:
-**Tschau!** (from Italian 'Ciao') — Used as goodbye mostly.
-
-[MAP: colored regions with greetings]
-
-You don't need to memorize these — just don't be confused if someone in Munich says 'Grüß Gott' instead of 'Guten Tag'. They mean the same thing!
-
-*Servus = hello AND goodbye — like 'Namaskaram' alle? Both ways use cheyyaam!*"
+⏸️ **Practice:** Repeat after me.
+- Guten Morgen!
+- Guten Tag!
+- Guten Abend!
+- Hallo!"
 
 ---
 
-## Section 5: Formal vs Informal — du & Sie (5:00–6:30)
+## Section 3: Formal or Casual? — `Sie` vs `du` (2:10–3:20)
 
-### Visual: [SLIDE: Two parallel scenarios — formal (office, Amt) vs informal (friends, party). Sie highlighted in blue, du in green.]
-### Narration:
-"This is IMPORTANT. German has two ways to say 'you':
+### Visual: [Split screen: Bürgeramt / friends at café. Blue label `Sie`, green label `du`]
+### Narration: [ENERGY: reassuring]
+"Now the real beginner stress: should I sound formal or casual?
 
-### **Sie** (formal) — with strangers, elders, officials, in shops, at work
-### **du** (informal) — with friends, family, children, young people among themselves
+German has two versions of 'you':
+- **Sie** = formal
+- **du** = informal
 
-*Malayalam-il 'ningal' vs 'nee' ille? Same concept! 'Ningal' = Sie. 'Nee' = du. Exactly the same idea!*
+Malayalam parallel? Very easy.
+- **Sie** ≈ നിങ്ങൾ / താങ്കൾ
+- **du** ≈ നീ
 
-When to use **Sie**:
-- ✅ Meeting someone new
-- ✅ At the Amt (government office)
-- ✅ In shops and restaurants
-- ✅ With your boss (usually)
-- ✅ In the exam!
+Use **Sie** with:
+- strangers
+- officials
+- reception staff
+- examiners
+- shop or office interactions
 
-When to use **du**:
-- ✅ Friends
-- ✅ Family
-- ✅ Children / young people to each other
-- ✅ Sports teams, some modern workplaces
+Use **du** with:
+- friends
+- family
+- classmates after the vibe becomes casual
 
-### The golden rule: **When in doubt, use Sie.** You can always switch to 'du' later if they suggest it. Going the other way is awkward.
+### Golden rule:
+**If you are not sure, choose `Sie`.**
+Too much respect is safer than too much casualness.
 
-⏸️ **[PAUSE — Scenario check: Your doctor? → Sie. Your classmate? → du. A shop assistant? → Sie. Your host family's child? → du.]**
-
-Note: **Sie (formal 'you') is ALWAYS capitalized** — even in the middle of a sentence. 'du' is lowercase."
-
----
-
-## Section 6: Dialogue 1 — Formal Meeting (6:30–8:00)
-
-### Visual: [SLIDE: Two professionals meeting. Speech bubbles appear step by step.]
-### Narration:
-"Let's put it all together. A formal meeting:
-
-[DIALOGUE — each line appears as the narrator speaks]
-
-**Person A:** Guten Tag! Ich bin Frau Müller.
-**Person B:** Guten Tag, Frau Müller! Mein Name ist Nikhil Nair. Freut mich!
-**Person A:** Freut mich auch! Wie geht es Ihnen?
-**Person B:** Gut, danke. Und Ihnen?
-**Person A:** Auch gut, danke.
-
-[SLIDE: Key vocabulary highlighted]
-
-Notice:
-- **Frau** Müller (not 'Mrs' — German uses 'Frau' for all women)
-- **Herr** Nair (for men)
-- **Freut mich** = 'Pleased to meet you' — USE THIS! It makes you sound fluent.
-- **Wie geht es Ihnen?** = 'How are you?' (formal — notice **Ihnen** with capital I)
-- **Und Ihnen?** = 'And you?' (always ask back!)
-
-⏸️ **[PAUSE — Student role-plays Person B]**
-
-*'Freut mich!' parayumbol, Germans impressed aakum — 'Oh, this person knows German!' Simple but powerful.*"
+⏸️ Quick check:
+- Examiner? → **Sie**
+- Your close friend? → **du**
+- Shop assistant? → **Sie**"
 
 ---
 
-## Section 7: Dialogue 2 — Casual Meeting (8:00–9:30)
+## Section 4: The Greeting Question — `Wie geht's?` / `Wie geht es Ihnen?` (3:20–4:35)
 
-### Visual: [SLIDE: Two young people meeting at a café. Casual vibe.]
-### Narration:
-"Now the casual version — meeting a friend of a friend:
+### Visual: [Two columns: casual vs formal]
+### Narration: [ENERGY: teach then drill]
+"After the greeting, the next common line is 'How are you?'
 
-**Person A:** Hey! Ich bin Akhil.
-**Person B:** Hallo Akhil! Ich bin Lisa. Wie geht's?
-**Person A:** Gut, danke! Und dir?
-**Person B:** Auch gut!
+### Casual:
+**Wie geht's?**
+or
+**Wie geht es dir?**
 
-[SLIDE: Differences highlighted between formal and casual]
+### Formal:
+**Wie geht es Ihnen?**
 
-Compare:
-| Formal | Casual |
-|--------|--------|
-| Guten Tag | Hallo / Hey |
-| Wie geht es Ihnen? | Wie geht's? |
-| Und Ihnen? | Und dir? |
-| Mein Name ist... | Ich bin... |
-| Freut mich | (optional — more casual) |
+You do **not** need ten answers. Start with three:
+- **Gut, danke!** — Good, thanks.
+- **Sehr gut!** — Very good.
+- **Es geht.** — I'm okay / so-so.
 
-'Wie geht's' is short for 'Wie geht es dir?' — the most common casual greeting in German. You'll hear it everywhere.
+And one rule matters more than all the others:
+### Ask back.
+- **Und dir?** — and you? (casual)
+- **Und Ihnen?** — and you? (formal)
 
-⏸️ **[PAUSE — Student role-plays Person A in the casual dialogue]**"
+*Malayali learners-inde common mistake: answer paranju stop cheyyuka. German-il usually back question expect cheyyum.*
 
----
-
-## Section 8: "Wie geht's?" — The Full Response Scale (9:30–10:30)
-
-### Visual: [SLIDE: Smiley scale from 😄 to 😞 with German responses]
-### Narration:
-"When someone asks 'Wie geht's?', here's your full response toolkit:
-
-### 😄 Great:
-- **Sehr gut!** — Very good!
-- **Ausgezeichnet!** — Excellent! (impressive word!)
-- **Super!** — Super!
-
-### 🙂 Good:
-- **Gut, danke!** — Good, thanks!
-- **Ganz gut!** — Pretty good!
-
-### 😐 Okay:
-- **Es geht.** — It's going. (the classic 'meh')
-- **Nicht schlecht.** — Not bad.
-
-### 😟 Not great:
-- **Nicht so gut.** — Not so good.
-- **Schlecht.** — Bad.
-
-### The KEY rule: **ALWAYS ask back!**
-'Und Ihnen?' (formal) or 'Und dir?' (casual)
-
-Germans expect the question returned. If you don't ask back, it feels rude — like you don't care.
-
-*'Und dir?' / 'Und Ihnen?' — ee chodhyam thirichu chodhikkaam. Germans expect cheyyum. Chodhichillel, rude aanu!*
-
-⏸️ **[PAUSE — Student answers 'Wie geht's?' with three different responses + 'Und dir?']**"
+⏸️ Practice:
+- Wie geht's? → **Gut, danke! Und dir?**
+- Wie geht es Ihnen? → **Gut, danke! Und Ihnen?**"
 
 ---
 
-## Section 9: Quick-Fire Greeting Drill (10:30–11:30)
+## Section 5: Mini Dialogue 1 — Safe Formal Opening (4:35–5:50)
 
-### Visual: [SLIDE: Scenarios flash on screen — student must choose correct greeting]
-### Narration:
-"Speed round! I describe a situation — you say the correct greeting. Go!
+### Visual: [Speech bubbles. Scene: exam room / office desk]
+### Narration: [ENERGY: coached role-play]
+"Let's do the version that gives beginners the most value first: formal.
 
-**1.** It's 8 AM. You arrive at the office. Your boss is there.
-⏸️ → **Guten Morgen!** (morning + formal) ✅
+### Dialogue
+**A:** Guten Tag!
+**B:** Guten Tag!
+**A:** Wie heißen Sie?
+**B:** Ich heiße Anjali Nair.
+**A:** Freut mich.
+**B:** Freut mich auch.
 
-**2.** It's 3 PM. You see a friend at a café.
-⏸️ → **Hallo!** or **Hey!** (casual) ✅
+Short. Clean. Safe.
 
-**3.** It's 7 PM. You enter a restaurant.
-⏸️ → **Guten Abend!** (evening + formal setting) ✅
+This is exactly the kind of energy you want in an exam or official setting — not a big speech, just calm correct interaction.
 
-**4.** You walk into the Goethe exam room. The examiner is sitting there.
-⏸️ → **Guten Tag!** or **Guten Morgen!** (formal, time-appropriate) ✅
-
-**5.** You meet your German course classmate on the street.
-⏸️ → **Hallo!** or **Hey! Wie geht's?** ✅
-
-**6.** You're in Munich. An elderly lady at the bakery says 'Grüß Gott!'
-⏸️ → Don't panic! It means 'Guten Tag.' Reply with **Guten Tag!** or **Grüß Gott!** ✅
-
-**7.** You call your landlord about a problem.
-⏸️ → **Guten Tag!** (phone + formal) ✅
-
-How many did you get? All 7 = you're ready for Germany! 🇩🇪"
+⏸️ Now YOU say Person B's lines:
+1. **Guten Tag!**
+2. **Ich heiße [your name].**
+3. **Freut mich auch.**"
 
 ---
 
-## Section 10: Exam Tip + Closing (11:30–12:00)
+## Section 6: Mini Dialogue 2 — Casual Friend Version (5:50–6:50)
 
-### Visual: [SLIDE: Exam tip card with the 5 essential greetings]
-### Narration:
-"### 📋 [EXAM-TIP]
+### Visual: [Speech bubbles. Scene: course break / café]
+### Narration: [ENERGY: lighter, friendly]
+"Now the casual version.
 
-**Sprechen Teil 1:** You walk in, the examiner says 'Guten Tag.' You say 'Guten Tag!' back with a smile. Confident, clear, simple. First impression = done.
+### Dialogue
+**A:** Hallo!
+**B:** Hallo!
+**A:** Wie heißt du?
+**B:** Ich heiße Amal.
+**A:** Wie geht's?
+**B:** Gut, danke! Und dir?
+**A:** Auch gut!
 
-**Your exam greeting kit — memorize these 5:**
-1. **Guten Tag!** — your default
-2. **Freut mich!** — after introductions (sounds impressive!)
-3. **Wie geht es Ihnen?** — if conversation starts
-4. **Gut, danke. Und Ihnen?** — your response
-5. **Auf Wiedersehen!** — when leaving (we'll cover this in the next video!)
+Notice how little you need.
+No complicated grammar. Just greeting → name → how are you.
 
-*Exam-il confident aayittu 'Guten Tag!' parayuka. Smile cheyyuka. Athë mathiyâ first impression-nu!*
-
-📝 **Homework:** Tomorrow, greet yourself in the mirror in German at 3 different times of day. Morning → Guten Morgen! Afternoon → Guten Tag! Evening → Guten Abend! Say it out loud. Mean it.
-
-Bis zum nächsten Mal — where we learn to say goodbye! Tschüss!"
+⏸️ Your turn. Say Person B's lines.
+- Hallo!
+- Ich heiße [your name].
+- Gut, danke! Und dir?"
 
 ---
 
-## Script Quality Checklist
+## Section 7: Two Things Beginners Overlearn (6:50–7:45)
 
-- [x] Teaching goal clear: All German greetings + formal/informal + Wie geht's responses
-- [x] A1 exam link explicit: Sprechen Teil 1 (greeting examiner), Hören (dialogue recognition)
-- [x] Malayalam bridges: ningal/nee parallel for Sie/du, Servus/Namaskaram comparison
-- [x] Practice pauses: 7+ student production pauses (⏸️) + 7-item quick-fire drill
-- [x] Formal vs informal: Clear Sie/du distinction with scenarios
-- [x] Two complete dialogues: Formal meeting + casual meeting
-- [x] "Wie geht's" response scale: Full range from excellent to bad
-- [x] "Always ask back" rule: Emphasized as cultural imperative
-- [x] Regional greetings: Grüß Gott, Moin, Servus (recognition, not production)
-- [x] Pronunciation notes: Guten, Morgen, Tag, Abend
-- [x] Exam tips: Sprechen Teil 1 greeting strategy
-- [x] Cross-module setup: "Freut mich" → Module 2 introductions, Auf Wiedersehen → next video
-- [x] Duration estimate: ~12:00 (10 sections)
+### Visual: [❌ crowded list / ✅ compact toolkit]
+### Narration: [ENERGY: corrective, calming]
+"Let's prevent two classic beginner problems.
+
+### Problem 1: Learning too many regional greetings too early
+Yes, Germany has words like **Moin**, **Servus**, **Grüß Gott**.
+You only need to **recognize** them for now.
+Do **not** make them your core toolkit.
+
+### Problem 2: Turning greetings into a lecture topic
+You do not need a long conversation here.
+For A1, your job is simple:
+- greet correctly
+- answer clearly
+- ask back if needed
+
+That's enough.
+
+[SLIDE: Starter toolkit only]
+**Starter toolkit:** Guten Morgen / Guten Tag / Guten Abend / Hallo / Gut, danke / Und Ihnen? / Und dir?"
+
+---
+
+## Section 8: Fast Recognition Drill (7:45–9:10)
+
+### Visual: [Scenario cards flash one by one]
+### Narration: [ENERGY: active]
+"Quick drill. I give the situation. You give the greeting.
+
+### 1.
+It is 8:30 in the morning. You enter class.
+⏸️ **Answer:** Guten Morgen!
+
+### 2.
+It is 2 PM. You enter the exam room.
+⏸️ **Answer:** Guten Tag!
+
+### 3.
+It is evening. You enter a restaurant.
+⏸️ **Answer:** Guten Abend!
+
+### 4.
+You meet a friend in the afternoon.
+⏸️ **Answer:** Hallo!
+
+### 5.
+An examiner asks: **Wie geht es Ihnen?**
+⏸️ **Answer:** Gut, danke! Und Ihnen?
+
+### 6.
+A friend asks: **Wie geht's?**
+⏸️ **Answer:** Gut, danke! Und dir?
+
+Excellent. That is real usable German already."
+
+---
+
+## Section 9: Exam-Safe Rule + Output Challenge (9:10–10:30)
+
+### Visual: [Exam tip card + speaking prompt card]
+### Narration: [ENERGY: calm, score-safe]
+"### [EXAM-TIP]
+In **Sprechen Teil 1**, you do not win by sounding fancy.
+You win by sounding **clear, calm, and appropriate**.
+
+Safe opening:
+- **Guten Tag!**
+- **Ich heiße [Name].**
+
+If the examiner adds a small social line, you can handle it:
+- **Gut, danke! Und Ihnen?**
+
+### Output Challenge
+Say this full 3-line opener now:
+
+**Guten Tag! Ich heiße [your name]. Gut, danke! Und Ihnen?**
+
+⏸️ Say it once slowly.
+⏸️ Say it once naturally.
+⏸️ Say it once without looking.
+
+Next video: how to leave the conversation politely — goodbye phrases, `Danke`, `Bitte`, and `Entschuldigung`.
+
+Tschüss!"
+
+---
+
+## Script Quality Checklist (v2.1)
+
+- [x] Hook reaches payoff in under 30 seconds
+- [x] Core toolkit reduced to 4 greeting tools instead of overloading variants
+- [x] `Sie` vs `du` taught through simple Malayalam social parallel
+- [x] `Wie geht's?` section teaches only high-utility answers
+- [x] Two active mini-dialogues included (formal + casual)
+- [x] Recognition-only treatment for regional greetings prevents overload
+- [x] Exam link explicit and score-safe
+- [x] Fast scenario drill included
+- [x] Output challenge closes the lesson with production
+- [x] Easier to film than v1.0 because visuals are mostly compact cards, not dense lists
+
+---
+
+## Revision Notes (v1.0 → v2.1)
+
+- Cut the oversized greeting inventory down to a **starter toolkit learners can actually retain**
+- Reduced pronunciation micromanagement and moved focus toward usable interaction
+- Demoted regional greetings from a long teaching block to **recognition only**
+- Rebuilt the lesson around two short role-plays instead of long explanation first
+- Simplified `Wie geht's?` responses to 3 safe answers + ask-back rule
+- Tightened the exam framing so it teaches **appropriate interaction**, not performance fluff
+- Reduced lecture feel and added more immediate learner speaking moments

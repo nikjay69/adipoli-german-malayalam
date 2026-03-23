@@ -1,5 +1,95 @@
 # Overnight Run Log — 2026-03-23
 
+## Run 11 — 16:22 UTC
+**Session:** Cron 12h script quality pass (Module 1 social-foundation tightening run)
+**Focus:** Upgrade weaker first-draft social scripts to `SCRIPT_QUALITY_STANDARD v2.0+` without expanding scope
+**Status:** ✅ 2 scripts materially revised; pull-first completed successfully
+
+### Work Completed
+
+Revised two weaker Module 1 scripts where the main issues were **too much phrase inventory, too much explanation before practice, and not enough beginner-safe interaction design**:
+
+1. **`v1-3-1_FULL_SCRIPT.md` — German Greetings for Real Life**
+   - upgraded to **REVISED — v2.1**
+   - cut the greeting load down to the **4 tools learners actually need first**: `Guten Morgen`, `Guten Tag`, `Guten Abend`, `Hallo`
+   - tightened the `Sie` vs `du` teaching around a clearer Malayalam social parallel and a safer default rule
+   - simplified the `Wie geht's?` block to **3 usable answers + ask-back behavior** instead of a large response scale
+   - rebuilt the lesson around two short role-plays (formal + casual) and a fast recognition drill
+   - demoted regional greetings from a full teaching section to **recognition only**, which makes the script easier to retain and film
+
+2. **`v1-3-2_FULL_SCRIPT.md` — Goodbyes, Danke, Bitte & Entschuldigung**
+   - upgraded to **REVISED — v2.1**
+   - reduced the goodbye inventory to a compact **exit toolkit**: `Auf Wiedersehen`, `Tschüss`, `Gute Nacht`, plus `Auf Wiederhören` for phone use
+   - simplified the `Danke` / `Bitte` section toward the most useful A1 exchange first, with the extra meanings handled briefly and clearly
+   - sharpened the decision rule between **`Entschuldigung`** and **`Es tut mir leid`** so beginners do not misuse apology language
+   - replaced list-heavy explanation with two short dialogues and 3 scenario outputs for stronger real-life transfer
+
+### Tracker Update
+- Updated `docs/SCRIPT_PRODUCTION_TRACKER.md`
+- Confirmed total remains **52 full scripts**, now **52 confirmed at v2.0+ quality**
+
+### Git / Repo Note
+- Completed the required pull-first step successfully with `git pull --rebase --autostash` (repo already up to date at run start)
+- Repo still contains multiple unrelated pre-existing local modifications, so any commit/push should continue to stage only intentional files
+- This run left durable progress directly in script files + tracker/log docs
+
+### Files Updated This Run
+- `docs/scripts/v1-3-1_FULL_SCRIPT.md`
+- `docs/scripts/v1-3-2_FULL_SCRIPT.md`
+- `docs/SCRIPT_PRODUCTION_TRACKER.md`
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. Continue Module 1 quality pass on **`v1-4-1_FULL_SCRIPT.md`** so the first-conversation script matches the stronger interaction style
+2. Revisit one weaker Module 2 social block (especially **`v2-2-1`** or **`v2-3-1`**) for the same teach → drill → apply tightening
+3. If git state is manageable, stage only targeted quality-pass files and push a small clean commit
+
+## Run 10 — 16:05 UTC
+**Session:** Cron 12h script quality pass (Module 18 capstone tightening run)
+**Focus:** Upgrade two remaining exam-core capstone drafts to `SCRIPT_QUALITY_STANDARD v2.0+` with safer framing and cleaner exam behavior
+**Status:** ✅ 2 scripts materially revised; pull-first attempted, shell output still unreliable
+
+### Work Completed
+
+Revised two remaining high-leverage Module 18 capstone scripts where the biggest remaining issues were **overhype, weaker exam-day framing, and not enough explicit point-protection behavior**:
+
+1. **`v18-1-1_FULL_SCRIPT.md` — Schreiben Teil 1: Form Filling**
+   - upgraded to **REVISED — v2.1**
+   - reframed the hook away from "guaranteed points" language toward **controllable accuracy**
+   - added a stronger top-level rule: **read the label twice before writing**
+   - regrouped the traps more cleanly into name labels, date-related labels, and nationality labels
+   - clarified city vs full-address handling through a "write only the level of detail the form asks for" rule
+   - added a dedicated **20-second final check** before moving to Schreiben Teil 2
+
+2. **`v18-5-1_FULL_SCRIPT.md` — Full Mock Exam: Strategy & Mindset**
+   - upgraded to **REVISED — v2.1**
+   - rebuilt the capstone around **point protection**, not motivation-heavy or risky scoring claims
+   - added a whole-exam behavior loop: **Read → Decide → Answer → Move on**
+   - simplified each section around one clear job + one main trap, making the video easier to film and easier to remember
+   - strengthened speaking truth so learners understand A1 success as **short clear interaction**, not performance
+   - removed weaker "easiest section" / "you can get X wrong" style framing in favor of calmer, safer advice
+
+### Tracker Update
+- Updated `docs/SCRIPT_PRODUCTION_TRACKER.md`
+- Confirmed total remains **52 full scripts**, now **50 confirmed at v2.0+ quality**
+
+### Git / Repo Note
+- Attempted the required pull-first step at run start
+- Shell execution still returned unreliable/no visible output in this environment, so I did **not** claim a clean git verification, commit, or push in this run
+- Durable progress was still left directly in repo files
+
+### Files Updated This Run
+- `docs/scripts/v18-1-1_FULL_SCRIPT.md`
+- `docs/scripts/v18-5-1_FULL_SCRIPT.md`
+- `docs/SCRIPT_PRODUCTION_TRACKER.md`
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. Continue the same v2.0+ quality pass on weaker **social-foundation scripts** in Module 1 or Module 2
+2. Do a consistency pass across tracker/readiness docs if git/shell visibility is healthy again
+3. Commit/push only after a clean shell-visible status check confirms what else is already dirty in the tree
+
+
 ## Run 9 — 15:45 UTC
 **Session:** Cron 12h script quality pass (exam overview + writing register-safety run)
 **Focus:** Upgrade weaker exam-core drafted scripts to `SCRIPT_QUALITY_STANDARD v2.0+` without expanding scope
