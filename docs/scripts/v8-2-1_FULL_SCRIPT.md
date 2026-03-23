@@ -1,185 +1,274 @@
-# v8-2-1 — Describing Your Home (Where Is It?)
+# v8-2-1 — Describing Your Home (Where Is It?) (FULL SCRIPT)
 
-> **Module:** 8 — My Home (Meine Wohnung)
-> **Lesson:** 8-2 — Where Is It?
-> **Duration:** ~10 minutes
-> **Exam relevance:** Sprechen (describing home/room), Lesen (location information), Grammar: location prepositions
-> **Prerequisites:** Module 8-1 (rooms & furniture), basic articles
-> **Status:** 🔄 DRAFT
-> **Created:** 2026-03-23 (overnight cron)
-
----
-
-## Script
-
-### Scene 1: Pre-roll (0:00–0:15)
-**[BRANDING]**
+> **Module:** 8 | **Lesson:** 8-2 | **Duration:** 10:30 target
+> **Teaching Goal:** Help learners describe object location clearly with a small set of high-frequency prepositions and safe dative patterns
+> **A1 Exam Link:** Sprechen (describe your room/home), Lesen (housing descriptions), Hören (location questions)
+> **Prerequisites:** Module 8-1 (rooms & furniture), basic article awareness
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
-### Scene 2: Hook (0:15–1:00)
-**[SLIDE: Room with objects in various positions]**
+## Pre-roll (0:00–0:15)
 
-**Narrator:**
-> "'Where is my phone?' — ingane daily chodikkum alle? German-ilum ithu VERY common! This lesson teaches you HOW to say where things are. On the table, under the bed, next to the lamp. Simple prepositions that make your German sound natural. Let's go!"
-
----
-
-### Scene 3: The Big Six Prepositions (1:00–3:00)
-**[DIAGRAM: Object positions around a table]**
-
-**Narrator:**
-> "Six prepositions cover 90% of location descriptions. Let's learn them with a table and a book."
->
-> **[Each position animates]**
->
-> "auf — on (top of). 'Das Buch ist auf dem Tisch.' — The book is on the table."
-> ⏸️ **[Repeat: 'Das Buch ist auf dem Tisch.']**
->
-> "unter — under. 'Die Katze ist unter dem Tisch.' — The cat is under the table."
-> ⏸️ **[Repeat]**
->
-> "neben — next to. 'Die Lampe ist neben dem Sofa.' — The lamp is next to the sofa."
-> ⏸️ **[Repeat]**
->
-> "vor — in front of. 'Der Stuhl ist vor dem Schreibtisch.' — The chair is in front of the desk."
->
-> "hinter — behind. 'Der Schrank ist hinter der Tür.' — The wardrobe is behind the door."
->
-> "in — in/inside. 'Die Milch ist in dem Kühlschrank.' — The milk is in the fridge. Or shorter: 'im Kühlschrank.' (in + dem = im)"
->
-> ⏸️ **[Repeat all six with the example sentences]**
+### Visual: [Course intro animation / Adipoli German branding]
+### Narration:
+"Willkommen bei Adipoli German!"
 
 ---
 
-### Scene 4: Two More Useful Ones (3:00–4:00)
-**[SLIDE: Additional prepositions]**
+## Section 1: Hook — This Is Daily-Life German (0:15–0:45)
 
-**Narrator:**
-> "Two bonus prepositions that come up often:"
->
-> "zwischen — between. 'Der Tisch ist zwischen dem Sofa und dem Fernseher.'"
-> "an — at/on (vertical surface). 'Das Bild ist an der Wand.' — The picture is on the wall."
->
-> "'Auf' = on top (horizontal). 'An' = on the side (vertical). Das Buch ist AUF dem Tisch. Das Bild ist AN der Wand."
->
-> ⏸️ **[Repeat the auf vs an contrast]**
+### Visual: [Phone, keys, bag, laptop placed around a room]
+### Narration: [ENERGY: practical]
+"Where is my phone? Where are my keys? Is the bag under the chair or on the sofa?
+
+This is not advanced grammar. This is daily life.
+
+Today, we learn the location language that makes your German immediately more useful: **on, under, next to, in, in front of, behind**."
 
 ---
 
-### Scene 5: Grammar — Dativ with Location (4:00–5:30)
-**[TABLE: Article changes in Dativ]**
+## Section 2: The 6 Prepositions You Actually Need First (0:45–2:20)
 
-| Nominativ | Location (Dativ) | Example |
-|-----------|------------------|---------|
-| der Tisch | auf **dem** Tisch | Das Buch ist auf dem Tisch. |
-| die Wand | an **der** Wand | Das Bild ist an der Wand. |
-| das Sofa | neben **dem** Sofa | Die Lampe ist neben dem Sofa. |
+### Visual: [One table + one book animation showing all 6 positions]
+### Narration:
+"Don't begin with ten prepositions. Begin with six.
 
-**Narrator:**
-> "Here's the grammar behind it. When you describe WHERE something IS — location — the article changes to Dativ."
->
-> "der → dem. 'Der Tisch → auf DEM Tisch.'"
-> "die → der. 'Die Wand → an DER Wand.'"
-> "das → dem. 'Das Sofa → neben DEM Sofa.'"
->
-> "You've seen this before! 'Mit DEM Bus' from Module 9 — same Dativ!"
->
-> "And remember the contraction: in + dem = im. 'Im Kühlschrank.' 'Im Schlafzimmer.'"
->
-> ⏸️ **[Practice: 'Die Blumen sind auf dem Tisch.' 'Das Bett ist im Schlafzimmer.']**
->
-> "Don't overthink it. Pattern: [thing] + ist + [preposition] + dem/der + [place]. Repeat until automatic."
+### 1. **auf** — on top of
+🔊 **Das Buch ist auf dem Tisch.**
 
----
+### 2. **unter** — under
+🔊 **Die Tasche ist unter dem Stuhl.**
 
-### Scene 6: My Room Description — Model (5:30–7:00)
-**[SLIDE: Model room description with image]**
+### 3. **neben** — next to
+🔊 **Die Lampe ist neben dem Sofa.**
 
-**Narrator:**
-> "Let's describe a room using everything we've learned:"
->
-> **[Text appears line by line]**
-> "'Mein Zimmer ist nicht sehr groß, aber gemütlich.'"
-> — My room isn't very big, but cozy.
->
-> "'Im Zimmer gibt es ein Bett, einen Schreibtisch und einen Schrank.'"
-> — In the room there's a bed, a desk, and a wardrobe.
->
-> "'Das Bett ist neben dem Fenster.'"
-> — The bed is next to the window.
->
-> "'Auf dem Schreibtisch steht mein Laptop.'"
-> — On the desk is my laptop.
->
-> "'An der Wand hängt ein Poster.'"
-> — On the wall hangs a poster.
->
-> "'Ich mag mein Zimmer.'"
-> — I like my room.
->
-> "SIX sentences. That's a complete room description. Notice we used: im, neben dem, auf dem, an der — all Dativ location phrases."
->
-> ⏸️ **[Now YOUR turn: describe YOUR room in 4–6 sentences. Pause and write or speak.]**
+### 4. **in** — in / inside
+🔊 **Die Milch ist im Kühlschrank.**
+
+### 5. **vor** — in front of
+🔊 **Der Stuhl ist vor dem Schreibtisch.**
+
+### 6. **hinter** — behind
+🔊 **Der Schrank ist hinter der Tür.**
+
+### Drill
+Repeat only the preposition phrases:
+- **auf dem Tisch**
+- **unter dem Stuhl**
+- **neben dem Sofa**
+- **im Kühlschrank**
+
+⏸️ [pause]
+
+That is already enough to survive most room descriptions."
 
 ---
 
-### Scene 7: Location Questions (7:00–8:00)
-**[SLIDE: Question patterns]**
+## Section 3: The One Grammar Idea — Location = Dative Pattern (2:20–3:35)
 
-**Narrator:**
-> "How to ASK where something is:"
->
-> "'Wo ist der Schlüssel?' — Where is the key?"
-> "'Wo ist die Fernbedienung?' — Where is the remote control?"
-> "'Wo sind meine Schuhe?' — Where are my shoes?"
->
-> "Answers use our prepositions:"
-> "'Auf dem Tisch.' 'Unter dem Sofa.' 'Neben der Tür.'"
->
-> ⏸️ **[Practice: 'Wo ist das Handy?' → 'Auf dem Bett.' or 'Im Regal.']**
->
-> "In daily life, 'Wo ist...?' is one of the most common German questions. Master it!"
+### Visual: [Compact pattern card]
+**[thing] + ist + [preposition] + dem / der + [place]**
 
----
+### Narration:
+"Now the one grammar idea behind these sentences.
 
-### Scene 8: Room Tour Speaking Drill (8:00–9:00)
-**[SLIDE: Room images cycle through]**
+When you describe **where something is**, German usually uses the **dative** pattern after these location prepositions.
 
-**Narrator:**
-> "Give a mini room tour! Look around your room RIGHT NOW and describe 5 things:"
->
-> "Where is your phone? 'Mein Handy ist auf dem Tisch.'"
-> "Where is your bag? 'Meine Tasche ist neben dem Bett.'"
->
-> ⏸️ **[Describe 5 objects in your room with their locations. Use auf, unter, neben, in, vor, hinter.]**
->
-> "This is REAL speaking practice. Every time you look for something, say it in German: 'Wo ist mein Schlüssel? Auf dem Regal!'"
+### The mini-map
+- **der** → **dem**
+- **die** → **der**
+- **das** → **dem**
+
+Examples:
+- **auf dem Tisch**
+- **an der Wand**
+- **neben dem Bett**
+
+You do not need a giant grammar lecture here.
+You need a repeatable room pattern.
+
+*Location parayumbo article change varum — athu pattern aayi orma vechal mathi.*"
 
 ---
 
-### Scene 9: Exam Connection + Outro (9:00–10:00)
-**[EXAM-TIP box]**
+## Section 4: The Two Contrasts Learners Mix Up (3:35–4:35)
 
-**Narrator:**
-> "Exam connections:"
-> "Sprechen: 'Beschreiben Sie Ihr Zimmer' — Describe your room. You just practised this!"
-> "Lesen: Apartment descriptions and ads use these prepositions constantly."
-> "Hören: 'Where is the...?' dialogues are classic listening items."
->
-> "Prepositions look scary but they're actually your FRIENDS. They make everything specific. Without them, you can only say 'There is a bed.' With them, you can paint a picture: 'The bed is next to the window, and on the bed is my cat.' See the difference?"
->
-> "Next lesson: reading REAL apartment ads — Wohnungsanzeigen! The most practical German reading skill you'll ever learn. Bis gleich!"
+### Visual: [Split card: auf vs an / in vs auf]
+### Narration:
+"Two contrasts matter more than long theory.
+
+### Contrast 1 — **auf** vs **an**
+- **auf dem Tisch** = on top of the table
+- **an der Wand** = on the wall
+
+### Contrast 2 — **in** vs **auf**
+- **im Schrank** = inside the cupboard
+- **auf dem Schrank** = on top of the cupboard
+
+### Fast check
+Picture on the wall — **an** or **auf**?
+⏸️ [pause]
+**an der Wand**
+
+Milk in the fridge — **in** or **auf**?
+⏸️ [pause]
+**im Kühlschrank**"
 
 ---
 
-## Checklist
+## Section 5: Build a Room Description in 4 Safe Sentences (4:35–6:10)
 
-- [x] Teaching goal clear: describe object locations using prepositions
-- [x] A1 exam connection: Sprechen (room descriptions), Lesen (apartment ads), Hören (location dialogues)
-- [x] Malayalam bridges: daily "where is my phone?" scenario, Kerala house comparison
-- [x] Grammar: Dativ with location prepositions clearly taught
-- [x] Production opportunities: room tour drill, room description writing/speaking
-- [x] Key patterns: "[Thing] ist [preposition] dem/der [place]"
-- [x] Eight prepositions covered: auf, unter, neben, vor, hinter, in, zwischen, an
-- [x] Connects to Module 8-1 (rooms/furniture), Module 9 (mit+Dativ), forward to 8-3 (ads)
+### Visual: [A bedroom appears line by line]
+### Narration:
+"Let's build a beginner-safe room description.
+
+### Sentence 1 — room overview
+🔊 **In meinem Zimmer gibt es ein Bett und einen Schreibtisch.**
+
+### Sentence 2 — first location
+🔊 **Das Bett ist neben dem Fenster.**
+
+### Sentence 3 — second location
+🔊 **Auf dem Schreibtisch steht mein Laptop.**
+
+### Sentence 4 — wall detail
+🔊 **An der Wand hängt ein Poster.**
+
+That is enough.
+You do not need twelve sentences to sound good at A1.
+
+### Drill
+Now say the 4-sentence frame with your own room:
+1. what is in the room
+2. where the bed is
+3. where one object is
+4. one wall detail
+
+⏸️ [pause]"
+
+---
+
+## Section 6: Wo ist...? — The Daily-Life Question Pattern (6:10–7:10)
+
+### Visual: [Question bubble + answer bubbles]
+### Narration:
+"Now the most common question pattern:
+
+🔊 **Wo ist ...?** — Where is ...?
+🔊 **Wo sind ...?** — Where are ...?
+
+Examples:
+- **Wo ist das Handy?**
+- **Wo ist der Schlüssel?**
+- **Wo sind meine Schuhe?**
+
+Safe short answers:
+- **Auf dem Tisch.**
+- **Unter dem Bett.**
+- **Neben der Tür.**
+
+### Drill
+I ask. You answer.
+
+🔊 **Wo ist das Handy?**
+⏸️ [pause]
+
+🔊 **Wo sind die Schuhe?**
+⏸️ [pause]
+
+Short answers are enough. That's real German too."
+
+---
+
+## Section 7: Golden Dialogue — Looking for Something at Home (7:10–8:35)
+
+### Visual: [Line-by-line dialogue with object search animation]
+### Narration:
+"Let's turn this into a real mini-dialogue.
+
+### Situation
+You can't find your keys.
+
+🔊 A: **Wo ist mein Schlüssel?**
+How does the other person answer?
+⏸️ [pause]
+
+Possible answer:
+🔊 B: **Der Schlüssel ist auf dem Tisch.**
+
+🔊 A: **Nein, da ist er nicht.**
+Now give another location.
+⏸️ [pause]
+
+🔊 B: **Vielleicht ist er neben der Lampe.**
+
+🔊 A: **Ah ja, richtig! Neben der Lampe. Danke!**
+
+### Why this matters
+This is exactly how prepositions become natural — not from memorizing a chart, but from solving a tiny problem."
+
+---
+
+## Section 8: Speaking Challenge — Room Tour in Real Time (8:35–9:35)
+
+### Visual: [Phone camera style room-tour frame]
+### Narration:
+"Now do a real-time room tour.
+Look around your room **right now** and say five location sentences.
+
+Use this frame:
+- **Das ... ist auf ...**
+- **Die ... ist neben ...**
+- **Der ... ist unter ...**
+
+### Challenge prompts
+1. your phone
+2. your bag
+3. your chair
+4. one wall object
+5. one thing in a cupboard or fridge
+
+⏸️ [pause for speaking]
+
+This is exactly the kind of speaking practice that turns passive vocabulary into active German."
+
+---
+
+## Section 9: Exam Link + Common Mistake Warning (9:35–10:30)
+
+### Visual: [Exam / mistake cards]
+### Narration:
+"### Exam transfer
+These patterns help in:
+- **Sprechen** — describing your room or apartment
+- **Lesen** — understanding home descriptions
+- **Hören** — answering location questions
+
+### Two mistakes to avoid
+1. using **in** for everything
+   - ❌ **in dem Tisch**
+   - ✅ **auf dem Tisch**
+
+2. forgetting the article change in location phrases
+   - ❌ **neben der Sofa**
+   - ✅ **neben dem Sofa**
+
+### Final output
+Say these three lines aloud now:
+- **Das Bett ist neben dem Fenster.**
+- **Auf dem Tisch liegt mein Handy.**
+- **An der Wand hängt ein Bild.**
+
+Next, we read real housing ads — one of the highest-value A1 reading skills in the whole course."
+
+---
+
+## Production Notes
+- **Quality-pass upgrades:** reduced the preposition dump to 6 high-frequency items first; replaced a dense dative table with one repeatable location pattern; added two contrast sections learners actually confuse; turned the lesson into room-description and search-dialogue output instead of passive explanation
+- **Audio:** preposition phrases should be drilled slowly, then in full sentences
+- **Visuals:** one reusable room graphic, one pattern card, one line-by-line key-search dialogue, one room-tour prompt slide
+- **Malayalam bridge:** kept short and structural, only to reduce grammar fear
+- **Exam usefulness:** explicit room-description transfer plus short-answer location responses
+- **Pacing note:** keep pauses real after the question prompts; the learner must answer aloud for the script to work

@@ -1,312 +1,390 @@
-# v12-4-1 — Einladungen: Accepting & Declining Invitations (FULL SCRIPT)
+# v12-4-1 — Einladungen: Invite, Accept, Decline (REVISED SCRIPT)
 
-> **Module:** 12 | **Lesson:** 12-4 | **Duration:** 12:00 target
-> **Teaching Goal:** Master invitation writing — accepting and declining — with templates that map directly to Goethe A1 Schreiben Teil 2
-> **A1 Exam Link:** Schreiben Teil 2 (writing short messages about invitations), Sprechen (social interaction)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
-
----
-
-## Pre-roll (0:00–0:15)
-
-### Visual: [Course intro animation / Adipoli German branding]
-### Narration:
-"Willkommen bei Adipoli German! Today — invitations. Accept them, decline them, write them. This IS the Schreiben exam."
+> **Module:** 12 | **Lesson:** 12-4 | **Duration:** 11:00–12:00 target
+> **Teaching Goal:** Help learners survive Goethe A1 Schreiben Teil 2 with short, score-safe invitation messages: write an invitation, accept one, and decline one politely.
+> **A1 Exam Link:** **Direct** — Schreiben Teil 2 short message writing; indirect support for Sprechen social interaction
+> **Status:** REVISED — v2.0
+> **Revised:** 2026-03-23 (quality pass cron)
 
 ---
 
-## Section 1: Hook — Why This Matters (0:15–1:30)
+## Cold Open (0:00–0:20)
 
-### Visual: [SLIDE: "Einladung = Exam Points 💰" with Schreiben Teil 2 example prompt]
-### Narration:
-"Here's a secret: in the Goethe A1 Schreiben Teil 2, they ALMOST ALWAYS ask you to do one of three things:
+### Visual
+Three exam-style cards flash quickly:
+- Invite
+- Accept
+- Decline
 
-1. Write an invitation
-2. Accept an invitation
-3. Decline an invitation
-
-That's it. Master these three templates and you've basically guaranteed yourself full marks on this section.
-
-*Goethe exam-nte Schreiben Teil 2 — invitation aanu main topic. Ee moonn templates padichaal, full marks kittum!*
-
-Let's learn all three. Starting with: how to write an invitation."
+### Narration
+"If Goethe A1 asks you to write a short invitation message, you do **not** need beautiful German. You need **three content points, one safe template, and no panic**. In this video, I'll give you exactly that."
 
 ---
 
-## Section 2: Writing an Invitation (1:30–3:00)
+## Section 1: Fast Hook — The Real Exam Job (0:20–1:10)
 
-### Visual: [SLIDE: Invitation template with labeled parts — Anrede, Einladung, Details, Bitte, Gruß]
-### Narration:
-"Here's the golden template for a German invitation:
+### Visual
+[SLIDE: "Schreiben Teil 2 = short, simple, complete"]
 
-**Liebe Anna,** ← Greeting (Liebe for women, Lieber for men)
+### Narration
+"Many learners lose marks here for the wrong reason. They try to write too much.
 
-**ich mache am Samstag eine Party.** ← What's happening + when
+But A1 exam writing is usually much simpler:
+1. greet
+2. answer the 3 points
+3. close
 
-**Hast du Lust zu kommen?** ← The invitation itself
+That's it.
 
-**Es beginnt um 18 Uhr bei mir zu Hause.** ← Details (time, place)
+For invitation-style tasks, the examiner usually wants one of three things:
+- write an invitation
+- accept an invitation
+- decline an invitation
 
-**Bring bitte etwas zu trinken mit!** ← A request
+*Mikacha German alla ivide main. Prompt-il kodutha **3 points cover cheyyuka** aanu main.*
 
-**Liebe Grüße,**
-**Nikhil** ← Closing + name
-
-That's it. 6 lines. About 30 words. Exam-perfect.
-
-Let's break it down piece by piece.
-
-⏸️ **[PAUSE — Student reads the template aloud]**"
-
----
-
-## Section 3: Key Invitation Phrases (3:00–4:30)
-
-### Visual: [TABLE: Invitation phrases with translations]
-### Narration:
-"You need these phrases. Memorize them like a prayer:
-
-| German | English | Malayalam hint |
-|--------|---------|---------------|
-| Ich mache eine Party / ein Fest | I'm having a party | Party nadathunnu |
-| Ich lade dich ein | I'm inviting you | Ninne kshanikkunnu |
-| Hast du Lust...? | Do you feel like...? | Thalparyam undo? |
-| Möchtest du kommen? | Would you like to come? | Varaan ishtam undo? |
-| Es beginnt um [Uhrzeit] | It starts at [time] | [Time]-nu thudangunnu |
-| bei mir zu Hause | at my place | Ente veetil |
-| Bring bitte [etwas] mit! | Please bring [something]! | [Something] kondu vaa! |
-
-⏸️ **[PAUSE — Student repeats each phrase]**
-
-The most important one? **'Hast du Lust zu kommen?'** — this is THE invitation phrase. Use it every time."
+So today, we build three **score-safe mini-templates**."
 
 ---
 
-## Section 4: Types of Events (4:30–5:30)
+## Section 2: The Non-Negotiable Exam Formula (1:10–2:00)
 
-### Visual: [TABLE: Event types with articles]
-### Narration:
-"What are you inviting people to? Common events:
+### Visual
+[ONSCREEN CARD]
+- Anrede
+- Punkt 1
+- Punkt 2
+- Punkt 3
+- Gruß + Name
 
-- **eine Party** — a party (generic, works for anything)
-- **eine Geburtstagsparty** — a birthday party
-- **ein Grillfest** — a barbecue (VERY German!)
-- **einen Ausflug** — an excursion/trip
-- **ein Abendessen** — a dinner
-- **ein Picknick** — a picnic
-- **ein Konzert** — a concert
+### Narration
+"Before the templates, remember the golden exam formula:
 
-Notice the articles? **eine** Party (feminine), **ein** Fest (neuter), **einen** Ausflug (masculine Akkusativ!).
+**Liebe / Lieber + Name**  
+**Point 1**  
+**Point 2**  
+**Point 3**  
+**Liebe Grüße / Viele Grüße + dein Name**
 
-For the exam, you don't need to worry about the article too much — if you write 'Ich mache eine Party' or 'Ich mache ein Grillfest,' both are correct and natural.
+Short is good. Clear is good. Full coverage is good.
 
-⏸️ **[PAUSE — Student says: Ich mache am Samstag ein Grillfest. Ich mache am Freitag eine Geburtstagsparty.]**"
+### Mini exam warning
+If the task gives you **3 content points** and you write only **2**, you lose marks even if your grammar is beautiful.
+
+⏸️ **PAUSE TASK:** Say this rule out loud: **'Cover all 3 points.'**"
 
 ---
 
-## Section 5: Accepting an Invitation (5:30–7:00)
+## Section 3: Template 1 — Write an Invitation (2:00–3:30)
 
-### Visual: [SLIDE: Acceptance template — green checkmark theme]
-### Narration:
-"Someone invited YOU. How do you accept? Another golden template:
+### Visual
+[GREEN TEMPLATE CARD]
 
-**Lieber Thomas,**
+**Liebe Anna,**  
+**ich mache am Samstag eine Party.**  
+**Sie beginnt um 18 Uhr bei mir zu Hause.**  
+**Hast du Lust zu kommen? Bring bitte etwas zu trinken mit.**  
+**Liebe Grüße**  
+**Nikhil**
 
-**danke für die Einladung!** ← Always thank first!
+### Narration
+"First: writing the invitation yourself.
 
-**Ich komme sehr gern.** ← Confirm you're coming
+This is the safe invitation pattern:
+- what the event is
+- when / where it is
+- invitation or small request
 
-**Soll ich etwas mitbringen?** ← Offer to bring something (polite!)
+Listen again:
 
-**Ich freue mich!** ← Express excitement
+**Ich mache am Samstag eine Party.**  
+**Sie beginnt um 18 Uhr bei mir zu Hause.**  
+**Hast du Lust zu kommen?**  
+**Bring bitte etwas zu trinken mit.**
 
-**Liebe Grüße,**
+Notice: this is simple A1 German. No fancy wording. No long explanations.
+
+*'Hast du Lust zu kommen?' = varaan thalparyam undo? Super useful invitation line aanu.*
+
+⏸️ **DRILL:** Repeat after me:
+- Ich mache am Samstag eine Party.
+- Sie beginnt um 18 Uhr.
+- Hast du Lust zu kommen?
+- Bring bitte etwas mit.
+
+### Teaching note
+For A1, **Party** is often the safest event word. You can also use:
+- ein Abendessen
+- ein Picknick
+- ein Grillfest
+- einen Ausflug
+
+But if you panic in the exam, **Party** is enough."
+
+---
+
+## Section 4: Template 2 — Accept an Invitation (3:30–5:00)
+
+### Visual
+[BLUE TEMPLATE CARD]
+
+**Lieber Thomas,**  
+**danke für die Einladung!**  
+**Ich komme sehr gern.**  
+**Soll ich etwas mitbringen?**  
+**Ich freue mich.**  
+**Viele Grüße**  
 **Anjali**
 
-Four key sentences. Let's drill each one:
+### Narration
+"Now someone invited **you**.
 
-- **'Danke für die Einladung!'** — Thank you for the invitation! Say this EVERY time.
-- **'Ich komme gern / sehr gern.'** — I'd love to come.
-- **'Soll ich etwas mitbringen?'** — Should I bring something? Germans LOVE this question. It shows you're thoughtful.
-- **'Ich freue mich!'** — I'm looking forward to it!
+This acceptance template is very safe:
+1. thank them
+2. say yes
+3. add one warm line
 
-*Einladung kittiyaal, aadhyam 'Danke für die Einladung' parayan. Pinne 'Ich komme gern.' Athu mathiyaam!*
+Key lines:
+- **Danke für die Einladung!**
+- **Ich komme gern / sehr gern.**
+- **Soll ich etwas mitbringen?**
+- **Ich freue mich.**
 
-⏸️ **[PAUSE — Student writes an acceptance for: 'Your friend Maria is having a dinner party on Friday at 19 Uhr. Accept the invitation.']**"
+That third line is powerful. Germans often ask if they should bring something. It sounds thoughtful and natural.
+
+⏸️ **PREDICT BEFORE REVEAL:**
+I say: **Danke für die Einladung!**  
+What is the next safe line?
+
+⏸️ [pause]
+
+**Ich komme sehr gern.**
+
+⏸️ **DRILL:**
+- Danke für die Einladung!
+- Ich komme sehr gern.
+- Soll ich etwas mitbringen?
+- Ich freue mich.
+
+*Invitation accept cheyyumbol aadhyam thanks, pinne yes. Simple flow mathi.*"
 
 ---
 
-## Section 6: Declining an Invitation (7:00–8:30)
+## Section 5: Template 3 — Decline Politely (5:00–6:45)
 
-### Visual: [SLIDE: Decline template — orange/red theme]
-### Narration:
-"Sometimes you can't come. Declining politely is an ART — and an exam skill.
+### Visual
+[ORANGE TEMPLATE CARD]
 
-**Liebe Sara,**
-
-**danke für die Einladung!** ← Still thank them!
-
-**Leider kann ich nicht kommen,** ← The decline
-
-**weil ich am Samstag arbeiten muss.** ← The reason (with 'weil'!)
-
-**Können wir uns nächste Woche treffen?** ← Suggest alternative
-
-**Viele Grüße,**
+**Liebe Sara,**  
+**danke für die Einladung!**  
+**Leider kann ich nicht kommen, weil ich arbeiten muss.**  
+**Können wir uns nächste Woche treffen?**  
+**Viele Grüße**  
 **Vishnu**
 
-Key phrases for declining:
+### Narration
+"Now the most important one for many learners: declining politely.
 
-- **'Leider kann ich nicht kommen.'** — Unfortunately I can't come. 'Leider' = unfortunately. ALWAYS use it — it softens the decline.
-- **'Es tut mir leid, aber...'** — I'm sorry, but...
-- **'weil ich [Grund]...'** — because I [reason]. Remember: verb goes to the END after 'weil'!
+The safe decline pattern is:
+1. thank them
+2. say unfortunately no
+3. give one reason
+4. suggest another time
 
-Common reasons (memorize these — they cover 90% of exam scenarios):
-- **weil ich krank bin** — because I'm sick
-- **weil ich arbeiten muss** — because I have to work
-- **weil ich keine Zeit habe** — because I have no time
-- **weil ich Besuch habe** — because I have visitors
-- **weil ich einen Termin habe** — because I have an appointment
+The key sentence is:
+**Leider kann ich nicht kommen, weil ich arbeiten muss.**
 
-⏸️ **[PAUSE — Student writes a decline for: 'Your colleague Marco invited you to a barbecue on Sunday. You can't go because you're sick. Decline politely and suggest meeting next week.']**
+### Safe reason bank
+Memorize these 5 reasons:
+- **weil ich krank bin**
+- **weil ich arbeiten muss**
+- **weil ich keine Zeit habe**
+- **weil ich einen Termin habe**
+- **weil ich Besuch habe**
 
-*'Leider' ennum parayan marakkaruthu — politeness aanu key!*"
+And then the rescue line:
+**Können wir uns nächste Woche treffen?**
 
----
+That makes the message polite and complete.
 
-## Section 7: Exam Practice 1 — Write an Invitation (8:30–9:30)
+*Mere 'ich kann nicht kommen' mathram paranjaal dry aayi തോന്നും. 'Leider' + reason + alternative gives better exam and real-life effect.*
 
-### Visual: [SLIDE: Exam-style prompt]
-### Narration:
-"Exam time! Here's a real Schreiben Teil 2 prompt:
+⏸️ **CHOICE DRILL:** Which sounds better?
+A. Ich kann nicht kommen.  
+B. Leider kann ich nicht kommen, weil ich krank bin.
 
-**Situation:** You're having a birthday party on Saturday.
-**Write to your friend Lisa. Include:**
-1. When and where the party is
-2. What she should bring
-3. Who else is coming
+⏸️ [pause]
 
-30 words. Take 60 seconds.
-
-⏸️ **[PAUSE — 60 seconds for student to write]**
-
-Here's a model answer:
-
-**Liebe Lisa,**
-**ich mache am Samstag eine Geburtstagsparty. Sie beginnt um 19 Uhr bei mir zu Hause. Kannst du einen Kuchen mitbringen? Thomas und Maria kommen auch.**
-**Liebe Grüße, Nikhil**
-
-Count: 32 words. All 3 points covered. Greeting + closing. Perfect score.
-
-Did YOUR answer hit all 3 points? That's what the examiner checks. Not perfect grammar — just: did you cover the points?"
+Correct: **B**. It is softer, clearer, more useful."
 
 ---
 
-## Section 8: Exam Practice 2 — Decline an Invitation (9:30–10:30)
+## Section 6: Micro Practice — Fill the Missing Line (6:45–7:45)
 
-### Visual: [SLIDE: Exam-style prompt]
-### Narration:
-"One more. This time, declining:
+### Visual
+Three half-complete mini-messages appear one by one.
 
-**Situation:** Your colleague Peter invited you to a farewell dinner on Friday evening.
-**Write to Peter. Include:**
-1. Why you can't come
-2. Suggest meeting another time
-3. Wish him well
+### Narration
+"Let's practice like the exam.
 
-⏸️ **[PAUSE — 60 seconds for student to write]**
+### 1. Invitation
+**Liebe Maria,**  
+**ich mache am Freitag ein Abendessen.**  
+**_____**  
+**Liebe Grüße**
 
-Model answer:
+⏸️ [pause]
 
-**Lieber Peter,**
-**danke für die Einladung! Leider kann ich am Freitag nicht kommen, weil ich arbeiten muss. Können wir uns am Wochenende treffen? Ich wünsche dir alles Gute!**
-**Viele Grüße, Anjali**
+Possible answer: **Es beginnt um 19 Uhr bei mir zu Hause. Hast du Lust zu kommen?**
 
-33 words. All 3 points. Clean and simple.
+### 2. Acceptance
+**Lieber Ali,**  
+**danke für die Einladung!**  
+**_____**  
+**Viele Grüße**
 
-Notice: 'weil ich arbeiten muss' — verb 'muss' at the END. That's 'weil' doing its magic."
+⏸️ [pause]
 
----
+Possible answer: **Ich komme sehr gern. Ich freue mich.**
 
-## Section 9: The Golden Rule — 3 Content Points (10:30–11:30)
+### 3. Decline
+**Liebe Nina,**  
+**danke für die Einladung!**  
+**_____**  
+**Viele Grüße**
 
-### Visual: [SLIDE: "The 3-Point Formula" in big bold text with checkmarks]
-### Narration:
-"Here's the ONE rule that guarantees you pass Schreiben Teil 2:
+⏸️ [pause]
 
-**Hit all 3 content points.**
-
-The prompt ALWAYS gives you 3 things to write about. Cover all 3 = maximum points. Miss one = you lose marks.
-
-The formula:
-
-1. **Greeting** — Liebe/Lieber [Name],
-2. **Point 1** — [First thing they asked]
-3. **Point 2** — [Second thing they asked]
-4. **Point 3** — [Third thing they asked]
-5. **Closing** — Liebe/Viele Grüße, [Your name]
-
-That's 5 lines. ~30 words. Done.
-
-**Don't write more.** Longer answers = more chances for mistakes. Short and correct beats long and wrong. ALWAYS.
-
-*Moonnë content points cover cheyyuka — athaan key. Length alla, coverage aanu important!*
-
-⏸️ **[PAUSE — Student reviews their practice answers: did they hit all 3 points?]**"
+Possible answer: **Leider kann ich nicht kommen, weil ich einen Termin habe. Können wir uns nächste Woche treffen?**"
 
 ---
 
-## Section 10: Summary + Exam Connection (11:30–12:00)
+## Section 7: Exam Practice — 3 Points First, German Second (7:45–9:15)
 
-### Visual: [SLIDE: Three template cards side by side — Invite, Accept, Decline]
-### Narration:
-"Let's recap. You now have THREE templates:
+### Visual
+[EXAM CARD]
+**Situation:** Your friend Lisa has birthday party on Saturday. Write to Lisa. Include:
+1. say if you can come
+2. ask about time
+3. say what you can bring
 
-✅ **Invite:** Event + time/place + request
-✅ **Accept:** Thank + confirm + offer to bring something
-✅ **Decline:** Thank + reason with 'weil' + suggest alternative
+### Narration
+"Before writing German, do this first: mark the 3 points.
 
-These three cover probably 80% of Schreiben Teil 2 prompts. Practice writing one invitation, one acceptance, and one decline tonight. Use the templates.
+Here the 3 points are:
+- can you come?
+- ask the time
+- say what you can bring
 
-In Module 18, we'll polish this to exam perfection. But the hard work? You just did it.
+Now build the message.
 
-*Moonn templates — Invite, Accept, Decline. Ithu padichaal Schreiben Teil 2 easy aayirikum!*
+### Model answer
+**Liebe Lisa,**  
+**danke für die Einladung! Ich komme sehr gern. Um wie viel Uhr beginnt die Party? Ich kann einen Kuchen mitbringen.**  
+**Liebe Grüße**  
+**Anjali**
 
-Tschüss — und viel Erfolg beim Üben!"
+This is exactly the kind of answer that scores well:
+- short
+- complete
+- easy to understand
+
+### Exam truth check
+You do **not** need long sentences. You do **not** need advanced grammar. You need all requested information.
+
+⏸️ **PAUSE TASK:** Look at the prompt and say the 3 points aloud before you write."
 
 ---
 
-## Production Notes
+## Section 8: Second Exam Practice — Decline Without Overwriting (9:15–10:25)
 
-### Visual Requirements:
-- Template slides with color-coded parts (greeting=blue, content=green, closing=purple)
-- Exam prompt cards that look like real Goethe exam papers
-- Model answers with highlighted 3 content points
-- Side-by-side formal/informal comparison
+### Visual
+[EXAM CARD]
+**Situation:** Your colleague invited you to dinner on Friday. Write back. Include:
+1. thank
+2. why you cannot come
+3. suggest another day
 
-### Audio Requirements:
-- Narration in English/Malayalam mix (Manglish) with German phrases spoken clearly
-- German template sentences spoken at slow practice speed, then natural speed
-- Pause markers for student practice
+### Narration
+"Now a classic decline task.
 
-### Exercise Integration:
-- Link to Schreiben practice (/practice/write) after video
-- Invitation-specific writing prompts in lesson exercises
-- Peer exchange: students write invitations for each other
+### Model answer
+**Lieber Peter,**  
+**danke für die Einladung! Leider kann ich am Freitag nicht kommen, weil ich arbeiten muss. Können wir uns am Sonntag treffen?**  
+**Viele Grüße**  
+**Nikhil**
 
-### Cross-References:
-- Module 18 Lesson 18-2 (Schreiben Teil 2 exam prep) — builds on these templates
-- Module 12 Lesson 12-3 (Making plans) — vocabulary reinforcement
-- Module 12 Lesson 12-4 v12-4-2 (Weil-clauses) — grammar support for declining
+That's enough. Really.
 
-### Checklist:
-- [x] Teaching goal clear (invitation writing for Schreiben Teil 2)
-- [x] A1 exam section mapped (Schreiben Teil 2)
-- [x] Malayalam bridges included
-- [x] 3 golden templates (invite, accept, decline)
-- [x] 2 full exam practice prompts with model answers
-- [x] "weil" integration for declining
-- [x] 3-point formula explained
-- [x] Pause markers for student practice
-- [x] Cross-references to Module 18
+Many learners write too much here and create mistakes. A1 reward system is different:
+**simple + complete > long + risky**.
+
+*Exam-il essay venda. Mini message mathi.*"
+
+---
+
+## Section 9: Rapid Speaking Transfer (10:25–11:05)
+
+### Visual
+Three speech bubbles: invite / accept / decline
+
+### Narration
+"These patterns also help in speaking.
+
+- **Hast du Lust zu kommen?**
+- **Ich komme gern.**
+- **Leider kann ich nicht, weil ich krank bin.**
+
+So this is not just writing language. It is real social German.
+
+⏸️ **SPEAKING DRILL:**
+Invite someone.  
+Accept once.  
+Decline once."
+
+---
+
+## Section 10: Close — Your 3 Survival Templates (11:05–11:40)
+
+### Visual
+[FINAL CARD: Invite / Accept / Decline]
+
+### Narration
+"Today you learned three survival templates:
+
+✅ invite  
+✅ accept  
+✅ decline politely
+
+And the main exam rule:
+**Cover all 3 content points.**
+
+### Homework
+Write 3 mini-messages tonight:
+1. one invitation
+2. one acceptance
+3. one decline
+
+Keep each one under 35 words.
+
+In the next video, we'll strengthen the grammar behind many declines and explanations: **weil**.
+
+Tschüss — und schreib kurz, klar und clever."
+
+---
+
+## Quality Pass Notes
+
+### What improved in v2.0
+- Faster hook with explicit exam payoff
+- Clearer 3-point writing workflow
+- Shorter, more shootable template blocks
+- More active drills and predict-before-reveal moments
+- Stronger exam truth: simple, complete, score-safe writing
+- Better transfer from writing to speaking
+
+### Production Notes
+- Keep template cards visually clean; no dense paragraphs
+- Highlight content-point coverage in model answers
+- Use the same onscreen color system for all three templates
+- Add visible pause icon during drills and exam writing moments

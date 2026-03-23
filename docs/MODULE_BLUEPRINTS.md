@@ -1077,6 +1077,8 @@ Train learners directly for productive exam success: form-filling, short message
 
 **New:** All 18 remaining scripts now have detailed pre-draft plans in `docs/REMAINING_SCRIPT_PLANS.md` with narration beats, Malayalam bridges, exam tips, dialogue fragments, and dependencies mapped.
 
+**New (2026-03-23 14:00 UTC):** Goethe A1 exam map created (`GOETHE_A1_EXAM_MAP.md`) mapping every exam section to course content with gap analysis. Lesson-level teaching blueprints created (`LESSON_BLUEPRINTS_PRIORITY.md`) for Modules 2, 3, 5, 14, 17, 18 with per-lesson production targets, exercise progression plans, exam checkpoints, and ~35-40 production exercises identified to add.
+
 ---
 
 ## Cross-Module Dependency Map (Updated 2026-03-23)
@@ -1140,6 +1142,16 @@ Module 18 (Exam Schreiben/Sprechen) — capstone, draws from all
 - Overcomplicating A1 output instead of using short, safe sentences
 - Confusing formal and informal register
 - Number/time/date listening panic
+
+---
+
+## Related Planning Documents
+
+- **`GOETHE_A1_EXAM_MAP.md`** — Maps every Goethe A1 exam section/task to specific course content. Shows exactly which modules support which exam tasks and where gaps remain.
+- **`LESSON_BLUEPRINTS_PRIORITY.md`** — Per-lesson teaching blueprints for Modules 2, 3, 5, 14, 17, 18. Covers teaching sequence, exercise progression, production targets, exam checkpoints, and SRS feed per lesson.
+- **`REMAINING_SCRIPT_PLANS.md`** — Pre-draft breakdowns for all 18 unwritten video scripts with narration beats, Malayalam bridges, and dependencies.
+- **`SCRIPT_ARCHITECTURE_WAVE4.md`** / **`SCRIPT_ARCHITECTURE_WAVE5.md`** — Scene-level architecture for Wave 4 (supporting modules) and Wave 5 (optional enrichment).
+- **`VIDEO_SCRIPT_TEMPLATE.md`** — Standard format for writing full narration scripts.
 
 ---
 

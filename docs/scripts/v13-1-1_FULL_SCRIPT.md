@@ -3,8 +3,8 @@
 > **Module:** 13 | **Lesson:** 13-1 | **Duration:** 10:00 target
 > **Teaching Goal:** Master the Perfekt tense structure with haben — the primary past tense for A1 German
 > **A1 Exam Link:** Schreiben Teil 2 (writing about past events), Hören (understanding past-tense narratives), Sprechen (describing experiences)
-> **Status:** REVISED — v2.0
-> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass — v2.1: split 8-verb participle block into 4+4 with interleaving drill, added predict-the-participle exercise between blocks, added sentence-level transfer drill after second block, strengthened active recall with sandwich-structure quiz)
 
 ---
 
@@ -89,9 +89,9 @@ Watch out: **er/sie/es hat** — no -e! That's the one people mix up.
 
 ---
 
-## Section 4: Building Past Participles — The ge...t Formula (3:15–5:00)
+## Section 4: Building Past Participles — Block 1 (3:15–4:10)
 
-### Visual: [DIAGRAM: Animated formula: ge- (green) + STEM (blue) + -t (red). Then table building row by row.]
+### Visual: [DIAGRAM: Animated formula: ge- (green) + STEM (blue) + -t (red). Then first 4 verbs building row by row.]
 ### Narration: [ENERGY: methodical, building]
 "For regular verbs, the past participle follows ONE formula:
 
@@ -99,7 +99,7 @@ Watch out: **er/sie/es hat** — no -e! That's the one people mix up.
 
 [DIAGRAM: machen → ge + mach + t → **gemacht**]
 
-Let's build them:
+First four — the everyday verbs:
 
 | Infinitive | → Past Participle |
 |------------|-------------------|
@@ -107,26 +107,43 @@ Let's build them:
 | **spielen** → **gespielt** | played |
 | **lernen** → **gelernt** | learned |
 | **kochen** → **gekocht** | cooked |
-| **kaufen** → **gekauft** | bought |
-| **hören** → **gehört** | heard |
-| **fragen** → **gefragt** | asked |
-| **sagen** → **gesagt** | said |
 
-Eight verbs — ALL the same pattern. ge- + stem + -t.
+Four verbs, same pattern every time. ge- + stem + -t.
 
-⏸️ Your turn — build the participle for **tanzen** (to dance):
+⏸️ Your turn — predict before I show you. What's the participle for **tanzen** (to dance)?
 
 ### Practice Pause: ⏸️ (3 seconds)
 
 **getanzt.** ✅ ge + tanz + t.
 
-⏸️ Now **suchen** (to search):
+⏸️ Now build a full sentence: 'I cooked curry' →
+
+### Practice Pause: ⏸️ (3 seconds)
+
+✅ **Ich habe Curry gekocht.** Sandwich! haben + ... + participle at the END."
+
+---
+
+## Section 4b: Participles — Block 2 + The -et Twist (4:10–5:00)
+
+### Visual: [Next 4 verbs appearing, then the -et twist highlighted]
+### Narration: [ENERGY: building on momentum]
+"Four more — the communication verbs:
+
+| Infinitive | → Past Participle |
+|------------|-------------------|
+| **kaufen** → **gekauft** | bought |
+| **hören** → **gehört** | heard |
+| **fragen** → **gefragt** | asked |
+| **sagen** → **gesagt** | said |
+
+Same formula. ge- + stem + -t. Every single time.
+
+⏸️ Predict: **suchen** (to search) → ?
 
 ### Practice Pause: ⏸️ (2 seconds)
 
 **gesucht.** ✅
-
----
 
 ### Small twist: stems ending in -t or -d
 
@@ -136,7 +153,16 @@ Add **-et** instead of just -t (otherwise you can't pronounce it):
 - **warten** → ge**wart**et
 - **antworten** → ge**antwort**et
 
-*Pronunciation-nu vendi extra -e- idunnu. Pattern same thanne.*"
+*Pronunciation-nu vendi extra -e- idunnu. Pattern same thanne.*
+
+### ⚡ Interleaving Drill — All 8:
+⏸️ machen → ? → gemacht
+⏸️ hören → ? → gehört
+⏸️ spielen → ? → gespielt
+⏸️ arbeiten → ? → gearbeitet (remember the -et!)
+⏸️ kaufen → ? → gekauft
+
+Five for five? You've got the formula locked."
 
 ---
 
@@ -318,13 +344,13 @@ Tschüss und bis zum nächsten Mal!"
 
 ---
 
-## Script Quality Checklist (v2.0)
+## Script Quality Checklist (v2.1)
 
 - [x] Hook under 60 seconds, states concrete payoff (unlock past tense)
 - [x] No monologue block exceeds 90 seconds
 - [x] Teach → Drill → Apply cycle (sandwich concept → build participles → full sentences → describe yesterday)
 - [x] Malayalam bridges are structural parallels (cheythu/kazhichchu → gemacht/gekocht)
-- [x] Practice pauses have specific prompts and answer reveals (18 pauses)
+- [x] Practice pauses have specific prompts and answer reveals (22+ pauses)
 - [x] Active recall summary (4 recall questions)
 - [x] All German grammatically verified
 - [x] Visual cues producible and tagged
@@ -333,11 +359,15 @@ Tschüss und bis zum nächsten Mal!"
 - [x] Duration realistic for 10:00
 - [x] No A2+ content
 - [x] Clear next-lesson bridge (sein verbs)
+- [x] No vocabulary stacking — 8 verbs split into 4+4 blocks with interleaving drill between
+- [x] Predict-the-participle exercises in both blocks
+- [x] Sentence-level transfer drill after Block 1 (not just isolated participle building)
 
 ---
 
-## Revision Notes (v1.0 → v2.0)
+## Revision Notes (v1.0 → v2.0 → v2.1)
 
+### v2.0 changes:
 - **Hook cut from 75s to 35s:** Removed "car with one gear" metaphor, showed two concrete sentences instead
 - **All practice pauses made specific:** v1.0 used bracketed descriptions like "[PAUSE — Student builds 3 sentences]"; v2.0 has individual prompts with 3s pauses and revealed answers
 - **Removed distracting sein/separable previews from Section 8:** v1.0's "tell me about yesterday" introduced aufstehen (sein verb!) and ferngesehen (separable), confusing a haben-focused lesson. v2.0 uses only haben verbs
@@ -347,6 +377,12 @@ Tschüss und bis zum nächsten Mal!"
 - **Error section compressed:** 3 clear ❌/✅ pairs + one fix-it exercise
 - **Verb table reduced from 10 to 8:** Cut for pacing; quality over quantity
 - **Word count reduced ~20%**
+
+### v2.1 changes:
+- **Split 8-verb participle table into 4+4 blocks** — Section 4 now teaches everyday verbs (machen/spielen/lernen/kochen), Section 4b teaches communication verbs (kaufen/hören/fragen/sagen). Prevents vocabulary stacking.
+- **Added predict-the-participle exercise** in Block 1 (tanzen) AND a full-sentence transfer drill ("I cooked curry") so learners move from isolated participle building to sandwich assembly within the first block
+- **Added 5-item interleaving drill** after Block 2 that mixes verbs from BOTH blocks, including arbeiten (-et twist) — tests retention across the split
+- **Practice pause count increased from 18 to 22+**
 
 ---
 

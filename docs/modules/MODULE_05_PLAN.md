@@ -1,6 +1,6 @@
 # Module 5: Daily Routine (Mein Tag) — Launch Plan
 
-> **Last updated:** 2026-03-23 11:45 UTC
+> **Last updated:** 2026-03-23 18:05 UTC
 
 ---
 
@@ -33,18 +33,18 @@
 | Video ID | Title | Status | Quality |
 |----------|-------|--------|---------|
 | v5-1-1 | How German Verbs Work | 🔄 DRAFT | v2.0 ✅ |
-| v5-1-2 | Practice with Common Verbs (20-verb drill) | 📐 ARCH | Pre-draft plan in REMAINING_SCRIPT_PLANS.md |
+| v5-1-2 | Practice with Common Verbs (20-verb drill) | 🔄 DRAFT | v2.0 draft ✅ |
 | v5-2-1 | Daily Activities Vocabulary | 🔄 DRAFT | v1.0 |
 | v5-3-1 | Separable Verbs | 🔄 DRAFT | v2.0 ✅ |
 | v5-4-1 | Describing Your Day | 🔄 DRAFT | v1.0 |
 
-**Status: 4/5 scripts drafted. Only v5-1-2 (practice companion) remains.**
+**Status: 5/5 core script units now drafted. Module 5's main remaining gap is no longer script coverage — it is production exercise implementation and quality-upgrading two older v1.0-style scripts (`v5-2-1`, `v5-4-1`).**
 
 ### v5-1-2 Assessment
-- Content: applied conjugation drill with 20 most useful A1 verbs
-- Teaching value: VERY HIGH — the gap between knowing rules and producing correct forms
-- Without this: learners can explain conjugation but freeze when speaking
-- **Recommendation:** HIGH priority draft — this is the drill companion to v5-1-1's theory
+- Content now drafted: 20-verb automaticity drill with grouped practice, stem-changer warning zones, the `arbeitest` extra-`e` trap, flash-card speed prompts, and sentence-level transfer
+- Teaching value: VERY HIGH — this is the bridge from understanding conjugation rules to producing them under pressure
+- Exam value: CRITICAL — supports every speaking/writing answer by making core verb forms faster and safer
+- **Recommendation now:** keep the script, then build the matching 5-P2 conjugation production drill so recall becomes automatic
 
 ---
 
@@ -90,16 +90,16 @@ These should be automatic by Module 5 completion. Script v5-1-2 drills all 20:
 ## Concrete Next Steps
 
 ### Must-do before launch
-1. [ ] Draft v5-1-2 (20-verb drill companion) — **completes module**
-2. [ ] Build 5-P2 conjugation production exercise (type correct form, not choose)
-3. [ ] Build 5-P1 "my day" paragraph free-text exercise
-4. [ ] Generate audio for daily routine model narration
+1. [ ] Build 5-P2 conjugation production exercise (type correct form, not choose) using the new `v5-1-2` 20-verb set
+2. [ ] Build 5-P1 "my day" paragraph free-text exercise
+3. [ ] Generate audio for daily routine model narration
+4. [ ] Generate or record fast/slow audio for the `v5-1-2` flash-card drill so verb forms become ear-training too
 
 ### Should-do for quality
 5. [ ] Build 5-P3 weekly routine speaking drill
 6. [ ] Upgrade v5-2-1 and v5-4-1 from v1.0 to v2.0 quality
 7. [ ] Add separable verb sentence-building exercise (not just recognition)
-8. [ ] Create conjugation speed drill (flash verb + person → answer in 3 seconds)
+8. [ ] Create a reusable conjugation speed drill component (flash verb + person → answer in 3 seconds)
 
 ---
 

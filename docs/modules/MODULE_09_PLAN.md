@@ -1,6 +1,6 @@
 # Module 09: Travel & Directions (Reisen und Wege) — Launch Plan
 
-> **Last updated:** 2026-03-23 12:30 UTC
+> **Last updated:** 2026-03-23 17:26 UTC
 
 ---
 
@@ -34,11 +34,11 @@
 
 | Video ID | Title | Status | Quality | Notes |
 |----------|-------|--------|---------|-------|
-| v9-1-1 | Transportation & mit+Dativ | 🔄 DRAFT | v1.0 | Transport types + dative intro |
+| v9-1-1 | Transportation & mit+Dativ | 🔄 DRAFT | v2.0 ✅ | Transport types + dative intro |
 | v9-1-2 | Public Transport System | ⬜ OUTLINE | — | May fold into v9-1-1 |
-| v9-2-1 | Buying Tickets | 🔄 DRAFT | v1.0 | Ticket dialogue + vocabulary |
+| v9-2-1 | Buying Tickets | 🔄 DRAFT | v2.0 ✅ | Ticket dialogue + vocabulary |
 | v9-2-2 | Smart Ticketing | ⬜ OUTLINE | — | App tips, Sparpreise — supplementary |
-| v9-3-1 | Asking Directions | 🔄 DRAFT | v1.0 | Direction vocabulary + dialogues |
+| v9-3-1 | Asking Directions | ✅ DONE | v2.1 ✅ | Direction lesson rebuilt around 3 question patterns, 3 rescue phrases, and word-card → question transfer |
 | v9-3-2 | Giving Directions | ⬜ OUTLINE | — | Production: give directions yourself |
 | v9-4-1 | At the Airport | ⬜ OUTLINE | — | Arrival vocabulary, signage |
 | v9-4-2 | At the Train Station | ⬜ OUTLINE | — | Platform, schedule, announcements |
@@ -142,7 +142,7 @@ Wir | wollen | nach Berlin | fahren.
 7. [ ] Draft v9-4-1 or v9-4-2 (airport/station survival — combine into one if shorter)
 8. [ ] Build 9-P2 direction-giving production exercise with simple map
 9. [ ] Build 9-P5 airport sign reading exercise
-10. [ ] Upgrade v9-1-1, v9-2-1, v9-3-1 from v1.0 to v2.0 quality
+10. [x] Upgrade v9-1-1, v9-2-1, v9-3-1 from v1.0 to v2.x quality
 11. [ ] Assess whether v9-5-2 is needed or v9-5-1 can include practice
 
 ### Nice-to-have

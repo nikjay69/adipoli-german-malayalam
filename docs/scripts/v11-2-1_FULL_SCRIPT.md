@@ -2,176 +2,271 @@
 
 > **Module:** 11 (Work & Study)
 > **Lesson:** 11-2 (At the Office / University)
-> **Duration:** ~10 minutes
-> **Exam section:** Lesen (workplace notices), Hören (work-related dialogues), Sprechen (describing work)
-> **Prerequisites:** Module 11-1 (professions), Module 5 (daily routine verbs)
-> **Status:** FULL SCRIPT v1.0
-> **Created:** 2026-03-23 11:20 UTC
+> **Duration:** 10:30 target
+> **Exam section:** Lesen (notices / emails / workplace text), Hören (simple work-study dialogues), Sprechen (describing work or study life)
+> **Prerequisites:** Module 11-1 (profession basics), Module 5 (daily routine verbs), Module 1 (formal politeness)
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
-## Script
+## Pre-roll (0:00–0:15)
 
-### [0:00–0:15] Pre-roll
-*[Branding slide]*
-
-### [0:15–1:15] Hook — "Day 1 at your German job"
-
-Germany-yil aadhyathe joli divasam — colleagues names parayunnu, desk kaanikkkunnu, coffee machine evideyennu choddikkyunnu. Ningllude German vocabulary vendathu EXACTLY ithokke aanu.
-
-*Office vocabulary arinjaal — confident aayittenne pokaanaam!*
-
-*[SLIDE: "Am Arbeitsplatz — Your First Day 💼"]*
+### Visual: [Branding slide]
+### Narration:
+"Willkommen bei Adipoli German!"
 
 ---
 
-### [1:15–3:00] Block 1: Office Vocabulary
+## Section 1: Hook — Your First Day Survival German (0:15–0:45)
 
-| German | English | Article |
-|--------|---------|---------|
-| das Büro | office | das |
-| der Schreibtisch | desk | der |
-| der Computer | computer | der |
-| der Drucker | printer | der |
-| der Bildschirm | screen/monitor | der |
-| die Tastatur | keyboard | die |
-| die Maus | mouse | die |
-| das Telefon | telephone | das |
-| der Kopierer | copier | der |
-| der Ordner | folder/binder | der |
-| die Besprechung / das Meeting | meeting | die / das |
-| die Pause | break | die |
-| die Kantine / die Mensa | cafeteria / university canteen | die |
-| der Chef / die Chefin | boss (m/f) | der / die |
-| der Kollege / die Kollegin | colleague (m/f) | der / die |
+### Visual: [Montage: office desk, hospital corridor, university hallway, coffee machine]
+### Narration: [ENERGY: practical, steady]
+"On your first day in a German workplace or university, nobody expects poetry.
 
-⏸️ *Look around your room. Name 5 items in German.*
+But you do need survival German.
 
-*"Bildschirm" = Bild (picture) + Schirm (screen/shield). Compound words — break them!*
+Where is the meeting? Where is the printer? Can you help me? Shall we go to the cafeteria?
+
+Today, we build that toolkit — not a giant dictionary, but the sentences that actually keep your day moving."
 
 ---
 
-### [3:00–5:00] Block 2: University & Study Vocabulary
+## Section 2: The 8 Words That Carry Most of the Day (0:45–2:15)
 
-| German | English | Article |
-|--------|---------|---------|
-| die Universität / die Uni | university | die |
-| die Vorlesung | lecture | die |
-| das Seminar | seminar | das |
-| die Bibliothek | library | die |
-| die Prüfung | exam | die |
-| die Hausarbeit | term paper | die |
-| das Semester | semester | das |
-| der Stundenplan | timetable | der |
-| der Dozent / die Dozentin | lecturer (m/f) | der / die |
-| der Kommilitone / die Kommilitonin | fellow student (m/f) | der / die |
+### Visual: [8 cards only, each with icon + article]
+### Narration:
+"Don't start with 25 office words. Start with the 8 you will hear again and again.
 
-⏸️ *If you're a student: say your Stundenplan in German. "Am Montag habe ich ___."*
+🔊 **das Büro** — office  
+🔊 **der Schreibtisch** — desk  
+🔊 **der Computer** — computer  
+🔊 **der Drucker** — printer  
+🔊 **die Besprechung** — meeting  
+🔊 **der Kollege / die Kollegin** — colleague  
+🔊 **die Pause** — break  
+🔊 **die Kantine / die Mensa** — cafeteria / canteen
 
-**Study-related verbs:**
-- studieren — to study (at university)
-- lernen — to learn / to study (for exam)
-- eine Prüfung schreiben — to take a written exam
-- eine Hausarbeit abgeben — to submit a paper
-- sich einschreiben — to enroll
+### Micro-patterns
+- **im Büro** — in the office
+- **am Schreibtisch** — at the desk
+- **in der Besprechung** — in the meeting
 
-*"Studieren" vs "lernen" — studieren = university-level study. Lernen = learning in general or studying for a specific test. "Ich studiere Informatik" (I study CS) vs "Ich lerne für die Prüfung" (I'm studying for the exam).*
+### Drill
+Repeat after me:
+- **der Drucker**
+- **die Besprechung**
+- **die Pause**
+- **die Kollegin**
 
----
+⏸️ [pause]
 
-### [5:00–7:00] Block 3: Daily Work Phrases
+### Apply
+Say one sentence now:
+🔊 **Ich bin im Büro.**
+⏸️ [pause]
 
-**Morning:**
-- "Guten Morgen, wie geht's?" — Good morning, how are you?
-- "Haben wir heute eine Besprechung?" — Do we have a meeting today?
-- "Um wie viel Uhr ist das Meeting?" — What time is the meeting?
-
-**During work:**
-- "Können Sie mir bitte helfen?" — Can you please help me?
-- "Ich verstehe das nicht. Können Sie das erklären?" — I don't understand. Can you explain?
-- "Wo finde ich ___?" — Where do I find ___?
-- "Der Drucker funktioniert nicht." — The printer isn't working.
-
-**Break time:**
-- "Gehen wir in die Kantine?" — Shall we go to the cafeteria?
-- "Ich mache jetzt Pause." — I'm taking a break now.
-- "Möchten Sie einen Kaffee?" — Would you like a coffee?
-
-**End of day:**
-- "Ich bin für heute fertig." — I'm done for today.
-- "Schönen Feierabend!" — Have a nice evening! (*Feierabend = end-of-work celebration — Germans love this concept!*)
-- "Bis morgen!" — See you tomorrow!
-
-⏸️ *Practice the break-time phrases — this is where you make friends at work!*
-
-*"Feierabend" — Germany-yil MOST LOVED word! Work time kazhinjaal — it's YOUR time. Nobody expects overtime. "Feierabend" paranjaal — HOME!*
+Good. One usable sentence already."
 
 ---
 
-### [7:00–8:30] Block 4: Work Culture in Germany
+## Section 3: 3 First-Day Questions You Actually Need (2:15–3:45)
 
-**Things that will surprise you:**
+### Visual: [Three large speech bubbles only]
+### Narration:
+"These three questions will save you on day one.
 
-**1. Pünktlichkeit at work**
-- Start time 8:00 = you're AT YOUR DESK working at 8:00
-- Not arriving at 8:00, not getting coffee at 8:00
-- *Kerala-yil office 10-nu thudangiyal 10:15-nu varunnathil problem illa. Germany-yil 8:00 means 8:00!*
+🔊 **Wo ist der Drucker?** — Where is the printer?  
+🔊 **Um wie viel Uhr ist die Besprechung?** — What time is the meeting?  
+🔊 **Können Sie mir bitte helfen?** — Can you please help me?
 
-**2. Du vs Sie at work**
-- New workplace: ALWAYS use "Sie" with everyone until told otherwise
-- If a colleague says "Wir können uns duzen" → switch to "du"
-- NEVER assume "du" — even with younger colleagues
-- *Nursing-il patients-inteyum doctors-inteyum koode "Sie" thanneyaanu default!*
+That third sentence is gold.
 
-**3. Mittagspause**
-- Lunch break is sacred. 30–60 minutes.
-- Many colleagues eat together — this is your social time!
-- Don't eat at your desk if others go to the Kantine
+You can use it with anything:
+- **Können Sie mir bitte helfen? Ich suche die Kantine.**
+- **Können Sie mir bitte helfen? Ich verstehe das nicht.**
 
-**4. No personal phone at the desk**
-- Keep phone in your bag during work hours
-- Quick messages during Pause only
+### Drill
+I give the situation. You choose the sentence.
 
-**5. Feedback is direct**
-- "Das war nicht gut" = it wasn't good (they mean it, but it's not personal)
-- "Das müssen Sie noch verbessern" = you need to improve this
-- *Direct feedback = respect. They want you to succeed, not to be hurt.*
+- you need the printer → ?
+⏸️ [pause]
+- you don't understand a task → ?
+⏸️ [pause]
+- you need the meeting time → ?
+⏸️ [pause]
 
----
+### Reveal
+- **Wo ist der Drucker?**
+- **Können Sie mir bitte helfen?**
+- **Um wie viel Uhr ist die Besprechung?**
 
-### [8:30–10:00] Block 5: Writing About Your Job
-
-**For exams and real life — describe your work in 5 sentences:**
-
-Template:
-1. "Ich arbeite als ___ (bei/in _____)."
-2. "Ich arbeite von ___ bis ___ Uhr."
-3. "Meine Kollegen sind nett/freundlich."
-4. "Am Montag habe ich eine Besprechung."
-5. "Die Arbeit gefällt mir (gut/sehr gut)."
-
-⏸️ *Write YOUR 5 sentences now. Use real or imagined details.*
-
-**For students:**
-1. "Ich studiere ___ an der Universität ___."
-2. "Mein Stundenplan ist von ___ bis ___."
-3. "Am ___ habe ich eine Vorlesung in ___."
-4. "Ich schreibe bald eine Prüfung."
-5. "Das Studium ist interessant/schwer/spannend."
-
-*Ithu Sprechen-il choddichaal — ready answer undu! Write it, memorize it, USE it.*
+*Beginner-safe German means asking for help early, not pretending you understood everything.*"
 
 ---
 
-## Checklist
+## Section 4: Work German vs Study German (3:45–5:20)
 
-- [x] 15 office vocabulary items with articles
-- [x] 10 university vocabulary items with articles
-- [x] studieren vs lernen distinction explained
-- [x] Daily work phrases by time of day
-- [x] Feierabend cultural concept explained
-- [x] 5 German work culture points
-- [x] Du/Sie workplace rules
-- [x] Writing template for job/study description
-- [x] Malayalam bridges throughout
-- [x] Duration: ~10 minutes
+### Visual: [Split screen: OFFICE / UNIVERSITY]
+### Narration:
+"Now split the world into two lanes.
+
+### Office lane
+🔊 **der Chef / die Chefin** — boss  
+🔊 **das Meeting / die Besprechung** — meeting  
+🔊 **der Ordner** — folder  
+🔊 **das Telefon** — phone
+
+### University lane
+🔊 **die Universität / die Uni** — university  
+🔊 **die Vorlesung** — lecture  
+🔊 **die Bibliothek** — library  
+🔊 **die Prüfung** — exam
+
+### Two useful identity sentences
+🔊 **Ich arbeite im Büro.** — I work in an office.  
+🔊 **Ich studiere an der Universität.** — I study at university.
+
+### Important distinction
+🔊 **studieren** = study at university  
+🔊 **lernen** = learn / study for a test
+
+So:
+- **Ich studiere Informatik.**
+- **Ich lerne für die Prüfung.**
+
+That difference matters a lot."
+
+---
+
+## Section 5: Golden Dialogue — First Morning at Work (5:20–7:20)
+
+### Visual: [Dialogue shown one line at a time with prediction task before each answer]
+### Narration:
+"Let's make it real.
+
+### Situation
+You are new at work. You meet a colleague.
+
+🔊 Kollegin: **Guten Morgen! Sind Sie neu hier?**
+How do you answer simply?
+⏸️ [pause]
+
+Possible answer:
+🔊 You: **Ja, ich bin neu hier.**
+
+🔊 Kollegin: **Willkommen! Brauchen Sie Hilfe?**
+What do you say if you need the printer?
+⏸️ [pause]
+
+🔊 You: **Ja, bitte. Wo ist der Drucker?**
+
+🔊 Kollegin: **Der Drucker ist dort, neben dem Büro.**
+Now ask about the meeting.
+⏸️ [pause]
+
+🔊 You: **Und um wie viel Uhr ist die Besprechung?**
+
+🔊 Kollegin: **Um neun Uhr.**
+How do you close politely?
+⏸️ [pause]
+
+🔊 You: **Danke schön!**
+🔊 Kollegin: **Gern.**
+
+### Why this works
+Short sentences. Real need. No grammar showing off."
+
+---
+
+## Section 6: Break-Time Social German (7:20–8:30)
+
+### Visual: [Coffee machine / cafeteria mini-scene]
+### Narration:
+"A lot of workplace friendship starts in the break.
+
+Learn these four lines:
+
+🔊 **Machen wir eine Pause?** — Shall we take a break?  
+🔊 **Gehen wir in die Kantine?** — Shall we go to the cafeteria?  
+🔊 **Möchten Sie einen Kaffee?** — Would you like a coffee?  
+🔊 **Ich mache jetzt Pause.** — I'm taking a break now.
+
+### Mini-dialogue
+🔊 A: **Gehen wir in die Kantine?**
+🔊 B: **Ja, gern.**
+
+🔊 A: **Möchten Sie einen Kaffee?**
+🔊 B: **Ja, bitte.**
+
+*Work German is not only task German. Break-time German is how you become part of the place.*"
+
+---
+
+## Section 7: Reading / Exam Link — Catch the Key Workplace Words (8:30–9:30)
+
+### Visual: [Simple notice card]
+**Besprechung heute um 9:00 Uhr in Büro 3. Bitte pünktlich sein.**
+
+### Narration:
+"Now the exam transfer.
+
+If you see or hear this notice, what are the key facts?
+
+⏸️ [pause]
+
+### Answer
+- **what?** Besprechung
+- **when?** um 9:00 Uhr
+- **where?** in Büro 3
+- **important instruction?** bitte pünktlich sein
+
+This is exactly how A1 reading and listening often work.
+Not every word. Just the important information."
+
+---
+
+## Section 8: Germany Work Culture — Keep It Short and Useful (9:30–10:00)
+
+### Visual: [Three compact icons]
+### Narration:
+"Three culture rules worth knowing:
+
+1. **Pünktlich** matters. 8:00 means 8:00.  
+2. Start with **Sie** in formal work contexts.  
+3. **Feierabend** matters — when work ends, private time is respected.
+
+*Direct feedback is normal in Germany. Usually it is not personal drama — just task-focused communication.*"
+
+---
+
+## Section 9: Summary + Output Challenge (10:00–10:30)
+
+### Visual: [Toolkit card]
+### Narration:
+"Today's toolkit:
+- **Wo ist der Drucker?**
+- **Um wie viel Uhr ist die Besprechung?**
+- **Können Sie mir bitte helfen?**
+- **Gehen wir in die Kantine?**
+- **Ich studiere... / Ich lerne für...**
+
+### Challenge
+Say **three sentences** about your real work or study life:
+1. where you work or study
+2. one thing you need there
+3. one polite help question
+
+Next, we use this professional world in writing — simple German emails.
+
+Bis zum nächsten Mal!"
+
+---
+
+## Production Notes
+- **Quality-pass upgrades:** reduced vocabulary dump into 8 high-frequency anchor words plus a few context extras; rebuilt the script around first-day survival tasks, help-seeking, and notice-reading; turned the dialogue into predict-before-reveal instead of passive memorization; kept work-culture notes compact and directly useful
+- **Audio:** anchor vocabulary, 3 first-day questions, one work dialogue, one break-time mini-dialogue, notice read-aloud
+- **Visuals:** icon cards instead of dense tables, office/university split board, line-by-line dialogue, compact notice card, three-rule culture strip
+- **Malayalam bridge:** kept only around survival behavior and social expectations, not as long commentary blocks
+- **Exam usefulness:** explicit info-catching task for notice reading/listening; polite formal help language reinforced
+- **Pacing note:** do not turn the vocab cards into a lecture; keep each block moving toward a sentence learners can actually say

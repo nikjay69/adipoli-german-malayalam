@@ -3,24 +3,8 @@
 > **Module:** 6 | **Lesson:** 6-1 | **Duration:** 10:00 target
 > **Teaching Goal:** Teach core German food vocabulary with articles, introduce the accusative pattern through eating/drinking sentences, and build cultural food awareness.
 > **A1 Exam Link:** Hören (food in dialogues/orders), Lesen (menus, recipes), Sprechen Teil 3 (making food requests)
-> **Status:** REVISED — v2.0
-> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass)
-
----
-
-## Revision Notes (v1.0 → v2.0)
-
-| Change | Detail |
-|--------|--------|
-| Hook tightened | 75s → 30s, opens with food challenge, not bread statistics |
-| Vocab blocks restructured | Was 2 big dumps → now teach-3-drill, teach-3-drill cycles |
-| Accusative introduced earlier | Moved from Section 4 to woven into vocab practice naturally |
-| Active recall added | Cover-and-recall prompts after each mini-block |
-| Energy cues added | Every section has `[ENERGY:]` markers |
-| Malayalam bridges upgraded | Cultural eating parallels, not just word translations |
-| gern section compressed | Was too long — now pattern + 2 drills, move on |
-| Cultural section made active | Students compare rather than just listen |
-| ~15% word count reduction | Cut redundant explanations and vocab table padding |
+> **Status:** REVISED — v2.0 (quality-verified)
+> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass — structure fix + exam tips + checklist added)
 
 ---
 
@@ -47,7 +31,9 @@ Food is the EASIEST way to learn German grammar. Let's eat!"
 ## Section 2: Basics — 6 Essential Foods (0:40–2:30)
 
 ### Visual: [TABLE: Basic foods — articles colour-coded: der=🔵, die=🔴, das=🟢]
-### Narration: [ENERGY: steady, teach-drill rhythm]
+### Narration:
+
+🎬 [Energy: steady, teach-drill rhythm]
 
 "Six essential foods. Learn the article WITH the word — colour helps.
 
@@ -76,7 +62,9 @@ Good. Now let's USE them."
 ## Section 3: The Accusative Trick — Eating = Grammar (2:30–4:00)
 
 ### Visual: [HIGHLIGHT: "Ich esse den Fisch." with article change highlighted]
-### Narration: [ENERGY: eureka moment, clear]
+### Narration:
+
+🎬 [Energy: eureka moment, clear]
 
 "Here's the trick: every time you say 'Ich esse...' (I eat), the food becomes an OBJECT. That's the accusative case.
 
@@ -100,14 +88,18 @@ Only masculine changes! der → den. That's the ENTIRE rule.
 
 ⏸️ **Try: 'I eat the rice.' What's the article? ... den Reis! Masculine! 'Ich esse DEN Reis.'**
 
-You just used the accusative. Without pain. That's food grammar."
+You just used the accusative. Without pain. That's food grammar.
+
+[EXAM-TIP] In Lesen Teil 1 and Teil 2, food vocabulary appears in menus, notices, and shopping offers. Knowing articles helps you match items to the right answer."
 
 ---
 
 ## Section 4: Fruits & Vegetables — 7 More Words (4:00–5:30)
 
 ### Visual: [TABLE: Fruits and vegetables, colour-coded]
-### Narration: [ENERGY: brisk, building momentum]
+### Narration:
+
+🎬 [Energy: brisk, building momentum]
 
 "Now fruits and vegetables. Two power words first:
 
@@ -136,7 +128,11 @@ Kartoffel → ... die! Apfel → ... der! Tomate → ... die!
 ## Section 5: The 'gern' Pattern — Likes & Dislikes (5:30–7:00)
 
 ### Visual: [SLIDE: gern pattern diagram]
-### Narration: [ENERGY: conversational, exam-focused]
+### Narration:
+
+🎬 [Energy: conversational, exam-focused]
+
+[EXAM-TIP] The 'gern' pattern is a Sprechen Teil 1 favourite — examiners often ask about food preferences. 'Ich esse gern...' + 'Mein Lieblingsessen ist...' = safe, complete answer.
 
 "Now the GOLD pattern for Sprechen. How to say what you like eating:
 
@@ -167,7 +163,9 @@ That's 4 sentences for Sprechen. You're ready."
 ## Section 6: Germany vs Kerala — Food Culture (7:00–8:30)
 
 ### Visual: [SLIDE: Meal comparison — split screen]
-### Narration: [ENERGY: storytelling, cultural]
+### Narration:
+
+🎬 [Energy: storytelling, cultural]
 
 "Quick cultural knowledge that saves you from shock in Germany:
 
@@ -189,7 +187,9 @@ That's 4 sentences for Sprechen. You're ready."
 ## Section 7: Quick-Fire Recall & Summary (8:30–10:00)
 
 ### Visual: [Flash cards — rapid sequence]
-### Narration: [ENERGY: high, quiz-show]
+### Narration:
+
+🎬 [Energy: high, quiz-show]
 
 "Final test! Speed round — article + word:
 
@@ -222,3 +222,41 @@ Next up: Kerala food in German — puttu, dosa, and biryani get German names! Bi
 - **Patterns trained:** food + article, Ich esse den/die/das ___, Ich esse gern/nicht gern ___, Mein Lieblingsessen ist ___
 - **Exercise types needed:** article matching drill, accusative fill-blank, gern sentence building, food preference speaking (1-min), menu reading comprehension, food dictation
 - **Production outcome:** Student can name 13+ foods with correct articles, use accusative correctly with food, and describe food preferences in 4-5 sentences
+
+---
+
+## Script Quality Checklist (v2.0)
+
+- [x] Hook under 40 seconds with concrete challenge payoff
+- [x] Teach → Drill → Apply cycles (teach-3 → drill → teach-3 → drill → apply)
+- [x] Max 3-4 new items per block before drilling
+- [x] Active recall checkpoints: cover-and-recall after each mini-block + final speed round
+- [x] 🎬 [Energy] tags at every section
+- [x] Malayalam bridges are cultural parallels (rice love, cold dinner shock), not mere translations
+- [x] [EXAM-TIP] boxes with specific exam section references (Sprechen Teil 1, Lesen)
+- [x] Practice pauses with specific prompts and reveals (7+ pauses)
+- [x] Accusative taught through use, not abstract lecture
+- [x] Cultural section active (comparison, not just facts)
+- [x] Duration realistic for ~10:00
+- [x] No A2+ overload
+
+---
+
+## Revision Notes (v1.0 → v2.0)
+
+| Change | Detail |
+|--------|--------|
+| Hook tightened | 75s → 30s, opens with food challenge, not bread statistics |
+| Vocab blocks restructured | Was 2 big dumps → now teach-3-drill, teach-3-drill cycles |
+| Accusative introduced earlier | Woven into vocab practice naturally |
+| Active recall added | Cover-and-recall prompts after each mini-block |
+| Energy cues added | Every section has 🎬 [Energy:] markers |
+| Malayalam bridges upgraded | Cultural eating parallels, not just word translations |
+| gern section compressed | Pattern + 2 drills, move on |
+| Cultural section made active | Students compare rather than just listen |
+| ~15% word count reduction | Cut redundant explanations and vocab table padding |
+| Exam tips added | 2 [EXAM-TIP] boxes with specific section references |
+
+---
+
+*Revised to v2.0 — 2026-03-23 quality pass. Production-ready pending native speaker review.*

@@ -1,211 +1,353 @@
-# v7-1-1 — Im Supermarkt: Shopping in Germany
+# v7-1-1 — Im Supermarkt: Shopping in Germany (FULL SCRIPT)
 
 > **Module:** 7 — Shopping & Money (Einkaufen)
 > **Lesson:** 7-1 — At the Supermarket
-> **Duration:** ~12 minutes
-> **Exam relevance:** Lesen (shop signs, product labels), Hören (shopping dialogues), Sprechen Teil 3 (requests in shops)
-> **Prerequisites:** Module 3 (numbers/prices), Module 6 (food vocab, Akkusativ intro)
-> **Status:** 🔄 DRAFT
-> **Created:** 2026-03-23 (overnight cron)
+> **Duration:** 10:30 target
+> **Teaching Goal:** Help learners survive a German supermarket using high-frequency section words, shopping phrases, checkout language, and 1 small Akkusativ pattern they can actually use.
+> **A1 Exam Link:** Lesen (shop signs, labels, offers), Hören (checkout / shopping dialogues), Sprechen Teil 3 (asking for items/help in shops)
+> **Prerequisites:** Module 3 (numbers/prices), Module 6 (food vocabulary, ordering)
+> **Status:** REVISED — v2.0
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
-## Script
+## Pre-roll (0:00–0:10)
 
-### Scene 1: Pre-roll (0:00–0:15)
-**[BRANDING]**
-
----
-
-### Scene 2: Hook (0:15–1:00)
-**[SLIDE: Supermarket entrance with German signs]**
-
-**Narrator:**
-> "Welcome to the German Supermarkt! Very different from our kirana stores and Lulu Mall back home — but once you know the vocab, you'll navigate like a pro. No bargaining, no confusion, just efficient shopping. Adipoli style! Let's go inside."
+### Visual: [Course intro animation / Adipoli German branding]
+### Narration:
+"Willkommen bei Adipoli German!"
 
 ---
 
-### Scene 3: Supermarket Layout — Virtual Tour (1:00–3:00)
-**[DIAGRAM: Supermarket map with labelled sections]**
+## Section 1: Hook — Your 7-Minute Survival Mission (0:10–0:45)
 
-**Narrator:**
-> "German supermarkets are organized by sections. Let's walk through:"
->
-> **[Labels light up one by one]**
-> "Obst und Gemüse — fruits and vegetables. Usually right at the entrance. Fresh, well-organized."
-> "Milchprodukte — dairy products. Milk, yoghurt, cheese, butter."
-> "Bäckerei — bakery. Sometimes inside, sometimes attached. The BREAD selection will blow your mind!"
-> "Fleisch und Wurst — meat and sausage. Cold cuts section is huge."
-> "Tiefkühlkost — frozen food. 'Tief' = deep, 'kühl' = cool, 'Kost' = food."
-> "Getränke — drinks. Water, juice, beer, soft drinks."
->
-> ⏸️ **[Look at the map: where would you find Käse (cheese)?]**
-> "Answer: Milchprodukte! See — once you know the section names, you can find anything."
->
-> "Big supermarket chains: REWE, EDEKA (quality), ALDI, LIDL (budget). India-yile Reliance Fresh vs D-Mart pole — same products, different pricing."
+### Visual: [SLIDE: German supermarket entrance. Three challenge cards pop up: "find milk", "pay", "pack fast"]
+### Narration: [ENERGY: direct, practical]
+"You walk into REWE. You need milk, bread, and eggs. A staff member is busy. The cashier is fast. The line is watching.
+
+After this video, you'll do three things in German: find what you need, survive checkout, and avoid the classic Germany shopping shocks.
+
+*Ithu theory alla — Germany-il weekly life aanu.*"
 
 ---
 
-### Scene 4: Core Grocery Vocabulary (3:00–5:00)
-**[TABLE: 8 essential items with articles, colour-coded]**
+## Section 2: The 5 Supermarket Words That Unlock the Store (0:45–2:00)
 
-| German | Article | Meaning | Malayalam hint |
-|--------|---------|---------|---------------|
-| die Milch | die | milk | paal |
-| das Brot | das | bread | — (300+ varieties!) |
-| die Butter | die | butter | vennya |
-| das Ei / die Eier | das/die | egg / eggs | mutta |
-| der Zucker | der | sugar | pañcasāra |
-| das Mehl | das | flour | maavu |
-| die Nudeln | die (pl.) | pasta/noodles | — |
-| der Joghurt | der | yoghurt | — |
+### Visual: [DIAGRAM: Simple supermarket map with 5 sections lighting up one by one]
+### Narration: [ENERGY: organized, visual]
+"Don't memorize 20 sections. Start with the 5 you actually need.
 
-**Narrator:**
-> "Eight items you'll buy every week. Let's learn them WITH their articles — because in German, even your groceries have genders! 😄"
->
-> "die Milch — milk. Feminine. 'Ich brauche Milch.'"
-> "das Brot — bread. Neuter. Germany has over 300 types of bread. Kerala-yilum different types of appam, pathiri okke undo? Germany-yil athinte bread version!"
->
-> ⏸️ **[Repeat each item with article]**
->
-> "das Ei — one egg. die Eier — eggs, plural. 'Ich brauche sechs Eier.' — I need six eggs."
-> "der Zucker — sugar. Masculine."
-> "das Mehl — flour. 'Mehl' sounds like 'meal' in English — easy!"
-> "die Nudeln — pasta. Always plural. Germans love pasta almost as much as bread!"
-> "der Joghurt — yoghurt. 'Der Joghurt' — yes, it's masculine! 😄"
->
-> ⏸️ **[Cover the meanings. Can you name all 8 with their articles?]**
+[MAP labels light up]
+- **Obst und Gemüse** — fruit and vegetables
+- **Milchprodukte** — dairy
+- **Bäckerei** — bakery
+- **Getränke** — drinks
+- **Tiefkühlkost** — frozen food
 
----
+That's enough to survive your first month.
 
-### Scene 5: Asking for Items (5:00–6:30)
-**[SLIDE: Useful supermarket phrases]**
+### Drill 1
+⏸️ Where do you find cheese?
 
-**Narrator:**
-> "Three phrases to find ANYTHING in a German supermarket:"
->
-> "Number 1: 'Wo finde ich...?' — Where can I find...?"
-> "'Wo finde ich die Milch?' — Where can I find the milk?"
-> ⏸️ **[Repeat: 'Wo finde ich die Milch?']**
->
-> "Number 2: 'Haben Sie...?' — Do you have...?"
-> "'Haben Sie Basmati-Reis?' — Do you have Basmati rice?"
-> "This is great for specialty items — Indian spices, coconut milk, etc."
->
-> "Number 3: 'Entschuldigung, wo ist die Milch?' — Excuse me, where is the milk?"
->
-> "Tip: most staff are helpful but busy. Keep it short and specific!"
->
-> ⏸️ **[Practice: How would you ask for Mehl? For Eier?]**
+### Practice Pause: ⏸️ (2 seconds)
+
+**Milchprodukte.** Good.
+
+### Drill 2
+⏸️ Frozen pizza — which section?
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**Tiefkühlkost.**
+
+### Drill 3
+⏸️ Apples?
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**Obst und Gemüse.**
+
+*Kerala-le kada-il chodichu kittum. Germany supermarket-il signs vaayichu kandupidikkanam. So section words = survival words.*"
 
 ---
 
-### Scene 6: At the Checkout (6:30–7:30)
-**[DIALOGUE: Checkout conversation]**
+## Section 3: Your 8 Core Grocery Words — No Vocab Dump (2:00–3:30)
 
-**Narrator:**
-> "The checkout in Germany is FAST. Seriously. They scan like machines. Be ready!"
->
-> **[Dialogue]**
-> **Kassiererin:** "Hallo!"
-> **Du:** "Hallo!"
-> **Kassiererin:** "Brauchen Sie eine Tüte?" *(Do you need a bag?)*
-> **Du:** "Ja, bitte." *(or: "Nein, danke.")* 
-> **Kassiererin:** "Das macht zwölf Euro fünfzig."
-> **Du:** "Kann ich mit Karte zahlen?"
-> **Kassiererin:** "Ja, natürlich. Bitte."
-> **Du:** "Danke! Tschüss!"
-> **Kassiererin:** "Tschüss!"
->
-> "Key phrases here:"
-> "'Brauchen Sie eine Tüte?' — bags cost 20-30 cents. Bring your own to save money AND the planet!"
-> "'Das macht...' — that comes to (total). You learned this in Module 3."
-> "'Kann ich mit Karte zahlen?' — your lifeline. Though many German stores still prefer cash!"
->
-> ⏸️ **[Role-play: you're at the checkout. Practice the customer lines.]**
+### Visual: [CARD GRID: 8 grocery items with article colour-coding]
+### Narration: [ENERGY: brisk, teachable]
+"Now 8 grocery words you will genuinely use. Not 30. Just 8.
 
----
+- **die Milch** — milk
+- **das Brot** — bread
+- **die Butter** — butter
+- **das Ei / die Eier** — egg / eggs
+- **der Joghurt** — yoghurt
+- **der Reis** — rice
+- **das Wasser** — water
+- **der Käse** — cheese
 
-### Scene 7: Cultural Comparison — Kerala vs Germany Shopping (7:30–9:00)
-**[SLIDE: Side-by-side comparison]**
+We'll use them immediately.
 
-**Narrator:**
-> "Shopping in Germany vs Kerala — let me prepare you for the culture shock!"
->
-> "Kirana store vs Supermarket: In Kerala, you tell the shopkeeper what you want and they get it. In Germany, you walk around and pick EVERYTHING yourself. Self-service!"
->
-> "Bargaining: 'Bhaiyya, kurachu kuraycho?' NEVER in Germany. Prices are fixed. Period. 😄"
->
-> "Bags: Free bags in Kerala? Not in Germany! Bring your own or pay."
->
-> "Pfand — bottle deposit system! Every plastic and glass bottle has a deposit: 25 cents for single-use, 8-15 cents for reusable. Return them at the Pfandautomat machine in the store. 'Bottles throw cheyyanda — athu money aanu!'"
->
-> "Sunday shopping: EVERYTHING is closed on Sunday. 'Sunday-yil shopping nadakkilla — Saturday thanne plan cheyyuka!' Only small Kiosks at train stations stay open."
->
-> "Speed at checkout: German cashiers scan FAST. Pack your bags even faster or you'll hold up the line — and Germans do NOT like waiting. Kerala-yile laid-back checkout chat? Forget it! 😄"
+### Repeat After Me
+🔊 die Milch
+🔊 das Brot
+🔊 die Eier
+🔊 der Joghurt
+
+### Mini pattern
+- **Ich brauche Milch.**
+- **Ich brauche Brot.**
+- **Ich brauche sechs Eier.**
+
+Notice: when you're making a shopping list, you often DON'T need the article.
+
+⏸️ Say 3 things you need right now in German.
+
+### Practice Pause: ⏸️ (5 seconds)
+
+*Milk, bread, eggs parayaan pattiyal already you can function.*"
 
 ---
 
-### Scene 8: Akkusativ Through Shopping (9:00–10:30)
-**[HIGHLIGHT: Article changes in buying sentences]**
+## Section 4: The 3 Phrases That Find Everything (3:30–5:00)
 
-**Narrator:**
-> "Here's a grammar bonus that happens NATURALLY when you shop:"
->
-> "When you BUY something, the article changes. Why? Because the item becomes the OBJECT of your action. This is Akkusativ — you saw it briefly in Module 6 with food."
->
-> **[Table appears]**
-> "der Joghurt → 'Ich kaufe einEN Joghurt.' (masculine: ein → einen)"
-> "die Milch → 'Ich kaufe einE Milch.' (feminine: stays eine)"
-> "das Brot → 'Ich kaufe ein Brot.' (neuter: stays ein)"
->
-> "Only MASCULINE changes: ein → einen, der → den."
->
-> ⏸️ **[Practice: 'Ich kaufe einen Joghurt und eine Milch.']**
->
-> "Don't panic about Akkusativ. Just remember: when you're DOING something to a masculine noun, 'ein' gets an extra '-en'. Shopping makes this natural because you're always BUYING things."
+### Visual: [SLIDE: Three phrase cards, each tied to one situation]
+### Narration: [ENERGY: toolkit mode]
+"In a supermarket, three phrases do almost all the work.
 
----
+### Pattern 1: Where is it?
+**Entschuldigung, wo ist der Käse?**
+Use this when you know the item.
 
-### Scene 9: Shopping List Challenge (10:30–11:30)
-**[SLIDE: Quick-fire images]**
+### Pattern 2: Where can I find it?
+**Wo finde ich den Reis?**
+Slightly more natural inside bigger stores.
 
-**Narrator:**
-> "Quick-fire! Items flash — name them with articles!"
->
-> **[8 items appear one by one: milk, bread, eggs, sugar, butter, flour, pasta, yoghurt]**
->
-> ⏸️ **[Pause after each — say it with article]**
->
-> "Now: build a shopping list! Write 5 items you need to buy in German, with articles."
->
-> "'Ich brauche: Milch, Brot, sechs Eier, Butter, und Joghurt.'"
->
-> ⏸️ **[Write YOUR shopping list in German]**
+### Pattern 3: Do you have it?
+**Haben Sie Kokosmilch?**
+Perfect for Indian ingredients, specialty products, or when the shelf is empty.
 
----
+### Drill — predict before reveal
+You want rice. What do you ask?
+⏸️
 
-### Scene 10: Exam Connection + Outro (11:30–12:00)
-**[EXAM-TIP box]**
+### Practice Pause: ⏸️ (3 seconds)
 
-**Narrator:**
-> "Exam tips!"
-> "Lesen: Supermarket signs, product labels, and special offer posters are common reading items."
-> "Hören: Shopping dialogues test your ability to catch prices, items, and quantities."
-> "Sprechen Teil 3: 'Ich brauche...' and 'Haben Sie...?' are perfect request phrases."
->
-> "You can now shop in Germany! Next: let's talk about MONEY — prices, the Euro, and everything you need to know about paying. Bis gleich!"
+**Wo finde ich den Reis?**
+
+You want coconut milk. What do you ask?
+⏸️
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**Haben Sie Kokosmilch?**
+
+You need the cheese section quickly. What do you say?
+⏸️
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**Entschuldigung, wo ist der Käse?**
+
+[EXAM-TIP] These patterns are perfect for **Sprechen Teil 3** because they are short, polite, and safe."
 
 ---
 
-## Checklist
+## Section 5: Checkout Survival — The Fast German Finale (5:00–6:45)
 
-- [x] Teaching goal clear: navigate a German supermarket, know key grocery vocab
-- [x] A1 exam connection: Lesen (signs/labels), Hören (shopping dialogues), Sprechen Teil 3 (requests)
-- [x] Malayalam bridges: kirana store vs Supermarkt, bargaining culture, Sunday closing
-- [x] Common Malayali errors addressed: self-service shock, bag expectations, checkout speed
-- [x] Akkusativ naturally reinforced through shopping (ein → einen for masculine)
-- [x] Production opportunities: shopping list writing, checkout role-play, item naming
-- [x] Key patterns: "Wo finde ich...?", "Haben Sie...?", "Kann ich mit Karte zahlen?"
-- [x] Connects to Module 3 (numbers/prices), Module 6 (food vocab), forward to 7-2 (prices)
-- [x] Cultural bridge: Pfand system, Sunday closing, checkout speed, no bargaining
+### Visual: [DIALOGUE: Checkout scene. Customer lines highlighted in one color, cashier lines in another. Price total flashes onscreen.]
+### Narration: [ENERGY: lively, realistic]
+"Now the dangerous part: checkout.
+
+German cashiers are FAST. This is not small-talk time. This is scan-pay-pack time.
+
+### Golden checkout dialogue
+**Kassiererin:** Hallo.
+**Du:** Hallo.
+**Kassiererin:** Brauchen Sie eine Tüte?
+**Du:** Ja, bitte. / Nein, danke.
+**Kassiererin:** Das macht zwölf Euro fünfzig.
+**Du:** Kann ich mit Karte zahlen?
+**Kassiererin:** Ja, natürlich.
+**Du:** Danke. Tschüss!
+
+### What matters here
+- **Brauchen Sie eine Tüte?** — Do you need a bag?
+- **Das macht...** — That comes to...
+- **mit Karte zahlen** — pay by card
+
+### Role-play
+⏸️ You are the customer. Say ALL your lines.
+
+### Practice Pause: ⏸️ (8 seconds)
+
+### Quick reaction drill
+Cashier says: **'Brauchen Sie eine Tüte?'**
+You don't want a bag. Say it.
+⏸️
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**Nein, danke.**
+
+Cashier says: **'Das macht 18 Euro.'**
+You want to pay by card. Say it.
+⏸️
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**Kann ich mit Karte zahlen?**"
+
+---
+
+## Section 6: Germany Shopping Culture — 4 Things That Surprise Malayalis (6:45–8:00)
+
+### Visual: [SLIDE: 4 culture cards — fixed prices, bring your own bag, Pfand, Sunday closed]
+### Narration: [ENERGY: playful but useful]
+"Now the culture shocks.
+
+### 1. No bargaining
+Price is fixed. **Always.**
+*'Kurachu kurayumo?' Germany-il work aavilla.*
+
+### 2. Bags are not free
+Bring your own bag or pay.
+
+### 3. Pfand = bottle deposit
+You buy many bottles with extra money included. Later you return them to the machine and get the money back.
+*Bottle trash alla — pocket money aanu.*
+
+### 4. Sunday = mostly closed
+Plan shopping on Saturday. This is one of the biggest beginner mistakes in Germany.
+
+⏸️ Quick check — Sunday evening, fridge empty. Good plan or bad plan?
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**Bad plan.** Supermarkets are usually closed.
+
+This section matters because language is easier when the culture stops surprising you."
+
+---
+
+## Section 7: Tiny Grammar Upgrade — The One Akkusativ Change You Actually Need (8:00–9:00)
+
+### Visual: [TABLE: der/die/das with shopping sentence examples. Only masculine change highlighted in bold.]
+### Narration: [ENERGY: careful, non-scary]
+"One mini grammar upgrade.
+
+When you buy something, masculine nouns often change:
+- **der Joghurt** → **Ich kaufe einen Joghurt.**
+- **der Käse** → **Ich kaufe einen Käse.**
+- **die Milch** → **Ich kaufe eine Milch.**
+- **das Brot** → **Ich kaufe ein Brot.**
+
+The important idea:
+**Masculine changes. Feminine and neuter usually stay easier.**
+
+Don't turn this into a grammar panic. Just notice the high-frequency pattern:
+**ein → einen** with many masculine shopping nouns.
+
+⏸️ Say it: 'I am buying a yoghurt.'
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**Ich kaufe einen Joghurt.**
+
+[EXAM-TIP] Even if you forget this under pressure, your shop-request phrases from Section 4 still save you. Communication first, grammar second."
+
+---
+
+## Section 8: Active Recall — Build One Full Shopping Mission (9:00–10:00)
+
+### Visual: [MISSION CARD: "You need rice, yoghurt, and water. Ask staff, then pay."]
+### Narration: [ENERGY: challenge mode]
+"Let's combine everything.
+
+Scenario: You need **Reis**, **Joghurt**, and **Wasser**.
+
+### Step 1
+Ask where the rice is.
+⏸️
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**Wo finde ich den Reis?**
+
+### Step 2
+At checkout, cashier asks if you need a bag. Say no.
+⏸️
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**Nein, danke.**
+
+### Step 3
+Ask to pay by card.
+⏸️
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**Kann ich mit Karte zahlen?**
+
+That's enough German to survive a full supermarket visit."
+
+---
+
+## Section 9: Summary & Homework (10:00–10:30)
+
+### Visual: [SLIDE: 3-box summary — sections, phrases, checkout]
+### Narration: [ENERGY: warm, practical]
+"Today's 3 takeaways:
+1. Learn the 5 section words
+2. Use the 3 finder phrases
+3. Master the checkout trio: **Tüte / Das macht... / mit Karte zahlen**
+
+### Homework
+Next time you shop, say these out loud:
+- **Ich brauche...** three items
+- **Wo finde ich...?** one item
+- **Kann ich mit Karte zahlen?** at checkout
+
+Next lesson: clothes shopping — sizes, colors, and trying things on.
+
+Bis zum nächsten Mal! Tschüss!"
+
+---
+
+## Script Quality Checklist (v2.0)
+
+- [x] Hook under 40 seconds with concrete survival payoff
+- [x] Teach → Drill → Apply cycles throughout (sections → items → phrases → checkout)
+- [x] Reduced vocabulary overload from large tables to 5 sections + 8 items
+- [x] Practice pauses have clear prompts and reveals (13 pauses)
+- [x] Malayalam bridges are practical cultural comparisons, not filler
+- [x] Sprechen Teil 3 link is explicit via shop-request phrases
+- [x] Checkout scene is active role-play, not passive dialogue dump
+- [x] Culture section teaches behavior that reduces learner panic
+- [x] Akkusativ reduced to one usable shopping pattern instead of abstract lecture
+- [x] Visual blocks are production-friendly and reusable
+- [x] Duration realistic for ~10:30
+- [x] No A2+ overload
+
+---
+
+## Revision Notes (v1.0 → v2.0)
+
+- **Hook tightened:** Replaced general supermarket intro with a 3-part survival mission learners can immediately picture
+- **Vocabulary cut down:** Reduced section overload and grocery table bloat; kept only 5 section words + 8 high-frequency items
+- **Pacing improved:** Rebuilt around teach→drill→apply instead of tour → table → lecture
+- **Checkout made active:** Converted passive checkout explanation into role-play + reaction drills
+- **Culture section sharpened:** Kept only 4 highest-value Germany shocks (fixed prices, bags, Pfand, Sunday closing)
+- **Grammar downgraded to usable minimum:** Akkusativ now taught as one practical masculine buying pattern, not a theory block
+- **Exam usefulness increased:** Shop phrases now explicitly positioned as Sprechen Teil 3-safe output
+- **Word count reduced:** Less talky, more student speaking time
+
+---
+
+## Production Notes
+
+**Visual assets:** supermarket map, 8 grocery flash cards, checkout dialogue scene, 4 culture cards, simple accusative table.
+**Audio needs:** clear pronunciation for section names and checkout dialogue.
+**Exercise tie-ins:** shopping-list writing, item-to-section matching, checkout role-play, request phrase practice.
+**Connections:** Module 3 (numbers / prices), Module 6 (food vocab / ordering), Module 7-2 (clothes shopping), Module 18 (Sprechen request patterns).

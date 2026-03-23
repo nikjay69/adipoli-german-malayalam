@@ -1,26 +1,23 @@
 # v18-4-1 — Sprechen Teil 2 & 3: Questions & Requests (FULL SCRIPT)
 
 > **Module:** 18 | **Lesson:** 18-4 | **Duration:** 12:00 target
-> **Teaching Goal:** Master forming questions from word cards (Teil 2) and polite requests from situation cards (Teil 3)
+> **Teaching Goal:** Master the two interaction skills the exam actually tests here: turning a prompt card into a clear question and turning a situation into a polite request, then giving a short natural response.
 > **A1 Exam Link:** Sprechen Teil 2 + Teil 3 (together with Teil 1, makes up the 25% speaking score)
-> **Status:** REVISED — v2.0
-> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass — interaction realism + pacing pass)
 
 ---
 
-## Revision Notes (v1.0 → v2.0)
+## Why this revision exists
 
-| Change | Detail |
-|--------|--------|
-| Hook tightened | 60s → 35s, leads with the exam scenario instead of motivation |
-| Energy cues added | Every section has `[ENERGY:]` markers |
-| Question table chunked | Was a 15-row info dump → now 3 groups with drills between each |
-| Request patterns chunked | 6 patterns were stacked → now teach 2, drill, teach 2, drill, teach 2, drill |
-| Active recall before summary | Students recall patterns before seeing the final cheat sheet |
-| Situations made more active | Added "what would YOU say?" prompts before model answers |
-| Malayalam bridges upgraded | Structural parallels about question formation, not translations |
-| Common mistakes integrated earlier | Now appear inline where mistakes actually happen |
-| ~10% tighter pacing | Cut redundant setup language |
+This v2.1 pass fixes the biggest weakness of many speaking scripts: they teach only the **question/request starter**, but the exam is an **interaction**.
+
+So this version now teaches:
+- the card → sentence conversion
+- the safest high-frequency question patterns
+- the safest high-frequency request patterns
+- the **mini-answer / mini-response** learners need after the first line
+- reaction phrases that make the exchange sound alive, not robotic
 
 ---
 
@@ -32,379 +29,349 @@
 
 ---
 
-## Section 1: Hook — The Exam Asks You to Ask (0:10–0:45)
+## Section 1: Hook — The Exam Tests Interaction, Not Magic (0:10–0:40)
 
-### Visual: [SLIDE: Two exam cards side by side — a word card "Preis?" and a situation card "Sie sind am Bahnhof..."]
-### Narration: [ENERGY: direct, punchy]
-"Sprechen Teil 2: you see the word 'Preis?' — turn it into a question.
-Sprechen Teil 3: you're at the train station — ask for what you need.
+### Visual: [SLIDE: two cards — “Preis?” and “Bahnhof” — with arrows turning into speech bubbles]
+### Narration: [ENERGY: direct, confidence-building]
+"In Teil 2, you see one word and turn it into a question.
+In Teil 3, you see one situation and ask for what you need.
 
-Both test ONE skill: can you ask for things in German?
+That sounds scary only if you think you must invent perfect German.
 
-*German-il questions chodicchaalë survive cheyyaan pattoo? Athaanu exam test cheyyunnathu.*
+You don't.
 
-Two parts. One skill. Let's master it."
+*Card kandittu full grammar puthiyayi build cheyyanda. Ready patterns eduthu fit cheythaal mathi.*
 
----
-
-## PART A: SPRECHEN TEIL 2 — Questions from Word Cards
+Today we'll train the patterns that carry the whole interaction."
 
 ---
 
-## Section 2: How It Works (0:45–1:30)
+## Section 2: Teil 2 Format — Word Card → Full Question (0:40–1:10)
 
-### Visual: [SLIDE: Exam setup — two candidates + examiner, word cards on table]
-### Narration: [ENERGY: brisk, informative]
-"You and a partner take turns. You draw a card. One word on it. You form a complete question from that word.
+### Visual: [SLIDE: candidate A asks, candidate B answers]
+### Narration: [ENERGY: brisk, clear]
+"Teil 2 is simple:
+- you get a **word card**
+- you ask a full question
+- your partner gives a short answer
 
-[Cards flip: **Name? → Preis? → Hobby?**]
-
-Your partner answers. They draw, ask you. 3–4 rounds each.
-
-[EXAM-TIP] The examiner wants ONE thing: can you turn a word into a question? No fancy grammar needed. Just a clear, correct question."
-
----
-
-## Section 3: Group 1 — Personal Questions (1:30–3:00)
-
-### Visual: [TABLE building row by row]
-### Narration: [ENERGY: teaching, methodical]
-
-"The most common word cards are about people. Here's the pattern:
-
-*Malayalam-il question-në word order maattuka — 'nee evideyaa?' German-ilum athë pole, special question words undë: Wie, Was, Wo, Woher.*
-
-### Key Vocabulary Overlay:
-| Card | → Question |
-|------|-----------|
-| **Name?** | Wie heißen Sie? |
-| **Alter?** | Wie alt sind Sie? |
-| **Wohnort?** | Wo wohnen Sie? |
-| **Herkunft?** | Woher kommen Sie? |
-| **Beruf?** | Was sind Sie von Beruf? |
-| **Sprachen?** | Welche Sprachen sprechen Sie? |
-| **Hobby?** | Was machen Sie in Ihrer Freizeit? |
-
-Notice the pattern: **Question word → Verb → Sie?**
-
-⏸️ **Quick drill — I say the card, you form the question:**
-'Name?' → ... (3s) → ✅ 'Wie heißen Sie?'
-'Wohnort?' → ... (3s) → ✅ 'Wo wohnen Sie?'
-'Beruf?' → ... (3s) → ✅ 'Was sind Sie von Beruf?'
-
-Three for three? Adipoli!"
+[EXAM-TIP] The examiner is not waiting for complex grammar. A short, clear, correct question wins."
 
 ---
 
-## Section 4: Group 2 — Numbers & Time Questions (3:00–4:15)
+## Section 3: The 4 Safest Question Frames (1:10–2:40)
 
-### Visual: [TABLE continuing]
-### Narration: [ENERGY: steady, precise]
+### Visual: [TABLE: 4 frames only, big and memorable]
+### Narration: [ENERGY: teacher-mode]
+"Instead of memorizing 20 random questions, memorize 4 reusable frames.
 
-"Next group — anything with numbers, time, or data:
+### Frame 1
+**Wie heißen Sie?**
+→ for **Name**
 
-| Card | → Question |
-|------|-----------|
-| **Preis?** | Wie viel kostet das? |
-| **Uhrzeit?** | Wie spät ist es? / Um wie viel Uhr beginnt...? |
-| **Telefonnummer?** | Wie ist Ihre Telefonnummer? |
-| **Datum?** | Wann ist der Termin? |
+### Frame 2
+**Wo / Woher ... ?**
+→ for **Wohnort / Herkunft**
+- **Wo wohnen Sie?**
+- **Woher kommen Sie?**
 
-Two new question starters: **'Wie viel'** (how much) and **'Wann'** (when).
+### Frame 3
+**Was / Welche ... ?**
+→ for **Beruf / Sprachen / Hobby**
+- **Was sind Sie von Beruf?**
+- **Welche Sprachen sprechen Sie?**
+- **Was machen Sie in Ihrer Freizeit?**
 
-⏸️ **Your turn:**
-'Preis?' → ... (3s) → ✅ 'Wie viel kostet das?'
-'Uhrzeit?' → ... (3s) → ✅ 'Wie spät ist es?'
+### Frame 4
+**Wie viel / Wann / Um wie viel Uhr ... ?**
+→ for **Preis / Zeit / Termin**
+- **Wie viel kostet das?**
+- **Wann ist der Termin?**
+- **Um wie viel Uhr beginnt der Kurs?**
+
+*Ithu full new grammar alla. Question-word choose cheyyanam, pinne simple sentence finish cheyyanam.*"
 
 ---
 
-## Section 5: Group 3 — Practical Life Questions (4:15–5:15)
+## Section 4: Card Drill — Ask, Then Answer (2:40–4:10)
 
-### Visual: [TABLE continuing]
+### Visual: [flash cards one by one]
+### Narration: [ENERGY: active, exam-like]
+"Now we do it the exam way. I'll give the card. You ask the question. Then you give a short answer too.
+
+**Card: Name**
+⏸️ Ask it.
+### Practice Pause: ⏸️ (3 seconds)
+✅ **Wie heißen Sie?**
+Short answer: **Ich heiße Anju.**
+
+**Card: Wohnort**
+⏸️ Ask it.
+### Practice Pause: ⏸️ (3 seconds)
+✅ **Wo wohnen Sie?**
+Short answer: **Ich wohne in Köln.**
+
+**Card: Sprachen**
+⏸️ Ask it.
+### Practice Pause: ⏸️ (3 seconds)
+✅ **Welche Sprachen sprechen Sie?**
+Short answer: **Ich spreche Malayalam, Englisch und ein bisschen Deutsch.**
+
+**Card: Preis**
+⏸️ Ask it.
+### Practice Pause: ⏸️ (3 seconds)
+✅ **Wie viel kostet das?**
+Short answer: **Das kostet zehn Euro.**
+
+Important: don't train only the question. Train the **whole exchange**."
+
+---
+
+## Section 5: Reaction Phrases — Sound Human, Buy Thinking Time (4:10–4:50)
+
+### Visual: [SLIDE: Ach so! / Okay. / Danke. / Gut. / Super.]
 ### Narration: [ENERGY: conversational]
+"After your partner answers, tiny reaction phrases help a lot:
 
-"Last group — everyday life topics:
+- **Ach so.**
+- **Okay.**
+- **Gut.**
+- **Super.**
+- **Danke.**
 
-| Card | → Question |
-|------|-----------|
-| **Essen?** | Was essen Sie gern? |
-| **Verkehrsmittel?** | Wie kommen Sie zur Arbeit? |
-| **Familie?** | Haben Sie Kinder? |
-| **Reise?** | Wohin reisen Sie gern? |
+These do two things:
+1. they make the interaction sound natural
+2. they give your brain one extra second
 
-New starter: **'Wohin'** (where to — for destinations).
-
-⏸️ **Drill:**
-'Essen?' → ... (3s) → ✅ 'Was essen Sie gern?'
-'Familie?' → ... (3s) → ✅ 'Haben Sie Kinder?' or 'Haben Sie Geschwister?'
-
-[A1-SAFE] Every question uses words you already know. No new vocabulary — just new combinations."
+*Small reaction phrases exam-il brain reset button pole aanu.*"
 
 ---
 
-## Section 6: Quick-Fire Drill (5:15–6:00)
+## Section 6: Teil 3 Format — Situation Card → Polite Request (4:50–5:20)
 
-### Visual: [Word cards flashing, 4 seconds each, rapid transitions]
-### Narration: [ENERGY: fast, gameshow]
-
-"⚡ Speed round! Card appears, you have 4 seconds. Go!
-
-[Card: **Alter?**] ⏸️ (4s) → 'Wie alt sind Sie?'
-[Card: **Hobby?**] ⏸️ (4s) → 'Was machen Sie in Ihrer Freizeit?'
-[Card: **Preis?**] ⏸️ (4s) → 'Wie viel kostet das?'
-[Card: **Sprachen?**] ⏸️ (4s) → 'Welche Sprachen sprechen Sie?'
-[Card: **Telefonnummer?**] ⏸️ (4s) → 'Wie ist Ihre Telefonnummer?'
-[Card: **Wohnort?**] ⏸️ (4s) → 'Wo wohnen Sie?'
-
-5 out of 6? Teil 2 is yours. Let's move to Teil 3."
-
----
-
-## PART B: SPRECHEN TEIL 3 — Polite Requests
-
----
-
-## Section 7: The Format (6:00–6:30)
-
-### Visual: [SLIDE: Situation card — "Sie sind am Bahnhof. Sie möchten eine Fahrkarte kaufen."]
-### Narration: [ENERGY: clear, practical]
-"Teil 3 — a situation card. It describes WHERE you are and WHAT you need. You make a polite request.
-
-This is real German survival. The exam tests: can you get what you need by asking?"
-
----
-
-## Section 8: Patterns 1–2 — Ordering & Wanting (6:30–7:30)
-
-### Visual: [SLIDE: Two patterns with examples]
-### Narration: [ENERGY: teaching, clear]
-
-"Six patterns handle everything. Let's learn them in pairs.
-
-**Pattern 1: Ich hätte gern...**
-'Ich hätte gern einen Kaffee, bitte.'
-→ Use this to ORDER or BUY something.
-*'Enikkë oru coffee vēnam please' — athānu ithu.*
-
-**Pattern 2: Ich möchte gern...**
-'Ich möchte gern einen Termin machen.'
-→ Use this to DO something — make appointments, sign up, visit.
-
-The difference: 'hätte gern' = I'd like to HAVE. 'Möchte gern' = I'd like to DO.
-
-⏸️ **Practice both:**
-Ordering coffee → ... (3s) → ✅ 'Ich hätte gern einen Kaffee, bitte.'
-Making an appointment → ... (3s) → ✅ 'Ich möchte gern einen Termin machen.'
-
-⚠️ **Inline tip: ALWAYS add 'bitte'!** Without it, German requests sound rude."
-
----
-
-## Section 9: Patterns 3–4 — Asking for Help (7:30–8:15)
-
-### Visual: [SLIDE: Two more patterns]
+### Visual: [SLIDE: situation card examples — restaurant / station / doctor / supermarket]
 ### Narration: [ENERGY: practical]
+"Teil 3 changes the input, not the skill.
 
-"**Pattern 3: Können Sie mir bitte...?**
-'Können Sie mir bitte helfen?'
-→ Your HELP pattern. When you need someone to DO something for you.
+Now you see a **situation card**. You must ask politely for what you need.
 
-**Pattern 4: Kann ich bitte... haben?**
-'Kann ich bitte die Speisekarte haben?'
-→ When you want to RECEIVE something specific.
-
-⚠️ **Always 'Sie', never 'du'!** In the exam and with strangers: 'Können SIE mir...' not 'Kannst du mir...'
-
-⏸️ **Practice:**
-You need help → ... (3s) → ✅ 'Können Sie mir bitte helfen?'
-You want the menu → ... (3s) → ✅ 'Kann ich bitte die Speisekarte haben?'"
+Real-life German. Survival German."
 
 ---
 
-## Section 10: Patterns 5–6 — Finding Things (8:15–8:50)
+## Section 7: The 5 Golden Request Frames (5:20–7:10)
 
-### Visual: [SLIDE: Last two patterns]
-### Narration: [ENERGY: conversational]
+### Visual: [TABLE: 5 frames only, with one use-case each]
+### Narration: [ENERGY: structured, clear]
+"Again, don't memorize 30 sentences. Memorize 5 frames.
 
-"**Pattern 5: Entschuldigung, wo ist...?**
-'Entschuldigung, wo ist der Bahnhof?'
-→ Finding places. 'Entschuldigung' gets attention AND sounds polite.
+### Frame 1 — ordering / buying
+**Ich hätte gern ... , bitte.**
+- **Ich hätte gern eine Fahrkarte nach Berlin, bitte.**
+- **Ich hätte gern einen Kaffee, bitte.**
 
-**Pattern 6: Gibt es hier...?**
-'Gibt es hier ein Restaurant?'
-→ When you want to know if something EXISTS nearby.
+### Frame 2 — wanting to do something
+**Ich möchte gern ...**
+- **Ich möchte gern einen Termin machen.**
+- **Ich möchte gern einen Deutschkurs besuchen.**
 
-⏸️ **Practice:**
-Finding the toilet → ... (3s) → ✅ 'Entschuldigung, wo ist die Toilette?'
-Is there an ATM? → ... (3s) → ✅ 'Gibt es hier einen Geldautomaten?'
+### Frame 3 — asking for help
+**Können Sie mir bitte helfen?**
+- add the thing if needed: **Können Sie mir bitte den Weg zeigen?**
 
-*Ee aarë patterns mathiyaarunnu 95% real-life situations-në handle cheyyaan!*"
+### Frame 4 — receiving something
+**Kann ich bitte ... haben?**
+- **Kann ich bitte die Speisekarte haben?**
+- **Kann ich bitte ein Formular haben?**
 
----
+### Frame 5 — finding something
+**Entschuldigung, wo ist ... ?**
+- **Entschuldigung, wo ist der Bahnhof?**
+- **Entschuldigung, wo ist die Toilette?**
 
-## Section 11: Situation Card Practice (8:50–10:30)
-
-### Visual: [Situation cards appearing one by one]
-### Narration: [ENERGY: coach-like, encouraging]
-
-"Real exam-style situations. I describe it — you respond — then check my model answer.
-
----
-
-**Situation 1:**
-### Visual: [CARD: 'Sie sind im Restaurant. Sie möchten bestellen.']
-You're in a restaurant. You want to order.
-
-⏸️ **What do you say? (5s)**
-
-✅ 'Ich hätte gern eine Suppe und ein Mineralwasser, bitte.'
-Also good: 'Kann ich bitte die Speisekarte haben?'
+Safe rule: with strangers and in the exam, stay with **Sie** and add **bitte**."
 
 ---
 
-**Situation 2:**
-### Visual: [CARD: 'Sie sind am Bahnhof. Sie möchten nach München fahren.']
-You're at the train station. Munich is the destination.
+## Section 8: Situation Drill — Request + Short Follow-Up (7:10–9:20)
 
-⏸️ **Go! (5s)**
+### Visual: [situation cards appear one by one]
+### Narration: [ENERGY: coach-like, exam simulation]
+"Now the real exam rhythm.
 
-✅ 'Ich hätte gern eine Fahrkarte nach München, bitte.'
-Bonus: 'Einfach oder hin und zurück? — Hin und zurück, bitte.'
+### Situation 1 — Train station
+You want a ticket to Munich.
+⏸️ What do you say?
+### Practice Pause: ⏸️ (4 seconds)
+✅ **Ich hätte gern eine Fahrkarte nach München, bitte.**
+Possible follow-up answer if asked *Einfach oder hin und zurück?*
+→ **Hin und zurück, bitte.**
 
----
+### Situation 2 — Restaurant
+You want the menu.
+⏸️ Go.
+### Practice Pause: ⏸️ (4 seconds)
+✅ **Kann ich bitte die Speisekarte haben?**
+Short reaction after receiving it:
+→ **Danke.**
 
-**Situation 3:**
-### Visual: [CARD: 'Sie sind beim Arzt. Sie haben Kopfschmerzen.']
-You're at the doctor. Headache.
+### Situation 3 — Doctor's office
+You need help because you have a headache.
+⏸️ Go.
+### Practice Pause: ⏸️ (4 seconds)
+✅ **Ich habe Kopfschmerzen. Können Sie mir bitte helfen?**
 
-⏸️ **What do you say? (5s)**
+### Situation 4 — Supermarket
+You can't find milk.
+⏸️ Go.
+### Practice Pause: ⏸️ (4 seconds)
+✅ **Entschuldigung, wo ist die Milch?**
 
-✅ 'Ich habe Kopfschmerzen. Können Sie mir bitte etwas geben?'
+### Situation 5 — Language school
+You want to join a course.
+⏸️ Go.
+### Practice Pause: ⏸️ (4 seconds)
+✅ **Ich möchte gern einen Deutschkurs besuchen. Wann beginnt der Kurs?**
 
----
-
-**Situation 4:**
-### Visual: [CARD: 'Sie suchen die Bibliothek.']
-You need the library.
-
-⏸️ **(5s)**
-
-✅ 'Entschuldigung, wo ist die Bibliothek?'
-
----
-
-**Situation 5:**
-### Visual: [CARD: 'Sie sind im Supermarkt. Sie finden die Milch nicht.']
-Supermarket. Can't find milk.
-
-⏸️ **(5s)**
-
-✅ 'Entschuldigung, wo finde ich die Milch?'
-
----
-
-**Situation 6:**
-### Visual: [CARD: 'Sie möchten einen Deutschkurs besuchen.']
-You want to join a German course.
-
-⏸️ **(5s)**
-
-✅ 'Ich möchte gern einen Deutschkurs machen. Wann beginnt der nächste Kurs?'
-
-[EXAM-TIP] **What if you forget a word?** Describe it! Can't remember 'Geldautomat'? Say: 'Ich brauche Geld. Wo kann ich Geld bekommen?' — the examiner understands."
+Notice what matters: first line clear, second line simple. No drama."
 
 ---
 
-## Section 12: Active Recall — Rebuild the 6 Patterns (10:30–11:15)
+## Section 9: Rescue Strategy — When You Forget the Exact Word (9:20–10:05)
 
-### Visual: [SLIDE: 6 numbered blanks with only the USE CASE as hints]
-### Narration: [ENERGY: challenging]
+### Visual: [SLIDE: “Don’t freeze — simplify”]
+### Narration: [ENERGY: reassuring]
+"What if you forget one key noun?
 
-"Before I show you the cheat sheet — can YOU recall all 6 patterns?
+Do **not** freeze.
+Simplify.
 
-I'll give the use case. You say the pattern starter.
+Examples:
+- forgot **Geldautomat**? → **Wo kann ich Geld bekommen?**
+- forgot **Speisekarte**? → **Kann ich bitte die Karte haben?**
+- forgot **Bahnhof**? → **Wo fahren die Züge?** is not perfect, but it keeps you speaking
 
-1. **Ordering/buying** → ⏸️ (4s) → ✅ 'Ich hätte gern...'
-2. **Wanting to do something** → ⏸️ (4s) → ✅ 'Ich möchte gern...'
-3. **Asking for help** → ⏸️ (4s) → ✅ 'Können Sie mir bitte...?'
-4. **Receiving something** → ⏸️ (4s) → ✅ 'Kann ich bitte... haben?'
-5. **Finding a place** → ⏸️ (4s) → ✅ 'Entschuldigung, wo ist...?'
-6. **Checking if something exists** → ⏸️ (4s) → ✅ 'Gibt es hier...?'
-
-All 6? You're ready. Missed some? Rewatch Section 8–10."
+[EXAM-TIP] In speaking, a simple workaround is better than silence."
 
 ---
 
-## Section 13: Summary & Outro (11:15–12:00)
+## Section 10: Mixed Pair Practice — Teil 2 or Teil 3? Decide Fast (10:05–11:00)
 
-### Visual: [SLIDE: "Sprechen Teil 2 & 3 ✅" — clean cheat sheet]
+### Visual: [mixed prompts flash; learner decides question vs request]
+### Narration: [ENERGY: fast, playful]
+"I'll show a prompt. You decide: is it a **question** or a **request** task? Then say it.
+
+**Preis** → question
+⏸️
+✅ **Wie viel kostet das?**
+
+**Bahnhof** and you need directions → request / location ask
+⏸️
+✅ **Entschuldigung, wo ist der Bahnhof?**
+
+**Sprachen** → question
+⏸️
+✅ **Welche Sprachen sprechen Sie?**
+
+**Restaurant — you want water** → request
+⏸️
+✅ **Ich hätte gern ein Wasser, bitte.**
+
+This is the real mental move: identify the task fast, then use the right frame."
+
+---
+
+## Section 11: Active Recall — The Cheat Sheet in Your Head (11:00–11:35)
+
+### Visual: [blank categories only]
+### Narration: [ENERGY: testing]
+"Recall from memory.
+
+### Teil 2
+- Name → ⏸️
+- Herkunft → ⏸️
+- Beruf → ⏸️
+- Preis → ⏸️
+
+### Teil 3
+- order something → ⏸️
+- want to do something → ⏸️
+- ask for help → ⏸️
+- find a place → ⏸️
+
+If you can recall the frame, you can build the sentence."
+
+---
+
+## Section 12: Outro (11:35–12:00)
+
+### Visual: [SLIDE: “Teil 2 + Teil 3 ✅”]
 ### Narration: [ENERGY: warm, motivating]
+"So that's the speaking formula:
+- **word card** → ask a question
+- **situation card** → make a polite request
+- then add one short answer or reaction so the exchange feels natural
 
-"That's both parts done!
+Homework: do **5 question cards and 5 situation cards** out loud today.
 
-**Teil 2:** Word card → question. Remember: **Question word → Verb → Sie?**
-**Teil 3:** Situation card → polite request. Your 6 golden patterns handle everything.
-
-📝 **Homework:** 5 questions + 5 requests per day this week. Pick random words and situations from your daily life.
-
-*Exam-il ingë chodicchaalum — nee ready aanu!*
-
-Next up: the full mock exam walkthrough — your final rehearsal before the real thing.
+Next: the full mock exam strategy.
 
 Tschüss!"
 
 ---
 
-## Post-roll
-[Course outro / Next lesson teaser: "Next: Full Mock Exam Tips — v18-5-1"]
+## Quick Reference Card
+
+### Teil 2 — safest question frames
+```text
+Wie heißen Sie?
+Wo wohnen Sie?
+Woher kommen Sie?
+Was sind Sie von Beruf?
+Welche Sprachen sprechen Sie?
+Wie viel kostet das?
+Wann ist / beginnt ... ?
+Um wie viel Uhr ... ?
+```
+
+### Teil 3 — safest request frames
+```text
+Ich hätte gern ... , bitte.
+Ich möchte gern ...
+Können Sie mir bitte helfen?
+Kann ich bitte ... haben?
+Entschuldigung, wo ist ... ?
+```
+
+### Mini reactions
+```text
+Ach so.
+Okay.
+Gut.
+Super.
+Danke.
+```
 
 ---
 
-## Quick Reference Cards (for students)
+## Script Quality Checklist (v2.1)
 
-### Teil 2 — Question Starters
-```
-Wie heißen Sie?          Wie viel kostet...?
-Wie alt sind Sie?        Um wie viel Uhr...?
-Wo wohnen Sie?           Wann ist/beginnt...?
-Woher kommen Sie?        Wie ist Ihre...?
-Was sind Sie von Beruf?  Haben Sie...?
-Welche Sprachen...?      Wohin reisen Sie gern?
-```
-
-### Teil 3 — 6 Golden Request Patterns
-```
-1. Ich hätte gern...           (ordering/buying)
-2. Ich möchte gern...          (wanting to do)
-3. Können Sie mir bitte...?    (asking for help)
-4. Kann ich bitte... haben?    (receiving something)
-5. Entschuldigung, wo ist...?  (finding places)
-6. Gibt es hier...?            (checking existence)
-```
-
-*Print these. Carry them. Practice daily.*
+- [x] Hook under 40 seconds, centered on the real interaction task
+- [x] Pattern set reduced to fewer, higher-frequency frames
+- [x] Teaches **question/request + short answer/reaction**, not only openers
+- [x] Includes rescue strategy for forgotten vocabulary
+- [x] Malayalam bridges explain the cognitive move, not just meaning
+- [x] Visuals are simpler and more shootable than a giant pattern dump
+- [x] High speaking utility with low grammar risk
+- [x] Explicitly trains the learner to identify the task type fast
 
 ---
 
-## Script Quality Checklist
+## Revision Notes (v2.0 → v2.1)
 
-- [x] **Hook under 60 seconds** — 35s, leads with exam scenario
-- [x] **No monologue block exceeds 90 seconds** without interaction
-- [x] **Teach → Drill → Apply cycle** — patterns taught in pairs with drills between
-- [x] **Duration realistic** — ~1800 words ÷ 150 wpm + pauses ≈ 12:00
-- [x] **Energy/tone cues** at every section transition
-- [x] **Practice pauses have specific prompts** with exact German + reveal
-- [x] **Active recall summary** — Section 12 rebuilds patterns from memory
-- [x] **Minimum 6 practice pauses** — 18+ pauses total
-- [x] **No passive summary lists** — active recall before cheat sheet
-- [x] **Malayalam bridges are structural** — question formation parallel, not dictionary
-- [x] **One clear teaching goal per section**
-- [x] **Exam connection explicit** — Sprechen Teil 2+3, part of 25% speaking
-- [x] **No A2+ content** — all A1-SAFE
-- [x] **German grammatically verified** ✓
-- [x] **Visual cues producible** — [SLIDE:], [CARD:], [TABLE:] tagged
-- [x] **Exam tips limited to 3 inline markers** — 3 [EXAM-TIP]
-- [x] **Outro has clear next-lesson bridge** — mock exam walkthrough
-- [x] **Homework is specific** — 5+5 daily, real-life scenarios
-- [x] **Status updated** to REVISED — v2.0
-- [x] **Revision notes documenting changes**
+- cut the script down to **fewer, more reusable frames** instead of broader but noisier pattern coverage
+- added the missing **interaction realism**: short answers, follow-ups, and reaction phrases
+- made the lesson less list-heavy and more exam-like with card → response drills
+- added a **rescue strategy** for forgotten nouns so learners do not freeze
+- improved production-friendliness by simplifying tables and grouping visuals more cleanly
+- aligned the speaking logic with the exam-prep goal: clear exchange over pattern overload

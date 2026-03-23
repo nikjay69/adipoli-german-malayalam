@@ -1,10 +1,10 @@
 # v13-2-1 — Perfekt with sein: Movement & Change Verbs (FULL SCRIPT)
 
-> **Module:** 13 | **Lesson:** 13-2 | **Duration:** 12:00 target
+> **Module:** 13 | **Lesson:** 13-2 | **Duration:** ~12:30 target
 > **Teaching Goal:** Master Perfekt with sein for movement/change-of-state verbs. Learn the limited sein verb set and distinguish haben vs sein.
 > **A1 Exam Link:** Schreiben Teil 2 (past events — weekend, trip, visit), Sprechen (describing past experiences), Hören (understanding past narratives)
-> **Status:** REVISED — v2.0
-> **Revised:** 2026-03-23 (quality pass cron)
+> **Status:** REVISED — v2.1
+> **Revised:** 2026-03-23 19:12 UTC (quality verification cron — split 10-verb movement block into 4+4+2 with interleaving drills)
 
 ---
 
@@ -63,7 +63,7 @@ Let's test it:
 
 ---
 
-## Section 3: The Sein Verb List — Movement (2:30–4:15)
+## Section 3: Movement Verbs — Block 1: The Big Four (2:30–3:30)
 
 [ENERGY: systematic, drilling]
 
@@ -71,7 +71,9 @@ Let's test it:
 ### Narration:
 "About 12 common sein verbs for A1. Let's split them: movement first, then state change.
 
-### 🚶 Movement Verbs (A → B):
+We'll learn movement verbs in small groups — 4 at a time.
+
+### 🚶 Block 1 — The Big Four (most frequent):
 
 | Infinitiv | Partizip II | English |
 |-----------|-------------|---------|
@@ -79,8 +81,6 @@ Let's test it:
 | **fahren** | **gefahren** | to drive/travel 🚗 |
 | **fliegen** | **geflogen** | to fly ✈️ |
 | **kommen** | **gekommen** | to come 👋 |
-| **laufen** | **gelaufen** | to run 🏃 |
-| **reisen** | **gereist** | to travel 🧳 |
 
 🔊 Repeat the pairs:
 'gehen — gegangen'
@@ -92,18 +92,73 @@ Let's test it:
 'kommen — gekommen'
 ⏸️ (2s)
 
-Four more movement verbs:
+### Sentence Transfer Drill:
+Now let's USE them in sentences immediately:
 
-| **schwimmen** | **geschwommen** | to swim 🏊 |
-| **fallen** | **gefallen** | to fall ⬇️ |
-| **aufstehen** | **aufgestanden** | to get up ⬆️ |
-| **zurückkommen** | **zurückgekommen** | to come back ↩️ |
+🔊 'I went home.' → Think... ⏸️ (3s) → 'Ich bin nach Hause **gegangen**.' ✅
+🔊 'She drove to Berlin.' → Think... ⏸️ (3s) → 'Sie ist nach Berlin **gefahren**.' ✅
+🔊 'We flew to India.' → Think... ⏸️ (3s) → 'Wir sind nach Indien **geflogen**.' ✅
 
-⏸️ "Quick recall — what's the Partizip II of 'gehen'? ... ⏸️ (2s) ... gegangen! ✅ And 'fahren'? ... ⏸️ (2s) ... gefahren! ✅"
+*Sentence-level aayi practice cheyyumbol brain-il fix aakum — list padikkunnathilum nallathë!*"
 
 ---
 
-## Section 4: The Sein Verb List — State Change (4:15–5:30)
+## Section 3b: Movement Verbs — Block 2: More Motion (3:30–4:30)
+
+[ENERGY: building momentum]
+
+### Visual: [TABLE continuing — new verbs appear]
+### Narration:
+"Four more movement verbs:
+
+### 🚶 Block 2 — More Motion:
+
+| Infinitiv | Partizip II | English |
+|-----------|-------------|---------|
+| **laufen** | **gelaufen** | to run 🏃 |
+| **reisen** | **gereist** | to travel 🧳 |
+| **schwimmen** | **geschwommen** | to swim 🏊 |
+| **fallen** | **gefallen** | to fall ⬇️ |
+
+🔊 Repeat:
+'laufen — gelaufen'
+⏸️ (2s)
+'reisen — gereist'
+⏸️ (2s)
+'schwimmen — geschwommen'
+⏸️ (2s)
+'fallen — gefallen'
+⏸️ (2s)
+
+*Notice: 'reisen → gereist' — regular! ge- + reis + -t. But 'schwimmen → geschwommen' — irregular vowel change. Orkkuka!*
+
+### Interleaving Drill — Mix Both Blocks:
+⚡ What's the Partizip II of 'gehen'? ⏸️ (2s) → gegangen! ✅
+⚡ 'reisen'? ⏸️ (2s) → gereist! ✅
+⚡ 'fahren'? ⏸️ (2s) → gefahren! ✅
+⚡ 'schwimmen'? ⏸️ (2s) → geschwommen! ✅
+⚡ 'kommen'? ⏸️ (2s) → gekommen! ✅
+
+---
+
+## Section 3c: Two Special Movement Verbs (4:30–5:00)
+
+[ENERGY: quick addition]
+
+### Visual: [Two final verbs with separable prefix arrows]
+### Narration:
+"Two more — these have separable prefixes:
+
+| **aufstehen** | **aufgestanden** | to get up ⬆️ |
+| **zurückkommen** | **zurückgekommen** | to come back ↩️ |
+
+*Separable verbs-il ge- MIDDLE-il varum: auf-**ge**-standen, zurück-**ge**-kommen. Module 5-il padichcha rule!*
+
+⏸️ "Quick: Partizip II of 'aufstehen'? ... ⏸️ (2s) ... auf**ge**standen! ✅ And 'zurückkommen'? ... ⏸️ (2s) ... zurück**ge**kommen! ✅"
+
+---
+
+## Section 4: The Sein Verb List — State Change (5:00–6:15)
 
 [ENERGY: calm, adding layer]
 
@@ -131,7 +186,7 @@ Four more movement verbs:
 
 ---
 
-## Section 5: Building Sentences (5:30–7:00)
+## Section 5: Building Sentences (6:15–7:30)
 
 [ENERGY: practice-focused]
 
@@ -165,7 +220,7 @@ Let's drill three:
 
 ---
 
-## Section 6: Haben vs Sein — Side by Side (7:00–8:30)
+## Section 6: Haben vs Sein — Side by Side (7:30–9:00)
 
 [ENERGY: comparative, analytical]
 
@@ -196,7 +251,7 @@ Let's drill three:
 
 ---
 
-## Section 7: Your Weekend Story — Apply (8:30–10:00)
+## Section 7: Your Weekend Story — Apply (9:00–10:30)
 
 [ENERGY: creative, building confidence]
 
@@ -225,7 +280,7 @@ Let's drill three:
 
 ---
 
-## Section 8: Mistake Spotlight & Exam Prep (10:00–11:00)
+## Section 8: Mistake Spotlight & Exam Prep (10:30–11:30)
 
 [ENERGY: warning, then practical]
 
@@ -256,7 +311,7 @@ Let's drill three:
 
 ---
 
-## Section 9: Active Recall & Homework (11:00–12:00)
+## Section 9: Active Recall & Homework (11:30–12:30)
 
 [ENERGY: calm testing, then motivating]
 
@@ -306,16 +361,25 @@ Bis zum nächsten Mal! Tschüss!"
 - **Word count:** ~10% reduction — cut "Deep breath" style filler and redundant explanations of the sandwich concept (already taught in v13-1-1)
 - **Outro:** Active recall before summary, specific homework with measurable actions
 
+## Revision Notes (v2.0 → v2.1) — 2026-03-23 19:12 UTC
+- **CRITICAL FIX: Movement verb stacking** — Old Section 3 dumped ALL 10 movement verbs (6 + 4) in one block with only 2 recall prompts at the end. Violated "max 3-4 items per block" rule.
+- **Split into 3 sub-sections:** Section 3 (Big Four: gehen/fahren/fliegen/kommen) → Section 3b (More Motion: laufen/reisen/schwimmen/fallen) → Section 3c (Separable: aufstehen/zurückkommen)
+- **Added sentence-level transfer drill** in Section 3 — students build 3 full Perfekt sentences with the Big Four immediately after learning them, not just repeat infinitive-participle pairs
+- **Added interleaving drill** after Section 3b — 5-item quiz mixing verbs from BOTH blocks
+- **Added separable prefix reminder** in Section 3c — connects back to Module 5 rule (ge- goes in the middle)
+- **Practice pause count:** Increased from 14 to 19+ (added ~5 new pauses across 3 sub-sections)
+- **Section timings shifted** ~30s later to accommodate expanded teaching — total duration ~12:30 (still within target range)
+
 ## Script Quality Checklist
 
 - [x] Hook under 60s with concrete payoff
 - [x] No monologue block exceeds 90s without interaction
-- [x] Teach → Drill → Apply cycle (movement verbs → drill → state verbs → drill → sentences → apply story)
-- [x] Duration realistic (~12 min at 150 wpm + pauses)
+- [x] Teach → Drill → Apply cycle (4 movement verbs → sentence drill → 4 more → interleaving drill → 2 separable → state verbs → drill → sentences → apply story)
+- [x] Duration realistic (~12:30 at 150 wpm + pauses)
 - [x] Energy/tone cues at every section transition
-- [x] Practice pauses have specific prompts with reveals (14 total)
+- [x] Practice pauses have specific prompts with reveals (19+ total)
 - [x] Active recall summary before final card
-- [x] Minimum 6 practice pauses per 10 min ✅ (14)
+- [x] Minimum 6 practice pauses per 10 min ✅ (19+)
 - [x] Malayalam bridges are structural parallels (arrow test analogy)
 - [x] One clear teaching goal per section
 - [x] Exam connection explicit (Schreiben Teil 2, Sprechen)

@@ -1,203 +1,268 @@
-# v12-3-1 — Making Plans with Friends (Pläne mit Freunden machen)
+# v12-3-1 — Making Plans with Friends (FULL SCRIPT)
 
-> **Module:** 12 — Hobbies & Free Time (Freizeit)
-> **Lesson:** 12-3 — Making Plans with Friends
-> **Duration:** ~12 minutes
-> **Exam relevance:** Schreiben Teil 2 (invitation messages, responding to plans), Sprechen Teil 2 (topic cards: Freizeit, Wochenende), Hören (plan-making dialogues)
-> **Prerequisites:** Module 3 (time/dates), Module 5 (daily routine verbs), Module 12-1 (hobbies), Module 12-2 (weather/seasons)
-> **Status:** 🔄 DRAFT
-> **Created:** 2026-03-23 09:55 UTC (overnight cron)
-
----
-
-## Script
-
-### Scene 1: Pre-roll (0:00–0:15)
-**[BRANDING]**
+> **Module:** 12 | **Lesson:** 12-3 | **Duration:** 10:45 target
+> **Teaching Goal:** Help learners confidently suggest a plan, accept or decline politely, and fix time/place using short, reusable A1 patterns
+> **A1 Exam Link:** Schreiben Teil 2 (invitation/responding messages), Sprechen Teil 2 (Freizeit/Wochenende topics), Hören (plan-making dialogues)
+> **Prerequisites:** Module 3 (time/dates), Module 12-1 (hobbies), Module 12-2 (weather)
+> **Status:** REVISED — v2.0
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
-### Scene 2: Hook (0:15–1:00)
-**[SLIDE: Two friends planning something on WhatsApp — German text bubbles]**
+## Pre-roll (0:00–0:15)
 
-**Narrator:**
-> "You've got hobbies, you know the weather — now it's time to actually DO something with friends! Making plans is a huge part of social life in Germany, and it's also a classic exam topic."
->
-> *"Friends-ude koode plan cheyyaan padikkaam — ithu exam-ilum life-ilum important aanu!"*
+### Visual: [Course intro animation / Adipoli German branding]
+### Narration:
+"Willkommen bei Adipoli German!"
 
 ---
 
-### Scene 3: Suggesting Plans — Three Key Patterns (1:00–3:00)
-**[SLIDE: Three suggestion patterns color-coded]**
+## Section 1: Hook — This Is Real Life German (0:15–0:45)
 
-**Narrator:**
-> "How do you suggest a plan in German? Three patterns:"
->
-> 🔊 **Pattern 1 — Hast du Lust...?** (Do you feel like...?)
-> "Hast du Lust, ins Kino zu gehen?" — Do you feel like going to the cinema?
-> "Hast du Lust, Fußball zu spielen?" — Do you feel like playing football?
->
-> 🔊 **Pattern 2 — Wollen wir...?** (Shall we...?)
-> "Wollen wir zusammen kochen?" — Shall we cook together?
-> "Wollen wir am Samstag schwimmen gehen?" — Shall we go swimming on Saturday?
->
-> 🔊 **Pattern 3 — Wie wäre es mit...?** (How about...?)
-> "Wie wäre es mit einem Spaziergang?" — How about a walk?
-> "Wie wäre es mit Pizza?" — How about pizza?
->
-> ⏸️ **[Try suggesting a plan using any pattern!]**
->
-> "At A1, Pattern 1 and 2 are the most useful. Pattern 3 is a nice bonus."
->
-> *"'Hast du Lust' aanu most common — friends-ode koode plan cheyyumbol Germans ithu thanne use cheyyum!"*
+### Visual: [WhatsApp-style chat: one friend suggests a plan, the other says yes, then they fix time/place]
+### Narration: [ENERGY: warm, practical]
+"You already know hobbies. You already know weather. Now comes the part that actually builds a social life: making plans.
+
+Friend-ne coffee-in vilikkaan, cinema suggest cheyyaan, weekend plan fix cheyyaan — this is real German.
+
+And yes, this is also classic exam German. So today: suggest, accept, decline, and fix the details."
 
 ---
 
-### Scene 4: Saying Yes! (3:00–4:00)
-**[SLIDE: Enthusiastic yes responses]**
+## Section 2: The 2 Best A1 Suggestion Patterns (0:45–2:20)
 
-**Narrator:**
-> "When someone suggests a plan and you want to say yes:"
->
-> 🔊 "Ja, gern!" — Yes, gladly!
-> 🔊 "Ja, super!" — Yes, great!
-> 🔊 "Ja, das klingt gut!" — Yes, that sounds good!
-> 🔊 "Tolle Idee!" — Great idea!
-> 🔊 "Ich bin dabei!" — I'm in! (count me in!)
->
-> ⏸️ **[Practice: "Wollen wir morgen ins Kino gehen?" — respond with enthusiasm!]**
->
-> *"'Ich bin dabei!' — ithu nalla casual response aanu. Friends-ode koode perfect!"*
+### Visual: [Two large pattern cards only: HAST DU LUST...? / WOLLEN WIR...?]
+### Narration:
+"Forget ten patterns. Master two.
 
----
+### Pattern 1
+🔊 **Hast du Lust, ... ?** — Do you feel like ... ?
 
-### Scene 5: Saying No Politely (4:00–5:30)
-**[SLIDE: Polite decline patterns]**
+🔊 **Hast du Lust, ins Kino zu gehen?**  
+Do you feel like going to the cinema?
 
-**Narrator:**
-> "Sometimes you can't make it. Don't just say 'Nein!' — be polite:"
->
-> 🔊 "Leider kann ich nicht." — Unfortunately I can't.
-> 🔊 "Tut mir leid, ich habe keine Zeit." — Sorry, I don't have time.
-> 🔊 "Am Samstag geht es leider nicht." — Saturday doesn't work unfortunately.
-> 🔊 "Vielleicht nächste Woche?" — Maybe next week?
->
-> "The polite decline formula: SORRY + REASON + ALTERNATIVE"
->
-> 🔊 "Tut mir leid, ich muss arbeiten. Vielleicht am Sonntag?"
-> Sorry, I have to work. Maybe on Sunday?
->
-> 🔊 "Leider kann ich nicht — ich habe einen Termin. Hast du am Freitag Zeit?"
-> Unfortunately I can't — I have an appointment. Are you free on Friday?
->
-> ⏸️ **[Practice declining: "Hast du Lust, morgen schwimmen zu gehen?"]**
->
-> *"Polite aayi 'no' parayaan padikkanam — 'Nein' maaatram parayal rude aanu Germany-il!"*
+🔊 **Hast du Lust, Kaffee zu trinken?**  
+Do you feel like drinking coffee?
+
+### Pattern 2
+🔊 **Wollen wir ... ?** — Shall we ... ?
+
+🔊 **Wollen wir heute Abend kochen?**  
+Shall we cook this evening?
+
+🔊 **Wollen wir am Samstag spazieren gehen?**  
+Shall we go for a walk on Saturday?
+
+If you know these two, you can make most simple plans.
+
+### Drill
+Say these after me:
+- **Hast du Lust, Kaffee zu trinken?**
+- **Wollen wir am Samstag ins Kino gehen?**
+
+⏸️ [pause after each]
+
+*Malayalam-il nammal ‘varunno?’, ‘pokam alle?’ ennokke parayum. German-il ithinte clean versions aanu **Hast du Lust...?** and **Wollen wir...?***"
 
 ---
 
-### Scene 6: Negotiating Time & Place (5:30–7:00)
-**[SLIDE: Time negotiation dialogue]**
+## Section 3: Say Yes Fast — Natural Acceptance Lines (2:20–3:20)
 
-**Narrator:**
-> "Plans need a when and where. Key phrases:"
->
-> 🔊 "Wann hast du Zeit?" — When do you have time?
-> 🔊 "Hast du am Samstag Zeit?" — Are you free on Saturday?
-> 🔊 "Um wie viel Uhr?" — At what time?
-> 🔊 "Um drei Uhr?" — At 3 o'clock?
-> 🔊 "Wo treffen wir uns?" — Where shall we meet?
-> 🔊 "Am Bahnhof?" — At the train station?
-> 🔊 "Bei mir zu Hause." — At my place.
-> 🔊 "Das passt!" — That works!
->
-> **Mini-dialogue:**
-> 🔊 A: "Wollen wir am Freitag kochen?"
-> 🔊 B: "Ja, gern! Um wie viel Uhr?"
-> 🔊 A: "Um sieben?"
-> 🔊 B: "Perfekt! Wo?"
-> 🔊 A: "Bei mir zu Hause."
-> 🔊 B: "Super, bis Freitag dann!"
->
-> ⏸️ **[Role-play: suggest a plan, agree on time and place]**
+### Visual: [Three green reply bubbles]
+### Narration:
+"When someone invites you, don't freeze. Use one of these.
 
----
+🔊 **Ja, gern!** — Yes, gladly!  
+🔊 **Super!** — Great!  
+🔊 **Das klingt gut.** — That sounds good.  
+🔊 **Ich bin dabei.** — I'm in.
 
-### Scene 7: Exam Connection — Writing Invitations (7:00–9:00)
-**[SLIDE: Schreiben Teil 2 style prompt and model answer]**
+### Micro-drill
+I invite, you accept.
 
-**Narrator:**
-> "This topic connects directly to Goethe Schreiben Teil 2. You might get a prompt like:"
->
-> 📋 *"Sie möchten am Samstag mit Ihrer Freundin Maria ins Kino gehen. Schreiben Sie eine Nachricht."*
-> - Wann?
-> - Wo treffen?
-> - Welcher Film?
->
-> **Model answer (30 words):**
-> ```
-> Liebe Maria,
-> hast du am Samstag Lust, ins Kino zu gehen?
-> Der Film beginnt um 19 Uhr. Wir treffen uns
-> um 18:30 am Kino. Passt dir das?
-> Liebe Grüße,
-> Priya
-> ```
->
-> "Count the content points: ✅ Wann (Samstag, 19 Uhr), ✅ Wo treffen (18:30 am Kino), ✅ Welcher Film (implied by 'der Film beginnt')."
->
-> "KEY EXAM TIP: ALWAYS answer all 3 content points. That's where the marks are!"
->
-> ⏸️ **[Write your own invitation message — different scenario!]**
->
-> *"Schreiben Teil 2-il invitation message varum — ithu padichaal easy aanu!"*
+🔊 "Wollen wir morgen schwimmen gehen?"  
+⏸️ [pause]
+
+Possible answers:
+🔊 "Ja, gern!"  
+🔊 "Super!"  
+🔊 "Ich bin dabei."
+
+Short is good. Natural is better than complicated."
 
 ---
 
-### Scene 8: Full Plan-Making Dialogue (9:00–10:30)
-**[DIALOGUE: Complete conversation]**
+## Section 4: Say No Politely — The 3-Part Formula (3:20–4:45)
 
-**Narrator:**
-> "Let's hear a complete plan-making conversation:"
->
-> 🔊 Anna: "Hey Meera! Hast du am Wochenende Zeit?"
-> 🔊 Meera: "Am Samstag, ja! Was hast du vor?"
-> 🔊 Anna: "Wollen wir zusammen wandern gehen? Das Wetter soll schön sein."
-> 🔊 Meera: "Tolle Idee! Wo denn?"
-> 🔊 Anna: "Im Schwarzwald. Wir können den Zug nehmen."
-> 🔊 Meera: "Super! Um wie viel Uhr?"
-> 🔊 Anna: "Der Zug fährt um neun. Treffen wir uns um acht am Bahnhof?"
-> 🔊 Meera: "Perfekt, ich bin dabei! Bis Samstag!"
-> 🔊 Anna: "Tschüss, bis dann!"
->
-> "Notice how naturally all the patterns fit together: suggestion → acceptance → time → place → confirmation."
+### Visual: [Simple formula graphic: SORRY + REASON + ALTERNATIVE]
+### Narration:
+"Now the important social skill: saying no without sounding rude.
+
+Use this formula:
+
+### 1. Softener
+🔊 **Tut mir leid...** — Sorry...  
+🔊 **Leider...** — Unfortunately...
+
+### 2. Reason
+🔊 **...ich habe keine Zeit.** — I don't have time.  
+🔊 **...ich muss arbeiten.** — I have to work.  
+🔊 **...ich habe einen Termin.** — I have an appointment.
+
+### 3. Alternative
+🔊 **Vielleicht am Sonntag?** — Maybe on Sunday?  
+🔊 **Hast du morgen Zeit?** — Are you free tomorrow?
+
+### Full examples
+🔊 **Tut mir leid, ich muss arbeiten. Vielleicht am Sonntag?**
+
+🔊 **Leider kann ich nicht. Ich habe einen Termin. Hast du morgen Zeit?**
+
+This sounds polite, adult, and useful.
+
+*‘Nein’ mathram paranjal dry aayi thonnum. Kerala-ilum same alle? Soft aayi parayumbo relation nannayirikkum.*"
 
 ---
 
-### Scene 9: Summary & Challenge (10:30–12:00)
-**[SUMMARY CARD]**
+## Section 5: Fix the Plan — Time and Place (4:45–6:35)
 
-**Key Takeaways:**
-- Suggest: Hast du Lust...? / Wollen wir...?
-- Accept: Ja, gern! / Tolle Idee! / Ich bin dabei!
-- Decline: Leider kann ich nicht + reason + alternative
-- Negotiate: Wann? Wo? Um wie viel Uhr? Das passt!
-- Exam gold: write invitation messages answering ALL 3 content points
+### Visual: [Flow: idea → when → what time → where → confirm]
+### Narration:
+"A plan is not real until time and place are fixed.
 
-**Narrator:**
-> "Making plans is one of the most practical AND exam-relevant skills. You'll use this every week in Germany."
->
-> "Challenge: Write a WhatsApp message to a friend — suggest an activity for this weekend, include time and place!"
->
-> "Next lesson: Invitations — writing and responding to them formally!"
->
-> "Bis zum nächsten Mal! Tschüss!"
+Learn these four questions.
+
+🔊 **Wann hast du Zeit?** — When do you have time?  
+🔊 **Um wie viel Uhr?** — At what time?  
+🔊 **Wo treffen wir uns?** — Where shall we meet?  
+🔊 **Passt das?** — Does that work?
+
+And these answers:
+
+🔊 **Am Samstag.** — On Saturday.  
+🔊 **Um sieben Uhr.** — At seven o'clock.  
+🔊 **Am Bahnhof.** — At the station.  
+🔊 **Bei mir zu Hause.** — At my place.  
+🔊 **Ja, das passt.** — Yes, that works.
+
+### Build one complete plan
+🔊 A: **Wollen wir am Samstag kochen?**  
+🔊 B: **Ja, gern!**  
+🔊 A: **Um wie viel Uhr?**  
+🔊 B: **Um sieben Uhr?**  
+🔊 A: **Ja, das passt. Wo treffen wir uns?**  
+🔊 B: **Bei mir zu Hause.**
+
+That is already a full A1 conversation."
+
+---
+
+## Section 6: Golden Dialogue — Predict Before Reveal (6:35–8:25)
+
+### Visual: [Chat-style dialogue appears one line at a time. Key learner task shown before each reveal]
+### Narration:
+"Now let's do this actively. I will pause before each answer. You predict it first.
+
+### Situation
+Anna wants to make a plan for Saturday.
+
+🔊 Anna: **Hast du am Samstag Zeit?**
+
+How might Meera answer if she is free?
+⏸️ [pause]
+
+Possible answer:
+🔊 Meera: **Ja, habe ich. Was wollen wir machen?**
+
+🔊 Anna: **Wollen wir ins Kino gehen?**
+
+How does Meera say yes naturally?
+⏸️ [pause]
+
+🔊 Meera: **Ja, gern! Das klingt gut.**
+
+Now they need time. What should Anna ask?
+⏸️ [pause]
+
+🔊 Anna: **Um wie viel Uhr?**
+
+Meera suggests a time.
+⏸️ [pause]
+
+🔊 Meera: **Um 18 Uhr?**
+
+Now place.
+⏸️ [pause]
+
+🔊 Anna: **Super. Wo treffen wir uns?**
+
+🔊 Meera: **Am Kino.**
+
+Final confirmation?
+⏸️ [pause]
+
+🔊 Anna: **Perfekt, bis Samstag!**
+
+This is much more useful than just listening passively. On exam day too, your brain needs to predict fast."
+
+---
+
+## Section 7: Schreiben Teil 2 Connection — 3 Points or You Lose Marks (8:25–10:00)
+
+### Visual: [Exam-style prompt card with 3 bullets. Then a short model message with color-coded bullet matches]
+### Narration:
+"Now the exam connection.
+
+In **Schreiben Teil 2**, this topic comes up all the time.
+
+### Example prompt
+*Sie möchten am Samstag mit Ihrer Freundin Maria ins Kino gehen. Schreiben Sie Maria eine Nachricht. Schreiben Sie etwas zu:*  
+- **Tag / Zeit**  
+- **Treffpunkt**  
+- **Aktivität**
+
+### Model answer
+**Liebe Maria,**  
+**hast du am Samstag Lust, ins Kino zu gehen?**  
+**Wir treffen uns um 18 Uhr am Bahnhof.**  
+**Passt dir das?**  
+**Liebe Grüße**
+
+Now check the points:
+- activity? ✅ cinema
+- time? ✅ Saturday, 18 Uhr
+- meeting point? ✅ Bahnhof
+
+This is the exam rule: **3 bullet points = answer all 3.**
+
+Language can be simple. Missing content points is what kills marks.
+
+*Exam-il fancy German venda. Complete answer venam.*"
+
+---
+
+## Section 8: Summary & Speaking Challenge (10:00–10:45)
+
+### Visual: [Summary card: suggest / accept / decline / fix details]
+### Narration:
+"Today's toolkit:
+- Suggest: **Hast du Lust...? / Wollen wir...?**
+- Accept: **Ja, gern! / Das klingt gut. / Ich bin dabei.**
+- Decline politely: **Tut mir leid + reason + alternative**
+- Fix details: **Wann? Um wie viel Uhr? Wo treffen wir uns? Passt das?**
+- Exam rule: answer **all 3 content points**
+
+Challenge: send yourself a fake WhatsApp plan in German. One message inviting. One message accepting or declining.
+
+Next lesson: invitations and message writing — the formal version of what you learned today.
+
+Bis zum nächsten Mal! Tschüss!"
 
 ---
 
 ## Production Notes
-- **This completes Module 12's core lesson scripts** (v12-1-1, v12-2-1, v12-3-1 + existing v12-4-1, v12-4-2)
-- Audio: All suggestion/acceptance/decline patterns, full dialogue
-- Visuals: WhatsApp-style message mockups, plan-making flowchart, exam prompt card
-- Critical exam link: Schreiben Teil 2 invitation messages
-- Connects to Module 3 (time), Module 12-1/12-2 (hobbies/weather), Module 12-4 (formal invitations)
+- **Quality-pass upgrades:** reduced pattern overload from 3 major suggestion frames to 2 core A1 patterns; reorganized into a practical conversation flow; added predict-before-reveal Golden Dialogue; made exam connection sharper with explicit 3-point scoring logic; cut talky explanation in favor of reusable lines and pauses
+- **Audio:** all core invitation/acceptance/decline/fixing-detail lines; Golden Dialogue with real pauses
+- **Visuals:** WhatsApp-style bubbles, simple formula graphics, color-coded exam prompt → answer mapping
+- **Malayalam bridge:** kept around politeness, social realism, and message-style planning rather than generic commentary
+- **Pacing note:** keep the dialogue section active; learner prediction is the retention engine here

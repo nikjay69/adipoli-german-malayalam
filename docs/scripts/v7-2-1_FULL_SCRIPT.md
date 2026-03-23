@@ -2,184 +2,301 @@
 
 > **Module:** 7 (Shopping & Money)
 > **Lesson:** 7-2 (Colors & Clothing)
-> **Duration:** ~10 minutes
-> **Exam section:** Sprechen (asking about items), Hören (shop dialogues), Lesen (ads)
-> **Prerequisites:** Module 6 (accusative basics), Module 7-1 (supermarket)
-> **Status:** FULL SCRIPT v1.0
-> **Created:** 2026-03-23 11:00 UTC
+> **Duration:** 10:30 target
+> **Exam section:** Sprechen (asking for items / size / color), Hören (shop dialogues), Lesen (clothing ads and sale labels)
+> **Prerequisites:** Module 3 (numbers + sizes), Module 6 (basic accusative awareness), Module 7-1 (shopping survival)
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 11:00 UTC | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
-## Script
+## Pre-roll (0:00–0:15)
 
-### [0:00–0:15] Pre-roll
-*[Branding slide]*
-
-### [0:15–1:15] Hook — "Your first German clothes shop visit"
-
-Germany-yil oru clothing store-il chennal — sizes different aanu, nobody approaches you first, and you need to know EXACTLY what to say.
-
-*Ivide ningal paRayunnathum choddikkunnathum ellaam GERMAN-il aanu. Ready aayaal — shopping is fun. Allenkil — stress!*
-
-Today: clothes vocabulary + the exact dialogue for buying anything.
-
-*[SLIDE: "Einkaufen: Kleidung 👕👗"]*
+### Visual: [Branding slide]
+### Narration:
+"Willkommen bei Adipoli German!"
 
 ---
 
-### [1:15–3:00] Block 1: Essential Clothing Vocabulary
+## Section 1: Hook — You Do Not Need Fashion German, You Need Survival German (0:15–0:45)
 
-| German | English | Article | Malayalam hint |
-|--------|---------|---------|---------------|
-| das T-Shirt | t-shirt | das | |
-| die Hose | trousers | die | *Pants* |
-| die Jeans | jeans | die | |
-| das Hemd | shirt (formal) | das | |
-| die Bluse | blouse | die | |
-| das Kleid | dress | das | *Kleid — like "clad"!* |
-| der Rock | skirt | der | *NOT rock music!* |
-| die Jacke | jacket | die | |
-| der Mantel | coat | der | |
-| der Pullover / der Pulli | sweater | der | |
-| die Schuhe | shoes | die (pl.) | |
-| die Socken | socks | die (pl.) | |
-| der Gürtel | belt | der | |
-| die Mütze | cap/beanie | die | |
+### Visual: [Clothing store scene: learner holding one T-shirt and looking confused between size, color, fitting room, price]
+### Narration: [ENERGY: practical, reassuring]
+"In a German clothes shop, the conversation is usually short.
 
-⏸️ *Cover the English column. Can you remember 10/14?*
+You do not need to describe fashion like a designer.
+You need only four things:
+what you want,
+what color,
+what size,
+and whether it fits.
 
-**Colors — die Farben:**
-rot, blau, grün, gelb, schwarz, weiß, grau, braun, rosa, lila, orange
-
-*"Ich suche ein blaues T-Shirt" — njaanoru blue t-shirt anweshikkyunnu.*
-
-⏸️ *Say your outfit right now in German. "Ich trage ein/eine/einen ___."*
+Today, we build exactly that shopping survival toolkit."
 
 ---
 
-### [3:00–5:00] Block 2: Sizes & Fitting
+## Section 2: The 6 Clothing Words That Matter First (0:45–2:00)
 
-**Sizes:**
-- "Welche Größe haben Sie?" — What size are you?
-- "Ich habe Größe M / 38 / 42." — I'm size M / 38 / 42.
-- **TRAP:** German/EU sizes ≠ Indian sizes! Generally add 6-8 to Indian size for women, different system for men.
+### Visual: [6 large clothing cards only]
+- **das T-Shirt**
+- **die Hose**
+- **die Jacke**
+- **der Pullover / der Pulli**
+- **die Schuhe**
+- **der Mantel**
 
-| Need | You say |
-|------|---------|
-| Ask for size | "Haben Sie das in Größe M?" |
-| Too big | "Das ist zu groß." |
-| Too small | "Das ist zu klein." |
-| Fits perfectly | "Das passt gut!" |
-| Try on | "Kann ich das anprobieren?" |
-| Where is fitting room? | "Wo ist die Umkleidekabine?" |
+### Narration:
+"Do not start with fifteen clothing words. Start with the six you will use most.
 
-⏸️ *"Kann ich das anprobieren?" — say this 3 times. This is your fitting room KEY.*
+🔊 **das T-Shirt** — T-shirt  
+🔊 **die Hose** — trousers / pants  
+🔊 **die Jacke** — jacket  
+🔊 **der Pullover** / **der Pulli** — sweater  
+🔊 **die Schuhe** — shoes  
+🔊 **der Mantel** — coat
 
-*Kerala-yil textile shop-il aaru cheyyumennaalum try on cheyyunna habit illa. Germany-yil EVERY store has fitting rooms — USE THEM. Returns are possible but easier to get it right the first time.*
+### Fast drill
+Repeat after me:
+- **die Jacke**
+- **der Mantel**
+- **die Schuhe**
+- **das T-Shirt**
 
----
+⏸️ [pause]
 
-### [5:00–7:00] Block 3: The Shopping Dialogue
+Now add color.
 
-**Scene: You enter a clothing store.**
+🔊 **schwarz** — black  
+🔊 **blau** — blue  
+🔊 **weiß** — white  
+🔊 **rot** — red
 
-*Verkäuferin:* "Guten Tag, kann ich Ihnen helfen?"
-*(Hello, can I help you?)*
-
-*You:* "Ja, ich suche eine Jacke."
-*(Yes, I'm looking for a jacket.)*
-
-*Verkäuferin:* "Welche Farbe?"
-*(What color?)*
-
-*You:* "Schwarz, bitte."
-*(Black, please.)*
-
-*Verkäuferin:* "Welche Größe?"
-*(What size?)*
-
-*You:* "Größe M, bitte."
-*(Size M, please.)*
-
-*Verkäuferin:* "Hier, bitte. Die Umkleidekabine ist dort drüben."
-*(Here, please. The fitting room is over there.)*
-
-*[After trying on]*
-
-*You:* "Die Jacke passt gut. Was kostet sie?"
-*(The jacket fits well. How much does it cost?)*
-
-*Verkäuferin:* "79 Euro."
-
-*You:* "Ich nehme sie. Kann ich mit Karte bezahlen?"
-*(I'll take it. Can I pay by card?)*
-
-*Verkäuferin:* "Ja, natürlich. Bitte hier."
-
-⏸️ *Practice this entire dialogue with a partner or alone (play both roles).*
-
-**If you DON'T want to buy:**
-- "Danke, ich schaue mich nur um." — Thanks, I'm just looking.
-- "Das ist mir zu teuer." — That's too expensive for me.
-- "Ich überlege noch." — I'm still thinking about it.
-
-*"Ich schaue mich nur um" — ithu paranjaal sales person ninne thani vidum! Freedom phrase!*
+That is enough to shop.
+Not every color in the rainbow. Just enough to ask clearly."
 
 ---
 
-### [7:00–8:30] Block 4: Practical Grammar in Shopping
+## Section 3: The 4 Sentences That Run the Whole Shop Visit (2:00–3:20)
 
-**Accusative in action:**
-When you BUY or TAKE something, it becomes the accusative object:
-- "Ich nehme **den** Pullover." (der → den, masculine accusative)
-- "Ich nehme **die** Jacke." (die stays die, feminine)
-- "Ich nehme **das** Kleid." (das stays das, neuter)
-- "Ich nehme **die** Schuhe." (die stays die, plural)
+### Visual: [Four-card toolkit]
+1. **Ich suche eine Jacke.**
+2. **Haben Sie das in Größe M?**
+3. **Kann ich das anprobieren?**
+4. **Das passt gut. / Das ist zu groß.**
 
-*Module 6-il padichcha accusative — ippol shopping-il REAL USE kanunnu!*
+### Narration:
+"These four sentences carry almost the whole visit.
 
-⏸️ *Pick 3 clothing items and say "Ich nehme ___" with the correct article.*
+🔊 **Ich suche eine Jacke.** — I'm looking for a jacket.  
+🔊 **Haben Sie das in Größe M?** — Do you have that in size M?  
+🔊 **Kann ich das anprobieren?** — Can I try that on?  
+🔊 **Das passt gut.** — That fits well.  
+🔊 **Das ist zu groß.** — That is too big.  
+🔊 **Das ist zu klein.** — That is too small.
 
-**Adjective endings (awareness only — don't memorize tables yet):**
-- ein blau**es** T-Shirt (neuter → -es)
-- eine schwarz**e** Hose (feminine → -e)
-- ein rot**er** Rock (masculine → -er)
+### Malayalam bridge
+*Shop-il over-explain cheyyenda. Point paranjaal mathi: item, size, fit. Germany-il short and clear = strong communication.*
 
-*Tables padikkenda — pattern practice cheyyuka. Sheriyaakum gradually!*
+### Drill
+Say after me:
+- **Ich suche ein T-Shirt.**
+- **Haben Sie das in Größe L?**
+- **Kann ich das anprobieren?**
 
----
-
-### [8:30–10:00] Block 5: Shopping Culture + Summary
-
-**German shopping culture vs Kerala:**
-- Nobody follows you around the store — you browse freely
-- "Ich schaue mich nur um" stops any pushy approach
-- Fitting rooms: use them! Take max 3–5 items (some stores have limits)
-- Returns: keep the receipt (*Kassenbon*)! Most stores accept returns within 14 days.
-- Cash vs card: big chains accept cards; small boutiques may not
-
-*Kerala-yil textile shop-il 20 saree eduthu kaanikkum — "take take, no problem!" Germany-yil self-service aanu. Ningal choose cheyyuka, try cheyyuka, decide cheyyuka.*
-
-**Your clothing shopping toolkit (5 essential sentences):**
-1. "Ich suche ___." — I'm looking for ___
-2. "Haben Sie das in Größe ___?" — Do you have this in size ___?
-3. "Kann ich das anprobieren?" — Can I try this on?
-4. "Was kostet das?" — How much is this?
-5. "Ich nehme das." / "Ich schaue mich nur um." — I'll take it. / Just looking.
-
-*Ee 5 sentences kondu ANY German clothing store-il survive cheyyaam!* 👕✅
+⏸️ [pause]"
 
 ---
 
-## Checklist
+## Section 4: Size + Fitting Room Without Panic (3:20–4:45)
 
-- [x] 14 essential clothing items with articles
-- [x] Colors listed
-- [x] Size system explained with cultural note
-- [x] Complete shopping dialogue scripted
-- [x] "Just looking" escape phrase included
-- [x] Accusative reinforcement through shopping context
-- [x] Cultural comparison (Kerala textile shops vs German self-service)
-- [x] 5-sentence toolkit summary
-- [x] Pause points for active practice
-- [x] Duration: ~10 minutes
+### Visual: [Size card + fitting-room sign]
+### Narration:
+"Now the part that makes beginners nervous: size and trying on.
+
+### Key phrases
+🔊 **Welche Größe?** — Which size?  
+🔊 **Größe M.** / **Größe 38.**  
+🔊 **Wo ist die Umkleidekabine?** — Where is the fitting room?  
+🔊 **Das passt gut.** — It fits well.  
+🔊 **Das passt nicht.** — It doesn't fit.
+
+### Important reality
+German and Indian sizes do not always match neatly.
+So do not guess too much.
+Try it on.
+
+### Micro-dialogue
+🔊 Verkäuferin: **Welche Größe?**  
+🔊 You: **Größe M, bitte.**
+
+🔊 Verkäuferin: **Möchten Sie es anprobieren?**  
+🔊 You: **Ja, gern. Wo ist die Umkleidekabine?**
+
+### Drill
+I ask, you answer.
+
+🔊 **Welche Größe?**
+⏸️ [learner answers]
+
+🔊 **Möchten Sie es anprobieren?**
+⏸️ [learner answers]"
+
+---
+
+## Section 5: Golden Dialogue — Buying a Jacket (4:45–7:10)
+
+### Visual: [Dialogue appears line by line; learner responds before reveal]
+### Narration:
+"Let's do the real interaction.
+
+### Situation
+You are in a clothing store. You want a black jacket.
+
+🔊 Verkäuferin: **Guten Tag! Kann ich Ihnen helfen?**
+What do you say?
+⏸️ [pause]
+
+Possible answer:
+🔊 You: **Ja, ich suche eine Jacke.**
+
+🔊 Verkäuferin: **Welche Farbe?**
+Your turn.
+⏸️ [pause]
+
+🔊 You: **Schwarz, bitte.**
+
+🔊 Verkäuferin: **Welche Größe?**
+Your turn.
+⏸️ [pause]
+
+🔊 You: **Größe M, bitte.**
+
+🔊 Verkäuferin: **Hier, bitte. Möchten Sie sie anprobieren?**
+What do you say?
+⏸️ [pause]
+
+🔊 You: **Ja, gern. Wo ist die Umkleidekabine?**
+
+[After trying it on]
+
+🔊 Verkäuferin: **Und? Passt die Jacke?**
+Your turn.
+⏸️ [pause]
+
+🔊 You: **Ja, sie passt gut. Was kostet sie?**
+
+🔊 Verkäuferin: **79 Euro.**
+What if you want it?
+⏸️ [pause]
+
+🔊 You: **Ich nehme sie. Kann ich mit Karte bezahlen?**
+
+### Why this dialogue works
+Short request. Clear size. Clear fit. Clear decision.
+That is A1 success."
+
+---
+
+## Section 6: Freedom Phrase + Polite Exit (7:10–8:00)
+
+### Visual: [Speech bubble card: `Ich schaue mich nur um.`]
+### Narration:
+"Sometimes you do not want help yet.
+Or you do not want to buy.
+Learn this freedom phrase:
+
+🔊 **Ich schaue mich nur um.** — I'm just looking around.
+
+And these two exit lines:
+
+🔊 **Danke, ich überlege noch.** — Thanks, I'm still thinking.  
+🔊 **Das ist mir zu teuer.** — That's too expensive for me.
+
+### Malayalam bridge
+*Ithu valare useful aanu. Staff vannal panic venda. Oru line mathi — conversation calm aakum.*"
+
+---
+
+## Section 7: Tiny Grammar, Real Use — `Ich nehme ...` (8:00–9:00)
+
+### Visual: [3 example cards only]
+### Narration:
+"One grammar moment only — and only because it helps you buy.
+
+When you decide, you often say:
+
+🔊 **Ich nehme die Jacke.**  
+🔊 **Ich nehme das T-Shirt.**  
+🔊 **Ich nehme den Mantel.**
+
+Notice the masculine change:
+- **der Mantel**
+- **den Mantel**
+
+You do not need a big table here.
+Just notice one useful shopping pattern.
+
+### Drill
+Say these aloud:
+- **Ich nehme die Schuhe.**
+- **Ich nehme das T-Shirt.**
+- **Ich nehme den Pullover.**"
+
+---
+
+## Section 8: Reading / Listening Transfer — Catch the Sale Language (9:00–9:45)
+
+### Visual: [Sale tag]
+**Jacke – 49,99 €**  
+**Größe S, M, L**  
+**Angebot**
+
+### Narration:
+"Now the exam transfer.
+
+If you see or hear this, catch the key facts:
+- item? **Jacke**
+- price? **49,99 Euro**
+- sizes? **S, M, L**
+- special note? **Angebot** = offer
+
+In A1 reading and listening, this is often enough.
+You do not need every word."
+
+---
+
+## Section 9: Summary + Output Challenge (9:45–10:30)
+
+### Visual: [5-line clothing-store toolkit]
+### Narration:
+"Your clothes shopping survival toolkit:
+- **Ich suche eine Jacke.**
+- **Haben Sie das in Größe M?**
+- **Kann ich das anprobieren?**
+- **Das passt gut. / Das ist zu groß.**
+- **Ich nehme sie.**
+
+### Challenge
+Say a **20-second clothing shop dialogue**:
+1. what you want
+2. the color
+3. the size
+4. whether it fits
+5. your final decision
+
+Short beats fancy.
+Clear beats complicated.
+
+Next, we talk about prices, good deals, and how to compare two options in German.
+
+Bis zum nächsten Mal!"
+
+---
+
+## Production Notes
+- **Quality-pass upgrades:** cut the oversized vocabulary table into a 6-item high-frequency clothing toolkit; rebuilt the lesson around 4 survival sentences instead of a lecture-heavy inventory; made the main dialogue predict-before-reveal; reduced grammar to one actionable shopping pattern (`Ich nehme den... / die... / das...`)
+- **Audio:** 6 clothing items, 4 color words, fitting-room questions, one full clothing-store golden dialogue, one ad/sale read-out
+- **Visuals:** large item cards, four-sentence toolkit board, fitting-room sign, line-by-line dialogue bubbles, compact sale tag
+- **Malayalam bridge:** used only to reinforce short clear communication and reduce learner panic
+- **Exam usefulness:** direct transfer to shopping dialogues, ad reading, and price/size listening
+- **Pacing note:** keep the dialogue active; do not let the clothing vocab section become a dictionary lecture

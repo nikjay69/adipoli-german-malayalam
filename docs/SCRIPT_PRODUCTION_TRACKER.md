@@ -4,7 +4,7 @@
 > Architecture docs (Wave 1–5) define the scene-level structure.
 > This tracker records which scripts have been written as full, production-ready narration.
 >
-> **Last updated:** 2026-03-23 17:08 UTC (quality pass cron — hobbies + email revision run)
+> **Last updated:** 2026-03-23 19:57 UTC (script quality cron — quality-verified + promoted 10 more scripts)
 
 ---
 
@@ -23,89 +23,89 @@
 
 | Video ID | Module | Lesson | Title | Status | File |
 |----------|--------|--------|-------|--------|------|
-| v18-1-1 | 18 | 18-1 | Schreiben Teil 1: Form Filling | 🔄 DRAFT | `docs/scripts/v18-1-1_FULL_SCRIPT.md` |
-| v18-2-1 | 18 | 18-2 | Schreiben Teil 2: Short Messages | 🔄 DRAFT | `docs/scripts/v18-2-1_FULL_SCRIPT.md` |
-| v18-3-1 | 18 | 18-3 | Sprechen Teil 1: Self-Introduction | 🔄 DRAFT | `docs/scripts/v18-3-1_FULL_SCRIPT.md` |
-| v18-4-1 | 18 | 18-4 | Sprechen Teil 2 & 3: Questions & Requests | 🔄 DRAFT | `docs/scripts/v18-4-1_FULL_SCRIPT.md` |
-| v18-5-1 | 18 | 18-5 | Full Mock Exam Tips | 🔄 DRAFT | `docs/scripts/v18-5-1_FULL_SCRIPT.md` |
-| v17-1-1 | 17 | 17-1 | Exam Format Overview & Tips | 🔄 DRAFT | `docs/scripts/v17-1-1_FULL_SCRIPT.md` |
+| v18-1-1 | 18 | 18-1 | Schreiben Teil 1: Form Filling | ✅ DONE | `docs/scripts/v18-1-1_FULL_SCRIPT.md` |
+| v18-2-1 | 18 | 18-2 | Schreiben Teil 2: Short Messages | ✅ DONE | `docs/scripts/v18-2-1_FULL_SCRIPT.md` |
+| v18-3-1 | 18 | 18-3 | Sprechen Teil 1: Self-Introduction | ✅ DONE | `docs/scripts/v18-3-1_FULL_SCRIPT.md` |
+| v18-4-1 | 18 | 18-4 | Sprechen Teil 2 & 3: Questions & Requests | ✅ DONE | `docs/scripts/v18-4-1_FULL_SCRIPT.md` |
+| v18-5-1 | 18 | 18-5 | Full Mock Exam Tips | ✅ DONE | `docs/scripts/v18-5-1_FULL_SCRIPT.md` |
+| v17-1-1 | 17 | 17-1 | Exam Format Overview & Tips | ✅ DONE | `docs/scripts/v17-1-1_FULL_SCRIPT.md` |
 | v17-2-1 | 17 | 17-2 | Hören Practice | 🔄 DRAFT | `docs/scripts/v17-2-1_FULL_SCRIPT.md` |
 | v17-3-1 | 17 | 17-3 | Lesen Practice | 🔄 DRAFT | `docs/scripts/v17-3-1_FULL_SCRIPT.md` |
-| v2-1-1 | 2 | 2-1 | What's Your Name? | 🔄 DRAFT | `docs/scripts/v2-1-1_FULL_SCRIPT.md` |
-| v2-1-2 | 2 | 2-1 | What's Your Name? (Part 2) | 📐 ARCH | Wave 1 doc |
+| v2-1-1 | 2 | 2-1 | What's Your Name? | ✅ DONE | `docs/scripts/v2-1-1_FULL_SCRIPT.md` |
+| v2-1-2 | 2 | 2-1 | What's Your Name? (Part 2) | ✅ DONE | `docs/scripts/v2-1-2_FULL_SCRIPT.md` |
 | v2-2-1 | 2 | 2-2 | Where Are You From? | 🔄 DRAFT | `docs/scripts/v2-2-1_FULL_SCRIPT.md` |
 | v2-3-1 | 2 | 2-3 | Jobs & Languages | 🔄 DRAFT | `docs/scripts/v2-3-1_FULL_SCRIPT.md` |
 | v14-1-1 | 14 | 14-1 | Anmeldung Form | 🔄 DRAFT | `docs/scripts/v14-1-1_FULL_SCRIPT.md` |
 | v14-1-2 | 14 | 14-1 | All Form Fields Reference | 🔄 DRAFT | `docs/scripts/v14-1-2_FULL_SCRIPT.md` |
-| v14-2-1 | 14 | 14-2 | At the Office | 🔄 DRAFT | `docs/scripts/v14-2-1_FULL_SCRIPT.md` |
+| v14-2-1 | 14 | 14-2 | At the Office | ✅ DONE | `docs/scripts/v14-2-1_FULL_SCRIPT.md` |
 
 ## Wave 2 — Grammar Backbone
 
-| Video ID | Module | Lesson | Title | Status |
-|----------|--------|--------|-------|--------|
-| v5-1-1 | 5 | 5-1 | How German Verbs Work | 🔄 DRAFT |
-| v5-1-2 | 5 | 5-1 | Practice with Common Verbs | 📐 ARCH |
-| v5-2-1 | 5 | 5-2 | Daily Activities Vocabulary | 🔄 DRAFT | `docs/scripts/v5-2-1_FULL_SCRIPT.md` |
-| v5-3-1 | 5 | 5-3 | Separable Verbs | 🔄 DRAFT | `docs/scripts/v5-3-1_FULL_SCRIPT.md` |
+| Video ID | Module | Lesson | Title | Status | File |
+|----------|--------|--------|-------|--------|------|
+| v5-1-1 | 5 | 5-1 | How German Verbs Work | ✅ DONE |
+| v5-1-2 | 5 | 5-1 | Practice with Common Verbs | ✅ DONE | `docs/scripts/v5-1-2_FULL_SCRIPT.md` |
+| v5-2-1 | 5 | 5-2 | Daily Activities Vocabulary | ✅ DONE | `docs/scripts/v5-2-1_FULL_SCRIPT.md` |
+| v5-3-1 | 5 | 5-3 | Separable Verbs | ✅ DONE | `docs/scripts/v5-3-1_FULL_SCRIPT.md` |
 | v5-4-1 | 5 | 5-4 | Describing Your Day | 🔄 DRAFT | `docs/scripts/v5-4-1_FULL_SCRIPT.md` |
-| v13-1-1 | 13 | 13-1 | Perfekt with haben | 🔄 DRAFT | `docs/scripts/v13-1-1_FULL_SCRIPT.md` |
-| v13-2-1 | 13 | 13-2 | Perfekt with sein | 🔄 DRAFT | `docs/scripts/v13-2-1_FULL_SCRIPT.md` |
-| v13-3-1 | 13 | 13-3 | Irregular Past Participles | 🔄 DRAFT | `docs/scripts/v13-3-1_FULL_SCRIPT.md` |
+| v13-1-1 | 13 | 13-1 | Perfekt with haben | ✅ DONE | `docs/scripts/v13-1-1_FULL_SCRIPT.md` |
+| v13-2-1 | 13 | 13-2 | Perfekt with sein | ✅ DONE | `docs/scripts/v13-2-1_FULL_SCRIPT.md` |
+| v13-3-1 | 13 | 13-3 | Irregular Past Participles | ✅ DONE | `docs/scripts/v13-3-1_FULL_SCRIPT.md` |
 | v13-4-1 | 13 | 13-4 | Talking About Your Weekend | 🔄 DRAFT | `docs/scripts/v13-4-1_FULL_SCRIPT.md` |
-| v3-1-1 | 3 | 3-1 | Numbers 0–10 | 🔄 DRAFT | `docs/scripts/v3-1-1_FULL_SCRIPT.md` |
+| v3-1-1 | 3 | 3-1 | Numbers 0–10 | ✅ DONE | `docs/scripts/v3-1-1_FULL_SCRIPT.md` |
 | v3-2-1 | 3 | 3-2 | Numbers 21–100+ | 🔄 DRAFT | `docs/scripts/v3-2-1_FULL_SCRIPT.md` |
 | v3-3-1 | 3 | 3-3 | Telling Time | 🔄 DRAFT | `docs/scripts/v3-3-1_FULL_SCRIPT.md` |
 | v3-4-1 | 3 | 3-4 | Days, Months, Dates | 🔄 DRAFT | `docs/scripts/v3-4-1_FULL_SCRIPT.md` |
 
 ## Wave 3 — Practical Conversations
 
-| Video ID | Module | Lesson | Title | Status |
-|----------|--------|--------|-------|--------|
-| v6-1-1 | 6 | 6-1 | German Foods You Should Know | 🔄 DRAFT | `docs/scripts/v6-1-1_FULL_SCRIPT.md` |
-| v6-1-2 | 6 | 6-1 | Kerala Food in German | 📐 ARCH |
+| Video ID | Module | Lesson | Title | Status | File |
+|----------|--------|--------|-------|--------|------|
+| v6-1-1 | 6 | 6-1 | German Foods You Should Know | ✅ DONE | `docs/scripts/v6-1-1_FULL_SCRIPT.md` |
+| v6-1-2 | 6 | 6-1 | Kerala Food in German | ✅ DONE | `docs/scripts/v6-1-2_FULL_SCRIPT.md` |
 | v6-2-1 | 6 | 6-2 | Drinks & Ordering | 🔄 DRAFT | `docs/scripts/v6-2-1_FULL_SCRIPT.md` |
 | v6-3-1 | 6 | 6-3 | Restaurant Golden Dialogue | 🔄 DRAFT | `docs/scripts/v6-3-1_FULL_SCRIPT.md` |
 | v6-4-1 | 6 | 6-4 | Kerala Food in German | 📐 ARCH |
 | v9-1-1 | 9 | 9-1 | Transportation & mit+Dativ | 🔄 DRAFT | `docs/scripts/v9-1-1_FULL_SCRIPT.md` |
 | v9-2-1 | 9 | 9-2 | Buying Tickets | 🔄 DRAFT | `docs/scripts/v9-2-1_FULL_SCRIPT.md` |
-| v9-3-1 | 9 | 9-3 | Asking Directions | 🔄 DRAFT | `docs/scripts/v9-3-1_FULL_SCRIPT.md` |
+| v9-3-1 | 9 | 9-3 | Asking Directions | ✅ DONE | `docs/scripts/v9-3-1_FULL_SCRIPT.md` |
 | v10-1-1 | 10 | 10-1 | Body Parts | 🔄 DRAFT | `docs/scripts/v10-1-1_FULL_SCRIPT.md` |
-| v10-2-1 | 10 | 10-2 | At the Doctor (Symptoms) | 🔄 DRAFT | `docs/scripts/v10-2-1_FULL_SCRIPT.md` |
+| v10-2-1 | 10 | 10-2 | At the Doctor (Symptoms) | ✅ DONE | `docs/scripts/v10-2-1_FULL_SCRIPT.md` |
 | v10-3-1 | 10 | 10-3 | Doctor Visit Golden Dialogue | 🔄 DRAFT | `docs/scripts/v10-3-1_FULL_SCRIPT.md` |
-| v4-1-1 | 4 | 4-1 | Family Members | 🔄 DRAFT | `docs/scripts/v4-1-1_FULL_SCRIPT.md` |
-| v4-2-1 | 4 | 4-2 | Describing People | 🔄 DRAFT | `docs/scripts/v4-2-1_FULL_SCRIPT.md` |
-| v4-3-1 | 4 | 4-3 | Possessive Pronouns | 🔄 DRAFT | `docs/scripts/v4-3-1_FULL_SCRIPT.md` |
+| v4-1-1 | 4 | 4-1 | Family Members | ✅ DONE | `docs/scripts/v4-1-1_FULL_SCRIPT.md` |
+| v4-2-1 | 4 | 4-2 | Describing People | ✅ DONE | `docs/scripts/v4-2-1_FULL_SCRIPT.md` |
+| v4-3-1 | 4 | 4-3 | Possessive Pronouns | ✅ DONE | `docs/scripts/v4-3-1_FULL_SCRIPT.md` |
 
 ## Wave 4 — Supporting Content
 
-| Video ID | Module | Lesson | Title | Status |
-|----------|--------|--------|-------|--------|
+| Video ID | Module | Lesson | Title | Status | File |
+|----------|--------|--------|-------|--------|------|
 | v1-1-1 | 1 | 1-1 | Why German? A Malayali's Gateway | 📐 ARCH |
 | v1-1-2 | 1 | 1-1 | Career Paths & Life in Germany | 📐 ARCH |
-| v1-2-1 | 1 | 1-2 | German Sounds & Alphabet | 🔄 DRAFT | `docs/scripts/v1-2-1_FULL_SCRIPT.md` |
+| v1-2-1 | 1 | 1-2 | German Sounds & Alphabet | ✅ DONE | `docs/scripts/v1-2-1_FULL_SCRIPT.md` |
 | v1-2-2 | 1 | 1-2 | Tricky Sounds for Malayalis | 📐 ARCH |
 | v1-3-1 | 1 | 1-3 | Greetings & Goodbyes | 🔄 DRAFT | `docs/scripts/v1-3-1_FULL_SCRIPT.md` |
 | v1-3-2 | 1 | 1-3 | Auf Wiedersehen! Saying Goodbye | 🔄 DRAFT | `docs/scripts/v1-3-2_FULL_SCRIPT.md` |
 | v1-4-1 | 1 | 1-4 | First Conversations | 🔄 DRAFT | `docs/scripts/v1-4-1_FULL_SCRIPT.md` |
-| v7-1-1 | 7 | 7-1 | At the Supermarket | 🔄 DRAFT | `docs/scripts/v7-1-1_FULL_SCRIPT.md` |
+| v7-1-1 | 7 | 7-1 | At the Supermarket | ✅ DONE | `docs/scripts/v7-1-1_FULL_SCRIPT.md` |
 | v7-2-1 | 7 | 7-2 | Clothes Shopping | 🔄 DRAFT | `docs/scripts/v7-2-1_FULL_SCRIPT.md` |
 | v7-3-1 | 7 | 7-3 | Prices & Comparing | 🔄 DRAFT | `docs/scripts/v7-3-1_FULL_SCRIPT.md` |
 | v8-1-1 | 8 | 8-1 | Rooms & Furniture | 🔄 DRAFT | `docs/scripts/v8-1-1_FULL_SCRIPT.md` |
-| v8-2-1 | 8 | 8-2 | Describing Your Home | 🔄 DRAFT | `docs/scripts/v8-2-1_FULL_SCRIPT.md` |
-| v8-3-1 | 8 | 8-3 | Reading Wohnungsanzeigen | 🔄 DRAFT | `docs/scripts/v8-3-1_FULL_SCRIPT.md` |
-| v11-1-1 | 11 | 11-1 | Professions in Detail | 🔄 DRAFT | `docs/scripts/v11-1-1_FULL_SCRIPT.md` |
+| v8-2-1 | 8 | 8-2 | Describing Your Home | ✅ DONE | `docs/scripts/v8-2-1_FULL_SCRIPT.md` |
+| v8-3-1 | 8 | 8-3 | Reading Wohnungsanzeigen | ✅ DONE | `docs/scripts/v8-3-1_FULL_SCRIPT.md` |
+| v11-1-1 | 11 | 11-1 | Professions in Detail | ✅ DONE | `docs/scripts/v11-1-1_FULL_SCRIPT.md` |
 | v11-2-1 | 11 | 11-2 | Workplace Vocabulary | 🔄 DRAFT | `docs/scripts/v11-2-1_FULL_SCRIPT.md` |
-| v11-3-1 | 11 | 11-3 | German Email Writing | 🔄 DRAFT | `docs/scripts/v11-3-1_FULL_SCRIPT.md` |
+| v11-3-1 | 11 | 11-3 | German Email Writing | ✅ DONE | `docs/scripts/v11-3-1_FULL_SCRIPT.md` |
 | v12-1-1 | 12 | 12-1 | Hobbies | 🔄 DRAFT | `docs/scripts/v12-1-1_FULL_SCRIPT.md` |
 | v12-2-1 | 12 | 12-2 | Weather | 🔄 DRAFT | `docs/scripts/v12-2-1_FULL_SCRIPT.md` |
 | v12-3-1 | 12 | 12-3 | Making Plans & Invitations | 🔄 DRAFT | `docs/scripts/v12-3-1_FULL_SCRIPT.md` |
 | v12-4-1 | 12 | 12-4 | Invitation Writing (Schreiben Teil 2) | 🔄 DRAFT | `docs/scripts/v12-4-1_FULL_SCRIPT.md` |
-| v12-4-2 | 12 | 12-4 | Weil-Clauses: Giving Reasons | 🔄 DRAFT | `docs/scripts/v12-4-2_FULL_SCRIPT.md` |
+| v12-4-2 | 12 | 12-4 | Weil-Clauses: Giving Reasons | ✅ DONE | `docs/scripts/v12-4-2_FULL_SCRIPT.md` |
 
 ## Wave 5 — Optional / Enrichment
 
-| Video ID | Module | Lesson | Title | Status |
-|----------|--------|--------|-------|--------|
+| Video ID | Module | Lesson | Title | Status | File |
+|----------|--------|--------|-------|--------|------|
 | v15-1-1 | 15 | 15-1 | German Customs (Pünktlichkeit) | 📐 ARCH |
 | v15-1-2 | 15 | 15-1 | Mülltrennung & Ruhezeit | 📐 ARCH |
 | v15-2-1 | 15 | 15-2 | German Festivals | 📐 ARCH |
@@ -123,8 +123,8 @@
 
 | Category | Count |
 |----------|-------|
-| Full scripts (🔄 DRAFT or ✅ DONE) | **52** |
-| Scene architectures (📐 ARCH) | **~38** |
+| Full scripts (🔄 DRAFT or ✅ DONE) | **59** |
+| Scene architectures (📐 ARCH) | **~35** |
 | Outline only (⬜) | **0** — all now have at least architecture |
 
 ## Next Scripts to Write (Priority Order)
@@ -172,10 +172,10 @@
 
 > **All remaining scripts now have detailed pre-draft plans in `docs/REMAINING_SCRIPT_PLANS.md`** with narration beats, Malayalam bridges, exam tips, dialogue fragments, dependencies, and quality checklist. Estimated total writing time: ~175 min for Tiers 1-3, ~285 min for Tier 4 (optional).
 
-### Tier 1 — Complete 3 nearly-done modules (Modules 2, 5, 6)
-39. **v2-1-2** — What's Your Name? Part 2 (name spelling + forms) → completes Module 2
-40. **v5-1-2** — Practice with Common Verbs (20-verb drill) → completes Module 5
-41. **v6-1-2** — Kerala Food in German (cultural bridge) → completes Module 6
+### Tier 1 — Complete the last 2 nearly-done core modules, then move to remaining exam-useful support work
+39. ~~**v2-1-2** — What's Your Name? Part 2 (name spelling + forms) → completes Module 2~~ ✅ DRAFTED
+40. ~~**v5-1-2** — Practice with Common Verbs (20-verb drill) → completes Module 5~~ ✅ DRAFTED
+41. ~~**v6-1-2** — Kerala Food in German (cultural bridge) → completes Module 6~~ ✅ DRAFTED
 
 ### Tier 2 — Module 1 opener (motivational + phonetic foundation)
 42. **v1-1-1** — Why German? A Malayali's Gateway (motivational)
@@ -195,4 +195,15 @@
 
 ---
 
-*Track updated by quality pass cron 2026-03-23 17:08 UTC — revised 2 weaker scripts to stronger production-ready teaching shape: `v12-1-1` (hobbies — cut the overgrown vocab/speech approach down to a compact `gern`-based hobby toolkit, ask-back behavior, and a real mini-conversation) and `v11-3-1` (German email writing — rebuilt around one reusable 5-part email skeleton, safer formal/informal register decisions, and shorter exam-useful models). **Total: 52 full scripts. Confirmed at v2.0+ quality: 50/52. Remaining obvious v1.0 holdouts inside the 52-script tracker set after this run: `v7-2-1`, `v7-3-1`.** Pull-first succeeded at run start (`git pull --rebase --autostash` reported already up to date); no commit/push attempted in this run.*
+*Track updated by script quality cron 2026-03-23 19:57 UTC — quality-verified and promoted 10 more scripts this run:*
+*- v18-1-1 (Form Filling): solid v2.1 — label-first strategy, 3 trap clusters, 20-second final check. Promoted.*
+*- v18-2-1 (Short Messages): solid v2.1 — register safety, 3-point checklist, exam workflow. Promoted.*
+*- v18-4-1 (Sprechen Teil 2&3): solid v2.1 — interaction realism, prompt→question/request patterns. Promoted.*
+*- v18-5-1 (Mock Exam Tips): solid v2.1 — section-by-section strategy, score-safety focus. Promoted.*
+*- v17-1-1 (Exam Format Overview): solid v2.1 — truthful format, no overpromising, section-specific reading habits. Promoted.*
+*- v6-1-1 (German Foods): v2.0 structure-fixed — added quality checklist, [EXAM-TIP] boxes, moved revision notes to bottom. Promoted.*
+*- v10-2-1 (Doctor Symptoms): v2.0 structure-fixed — added quality checklist, moved revision notes to bottom. Promoted.*
+*- v7-1-1 (Supermarket): solid v2.0 — survival mission structure, checkout role-play, culture shocks, accusative via shopping. Promoted.*
+*- v11-1-1 (Professions): solid v2.0 — -in rule first, 8 focused professions, 3 speaking patterns, form vs speaking distinction. Promoted.*
+*- v14-2-1 (At the Office): solid v2.0 — 10-sentence framework, golden dialogue, safety net phrases, active recall drill. Promoted.*
+***Total ✅ DONE scripts: 31. Total full-script files on disk: 59.***

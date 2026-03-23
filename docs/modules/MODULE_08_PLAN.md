@@ -1,6 +1,6 @@
 # Module 08: My Home (Meine Wohnung) — Launch Plan
 
-> **Last updated:** 2026-03-23 12:50 UTC
+> **Last updated:** 2026-03-23 17:35 UTC
 
 ---
 
@@ -34,11 +34,11 @@
 
 | Video ID | Title | Status | Quality | Notes |
 |----------|-------|--------|---------|-------|
-| v8-1-1 | Rooms & Furniture | 🔄 DRAFT | v1.0 | Room names, furniture vocab |
+| v8-1-1 | Rooms & Furniture | 🔄 DRAFT | v2.0 ✅ | Room names, furniture vocab |
 | v8-1-2 | Furniture & Appliances | ⬜ OUTLINE | — | Extended furniture, Küche equipment |
-| v8-2-1 | Describing Your Home | 🔄 DRAFT | v1.0 | Prepositions + room descriptions |
+| v8-2-1 | Describing Your Home | ✅ DONE | v2.1 ✅ | Prepositions + room descriptions rebuilt around 6 core location phrases, one dative pattern, and a room-search dialogue |
 | v8-2-2 | Where Is It? (Preposition Drill) | ⬜ OUTLINE | — | Focused preposition practice |
-| v8-3-1 | Reading Wohnungsanzeigen | 🔄 DRAFT | v1.0 | Ad reading + abbreviations |
+| v8-3-1 | Reading Wohnungsanzeigen | ✅ DONE | v2.1 ✅ | Rebuilt around 6 ad-decoding signals, KM-vs-WM trap prevention, and timed need→ad matching |
 | v8-3-2 | Finding an Apartment | ⬜ OUTLINE | — | WG-search, Besichtigung vocab |
 | v8-4-1 | Writing a Housing Message | ⬜ OUTLINE | — | Response to ad, note to Vermieter |
 
@@ -142,8 +142,8 @@ Kontakt: wohnung@beispiel.de
 6. [ ] Build 8-P2 home description writing exercise (describe your home in 5 sentences)
 7. [ ] Build 8-P5 room description speaking exercise (describe a room from a photo)
 8. [ ] Add 3 more varied Wohnungsanzeigen for practice variety
-9. [ ] Upgrade v8-1-1, v8-2-1, v8-3-1 from v1.0 to v2.0 quality
-10. [ ] Create abbreviation quick-reference card (printable)
+9. [ ] Create abbreviation quick-reference card (printable)
+10. [ ] Add a second timed need→ad matching drill so the exam-reading strategy gets explicit practice outside the video
 
 ### Nice-to-have
 11. [ ] Build 8-P6 landlord note writing exercise (repair request scenario)
@@ -232,3 +232,4 @@ Mit freundlichen Grüßen
 ---
 
 *Module 8 is where students learn to find and describe their future German home. Wohnungsanzeigen reading is one of the most predictable exam items — master this and you've banked easy Lesen marks.*
+able exam items — master this and you've banked easy Lesen marks.*

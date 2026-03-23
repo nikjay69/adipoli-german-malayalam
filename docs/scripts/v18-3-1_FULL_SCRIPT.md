@@ -1,25 +1,21 @@
 # v18-3-1 — Sprechen Teil 1: Self-Introduction (FULL SCRIPT)
 
 > **Module:** 18 | **Lesson:** 18-3 | **Duration:** 10:00 target
-> **Teaching Goal:** Deliver a confident, memorized 2-minute self-introduction for Sprechen Teil 1
+> **Teaching Goal:** Deliver a confident, memorized 60–90 second self-introduction for Sprechen Teil 1 and handle the common follow-up spelling prompt without panic.
 > **A1 Exam Link:** Sprechen Teil 1 (part of the 25% speaking score)
-> **Status:** REVISED — v2.0
-> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass — speaking exam interaction + pacing pass)
 
 ---
 
-## Revision Notes (v1.0 → v2.0)
+## Why this revision exists
 
-| Change | Detail |
-|--------|--------|
-| Hook tightened | 60s → 40s, opens with the examiner prompt instead of motivation speech |
-| Energy cues added | Every section now has `[ENERGY:]` markers |
-| Active recall before summary | Students rebuild the script from memory before seeing it again |
-| Passive variations → active | Students listen and catch the differences instead of passively reading |
-| Section 3 chunked tighter | Each sentence block is teach → drill with no stacking |
-| Performance tips integrated | Moved inline instead of separate section — less talky |
-| Malayalam bridges upgraded | Structural parallels instead of dictionary translations |
-| ~15% word count reduction | Cut repetitive motivation language |
+This v2.1 pass tightens the script around what actually wins marks in the room:
+- a **safe, memorized intro** instead of a long talky speech
+- a **clear 7-block structure** learners can swap with their own details
+- **name-spelling rescue** built in for likely examiner follow-up
+- **performance realism**: not just what to say, but how to sound calm and usable
+- stronger Malayalam bridge for **word-order confidence**, not decorative translation
 
 ---
 
@@ -31,312 +27,326 @@
 
 ---
 
-## Section 1: Hook — This Is What the Examiner Says (0:10–0:45)
+## Section 1: Hook — Walk in Already Knowing What to Say (0:10–0:40)
 
-### Visual: [SLIDE: Examiner at desk, speech bubble: "Stellen Sie sich bitte vor." Big text, clean.]
-### Narration: [ENERGY: direct, punchy]
-"The examiner sits across from you, smiles, and says:
+### Visual: [SLIDE: examiner says “Stellen Sie sich bitte vor.” Timer starts at 2:00.]
+### Narration: [ENERGY: direct, calming]
+"The examiner looks at you and says:
 
-'Stellen Sie sich bitte vor.'
+**Stellen Sie sich bitte vor.**
 
-Introduce yourself. Two minutes. That's Sprechen Teil 1.
+That moment should not feel like improvisation. It should feel like playback.
 
-Here's the secret: it's NOT a conversation. It's a rehearsed speech. You walk in with YOUR script already memorized.
+*Exam room-il puthiya sentence undaakkan venda. Ready-made intro start cheythaal mathi.*
 
-*Nammal ithë oru speech aayittë prepare cheythaal — exam-il automatic aayittë varum.*
-
-By the end of this video, you'll have that script. Let's build it."
+In this lesson, you'll build one safe self-introduction, practice it in blocks, then deliver it smoothly like exam day."
 
 ---
 
-## Section 2: The Topic Cards — What They Ask (0:45–1:30)
+## Section 2: What You Must Cover (0:40–1:20)
 
-### Visual: [SLIDE: 6 topic cards appearing one by one — Name, Alter, Land, Wohnort, Sprachen, Beruf]
-### Narration: [ENERGY: brisk, informative]
-"You get topic cards — little cards with one word each:
+### Visual: [SLIDE: 7 prompt cards — Name, Alter, Land/Herkunft, Wohnort, Sprachen, Beruf/Studium, Hobby]
+### Narration: [ENERGY: brisk, practical]
+"Sprechen Teil 1 is very predictable. Your introduction usually covers these personal topics:
 
-[Cards flip one by one]
-**Name? → Alter? → Land? → Wohnort? → Sprachen? → Beruf?**
+- **Name**
+- **Alter**
+- **Herkunft / Land**
+- **Wohnort**
+- **Sprachen**
+- **Beruf oder Studium**
+- **Hobby / Freizeit**
 
-Sometimes also **Familie?** or **Hobbys?**
+[EXAM-TIP] You do **not** need a fancy speech. You need a clear, correct, A1-safe introduction that touches the usual prompt areas.
 
-[EXAM-TIP] Here's the trick: if your speech covers ALL these topics, it doesn't matter which cards you get. You're already prepared for every combination.
-
-One speech. Every card. That's the plan."
+One sentence per block. That's the whole game."
 
 ---
 
-## Section 3: Building Your Golden Script (1:30–6:15)
+## Section 3: Build the Golden Intro — Block by Block (1:20–5:40)
 
-### Visual: [SLIDE: Blank script template, sentences appearing one by one as taught]
+### Visual: [SLIDE: blank template fills one line at a time]
 
-### 3A: Greeting + Name (1:30–2:15)
-
+### 3A — Name (1:20–1:50)
+### Visual: [HIGHLIGHT: “Hallo! Ich heiße …” / “Mein Name ist …”]
 ### Narration: [ENERGY: warm, teaching]
-"Sentence 1. You open with a greeting and your name.
+"Start simply:
 
-### Visual: [HIGHLIGHT: 'Hallo! Mein Name ist Nikhil.' / 'Ich heiße Nikhil.']
+**Hallo! Ich heiße [Name].**
 
-Two options — both perfect:
-- 'Mein Name ist...' — slightly more formal
-- 'Ich heiße...' — more natural
+or
 
-Pick one. Stick with it.
+**Mein Name ist [Name].**
 
-⏸️ **Say it now: 'Hallo! Mein Name ist...' — with YOUR name. Go! (3s)**
+Pick one. Use the same one every time.
 
-Good. That's your opener."
+⏸️ Say your real sentence now.
 
----
+### Practice Pause: ⏸️ (3 seconds)"
 
-### 3B: Age (2:15–2:50)
+### 3B — Age (1:50–2:15)
+### Visual: [HIGHLIGHT: “Ich bin 28 Jahre alt.”]
+### Narration: [ENERGY: steady]
+"Next:
 
-### Visual: [HIGHLIGHT: 'Ich bin 28 Jahre alt.']
-### Narration: [ENERGY: clear, steady]
-"Sentence 2. Your age.
+**Ich bin [Alter] Jahre alt.**
 
-'Ich bin [number] Jahre alt.'
+*Malayalam-il “enikku 28 vayassu”. German-il “I am 28 years old.” Structure orma vechhaal mathi.*
 
-*Malayalam-il 'enikku 28 vayassu' — German-il structure maattam: 'Ich bin 28 Jahre alt.' Subject first, number in the middle.*
+⏸️ Say your age.
 
-⏸️ **Say it: 'Ich bin ... Jahre alt.' — your real age. (3s)**"
+### Practice Pause: ⏸️ (3 seconds)"
 
----
-
-### 3C: Where You're From (2:50–3:25)
-
-### Visual: [HIGHLIGHT: 'Ich komme aus Indien, aus Kerala.']
+### 3C — Origin (2:15–2:45)
+### Visual: [HIGHLIGHT: “Ich komme aus Indien, aus Kerala.”]
 ### Narration: [ENERGY: conversational]
-"Sentence 3. Your origin.
+"Now your origin:
 
-'Ich komme aus Indien, aus Kerala.'
+**Ich komme aus Indien, aus Kerala.**
 
-Want to name your city? 'Ich komme aus Kochi in Indien.' — also fine.
+If you want, add the city:
 
-[A1-SAFE] Keep it simple. 'Ich komme aus Indien' is enough. Adding 'aus Kerala' makes you memorable.
+**Ich komme aus Kochi in Indien.**
 
-⏸️ **Say it: 'Ich komme aus...' — your home. (3s)**"
+A1-safe rule: simple first, extra detail second.
 
----
+⏸️ Say your own origin sentence.
 
-### 3D: Where You Live Now (3:25–4:00)
+### Practice Pause: ⏸️ (3 seconds)"
 
-### Visual: [HIGHLIGHT: 'Ich wohne jetzt in Berlin.']
-### Narration: [ENERGY: teaching]
-"Sentence 4. Where you live NOW.
+### 3D — Current city (2:45–3:15)
+### Visual: [SLIDE: aus ≠ in]
+### Narration: [ENERGY: clarifying]
+"Then where you live now:
 
-'Ich wohne jetzt in [city].'
+**Ich wohne jetzt in [Stadt].**
 
-The word 'jetzt' separates this from 'komme aus'. Origin ≠ current home.
+Important contrast:
+- **komme aus** = origin
+- **wohne in** = current place
 
-If you're still in India: 'Ich wohne in Kochi.' — drop the 'jetzt'.
+⏸️ Say your sentence with *wohne in*.
 
-⏸️ **Say it: 'Ich wohne jetzt in...' (3s)**"
+### Practice Pause: ⏸️ (3 seconds)"
 
----
+### 3E — Languages (3:15–3:50)
+### Visual: [HIGHLIGHT: “Ich spreche Malayalam, Englisch und ein bisschen Deutsch.”]
+### Narration: [ENERGY: encouraging]
+"Now languages:
 
-### 3E: Languages (4:00–4:45)
+**Ich spreche Malayalam, Englisch und ein bisschen Deutsch.**
 
-### Visual: [HIGHLIGHT: 'Ich spreche Malayalam, Englisch und ein bisschen Deutsch.']
-### Narration: [ENERGY: enthusiastic]
-"Sentence 5. Languages — and this is where Malayalis shine.
+If you know more, great — but don't overload this line.
 
-'Ich spreche Malayalam, Englisch und ein bisschen Deutsch.'
+[EXAM-TIP] For German itself, **ein bisschen Deutsch** is safer than pretending fluency at A1.
 
-Three languages. Most Germans speak two. You're already impressive.
+⏸️ Say your languages.
 
-Four languages? Even better: 'Ich spreche Malayalam, Hindi, Englisch und ein bisschen Deutsch.'
+### Practice Pause: ⏸️ (4 seconds)"
 
-*'Ein bisschen' — cheriyathë oru honest touch. Examiner-inë ishtappedum.*
-
-Don't say 'fließend' (fluent) about your German at A1. The examiner will test you on it!
-
-⏸️ **Full sentence with YOUR languages. Go! (4s)**"
-
----
-
-### 3F: Profession / Studies (4:45–5:30)
-
-### Visual: [HIGHLIGHT: 'Ich bin Krankenpfleger von Beruf.' / 'Ich studiere Informatik.']
+### 3F — Profession or studies (3:50–4:35)
+### Visual: [HIGHLIGHT: “Ich bin … von Beruf.” / “Ich studiere …”]
 ### Narration: [ENERGY: practical]
-"Sentence 6. What you do.
+"Now what you do:
 
-Working: 'Ich bin [job] von Beruf.'
-Studying: 'Ich studiere [subject].'
-Job hunting: 'Ich suche eine Arbeit als [job].'
+Working:
+**Ich bin [Beruf] von Beruf.**
 
-[SLIDE: Common Malayali professions in Germany]
-- **Krankenpfleger/in** — nurse
-- **Ingenieur/in** — engineer
-- **IT-Spezialist/in** — IT specialist
-- **Altenpfleger/in** — elderly care nurse
-- **Koch / Köchin** — cook
+Studying:
+**Ich studiere [Fach].**
 
-⏸️ **Say it: 'Ich bin ... von Beruf.' (3s)**"
+Examples:
+- **Ich bin Krankenpfleger von Beruf.**
+- **Ich bin Ingenieurin von Beruf.**
+- **Ich studiere Informatik.**
 
----
+⏸️ Say your real sentence.
 
-### 3G: Hobby — Your Finishing Touch (5:30–6:15)
+### Practice Pause: ⏸️ (4 seconds)"
 
-### Visual: [HIGHLIGHT: 'In meiner Freizeit koche ich gern.']
-### Narration: [ENERGY: relaxed, fun]
-"Last sentence. A hobby to end on a warm note.
+### 3G — Hobby + clean finish (4:35–5:40)
+### Visual: [HIGHLIGHT: “In meiner Freizeit …” + “Danke!”]
+### Narration: [ENERGY: relaxed, friendly]
+"Finish warmly:
 
-'In meiner Freizeit [verb] ich gern.'
+**In meiner Freizeit koche ich gern.**
 
-Or simpler: 'Ich [verb] gern.'
+or simply
 
-- 'Ich koche gern.' — I like cooking
-- 'Ich lese gern Bücher.' — I like reading books
-- 'Ich spiele gern Cricket.' — yes, Cricket works!
+**Ich spiele gern Cricket.**
 
-One or two hobbies max. Then close with: **'Danke!'**
+One hobby is enough. Two if they're short.
 
-That 'Danke!' signals you're done. No awkward silence, no staring. Clean finish.
+Then close with:
 
-⏸️ **Say your hobby sentence + 'Danke!' (4s)**"
+**Danke!**
 
----
+That tells the examiner: I'm finished, calmly.
 
-## Section 4: The Complete Golden Script — Full Speed (6:15–7:15)
+⏸️ Say your hobby sentence plus **Danke**.
 
-### Visual: [SLIDE: Full script assembled, golden border, all 7 sentences + Danke]
-### Narration: [ENERGY: confident, model performance]
-"Here's the complete script at natural speed. Listen once, then you do it.
-
-🔊 **Model Introduction:**
-
-'Hallo! Mein Name ist Nikhil Jayanth.
-Ich bin achtundzwanzig Jahre alt.
-Ich komme aus Indien, aus Kerala.
-Ich wohne jetzt in Berlin.
-Ich spreche Malayalam, Englisch und ein bisschen Deutsch.
-Ich bin IT-Spezialist von Beruf.
-In meiner Freizeit koche ich gern und ich lese gern Bücher.
-Danke!'
-
-[SLIDE: Timer showing 1:15]
-
-One minute fifteen seconds. Perfect length.
-
-Want to expand? Add family: 'Ich bin verheiratet' or 'Ich habe einen Bruder.'
-
-⏸️ **YOUR turn. Pause this video. Say YOUR complete script. Aim for 1.5–2 minutes. Go!**
-
-### Practice Pause: ⏸️ (allow 2-minute pause in video)"
+### Practice Pause: ⏸️ (4 seconds)"
 
 ---
 
-## Section 5: Listen & Catch — Three Malayali Variations (7:15–8:15)
+## Section 4: The Full Golden Script — Model Version (5:40–6:35)
 
-### Visual: [Split screen showing 3 different profiles]
-### Narration: [ENERGY: storytelling, varied]
-"Three Malayalis, three scripts. As you listen, catch: what's DIFFERENT about each one?
+### Visual: [SLIDE: full assembled intro, each sentence appears on beat]
+### Narration: [ENERGY: confident, model pace]
+"Now listen to the complete version at natural exam speed:
 
-**Anju, nurse from Kottayam:**
-'Hallo! Ich heiße Anju Thomas. Ich bin dreißig Jahre alt. Ich komme aus Kottayam in Kerala, Indien. Ich wohne jetzt in Frankfurt. Ich spreche Malayalam, Hindi, Englisch und ein bisschen Deutsch. Ich bin Krankenpflegerin von Beruf. In meiner Freizeit tanze ich gern. Danke!'
+🔊
+**Hallo! Ich heiße Nikhil Jayanth.**
+**Ich bin achtundzwanzig Jahre alt.**
+**Ich komme aus Indien, aus Kerala.**
+**Ich wohne jetzt in Berlin.**
+**Ich spreche Malayalam, Englisch und ein bisschen Deutsch.**
+**Ich bin IT-Spezialist von Beruf.**
+**In meiner Freizeit koche ich gern und ich lese gern.**
+**Danke!**
 
-**Arun, student from Thrissur:**
-'Hallo! Mein Name ist Arun Menon. Ich bin zweiundzwanzig Jahre alt. Ich komme aus Thrissur in Indien. Ich wohne jetzt in München. Ich spreche Malayalam und Englisch und lerne Deutsch. Ich studiere Maschinenbau an der TU München. In meiner Freizeit spiele ich gern Fußball. Danke!'
-
-**Lakshmi, engineer from Kochi:**
-'Hallo! Ich heiße Lakshmi Nair. Ich bin fünfunddreißig Jahre alt. Ich komme aus Kochi, das ist in Südindien. Ich wohne jetzt in Stuttgart. Ich spreche Malayalam, Tamil, Hindi, Englisch und ein bisschen Deutsch. Ich bin Ingenieurin von Beruf. Ich lese gern und ich koche gern indisches Essen. Danke!'
-
-⏸️ **Quick — what did Arun say differently for 'profession'? And Lakshmi for 'origin'? (4s)**
-
-✅ Arun said 'Ich studiere...' (student). Lakshmi added 'das ist in Südindien' — a nice extra detail.
-
-[A1-SAFE] Every sentence uses patterns from the course. No fancy grammar."
+That is clear, simple, and fully usable. Not fancy. Not risky. Exactly what we want."
 
 ---
 
-## Section 6: Active Recall — Rebuild Without Looking (8:15–9:00)
+## Section 5: Likely Follow-up — Spell Your Name Without Panicking (6:35–7:35)
 
-### Visual: [SLIDE: 7 blank lines with only topic hints: Name → ___ | Age → ___ | etc.]
-### Narration: [ENERGY: challenging, encouraging]
-"Time to prove you've got this. I'll show you the 7 topics. You say the German sentence from memory. No peeking!
+### Visual: [SLIDE: “Wie schreibt man das?” / “Können Sie das bitte buchstabieren?”]
+### Narration: [ENERGY: protective, practical]
+"Sometimes after your intro, the examiner may ask you to spell your name or a word.
 
-### Visual: [Topic hints appear one by one, 4s gap between each]
+You'll hear:
 
-1. **Name** → ⏸️ (4s)
-2. **Age** → ⏸️ (4s)
-3. **Origin** → ⏸️ (4s)
-4. **Current city** → ⏸️ (4s)
-5. **Languages** → ⏸️ (4s)
-6. **Job/Studies** → ⏸️ (4s)
-7. **Hobby + Danke** → ⏸️ (4s)
+**Können Sie das bitte buchstabieren?**
 
-### Visual: [Full golden script reappears]
+or
 
-How many did you get? All 7? You're exam-ready. Missed a few? Rewatch Section 3 for those sentences."
+**Wie schreibt man das?**
+
+Don't panic. You only need to spell slowly.
+
+Example:
+
+**Nikhil** → **N-I-K-H-I-L**
+
+If your surname is long, smile, breathe, and go letter by letter.
+
+*Ithu nammade Malayali names-inu valare useful aanu. Long peru undenkilum tension venda.*
+
+⏸️ Spell your first name now — slowly.
+
+### Practice Pause: ⏸️ (6 seconds)"
 
 ---
 
-## Section 7: Exam Day Tips & Outro (9:00–10:00)
+## Section 6: Three Real Variations — Catch the Swap (7:35–8:35)
 
-### Visual: [SLIDE: Do's and Don'ts with ✅ and ❌]
-### Narration: [ENERGY: coach-like, motivating]
-"Three things for exam day:
+### Visual: [3 profile cards: nurse / student / engineer]
+### Narration: [ENERGY: varied, active]
+"Same structure, different people. Listen and catch what changes.
 
-✅ **Speak naturally** — not robotic. You're telling someone about yourself, not reading a police report.
-✅ **Smile and make eye contact.** Confidence counts.
-✅ **If you blank — skip to the next topic.** Better to end early than freeze. Or repeat your last sentence differently: 'Ich koche gern. Ja, ich koche sehr gern indisches Essen.' — you just bought 5 seconds.
+**Anju:**
+'Hallo! Ich heiße Anju Thomas. Ich bin dreißig Jahre alt. Ich komme aus Kottayam in Indien. Ich wohne jetzt in Frankfurt. Ich spreche Malayalam, Englisch und ein bisschen Deutsch. Ich bin Krankenpflegerin von Beruf. In meiner Freizeit tanze ich gern. Danke!'
 
-[EXAM-TIP] Examiners don't deduct points for self-correction. If you catch a mistake, fix it and move on. That actually shows language awareness!
+**Arun:**
+'Hallo! Mein Name ist Arun Menon. Ich bin zweiundzwanzig Jahre alt. Ich komme aus Thrissur in Kerala. Ich wohne jetzt in München. Ich spreche Malayalam, Englisch und Hindi. Ich studiere Maschinenbau. Ich spiele gern Fußball. Danke!'
 
-*Exam-il nervous aayaal — athu normal aanu. Breathe, smile, start talking.*
+**Lakshmi:**
+'Hallo! Ich heiße Lakshmi Nair. Ich bin fünfunddreißig Jahre alt. Ich komme aus Kochi in Indien. Ich wohne jetzt in Stuttgart. Ich spreche Malayalam, Tamil, Englisch und ein bisschen Deutsch. Ich bin Ingenieurin von Beruf. Ich lese gern. Danke!'
 
-📝 **Homework:** Practice your golden script 10 times today. Five times reading. Five times without looking. By exam day, it should feel as automatic as saying your name.
+⏸️ Quick check: who used **Ich studiere …** instead of **Ich bin … von Beruf**?
 
-Practice in the app → Self-Introduction drill with 2-minute timer.
+### Practice Pause: ⏸️ (3 seconds)
 
-Next up: Sprechen Teil 2 & 3 — asking questions and making polite requests. That's where the real fun begins.
+Arun. Exactly."
+
+---
+
+## Section 7: Your Exam Rehearsal (8:35–9:25)
+
+### Visual: [Timer on screen: 90 seconds]
+### Narration: [ENERGY: coach-like]
+"Now do your real exam rehearsal.
+
+Rules:
+- speak slowly
+- do not restart after every small mistake
+- keep going
+- finish with **Danke**
+
+⏸️ Pause the video and deliver your full self-introduction now. Aim for about **60 to 90 seconds** — calm and clear.
+
+### Practice Pause: ⏸️ (allow long learner pause)"
+
+---
+
+## Section 8: Active Recall — Rebuild It Without Looking (9:25–9:50)
+
+### Visual: [SLIDE: only prompt words remain]
+### Narration: [ENERGY: testing, upbeat]
+"One last memory lock.
+
+Say the sentence for each prompt:
+- Name → ⏸️
+- Age → ⏸️
+- Origin → ⏸️
+- Current city → ⏸️
+- Languages → ⏸️
+- Job/studies → ⏸️
+- Hobby + Danke → ⏸️
+
+If you can do that, you already own Teil 1."
+
+---
+
+## Section 9: Exam Day Micro-Tips + Outro (9:50–10:00)
+
+### Visual: [SLIDE: 3 quick icons — breathe / smile / continue]
+### Narration: [ENERGY: calm, reassuring]
+"On exam day: breathe, smile, start with your first line, and keep moving.
+
+Simple German said confidently beats complicated German said nervously.
+
+Next: **Sprechen Teil 2 & 3** — questions and polite requests.
 
 Tschüss!"
 
 ---
 
-## Post-roll
-[Course outro / Next lesson teaser: "Next: Sprechen Teil 2 & 3 — Fragen & Bitten"]
+## Golden Template Card
 
----
-
-## Golden Script Template (Copy-Paste for Students)
-
-```
-Hallo! Mein Name ist __________.
+```text
+Hallo! Ich heiße __________.
 Ich bin __________ Jahre alt.
-Ich komme aus __________, aus __________.
+Ich komme aus __________.
 Ich wohne jetzt in __________.
-Ich spreche __________, __________ und ein bisschen Deutsch.
+Ich spreche __________ und ein bisschen Deutsch.
 Ich bin __________ von Beruf. / Ich studiere __________.
 In meiner Freizeit __________ ich gern.
 Danke!
 ```
 
-*Print this. Fill in YOUR details. Practice 10 times today.*
+---
+
+## Script Quality Checklist (v2.1)
+
+- [x] Hook under 40 seconds with concrete exam situation
+- [x] Self-intro trimmed to a **safe 60–90 second target**, not a rambling 2-minute speech
+- [x] Teach → drill used for every sentence block
+- [x] Malayalam bridges support confidence and structure, not filler translation
+- [x] Includes likely **buchstabieren** follow-up for real exam readiness
+- [x] Includes full model + learner rehearsal block
+- [x] Visual structure is easy to shoot and subtitle
+- [x] No risky grammar or unnecessary A2 expansions
+- [x] Explicitly favors simple, score-safe phrasing over cleverness
 
 ---
 
-## Script Quality Checklist
+## Revision Notes (v2.0 → v2.1)
 
-- [x] **Hook under 60 seconds** — 35s, opens with examiner prompt (concrete payoff)
-- [x] **No monologue block exceeds 90 seconds** without interaction
-- [x] **Teach → Drill → Apply cycle** in Section 3 (each sentence: teach → practice pause)
-- [x] **Duration realistic** — ~1500 words ÷ 150 wpm + pauses ≈ 10:00
-- [x] **Energy/tone cues** at every section transition
-- [x] **Practice pauses have specific prompts** with exact German to say
-- [x] **Active recall summary** — Section 6 rebuilds script from memory before final review
-- [x] **Minimum 6 practice pauses** — 12 pauses total
-- [x] **No passive summary lists** — active recall before reveal
-- [x] **Malayalam bridges are structural** — word order comparison, not dictionary entries
-- [x] **One clear teaching goal per section**
-- [x] **Exam connection explicit** — Sprechen Teil 1, 25% speaking score
-- [x] **No A2+ content** — all A1-SAFE
-- [x] **German grammatically verified** ✓
-- [x] **Visual cues producible** — [SLIDE:], [HIGHLIGHT:] tagged
-- [x] **Exam tips limited to 3 inline markers** — 3 [EXAM-TIP]
-- [x] **Outro has clear next-lesson bridge** — Sprechen Teil 2 & 3
-- [x] **Homework is specific** — 10 reps, 5 reading, 5 without; app drill
-- [x] **Status updated** to REVISED — v2.0
-- [x] **Revision notes documenting changes**
+- tightened the lesson around a **60–90 second safe intro** instead of encouraging overlong output
+- added a dedicated **name-spelling / buchstabieren** rescue block for exam realism
+- removed some motivational talk and replaced it with rehearsal logic
+- reduced listiness and made the script more camera-friendly with cleaner line-by-line build
+- improved the Malayalam bridge by focusing on **exam calm + structure**, not commentary
+- strengthened production usefulness with one clearer timer-based rehearsal block

@@ -3,25 +3,8 @@
 > **Module:** 10 | **Lesson:** 10-2 | **Duration:** 10:00 target
 > **Teaching Goal:** Teach students to describe symptoms with duration, understand doctor questions, and handle a basic Arztbesuch.
 > **A1 Exam Link:** Hören (doctor/pharmacy dialogues), Sprechen (describing how you feel), Schreiben (sick-day message)
-> **Status:** REVISED — v2.0
-> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass)
-
----
-
-## Revision Notes (v1.0 → v2.0)
-
-| Change | Detail |
-|--------|--------|
-| Hook tightened | 75s → 30s, opens in the scenario, not explaining the scenario |
-| Symptom teaching restructured | Was 1 big table dump → 3 mini-blocks with drill after each |
-| "Ich habe" and "Mir ist" separated clearly | Were jumbled → now 2 distinct teach-drill cycles |
-| Duration phrases woven in | Was a separate block → now combined with symptoms immediately |
-| Doctor questions made active | Students predict doctor's next question before seeing it |
-| Golden Dialogue restructured | Students fill in patient lines (active recall, not passive listening) |
-| Pharmacy section compressed | 4 phrases → 3 essential, cut Drogerie tangent |
-| Sick message made a drill | Was just shown → now students write their own version |
-| Energy cues added | Every section has `[ENERGY:]` markers |
-| ~15% word count reduction | Cut redundant explanations |
+> **Status:** REVISED — v2.0 (quality-verified)
+> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass — structure fix + checklist added)
 
 ---
 
@@ -267,3 +250,43 @@ Next: the full doctor visit role-play — you'll handle the ENTIRE appointment s
 - **Patterns trained:** Ich habe ___schmerzen, Mir ist ___, seit ___, doctor Q&A pairs, pharmacy requests, sick message writing
 - **Exercise types needed:** symptom matching, dialogue gap-fill, doctor Q&A role-play, dictation from doctor dialogue, free-text sick message, speaking drill (describe symptoms for 1 minute)
 - **Production outcome:** Student can describe 6+ symptoms with duration, respond to standard doctor questions, write a short sick-day message
+
+---
+
+## Script Quality Checklist (v2.0)
+
+- [x] Hook under 40 seconds with immersive scenario payoff
+- [x] Teach → Drill → Apply cycles (teach-3 symptoms → drill → teach-3 → drill → apply in dialogue)
+- [x] Max 3-4 new items per block before drilling (3 pain symptoms, then 3 other symptoms)
+- [x] Active recall: predict-before-reveal doctor questions + golden dialogue gap-fill + final drill
+- [x] 🎬 [Energy] tags at every section
+- [x] Malayalam bridges structural (___schmerzen = ___vedana pattern)
+- [x] Exam connections explicit: Hören (doctor dialogues), Schreiben (sick message), Sprechen (symptoms)
+- [x] Practice pauses with specific prompts and reveals (7+ pauses)
+- [x] "Ich habe" vs "Mir ist" taught as distinct patterns, not mixed
+- [x] Duration (seit) integrated with symptoms, not a standalone block
+- [x] Pharmacy section compressed to 3 essential phrases
+- [x] Sick message = active writing drill, not passive template display
+- [x] Duration realistic for ~10:00
+- [x] No A2+ overload
+
+---
+
+## Revision Notes (v1.0 → v2.0)
+
+| Change | Detail |
+|--------|--------|
+| Hook tightened | 75s → 30s, opens in the scenario, not explaining the scenario |
+| Symptom teaching restructured | Was 1 big table dump → 3 mini-blocks with drill after each |
+| "Ich habe" and "Mir ist" separated | Were jumbled → now 2 distinct teach-drill cycles |
+| Duration phrases woven in | Was a separate block → now combined with symptoms immediately |
+| Doctor questions made active | Students predict doctor's next question before seeing it |
+| Golden Dialogue restructured | Students fill in patient lines (active recall) |
+| Pharmacy section compressed | 4 phrases → 3 essential, cut Drogerie tangent |
+| Sick message made a drill | Was just shown → now students write their own version |
+| Energy cues added | Every section has [ENERGY:] markers |
+| ~15% word count reduction | Cut redundant explanations |
+
+---
+
+*Revised to v2.0 — 2026-03-23 quality pass. Production-ready pending native speaker review.*

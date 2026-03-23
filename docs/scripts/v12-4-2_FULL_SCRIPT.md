@@ -1,341 +1,398 @@
-# v12-4-2 — Weil-Clauses: Giving Reasons in German (FULL SCRIPT)
+# v12-4-2 — Weil: Giving Reasons Without Breaking Word Order (FULL SCRIPT)
 
-> **Module:** 12 | **Lesson:** 12-4 | **Duration:** 12:00 target
-> **Teaching Goal:** Master 'weil' subordinate clauses — giving reasons with correct verb-at-end word order — essential for declining invitations, explaining yourself, and Schreiben Teil 2
-> **A1 Exam Link:** Schreiben Teil 2 (declining + explaining reasons), Sprechen (giving reasons in conversation)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Module:** 12 | **Lesson:** 12-4 | **Duration:** 10:00–11:00 target
+> **Teaching Goal:** Make learners confidently use **weil** for simple A1 reasons in writing and speaking, with the verb correctly at the end.
+> **A1 Exam Link:** **Direct support** — Schreiben Teil 2 explanations and Sprechen follow-up answers like "Warum?"
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass v2.1 — energy cues, drill formatting, active recall)
 
 ---
 
-## Pre-roll (0:00–0:15)
+## Pre-roll (0:00–0:10)
 
 ### Visual: [Course intro animation / Adipoli German branding]
 ### Narration:
-"Willkommen bei Adipoli German! Today — 'weil.' The word that lets you give REASONS in German."
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — Why 'Weil' Matters (0:15–1:00)
+## Section 1: Hook — The Word That Breaks Your Sentence (0:10–0:40)
 
-### Visual: [SLIDE: "Warum? → Weil..." with speech bubbles]
+### Visual: [SLIDE: "Ich kann nicht kommen, weil ich ..." with last word blinking]
 ### Narration:
-"'Warum kannst du nicht kommen?'
+🎬 [Energy: direct, urgent]
 
-In life — and in the exam — people want to know WHY. Why can't you come? Why are you late? Why do you like Germany?
+"One tiny German word causes a huge mistake: **weil**. The meaning is easy — 'because.' The danger is also easy: after **weil**, the verb runs to the end.
 
-The answer always starts with one word: **weil.**
+At A1, you constantly need reasons:
+- why you can't come
+- why you are late
+- why you learn German
 
-But 'weil' has a TRICK. It moves the verb to the end of the sentence. Get this right and you sound like you actually know German grammar. Get it wrong and... well, let's make sure you get it right.
-
-*'Weil' — ee word padicha, German-il reason parayaan easy aayirikum. Pakshe verb-nte position maarunu — athu padikkaanam!*"
+Without **weil**, your German sounds cut in half. Let's train it until it feels automatic."
 
 ---
 
-## Section 2: The 'Weil' Rule — Verb Goes to the END (1:00–3:00)
+## Section 2: One Core Rule — Verb Goes to the End (0:40–1:50)
 
-### Visual: [DIAGRAM: Two sentences side by side — normal word order vs weil word order, with arrows showing verb movement]
+### Visual: [BEFORE / AFTER animation: "Ich bin krank." → "weil ich krank **bin**"]
 ### Narration:
-"In a normal German sentence, the verb is in position 2:
+🎬 [Energy: clear, precise]
 
-**Ich bin krank.** (verb 'bin' = position 2)
+"Here is the whole lesson in one rule:
 
-But after 'weil', the verb moves to the END:
+### Normal sentence
+**Ich bin krank.**
 
-**...weil ich krank BIN.** (verb 'bin' = LAST word!)
+### Weil clause
+**..., weil ich krank bin.**
 
-Let me show you the full sentence:
+After **weil**: subject stays, other words stay, **the conjugated verb goes to the end**.
 
-**Ich kann nicht kommen, weil ich krank bin.**
-(I can't come because I am sick.)
+[SLIDE: Three more examples building one by one]
+- **Ich habe keine Zeit.** → **..., weil ich keine Zeit habe.**
+- **Ich muss arbeiten.** → **..., weil ich arbeiten muss.**
+- **Es regnet.** → **..., weil es regnet.**
 
-See it? The main clause is normal: 'Ich kann nicht kommen.' But after the comma and 'weil', the verb 'bin' jumps to the end.
+⏸️ Repeat all three weil clauses now:
 
-[DIAGRAM: Color-coded sentence]
-🔵 Ich kann nicht kommen, 🔴 weil ich krank **BIN**.
+### Practice Pause: ⏸️ (6 seconds)
 
-Let's see more:
+- weil ich krank **bin**
+- weil ich keine Zeit **habe**
+- weil ich arbeiten **muss**
 
-Normal: **Ich habe keine Zeit.** (verb 'habe' in position 2)
-With weil: **...weil ich keine Zeit **HABE**.**
-
-Normal: **Ich muss arbeiten.** (verb 'muss' in position 2)
-With weil: **...weil ich arbeiten **MUSS**.**
-
-The pattern: after 'weil', EVERYTHING stays the same EXCEPT the conjugated verb — it goes to the very end.
-
-⏸️ **[PAUSE — Student repeats: 'Ich kann nicht kommen, weil ich krank bin.' 'Ich kann nicht kommen, weil ich arbeiten muss.']**
-
-*Malayalam-il verb normally sentence-nte end-il varum — 'enik sukham illa.' German 'weil' clause-ilum verb end-il varunnu! Nammal already ithu ariyum!*"
+Notice the pattern? The verb always lands last."
 
 ---
 
-## Section 3: The Malayalam Secret Weapon (3:00–4:00)
+## Section 3: Malayalam Bridge — Why This Is Not So Strange (1:50–2:25)
 
-### Visual: [SLIDE: Malayalam vs German weil-clause word order comparison]
+### Visual: [Side-by-side: German weil clause vs Malayalam sentence structure]
 ### Narration:
-"Here's something amazing. In normal German, verb is in position 2:
+🎬 [Energy: reassuring, connecting]
 
-**Ich BIN krank.** (Subject — VERB — rest)
+"Here is where Malayalam helps you.
 
-But in a 'weil' clause:
+In Malayalam, the verb often comes naturally toward the end of a clause. So in a **weil** clause, German suddenly feels closer to Malayalam than normal German does.
 
-**...weil ich krank BIN.** (Subject — rest — VERB)
+*Weil clause-il verb last-il varunnath namukku strange alla. Malayalam-nte word order-ode similar aanu. Athu oru bridge aanu, problem alla.*
 
-Now look at Malayalam:
-
-**enik sukham ILLA.** (Subject — rest — VERB)
-
-Malayalam ALWAYS puts the verb at the end! So when Germans use 'weil', they're actually doing what Malayalam does ALL THE TIME.
-
-This means 'weil' clauses should feel NATURAL to you. The word order is:
-
-🇩🇪 weil + Subject + Objects/Rest + **VERB** (at end)
-🇮🇳 Malayalam: Subject + Objects/Rest + **VERB** (at end)
-
-Same thing!
-
-*German-nte 'weil' clause — nammude Malayalam word order aanu! Verb last-il varunnu — nammal always ingane parayum. So ithu easy aanu!*
-
-⏸️ **[PAUSE — Student smiles and nods]**"
+This is one of the rare moments where your mother tongue gives you an advantage."
 
 ---
 
-## Section 4: Five Essential 'Weil' Sentences (4:00–6:00)
+## Section 4: The 5 A1 Survival Reasons — Teach 3, Drill, Teach 2, Drill (2:25–4:10)
 
-### Visual: [TABLE: 5 weil sentences with highlighted verb-at-end, organized by common exam reasons]
+### Visual: [Cards appearing one by one, each with a full sentence example]
 ### Narration:
-"Memorize these five. They cover 90% of what you'll need:
+🎬 [Energy: building, toolkit mode]
 
-**1. ...weil ich krank bin.**
-(because I'm sick)
-*Full:* Ich kann nicht kommen, **weil ich krank bin.**
+"Memorize these five reasons first. They cover a huge amount of A1 life and exam writing.
 
-**2. ...weil ich arbeiten muss.**
-(because I have to work)
-*Full:* Ich kann nicht kommen, **weil ich arbeiten muss.**
+### Block 1: The Big 3
 
-**3. ...weil ich keine Zeit habe.**
-(because I have no time)
-*Full:* Leider kann ich nicht, **weil ich keine Zeit habe.**
+1. **weil ich krank bin** — because I'm sick
+   → *Leider kann ich nicht kommen, weil ich krank bin.*
 
-**4. ...weil ich einen Termin habe.**
-(because I have an appointment)
-*Full:* Es tut mir leid, **weil ich einen Termin habe.**
+2. **weil ich arbeiten muss** — because I have to work
+   → *Ich komme später, weil ich arbeiten muss.*
 
-**5. ...weil ich Besuch habe.**
-(because I have visitors)
-*Full:* Ich komme leider nicht, **weil ich Besuch habe.**
+3. **weil ich keine Zeit habe** — because I have no time
+   → *Heute kann ich nicht, weil ich keine Zeit habe.*
 
-⏸️ **[PAUSE — Student says all 5 sentences]**
+### ⚡ Drill: Predict the last word
 
-In EVERY one, the verb — 'bin', 'muss', 'habe' — is the LAST word. That's the pattern. Always.
+⏸️ 'Leider kann ich nicht kommen, weil ich krank ...'
 
-Now let's also practice POSITIVE reasons:
+### Practice Pause: ⏸️ (2 seconds)
 
-**6. ...weil es Spaß macht.**
-(because it's fun)
-*Full:* Ich lerne Deutsch, **weil es Spaß macht.**
+**bin.**
 
-**7. ...weil ich in Deutschland leben möchte.**
-(because I want to live in Germany)
-*Full:* Ich lerne Deutsch, **weil ich in Deutschland leben möchte.**
+⏸️ 'Heute kann ich nicht, weil ich keine Zeit ...'
 
-**8. ...weil es warm ist.**
-(because it's warm)
-*Full:* Ich mag den Sommer, **weil es warm ist.**
+### Practice Pause: ⏸️ (2 seconds)
 
-⏸️ **[PAUSE — Student says: 'Ich lerne Deutsch, weil ich in Deutschland leben möchte.']**
+**habe.**
 
-Beautiful. That sentence alone will impress any examiner."
+⏸️ 'Ich komme später, weil ich arbeiten ...'
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**muss.**
 
 ---
 
-## Section 5: Transform Drill — Combine Sentences (6:00–7:30)
+### Block 2: Two More
 
-### Visual: [SLIDE: Two separate sentences → combine with 'weil' arrow]
-### Narration:
-"Now YOU do it. I give you two sentences — you combine them with 'weil'. Remember: verb goes to the END in the weil-clause!
+4. **weil ich einen Termin habe** — because I have an appointment
+   → *Ich kann nicht mitkommen, weil ich einen Termin habe.*
 
-**1.** Ich kann nicht kommen. + Ich bin müde.
-→ ⏸️ **[PAUSE]**
-→ **Ich kann nicht kommen, weil ich müde bin.** ✅
+5. **weil ich Besuch habe** — because I have visitors
+   → *Ich bleibe zu Hause, weil ich Besuch habe.*
 
-**2.** Ich esse kein Fleisch. + Ich bin Vegetarier.
-→ ⏸️ **[PAUSE]**
-→ **Ich esse kein Fleisch, weil ich Vegetarier bin.** ✅
+### ⚡ Drill: Complete the clause
 
-**3.** Ich gehe nicht raus. + Es regnet.
-→ ⏸️ **[PAUSE]**
-→ **Ich gehe nicht raus, weil es regnet.** ✅
+⏸️ 'Ich kann nicht mitkommen, weil ich einen Termin ...'
 
-**4.** Ich lerne Deutsch. + Ich möchte in Deutschland arbeiten.
-→ ⏸️ **[PAUSE]**
-→ **Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte.** ✅
+### Practice Pause: ⏸️ (2 seconds)
 
-**5.** Ich mag Kerala. + Das Essen ist lecker.
-→ ⏸️ **[PAUSE]**
-→ **Ich mag Kerala, weil das Essen lecker ist.** ✅
+**habe.**
 
-How did you do? If you got the verb to the end every time — congratulations, you understand 'weil'!"
+⏸️ 'Ich bleibe zu Hause, weil ich Besuch ...'
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**habe.**"
 
 ---
 
-## Section 6: Common Mistake Spotlight (7:30–8:30)
+## Section 5: Positive Reasons Too (4:10–5:00)
 
-### Visual: [SLIDE: ❌ vs ✅ sentences]
+### Visual: [Green cards: motivation / preference / weather]
 ### Narration:
-"The ONE mistake everyone makes:
+🎬 [Energy: lighter, expansive]
 
-❌ **Ich kann nicht kommen, weil ich BIN krank.**
-✅ **Ich kann nicht kommen, weil ich krank BIN.**
+"**Weil** is not only for excuses. It is also for positive reasons.
 
-The verb 'bin' MUST go to the end. Not position 2. THE END.
+- **Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte.**
+- **Ich mag den Sommer, weil es warm ist.**
+- **Ich spiele Fußball, weil es Spaß macht.**
 
-More examples:
+This matters for speaking exams too. If the examiner asks **Warum?**, you need a simple reason — not a long speech.
 
-❌ weil ich MUSS arbeiten
-✅ weil ich arbeiten **MUSS**
+⏸️ Finish this sentence out loud:
+**Ich lerne Deutsch, weil ich ...**
 
-❌ weil ich HABE keine Zeit
-✅ weil ich keine Zeit **HABE**
+### Practice Pause: ⏸️ (4 seconds)
 
-The trick: after 'weil', pretend the verb is shy — it hides at the very back of the sentence.
+Any answer with the verb at the end is correct. For example:
+**...weil ich in Deutschland leben möchte.**
 
-⏸️ **[PAUSE — Student corrects: 'weil ich gehe zur Schule' → 'weil ich zur Schule gehe']**
-
-One more thing: **comma before 'weil'!** Germans always put a comma before subordinate clauses:
-
-'Ich komme nicht**,** weil ich krank bin.'
-
-Don't forget the comma in writing!"
+[EXAM-TIP] In Sprechen, one clean weil sentence after 'Warum?' is better than rambling without structure."
 
 ---
 
-## Section 7: 'Weil' in the Exam (8:30–10:00)
+## Section 6: Transform Drill — Build the Sentence Yourself (5:00–6:25)
 
-### Visual: [SLIDE: Schreiben Teil 2 prompt with 'weil' usage highlighted in model answer]
+### Visual: [Two short sentences on screen → student combines → reveal]
 ### Narration:
-"Where does 'weil' show up in the Goethe A1 exam?
+🎬 [Energy: challenge mode, focused]
 
-**Schreiben Teil 2** — Declining an invitation:
-Prompt: 'You can't come to your friend's party. Write why.'
-Answer: 'Leider kann ich nicht kommen, **weil ich arbeiten muss.**'
+"Now you do the grammar work. I give you two sentences. You combine them with **weil**.
 
-**Schreiben Teil 2** — Explaining a situation:
-Prompt: 'You're late for class. Write to your teacher.'
-Answer: 'Es tut mir leid, ich komme zu spät, **weil der Bus Verspätung hatte.**'
+### 1
+**Ich kann nicht kommen. + Ich bin müde.**
 
-**Sprechen** — Answering 'Warum?':
-Examiner: 'Warum lernen Sie Deutsch?'
-You: 'Ich lerne Deutsch, **weil ich in Deutschland arbeiten möchte.**'
+⏸️ Combine them now.
 
-Let's practice one full Schreiben prompt:
+### Practice Pause: ⏸️ (4 seconds)
 
-**Prompt:** Your friend Anna invited you to a picnic on Sunday. You can't come because you have to study for an exam. Write to Anna:
-1. Thank her
-2. Say why you can't come
-3. Suggest meeting next week
+**Ich kann nicht kommen, weil ich müde bin.**
 
-⏸️ **[PAUSE — 60 seconds to write]**
+### 2
+**Ich gehe nicht raus. + Es regnet.**
 
-Model answer:
+⏸️
 
-**Liebe Anna,**
-**danke für die Einladung zum Picknick! Leider kann ich am Sonntag nicht kommen, weil ich für eine Prüfung lernen muss. Können wir nächste Woche etwas zusammen machen?**
-**Liebe Grüße, Nikhil**
+### Practice Pause: ⏸️ (4 seconds)
 
-Count the 'weil': 'weil ich für eine Prüfung lernen **muss**' — verb 'muss' at the end. Perfect."
+**Ich gehe nicht raus, weil es regnet.**
+
+### 3
+**Ich lerne Deutsch. + Ich möchte in Deutschland arbeiten.**
+
+⏸️
+
+### Practice Pause: ⏸️ (5 seconds)
+
+**Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte.**
+
+### 4
+**Ich mag Kerala. + Das Essen ist lecker.**
+
+⏸️
+
+### Practice Pause: ⏸️ (4 seconds)
+
+**Ich mag Kerala, weil das Essen lecker ist.**
+
+### Micro rule reminder
+Don't chase the whole sentence. Just ask yourself:
+**What is the conjugated verb? Put it last.**"
 
 ---
 
-## Section 8: 'Denn' — The Easy Alternative (10:00–11:00)
+## Section 7: Mistake Clinic — Fix the Wrong Sentence (6:25–7:20)
 
-### Visual: [SLIDE: weil vs denn side by side with word order arrows]
+### Visual: [❌ / ✅ pairs appearing one by one]
 ### Narration:
-"Quick bonus: there's another word for 'because' — **denn**.
+🎬 [Energy: detective mode, alert]
 
-The difference? **'Denn' does NOT change word order!**
+"Let's kill the most common mistake.
 
-With **weil**: Ich komme nicht, weil ich krank **bin**. (verb at end)
-With **denn**: Ich komme nicht, denn ich **bin** krank. (normal word order!)
+❌ **weil ich bin krank**
+✅ **weil ich krank bin**
 
-Same meaning. Different grammar.
+❌ **weil ich muss arbeiten**
+✅ **weil ich arbeiten muss**
 
-So why not just always use 'denn'? Because:
-1. 'Weil' is more common in speech
-2. The exam expects you to know 'weil'
-3. Using 'weil' correctly shows grammar skill
+❌ **weil ich habe keine Zeit**
+✅ **weil ich keine Zeit habe**
 
-My recommendation: **learn 'weil' properly** (verb at end). Keep 'denn' as a backup if you panic and can't remember the word order. 'Denn' with normal word order is still correct — just less impressive.
+### ⚡ Correction Drill
+⏸️ Fix this: **weil ich gehe heute zum Arzt**
 
-*'Denn' paranjaalum correct aanu — pakshe 'weil' use cheythaal, examiner-nu impression kittum!*"
+### Practice Pause: ⏸️ (4 seconds)
+
+✅ **weil ich heute zum Arzt gehe**
+
+⏸️ Fix this: **weil ich kann nicht kommen**
+
+### Practice Pause: ⏸️ (4 seconds)
+
+✅ **weil ich nicht kommen kann**
+
+### Writing reminder
+In writing, don't forget the **comma before weil**:
+**Ich komme nicht, weil ich krank bin.**"
 
 ---
 
-## Section 9: Summary + Module 12 Closing (11:00–12:00)
+## Section 8: Exam Application — Schreiben and Sprechen (7:20–8:30)
 
-### Visual: [SLIDE: 'Weil' formula card + Module 12 achievement badge]
+### Visual: [Split screen: writing task prompt / speaking follow-up]
 ### Narration:
-"Let's recap 'weil':
+🎬 [Energy: exam-focused, practical]
 
-✅ **'weil' = because** — gives reasons
-✅ **Verb goes to the END** after 'weil'
-✅ **Comma before 'weil'** in writing
-✅ **Malayalam parallel** — verb-at-end is natural for us!
-✅ **5 essential reasons** memorized (krank, arbeiten, keine Zeit, Termin, Besuch)
-✅ **'Denn'** = alternative with normal word order
+"Now let's use **weil** where it actually earns marks.
 
-And with that — Module 12 is COMPLETE!
+### Schreiben Teil 2
+Prompt: You cannot come to your friend's dinner. Say why.
 
-In this module you learned:
-🎯 Hobbies with 'gern'
-🌤️ Weather and seasons
-📅 Making plans with friends
-✉️ Writing invitations (accept + decline)
-🔗 Giving reasons with 'weil'
+Safe answer line:
+**Leider kann ich nicht kommen, weil ich arbeiten muss.**
 
-That's a complete SOCIAL German toolkit. You can talk about what you like, describe the weather, make plans, and explain yourself. 
+### Sprechen follow-up
+Examiner: **Warum lernen Sie Deutsch?**
 
-*Module 12 kazhinjappol, nammukku German-il socialise cheyyaan pattum — hobby parayan, plans undaakkan, invitations ezhuthan, reasons kodukkan!*
+Safe answer:
+**Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte.**
 
-Auf Wiedersehen und weiter so!"
+⏸️ The examiner asks: **Warum können Sie am Samstag nicht kommen?**
+Give a reason with weil.
+
+### Practice Pause: ⏸️ (5 seconds)
+
+Possible answer: **Weil ich einen Termin habe.** or **Weil ich arbeiten muss.**
+
+*A1-il safe answer important aanu. One clean weil sentence often beats a messy long answer.*
+
+[EXAM-TIP] In Schreiben Teil 2, a single weil sentence is often enough for the 'give a reason' content point. Don't overcomplicate it."
+
+---
+
+## Section 9: Active Recall — Test Before Summary (8:30–9:30)
+
+### Visual: [Blank prompts → student recalls → answers appear]
+### Narration:
+🎬 [Energy: consolidating, warm]
+
+"Before I give you the final summary, let's test what stuck.
+
+⏸️ What is the one core rule of weil?
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**The conjugated verb goes to the end.**
+
+⏸️ Say three of the five survival reasons.
+
+### Practice Pause: ⏸️ (6 seconds)
+
+Any three of:
+1. weil ich krank bin
+2. weil ich arbeiten muss
+3. weil ich keine Zeit habe
+4. weil ich einen Termin habe
+5. weil ich Besuch habe
+
+⏸️ Combine these: **Ich komme nicht. Ich bin müde.**
+
+### Practice Pause: ⏸️ (4 seconds)
+
+**Ich komme nicht, weil ich müde bin.**
+
+⏸️ Fix this: **weil ich habe keine Zeit**
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**weil ich keine Zeit habe.**"
+
+---
+
+## Section 10: Close + Homework (9:30–10:15)
+
+### Visual: [FINAL FORMULA CARD: weil + subject + rest + VERB]
+### Narration:
+🎬 [Energy: encouraging, closing]
+
+"Take only one formula from this lesson:
+
+**weil + subject + rest + verb at the end**
+
+If that becomes automatic, your writing and speaking become much stronger.
+
+### Homework
+Say these 3 sentences aloud three times each:
+- *Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte.*
+- *Leider kann ich nicht kommen, weil ich keine Zeit habe.*
+- *Ich bleibe zu Hause, weil ich krank bin.*
+
+Next time you need a reason, don't stop at half a sentence. Finish it with **weil**.
+
+Auf Wiedersehen!"
+
+---
+
+## Script Quality Checklist (v2.1)
+
+- [x] Hook under 40 seconds with concrete problem/payoff
+- [x] Teach → Drill → Apply cycles with max 3 items per block before drilling
+- [x] Active recall section (Section 9) tests BEFORE final summary
+- [x] 🎬 [Energy:] cues on every section
+- [x] Practice pauses have specific prompts, timings, and reveals (18+ pauses)
+- [x] Malayalam bridge is structural (word-order parallel), not just translation
+- [x] 5 survival reasons taught in 3+2 blocks with interleaving drills
+- [x] Mistake clinic with active correction drills (not just showing right answers)
+- [x] Exam tips are specific: Schreiben Teil 2 reason point, Sprechen "Warum?" follow-up
+- [x] Transform drill has student building sentences, not just reading
+- [x] Writing comma rule explicitly taught
+- [x] Duration realistic for ~10:15 target
+- [x] No A2+ content — stays within A1 weil usage
+- [x] Homework is concrete: 3 specific sentences, 3 repetitions each
+
+---
+
+## v2.1 Revision Notes
+
+| Change | Detail |
+|--------|--------|
+| Energy cues added | Every section now has `🎬 [Energy:]` marker — was missing in most sections |
+| Practice pause formatting | All pauses now have consistent `### Practice Pause: ⏸️ (Xs)` format with specific timings |
+| Vocabulary block split | 5 survival reasons split into 3+2 with interleaving predict-the-last-word drills |
+| Active recall section added | New Section 9 tests recall BEFORE the summary (was missing entirely) |
+| Correction drill expanded | Added second fix-this exercise (weil ich kann nicht kommen) |
+| Exam drill added | Section 8 now has an active speaking drill, not just model answers |
+| Quality checklist formalized | Replaced informal "Quality Pass Notes" with standard v2.0 checklist format |
+| Hook tightened | Combined cold open and old Section 1 into one 30-second hook |
+| Section numbering cleaned | 10 sections, clear progression from rule → practice → mistakes → exam → recall |
 
 ---
 
 ## Production Notes
 
-### Visual Requirements:
-- Color-coded sentence diagrams (main clause blue, weil clause red, verb highlighted yellow)
-- Arrow diagrams showing verb movement from position 2 to end position
-- Malayalam vs German word order comparison slide
-- ❌ vs ✅ mistake spotlight slides
-
-### Audio Requirements:
-- All 8 essential weil sentences at slow → natural speed
-- Transform drill with clear pauses for student practice
-- Exam prompt reading at exam speed
-
-### Exercise Integration:
-- Grammar drill: Combine sentences with 'weil' (verb-to-end practice)
-- Free-text: "Why are you learning German? Write 3 sentences using 'weil'"
-- Schreiben practice: Decline an invitation with a reason
-- Fill-in-the-blank: Complete weil clauses with correct verb position
-
-### Cross-References:
-- Module 12 Lesson 12-4 v12-4-1 (Invitations) — direct companion for declining
-- Module 16 Lesson 16-4 (Subordinate Clauses) — deeper treatment of weil + dass + wenn
-- Module 18 Lesson 18-2 (Schreiben Teil 2) — exam application
-
-### Checklist:
-- [x] Teaching goal clear (weil clauses for giving reasons)
-- [x] A1 exam sections mapped (Schreiben Teil 2, Sprechen)
-- [x] Malayalam parallel highlighted (verb-at-end = natural Malayalam order)
-- [x] Core rule explained with color-coded diagrams
-- [x] 8 essential weil sentences drilled
-- [x] Transform drill (5 sentence pairs)
-- [x] Common mistake spotlight
-- [x] Full exam practice prompt with model answer
-- [x] 'Denn' alternative explained
-- [x] Module 12 summary and closing
-- [x] Pause markers for student practice
+**Audio:** Emphasize the verb landing at the end in every weil example — slight pause before the final verb.
+**Visuals:** Before/after word-order animation, predict-the-last-word blanks, ❌/✅ correction pairs, formula card persistent during drills.
+**Exercise tie-ins:** Module 12-4-1 (invitation writing uses weil for reasons), Module 18 Schreiben Teil 2 (weil for content point 3).
+**Connections:** Module 16-4 (subordinate clauses — weil is the A1 foundation for that deeper dive).

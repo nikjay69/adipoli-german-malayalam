@@ -1,6 +1,6 @@
 # Module 2: Who Are You? (Wer bist du?) — Launch Plan
 
-> **Last updated:** 2026-03-23 11:45 UTC
+> **Last updated:** 2026-03-23 17:41 UTC
 
 ---
 
@@ -33,17 +33,17 @@
 | Video ID | Title | Status | Quality |
 |----------|-------|--------|---------|
 | v2-1-1 | What's Your Name? | 🔄 DRAFT | v2.0 ✅ |
-| v2-1-2 | What's Your Name? Part 2 (Spelling + Forms) | 📐 ARCH | Pre-draft plan in REMAINING_SCRIPT_PLANS.md |
+| v2-1-2 | What's Your Name? Part 2 (Spelling + Forms) | 🔄 DRAFT | v2.0 draft ✅ |
 | v2-2-1 | Where Are You From? | 🔄 DRAFT | v2.0 ✅ |
 | v2-3-1 | Jobs & Languages | 🔄 DRAFT | v2.0 ✅ |
 
-**Status: 3/4 scripts drafted at v2.0 quality. Only v2-1-2 (supplementary) remains.**
+**Status: 4/4 core script units now drafted. Module 2's remaining gap is no longer script coverage — it is production exercise + audio implementation.**
 
 ### v2-1-2 Assessment
-- Content: spelling name, handling unusual names, form-filling name fields
+- Content now drafted: name spelling, handling unusual names, `Vorname` / `Nachname` / `Familienname`, mini form-fill, dictation-style spelling practice
 - Teaching value: HIGH (real-world skill used weekly in Germany)
-- Exam value: MEDIUM (supports Sprechen "Buchstabieren Sie" and Schreiben form fields)
-- **Recommendation:** Draft this script — it completes the module AND teaches a skill every learner needs
+- Exam value: MEDIUM-HIGH (supports Sprechen `Buchstabieren Sie` and Schreiben Teil 1 form accuracy)
+- **Recommendation now:** keep the script, then build the matching audio + form-fill exercise so the skill becomes automatic
 
 ---
 
@@ -55,8 +55,8 @@
 4. ✅ **Say their profession** (Ich bin + Beruf + von Beruf)
 5. ✅ **Say what languages they speak** (Ich spreche + languages)
 6. ✅ **Ask these questions** in formal and informal register
-7. 🟡 **Spell their name** — plan exists but script not drafted
-8. 🟡 **Complete a personal info form** — concept taught but no interactive form exercise
+7. ✅ **Spell their name** — dedicated script now drafted (`v2-1-2`)
+8. 🟡 **Complete a personal info form** — now modeled in script, but no interactive form exercise yet
 9. ✅ **Sustain a 2-minute self-introduction** — /practice/intro exists
 
 ---
@@ -111,10 +111,10 @@ Mein Hobby ist [hobby]. / Ich [verb] gern.
 ## Concrete Next Steps
 
 ### Must-do before launch
-1. [ ] Draft v2-1-2 (name spelling + form fields) — **completes module**
-2. [ ] Build 2-P1 production exercise (self-introduction free-text)
-3. [ ] Build 2-P2 production exercise (form-fill from audio)
-4. [ ] Generate audio for self-intro model answer
+1. [ ] Build 2-P1 production exercise (self-introduction free-text)
+2. [ ] Build 2-P2 production exercise (form-fill from audio, now directly supported by `v2-1-2`)
+3. [ ] Generate audio for self-intro model answer
+4. [ ] Generate name-spelling + form-dictation audio for `v2-1-2`
 5. [ ] Wire /practice/intro more visibly from Module 2 completion screen
 
 ### Should-do for quality

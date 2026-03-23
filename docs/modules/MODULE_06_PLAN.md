@@ -11,7 +11,7 @@
 - **Videos:** 8
 - **Exercises:** 32
 - **Vocabulary:** 44
-- **Scripts drafted:** 3/4 core scripts (v6-1-1, v6-2-1, v6-3-1). Missing: v6-1-2 (Kerala Food in German)
+- **Scripts drafted:** 4/4 core scripts (v6-1-1, v6-1-2, v6-2-1, v6-3-1). **Module 6 script-complete ✅**
 
 ---
 
@@ -36,13 +36,13 @@
 | Video ID | Title | Status | Quality | Notes |
 |----------|-------|--------|---------|-------|
 | v6-1-1 | German Foods You Should Know | 🔄 DRAFT | v1.0 | Core food vocab with articles |
-| v6-1-2 | Kerala Food in German | 📐 ARCH | Pre-draft plan in REMAINING_SCRIPT_PLANS.md | Cultural bridge — describing Indian food |
+| v6-1-2 | Kerala Food in German | 🔄 DRAFT | v2.0 | Cultural bridge — describing Indian food in A1 German |
 | v6-2-1 | Drinks & Ordering | 🔄 DRAFT | v2.0 ✅ | Drink vocab + gern pattern + Ich hätte gern |
 | v6-3-1 | Restaurant Golden Dialogue | 🔄 DRAFT | v2.0 ✅ | Centerpiece ordering dialogue |
 | v6-4-1 | Likes & Dislikes Deep Dive | ⬜ OUTLINE | — | gern/nicht gern + reasons |
 | v6-5-1 | Accusative Case Introduction | ⬜ OUTLINE | — | einen/eine/ein through food patterns |
 
-**Status: 3/~5 scripts drafted. Core ordering and food vocab covered. Kerala food bridge, gern deep dive, and accusative explanation need scripts.**
+**Status: 4/~5 scripts drafted. All 4 core scripts complete (food vocab, Kerala food, drinks/ordering, restaurant dialogue). Remaining: gern deep dive (v6-4-1) and accusative explanation (v6-5-1) are optional depth scripts.**
 
 ### Script Priority Assessment
 

@@ -1,10 +1,10 @@
 # v18-5-1 — Full Mock Exam: Strategy & Mindset (FULL SCRIPT)
 
 > **Module:** 18 | **Lesson:** 18-5 | **Duration:** 11:00 target
-> **Teaching Goal:** Give students a complete exam-day game plan — strategy per section, time management, and mindset
-> **A1 Exam Link:** ALL sections — Hören (25%), Lesen (25%), Schreiben (25%), Sprechen (25%)
+> **Teaching Goal:** Give students a calm, realistic exam-day game plan — what each section is asking, how to protect points, and how not to panic
+> **A1 Exam Link:** All sections — Hören, Lesen, Schreiben, Sprechen
 > **Prerequisites:** Modules 17-1 through 18-4 completed
-> **Status:** REVISED — v2.0
+> **Status:** REVISED — v2.1
 > **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
 
 ---
@@ -17,302 +17,326 @@
 
 ---
 
-## Section 1: Hook — Exam Day Simulation (0:15–0:50)
+## Section 1: Hook — Your Job Is Not Perfection, It's Point Protection (0:15–0:45)
 
-### Visual: [SLIDE: Exam room photo. Clock overlay ticking. "60% = Pass" in large text]
-### Narration: [ENERGY: intense, focused]
-"Exam room. 15 people. Papers on the desk. Clock starts. You need 60 out of 100 points across four sections.
+### Visual: [SLIDE: Exam room + four sections + shield icon "Protect Points"]
+### Narration: [ENERGY: steady, confidence-building]
+"On exam day, the biggest mistake is not weak German. It is panic, rushing, and losing points you could have protected.
 
-This video is your game plan. Four sections, three rules each, the traps to dodge. Watch this the night before your exam.
+This video is your final game plan.
+Not magic tricks. Not last-minute cramming.
+Just one clear job for each section, the main trap in each section, and the safest exam-day decisions.
 
-Let's walk through it section by section."
-
----
-
-## Section 2: Hören — Listening (0:50–2:45)
-
-### Visual: [DIAGRAM: Hören structure — Teil 1 (6 items, 2x), Teil 2 (4 items, 2x), Teil 3 (5 items, 1x)]
-### Narration: [ENERGY: alert, strategic]
-"Hören starts immediately. No warm-up. 25 minutes, 3 parts, 25 points.
-
-### Teil 1: Short Messages (6 items, hear TWICE)
-Train announcements, phone messages, weather. First listen: get the topic. Second listen: grab the answer.
-
-### Teil 2: Conversations (4 items, hear TWICE)
-Two people talking. The trick: **read the statements BEFORE the audio plays.** Know what you're hunting for.
-
-### Teil 3: Public Announcements (5 items, hear ONCE)
-This is the hardest. You hear it ONCE. Focus on numbers and key nouns. If you miss one — let it go. Don't freeze.
-
-*Cricket-il oru ball miss aayaal, next ball-il focus cheyyumallo? Same here — oru answer miss aayaal, adutha question-il focus cheyyuka.*
-
-⏸️ **Quick — what are the 3 Hören survival rules?** Try to name them before I show you.
-
-### Practice Pause: ⏸️ (4 seconds)
-
-[SLIDE: "1. Read questions first. 2. Numbers are gold. 3. Don't freeze on missed answers."]
-
-How many did you get?"
+*Perfect aavan venda. Stable aayittu point save cheyyanam.*"
 
 ---
 
-## Section 3: Lesen — Reading (2:45–4:45)
+## Section 2: The Master Rule for the Whole Exam (0:45–1:20)
 
-### Visual: [DIAGRAM: Lesen structure — Teil 1 (signs, 5 items), Teil 2 (true/false, 5 items), Teil 3 (matching, 5 items)]
-### Narration: [ENERGY: confident, methodical]
-"Lesen. 25 minutes, 3 parts, 25 points. And the section where you can gain marks FASTEST — because the text is right there in front of you.
+### Visual: [SLIDE: "Read → Decide → Answer → Move On"]
+### Narration: [ENERGY: organized, simple]
+"Before the sections, one master rule for the whole exam:
 
-### Teil 1: Signs & Notices (5 items)
-Match situations to signs. Strategy: scan for KEYWORDS, not full sentences.
+**Read → Decide → Answer → Move on.**
 
-'Geschlossen' = closed. 'Ab 18 Uhr' = from 6 PM. You don't need to understand every word.
+Do not get stuck trying to be brilliant.
+Do not spend too long on one confusing item.
+Do not let one missed answer damage the next five.
 
-*Bus stop-il board vaayikkumbol pole — quick scan, key info pick cheyyuka, full sentence venda.*
-
-### Teil 2: Texts — True/False/Not Mentioned (5 items)
-Short emails and messages. The killer option: **'nicht im Text'** — not mentioned.
-
-If the text doesn't SAY it — even if it seems logical — it's 'nicht im Text'. This is THE trap.
-
-### Teil 3: Matching (5 items)
-People to ads. Strategy: **eliminate first.** Two options are obviously wrong. Choose between the remaining two.
-
-⏸️ What's the biggest trap in Lesen Teil 2? Say it.
-
-### Practice Pause: ⏸️ (3 seconds)
-
-**'Nicht im Text'!** If it seems true but the text never says it — it's not mentioned."
-
----
-
-## Section 4: Schreiben — Writing (4:45–6:45)
-
-### Visual: [SLIDE: Schreiben structure — Teil 1 (form, 5 fields) + Teil 2 (message, 30 words, 3 points)]
-### Narration: [ENERGY: reassuring, clear]
-"Schreiben. 20 minutes, 2 parts, 25 points. This should be your easiest section.
-
-### Teil 1: Form Filling (5 fields)
-Personal info form — Familienname, Geburtsdatum, Adresse. We've drilled this in Module 14 and 18-1.
-
-Three traps, one more time:
-
-⏸️ Name the 3 form-filling traps. You've seen them before. Go!
-
-### Practice Pause: ⏸️ (4 seconds)
-
-[SLIDE: "1. Vorname ≠ Familienname — don't swap! 2. Dates: DOTS, not slashes (TT.MM.JJJJ) 3. Staatsangehörigkeit: indisch, not Indien"]
-
-These are FREE POINTS. Don't give them away.
-
-### Teil 2: Short Message (30 words, 3 content points)
-You get a scenario with 3 points to address. One sentence per point = done.
-
-Here's your safety template:
-
-[SLIDE: Template appearing line by line]
-```
-Liebe/Lieber [Name],
-[Sentence for point 1].
-[Sentence for point 2].
-[Sentence for point 3].
-Liebe Grüße,
-[Your name]
-```
-
-*30 words ONLY veNQ — oru paragraph alla, 3 sentence mathram!*
-
-[EXAM-TIP] Simple sentences score the same as complex ones. 'Ich komme morgen' gets full points — no need for 'Ich würde morgen kommen, wenn...'
-
-⏸️ Practice now — write this message: Your friend Anna invited you. Tell her: you're coming, you'll arrive at 3 PM, ask if you should bring food.
-
-### Practice Pause: ⏸️ (10 seconds)
-
-[SLIDE: Model — 'Liebe Anna, ich komme gern! Ich bin um 15 Uhr da. Soll ich Essen mitbringen? Liebe Grüße, [Name]']
-
-Check: did you hit all 3 points? That's what matters."
-
----
-
-## Section 5: Sprechen — Speaking (6:45–8:45)
-
-### Visual: [DIAGRAM: Sprechen structure — Teil 1 (intro), Teil 2 (questions), Teil 3 (requests)]
-### Narration: [ENERGY: warm, encouraging]
-"Sprechen. 15 minutes total, 3 parts, 25 points. And the part students fear most.
-
-### Teil 1: Sich vorstellen (Self-Introduction)
-This is GUARANTEED points. You know the topic in advance: yourself.
-
-⏸️ Say your 7-sentence introduction right now. Name, age, country, city, job, languages, hobby. Go!
-
-### Practice Pause: ⏸️ (12 seconds)
-
-*Ithu muscle memory aanu — mouth automatic aayi parayunnathu vareyum practice cheyyuka. 50 times repeat cheyyuka — brain alla, mouth padikkatte!*
-
-### Teil 2: Questions (Word Cards)
-You get a word — 'Freizeit', 'Essen', 'Familie' — and ask your partner a question about it.
-
-Four question starters cover everything:
-- **Was...?** (What...?)
-- **Wo...?** (Where...?)
-- **Wann...?** (When...?)
-- **Wie oft...?** (How often...?)
-
-If you don't understand: **'Können Sie das bitte wiederholen?'** — this is ALLOWED. It even shows competence.
-
-### Teil 3: Requests
-Everyday situations. Two patterns cover everything:
-- **'Können Sie mir bitte ___?'**
-- **'Ich hätte gern ___.'**
-
-⏸️ Your word card says 'Essen'. Ask me a question. Go!
-
-### Practice Pause: ⏸️ (4 seconds)
-
-[SLIDE: Options — 'Was essen Sie gern?' / 'Wo essen Sie?' / 'Wie oft kochen Sie?']
-
-Any of these works. Simple question, correct grammar, full points."
-
----
-
-## Section 6: Exam Day Logistics (8:45–9:45)
-
-### Visual: [SLIDE: Exam day checklist — visual timeline of the day]
-### Narration: [ENERGY: calm, organized]
-"Exam day logistics.
-
-**Bring:** Passport or ID, black ink pen, water bottle. That's it.
-
-**Arrive:** 30 minutes early. Pünktlich ist 10 Minuten zu früh!
-
-**The night before:** Don't cram vocabulary. Review ONLY your self-introduction and the Schreiben template. Then sleep.
-
-*Raatriyil 2 AM vareyum padikkunnathinekkaal, nannaayi urangunnathilaanu mark koodi kittunnathu.*
-
-**During the exam:** If you don't know an answer — GUESS and move on. Never leave blank. A guess has a chance; blank has zero.
-
-**Time stuck?** Skip to the next Teil and come back. Don't let one hard question eat your time.
-
-⏸️ What do you do if you don't know a Hören answer and the next audio is starting?
-
-### Practice Pause: ⏸️ (3 seconds)
-
-**Guess something, move on.** Never freeze."
-
----
-
-## Section 7: Active Recall — Full Strategy Drill (9:45–10:30)
-
-### Visual: [SLIDE: "Final Drill — One Rule Per Section 🎯"]
-### Narration: [ENERGY: challenging, game-like]
-"Last test. One rule per section — from memory:
-
-**Hören:** What do you do BEFORE the audio plays?
-
-⏸️
-
-### Practice Pause: ⏸️ (3 seconds)
-
-Read the questions first!
-
-**Lesen:** What's the trap option in Teil 2?
-
-⏸️
+⏸️ Say the sequence now.
 
 ### Practice Pause: ⏸️ (2 seconds)
 
-'Nicht im Text' — not mentioned.
-
-**Schreiben Teil 2:** How many sentences do you need?
-
-⏸️
-
-### Practice Pause: ⏸️ (2 seconds)
-
-Three. One per content point.
-
-**Sprechen:** What's the safe request pattern?
-
-⏸️
-
-### Practice Pause: ⏸️ (2 seconds)
-
-'Können Sie mir bitte ___?'
-
-[EXAM-TIP] You need 60% per section. That means you can get 40% WRONG and still pass. You don't need perfection — you need strategy."
+**Read. Decide. Answer. Move on.** Good."
 
 ---
 
-## Section 8: Outro — You Are Ready (10:30–11:00)
+## Section 3: Hören — Catch the Key Info, Don't Chase Every Word (1:20–3:00)
 
-### Visual: [SLIDE: "Du schaffst das! 🎉" with course completion badge animation]
-### Narration: [ENERGY: warm, proud, final]
-"You've done 18 modules. Hundreds of exercises. Your self-introduction is automatic. You can fill forms, write messages, ask questions, make requests.
+### Visual: [DIAGRAM: Hören structure — Teil 1 / Teil 2 / Teil 3]
+### Narration: [ENERGY: alert, tactical]
+"In Hören, your job is **not** to understand every word.
+Your job is to catch the information that decides the answer.
 
-*Ithu A1 pass cheyyaan vendathellaam aanu. Simple, correct, confident German.*
+That usually means:
+- time
+- place
+- price
+- name
+- yes/no decision
+- the main topic
 
-Walk in. Stay calm. Use simple sentences. Answer everything.
+### Safer Hören habits
+- Read the task quickly before the audio starts
+- Listen for key nouns and numbers
+- If one answer slips away, reset immediately
 
-**Du schaffst das. Viel Erfolg!**
+*Cricket-il oru ball miss aayaal innings kazhinjilla. Next ball-il focus cheyyumallo? Same logic.*
 
-*Adipoli — ningal ready aanu!* 🎉"
+For the different Hören parts, the exact format may change, but this survival method stays useful:
+- look first
+- listen for the deciding detail
+- choose
+- move on
+
+⏸️ What is your job in Hören — understand every word, or catch the deciding information?
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**Catch the deciding information.** Exactly.
+
+And if you miss one answer?
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**Reset and continue.**"
+
+---
+
+## Section 4: Lesen — Match Need to Text, Not Imagination to Text (3:00–4:35)
+
+### Visual: [DIAGRAM: signs / short texts / messages with highlighted keywords]
+### Narration: [ENERGY: methodical, sharp]
+"In Lesen, your job is to match the task to the text accurately.
+Not quickly guessing from one familiar word. Not imagining what the text probably means.
+
+### Safer Lesen habits
+- Find the keyword in the question or situation
+- Scan the text for the matching signal
+- Check one line before and one line after if needed
+- Eliminate clear wrong answers first
+
+A common trap is overconfidence.
+The text says one thing, but your brain fills in something more logical or more familiar.
+Don't do that.
+
+*Board kandappol nammal guess cheyyaruthu. Text-il undengil mathi.*
+
+⏸️ In reading, should you answer from your own logic or from the actual text?
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**From the actual text.** Good.
+
+And what should you do with clearly wrong options?
+
+### Practice Pause: ⏸️ (2 seconds)
+
+**Eliminate them first.**"
+
+---
+
+## Section 5: Schreiben — Complete Beats Fancy (4:35–6:20)
+
+### Visual: [SLIDE: Schreiben Teil 1 + Teil 2 | checklist icons]
+### Narration: [ENERGY: reassuring, disciplined]
+"In Schreiben, your job is simple:
+
+### Teil 1 — Form filling
+Put the correct information in the correct box.
+Read the label twice.
+Check names, dates, and nationality carefully.
+
+### Teil 2 — Short message
+Cover all required content points clearly.
+
+This is the biggest writing mistake:
+Students try to sound impressive and forget one required point.
+
+For A1, the safer rule is:
+**complete and clear beats long and clever.**
+
+If you need three content points, one short sentence per point is often enough.
+
+⏸️ In Schreiben Teil 2, what matters more — fancy grammar or all required points clearly covered?
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**All required points clearly covered.**
+
+Let's do a mini exam check.
+If the task says:
+- apologize
+- give a reason
+- ask a question
+
+and your message does only the first two, is that safe?
+
+### Practice Pause: ⏸️ (3 seconds)
+
+No. Because one content point is still missing."
+
+---
+
+## Section 6: Sprechen — Interaction Beats Memorized Performance (6:20–8:10)
+
+### Visual: [DIAGRAM: Teil 1 self-intro | Teil 2 question-answer | Teil 3 request-response]
+### Narration: [ENERGY: warm, confidence-building]
+"In Sprechen, your job is not to sound advanced.
+Your job is to stay understandable, polite, and responsive.
+
+### Teil 1
+Give a short, stable self-introduction.
+Do not turn it into a long speech that may create mistakes.
+
+### Teil 2
+Ask a clear question about the topic card.
+Then listen and react.
+
+### Teil 3
+Make a polite request that fits the situation.
+Then handle the small response that follows.
+
+This matters because speaking is an **interaction**.
+Not a speech competition.
+
+*Partner parayunnathu കേൾക്കണം. Ninte line mathram paranjittu nirtharuthu.*
+
+⏸️ In Sprechen, what matters more — long impressive output, or short clear interaction?
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**Short clear interaction.** Exactly.
+
+If you don't understand something, what can you safely say?
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**Können Sie das bitte wiederholen?**"
+
+---
+
+## Section 7: The 4 Main Exam-Day Traps (8:10–9:15)
+
+### Visual: [SLIDE: Trap cards 1–4]
+### Narration: [ENERGY: crisp, memorable]
+"Let's lock the four main traps.
+
+### Trap 1 — Hören panic
+You miss one item and mentally leave the exam.
+**Fix:** Reset immediately.
+
+### Trap 2 — Lesen imagination
+You answer from what seems logical, not from the text.
+**Fix:** Show me the word or phrase in the text.
+
+### Trap 3 — Schreiben incompleteness
+You write nicely but miss one required content point.
+**Fix:** Tick off every task point.
+
+### Trap 4 — Sprechen overperformance
+You try to sound advanced and become less clear.
+**Fix:** Use short, safe A1 German.
+
+⏸️ Which trap is most dangerous for you personally?
+Think of it now before exam day, because that is the one you must watch."
+
+---
+
+## Section 8: The Night Before and the Morning Of (9:15–10:10)
+
+### Visual: [CHECKLIST: night before / exam morning]
+### Narration: [ENERGY: calm, human]
+"The night before:
+- review your self-introduction once or twice
+- review your short-message structure
+- check ID, pen, and travel plan
+- then stop
+
+Do not try to learn 200 new words at midnight.
+
+The morning of the exam:
+- arrive early
+- breathe normally
+- read instructions carefully
+- start with discipline, not speed
+
+*Raatri മുഴുവൻ padichal confidence koodumennu karutharuthu. Often sleep aanu better revision.*
+
+⏸️ What should you do the night before: cram everything, or review a few stable things and sleep?
+
+### Practice Pause: ⏸️ (3 seconds)
+
+**Review a few stable things and sleep.**"
+
+---
+
+## Section 9: Final Active Recall — One Safe Rule Per Section (10:10–10:45)
+
+### Visual: [SLIDE: Hören / Lesen / Schreiben / Sprechen hidden, then reveal]
+### Narration: [ENERGY: game-like, sharp]
+"Final drill. One safe rule per section.
+
+### Hören
+
+### Practice Pause: ⏸️ (2 seconds)
+
+Catch the deciding information.
+
+### Lesen
+
+### Practice Pause: ⏸️ (2 seconds)
+
+Answer from the text, not your imagination.
+
+### Schreiben
+
+### Practice Pause: ⏸️ (2 seconds)
+
+Complete beats fancy.
+
+### Sprechen
+
+### Practice Pause: ⏸️ (2 seconds)
+
+Interaction beats performance."
+
+---
+
+## Section 10: Outro — Walk In Calm, Not Perfect (10:45–11:00)
+
+### Visual: [SLIDE: "Du schaffst das" + calm exam-room visual]
+### Narration: [ENERGY: proud, grounded]
+"You do not need perfect German to pass A1.
+You need clear decisions, calm focus, and safe language.
+
+Walk in calm. Protect points. Keep moving.
+
+**Du schaffst das. Viel Erfolg!**"
+
+---
+
+## Script Quality Checklist (v2.1)
+
+- [x] Hook tightened around realistic exam-day payoff
+- [x] Removed overhyped framing and weaker scoring claims
+- [x] Added one master rule for whole-exam behavior
+- [x] Reframed each section around one clear job + one main trap
+- [x] Stronger speaking truth check: interaction, not performance
+- [x] Stronger writing truth check: completeness over cleverness
+- [x] Practice pauses are short, specific, and recall-based
+- [x] Malayalam bridges are structural, not decorative
+- [x] Easier to film with cleaner slide logic and less dense section detail
+- [x] Duration remains realistic for capstone pacing
+
+---
+
+## Revision Notes (v2.0 → v2.1)
+
+- Rebuilt the capstone around **point protection** instead of motivation-heavy exam hype
+- Removed riskier claims about what is "easiest" or how much error is acceptable
+- Added a top-level whole-exam behavior loop: **Read → Decide → Answer → Move on**
+- Simplified Hören guidance to a safer universal rule: catch deciding info, don't chase every word
+- Simplified Lesen around text-based matching instead of section-specific overexplaining
+- Tightened Schreiben around **task completion** and explicit missing-point detection
+- Strengthened Sprechen as an interaction task, not a memorized monologue contest
+- Added a 4-trap section so learners leave with memorable exam-day warnings
 
 ---
 
 ## Production Notes
 
-### Key Strategies This Script Covers:
-| Section | Points | Core Strategy |
-|---------|--------|--------------|
-| Hören | 25 | Read questions first, focus on numbers, don't freeze |
-| Lesen | 25 | Keyword scanning, 'nicht im Text' trap, eliminate first |
-| Schreiben | 25 | Forms = free points, 3 sentences for Teil 2, simple > fancy |
-| Sprechen | 25 | Memorize intro, 4 question words, 2 request patterns |
-
-### Connections to Other Modules:
-- **Module 17** (Hören + Lesen deep dives) — strategy foundation
-- **Module 18-1** (Schreiben Teil 1) — form-filling mastery
-- **Module 18-2** (Schreiben Teil 2) — message writing
-- **Module 18-3 & 18-4** (Sprechen) — speaking strategies
-- **Module 14** (Anmeldung) — real-world form practice
-
----
-
-## Revision Notes (v1.0 → v2.0)
-
-| Change | Detail |
-|--------|--------|
-| Hook | Cut from 75s → 35s. Removed scene-setting narrative, straight to "4 sections, 3 rules each" |
-| Structure | Kept 4-section format but added active recall drills after each (not just info dumps) |
-| Practice pauses | Increased from 3 → 11. Added specific prompts: "name the 3 rules", "say your intro now", "write this message" |
-| Section 5 (Sprechen) | Added practice pause for self-introduction (12s) — students should actually DO it |
-| Exam logistics | Tightened from chatty advice to concise checklist format |
-| Active recall section | NEW — Section 7 tests one rule per exam part before the closing |
-| Malayalam bridges | Upgraded "cricket ball" analogy for Hören, "bus stop scanning" for Lesen — not dictionary |
-| Energy cues | Added [ENERGY: ...] at every section |
-| Duration | Cut from 12:00 → 11:00 by tightening monologues |
-| EXAM-TIP | Reduced to 2 focused markers (simple > fancy, 60% is enough) |
-
-## Script Quality Checklist
-
-- [x] Hook under 60 seconds — game plan stated at 0:30
-- [x] No monologue block exceeds 90 seconds
-- [x] Teach → Drill → Apply cycle in each section
-- [x] Duration realistic (~11:00 at 150 wpm + pauses)
-- [x] Energy/tone cues at every section transition
-- [x] Practice pauses have specific prompts with reveals (11 pauses)
-- [x] Active recall before final summary (Section 7 — full strategy drill)
-- [x] Minimum 6 practice pauses per 10 minutes (11 total in 11 min)
-- [x] No passive summary lists — all tested before revealed
-- [x] Malayalam bridges are structural parallels (cricket, bus stop scanning)
-- [x] One clear teaching goal per section (strategy, not content review)
-- [x] Exam connection explicit (scoring, percentages, pass threshold)
-- [x] No A2+ content
-- [x] German grammatically verified
-- [x] Visual cues tagged with [SLIDE:], [DIAGRAM:]
-- [x] Exam tips limited to 2 [EXAM-TIP] markers
-- [x] Outro has clear emotional close (capstone video)
-- [x] Specific practice tasks (write a message, say intro, name rules)
-
----
-
-*Script v2.0 — Revised 2026-03-23 quality pass. Production-ready pending native speaker review.*
+**Visuals:** 4-section strategy board, trap cards, night-before checklist, final recall slide.
+**Connections:** Works as the closing capstone after Modules 17 and 18.
+**Pedagogical role:** Consolidation and anxiety reduction, not new content teaching.
+**Estimated production time:** ~3 hours with reusable exam graphics.

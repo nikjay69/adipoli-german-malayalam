@@ -69,10 +69,15 @@ These generally have the richest “launch plan” treatment:
 
 They usually include measurable outcomes, production gaps, script priorities, and next-step implementation notes.
 
-### More lightweight but complete plans
+### Lower-priority but now clearly architected plans
 - Modules **15–16**
 
-These are still documented with teaching goals, inventory, script needs, outcomes, future direction, and blockers, but are intentionally lighter because they have lower direct Goethe A1 leverage.
+These modules remain lower launch priority because they have lower direct Goethe A1 leverage, but their planning is now explicit about:
+- optionality / non-gating rules
+- lesson-by-lesson script priorities
+- essential outcomes
+- minimum worthwhile production layers
+- how they support integration, retention, and the future A2 bridge without delaying the exam-critical path
 
 ## Recommended production order
 Based on `docs/COURSE_PLAN_10_10.md`:

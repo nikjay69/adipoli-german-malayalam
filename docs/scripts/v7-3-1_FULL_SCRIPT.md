@@ -2,180 +2,279 @@
 
 > **Module:** 7 (Shopping & Money)
 > **Lesson:** 7-3 (Comparing Things)
-> **Duration:** ~10 minutes
-> **Exam section:** Hören (prices), Lesen (ads/offers), Sprechen (comparing, preferences)
-> **Prerequisites:** Module 3 (numbers), Module 7-1/7-2 (shopping basics)
-> **Status:** FULL SCRIPT v1.0
-> **Created:** 2026-03-23 11:10 UTC
+> **Duration:** 10:30 target
+> **Exam section:** Hören (prices), Lesen (offers / ads), Sprechen (preferences and comparisons)
+> **Prerequisites:** Module 3 (numbers), Module 7-1 / 7-2 (shopping basics)
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 11:10 UTC | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
-## Script
+## Pre-roll (0:00–0:15)
 
-### [0:00–0:15] Pre-roll
-*[Branding slide]*
-
-### [0:15–1:15] Hook — "How much? Too much? Let's compare!"
-
-Germany-yil shopping cheyyumbol — prices compare cheyyuka normal aanu. Aldi vs Lidl. Amazon vs MediaMarkt. Kerala-yil ennapole, BEST DEAL anweshikkaNam!
-
-Today: how to talk about prices AND compare things in German. Plus the grammar that makes you sound smart.
-
-*[SLIDE: "Preise & Vergleiche 💰"]*
+### Visual: [Branding slide]
+### Narration:
+"Willkommen bei Adipoli German!"
 
 ---
 
-### [1:15–3:00] Block 1: Talking About Prices
+## Section 1: Hook — You Do Not Need Bargaining German, You Need Decision German (0:15–0:45)
 
-**Asking:**
-- "Was kostet das?" — How much does this cost?
-- "Wie viel kostet das?" — How much does this cost? (same meaning)
-- "Was kosten die Schuhe?" — How much do the shoes cost? (plural!)
+### Visual: [Two products side by side: one cheaper, one better quality]
+### Narration: [ENERGY: practical, alert]
+"In Germany, shopping is usually not about bargaining.
+It is about deciding.
 
-**Understanding the answer:**
-- "Das kostet 29 Euro 99." = 29,99 €
-- *TRAP: Germans use COMMA for decimals, not dot!*
-- "29,99 €" = twenty-nine euros and ninety-nine cents
+Which one is cheaper?
+Which one is better?
+Which offer is worth it?
 
-⏸️ *Listen and write: "Das kostet dreizehn Euro fünfzig." → €___*
-
-**Reacting to prices:**
-| Reaction | German | When to use |
-|----------|--------|-------------|
-| Cheap! | "Das ist billig!" / "Das ist günstig!" | *günstig* is more polite |
-| Expensive! | "Das ist teuer!" | *Direct but normal* |
-| Reasonable | "Das ist okay." / "Das geht." | |
-| Too expensive | "Das ist mir zu teuer." | *Polite refusal* |
-| Good deal | "Das ist ein Angebot!" / "Das ist ein Schnäppchen!" | *Angebot = offer, Schnäppchen = bargain* |
-
-*"Günstig" ennu parayuka — "billig" sometimes sounds like "cheap quality." "Günstig" = good price!*
+Today, we build the German you need to understand prices and compare two options fast."
 
 ---
 
-### [3:00–5:00] Block 2: Comparatives — Bigger, Better, Cheaper
+## Section 2: The 5 Price Reactions You Actually Need (0:45–2:10)
 
-**THE RULE: adjective + er**
-- billig → billig**er** (cheaper)
-- klein → klein**er** (smaller)
-- groß → größ**er** (bigger) — umlaut!
-- teuer → teur**er** (more expensive) — drops the -e-
+### Visual: [5 reaction cards]
+### Narration:
+"Start with the smallest useful toolkit.
 
-**als = "than"**
-- "Die Jacke ist **teurer als** das T-Shirt." — The jacket is more expensive than the t-shirt.
-- "Aldi ist **billiger als** Rewe." — Aldi is cheaper than Rewe.
+🔊 **Was kostet das?** — How much does that cost?  
+🔊 **Das kostet 29,99 Euro.** — That costs 29.99 euros.  
+🔊 **Das ist günstig.** — That is affordable / a good price.  
+🔊 **Das ist teuer.** — That is expensive.  
+🔊 **Das ist mir zu teuer.** — That is too expensive for me.
 
-⏸️ *Complete: "Der Mantel ist ___ (groß) ___ die Jacke." → "größer als"*
+### Important listening trap
+German prices use a comma:
+- **29,99 €**
+- spoken: **neunundzwanzig Euro neunundneunzig**
 
-**Common comparatives with umlaut change:**
-| Base | Comparative | Translation |
-|------|------------|-------------|
-| alt | **ä**lter | older |
-| groß | gr**ö**ßer | bigger |
-| jung | j**ü**nger | younger |
-| kurz | k**ü**rzer | shorter |
-| lang | l**ä**nger | longer |
-| warm | w**ä**rmer | warmer |
-| kalt | k**ä**lter | colder |
+### Malayalam bridge
+*Ivide main job bargain alla — price manassilaakkuka, react cheyyuka, decide cheyyuka.*
 
-*Malayalam-yil "koode valuthu," "koode cheriyathu" ennu parayum. German-il adjective-inu "-er" add cheyyuka + "als."*
+### Drill
+I say the price. You react.
 
----
+🔊 **99 Euro**
+⏸️ [learner reacts]
 
-### [5:00–6:30] Block 3: Superlatives — The Biggest, The Best
+🔊 **4,99 Euro**
+⏸️ [learner reacts]
 
-**THE RULE: am + adjective + sten (predicate) OR der/die/das + adjective + ste (attributive)**
-
-**Predicate (after the verb):**
-- "Aldi ist **am billigsten**." — Aldi is the cheapest.
-- "Der ICE ist **am schnellsten**." — The ICE is the fastest.
-
-**Before a noun:**
-- "Das ist **der billigste** Laden." — That's the cheapest shop.
-- "Das ist **die beste** Pizza." — That's the best pizza.
-
-⏸️ *"Was ist am billigsten: Aldi, Rewe, oder Edeka?" — answer in German!*
-
-**Irregular superlatives (memorize these 3):**
-| Base | Comparative | Superlative |
-|------|------------|-------------|
-| gut | besser | am besten |
-| viel | mehr | am meisten |
-| gern | lieber | am liebsten |
-
-*"Ich esse gern Dosa, lieber Biryani, am liebsten Fisch-Curry!" — ithayaal preference-um compare-um kazhiyum!*
+Possible answers:
+- **Das ist teuer.**
+- **Das ist günstig.**"
 
 ---
 
-### [6:30–8:00] Block 4: Shopping Comparison Dialogues
+## Section 3: The One Comparison Pattern That Matters Most (2:10–3:45)
 
-**Scene 1: Comparing two products**
+### Visual: [Simple formula card]
+**billiger / teurer / besser + als**
 
-*You:* "Welches T-Shirt ist besser — das blaue oder das rote?"
-*Friend:* "Das blaue ist besser, aber das rote ist billiger."
-*You:* "Dann nehme ich das rote. Ich mag Schnäppchen!"
+### Narration:
+"Now the core comparison pattern.
 
-**Scene 2: At the market**
+### Formula
+**adjective + als** = more ... than
 
-*You:* "Die Äpfel hier kosten 2,50 Euro. Bei Aldi kosten sie nur 1,99."
-*Friend:* "Ja, aber die hier sind frischer."
-*You:* "Stimmt. Frischer ist wichtiger als billiger."
+🔊 **billiger als** — cheaper than  
+🔊 **teurer als** — more expensive than  
+🔊 **besser als** — better than
 
-⏸️ *Compare two things YOU own. "Mein ___ ist ___ als mein ___."*
+### Model sentences
+🔊 **Aldi ist billiger als Rewe.**  
+🔊 **Die blaue Jacke ist teurer als die rote.**  
+🔊 **Dieser Laptop ist besser als der andere.**
 
-**Scene 3: Online vs store**
+Do not start with ten comparative rules.
+Start with three useful comparison tools.
 
-*You:* "Auf Amazon ist die Jacke am günstigsten — nur 49 Euro."
-*Friend:* "Aber im Geschäft kannst du sie anprobieren."
-*You:* "Du hast recht. Ich schaue zuerst im Geschäft."
+### Drill
+Complete the sentence:
 
----
+🔊 **Die Jacke ist ___ als das T-Shirt.**
+⏸️ [pause]
 
-### [8:00–9:30] Block 5: Real German Shopping Tips
-
-**Where Germans shop (cheapest → expensive):**
-1. **Aldi / Lidl** — discount supermarkets (am billigsten)
-2. **Rewe / Edeka** — standard supermarkets (teurer)
-3. **Primark / H&M / C&A** — cheap clothing
-4. **Flohmarkt** — flea market (Schnäppchen paradise!)
-5. **MediaMarkt / Saturn** — electronics
-6. **Amazon.de** — online (Preisvergleich = price comparison!)
-
-*Kerala-yil Lulu Mall, textile shops, Flipkart. Germany-yil system different aanu — online prices compare cheyyuka BEFORE buying!*
-
-**Useful tip:**
-"Preisvergleich" websites (like idealo.de) compare prices across ALL stores. Germans use these religiously.
-
-**Sale vocabulary:**
-- Angebot — offer/deal
-- Rabatt — discount
-- Schlussverkauf / Sale — clearance sale
-- "Reduziert" on a tag = reduced price
-- "2 für 1" — buy one get one free
+Possible answers:
+- **teurer als**
+- **billiger als**
+- **besser als**"
 
 ---
 
-### [9:30–10:00] Closing Summary
+## Section 4: Good, Better, Best — Only the Irregulars You Truly Need (3:45–4:50)
 
-**Your price & comparison toolkit:**
-1. "Was kostet das?" — asking prices
-2. "Das ist mir zu teuer." — polite decline
-3. "___er als ___" — comparing two things
-4. "am ___sten" — the most/least/best
-5. gut → besser → am besten (memorize these 3 irregulars!)
+### Visual: [3-step ladder]
+- **gut → besser → am besten**
+- **gern → lieber → am liebsten**
+- **viel → mehr → am meisten**
 
-*Ippol prices ariyaam, compare cheyyaam, bargain cheyyaam — German-il! Shopping adipoli!* 💰✅
+### Narration:
+"These three are worth memorizing because they appear everywhere.
+
+🔊 **gut → besser → am besten**  
+🔊 **gern → lieber → am liebsten**  
+🔊 **viel → mehr → am meisten**
+
+### Useful shopping examples
+🔊 **Dieses Angebot ist besser.**  
+🔊 **Online kaufe ich lieber.**  
+🔊 **Am liebsten kaufe ich im Angebot.**
+
+You do not need a giant grammar lecture here.
+You need recognition and a few safe sentences."
 
 ---
 
-## Checklist
+## Section 5: Golden Comparison Dialogue — Two Jackets, One Decision (4:50–6:50)
 
-- [x] Price asking/understanding phrases covered
-- [x] Comma vs dot decimal system highlighted
-- [x] Comparative forms with clear rule + umlaut patterns
-- [x] Superlative forms (predicate and attributive)
-- [x] 3 irregular comparatives/superlatives (gut/viel/gern)
-- [x] Shopping dialogues with comparison in context
-- [x] German shopping culture guide
-- [x] Sale/discount vocabulary
-- [x] Malayalam bridges throughout
-- [x] Duration: ~10 minutes
+### Visual: [Two jackets shown with price tags]
+- Jacket A: **49,99 €**
+- Jacket B: **69,99 €**
+
+### Narration:
+"Now let's compare like real shoppers.
+
+### Situation
+You and a friend are choosing between two jackets.
+
+🔊 A: **Was kostet die schwarze Jacke?**
+What is the answer?
+⏸️ [pause]
+
+🔊 B: **Sie kostet 49,99 Euro.**
+
+🔊 A: **Und was kostet die blaue Jacke?**
+Your turn.
+⏸️ [pause]
+
+🔊 B: **Sie kostet 69,99 Euro.**
+
+🔊 A: **Dann ist die schwarze Jacke billiger als die blaue.**
+What if the blue one looks nicer?
+⏸️ [pause]
+
+🔊 B: **Ja, aber die blaue Jacke ist besser.**
+
+Now make a decision.
+⏸️ [pause]
+
+Possible answer:
+🔊 A: **Ich nehme die schwarze. Sie ist günstiger.**
+
+### Teaching point
+A1 comparison is enough when you can:
+- ask the price
+- compare two things
+- choose one clearly"
+
+---
+
+## Section 6: Reading / Listening Transfer — Offer, Discount, Reduced (6:50–8:05)
+
+### Visual: [Ad card]
+**Angebot!**  
+**T-Shirt 12,99 €**  
+**Jacke 39,99 €**  
+**reduziert**
+
+### Narration:
+"Now the exam transfer.
+
+Catch these sale words:
+
+🔊 **das Angebot** — special offer  
+🔊 **reduziert** — reduced  
+🔊 **der Rabatt** — discount
+
+If you see this card, answer four questions:
+- What is on offer?  
+- What costs 12,99?  
+- What costs 39,99?  
+- Which item is cheaper?
+
+### Answer
+- It's an **Angebot**.
+- The **T-Shirt** costs 12,99.
+- The **Jacke** costs 39,99.
+- The **T-Shirt** is billiger.
+
+That is exactly the kind of key-info extraction A1 likes."
+
+---
+
+## Section 7: Comparison for Real Life — Shop, Supermarket, Online (8:05–9:10)
+
+### Visual: [Three comparison scenes]
+### Narration:
+"Use comparisons in real life, not just grammar exercises.
+
+### Shop vs shop
+🔊 **Aldi ist billiger als Rewe.**
+
+### Product vs product
+🔊 **Dieses Handy ist teurer als das andere.**
+
+### Online vs store
+🔊 **Online ist es billiger, aber im Geschäft kann ich es sehen.**
+
+### Malayalam bridge
+*Kerala-il nammal compare cheyyum — price, quality, convenience. Same logic ivideyum. German-il athinu oru clear pattern mathi: `... ist billiger/besser/teurer als ...`.*"
+
+---
+
+## Section 8: Common Mistakes — Fix Them Fast (9:10–9:50)
+
+### Visual: [❌ / ✅ cards]
+### Narration:
+"Three mistakes to avoid:
+
+### 1. Using **billig** everywhere
+❌ **billig** for every cheap thing  
+✅ prefer **günstig** when you mean a good price
+
+### 2. Forgetting **als**
+❌ **Die Jacke ist teurer die Hose.**  
+✅ **Die Jacke ist teurer als die Hose.**
+
+### 3. Hearing the price but missing the decision
+Do not stop at the number.
+Ask: cheaper? better? worth it?"
+
+---
+
+## Section 9: Summary + Output Challenge (9:50–10:30)
+
+### Visual: [Comparison toolkit card]
+### Narration:
+"Today's toolkit:
+- **Was kostet das?**
+- **Das ist günstig / teuer / mir zu teuer.**
+- **billiger als / teurer als / besser als**
+- **gut → besser → am besten**
+
+### Challenge
+Compare **two real things** around you.
+Say:
+1. the price or imagined price
+2. which is cheaper
+3. which is better
+4. which one you choose
+
+That is enough for strong A1 shopping German.
+
+Next, we can turn this into fuller shopping dialogues and ad-reading practice.
+
+Bis zum nächsten Mal!"
+
+---
+
+## Production Notes
+- **Quality-pass upgrades:** cut the overbuilt grammar load to a compact decision-making toolkit; centered the script on 5 core price reactions, one comparison pattern (`...er als`), and 3 irregular forms worth memorizing; replaced broad comparison lecture with one active jacket-choice dialogue and one ad-reading info-catch task
+- **Audio:** price questions, several spoken prices, comparison pattern drills, one shopping comparison dialogue, one short sale-card readout
+- **Visuals:** reaction cards, comparison formula board, irregular ladder, price-tag comparison scene, ad/sale card, compact mistake cards
+- **Malayalam bridge:** used to connect comparison behavior and decision-making, not for long side commentary
+- **Exam usefulness:** explicit spoken-price listening trap, ad/offers reading transfer, and short speaking comparisons
+- **Pacing note:** keep superlatives short; the lesson is about choosing between options, not mastering every comparative exception

@@ -1,293 +1,288 @@
-# v8-3-1 — WG-Suche! Finding Housing in Germany
-Module: 8 | Lesson: 8-3 | Duration: 12:00 target
-Teaching Goal: Decode German apartment advertisements and housing vocabulary — a classic Goethe A1 Lesen item
-A1 Exam Link: Lesen Teil 1/2 (Wohnungsanzeigen), Schreiben (writing to landlords)
+# v8-3-1 — Reading Wohnungsanzeigen
+**REVISED — v2.1**
+
+Module: 8 | Lesson: 8-3 | Duration: 10:30–11:30 target  
+Teaching Goal: Help learners decode German housing ads fast enough for Goethe A1 Lesen and real apartment search  
+A1 Exam Link: Lesen (Wohnungsanzeigen / short ad matching), Schreiben Teil 2 transfer (replying to an ad)
 
 ---
 
-## Pre-roll (0:00–0:15)
+## Pre-roll (0:00–0:12)
 ### Visual: [Course intro animation]
-"Willkommen bei Adipoli German! Today — apartment hunting in Germany!"
+"Willkommen bei Adipoli German! Today — how to read German apartment ads without panicking."
 
 ---
 
-## Section 1: Hook (0:15–1:30)
-### Visual: [SLIDE: WG-Gesucht.de screenshot with German apartment listings]
+## Section 1: Hook — Don’t Read Every Word (0:12–0:55)
+### Visual: [SLIDE: tiny dense housing ad on left, 5 highlighted info boxes on right: rooms / size / price / location / move-in]
 ### Narration:
-"Finding a Wohnung in Germany is an ADVENTURE. It's competitive, it's bureaucratic, and it's full of weird abbreviations that look like someone fell asleep on their keyboard.
+"A German housing ad can look scary at first: numbers, abbreviations, euro signs, strange short forms everywhere.
 
-2-Zi-Whg, EBK, KM, NK, OG — *enthaanithu machane?*
+But for A1 — and for real life — you do **not** need to understand every word.
+You need to catch the **5 things that matter first**:
+1. How many rooms?
+2. How big?
+3. How much?
+4. Where?
+5. From when?
 
-But here's the good news: once you crack the code, you'll read apartment ads like a pro. AND — this is one of the most common reading items on the Goethe A1 exam. 
+That is the real survival skill.
 
-[EXAM-TIP] Wohnungsanzeigen appear in almost EVERY Goethe A1 Lesen section. Learn these abbreviations and you've got easy points.
-
-*Nammukku padikkaam!*"
-
----
-
-## Section 2: Housing Types (1:30–3:00)
-### Visual: [TABLE: Housing types with illustrations]
-| German | English | Notes |
-|--------|---------|-------|
-| die Wohnung (Whg) | apartment/flat | Most common for newcomers |
-| das Zimmer (Zi) | room | In a shared flat |
-| die WG (Wohngemeinschaft) | shared flat | SUPER common for students! |
-| das Haus | house | Rare for newcomers |
-| das Apartment | studio/small flat | Usually 1 room + kitchen |
-
-### Narration:
-"First — what kind of housing exists in Germany?
-
-Die Wohnung — an apartment or flat. This is what most people rent.
-⏸️ Say it: die Wohnung.
-
-Das Zimmer — a room. Usually in a shared flat.
-
-And here's the big one: die WG — short for Wohn-ge-mein-schaft. A shared flat where you live with roommates. *Kerala-il hostel polathoru concept — but nicer!* If you're a student or newcomer, this is probably where you'll start.
-
-Das Haus — a whole house. Nice dream, but most people in Germany rent apartments.
-
-And das Apartment — a small flat, usually just one room with a kitchen corner."
+*Malayali learners usually freeze because the ad looks like code. Innu aa code nammal break cheyyum.*"
 
 ---
 
-## Section 3: The Abbreviation Decoder (3:00–5:30)
-### Visual: [TABLE: Abbreviation decoder — main screen content, colour-coded by category]
+## Section 2: The 6 Signals That Unlock Most Ads (0:55–2:35)
+### Visual: [CARD STACK: one card per signal]
 
-**Size & Layout:**
-| Abbreviation | Full Word | Meaning |
-|-------------|-----------|---------|
-| Zi | Zimmer | rooms |
-| 2-Zi-Whg | 2-Zimmer-Wohnung | 2-room apartment |
-| qm / m² | Quadratmeter | square meters |
-| EBK | Einbauküche | fitted kitchen included |
-| Balk. | Balkon | balcony |
+### Card 1 — Type
+- **Wohnung / Whg** = apartment
+- **Zimmer / Zi** = room
+- **WG** = shared flat
 
-**Cost:**
-| Abbreviation | Full Word | Meaning |
-|-------------|-----------|---------|
-| KM | Kaltmiete | cold rent (without utilities) |
-| WM | Warmmiete | warm rent (WITH utilities) |
-| NK | Nebenkosten | utility costs (heating, water, garbage) |
-| Kaution | Kaution | security deposit |
+### Card 2 — Size
+- **qm / m²** = square meters
 
-**Location & Floor:**
-| Abbreviation | Full Word | Meaning |
-|-------------|-----------|---------|
-| OG | Obergeschoss | upper floor |
-| EG | Erdgeschoss | ground floor |
-| DG | Dachgeschoss | attic/top floor |
-| 3.OG | drittes Obergeschoss | 3rd floor |
+### Card 3 — Price
+- **KM** = Kaltmiete (base rent)
+- **NK** = Nebenkosten (extra costs)
+- **WM** = Warmmiete (total monthly rent)
+
+### Card 4 — Features
+- **EBK** = Einbauküche (fitted kitchen)
+- **Blk / Balkon** = balcony
+- **möbliert** = furnished
+
+### Card 5 — Floor
+- **EG** = ground floor
+- **1. OG / 2. OG / 3. OG** = upper floors
+- **DG** = top / attic floor
+
+### Card 6 — Availability
+- **ab** = from
+- **frei** = available
+- **ab sofort** = immediately
 
 ### Narration:
-"Okay, here comes the GOLD. The abbreviation decoder. 
+"Instead of memorizing twenty abbreviations at once, learn the **6 signals** that unlock most ads.
 
-*Ithu manasilaayal exam-il marks kittum — and real life-il apartment kittum!*
+First: **type**. Wohnung means apartment. Zimmer means one room. WG means shared flat.
 
-Let's start with SIZE and LAYOUT.
+Second: **size**. qm or m² means square meters.
 
-Zi means Zimmer — rooms. So 2-Zi-Whg means 2-Zimmer-Wohnung — a 2-room apartment. 
-⏸️ What does 3-Zi-Whg mean? ... Right! A 3-room apartment!
+Third: **price** — this is the most important trap.
+KM is the base rent. NK are extra costs. WM is the total warm rent.
 
-IMPORTANT: In Germany, rooms DON'T count kitchen or bathroom. So a '2-Zimmer' apartment has a living room, one bedroom, PLUS a separate kitchen and bathroom. Different from how we count rooms back home.
+[EXAM-TIP] If an ad shows **KM + NK**, calculate or identify the total. In real life, the number that hurts your wallet is the real one.
 
-qm or m² means Quadratmeter — square meters. 50 qm is a typical 2-Zimmer apartment.
+Fourth: **features**. EBK means kitchen included. Möbliert means furnished. Balkon is easy — balcony.
 
-EBK — this is a big one. Einbauküche — a fitted kitchen. In Germany, apartments often come WITHOUT a kitchen! You're expected to bring your own! *Sathyam paranjaal aadyam njan shock aayirunnu!* If the ad says EBK, it means the kitchen is included. That's GOOD.
+Fifth: **floor**. EG is ground floor. 2. OG means second upper floor.
 
-Now, COST — the part that matters most to your wallet.
+And sixth: **availability**. Ab means from. Ab sofort means right now.
 
-KM is Kaltmiete — literally 'cold rent'. This is the base rent WITHOUT utilities.
-NK is Nebenkosten — utility costs like heating, water, and garbage collection.
-WM is Warmmiete — 'warm rent'. This is KM + NK together. The REAL cost you pay.
-
-[EXAM-TIP] If the ad says 'KM 650€ + NK 150€' — you pay 800€ total per month. Always add KM + NK to know the real price!
-
-Kaution is the security deposit. Usually 2-3 months of Kaltmiete. You get it back when you move out — IF you didn't damage anything.
-
-Finally, FLOORS.
-
-EG is Erdgeschoss — ground floor. OG is Obergeschoss — upper floor. And the number tells you which: 3.OG means 3rd floor. DG is Dachgeschoss — the attic floor.
-⏸️"
+⏸️ Quick check: Which one tells you the total monthly rent — KM or WM? ... **WM.**"
 
 ---
 
-## Section 4: Decode a Real Ad (5:30–7:30)
-### Visual: [FORM: Realistic apartment advertisement]
-```
-────────────────────────────────
-Schöne 2-Zi-Whg in Kreuzberg
-55 qm, 3.OG, EBK, Balkon
-Laminatboden, hell und ruhig
+## Section 3: One Trap You Must Never Miss — KM vs WM (2:35–3:35)
+### Visual: [TABLE: KM 650 + NK 150 = WM 800]
+### Narration:
+"Let’s isolate the biggest beginner trap: **KM is not the real total**.
 
-KM 650€ + NK 150€ = WM 800€
-Kaution: 1.950€ (3 KM)
-Ab 01.04.2026
+If you see:
+- KM 650 Euro
+- NK 150 Euro
 
-Kontakt: Frau Schmidt
-Tel: 030-1234567
-────────────────────────────────
+then the monthly total is **WM 800 Euro**.
+
+Many newcomers see the smaller number first and feel happy. Then the Nebenkosten arrive.
+
+*Ithu exam-ilum real life-ilum same trap aanu.*
+
+⏸️ Your turn: KM 500, NK 120. What is WM? ... **620 Euro.**
+
+Good. That one small habit will save both points and money."
+
+---
+
+## Section 4: Decode One Exam-Style Ad Slowly (3:35–6:05)
+### Visual: [FORM: exam-style ad with line-by-line highlights]
+```text
+2-Zi-Whg in Bonn
+48 qm, 2. OG, EBK
+KM 620 €, NK 130 €
+WM 750 €
+ab 01.05.
+ruhig, zentral
 ```
 
 ### Narration:
-"Let's decode a REAL apartment ad — exactly like you'd see on ImmoScout24 or in the exam.
+"Now we decode one ad the smart way — **not line by line like a dictionary**, but signal by signal.
 
-[HIGHLIGHT: 'Schöne 2-Zi-Whg in Kreuzberg']
-Schöne — nice, beautiful. 2-Zi-Whg — we know this: 2-room apartment. In Kreuzberg — that's a neighbourhood in Berlin.
+[HIGHLIGHT: 2-Zi-Whg]
+First question: what is it? A **2-room apartment**.
 
-[HIGHLIGHT: '55 qm, 3.OG, EBK, Balkon']
-55 Quadratmeter — that's the size. 3.OG — third floor. EBK — kitchen included! Balkon — balcony. Nice!
+[HIGHLIGHT: 48 qm]
+How big? **48 square meters**.
 
-[HIGHLIGHT: 'Laminatboden, hell und ruhig']
-Laminatboden — laminate flooring. Hell — bright. Ruhig — quiet. Good signs!
+[HIGHLIGHT: 2. OG]
+Which floor? **Second upper floor**.
 
-[HIGHLIGHT: 'KM 650€ + NK 150€ = WM 800€']
-Kaltmiete 650 plus Nebenkosten 150 equals Warmmiete 800 Euro per month. That's your total rent.
+[HIGHLIGHT: EBK]
+Kitchen included? **Yes.**
 
-[HIGHLIGHT: 'Kaution: 1.950€ (3 KM)']
-Deposit: 1,950 Euro — that's 3 times the Kaltmiete. Standard.
+[HIGHLIGHT: KM 620, NK 130, WM 750]
+How much per month? **750 Euro total**.
 
-[HIGHLIGHT: 'Ab 01.04.2026']
-Ab means 'from' — available from April 1st, 2026.
+[HIGHLIGHT: ab 01.05.]
+Available from when? **From May 1st.**
 
-⏸️ Quick check: How many rooms does this apartment have? ... Two! Plus kitchen and bathroom. How much do you pay per month? ... 800 Euro total!"
+[HIGHLIGHT: ruhig, zentral]
+What extra information do we get? It is **quiet** and **central**.
 
----
+Notice what we did:
+We did **not** translate every word first.
+We hunted for the answer categories.
+That is exactly the right reading behavior for A1 short ads.
 
-## Section 5: WG Culture (7:30–9:00)
-### Visual: [SLIDE: WG-Gesucht.de and WG life illustrations]
-### Narration:
-"Now let me tell you about WG culture — because this is probably where you'll start.
-
-A WG — Wohngemeinschaft — is a shared flat. 2, 3, or even 5 people living together, each with their own room, sharing kitchen and bathroom.
-
-How do you find one? WG-Gesucht.de is THE platform. It's like OLX or 99acres but for rooms.
-
-Here's the fun part: WG-Castings. Yes, your potential roommates will INTERVIEW you! They want to know: Are you clean? Quiet? Sociable? Will you steal their Nutella?
-
-*India-yil room search cheyyumbol landlord-ne convince cheyyum. Germany-il roommates-ne convince cheyyanam!*
-
-Tips for your WG-Casting:
-- Be punctual — arrive on time!
-- Be friendly and ask questions about the WG
-- Say a few words in German — they'll appreciate it
-- Bring something — a cake or cookies doesn't hurt!
-
-Important WG vocabulary:
-die Miete — your rent share
-die Putzplan — cleaning schedule. *Germans take this VERY seriously!*
-die Küche teilen — sharing the kitchen
-der Mitbewohner / die Mitbewohnerin — your roommate"
+⚡ Mini drill:
+- Is this one room or two rooms? ... **Two rooms.**
+- Is the kitchen included? ... **Yes.**
+- What is the monthly total? ... **750 Euro.**"
 
 ---
 
-## Section 6: Useful Phrases for Apartment Hunting (9:00–10:30)
-### Visual: [TABLE: Apartment viewing/contacting phrases]
-| German | English |
-|--------|---------|
-| Ist die Wohnung noch frei? | Is the apartment still available? |
-| Ab wann kann ich einziehen? | When can I move in? |
-| Wie hoch sind die Nebenkosten? | How much are the utilities? |
-| Sind Haustiere erlaubt? | Are pets allowed? |
-| Gibt es einen Keller? | Is there a basement/storage? |
-| Kann ich die Wohnung besichtigen? | Can I view the apartment? |
-| Ich interessiere mich für die Wohnung. | I'm interested in the apartment. |
+## Section 5: Exam-Style Matching Mindset (6:05–7:10)
+### Visual: [SLIDE: "Need → Ad" matching]
+### Narration:
+"In Goethe-style reading tasks, you often do **matching**.
+You read a need, then choose the best ad.
+
+So your brain should ask:
+- Does the person need **a room or a full apartment**?
+- What is the **budget**?
+- Do they need it **immediately** or from a later date?
+- Do they want **furnished** or **with kitchen**?
+- Is the ad near **university / city center / station**?
+
+Do not read like a novelist.
+Read like a detective.
+
+[EXAM-TIP] Underline or mentally mark the key need words first, then scan the ad only for matching information."
+
+---
+
+## Section 6: Timed Two-Ad Practice (7:10–9:20)
+### Visual: [TWO ADS side by side + learner task card]
+
+**Ad A**
+```text
+Zimmer in 3er-WG
+16 qm, möbliert
+WM 420 €
+ab sofort
+Nähe Uni
+```
+
+**Ad B**
+```text
+2-Zi-Whg
+54 qm, EBK, Balkon
+KM 700 €, NK 150 €
+ab 01.06.
+```
 
 ### Narration:
-"You found a nice ad — now you need to contact the landlord! Here are the KEY phrases.
+"Let’s do the kind of fast comparison learners actually need.
 
-🔊 Ist die Wohnung noch frei? — Is the apartment still available?
-⏸️ Repeat that: Ist die Wohnung noch frei?
+A student says:
+**'I need a furnished room near the university, and I want to move in immediately.'**
 
-🔊 Ab wann kann ich einziehen? — When can I move in?
+⏸️ Which ad fits better — A or B?
+
+... **Ad A.** Why?
+Because it is a **Zimmer**, it is **möbliert**, it is **Nähe Uni**, and it is available **ab sofort**.
+
+Now second one:
+A couple says:
+**'We want a two-room apartment with kitchen, and we can move in from June.'**
+
+⏸️ Which ad fits better?
+
+... **Ad B.**
+Because it is a **2-Zi-Whg**, has **EBK**, and starts **ab 01.06.**
+
+One more money check:
+What is the total monthly rent for Ad B?
+⏸️
+KM 700 plus NK 150 = **850 Euro**.
+
+Good. That is exactly the exam skill: **need → clue → match**."
+
+---
+
+## Section 7: Real-Life Output — First Contact Sentence (9:20–10:20)
+### Visual: [CARD: 3 safe contact lines]
+- **Ich interessiere mich für die Wohnung.**
+- **Ist die Wohnung noch frei?**
+- **Kann ich die Wohnung besichtigen?**
+
+### Narration:
+"After reading an ad, real life asks one more step: contact.
+You do not need a long message first. Start with 3 safe lines.
+
+🔊 Ich interessiere mich für die Wohnung.
+⏸️
+🔊 Ist die Wohnung noch frei?
+⏸️
+🔊 Kann ich die Wohnung besichtigen?
 ⏸️
 
-🔊 Wie hoch sind die Nebenkosten? — How much are the utilities?
-⏸️
-
-🔊 Kann ich die Wohnung besichtigen? — Can I view the apartment?
-⏸️
-
-And the most important one for your first message:
-
-🔊 Ich interessiere mich für die Wohnung. — I'm interested in the apartment.
-⏸️
-
-[EXAM-TIP] These phrases won't appear on the exam directly, but understanding them helps you decode Lesen passages about housing. And in real life — you'll use them within your first week in Germany!"
+These are useful in life, and they also prepare you for the writing work that comes later in this module."
 
 ---
 
-## Section 7: Decode Two More Ads — Timed Practice (10:30–11:30)
-### Visual: [FORM: Two apartment ads side by side]
-
-**Ad A:**
-```
-Zimmer in 3er-WG, Neukölln
-18 qm, möbliert, NK inkl.
-400€ WM. Nähe Uni. Ab sofort.
-```
-
-**Ad B:**
-```
-3-Zi-Whg, Prenzlauer Berg
-75 qm, 2.OG, EBK, Keller, Garten
-KM 850€ + NK 200€. Ab 01.05.
-```
-
+## Section 8: Summary — Read Ads by Questions, Not by Fear (10:20–11:00)
+### Visual: [SUMMARY CARD: Type / Size / Price / Features / Floor / From when]
 ### Narration:
-"⚡ Speed round! Two ads — decode them fast!
+"Today you learned a much smarter way to read housing ads.
 
-Ad A: Zimmer in 3er-WG — a room in a 3-person shared flat. Neukölln — Berlin neighbourhood. 18 qm — small room, typical for WG. Möbliert — furnished! NK inklusive — utilities are INCLUDED in the 400 Euro. That's the total cost. Nähe Uni — near the university. Ab sofort — available immediately.
+Ask these questions in order:
+- What type?
+- How big?
+- How much?
+- Which features?
+- Which floor?
+- From when?
 
-⏸️ Quick: Is this furnished or unfurnished? ... Furnished! What's the total monthly cost? ... 400 Euro!
+And remember the most important code words:
+- **Zi / Whg / WG**
+- **qm**
+- **KM / NK / WM**
+- **EBK / möbliert**
+- **EG / OG / DG**
+- **ab / ab sofort**
 
-Ad B: 3-Zi-Whg — 3-room apartment. 75 qm, 2.OG, EBK — second floor with fitted kitchen. Keller — basement storage. Garten — garden! KM 850 plus NK 200 — total 1,050 Euro per month. Available from May 1st.
+*German ad full aayittullathu pole thonnum. Pakshe nammal full വായിക്കേണ്ട. Right signals mathi.*
 
-⏸️ Which ad is cheaper? ... Ad A! Which has more space? ... Ad B with 75 square meters!"
+[EXAM-TIP] In short-ad reading tasks, do not try to understand everything. Catch the needed information fast and match carefully.
 
----
+Homework: find two real apartment ads and answer these six questions for each one.
+That is better practice than memorizing a huge vocabulary list.
 
-## Section 8: Summary & Cultural Bridge (11:30–12:00)
-### Visual: [SLIDE: Summary card]
-**Key Abbreviations to Memorize:**
-- Zi = Zimmer (rooms)
-- KM = Kaltmiete (base rent)
-- WM = Warmmiete (total rent)  
-- NK = Nebenkosten (utilities)
-- EBK = Einbauküche (kitchen included)
-- qm = Quadratmeter (square meters)
-- OG/EG/DG = floor levels
-
-### Narration:
-"Let's recap. You now know:
-- German housing types: Wohnung, WG, Zimmer
-- The abbreviation code: KM, WM, NK, EBK, qm, OG — all of them
-- How to read and decode any apartment ad
-- WG culture and how to find a room
-- Key phrases for contacting landlords
-
-*Kerala-il veettu search Facebook groups-il aanu. Germany-il WG-Gesucht-il aanu. Platform mattiyalum search skills same aanu!*
-
-[EXAM-TIP] In the Lesen section, apartment ads are GUARANTEED. You just practiced exactly what the exam tests. Keep practicing with real ads on ImmobilienScout24.de!
-
-Practice homework: Go to wg-gesucht.de right now and try to read 3 real apartment ads. Decode every abbreviation. If you can understand them — you're exam-ready for this topic!
-
-Bis zum nächsten Mal! Tschüss!"
-
-## Post-roll
-[Next lesson teaser: "Next: Describing your home — 'Meine Wohnung hat drei Zimmer und einen Balkon!'"]
+Bis zum nächsten Mal!"
 
 ---
 
 ## Script Checklist
 - [x] Teaching goal clearly stated
-- [x] A1 exam section linked (Lesen Teil 1/2)
-- [x] All German examples grammatically correct
-- [x] Malayalam/Manglish bridges natural, not forced
-- [x] Practice pauses included (7+ pauses)
-- [x] Key vocabulary overlay cues present
-- [x] Timing realistic for 12:00 target
-- [x] Summary section recaps key points
-- [x] No A2+ content unless marked [A1-STRETCH]
-- [x] Exam tips marked with [EXAM-TIP] (3 tips)
+- [x] A1 exam section linked explicitly
+- [x] Hook reaches payoff quickly
+- [x] Teaches in small high-utility blocks
+- [x] Includes immediate drills and answer pauses
+- [x] Uses Malayalam as a memory bridge, not a detour
+- [x] Makes exam matching behavior explicit
+- [x] Keeps real-life transfer visible
+- [x] Avoids exaggerated exam claims
+- [x] Easier to film than the prior draft

@@ -2,7 +2,7 @@
 
 > Detailed launch checklist for Module 1 with teaching goals, script status, and next steps.
 >
-> **Last updated:** 2026-03-23 11:45 UTC
+> **Last updated:** 2026-03-23 17:26 UTC
 
 ---
 
@@ -39,7 +39,7 @@
 |----------|-------|--------|-------|
 | v1-1-1 | Why German? A Malayali's Gateway | 📐 ARCH | Motivational — no grammar, pure sales |
 | v1-1-2 | Malayalis in Germany: Real Success Stories | 📐 ARCH | Career paths — nursing, IT, Ausbildung |
-| v1-2-1 | German Sounds & Alphabet | 🔄 DRAFT | Core phonetics lesson |
+| v1-2-1 | German Sounds & Alphabet | ✅ DONE | v2.1 quality pass complete — rebuilt around 3 umlauts, 2 ch-sounds, 4 high-frequency spelling traps, and a compact spelling-survival block |
 | v1-2-2 | Tricky Sounds for Malayalis | 📐 ARCH | Alphabet drill, buchstabieren, phone numbers |
 | v1-3-1 | Greetings & Goodbyes | 🔄 DRAFT | Time-of-day greetings, standard phrases |
 | v1-3-2 | Auf Wiedersehen! Saying Goodbye | 🔄 DRAFT | Goodbye + Danke/Bitte matrix |

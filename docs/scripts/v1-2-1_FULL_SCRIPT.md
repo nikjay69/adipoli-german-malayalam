@@ -1,301 +1,310 @@
-# v1-2-1 — German Sounds: A Malayali's Guide
-Module: 1 | Lesson: 1-2 | Duration: 12:00 target
-Teaching Goal: Master the 4 German sounds that don't exist in Malayalam/English — ä, ö, ü, ch — plus other pronunciation traps for Indian learners
-A1 Exam Link: ALL sections — correct pronunciation is foundational for Hören (recognizing sounds), Sprechen (being understood), and Lesen (reading aloud)
+# v1-2-1 — German Sounds & Alphabet (FULL SCRIPT)
+
+> **Module:** 1 | **Lesson:** 1-2 | **Duration:** 11:30 target
+> **Teaching Goal:** Give Malayalam-speaking beginners a small set of pronunciation wins that immediately improve clarity: the 3 umlauts, the 2 ch-sounds, and 4 high-frequency spelling/pronunciation traps
+> **A1 Exam Link:** Sprechen (being understood), Hören (hearing key differences), Sprechen Teil 1 spelling/name tasks
+> **Prerequisites:** None
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
 
 ---
 
 ## Pre-roll (0:00–0:15)
-### Visual: [Course intro animation]
-"Willkommen bei Adipoli German! Today — the sounds that make German GERMAN!"
 
----
-
-## Section 1: Hook (0:15–1:00)
-### Visual: [SLIDE: "4 Sounds That Change Everything" — ä, ö, ü, ch in large stylized letters]
+### Visual: [Course intro animation / Adipoli German branding]
 ### Narration:
-"German has exactly 4 sounds that DON'T exist in Malayalam or English. Just 4.
-
-Master these 4 sounds and you'll pronounce German better than 90% of Indian learners. That's not an exaggeration.
-
-Everything else? You already know how to make those sounds. 'a' is 'a', 's' is 's', 'n' is 'n'. Same mouth, same sounds.
-
-*Naalu sounds maathram padikkaanam — baakki ellaam nammukku ariyaam!*
-
-[EXAM-TIP] Why does pronunciation matter for an EXAM? Because if the examiner can't understand you in Sprechen, you lose points. And if you can't HEAR the difference between 'schon' and 'schön' in Hören — wrong answer!
-
-Let's tackle these 4 sounds one by one."
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 2: Umlaut ä (1:00–2:30)
-### Visual: [HIGHLIGHT: ä with mouth position diagram — open mouth, tongue forward]
-### Narration:
-"Sound number 1: ä — a with two dots.
+## Section 1: Hook — You Do NOT Need Perfect Accent (0:15–0:45)
 
-This is actually the EASIEST of the 4. ä sounds like the 'e' in English 'bed' or 'pet'. 
+### Visual: [Split screen: one learner saying words unclearly, then clearly]
+### Narration: [ENERGY: confidence-building]
+"Many beginners think German pronunciation means sounding like a movie actor from Berlin.
 
-🔊 ä... ä... 
-⏸️ Open your mouth like you're saying 'ah', but pull it to 'eh'. That's ä!
+No.
 
-Malayalam parallel: think of the short 'e' sound in 'ente' (my). That 'e' — that's very close to ä.
+Your first goal is much smaller: be understood.
 
-Let's practice with real words:
-
-🔊 Mädchen — girl. Mäd-chen. Hear the ä?
-⏸️ Say it: Mädchen.
-
-🔊 spät — late. Shpät.
-⏸️ Say it: spät.
-
-🔊 Käse — cheese. Kä-ze.
-⏸️ Say it: Käse.
-
-🔊 Männer — men. Män-ner.
-⏸️
-
-Three common words: Mädchen, spät, Käse. If you can say these clearly, your ä is done!"
+If you fix just a few high-frequency sounds, your German becomes clearer immediately. Today we focus on the sounds that change meaning again and again: **ä, ö, ü, ch**, and a few spelling traps like **w, v, z, st**."
 
 ---
 
-## Section 3: Umlaut ö (2:30–4:00)
-### Visual: [HIGHLIGHT: ö with mouth position diagram — lips rounded like 'o' but tongue position for 'e']
-### Narration:
-"Sound number 2: ö. This is the TRICKIEST one.
+## Section 2: The Real Strategy — Hear, Shape, Repeat (0:45–1:25)
 
-There's NO direct parallel in Malayalam or English. You have to learn a new mouth position.
-
-Here's the trick: Say 'e' (like in 'bed'). Now — WITHOUT moving your tongue — round your lips like you're saying 'o'. 
-
-🔊 ö... ö...
-
-Your tongue says 'e', your lips say 'o'. The result is ö!
-
-⏸️ Try it now. Say 'eeee' — now round your lips slowly — 'öööö'. 
-
-Let's practice:
-
-🔊 schön — beautiful. Shön. NOT 'shone' and NOT 'shen'. Right in between!
-⏸️ Say it: schön.
-
-🔊 hören — to hear. Hö-ren.
-⏸️ Say it: hören.
-
-🔊 Köln — Cologne (the city). Köln.
-⏸️
-
-🔊 können — to be able to. Kön-nen.
-⏸️
-
-*Ithu korachu difficult aanu — but practice cheythal 2-3 divasam kondu varum!* Don't give up after one try. This sound takes a few days to click."
-
----
-
-## Section 4: Umlaut ü (4:00–5:30)
-### Visual: [HIGHLIGHT: ü with mouth position diagram — lips rounded and pushed forward, tongue high]
-### Narration:
-"Sound number 3: ü. Similar trick to ö, but starting from a different place.
-
-Say 'ee' (like in 'see'). Now round your lips and push them forward — like you're about to kiss someone! 💋
-
-🔊 ü... ü...
-
-Your tongue says 'ee', your lips say 'oo'. The result is ü!
-
-⏸️ Try: 'eeee' → round lips → 'üüüü'. That's it!
-
-Real words:
-
-🔊 München — Munich. Mün-chen. One of the most important city names!
-⏸️ Say it: München.
-
-🔊 über — over, about. Ü-ber.
-⏸️ Say it: über.
-
-🔊 Tür — door. Tür.
-⏸️ Say it: Tür.
-
-🔊 grün — green. Grün.
-⏸️ Say it: grün.
-
-🔊 fünf — five. Fünf. *Ithe 'five' allallo — fünf!*
-⏸️
-
-Quick test: What's the difference between 'schon' (already) and 'schön' (beautiful)?
-🔊 schon... schön... schon... schön...
-Hear it? Schon is flat. Schön has that rounded lip sound. In the exam, this difference MATTERS!"
-
----
-
-## Section 5: The Two 'ch' Sounds (5:30–7:00)
-### Visual: [HIGHLIGHT: ch with two diagrams — back-of-throat ch (ach) vs front-of-mouth ch (ich)]
-### Narration:
-"Sound number 4: ch. But actually, it's TWO sounds depending on position!
-
-ch AFTER a, o, u = the 'ach-Laut'. 
-
-This one is easy for us! It's like the 'kh' in the Malayalam word 'sukham' or the Hindi 'khana'. A soft back-of-throat sound.
-
-🔊 Buch — book. Bu-ch. Like 'bukh' but softer.
-⏸️ Say it: Buch.
-
-🔊 nach — after. Na-ch.
-⏸️ Say it: nach.
-
-🔊 auch — also. Au-ch.
-⏸️
-
-Now — ch AFTER e, i, ä, ö, ü, or consonants = the 'ich-Laut'. This is DIFFERENT!
-
-Think of it as blowing air through a very narrow gap in the middle of your mouth. Like you're gently steaming your glasses to clean them.
-
-🔊 ich — I. Not 'ish' and not 'ikh'. ich!
-⏸️ Say it: ich.
-
-🔊 nicht — not. Ni-cht.
-⏸️ Say it: nicht.
-
-🔊 Milch — milk. Mil-ch.
-⏸️
-
-The simple rule: After a, o, u → back of throat (ach). After everything else → front of mouth (ich).
-
-🔊 Buch (back)... Bücher (front). Hear the shift? The Umlaut changes the ch-sound!
-⏸️
-
-*Oru simple rule orma vekkuka: a-o-u kazhinjaal 'akh', baakki ellaam kazhinjaal soft 'ich'.*"
-
----
-
-## Section 6: Other Traps for Indian Learners (7:00–8:30)
-### Visual: [TABLE: Sound traps with correct vs wrong pronunciation]
-| Letter | German Sound | Indian Trap | Example |
-|--------|-------------|-------------|---------|
-| w | v (like 'viper') | 'w' like English 'water' | Wasser = 'vah-ser' NOT 'wah-ser' |
-| v | f (like 'fish') | 'v' like English 'van' | Vater = 'fah-ter' NOT 'vah-ter' |
-| z | ts (like 'tsunami') | 'z' like English 'zoo' | Zeit = 'tsait' NOT 'zait' |
-| sch | sh (like 'ship') | — | Schule = 'shoo-le' |
-| sp/st | shp/sht at word start | 'sp/st' like English | spielen = 'shpee-len' |
-| r | guttural/throat r | rolled or English r | — |
-| j | y (like 'yes') | 'j' like English 'jump' | ja = 'yah' NOT 'jah' |
+### Visual: [3-step card]
+1. **Hear the sound**
+2. **Shape your mouth**
+3. **Repeat with a real word**
 
 ### Narration:
-"Beyond the 4 Umlauts and ch, here are pronunciation traps that catch EVERY Indian learner.
+"Don't memorize pronunciation like theory.
 
-[HIGHLIGHT: w → v]
-The W-V SWAP. This is the number 1 mistake!
-German W = English V sound. German V = English F sound.
+Use this rhythm:
+- hear it
+- shape your mouth
+- repeat it in a real word
 
-🔊 Wasser — VAH-ser, not WAH-ser! 
-🔊 Vater — FAH-ter, not VAH-ter!
-⏸️ Say: Wasser. Now: Vater. Hear the difference?
+That is how pronunciation becomes automatic.
 
-[HIGHLIGHT: z → ts]
-German Z = TS sound, like 'tsunami'.
-🔊 Zeit — TSAIT, not ZEET!
-🔊 Zug — TSOOK, not ZUG!
-⏸️
+And one more rule: learn with **useful words**, not random laboratory sounds.
 
-[HIGHLIGHT: sp/st → shp/sht]
-At the START of a word, sp = shp and st = sht.
-🔊 spielen — SHPEE-len
-🔊 Straße — SHTRAH-se
-⏸️ But in the MIDDLE of a word: 'Fenster' = FEN-ster (normal s-t). The rule only applies at the beginning!
-
-[HIGHLIGHT: j → y]
-German J = English Y.
-🔊 ja — YAH, not JAH!
-🔊 Juni — YOO-nee
-⏸️
-
-*W-V swap ninne confuse cheyyum — but ore week practice cheythal automatic aakum!*"
+*Malayalam-ilum nammal aksharam maathram alla padikkunnath — words-il aanu sound lock aavunnath.*"
 
 ---
 
-## Section 7: Quick-Fire Pronunciation Drill (8:30–10:30)
-### Visual: [SLIDE: 15 words appearing one by one — student says first, then hears correct version]
+## Section 3: Umlaut 1 — ä (1:25–2:35)
+
+### Visual: [Large ä + mouth cue + 3 word cards]
 ### Narration:
-"⚡ Speed drill! I'll show you a word. YOU say it first. Then I'll say the correct pronunciation. Ready?
+"Let's start with the easiest umlaut: **ä**.
 
-[Word appears on screen, 3-second pause, then narrator says it]
+Think of the vowel in English **bed**.
+Not perfect, but close enough to start.
 
-1. schön ⏸️ 🔊 schön — beautiful
-2. Tschüss ⏸️ 🔊 Tschüss — bye
-3. Würstchen ⏸️ 🔊 Würst-chen — sausage (ü + ch combo!)
-4. Wohnung ⏸️ 🔊 VOH-nung — apartment (W = V!)
-5. Viertel ⏸️ 🔊 FEER-tel — quarter (V = F!)
-6. Zahnarzt ⏸️ 🔊 TSAHN-artst — dentist (Z = TS!)
-7. Straße ⏸️ 🔊 SHTRAH-se — street (St = Sht!)
-8. Bücher ⏸️ 🔊 BÜ-cher — books (ü + ich-laut!)
-9. Mädchen ⏸️ 🔊 MÄD-chen — girl
-10. natürlich ⏸️ 🔊 na-TÜR-lich — of course (ü + ich-laut!)
+### Mouth cue
+Open your mouth a little and keep the sound forward.
 
-How did you do? If you got 7 out of 10 correct, you're in great shape! If not — that's okay! Come back and do this drill every day for a week. 
+### Useful words
+🔊 **spät** — late  
+🔊 **Käse** — cheese  
+🔊 **Mädchen** — girl
 
-The sounds that feel weird today will feel natural by next week. *Practice cheythaal ellaam easy aakum — guaranteed!*"
+### Drill
+Say them after me:
+- **spät**
+- **Käse**
+- **Mädchen**
+
+⏸️ [pause]
+
+### Fast contrast
+- **Mann**
+- **Männer**
+
+Hear the shift? That fronted sound matters."
 
 ---
 
-## Section 8: Summary & Practice Assignment (10:30–12:00)
-### Visual: [SLIDE: Summary card — "Your 4 New Sounds + 4 Traps"]
-```
-NEW SOUNDS:
-ä = 'e' in 'bed' (Mädchen, Käse)
-ö = 'e' with rounded lips (schön, hören)  
-ü = 'ee' with rounded lips (München, über)
-ch = ach-Laut (Buch) or ich-Laut (nicht)
+## Section 4: Umlaut 2 — ö (2:35–4:05)
 
-TRAPS TO AVOID:
-W ≠ English W → W = V (Wasser = Vasser)
-V ≠ English V → V = F (Vater = Father)
-Z ≠ English Z → Z = TS (Zeit = Tsait)
-sp/st at word start → shp/sht (Straße = Shtrasse)
-```
-
+### Visual: [e-mouth → rounded lips animation]
 ### Narration:
-"Let's wrap up.
+"Now the harder one: **ö**.
 
-4 new sounds: ä (like 'bed'), ö (rounded 'e'), ü (rounded 'ee'), and the two ch sounds.
+This sound is new for many Indian learners.
 
-4 traps: W=V, V=F, Z=TS, and sp/st = shp/sht at the beginning of words.
+### Mouth trick
+Start with **e**.
+Now keep the tongue position and round your lips like **o**.
+That gives you **ö**.
 
-That's everything you need for German pronunciation. Seriously. Master these and you'll sound GREAT.
+🔊 **schön**  
+🔊 **hören**  
+🔊 **Köln**
 
-[EXAM-TIP] In the speaking exam, clarity matters more than speed. Speak slowly and clearly. Pronounce your Umlauts and ch-sounds correctly. The examiner notices and appreciates it.
+### Drill
+First say **eeeee**.
+Now round the lips slowly.
+⏸️ [pause]
 
-📝 Your practice assignment: Record yourself saying these 10 words:
-1. schön
-2. München  
-3. Bücher
-4. Wasser
-5. Vater
-6. Zeit
-7. Straße
-8. Mädchen
-9. natürlich
-10. Tschüss
+Good. Now repeat the words:
+- **schön**
+- **hören**
+- **Köln**
 
-Listen back. Compare with the video. Do this every day for one week.
+### Meaning contrast
+🔊 **schon** = already  
+🔊 **schön** = beautiful
 
-*Oru week kazhinjaal ningalude German pronunciation-il valiya maaatam varum — trust me!*
-
-You now have the foundation. Every word you learn from now on, you'll pronounce correctly. That's powerful.
-
-Bis zum nächsten Mal! Tschüss!"
-
-## Post-roll
-[Next lesson teaser: "Next: Greetings and goodbyes — your first REAL German conversations!"]
+If you flatten **ö**, the word changes. That is why this sound matters for listening too."
 
 ---
 
-## Script Checklist
-- [x] Teaching goal clearly stated
-- [x] A1 exam section linked (ALL — pronunciation is foundational)
-- [x] All German examples grammatically correct
-- [x] Malayalam/Manglish bridges natural, not forced (4+ bridges)
-- [x] Practice pauses included (15+ pauses — pronunciation-heavy lesson)
-- [x] Key vocabulary overlay cues present
-- [x] Timing realistic for 12:00 target
-- [x] Summary section recaps key points
-- [x] No A2+ content unless marked [A1-STRETCH]
-- [x] Exam tips marked with [EXAM-TIP] (2 tips)
+## Section 5: Umlaut 3 — ü (4:05–5:25)
+
+### Visual: [ee-mouth → rounded lips animation]
+### Narration:
+"Next: **ü**.
+
+### Mouth trick
+Start with **ee**.
+Keep the tongue there, but round your lips.
+
+That produces **ü**.
+
+### Useful words
+🔊 **München**  
+🔊 **über**  
+🔊 **Tür**  
+🔊 **fünf**
+
+### Drill
+Repeat after me:
+- **München**
+- **über**
+- **Tür**
+- **fünf**
+
+⏸️ [pause]
+
+### Memory note
+If **ö** feels like rounded **e**, then **ü** feels like rounded **ee**.
+That simple idea helps most learners."
+
+---
+
+## Section 6: The Two ch Sounds — Stop Saying Only “sh” or “k” (5:25–6:55)
+
+### Visual: [Two-lane card: ach-Laut / ich-Laut]
+### Narration:
+"Now the famous **ch**.
+
+German actually has two common **ch** sounds.
+
+### 1. ach-Laut
+After **a, o, u**, the sound is further back.
+Useful words:
+- **Buch**
+- **nach**
+- **auch**
+
+### 2. ich-Laut
+After **e, i, ä, ö, ü** and many consonants, the sound is softer and further forward.
+Useful words:
+- **ich**
+- **nicht**
+- **Milch**
+
+### Simple rule
+- after **a/o/u** → back sound
+- after most other vowels → front sound
+
+### Drill
+Repeat in pairs:
+- **Buch**
+- **Bücher**
+
+That pair is perfect because the vowel shift also changes the **ch** sound.
+
+*Oru over-perfect accent venda. Paksha “ich” ne “ish” aakkaruthu, “Buch” ne “book” pole parayaruthu.*"
+
+---
+
+## Section 7: 4 Spelling Traps That Keep Appearing (6:55–8:35)
+
+### Visual: [4 compact cards only]
+### Narration:
+"Now the spelling traps you meet everywhere.
+
+### Trap 1 — **w** sounds like English **v**
+🔊 **Wasser**
+
+### Trap 2 — many German **v** words sound like **f**
+🔊 **Vater**
+
+### Trap 3 — **z** sounds like **ts**
+🔊 **Zeit**
+
+### Trap 4 — word-initial **st / sp** sound like **sht / shp**
+🔊 **Straße**  
+🔊 **spielen**
+
+### Drill round
+You say the sound family:
+- **Wasser** → ⏸️ [v-sound]
+- **Vater** → ⏸️ [f-sound]
+- **Zeit** → ⏸️ [ts-sound]
+- **Straße** → ⏸️ [sht-sound]
+
+### Why this matters
+These are not rare dictionary curiosities. They show up in beginner German every single week."
+
+---
+
+## Section 8: Mini Alphabet / Spelling Survival Block (8:35–9:40)
+
+### Visual: [Name spelling card]
+### Narration:
+"One more survival skill: spelling your name.
+
+In Germany, people will ask you to spell names in offices, forms, appointments, and exams.
+
+You do not need the full alphabet song right now.
+You need a safe starter pattern.
+
+### Key letters many learners need
+🔊 **J** = yot  
+🔊 **V** = fau  
+🔊 **W** = ve  
+🔊 **Z** = tset
+
+### Mini model
+'**Nikhil Jayanth**' may need clarification because **J** in German sounds like English **y** in words, but the letter name is **yot**.
+
+### Practice
+Spell only your first name slowly now.
+⏸️ [pause]
+
+Good. Full alphabet detail can come in the companion lesson. Today the goal is confidence, not overload."
+
+---
+
+## Section 9: Active Pronunciation Challenge (9:40–10:45)
+
+### Visual: [10-word speed deck]
+### Narration:
+"Now the active challenge.
+
+You say the word first. Then I model it.
+
+1. **schön** ⏸️  
+2. **München** ⏸️  
+3. **Wasser** ⏸️  
+4. **Vater** ⏸️  
+5. **Zeit** ⏸️  
+6. **Straße** ⏸️  
+7. **ich** ⏸️  
+8. **Buch** ⏸️  
+9. **fünf** ⏸️  
+10. **Mädchen** ⏸️
+
+If some of these still feel awkward, that is normal.
+Pronunciation improves by repetition, not by one perfect explanation."
+
+---
+
+## Section 10: Exam Link + Summary (10:45–11:30)
+
+### Visual: [Summary card — 3 umlauts + 2 ch sounds + 4 traps]
+### Narration:
+"Today's wins:
+- **ä** like a forward **e** sound
+- **ö** = **e** with rounded lips
+- **ü** = **ee** with rounded lips
+- **ch** has two common versions
+- **w / v / z / st-sp** are high-frequency traps
+
+### Exam-useful reminder
+In **Sprechen**, clarity matters more than speed.
+And in self-introduction tasks, you may need to say or spell names clearly.
+
+### Challenge
+Record yourself saying these five words tonight:
+**schön, München, Wasser, Zeit, ich**.
+Listen back once. Fix one thing. That's enough.
+
+Next, we move from sounds into real social language: greetings, goodbyes, and first conversations.
+
+Bis zum nächsten Mal!"
+
+---
+
+## Production Notes
+- **Quality-pass upgrades:** removed overclaiming around “just 4 sounds fixes everything”; cut the lesson into smaller mouth-cue → real-word → drill blocks; reduced table overload into 4 high-frequency spelling traps; added a compact spelling survival section so the lesson feeds directly into A1 speaking anxiety
+- **Audio:** each target word should be spoken slowly once, then naturally once
+- **Visuals:** use large mouth-cue cards, word-by-word drill deck, and a final 10-word challenge slide
+- **Malayalam bridge:** kept short and supportive, used only to reinforce learning strategy and common pronunciation fear
+- **Exam usefulness:** explicit link to being understood in speaking and spelling names clearly
+- **Pacing note:** do not rush the pauses; this video works only if learners actually repeat aloud
