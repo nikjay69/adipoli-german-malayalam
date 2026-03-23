@@ -1,208 +1,181 @@
-# v7-3-1 — Colors, Clothing & Shopping Dialogues (Farben, Kleidung & Einkaufsgespräche)
+# v7-3-1 — Prices & Comparing (Preise vergleichen)
 
-> **Module:** 7 — Shopping & Money (Einkaufen)
-> **Lesson:** 7-3/7-4 — Colors & Clothing + Shopping Dialogues (combined script)
-> **Duration:** ~12 minutes
-> **Exam relevance:** Hören (shop dialogues), Lesen (clothing ads), Sprechen (describing items, asking for help in stores)
-> **Prerequisites:** Module 7-1 (supermarket), Module 7-2 (prices), Module 4 (articles), Module 6 (accusative)
-> **Status:** 🔄 DRAFT
-> **Created:** 2026-03-23 09:40 UTC (overnight cron)
+> **Module:** 7 (Shopping & Money)
+> **Lesson:** 7-3 (Comparing Things)
+> **Duration:** ~10 minutes
+> **Exam section:** Hören (prices), Lesen (ads/offers), Sprechen (comparing, preferences)
+> **Prerequisites:** Module 3 (numbers), Module 7-1/7-2 (shopping basics)
+> **Status:** FULL SCRIPT v1.0
+> **Created:** 2026-03-23 11:10 UTC
 
 ---
 
 ## Script
 
-### Scene 1: Pre-roll (0:00–0:15)
-**[BRANDING]**
+### [0:00–0:15] Pre-roll
+*[Branding slide]*
+
+### [0:15–1:15] Hook — "How much? Too much? Let's compare!"
+
+Germany-yil shopping cheyyumbol — prices compare cheyyuka normal aanu. Aldi vs Lidl. Amazon vs MediaMarkt. Kerala-yil ennapole, BEST DEAL anweshikkaNam!
+
+Today: how to talk about prices AND compare things in German. Plus the grammar that makes you sound smart.
+
+*[SLIDE: "Preise & Vergleiche 💰"]*
 
 ---
 
-### Scene 2: Hook (0:15–1:00)
-**[SLIDE: Colorful clothing store display]**
+### [1:15–3:00] Block 1: Talking About Prices
 
-**Narrator:**
-> "Grocery shopping? Done. Money? Handled. Now let's get dressed — in German! Colors, clothing, and real shopping dialogues where you ask for sizes, try things on, and maybe even return something."
->
-> *"Pachakkari kazhinjju — ippo fashion shopping padikkaam! Colors, clothes, and real store conversations!"*
+**Asking:**
+- "Was kostet das?" — How much does this cost?
+- "Wie viel kostet das?" — How much does this cost? (same meaning)
+- "Was kosten die Schuhe?" — How much do the shoes cost? (plural!)
 
----
+**Understanding the answer:**
+- "Das kostet 29 Euro 99." = 29,99 €
+- *TRAP: Germans use COMMA for decimals, not dot!*
+- "29,99 €" = twenty-nine euros and ninety-nine cents
 
-### Scene 3: Colors — Die Farben (1:00–2:30)
-**[VISUAL: Color swatches appearing with German labels]**
+⏸️ *Listen and write: "Das kostet dreizehn Euro fünfzig." → €___*
 
-**Narrator:**
-> 🔊 "rot" — red
-> 🔊 "blau" — blue
-> 🔊 "grün" — green
-> 🔊 "gelb" — yellow
-> 🔊 "schwarz" — black
-> 🔊 "weiß" — white
-> 🔊 "grau" — grey
-> 🔊 "braun" — brown
-> 🔊 "rosa" / "pink" — pink
-> 🔊 "lila" — purple
-> 🔊 "orange" — orange
->
-> "Most German colors look or sound like English. braun = brown, blau = blue, grün = green."
->
-> "The tricky ones: gelb (not 'yellow'), weiß (not 'white'), schwarz (not 'black')."
->
-> ⏸️ **[Flash quiz: I show a color — you say the German word!]**
->
-> *"Colors easy aanu! braun = brown, blau = blue — sounds same aanu!"*
+**Reacting to prices:**
+| Reaction | German | When to use |
+|----------|--------|-------------|
+| Cheap! | "Das ist billig!" / "Das ist günstig!" | *günstig* is more polite |
+| Expensive! | "Das ist teuer!" | *Direct but normal* |
+| Reasonable | "Das ist okay." / "Das geht." | |
+| Too expensive | "Das ist mir zu teuer." | *Polite refusal* |
+| Good deal | "Das ist ein Angebot!" / "Das ist ein Schnäppchen!" | *Angebot = offer, Schnäppchen = bargain* |
+
+*"Günstig" ennu parayuka — "billig" sometimes sounds like "cheap quality." "Günstig" = good price!*
 
 ---
 
-### Scene 4: Clothing — Die Kleidung (2:30–4:30)
-**[TABLE: Clothing items with articles and images]**
+### [3:00–5:00] Block 2: Comparatives — Bigger, Better, Cheaper
 
-| German | Article | English |
-|--------|---------|---------|
-| das T-Shirt | das | T-shirt |
-| das Hemd | das | shirt (formal) |
-| die Hose | die | trousers |
-| die Jeans | die | jeans |
-| der Rock | der | skirt |
-| das Kleid | das | dress |
-| die Jacke | die | jacket |
-| der Mantel | der | coat |
-| die Schuhe | die (pl.) | shoes |
-| der Pullover / der Pulli | der | pullover/sweater |
+**THE RULE: adjective + er**
+- billig → billig**er** (cheaper)
+- klein → klein**er** (smaller)
+- groß → größ**er** (bigger) — umlaut!
+- teuer → teur**er** (more expensive) — drops the -e-
 
-**Narrator:**
-> "das Hemd — a formal shirt, like for office. das T-Shirt — casual."
->
-> "die Hose — trousers. CAREFUL: it's singular! 'Die Hose IST rot.' Not 'die Hose SIND rot'!"
->
-> "der Rock — skirt. Yes, 'Rock' means skirt in German, not rock music!"
->
-> "die Schuhe — shoes. Always plural in daily use."
->
-> ⏸️ **[Practice: Look at what you're wearing. Name each item in German!]**
+**als = "than"**
+- "Die Jacke ist **teurer als** das T-Shirt." — The jacket is more expensive than the t-shirt.
+- "Aldi ist **billiger als** Rewe." — Aldi is cheaper than Rewe.
 
----
+⏸️ *Complete: "Der Mantel ist ___ (groß) ___ die Jacke." → "größer als"*
 
-### Scene 5: Combining Colors + Clothing (4:30–5:30)
-**[SLIDE: Color + clothing phrases]**
+**Common comparatives with umlaut change:**
+| Base | Comparative | Translation |
+|------|------------|-------------|
+| alt | **ä**lter | older |
+| groß | gr**ö**ßer | bigger |
+| jung | j**ü**nger | younger |
+| kurz | k**ü**rzer | shorter |
+| lang | l**ä**nger | longer |
+| warm | w**ä**rmer | warmer |
+| kalt | k**ä**lter | colder |
 
-**Narrator:**
-> "Now let's combine them:"
->
-> 🔊 "ein rotes T-Shirt" — a red T-shirt
-> 🔊 "eine blaue Hose" — blue trousers
-> 🔊 "schwarze Schuhe" — black shoes
-> 🔊 "die grüne Jacke" — the green jacket
->
-> "Don't worry too much about adjective endings right now. At A1, people will understand you even if the ending is wrong. Focus on being understood!"
->
-> "Simple pattern for now: color + noun."
-> 🔊 "Ich trage ein weißes Hemd." — I'm wearing a white shirt.
-> 🔊 "Ich suche eine schwarze Hose." — I'm looking for black trousers.
+*Malayalam-yil "koode valuthu," "koode cheriyathu" ennu parayum. German-il adjective-inu "-er" add cheyyuka + "als."*
 
 ---
 
-### Scene 6: At the Clothing Store — Full Dialogue (5:30–8:00)
-**[DIALOGUE: Clothing store scene]**
+### [5:00–6:30] Block 3: Superlatives — The Biggest, The Best
 
-**Narrator:**
-> "Now a real shopping dialogue."
->
-> **Scene: In a clothing store**
->
-> 🔊 Kundin: "Guten Tag! Ich suche eine Jacke."
-> 🔊 Verkäufer: "Welche Farbe?"
-> 🔊 Kundin: "Schwarz, bitte."
-> 🔊 Verkäufer: "Welche Größe?"
-> 🔊 Kundin: "Größe M."
-> 🔊 Verkäufer: "Hier, bitte. Möchten Sie sie anprobieren?"
-> 🔊 Kundin: "Ja, gerne! Wo ist die Umkleidekabine?"
-> 🔊 Verkäufer: "Dort drüben."
->
-> *(Comes back)*
->
-> 🔊 Kundin: "Die Jacke ist zu groß. Haben Sie Größe S?"
-> 🔊 Verkäufer: "Ja, hier bitte. Die kostet neunundvierzig Euro neunundneunzig."
-> 🔊 Kundin: "Die nehme ich! Kann ich mit Karte bezahlen?"
-> 🔊 Verkäufer: "Ja, natürlich."
->
-> ⏸️ **[Practice the customer lines — say them out loud!]**
+**THE RULE: am + adjective + sten (predicate) OR der/die/das + adjective + ste (attributive)**
 
-**Key Vocabulary from Dialogue:**
-> 🔊 "anprobieren" — to try on
-> 🔊 "die Umkleidekabine" — fitting room
-> 🔊 "die Größe" — size (S, M, L, XL)
-> 🔊 "zu groß" — too big
-> 🔊 "zu klein" — too small
-> 🔊 "zu teuer" — too expensive
-> 🔊 "Das passt!" — That fits!
+**Predicate (after the verb):**
+- "Aldi ist **am billigsten**." — Aldi is the cheapest.
+- "Der ICE ist **am schnellsten**." — The ICE is the fastest.
+
+**Before a noun:**
+- "Das ist **der billigste** Laden." — That's the cheapest shop.
+- "Das ist **die beste** Pizza." — That's the best pizza.
+
+⏸️ *"Was ist am billigsten: Aldi, Rewe, oder Edeka?" — answer in German!*
+
+**Irregular superlatives (memorize these 3):**
+| Base | Comparative | Superlative |
+|------|------------|-------------|
+| gut | besser | am besten |
+| viel | mehr | am meisten |
+| gern | lieber | am liebsten |
+
+*"Ich esse gern Dosa, lieber Biryani, am liebsten Fisch-Curry!" — ithayaal preference-um compare-um kazhiyum!*
 
 ---
 
-### Scene 7: Useful Shopping Phrases (8:00–9:30)
-**[SLIDE: Essential phrases list]**
+### [6:30–8:00] Block 4: Shopping Comparison Dialogues
 
-**Narrator:**
-> "Your shopping survival kit:"
->
-> 🔊 "Ich suche..." — I'm looking for...
-> 🔊 "Haben Sie das in Größe...?" — Do you have this in size...?
-> 🔊 "Haben Sie das in Blau?" — Do you have this in blue?
-> 🔊 "Kann ich das anprobieren?" — Can I try this on?
-> 🔊 "Das ist zu teuer." — That's too expensive.
-> 🔊 "Gibt es das billiger?" — Is there something cheaper?
-> 🔊 "Das nehme ich!" — I'll take it!
-> 🔊 "Kann ich das umtauschen?" — Can I exchange this?
->
-> ⏸️ **[Repeat each phrase]**
->
-> *"Shopping German easy aanu — 'Ich suche', 'Haben Sie', 'Das nehme ich' — moonu phrases-il shopping complete!"*
+**Scene 1: Comparing two products**
 
----
+*You:* "Welches T-Shirt ist besser — das blaue oder das rote?"
+*Friend:* "Das blaue ist besser, aber das rote ist billiger."
+*You:* "Dann nehme ich das rote. Ich mag Schnäppchen!"
 
-### Scene 8: Comparing Things (9:30–10:30)
-**[SLIDE: Comparative examples]**
+**Scene 2: At the market**
 
-**Narrator:**
-> "At A1, you just need basic comparisons:"
->
-> 🔊 "billiger" — cheaper
-> 🔊 "teurer" — more expensive
-> 🔊 "größer" — bigger
-> 🔊 "kleiner" — smaller
-> 🔊 "besser" — better
-> 🔊 "schöner" — more beautiful/nicer
->
-> "Pattern: adjective + -er."
-> 🔊 "Die rote Jacke ist billiger als die schwarze." — The red jacket is cheaper than the black one.
->
-> "als = than. That's your comparison connector."
->
-> ⏸️ **[Compare two items near you using one comparative]**
+*You:* "Die Äpfel hier kosten 2,50 Euro. Bei Aldi kosten sie nur 1,99."
+*Friend:* "Ja, aber die hier sind frischer."
+*You:* "Stimmt. Frischer ist wichtiger als billiger."
+
+⏸️ *Compare two things YOU own. "Mein ___ ist ___ als mein ___."*
+
+**Scene 3: Online vs store**
+
+*You:* "Auf Amazon ist die Jacke am günstigsten — nur 49 Euro."
+*Friend:* "Aber im Geschäft kannst du sie anprobieren."
+*You:* "Du hast recht. Ich schaue zuerst im Geschäft."
 
 ---
 
-### Scene 9: Summary & Challenge (10:30–12:00)
-**[SUMMARY CARD]**
+### [8:00–9:30] Block 5: Real German Shopping Tips
 
-**Key Takeaways:**
-- 11 colors: rot, blau, grün, gelb, schwarz, weiß, grau, braun, rosa, lila, orange
-- 10 clothing items with articles
-- Shopping phrases: Ich suche..., Haben Sie...?, Das nehme ich!
-- Size/fit: Größe, zu groß/klein/teuer, Das passt!
-- Comparisons: -er + als
+**Where Germans shop (cheapest → expensive):**
+1. **Aldi / Lidl** — discount supermarkets (am billigsten)
+2. **Rewe / Edeka** — standard supermarkets (teurer)
+3. **Primark / H&M / C&A** — cheap clothing
+4. **Flohmarkt** — flea market (Schnäppchen paradise!)
+5. **MediaMarkt / Saturn** — electronics
+6. **Amazon.de** — online (Preisvergleich = price comparison!)
 
-**Narrator:**
-> "You can now walk into any German store, ask about colors, sizes, try things on, compare prices, and pay. That's real independence!"
->
-> "Challenge: Describe what you're wearing right now in German — color + article. Post it in the practice chat!"
->
-> "Bis zum nächsten Mal! Tschüss!"
+*Kerala-yil Lulu Mall, textile shops, Flipkart. Germany-yil system different aanu — online prices compare cheyyuka BEFORE buying!*
+
+**Useful tip:**
+"Preisvergleich" websites (like idealo.de) compare prices across ALL stores. Germans use these religiously.
+
+**Sale vocabulary:**
+- Angebot — offer/deal
+- Rabatt — discount
+- Schlussverkauf / Sale — clearance sale
+- "Reduziert" on a tag = reduced price
+- "2 für 1" — buy one get one free
 
 ---
 
-## Production Notes
-- **This script completes Module 7** (all 3 core scripts: v7-1-1, v7-2-1, v7-3-1)
-- Audio: All color names, clothing items, dialogue lines, comparative pairs
-- Visuals: Color swatches, clothing photos with labels, store scene illustration
-- The clothing store dialogue is high-value for Hören and Sprechen exam prep
-- Connects back to Module 3 (numbers for sizes), Module 6 (accusative in "ich nehme einen...")
+### [9:30–10:00] Closing Summary
+
+**Your price & comparison toolkit:**
+1. "Was kostet das?" — asking prices
+2. "Das ist mir zu teuer." — polite decline
+3. "___er als ___" — comparing two things
+4. "am ___sten" — the most/least/best
+5. gut → besser → am besten (memorize these 3 irregulars!)
+
+*Ippol prices ariyaam, compare cheyyaam, bargain cheyyaam — German-il! Shopping adipoli!* 💰✅
+
+---
+
+## Checklist
+
+- [x] Price asking/understanding phrases covered
+- [x] Comma vs dot decimal system highlighted
+- [x] Comparative forms with clear rule + umlaut patterns
+- [x] Superlative forms (predicate and attributive)
+- [x] 3 irregular comparatives/superlatives (gut/viel/gern)
+- [x] Shopping dialogues with comparison in context
+- [x] German shopping culture guide
+- [x] Sale/discount vocabulary
+- [x] Malayalam bridges throughout
+- [x] Duration: ~10 minutes

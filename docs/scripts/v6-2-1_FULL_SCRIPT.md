@@ -1,282 +1,251 @@
 # v6-2-1 — Was trinkst du? Drinks & the "gern" Pattern (FULL SCRIPT)
 
 > **Module:** 6 | **Lesson:** 6-2 | **Duration:** 10:00 target
-> **Teaching Goal:** Teach drink vocabulary with articles, the "gern" preference pattern, and the all-important "Ich hätte gern..." ordering phrase
+> **Teaching Goal:** Teach drink vocabulary with articles, the "gern" preference pattern, and "Ich hätte gern..." ordering phrase
 > **A1 Exam Link:** Hören (café dialogues), Sprechen Teil 3 (ordering drinks), Sprechen Teil 1 (preferences)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Revision:** 2026-03-23 (quality pass — tighter hook, teach→drill→apply blocks, active recall, energy cues, reduced stacking, ~15% word count reduction)
 
 ---
 
-## Pre-roll (0:00–0:15)
-
-### Visual: [Course intro animation / Adipoli German branding]
-### Narration:
-"Willkommen bei Adipoli German! Today — drinks, preferences, and the ONE sentence that gets you anything in Germany."
+## Pre-roll (0:00–0:10)
+### Visual: [Course intro animation]
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — What Do You Drink? (0:15–1:00)
-
-### Visual: [SLIDE: Collage of German drinks — coffee, beer, sparkling water, juice. "☕🍺🥤 Was trinkst du?" heading]
+## Section 1: Hook — One Sentence That Gets You Anything (0:10–0:35)
+### Visual: [ANIMATION: Person walks into a café. Speech bubble: "Ich hätte gern einen Kaffee, bitte." Barista smiles, starts making coffee.]
 ### Narration:
-"Was trinkst du? Chai? Coffee? Sulaimani?
+"One sentence. Six words. It gets you coffee, tea, water, beer, cake — anything — in ANY shop in Germany.
 
-Every culture has its signature drinks. In Kerala, it's chai — strong, with cardamom, maybe a little ginger. In Germany? You might be surprised.
+By minute 8, you'll know it, use it, and never be stuck at a counter again.
 
-*Germany-kkaarude favourite drink beer alla — coffee aanu! Germans drink more coffee per capita than beer. Aashcharyam alle?*
+*Oru sentence. Ath arinjaal Germany-il engum order cheyyaam. Ready?*"
 
-Today we learn the drinks, how to say what you LIKE, and the ONE magic sentence that orders anything in any café or restaurant. Let's go!"
+🎬 [Energy: promise of a concrete superpower]
 
 ---
 
-## Section 2: Hot Drinks (1:00–3:00)
-
-### Visual: [TABLE: Hot drinks with articles, each appearing one by one, colour-coded by gender — der = blue, die = red, das = green]
-
-| German | English | Malayalam Parallel |
-|--------|---------|-------------------|
-| **der** Kaffee | coffee | ☕ kaapi! |
-| **der** Tee | tea | chai / tea |
-| **die** heiße Schokolade | hot chocolate | — |
-| **der** Kakao | cocoa | "kah-KOW" |
-
+## Section 2: Hot Drinks — Teach → Drill (0:35–2:15)
+### Visual: [Drinks appearing one at a time with article colour-coded: der=blue, die=red, das=green]
 ### Narration:
-"Let's start with hot drinks — the essentials.
 
-**Der Kaffee.** *Kah-feh.* Coffee. With DER — masculine. Germans drink about 4 cups a day! Morning without Kaffee in Germany? Impossible.
+"Hot drinks first. Three words, then drill.
 
-*Kerala-kkaar kaapi ishtam alle? Germany-kkaarum! Athaanu common ground!*
+🔊 **Der Kaffee.** *Kah-feh.* Coffee. DER. Germans drink about 4 cups a day — more than beer!
+*Kerala-kkaar kaapi ishtam, Germany-kkaarum. Common ground!*
 
-**Der Tee.** *Teh.* Tea. Also DER — masculine. But German Tee is... different. It's usually Schwarztee — black tea, no milk, no cardamom. When you want YOUR kind of tea, ask for 'Tee mit Milch und Zucker.'
+🔊 **Der Tee.** *Teh.* Tea. DER. But German Tee = black tea, no cardamom, no ginger. For YOUR tea: 'Tee mit Milch und Zucker.'
+*'Sulaimani veno?' → closest German: 'Tee ohne Milch.'*
 
-*'Sulaimani veno?' — athinu closest German equivalent: 'Tee ohne Milch.' Pinne ee strong chai masala tea okke — Germany-yil 'Chai Latte' enna peru-yil kitdum!*
+🔊 **Der Kakao.** *Kah-KOW.* Cocoa/hot chocolate. DER. NOT like English 'cocoa' — stress on KOW!
 
-**Die heiße Schokolade.** Hot chocolate. DIE — feminine. Popular in winter. And...
+### ⚡ Drill:
+⏸️ Coffee → ? → 'der Kaffee'
+⏸️ Tea → ? → 'der Tee'
+⏸️ Hot chocolate → ? → 'der Kakao'
 
-**Der Kakao.** *Kah-KOW* — not like the English 'cocoa'! Listen: Kah-KOW. Very common for kids, but adults drink it too.
+💡 Pattern: three of three are DER. Hot drinks love masculine!
 
-⏸️ **[PAUSE — Student repeats: der Kaffee, der Tee, die heiße Schokolade, der Kakao]**
-
-Good! Notice: three of four are DER. Hot drinks love masculine articles!"
+🎬 [Energy: brisk, one-at-a-time reveals]"
 
 ---
 
-## Section 3: Cold Drinks (3:00–4:30)
-
-### Visual: [TABLE: Cold drinks with articles, colour-coded]
-
-| German | English | Note |
-|--------|---------|------|
-| **das** Wasser | water | 💧 Most ordered drink in restaurants |
-| **der** Saft | juice | 🧃 der Orangensaft, der Apfelsaft |
-| **die** Milch | milk | 🥛 |
-| **die** Limonade / **die** Limo | lemonade/soft drink | 🍋 Not the same as English lemonade! |
-| **die** Cola | cola | 🥤 |
-
+## Section 3: Cold Drinks + The Sprudel Trap (2:15–4:00)
+### Visual: [Drinks appearing. Special callout box for the Sprudel trap with ⚠️]
 ### Narration:
-"Cold drinks — and one BIG surprise about water!
 
-**Das Wasser.** Water. DAS — neuter. But here's the thing: when you order water in Germany, they'll ask:
+"Cold drinks — and one BIG surprise about water.
 
-**'Mit oder ohne Kohlensäure?'** — With or without carbonation?
+🔊 **Das Wasser.** Water. DAS — neuter. But here's the trap:
 
-*India-yil water order cheythal normal water kitdum. Germany-yil, default is FIZZY water — Sprudel! 'Stilles Wasser' ennu specifically parayanam if you want flat water.*
+### ⚠️ The Sprudel Trap:
+Order water in Germany → they'll ask: **'Mit oder ohne Kohlensäure?'** — With or without fizz?
 
-- **Sprudel / Mineralwasser** = fizzy (default!)
-- **Stilles Wasser** = still / flat
+Default in Germany = FIZZY water! If you want flat:
+- **Stilles Wasser** = flat/still ← say this!
+- **Sprudel / Mineralwasser** = fizzy (default)
 
-Remember this! First-time surprise for every Indian in Germany.
+*India-yil water = normal water. Germany-yil default = fizzy! 'Stilles Wasser, bitte' — ee phrase orkkuka!*
 
-**Der Saft.** Juice. DER — masculine. You can compound it:
-- der **Orangen**saft — orange juice
-- der **Apfel**saft — apple juice
-- der **Apfelschorle** — apple juice mixed with sparkling water. *Germany-kkaarude favourite summer drink!*
+🔊 **Der Saft.** Juice. DER. Compounds: der Orangensaft, der Apfelsaft.
+💡 Bonus: **der Apfelschorle** — apple juice + sparkling water. Germany's favourite summer drink!
 
-**Die Milch.** Milk. DIE — feminine.
+🔊 **Die Cola.** Cola. DIE — feminine!
 
-**Die Limonade / die Limo.** In Germany, Limonade means ANY sweet soft drink — Fanta, Sprite, 7-Up. Not the lemon drink you imagine!
+### ⚡ Drill:
+⏸️ Water → ? → 'das Wasser'
+⏸️ Juice → ? → 'der Saft'
+⏸️ Flat water → ? → 'stilles Wasser'
+⏸️ Cola → ? → 'die Cola'
 
-⏸️ **[PAUSE — Student repeats: das Wasser, der Saft, die Milch, die Limonade]**"
+### 🔁 Active Recall:
+⏸️ Article for Kaffee → ? → der!
+⏸️ What does 'Sprudel' mean → ? → fizzy/sparkling water!
+
+🎬 [Energy: cultural surprise on Sprudel, then refocus]"
 
 ---
 
-## Section 4: Alcohol — Quick Cultural Note (4:30–5:30)
-
-### Visual: [SLIDE: Beer and wine glasses with cultural icons. Factoid bubbles]
+## Section 4: Alcohol — Quick Cultural Note (4:00–4:45)
+### Visual: [Beer glass + wine glass. "Ich trinke keinen Alkohol" in large friendly text]
 ### Narration:
-"A quick cultural note — no pressure, just knowledge.
 
-**Das Bier.** Beer. DAS — neuter. Germany has over 1,500 breweries and over 5,000 types of beer. There's even a law from 1516 — das Reinheitsgebot — saying beer can only contain water, hops, malt, and yeast.
+"Quick cultural note — knowledge, not pressure.
 
-**Der Wein.** Wine. DER — masculine. Germany's wine regions (Mosel, Rheingau) produce excellent whites — Riesling is world-famous.
+🔊 **Das Bier.** Beer. DAS. 1,500+ breweries, 5,000+ types. The Reinheitsgebot (1516) says beer = water + hops + malt + yeast only.
 
-*Kerala-yil alcohol sensitive topic aanu — Germany-yilum moderation-il ishtam aanu aalukaalkku. Arum force cheyyilla. 'Ich trinke keinen Alkohol' — ith parayaan madi parayaanam. Nobody will judge you.*
+🔊 **Der Wein.** Wine. DER. Riesling from Mosel — world-famous.
 
-You DON'T need to drink. The phrase is simple:
+And the sentence you might need:
 
-**'Ich trinke keinen Alkohol.'** — I don't drink alcohol.
+🔊 **'Ich trinke keinen Alkohol.'** — I don't drink alcohol.
 
-Or just order: **'Ein Wasser, bitte!'** Done."
+*Arum force cheyyilla. Ee sentence mathi — nobody judges.*
+
+Or just: **'Ein Wasser, bitte!'** Done. Moving on!
+
+🎬 [Energy: matter-of-fact, respectful, quick]"
 
 ---
 
-## Section 5: The "gern" Pattern — Expressing Preferences (5:30–7:00)
-
-### Visual: [SLIDE: Pattern diagram showing verb + gern position, colour-coded. Examples building one by one]
+## Section 5: The 'gern' Pattern — What You Like (4:45–6:15)
+### Visual: [Pattern diagram: Subject → Verb → GERN → Object. 'gern' circled in red at its position]
 ### Narration:
-"Now — the BEST pattern in A1 German for talking about what you like.
+
+"The BEST A1 pattern for talking about preferences.
 
 ### Pattern:
-**Ich + VERB + gern + [what]**
+**Ich + VERB + gern + [what].**
 
-That's it! 'Gern' goes RIGHT AFTER the verb. Let me show you:
+'Gern' sits RIGHT AFTER the verb:
 
-[SLIDE builds line by line:]
-- **Ich trinke gern Tee.** — I like to drink tea.
-- **Ich trinke gern Kaffee.** — I like to drink coffee.
-- **Ich esse gern Reis.** — I like to eat rice.
+🔊 **Ich trinke gern Tee.** — I like to drink tea.
+🔊 **Ich trinke gern Kaffee.** — I like to drink coffee.
+🔊 **Ich esse gern Reis.** — I like to eat rice.
 
-See the pattern? Subject → verb → **gern** → object.
-
-For NEGATIVE — what you DON'T like:
-
-- **Ich trinke nicht gern Bier.** — I don't like to drink beer.
-- **Ich esse nicht gern Fisch.** — I don't like to eat fish.
+### Negative:
+🔊 **Ich trinke nicht gern Bier.** — I don't like to drink beer.
 
 **nicht gern** = don't like. Simple!
 
-*Malayalam-il 'enikku ishtam aanu' ennu parayunnathu pole. German-il verb + gern = ishtam!*
+*'Enikku ishtam aanu' = verb + gern!*
 
-⏸️ **[PAUSE — Student says 3 things they like: 'Ich trinke gern...' / 'Ich esse gern...']**
+### ⚡ Drill:
+⏸️ Say 3 things you like: 'Ich trinke gern ___ / Ich esse gern ___.'
+⏸️ Say 1 thing you don't like: 'Ich trinke nicht gern ___.'
 
-### Visual: [HIGHLIGHT: Position diagram — gern sits between verb and object, circled in red]
+### Superlative — your FAVOURITE:
+🔊 **Am liebsten trinke ich Chai!** — My absolute favourite is chai!
 
-One more thing — **am liebsten** = favourite / most:
+*Etavum ishtam = am liebsten!*
 
-**'Am liebsten trinke ich Chai!'** — My absolute favourite is chai!
+⏸️ Say: 'Am liebsten trinke ich ___.' + 'Am liebsten esse ich ___.'
 
-*Etavum ishtam — am liebsten!*
+### 🔁 Active Recall:
+⏸️ Where does 'gern' go? → After the verb!
+⏸️ 'I don't like coffee' → ? → 'Ich trinke nicht gern Kaffee.'
 
-⏸️ **[PAUSE — Student says: 'Am liebsten trinke ich...' + 'Am liebsten esse ich...']**"
+[EXAM-TIP] Sprechen Teil 1: 'Was trinken Sie gern?' → 'Ich trinke gern Kaffee. Am liebsten trinke ich Chai!' Two sentences, perfect answer.
+
+🎬 [Energy: pattern mastery, building confidence]"
 
 ---
 
-## Section 6: The Magic Sentence — "Ich hätte gern..." (7:00–8:30)
-
-### Visual: [SLIDE: Giant gold-bordered phrase card: "Ich hätte gern __________, bitte." with crown emoji 👑]
+## Section 6: The Magic Sentence — Ich hätte gern (6:15–8:00)
+### Visual: [Gold-bordered phrase card with crown emoji: 👑 "Ich hätte gern ___, bitte."]
 ### Narration:
-"Now — the MOST IMPORTANT sentence in this entire module. Maybe the most useful sentence in A1 German.
 
-### 👑 THE MAGIC SENTENCE:
+"THIS is the sentence I promised. The most useful phrase in A1 German:
 
-**'Ich hätte gern einen Kaffee, bitte.'**
-
-I would like a coffee, please.
+### 👑 'Ich hätte gern einen Kaffee, bitte.'
 
 This ONE phrase handles:
-- Ordering at a café ☕
-- Ordering at a restaurant 🍽️
-- Buying at a bakery 🥐
-- Any shop situation 🛒
+☕ Cafés | 🍽️ Restaurants | 🥐 Bakeries | 🛒 Shops
 
-Let's break it down:
-
-[SLIDE: parts annotated]
+### Break it down:
 - **Ich hätte gern** = I would like (polite!)
-- **einen Kaffee** = a coffee (Akkusativ! der → einen)
-- **bitte** = please (always add this!)
+- **einen Kaffee** = a coffee (Akkusativ — der → einen!)
+- **bitte** = please
 
-Now, the Akkusativ part — remember:
-- **der** Kaffee → **einen** Kaffee (masculine changes!)
-- **die** Cola → **eine** Cola (feminine stays the same ending)
-- **das** Wasser → **ein** Wasser (neuter stays the same)
+### Akkusativ reminder (from Module 4!):
+| Normal | After 'Ich hätte gern' |
+|:---:|:---:|
+| **der** Kaffee | **einen** Kaffee |
+| **die** Cola | **eine** Cola |
+| **das** Wasser | **ein** Wasser |
 
-[TABLE:]
-| Article | Nominativ | After 'Ich hätte gern...' (Akkusativ) |
-|---------|-----------|---------------------------------------|
-| der (m) | der Kaffee | **einen** Kaffee |
-| die (f) | die Cola | **eine** Cola |
-| das (n) | das Wasser | **ein** Wasser |
+Only masculine changes! You learned this with family ('Ich habe einen Bruder'). Same rule.
 
-Only masculine changes! DIE and DAS stay the same. 
+*Masculine maathram — einen! Die, das same thanne.*
 
-*Masculine maathram maarunnu — einen! Die, das okke same thanne.*
+### ⚡ Drill:
+⏸️ Order tea → 'Ich hätte gern einen Tee, bitte.'
+⏸️ Order cola → 'Ich hätte gern eine Cola, bitte.'
+⏸️ Order water → 'Ich hätte gern ein Wasser, bitte.'
 
-⏸️ **[PAUSE — Student practices:]**
-- 'Ich hätte gern einen Tee, bitte.'
-- 'Ich hätte gern eine Cola, bitte.'
-- 'Ich hätte gern ein Wasser, bitte.'
+All three correct? You just used Konjunktiv II without knowing it! At A1, just memorize the phrase — it works everywhere.
 
-Excellent! You just learned Konjunktiv II... and you didn't even notice! 'Hätte' is technically an advanced grammar form, but at A1, just memorize the phrase. Works everywhere."
+### 🔁 Active Recall:
+⏸️ The magic phrase starts with → ? → 'Ich hätte gern...'
+⏸️ 'A coffee' after hätte gern → ? → 'einen Kaffee' (masculine changes!)
+
+🎬 [Energy: this is THE moment — crown-worthy]"
 
 ---
 
-## Section 7: Mini Café Dialogue (8:30–9:30)
-
-### Visual: [DIALOGUE displayed as a café scene with speech bubbles, waiter and customer illustrated]
+## Section 7: Mini Café Dialogue (8:00–9:15)
+### Visual: [Café scene with speech bubbles. Waiter and customer illustrated]
 ### Narration:
-"Let's put it all together. You walk into a German café.
 
-### The Golden Café Dialogue:
+"Everything together. You walk into a German café:
 
-```
-Kellner:   Guten Tag! Was möchten Sie trinken?
-            (Good day! What would you like to drink?)
+### 🎭 The Golden Café Dialogue:
 
-Gast:      Ich hätte gern einen Tee mit Milch, bitte.
-            (I'd like a tea with milk, please.)
+🔊 **Kellner:** Guten Tag! Was möchten Sie trinken?
+🔊 **Gast:** Ich hätte gern einen Tee mit Milch, bitte.
+🔊 **Kellner:** Gerne! Möchten Sie auch etwas essen?
+🔊 **Gast:** Nein danke, nur den Tee.
+🔊 **Kellner:** Das macht zwei Euro fünfzig.
+🔊 **Gast:** Hier, bitte. Stimmt so!
+🔊 **Kellner:** Vielen Dank! Einen schönen Tag noch!
+🔊 **Gast:** Danke, gleichfalls!
 
-Kellner:   Gerne! Möchten Sie auch etwas essen?
-            (Gladly! Would you also like something to eat?)
-
-Gast:      Nein danke, nur den Tee.
-            (No thanks, just the tea.)
-
-Kellner:   Das macht zwei Euro fünfzig.
-            (That's two euros fifty.)
-
-Gast:      Hier, bitte. Stimmt so!
-            (Here you go. Keep the change!)
-
-Kellner:   Vielen Dank! Einen schönen Tag noch!
-            (Thank you! Have a nice day!)
-
-Gast:      Danke, gleichfalls!
-            (Thanks, you too!)
-```
-
-*Ee dialogue muzhuvan padikkanam — café-yil ithrem mathi!*
-
-Key phrases to memorize from this:
-- **'Was möchten Sie trinken/essen?'** — What would you like to drink/eat?
-- **'Gerne!'** — Gladly! (Staff says this a LOT)
-- **'Nur den Tee'** — Just the tea (Akkusativ again — der Tee → den Tee)
-- **'Das macht...'** — That'll be... (for the price)
-- **'Stimmt so!'** — Keep the change! (casual tipping — see Module 6-3 for more)
+### Key phrases to steal:
+- **'Gerne!'** — Gladly! (Staff says this constantly)
+- **'Nur den Tee'** — Just the tea (der → den = Akkusativ again!)
+- **'Das macht...'** — That'll be... (price)
+- **'Stimmt so!'** — Keep the change!
 - **'Gleichfalls!'** — You too! (response to any well-wish)
 
-⏸️ **[PAUSE — Student practices both roles: once as Gast, once as Kellner]**"
+⏸️ Practice both roles: once as Gast, once as Kellner!
+
+*Ee dialogue kazhinjaal — café-yil ready!*
+
+🎬 [Energy: role-play fun, practical]"
 
 ---
 
-## Section 8: Outro & Exam Connection (9:30–10:00)
-
-### Visual: [SLIDE: Summary card with all drink vocabulary + "gern" pattern + "Ich hätte gern..." highlighted]
+## Section 8: Recap + Exam Connection (9:15–10:00)
+### Visual: [Summary card with exam boxes]
 ### Narration:
-"Let's recap what you just learned:
 
-✅ 10+ drinks with correct articles
-✅ The 'gern' pattern for expressing preferences
-✅ 'Ich hätte gern...' — the magic ordering sentence
-✅ A complete café dialogue
+"### ⚡ Final Active Recall:
+⏸️ 'I like to drink tea' → ? → 'Ich trinke gern Tee.'
+⏸️ 'I'd like a coffee please' → ? → 'Ich hätte gern einen Kaffee, bitte.'
+⏸️ What's Sprudel → ? → Sparkling/fizzy water!
+⏸️ 'My favourite is chai' → ? → 'Am liebsten trinke ich Chai!'
+⏸️ 'Keep the change' → ? → 'Stimmt so!'
 
-### [EXAM-TIP box:]
-**Sprechen Teil 3:** You'll get a situation like 'You're at a café. Order a drink.' Now you can do it perfectly with 'Ich hätte gern...'
+### [EXAM-TIP]
+**Sprechen Teil 3:** 'You're at a café. Order a drink.' → 'Ich hätte gern...' is your answer.
+**Sprechen Teil 1:** 'Was trinken Sie gern?' → gern + am liebsten.
+**Hören:** Café dialogues use ALL these phrases — you'll recognise them now.
 
-**Sprechen Teil 1:** 'Was trinken Sie gern?' → 'Ich trinke gern Kaffee. Am liebsten trinke ich Chai!'
+📝 **Homework:** Order 5 different drinks aloud using 'Ich hätte gern...' — practise the article changes (einen/eine/ein).
 
-*Next lesson: the FULL restaurant experience — from sitting down to paying the bill. Your Golden Restaurant Dialogue awaits!*
+*Next: the FULL restaurant experience — sitting down to paying the bill!*
 
 Tschüss und bis zum nächsten Mal!"
 
@@ -284,16 +253,34 @@ Tschüss und bis zum nächsten Mal!"
 
 ## Script Quality Checklist
 
-- [x] Teaching goal clear: drink vocab + gern pattern + Ich hätte gern
-- [x] A1-safe: no grammar beyond A1 scope (hätte gern taught as set phrase)
-- [x] Malayalam bridges: chai culture, Sulaimani, Sprudel surprise, ishtam = gern
-- [x] Exam connection explicit: Sprechen Teil 1 (preferences) + Teil 3 (ordering)
-- [x] At least 3 pause points for student practice
-- [x] Golden dialogue included (café dialogue)
-- [x] Akkusativ reinforced naturally (einen/eine/ein after hätte gern)
-- [x] Cultural notes: coffee > beer surprise, Sprudel default, Reinheitsgebot
-- [x] Connects forward to Module 6-3 (restaurant dialogue)
-- [x] Duration target: ~10 minutes ✅
+- [x] Hook under 30s with concrete payoff (one sentence = anything)
+- [x] Teach→drill→apply per block (hot drinks, cold drinks, gern, hätte gern, dialogue)
+- [x] Active recall checkpoints (4 — after cold drinks, after gern, after hätte gern, final)
+- [x] Energy cues every section
+- [x] Malayalam bridges (kaapi culture, Sulaimani, Sprudel surprise, ishtam=gern)
+- [x] ~15% word count reduction from v1.0
+- [x] Specific practice pauses with prompts + reveals (16+)
+- [x] No vocabulary stacking — max 3-4 drinks per block
+- [x] Akkusativ reinforced with Module 4 callback
+- [x] Golden café dialogue with key phrases extracted
+- [x] Sprudel trap as dedicated callout
+- [x] gern position rule with visual diagram
+- [x] Cultural sensitivity on alcohol section
+- [x] Exam tips for Sprechen Teil 1 + Teil 3 + Hören
+- [x] Duration estimate: ~10:00 (8 sections)
+
+## v2.0 Revision Notes
+- Replaced hook with concrete payoff promise (one sentence = anything) — 25s vs 45s
+- Split 10+ drinks into two blocks of 3-4 (hot → cold) with drill after each
+- Added Sprudel Trap as dedicated callout box (was buried in text)
+- Compressed alcohol section from 60s to 45s — respectful, fast
+- Added active recall after cold drinks and after gern pattern
+- Added energy cues (🎬) every section
+- Module 4 Akkusativ callback in hätte gern section
+- Removed redundant vocabulary summary tables within text (kept SRS section at end)
+- Key phrases extracted from dialogue as "steal these" list
+- Final active recall drill with 5 items before homework
+- ~15% word count reduction
 
 ---
 
@@ -301,26 +288,24 @@ Tschüss und bis zum nächsten Mal!"
 
 | German | Article | English | Category |
 |--------|---------|---------|----------|
-| der Kaffee | m | coffee | hot drink |
-| der Tee | m | tea | hot drink |
-| die heiße Schokolade | f | hot chocolate | hot drink |
-| der Kakao | m | cocoa | hot drink |
-| das Wasser | n | water | cold drink |
-| der Saft | m | juice | cold drink |
-| der Orangensaft | m | orange juice | cold drink |
-| der Apfelsaft | m | apple juice | cold drink |
-| die Milch | f | milk | cold drink |
-| die Limonade / die Limo | f | lemonade/soft drink | cold drink |
-| die Cola | f | cola | cold drink |
+| der Kaffee | m | coffee | hot |
+| der Tee | m | tea | hot |
+| der Kakao | m | cocoa | hot |
+| das Wasser | n | water | cold |
+| stilles Wasser | — | still water | cold |
+| Sprudel | m | sparkling water | cold |
+| der Saft | m | juice | cold |
+| der Orangensaft | m | orange juice | cold |
+| der Apfelsaft | m | apple juice | cold |
+| die Cola | f | cola | cold |
+| die Milch | f | milk | cold |
 | das Bier | n | beer | alcohol |
 | der Wein | m | wine | alcohol |
-| die Kohlensäure | f | carbonation | modifier |
-| stilles Wasser | — | still water | modifier |
-| Sprudel | m | sparkling water | modifier |
 
 ### Key Patterns
 - **Ich trinke gern [drink].** — I like to drink [drink].
-- **Ich trinke nicht gern [drink].** — I don't like to drink [drink].
-- **Am liebsten trinke ich [drink].** — My favourite drink is [drink].
+- **Ich trinke nicht gern [drink].** — I don't like [drink].
+- **Am liebsten trinke ich [drink].** — My favourite is [drink].
 - **Ich hätte gern einen/eine/ein [drink], bitte.** — I'd like a [drink], please.
-- **Mit oder ohne Kohlensäure?** — With or without carbonation?
+- **Stimmt so!** — Keep the change.
+- **Gleichfalls!** — You too!

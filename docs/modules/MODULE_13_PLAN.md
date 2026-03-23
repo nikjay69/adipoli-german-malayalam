@@ -1,125 +1,229 @@
-# Module 13: Talking About the Past (Was hast du gemacht?)
+# Module 13: Talking About the Past (Was hast du gemacht?) — Launch Plan
 
-## Teaching Goal
-After this module, students should be able to **form simple Perfekt sentences with haben and sein**, **use common irregular past participles**, **talk about what they did yesterday or last weekend**, and **place past events in time** using expressions like gestern, letzte Woche, am Wochenende. This expands students from present-only to past-capable German.
+> **Last updated:** 2026-03-23 12:40 UTC
 
-## A1 Exam Relevance
+---
 
-| Exam Section | Relevance |
-|---|---|
-| **Sprechen** | Weekend/past activity questions are common: "Was haben Sie am Wochenende gemacht?" |
-| **Schreiben** | Simple past-event messaging: telling someone what you did, explaining an absence. |
-| **Hören** | Understanding everyday past-tense narration in dialogues and messages. |
-| **Grammar** | Perfekt is the primary past tense used in spoken German and at A1 level. |
+## Module Identity
 
-## Current Content Inventory
+- **Position:** Major grammar milestone — Perfekt tense unlocks past narration
+- **Lessons:** 4 (Perfekt with haben, Perfekt with sein, Irregular Participles, Talking About Your Weekend)
+- **Videos:** 8
+- **Exercises:** 30
+- **Vocabulary:** 35
+- **Scripts drafted:** 4/4 core scripts ✅ COMPLETE (v13-1-1, v13-2-1, v13-3-1, v13-4-1)
 
-- **Lessons:** 5
-  - 13-1: Perfekt Tense with haben
-  - 13-2: Perfekt Tense with sein
-  - 13-3: Irregular Past Participles
-  - 13-4: Telling Stories — My Weekend
-  - 13-5: Time Expressions for the Past
-- **Videos:** 8 (but note: module-13.ts only has 2 video objects for lessons 1-2; remaining lessons have outlines in scriptOutline arrays)
-- **Exercises:** 40 total
-  - Multiple-choice: 15
-  - Fill-blank: 13
-  - Matching: 5
-  - Ordering: 7
-  - Speaking: 0
-- **Vocabulary:** 50 items (haben, gemacht, gespielt, gelernt, gekauft, gekocht, gestern, Perfekt, gegessen, getrunken, geschlafen, gefahren, gegangen, etc.)
-- **Scripts drafted:** 4 of 4 core scripts ✅ COMPLETE (v13-1-1, v13-2-1, v13-3-1, v13-4-1)
-- **What's already strong:** Strong grammar range for A1, natural storytelling payoff, good exercise count, all core scripts drafted, comprehensive past participle vocabulary
+---
 
-## Lesson/Video Script Needs
+## Teaching Goals & Exam Map
 
-### Lesson 13-1: Perfekt Tense with haben
-- **Core teaching points:** haben + past participle structure, regular participle formation (ge-___-t: gemacht, gespielt, gelernt), position of participle at sentence end
-- **Script status:** v13-1-1 drafted ✅
-- **Priority:** CRITICAL — Perfekt with haben covers most verbs students will use
-- **Key visual/audio needs:** Sentence structure animation (haben...participle), regular pattern visual, transformation drill recordings
+| Goal | Exam Section | Weight |
+|------|-------------|--------|
+| Form Perfekt with haben (regular verbs) | ALL sections | **CRITICAL** |
+| Form Perfekt with sein (movement/change verbs) | ALL sections | **CRITICAL** |
+| Use common irregular past participles | ALL sections | **HIGH** |
+| Narrate past events (yesterday, weekend, holiday) | Sprechen, Schreiben | **VERY HIGH** |
+| Time expressions for past events | ALL sections | HIGH |
 
-### Lesson 13-2: Perfekt Tense with sein
-- **Core teaching points:** sein + past participle for movement/change verbs (gegangen, gefahren, gekommen, gewesen), haben vs sein decision rule
-- **Script status:** v13-2-1 drafted ✅
-- **Priority:** HIGH — sein-Perfekt verbs are high-frequency (gehen, fahren, kommen, sein)
-- **Key visual/audio needs:** haben vs sein decision flowchart, movement verb illustrations, sentence comparison visuals
+**A1 Exam Relevance: CRITICAL — Without Perfekt, students are trapped in the present tense. Examiners expect past narration in Sprechen, and Schreiben Teil 2 messages often involve past events ("Was hast du am Wochenende gemacht?").**
 
-### Lesson 13-3: Irregular Past Participles
-- **Core teaching points:** High-frequency irregulars (gegessen, getrunken, geschrieben, gelesen, geschlafen, gesprochen, gesehen, genommen), patterns within irregulars
-- **Script status:** v13-3-1 drafted ✅
-- **Priority:** HIGH — irregulars are the most error-prone; need heavy drilling
-- **Key visual/audio needs:** Irregular verb table (infinitive → participle), pattern grouping visual, spaced repetition drill format
+---
 
-### Lesson 13-4: Telling Stories — My Weekend
-- **Core teaching points:** Combining time expressions + Perfekt into narrative, sequencing with zuerst/dann/danach/zum Schluss, weekend story models
-- **Script status:** v13-4-1 drafted ✅
-- **Priority:** HIGH — capstone narrative skill; model for exam speaking about past events
-- **Key visual/audio needs:** Weekend timeline visual, model story recordings, story sequencing exercise
+## Script Status
 
-### Lesson 13-5: Time Expressions for the Past
-- **Core teaching points:** gestern, vorgestern, letzte Woche, letzten Monat, am Wochenende, vor zwei Tagen, letztes Jahr
-- **Script status:** Outline only
-- **Priority:** Medium — supportive vocabulary that enhances Perfekt usage
-- **Key visual/audio needs:** Timeline visual with time expression markers, calendar reference
+| Video ID | Title | Status | Quality | Notes |
+|----------|-------|--------|---------|-------|
+| v13-1-1 | Perfekt with haben | 🔄 DRAFT | v1.0 | Core grammar: ge- + -t pattern |
+| v13-2-1 | Perfekt with sein | 🔄 DRAFT | v2.0 ✅ | Movement/change verbs |
+| v13-3-1 | Irregular Past Participles | 🔄 DRAFT | v1.0 | ge- + -en pattern, vowel changes |
+| v13-4-1 | Talking About Your Weekend | 🔄 DRAFT | v1.0 | Capstone: putting it all together |
 
-## Essential Outcomes
-Students must be able to **produce** (not just recognize):
-1. Form correct Perfekt sentences with haben: "Ich habe Deutsch gelernt."
-2. Use sein correctly with movement verbs: "Ich bin nach Berlin gefahren."
-3. Produce at least 10 common irregular participles (gegessen, getrunken, geschrieben, etc.)
-4. Narrate a weekend in 5-6 connected sentences using Perfekt
-5. Use time expressions: "Gestern habe ich eingekauft." / "Am Wochenende bin ich gewandert."
-6. Choose correctly between haben and sein as auxiliary
+**Status: 4/4 core scripts drafted. 2 at v1.0 need quality upgrade. Module has good script coverage but production exercises are completely missing.**
 
-## Gap Analysis
-- **No speaking exercises** (0/40) — past tense narration is a key speaking task
-- **No free-text writing** — "What did you do last weekend?" should be a written production task
-- **No dictation** — listening to a short past-tense story and noting details
-- **Irregular participle drilling may be insufficient** — these are the hardest to memorize
-- **No present-to-Perfekt transformation exercises** — active production of tense changes
-- **Perfekt needs recycling** — isolated to one module, it may be forgotten without later reinforcement
-- **Only 2 video objects in code** (lessons 13-1 and 13-2) — remaining lessons have outlines but may lack full video structures
-- **Missing bridge to Module 18** (Sprechen Teil 2: answering past-tense questions)
+---
 
-## Future Script Direction
+## The Perfekt System — Module 13's Grammar Core
 
-### Suggested Narrative Approach
-- Frame this as a big grammar unlock: "Now you can talk about the PAST — your German just leveled up!"
-- Keep explanations simple: "Two parts: haben/sein + ge-word at the end. That's it."
-- Use relatable past events: cooking, shopping, traveling, studying, visiting friends
-- Build from single sentences → short paragraphs → mini-stories
+### The Two Helpers
 
-### Malayalam Bridge Points
-- **Past tense concept is familiar** — Malayalam already has clear past tense (ഞാൻ ചെയ്തു); the challenge is German structure, not the idea
-- **Word order surprise** — "In German, the action word goes to the END: 'Ich habe Reis gekocht.' — like a punchline!"
-- **Weekend culture** — "Germans love their Wochenende — Freizeit is sacred. Now tell your Wochenende story!"
-- **Travel stories** — Malayalis love travel; past-tense narration connects naturally to sharing trip experiences
-- **haben vs sein** — "Think: if you MOVED somewhere, use sein. Otherwise, haben. Simple!"
+| Helper | Used with | Example | Rule |
+|--------|-----------|---------|------|
+| **haben** | Most verbs | Ich **habe** Deutsch **gelernt**. | Default — use this if unsure |
+| **sein** | Movement + change verbs | Ich **bin** nach Berlin **gefahren**. | Verbs about going somewhere or becoming something |
 
-### Key Example Sentences/Dialogues to Feature
+### Partizip II Formation
+
+| Type | Pattern | Examples |
+|------|---------|----------|
+| **Regular** | ge- + stem + -t | gemacht, gelernt, gekauft, gespielt, gearbeitet |
+| **Irregular** | ge- + stem change + -en | gegessen, getrunken, geschrieben, gelesen, gefahren |
+| **Separable** | prefix + ge- + stem + -t/-en | eingekauft, aufgestanden, mitgebracht |
+| **Inseparable** | NO ge- + stem + -t/-en | besucht, verstanden, erzählt, bezahlt |
+| **-ieren** | NO ge- + stem + -t | telefoniert, studiert, repariert |
+
+### The 20 Most Important Irregular Participles for A1
+
+These should be memorized by end of Module 13:
+
+| Infinitiv | Partizip II | Helper | Meaning |
+|-----------|-------------|--------|---------|
+| essen | gegessen | haben | eaten |
+| trinken | getrunken | haben | drunk |
+| schreiben | geschrieben | haben | written |
+| lesen | gelesen | haben | read |
+| sprechen | gesprochen | haben | spoken |
+| nehmen | genommen | haben | taken |
+| geben | gegeben | haben | given |
+| sehen | gesehen | haben | seen |
+| finden | gefunden | haben | found |
+| schlafen | geschlafen | haben | slept |
+| fahren | gefahren | **sein** | driven/gone |
+| gehen | gegangen | **sein** | gone/walked |
+| kommen | gekommen | **sein** | come |
+| fliegen | geflogen | **sein** | flown |
+| laufen | gelaufen | **sein** | run/walked |
+| sein | gewesen | **sein** | been |
+| werden | geworden | **sein** | become |
+| bleiben | geblieben | **sein** | stayed |
+| aufstehen | aufgestanden | **sein** | got up |
+| einschlafen | eingeschlafen | **sein** | fell asleep |
+
+---
+
+## Essential Learning Outcomes (Measurable)
+
+After completing Module 13, a learner should be able to:
+
+1. ✅ **Form regular Perfekt sentences:** "Ich habe Deutsch gelernt." / "Wir haben Fußball gespielt."
+2. ✅ **Choose haben vs sein correctly** for 20+ common verbs
+3. ✅ **Use 20 irregular participles** from the core list
+4. ✅ **Handle separable verbs in Perfekt:** "Ich bin um 7 Uhr aufgestanden."
+5. ✅ **Use time expressions:** gestern, am Wochenende, letzte Woche, letzten Monat
+6. 🟡 **Narrate a weekend story** in 5-6 sentences — script covers this but no production exercise
+7. 🟡 **Write a message about a past event** — no free-text exercise
+8. ❌ **Transform present → Perfekt under time pressure** — no timed drill
+9. ❌ **Recognize Perfekt in spoken German** — no listening exercise with past tense
+10. ❌ **Identify haben vs sein from context** — no classification exercise
+
+---
+
+## Production Exercise Gap Analysis
+
+| Spec ID | Exercise | Type | Status | Priority |
+|---------|----------|------|--------|----------|
+| 13-P1 | Weekend Story Writing | free-text | ❌ Not built | **CRITICAL** |
+| 13-P2 | Present → Perfekt Transformation | guided production | ❌ Not built | **CRITICAL** |
+| 13-P3 | haben vs sein Sorting | classification | ❌ Not built | **HIGH** |
+| 13-P4 | Irregular Participle Dictation | dictation | ❌ Not built | HIGH |
+| 13-P5 | Past Event Message (Schreiben) | free-text | ❌ Not built | **HIGH** |
+| 13-P6 | Weekend Narration Speaking | speaking | ❌ Not built | HIGH |
+
+### Audio Requirements
+
+| Audio item | Content | Tool | Status |
+|------------|---------|------|--------|
+| Weekend story model | 6-sentence past narration | edge-tts | ❌ |
+| Perfekt sentence drills | 15 varied Perfekt sentences | edge-tts | ❌ |
+| haben vs sein contrast pairs | 10 paired sentences (same verb in different helpers) | edge-tts | ❌ |
+| Past event dialogue | "Was hast du am Wochenende gemacht?" Q&A | edge-tts | ❌ |
+
+---
+
+## Concrete Next Steps (Priority Order)
+
+### Must-do before launch
+1. [ ] Build 13-P2 present → Perfekt transformation exercise (student types correct Perfekt form)
+2. [ ] Build 13-P1 weekend story writing exercise (write 5 sentences about your weekend)
+3. [ ] Build 13-P3 haben vs sein sorting exercise (verb list → sort into correct helper)
+4. [ ] Build 13-P5 past event message exercise (Schreiben Teil 2 format: write about a trip/event)
+5. [ ] Generate edge-tts audio for weekend narration model
+6. [ ] Create "20 Irregular Participles" flashcard deck for SRS integration
+
+### Should-do for quality
+7. [ ] Build 13-P4 irregular participle dictation (hear participle → write it)
+8. [ ] Build 13-P6 weekend narration speaking drill (speak about your weekend for 1 minute)
+9. [ ] Upgrade v13-1-1, v13-3-1, v13-4-1 from v1.0 to v2.0 quality
+10. [ ] Add transformation drill: "Change to past tense" (flash present sentence → student writes Perfekt)
+11. [ ] Create cheat sheet: "Always sein" verb list card for student reference
+
+### Nice-to-have
+12. [ ] Gap-fill listening exercise (hear sentence with missing participle → fill in)
+13. [ ] "Holiday story" extended writing exercise for strong students
+14. [ ] Perfekt in context: reading a short past-tense email and answering questions
+
+---
+
+## Common Malayali Learner Errors to Script Against
+
+1. **Forgetting the helper verb:** "Ich Deutsch gelernt" instead of "Ich **habe** Deutsch gelernt" — the helper verb is mandatory
+2. **Wrong helper (haben vs sein):** "Ich habe nach Berlin gefahren" ❌ → "Ich **bin** nach Berlin gefahren" ✅ — fahren = movement = sein
+3. **Wrong participle position:** "Ich habe gelernt Deutsch" instead of "Ich habe Deutsch **gelernt**" — participle goes to END
+4. **Mixing up ge- rules:** Adding ge- to inseparable prefixes: "Ich habe gebesucht" ❌ → "Ich habe **besucht**" ✅
+5. **Adding ge- to -ieren verbs:** "Ich habe getelefoniert" ❌ → "Ich habe **telefoniert**" ✅
+6. **Treating -iert as English -ed:** Students who know English past tense may try "studiert" but fail on other German patterns
+7. **Separable verb participle confusion:** "Ich habe aufgestehen" instead of "Ich bin **aufgestanden**" — double trap (sein + separable + irregular)
+8. **Present tense with "seit" conflict:** Mixing up Module 10's "seit + present" with Module 13's past — "Ich habe seit zwei Tagen gekommen" makes no sense
+9. **Avoiding past tense entirely:** Some students stick to present because Perfekt feels hard — they must be pushed to produce
+
+---
+
+## Cross-Module Feed-Forward
+
+Module 13 content connects to:
+- **Module 5:** Present tense conjugation → now students learn the PAST form of the same verbs
+- **Module 5 separable verbs:** Separable Perfekt (aufgestanden, eingekauft) recycles Module 5 concept
+- **Module 12:** "Was hast du am Wochenende gemacht?" — hobbies and activities narrated in past tense
+- **Module 14:** "Ich habe das Formular ausgefüllt" — past actions in formal contexts
+- **Module 17 Hören:** Past tense in listening dialogues
+- **Module 18 Schreiben Teil 2:** Messages about past events ("Ich war letzte Woche krank")
+- **Module 18 Sprechen:** "Was haben Sie am Wochenende gemacht?" is a standard examiner question
+
+**Module 13 is the tense gateway. Before this, students live in the present. After this, they can tell stories.**
+
+---
+
+## Malayalam Bridge Points
+
+- **Past tense concept:** "Malayalam also has past tense — '�ാൻ ചെയ്തു' (njaan cheythu) = I did. German Perfekt works similarly but needs TWO parts: helper verb + participle. Think of it as 'I have done' rather than 'I did'."
+- **Word order:** "In German, the participle goes to the END. 'Ich habe gestern Fußball gespielt.' It's like Malayalam where the verb goes at the end of the sentence — this is actually easier for you than for English speakers!"
+- **haben vs sein concept:** "Malayalam doesn't have this split, but the logic is simple: if you WENT somewhere or CHANGED state, use sein. Everything else: haben. 'I went' → sein. 'I ate' → haben."
+- **Compound word trick:** "Just like Kopf+Schmerzen in Module 10, ge- + verb stem + -t is a recipe. Once you know the recipe, you can cook any regular participle: ge+mach+t, ge+lern+t, ge+kauf+t."
+- **Weekend storytelling:** "In Kerala, Monday morning everyone asks 'weekend engane aayirunnu?' In Germany, same thing: 'Was hast du am Wochenende gemacht?' Learn to answer this and you've mastered the most common Perfekt conversation."
+
+---
+
+## Key Templates & Model Outputs
+
+### Weekend Story Template (A1-safe)
 ```
-Simple Past:
-"Ich habe gestern Deutsch gelernt."
-"Wir haben am Wochenende Biryani gekocht."
-"Er hat einen Film gesehen."
+Am Samstag bin ich um neun Uhr aufgestanden.
+Ich habe gefrühstückt und Kaffee getrunken.
+Dann bin ich in die Stadt gefahren.
+Ich habe eingekauft und einen Film gesehen.
+Am Abend habe ich mit Freunden gekocht.
+Am Sonntag bin ich zu Hause geblieben und habe gelesen.
+```
 
-With sein:
-"Ich bin gestern nach München gefahren."
-"Sie ist um 7 Uhr aufgestanden."
-"Wir sind ins Kino gegangen."
+### Past Event Message (Schreiben Teil 2 prep)
+```
+Liebe Maria,
+am Wochenende bin ich nach München gefahren.
+Ich habe das Oktoberfest besucht und viel Spaß gehabt.
+Ich habe Brezeln gegessen und Musik gehört.
+Es war toll!
+Viele Grüße
+[Name]
+```
 
-Weekend Story:
-"Am Samstag bin ich um neun Uhr aufgestanden.
-Zuerst habe ich gefrühstückt.
-Dann habe ich eingekauft und gekocht.
-Nachmittags habe ich ein Buch gelesen.
-Abends bin ich mit Freunden ins Kino gegangen.
-Am Sonntag habe ich Deutsch gelernt und meine Familie angerufen."
+### Examiner Q&A Pattern
+```
+Q: Was haben Sie gestern gemacht?
+A: Gestern habe ich gearbeitet. Dann bin ich einkaufen gegangen. Am Abend habe ich gekocht und einen Film gesehen.
 
-Exam Question:
 Q: Was haben Sie am Wochenende gemacht?
-A: Am Wochenende bin ich in den Park gegangen.
-   Ich habe mit Freunden Fußball gespielt.
-   Dann haben wir zusammen gegessen.
+A: Am Samstag bin ich in den Park gegangen. Ich habe Sport gemacht. Am Sonntag habe ich meine Familie besucht.
 ```
+
+---
+
+*Module 13 is the moment students stop sounding like present-tense robots. Before this module, they can only say what they DO. After it, they can say what they DID. That's the difference between functional German and actual conversation.*

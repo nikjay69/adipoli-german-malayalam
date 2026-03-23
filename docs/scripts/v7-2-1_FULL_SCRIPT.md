@@ -1,192 +1,185 @@
-# v7-2-1 — Prices & Currency (Euro und Cent)
+# v7-2-1 — Clothes Shopping (Kleidung kaufen)
 
-> **Module:** 7 — Shopping & Money (Einkaufen)
-> **Lesson:** 7-2 — Prices & Currency
-> **Duration:** ~11 minutes
-> **Exam relevance:** Hören (price dictation, announcements), Lesen (price labels, offers), Sprechen (asking about prices)
-> **Prerequisites:** Module 3 (numbers), Module 7-1 (supermarket basics)
-> **Status:** 🔄 DRAFT
-> **Created:** 2026-03-23 09:35 UTC (overnight cron)
+> **Module:** 7 (Shopping & Money)
+> **Lesson:** 7-2 (Colors & Clothing)
+> **Duration:** ~10 minutes
+> **Exam section:** Sprechen (asking about items), Hören (shop dialogues), Lesen (ads)
+> **Prerequisites:** Module 6 (accusative basics), Module 7-1 (supermarket)
+> **Status:** FULL SCRIPT v1.0
+> **Created:** 2026-03-23 11:00 UTC
 
 ---
 
 ## Script
 
-### Scene 1: Pre-roll (0:00–0:15)
-**[BRANDING]**
+### [0:00–0:15] Pre-roll
+*[Branding slide]*
+
+### [0:15–1:15] Hook — "Your first German clothes shop visit"
+
+Germany-yil oru clothing store-il chennal — sizes different aanu, nobody approaches you first, and you need to know EXACTLY what to say.
+
+*Ivide ningal paRayunnathum choddikkunnathum ellaam GERMAN-il aanu. Ready aayaal — shopping is fun. Allenkil — stress!*
+
+Today: clothes vocabulary + the exact dialogue for buying anything.
+
+*[SLIDE: "Einkaufen: Kleidung 👕👗"]*
 
 ---
 
-### Scene 2: Hook (0:15–1:00)
-**[SLIDE: Euro coins and bills spread out]**
+### [1:15–3:00] Block 1: Essential Clothing Vocabulary
 
-**Narrator:**
-> "Money talks — and in Germany, it talks in Euro! In this lesson, you'll learn to say prices, understand them when you hear them, and never overpay because you misheard 'fünfzehn' as 'fünfzig'!"
->
-> *"Euro, Cent, prices — ellam German-il parayanam padikkaam. 15 und 50 mix-up aakkaathe nokkaam!"*
+| German | English | Article | Malayalam hint |
+|--------|---------|---------|---------------|
+| das T-Shirt | t-shirt | das | |
+| die Hose | trousers | die | *Pants* |
+| die Jeans | jeans | die | |
+| das Hemd | shirt (formal) | das | |
+| die Bluse | blouse | die | |
+| das Kleid | dress | das | *Kleid — like "clad"!* |
+| der Rock | skirt | der | *NOT rock music!* |
+| die Jacke | jacket | die | |
+| der Mantel | coat | der | |
+| der Pullover / der Pulli | sweater | der | |
+| die Schuhe | shoes | die (pl.) | |
+| die Socken | socks | die (pl.) | |
+| der Gürtel | belt | der | |
+| die Mütze | cap/beanie | die | |
 
----
+⏸️ *Cover the English column. Can you remember 10/14?*
 
-### Scene 3: Euro & Cent Basics (1:00–2:30)
-**[VISUAL: Euro coins (1c, 2c, 5c, 10c, 20c, 50c, 1€, 2€) and bills (5€, 10€, 20€, 50€)]**
+**Colors — die Farben:**
+rot, blau, grün, gelb, schwarz, weiß, grau, braun, rosa, lila, orange
 
-**Narrator:**
-> "Germany uses the Euro — same as most of Europe."
->
-> 🔊 "der Euro" — Euro (stays 'Euro' even in plural: 'drei Euro', not 'Euros')
-> 🔊 "der Cent" — Cent (same rule: 'fünfzig Cent')
->
-> "Coins: 1, 2, 5, 10, 20, 50 Cent + 1 Euro, 2 Euro"
-> "Bills: 5, 10, 20, 50, 100, 200, 500 Euro"
->
-> "FUN FACT: Most Germans avoid the €200 and €500 notes. Many shops won't accept them!"
->
-> *"India-yile paise pole — Euro-nte koode Cent undu. 100 Cent = 1 Euro."*
+*"Ich suche ein blaues T-Shirt" — njaanoru blue t-shirt anweshikkyunnu.*
 
----
-
-### Scene 4: How to Say Prices (2:30–4:30)
-**[SLIDE: Price examples with pronunciation]**
-
-**Narrator:**
-> "Saying prices in German follows a simple pattern:"
->
-> 🔊 "drei Euro fünfzig" — €3.50
-> 🔊 "neun Euro neunundneunzig" — €9.99
-> 🔊 "zwölf Euro zwanzig" — €12.20
->
-> "Notice: Germans use a COMMA for decimals, not a dot! €3,50 not €3.50"
->
-> "For simple amounts:"
-> 🔊 "fünf Euro" — €5.00
-> 🔊 "zwei Euro" — €2.00
->
-> "For cents only:"
-> 🔊 "fünfzig Cent" — €0.50
-> 🔊 "neunundneunzig Cent" — €0.99
->
-> ⏸️ **[Practice: How do you say €7.80? → sieben Euro achtzig!]**
->
-> "SHORTCUT: In casual speech, Germans often skip 'Euro' and 'Cent':"
-> 🔊 "Das kostet drei fünfzig." — That costs 3.50
+⏸️ *Say your outfit right now in German. "Ich trage ein/eine/einen ___."*
 
 ---
 
-### Scene 5: Asking About Prices (4:30–6:00)
-**[SLIDE: Question patterns]**
+### [3:00–5:00] Block 2: Sizes & Fitting
 
-**Narrator:**
-> "Three ways to ask how much something costs:"
->
-> 🔊 "Was kostet das?" — What does that cost? (MOST common)
-> 🔊 "Wie viel kostet das?" — How much does that cost?
-> 🔊 "Was macht das?" — What does that come to? (at checkout)
->
-> "For specific items:"
-> 🔊 "Was kostet ein Kilo Äpfel?" — What does a kilo of apples cost?
-> 🔊 "Was kostet die Jacke?" — What does the jacket cost?
->
-> ⏸️ **[Repeat all three question patterns]**
->
-> "Answering:"
-> 🔊 "Das kostet fünf Euro fünfzig." — That costs €5.50
-> 🔊 "Das macht zusammen zwölf Euro." — That comes to €12 total
+**Sizes:**
+- "Welche Größe haben Sie?" — What size are you?
+- "Ich habe Größe M / 38 / 42." — I'm size M / 38 / 42.
+- **TRAP:** German/EU sizes ≠ Indian sizes! Generally add 6-8 to Indian size for women, different system for men.
 
----
+| Need | You say |
+|------|---------|
+| Ask for size | "Haben Sie das in Größe M?" |
+| Too big | "Das ist zu groß." |
+| Too small | "Das ist zu klein." |
+| Fits perfectly | "Das passt gut!" |
+| Try on | "Kann ich das anprobieren?" |
+| Where is fitting room? | "Wo ist die Umkleidekabine?" |
 
-### Scene 6: Listening Traps — Numbers That Sound Similar (6:00–7:30)
-**[SLIDE: Comparison pairs with audio]**
+⏸️ *"Kann ich das anprobieren?" — say this 3 times. This is your fitting room KEY.*
 
-**Narrator:**
-> "This is CRITICAL for the Hören exam. These numbers sound similar:"
->
-> 🔊 "dreizehn (13) vs. dreißig (30)"
-> 🔊 "vierzehn (14) vs. vierzig (40)"
-> 🔊 "fünfzehn (15) vs. fünfzig (50)"
-> 🔊 "sechzehn (16) vs. sechzig (60)"
->
-> "The trick: '-zehn' ends sharply. '-zig' is softer and longer."
->
-> "Listen again carefully..."
->
-> 🔊 "dreizehn... dreißig..."
-> 🔊 "fünfzehn... fünfzig..."
->
-> ⏸️ **[Mini-quiz: I'll say a number — is it -zehn or -zig?]**
->
-> *"Hören exam-il ithu big trap aanu! 15 vs 50 — careful aayi kettal mathi!"*
+*Kerala-yil textile shop-il aaru cheyyumennaalum try on cheyyunna habit illa. Germany-yil EVERY store has fitting rooms — USE THEM. Returns are possible but easier to get it right the first time.*
 
 ---
 
-### Scene 7: Real Shopping Situations (7:30–9:30)
-**[DIALOGUE: At a bakery]**
+### [5:00–7:00] Block 3: The Shopping Dialogue
 
-**Narrator:**
-> "Let's put it all together in a real scenario."
->
-> **At the bakery:**
-> 🔊 Kunde: "Was kostet ein Brötchen?"
-> 🔊 Verkäuferin: "Dreißig Cent."
-> 🔊 Kunde: "Dann nehme ich drei Brötchen und einen Kaffee, bitte."
-> 🔊 Verkäuferin: "Das macht zusammen drei Euro neunzig."
-> 🔊 Kunde: "Hier, bitte." *(hands €5)*
-> 🔊 Verkäuferin: "Und ein Euro zehn zurück. Danke!"
->
-> ⏸️ **[What was the total? → €3.90!]**
+**Scene: You enter a clothing store.**
 
----
+*Verkäuferin:* "Guten Tag, kann ich Ihnen helfen?"
+*(Hello, can I help you?)*
 
-> **At the market:**
-> 🔊 Kunde: "Was kosten die Tomaten?"
-> 🔊 Verkäufer: "Zwei Euro neunundneunzig das Kilo."
-> 🔊 Kunde: "Ein Kilo, bitte."
-> 🔊 Verkäufer: "Zwei Euro neunundneunzig, bitte."
-> 🔊 Kunde: "Hier sind drei Euro."
-> 🔊 Verkäufer: "Ein Cent zurück. Danke, schönen Tag!"
->
-> "zurück = change/back. 'Ein Euro zehn zurück' = €1.10 change"
+*You:* "Ja, ich suche eine Jacke."
+*(Yes, I'm looking for a jacket.)*
 
----
+*Verkäuferin:* "Welche Farbe?"
+*(What color?)*
 
-### Scene 8: Payment Methods (9:30–10:15)
-**[SLIDE: Card, cash, contactless icons]**
+*You:* "Schwarz, bitte."
+*(Black, please.)*
 
-**Narrator:**
-> "Useful payment vocabulary:"
->
-> 🔊 "bar" — cash  ("Kann ich bar bezahlen?")
-> 🔊 "mit Karte" — by card  ("Kann ich mit Karte bezahlen?")
-> 🔊 "die Rechnung" — the bill
-> 🔊 "das Wechselgeld" — change
-> 🔊 "die Quittung" — receipt
->
-> "CULTURAL NOTE: Germany is still more cash-heavy than India! Always carry some Bargeld. Many smaller shops and restaurants don't take cards."
->
-> *"Germany-il cash rajav aanu — card accept cheyyaatha shops und. Always Bargeld carry cheyyuka!"*
+*Verkäuferin:* "Welche Größe?"
+*(What size?)*
 
----
+*You:* "Größe M, bitte."
+*(Size M, please.)*
 
-### Scene 9: Summary & Challenge (10:15–11:00)
-**[SUMMARY CARD]**
+*Verkäuferin:* "Hier, bitte. Die Umkleidekabine ist dort drüben."
+*(Here, please. The fitting room is over there.)*
 
-**Key Takeaways:**
-- Euro (stays same in plural), Cent
-- Price pattern: "drei Euro fünfzig" / shortcut "drei fünfzig"
-- Ask: "Was kostet das?" / "Was macht das?"
-- Listen carefully: -zehn ≠ -zig (13≠30, 15≠50)
-- Payment: bar, mit Karte, Rechnung, Quittung
+*[After trying on]*
 
-**Narrator:**
-> "Challenge: Go to any online German shop and try reading 5 prices out loud in German!"
->
-> "Next lesson: Colors and clothing — shopping gets fashionable!"
->
-> "Bis zum nächsten Mal! Tschüss!"
+*You:* "Die Jacke passt gut. Was kostet sie?"
+*(The jacket fits well. How much does it cost?)*
+
+*Verkäuferin:* "79 Euro."
+
+*You:* "Ich nehme sie. Kann ich mit Karte bezahlen?"
+*(I'll take it. Can I pay by card?)*
+
+*Verkäuferin:* "Ja, natürlich. Bitte hier."
+
+⏸️ *Practice this entire dialogue with a partner or alone (play both roles).*
+
+**If you DON'T want to buy:**
+- "Danke, ich schaue mich nur um." — Thanks, I'm just looking.
+- "Das ist mir zu teuer." — That's too expensive for me.
+- "Ich überlege noch." — I'm still thinking about it.
+
+*"Ich schaue mich nur um" — ithu paranjaal sales person ninne thani vidum! Freedom phrase!*
 
 ---
 
-## Production Notes
-- Audio: Generate all price examples, dialogue lines, and -zehn/-zig comparison pairs
-- Visuals: Euro coin/bill images, price tags, bakery/market scene illustrations
-- Critical for Hören exam prep — the number discrimination section is extremely high-value
-- Connects back to Module 3 (numbers), forward to Module 7-3 (colors/clothing shopping)
+### [7:00–8:30] Block 4: Practical Grammar in Shopping
+
+**Accusative in action:**
+When you BUY or TAKE something, it becomes the accusative object:
+- "Ich nehme **den** Pullover." (der → den, masculine accusative)
+- "Ich nehme **die** Jacke." (die stays die, feminine)
+- "Ich nehme **das** Kleid." (das stays das, neuter)
+- "Ich nehme **die** Schuhe." (die stays die, plural)
+
+*Module 6-il padichcha accusative — ippol shopping-il REAL USE kanunnu!*
+
+⏸️ *Pick 3 clothing items and say "Ich nehme ___" with the correct article.*
+
+**Adjective endings (awareness only — don't memorize tables yet):**
+- ein blau**es** T-Shirt (neuter → -es)
+- eine schwarz**e** Hose (feminine → -e)
+- ein rot**er** Rock (masculine → -er)
+
+*Tables padikkenda — pattern practice cheyyuka. Sheriyaakum gradually!*
+
+---
+
+### [8:30–10:00] Block 5: Shopping Culture + Summary
+
+**German shopping culture vs Kerala:**
+- Nobody follows you around the store — you browse freely
+- "Ich schaue mich nur um" stops any pushy approach
+- Fitting rooms: use them! Take max 3–5 items (some stores have limits)
+- Returns: keep the receipt (*Kassenbon*)! Most stores accept returns within 14 days.
+- Cash vs card: big chains accept cards; small boutiques may not
+
+*Kerala-yil textile shop-il 20 saree eduthu kaanikkum — "take take, no problem!" Germany-yil self-service aanu. Ningal choose cheyyuka, try cheyyuka, decide cheyyuka.*
+
+**Your clothing shopping toolkit (5 essential sentences):**
+1. "Ich suche ___." — I'm looking for ___
+2. "Haben Sie das in Größe ___?" — Do you have this in size ___?
+3. "Kann ich das anprobieren?" — Can I try this on?
+4. "Was kostet das?" — How much is this?
+5. "Ich nehme das." / "Ich schaue mich nur um." — I'll take it. / Just looking.
+
+*Ee 5 sentences kondu ANY German clothing store-il survive cheyyaam!* 👕✅
+
+---
+
+## Checklist
+
+- [x] 14 essential clothing items with articles
+- [x] Colors listed
+- [x] Size system explained with cultural note
+- [x] Complete shopping dialogue scripted
+- [x] "Just looking" escape phrase included
+- [x] Accusative reinforcement through shopping context
+- [x] Cultural comparison (Kerala textile shops vs German self-service)
+- [x] 5-sentence toolkit summary
+- [x] Pause points for active practice
+- [x] Duration: ~10 minutes

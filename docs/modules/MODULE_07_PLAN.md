@@ -1,121 +1,190 @@
-# Module 07: Shopping & Money (Einkaufen)
+# Module 07: Shopping & Money (Einkaufen) — Launch Plan
 
-## Teaching Goal
-After this module, students should be able to **shop for groceries and clothing**, **ask about and understand prices**, **use colors and clothing vocabulary**, **handle shopping dialogues**, and **compare things simply** (bigger, cheaper, better). Reinforces numbers from Module 3 and accusative from Module 6 in practical contexts.
+> **Last updated:** 2026-03-23 12:45 UTC
 
-## A1 Exam Relevance
+---
 
-| Exam Section | Relevance |
-|---|---|
-| **Hören** | Price information, shopping exchanges, and offer announcements are common listening tasks. |
-| **Lesen** | Advertisements, product labels, store signs, and offers are classic A1 reading material. |
-| **Sprechen** | Asking about items, prices, size, color, and preferences in interaction tasks. |
-| **Cross-module** | Reinforces numbers (Module 3) and accusative (Module 6) in real-world contexts. |
+## Module Identity
 
-## Current Content Inventory
-
-- **Lessons:** 5
-  - 7-1: At the Supermarket (Im Supermarkt)
-  - 7-2: Prices & Currency (Preise und Währung)
-  - 7-3: Colors & Clothing (Farben und Kleidung)
-  - 7-4: Shopping Dialogues (Einkaufsdialoge)
-  - 7-5: Comparing Things (Vergleichen)
+- **Position:** Practical survival — first solo shopping is a major confidence milestone
+- **Lessons:** 5 (Supermarket, Prices & Currency, Colors & Clothing, Shopping Dialogues, Comparing Things)
 - **Videos:** 6
-- **Exercises:** 30 total
-  - Multiple-choice: 15
-  - Fill-blank: 7
-  - Matching: 4
-  - Ordering: 4
-  - Speaking: 0
-- **Vocabulary:** 44 items (Milch, Brot, Butter, Ei/Eier, Zucker, Mehl, Nudeln, Joghurt + colors + clothing)
-- **Scripts drafted:** 3 of 3 core scripts ✅ COMPLETE (v7-1-1, v7-2-1, v7-3-1)
-- **What's already strong:** Practical survival German, strong link to everyday integration, all core scripts drafted, good thematic coherence
+- **Exercises:** 30
+- **Vocabulary:** 44
+- **Scripts drafted:** 3/3 core scripts ✅ COMPLETE (v7-1-1, v7-2-1, v7-3-1)
 
-## Lesson/Video Script Needs
+---
 
-### Lesson 7-1: At the Supermarket
-- **Core teaching points:** Supermarket vocabulary, grocery items with articles, shopping list writing, German supermarket culture (Pfand, own bags, fast checkout)
-- **Script status:** v7-1-1 drafted ✅
-- **Priority:** HIGH — supermarket visits are daily reality for any German resident
-- **Key visual/audio needs:** Supermarket aisle photos with German labels, shopping list template, Pfand system explanation
+## Teaching Goals & Exam Map
 
-### Lesson 7-2: Prices & Currency
-- **Core teaching points:** Euro/Cent, "Was kostet das?", price expressions, Rabatt/Angebot vocabulary, reading price tags
-- **Script status:** v7-2-1 drafted ✅
-- **Priority:** HIGH — price comprehension is tested in Hören and Lesen
-- **Key visual/audio needs:** Price tag examples, Euro coin/note visuals, price listening drills
+| Goal | Exam Section | Weight |
+|------|-------------|--------|
+| Ask about and understand prices | Hören, Sprechen | **HIGH** |
+| Read advertisements and offers | Lesen | **HIGH** |
+| Shopping interaction dialogues | Sprechen Teil 2/3 | **HIGH** |
+| Color and clothing vocabulary | Sprechen, Lesen | MEDIUM |
+| Basic comparatives (billiger, teurer, besser) | Sprechen, Schreiben | MEDIUM |
+| Reinforce numbers (Module 3) in price context | Hören | HIGH |
+| Accusative usage from Module 6 in purchase context | ALL sections | MEDIUM |
 
-### Lesson 7-3: Colors & Clothing
-- **Core teaching points:** All basic colors, clothing items with articles, sizes (groß/klein/Größe), "Ich suche..."
-- **Script status:** v7-3-1 drafted ✅
-- **Priority:** Medium — useful vocabulary but less exam-critical than prices
-- **Key visual/audio needs:** Color palette visual, clothing item illustrations, size chart comparison
+**A1 Exam Relevance: HIGH — Price comprehension in Hören, advertisement reading in Lesen, and shopping requests in Sprechen are A1 staples. This module also cements Module 3 numbers and Module 6 accusative in real-world use.**
 
-### Lesson 7-4: Shopping Dialogues
-- **Core teaching points:** Complete shopping interaction scripts, asking for help, trying on clothes, paying
-- **Script status:** Outline only
-- **Priority:** HIGH — production of shopping dialogue is the practical payoff
-- **Key visual/audio needs:** Role-play dialogue recordings, store scene illustrations
+---
 
-### Lesson 7-5: Comparing Things
-- **Core teaching points:** Comparatives (teurer, billiger, größer, besser), superlatives basics, comparison sentences with als
-- **Script status:** Outline only
-- **Priority:** Medium — useful grammar extension, less essential for basic A1
-- **Key visual/audio needs:** Product comparison visuals, comparison sentence pattern animation
+## Script Status
 
-## Essential Outcomes
-Students must be able to **produce** (not just recognize):
-1. Ask "Was kostet das?" and understand the price answer
-2. Name at least 15 grocery items and 10 clothing items with articles
-3. Name all basic colors in German
-4. Handle a complete shopping dialogue: greet → ask → try/select → pay → leave
-5. Compare two items simply: "Das ist billiger als das."
-6. Write a shopping list in German
+| Video ID | Title | Status | Quality | Notes |
+|----------|-------|--------|---------|-------|
+| v7-1-1 | At the Supermarket | 🔄 DRAFT | v1.0 | Grocery vocab + German supermarket culture |
+| v7-2-1 | Clothes Shopping | 🔄 DRAFT | v1.0 | Clothing vocab + dialogue |
+| v7-3-1 | Prices & Comparing | 🔄 DRAFT | v1.0 | Price patterns + basic comparatives |
+| v7-4-1 | Shopping Dialogues | ⬜ OUTLINE | — | Complete interaction scripts |
+| v7-5-1 | Comparing Things | ⬜ OUTLINE | — | Comparatives: teurer/billiger/besser + als |
 
-## Gap Analysis
-- **No speaking exercises** (0/30) — shopping is an interaction-heavy topic
-- **No price dictation** — listening to prices and writing them is critical Hören practice
-- **No role-play exercises** — buy a shirt, ask about size/color
-- **No shopping list writing task** — simple free-text production exercise
-- **Comparative structures need recycling** — may not stick from one lesson
-- **Below-average video count** (6 vs 8-12 in other modules) — less visual instruction
-- **No cultural notes exercises** — Pfand system, bag policy, checkout speed should be tested
-- **Missing bridge to Module 8** (home furnishing shopping) and **Module 14** (bank/money)
+**Status: 3/5 scripts drafted. Core vocabulary lessons covered. Shopping dialogue production and comparatives need scripts.**
 
-## Future Script Direction
+### Script Priority Assessment
 
-### Suggested Narrative Approach
-- Keep scenes concrete and visual — "Imagine walking into Aldi for the first time"
-- Use humor around German supermarket culture: "Germans at checkout are FAST — have your money ready!"
-- Comparatives should feel like a natural buying decision, not abstract grammar
-- Build confidence for the first solo shopping trip
+| Priority | Video | Why | Estimated effort |
+|----------|-------|-----|-----------------|
+| **HIGH** | v7-4-1 | Shopping dialogues = practical payoff of the entire module | 25 min |
+| **MEDIUM** | v7-5-1 | Comparatives are useful but less exam-critical at A1 | 20 min |
 
-### Malayalam Bridge Points
-- **Market vs supermarket** — Kerala's open markets vs German Supermarkt/Discounter culture
-- **Bargaining** — "In Kerala you bargain. In Germany, the price is the price. No exceptions!"
-- **Pfand system** — "You get money BACK for returning bottles — this would blow minds in Kerala!"
-- **Textile shopping** — Kerala's textile culture (Kasavu, Kurtis) vs German clothing stores
-- **Cash culture** — "Germans still love Bargeld (cash) — always carry some Euros!"
+---
 
-### Key Example Sentences/Dialogues to Feature
+## Essential Learning Outcomes (Measurable)
+
+After completing Module 7, a learner should be able to:
+
+1. ✅ **Ask about prices:** "Was kostet das?" / "Wie viel kostet die Milch?"
+2. ✅ **Understand spoken prices** (connects to Module 3 numbers): "Das kostet drei Euro fünfundvierzig."
+3. ✅ **Name 15+ grocery items** with articles (die Milch, das Brot, die Butter, das Ei, der Käse, etc.)
+4. ✅ **Name 10+ clothing items** with articles (das T-Shirt, die Hose, der Mantel, die Schuhe, etc.)
+5. ✅ **Name all basic colors:** rot, blau, grün, gelb, schwarz, weiß, braun, grau, orange, rosa/pink
+6. 🟡 **Complete a shopping dialogue** — outlined but no production exercise
+7. 🟡 **Write a shopping list** — simple but no exercise built
+8. 🟡 **Compare two items:** "Das ist billiger als das." — script in outline stage
+9. ❌ **Understand a spoken price and write it down** — no price dictation exercise
+10. ❌ **Read a German advertisement and extract key information** — no ad-reading exercise
+
+---
+
+## Production Exercise Gap Analysis
+
+| Spec ID | Exercise | Type | Status | Priority |
+|---------|----------|------|--------|----------|
+| 7-P1 | Price Dictation | dictation | ❌ Not built | **CRITICAL** |
+| 7-P2 | Shopping Dialogue Role-Play | free-text + speaking | ❌ Not built | **HIGH** |
+| 7-P3 | Shopping List Writing | free-text | ❌ Not built | HIGH |
+| 7-P4 | Advertisement Reading | reading comprehension | ❌ Not built | **HIGH** |
+| 7-P5 | "Ich suche..." Request | guided production | ❌ Not built | MEDIUM |
+| 7-P6 | Comparison Sentences | free-text | ❌ Not built | MEDIUM |
+
+### Audio Requirements
+
+| Audio item | Content | Tool | Status |
+|------------|---------|------|--------|
+| Price announcements | 10 prices spoken (varied amounts) | edge-tts | ❌ |
+| Supermarket dialogue | Customer + cashier exchange | edge-tts | ❌ |
+| Clothing store dialogue | Customer + sales assistant | edge-tts | ❌ |
+| Grocery item naming drill | 15 items with articles | edge-tts | ❌ |
+| Color naming drill | All basic colors | edge-tts | ❌ |
+
+---
+
+## Concrete Next Steps (Priority Order)
+
+### Must-do before launch
+1. [ ] Build 7-P1 price dictation exercise (hear price → write it in digits: €3,45)
+2. [ ] Build 7-P4 advertisement reading exercise (read Angebot → answer questions about items/prices)
+3. [ ] Build 7-P2 shopping dialogue exercise (complete a grocery/clothing shopping interaction)
+4. [ ] Draft v7-4-1 (Shopping Dialogues — capstone interaction scripts)
+5. [ ] Generate edge-tts audio for price dictation and dialogues
+
+### Should-do for quality
+6. [ ] Build 7-P3 shopping list writing exercise (recipe → German shopping list)
+7. [ ] Build 7-P5 "Ich suche..." clothing request exercise
+8. [ ] Draft v7-5-1 (Comparing Things — comparatives with als)
+9. [ ] Upgrade v7-1-1, v7-2-1, v7-3-1 from v1.0 to v2.0 quality
+10. [ ] Add German supermarket culture mini-quiz (Pfand, Tüte, Kassenbon)
+
+### Nice-to-have
+11. [ ] Build 7-P6 comparison sentence exercise
+12. [ ] Interactive "build your meal" exercise (select items, total the price)
+13. [ ] Discounter vs Supermarkt cultural comparison content
+
+---
+
+## Common Malayali Learner Errors to Script Against
+
+1. **Price number confusion:** German number reversal (fünfundvierzig = 45, not 54) — Module 3 trap returns with real stakes
+2. **Euro/Cent pronunciation:** "drei Euro neunundneunzig" flows fast; students may miss the Cent amount in Hören
+3. **Forgetting articles when shopping:** "Ich brauche Milch" is OK, but "Ich suche Hose" needs "eine Hose"
+4. **Mixing up teuer/billig:** Simple confusion under pressure; drill both directions
+5. **Bargaining instinct:** Some students may struggle with the idea that prices are fixed — not a language error but a cultural adjustment
+6. **Color adjective endings:** At A1, keep colors simple as predicates ("Das T-Shirt ist blau") not attributive ("das blaue T-Shirt" = A1+ territory)
+7. **Confusing Kasse/Karte/Kassette:** All start with K — drill the shopping-specific terms
+8. **Not knowing Pfand:** Returning bottles for deposit money — uniquely German, must be taught explicitly
+
+---
+
+## Cross-Module Feed-Forward
+
+Module 7 content connects to:
+- **Module 3:** Numbers in price context (dreizehn Euro fünfundsiebzig)
+- **Module 6:** Accusative from food ordering ("Ich nehme einen Kaffee" → "Ich nehme ein T-Shirt")
+- **Module 6:** "Ich hätte gern" / "Ich möchte" patterns reused in shopping
+- **Module 8:** Furniture shopping extends to home context
+- **Module 9:** Ticket buying recycles price and payment vocabulary
+- **Module 14:** Bank account + money management
+- **Module 17 Hören:** Price-related listening tasks
+- **Module 17 Lesen:** Advertisement-reading comprehension tasks
+
+---
+
+## Key Dialogues & Templates
+
+### Golden Supermarket Dialogue
 ```
-Supermarket:
-"Ich brauche Milch, Brot und Eier."
-"Was kostet der Käse?" — "Drei Euro neunundneunzig."
-"Haben Sie eine Tüte?" — "Ja, zwanzig Cent."
+Kunde: Entschuldigung, wo finde ich die Milch?
+Verkäufer: Die Milch ist in Gang drei, links.
+Kunde: Danke! Und was kostet das Bio-Brot?
+Verkäufer: Drei Euro neunundvierzig.
+Kunde: Gut, ich nehme eins. Haben Sie auch Eier?
+Verkäufer: Ja, im Kühlregal. Zehn Eier kosten zwei Euro neununddreißig.
+```
 
-Clothing Store:
-Verkäufer: Kann ich Ihnen helfen?
+### Golden Clothing Store Dialogue
+```
+Verkäufer: Guten Tag! Kann ich Ihnen helfen?
 Kunde: Ja, ich suche ein T-Shirt in Blau.
 Verkäufer: Welche Größe?
 Kunde: Größe M, bitte.
 Verkäufer: Hier, bitte. Möchten Sie es anprobieren?
-Kunde: Ja, gern! ... Das passt. Was kostet es?
+Kunde: Ja, gern! ... Das passt gut. Was kostet es?
 Verkäufer: Neunzehn Euro neunundneunzig.
 Kunde: Ich nehme es. Kann ich mit Karte zahlen?
-
-Comparing:
-"Das rote T-Shirt ist teurer als das blaue."
-"Aldi ist billiger als Rewe."
-"Welches Kleid gefällt dir besser?"
+Verkäufer: Ja, natürlich. Bitte schön.
 ```
+
+### Comparison Templates (A1-safe)
+```
+Aldi ist billiger als Rewe.
+Das blaue T-Shirt ist teurer als das rote.
+Welches Brot schmeckt besser?
+Der Zug ist schneller als der Bus.
+```
+
+---
+
+## Malayalam Bridge Points
+
+- **Market vs Supermarkt:** "In Kerala, you go to the chantha or supermarket and bargain. In Germany, Aldi, Lidl, Rewe — the price is the price. But here's the secret: Angebote (special offers) are your new bargaining!"
+- **Pfand system:** "Return your bottles → get money back. Imagine that at a toddy shop! Germans recycle seriously. Learn 'Pfand' — it saves you money."
+- **Checkout speed:** "German cashiers are FAST. Have your wallet ready, bag your own items, and don't block the Kasse. This is not a place for chitchat!"
+- **Cash culture:** "Germany still loves Bargeld (cash). Many smaller shops don't take cards. Always carry some Euros — 'Nur Barzahlung' signs are common."
+- **Colors and textiles:** "Kerala knows textiles — Kasavu sarees, Kurtis, Mundu. In Germany, you'll shop for warmer clothes — der Mantel, die Jacke, der Pullover. Different climate, different wardrobe!"
+
+---
+
+*Module 7 is where German stops being a classroom subject and becomes a daily life skill. The first solo grocery run in Germany is a confidence milestone — make sure students are ready for it.*

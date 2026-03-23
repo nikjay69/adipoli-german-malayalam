@@ -1,205 +1,176 @@
-# v12-1-1 — Hobbies: Was machst du gern? (What Do You Like Doing?)
+# v12-1-1 — Hobbies (Hobbys und Freizeit)
 
-> **Module:** 12 — Hobbies & Free Time (Freizeit)
-> **Lesson:** 12-1 — Hobbies
-> **Duration:** ~12 minutes
-> **Exam relevance:** Sprechen Teil 1 (self-intro includes hobbies), Sprechen Teil 2 (topic cards: Freizeit, Sport), Schreiben Teil 2 (messages about activities/plans)
-> **Prerequisites:** Module 5 (present tense verbs), Module 6 (likes/dislikes with gern)
-> **Status:** 🔄 DRAFT
-> **Created:** 2026-03-23 09:45 UTC (overnight cron)
+> **Module:** 12 (Hobbies & Free Time)
+> **Lesson:** 12-1 (Hobbies)
+> **Duration:** ~10 minutes
+> **Exam section:** Sprechen (personal interests are standard topic), Schreiben (hobby-related messages)
+> **Prerequisites:** Module 5 (verb conjugation), Module 6 (gern pattern)
+> **Status:** FULL SCRIPT v1.0
+> **Created:** 2026-03-23 11:30 UTC
 
 ---
 
 ## Script
 
-### Scene 1: Pre-roll (0:00–0:15)
-**[BRANDING]**
+### [0:00–0:15] Pre-roll
+*[Branding slide]*
+
+### [0:15–1:15] Hook — "What do you do for fun? In German."
+
+Goethe exam-il GUARANTEED question: "Was sind Ihre Hobbys?" / "Was machen Sie in Ihrer Freizeit?"
+
+*Ithinu ready answer illenkil — Sprechen-il points pokunnu. Ready answer undenkil — easy points!*
+
+Today: hobbies vocabulary + the "gern" pattern + your personal hobby speech.
+
+*[SLIDE: "Hobbys — Your Free Points in Sprechen 🎯"]*
 
 ---
 
-### Scene 2: Hook (0:15–1:00)
-**[SLIDE: Fun hobby collage — football, cooking, reading, gaming, dancing]**
+### [1:15–3:00] Block 1: Common Hobbies Vocabulary
 
-**Narrator:**
-> "What do you do for fun? Cricket? Cooking? Doom-scrolling Instagram reels? In this lesson, you'll learn to talk about hobbies in German — a topic that comes up in EVERY Goethe A1 speaking exam!"
->
-> *"Ninte hobby enth aanu? Ithu Goethe exam-il definitely chodikkum — so padikkaam!"*
+| German | English | How to say it |
+|--------|---------|---------------|
+| lesen | reading | Ich lese **gern**. |
+| kochen | cooking | Ich koche **gern**. |
+| schwimmen | swimming | Ich schwimme **gern**. |
+| Fußball spielen | playing football | Ich spiele **gern** Fußball. |
+| Musik hören | listening to music | Ich höre **gern** Musik. |
+| tanzen | dancing | Ich tanze **gern**. |
+| reisen | traveling | Ich reise **gern**. |
+| Fahrrad fahren | cycling | Ich fahre **gern** Fahrrad. |
+| Filme schauen | watching movies | Ich schaue **gern** Filme. |
+| spazieren gehen | going for walks | Ich gehe **gern** spazieren. |
+| fotografieren | photography | Ich fotografiere **gern**. |
+| malen | painting | Ich male **gern**. |
+| Yoga machen | doing yoga | Ich mache **gern** Yoga. |
+| wandern | hiking | Ich wandere **gern**. |
+| Gitarre spielen | playing guitar | Ich spiele **gern** Gitarre. |
 
----
+⏸️ *Pick YOUR top 3 hobbies. Say them with "Ich ___ gern."*
 
-### Scene 3: The Magic Word — gern (1:00–2:30)
-**[SLIDE: gern placement diagram]**
+**THE MAGIC WORD: "gern"**
 
-**Narrator:**
-> "You already met 'gern' in Module 6 with food. Now it becomes your hobby superpower."
->
-> "The rule: verb + gern = I like doing something."
->
-> 🔊 "Ich spiele gern Fußball." — I like playing football.
-> 🔊 "Ich lese gern." — I like reading.
-> 🔊 "Ich koche gern." — I like cooking.
->
-> "The negative: verb + nicht gern."
->
-> 🔊 "Ich schwimme nicht gern." — I don't like swimming.
-> 🔊 "Ich laufe nicht gern." — I don't like running.
->
-> "Word order: Subject → Verb → gern → Object (if any)"
->
-> ⏸️ **[Say one thing you like doing with 'gern']**
->
-> *"gern = ishtam. nicht gern = ishtam illa. Simple!"*
+"gern" = gladly/with pleasure. Put it AFTER the verb to say you like doing something.
 
----
+- Ich lese gern. = I like reading.
+- Ich lese **nicht** gern. = I don't like reading.
+- Ich lese **sehr** gern. = I really like reading.
 
-### Scene 4: Hobby Vocabulary — Activities (2:30–4:30)
-**[TABLE: Common hobbies with gern examples]**
-
-| German | English | Example |
-|--------|---------|---------|
-| lesen | to read | Ich lese gern. |
-| kochen | to cook | Ich koche gern. |
-| schwimmen | to swim | Ich schwimme gern. |
-| tanzen | to dance | Ich tanze gern. |
-| singen | to sing | Ich singe gern. |
-| reisen | to travel | Ich reise gern. |
-| fotografieren | to photograph | Ich fotografiere gern. |
-| Musik hören | to listen to music | Ich höre gern Musik. |
-| Filme schauen | to watch films | Ich schaue gern Filme. |
-| spazieren gehen | to go for a walk | Ich gehe gern spazieren. |
-
-**Narrator:**
-> "Let's go through the most common hobbies."
->
-> 🔊 "lesen — Ich lese gern Bücher." I like reading books.
-> 🔊 "kochen — Ich koche gern Kerala-Essen!" I like cooking Kerala food!
->
-> "Notice: spazieren gehen is a separable verb — 'Ich gehe gern spazieren.' The gehen moves, spazieren goes to the end."
->
-> ⏸️ **[Pick 3 hobbies from the list. Say them with 'gern'!]**
+*Module 6-il "gern" padichittundu — ippol hobbies-il APPLY cheyyunnu!*
 
 ---
 
-### Scene 5: Sports — Der Sport (4:30–6:00)
-**[TABLE: Sports vocabulary]**
+### [3:00–5:00] Block 2: Talking About Your Hobbies
 
-| German | English |
-|--------|---------|
-| Fußball spielen | play football |
-| Cricket spielen | play cricket |
-| Basketball spielen | play basketball |
-| Tennis spielen | play tennis |
-| joggen | to jog |
-| Rad fahren | to cycle |
-| Yoga machen | to do yoga |
-| wandern | to hike |
+**Pattern 1: Simple statement**
+"Mein Hobby ist ___." / "Meine Hobbys sind ___."
+- "Mein Hobby ist Kochen."
+- "Meine Hobbys sind Lesen und Schwimmen."
 
-**Narrator:**
-> "Sports use 'spielen' for team/ball sports:"
-> 🔊 "Ich spiele gern Fußball." — football
-> 🔊 "Ich spiele gern Cricket." — cricket (yes, Indians play cricket in Germany too!)
->
-> "For individual activities, use the specific verb:"
-> 🔊 "Ich jogge gern." — jogging
-> 🔊 "Ich fahre gern Rad." — cycling (another separable verb!)
-> 🔊 "Ich mache gern Yoga." — yoga
->
-> *"Cricket Germany-il also und! Malayali community-yil teams undu!"*
->
-> ⏸️ **[What sport do YOU like? Say it with spielen or the correct verb!]**
+**Pattern 2: With gern (more natural)**
+"In meiner Freizeit ___ ich gern ___."
+- "In meiner Freizeit lese ich gern."
+- "In meiner Freizeit spiele ich gern Fußball."
+
+**Pattern 3: Frequency**
+- "Ich schwimme **jeden Tag**." — every day
+- "Ich koche **am Wochenende**." — on weekends
+- "Ich reise **zweimal im Jahr**." — twice a year
+- "Ich spiele **manchmal** Gitarre." — sometimes
+
+⏸️ *Build 3 sentences using Pattern 2 + frequency. Example: "In meiner Freizeit koche ich gern am Wochenende."*
+
+*Malayalam-yil "enikku cooking ishtam aanu" ennu parayum. German-il "Ich koche gern" — verb + gern. Simple!*
 
 ---
 
-### Scene 6: Asking About Hobbies (6:00–7:30)
-**[SLIDE: Question-answer pairs]**
+### [5:00–6:30] Block 3: Asking About Hobbies
 
-**Narrator:**
-> "In the exam, you'll need to ask AND answer about hobbies."
->
-> **Questions:**
-> 🔊 "Was machst du gern?" — What do you like doing? (informal)
-> 🔊 "Was machen Sie gern?" — What do you like doing? (formal)
-> 🔊 "Was sind deine Hobbys?" — What are your hobbies?
-> 🔊 "Spielst du gern Sport?" — Do you like playing sports?
->
-> **Answers:**
-> 🔊 "Mein Hobby ist Kochen." — My hobby is cooking.
-> 🔊 "Meine Hobbys sind Lesen und Schwimmen." — My hobbies are reading and swimming.
-> 🔊 "In meiner Freizeit spiele ich gern Fußball." — In my free time I like playing football.
->
-> "That last one — 'In meiner Freizeit...' — is a GOLDEN phrase for the exam. Memorize it!"
->
-> ⏸️ **[Answer: Was machst du gern? — give a full answer!]**
+**Informal (du):**
+- "Was machst du in deiner Freizeit?" — What do you do in your free time?
+- "Was sind deine Hobbys?" — What are your hobbies?
+- "Spielst du gern Fußball?" — Do you like playing football?
 
----
+**Formal (Sie):**
+- "Was machen Sie in Ihrer Freizeit?" — What do you do in your free time?
+- "Was sind Ihre Hobbys?" — What are your hobbies?
+- "Spielen Sie gern Tennis?" — Do you like playing tennis?
 
-### Scene 7: Building Your Hobby Profile (7:30–9:00)
-**[SLIDE: Complete hobby paragraph model]**
+**Follow-up questions:**
+- "Wie oft machst du das?" — How often do you do that?
+- "Seit wann machst du das?" — Since when have you been doing that?
+- "Wo machst du das?" — Where do you do that?
 
-**Narrator:**
-> "For Sprechen Teil 1, you need to talk about hobbies as part of your self-introduction. Here's a model:"
->
-> 🔊 "Meine Hobbys sind Kochen und Lesen."
-> 🔊 "In meiner Freizeit koche ich gern Kerala-Essen."
-> 🔊 "Am Wochenende spiele ich gern Cricket mit Freunden."
-> 🔊 "Ich schaue auch gern Filme — am liebsten Malayalam-Filme!"
->
-> "Four sentences. That's all you need for the hobby part of your introduction."
->
-> "am liebsten = most of all / favorite. It's gern → lieber → am liebsten."
-> 🔊 "Ich lese gern." — I like reading.
-> 🔊 "Ich koche lieber." — I prefer cooking.
-> 🔊 "Am liebsten spiele ich Fußball." — Most of all I like playing football.
->
-> ⏸️ **[Write your own 4-sentence hobby profile now!]**
+⏸️ *Ask a partner (or imagine asking): "Was sind deine Hobbys?" Then answer for them.*
+
+**Exam note:** In Sprechen Teil 2, you draw word cards and must form questions. "Hobby?" → "Was sind Ihre Hobbys?" Knowing these question patterns = easy points.
 
 ---
 
-### Scene 8: Frequency Expressions (9:00–10:00)
-**[SLIDE: Time expressions for hobbies]**
+### [6:30–8:00] Block 4: Your Hobby Speech (Exam-Ready)
 
-**Narrator:**
-> "Add depth to your hobby talk with these time words:"
->
-> 🔊 "jeden Tag" — every day
-> 🔊 "oft" — often
-> 🔊 "manchmal" — sometimes
-> 🔊 "selten" — rarely
-> 🔊 "nie" — never
-> 🔊 "am Wochenende" — on the weekend
-> 🔊 "abends" — in the evening
->
-> "Examples:"
-> 🔊 "Ich lese jeden Tag." — I read every day.
-> 🔊 "Ich spiele manchmal Tennis." — I sometimes play tennis.
-> 🔊 "Ich schwimme selten." — I rarely swim.
+**Build your personal hobby speech in 6 sentences:**
 
----
+1. "Ich habe viele Hobbys." *(opening)*
+2. "Am liebsten ___ ich ___." *(favorite hobby)*
+3. "Ich ___ auch gern ___." *(second hobby)*
+4. "Manchmal ___ ich ___." *(occasional hobby)*
+5. "Am Wochenende ___ ich meistens ___." *(weekend activity)*
+6. "Ich ___ nicht gern ___." *(something you don't like — shows range!)*
 
-### Scene 9: Summary & Challenge (10:00–12:00)
-**[SUMMARY CARD]**
+**Example for Meera from Kochi:**
+"Ich habe viele Hobbys. Am liebsten koche ich. Ich lese auch gern — Romane und Kochbücher. Manchmal gehe ich spazieren. Am Wochenende schaue ich meistens Filme mit meiner Familie. Ich spiele nicht gern Fußball — das ist nicht mein Ding!"
 
-**Key Takeaways:**
-- gern = like doing / nicht gern = don't like
-- spielen for sports, specific verbs for individual activities
-- "In meiner Freizeit..." — golden exam phrase
-- gern → lieber → am liebsten (like → prefer → most of all)
-- Frequency: jeden Tag, oft, manchmal, selten, nie
+⏸️ *Write YOUR 6-sentence hobby speech NOW. Then say it out loud. Time yourself — should be under 1 minute.*
 
-**Narrator:**
-> "Hobbies are one of the EASIEST topics in the Goethe exam. You choose what to talk about! Pick your real hobbies, learn the German words, and you'll sound natural."
->
-> "Challenge: Write your complete hobby profile — 4 sentences using gern, one with am liebsten."
->
-> "Next lesson: Weather and seasons — because in Germany, EVERYONE talks about the weather!"
->
-> "Bis zum nächsten Mal! Tschüss!"
+*Ithu memorize cheythaal Sprechen Teil 1-il "Hobbys" section auto-pilot aanu!*
 
 ---
 
-## Production Notes
-- Audio: All hobby verbs, question-answer pairs, frequency words
-- Visuals: Hobby photo grid, sport icons, model paragraph slide
-- Strong exam connection: hobbies appear in Sprechen Teil 1 + Teil 2 topic cards
-- Malayalam bridges throughout for relatability
-- Connects to Module 5 (daily routine verbs) and Module 6 (gern with food)
+### [8:00–9:30] Block 5: Kerala ↔ Germany Hobby Culture
+
+**Popular hobbies in Germany:**
+- Wandern (hiking) — Germany has THOUSANDS of marked hiking trails
+- Fahrrad fahren — Germans cycle EVERYWHERE, even in winter
+- Gartenarbeit (gardening) — even apartment dwellers have Schrebergärten (allotment gardens!)
+- Vereine (clubs) — sports clubs, music clubs, volunteer groups. Germans JOIN things.
+- Grillen (BBQ) — summer = grill season. Every park has grill areas.
+
+**Kerala parallels:**
+- Cricket → Fußball *(Germany's national obsession)*
+- Temple festivals / church events → Vereine *(same community spirit, different format)*
+- Sunday cooking → Sonntagsbraten *(Sunday roast — cooking tradition!)*
+- Cinema → Kino *(Germans love movies too)*
+
+*"Ich spiele gern Cricket" parayaamengkilum, Germany-yil Fußball play cheythaal INSTANT friends kittum!*
+
+**Conversation starter:** When a German asks about your hobbies, mention something from THEIR culture too:
+"Ich koche gern — indisches Essen. Aber ich möchte auch Wandern probieren!"
+
+---
+
+### [9:30–10:00] Closing
+
+**Your toolkit:**
+1. "gern" = the magic word for all hobbies
+2. "In meiner Freizeit ___" = your go-to pattern
+3. 6-sentence hobby speech = exam-ready
+4. Question patterns for Sprechen Teil 2
+
+*Hobbys parayaan kazhinjaal — ningllude personality German-il express cheyyaan thudangukayaanu. That's BIG!* 🎯✅
+
+---
+
+## Checklist
+
+- [x] 15 hobby vocabulary items with "gern" pattern
+- [x] 3 speaking patterns (simple, gern, frequency)
+- [x] Informal and formal question forms
+- [x] 6-sentence exam-ready hobby speech template
+- [x] Model answer provided
+- [x] Kerala ↔ Germany hobby culture comparison
+- [x] Exam connection (Sprechen Teil 1 & 2)
+- [x] Malayalam bridges
+- [x] Pause points for active practice
+- [x] Duration: ~10 minutes

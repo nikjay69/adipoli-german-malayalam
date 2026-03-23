@@ -1,123 +1,99 @@
-# Module 14: Formal Life in Germany (Offizielles Leben)
+# Module 14: Formal Life in Germany (Offizielles Leben) — Launch Plan
 
-## Teaching Goal
-After this module, students should be able to **fill out German forms correctly**, **handle basic office interactions** (Anmeldung, Ausländerbehörde), **open a bank account**, and **write formal letters and emails**. This is the highest-priority practical module for any migrant — the bureaucracy survival kit.
+> **Last updated:** 2026-03-23 11:45 UTC
 
-## A1 Exam Relevance
+---
 
-| Exam Section | Relevance |
-|---|---|
-| **Schreiben Teil 1** | DIRECT — form-filling is EXACTLY this module's core skill. Vorname, Nachname, Geburtsdatum, etc. |
-| **Schreiben Teil 2** | Formal email/letter writing templates directly support short message tasks. |
-| **Lesen** | Office letters, notices, forms, and official instructions are common reading material. |
-| **Hören** | Office and bank interactions, appointment scheduling. |
+## Module Identity
 
-## Current Content Inventory
-
-- **Lessons:** 4
-  - 14-1: Filling Out Forms (Formulare ausfüllen)
-  - 14-2: At the Office (Im Amt)
-  - 14-3: Opening a Bank Account (Ein Konto eröffnen)
-  - 14-4: Writing Formal Letters & Emails (Formelle Briefe und E-Mails)
+- **Position:** Most practical migrant-survival module + direct Schreiben Teil 1 prep
+- **Lessons:** 4 (Forms, Office, Bank, Formal Letters/Emails)
 - **Videos:** 8
-- **Exercises:** 32 total
-  - Multiple-choice: 12
-  - Fill-blank: 11
-  - Matching: 5
-  - Ordering: 4
-  - Speaking: 0
-- **Vocabulary:** 40 items (Anmeldung, Vorname, Nachname, Geburtsdatum, Geburtsort, Staatsangehörigkeit, Familienstand, Adresse, Postleitzahl, Unterschrift, Konto, Überweisung, etc.)
-- **Scripts drafted:** 3 of 3 core scripts ✅ COMPLETE (v14-1-1, v14-1-2, v14-2-1)
-- **What's already strong:** High practical value, massive overlap with Goethe Schreiben Teil 1, all core scripts drafted, extremely relevant for the target audience (migrants, students)
+- **Exercises:** 32
+- **Vocabulary:** 40
+- **Scripts:** ✅ ALL COMPLETE (v14-1-1, v14-1-2, v14-2-1) at v2.0 quality
 
-## Lesson/Video Script Needs
+---
 
-### Lesson 14-1: Filling Out Forms
-- **Core teaching points:** Field-by-field form walkthrough (Vorname, Nachname, Geburtsdatum, Geburtsort, Staatsangehörigkeit, Familienstand, Adresse, PLZ, Telefonnummer, E-Mail, Unterschrift), German date format, common Indian name issues on German forms
-- **Script status:** v14-1-1 and v14-1-2 both drafted ✅
-- **Priority:** CRITICAL — form-filling is tested directly in Schreiben Teil 1
-- **Key visual/audio needs:** Annotated form templates (Anmeldung, language course registration), field-by-field walkthrough, common error examples
+## Teaching Goals & Exam Map
 
-### Lesson 14-2: At the Office
-- **Core teaching points:** Anmeldung process, Ausländerbehörde interaction, Rathaus navigation, appointment vocabulary, document checklist
-- **Script status:** v14-2-1 drafted ✅
-- **Priority:** HIGH — first weeks in Germany require office visits
-- **Key visual/audio needs:** Office counter dialogue recordings, document checklist infographic, appointment confirmation sample
+| Goal | Exam Section | Weight |
+|------|-------------|--------|
+| Fill personal-info forms correctly | Schreiben Teil 1 | **VERY HIGH** |
+| Navigate office/Amt interactions | Sprechen | HIGH |
+| Bank account basics | Lesen, Sprechen | MEDIUM |
+| Write formal emails | Schreiben Teil 2 | HIGH |
+| Understand official letter vocabulary | Lesen | MEDIUM |
 
-### Lesson 14-3: Opening a Bank Account
-- **Core teaching points:** Bank account types (Girokonto), account opening dialogue, banking vocabulary (Überweisung, Kontoauszug, EC-Karte, PIN), online banking basics
-- **Script status:** Outline only
-- **Priority:** HIGH — banking is an immediate practical need upon arrival
-- **Key visual/audio needs:** Bank interaction dialogue recordings, German banking terms visual, account opening form sample
+**A1 Exam Relevance: VERY HIGH — Schreiben Teil 1 IS form-filling. This module IS the exam prep.**
 
-### Lesson 14-4: Writing Formal Letters & Emails
-- **Core teaching points:** Formal letter structure (Absender, Empfänger, Datum, Betreff, Anrede, Text, Grußformel), formal email templates, appointment requests, complaint letters basics
-- **Script status:** Outline only
-- **Priority:** HIGH — formal writing supports Schreiben Teil 2 and real-life communication
-- **Key visual/audio needs:** Annotated letter template, formal vs informal email comparison, common formal phrases reference
+---
 
-## Essential Outcomes
-Students must be able to **produce** (not just recognize):
-1. Fill out ALL common form fields accurately (Vorname through Unterschrift)
-2. Write their Geburtsdatum in correct German format (TT.MM.JJJJ)
-3. Navigate a basic Anmeldung/office interaction: greeting → presenting documents → answering questions → getting confirmation
-4. Handle simple bank account vocabulary and interaction
-5. Write a short formal email requesting an appointment or information
-6. Understand an official appointment notice or confirmation letter
+## Essential Learning Outcomes
 
-## Gap Analysis
-- **No speaking exercises** (0/32) — office interaction is spoken; needs role-play
-- **No actual form-filling simulation** — needs interactive form completion exercises
-- **Only ONE form template** — Goethe uses varied forms; needs at least 4-5 different forms
-- **No dictation** — completing form fields from spoken personal details
-- **Formal writing needs more varied templates** — appointment request, complaint, information request
-- **Banking lesson has no script yet** — needs production-ready content
-- **No audio prompts for form filling** — simulating "someone tells you their details, you write them down"
-- **Missing explicit connection to Module 2** (personal info vocabulary) and **Module 18** (Schreiben Teil 1 exam)
-- **Formal letter correction rubrics missing** — students need to know what counts as correct
+1. ✅ Know all 16 essential form fields (Vorname, Nachname, Geburtsdatum, etc.)
+2. ✅ Write dates in DD.MM.YYYY format
+3. ✅ Know German address format (Straße + Hausnummer, PLZ + Ort)
+4. ✅ Handle office dialogue politely
+5. ✅ Know key German offices (Bürgeramt, Ausländerbehörde, etc.)
+6. ✅ Write a formal email with Sehr geehrte/r + Mit freundlichen Grüßen
+7. 🟡 **Fill varied forms** — only 1-2 templates exist, need more variety
+8. 🟡 **Fill a form from AUDIO** — no dictation-to-form exercise
+9. ❌ **Understand a spoken office dialogue** — no audio
 
-## Future Script Direction
+---
 
-### Suggested Narrative Approach
-- Frame as "your bureaucracy survival kit" — reassuring, not overwhelming
-- "German bureaucracy is predictable once you know the vocabulary — it's just forms and appointments"
-- Use real-world scenarios students will face in their first weeks
-- Make formal writing feel like following a recipe — clear steps, reliable outcome
+## Form Field Mastery Table
 
-### Malayalam Bridge Points
-- **Indian bureaucracy experience** — "If you survived Indian government offices, German ones are actually more organized!"
-- **Name confusion** — "In Kerala, Vorname and Nachname can be confusing. Is 'Arun' your Vorname or Nachname? In Germany, Vorname = first name, Nachname = family name. Always."
-- **Date format advantage** — India uses DD/MM/YYYY like Germany — you're already ahead of Americans!
-- **Ration card → Anmeldung** — similar registration concept: you prove where you live
-- **Post office culture** — Deutsche Post is reliable and important for official communication
+These 16 fields should be automatic. All covered in v14-1-2 script:
 
-### Key Example Sentences/Dialogues to Feature
-```
-Form Fields:
-Vorname: Arun
-Nachname: Kumar
-Geburtsdatum: 15.08.1995
-Geburtsort: Kochi, Indien
-Staatsangehörigkeit: indisch
-Familienstand: ledig
-Adresse: Hauptstraße 42, 80331 München
-Telefonnummer: 0176 12345678
+| German | English | Common error |
+|--------|---------|--------------|
+| Vorname | First name | Confused with "Nachname" |
+| Nachname/Familienname | Last name | Kerala naming differs |
+| Geburtsdatum | Date of birth | Wrong date format |
+| Geburtsort | Place of birth | Writing country instead of city |
+| Staatsangehörigkeit | Nationality | "Indien" vs "indisch" |
+| Geschlecht | Gender | männlich/weiblich |
+| Straße | Street | Missing Hausnummer |
+| PLZ | Postal code | Writing country code |
+| Ort/Wohnort | City/Residence | |
+| Telefonnummer | Phone | Missing country code |
+| E-Mail-Adresse | Email | |
+| Familienstand | Marital status | ledig/verheiratet/geschieden |
+| Beruf | Profession | English job title |
+| Muttersprache | Mother tongue | |
+| Unterschrift | Signature | |
+| Datum | Date | Today's date, not DOB |
 
-At the Anmeldung:
-Beamter: Guten Tag. Haben Sie einen Termin?
-Arun: Ja, um 10 Uhr. Hier ist meine Bestätigung.
-Beamter: Ihren Reisepass und Mietvertrag, bitte.
-Arun: Hier, bitte.
-Beamter: Danke. Bitte füllen Sie dieses Formular aus.
-Arun: Ja, natürlich.
-Beamter: Hier ist Ihre Meldebescheinigung. Auf Wiedersehen!
-Arun: Vielen Dank! Auf Wiedersehen!
+---
 
-Formal Email:
-"Sehr geehrte Damen und Herren,
-ich möchte gern einen Termin für die Anmeldung machen.
-Ich bin seit dem 1. März in München.
-Können Sie mir bitte einen Termin geben?
-Mit freundlichen Grüßen,
-Arun Kumar"
-```
+## Production Exercise Gap Analysis
+
+| Spec ID | Exercise | Type | Status | Priority |
+|---------|----------|------|--------|----------|
+| 14-P1 | Anmeldung Form Fill (audio) | form+dictation | ❌ Not built | **CRITICAL** |
+| 14-P2 | Appointment Request Email | free-text | ❌ Not built | **HIGH** |
+| 14-P3 | Course Registration Form | form-fill | ❌ Not built | HIGH |
+| 14-P4 | Bank Account Form | form-fill | ❌ Not built | MEDIUM |
+
+---
+
+## Concrete Next Steps
+
+### Must-do before launch
+1. [ ] Build 14-P1 form-fill exercise with audio prompt (dictation → form)
+2. [ ] Build 14-P2 appointment request email exercise
+3. [ ] Build 14-P3 course registration form exercise
+4. [ ] Generate audio for form-fill personal details dictation
+5. [ ] Create 3 varied form templates (Anmeldung, Kurs, Bank)
+
+### Should-do for quality
+6. [ ] Build 14-P4 bank account form exercise
+7. [ ] Add office dialogue audio with comprehension questions
+8. [ ] Create "read an official letter" exercise with Frist/deadline awareness
+9. [ ] Link Module 14 completion to Module 18 Schreiben Teil 1 practice
+
+---
+
+*Module 14 is where course theory meets German bureaucratic reality. Students who master this module will survive their first month in Germany.*

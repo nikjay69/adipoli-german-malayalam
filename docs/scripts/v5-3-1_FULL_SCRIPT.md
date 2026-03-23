@@ -3,8 +3,8 @@
 > **Module:** 5 | **Lesson:** 5-3 | **Duration:** 10:00 target
 > **Teaching Goal:** Teach the separable verb concept, the "verb frame" structure, and the top 10 separable verbs used in daily routine
 > **A1 Exam Link:** All sections — separable verbs appear in every part of the exam (Hören, Lesen, Schreiben, Sprechen)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Revised:** 2026-03-23 (quality pass cron)
 
 ---
 
@@ -12,33 +12,33 @@
 
 ### Visual: [Course intro animation / Adipoli German branding]
 ### Narration:
-"Willkommen bei Adipoli German! Today — German verbs that split in half. Weird? Yes. Hard? No. Let me prove it."
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — The Splitting Verb (0:15–1:00)
+## Section 1: Hook — The Splitting Verb (0:15–0:50)
 
-### Visual: [ANIMATION: The word "aufstehen" visually splits — "auf" flies to the end of a sentence, "stehen" stays in position 2. Dramatic effect.]
+[ENERGY: dramatic, intriguing]
+
+### Visual: [ANIMATION: The word "aufstehen" visually splits — "auf" flies to the end of a sentence, "stehen" stays in position 2]
 ### Narration:
 "Watch this:
 
 **aufstehen** — to get up.
 
-Now watch what happens in a sentence:
+In a sentence: *Ich stehe um 7 Uhr ______ auf.*
 
-*Ich stehe um 7 Uhr ____________________ auf.*
+The verb SPLIT. Half stays in the middle, half flies to the end. This happens with dozens of everyday verbs. Master this one pattern and your German sounds 10x more natural.
 
-The verb SPLIT! 'stehen' stayed in the middle, and 'auf' flew all the way to the END!
-
-*Verb randu aayittu pirinju! German-il ithinu 'trennbare Verben' ennu parayum — separable verbs. Weird aanu, but pattern manasilayaal easy aanu!*
-
-This happens with DOZENS of common verbs. Master this one pattern and you'll sound 10x more natural. Let's learn it."
+Let's learn it."
 
 ---
 
-## Section 2: The Verb Frame Concept (1:00–3:00)
+## Section 2: The Verb Frame Concept (0:50–2:30)
 
-### Visual: [DIAGRAM: A picture frame. Left side of frame = conjugated verb (position 2). Right side of frame = prefix (end). Everything else sits INSIDE the frame. Colour-coded: frame = gold, content inside = blue]
+[ENERGY: clear, explanatory]
+
+### Visual: [DIAGRAM: A picture frame. Left post = conjugated verb. Right post = prefix. Everything else inside the frame. Colour-coded]
 ### Narration:
 "Here's the concept that makes everything click: **THE VERB FRAME.**
 
@@ -54,260 +54,245 @@ Ich STEHE um 7 Uhr morgens       AUF.
   └─────────────────────────────────┘
 ```
 
-- The **conjugated verb** is the LEFT side of the frame → always position 2
-- The **prefix** is the RIGHT side of the frame → always at the END
-- Everything else sits INSIDE the frame
+- **Left post** = conjugated verb → always position 2
+- **Right post** = prefix → always at the END
+- Everything else sits INSIDE
 
-*Frame-nte oru side-il verb, marreth side-il prefix. Naduvil baaki ellam. Simple!*
+*Malayalam-il 'eduthu vekkunnu', 'kondu pokkunnu' — two-part verbs exist! German-il same concept, but the parts split in a sentence. Frame-nte oru side-il verb, marrath side-il prefix.*"
 
-Another example:
+⏸️ "Look at this sentence: 'Er ruft seine Mutter an.' Where's the frame? What's the prefix? ... ⏸️ (3s) ... ruft...an! ✅"
+
+### Visual: [Second frame diagram]
+"Another one:
 
 ```
   ┌────────── VERB FRAME ──────────┐
   │                                 │
 Ich KAUFE heute im Supermarkt    EIN.
-  │      (time)    (place)          │
   └─────────────────────────────────┘
 ```
 
-**Einkaufen** → Ich **kaufe** ... **ein**.
-
-The frame ALWAYS closes. No matter how long the sentence is, the prefix waits patiently at the end.
-
-*Frame eppozhum close aakum. Sentence ethra neelamulaayaalum, prefix endu-il irikum. Patient aanu!*
-
-⏸️ **[PAUSE — Student identifies the frame in: 'Er ruft seine Mutter an.' → Verb frame: ruft...an]**"
+**Einkaufen** → Ich **kaufe** ... **ein**. The frame ALWAYS closes — no matter how long the sentence."
 
 ---
 
-## Section 3: How to Spot Separable Verbs (3:00–4:00)
+## Section 3: How to Spot Separable Verbs (2:30–3:15)
 
-### Visual: [TABLE: Common separable prefixes listed with meanings]
+[ENERGY: practical, rule-giving]
+
+### Visual: [TABLE: Common separable prefixes]
+### Narration:
+"How do you KNOW if a verb is separable? Look at the prefix:
 
 | Prefix | Meaning | Example |
 |--------|---------|---------|
-| **auf** | up, open | auf**stehen** (get up), auf**machen** (open) |
-| **an** | on, at | an**rufen** (call), an**fangen** (begin) |
-| **ein** | in, into | ein**kaufen** (shop), ein**laden** (invite) |
-| **aus** | out | aus**gehen** (go out), aus**sehen** (look/appear) |
-| **mit** | with, along | mit**bringen** (bring along), mit**kommen** (come along) |
-| **ab** | off, away | ab**fahren** (depart), ab**holen** (pick up) |
-| **zu** | to, closed | zu**machen** (close), zu**hören** (listen) |
-| **zurück** | back | zurück**kommen** (come back) |
-| **fern** | far, remote | fern**sehen** (watch TV) |
+| **auf** | up, open | auf**stehen**, auf**machen** |
+| **an** | on, at | an**rufen**, an**fangen** |
+| **ein** | in, into | ein**kaufen**, ein**laden** |
+| **aus** | out | aus**gehen** |
+| **mit** | with | mit**kommen**, mit**bringen** |
+| **zu** | to, closed | zu**machen**, zu**hören** |
+| **zurück** | back | zurück**kommen** |
+| **fern** | far | fern**sehen** |
 
-### Narration:
-"How do you know if a verb is separable? Look at the PREFIX — the little word attached to the front.
-
-These prefixes are like LEGO blocks — they snap onto verbs and change the meaning. And in a sentence, they detach and fly to the end.
-
-*Ee prefixes verbinte munnil ottichirikkunnu — sentence-il, they detach!*
-
-Here's the rule of thumb: if the prefix is a common word that can stand alone (auf, an, ein, aus, mit, ab, zu), the verb is USUALLY separable.
-
-There ARE inseparable prefixes too (be-, ge-, ver-, er-) — but those don't split. We'll cover those separately. For now: if the prefix sounds like a real word? It splits."
+**Rule of thumb:** If the prefix is a real word that can stand alone (auf, an, ein, aus, mit) — the verb is separable. Inseparable prefixes (be-, ge-, ver-, er-) don't split. We'll cover those later."
 
 ---
 
-## Section 4: The Top 10 Separable Verbs for Daily Life (4:00–6:30)
+## Section 4: The Top 10 — First Five (3:15–5:00)
 
-### Visual: [TABLE: Each verb shown as infinitive → split sentence. Timer/clock icons for morning routine context]
+[ENERGY: brisk, drill-mode]
+
+### Visual: [TABLE building row by row with clock/routine icons]
 ### Narration:
-"Let's learn the 10 separable verbs you'll use EVERY DAY. I'll give you the infinitive, then the split sentence.
+"Let's learn the 10 separable verbs you'll use EVERY DAY. Five at a time, then we drill.
 
 ### 1. **aufstehen** — to get up
-**Ich stehe um 7 Uhr auf.**
-*'Get up' → 'stehe...auf'. Frame opens and closes.*
+🔊 **Ich stehe um 7 Uhr auf.**
+⏸️ Repeat! ⏸️ (3s)
 
 ### 2. **aufwachen** — to wake up
-**Ich wache um 6:30 auf.**
-*'Wake up' → 'wache...auf'. Same 'auf' prefix!*
+🔊 **Ich wache um 6:30 auf.**
+⏸️ Repeat! ⏸️ (3s)
 
-### 3. **anfangen** — to begin / start
-**Die Schule fängt um 8 Uhr an.**
-*Note: fangen is irregular → fängt for er/sie/es!*
+### 3. **anfangen** — to begin
+🔊 **Die Schule fängt um 8 Uhr an.**
+⚠️ Note: fangen → fängt (vowel change for er/sie/es!)
+⏸️ Repeat! ⏸️ (3s)
 
-### 4. **aufhören** — to stop / finish
-**Ich höre um 17 Uhr auf.**
-*'Stop' → 'höre...auf'. Opposite of anfangen!*
+### 4. **aufhören** — to stop/finish
+🔊 **Ich höre um 17 Uhr auf.**
+⏸️ Repeat! ⏸️ (3s)
 
-### 5. **einkaufen** — to shop / go shopping
-**Ich kaufe am Samstag ein.**
-*'ein' = into (the bag!). 'kaufe...ein'.*
+### 5. **einkaufen** — to go shopping
+🔊 **Ich kaufe am Samstag ein.**
+*'Ein' = into (the bag!). kaufe...ein.*
+⏸️ Repeat! ⏸️ (3s)
 
-⏸️ **[PAUSE — Student repeats all 5 split sentences so far]**
+### Rapid recall check:
+⏸️ "Without looking — what's the split form of 'aufstehen' in 'Ich ___'? ... ⏸️ (3s) ... Ich stehe ... auf! ✅"
+⏸️ "And 'einkaufen'? ... ⏸️ (3s) ... Ich kaufe ... ein! ✅"
+
+---
+
+## Section 5: The Top 10 — Next Five (5:00–6:30)
+
+[ENERGY: maintaining momentum]
+
+### Visual: [TABLE continuing]
+### Narration:
 
 ### 6. **fernsehen** — to watch TV
-**Ich sehe abends fern.**
-*'fern' = far/remote. 'sehen' = see. Remote-seeing = television!*
-*Doordarshan concept pole — door = fern, darshan = sehen!*
+🔊 **Ich sehe abends fern.**
+*'Fern' = far, 'sehen' = see. Far-seeing = television! Doordarshan concept — door = fern, darshan = sehen!*
+⏸️ Repeat! ⏸️ (3s)
 
 ### 7. **anrufen** — to call (phone)
-**Ich rufe meine Mutter an.**
-*'Call up' → 'rufe...an'.*
+🔊 **Ich rufe meine Mutter an.**
+⏸️ Repeat! ⏸️ (3s)
 
 ### 8. **zurückkommen** — to come back
-**Ich komme um 18 Uhr zurück.**
-*'Come back' → 'komme...zurück'. Longest prefix so far!*
+🔊 **Ich komme um 18 Uhr zurück.**
+⏸️ Repeat! ⏸️ (3s)
 
 ### 9. **ausgehen** — to go out
-**Wir gehen heute Abend aus.**
-*'Go out' → 'gehen...aus'.*
+🔊 **Wir gehen heute Abend aus.**
+⏸️ Repeat! ⏸️ (3s)
 
 ### 10. **mitkommen** — to come along
-**Kommst du mit?**
-*'Come along?' → 'Kommst...mit?' Even in questions, the prefix goes to the end!*
+🔊 **Kommst du mit?**
+*Even in questions — prefix at the end!*
+⏸️ Repeat! ⏸️ (3s)
 
-⏸️ **[PAUSE — Student repeats verbs 6-10]**
-
-*Ee pathu verbs daily life-nu mathi. Morning routine, shopping, TV, calling — everything covered!*"
+*Ee pathu verbs daily life-nu mathi. Morning routine, shopping, TV, calling — all covered!*"
 
 ---
 
-## Section 5: The Malayalam Parallel (6:30–7:30)
+## Section 6: Common Mistake Spotlight (6:30–7:30)
 
-### Visual: [SLIDE: Side-by-side Malayalam and German compound verb comparison]
+[ENERGY: warning, clear]
+
+### Visual: [SLIDE: Big red ❌ and green ✅ pairs]
 ### Narration:
-"Now here's something that might make this feel less weird.
+"The #1 mistake: NOT splitting the verb.
 
-Malayalam also has compound verbs — verbs made of two parts:
+❌ 'Ich **aufstehe** um 7 Uhr.' — WRONG
+✅ 'Ich **stehe** um 7 Uhr **auf**.' — RIGHT
 
-- **eduthu vekkunnu** — pick up and place (two actions combined)
-- **kondu pokkunnu** — take and go (bring/carry away)
-- **kootti cherunnu** — add and join (combine)
+❌ 'Ich **einkaufe** am Samstag.' — WRONG
+✅ 'Ich **kaufe** am Samstag **ein**.' — RIGHT
 
-German does the SAME thing:
-- **ein|kaufen** — in + buy = to shop
-- **fern|sehen** — far + see = to watch TV
-- **mit|kommen** — with + come = to come along
+*Infinitive form sentence-il directly use cheyyaan paadilla! Always split!*
 
-*Concept same aanu — rendu words onnich chernnu oru puthiya meaning undaakkunnu. Difference: German-il sentence-il ith split aakum!*
+### In questions too:
+❌ 'Stehst du um 7 Uhr?' — Missing prefix!
+✅ 'Stehst du um 7 Uhr **auf**?' — Prefix at end!
 
-The ONLY difference is: in German, the parts split apart in a sentence. In Malayalam, they usually stay together. But the concept? Same!
+The only time it stays together: after modal verbs like 'müssen'. 'Ich **muss aufstehen**.' But that's Module 10 — for now, in normal sentences: ALWAYS SPLIT."
 
-⏸️ **[PAUSE — Student thinks of one Malayalam compound verb and its German equivalent]**"
-
----
-
-## Section 6: Common Mistake Spotlight (7:30–8:30)
-
-### Visual: [SLIDE: Big red ❌ and green ✅ comparison]
-### Narration:
-"The #1 mistake beginners make? NOT splitting the verb. Let me show you:
-
-### ❌ WRONG:
-- 'Ich **aufstehe** um 7 Uhr.' ❌
-- 'Ich **einkaufe** am Samstag.' ❌
-
-### ✅ CORRECT:
-- 'Ich **stehe** um 7 Uhr **auf**.' ✅
-- 'Ich **kaufe** am Samstag **ein**.' ✅
-
-*Infinitive form sentence-il directly use cheyyaan paadilla! Split cheyanam!*
-
-The infinitive 'aufstehen' is only used:
-- In the dictionary
-- After modal verbs: 'Ich **muss** aufstehen' (here it stays together — but that's Module 10!)
-- After 'möchten': 'Ich **möchte** einkaufen gehen'
-
-In a normal present tense sentence? ALWAYS SPLIT.
-
-### Another tricky mistake — prefix position in questions:
-
-❌ 'Wann stehst du **up**?' — No English mixing!
-✅ 'Wann stehst du **auf**?'
-
-❌ 'Stehst du um 7 Uhr?' — Missing the prefix!
-✅ 'Stehst du um 7 Uhr **auf**?' — Prefix at the end, even in questions!
-
-⏸️ **[PAUSE — Student corrects: 'Ich anfange um 8 Uhr' → 'Ich fange um 8 Uhr an.']**"
+⏸️ "Fix this sentence: 'Ich anfange um 8 Uhr.' What's correct? ... ⏸️ (4s) ... 'Ich fange um 8 Uhr an.' ✅"
 
 ---
 
-## Section 7: Practice Dialogue — A Morning Routine (8:30–9:30)
+## Section 7: Practice Dialogue — A Morning Routine (7:30–8:45)
 
-### Visual: [DIALOGUE: Two friends discussing morning routines. Speech bubbles with separable verbs highlighted]
+[ENERGY: conversational, fun]
+
+### Visual: [DIALOGUE: Two friends with speech bubbles, separable verbs highlighted in orange]
 ### Narration:
 "Let's use everything in a real conversation:
 
-### Morning Routine Dialogue:
-
 ```
 Anna:   Wann stehst du morgens auf?
-         (When do you get up in the morning?)
-
 Rahul:  Ich stehe um 7 Uhr auf. Und du?
-         (I get up at 7. And you?)
-
 Anna:   Ich wache schon um 6 auf! Ich fange früh an.
-         (I wake up at 6 already! I start early.)
-
 Rahul:  Wann hörst du mit der Arbeit auf?
-         (When do you finish work?)
-
 Anna:   Ich höre um 17 Uhr auf. Dann kaufe ich ein.
-         (I stop at 5 PM. Then I go shopping.)
-
 Rahul:  Und abends? Siehst du fern?
-         (And in the evening? Do you watch TV?)
-
-Anna:   Ja, ich sehe ein bisschen fern. Und dann rufe ich
+Anna:   Ja, ich sehe ein bisschen fern. Dann rufe ich
          meine Mutter an.
-         (Yes, I watch a little TV. And then I call my mother.)
 ```
 
 Count the separable verbs! **Seven** in one short dialogue: aufstehen, aufwachen, anfangen, aufhören, einkaufen, fernsehen, anrufen.
 
-*Ellaathilum frame close aakunnath nokkoo — auf, auf, an, auf, ein, fern, an. Prefix always at the end!*
+*Ellaathilum frame close aakunnath nokkoo — prefix always at the end!*"
 
-⏸️ **[PAUSE — Student reads Anna's part, then Rahul's part]**
-
-⏸️ **[PAUSE — Student adapts the dialogue to their OWN morning routine]**"
+⏸️ "Read Anna's lines out loud. ⏸️ (8s)"
+⏸️ "Now adapt it to YOUR morning. When do YOU stehe...auf? When do YOU fange...an? Say 3 sentences about YOUR routine. ⏸️ (10s)"
 
 ---
 
-## Section 8: Outro & Exam Connection (9:30–10:00)
+## Section 8: Active Recall & Outro (8:45–10:00)
 
-### Visual: [SLIDE: Summary card with verb frame diagram + top 10 verbs list + exam tip]
+[ENERGY: calm then motivating]
+
+### Visual: [SLIDE: Blank diagram — student fills in mentally]
 ### Narration:
-"Let's recap:
+"Before the summary — test yourself:
 
-✅ The VERB FRAME concept — conjugated verb at position 2, prefix at the END
-✅ How to spot separable verbs (standalone prefixes: auf, an, ein, aus, mit...)
-✅ 10 essential separable verbs for daily life
-✅ The Malayalam parallel — compound verbs exist in both languages!
-✅ The #1 mistake: not splitting the verb
+⏸️ What's the verb frame? Where does the conjugated verb go? Where does the prefix go? Think... ⏸️ (4s)
+...Verb at position 2, prefix at the END. The frame always closes. ✅
 
-### [EXAM-TIP box:]
-**Hören:** You'll hear split verbs in listening passages — train your ear to connect 'stehe' at the start with 'auf' at the end!
-**Schreiben:** When writing about your day, you WILL use aufstehen, einkaufen, fernsehen. Get the frame right!
-**Sprechen:** Describing your routine uses separable verbs constantly. Practice the frame out loud!
+⏸️ Name 3 separable prefixes... ⏸️ (3s) ...auf, an, ein, aus, mit — any of these! ✅
 
-### The Golden Rule:
-**The frame ALWAYS closes. No matter how long the sentence, the prefix waits at the end.**
+⏸️ What's the #1 mistake with separable verbs? ... ⏸️ (3s) ...Not splitting them! ✅
 
-*Frame eppozhum close aakum. Ith maathram orkkuka!*
+### Visual: [SLIDE: Summary card with frame diagram + top 10 list]
+🎯 **3 Takeaways:**
+1. **Verb frame** — conjugated verb at position 2, prefix at the END
+2. Standalone prefixes (auf, an, ein, aus, mit) = separable
+3. In normal present tense: ALWAYS split. No exceptions.
 
-*Next lesson: putting it ALL together — describe your entire day from morning to night!*
+[EXAM-TIP] Separable verbs appear in ALL four exam sections. In Hören, train your ear to connect 'stehe' at the start with 'auf' at the end. In Schreiben, describing your day needs aufstehen, einkaufen, fernsehen — get the frame right!
+
+### Homework:
+📝 **Write** your morning routine using at least 5 separable verbs — split them correctly!
+📝 **Say** each of the 10 verbs in a sentence, out loud, with the split.
+📝 **Catch yourself:** this week, every time you 'get up' or 'go shopping,' say the German split sentence.
+
+Next lesson: describing your ENTIRE day from morning to night — putting verbs, times, and separable verbs all together!
 
 Tschüss und bis zum nächsten Mal!"
 
 ---
 
-## Script Quality Checklist
-
-- [x] Teaching goal clear: separable verb concept + verb frame + top 10 verbs
-- [x] A1-safe: only present tense splitting, modal verb exception noted but deferred
-- [x] Malayalam bridges: compound verbs (eduthu vekkunnu), Doordarshan = fernsehen
-- [x] Exam connection explicit: all four exam sections use separable verbs
-- [x] At least 5 pause points for student practice
-- [x] Full practice dialogue with 7 separable verbs in context
-- [x] Common mistake spotlight with clear ❌/✅ examples
-- [x] Visual metaphor (verb frame) for lasting conceptual understanding
-- [x] Connects forward to Module 5-4 (full day description) and modal verbs (Module 10)
-- [x] Duration target: ~10 minutes ✅
+## Post-roll
+[Course outro / Next lesson teaser: "Lesson 5-4: Describing Your Day — from aufstehen to einschlafen!"]
 
 ---
+
+## Revision Notes (v1.0 → v2.0)
+- **Hook:** Cut from 45s to 35s — removed "Weird? Yes. Hard? No." filler, straight to the visual split
+- **Teaching structure:** Split top 10 verbs into two groups of 5 (Section 4 + 5) with recall check between — eliminates the 10-item stacking problem
+- **Energy cues:** Added at every section transition
+- **Active recall:** Replaced passive summary with 3 test-yourself prompts before final card
+- **Practice pauses:** Increased to 16 specific pauses with prompts and timing
+- **Malayalam bridge:** Kept Doordarshan parallel (excellent), improved compound verb comparison to be more structural ("concept same, difference is splitting"), removed the "think of one Malayalam compound verb" vague pause
+- **Mistake spotlight:** Tightened — removed "English mixing" mistake (unlikely), added question-form trap
+- **Dialogue section:** Added student adaptation prompt ("adapt to YOUR morning") instead of just reading
+- **Section 3 (spotting):** Condensed from full page to focused table — moved inseparable prefix detail to "cover later" (avoids A2 scope creep)
+- **Word count:** ~12% reduction — cut redundant frame explanations and duplicate pattern statements
+- **Outro:** Active recall before summary, specific homework with measurable actions
+
+## Script Quality Checklist
+
+- [x] Hook under 60s with concrete payoff
+- [x] No monologue block exceeds 90s without interaction
+- [x] Teach → Drill → Apply cycle (5 verbs → drill → 5 more → drill → dialogue → apply)
+- [x] Duration realistic (~10 min at 150 wpm + pauses)
+- [x] Energy/tone cues at every section transition
+- [x] Practice pauses have specific prompts with reveals (16 total)
+- [x] Active recall summary before final card
+- [x] Minimum 6 practice pauses per 10 min ✅ (16)
+- [x] Malayalam bridges are structural parallels (compound verbs, Doordarshan)
+- [x] One clear teaching goal per section
+- [x] Exam connection explicit (all 4 sections)
+- [x] No A2+ content (modal verb exception noted but deferred)
+- [x] German grammatically verified
+- [x] Visual cues producible and tagged
+- [x] Exam tips limited to 1 inline marker
+- [x] Outro has clear next-lesson bridge
+- [x] Homework is specific and doable
 
 ## Vocabulary Summary (for SRS/exercise integration)
 
@@ -330,17 +315,8 @@ Tschüss und bis zum nächsten Mal!"
 - **Negation:** "Ich stehe heute nicht auf." (nicht before prefix)
 - **Infinitive stays whole after modals:** "Ich muss aufstehen." (preview only)
 
-### Separable Prefix Reference
-| Prefix | Meaning | Always separable? |
-|--------|---------|-------------------|
-| auf | up, open | Yes |
-| an | on, at, to | Yes |
-| ein | in, into | Yes |
-| aus | out | Yes |
-| mit | with, along | Yes |
-| ab | off, away | Yes |
-| zu | to, closed | Yes |
-| zurück | back | Yes |
-| fern | far | Yes |
-| vor | before, forward | Yes |
-| weg | away | Yes |
+### Separable Prefix Quick Reference
+| Prefix | Meaning | Separable? |
+|--------|---------|------------|
+| auf, an, ein, aus, mit, ab, zu, zurück, fern, vor, weg | various | Always ✅ |
+| be-, ge-, ver-, er-, ent-, zer- | various | Never ❌ |

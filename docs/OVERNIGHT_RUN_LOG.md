@@ -1,5 +1,76 @@
 # Overnight Run Log — 2026-03-23
 
+## Run 5 — 11:45 UTC
+**Session:** Cron overnight module plan + script architecture (fifth run)
+**Focus:** Per-module launch plans — bridging the gap between "scripts done" and "launch-ready"
+**Status:** ✅ 9 new planning docs created, MODULE_READINESS corrected
+
+### Work Completed
+
+Created detailed per-module launch plans in `docs/modules/`:
+
+1. **MODULE_01_PLAN.md** — Module 1 (Welcome): 4/7 scripts drafted, 3 at ARCH. Priority: v1-2-2 (alphabet/spelling). Key gap: no audio pronunciation drills. 4 production exercises specified.
+
+2. **MODULE_02_PLAN.md** — Module 2 (Who Are You): 3/4 scripts at v2.0. Missing: v2-1-2 only. KEY: Golden Self-Introduction template (7-line template used throughout course). 2 CRITICAL production exercises: self-intro writing (2-P1) and form-fill from audio (2-P2).
+
+3. **MODULE_03_PLAN.md** — Module 3 (Numbers & Time): ALL 4 scripts complete. **CRITICAL BLOCKER: AUDIO.** Numbers are tested audio-first in Goethe A1. Without listening, this module teaches reading numbers, not hearing them. 34 audio clips needed. "Halb" trap and reversed numbers flagged as key teaching challenges.
+
+4. **MODULE_05_PLAN.md** — Module 5 (Daily Routine): 4/5 scripts drafted. Missing: v5-1-2 (20-verb drill). The 20 Essential A1 Verbs listed with stem-changers and exception patterns. 3 production exercises needed.
+
+5. **MODULE_06_PLAN.md** — Module 6 (Food & Drink): 3/4 scripts drafted. Missing: v6-1-2 (Kerala Food). "Golden Restaurant Dialogue" documented as module centerpiece. 3 production exercises needed.
+
+6. **MODULE_14_PLAN.md** — Module 14 (Formal Life): ALL scripts complete at v2.0. 16 form fields mastery table. 4 production exercises specified (form-fill, appointment email, course registration, bank).
+
+7. **MODULE_17_18_EXAM_PLAN.md** — Combined exam modules plan. Full Goethe A1 structure reference. Module 17: 11/15 readiness, audio is THE blocker (~170 clips needed). Module 18: 10/15 readiness, needs scoring rubrics + mock exam flow. Proposed exam readiness checkpoint system.
+
+8. **MODULES_04_07_13_PLANS.md** — Consolidated plan for 8 script-complete modules (4,7,8,9,10,11,12,13). Common pattern: scripts ✅, production + audio = ❌. Prioritized production exercise list across all 8. ~38 audio clips needed. Key insight: systematic approach (one exercise TYPE across all modules) more efficient than module-by-module.
+
+9. **MODULES_15_16_OPTIONAL_PLAN.md** — Optional modules plan. Clear framing: "cherry on top, not the cake." Script writing priority within each module established. Launch decision: include but gate behind Modules 1-14.
+
+### Corrections Applied
+- **MODULE_READINESS.md:** Fixed Module 7 Script score from 2 to 3 (all 3 scripts were drafted in Run 4 but tracker wasn't updated in readiness doc)
+
+### Key Strategic Insights from This Run
+
+1. **The same 2 blockers appear in every module:** Audio generation and production exercises. A batch approach (generate all audio at once, build one exercise type across all modules) will be far more efficient than module-by-module work.
+
+2. **Module 2 is the crown jewel:** The 7-line self-introduction template is referenced in Modules 4, 5, 11, 12, 14, and 18. If Module 2 is weak, the entire course collapses at the exam.
+
+3. **Module 3 audio is the single biggest unlock:** Numbers/time are tested in every exam section AND recycled in 8+ later modules. Generating Module 3 audio first gives the highest cross-module return.
+
+4. **Invitation writing (Module 12) is the sleeper critical exercise:** 12-P1 and 12-P2 map directly to Schreiben Teil 2, which is 12.5% of the entire exam. This should be among the first production exercises built.
+
+5. **Exam readiness checkpoints should gate mock tests:** Proposed 5-checkpoint system before students attempt full mocks — prevents discouraging failure from unprepared attempts.
+
+### Git Status
+**Shell exec intermittent** (same blocker as Runs 2-4). Files written successfully via Write tool. Commit/push pending.
+
+**Pending git commands:**
+```bash
+cd /root/.openclaw/workspace-deutsch/adipoli-german-malayalam
+git add -A
+git commit -m "Add per-module launch plans for all 18 modules — script needs, production gaps, audio requirements, exam mapping, concrete next steps"
+git pull --rebase
+git push
+```
+
+### Files Created This Run
+- `docs/modules/MODULE_01_PLAN.md`
+- `docs/modules/MODULE_02_PLAN.md`
+- `docs/modules/MODULE_03_PLAN.md`
+- `docs/modules/MODULE_05_PLAN.md`
+- `docs/modules/MODULE_06_PLAN.md`
+- `docs/modules/MODULE_14_PLAN.md`
+- `docs/modules/MODULE_17_18_EXAM_PLAN.md`
+- `docs/modules/MODULES_04_07_13_PLANS.md`
+- `docs/modules/MODULES_15_16_OPTIONAL_PLAN.md`
+
+### Files Updated This Run
+- `docs/MODULE_READINESS.md` (Module 7 score correction)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+---
+
 ## Run 4 — 09:16 UTC
 **Session:** Cron overnight module plan + script work (fourth run)
 **Status:** ✅ 8 new scripts written, committed + pushed, total now 54

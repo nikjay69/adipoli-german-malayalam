@@ -1,125 +1,249 @@
-# Module 11: Work & Study (Arbeit und Studium)
+# Module 11: Work & Study (Arbeit und Studium) — Launch Plan
 
-## Teaching Goal
-After this module, students should be able to **discuss their profession with masculine/feminine forms**, **navigate office/university environments**, **write a simple email**, **describe their skills**, and **handle entry-level interview questions**. Directly supports Malayali migration pathways (nursing, IT, engineering, Ausbildung, study).
+> **Last updated:** 2026-03-23 12:55 UTC
 
-## A1 Exam Relevance
+---
 
-| Exam Section | Relevance |
-|---|---|
-| **Sprechen** | Profession/study is core self-introduction territory (connects back to Module 2 Sprechen Teil 1). |
-| **Schreiben** | Short simple emails and practical written requests. Email writing appears in Goethe tasks. |
-| **Lesen** | Job ads, course notices, workplace information, office signs. |
-| **Hören** | Workplace or school interactions, office announcements, scheduling. |
+## Module Identity
 
-## Current Content Inventory
-
-- **Lessons:** 5
-  - 11-1: Professions in Detail (Berufe im Detail)
-  - 11-2: At the Office / University (Im Büro / An der Uni)
-  - 11-3: Writing a Simple Email (Eine einfache E-Mail schreiben)
-  - 11-4: Talking About Skills (Über Fähigkeiten sprechen)
-  - 11-5: Job Interview Basics (Vorstellungsgespräch Grundlagen)
+- **Position:** Migration-pathway module — directly relevant to why most Malayalis learn German
+- **Lessons:** 5 (Professions in Detail, Office/University, Email Writing, Skills, Interview Basics)
 - **Videos:** 10
-- **Exercises:** 40 total
-  - Multiple-choice: 16
-  - Fill-blank: 11
-  - Matching: 8
-  - Ordering: 5
-  - Speaking: 0
-- **Vocabulary:** 50 items (Beruf, Ingenieur/Ingenieurin, Programmierer/Programmiererin, Krankenschwester/Krankenpfleger, Lehrer/Lehrerin, Arzt/Ärztin, Ausbildung, Büro, Universität, etc.)
-- **Scripts drafted:** 3 of 3 core scripts ✅ COMPLETE (v11-1-1, v11-2-1, v11-3-1)
-- **What's already strong:** Highly relevant to migration goals, excellent thematic fit for Malayali audience, good exercise count, all core scripts drafted
+- **Exercises:** 40
+- **Vocabulary:** 50
+- **Scripts drafted:** 3/3 core scripts ✅ COMPLETE (v11-1-1, v11-2-1, v11-3-1)
 
-## Lesson/Video Script Needs
+---
 
-### Lesson 11-1: Professions in Detail
-- **Core teaching points:** Common professions with masculine/feminine pairs, "Ich bin ... von Beruf", profession articles, career path vocabulary
-- **Script status:** v11-1-1 drafted ✅, v11-1-2 (Career Path) has outline
-- **Priority:** HIGH — profession vocabulary feeds self-introduction and forms
-- **Key visual/audio needs:** Profession illustrations with gender pairs, career path infographic, pronunciation drill for long compound words
+## Teaching Goals & Exam Map
 
-### Lesson 11-2: At the Office / University
-- **Core teaching points:** Office vocabulary (Büro, Schreibtisch, Computer, Meeting, Kollege/Kollegin), university terms (Vorlesung, Seminar, Prüfung, Professor/in), daily workplace routines
-- **Script status:** v11-2-1 drafted ✅
-- **Priority:** Medium — useful context vocabulary, less directly exam-tested
-- **Key visual/audio needs:** Office/university scene illustrations, vocabulary labels, workplace routine audio
+| Goal | Exam Section | Weight |
+|------|-------------|--------|
+| Profession vocabulary with gender pairs (Arzt/Ärztin, Lehrer/Lehrerin) | Sprechen, Schreiben | **HIGH** |
+| "Ich bin ... von Beruf" sentence pattern | Sprechen Teil 1 | **VERY HIGH** |
+| Simple email structure (Betreff, Anrede, Gruß) | Schreiben Teil 2 | **VERY HIGH** |
+| Office/university vocabulary | Lesen, Hören | HIGH |
+| Skills description ("Ich kann gut...") | Sprechen | MEDIUM |
+| Interview Q&A basics | Sprechen (indirect) | MEDIUM |
 
-### Lesson 11-3: Writing a Simple Email
-- **Core teaching points:** A1-safe email structure (Anrede, Betreff, Text, Gruß), formal vs informal email register, common email phrases, asking/informing/requesting patterns
-- **Script status:** v11-3-1 drafted ✅
-- **Priority:** HIGH — email writing directly supports Schreiben exam tasks
-- **Key visual/audio needs:** Email template with labeled parts, formal vs informal comparison, sample emails with annotations
+**A1 Exam Relevance: VERY HIGH — Profession is part of every Sprechen Teil 1 self-introduction, and simple email writing is a core Schreiben Teil 2 task. For Malayali learners specifically, this module IS the reason they're learning German.**
 
-### Lesson 11-4: Talking About Skills
-- **Core teaching points:** "Ich kann ... sprechen/programmieren/kochen", describing abilities and qualifications, Zertifikate vocabulary
-- **Script status:** Outline only
-- **Priority:** Medium — useful for self-presentation, connects to modal verbs from Module 9
-- **Key visual/audio needs:** Skills checklist visual, "Ich kann" pattern drill, qualification vocabulary
+---
 
-### Lesson 11-5: Job Interview Basics
-- **Core teaching points:** Common interview questions and A1-safe answers, "Erzählen Sie über sich", "Warum möchten Sie hier arbeiten?", polite language in professional context
-- **Script status:** Outline only
-- **Priority:** Medium — highly practical but must stay A1-simple to avoid overwhelming
-- **Key visual/audio needs:** Interview question cards, model answer recordings, professional greeting practice
+## Script Status
 
-## Essential Outcomes
-Students must be able to **produce** (not just recognize):
-1. Say their profession with correct gender form: "Ich bin Krankenpfleger/Krankenschwester"
-2. Name at least 10 professions with masculine/feminine pairs
-3. Write a simple professional email with correct opening, body, and closing
-4. Describe 3-4 skills: "Ich kann gut programmieren" / "Ich spreche drei Sprachen"
-5. Answer basic interview questions in simple German
-6. Navigate office/university vocabulary in conversation
+| Video ID | Title | Status | Quality | Notes |
+|----------|-------|--------|---------|-------|
+| v11-1-1 | Professions in Detail | 🔄 DRAFT | v1.0 | Gender pairs, career vocabulary |
+| v11-1-2 | Career Paths | ⬜ OUTLINE | — | Nursing, IT, Ausbildung pathways |
+| v11-2-1 | Workplace Vocabulary | 🔄 DRAFT | v1.0 | Office/university terms |
+| v11-2-2 | University Life | ⬜ OUTLINE | — | Study-specific vocab, Vorlesung, Mensa |
+| v11-3-1 | German Email Writing | 🔄 DRAFT | v1.0 | Email structure, formal register |
+| v11-3-2 | Email Mistakes to Avoid | ⬜ OUTLINE | — | Common email errors |
+| v11-4-1 | Skills & Abilities | ⬜ OUTLINE | — | "Ich kann gut..." patterns |
+| v11-4-2 | Talking About Experience | ⬜ OUTLINE | — | Simple work history |
+| v11-5-1 | Interview Basics | ⬜ OUTLINE | — | Common questions + safe answers |
+| v11-5-2 | Mock Interview | ⬜ OUTLINE | — | Full dialogue simulation |
 
-## Gap Analysis
-- **No speaking exercises** (0/40) — interview practice demands spoken production
-- **No email writing production task** — only recognition-based email exercises exist
-- **Interview content risks A2+ difficulty** — must be kept strictly A1-safe
-- **No dictation** — listening to job/course ad details and noting them
-- **Profession gender forms need systematic drilling** — not just vocabulary lists
-- **No role-play** interview or office interaction
-- **Missing connection to Module 2** (profession in self-introduction) and **Module 14** (formal writing)
-- **Email templates should connect to Module 18** (Schreiben Teil 2)
+**Status: 3/10 scripts drafted. Core profession, workplace, and email scripts done. Career paths (high Malayali relevance), skills, and interview content remain.**
 
-## Future Script Direction
+### Script Priority Assessment
 
-### Suggested Narrative Approach
-- Focus on top Malayali migration pathways: nursing, IT, engineering, study, Ausbildung
-- "Your profession is your identity in Germany — learn to say it perfectly"
-- Email writing should feel empowering, not scary: "With these 5 templates, you can email anyone in Germany"
-- Interview content should build on existing self-introduction skills from Module 2
+| Priority | Video | Why | Estimated effort |
+|----------|-------|-----|-----------------|
+| **HIGH** | v11-1-2 | Career Paths — directly answers "Why I'm learning German" for most Malayali learners | 25 min |
+| **HIGH** | v11-5-1 | Interview Basics — practical need for job/Ausbildung applicants | 25 min |
+| **MEDIUM** | v11-4-1 | Skills — useful but partially covered by Module 9 modal verbs (können) | 20 min |
+| **LOW** | v11-2-2 | University Life — subset of audience, supplementary | 15 min |
+| **LOW** | v11-3-2, v11-4-2, v11-5-2 | Companions/extensions — useful but not launch-critical | 15 min each |
 
-### Malayalam Bridge Points
-- **Nursing boom** — "Thousands of Kerala nurses in Germany — Krankenpfleger/Krankenschwester is YOUR word!"
-- **IT sector** — Malayali programmers at SAP, Siemens, and German startups
-- **Ausbildung concept** — "Get PAID to learn a profession — this doesn't exist in India!"
-- **Email culture** — "In Germany, emails are taken very seriously — no 'kindly do the needful' style!"
-- **"Enna paniyaanu?" → "Was sind Sie von Beruf?"** — universal ice-breaker question
+---
 
-### Key Example Sentences/Dialogues to Feature
+## Essential Learning Outcomes (Measurable)
+
+After completing Module 11, a learner should be able to:
+
+1. ✅ **Say their profession** with correct gender: "Ich bin Krankenpfleger(in) von Beruf."
+2. ✅ **Name 15+ professions** with masc/fem pairs (Arzt/Ärztin, Ingenieur/Ingenieurin, Lehrer/Lehrerin, etc.)
+3. ✅ **Navigate office/workplace vocabulary** (Büro, Besprechung, Kollege/Kollegin, Chef/Chefin)
+4. ✅ **Write a basic German email** with correct structure (Betreff, Sehr geehrte/r, Content, Mit freundlichen Grüßen)
+5. 🟡 **Describe their skills:** "Ich kann gut kochen / Englisch sprechen / mit Computern arbeiten" — outlined but not drilled
+6. 🟡 **Talk about their career path:** "Ich mache eine Ausbildung als..." — concept exists but no production exercise
+7. ❌ **Answer basic interview questions** — no script or exercise
+8. ❌ **Write a simple job application email** — no template or exercise
+9. ❌ **Understand a spoken workplace instruction** — no audio exercise
+
+---
+
+## Profession Gender Pairs — Module 11's Vocabulary Core
+
+The masculine/feminine profession system is a critical A1 pattern:
+
+| Masculine | Feminine | Meaning | Malayali relevance |
+|-----------|----------|---------|-------------------|
+| Krankenpfleger | Krankenpflegerin / Krankenschwester | Nurse | **TOP** — #1 migration pathway |
+| Arzt | Ärztin | Doctor | **HIGH** |
+| Ingenieur | Ingenieurin | Engineer | **HIGH** |
+| Programmierer | Programmiererin | Programmer | **HIGH** — IT workers |
+| Lehrer | Lehrerin | Teacher | MEDIUM |
+| Student | Studentin | Student | HIGH |
+| Koch | Köchin | Cook | MEDIUM |
+| Verkäufer | Verkäuferin | Salesperson | MEDIUM |
+| Kellner | Kellnerin | Waiter/Waitress | MEDIUM |
+| Mechaniker | Mechanikerin | Mechanic | MEDIUM |
+| Friseur | Friseurin | Hairdresser | MEDIUM |
+| Polizist | Polizistin | Police officer | LOW |
+
+### Gender Pattern Rules
 ```
-Self-Introduction at Work:
-"Guten Tag! Ich bin Priya. Ich bin Krankenschwester von Beruf.
-Ich komme aus Kerala, Indien. Ich arbeite seit drei Monaten hier.
-Ich spreche Malayalam, Englisch und ein bisschen Deutsch."
+Most: add -in to masculine → feminine
+  Lehrer → Lehrerin
+  Student → Studentin
 
-Simple Email:
-"Sehr geehrte Frau Weber,
-ich möchte mich für den Deutschkurs anmelden.
-Können Sie mir bitte die Termine schicken?
-Mit freundlichen Grüßen,
-Arun Kumar"
+Umlaut shift:
+  Arzt → Ärztin
+  Koch → Köchin
 
-Skills:
-"Ich kann gut programmieren.
-Ich kann Englisch und Malayalam sprechen.
-Ich lerne seit sechs Monaten Deutsch.
-Ich habe Erfahrung als Ingenieur."
-
-Interview:
-Interviewer: Erzählen Sie etwas über sich.
-Bewerber: Ich heiße Arun. Ich komme aus Indien.
-Ich bin Ingenieur und habe fünf Jahre Erfahrung.
-Ich möchte in Deutschland arbeiten und mein Deutsch verbessern.
+Irregular:
+  Krankenpfleger → Krankenpflegerin (long!)
+  Kaufmann → Kauffrau
 ```
+
+---
+
+## The German Email Template (Exam-Critical)
+
+Module 11's highest exam-leverage content:
+
+### Formal Email Structure
+```
+Betreff: [Clear subject line]
+
+Sehr geehrte Frau [Name] / Sehr geehrter Herr [Name],
+(or: Sehr geehrte Damen und Herren,)
+
+[Content: 2-4 sentences]
+
+Mit freundlichen Grüßen
+[Your name]
+```
+
+### Semi-Formal Email Structure
+```
+Betreff: [Subject]
+
+Liebe Frau [Name] / Lieber Herr [Name],
+
+[Content: 2-4 sentences]
+
+Viele Grüße / Herzliche Grüße
+[Your name]
+```
+
+### Common Email Purposes for A1
+1. **Appointment request:** "Ich möchte einen Termin vereinbaren."
+2. **Information request:** "Ich möchte mich für den Deutschkurs anmelden."
+3. **Absence notification:** "Ich bin leider krank und kann nicht kommen."
+4. **Thank you:** "Vielen Dank für Ihre Hilfe."
+5. **Application:** "Ich möchte mich für die Stelle als ... bewerben."
+
+---
+
+## Production Exercise Gap Analysis
+
+| Spec ID | Exercise | Type | Status | Priority |
+|---------|----------|------|--------|----------|
+| 11-P1 | Profession Sentences | free-text | ❌ Not built | **HIGH** |
+| 11-P2 | Formal Email Writing | free-text (Schreiben) | ❌ Not built | **CRITICAL** |
+| 11-P3 | Semi-Formal Email Writing | free-text | ❌ Not built | **HIGH** |
+| 11-P4 | Skills Description | guided production | ❌ Not built | MEDIUM |
+| 11-P5 | Interview Q&A Speaking | speaking | ❌ Not built | HIGH |
+| 11-P6 | Job Ad Reading | reading comprehension | ❌ Not built | HIGH |
+
+### Audio Requirements
+
+| Audio item | Content | Tool | Status |
+|------------|---------|------|--------|
+| Profession pronunciation drill | 12 pairs spoken with masc/fem | edge-tts | ❌ |
+| Office conversation | Workplace interaction dialogue | edge-tts | ❌ |
+| Interview questions | 5 standard interview questions | edge-tts | ❌ |
+| Email read-aloud | Model email spoken (for listening comprehension) | edge-tts | ❌ |
+
+---
+
+## Concrete Next Steps (Priority Order)
+
+### Must-do before launch
+1. [ ] Build 11-P2 formal email writing exercise (Schreiben Teil 2 format: write an appointment request)
+2. [ ] Build 11-P1 profession sentences exercise ("Tell us about your job in 3 sentences")
+3. [ ] Build 11-P6 job ad reading exercise (read Stellenanzeige → extract key info)
+4. [ ] Draft v11-1-2 (Career Paths — nursing, IT, Ausbildung for Malayali audience)
+5. [ ] Generate edge-tts audio for profession pronunciation drill
+
+### Should-do for quality
+6. [ ] Build 11-P3 semi-formal email exercise (write to a teacher/Kursleiter)
+7. [ ] Build 11-P5 interview Q&A speaking exercise
+8. [ ] Draft v11-5-1 (Interview Basics — standard questions and safe answers)
+9. [ ] Upgrade v11-1-1, v11-2-1, v11-3-1 from v1.0 to v2.0 quality
+10. [ ] Add 3 email prompts with different scenarios (appointment, course enrollment, absence)
+
+### Nice-to-have
+11. [ ] Build 11-P4 skills description exercise
+12. [ ] Draft v11-4-1 (Skills & Abilities — extends können from Module 9)
+13. [ ] Create "German workplace culture" mini-content (Feierabend, Mittagspause, Betriebsrat)
+14. [ ] Ausbildung vs Studium comparison content (decision helper for learners)
+
+---
+
+## Common Malayali Learner Errors to Script Against
+
+1. **English profession names:** "Ich bin nurse" instead of "Ich bin Krankenpflegerin" — German has its own profession words
+2. **Missing gender awareness:** "Ich bin Arzt" (a woman saying this) — should be "Ich bin Ärztin"; exam graders notice
+3. **Wrong email register:** Starting with "Hi" or "Hello" in a formal German email — must use "Sehr geehrte/r"
+4. **Missing Betreff:** Forgetting the subject line — German emails need a clear Betreff
+5. **"Mit freundlichen Grüße"** — forgetting the -n: correct is "Grüßen" (dative plural!)
+6. **Confusing Ausbildung/Studium/Beruf:** Ausbildung = vocational training, Studium = university study, Beruf = profession — different concepts
+7. **"Was bist du von Beruf?"** — using "du" in professional contexts; should be "Was sind Sie von Beruf?" with strangers/formal
+8. **Long compound profession words:** Krankenpflegerin, Mechatroniker — pronunciation practice needed for confidence
+
+---
+
+## Cross-Module Feed-Forward
+
+Module 11 content connects to:
+- **Module 2:** Self-introduction → profession ("Ich bin ... von Beruf" completes the golden intro template)
+- **Module 5:** Present tense verbs used in work descriptions ("Ich arbeite bei...", "Ich studiere...")
+- **Module 9:** Modal verbs in work context ("Ich kann gut... / Ich muss um 8 anfangen")
+- **Module 13:** Past tense for work history ("Ich habe in Kerala gearbeitet")
+- **Module 14:** Formal writing overlaps (email register, official vocabulary)
+- **Module 18 Schreiben Teil 2:** Email writing IS Module 11 content under exam conditions
+- **Module 18 Sprechen Teil 1:** Profession/work is part of every self-introduction
+
+---
+
+## Malayalam Bridge Points
+
+- **Migration motivation:** "You're learning German because Germany needs your skills — as nurses, engineers, IT specialists, teachers. Module 11 teaches you to TALK about those skills in German. This is where motivation meets vocabulary."
+- **Anerkennung concept:** "In Germany, your Kerala qualifications may need 'Anerkennung' (recognition). This is a big word and a bigger process. For now, learn to describe your profession — the bureaucratic path comes later."
+- **Nursing is king:** "Krankenpfleger/Krankenpflegerin — this is the #1 profession for Malayalis in Germany. Practice saying it until it flows. Your pronunciation of this word matters more than any other in a job context."
+- **Email culture:** "In Germany, email etiquette matters A LOT. A badly written email can cost you an opportunity. 'Sehr geehrte Frau Müller' is not optional — it's expected. Think of it like 'Respected Madam' but always used."
+- **Feierabend:** "Germans invented Feierabend — the sacred end of the work day. After Feierabend, work stays at work. This concept doesn't really exist in Kerala startup/hospital culture, but respect it!"
+
+---
+
+## Malayali Career Path Vocabulary (For v11-1-2 Script)
+
+Key pathways to highlight:
+
+| Pathway | German terms | Notes |
+|---------|-------------|-------|
+| **Nursing** | Krankenpfleger/in, Pflegehelfer/in, Altenpfleger/in, Krankenhaus, Station | Largest Malayali workforce in Germany |
+| **IT/Tech** | Programmierer/in, Softwareentwickler/in, IT-Spezialist/in, Firma | Growing pathway |
+| **Engineering** | Ingenieur/in, Maschinenbau, Elektrotechnik, Konstruktion | Traditional pathway |
+| **Ausbildung** | Auszubildende/r (Azubi), Berufsschule, Meister, Geselle | Dual education system — very German |
+| **University** | Student/in, Universität, Hochschule, Studiengang, Semester | Masters programs in English common |
+| **Gastro/Service** | Koch/Köchin, Kellner/in, Restaurant, Hotel | Entry-level common |
+
+---
+
+*Module 11 is where learning German becomes professionally meaningful. For most Malayali learners, this module answers the question "Why am I doing this?" with practical vocabulary and templates they'll use in job applications, emails, and interviews.*

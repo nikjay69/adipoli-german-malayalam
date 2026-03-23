@@ -126,15 +126,15 @@ Dimensions:
 ### Module 7: Shopping & Money (Einkaufen)
 | Dim | Score | Notes |
 |-----|-------|-------|
-| S | 2 | 1/3 scripts drafted (v7-1-1 only). Missing: v7-2-1 (Clothes Shopping), v7-3-1 (Prices & Comparing) |
+| S | 3 | ✅ All 3 core scripts drafted (v7-1-1, v7-2-1, v7-3-1) |
 | E | 2 | 30 exercises |
 | A | 0 | No audio |
 | P | 0 | No price dictation, no shopping dialogues |
 | X | 2 | Hören (prices), Lesen (ads/offers), Sprechen (asking about items) |
-| **Total** | **6/15** | |
+| **Total** | **7/15** | |
 
-**Blockers:** Two scripts still at ARCH only. Price listening is exam-relevant and needs audio.
-**Next action:** Draft v7-2-1 and v7-3-1 scripts. Add price dictation exercises with edge-tts audio.
+**Blockers:** Scripts complete. Price listening is exam-relevant and needs audio.
+**Next action:** Add price dictation exercises with edge-tts audio. Build shopping dialogue production exercise.
 
 ---
 
@@ -313,7 +313,7 @@ Dimensions:
 | 4: Family | 3 | 2 | 0 | 0 | 2 | **7** | 🟡 Needs production |
 | 5: Daily Routine | 2 | 2 | 0 | 0 | 3 | **7** | 🟡 Needs production |
 | 6: Food & Drink | 2 | 2 | 0 | 0 | 2 | **6** | 🟡 Gaps |
-| 7: Shopping | 3 | 2 | 0 | 0 | 2 | **7** | 🟡 Needs production |
+| 7: Shopping | 3 | 2 | 0 | 0 | 2 | **7** | 🟡 Needs production+audio |
 | 8: Home | 3 | 2 | 0 | 0 | 2 | **7** | 🟡 Needs production |
 | 9: Travel | 3 | 2 | 0 | 0 | 2 | **7** | 🟡 Needs audio |
 | 10: Health | 3 | 2 | 0 | 0 | 2 | **7** | 🟡 Needs production |

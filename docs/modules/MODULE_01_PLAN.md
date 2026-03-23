@@ -1,127 +1,147 @@
-# Module 01: Welcome to German! (Willkommen!)
+# Module 1: Welcome to German! (Willkommen!) — Launch Plan
 
-## Teaching Goal
-After this module, students should be able to **greet people appropriately** (formal/informal, by time of day), **say goodbye**, **use basic polite phrases** (Bitte, Danke, Entschuldigung), **have a mini first conversation**, and **produce core German sounds** (including umlauts and ch-sounds) with less fear. This is the emotional and phonetic foundation for everything that follows.
+> Detailed launch checklist for Module 1 with teaching goals, script status, and next steps.
+>
+> **Last updated:** 2026-03-23 11:45 UTC
 
-## A1 Exam Relevance
-
-| Exam Section | Relevance |
-|---|---|
-| **Sprechen** | Foundation for greeting, self-introduction openers, and polite reactions. Every Sprechen task begins with greeting the examiner. |
-| **Hören** | Sound discrimination starts here — weak phonetics damage all later listening. Greeting exchanges appear in simple Hören items. |
-| **Lesen** | Alphabet and sound-letter awareness supports spelling, name recognition, and early decoding of simple signs. |
-| **Schreiben** | Polite phrases (Sehr geehrte..., Mit freundlichen Grüßen) introduced here feed directly into formal writing tasks. |
-
-## Current Content Inventory
-
-- **Lessons:** 6
-  - 1-1: Why Learn German?
-  - 1-2: German Sounds for Malayalam Speakers
-  - 1-3: Basic Greetings
-  - 1-4: Goodbye & Polite Words
-  - 1-5: Your First Conversation
-  - 1-6: Formal vs Informal
-- **Videos:** 12 (2 per lesson)
-- **Exercises:** 48 total
-  - Multiple-choice: 22
-  - Fill-blank: 11
-  - Matching: 8
-  - Ordering: 7
-  - Speaking: 0
-- **Vocabulary:** 60 items
-- **Scripts drafted:** 4 of ~6 core scripts (v1-2-1, v1-3-1, v1-3-2, v1-4-1). Motivation videos (v1-1-1, v1-1-2) and v1-2-2 remain.
-- **What's already strong:** Motivational framing for Malayalis, pronunciation emphasis with Malayalam sound comparisons (ച→ch, ര→r, ശ→sch), early Sie/du distinction, real-world scenario dialogues (airport, café, flatmate)
-
-## Lesson/Video Script Needs
-
-### Lesson 1-1: Why Learn German?
-- **Core teaching points:** Motivation, Germany opportunities, career paths, salary comparison, Ausbildung concept, language levels overview
-- **Script status:** None (v1-1-1 and v1-1-2 both unscripted)
-- **Priority:** Medium — motivational, not exam-critical, but important for course completion
-- **Key visual/audio needs:** Infographics for salary comparison, visa types, career paths; Kerala-Germany success story photos
-
-### Lesson 1-2: German Sounds for Malayalam Speakers
-- **Core teaching points:** Malayalam-German sound overlaps (ch, r, k, sch), umlauts (ä, ö, ü), ß, ei vs ie, w/v pronunciation swap
-- **Script status:** v1-2-1 drafted ✅, v1-2-2 (Special German Sounds) still needs script
-- **Priority:** HIGH — pronunciation foundation affects all future listening and speaking
-- **Key visual/audio needs:** Side-by-side Malayalam/German mouth position diagrams, audio comparison clips, tongue-twister practice recordings
-
-### Lesson 1-3: Basic Greetings
-- **Core teaching points:** Guten Morgen/Tag/Abend/Nacht, Hallo, regional greetings (Grüß Gott, Moin), time-appropriate usage
-- **Script status:** v1-3-1 drafted ✅, v1-3-2 (Formal vs Informal) drafted ✅
-- **Priority:** HIGH — greetings are the entry point for every real interaction and exam speaking task
-- **Key visual/audio needs:** Clock/time-of-day visuals, formal/informal comparison scenes, handshake culture demonstration
-
-### Lesson 1-4: Goodbye & Polite Words
-- **Core teaching points:** Auf Wiedersehen, Tschüss, Bis bald/später/morgen, Danke/Bitte dual meaning, Entschuldigung, Es tut mir leid
-- **Script status:** v1-4-1 drafted ✅, v1-4-2 (Polite Survival Phrases) still needs script
-- **Priority:** HIGH — polite phrases are survival toolkit for first days in Germany
-- **Key visual/audio needs:** Café ordering scenario, bakery interaction, street bump apology demonstration
-
-### Lesson 1-5: Your First Conversation
-- **Core teaching points:** Complete greeting→question→response→farewell flow, Wie geht es Ihnen/dir?, airport/café/flatmate scenarios
-- **Script status:** None (v1-5-1 and v1-5-2 both unscripted)
-- **Priority:** HIGH — this is the module's practical payoff; students need to DO a conversation
-- **Key visual/audio needs:** Three scenario animations (airport immigration, café order, flatmate meeting), model dialogue recordings
-
-### Lesson 1-6: Formal vs Informal
-- **Core teaching points:** Sie vs Du mastery in real situations, Herr/Frau usage, email register (Sehr geehrte vs Liebe/r), keyboard tips for ä/ö/ü/ß
-- **Script status:** None (v1-6-1 and v1-6-2 both unscripted)
-- **Priority:** Medium — important foundational concept but partially covered in 1-3
-- **Key visual/audio needs:** Office vs café comparison scenes, email template visuals, keyboard shortcut reference
-
-## Essential Outcomes
-Students must be able to **produce** (not just recognize):
-1. Greet someone appropriately at morning, afternoon, and evening
-2. Say goodbye formally (Auf Wiedersehen) and informally (Tschüss)
-3. Say "Please" (Bitte), "Thank you" (Danke), and "Excuse me" (Entschuldigung) in context
-4. Choose correctly between Sie and du in a given scenario
-5. Produce a 4-line mini-conversation: greeting → "How are you?" → response → farewell
-6. Pronounce ü, ö, ch, sch, ei, ie distinctly enough to be understood
-7. Spell their name using the German alphabet
-
-## Gap Analysis
-- **No speaking exercises** (0 out of 48) — this module should prioritize spoken output above all
-- **No audio-first drills** for pronunciation — lessons 1-2 needs paired audio imitation tasks
-- **No dictation exercises** — greetings and polite phrases are ideal dictation material
-- **No free-text production** — even simple "write a 2-line greeting exchange" is missing
-- **Alphabet/spelling gap** — mentioned in videos but no dedicated spelling-output exercise
-- **Bridge to Module 2 is weak** — needs explicit connection from "greeting someone" to "introducing yourself"
-- **Recognition-heavy** — 48 exercises but all are pick/match/order, none require generating German text or speech
-
-## Future Script Direction
-
-### Suggested Narrative Approach
-- Open with energy and reassurance: "German is learnable, and you already know some sounds!"
-- Teacher-to-student warmth, not lecture-hall style
-- Heavy repetition loops: say it, hear it, say it again, use it in context
-- Every lesson should end with a mini-challenge the student can try in real life
-
-### Malayalam Bridge Points
-- **ച (cha) → ich-Laut**: Students already make this sound
-- **ര (ra) → German r**: Not the English R — students have the right instinct
-- **ശ/ഷ → sch**: Direct sound match
-- **നിങ്ങൾ/നീ → Sie/du**: Exact cultural parallel for formal/informal respect system
-- **സുപ്രഭാതം → Guten Morgen**: Time-of-day greeting concept already familiar
-- **"IST" (Indian Stretchable Time) vs Pünktlichkeit**: Humorous cultural bridge for engagement
-
-### Key Example Sentences/Dialogues to Feature
-```
-A: Guten Tag! Wie geht es Ihnen?
-B: Gut, danke! Und Ihnen?
-A: Auch gut, danke!
 ---
-A: Hallo! Wie geht's?
-B: Super! Und dir?
-A: Auch gut! Tschüss, bis bald!
-B: Tschüss!
+
+## Module Identity
+
+- **Position:** Course opener — sets emotional tone and phonetic foundation
+- **Lessons:** 6 (Why Learn German, German Sounds, Basic Greetings, Goodbye & Polite Words, Your First Conversation, Formal vs Informal)
+- **Videos:** 12
+- **Exercises:** 48
+- **Vocabulary:** 60
+
 ---
-(Airport) Officer: Guten Tag. Ihren Pass, bitte.
-You: Guten Tag! Hier, bitte.
-Officer: Danke. Willkommen in Deutschland!
-You: Vielen Dank!
+
+## Teaching Goals & Exam Map
+
+| Goal | Description | Exam Section |
+|------|-------------|-------------|
+| **Emotional readiness** | Reduce fear, set expectations, build motivation | Indirect (retention) |
+| **Phonetic confidence** | Produce core German sounds (ü, ö, ch, sch, z, sp/st) | Sprechen, Hören |
+| **Basic social language** | Greetings, goodbyes, polite expressions | Sprechen Teil 1 |
+| **Register awareness** | du vs Sie, informal vs formal | All sections |
+| **Alphabet/spelling** | Say and recognize German alphabet, spell name | Sprechen, Schreiben |
+
+### A1 Exam Relevance: MEDIUM-HIGH
+- Not directly tested as a topic, but **phonetic accuracy and social language are tested in every Sprechen task**
+- Weak Module 1 = weak pronunciation across the entire course
+- Greeting/politeness errors lose "impression points" in oral exam
+
 ---
-(Café) You: Guten Tag! Einen Kaffee, bitte.
-Barista: Groß oder klein?
-You: Klein, bitte. Danke schön!
-```
+
+## Script Status
+
+| Video ID | Title | Status | Notes |
+|----------|-------|--------|-------|
+| v1-1-1 | Why German? A Malayali's Gateway | 📐 ARCH | Motivational — no grammar, pure sales |
+| v1-1-2 | Malayalis in Germany: Real Success Stories | 📐 ARCH | Career paths — nursing, IT, Ausbildung |
+| v1-2-1 | German Sounds & Alphabet | 🔄 DRAFT | Core phonetics lesson |
+| v1-2-2 | Tricky Sounds for Malayalis | 📐 ARCH | Alphabet drill, buchstabieren, phone numbers |
+| v1-3-1 | Greetings & Goodbyes | 🔄 DRAFT | Time-of-day greetings, standard phrases |
+| v1-3-2 | Auf Wiedersehen! Saying Goodbye | 🔄 DRAFT | Goodbye + Danke/Bitte matrix |
+| v1-4-1 | First Conversations | 🔄 DRAFT | 3-sentence mini-intro, dialogue role-play |
+| v1-5-1 | Your First Conversation (extended) | ⬜ NOT PLANNED | May overlap with v1-4-1 — assess if needed |
+| v1-6-1 | Formal vs Informal Deep Dive | ⬜ NOT PLANNED | May fold into existing v1-3-1/v1-3-2 content |
+
+**Status: 4/7 core scripts drafted. 3 at ARCH, 2 may not be needed.**
+
+### Script Priority Assessment
+
+| Priority | Video | Why | Estimated effort |
+|----------|-------|-----|-----------------|
+| **HIGH** | v1-2-2 | Alphabet/spelling = daily survival skill in Germany + Sprechen | 20 min |
+| **MEDIUM** | v1-1-1 | Motivational opener — important for retention, not for learning | 25 min |
+| **LOW** | v1-1-2 | Career stories — useful but not teaching content | 25 min |
+| **ASSESS** | v1-5-1, v1-6-1 | May overlap with existing scripts — check before drafting | — |
+
+---
+
+## Essential Learning Outcomes (Measurable)
+
+After completing Module 1, a learner should be able to:
+
+1. ✅ **Greet someone** at any time of day (Guten Morgen/Tag/Abend, Hallo)
+2. ✅ **Say goodbye** appropriately (Tschüss, Auf Wiedersehen, Bis bald/morgen)
+3. ✅ **Use polite essentials** (Bitte, Danke, Entschuldigung, Ja, Nein)
+4. ✅ **Produce a 3-line first-meeting exchange** (greeting + name + polite close)
+5. ✅ **Distinguish formal and informal** address in common situations
+6. 🟡 **Pronounce core sounds** (ü, ö, ch, sch, z, sp/st) — script exists but no audio drill exercises
+7. 🟡 **Spell their name** in German alphabet — script plan exists (v1-2-2) but not drafted
+8. ❌ **Recognize German sounds by ear** — no audio-based exercises at all
+
+---
+
+## Production Exercise Gap Analysis
+
+| Spec ID | Exercise | Type | Status | Priority |
+|---------|----------|------|--------|----------|
+| 1-P1 | Greeting Exchange | free-text | ❌ Not built | HIGH |
+| 1-P2 | Umlaut Pronunciation | speaking | ❌ Not built | HIGH |
+| 1-P3 | Polite Phrases Dictation | dictation | ❌ Not built | MEDIUM |
+| 1-P4 | Name Spelling | production | ❌ Not built | HIGH |
+
+### Audio Requirements
+
+| Audio item | Content | Tool | Status |
+|------------|---------|------|--------|
+| Greeting models | All greetings + goodbyes spoken clearly | edge-tts | ❌ |
+| Umlaut drills | 10 words with ü, ö, ch, sch | edge-tts | ❌ |
+| Polite phrases dictation | 4-sentence dictation passage | edge-tts | ❌ |
+| Dialogue audio | First-conversation role-play | edge-tts | ❌ |
+
+---
+
+## Concrete Next Steps (Priority Order)
+
+### Must-do before launch
+1. [ ] Draft v1-2-2 (Tricky Sounds / Alphabet / buchstabieren)
+2. [ ] Add production exercise 1-P4 (name spelling) to lesson data
+3. [ ] Add production exercise 1-P1 (greeting exchange writing)
+4. [ ] Generate edge-tts audio for greeting/goodbye phrases
+5. [ ] Generate edge-tts audio for umlaut pronunciation drills
+
+### Should-do for quality
+6. [ ] Draft v1-1-1 (motivational opener — improves retention)
+7. [ ] Add production exercise 1-P2 (umlaut pronunciation via Web Speech API)
+8. [ ] Add production exercise 1-P3 (polite phrases dictation)
+9. [ ] Assess whether v1-5-1 and v1-6-1 are needed or can be folded into existing content
+
+### Nice-to-have
+10. [ ] Draft v1-1-2 (career stories — supplementary motivational)
+11. [ ] Add audio imitation tasks for consonant clusters (str, spr, schr)
+
+---
+
+## Cross-Module Feed-Forward
+
+Module 1 content is recycled in:
+- **Module 2:** Greeting patterns in self-introduction dialogues
+- **Module 5:** Time-of-day greetings in daily routine context
+- **Module 6:** "Bitte/Danke" in restaurant ordering
+- **Module 9:** Polite asking (Entschuldigung, wo ist...?)
+- **Module 14:** Formal register at offices
+- **Module 18:** Sprechen Teil 1 (opening greeting)
+
+If Module 1 greetings/politeness are weak, **every dialogue in every later module suffers**.
+
+---
+
+## Common Malayali Learner Errors to Script Against
+
+1. **English pronunciation overlay:** saying "gut-en" like English "good-en" instead of German vowel quality
+2. **Weak umlauts:** ü sounds like "oo", ö sounds like "oh"
+3. **ch → k or sh:** "ich" becomes "ik" or "ish"
+4. **Ignoring final consonants:** "Guten Tag" → "Goo-den Ta"
+5. **Always informal:** using "du" with strangers, teachers, officials
+6. **Skipping Entschuldigung:** jumping to questions without polite opener
+7. **"Sorry" instead of "Entschuldigung":** code-switching under pressure
+
+Each of these should be explicitly called out in scripts with the correct form modeled, practiced, and drilled.
+
+---
+
+*Module 1 is not where students learn the most German, but it's where they decide whether to keep going. Make it warm, confident, and phonetically solid.*

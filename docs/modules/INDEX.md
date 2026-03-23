@@ -56,3 +56,19 @@ Detailed planning documents for all 18 Adipoli German course modules, based on:
 - Modules **1-6** remain the highest teaching/script priority from the course plan.
 - Modules **14, 17, and 18** have especially high exam leverage and should stay near the top of production sequencing.
 - Modules **15 and 16** are useful but lower priority for launch-critical A1 pass probability.
+
+## Quality Tiers (as of 2026-03-23)
+
+### Tier 1 — Full Launch Plans (detailed outcomes, production exercise gaps, audio needs, Malayali error analysis, concrete next steps, golden dialogues/templates)
+- **Modules 1-6:** Foundation modules — full blueprints
+- **Modules 7-14:** Practical life + exam modules — full blueprints (upgraded 2026-03-23)
+- **Modules 17-18:** Exam prep — full blueprints
+
+### Tier 2 — Solid Plans (teaching goals, content inventory, script needs, gap analysis, future direction)
+- **Module 15:** German Culture — good plan, lower exam priority
+- **Module 16:** A1+ Bridge — good plan, optional module
+
+### Key Observations
+- All 18 modules now have at minimum: teaching goal, exam map, content inventory, script status, essential outcomes, gap analysis
+- Modules 7-14 were upgraded on 2026-03-23 to match Modules 1-6 quality: added production exercise specs, audio requirements, Malayali error analysis, golden dialogues/templates, and prioritized next steps
+- Modules 15-16 remain at a slightly less detailed level — appropriate given their lower exam priority

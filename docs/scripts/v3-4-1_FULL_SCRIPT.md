@@ -3,314 +3,311 @@
 > **Module:** 3 | **Lesson:** 3-4 | **Duration:** 10:00 target
 > **Teaching Goal:** Master days of the week, months, ordinal numbers for dates, and German date format (TT.MM.JJJJ) — critical for form-filling and scheduling
 > **A1 Exam Link:** Schreiben Teil 1 (Geburtsdatum on forms), Hören (appointment dates), Lesen (schedules, event dates), Sprechen Teil 2 (asking about dates/times)
-> **Status:** FIRST DRAFT — v1.0
-> **Created:** 2026-03-23 (overnight cron)
+> **Status:** REVISED — v2.0
+> **Revision:** 2026-03-23 (quality pass — tighter hook, teach→drill→apply per block, active recall, energy cues, Malayalam bridges, ~15% word count reduction)
 
 ---
 
-## Pre-roll (0:00–0:15)
-
-### Visual: [Course intro animation / Adipoli German branding]
-### Narration:
-"Willkommen bei Adipoli German! Today — days, months, and dates. Your Geburtsdatum is on EVERY German form."
+## Pre-roll (0:00–0:10)
+### Visual: [Course intro animation]
+"Willkommen bei Adipoli German!"
 
 ---
 
-## Section 1: Hook — Dates Are Everywhere (0:15–1:00)
-
-### Visual: [SLIDE: A German form with Geburtsdatum field highlighted, plus a calendar and a train schedule]
+## Section 1: Hook — The Date That's on Every Form (0:10–0:40)
+### Visual: [ANIMATION: German Anmeldung form zooming into "Geburtsdatum: __.__.____" field, blinking cursor]
 ### Narration:
-"Quick — what's your birthday in German?
+"Your first week in Germany. You're filling out the Anmeldung form. You hit this field: **Geburtsdatum.** Birthday. And you freeze — is it month-first? Day-first? How do you even SAY your birthday in German?
 
-If you can't say it yet, don't worry. By the end of this video, you'll be able to say ANY date in German. And you'll need to — because dates appear EVERYWHERE:
+By the end of this video, you'll write AND say any date in German. Let's fix this in 10 minutes.
 
-- **Geburtsdatum** on every single form
-- **Termine** (appointments) at every office
-- Train schedules, event flyers, exam dates
+*Birthday German-il parayaan ariyano? 10 minute-il fix cheyyaam!*"
 
-*Nammude birthday German-il parayaan ariyano? Ee video kazhiyumpol, enth date-um German-il parayaan patiyam!*
-
-Let's start with the days of the week."
+🎬 [Energy: urgent, practical — this is real paperwork you'll face]
 
 ---
 
-## Section 2: Days of the Week — Wochentage (1:00–2:30)
-
-### Visual: [TABLE: Days of the week in German with English + memory hooks]
+## Section 2: Days of the Week — Wochentage (0:40–2:15)
+### Visual: [Days appearing one at a time on a weekly calendar strip, NOT a table dump]
 ### Narration:
-"The seven Wochentage — days of the week:
 
-| German | English | Memory Hook |
-|--------|---------|-------------|
-| **Montag** | Monday | MON-tag = Moon-day ✓ |
-| **Dienstag** | Tuesday | DIENStag — 'Dienst' = service |
-| **Mittwoch** | Wednesday | MITT-woch = MID-week! (Mitte = middle) |
-| **Donnerstag** | Thursday | DONNER = thunder! Thor's day ⚡ |
-| **Freitag** | Friday | FREI = free! (well, almost 😄) |
-| **Samstag** | Saturday | SAMStag — close to 'Saturday' |
-| **Sonntag** | Sunday | SONN-tag = Sun-day ✓ |
+"Seven Wochentage. ALL end in **-tag** (day). Memory hooks make them stick:
 
-Notice: they ALL end in **-tag** (day). That makes them easy to spot.
+🔊 **Montag** — Monday. MON = Moon. Moon-day. Same!
+🔊 **Dienstag** — Tuesday. Dienst = service.
+🔊 **Mittwoch** — Wednesday. Mitte = MIDDLE. Mid-week! The only one without '-tag'.
+⏸️ Quick — which day means 'mid-week'? → Mittwoch!
 
-Also good to know: **Samstag** is used everywhere, but in northern Germany you'll hear **Sonnabend** (= Sunday eve). Same day, different name.
+🔊 **Donnerstag** — Thursday. DONNER = thunder ⚡ Thor's day!
+🔊 **Freitag** — Friday. FREI = free! Almost the weekend!
+🔊 **Samstag** — Saturday. Sounds like Saturday. (North Germany says 'Sonnabend'.)
+🔊 **Sonntag** — Sunday. SONN = sun. Sun-day. Same!
 
-⏸️ **[PAUSE — Student says all 7 days from Montag to Sonntag]**
+### ⚡ Drill:
+⏸️ All 7, Montag to Sonntag — go! [5-second pause]
 
-Now the key pattern: 'am' + day = on that day.
-- **Am Montag** = on Monday
-- **Am Freitag** = on Friday
-- **Am Wochenende** = on the weekend
+### The 'am' pattern:
+**Am** + day = on that day.
+- **Am Montag** habe ich Deutsch. — On Monday I have German.
+- **Am Wochenende** schlafe ich lang. — On the weekend I sleep in.
 
-'Am' — just one tiny word. 'Am Montag habe ich Deutsch.' Easy!"
+⏸️ What day is today? Say: 'Heute ist ___.' → ?
+
+*Ellaa days-um '-tag'-il theeyunnu — Mittwoch maathram exception. Ath 'mid-week' aanu!*"
+
+🎬 [Energy: rhythmic, one-at-a-time with hooks]
 
 ---
 
-## Section 3: Months — Monate (2:30–4:00)
-
-### Visual: [TABLE: 12 months in German vs English, with tricky ones highlighted in red]
+## Section 3: Months — Monate (2:15–3:30)
+### Visual: [12 months sliding in, with ≈English ones greyed out and 4 tricky ones highlighted red]
 ### Narration:
-"Good news — German months look A LOT like English:
 
-| German | English | Notes |
-|--------|---------|-------|
-| **Januar** | January | Almost same! No 'y' |
-| **Februar** | February | Almost same! |
-| **März** | March | ⚠️ UMLAUT! Not 'Marz' — 'M-ä-r-z' |
-| **April** | April | Identical! ✓ |
-| **Mai** | May | Just 'Mai' — shorter |
-| **Juni** | June | Easy! |
-| **Juli** | July | Easy! |
-| **August** | August | Identical! But stress on second syllable: au-GUST |
-| **September** | September | ✓ |
-| **Oktober** | October | 'k' instead of 'c' |
-| **November** | November | ✓ |
-| **Dezember** | December | 'z' instead of 'c' |
+"Good news — most German months are almost identical to English. Focus on the FOUR tricky ones:
 
-The tricky ones? Just three:
-1. **März** — remember the Umlaut ä
-2. **Mai** — shorter than 'May'
-3. **Oktober/Dezember** — 'k' and 'z' instead of English 'c'
+[Slide: 8 easy months greyed: Januar, Februar, April, Juni, Juli, September, November = nearly same]
 
-Everything else is nearly the same as English. Bonus!
+**The 4 to watch:**
+🔊 **März** — March, but with Umlaut: M-Ä-R-Z. Not 'Marz'!
+🔊 **Mai** — May, shorter. Just 'Mai'.
+🔊 **Oktober** — 'K' instead of 'C'.
+🔊 **Dezember** — 'Z' instead of 'C'.
 
-Pattern: 'im' + month = in that month.
-- **Im Januar** = in January
-- **Im Juli** = in July
-- **Im Dezember** = in December
+And one pronunciation trap: **August** — stress on second syllable: au-GUST, not AW-gust.
 
-⏸️ **[PAUSE — Student says all 12 months]**
+### ⚡ Drill:
+⏸️ Month 3 → ? → März!
+⏸️ Month 5 → ? → Mai!
+⏸️ Month 10 → ? → Oktober!
+⏸️ All 12, Januar to Dezember — go! [5-second pause]
 
-*English ariyaamenkil, German months easy aanu — most of them same spelling!*"
+### The 'im' pattern:
+**Im** + month = in that month.
+- **Im Januar** ist es kalt. — In January it's cold.
+- **Im Juli** ist es heiß. — In July it's hot.
+
+*English ariyaamenkil months easy — 4 differences maathram!*"
+
+🎬 [Energy: quick, confidence-building — this IS easy]
 
 ---
 
-## Section 4: The German Date Format — TT.MM.JJJJ (4:00–5:30)
-
-### Visual: [SLIDE: Date format comparison — German vs American vs Indian with big red arrows showing DD.MM.YYYY]
+## Section 4: The Date Format — TT.MM.JJJJ (3:30–4:45)
+### Visual: [Side-by-side: 🇮🇳 DD/MM/YYYY → 🇩🇪 DD.MM.JJJJ — arrows showing SAME order, different separator]
 ### Narration:
-"THIS is important. German dates use a DIFFERENT order than American dates:
 
-🇩🇪 **German: TT.MM.JJJJ** (Tag.Monat.Jahr)
-🇺🇸 American: MM/DD/YYYY
-🇮🇳 Indian: DD/MM/YYYY (same order as German!)
+"German date format: **Tag.Monat.Jahr** — day first, then month, then year. WITH DOTS.
 
-Good news for us — India also uses day-first! So the ORDER is the same. But Germans use **dots** (Punkte), not slashes:
+*India-yilum day first aanu — same order! Dots maathram difference.*
 
-- 12.03.1995 = 12th March 1995 ✓
-- 03/12/1995 = ❌ NOT how Germans write it!
+🔊 **25.12.2025** — 25th December 2025. Weihnachten!
+🔊 **15.08.1947** — 15th August 1947. Indian Independence Day!
 
-**ALWAYS: Day.Month.Year with dots.**
+### On forms:
+**Geburtsdatum: __.__.____**
+Fill: Day → Month → Year → dots between.
 
-Examples:
-- **25.12.2025** = 25th December 2025 (Weihnachten!)
-- **01.01.2026** = 1st January 2026 (Neujahr!)
-- **15.08.1947** = 15th August 1947 (Indian Independence Day!)
+⏸️ Write YOUR birthday in German format: TT.MM.JJJJ → ?
+(Example: June 15th 1998 = 15.06.1998)
 
-On forms, you'll see: **Geburtsdatum: __.__.____**
-Fill it in: Tag, then Monat, then Jahr. With dots.
+### 🔁 Active Recall:
+⏸️ What separator does German use? → Dots, not slashes!
+⏸️ What goes first? → Day (Tag)!
 
-⏸️ **[PAUSE — Student writes their own birthday in German format: TT.MM.JJJJ]**
+[EXAM-TIP] Schreiben Teil 1 — EVERY exam form has Geburtsdatum. Write it as TT.MM.JJJJ. Automatic marks."
 
-*Indian date format-nte same order aanu — day first, then month, then year. Dots use cheyyuka, slashes alla!*"
+🎬 [Energy: practical, form-filling confidence]
 
 ---
 
-## Section 5: Ordinal Numbers for Dates — Saying Dates Aloud (5:30–7:00)
-
-### Visual: [TABLE: Ordinal numbers 1st–31st in German]
+## Section 5: Ordinal Numbers — Saying Dates Aloud (4:45–6:30)
+### Visual: [Two-column visual: 1-19 = add '-ten', 20-31 = add '-sten'. Three irregulars in red boxes]
 ### Narration:
-"Writing dates is easy. But SAYING them? That needs ordinal numbers.
 
-In English: 1st, 2nd, 3rd. In German:
+"Writing dates: easy. SAYING them: needs ordinal numbers.
 
-**1–19: add '-ten'**
-| Number | Ordinal | Pronunciation |
-|--------|---------|---------------|
-| 1 | **ersten** | ers-ten |
-| 2 | **zweiten** | tsvai-ten |
-| 3 | **dritten** ⚠️ | drit-ten (irregular!) |
-| 4 | **vierten** | feer-ten |
-| 5 | **fünften** | fünf-ten |
-| 6 | **sechsten** | zeks-ten |
-| 7 | **siebten** ⚠️ | zeeb-ten (not 'siebenten'!) |
-| 8 | **achten** ⚠️ | akh-ten (not 'achtten'!) |
+### The rules:
+**1–19:** number + **-ten**
+**20–31:** number + **-sten**
 
-**20–31: add '-sten'**
-| Number | Ordinal |
-|--------|---------|
-| 20 | **zwanzigsten** |
-| 21 | **einundzwanzigsten** |
-| 30 | **dreißigsten** |
-| 31 | **einunddreißigsten** |
+### Three irregulars (memorize these!):
+🔴 **dritten** (3rd) — NOT 'dreiten'!
+🔴 **siebten** (7th) — NOT 'siebenten'!
+🔴 **achten** (8th) — NOT 'achtten'!
 
-Three irregular ones to memorize: **dritten** (not 'dreiten'), **siebten** (not 'siebenten'), **achten** (not 'achtten').
+Common ones you'll use most:
 
-Now the magic phrase: **'Am [ordinal] [Monat]'**
+🔊 **ersten** (1st), **zweiten** (2nd), **dritten** (3rd)
+🔊 **fünften** (5th), **zehnten** (10th), **fünfzehnten** (15th)
+🔊 **zwanzigsten** (20th), **fünfundzwanzigsten** (25th), **einunddreißigsten** (31st)
 
-- **Am zwölften März** = on the 12th of March
-- **Am ersten Januar** = on the 1st of January
-- **Am fünfundzwanzigsten Dezember** = on the 25th of December (Weihnachten!)
+### ⚡ Drill — Build the date phrase:
+Pattern: **Am [ordinal] [Monat]**
 
-⏸️ **[PAUSE — Student says their birthday: 'Mein Geburtstag ist am [ordinal] [Monat].']**
+⏸️ 12th March → ? → 'Am zwölften März.'
+⏸️ 1st January → ? → 'Am ersten Januar.'
+⏸️ 25th December → ? → 'Am fünfundzwanzigsten Dezember.'
+⏸️ YOUR birthday → 'Am ___ ___.' → ?
 
-This sentence — 'Mein Geburtstag ist am...' — you'll use it in conversations AND on the exam."
+*Dritten, siebten, achten — ee moonnu irregular forms orkkanam!*"
+
+🎬 [Energy: systematic, building toward the birthday sentence]
 
 ---
 
-## Section 6: Birthday Question-Answer (7:00–8:00)
-
-### Visual: [DIALOGUE: Two people exchanging birthday information]
+## Section 6: The Birthday Exchange — Exam Ready (6:30–7:45)
+### Visual: [Dialogue bubbles, exam-style conversation cards]
 ### Narration:
-"The exam LOVES birthday questions. Here's the exchange:
 
-**A:** Wann hast du Geburtstag?
-**B:** Ich habe am dritten Mai Geburtstag.
+"This exchange appears in EVERY Goethe A1 Sprechen Teil 1:
 
-Or more formally:
+### The dialogue:
+🔊 **A:** Wann hast du Geburtstag?
+🔊 **B:** Ich habe am dritten Mai Geburtstag.
 
-**A:** Wann ist Ihr Geburtstag?
-**B:** Mein Geburtstag ist am dritten Mai. / Am dritten Mai neunzehnhundertfünfundneunzig.
+Formal version:
+🔊 **A:** Wann ist Ihr Geburtstag?
+🔊 **B:** Mein Geburtstag ist am dritten Mai neunzehnhundertfünfundneunzig.
 
-Let's practice both:
-
-⏸️ **[PAUSE — Student answers: 'Wann hast du Geburtstag?' with their real birthday]**
-
-And the year? Long numbers!
-- **1995** = neunzehnhundertfünfundneunzig (19-hundred-5-and-90)
+### Years — don't panic:
+- **1995** = neunzehn-hundert-fünfundneunzig (19-hundred-5-and-90)
 - **2000** = zweitausend
-- **2001** = zweitausendundeins
+- **2001** = zweitausend(und)eins
 
-For forms, just write the number: 1995. For speaking, you need the German word. But honestly? At A1, most people just say the digits separately: 'eins-neun-neun-fünf.' That works too!
+💡 Pro tip: At A1 level, saying digits separately works too: 'eins-neun-neun-fünf.' Nobody will mark you down!
 
-*Birthday parayaan patiyal, exam-il Sprechen Teil 1-il ready aanu!*"
+### ⚡ Drill:
+⏸️ Answer aloud: 'Wann hast du Geburtstag?' → 'Ich habe am ___ ___ Geburtstag.'
+⏸️ Now add the year: 'Ich habe am ___ ___ ___ Geburtstag.'
 
----
+### 🔁 Active Recall:
+⏸️ Date format on forms? → TT.MM.JJJJ!
+⏸️ 'On the 3rd of May' → ? → 'Am dritten Mai'
+⏸️ Ordinal for 7th → ? → siebten (NOT siebenten!)
 
-## Section 7: Seasons — Jahreszeiten (8:00–9:00)
+*Ee question exam-il guaranteed varum. Answer ready aayirikkanam!*"
 
-### Visual: [DIAGRAM: Four seasons wheel with German labels and weather icons]
-### Narration:
-"The four Jahreszeiten (seasons):
-
-🌸 **der Frühling** — Spring (März, April, Mai)
-☀️ **der Sommer** — Summer (Juni, Juli, August)
-🍂 **der Herbst** — Autumn/Fall (September, Oktober, November)
-❄️ **der Winter** — Winter (Dezember, Januar, Februar)
-
-Pattern: **'im'** + season = in that season.
-- **Im Frühling** blühen die Blumen. (Flowers bloom.)
-- **Im Sommer** ist es warm. (It's warm.)
-- **Im Herbst** fallen die Blätter. (Leaves fall.)
-- **Im Winter** schneit es. (It snows.)
-
-⏸️ **[PAUSE — Student says: 'Meine Lieblingsjahreszeit ist der [Sommer/Winter/...]']**
-
-Cultural note: Kerala has basically two seasons — rainy and less rainy! Germany has FOUR very distinct seasons. If you've never seen snow, **der Winter** will be an experience. 😄
-
-*Kerala-il mainly rain season-um non-rain season-um — Germany-il four seasons und, snow include cheythittu!*"
+🎬 [Energy: exam-prep intensity, then celebratory]
 
 ---
 
-## Section 8: Exam Practice + Form Connection (9:00–9:45)
-
-### Visual: [SLIDE: A filled-in Anmeldung form focusing on date fields]
+## Section 7: Seasons — Jahreszeiten (7:45–8:45)
+### Visual: [Four-part wheel: 🌸☀️🍂❄️ with months listed under each]
 ### Narration:
-"Let's connect everything to the exam:
 
-**Schreiben Teil 1** — Form fields you WILL see:
-- **Geburtsdatum:** Write it as TT.MM.JJJJ → 15.06.1998
-- **Datum:** Today's date → 23.03.2026
+"Four Jahreszeiten — and a cultural surprise.
 
-**Hören** — You'll hear:
-- 'Der Termin ist am fünfzehnten April um 14 Uhr.'
-- You need to understand: 15th April, 2 PM.
+🌸 **der Frühling** — Spring (März–Mai)
+☀️ **der Sommer** — Summer (Juni–August)
+🍂 **der Herbst** — Autumn (September–November)
+❄️ **der Winter** — Winter (Dezember–Februar)
 
-**Sprechen** — They'll ask:
-- 'Wann haben Sie Geburtstag?' → 'Am [ordinal] [Monat].'
-- 'Welcher Tag ist heute?' → 'Heute ist [Wochentag], der [ordinal] [Monat].'
+Pattern: **im** + season: 'Im Sommer ist es warm.'
 
-⏸️ **[PAUSE — Student answers: 'Welcher Tag ist heute?' and 'Wann haben Sie Geburtstag?' in full sentences]**
+⏸️ What's your favourite? Say: 'Meine Lieblingsjahreszeit ist der ___.'
 
-Practice these two answers until they're automatic. You WILL need them."
+*Kerala-il two seasons — mazha, mazha-illa. 😄 Germany-il four distinct seasons und — snow included!*
+
+### ⚡ Drill:
+⏸️ Which season has März? → Frühling!
+⏸️ 'In winter' in German → ? → 'Im Winter.'
+⏸️ Which article for all seasons → ? → 'der'! (All masculine.)"
+
+🎬 [Energy: fun cultural comparison, light]
 
 ---
 
-## Section 9: Summary + Challenge (9:45–10:00)
-
-### Visual: [SLIDE: Recap card — Days, Months, Date Format, Ordinals, Seasons]
+## Section 8: Full Exam Practice (8:45–9:30)
+### Visual: [Exam card with three skill boxes]
 ### Narration:
-"Quick recap:
 
-✅ 7 Wochentage: Montag bis Sonntag (all end in -tag)
-✅ 12 Monate: Almost like English (watch März, Mai, Oktober, Dezember)
-✅ Date format: TT.MM.JJJJ with dots
-✅ Ordinals: -ten (1–19), -sten (20–31), watch dritten/siebten/achten
-✅ 'Am [ordinal] [Monat]' = on the [date]
-✅ 4 Jahreszeiten: Frühling, Sommer, Herbst, Winter
+"Three exam skills, three challenges. Do them NOW:
 
-Your homework: Write today's date AND your birthday in German — both as numbers (TT.MM.JJJJ) AND as words ('Am [ordinal] [Monat]').
+**📝 Schreiben:** Fill in your Geburtsdatum on this mock form → __.__.____
+⏸️ Write it!
 
-This completes Module 3! You now know numbers, time, AND dates. That's a LOT of the exam covered.
+**👂 Hören:** 'Der Termin ist am fünfzehnten April um vierzehn Uhr.'
+⏸️ What date and time? → 15th April, 2 PM!
+
+**🗣️ Sprechen:** Answer both:
+⏸️ 'Welcher Tag ist heute?' → 'Heute ist ___, der ___ ___.'
+⏸️ 'Wann haben Sie Geburtstag?' → 'Am ___ ___.'
+
+*Ee moonnu question-um answer cheyyaan pattiyenkil — dates nammude aanu!*"
+
+🎬 [Energy: exam simulation tension, then release]
+
+---
+
+## Section 9: Recap & Homework (9:30–10:00)
+### Visual: [Summary card — compact, visual]
+### Narration:
+
+"### ⚡ Final Active Recall:
+⏸️ Day that means 'mid-week' → ? → Mittwoch!
+⏸️ Month with an Umlaut → ? → März!
+⏸️ German date separator → ? → Dots!
+⏸️ 'On the 1st of January' → ? → 'Am ersten Januar.'
+⏸️ Ordinal for 3rd → ? → dritten!
+⏸️ 'When's your birthday?' in German → ? → 'Wann hast du Geburtstag?'
+
+All six? Module 3 complete. Numbers ✅ Time ✅ Dates ✅
+
+📝 **Homework:** Write today's date AND your birthday — both as numbers (TT.MM.JJJJ) AND as words ('Am [ordinal] [Monat]'). Say them aloud 3 times.
 
 Tschüss und bis zum nächsten Mal!"
 
 ---
 
-## Production Notes
+## Script Quality Checklist
 
-### Visual Requirements:
-- Calendar visuals for days and months
-- Date format comparison slide (German vs American vs Indian)
-- Ordinal numbers table (color-coded irregulars in red)
-- Seasons wheel with weather icons
-- Form mock-up showing Geburtsdatum field
-
-### Audio Requirements:
-- Every day of the week spoken clearly with slight pause between
-- All 12 months spoken with natural German pronunciation
-- Ordinal numbers for dates 1st–31st (at least the common ones)
-- Birthday sentence at slow → normal speed
-
-### Exercise Integration:
-- Dictation: Hear a date → write in TT.MM.JJJJ format
-- Free-text: Write 3 dates (birthday, today, a holiday)
-- Speaking: Answer "Wann hast du Geburtstag?"
-- Form-filling: Practice Geburtsdatum on a mock form
-
-### Cross-References:
-- Module 3 Lesson 3-3 (Telling Time) — combines with dates for full scheduling
-- Module 14 Lesson 14-1 (Form Filling) — Geburtsdatum field
-- Module 18 Lesson 18-1 (Schreiben Teil 1) — date format on exam forms
-
-### Checklist:
-- [x] Teaching goal clear (dates for forms + conversations)
-- [x] A1 exam sections mapped (Schreiben, Hören, Sprechen)
-- [x] Malayalam bridges included
-- [x] All 7 days with memory hooks
-- [x] All 12 months with tricky ones highlighted
-- [x] German date format TT.MM.JJJJ explained
-- [x] Ordinal numbers with irregulars (dritten, siebten, achten)
-- [x] Birthday question-answer drilled
+- [x] Hook under 40s with concrete stakes (Anmeldung form freeze)
+- [x] Teach→drill→apply per block (days, months, format, ordinals, birthday, seasons)
+- [x] Active recall checkpoints (4 — after days, after format, after birthday, final)
+- [x] Energy cues every section
+- [x] Malayalam bridges as structural parallels (Indian date = same order, Kerala seasons comparison)
+- [x] ~15% word count reduction from v1.0
+- [x] Specific practice pauses with prompts + reveals (18+)
+- [x] No table dumps — vocab introduced one at a time or in small focused groups
+- [x] Three irregular ordinals highlighted clearly (dritten, siebten, achten)
+- [x] Birthday exchange drilled as exam-ready dialogue
+- [x] Exam tips for Schreiben + Hören + Sprechen
 - [x] Seasons with cultural comparison
-- [x] Pause markers for student practice
-- [x] Cross-references to Modules 14 and 18
+- [x] Homework with dual format practice
+- [x] Duration estimate: ~10:00 (9 sections)
+
+## v2.0 Revision Notes
+- Replaced Section 2 table dump with one-at-a-time reveal + memory hooks
+- Shortened months section — greyed out easy ones, focused on 4 tricky ones
+- Added active recall after each major block
+- Added energy cues (🎬) every section
+- Compressed seasons section (removed lengthy descriptions)
+- Added full exam practice section combining all 3 skills
+- Tighter hook (30s vs 45s) with concrete scenario (Anmeldung form)
+- Final active recall drill with 6 items before homework
+- Removed redundant production notes section (covered by checklist)
+- ~15% word count reduction
+
+---
+
+## Vocabulary Summary (for SRS/exercise integration)
+
+| German | English | Category |
+|--------|---------|----------|
+| Montag–Sonntag | Monday–Sunday | Days |
+| das Wochenende | weekend | Days |
+| Januar–Dezember | January–December | Months |
+| der Frühling | spring | Season |
+| der Sommer | summer | Season |
+| der Herbst | autumn | Season |
+| der Winter | winter | Season |
+| der Geburtstag | birthday | Dates |
+| das Geburtsdatum | date of birth | Dates |
+| das Datum | date | Dates |
+
+### Key Patterns
+- **Am Montag / Am Wochenende** — on Monday / on the weekend
+- **Im Januar / Im Sommer** — in January / in summer
+- **Am [ordinal] [Monat]** — on the [date]
+- **Mein Geburtstag ist am...** — My birthday is on...
+- **TT.MM.JJJJ** — German date format (day.month.year)
