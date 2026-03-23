@@ -1060,22 +1060,22 @@ Train learners directly for productive exam success: form-filling, short message
 | 4 | 3 (v4-1-1, **v4-2-1** ✨, v4-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
 | 5 | 4 (v5-1-1, v5-2-1, v5-3-1, v5-4-1) | 5 | v5-1-2 supplementary remains |
 | 6 | 3 (v6-1-1, v6-2-1, v6-3-1) | 4 | Only v6-1-2 (Kerala Food) remains |
-| 7 | 1 (**v7-1-1** ✨) | 3 | v7-2-1, v7-3-1 remain |
-| 8 | 3 (**v8-1-1** ✨, **v8-2-1** ✨, v8-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
-| 9 | 3 (v9-1-1, **v9-2-1** ✨, **v9-3-1** ✨) | 3 | ✅ COMPLETE — all lessons fully scripted |
+| 7 | 3 (v7-1-1, **v7-2-1** 🌟, **v7-3-1** 🌟) | 3 | ✅ COMPLETE — all lessons fully scripted |
+| 8 | 3 (v8-1-1, v8-2-1, v8-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
+| 9 | 3 (v9-1-1, v9-2-1, v9-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
 | 10 | 3 (v10-1-1, v10-2-1, v10-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
-| 11 | 2 (**v11-1-1** ✨, v11-3-1) | 3 | v11-2-1 (Workplace Vocabulary) remains |
-| 12 | 2 (v12-4-1, v12-4-2) | 5 | v12-1-1, v12-2-1, v12-3-1 remain |
+| 11 | 3 (v11-1-1, **v11-2-1** 🌟, v11-3-1) | 3 | ✅ COMPLETE — all lessons fully scripted |
+| 12 | 5 (**v12-1-1** 🌟, **v12-2-1** 🌟, **v12-3-1** 🌟, v12-4-1, v12-4-2) | 5 | ✅ COMPLETE — all lessons fully scripted |
 | 13 | 4 (v13-1-1, v13-2-1, v13-3-1, v13-4-1) | 4 | ✅ COMPLETE — all lessons fully scripted |
-| 14 | 1 (v14-1-1) | 3 | v14-1-2, v14-2-1 remain |
+| 14 | 3 (v14-1-1, **v14-1-2** 🌟, **v14-2-1** 🌟) | 3 | ✅ COMPLETE — all lessons fully scripted |
 | 15 | 0 | ~5 | All 📐 ARCH only (Wave 5, low priority) |
 | 16 | 0 | ~5 | All 📐 ARCH only (Wave 5, low priority) |
 | 17 | 3 (v17-1-1, v17-2-1, v17-3-1) | 3 | ✅ COMPLETE — all strategy lessons scripted |
-| 18 | 4 (v18-1-1, v18-2-1, v18-3-1, v18-4-1) | 5 | v18-5-1 (Mock Exam Tips) remains |
+| 18 | 5 (v18-1-1, v18-2-1, v18-3-1, v18-4-1, **v18-5-1** 🌟) | 5 | ✅ COMPLETE — all exam lessons scripted |
 
-✨ = drafted in this run (2026-03-23 08:51 UTC)
+🌟 = drafted in run 4 (2026-03-23 09:16 UTC)
 
-**Summary:** 46/~90 scripts drafted. **7 modules fully complete (3, 4, 8, 9, 10, 13, 17).** Modules 2, 5, 6, 11, 18 are 1 script away from complete. The biggest remaining gaps are Modules 7 (2 scripts), 12 (3 scripts), 14 (2 scripts), 15 (all 5), and 16 (all 5).
+**Summary:** 54/~90 scripts drafted. **13 modules fully complete (3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18).** Modules 2, 5, 6 are 1 script away from complete. Only Modules 1 (2-3 scripts), 15 (all 5), and 16 (all 5) have significant gaps remaining.
 
 ---
 

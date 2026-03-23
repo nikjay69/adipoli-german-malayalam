@@ -1,5 +1,86 @@
 # Overnight Run Log — 2026-03-23
 
+## Run 4 — 09:16 UTC
+**Session:** Cron overnight module plan + script work (fourth run)
+**Status:** ✅ 8 new scripts written, committed + pushed, total now 54
+
+### 8 New Full Scripts Written (46 → 54):
+
+1. **v11-2-1 — At the Office / University (Im Büro und an der Uni)** — Module 11
+   - Covers: office vocabulary (Schreibtisch, Drucker, Besprechung, Kollege), campus vocabulary (Vorlesung, Hörsaal, Mensa, Bibliothek, Prüfung), useful phrases for both settings, formal email template with Sehr geehrte/r + Mit freundlichen Grüßen
+   - **Completes Module 11** ✅
+   - File: `docs/scripts/v11-2-1_FULL_SCRIPT.md`
+
+2. **v18-5-1 — Sprechen Teil 3: Bitten formulieren** — Module 18
+   - Covers: 3 request patterns (Können Sie/Könnten Sie/Darf ich), 3 response patterns (Ja natürlich/Ja gern/Tut mir leid), 6 full exam-style scenario drills, politeness sandwich (Entschuldigung + bitte + Danke), common mistakes
+   - **Completes Module 18** ✅ — all 5 exam lessons scripted
+   - File: `docs/scripts/v18-5-1_FULL_SCRIPT.md`
+
+3. **v7-2-1 — Prices & Currency (Euro und Cent)** — Module 7
+   - Covers: Euro/Cent basics, price pronunciation patterns, 3 ways to ask prices, -zehn vs -zig listening trap (critical for Hören), bakery + market dialogues, payment methods, Bargeld culture
+   - File: `docs/scripts/v7-2-1_FULL_SCRIPT.md`
+
+4. **v7-3-1 — Colors, Clothing & Shopping Dialogues** — Module 7
+   - Covers: 11 colors, 10 clothing items with articles, color+clothing combinations, full clothing store dialogue (trying on, sizes, fitting room), shopping survival phrases, basic comparatives (-er + als)
+   - **Completes Module 7** ✅
+   - File: `docs/scripts/v7-3-1_FULL_SCRIPT.md`
+
+5. **v12-1-1 — Hobbies: Was machst du gern?** — Module 12
+   - Covers: gern/nicht gern placement, 10 hobby verbs, sports vocabulary (including cricket!), asking/answering about hobbies, 4-sentence hobby profile model, gern → lieber → am liebsten, frequency expressions
+   - File: `docs/scripts/v12-1-1_FULL_SCRIPT.md`
+
+6. **v12-2-1 — Weather & Seasons** — Module 12
+   - Covers: 4 seasons (all DER, use IM), 11 weather terms, Wie ist das Wetter?, Es ist/Es regnet/Es schneit patterns, weather by season, small talk patterns, weather + activity planning
+   - File: `docs/scripts/v12-2-1_FULL_SCRIPT.md`
+
+7. **v12-3-1 — Making Plans with Friends** — Module 12
+   - Covers: 3 suggestion patterns (Hast du Lust/Wollen wir/Wie wäre es mit), acceptance phrases (Ich bin dabei!), polite decline formula (sorry + reason + alternative), time/place negotiation, Schreiben Teil 2 invitation writing, full plan-making dialogue
+   - **Completes Module 12** ✅
+   - File: `docs/scripts/v12-3-1_FULL_SCRIPT.md`
+
+8. **v14-1-2 — Common Form Fields: Every Line Explained** — Module 14
+   - Covers: 16 essential form fields (Vorname, Nachname, Geburtsdatum, Geburtsort, Staatsangehörigkeit, Geschlecht, Straße, PLZ, Ort, Telefonnummer, E-Mail, Familienstand, Beruf, Muttersprache, Unterschrift, Datum), date format DD.MM.YYYY, address format, common Malayali mistakes, Goethe-style practice form
+   - File: `docs/scripts/v14-1-2_FULL_SCRIPT.md`
+
+9. **v14-2-1 — At the Office: Ausländerbehörde & Rathaus** — Module 14
+   - Covers: 7 key German offices, appointment system (Termin), Bürgeramt visit dialogue, essential documents vocabulary, 3 rescue phrases (wiederholen/langsamer/aufschreiben), reading official letters (Frist/deadline awareness)
+   - **Completes Module 14** ✅
+   - File: `docs/scripts/v14-2-1_FULL_SCRIPT.md`
+
+### Module Completion Milestones (this run):
+- **Module 7 (Shopping):** ALL 3 core lessons scripted ✅
+- **Module 11 (Work & Study):** ALL 3 core lessons scripted ✅
+- **Module 12 (Hobbies):** ALL 5 lessons scripted ✅
+- **Module 14 (Formal Life):** ALL 3 core lessons scripted ✅
+- **Module 18 (Exam Schreiben & Sprechen):** ALL 5 lessons scripted ✅
+
+### Fully Complete Modules (13 total): 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18
+(Up from 7 at start of this run)
+
+### Near-Complete Modules (1 script away):
+- Module 2 (v2-1-2 supplementary remains)
+- Module 5 (v5-1-2 supplementary remains)
+- Module 6 (v6-1-2 Kerala Food remains)
+
+### Remaining Gaps:
+- Module 1: 2-3 scripts (motivation videos v1-1-1, v1-1-2, pronunciation v1-2-2)
+- Module 15: All ~5 (Culture & Integration — low priority for exam)
+- Module 16: All ~5 (A1+ Bonus Bridge — optional/low priority)
+
+### Git Status:
+- Previous run's 6 scripts committed + pushed at start of this run ✅
+- This run's 8 scripts to be committed next
+
+### Next Script Priorities (for future runs):
+1. Module 2: v2-1-2 (supplementary self-intro) → completes Module 2
+2. Module 5: v5-1-2 (supplementary verb practice) → completes Module 5
+3. Module 6: v6-1-2 (Kerala Food comparison) → completes Module 6
+4. Module 1: v1-1-1, v1-1-2 (motivation), v1-2-2 (pronunciation supplement)
+5. Module 15: cultural content (lower priority)
+6. Module 16: A1+ bonus (lowest priority)
+
+---
+
 ## Run 3 — 08:51 UTC
 **Session:** Cron overnight module plan + script work (third run)
 **Status:** ✅ 6 new scripts written, tracker + blueprints updated, total now 46
