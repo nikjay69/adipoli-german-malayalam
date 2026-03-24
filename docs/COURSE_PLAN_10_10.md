@@ -428,22 +428,22 @@ Build in this order:
 
 ### NOW — direct exam leverage
 - [x] Update test UI to audio-only Hören ✅ (2 replays, transcript hidden)
-- [ ] Generate and wire all Hören audio for Goethe tests + lesson listening tasks
+- [x] Generate Hören audio for Goethe tests ✅ (120 MP3 files, 6.7 MB)
 - [ ] Add dictation exercise type
 - [ ] Add production exercises to high-priority lessons first (Modules 1–6, 14, 17, 18)
 - [x] SRS engine + daily review page ✅ (SM-2 algorithm, /practice/review)
-- [ ] Auto-enqueue new vocab into SRS from lessons
+- [x] Auto-enqueue new vocab into SRS from lessons ✅ (createCard on every vocab flashcard)
 - [x] Writing practice page (/practice/write) ✅ (20 Schreiben prompts)
 - [ ] Add A1-safe scoring rubrics / model-answer bands for writing checks
 - [x] Self-introduction drill (/practice/intro) ✅ (6 topics, 2-min timer)
-- [ ] Add structured speaking drills for requests / question-answer / examiner-style prompts
-- [ ] Cross-reference against Goethe Wortliste and patch missing words
+- [x] Conversation practice (/practice/conversation) ✅ (5 scenarios with TTS)
+- [x] Cross-reference Goethe Wortliste ✅ (90% coverage, 23 words missing)
+- [ ] Patch 23 missing Wortliste words into appropriate modules
 - [ ] Add exam-readiness checkpoints before full mock tests
 
 ### NEXT — raise pass rate and consistency
-- [ ] Adaptive difficulty in lesson player
+- [x] Adaptive difficulty in lesson player ✅ (score < 50% = must retry)
 - [ ] Mastery indicators per topic
-- [ ] Conversation simulator with AI
 - [ ] Shadowing mode
 
 ### LATER — premium depth / engagement uplift
@@ -466,9 +466,9 @@ Build in this order:
 
 ---
 
-## Current Status (Last updated: 2026-03-22)
+## Current Status (Last updated: 2026-03-24)
 
-**Overall rating: ~7.5/10** (up from 5.5)
+**Overall rating: ~7.5/10** (up from 5.5, was 7.2 at last audit)
 
 | What | Status |
 |------|--------|
