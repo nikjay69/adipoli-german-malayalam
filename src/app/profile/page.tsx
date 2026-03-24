@@ -225,7 +225,7 @@ export default function ProfilePage() {
   };
 
   const planColors = {
-    free: { bg: 'bg-gray-500/20', text: 'text-gray-300', border: 'border-gray-500/30' },
+    free: { bg: 'bg-[var(--foreground)]/10', text: 'text-[var(--foreground)]/60', border: 'border-[var(--foreground)]/20' },
     pro: { bg: 'bg-[#d4a520]/20', text: 'text-[#d4a520]', border: 'border-[#d4a520]/30' },
     premium: { bg: 'bg-purple-500/20', text: 'text-purple-300', border: 'border-purple-500/30' },
   };
@@ -252,7 +252,7 @@ export default function ProfilePage() {
               {user.name}
             </h1>
 
-            <div className="flex items-center justify-center gap-1 text-sm text-gray-500 dark:text-gray-400 mb-3">
+            <div className="flex items-center justify-center gap-1 text-sm text-[var(--foreground)]/50 mb-3">
               <Mail className="w-3.5 h-3.5" />
               {user.email}
             </div>
@@ -304,8 +304,8 @@ export default function ProfilePage() {
             {/* Level Progress */}
             <div className="max-w-xs mx-auto">
               <div className="flex items-center justify-between text-sm mb-1">
-                <span className="text-gray-500 dark:text-gray-400">Progress to Level {userProgress.level + 1}</span>
-                <span className="font-medium text-gray-700 dark:text-gray-300">
+                <span className="text-[var(--foreground)]/50">Progress to Level {userProgress.level + 1}</span>
+                <span className="font-medium text-[var(--foreground)]/80">
                   {userProgress.xp - currentLevelXP} / {nextLevelXP - currentLevelXP} XP
                 </span>
               </div>
@@ -323,7 +323,7 @@ export default function ProfilePage() {
               German Learner
             </h1>
 
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">
+            <p className="text-sm text-[var(--foreground)]/50 mb-5">
               {FEATURE_FLAGS.canCreateAccounts
                 ? 'Create an account to save progress across devices, unlock premium features, and track your journey.'
                 : 'You are using guest mode right now. Progress stays on this device until real accounts go live.'}
@@ -351,15 +351,15 @@ export default function ProfilePage() {
             )}
 
             {/* Level badge still shows for non-logged users */}
-            <div className="mt-5 pt-5 border-t border-gray-200 dark:border-gray-700">
+            <div className="mt-5 pt-5 border-t border-[var(--card-border)]">
               <Badge variant="secondary" size="md" className="mb-4">
                 Level {userProgress.level}: {LEVEL_NAMES[userProgress.level - 1]}
               </Badge>
 
               <div className="max-w-xs mx-auto">
                 <div className="flex items-center justify-between text-sm mb-1">
-                  <span className="text-gray-500 dark:text-gray-400">Progress to Level {userProgress.level + 1}</span>
-                  <span className="font-medium text-gray-700 dark:text-gray-300">
+                  <span className="text-[var(--foreground)]/50">Progress to Level {userProgress.level + 1}</span>
+                  <span className="font-medium text-[var(--foreground)]/80">
                     {userProgress.xp - currentLevelXP} / {nextLevelXP - currentLevelXP} XP
                   </span>
                 </div>
@@ -372,35 +372,35 @@ export default function ProfilePage() {
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
           <Card className="text-center">
-            <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <div className="w-10 h-10 bg-amber-500/15 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Star className="w-5 h-5 text-amber-500" />
             </div>
             <div className="text-2xl font-bold text-[var(--foreground)]">{userProgress.xp}</div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">Total XP</div>
+            <div className="text-xs text-[var(--foreground)]/50">Total XP</div>
           </Card>
 
           <Card className="text-center">
-            <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <div className="w-10 h-10 bg-orange-500/15 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Flame className="w-5 h-5 text-orange-500" />
             </div>
             <div className="text-2xl font-bold text-[var(--foreground)]">{userProgress.streak}</div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">Day Streak</div>
+            <div className="text-xs text-[var(--foreground)]/50">Day Streak</div>
           </Card>
 
           <Card className="text-center">
-            <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center mx-auto mb-2">
-              <BookOpen className="w-5 h-5 text-emerald-500" />
+            <div className="w-10 h-10 bg-[#27ae60]/15 rounded-lg flex items-center justify-center mx-auto mb-2">
+              <BookOpen className="w-5 h-5 text-[#27ae60]" />
             </div>
             <div className="text-2xl font-bold text-[var(--foreground)]">{completedLessons}</div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">Lessons Done</div>
+            <div className="text-xs text-[var(--foreground)]/50">Lessons Done</div>
           </Card>
 
           <Card className="text-center">
-            <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <div className="w-10 h-10 bg-blue-500/15 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Target className="w-5 h-5 text-blue-500" />
             </div>
             <div className="text-2xl font-bold text-[var(--foreground)]">{userProgress.learnedVocabulary.length}</div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">Words Learned</div>
+            <div className="text-xs text-[var(--foreground)]/50">Words Learned</div>
           </Card>
         </div>
 
@@ -409,42 +409,42 @@ export default function ProfilePage() {
           <h2 className="font-semibold text-[var(--foreground)] mb-4">Activity Stats</h2>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-purple-500/15 rounded-lg flex items-center justify-center">
                 <Gamepad2 className="w-5 h-5 text-purple-500" />
               </div>
               <div>
                 <div className="font-bold text-[var(--foreground)]">{userProgress.gamesPlayed}</div>
-                <div className="text-xs text-gray-500 dark:text-gray-400">Games Played</div>
+                <div className="text-xs text-[var(--foreground)]/50">Games Played</div>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-cyan-500/15 rounded-lg flex items-center justify-center">
                 <Clock className="w-5 h-5 text-cyan-500" />
               </div>
               <div>
                 <div className="font-bold text-[var(--foreground)]">{formatTime(userProgress.totalTimeSpent)}</div>
-                <div className="text-xs text-gray-500 dark:text-gray-400">Time Spent</div>
+                <div className="text-xs text-[var(--foreground)]/50">Time Spent</div>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-pink-100 dark:bg-pink-900/30 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-pink-500/15 rounded-lg flex items-center justify-center">
                 <Award className="w-5 h-5 text-pink-500" />
               </div>
               <div>
                 <div className="font-bold text-[var(--foreground)]">{userProgress.quizzesTaken}</div>
-                <div className="text-xs text-gray-500 dark:text-gray-400">Quizzes Taken</div>
+                <div className="text-xs text-[var(--foreground)]/50">Quizzes Taken</div>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-green-500/15 rounded-lg flex items-center justify-center">
                 <Trophy className="w-5 h-5 text-green-500" />
               </div>
               <div>
                 <div className="font-bold text-[var(--foreground)]">{userProgress.achievements.length}</div>
-                <div className="text-xs text-gray-500 dark:text-gray-400">Achievements</div>
+                <div className="text-xs text-[var(--foreground)]/50">Achievements</div>
               </div>
             </div>
           </div>
@@ -454,7 +454,7 @@ export default function ProfilePage() {
         <Card className="mb-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-semibold text-[var(--foreground)]">Achievements</h2>
-            <span className="text-sm text-gray-500 dark:text-gray-400">
+            <span className="text-sm text-[var(--foreground)]/50">
               {userProgress.achievements.length}/{ACHIEVEMENTS_DATA.length}
             </span>
           </div>
@@ -468,13 +468,13 @@ export default function ProfilePage() {
                   whileHover={{ scale: 1.05 }}
                   className={`text-center p-3 rounded-xl transition-all ${
                     isUnlocked
-                      ? 'bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-900/30 dark:to-yellow-900/30 border-2 border-amber-200 dark:border-amber-700'
-                      : 'bg-gray-100 dark:bg-gray-800 opacity-50'
+                      ? 'bg-gradient-to-br from-amber-900/30 to-yellow-900/30 border-2 border-amber-700/50'
+                      : 'bg-[var(--foreground)]/8 opacity-50'
                   }`}
                 >
                   <div className={`text-3xl mb-1${isUnlocked ? ' animate-unlock' : ''}`}>{isUnlocked ? achievement.icon : '🔒'}</div>
                   <h3 className={`text-xs font-medium ${
-                    isUnlocked ? 'text-[var(--foreground)]' : 'text-gray-500'
+                    isUnlocked ? 'text-[var(--foreground)]' : 'text-[var(--foreground)]/50'
                   }`}>
                     {achievement.name}
                   </h3>
@@ -498,10 +498,10 @@ export default function ProfilePage() {
               return (
                 <div key={module.id}>
                   <div className="flex items-center justify-between text-sm mb-1">
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <span className="text-[var(--foreground)]/80">
                       {module.icon} Module {module.id}
                     </span>
-                    <span className="text-gray-500 dark:text-gray-400">
+                    <span className="text-[var(--foreground)]/50">
                       {completedModuleLessons}/{moduleLessons}
                     </span>
                   </div>
@@ -527,12 +527,12 @@ export default function ProfilePage() {
                   userProgress.level === index + 1
                     ? 'bg-[#e94560]/10 border-2 border-[#e94560]'
                     : userProgress.level > index + 1
-                    ? 'bg-emerald-50 dark:bg-emerald-900/20'
-                    : 'bg-gray-50 dark:bg-gray-800'
+                    ? 'bg-[#27ae60]/10'
+                    : 'bg-[var(--foreground)]/5'
                 }`}
               >
                 <span className="font-medium text-[var(--foreground)]">Lv.{index + 1}</span>
-                <span className="text-gray-500 dark:text-gray-400 text-xs block">{name}</span>
+                <span className="text-[var(--foreground)]/50 text-xs block">{name}</span>
               </div>
             ))}
           </div>
@@ -561,13 +561,13 @@ export default function ProfilePage() {
                 <span className={`text-2xl font-bold${readiness.score >= 60 ? ' animate-shimmer' : ''}`} style={{ color: readiness.color }}>{readiness.score}%</span>
               </div>
               <ProgressBar progress={readiness.score} color={readiness.score >= 60 ? 'success' : 'warning'} size="md" />
-              <p className="text-xs text-gray-500 mt-1 mb-4">{readiness.label} · 60% needed to pass Goethe A1</p>
+              <p className="text-xs text-[var(--foreground)]/50 mt-1 mb-4">{readiness.label} · 60% needed to pass Goethe A1</p>
 
               {/* Course vs Supplementary */}
               <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center">
+                <div className="bg-[var(--foreground)]/5 rounded-lg p-3 text-center">
                   <div className="text-xl font-bold" style={{ color: readiness.color }}>{readiness.courseScore}/80</div>
-                  <div className="text-[10px] text-gray-400 mt-0.5">Course Path</div>
+                  <div className="text-[10px] text-[var(--foreground)]/40 mt-0.5">Course Path</div>
                   <div className="flex justify-center gap-1 mt-2">
                     {[
                       { label: 'Lessons', value: readiness.breakdown.lessons, max: 35 },
@@ -575,15 +575,15 @@ export default function ProfilePage() {
                       { label: 'Accuracy', value: readiness.breakdown.accuracy, max: 25 },
                     ].map(item => (
                       <div key={item.label} className="text-center">
-                        <div className="text-xs font-bold text-gray-700 dark:text-gray-300">{item.value}</div>
-                        <div className="text-[8px] text-gray-400">/{item.max}</div>
+                        <div className="text-xs font-bold text-[var(--foreground)]/80">{item.value}</div>
+                        <div className="text-[8px] text-[var(--foreground)]/40">/{item.max}</div>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center">
+                <div className="bg-[var(--foreground)]/5 rounded-lg p-3 text-center">
                   <div className="text-xl font-bold" style={{ color: readiness.color, opacity: 0.7 }}>{readiness.supplementaryScore}/20</div>
-                  <div className="text-[10px] text-gray-400 mt-0.5">Extras</div>
+                  <div className="text-[10px] text-[var(--foreground)]/40 mt-0.5">Extras</div>
                   <div className="flex justify-center gap-1 mt-2">
                     {[
                       { label: 'Games', value: readiness.breakdown.games, max: 8 },
@@ -591,8 +591,8 @@ export default function ProfilePage() {
                       { label: 'Streak', value: readiness.breakdown.streak, max: 5 },
                     ].map(item => (
                       <div key={item.label} className="text-center">
-                        <div className="text-xs font-bold text-gray-700 dark:text-gray-300">{item.value}</div>
-                        <div className="text-[8px] text-gray-400">/{item.max}</div>
+                        <div className="text-xs font-bold text-[var(--foreground)]/80">{item.value}</div>
+                        <div className="text-[8px] text-[var(--foreground)]/40">/{item.max}</div>
                       </div>
                     ))}
                   </div>
@@ -600,11 +600,11 @@ export default function ProfilePage() {
               </div>
 
               {/* Next action + tips */}
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
-                <p className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Next step:</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">{readiness.nextAction}</p>
+              <div className="bg-[var(--foreground)]/5 rounded-lg p-3">
+                <p className="text-xs font-semibold text-[var(--foreground)]/60 mb-1">Next step:</p>
+                <p className="text-xs text-[var(--foreground)]/50 mb-2">{readiness.nextAction}</p>
                 {readiness.tips.length > 0 && readiness.tips.map((tip, i) => (
-                  <p key={i} className="text-[10px] text-gray-400">- {tip}</p>
+                  <p key={i} className="text-[10px] text-[var(--foreground)]/40">- {tip}</p>
                 ))}
               </div>
             </Card>
@@ -618,12 +618,12 @@ export default function ProfilePage() {
               <Fingerprint className="w-4 h-4 text-[#d4a520]" />
               Biometric Login
             </h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+            <p className="text-sm text-[var(--foreground)]/50 mb-4">
               Use your fingerprint or Face ID to log in without a password.
             </p>
 
             {!webAuthnSupported ? (
-              <div className="flex items-center gap-2 bg-gray-500/10 border border-gray-500/20 text-gray-400 px-4 py-3 rounded-xl text-sm">
+              <div className="flex items-center gap-2 bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 text-[var(--foreground)]/40 px-4 py-3 rounded-xl text-sm">
                 <AlertTriangle className="w-4 h-4 flex-shrink-0" />
                 Not supported on this browser
               </div>
@@ -632,7 +632,7 @@ export default function ProfilePage() {
                 <motion.div
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-4 py-3 rounded-xl text-sm"
+                  className="flex items-center gap-2 bg-[#27ae60]/10 border border-[#27ae60]/20 text-[#27ae60] px-4 py-3 rounded-xl text-sm"
                 >
                   <Check className="w-4 h-4 flex-shrink-0" />
                   Passkey registered ({passkeyCount} {passkeyCount === 1 ? 'device' : 'devices'})
@@ -663,7 +663,7 @@ export default function ProfilePage() {
                       <motion.button
                         onClick={() => setShowRemovePasskey(false)}
                         whileTap={{ scale: 0.97 }}
-                        className="px-4 py-2 bg-gray-500/10 text-gray-400 rounded-lg text-sm font-medium hover:bg-gray-500/20 transition-colors"
+                        className="px-4 py-2 bg-[var(--foreground)]/5 text-[var(--foreground)]/40 rounded-lg text-sm font-medium hover:bg-[var(--foreground)]/10 transition-colors"
                       >
                         Cancel
                       </motion.button>
@@ -715,7 +715,7 @@ export default function ProfilePage() {
               <motion.div
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-3 flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-4 py-2.5 rounded-xl text-sm"
+                className="mt-3 flex items-center gap-2 bg-[#27ae60]/10 border border-[#27ae60]/20 text-[#27ae60] px-4 py-2.5 rounded-xl text-sm"
               >
                 <Check className="w-4 h-4 flex-shrink-0" />
                 {passkeySuccess}
@@ -730,7 +730,7 @@ export default function ProfilePage() {
             <FileText className="w-4 h-4 text-[#d4a520]" />
             Lesson Scripts
           </h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+          <p className="text-sm text-[var(--foreground)]/50 mb-3">
             Download complete lesson scripts as PDF for offline study.
           </p>
           <a href="/scripts" className="inline-flex items-center gap-2 bg-[#d4a520]/10 text-[#d4a520] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#d4a520]/20 transition-colors">
@@ -741,10 +741,10 @@ export default function ProfilePage() {
 
         {/* Logout Button - only for logged in users */}
         {isLoggedIn && (
-          <Card className="border-orange-200 dark:border-orange-800">
+          <Card className="border-orange-500/30">
             <h2 className="font-semibold text-[var(--foreground)] mb-2">Account</h2>
             {!showLogoutConfirm ? (
-              <Button variant="ghost" onClick={() => setShowLogoutConfirm(true)} className="text-orange-500 hover:bg-orange-50 dark:hover:bg-orange-900/20">
+              <Button variant="ghost" onClick={() => setShowLogoutConfirm(true)} className="text-orange-500 hover:bg-orange-500/10">
                 <LogOut className="w-4 h-4" />
                 Log Out
               </Button>
@@ -766,14 +766,14 @@ export default function ProfilePage() {
         )}
 
         {/* Reset Progress */}
-        <Card className="border-red-200 dark:border-red-800">
+        <Card className="border-[#c0392b]/30">
           <h2 className="font-semibold text-[var(--foreground)] mb-2">Danger Zone</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+          <p className="text-sm text-[var(--foreground)]/50 mb-4">
             Reset all your progress including XP, completed lessons, and achievements.
           </p>
 
           {!showResetConfirm ? (
-            <Button variant="ghost" onClick={() => setShowResetConfirm(true)} className="text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20">
+            <Button variant="ghost" onClick={() => setShowResetConfirm(true)} className="text-red-500 hover:bg-[#c0392b]/10">
               <RefreshCw className="w-4 h-4" />
               Reset Progress
             </Button>

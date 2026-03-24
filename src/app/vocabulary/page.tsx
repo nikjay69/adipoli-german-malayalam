@@ -111,20 +111,20 @@ export default function VocabularyPage() {
         className="mb-6"
       >
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-blue-500/15 rounded-xl flex items-center justify-center">
             <BookOpen className="w-6 h-6 text-blue-600 dark:text-blue-400" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Vocabulary</h1>
-            <p className="text-gray-500 dark:text-gray-400">Review and learn German words</p>
+            <h1 className="text-2xl font-bold text-[var(--foreground)]">Vocabulary</h1>
+            <p className="text-[var(--foreground)]/50">Review and learn German words</p>
           </div>
         </div>
 
         {/* Progress Bar */}
         <Card className="mb-4">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-gray-500 dark:text-gray-400">Words Learned</span>
-            <span className="font-medium text-gray-700 dark:text-gray-300">
+            <span className="text-sm text-[var(--foreground)]/50">Words Learned</span>
+            <span className="font-medium text-[var(--foreground)]/80">
               {learnedCount}/{totalCount}
             </span>
           </div>
@@ -139,8 +139,8 @@ export default function VocabularyPage() {
               onClick={() => setViewMode('flashcards')}
               className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
                 viewMode === 'flashcards'
-                  ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow'
-                  : 'text-gray-500 dark:text-gray-400'
+                  ? 'bg-white dark:bg-gray-700 text-[var(--foreground)] shadow'
+                  : 'text-[var(--foreground)]/50'
               }`}
             >
               Flashcards
@@ -149,8 +149,8 @@ export default function VocabularyPage() {
               onClick={() => setViewMode('list')}
               className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
                 viewMode === 'list'
-                  ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow'
-                  : 'text-gray-500 dark:text-gray-400'
+                  ? 'bg-white dark:bg-gray-700 text-[var(--foreground)] shadow'
+                  : 'text-[var(--foreground)]/50'
               }`}
             >
               List
@@ -183,7 +183,7 @@ export default function VocabularyPage() {
             placeholder="Search words..."
             value={searchQuery}
             onChange={(e) => { setSearchQuery(e.target.value); setCurrentCardIndex(0); }}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#e94560]"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#e94560]"
           />
         </div>
       </motion.div>
@@ -198,7 +198,7 @@ export default function VocabularyPage() {
           {filteredVocab.length > 0 && currentCard ? (
             <>
               {/* Card Counter */}
-              <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+              <div className="text-sm text-[var(--foreground)]/50 mb-4">
                 {currentCardIndex + 1} of {filteredVocab.length}
               </div>
 
@@ -241,11 +241,11 @@ export default function VocabularyPage() {
                     className="absolute inset-0 bg-white dark:bg-gray-800 rounded-2xl p-6 flex flex-col items-center justify-center backface-hidden shadow-xl"
                     style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                   >
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-2xl font-bold text-[var(--foreground)] mb-2">
                       {currentCard.english}
                     </h3>
                     <p className="text-lg text-[#e94560] mb-4">{currentCard.malayalam}</p>
-                    <div className="text-center text-gray-500 dark:text-gray-400 text-sm">
+                    <div className="text-center text-[var(--foreground)]/50 text-sm">
                       <p className="italic mb-1">"{currentCard.example}"</p>
                       <p>{currentCard.exampleTranslation}</p>
                     </div>
@@ -275,7 +275,7 @@ export default function VocabularyPage() {
             </>
           ) : (
             <Card className="text-center py-12 w-full">
-              <p className="text-gray-500 dark:text-gray-400">No words match your filter</p>
+              <p className="text-[var(--foreground)]/50">No words match your filter</p>
               <Button variant="ghost" onClick={() => { setFilterMode('all'); setSearchQuery(''); }} className="mt-4">
                 Reset Filters
               </Button>
@@ -305,12 +305,12 @@ export default function VocabularyPage() {
                     </button>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="font-semibold text-gray-900 dark:text-white">
+                        <h3 className="font-semibold text-[var(--foreground)]">
                           {word.german}
                         </h3>
                         <span className="text-sm text-gray-400">/{word.pronunciation}/</span>
                       </div>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">{word.english}</p>
+                      <p className="text-sm text-[var(--foreground)]/60">{word.english}</p>
                       <p className="text-sm text-[#e94560]">{word.malayalam}</p>
                     </div>
                     {isLearned ? (
@@ -329,7 +329,7 @@ export default function VocabularyPage() {
             })
           ) : (
             <Card className="text-center py-12">
-              <p className="text-gray-500 dark:text-gray-400">No words match your filter</p>
+              <p className="text-[var(--foreground)]/50">No words match your filter</p>
               <Button variant="ghost" onClick={() => { setFilterMode('all'); setSearchQuery(''); }} className="mt-4">
                 Reset Filters
               </Button>
@@ -345,7 +345,7 @@ export default function VocabularyPage() {
         transition={{ delay: 0.2 }}
         className="mt-8"
       >
-        <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">By Module</h2>
+        <h2 className="text-lg font-bold text-[var(--foreground)] mb-4">By Module</h2>
         <div className="space-y-3">
           {ALL_MODULES.map(module => {
             const moduleVocab = module.lessons.flatMap(l => l.vocabulary);
@@ -363,10 +363,10 @@ export default function VocabularyPage() {
                     {module.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-medium text-gray-900 dark:text-white">
+                    <h3 className="font-medium text-[var(--foreground)]">
                       Module {module.id}: {module.title}
                     </h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                    <p className="text-sm text-[var(--foreground)]/50">
                       {learnedModuleVocab}/{moduleVocab.length} words learned
                     </p>
                   </div>

@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { SRSCard } from './srs';
+import { syncProgressToSupabase } from './progress-sync';
+import { useAuthStore } from './auth-store';
 
 // Types
 export interface VocabularyItem {
@@ -207,6 +209,26 @@ export const useGameStore = create<GameState>()(
             },
           };
         });
+
+        // Sync progress to Supabase (debounced)
+        const state = get();
+        const authUser = useAuthStore.getState().user;
+        if (state.userProgress && authUser?.id) {
+          syncProgressToSupabase(authUser.id, {
+            xp: state.userProgress.xp,
+            level: state.userProgress.level,
+            streak: state.userProgress.streak,
+            completed_lessons: state.userProgress.completedLessons.map(cl => ({
+              lessonId: cl.lessonId,
+              score: cl.score,
+              completedAt: cl.completedAt ? new Date(cl.completedAt).toISOString() : new Date().toISOString(),
+            })),
+            learned_vocabulary: state.userProgress.learnedVocabulary,
+            games_played: state.userProgress.gamesPlayed,
+            quizzes_taken: state.userProgress.quizzesTaken,
+            srs_cards: state.userProgress.srsCards || {},
+          });
+        }
       },
 
       learnVocabulary: (vocabId: string) => {
