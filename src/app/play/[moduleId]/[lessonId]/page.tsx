@@ -10,6 +10,7 @@ import { CharacterGuide } from '@/components/character';
 import { VideoPlayer } from '@/components/media/VideoPlayer';
 import { getRandomMessage } from '@/lib/content/dialogue';
 import { getVideoScript } from '@/lib/content/video-scripts';
+import { createCard } from '@/lib/srs';
 import { useGameStore } from '@/lib/store';
 import { getLessonById, getModuleById, ALL_MODULES } from '@/lib/content/modules';
 import { isLessonUnlocked as checkLessonUnlocked } from '@/lib/curriculum';
@@ -24,7 +25,7 @@ type Step =
 export default function PlayLesson({ params }: { params: Promise<{ moduleId: string; lessonId: string }> }) {
   const { moduleId, lessonId } = use(params);
   const router = useRouter();
-  const { addXP, completeLesson, learnVocabulary, saveCheckpoint, clearCheckpoint, userProgress } = useGameStore();
+  const { addXP, completeLesson, learnVocabulary, addSRSCard, saveCheckpoint, clearCheckpoint, userProgress } = useGameStore();
 
   const [mounted, setMounted] = useState(false);
   const [isBlocked, setIsBlocked] = useState(false);
@@ -183,6 +184,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       else setStep({ type: 'exercise', index: 0 });
     } else if (step.type === 'vocab') {
       learnVocabulary(lesson.vocabulary[step.index].id);
+      addSRSCard(createCard(lesson.vocabulary[step.index].id));
       const xp = 5;
       addXP(xp);
       setXpAmount(xp);
@@ -199,8 +201,20 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     }
   };
 
+  const [lessonFailed, setLessonFailed] = useState(false);
+
   const finishLesson = () => {
     const score = lesson.exercises.length > 0 ? Math.round((correctCount / lesson.exercises.length) * 100) : 100;
+
+    if (score < 50 && lesson.exercises.length > 0) {
+      // Failed — don't complete, show retry
+      setLessonFailed(true);
+      clearCheckpoint();
+      setStep({ type: 'complete' });
+      return;
+    }
+
+    // Passed — complete the lesson
     completeLesson(lesson.id, score);
     clearCheckpoint();
     addXP(lesson.xpReward);
@@ -281,6 +295,44 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
         xpEarned={lesson.xpReward}
         onContinue={() => { setShowCelebration(false); router.push('/'); }}
       />
+
+      {/* Failed lesson — retry required */}
+      {lessonFailed && step.type === 'complete' && !showCelebration && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-6 max-w-sm w-full text-center"
+          >
+            <p className="text-5xl mb-3">😤</p>
+            <h2 className="text-xl font-bold text-[#c0392b] mb-2">Not enough to pass</h2>
+            <p className="text-sm text-[var(--foreground)]/50 mb-1">
+              You scored {lesson.exercises.length > 0 ? Math.round((correctCount / lesson.exercises.length) * 100) : 0}% — need 50% to pass.
+            </p>
+            <p className="text-xs text-[var(--foreground)]/30 mb-4">
+              Review the material and try again!
+            </p>
+            <div className="flex flex-col gap-2">
+              <GameButton
+                onClick={() => {
+                  setLessonFailed(false);
+                  setStep({ type: 'intro' });
+                  setCorrectCount(0);
+                  setHearts(3);
+                  setSelectedAnswer(null);
+                  setAnswerState('default');
+                }}
+                variant="primary"
+              >
+                Try Again
+              </GameButton>
+              <GameButton onClick={() => router.push('/learn')} variant="ghost">
+                Back to Lessons
+              </GameButton>
+            </div>
+          </motion.div>
+        </div>
+      )}
 
       {/* Header */}
       <div className="px-4 pt-4 pb-2">
