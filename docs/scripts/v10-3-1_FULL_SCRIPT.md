@@ -3,8 +3,8 @@
 > **Module:** 10 | **Lesson:** 10-3 | **Duration:** 10:00 target
 > **Teaching Goal:** Complete doctor visit dialogue — appointment to prescription, with two symptom patterns and cultural context
 > **A1 Exam Link:** Hören (medical dialogues), Schreiben (cancelling due to illness), Sprechen (describing health)
-> **Status:** REVISED — v2.0
-> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass) | **v2.1:** 2026-03-23 (Section 4 split into 4+4b — 9-symptom block broken into Schmerzen compounds vs other symptoms, interleaving drill added)
 
 ---
 
@@ -94,15 +94,46 @@ Brust is feminine — die Brust → **meine** Brust. The others are masculine �
 
 ---
 
-## Section 4: Pattern 2 — Ich habe [Symptom] (3:30–5:00)
+## Section 4: Pattern 2 — Ich habe [Schmerzen] (3:30–4:15)
 
-### Visual: [SLIDE: Symptom icons with German labels, compound word breakdown shown]
-### Narration: [ENERGY: building, practical]
-"### Teach: Pattern 2 — 'Ich habe...' (I have...)
+### Visual: [SLIDE: Compound word breakdown: Kopf + Schmerzen → Kopfschmerzen, with body part highlighted]
+### Narration: [ENERGY: building, structured]
+"Pattern 2 — 'Ich habe...' But first, the Schmerzen compound trick:
+
+**Body part + Schmerzen = pain!** German compound words are logical:
 
 - **Ich habe Kopfschmerzen.** — headache *(Kopf + Schmerzen = head + pains)*
 - **Ich habe Bauchschmerzen.** — stomach pain
 - **Ich habe Halsschmerzen.** — sore throat
+
+*Kopf+Schmerzen, Bauch+Schmerzen, Hals+Schmerzen — body part + 'Schmerzen.' That's your formula!*
+
+### ⚡ Drill:
+
+⏸️ Head hurts — which Schmerzen compound? → 'Kopfschmerzen!'
+⏸️ Stomach hurts → ? → 'Bauchschmerzen!'
+⏸️ Sore throat → ? → 'Halsschmerzen!'
+
+### Practice Pause: ⏸️ (5 seconds)
+
+Now let's combine BOTH patterns. Same stomach pain, two ways:
+- Pattern 1: **Mein Bauch tut weh.**
+- Pattern 2: **Ich habe Bauchschmerzen.**
+
+⏸️ Say both for 'head hurts.' Go!
+
+### Practice Pause: ⏸️ (3 seconds)
+
+'Mein Kopf tut weh.' AND 'Ich habe Kopfschmerzen.' Both work. Two tools, same job."
+
+---
+
+## Section 4b: More Symptoms + 'Mir ist...' (4:15–5:00)
+
+### Visual: [SLIDE: Symptom icons — Fieber thermometer, cough icon, dizzy spiral]
+### Narration: [ENERGY: expanding toolkit]
+"Four more symptoms that don't follow the Schmerzen compound:
+
 - **Ich habe Fieber.** — fever
 - **Ich habe Husten.** — cough
 - **Ich habe Schnupfen.** — runny nose
@@ -112,13 +143,16 @@ And two with 'Mir ist...' (Dativ — 'to me it is...'):
 - **Mir ist schwindelig.** — I feel dizzy.
 - **Mir ist übel.** — I feel nauseous.
 
-*Notice: Kopf+Schmerzen, Bauch+Schmerzen, Hals+Schmerzen — body part + 'Schmerzen.' German compound words are logical!*
+### ⚡ Interleaving Drill — mix ALL symptom types:
 
-### Drill:
-
-⏸️ Describe 3 symptoms using BOTH patterns. Mix it up.
+⏸️ Headache → ? → 'Ich habe Kopfschmerzen.'
+⏸️ Fever → ? → 'Ich habe Fieber.'
+⏸️ Dizzy → ? → 'Mir ist schwindelig.'
+⏸️ Back hurts → ? → 'Mein Rücken tut weh.' (Pattern 1 — remember?)
 
 ### Practice Pause: ⏸️ (5 seconds)
+
+*Moonu patterns: [part] tut weh, Ich habe [symptom], Mir ist [feeling]. Moonu tools — you're covered!*
 
 ### Teach: 'Seit wann?' — Since When?
 
@@ -307,7 +341,7 @@ For Malayali nurses going to Germany — this vocabulary is your daily work. The
 - [x] Teach → Drill → Apply cycle per section (patterns taught, immediately drilled)
 - [x] Active recall before summary (2 patterns, seit, Krankschreibung)
 - [x] Malayalam bridges as structural parallels, not dictionary entries
-- [x] Practice pauses with specific prompts (10 pauses)
+- [x] Practice pauses with specific prompts (14+ pauses)
 - [x] Energy/tone cues at every section transition
 - [x] Golden Dialogue presented as culmination (not front-loaded)
 - [x] Two symptom patterns clearly separated and drilled individually

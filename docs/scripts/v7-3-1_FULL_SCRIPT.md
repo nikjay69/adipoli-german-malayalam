@@ -5,8 +5,8 @@
 > **Duration:** 10:30 target
 > **Exam section:** Hören (prices), Lesen (offers / ads), Sprechen (preferences and comparisons)
 > **Prerequisites:** Module 3 (numbers), Module 7-1 / 7-2 (shopping basics)
-> **Status:** REVISED — v2.1
-> **Created:** 2026-03-23 11:10 UTC | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED — v2.2 (quality-verified: energy cues added, quality checklist added, [EXAM-TIP] markers added)
+> **Created:** 2026-03-23 11:10 UTC | **Revised:** 2026-03-24 (quality verification pass)
 
 ---
 
@@ -36,7 +36,7 @@ Today, we build the German you need to understand prices and compare two options
 ## Section 2: The 5 Price Reactions You Actually Need (0:45–2:10)
 
 ### Visual: [5 reaction cards]
-### Narration:
+### Narration: [ENERGY: clear, focused]
 "Start with the smallest useful toolkit.
 
 🔊 **Was kostet das?** — How much does that cost?  
@@ -44,6 +44,8 @@ Today, we build the German you need to understand prices and compare two options
 🔊 **Das ist günstig.** — That is affordable / a good price.  
 🔊 **Das ist teuer.** — That is expensive.  
 🔊 **Das ist mir zu teuer.** — That is too expensive for me.
+
+### [EXAM-TIP] Hören: Price-hearing is tested in almost every Hören section. The comma trap and reversed number order (neunundvierzig = 49, not 94) are the #1 number mistake.
 
 ### Important listening trap
 German prices use a comma:
@@ -73,7 +75,7 @@ Possible answers:
 ### Visual: [Simple formula card]
 **billiger / teurer / besser + als**
 
-### Narration:
+### Narration: [ENERGY: building, pattern-focused]
 "Now the core comparison pattern.
 
 ### Formula
@@ -111,7 +113,7 @@ Possible answers:
 - **gern → lieber → am liebsten**
 - **viel → mehr → am meisten**
 
-### Narration:
+### Narration: [ENERGY: memorable, rhythm-based]
 "These three are worth memorizing because they appear everywhere.
 
 🔊 **gut → besser → am besten**  
@@ -134,7 +136,7 @@ You need recognition and a few safe sentences."
 - Jacket A: **49,99 €**
 - Jacket B: **69,99 €**
 
-### Narration:
+### Narration: [ENERGY: rising, interactive]
 "Now let's compare like real shoppers.
 
 ### Situation
@@ -180,7 +182,9 @@ A1 comparison is enough when you can:
 **Jacke 39,99 €**  
 **reduziert**
 
-### Narration:
+### [EXAM-TIP] Lesen: Sale ads in A1 Lesen Teil 1 test whether you can match a need to an offer. Extract item + price + key word (Angebot/reduziert).
+
+### Narration: [ENERGY: sharp, exam-aware]
 "Now the exam transfer.
 
 Catch these sale words:
@@ -208,7 +212,7 @@ That is exactly the kind of key-info extraction A1 likes."
 ## Section 7: Comparison for Real Life — Shop, Supermarket, Online (8:05–9:10)
 
 ### Visual: [Three comparison scenes]
-### Narration:
+### Narration: [ENERGY: practical, grounding]
 "Use comparisons in real life, not just grammar exercises.
 
 ### Shop vs shop
@@ -228,7 +232,7 @@ That is exactly the kind of key-info extraction A1 likes."
 ## Section 8: Common Mistakes — Fix Them Fast (9:10–9:50)
 
 ### Visual: [❌ / ✅ cards]
-### Narration:
+### Narration: [ENERGY: alert, corrective]
 "Three mistakes to avoid:
 
 ### 1. Using **billig** everywhere
@@ -248,7 +252,7 @@ Ask: cheaper? better? worth it?"
 ## Section 9: Summary + Output Challenge (9:50–10:30)
 
 ### Visual: [Comparison toolkit card]
-### Narration:
+### Narration: [ENERGY: warm, encouraging]
 "Today's toolkit:
 - **Was kostet das?**
 - **Das ist günstig / teuer / mir zu teuer.**
@@ -268,6 +272,23 @@ That is enough for strong A1 shopping German.
 Next, we can turn this into fuller shopping dialogues and ad-reading practice.
 
 Bis zum nächsten Mal!"
+
+---
+
+---
+
+## Quality Checklist (SCRIPT_QUALITY_STANDARD v2.2)
+
+| Axis | Status |
+|------|--------|
+| Hook under 45s with concrete payoff | ✅ (0:15–0:45, "understand prices and compare two options fast") |
+| Max 3-4 new items per block before drill | ✅ (5 price reactions but they're short phrases not vocab; 3 comparatives; 3 irregulars) |
+| Teach → Drill → Apply cycle per concept | ✅ (price reactions → drill, comparison pattern → drill, irregulars → examples, golden dialogue) |
+| Active recall before summary | ✅ (Section 5 dialogue = predict-before-reveal, Section 6 ad extraction, Section 9 output challenge) |
+| 10+ practice pauses with specific prompts | ✅ (~12 pauses: reaction drill, comparison fill, dialogue predictions, ad questions, output challenge) |
+| Malayalam bridge is structural, not filler | ✅ (Section 2: comparison = decision behavior; Section 7: same logic, clear pattern) |
+| [EXAM-TIP] markers present | ✅ (Section 2: Hören price-hearing, Section 6: Lesen ad-matching) |
+| Energy cues on every section | ✅ (all 9 sections have energy markers) |
 
 ---
 

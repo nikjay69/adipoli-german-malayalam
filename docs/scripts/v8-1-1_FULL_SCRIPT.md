@@ -5,8 +5,8 @@
 > **Duration:** ~10 minutes
 > **Exam relevance:** Lesen (apartment ads), Sprechen (describing your home), Schreiben (messages about housing)
 > **Prerequisites:** Module 4 (articles, possessives), Module 6 (Akkusativ basics)
-> **Status:** REVISED — v2.0
-> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass — Section 5 split into 5+5b, checklist + EXAM-TIP markers added)
 
 ---
 
@@ -23,6 +23,10 @@
 | Home description built incrementally | Students build 1 sentence at a time |
 | Energy cues added | Every section has `[ENERGY:]` markers |
 | ~12% word count reduction | Cut redundant compound word explanations, merged similar sections |
+| v2.0 → v2.1: Section 5 split | Kitchen (4 items) + Bathroom (3 items) were in one 7-item block with drill only at end → split into Section 5 (Küche, 4 items + sentence drill) and Section 5b (Bad, 3 items + interleaving quick-fire mixing ALL rooms) |
+| v2.1: Quality checklist added | Standard quality checklist appended |
+| v2.1: EXAM-TIP markers added | 2 focused markers for Lesen (apartment ads) and Sprechen (home description) |
+| v2.1: Spül vs Wasch disambiguation | Added mini-drill distinguishing Spülmaschine (dishes) from Waschmaschine (clothes) |
 
 ---
 
@@ -132,9 +136,9 @@ Schrank appears EVERYWHERE: **Kleiderschrank** (clothes cupboard), **Kühlschran
 
 ---
 
-## Section 5: Furniture — Küche + Bad (5:15–6:45)
+## Section 5: Furniture — Küche (5:15–6:00)
 
-### Visual: [DIAGRAM: Kitchen + bathroom with labels]
+### Visual: [DIAGRAM: Kitchen with labelled furniture]
 ### Narration: [ENERGY: brisk, practical]
 
 "**Küche:**
@@ -145,17 +149,28 @@ Schrank appears EVERYWHERE: **Kleiderschrank** (clothes cupboard), **Kühlschran
 
 *German compound words: once you know the parts, you guess the whole thing!*
 
-🔊 **Repeat:** 'der Kühlschrank... der Herd... die Spülmaschine...'
+🔊 **Repeat:** 'der Kühlschrank... der Herd... die Spülmaschine... die Waschmaschine...'
 
-**Badezimmer:**
+⏸️ **Drill: 'In der Küche gibt es...' — name 2 items from memory!**
+
+Now — which machine RINSES dishes, and which WASHES clothes? **Spül**maschine = dishes (spülen = rinse). **Wasch**maschine = clothes (waschen = wash). The prefix tells you!
+
+---
+
+## Section 5b: Furniture — Bad (6:00–6:45)
+
+### Visual: [DIAGRAM: Bathroom with labelled furniture]
+### Narration: [ENERGY: brisk, wrapping up furniture]
+
+"**Badezimmer:**
 - **die Dusche** — shower.
 - **die Badewanne** — bathtub. Bade + Wanne (tub).
 - **die Toilette** — toilet. Same word!
 
 🔊 **Repeat:** 'die Dusche... die Badewanne... die Toilette...'
 
-⏸️ **Quick fire — article + word:**
-Fridge? → ... **der Kühlschrank!** Shower? → ... **die Dusche!** Stove? → ... **der Herd!** Bed? → ... **das Bett!**"
+⏸️ **Quick fire — article + word, mixing ALL rooms:**
+Fridge? → ... **der Kühlschrank!** Shower? → ... **die Dusche!** Stove? → ... **der Herd!** Bed? → ... **das Bett!** Dishwasher? → ... **die Spülmaschine!**"
 
 ---
 
@@ -207,9 +222,9 @@ Fridge? → ... **der Kühlschrank!** Shower? → ... **die Dusche!** Stove? →
 
 🎯 **Exam connections:**
 
-**Lesen:** Apartment ads are CLASSIC. '2-Zi.-Whg., 55qm, Küche, Bad, Balkon, 650€ warm.' — You now understand every word!
+[EXAM-TIP] **Lesen:** Apartment ads are CLASSIC. '2-Zi.-Whg., 55qm, Küche, Bad, Balkon, 650€ warm.' — You now understand every word!
 
-**Sprechen:** 'Beschreiben Sie Ihre Wohnung.' Use: Meine Wohnung hat... / Es gibt... / Im ___ gibt es...
+[EXAM-TIP] **Sprechen:** 'Beschreiben Sie Ihre Wohnung.' Use: Meine Wohnung hat... / Es gibt... / Im ___ gibt es...
 
 ### Visual: [SLIDE: 3 Takeaways]
 🎯 **3 Things to Remember:**
@@ -221,6 +236,28 @@ Next: describing WHERE things are — 'Wo ist das Buch? Auf dem Tisch!' Preposit
 
 ## Post-roll
 [Next lesson teaser: v8-2-1 — Describing Your Home]
+
+---
+
+## Script Quality Checklist
+
+- [x] Hook under 60 seconds — floor plan challenge at 0:10
+- [x] No monologue block exceeds 90 seconds
+- [x] Teach → Drill → Apply cycle in each section (3+3+2 rooms, 3+3 then 4+3 furniture with drills between)
+- [x] Duration realistic (~10:00 at 150 wpm + pauses)
+- [x] Energy/tone cues at every section transition
+- [x] Practice pauses have specific prompts with reveals (10+ pauses)
+- [x] Active recall before final summary (speed round image-flash drill)
+- [x] Minimum 6 practice pauses per 10 minutes (10+ total)
+- [x] No passive summary lists — compound pattern taught as tool, not dumped
+- [x] Malayalam bridges are structural parallels (compound word logic, Kerala housing comparison)
+- [x] One clear teaching goal per section
+- [x] Exam connection explicit (Lesen apartment ads, Sprechen home description)
+- [x] No A2+ content
+- [x] German grammatically verified
+- [x] Visual cues tagged with [SLIDE:], [DIAGRAM:]
+- [x] Exam tips limited to 2 [EXAM-TIP] markers
+- [x] Outro bridges to v8-2-1 (Describing Your Home — prepositions)
 
 ---
 

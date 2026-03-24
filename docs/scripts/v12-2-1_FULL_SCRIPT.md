@@ -1,15 +1,15 @@
-# v12-2-1 — Weather & Seasons (FULL SCRIPT)
+# v12-2-1 - Weather & Seasons (FULL SCRIPT)
 
-> **Module:** 12 | **Lesson:** 12-2 | **Duration:** 10:30 target
-> **Teaching Goal:** Give learners the exact weather language they need for daily small talk, listening tasks, and plan-making — without overloading them
+> **Module:** 12 | **Lesson:** 12-2 | **Duration:** 11:00 target
+> **Teaching Goal:** Give learners the exact weather language they need for daily small talk, listening tasks, and plan-making - without overloading them
 > **A1 Exam Link:** Hören (weather announcements), Lesen (weather notices), Sprechen (small talk + weekend plans), Schreiben (messages affected by weather)
 > **Prerequisites:** Module 3 (numbers/time basics), Module 12-1 (activities/hobbies)
-> **Status:** REVISED — v2.0
-> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED - v2.2
+> **Created:** 2026-03-23 | **Revised:** 2026-03-24 (quality cron - energy cues, vocab split, active recall, exam tips, checklist)
 
 ---
 
-## Pre-roll (0:00–0:15)
+## Pre-roll (0:00-0:15)
 
 ### Visual: [Course intro animation / Adipoli German branding]
 ### Narration:
@@ -17,44 +17,44 @@
 
 ---
 
-## Section 1: Hook — The Most Useful Small Talk in Germany (0:15–0:45)
+## Section 1: Hook - The Most Useful Small Talk in Germany (0:15-0:45)
 
 ### Visual: [Montage: bus stop, office kitchen, elevator, train platform. Same opener in each: people commenting on weather]
-### Narration: [ENERGY: direct, playful]
+### 🎬 [Energy: direct, playful - "this is surprisingly useful"]
 "In Germany, weather is not just weather. It is conversation fuel.
 
-Bus stop-il, office-il, train-il, neighbour-ne kandappol — Germans start with weather ALL the time.
+Bus stop-il, office-il, train-il, neighbour-ne kandappol - Germans start with weather ALL the time.
 
 So this lesson is not about becoming a meteorologist. It's about sounding natural in daily life. Four seasons, the key weather sentences, and the exact lines you can use today."
 
 ---
 
-## Section 2: The 4 Seasons — Learn Once, Use Everywhere (0:45–2:00)
+## Section 2: The 4 Seasons - Learn Once, Use Everywhere (0:45-2:00)
 
 ### Visual: [Season wheel. Each season appears with one photo, one icon, one sample sentence]
-### Narration:
-"First — the four seasons.
+### 🎬 [Energy: calm, foundational - "easy win, quick pattern"]
+"First - the four seasons.
 
-🔊 **der Frühling** — spring  
-🔊 **der Sommer** — summer  
-🔊 **der Herbst** — autumn  
-🔊 **der Winter** — winter
+🔊 **der Frühling** - spring
+🔊 **der Sommer** - summer
+🔊 **der Herbst** - autumn
+🔊 **der Winter** - winter
 
 Good news: all four take **der**. Nice and clean.
 
 Now the pattern you actually need:
 
-🔊 **im Frühling**  
-🔊 **im Sommer**  
-🔊 **im Herbst**  
+🔊 **im Frühling**
+🔊 **im Sommer**
+🔊 **im Herbst**
 🔊 **im Winter**
 
-Think of it like this: *summer-il, winter-il* — German says **im Sommer, im Winter**.
+Think of it like this: *summer-il, winter-il* - German says **im Sommer, im Winter**.
 
 ### Drill
-🔊 "Im Sommer."  
+🔊 "Im Sommer."
 ⏸️ [pause for repeat]
-🔊 "Im Winter."  
+🔊 "Im Winter."
 ⏸️ [pause for repeat]
 
 ### Micro-apply
@@ -64,63 +64,92 @@ Think of it like this: *summer-il, winter-il* — German says **im Sommer, im Wi
 
 ---
 
-## Section 3: The 5 Weather Sentences You Need Most (2:00–4:10)
+## Section 3: Pattern 1 - "Es ist..." Weather Adjectives (2:00-3:00)
 
-### Visual: [Five large weather cards only — sunny, cold, rainy, snowing, windy. Avoid giant vocab table]
+### Visual: [Four large weather cards: sunny, cold, warm, windy]
+### 🎬 [Energy: focused, pattern-teaching - "one structure, four words"]
 ### Narration:
-"Don't memorize twenty random weather words. Learn the five patterns that cover most daily conversations.
+"Don't memorize twenty random weather words. Learn the two patterns that cover most daily conversations.
 
-### Pattern 1 — adjective with **es ist**
-🔊 **Es ist sonnig.** — It's sunny.  
-🔊 **Es ist kalt.** — It's cold.  
-🔊 **Es ist warm.** — It's warm.  
-🔊 **Es ist windig.** — It's windy.
+**Pattern 1: Es ist + adjective**
 
-### Pattern 2 — weather verb with **es**
-🔊 **Es regnet.** — It's raining.  
-🔊 **Es schneit.** — It's snowing.
+🔊 **Es ist sonnig.** - It's sunny.
+🔊 **Es ist kalt.** - It's cold.
 
-That's the core split:
-- **Es ist + adjective**
-- **Es + verb**
+⏸️ **DRILL:** Say both:
+- Es ist sonnig.
+- Es ist kalt.
+⏸️ [pause for repeat]
 
-### The question
-🔊 **Wie ist das Wetter?** — How is the weather?  
-🔊 **Wie ist das Wetter heute?** — How is the weather today?
+Two more:
+🔊 **Es ist warm.** - It's warm.
+🔊 **Es ist windig.** - It's windy.
 
-### Drill — answer fast
-I ask, you answer.
+⏸️ **4-ITEM RECALL:** I say English, you say German:
+- Sunny? → ⏸️ **Es ist sonnig.**
+- Windy? → ⏸️ **Es ist windig.**
+- Cold? → ⏸️ **Es ist kalt.**
+- Warm? → ⏸️ **Es ist warm.**
 
-🔊 "Wie ist das Wetter heute?"  
-⏸️ [learner answers]
-
-Possible answers:
-🔊 "Es ist sonnig."  
-🔊 "Es ist kalt."  
-🔊 "Es regnet."
-
-*Mazha undenkil ‘es regnet’. Cold undenkil ‘es ist kalt’. Structure mathram clear aayal mathi.*"
+*Structure simple aanu: Es ist + adjective. Malayalam-il 'choodaanu', 'thannuppaanu' ennokke parayunnathupole - just one word changes.*"
 
 ---
 
-## Section 4: Temperature Without Panic (4:10–5:10)
+## Section 3b: Pattern 2 - Weather Verbs + The Question (3:00-4:10)
+
+### Visual: [Two verb cards: rain cloud, snowflake. Then question card.]
+### 🎬 [Energy: building - "second pattern, then combine"]
+### Narration:
+"**Pattern 2: Es + weather verb** (no adjective needed)
+
+🔊 **Es regnet.** - It's raining.
+🔊 **Es schneit.** - It's snowing.
+
+⏸️ **DRILL:** Repeat:
+- Es regnet.
+- Es schneit.
+⏸️ [pause for repeat]
+
+So the core split is:
+- **Es ist + adjective** (sonnig, kalt, warm, windig)
+- **Es + verb** (regnet, schneit)
+
+### The question
+🔊 **Wie ist das Wetter?** - How is the weather?
+🔊 **Wie ist das Wetter heute?** - How is the weather today?
+
+### Combined drill - I ask, you answer
+🔊 "Wie ist das Wetter heute?" [imagine: sunny]
+⏸️ → **Es ist sonnig.**
+
+🔊 "Wie ist das Wetter heute?" [imagine: raining]
+⏸️ → **Es regnet.**
+
+🔊 "Wie ist das Wetter heute?" [imagine: cold]
+⏸️ → **Es ist kalt.**
+
+*Mazha undenkil 'es regnet'. Cold undenkil 'es ist kalt'. Which pattern? That's the skill.*"
+
+---
+
+## Section 4: Temperature Without Panic (4:10-5:10)
 
 ### Visual: [Thermometer graphic with 20°, 5°, -3°]
-### Narration:
+### 🎬 [Energy: practical, light - "just a number + Grad"]
 "Now temperature.
 
-🔊 **Es sind zwanzig Grad.** — It is 20 degrees.  
-🔊 **Es sind fünf Grad.** — It is 5 degrees.  
-🔊 **Es sind minus drei Grad.** — It is minus 3 degrees.
+🔊 **Es sind zwanzig Grad.** - It is 20 degrees.
+🔊 **Es sind fünf Grad.** - It is 5 degrees.
+🔊 **Es sind minus drei Grad.** - It is minus 3 degrees.
 
 You do NOT need long weather reports. Just recognize and say the number.
 
 ### Drill
-🔊 "12 degrees?"  
+🔊 "12 degrees?"
 ⏸️ [pause]
 🔊 **Es sind zwölf Grad.**
 
-🔊 "Minus 5?"  
+🔊 "Minus 5?"
 ⏸️ [pause]
 🔊 **Es sind minus fünf Grad.**
 
@@ -128,32 +157,32 @@ You do NOT need long weather reports. Just recognize and say the number.
 
 ---
 
-## Section 5: Seasons + Typical Weather (5:10–6:45)
+## Section 5: Seasons + Typical Weather (5:10-6:45)
 
 ### Visual: [4-box layout: season → likely weather → one activity]
-### Narration:
+### 🎬 [Energy: connecting - "combine what you just learned"]
 "Now combine season and weather.
 
-🔊 **Im Frühling ist es oft mild.**  
+🔊 **Im Frühling ist es oft mild.**
 In spring, it's often mild.
 
-🔊 **Im Sommer ist es heiß.**  
+🔊 **Im Sommer ist es heiß.**
 In summer, it's hot.
 
-🔊 **Im Herbst ist es kühl und windig.**  
+🔊 **Im Herbst ist es kühl und windig.**
 In autumn, it's cool and windy.
 
-🔊 **Im Winter ist es kalt. Es schneit oft.**  
+🔊 **Im Winter ist es kalt. Es schneit oft.**
 In winter, it's cold. It often snows.
 
 ### Active recall
 I'll give the season. You give one weather sentence.
 
-- **Sommer** → ?  
+- **Sommer** → ?
 ⏸️ [pause]
-- **Winter** → ?  
+- **Winter** → ?
 ⏸️ [pause]
-- **Herbst** → ?  
+- **Herbst** → ?
 ⏸️ [pause]
 
 Possible answers:
@@ -161,58 +190,62 @@ Possible answers:
 - **Im Winter ist es kalt.**
 - **Im Herbst ist es windig.**
 
-*Kerala comparison orma vecho: nammal mostly hot/rainy spectrum-il aanu. Germany-il season itself changes your daily life, clothes, travel, mood — ellam.*"
+*Kerala comparison orma vecho: nammal mostly hot/rainy spectrum-il aanu. Germany-il season itself changes your daily life, clothes, travel, mood - ellam.*"
 
 ---
 
-## Section 6: Real German Small Talk — 4 Lines That Make You Sound Natural (6:45–8:15)
+## Section 6: Real German Small Talk - 4 Lines That Make You Sound Natural (6:45-8:15)
 
 ### Visual: [Office kitchen mini-scene, bus stop mini-scene, neighbour hallway mini-scene]
-### Narration:
+### 🎬 [Energy: social, warm - "this is where it gets real"]
+
+> **[EXAM-TIP]:** These small-talk lines appear in Hören (overhearing conversations) and Sprechen Teil 2 (talking about weather/plans). Recognizing them = instant comprehension points.
 "This is where the lesson becomes real life.
 
 Here are four gold lines.
 
-🔊 **Schönes Wetter heute!** — Nice weather today!  
-🔊 **Ganz schön kalt heute.** — Pretty cold today.  
-🔊 **Heute regnet es wieder.** — It's raining again today.  
-🔊 **Morgen soll es regnen.** — It's supposed to rain tomorrow.
+🔊 **Schönes Wetter heute!** - Nice weather today!
+🔊 **Ganz schön kalt heute.** - Pretty cold today.
+🔊 **Heute regnet es wieder.** - It's raining again today.
+🔊 **Morgen soll es regnen.** - It's supposed to rain tomorrow.
 
 And three easy responses:
 
-🔊 **Ja, stimmt.** — Yes, true.  
-🔊 **Ja, wirklich.** — Yes, really.  
-🔊 **Ich brauche eine Jacke.** — I need a jacket.
+🔊 **Ja, stimmt.** - Yes, true.
+🔊 **Ja, wirklich.** - Yes, really.
+🔊 **Ich brauche eine Jacke.** - I need a jacket.
 
 ### Mini-dialogue 1
-🔊 A: "Schönes Wetter heute!"  
+🔊 A: "Schönes Wetter heute!"
 🔊 B: "Ja, stimmt."
 
 ### Mini-dialogue 2
-🔊 A: "Ganz schön kalt heute."  
+🔊 A: "Ganz schön kalt heute."
 🔊 B: "Ja, ich brauche eine Jacke."
 
 This is enough to survive a lot of daily German.
 
-*Ithu deep conversation alla. But ithu social glue aanu. Silence break cheyyaan, connection undaakkaan, awkwardness kurakkaan — weather small talk perfect.*"
+*Ithu deep conversation alla. But ithu social glue aanu. Silence break cheyyaan, connection undaakkaan, awkwardness kurakkaan - weather small talk perfect.*"
 
 ---
 
-## Section 7: Weather + Plans — The Exam-Useful Part (8:15–9:35)
+## Section 7: Weather + Plans - The Exam-Useful Part (8:15-9:35)
 
 ### Visual: [Split screen: sunny = park, rainy = book/home, cold = tea/jacket]
-### Narration:
+### 🎬 [Energy: practical payoff - "this is the A1 connection"]
+
+> **[EXAM-TIP]:** In Schreiben Teil 2, weather is often the reason for changing/making plans. "Es regnet → Ich bleibe zu Hause" is a safe, complete exam sentence.
 "Now the most useful connection: weather changes plans.
 
 At A1, keep it SIMPLE.
 
-🔊 **Es ist sonnig. Ich gehe spazieren.**  
+🔊 **Es ist sonnig. Ich gehe spazieren.**
 It's sunny. I'm going for a walk.
 
-🔊 **Es regnet. Ich bleibe zu Hause.**  
+🔊 **Es regnet. Ich bleibe zu Hause.**
 It's raining. I'm staying home.
 
-🔊 **Es ist kalt. Ich trinke Tee.**  
+🔊 **Es ist kalt. Ich trinke Tee.**
 It's cold. I'm drinking tea.
 
 Notice: two short sentences. No need to be fancy.
@@ -225,11 +258,11 @@ This helps in:
 ### Practice
 Finish these aloud:
 
-- **Es regnet. Ich...**  
+- **Es regnet. Ich...**
 ⏸️ [pause]
-- **Es ist sonnig. Ich...**  
+- **Es ist sonnig. Ich...**
 ⏸️ [pause]
-- **Im Winter ist es kalt. Ich...**  
+- **Im Winter ist es kalt. Ich...**
 ⏸️ [pause]
 
 Good A1 answers:
@@ -239,31 +272,65 @@ Good A1 answers:
 
 ---
 
-## Section 8: Listening & Exam Drill (9:35–10:10)
+## Section 8: Active Recall - Test Yourself (9:35-10:00)
+
+### Visual: [Quiz card format - question → pause → answer]
+### 🎬 [Energy: testing mode - "prove you learned it"]
+### Narration:
+"Before we finish, test yourself.
+
+**Round 1 - Pattern check:**
+How do you say 'It's cold' in German?
+⏸️ [pause]
+→ **Es ist kalt.** (Es ist + adjective)
+
+**Round 2 - Pattern check:**
+How do you say 'It's raining'?
+⏸️ [pause]
+→ **Es regnet.** (Es + verb - no 'ist'!)
+
+**Round 3 - Season + weather:**
+Give me one sentence about winter.
+⏸️ [pause]
+→ **Im Winter ist es kalt.** or **Im Winter schneit es oft.**
+
+**Round 4 - Small talk:**
+Your colleague says 'Schönes Wetter heute!' - what do you say back?
+⏸️ [pause]
+→ **Ja, stimmt.** or **Ja, wirklich.**
+
+**Round 5 - Plans:**
+It's raining. What do you do? Say it in German.
+⏸️ [pause]
+→ **Es regnet. Ich bleibe zu Hause.**"
+
+---
+
+## Section 9: Listening & Exam Drill (10:00-10:30)
 
 ### Visual: [Exam-style audio icon + 3 answer cards]
-### Narration:
+### 🎬 [Energy: exam simulation - "catch it fast"]
 "Quick exam drill. Listen and choose the meaning.
 
-🔊 **Im Winter ist es kalt und es schneit oft.**  
+🔊 **Im Winter ist es kalt und es schneit oft.**
 What did you hear?
 
-A: In summer it is hot.  
-B: In winter it is cold and it often snows.  
+A: In summer it is hot.
+B: In winter it is cold and it often snows.
 C: In autumn it is windy.
 
 ⏸️ [pause]
 
 Correct answer: **B**.
 
-That's exactly why weather matters for A1 listening — the vocabulary is simple, but you must catch it fast."
+That's exactly why weather matters for A1 listening - the vocabulary is simple, but you must catch it fast."
 
 ---
 
-## Section 9: Summary & Challenge (10:10–10:30)
+## Section 10: Summary & Challenge (10:30–11:00)
 
 ### Visual: [Tight summary card — 4 seasons, 2 core patterns, 4 small-talk lines]
-### Narration:
+### 🎬 [Energy: wrap-up, encouraging]
 "Today's win:
 - 4 seasons: **Frühling, Sommer, Herbst, Winter**
 - Core patterns: **Es ist sonnig/kalt** and **Es regnet/schneit**
@@ -272,14 +339,30 @@ That's exactly why weather matters for A1 listening — the vocabulary is simple
 
 Challenge: check the weather for your city right now and say **three German sentences** out loud.
 
-Next: making plans with friends — because weather is only useful if you can actually fix the plan.
+Next: making plans with friends - because weather is only useful if you can actually fix the plan.
 
 Bis zum nächsten Mal! Tschüss!"
 
 ---
 
+---
+
+## Quality Checklist (SCRIPT_QUALITY_STANDARD v2.2)
+
+| Axis | Status |
+|------|--------|
+| 1. Hook ≤ 40s with concrete payoff | ✅ — social survival + exam payoff in 30s |
+| 2. Teach → Drill → Apply per block | ✅ — Sections 2, 3, 3b, 4, 5 all have drill after teach |
+| 3. Max 3-4 new items per block | ✅ — Section 3 = 4 adjectives, Section 3b = 2 verbs + question (split from original 6-item dump) |
+| 4. Active recall before summary | ✅ — Section 8 with 5 rounds testing patterns, seasons, small talk, plans |
+| 5. ≥ 8 practice pauses with specific prompts | ✅ — 16+ pauses across all sections |
+| 6. Malayalam bridges = structural, not filler | ✅ — Es ist pattern parallel, Kerala climate contrast, social glue explanation |
+| 7. Energy cues on every section | ✅ — All 10 sections have 🎬 [Energy:] markers |
+| 8. [EXAM-TIP] markers (2-3 max) | ✅ — Hören/Sprechen small talk (Section 6), Schreiben weather+plans (Section 7) |
+
 ## Production Notes
-- **Quality-pass upgrades:** hook tightened to practical payoff; huge vocab table replaced by high-frequency patterns; each block now follows teach → drill → apply; weather-to-plans section simplified to A1-safe two-sentence outputs; stronger Malayalam bridge around social use and climate contrast
+- **v2.2 upgrades (2026-03-24):** Split Section 3 (6 weather items in one block) into Section 3 (4 adjectives with 4-item recall drill) + Section 3b (2 verbs + question + combined drill). Added energy cues to all sections. Added 2 [EXAM-TIP] markers. Added Section 8 Active Recall (5 rounds). Added quality checklist.
+- **v2.0 upgrades (2026-03-23):** hook tightened to practical payoff; huge vocab table replaced by high-frequency patterns; each block now follows teach → drill → apply; weather-to-plans section simplified to A1-safe two-sentence outputs; stronger Malayalam bridge around social use and climate contrast
 - **Audio:** season names, core weather lines, temperature examples, 2 mini-dialogues
 - **Visuals:** avoid dense table slides; use five-card pattern visuals, season wheel, and exam-style listening card
 - **Exam usefulness:** explicit Hören recognition drill + A1-safe speaking/writing outputs

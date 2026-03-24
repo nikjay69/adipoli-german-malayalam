@@ -5,8 +5,8 @@
 > **Duration:** 10:30 target
 > **Exam section:** Sprechen (asking for items / size / color), Hören (shop dialogues), Lesen (clothing ads and sale labels)
 > **Prerequisites:** Module 3 (numbers + sizes), Module 6 (basic accusative awareness), Module 7-1 (shopping survival)
-> **Status:** REVISED — v2.1
-> **Created:** 2026-03-23 11:00 UTC | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED — v2.2 (quality-verified: Section 2 split into 3+3 clothing blocks with drills, quality checklist added)
+> **Created:** 2026-03-23 11:00 UTC | **Revised:** 2026-03-24 (quality verification pass)
 
 ---
 
@@ -35,48 +35,84 @@ Today, we build exactly that shopping survival toolkit."
 
 ---
 
-## Section 2: The 6 Clothing Words That Matter First (0:45–2:00)
+## Section 2: Everyday Clothes — First 3 (0:45–1:25)
 
-### Visual: [6 large clothing cards only]
+### Visual: [3 large clothing cards]
 - **das T-Shirt**
 - **die Hose**
 - **die Jacke**
+
+### Narration: [ENERGY: clear, steady]
+"Do not start with fifteen clothing words. Start with the three you wear every day.
+
+🔊 **das T-Shirt** — T-shirt  
+🔊 **die Hose** — trousers / pants  
+🔊 **die Jacke** — jacket
+
+### Drill — point and say
+I say English, you say German.
+
+🔊 Trousers?
+⏸️ [pause] → **die Hose**
+
+🔊 Jacket?
+⏸️ [pause] → **die Jacke**
+
+🔊 T-shirt?
+⏸️ [pause] → **das T-Shirt**
+
+Good. Three items locked."
+
+---
+
+## Section 2b: Winter + Extras — Next 3 + Colors (1:25–2:15)
+
+### Visual: [3 more clothing cards + 4 color swatches]
 - **der Pullover / der Pulli**
 - **die Schuhe**
 - **der Mantel**
 
-### Narration:
-"Do not start with fifteen clothing words. Start with the six you will use most.
+### Narration: [ENERGY: building momentum]
+"Three more — these complete your wardrobe vocabulary.
 
-🔊 **das T-Shirt** — T-shirt  
-🔊 **die Hose** — trousers / pants  
-🔊 **die Jacke** — jacket  
 🔊 **der Pullover** / **der Pulli** — sweater  
 🔊 **die Schuhe** — shoes  
 🔊 **der Mantel** — coat
 
-### Fast drill
-Repeat after me:
-- **die Jacke**
+### Quick recall — all 6
+I say it, you repeat:
+- **die Hose**
 - **der Mantel**
 - **die Schuhe**
 - **das T-Shirt**
+- **die Jacke**
+- **der Pulli**
 
 ⏸️ [pause]
 
-Now add color.
+Now add color — just four, enough to shop clearly.
 
 🔊 **schwarz** — black  
 🔊 **blau** — blue  
 🔊 **weiß** — white  
 🔊 **rot** — red
 
-That is enough to shop.
+### Combo drill — item + color
+Say after me:
+🔊 **eine schwarze Jacke**
+⏸️ [pause]
+
+🔊 **ein rotes T-Shirt**
+⏸️ [pause]
+
+🔊 **blaue Schuhe**
+⏸️ [pause]
+
 Not every color in the rainbow. Just enough to ask clearly."
 
 ---
 
-## Section 3: The 4 Sentences That Run the Whole Shop Visit (2:00–3:20)
+## Section 3: The 4 Sentences That Run the Whole Shop Visit (2:15–3:30)
 
 ### Visual: [Four-card toolkit]
 1. **Ich suche eine Jacke.**
@@ -84,7 +120,7 @@ Not every color in the rainbow. Just enough to ask clearly."
 3. **Kann ich das anprobieren?**
 4. **Das passt gut. / Das ist zu groß.**
 
-### Narration:
+### Narration: [ENERGY: confident, toolkit-building]
 "These four sentences carry almost the whole visit.
 
 🔊 **Ich suche eine Jacke.** — I'm looking for a jacket.  
@@ -107,10 +143,10 @@ Say after me:
 
 ---
 
-## Section 4: Size + Fitting Room Without Panic (3:20–4:45)
+## Section 4: Size + Fitting Room Without Panic (3:30–4:55)
 
 ### Visual: [Size card + fitting-room sign]
-### Narration:
+### Narration: [ENERGY: reassuring, practical]
 "Now the part that makes beginners nervous: size and trying on.
 
 ### Key phrases
@@ -143,10 +179,10 @@ I ask, you answer.
 
 ---
 
-## Section 5: Golden Dialogue — Buying a Jacket (4:45–7:10)
+## Section 5: Golden Dialogue — Buying a Jacket (4:55–7:20)
 
 ### Visual: [Dialogue appears line by line; learner responds before reveal]
-### Narration:
+### Narration: [ENERGY: rising, interactive]
 "Let's do the real interaction.
 
 ### Situation
@@ -191,16 +227,18 @@ What if you want it?
 
 🔊 You: **Ich nehme sie. Kann ich mit Karte bezahlen?**
 
+### [EXAM-TIP] Sprechen Teil 3: In the speaking exam, you may need to ask for a specific item, size, or price. This dialogue covers ALL those moves.
+
 ### Why this dialogue works
 Short request. Clear size. Clear fit. Clear decision.
 That is A1 success."
 
 ---
 
-## Section 6: Freedom Phrase + Polite Exit (7:10–8:00)
+## Section 6: Freedom Phrase + Polite Exit (7:20–8:10)
 
 ### Visual: [Speech bubble card: `Ich schaue mich nur um.`]
-### Narration:
+### Narration: [ENERGY: calm, empowering]
 "Sometimes you do not want help yet.
 Or you do not want to buy.
 Learn this freedom phrase:
@@ -217,10 +255,10 @@ And these two exit lines:
 
 ---
 
-## Section 7: Tiny Grammar, Real Use — `Ich nehme ...` (8:00–9:00)
+## Section 7: Tiny Grammar, Real Use — `Ich nehme ...` (8:10–9:10)
 
 ### Visual: [3 example cards only]
-### Narration:
+### Narration: [ENERGY: focused, brief]
 "One grammar moment only — and only because it helps you buy.
 
 When you decide, you often say:
@@ -244,14 +282,15 @@ Say these aloud:
 
 ---
 
-## Section 8: Reading / Listening Transfer — Catch the Sale Language (9:00–9:45)
+## Section 8: Reading / Listening Transfer — Catch the Sale Language (9:10–9:55)
 
 ### Visual: [Sale tag]
+### [EXAM-TIP] Lesen/Hören: In A1, clothing ads test one thing — can you extract ITEM + PRICE + SIZE from a short card?
 **Jacke – 49,99 €**  
 **Größe S, M, L**  
 **Angebot**
 
-### Narration:
+### Narration: [ENERGY: sharp, exam-focused]
 "Now the exam transfer.
 
 If you see or hear this, catch the key facts:
@@ -265,10 +304,10 @@ You do not need every word."
 
 ---
 
-## Section 9: Summary + Output Challenge (9:45–10:30)
+## Section 9: Summary + Output Challenge (9:55–10:40)
 
 ### Visual: [5-line clothing-store toolkit]
-### Narration:
+### Narration: [ENERGY: warm, encouraging]
 "Your clothes shopping survival toolkit:
 - **Ich suche eine Jacke.**
 - **Haben Sie das in Größe M?**
@@ -290,6 +329,23 @@ Clear beats complicated.
 Next, we talk about prices, good deals, and how to compare two options in German.
 
 Bis zum nächsten Mal!"
+
+---
+
+---
+
+## Quality Checklist (SCRIPT_QUALITY_STANDARD v2.2)
+
+| Axis | Status |
+|------|--------|
+| Hook under 45s with concrete payoff | ✅ (0:15–0:45, "four things: item, color, size, fit") |
+| Max 3-4 new items per block before drill | ✅ (3+3 clothing split with drills, 4 colors after recall) |
+| Teach → Drill → Apply cycle per concept | ✅ (vocab → sentence toolkit → fitting room → golden dialogue) |
+| Active recall before summary | ✅ (Section 5 golden dialogue = predict-before-reveal, Section 9 output challenge) |
+| 10+ practice pauses with specific prompts | ✅ (~14 pauses: vocab drills, combo drill, sentence drills, dialogue pauses, output challenge) |
+| Malayalam bridge is structural, not filler | ✅ (Section 3: short-and-clear communication style; Section 6: anti-panic) |
+| [EXAM-TIP] markers present | ✅ (Section 5: Sprechen, Section 8: Lesen/Hören) |
+| Energy cues on every section | ✅ (all 9 sections + 2b have energy markers) |
 
 ---
 

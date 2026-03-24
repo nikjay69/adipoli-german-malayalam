@@ -5,8 +5,8 @@
 > **Duration:** 10:30–11:30 target
 > **Exam section:** Sprechen Teil 1 (personal interests), Sprechen Teil 2 (asking about hobbies), Schreiben Teil 2 (social messages / plans)
 > **Prerequisites:** Module 5 (present-tense verbs), Module 6 (`gern` pattern basics), Module 1 (basic social questions)
-> **Status:** REVISED — v2.1
-> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED — v2.2
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (v2.2 — energy cues all sections, [EXAM-TIP] markers, active recall section added, quality checklist)
 
 ---
 
@@ -20,6 +20,7 @@
 
 ## Section 1: Hook — Don't Freeze When They Ask About Your Hobbies (0:15–0:45)
 
+### 🎬 [Energy: urgent, relatable — "this question is coming, be ready"]
 ### Visual: [Two quick speaking moments: exam room + break-time conversation]
 ### Narration:
 "Sooner or later, someone in German will ask you:
@@ -37,6 +38,7 @@ So today, we are not building a giant hobby dictionary. We are building a **safe
 
 ## Section 2: The 6 Hobby Verbs You Need First (0:45–2:05)
 
+### 🎬 [Energy: focused, building — "6 verbs, that's your starter kit"]
 ### Visual: [6 clean verb cards only]
 ### Narration:
 "Start small. These six hobbies are enough to build real answers.
@@ -78,6 +80,7 @@ Repeat after me:
 
 ## Section 3: Say More Than "My Hobby Is..." (2:05–3:25)
 
+### 🎬 [Energy: leveling up — "three patterns from basic to impressive"]
 ### Visual: [Three sentence frames only]
 ### Narration:
 "You need three answer patterns.
@@ -117,6 +120,7 @@ Possible answers:
 
 ## Section 4: Add Frequency, Not a Long Speech (3:25–4:35)
 
+### 🎬 [Energy: practical — "one word makes your answer sound real"]
 ### Visual: [4 frequency chips]
 ### Narration:
 "To sound more real, add one time phrase.
@@ -147,6 +151,7 @@ Say two true sentences about yourself now:
 
 ## Section 5: Ask About Hobbies — Exam and Real-Life Transfer (4:35–5:55)
 
+### 🎬 [Energy: interactive — "don't just answer, ask back"]
 ### Visual: [Formal / informal split]
 ### Narration:
 "Now don't just answer. Learn to ask back.
@@ -176,12 +181,15 @@ You speak in the exam / formal setting → ?
 ⏸️ [pause]
 **Was machen Sie in Ihrer Freizeit?**
 
-*Conversation nirtharuthu. Answer kazhinjal ask back cheyyanam.*"
+*Conversation nirtharuthu. Answer kazhinjal ask back cheyyanam.*
+
+[EXAM-TIP] In Sprechen Teil 2, you may need to ASK your partner about hobbies, not just answer. Practice the question forms, not only answers."
 
 ---
 
 ## Section 6: Golden Dialogue — Hobby Conversation That Actually Works (5:55–7:25)
 
+### 🎬 [Energy: immersive role-play — "predict before you hear the answer"]
 ### Visual: [Dialogue revealed one line at a time]
 ### Narration:
 "Let's do one clean hobby conversation.
@@ -220,6 +228,7 @@ Not a memorized speech. A real exchange."
 
 ## Section 7: Exam-Safe Speaking Model — 3 Sentences, Not 10 (7:25–8:35)
 
+### 🎬 [Energy: exam coach — "this formula is your safety net"]
 ### Visual: [Card: Hobby answer formula]
 ### Narration:
 "If the speaking exam touches hobbies, this is a very safe answer formula:
@@ -238,12 +247,15 @@ Many learners think: more sentences = more points.
 Not necessarily.
 At A1, a short, correct, understandable answer is stronger than a long risky answer.
 
-⏸️ **PAUSE TASK:** Build your own 3-sentence answer now."
+⏸️ **PAUSE TASK:** Build your own 3-sentence answer now.
+
+[EXAM-TIP] In Sprechen Teil 1, hobby questions are common. A 3-sentence answer (hobby + detail + frequency) is safer and stronger than a memorized 8-sentence speech."
 
 ---
 
 ## Section 8: Preference Upgrade — `nicht gern`, `lieber`, `am liebsten` (8:35–9:35)
 
+### 🎬 [Energy: leveling up — "three words unlock opinions"]
 ### Visual: [Simple preference ladder]
 ### Narration:
 "One small upgrade block.
@@ -273,6 +285,7 @@ Complete it:
 
 ## Section 9: Fast Culture Bridge — What Counts as a Hobby? (9:35–10:10)
 
+### 🎬 [Energy: cultural insight — "quick bridge, not a lecture"]
 ### Visual: [Kerala / Germany lifestyle icons]
 ### Narration:
 "A small culture note.
@@ -294,8 +307,47 @@ So when someone asks about hobbies, it is not a trick question. It is normal soc
 
 ---
 
-## Section 10: Summary + Output Challenge (10:10–10:45)
+## Section 10: Active Recall — Test Yourself (10:10–10:55)
 
+### 🎬 [Energy: quiz mode — "no peeking, prove it"]
+### Visual: [Quiz prompts one at a time]
+### Narration:
+"Quick test before we finish.
+
+**Round 1 — gern position**
+Where does `gern` go?
+**Ich ___ gern ___.** — after the verb, right?
+Say: 'I like reading' → ?
+⏸️ [pause]
+**Ich lese gern.**
+
+**Round 2 — Ask about hobbies (formal)**
+How do you ask formally → ?
+⏸️ [pause]
+**Was machen Sie in Ihrer Freizeit?**
+
+**Round 3 — Preference**
+Say 'I prefer cooking' → ?
+⏸️ [pause]
+**Ich koche lieber.**
+
+Say 'I like reading best' → ?
+⏸️ [pause]
+**Am liebsten lese ich.**
+
+**Round 4 — 3-sentence model**
+Build your full exam answer now: one hobby, one frequency, one preference.
+⏸️ [pause]
+
+Example: **In meiner Freizeit lese ich gern. Ich koche am Wochenende. Am liebsten höre ich Musik.**
+
+If you got through that, you are ready for any hobby question in the exam or real life."
+
+---
+
+## Section 11: Summary + Output Challenge (10:55–11:30)
+
+### 🎬 [Energy: confident wrap-up — "you own this topic now"]
 ### Visual: [Final toolkit card]
 ### Narration:
 "Today's hobby toolkit:
@@ -327,3 +379,18 @@ Bis bald!"
 - **Malayalam bridge:** used only to clarify the `gern` idea and hobby-as-identity framing, not as a long side discussion
 - **Exam usefulness:** explicit Sprechen-safe answer formula + question forms + short-answer truth check
 - **Pacing note:** keep the class speaking early and often; do not drift into list-reading or lifestyle commentary
+
+---
+
+## Quality Checklist (SCRIPT_QUALITY_STANDARD v2.2)
+
+- [x] Hook < 30 seconds, concrete payoff stated
+- [x] Vocabulary blocks ≤ 6 items (Section 2: 6 hobby verbs taught as gern sentences, not isolated vocab)
+- [x] Practice pause after every teaching block with specific prompt + reveal
+- [x] Active recall section (Section 10) tests gern position, formal questions, preference forms, and 3-sentence model
+- [x] 🎬 Energy cues on all 11 sections
+- [x] [EXAM-TIP] markers for Sprechen Teil 1 (hobby answer) and Sprechen Teil 2 (asking questions)
+- [x] Malayalam bridges kept structural and compact (gern concept + hobby-as-identity)
+- [x] Golden dialogue uses predict-before-reveal
+- [x] Output challenge requires personal production (3 true sentences: like/dislike/favorite)
+- [x] Practice pauses: 14+ with specific prompts

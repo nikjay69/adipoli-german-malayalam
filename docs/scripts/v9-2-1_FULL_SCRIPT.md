@@ -244,6 +244,24 @@ Next lesson: asking for and understanding directions. 'Wo ist der Bahnhof?' — 
 
 ---
 
+## Script Quality Checklist (v2.0)
+
+- [x] Hook under 60 seconds, states concrete payoff (one sentence = any ticket)
+- [x] No monologue block exceeds 90 seconds
+- [x] Teach → Drill → Apply cycle (magic sentence → counter Q&A → departure board → golden dialogue)
+- [x] Malayalam bridges are practical (KSRTC parallel, discount culture, cash culture, train delay joke)
+- [x] Practice pauses have specific prompts and reveals (~12 pauses)
+- [x] Active recall: speed drill in Section 7 (4 gap-fill items) + predict-before-reveal dialogue
+- [x] All German grammatically verified
+- [x] Visual cues producible and tagged
+- [x] Energy/tone cues at every section
+- [x] Exam tips: Hören extraction (price/time/platform), Sprechen Teil 3 card simulation
+- [x] Duration realistic for ~11:00
+- [x] No A2+ content (nach vs in die flagged as reference, not drilled)
+- [x] Clear next-lesson bridge (directions)
+
+---
+
 ## Exercise Tie-ins
 - **Patterns trained:** Eine Fahrkarte nach ___ bitte, einfach/hin und zurück, Gibt es eine Ermäßigung?, Das macht ___ Euro, Gleis ___, nach vs in die
 - **Exercise types needed:** dialogue ordering, role-play buyer/seller, departure board reading, price/time/platform extraction (Hören drill), nach vs in die fill-blank, Sprechen Teil 3 card simulation

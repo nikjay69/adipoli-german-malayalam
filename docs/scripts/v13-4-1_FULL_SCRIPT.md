@@ -3,8 +3,9 @@
 > **Module:** 13 | **Lesson:** 13-4 | **Duration:** 10:00 target
 > **Teaching Goal:** Combine haben and sein Perfekt with time markers to produce a sustained past-tense narrative about a weekend — the culmination of Module 13
 > **A1 Exam Link:** Schreiben Teil 2 ("Was hast du am Wochenende gemacht?"), Sprechen (describing past experiences)
-> **Status:** REVISED — v2.0
+> **Status:** REVISED — v2.1
 > **Revision:** 2026-03-23 (quality pass — tighter hook, teach→drill→apply cycles, active recall, energy cues, stronger Malayalam bridges, ~15% word count reduction)
+> **Revision v2.1:** 2026-03-23 (quality verification — split 8-marker Section 3 into 3+3b with drills after each group; added sentence-building drill for 'When?' markers and 3-sentence chain drill for sequence markers; practice pauses increased from 12 to 15+)
 
 ---
 
@@ -55,19 +56,32 @@ The pattern:
 
 ---
 
-## Section 3: Time Markers — The Glue (2:00–3:00)
-### Visual: [Two columns: "When?" markers and "Sequence" markers, appearing with icons]
+## Section 3: Time Markers — When? (2:00–2:35)
+### Visual: [Column: "When?" markers appearing with calendar/clock icons]
 ### Narration:
 
-"Good stories need time markers. Two types:
+"Good stories need time markers. First — the 'When?' words:
 
-**When? markers:**
 🔊 **gestern** — yesterday
 🔊 **am Samstag** — on Saturday
 🔊 **am Wochenende** — on the weekend
 🔊 **letzte Woche** — last week
 
-**Sequence markers (to connect sentences):**
+### ⚡ Drill:
+⏸️ Say 'on the weekend' in German → **am Wochenende** ✅
+⏸️ Say 'yesterday' → **gestern** ✅
+⏸️ Build a sentence: 'On Saturday I cooked.' → **Am Samstag habe ich gekocht.** ✅"
+
+🎬 [Energy: brisk, practical]
+
+---
+
+## Section 3b: Sequence Markers — Connecting Sentences (2:35–3:15)
+### Visual: [Column: "Sequence" markers appearing with arrow/chain icons]
+### Narration:
+
+"Now — the glue that turns choppy sentences into a STORY:
+
 🔊 **zuerst** — first
 🔊 **dann** — then
 🔊 **danach** — after that
@@ -76,7 +90,8 @@ The pattern:
 *'Zuerst, dann, danach' — ee moodë words use cheyyumbol, choppy sentences become a STORY.*
 
 ### ⚡ Drill:
-⏸️ Connect: 'First I had breakfast. Then I went shopping.' → 'Zuerst habe ich gefrühstückt. Dann bin ich einkaufen gegangen.'"
+⏸️ Connect: 'First I had breakfast. Then I went shopping.' → 'Zuerst habe ich gefrühstückt. Dann bin ich einkaufen gegangen.' ✅
+⏸️ Add a third: 'After that I cooked.' → 'Danach habe ich gekocht.' ✅"
 
 🎬 [Energy: practical, storytelling mode]
 

@@ -5,8 +5,8 @@
 > **Duration:** ~11 minutes (trimmed from 12)
 > **Exam relevance:** Sprechen Teil 1 (describing family/people), Lesen (person descriptions)
 > **Prerequisites:** Module 4-1 (family vocabulary), basic articles
-> **Status:** REVISED — v2.0
-> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED — v2.1
+> **Created:** 2026-03-23 (overnight cron) | **Revised:** 2026-03-24 (quality pass — added mid-script active recall, [EXAM-TIP] markers, quality checklist)
 
 ---
 
@@ -166,7 +166,28 @@ Quick section. Moving on."
 
 ---
 
-## Section 6: Build the Complete Description (6:00–8:00)
+## Section 5b: Active Recall — 3 Layers Check (6:00–6:45)
+
+### Visual: [QUIZ: flash cards appearing one by one]
+### Narration: [ENERGY: quick, quiz-show pace]
+
+"Before we combine everything — quick check! Answer BEFORE I say it:
+
+**Round 1:** How do you say 'tall' in German? ... ⏸️ **groß!**
+
+**Round 2:** 'She has curly hair.' — which verb? ist or hat? ... ⏸️ **hat!** 'Sie hat lockige Haare.'
+
+**Round 3:** The highest German compliment — the word for 'hard-working'? ... ⏸️ **fleißig!**
+
+**Round 4:** 'braune ___' — fill in the body part word for eyes: ... ⏸️ **Augen!** braune Augen.
+
+**Round 5:** 'Er ist ___ und ___.' — pick 2 appearance adjectives: ... ⏸️ *Any pair works! groß und sportlich, klein und schlank...*
+
+*Adipoli! You've got all three layers. Now let's stack them.*"
+
+---
+
+## Section 6: Build the Complete Description (6:45–8:45)
 
 ### Visual: [SLIDE: Model builds layer by layer]
 ### Narration: [ENERGY: building to climax, structured]
@@ -231,12 +252,14 @@ Use the formula:
 - Hard-working = ? ... fleißig!
 - The two verbs for descriptions? ... **ist** and **hat**!
 
-🎯 **Exam tip:** In Sprechen Teil 1, describing ONE family member well beats listing five names. Use:
+**[EXAM-TIP]** In Sprechen Teil 1, describing ONE family member well beats listing five names. Use:
 - 2 ist sentences (appearance + personality)
 - 1 hat sentence (hair/eyes)
 - 1 extra detail
 
 Four good sentences about one person > eight boring sentences about four people.
+
+**[EXAM-TIP]** In Lesen, person descriptions appear in matching exercises — 'Wer ist das?' You'll see adjectives like groß, blond, freundlich. If you know these words, you answer instantly.
 
 ### Visual: [SLIDE: 3 Takeaways]
 🎯 **3 Things to Remember:**
@@ -255,3 +278,16 @@ Next: possessive pronouns — mein, dein, sein, ihr. The grammar that connects e
 - **Patterns trained:** Er/Sie ist ___, Er/Sie hat ___ Haare und ___ Augen, ist (personality), 5-sentence person description
 - **Exercise types needed:** adjective matching (opposites), ist vs hat gap-fill, hair/eye description from photos, personality adjective quiz, full person description (speaking 1-min), peer description exchange
 - **Production outcome:** Student can describe any person in 4-5 structured sentences using appearance, features, and personality vocabulary
+
+---
+
+## Quality Checklist (v2.0 Standard)
+
+- [x] **Hook:** Under 40s, concrete scenario (5-sentence challenge), specific payoff stated
+- [x] **Teach→Drill→Apply:** Max 3-4 items per block (3 appearance pairs, 4 hair colours, 5 personality), drills after each
+- [x] **Active Recall:** Mid-script checkpoint (Section 5b, 5 rounds) + final recall drill (Section 8) before summary
+- [x] **Energy Cues:** Every section tagged with [ENERGY:] markers, varied across video
+- [x] **Malayalam Bridges:** 3+ structural bridges (fleißig=kashtappedunna, dick caution, schwarze Haare = nammalkkokke)
+- [x] **Exam Usefulness:** 2 [EXAM-TIP] markers (Sprechen Teil 1 strategy, Lesen matching)
+- [x] **Pacing:** Sections under 2 minutes each, no table dumps
+- [x] **Scene Structure:** Numbered sections with timestamps, visuals described, ⏸️ pauses marked

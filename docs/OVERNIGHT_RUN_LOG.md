@@ -1,4 +1,1107 @@
-# Overnight Run Log — 2026-03-23
+# Overnight Run Log — 2026-03-23/24
+
+## Run 52 — 04:44 UTC (2026-03-24)
+**Session:** Cron script polish — quality revision + tracker cleanup
+**Focus:** Quality-revise v4-2-1 (Describing People) to v2.1; resolve v6-4-1 (last ARCH) as redundant
+**Status:** ✅ 1 script quality-revised, 1 ARCH entry resolved
+
+### Work Completed
+
+1. **`v4-2-1_FULL_SCRIPT.md` — Describing People** (v2.0 → v2.1)
+   - **Added mid-script active recall checkpoint** (Section 5b): 5-round quiz covering groß, ist/hat choice, fleißig, Augen, appearance adjective pairs — inserted between negative traits and full description build
+   - **Added 2 [EXAM-TIP] markers:** Sprechen Teil 1 strategy (depth > breadth), Lesen matching exercises (person descriptions)
+   - **Added quality checklist** at bottom (all 8 axes pass)
+   - Script already had strong teach→drill→apply flow, energy cues, and Malayalam bridges — structural additions only
+
+2. **v6-4-1 resolved as ❌ REDUNDANT**
+   - Wave 3 architecture doc explicitly states: "Covered by v6-1-2 cultural bridge. No additional video architecture needed."
+   - v6-1-2 already covers all planned v6-4-1 content (Kerala dishes in German, dietary vocab, food description formula)
+   - Marked as ❌ REDUNDANT in tracker, removed from ARCH count
+
+### Tracker Updates
+- `SCRIPT_PRODUCTION_TRACKER.md`: v4-2-1 quality note updated, v6-4-1 marked REDUNDANT, ARCH count → 0, added Redundant row to summary
+- **All scripts now either ✅ DONE (72) or ❌ REDUNDANT (1). Zero remaining ARCH entries.** 🎉
+
+### Git
+- Pull succeeded at start of run (no new changes from origin)
+- No push attempted this run (exec tool returning empty — deferred)
+
+### Files Updated This Run
+- `docs/scripts/v4-2-1_FULL_SCRIPT.md` (quality-revised v2.0 → v2.1)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (v6-4-1 resolved, counts updated)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Notes
+- exec tool intermittently returning empty output this run — used Read/Write/Edit tools. Git push deferred.
+- **SCRIPT PRODUCTION IS NOW COMPLETE.** All 72 scripts at ✅ DONE v2.0+, zero ARCH remaining. The only non-DONE entry (v6-4-1) is confirmed redundant with v6-1-2.
+- Future cron runs should focus on: (a) quality spot-checks on older scripts, (b) git push when exec is available, (c) cross-module consistency review.
+
+---
+
+## Run 51 — 04:15 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script (Wave 5, Module 16)
+**Focus:** Draft `v16-5-1` (Reading Comprehension Practice — course culmination lesson)
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0). **MODULE 16 FULLY COMPLETE** 🎉
+
+### Work Completed
+
+1. **`v16-5-1_FULL_SCRIPT.md` — Reading Real German: Strategies & Practice** (NEW DRAFT → v2.0)
+   - **Type:** Skills integration — 3 reading strategies + 4 practice texts applying all Modules 1–16
+   - **Structure:** 9 sections (including 4b recall checkpoint + Section 8 final challenge) across ~12 minutes
+   - **Content highlights:**
+     - **3 reading strategies** taught before practice: Scanning (key info anchors), Context Guessing + Cognates (6 cognate pairs), Compound Word Breaking (3 decomposition examples)
+     - **Practice Text 1: Email** — Thomas→Arun meeting request. Tests scanning, Unterlagen vocab (M14), mitbringen separable verb (M5), LG register (M11)
+     - **Practice Text 2: Apartment Ad** — Full ad decode (2-Zi.-Whg., EBK, warm/kalt, qm, OG). Tests Module 8 housing vocab + Module 15 ruhig + Module 3 dates. Need→ad matching drill
+     - **Practice Text 3: Blog Post** — Malayali nurse in Berlin narrative. Tests Perfekt (M13), aus/nach (M9), Krankenpfleger (M11), reflexive verb sich fühlen (M16), weather/food callbacks (M12/M6)
+     - **Practice Text 4: Cinema schedule + Weather forecast** — Two short extraction texts. Tests time (M3), prices, ermäßigt, geschlossen (M15), weather vocab (M12)
+     - **Reading resources section:** nachrichtenleicht.de, DW, Netflix subtitles, Instagram/TikTok, children's books
+     - **Celebratory finale:** "Du hast es geschafft!" — full course completion celebration
+   - **Quality standard compliance:** All 8 axes checked
+   - **Active recall:** 2 checkpoints — 3-round mid-check (Section 4b) + 5-round final challenge (Section 8) testing cross-module integration
+   - **Practice pauses:** 14+
+   - **[EXAM-TIP] markers:** 2 (Lesen scanning strategy, Lesen need→ad matching)
+   - **[CULTURE-TIP] markers:** 1 (daily reading habit)
+   - **Malayalam bridges:** 4+ natural Manglish lines (newspaper scanning parallel, "free vocabulary" cognate excitement, compound breaking, final celebration)
+
+### Tracker Updates
+- `SCRIPT_PRODUCTION_TRACKER.md`: v16-5-1 status 📐 ARCH → ✅ DONE, total count 71→72, ARCH count ~2→~1
+- Remaining ARCH-only: ~1 (v6-4-1 — potentially redundant with v6-1-2)
+- **MODULE 16 NOW FULLY COMPLETE** — all 5 scripts done (v16-1-1 Dativ + v16-2-1 Wechselpräpositionen + v16-3-1 Reflexive Verbs + v16-4-1 Subordinate Clauses + v16-5-1 Reading Comprehension)
+
+### Git
+- Pull succeeded at start of run (fast-forward from origin, autostash applied cleanly)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v16-5-1_FULL_SCRIPT.md` (NEW — full script drafted at v2.0)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (v16-5-1 promoted, count updated to 72)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Notes
+- This is the **course culmination lesson** — the only script that references ALL 16 modules. Practice texts deliberately use vocabulary and grammar from throughout the course to demonstrate integration.
+- Only v6-4-1 (Kerala Food cultural comparison) remains at ARCH, but v6-1-2 already covers Kerala food description in German. v6-4-1 may be redundant/optional.
+- **Total ✅ DONE scripts: 72. Remaining ARCH-only: ~1 (v6-4-1).**
+
+---
+
+## Run 50 — 03:44 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script (Wave 5, Module 16)
+**Focus:** Draft `v16-4-1` (Subordinate Clauses: weil + dass + wenn) — fourth Module 16 script
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0)
+
+### Work Completed
+
+1. **`v16-4-1_FULL_SCRIPT.md` — Verb Goes to the End! Subordinate Clauses with weil, dass, wenn** (NEW DRAFT → v2.0)
+   - **Type:** Grammar expansion — builds directly on v12-4-2 (weil introduction), adds dass and wenn as two new subordinate clause connectors
+   - **Structure:** 9 sections (including 5b word-order flip + Section 7 active recall) across ~10 minutes
+   - **Content highlights:**
+     - Master rule callback: verb goes to the end after weil/dass/wenn — ONE rule, three connectors
+     - **weil upgrade:** longer sentences including Perfekt in weil-clauses (gearbeitet **hat** — helping verb goes to end)
+     - **dass** taught via 5 trigger verbs (denken, glauben, hoffen, wissen, sagen) with 3 individual practice examples
+     - **wenn** taught with dual meaning (if/when) with 3 practice examples covering condition + repeated time
+     - **Word-order flip** (Section 5b): wenn-clause first → main verb jumps to position 1 — dedicated sub-section with conversion drill
+     - Comparison card: all 3 connectors side-by-side in table format
+     - Common mistakes spotlight: 3 most frequent errors (verb position, wenn-flip, dass≠weil confusion)
+   - **Quality standard compliance:** All 8 axes checked
+   - **Active recall:** 1 checkpoint — 5-round challenge (Section 7) covering weil+Perfekt, dass+thought reporting, wenn-first flip, connector choice, free production
+   - **Practice pauses:** 12+
+   - **[EXAM-TIP] markers:** 2 (Schreiben dass-sophistication, Sprechen weil-answer)
+   - **Malayalam bridges:** 2 structural (verb-final in subordinate clause = Malayalam normal word order, wenn-first condition = Malayalam condition-result parallel)
+
+### Tracker Updates
+- `SCRIPT_PRODUCTION_TRACKER.md`: v16-4-1 status 📐 ARCH → ✅ DONE, total count 70→71, ARCH count ~3→~2
+- Remaining ARCH-only: ~2 (v6-4-1, v16-5-1)
+
+### Notes
+- exec tool returning empty output — used Read/Write/Edit tools instead. No git operations possible. Git sync deferred.
+- Module 16 now has 4/5 scripts complete (v16-1-1 Dativ + v16-2-1 Wechselpräpositionen + v16-3-1 Reflexive Verbs + v16-4-1 Subordinate Clauses)
+- Only v16-5-1 (Reading Comprehension Practice) remains at ARCH in Module 16
+
+---
+
+## Run 49 — 03:29 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script (Wave 5, Module 16)
+**Focus:** Draft `v16-3-1` (Reflexive Verbs — Doing Things to Yourself) — third Module 16 script
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0)
+
+### Work Completed
+
+1. **`v16-3-1_FULL_SCRIPT.md` — Reflexive Verbs: Doing Things to Yourself** (NEW DRAFT → v2.0)
+   - **Type:** Grammar deep dive — reflexive verbs with sich/mich/dich pronouns, building on Module 5 daily routine
+   - **Structure:** 9 sections (including 5b recall checkpoint) across ~10 minutes
+   - **Content highlights:**
+     - Reflexive concept taught through mirror metaphor (Ich wasche das Auto vs Ich wasche mich)
+     - Akkusativ reflexive pronoun table: mich, dich, sich, uns, euch, sich
+     - Morning routine verbs in 2 balanced blocks:
+       - Block 1: sich waschen, sich duschen, sich anziehen (3 verbs + fill-in-pronoun drill)
+       - Block 2: sich kämmen, sich rasieren, sich schminken (3 verbs)
+     - Feelings/social reflexives: sich freuen, sich fühlen, sich vorstellen (3 items)
+     - Separable + reflexive interaction highlighted twice (sich anziehen: "Ich ziehe mich an", sich vorstellen: "Darf ich mich vorstellen?") with Module 5 callback
+     - Dativ reflexive twist simplified: only mich→mir and dich→dir actually change; sich/uns/euch stay same
+     - Practical Dativ phrases limited to 2 A1-safe fixeds: "Ich wasche mir die Hände" and "Ich putze mir die Zähne"
+   - **Quality standard compliance:** All 8 axes checked
+   - **Active recall:** 2 checkpoints — 5-round morning routine quiz (Section 5b) + 5-round final challenge (Section 8)
+   - **Practice pauses:** 12+
+   - **[EXAM-TIP] markers:** 2 (Sprechen Teil 1 "Darf ich mich vorstellen?", Schreiben/Sprechen daily routine with reflexives)
+   - **Malayalam bridges:** 1 structural (Section 2: "enne tanne" = mich, same reflexive concept in Malayalam)
+
+### Tracker Updates
+- `SCRIPT_PRODUCTION_TRACKER.md`: v16-3-1 status 📐 ARCH → ✅ DONE, total count 69→70, ARCH count ~4→~3
+- Remaining ARCH-only: ~3 (v6-4-1, v16-4-1, v16-5-1)
+
+### Notes
+- exec tool returning empty output — used Read/Write/Edit tools instead. No git operations possible. Git sync deferred.
+- Module 16 now has 3/5 scripts complete (v16-1-1 Dativ + v16-2-1 Wechselpräpositionen + v16-3-1 Reflexive Verbs)
+- Next logical script: v16-4-1 (Subordinate Clauses) or v16-5-1 (Reading Comprehension Practice)
+
+---
+
+## Run 48 — 03:14 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script (Wave 5, Module 16)
+**Focus:** Draft `v16-2-1` (Wechselpräpositionen — The Nine Shapeshifters) — second Module 16 script
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0)
+
+### Work Completed
+
+1. **`v16-2-1_FULL_SCRIPT.md` — Wechselpräpositionen: The Nine Shapeshifters** (NEW DRAFT → v2.0)
+   - **Type:** Grammar deep dive — two-way prepositions switching between Akkusativ (direction) and Dativ (location)
+   - **Structure:** 9 sections (including 5b recall checkpoint) across ~10 minutes
+   - **Content highlights:**
+     - Core rule: Wo? → Dativ (location) vs. Wohin? → Akkusativ (direction)
+     - All 9 prepositions: in, an, auf, über, unter, vor, hinter, neben, zwischen
+     - Grouped for teaching: Big 3 (in/an/auf) detailed, spatial 4 (über/unter/vor/hinter), relative 2 (neben/zwischen) efficient
+     - "in" demonstrated in full with room diagram (im Zimmer vs ins Zimmer)
+     - "auf" and "an" with table/wall examples and contractions
+     - Mandatory contractions: im, ins, am, ans
+     - Remaining 6 prepositions taught efficiently (same rule, more examples)
+     - Builds directly on v16-1-1's Dativ article system (dem/der/den already learned)
+   - **Quality standard compliance:** All 8 axes checked
+   - **Active recall:** 2 checkpoints — 5-round case identification quiz (Section 5b) + 5-round fill-in final challenge (Section 8)
+   - **Practice pauses:** 12+
+   - **[EXAM-TIP] markers:** 2 (Lesen apartment ads with prepositions, Schreiben home descriptions)
+   - **Malayalam bridges:** 2 (Section 2: '-il' suffix parallel showing German makes case explicit where Malayalam is implicit; rhythmic chant for memorization)
+
+### Tracker Updates
+- `SCRIPT_PRODUCTION_TRACKER.md`: v16-2-1 status 📐 ARCH → ✅ DONE, total count 68→69, ARCH count ~5→~4
+- Remaining ARCH-only: ~4 (v6-4-1, v16-3-1, v16-4-1, v16-5-1)
+
+### Notes
+- exec tool returning empty output throughout this run — used Read/Write/Edit tools instead. No git operations possible (pull/commit/push). **NOT BLOCKED** — file writes succeeded normally. Git sync deferred to next run when exec works.
+- Module 16 now has 2/5 scripts complete (v16-1-1 Dativ + v16-2-1 Wechselpräpositionen)
+- Next logical script: v16-3-1 (Reflexive Verbs) or v16-4-1 (Subordinate Clauses)
+
+---
+
+## Run 47 — 02:59 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script (Wave 5, Module 16)
+**Focus:** Draft `v16-1-1` (Dativ Deep Dive — The Full System) — first Module 16 script, A1+ grammar bridge
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0). **FIRST MODULE 16 SCRIPT** 🎉
+
+### Work Completed
+
+1. **`v16-1-1_FULL_SCRIPT.md` — Der Dativ: The Full System** (NEW DRAFT → v2.0)
+   - **Type:** Grammar deep dive — complete dative article system, builds on Module 9 (mit+Dativ) and Module 10 (Mir ist...)
+   - **Structure:** 9 sections (including 5b recall checkpoint) across 10 minutes
+   - **Content highlights:**
+     - Three-case article table (Nominativ → Akkusativ → Dativ) for all genders + plural
+     - Dativ articles taught in 3 balanced blocks:
+       - Masculine + Neuter: der→dem, das→dem (shared form = less to memorize)
+       - Feminine: die→der (the trap — der appears twice with different functions!)
+       - Plural: die→den + noun gets -n (with exception rule)
+     - Ein-word Dativ forms taught alongside each block (einem/einer)
+     - 6 Dativ prepositions: mit, aus, bei, nach, von, zu (with contractions zum/zur/vom)
+     - Callbacks to Module 9 (mit dem Bus), Module 10 (Mir ist kalt), Module 4 (Akkusativ)
+     - Sentence-building drill: 4 exercises assembling Dativ sentences from parts
+     - Active recall: 6-round article quiz (Section 5b) + 5-round final challenge (Section 8)
+   - **Quality standard compliance:** All 8 axes checked
+   - **Malayalam bridges:** 2 structural ('kku' suffix parallel for indirect object concept, "ithellam puthiyathu aano" reassurance callback)
+   - **Practice pauses:** 12+
+   - **[EXAM-TIP] markers:** 2 (Sprechen Teil 1 "Ihnen/Mir" awareness, Lesen/Schreiben Dativ recognition)
+   - **[CULTURE-TIP] markers:** 1 (zu dem→zum / zu der→zur contractions as standard spoken German)
+
+### Tracker Updates
+- v16-1-1 promoted from 📐 ARCH → ✅ DONE
+- **Total ✅ DONE scripts: 68**
+- **Remaining ARCH-only scripts: ~5** (v6-4-1, v16-2-1 through v16-5-1)
+
+### Git
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v16-1-1_FULL_SCRIPT.md` (NEW — full script drafted at v2.0)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (v16-1-1 promoted, count updated to 68)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Next Priority
+- **v16-2-1** — Wechselpräpositionen (Two-Way Prepositions — the "boss battle")
+- **v16-3-1** — Reflexive Verbs (daily routine extension)
+- **v6-4-1** — Kerala Food in German (Wave 3 ARCH, optional Module 6 content)
+
+---
+
+## Run 46 — 02:44 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script (Wave 5, Module 15)
+**Focus:** Draft `v15-4-1` (Useful Slang / Umgangssprache) — fun reward lesson, completes Module 15
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0). **MODULE 15 FULLY COMPLETE** 🎉
+
+### Work Completed
+
+1. **`v15-4-1_FULL_SCRIPT.md` — Umgangssprache: Real German, Not Textbook German** (NEW DRAFT → v2.0)
+   - **Type:** Fun engagement — slang recognition + register awareness, recognition-first teaching
+   - **Structure:** 10 sections (including 3b recall check, 4b continuation) across 10 minutes
+   - **Content highlights:**
+     - 16 items taught in 4 balanced blocks of 4:
+       - Safe universals: Cool, Super, Toll, Okay
+       - Fun slang: Geil, Krass, Alter, Na?
+       - Everyday expressions: Keine Ahnung, Kein Bock, Bescheid sagen, Lass mal
+       - WhatsApp abbreviations: LG, MfG, vllt, hdl
+     - Register awareness as conceptual centerpiece — 3 levels (formal/standard/slang) with same-message comparison
+     - Kerala↔German slang parallel table (Machane↔Alter, Adipoli↔Geil, Enthu mwone↔Krass, Ariyilla↔Keine Ahnung, Madi↔Kein Bock)
+     - Exam safety integrated throughout — clear warnings about what NOT to use in Goethe A1
+     - Active recall section with 5 rounds covering vocabulary, register decisions, and exam safety
+   - **Quality standard compliance:** All 8 axes checked
+   - **Malayalam bridges:** 5+ natural Manglish lines (ningal/nee/eda register parallel, machane comparison, WhatsApp laziness parallel)
+   - **Practice pauses:** 12
+   - **[CULTURE-TIP] markers:** 3 (MfG in WhatsApp = cold signal, register safety rule, exam slang warning)
+   - **MODULE 15 NOW FULLY COMPLETE** — all 5 scripts done (v15-1-1, v15-1-2, v15-2-1, v15-3-1, v15-4-1)
+
+### Tracker Updates
+- v15-4-1 promoted from 📐 ARCH → ✅ DONE
+- **Total ✅ DONE scripts: 67**
+- **Remaining ARCH-only scripts: ~5** (v6-4-1, v16-1-1 through v16-5-1)
+
+### Git
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v15-4-1_FULL_SCRIPT.md` (NEW — full script drafted at v2.0)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (v15-4-1 promoted, count updated to 67)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Next Priority
+- **v16-1-1** — Dativ Deep Dive (Module 16 grammar bonus, first A1+ bridge script)
+- **v6-4-1** — Kerala Food in German (Wave 3 ARCH, optional Module 6 content)
+- Then remaining Module 16 scripts (v16-2-1 through v16-5-1)
+
+---
+
+## Run 45 — 02:29 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script (Wave 5, Module 15)
+**Focus:** Draft `v15-2-1` (German Festivals: From Oktoberfest to Weihnachtsmarkt) — engagement-rich cultural content
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0)
+
+### Work Completed
+
+1. **`v15-2-1_FULL_SCRIPT.md` — German Festivals: From Oktoberfest to Weihnachtsmarkt** (NEW DRAFT → v2.0)
+   - **Type:** Cultural engagement — festival vocabulary + real-life knowledge, no grammar teaching
+   - **Structure:** 9 sections (including 3b recall check) across 10 minutes
+   - **Content highlights:**
+     - 5 major German festivals taught: Oktoberfest, Karneval, Weihnachten, Ostern, Silvester
+     - 22 German vocabulary items taught in cultural context (das Oktoberfest, die Lederhosen, das Dirndl, die Brezel, der Karneval, das Kostüm, sich verkleiden, Weihnachten, der Adventskranz, der Weihnachtsmarkt, der Glühwein, der Lebkuchen, der Stollen, der Heiligabend, Ostern, der Osterhase, die Ostereier, Silvester, das Fest, feiern, der Feiertag, "Frohes neues Jahr!")
+     - Kerala ↔ Germany festival parallels table (Onam↔Oktoberfest, Pooram↔Karneval, Christmas↔Weihnachten, Vishu↔Silvester)
+     - Festivals taught in 3+2 blocks with mid-point recall check after first 2
+     - Active recall section with 5 rounds covering all festivals + key vocabulary
+   - **Quality standard compliance:** All 8 axes checked
+   - **Malayalam bridges:** 5+ natural Manglish lines (Onam comparison, Pooram comparison, Christmas scale, Diwali parallel, Vishu parallel)
+   - **Practice pauses:** 12
+   - **[CULTURE-TIP] markers:** 3 (Volksfest in your city, Weiberfastnacht tie-cutting, fireworks buying rules)
+   - **Module 15 now 4/5 scripts done** — only v15-4-1 (Useful Slang) remains at ARCH
+
+### Tracker Updates
+- v15-2-1 promoted from 📐 ARCH → ✅ DONE
+- **Total ✅ DONE scripts: 66**
+- **Remaining ARCH-only scripts: ~6** (v6-4-1, v15-4-1, v16-1-1 through v16-5-1)
+
+### Git
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v15-2-1_FULL_SCRIPT.md` (NEW — full script drafted at v2.0)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (v15-2-1 promoted, count updated to 66)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Next Priority
+- **v15-4-1** — Useful Slang (completes Module 15)
+- Then remaining Module 16 grammar bonus scripts (v16-1-1 through v16-5-1)
+- **v6-4-1** — Kerala Food in German (Wave 3 ARCH, completes Module 6 optional content)
+
+---
+
+## Run 44 — 01:50 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script (Wave 5, Module 15)
+**Focus:** Draft `v15-1-2` (Rules You Need to Know: Sonntagsruhe, Pfand & Everyday Surprises) — practical companion to v15-1-1
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0)
+
+### Work Completed
+
+1. **`v15-1-2_FULL_SCRIPT.md` — Rules You Need to Know: Sonntagsruhe, Pfand & Everyday Surprises** (NEW DRAFT → v2.0)
+   - **Type:** Cultural survival — practical daily-life rules, no grammar or exam content
+   - **Structure:** 9 sections across 10 minutes
+   - **Content highlights:**
+     - 5 practical rule areas: Sonntagsruhe (Sunday closures), Feiertage (public holidays + Brückentag), Pfand (bottle deposit system), Bargeld (cash culture), Versicherung (insurance basics), Papierkultur (document organization)
+     - 14 German vocabulary items taught in cultural context (die Sonntagsruhe, das Ladenschlussgesetz, geschlossen, der Feiertag, der Brückentag, das Pfand, der Pfandautomat, das Bargeld, nur Bargeld, die Versicherung, die Krankenversicherung, die Haftpflichtversicherung, der Ordner, die Unterlagen)
+     - Practical survival info: where to shop on Sundays, how Pfand works with amounts, why to carry cash, mandatory vs recommended insurance, document folder system
+     - Active recall section with 5 rounds covering all major rule areas
+   - **Quality standard compliance:** All 8 axes checked
+   - **Malayalam bridges:** 5 natural Manglish lines (Sunday shops, UPI/cashless comparison, document culture, hospital comparison)
+   - **Practice pauses:** 10
+   - **[CULTURE-TIP] markers:** 3 (Saturday shopping, Pfandsammeln, Ordner system)
+   - **Complements v15-1-1** (which covers Pünktlichkeit, Ruhezeit, Mülltrennung) — together they form a complete "German rules survival kit"
+
+### Tracker Updates
+- v15-1-2 promoted from 📐 ARCH → ✅ DONE
+- **Total ✅ DONE scripts: 65**
+- **Remaining ARCH-only scripts: ~6** (v15-2-1, v15-4-1, v16-1-1 through v16-5-1, v6-4-1)
+
+### Git
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v15-1-2_FULL_SCRIPT.md` (NEW — full script drafted at v2.0)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (v15-1-2 promoted, count updated to 65)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Next Priority
+- **v15-2-1** — German Festivals (engagement-rich cultural content)
+- **v15-4-1** — Useful Slang (recognition-first teaching)
+- Then remaining Module 16 grammar bonus scripts
+
+---
+
+## Run 43 — 01:30 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script (Wave 5, Module 15)
+**Focus:** Draft `v15-3-1` (Kerala vs Germany: Cultural Differences) — highest emotional resonance in Module 15
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0)
+
+### Work Completed
+
+1. **`v15-3-1_FULL_SCRIPT.md` — Culture Shock! Kerala vs Germany** (NEW DRAFT → v2.0)
+   - **Type:** Cultural preparation — real-life emotional readiness, no grammar or exam content
+   - **Structure:** 9 sections across 10 minutes
+   - **Content highlights:**
+     - 6 contrast areas: Food (Abendbrot vs Kerala dinner), Social space & greetings (Handschlag), Visiting culture (Termin requirement), German directness (direkt ≠ rude), Privacy (die Privatsphäre), and The Good Stuff (work-life balance, gemütlich)
+     - 12 German vocabulary items taught in cultural context (das Abendbrot, das Brot, der Handschlag, der Besuch, der Termin, direkt, die Privatsphäre, das Wetter, gemütlich, leise, einladen, "Das sieht gut aus!")
+     - Balanced tone throughout — humor as vehicle for difficult truths, never mocking either culture
+     - Comparison cards for each contrast area (visual split-screen Kerala vs Germany)
+     - Active recall section with 5 rounds covering all major contrast areas
+     - Warm outro: "Both places are home"
+   - **Quality standard compliance:** All 8 axes checked
+   - **Malayalam bridges:** 6+ natural Manglish lines (IST comparison, visiting culture, directness, privacy norms, shoes off)
+   - **Practice pauses:** 12+
+   - **[CULTURE-TIP] markers:** 2 (food politeness, directness handling)
+   - **Second script in Module 15** — cultural survival content continues after v15-1-1
+
+### Tracker Updates
+- v15-3-1 promoted from 📐 ARCH → ✅ DONE
+- **Total ✅ DONE scripts: 64**
+- **Remaining ARCH-only scripts: ~7** (v15-1-2, v15-2-1, v15-4-1, v16-1-1 through v16-5-1, v6-4-1)
+
+### Git
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v15-3-1_FULL_SCRIPT.md` (NEW — full script drafted at v2.0)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (v15-3-1 promoted, count updated to 64)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Next Priority
+- **v15-1-2** — Rules You Need to Know: Ruhezeit, Sonntagsruhe (continues from v15-1-1)
+- **v15-2-1** — German Festivals (engagement-rich cultural content)
+- Then remaining Module 16 grammar bonus scripts
+
+---
+
+## Run 42 — 01:01 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script (Wave 5)
+**Focus:** Draft `v15-1-1` (Pünktlichkeit & German Values) — first Module 15 script, cultural survival
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0)
+
+### Work Completed
+
+1. **`v15-1-1_FULL_SCRIPT.md` — Pünktlichkeit & German Values: What Nobody Warns You About** (NEW DRAFT → v2.0)
+   - **Type:** Cultural survival — real-life integration, not grammar or exam prep
+   - **Structure:** 9 sections across 10 minutes
+   - **Content highlights:**
+     - 3 core German values taught: Pünktlichkeit (punctuality), Ruhezeit (quiet hours), Mülltrennung (waste separation)
+     - 14 German vocabulary items taught in context (pünktlich, zu spät, leise, laut, Restmüll, Biomüll, Altpapier, Gelber Sack, etc.)
+     - 5 survival sentences for first weeks in Germany
+     - Waste sorting drill (4 items → correct bin)
+     - Golden culture-shock dialogue: new neighbor explains rules (predict-before-reveal)
+     - Active recall section testing all 3 value areas + vocabulary + rescue sentence
+   - **Quality standard compliance:** All 8 axes checked
+   - **Malayalam bridges:** 6 natural Manglish lines (IST vs German punctuality, Kerala noise culture, waste comparison)
+   - **Practice pauses:** 10
+   - **[CULTURE-TIP] markers:** 3 (late message, neighbor complaint, moving-in question)
+   - **First script in Module 15** — cultural survival content begins
+
+### Tracker Updates
+- v15-1-1 promoted from 📐 ARCH → ✅ DONE
+- **Total ✅ DONE scripts: 63**
+- **Remaining ARCH-only scripts: ~8** (v15-1-2, v15-2-1, v15-3-1, v15-4-1, v16-1-1 through v16-5-1, v6-4-1)
+
+### Git
+- Pull at start of run (no conflicts)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v15-1-1_FULL_SCRIPT.md` (NEW — full script drafted at v2.0)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (v15-1-1 promoted, count updated to 63)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Next Priority
+- **v15-3-1** — Kerala vs Germany: Cultural Differences (highest emotional resonance in Module 15)
+- **v15-1-2** — Rules You Need to Know: Ruhezeit, Sonntagsruhe (continues from this video)
+- Then remaining Module 16 grammar bonus scripts if Module 15 is sufficiently covered
+
+---
+
+## Run 41 — 00:45 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script
+**Focus:** Draft `v1-2-2` (Tricky Sounds for Malayalis: Alphabet & Spelling) — completes Module 1
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0)
+
+### Work Completed
+
+1. **`v1-2-2_FULL_SCRIPT.md` — Tricky Sounds for Malayalis: The Alphabet & Spelling** (NEW DRAFT → v2.0)
+   - **Type:** Practical survival skill — alphabet letter names + buchstabieren + phone numbers
+   - **Structure:** 9 sections across 10 minutes
+   - **Content highlights:**
+     - 7 trap letters taught individually (J=yot, W=vay, V=fow, Z=tset, Y=üpsilon, R=err, ß=Eszett)
+     - Full alphabet chanted in 4 groups + special characters
+     - Spell-your-name drill with 3 Malayali name examples (Nikhil, Jayasree, Vishnu)
+     - Buchstabiertafel intro ("A wie Anton" pattern) — phone clarity skill
+     - Phone number reading in German pairs format
+     - 3 active recall checkpoints (trap letter quiz, spell-your-name pause, final challenge)
+   - **Quality standard compliance:** All 8 axes checked
+   - **Malayalam bridges:** 6 natural Manglish lines (alphabet count comparison, Amt motivation)
+   - **Practice pauses:** 8
+   - **Complements v1-2-1** (sounds/pronunciation) — this covers letter names and spelling skill
+   - **Module 1 now fully ✅ DONE** (all 7 scripts: v1-1-1, v1-1-2, v1-2-1, v1-2-2, v1-3-1, v1-3-2, v1-4-1)
+
+### Tracker Updates
+- v1-2-2 promoted from 📐 ARCH → ✅ DONE
+- **Total ✅ DONE scripts: 62**
+- **Remaining ARCH-only scripts: ~9** (v6-4-1, v15-x-x series ×5, v16-x-x series ×5) — all Wave 5 optional/enrichment
+
+### Git
+- Pull at start of run (no conflicts)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v1-2-2_FULL_SCRIPT.md` (NEW — full script drafted at v2.0)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (v1-2-2 promoted, count updated to 62)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Next Priority
+- **v6-4-1** — Kerala Food in German (Wave 3 ARCH, completes Module 6)
+- Then Wave 5 optional scripts (Modules 15–16) if core is fully reviewed
+
+---
+
+## Run 40 — 00:30 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script
+**Focus:** Draft `v1-1-2` (Career Paths & Life in Germany) — motivational companion to course opener
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0)
+
+### Work Completed
+
+1. **`v1-1-2_FULL_SCRIPT.md` — Malayalis in Germany: Career Paths & Real Life** (NEW DRAFT → v2.0)
+   - **Type:** Motivational career-mapping video — 5 German career words, zero grammar
+   - **Structure:** 10 sections across 10 minutes
+   - **Content highlights:**
+     - 4 concrete career pathways: Nursing (Krankenpfleger), IT/Engineering (Ingenieur), Ausbildung, University (Studium)
+     - Honest pros + challenges for each path (salary, requirements, realistic expectations)
+     - Dedicated challenges section (weather, bureaucracy, loneliness) for trust-building
+     - 5 German career words taught: Krankenpfleger, Ingenieur, Ausbildung, Studium, Visum
+     - Active recall quiz testing all 5 words
+     - "Which path is yours?" decision moment connecting to A1 as universal first step
+   - **Quality standard compliance:** All 8 axes checked
+   - **Malayalam:** ~30% natural Manglish throughout, 7 bridge lines
+   - Practice pauses: 9
+
+### Tracker Updates
+- v1-1-2 promoted from 📐 ARCH → ✅ DONE
+- **Total ✅ DONE scripts: 61**
+- **Remaining ARCH-only scripts: ~10** (v1-2-2, v6-4-1, v15-x-x series, v16-x-x series)
+
+### Git
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v1-1-2_FULL_SCRIPT.md` (NEW — full script drafted at v2.0)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (v1-1-2 promoted, count updated to 61)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Next Priority
+- **v1-2-2** — Tricky Sounds / German Alphabet (Tier 2, last remaining Module 1 ARCH script)
+- **v6-4-1** — Kerala Food comparison (Tier 3, Wave 3 ARCH)
+
+---
+
+## Run 39 — 00:15 UTC (2026-03-24)
+**Session:** Cron script polish — draft 1 missing ARCH-only script
+**Focus:** Draft `v1-1-1` (Why German? A Malayali's Gateway) — course opener, motivational video
+**Status:** ✅ 1 new script drafted (ARCH → DONE v2.0)
+
+### Work Completed
+
+1. **`v1-1-1_FULL_SCRIPT.md` — Why German? A Malayali's Gateway** (NEW DRAFT → v2.0)
+   - **Type:** Motivational opener — 100% emotional investment, no grammar content
+   - **Structure:** 10 sections across 10 minutes
+   - **Content highlights:**
+     - Hook with concrete numbers (free tuition, salary comparisons, 30,000+ Malayalis)
+     - Kerala–Germany connection (nurses, IT/Blue Card, students, Ausbildung)
+     - Language level ladder (A1→B2 with milestones)
+     - 3 German words taught: Deutsch, Deutschland, lernen → combined into "Ich lerne Deutsch"
+     - Cultural preview (Pünktlichkeit, Mülltrennung, Brot) with humor
+     - Honest challenges section (weather, bureaucracy, loneliness) for trust-building
+     - Active recall quiz for the 3 taught words
+   - **Quality standard compliance:** All 8 axes checked (Exam Usefulness = N/A by design)
+   - **Malayalam:** ~30% natural Manglish throughout, 7 bridge lines
+   - Practice pauses: 7 (for word repetition + recall)
+
+### Tracker Updates
+- v1-1-1 promoted from 📐 ARCH → ✅ DONE
+- **Total ✅ DONE scripts: 60 out of 60 full-script files on disk**
+- **Remaining ARCH-only scripts: ~11** (v1-1-2, v1-2-2, v6-4-1, v15-x-x series, v16-x-x series)
+
+### Git
+- Pull attempted at start of run (no conflicts)
+- Shell exec issues prevented git push — no data loss, file written successfully
+
+### Files Updated This Run
+- `docs/scripts/v1-1-1_FULL_SCRIPT.md` (NEW — full script drafted at v2.0)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (v1-1-1 promoted, count updated to 60)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Next Priority
+- **v1-1-2** — Malayalis in Germany: Real Success Stories (Tier 2, career paths companion)
+- **v1-2-2** — Tricky Sounds / German Alphabet (Tier 2, buchstabieren skill)
+
+---
+
+## Run 38 — 00:00 UTC (2026-03-24)
+**Session:** Cron script quality pass (final 3 DRAFT scripts — weather + plans + invitations)
+**Focus:** Quality-verify `v12-2-1` (Weather), `v12-3-1` (Making Plans), `v12-4-1` (Invitation Writing)
+**Status:** ✅ 3 scripts quality-verified and promoted (all revised/upgraded)
+
+### Work Completed
+
+1. **`v12-2-1_FULL_SCRIPT.md` — Weather & Seasons** (REVISED → v2.2)
+   - **Problems found:** Section 3 dumped all 6 weather items (4 adjectives + 2 verbs) in one block before any splitting. No energy cues. No [EXAM-TIP] markers. No active recall section. No quality checklist.
+   - **Fixes:**
+     - Split Section 3 into **Section 3 (Pattern 1: 4 "Es ist" adjectives with 4-item recall drill)** and **Section 3b (Pattern 2: 2 "Es" verbs + question + combined drill)**
+     - Added **energy cues** to all 10 sections
+     - Added **2 [EXAM-TIP]** markers: Hören/Sprechen small talk (Section 6), Schreiben weather+plans (Section 7)
+     - Added **Section 8: Active Recall** with 5 rounds testing patterns, seasons, small talk, plans
+     - Added **quality checklist**
+     - Practice pauses: 16+
+   - **Promoted to ✅ DONE**
+
+2. **`v12-3-1_FULL_SCRIPT.md` — Making Plans with Friends** (REVISED → v2.2)
+   - **Problems found:** Section 5 dumped 9 items (4 questions + 5 answers) in one block. No energy cues. No [EXAM-TIP] markers. No active recall section. No quality checklist.
+   - **Fixes:**
+     - Split Section 5 into **Section 5 (4 questions with situation→question recall drill)** and **Section 5b (5 answers + mini-dialogue + "build your own plan" practice)**
+     - Added **energy cues** to all 9 sections
+     - Added **2 [EXAM-TIP]** markers: decline formula (Section 4), Schreiben Teil 2 scoring (Section 7)
+     - Added **Section 8: Active Recall** with 5 rounds testing suggest, accept, decline, details, exam rule
+     - Added **quality checklist**
+     - Practice pauses: 18+
+   - **Promoted to ✅ DONE**
+
+3. **`v12-4-1_FULL_SCRIPT.md` — Invitation Writing** (UPGRADED → v2.2)
+   - **Problems found:** No energy cues. No [EXAM-TIP] markers. No quality checklist. (Structure was already solid — good templates, exam drills, predict-before-reveal.)
+   - **Fixes:**
+     - Added **energy cues** to all 10 sections
+     - Added **2 [EXAM-TIP]** markers: invitation frequency (Section 3), decline weil+alternative combo (Section 5)
+     - Added **quality checklist**
+     - Practice pauses: 14+
+   - **Promoted to ✅ DONE**
+
+### 🎉 MILESTONE: ALL 59 DRAFTED SCRIPTS NOW QUALITY-VERIFIED (✅ DONE)
+- **0 scripts remain at 🔄 DRAFT**
+- **Module 12 now fully ✅ DONE** (all 5 scripts: v12-1-1, v12-2-1, v12-3-1, v12-4-1, v12-4-2)
+- Quality verification backlog is now **completely cleared**
+- Remaining work is **new script drafting** (ARCH → DRAFT for ~12 remaining architecture-only scripts in Tiers 2-4)
+
+### Tracker Updates
+- v12-2-1, v12-3-1, v12-4-1 promoted from 🔄 DRAFT → ✅ DONE
+- **Total ✅ DONE scripts: 59 out of 59 full-script files on disk**
+
+### Git
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v12-2-1_FULL_SCRIPT.md` (revised — Section 3 split, active recall, energy cues, exam tips, checklist)
+- `docs/scripts/v12-3-1_FULL_SCRIPT.md` (revised — Section 5 split, active recall, energy cues, exam tips, checklist)
+- `docs/scripts/v12-4-1_FULL_SCRIPT.md` (upgraded — energy cues, exam tips, checklist)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (3 entries promoted to ✅ DONE, summary updated)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Next priority work
+1. **Tier 2 ARCH → DRAFT:** v1-1-1 (Why German?), v1-1-2 (Career Paths), v1-2-2 (Tricky Sounds)
+2. **Tier 4 ARCH → DRAFT:** Module 15 and 16 optional scripts
+3. **Production pipeline:** Audio generation, exercises, website build
+
+---
+
+## Run 37 — 23:44 UTC
+**Session:** Cron script quality pass (quality verification — workplace vocabulary + hobbies)
+**Focus:** Quality-verify `v11-2-1` (Workplace Vocabulary), `v12-1-1` (Hobbies)
+**Status:** ✅ 2 scripts quality-verified and promoted (both revised)
+
+### Work Completed
+
+1. **`v11-2-1_FULL_SCRIPT.md` — Workplace Vocabulary (Am Arbeitsplatz)** (REVISED → v2.3)
+   - **Problems found:** Section 2 claimed to be "split 4+4" but actually dumped all 8 words in one block with only a 4-word repeat drill. Section 4 dumped 8 more office/uni words with zero drills between them. No energy cues on most sections. No [EXAM-TIP] markers. No active recall section. No quality checklist.
+   - **Fixes:**
+     - **Actually split Section 2** into Section 2 (desk/room: Büro/Schreibtisch/Computer/Drucker with individual repeat drills) and Section 2b (people/rhythm: Besprechung/Kollege/Pause/Kantine with repeat drills + 8-word recall mixing both blocks)
+     - **Split Section 4** into Section 4 (Office lane: Chef/Meeting/Ordner/Telefon with drill) and Section 4b (University lane: Uni/Vorlesung/Bibliothek/Prüfung + studieren vs lernen distinction with drill)
+     - Added **energy cues** to all sections
+     - Added **[EXAM-TIP]** markers for studieren/lernen (Sprechen) and notice-reading (Lesen/Hören)
+     - Added **Section 9: Active Recall** testing vocabulary, sentences, AND studieren/lernen distinction
+     - Added **quality checklist**
+     - Practice pauses: 16+
+   - **Promoted to ✅ DONE**
+
+2. **`v12-1-1_FULL_SCRIPT.md` — Hobbies (Hobbys und Freizeit)** (REVISED → v2.2)
+   - **Problems found:** No energy cues on any section. No [EXAM-TIP] markers. No active recall section before summary. No quality checklist.
+   - **Fixes:**
+     - Added **energy cues** to all 11 sections
+     - Added **[EXAM-TIP]** markers for Sprechen Teil 1 (hobby answer formula) and Sprechen Teil 2 (asking hobby questions)
+     - Added **Section 10: Active Recall** testing gern position, formal question forms, preference pattern, and 3-sentence model building
+     - Added **quality checklist**
+     - Practice pauses: 14+
+   - **Promoted to ✅ DONE**
+
+### Tracker Updates
+- v11-2-1, v12-1-1 promoted from 🔄 DRAFT → ✅ DONE
+- **Module 11 now fully ✅ DONE** (all 3 scripts: v11-1-1, v11-2-1, v11-3-1)
+- **Total ✅ DONE scripts: 57** out of 59 full-script files on disk
+- 3 scripts remain at 🔄 DRAFT needing quality verification: v12-2-1, v12-3-1, v12-4-1
+
+### Git
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v11-2-1_FULL_SCRIPT.md` (revised — Section 2 actually split 4+4, Section 4 split office/uni, active recall, energy cues, exam tips, checklist)
+- `docs/scripts/v12-1-1_FULL_SCRIPT.md` (upgraded — energy cues, active recall, exam tips, checklist)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (2 entries promoted to ✅ DONE, summary updated)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. **v12-2-1** (Weather) — DRAFT, vocabulary-heavy, likely needs drill splitting
+2. **v12-3-1** (Making Plans) — DRAFT, conversation script
+3. **v12-4-1** (Invitation Writing) — DRAFT, exam-core Schreiben Teil 2
+
+---
+
+## Run 36 — 23:14 UTC
+**Session:** Cron script quality pass (quality verification — clothes shopping + prices/comparing)
+**Focus:** Quality-verify `v7-2-1` (Clothes Shopping), `v7-3-1` (Prices & Comparing)
+**Status:** ✅ 2 scripts quality-verified and promoted (1 revised to v2.2, 1 upgraded to v2.2)
+
+### Work Completed
+
+1. **`v7-2-1_FULL_SCRIPT.md` — Clothes Shopping (Kleidung kaufen)** (REVISED → v2.2)
+   - **Problem found:** Section 2 dumped ALL 6 clothing items + 4 colors in one block. The "fast drill" only covered 4 of 6 items, leaving 2 items with zero practice before colors piled on. No energy cues on most sections. No quality checklist. No [EXAM-TIP] markers.
+   - **Fixes:**
+     - Split Section 2 into **Section 2 (Everyday Clothes: T-Shirt/Hose/Jacke — 3 items with point-and-say drill)** and **Section 2b (Winter+Extras: Pullover/Schuhe/Mantel — 3 more items + 6-item recall + 4 colors + combo drill)**
+     - Added **item+color combo drill** ("eine schwarze Jacke", "ein rotes T-Shirt", "blaue Schuhe") so colors are practiced IN context, not isolated
+     - Added **energy cues** to all sections (were missing on Sections 3-9)
+     - Added **[EXAM-TIP]** markers for Sprechen Teil 3 (Section 5) and Lesen/Hören ad extraction (Section 8)
+     - Added **quality checklist**
+     - Practice pause count: ~14
+   - **Promoted to ✅ DONE**
+
+2. **`v7-3-1_FULL_SCRIPT.md` — Prices & Comparing (Preise vergleichen)** (UPGRADED → v2.2)
+   - Structure was already solid at v2.1 — clean price reactions → comparison pattern → irregulars → golden dialogue → ad reading flow
+   - **Additions:**
+     - Added **energy cues** to all 9 sections (were missing)
+     - Added **[EXAM-TIP]** for Hören (Section 2: price-hearing + reversed number trap) and Lesen (Section 6: ad-matching)
+     - Added **quality checklist**
+   - **Promoted to ✅ DONE**
+
+### Tracker Updates
+- v7-2-1, v7-3-1 promoted from 🔄 DRAFT → ✅ DONE
+- **Module 7 now fully ✅ DONE** (all 3 scripts: v7-1-1, v7-2-1, v7-3-1)
+- **Total ✅ DONE scripts: 55** out of 59 full-script files on disk (includes v5-4-1 tracker inconsistency fix — was verified in Run 28)
+- 5 scripts remain at 🔄 DRAFT needing quality verification: v11-2-1, v12-1-1, v12-2-1, v12-3-1, v12-4-1
+
+### Git
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v7-2-1_FULL_SCRIPT.md` (revised — Section 2 split into 3+3, combo drill, energy cues, exam tips, checklist)
+- `docs/scripts/v7-3-1_FULL_SCRIPT.md` (upgraded — energy cues, exam tips, checklist added)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (2 entries promoted to ✅ DONE, summary updated)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. **v11-2-1** (Workplace Vocabulary) — DRAFT, vocabulary-heavy, possible stacking risk
+2. **v12-1-1** (Hobbies) — DRAFT, already at v2.1 but still needs verification pass
+3. **v12-2-1** (Weather) — DRAFT, vocabulary-heavy
+4. **v12-3-1** (Making Plans) — DRAFT, conversation script
+5. **v5-4-1** (Describing Your Day) — listed as DRAFT in tracker but was promoted in Run 28; may be tracker inconsistency
+
+---
+
+## Run 35 — 22:59 UTC
+**Session:** Cron script quality pass (quality verification — form fields reference + rooms & furniture)
+**Focus:** Quality-verify `v14-1-2` (All Form Fields Reference), `v8-1-1` (Rooms & Furniture)
+**Status:** ✅ 2 scripts quality-verified and promoted (1 revised to v2.1, 1 as-is)
+
+### Work Completed
+
+1. **`v14-1-2_FULL_SCRIPT.md` — All Form Fields Reference: 20 Words for Every Form** (NO CHANGES NEEDED)
+   - Already solid v2.0: 4 teach→drill blocks (Identity 6, Contact 5, Status 5, Hidden 4) each with specific drills, full 12-field form simulation with 15s timed fill + model answer, 5-second form check as active recall before outro, 8 practice pauses with specific prompts, Malayalam bridges structural (compound word suffix logic, city synonym parallel nagaram/pattanam/sthalam), 2 [EXAM-TIP] markers (Unterschrift + 5-second check), quality checklist present
+   - **Promoted to ✅ DONE**
+
+2. **`v8-1-1_FULL_SCRIPT.md` — Rooms & Furniture (Zimmer und Möbel)** (REVISED → v2.1)
+   - **Problem found:** Section 5 dumped ALL 7 items (4 kitchen + 3 bathroom) in one block with only a quick-fire drill at the very end. Violated "max 3-4 items per block" rule. No sentence-level practice between kitchen and bathroom.
+   - **Fixes:**
+     - Split Section 5 into **Section 5 (Küche: 4 items + "In der Küche gibt es..." sentence drill)** and **Section 5b (Bad: 3 items + interleaving quick-fire mixing ALL rooms)**
+     - Added **Spül vs Wasch disambiguation drill** after kitchen items — students distinguish dishwasher from washing machine by prefix
+     - Added **quality checklist** (was missing from v2.0)
+     - Added **2 [EXAM-TIP] markers** for Lesen (apartment ads) and Sprechen (home description)
+     - Practice pause count increased from ~8 to 10+
+   - **Result:** Upgraded to v2.1 — proper 4+3 furniture blocking with drills between, compound disambiguation drill, checklist + exam markers added
+   - **Promoted to ✅ DONE**
+
+### Tracker Updates
+- v14-1-2, v8-1-1 promoted from 🔄 DRAFT → ✅ DONE
+- **Module 8 now fully ✅ DONE** (all 3 scripts: v8-1-1, v8-2-1, v8-3-1)
+- **Module 14 now fully ✅ DONE** (all 3 scripts: v14-1-1, v14-1-2, v14-2-1)
+- **Total ✅ DONE scripts: 52** out of 59 full-script files on disk
+- 7 scripts remain at 🔄 DRAFT, ~12 at 📐 ARCH
+
+### Git
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v8-1-1_FULL_SCRIPT.md` (revised — Section 5 split into 5+5b, Spül/Wasch drill, checklist + EXAM-TIP markers)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (2 entries promoted to ✅ DONE, summary updated)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. **v7-2-1** (Clothes Shopping) — practical conversation, already at v2.1 but still DRAFT in tracker
+2. **v7-3-1** (Prices & Comparing) — practical conversation, already at v2.1 but still DRAFT in tracker
+3. **v11-2-1** (Workplace Vocabulary) — vocabulary-heavy, possible stacking risk
+4. **v12-1-1** (Hobbies) — vocabulary-heavy, already at v2.1 but still DRAFT
+5. **v12-2-1** (Weather) — vocabulary-heavy, possible stacking risk
+
+---
+
+## Run 34 — 22:44 UTC
+**Session:** Cron script quality pass (quality verification — restaurant dialogue + Anmeldung form)
+**Focus:** Quality-verify `v6-3-1` (Restaurant Golden Dialogue), `v14-1-1` (Anmeldung Form)
+**Status:** ✅ 2 scripts quality-verified and promoted (both as-is, no changes needed)
+
+### Work Completed
+
+1. **`v6-3-1_FULL_SCRIPT.md` — The Restaurant Golden Dialogue** (NO CHANGES NEEDED)
+   - Already solid v2.0: hook under 30s with immersive restaurant scenario, menu decoding via 5 Speisekarte sections (not a vocab dump), "Ich hätte gern..." taught with Akkusativ callback to Module 4, 3 ordering patterns drilled individually (hätte gern / Ich nehme / Für mich), 3 help phrases (empfehlen/vegetarisch/scharf), active recall Section 7 reconstructs full ordering flow BEFORE golden dialogue, golden dialogue uses predict-before-reveal with 5 key-move annotations, gap-fill dialogue drill as Section 9, 14 practice pauses, 2 [EXAM-TIP] markers (Sprechen Teil 3 + Hören), Malayalam bridges on restaurant culture/formal register, special requests compact table format
+   - **Promoted to ✅ DONE**
+
+2. **`v14-1-1_FULL_SCRIPT.md` — Anmeldung: Your First Official Act in Germany** (NO CHANGES NEEDED)
+   - Already solid v2.0: hook under 35s with urgency (14-day deadline), 3-step process overview with document checklist, form fields taught in 3 blocks (Identity 4 fields, Status 3 fields, Address 3 fields) each with drill after, Staatsangehörigkeit trap isolated with ❌/✅ examples + Malayalam bridge, active recall trap quiz (4 rounds: Familienname/Vorname swap, indisch adjective, dot format, Wohnungsgeberbestätigung), 4-document memory recall before outro, 10 practice pauses, 3 [EXAM-TIP] markers, Malayalam bridges structural (compound word logic, Collectorate parallel, Aadhaar comparison), clear exam bridge (Schreiben Teil 1 = 12.5%)
+   - **Promoted to ✅ DONE**
+
+### Tracker Updates
+- v6-3-1, v14-1-1 promoted from 🔄 DRAFT → ✅ DONE
+- **Total ✅ DONE scripts: 50** out of 59 full-script files on disk
+- 9 scripts remain at 🔄 DRAFT, ~12 at 📐 ARCH
+
+### Git
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (2 entries promoted to ✅ DONE, summary updated)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. **v14-1-2** (All Form Fields Reference) — completes Module 14 quality verification
+2. **v8-1-1** (Rooms & Furniture) — vocabulary-heavy, possible stacking risk
+3. **v7-2-1** (Clothes Shopping) — practical conversation script
+4. **v7-3-1** (Prices & Comparing) — practical conversation script
+5. **v5-4-1** (Describing Your Day) — already promoted, skip; try **v12-1-1** (Hobbies) or **v12-2-1** (Weather) instead
+
+---
+
+## Run 33 — 22:29 UTC
+**Session:** Cron script quality pass (quality verification — Hören + Lesen practice)
+**Focus:** Quality-verify `v17-2-1` (Hören Practice), `v17-3-1` (Lesen Practice)
+**Status:** ✅ 2 scripts quality-verified and promoted (both as-is, no changes needed)
+
+### Work Completed
+
+1. **`v17-2-1_FULL_SCRIPT.md` — Hören Practice: Listening Like the Real Exam** (NO CHANGES NEEDED)
+   - Already solid v2.1: all 8 quality axes pass. Hook under 40s with concrete payoff, exam structure correctly aligned (6/4/5 items), each Teil has its own Teach→Drill→Apply cycle, 3 Malayalam bridges focused on listening logic, 10+ practice pauses with specific prompts, active recall section (Section 8) before outro, 4 high-value traps explicitly named, correction-word strategy for Teil 2.
+   - **Promoted to ✅ DONE**
+
+2. **`v17-3-1_FULL_SCRIPT.md` — Lesen Practice: Reading Strategies for A1** (NO CHANGES NEEDED)
+   - Already solid v2.1: all 8 quality axes pass. Hook under 40s, Teil 1 teaches situation-first scanning, Teil 2 teaches need→offer matching (not generic topic sorting), Teil 3 teaches question-by-question correspondence reading, 4 reading traps named, active recall with bonus question, practice pauses are specific and answerable, Malayalam bridge on survival reading habits.
+   - **Promoted to ✅ DONE**
+
+### Tracker Updates
+- v17-2-1, v17-3-1 promoted from 🔄 DRAFT → ✅ DONE
+- **Module 17 now fully ✅ DONE** (all 3 scripts: v17-1-1, v17-2-1, v17-3-1)
+- Total verified ✅ DONE scripts now: **48**
+- 11 scripts remain at 🔄 DRAFT, ~12 at 📐 ARCH
+
+### Git
+- Pull succeeded at start of run (no new changes)
+- Commit + push pending
+
+---
+
+## Run 32 — 22:01 UTC
+**Session:** Cron script quality pass (quality verification — doctor dialogue + drinks scripts)
+**Focus:** Quality-verify `v10-3-1` (Doctor Visit Golden Dialogue), `v6-2-1` (Drinks & Ordering)
+**Status:** ✅ 2 scripts quality-verified and promoted (1 revised to v2.1, 1 as-is)
+
+### Work Completed
+
+1. **`v10-3-1_FULL_SCRIPT.md` — The Doctor Visit Golden Dialogue** (REVISED → v2.1)
+   - **Problem found:** Section 4 dumped ALL 9 symptoms (7 "Ich habe" + 2 "Mir ist") in one massive block before any drill. Violated "max 3-4 items per block" rule. The Schmerzen compound pattern was buried instead of being taught as a repeatable formula.
+   - **Fixes:**
+     - Split Section 4 into **Section 4 (Schmerzen compounds: Kopf/Bauch/Hals — 3 items)** and **Section 4b (Other symptoms: Fieber/Husten/Schnupfen/Durchfall + Mir ist schwindelig/übel)**
+     - Added **compound-building drill** after Section 4 — students produce all 3 Schmerzen compounds, then combine both patterns for the same body part
+     - Added **4-item interleaving drill** in Section 4b mixing all 3 symptom types (tut weh, Ich habe, Mir ist) so students switch between patterns
+     - Practice pause count increased from 10 to 14+
+   - **Result:** Upgraded to v2.1 — proper 3+4+2 symptom blocking, Schmerzen formula isolated as teachable pattern, interleaving across all symptom types
+   - **Promoted to ✅ DONE**
+
+2. **`v6-2-1_FULL_SCRIPT.md` — Drinks & the "gern" Pattern** (NO CHANGES NEEDED)
+   - Already solid v2.0: hot drinks (3 items) with drill, cold drinks (4 items) with drill + Sprudel trap callout, alcohol section compact and respectful, gern pattern taught with position rule + visual + negative + superlative + active recall, hätte gern taught with Akkusativ callback to Module 4 + 3-article drill, golden café dialogue with "steal these" phrase extraction, 4 active recall checkpoints, 16+ practice pauses, energy cues throughout, exam tips for Sprechen Teil 1+3 and Hören
+   - **Promoted to ✅ DONE**
+
+### Tracker Updates
+- v10-3-1, v6-2-1 promoted from 🔄 DRAFT → ✅ DONE
+- Total verified ✅ DONE scripts now: **46**
+- 13 scripts remain at 🔄 DRAFT, ~12 at 📐 ARCH
+
+### Git Note
+- No pull/push attempted this run — shell output reliability unknown
+
+### Files Updated This Run
+- `docs/scripts/v10-3-1_FULL_SCRIPT.md` (revised — 9-symptom block split into 3+4+2, compound formula isolated, interleaving drill added)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (2 entries promoted to ✅ DONE, summary updated)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. **v6-3-1** (Restaurant Golden Dialogue) — conversation capstone for Module 6
+2. **v14-1-1** (Anmeldung Form) — practical exam prep
+3. **v17-2-1** (Hören Practice) — exam core, hasn't been individually verified
+4. **v14-1-2** (All Form Fields Reference) — exam form prep
+5. **v8-1-1** (Rooms & Furniture) — vocabulary-heavy, possible stacking risk
+
+---
+
+## Run 31 — 21:46 UTC
+**Session:** Cron script quality pass (quality verification — jobs/languages + body parts)
+**Focus:** Quality-verify `v2-3-1` (Jobs & Languages), `v10-1-1` (Body Parts)
+**Status:** ✅ 2 scripts quality-verified and promoted as-is (both already solid v2.0)
+
+### Work Completed
+
+1. **`v2-3-1_FULL_SCRIPT.md` — Jobs & Languages** (NO CHANGES NEEDED)
+   - Already solid v2.0: clean teach→drill sub-sections (2A-2D) for professions with rapid drill after 6 items, languages taught with 3 fluency levels each drilled individually, combined self-introduction golden template builds on all Module 2 lessons, active recall with 3 test-yourself prompts before summary, 12 practice pauses with specific prompts, Malayalam bridges (article-dropping rule, -in suffix parallel to Indian gender suffixes), exam tips limited to 2 inline markers, homework is specific
+   - Profession table is 6 items but the -in pattern makes them predictable pairs (3 regular + 2 vowel-change exceptions highlighted), so not true stacking
+   - **Promoted to ✅ DONE**
+
+2. **`v10-1-1_FULL_SCRIPT.md` — Body Parts: Körperteile** (NO CHANGES NEEDED)
+   - Already solid v2.0: vocabulary split into 4 blocks of 3-4 items (head 4, face 3, upper body 4, lower body 4) with point-and-say drills after each block, 4 active recall checkpoints interleaved between vocab sections, 3 pain patterns taught in separate sections with individual drills (tut weh, Schmerzen compounds, Mein/Meine possessive), tut vs tun singular/plural clearly distinguished, Touch & Say speed game as culmination, cross-module reference to Module 4 possessives, 16+ practice pauses, energy cues every section, Malayalam bridge (sadya + compound words)
+   - **Promoted to ✅ DONE**
+
+### Tracker Updates
+- v2-3-1, v10-1-1 promoted from 🔄 DRAFT → ✅ DONE
+- Total verified ✅ DONE scripts now: **44**
+- 15 scripts remain at 🔄 DRAFT, ~12 at 📐 ARCH
+
+### Git Note
+- Pull attempted at start of run (shell returned no output — known issue)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (2 entries promoted to ✅ DONE, summary updated)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. **v10-3-1** (Doctor Visit Golden Dialogue) — conversation capstone for Module 10
+2. **v6-2-1** (Drinks & Ordering) — practical conversation
+3. **v6-3-1** (Restaurant Golden Dialogue) — conversation capstone for Module 6
+4. **v14-1-1** (Anmeldung Form) — practical exam prep
+5. **v17-2-1** (Hören Practice) — exam core, hasn't been individually verified
+
+---
+
+## Run 30 — 21:31 UTC
+**Session:** Cron script quality pass (quality verification — tickets + origin scripts)
+**Focus:** Quality-verify `v9-2-1` (Buying Tickets), `v2-2-1` (Where Are You From?)
+**Status:** ✅ 2 scripts quality-verified and promoted (1 minor addition, 1 as-is)
+
+### Work Completed
+
+1. **`v9-2-1_FULL_SCRIPT.md` — Am Schalter: Buying Travel Tickets** (MINOR ADDITION)
+   - Already solid v2.0: predict-before-reveal golden dialogue, active departure board decoding before answers, sequential counter Q&A (einfach/Klasse/Ermäßigung) with drill after each, nach vs in die as compact reference, exam tip on price/time/platform extraction for Hören, ~12 practice pauses
+   - **Added:** Quality checklist (was missing from v2.0 revision but content already met standard)
+   - **Promoted to ✅ DONE**
+
+2. **`v2-2-1_FULL_SCRIPT.md` — Where Are You From?** (NO CHANGES NEEDED)
+   - Already solid v2.0: clean teach→drill→apply cycle (core pattern → countries → full dialogue), 15 practice pauses with specific prompts, 4 active recall questions before exam bridge, Staatsangehörigkeit form trap isolated as [EXAM-TIP], golden intro progress visualization connecting to v2-1-1, aus vs in contrast taught as paired unit not separate sections, Kerala cultural bridge compact and practical, energy cues throughout
+   - Section 4's 8-country table is borderline stacking but the -isch pattern makes items predictable (not 8 unrelated items), so acceptable
+   - **Promoted to ✅ DONE**
+
+### Tracker Updates
+- v9-2-1, v2-2-1 promoted from 🔄 DRAFT → ✅ DONE
+- Total verified ✅ DONE scripts now: **42**
+- 17 scripts remain at 🔄 DRAFT, ~12 at 📐 ARCH
+
+### Git Note
+- Pull verified clean at start of run (already up to date)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/scripts/v9-2-1_FULL_SCRIPT.md` (quality checklist added)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (2 entries promoted to ✅ DONE, summary updated)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. **v2-3-1** (Jobs & Languages) — completes Module 2 quality verification
+2. **v10-1-1** (Body Parts) — vocabulary-heavy, possible stacking risk
+3. **v10-3-1** (Doctor Visit Golden Dialogue) — conversation script
+4. **v6-2-1** (Drinks & Ordering) — practical conversation
+5. **v6-3-1** (Restaurant Golden Dialogue) — conversation capstone
+
+---
+
+## Run 29 — 21:14 UTC
+**Session:** Cron script quality pass (quality verification — greetings/goodbyes + transport scripts)
+**Focus:** Quality-verify `v1-3-1` (Greetings), `v1-3-2` (Goodbyes), `v1-4-1` (First Conversations), `v9-1-1` (Transportation & mit+Dativ)
+**Status:** ✅ 4 scripts quality-verified and promoted as-is (all already solid v2.0-v2.1)
+
+### Work Completed
+
+1. **`v1-3-1_FULL_SCRIPT.md` — German Greetings for Real Life** (NO CHANGES NEEDED)
+   - Already solid v2.1: 4-tool greeting toolkit, Sie/du via Malayalam social parallel, Wie geht's with 3 safe answers + ask-back rule, 2 mini dialogues (formal + casual), recognition-only regional greetings, 6-item scenario drill, exam-safe output challenge, 8+ practice pauses
+   - **Promoted to ✅ DONE**
+
+2. **`v1-3-2_FULL_SCRIPT.md` — Goodbyes, Danke, Bitte & Entschuldigung** (NO CHANGES NEEDED)
+   - Already solid v2.1: compact 3-goodbye toolkit with Auf Wiederhören phone special, Danke/Bitte exchange with multi-meaning note, Entschuldigung vs Es tut mir leid contrast rule, 2 mini dialogues (shop exit + casual exit), 4 common traps, 3 scenario outputs, 8+ practice pauses
+   - **Promoted to ✅ DONE**
+
+3. **`v1-4-1_FULL_SCRIPT.md` — Your First German Conversation** (NO CHANGES NEEDED)
+   - Already solid v2.1: 4-step survival conversation skeleton (greet→name→origin→ask back), Und Sie/Und du section for reciprocity, formal vs informal decision drill, predict-before-reveal golden dialogue, output challenge
+   - **Promoted to ✅ DONE**
+
+4. **`v9-1-1_FULL_SCRIPT.md` — Transportation & mit+Dativ** (NO CHANGES NEEDED)
+   - Already solid v2.0: 4/4/2 vehicle blocking with drills after each group, grammar via 3 key sentences then DeM-DER-DeM drumbeat trick, interleaving recall after rail block, 9-item speed drill, dialogue with role-play, Deutschlandticket + exam tips, 15+ practice pauses, 3 active recall checkpoints
+   - **Promoted to ✅ DONE**
+
+### Tracker Updates
+- v1-3-1, v1-3-2, v1-4-1, v9-1-1 promoted from 🔄 DRAFT → ✅ DONE
+- Total verified ✅ DONE scripts now: **40**
+- 19 scripts remain at 🔄 DRAFT, ~12 at 📐 ARCH
+
+### Git Note
+- Pull verified clean at start of run (already up to date)
+- No push attempted this run
+
+### Files Updated This Run
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (4 entries promoted to ✅ DONE, summary updated)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. **v9-2-1** (Buying Tickets) — practical conversation, may have drill gaps
+2. **v2-2-1** (Where Are You From?) — foundation Module 2 script
+3. **v2-3-1** (Jobs & Languages) — Sprechen Teil 1 block 3
+4. **v10-1-1** (Body Parts) — vocabulary-heavy, possible stacking risk
+5. **v10-3-1** (Doctor Visit Golden Dialogue) — conversation script
+
+---
+
+## Run 28 — 20:59 UTC
+**Session:** Cron script quality pass (quality verification — daily routine + dates scripts)
+**Focus:** Quality-verify `v5-4-1` (Describing Your Day), `v3-4-1` (Days, Months, Dates)
+**Status:** ✅ 2 scripts quality-verified and promoted as-is (both already solid v2.0)
+
+### Work Completed
+
+1. **`v5-4-1_FULL_SCRIPT.md` — Describing Your Day** (NO CHANGES NEEDED)
+   - Already solid v2.0: model-listen → morning/midday/evening blocks each with teach→drill→apply, 3 active recall checkpoints, weekend variation for transfer, exam weapon section (Sprechen + Schreiben), final production challenge with checklist, 10+ practice pauses, Malayalam bridge (postpositions ≈ separable prefixes), energy cues throughout
+   - **Promoted to ✅ DONE**
+
+2. **`v3-4-1_FULL_SCRIPT.md` — Days, Months & Dates** (NO CHANGES NEEDED)
+   - Already solid v2.0: hook via Anmeldung form freeze, days taught one-at-a-time with memory hooks (not table dump), months focused on 4 tricky ones (greyed out the easy 8), TT.MM.JJJJ format with Indian parallel, 3 irregular ordinals highlighted (dritten/siebten/achten), birthday exchange as exam dialogue, seasons with Kerala cultural comparison, full exam practice section (Schreiben+Hören+Sprechen combined), 18+ practice pauses, 4 active recall checkpoints, vocabulary summary table
+   - **Promoted to ✅ DONE**
+
+### Tracker Updates
+- v5-4-1, v3-4-1 promoted from 🔄 DRAFT → ✅ DONE
+- Total verified ✅ DONE scripts now: **36**
+- 23 scripts remain at 🔄 DRAFT, ~12 at 📐 ARCH
+
+### Good follow-up candidates for next run
+1. **v9-1-1** (Transportation & mit+Dativ) — grammar-heavy, likely stacking risk
+2. **v1-3-1** (Greetings) and **v1-3-2** (Goodbyes) — previously revised to v2.1 but still DRAFT in tracker
+3. **v9-2-1** (Buying Tickets) — practical conversation, may have drill gaps
+
+---
+
+## Run 27 — 20:12 UTC
+**Session:** Cron 12h script quality pass (quality verification — numbers/time/weekend scripts)
+**Focus:** Quality-verify `v3-2-1` (Numbers 21-100+), `v3-3-1` (Telling Time), `v13-4-1` (Talking About Your Weekend)
+**Status:** ✅ 3 scripts quality-verified; 1 revised to v2.1, 2 promoted as-is
+
+### Work Completed
+
+1. **`v3-2-1_FULL_SCRIPT.md` — Numbers 21–100+** (NO CHANGES NEEDED)
+   - Already solid v2.0: clean formula section with 5 worked examples + timed practice, 3-trap emphasis (dreißig/sechzig/siebzig), phone-number listening drill with pair-reading technique, price listening drill, hundreds with format trap (dots vs commas), 18 practice pauses, active recall before summary, Malayalam bridge for reversal comfort
+   - **Promoted to ✅ DONE** with no structural changes
+
+2. **`v3-3-1_FULL_SCRIPT.md` — Telling Time: The Halb Trap** (NO CHANGES NEEDED)
+   - Already solid v2.0: halb trap taught with visual road metaphor + survival rule (hear X → subtract 1 → add :30), Viertel nach/vor taught with clock-face visual + interleaving recall, full minute system as reference, 24-hour official time as separate section, 8-item listening drill simulating Hören exam, Sprechen Teil 2 patterns, 18+ practice pauses, 3 active recall checkpoints
+   - **Promoted to ✅ DONE** with no structural changes
+
+3. **`v13-4-1_FULL_SCRIPT.md` — Talking About Your Weekend** (REVISED → v2.1)
+   - **Problem found:** Section 3 dumped all 8 time markers (4 "When?" + 4 "Sequence") in one block with only 1 drill at the end. Students would see 8 new markers before any practice.
+   - **Fixes:**
+     - Split Section 3 into **Section 3 (When? markers: gestern/am Samstag/am Wochenende/letzte Woche)** and **Section 3b (Sequence markers: zuerst/dann/danach/zum Schluss)**
+     - Added **sentence-building drill** after Section 3 — students practice "Am Samstag habe ich gekocht" immediately
+     - Added **3-sentence chaining drill** after Section 3b — students connect 3 actions with zuerst/dann/danach
+     - Practice pause count increased from 12 to 15+
+   - **Result:** Upgraded to v2.1 — proper 4+4 marker blocking with drills after each group
+
+### Tracker Updates
+- v3-2-1, v3-3-1, v13-4-1 all promoted from 🔄 DRAFT → ✅ DONE
+- Total verified ✅ DONE scripts now: **34**
+- 25 scripts remain at 🔄 DRAFT, ~12 at 📐 ARCH
+
+### Shell Note
+- exec returned empty output (known ongoing issue); all durable progress left in docs/scripts and tracker
+
+### Files Updated This Run
+- `docs/scripts/v13-4-1_FULL_SCRIPT.md` (revised — 8-marker block split into 4+4, sentence-building + chaining drills added)
+- `docs/SCRIPT_PRODUCTION_TRACKER.md` (3 entries promoted to ✅ DONE, summary updated)
+- `docs/OVERNIGHT_RUN_LOG.md` (this entry)
+
+### Good follow-up candidates for next run
+1. **Continue quality verification** — pick 2-3 more DRAFT scripts. Good candidates: v5-4-1 (describing your day), v3-4-1 (days/months/dates), v9-1-1 (transportation) — grammar/vocab-heavy scripts that may have stacking issues
+2. **Wave 4 holdouts**: v1-3-1 (greetings), v1-3-2 (goodbyes), v1-4-1 (first conversation) — already revised to v2.1 earlier but still at 🔄 DRAFT in tracker
+3. **Exam practice scripts**: v17-2-1 (Hören), v17-3-1 (Lesen) — core exam prep, haven't been individually checked
+
+---
 
 ## Run 26 — 19:57 UTC
 **Session:** Cron 12h script quality pass (batch quality verification + structure fixes)

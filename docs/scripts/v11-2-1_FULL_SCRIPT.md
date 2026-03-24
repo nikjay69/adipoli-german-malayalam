@@ -5,8 +5,8 @@
 > **Duration:** 10:30 target
 > **Exam section:** Lesen (notices / emails / workplace text), Hören (simple work-study dialogues), Sprechen (describing work or study life)
 > **Prerequisites:** Module 11-1 (profession basics), Module 5 (daily routine verbs), Module 1 (formal politeness)
-> **Status:** REVISED — v2.1
-> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
+> **Status:** REVISED — v2.3
+> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (v2.3 — Section 2 actually split 4+4 with drills after each block, Section 4 split office/uni with drills, energy cues on all sections, [EXAM-TIP] markers, quality checklist)
 
 ---
 
@@ -20,45 +20,46 @@
 
 ## Section 1: Hook — Your First Day Survival German (0:15–0:45)
 
+### 🎬 [Energy: urgent, relatable — "you've been there" vibe]
 ### Visual: [Montage: office desk, hospital corridor, university hallway, coffee machine]
-### Narration: [ENERGY: practical, steady]
+### Narration:
 "On your first day in a German workplace or university, nobody expects poetry.
 
 But you do need survival German.
 
 Where is the meeting? Where is the printer? Can you help me? Shall we go to the cafeteria?
 
-Today, we build that toolkit — not a giant dictionary, but the sentences that actually keep your day moving."
+Today, we build that toolkit — not a giant dictionary, but the sentences that actually keep your day moving.
+
+*Nammude first day — new place, new people, new language. Stressful aanu, but ithu kazhinjal you'll survive it in German.*"
 
 ---
 
-## Section 2: The 8 Words That Carry Most of the Day (0:45–2:15)
+## Section 2: Your Desk, Your Room — 4 Core Workplace Words (0:45–1:45)
 
-### Visual: [8 cards only, each with icon + article]
+### 🎬 [Energy: focused, building confidence — "learn these 4 and you already belong"]
+### Visual: [4 cards only, each with icon + article]
 ### Narration:
-"Don't start with 25 office words. Start with the 8 you will hear again and again.
+"Don't start with 25 office words. Start with the 4 you see every single day.
 
 🔊 **das Büro** — office  
 🔊 **der Schreibtisch** — desk  
 🔊 **der Computer** — computer  
-🔊 **der Drucker** — printer  
-🔊 **die Besprechung** — meeting  
-🔊 **der Kollege / die Kollegin** — colleague  
-🔊 **die Pause** — break  
-🔊 **die Kantine / die Mensa** — cafeteria / canteen
+🔊 **der Drucker** — printer
 
 ### Micro-patterns
 - **im Büro** — in the office
 - **am Schreibtisch** — at the desk
-- **in der Besprechung** — in the meeting
 
 ### Drill
-Repeat after me:
+Repeat with article:
+- **das Büro**
+⏸️ [pause]
+- **der Schreibtisch**
+⏸️ [pause]
+- **der Computer**
+⏸️ [pause]
 - **der Drucker**
-- **die Besprechung**
-- **die Pause**
-- **die Kollegin**
-
 ⏸️ [pause]
 
 ### Apply
@@ -70,8 +71,56 @@ Good. One usable sentence already."
 
 ---
 
-## Section 3: 3 First-Day Questions You Actually Need (2:15–3:45)
+## Section 2b: Your People, Your Breaks — 4 More Workplace Words (1:45–2:45)
 
+### 🎬 [Energy: social warmth — "the human side of your workplace"]
+### Visual: [4 more cards with icons]
+### Narration:
+"Now the people and rhythm of your day.
+
+🔊 **die Besprechung** — meeting  
+🔊 **der Kollege / die Kollegin** — colleague (male / female)  
+🔊 **die Pause** — break  
+🔊 **die Kantine / die Mensa** — cafeteria / canteen
+
+*Kollege is male, Kollegin is female — same -in rule you already know from Module 11-1.*
+
+### Drill
+Repeat after me:
+- **die Besprechung**
+⏸️ [pause]
+- **die Kollegin**
+⏸️ [pause]
+- **die Pause**
+⏸️ [pause]
+- **die Kantine**
+⏸️ [pause]
+
+### 8-Word Recall
+Now from ALL 8 — I say English, you say German:
+- printer → ?
+⏸️ [pause]
+**der Drucker**
+- meeting → ?
+⏸️ [pause]
+**die Besprechung**
+- colleague (female) → ?
+⏸️ [pause]
+**die Kollegin**
+- cafeteria → ?
+⏸️ [pause]
+**die Kantine**
+
+### Micro-pattern
+🔊 **in der Besprechung** — in the meeting
+
+Good. You know the 8 words that carry the day."
+
+---
+
+## Section 3: 3 First-Day Questions You Actually Need (2:45–4:15)
+
+### 🎬 [Energy: practical survival — "memorize these three and you won't panic"]
 ### Visual: [Three large speech bubbles only]
 ### Narration:
 "These three questions will save you on day one.
@@ -105,26 +154,48 @@ I give the situation. You choose the sentence.
 
 ---
 
-## Section 4: Work German vs Study German (3:45–5:20)
+## Section 4: Office Lane — 4 Boss-to-Phone Words (4:15–5:05)
 
-### Visual: [Split screen: OFFICE / UNIVERSITY]
+### 🎬 [Energy: professional, crisp — "your office vocabulary"]
+### Visual: [4 cards, office icons]
 ### Narration:
-"Now split the world into two lanes.
+"Now we split into two lanes. First: office.
 
-### Office lane
 🔊 **der Chef / die Chefin** — boss  
 🔊 **das Meeting / die Besprechung** — meeting  
 🔊 **der Ordner** — folder  
 🔊 **das Telefon** — phone
 
-### University lane
+### Identity sentence
+🔊 **Ich arbeite im Büro.** — I work in an office.
+
+### Drill
+Say the article + word:
+- boss (female) → ?
+⏸️ [pause]
+**die Chefin**
+- folder → ?
+⏸️ [pause]
+**der Ordner**
+
+Now say: **Ich arbeite im Büro.**
+⏸️ [pause]"
+
+---
+
+## Section 4b: University Lane — 4 Campus Words + studieren vs lernen (5:05–6:05)
+
+### 🎬 [Energy: student-friendly — "your campus vocabulary"]
+### Visual: [4 cards, campus icons]
+### Narration:
+"Now the university lane.
+
 🔊 **die Universität / die Uni** — university  
 🔊 **die Vorlesung** — lecture  
 🔊 **die Bibliothek** — library  
 🔊 **die Prüfung** — exam
 
-### Two useful identity sentences
-🔊 **Ich arbeite im Büro.** — I work in an office.  
+### Identity sentence
 🔊 **Ich studiere an der Universität.** — I study at university.
 
 ### Important distinction
@@ -132,15 +203,27 @@ I give the situation. You choose the sentence.
 🔊 **lernen** = learn / study for a test
 
 So:
-- **Ich studiere Informatik.**
-- **Ich lerne für die Prüfung.**
+- **Ich studiere Informatik.** ✅
+- **Ich lerne für die Prüfung.** ✅
 
-That difference matters a lot."
+[EXAM-TIP] In Sprechen Teil 1, if you say **Ich studiere**, the examiner knows you are at university. If you say **Ich lerne Deutsch**, that means learning the language. Don't mix them up.
+
+### Drill
+- library → ?
+⏸️ [pause]
+**die Bibliothek**
+- exam → ?
+⏸️ [pause]
+**die Prüfung**
+
+Now say: **Ich studiere an der Universität.**
+⏸️ [pause]"
 
 ---
 
-## Section 5: Golden Dialogue — First Morning at Work (5:20–7:20)
+## Section 5: Golden Dialogue — First Morning at Work (6:05–8:05)
 
+### 🎬 [Energy: immersive role-play — "you are there, day one"]
 ### Visual: [Dialogue shown one line at a time with prediction task before each answer]
 ### Narration:
 "Let's make it real.
@@ -179,8 +262,9 @@ Short sentences. Real need. No grammar showing off."
 
 ---
 
-## Section 6: Break-Time Social German (7:20–8:30)
+## Section 6: Break-Time Social German (8:05–9:05)
 
+### 🎬 [Energy: warm, social — "this is how you make friends at work"]
 ### Visual: [Coffee machine / cafeteria mini-scene]
 ### Narration:
 "A lot of workplace friendship starts in the break.
@@ -203,8 +287,9 @@ Learn these four lines:
 
 ---
 
-## Section 7: Reading / Exam Link — Catch the Key Workplace Words (8:30–9:30)
+## Section 7: Reading / Exam Link — Catch the Key Workplace Words (9:05–9:50)
 
+### 🎬 [Energy: exam-focused — "this is exactly how A1 tests it"]
 ### Visual: [Simple notice card]
 **Besprechung heute um 9:00 Uhr in Büro 3. Bitte pünktlich sein.**
 
@@ -222,12 +307,15 @@ If you see or hear this notice, what are the key facts?
 - **important instruction?** bitte pünktlich sein
 
 This is exactly how A1 reading and listening often work.
-Not every word. Just the important information."
+Not every word. Just the important information.
+
+[EXAM-TIP] In Lesen and Hören, workplace notices test your ability to extract what/when/where. Don't translate everything — scan for the key facts first."
 
 ---
 
-## Section 8: Germany Work Culture — Keep It Short and Useful (9:30–10:00)
+## Section 8: Germany Work Culture — Keep It Short and Useful (9:50–10:15)
 
+### 🎬 [Energy: cultural wisdom — "three rules, that's it"]
 ### Visual: [Three compact icons]
 ### Narration:
 "Three culture rules worth knowing:
@@ -240,8 +328,55 @@ Not every word. Just the important information."
 
 ---
 
-## Section 9: Summary + Output Challenge (10:00–10:30)
+## Section 9: Active Recall — Test Yourself Before We Finish (10:15–10:50)
 
+### 🎬 [Energy: quiz mode — "prove you remember"]
+### Visual: [Quiz prompts one at a time]
+### Narration:
+"Quick test. No peeking.
+
+**Round 1 — Vocabulary**
+- How do you say 'printer' in German?
+⏸️ [pause]
+**der Drucker**
+
+- How do you say 'meeting'?
+⏸️ [pause]
+**die Besprechung**
+
+- How do you say 'library'?
+⏸️ [pause]
+**die Bibliothek**
+
+**Round 2 — Sentences**
+- Ask where the printer is.
+⏸️ [pause]
+**Wo ist der Drucker?**
+
+- Ask someone politely for help.
+⏸️ [pause]
+**Können Sie mir bitte helfen?**
+
+- Say you study at university.
+⏸️ [pause]
+**Ich studiere an der Universität.**
+
+**Round 3 — studieren vs lernen**
+- 'I study computer science at uni' → ?
+⏸️ [pause]
+**Ich studiere Informatik.**
+
+- 'I'm studying for the exam' → ?
+⏸️ [pause]
+**Ich lerne für die Prüfung.**
+
+If you got 6 or more right, you are ready for your first day."
+
+---
+
+## Section 10: Summary + Output Challenge (10:50–11:15)
+
+### 🎬 [Energy: confident send-off — "you've got the toolkit"]
 ### Visual: [Toolkit card]
 ### Narration:
 "Today's toolkit:
@@ -257,6 +392,8 @@ Say **three sentences** about your real work or study life:
 2. one thing you need there
 3. one polite help question
 
+⏸️ [pause]
+
 Next, we use this professional world in writing — simple German emails.
 
 Bis zum nächsten Mal!"
@@ -270,3 +407,18 @@ Bis zum nächsten Mal!"
 - **Malayalam bridge:** kept only around survival behavior and social expectations, not as long commentary blocks
 - **Exam usefulness:** explicit info-catching task for notice reading/listening; polite formal help language reinforced
 - **Pacing note:** do not turn the vocab cards into a lecture; keep each block moving toward a sentence learners can actually say
+
+---
+
+## Quality Checklist (SCRIPT_QUALITY_STANDARD v2.3)
+
+- [x] Hook < 30 seconds, concrete payoff stated
+- [x] Each vocabulary block ≤ 4 items before a drill (Section 2: 4, Section 2b: 4, Section 4: 4, Section 4b: 4)
+- [x] Practice pause after every new item block with specific prompt + reveal
+- [x] Active recall section (Section 9) tests vocabulary, sentences, AND studieren/lernen distinction
+- [x] 🎬 Energy cues on all sections
+- [x] [EXAM-TIP] markers for Lesen/Hören notice reading and Sprechen studieren/lernen
+- [x] Malayalam bridge kept structural and compact (not commentary blocks)
+- [x] Golden dialogue uses predict-before-reveal
+- [x] Output challenge requires personal production (3 sentences about real life)
+- [x] Practice pauses: 16+ with specific prompts
