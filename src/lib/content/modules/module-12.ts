@@ -304,7 +304,9 @@ export const MODULE_12: Module = {
         { id: "vocab12-2-7", german: "der Frühling", english: "spring", malayalam: "വസന്തം", pronunciation: "fry-ling", example: "Im Frühling blühen die Blumen.", exampleTranslation: "In spring the flowers bloom." },
         { id: "vocab12-2-8", german: "der Sommer", english: "summer", malayalam: "വേനൽക്കാലം", pronunciation: "zom-mer", example: "Der Sommer in Deutschland ist angenehm.", exampleTranslation: "Summer in Germany is pleasant." },
         { id: "vocab12-2-9", german: "der Herbst", english: "autumn / fall", malayalam: "ശരത്കാലം", pronunciation: "herpst", example: "Im Herbst werden die Blätter bunt.", exampleTranslation: "In autumn the leaves become colourful." },
-        { id: "vocab12-2-10", german: "der Winter", english: "winter", malayalam: "ശീതകാലം", pronunciation: "vin-ter", example: "Der Winter dauert von Dezember bis Februar.", exampleTranslation: "Winter lasts from December to February." }
+        { id: "vocab12-2-10", german: "der Winter", english: "winter", malayalam: "ശീതകാലം", pronunciation: "vin-ter", example: "Der Winter dauert von Dezember bis Februar.", exampleTranslation: "Winter lasts from December to February." },
+        { id: "vocab12-2-11", german: "die Sonne", english: "sun", malayalam: "സൂര്യൻ", pronunciation: "dee zon-ne", example: "Die Sonne scheint heute.", exampleTranslation: "The sun is shining today." },
+        { id: "vocab12-2-12", german: "der Regen", english: "rain", malayalam: "മഴ", pronunciation: "dehr rey-gen", example: "Im Monsun gibt es viel Regen.", exampleTranslation: "In the monsoon there is a lot of rain." }
       ]
     },
 

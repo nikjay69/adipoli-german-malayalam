@@ -34,7 +34,7 @@ export default function ModulePage({ params }: { params: Promise<{ moduleId: str
   if (!module) {
     return (
       <div className="px-4 py-6 max-w-4xl mx-auto text-center">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Module not found</h1>
+        <h1 className="text-2xl font-bold text-[var(--foreground)]">Module not found</h1>
         <Link href="/learn">
           <Button className="mt-4">Back to Learn</Button>
         </Link>
@@ -62,7 +62,7 @@ export default function ModulePage({ params }: { params: Promise<{ moduleId: str
       >
         <button
           onClick={() => router.back()}
-          className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+          className="flex items-center gap-2 text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
           <span>Back</span>
@@ -84,17 +84,17 @@ export default function ModulePage({ params }: { params: Promise<{ moduleId: str
           </div>
           <div className="pt-2">
             <Badge variant="secondary" size="sm" className="mb-2">Module {module.id}</Badge>
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+            <h1 className="text-2xl font-bold text-[var(--foreground)] mb-1">
               {module.title}
             </h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+            <p className="text-sm text-[var(--foreground)]/50 mb-1">
               {module.titleGerman}
             </p>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-[var(--foreground)]/60 mb-4">
               {module.description}
             </p>
 
-            <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+            <div className="flex items-center gap-4 text-sm text-[var(--foreground)]/50 mb-4">
               <span className="flex items-center gap-1">
                 <Clock className="w-4 h-4" /> {module.totalHours} hours
               </span>
@@ -104,8 +104,8 @@ export default function ModulePage({ params }: { params: Promise<{ moduleId: str
 
             <div className="mb-4">
               <div className="flex items-center justify-between text-sm mb-1">
-                <span className="text-gray-500 dark:text-gray-400">Progress</span>
-                <span className="font-medium text-gray-700 dark:text-gray-300">
+                <span className="text-[var(--foreground)]/50">Progress</span>
+                <span className="font-medium text-[var(--foreground)]/80">
                   {completedModuleLessons}/{module.lessons.length} lessons ({Math.round(moduleProgress)}%)
                 </span>
               </div>
@@ -142,7 +142,7 @@ export default function ModulePage({ params }: { params: Promise<{ moduleId: str
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Lessons</h2>
+        <h2 className="text-lg font-bold text-[var(--foreground)] mb-4">Lessons</h2>
         <div className="space-y-3">
           {module.lessons.map((lesson, lessonIndex) => {
             const isCompleted = userProgress.completedLessons.some(
@@ -170,20 +170,20 @@ export default function ModulePage({ params }: { params: Promise<{ moduleId: str
                     isLessonLocked
                       ? 'opacity-50 cursor-not-allowed'
                       : isCompleted
-                      ? 'border-2 border-emerald-200 dark:border-emerald-800'
+                      ? 'border-2 border-[#27ae60]/30'
                       : ''
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
                       isLessonLocked
-                        ? 'bg-gray-200 dark:bg-gray-700'
+                        ? 'bg-[var(--foreground)]/10'
                         : isCompleted
-                        ? 'bg-emerald-500'
+                        ? 'bg-[#27ae60]'
                         : 'bg-[#e94560]'
                     }`}>
                       {isLessonLocked ? (
-                        <Lock className="w-5 h-5 text-gray-400" />
+                        <Lock className="w-5 h-5 text-[var(--foreground)]/40" />
                       ) : isCompleted ? (
                         <CheckCircle className="w-5 h-5 text-white" />
                       ) : (
@@ -192,21 +192,21 @@ export default function ModulePage({ params }: { params: Promise<{ moduleId: str
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className={`font-semibold ${
-                        isLessonLocked ? 'text-gray-400' : 'text-gray-900 dark:text-white'
+                        isLessonLocked ? 'text-[var(--foreground)]/40' : 'text-[var(--foreground)]'
                       }`}>
                         {lesson.title}
                       </h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-1">
+                      <p className="text-sm text-[var(--foreground)]/50 line-clamp-1">
                         {lesson.description}
                       </p>
                       <div className="flex items-center gap-3 mt-1">
-                        <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1">
+                        <span className="text-xs text-[var(--foreground)]/50 flex items-center gap-1">
                           <Clock className="w-3 h-3" /> {lesson.duration}
                         </span>
-                        <span className="text-xs text-gray-500 dark:text-gray-400">
+                        <span className="text-xs text-[var(--foreground)]/50">
                           {lesson.videos.length} video{lesson.videos.length !== 1 ? 's' : ''}
                         </span>
-                        <span className="text-xs text-gray-500 dark:text-gray-400">
+                        <span className="text-xs text-[var(--foreground)]/50">
                           {lesson.vocabulary.length} words
                         </span>
                       </div>
@@ -222,7 +222,7 @@ export default function ModulePage({ params }: { params: Promise<{ moduleId: str
                         <Badge variant="success" size="sm">+{lesson.xpReward} XP</Badge>
                       )}
                       <ChevronRight className={`w-5 h-5 ${
-                        isLessonLocked ? 'text-gray-300' : 'text-gray-400'
+                        isLessonLocked ? 'text-[var(--foreground)]/30' : 'text-[var(--foreground)]/40'
                       }`} />
                     </div>
                   </div>

@@ -6,7 +6,8 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, FileText, Clock, Award, Lock } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
-import { ALL_MODULES } from '@/lib/content/modules';
+import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
+import { calculateExamReadiness } from '@/lib/exam-readiness';
 
 const tests = [
   { id: 'goethe-a1-test-1', name: 'Übungstest 1', topic: 'Self-introduction, Personal Info & Shopping', icon: '🎯' },
@@ -64,6 +65,52 @@ export default function TestsPage() {
           <Award className="w-3 h-3" /> Official Goethe format
         </div>
       </motion.div>
+
+      {/* Exam Readiness Checkpoint */}
+      {mounted && (() => {
+        const tl = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
+        const tv = getAllVocabulary().length;
+        const r = calculateExamReadiness({
+          completedLessons: userProgress.completedLessons,
+          totalLessons: tl,
+          learnedVocabulary: userProgress.learnedVocabulary.length,
+          totalVocabulary: tv,
+          streak: userProgress.streak,
+          gamesPlayed: userProgress.gamesPlayed,
+          quizzesTaken: userProgress.quizzesTaken,
+        });
+        const ready = r.score >= 40;
+        return (
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.08 }}
+            className={`game-card p-4 mb-4 border ${ready ? 'border-[#27ae60]/20' : 'border-[#d4a520]/20'}`}
+          >
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="font-bold text-sm">Exam Readiness Check</h3>
+              <span className="text-lg font-bold" style={{ color: r.color }}>{r.score}%</span>
+            </div>
+            <div className="h-2 bg-[var(--foreground)]/8 rounded-full overflow-hidden mb-2">
+              <motion.div className="h-full rounded-full" style={{ backgroundColor: r.color }}
+                initial={{ width: 0 }} animate={{ width: `${r.score}%` }}
+                transition={{ duration: 0.8 }} />
+            </div>
+            {ready ? (
+              <p className="text-xs text-[#27ae60]">
+                You're ready to try mock tests! Start with Übungstest 1 and see how you do.
+              </p>
+            ) : (
+              <div>
+                <p className="text-xs text-[#d4a520] mb-1">
+                  Complete more lessons before taking mock tests. Aim for 40%+ readiness.
+                </p>
+                <p className="text-[10px] text-[var(--foreground)]/30">💡 {r.nextAction}</p>
+              </div>
+            )}
+          </motion.div>
+        );
+      })()}
 
       {/* Goethe Format Info */}
       <motion.div

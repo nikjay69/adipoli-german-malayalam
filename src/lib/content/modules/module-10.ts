@@ -87,7 +87,8 @@ export const MODULE_10: Module = {
         { id: "vocab10-1-7", german: "die Hand", english: "hand", malayalam: "കൈപ്പത്തി", pronunciation: "hahnt", example: "Gib mir deine Hand.", exampleTranslation: "Give me your hand." },
         { id: "vocab10-1-8", german: "das Bein", english: "leg", malayalam: "കാൽ", pronunciation: "byne", example: "Mein Bein schmerzt.", exampleTranslation: "My leg hurts." },
         { id: "vocab10-1-9", german: "der Fuß", english: "foot", malayalam: "പാദം", pronunciation: "foos", example: "Mein Fuß tut weh.", exampleTranslation: "My foot hurts." },
-        { id: "vocab10-1-10", german: "der Rücken", english: "back", malayalam: "മുതുക്", pronunciation: "rü-ken", example: "Ich habe Rückenschmerzen.", exampleTranslation: "I have back pain." }
+        { id: "vocab10-1-10", german: "der Rücken", english: "back", malayalam: "മുതുക്", pronunciation: "rü-ken", example: "Ich habe Rückenschmerzen.", exampleTranslation: "I have back pain." },
+        { id: "vocab10-1-11", german: "das Krankenhaus", english: "hospital", malayalam: "ആശുപത്രി", pronunciation: "dahs krahn-ken-hows", example: "Mein Bruder ist im Krankenhaus.", exampleTranslation: "My brother is in the hospital." }
       ]
     },
     {

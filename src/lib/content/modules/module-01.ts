@@ -359,7 +359,8 @@ export const MODULE_1: Module = {
         { id: "vocab1-4-7", german: "Bis bald", english: "See you soon", malayalam: "ഉടനെ കാണാം", pronunciation: "bis bahlt", example: "Tschüss, bis bald!", exampleTranslation: "Bye, see you soon!" },
         { id: "vocab1-4-8", german: "Es tut mir leid", english: "I'm sorry", malayalam: "എനിക്ക് ദുഃഖമുണ്ട്", pronunciation: "es toot meer lyte", example: "Es tut mir leid, das war mein Fehler.", exampleTranslation: "I'm sorry, that was my mistake." },
         { id: "vocab1-4-9", german: "Kein Problem", english: "No problem", malayalam: "കുഴപ്പമില്ല", pronunciation: "kyne pro-blaym", example: "Kein Problem, das macht nichts!", exampleTranslation: "No problem, that doesn't matter!" },
-        { id: "vocab1-4-10", german: "Gern geschehen", english: "You're welcome (polite)", malayalam: "സന്തോഷം", pronunciation: "gairn ge-shey-en", example: "Danke! — Gern geschehen!", exampleTranslation: "Thanks! — You're welcome!" }
+        { id: "vocab1-4-10", german: "Gern geschehen", english: "You're welcome (polite)", malayalam: "സന്തോഷം", pronunciation: "gairn ge-shey-en", example: "Danke! — Gern geschehen!", exampleTranslation: "Thanks! — You're welcome!" },
+        { id: "vocab1-4-11", german: "nein", english: "no", malayalam: "ഇല്ല", pronunciation: "nyne", example: "Nein, danke!", exampleTranslation: "No, thank you!" }
       ]
     },
 
@@ -598,6 +599,24 @@ export const MODULE_1: Module = {
           correctAnswer: "ue",
           explanation: "When special characters aren't available: ae = ä, oe = ö, ue = ü, ss = ß. So 'München' becomes 'Muenchen'.",
           xpReward: 10
+        },
+        {
+          id: "ex1-6-9",
+          type: "fill-blank",
+          question: "Type in German: 'My name is...' (Ich...)",
+          options: ["Ich heiße", "Ich bin", "Ich heißt", "Mein Name"],
+          correctAnswer: "Ich heiße",
+          explanation: "'Ich heiße...' is the standard way to say 'My name is...' in German.",
+          xpReward: 15
+        },
+        {
+          id: "ex1-6-10",
+          type: "fill-blank",
+          question: "Type in German: 'Good morning!'",
+          options: ["Guten Morgen", "Guten Tag", "Gute Morgen", "Gut Morgen"],
+          correctAnswer: "Guten Morgen",
+          explanation: "Guten Morgen! — the 'n' ending on 'Guten' is important! It's accusative case in the greeting.",
+          xpReward: 15
         }
       ],
       vocabulary: [

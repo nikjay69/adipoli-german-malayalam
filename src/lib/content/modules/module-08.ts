@@ -254,6 +254,24 @@ export const MODULE_8: Module = {
           pronunciation: "dee lahm-peh",
           example: "Mach bitte die Lampe an.",
           exampleTranslation: "Please turn on the lamp."
+        },
+        {
+          id: "vocab8-1-13",
+          german: "die Stadt",
+          english: "city",
+          malayalam: "നഗരം",
+          pronunciation: "dee shtat",
+          example: "Berlin ist eine große Stadt.",
+          exampleTranslation: "Berlin is a big city."
+        },
+        {
+          id: "vocab8-1-14",
+          german: "die Kirche",
+          english: "church",
+          malayalam: "പള്ളി",
+          pronunciation: "dee keer-kheh",
+          example: "Die Kirche ist sehr alt.",
+          exampleTranslation: "The church is very old."
         }
       ]
     },

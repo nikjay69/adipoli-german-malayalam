@@ -458,7 +458,9 @@ export const MODULE_9: Module = {
         { id: "vocab9-5-7", german: "möchten", english: "would like to", malayalam: "ആഗ്രഹിക്കുന്നു (മര്യാദയോടെ)", pronunciation: "mökh-ten", example: "Ich möchte einen Tee, bitte.", exampleTranslation: "I would like a tea, please." },
         { id: "vocab9-5-8", german: "sprechen", english: "to speak", malayalam: "സംസാരിക്കുക", pronunciation: "shpre-khen", example: "Können Sie Englisch sprechen?", exampleTranslation: "Can you speak English?" },
         { id: "vocab9-5-9", german: "helfen", english: "to help", malayalam: "സഹായിക്കുക", pronunciation: "hel-fen", example: "Können Sie mir bitte helfen?", exampleTranslation: "Can you please help me?" },
-        { id: "vocab9-5-10", german: "brauchen", english: "to need", malayalam: "ആവശ്യമുണ്ട്", pronunciation: "brow-khen", example: "Ich brauche eine Fahrkarte.", exampleTranslation: "I need a ticket." }
+        { id: "vocab9-5-10", german: "brauchen", english: "to need", malayalam: "ആവശ്യമുണ്ട്", pronunciation: "brow-khen", example: "Ich brauche eine Fahrkarte.", exampleTranslation: "I need a ticket." },
+        { id: "vocab9-5-11", german: "fliegen", english: "to fly", malayalam: "പറക്കുക", pronunciation: "flee-gen", example: "Wir fliegen morgen nach Berlin.", exampleTranslation: "We fly to Berlin tomorrow." },
+        { id: "vocab9-5-12", german: "finden", english: "to find", malayalam: "കണ്ടെത്തുക", pronunciation: "fin-den", example: "Ich kann den Bahnhof nicht finden.", exampleTranslation: "I cannot find the train station." }
       ]
     }
   ]

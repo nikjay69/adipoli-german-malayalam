@@ -152,7 +152,7 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
   if (!module || !lesson) {
     return (
       <div className="px-4 py-6 max-w-4xl mx-auto text-center">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Lesson not found</h1>
+        <h1 className="text-2xl font-bold text-[var(--foreground)]">Lesson not found</h1>
         <Link href="/learn">
           <Button className="mt-4">Back to Learn</Button>
         </Link>
@@ -247,7 +247,7 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
   const currentExercise = lesson.exercises[currentExerciseIndex];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
+    <div className="min-h-screen">
       {/* Exit Confirmation Modal */}
       <AnimatePresence>
         {showExitConfirm && (
@@ -263,12 +263,12 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white dark:bg-gray-900 rounded-2xl p-6 max-w-sm w-full shadow-xl border border-gray-200 dark:border-gray-700"
+              className="bg-[#1a2e1a] rounded-2xl p-6 max-w-sm w-full shadow-xl border border-[var(--card-border)]"
             >
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-lg font-bold text-[var(--foreground)] mb-2">
                 Leave lesson?
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+              <p className="text-sm text-[var(--foreground)]/60 mb-6">
                 Your progress in this lesson will be lost. Are you sure you want to exit?
               </p>
               <div className="flex gap-3">
@@ -293,16 +293,16 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
       </AnimatePresence>
 
       {/* Header */}
-      <div className="sticky top-14 md:top-16 z-40 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-3">
+      <div className="sticky top-14 md:top-16 z-40 bg-[#1a2e1a]/95 backdrop-blur-sm border-b border-[var(--card-border)] px-4 py-3">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <button
               onClick={handleExitClick}
-              className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              className="flex items-center gap-1 text-[var(--foreground)]/60 hover:text-[var(--foreground)]"
             >
               <X className="w-5 h-5" />
             </button>
-            <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+            <span className="text-sm font-medium text-[var(--foreground)]/60">
               {currentStep}/{totalSteps}
             </span>
           </div>
@@ -330,17 +330,17 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                 <Badge variant="secondary" size="sm" className="mb-2">
                   Module {module.id} - Lesson {lesson.id.split('-')[1]}
                 </Badge>
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+                <h1 className="text-2xl font-bold text-[var(--foreground)] mb-1">
                   {lesson.title}
                 </h1>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                <p className="text-sm text-[var(--foreground)]/50 mb-4">
                   {lesson.titleGerman}
                 </p>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                <p className="text-[var(--foreground)]/60 mb-6">
                   {lesson.description}
                 </p>
 
-                <div className="flex items-center justify-center gap-6 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                <div className="flex items-center justify-center gap-6 text-sm text-[var(--foreground)]/50 mb-6">
                   <div className="flex items-center gap-1">
                     <Video className="w-4 h-4" />
                     <span>{lesson.videos.length} videos</span>
@@ -381,25 +381,25 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                   </div>
                   <div className="absolute bottom-4 left-4 right-4 bg-black/50 rounded-lg p-3">
                     <p className="text-sm font-medium">{currentVideo.title}</p>
-                    <p className="text-xs text-gray-300">{currentVideo.duration}</p>
+                    <p className="text-xs text-[var(--foreground)]/30">{currentVideo.duration}</p>
                   </div>
                 </div>
 
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">
                   {currentVideo.title}
                 </h2>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-[var(--foreground)]/60 mb-4">
                   {currentVideo.description}
                 </p>
 
                 {/* Video Script Outline */}
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 mb-4">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                <div className="bg-[var(--foreground)]/5 rounded-xl p-4 mb-4">
+                  <h3 className="font-semibold text-[var(--foreground)] mb-2">
                     Video Content Outline:
                   </h3>
                   <ul className="space-y-1">
                     {currentVideo.scriptOutline.map((point, index) => (
-                      <li key={index} className="text-sm text-gray-600 dark:text-gray-300 flex items-start gap-2">
+                      <li key={index} className="text-sm text-[var(--foreground)]/60 flex items-start gap-2">
                         <span className="text-[#e94560]">•</span>
                         {point}
                       </li>
@@ -409,7 +409,7 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
 
                 {/* Learning Objectives */}
                 <div className="mb-4">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                  <h3 className="font-semibold text-[var(--foreground)] mb-2">
                     Learning Objectives:
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -511,7 +511,7 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                   Exercise {currentExerciseIndex + 1} of {lesson.exercises.length}
                 </Badge>
 
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+                <h2 className="text-xl font-bold text-[var(--foreground)] mb-6">
                   {highlightGerman(currentExercise.question)}
                 </h2>
 
@@ -530,24 +530,24 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                         whileTap={{ scale: showResult ? 1 : 0.98 }}
                         className={`w-full p-4 rounded-xl border-2 text-left transition-all ${
                           showCorrect
-                            ? 'bg-emerald-50 border-emerald-500 dark:bg-emerald-900/20'
+                            ? 'bg-[#27ae60]/15 border-[#27ae60]'
                             : showWrong
-                            ? 'bg-red-50 border-red-500 dark:bg-red-900/20'
+                            ? 'bg-[#c0392b]/15 border-[#c0392b]'
                             : isSelected
                             ? 'border-[#e94560] bg-[#e94560]/5'
-                            : 'border-gray-200 dark:border-gray-700 hover:border-[#e94560]/50'
+                            : 'border-[var(--card-border)] hover:border-[#e94560]/50'
                         }`}
                       >
                         <div className="flex items-center justify-between">
                           <span className={`font-medium ${
-                            showCorrect ? 'text-emerald-700 dark:text-emerald-300' :
-                            showWrong ? 'text-red-700 dark:text-red-300' :
-                            'text-gray-900 dark:text-white'
+                            showCorrect ? 'text-[#27ae60]' :
+                            showWrong ? 'text-[#c0392b]' :
+                            'text-[var(--foreground)]'
                           }`}>
                             {option}
                           </span>
-                          {showCorrect && <CheckCircle className="w-5 h-5 text-emerald-500" />}
-                          {showWrong && <X className="w-5 h-5 text-red-500" />}
+                          {showCorrect && <CheckCircle className="w-5 h-5 text-[#27ae60]" />}
+                          {showWrong && <X className="w-5 h-5 text-[#c0392b]" />}
                         </div>
                       </motion.button>
                     );
@@ -558,9 +558,9 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
-                    className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-4 mb-4"
+                    className="bg-[#3498db]/15 rounded-xl p-4 mb-4"
                   >
-                    <p className="text-sm text-blue-800 dark:text-blue-200">
+                    <p className="text-sm text-[#3498db]">
                       <strong>Explanation:</strong> {currentExercise.explanation}
                     </p>
                   </motion.div>
@@ -594,32 +594,32 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                   <Trophy className="w-12 h-12 text-white" />
                 </motion.div>
 
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-2xl font-bold text-[var(--foreground)] mb-2">
                   Lesson Complete!
                 </h1>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                <p className="text-[var(--foreground)]/60 mb-6">
                   Great job! You've completed "{lesson.title}"
                 </p>
 
                 <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+                  <div className="bg-[var(--foreground)]/5 rounded-xl p-4">
                     <div className="text-2xl font-bold text-[#e94560]">
                       +{lesson.xpReward}
                     </div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">XP Earned</div>
+                    <div className="text-xs text-[var(--foreground)]/50">XP Earned</div>
                   </div>
-                  <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-emerald-500">
+                  <div className="bg-[var(--foreground)]/5 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-[#27ae60]">
                       {correctAnswers}/{lesson.exercises.length}
                     </div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">Correct</div>
+                    <div className="text-xs text-[var(--foreground)]/50">Correct</div>
                   </div>
-                  <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+                  <div className="bg-[var(--foreground)]/5 rounded-xl p-4">
                     <div className="text-2xl font-bold text-amber-500 flex items-center justify-center gap-1">
                       <Star className="w-5 h-5 fill-amber-500" />
                       {Math.round((correctAnswers / lesson.exercises.length) * 100)}%
                     </div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">Score</div>
+                    <div className="text-xs text-[var(--foreground)]/50">Score</div>
                   </div>
                 </div>
 

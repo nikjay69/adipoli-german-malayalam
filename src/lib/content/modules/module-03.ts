@@ -228,6 +228,33 @@ export const MODULE_3: Module = {
           pronunciation: "tsvan-tsig",
           example: "Ich bin zwanzig Jahre alt.",
           exampleTranslation: "I am twenty years old."
+        },
+        {
+          id: "vocab3-1-11",
+          german: "sechs",
+          english: "six",
+          malayalam: "ആറ്",
+          pronunciation: "zeks",
+          example: "Wir sind sechs Personen.",
+          exampleTranslation: "We are six people."
+        },
+        {
+          id: "vocab3-1-12",
+          german: "sieben",
+          english: "seven",
+          malayalam: "ഏഴ്",
+          pronunciation: "zee-ben",
+          example: "Die Woche hat sieben Tage.",
+          exampleTranslation: "The week has seven days."
+        },
+        {
+          id: "vocab3-1-13",
+          german: "neun",
+          english: "nine",
+          malayalam: "ഒമ്പത്",
+          pronunciation: "noyn",
+          example: "Der Kurs beginnt um neun Uhr.",
+          exampleTranslation: "The course starts at nine o'clock."
         }
       ]
     },
@@ -1052,6 +1079,24 @@ export const MODULE_3: Module = {
           options: ["Wie", "Was", "Wo", "Wann"],
           correctAnswer: "Wie",
           explanation: "'Wie lange?' = 'How long?' is used to ask about duration.",
+          xpReward: 15
+        },
+        {
+          id: "ex3-6-7",
+          type: "fill-blank",
+          question: "Type in German: 'It is three o'clock.' (Es ist...)",
+          options: ["Es ist drei Uhr", "Es ist drei", "Es drei Uhr ist", "Drei Uhr es ist"],
+          correctAnswer: "Es ist drei Uhr",
+          explanation: "'Es ist [number] Uhr' is the standard way to tell the time in German. Don't forget 'Uhr'!",
+          xpReward: 15
+        },
+        {
+          id: "ex3-6-8",
+          type: "fill-blank",
+          question: "Type in German: 'I have an appointment on Monday.' (Ich habe...)",
+          options: ["Ich habe am Montag einen Termin", "Ich habe einen Termin Montag", "Ich habe Montag am Termin", "Am Montag ich habe einen Termin"],
+          correctAnswer: "Ich habe am Montag einen Termin",
+          explanation: "'Ich habe am Montag einen Termin.' — Use 'am' before days of the week and 'einen' because Termin is masculine (accusative).",
           xpReward: 15
         }
       ],

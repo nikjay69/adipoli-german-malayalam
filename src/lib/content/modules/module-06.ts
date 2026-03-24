@@ -241,6 +241,24 @@ export const MODULE_6: Module = {
           pronunciation: "sharf",
           example: "Das Curry ist sehr scharf!",
           exampleTranslation: "The curry is very spicy!"
+        },
+        {
+          id: "vocab6-1-11",
+          german: "das Ei",
+          english: "egg",
+          malayalam: "മുട്ട",
+          pronunciation: "dahs eye",
+          example: "Ich esse ein Ei zum Frühstück.",
+          exampleTranslation: "I eat an egg for breakfast."
+        },
+        {
+          id: "vocab6-1-12",
+          german: "das Salz",
+          english: "salt",
+          malayalam: "ഉപ്പ്",
+          pronunciation: "dahs zalts",
+          example: "Kannst du mir das Salz geben?",
+          exampleTranslation: "Can you pass me the salt?"
         }
       ]
     },
@@ -1059,6 +1077,24 @@ export const MODULE_6: Module = {
           explanation:
             "'Fleisch' is neuter. Neuter kein doesn't change in accusative: 'Ich esse kein Fleisch.'",
           xpReward: 10
+        },
+        {
+          id: "ex6-5-9",
+          type: "fill-blank",
+          question: "Type in German: 'I would like a tea, please.' (Ich möchte...)",
+          options: ["Ich möchte einen Tee, bitte", "Ich will einen Tee, bitte", "Ich möchte ein Tee, bitte", "Ich möchte eine Tee, bitte"],
+          correctAnswer: "Ich möchte einen Tee, bitte",
+          explanation: "'Ich möchte' (I would like) is the polite way to order. 'Tee' is masculine, so accusative: einen Tee. Don't forget 'bitte'!",
+          xpReward: 15
+        },
+        {
+          id: "ex6-5-10",
+          type: "fill-blank",
+          question: "Type in German: 'The soup is very good.' (Die Suppe...)",
+          options: ["Die Suppe ist sehr gut", "Die Suppe sehr gut ist", "Die Suppe ist sehr lecker", "Der Suppe ist sehr gut"],
+          correctAnswer: "Die Suppe ist sehr gut",
+          explanation: "'Die Suppe ist sehr gut.' — 'Die' because Suppe is feminine, 'sehr' means very, 'gut' means good. Simple and correct!",
+          xpReward: 15
         }
       ],
       vocabulary: [

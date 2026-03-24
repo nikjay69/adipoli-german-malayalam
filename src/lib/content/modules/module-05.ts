@@ -985,6 +985,24 @@ export const MODULE_5: Module = {
           explanation:
             "'Nie' (never) typically comes after the verb: Ich koche nie.",
           xpReward: 15
+        },
+        {
+          id: "ex5-5-7",
+          type: "fill-blank",
+          question: "Type in German: 'On Saturday I go shopping.' (Am Samstag...)",
+          options: ["Am Samstag gehe ich einkaufen", "Am Samstag ich gehe einkaufen", "Samstag am gehe ich einkaufen", "Ich gehe am Samstag einkaufen"],
+          correctAnswer: "Am Samstag gehe ich einkaufen",
+          explanation: "When a sentence starts with a time expression like 'Am Samstag', the verb stays in position 2 and the subject comes after it (inversion).",
+          xpReward: 15
+        },
+        {
+          id: "ex5-5-8",
+          type: "fill-blank",
+          question: "Type in German: 'I always drink tea in the morning.' (Ich trinke...)",
+          options: ["Ich trinke immer morgens Tee", "Ich immer trinke morgens Tee", "Ich trinke Tee morgens immer", "Immer ich trinke morgens Tee"],
+          correctAnswer: "Ich trinke immer morgens Tee",
+          explanation: "'Immer' (always) typically comes right after the conjugated verb. 'Ich trinke immer morgens Tee.' — a great daily routine sentence!",
+          xpReward: 15
         }
       ],
       vocabulary: [
@@ -1059,6 +1077,51 @@ export const MODULE_5: Module = {
           pronunciation: "nee",
           example: "Ich koche nie.",
           exampleTranslation: "I never cook."
+        },
+        {
+          id: "vocab5-5-9",
+          german: "oder",
+          english: "or",
+          malayalam: "അല്ലെങ്കിൽ",
+          pronunciation: "oh-der",
+          example: "Tee oder Kaffee?",
+          exampleTranslation: "Tea or coffee?"
+        },
+        {
+          id: "vocab5-5-10",
+          german: "aber",
+          english: "but",
+          malayalam: "പക്ഷേ",
+          pronunciation: "ah-ber",
+          example: "Ich bin müde, aber ich lerne weiter.",
+          exampleTranslation: "I am tired, but I keep studying."
+        },
+        {
+          id: "vocab5-5-11",
+          german: "wenig",
+          english: "few / little",
+          malayalam: "കുറച്ച്",
+          pronunciation: "vey-nig",
+          example: "Ich habe wenig Zeit.",
+          exampleTranslation: "I have little time."
+        },
+        {
+          id: "vocab5-5-12",
+          german: "noch",
+          english: "still / yet",
+          malayalam: "ഇപ്പോഴും / ഇനിയും",
+          pronunciation: "nokh",
+          example: "Ich lerne noch Deutsch.",
+          exampleTranslation: "I am still learning German."
+        },
+        {
+          id: "vocab5-5-13",
+          german: "schon",
+          english: "already",
+          malayalam: "ഇതിനകം",
+          pronunciation: "shohn",
+          example: "Ich kann schon ein bisschen Deutsch.",
+          exampleTranslation: "I can already speak a little German."
         }
       ]
     }

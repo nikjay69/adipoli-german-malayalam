@@ -226,6 +226,33 @@ export const MODULE_4: Module = {
           pronunciation: "dee koo-zee-nuh",
           example: "Meine Cousine spricht drei Sprachen.",
           exampleTranslation: "My cousin speaks three languages."
+        },
+        {
+          id: "vocab4-1-11",
+          german: "die Eltern",
+          english: "parents",
+          malayalam: "മാതാപിതാക്കൾ",
+          pronunciation: "dee el-tern",
+          example: "Meine Eltern wohnen in Kerala.",
+          exampleTranslation: "My parents live in Kerala."
+        },
+        {
+          id: "vocab4-1-12",
+          german: "die Tochter",
+          english: "daughter",
+          malayalam: "മകൾ",
+          pronunciation: "dee tokh-ter",
+          example: "Meine Tochter ist fünf Jahre alt.",
+          exampleTranslation: "My daughter is five years old."
+        },
+        {
+          id: "vocab4-1-13",
+          german: "der Sohn",
+          english: "son",
+          malayalam: "മകൻ",
+          pronunciation: "dehr zohn",
+          example: "Mein Sohn geht zur Schule.",
+          exampleTranslation: "My son goes to school."
         }
       ]
     },
@@ -995,6 +1022,24 @@ export const MODULE_4: Module = {
           ],
           explanation: "A good family description starts broad (where you're from, family size) then describes individual members.",
           xpReward: 20
+        },
+        {
+          id: "ex4-5-7",
+          type: "fill-blank",
+          question: "Type in German: 'My mother is a teacher.' (Meine Mutter...)",
+          options: ["Meine Mutter ist Lehrerin", "Meine Mutter ist eine Lehrerin", "Meine Mutter bist Lehrerin", "Mein Mutter ist Lehrerin"],
+          correctAnswer: "Meine Mutter ist Lehrerin",
+          explanation: "'Meine Mutter ist Lehrerin.' — Remember: no article before professions in German! And 'meine' because Mutter is feminine.",
+          xpReward: 15
+        },
+        {
+          id: "ex4-5-8",
+          type: "fill-blank",
+          question: "Type in German: 'I have two brothers.' (Ich habe...)",
+          options: ["Ich habe zwei Brüder", "Ich habe zwei Bruder", "Ich habe zwei Bruders", "Ich zwei Brüder habe"],
+          correctAnswer: "Ich habe zwei Brüder",
+          explanation: "'Brüder' is the plural of 'Bruder' — notice the umlaut! 'Ich habe zwei Brüder.' = I have two brothers.",
+          xpReward: 15
         }
       ],
       vocabulary: [

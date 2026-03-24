@@ -248,7 +248,7 @@ export default function ProfilePage() {
               </span>
             </div>
 
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+            <h1 className="text-2xl font-bold text-[var(--foreground)] mb-1">
               {user.name}
             </h1>
 
@@ -319,7 +319,7 @@ export default function ProfilePage() {
               <User className="w-12 h-12 text-white" />
             </div>
 
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+            <h1 className="text-2xl font-bold text-[var(--foreground)] mb-2">
               German Learner
             </h1>
 
@@ -375,7 +375,7 @@ export default function ProfilePage() {
             <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Star className="w-5 h-5 text-amber-500" />
             </div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">{userProgress.xp}</div>
+            <div className="text-2xl font-bold text-[var(--foreground)]">{userProgress.xp}</div>
             <div className="text-xs text-gray-500 dark:text-gray-400">Total XP</div>
           </Card>
 
@@ -383,7 +383,7 @@ export default function ProfilePage() {
             <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Flame className="w-5 h-5 text-orange-500" />
             </div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">{userProgress.streak}</div>
+            <div className="text-2xl font-bold text-[var(--foreground)]">{userProgress.streak}</div>
             <div className="text-xs text-gray-500 dark:text-gray-400">Day Streak</div>
           </Card>
 
@@ -391,7 +391,7 @@ export default function ProfilePage() {
             <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center mx-auto mb-2">
               <BookOpen className="w-5 h-5 text-emerald-500" />
             </div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">{completedLessons}</div>
+            <div className="text-2xl font-bold text-[var(--foreground)]">{completedLessons}</div>
             <div className="text-xs text-gray-500 dark:text-gray-400">Lessons Done</div>
           </Card>
 
@@ -399,21 +399,21 @@ export default function ProfilePage() {
             <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mx-auto mb-2">
               <Target className="w-5 h-5 text-blue-500" />
             </div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">{userProgress.learnedVocabulary.length}</div>
+            <div className="text-2xl font-bold text-[var(--foreground)]">{userProgress.learnedVocabulary.length}</div>
             <div className="text-xs text-gray-500 dark:text-gray-400">Words Learned</div>
           </Card>
         </div>
 
         {/* More Stats */}
         <Card className="mb-6">
-          <h2 className="font-semibold text-gray-900 dark:text-white mb-4">Activity Stats</h2>
+          <h2 className="font-semibold text-[var(--foreground)] mb-4">Activity Stats</h2>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
                 <Gamepad2 className="w-5 h-5 text-purple-500" />
               </div>
               <div>
-                <div className="font-bold text-gray-900 dark:text-white">{userProgress.gamesPlayed}</div>
+                <div className="font-bold text-[var(--foreground)]">{userProgress.gamesPlayed}</div>
                 <div className="text-xs text-gray-500 dark:text-gray-400">Games Played</div>
               </div>
             </div>
@@ -423,7 +423,7 @@ export default function ProfilePage() {
                 <Clock className="w-5 h-5 text-cyan-500" />
               </div>
               <div>
-                <div className="font-bold text-gray-900 dark:text-white">{formatTime(userProgress.totalTimeSpent)}</div>
+                <div className="font-bold text-[var(--foreground)]">{formatTime(userProgress.totalTimeSpent)}</div>
                 <div className="text-xs text-gray-500 dark:text-gray-400">Time Spent</div>
               </div>
             </div>
@@ -433,7 +433,7 @@ export default function ProfilePage() {
                 <Award className="w-5 h-5 text-pink-500" />
               </div>
               <div>
-                <div className="font-bold text-gray-900 dark:text-white">{userProgress.quizzesTaken}</div>
+                <div className="font-bold text-[var(--foreground)]">{userProgress.quizzesTaken}</div>
                 <div className="text-xs text-gray-500 dark:text-gray-400">Quizzes Taken</div>
               </div>
             </div>
@@ -443,7 +443,7 @@ export default function ProfilePage() {
                 <Trophy className="w-5 h-5 text-green-500" />
               </div>
               <div>
-                <div className="font-bold text-gray-900 dark:text-white">{userProgress.achievements.length}</div>
+                <div className="font-bold text-[var(--foreground)]">{userProgress.achievements.length}</div>
                 <div className="text-xs text-gray-500 dark:text-gray-400">Achievements</div>
               </div>
             </div>
@@ -453,7 +453,7 @@ export default function ProfilePage() {
         {/* Achievements */}
         <Card className="mb-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-semibold text-gray-900 dark:text-white">Achievements</h2>
+            <h2 className="font-semibold text-[var(--foreground)]">Achievements</h2>
             <span className="text-sm text-gray-500 dark:text-gray-400">
               {userProgress.achievements.length}/{ACHIEVEMENTS_DATA.length}
             </span>
@@ -474,7 +474,7 @@ export default function ProfilePage() {
                 >
                   <div className={`text-3xl mb-1${isUnlocked ? ' animate-unlock' : ''}`}>{isUnlocked ? achievement.icon : '🔒'}</div>
                   <h3 className={`text-xs font-medium ${
-                    isUnlocked ? 'text-gray-900 dark:text-white' : 'text-gray-500'
+                    isUnlocked ? 'text-[var(--foreground)]' : 'text-gray-500'
                   }`}>
                     {achievement.name}
                   </h3>
@@ -486,7 +486,7 @@ export default function ProfilePage() {
 
         {/* Course Progress */}
         <Card className="mb-6">
-          <h2 className="font-semibold text-gray-900 dark:text-white mb-4">Course Progress</h2>
+          <h2 className="font-semibold text-[var(--foreground)] mb-4">Course Progress</h2>
           <div className="space-y-3">
             {ALL_MODULES.map(module => {
               const moduleLessons = module.lessons.length;
@@ -518,7 +518,7 @@ export default function ProfilePage() {
 
         {/* Levels Reference */}
         <Card className="mb-6">
-          <h2 className="font-semibold text-gray-900 dark:text-white mb-4">Level Guide</h2>
+          <h2 className="font-semibold text-[var(--foreground)] mb-4">Level Guide</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
             {LEVEL_NAMES.slice(0, 12).map((name, index) => (
               <div
@@ -531,7 +531,7 @@ export default function ProfilePage() {
                     : 'bg-gray-50 dark:bg-gray-800'
                 }`}
               >
-                <span className="font-medium text-gray-900 dark:text-white">Lv.{index + 1}</span>
+                <span className="font-medium text-[var(--foreground)]">Lv.{index + 1}</span>
                 <span className="text-gray-500 dark:text-gray-400 text-xs block">{name}</span>
               </div>
             ))}
@@ -554,7 +554,7 @@ export default function ProfilePage() {
           return (
             <Card>
               <div className="flex items-center justify-between mb-3">
-                <h2 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                <h2 className="font-semibold text-[var(--foreground)] flex items-center gap-2">
                   <Award className="w-5 h-5" style={{ color: readiness.color }} />
                   A1 Exam Readiness
                 </h2>
@@ -614,7 +614,7 @@ export default function ProfilePage() {
         {/* Biometric Login */}
         {isLoggedIn && (
           <Card className="mb-6">
-            <h2 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+            <h2 className="font-semibold text-[var(--foreground)] mb-2 flex items-center gap-2">
               <Fingerprint className="w-4 h-4 text-[#d4a520]" />
               Biometric Login
             </h2>
@@ -726,7 +726,7 @@ export default function ProfilePage() {
 
         {/* Lesson Scripts */}
         <Card>
-          <h2 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+          <h2 className="font-semibold text-[var(--foreground)] mb-2 flex items-center gap-2">
             <FileText className="w-4 h-4 text-[#d4a520]" />
             Lesson Scripts
           </h2>
@@ -742,7 +742,7 @@ export default function ProfilePage() {
         {/* Logout Button - only for logged in users */}
         {isLoggedIn && (
           <Card className="border-orange-200 dark:border-orange-800">
-            <h2 className="font-semibold text-gray-900 dark:text-white mb-2">Account</h2>
+            <h2 className="font-semibold text-[var(--foreground)] mb-2">Account</h2>
             {!showLogoutConfirm ? (
               <Button variant="ghost" onClick={() => setShowLogoutConfirm(true)} className="text-orange-500 hover:bg-orange-50 dark:hover:bg-orange-900/20">
                 <LogOut className="w-4 h-4" />
@@ -767,7 +767,7 @@ export default function ProfilePage() {
 
         {/* Reset Progress */}
         <Card className="border-red-200 dark:border-red-800">
-          <h2 className="font-semibold text-gray-900 dark:text-white mb-2">Danger Zone</h2>
+          <h2 className="font-semibold text-[var(--foreground)] mb-2">Danger Zone</h2>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
             Reset all your progress including XP, completed lessons, and achievements.
           </p>

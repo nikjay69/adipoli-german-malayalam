@@ -6,8 +6,31 @@ import { motion } from 'framer-motion';
 import { ChevronRight, Lock, CheckCircle, Clock, Star } from 'lucide-react';
 import { Card, ProgressBar, Badge } from '@/components/ui';
 import { useGameStore } from '@/lib/store';
+import type { LessonProgress } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
+import type { Module } from '@/lib/content/modules';
 import { isModuleUnlocked, OPTIONAL_MODULE_IDS } from '@/lib/curriculum';
+
+// ─── Mastery Calculation ────────────────────────────────────────
+function getModuleMastery(module: Module, completedLessons: LessonProgress[]): 'none' | 'bronze' | 'silver' | 'gold' {
+  const moduleLessonIds = module.lessons.map(l => l.id);
+  const completed = completedLessons.filter(cl => moduleLessonIds.includes(cl.lessonId));
+
+  if (completed.length === 0) return 'none';
+  if (completed.length < moduleLessonIds.length) return 'bronze'; // started but not finished
+
+  const avgScore = completed.reduce((sum, cl) => sum + cl.score, 0) / completed.length;
+  if (avgScore >= 90) return 'gold';
+  if (avgScore >= 70) return 'silver';
+  return 'bronze';
+}
+
+const MASTERY_CONFIG = {
+  none:   { emoji: '',   label: '',       border: '' },
+  bronze: { emoji: '\uD83E\uDD49', label: 'Bronze', border: 'ring-2 ring-amber-700/50' },
+  silver: { emoji: '\uD83E\uDD48', label: 'Silver', border: 'ring-2 ring-gray-400/50' },
+  gold:   { emoji: '\uD83E\uDD47', label: 'Gold',   border: 'ring-2 ring-yellow-400/50' },
+} as const;
 
 export default function LearnPage() {
   const { userProgress } = useGameStore();
@@ -34,8 +57,8 @@ export default function LearnPage() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-6"
       >
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Learn German</h1>
-        <p className="text-gray-500 dark:text-gray-400 mt-1">
+        <h1 className="text-2xl font-bold text-[var(--foreground)]">Learn German</h1>
+        <p className="text-[var(--foreground)]/50 mt-1">
           Master German A1 step by step
         </p>
       </motion.div>
@@ -50,6 +73,8 @@ export default function LearnPage() {
 
           const isModuleLocked = !isModuleUnlocked(module.id, userProgress.completedLessons);
           const isOptionalBridge = OPTIONAL_MODULE_IDS.has(module.id);
+          const mastery = getModuleMastery(module, userProgress.completedLessons);
+          const masteryInfo = MASTERY_CONFIG[mastery];
 
           return (
             <motion.div
@@ -61,15 +86,25 @@ export default function LearnPage() {
               <Card className={`${isModuleLocked ? 'opacity-60' : ''}`}>
                 {/* Module Header */}
                 <div className="flex items-start gap-4 mb-4">
-                  <div
-                    className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl flex-shrink-0${moduleProgress === 100 ? ' animate-lamp' : ''}`}
-                    style={{ backgroundColor: module.color + '20' }}
-                  >
-                    {isModuleLocked ? <Lock className="w-6 h-6 text-gray-400" /> : module.icon}
+                  <div className="relative flex-shrink-0">
+                    <div
+                      className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl${moduleProgress === 100 ? ' animate-lamp' : ''} ${mastery !== 'none' ? masteryInfo.border : ''}`}
+                      style={{ backgroundColor: module.color + '20' }}
+                    >
+                      {isModuleLocked ? <Lock className="w-6 h-6 text-[var(--foreground)]/40" /> : module.icon}
+                    </div>
+                    {mastery !== 'none' && (
+                      <span
+                        className="absolute -top-2 -right-2 text-base leading-none drop-shadow-md"
+                        title={`${masteryInfo.label} mastery`}
+                      >
+                        {masteryInfo.emoji}
+                      </span>
+                    )}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+                      <h2 className="text-lg font-bold text-[var(--foreground)]">
                         Module {module.id}: {module.title}
                       </h2>
                       {isOptionalBridge && (
@@ -80,8 +115,13 @@ export default function LearnPage() {
                           <CheckCircle className="w-3 h-3 mr-1" /> Complete
                         </Badge>
                       )}
+                      {mastery !== 'none' && mastery !== 'bronze' && (
+                        <Badge variant={mastery === 'gold' ? 'warning' : 'info'} size="sm">
+                          {masteryInfo.emoji} {masteryInfo.label}
+                        </Badge>
+                      )}
                     </div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                    <p className="text-sm text-[var(--foreground)]/50 line-clamp-2">
                       {module.description}
                     </p>
                     {isOptionalBridge && (
@@ -89,7 +129,7 @@ export default function LearnPage() {
                         Helpful after A1 basics — not required before exam-prep modules.
                       </p>
                     )}
-                    <div className="flex items-center gap-4 mt-2 text-xs text-gray-500 dark:text-gray-400">
+                    <div className="flex items-center gap-4 mt-2 text-xs text-[var(--foreground)]/50">
                       <span className="flex items-center gap-1">
                         <Clock className="w-3 h-3" /> {module.totalHours} hours
                       </span>
@@ -101,8 +141,8 @@ export default function LearnPage() {
                 {/* Progress Bar */}
                 <div className="mb-4">
                   <div className="flex items-center justify-between text-sm mb-1">
-                    <span className="text-gray-500 dark:text-gray-400">Progress</span>
-                    <span className="font-medium text-gray-700 dark:text-gray-300">
+                    <span className="text-[var(--foreground)]/50">Progress</span>
+                    <span className="font-medium text-[var(--foreground)]/80">
                       {completedModuleLessons}/{moduleLessons} lessons
                     </span>
                   </div>
@@ -141,22 +181,22 @@ export default function LearnPage() {
                             whileHover={!isLessonLocked ? { x: 4 } : undefined}
                             className={`p-3 rounded-xl border transition-all ${
                               isLessonLocked
-                                ? 'bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700 opacity-50'
+                                ? 'bg-[var(--foreground)]/5 border-[var(--card-border)] opacity-50'
                                 : isCompleted
-                                ? 'bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800'
-                                : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-[#e94560]/50'
+                                ? 'bg-[#27ae60]/10 border-[#27ae60]/30'
+                                : 'border-[var(--card-border)] hover:border-[#e94560]/50'
                             }`}
                           >
                             <div className="flex items-center gap-3">
                               <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                                 isLessonLocked
-                                  ? 'bg-gray-200 dark:bg-gray-700'
+                                  ? 'bg-[var(--foreground)]/10'
                                   : isCompleted
-                                  ? 'bg-emerald-500'
+                                  ? 'bg-[#27ae60]'
                                   : 'bg-[#e94560]'
                               }`}>
                                 {isLessonLocked ? (
-                                  <Lock className="w-4 h-4 text-gray-400" />
+                                  <Lock className="w-4 h-4 text-[var(--foreground)]/40" />
                                 ) : isCompleted ? (
                                   <CheckCircle className="w-4 h-4 text-white" />
                                 ) : (
@@ -165,16 +205,16 @@ export default function LearnPage() {
                               </div>
                               <div className="flex-1 min-w-0">
                                 <h3 className={`font-medium ${
-                                  isLessonLocked ? 'text-gray-400' : 'text-gray-900 dark:text-white'
+                                  isLessonLocked ? 'text-[var(--foreground)]/40' : 'text-[var(--foreground)]'
                                 }`}>
                                   {lesson.title}
                                 </h3>
-                                <p className="text-xs text-gray-500 dark:text-gray-400">
+                                <p className="text-xs text-[var(--foreground)]/50">
                                   {lesson.titleGerman}
                                 </p>
                               </div>
                               <div className="flex items-center gap-2">
-                                <span className="text-xs text-gray-500 dark:text-gray-400">
+                                <span className="text-xs text-[var(--foreground)]/50">
                                   {lesson.duration}
                                 </span>
                                 {isCompleted && completedLesson && (
@@ -188,7 +228,7 @@ export default function LearnPage() {
                                 )}
                               </div>
                               <ChevronRight className={`w-4 h-4 ${
-                                isLessonLocked ? 'text-gray-300' : 'text-gray-400'
+                                isLessonLocked ? 'text-[var(--foreground)]/30' : 'text-[var(--foreground)]/40'
                               }`} />
                             </div>
                           </motion.div>
@@ -200,8 +240,8 @@ export default function LearnPage() {
 
                 {/* Locked Module Message */}
                 {isModuleLocked && (
-                  <div className="text-center py-4 text-gray-500 dark:text-gray-400">
-                    <Lock className="w-8 h-8 mx-auto mb-2 text-gray-400" />
+                  <div className="text-center py-4 text-[var(--foreground)]/50">
+                    <Lock className="w-8 h-8 mx-auto mb-2 text-[var(--foreground)]/40" />
                     <p className="text-sm">Complete Module {moduleIndex} to unlock</p>
                   </div>
                 )}

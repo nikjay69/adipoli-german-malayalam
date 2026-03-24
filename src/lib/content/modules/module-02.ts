@@ -340,7 +340,8 @@ export const MODULE_2: Module = {
         { id: "vocab2-2-7", german: "Europa", english: "Europe", malayalam: "യൂറോപ്പ്", pronunciation: "oy-roh-pa", example: "Europa hat viele Sprachen.", exampleTranslation: "Europe has many languages." },
         { id: "vocab2-2-8", german: "Asien", english: "Asia", malayalam: "ഏഷ്യ", pronunciation: "ah-zee-en", example: "Indien liegt in Asien.", exampleTranslation: "India is in Asia." },
         { id: "vocab2-2-9", german: "indisch", english: "Indian (adjective)", malayalam: "ഇന്ത്യൻ", pronunciation: "in-dish", example: "Indisches Essen ist lecker!", exampleTranslation: "Indian food is delicious!" },
-        { id: "vocab2-2-10", german: "deutsch", english: "German (adjective)", malayalam: "ജർമ്മൻ", pronunciation: "doych", example: "Ich lerne die deutsche Sprache.", exampleTranslation: "I am learning the German language." }
+        { id: "vocab2-2-10", german: "deutsch", english: "German (adjective)", malayalam: "ജർമ്മൻ", pronunciation: "doych", example: "Ich lerne die deutsche Sprache.", exampleTranslation: "I am learning the German language." },
+        { id: "vocab2-2-11", german: "die Telefonnummer", english: "phone number", malayalam: "ഫോൺ നമ്പർ", pronunciation: "dee teh-le-fohn-noo-mer", example: "Wie ist Ihre Telefonnummer?", exampleTranslation: "What is your phone number?" }
       ]
     },
 
@@ -887,6 +888,24 @@ export const MODULE_2: Module = {
             "Informatik. Und du?"
           ],
           xpReward: 20
+        },
+        {
+          id: "ex2-5-9",
+          type: "fill-blank",
+          question: "Type in German: 'I come from India.' (Ich...)",
+          options: ["Ich komme aus Indien", "Ich bin aus Indien", "Ich komme von Indien", "Ich gehe aus Indien"],
+          correctAnswer: "Ich komme aus Indien",
+          explanation: "'Ich komme aus...' is the correct pattern for stating where you are from. Always use 'aus', not 'von'!",
+          xpReward: 15
+        },
+        {
+          id: "ex2-5-10",
+          type: "fill-blank",
+          question: "Type in German: 'I speak a little German.' (Ich...)",
+          options: ["Ich spreche ein bisschen Deutsch", "Ich spreche wenig Deutsch", "Ich kann ein bisschen Deutsch", "Ich rede ein bisschen Deutsch"],
+          correctAnswer: "Ich spreche ein bisschen Deutsch",
+          explanation: "'Ich spreche ein bisschen Deutsch' is the standard way to say you speak a little German. 'Ein bisschen' = a little bit.",
+          xpReward: 15
         }
       ],
       vocabulary: [
