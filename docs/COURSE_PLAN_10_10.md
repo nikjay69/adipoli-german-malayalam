@@ -443,8 +443,10 @@ Build in this order:
 
 ### NEXT — raise pass rate and consistency
 - [x] Adaptive difficulty in lesson player ✅ (score < 50% = must retry)
-- [ ] Mastery indicators per topic
-- [ ] Shadowing mode
+- [x] Mastery indicators per topic ✅ (bronze/silver/gold badges per module)
+- [x] Shadowing mode ✅ (/practice/shadowing — hear + overlap repeat)
+- [x] Progress sync to Supabase ✅ (debounced JSONB, cross-device)
+- [x] Readability overhaul ✅ (min 12px fonts, 44px touch targets, better contrast)
 
 ### LATER — premium depth / engagement uplift
 - [ ] Generate the script layer for all lessons (cheap, reusable, controlled)
@@ -466,9 +468,9 @@ Build in this order:
 
 ---
 
-## Current Status (Last updated: 2026-03-24)
+## Current Status (Last updated: 2026-03-25)
 
-**Overall rating: ~7.5/10** (up from 5.5, was 7.2 at last audit)
+**Overall rating: ~8/10** (up from 7.5 — SRS wired, mastery, shadowing, readability, sync)
 
 | What | Status |
 |------|--------|
