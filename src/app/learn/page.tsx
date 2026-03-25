@@ -125,7 +125,7 @@ export default function LearnPage() {
                       {module.description}
                     </p>
                     {isOptionalBridge && (
-                      <p className="mt-1 text-xs text-amber-600 dark:text-amber-400">
+                      <p className="mt-1 text-xs text-amber-400">
                         Helpful after A1 basics — not required before exam-prep modules.
                       </p>
                     )}
@@ -188,7 +188,7 @@ export default function LearnPage() {
                             }`}
                           >
                             <div className="flex items-center gap-3">
-                              <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                              <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${
                                 isLessonLocked
                                   ? 'bg-[var(--foreground)]/10'
                                   : isCompleted

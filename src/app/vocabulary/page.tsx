@@ -112,7 +112,7 @@ export default function VocabularyPage() {
       >
         <div className="flex items-center gap-3 mb-4">
           <div className="w-12 h-12 bg-blue-500/15 rounded-xl flex items-center justify-center">
-            <BookOpen className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            <BookOpen className="w-6 h-6 text-blue-400" />
           </div>
           <div>
             <h1 className="text-2xl font-bold text-[var(--foreground)]">Vocabulary</h1>
@@ -134,12 +134,12 @@ export default function VocabularyPage() {
         {/* Controls */}
         <div className="flex flex-wrap items-center gap-2 mb-4">
           {/* View Mode Toggle */}
-          <div className="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+          <div className="flex bg-[var(--foreground)]/8 rounded-lg p-1">
             <button
               onClick={() => setViewMode('flashcards')}
               className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
                 viewMode === 'flashcards'
-                  ? 'bg-white dark:bg-gray-700 text-[var(--foreground)] shadow'
+                  ? 'bg-[var(--foreground)]/10 text-[var(--foreground)] shadow'
                   : 'text-[var(--foreground)]/50'
               }`}
             >
@@ -149,7 +149,7 @@ export default function VocabularyPage() {
               onClick={() => setViewMode('list')}
               className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
                 viewMode === 'list'
-                  ? 'bg-white dark:bg-gray-700 text-[var(--foreground)] shadow'
+                  ? 'bg-[var(--foreground)]/10 text-[var(--foreground)] shadow'
                   : 'text-[var(--foreground)]/50'
               }`}
             >
@@ -161,7 +161,7 @@ export default function VocabularyPage() {
           <select
             value={filterMode}
             onChange={(e) => { setFilterMode(e.target.value as FilterMode); setCurrentCardIndex(0); }}
-            className="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm"
+            className="px-3 py-2 rounded-lg border border-[var(--card-border)] bg-[var(--foreground)]/5 text-[var(--foreground)] text-sm"
           >
             <option value="all">All Words</option>
             <option value="learned">Learned</option>
@@ -177,13 +177,13 @@ export default function VocabularyPage() {
 
         {/* Search */}
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--foreground)]/40" />
           <input
             type="text"
             placeholder="Search words..."
             value={searchQuery}
             onChange={(e) => { setSearchQuery(e.target.value); setCurrentCardIndex(0); }}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#e94560]"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[var(--card-border)] bg-[var(--foreground)]/5 text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#e94560]"
           />
         </div>
       </motion.div>
@@ -231,14 +231,14 @@ export default function VocabularyPage() {
 
                     {userProgress.learnedVocabulary.includes(currentCard.id) && (
                       <div className="absolute top-4 right-4">
-                        <CheckCircle className="w-6 h-6 text-emerald-400" />
+                        <CheckCircle className="w-6 h-6 text-[#27ae60]" />
                       </div>
                     )}
                   </div>
 
                   {/* Back */}
                   <div
-                    className="absolute inset-0 bg-white dark:bg-gray-800 rounded-2xl p-6 flex flex-col items-center justify-center backface-hidden shadow-xl"
+                    className="absolute inset-0 bg-[#1a2e1a] rounded-2xl p-6 flex flex-col items-center justify-center backface-hidden shadow-xl"
                     style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                   >
                     <h3 className="text-2xl font-bold text-[var(--foreground)] mb-2">
@@ -295,7 +295,7 @@ export default function VocabularyPage() {
             filteredVocab.map((word) => {
               const isLearned = userProgress.learnedVocabulary.includes(word.id);
               return (
-                <Card key={word.id} padding="sm" className={isLearned ? 'border-l-4 border-emerald-500' : ''}>
+                <Card key={word.id} padding="sm" className={isLearned ? 'border-l-4 border-[#27ae60]' : ''}>
                   <div className="flex items-center gap-4">
                     <button
                       onClick={() => playVocabAudio(word.id)}
@@ -308,13 +308,13 @@ export default function VocabularyPage() {
                         <h3 className="font-semibold text-[var(--foreground)]">
                           {word.german}
                         </h3>
-                        <span className="text-sm text-gray-400">/{word.pronunciation}/</span>
+                        <span className="text-sm text-[var(--foreground)]/40">/{word.pronunciation}/</span>
                       </div>
                       <p className="text-sm text-[var(--foreground)]/60">{word.english}</p>
                       <p className="text-sm text-[#e94560]">{word.malayalam}</p>
                     </div>
                     {isLearned ? (
-                      <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 animate-lamp" />
+                      <CheckCircle className="w-5 h-5 text-[#27ae60] flex-shrink-0 animate-lamp" />
                     ) : (
                       <button
                         onClick={() => { learnVocabulary(word.id); addXP(5); }}

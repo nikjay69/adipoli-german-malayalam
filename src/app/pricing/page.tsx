@@ -323,14 +323,14 @@ export default function PricingPage() {
                 </div>
                 {/* Tax breakdown */}
                 {total !== '0' && (
-                  <div className="mt-1 text-[10px] text-[var(--foreground)]/30">
+                  <div className="mt-1 text-xs text-[var(--foreground)]/40">
                     {symbol}{basePrice} + {symbol}{tax} {taxLabel}
                     <span className="block mt-0.5">Price inclusive of all taxes</span>
                   </div>
                 )}
                 {/* Show alternate price */}
                 {total !== '0' && (
-                  <p className="text-[10px] text-[var(--foreground)]/25 mt-1">
+                  <p className="text-xs text-[var(--foreground)]/40 mt-1">
                     Also:{' '}
                     {currency === 'inr'
                       ? `\u20AC${plan.totalEUR}${plan.periodEUR} (incl. VAT)`
@@ -349,14 +349,14 @@ export default function PricingPage() {
                       </div>
                     ) : (
                       <div className="w-5 h-5 rounded-full bg-[var(--foreground)]/5 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <X className="w-3 h-3 text-[var(--foreground)]/20" />
+                        <X className="w-3 h-3 text-[var(--foreground)]/40" />
                       </div>
                     )}
                     <span
                       className={`text-sm ${
                         feature.included
                           ? 'text-[var(--foreground)]/70'
-                          : 'text-[var(--foreground)]/25 line-through'
+                          : 'text-[var(--foreground)]/40 line-through'
                       }`}
                     >
                       {feature.text}
@@ -389,13 +389,13 @@ export default function PricingPage() {
         transition={{ delay: 0.6 }}
         className="text-center mt-8 space-y-2"
       >
-        <p className="text-xs text-[var(--foreground)]/25">
+        <p className="text-xs text-[var(--foreground)]/40">
           All prices are in {currency === 'inr' ? 'Indian Rupees (INR)' : 'Euros (EUR)'}. Switch currency above.
         </p>
-        <p className="text-xs text-[var(--foreground)]/20">
+        <p className="text-xs text-[var(--foreground)]/40">
           Cancel anytime. No questions asked. Your progress is always saved.
         </p>
-        <div className="mt-3 text-[10px] text-[var(--foreground)]/15 max-w-md text-center">
+        <div className="mt-3 text-xs text-[var(--foreground)]/35 max-w-md text-center">
           <p>All prices are inclusive of applicable taxes.</p>
           <p>India: 18% GST on digital services (CGST 9% + SGST 9%).</p>
           <p>EU: VAT as per your country (processed via Stripe Tax, auto-calculated).</p>

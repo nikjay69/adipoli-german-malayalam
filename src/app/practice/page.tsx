@@ -150,7 +150,7 @@ export default function PracticePage() {
       >
         <div className="flex items-start justify-between gap-3">
           <div>
-            <p className="text-[10px] uppercase tracking-wide text-[#d4a520] font-bold mb-1">Recommended next</p>
+            <p className="text-xs uppercase tracking-wide text-[#d4a520] font-bold mb-1">Recommended next</p>
             <h3 className="font-bold text-sm mb-1">{recommendedPractice.title}</h3>
             <p className="text-xs text-[var(--foreground)]/50 leading-relaxed">{recommendedPractice.body}</p>
           </div>
@@ -158,7 +158,7 @@ export default function PracticePage() {
             {recommendedPractice.cta}
           </Link>
         </div>
-        <div className="mt-3 flex flex-wrap gap-2 text-[10px] text-[var(--foreground)]/35">
+        <div className="mt-3 flex flex-wrap gap-2 text-xs text-[var(--foreground)]/40">
           <span>{completedLessons}/{totalLessons} lessons completed</span>
           <span>•</span>
           <span>{userProgress.learnedVocabulary.length} words learned</span>
@@ -215,16 +215,16 @@ export default function PracticePage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-0.5">
                       <h3 className="font-bold text-sm">{p.name}</h3>
-                      <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full"
+                      <span className="text-xs font-bold px-1.5 py-0.5 rounded-full"
                         style={{ backgroundColor: `${p.badgeColor}20`, color: p.badgeColor }}>
                         {p.badge}
                       </span>
                     </div>
                     <p className="text-xs text-[var(--foreground)]/40 leading-relaxed mb-1">{p.description}</p>
                     <div className="flex items-center gap-2">
-                      <p className="text-[10px] text-[var(--foreground)]/25">{p.detail}</p>
+                      <p className="text-xs text-[var(--foreground)]/40">{p.detail}</p>
                       {p.id === 'review' && dueCount > 0 && (
-                        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[#c0392b]/20 text-[#c0392b]">
+                        <span className="text-xs font-bold px-1.5 py-0.5 rounded-full bg-[#c0392b]/20 text-[#c0392b]">
                           {dueCount} due
                         </span>
                       )}
@@ -242,7 +242,7 @@ export default function PracticePage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
-        className="mt-6 space-y-2 text-center text-xs text-[var(--foreground)]/30"
+        className="mt-6 space-y-2 text-center text-xs text-[var(--foreground)]/40"
       >
         <p>Speech-based practice uses your browser microphone tools, so Chrome on desktop/mobile usually works best.</p>
         <p>Best rhythm: 5 min review → 10 min speaking → 5 min writing.</p>

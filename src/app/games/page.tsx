@@ -181,21 +181,21 @@ export default function GamesPage() {
             <Flame className="w-4 h-4 text-[#c0392b]" />
             <span className="text-lg font-bold">{userProgress.gamesPlayed}</span>
           </div>
-          <div className="text-[10px] text-[var(--foreground)]/40">Played</div>
+          <div className="text-xs text-[var(--foreground)]/40">Played</div>
         </div>
         <div className="game-card p-3 text-center">
           <div className="flex items-center justify-center gap-1 mb-1">
             <Star className="w-4 h-4 text-[#d4a520] fill-[#d4a520]" />
             <span className="text-lg font-bold animate-shimmer">{userProgress.xp}</span>
           </div>
-          <div className="text-[10px] text-[var(--foreground)]/40">XP</div>
+          <div className="text-xs text-[var(--foreground)]/40">XP</div>
         </div>
         <div className="game-card p-3 text-center">
           <div className="flex items-center justify-center gap-1 mb-1">
             <Trophy className="w-4 h-4 text-[#27ae60]" />
             <span className="text-lg font-bold">{userProgress.learnedVocabulary.length}</span>
           </div>
-          <div className="text-[10px] text-[var(--foreground)]/40">Words</div>
+          <div className="text-xs text-[var(--foreground)]/40">Words</div>
         </div>
       </motion.div>
 
@@ -208,7 +208,7 @@ export default function GamesPage() {
         >
           <div className="flex items-start justify-between gap-3">
             <div>
-              <p className="text-[10px] uppercase tracking-wide text-[#d4a520] font-bold mb-1">Recommended next game</p>
+              <p className="text-xs uppercase tracking-wide text-[#d4a520] font-bold mb-1">Recommended next game</p>
               <h2 className="font-bold text-sm mb-1 flex items-center gap-2">
                 <span>{recommendedGame.icon}</span>
                 {recommendedGame.name}
@@ -219,7 +219,7 @@ export default function GamesPage() {
                   : `You have completed ${completedModules} module${completedModules === 1 ? '' : 's'}. This game matches your current level well.`}
               </p>
             </div>
-            <Link href={`/games/${recommendedGame.id}`} className="shrink-0 rounded-xl bg-[#d4a520]/15 px-3 py-2 text-xs font-bold text-[#d4a520] border border-[#d4a520]/20">
+            <Link href={`/games/${recommendedGame.id}`} className="shrink-0 rounded-xl bg-[#d4a520]/15 px-3 py-2.5 text-xs font-bold text-[#d4a520] border border-[#d4a520]/20">
               Play now
             </Link>
           </div>
@@ -254,7 +254,7 @@ export default function GamesPage() {
                         {game.name}
                       </h3>
                       {game.tag && (
-                        <span className={`text-[9px] font-bold bg-[#ff6b9d]/20 text-[#ff6b9d] px-1.5 py-0.5 rounded-full${game.tag === 'NEW' ? ' animate-rickshaw' : ''}`}>
+                        <span className={`text-xs font-bold bg-[#ff6b9d]/20 text-[#ff6b9d] px-1.5 py-0.5 rounded-full${game.tag === 'NEW' ? ' animate-rickshaw' : ''}`}>
                           {game.tag}
                         </span>
                       )}
@@ -263,21 +263,21 @@ export default function GamesPage() {
                       {game.description}
                     </p>
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${difficultyColors[game.difficulty]}`}>
+                      <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${difficultyColors[game.difficulty]}`}>
                         {game.difficulty}
                       </span>
-                      <span className="flex items-center gap-1 text-[10px] text-[#d4a520] font-bold">
+                      <span className="flex items-center gap-1 text-xs text-[#d4a520] font-bold">
                         <Zap className="w-3 h-3" />
                         +{game.xpReward} XP
                       </span>
-                      <span className="text-[10px] text-[var(--foreground)]/30">
+                      <span className="text-xs text-[var(--foreground)]/40">
                         {game.timeEstimate}
                       </span>
                     </div>
                   </div>
 
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
                     style={{ backgroundColor: `${game.color}20` }}
                   >
                     <span className="font-bold text-sm" style={{ color: game.color }}>→</span>
@@ -321,7 +321,7 @@ export default function GamesPage() {
                         <span className="text-xs text-[var(--foreground)]/30">Complete Module {game.unlockModule}</span>
                       </div>
                     </div>
-                    <Lock className="w-5 h-5 text-[var(--foreground)]/20 flex-shrink-0" />
+                    <Lock className="w-5 h-5 text-[var(--foreground)]/40 flex-shrink-0" />
                   </div>
                 </div>
               </motion.div>
@@ -352,7 +352,7 @@ export default function GamesPage() {
       </motion.div>
 
       {/* Games count */}
-      <p className="text-center text-[var(--foreground)]/20 text-xs mt-4">
+      <p className="text-center text-[var(--foreground)]/40 text-xs mt-4">
         {unlockedGames.length} of {games.length} games unlocked
       </p>
     </div>

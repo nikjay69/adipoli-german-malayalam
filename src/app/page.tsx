@@ -163,82 +163,12 @@ export default function Home() {
           )}
         </motion.div>
 
-        {/* Exam Readiness Bar */}
-        {completedCount > 0 && (
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.45 }}
-            className="w-full max-w-sm mb-4"
-          >
-            {(() => {
-              const tl = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
-              const tv = getAllVocabulary().length;
-              const r = calculateExamReadiness({
-                completedLessons: userProgress.completedLessons,
-                totalLessons: tl,
-                learnedVocabulary: userProgress.learnedVocabulary.length,
-                totalVocabulary: tv,
-                streak: userProgress.streak,
-                gamesPlayed: userProgress.gamesPlayed,
-                quizzesTaken: userProgress.quizzesTaken,
-              });
-              return (
-                <div className="game-card p-3">
-                  <div className="flex items-center justify-between mb-1.5">
-                    <div className="flex items-center gap-1.5">
-                      <Award className="w-4 h-4" style={{ color: r.color }} />
-                      <span className="text-xs font-bold" style={{ color: r.color }}>
-                        A1 Exam Readiness
-                      </span>
-                    </div>
-                    <span className={`text-sm font-bold${r.score >= 60 ? ' animate-shimmer' : ''}`} style={{ color: r.color }}>
-                      {r.score}%
-                    </span>
-                  </div>
-                  {/* Stacked bar: course (solid) + supplementary (lighter) */}
-                  <div className="h-2.5 bg-[var(--foreground)]/8 rounded-full overflow-hidden flex">
-                    <motion.div
-                      className="h-full rounded-l-full"
-                      style={{ backgroundColor: r.color }}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${r.courseScore}%` }}
-                      transition={{ duration: 0.8, ease: 'easeOut' }}
-                    />
-                    {r.supplementaryScore > 0 && (
-                      <motion.div
-                        className="h-full"
-                        style={{ backgroundColor: r.color, opacity: 0.4 }}
-                        initial={{ width: 0 }}
-                        animate={{ width: `${r.supplementaryScore}%` }}
-                        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
-                      />
-                    )}
-                  </div>
-                  <div className="flex items-center justify-between mt-1">
-                    <span className="text-[9px] text-[var(--foreground)]/30">{r.label}</span>
-                    <span className="text-[9px] text-[var(--foreground)]/30">
-                      <span style={{ color: r.color }}>■</span> Course {r.courseScore}/80
-                      {' · '}
-                      <span style={{ color: r.color, opacity: 0.5 }}>■</span> Extras {r.supplementaryScore}/20
-                    </span>
-                  </div>
-                  {/* Smart next action */}
-                  <p className="text-[10px] text-[var(--foreground)]/40 mt-1.5 leading-tight">
-                    💡 {r.nextAction}
-                  </p>
-                </div>
-              );
-            })()}
-          </motion.div>
-        )}
-
         {/* Next Lesson */}
         {nextLesson && (
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.45 }}
             className="game-card p-5 mb-6 w-full max-w-sm text-center"
           >
             <div className="text-3xl mb-2">{nextLesson.module.icon}</div>
@@ -266,7 +196,7 @@ export default function Home() {
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.5 }}
           className="w-full max-w-sm"
         >
           {nextLesson ? (
@@ -286,6 +216,70 @@ export default function Home() {
             </div>
           )}
         </motion.div>
+
+        {/* Exam Readiness Bar (compact) */}
+        {completedCount > 0 && (
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.55 }}
+            className="w-full max-w-sm mt-4"
+          >
+            {(() => {
+              const tl = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
+              const tv = getAllVocabulary().length;
+              const r = calculateExamReadiness({
+                completedLessons: userProgress.completedLessons,
+                totalLessons: tl,
+                learnedVocabulary: userProgress.learnedVocabulary.length,
+                totalVocabulary: tv,
+                streak: userProgress.streak,
+                gamesPlayed: userProgress.gamesPlayed,
+                quizzesTaken: userProgress.quizzesTaken,
+              });
+              return (
+                <div className="game-card p-3">
+                  {/* Line 1: Label + score + bar */}
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      <Award className="w-4 h-4" style={{ color: r.color }} />
+                      <span className="text-xs font-bold" style={{ color: r.color }}>
+                        A1 Readiness
+                      </span>
+                      <span className={`text-sm font-bold${r.score >= 60 ? ' animate-shimmer' : ''}`} style={{ color: r.color }}>
+                        {r.score}%
+                      </span>
+                    </div>
+                    <div className="h-2.5 bg-[var(--foreground)]/8 rounded-full overflow-hidden flex flex-1">
+                      <motion.div
+                        className="h-full rounded-l-full"
+                        style={{ backgroundColor: r.color }}
+                        initial={{ width: 0 }}
+                        animate={{ width: `${r.courseScore}%` }}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                      />
+                      {r.supplementaryScore > 0 && (
+                        <motion.div
+                          className="h-full"
+                          style={{ backgroundColor: r.color, opacity: 0.4 }}
+                          initial={{ width: 0 }}
+                          animate={{ width: `${r.supplementaryScore}%` }}
+                          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
+                        />
+                      )}
+                    </div>
+                  </div>
+                  {/* Line 2: Breakdown */}
+                  <p className="text-xs text-[var(--foreground)]/40 mt-1.5 text-center">
+                    <span style={{ color: r.color }}>■</span> Course {r.courseScore}/80
+                    {' · '}
+                    <span style={{ color: r.color, opacity: 0.5 }}>■</span> Extras {r.supplementaryScore}/20
+                  </p>
+                </div>
+              );
+            })()}
+          </motion.div>
+        )}
       </div>
 
       {/* Journey Map */}
@@ -297,10 +291,10 @@ export default function Home() {
       >
         <p className="text-[var(--foreground)]/40 text-sm text-center mb-4">
           <span className="text-[#27ae60]">Home 🏠</span>
-          <span className="mx-1.5 text-[var(--foreground)]/15">···</span>
+          <span className="mx-1.5 text-[var(--foreground)]/35">···</span>
           <span className="text-[#d4a520]">Gate ✈️</span>
-          <span className="mx-1.5 text-[var(--foreground)]/15">···</span>
-          <span className="text-[var(--foreground)]/20">Germany 🇩🇪</span>
+          <span className="mx-1.5 text-[var(--foreground)]/35">···</span>
+          <span className="text-[var(--foreground)]/40">Germany 🇩🇪</span>
         </p>
 
         {/* Location nodes */}
@@ -318,7 +312,7 @@ export default function Home() {
               <div key={loc.id} className="flex flex-col items-center gap-1 flex-1 min-w-0">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className={`w-8 h-8 rounded-full flex items-center justify-center text-xs flex-shrink-0
+                  className={`w-10 h-10 rounded-full flex items-center justify-center text-xs flex-shrink-0
                     ${isCurrent
                       ? 'bg-[#d4a520]/20 border-2 border-[#d4a520] shadow-md shadow-[#d4a520]/20 animate-marker'
                       : isReached
@@ -328,8 +322,8 @@ export default function Home() {
                 >
                   {loc.icon}
                 </motion.div>
-                <span className={`text-[7px] text-center leading-tight truncate w-full
-                  ${isCurrent ? 'text-[#d4a520] font-bold' : isReached ? 'text-[var(--foreground)]/50' : 'text-[var(--foreground)]/25'}`}
+                <span className={`text-[11px] text-center leading-normal truncate w-full
+                  ${isCurrent ? 'text-[#d4a520] font-bold' : isReached ? 'text-[var(--foreground)]/50' : 'text-[var(--foreground)]/40'}`}
                 >
                   {loc.shortName}
                 </span>
@@ -371,7 +365,7 @@ export default function Home() {
           })}
         </div>
 
-        <p className="text-center text-[var(--foreground)]/30 text-xs mt-1">
+        <p className="text-center text-[var(--foreground)]/45 text-xs mt-1">
           {completedCount} of {totalLessons} lessons
         </p>
       </motion.div>

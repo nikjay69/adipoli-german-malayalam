@@ -46,6 +46,9 @@ body {
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans), 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -453,6 +456,51 @@ body {
   100% { stroke-dashoffset: 0; }
 }
 
+/* ==================== READABILITY UTILITIES ==================== */
+
+/* Minimum readable text — never go below 11px on mobile */
+.text-readable {
+  font-size: max(12px, 0.75rem);
+  line-height: 1.4;
+}
+
+/* Better touch targets */
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure text is visible on dark backgrounds */
+.text-visible {
+  color: rgba(245, 240, 232, 0.5);
+}
+
+.text-subtle {
+  color: rgba(245, 240, 232, 0.4);
+}
+
+/* Mobile-friendly card padding */
+@media (max-width: 390px) {
+  .game-card {
+    padding: 12px;
+  }
+
+  .glass-card {
+    padding: 12px;
+  }
+}
+
+/* Prevent text from being too small on any device */
+@media (max-width: 640px) {
+  /* Override any text smaller than 11px */
+  .min-text {
+    font-size: max(11px, 0.6875rem) !important;
+  }
+}
+
 /* ==============================================
    PRINT STYLES — Lesson Script PDFs
    ============================================== */
@@ -696,7 +744,7 @@ body {
   color: #d4a520;
 }
 .print-exercise-type {
-  font-size: 0.65rem;
+  font-size: 0.6875rem;
   text-transform: uppercase;
   opacity: 0.3;
   font-weight: 600;

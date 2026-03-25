@@ -105,7 +105,7 @@ export default function TestsPage() {
                 <p className="text-xs text-[#d4a520] mb-1">
                   Complete more lessons before taking mock tests. Aim for 40%+ readiness.
                 </p>
-                <p className="text-[10px] text-[var(--foreground)]/30">💡 {r.nextAction}</p>
+                <p className="text-xs text-[var(--foreground)]/40">💡 {r.nextAction}</p>
               </div>
             )}
           </motion.div>
@@ -177,7 +177,7 @@ export default function TestsPage() {
                         Complete Module {getTestUnlockModule(index)} to unlock
                       </p>
                     </div>
-                    <Lock className="w-4 h-4 text-[var(--foreground)]/20" />
+                    <Lock className="w-4 h-4 text-[var(--foreground)]/40" />
                   </div>
                 </div>
               )}
@@ -187,7 +187,7 @@ export default function TestsPage() {
       </div>
 
       {/* Link from profile */}
-      <p className="text-center text-[var(--foreground)]/20 text-xs mt-6">
+      <p className="text-center text-[var(--foreground)]/40 text-xs mt-6">
         Based on official Goethe-Zertifikat A1: Start Deutsch 1 format
       </p>
     </div>

@@ -567,7 +567,7 @@ export default function ProfilePage() {
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div className="bg-[var(--foreground)]/5 rounded-lg p-3 text-center">
                   <div className="text-xl font-bold" style={{ color: readiness.color }}>{readiness.courseScore}/80</div>
-                  <div className="text-[10px] text-[var(--foreground)]/40 mt-0.5">Course Path</div>
+                  <div className="text-xs text-[var(--foreground)]/40 mt-0.5">Course Path</div>
                   <div className="flex justify-center gap-1 mt-2">
                     {[
                       { label: 'Lessons', value: readiness.breakdown.lessons, max: 35 },
@@ -576,14 +576,14 @@ export default function ProfilePage() {
                     ].map(item => (
                       <div key={item.label} className="text-center">
                         <div className="text-xs font-bold text-[var(--foreground)]/80">{item.value}</div>
-                        <div className="text-[8px] text-[var(--foreground)]/40">/{item.max}</div>
+                        <div className="text-xs text-[var(--foreground)]/40">/{item.max}</div>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div className="bg-[var(--foreground)]/5 rounded-lg p-3 text-center">
                   <div className="text-xl font-bold" style={{ color: readiness.color, opacity: 0.7 }}>{readiness.supplementaryScore}/20</div>
-                  <div className="text-[10px] text-[var(--foreground)]/40 mt-0.5">Extras</div>
+                  <div className="text-xs text-[var(--foreground)]/40 mt-0.5">Extras</div>
                   <div className="flex justify-center gap-1 mt-2">
                     {[
                       { label: 'Games', value: readiness.breakdown.games, max: 8 },
@@ -592,7 +592,7 @@ export default function ProfilePage() {
                     ].map(item => (
                       <div key={item.label} className="text-center">
                         <div className="text-xs font-bold text-[var(--foreground)]/80">{item.value}</div>
-                        <div className="text-[8px] text-[var(--foreground)]/40">/{item.max}</div>
+                        <div className="text-xs text-[var(--foreground)]/40">/{item.max}</div>
                       </div>
                     ))}
                   </div>
@@ -604,7 +604,7 @@ export default function ProfilePage() {
                 <p className="text-xs font-semibold text-[var(--foreground)]/60 mb-1">Next step:</p>
                 <p className="text-xs text-[var(--foreground)]/50 mb-2">{readiness.nextAction}</p>
                 {readiness.tips.length > 0 && readiness.tips.map((tip, i) => (
-                  <p key={i} className="text-[10px] text-[var(--foreground)]/40">- {tip}</p>
+                  <p key={i} className="text-xs text-[var(--foreground)]/40">- {tip}</p>
                 ))}
               </div>
             </Card>
