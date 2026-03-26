@@ -3,9 +3,9 @@
 import { use, useState, useEffect, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Volume2, Heart, Loader2 } from 'lucide-react';
+import { X, Volume2, Loader2 } from 'lucide-react';
 import { playVocabAudio, playExampleAudio } from '@/lib/audio';
-import { GameButton, ChoiceButton, Confetti, XPGain, Celebration, ModuleComplete } from '@/components/game';
+import { GameButton, ChoiceButton, Confetti, Celebration, ModuleComplete } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
 import { VideoPlayer } from '@/components/media/VideoPlayer';
 import { getRandomMessage } from '@/lib/content/dialogue';
@@ -30,13 +30,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const [mounted, setMounted] = useState(false);
   const [isBlocked, setIsBlocked] = useState(false);
   const [step, setStep] = useState<Step>({ type: 'intro' });
-  const [hearts, setHearts] = useState(3);
   const [showVocabMeaning, setShowVocabMeaning] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [answerState, setAnswerState] = useState<'default' | 'correct' | 'incorrect'>('default');
   const [correctCount, setCorrectCount] = useState(0);
-  const [showXP, setShowXP] = useState(false);
-  const [xpAmount, setXpAmount] = useState(0);
+  const [totalAttempted, setTotalAttempted] = useState(0);
   const [showCelebration, setShowCelebration] = useState(false);
   const [kuttanMsg, setKuttanMsg] = useState('');
   const [showExitConfirm, setShowExitConfirm] = useState(false);
@@ -68,7 +66,6 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     if (checkpoint && checkpoint.lessonId === lessonId) {
       setStep({ type: checkpoint.stepType, index: checkpoint.stepIndex });
       setCorrectCount(checkpoint.correctCount);
-      setHearts(checkpoint.hearts);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Only on mount
@@ -82,7 +79,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
         stepType: step.type,
         stepIndex: (step as { type: string; index: number }).index ?? 0,
         correctCount,
-        hearts,
+        hearts: 3,
         xpEarned: 0,
         vocabLearned: [],
         startedAt: Date.now(),
@@ -195,16 +192,9 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     } else if (step.type === 'vocab') {
       learnVocabulary(lesson.vocabulary[step.index].id);
       addSRSCard(createCard(lesson.vocabulary[step.index].id));
-      const xp = 5;
-      addXP(xp);
-      setXpAmount(xp);
-      setShowXP(true);
-      setTimeout(() => {
-        setShowXP(false);
-        if (step.index < lesson.vocabulary.length - 1) { setStep({ type: 'vocab', index: step.index + 1 }); setShowVocabMeaning(false); }
-        else if (lesson.exercises.length > 0) { setStep({ type: 'exercise', index: 0 }); setSelectedAnswer(null); setAnswerState('default'); }
-        else finishLesson();
-      }, 800);
+      if (step.index < lesson.vocabulary.length - 1) { setStep({ type: 'vocab', index: step.index + 1 }); setShowVocabMeaning(false); }
+      else if (lesson.exercises.length > 0) { setStep({ type: 'exercise', index: 0 }); setSelectedAnswer(null); setAnswerState('default'); }
+      else finishLesson();
     } else if (step.type === 'exercise') {
       if (step.index < lesson.exercises.length - 1) { setStep({ type: 'exercise', index: step.index + 1 }); setSelectedAnswer(null); setAnswerState('default'); }
       else finishLesson();
@@ -246,6 +236,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const handleAnswerSelect = (answer: string) => {
     if (answerState !== 'default') return;
     setSelectedAnswer(answer);
+    setTotalAttempted(prev => prev + 1);
     const exercise = lesson.exercises[(step as { type: 'exercise'; index: number }).index];
     const isCorrect = answer === exercise.correctAnswer;
 
@@ -253,25 +244,14 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       setAnswerState('correct');
       setCorrectCount(prev => prev + 1);
       setKuttanMsg(getRandomMessage('correct'));
-      const xp = exercise.xpReward;
-      addXP(xp);
-      setXpAmount(xp);
-      setShowXP(true);
-      setTimeout(() => { setShowXP(false); goNext(); }, 1400);
+      setTimeout(() => goNext(), 1400);
     } else {
       setAnswerState('incorrect');
       setKuttanMsg(getRandomMessage('wrong'));
-      setHearts(prev => {
-        const newHearts = Math.max(0, prev - 1);
-        if (newHearts === 0) {
-          setTimeout(() => router.push('/'), 500);
-        }
-        return newHearts;
-      });
+      // Show correct answer for a moment, then auto-advance
       setTimeout(() => {
-        setAnswerState('default');
-        setSelectedAnswer(null);
-      }, 1400);
+        goNext();
+      }, 2000);
     }
   };
 
@@ -308,12 +288,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       )}
 
       <Confetti isActive={answerState === 'correct'} duration={1500} />
-      <XPGain amount={xpAmount} isVisible={showXP} />
       <Celebration
         isVisible={showCelebration}
         title="Lesson Complete!"
         subtitle={lesson.title}
-        xpEarned={lesson.xpReward}
+        xpEarned={0}
         onContinue={() => { setShowCelebration(false); router.push('/'); }}
       />
 
@@ -388,7 +367,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                   setLessonFailed(false);
                   setStep({ type: 'intro' });
                   setCorrectCount(0);
-                  setHearts(3);
+                  setTotalAttempted(0);
                   setSelectedAnswer(null);
                   setAnswerState('default');
                 }}
@@ -425,17 +404,12 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             />
           </div>
 
-          {/* Hearts */}
-          <div className="flex items-center gap-0.5">
-            {[1, 2, 3].map((h) => (
-              <motion.div
-                key={h}
-                animate={h > hearts ? { scale: [1, 0.8], opacity: 0.3 } : {}}
-              >
-                <Heart className={`w-5 h-5 ${h <= hearts ? 'text-[#c0392b] fill-[#c0392b]' : 'text-[var(--foreground)]/15'}`} />
-              </motion.div>
-            ))}
-          </div>
+          {/* Score */}
+          {totalAttempted > 0 && (
+            <span className="text-xs font-bold text-[var(--foreground)]/50 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-full px-2.5 py-1">
+              {correctCount}/{totalAttempted}
+            </span>
+          )}
         </div>
       </div>
 
@@ -486,12 +460,9 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                     <li>• Watch the short teaching videos first</li>
                     <li>• Flip through vocabulary with audio</li>
                     <li>• Finish the exercises to lock it in</li>
-                    <li>• Mistakes are okay — hearts are there to help you focus</li>
+                    <li>• Wrong answers show the correct one — learn as you go</li>
                   </ul>
                 </div>
-                <span className="inline-block bg-[#27ae60]/15 text-[#27ae60] text-sm font-bold px-4 py-1.5 rounded-full border border-[#27ae60]/20 mt-4">
-                  +{lesson.xpReward} XP
-                </span>
               </motion.div>
             </motion.div>
           )}

@@ -116,11 +116,11 @@ interface CelebrationProps {
   isVisible: boolean;
   title: string;
   subtitle?: string;
-  xpEarned: number;
+  xpEarned?: number;
   onContinue: () => void;
 }
 
-export function Celebration({ isVisible, title, subtitle, xpEarned, onContinue }: CelebrationProps) {
+export function Celebration({ isVisible, title, subtitle, onContinue }: CelebrationProps) {
   return (
     <AnimatePresence>
       {isVisible && (
@@ -162,35 +162,17 @@ export function Celebration({ isVisible, title, subtitle, xpEarned, onContinue }
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl text-white/80 mb-6"
+                className="text-xl text-white/80 mb-8"
               >
                 {subtitle}
               </motion.p>
             )}
 
-            {/* XP Display */}
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.5, type: 'spring' }}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-white font-bold text-3xl px-8 py-4 rounded-2xl shadow-lg mb-8"
-            >
-              <span>+{xpEarned}</span>
-              <span className="text-2xl">XP</span>
-              <motion.span
-                animate={{ rotate: [0, 20, -20, 0] }}
-                transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 1 }}
-                className="text-4xl"
-              >
-                ⭐
-              </motion.span>
-            </motion.div>
-
             {/* Continue Button */}
             <motion.button
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.7 }}
+              transition={{ delay: 0.6 }}
               onClick={onContinue}
               className="game-button text-xl w-full max-w-xs"
             >

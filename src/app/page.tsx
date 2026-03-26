@@ -3,15 +3,13 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Flame, Star, Zap, Award, Clock, CheckCircle2, Circle, ArrowRight, Trophy, CalendarDays, Lightbulb, BookOpen, BookOpenText } from 'lucide-react';
+import { Clock, CheckCircle2, Circle, ArrowRight, Trophy, CalendarDays, Lightbulb, Zap } from 'lucide-react';
 import { GameButton } from '@/components/game';
 import { Kuttan } from '@/components/character/Kuttan';
 import { getRandomMessage } from '@/lib/content/dialogue';
-import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS } from '@/lib/store';
-import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
+import { useGameStore } from '@/lib/store';
+import { ALL_MODULES } from '@/lib/content/modules';
 import { getNextCoreLesson } from '@/lib/curriculum';
-import { JOURNEY_LOCATIONS, getCurrentLocation } from '@/lib/journey';
-import { calculateExamReadiness } from '@/lib/exam-readiness';
 import { getDailySchedule, type DailySchedule, type DailyTask } from '@/lib/study-plan';
 
 const DAILY_TIPS = [
@@ -35,7 +33,6 @@ export default function Home() {
   const router = useRouter();
   const { userProgress, updateStreak, completeTask } = useGameStore();
   const [mounted, setMounted] = useState(false);
-  const [showJourney, setShowJourney] = useState(false);
   const [kuttanMessage, setKuttanMessage] = useState('');
 
   useEffect(() => {
@@ -61,9 +58,7 @@ export default function Home() {
   const nextLesson = useMemo(() => mounted ? getNextCoreLesson(userProgress.completedLessons) : null, [mounted, userProgress.completedLessons]);
   const completedCount = userProgress.completedLessons?.length || 0;
   const totalLessons = useMemo(() => ALL_MODULES.reduce((acc, m) => acc + m.lessons.length, 0), []);
-  const currentLevelXP = LEVEL_THRESHOLDS[userProgress.level - 1] || 0;
-  const nextLevelXP = LEVEL_THRESHOLDS[userProgress.level] || LEVEL_THRESHOLDS[LEVEL_THRESHOLDS.length - 1];
-  const xpProgress = nextLevelXP > currentLevelXP ? ((userProgress.xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100 : 100;
+  const coursePercent = totalLessons > 0 ? Math.round((completedCount / totalLessons) * 100) : 0;
 
   const studyPlan = userProgress.studyPlan;
   const schedule: DailySchedule | null = useMemo(() => {
@@ -112,66 +107,60 @@ export default function Home() {
 
   return (
     <div className="min-h-screen px-4 py-3 safe-top safe-bottom">
-      {/* Compact Stats Bar — all stats in one row */}
+      {/* ── Progress Header ── */}
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="flex items-center justify-between gap-1 mb-2"
+        className="mb-2"
       >
-        {/* Streak */}
-        <div className="flex items-center gap-1 bg-[var(--card-bg)] rounded-full px-2 py-1 border border-[var(--card-border)]">
-          <Flame className={`w-3.5 h-3.5 ${userProgress.streak > 0 ? 'text-[#c0392b] streak-fire' : 'text-[var(--foreground)]/40'}`} />
-          <span className="font-bold text-xs">{userProgress.streak}</span>
-        </div>
+        <div className="game-card p-3">
+          <div className="flex items-center justify-between mb-1.5">
+            <h2 className="text-sm font-black text-[var(--foreground)]">
+              {schedule && studyPlan ? (
+                <>
+                  Day {schedule.dayNumber}
+                  <span className="text-[var(--foreground)]/40 font-normal text-xs ml-1">
+                    of {schedule.totalDays}
+                  </span>
+                </>
+              ) : (
+                <>
+                  {completedCount === 0 ? 'Welcome' : `${completedCount} lessons done`}
+                </>
+              )}
+            </h2>
+            <span className="text-sm font-bold text-[#e94560]">
+              {schedule ? schedule.percentComplete : coursePercent}%
+            </span>
+          </div>
 
-        {/* Level ring */}
-        <div className="relative">
-          <svg className="w-9 h-9 progress-ring" viewBox="0 0 36 36">
-            <path
-              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="rgba(245,240,232,0.1)"
-              strokeWidth="3"
+          {/* Progress bar */}
+          <div className="h-2.5 bg-[var(--foreground)]/8 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full rounded-full bg-gradient-to-r from-[#e94560] to-[#e94560]/60"
+              initial={{ width: 0 }}
+              animate={{ width: `${schedule ? schedule.percentComplete : coursePercent}%` }}
+              transition={{ duration: 1, ease: 'easeOut' }}
             />
-            <path
-              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="#d4a520"
-              strokeWidth="3"
-              strokeDasharray={`${xpProgress}, 100`}
-              strokeLinecap="round"
-            />
-          </svg>
-          <span className="absolute inset-0 flex items-center justify-center font-bold text-xs">
-            {userProgress.level}
-          </span>
-        </div>
+          </div>
 
-        {/* XP */}
-        <div className="flex items-center gap-1 bg-[#d4a520]/15 border border-[#d4a520]/30 rounded-full px-2 py-1">
-          <Star className="w-3 h-3 text-[#d4a520] fill-[#d4a520]" />
-          <span className={`font-bold text-xs text-[#d4a520]${userProgress.xp > 0 ? ' animate-shimmer' : ''}`}>{userProgress.xp}</span>
-        </div>
-
-        {/* Lessons completed */}
-        <div className="flex items-center gap-1 bg-[var(--card-bg)] rounded-full px-2 py-1 border border-[var(--card-border)]">
-          <BookOpen className="w-3 h-3 text-[#27ae60]" />
-          <span className="font-bold text-xs text-[#27ae60]">{completedCount}</span>
-        </div>
-
-        {/* Words learned */}
-        <div className="flex items-center gap-1 bg-[var(--card-bg)] rounded-full px-2 py-1 border border-[var(--card-border)]">
-          <BookOpenText className="w-3 h-3 text-[#8b5cf6]" />
-          <span className="font-bold text-xs text-[#8b5cf6]">{userProgress.learnedVocabulary.length}</span>
+          {/* Compact stats row */}
+          <div className="flex items-center gap-3 mt-1.5 text-xs text-[var(--foreground)]/40">
+            <span>{completedCount}/{totalLessons} lessons</span>
+            <span>{userProgress.learnedVocabulary.length} words</span>
+            {userProgress.streak > 0 && (
+              <span>{userProgress.streak} day streak</span>
+            )}
+          </div>
         </div>
       </motion.div>
 
       {/* Kuttan — centered, clear, friendly */}
-      {mounted && kuttanMessage && (
+      {kuttanMessage && (
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, type: 'spring' }}
+          transition={{ delay: 0.15, type: 'spring' }}
           className="flex justify-center mb-2"
         >
           <div className="flex items-center gap-3 game-card px-4 py-2.5 max-w-sm w-full">
@@ -183,7 +172,7 @@ export default function Home() {
         </motion.div>
       )}
 
-      {/* ── Daily Schedule Section — PRIMARY ACTION ── */}
+      {/* ── Daily Schedule Section ── */}
       {schedule && studyPlan ? (
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -191,40 +180,12 @@ export default function Home() {
           transition={{ delay: 0.15 }}
           className="w-full max-w-sm mx-auto"
         >
-          {/* Day header */}
-          <div className="game-card p-3 mb-2">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-2">
-                <CalendarDays className="w-4 h-4 text-[#ff6b9d]" />
-                <h2 className="text-sm font-black text-[var(--foreground)]">
-                  Day {schedule.dayNumber}{' '}
-                  <span className="text-[var(--foreground)]/40 font-normal text-xs">
-                    of {schedule.totalDays}
-                  </span>
-                </h2>
-              </div>
-              <span className="text-xs font-bold text-[#ff6b9d]">
-                {schedule.percentComplete}%
-              </span>
+          {schedule.isCheckpoint && (
+            <div className="flex items-center gap-2 bg-[#ffd93d]/10 border border-[#ffd93d]/20 rounded-lg px-2 py-1.5 mb-2">
+              <Trophy className="w-3.5 h-3.5 text-[#ffd93d]" />
+              <span className="text-xs font-semibold text-[#ffd93d]">Checkpoint Day — pass to continue!</span>
             </div>
-
-            {/* Progress bar */}
-            <div className="h-2 bg-[var(--foreground)]/8 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-[#ff6b9d] to-[#ff6b9d]/60"
-                initial={{ width: 0 }}
-                animate={{ width: `${schedule.percentComplete}%` }}
-                transition={{ duration: 1, ease: 'easeOut' }}
-              />
-            </div>
-
-            {schedule.isCheckpoint && (
-              <div className="mt-2 flex items-center gap-2 bg-[#ffd93d]/10 border border-[#ffd93d]/20 rounded-lg px-2 py-1.5">
-                <Trophy className="w-3.5 h-3.5 text-[#ffd93d]" />
-                <span className="text-xs font-semibold text-[#ffd93d]">Checkpoint Day — pass to continue!</span>
-              </div>
-            )}
-          </div>
+          )}
 
           {/* Today's tasks */}
           <div>
@@ -273,10 +234,7 @@ export default function Home() {
                         </span>
                       </div>
                     </div>
-                    <div className="flex-shrink-0 flex items-center gap-2">
-                      <span className="text-xs text-[var(--foreground)]/40">{task.estimatedMinutes}m</span>
-                      <span className="text-xs font-semibold text-[#27ae60]/70">+{task.xpReward}</span>
-                    </div>
+                    <span className="text-xs text-[var(--foreground)]/40 flex-shrink-0">{task.estimatedMinutes}m</span>
                     {!task.completed && (
                       <ArrowRight className="w-3.5 h-3.5 text-[var(--foreground)]/20 flex-shrink-0" />
                     )}
@@ -304,12 +262,12 @@ export default function Home() {
         >
           <button
             onClick={() => router.push('/onboarding')}
-            className="w-full game-card p-3 text-center hover:border-[#ff6b9d]/30 transition-colors group mb-2"
+            className="w-full game-card p-3 text-center hover:border-[#e94560]/30 transition-colors group mb-2"
           >
-            <CalendarDays className="w-6 h-6 text-[#ff6b9d] mx-auto mb-1 group-hover:scale-110 transition-transform" />
-            <h3 className="font-bold text-sm mb-0.5">Set Up Your Study Plan</h3>
+            <CalendarDays className="w-6 h-6 text-[#e94560] mx-auto mb-1 group-hover:scale-110 transition-transform" />
+            <h3 className="font-bold text-sm mb-0.5">Set Your Study Pace</h3>
             <p className="text-xs text-[var(--foreground)]/40">
-              Get a daily schedule tailored to your pace
+              Choose your daily hours and get a personalized schedule
             </p>
           </button>
         </motion.div>
@@ -335,9 +293,6 @@ export default function Home() {
               {nextLesson.lesson.titleGerman}
             </p>
             <div className="flex items-center justify-center gap-2 mt-2">
-              <span className="bg-[#27ae60]/15 text-[#27ae60] text-xs font-bold px-2 py-0.5 rounded-full border border-[#27ae60]/20">
-                +{nextLesson.lesson.xpReward} XP
-              </span>
               <span className="bg-[var(--card-bg)] text-[var(--foreground)]/60 text-xs px-2 py-0.5 rounded-full border border-[var(--card-border)]">
                 {nextLesson.lesson.duration}
               </span>
@@ -365,66 +320,11 @@ export default function Home() {
         </div>
       )}
 
-      {/* ── Below fold: Exam Readiness + Tip ── */}
-      {completedCount > 0 && (
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="w-full max-w-sm mx-auto mt-2"
-        >
-          {(() => {
-            const tl = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
-            const tv = getAllVocabulary().length;
-            const r = calculateExamReadiness({
-              completedLessons: userProgress.completedLessons,
-              totalLessons: tl,
-              learnedVocabulary: userProgress.learnedVocabulary.length,
-              totalVocabulary: tv,
-              streak: userProgress.streak,
-              gamesPlayed: userProgress.gamesPlayed,
-              quizzesTaken: userProgress.quizzesTaken,
-            });
-            return (
-              <div className="game-card p-2.5">
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-1 shrink-0">
-                    <Award className="w-3.5 h-3.5" style={{ color: r.color }} />
-                    <span className="text-xs font-bold" style={{ color: r.color }}>A1</span>
-                    <span className={`text-xs font-bold${r.score >= 60 ? ' animate-shimmer' : ''}`} style={{ color: r.color }}>
-                      {r.score}%
-                    </span>
-                  </div>
-                  <div className="h-2 bg-[var(--foreground)]/8 rounded-full overflow-hidden flex flex-1">
-                    <motion.div
-                      className="h-full rounded-l-full"
-                      style={{ backgroundColor: r.color }}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${r.courseScore}%` }}
-                      transition={{ duration: 0.8, ease: 'easeOut' }}
-                    />
-                    {r.supplementaryScore > 0 && (
-                      <motion.div
-                        className="h-full"
-                        style={{ backgroundColor: r.color, opacity: 0.4 }}
-                        initial={{ width: 0 }}
-                        animate={{ width: `${r.supplementaryScore}%` }}
-                        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
-                      />
-                    )}
-                  </div>
-                </div>
-              </div>
-            );
-          })()}
-        </motion.div>
-      )}
-
       {/* Tip of the Day */}
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.6 }}
+        transition={{ delay: 0.5 }}
         className="w-full max-w-sm mx-auto mt-2"
       >
         <div className="game-card p-2.5">
@@ -436,96 +336,6 @@ export default function Home() {
           </div>
         </div>
       </motion.div>
-
-      {/* Journey Map (collapsible) */}
-      <div className="mt-2">
-        <button onClick={() => setShowJourney(!showJourney)} className="text-xs text-[var(--foreground)]/40 text-center w-full py-1">
-          {showJourney ? 'Hide journey ▲' : 'Show journey ▼'}
-        </button>
-        {showJourney && (
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.1 }}
-          >
-            <p className="text-[var(--foreground)]/40 text-sm text-center mb-2">
-              <span className="text-[#27ae60]">Home</span>
-              <span className="mx-1 text-[var(--foreground)]/35">···</span>
-              <span className="text-[#d4a520]">Gate</span>
-              <span className="mx-1 text-[var(--foreground)]/35">···</span>
-              <span className="text-[var(--foreground)]/40">Germany</span>
-            </p>
-
-            <div className="flex justify-between items-center px-1 mb-2 overflow-x-auto">
-              {JOURNEY_LOCATIONS.map((loc, i) => {
-                const completedModules = ALL_MODULES.filter(m =>
-                  m.lessons.every(l => userProgress.completedLessons.some(cl => cl.lessonId === l.id))
-                ).length;
-                const currentLoc = getCurrentLocation(completedModules);
-                const currentLocIndex = JOURNEY_LOCATIONS.findIndex(l => l.id === currentLoc.id);
-                const isReached = i <= currentLocIndex;
-                const isCurrent = i === currentLocIndex;
-                return (
-                  <div key={loc.id} className="flex flex-col items-center gap-0.5 flex-1 min-w-0">
-                    <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center text-xs flex-shrink-0
-                        ${isCurrent
-                          ? 'bg-[#d4a520]/20 border-2 border-[#d4a520] shadow-md shadow-[#d4a520]/20 animate-marker'
-                          : isReached
-                          ? 'bg-[#27ae60]/20 border-2 border-[#27ae60]/50'
-                          : 'bg-[var(--card-bg)] border border-[var(--card-border)]'
-                        }`}
-                    >
-                      {loc.icon}
-                    </div>
-                    <span className={`text-[10px] text-center leading-tight truncate w-full
-                      ${isCurrent ? 'text-[#d4a520] font-bold' : isReached ? 'text-[var(--foreground)]/50' : 'text-[var(--foreground)]/40'}`}
-                    >
-                      {loc.shortName}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="flex justify-center items-center gap-0.5 pb-1 flex-wrap max-w-sm mx-auto">
-              {ALL_MODULES.map(module => {
-                const moduleLessons = module.lessons.length;
-                const completedInModule = module.lessons.filter(
-                  l => userProgress.completedLessons.some(cl => cl.lessonId === l.id)
-                ).length;
-                const isModuleComplete = completedInModule === moduleLessons;
-                const isModuleActive = completedInModule > 0 && !isModuleComplete;
-                const hasNext = module.lessons.some(l => l.id === nextLesson?.lesson.id);
-                return (
-                  <motion.div
-                    key={module.id}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={() => {
-                      if (isModuleComplete || isModuleActive || hasNext)
-                        router.push(`/learn/${module.id}`);
-                    }}
-                    className={`h-2 rounded-full cursor-pointer transition-all
-                      ${isModuleComplete
-                        ? 'bg-[#27ae60] w-4'
-                        : hasNext
-                        ? 'bg-[#d4a520] animate-pulse-glow w-5'
-                        : isModuleActive
-                        ? 'bg-[#d4a520]/60 w-3'
-                        : 'bg-[var(--foreground)]/10 w-2'
-                      }`}
-                    title={`Module ${module.id}: ${module.title}`}
-                  />
-                );
-              })}
-            </div>
-
-            <p className="text-center text-[var(--foreground)]/45 text-xs mt-1">
-              {completedCount} of {totalLessons} lessons
-            </p>
-          </motion.div>
-        )}
-      </div>
     </div>
   );
 }

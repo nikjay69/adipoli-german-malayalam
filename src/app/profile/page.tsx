@@ -6,13 +6,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   User,
-  Trophy,
-  Star,
-  Flame,
-  Clock,
-  Target,
-  BookOpen,
-  Gamepad2,
   Award,
   RefreshCw,
   FileText,
@@ -28,9 +21,12 @@ import {
   Check,
   Trash2,
   AlertTriangle,
+  CalendarDays,
+  Clock,
 } from 'lucide-react';
 import { Card, Button, Badge, ProgressBar } from '@/components/ui';
-import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS, ACHIEVEMENTS_DATA } from '@/lib/store';
+import { useGameStore, ACHIEVEMENTS_DATA } from '@/lib/store';
+import { HOUR_OPTIONS, getEstimatedDays, getEstimatedCompletionDate, createStudyPlan } from '@/lib/study-plan';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { calculateExamReadiness } from '@/lib/exam-readiness';
 import { useAuthStore } from '@/lib/auth-store';
@@ -38,12 +34,13 @@ import { FEATURE_FLAGS, getAuthStatusMessage } from '@/lib/app-config';
 
 export default function ProfilePage() {
   const router = useRouter();
-  const { userProgress, resetProgress } = useGameStore();
+  const { userProgress, resetProgress, setStudyPlan } = useGameStore();
   const { user, isLoggedIn, logout } = useAuthStore();
   const [mounted, setMounted] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
   const [showBreakdown, setShowBreakdown] = useState(false);
+  const [showPaceEditor, setShowPaceEditor] = useState(false);
 
   // Passkey state
   const [webAuthnSupported, setWebAuthnSupported] = useState(false);
@@ -200,18 +197,21 @@ export default function ProfilePage() {
     );
   }
 
-  const currentLevelXP = LEVEL_THRESHOLDS[userProgress.level - 1] || 0;
-  const nextLevelXP = LEVEL_THRESHOLDS[userProgress.level] || LEVEL_THRESHOLDS[LEVEL_THRESHOLDS.length - 1];
-  const progressToNextLevel = nextLevelXP > currentLevelXP ? ((userProgress.xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100 : 100;
-
   const totalLessons = ALL_MODULES.reduce((acc, m) => acc + m.lessons.length, 0);
   const completedLessons = userProgress.completedLessons.length;
+  const coursePercent = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
 
-  const formatTime = (minutes: number) => {
-    const hours = Math.floor(minutes / 60);
-    const mins = minutes % 60;
-    if (hours === 0) return `${mins}m`;
-    return `${hours}h ${mins}m`;
+  const handleChangePace = (hours: number) => {
+    const plan = createStudyPlan(hours);
+    // Preserve existing progress
+    if (userProgress.studyPlan) {
+      plan.completedDays = userProgress.studyPlan.completedDays;
+      plan.currentDay = userProgress.studyPlan.currentDay;
+      plan.checkpointResults = userProgress.studyPlan.checkpointResults;
+      plan.startDate = userProgress.studyPlan.startDate;
+    }
+    setStudyPlan(plan);
+    setShowPaceEditor(false);
   };
 
   const handleReset = () => {
@@ -297,20 +297,18 @@ export default function ProfilePage() {
               )}
             </div>
 
-            {/* Level Badge */}
-            <Badge variant="secondary" size="md" className="mb-4">
-              Level {userProgress.level}: {LEVEL_NAMES[userProgress.level - 1]}
-            </Badge>
-
-            {/* Level Progress */}
+            {/* Course Progress */}
             <div className="max-w-xs mx-auto">
               <div className="flex items-center justify-between text-sm mb-1">
-                <span className="text-[var(--foreground)]/50">Progress to Level {userProgress.level + 1}</span>
-                <span className="font-medium text-[var(--foreground)]/80">
-                  {userProgress.xp - currentLevelXP} / {nextLevelXP - currentLevelXP} XP
-                </span>
+                <span className="text-[var(--foreground)]/50">{completedLessons}/{totalLessons} lessons</span>
+                <span className="font-medium text-[#e94560]">{coursePercent}%</span>
               </div>
-              <ProgressBar progress={progressToNextLevel} color="primary" size="lg" />
+              <ProgressBar progress={coursePercent} color="primary" size="lg" />
+              {userProgress.studyPlan && (
+                <p className="text-xs text-[var(--foreground)]/40 mt-1 text-center">
+                  Day {userProgress.studyPlan.currentDay} of {userProgress.studyPlan.totalDays} · {userProgress.studyPlan.dailyHours}h/day
+                </p>
+              )}
             </div>
           </Card>
         ) : (
@@ -351,137 +349,93 @@ export default function ProfilePage() {
               </div>
             )}
 
-            {/* Level badge still shows for non-logged users */}
+            {/* Course progress for non-logged users */}
             <div className="mt-5 pt-5 border-t border-[var(--card-border)]">
-              <Badge variant="secondary" size="md" className="mb-4">
-                Level {userProgress.level}: {LEVEL_NAMES[userProgress.level - 1]}
-              </Badge>
-
               <div className="max-w-xs mx-auto">
                 <div className="flex items-center justify-between text-sm mb-1">
-                  <span className="text-[var(--foreground)]/50">Progress to Level {userProgress.level + 1}</span>
-                  <span className="font-medium text-[var(--foreground)]/80">
-                    {userProgress.xp - currentLevelXP} / {nextLevelXP - currentLevelXP} XP
-                  </span>
+                  <span className="text-[var(--foreground)]/50">{completedLessons}/{totalLessons} lessons</span>
+                  <span className="font-medium text-[#e94560]">{coursePercent}%</span>
                 </div>
-                <ProgressBar progress={progressToNextLevel} color="primary" size="lg" />
+                <ProgressBar progress={coursePercent} color="primary" size="lg" />
+                {userProgress.studyPlan && (
+                  <p className="text-xs text-[var(--foreground)]/40 mt-1 text-center">
+                    Day {userProgress.studyPlan.currentDay} of {userProgress.studyPlan.totalDays} · {userProgress.studyPlan.dailyHours}h/day
+                  </p>
+                )}
               </div>
             </div>
           </Card>
         )}
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3">
-          <Card padding="sm" className="text-center">
-            <div className="w-8 h-8 bg-amber-500/15 rounded-lg flex items-center justify-center mx-auto mb-1">
-              <Star className="w-4 h-4 text-amber-500" />
-            </div>
-            <div className="text-xl font-bold text-[var(--foreground)]">{userProgress.xp}</div>
-            <div className="text-xs text-[var(--foreground)]/50">Total XP</div>
-          </Card>
-
-          <Card padding="sm" className="text-center">
-            <div className="w-8 h-8 bg-orange-500/15 rounded-lg flex items-center justify-center mx-auto mb-1">
-              <Flame className="w-4 h-4 text-orange-500" />
-            </div>
-            <div className="text-xl font-bold text-[var(--foreground)]">{userProgress.streak}</div>
-            <div className="text-xs text-[var(--foreground)]/50">Day Streak</div>
-          </Card>
-
-          <Card padding="sm" className="text-center">
-            <div className="w-8 h-8 bg-[#27ae60]/15 rounded-lg flex items-center justify-center mx-auto mb-1">
-              <BookOpen className="w-4 h-4 text-[#27ae60]" />
-            </div>
-            <div className="text-xl font-bold text-[var(--foreground)]">{completedLessons}</div>
-            <div className="text-xs text-[var(--foreground)]/50">Lessons Done</div>
-          </Card>
-
-          <Card padding="sm" className="text-center">
-            <div className="w-8 h-8 bg-blue-500/15 rounded-lg flex items-center justify-center mx-auto mb-1">
-              <Target className="w-4 h-4 text-blue-500" />
-            </div>
-            <div className="text-xl font-bold text-[var(--foreground)]">{userProgress.learnedVocabulary.length}</div>
-            <div className="text-xs text-[var(--foreground)]/50">Words Learned</div>
-          </Card>
-        </div>
-
-        {/* More Stats */}
+        {/* Study Pace */}
         <Card padding="sm" className="mb-3">
-          <h2 className="font-semibold text-[var(--foreground)] mb-3">Activity Stats</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-purple-500/15 rounded-lg flex items-center justify-center">
-                <Gamepad2 className="w-5 h-5 text-purple-500" />
-              </div>
-              <div>
-                <div className="font-bold text-[var(--foreground)]">{userProgress.gamesPlayed}</div>
-                <div className="text-xs text-[var(--foreground)]/50">Games Played</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-cyan-500/15 rounded-lg flex items-center justify-center">
-                <Clock className="w-5 h-5 text-cyan-500" />
-              </div>
-              <div>
-                <div className="font-bold text-[var(--foreground)]">{formatTime(userProgress.totalTimeSpent)}</div>
-                <div className="text-xs text-[var(--foreground)]/50">Time Spent</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-pink-500/15 rounded-lg flex items-center justify-center">
-                <Award className="w-5 h-5 text-pink-500" />
-              </div>
-              <div>
-                <div className="font-bold text-[var(--foreground)]">{userProgress.quizzesTaken}</div>
-                <div className="text-xs text-[var(--foreground)]/50">Quizzes Taken</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-green-500/15 rounded-lg flex items-center justify-center">
-                <Trophy className="w-5 h-5 text-green-500" />
-              </div>
-              <div>
-                <div className="font-bold text-[var(--foreground)]">{userProgress.achievements.length}</div>
-                <div className="text-xs text-[var(--foreground)]/50">Achievements</div>
-              </div>
-            </div>
+          <div className="flex items-center justify-between mb-2">
+            <h2 className="font-semibold text-[var(--foreground)] flex items-center gap-2">
+              <CalendarDays className="w-4 h-4 text-[#e94560]" />
+              Study Pace
+            </h2>
+            <button
+              onClick={() => setShowPaceEditor(!showPaceEditor)}
+              className="text-xs text-[#e94560] font-medium"
+            >
+              {showPaceEditor ? 'Cancel' : 'Change'}
+            </button>
           </div>
+
+          {userProgress.studyPlan ? (
+            <div className="flex items-center gap-4 text-sm text-[var(--foreground)]/60">
+              <span><strong className="text-[var(--foreground)]">{userProgress.studyPlan.dailyHours}h</strong>/day</span>
+              <span><strong className="text-[var(--foreground)]">{userProgress.studyPlan.totalDays}</strong> days total</span>
+              <span>Done by {getEstimatedCompletionDate(userProgress.studyPlan.dailyHours).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })}</span>
+            </div>
+          ) : (
+            <p className="text-sm text-[var(--foreground)]/50">No study plan set yet.</p>
+          )}
+
+          {showPaceEditor && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              className="mt-3 pt-3 border-t border-[var(--card-border)] space-y-2"
+            >
+              {HOUR_OPTIONS.map((option) => {
+                const isActive = userProgress.studyPlan?.dailyHours === option.value;
+                return (
+                  <button
+                    key={option.value}
+                    onClick={() => handleChangePace(option.value)}
+                    className={`w-full text-left p-3 rounded-xl border transition-all ${
+                      isActive
+                        ? 'bg-[#e94560]/10 border-[#e94560]/30'
+                        : 'bg-[var(--foreground)]/5 border-[var(--foreground)]/10 hover:border-[var(--foreground)]/20'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-sm">{option.label}/day</span>
+                      <span className="text-xs text-[var(--foreground)]/50">{option.sublabel}</span>
+                    </div>
+                  </button>
+                );
+              })}
+            </motion.div>
+          )}
         </Card>
 
-        {/* Achievements */}
+        {/* Quick Stats */}
         <Card padding="sm" className="mb-3">
-          <div className="flex items-center justify-between mb-3">
-            <h2 className="font-semibold text-[var(--foreground)]">Achievements</h2>
-            <span className="text-sm text-[var(--foreground)]/50">
-              {userProgress.achievements.length}/{ACHIEVEMENTS_DATA.length}
-            </span>
-          </div>
-
-          <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1">
-            {ACHIEVEMENTS_DATA.map((achievement) => {
-              const isUnlocked = userProgress.achievements.includes(achievement.id);
-              return (
-                <motion.div
-                  key={achievement.id}
-                  whileHover={{ scale: 1.05 }}
-                  className={`text-center p-2 rounded-xl transition-all flex-shrink-0 w-20 ${
-                    isUnlocked
-                      ? 'bg-gradient-to-br from-amber-900/30 to-yellow-900/30 border-2 border-amber-700/50'
-                      : 'bg-[var(--foreground)]/8 opacity-50'
-                  }`}
-                >
-                  <div className={`text-2xl mb-0.5${isUnlocked ? ' animate-unlock' : ''}`}>{isUnlocked ? achievement.icon : '🔒'}</div>
-                  <h3 className={`text-xs font-medium line-clamp-1 ${
-                    isUnlocked ? 'text-[var(--foreground)]' : 'text-[var(--foreground)]/50'
-                  }`}>
-                    {achievement.name}
-                  </h3>
-                </motion.div>
-              );
-            })}
+          <div className="grid grid-cols-3 gap-3 text-center">
+            <div>
+              <div className="text-lg font-bold text-[var(--foreground)]">{completedLessons}</div>
+              <div className="text-xs text-[var(--foreground)]/50">Lessons</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold text-[var(--foreground)]">{userProgress.learnedVocabulary.length}</div>
+              <div className="text-xs text-[var(--foreground)]/50">Words</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold text-[var(--foreground)]">{userProgress.streak}</div>
+              <div className="text-xs text-[var(--foreground)]/50">Day Streak</div>
+            </div>
           </div>
         </Card>
 
@@ -514,28 +468,6 @@ export default function ProfilePage() {
                 </div>
               );
             })}
-          </div>
-        </Card>
-
-        {/* Levels Reference */}
-        <Card padding="sm" className="mb-3">
-          <h2 className="font-semibold text-[var(--foreground)] mb-3">Level Guide</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
-            {LEVEL_NAMES.slice(0, 12).map((name, index) => (
-              <div
-                key={index}
-                className={`p-2 rounded-lg ${
-                  userProgress.level === index + 1
-                    ? 'bg-[#e94560]/10 border-2 border-[#e94560]'
-                    : userProgress.level > index + 1
-                    ? 'bg-[#27ae60]/10'
-                    : 'bg-[var(--foreground)]/5'
-                }`}
-              >
-                <span className="font-medium text-[var(--foreground)]">Lv.{index + 1}</span>
-                <span className="text-[var(--foreground)]/50 text-xs block">{name}</span>
-              </div>
-            ))}
           </div>
         </Card>
 
@@ -778,7 +710,7 @@ export default function ProfilePage() {
         <Card className="border-[#c0392b]/30">
           <h2 className="font-semibold text-[var(--foreground)] mb-2">Danger Zone</h2>
           <p className="text-sm text-[var(--foreground)]/50 mb-4">
-            Reset all your progress including XP, completed lessons, and achievements.
+            Reset all your progress including completed lessons, vocabulary, and study plan.
           </p>
 
           {!showResetConfirm ? (

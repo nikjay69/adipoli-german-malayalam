@@ -268,7 +268,7 @@ export default function LearnPage() {
                                   </div>
                                 )}
                                 {!isLessonLocked && !isCompleted && (
-                                  <span className="text-xs font-bold text-[#27ae60]">+{lesson.xpReward}</span>
+                                  <ChevronRight className="w-3 h-3 text-[var(--foreground)]/30" />
                                 )}
                               </div>
                             </div>

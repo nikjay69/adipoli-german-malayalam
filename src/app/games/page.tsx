@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Flame, Star, Trophy, Lock } from 'lucide-react';
+import { Lock } from 'lucide-react';
 import { useGameStore } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
 
@@ -235,10 +235,6 @@ export default function GamesPage() {
           <span className="gradient-text">Games</span>
           <span className="text-[var(--foreground)]/40 font-normal ml-1.5">{unlockedGames.length} of {games.length} unlocked</span>
         </h1>
-        <div className="flex items-center gap-3 text-xs text-[var(--foreground)]/50">
-          <span className="flex items-center gap-1"><Flame className="w-3 h-3 text-[#c0392b]" />{userProgress.gamesPlayed}</span>
-          <span className="flex items-center gap-1"><Star className="w-3 h-3 text-[#d4a520]" />{userProgress.xp}</span>
-        </div>
       </motion.div>
 
       {/* 2-column game grid */}
@@ -270,7 +266,7 @@ export default function GamesPage() {
                   <span className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${diffBadge[game.difficulty]}`}>
                     {game.difficulty}
                   </span>
-                  <span className="text-xs font-bold text-[#d4a520]">+{game.xpReward}</span>
+                  <span className="text-xs text-[var(--foreground)]/40">{game.timeEstimate}</span>
                 </div>
               </motion.div>
             </Link>
