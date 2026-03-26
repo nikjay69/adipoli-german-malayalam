@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { SRSCard } from './srs';
+import type { StudyPlan } from './study-plan';
 import { syncProgressToSupabase } from './progress-sync';
 import { useAuthStore } from './auth-store';
 
@@ -59,6 +60,8 @@ export interface UserProgress {
     startedAt: number;
   };
   srsCards: Record<string, SRSCard>;
+  studyPlan?: StudyPlan;
+  completedTaskIds: string[];   // task IDs completed today
 }
 
 // Level thresholds
@@ -124,6 +127,11 @@ interface GameState {
   clearCheckpoint: () => void;
   updateSRSCard: (vocabId: string, card: SRSCard) => void;
   addSRSCard: (card: SRSCard) => void;
+  setStudyPlan: (plan: StudyPlan) => void;
+  completeDay: (dayNumber: number) => void;
+  advanceDay: () => void;
+  completeTask: (taskId: string) => void;
+  resetDailyTasks: () => void;
 }
 
 const getInitialProgress = (): UserProgress => ({
@@ -143,6 +151,8 @@ const getInitialProgress = (): UserProgress => ({
   soundEnabled: true,
   activeLessonCheckpoint: undefined,
   srsCards: {},
+  studyPlan: undefined,
+  completedTaskIds: [],
 });
 
 const calculateLevel = (xp: number): number => {
@@ -430,6 +440,70 @@ export const useGameStore = create<GameState>()(
             },
           };
         });
+      },
+
+      setStudyPlan: (plan: StudyPlan) => {
+        set((state) => ({
+          userProgress: {
+            ...state.userProgress,
+            studyPlan: plan,
+          },
+        }));
+      },
+
+      completeDay: (dayNumber: number) => {
+        set((state) => {
+          const plan = state.userProgress.studyPlan;
+          if (!plan) return state;
+          if (plan.completedDays.includes(dayNumber)) return state;
+          return {
+            userProgress: {
+              ...state.userProgress,
+              studyPlan: {
+                ...plan,
+                completedDays: [...plan.completedDays, dayNumber],
+              },
+            },
+          };
+        });
+      },
+
+      advanceDay: () => {
+        set((state) => {
+          const plan = state.userProgress.studyPlan;
+          if (!plan) return state;
+          return {
+            userProgress: {
+              ...state.userProgress,
+              studyPlan: {
+                ...plan,
+                currentDay: Math.min(plan.currentDay + 1, plan.totalDays),
+              },
+              completedTaskIds: [], // reset daily tasks on advance
+            },
+          };
+        });
+      },
+
+      completeTask: (taskId: string) => {
+        set((state) => {
+          if (state.userProgress.completedTaskIds.includes(taskId)) return state;
+          return {
+            userProgress: {
+              ...state.userProgress,
+              completedTaskIds: [...state.userProgress.completedTaskIds, taskId],
+            },
+          };
+        });
+      },
+
+      resetDailyTasks: () => {
+        set((state) => ({
+          userProgress: {
+            ...state.userProgress,
+            completedTaskIds: [],
+          },
+        }));
       },
 
       resetProgress: () => {

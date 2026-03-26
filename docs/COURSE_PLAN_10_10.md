@@ -448,6 +448,15 @@ Build in this order:
 - [x] Progress sync to Supabase ✅ (debounced JSONB, cross-device)
 - [x] Readability overhaul ✅ (min 12px fonts, 44px touch targets, better contrast)
 
+### NEW — Adaptive Daily Scheduling (self-contained course)
+- [ ] Onboarding: "How many hours per day?" → calculate total days
+- [ ] Daily schedule: "Day N of M" + task checklist
+- [ ] Tasks auto-assigned: SRS review → lesson → practice → game
+- [ ] Checkpoint every 5 days: must pass to continue
+- [ ] Failed checkpoint: redo weak lessons before advancing
+- [ ] Progress bar: Day N/M + percentage completion
+- [ ] Flexible: user can adjust daily hours anytime
+
 ### LATER — premium depth / engagement uplift
 - [ ] Generate the script layer for all lessons (cheap, reusable, controlled)
 - [ ] Build controlled visual/video templates first (slides, vocab, grammar, dialogue)

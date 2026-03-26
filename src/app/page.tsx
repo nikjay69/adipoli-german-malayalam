@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Flame, Star, Zap, Award } from 'lucide-react';
+import { Flame, Star, Zap, Award, Clock, CheckCircle2, Circle, ArrowRight, Trophy, CalendarDays } from 'lucide-react';
 import { GameButton } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
 import { getRandomMessage } from '@/lib/content/dialogue';
@@ -12,10 +12,11 @@ import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { getNextCoreLesson } from '@/lib/curriculum';
 import { JOURNEY_LOCATIONS, getCurrentLocation } from '@/lib/journey';
 import { calculateExamReadiness } from '@/lib/exam-readiness';
+import { getDailySchedule, type DailySchedule, type DailyTask } from '@/lib/study-plan';
 
 export default function Home() {
   const router = useRouter();
-  const { userProgress, updateStreak } = useGameStore();
+  const { userProgress, updateStreak, completeTask } = useGameStore();
   const [mounted, setMounted] = useState(false);
   const [kuttanMessage, setKuttanMessage] = useState('');
 
@@ -57,9 +58,36 @@ export default function Home() {
   const nextLevelXP = LEVEL_THRESHOLDS[userProgress.level] || LEVEL_THRESHOLDS[LEVEL_THRESHOLDS.length - 1];
   const xpProgress = nextLevelXP > currentLevelXP ? ((userProgress.xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100 : 100;
 
+  const studyPlan = userProgress.studyPlan;
+  const schedule: DailySchedule | null = useMemo(() => {
+    if (!studyPlan) return null;
+    return getDailySchedule(studyPlan, ALL_MODULES, {
+      completedLessons: userProgress.completedLessons,
+      srsCards: userProgress.srsCards,
+      completedTaskIds: userProgress.completedTaskIds,
+    });
+  }, [studyPlan, userProgress.completedLessons, userProgress.srsCards, userProgress.completedTaskIds]);
+
   const handleContinue = () => {
     if (nextLesson) {
       router.push(`/play/${nextLesson.module.id}/${nextLesson.lesson.id}`);
+    }
+  };
+
+  const handleTaskClick = (task: DailyTask) => {
+    if (!task.completed) {
+      completeTask(task.id);
+    }
+    router.push(task.route);
+  };
+
+  const taskTypeIcon = (type: DailyTask['type']) => {
+    switch (type) {
+      case 'lesson': return '📖';
+      case 'review': return '🔄';
+      case 'practice': return '🎙️';
+      case 'game': return '🎮';
+      case 'checkpoint': return '🏁';
     }
   };
 
