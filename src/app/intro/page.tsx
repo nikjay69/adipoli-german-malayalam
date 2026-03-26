@@ -31,15 +31,23 @@ export default function IntroPage() {
     }
   }, [currentScene]);
 
-  const skip = useCallback(() => {
+  const navigateAfterIntro = useCallback(() => {
     markIntroSeen();
-    router.replace('/');
-  }, [markIntroSeen, router]);
+    // If no study plan, send to onboarding; otherwise go home
+    if (!userProgress.studyPlan) {
+      router.replace('/onboarding');
+    } else {
+      router.replace('/');
+    }
+  }, [markIntroSeen, userProgress.studyPlan, router]);
+
+  const skip = useCallback(() => {
+    navigateAfterIntro();
+  }, [navigateAfterIntro]);
 
   const startJourney = useCallback(() => {
-    markIntroSeen();
-    router.replace('/');
-  }, [markIntroSeen, router]);
+    navigateAfterIntro();
+  }, [navigateAfterIntro]);
 
   if (!mounted) return null;
 

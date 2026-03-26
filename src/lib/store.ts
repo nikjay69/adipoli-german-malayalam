@@ -516,6 +516,25 @@ export const useGameStore = create<GameState>()(
     }),
     {
       name: 'german-malayali-progress',
+      merge: (persistedState: unknown, currentState: GameState): GameState => {
+        const persisted = (persistedState || {}) as Partial<GameState>;
+        // Deep merge persisted state with defaults so new fields get default values
+        const merged = { ...currentState, ...persisted };
+        if (merged.userProgress) {
+          merged.userProgress = {
+            ...getInitialProgress(),
+            ...merged.userProgress,
+            // Ensure arrays/objects never undefined
+            completedLessons: merged.userProgress.completedLessons || [],
+            learnedVocabulary: merged.userProgress.learnedVocabulary || [],
+            achievements: merged.userProgress.achievements || [],
+            journeyMilestones: merged.userProgress.journeyMilestones || [],
+            srsCards: merged.userProgress.srsCards || {},
+            completedTaskIds: merged.userProgress.completedTaskIds || [],
+          };
+        }
+        return merged;
+      },
     }
   )
 );

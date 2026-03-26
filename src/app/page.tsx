@@ -62,9 +62,9 @@ export default function Home() {
   const schedule: DailySchedule | null = useMemo(() => {
     if (!studyPlan) return null;
     return getDailySchedule(studyPlan, ALL_MODULES, {
-      completedLessons: userProgress.completedLessons,
-      srsCards: userProgress.srsCards,
-      completedTaskIds: userProgress.completedTaskIds,
+      completedLessons: userProgress.completedLessons || [],
+      srsCards: userProgress.srsCards || {},
+      completedTaskIds: userProgress.completedTaskIds || [],
     });
   }, [studyPlan, userProgress.completedLessons, userProgress.srsCards, userProgress.completedTaskIds]);
 
@@ -136,13 +136,13 @@ export default function Home() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="flex flex-col items-center justify-center min-h-[65vh]">
+      <div className="flex flex-col items-center justify-center">
         {/* Kuttan */}
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: 'spring', delay: 0.2 }}
-          className="mb-6"
+          className="mb-4"
         >
           <CharacterGuide
             messages={kuttanMessage}
@@ -158,7 +158,7 @@ export default function Home() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-center mb-6"
+          className="text-center mb-4"
         >
           <h1 className="text-2xl font-bold mb-1">
             {completedCount === 0 ? (
@@ -172,7 +172,7 @@ export default function Home() {
           </h1>
 
           {completedCount > 0 && (
-            <div className="flex items-center justify-center gap-5 mt-4">
+            <div className="flex items-center justify-center gap-5 mt-3">
               <div className="text-center">
                 <div className="text-xl font-bold text-[#27ae60]">{completedCount}</div>
                 <div className="text-xs text-[var(--foreground)]/50">Lessons</div>
@@ -191,13 +191,162 @@ export default function Home() {
           )}
         </motion.div>
 
-        {/* Next Lesson */}
-        {nextLesson && (
+        {/* ── Daily Schedule Section ── */}
+        {schedule && studyPlan ? (
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.45 }}
-            className="game-card p-5 mb-6 w-full max-w-sm text-center"
+            className="w-full max-w-sm mb-5"
+          >
+            {/* Day header */}
+            <div className="game-card p-4 mb-3">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2">
+                  <CalendarDays className="w-5 h-5 text-[#ff6b9d]" />
+                  <h2 className="text-lg font-black text-[var(--foreground)]">
+                    Day {schedule.dayNumber}{' '}
+                    <span className="text-[var(--foreground)]/40 font-normal text-sm">
+                      of {schedule.totalDays}
+                    </span>
+                  </h2>
+                </div>
+                <span className="text-sm font-bold text-[#ff6b9d]">
+                  {schedule.percentComplete}%
+                </span>
+              </div>
+
+              {/* Progress bar */}
+              <div className="h-2.5 bg-[var(--foreground)]/8 rounded-full overflow-hidden">
+                <motion.div
+                  className="h-full rounded-full bg-gradient-to-r from-[#ff6b9d] to-[#ff6b9d]/60"
+                  initial={{ width: 0 }}
+                  animate={{ width: `${schedule.percentComplete}%` }}
+                  transition={{ duration: 1, ease: 'easeOut' }}
+                />
+              </div>
+
+              {schedule.isCheckpoint && (
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                  className="mt-3 flex items-center gap-2 bg-[#ffd93d]/10 border border-[#ffd93d]/20 rounded-xl px-3 py-2"
+                >
+                  <Trophy className="w-4 h-4 text-[#ffd93d]" />
+                  <span className="text-xs font-semibold text-[#ffd93d]">Checkpoint Day — pass to continue!</span>
+                </motion.div>
+              )}
+            </div>
+
+            {/* Today's tasks */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between px-1 mb-1">
+                <h3 className="text-xs font-semibold text-[var(--foreground)]/50 uppercase tracking-wider">
+                  Today&apos;s Tasks
+                </h3>
+                <div className="flex items-center gap-1 text-xs text-[var(--foreground)]/40">
+                  <Clock className="w-3 h-3" />
+                  <span>~{schedule.estimatedMinutes} min</span>
+                </div>
+              </div>
+
+              {schedule.tasks.map((task, i) => (
+                <motion.button
+                  key={task.id}
+                  initial={{ x: -15, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.5 + i * 0.07 }}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handleTaskClick(task)}
+                  className={`w-full text-left p-3.5 rounded-xl border transition-all duration-200 ${
+                    task.completed
+                      ? 'bg-[#27ae60]/10 border-[#27ae60]/20'
+                      : task.type === 'checkpoint'
+                      ? 'bg-[#ffd93d]/5 border-[#ffd93d]/20 hover:border-[#ffd93d]/40'
+                      : 'bg-[var(--card-bg)] border-[var(--card-border)] hover:border-[var(--foreground)]/20'
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    {/* Status icon */}
+                    <div className="flex-shrink-0">
+                      {task.completed ? (
+                        <CheckCircle2 className="w-5 h-5 text-[#27ae60]" />
+                      ) : (
+                        <Circle className="w-5 h-5 text-[var(--foreground)]/25" />
+                      )}
+                    </div>
+
+                    {/* Task info */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm">{taskTypeIcon(task.type)}</span>
+                        <span className={`text-sm font-semibold truncate ${
+                          task.completed ? 'text-[var(--foreground)]/40 line-through' : 'text-[var(--foreground)]'
+                        }`}>
+                          {task.title}
+                        </span>
+                      </div>
+                      <p className={`text-xs mt-0.5 truncate ${
+                        task.completed ? 'text-[var(--foreground)]/25' : 'text-[var(--foreground)]/45'
+                      }`}>
+                        {task.description}
+                      </p>
+                    </div>
+
+                    {/* Right side: time + XP */}
+                    <div className="flex-shrink-0 text-right">
+                      <div className="text-xs text-[var(--foreground)]/40">{task.estimatedMinutes}m</div>
+                      <div className="text-xs font-semibold text-[#27ae60]/70">+{task.xpReward}</div>
+                    </div>
+
+                    {/* Arrow */}
+                    {!task.completed && (
+                      <ArrowRight className="w-4 h-4 text-[var(--foreground)]/20 flex-shrink-0" />
+                    )}
+                  </div>
+                </motion.button>
+              ))}
+
+              {/* Completed count */}
+              {schedule.tasks.length > 0 && (
+                <div className="text-center pt-1">
+                  <span className="text-xs text-[var(--foreground)]/35">
+                    {schedule.tasks.filter(t => t.completed).length}/{schedule.tasks.length} tasks done
+                  </span>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        ) : !studyPlan ? (
+          /* No study plan — show CTA */
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.45 }}
+            className="w-full max-w-sm mb-5"
+          >
+            <button
+              onClick={() => router.push('/onboarding')}
+              className="w-full game-card p-5 text-center hover:border-[#ff6b9d]/30 transition-colors group"
+            >
+              <CalendarDays className="w-8 h-8 text-[#ff6b9d] mx-auto mb-2 group-hover:scale-110 transition-transform" />
+              <h3 className="font-bold text-sm mb-1">Set Up Your Study Plan</h3>
+              <p className="text-xs text-[var(--foreground)]/40">
+                Get a daily schedule tailored to your pace
+              </p>
+            </button>
+          </motion.div>
+        ) : null}
+
+        {/* Next Lesson (compact when schedule exists) */}
+        {nextLesson && !schedule && (
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="game-card p-5 mb-5 w-full max-w-sm text-center"
           >
             <div className="text-3xl mb-2">{nextLesson.module.icon}</div>
             <p className="text-[var(--foreground)]/40 text-sm mb-1">
@@ -220,37 +369,39 @@ export default function Home() {
           </motion.div>
         )}
 
-        {/* CTA Button */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="w-full max-w-sm"
-        >
-          {nextLesson ? (
-            <GameButton
-              onClick={handleContinue}
-              size="xl"
-              fullWidth
-              pulse
-              icon={<Zap className="w-5 h-5" />}
-            >
-              {completedCount === 0 ? "Let's Go" : 'Continue'}
-            </GameButton>
-          ) : (
-            <div className="text-center">
-              <h2 className="text-2xl font-bold gradient-text mb-2">Course Complete!</h2>
-              <p className="text-[var(--foreground)]/50">Adipoli! You've finished all lessons.</p>
-            </div>
-          )}
-        </motion.div>
+        {/* CTA Button (only without schedule) */}
+        {!schedule && (
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.55 }}
+            className="w-full max-w-sm"
+          >
+            {nextLesson ? (
+              <GameButton
+                onClick={handleContinue}
+                size="xl"
+                fullWidth
+                pulse
+                icon={<Zap className="w-5 h-5" />}
+              >
+                {completedCount === 0 ? "Let's Go" : 'Continue'}
+              </GameButton>
+            ) : (
+              <div className="text-center">
+                <h2 className="text-2xl font-bold gradient-text mb-2">Course Complete!</h2>
+                <p className="text-[var(--foreground)]/50">Adipoli! You&apos;ve finished all lessons.</p>
+              </div>
+            )}
+          </motion.div>
+        )}
 
         {/* Exam Readiness Bar (compact) */}
         {completedCount > 0 && (
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.55 }}
+            transition={{ delay: 0.6 }}
             className="w-full max-w-sm mt-4"
           >
             {(() => {
