@@ -660,7 +660,7 @@ export const MODULE_2: Module = {
           question: "What is the correct conjugation: 'Er _____ drei Sprachen.'?",
           options: ["spricht", "spreche", "sprichst", "sprechen"],
           correctAnswer: "spricht",
-          explanation: "'Er/sie/es spricht' — the third person singular of sprechen also has the e → i vowel change.",
+          explanation: "Both du and er/sie/es get the vowel change: du sprichst, er spricht. Memory trick: the 'short' subjects (du, er) get the changed vowel. The 'longer' subjects (wir, sie) keep the original.",
           xpReward: 10
         },
         {
@@ -669,7 +669,7 @@ export const MODULE_2: Module = {
           question: "Complete: Welche Sprachen _____ du? (What languages do you speak?)",
           options: ["sprichst", "spreche", "spricht", "sprechen"],
           correctAnswer: "sprichst",
-          explanation: "With 'du', 'sprechen' becomes 'sprichst' due to the e → i stem change.",
+          explanation: "In questions, the verb comes first but still changes: 'Sprichst du?' not 'Sprechst du?' The stem change happens regardless of word order.",
           xpReward: 10
         },
         {
@@ -678,7 +678,7 @@ export const MODULE_2: Module = {
           question: "Which of these is a stem-changing verb pattern in German?",
           options: ["e → i (like sprechen → sprichst)", "o → u (like kommen → kummst)", "i → e (like bin → best)", "a → o (like machen → mochst)"],
           correctAnswer: "e → i (like sprechen → sprichst)",
-          explanation: "The three stem-change patterns are: e → i, e → ie, and a → ä. Only du and er/sie/es forms change.",
+          explanation: "Three vowel-change patterns to know: e→i (sprechen→sprichst), e→ie (lesen→liest), a→ä (fahren→fährst). Only du and er/sie/es are affected — the rest stay regular!",
           xpReward: 10
         },
         {

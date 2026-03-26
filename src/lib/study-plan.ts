@@ -41,14 +41,13 @@ export interface DailyTask {
 
 // ── Constants ──────────────────────────────────────────────────────────
 
-export const TOTAL_COURSE_HOURS = 150;
+export const TOTAL_COURSE_HOURS = 120;
 
 export const HOUR_OPTIONS = [
-  { value: 0.5, label: '30 min', sublabel: 'Chill pace' },
-  { value: 1,   label: '1 hour', sublabel: 'Steady pace' },
-  { value: 1.5, label: '1.5 hours', sublabel: 'Focused' },
-  { value: 2,   label: '2 hours', sublabel: 'Committed' },
-  { value: 3,   label: '3 hours', sublabel: 'Intensive' },
+  { value: 1,   label: '1 hour', sublabel: '4 months · steady pace' },
+  { value: 1.5, label: '1.5 hours', sublabel: '~3 months · focused' },
+  { value: 2,   label: '2 hours', sublabel: '2 months · committed' },
+  { value: 3,   label: '3 hours', sublabel: '40 days · intensive' },
 ] as const;
 
 // ── Plan Creation ──────────────────────────────────────────────────────

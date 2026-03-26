@@ -108,7 +108,7 @@ export const MODULE_6: Module = {
           options: ["der Kartoffel", "die Kartoffel", "das Kartoffel", "ein Kartoffel"],
           correctAnswer: "die Kartoffel",
           explanation:
-            "'Kartoffel' is feminine: die Kartoffel. Plural: die Kartoffeln.",
+            "Die Kartoffel (feminine). Germans love potatoes like Malayalis love rice! Tip: there's no reliable rule for food gender — just memorize der/die/das with each word.",
           xpReward: 10
         },
         {
@@ -123,7 +123,7 @@ export const MODULE_6: Module = {
           ],
           correctAnswer: "Reis ist auch in Kerala wichtig",
           explanation:
-            "Standard word order: Subject + Verb + Rest. 'Auch' (also) comes after the verb.",
+            "German word order rule: the verb is ALWAYS in position 2. 'Auch' (also) and other adverbs slot in after the verb: Reis IST auch in Kerala wichtig.",
           xpReward: 10
         },
         {
@@ -133,7 +133,7 @@ export const MODULE_6: Module = {
           options: ["Linsen", "Kartoffeln", "Bohnen", "Erbsen"],
           correctAnswer: "Linsen",
           explanation:
-            "'Die Linsen' (plural) = lentils. In Kerala, that's our beloved parippu!",
+            "'Die Linsen' (plural) = lentils = parippu! Learning food words is easy when you connect them to foods you already love. Linsen = parippu. Done!",
           xpReward: 10
         },
         {
@@ -143,7 +143,7 @@ export const MODULE_6: Module = {
           options: ["sweet", "sour", "spicy", "bitter"],
           correctAnswer: "spicy",
           explanation:
-            "'Scharf' means spicy/hot. 'Das Curry ist scharf!' (The curry is spicy!)",
+            "'Scharf' = spicy (for food) or sharp (for objects). Germans consider food 'scharf' at levels Malayalis call 'mild'. Useful phrase: 'Ich mag es scharf!' (I like it spicy!)",
           xpReward: 10
         },
         {
@@ -152,7 +152,7 @@ export const MODULE_6: Module = {
           question: "What does 'Mein Lieblingsessen' mean?",
           options: ["My favourite food", "My breakfast", "My cooking", "My restaurant"],
           correctAnswer: "My favourite food",
-          explanation: "'Mein' = my, 'Lieblings-' = favourite, 'Essen' = food. Together: 'My favourite food'. You can say 'Mein Lieblingsessen ist Biryani!'",
+          explanation: "German builds compound words: Lieblings (favourite) + Essen (food) = Lieblingsessen. You can use 'Lieblings-' with anything: Lieblingsfilm (favourite movie), Lieblingslied (favourite song)!",
           xpReward: 10
         }
       ],
@@ -335,7 +335,7 @@ export const MODULE_6: Module = {
           ],
           correctAnswer: "Ich trinke gern Tee.",
           explanation:
-            "'Gern' comes right after the verb: Ich trinke gern Tee. It means you enjoy drinking tea.",
+            "'Gern' goes right after the verb and means 'with pleasure'. Ich trinke GERN Tee = I LIKE drinking tea. Add 'nicht' before gern to say you DON'T like it.",
           xpReward: 10
         },
         {
@@ -345,7 +345,7 @@ export const MODULE_6: Module = {
           options: ["gern", "nicht", "auch", "sehr"],
           correctAnswer: "gern",
           explanation:
-            "'Ich hätte gern ...' is the polite way to order something: 'I would like ...'",
+            "'Ich hätte gern...' is the magic ordering phrase. Literally: 'I would have gladly...' Use it everywhere: restaurants, shops, bakeries. It's polite and universally understood.",
           xpReward: 10
         },
         {
@@ -354,7 +354,7 @@ export const MODULE_6: Module = {
           question: "What is the correct article for 'Milch' (milk)?",
           options: ["der Milch", "die Milch", "das Milch", "den Milch"],
           correctAnswer: "die Milch",
-          explanation: "'Milch' is feminine: die Milch.",
+          explanation: "Die Milch (feminine). Drink genders to memorize: der Kaffee (m), der Tee (m), das Wasser (n), die Milch (f), der Saft (m). Most drinks are masculine (der)!",
           xpReward: 10
         },
         {
@@ -365,7 +365,7 @@ export const MODULE_6: Module = {
           options: ["nicht", "kein", "nie", "sehr"],
           correctAnswer: "nicht",
           explanation:
-            "To express dislike: 'nicht gern'. Ich trinke nicht gern Bier. (I don't like to drink beer.)",
+            "Like → gern, Don't like → nicht gern. Position: verb + NICHT + gern. 'Ich trinke nicht gern Bier.' This pattern works with any verb!",
           xpReward: 10
         }
       ],
@@ -530,7 +530,7 @@ export const MODULE_6: Module = {
           ],
           correctAnswer: "Die Speisekarte, bitte!",
           explanation:
-            "'Die Speisekarte' is the menu. 'Die Rechnung' is the bill. Note: 'das Menü' exists but usually refers to a set meal.",
+            "Speisekarte = menu (Speise=food, Karte=card). Don't say 'Menü' — that means a fixed set meal. 'Die Rechnung' = the bill. Learn these two words separately!",
           xpReward: 10
         },
         {
@@ -540,7 +540,7 @@ export const MODULE_6: Module = {
           options: ["hätte", "habe", "hatte", "hat"],
           correctAnswer: "hätte",
           explanation:
-            "'Ich hätte gern ...' = 'I would like ...' — the polite way to order in restaurants.",
+            "'Hätte' is the subjunctive of 'haben' (to have). 'Ich hätte gern...' = 'I would like...' Two alternatives: 'Ich nehme...' (I'll take...) or 'Für mich bitte...' (For me please...).",
           xpReward: 10
         },
         {
@@ -555,7 +555,7 @@ export const MODULE_6: Module = {
           ],
           correctAnswer: "What do you recommend?",
           explanation:
-            "'Empfehlen' means 'to recommend'. 'Was empfehlen Sie?' is a polite way to ask for suggestions.",
+            "'Empfehlen' = to recommend (a stem-changer: du empfiehlst). 'Was empfehlen Sie?' is a great restaurant phrase — waiters love it when you ask for their recommendation!",
           xpReward: 10
         },
         {
@@ -593,7 +593,7 @@ export const MODULE_6: Module = {
           ],
           correctAnswer: "Keep the change!",
           explanation:
-            "'Stimmt so!' literally means 'That's correct!' — used to tell the waiter to keep the change as a tip.",
+            "'Stimmt so!' = keep the change. German tipping etiquette: round up or add 5-10%. If your bill is 17.50, say 'Zwanzig, bitte' (Twenty, please) and they keep the difference.",
           xpReward: 10
         },
         {
@@ -603,7 +603,7 @@ export const MODULE_6: Module = {
           options: ["lecker", "schlecht", "teuer", "scharf"],
           correctAnswer: "lecker",
           explanation:
-            "'Lecker' means 'delicious/yummy'. 'Das war sehr lecker!' = 'That was very delicious!'",
+            "'Lecker' = delicious/yummy — the ultimate food compliment in German. Say 'Das war sehr lecker!' when you finish eating. Your host/waiter will beam with pride!",
           xpReward: 10
         },
         {

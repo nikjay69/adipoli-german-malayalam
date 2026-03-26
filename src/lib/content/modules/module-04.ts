@@ -87,7 +87,7 @@ export const MODULE_4: Module = {
           question: "Match the German family words with their English meanings:",
           options: ["die Mutter → mother", "der Vater → father", "der Bruder → brother", "die Schwester → sister", "die Oma → grandmother", "der Opa → grandfather"],
           correctAnswer: ["die Mutter → mother", "der Vater → father", "der Bruder → brother", "die Schwester → sister", "die Oma → grandmother", "der Opa → grandfather"],
-          explanation: "These are the core family members. Notice each has an article: der (masculine), die (feminine).",
+          explanation: "Family words follow a gender pattern: male relatives = der (der Vater, der Bruder), female relatives = die (die Mutter, die Schwester). The article tells you the gender!",
           xpReward: 20
         },
         {
@@ -96,7 +96,7 @@ export const MODULE_4: Module = {
           question: "What is the casual/informal word for 'Großmutter'?",
           options: ["Mutti", "Oma", "Tante", "Nichte"],
           correctAnswer: "Oma",
-          explanation: "Oma is the casual word for Großmutter (grandmother), like 'Ammoomma' in Malayalam.",
+          explanation: "German has formal AND casual family words: Großmutter/Oma (grandmother), Großvater/Opa (grandfather). Use Oma/Opa in conversation — it's warmer, like saying 'Ammoomma' instead of 'Grandmother'.",
           xpReward: 15
         },
         {
@@ -105,7 +105,7 @@ export const MODULE_4: Module = {
           question: "'I have a brother and a sister': Ich habe einen Bruder und eine _____.",
           options: ["Schwester", "Bruder", "Mutter", "Tante"],
           correctAnswer: "Schwester",
-          explanation: "Die Schwester = sister. 'Eine Schwester' because Schwester is feminine.",
+          explanation: "Schwester (sister) is feminine = die Schwester. So 'a sister' = 'eine Schwester'. Rule: der → einen (masc acc), die → eine (fem), das → ein (neuter).",
           xpReward: 15
         },
         {
@@ -119,7 +119,7 @@ export const MODULE_4: Module = {
             "They are exactly the same"
           ],
           correctAnswer: "German uses one word 'Onkel' for all uncles, while Malayalam has different words for maternal/paternal uncle",
-          explanation: "Malayalam has Ammavan (maternal uncle), Chittappan/Valiyachan (paternal uncle), etc. German just uses 'Onkel' for all!",
+          explanation: "German simplifies what Malayalam complicates! Malayalam has 5+ words for uncle (Ammavan, Chittappan...), but German uses just 'Onkel' for ALL uncles. Fewer words to learn!",
           xpReward: 20
         },
         {
@@ -128,7 +128,7 @@ export const MODULE_4: Module = {
           question: "'That is my aunt': Das ist meine _____.",
           options: ["Tante", "Onkel", "Schwester", "Cousine"],
           correctAnswer: "Tante",
-          explanation: "Die Tante = aunt. 'Meine Tante' because Tante is feminine.",
+          explanation: "Tante is feminine (die Tante), so possessive = 'meine Tante'. Pattern: masculine nouns = mein, feminine nouns = meine. The '-e' ending signals feminine.",
           xpReward: 15
         },
         {
@@ -137,7 +137,7 @@ export const MODULE_4: Module = {
           question: "What does 'die Geschwister' mean?",
           options: ["The sisters", "The brothers", "The siblings", "The parents"],
           correctAnswer: "The siblings",
-          explanation: "'Die Geschwister' is a collective word meaning siblings (brothers and sisters together).",
+          explanation: "'Geschwister' = siblings (all brothers + sisters). It's always plural (die Geschwister). Useful A1 question: 'Hast du Geschwister?' (Do you have siblings?)",
           xpReward: 15
         }
       ],
@@ -345,7 +345,7 @@ export const MODULE_4: Module = {
           question: "'She is tall and has brown eyes': Sie ist groß und hat _____ Augen.",
           options: ["braune", "braun", "brauner", "braunem"],
           correctAnswer: "braune",
-          explanation: "Braune Augen = brown eyes. The adjective 'braun' takes an '-e' ending before a plural noun.",
+          explanation: "Before plural nouns without an article, adjectives add '-e': braune Augen, schwarze Haare, lange Beine. This '-e' ending works for most descriptions of appearance!",
           xpReward: 15
         },
         {
@@ -354,7 +354,7 @@ export const MODULE_4: Module = {
           question: "What does 'fleißig' mean?",
           options: ["lazy", "funny", "hard-working", "friendly"],
           correctAnswer: "hard-working",
-          explanation: "'Fleißig' means hard-working/diligent. It's one of the most valued traits in German culture!",
+          explanation: "'Fleißig' (hard-working) is the ultimate German compliment! Germans deeply value diligence. Calling someone 'fleißig' is like saying they're reliable and impressive.",
           xpReward: 15
         },
         {
@@ -368,7 +368,7 @@ export const MODULE_4: Module = {
             "Er bist lustig und nett."
           ],
           correctAnswer: "Er ist lustig und nett.",
-          explanation: "'Er ist' (he is) + adjectives joined with 'und' (and). 'Bist' is only for 'du'.",
+          explanation: "Description formula: [Person] + ist + adjective(s) joined with 'und'. 'Er ist lustig und nett.' Remember: 'bist' is ONLY for 'du', 'ist' for er/sie/es.",
           xpReward: 20
         },
         {
@@ -377,7 +377,7 @@ export const MODULE_4: Module = {
           question: "'My mother has black hair': Meine Mutter hat _____ Haare.",
           options: ["schwarze", "schwarz", "schwarzer", "schwarzem"],
           correctAnswer: "schwarze",
-          explanation: "Schwarze Haare = black hair. Adjective 'schwarz' + '-e' before plural noun 'Haare'.",
+          explanation: "Haare (hair) is plural in German, so adjectives get '-e': schwarze Haare, blonde Haare. Pattern: use 'hat' for physical features: 'Meine Mutter hat schwarze Haare.'",
           xpReward: 15
         },
         {
@@ -539,7 +539,7 @@ export const MODULE_4: Module = {
             "Das ist meines Schwester."
           ],
           correctAnswer: "Das ist meine Schwester.",
-          explanation: "Schwester is feminine (die Schwester), so the possessive needs an '-e': meine Schwester.",
+          explanation: "Possessive rule: masculine/neuter = mein (no ending), feminine/plural = meine (add -e). Schwester is feminine → meine. Bruder is masculine → mein. Check the article to decide!",
           xpReward: 20
         },
         {
@@ -548,7 +548,7 @@ export const MODULE_4: Module = {
           question: "'His mother is nice': _____ Mutter ist nett.",
           options: ["Seine", "Sein", "Seiner", "Seinem"],
           correctAnswer: "Seine",
-          explanation: "Mutter is feminine (die Mutter), so 'sein' becomes 'seine'. Seine Mutter = his mother.",
+          explanation: "All possessives follow the same pattern: sein → seine (feminine). The ending matches the OWNED noun's gender, not the owner's. His mother = seine Mutter (Mutter is feminine).",
           xpReward: 15
         },
         {
@@ -557,7 +557,7 @@ export const MODULE_4: Module = {
           question: "Which possessive pronoun means 'our'?",
           options: ["mein", "euer", "unser", "ihr"],
           correctAnswer: "unser",
-          explanation: "'Unser' means 'our', from 'wir' (we).",
+          explanation: "Possessive pronouns map from personal pronouns: ich→mein, du→dein, er→sein, sie→ihr, wir→unser, ihr→euer. Learn the pairs!",
           xpReward: 15
         },
         {
@@ -566,7 +566,7 @@ export const MODULE_4: Module = {
           question: "'Your (informal) brother': _____ Bruder.",
           options: ["Dein", "Deine", "Deinem", "Deinen"],
           correctAnswer: "Dein",
-          explanation: "Bruder is masculine (der Bruder), so 'dein' stays unchanged: dein Bruder.",
+          explanation: "Bruder = der (masculine) → possessive has NO extra ending: dein Bruder, mein Bruder, sein Bruder. Only feminine/plural nouns trigger the '-e': deine Schwester.",
           xpReward: 15
         },
         {
@@ -575,7 +575,7 @@ export const MODULE_4: Module = {
           question: "Match the possessive with the correct form:",
           options: ["mein Vater → my father", "meine Mutter → my mother", "sein Bruder → his brother", "ihre Schwester → her sister"],
           correctAnswer: ["mein Vater → my father", "meine Mutter → my mother", "sein Bruder → his brother", "ihre Schwester → her sister"],
-          explanation: "Masculine nouns get mein/sein, feminine nouns get meine/seine/ihre.",
+          explanation: "Quick test: check the article of the owned noun. Der → mein/sein (no ending). Die → meine/seine/ihre (-e ending). Das → mein/sein (no ending). Die (plural) → meine/seine (-e).",
           xpReward: 20
         },
         {
@@ -589,7 +589,7 @@ export const MODULE_4: Module = {
             "Unserer Eltern sind in Kerala."
           ],
           correctAnswer: "Unsere Eltern sind in Kerala.",
-          explanation: "Eltern is plural, so 'unser' becomes 'unsere'. Unsere Eltern = our parents.",
+          explanation: "Eltern (parents) is always plural → unsere Eltern. Plural nouns use the same '-e' ending as feminine: meine Eltern, deine Kinder, seine Geschwister.",
           xpReward: 20
         },
         {
@@ -598,7 +598,7 @@ export const MODULE_4: Module = {
           question: "'Her name is Anna': _____ Name ist Anna.",
           options: ["Ihr", "Ihre", "Ihrem", "Ihren"],
           correctAnswer: "Ihr",
-          explanation: "Name is masculine (der Name), so 'ihr' stays unchanged: Ihr Name. (Note: 'Ihr' is capitalised at the start of a sentence.)",
+          explanation: "Name is masculine (der Name) → no extra ending: Ihr Name. Tricky: 'ihr' can mean 'her', 'their', or 'your (formal)'. Context tells you which!",
           xpReward: 15
         }
       ],

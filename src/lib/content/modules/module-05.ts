@@ -85,7 +85,7 @@ export const MODULE_5: Module = {
           options: ["Ich spiele", "Ich spielst", "Ich spielen", "Ich spielt"],
           correctAnswer: "Ich spiele",
           explanation:
-            "For 'ich' (I), remove -en from 'spielen' to get 'spiel-', then add -e → 'ich spiele'.",
+            "Regular verb formula: remove -en, add the ending. ich = -e, du = -st, er = -t, wir = -en, ihr = -t, sie = -en. So spielen → ich spiele, du spielst, er spielt.",
           xpReward: 10
         },
         {
@@ -95,7 +95,7 @@ export const MODULE_5: Module = {
           options: ["wohnst", "wohne", "wohnen", "wohnt"],
           correctAnswer: "wohnst",
           explanation:
-            "For 'du' (you), the ending is -st. Stem 'wohn-' + '-st' = 'wohnst'.",
+            "'Du' always gets -st: du wohnst, du spielst, du lernst. This is the most recognizable conjugation — if you see -st at the end, the subject is 'du'.",
           xpReward: 10
         },
         {
@@ -105,7 +105,7 @@ export const MODULE_5: Module = {
           options: ["er arbeitt", "er arbeitet", "er arbeit", "er arbeitest"],
           correctAnswer: "er arbeitet",
           explanation:
-            "Verbs with stems ending in -t or -d add an extra -e- before the ending: er arbeit-e-t.",
+            "When a verb stem ends in -t or -d (like arbeit-), add an extra -e- for pronunciation: du arbeitest, er arbeitet. Without it, 'arbeitst' would be tongue-twisting!",
           xpReward: 15
         },
         {
@@ -123,7 +123,7 @@ export const MODULE_5: Module = {
           options: ["lernen", "lerne", "lernst", "lernt"],
           correctAnswer: "lernen",
           explanation:
-            "For 'wir' (we), the verb keeps the infinitive form: wir lernen.",
+            "Shortcut: 'wir' (we) and 'sie/Sie' (they/formal you) use the same form as the infinitive! Wir lernen = sie lernen = Sie lernen. Less to memorize!",
           xpReward: 10
         },
         {
@@ -133,7 +133,7 @@ export const MODULE_5: Module = {
           options: ["spielen", "spielt", "spielst", "spiele"],
           correctAnswer: "spielt",
           explanation:
-            "For 'ihr' (you all), the ending is -t. Stem 'spiel-' + '-t' = 'spielt'.",
+            "'Ihr' (you all) gets -t, same as er/sie/es. 'Ihr spielt' = 'er spielt'. Context tells you who's doing the action. Two endings that match = less memorization!",
           xpReward: 10
         },
         {
@@ -320,7 +320,7 @@ export const MODULE_5: Module = {
           options: ["stehe ... auf", "aufstehe ...", "stehe ... an", "auf ... stehe"],
           correctAnswer: "stehe ... auf",
           explanation:
-            "'Aufstehen' is a separable verb. The prefix 'auf' goes to the end: Ich stehe um 6 Uhr auf.",
+            "Separable verb rule: the prefix flies to the END. aufstehen → 'Ich stehe um 6 Uhr AUF.' Think of the prefix as a boomerang — it always comes back to the end!",
           xpReward: 15
         },
         {
@@ -335,7 +335,7 @@ export const MODULE_5: Module = {
           ],
           correctAnswer: "I have breakfast at 8 o'clock",
           explanation:
-            "'Frühstücken' means 'to have breakfast'. 'Um 8 Uhr' means 'at 8 o'clock'.",
+            "'Frühstücken' = to have breakfast (from Frühstück = breakfast). 'Um' + time = 'at'. Pattern for daily activities: Ich [verb] um [time] Uhr.",
           xpReward: 10
         },
         {
@@ -345,7 +345,7 @@ export const MODULE_5: Module = {
           options: ["zuerst", "dann", "um", "immer"],
           correctAnswer: "dann",
           explanation:
-            "'Dann' means 'then'. 'Zuerst' means 'first', 'um' means 'at' (time), 'immer' means 'always'.",
+            "Time-sequencing trio: zuerst (first) → dann (then) → danach (after that). Use these to chain actions: 'Zuerst dusche ich, dann frühstücke ich, danach gehe ich.'",
           xpReward: 10
         },
         {
@@ -355,7 +355,7 @@ export const MODULE_5: Module = {
           options: ["mich", "mir", "sich", "dich"],
           correctAnswer: "mich",
           explanation:
-            "The reflexive pronoun for 'ich' is 'mich': Ich ziehe mich an. (I get dressed.)",
+            "Reflexive pronouns: ich→mich, du→dich, er/sie/es→sich, wir→uns. 'Ich ziehe MICH an' = I dress MYSELF. The pronoun refers back to the subject.",
           xpReward: 10
         },
         {
@@ -512,7 +512,7 @@ export const MODULE_5: Module = {
           options: ["stehe ... auf", "aufstehe ...", "stehe ... an", "auf ... stehe"],
           correctAnswer: "stehe ... auf",
           explanation:
-            "Separable verb: the conjugated part 'stehe' stays in position 2, the prefix 'auf' goes to the end.",
+            "Separable verb structure: [Subject] + [conjugated verb in pos. 2] + [middle stuff] + [prefix at END]. Ich stehe um 7 Uhr auf. The verb and prefix are a team that splits apart!",
           xpReward: 15
         },
         {
@@ -527,7 +527,7 @@ export const MODULE_5: Module = {
           ],
           correctAnswer: "Ich kaufe im Supermarkt ein.",
           explanation:
-            "The prefix 'ein' goes to the very end of the sentence: Ich kaufe im Supermarkt ein.",
+            "The prefix ALWAYS goes to the very end — even if there's more stuff in between. 'Ich kaufe im Supermarkt ein.' Not 'Ich kaufe ein im Supermarkt.'",
           xpReward: 10
         },
         {
@@ -537,7 +537,7 @@ export const MODULE_5: Module = {
           options: ["sehe ... fern", "fernsehe ...", "sehe ... an", "fern ... sehe"],
           correctAnswer: "sehe ... fern",
           explanation:
-            "'Fernsehen' splits into 'sehe' (conjugated) and 'fern' (prefix at the end).",
+            "'Fernsehen' literally means 'far-seeing' (fern=far, sehen=to see). It splits: 'Ich sehe fern.' How to spot separable verbs? The stress is on the PREFIX: FERNsehen, AUFstehen.",
           xpReward: 15
         },
         {
@@ -552,7 +552,7 @@ export const MODULE_5: Module = {
           ],
           correctAnswer: "The film starts at 8 o'clock",
           explanation:
-            "'Anfangen' means 'to start/begin'. 'Fängt … an' is the separated form.",
+            "'Anfangen' = to start/begin. Note: 'fangen' is a stem-changer (a→ä): er fängt an, not 'fangt'. Some separable verbs ALSO have stem changes — double challenge!",
           xpReward: 10
         },
         {
@@ -580,7 +580,7 @@ export const MODULE_5: Module = {
           options: ["Kommst ... mit", "Mitkommst ...", "Kommt ... mit", "Mit ... kommst"],
           correctAnswer: "Kommst ... mit",
           explanation:
-            "In a yes/no question, the verb comes first: Kommst du morgen mit?",
+            "In yes/no questions, the conjugated verb goes FIRST, but the prefix still goes to the END: 'Kommst du morgen MIT?' The prefix is loyal to the end position!",
           xpReward: 15
         }
       ],

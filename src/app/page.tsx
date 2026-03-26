@@ -3,7 +3,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Flame, Star, Zap, Award, Clock, CheckCircle2, Circle, ArrowRight, Trophy, CalendarDays } from 'lucide-react';
+import { Flame, Star, Zap, Award, Clock, CheckCircle2, Circle, ArrowRight, Trophy, CalendarDays, Lightbulb } from 'lucide-react';
 import { GameButton } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
 import { getRandomMessage } from '@/lib/content/dialogue';
@@ -13,7 +13,6 @@ import { getNextCoreLesson } from '@/lib/curriculum';
 import { JOURNEY_LOCATIONS, getCurrentLocation } from '@/lib/journey';
 import { calculateExamReadiness } from '@/lib/exam-readiness';
 import { getDailySchedule, type DailySchedule, type DailyTask } from '@/lib/study-plan';
-import { Lightbulb } from 'lucide-react';
 
 const DAILY_TIPS = [
   "Speak German for 5 minutes every morning. Your brain is freshest then.",
@@ -57,6 +56,24 @@ export default function Home() {
     }
   }, [mounted, userProgress.completedLessons.length]);
 
+  // All hooks MUST be above any early return to avoid React error #310
+  const nextLesson = useMemo(() => mounted ? getNextCoreLesson(userProgress.completedLessons) : null, [mounted, userProgress.completedLessons]);
+  const completedCount = userProgress.completedLessons?.length || 0;
+  const totalLessons = useMemo(() => ALL_MODULES.reduce((acc, m) => acc + m.lessons.length, 0), []);
+  const currentLevelXP = LEVEL_THRESHOLDS[userProgress.level - 1] || 0;
+  const nextLevelXP = LEVEL_THRESHOLDS[userProgress.level] || LEVEL_THRESHOLDS[LEVEL_THRESHOLDS.length - 1];
+  const xpProgress = nextLevelXP > currentLevelXP ? ((userProgress.xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100 : 100;
+
+  const studyPlan = userProgress.studyPlan;
+  const schedule: DailySchedule | null = useMemo(() => {
+    if (!mounted || !studyPlan) return null;
+    return getDailySchedule(studyPlan, ALL_MODULES, {
+      completedLessons: userProgress.completedLessons || [],
+      srsCards: userProgress.srsCards || {},
+      completedTaskIds: userProgress.completedTaskIds || [],
+    });
+  }, [mounted, studyPlan, userProgress.completedLessons, userProgress.srsCards, userProgress.completedTaskIds]);
+
   if (!mounted) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -68,23 +85,6 @@ export default function Home() {
       </div>
     );
   }
-
-  const nextLesson = getNextCoreLesson(userProgress.completedLessons);
-  const completedCount = userProgress.completedLessons.length;
-  const totalLessons = ALL_MODULES.reduce((acc, m) => acc + m.lessons.length, 0);
-  const currentLevelXP = LEVEL_THRESHOLDS[userProgress.level - 1] || 0;
-  const nextLevelXP = LEVEL_THRESHOLDS[userProgress.level] || LEVEL_THRESHOLDS[LEVEL_THRESHOLDS.length - 1];
-  const xpProgress = nextLevelXP > currentLevelXP ? ((userProgress.xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100 : 100;
-
-  const studyPlan = userProgress.studyPlan;
-  const schedule: DailySchedule | null = useMemo(() => {
-    if (!studyPlan) return null;
-    return getDailySchedule(studyPlan, ALL_MODULES, {
-      completedLessons: userProgress.completedLessons || [],
-      srsCards: userProgress.srsCards || {},
-      completedTaskIds: userProgress.completedTaskIds || [],
-    });
-  }, [studyPlan, userProgress.completedLessons, userProgress.srsCards, userProgress.completedTaskIds]);
 
   const handleContinue = () => {
     if (nextLesson) {

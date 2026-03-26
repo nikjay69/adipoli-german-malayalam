@@ -89,7 +89,7 @@ export const MODULE_3: Module = {
           question: "Match the German numbers with their English equivalents:",
           options: ["eins → 1", "fünf → 5", "acht → 8", "drei → 3", "zehn → 10", "sieben → 7"],
           correctAnswer: ["eins → 1", "fünf → 5", "acht → 8", "drei → 3", "zehn → 10", "sieben → 7"],
-          explanation: "These are the core numbers 0-10 that form the building blocks for all larger numbers.",
+          explanation: "Numbers 0-10 are the building blocks of ALL German numbers. Master these cold — every larger number is built from them. Daily drill: count 0-10 while brushing teeth!",
           xpReward: 20
         },
         {
@@ -98,7 +98,7 @@ export const MODULE_3: Module = {
           question: "What is 'zwölf' in English?",
           options: ["10", "11", "12", "20"],
           correctAnswer: "12",
-          explanation: "Zwölf = 12. Like English 'twelve', it's an irregular number that doesn't follow the teen pattern.",
+          explanation: "Zwölf (12) and elf (11) are irregular — memorize them separately! From 13 onwards, the pattern is simple: unit + zehn (dreizehn, vierzehn...).",
           xpReward: 15
         },
         {
@@ -107,7 +107,7 @@ export const MODULE_3: Module = {
           question: "Complete the pattern: dreizehn (13), vierzehn (14), _____ (15)",
           options: ["fünfzehn", "sechzehn", "fünfzig", "fünf"],
           correctAnswer: "fünfzehn",
-          explanation: "The pattern for 13-19 is: unit + zehn. So 15 = fünf + zehn = fünfzehn.",
+          explanation: "Teen numbers = unit + zehn. So 15 = fünf+zehn = fünfzehn. But watch for shortcuts: sechs drops the 's' (sechzehn), sieben drops the 'en' (siebzehn).",
           xpReward: 20
         },
         {
@@ -130,7 +130,7 @@ export const MODULE_3: Module = {
             "It's an old German tradition"
           ],
           correctAnswer: "For easier pronunciation — 'sechszehn' is hard to say",
-          explanation: "German drops the 's' from sechs and the 'en' from sieben in teen numbers for smoother pronunciation.",
+          explanation: "Pronunciation shortcut rule: sechs → sech (drops 's') and sieben → sieb (drops 'en') in compounds. This applies to teens (16,17) AND tens (60,70). Less syllables = easier to say!",
           xpReward: 15
         },
         {
@@ -139,7 +139,7 @@ export const MODULE_3: Module = {
           question: "Write the German word for 20: _____",
           options: ["zwanzig", "zweiundzwanzig", "zwölf", "dreißig"],
           correctAnswer: "zwanzig",
-          explanation: "Zwanzig (20) is the first 'tens' number. It comes from 'zwanz' (related to zwei/two) + '-zig' (the tens suffix).",
+          explanation: "'-zig' is the German suffix for tens: zwanzig (20), dreißig (30), vierzig (40)... Exception: dreißig uses '-ßig' instead of '-zig'. All others are regular!",
           xpReward: 20
         }
       ],
@@ -316,7 +316,7 @@ export const MODULE_3: Module = {
             "fünfvierzig"
           ],
           correctAnswer: "fünfundvierzig",
-          explanation: "45 = fünf (5) + und + vierzig (40) = fünfundvierzig. Remember: ones come first!",
+          explanation: "German number rule: ones BEFORE tens. 45 = fünf-und-vierzig (five-and-forty). Think of it as reading right-to-left: the small digit comes first!",
           xpReward: 20
         },
         {
@@ -325,7 +325,7 @@ export const MODULE_3: Module = {
           question: "67 in German is sieben_____sechzig.",
           options: ["und", "oder", "mit", "von"],
           correctAnswer: "und",
-          explanation: "German two-digit numbers use 'und' (and) between the ones and tens: siebenundsechzig.",
+          explanation: "The formula: [ones] + und + [tens]. Always 'und' in the middle, like glue: sieben-UND-sechzig. No exceptions for 21-99!",
           xpReward: 15
         },
         {
@@ -334,7 +334,7 @@ export const MODULE_3: Module = {
           question: "Which tens number has a special spelling (uses 'ß' instead of 'z')?",
           options: ["zwanzig (20)", "dreißig (30)", "vierzig (40)", "fünfzig (50)"],
           correctAnswer: "dreißig (30)",
-          explanation: "Dreißig is the only tens number that uses 'ßig' instead of 'zig'. All others end in '-zig'.",
+          explanation: "Dreißig (30) is the ONLY odd one out — it uses 'ßig' instead of 'zig'. Memory trick: drei is special (3 is a magic number!). Everything else: vierzig, fünfzig, sechzig... regular '-zig'.",
           xpReward: 20
         },
         {
@@ -352,7 +352,7 @@ export const MODULE_3: Module = {
           question: "Write 83 in German: _____",
           options: ["dreiundachtzig", "achtunddreißig", "dreizehn", "achtzig"],
           correctAnswer: "dreiundachtzig",
-          explanation: "83 = drei (3) + und + achtzig (80) = dreiundachtzig. Ones first, then 'und', then tens!",
+          explanation: "To build any 2-digit number: say the ones digit, add 'und', then the tens. 83 = drei+und+achtzig. Practice with your age, phone number, and house number!",
           xpReward: 20
         }
       ],
@@ -500,7 +500,7 @@ export const MODULE_3: Module = {
           question: "What time is 'halb vier'?",
           options: ["4:30", "3:30", "3:15", "4:15"],
           correctAnswer: "3:30",
-          explanation: "'Halb vier' means half (way to) four = 3:30. This is one of the trickiest parts of German time!",
+          explanation: "BIGGEST trap in German time: 'halb' means half TO the next hour, not half past! 'Halb vier' = 3:30 (halfway to 4). Think: 'half of the way to four'.",
           xpReward: 20
         },
         {
@@ -509,7 +509,7 @@ export const MODULE_3: Module = {
           question: "3:15 in German is 'Viertel _____ drei'.",
           options: ["nach", "vor", "halb", "um"],
           correctAnswer: "nach",
-          explanation: "Viertel nach drei = quarter AFTER three = 3:15. 'Nach' means after.",
+          explanation: "'Nach' = after, 'vor' = before. So: Viertel NACH drei = 3:15 (quarter after 3), Viertel VOR vier = 3:45 (quarter before 4). Nach/vor are your time prepositions.",
           xpReward: 15
         },
         {
@@ -523,7 +523,7 @@ export const MODULE_3: Module = {
             "Viertel vor sieben"
           ],
           correctAnswer: "Viertel vor acht",
-          explanation: "7:45 = quarter BEFORE eight = 'Viertel vor acht'. 'Vor' means before.",
+          explanation: "'Viertel vor acht' = quarter before 8 = 7:45. In German time, you always reference the NEXT hour for 'vor' and 'halb'. Think forward, not backward!",
           xpReward: 20
         },
         {
@@ -532,7 +532,7 @@ export const MODULE_3: Module = {
           question: "'It is five o'clock' in German: Es ist fünf _____.",
           options: ["Uhr", "Stunde", "Zeit", "Minuten"],
           correctAnswer: "Uhr",
-          explanation: "'Uhr' means 'clock' or 'o'clock'. 'Es ist fünf Uhr' = It is five o'clock.",
+          explanation: "'Uhr' = o'clock/clock. For exact hours: 'Es ist [number] Uhr'. For minutes past, drop Uhr and use nach/vor. 'Fünf Uhr' vs 'fünf nach drei'.",
           xpReward: 15
         },
         {
@@ -541,7 +541,7 @@ export const MODULE_3: Module = {
           question: "What does 'fünfzehn Uhr dreißig' mean?",
           options: ["5:30 AM", "3:30 PM", "1:30 PM", "5:30 PM"],
           correctAnswer: "3:30 PM",
-          explanation: "Fünfzehn Uhr dreißig = 15:30 in 24-hour format = 3:30 PM.",
+          explanation: "Germany uses 24-hour clock for formal/official time: trains, appointments, shops. 15:30 = fünfzehn Uhr dreißig. Quick math: subtract 12 for PM time (15-12 = 3 PM).",
           xpReward: 20
         },
         {
