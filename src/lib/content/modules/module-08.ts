@@ -11,9 +11,10 @@ export const MODULE_8: Module = {
   totalHours: 10,
   unlockRequirement: "Complete Module 7",
   learningTips: [
-    "Walk through your room and name everything in German: der Tisch, das Bett, der Stuhl...",
+    "Walk through your room and name everything in German: der Tisch, das Bett, der Stuhl. Physical association is the fastest way to learn!",
     "Prepositions with Dativ (in, auf, an) are used constantly with rooms. 'Ich bin IN der Küche.'",
-    "German housing ads use abbreviations: ZKB = Zimmer, Küche, Bad. Learn to decode them!",
+    "German housing ads look like coding! ZKB = Zimmer, Küche, Bad (Room, Kitchen, Bath). Once you crack the code, finding a flat is easy!",
+    "In Germany, the 'Flur' (hallway) is more than just a passage—it's where you leave your shoes (never wear them inside a German home!)",
   ],
   lessons: [
     // ─── Lesson 8-1: Rooms & Furniture ───
@@ -31,23 +32,23 @@ export const MODULE_8: Module = {
           duration: "10:00",
           description: "Take a virtual tour of a typical German apartment and learn the name of every room.",
           scriptOutline: [
-            "Opening: Welcome to a German Wohnung (apartment)! Let's explore room by room.",
-            "The entrance: der Flur (hallway) — first thing you see when entering a German home",
-            "Heart of the home: die Küche (kitchen) — Germans love their kitchens!",
-            "Living space: das Wohnzimmer (living room) — 'Wohn' = living, 'Zimmer' = room",
-            "Sleep zone: das Schlafzimmer (bedroom) — 'Schlaf' = sleep",
-            "Clean zone: das Badezimmer (bathroom) — 'Bad' = bath",
-            "Outdoor bonus: der Balkon (balcony) — very common in German apartments",
-            "Cultural note: German apartments often come WITHOUT a kitchen — you bring your own!",
-            "Compound words trick: Zimmer = room → Wohn+zimmer, Schlaf+zimmer, Bade+zimmer",
-            "Quick quiz: Name the rooms as we flash through images"
+            "Opening: 'Swantham flat-il thamasikan ishtamulla ellarkkum oru special lesson aanu ithu! Welcome to a German Wohnung!'",
+            "The entrance: der Flur (hallway) — 'Germany-yil veerinte akathu footwear allow cheyyില്ല! Flur-il thanne shoes vekkanam!'",
+            "Heart of the home: die Küche (kitchen) — 'Nammalkku kitchen pachanayulla sthalam aanel, Germans-inu ithu oru laboratory pole aanu!'",
+            "Living space: das Wohnzimmer (living room) — 'Wohn' means living, 'Zimmer' means room. Easy, machane!",
+            "Sleep zone: das Schlafzimmer (bedroom) — 'Schlaf' = sleep. No TV usually, just for rest!",
+            "Clean zone: das Badezimmer (bathroom). Tips on 'Lüften' (airing out) even in winter!",
+            "Outdoor bonus: der Balkon (balcony) — 'Balkon-il irunnu chai kudikkunnathinte oru sukham! Very common here.'",
+            "CULTURAL SHOCK: German apartments often come WITHOUT a kitchen — 'Nee thanne kitchen counter-um sink-um vanganum! Imagine that!'",
+            "Word building: Just attach the activity to 'Zimmer' and you have the room name!",
+            "Practical Check: Can you name every room in your Kerala home in German now?"
           ],
-          keyVocabulary: ["die Küche", "das Wohnzimmer", "das Schlafzimmer", "das Badezimmer", "der Flur", "der Balkon"],
+          keyVocabulary: ["die Wohnung", "der Flur", "die Küche", "das Wohnzimmer", "das Schlafzimmer", "der Balkon"],
           learningObjectives: [
-            "Name the 6 main rooms in a German home",
-            "Understand German compound word patterns with 'Zimmer'",
-            "Know cultural differences in German housing",
-            "Use correct articles for each room"
+            "Name the 7 main areas of a German apartment with correct articles",
+            "Understand the 'no-shoes-inside' rule and the 'Flur' concept",
+            "Recognize the unique German situation of 'apartments without kitchens'",
+            "Master the compound word pattern with '-zimmer'"
           ],
           placeholderThumbnail: "/images/thumbnails/german-rooms.jpg"
         },
@@ -57,23 +58,23 @@ export const MODULE_8: Module = {
           duration: "10:00",
           description: "Learn the essential furniture and household items you'll find in every German home.",
           scriptOutline: [
-            "Opening: Now that we know the rooms — let's fill them with Möbel (furniture)!",
-            "Kitchen items: der Kühlschrank (fridge), der Herd (stove) — basics for cooking",
-            "Living room: das Sofa, der Tisch (table), die Lampe (lamp) — cozy essentials",
-            "Bedroom: das Bett (bed), der Schrank (cupboard/wardrobe) — where you sleep and store",
-            "General: der Stuhl (chair) — found in every room",
-            "Articles pattern: Notice — der Tisch, der Stuhl, der Schrank (many furniture = masculine!)",
+            "Opening: 'Rooms mathram porallo, filled with Möbel (furniture) aakanam!'",
+            "Kitchen: der Kühlschrank (fridge/cool-cupboard), der Herd (stove) — basic cooking setup.",
+            "Living room: das Sofa, der Tisch (table), die Lampe (lamp).",
+            "Bedroom: das Bett (bed), der Schrank (cupboard). 'Alle saamanangalum Schrank-il vekkam!'",
+            "The versatile 'Stuhl' (chair) — masculine article: DER Stuhl.",
+            "Masc-pattern: Notice der Tisch, der Stuhl, der Schrank... most big furniture is 'der'!",
             "Practice: 'In meinem Wohnzimmer gibt es...' (In my living room there is...)",
-            "Cultural note: IKEA is huge in Germany — most students furnish their WG rooms from IKEA",
-            "Kerala comparison: Think of how we describe rooms — 'settee vechu, TV vechu, fan vechu'",
-            "Final challenge: Describe your own room using the new vocabulary"
+            "IKEA culture: 'Germany-yil aarum thachanmaar-e vilikarilla, furniture ellaam nammal thanne assemble cheyyanam!'",
+            "Kerala comparison: Think of how we describe rooms — 'settee vechu, TV vechu, fan vechu'. Same logic, German words!",
+            "Vocabulary hack: Use the articles correctly from day one. Say 'der Tisch', never just 'Tisch'!"
           ],
-          keyVocabulary: ["der Tisch", "der Stuhl", "das Bett", "der Schrank", "das Sofa", "die Lampe"],
+          keyVocabulary: ["der Kühlschrank", "der Herd", "das Bett", "der Schrank", "das Sofa", "die Lampe"],
           learningObjectives: [
-            "Name at least 6 common furniture items with correct articles",
-            "Place furniture in the correct rooms",
-            "Begin describing your own living space in German",
-            "Recognize patterns in German furniture vocabulary"
+            "Name 8 common furniture/appliance items with correct articles",
+            "Identify which furniture belongs to which room",
+            "Understand the 'Do-It-Yourself' assembly culture in Germany",
+            "Use 'es gibt' to describe what is in a room"
           ],
           placeholderThumbnail: "/images/thumbnails/german-furniture.jpg"
         }
@@ -84,56 +85,56 @@ export const MODULE_8: Module = {
           type: "matching",
           question: "Match the German rooms with their English meanings:",
           options: [
-            "die Küche → kitchen",
-            "das Wohnzimmer → living room",
-            "das Schlafzimmer → bedroom",
-            "das Badezimmer → bathroom",
-            "der Flur → hallway"
+            "die Küche",
+            "das Wohnzimmer",
+            "das Schlafzimmer",
+            "das Badezimmer",
+            "der Flur"
           ],
           correctAnswer: [
-            "die Küche → kitchen",
-            "das Wohnzimmer → living room",
-            "das Schlafzimmer → bedroom",
-            "das Badezimmer → bathroom",
-            "der Flur → hallway"
+            "kitchen",
+            "living room",
+            "bedroom",
+            "bathroom",
+            "hallway"
           ],
-          explanation: "Remember the compound word trick: Wohn(living)+zimmer(room), Schlaf(sleep)+zimmer, Bade(bath)+zimmer.",
+          explanation: "Remember the compound word trick: Wohn(living)+zimmer(room), Schlaf(sleep)+zimmer, Bade(bath)+zimmer. In Germany, the 'Flur' is very important—it's where you leave your shoes!",
           xpReward: 15
         },
         {
           id: "ex8-1-2",
           type: "multiple-choice",
-          question: "Where would you find 'das Bett' (the bed)?",
+          question: "In which room do you typically leave your shoes when entering a German home?",
           options: ["die Küche", "das Schlafzimmer", "der Flur", "der Balkon"],
-          correctAnswer: "das Schlafzimmer",
-          explanation: "Das Bett (bed) is found in das Schlafzimmer (bedroom). Schlaf = sleep!",
+          correctAnswer: "der Flur",
+          explanation: "In Germany, almost no one wears shoes inside. The 'Flur' (hallway/entrance area) is where you swap your street shoes for 'Hausschuhe' (house shoes).",
           xpReward: 10
         },
         {
           id: "ex8-1-3",
           type: "fill-blank",
-          question: "Complete: 'Der Tisch ist in der _____.' (The table is in the kitchen.)",
+          question: "Complete: 'Der Tisch ist in der ___.' (The table is in the kitchen.)",
           options: ["Küche", "Wohnzimmer", "Flur", "Balkon"],
           correctAnswer: "Küche",
-          explanation: "'in der Küche' — Küche is feminine (die Küche), so with dative 'in', it becomes 'in der Küche'.",
+          explanation: "'in der Küche' — Küche is feminine (die Küche), so with the preposition 'in' (showing location), it becomes 'in der Küche'. This is our first peek at the Dativ case!",
           xpReward: 15
         },
         {
           id: "ex8-1-4",
           type: "multiple-choice",
-          question: "What does 'der Schrank' mean?",
-          options: ["shelf", "cupboard/wardrobe", "drawer", "mirror"],
-          correctAnswer: "cupboard/wardrobe",
-          explanation: "'der Schrank' is a cupboard or wardrobe — a large piece of furniture for storage.",
+          question: "What does 'der Kühlschrank' literally mean?",
+          options: ["Cool cupboard", "Cold room", "Ice machine", "Electricity box"],
+          correctAnswer: "Cool cupboard",
+          explanation: "German is like Lego! Kühl (cool) + Schrank (cupboard) = Kühlschrank (fridge). If you know the parts, you know the word!",
           xpReward: 10
         },
         {
           id: "ex8-1-5",
           type: "ordering",
-          question: "Put these words in order: gibt / Wohnzimmer / ein Sofa / es / Im",
-          options: ["Im", "Wohnzimmer", "gibt", "es", "ein Sofa"],
+          question: "Put these words in order: 'In the living room there is a sofa'",
+          options: ["Wohnzimmer", "gibt", "es", "ein Sofa", "Im"],
           correctAnswer: ["Im", "Wohnzimmer", "gibt", "es", "ein Sofa"],
-          explanation: "'Im Wohnzimmer gibt es ein Sofa.' = 'In the living room there is a sofa.' ('gibt es' = there is)",
+          explanation: "'Im Wohnzimmer' (In the living room) + 'gibt es' (there is) + 'ein Sofa'. 'Es gibt' is the magic phrase for 'There is'!",
           xpReward: 15
         },
         {
@@ -157,25 +158,25 @@ export const MODULE_8: Module = {
           german: "die Küche",
           english: "kitchen",
           malayalam: "അടുക്കള",
-          pronunciation: "dee kue-kheh",
-          example: "Ich koche in der Küche.",
-          exampleTranslation: "I cook in the kitchen."
+          pronunciation: "kue-kheh",
+          example: "In der Küche kochen wir Curry.",
+          exampleTranslation: "In the kitchen we cook curry."
         },
         {
           id: "vocab8-1-2",
           german: "das Wohnzimmer",
           english: "living room",
           malayalam: "സ്വീകരണമുറി",
-          pronunciation: "dahs vohn-tsim-mer",
-          example: "Wir sitzen im Wohnzimmer.",
-          exampleTranslation: "We are sitting in the living room."
+          pronunciation: "vohn-tsim-mer",
+          example: "Das Wohnzimmer ist gemütlich.",
+          exampleTranslation: "The living room is cozy."
         },
         {
           id: "vocab8-1-3",
           german: "das Schlafzimmer",
           english: "bedroom",
           malayalam: "കിടപ്പുമുറി",
-          pronunciation: "dahs shlahf-tsim-mer",
+          pronunciation: "shlahf-tsim-mer",
           example: "Das Schlafzimmer ist groß.",
           exampleTranslation: "The bedroom is big."
         },
@@ -184,16 +185,16 @@ export const MODULE_8: Module = {
           german: "das Badezimmer",
           english: "bathroom",
           malayalam: "കുളിമുറി",
-          pronunciation: "dahs bah-deh-tsim-mer",
-          example: "Das Badezimmer ist klein.",
-          exampleTranslation: "The bathroom is small."
+          pronunciation: "bah-deh-tsim-mer",
+          example: "Das Badezimmer ist sauber.",
+          exampleTranslation: "The bathroom is clean."
         },
         {
           id: "vocab8-1-5",
           german: "der Flur",
           english: "hallway",
           malayalam: "ഇടനാഴി",
-          pronunciation: "dehr floohr",
+          pronunciation: "floohr",
           example: "Die Schuhe sind im Flur.",
           exampleTranslation: "The shoes are in the hallway."
         },
@@ -202,7 +203,7 @@ export const MODULE_8: Module = {
           german: "der Balkon",
           english: "balcony",
           malayalam: "ബാല്‍ക്കണി",
-          pronunciation: "dehr bahl-kohn",
+          pronunciation: "bahl-kohn",
           example: "Ich trinke Kaffee auf dem Balkon.",
           exampleTranslation: "I drink coffee on the balcony."
         },
@@ -211,7 +212,7 @@ export const MODULE_8: Module = {
           german: "der Tisch",
           english: "table",
           malayalam: "മേശ",
-          pronunciation: "dehr tish",
+          pronunciation: "tish",
           example: "Das Essen ist auf dem Tisch.",
           exampleTranslation: "The food is on the table."
         },
@@ -220,16 +221,16 @@ export const MODULE_8: Module = {
           german: "der Stuhl",
           english: "chair",
           malayalam: "കസേര",
-          pronunciation: "dehr shtool",
-          example: "Bitte setz dich auf den Stuhl.",
-          exampleTranslation: "Please sit on the chair."
+          pronunciation: "shtool",
+          example: "Der Stuhl ist bequem.",
+          exampleTranslation: "The chair is comfortable."
         },
         {
           id: "vocab8-1-9",
           german: "das Bett",
           english: "bed",
           malayalam: "കട്ടില്‍",
-          pronunciation: "dahs bet",
+          pronunciation: "bet",
           example: "Ich liege im Bett.",
           exampleTranslation: "I am lying in bed."
         },
@@ -238,7 +239,7 @@ export const MODULE_8: Module = {
           german: "der Schrank",
           english: "cupboard / wardrobe",
           malayalam: "അലമാര",
-          pronunciation: "dehr shrahnk",
+          pronunciation: "shrahnk",
           example: "Die Kleidung ist im Schrank.",
           exampleTranslation: "The clothes are in the wardrobe."
         },
@@ -247,36 +248,18 @@ export const MODULE_8: Module = {
           german: "das Sofa",
           english: "sofa",
           malayalam: "സോഫ",
-          pronunciation: "dahs zoh-fah",
-          example: "Das Sofa ist sehr bequem.",
-          exampleTranslation: "The sofa is very comfortable."
+          pronunciation: "zoh-fah",
+          example: "Das Sofa ist neu.",
+          exampleTranslation: "The sofa is new."
         },
         {
           id: "vocab8-1-12",
-          german: "die Lampe",
-          english: "lamp",
-          malayalam: "വിളക്ക് / ലാമ്പ്",
-          pronunciation: "dee lahm-peh",
-          example: "Mach bitte die Lampe an.",
-          exampleTranslation: "Please turn on the lamp."
-        },
-        {
-          id: "vocab8-1-13",
-          german: "die Stadt",
-          english: "city",
-          malayalam: "നഗരം",
-          pronunciation: "dee shtat",
-          example: "Berlin ist eine große Stadt.",
-          exampleTranslation: "Berlin is a big city."
-        },
-        {
-          id: "vocab8-1-14",
-          german: "die Kirche",
-          english: "church",
-          malayalam: "പള്ളി",
-          pronunciation: "dee keer-kheh",
-          example: "Die Kirche ist sehr alt.",
-          exampleTranslation: "The church is very old."
+          german: "der Kühlschrank",
+          english: "fridge",
+          malayalam: "ഫ്രിഡ്ജ്",
+          pronunciation: "kuehl-shrahnk",
+          example: "Die Milch ist im Kühlschrank.",
+          exampleTranslation: "The milk is in the fridge."
         }
       ]
     },
@@ -296,23 +279,23 @@ export const MODULE_8: Module = {
           duration: "12:00",
           description: "Learn the essential prepositions for describing where things are located in German.",
           scriptOutline: [
-            "Opening: 'Where's my phone?' — Let's learn to answer that in German!",
-            "The big 8 prepositions: in, auf, unter, neben, vor, hinter, zwischen, über",
-            "Visual demos with objects: 'Die Katze ist AUF dem Tisch.' (The cat is ON the table.)",
-            "auf = on top of, unter = under, neben = next to, vor = in front of, hinter = behind",
-            "zwischen = between, über = above/over, in = in/inside",
-            "KEY GRAMMAR: When talking about LOCATION (where something IS), these prepositions use DATIVE",
-            "Dative articles: der → dem, die → der, das → dem",
-            "Contractions: in dem = im, an dem = am — Germans love shortcuts!",
-            "Practice with room layout: 'Der Stuhl ist neben dem Tisch.'",
-            "Don't panic about dative — just memorize 'dem' for der/das and 'der' for die (location only)"
+            "Opening: 'Mobile evide? Keys evide? Finding things in German is all about Prepositions!'",
+            "The big 8: in, auf, unter, neben, vor, hinter, zwischen, über.",
+            "Visual demos: 'Die Katze ist AUF dem Tisch.' (cat is ON the table). 'Die Maus ist UNTER dem Bett.'",
+            "auf = surface contact, über = floating above. Don't mix them up, machane!",
+            "KEY GRAMMAR: Location (Wo?) = Dative Case. This is the first boss level of German!",
+            "Dative shortcut: der → dem, das → dem. 'Dem' replaces 'der/das' for location.",
+            "Feminine check: die → der. 'In der Küche' (in the kitchen).",
+            "Contractions are key: in + dem = im, an + dem = am. Always use 'im' it sounds more natural!",
+            " Kerala Home Tip: Describe your room layout to a friend in German for practice.",
+            "Summary: Location always needs Datur. Just memorize: Masculine/Neuter = DEM, Feminine = DER."
           ],
-          keyVocabulary: ["in", "auf", "unter", "neben", "vor", "hinter", "zwischen", "über"],
+          keyVocabulary: ["im", "am", "auf dem", "unter dem", "neben dem", "hinter dem"],
           learningObjectives: [
             "Use 8 prepositions of place correctly",
-            "Understand that location prepositions trigger dative case",
-            "Know the basic dative article changes (der→dem, die→der, das→dem)",
-            "Use contractions 'im' and 'am' naturally"
+            "Apply Dative article changes (dem/der) for location",
+            "Use contractions 'im' and 'am' naturally",
+            "Describe the position of objects in any room"
           ],
           placeholderThumbnail: "/images/thumbnails/prepositions.jpg"
         },
@@ -347,28 +330,28 @@ export const MODULE_8: Module = {
         {
           id: "ex8-2-1",
           type: "multiple-choice",
-          question: "Complete: 'Die Katze ist _____ dem Tisch.' (The cat is under the table.)",
+          question: "Where is the cat? 'Die Katze ist ___ dem Tisch.' (under)",
           options: ["auf", "unter", "neben", "über"],
           correctAnswer: "unter",
-          explanation: "'unter' = under/beneath. 'Die Katze ist unter dem Tisch.' = The cat is under the table.",
+          explanation: "'unter' = under/beneath. Notice: 'der Tisch' became 'dem Tisch' because we are talking about location (Dativ).",
           xpReward: 10
         },
         {
           id: "ex8-2-2",
           type: "fill-blank",
-          question: "Complete: 'Die Lampe ist auf _____ Tisch.' (The lamp is on the table.)",
+          question: "Complete: 'Die Lampe ist auf ___ Tisch.' (The lamp is on the table.)",
           options: ["dem", "der", "den", "das"],
           correctAnswer: "dem",
-          explanation: "With location prepositions, 'der Tisch' (masculine) changes to 'dem Tisch' in dative. auf + dem = on the.",
+          explanation: "Preposition 'auf' (on) + Location = Dativ. For masculine 'Tisch', der changes to dem. 'Auf dem Tisch' = On the table.",
           xpReward: 15
         },
         {
           id: "ex8-2-3",
           type: "multiple-choice",
-          question: "What is the contraction of 'in dem'?",
-          options: ["ins", "im", "am", "zum"],
-          correctAnswer: "im",
-          explanation: "'in dem' contracts to 'im'. Example: 'im Wohnzimmer' = in the living room.",
+          question: "How do you say 'In the living room' naturally?",
+          options: ["In das Wohnzimmer", "Im Wohnzimmer", "In der Wohnzimmer", "In dem Wohnzimmer (less common)"],
+          correctAnswer: "Im Wohnzimmer",
+          explanation: "Germans always contract 'in dem' to 'im'. It's smoother! 'In das' is for motion (going into), not location.",
           xpReward: 10
         },
         {
@@ -376,29 +359,29 @@ export const MODULE_8: Module = {
           type: "matching",
           question: "Match the prepositions with their meanings:",
           options: [
-            "auf → on (top of)",
-            "neben → next to",
-            "hinter → behind",
-            "zwischen → between",
-            "vor → in front of"
+            "auf",
+            "neben",
+            "hinter",
+            "zwischen",
+            "vor"
           ],
           correctAnswer: [
-            "auf → on (top of)",
-            "neben → next to",
-            "hinter → behind",
-            "zwischen → between",
-            "vor → in front of"
+            "on (top of)",
+            "next to",
+            "behind",
+            "between",
+            "in front of"
           ],
-          explanation: "These 5 prepositions are the most commonly used for describing locations in a room.",
+          explanation: "These prepositions are your best friends in any German home!",
           xpReward: 15
         },
         {
           id: "ex8-2-5",
-          type: "ordering",
-          question: "Put these words in order: ist / dem / Der Stuhl / Tisch / neben",
-          options: ["Der Stuhl", "ist", "neben", "dem", "Tisch"],
-          correctAnswer: ["Der Stuhl", "ist", "neben", "dem", "Tisch"],
-          explanation: "'Der Stuhl ist neben dem Tisch.' = The chair is next to the table.",
+          type: "multiple-choice",
+          question: "What does 'hinter der Tür' mean?",
+          options: ["Behind the door", "In front of the door", "Next to the door", "Under the door"],
+          correctAnswer: "Behind the door",
+          explanation: "'hinter' = behind. 'die Tür' (door) changed to 'der Tür' in Dativ. Yes, feminine 'die' becomes 'der' in Dativ—tricky, right?",
           xpReward: 15
         },
         {
@@ -529,23 +512,22 @@ export const MODULE_8: Module = {
           duration: "12:00",
           description: "Everything you need to know about finding a place to live in Germany — especially the WG (shared apartment) culture.",
           scriptOutline: [
-            "Opening: Finding a home in Germany — the biggest challenge for every newcomer!",
-            "WG = Wohngemeinschaft (shared apartment) — THE most common housing for students and young people",
-            "How WG life works: shared kitchen, bathroom, living room — private bedroom",
-            "Kerala parallel: Like paying guest / hostel — but you're equal roommates, not a guest",
-            "Key terms: die Wohnung (apartment), das Zimmer (room), die Miete (rent)",
-            "Kaltmiete vs Warmmiete: cold rent (base) vs warm rent (includes heating/utilities)",
-            "Die Kaution (deposit) — usually 2-3 months of cold rent",
-            "Die Nebenkosten (additional costs: water, heating, garbage collection)",
-            "Where to search: WG-Gesucht.de, Immobilienscout24, eBay Kleinanzeigen",
-            "Tips: Start searching early, be prepared with documents, and be polite!"
+            "Opening: 'Germany-yil flat kittan oru interview pass aakanam ennu paranjaal viswasikkumo? Welcome to WG-Suche!'",
+            "WG = Wohngemeinschaft. 'Namukku college hostels pole oru internal system, but for adults!'",
+            "How WG life works: You don't just 'rent' a room, you join a 'community'. Cleaning schedules (Putzplan) are sacred!",
+            "CULTURAL HOCK: The 'WG-Casting'. 'Oru job interview pole flatmates-inte munnil poyi performance tharanam!'",
+            "Key phrases: die Miete (rent), die Kaution (deposit). 'Kaution usually 3 months rent aanu — budget set cheyyanam!'",
+            "Kaltmiete (base) vs Warmmiete (all-in). 'Warmmiete-yil heating-um water-um okke undakum.'",
+            "Nebenkosten (NK): Extra costs. 'Electricity and Internet are usually extra — chodikkan marakkenda!'",
+            "Where to look: WG-Gesucht.de is the Bible for students. 'eBay Kleinanzeigen also works, but beware of scams!'",
+            "Indian Parallel: Like a PG, but you have equal rights and shared chores. No 'warden' here!"
           ],
-          keyVocabulary: ["die WG", "die Wohnung", "die Miete", "die Kaltmiete", "die Warmmiete", "die Kaution", "die Nebenkosten"],
+          keyVocabulary: ["die WG", "das Casting", "die Miete", "die Kaution", "die Warmmiete", "die Nebenkosten"],
           learningObjectives: [
-            "Understand WG culture and how shared apartments work in Germany",
-            "Know the difference between Kaltmiete and Warmmiete",
-            "Recognize essential rental vocabulary",
-            "Know where and how to search for housing in Germany"
+            "Understand the social 'Casting' culture in German housing",
+            "Differentiate between Kaltmiete and Warmmiete like a pro",
+            "Recognize common rental red flags and scams",
+            "Navigate the top housing websites in Germany"
           ],
           placeholderThumbnail: "/images/thumbnails/wg-suche.jpg"
         },
@@ -580,61 +562,59 @@ export const MODULE_8: Module = {
         {
           id: "ex8-3-1",
           type: "multiple-choice",
-          question: "What does 'WG' stand for?",
-          options: ["Wohnungsgebäude", "Wohngemeinschaft", "Wochengeschäft", "Wohngruppe"],
-          correctAnswer: "Wohngemeinschaft",
-          explanation: "WG = Wohngemeinschaft = shared apartment. It's the most popular living arrangement for students in Germany.",
+          question: "What is a 'WG-Casting'?",
+          options: [
+            "A movie audition",
+            "An interview with potential flatmates to see if you fit in",
+            "A meeting with the police for registration",
+            "A traditional German housewarming party"
+          ],
+          correctAnswer: "An interview with potential flatmates to see if you fit in",
+          explanation: "In Germany, living in a WG is social. Current flatmates will 'cast' (interview) you to see if you match their vibe. Be prepared to talk about your hobbies and cleaning habits!",
           xpReward: 10
         },
         {
           id: "ex8-3-2",
           type: "multiple-choice",
-          question: "What is the difference between Kaltmiete and Warmmiete?",
+          question: "You see '600€ warm' in an ad. What does this include?",
           options: [
-            "Kaltmiete is for winter, Warmmiete for summer",
-            "Kaltmiete is base rent, Warmmiete includes heating/utilities",
-            "Kaltmiete is cheaper apartments, Warmmiete is expensive",
-            "There is no difference"
+            "Base rent only",
+            "Rent plus heating, water, and garbage collection",
+            "Rent plus electricity and internet",
+            "Rent plus breakfast"
           ],
-          correctAnswer: "Kaltmiete is base rent, Warmmiete includes heating/utilities",
-          explanation: "Kalt (cold) Miete = base rent only. Warm Miete = rent + Nebenkosten (utilities like heating, water, garbage).",
+          correctAnswer: "Rent plus heating, water, and garbage collection",
+          explanation: "'Warmmiete' covers the building costs (Nebenkosten) like heating and water. BUT usually, you still need to pay for your own Electricity (Strom) and Internet!",
           xpReward: 10
         },
         {
           id: "ex8-3-3",
           type: "fill-blank",
-          question: "In a housing ad, 'qm' stands for _____ (square meters).",
-          options: ["Quadratmeter", "Quartal", "Qualität", "Quartier"],
-          correctAnswer: "Quadratmeter",
-          explanation: "'qm' = Quadratmeter = square meters. This tells you the size of the apartment.",
+          question: "The security deposit you pay at the start is called die ___ .",
+          options: ["Kaution", "Miete", "Quittung", "Rechnung"],
+          correctAnswer: "Kaution",
+          explanation: "Die Kaution is the deposit. Usually it is 2 to 3 'Kaltmieten'. You get it back when you move out if you haven't damaged the room.",
           xpReward: 10
         },
         {
           id: "ex8-3-4",
-          type: "multiple-choice",
-          question: "You see this ad: '2-Zi-Wohnung, 55 qm, 480€ warm, EG.' What floor is this apartment on?",
-          options: ["1st floor", "2nd floor", "ground floor", "basement"],
-          correctAnswer: "ground floor",
-          explanation: "EG = Erdgeschoss = ground floor. 'Erde' means earth/ground.",
-          xpReward: 10
-        },
-        {
-          id: "ex8-3-5",
           type: "matching",
-          question: "Match the housing abbreviations:",
+          question: "Decode these housing abbreviations:",
           options: [
-            "Zi → Zimmer (room)",
-            "qm → Quadratmeter (square meter)",
-            "OG → Obergeschoss (upper floor)",
-            "EBK → Einbauküche (fitted kitchen)"
+            "Zi",
+            "EBK",
+            "EG",
+            "OG",
+            "NK"
           ],
           correctAnswer: [
-            "Zi → Zimmer (room)",
-            "qm → Quadratmeter (square meter)",
-            "OG → Obergeschoss (upper floor)",
-            "EBK → Einbauküche (fitted kitchen)"
+            "Zimmer (Room)",
+            "Einbauküche (Fitted Kitchen)",
+            "Erdgeschoss (Ground Floor)",
+            "Obergeschoss (Upper Floor)",
+            "Nebenkosten (Extra Costs)"
           ],
-          explanation: "These abbreviations appear in almost every German apartment ad. Memorize them!",
+          explanation: "Crack the code! EBK is the most important one—it means the kitchen is already there and you don't have to buy a sink!",
           xpReward: 15
         },
         {
@@ -653,72 +633,72 @@ export const MODULE_8: Module = {
           german: "die Wohngemeinschaft (WG)",
           english: "shared apartment",
           malayalam: "പങ്കിട്ട അപ്പാര്‍ട്ട്‌മെന്റ്",
-          pronunciation: "dee vohn-geh-mine-shahft (veh-geh)",
-          example: "Ich wohne in einer WG.",
-          exampleTranslation: "I live in a shared apartment."
+          pronunciation: "veh-geh",
+          example: "Wir wohnen in einer WG.",
+          exampleTranslation: "We live in a shared apartment."
         },
         {
           id: "vocab8-3-2",
           german: "die Miete",
           english: "rent",
           malayalam: "വാടക",
-          pronunciation: "dee mee-teh",
-          example: "Die Miete beträgt 500 Euro.",
-          exampleTranslation: "The rent is 500 euros."
+          pronunciation: "mee-teh",
+          example: "Die Miete ist 500 Euro warm.",
+          exampleTranslation: "The rent is 500 Euros including utilities."
         },
         {
           id: "vocab8-3-3",
-          german: "die Kaltmiete",
-          english: "base rent (without utilities)",
-          malayalam: "അടിസ്ഥാന വാടക",
-          pronunciation: "dee kahlt-mee-teh",
-          example: "Die Kaltmiete ist 400 Euro.",
-          exampleTranslation: "The base rent is 400 euros."
+          german: "die Kaution",
+          english: "security deposit",
+          malayalam: "സെക്യൂരിറ്റി ഡെപ്പോസിറ്റ്",
+          pronunciation: "kau-tsion",
+          example: "Die Kaution ist hoch.",
+          exampleTranslation: "The deposit is high."
         },
         {
           id: "vocab8-3-4",
-          german: "die Warmmiete",
-          english: "rent including utilities",
-          malayalam: "യൂട്ടിലിറ്റി ഉള്‍പ്പെടെയുള്ള വാടക",
-          pronunciation: "dee vahrm-mee-teh",
-          example: "Die Warmmiete ist 550 Euro.",
-          exampleTranslation: "The rent including utilities is 550 euros."
+          german: "der Besichtigungstermin",
+          english: "viewing appointment",
+          malayalam: "ഫ്‌ളാറ്റ് കാണാനുള്ള സമയം",
+          pronunciation: "be-zikh-ti-goongs-ter-meen",
+          example: "Haben Sie einen Besichtigungstermin?",
+          exampleTranslation: "Do you have a viewing appointment?"
         },
         {
           id: "vocab8-3-5",
-          german: "die Kaution",
-          english: "security deposit",
-          malayalam: "അഡ്വാന്‍സ് / സെക്യൂരിറ്റി ഡെപ്പോസിറ്റ്",
-          pronunciation: "dee kau-tsee-ohn",
-          example: "Die Kaution beträgt zwei Monatsmieten.",
-          exampleTranslation: "The deposit is two months' rent."
+          german: "die Nebenkosten (NK)",
+          english: "utility costs",
+          malayalam: "മറ്റ് ചെലവുകൾ",
+          pronunciation: "neh-ben-kos-ten",
+          example: "Die Nebenkosten sind extra.",
+          exampleTranslation: "The utility costs are extra."
         },
         {
           id: "vocab8-3-6",
-          german: "die Nebenkosten",
-          english: "additional costs / utilities",
-          malayalam: "അധിക ചെലവുകള്‍",
-          pronunciation: "dee neh-ben-kos-ten",
-          example: "Die Nebenkosten sind 150 Euro pro Monat.",
-          exampleTranslation: "The utility costs are 150 euros per month."
+          german: "einziehen",
+          english: "to move in",
+          malayalam: "താമസം മാറിച്ചെല്ലുക",
+          pronunciation: "ine-tsee-en",
+          example: "Ich möchte am Montag einziehen.",
+          exampleTranslation: "I want to move in on Monday."
         },
         {
           id: "vocab8-3-7",
-          german: "der Quadratmeter (qm)",
-          english: "square meter",
-          malayalam: "ചതുരശ്ര മീറ്റര്‍",
-          pronunciation: "dehr kvah-draht-meh-ter",
-          example: "Die Wohnung hat 65 Quadratmeter.",
-          exampleTranslation: "The apartment has 65 square meters."
+          german: "der Putzplan",
+          english: "cleaning schedule",
+          malayalam: "വൃത്തിയാക്കൽ പട്ടിക",
+          pronunciation: "poots-plahn",
+          example: "Wir haben einen Putzplan in der WG.",
+          exampleTranslation: "We have a cleaning schedule in the WG."
         },
         {
           id: "vocab8-3-8",
-          german: "die Wohnung",
-          english: "apartment",
-          malayalam: "അപ്പാര്‍ട്ട്‌മെന്റ്",
-          pronunciation: "dee voh-noong",
-          example: "Ich suche eine Wohnung in Berlin.",
-          exampleTranslation: "I am looking for an apartment in Berlin."
+          german: "möbliert",
+          english: "furnished",
+          malayalam: "ഫർണിഷ് ചെയ്ത",
+          pronunciation: "muh-bleert",
+          example: "Das Zimmer ist möbliert.",
+          exampleTranslation: "The room is furnished."
         }
       ]
     },
@@ -738,23 +718,22 @@ export const MODULE_8: Module = {
           duration: "14:00",
           description: "Step-by-step guide to writing a formal message in German — essential for apartment hunting and beyond.",
           scriptOutline: [
-            "Opening: You found the perfect WG ad — now you need to WRITE to them in German!",
-            "Formal vs informal: When to use 'Sie' (formal) vs 'du' (informal) — WG ads are usually 'du'!",
-            "Formal letter structure: Start with 'Sehr geehrte Damen und Herren,' (Dear Sir/Madam,)",
-            "Informal start for WG: 'Hallo!' or 'Liebe WG,' (Dear WG,)",
-            "Body paragraph 1: Introduce yourself — 'Mein Name ist... Ich bin... Jahre alt. Ich komme aus...'",
-            "Body paragraph 2: Why you're interested — 'Ich suche ein Zimmer ab...' (I'm looking for a room from...)",
-            "Grammar spotlight: 'es gibt' + accusative = 'there is/there are' — 'Gibt es noch freie Zimmer?'",
-            "Closing formal: 'Mit freundlichen Grüßen' (With friendly regards) — the German standard",
-            "Closing informal: 'Liebe Grüße' or 'Viele Grüße' (Best regards)",
-            "Full sample message: Read through a complete WG application message together"
+            "Opening: 'Worm-il ad kandaal matti, ezhuthanam! First impressions are everything!'",
+            "Anrede: Formal for landlords (Sehr geehrte...), Informal for WGs (Hallo, liebe WG!).",
+            "Introduction: 'Ich heiße... und ich komme aus Indien.' Mention you are a student or working.",
+            "Body: 'Ich interessiere mich für das Zimmer.' (I am interested in the room).",
+            "Questions: 'Gibt es einen Putzplan?' (Is there a cleaning plan?) — WGs love this question!",
+            "Grammar check: 'es gibt' ALWAYS takes Accusative. 'Es gibt EINEN Balkon.'",
+            "Closing: 'Über eine Nachricht würde ich mich freuen.' (I'd be happy about a message).",
+            "Closing phrases: 'Mit freundlichen Grüßen' (Formal) vs 'Liebe Grüße' (Friends).",
+            "Pro Tip: Attach your 'Schufa' or 'Einkommensnachweis' (proof of income) if you want the room fast!"
           ],
-          keyVocabulary: ["Sehr geehrte Damen und Herren", "Mit freundlichen Grüßen", "es gibt", "Ich suche", "ab sofort"],
+          keyVocabulary: ["Sehr geehrte", "interessieren", "Besichtigungstermin", "Mit freundlichen Grüßen", "es gibt"],
           learningObjectives: [
-            "Write a formal message using correct German letter format",
-            "Use 'es gibt' (there is/are) correctly with accusative",
-            "Introduce yourself in writing",
-            "Apply for a WG room or apartment via message"
+            "Write a winning WG application message",
+            "Use 'es gibt' correctly with the Accusative case",
+            "Distinguish between formal and informal email structures",
+            "Suggest a viewing appointment (Besichtigungstermin) politely"
           ],
           placeholderThumbnail: "/images/thumbnails/german-message.jpg"
         }

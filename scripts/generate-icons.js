@@ -1,0 +1,28 @@
+// Generate PWA icons as simple SVG-based PNGs
+// Run: node scripts/generate-icons.js
+
+const fs = require('fs');
+const path = require('path');
+
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="SIZE" height="SIZE" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="80" fill="#1b2d1b"/>
+  <rect x="40" y="40" width="432" height="432" rx="60" fill="#1b2d1b" stroke="#d4a520" stroke-width="4"/>
+  <text x="256" y="220" font-family="Arial,sans-serif" font-size="120" font-weight="900" text-anchor="middle" fill="#d4a520">A</text>
+  <text x="256" y="340" font-family="Arial,sans-serif" font-size="48" font-weight="700" text-anchor="middle" fill="#27ae60">German</text>
+  <text x="256" y="400" font-family="Arial,sans-serif" font-size="36" font-weight="400" text-anchor="middle" fill="rgba(245,240,232,0.5)">Kerala Style</text>
+  <circle cx="420" cy="100" r="30" fill="#e94560" opacity="0.8"/>
+  <text x="420" y="112" font-family="Arial,sans-serif" font-size="28" font-weight="900" text-anchor="middle" fill="white">A1</text>
+</svg>`;
+
+// Write SVGs that can be used as fallback
+['192', '512'].forEach(size => {
+  const icon = svg.replace(/SIZE/g, size);
+  const filename = `icon-${size}.svg`;
+  fs.writeFileSync(path.join(__dirname, '..', 'public', filename), icon);
+  console.log(`Created public/${filename}`);
+});
+
+console.log('\nNote: For production, convert SVGs to PNG using:');
+console.log('  npx sharp-cli --input public/icon-512.svg --output public/icon-512.png');
+console.log('  npx sharp-cli --input public/icon-192.svg --output public/icon-192.png');
+console.log('\nOr use an online SVG-to-PNG converter.');

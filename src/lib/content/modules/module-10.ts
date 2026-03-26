@@ -29,16 +29,17 @@ export const MODULE_10: Module = {
           duration: "12:00",
           description: "A fun tour of body parts in German with easy memory tricks for Malayalam speakers",
           scriptOutline: [
-            "Opening: 'Body parts German-il padikkan time aayi — thalayil thudangi kaalil therum!'",
-            "der Kopf (head) — 'Your Kopf is your top!'",
-            "das Auge (eye) — plural: die Augen",
+            "Opening: 'Body parts German-il padikkan time aayi — thalayil thudangi kaalil theerum! Nammude body-ye patti parayaan kure words padikkaam.'",
+            "der Kopf (head) — 'Top-il ulla Kopf!'",
+            "das Auge (eye) — plural: die Augen. 'Auge looks like eye if you squint!'",
             "die Nase (nose), der Mund (mouth), das Ohr (ear) — plural: die Ohren",
-            "der Arm (arm), die Hand (hand) — easy cognates from English!",
-            "das Bein (leg), der Fuß (foot) — 'Fuß looks like foot!'",
-            "der Rücken (back), der Bauch (stomach/belly)",
-            "Key phrase: 'Mein Kopf tut weh' — My head hurts",
-            "Pattern: [body part] + tut weh / tun weh (singular/plural)",
-            "Practice: Point and name — quick-fire body part drill"
+            "der Arm (arm), die Hand (hand) — easy cognates from English. Nammukku familiar aanu!",
+            "das Bein (leg), der Fuß (foot) — 'Fuß looks like foot!'. Remember: leg is 'Bein', like a bone.",
+            "der Rücken (back), der Bauch (stomach/belly) — 'Bauch' like the sound you make if someone hits you there! Ouch-Bauch!",
+            "The Grammar of Pain: 'Mein Kopf tut weh' — My head hurts.",
+            "The Verb Pattern: [body part] + tut weh (singular) or tun weh (plural).",
+            "Malayalam parallel: 'Ente thala vedanikkunnu' — here 'vedanikkunnu' comes at the end, just like 'weh' in German!",
+            "Practice: Point and name — quick-fire body part drill."
           ],
           keyVocabulary: ["der Kopf", "das Auge", "die Hand", "der Fuß", "tut weh"],
           learningObjectives: [
@@ -73,14 +74,14 @@ export const MODULE_10: Module = {
         }
       ],
       exercises: [
-        { id: "ex10-1-1", type: "matching", question: "Match the German body part to its English meaning:", options: ["der Kopf", "das Auge", "die Hand", "der Fuß", "der Bauch"], correctAnswer: ["head", "eye", "hand", "foot", "stomach/belly"], xpReward: 15 },
-        { id: "ex10-1-2", type: "multiple-choice", question: "How do you say 'My head hurts' in German?", options: ["Mein Kopf tut weh.", "Mein Kopf ist weh.", "Ich habe Kopf weh.", "Mein Kopf schmerzt weh."], correctAnswer: "Mein Kopf tut weh.", explanation: "The pattern is: [Body part] + 'tut weh' (hurts). 'Mein Kopf tut weh' literally means 'My head does hurt/ache'.", xpReward: 10 },
-        { id: "ex10-1-3", type: "fill-blank", question: "Meine Augen tun ___ . (hurt — plural form)", options: ["weh", "schlecht", "krank", "Schmerzen"], correctAnswer: "weh", explanation: "For plural body parts (like Augen — eyes), use 'tun weh' instead of 'tut weh'. The 'weh' stays the same.", xpReward: 10 },
-        { id: "ex10-1-4", type: "multiple-choice", question: "What is the correct article for 'Nase' (nose)?", options: ["die Nase", "der Nase", "das Nase", "den Nase"], correctAnswer: "die Nase", explanation: "'Nase' is feminine, so it takes the article 'die'. Remember: die Nase!", xpReward: 10 },
-        { id: "ex10-1-5", type: "ordering", question: "Arrange: 'My back hurts a lot'", options: ["Mein", "Rücken", "tut", "sehr", "weh"], correctAnswer: ["Mein", "Rücken", "tut", "sehr", "weh"], xpReward: 15 },
-        { id: "ex10-1-6", type: "fill-blank", question: "Mein ___ ist gebrochen. (arm)", options: ["Arm", "Bein", "Fuß", "Kopf"], correctAnswer: "Arm", explanation: "'Mein Arm ist gebrochen' means 'My arm is broken'. 'Arm' is masculine, so 'Mein' stays as-is (no ending).", xpReward: 10 },
-        { id: "ex10-1-7", type: "multiple-choice", question: "Which body part is 'das Ohr'?", options: ["ear", "eye", "mouth", "nose"], correctAnswer: "ear", explanation: "'das Ohr' (neuter) means 'ear'. The plural is 'die Ohren'. Remember: 'Ohr' sounds a bit like the English exclamation 'Oh!' — you hear it with your ear!", xpReward: 10 },
-        { id: "ex10-1-8", type: "matching", question: "Match the body part to its correct article:", options: ["der Rücken", "die Hand", "das Bein", "der Mund", "das Ohr"], correctAnswer: ["back", "hand", "leg", "mouth", "ear"], xpReward: 15 }
+        { id: "ex10-1-1", type: "matching", question: "Match the German body part to its English meaning:", options: ["der Kopf", "das Auge", "die Hand", "der Fuß", "der Bauch"], correctAnswer: ["head", "eye", "hand", "foot", "stomach/belly"], explanation: "Identifying basic body parts is the foundation of medical German. Note the genders: der (masc), die (fem), das (neut).", xpReward: 15 },
+        { id: "ex10-1-2", type: "multiple-choice", question: "How do you say 'My head hurts' in German?", options: ["Mein Kopf tut weh.", "Mein Kopf ist weh.", "Ich habe Kopf weh.", "Mein Kopf schmerzt weh."], correctAnswer: "Mein Kopf tut weh.", explanation: "The standard pattern is [Body Part] + tut weh. 'Wehtun' is a separable verb, so 'weh' goes to the very end of the sentence.", xpReward: 10 },
+        { id: "ex10-1-3", type: "fill-blank", question: "Meine Augen tun ___ . (hurt — plural form)", options: ["weh", "schlecht", "krank", "Schmerzen"], correctAnswer: "weh", explanation: "When the body part is plural (Augen), the verb changes from 'tut' to 'tun'. Think of it as 'My eyes DO hurt'.", xpReward: 10 },
+        { id: "ex10-1-4", type: "multiple-choice", question: "What is the correct article for 'Nase' (nose)?", options: ["die Nase", "der Nase", "das Nase", "den Nase"], correctAnswer: "die Nase", explanation: "'Nase' is feminine. A good mnemonic: 'Nase' ends in 'e', and many feminine nouns in German end in 'e'.", xpReward: 10 },
+        { id: "ex10-1-5", type: "ordering", question: "Arrange: 'My back hurts a lot'", options: ["Mein", "Rücken", "tut", "sehr", "weh"], correctAnswer: ["Mein", "Rücken", "tut", "sehr", "weh"], explanation: "Structure: Subject + Verb (tut) + Adverb (sehr) + Separable Prefix (weh).", xpReward: 15 },
+        { id: "ex10-1-6", type: "fill-blank", question: "Mein ___ ist gebrochen. (arm)", options: ["Arm", "Bein", "Fuß", "Kopf"], correctAnswer: "Arm", explanation: "'Arm' is masculine ('der Arm'), so it uses 'Mein' (no ending for masculine/neuter nominative).", xpReward: 10 },
+        { id: "ex10-1-7", type: "multiple-choice", question: "Which body part is 'das Ohr'?", options: ["ear", "eye", "mouth", "nose"], correctAnswer: "ear", explanation: "das Ohr (ear) is neuter. The plural is 'die Ohren'. Think of 'Hear' having 'ear' in it!", xpReward: 10 },
+        { id: "ex10-1-8", type: "matching", question: "Match the body part to its correct article:", options: ["der Rücken", "die Hand", "das Bein", "der Mund", "das Ohr"], correctAnswer: ["back", "hand", "leg", "mouth", "ear"], explanation: "Memorizing articles with the nouns is non-negotiable in German. der Rücken (m), die Hand (f), das Bein (n).", xpReward: 15 }
       ],
       vocabulary: [
         { id: "vocab10-1-1", german: "der Kopf", english: "head", malayalam: "തല", pronunciation: "kopf", example: "Mein Kopf tut weh.", exampleTranslation: "My head hurts." },
@@ -135,16 +136,16 @@ export const MODULE_10: Module = {
           duration: "9:00",
           description: "Deep-dive into 'Ich habe + ailment' and the tricky Dativ feelings that catch every beginner",
           scriptOutline: [
-            "Opening: 'Aiyyo, enikku vayya — ithu German-il engane parayum?'",
-            "Recap: 'Ich habe' + noun for ailments — Kopfschmerzen, Fieber, Husten, Schnupfen",
-            "Compound nouns: Kopf+Schmerzen, Hals+Schmerzen, Zahn+Schmerzen — just stack them!",
-            "Halsschmerzen (sore throat) — 'Hals' = neck/throat",
-            "Zahnschmerzen (toothache) — 'Zahn' = tooth",
-            "The Dativ trap: Mir ist schlecht (I feel nauseous) — NOT 'Ich bin schlecht'!",
-            "'Ich bin schlecht' = I am a bad person! Very different meaning!",
-            "Mir ist warm / Mir ist kalt — physical sensations always use Dativ",
-            "Practice dialogue: Two friends, one is sick — full conversation",
-            "Wrap-up: 'Ippo ningalkku doctor-nte aduthu poyal enthu parayaan ariyaam!'"
+            "Opening: 'Aiyyo, enikku vayya — ithu German-il engane parayum? Ailments-ine patti clear aayi padikkaam!'",
+            "Recap: 'Ich habe' + noun for ailments — Kopfschmerzen, Fieber, Husten, Schnupfen.",
+            "Compound nouns: Kopf+Schmerzen, Hals+Schmerzen, Zahn+Schmerzen — just stack them like Lego blocks!",
+            "Halsschmerzen (sore throat) — 'Hals' = neck/throat. 'Enikku thonda-vedana undu'.",
+            "Zahnschmerzen (toothache) — 'Zahn' = tooth. Don't forget the 'Z' sound (ts-ahn)!",
+            "The Dativ Trap: 'Mir ist schlecht' (I feel nauseous) — NOT 'Ich bin schlecht'!",
+            "Grammar Alert: 'Ich bin schlecht' means 'I am a bad person'. Unless you're a villain, don't say this!",
+            "Mir ist warm / Mir ist kalt — physical sensations ALWAYS use Dativ 'Mir'. Why? Because the cold is happening *to* you.",
+            "Practice dialogue: Two friends, one is sick — full conversation in real-time speed.",
+            "Wrap-up: 'Ippo ningalkku doctor-nte aduthu poyal enthu parayanam ennu krithyamayi ariyaam!'"
           ],
           keyVocabulary: ["Halsschmerzen", "Zahnschmerzen", "Mir ist schlecht", "Mir ist kalt"],
           learningObjectives: [
@@ -236,26 +237,26 @@ export const MODULE_10: Module = {
         }
       ],
       exercises: [
-        { id: "ex10-3-1", type: "multiple-choice", question: "How does a German doctor ask 'What's wrong with you?' (formal)?", options: ["Was fehlt Ihnen?", "Was ist falsch?", "Wie geht es dir?", "Was haben Sie?"], correctAnswer: "Was fehlt Ihnen?", explanation: "'Was fehlt Ihnen?' literally means 'What is lacking/missing with you?' and is the standard formal way a doctor asks what's wrong.", xpReward: 10 },
-        { id: "ex10-3-2", type: "fill-blank", question: "Ich möchte einen ___ machen. (appointment)", options: ["Termin", "Besuch", "Platz", "Dienst"], correctAnswer: "Termin", explanation: "'einen Termin machen' means 'to make an appointment'. This is the standard phrase used when calling a doctor's office.", xpReward: 10 },
-        { id: "ex10-3-3", type: "matching", question: "Match the German medical term to its English meaning:", options: ["die Arztpraxis", "das Rezept", "die Tabletten", "die Versicherungskarte", "der Termin"], correctAnswer: ["doctor's office", "prescription", "pills/tablets", "insurance card", "appointment"], xpReward: 15 },
-        { id: "ex10-3-4", type: "multiple-choice", question: "Your doctor asks 'Seit wann haben Sie die Schmerzen?' What does this mean?", options: ["Since when have you had the pain?", "Where do you have the pain?", "How strong is the pain?", "Do you have pain?"], correctAnswer: "Since when have you had the pain?", explanation: "'Seit wann' means 'since when'. The doctor wants to know how long you've been experiencing the symptoms.", xpReward: 10 },
-        { id: "ex10-3-5", type: "ordering", question: "Arrange: 'I have had a stomachache since yesterday'", options: ["Ich", "habe", "seit", "gestern", "Bauchschmerzen"], correctAnswer: ["Ich", "habe", "seit", "gestern", "Bauchschmerzen"], xpReward: 15 },
-        { id: "ex10-3-6", type: "fill-blank", question: "Ich habe Schmerzen ___ . (here)", options: ["hier", "dort", "da", "wo"], correctAnswer: "hier", explanation: "'Ich habe Schmerzen hier' (I have pain here) is the simplest way to indicate where it hurts, usually accompanied by pointing.", xpReward: 10 },
-        { id: "ex10-3-7", type: "multiple-choice", question: "In Germany, where do you get your medicine after visiting the doctor?", options: ["At the Apotheke (pharmacy) with a Rezept", "The doctor gives you medicine directly", "At the supermarket", "At the Krankenhaus (hospital)"], correctAnswer: "At the Apotheke (pharmacy) with a Rezept", explanation: "In Germany, the doctor writes a Rezept (prescription), and you take it to a separate Apotheke (pharmacy) to get your medicine. The doctor's office doesn't dispense medicine!", xpReward: 10 },
-        { id: "ex10-3-8", type: "fill-blank", question: "Die Schmerzen sind ___ . (unbearable)", options: ["unerträglich", "stark", "dumpf", "brennend"], correctAnswer: "unerträglich", explanation: "'unerträglich' means 'unbearable'. It's the strongest way to describe pain intensity. 'un-' (not) + 'erträglich' (bearable).", xpReward: 10 }
+        { id: "ex10-3-1", type: "multiple-choice", question: "How does a German doctor ask 'What's wrong with you?' (formal)?", options: ["Was fehlt Ihnen?", "Was ist falsch?", "Wie geht es dir?", "Was haben Sie?"], correctAnswer: "Was fehlt Ihnen?", explanation: "'Was fehlt Ihnen?' is the standard medical opening. 'Fehlen' literally means 'to be missing'. So the doctor is asking 'What is missing from your health?'. Very central German phrasing!", xpReward: 10 },
+        { id: "ex10-3-2", type: "fill-blank", question: "Ich möchte einen ___ machen. (appointment)", options: ["Termin", "Besuch", "Platz", "Dienst"], correctAnswer: "Termin", explanation: "'Einen Termin machen' is the colocation you need. In Germany, almost everything (doctor, bank, government) starts with a 'Termin'.", xpReward: 10 },
+        { id: "ex10-3-3", type: "matching", question: "Match the German medical term to its English meaning:", options: ["die Arztpraxis", "das Rezept", "die Tabletten", "die Versicherungskarte", "der Termin"], correctAnswer: ["doctor's office", "prescription", "pills/tablets", "insurance card", "appointment"], explanation: "Mastering these 5 words makes your first doctor's visit 90% easier. Note that 'Rezept' means prescription, NOT food recipe (which is 'Rezept' too, but different context!)!", xpReward: 15 },
+        { id: "ex10-3-4", type: "multiple-choice", question: "Your doctor asks 'Seit wann haben Sie die Schmerzen?' What does this mean?", options: ["Since when have you had the pain?", "Where do you have the pain?", "How strong is the pain?", "Do you have pain?"], correctAnswer: "Since when have you had the pain?", explanation: "'Seit wann' is a classic 'Since when' question. The doctor wants the timeline to diagnose you correctly.", xpReward: 10 },
+        { id: "ex10-3-5", type: "ordering", question: "Arrange: 'I have had a stomachache since yesterday'", options: ["Ich", "habe", "seit", "gestern", "Bauchschmerzen"], correctAnswer: ["Ich", "habe", "seit", "gestern", "Bauchschmerzen"], explanation: "Structure: Subject + Verb + Time Clause (seit gestern) + The Ailment (Bauch+Schmerzen). Focus on the compound noun 'Bauchschmerzen'.", xpReward: 15 },
+        { id: "ex10-3-6", type: "fill-blank", question: "Ich habe Schmerzen ___ . (here)", options: ["hier", "dort", "da", "wo"], correctAnswer: "hier", explanation: "'Hier' (here) is essential when pointing to where it hurts. Simple but very practical!", xpReward: 10 },
+        { id: "ex10-3-7", type: "multiple-choice", question: "In Germany, where do you get your medicine after visiting the doctor?", options: ["At the Apotheke (pharmacy) with a Rezept", "The doctor gives you medicine directly", "At the supermarket", "At the Krankenhaus (hospital)"], correctAnswer: "At the Apotheke (pharmacy) with a Rezept", explanation: "CRITICAL: German doctors don't sell medicine. They give you a 'Rezept' (prescription), and you walk to a separate 'Apotheke'. This is a major cultural difference from many Indian clinics.", xpReward: 10 },
+        { id: "ex10-3-8", type: "fill-blank", question: "Die Schmerzen sind ___ . (unbearable)", options: ["unerträglich", "stark", "dumpf", "brennend"], correctAnswer: "unerträglich", explanation: "'Un-erträglich' = Not-bearable. Use this only if the pain is truly extreme. For normal pain, use 'stark' (strong).", xpReward: 10 }
       ],
       vocabulary: [
-        { id: "vocab10-3-1", german: "die Arztpraxis", english: "doctor's office", malayalam: "ഡോക്ടറുടെ ഓഫീസ്", pronunciation: "ahrts-prah-xis", example: "Die Arztpraxis ist um die Ecke.", exampleTranslation: "The doctor's office is around the corner." },
-        { id: "vocab10-3-2", german: "der Termin", english: "appointment", malayalam: "അപ്പോയിന്റ്മെന്റ്", pronunciation: "ter-meen", example: "Ich habe einen Termin um zehn Uhr.", exampleTranslation: "I have an appointment at ten o'clock." },
-        { id: "vocab10-3-3", german: "die Versicherungskarte", english: "insurance card", malayalam: "ഇൻഷുറൻസ് കാർഡ്", pronunciation: "fer-zikh-er-oongs-kar-te", example: "Haben Sie Ihre Versicherungskarte dabei?", exampleTranslation: "Do you have your insurance card with you?" },
-        { id: "vocab10-3-4", german: "die Schmerzen", english: "pain (plural)", malayalam: "വേദന", pronunciation: "shmer-tsen", example: "Wo haben Sie Schmerzen?", exampleTranslation: "Where do you have pain?" },
-        { id: "vocab10-3-5", german: "das Rezept", english: "prescription", malayalam: "കുറിപ്പടി", pronunciation: "re-tsept", example: "Der Arzt hat mir ein Rezept gegeben.", exampleTranslation: "The doctor gave me a prescription." },
-        { id: "vocab10-3-6", german: "die Tabletten", english: "pills / tablets", malayalam: "ഗുളികകൾ", pronunciation: "tah-blet-ten", example: "Nehmen Sie drei Tabletten am Tag.", exampleTranslation: "Take three tablets a day." },
-        { id: "vocab10-3-7", german: "die Untersuchung", english: "examination", malayalam: "പരിശോധന", pronunciation: "oon-ter-zoo-khoong", example: "Die Untersuchung dauert zehn Minuten.", exampleTranslation: "The examination takes ten minutes." },
-        { id: "vocab10-3-8", german: "der Arzt", english: "doctor (male)", malayalam: "ഡോക്ടർ", pronunciation: "ahrts", example: "Der Arzt kommt gleich.", exampleTranslation: "The doctor is coming shortly." },
-        { id: "vocab10-3-9", german: "die Ärztin", english: "doctor (female)", malayalam: "ഡോക്ടർ (സ്ത്രീ)", pronunciation: "ehrts-tin", example: "Die Ärztin ist sehr nett.", exampleTranslation: "The (female) doctor is very nice." },
-        { id: "vocab10-3-10", german: "das Medikament", english: "medication", malayalam: "മരുന്ന്", pronunciation: "me-di-kah-ment", example: "Nehmen Sie dieses Medikament nach dem Essen.", exampleTranslation: "Take this medication after eating." }
+        { id: "vocab10-3-1", german: "die Arztpraxis", english: "doctor's office", malayalam: "ഡോക്ടറുടെ ക്ലിനിക്ക്", pronunciation: "ahrts-prah-xis", example: "Ich muss zur Arztpraxis.", exampleTranslation: "I have to go to the doctor's office." },
+        { id: "vocab10-3-2", german: "der Termin", english: "appointment", malayalam: "അപ്പോയിന്റ്മെന്റ്", pronunciation: "ter-meen", example: "Haben Sie einen Termin?", exampleTranslation: "Do you have an appointment?" },
+        { id: "vocab10-3-3", german: "die Versicherungskarte", english: "insurance card", malayalam: "ഇൻഷുറൻസ് കാർഡ്", pronunciation: "fer-zikh-er-oongs-kar-te", example: "Ihre Versicherungskarte, bitte.", exampleTranslation: "Your insurance card, please." },
+        { id: "vocab10-3-4", german: "die Schmerzen", english: "pain (plural)", malayalam: "വേദന", pronunciation: "shmer-tsen", example: "Wo genau sind die Schmerzen?", exampleTranslation: "Where exactly is the pain?" },
+        { id: "vocab10-3-5", german: "das Rezept", english: "prescription", malayalam: "മരുന്ന് കുറിപ്പടി", pronunciation: "re-tsept", example: "Hier ist Ihr Rezept.", exampleTranslation: "Here is your prescription." },
+        { id: "vocab10-3-6", german: "die Tabletten", english: "pills / tablets", malayalam: "ഗുളികകൾ", pronunciation: "tah-blet-ten", example: "Nehmen Sie diese Tabletten.", exampleTranslation: "Take these tablets." },
+        { id: "vocab10-3-7", german: "die Untersuchung", english: "examination", malayalam: "പരിശോധന", pronunciation: "oon-ter-zoo-khoong", example: "Die Untersuchung ist fertig.", exampleTranslation: "The examination is finished." },
+        { id: "vocab10-3-8", german: "der Arzt", english: "doctor (male)", malayalam: "ആൺ ഡോക്ടർ", pronunciation: "ahrts", example: "Ich bin Arzt von Beruf.", exampleTranslation: "I am a doctor by profession." },
+        { id: "vocab10-3-9", german: "die Ärztin", english: "doctor (female)", malayalam: "പെൺ ഡോക്ടർ", pronunciation: "ehrts-tin", example: "Die Ärztin hilft mir.", exampleTranslation: "The (female) doctor helps me." },
+        { id: "vocab10-3-10", german: "das Medikament", english: "medication", malayalam: "മരുന്ന്", pronunciation: "me-di-kah-ment", example: "Dieses Medikament ist stark.", exampleTranslation: "This medication is strong." }
       ]
     },
     {
@@ -272,16 +273,16 @@ export const MODULE_10: Module = {
           duration: "12:00",
           description: "Navigate the German pharmacy system — very different from what you're used to in Kerala!",
           scriptOutline: [
-            "Opening: 'Germany-yil Apotheke ennu parayumbol — athu nammalute medical store alla!'",
-            "die Apotheke — NOT like an Indian medical store! Pharmacists are highly trained",
-            "The green cross sign — how to spot an Apotheke",
-            "Rezeptfrei (over-the-counter) vs rezeptpflichtig (prescription-only)",
-            "Even paracetamol needs to be bought at an Apotheke! Not in supermarkets!",
-            "Key phrase: 'Ich brauche etwas gegen Kopfschmerzen'",
-            "Common medicines: die Tablette (tablet), der Sirup (syrup), die Salbe (ointment)",
-            "das Pflaster (band-aid) — available without prescription",
-            "Notdienst / Notapotheke — emergency pharmacies open nights and weekends",
-            "Handing in your Rezept: 'Ich habe ein Rezept vom Arzt'"
+            "Opening: 'Germany-yil Apotheke ennu parayumbol — athu nammalute medical store alla machane! It's a pharmacy on legal steroids!'",
+            "die Apotheke — Pharmacists in Germany are experts. They can often help you with minor issues without a doctor.",
+            "The Visual Signal: Look for the big red 'A' with a green cross. It's like the Bat-signal for medicine!",
+            "Rezeptfrei (Free of Prescription): Over-the-counter medicines. But wait — even basic Paracetamol must be bought here, not in the supermarket!",
+            "Rezeptpflichtig (Under Prescription): Stronger medicines (like Antibiotics) that MUST have a doctor's slip.",
+            "Cultural Shock: Supermarkets in Germany sell zero medicine. Only the Apotheke sells it!",
+            "Key Phrase: 'Ich brauche etwas gegen [ailment]' — I need something for/against...",
+            "Vocabulary: die Tablette (pill), der Sirup (syrup), die Salbe (ointment).",
+            "Notdienst: If it's a Sunday or Midnight, look up the 'Notapotheke' on duty. One pharmacy stays open for everybody!",
+            "Handing in the slip: 'Ich habe ein Rezept vom Arzt.' — I have a prescription from the doctor."
           ],
           keyVocabulary: ["die Apotheke", "rezeptfrei", "rezeptpflichtig", "die Salbe", "das Pflaster"],
           learningObjectives: [
@@ -317,14 +318,14 @@ export const MODULE_10: Module = {
         }
       ],
       exercises: [
-        { id: "ex10-4-1", type: "multiple-choice", question: "What makes German pharmacies (Apotheke) different from Indian medical stores?", options: ["Even basic medicines like paracetamol can only be bought at an Apotheke", "They are open 24/7", "They are cheaper than Indian stores", "They sell groceries too"], correctAnswer: "Even basic medicines like paracetamol can only be bought at an Apotheke", explanation: "In Germany, you cannot buy most medicines (even basic painkillers) at supermarkets or regular stores. You MUST go to an Apotheke, which is run by trained pharmacists.", xpReward: 10 },
-        { id: "ex10-4-2", type: "fill-blank", question: "Ich brauche etwas ___ Kopfschmerzen. (against/for)", options: ["gegen", "für", "mit", "von"], correctAnswer: "gegen", explanation: "'gegen' means 'against/for' when talking about remedies. 'Etwas gegen Kopfschmerzen' = something for/against headaches.", xpReward: 10 },
-        { id: "ex10-4-3", type: "matching", question: "Match the German pharmacy item to its English meaning:", options: ["die Tablette", "der Sirup", "die Salbe", "das Pflaster", "das Schmerzmittel"], correctAnswer: ["tablet/pill", "syrup", "ointment/cream", "band-aid/plaster", "painkiller"], xpReward: 15 },
-        { id: "ex10-4-4", type: "multiple-choice", question: "What does 'rezeptpflichtig' mean?", options: ["Requires a prescription", "Over-the-counter", "Very expensive", "Only for children"], correctAnswer: "Requires a prescription", explanation: "'rezeptpflichtig' = Rezept (prescription) + pflichtig (required/mandatory). These medicines can only be bought with a doctor's prescription.", xpReward: 10 },
-        { id: "ex10-4-5", type: "ordering", question: "Arrange: 'I have a prescription from the doctor'", options: ["Ich", "habe", "ein", "Rezept", "vom", "Arzt"], correctAnswer: ["Ich", "habe", "ein", "Rezept", "vom", "Arzt"], xpReward: 15 },
-        { id: "ex10-4-6", type: "fill-blank", question: "Wie oft ___ ich das nehmen? (should)", options: ["soll", "will", "kann", "muss"], correctAnswer: "soll", explanation: "'Wie oft soll ich das nehmen?' means 'How often should I take this?' 'soll' (should) is the correct modal verb for asking about recommended dosage.", xpReward: 10 },
-        { id: "ex10-4-7", type: "multiple-choice", question: "You need something for allergies. How do you ask at the Apotheke?", options: ["Ich brauche etwas gegen Allergien.", "Ich will Allergien haben.", "Wo sind die Allergien?", "Haben Sie Allergien?"], correctAnswer: "Ich brauche etwas gegen Allergien.", explanation: "'Ich brauche etwas gegen...' (I need something for/against...) is the standard pattern for asking for medicine at a pharmacy.", xpReward: 10 },
-        { id: "ex10-4-8", type: "ordering", question: "Arrange: 'Take one tablet three times daily'", options: ["Nehmen", "Sie", "dreimal", "täglich", "eine", "Tablette"], correctAnswer: ["Nehmen", "Sie", "dreimal", "täglich", "eine", "Tablette"], xpReward: 15 }
+        { id: "ex10-4-1", type: "multiple-choice", question: "What makes German pharmacies (Apotheke) different from Indian medical stores?", options: ["Even basic medicines like paracetamol can only be bought at an Apotheke", "They are open 24/7", "They are cheaper than Indian stores", "They sell groceries too"], correctAnswer: "Even basic medicines like paracetamol can only be bought at an Apotheke", explanation: "Germany has a strict 'Apothekenpflicht'. Even simple painkillers can't be sold in supermarkets. This ensures every medicine sale is supervised by a professional pharmacist.", xpReward: 10 },
+        { id: "ex10-4-2", type: "fill-blank", question: "Ich brauche etwas ___ Kopfschmerzen. (for/against)", options: ["gegen", "für", "mit", "von"], correctAnswer: "gegen", explanation: "In German, medications are 'gegen' (against) an illness, not 'für' (for) it. If you say 'für', it sounds like you want to keep the headache!", xpReward: 10 },
+        { id: "ex10-4-3", type: "matching", question: "Match the German pharmacy item to its English meaning:", options: ["die Tablette", "der Sirup", "die Salbe", "das Pflaster", "das Schmerzmittel"], correctAnswer: ["tablet/pill", "syrup", "ointment/cream", "band-aid/plaster", "painkiller"], explanation: "Pflaster (band-aid) and Schmerzmittel (pain-killer) are the most common things people buy rezeptfrei (without prescription).", xpReward: 15 },
+        { id: "ex10-4-4", type: "multiple-choice", question: "What does 'rezeptpflichtig' mean?", options: ["Requires a prescription", "Over-the-counter", "Very expensive", "Only for children"], correctAnswer: "Requires a prescription", explanation: "Pflicht = duty/obligation. Rezept-pflichtig means a prescription is an absolute requirement. You can't talk your way out of it in Germany!", xpReward: 10 },
+        { id: "ex10-4-5", type: "ordering", question: "Arrange: 'I have a prescription from the doctor'", options: ["Ich", "habe", "ein", "Rezept", "vom", "Arzt"], correctAnswer: ["Ich", "habe", "ein", "Rezept", "vom", "Arzt"], explanation: "Structure: Subject (Ich) + Verb (habe) + Object (ein Rezept) + Origin (vom Arzt).", xpReward: 15 },
+        { id: "ex10-4-6", type: "fill-blank", question: "Wie oft ___ ich das nehmen? (should)", options: ["soll", "will", "kann", "muss"], correctAnswer: "soll", explanation: "Use the modal verb 'sollen' (should) when asking for advice or instructions. Use 'müssen' (must) if the doctor ordered it.", xpReward: 10 },
+        { id: "ex10-4-7", type: "multiple-choice", question: "You need something for allergies. How do you ask at the Apotheke?", options: ["Ich brauche etwas gegen Allergien.", "Ich will Allergien haben.", "Wo sind die Allergien?", "Haben Sie Allergien?"], correctAnswer: "Ich brauche etwas gegen Allergien.", explanation: "'Ich brauche etwas gegen...' is the universal formula. Learn it, use it, survive!", xpReward: 10 },
+        { id: "ex10-4-8", type: "ordering", question: "Arrange: 'Take one tablet three times daily'", options: ["Nehmen", "Sie", "dreimal", "täglich", "eine", "Tablette"], correctAnswer: ["Nehmen", "Sie", "dreimal", "täglich", "eine", "Tablette"], explanation: "Command structure: Verb (Nehmen) + Polite Subject (Sie) + Frequency (dreimal täglich) + Object (eine Tablette).", xpReward: 15 }
       ],
       vocabulary: [
         { id: "vocab10-4-1", german: "die Apotheke", english: "pharmacy", malayalam: "ഫാർമസി / മരുന്നുകട", pronunciation: "ah-po-tey-ke", example: "Die Apotheke ist neben dem Supermarkt.", exampleTranslation: "The pharmacy is next to the supermarket." },
@@ -379,12 +380,12 @@ export const MODULE_10: Module = {
         }
       ],
       exercises: [
-        { id: "ex10-5-1", type: "multiple-choice", question: "Which number do you call for an ambulance in Germany?", options: ["112", "110", "108", "911"], correctAnswer: "112", explanation: "In Germany (and all of Europe), 112 is the number for both fire and ambulance services (Feuerwehr & Rettungsdienst). 110 is for the police (Polizei). Unlike India's 108, it's 112!", xpReward: 10 },
-        { id: "ex10-5-2", type: "fill-blank", question: "Ich brauche einen ___ ! (ambulance)", options: ["Krankenwagen", "Polizei", "Feuerwehr", "Arzt"], correctAnswer: "Krankenwagen", explanation: "'Krankenwagen' literally means 'sick-car' (Kranken = sick + Wagen = car/vehicle). 'Ich brauche einen Krankenwagen!' = I need an ambulance!", xpReward: 10 },
-        { id: "ex10-5-3", type: "matching", question: "Match the German emergency word to its English meaning:", options: ["der Unfall", "die Verletzung", "das Blut", "die Notaufnahme", "der Notfall"], correctAnswer: ["accident", "injury", "blood", "emergency room", "emergency"], xpReward: 15 },
-        { id: "ex10-5-4", type: "ordering", question: "Arrange: 'Someone is injured, call an ambulance!'", options: ["Jemand", "ist", "verletzt,", "rufen", "Sie", "einen", "Krankenwagen!"], correctAnswer: ["Jemand", "ist", "verletzt,", "rufen", "Sie", "einen", "Krankenwagen!"], xpReward: 15 },
-        { id: "ex10-5-5", type: "multiple-choice", question: "What does 'Es gab einen Unfall' mean?", options: ["There was an accident", "There is a fire", "Someone is bleeding", "I need a doctor"], correctAnswer: "There was an accident", explanation: "'Es gab' means 'there was' (past tense of 'es gibt'). 'Unfall' = accident. This is a key phrase when reporting an emergency.", xpReward: 10 },
-        { id: "ex10-5-6", type: "fill-blank", question: "Jemand ist ___ ! (injured)", options: ["verletzt", "krank", "müde", "tot"], correctAnswer: "verletzt", explanation: "'verletzt' means 'injured'. 'Jemand ist verletzt!' (Someone is injured!) is one of the most important emergency phrases to know.", xpReward: 10 }
+        { id: "ex10-5-1", type: "multiple-choice", question: "Which number do you call for an ambulance in Germany?", options: ["112", "110", "108", "911"], correctAnswer: "112", explanation: "EUROPE-WIDE RULE: Dial 112 for Ambulance and Fire. Dial 110 for Police. No credit? No SIM? 112 often still works! Memorize the 'Duo' — 110/112.", xpReward: 10 },
+        { id: "ex10-5-2", type: "fill-blank", question: "Ich brauche einen ___ ! (ambulance)", options: ["Krankenwagen", "Polizei", "Feuerwehr", "Arzt"], correctAnswer: "Krankenwagen", explanation: "Krank-en-wagen. Literally 'Sick-car'. It's the most important word in an emergency. If you forget, just scream 'Hilfe' and '112'!", xpReward: 10 },
+        { id: "ex10-5-3", type: "matching", question: "Match the German emergency word to its English meaning:", options: ["der Unfall", "die Verletzung", "das Blut", "die Notaufnahme", "der Notfall"], correctAnswer: ["accident", "injury", "blood", "emergency room", "emergency"], explanation: "Knowing these words helps the dispatcher send the right help. Note: 'Notfall' is any emergency; 'Unfall' is specifically an accident.", xpReward: 15 },
+        { id: "ex10-5-4", type: "ordering", question: "Arrange: 'Someone is injured, call an ambulance!'", options: ["Jemand", "ist", "verletzt,", "rufen", "Sie", "einen", "Krankenwagen!"], correctAnswer: ["Jemand", "ist", "verletzt,", "rufen", "Sie", "einen", "Krankenwagen!"], explanation: "Command: rufen Sie! Object: einen Krankenwagen! Information: Jemand ist verletzt!", xpReward: 15 },
+        { id: "ex10-5-5", type: "multiple-choice", question: "What does 'Es gab einen Unfall' mean?", options: ["There was an accident", "There is a fire", "Someone is bleeding", "I need a doctor"], correctAnswer: "There was an accident", explanation: "'Es gab' is the past of 'Es gibt' (There is). Use this to report what already happened when the police arrive.", xpReward: 10 },
+        { id: "ex10-5-6", type: "fill-blank", question: "Jemand ist ___ ! (injured)", options: ["verletzt", "krank", "müde", "tot"], correctAnswer: "verletzt", explanation: "Verletzt comes from 'verletzen' (to injure). It's a key word for reporting casualties at an accident scene.", xpReward: 10 }
       ],
       vocabulary: [
         { id: "vocab10-5-1", german: "der Notfall", english: "emergency", malayalam: "അടിയന്തരാവസ്ഥ", pronunciation: "noht-fahl", example: "Das ist ein Notfall!", exampleTranslation: "This is an emergency!" },

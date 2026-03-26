@@ -10,9 +10,9 @@ export const MODULE_13: Module = {
   totalHours: 14,
   unlockRequirement: "Complete Module 12",
   learningTips: [
-    "Perfekt tense: 80% of verbs use 'haben'. Movement verbs (gehen, fahren, kommen) use 'sein'.",
-    "The past participle goes to the END: 'Ich HABE gestern Pizza GEGESSEN.'",
-    "Tell someone what you did yesterday — in German. Every day. This is how fluency happens.",
+    "Perfekt tense: 80% of verbs use 'haben'. Movement verbs (gehen, fahren, kommen) use 'sein'. Think of it as 'I have cooked' vs 'I am gone'.",
+    "The 'Sandwich' Rule: The conjugated verb (haben/sein) is the first bread, and the past participle is the end bread. Everything else is the filling!",
+    "Malayalam Parallel: In German Perfekt, the verb goes to the end — just like in Malayalam! 'Njan food kazhichu' (I food ate) is exactly the structure of 'Ich habe gegessen'.",
   ],
   lessons: [
     {
@@ -29,15 +29,15 @@ export const MODULE_13: Module = {
           duration: "10:00",
           description: "Learn the Perfekt tense structure using haben \u2014 the most common way to talk about the past in everyday German",
           scriptOutline: [
-            "Opening: 'Ivide nammude past tense adventure thudangunnu! In German, talking about the past is easier than you think!'",
-            "Structure: Subject + haben (conjugated) + ... + past participle (at the END!)",
-            "Conjugation review: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben",
-            "Think of it like a sandwich \u2014 haben is the bread at the start, participle is the bread at the end",
-            "Example breakdown: 'Ich habe Deutsch gelernt' \u2014 I have learned German",
-            "More examples with daily activities: kochen, spielen, machen",
-            "Common mistake: Forgetting to put the participle at the end of the sentence",
-            "Kerala connection: Like how Malayalam puts the verb at the end \u2014 German Perfekt does this too!",
-            "Practice: Describe what you did today using haben + past participle"
+            "Opening: 'Ivide nammude past tense adventure thudangunnu! Past tense-ine patti orthu pedikkanda. In everyday German, we use the Perfekt tense for 95% of things!'",
+            "The Sandwich Structure: Subject + haben (conjugated) + ... + past participle (at the VERY END!)",
+            "Why it's easy for us: 'Njan biryani kazhichu' (I biryani ate) ennu parayunnathu pole, German-ilum main action word (participle) end-il aanu varunnathu!",
+            "Conjugation review: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben. Ithu maatram mind-il vechaal mathi!",
+            "The Rule of the End: Participle sentence-inte avasanam aanu varuka. Athu vare filling (time, location, object) ezhuthanam.",
+            "Example breakdown: 'Ich habe gestern Deutsch gelernt' — I have yesterday German learned.",
+            "Visual check: Haben (Position 2), Participle (Last Position). Nothing can come after the participle!",
+            "Kerala connection: Think of 'kazhichu', 'padichu', 'kandu' — all these end-of-sentence words are like the German participles.",
+            "Practice: Challenge — describe 3 things you did today in this 'sandwich' style."
           ],
           keyVocabulary: ["haben", "gemacht", "gespielt", "gelernt", "gekauft", "gekocht"],
           learningObjectives: ["Understand the Perfekt tense structure with haben", "Conjugate haben correctly for all persons", "Form sentences about past activities using haben"],
@@ -49,12 +49,12 @@ export const MODULE_13: Module = {
           duration: "10:00",
           description: "Learn the simple ge-...-t pattern for regular German verbs in the past tense",
           scriptOutline: [
-            "Opening: 'Regular past participles \u2014 the easy ones! Just add ge- at the start and -t at the end!'",
-            "The formula: ge- + verb stem + -t",
-            "machen \u2192 gemacht, spielen \u2192 gespielt, lernen \u2192 gelernt",
-            "kaufen \u2192 gekauft, kochen \u2192 gekocht",
-            "Practice sentences: 'Ich habe gestern gekocht'",
-            "Tip: Most regular verbs follow this pattern \u2014 learn it once, use it everywhere!"
+            "Opening: 'Regular past participles — the easy ones! Nammude regular verbs-ine (machen, lernen, spielen) participle aakkaan oru simple formula und!'",
+            "The Formula: ge- + verb stem + -t. It's like a 'ge-t' wrapper around the verb stem.",
+            "Examples: machen → ge-mach-t, spielen → ge-spiel-t, lernen → ge-lern-t",
+            "Pronunciation check: Make sure the 'ge' is short (not 'gay'). 'ge-makt', 'ge-shpeelt'.",
+            "Practice: 'Njan ninnale cook cheythu' — 'Ich habe gestern gekocht.'",
+            "Tip: 90% of regular 'en' verbs follow this ge-...-t pattern. Learn the pattern once, and you're set for thousands of verbs!"
           ],
           keyVocabulary: ["gemacht", "gespielt", "gelernt", "gekauft", "gekocht"],
           learningObjectives: ["Form regular past participles using the ge-...-t pattern", "Recognize regular verb patterns", "Create past tense sentences with regular verbs"],
@@ -62,26 +62,26 @@ export const MODULE_13: Module = {
         }
       ],
       exercises: [
-        { id: "ex13-1-1", type: "multiple-choice", question: "What is the correct Perfekt form? 'Ich _____ Fu\u00dfball _____.'", options: ["habe ... gespielt", "bin ... gespielt", "habe ... spielen", "hat ... gespielt"], correctAnswer: "habe ... gespielt", explanation: "spielen uses haben in the Perfekt. 'Ich habe' (first person) + gespielt (past participle of spielen).", xpReward: 10 },
-        { id: "ex13-1-2", type: "fill-blank", question: "Complete: Er _____ das Essen gekocht. (He cooked the food.)", options: ["hat", "habe", "haben", "ist"], correctAnswer: "hat", explanation: "'Er' (he) takes 'hat' as the conjugated form of haben.", xpReward: 10 },
-        { id: "ex13-1-3", type: "multiple-choice", question: "What is the past participle of 'machen'?", options: ["gemacht", "gemachen", "gemakt", "machte"], correctAnswer: "gemacht", explanation: "Regular verbs follow ge- + stem + -t: mach \u2192 gemacht.", xpReward: 10 },
-        { id: "ex13-1-4", type: "matching", question: "Match the verb to its past participle:", options: ["spielen", "lernen", "kaufen", "kochen"], correctAnswer: ["gespielt", "gelernt", "gekauft", "gekocht"], xpReward: 15 },
-        { id: "ex13-1-5", type: "fill-blank", question: "Complete: Wir _____ gestern Deutsch _____. (We learned German yesterday.)", options: ["haben ... gelernt", "sind ... gelernt", "habt ... gelernt", "haben ... lernen"], correctAnswer: "haben ... gelernt", explanation: "'Wir' uses 'haben' and lernen is a regular haben-verb: gelernt.", xpReward: 10 },
-        { id: "ex13-1-6", type: "ordering", question: "Put the words in the correct order to form a Perfekt sentence:", options: ["habe", "Ich", "gekauft", "ein Buch"], correctAnswer: ["Ich", "habe", "ein Buch", "gekauft"], xpReward: 20 },
-        { id: "ex13-1-7", type: "multiple-choice", question: "Which conjugation of 'haben' goes with 'ihr'?", options: ["habt", "haben", "hast", "hat"], correctAnswer: "habt", explanation: "'Ihr' (you all) takes 'habt': Ihr habt gut gemacht!", xpReward: 10 },
-        { id: "ex13-1-8", type: "fill-blank", question: "Complete: Du _____ sehr gut _____. (You cooked very well.)", options: ["hast ... gekocht", "hat ... gekocht", "haben ... gekocht", "habe ... gekocht"], correctAnswer: "hast ... gekocht", explanation: "'Du' (you, informal) takes 'hast'. kochen \u2192 gekocht (regular ge-...-t pattern).", xpReward: 10 }
+        { id: "ex13-1-1", type: "multiple-choice", question: "What is the correct Perfekt form? 'Ich _____ Fußball _____.'", options: ["habe ... gespielt", "bin ... gespielt", "habe ... spielen", "hat ... gespielt"], correctAnswer: "habe ... gespielt", explanation: "spielen (to play) uses 'haben' as the helper verb. 'Ich' takes 'habe'. The past participle 'gespielt' must go to the very end of the sentence. bin + gespielt is wrong because we don't travel while playing soccer usually!", xpReward: 10 },
+        { id: "ex13-1-2", type: "fill-blank", question: "Complete: Er _____ das Essen gekocht. (He cooked the food.)", options: ["hat", "habe", "haben", "ist"], correctAnswer: "hat", explanation: "'Er' (he) is 3rd person singular, which always takes 'hat'. kochen (to cook) is an action that uses 'haben'.", xpReward: 10 },
+        { id: "ex13-1-3", type: "multiple-choice", question: "What is the past participle of 'machen'?", options: ["gemacht", "gemachen", "gemakt", "machte"], correctAnswer: "gemacht", explanation: "Regular verbs follow the ge- + stem + -t rule. Stem of machen is 'mach', so it becomes ge-mach-t.", xpReward: 10 },
+        { id: "ex13-1-4", type: "matching", question: "Match the verb to its past participle:", options: ["spielen", "lernen", "kaufen", "kochen"], correctAnswer: ["gespielt", "gelernt", "gekauft", "gekocht"], explanation: "All these verbs are regular (Schwache Verben) and follow the ge-...-t pattern.", xpReward: 15 },
+        { id: "ex13-1-5", type: "fill-blank", question: "Complete: Wir _____ gestern Deutsch _____. (We learned German yesterday.)", options: ["haben ... gelernt", "sind ... gelernt", "habt ... gelernt", "haben ... lernen"], correctAnswer: "haben ... gelernt", explanation: "'Wir' uses 'haben'. Lernen is an activity (not travel/change of state), so it uses haben. gelernt is the correct participle form.", xpReward: 10 },
+        { id: "ex13-1-6", type: "ordering", question: "Put the words in the correct order to form a Perfekt sentence:", options: ["habe", "Ich", "gekauft", "ein Buch"], correctAnswer: ["Ich", "habe", "ein Buch", "gekauft"], explanation: "Remember the Sandwich! Haben (habe) at Position 2, and the participle (gekauft) at the very end. The object (ein Buch) goes in the middle.", xpReward: 20 },
+        { id: "ex13-1-7", type: "multiple-choice", question: "Which conjugation of 'haben' goes with 'ihr'?", options: ["habt", "haben", "hast", "hat"], correctAnswer: "habt", explanation: "'Ihr' (you all) always takes 'habt'. Example: 'Ihr habt gut gelernt.' (You all learned well.)", xpReward: 10 },
+        { id: "ex13-1-8", type: "fill-blank", question: "Complete: Du _____ sehr gut _____. (You cooked very well.)", options: ["hast ... gekocht", "hat ... gekocht", "haben ... gekocht", "habe ... gekocht"], correctAnswer: "hast ... gekocht", explanation: "'Du' takes 'hast'. kochen is a regular verb: ge- + koch + -t = gekocht.", xpReward: 10 }
       ],
       vocabulary: [
         { id: "vocab13-1-1", german: "haben", english: "to have", malayalam: "\u0D09\u0D23\u0D4D\u0D1F\u0D3E\u0D2F\u0D3F\u0D30\u0D3F\u0D15\u0D4D\u0D15\u0D41\u0D15", pronunciation: "hah-ben", example: "Ich habe einen Hund.", exampleTranslation: "I have a dog." },
-        { id: "vocab13-1-2", german: "gemacht", english: "done / made (past participle)", malayalam: "\u0D1A\u0D46\u0D2F\u0D4D\u0D24\u0D41", pronunciation: "ge-makht", example: "Ich habe meine Hausaufgaben gemacht.", exampleTranslation: "I did my homework." },
-        { id: "vocab13-1-3", german: "gespielt", english: "played (past participle)", malayalam: "\u0D15\u0D33\u0D3F\u0D1A\u0D4D\u0D1A\u0D41", pronunciation: "ge-shpeelt", example: "Er hat Fu\u00dfball gespielt.", exampleTranslation: "He played football." },
-        { id: "vocab13-1-4", german: "gelernt", english: "learned (past participle)", malayalam: "\u0D2A\u0D20\u0D3F\u0D1A\u0D4D\u0D1A\u0D41", pronunciation: "ge-lairnt", example: "Ich habe Deutsch gelernt.", exampleTranslation: "I learned German." },
-        { id: "vocab13-1-5", german: "gekauft", english: "bought (past participle)", malayalam: "\u0D35\u0D3E\u0D19\u0D4D\u0D19\u0D3F", pronunciation: "ge-kowft", example: "Sie hat ein Kleid gekauft.", exampleTranslation: "She bought a dress." },
-        { id: "vocab13-1-6", german: "gekocht", english: "cooked (past participle)", malayalam: "\u0D2A\u0D3E\u0D1A\u0D15\u0D02 \u0D1A\u0D46\u0D2F\u0D4D\u0D24\u0D41", pronunciation: "ge-kokht", example: "Wir haben Curry gekocht.", exampleTranslation: "We cooked curry." },
-        { id: "vocab13-1-7", german: "gestern", english: "yesterday", malayalam: "\u0D07\u0D28\u0D4D\u0D28\u0D32\u0D46", pronunciation: "gess-tern", example: "Ich habe gestern gelernt.", exampleTranslation: "I studied yesterday." },
-        { id: "vocab13-1-8", german: "das Perfekt", english: "the perfect tense (past)", malayalam: "\u0D2D\u0D42\u0D24\u0D15\u0D3E\u0D32\u0D02 (\u0D2A\u0D46\u0D7C\u0D2B\u0D46\u0D15\u0D4D\u0D1F\u0D4D)", pronunciation: "pair-fekt", example: "Im Perfekt sagt man: Ich habe gemacht.", exampleTranslation: "In the Perfekt you say: I have done." },
-        { id: "vocab13-1-9", german: "gearbeitet", english: "worked (past participle)", malayalam: "\u0D1C\u0D4B\u0D32\u0D3F \u0D1A\u0D46\u0D2F\u0D4D\u0D24\u0D41", pronunciation: "ge-ar-by-tet", example: "Er hat den ganzen Tag gearbeitet.", exampleTranslation: "He worked the whole day." },
-        { id: "vocab13-1-10", german: "geh\u00f6rt", english: "heard / listened (past participle)", malayalam: "\u0D15\u0D47\u0D1F\u0D4D\u0D1F\u0D41", pronunciation: "ge-h\u00f6rt", example: "Ich habe Musik geh\u00f6rt.", exampleTranslation: "I listened to music." }
+        { id: "vocab13-1-2", german: "gemacht", english: "done / made", malayalam: "ചെയ്തു", pronunciation: "ge-makt", example: "Ich habe meine Hausaufgaben gemacht.", exampleTranslation: "I did my homework." },
+        { id: "vocab13-1-3", german: "gespielt", english: "played", malayalam: "കളിച്ചു", pronunciation: "ge-shpeelt", example: "Er hat Fußball gespielt.", exampleTranslation: "He played football." },
+        { id: "vocab13-1-4", german: "gelernt", english: "learned", malayalam: "പഠിച്ചു", pronunciation: "ge-lairnt", example: "Ich habe Deutsch gelernt.", exampleTranslation: "I learned German." },
+        { id: "vocab13-1-5", german: "gekauft", english: "bought", malayalam: "വാങ്ങി", pronunciation: "ge-kowft", example: "Sie hat ein neues Kleid gekauft.", exampleTranslation: "She bought a new dress." },
+        { id: "vocab13-1-6", german: "gekocht", english: "cooked", malayalam: "പാചകം ചെയ്തു", pronunciation: "ge-kokht", example: "Wir haben Meen Curry gekocht.", exampleTranslation: "We cooked fish curry." },
+        { id: "vocab13-1-7", german: "gestern", english: "yesterday", malayalam: "ഇന്നലെ", pronunciation: "gess-tern", example: "Gestern habe ich viel geschlafen.", exampleTranslation: "Yesterday I slept a lot." },
+        { id: "vocab13-1-8", german: "das Perfekt", english: "the perfect tense (past)", malayalam: "പെർഫെക്ട് ടെൻസ് (ഭൂതകാലം)", pronunciation: "pair-fekt", example: "Das Perfekt ist wichtig.", exampleTranslation: "The Perfekt is important." },
+        { id: "vocab13-1-9", german: "gearbeitet", english: "worked", malayalam: "ജോലി ചെയ്തു", pronunciation: "ge-ar-by-tet", example: "Er hat den ganzen Tag hart gearbeitet.", exampleTranslation: "He worked hard the whole day." },
+        { id: "vocab13-1-10", german: "gehört", english: "heard / listened", malayalam: "കേട്ടു", pronunciation: "ge-hurt", example: "Hast du das gehört?", exampleTranslation: "Did you hear that?" }
       ]
     },
     {
@@ -92,18 +92,37 @@ export const MODULE_13: Module = {
       duration: "60 min",
       xpReward: 150,
       videos: [
-        { id: "v13-2-1", title: "Movement & Change = sein!", duration: "10:00", description: "Discover why certain German verbs use sein instead of haben in the Perfekt tense", scriptOutline: ["Opening: 'Not all verbs use haben \u2014 some need sein!'", "The rule: Movement from A to B or change of state = sein", "sein conjugation: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind", "Movement verbs: gehen, fahren, fliegen, kommen, laufen", "Change of state: werden, sterben, aufwachen", "Common mistake: 'Ich habe gegangen' is WRONG!"], keyVocabulary: ["sein", "gegangen", "gefahren", "geflogen", "gekommen"], learningObjectives: ["Understand why some verbs use sein", "Identify movement and change-of-state verbs", "Form correct Perfekt sentences with sein"], placeholderThumbnail: "/images/thumbnails/perfekt-sein.jpg" },
+        {
+          id: "v13-2-1",
+          title: "Movement & Change = sein!",
+          duration: "10:00",
+          description: "Discover why certain German verbs use sein instead of haben in the Perfekt tense",
+          scriptOutline: [
+            "Opening: 'Eppozhum \"Haben\" maatram pora machane! Some verbs are special — they prefer \"Sein\".'",
+            "The Rule of Movement: If you are moving from Point A to Point B (gehen, fahren, kommen), you use SEIN.",
+            "The Travelers vs. Stayers: Think of it this way — if the action changes your LOCATION or your STATE (like waking up or dying), use Sein. Everything else is Haben.",
+            "Conjugation of Sein: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind. (Ithu correct aayi padikkanam!)",
+            "The Sandwich remains: Sein (Position 2) ... Participle (End).",
+            "Example: 'Ich bin nach Kochi gefahren.' (I have traveled to Kochi.)",
+            "Malayalam note: We often say 'Njan Kochi-yil poyi' — the 'poyi' is like our participle at the end.",
+            "Common verbs list: gehen (gegangen), fahren (gefahren), kommen (gekommen), bleiben (geblieben — the exception!).",
+            "Wait, why 'bleiben'? Bleiben (stay) means staying in a state, so it's a 'Sein' verb too. Oru small twist!",
+            "Practice: Choose Haben or Sein for these 3 activities."
+          ],
+          keyVocabulary: ["sein", "gegangen", "gefahren", "geflogen", "gekommen"],
+          learningObjectives: ["Understand why some verbs use sein", "Identify movement and change-of-state verbs", "Form correct Perfekt sentences with sein"],
+          placeholderThumbnail: "/images/thumbnails/perfekt-sein.jpg"
+        },
         { id: "v13-2-2", title: "Common sein-Verbs", duration: "10:00", description: "Master the most frequently used verbs that take sein in the Perfekt", scriptOutline: ["gehen \u2192 gegangen, fahren \u2192 gefahren, fliegen \u2192 geflogen", "kommen \u2192 gekommen, laufen \u2192 gelaufen", "Special: sein \u2192 gewesen, werden \u2192 geworden, bleiben \u2192 geblieben", "bleiben uses sein even without movement!"], keyVocabulary: ["gegangen", "gefahren", "geflogen", "gekommen", "gelaufen", "gewesen", "geworden", "geblieben"], learningObjectives: ["Know the most common sein-verbs", "Use sein-verbs correctly in sentences", "Remember special cases like bleiben"], placeholderThumbnail: "/images/thumbnails/sein-verbs.jpg" }
       ],
       exercises: [
-        { id: "ex13-2-1", type: "multiple-choice", question: "Which is correct? 'Ich _____ nach Berlin _____.'", options: ["bin ... gefahren", "habe ... gefahren", "bin ... gefahrt", "habe ... gefahrt"], correctAnswer: "bin ... gefahren", explanation: "fahren is a movement verb \u2192 uses sein. Past participle: gefahren (irregular).", xpReward: 10 },
-        { id: "ex13-2-2", type: "fill-blank", question: "Complete: Sie _____ nach Hause gegangen. (She went home.)", options: ["ist", "hat", "sind", "haben"], correctAnswer: "ist", explanation: "gehen is a movement verb and takes sein. 'Sie' (she) \u2192 'ist'.", xpReward: 10 },
-        { id: "ex13-2-3", type: "matching", question: "Match the verb to its past participle:", options: ["gehen", "fliegen", "kommen", "bleiben"], correctAnswer: ["gegangen", "geflogen", "gekommen", "geblieben"], xpReward: 15 },
-        { id: "ex13-2-4", type: "multiple-choice", question: "Why does 'bleiben' use sein even though there's no movement?", options: ["It indicates a state of being (like sein itself)", "It uses haben, not sein", "It's a reflexive verb", "It's a separable verb"], correctAnswer: "It indicates a state of being (like sein itself)", explanation: "bleiben (to stay/remain) uses sein because, like sein itself, it describes a state of being rather than an action. Verbs of movement AND state (sein, bleiben, werden) all take sein in the Perfekt.", xpReward: 10 },
-        { id: "ex13-2-5", type: "ordering", question: "Put the words in the correct order:", options: ["geflogen", "Wir", "nach Indien", "sind"], correctAnswer: ["Wir", "sind", "nach Indien", "geflogen"], xpReward: 20 },
-        { id: "ex13-2-6", type: "multiple-choice", question: "Which verb does NOT use sein in the Perfekt?", options: ["kochen", "gehen", "fahren", "fliegen"], correctAnswer: "kochen", explanation: "kochen (to cook) is not a movement/change verb, so it uses haben.", xpReward: 10 },
-        { id: "ex13-2-7", type: "fill-blank", question: "Complete: Er _____ krank geworden. (He became sick.)", options: ["ist", "hat", "bin", "sind"], correctAnswer: "ist", explanation: "werden (to become) is a change-of-state verb \u2192 uses sein. 'Er' \u2192 'ist'.", xpReward: 10 },
-        { id: "ex13-2-8", type: "fill-blank", question: "Complete: Wir _____ letztes Jahr in Kerala _____. (We were in Kerala last year.)", options: ["sind ... gewesen", "haben ... gewesen", "sind ... gesein", "haben ... gesein"], correctAnswer: "sind ... gewesen", explanation: "sein \u2192 gewesen (been). The verb sein itself uses sein in the Perfekt.", xpReward: 10 }
+        { id: "ex13-2-1", type: "multiple-choice", question: "Which helper verb is used for 'gehen' (to go)?", options: ["sein", "haben", "werden", "machen"], correctAnswer: "sein", explanation: "'Gehen' involves movement from one place to another (Point A to Point B), so it requires 'sein' as the helper verb in Perfekt.", xpReward: 10 },
+        { id: "ex13-2-2", type: "fill-blank", question: "Complete: Ich _____ nach Hause gegangen.", options: ["bin", "habe", "bist", "ist"], correctAnswer: "bin", explanation: "'Ich' goes with 'bin'. Since 'gegangen' is a movement verb, we use 'bin' instead of 'habe'.", xpReward: 10 },
+        { id: "ex13-2-3", type: "multiple-choice", question: "Which of these verbs uses 'sein'?", options: ["kommen (to come)", "kochen (to cook)", "lernen (to learn)", "lesen (to read)"], correctAnswer: "kommen (to come)", explanation: "'Kommen' is a movement from one place to another. Kochen, lernen, and lesen are activities that don't involve a change of location, so they use 'haben'.", xpReward: 10 },
+        { id: "ex13-2-4", type: "multiple-choice", question: "What is the helper verb for 'bleiben' (to stay)?", options: ["sein", "haben", "ist", "war"], correctAnswer: "sein", explanation: "'Bleiben' is a famous exception! Even though there's no movement, it always takes 'sein' in the past tense.", xpReward: 10 },
+        { id: "ex13-2-5", type: "fill-blank", question: "Complete: Wir _____ nach Berlin geflogen.", options: ["sind", "haben", "seid", "ist"], correctAnswer: "sind", explanation: "'Wir' takes 'sind'. Flying (fliegen) is movement, so we use the helper verb 'sein'.", xpReward: 10 },
+        { id: "ex13-2-6", type: "ordering", question: "Put the words in order: ist / Er / gekommen / gestern", options: ["Er", "ist", "gestern", "gekommen."], correctAnswer: ["Er", "ist", "gestern", "gekommen."], explanation: "The 'Sein' sandwich! Helper verb 'ist' at position 2, and the participle 'gekommen' at the very end.", xpReward: 20 },
+        { id: "ex13-2-7", type: "multiple-choice", question: "Is the sentence 'Ich habe nach Hause gegangen' correct?", options: ["No, it should be 'Ich bin nach Hause gegangen'", "Yes, it is correct", "Only in formal German", "No, it should be 'Ich bin nach Hause gegangen'"], correctAnswer: "No, it should be 'Ich bin nach Hause gegangen'", explanation: "'Gehen' is a verb of movement. In German, movement verbs MUST use 'sein' (bin, bist, ist...). English uses 'have gone', but German says 'am gone'.", xpReward: 10 }
       ],
       vocabulary: [
         { id: "vocab13-2-1", german: "gegangen", english: "gone / walked (past participle)", malayalam: "\u0D2A\u0D4B\u0D2F\u0D3F", pronunciation: "ge-gang-en", example: "Ich bin ins Kino gegangen.", exampleTranslation: "I went to the cinema." },
@@ -126,18 +145,34 @@ export const MODULE_13: Module = {
       duration: "60 min",
       xpReward: 150,
       videos: [
-        { id: "v13-3-1", title: "The Irregular Ones - ge-...-en", duration: "10:00", description: "Learn the ge-...-en pattern for irregular past participles", scriptOutline: ["Irregular pattern: ge- + CHANGED STEM + -en", "essen \u2192 gegessen, trinken \u2192 getrunken", "schreiben \u2192 geschrieben, lesen \u2192 gelesen", "sehen \u2192 gesehen, nehmen \u2192 genommen, sprechen \u2192 gesprochen"], keyVocabulary: ["gegessen", "getrunken", "geschrieben", "gelesen", "gesehen", "genommen", "gesprochen"], learningObjectives: ["Recognize the ge-...-en pattern", "Know common irregular past participles", "Use them in sentences"], placeholderThumbnail: "/images/thumbnails/irregular-participles.jpg" },
+        {
+          id: "v13-3-1",
+          title: "The Irregular Ones - ge-...-en",
+          duration: "10:00",
+          description: "Learn the ge-...-en pattern for irregular past participles",
+          scriptOutline: [
+            "Opening: 'Ini kure irregular verbs-ine patti parayaam. They don't follow the ge-...-t rule. They are a bit rebellious!'",
+            "The Ending Trap: Irregular verbs (Strong Verbs) usually end in -en, not -t. (e.g., essen → gegessen).",
+            "The Vowel Shift: Sometimes the middle vowel changes. (e.g., trinken → getrunken, singen → gesungen).",
+            "Common 'Must-Know' list: essen (gegessen), trinken (getrunken), sehen (gesehen), lesen (gelesen), schlafen (geschlafen).",
+            "Mnemonics: 'Singen, sang, gesungen' — practice the rhythm! It's like a song.",
+            "Visual Patterns: Group verbs by their sound shift. (e.g., i-a-u group: trinken/singen/springen).",
+            "Kerala connection: Think of Malayalam irregulars like 'kaanka' (see) → 'kandu'. Every language has them, don't worry!",
+            "Practice: Test your memory on these 5 daily life verbs."
+          ],
+          keyVocabulary: ["gegessen", "getrunken", "geschrieben", "gelesen", "gesehen", "genommen", "gesprochen"],
+          learningObjectives: ["Recognize the ge-...-en pattern", "Know common irregular past participles", "Use them in sentences"],
+          placeholderThumbnail: "/images/thumbnails/irregular-participles.jpg"
+        },
         { id: "v13-3-2", title: "Most Common Irregular Verbs", duration: "10:00", description: "Special rules \u2014 verbs with no ge- prefix and -ieren verbs", scriptOutline: ["Inseparable prefixes: be-, er-, ver-, ent- \u2192 NO ge-!", "besuchen \u2192 besucht, verstehen \u2192 verstanden", "-ieren verbs: telefonieren \u2192 telefoniert, studieren \u2192 studiert"], keyVocabulary: ["besucht", "verstanden", "erz\u00e4hlt", "telefoniert", "studiert"], learningObjectives: ["Know which verbs don't take ge-", "Form past participles for inseparable prefix verbs", "Handle -ieren verbs"], placeholderThumbnail: "/images/thumbnails/no-ge-verbs.jpg" }
       ],
       exercises: [
-        { id: "ex13-3-1", type: "multiple-choice", question: "What is the past participle of 'essen'?", options: ["gegessen", "geesst", "geessen", "esst"], correctAnswer: "gegessen", explanation: "essen is irregular: ge- + gess + -en \u2192 gegessen.", xpReward: 10 },
-        { id: "ex13-3-2", type: "matching", question: "Match the verb to its past participle:", options: ["trinken", "schreiben", "lesen", "sehen", "sprechen"], correctAnswer: ["getrunken", "geschrieben", "gelesen", "gesehen", "gesprochen"], xpReward: 15 },
-        { id: "ex13-3-3", type: "fill-blank", question: "Complete: Hast du das Buch _____? (Have you read the book?)", options: ["gelesen", "gelest", "gelesent", "lesen"], correctAnswer: "gelesen", explanation: "lesen \u2192 gelesen (irregular past participle).", xpReward: 10 },
-        { id: "ex13-3-4", type: "multiple-choice", question: "Why does 'besuchen' become 'besucht' and NOT 'gebesucht'?", options: ["Verbs with be- prefix don't take ge-", "It's a regular verb", "besuchen uses sein", "It's a separable verb"], correctAnswer: "Verbs with be- prefix don't take ge-", explanation: "Inseparable prefixes (be-, er-, ver-, ent-) replace the ge- prefix.", xpReward: 10 },
-        { id: "ex13-3-5", type: "fill-blank", question: "Complete: Sie hat gestern _____. (She called yesterday.) [telefonieren]", options: ["telefoniert", "getelefoniert", "telefonieren", "telefonierte"], correctAnswer: "telefoniert", explanation: "-ieren verbs don't take ge-: telefonieren \u2192 telefoniert.", xpReward: 10 },
-        { id: "ex13-3-6", type: "multiple-choice", question: "What is the past participle of 'verstehen'?", options: ["verstanden", "geverstanden", "versteht", "gevestanden"], correctAnswer: "verstanden", explanation: "verstehen has inseparable prefix ver-, so no ge-. Also irregular: verstanden.", xpReward: 10 },
-        { id: "ex13-3-7", type: "ordering", question: "Put the words in the correct order:", options: ["genommen", "Er", "den Bus", "hat"], correctAnswer: ["Er", "hat", "den Bus", "genommen"], xpReward: 20 },
-        { id: "ex13-3-8", type: "multiple-choice", question: "Which verb does NOT take ge- in the past participle?", options: ["studieren", "spielen", "kochen", "machen"], correctAnswer: "studieren", explanation: "studieren ends in -ieren, so it becomes studiert (no ge-).", xpReward: 10 }
+        { id: "ex13-3-1", type: "multiple-choice", question: "What is the past participle of 'essen' (to eat)?", options: ["geessen", "gegessen", "geesst", "gegessent"], correctAnswer: "gegessen", explanation: "'Essen' is irregular. It follows the ge-...-en pattern, and adds an extra 'g' for pronunciation: ge-g-essen.", xpReward: 10 },
+        { id: "ex13-3-2", type: "fill-blank", question: "Complete: Ich habe viel Wasser _____. (I drank lot of water.)", options: ["getrunken", "getrinkt", "getranken", "getrunkt"], correctAnswer: "getrunken", explanation: "Trinken is part of the i-a-u group. The participle becomes 'getrunken'.", xpReward: 10 },
+        { id: "ex13-3-3", type: "multiple-choice", question: "Which past participle is correct for 'sehen' (to see)?", options: ["gesehen", "geseht", "gesohn", "gesiehen"], correctAnswer: "gesehen", explanation: "'Sehen' stays very similar but ends in -en: ge-seh-en. No vowel change here!", xpReward: 10 },
+        { id: "ex13-3-4", type: "multiple-choice", question: "What is the past participle of 'schreiben' (to write)?", options: ["geschrieben", "geschreibt", "geschreiben", "geschrobben"], correctAnswer: "geschrieben", explanation: "In 'schreiben', the 'ei' flips to 'ie' in the past participle: ge-schr-ie-ben.", xpReward: 10 },
+        { id: "ex13-3-5", type: "fill-blank", question: "Complete: Hast du das Buch _____? (Have you read the book?)", options: ["gelesen", "gelest", "gelest", "gelesen"], correctAnswer: "gelesen", explanation: "'Lesen' (to read) is irregular and ends in -en: ge-les-en.", xpReward: 10 },
+        { id: "ex13-3-6", type: "multiple-choice", question: "How do you say 'I have seen you'?", options: ["Ich habe dich gesehen.", "Ich habe dich geseht.", "Ich bin dich gesehen.", "Ich habe du gesehen."], correctAnswer: "Ich habe dich gesehen.", explanation: "Structure: Subject (Ich) + Helper (habe) + Object (dich) + Participle (gesehen). 'Sehen' is not movement, so we use 'haben'.", xpReward: 10 }
       ],
       vocabulary: [
         { id: "vocab13-3-1", german: "gegessen", english: "eaten (past participle)", malayalam: "\u0D15\u0D34\u0D3F\u0D1A\u0D4D\u0D1A\u0D41", pronunciation: "ge-gess-en", example: "Ich habe Biryani gegessen.", exampleTranslation: "I ate Biryani." },

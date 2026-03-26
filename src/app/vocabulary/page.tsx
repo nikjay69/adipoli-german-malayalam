@@ -19,6 +19,7 @@ import { getAllVocabulary, ALL_MODULES, type VocabItem } from '@/lib/content/mod
 import { playVocabAudio } from '@/lib/audio';
 import { feedbackFlip } from '@/lib/feedback';
 import { SkeletonGrid } from '@/components/ui/Skeleton';
+import { useKeyboardNav } from '@/lib/useKeyboardNav';
 
 type ViewMode = 'flashcards' | 'list';
 type FilterMode = 'all' | 'learned' | 'unlearned';
@@ -48,6 +49,15 @@ export default function VocabularyPage() {
   useEffect(() => {
     shuffleVocab();
   }, [shuffleVocab]);
+
+  // Keyboard navigation: arrows to navigate, Enter to flip, Space to play audio
+  useKeyboardNav({
+    onLeft: () => { setIsFlipped(false); setCurrentCardIndex(prev => (prev > 0 ? prev - 1 : 0)); },
+    onRight: () => { setIsFlipped(false); setCurrentCardIndex(prev => (prev < vocabulary.length - 1 ? prev + 1 : prev)); },
+    onEnter: () => { setIsFlipped(!isFlipped); feedbackFlip(); },
+    onSpace: () => { const card = vocabulary[currentCardIndex]; if (card) playVocabAudio(card.id).catch(() => {}); },
+    enabled: mounted && viewMode === 'flashcards',
+  });
 
   if (!mounted) {
     return (

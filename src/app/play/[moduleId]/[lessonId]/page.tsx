@@ -3,7 +3,7 @@
 import { use, useState, useEffect, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Volume2, Loader2 } from 'lucide-react';
+import { X, Volume2, Loader2, Bookmark } from 'lucide-react';
 import { playVocabAudio, playExampleAudio } from '@/lib/audio';
 import { GameButton, ChoiceButton, Confetti, Celebration, ModuleComplete } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
@@ -26,7 +26,7 @@ type Step =
 export default function PlayLesson({ params }: { params: Promise<{ moduleId: string; lessonId: string }> }) {
   const { moduleId, lessonId } = use(params);
   const router = useRouter();
-  const { addXP, completeLesson, learnVocabulary, addSRSCard, saveCheckpoint, clearCheckpoint, userProgress } = useGameStore();
+  const { addXP, completeLesson, learnVocabulary, addSRSCard, saveCheckpoint, clearCheckpoint, toggleBookmark, userProgress } = useGameStore();
 
   const [mounted, setMounted] = useState(false);
   const [isBlocked, setIsBlocked] = useState(false);
@@ -41,6 +41,10 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [showModuleComplete, setShowModuleComplete] = useState(false);
   const [lessonFailed, setLessonFailed] = useState(false);
+  // Matching exercise state
+  const [matchPairs, setMatchPairs] = useState<Record<number, number>>({}); // left index -> right index
+  const [matchSelected, setMatchSelected] = useState<number | null>(null); // selected left index
+  const [matchChecked, setMatchChecked] = useState(false);
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -194,10 +198,10 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       learnVocabulary(lesson.vocabulary[step.index].id);
       addSRSCard(createCard(lesson.vocabulary[step.index].id));
       if (step.index < lesson.vocabulary.length - 1) { setStep({ type: 'vocab', index: step.index + 1 }); setShowVocabMeaning(false); }
-      else if (lesson.exercises.length > 0) { setStep({ type: 'exercise', index: 0 }); setSelectedAnswer(null); setAnswerState('default'); }
+      else if (lesson.exercises.length > 0) { setStep({ type: 'exercise', index: 0 }); setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false); }
       else finishLesson();
     } else if (step.type === 'exercise') {
-      if (step.index < lesson.exercises.length - 1) { setStep({ type: 'exercise', index: step.index + 1 }); setSelectedAnswer(null); setAnswerState('default'); }
+      if (step.index < lesson.exercises.length - 1) { setStep({ type: 'exercise', index: step.index + 1 }); setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false); }
       else finishLesson();
     }
   };
@@ -556,14 +560,23 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 </motion.div>
               </motion.div>
 
-              {/* Audio playback */}
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                onClick={() => playVocabAudio(lesson.vocabulary[step.index].id)}
-                className="mt-5 w-12 h-12 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center hover:bg-[var(--foreground)]/5 transition-colors"
-              >
-                <Volume2 className="w-5 h-5 text-[#d4a520]" />
-              </motion.button>
+              {/* Audio + Bookmark */}
+              <div className="flex items-center gap-3 mt-5">
+                <motion.button
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => playVocabAudio(lesson.vocabulary[step.index].id)}
+                  className="w-12 h-12 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center hover:bg-[var(--foreground)]/5 transition-colors"
+                >
+                  <Volume2 className="w-5 h-5 text-[#d4a520]" />
+                </motion.button>
+                <motion.button
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => toggleBookmark(lesson.vocabulary[step.index].id)}
+                  className="w-12 h-12 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center hover:bg-[var(--foreground)]/5 transition-colors"
+                >
+                  <Bookmark className={`w-5 h-5 ${(userProgress.bookmarkedVocab || []).includes(lesson.vocabulary[step.index].id) ? 'text-[#e94560] fill-[#e94560]' : 'text-[var(--foreground)]/40'}`} />
+                </motion.button>
+              </div>
             </motion.div>
           )}
 
@@ -594,35 +607,156 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                   {highlightGerman(lesson.exercises[step.index].question)}
                 </h2>
 
-                {/* Options */}
-                <div className="space-y-3">
-                  {lesson.exercises[step.index].options?.map((option, i) => {
-                    const isSelected = selectedAnswer === option;
-                    const isCorrect = option === lesson.exercises[step.index].correctAnswer;
-                    let state: 'default' | 'selected' | 'correct' | 'incorrect' = 'default';
-                    if (answerState === 'correct' && isCorrect) state = 'correct';
-                    else if (answerState === 'incorrect' && isSelected) state = 'incorrect';
-                    else if (answerState === 'incorrect' && isCorrect) state = 'correct';
-                    else if (isSelected) state = 'selected';
+                {/* MATCHING EXERCISE */}
+                {lesson.exercises[step.index].type === 'matching' && Array.isArray(lesson.exercises[step.index].correctAnswer) ? (() => {
+                  const exercise = lesson.exercises[step.index];
+                  const leftItems = exercise.options || [];
+                  const rightItems = exercise.correctAnswer as string[];
+                  // Shuffle right side once (use exercise id as stable seed)
+                  const shuffledRight = [...rightItems].sort((a, b) => {
+                    const ha = a.charCodeAt(0) + exercise.id.charCodeAt(exercise.id.length - 1);
+                    const hb = b.charCodeAt(0) + exercise.id.charCodeAt(exercise.id.length - 1);
+                    return (ha % 7) - (hb % 7);
+                  });
 
-                    return (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.05 }}
-                      >
-                        <ChoiceButton
-                          onClick={() => handleAnswerSelect(option)}
-                          state={state}
-                          disabled={answerState !== 'default'}
+                  const handleMatchLeft = (leftIdx: number) => {
+                    if (matchChecked) return;
+                    setMatchSelected(leftIdx);
+                  };
+
+                  const handleMatchRight = (rightIdx: number) => {
+                    if (matchChecked || matchSelected === null) return;
+                    setMatchPairs(prev => ({ ...prev, [matchSelected]: rightIdx }));
+                    setMatchSelected(null);
+                  };
+
+                  const allPaired = Object.keys(matchPairs).length === leftItems.length;
+
+                  const handleCheckMatches = () => {
+                    setMatchChecked(true);
+                    setTotalAttempted(prev => prev + 1);
+                    // Check: for each left index, the paired right item should match correctAnswer[leftIdx]
+                    const allCorrect = leftItems.every((_, leftIdx) => {
+                      const pairedRightIdx = matchPairs[leftIdx];
+                      if (pairedRightIdx === undefined) return false;
+                      return shuffledRight[pairedRightIdx] === rightItems[leftIdx];
+                    });
+                    if (allCorrect) {
+                      setAnswerState('correct');
+                      setCorrectCount(prev => prev + 1);
+                      setKuttanMsg(getRandomMessage('correct'));
+                      feedbackCorrect();
+                      setTimeout(() => goNext(), 1800);
+                    } else {
+                      setAnswerState('incorrect');
+                      setKuttanMsg(getRandomMessage('wrong'));
+                      feedbackWrong();
+                      setTimeout(() => goNext(), 2500);
+                    }
+                  };
+
+                  return (
+                    <div>
+                      <div className="grid grid-cols-2 gap-3">
+                        {/* Left column */}
+                        <div className="space-y-2">
+                          {leftItems.map((item, i) => {
+                            const isPaired = matchPairs[i] !== undefined;
+                            const isSelected = matchSelected === i;
+                            const isCorrectPair = matchChecked && isPaired && shuffledRight[matchPairs[i]] === rightItems[i];
+                            const isWrongPair = matchChecked && isPaired && shuffledRight[matchPairs[i]] !== rightItems[i];
+                            return (
+                              <motion.button
+                                key={i}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.05 }}
+                                onClick={() => handleMatchLeft(i)}
+                                className={`w-full p-3 rounded-xl border-2 text-left text-sm font-medium transition-all ${
+                                  isCorrectPair ? 'border-[#27ae60] bg-[#27ae60]/15' :
+                                  isWrongPair ? 'border-[#c0392b] bg-[#c0392b]/15' :
+                                  isSelected ? 'border-[#d4a520] bg-[#d4a520]/15' :
+                                  isPaired ? 'border-[#3b82f6]/50 bg-[#3b82f6]/10' :
+                                  'border-[var(--card-border)] bg-[var(--card-bg)]'
+                                }`}
+                              >
+                                {item}
+                              </motion.button>
+                            );
+                          })}
+                        </div>
+                        {/* Right column */}
+                        <div className="space-y-2">
+                          {shuffledRight.map((item, i) => {
+                            const pairedBy = Object.entries(matchPairs).find(([, v]) => v === i);
+                            const isPaired = pairedBy !== undefined;
+                            const leftIdx = pairedBy ? parseInt(pairedBy[0]) : -1;
+                            const isCorrectPair = matchChecked && isPaired && shuffledRight[i] === rightItems[leftIdx];
+                            const isWrongPair = matchChecked && isPaired && shuffledRight[i] !== rightItems[leftIdx];
+                            return (
+                              <motion.button
+                                key={i}
+                                initial={{ opacity: 0, x: 10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.05 }}
+                                onClick={() => handleMatchRight(i)}
+                                className={`w-full p-3 rounded-xl border-2 text-left text-sm font-medium transition-all ${
+                                  isCorrectPair ? 'border-[#27ae60] bg-[#27ae60]/15' :
+                                  isWrongPair ? 'border-[#c0392b] bg-[#c0392b]/15' :
+                                  isPaired ? 'border-[#3b82f6]/50 bg-[#3b82f6]/10' :
+                                  matchSelected !== null ? 'border-[#d4a520]/30 hover:border-[#d4a520] hover:bg-[#d4a520]/10' :
+                                  'border-[var(--card-border)] bg-[var(--card-bg)]'
+                                }`}
+                              >
+                                {item}
+                              </motion.button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                      {matchSelected !== null && (
+                        <p className="text-center text-xs text-[#d4a520] mt-2">Now tap the matching answer on the right</p>
+                      )}
+                      {allPaired && !matchChecked && (
+                        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-4">
+                          <GameButton onClick={handleCheckMatches} fullWidth variant="primary">
+                            Check Answers
+                          </GameButton>
+                        </motion.div>
+                      )}
+                    </div>
+                  );
+                })() : (
+                  /* MULTIPLE CHOICE / FILL-BLANK EXERCISE */
+                  <div className="space-y-3">
+                    {lesson.exercises[step.index].options?.map((option, i) => {
+                      const isSelected = selectedAnswer === option;
+                      const isCorrect = option === lesson.exercises[step.index].correctAnswer;
+                      let state: 'default' | 'selected' | 'correct' | 'incorrect' = 'default';
+                      if (answerState === 'correct' && isCorrect) state = 'correct';
+                      else if (answerState === 'incorrect' && isSelected) state = 'incorrect';
+                      else if (answerState === 'incorrect' && isCorrect) state = 'correct';
+                      else if (isSelected) state = 'selected';
+
+                      return (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: i * 0.05 }}
                         >
-                          {option}
-                        </ChoiceButton>
-                      </motion.div>
-                    );
-                  })}
-                </div>
+                          <ChoiceButton
+                            onClick={() => handleAnswerSelect(option)}
+                            state={state}
+                            disabled={answerState !== 'default'}
+                          >
+                            {option}
+                          </ChoiceButton>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                )}
 
                 {/* Explanation — shown after answering */}
                 {answerState !== 'default' && lesson.exercises[step.index].explanation && (

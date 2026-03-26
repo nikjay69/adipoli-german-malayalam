@@ -238,7 +238,7 @@ export default function LearnPage() {
                         return (
                           <Link
                             key={lesson.id}
-                            href={isLessonLocked ? '#' : `/learn/${module.id}/${lesson.id}`}
+                            href={isLessonLocked ? '#' : `/play/${module.id}/${lesson.id}`}
                           >
                             <div
                               className={`flex items-center gap-2 p-2 rounded-lg transition-all ${

@@ -62,6 +62,7 @@ export interface UserProgress {
   srsCards: Record<string, SRSCard>;
   studyPlan?: StudyPlan;
   completedTaskIds: string[];   // task IDs completed today
+  bookmarkedVocab: string[];    // vocab IDs bookmarked for review
 }
 
 // Level thresholds
@@ -132,6 +133,7 @@ interface GameState {
   advanceDay: () => void;
   completeTask: (taskId: string) => void;
   resetDailyTasks: () => void;
+  toggleBookmark: (vocabId: string) => void;
 }
 
 const getInitialProgress = (): UserProgress => ({
@@ -153,6 +155,7 @@ const getInitialProgress = (): UserProgress => ({
   srsCards: {},
   studyPlan: undefined,
   completedTaskIds: [],
+  bookmarkedVocab: [],
 });
 
 const calculateLevel = (xp: number): number => {
@@ -506,6 +509,21 @@ export const useGameStore = create<GameState>()(
         }));
       },
 
+      toggleBookmark: (vocabId: string) => {
+        set((state) => {
+          const bookmarks = state.userProgress.bookmarkedVocab || [];
+          const isBookmarked = bookmarks.includes(vocabId);
+          return {
+            userProgress: {
+              ...state.userProgress,
+              bookmarkedVocab: isBookmarked
+                ? bookmarks.filter(id => id !== vocabId)
+                : [...bookmarks, vocabId],
+            },
+          };
+        });
+      },
+
       resetProgress: () => {
         set({
           userProgress: getInitialProgress(),
@@ -531,6 +549,7 @@ export const useGameStore = create<GameState>()(
             journeyMilestones: merged.userProgress.journeyMilestones || [],
             srsCards: merged.userProgress.srsCards || {},
             completedTaskIds: merged.userProgress.completedTaskIds || [],
+            bookmarkedVocab: merged.userProgress.bookmarkedVocab || [],
           };
         }
         return merged;

@@ -87,7 +87,7 @@ export const MODULE_11: Module = {
           question: "How do you formally ask someone their profession in German?",
           options: ["Was sind Sie von Beruf?", "Was machst du?", "Wer bist du?", "Wie heißen Sie?"],
           correctAnswer: "Was sind Sie von Beruf?",
-          explanation: "'Was sind Sie von Beruf?' is the formal way to ask someone what they do for a living.",
+          explanation: "'Was sind Sie von Beruf?' is the formal standard. Use this for anybody you don't know well. For friends, use 'Was machst du beruflich?'.",
           xpReward: 10
         },
         {
@@ -96,6 +96,7 @@ export const MODULE_11: Module = {
           question: "Match the masculine profession to its feminine form:",
           options: ["der Arzt", "der Lehrer", "der Anwalt", "der Koch"],
           correctAnswer: ["die Ärztin", "die Lehrerin", "die Anwältin", "die Köchin"],
+          explanation: "In German, adding '-in' makes the feminine form. Note the Umlaut change in Arzt -> Ärztin and Koch -> Köchin. Grammar follows gender here!",
           xpReward: 15
         },
         {
@@ -104,7 +105,7 @@ export const MODULE_11: Module = {
           question: "Complete: Meine Mutter ist _____ von Beruf. (She is a doctor.)",
           options: ["Ärztin", "Arzt", "Arztin", "Doktor"],
           correctAnswer: "Ärztin",
-          explanation: "The feminine form of Arzt is Ärztin (note the Umlaut!). Since the mother is female, we use the feminine form.",
+          explanation: "In German, you don't say 'eine Ärztin' (a doctor) like in English. You just say the profession title directly. And since it's 'Mutter', we use the feminine 'Ärztin'.",
           xpReward: 10
         },
         {
@@ -113,7 +114,7 @@ export const MODULE_11: Module = {
           question: "What is the German word for 'nurse' (female)?",
           options: ["die Krankenschwester", "die Krankenpflegerin", "die Nurserin", "die Ärztin"],
           correctAnswer: "die Krankenschwester",
-          explanation: "Krankenschwester is the traditional term for a female nurse. Krankenpflegerin is also used and is considered more modern and gender-neutral.",
+          explanation: "Krankenschwester (Sick-sister) is the historical name. In modern hospital settings, 'Pflegefachfrau' is the official title, but 'Krankenschwester' is still used 99% of the time by patients.",
           xpReward: 10
         },
         {
@@ -122,6 +123,7 @@ export const MODULE_11: Module = {
           question: "Put this sentence in the correct word order: 'I am an engineer by profession.'",
           options: ["von Beruf", "Ich", "Ingenieur", "bin"],
           correctAnswer: ["Ich", "bin", "Ingenieur", "von Beruf"],
+          explanation: "Simple Subject-Verb-Complement structure. 'Von Beruf' always tags along at the end to specify that we're talking about work.",
           xpReward: 15
         },
         {
@@ -130,7 +132,7 @@ export const MODULE_11: Module = {
           question: "Complete: Ich _____ als Programmiererin bei Siemens. (I work as a programmer at Siemens.)",
           options: ["arbeite", "mache", "bin", "studiere"],
           correctAnswer: "arbeite",
-          explanation: "'Ich arbeite als...' is the standard way to say you work as something. 'arbeiten' = to work.",
+          explanation: "The formula is: [arbeiten] + [als] + [profession] + [bei] + [company]. Memorize this 'Als/Bei' combo!",
           xpReward: 10
         },
         {
@@ -139,7 +141,7 @@ export const MODULE_11: Module = {
           question: "Many Malayalis do an 'Ausbildung' in Germany. What is it?",
           options: ["Vocational training", "University degree", "Language course", "Internship"],
           correctAnswer: "Vocational training",
-          explanation: "Ausbildung is Germany's famous dual vocational training system — you learn on the job AND in school. Very popular among Malayalis in nursing!",
+          explanation: "Unlike in India, a vocational 'Ausbildung' is highly respected in Germany. You get paid while you learn! It's the #1 path for Kerala nurses arriving in Germany.",
           xpReward: 10
         },
         {
@@ -148,6 +150,7 @@ export const MODULE_11: Module = {
           question: "Match the German sentence to its meaning:",
           options: ["Ich studiere Informatik.", "Ich mache eine Ausbildung.", "Ich arbeite im Krankenhaus."],
           correctAnswer: ["I study computer science.", "I am doing vocational training.", "I work in the hospital."],
+          explanation: "Distinguishing between these 3 states (Student, Trainee, Worker) is essential for your residence permit paperwork too!",
           xpReward: 15
         }
       ],
@@ -180,18 +183,17 @@ export const MODULE_11: Module = {
           duration: "12:00",
           description: "Navigate your German office with confidence — essential vocabulary, phrases, and cultural insights",
           scriptOutline: [
-            "Opening: 'Whether you're heading to a Büro or a Uni in Germany, you need these words! Office-il first day-kku ready aakaam!'",
-            "Office basics: das Büro, der Schreibtisch, der Computer, der Drucker, der Bildschirm (screen)",
-            "Office life: die Besprechung (meeting), der Kollege/die Kollegin (colleague), der Chef/die Chefin (boss)",
-            "Useful phrases: 'Ich habe eine Besprechung um 10 Uhr' — I have a meeting at 10",
-            "Phone phrases: 'Guten Tag, hier spricht...' — Hello, this is... speaking",
-            "Email phrases: 'Ich sende Ihnen die Datei.' — I'll send you the file",
-            "German work culture: Pünktlichkeit (punctuality) is KING! 5 minutes early = on time!",
-            "Mittagspause — lunch break: Germans take it seriously, usually 30-60 min",
-            "Feierabend — end of work day: Germans protect their free time strictly!",
-            "Kerala vs. Germany: No chai breaks every hour, but Kaffeepause is sacred!",
-            "Tip: 'Duzen vs. Siezen' — when to use du vs. Sie at work (always start with Sie!)",
-            "Common office small talk: 'Wie war Ihr Wochenende?' — How was your weekend?"
+            "Opening: 'Whether you're heading to a Büro or a Uni in Germany, you need these words! Office-il first day-kku ready aakaam machane!'",
+            "Office basics: das Büro, der Schreibtisch (writing-table), der Computer, der Bildschirm (screen).",
+            "The Power Hierarchy: der Kollege (colleague), der Chef (boss). Note: Your boss is your 'Chef', but they aren't cooking biryani—it's just the word for leader!",
+            "Useful phrases: 'Ich habe eine Besprechung um 10 Uhr' — I have a meeting at 10.",
+            "The Phone Ritual: 'Guten Tag, hier spricht...' — Hello, this is... speaking. Never just say 'Hello'!",
+            "German work culture: Pünktlichkeit (punctuality) is not a tip, it's a LAW! 5 minutes early = on time. On time = already late!",
+            "Mittagspause — lunch break: Germans shut down everything. Don't disturb a German during their Schnittchen (sandwich) time!",
+            "Feierabend — The sacred end of work day: Once you hear 'Schönen Feierabend!', work stops. No more WhatsApp messages from the boss!",
+            "Kerala vs. Germany: No 11 AM chai break, but the Kaffeepause is sacred.",
+            "Duzen vs. Siezen: Always start with 'Sie' unless your boss explicitly says 'Du'. Don't jump the gun!",
+            "Small talk: 'Wie war Ihr Wochenende?' — The Friday/Monday standard question."
           ],
           keyVocabulary: ["das Büro", "die Besprechung", "der Kollege", "der Chef", "Pünktlichkeit", "Feierabend"],
           learningObjectives: [
@@ -235,6 +237,7 @@ export const MODULE_11: Module = {
           question: "Match the German word to its English meaning:",
           options: ["die Besprechung", "der Drucker", "die Mensa", "der Hörsaal"],
           correctAnswer: ["meeting", "printer", "cafeteria", "lecture hall"],
+          explanation: "Mastering these locations is the first step to navigating a German campus or office building.",
           xpReward: 15
         },
         {
@@ -243,7 +246,7 @@ export const MODULE_11: Module = {
           question: "Where do German university students typically eat lunch on campus?",
           options: ["die Mensa", "das Büro", "die Bibliothek", "der Hörsaal"],
           correctAnswer: "die Mensa",
-          explanation: "Die Mensa is the university cafeteria where students eat affordable meals — often just 2-3 euros!",
+          explanation: "Die Mensa is the heart of German uni life! It's cheap, fast, and where all the social plans are made. Most Mensas even offer vegan options long before it was trendy!",
           xpReward: 10
         },
         {
@@ -252,7 +255,7 @@ export const MODULE_11: Module = {
           question: "Complete: Ich habe eine _____ um 14 Uhr. (I have a meeting at 2 PM.)",
           options: ["Besprechung", "Vorlesung", "Prüfung", "Bibliothek"],
           correctAnswer: "Besprechung",
-          explanation: "Besprechung means meeting, typically used in a work/office context.",
+          explanation: "Besprechung = meeting. German meetings are very structured. Agendas are meant to be followed!",
           xpReward: 10
         },
         {
@@ -261,7 +264,7 @@ export const MODULE_11: Module = {
           question: "What does 'Feierabend' mean in German work culture?",
           options: ["End of the work day / quitting time", "Holiday party", "Friday evening", "Overtime"],
           correctAnswer: "End of the work day / quitting time",
-          explanation: "Feierabend literally means 'celebration evening' — Germans take their end-of-work-day very seriously. Work stays at work!",
+          explanation: "It's a sacred German concept. It means work is DONE. Your computer is off, and you're officially a private person again. Malayalis used to long hours back home find this refreshing!",
           xpReward: 10
         },
         {
@@ -270,15 +273,16 @@ export const MODULE_11: Module = {
           question: "Put this sentence in the correct order: 'The exam is next week.'",
           options: ["nächste Woche", "Die", "ist", "Prüfung"],
           correctAnswer: ["Die", "Prüfung", "ist", "nächste Woche"],
+          explanation: "Simple Subject (Die Prüfung) + Verb (ist) + Time (nächste Woche).",
           xpReward: 15
         },
         {
           id: "ex11-2-6",
           type: "multiple-choice",
           question: "Your colleague in Germany is called 'der Kollege'. What is the feminine form?",
-          options: ["die Kollegin", "die Kollegein", "die Kollegerin", "die Kollegatin"],
+          options: ["die Kollegin", "die Kollegin", "die Kollegerin", "die Kollegatin"],
           correctAnswer: "die Kollegin",
-          explanation: "The feminine form of Kollege is Kollegin — the -e changes to -in.",
+          explanation: "The masculine -e often drops to make room for the feminine -in. der Kollege -> die Kollegin.",
           xpReward: 10
         },
         {
@@ -287,7 +291,7 @@ export const MODULE_11: Module = {
           question: "Complete: Die Vorlesung _____ zwei Stunden. (The lecture lasts two hours.)",
           options: ["dauert", "macht", "hat", "geht"],
           correctAnswer: "dauert",
-          explanation: "'Dauern' means 'to last/take time'. 'Die Vorlesung dauert...' = The lecture lasts...",
+          explanation: "'Dauern' is specifically for duration. 'How long does the movie/lecture/flight last?' = Wie lange DAUERT es?",
           xpReward: 10
         },
         {
@@ -384,7 +388,7 @@ export const MODULE_11: Module = {
           question: "How do you start a formal email to a woman named Dr. Schneider?",
           options: ["Sehr geehrte Frau Dr. Schneider,", "Liebe Dr. Schneider,", "Hallo Frau Schneider!", "Hey Schneider,"],
           correctAnswer: "Sehr geehrte Frau Dr. Schneider,",
-          explanation: "'Sehr geehrte Frau Dr. Schneider,' is the correct formal greeting, including her title. Always use the academic title!",
+          explanation: "'Sehr geehrte' is the formal greeting for women. If she has a title like 'Dr.', you MUST include it. It’s a sign of respect in German hierarchy!",
           xpReward: 10
         },
         {
@@ -393,7 +397,7 @@ export const MODULE_11: Module = {
           question: "Complete the formal email closing: Mit freundlichen _____",
           options: ["Grüßen", "Grüße", "Gruß", "Grüssen"],
           correctAnswer: "Grüßen",
-          explanation: "'Mit freundlichen Grüßen' (With friendly regards) is the standard formal email closing in German.",
+          explanation: "The full phrase is 'Mit freundlichen Grüßen'. In emails, people often shorten it to 'MfG', but in formal writing, always write it out fully.",
           xpReward: 10
         },
         {
@@ -402,7 +406,7 @@ export const MODULE_11: Module = {
           question: "You don't know the recipient's name. How do you start your formal email?",
           options: ["Sehr geehrte Damen und Herren,", "Hallo zusammen,", "An wen es betrifft,", "Liebe alle,"],
           correctAnswer: "Sehr geehrte Damen und Herren,",
-          explanation: "This is the German equivalent of 'Dear Sir or Madam' — used when you don't know the recipient's name.",
+          explanation: "Literally 'Very honored Ladies and Gentlemen'. Use this when emailing a general office or HR department where the specific person is unknown.",
           xpReward: 10
         },
         {
@@ -411,6 +415,7 @@ export const MODULE_11: Module = {
           question: "Match the email element to its German term:",
           options: ["Subject line", "Dear Mr.", "Kind regards", "Attachment"],
           correctAnswer: ["Betreff", "Sehr geehrter Herr", "Mit freundlichen Grüßen", "die Anlage"],
+          explanation: "Crucial vocabulary! If you forget 'Betreff', your email might get filtered as spam. If you forget 'Anlage', they won't look for your CV!",
           xpReward: 15
         },
         {
@@ -419,6 +424,7 @@ export const MODULE_11: Module = {
           question: "Put these email parts in the correct order:",
           options: ["Mit freundlichen Grüßen, [Name]", "Sehr geehrte Frau Müller,", "Betreff: Frage zur Vorlesung", "Ich schreibe Ihnen bezüglich der Vorlesung am Montag."],
           correctAnswer: ["Betreff: Frage zur Vorlesung", "Sehr geehrte Frau Müller,", "Ich schreibe Ihnen bezüglich der Vorlesung am Montag.", "Mit freundlichen Grüßen, [Name]"],
+          explanation: "Structure: Subject line FIRST. Then greeting. Then body. Then sign-off. Germans love this exact order.",
           xpReward: 20
         },
         {
@@ -427,7 +433,7 @@ export const MODULE_11: Module = {
           question: "Which closing is appropriate for a semi-formal email to a colleague you know well?",
           options: ["Viele Grüße", "Mit freundlichen Grüßen", "Hochachtungsvoll", "Tschüss"],
           correctAnswer: "Viele Grüße",
-          explanation: "'Viele Grüße' (Many greetings) is a friendly but still professional closing for colleagues.",
+          explanation: "'Viele Grüße' is the perfect middle ground—professional but friendly. 'Hochachtungsvoll' is too old-fashioned (reserved for legal letters!), and 'Tschüss' is too casual.",
           xpReward: 10
         },
         {
@@ -436,7 +442,7 @@ export const MODULE_11: Module = {
           question: "Complete: Ich schreibe Ihnen _____ Ihrer Stellenanzeige. (I am writing to you regarding your job posting.)",
           options: ["bezüglich", "über", "für", "mit"],
           correctAnswer: "bezüglich",
-          explanation: "'Bezüglich' (regarding/concerning) is the formal way to state the purpose of your email.",
+          explanation: "'Bezüglich' + Genitive (though colloquially used with Dative) is the formal way to say 'regarding'. It makes you sound very competent!",
           xpReward: 10
         },
         {
@@ -445,7 +451,7 @@ export const MODULE_11: Module = {
           question: "You want to say 'Please find my CV attached.' Which is correct?",
           options: ["In der Anlage finden Sie meinen Lebenslauf.", "Ich habe meinen Lebenslauf.", "Mein Lebenslauf ist hier.", "Bitte sehen Sie meinen Lebenslauf."],
           correctAnswer: "In der Anlage finden Sie meinen Lebenslauf.",
-          explanation: "'In der Anlage finden Sie...' is the standard formal phrase for referencing email attachments in German.",
+          explanation: "The standard 'Business German' formula. 'In der Anlage' = In the attachment. 'finden Sie' = you find. 'Lebenslauf' = life's-run (CV).",
           xpReward: 10
         }
       ],
@@ -534,7 +540,7 @@ export const MODULE_11: Module = {
           question: "Complete: Ich _____ gut programmieren. (I can program well.)",
           options: ["kann", "bin", "habe", "mache"],
           correctAnswer: "kann",
-          explanation: "'Können' (can/to be able to) is used to describe abilities. 'Ich kann' = I can.",
+          explanation: "Können (can) is the modal verb for skills and abilities. Verb 1 (kann) stays at position 2, and Verb 2 (programmieren) goes to the END. The 'Abhibhashaka-Rule' (Verb final).",
           xpReward: 10
         },
         {
@@ -543,7 +549,7 @@ export const MODULE_11: Module = {
           question: "How do you say 'I have experience with programming' in German?",
           options: ["Ich habe Erfahrung mit Programmierung.", "Ich kann Erfahrung programmieren.", "Ich bin Erfahrung mit Programmierung.", "Ich mache Erfahrung Programmierung."],
           correctAnswer: "Ich habe Erfahrung mit Programmierung.",
-          explanation: "'Erfahrung mit' + Dativ is the correct structure for expressing experience with something.",
+          explanation: "The formula: Ich habe + Erfahrung + mit + [Dativ topic]. Dativ triggers here, but for nouns like Programmierung, it's straightforward.",
           xpReward: 10
         },
         {
@@ -552,6 +558,7 @@ export const MODULE_11: Module = {
           question: "Match the German skill word to its English meaning:",
           options: ["teamfähig", "zuverlässig", "flexibel", "pünktlich"],
           correctAnswer: ["team-oriented", "reliable", "flexible", "punctual"],
+          explanation: "These are 'Adjectives from Heaven' for your German CV. Germans value 'Zuverlässig' (Reliable) above almost everything else!",
           xpReward: 15
         },
         {
@@ -560,7 +567,7 @@ export const MODULE_11: Module = {
           question: "Complete: Ich interessiere _____ für Technik. (I am interested in technology.)",
           options: ["mich", "mir", "ich", "mein"],
           correctAnswer: "mich",
-          explanation: "'Sich interessieren für' is a reflexive verb. With 'ich', the reflexive pronoun is 'mich'.",
+          explanation: "'Sich interessieren für' is reflexive. Since the subject is 'Ich', the pronoun MUST be 'mich'. It means 'I interest MYSELF for tech'.",
           xpReward: 10
         },
         {
@@ -569,6 +576,7 @@ export const MODULE_11: Module = {
           question: "Put this sentence in correct order: 'I have good German skills.'",
           options: ["Deutschkenntnisse", "gute", "habe", "Ich"],
           correctAnswer: ["Ich", "habe", "gute", "Deutschkenntnisse"],
+          explanation: "Subject (Ich) + Verb (habe) + Adjective (gute) + Compound Noun (Deutsch+kenntnisse). Knowledge of German = Deutschkenntnisse.",
           xpReward: 15
         },
         {
@@ -577,7 +585,7 @@ export const MODULE_11: Module = {
           question: "What does 'das Zeugnis' mean?",
           options: ["certificate / transcript", "job application", "interview", "contract"],
           correctAnswer: "certificate / transcript",
-          explanation: "Zeugnis means certificate or transcript — you'll need your Zeugnisse for almost every job application in Germany!",
+          explanation: "In Germany, 'Zeugnisse' are a way of life. From school to every job you leave, you get a Zeugnis. No Zeugnis = proof-of-work missing!",
           xpReward: 10
         },
         {
@@ -586,7 +594,7 @@ export const MODULE_11: Module = {
           question: "Complete: Ich habe einen Bachelor-_____ in Informatik. (I have a Bachelor's degree in Computer Science.)",
           options: ["Abschluss", "Zeugnis", "Kenntnisse", "Erfahrung"],
           correctAnswer: "Abschluss",
-          explanation: "'Abschluss' means degree/diploma/completion. 'Bachelor-Abschluss' = Bachelor's degree.",
+          explanation: "Abschluss literally means 'Closing/Finishing'. It implies you finished the degree successfully. 'Bachelor-Abschluss' is the modern German way to say degree.",
           xpReward: 10
         },
         {
@@ -595,7 +603,7 @@ export const MODULE_11: Module = {
           question: "Which German word means 'to master' a skill?",
           options: ["beherrschen", "können", "lernen", "verstehen"],
           correctAnswer: "beherrschen",
-          explanation: "'Beherrschen' means to master/command. 'Ich beherrsche drei Programmiersprachen.' = I have mastery of three programming languages.",
+          explanation: "To master something at a high level. Use this for languages or software you know inside out. 'Ich beherrsche Java.'",
           xpReward: 10
         }
       ],
@@ -686,7 +694,7 @@ export const MODULE_11: Module = {
           question: "What does 'Erzählen Sie etwas über sich' mean?",
           options: ["Tell me about yourself", "What are your strengths?", "Why do you want this job?", "Do you have questions?"],
           correctAnswer: "Tell me about yourself",
-          explanation: "'Erzählen Sie etwas über sich' literally means 'Tell something about yourself' — the classic interview opener.",
+          explanation: "The standard opening of EVERY interview. It's your time to shine for 2 minutes. Focus on Your Origin -> Studies -> Experience.",
           xpReward: 10
         },
         {
@@ -695,6 +703,7 @@ export const MODULE_11: Module = {
           question: "Match the German term to its English equivalent:",
           options: ["die Bewerbung", "der Lebenslauf", "das Anschreiben", "die Stelle"],
           correctAnswer: ["application", "CV / resume", "cover letter", "position / job"],
+          explanation: "Master the terminology! When an HR person asks for your 'Unterlagen', they want this whole set of documents.",
           xpReward: 15
         },
         {
@@ -703,7 +712,7 @@ export const MODULE_11: Module = {
           question: "Complete: Warum _____ Sie hier arbeiten? (Why do you want to work here?)",
           options: ["möchten", "können", "müssen", "haben"],
           correctAnswer: "möchten",
-          explanation: "'Möchten' means 'would like to' — it's the polite way to ask about desires or wishes.",
+          explanation: "Möchten (would like) is the polite modal verb. Avoid saying 'Ich WILL' (I want), it sounds too demanding for an interview!",
           xpReward: 10
         },
         {
@@ -712,7 +721,7 @@ export const MODULE_11: Module = {
           question: "What does 'teamfähig' mean?",
           options: ["able to work in a team", "team leader", "team member", "team building"],
           correctAnswer: "able to work in a team",
-          explanation: "'Teamfähig' means capable of teamwork — one of the most valued soft skills in German workplaces.",
+          explanation: "'Team-fähig' = Team-capable. It’s the most requested soft skill in Germany. Mention it, and you're halfway there!",
           xpReward: 10
         },
         {
@@ -721,6 +730,7 @@ export const MODULE_11: Module = {
           question: "Put this self-introduction in logical order:",
           options: ["Deshalb möchte ich bei Ihrer Firma arbeiten.", "Ich komme aus Kerala, Indien.", "Ich habe drei Jahre Erfahrung als Programmierer.", "Ich habe Informatik studiert."],
           correctAnswer: ["Ich komme aus Kerala, Indien.", "Ich habe Informatik studiert.", "Ich habe drei Jahre Erfahrung als Programmierer.", "Deshalb möchte ich bei Ihrer Firma arbeiten."],
+          explanation: "Logic: Where you are from -> Your foundation (studies) -> Your practical proof (experience) -> Why you are HERE.",
           xpReward: 20
         },
         {
