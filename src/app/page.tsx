@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Flame, Star, Zap, Award, Clock, CheckCircle2, Circle, ArrowRight, Trophy, CalendarDays, Lightbulb, BookOpen, BookOpenText } from 'lucide-react';
 import { GameButton } from '@/components/game';
+import { CharacterGuide } from '@/components/character';
+import { getRandomMessage } from '@/lib/content/dialogue';
 import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS } from '@/lib/store';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { getNextCoreLesson } from '@/lib/curriculum';
@@ -34,11 +36,19 @@ export default function Home() {
   const { userProgress, updateStreak, completeTask } = useGameStore();
   const [mounted, setMounted] = useState(false);
   const [showJourney, setShowJourney] = useState(false);
+  const [kuttanMessage, setKuttanMessage] = useState('');
 
   useEffect(() => {
     setMounted(true);
     updateStreak();
   }, [updateStreak]);
+
+  useEffect(() => {
+    if (mounted) {
+      const isNewUser = userProgress.completedLessons.length === 0;
+      setKuttanMessage(getRandomMessage(isNewUser ? 'welcome' : 'comeback'));
+    }
+  }, [mounted, userProgress.completedLessons.length]);
 
   // Redirect to intro if first visit
   useEffect(() => {
@@ -155,6 +165,22 @@ export default function Home() {
           <span className="font-bold text-xs text-[#8b5cf6]">{userProgress.learnedVocabulary.length}</span>
         </div>
       </motion.div>
+
+      {/* Kuttan — small, inline, not blocking content */}
+      {mounted && (
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+          className="flex items-center gap-2 mb-2 px-1"
+        >
+          <CharacterGuide
+            messages={kuttanMessage}
+            mood={completedCount === 0 ? 'waving' : 'happy'}
+            size="sm"
+          />
+        </motion.div>
+      )}
 
       {/* ── Daily Schedule Section — PRIMARY ACTION ── */}
       {schedule && studyPlan ? (
