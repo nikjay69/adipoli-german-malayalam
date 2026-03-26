@@ -13,6 +13,24 @@ import { getNextCoreLesson } from '@/lib/curriculum';
 import { JOURNEY_LOCATIONS, getCurrentLocation } from '@/lib/journey';
 import { calculateExamReadiness } from '@/lib/exam-readiness';
 import { getDailySchedule, type DailySchedule, type DailyTask } from '@/lib/study-plan';
+import { Lightbulb } from 'lucide-react';
+
+const DAILY_TIPS = [
+  "Speak German for 5 minutes every morning. Your brain is freshest then.",
+  "When you see a sign, try to read it in German first.",
+  "Label 10 objects in your room with sticky notes in German.",
+  "Listen to German radio for 10 min before bed. Your brain processes it while sleeping.",
+  "Don't translate in your head. Think directly in German — even if it's just 'Hallo!'",
+  "Write 3 German sentences in a notebook before bed. Hand-writing improves memory 30%.",
+  "Watch a German YouTube video with subtitles. Pause and repeat sentences.",
+  "Change your phone language to German for one hour. You'll learn UI words fast!",
+  "Teach someone ONE German word today. Teaching is the best way to learn.",
+  "Mistakes are proof you're trying. A German speaker will always appreciate your effort.",
+  "The Goethe A1 exam tests COMMUNICATION, not perfection. Imperfect German > silent German.",
+  "Review vocabulary before sleep — studies show sleep consolidates language memory.",
+  "Don't study for 3 hours once. Study 30 minutes, 6 times. Spaced repetition wins.",
+  "Record yourself speaking German. Listen next week — you'll be amazed at your progress.",
+];
 
 export default function Home() {
   const router = useRouter();
@@ -460,6 +478,26 @@ export default function Home() {
           </motion.div>
         )}
       </div>
+
+      {/* Tip of the Day */}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.65 }}
+        className="w-full max-w-sm mx-auto mt-4"
+      >
+        <div className="game-card p-3">
+          <div className="flex items-start gap-2.5">
+            <Lightbulb className="w-4 h-4 text-[#ffd93d] flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="text-xs font-semibold text-[var(--foreground)]/50 mb-1">Tip of the Day</p>
+              <p className="text-xs text-[var(--foreground)]/70 italic leading-relaxed">
+                &ldquo;{DAILY_TIPS[new Date().getDate() % DAILY_TIPS.length]}&rdquo;
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
 
       {/* Journey Map */}
       <motion.div

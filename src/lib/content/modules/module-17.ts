@@ -9,6 +9,12 @@ export const MODULE_17: Module = {
   color: "#b91c1c",
   totalHours: 12,
   unlockRequirement: "Complete Module 15 (Module 16 is optional)",
+  learningTips: [
+    "In Hören: read the question BEFORE the audio plays. You'll know what to listen for.",
+    "In Lesen: you don't need to understand every word. Find the KEY information.",
+    "In Schreiben: address ALL 3 points. Missing one = losing marks even if your German is perfect.",
+    "In Sprechen: speak in SENTENCES, not single words. 'Ich heiße...' not just 'Maria'.",
+  ],
   lessons: [
 
     // ==================== LESSON 17-1: Exam Format Overview & Tips ====================

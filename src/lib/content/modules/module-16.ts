@@ -9,6 +9,11 @@ export const MODULE_16: Module = {
   color: "#0d9488",
   totalHours: 12,
   unlockRequirement: "Complete Module 15",
+  learningTips: [
+    "Dativ case feels hard at first, but you only need 3 changes: der->dem, die->der, die(pl)->den. Drill these!",
+    "Wechselpräpositionen (two-way prepositions) use Akkusativ for movement, Dativ for location. 'Wohin?' = Akk, 'Wo?' = Dat.",
+    "At this stage, make mistakes ON PURPOSE and correct yourself. Self-correction builds deeper grammar awareness.",
+  ],
   lessons: [
     // ==================== LESSON 16-1 ====================
     {

@@ -62,4 +62,5 @@ export interface Module {
   totalHours: number;
   lessons: Lesson[];
   unlockRequirement?: string;
+  learningTips?: string[];  // Pedagogical tips shown at module start
 }

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Volume2, Heart, Loader2 } from 'lucide-react';
 import { playVocabAudio, playExampleAudio } from '@/lib/audio';
-import { GameButton, ChoiceButton, Confetti, XPGain, Celebration } from '@/components/game';
+import { GameButton, ChoiceButton, Confetti, XPGain, Celebration, ModuleComplete } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
 import { VideoPlayer } from '@/components/media/VideoPlayer';
 import { getRandomMessage } from '@/lib/content/dialogue';
@@ -40,6 +40,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const [showCelebration, setShowCelebration] = useState(false);
   const [kuttanMsg, setKuttanMsg] = useState('');
   const [showExitConfirm, setShowExitConfirm] = useState(false);
+  const [showModuleComplete, setShowModuleComplete] = useState(false);
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -219,7 +220,20 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     clearCheckpoint();
     addXP(lesson.xpReward);
     setStep({ type: 'complete' });
-    setShowCelebration(true);
+
+    // Check if this was the LAST lesson in the module
+    const isLastLesson = lesson.id === module.lessons[module.lessons.length - 1].id;
+    const allOtherLessonsDone = module.lessons
+      .filter(l => l.id !== lesson.id)
+      .every(l => userProgress.completedLessons.some(cl => cl.lessonId === l.id));
+
+    if (isLastLesson && allOtherLessonsDone) {
+      // Module complete! Award bonus XP
+      addXP(100);
+      setShowModuleComplete(true);
+    } else {
+      setShowCelebration(true);
+    }
   };
 
   const handleAnswerSelect = (answer: string) => {
@@ -295,6 +309,55 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
         xpEarned={lesson.xpReward}
         onContinue={() => { setShowCelebration(false); router.push('/'); }}
       />
+
+      {/* Module Completion Celebration */}
+      {showModuleComplete && (() => {
+        const moduleIndex = ALL_MODULES.findIndex(m => m.id === module.id);
+        const nextMod = moduleIndex < ALL_MODULES.length - 1 ? ALL_MODULES[moduleIndex + 1] : undefined;
+        // Count completed modules (including this one we just finished)
+        const completedModuleCount = ALL_MODULES.filter(m =>
+          m.lessons.every(l =>
+            l.id === lesson.id || userProgress.completedLessons.some(cl => cl.lessonId === l.id)
+          )
+        ).length;
+        // Calculate avg score for this module's lessons
+        const moduleLessonScores = module.lessons.map(l => {
+          if (l.id === lesson.id) {
+            return lesson.exercises.length > 0
+              ? Math.round((correctCount / lesson.exercises.length) * 100)
+              : 100;
+          }
+          const progress = userProgress.completedLessons.find(cl => cl.lessonId === l.id);
+          return progress?.score ?? 0;
+        });
+        const avgScore = Math.round(
+          moduleLessonScores.reduce((a, b) => a + b, 0) / moduleLessonScores.length
+        );
+        // Count vocab learned in this module
+        const moduleVocabIds = module.lessons.flatMap(l => l.vocabulary.map(v => v.id));
+        const vocabLearned = moduleVocabIds.filter(id =>
+          userProgress.learnedVocabulary.includes(id)
+        ).length;
+
+        return (
+          <ModuleComplete
+            module={module}
+            nextModule={nextMod}
+            avgScore={avgScore}
+            vocabLearned={vocabLearned}
+            completedModuleCount={completedModuleCount}
+            onContinue={() => {
+              setShowModuleComplete(false);
+              if (nextMod) {
+                router.push(`/play/${nextMod.id}/${nextMod.lessons[0].id}`);
+              } else {
+                router.push('/');
+              }
+            }}
+          />
+        );
+      })()}
+
 
       {/* Failed lesson — retry required */}
       {lessonFailed && step.type === 'complete' && !showCelebration && (

@@ -9,6 +9,11 @@ export const MODULE_18: Module = {
   color: "#166534",
   totalHours: 12,
   unlockRequirement: "Complete Module 17",
+  learningTips: [
+    "For Schreiben: practice writing one short email per day (3-4 sentences). Speed AND accuracy matter on exam day.",
+    "For Sprechen: practice with a timer. Part 1 (introduce yourself) should be smooth in under 2 minutes.",
+    "Simulate exam conditions: set a timer, no dictionary, quiet room. Your brain needs to practice under pressure.",
+  ],
   lessons: [
     // ==================== LESSON 18-1 ====================
     {

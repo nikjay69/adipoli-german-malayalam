@@ -9,6 +9,11 @@ export const MODULE_13: Module = {
   color: "#7c3aed",
   totalHours: 14,
   unlockRequirement: "Complete Module 12",
+  learningTips: [
+    "Perfekt tense: 80% of verbs use 'haben'. Movement verbs (gehen, fahren, kommen) use 'sein'.",
+    "The past participle goes to the END: 'Ich HABE gestern Pizza GEGESSEN.'",
+    "Tell someone what you did yesterday — in German. Every day. This is how fluency happens.",
+  ],
   lessons: [
     {
       id: "13-1",

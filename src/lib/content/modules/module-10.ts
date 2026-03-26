@@ -9,6 +9,11 @@ export const MODULE_10: Module = {
   color: "#ec4899",
   totalHours: 10,
   unlockRequirement: "Complete Module 9",
+  learningTips: [
+    "Touch each body part and say it in German: der Kopf, die Hand, das Bein. Physical association = faster recall.",
+    "Practice saying 'Ich habe Kopfschmerzen' (I have a headache) — you WILL need this in Germany.",
+    "German compound words are logical: Kopf (head) + Schmerzen (pain) = Kopfschmerzen. Break them apart to understand!",
+  ],
   lessons: [
     {
       id: "10-1",

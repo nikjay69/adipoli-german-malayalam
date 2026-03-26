@@ -9,6 +9,11 @@ export const MODULE_12: Module = {
   color: "#84cc16",
   totalHours: 8,
   unlockRequirement: "Complete Module 11",
+  learningTips: [
+    "Talk about YOUR hobbies in German — personal relevance makes vocabulary stick 3x faster.",
+    "Watch weather forecasts in German on YouTube. Real-world input trains your ears.",
+    "Making plans uses the future: 'Am Samstag gehe ich ins Kino.' Practice inviting friends auf Deutsch!",
+  ],
   lessons: [
     // ─── Lesson 12-1: Hobbies ────────────────────────────────────────
     {

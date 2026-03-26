@@ -9,6 +9,11 @@ export const MODULE_14: Module = {
   color: "#dc2626",
   totalHours: 10,
   unlockRequirement: "Complete Module 13",
+  learningTips: [
+    "Fill out a practice Anmeldeformular (registration form) in German — you'll do this for real on day one in Germany.",
+    "German bureaucracy runs on paper. Learn key form words: Vorname, Nachname, Geburtsdatum, Unterschrift.",
+    "Formal letters follow a strict format. Memorize: Sehr geehrte... → body → Mit freundlichen Grüßen.",
+  ],
   lessons: [
     // =========================================================
     // LESSON 14-1: Filling Out Forms

@@ -10,6 +10,11 @@ export const MODULE_3: Module = {
   color: "#10b981",
   totalHours: 12,
   unlockRequirement: "Complete Module 2",
+  learningTips: [
+    "German reverses numbers: 21 = einundzwanzig (one-and-twenty). Practice counting backwards!",
+    "Write the time in German every time you check your phone today.",
+    "Numbers become automatic only with daily practice. Count your steps in German!",
+  ],
   lessons: [
     // ─── Lesson 3-1: Numbers 0-20 ───
     {

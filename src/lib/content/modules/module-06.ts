@@ -10,6 +10,11 @@ export const MODULE_6: Module = {
   color: "#ef4444",
   totalHours: 12,
   unlockRequirement: "Complete Module 5",
+  learningTips: [
+    "Learn food words with their articles: das Brot, der Reis, die Kartoffel. Gender is part of the word!",
+    "Next time you eat, describe your meal in German. 'Ich esse Reis mit Curry. Das ist lecker!'",
+    "'Gern' is magic: add it after any verb to say you LIKE doing it. 'Ich esse gern' = I like to eat.",
+  ],
   lessons: [
     // ──────────────────────────────────────────────
     // Lesson 6-1: Common Foods

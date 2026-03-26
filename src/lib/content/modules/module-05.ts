@@ -10,6 +10,11 @@ export const MODULE_5: Module = {
   color: "#f59e0b",
   totalHours: 12,
   unlockRequirement: "Complete Module 4",
+  learningTips: [
+    "Narrate your morning routine in German while doing it: 'Ich stehe auf, ich dusche...'",
+    "Separable verbs split in sentences: 'Ich stehe um 7 auf' — the prefix goes to the END.",
+    "Record yourself describing your day. Listen back tomorrow — you'll hear your progress!",
+  ],
   lessons: [
     // ──────────────────────────────────────────────
     // Lesson 5-1: Regular Verbs Present Tense

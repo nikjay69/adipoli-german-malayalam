@@ -9,6 +9,11 @@ export const MODULE_2: Module = {
   color: "#0f3460",
   totalHours: 12,
   unlockRequirement: "Complete Module 1",
+  learningTips: [
+    "Practice introducing yourself in the mirror every morning. Repetition builds confidence.",
+    "Spell your name in German letters daily — you WILL need this at German offices.",
+    "The verb 'sein' (to be) is used in nearly every sentence. Drill it until it's automatic: bin, bist, ist, sind, seid, sind.",
+  ],
   lessons: [
     // ──────────────────────────────────────────────
     // LESSON 2-1: What's Your Name?
@@ -93,7 +98,7 @@ export const MODULE_2: Module = {
           question: "How do you ask 'What's your name?' to your new boss?",
           options: ["Wie heißen Sie?", "Wie heißt du?", "Ich heiße...", "Wer bist du?"],
           correctAnswer: "Wie heißen Sie?",
-          explanation: "Use 'Sie' form with bosses and in formal situations. 'Wie heißen Sie?' is polite and professional.",
+          explanation: "The verb changes with formality: 'Wie heißT DU?' (informal, -t ending) vs 'Wie heißEN SIE?' (formal, -en ending). Boss = always Sie.",
           xpReward: 10
         },
         {
@@ -102,7 +107,7 @@ export const MODULE_2: Module = {
           question: "Complete: _____ heiße Priya. (My name is Priya.)",
           options: ["Ich", "Du", "Er", "Wir"],
           correctAnswer: "Ich",
-          explanation: "'Ich heiße...' means 'My name is...' — literally 'I am called...'",
+          explanation: "'Ich heiße' literally means 'I am called'. Three ways to say your name: 'Ich heiße...' (standard), 'Mein Name ist...' (formal), 'Ich bin...' (casual).",
           xpReward: 10
         },
         {
@@ -111,7 +116,7 @@ export const MODULE_2: Module = {
           question: "What does 'Freut mich!' mean?",
           options: ["Nice to meet you!", "Where are you from?", "What's your name?", "I'm fine, thanks"],
           correctAnswer: "Nice to meet you!",
-          explanation: "Freut mich (literally 'pleases me') is used when meeting someone for the first time.",
+          explanation: "'Freut mich!' literally means 'pleases me!' — said when meeting someone. The reply is 'Gleichfalls!' (likewise). This pair is your go-to for first meetings.",
           xpReward: 10
         },
         {
@@ -136,7 +141,7 @@ export const MODULE_2: Module = {
           question: "Complete: Können Sie das _____? (Can you spell that?)",
           options: ["buchstabieren", "sprechen", "schreiben", "hören"],
           correctAnswer: "buchstabieren",
-          explanation: "'Buchstabieren' means 'to spell'. Very useful at German offices!",
+          explanation: "'Buchstabieren' = to spell (from 'Buchstabe' = letter). At German offices, you'll hear 'Können Sie das buchstabieren?' constantly. Practice spelling your name in German letters!",
           xpReward: 10
         },
         {
@@ -145,7 +150,7 @@ export const MODULE_2: Module = {
           question: "Someone says 'Freut mich!' to you. What's the best response?",
           options: ["Gleichfalls!", "Danke schön!", "Auf Wiedersehen!", "Ich heiße..."],
           correctAnswer: "Gleichfalls!",
-          explanation: "'Gleichfalls' means 'Likewise' — the perfect response when someone says 'Nice to meet you'.",
+          explanation: "The pair: 'Freut mich!' → 'Gleichfalls!' works like 'Nice to meet you' → 'You too!' in English. Always respond — staying silent is awkward!",
           xpReward: 10
         },
         {
@@ -154,7 +159,7 @@ export const MODULE_2: Module = {
           question: "Which letter in the German alphabet is pronounced 'tset'?",
           options: ["Z", "C", "S", "T"],
           correctAnswer: "Z",
-          explanation: "The German Z is pronounced 'tset' — very different from the English 'zee'!",
+          explanation: "German Z = 'tset', not 'zee'! Tricky German letters: J='yot', V='fow', W='veh', Y='üpsilon', Z='tset'. These catch Indians off-guard the most.",
           xpReward: 10
         }
       ],
@@ -266,7 +271,7 @@ export const MODULE_2: Module = {
           question: "How do you say 'I am Indian' in German (male speaker)?",
           options: ["Ich bin Inder.", "Ich bin indisch.", "Ich bin Indien.", "Ich bin Indianer."],
           correctAnswer: "Ich bin Inder.",
-          explanation: "For nationality as a noun, use 'Inder' (male) or 'Inderin' (female). 'Indianer' means Native American — big difference!",
+          explanation: "CAREFUL: Inder = Indian person, Indianer = Native American! This is a common and embarrassing mistake. Male: Inder, Female: Inderin. Never say 'Indianer' about yourself!",
           xpReward: 10
         },
         {
@@ -283,7 +288,7 @@ export const MODULE_2: Module = {
           question: "Complete: Ich komme aus _____ Schweiz. (I come from Switzerland)",
           options: ["der", "die", "das", "dem"],
           correctAnswer: "der",
-          explanation: "'Die Schweiz' becomes 'der Schweiz' after 'aus' because 'aus' requires the Dativ case. Die → der in Dativ for feminine nouns.",
+          explanation: "'Aus' triggers Dativ case: die → der. So 'die Schweiz' becomes 'aus der Schweiz'. Just memorize the exceptions: die Schweiz, die Türkei, die USA, der Iran need articles.",
           xpReward: 10
         },
         {
@@ -292,7 +297,7 @@ export const MODULE_2: Module = {
           question: "Which continent is Germany in?",
           options: ["Europa", "Asien", "Nordamerika", "Afrika"],
           correctAnswer: "Europa",
-          explanation: "Deutschland liegt in Europa — Germany is in Europe.",
+          explanation: "Deutschland liegt in Europa. Memory trick: the 7 continents in German are mostly similar to English — Europa, Asien, Afrika, Nordamerika, Südamerika, Australien, Antarktis.",
           xpReward: 10
         },
         {
@@ -301,7 +306,7 @@ export const MODULE_2: Module = {
           question: "Which of these countries NEEDS an article in German?",
           options: ["die Schweiz", "Indien", "Deutschland", "Spanien"],
           correctAnswer: "die Schweiz",
-          explanation: "Most countries have no article, but die Schweiz, die Türkei, die USA, der Iran, and a few others always need one.",
+          explanation: "Most countries need NO article: 'aus Indien', 'aus Deutschland'. But some always need one: die Schweiz, die Türkei, die USA, der Iran. Memorize these 4 exceptions!",
           xpReward: 10
         },
         {
@@ -318,7 +323,7 @@ export const MODULE_2: Module = {
           question: "Complete: Ich komme aus _____ USA. (I come from the USA)",
           options: ["den", "der", "die", "dem"],
           correctAnswer: "den",
-          explanation: "'Die USA' is plural. After 'aus' (Dativ), die (plural) → den. So: 'aus den USA'.",
+          explanation: "USA is plural (die USA), so in Dativ: die → den. 'Aus den USA.' Dativ rule: der→dem, die→der, die(plural)→den. You'll master this over time!",
           xpReward: 10
         },
         {
@@ -443,7 +448,7 @@ export const MODULE_2: Module = {
           question: "How do you say 'I am an engineer' in German?",
           options: ["Ich bin Ingenieur.", "Ich bin ein Ingenieur.", "Ich habe Ingenieur.", "Ich bin der Ingenieur."],
           correctAnswer: "Ich bin Ingenieur.",
-          explanation: "In German, you don't use an article (ein/eine) before professions. 'Ich bin Ingenieur' — no 'ein' needed!",
+          explanation: "German rule: NO article before professions! English says 'I am AN engineer', but German says 'Ich bin Ingenieur' — drop the 'ein'. This catches everyone!",
           xpReward: 10
         },
         {
@@ -452,7 +457,7 @@ export const MODULE_2: Module = {
           question: "Complete: Du _____ sehr nett. (You are very nice.)",
           options: ["bist", "bin", "ist", "sind"],
           correctAnswer: "bist",
-          explanation: "'Du bist' — the conjugation of 'sein' for 'du' (you, informal) is 'bist'.",
+          explanation: "Sein conjugation chant: ich BIN, du BIST, er IST, wir SIND, ihr SEID, sie SIND. Sing it like a song — rhythm helps memory!",
           xpReward: 10
         },
         {
@@ -469,7 +474,7 @@ export const MODULE_2: Module = {
           question: "What is the female form of 'Arzt' (doctor)?",
           options: ["Ärztin", "Arztin", "Arztfrau", "Doktorin"],
           correctAnswer: "Ärztin",
-          explanation: "Arzt → Ärztin. The umlaut (ä) change plus '-in' ending is the female form.",
+          explanation: "Female professions usually add '-in': Lehrer → Lehrerin. But some also get an umlaut: Arzt → Ärztin, Koch → Köchin. Watch for these vowel changes!",
           xpReward: 10
         },
         {
@@ -478,7 +483,7 @@ export const MODULE_2: Module = {
           question: "Complete: Wir _____ aus Kerala. (We are from Kerala.)",
           options: ["sind", "bin", "seid", "ist"],
           correctAnswer: "sind",
-          explanation: "'Wir sind' — the conjugation of 'sein' for 'wir' (we) is 'sind'.",
+          explanation: "'Wir sind' (we are) and 'sie sind' (they are) use the SAME form — 'sind'. Handy! Only ich/du/er have unique forms: bin/bist/ist.",
           xpReward: 10
         },
         {
@@ -495,7 +500,7 @@ export const MODULE_2: Module = {
           question: "How do you ask 'What is your profession?' formally?",
           options: ["Was sind Sie von Beruf?", "Was machst du?", "Wie heißen Sie?", "Wo arbeiten du?"],
           correctAnswer: "Was sind Sie von Beruf?",
-          explanation: "'Was sind Sie von Beruf?' is the formal way to ask about someone's profession. Note: 'sind' because it uses 'Sie'.",
+          explanation: "Two ways to ask: formal = 'Was sind Sie von Beruf?' (with Sie), casual = 'Was machst du beruflich?' (with du). For job interviews, always use the Sie version!",
           xpReward: 10
         },
         {
@@ -504,7 +509,7 @@ export const MODULE_2: Module = {
           question: "Complete: Er _____ Programmierer bei Bosch. (He is a programmer at Bosch.)",
           options: ["ist", "bin", "bist", "sind"],
           correctAnswer: "ist",
-          explanation: "'Er ist' — the conjugation of 'sein' for 'er' (he) is 'ist'.",
+          explanation: "'Er ist' = he is. Same form for sie (she) ist and es (it) ist. All three third-person singulars use 'ist' — that's one less thing to memorize!",
           xpReward: 10
         }
       ],
@@ -621,7 +626,7 @@ export const MODULE_2: Module = {
           question: "Complete: Du _____ sehr gut Deutsch! (You speak very good German!)",
           options: ["sprichst", "spreche", "spricht", "sprechen"],
           correctAnswer: "sprichst",
-          explanation: "'Sprechen' has a vowel change for du: sprechen → du sprichst (e → i).",
+          explanation: "Stem-changing verbs: the vowel changes for du and er/sie/es ONLY. sprechen: ich spreche, du sprichst (e→i), er spricht. Wir/ihr/sie stay normal!",
           xpReward: 10
         },
         {
@@ -630,7 +635,7 @@ export const MODULE_2: Module = {
           question: "How do you say 'Malayalam is my mother tongue' in German?",
           options: ["Malayalam ist meine Muttersprache.", "Malayalam ist mein Muttersprache.", "Ich habe Malayalam Muttersprache.", "Meine Sprache ist Malayalam Mutter."],
           correctAnswer: "Malayalam ist meine Muttersprache.",
-          explanation: "'Muttersprache' (mother tongue) is feminine, so we use 'meine' (my, feminine form).",
+          explanation: "'Muttersprache' = mother tongue (die Muttersprache, feminine). Memory trick: Mutter (mother) + Sprache (language). With feminine nouns, use 'meine' not 'mein'.",
           xpReward: 10
         },
         {

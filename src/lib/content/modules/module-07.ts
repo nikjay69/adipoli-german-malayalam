@@ -10,6 +10,11 @@ export const MODULE_7: Module = {
   color: "#06b6d4",
   totalHours: 10,
   unlockRequirement: "Complete Module 6",
+  learningTips: [
+    "Practice prices at home: look at items and say their price in German. 'Das kostet drei Euro fünfzig.'",
+    "Comparatives in German follow a simple pattern: add '-er'. Bigger = größer, cheaper = billiger.",
+    "At a German supermarket, you bag your own groceries FAST. Learn 'die Tüte' (bag) early!",
+  ],
   lessons: [
     // ─── Lesson 7-1: At the Supermarket ───
     {

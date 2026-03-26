@@ -10,6 +10,11 @@ export const MODULE_8: Module = {
   color: "#a855f7",
   totalHours: 10,
   unlockRequirement: "Complete Module 7",
+  learningTips: [
+    "Walk through your room and name everything in German: der Tisch, das Bett, der Stuhl...",
+    "Prepositions with Dativ (in, auf, an) are used constantly with rooms. 'Ich bin IN der Küche.'",
+    "German housing ads use abbreviations: ZKB = Zimmer, Küche, Bad. Learn to decode them!",
+  ],
   lessons: [
     // ─── Lesson 8-1: Rooms & Furniture ───
     {

@@ -9,6 +9,11 @@ export const MODULE_15: Module = {
   color: "#ea580c",
   totalHours: 8,
   unlockRequirement: "Complete Module 14",
+  learningTips: [
+    "Culture IS language. Understanding German customs (Mülltrennung, Ruhezeit) helps you understand German sentences about them.",
+    "Watch one German TV show or movie per week with subtitles. Entertainment is stealth learning!",
+    "Germans value directness — 'Das ist nicht gut' means exactly that, not a personal attack. Adjust your cultural filter.",
+  ],
   lessons: [
     // ==================== LESSON 15-1 ====================
     {

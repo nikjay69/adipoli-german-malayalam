@@ -10,6 +10,11 @@ export const MODULE_4: Module = {
   color: "#8b5cf6",
   totalHours: 12,
   unlockRequirement: "Complete Module 3",
+  learningTips: [
+    "Every German noun has a gender (der/die/das). Always learn the article WITH the word — never alone!",
+    "Draw your family tree in German. Label everyone with 'mein/meine' — this makes possessives stick.",
+    "Adjective endings change based on gender. For now, just notice the pattern — mastery comes with practice.",
+  ],
   lessons: [
     // ─── Lesson 4-1: Family Members ───
     {

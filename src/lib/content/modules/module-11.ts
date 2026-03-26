@@ -9,6 +9,11 @@ export const MODULE_11: Module = {
   color: "#0891b2",
   totalHours: 10,
   unlockRequirement: "Complete Module 10",
+  learningTips: [
+    "Write a mock German email every week. Start with 'Sehr geehrte Damen und Herren,' — muscle memory for formal writing.",
+    "German work culture values punctuality and directness. Learn 'pünktlich' (punctual) — it's a compliment!",
+    "Practice your self-introduction for interviews: Name, Herkunft, Beruf, Sprachen — in that order.",
+  ],
   lessons: [
     // ─── Lesson 11-1: Professions in Detail ───────────────────────────
     {

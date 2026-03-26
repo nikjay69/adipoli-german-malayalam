@@ -22,6 +22,10 @@ export default function WordMatchGame() {
   const [mistakes, setMistakes] = useState(0);
   const [timeLeft, setTimeLeft] = useState(60);
   const [showWrong, setShowWrong] = useState(false);
+  const [streak, setStreak] = useState(0);
+  const [showCombo, setShowCombo] = useState(false);
+  const [matchedPronunciation, setMatchedPronunciation] = useState<{ word: string; pronunciation: string } | null>(null);
+  const [wrongFeedback, setWrongFeedback] = useState<{ german: string; english: string } | null>(null);
 
   const shuffleArray = <T,>(array: T[]): T[] => {
     const newArray = [...array];
@@ -34,7 +38,13 @@ export default function WordMatchGame() {
 
   const initGame = useCallback(() => {
     const allVocab = getAllVocabulary();
-    const selectedWords = shuffleArray(allVocab).slice(0, 6);
+    // Difficulty: pick 3 short/common words + 3 longer/harder words
+    const sorted = [...allVocab].sort((a, b) => a.german.length - b.german.length);
+    const easyPool = sorted.slice(0, Math.ceil(sorted.length / 2));
+    const hardPool = sorted.slice(Math.ceil(sorted.length / 2));
+    const easyPicks = shuffleArray(easyPool).slice(0, 3);
+    const hardPicks = shuffleArray(hardPool).slice(0, 3);
+    const selectedWords = [...easyPicks, ...hardPicks];
     setWords(selectedWords);
     setGermanWords(shuffleArray(selectedWords.map(w => ({ word: w.german, id: w.id, matched: false }))));
     setEnglishWords(shuffleArray(selectedWords.map(w => ({ word: w.english, id: w.id, matched: false }))));
@@ -44,6 +54,10 @@ export default function WordMatchGame() {
     setMistakes(0);
     setTimeLeft(60);
     setShowWrong(false);
+    setStreak(0);
+    setShowCombo(false);
+    setMatchedPronunciation(null);
+    setWrongFeedback(null);
   }, []);
 
   useEffect(() => {
@@ -94,15 +108,47 @@ export default function WordMatchGame() {
       setScore(prev => prev + 1);
       learnVocabulary(germanId);
 
+      // Streak tracking
+      const newStreak = streak + 1;
+      setStreak(newStreak);
+      if (newStreak >= 3) {
+        setShowCombo(true);
+        setTimeout(() => setShowCombo(false), 1200);
+      }
+
+      // Show pronunciation for matched word
+      const matchedWord = words.find(w => w.id === germanId);
+      if (matchedWord) {
+        setMatchedPronunciation({
+          word: matchedWord.german,
+          pronunciation: matchedWord.pronunciation,
+        });
+        setTimeout(() => setMatchedPronunciation(null), 2000);
+      }
+
       // Check if all matched
       if (score + 1 === words.length) {
         setTimeout(endGame, 500);
       }
     } else {
-      // Wrong match
+      // Wrong match — show teaching moment
       setMistakes(prev => prev + 1);
+      setStreak(0);
       setShowWrong(true);
-      setTimeout(() => setShowWrong(false), 500);
+
+      // Show what the correct pair was
+      const germanWord = words.find(w => w.id === germanId);
+      const englishWord = words.find(w => w.id === englishId);
+      if (germanWord && englishWord) {
+        setWrongFeedback({
+          german: `${germanWord.german} = ${germanWord.english}`,
+          english: `${englishWord.german} = ${englishWord.english}`,
+        });
+      }
+      setTimeout(() => {
+        setShowWrong(false);
+        setWrongFeedback(null);
+      }, 2000);
     }
     setSelectedGerman(null);
     setSelectedEnglish(null);
@@ -181,17 +227,81 @@ export default function WordMatchGame() {
               <ProgressBar progress={progress} color="success" size="md" />
             </div>
 
-            {/* Score & Mistakes */}
-            <div className="flex items-center justify-center gap-6 mb-6">
+            {/* Score & Mistakes & Streak */}
+            <div className="flex items-center justify-center gap-6 mb-4">
               <div className="text-center">
                 <div className="text-2xl font-bold text-emerald-500">{score}</div>
                 <div className="text-xs text-gray-500">Correct</div>
               </div>
+              {streak >= 3 && (
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="text-center"
+                >
+                  <div className="text-2xl font-bold text-orange-500">{streak}x</div>
+                  <div className="text-xs text-orange-400">Streak</div>
+                </motion.div>
+              )}
               <div className="text-center">
                 <div className="text-2xl font-bold text-red-500">{mistakes}</div>
                 <div className="text-xs text-gray-500">Mistakes</div>
               </div>
             </div>
+
+            {/* Combo Popup */}
+            <AnimatePresence>
+              {showCombo && (
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  className="flex items-center justify-center gap-2 mb-3"
+                >
+                  <span className="text-2xl font-black text-orange-500 bg-orange-100 dark:bg-orange-900/30 px-4 py-1.5 rounded-full">
+                    {streak >= 5 ? '3x' : '2x'} COMBO!
+                  </span>
+                  <motion.span
+                    animate={{ scale: [1, 1.3, 1] }}
+                    transition={{ duration: 0.4, repeat: 2 }}
+                    className="text-2xl"
+                  >
+                    🔥
+                  </motion.span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Pronunciation display on match */}
+            <AnimatePresence>
+              {matchedPronunciation && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="text-center mb-3 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-xl px-4 py-2"
+                >
+                  <span className="font-bold text-emerald-700 dark:text-emerald-300">{matchedPronunciation.word}</span>
+                  <span className="text-emerald-500 dark:text-emerald-400 text-sm ml-2">— {matchedPronunciation.pronunciation}</span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Wrong answer teaching moment */}
+            <AnimatePresence>
+              {wrongFeedback && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className="mb-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl px-4 py-3"
+                >
+                  <p className="text-xs font-semibold text-red-500 mb-1">Correct pairs:</p>
+                  <p className="text-sm text-red-700 dark:text-red-300">{wrongFeedback.german}</p>
+                  <p className="text-sm text-red-700 dark:text-red-300">{wrongFeedback.english}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Game Board */}
             <div className="grid grid-cols-2 gap-4">

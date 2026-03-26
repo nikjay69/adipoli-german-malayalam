@@ -9,6 +9,11 @@ export const MODULE_1: Module = {
   icon: "👋",
   color: "#e94560",
   totalHours: 12,
+  learningTips: [
+    "Say every new word OUT LOUD — your mouth needs practice too!",
+    "Don't memorize — LISTEN and REPEAT. Your brain learns better through sound.",
+    "German pronunciation is regular: once you learn the rules, you can read any word.",
+  ],
   lessons: [
     // ===================== LESSON 1-1 =====================
     {
@@ -74,14 +79,14 @@ export const MODULE_1: Module = {
         }
       ],
       exercises: [
-        { id: "ex1-1-1", type: "multiple-choice", question: "What is the main advantage of studying in Germany?", options: ["Free or very low tuition fees", "Always sunny weather", "No need to learn German", "Shorter courses"], correctAnswer: "Free or very low tuition fees", explanation: "Germany offers free or very low tuition fees at public universities, making it attractive for international students.", xpReward: 10 },
-        { id: "ex1-1-2", type: "multiple-choice", question: "Which German companies have presence in India?", options: ["Bosch, Siemens, BMW", "Toyota, Sony, Samsung", "Apple, Google, Microsoft", "Tata, Reliance, Infosys"], correctAnswer: "Bosch, Siemens, BMW", explanation: "Many German companies like Bosch, Siemens, and BMW have significant operations in India.", xpReward: 10 },
+        { id: "ex1-1-1", type: "multiple-choice", question: "What is the main advantage of studying in Germany?", options: ["Free or very low tuition fees", "Always sunny weather", "No need to learn German", "Shorter courses"], correctAnswer: "Free or very low tuition fees", explanation: "German public universities charge almost no tuition. This is the #1 reason Malayalis choose Germany over UK/US for higher studies.", xpReward: 10 },
+        { id: "ex1-1-2", type: "multiple-choice", question: "Which German companies have presence in India?", options: ["Bosch, Siemens, BMW", "Toyota, Sony, Samsung", "Apple, Google, Microsoft", "Tata, Reliance, Infosys"], correctAnswer: "Bosch, Siemens, BMW", explanation: "Bosch, Siemens, BMW are all German companies with offices in India. Knowing German gives you an edge when applying to them!", xpReward: 10 },
         { id: "ex1-1-3", type: "fill-blank", question: "Complete: Ich lerne _____ (I am learning German)", options: ["Deutsch", "Deutschland", "Englisch", "Hindi"], correctAnswer: "Deutsch", explanation: "'Deutsch' means the German language. 'Deutschland' means the country Germany.", xpReward: 10 },
-        { id: "ex1-1-4", type: "multiple-choice", question: "What German language level is typically needed for university admission?", options: ["B2 or C1", "A1", "Native level only", "No German needed"], correctAnswer: "B2 or C1", explanation: "Most German universities require B2 or C1 level, proven through TestDaF or DSH exams.", xpReward: 10 },
+        { id: "ex1-1-4", type: "multiple-choice", question: "What German language level is typically needed for university admission?", options: ["B2 or C1", "A1", "Native level only", "No German needed"], correctAnswer: "B2 or C1", explanation: "Universities need B2/C1, but A1 is your first milestone! The level ladder: A1 → A2 → B1 → B2 → C1. You're starting at A1 — the journey begins here.", xpReward: 10 },
         { id: "ex1-1-5", type: "matching", question: "Match the German word to its English meaning:", options: ["Deutsch", "Deutschland", "lernen", "Arbeit"], correctAnswer: ["German (language)", "Germany", "to learn", "work"], xpReward: 15 },
-        { id: "ex1-1-6", type: "multiple-choice", question: "What is 'Ausbildung' in Germany?", options: ["Vocational training where you earn while learning", "A type of German food", "A university degree", "A tourist visa"], correctAnswer: "Vocational training where you earn while learning", explanation: "Ausbildung is Germany's dual vocational training system where you work and study simultaneously — and get paid for it!", xpReward: 10 },
+        { id: "ex1-1-6", type: "multiple-choice", question: "What is 'Ausbildung' in Germany?", options: ["Vocational training where you earn while learning", "A type of German food", "A university degree", "A tourist visa"], correctAnswer: "Vocational training where you earn while learning", explanation: "Ausbildung = work + study combined, and you EARN money while learning. It's a 3-year program. Many Malayalis use this path — only B1 German needed!", xpReward: 10 },
         { id: "ex1-1-7", type: "ordering", question: "Order these German language levels from beginner to advanced:", options: ["B1", "A1", "C1", "A2", "B2"], correctAnswer: ["A1", "A2", "B1", "B2", "C1"], xpReward: 20 },
-        { id: "ex1-1-8", type: "multiple-choice", question: "How many days of paid vacation do German employees typically get per year?", options: ["Around 30 days", "Around 10 days", "Around 5 days", "No paid vacation"], correctAnswer: "Around 30 days", explanation: "Germany mandates a minimum of 20 vacation days, and most employers offer 28-30. That's Kerala's Onam + Christmas + every other festival combined — and more!", xpReward: 10 }
+        { id: "ex1-1-8", type: "multiple-choice", question: "How many days of paid vacation do German employees typically get per year?", options: ["Around 30 days", "Around 10 days", "Around 5 days", "No paid vacation"], correctAnswer: "Around 30 days", explanation: "German law guarantees 20+ vacation days, most jobs give ~30. Compare that to India's 12-15! Work-life balance is a real German value.", xpReward: 10 }
       ],
       vocabulary: [
         { id: "vocab1-1-1", german: "Deutsch", english: "German (language)", malayalam: "ജർമ്മൻ (ഭാഷ)", pronunciation: "doych", example: "Ich lerne Deutsch.", exampleTranslation: "I am learning German." },
@@ -163,13 +168,13 @@ export const MODULE_1: Module = {
         }
       ],
       exercises: [
-        { id: "ex1-2-1", type: "multiple-choice", question: "Which Malayalam sound is similar to German 'ch' in 'ich'?", options: ["ച", "ക", "ഹ", "ശ"], correctAnswer: "ച", explanation: "The German 'ch' in 'ich' is similar to the Malayalam ച sound.", xpReward: 10 },
-        { id: "ex1-2-2", type: "multiple-choice", question: "What is the ß called in German?", options: ["Eszett", "Umlaut", "Doppel-S", "Scharfes B"], correctAnswer: "Eszett", explanation: "ß is called Eszett (or sometimes Scharfes S). It represents a long 's' sound.", xpReward: 10 },
+        { id: "ex1-2-1", type: "multiple-choice", question: "Which Malayalam sound is similar to German 'ch' in 'ich'?", options: ["ച", "ക", "ഹ", "ശ"], correctAnswer: "ച", explanation: "German 'ich'-Laut sounds like Malayalam ച. You already make this sound! Try whispering 'ich' — your tongue is in the right place.", xpReward: 10 },
+        { id: "ex1-2-2", type: "multiple-choice", question: "What is the ß called in German?", options: ["Eszett", "Umlaut", "Doppel-S", "Scharfes B"], correctAnswer: "Eszett", explanation: "ß (Eszett) = a long 'ss' sound. It appears after long vowels: Straße, Fuß. After short vowels, German uses 'ss' instead: Wasser, essen.", xpReward: 10 },
         { id: "ex1-2-3", type: "matching", question: "Match the German letter to its sound description:", options: ["ä", "ö", "ü"], correctAnswer: ["Like 'e' in bed", "Lips like 'o', say 'e'", "Lips like 'u', say 'i'"], xpReward: 15 },
-        { id: "ex1-2-4", type: "fill-blank", question: "The German word 'Sch___n' means 'beautiful'. Fill in the missing umlaut.", options: ["ö", "ä", "ü", "o"], correctAnswer: "ö", explanation: "'Schön' means beautiful. The ö umlaut gives it that unique rounded sound.", xpReward: 10 },
-        { id: "ex1-2-5", type: "multiple-choice", question: "How is the German 'w' pronounced?", options: ["Like English 'v'", "Like English 'w'", "Like English 'f'", "It is silent"], correctAnswer: "Like English 'v'", explanation: "German 'w' = English 'v'. So 'Wasser' (water) is pronounced 'Vasser'.", xpReward: 10 },
+        { id: "ex1-2-4", type: "fill-blank", question: "The German word 'Sch___n' means 'beautiful'. Fill in the missing umlaut.", options: ["ö", "ä", "ü", "o"], correctAnswer: "ö", explanation: "Schön = beautiful. To make the ö sound: say 'eh' but round your lips like you're saying 'oh'. It's the 'e' sound through a straw!", xpReward: 10 },
+        { id: "ex1-2-5", type: "multiple-choice", question: "How is the German 'w' pronounced?", options: ["Like English 'v'", "Like English 'w'", "Like English 'f'", "It is silent"], correctAnswer: "Like English 'v'", explanation: "Memory trick: German W = English V, German V = English F. So Wasser = 'Vasser', Vater = 'Fahter'. The letters are 'shifted' one position!", xpReward: 10 },
         { id: "ex1-2-6", type: "matching", question: "Match the German word to its correct pronunciation:", options: ["Wasser", "Vater", "Zeit", "schön"], correctAnswer: ["Vasser", "Fahter", "Tsyte", "Shurn"], xpReward: 15 },
-        { id: "ex1-2-7", type: "multiple-choice", question: "In the word 'Bier' (beer), how is 'ie' pronounced?", options: ["Like 'ee' in 'see'", "Like 'eye'", "Like 'ay'", "It is silent"], correctAnswer: "Like 'ee' in 'see'", explanation: "German 'ie' always sounds like 'ee'. Remember: 'ie' = 'ee', 'ei' = 'eye'. The second letter tells you the sound!", xpReward: 10 },
+        { id: "ex1-2-7", type: "multiple-choice", question: "In the word 'Bier' (beer), how is 'ie' pronounced?", options: ["Like 'ee' in 'see'", "Like 'eye'", "Like 'ay'", "It is silent"], correctAnswer: "Like 'ee' in 'see'", explanation: "The 'ie' vs 'ei' rule: the SECOND letter wins. 'ie' → the 'e' sound = 'ee'. 'ei' → the 'i' sound = 'eye'. Bier = 'beer', Bein = 'byne'.", xpReward: 10 },
         { id: "ex1-2-8", type: "ordering", question: "Order these German sounds from most similar to Malayalam to most unique:", options: ["ü (no Malayalam equivalent)", "r (similar to Malayalam ര)", "k (same as Malayalam ക)", "ö (no Malayalam equivalent)"], correctAnswer: ["k (same as Malayalam ക)", "r (similar to Malayalam ര)", "ö (no Malayalam equivalent)", "ü (no Malayalam equivalent)"], xpReward: 20 }
       ],
       vocabulary: [
@@ -251,14 +256,14 @@ export const MODULE_1: Module = {
         }
       ],
       exercises: [
-        { id: "ex1-3-1", type: "multiple-choice", question: "It's 9 AM. How do you greet your German colleague?", options: ["Guten Morgen!", "Guten Abend!", "Gute Nacht!", "Hallo Nacht!"], correctAnswer: "Guten Morgen!", explanation: "Guten Morgen is used in the morning until around noon.", xpReward: 10 },
-        { id: "ex1-3-2", type: "multiple-choice", question: "You meet your professor for the first time. Which form should you use?", options: ["Sie (formal)", "Du (informal)", "Either is fine", "No pronoun needed"], correctAnswer: "Sie (formal)", explanation: "Always use Sie with professors, bosses, and people you don't know well.", xpReward: 10 },
-        { id: "ex1-3-3", type: "multiple-choice", question: "Which greeting is used ONLY when going to sleep?", options: ["Gute Nacht", "Guten Abend", "Guten Tag", "Hallo"], correctAnswer: "Gute Nacht", explanation: "Gute Nacht is said when you or someone else is going to sleep, not just at night.", xpReward: 10 },
+        { id: "ex1-3-1", type: "multiple-choice", question: "It's 9 AM. How do you greet your German colleague?", options: ["Guten Morgen!", "Guten Abend!", "Gute Nacht!", "Hallo Nacht!"], correctAnswer: "Guten Morgen!", explanation: "'Guten' changes based on time: Morgen (morning), Tag (day), Abend (evening). At 9 AM = Guten Morgen. Think of 'Guten' as the 'Good' in 'Good morning'.", xpReward: 10 },
+        { id: "ex1-3-2", type: "multiple-choice", question: "You meet your professor for the first time. Which form should you use?", options: ["Sie (formal)", "Du (informal)", "Either is fine", "No pronoun needed"], correctAnswer: "Sie (formal)", explanation: "Sie = formal 'you' (like Malayalam 'Ningal'). Use with strangers, bosses, and anyone older. When in doubt, use Sie!", xpReward: 10 },
+        { id: "ex1-3-3", type: "multiple-choice", question: "Which greeting is used ONLY when going to sleep?", options: ["Gute Nacht", "Guten Abend", "Guten Tag", "Hallo"], correctAnswer: "Gute Nacht", explanation: "'Gute Nacht' = only when going to BED, not just evening. At 8 PM meeting someone? Say 'Guten Abend'. Leaving to sleep? 'Gute Nacht'.", xpReward: 10 },
         { id: "ex1-3-4", type: "matching", question: "Match the time to the correct greeting:", options: ["8:00 AM", "2:00 PM", "7:00 PM"], correctAnswer: ["Guten Morgen", "Guten Tag", "Guten Abend"], xpReward: 15 },
-        { id: "ex1-3-5", type: "fill-blank", question: "Complete: Guten _____, wie geht es Ihnen? (It's 3 PM)", options: ["Tag", "Morgen", "Abend", "Nacht"], correctAnswer: "Tag", explanation: "'Guten Tag' is used during the daytime, roughly from noon until early evening.", xpReward: 10 },
-        { id: "ex1-3-6", type: "multiple-choice", question: "Which regional German greeting is used in Bavaria (southern Germany)?", options: ["Grüß Gott", "Moin", "Tach", "Ahoi"], correctAnswer: "Grüß Gott", explanation: "Grüß Gott (literally 'Greet God') is the standard greeting in Bavaria and Austria.", xpReward: 10 },
+        { id: "ex1-3-5", type: "fill-blank", question: "Complete: Guten _____, wie geht es Ihnen? (It's 3 PM)", options: ["Tag", "Morgen", "Abend", "Nacht"], correctAnswer: "Tag", explanation: "'Guten Tag' covers noon to ~6 PM. Memory trick: Tag = day = daylight hours. Once the sun sets, switch to 'Guten Abend'.", xpReward: 10 },
+        { id: "ex1-3-6", type: "multiple-choice", question: "Which regional German greeting is used in Bavaria (southern Germany)?", options: ["Grüß Gott", "Moin", "Tach", "Ahoi"], correctAnswer: "Grüß Gott", explanation: "Germany has regional greetings! Grüß Gott (Bavaria/Austria), Moin (North), Servus (Austria). At A1 level, stick with Hallo/Guten Tag — universally understood.", xpReward: 10 },
         { id: "ex1-3-7", type: "ordering", question: "Put these greetings in order from morning to night:", options: ["Gute Nacht", "Guten Morgen", "Guten Abend", "Guten Tag"], correctAnswer: ["Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht"], xpReward: 20 },
-        { id: "ex1-3-8", type: "fill-blank", question: "You walk into a shop at 10 AM. Complete: _____ Morgen! Kann ich Ihnen helfen?", options: ["Guten", "Gute", "Gut", "Guter"], correctAnswer: "Guten", explanation: "It's 'Guten Morgen' — 'Guten' is the correct form here (accusative masculine).", xpReward: 10 }
+        { id: "ex1-3-8", type: "fill-blank", question: "You walk into a shop at 10 AM. Complete: _____ Morgen! Kann ich Ihnen helfen?", options: ["Guten", "Gute", "Gut", "Guter"], correctAnswer: "Guten", explanation: "It's always 'Guten' (not 'Gute') before Morgen/Tag/Abend. Only 'Nacht' uses 'Gute' because Nacht is feminine. Pattern: Guten + masculine, Gute + feminine.", xpReward: 10 }
       ],
       vocabulary: [
         { id: "vocab1-3-1", german: "Hallo", english: "Hello", malayalam: "ഹലോ", pronunciation: "hah-loh", example: "Hallo, wie geht's?", exampleTranslation: "Hello, how are you?" },
@@ -340,14 +345,14 @@ export const MODULE_1: Module = {
         }
       ],
       exercises: [
-        { id: "ex1-4-1", type: "multiple-choice", question: "You're leaving a business meeting. What do you say?", options: ["Auf Wiedersehen!", "Tschüss!", "Bis bald!", "Hallo!"], correctAnswer: "Auf Wiedersehen!", explanation: "Auf Wiedersehen is the formal way to say goodbye, appropriate for business settings.", xpReward: 10 },
-        { id: "ex1-4-2", type: "multiple-choice", question: "What does 'Bitte' mean when someone says 'Danke' to you?", options: ["You're welcome", "Please", "Sorry", "Hello"], correctAnswer: "You're welcome", explanation: "Bitte means 'please' when asking for something, but 'you're welcome' as a response to Danke.", xpReward: 10 },
+        { id: "ex1-4-1", type: "multiple-choice", question: "You're leaving a business meeting. What do you say?", options: ["Auf Wiedersehen!", "Tschüss!", "Bis bald!", "Hallo!"], correctAnswer: "Auf Wiedersehen!", explanation: "'Auf Wiedersehen' literally means 'until we see again' — formal and polite. For casual goodbyes, use 'Tschüss'. Rule: formal setting = Auf Wiedersehen.", xpReward: 10 },
+        { id: "ex1-4-2", type: "multiple-choice", question: "What does 'Bitte' mean when someone says 'Danke' to you?", options: ["You're welcome", "Please", "Sorry", "Hello"], correctAnswer: "You're welcome", explanation: "'Bitte' is a 2-in-1 word! Before getting something: 'Bitte' = please. After 'Danke': 'Bitte' = you're welcome. Context decides the meaning.", xpReward: 10 },
         { id: "ex1-4-3", type: "fill-blank", question: "Complete: _____ schön! (Thank you very much)", options: ["Danke", "Bitte", "Guten", "Auf"], correctAnswer: "Danke", xpReward: 10 },
-        { id: "ex1-4-4", type: "multiple-choice", question: "You accidentally bump into someone. What do you say?", options: ["Entschuldigung!", "Danke!", "Tschüss!", "Bitte!"], correctAnswer: "Entschuldigung!", explanation: "Entschuldigung is used to apologize or say 'excuse me'.", xpReward: 10 },
+        { id: "ex1-4-4", type: "multiple-choice", question: "You accidentally bump into someone. What do you say?", options: ["Entschuldigung!", "Danke!", "Tschüss!", "Bitte!"], correctAnswer: "Entschuldigung!", explanation: "'Entschuldigung' works for both bumping into someone AND getting attention. It's your Swiss Army knife for polite German interactions.", xpReward: 10 },
         { id: "ex1-4-5", type: "matching", question: "Match the German phrase to its English meaning:", options: ["Auf Wiedersehen", "Bis bald", "Bis morgen", "Tschüss"], correctAnswer: ["Goodbye (formal)", "See you soon", "See you tomorrow", "Bye (casual)"], xpReward: 15 },
-        { id: "ex1-4-6", type: "fill-blank", question: "You don't understand something. Complete: Entschuldigung, ich _____ nicht.", options: ["verstehe", "spreche", "danke", "bitte"], correctAnswer: "verstehe", explanation: "'Ich verstehe nicht' means 'I don't understand' — one of the most useful phrases when you're starting out!", xpReward: 10 },
+        { id: "ex1-4-6", type: "fill-blank", question: "You don't understand something. Complete: Entschuldigung, ich _____ nicht.", options: ["verstehe", "spreche", "danke", "bitte"], correctAnswer: "verstehe", explanation: "'Ich verstehe nicht' = 'I don't understand'. This is your survival phrase #1 in Germany. Say it confidently and Germans will slow down for you.", xpReward: 10 },
         { id: "ex1-4-7", type: "ordering", question: "Put this café interaction in the correct order:", options: ["Bitte schön! (server hands coffee)", "Danke schön!", "Auf Wiedersehen!", "Ein Kaffee, bitte!"], correctAnswer: ["Ein Kaffee, bitte!", "Bitte schön! (server hands coffee)", "Danke schön!", "Auf Wiedersehen!"], xpReward: 20 },
-        { id: "ex1-4-8", type: "multiple-choice", question: "Which phrase expresses a more sincere apology than 'Entschuldigung'?", options: ["Es tut mir leid", "Danke schön", "Auf Wiedersehen", "Kein Problem"], correctAnswer: "Es tut mir leid", explanation: "'Es tut mir leid' (literally: 'it does me sorrow') is a deeper apology, used when something is genuinely your fault.", xpReward: 10 }
+        { id: "ex1-4-8", type: "multiple-choice", question: "Which phrase expresses a more sincere apology than 'Entschuldigung'?", options: ["Es tut mir leid", "Danke schön", "Auf Wiedersehen", "Kein Problem"], correctAnswer: "Es tut mir leid", explanation: "Two levels of sorry: 'Entschuldigung' = light (oops!), 'Es tut mir leid' = sincere (I'm truly sorry). Use 'Es tut mir leid' when something is genuinely your fault.", xpReward: 10 }
       ],
       vocabulary: [
         { id: "vocab1-4-1", german: "Auf Wiedersehen", english: "Goodbye (formal)", malayalam: "വിട (ഔപചാരികം)", pronunciation: "owf vee-der-zey-en", example: "Auf Wiedersehen, bis Montag!", exampleTranslation: "Goodbye, see you Monday!" },
@@ -439,13 +444,13 @@ export const MODULE_1: Module = {
       ],
       exercises: [
         { id: "ex1-5-1", type: "ordering", question: "Put this conversation in the correct order:", options: ["Auch gut, danke!", "Guten Tag!", "Gut, danke! Und Ihnen?", "Hallo! Wie geht es Ihnen?"], correctAnswer: ["Guten Tag!", "Hallo! Wie geht es Ihnen?", "Gut, danke! Und Ihnen?", "Auch gut, danke!"], xpReward: 20 },
-        { id: "ex1-5-2", type: "multiple-choice", question: "Someone asks 'Wie geht es Ihnen?' - What's an appropriate response?", options: ["Gut, danke! Und Ihnen?", "Auf Wiedersehen!", "Ich heiße Anna", "Guten Morgen!"], correctAnswer: "Gut, danke! Und Ihnen?", explanation: "This means 'Good, thanks! And you?' - the polite way to respond and return the question.", xpReward: 10 },
-        { id: "ex1-5-3", type: "fill-blank", question: "Complete: Wie geht es _____? (formal 'you')", options: ["Ihnen", "dir", "du", "Sie"], correctAnswer: "Ihnen", explanation: "Ihnen is the dative form of Sie, used in the question 'How are you?' (formal).", xpReward: 10 },
-        { id: "ex1-5-4", type: "fill-blank", question: "At airport immigration, the officer says: 'Ihren _____, bitte.' What does he want?", options: ["Pass", "Kaffee", "Namen", "Danke"], correctAnswer: "Pass", explanation: "'Ihren Pass, bitte' means 'Your passport, please' — one of the first things you'll hear at a German airport!", xpReward: 10 },
+        { id: "ex1-5-2", type: "multiple-choice", question: "Someone asks 'Wie geht es Ihnen?' - What's an appropriate response?", options: ["Gut, danke! Und Ihnen?", "Auf Wiedersehen!", "Ich heiße Anna", "Guten Morgen!"], correctAnswer: "Gut, danke! Und Ihnen?", explanation: "The formula: respond + thank + return the question. 'Gut, danke! Und Ihnen?' Always return the question — it's polite in every culture!", xpReward: 10 },
+        { id: "ex1-5-3", type: "fill-blank", question: "Complete: Wie geht es _____? (formal 'you')", options: ["Ihnen", "dir", "du", "Sie"], correctAnswer: "Ihnen", explanation: "Formal: 'Wie geht es Ihnen?' (Ihnen = formal you). Informal: 'Wie geht es dir?' (dir = informal you). Just memorize these as fixed phrases for now.", xpReward: 10 },
+        { id: "ex1-5-4", type: "fill-blank", question: "At airport immigration, the officer says: 'Ihren _____, bitte.' What does he want?", options: ["Pass", "Kaffee", "Namen", "Danke"], correctAnswer: "Pass", explanation: "'Pass' = passport. You'll hear 'Ihren Pass, bitte' at immigration. 'Ihren' = your (formal, accusative). Just learn this as a chunk — grammar comes later!", xpReward: 10 },
         { id: "ex1-5-5", type: "matching", question: "Match the formal question to the informal version:", options: ["Wie geht es Ihnen?", "Wie heißen Sie?", "Und Ihnen?"], correctAnswer: ["Wie geht's dir?", "Wie heißt du?", "Und dir?"], xpReward: 15 },
         { id: "ex1-5-6", type: "ordering", question: "Put this café order in the correct sequence:", options: ["Danke schön!", "Bitte schön! Zwei Euro fünfzig.", "Guten Tag! Einen Kaffee, bitte.", "Klein, bitte.", "Groß oder klein?"], correctAnswer: ["Guten Tag! Einen Kaffee, bitte.", "Groß oder klein?", "Klein, bitte.", "Bitte schön! Zwei Euro fünfzig.", "Danke schön!"], xpReward: 20 },
-        { id: "ex1-5-7", type: "multiple-choice", question: "Your new German flatmate says 'Willkommen in der WG!' What is a 'WG'?", options: ["A shared apartment (Wohngemeinschaft)", "A type of greeting", "A German university", "A train station"], correctAnswer: "A shared apartment (Wohngemeinschaft)", explanation: "WG (Wohngemeinschaft) is a shared flat — very common in Germany, especially for students. Think of it as German-style hostel life!", xpReward: 10 },
-        { id: "ex1-5-8", type: "fill-blank", question: "Someone introduces themselves: 'Hallo! Ich bin Anna. Und _____?'", options: ["du", "Sie", "ich", "wir"], correctAnswer: "du", explanation: "Since they said 'Hallo' and used their first name, this is informal. 'Und du?' means 'And you?' (casual).", xpReward: 10 }
+        { id: "ex1-5-7", type: "multiple-choice", question: "Your new German flatmate says 'Willkommen in der WG!' What is a 'WG'?", options: ["A shared apartment (Wohngemeinschaft)", "A type of greeting", "A German university", "A train station"], correctAnswer: "A shared apartment (Wohngemeinschaft)", explanation: "WG = Wohngemeinschaft (shared apartment). Germans LOVE abbreviations! WG is incredibly common for students — cheaper than living alone. Remember: W-G, not 'weg'!", xpReward: 10 },
+        { id: "ex1-5-8", type: "fill-blank", question: "Someone introduces themselves: 'Hallo! Ich bin Anna. Und _____?'", options: ["du", "Sie", "ich", "wir"], correctAnswer: "du", explanation: "Context clue: 'Hallo' + first name = informal setting, so use 'du'. If they'd said 'Guten Tag, ich bin Frau Schmidt', you'd use 'Sie'.", xpReward: 10 }
       ],
       vocabulary: [
         { id: "vocab1-5-1", german: "Wie geht es Ihnen?", english: "How are you? (formal)", malayalam: "സുഖമാണോ? (ഔപചാരികം)", pronunciation: "vee gayt es ee-nen", example: "Guten Tag, wie geht es Ihnen?", exampleTranslation: "Good day, how are you?" },
@@ -537,7 +542,7 @@ export const MODULE_1: Module = {
           question: "You're at the Ausländerbehörde (immigration office). How do you address the officer?",
           options: ["Guten Tag! Können Sie mir bitte helfen?", "Hey! Kannst du mir helfen?", "Hallo! Hilf mir mal!", "Moin! Was geht?"],
           correctAnswer: "Guten Tag! Können Sie mir bitte helfen?",
-          explanation: "Government offices are always formal. Use Sie and polite phrases like 'Guten Tag' and 'bitte'.",
+          explanation: "Rule: government offices, police, immigration = ALWAYS Sie. Use 'Guten Tag' (not 'Hallo') and add 'bitte'. Being too formal is never wrong; being too casual is.",
           xpReward: 10
         },
         {
@@ -546,7 +551,7 @@ export const MODULE_1: Module = {
           question: "Complete: _____ Müller, wie geht es Ihnen? (addressing a man formally)",
           options: ["Herr", "Frau", "Du", "Mein"],
           correctAnswer: "Herr",
-          explanation: "Herr (Mr.) is used before a man's last name in formal address.",
+          explanation: "Herr = Mr., Frau = Mrs./Ms. Always use with LAST name: 'Herr Müller', never 'Herr Thomas'. Germans use first names only after being invited to.",
           xpReward: 10
         },
         {
@@ -563,7 +568,7 @@ export const MODULE_1: Module = {
           question: "Your German colleague says 'Wir können uns duzen!' What does this mean?",
           options: ["They're offering to use the informal Du with each other", "They want you to leave", "They're asking your name", "They want to speak English instead"],
           correctAnswer: "They're offering to use the informal Du with each other",
-          explanation: "'Duzen' means to use the Du form. When someone offers this, it means you can both switch to informal address.",
+          explanation: "'Duzen' = using Du, 'Siezen' = using Sie. The switch from Sie to Du is a mini-ceremony in German culture! The older/higher-ranking person offers it first.",
           xpReward: 10
         },
         {
@@ -580,7 +585,7 @@ export const MODULE_1: Module = {
           question: "Begin a formal email: '_____ geehrte Frau Schmidt,' (Dear Mrs. Schmidt,)",
           options: ["Sehr", "Liebe", "Hallo", "Guten"],
           correctAnswer: "Sehr",
-          explanation: "'Sehr geehrte Frau...' is the standard formal email opening, equivalent to 'Dear Mrs...' in English.",
+          explanation: "Formal email formula: 'Sehr geehrte Frau [Name],' (women) or 'Sehr geehrter Herr [Name],' (men). Don't know who? Use 'Sehr geehrte Damen und Herren,'.",
           xpReward: 10
         },
         {
@@ -597,7 +602,7 @@ export const MODULE_1: Module = {
           question: "If you can't type the ü character, which substitute can you use?",
           options: ["ue", "u", "ou", "oo"],
           correctAnswer: "ue",
-          explanation: "When special characters aren't available: ae = ä, oe = ö, ue = ü, ss = ß. So 'München' becomes 'Muenchen'.",
+          explanation: "Umlaut substitution rule: ä=ae, ö=oe, ü=ue, ß=ss. Germans accept these in emails/forms. 'München' = 'Muenchen', 'Straße' = 'Strasse'.",
           xpReward: 10
         },
         {
@@ -615,7 +620,7 @@ export const MODULE_1: Module = {
           question: "Type in German: 'Good morning!'",
           options: ["Guten Morgen", "Guten Tag", "Gute Morgen", "Gut Morgen"],
           correctAnswer: "Guten Morgen",
-          explanation: "Guten Morgen! — the 'n' ending on 'Guten' is important! It's accusative case in the greeting.",
+          explanation: "It's 'Guten Morgen', not 'Gute Morgen'. 'Morgen' is masculine (der Morgen), so the greeting uses 'Guten'. Drill it: Guten Morgen, Guten Tag, Guten Abend!",
           xpReward: 15
         }
       ],

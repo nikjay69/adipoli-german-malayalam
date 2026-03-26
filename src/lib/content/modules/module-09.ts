@@ -9,6 +9,11 @@ export const MODULE_9: Module = {
   color: "#3b82f6",
   totalHours: 12,
   unlockRequirement: "Complete Module 8",
+  learningTips: [
+    "Modal verbs change the sentence: the main verb goes to the END. 'Ich KANN Deutsch SPRECHEN.'",
+    "Practice buying a train ticket in your head every time you commute.",
+    "German public transport runs on time. So should your German: verb always in position 2!",
+  ],
   lessons: [
     // ========== LESSON 9-1: Transportation ==========
     {

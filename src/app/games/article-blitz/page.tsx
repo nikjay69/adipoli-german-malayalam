@@ -75,6 +75,11 @@ export default function ArticleBlitzGame() {
   const [timeLeft, setTimeLeft] = useState(45);
   const [feedback, setFeedback] = useState<{ article: string; correct: boolean } | null>(null);
   const [timePenalty, setTimePenalty] = useState(false);
+  const [wrongCount, setWrongCount] = useState(0);
+  const [showTip, setShowTip] = useState(false);
+  const [tipText, setTipText] = useState('');
+  const [showCorrectCard, setShowCorrectCard] = useState<{ article: string; noun: string } | null>(null);
+  const [showCombo, setShowCombo] = useState(false);
 
   const shuffleArray = <T,>(array: T[]): T[] => {
     const newArray = [...array];
@@ -121,6 +126,21 @@ export default function ArticleBlitzGame() {
     addXP(earnedXP);
   };
 
+  // Article tips based on noun endings
+  const getArticleTip = (noun: string, article: string): string => {
+    if (noun.endsWith('ung') || noun.endsWith('heit') || noun.endsWith('keit') || noun.endsWith('schaft') || noun.endsWith('tion'))
+      return `Words ending in -${noun.slice(-3)} are usually DIE`;
+    if (noun.endsWith('er') && article === 'der')
+      return `Words ending in -er are often DER (masculine)`;
+    if (noun.endsWith('chen') || noun.endsWith('lein'))
+      return `Diminutives (-chen, -lein) are always DAS`;
+    if (noun.endsWith('e') && article === 'die')
+      return `Many words ending in -e are DIE (feminine)`;
+    if (article === 'der') return `DER = masculine. Try to feel the pattern!`;
+    if (article === 'die') return `DIE = feminine. Look for common endings!`;
+    return `DAS = neuter. Some you just have to memorize!`;
+  };
+
   const handleArticleChoice = (chosenArticle: 'der' | 'die' | 'das') => {
     if (feedback) return;
 
@@ -137,21 +157,41 @@ export default function ArticleBlitzGame() {
       if (newStreak > maxStreak) {
         setMaxStreak(newStreak);
       }
+      // Show combo indicator at 3+
+      if (newStreak >= 3) {
+        setShowCombo(true);
+        setTimeout(() => setShowCombo(false), 800);
+      }
     } else {
       setStreak(0);
       setTimeLeft(prev => Math.max(0, prev - 1));
       setTimePenalty(true);
       setTimeout(() => setTimePenalty(false), 400);
+
+      const newWrongCount = wrongCount + 1;
+      setWrongCount(newWrongCount);
+
+      // Show correct article in a mini-card
+      setShowCorrectCard({ article: currentNoun.article.toUpperCase(), noun: currentNoun.noun });
+
+      // After 3 wrong answers, show a tip
+      if (newWrongCount >= 3 && newWrongCount % 3 === 0) {
+        setTipText(getArticleTip(currentNoun.noun, currentNoun.article));
+        setShowTip(true);
+      }
     }
 
+    const delay = isCorrect ? 400 : 2000;
     setTimeout(() => {
       if (currentIndex < nouns.length - 1) {
         setCurrentIndex(prev => prev + 1);
         setFeedback(null);
+        setShowCorrectCard(null);
+        setShowTip(false);
       } else {
         endGame();
       }
-    }, 400);
+    }, delay);
   };
 
   const currentNoun = nouns[currentIndex];
@@ -375,6 +415,72 @@ export default function ArticleBlitzGame() {
               <div className="text-center text-xs text-pink-400 font-medium">Feminine</div>
               <div className="text-center text-xs text-[#d4a520] font-medium">Neuter</div>
             </div>
+
+            {/* Combo visual */}
+            <AnimatePresence>
+              {showCombo && (
+                <motion.div
+                  initial={{ scale: 0, opacity: 0, y: 10 }}
+                  animate={{ scale: 1, opacity: 1, y: 0 }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  className="flex items-center justify-center gap-2 mt-3"
+                >
+                  <span className="text-lg font-black text-orange-500 bg-orange-100 dark:bg-orange-900/30 px-4 py-1 rounded-full">
+                    {streak >= 5 ? '3x' : '2x'} COMBO!
+                  </span>
+                  <motion.span
+                    animate={{ scale: [1, 1.4, 1] }}
+                    transition={{ duration: 0.3, repeat: 2 }}
+                    className="text-xl"
+                  >
+                    🔥
+                  </motion.span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Correct answer teaching card (on wrong answer) */}
+            <AnimatePresence>
+              {showCorrectCard && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className="mt-4 rounded-xl border-2 p-4 text-center"
+                  style={{
+                    borderColor: showCorrectCard.article === 'DER' ? '#3b82f6' : showCorrectCard.article === 'DIE' ? '#ec4899' : '#d4a520',
+                    backgroundColor: showCorrectCard.article === 'DER' ? 'rgba(59,130,246,0.1)' : showCorrectCard.article === 'DIE' ? 'rgba(236,72,153,0.1)' : 'rgba(212,165,32,0.1)',
+                  }}
+                >
+                  <span
+                    className="text-2xl font-black"
+                    style={{
+                      color: showCorrectCard.article === 'DER' ? '#3b82f6' : showCorrectCard.article === 'DIE' ? '#ec4899' : '#d4a520',
+                    }}
+                  >
+                    {showCorrectCard.article}
+                  </span>{' '}
+                  <span className="text-xl font-bold text-gray-900 dark:text-white">
+                    {showCorrectCard.noun}
+                  </span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Tip after 3+ wrong answers */}
+            <AnimatePresence>
+              {showTip && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="mt-3 rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 px-4 py-3 text-center"
+                >
+                  <p className="text-xs font-bold text-amber-600 dark:text-amber-400 mb-1">💡 Tip</p>
+                  <p className="text-sm text-amber-700 dark:text-amber-300">{tipText}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
 

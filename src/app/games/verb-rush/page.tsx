@@ -92,6 +92,10 @@ export default function VerbRushGame() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [showConjugationTable, setShowConjugationTable] = useState(false);
+  const [wrongVerb, setWrongVerb] = useState<VerbEntry | null>(null);
+  const [showCombo, setShowCombo] = useState(false);
+  const [wrongCount, setWrongCount] = useState(0);
 
   // ── Question generation ──────────────────────────────────────────────
   const generateQuestions = useCallback(() => {
@@ -150,6 +154,14 @@ export default function VerbRushGame() {
     addXP(earnedXP);
   };
 
+  // Irregular verbs that change stem
+  const IRREGULAR_VERBS = new Set([
+    'sein', 'haben', 'sprechen', 'essen', 'fahren', 'lesen',
+    'schlafen', 'wissen', 'können', 'müssen', 'wollen',
+  ]);
+
+  const isIrregularVerb = (infinitive: string) => IRREGULAR_VERBS.has(infinitive);
+
   const handleAnswer = (answer: string) => {
     if (showResult) return;
 
@@ -166,22 +178,34 @@ export default function VerbRushGame() {
         if (newStreak > maxStreak) {
           setMaxStreak(newStreak);
         }
+        // Show combo at 3+
+        if (newStreak >= 3) {
+          setShowCombo(true);
+          setTimeout(() => setShowCombo(false), 800);
+        }
         return newStreak;
       });
     } else {
       setStreak(0);
+      setWrongCount(prev => prev + 1);
+      // Show conjugation table for wrong answers
+      setWrongVerb(questions[currentQuestion].verb);
+      setShowConjugationTable(true);
     }
 
+    const delay = correct ? 600 : 2500;
     setTimeout(() => {
       if (currentQuestion < questions.length - 1) {
         setCurrentQuestion(prev => prev + 1);
         setSelectedAnswer(null);
         setShowResult(false);
         setIsCorrect(false);
+        setShowConjugationTable(false);
+        setWrongVerb(null);
       } else {
         endGame();
       }
-    }, 600);
+    }, delay);
   };
 
   // ── Derived values ───────────────────────────────────────────────────
@@ -350,6 +374,42 @@ export default function VerbRushGame() {
               </Card>
             </motion.div>
 
+            {/* Irregular verb tag */}
+            {isIrregularVerb(currentQ.verb.infinitive) && (
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="mb-3 flex justify-center"
+              >
+                <span className="inline-flex items-center gap-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 text-xs font-bold px-3 py-1 rounded-full border border-amber-300 dark:border-amber-700">
+                  <span>&#9888;&#65039;</span> Irregular!
+                </span>
+              </motion.div>
+            )}
+
+            {/* Combo indicator */}
+            <AnimatePresence>
+              {showCombo && (
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  className="flex items-center justify-center gap-2 mb-3"
+                >
+                  <span className="text-lg font-black text-orange-500 bg-orange-100 dark:bg-orange-900/30 px-4 py-1 rounded-full">
+                    {streak >= 5 ? '3x' : '2x'} COMBO!
+                  </span>
+                  <motion.span
+                    animate={{ scale: [1, 1.4, 1] }}
+                    transition={{ duration: 0.3, repeat: 2 }}
+                    className="text-xl"
+                  >
+                    🔥
+                  </motion.span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
             {/* Options — 2x2 grid */}
             <div className="grid grid-cols-2 gap-3">
               {currentQ.options.map((option, index) => {
@@ -384,6 +444,34 @@ export default function VerbRushGame() {
                 );
               })}
             </div>
+
+            {/* Conjugation table (shown briefly on wrong answer) */}
+            <AnimatePresence>
+              {showConjugationTable && wrongVerb && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 15, scale: 0.95 }}
+                  className="mt-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-4"
+                >
+                  <p className="text-xs font-bold text-red-500 dark:text-red-400 mb-2 text-center">
+                    Full conjugation: <span className="text-red-700 dark:text-red-300">{wrongVerb.infinitive}</span>
+                  </p>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+                    {Object.entries(wrongVerb.conjugations).map(([pronoun, form]) => (
+                      <div key={pronoun} className="flex justify-between">
+                        <span className="text-red-400 dark:text-red-500 font-medium">{pronoun}</span>
+                        <span className={`font-bold ${
+                          form === currentQ.correctAnswer
+                            ? 'text-emerald-600 dark:text-emerald-400'
+                            : 'text-gray-700 dark:text-gray-300'
+                        }`}>{form}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
 
