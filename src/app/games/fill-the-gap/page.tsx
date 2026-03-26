@@ -5,7 +5,41 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Trophy, Star, RefreshCw, Clock } from 'lucide-react';
 import { Card, Button, ProgressBar } from '@/components/ui';
+import { CharacterGuide } from '@/components/character';
+import type { KuttanMood } from '@/components/character';
 import { useGameStore } from '@/lib/store';
+
+// ── Kuttan Manglish reactions ──────────────────────────────────────────
+const CORRECT_REACTIONS = [
+  "Adipoli! That word fits perfectly!",
+  "Seri seri! Perfect!",
+  "Wunderbar machaa!",
+  "Sheriyaayi! You got it!",
+  "Super ayi! The sentence makes sense now!",
+  "Richtig! Nee pro aanu!",
+  "Perfect fill machaa! Kuttan can read it now!",
+];
+
+const WRONG_REACTIONS = [
+  "Aiyyo! Not that word machaa!",
+  "Paravaala! Check the grammar rule!",
+  "Not quite da... think about the case!",
+  "Hmm close! Look at the sentence structure!",
+];
+
+const STREAK_REACTIONS = [
+  "ON FIRE machaa!",
+  "Unstoppable! Adipoli streak!",
+  "Combo power! Keep it up!",
+  "Reading pro! No gaps can stop you!",
+];
+
+const COMPLETION_MSGS: Record<string, { msg: string; mood: KuttanMood }> = {
+  perfect: { msg: "Kuttan can read the whole newspaper now! Danke machaa! Perfect score!", mood: 'celebrating' },
+  great: { msg: "Adipoli! Kuttan can read most of the article now! Almost perfect!", mood: 'excited' },
+  good: { msg: "Not bad machaa! A few gaps left but Kuttan gets the gist!", mood: 'happy' },
+  tryAgain: { msg: "Paravaala da! German grammar takes time. The newspaper can wait!", mood: 'thinking' },
+};
 
 interface GapSentence {
   sentence: string;
@@ -54,6 +88,8 @@ export default function FillTheGapGame() {
   const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
   const [streak, setStreak] = useState(0);
   const [showCombo, setShowCombo] = useState(false);
+  const [kuttanMood, setKuttanMood] = useState<KuttanMood>('excited');
+  const [kuttanMsg, setKuttanMsg] = useState("Kuttan is reading a German newspaper. Some words are missing! Help him fill the gaps.");
 
   const shuffleArray = <T,>(array: T[]): T[] => {
     const newArray = [...array];
@@ -90,6 +126,8 @@ export default function FillTheGapGame() {
     setShowResult(false);
     setStreak(0);
     setShowCombo(false);
+    setKuttanMood('excited');
+    setKuttanMsg("Let's read this newspaper! Fill in the blanks machaa!");
     setGameState('playing');
   };
 
@@ -98,6 +136,12 @@ export default function FillTheGapGame() {
     incrementGamesPlayed();
     const earnedXP = finalScore * 6;
     addXP(earnedXP);
+    const comp = finalScore === TOTAL_QUESTIONS ? COMPLETION_MSGS.perfect
+      : finalScore >= 10 ? COMPLETION_MSGS.great
+      : finalScore >= 7 ? COMPLETION_MSGS.good
+      : COMPLETION_MSGS.tryAgain;
+    setKuttanMood(comp.mood);
+    setKuttanMsg(comp.msg);
   };
 
   const handleAnswer = (answer: string) => {
@@ -117,9 +161,21 @@ export default function FillTheGapGame() {
       if (newStreak >= 3) {
         setShowCombo(true);
         setTimeout(() => setShowCombo(false), 1200);
+        setKuttanMood('celebrating');
+        setKuttanMsg(STREAK_REACTIONS[Math.floor(Math.random() * STREAK_REACTIONS.length)]);
+      } else {
+        setKuttanMood('happy');
+        setKuttanMsg(CORRECT_REACTIONS[Math.floor(Math.random() * CORRECT_REACTIONS.length)]);
       }
     } else {
       setStreak(0);
+      if (questions[currentIndex].grammarRule) {
+        setKuttanMood('thinking');
+        setKuttanMsg(`Ah, remember: ${questions[currentIndex].grammarRule}`);
+      } else {
+        setKuttanMood('sad');
+        setKuttanMsg(WRONG_REACTIONS[Math.floor(Math.random() * WRONG_REACTIONS.length)]);
+      }
     }
     setResults(newResults);
 
@@ -177,7 +233,9 @@ export default function FillTheGapGame() {
             exit={{ opacity: 0, y: -20 }}
           >
             <Card className="text-center">
-              <div className="text-6xl mb-4">📝</div>
+              <div className="mb-4">
+                <CharacterGuide messages="Kuttan is reading a German newspaper. Some words are missing! Help him fill the gaps machaa!" mood="excited" size="sm" />
+              </div>
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 Fill the Gap
               </h1>
@@ -207,6 +265,11 @@ export default function FillTheGapGame() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
           >
+            {/* Kuttan Guide */}
+            <div className="mb-4">
+              <CharacterGuide messages={kuttanMsg} mood={kuttanMood} size="sm" />
+            </div>
+
             {/* Progress Dots */}
             <div className="flex items-center justify-center gap-2 mb-6">
               {questions.map((_, i) => (

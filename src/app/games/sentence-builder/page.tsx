@@ -5,7 +5,37 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Trophy, Star, RefreshCw, Clock, CheckCircle, Zap } from 'lucide-react';
 import { Card, Button, ProgressBar } from '@/components/ui';
+import { CharacterGuide } from '@/components/character';
+import type { KuttanMood } from '@/components/character';
 import { useGameStore } from '@/lib/store';
+
+// ── Kuttan Manglish reactions ──────────────────────────────────────────
+const CORRECT_REACTIONS = [
+  "Perfect sentence machaa!",
+  "The university will love this!",
+  "German grammar pro!",
+  "Adipoli! Nailed it!",
+  "Seri seri! Perfect!",
+  "Wunderbar machaa!",
+  "Sheriyaayi! You got it!",
+  "Super ayi! Keep going!",
+  "Richtig! Nee pro aanu!",
+];
+
+const WRONG_REACTIONS = [
+  "Hmm, the word order isn't right. German puts the verb in position 2!",
+  "Aiyyo! Almost there! Try rearranging!",
+  "Paravaala machaa! Try again!",
+  "Not quite da... think about the verb position!",
+  "Hmm close! Shuffle those words around!",
+];
+
+const COMPLETION_MSGS: Record<string, { msg: string; mood: KuttanMood }> = {
+  perfect: { msg: "Adipoli machaa! The university will accept you for sure! All 10 perfect!", mood: 'celebrating' },
+  great: { msg: "Wunderbar! Kuttan is proud of you! Almost perfect!", mood: 'excited' },
+  good: { msg: "Not bad machaa! A little more practice and you'll be writing essays!", mood: 'happy' },
+  tryAgain: { msg: "Paravaala da! Even Kuttan struggled at first. Let's try again!", mood: 'thinking' },
+};
 
 interface Sentence {
   words: string[];
@@ -47,6 +77,8 @@ export default function SentenceBuilderGame() {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(90);
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
+  const [kuttanMood, setKuttanMood] = useState<KuttanMood>('excited');
+  const [kuttanMsg, setKuttanMsg] = useState("Kuttan is writing a letter to his German university. Help him build proper sentences!");
 
   const shuffleArray = <T,>(array: T[]): T[] => {
     const newArray = [...array];
@@ -91,6 +123,8 @@ export default function SentenceBuilderGame() {
     setScore(0);
     setTimeLeft(90);
     setFeedback(null);
+    setKuttanMood('excited');
+    setKuttanMsg("Let's build some sentences! Tap the words in order!");
     setGameState('playing');
     loadSentence(0, picked);
   };
@@ -100,6 +134,13 @@ export default function SentenceBuilderGame() {
     incrementGamesPlayed();
     const earnedXP = score * 8;
     addXP(earnedXP);
+    // Set Kuttan's completion reaction
+    const comp = score >= 9 ? COMPLETION_MSGS.perfect
+      : score >= 6 ? COMPLETION_MSGS.great
+      : score >= 4 ? COMPLETION_MSGS.good
+      : COMPLETION_MSGS.tryAgain;
+    setKuttanMood(comp.mood);
+    setKuttanMsg(comp.msg);
   };
 
   const handleWordTap = (tappedWord: { word: string; id: number }) => {
@@ -123,20 +164,28 @@ export default function SentenceBuilderGame() {
     if (builtSentence === currentSentence.correct) {
       setFeedback('correct');
       setScore(prev => prev + 1);
+      setKuttanMood('celebrating');
+      setKuttanMsg(CORRECT_REACTIONS[Math.floor(Math.random() * CORRECT_REACTIONS.length)]);
 
       setTimeout(() => {
+        setKuttanMood('happy');
         if (currentIndex < sentences.length - 1) {
           const nextIndex = currentIndex + 1;
           setCurrentIndex(nextIndex);
           loadSentence(nextIndex, sentences);
+          setKuttanMsg("Next sentence! Let's go!");
         } else {
           endGame();
         }
       }, 800);
     } else {
       setFeedback('wrong');
+      setKuttanMood('thinking');
+      setKuttanMsg(WRONG_REACTIONS[Math.floor(Math.random() * WRONG_REACTIONS.length)]);
       setTimeout(() => {
         setFeedback(null);
+        setKuttanMood('pointing');
+        setKuttanMsg("Try again machaa! Rearrange the words!");
       }, 600);
     }
   };
@@ -181,12 +230,14 @@ export default function SentenceBuilderGame() {
             exit={{ opacity: 0, y: -20 }}
           >
             <Card className="text-center">
-              <div className="text-6xl mb-4">🧩</div>
+              <div className="mb-4">
+                <CharacterGuide messages="Kuttan is writing a letter to his German university. Help him build proper sentences! Brain use cheyyuka!" mood="excited" size="sm" />
+              </div>
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 Sentence Builder
               </h1>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Tap the words in the correct order to build German sentences. Brain use cheyyuka! Ithu rambam fun!
+                Tap the words in the correct order to build German sentences. Ithu rambam fun!
               </p>
               <div className="flex items-center justify-center gap-4 mb-6 text-sm text-gray-500">
                 <span className="flex items-center gap-1">
@@ -214,6 +265,11 @@ export default function SentenceBuilderGame() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
           >
+            {/* Kuttan Guide */}
+            <div className="mb-4">
+              <CharacterGuide messages={kuttanMsg} mood={kuttanMood} size="sm" />
+            </div>
+
             {/* Stats Bar */}
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-4">
@@ -368,6 +424,11 @@ export default function SentenceBuilderGame() {
               >
                 <Trophy className="w-10 h-10 text-white" />
               </motion.div>
+
+              {/* Kuttan completion reaction */}
+              <div className="mb-4">
+                <CharacterGuide messages={kuttanMsg} mood={kuttanMood} size="sm" />
+              </div>
 
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 {score >= 8 ? 'Adipoli!' : score >= 5 ? 'Good Job!' : 'Paravaala machaa!'}

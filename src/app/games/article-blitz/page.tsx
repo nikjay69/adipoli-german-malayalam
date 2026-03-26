@@ -5,7 +5,40 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Trophy, Star, RefreshCw, Clock, Zap } from 'lucide-react';
 import { Card, Button, ProgressBar } from '@/components/ui';
+import { CharacterGuide } from '@/components/character';
+import type { KuttanMood } from '@/components/character';
 import { useGameStore } from '@/lib/store';
+
+// ── Kuttan Manglish reactions ──────────────────────────────────────────
+const CORRECT_REACTIONS = [
+  "Seri! That's the right article!",
+  "Adipoli! Nailed it!",
+  "Wunderbar machaa!",
+  "Sheriyaayi! You got it!",
+  "Super ayi! Keep going!",
+  "Richtig! Nee pro aanu!",
+];
+
+const WRONG_REACTIONS = [
+  "Aiyyo! That wasn't the right one!",
+  "Paravaala machaa! You'll remember next time!",
+  "Not quite da... check the pattern!",
+  "Hmm close! Articles are tricky!",
+];
+
+const STREAK_REACTIONS = [
+  "ON FIRE machaa!",
+  "Unstoppable! Adipoli streak!",
+  "Combo power! Keep it up!",
+  "FIRE MODE! You're on a roll!",
+];
+
+const COMPLETION_MSGS: Record<string, { msg: string; mood: KuttanMood }> = {
+  amazing: { msg: "Adipoli machaa! Kuttan can shop in Germany without any confusion now! Der, die, das master!", mood: 'celebrating' },
+  great: { msg: "Wunderbar! You know most of these articles! The supermarket trip was a success!", mood: 'excited' },
+  good: { msg: "Not bad machaa! Articles are tough but you're getting there!", mood: 'happy' },
+  tryAgain: { msg: "Paravaala da! Even Germans sometimes mix up articles. Keep practicing!", mood: 'thinking' },
+};
 
 interface NounItem {
   noun: string;
@@ -80,6 +113,8 @@ export default function ArticleBlitzGame() {
   const [tipText, setTipText] = useState('');
   const [showCorrectCard, setShowCorrectCard] = useState<{ article: string; noun: string } | null>(null);
   const [showCombo, setShowCombo] = useState(false);
+  const [kuttanMood, setKuttanMood] = useState<KuttanMood>('excited');
+  const [kuttanMsg, setKuttanMsg] = useState("Kuttan is at a German supermarket. Everything has an article — der, die, or das. Help him sort them!");
 
   const shuffleArray = <T,>(array: T[]): T[] => {
     const newArray = [...array];
@@ -117,6 +152,8 @@ export default function ArticleBlitzGame() {
     setTimeLeft(45);
     setFeedback(null);
     setTimePenalty(false);
+    setKuttanMood('excited');
+    setKuttanMsg("Der, die, or das? Let's go machaa!");
   };
 
   const endGame = () => {
@@ -124,6 +161,12 @@ export default function ArticleBlitzGame() {
     incrementGamesPlayed();
     const earnedXP = score * 4 + maxStreak * 2;
     addXP(earnedXP);
+    const comp = score >= 15 ? COMPLETION_MSGS.amazing
+      : score >= 10 ? COMPLETION_MSGS.great
+      : score >= 5 ? COMPLETION_MSGS.good
+      : COMPLETION_MSGS.tryAgain;
+    setKuttanMood(comp.mood);
+    setKuttanMsg(comp.msg);
   };
 
   // Article tips based on noun endings
@@ -161,6 +204,12 @@ export default function ArticleBlitzGame() {
       if (newStreak >= 3) {
         setShowCombo(true);
         setTimeout(() => setShowCombo(false), 800);
+        setKuttanMood('celebrating');
+        setKuttanMsg(STREAK_REACTIONS[Math.floor(Math.random() * STREAK_REACTIONS.length)]);
+      } else {
+        setKuttanMood('happy');
+        const msg = CORRECT_REACTIONS[Math.floor(Math.random() * CORRECT_REACTIONS.length)];
+        setKuttanMsg(`${msg} ${currentNoun.article.toUpperCase()} ${currentNoun.noun}!`);
       }
     } else {
       setStreak(0);
@@ -176,8 +225,14 @@ export default function ArticleBlitzGame() {
 
       // After 3 wrong answers, show a tip
       if (newWrongCount >= 3 && newWrongCount % 3 === 0) {
-        setTipText(getArticleTip(currentNoun.noun, currentNoun.article));
+        const tip = getArticleTip(currentNoun.noun, currentNoun.article);
+        setTipText(tip);
         setShowTip(true);
+        setKuttanMood('thinking');
+        setKuttanMsg(`Remember: ${tip}`);
+      } else {
+        setKuttanMood('sad');
+        setKuttanMsg(WRONG_REACTIONS[Math.floor(Math.random() * WRONG_REACTIONS.length)]);
       }
     }
 
@@ -242,7 +297,9 @@ export default function ArticleBlitzGame() {
             exit={{ opacity: 0, y: -20 }}
           >
             <Card className="text-center">
-              <div className="text-6xl mb-4">der die das</div>
+              <div className="mb-4">
+                <CharacterGuide messages="Kuttan is at a German supermarket. Everything has an article — der, die, or das. Help him sort them!" mood="excited" size="sm" />
+              </div>
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 Article Blitz
               </h1>
@@ -283,6 +340,11 @@ export default function ArticleBlitzGame() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            {/* Kuttan Guide */}
+            <div className="mb-4">
+              <CharacterGuide messages={kuttanMsg} mood={kuttanMood} size="sm" />
+            </div>
+
             {/* Stats Bar */}
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-4">
@@ -500,6 +562,11 @@ export default function ArticleBlitzGame() {
               >
                 <Trophy className="w-10 h-10 text-white" />
               </motion.div>
+
+              {/* Kuttan completion reaction */}
+              <div className="mb-4">
+                <CharacterGuide messages={kuttanMsg} mood={kuttanMood} size="sm" />
+              </div>
 
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 {score >= 15 ? 'Incredible!' : score >= 10 ? 'Great Job!' : score >= 5 ? 'Good Effort!' : 'Keep Practicing!'}

@@ -5,7 +5,42 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Trophy, Star, RefreshCw, Clock, Zap } from 'lucide-react';
 import { Card, Button, ProgressBar } from '@/components/ui';
+import { CharacterGuide } from '@/components/character';
+import type { KuttanMood } from '@/components/character';
 import { useGameStore } from '@/lib/store';
+
+// ── Kuttan Manglish reactions ──────────────────────────────────────────
+const CORRECT_REACTIONS = [
+  "Adipoli! Nailed it!",
+  "Seri seri! Perfect conjugation!",
+  "Wunderbar machaa!",
+  "Sheriyaayi! You got it!",
+  "Super ayi! Keep going!",
+  "Richtig! Nee pro aanu!",
+  "Goethe exam? No problem for you!",
+];
+
+const WRONG_REACTIONS = [
+  "Irregular verbs are tricky da... keep going!",
+  "Aiyyo! Almost there machaa!",
+  "Paravaala! Check the conjugation table!",
+  "Not quite da... stem changes are sneaky!",
+  "Hmm close! The ending wasn't right!",
+];
+
+const FIRE_REACTIONS = [
+  "FIRE MODE! You're unstoppable machaa!",
+  "ON FIRE! Verb conjugation king!",
+  "Unstoppable! Adipoli streak!",
+  "Combo power! Goethe would be proud!",
+];
+
+const COMPLETION_MSGS: Record<string, { msg: string; mood: KuttanMood }> = {
+  amazing: { msg: "Adipoli machaa! Kuttan's Goethe exam is guaranteed pass! You're a verb conjugation genius!", mood: 'celebrating' },
+  great: { msg: "Wunderbar! You know your conjugations well! Goethe B1 here we come!", mood: 'excited' },
+  good: { msg: "Not bad machaa! Practice the irregular ones a bit more and you'll be perfect!", mood: 'happy' },
+  tryAgain: { msg: "Paravaala da! Verbs take time. Kuttan is still learning too!", mood: 'thinking' },
+};
 
 // ── Verb data ──────────────────────────────────────────────────────────
 interface VerbEntry {
@@ -96,6 +131,8 @@ export default function VerbRushGame() {
   const [wrongVerb, setWrongVerb] = useState<VerbEntry | null>(null);
   const [showCombo, setShowCombo] = useState(false);
   const [wrongCount, setWrongCount] = useState(0);
+  const [kuttanMood, setKuttanMood] = useState<KuttanMood>('excited');
+  const [kuttanMsg, setKuttanMsg] = useState("Kuttan needs to conjugate verbs for his Goethe exam. Speed matters!");
 
   // ── Question generation ──────────────────────────────────────────────
   const generateQuestions = useCallback(() => {
@@ -144,6 +181,8 @@ export default function VerbRushGame() {
     setSelectedAnswer(null);
     setShowResult(false);
     setIsCorrect(false);
+    setKuttanMood('excited');
+    setKuttanMsg("Conjugate fast machaa! Let's ace this!");
   };
 
   const endGame = () => {
@@ -152,6 +191,12 @@ export default function VerbRushGame() {
     const comboBonus = maxStreak >= 3 ? maxStreak * 4 : 0;
     const earnedXP = score * 6 + comboBonus;
     addXP(earnedXP);
+    const comp = score >= 13 ? COMPLETION_MSGS.amazing
+      : score >= 10 ? COMPLETION_MSGS.great
+      : score >= 7 ? COMPLETION_MSGS.good
+      : COMPLETION_MSGS.tryAgain;
+    setKuttanMood(comp.mood);
+    setKuttanMsg(comp.msg);
   };
 
   // Irregular verbs that change stem
@@ -182,12 +227,19 @@ export default function VerbRushGame() {
         if (newStreak >= 3) {
           setShowCombo(true);
           setTimeout(() => setShowCombo(false), 800);
+          setKuttanMood('celebrating');
+          setKuttanMsg(FIRE_REACTIONS[Math.floor(Math.random() * FIRE_REACTIONS.length)]);
+        } else {
+          setKuttanMood('happy');
+          setKuttanMsg(CORRECT_REACTIONS[Math.floor(Math.random() * CORRECT_REACTIONS.length)]);
         }
         return newStreak;
       });
     } else {
       setStreak(0);
       setWrongCount(prev => prev + 1);
+      setKuttanMood('sad');
+      setKuttanMsg(WRONG_REACTIONS[Math.floor(Math.random() * WRONG_REACTIONS.length)]);
       // Show conjugation table for wrong answers
       setWrongVerb(questions[currentQuestion].verb);
       setShowConjugationTable(true);
@@ -252,7 +304,9 @@ export default function VerbRushGame() {
             exit={{ opacity: 0, y: -20 }}
           >
             <Card className="text-center">
-              <div className="text-6xl mb-4">🏃‍♂️</div>
+              <div className="mb-4">
+                <CharacterGuide messages="Kuttan needs to conjugate verbs for his Goethe exam preparation. Speed matters machaa!" mood="excited" size="sm" />
+              </div>
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 Verb Rush
               </h1>
@@ -286,6 +340,11 @@ export default function VerbRushGame() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
           >
+            {/* Kuttan Guide */}
+            <div className="mb-4">
+              <CharacterGuide messages={kuttanMsg} mood={kuttanMood} size="sm" />
+            </div>
+
             {/* Stats Bar */}
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-4">
@@ -491,6 +550,11 @@ export default function VerbRushGame() {
               >
                 <Trophy className="w-10 h-10 text-white" />
               </motion.div>
+
+              {/* Kuttan completion reaction */}
+              <div className="mb-4">
+                <CharacterGuide messages={kuttanMsg} mood={kuttanMood} size="sm" />
+              </div>
 
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 {score >= 13
