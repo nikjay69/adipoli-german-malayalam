@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
 import { Kuttan } from '@/components/character/Kuttan';
+import { SkeletonGrid } from '@/components/ui/Skeleton';
 
 const tests = [
   { id: 'goethe-a1-test-1', name: 'Übungstest 1', topic: 'Self-intro & Shopping', icon: '🎯' },
@@ -36,9 +37,9 @@ export default function TestsPage() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-          className="w-12 h-12 border-4 border-[#d4a520] border-t-transparent rounded-full" />
+      <div className="min-h-screen px-3 py-3">
+        <div className="h-5 w-40 bg-[var(--foreground)]/8 rounded mb-3 animate-pulse" />
+        <SkeletonGrid count={8} />
       </div>
     );
   }

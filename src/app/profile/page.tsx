@@ -27,6 +27,7 @@ import {
 import { Card, Button, Badge, ProgressBar } from '@/components/ui';
 import { useGameStore, ACHIEVEMENTS_DATA } from '@/lib/store';
 import { Kuttan } from '@/components/character/Kuttan';
+import { StreakCalendar } from '@/components/ui/StreakCalendar';
 import { HOUR_OPTIONS, getEstimatedDays, getEstimatedCompletionDate, createStudyPlan } from '@/lib/study-plan';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { calculateExamReadiness } from '@/lib/exam-readiness';
@@ -440,6 +441,14 @@ export default function ProfilePage() {
             </motion.div>
           )}
         </Card>
+
+        {/* Activity Calendar */}
+        {userProgress.completedLessons.length > 0 && (
+          <Card padding="sm" className="mb-3">
+            <h2 className="font-semibold text-[var(--foreground)] mb-2">Activity</h2>
+            <StreakCalendar completedLessons={userProgress.completedLessons} />
+          </Card>
+        )}
 
         {/* Quick Stats */}
         <Card padding="sm" className="mb-3">

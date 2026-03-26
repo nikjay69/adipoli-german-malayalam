@@ -17,6 +17,8 @@ import { Kuttan } from '@/components/character/Kuttan';
 import { useGameStore } from '@/lib/store';
 import { getAllVocabulary, ALL_MODULES, type VocabItem } from '@/lib/content/modules';
 import { playVocabAudio } from '@/lib/audio';
+import { feedbackFlip } from '@/lib/feedback';
+import { SkeletonGrid } from '@/components/ui/Skeleton';
 
 type ViewMode = 'flashcards' | 'list';
 type FilterMode = 'all' | 'learned' | 'unlearned';
@@ -49,9 +51,10 @@ export default function VocabularyPage() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-pulse">
-          <div className="w-16 h-16 bg-gradient-to-br from-[#e94560] to-[#0f3460] rounded-2xl" />
+      <div className="px-4 py-6 max-w-4xl mx-auto">
+        <div className="h-6 w-48 bg-[var(--foreground)]/8 rounded mb-4 animate-pulse" />
+        <div className="game-card p-6 animate-pulse">
+          <div className="h-32 bg-[var(--foreground)]/6 rounded-xl" />
         </div>
       </div>
     );
@@ -217,14 +220,29 @@ export default function VocabularyPage() {
         >
           {filteredVocab.length > 0 && currentCard ? (
             <>
-              {/* Card Counter */}
-              <div className="text-sm text-[var(--foreground)]/50 mb-4">
-                {currentCardIndex + 1} of {filteredVocab.length}
+              {/* Card Counter + swipe hint */}
+              <div className="text-sm text-[var(--foreground)]/50 mb-4 flex items-center gap-3">
+                <span>{currentCardIndex + 1} of {filteredVocab.length}</span>
+                <span className="text-xs text-[var(--foreground)]/25">swipe or tap</span>
               </div>
 
-              {/* Flashcard */}
+              {/* Flashcard — tap to flip, swipe to navigate */}
               <motion.div
-                onClick={() => setIsFlipped(!isFlipped)}
+                onClick={() => {
+                  setIsFlipped(!isFlipped);
+                  feedbackFlip();
+                  // Auto-play audio on flip to German side
+                  if (isFlipped && currentCard) {
+                    playVocabAudio(currentCard.id).catch(() => {});
+                  }
+                }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.3}
+                onDragEnd={(_e, info) => {
+                  if (info.offset.x > 80) handleNextCard();
+                  else if (info.offset.x < -80) handlePrevCard();
+                }}
                 className="w-full max-w-md cursor-pointer perspective-1000 mb-6"
                 whileTap={{ scale: 0.98 }}
               >

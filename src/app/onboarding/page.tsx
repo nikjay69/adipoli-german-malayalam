@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import { Clock, Calendar, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 import { Kuttan } from '@/components/character/Kuttan';
 import { Appu } from '@/components/character/Appu';
+import { Confetti } from '@/components/game/Confetti';
+import { feedbackCelebration } from '@/lib/feedback';
 import { useGameStore } from '@/lib/store';
 import {
   createStudyPlan,
@@ -46,6 +48,7 @@ export default function OnboardingPage() {
       markIntroSeen();
     }
     setStep('ready');
+    feedbackCelebration();
   }, [selectedHours, setStudyPlan, markIntroSeen, userProgress.hasSeenIntro]);
 
   const handleStart = useCallback(() => {
@@ -287,6 +290,7 @@ export default function OnboardingPage() {
             animate={{ opacity: 1, scale: 1 }}
             className="min-h-screen flex flex-col items-center justify-center px-6"
           >
+            <Confetti isActive={true} duration={4000} />
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}

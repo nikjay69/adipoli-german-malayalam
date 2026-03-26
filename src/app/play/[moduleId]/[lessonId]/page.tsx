@@ -14,6 +14,7 @@ import { createCard } from '@/lib/srs';
 import { useGameStore } from '@/lib/store';
 import { getLessonById, getModuleById, ALL_MODULES } from '@/lib/content/modules';
 import { isLessonUnlocked as checkLessonUnlocked } from '@/lib/curriculum';
+import { feedbackCorrect, feedbackWrong, feedbackCelebration, feedbackFlip } from '@/lib/feedback';
 
 type Step =
   | { type: 'intro' }
@@ -228,8 +229,10 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       // Module complete! Award bonus XP
       addXP(100);
       setShowModuleComplete(true);
+      feedbackCelebration();
     } else {
       setShowCelebration(true);
+      feedbackCelebration();
     }
   };
 
@@ -244,10 +247,12 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       setAnswerState('correct');
       setCorrectCount(prev => prev + 1);
       setKuttanMsg(getRandomMessage('correct'));
+      feedbackCorrect();
       setTimeout(() => goNext(), 1400);
     } else {
       setAnswerState('incorrect');
       setKuttanMsg(getRandomMessage('wrong'));
+      feedbackWrong();
       // Show correct answer for a moment, then auto-advance
       setTimeout(() => {
         goNext();
@@ -504,7 +509,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
 
               {/* Flashcard */}
               <motion.div
-                onClick={() => setShowVocabMeaning(!showVocabMeaning)}
+                onClick={() => { setShowVocabMeaning(!showVocabMeaning); feedbackFlip(); }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full max-w-sm aspect-[4/3] cursor-pointer"
                 style={{ perspective: '1000px' }}

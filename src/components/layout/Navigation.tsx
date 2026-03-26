@@ -34,7 +34,7 @@ export function Navigation() {
   if (!mounted) return null;
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 safe-bottom">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 safe-bottom" aria-label="Main navigation">
       <div className="mx-4 mb-4">
         <div className="bg-[#162416]/90 backdrop-blur-lg border border-[var(--foreground)]/8 rounded-2xl shadow-lg shadow-black/30">
           <div className="flex items-center justify-around py-2 px-2">

@@ -8,9 +8,10 @@ import { GameButton } from '@/components/game';
 import { Kuttan } from '@/components/character/Kuttan';
 import { getRandomMessage } from '@/lib/content/dialogue';
 import { useGameStore } from '@/lib/store';
-import { ALL_MODULES } from '@/lib/content/modules';
+import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { getNextCoreLesson } from '@/lib/curriculum';
 import { getDailySchedule, type DailySchedule, type DailyTask } from '@/lib/study-plan';
+import { calculateExamReadiness } from '@/lib/exam-readiness';
 
 const DAILY_TIPS = [
   "Speak German for 5 minutes every morning. Your brain is freshest then.",
@@ -319,6 +320,43 @@ export default function Home() {
           <p className="text-[var(--foreground)]/50 text-sm">Adipoli! You&apos;ve finished all lessons.</p>
         </div>
       )}
+
+      {/* Exam Readiness — shown when user has progress */}
+      {completedCount > 3 && (() => {
+        const r = calculateExamReadiness({
+          completedLessons: userProgress.completedLessons,
+          totalLessons: totalLessons,
+          learnedVocabulary: userProgress.learnedVocabulary.length,
+          totalVocabulary: getAllVocabulary().length,
+          streak: userProgress.streak,
+          gamesPlayed: userProgress.gamesPlayed,
+          quizzesTaken: userProgress.quizzesTaken,
+        });
+        return (
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="w-full max-w-sm mx-auto mt-2"
+          >
+            <div className="game-card p-2.5">
+              <div className="flex items-center gap-2">
+                <Trophy className="w-3.5 h-3.5 flex-shrink-0" style={{ color: r.color }} />
+                <span className="text-xs font-bold" style={{ color: r.color }}>A1 Ready: {r.score}%</span>
+                <div className="flex-1 h-1.5 bg-[var(--foreground)]/8 rounded-full overflow-hidden">
+                  <motion.div
+                    className="h-full rounded-full"
+                    style={{ backgroundColor: r.color }}
+                    initial={{ width: 0 }}
+                    animate={{ width: `${r.score}%` }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        );
+      })()}
 
       {/* Tip of the Day */}
       <motion.div

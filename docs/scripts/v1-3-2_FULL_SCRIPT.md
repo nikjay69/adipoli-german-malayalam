@@ -1,10 +1,10 @@
-# v1-3-2 — Tschüss! German Goodbyes, Danke, Bitte & Entschuldigung (FULL SCRIPT)
+# v1-3-2 — Formal vs Informal: Like 'Ningal' vs 'Nee' (FULL SCRIPT)
 
-> **Module:** 1 | **Lesson:** 1-3 | **Duration:** 10:45 target
-> **Teaching Goal:** Give beginners a compact polite-exit toolkit: the safest goodbyes, the `Danke`/`Bitte` exchange, and the difference between `Entschuldigung` and `Es tut mir leid`.
-> **A1 Exam Link:** Sprechen (opening/closing interactions), Hören (recognizing short everyday exchanges), Schreiben/Sprechen transfer for polite register
-> **Status:** REVISED — v2.1
-> **Created:** 2026-03-23 | **Revised:** 2026-03-23 (quality pass)
+> **Module:** 1 | **Lesson:** 1-3 | **Duration:** 10:00 target
+> **Teaching Goal:** Master the German respect system (Sie vs du) using the direct Malayalam parallel. Learn exactly when to switch and how it affects verb forms.
+> **A1 Exam Link:** Sprechen (using Sie with the examiner), Schreiben (choosing the right greeting for the recipient), Hören (distinguishing relationships in dialogues)
+> **Status:** NEW — v1.0
+> **Created:** 2026-03-26
 
 ---
 
@@ -16,285 +16,216 @@
 
 ---
 
-## Section 1: Hook — Don't End the Conversation Awkwardly (0:12–0:42)
+## Section 1: Hook — The Respect Maze (0:12–1:00)
 
-### Visual: [Split screen: learner leaves shop silently ❌ / learner says "Danke, auf Wiedersehen" ✅]
-### Narration: [ENERGY: practical]
-"Starting a conversation matters. Ending it also matters.
+### Visual: [Two scenarios: Left = Meeting a professor (Formal). Right = Meeting a friend (Casual). Speech bubbles: "Wie geht es Ihnen?" vs "Wie geht's?"]
+### Narration: [ENERGY: high, relatable]
+"In English, it's easy — everyone is 'you'. Your boss is 'you', your dog is 'you', your best friend is 'you'.
 
-In Germany, a clean goodbye plus one polite phrase makes you sound much more natural immediately.
+In German? If you call your boss 'du', it's like calling your 60-year-old principal 'machane' on your first day of school. 😄
 
-This video gives you the small exit toolkit that works in shops, calls, classrooms, and everyday life."
+*Scene aanu!* German takes respect and social distance very seriously.
 
----
+But here's the secret: for Malayalis, this is actually the EASIEST part of German. Why? Because we do exactly the same thing in Malayalam.
 
-## Section 2: The 3 Goodbyes You Actually Need First (0:42–2:10)
-
-### Visual: [Three big cards: Auf Wiedersehen / Tschüss / Gute Nacht]
-### Narration: [ENERGY: structured]
-"Again — don't learn ten phrases first. Learn the three that carry the most weight.
-
-### 1. **Auf Wiedersehen!**
-Formal goodbye.
-Use it with strangers, staff, officials, office situations.
-
-### 2. **Tschüss!**
-Casual goodbye.
-Use it with friends, classmates, relaxed everyday situations.
-
-### 3. **Gute Nacht!**
-Only when someone is actually going to sleep, or you are leaving very late and bedtime is clearly the context.
-
-This is important:
-At 7 PM in a supermarket, you usually say **Tschüss** or **Auf Wiedersehen** — not **Gute Nacht**.
-
-*`Gute Nacht` = urakkathinu close aaya situation. Evening ennu kettal automatic aayi parayaruthu.*
-
-⏸️ Practice:
-- Auf Wiedersehen!
-- Tschüss!
-- Gute Nacht!"
+By the end of this video, you'll never mix up **Sie** and **du** again."
 
 ---
 
-## Section 3: Special Case — Phone Goodbye (2:10–2:55)
+## Section 2: The Direct Parallel — Sie vs du (1:00–2:30)
 
-### Visual: [Phone icon. Word switch animation: sehen → hören]
-### Narration: [ENERGY: memorable]
-"One beautiful German logic moment:
+### Visual: [TABLE: Malayalam column vs German column with arrows connecting them]
 
-Face to face:
-**Auf Wiedersehen** — until we see each other again.
+| Malayalam | German | Relationship |
+|---|---|---|
+| **താങ്കൾ / നിങ്ങൾ** | **Sie** | Formal / Respectful |
+| **നീ** | **du** | Informal / Casual |
 
-On the phone:
-**Auf Wiederhören** — until we hear each other again.
+### Narration: [ENERGY: clear, revealing]
+"Look at this.
 
-You don't need it every day, but once you notice it, you'll remember it forever.
+**Sie** (capital S) is exactly like our **Ningal** or **Thangal**.
+You use it for anyone you don't know well, anyone older, and anyone in a position of authority.
 
-⏸️ Quick contrast:
-- Face to face? → **Auf Wiedersehen**
-- On the phone? → **Auf Wiederhören**"
+**du** is exactly like our **Nee**.
+You use it for friends, family, children, and maybe later for colleagues you know very well.
 
----
+*Malayalam-il nammal separate cheyyunnathupole thanne. Simple!*
 
-## Section 4: The `Danke` / `Bitte` Dance (2:55–4:35)
+Let's test your intuition.
 
-### Visual: [Simple exchange arrows: Danke → Bitte]
-### Narration: [ENERGY: teach then apply]
-"Now the politeness engine of basic German.
+⏸️ **Practice:** Should you use `Sie` or `du`?
+- To a police officer? → **Sie**
+- To your cousin? → **du**
+- To a doctor? → **Sie**
+- To a 5-year-old child? → **du**
+- To an examiner? → **Sie**
 
-### Saying thanks:
-- **Danke!**
-- **Danke schön!**
-- **Vielen Dank!**
+If you use `du` with a stranger, it feels too close — it's called 'Duzen'.
+If you use `Sie` with a close friend, it feels cold.
 
-### Responding:
-- **Bitte!**
-- **Bitte schön!**
-- **Gern geschehen!**
-- **Kein Problem!** (casual)
-
-But at A1, the most useful pair is simply:
-- **Danke!**
-- **Bitte!**
-
-### The important beginner truth:
-`Bitte` has different jobs.
-1. **You're welcome**
-2. **Please**
-3. **Here you go**
-
-That sounds confusing, but in real life context makes it easy.
-
-Examples:
-- **Ein Kaffee, bitte.** → please
-- **Danke! – Bitte!** → you're welcome
-- **Hier, bitte.** → here you go
-
-*`Bitte` oru magic word pole aanu. Meaning context-il ninnu പിടിക്കാം; panic venda.*
-
-⏸️ Practice the exchange:
-- Danke! → Bitte!
-- Vielen Dank! → Gern geschehen!"
+But as a beginner, always remember: **When in doubt, use Sie.**"
 
 ---
 
-## Section 5: `Entschuldigung` vs `Es tut mir leid` (4:35–5:55)
+## Section 3: How it Changes the Verb — `Haben Sie..?` vs `Hast du..?` (2:30–4:30)
 
-### Visual: [Two columns with icons: get attention / real apology]
-### Narration: [ENERGY: contrast-focused]
-"Now the two apology tools beginners mix up all the time.
+### Visual: [DIAGRAM: Verb endings highlighted. Sie -en / du -st]
+### Narration: [ENERGY: building, teaching]
+"It's not just the word 'you' that changes. The verb next to it has to match.
 
-### **Entschuldigung**
-Use it when you want attention or need to excuse yourself.
-- Excuse me
-- Sorry, I bumped into you
-- Excuse me, where is the station?
+Let's look at two basic questions:
 
-### **Es tut mir leid**
-Use it for a more real apology or sadness.
-- I'm sorry
-- I'm really sorry
-- Sorry, I can't come
+[SLIDE: Formal vs Informal questions]
+1. **Wie heißen Sie?** (What is your name? - formal)
+2. **Wie heißt du?** (What is your name? - informal)
 
-Fast rule:
-- small interruption / getting attention → **Entschuldigung**
-- genuine apology / regret → **Es tut mir leid**
+[SLIDE: Another example]
+1. **Wo wohnen Sie?** (Where do you live? - formal)
+2. **Wo wohnst du?** (Where do you live? - informal)
 
-⏸️ Situation check:
-- You want to ask a stranger for help → **Entschuldigung**
-- You broke your friend's cup → **Es tut mir leid**"
+Pattern?
+- **Sie** almost always takes the same ending as the dictionary form (**-en**).
+- **du** takes a special **-st** ending.
 
----
+*Sie ennu parayumpol verb 'smooth' aanu. Du parayumpol athu oru 'S' 'T' hiss aayi maarum. Heißen Sie — heißt du.*
 
-## Section 6: Mini Dialogue 1 — Shop Exit (5:55–7:05)
+⏸️ **Try it:**
+- **Sprechen Sie Malayalam?** (Formal)
+- **Sprichst du Malayalam?** (Informal - don't worry about the 'i' change yet!)
 
-### Visual: [Speech bubbles. Scene: bakery / supermarket checkout]
-### Narration: [ENERGY: role-play]
-"Let's build a real micro-conversation.
-
-### Dialogue
-**You:** Guten Tag.
-**Staff:** Guten Tag.
-**You:** Ein Brot, bitte.
-**Staff:** Drei Euro fünfzig.
-**You:** Danke.
-**Staff:** Bitte.
-**You:** Auf Wiedersehen.
-**Staff:** Auf Wiedersehen.
-
-Look how much everyday German this covers:
-- greeting
-- polite request
-- thanks
-- goodbye
-
-⏸️ Your turn. Say the customer lines.
-1. **Guten Tag.**
-2. **Ein Brot, bitte.**
-3. **Danke.**
-4. **Auf Wiedersehen.**"
+🔊 **Say after me:**
+'Wo wohnen Sie?' ⏸️
+'Wo wohnst du?' ⏸️"
 
 ---
 
-## Section 7: Mini Dialogue 2 — Casual Exit (7:05–7:55)
+## Section 4: Real-World Scenario — First Day at the Office (4:30–6:00)
 
-### Visual: [Speech bubbles. Scene: classmate after class]
-### Narration: [ENERGY: lighter]
-"Now the casual version.
+### Visual: [SCENE: Office desk. A new Malayali employee (you) and a German boss]
+### Narration: [ENERGY: coaching, realistic]
+"Imagine it's your first day at a German company. You're introduced to your boss, Herr Müller.
 
-### Dialogue
-**A:** Okay, bis morgen!
-**B:** Ja, bis morgen! Tschüss!
-**A:** Tschüss!
+**You:** Guten Morgen, Herr Müller. Wie geht es **Ihnen**?
+**Boss:** Gut, danke! Und **Ihnen**?
+**You:** Auch gut, danke.
 
-And another tiny one:
-**A:** Danke für deine Hilfe!
-**B:** Kein Problem!
+Wait — why didn't I say 'Wie geht es Sie?'
+Because after the word 'es geht', 'you' changes to **Ihnen** (formal) or **dir** (informal).
 
-That is enough for lots of real life.
+*Malayalam-il 'engane undu?' ennu chodikkumpol 'ningalku' ennu parayunnathu pole. Fixed phrases aayittu ippo padichal mathi.*
 
-⏸️ Your turn:
-- **Bis morgen!**
-- **Tschüss!**
-- **Kein Problem!**"
+🔊 **Memorize these two blocks:**
+1. **Formal:** Wie geht es Ihnen? — Gut, danke! Und Ihnen?
+2. **Informal:** Wie geht's? — Gut, danke! Und dir?
 
----
-
-## Section 8: Common Beginner Traps (7:55–9:05)
-
-### Visual: [❌ / ✅ cards]
-### Narration: [ENERGY: corrective]
-"Let's fix the mistakes before they become habits.
-
-### Trap 1: Saying `Gute Nacht` too early
-❌ Leaving a café at 6:30 PM: **Gute Nacht**
-✅ Better: **Tschüss** / **Auf Wiedersehen**
-
-### Trap 2: Learning too many goodbye variations at once
-You do **not** need six `Bis...` phrases before you can survive Germany.
-Start with:
-- **Tschüss**
-- **Auf Wiedersehen**
-- **Bis morgen**
-
-### Trap 3: Using `Es tut mir leid` when you only want attention
-At a counter, don't open with a dramatic apology.
-Use **Entschuldigung**.
-
-### Trap 4: Forgetting politeness on the way out
-German interactions often sound more complete when you close them.
-A tiny `Danke` + goodbye goes a long way."
+⏸️ **Practice:** Which one for a classmate?
+- **Wie geht's dir?** ✅"
 
 ---
 
-## Section 9: Output Drill + Exam/Life Transfer (9:05–10:45)
+## Section 5: The "Duzen" Switch (6:00–7:30)
 
-### Visual: [3 scenario cards + final toolkit card]
-### Narration: [ENERGY: practical close]
-"Let's finish with three situations. Answer out loud.
+### Visual: [COMIC: Colleague offering a beer/coffee with the text: "Wir können uns duzen!"]
+### Narration: [ENERGY: fun, cultural hook]
+"In Germany, you might start with **Sie** for weeks. Then, one day, your colleague might say:
 
-### Situation 1
-You are leaving the exam room.
-⏸️ Safe answer: **Auf Wiedersehen!**
+'Wir können uns duzen!' or 'Du kannst 'du' zu mir sagen.'
 
-### Situation 2
-Your friend leaves after class.
-⏸️ Safe answer: **Tschüss!** / **Bis morgen!**
+*Athinte meaning — 'ini namma nammal-aanu, nee ennu vilikkaam' ennarthaam!* 😄
 
-### Situation 3
-You want to ask a stranger something politely.
-⏸️ Safe starter: **Entschuldigung...**
+This is a mini milestone. It means the friendship is official.
+Until then, stay in the **Sie** lane.
 
-### Final toolkit for this lesson
-- **Auf Wiedersehen** = formal goodbye
-- **Tschüss** = casual goodbye
-- **Auf Wiederhören** = phone goodbye
-- **Gute Nacht** = bedtime goodbye
-- **Danke / Bitte** = basic politeness pair
-- **Entschuldigung** = excuse me
-- **Es tut mir leid** = I'm sorry
-
-### Output challenge
-Say this full exit sequence now:
-
-**Danke. Auf Wiedersehen.**
-
-Then the casual version:
-
-**Danke! Tschüss!**
-
-Then the phone version:
-
-**Vielen Dank. Auf Wiederhören!**
-
-Next lesson: your first full German conversation using greeting + name + origin.
-
-Tschüss und bis zum nächsten Video!"
+[EXAM-TIP]
+In the oral exam, NEVER use `du` with the examiner. Even if they are young. Even if they are friendly. Stick to **Sie** to protect your impression score."
 
 ---
 
-## Script Quality Checklist (v2.1)
+## Section 6: Writing First Lines — Emails vs WhatsApp (7:30–8:45)
 
-- [x] Hook is concrete and under 30 seconds
-- [x] Core goodbye toolkit reduced to high-utility items
-- [x] `Danke` / `Bitte` taught with usable exchange, not just list memorization
-- [x] `Entschuldigung` vs `Es tut mir leid` contrast is explicit and beginner-safe
-- [x] Two short dialogues create immediate life transfer
-- [x] Common traps section removes likely misuse early
-- [x] Output challenge closes with spoken production
-- [x] Exam/life usefulness is explicit without exaggeration
-- [x] Production visuals are mostly compact cards and speech bubbles
-- [x] Easier to shoot than the original list-heavy draft
+### Visual: [Two message windows side by side]
+### Narration: [ENERGY: practical, direct]
+"How does this look in writing?
+
+[SLIDE: Formal Email]
+**Sehr geehrte Frau Müller, ...** (Dear Mrs. Müller,)
+... ending with **Mit freundlichen Grüßen.**
+
+[SLIDE: Informal Message]
+**Liebe Anna, ...** or **Hallo Tom!**
+... ending with **Liebe Grüße.**
+
+If you're writing to a professor or an office, you use the formal **Sie** structures inside.
+If you're texting a friend, it's all **du**.
+
+*Kerala-yil letter ezhuthunnathu pole formal aayittu thudanganam — direct 'Hi' parayaruthu.*"
 
 ---
 
-## Revision Notes (v1.0 → v2.1)
+## Section 7: Active Recall Challenge (8:45–9:30)
 
-- Rebuilt the lesson around a **compact polite-exit toolkit** instead of a broad phrase inventory
-- Cut down the goodbye list so beginners retain the right forms faster
-- Simplified `Danke` / `Bitte` into the most teachable A1 exchange first, with extra meanings shown briefly
-- Tightened `Entschuldigung` vs `Es tut mir leid` into a high-contrast decision rule
-- Replaced heavy summary mode with two short dialogues and three scenario outputs
-- Reduced regional/low-priority content and boosted everyday survival value
-- Made the whole lesson more filmable and less table-dependent
+### Visual: [Quiz cards flashing]
+### Narration: [ENERGY: quiz mode]
+"Let's recap.
+
+**1.** What is the German for the formal 'Ningal'?
+⏸️ [pause]
+🔊 **Sie!**
+
+**2.** What is the German for the casual 'Nee'?
+⏸️ [pause]
+🔊 **du!**
+
+**3.** You meet your new German neighbour, an old lady. Which one do you use?
+⏸️ [pause]
+🔊 **Sie!**
+
+**4.** Which pronoun takes the **-st** verb ending?
+⏸️ [pause]
+🔊 **du!**
+
+**5.** I answer: 'Gut, danke! Und...?' (to my boss)
+⏸️ [pause]
+🔊 **Ihnen!**"
+
+---
+
+## Section 8: Outro & Summary (9:30–10:00)
+
+### Visual: [Summary card: Sie = Ningal / du = Nee. When in doubt: Sie!]
+### Narration: [ENERGY: warm takeaway]
+"Respect and social distance are big in Germany. But don't let it scare you.
+Just think of Malayalam. 
+
+If you'd say 'Ningal' to them in Kerala, use **Sie** in Germany.
+If you'd say 'Nee', use **du**.
+
+Safe rule: Start with **Sie**. Let them offer **du**.
+
+Next video: We wrap up Lesson 1-3 with all the Goodbye and polite words you need to survive.
+
+**Tschüss! Bis bald!**"
+
+---
+
+## Quality Checklist
+
+- [x] Hook is relatable and under 60 seconds
+- [x] direct Malayalam parallel used prominently (Sie/du = Ningal/Nee)
+- [x] Verb ending difference (Sie/-en vs du/-st) explained simply
+- [x] "Wie geht es Ihnen/dir" taught as fixed survival phrases
+- [x] "Duzen" cultural concept explained
+- [x] Exam safety tip included for Sprechen
+- [x] Summary and active recall challenges included
+- [x] Target duration: 10:00 (approx 9:45 scripted)
+- [x] Malayalam bridges: 6 (structural and social parallels)
+
+---
+
+## v1.0 Script Notes
+
+- Built specifically to bridge the Malayalam social intuition into German grammar.
+- Uses local comparisons ("machane") to make social distance clear.
+- Replaces the missing v1-3-2 draft identified in the module audit.
+- Connects directly to the next lesson on polite exits (v1-4-1).

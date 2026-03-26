@@ -10,6 +10,7 @@ import type { LessonProgress } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
 import type { Module } from '@/lib/content/modules';
 import { isModuleUnlocked, OPTIONAL_MODULE_IDS } from '@/lib/curriculum';
+import { SkeletonGrid } from '@/components/ui/Skeleton';
 
 // ─── Mastery Calculation ────────────────────────────────────────
 function getModuleMastery(module: Module, completedLessons: LessonProgress[]): 'none' | 'bronze' | 'silver' | 'gold' {
@@ -62,9 +63,20 @@ export default function LearnPage() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-pulse">
-          <div className="w-16 h-16 bg-gradient-to-br from-[#e94560] to-[#0f3460] rounded-2xl" />
+      <div className="px-3 py-3 max-w-4xl mx-auto">
+        <div className="h-5 w-40 bg-[var(--foreground)]/8 rounded mb-3 animate-pulse" />
+        <div className="space-y-2">
+          {[1,2,3,4].map(i => (
+            <div key={i} className="game-card p-2.5 animate-pulse">
+              <div className="flex items-center gap-2.5">
+                <div className="w-10 h-10 rounded-lg bg-[var(--foreground)]/8" />
+                <div className="flex-1">
+                  <div className="h-4 bg-[var(--foreground)]/8 rounded w-3/4 mb-1.5" />
+                  <div className="h-3 bg-[var(--foreground)]/6 rounded w-1/3" />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     );

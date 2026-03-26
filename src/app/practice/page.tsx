@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
 import { getDueCount } from '@/lib/srs';
 import { Kuttan } from '@/components/character/Kuttan';
+import { SkeletonGrid } from '@/components/ui/Skeleton';
 
 const practices = [
   {
@@ -79,9 +80,9 @@ export default function PracticePage() {
   }, [mounted, userProgress.srsCards]);
 
   if (!mounted) return (
-    <div className="min-h-screen flex items-center justify-center">
-      <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-        className="w-12 h-12 border-4 border-[#d4a520] border-t-transparent rounded-full" />
+    <div className="min-h-screen px-3 py-3">
+      <div className="h-5 w-32 bg-[var(--foreground)]/8 rounded mb-3 animate-pulse" />
+      <SkeletonGrid count={6} />
     </div>
   );
 

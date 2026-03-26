@@ -1,0 +1,498 @@
+﻿Module 01: 6 lessons, 12 videos, 51 exercises, 61 vocab, 1565 XP
+Module 02: 5 lessons, 10 videos, 42 exercises, 51 vocab, 1325 XP
+Module 03: 6 lessons, 8 videos, 35 exercises, 53 vocab, 1455 XP
+Module 04: 5 lessons, 8 videos, 35 exercises, 47 vocab, 1440 XP
+Module 05: 5 lessons, 8 videos, 34 exercises, 47 vocab, 1235 XP
+Module 06: 5 lessons, 8 videos, 34 exercises, 46 vocab, 1125 XP
+Module 07: 5 lessons, 6 videos, 30 exercises, 44 vocab, 1040 XP
+Module 08: 4 lessons, 7 videos, 25 exercises, 40 vocab, 930 XP
+Module 09: 5 lessons, 10 videos, 40 exercises, 52 vocab, 1220 XP
+Module 10: 5 lessons, 9 videos, 38 exercises, 49 vocab, 1125 XP
+Module 11: 5 lessons, 10 videos, 40 exercises, 50 vocab, 1235 XP
+Module 12: 4 lessons, 8 videos, 32 exercises, 42 vocab, 990 XP
+Module 13: 5 lessons, 8 videos, 40 exercises, 50 vocab, 1240 XP
+Module 14: 4 lessons, 8 videos, 32 exercises, 40 vocab, 1020 XP
+Module 15: 4 lessons, 6 videos, 21 exercises, 30 vocab, 805 XP
+Module 16: 5 lessons, 8 videos, 39 exercises, 36 vocab, 1345 XP
+Module 17: 6 lessons, 6 videos, 65 exercises, 20 vocab, 1880 XP
+Module 18: 6 lessons, 6 videos, 70 exercises, 22 vocab, 2041 XP
+
+=== PEDAGOGICAL FLOW ANALYSIS ===
+
+=== COURSE TOTALS ===
+Total Lessons: 90
+Total Videos: 146
+Total Exercises: 703
+Total Vocabulary: 780
+Total XP Available: 23016
+
+=== REAL ISSUES FOUND ===
+[M01:L84] MISSING: Empty explanation field
+[M01:L259] MISSING: Empty explanation field
+[M01:L261] MISSING: Empty explanation field
+[M01:L263] MISSING: Empty explanation field
+[M01:L348] MISSING: Empty explanation field
+[M01:L349] MISSING: Empty explanation field
+[M01:L351] MISSING: Empty explanation field
+[M01:L353] MISSING: Empty explanation field
+[M01:L572] MISSING: Empty explanation field
+[M01:L615] MISSING: Empty explanation field
+[M02:L110] MISSING: Empty explanation field
+[M02:L119] MISSING: Empty explanation field
+[M02:L144] MISSING: Empty explanation field
+[M02:L291] MISSING: Empty explanation field
+[M02:L449] GERMAN: Article before profession (should be omitted in German)
+[M02:L486] MISSING: Empty explanation field
+[M02:L512] MISSING: Empty explanation field
+[M02:L638] MISSING: Empty explanation field
+[M02:L832] MISSING: Empty explanation field
+[M02:L841] MISSING: Empty explanation field
+[M02:L850] MISSING: Empty explanation field
+[M02:L876] MISSING: Empty explanation field
+[M02:L903] MISSING: Empty explanation field
+[M02:L912] MISSING: Empty explanation field
+[M03:L142] MISSING: Empty explanation field
+[M03:L512] MISSING: Empty explanation field
+[M03:L526] MISSING: Empty explanation field
+[M03:L535] MISSING: Empty explanation field
+[M03:L694] MISSING: Empty explanation field
+[M03:L898] MISSING: Empty explanation field
+[M03:L907] MISSING: Empty explanation field
+[M03:L916] MISSING: Empty explanation field
+[M03:L1041] MISSING: Empty explanation field
+[M03:L1050] MISSING: Empty explanation field
+[M03:L1059] MISSING: Empty explanation field
+[M03:L1068] MISSING: Empty explanation field
+[M03:L1077] MISSING: Empty explanation field
+[M03:L1086] MISSING: Empty explanation field
+[M03:L1095] MISSING: Empty explanation field
+[M03:L1104] MISSING: Empty explanation field
+[M04:L140] MISSING: Empty explanation field
+[M04:L357] MISSING: Empty explanation field
+[M04:L389] MISSING: Empty explanation field
+[M04:L794] MISSING: Empty explanation field
+[M04:L963] MISSING: Empty explanation field
+[M04:L995] MISSING: Empty explanation field
+[M04:L1009] MISSING: Empty explanation field
+[M04:L1037] MISSING: Empty explanation field
+[M04:L1046] MISSING: Empty explanation field
+[M05:L1009] MISSING: Empty explanation field
+[M06:L1092] MISSING: Empty explanation field
+[M06:L1101] MISSING: Empty explanation field
+[M07:L71] MISSING: Empty explanation field
+[M07:L89] MISSING: Empty explanation field
+[M07:L221] MISSING: Empty explanation field
+[M07:L230] MISSING: Empty explanation field
+[M07:L239] MISSING: Empty explanation field
+[M07:L248] MISSING: Empty explanation field
+[M07:L419] MISSING: Empty explanation field
+[M07:L437] MISSING: Empty explanation field
+[M07:L446] MISSING: Empty explanation field
+[M07:L455] MISSING: Empty explanation field
+[M07:L614] MISSING: Empty explanation field
+[M07:L623] MISSING: Empty explanation field
+[M07:L632] MISSING: Empty explanation field
+[M07:L662] MISSING: Empty explanation field
+[M07:L671] MISSING: Empty explanation field
+[M07:L795] MISSING: Empty explanation field
+[M07:L804] MISSING: Empty explanation field
+[M07:L822] MISSING: Empty explanation field
+[M08:L118] MISSING: Empty explanation field
+[M08:L127] MISSING: Empty explanation field
+[M08:L136] MISSING: Empty explanation field
+[M08:L353] MISSING: Empty explanation field
+[M08:L371] MISSING: Empty explanation field
+[M08:L401] MISSING: Empty explanation field
+[M08:L410] MISSING: Empty explanation field
+[M08:L609] MISSING: Empty explanation field
+[M08:L646] MISSING: Empty explanation field
+[M08:L774] MISSING: Empty explanation field
+[M08:L783] MISSING: Empty explanation field
+[M08:L792] MISSING: Empty explanation field
+[M08:L822] MISSING: Empty explanation field
+[M08:L836] MISSING: Empty explanation field
+[M09:L86] MISSING: Empty explanation field
+[M09:L88] MISSING: Empty explanation field
+[M09:L91] MISSING: Empty explanation field
+[M09:L92] MISSING: Empty explanation field
+[M09:L93] MISSING: Empty explanation field
+[M09:L175] MISSING: Empty explanation field
+[M09:L176] MISSING: Empty explanation field
+[M09:L180] MISSING: Empty explanation field
+[M09:L265] MISSING: Empty explanation field
+[M09:L266] MISSING: Empty explanation field
+[M09:L268] MISSING: Empty explanation field
+[M09:L270] MISSING: Empty explanation field
+[M09:L272] MISSING: Empty explanation field
+[M09:L355] MISSING: Empty explanation field
+[M09:L357] MISSING: Empty explanation field
+[M09:L358] MISSING: Empty explanation field
+[M09:L360] MISSING: Empty explanation field
+[M09:L361] MISSING: Empty explanation field
+[M09:L448] MISSING: Empty explanation field
+[M09:L449] MISSING: Empty explanation field
+[M09:L451] MISSING: Empty explanation field
+[M09:L453] MISSING: Empty explanation field
+[M10:L79] MISSING: Empty explanation field
+[M10:L81] MISSING: Empty explanation field
+[M10:L82] MISSING: Empty explanation field
+[M10:L160] MISSING: Empty explanation field
+[M10:L164] MISSING: Empty explanation field
+[M10:L165] MISSING: Empty explanation field
+[M10:L166] MISSING: Empty explanation field
+[M10:L239] MISSING: Empty explanation field
+[M10:L240] MISSING: Empty explanation field
+[M10:L242] MISSING: Empty explanation field
+[M10:L244] MISSING: Empty explanation field
+[M10:L246] MISSING: Empty explanation field
+[M10:L321] MISSING: Empty explanation field
+[M10:L323] MISSING: Empty explanation field
+[M10:L325] MISSING: Empty explanation field
+[M10:L326] MISSING: Empty explanation field
+[M10:L383] MISSING: Empty explanation field
+[M10:L386] MISSING: Empty explanation field
+[M10:L387] MISSING: Empty explanation field
+[M11:L90] MISSING: Empty explanation field
+[M11:L133] MISSING: Empty explanation field
+[M11:L290] MISSING: Empty explanation field
+[M11:L387] MISSING: Empty explanation field
+[M11:L396] MISSING: Empty explanation field
+[M11:L430] MISSING: Empty explanation field
+[M11:L439] MISSING: Empty explanation field
+[M11:L448] MISSING: Empty explanation field
+[M11:L537] MISSING: Empty explanation field
+[M11:L546] MISSING: Empty explanation field
+[M11:L563] MISSING: Empty explanation field
+[M11:L589] MISSING: Empty explanation field
+[M11:L598] MISSING: Empty explanation field
+[M11:L689] MISSING: Empty explanation field
+[M11:L706] MISSING: Empty explanation field
+[M11:L715] MISSING: Empty explanation field
+[M11:L732] MISSING: Empty explanation field
+[M12:L89] MISSING: Empty explanation field
+[M12:L98] MISSING: Empty explanation field
+[M12:L115] MISSING: Empty explanation field
+[M12:L132] MISSING: Empty explanation field
+[M12:L150] MISSING: Empty explanation field
+[M12:L238] MISSING: Empty explanation field
+[M12:L255] MISSING: Empty explanation field
+[M12:L264] MISSING: Empty explanation field
+[M12:L281] MISSING: Empty explanation field
+[M12:L389] MISSING: Empty explanation field
+[M12:L406] MISSING: Empty explanation field
+[M12:L415] MISSING: Empty explanation field
+[M12:L432] MISSING: Empty explanation field
+[M12:L441] MISSING: Empty explanation field
+[M12:L450] MISSING: Empty explanation field
+[M12:L540] MISSING: Empty explanation field
+[M12:L549] MISSING: Empty explanation field
+[M12:L583] MISSING: Empty explanation field
+[M12:L592] MISSING: Empty explanation field
+[M13:L66] MISSING: Empty explanation field
+[M13:L69] MISSING: Empty explanation field
+[M13:L71] MISSING: Empty explanation field
+[M13:L72] MISSING: Empty explanation field
+[M13:L199] MISSING: Empty explanation field
+[M13:L206] MISSING: Empty explanation field
+[M15:L601] MISSING: Empty explanation field
+[M16:L114] MISSING: Empty explanation field
+[M16:L123] MISSING: Empty explanation field
+[M16:L132] MISSING: Empty explanation field
+[M16:L362] MISSING: Empty explanation field
+[M16:L525] MISSING: Empty explanation field
+[M16:L735] MISSING: Empty explanation field
+[M16:L753] MISSING: Empty explanation field
+[M16:L872] MISSING: Empty explanation field
+[M16:L881] MISSING: Empty explanation field
+[M16:L890] MISSING: Empty explanation field
+[M16:L899] MISSING: Empty explanation field
+[M16:L908] MISSING: Empty explanation field
+[M16:L925] MISSING: Empty explanation field
+[M17:L271] MISSING: Empty explanation field
+[M17:L289] MISSING: Empty explanation field
+[M17:L298] MISSING: Empty explanation field
+[M17:L316] MISSING: Empty explanation field
+[M17:L334] MISSING: Empty explanation field
+[M17:L343] MISSING: Empty explanation field
+[M17:L479] MISSING: Empty explanation field
+[M17:L488] MISSING: Empty explanation field
+[M17:L497] MISSING: Empty explanation field
+[M17:L506] MISSING: Empty explanation field
+[M17:L515] MISSING: Empty explanation field
+[M17:L600] MISSING: Empty explanation field
+[M17:L614] MISSING: Empty explanation field
+[M17:L628] MISSING: Empty explanation field
+[M17:L642] MISSING: Empty explanation field
+[M17:L656] MISSING: Empty explanation field
+[M17:L684] MISSING: Empty explanation field
+[M17:L698] MISSING: Empty explanation field
+[M17:L712] MISSING: Empty explanation field
+[M17:L726] MISSING: Empty explanation field
+[M17:L817] MISSING: Empty explanation field
+[M17:L826] MISSING: Empty explanation field
+[M17:L835] MISSING: Empty explanation field
+[M17:L844] MISSING: Empty explanation field
+[M17:L853] MISSING: Empty explanation field
+[M17:L867] MISSING: Empty explanation field
+[M17:L893] MISSING: Empty explanation field
+[M17:L919] MISSING: Empty explanation field
+[M17:L1007] MISSING: Empty explanation field
+[M17:L1016] MISSING: Empty explanation field
+[M17:L1026] MISSING: Empty explanation field
+[M17:L1071] MISSING: Empty explanation field
+[M17:L1084] MISSING: Empty explanation field
+[M17:L1094] MISSING: Empty explanation field
+[M17:L1103] MISSING: Empty explanation field
+[M17:L1112] MISSING: Empty explanation field
+[M17:L1139] MISSING: Empty explanation field
+[M17:L1152] MISSING: Empty explanation field
+[M18:L63] MISSING: Empty explanation field
+[M18:L72] MISSING: Empty explanation field
+[M18:L99] MISSING: Empty explanation field
+[M18:L108] MISSING: Empty explanation field
+[M18:L117] MISSING: Empty explanation field
+[M18:L126] MISSING: Empty explanation field
+[M18:L135] MISSING: Empty explanation field
+[M18:L144] MISSING: Empty explanation field
+[M18:L254] MISSING: Empty explanation field
+[M18:L277] MISSING: Empty explanation field
+[M18:L314] MISSING: Empty explanation field
+[M18:L323] MISSING: Empty explanation field
+[M18:L346] MISSING: Empty explanation field
+[M18:L440] MISSING: Empty explanation field
+[M18:L449] MISSING: Empty explanation field
+[M18:L463] MISSING: Empty explanation field
+[M18:L472] MISSING: Empty explanation field
+[M18:L486] MISSING: Empty explanation field
+[M18:L500] MISSING: Empty explanation field
+[M18:L509] MISSING: Empty explanation field
+[M18:L532] MISSING: Empty explanation field
+[M18:L546] MISSING: Empty explanation field
+[M18:L564] MISSING: Empty explanation field
+[M18:L678] MISSING: Empty explanation field
+[M18:L701] MISSING: Empty explanation field
+[M18:L715] MISSING: Empty explanation field
+[M18:L729] MISSING: Empty explanation field
+[M18:L738] MISSING: Empty explanation field
+[M18:L752] MISSING: Empty explanation field
+[M18:L761] MISSING: Empty explanation field
+[M18:L770] MISSING: Empty explanation field
+[M18:L864] MISSING: Empty explanation field
+[M18:L873] MISSING: Empty explanation field
+[M18:L887] MISSING: Empty explanation field
+[M18:L901] MISSING: Empty explanation field
+[M18:L910] MISSING: Empty explanation field
+[M18:L924] MISSING: Empty explanation field
+[M18:L938] MISSING: Empty explanation field
+[M18:L952] MISSING: Empty explanation field
+[M18:L961] MISSING: Empty explanation field
+[M18:L975] MISSING: Empty explanation field
+[M18:L989] MISSING: Empty explanation field
+[M18:L1003] MISSING: Empty explanation field
+[M18:L1091] MISSING: Empty explanation field
+[M18:L1123] MISSING: Empty explanation field
+[M18:L1132] MISSING: Empty explanation field
+[M18:L1147] MISSING: Empty explanation field
+[M18:L1161] MISSING: Empty explanation field
+[M18:L1175] MISSING: Empty explanation field
+[M18:L1189] MISSING: Empty explanation field
+[M18:L1198] MISSING: Empty explanation field
+[M18:L1269] MISSING: Empty explanation field
+[M04:L0] ANSWER_NOT_IN_OPTIONS: Exercise ex4-4-2: correctAnswer "Because " not found in options: [It, ,
+            , -chen, ,
+            , ,
+            , s an exception with no reason]
+[M01:L0] DUPE_QUESTION: Duplicate question (also in M01): "You..."
+[M01:L0] DUPE_QUESTION: Duplicate question (also in M01): "Type in German: ..."
+[M02:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M02:L0] DUPE_QUESTION: Duplicate question (also in M01): "Match the German phrase to its English meaning:..."
+[M02:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M02:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you ask ..."
+[M02:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M02:L0] DUPE_QUESTION: Duplicate question (also in M01): "You..."
+[M02:L0] DUPE_QUESTION: Duplicate question (also in M01): "Type in German: ..."
+[M02:L0] DUPE_QUESTION: Duplicate question (also in M01): "Type in German: ..."
+[M03:L0] DUPE_QUESTION: Duplicate question (also in M01): "What is ..."
+[M03:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M03:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M03:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you ask ..."
+[M03:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M03:L0] DUPE_QUESTION: Duplicate question (also in M01): "Type in German: ..."
+[M03:L0] DUPE_QUESTION: Duplicate question (also in M01): "Type in German: ..."
+[M04:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M04:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M04:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M04:L0] DUPE_QUESTION: Duplicate question (also in M01): "Type in German: ..."
+[M04:L0] DUPE_QUESTION: Duplicate question (also in M01): "Type in German: ..."
+[M05:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M05:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M05:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M05:L0] DUPE_QUESTION: Duplicate question (also in M05): "Arrange to form a correct sentence: ..."
+[M05:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M05:L0] DUPE_QUESTION: Duplicate question (also in M05): "Which word means ..."
+[M05:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M05:L0] DUPE_QUESTION: Duplicate question (also in M01): "Type in German: ..."
+[M05:L0] DUPE_QUESTION: Duplicate question (also in M01): "Type in German: ..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M06): "What is the correct article for ..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M01): "You..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M05): "Choose the correct sentence: ..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M01): "Type in German: ..."
+[M06:L0] DUPE_QUESTION: Duplicate question (also in M01): "Type in German: ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M06): "What is the correct article for ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you ask ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M01): "What is ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M07): "Put these words in order to say ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M01): "What is ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you ask ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M01): "What is ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M07:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M08:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M08:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M08:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M08:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M08:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M08:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M08:L0] DUPE_QUESTION: Duplicate question (also in M01): "What is ..."
+[M08:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M08:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M08:L0] DUPE_QUESTION: Duplicate question (also in M07): "Complete: ..."
+[M09:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M09:L0] DUPE_QUESTION: Duplicate question (also in M01): "What is ..."
+[M09:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M09:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you ask ..."
+[M09:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M09:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you ask ..."
+[M09:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M09:L0] DUPE_QUESTION: Duplicate question (also in M09): "Arrange: ..."
+[M09:L0] DUPE_QUESTION: Duplicate question (also in M09): "Arrange: ..."
+[M09:L0] DUPE_QUESTION: Duplicate question (also in M09): "Arrange: ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M06): "What is the correct article for ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M09): "Arrange: ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M04): "Why is ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M09): "Arrange: ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M09): "Arrange: ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M09): "Arrange: ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M09): "Arrange: ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M09): "Arrange: ..."
+[M10:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M11:L0] DUPE_QUESTION: Duplicate question (also in M01): "Match the German word to its English meaning:..."
+[M11:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M11:L0] DUPE_QUESTION: Duplicate question (also in M01): "You don..."
+[M11:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M11:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M11:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M11:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M12:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M12:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M12:L0] DUPE_QUESTION: Duplicate question (also in M11): "Put this sentence in the correct order: ..."
+[M12:L0] DUPE_QUESTION: Duplicate question (also in M04): "Which sentence correctly says ..."
+[M12:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M12:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M12:L0] DUPE_QUESTION: Duplicate question (also in M04): "How would you say ..."
+[M12:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M12:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M12:L0] DUPE_QUESTION: Duplicate question (also in M11): "Put this sentence in correct order: ..."
+[M13:L0] DUPE_QUESTION: Duplicate question (also in M05): "Which conjugation of ..."
+[M13:L0] DUPE_QUESTION: Duplicate question (also in M13): "Match the verb to its past participle:..."
+[M13:L0] DUPE_QUESTION: Duplicate question (also in M03): "Why does ..."
+[M13:L0] DUPE_QUESTION: Duplicate question (also in M13): "What is the past participle of ..."
+[M13:L0] DUPE_QUESTION: Duplicate question (also in M13): "Match the verb to its past participle:..."
+[M13:L0] DUPE_QUESTION: Duplicate question (also in M03): "Why does ..."
+[M13:L0] DUPE_QUESTION: Duplicate question (also in M13): "What is the past participle of ..."
+[M13:L0] DUPE_QUESTION: Duplicate question (also in M13): "Put the words in the correct order:..."
+[M13:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M13:L0] DUPE_QUESTION: Duplicate question (also in M02): "How do you say ..."
+[M14:L0] DUPE_QUESTION: Duplicate question (also in M01): "What is ..."
+[M14:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M14:L0] DUPE_QUESTION: Duplicate question (also in M14): "What is a ..."
+[M14:L0] DUPE_QUESTION: Duplicate question (also in M01): "What is ..."
+[M14:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M15:L0] DUPE_QUESTION: Duplicate question (also in M01): "You..."
+[M15:L0] DUPE_QUESTION: Duplicate question (also in M01): "What is ..."
+[M15:L0] DUPE_QUESTION: Duplicate question (also in M14): "What is a ..."
+[M15:L0] DUPE_QUESTION: Duplicate question (also in M01): "What is ..."
+[M15:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M15:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M16:L0] DUPE_QUESTION: Duplicate question (also in M16): "Which sentence is correct?..."
+[M16:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M16:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M16:L0] DUPE_QUESTION: Duplicate question (also in M16): "Read: ..."
+[M16:L0] DUPE_QUESTION: Duplicate question (also in M16): "Read: ..."
+[M16:L0] DUPE_QUESTION: Duplicate question (also in M16): "Read: ..."
+[M16:L0] DUPE_QUESTION: Duplicate question (also in M01): "What does ..."
+[M16:L0] DUPE_QUESTION: Duplicate question (also in M16): "Read: ..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó You hear:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó You hear:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó You hear:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó You hear:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó You hear:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó You hear:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó You hear:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó You hear:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó You hear:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó Announcement:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó Announcement:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó Announcement:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôó Announcement:\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôï Read the sign:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôï Read the notice:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôï Read the notice:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôï Read the ad:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôï Read the sign:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôï Read the notice:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒô░ Read the classified ad:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒô░ Read the ad:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒô░ Read the ad:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôº Read the email:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôº Read the email:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôº Read the email:\n\n\..."
+[M17:L0] DUPE_QUESTION: Duplicate question (also in M17): "­ƒôº Read the email:\n\n\..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 1 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 1 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 1 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 1 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 1 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 1 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 1 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 1 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 1 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 1 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 2 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 2 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 2 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 2 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 2 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 2 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 2 ÔÇö Wortkarte: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 3 ÔÇö Situationskarte:\n..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 3 ÔÇö Situationskarte:\n..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 3 ÔÇö Situationskarte:\n..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 3 ÔÇö Situationskarte:\n..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 3 ÔÇö Your partner asks: ..."
+[M18:L0] DUPE_QUESTION: Duplicate question (also in M18): "­ƒÄñ SPRECHEN TEIL 3 ÔÇö Situationskarte:\n..."
+
+=== ISSUE SUMMARY ===
+MISSING: 270
+GERMAN: 1
+ANSWER_NOT_IN_OPTIONS: 1
+DUPE_QUESTION: 186
+
+Total real issues: 458

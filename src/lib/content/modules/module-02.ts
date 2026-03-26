@@ -644,6 +644,7 @@ export const MODULE_2: Module = {
           question: "Match the language to its German name:",
           options: ["French", "Spanish", "English", "Arabic"],
           correctAnswer: ["Französisch", "Spanisch", "Englisch", "Arabisch"],
+          explanation: "Language names in German often end in '-isch'. French = Französisch, Spanish = Spanisch.",
           xpReward: 15
         },
         {
@@ -652,6 +653,7 @@ export const MODULE_2: Module = {
           question: "Order from LEAST to MOST fluent:",
           options: ["fließend", "gut", "Muttersprache", "ein bisschen"],
           correctAnswer: ["ein bisschen", "gut", "fließend", "Muttersprache"],
+          explanation: "The hierarchy of proficiency: 'ein bisschen' (a little) < 'gut' (well) < 'fließend' (fluent) < 'Muttersprache' (mother tongue/native).",
           xpReward: 20
         },
         {
@@ -687,6 +689,7 @@ export const MODULE_2: Module = {
           question: "Match the verb to its du-form:",
           options: ["sprechen", "lesen", "fahren"],
           correctAnswer: ["du sprichst", "du liest", "du fährst"],
+          explanation: "Mastering the vowel changes (e→i, e→ie, a→ä) is essential for natural German speech.",
           xpReward: 15
         }
       ],
@@ -821,6 +824,7 @@ export const MODULE_2: Module = {
             "Ich spreche Malayalam, Englisch und ein bisschen Deutsch.",
             "Freut mich!"
           ],
+          explanation: "A natural introduction flow: Greeting & Name → Origin → Profession → Languages → Closing. This is the standard A1 exam format.",
           xpReward: 20
         },
         {
@@ -856,6 +860,7 @@ export const MODULE_2: Module = {
           question: "Match the question to the correct answer:",
           options: ["Wie heißen Sie?", "Woher kommen Sie?", "Was sind Sie von Beruf?", "Sprechen Sie Deutsch?"],
           correctAnswer: ["Ich heiße Arun.", "Ich komme aus Indien.", "Ich bin Ingenieur.", "Ja, ein bisschen."],
+          explanation: "Connecting the core personal information questions with their appropriate answers is vital for identity statements.",
           xpReward: 15
         },
         {
@@ -892,6 +897,7 @@ export const MODULE_2: Module = {
             "Aus Hamburg. Was studierst du?",
             "Informatik. Und du?"
           ],
+          explanation: "In casual settings, small talk flows through question-answer pairs with 'Und du?' (And you?) as the connective tissue.",
           xpReward: 20
         },
         {

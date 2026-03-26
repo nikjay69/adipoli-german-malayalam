@@ -19,6 +19,7 @@ export interface Exercise {
   id: string;
   type: 'multiple-choice' | 'fill-blank' | 'matching' | 'ordering' | 'speaking' | 'free-text' | 'dictation' | 'image-prompt';
   question: string;
+  questionGerman?: string;
   options?: string[];
   correctAnswer: string | string[];
   explanation?: string;

@@ -562,13 +562,20 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                   Exercise {currentExerciseIndex + 1} of {lesson.exercises.length}
                 </Badge>
 
-                <h2 className="text-xl font-bold text-[var(--foreground)] mb-6">
-                  {highlightGerman(currentExercise.question)}
-                </h2>
+                <div className="mb-6">
+                  <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">
+                    {highlightGerman(currentExercise.question)}
+                  </h2>
+                  {currentExercise.questionGerman && (
+                    <p className="text-lg text-[var(--foreground)]/60 italic">
+                      {currentExercise.questionGerman}
+                    </p>
+                  )}
+                </div>
 
                 {currentExercise.imageUrl && (
                   <div className="mb-6 rounded-xl overflow-hidden shadow border border-[var(--card-border)]">
-                    <img src={currentExercise.imageUrl} alt="Exercise prompt" className="w-full object-cover" />
+                    <img src={currentExercise.imageUrl} alt="Exercise prompt" className="w-full object-cover" loading="lazy" />
                   </div>
                 )}
                 
