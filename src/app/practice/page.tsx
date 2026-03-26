@@ -7,6 +7,7 @@ import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
 import { getDueCount } from '@/lib/srs';
+import { Kuttan } from '@/components/character/Kuttan';
 
 const practices = [
   {
@@ -94,6 +95,21 @@ export default function PracticePage() {
           <span className="gradient-text">Practice</span>
           <span className="text-[var(--foreground)]/40 font-normal ml-1.5">{practices.length} modes</span>
         </h1>
+      </motion.div>
+
+      {/* Kuttan encouragement */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="flex items-center gap-2.5 game-card px-3 py-2 mb-2"
+      >
+        <Kuttan mood="pointing" size="sm" entrance={false} />
+        <p className="text-xs text-[var(--foreground)]/60 leading-snug">
+          {dueCount > 0
+            ? `Machaa, ${dueCount} words due for review! Brain use cheyyuka! 🧠`
+            : 'Practice makes permanent! Pick a mode and start. 💪'}
+        </p>
       </motion.div>
 
       {/* 2-column practice grid */}

@@ -4,3 +4,4 @@ export { ProgressBar } from './ProgressBar';
 export { Badge } from './Badge';
 export { XPCounter } from './XPCounter';
 export { StreakCounter } from './StreakCounter';
+export { Loading } from './Loading';

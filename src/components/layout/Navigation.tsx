@@ -83,6 +83,14 @@ export function Navigation() {
                     >
                       {item.label}
                     </span>
+                    {/* Active indicator dot */}
+                    {isActive && (
+                      <motion.div
+                        layoutId="nav-dot"
+                        className="w-1 h-1 rounded-full bg-[#d4a520] mt-0.5"
+                        transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                      />
+                    )}
                   </motion.div>
                 </Link>
               );

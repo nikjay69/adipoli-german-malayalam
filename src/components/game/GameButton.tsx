@@ -105,22 +105,51 @@ export function ChoiceButton({ children, onClick, state = 'default', disabled = 
   const stateStyles = {
     default: 'bg-[var(--card-bg)] border-[var(--card-border)] hover:bg-[var(--foreground)]/10 hover:border-[var(--foreground)]/20',
     selected: 'bg-[#d4a520]/15 border-[#d4a520]',
-    correct: 'bg-[#27ae60]/20 border-[#27ae60] animate-pop',
-    incorrect: 'bg-[#c0392b]/20 border-[#c0392b] animate-shake',
+    correct: 'bg-[#27ae60]/20 border-[#27ae60]',
+    incorrect: 'bg-[#c0392b]/20 border-[#c0392b]',
+  };
+
+  const animVariants = {
+    default: {},
+    selected: {},
+    correct: { scale: [1, 1.03, 1], transition: { duration: 0.3 } },
+    incorrect: { x: [0, -6, 6, -4, 4, 0], transition: { duration: 0.4 } },
   };
 
   return (
     <motion.button
       onClick={onClick}
       disabled={disabled}
-      whileTap={disabled ? undefined : { scale: 0.98 }}
+      whileTap={disabled ? undefined : { scale: 0.97 }}
+      animate={animVariants[state]}
       className={clsx(
-        'w-full p-4 rounded-xl border-2 text-left font-medium transition-all',
+        'w-full p-4 rounded-xl border-2 text-left font-medium transition-colors duration-200',
         stateStyles[state],
-        disabled && 'cursor-not-allowed'
+        disabled && state === 'default' && 'opacity-60 cursor-not-allowed'
       )}
     >
-      {children}
+      <div className="flex items-center gap-3">
+        <span className="flex-1">{children}</span>
+        {state === 'correct' && (
+          <motion.span
+            initial={{ scale: 0, rotate: -90 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+            className="text-[#27ae60] text-lg"
+          >
+            ✓
+          </motion.span>
+        )}
+        {state === 'incorrect' && (
+          <motion.span
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            className="text-[#c0392b] text-lg"
+          >
+            ✗
+          </motion.span>
+        )}
+      </div>
     </motion.button>
   );
 }

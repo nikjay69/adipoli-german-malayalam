@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import { Lock } from 'lucide-react';
 import { useGameStore } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
+import { Kuttan } from '@/components/character/Kuttan';
+import { Appu } from '@/components/character/Appu';
 
 interface GameDef {
   id: string;
@@ -235,6 +237,24 @@ export default function GamesPage() {
           <span className="gradient-text">Games</span>
           <span className="text-[var(--foreground)]/40 font-normal ml-1.5">{unlockedGames.length} of {games.length} unlocked</span>
         </h1>
+      </motion.div>
+
+      {/* Characters */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.08 }}
+        className="flex items-center gap-2.5 game-card px-3 py-2 mb-2"
+      >
+        <div className="flex items-center gap-1 flex-shrink-0">
+          <Kuttan mood={unlockedGames.length > 8 ? 'excited' : 'happy'} size="sm" entrance={false} />
+          <Appu mood="encouraging" size="xs" entrance={false} />
+        </div>
+        <p className="text-xs text-[var(--foreground)]/60 leading-snug">
+          {lockedGames.length === 0
+            ? 'All games unlocked! Adipoli! Play any game you want! 🔥'
+            : `Complete more lessons to unlock ${lockedGames.length} more games! 🎮`}
+        </p>
       </motion.div>
 
       {/* 2-column game grid */}
