@@ -1,10 +1,9 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { ALL_MODULES } from '@/lib/content/modules';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Mic, MessageCircle, Headphones, Radio } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
 import { getDueCount } from '@/lib/srs';
@@ -90,36 +89,6 @@ export default function PracticePage() {
     return getDueCount(userProgress.srsCards);
   }, [mounted, userProgress.srsCards]);
 
-  const completedLessons = userProgress.completedLessons.length;
-  const totalLessons = ALL_MODULES.reduce((sum, module) => sum + module.lessons.length, 0);
-
-  const recommendedPractice = useMemo(() => {
-    if (dueCount > 0) {
-      return {
-        title: 'Daily Review is your highest-value practice right now',
-        body: `You have ${dueCount} card${dueCount === 1 ? '' : 's'} due. A quick review session will strengthen long-term memory before you do anything else.`,
-        href: '/practice/review',
-        cta: 'Review now',
-      };
-    }
-
-    if (completedLessons < 5) {
-      return {
-        title: 'Start with Speak & Check',
-        body: 'Early on, repeating short phrases out loud builds confidence much faster than passive reading.',
-        href: '/practice/speak',
-        cta: 'Start speaking',
-      };
-    }
-
-    return {
-      title: 'Mix speaking with writing this week',
-      body: 'You already have some lesson momentum. Alternate one speaking session with one writing session to make the language stick.',
-      href: '/practice/write',
-      cta: 'Open writing practice',
-    };
-  }, [dueCount, completedLessons]);
-
   if (!mounted) return (
     <div className="min-h-screen flex items-center justify-center">
       <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
@@ -128,87 +97,33 @@ export default function PracticePage() {
   );
 
   return (
-    <div className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto">
+    <div className="min-h-screen px-4 py-4 safe-top safe-bottom max-w-2xl mx-auto">
       <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-        <button onClick={() => router.push('/')} className="flex items-center gap-2 text-[var(--foreground)]/50 mb-4 text-sm">
+        <button onClick={() => router.push('/')} className="flex items-center gap-2 text-[var(--foreground)]/50 mb-3 text-sm">
           <ArrowLeft className="w-4 h-4" /> Back
         </button>
         <h1 className="text-2xl font-bold mb-1">
           <span className="gradient-text">Practice</span>
         </h1>
-        <p className="text-[var(--foreground)]/40 text-sm mb-6">
+        <p className="text-[var(--foreground)]/40 text-sm mb-3">
           Two-way practice — speak, listen, and get feedback
         </p>
       </motion.div>
 
-      {/* Recommended next practice */}
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.08 }}
-        className="game-card p-4 mb-4 border border-[#d4a520]/20"
-      >
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="text-xs uppercase tracking-wide text-[#d4a520] font-bold mb-1">Recommended next</p>
-            <h3 className="font-bold text-sm mb-1">{recommendedPractice.title}</h3>
-            <p className="text-xs text-[var(--foreground)]/50 leading-relaxed">{recommendedPractice.body}</p>
-          </div>
-          <Link href={recommendedPractice.href} className="shrink-0 rounded-xl bg-[#d4a520]/15 px-3 py-2 text-xs font-bold text-[#d4a520] border border-[#d4a520]/20">
-            {recommendedPractice.cta}
-          </Link>
-        </div>
-        <div className="mt-3 flex flex-wrap gap-2 text-xs text-[var(--foreground)]/40">
-          <span>{completedLessons}/{totalLessons} lessons completed</span>
-          <span>•</span>
-          <span>{userProgress.learnedVocabulary.length} words learned</span>
-          <span>•</span>
-          <span>{dueCount} review due</span>
-        </div>
-      </motion.div>
-
-      {/* How it works */}
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.1 }}
-        className="game-card p-4 mb-6"
-      >
-        <h3 className="font-bold text-sm mb-2">How Practice Works</h3>
-        <div className="space-y-2 text-xs text-[var(--foreground)]/50">
-          <div className="flex items-center gap-2">
-            <Headphones className="w-4 h-4 text-[#8b5cf6] flex-shrink-0" />
-            <span><strong>Listen</strong> — Hear native German pronunciation</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Mic className="w-4 h-4 text-[#ef4444] flex-shrink-0" />
-            <span><strong>Speak</strong> — Say it into your microphone</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Radio className="w-4 h-4 text-[#27ae60] flex-shrink-0" />
-            <span><strong>Check</strong> — Get instant pronunciation score</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <MessageCircle className="w-4 h-4 text-[#3b82f6] flex-shrink-0" />
-            <span><strong>Ask</strong> — Chat with Kuttan for explanations</span>
-          </div>
-        </div>
-      </motion.div>
-
       {/* Practice modes */}
-      <div className="space-y-3">
+      <div className="space-y-2">
         {practices.map((p, i) => (
           <motion.div
             key={p.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 + i * 0.05 }}
+            transition={{ delay: 0.1 + i * 0.05 }}
           >
             <Link href={p.href}>
               <motion.div whileTap={{ scale: 0.98 }}
-                className="game-card p-4 cursor-pointer hover:bg-[var(--foreground)]/5 transition-colors">
+                className="game-card p-3 cursor-pointer hover:bg-[var(--foreground)]/5 transition-colors">
                 <div className="flex items-center gap-3">
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
                     style={{ backgroundColor: `${p.color}15`, border: `2px solid ${p.color}30` }}>
                     {p.icon}
                   </div>
@@ -220,7 +135,7 @@ export default function PracticePage() {
                         {p.badge}
                       </span>
                     </div>
-                    <p className="text-xs text-[var(--foreground)]/40 leading-relaxed mb-1">{p.description}</p>
+                    <p className="text-xs text-[var(--foreground)]/40 leading-relaxed mb-1 line-clamp-1">{p.description}</p>
                     <div className="flex items-center gap-2">
                       <p className="text-xs text-[var(--foreground)]/40">{p.detail}</p>
                       {p.id === 'review' && dueCount > 0 && (
@@ -236,17 +151,6 @@ export default function PracticePage() {
           </motion.div>
         ))}
       </div>
-
-      {/* Practice notes */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-        className="mt-6 space-y-2 text-center text-xs text-[var(--foreground)]/40"
-      >
-        <p>Speech-based practice uses your browser microphone tools, so Chrome on desktop/mobile usually works best.</p>
-        <p>Best rhythm: 5 min review → 10 min speaking → 5 min writing.</p>
-      </motion.div>
     </div>
   );
 }

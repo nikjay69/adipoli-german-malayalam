@@ -43,6 +43,7 @@ export default function ProfilePage() {
   const [mounted, setMounted] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+  const [showBreakdown, setShowBreakdown] = useState(false);
 
   // Passkey state
   const [webAuthnSupported, setWebAuthnSupported] = useState(false);
@@ -231,19 +232,19 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="px-4 py-6 max-w-4xl mx-auto">
+    <div className="px-4 py-4 max-w-4xl mx-auto">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-6"
+        className="mb-3"
       >
         {/* Account Section - Auth aware */}
         {isLoggedIn && user ? (
           /* Logged In Profile Card */
-          <Card className="text-center mb-6">
-            <div className="w-24 h-24 bg-gradient-to-br from-[#d4a520] to-[#27ae60] rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-4xl font-bold text-white">
+          <Card padding="sm" className="text-center mb-3">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#d4a520] to-[#27ae60] rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl font-bold text-white">
                 {user.name.charAt(0).toUpperCase()}
               </span>
             </div>
@@ -314,9 +315,9 @@ export default function ProfilePage() {
           </Card>
         ) : (
           /* Not Logged In */
-          <Card className="text-center mb-6">
-            <div className="w-24 h-24 bg-gradient-to-br from-[#e94560] to-[#0f3460] rounded-full flex items-center justify-center mx-auto mb-4">
-              <User className="w-12 h-12 text-white" />
+          <Card padding="sm" className="text-center mb-3">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#e94560] to-[#0f3460] rounded-full flex items-center justify-center mx-auto mb-3">
+              <User className="w-8 h-8 text-white" />
             </div>
 
             <h1 className="text-2xl font-bold text-[var(--foreground)] mb-2">
@@ -370,43 +371,43 @@ export default function ProfilePage() {
         )}
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-          <Card className="text-center">
-            <div className="w-10 h-10 bg-amber-500/15 rounded-lg flex items-center justify-center mx-auto mb-2">
-              <Star className="w-5 h-5 text-amber-500" />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3">
+          <Card padding="sm" className="text-center">
+            <div className="w-8 h-8 bg-amber-500/15 rounded-lg flex items-center justify-center mx-auto mb-1">
+              <Star className="w-4 h-4 text-amber-500" />
             </div>
-            <div className="text-2xl font-bold text-[var(--foreground)]">{userProgress.xp}</div>
+            <div className="text-xl font-bold text-[var(--foreground)]">{userProgress.xp}</div>
             <div className="text-xs text-[var(--foreground)]/50">Total XP</div>
           </Card>
 
-          <Card className="text-center">
-            <div className="w-10 h-10 bg-orange-500/15 rounded-lg flex items-center justify-center mx-auto mb-2">
-              <Flame className="w-5 h-5 text-orange-500" />
+          <Card padding="sm" className="text-center">
+            <div className="w-8 h-8 bg-orange-500/15 rounded-lg flex items-center justify-center mx-auto mb-1">
+              <Flame className="w-4 h-4 text-orange-500" />
             </div>
-            <div className="text-2xl font-bold text-[var(--foreground)]">{userProgress.streak}</div>
+            <div className="text-xl font-bold text-[var(--foreground)]">{userProgress.streak}</div>
             <div className="text-xs text-[var(--foreground)]/50">Day Streak</div>
           </Card>
 
-          <Card className="text-center">
-            <div className="w-10 h-10 bg-[#27ae60]/15 rounded-lg flex items-center justify-center mx-auto mb-2">
-              <BookOpen className="w-5 h-5 text-[#27ae60]" />
+          <Card padding="sm" className="text-center">
+            <div className="w-8 h-8 bg-[#27ae60]/15 rounded-lg flex items-center justify-center mx-auto mb-1">
+              <BookOpen className="w-4 h-4 text-[#27ae60]" />
             </div>
-            <div className="text-2xl font-bold text-[var(--foreground)]">{completedLessons}</div>
+            <div className="text-xl font-bold text-[var(--foreground)]">{completedLessons}</div>
             <div className="text-xs text-[var(--foreground)]/50">Lessons Done</div>
           </Card>
 
-          <Card className="text-center">
-            <div className="w-10 h-10 bg-blue-500/15 rounded-lg flex items-center justify-center mx-auto mb-2">
-              <Target className="w-5 h-5 text-blue-500" />
+          <Card padding="sm" className="text-center">
+            <div className="w-8 h-8 bg-blue-500/15 rounded-lg flex items-center justify-center mx-auto mb-1">
+              <Target className="w-4 h-4 text-blue-500" />
             </div>
-            <div className="text-2xl font-bold text-[var(--foreground)]">{userProgress.learnedVocabulary.length}</div>
+            <div className="text-xl font-bold text-[var(--foreground)]">{userProgress.learnedVocabulary.length}</div>
             <div className="text-xs text-[var(--foreground)]/50">Words Learned</div>
           </Card>
         </div>
 
         {/* More Stats */}
-        <Card className="mb-6">
-          <h2 className="font-semibold text-[var(--foreground)] mb-4">Activity Stats</h2>
+        <Card padding="sm" className="mb-3">
+          <h2 className="font-semibold text-[var(--foreground)] mb-3">Activity Stats</h2>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-purple-500/15 rounded-lg flex items-center justify-center">
@@ -451,29 +452,29 @@ export default function ProfilePage() {
         </Card>
 
         {/* Achievements */}
-        <Card className="mb-6">
-          <div className="flex items-center justify-between mb-4">
+        <Card padding="sm" className="mb-3">
+          <div className="flex items-center justify-between mb-3">
             <h2 className="font-semibold text-[var(--foreground)]">Achievements</h2>
             <span className="text-sm text-[var(--foreground)]/50">
               {userProgress.achievements.length}/{ACHIEVEMENTS_DATA.length}
             </span>
           </div>
 
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
+          <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1">
             {ACHIEVEMENTS_DATA.map((achievement) => {
               const isUnlocked = userProgress.achievements.includes(achievement.id);
               return (
                 <motion.div
                   key={achievement.id}
                   whileHover={{ scale: 1.05 }}
-                  className={`text-center p-3 rounded-xl transition-all ${
+                  className={`text-center p-2 rounded-xl transition-all flex-shrink-0 w-20 ${
                     isUnlocked
                       ? 'bg-gradient-to-br from-amber-900/30 to-yellow-900/30 border-2 border-amber-700/50'
                       : 'bg-[var(--foreground)]/8 opacity-50'
                   }`}
                 >
-                  <div className={`text-3xl mb-1${isUnlocked ? ' animate-unlock' : ''}`}>{isUnlocked ? achievement.icon : '🔒'}</div>
-                  <h3 className={`text-xs font-medium ${
+                  <div className={`text-2xl mb-0.5${isUnlocked ? ' animate-unlock' : ''}`}>{isUnlocked ? achievement.icon : '🔒'}</div>
+                  <h3 className={`text-xs font-medium line-clamp-1 ${
                     isUnlocked ? 'text-[var(--foreground)]' : 'text-[var(--foreground)]/50'
                   }`}>
                     {achievement.name}
@@ -485,8 +486,8 @@ export default function ProfilePage() {
         </Card>
 
         {/* Course Progress */}
-        <Card className="mb-6">
-          <h2 className="font-semibold text-[var(--foreground)] mb-4">Course Progress</h2>
+        <Card padding="sm" className="mb-3">
+          <h2 className="font-semibold text-[var(--foreground)] mb-3">Course Progress</h2>
           <div className="space-y-3">
             {ALL_MODULES.map(module => {
               const moduleLessons = module.lessons.length;
@@ -517,8 +518,8 @@ export default function ProfilePage() {
         </Card>
 
         {/* Levels Reference */}
-        <Card className="mb-6">
-          <h2 className="font-semibold text-[var(--foreground)] mb-4">Level Guide</h2>
+        <Card padding="sm" className="mb-3">
+          <h2 className="font-semibold text-[var(--foreground)] mb-3">Level Guide</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
             {LEVEL_NAMES.slice(0, 12).map((name, index) => (
               <div
@@ -552,8 +553,8 @@ export default function ProfilePage() {
             quizzesTaken: userProgress.quizzesTaken,
           });
           return (
-            <Card>
-              <div className="flex items-center justify-between mb-3">
+            <Card padding="sm" className="mb-3">
+              <div className="flex items-center justify-between mb-2">
                 <h2 className="font-semibold text-[var(--foreground)] flex items-center gap-2">
                   <Award className="w-5 h-5" style={{ color: readiness.color }} />
                   A1 Exam Readiness
@@ -561,59 +562,67 @@ export default function ProfilePage() {
                 <span className={`text-2xl font-bold${readiness.score >= 60 ? ' animate-shimmer' : ''}`} style={{ color: readiness.color }}>{readiness.score}%</span>
               </div>
               <ProgressBar progress={readiness.score} color={readiness.score >= 60 ? 'success' : 'warning'} size="md" />
-              <p className="text-xs text-[var(--foreground)]/50 mt-1 mb-4">{readiness.label} · 60% needed to pass Goethe A1</p>
+              <p className="text-xs text-[var(--foreground)]/50 mt-1 mb-2">{readiness.label} · 60% needed to pass Goethe A1</p>
 
-              {/* Course vs Supplementary */}
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="bg-[var(--foreground)]/5 rounded-lg p-3 text-center">
-                  <div className="text-xl font-bold" style={{ color: readiness.color }}>{readiness.courseScore}/80</div>
-                  <div className="text-xs text-[var(--foreground)]/40 mt-0.5">Course Path</div>
-                  <div className="flex justify-center gap-1 mt-2">
-                    {[
-                      { label: 'Lessons', value: readiness.breakdown.lessons, max: 35 },
-                      { label: 'Vocab', value: readiness.breakdown.vocabulary, max: 20 },
-                      { label: 'Accuracy', value: readiness.breakdown.accuracy, max: 25 },
-                    ].map(item => (
-                      <div key={item.label} className="text-center">
-                        <div className="text-xs font-bold text-[var(--foreground)]/80">{item.value}</div>
-                        <div className="text-xs text-[var(--foreground)]/40">/{item.max}</div>
+              {/* Collapsible breakdown */}
+              <button onClick={() => setShowBreakdown(!showBreakdown)} className="text-xs text-[var(--foreground)]/40 text-center w-full py-1">
+                {showBreakdown ? 'Hide breakdown ▲' : 'Show breakdown ▼'}
+              </button>
+              {showBreakdown && (
+                <>
+                  {/* Course vs Supplementary */}
+                  <div className="grid grid-cols-2 gap-3 mb-3 mt-2">
+                    <div className="bg-[var(--foreground)]/5 rounded-lg p-2 text-center">
+                      <div className="text-lg font-bold" style={{ color: readiness.color }}>{readiness.courseScore}/80</div>
+                      <div className="text-xs text-[var(--foreground)]/40 mt-0.5">Course Path</div>
+                      <div className="flex justify-center gap-1 mt-1">
+                        {[
+                          { label: 'Lessons', value: readiness.breakdown.lessons, max: 35 },
+                          { label: 'Vocab', value: readiness.breakdown.vocabulary, max: 20 },
+                          { label: 'Accuracy', value: readiness.breakdown.accuracy, max: 25 },
+                        ].map(item => (
+                          <div key={item.label} className="text-center">
+                            <div className="text-xs font-bold text-[var(--foreground)]/80">{item.value}</div>
+                            <div className="text-xs text-[var(--foreground)]/40">/{item.max}</div>
+                          </div>
+                        ))}
                       </div>
+                    </div>
+                    <div className="bg-[var(--foreground)]/5 rounded-lg p-2 text-center">
+                      <div className="text-lg font-bold" style={{ color: readiness.color, opacity: 0.7 }}>{readiness.supplementaryScore}/20</div>
+                      <div className="text-xs text-[var(--foreground)]/40 mt-0.5">Extras</div>
+                      <div className="flex justify-center gap-1 mt-1">
+                        {[
+                          { label: 'Games', value: readiness.breakdown.games, max: 8 },
+                          { label: 'Tests', value: readiness.breakdown.tests, max: 7 },
+                          { label: 'Streak', value: readiness.breakdown.streak, max: 5 },
+                        ].map(item => (
+                          <div key={item.label} className="text-center">
+                            <div className="text-xs font-bold text-[var(--foreground)]/80">{item.value}</div>
+                            <div className="text-xs text-[var(--foreground)]/40">/{item.max}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Next action + tips */}
+                  <div className="bg-[var(--foreground)]/5 rounded-lg p-2">
+                    <p className="text-xs font-semibold text-[var(--foreground)]/60 mb-1">Next step:</p>
+                    <p className="text-xs text-[var(--foreground)]/50 mb-1">{readiness.nextAction}</p>
+                    {readiness.tips.length > 0 && readiness.tips.map((tip, i) => (
+                      <p key={i} className="text-xs text-[var(--foreground)]/40">- {tip}</p>
                     ))}
                   </div>
-                </div>
-                <div className="bg-[var(--foreground)]/5 rounded-lg p-3 text-center">
-                  <div className="text-xl font-bold" style={{ color: readiness.color, opacity: 0.7 }}>{readiness.supplementaryScore}/20</div>
-                  <div className="text-xs text-[var(--foreground)]/40 mt-0.5">Extras</div>
-                  <div className="flex justify-center gap-1 mt-2">
-                    {[
-                      { label: 'Games', value: readiness.breakdown.games, max: 8 },
-                      { label: 'Tests', value: readiness.breakdown.tests, max: 7 },
-                      { label: 'Streak', value: readiness.breakdown.streak, max: 5 },
-                    ].map(item => (
-                      <div key={item.label} className="text-center">
-                        <div className="text-xs font-bold text-[var(--foreground)]/80">{item.value}</div>
-                        <div className="text-xs text-[var(--foreground)]/40">/{item.max}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Next action + tips */}
-              <div className="bg-[var(--foreground)]/5 rounded-lg p-3">
-                <p className="text-xs font-semibold text-[var(--foreground)]/60 mb-1">Next step:</p>
-                <p className="text-xs text-[var(--foreground)]/50 mb-2">{readiness.nextAction}</p>
-                {readiness.tips.length > 0 && readiness.tips.map((tip, i) => (
-                  <p key={i} className="text-xs text-[var(--foreground)]/40">- {tip}</p>
-                ))}
-              </div>
+                </>
+              )}
             </Card>
           );
         })()}
 
         {/* Biometric Login */}
         {isLoggedIn && (
-          <Card className="mb-6">
+          <Card padding="sm" className="mb-3">
             <h2 className="font-semibold text-[var(--foreground)] mb-2 flex items-center gap-2">
               <Fingerprint className="w-4 h-4 text-[#d4a520]" />
               Biometric Login

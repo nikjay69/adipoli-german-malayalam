@@ -36,6 +36,7 @@ export default function Home() {
   const { userProgress, updateStreak, completeTask } = useGameStore();
   const [mounted, setMounted] = useState(false);
   const [kuttanMessage, setKuttanMessage] = useState('');
+  const [showJourney, setShowJourney] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -110,17 +111,17 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen px-4 py-6 safe-top safe-bottom">
+    <div className="min-h-screen px-4 py-4 safe-top safe-bottom">
       {/* Top Stats Bar */}
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="flex items-center justify-between mb-8"
+        className="flex items-center justify-between mb-3"
       >
         {/* Streak */}
-        <div className="flex items-center gap-2 bg-[var(--card-bg)] rounded-full px-4 py-2 border border-[var(--card-border)]">
-          <Flame className={`w-5 h-5 ${userProgress.streak > 0 ? 'text-[#c0392b] streak-fire' : 'text-[var(--foreground)]/40'}`} />
-          <span className="font-bold">{userProgress.streak}</span>
+        <div className="flex items-center gap-1.5 bg-[var(--card-bg)] rounded-full px-3 py-1.5 border border-[var(--card-border)]">
+          <Flame className={`w-4 h-4 ${userProgress.streak > 0 ? 'text-[#c0392b] streak-fire' : 'text-[var(--foreground)]/40'}`} />
+          <span className="font-bold text-sm">{userProgress.streak}</span>
         </div>
 
         {/* Level */}
@@ -147,9 +148,9 @@ export default function Home() {
         </div>
 
         {/* XP */}
-        <div className="flex items-center gap-2 bg-[#d4a520]/15 border border-[#d4a520]/30 rounded-full px-4 py-2">
-          <Star className="w-4 h-4 text-[#d4a520] fill-[#d4a520]" />
-          <span className={`font-bold text-[#d4a520]${userProgress.xp > 0 ? ' animate-shimmer' : ''}`}>{userProgress.xp}</span>
+        <div className="flex items-center gap-1.5 bg-[#d4a520]/15 border border-[#d4a520]/30 rounded-full px-3 py-1.5">
+          <Star className="w-3.5 h-3.5 text-[#d4a520] fill-[#d4a520]" />
+          <span className={`font-bold text-sm text-[#d4a520]${userProgress.xp > 0 ? ' animate-shimmer' : ''}`}>{userProgress.xp}</span>
         </div>
       </motion.div>
 
@@ -160,12 +161,12 @@ export default function Home() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: 'spring', delay: 0.2 }}
-          className="mb-4"
+          className="mb-2"
         >
           <CharacterGuide
             messages={kuttanMessage}
             mood={completedCount === 0 ? 'waving' : 'happy'}
-            size="md"
+            size="sm"
             showAppu={completedCount === 0}
             appuMood="happy"
           />
@@ -176,7 +177,7 @@ export default function Home() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-center mb-4"
+          className="text-center mb-3"
         >
           <h1 className="text-2xl font-bold mb-1">
             {completedCount === 0 ? (
@@ -190,7 +191,7 @@ export default function Home() {
           </h1>
 
           {completedCount > 0 && (
-            <div className="flex items-center justify-center gap-5 mt-3">
+            <div className="flex items-center justify-center gap-2 mt-2">
               <div className="text-center">
                 <div className="text-xl font-bold text-[#27ae60]">{completedCount}</div>
                 <div className="text-xs text-[var(--foreground)]/50">Lessons</div>
@@ -215,7 +216,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.45 }}
-            className="w-full max-w-sm mb-5"
+            className="w-full max-w-sm mb-3"
           >
             {/* Day header */}
             <div className="game-card p-4 mb-3">
@@ -343,7 +344,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.45 }}
-            className="w-full max-w-sm mb-5"
+            className="w-full max-w-sm mb-3"
           >
             <button
               onClick={() => router.push('/onboarding')}
@@ -364,7 +365,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="game-card p-5 mb-5 w-full max-w-sm text-center"
+            className="game-card p-5 mb-3 w-full max-w-sm text-center"
           >
             <div className="text-3xl mb-2">{nextLesson.module.icon}</div>
             <p className="text-[var(--foreground)]/40 text-sm mb-1">
@@ -420,7 +421,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="w-full max-w-sm mt-4"
+            className="w-full max-w-sm mt-2"
           >
             {(() => {
               const tl = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
@@ -484,7 +485,7 @@ export default function Home() {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.65 }}
-        className="w-full max-w-sm mx-auto mt-4"
+        className="w-full max-w-sm mx-auto mt-2"
       >
         <div className="game-card p-3">
           <div className="flex items-start gap-2.5">
@@ -499,93 +500,98 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* Journey Map */}
-      <motion.div
-        initial={{ y: 40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.7 }}
-        className="mt-6"
-      >
-        <p className="text-[var(--foreground)]/40 text-sm text-center mb-4">
-          <span className="text-[#27ae60]">Home 🏠</span>
-          <span className="mx-1.5 text-[var(--foreground)]/35">···</span>
-          <span className="text-[#d4a520]">Gate ✈️</span>
-          <span className="mx-1.5 text-[var(--foreground)]/35">···</span>
-          <span className="text-[var(--foreground)]/40">Germany 🇩🇪</span>
-        </p>
+      {/* Journey Map (collapsible) */}
+      <div className="mt-2">
+        <button onClick={() => setShowJourney(!showJourney)} className="text-xs text-[var(--foreground)]/40 text-center w-full py-2">
+          {showJourney ? 'Hide journey ▲' : 'Show journey ▼'}
+        </button>
+        {showJourney && (
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.1 }}
+          >
+            <p className="text-[var(--foreground)]/40 text-sm text-center mb-3">
+              <span className="text-[#27ae60]">Home 🏠</span>
+              <span className="mx-1.5 text-[var(--foreground)]/35">···</span>
+              <span className="text-[#d4a520]">Gate ✈️</span>
+              <span className="mx-1.5 text-[var(--foreground)]/35">···</span>
+              <span className="text-[var(--foreground)]/40">Germany 🇩🇪</span>
+            </p>
 
-        {/* Location nodes */}
-        <div className="flex justify-between items-center px-1 mb-3 overflow-x-auto">
-          {JOURNEY_LOCATIONS.map((loc, i) => {
-            // Calculate completed modules count
-            const completedModules = ALL_MODULES.filter(m =>
-              m.lessons.every(l => userProgress.completedLessons.some(cl => cl.lessonId === l.id))
-            ).length;
-            const currentLoc = getCurrentLocation(completedModules);
-            const currentLocIndex = JOURNEY_LOCATIONS.findIndex(l => l.id === currentLoc.id);
-            const isReached = i <= currentLocIndex;
-            const isCurrent = i === currentLocIndex;
-            return (
-              <div key={loc.id} className="flex flex-col items-center gap-1 flex-1 min-w-0">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  className={`w-10 h-10 rounded-full flex items-center justify-center text-xs flex-shrink-0
-                    ${isCurrent
-                      ? 'bg-[#d4a520]/20 border-2 border-[#d4a520] shadow-md shadow-[#d4a520]/20 animate-marker'
-                      : isReached
-                      ? 'bg-[#27ae60]/20 border-2 border-[#27ae60]/50'
-                      : 'bg-[var(--card-bg)] border border-[var(--card-border)]'
-                    }`}
-                >
-                  {loc.icon}
-                </motion.div>
-                <span className={`text-[11px] text-center leading-normal truncate w-full
-                  ${isCurrent ? 'text-[#d4a520] font-bold' : isReached ? 'text-[var(--foreground)]/50' : 'text-[var(--foreground)]/40'}`}
-                >
-                  {loc.shortName}
-                </span>
-              </div>
-            );
-          })}
-        </div>
+            {/* Location nodes */}
+            <div className="flex justify-between items-center px-1 mb-3 overflow-x-auto">
+              {JOURNEY_LOCATIONS.map((loc, i) => {
+                const completedModules = ALL_MODULES.filter(m =>
+                  m.lessons.every(l => userProgress.completedLessons.some(cl => cl.lessonId === l.id))
+                ).length;
+                const currentLoc = getCurrentLocation(completedModules);
+                const currentLocIndex = JOURNEY_LOCATIONS.findIndex(l => l.id === currentLoc.id);
+                const isReached = i <= currentLocIndex;
+                const isCurrent = i === currentLocIndex;
+                return (
+                  <div key={loc.id} className="flex flex-col items-center gap-1 flex-1 min-w-0">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className={`w-10 h-10 rounded-full flex items-center justify-center text-xs flex-shrink-0
+                        ${isCurrent
+                          ? 'bg-[#d4a520]/20 border-2 border-[#d4a520] shadow-md shadow-[#d4a520]/20 animate-marker'
+                          : isReached
+                          ? 'bg-[#27ae60]/20 border-2 border-[#27ae60]/50'
+                          : 'bg-[var(--card-bg)] border border-[var(--card-border)]'
+                        }`}
+                    >
+                      {loc.icon}
+                    </motion.div>
+                    <span className={`text-[11px] text-center leading-normal truncate w-full
+                      ${isCurrent ? 'text-[#d4a520] font-bold' : isReached ? 'text-[var(--foreground)]/50' : 'text-[var(--foreground)]/40'}`}
+                    >
+                      {loc.shortName}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
 
-        {/* Module progress bar (replaces individual lesson dots for better scaling) */}
-        <div className="flex justify-center items-center gap-0.5 pb-2 flex-wrap max-w-sm mx-auto">
-          {ALL_MODULES.map(module => {
-            const moduleLessons = module.lessons.length;
-            const completedInModule = module.lessons.filter(
-              l => userProgress.completedLessons.some(cl => cl.lessonId === l.id)
-            ).length;
-            const isModuleComplete = completedInModule === moduleLessons;
-            const isModuleActive = completedInModule > 0 && !isModuleComplete;
-            const hasNext = module.lessons.some(l => l.id === nextLesson?.lesson.id);
-            return (
-              <motion.div
-                key={module.id}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => {
-                  if (isModuleComplete || isModuleActive || hasNext)
-                    router.push(`/learn/${module.id}`);
-                }}
-                className={`h-2 rounded-full cursor-pointer transition-all
-                  ${isModuleComplete
-                    ? 'bg-[#27ae60] w-4'
-                    : hasNext
-                    ? 'bg-[#d4a520] animate-pulse-glow w-5'
-                    : isModuleActive
-                    ? 'bg-[#d4a520]/60 w-3'
-                    : 'bg-[var(--foreground)]/10 w-2'
-                  }`}
-                title={`Module ${module.id}: ${module.title}`}
-              />
-            );
-          })}
-        </div>
+            {/* Module progress bar */}
+            <div className="flex justify-center items-center gap-0.5 pb-2 flex-wrap max-w-sm mx-auto">
+              {ALL_MODULES.map(module => {
+                const moduleLessons = module.lessons.length;
+                const completedInModule = module.lessons.filter(
+                  l => userProgress.completedLessons.some(cl => cl.lessonId === l.id)
+                ).length;
+                const isModuleComplete = completedInModule === moduleLessons;
+                const isModuleActive = completedInModule > 0 && !isModuleComplete;
+                const hasNext = module.lessons.some(l => l.id === nextLesson?.lesson.id);
+                return (
+                  <motion.div
+                    key={module.id}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => {
+                      if (isModuleComplete || isModuleActive || hasNext)
+                        router.push(`/learn/${module.id}`);
+                    }}
+                    className={`h-2 rounded-full cursor-pointer transition-all
+                      ${isModuleComplete
+                        ? 'bg-[#27ae60] w-4'
+                        : hasNext
+                        ? 'bg-[#d4a520] animate-pulse-glow w-5'
+                        : isModuleActive
+                        ? 'bg-[#d4a520]/60 w-3'
+                        : 'bg-[var(--foreground)]/10 w-2'
+                      }`}
+                    title={`Module ${module.id}: ${module.title}`}
+                  />
+                );
+              })}
+            </div>
 
-        <p className="text-center text-[var(--foreground)]/45 text-xs mt-1">
-          {completedCount} of {totalLessons} lessons
-        </p>
-      </motion.div>
+            <p className="text-center text-[var(--foreground)]/45 text-xs mt-1">
+              {completedCount} of {totalLessons} lessons
+            </p>
+          </motion.div>
+        )}
+      </div>
     </div>
   );
 }

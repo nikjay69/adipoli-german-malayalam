@@ -103,6 +103,78 @@ const games: GameDef[] = [
     tag: 'NEW',
   },
   {
+    id: 'time-attack',
+    name: 'Time Attack',
+    description: "Kuttan's watch is broken! Read the clock and tell the time in German.",
+    icon: '🕐',
+    color: '#06b6d4',
+    difficulty: 'Easy',
+    xpReward: 25,
+    timeEstimate: '2-3 min',
+    unlockModule: 3,
+    tag: 'NEW',
+  },
+  {
+    id: 'number-blitz',
+    name: 'Number Blitz',
+    description: 'Match German number words to digits at the Kochi fish market!',
+    icon: '🔢',
+    color: '#f59e0b',
+    difficulty: 'Medium',
+    xpReward: 30,
+    timeEstimate: '2 min',
+    unlockModule: 3,
+    tag: 'NEW',
+  },
+  {
+    id: 'food-order',
+    name: 'Food Order',
+    description: 'Help Kuttan order food at a German restaurant. Tap the right items!',
+    icon: '🍽️',
+    color: '#ef4444',
+    difficulty: 'Medium',
+    xpReward: 40,
+    timeEstimate: '3 min',
+    unlockModule: 6,
+    tag: 'NEW',
+  },
+  {
+    id: 'room-builder',
+    name: 'Room Builder',
+    description: "Furnish Kuttan's WG in Berlin and answer preposition questions!",
+    icon: '🏠',
+    color: '#a855f7',
+    difficulty: 'Medium',
+    xpReward: 35,
+    timeEstimate: '3-4 min',
+    unlockModule: 8,
+    tag: 'NEW',
+  },
+  {
+    id: 'dialogue-dash',
+    name: 'Dialogue Dash',
+    description: 'Complete real German conversations at the Bahnhof, doctor, and more!',
+    icon: '💬',
+    color: '#3b82f6',
+    difficulty: 'Medium',
+    xpReward: 40,
+    timeEstimate: '3-4 min',
+    unlockModule: 9,
+    tag: 'NEW',
+  },
+  {
+    id: 'story-builder',
+    name: 'Story Builder',
+    description: 'Help Kuttan tell stories in past tense! Arrange Perfekt sentences.',
+    icon: '📖',
+    color: '#7c3aed',
+    difficulty: 'Hard',
+    xpReward: 45,
+    timeEstimate: '4-5 min',
+    unlockModule: 13,
+    tag: 'NEW',
+  },
+  {
     id: 'speed-quiz',
     name: 'Speed Quiz',
     description: 'Answer before time runs out. How many can you get?',
@@ -112,6 +184,42 @@ const games: GameDef[] = [
     xpReward: 50,
     timeEstimate: '1-2 min',
     unlockModule: 0,
+  },
+  {
+    id: 'food-order',
+    name: 'Food Order',
+    description: 'Order food at a German restaurant. Tap the right items before time runs out!',
+    icon: '🍽️',
+    color: '#ff6b9d',
+    difficulty: 'Easy',
+    xpReward: 40,
+    timeEstimate: '2-3 min',
+    unlockModule: 0,
+    tag: 'NEW',
+  },
+  {
+    id: 'room-builder',
+    name: 'Room Builder',
+    description: 'Furnish Kuttan\'s Berlin apartment and master German prepositions!',
+    icon: '🏠',
+    color: '#00d9a5',
+    difficulty: 'Medium',
+    xpReward: 48,
+    timeEstimate: '3-5 min',
+    unlockModule: 2,
+    tag: 'NEW',
+  },
+  {
+    id: 'dialogue-dash',
+    name: 'Dialogue Dash',
+    description: 'Complete real German conversations. From train stations to doctor visits!',
+    icon: '💬',
+    color: '#a855f7',
+    difficulty: 'Medium',
+    xpReward: 60,
+    timeEstimate: '4-6 min',
+    unlockModule: 3,
+    tag: 'NEW',
   },
 ];
 
@@ -154,12 +262,12 @@ export default function GamesPage() {
   const recommendedGame = unlockedGames[unlockedGames.length - 1] || unlockedGames[0];
 
   return (
-    <div className="min-h-screen px-4 py-6 safe-top safe-bottom">
+    <div className="min-h-screen px-4 py-4 safe-top safe-bottom">
       {/* Header */}
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="mb-5"
+        className="mb-3"
       >
         <h1 className="text-2xl font-bold">
           <span className="gradient-text">Games</span>
@@ -174,60 +282,16 @@ export default function GamesPage() {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.1 }}
-        className="grid grid-cols-3 gap-2 mb-5"
       >
-        <div className="game-card p-3 text-center">
-          <div className="flex items-center justify-center gap-1 mb-1">
-            <Flame className="w-4 h-4 text-[#c0392b]" />
-            <span className="text-lg font-bold">{userProgress.gamesPlayed}</span>
-          </div>
-          <div className="text-xs text-[var(--foreground)]/40">Played</div>
-        </div>
-        <div className="game-card p-3 text-center">
-          <div className="flex items-center justify-center gap-1 mb-1">
-            <Star className="w-4 h-4 text-[#d4a520] fill-[#d4a520]" />
-            <span className="text-lg font-bold animate-shimmer">{userProgress.xp}</span>
-          </div>
-          <div className="text-xs text-[var(--foreground)]/40">XP</div>
-        </div>
-        <div className="game-card p-3 text-center">
-          <div className="flex items-center justify-center gap-1 mb-1">
-            <Trophy className="w-4 h-4 text-[#27ae60]" />
-            <span className="text-lg font-bold">{userProgress.learnedVocabulary.length}</span>
-          </div>
-          <div className="text-xs text-[var(--foreground)]/40">Words</div>
+        <div className="flex items-center justify-center gap-4 mb-3 text-sm">
+          <span className="flex items-center gap-1"><Flame className="w-3 h-3 text-[#c0392b]" />{userProgress.gamesPlayed}</span>
+          <span className="flex items-center gap-1"><Star className="w-3 h-3 text-[#d4a520]" />{userProgress.xp} XP</span>
+          <span className="flex items-center gap-1"><Trophy className="w-3 h-3 text-[#27ae60]" />{userProgress.learnedVocabulary.length}</span>
         </div>
       </motion.div>
 
-      {recommendedGame && (
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.12 }}
-          className="game-card p-4 mb-5 border border-[#d4a520]/20"
-        >
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <p className="text-xs uppercase tracking-wide text-[#d4a520] font-bold mb-1">Recommended next game</p>
-              <h2 className="font-bold text-sm mb-1 flex items-center gap-2">
-                <span>{recommendedGame.icon}</span>
-                {recommendedGame.name}
-              </h2>
-              <p className="text-xs text-[var(--foreground)]/50 leading-relaxed">
-                {completedModules === 0
-                  ? 'Start with a lighter game to reinforce your first few lessons without pressure.'
-                  : `You have completed ${completedModules} module${completedModules === 1 ? '' : 's'}. This game matches your current level well.`}
-              </p>
-            </div>
-            <Link href={`/games/${recommendedGame.id}`} className="shrink-0 rounded-xl bg-[#d4a520]/15 px-3 py-2.5 text-xs font-bold text-[#d4a520] border border-[#d4a520]/20">
-              Play now
-            </Link>
-          </div>
-        </motion.div>
-      )}
-
       {/* Unlocked Games */}
-      <div className="space-y-3">
+      <div className="space-y-2">
         {unlockedGames.map((game, index) => (
           <motion.div
             key={game.id}
@@ -238,11 +302,11 @@ export default function GamesPage() {
             <Link href={`/games/${game.id}`}>
               <motion.div
                 whileTap={{ scale: 0.98 }}
-                className="game-card p-4 cursor-pointer transition-all active:bg-[var(--foreground)]/5"
+                className="game-card p-3 cursor-pointer transition-all active:bg-[var(--foreground)]/5"
               >
                 <div className="flex items-center gap-3">
                   <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
                     style={{ backgroundColor: `${game.color}15`, border: `2px solid ${game.color}30` }}
                   >
                     {game.icon}
@@ -259,7 +323,7 @@ export default function GamesPage() {
                         </span>
                       )}
                     </div>
-                    <p className="text-[var(--foreground)]/40 text-xs mb-2 leading-relaxed">
+                    <p className="text-[var(--foreground)]/40 text-xs mb-2 leading-relaxed line-clamp-1">
                       {game.description}
                     </p>
                     <div className="flex items-center gap-2 flex-wrap">
@@ -296,12 +360,12 @@ export default function GamesPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="flex items-center gap-2 mt-6 mb-3"
+            className="flex items-center gap-2 mt-3 mb-3"
           >
             <Lock className="w-4 h-4 text-[var(--foreground)]/30" />
             <span className="text-sm font-medium text-[var(--foreground)]/40">Unlock by learning</span>
           </motion.div>
-          <div className="space-y-3">
+          <div className="space-y-2">
             {lockedGames.map((game, index) => (
               <motion.div
                 key={game.id}
@@ -309,9 +373,9 @@ export default function GamesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45 + index * 0.05 }}
               >
-                <div className="game-card p-4 opacity-40">
+                <div className="game-card p-3 opacity-40">
                   <div className="flex items-center gap-3">
-                    <div className="w-14 h-14 rounded-xl bg-[var(--card-bg)] flex items-center justify-center text-2xl flex-shrink-0 grayscale">
+                    <div className="w-12 h-12 rounded-xl bg-[var(--card-bg)] flex items-center justify-center text-2xl flex-shrink-0 grayscale">
                       {game.icon}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -335,7 +399,7 @@ export default function GamesPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
-        className="mt-5 game-card p-4 border-[#d4a520]/20"
+        className="mt-3 game-card p-3 border-[#d4a520]/20"
       >
         <div className="flex items-center gap-3">
           <span className="text-2xl">🏆</span>

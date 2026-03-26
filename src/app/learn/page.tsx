@@ -51,11 +51,11 @@ export default function LearnPage() {
   }
 
   return (
-    <div className="px-4 py-6 max-w-4xl mx-auto">
+    <div className="px-4 py-4 max-w-4xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-6"
+        className="mb-3"
       >
         <h1 className="text-2xl font-bold text-[var(--foreground)]">Learn German</h1>
         <p className="text-[var(--foreground)]/50 mt-1">
@@ -63,7 +63,7 @@ export default function LearnPage() {
         </p>
       </motion.div>
 
-      <div className="space-y-6">
+      <div className="space-y-4">
         {ALL_MODULES.map((module, moduleIndex) => {
           const moduleLessons = module.lessons.length;
           const completedModuleLessons = userProgress.completedLessons.filter(l =>
@@ -83,9 +83,9 @@ export default function LearnPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: moduleIndex * 0.1 }}
             >
-              <Card className={`${isModuleLocked ? 'opacity-60' : ''}`}>
+              <Card padding="sm" className={`${isModuleLocked ? 'opacity-60' : ''}`}>
                 {/* Module Header */}
-                <div className="flex items-start gap-4 mb-4">
+                <div className="flex items-start gap-3 mb-3">
                   <div className="relative flex-shrink-0">
                     <div
                       className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl${moduleProgress === 100 ? ' animate-lamp' : ''} ${mastery !== 'none' ? masteryInfo.border : ''}`}
@@ -121,7 +121,7 @@ export default function LearnPage() {
                         </Badge>
                       )}
                     </div>
-                    <p className="text-sm text-[var(--foreground)]/50 line-clamp-2">
+                    <p className="text-sm text-[var(--foreground)]/50 line-clamp-1">
                       {module.description}
                     </p>
                     {isOptionalBridge && (
@@ -139,7 +139,7 @@ export default function LearnPage() {
                 </div>
 
                 {/* Progress Bar */}
-                <div className="mb-4">
+                <div className="mb-3">
                   <div className="flex items-center justify-between text-sm mb-1">
                     <span className="text-[var(--foreground)]/50">Progress</span>
                     <span className="font-medium text-[var(--foreground)]/80">
@@ -179,7 +179,7 @@ export default function LearnPage() {
                         >
                           <motion.div
                             whileHover={!isLessonLocked ? { x: 4 } : undefined}
-                            className={`p-3 rounded-xl border transition-all ${
+                            className={`p-2.5 rounded-xl border transition-all ${
                               isLessonLocked
                                 ? 'bg-[var(--foreground)]/5 border-[var(--card-border)] opacity-50'
                                 : isCompleted

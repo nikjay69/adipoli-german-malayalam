@@ -547,6 +547,11 @@ export default function FillTheGapGame() {
                 <Trophy className="w-10 h-10 text-white" />
               </motion.div>
 
+              {/* Kuttan completion reaction */}
+              <div className="mb-4">
+                <CharacterGuide messages={kuttanMsg} mood={kuttanMood} size="sm" />
+              </div>
+
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 {score === TOTAL_QUESTIONS
                   ? 'Perfect!'
