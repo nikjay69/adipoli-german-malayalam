@@ -53,7 +53,7 @@ By the end of THIS video, you'll already speak 3 German words. Ready?"
 
 **Salary:** The average salary in Germany is around 45,000 to 50,000 euros per year. Compare that: a software engineer in Kochi earns maybe 6–8 lakhs. In Munich? 60,000 euros — that's roughly 55 lakhs.
 
-*Ee numbers kettaal aarelum 'German padikkaam' ennu theerumaanikkum!*
+*Ee numbers kettaal aarelum 'German padikkaam' ennu decide cheyyum!*
 
 **Ausbildung:** Here's something India doesn't have — vocational training where the company PAYS YOU while you learn. You earn 800 to 1,200 euros per month as a trainee. They literally pay you to become skilled."
 
@@ -137,7 +137,7 @@ That means: 'I am learning German.'
 
 Congratulations — you just spoke German! That wasn't so hard, was it?
 
-*Kando? Nee ippo German samsaaricchu! First sentence done!*"
+*See? Nee ippo German speak cheythu! First sentence done!*"
 
 🎬 [Energy: exciting reveal, celebration, teacher pride]
 
@@ -207,7 +207,7 @@ And yes — you CAN get parotta in Berlin. Indian stores are everywhere. 😄"
 
 But here's the thing — EVERY challenge has a solution. Warm clothes exist. The Malayali community is strong. And the language barrier? That's literally why you're HERE.
 
-*Budhimutt undaakum. Pakshe solution-um und. Aa solution-aanu ee course.*"
+*Problems undaakum. Pakshe solution-um und. Aa solution-aanu ee course.*"
 
 🎬 [Energy: honest, grounded, "I respect your intelligence" tone]
 
@@ -265,7 +265,7 @@ Say it out loud. Right now. One more time.
 
 ⏸️ [pause]
 
-*Ippo start cheythaal, oru maasam kazhiyumbol nee German samsaarikkum. Ath enik urappu und.*
+*Ippo start cheythaal, oru maasam kazhiyumbol nee German speak cheyyum. Ath enik urappu und.*
 
 See you in the next video — we'll learn about real careers and success stories of Malayalis in Germany.
 

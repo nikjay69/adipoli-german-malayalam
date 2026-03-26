@@ -41,6 +41,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const [kuttanMsg, setKuttanMsg] = useState('');
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [showModuleComplete, setShowModuleComplete] = useState(false);
+  const [lessonFailed, setLessonFailed] = useState(false);
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -201,8 +202,6 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       else finishLesson();
     }
   };
-
-  const [lessonFailed, setLessonFailed] = useState(false);
 
   const finishLesson = () => {
     const score = lesson.exercises.length > 0 ? Math.round((correctCount / lesson.exercises.length) * 100) : 100;

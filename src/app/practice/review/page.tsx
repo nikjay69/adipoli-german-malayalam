@@ -46,7 +46,6 @@ export default function ReviewPage() {
   }, []);
 
   useEffect(() => {
-    if (!mounted) return;
 
     // Create SRS cards for any learned vocab that doesn't have one yet
     const learnedVocab = userProgress.learnedVocabulary;
@@ -120,6 +119,8 @@ export default function ReviewPage() {
   }, [currentVocab]);
 
   const dueCount = useMemo(() => {
+
+    if (!mounted) return;
     if (!mounted) return 0;
     return getDueCount(userProgress.srsCards);
   }, [mounted, userProgress.srsCards]);

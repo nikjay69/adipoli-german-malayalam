@@ -126,7 +126,7 @@ And one rule matters more than all the others:
 - **Und dir?** — and you? (casual)
 - **Und Ihnen?** — and you? (formal)
 
-*Malayali learners-inde common mistake: answer paranju stop cheyyuka. German-il usually back question expect cheyyum.*
+*Malayali learners-nte common mistake: answer paranju stop cheyyum. German-il back question expect aanu.*
 
 ⏸️ Practice:
 - Wie geht's? → **Gut, danke! Und dir?**

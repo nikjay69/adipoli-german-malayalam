@@ -34,7 +34,7 @@ After this video, you'll fill out every field correctly. Let's go."
 
 **Step 1: Book a Termin.** An appointment. You CANNOT walk in without one.
 
-*Kerala-le Collectorate aayi compare cheyyaam — but Germany-yil queue illa, system aanu. Appointment illaathavar-kku door thurakaatha system.*
+*Kerala-ile Collectorate pole aanu — but Germany-yil queue illa, full system aanu. Appointment illenkil door thurakilla.*
 
 Search online: '[your city] Bürgeramt Termin'. Select 'Anmeldung einer Wohnung'. Pick a slot. Print the confirmation.
 

@@ -127,7 +127,7 @@ And when I say 'Und die Wohnungsgeberbestätigung?' — you say...
 **'Können Sie mir bitte helfen? Ich verstehe dieses Wort nicht.'**
 *(Can you please help me? I don't understand this word.)*
 
-*Ee randu sentence parayaan madi undenkil, Germany-yil EVERY office visit oru adventure aakum. Pakshe ee sentence paranjaal — staff HELPS you. They appreciate that you're trying.*
+*Ee randu sentence arinjaal mathi. Germany-yil ee sentence paranjaal staff will help you. Simple. They appreciate that you're trying.*
 
 [EXAM-TIP] Both of these are Sprechen Teil 3 patterns — 'Können Sie bitte ___?' is the universal polite request form. Learn it for the exam AND for life.
 

@@ -277,6 +277,43 @@ Examples:
 ### Bad Malayalam bridge example
 > A long unrelated Malayalam anecdote that delays the German point by 40 seconds.
 
+### Manglish Voice Rules — Target: 20–30 Year Old Malayalis
+
+The course audience is **young, urban, educated Malayalis** who naturally code-switch between English and Malayalam. The Manglish in scripts must match how they actually talk — not how a textbook or a 50-year-old uncle would phrase it.
+
+#### DO:
+- **Prefer English-loan verbs with Malayalam suffixes:** "try cheythu nokku", "manage cheyyaam", "fix aakki", "decide cheyyum"
+- **Keep Manglish lines under 80 characters** — punchy fragments, not essays
+- **Vary exclamatory slang** — don't repeat the same word endlessly. Cycle through: "Poli!", "Mass!", "Set aanu!", "Kidu!", "Scene!"
+- **Use casual address sparingly:** "bro", "da", "machan" — not "machane" every time
+- **Use modern Manglish slang naturally:**
+  - "scene aanu" = trouble / that's the situation
+  - "set aanu" = sorted / done / nailed it
+  - "mass" = impressive / cool
+  - "vere level" = next level
+  - "adipoli" = awesome (use sparingly, not as a verbal tic)
+- **Code-switch at natural breakpoints:** "German-il ithu direct varum", not a 120-character hybrid sentence
+- **Use humor that's deadpan/understated**, not theatrical exclamations
+
+#### DON'T:
+- **Use formal/textbook Malayalam in code-switches.** Say "urgent aanu" not "athyaavashyam aanu". Say "problems undaakum" not "budhimutt undaakum". Say "decide cheyyum" not "theerumaanikkum".
+- **Start sentences with "Machane," as a generic address** — it sounds like a WhatsApp forward from an uncle. Use it only for the "machane = Alter" cultural parallel.
+- **Use "Kando?" theatrically** — sounds preachy. "See?" or "Kandiyo?" is more natural.
+- **Write Manglish lines longer than 2 clauses** — if it's getting long, split it or drop the Malayalam parts.
+- **Repeat the same slang word more than twice per script** — variety keeps it fresh.
+
+#### Quick Reference: Formal → Natural Manglish
+
+| ❌ Textbook/Formal | ✅ Natural Manglish |
+|---|---|
+| athyaavashyam aanu | urgent aanu / valare important aanu |
+| budhimuttundu | tough aanu / problem und |
+| theerumaanikkum | decide cheyyum |
+| samsaaricchu | speak cheythu / paranju |
+| vicharikkanda | think cheyyanda |
+| kashtappaadu | struggle / difficulty |
+| Kando? | See? / Kandiyo? |
+
 ---
 
 ## 7. Cultural Hook Patterns

@@ -68,7 +68,7 @@ Your first German career word:
 
 Break it down: KRANK means sick. PFLEGER means carer. A sick-person-carer. German is wonderfully logical like that.
 
-*Nammude Kerala nursing graduates-inu Germany-il athyaavashyam aanu — literally, hospitals are BEGGING for them.*
+*Nammude Kerala nursing graduates-inu Germany-il valare urgent aanu — literally, hospitals are BEGGING for them.*
 
 Here's what the pathway looks like:
 
@@ -86,7 +86,7 @@ The GOOD truth — demand is so high that many German hospitals pay for your lan
 
 The HONEST truth — the first year is hard. 12-hour shifts, patients who speak dialect, colleagues who forget you're still learning. It gets better. But nobody should tell you it's easy from day one.
 
-*Sheri parayaam — budhimuttundu. But oru varsham kazhinjaal nee comfortable aakum. Enth German word thudangiyathu? Krankenpfleger!*"
+*Sheri parayaam — tough aanu. But oru varsham kazhinjaal nee comfortable aakum. Enth German word thudangiyathu? Krankenpfleger!*"
 
 🎬 [Energy: respectful, realistic, community pride]
 
@@ -223,7 +223,7 @@ That's why we're here. A1 is your first step. Everything builds from here.
 
 **Challenge 3: Loneliness.** The first 6 months can be isolating. You're far from family, the food is different, and making German friends takes time. Find the Malayali community — they're in every major city. WhatsApp groups, Malayalam churches, Onam celebrations.
 
-*Budhimuttundu — satyannu. But ithokke kashtappaadinte oru bhaagam maathram aanu. Settle aayal pinne nee thaniye ichiri chirikkum — 'enthinaa itreyum pedichchathu' ennu.*
+*Budhimuttundu — satyannu. But ithokke struggle-nte oru bhaagam maathram aanu. Settle aayal pinne nee thaniye ichiri chirikkum — 'enthinaa itreyum pedichchathu' ennu.*
 
 The people who thrive? They're the ones who started learning German BEFORE they left India. That's you, right now."
 

@@ -190,7 +190,7 @@ Possible answers:
 - **Im Winter ist es kalt.**
 - **Im Herbst ist es windig.**
 
-*Kerala comparison orma vecho: nammal mostly hot/rainy spectrum-il aanu. Germany-il season itself changes your daily life, clothes, travel, mood - ellam.*"
+*Kerala-il mostly hot/rainy aanu alle? Germany-il season maarumbol life full maarum — clothes, mood, ellaam.*"
 
 ---
 
@@ -225,7 +225,7 @@ And three easy responses:
 
 This is enough to survive a lot of daily German.
 
-*Ithu deep conversation alla. But ithu social glue aanu. Silence break cheyyaan, connection undaakkaan, awkwardness kurakkaan - weather small talk perfect.*"
+*Deep conversation alla. But social glue aanu. Awkward silence break cheyyaan weather talk perfect.*"
 
 ---
 

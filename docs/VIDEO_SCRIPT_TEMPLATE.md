@@ -54,7 +54,7 @@ A1 Exam Link: [which exam section this supports]
 
 ### Language Mix
 - **Primary narration:** English with German phrases
-- **Malayalam/Manglish bridges:** Use when they help ("Amma = Mutter, easy alle?")
+- **Malayalam/Manglish bridges:** Use when they help ("Amma = Mutter — same, right?")
 - **German examples:** Always spoken clearly, then translated
 - **Pronunciation guides:** Use phonetic hints in parentheses
 
