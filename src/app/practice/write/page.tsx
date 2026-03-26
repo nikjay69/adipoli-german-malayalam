@@ -17,6 +17,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { useGameStore } from '@/lib/store';
+import { Kuttan } from '@/components/character/Kuttan';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -603,6 +604,17 @@ export default function WritePracticePage() {
           <p className="text-[var(--foreground)]/40 text-sm mb-6">
             Practice writing German for the Goethe A1 exam
           </p>
+        </motion.div>
+
+        {/* Kuttan guidance */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="flex items-center gap-2.5 game-card px-3 py-2 mb-3"
+        >
+          <Kuttan mood="pointing" size="sm" entrance={false} />
+          <p className="text-xs text-[var(--foreground)]/60 leading-snug">Writing in German is the best practice. Don&apos;t worry about perfection! ✍️</p>
         </motion.div>
 
         {/* Info card */}

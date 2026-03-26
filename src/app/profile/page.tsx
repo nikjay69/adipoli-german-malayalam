@@ -26,6 +26,7 @@ import {
 } from 'lucide-react';
 import { Card, Button, Badge, ProgressBar } from '@/components/ui';
 import { useGameStore, ACHIEVEMENTS_DATA } from '@/lib/store';
+import { Kuttan } from '@/components/character/Kuttan';
 import { HOUR_OPTIONS, getEstimatedDays, getEstimatedCompletionDate, createStudyPlan } from '@/lib/study-plan';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { calculateExamReadiness } from '@/lib/exam-readiness';
@@ -366,6 +367,25 @@ export default function ProfilePage() {
             </div>
           </Card>
         )}
+
+        {/* Kuttan greeting */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="flex items-center gap-2.5 game-card px-3 py-2 mb-3"
+        >
+          <Kuttan mood={coursePercent >= 100 ? 'celebrating' : coursePercent > 50 ? 'excited' : 'happy'} size="sm" entrance={false} />
+          <p className="text-xs text-[var(--foreground)]/60 leading-snug">
+            {coursePercent >= 100
+              ? 'Course complete! Adipoli work, machaa! 🏆'
+              : coursePercent > 50
+              ? `${coursePercent}% done — more than halfway! Keep pushing! 💪`
+              : coursePercent > 0
+              ? `${coursePercent}% done. Slow and steady wins, machaa! 🐢`
+              : 'Welcome! Your German journey starts here. Let\'s go! 🚀'}
+          </p>
+        </motion.div>
 
         {/* Study Pace */}
         <Card padding="sm" className="mb-3">

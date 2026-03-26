@@ -13,6 +13,7 @@ import {
   Shuffle
 } from 'lucide-react';
 import { Card, Button, Badge, ProgressBar } from '@/components/ui';
+import { Kuttan } from '@/components/character/Kuttan';
 import { useGameStore } from '@/lib/store';
 import { getAllVocabulary, ALL_MODULES, type VocabItem } from '@/lib/content/modules';
 import { playVocabAudio } from '@/lib/audio';
@@ -119,6 +120,25 @@ export default function VocabularyPage() {
             <p className="text-[var(--foreground)]/50">Review and learn German words</p>
           </div>
         </div>
+
+        {/* Kuttan */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="flex items-center gap-2.5 game-card px-3 py-2 mb-3"
+        >
+          <Kuttan mood={learnedCount > 100 ? 'celebrating' : learnedCount > 0 ? 'happy' : 'pointing'} size="sm" entrance={false} />
+          <p className="text-xs text-[var(--foreground)]/60 leading-snug">
+            {learnedCount === 0
+              ? 'Start learning words — they are the building blocks! 📚'
+              : learnedCount < 50
+              ? `${learnedCount} words learned! Keep going, machaa! 💪`
+              : learnedCount < 200
+              ? `Adipoli! ${learnedCount} words! You're building a solid vocabulary! 🔥`
+              : `${learnedCount} words — almost fluent vocabulary! Mwonuso! 🏆`}
+          </p>
+        </motion.div>
 
         {/* Progress Bar */}
         <Card className="mb-4">

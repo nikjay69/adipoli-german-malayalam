@@ -155,7 +155,7 @@ export default function LearnPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.04 }}
             >
-              <div className={`game-card overflow-hidden ${isModuleLocked ? 'opacity-50' : ''} ${isCurrent ? 'border-[#e94560]/30' : ''}`}>
+              <div className={`game-card overflow-hidden transition-all duration-500 ${isModuleLocked ? 'opacity-50' : ''} ${isCurrent ? 'border-[#e94560]/30 shadow-[0_0_15px_rgba(233,69,96,0.15)]' : ''} ${!isModuleLocked && completedModuleLessons === 0 && !isCurrent ? 'animate-pulse-once' : ''}`}>
                 {/* Module header — tappable to expand */}
                 <button
                   onClick={() => !isModuleLocked && setExpandedModule(isExpanded ? null : module.id)}

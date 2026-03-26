@@ -8,6 +8,7 @@ import { useGameStore } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
 import { Kuttan } from '@/components/character/Kuttan';
 import { Appu } from '@/components/character/Appu';
+import { SkeletonGrid } from '@/components/ui/Skeleton';
 
 interface GameDef {
   id: string;
@@ -212,12 +213,9 @@ export default function GamesPage() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-          className="w-12 h-12 border-4 border-[#d4a520] border-t-transparent rounded-full"
-        />
+      <div className="min-h-screen px-3 py-3 safe-top safe-bottom">
+        <div className="h-5 w-32 bg-[var(--foreground)]/8 rounded mb-3 animate-pulse" />
+        <SkeletonGrid count={6} />
       </div>
     );
   }

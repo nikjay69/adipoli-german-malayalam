@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Volume2, Mic, MicOff, RotateCcw, Check, X, ChevronRight } from 'lucide-react';
 import { Confetti, XPGain } from '@/components/game';
 import { useGameStore } from '@/lib/store';
+import { Kuttan } from '@/components/character/Kuttan';
 
 // ─── Web Speech API Types ───────────────────────────────────────
 
@@ -729,6 +730,17 @@ export default function ConversationPracticePage() {
             <p className="text-[var(--foreground)]/25 text-xs mb-5">
               AI speaks German, you respond. No typing needed!
             </p>
+
+            {/* Kuttan guidance */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="flex items-center gap-2.5 game-card px-3 py-2 mb-3"
+            >
+              <Kuttan mood="happy" size="sm" entrance={false} />
+              <p className="text-xs text-[var(--foreground)]/60 leading-snug">Real conversations make you fluent. Practice until it feels natural! 💬</p>
+            </motion.div>
 
             {/* How it works */}
             <div className="game-card p-4 mb-5">

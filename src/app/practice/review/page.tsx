@@ -8,7 +8,9 @@ import { useGameStore } from '@/lib/store';
 import { getAllVocabulary } from '@/lib/content/modules';
 import type { VocabItem } from '@/lib/content/modules';
 import { reviewCard, createCard, getDueCards, getDueCount, type Rating, type SRSCard } from '@/lib/srs';
+import { Appu } from '@/components/character/Appu';
 import { playVocabAudio } from '@/lib/audio';
+import { Kuttan } from '@/components/character/Kuttan';
 
 type ReviewState = 'loading' | 'reviewing' | 'complete' | 'empty';
 
@@ -155,19 +157,39 @@ export default function ReviewPage() {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="flex flex-col items-center justify-center mt-20 text-center"
+          className="flex flex-col items-center justify-center mt-12 text-center"
         >
-          <div className="text-6xl mb-4 animate-float">
-            <img src="/kuttan-happy.png" alt="Kuttan" className="w-24 h-24 mx-auto" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
-            <span className="block mt-2">🎉</span>
+          <div className="flex items-end gap-2 mb-6">
+            <Kuttan mood="happy" size="lg" />
+            <Appu mood="sleeping" size="sm" />
           </div>
-          <h2 className="text-2xl font-bold mb-2">No cards due!</h2>
-          <p className="text-[var(--foreground)]/40 text-sm mb-2">
-            All caught up. Come back tomorrow for your next review.
+          <h2 className="text-xl font-bold mb-2">All caught up!</h2>
+          <p className="text-[var(--foreground)]/50 text-sm mb-1">
+            No cards due right now. Appu is taking a nap.
           </p>
-          <p className="text-[var(--foreground)]/25 text-xs mb-8">
-            Learn more words in lessons to add them to your review deck.
-          </p>
+          {(() => {
+            const cards = Object.values(userProgress.srsCards);
+            if (cards.length === 0) return (
+              <p className="text-[var(--foreground)]/30 text-xs mb-6">
+                Learn words in lessons to build your review deck.
+              </p>
+            );
+            const futureCards = cards.filter(c => c.nextReview > Date.now());
+            if (futureCards.length === 0) return (
+              <p className="text-[var(--foreground)]/30 text-xs mb-6">
+                All words mastered. Adipoli! 🏆
+              </p>
+            );
+            const nextTime = Math.min(...futureCards.map(c => c.nextReview));
+            const diffMs = nextTime - Date.now();
+            const hours = Math.floor(diffMs / 3600000);
+            const minutes = Math.floor((diffMs % 3600000) / 60000);
+            return (
+              <p className="text-[var(--foreground)]/30 text-xs mb-6">
+                Next review in {hours > 0 ? `${hours}h ` : ''}{minutes}m · {futureCards.length} cards upcoming
+              </p>
+            );
+          })()}
           <button
             onClick={() => router.push('/practice')}
             className="game-button text-sm"
@@ -324,6 +346,17 @@ export default function ReviewPage() {
             transition={{ duration: 0.3, ease: 'easeOut' }}
           />
         </div>
+      </motion.div>
+
+      {/* Kuttan guidance */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="flex items-center gap-2.5 game-card px-3 py-2 mb-3"
+      >
+        <Kuttan mood="thinking" size="sm" entrance={false} />
+        <p className="text-xs text-[var(--foreground)]/60 leading-snug">Focus on the ones you get wrong — that&apos;s where the real learning happens! 🧠</p>
       </motion.div>
 
       {/* Card area */}

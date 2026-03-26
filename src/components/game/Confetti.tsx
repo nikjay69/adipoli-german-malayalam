@@ -21,9 +21,18 @@ const COLORS = ['#ff6b9d', '#ffd93d', '#00d9a5', '#a855f7', '#3b82f6', '#f97316'
 
 export function Confetti({ isActive, duration = 3000 }: ConfettiProps) {
   const [pieces, setPieces] = useState<ConfettiPiece[]>([]);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    if (isActive) {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  useEffect(() => {
+    if (isActive && !reducedMotion) {
       const newPieces: ConfettiPiece[] = [];
       for (let i = 0; i < 50; i++) {
         newPieces.push({
@@ -44,6 +53,18 @@ export function Confetti({ isActive, duration = 3000 }: ConfettiProps) {
       return () => clearTimeout(timer);
     }
   }, [isActive, duration]);
+
+  // Reduced motion: simple flash overlay instead of particles
+  if (reducedMotion && isActive) {
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0, 0.15, 0] }}
+        transition={{ duration: 0.6 }}
+        className="fixed inset-0 bg-[#ffd93d] pointer-events-none z-50"
+      />
+    );
+  }
 
   return (
     <AnimatePresence>

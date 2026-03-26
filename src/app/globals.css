@@ -132,6 +132,7 @@ body {
 .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
 .animate-pop { animation: pop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 .animate-slide-up { animation: slide-up 0.5s ease-out; }
+.animate-pulse-once { animation: pulse-glow 1.5s ease-in-out 2; }
 .animate-shake { animation: shake 0.5s ease-in-out; }
 .animate-heart-beat { animation: heart-beat 1s ease-in-out infinite; }
 .animate-glow { animation: glow-pulse 2s ease-in-out infinite; }

@@ -19,6 +19,7 @@ import {
   EyeOff,
 } from 'lucide-react';
 import { useGameStore } from '@/lib/store';
+import { Kuttan } from '@/components/character/Kuttan';
 
 // ---------------------------------------------------------------------------
 // Web Speech API types
@@ -495,6 +496,17 @@ export default function IntroSpeakPage() {
           <p className="text-[var(--foreground)]/40 text-sm mb-6">
             Goethe A1 Sprechen Teil 1 — Introduce yourself in German
           </p>
+        </motion.div>
+
+        {/* Kuttan guidance */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="flex items-center gap-2.5 game-card px-3 py-2 mb-3"
+        >
+          <Kuttan mood="excited" size="sm" entrance={false} />
+          <p className="text-xs text-[var(--foreground)]/60 leading-snug">Sich Vorstellen — introduce yourself like a pro at the Goethe exam! 🎤</p>
         </motion.div>
 
         {/* How it works */}

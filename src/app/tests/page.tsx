@@ -7,6 +7,7 @@ import { ArrowLeft, Clock, Lock } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
+import { Kuttan } from '@/components/character/Kuttan';
 
 const tests = [
   { id: 'goethe-a1-test-1', name: 'Übungstest 1', topic: 'Self-intro & Shopping', icon: '🎯' },
@@ -53,6 +54,21 @@ export default function TestsPage() {
           <span className="gradient-text">Goethe A1 Tests</span>
           <span className="text-[var(--foreground)]/40 font-normal ml-1.5">8 mock exams · ~80 min each</span>
         </h1>
+      </motion.div>
+
+      {/* Kuttan */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.08 }}
+        className="flex items-center gap-2.5 game-card px-3 py-2 mb-2"
+      >
+        <Kuttan mood="thinking" size="sm" entrance={false} />
+        <p className="text-xs text-[var(--foreground)]/60 leading-snug">
+          {completedModules < 4
+            ? 'Complete more modules to unlock mock exams. Patience, machaa! 📖'
+            : 'Practice exams are like the real Goethe A1. Ready to test? 🎯'}
+        </p>
       </motion.div>
 
       {/* 2-column test grid */}
