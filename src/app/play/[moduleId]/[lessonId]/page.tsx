@@ -166,6 +166,13 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     );
   }
 
+  // Auto-play vocab audio when a new vocab card appears
+  useEffect(() => {
+    if (step.type === 'vocab' && lesson.vocabulary[step.index]) {
+      playVocabAudio(lesson.vocabulary[step.index].id).catch(() => {});
+    }
+  }, [step.type === 'vocab' ? step.index : -1]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const totalSteps = 1 + lesson.videos.length + lesson.vocabulary.length + lesson.exercises.length + 1;
   const currentStepNumber =
     step.type === 'intro' ? 1 :

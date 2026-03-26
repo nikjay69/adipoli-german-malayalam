@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Flame, Star, Zap, Award, Clock, CheckCircle2, Circle, ArrowRight, Trophy, CalendarDays, Lightbulb, BookOpen, BookOpenText } from 'lucide-react';
 import { GameButton } from '@/components/game';
-import { CharacterGuide } from '@/components/character';
+import { Kuttan } from '@/components/character/Kuttan';
 import { getRandomMessage } from '@/lib/content/dialogue';
 import { useGameStore, LEVEL_NAMES, LEVEL_THRESHOLDS } from '@/lib/store';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
@@ -166,19 +166,20 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* Kuttan — small, inline, not blocking content */}
-      {mounted && (
+      {/* Kuttan — centered, clear, friendly */}
+      {mounted && kuttanMessage && (
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2 }}
-          className="flex items-center gap-2 mb-2 px-1"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, type: 'spring' }}
+          className="flex justify-center mb-2"
         >
-          <CharacterGuide
-            messages={kuttanMessage}
-            mood={completedCount === 0 ? 'waving' : 'happy'}
-            size="sm"
-          />
+          <div className="flex items-center gap-3 game-card px-4 py-2.5 max-w-sm w-full">
+            <div className="flex-shrink-0">
+              <Kuttan mood={completedCount === 0 ? 'waving' : 'happy'} size="sm" />
+            </div>
+            <p className="text-sm text-[var(--foreground)]/80 leading-snug flex-1">{kuttanMessage}</p>
+          </div>
         </motion.div>
       )}
 
