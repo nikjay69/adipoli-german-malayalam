@@ -15,6 +15,7 @@
 | **Narration audio** (all scripts) | edge-tts (free) | $0 | P0 — free, do anytime |
 | **Video composition** | ffmpeg (local) | $0 | P3 — after all assets ready |
 | **Printable cheatsheets** (20 sheets) | Puppeteer/React-PDF (local) | $0 | P1 — marketing + learning aid |
+| **Instagram posts** (30/month) | Gemini 2.5 Flash + Puppeteer | ~$0.05/mo | P1 — growth engine |
 | **Buffer** | — | ~$10-50 | — retakes, experiments |
 | **Total** | | **~$250** | |
 
@@ -278,7 +279,8 @@ npx tsx scripts/compose-videos.ts --dry-run           # Preview only
 | 6. Composition | 2-3 hrs | $0 | Narration + thumbnails done |
 | 7. Assembly | 1-2 hrs | $0 | Everything done |
 | 8. Cheatsheets | 1-2 hrs | $0 | Content exists, no dependencies |
-| **Total** | **~10 hours** | **~$250** | |
+| 9. Instagram automation | ~20 hrs | ~$0.05/mo | One-time build, then ongoing |
+| **Total** | **~30 hours** | **~$250 + ~$1/yr** | |
 
 > Script generation, images, and narration can all run in Phase 1-3 on the same day.
 > Cinematics (Phase 5) is the gating factor — budget and quality review needed.
@@ -377,7 +379,9 @@ npx tsx scripts/compose-videos.ts            # FREE — compose all
 
 ---
 
-> This plan was generated on 2026-03-26.
+> This plan was last updated on 2026-03-27.
 > All scripts are in `german-malayali/scripts/`.
 > Cinematic prompts are in `docs/AI_CINEMATIC_SCRIPTS.md`.
 > Production workflow details in `docs/VIDEO_PRODUCTION_PLAN.md`.
+> Instagram strategy in `docs/INSTAGRAM_MARKETING_PLAN.md`.
+> Cheatsheet specs in `docs/CHEATSHEET_LIST.md`.

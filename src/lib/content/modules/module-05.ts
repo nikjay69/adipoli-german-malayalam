@@ -118,13 +118,14 @@ export const MODULE_5: Module = {
         },
         {
           id: "ex5-1-5",
-          type: "fill-blank",
-          question: "Wir _____ Deutsch. (lernen — to learn)",
-          options: ["lernen", "lerne", "lernst", "lernt"],
-          correctAnswer: "lernen",
-          explanation:
-            "Shortcut: 'wir' (we) and 'sie/Sie' (they/formal you) use the same form as the infinitive! Wir lernen = sie lernen = Sie lernen. Less to memorize!",
-          xpReward: 10
+          type: "multiple-choice",
+          question: "You are working from your WG apartment today. Which German verb describes your activity?",
+          questionGerman: "Was machen Sie heute zu Hause?",
+          options: ["Ich arbeite.", "Ich koche.", "Ich schlafe.", "Ich lerne."],
+          correctAnswer: "Ich arbeite.",
+          explanation: "In Germany, 'Home-Office' is very common. The verb 'arbeiten' always gets the 'ich -e' ending: 'Ich arbeite'. Use this when telling your friends why you can't go out for coffee!",
+          xpReward: 15,
+          imageUrl: "/images/home_office.png"
         },
         {
           id: "ex5-1-6",
@@ -518,17 +519,18 @@ export const MODULE_5: Module = {
         {
           id: "ex5-3-2",
           type: "multiple-choice",
-          question: "Which sentence correctly uses 'einkaufen'?",
+          question: "You are going to the supermarket to buy groceries and return your 'Pfand' bottles. Which verb covers this whole routine?",
+          questionGerman: "Welches Verb beschreibt diesen Behördengang?",
           options: [
-            "Ich kaufe im Supermarkt ein.",
-            "Ich einkaufe im Supermarkt.",
-            "Ich kaufe ein im Supermarkt.",
-            "Ich ein kaufe im Supermarkt."
+            "Ich kaufe ein.",
+            "Ich kaufe.",
+            "Ich einkaufe.",
+            "Ich mache Einkaufen."
           ],
-          correctAnswer: "Ich kaufe im Supermarkt ein.",
-          explanation:
-            "The prefix ALWAYS goes to the very end — even if there's more stuff in between. 'Ich kaufe im Supermarkt ein.' Not 'Ich kaufe ein im Supermarkt.'",
-          xpReward: 10
+          correctAnswer: "Ich kaufe ein.",
+          explanation: "In Germany, grocery shopping is 'einkaufen'. It's a separable verb! The prefix 'ein' MUST go to the end: 'Ich kaufe heute im Supermarkt EIN.'",
+          xpReward: 20,
+          imageUrl: "/images/leergut_machine.png"
         },
         {
           id: "ex5-3-3",

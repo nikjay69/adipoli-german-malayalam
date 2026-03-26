@@ -93,48 +93,31 @@ export const MODULE_2: Module = {
       ],
       exercises: [
         {
+          id: "ex2-5-1",
+          type: "multiple-choice",
+          question: "A neighbor invites you for 'Kaffee und Kuchen' at 3 PM. What is the social etiquette for arrival?",
+          questionGerman: "Wie pünktlich kommen Sie zur Einladung 'Kaffee und Kuchen'?",
+          options: ["Arrive exactly at 3:00 PM", "Arrive around 3:30 PM (Indian Stretchable Time)", "Arrive early at 2:45 PM", "Show up any time before 6 PM"],
+          correctAnswer: "Arrive exactly at 3:00 PM",
+          explanation: "Pünktlichkeit is king! 'Akademisches Viertel' (15 min late) only applies to some lectures. For private social visits, '3:00' means '3:00'. Anything else is considered 'unhöflich'!",
+          xpReward: 10,
+          imageUrl: "/images/kaffee_kuchen.png"
+        },
+        {
           id: "ex2-1-1",
           type: "multiple-choice",
-          question: "How do you ask 'What's your name?' to your new boss?",
-          options: ["Wie heißen Sie?", "Wie heißt du?", "Ich heiße...", "Wer bist du?"],
-          correctAnswer: "Wie heißen Sie?",
-          explanation: "The verb changes with formality: 'Wie heißT DU?' (informal, -t ending) vs 'Wie heißEN SIE?' (formal, -en ending). Boss = always Sie.",
-          xpReward: 10
+          question: "You just moved into your new German WG. What is the FIRST administrative step you must take in person within 14 days?",
+          questionGerman: "Was ist der erste Behördengang nach dem Umzug?",
+          options: ["Anmeldung (City Registration)", "Opening a bank account", "Getting a SIM card", "Buying a coffee machine"],
+          correctAnswer: "Anmeldung (City Registration)",
+          explanation: "In Germany, you MUST register your address at the local 'Bürgeramt' within 2 weeks of moving. Without the 'Anmeldebescheinigung' (registration certificate), you can't open a bank account or get a student job. Essential survival step!",
+          xpReward: 10,
+          imageUrl: "/images/anmeldung.png"
         },
-        {
-          id: "ex2-1-2",
-          type: "fill-blank",
-          question: "Complete: _____ heiße Priya. (My name is Priya.)",
-          options: ["Ich", "Du", "Er", "Wir"],
-          correctAnswer: "Ich",
-          explanation: "'Ich heiße' literally means 'I am called'. Three ways to say your name: 'Ich heiße...' (standard), 'Mein Name ist...' (formal), 'Ich bin...' (casual).",
-          xpReward: 10
-        },
-        {
-          id: "ex2-1-3",
-          type: "multiple-choice",
-          question: "What does 'Freut mich!' mean?",
-          options: ["Nice to meet you!", "Where are you from?", "What's your name?", "I'm fine, thanks"],
-          correctAnswer: "Nice to meet you!",
-          explanation: "'Freut mich!' literally means 'pleases me!' — said when meeting someone. The reply is 'Gleichfalls!' (likewise). This pair is your go-to for first meetings.",
-          xpReward: 10
-        },
-        {
-          id: "ex2-1-4",
-          type: "matching",
-          question: "Match the German phrase to its English meaning:",
-          options: ["Wie heißt du?", "Mein Name ist...", "Gleichfalls!"],
-          correctAnswer: ["What's your name? (informal)", "My name is...", "Likewise!"],
-          xpReward: 15
-        },
-        {
-          id: "ex2-1-5",
-          type: "ordering",
-          question: "Put this greeting conversation in the correct order:",
-          options: ["Freut mich! Gleichfalls!", "Ich heiße Meera. Und du?", "Hallo! Wie heißt du?", "Ich bin Arun."],
-          correctAnswer: ["Hallo! Wie heißt du?", "Ich heiße Meera. Und du?", "Ich bin Arun.", "Freut mich! Gleichfalls!"],
-          xpReward: 20
-        },
+        { id: "ex2-1-2", type: "fill-blank", question: "Complete: '_____ heiße Rahul.' (My name is Rahul.)", questionGerman: "Ergänzen Sie: '_____ heiße Rahul.'", options: ["Ich", "Du", "Er", "Sie"], correctAnswer: "Ich", explanation: "'Ich heiße' = 'I am called'. It's the most common way to introduce yourself in Germany. Remember to capitalize nouns like 'Rahul'!", xpReward: 10 },
+        { id: "ex2-1-3", type: "multiple-choice", question: "What does 'Freut mich!' mean when meeting someone?", questionGerman: "Was bedeutet 'Freut mich!'?", options: ["Nice to meet you!", "Where are you from?", "What's your name?", "I am fine"], correctAnswer: "Nice to meet you!", explanation: "Full version is 'Es freut mich, Sie kennenzulernen', but everyone just says 'Freut mich!'. It's the perfect way to build early rapport.", xpReward: 10 },
+        { id: "ex2-1-4", type: "matching", question: "Match the German phrase to its meaning:", questionGerman: "Verbinden Sie die Sätze:", options: ["Wie heißt du?", "Mein Name ist...", "Gleichfalls!"], correctAnswer: ["What's your name? (informal)", "My name is...", "Likewise!"], xpReward: 15 },
+        { id: "ex2-1-5", type: "ordering", question: "Put this polite greeting in order:", questionGerman: "Bringen Sie die Begrüßung in die richtige Reihenfolge:", options: ["Freut mich! - Gleichfalls!", "Ich heiße Meera. Und du?", "Hallo! Wie heißt du?", "Ich bin Arun."], correctAnswer: ["Hallo! Wie heißt du?", "Ich heiße Meera. Und du?", "Ich bin Arun.", "Freut mich! - Gleichfalls!"], xpReward: 20 },
         {
           id: "ex2-1-6",
           type: "fill-blank",
@@ -268,10 +251,11 @@ export const MODULE_2: Module = {
         {
           id: "ex2-2-1",
           type: "multiple-choice",
-          question: "How do you say 'I am Indian' in German (male speaker)?",
+          question: "You are representing your company. How do you say 'I am Indian' as a male speaker?",
+          questionGerman: "Stellen Sie sich vor: Wie sagen Sie 'I am Indian'?",
           options: ["Ich bin Inder.", "Ich bin indisch.", "Ich bin Indien.", "Ich bin Indianer."],
           correctAnswer: "Ich bin Inder.",
-          explanation: "CAREFUL: Inder = Indian person, Indianer = Native American! This is a common and embarrassing mistake. Male: Inder, Female: Inderin. Never say 'Indianer' about yourself!",
+          explanation: "Critical nuance: 'Inder' = Indian citizen. 'Indianer' = Native American. Germans will correct you, but it's embarrassing! For a female, say 'Ich bin Inderin'.",
           xpReward: 10
         },
         {
@@ -294,11 +278,13 @@ export const MODULE_2: Module = {
         {
           id: "ex2-2-4",
           type: "multiple-choice",
-          question: "Which continent is Germany in?",
-          options: ["Europa", "Asien", "Nordamerika", "Afrika"],
-          correctAnswer: "Europa",
-          explanation: "Deutschland liegt in Europa. Memory trick: the 7 continents in German are mostly similar to English — Europa, Asien, Afrika, Nordamerika, Südamerika, Australien, Antarktis.",
-          xpReward: 10
+          question: "Germany has 16 states. Which is the largest by area (south) and home to many IT hubs like Munich?",
+          questionGerman: "Welches ist das größte Bundesland in Deutschland?",
+          options: ["Bayern (Bavaria)", "Berlin", "Hamburg", "Sachsen"],
+          correctAnswer: "Bayern (Bavaria)",
+          explanation: "Bayern is the largest state and a massive hub for technology, automobile, and healthcare. Many Malayalis move to Munich, the capital of Bayern!",
+          xpReward: 10,
+          imageUrl: "/images/germany_map.png"
         },
         {
           id: "ex2-2-5",
@@ -471,11 +457,13 @@ export const MODULE_2: Module = {
         {
           id: "ex2-3-4",
           type: "multiple-choice",
-          question: "What is the female form of 'Arzt' (doctor)?",
-          options: ["Ärztin", "Arztin", "Arztfrau", "Doktorin"],
-          correctAnswer: "Ärztin",
-          explanation: "Female professions usually add '-in': Lehrer → Lehrerin. But some also get an umlaut: Arzt → Ärztin, Koch → Köchin. Watch for these vowel changes!",
-          xpReward: 10
+          question: "You are a student and get a 'HiWi' job at your university. What is a 'HiWi'?",
+          questionGerman: "Was ist ein 'HiWi'-Job an der Universität?",
+          options: ["Student research assistant", "Cleaning staff", "Private tutor", "Library guard"],
+          correctAnswer: "Student research assistant",
+          explanation: "HiWi = Hilfswissenschaftler. It's the most prestigious and common part-time job for students. You help professors with research or teaching and get paid — great for your CV!",
+          xpReward: 10,
+          imageUrl: "/images/hiwi_student.png"
         },
         {
           id: "ex2-3-5",

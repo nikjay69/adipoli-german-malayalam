@@ -85,22 +85,16 @@ export const MODULE_3: Module = {
       exercises: [
         {
           id: "ex3-1-1",
-          type: "matching",
-          question: "Match the German numbers with their English equivalents:",
-          options: ["eins → 1", "fünf → 5", "acht → 8", "drei → 3", "zehn → 10", "sieben → 7"],
-          correctAnswer: ["eins → 1", "fünf → 5", "acht → 8", "drei → 3", "zehn → 10", "sieben → 7"],
-          explanation: "Numbers 0-10 are the building blocks of ALL German numbers. Master these cold — every larger number is built from them. Daily drill: count 0-10 while brushing teeth!",
-          xpReward: 20
-        },
-        {
-          id: "ex3-1-2",
           type: "multiple-choice",
-          question: "What is 'zwölf' in English?",
-          options: ["10", "11", "12", "20"],
-          correctAnswer: "12",
-          explanation: "Zwölf (12) and elf (11) are irregular — memorize them separately! From 13 onwards, the pattern is simple: unit + zehn (dreizehn, vierzehn...).",
-          xpReward: 15
+          question: "You are at a LIDL supermarket. A carton of milk costs 79 cents. How will you see this price written in Germany?",
+          questionGerman: "Wie wird dieser Preis in Deutschland geschrieben?",
+          options: ["0,79 €", "0.79 €", "$ 0.79", "79,00 €"],
+          correctAnswer: "0,79 €",
+          explanation: "In Germany, we use a COMMA (,) as the decimal separator, not a DOT (.). So 79 cents is written as '0,79 €'. Also, the Euro symbol usually comes AFTER the number. Small details, big survival skills!",
+          xpReward: 15,
+          imageUrl: "/images/german_price_tag.png"
         },
+        { id: "ex3-1-2", type: "multiple-choice", question: "What is 'zwölf' in English?", questionGerman: "Was ist 'zwölf' auf Englisch?", options: ["10", "11", "12", "20"], correctAnswer: "12", explanation: "Zwölf (12) and elf (11) are the two special 'rebel' numbers that don't follow the pattern. Memorize these first!", xpReward: 10 },
         {
           id: "ex3-1-3",
           type: "fill-blank",
@@ -308,15 +302,16 @@ export const MODULE_3: Module = {
         {
           id: "ex3-2-1",
           type: "multiple-choice",
-          question: "How do you say 45 in German?",
+          question: "You are at a traditional bakery that has a sign 'Nur Barzahlung'. You need to pay forty Euro. What do you say?",
+          questionGerman: "Sie müssen vierzig Euro bezahlen. Was sagen Sie?",
           options: [
-            "vierundvierzig",
-            "fünfundvierzig",
-            "vierfünfzig",
-            "fünfvierzig"
+            "Vierzig Euro, bitte.",
+            "Vier Euro, bitte.",
+            "Vierzehn Euro, bitte.",
+            "Fünfzig Euro, bitte."
           ],
-          correctAnswer: "fünfundvierzig",
-          explanation: "German number rule: ones BEFORE tens. 45 = fünf-und-vierzig (five-and-forty). Think of it as reading right-to-left: the small digit comes first!",
+          correctAnswer: "Vierzig Euro, bitte.",
+          explanation: "The suffix for tens is '-zig'. So 40 is 'vier-zig'. 'Nur Barzahlung' means 'Cash only' — extremely common in German bakeries and small cafes!",
           xpReward: 20
         },
         {
@@ -497,11 +492,12 @@ export const MODULE_3: Module = {
         {
           id: "ex3-3-1",
           type: "multiple-choice",
-          question: "What time is 'halb vier'?",
-          options: ["4:30", "3:30", "3:15", "4:15"],
-          correctAnswer: "3:30",
-          explanation: "BIGGEST trap in German time: 'halb' means half TO the next hour, not half past! 'Halb vier' = 3:30 (halfway to 4). Think: 'half of the way to four'.",
-          xpReward: 20
+          question: "THE TRAP: A German friend says 'Wir treffen uns um halb acht'. What time should you be there?",
+          questionGerman: "Wann treffen Sie sich bei 'halb acht'?",
+          options: ["7:30", "8:30", "7:15", "8:15"],
+          correctAnswer: "7:30",
+          explanation: "CRITICAL: 'halb acht' literally means 'half TO eight'. So it is 7:30. In English, you say 'half past', but in Germany, we think of the NEXT hour! This is the #1 way foreigners miss appointments.",
+          xpReward: 25
         },
         {
           id: "ex3-3-2",
@@ -538,11 +534,13 @@ export const MODULE_3: Module = {
         {
           id: "ex3-3-5",
           type: "multiple-choice",
-          question: "What does 'fünfzehn Uhr dreißig' mean?",
-          options: ["5:30 AM", "3:30 PM", "1:30 PM", "5:30 PM"],
+          question: "You see '15:30' on a DB (Deutsche Bahn) schedule board. What time is the train?",
+          questionGerman: "Um wie viel Uhr fährt der Zug (15:30)?",
+          options: ["3:30 PM", "5:30 PM", "1:30 PM", "5:30 AM"],
           correctAnswer: "3:30 PM",
-          explanation: "Germany uses 24-hour clock for formal/official time: trains, appointments, shops. 15:30 = fünfzehn Uhr dreißig. Quick math: subtract 12 for PM time (15-12 = 3 PM).",
-          xpReward: 20
+          explanation: "Germany uses the 24-hour clock for ALL formal schedules. Just subtract 12 to get the PM time (15 - 12 = 3). 'Fünfzehn Uhr dreißig' is the formal way to say it.",
+          xpReward: 20,
+          imageUrl: "/images/db_schedule.png"
         },
         {
           id: "ex3-3-6",
@@ -673,12 +671,14 @@ export const MODULE_3: Module = {
       exercises: [
         {
           id: "ex3-4-1",
-          type: "ordering",
-          question: "Put the days of the week in the correct order (starting from Monday):",
-          options: ["Freitag", "Mittwoch", "Montag", "Donnerstag", "Dienstag"],
-          correctAnswer: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"],
-          explanation: "The German work week: Montag, Dienstag, Mittwoch, Donnerstag, Freitag.",
-          xpReward: 20
+          type: "multiple-choice",
+          question: "Your 'Graue Tonne' (Grey trash bin) is collected every 'Mittwoch'. Which day of the week is that?",
+          questionGerman: "An welchem Wochentag ist Mittwoch?",
+          options: ["Wednesday", "Tuesday", "Thursday", "Monday"],
+          correctAnswer: "Wednesday",
+          explanation: "Punctuality applies to trash too! You must put your bin out on the correct day. 'Mittwoch' = middle of the week. Note the four bin colors in Germany: Blue (Paper), Yellow (Plastic), Brown (Organic), and Grey (General).",
+          xpReward: 20,
+          imageUrl: "/images/trash_bins.png"
         },
         {
           id: "ex3-4-2",

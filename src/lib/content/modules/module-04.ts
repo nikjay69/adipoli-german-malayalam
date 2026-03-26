@@ -93,11 +93,13 @@ export const MODULE_4: Module = {
         {
           id: "ex4-1-2",
           type: "multiple-choice",
-          question: "What is the casual/informal word for 'Großmutter'?",
-          options: ["Mutti", "Oma", "Tante", "Nichte"],
-          correctAnswer: "Oma",
-          explanation: "German has formal AND casual family words: Großmutter/Oma (grandmother), Großvater/Opa (grandfather). Use Oma/Opa in conversation — it's warmer, like saying 'Ammoomma' instead of 'Grandmother'.",
-          xpReward: 15
+          question: "Your German host family introduces you to their 'Oma'. Who is she?",
+          questionGerman: "Wer ist die 'Oma' in der Familie?",
+          options: ["Grandmother", "Mother", "Aunt", "Sister"],
+          correctAnswer: "Grandmother",
+          explanation: "In Germany, 'Großmutter' is formal, but everyone says 'Oma' for a warm, casual feeling — just like 'Ammoomma' back home! 'Opa' is similarly used for 'Großvater'.",
+          xpReward: 15,
+          imageUrl: "/images/kaffeeklatsch.png"
         },
         {
           id: "ex4-1-3",
@@ -111,15 +113,16 @@ export const MODULE_4: Module = {
         {
           id: "ex4-1-4",
           type: "multiple-choice",
-          question: "In German, how is the word for uncle different from Malayalam?",
+          question: "How do you distinguish between an elder and younger brother in German, like 'Chettan' vs 'Aniyan'?",
+          questionGerman: "Wie sagt man 'Chettan' oder 'Aniyan' auf Deutsch?",
           options: [
-            "German has no word for uncle",
-            "German uses one word 'Onkel' for all uncles, while Malayalam has different words for maternal/paternal uncle",
-            "German has more words for uncle than Malayalam",
-            "They are exactly the same"
+            "älterer Bruder / jüngerer Bruder",
+            "Chettan / Aniyan",
+            "Großbruder / Kleinbruder",
+            "Bruder eins / Bruder zwei"
           ],
-          correctAnswer: "German uses one word 'Onkel' for all uncles, while Malayalam has different words for maternal/paternal uncle",
-          explanation: "German simplifies what Malayalam complicates! Malayalam has 5+ words for uncle (Ammavan, Chittappan...), but German uses just 'Onkel' for ALL uncles. Fewer words to learn!",
+          correctAnswer: "älterer Bruder / jüngerer Bruder",
+          explanation: "Unlike Malayalam, German doesn't have unique single words for elder/younger siblings. You simply add the adjective: 'älter' (older) or 'jünger' (younger). So, 'mein älterer Bruder' = your Chettan!",
           xpReward: 20
         },
         {
@@ -383,11 +386,13 @@ export const MODULE_4: Module = {
         {
           id: "ex4-2-6",
           type: "ordering",
-          question: "Arrange these words to form a correct sentence: 'ist / mein Bruder / und / groß / sportlich'",
-          options: ["Mein Bruder", "ist", "groß", "und", "sportlich"],
-          correctAnswer: ["Mein Bruder", "ist", "groß", "und", "sportlich"],
-          explanation: "'Mein Bruder ist groß und sportlich.' = My brother is tall and athletic.",
-          xpReward: 20
+          question: "You are describing a group of friends in Berlin. Form this sentence: 'Mein Freund ist groß und hat schwarze Haare.'",
+          questionGerman: "Stellen Sie den Satz richtig zusammen:",
+          options: ["Mein Freund", "ist groß", "und", "hat", "schwarze Haare"],
+          correctAnswer: ["Mein Freund", "ist groß", "und", "hat", "schwarze Haare"],
+          explanation: "Physical description uses TWO verbs: 'ist' for general traits (tall, nice) and 'hat' for features (hair, eyes). 'Schwarze' means black — the most common hair colour in Kerala!",
+          xpReward: 20,
+          imageUrl: "/images/berlin_people.png"
         }
       ],
       vocabulary: [
@@ -619,7 +624,7 @@ export const MODULE_4: Module = {
           malayalam: "നിന്റെ",
           pronunciation: "dine / dine-uh",
           example: "Ist das deine Tasche?",
-          exampleTranslation: "Is that your bag?"
+          exampleTranslation: "Is that your bag."
         },
         {
           id: "vocab4-3-3",
