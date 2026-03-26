@@ -251,7 +251,7 @@ How did you do? Check especially: dots in dates, city for Geburtsort, Unterschri
 
 [EXAM-TIP] This 5-second scan catches 90% of form-filling errors. Do it every time — exam and real life.
 
-*20 words. Ella German form-um fill cheyyaan kazhiyum. Adipoli!*
+*20 words. Ella German form-um fill cheyyaan kazhiyum. *Kidu!*
 
 Next up: **At the Office** — the actual German phrases you'll need when you walk into the Bürgeramt. Because filling the form is half the battle — now let's learn what to SAY.
 

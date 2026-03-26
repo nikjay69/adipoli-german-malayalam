@@ -240,7 +240,7 @@ You can now:
 
 Before Module 13, you only had present tense. Now you have the PAST. You've doubled your German.
 
-*Present tense + past tense = double power! Module 13 adipoli! 💪*
+*Present tense + past tense = double power! Module 13 Mass! 💪*
 
 📝 **Homework:** Write YOUR real last weekend — 8 sentences minimum. Include:
 - ☐ 3+ haben verbs

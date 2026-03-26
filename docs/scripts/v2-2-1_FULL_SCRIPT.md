@@ -205,7 +205,7 @@ New phrase: 🔊 **Wo wohnst du?** — Where do you live?
 
 ### Practice Pause: ⏸️ (10 seconds)
 
-*Adipoli! Oru complete German conversation nadathiyirikkunnu — name, origin, residence!*"
+*Kidu!* Oru complete German conversation nadathiyirikkunnu — name, origin, residence!*"
 
 ---
 

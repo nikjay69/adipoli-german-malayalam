@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ChevronRight, Lock, CheckCircle, Clock, Star } from 'lucide-react';
-import { Card, ProgressBar, Badge } from '@/components/ui';
+import { ChevronRight, Lock, CheckCircle, Clock, Star, ChevronDown } from 'lucide-react';
+import { ProgressBar, Badge } from '@/components/ui';
 import { useGameStore } from '@/lib/store';
 import type { LessonProgress } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
@@ -17,7 +17,7 @@ function getModuleMastery(module: Module, completedLessons: LessonProgress[]): '
   const completed = completedLessons.filter(cl => moduleLessonIds.includes(cl.lessonId));
 
   if (completed.length === 0) return 'none';
-  if (completed.length < moduleLessonIds.length) return 'bronze'; // started but not finished
+  if (completed.length < moduleLessonIds.length) return 'bronze';
 
   const avgScore = completed.reduce((sum, cl) => sum + cl.score, 0) / completed.length;
   if (avgScore >= 90) return 'gold';
@@ -35,10 +35,30 @@ const MASTERY_CONFIG = {
 export default function LearnPage() {
   const { userProgress } = useGameStore();
   const [mounted, setMounted] = useState(false);
+  const [expandedModule, setExpandedModule] = useState<number | null>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Find the current active module (first incomplete unlocked module)
+  const activeModuleId = useMemo(() => {
+    if (!mounted) return null;
+    for (const module of ALL_MODULES) {
+      const unlocked = isModuleUnlocked(module.id, userProgress.completedLessons);
+      if (!unlocked) continue;
+      const allDone = module.lessons.every(l => userProgress.completedLessons.some(cl => cl.lessonId === l.id));
+      if (!allDone) return module.id;
+    }
+    return null;
+  }, [mounted, userProgress.completedLessons]);
+
+  // Auto-expand the active module
+  useEffect(() => {
+    if (activeModuleId !== null && expandedModule === null) {
+      setExpandedModule(activeModuleId);
+    }
+  }, [activeModuleId, expandedModule]);
 
   if (!mounted) {
     return (
@@ -50,21 +70,71 @@ export default function LearnPage() {
     );
   }
 
+  // Group modules: completed summary + current + upcoming
+  const completedModules: typeof ALL_MODULES = [];
+  const currentAndUpcoming: typeof ALL_MODULES = [];
+  let foundCurrent = false;
+
+  for (const module of ALL_MODULES) {
+    const allDone = module.lessons.every(l => userProgress.completedLessons.some(cl => cl.lessonId === l.id));
+    if (allDone && !foundCurrent) {
+      completedModules.push(module);
+    } else {
+      foundCurrent = true;
+      currentAndUpcoming.push(module);
+    }
+  }
+
   return (
-    <div className="px-4 py-4 max-w-4xl mx-auto">
+    <div className="px-3 py-3 max-w-4xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-3"
+        className="mb-2"
       >
-        <h1 className="text-2xl font-bold text-[var(--foreground)]">Learn German</h1>
-        <p className="text-[var(--foreground)]/50 mt-1">
-          Master German A1 step by step
-        </p>
+        <h1 className="text-sm font-bold">
+          <span className="gradient-text">Learn German</span>
+          <span className="text-[var(--foreground)]/40 font-normal ml-1.5">{ALL_MODULES.length} modules</span>
+        </h1>
       </motion.div>
 
-      <div className="space-y-4">
-        {ALL_MODULES.map((module, moduleIndex) => {
+      {/* Completed modules summary */}
+      {completedModules.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="game-card p-2.5 mb-2"
+        >
+          <div className="flex items-center gap-2">
+            <CheckCircle className="w-4 h-4 text-[#27ae60] flex-shrink-0" />
+            <span className="text-sm font-semibold text-[#27ae60]">
+              Modules 1-{completedModules[completedModules.length - 1].id} complete
+            </span>
+            <span className="text-xs text-[var(--foreground)]/40 ml-auto">
+              {completedModules.reduce((s, m) => s + m.lessons.length, 0)} lessons
+            </span>
+          </div>
+          {/* Compact icon row of completed modules */}
+          <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
+            {completedModules.map(m => {
+              const mastery = getModuleMastery(m, userProgress.completedLessons);
+              return (
+                <Link key={m.id} href={`/learn/${m.id}`}>
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm ${mastery !== 'none' ? MASTERY_CONFIG[mastery].border : ''}`}
+                    style={{ backgroundColor: m.color + '20' }}
+                    title={`Module ${m.id}: ${m.title}`}>
+                    {m.icon}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </motion.div>
+      )}
+
+      {/* Current + upcoming modules */}
+      <div className="space-y-2">
+        {currentAndUpcoming.map((module, idx) => {
           const moduleLessons = module.lessons.length;
           const completedModuleLessons = userProgress.completedLessons.filter(l =>
             module.lessons.some(ml => ml.id === l.lessonId)
@@ -75,120 +145,99 @@ export default function LearnPage() {
           const isOptionalBridge = OPTIONAL_MODULE_IDS.has(module.id);
           const mastery = getModuleMastery(module, userProgress.completedLessons);
           const masteryInfo = MASTERY_CONFIG[mastery];
+          const isExpanded = expandedModule === module.id;
+          const isCurrent = module.id === activeModuleId;
 
           return (
             <motion.div
               key={module.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: moduleIndex * 0.1 }}
+              transition={{ delay: idx * 0.04 }}
             >
-              <Card padding="sm" className={`${isModuleLocked ? 'opacity-60' : ''}`}>
-                {/* Module Header */}
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="relative flex-shrink-0">
-                    <div
-                      className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl${moduleProgress === 100 ? ' animate-lamp' : ''} ${mastery !== 'none' ? masteryInfo.border : ''}`}
-                      style={{ backgroundColor: module.color + '20' }}
-                    >
-                      {isModuleLocked ? <Lock className="w-6 h-6 text-[var(--foreground)]/40" /> : module.icon}
-                    </div>
-                    {mastery !== 'none' && (
-                      <span
-                        className="absolute -top-2 -right-2 text-base leading-none drop-shadow-md"
-                        title={`${masteryInfo.label} mastery`}
+              <div className={`game-card overflow-hidden ${isModuleLocked ? 'opacity-50' : ''} ${isCurrent ? 'border-[#e94560]/30' : ''}`}>
+                {/* Module header — tappable to expand */}
+                <button
+                  onClick={() => !isModuleLocked && setExpandedModule(isExpanded ? null : module.id)}
+                  className="w-full text-left p-2.5"
+                  disabled={isModuleLocked}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="relative flex-shrink-0">
+                      <div
+                        className={`w-10 h-10 rounded-lg flex items-center justify-center text-lg ${mastery !== 'none' ? masteryInfo.border : ''}`}
+                        style={{ backgroundColor: module.color + '20' }}
                       >
-                        {masteryInfo.emoji}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <h2 className="text-lg font-bold text-[var(--foreground)]">
-                        Module {module.id}: {module.title}
-                      </h2>
-                      {isOptionalBridge && (
-                        <Badge variant="warning" size="sm">Optional bridge</Badge>
-                      )}
-                      {moduleProgress === 100 && (
-                        <Badge variant="success" size="sm">
-                          <CheckCircle className="w-3 h-3 mr-1" /> Complete
-                        </Badge>
-                      )}
-                      {mastery !== 'none' && mastery !== 'bronze' && (
-                        <Badge variant={mastery === 'gold' ? 'warning' : 'info'} size="sm">
-                          {masteryInfo.emoji} {masteryInfo.label}
-                        </Badge>
+                        {isModuleLocked ? <Lock className="w-4 h-4 text-[var(--foreground)]/40" /> : module.icon}
+                      </div>
+                      {mastery !== 'none' && (
+                        <span className="absolute -top-1.5 -right-1.5 text-xs leading-none">{masteryInfo.emoji}</span>
                       )}
                     </div>
-                    <p className="text-sm text-[var(--foreground)]/50 line-clamp-1">
-                      {module.description}
-                    </p>
-                    {isOptionalBridge && (
-                      <p className="mt-1 text-xs text-amber-400">
-                        Helpful after A1 basics — not required before exam-prep modules.
-                      </p>
-                    )}
-                    <div className="flex items-center gap-4 mt-2 text-xs text-[var(--foreground)]/50">
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-3 h-3" /> {module.totalHours} hours
-                      </span>
-                      <span>{module.lessons.length} lessons</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <h2 className="text-sm font-bold text-[var(--foreground)] truncate">
+                          {module.id}. {module.title}
+                        </h2>
+                        {isOptionalBridge && (
+                          <Badge variant="warning" size="sm">Opt</Badge>
+                        )}
+                        {moduleProgress === 100 && (
+                          <CheckCircle className="w-3.5 h-3.5 text-[#27ae60] flex-shrink-0" />
+                        )}
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-[var(--foreground)]/40">
+                        <span>{completedModuleLessons}/{moduleLessons}</span>
+                        {moduleProgress > 0 && moduleProgress < 100 && (
+                          <div className="flex-1 h-1.5 bg-[var(--foreground)]/8 rounded-full overflow-hidden max-w-[80px]">
+                            <div className="h-full rounded-full bg-[#e94560]" style={{ width: `${moduleProgress}%` }} />
+                          </div>
+                        )}
+                      </div>
                     </div>
+                    {!isModuleLocked && (
+                      <ChevronDown className={`w-4 h-4 text-[var(--foreground)]/30 flex-shrink-0 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
+                    )}
                   </div>
-                </div>
+                </button>
 
-                {/* Progress Bar */}
-                <div className="mb-3">
-                  <div className="flex items-center justify-between text-sm mb-1">
-                    <span className="text-[var(--foreground)]/50">Progress</span>
-                    <span className="font-medium text-[var(--foreground)]/80">
-                      {completedModuleLessons}/{moduleLessons} lessons
-                    </span>
-                  </div>
-                  <ProgressBar
-                    progress={moduleProgress}
-                    color={moduleProgress === 100 ? 'success' : 'primary'}
-                    size="md"
-                  />
-                </div>
-
-                {/* Lessons List */}
-                {!isModuleLocked && (
-                  <div className="space-y-2">
-                    {module.lessons.map((lesson, lessonIndex) => {
-                      const isCompleted = userProgress.completedLessons.some(
-                        l => l.lessonId === lesson.id
-                      );
-                      const completedLesson = userProgress.completedLessons.find(
-                        l => l.lessonId === lesson.id
-                      );
-
-                      // Check if previous lesson is complete
-                      const isPreviousLessonComplete = lessonIndex === 0 ||
-                        userProgress.completedLessons.some(
-                          l => l.lessonId === module.lessons[lessonIndex - 1].id
+                {/* Expanded lesson list */}
+                {isExpanded && !isModuleLocked && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                    className="px-2.5 pb-2.5"
+                  >
+                    <div className="space-y-1">
+                      {module.lessons.map((lesson, lessonIndex) => {
+                        const isCompleted = userProgress.completedLessons.some(
+                          l => l.lessonId === lesson.id
                         );
+                        const completedLesson = userProgress.completedLessons.find(
+                          l => l.lessonId === lesson.id
+                        );
+                        const isPreviousLessonComplete = lessonIndex === 0 ||
+                          userProgress.completedLessons.some(
+                            l => l.lessonId === module.lessons[lessonIndex - 1].id
+                          );
+                        const isLessonLocked = !isPreviousLessonComplete;
 
-                      const isLessonLocked = !isPreviousLessonComplete;
-
-                      return (
-                        <Link
-                          key={lesson.id}
-                          href={isLessonLocked ? '#' : `/learn/${module.id}/${lesson.id}`}
-                        >
-                          <motion.div
-                            whileHover={!isLessonLocked ? { x: 4 } : undefined}
-                            className={`p-2.5 rounded-xl border transition-all ${
-                              isLessonLocked
-                                ? 'bg-[var(--foreground)]/5 border-[var(--card-border)] opacity-50'
-                                : isCompleted
-                                ? 'bg-[#27ae60]/10 border-[#27ae60]/30'
-                                : 'border-[var(--card-border)] hover:border-[#e94560]/50'
-                            }`}
+                        return (
+                          <Link
+                            key={lesson.id}
+                            href={isLessonLocked ? '#' : `/learn/${module.id}/${lesson.id}`}
                           >
-                            <div className="flex items-center gap-3">
-                              <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${
+                            <div
+                              className={`flex items-center gap-2 p-2 rounded-lg transition-all ${
+                                isLessonLocked
+                                  ? 'opacity-40'
+                                  : isCompleted
+                                  ? 'bg-[#27ae60]/10'
+                                  : 'hover:bg-[var(--foreground)]/5'
+                              }`}
+                            >
+                              <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 ${
                                 isLessonLocked
                                   ? 'bg-[var(--foreground)]/10'
                                   : isCompleted
@@ -196,56 +245,40 @@ export default function LearnPage() {
                                   : 'bg-[#e94560]'
                               }`}>
                                 {isLessonLocked ? (
-                                  <Lock className="w-4 h-4 text-[var(--foreground)]/40" />
+                                  <Lock className="w-3 h-3 text-[var(--foreground)]/40" />
                                 ) : isCompleted ? (
-                                  <CheckCircle className="w-4 h-4 text-white" />
+                                  <CheckCircle className="w-3 h-3 text-white" />
                                 ) : (
-                                  <span className={`text-white text-sm font-bold${lessonIndex === 0 || isPreviousLessonComplete ? ' animate-unlock' : ''}`}>{lessonIndex + 1}</span>
+                                  <span className="text-white text-xs font-bold">{lessonIndex + 1}</span>
                                 )}
                               </div>
                               <div className="flex-1 min-w-0">
-                                <h3 className={`font-medium ${
+                                <h3 className={`text-sm font-medium truncate ${
                                   isLessonLocked ? 'text-[var(--foreground)]/40' : 'text-[var(--foreground)]'
                                 }`}>
                                   {lesson.title}
                                 </h3>
-                                <p className="text-xs text-[var(--foreground)]/50">
-                                  {lesson.titleGerman}
-                                </p>
                               </div>
-                              <div className="flex items-center gap-2">
-                                <span className="text-xs text-[var(--foreground)]/50">
-                                  {lesson.duration}
-                                </span>
+                              <div className="flex items-center gap-1.5 flex-shrink-0">
+                                <span className="text-xs text-[var(--foreground)]/40">{lesson.duration}</span>
                                 {isCompleted && completedLesson && (
                                   <div className="flex items-center gap-0.5 text-amber-500">
                                     <Star className="w-3 h-3 fill-amber-500" />
-                                    <span className="text-xs font-medium">{completedLesson.score}%</span>
+                                    <span className="text-xs">{completedLesson.score}%</span>
                                   </div>
                                 )}
                                 {!isLessonLocked && !isCompleted && (
-                                  <Badge variant="success" size="sm">+{lesson.xpReward} XP</Badge>
+                                  <span className="text-xs font-bold text-[#27ae60]">+{lesson.xpReward}</span>
                                 )}
                               </div>
-                              <ChevronRight className={`w-4 h-4 ${
-                                isLessonLocked ? 'text-[var(--foreground)]/30' : 'text-[var(--foreground)]/40'
-                              }`} />
                             </div>
-                          </motion.div>
-                        </Link>
-                      );
-                    })}
-                  </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
                 )}
-
-                {/* Locked Module Message */}
-                {isModuleLocked && (
-                  <div className="text-center py-4 text-[var(--foreground)]/50">
-                    <Lock className="w-8 h-8 mx-auto mb-2 text-[var(--foreground)]/40" />
-                    <p className="text-sm">Complete Module {moduleIndex} to unlock</p>
-                  </div>
-                )}
-              </Card>
+              </div>
             </motion.div>
           );
         })}

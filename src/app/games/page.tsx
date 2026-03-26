@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Flame, Star, Zap, Trophy, Lock, BookOpen } from 'lucide-react';
+import { Flame, Star, Trophy, Lock } from 'lucide-react';
 import { useGameStore } from '@/lib/store';
 import { ALL_MODULES } from '@/lib/content/modules';
 
@@ -223,10 +223,10 @@ const games: GameDef[] = [
   },
 ];
 
-const difficultyColors: Record<string, string> = {
-  Easy: 'bg-[#27ae60]/15 text-[#27ae60] border border-[#27ae60]/20',
-  Medium: 'bg-[#d4a520]/15 text-[#d4a520] border border-[#d4a520]/20',
-  Hard: 'bg-[#c0392b]/15 text-[#c0392b] border border-[#c0392b]/20',
+const diffBadge: Record<string, string> = {
+  Easy: 'text-[#27ae60] bg-[#27ae60]/15',
+  Medium: 'text-[#d4a520] bg-[#d4a520]/15',
+  Hard: 'text-[#c0392b] bg-[#c0392b]/15',
 };
 
 export default function GamesPage() {
@@ -235,7 +235,6 @@ export default function GamesPage() {
 
   useEffect(() => { setMounted(true); }, []);
 
-  // Calculate completed modules
   const completedModules = mounted ? ALL_MODULES.filter(m =>
     m.lessons.every(l => userProgress.completedLessons.some(cl => cl.lessonId === l.id))
   ).length : 0;
@@ -259,166 +258,84 @@ export default function GamesPage() {
 
   const unlockedGames = games.filter(g => isGameUnlocked(g));
   const lockedGames = games.filter(g => !isGameUnlocked(g));
-  const recommendedGame = unlockedGames[unlockedGames.length - 1] || unlockedGames[0];
 
   return (
-    <div className="min-h-screen px-4 py-4 safe-top safe-bottom">
-      {/* Header */}
+    <div className="min-h-screen px-3 py-3 safe-top safe-bottom">
+      {/* Header — single compact line */}
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="mb-3"
+        className="flex items-center justify-between mb-2"
       >
-        <h1 className="text-2xl font-bold">
+        <h1 className="text-sm font-bold">
           <span className="gradient-text">Games</span>
+          <span className="text-[var(--foreground)]/40 font-normal ml-1.5">{unlockedGames.length} of {games.length} unlocked</span>
         </h1>
-        <p className="text-[var(--foreground)]/40 text-sm mt-1">
-          Practice German while having fun
-        </p>
-      </motion.div>
-
-      {/* Stats */}
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.1 }}
-      >
-        <div className="flex items-center justify-center gap-4 mb-3 text-sm">
+        <div className="flex items-center gap-3 text-xs text-[var(--foreground)]/50">
           <span className="flex items-center gap-1"><Flame className="w-3 h-3 text-[#c0392b]" />{userProgress.gamesPlayed}</span>
-          <span className="flex items-center gap-1"><Star className="w-3 h-3 text-[#d4a520]" />{userProgress.xp} XP</span>
-          <span className="flex items-center gap-1"><Trophy className="w-3 h-3 text-[#27ae60]" />{userProgress.learnedVocabulary.length}</span>
+          <span className="flex items-center gap-1"><Star className="w-3 h-3 text-[#d4a520]" />{userProgress.xp}</span>
         </div>
       </motion.div>
 
-      {/* Unlocked Games */}
-      <div className="space-y-2">
+      {/* 2-column game grid */}
+      <div className="grid grid-cols-2 gap-2">
         {unlockedGames.map((game, index) => (
           <motion.div
-            key={game.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 + index * 0.05 }}
+            key={`${game.id}-${index}`}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.05 + index * 0.03 }}
           >
             <Link href={`/games/${game.id}`}>
               <motion.div
-                whileTap={{ scale: 0.98 }}
-                className="game-card p-3 cursor-pointer transition-all active:bg-[var(--foreground)]/5"
+                whileTap={{ scale: 0.96 }}
+                className="game-card p-2.5 cursor-pointer transition-all h-full"
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 mb-1.5">
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
-                    style={{ backgroundColor: `${game.color}15`, border: `2px solid ${game.color}30` }}
+                    className="w-9 h-9 rounded-lg flex items-center justify-center text-lg flex-shrink-0"
+                    style={{ backgroundColor: `${game.color}15`, border: `1.5px solid ${game.color}30` }}
                   >
                     {game.icon}
                   </div>
-
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-bold text-base leading-tight">
-                        {game.name}
-                      </h3>
-                      {game.tag && (
-                        <span className={`text-xs font-bold bg-[#ff6b9d]/20 text-[#ff6b9d] px-1.5 py-0.5 rounded-full${game.tag === 'NEW' ? ' animate-rickshaw' : ''}`}>
-                          {game.tag}
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-[var(--foreground)]/40 text-xs mb-2 leading-relaxed line-clamp-1">
-                      {game.description}
-                    </p>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${difficultyColors[game.difficulty]}`}>
-                        {game.difficulty}
-                      </span>
-                      <span className="flex items-center gap-1 text-xs text-[#d4a520] font-bold">
-                        <Zap className="w-3 h-3" />
-                        +{game.xpReward} XP
-                      </span>
-                      <span className="text-xs text-[var(--foreground)]/40">
-                        {game.timeEstimate}
-                      </span>
-                    </div>
+                    <h3 className="font-bold text-sm leading-tight truncate">{game.name}</h3>
                   </div>
-
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: `${game.color}20` }}
-                  >
-                    <span className="font-bold text-sm" style={{ color: game.color }}>→</span>
-                  </div>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${diffBadge[game.difficulty]}`}>
+                    {game.difficulty}
+                  </span>
+                  <span className="text-xs font-bold text-[#d4a520]">+{game.xpReward}</span>
                 </div>
               </motion.div>
             </Link>
           </motion.div>
         ))}
-      </div>
 
-      {/* Locked Games */}
-      {lockedGames.length > 0 && (
-        <>
+        {/* Locked games in grid */}
+        {lockedGames.map((game, index) => (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="flex items-center gap-2 mt-3 mb-3"
+            key={`locked-${game.id}-${index}`}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 + index * 0.03 }}
           >
-            <Lock className="w-4 h-4 text-[var(--foreground)]/30" />
-            <span className="text-sm font-medium text-[var(--foreground)]/40">Unlock by learning</span>
-          </motion.div>
-          <div className="space-y-2">
-            {lockedGames.map((game, index) => (
-              <motion.div
-                key={game.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.45 + index * 0.05 }}
-              >
-                <div className="game-card p-3 opacity-40">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-[var(--card-bg)] flex items-center justify-center text-2xl flex-shrink-0 grayscale">
-                      {game.icon}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-bold text-base leading-tight mb-1">{game.name}</h3>
-                      <div className="flex items-center gap-2">
-                        <BookOpen className="w-3 h-3 text-[var(--foreground)]/30" />
-                        <span className="text-xs text-[var(--foreground)]/30">Complete Module {game.unlockModule}</span>
-                      </div>
-                    </div>
-                    <Lock className="w-5 h-5 text-[var(--foreground)]/40 flex-shrink-0" />
-                  </div>
+            <div className="game-card p-2.5 opacity-35 h-full">
+              <div className="flex items-center gap-2 mb-1.5">
+                <div className="w-9 h-9 rounded-lg bg-[var(--card-bg)] flex items-center justify-center text-lg flex-shrink-0 grayscale relative">
+                  {game.icon}
+                  <Lock className="w-3 h-3 text-[var(--foreground)]/50 absolute -bottom-0.5 -right-0.5" />
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </>
-      )}
-
-      {/* Daily Challenge */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="mt-3 game-card p-3 border-[#d4a520]/20"
-      >
-        <div className="flex items-center gap-3">
-          <span className="text-2xl">🏆</span>
-          <div className="flex-1">
-            <h4 className="font-bold text-[#d4a520] text-sm">Daily Challenge</h4>
-            <p className="text-[var(--foreground)]/40 text-xs mt-0.5">
-              Play any game today for <span className="text-[#d4a520] font-bold">+50 bonus XP</span>
-            </p>
-          </div>
-          <span className="text-xs text-[var(--foreground)]/30">
-            {userProgress.gamesPlayed > 0 ? '✓' : '—'}
-          </span>
-        </div>
-      </motion.div>
-
-      {/* Games count */}
-      <p className="text-center text-[var(--foreground)]/40 text-xs mt-4">
-        {unlockedGames.length} of {games.length} games unlocked
-      </p>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-bold text-sm leading-tight truncate">{game.name}</h3>
+                </div>
+              </div>
+              <span className="text-xs text-[var(--foreground)]/30">Module {game.unlockModule}</span>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 }

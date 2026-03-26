@@ -178,7 +178,7 @@ Congratulations — you just spoke German! That wasn't so hard, was it?
 **Pünktlichkeit — Punctuality.**
 Germans worship time. If a meeting is at 10:00, you arrive at 9:55. IST — Indian Stretchable Time — does NOT work there. 😄
 
-*Office 10 manikku ennu paranjaal 10 manikku thanne ethanum. Allenkil serious aanu!*
+*Office 10 manikku ennu paranjaal 10 manikku thanne ethanum. Allenkil scene aanu!*
 
 **Mülltrennung — Garbage separation.**
 You will separate your trash into 4–6 different bins. Paper, plastic, glass, bio, rest. It's a national religion.

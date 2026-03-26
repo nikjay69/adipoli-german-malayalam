@@ -289,7 +289,7 @@ German does the same thing — the verb form changes:
 
 ✅ **Ich habe Musik gehört.**
 
-*Naalu sentences about your yesterday — in German! Adipoli!*"
+*Naalu sentences about your yesterday — in German! *Poli!*"
 
 ---
 

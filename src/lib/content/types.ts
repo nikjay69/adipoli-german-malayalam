@@ -17,12 +17,14 @@ export interface Video {
 
 export interface Exercise {
   id: string;
-  type: 'multiple-choice' | 'fill-blank' | 'matching' | 'ordering' | 'speaking';
+  type: 'multiple-choice' | 'fill-blank' | 'matching' | 'ordering' | 'speaking' | 'free-text' | 'dictation' | 'image-prompt';
   question: string;
   options?: string[];
   correctAnswer: string | string[];
   explanation?: string;
   xpReward: number;
+  imageUrl?: string;
+  audioUrl?: string;
 }
 
 export interface Lesson {

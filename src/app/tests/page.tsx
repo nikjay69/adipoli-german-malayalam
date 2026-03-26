@@ -3,21 +3,20 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, FileText, Clock, Award, Lock } from 'lucide-react';
+import { ArrowLeft, Clock, Lock } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
-import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
-import { calculateExamReadiness } from '@/lib/exam-readiness';
+import { ALL_MODULES } from '@/lib/content/modules';
 
 const tests = [
-  { id: 'goethe-a1-test-1', name: 'Übungstest 1', topic: 'Self-introduction, Personal Info & Shopping', icon: '🎯' },
-  { id: 'goethe-a1-test-2', name: 'Übungstest 2', topic: 'Daily Routine, Time & Appointments', icon: '⏰' },
-  { id: 'goethe-a1-test-3', name: 'Übungstest 3', topic: 'Family, Descriptions & Housing', icon: '👨‍👩‍👧' },
-  { id: 'goethe-a1-test-4', name: 'Übungstest 4', topic: 'Food, Restaurant & Preferences', icon: '🍽️' },
-  { id: 'goethe-a1-test-5', name: 'Übungstest 5', topic: 'Travel, Directions & Transport', icon: '✈️' },
-  { id: 'goethe-a1-test-6', name: 'Übungstest 6', topic: 'Health, Body & Doctor Visits', icon: '🏥' },
-  { id: 'goethe-a1-test-7', name: 'Übungstest 7', topic: 'Work, Study & Skills', icon: '💼' },
-  { id: 'goethe-a1-test-8', name: 'Übungstest 8', topic: 'Culture, Weather & Free Time', icon: '🇩🇪' },
+  { id: 'goethe-a1-test-1', name: 'Übungstest 1', topic: 'Self-intro & Shopping', icon: '🎯' },
+  { id: 'goethe-a1-test-2', name: 'Übungstest 2', topic: 'Routine & Appointments', icon: '⏰' },
+  { id: 'goethe-a1-test-3', name: 'Übungstest 3', topic: 'Family & Housing', icon: '👨‍👩‍👧' },
+  { id: 'goethe-a1-test-4', name: 'Übungstest 4', topic: 'Food & Restaurant', icon: '🍽️' },
+  { id: 'goethe-a1-test-5', name: 'Übungstest 5', topic: 'Travel & Transport', icon: '✈️' },
+  { id: 'goethe-a1-test-6', name: 'Übungstest 6', topic: 'Health & Doctor', icon: '🏥' },
+  { id: 'goethe-a1-test-7', name: 'Übungstest 7', topic: 'Work & Skills', icon: '💼' },
+  { id: 'goethe-a1-test-8', name: 'Übungstest 8', topic: 'Culture & Weather', icon: '🇩🇪' },
 ];
 
 export default function TestsPage() {
@@ -27,12 +26,10 @@ export default function TestsPage() {
 
   useEffect(() => { setMounted(true); }, []);
 
-  // Unlock tests based on module progress
   const completedModules = mounted ? ALL_MODULES.filter(m =>
     m.lessons.every(l => userProgress.completedLessons.some(cl => cl.lessonId === l.id))
   ).length : 0;
 
-  // Tests unlock progressively: test 1-2 after module 4, test 3-4 after module 8, etc.
   const getTestUnlockModule = (index: number) => Math.max(0, (Math.floor(index / 2) + 1) * 4);
   const isTestUnlocked = (index: number) => completedModules >= getTestUnlockModule(index) || index < 2;
 
@@ -46,138 +43,54 @@ export default function TestsPage() {
   }
 
   return (
-    <div className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto">
-      <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-        <button onClick={() => router.push('/')} className="flex items-center gap-2 text-[var(--foreground)]/50 mb-4 text-sm">
-          <ArrowLeft className="w-4 h-4" /> Back
+    <div className="min-h-screen px-3 py-3 safe-top safe-bottom max-w-2xl mx-auto">
+      {/* Header — compact */}
+      <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="flex items-center gap-2 mb-2">
+        <button onClick={() => router.push('/')} className="text-[var(--foreground)]/50 text-sm">
+          <ArrowLeft className="w-4 h-4" />
         </button>
-        <h1 className="text-2xl font-bold mb-1">
+        <h1 className="text-sm font-bold">
           <span className="gradient-text">Goethe A1 Tests</span>
+          <span className="text-[var(--foreground)]/40 font-normal ml-1.5">8 mock exams · ~80 min each</span>
         </h1>
-        <p className="text-[var(--foreground)]/40 text-sm mb-2">
-          8 full simulation tests — Hören, Lesen, Schreiben, Sprechen
-        </p>
-        <div className="flex items-center gap-2 text-xs text-[var(--foreground)]/30 mb-6">
-          <Clock className="w-3 h-3" /> ~80 min per test
-          <span>·</span>
-          <FileText className="w-3 h-3" /> ~45 questions each
-          <span>·</span>
-          <Award className="w-3 h-3" /> Official Goethe format
-        </div>
       </motion.div>
 
-      {/* Exam Readiness Checkpoint */}
-      {mounted && (() => {
-        const tl = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
-        const tv = getAllVocabulary().length;
-        const r = calculateExamReadiness({
-          completedLessons: userProgress.completedLessons,
-          totalLessons: tl,
-          learnedVocabulary: userProgress.learnedVocabulary.length,
-          totalVocabulary: tv,
-          streak: userProgress.streak,
-          gamesPlayed: userProgress.gamesPlayed,
-          quizzesTaken: userProgress.quizzesTaken,
-        });
-        const ready = r.score >= 40;
-        return (
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.08 }}
-            className={`game-card p-4 mb-4 border ${ready ? 'border-[#27ae60]/20' : 'border-[#d4a520]/20'}`}
-          >
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="font-bold text-sm">Exam Readiness Check</h3>
-              <span className="text-lg font-bold" style={{ color: r.color }}>{r.score}%</span>
-            </div>
-            <div className="h-2 bg-[var(--foreground)]/8 rounded-full overflow-hidden mb-2">
-              <motion.div className="h-full rounded-full" style={{ backgroundColor: r.color }}
-                initial={{ width: 0 }} animate={{ width: `${r.score}%` }}
-                transition={{ duration: 0.8 }} />
-            </div>
-            {ready ? (
-              <p className="text-xs text-[#27ae60]">
-                You're ready to try mock tests! Start with Übungstest 1 and see how you do.
-              </p>
-            ) : (
-              <div>
-                <p className="text-xs text-[#d4a520] mb-1">
-                  Complete more lessons before taking mock tests. Aim for 40%+ readiness.
-                </p>
-                <p className="text-xs text-[var(--foreground)]/40">💡 {r.nextAction}</p>
-              </div>
-            )}
-          </motion.div>
-        );
-      })()}
-
-      {/* Goethe Format Info */}
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.1 }}
-        className="game-card p-4 mb-6"
-      >
-        <h3 className="font-bold text-sm mb-2">Start Deutsch 1 Format</h3>
-        <div className="grid grid-cols-2 gap-2 text-xs">
-          <div className="flex items-center gap-2 p-2 rounded-lg bg-[#3b82f6]/10">
-            <span>🎧</span>
-            <div><div className="font-semibold text-[#3b82f6]">Hören</div><div className="text-[var(--foreground)]/40">20 min · 15 Fragen</div></div>
-          </div>
-          <div className="flex items-center gap-2 p-2 rounded-lg bg-[#27ae60]/10">
-            <span>📖</span>
-            <div><div className="font-semibold text-[#27ae60]">Lesen</div><div className="text-[var(--foreground)]/40">25 min · 15 Fragen</div></div>
-          </div>
-          <div className="flex items-center gap-2 p-2 rounded-lg bg-[#d4a520]/10">
-            <span>✍️</span>
-            <div><div className="font-semibold text-[#d4a520]">Schreiben</div><div className="text-[var(--foreground)]/40">20 min · 2 Aufgaben</div></div>
-          </div>
-          <div className="flex items-center gap-2 p-2 rounded-lg bg-[#e94560]/10">
-            <span>🗣️</span>
-            <div><div className="font-semibold text-[#e94560]">Sprechen</div><div className="text-[var(--foreground)]/40">15 min · 3 Aufgaben</div></div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Test List */}
-      <div className="space-y-2">
+      {/* 2-column test grid */}
+      <div className="grid grid-cols-2 gap-2">
         {tests.map((test, index) => {
           const unlocked = isTestUnlocked(index);
           return (
             <motion.div
               key={test.id}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15 + index * 0.04 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.05 + index * 0.03 }}
             >
               {unlocked ? (
                 <Link href={`/tests/${test.id}`}>
-                  <motion.div whileTap={{ scale: 0.98 }}
-                    className="game-card p-4 cursor-pointer hover:bg-[var(--foreground)]/5 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">{test.icon}</span>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-sm">{test.name}</h3>
-                        <p className="text-xs text-[var(--foreground)]/40">{test.topic}</p>
-                      </div>
-                      <div className="flex items-center gap-1 text-xs text-[var(--foreground)]/30">
-                        <Clock className="w-3 h-3" /> 80 min
+                  <motion.div whileTap={{ scale: 0.96 }}
+                    className="game-card p-2.5 cursor-pointer transition-colors h-full">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-xl">{test.icon}</span>
+                      <h3 className="font-bold text-sm leading-tight truncate flex-1">{test.name}</h3>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-[var(--foreground)]/40 truncate">{test.topic}</span>
+                      <div className="flex items-center gap-1 text-xs text-[var(--foreground)]/30 flex-shrink-0 ml-1">
+                        <Clock className="w-3 h-3" />80m
                       </div>
                     </div>
                   </motion.div>
                 </Link>
               ) : (
-                <div className="game-card p-4 opacity-40">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl grayscale">{test.icon}</span>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-sm">{test.name}</h3>
-                      <p className="text-xs text-[var(--foreground)]/30">
-                        Complete Module {getTestUnlockModule(index)} to unlock
-                      </p>
-                    </div>
-                    <Lock className="w-4 h-4 text-[var(--foreground)]/40" />
+                <div className="game-card p-2.5 opacity-35 h-full">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="text-xl grayscale">{test.icon}</span>
+                    <h3 className="font-bold text-sm leading-tight truncate flex-1">{test.name}</h3>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-[var(--foreground)]/30">Module {getTestUnlockModule(index)}</span>
+                    <Lock className="w-3.5 h-3.5 text-[var(--foreground)]/30 flex-shrink-0" />
                   </div>
                 </div>
               )}
@@ -186,9 +99,8 @@ export default function TestsPage() {
         })}
       </div>
 
-      {/* Link from profile */}
-      <p className="text-center text-[var(--foreground)]/40 text-xs mt-6">
-        Based on official Goethe-Zertifikat A1: Start Deutsch 1 format
+      <p className="text-center text-[var(--foreground)]/30 text-xs mt-3">
+        Based on Goethe-Zertifikat A1: Start Deutsch 1
       </p>
     </div>
   );

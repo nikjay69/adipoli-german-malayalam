@@ -1,0 +1,91 @@
+
+--- SCENE (292 occurrences) ---
+[VISUAL: Quick animations for each: static scene (Dativ) → motion scene (Akkusativ)]
+#### v4-2-1 Scene Architecture: "How People Look"
+> Purpose: bridge the gap between scene architecture and full narration script.
+These scene types should repeat across the course to make pro
+#### v1-1-2 Scene Architecture: "Malayalis in Germany — Real Succes
+#### v16-4-2 Scene Architecture: "als, ob, and Connecting Complex Id
+> Architecture docs (Wave 1–5) define the scene-level structure.
+#### v7-3-1 Scene Architecture: "Farben — Colors in German"
+#### v8-3-2 Scene Architecture: "Reading Apartment Ads"
+#### v3-3-1 Scene Architecture
+andling, and dietary clarification in one natural scene
+#### v15-4-1 Scene Architecture: "Umgangssprache — Real German, Not
+#### v6-1-1 Scene Architecture: "German Foods You Should Know"
+seful practical case contrast | medium indirect | scene-based contrast script | **MEDIUM** |
+ula board, irregular ladder, price-tag comparison scene, ad/sale card, compact mistake cards
+#### v1-3-2 Scene Architecture: "Auf Wiedersehen! — Saying Goodbye"
+| 8. Scene Structure | ✅ | 9 sections with timestamps, visua
+ket map, 8 grocery flash cards, checkout dialogue scene, 4 culture cards, simple accusative table.
+- Organize vocab by scene or life context, not random lists
+Remaining €10 for Imagen scene stills.
+
+--- ADIPOLI (45 occurrences) ---
+# AI Cinematic Scripts — Adipoli German: A1
+ords. Ella German form-um fill cheyyaan kazhiyum. Adipoli!*
+Adipoli ennu parayan pole — slang aanu, but everyone unde
+# A1 Curriculum Audit — Adipoli German
+# Module Blueprints — Adipoli German für Malayalis
+A strong Adipoli German script often opens with a cultural hook. T
+Naalu sentences about your yesterday — in German! Adipoli!*"
+** ... **ledig** ... **männlich**. Got all three? Adipoli!"
+# Video Production Plan — Adipoli German
+A great Adipoli German script should make the student feel:
+*Bürgeramt conquered! Adipoli!* 🏛️✅
+Detailed planning documents for all 18 Adipoli German course modules, based on:
+| Adipoli! | Geil! | Awesome! |
+"If you got 4 or 5 right — adipoli! The rule is clicking. If not — rewind, try again
+-by-module planning docs for the full **18-module Adipoli German A1 course**.
+Every successful Adipoli German script should feel like this:
+# Video Script Template — Adipoli German
+How many did you get? All 5? *Adipoli!* If not — rewind this section. These 5 words wil
+cd /root/.openclaw/workspace-deutsch/adipoli-german-malayalam
+> Tracks the full video production pipeline for Adipoli German A1
+
+--- SET (38 occurrences) ---
+- exercise set
+- Combine into a small set of MP4 pilots
+t from 15 items down to a smaller, more teachable set; removed the overlong 6-sentence hobby speech as
+ng obvious v1.0 holdouts in the 52-script tracker set after this run: **`v12-1-1`, `v7-2-1`, `v7-3-1`,
+- Speed demonstration helps set realistic listening expectations
+hange-of-state verbs. Learn the limited sein verb set and distinguish haben vs sein.
+dule 16 gets a build pass, the minimum high-value set should be:
+13. pilot a small high-impact video set
+echnically A1+, but universally taught at A1 as a set phrase. Scripts should teach it as a memorized ch
+4. Set duration: 60 seconds (if available — if max 20s,
+looks. Children learn to follow signals — adults set the example. "Red light-il nirthuka — njaan paray
+LL dialogue. But we're doing this actively — I'll set up each line, you PREDICT what comes next.
+ns are always the same: propose → agree/decline → set time and place."
+"Germans plan visits. You call. You set a date. A time. Maybe even an end time. This is c
+erbs first (majority), sein verbs second (limited set)
+t large profession tables to a focused high-value set for this audience
+y-rescue claim still stands for the older visible set, while `v2-1-2` and `v5-1-2` are newly drafted an
+script holdouts so the current 52-script drafted set is consistently at `SCRIPT_QUALITY_STANDARD v2.0+
+| **Emotional readiness** | Reduce fear, set expectations, build motivation | Indirect (retent
+- [x] Pattern set reduced to fewer, higher-frequency frames
+
+--- MACHANE (12 occurrences) ---
+Manglish lines (ningal/nee/eda register parallel, machane comparison, WhatsApp laziness parallel)
+- Kerala↔German slang parallel table (Machane↔Alter, Adipoli↔Geil, Enthu mwone↔Krass, Ariyilla↔
+udhiya aale kaanumbol — hug, shoulder pat, 'vaada machane!' Germany-yil? Handshake, name, maybe a smile. Th
+her you're in Kochi or Köln — the feeling behind "Machane!" and "Alter!" is identical.
+| 9 | 9:30–10:30 | Kerala slang parallels | "Machane = Alter. Adipoli = Geil. Enthu mwone = Krass. Sam
+thing unbelievable just happened. One word, like "machane!" in Malayalam.
+e (positive or negative). "Alter!" = Dude! (like "machane!" in Malayalam!). "Na?" = Hey, what's up? (shorte
+- [x] **Malayalam bridges structural** — Machane↔Alter, Adipoli↔Geil, register parallels (ningal/n
+**Round 3:** Which word is the Malayalam "machane!" of German? One word meaning "dude."
+"Machane, Schreiben Teil 1 is literally the easiest sectio
+| Machane! | Alter! | Dude! |
+man" but it means "dude." Just like Malayalam-il "machane!" — technically it means brother-in-law, but you
+
+--- MASS (3 occurrences) ---
+- Do not mass-produce videos before the script layer is trusted
+Must finish before mass content or media generation:
+ks that are hard to replace cheaply, not spent on mass generation with uncertain output quality.
+
+--- CHUNK (1 occurrences) ---
+- [x] Core rule taught in one chunk (`-in`), not a giant profession list dump
+
+--- BRO (1 occurrences) ---
+🇩🇪 **Alter!** — Dude! Bro!

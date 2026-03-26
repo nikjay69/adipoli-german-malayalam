@@ -268,7 +268,7 @@ The people who thrive? They're the ones who started learning German BEFORE they 
 
 🔊 **Visum!**
 
-How many did you get? All 5? *Adipoli!* If not — rewind this section. These 5 words will come back in future modules."
+How many did you get? All 5? *Mass!* If not — rewind this section. These 5 words will come back in future modules."
 
 🎬 [Energy: quiz-show pace, encouraging]
 

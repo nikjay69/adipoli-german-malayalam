@@ -240,7 +240,7 @@ Aber dann habe ich einen Deutschkurs gemacht. Jetzt arbeite ich als Krankenpfleg
 
 "Die Sprache (language), das Wetter (weather — Module 12!), das Essen (food — Module 6!). 
 
-Nee ee text muthuvum manasilaakki! That's the power of 16 modules of learning. Adipoli! 🎉"
+Nee ee text muthuvum manasilaakki! That's the power of 16 modules of learning. Poli! 🎉"
 
 ---
 
@@ -355,7 +355,7 @@ And now... the most important thing:
 
 **That is a complete A1+ journey.** 
 
-Congratulations — du hast es geschafft! Herzlichen Glückwunsch! Adipoli! 🇩🇪🎉
+Congratulations — du hast es geschafft! Herzlichen Glückwunsch! Mass! 🇩🇪🎉
 
 Next step? Take the Goethe A1 exam with confidence. You're ready. Alles Gute!"
 

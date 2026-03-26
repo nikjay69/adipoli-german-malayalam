@@ -213,7 +213,7 @@ Round 1: 'I shower myself.'"
 [VISUAL: Scoreboard tracking 5 rounds. Each answer revealed after pause.]
 
 **NARRATOR:**
-"Adipoli! 3 out of 5? You're learning. 5 out of 5? Excellent — your morning routine is becoming German!"
+"Kidu! 3 out of 5? You're learning. 5 out of 5? Excellent — your morning routine is becoming German!"
 
 ---
 

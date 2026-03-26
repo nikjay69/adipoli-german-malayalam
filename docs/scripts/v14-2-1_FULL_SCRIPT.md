@@ -250,7 +250,7 @@ And remember: **'Können Sie bitte langsam sprechen?'** — this one sentence tr
 
 Next lesson: we move from offices to the MODULE 15 — German culture and customs. The unwritten rules that nobody teaches you.
 
-*Bürgeramt conquered! Adipoli!* 🏛️✅
+*Bürgeramt conquered! Mass!* 🏛️✅
 
 Auf Wiedersehen!"
 

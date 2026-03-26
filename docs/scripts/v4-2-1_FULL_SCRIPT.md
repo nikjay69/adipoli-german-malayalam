@@ -183,7 +183,7 @@ Quick section. Moving on."
 
 **Round 5:** 'Er ist ___ und ___.' — pick 2 appearance adjectives: ... ⏸️ *Any pair works! groß und sportlich, klein und schlank...*
 
-*Adipoli! You've got all three layers. Now let's stack them.*"
+*Mass!* You've got all three layers. Now let's stack them.*"
 
 ---
 

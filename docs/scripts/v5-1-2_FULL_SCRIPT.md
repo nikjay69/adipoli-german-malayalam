@@ -257,7 +257,7 @@ Same pattern, again and again. That repetition is your superpower."
 ### Practice Pause: ⏸️ (2 seconds)
 ✅ **sie wohnen**
 
-Adipoli. If you got most of those right, the pattern is entering your system."
+Kidu! If you got most of those right, the pattern is entering your system."
 
 ---
 

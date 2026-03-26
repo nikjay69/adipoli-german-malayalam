@@ -100,6 +100,8 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
   const [schreibenMessage, setSchreibenMessage] = useState('');
   const [schreibenSubmitted, setSchreibenSubmitted] = useState(false);
   const [schreibenTeil, setSchreibenTeil] = useState<'teil1' | 'teil2'>('teil1');
+  const [isCheckingSchreiben, setIsCheckingSchreiben] = useState(false);
+  const [aiSchreibenFeedback, setAiSchreibenFeedback] = useState<{score: number, feedback: string, corrections: string[]} | null>(null);
 
   // Sprechen state
   const [sprechenTeil, setSprechenTeil] = useState<'teil1' | 'teil2' | 'teil3'>('teil1');
@@ -254,47 +256,74 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
     }, 1500);
   };
 
-  // Speech recognition helpers
-  const startRecording = (itemKey: string) => {
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    if (!SpeechRecognition) {
-      // Fallback: mark as completed without actual speech
+  // Speech recognition helpers (Using MediaRecorder + AI API)
+  const startRecording = async (itemKey: string) => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      const audioChunks: Blob[] = [];
+
+      mediaRecorder.ondataavailable = (event) => {
+        if (event.data.size > 0) audioChunks.push(event.data);
+      };
+
+      mediaRecorder.onstop = async () => {
+        // Stop all tracks to turn off the microphone light
+        stream.getTracks().forEach(track => track.stop());
+
+        const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+        
+        // Show loading state
+        setSprechenRecordings(prev => ({ ...prev, [itemKey]: '(Analyzing audio with AI...)' }));
+        setSprechenCompleted(prev => ({ ...prev, [itemKey]: true }));
+        
+        // Determine context matching the question
+        let context = '';
+        let expected = '';
+        const [_, partStr, idxStr] = itemKey.split('-');
+        const idx = parseInt(idxStr);
+        if (partStr === 't1') {
+          context = "Teil 1: Sich vorstellen. Topic: " + test?.sprechen?.teil1?.[idx]?.topic;
+          expected = test?.sprechen?.teil1?.[idx]?.sample_answer || '';
+        } else if (partStr === 't2') {
+          context = "Teil 2: Fragen stellen und beantworten. Wortkarte: " + test?.sprechen?.teil2?.[idx]?.word_card;
+          expected = (test?.sprechen?.teil2?.[idx]?.sample_question || '') + " / " + (test?.sprechen?.teil2?.[idx]?.sample_answer || '');
+        } else if (partStr === 't3') {
+          context = "Teil 3: Bitten formulieren. Situation: " + test?.sprechen?.teil3?.[idx]?.situation;
+          expected = test?.sprechen?.teil3?.[idx]?.sample_request || '';
+        }
+
+        // Call the AI Backend
+        const formData = new FormData();
+        formData.append('audio', audioBlob, 'speechaudio.webm');
+        formData.append('context', context);
+        formData.append('expected', expected);
+
+        try {
+          const res = await fetch('/api/check-speech', { method: 'POST', body: formData });
+          const data = await res.json();
+          if (res.ok && data.transcript) {
+            setSprechenRecordings(prev => ({ ...prev, [itemKey]: `"${data.transcript}" (Score: ${data.score}/100)` }));
+          } else {
+            setSprechenRecordings(prev => ({ ...prev, [itemKey]: '(Failed to get transcript)' }));
+          }
+        } catch (e) {
+          setSprechenRecordings(prev => ({ ...prev, [itemKey]: '(Network error analyzing audio)' }));
+        }
+      };
+
+      recognitionRef.current = mediaRecorder;
+      mediaRecorder.start();
+      setIsRecording(true);
+    } catch (err) {
+      console.error('Microphone access denied or error:', err);
       setSprechenCompleted(prev => ({ ...prev, [itemKey]: true }));
-      setSprechenRecordings(prev => ({ ...prev, [itemKey]: '(Speech recognition not supported in this browser)' }));
-      return;
+      setSprechenRecordings(prev => ({ ...prev, [itemKey]: '(Microphone access denied / Unsupported browser)' }));
     }
-
-    const recognition = new SpeechRecognition();
-    recognition.lang = 'de-DE';
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-    recognition.continuous = false;
-
-    recognition.onresult = (event: any) => {
-      const transcript = event.results[0][0].transcript;
-      setSprechenRecordings(prev => ({ ...prev, [itemKey]: transcript }));
-      setSprechenCompleted(prev => ({ ...prev, [itemKey]: true }));
-      setIsRecording(false);
-    };
-
-    recognition.onerror = () => {
-      setIsRecording(false);
-      // Mark as attempted even on error
-      setSprechenCompleted(prev => ({ ...prev, [itemKey]: true }));
-      setSprechenRecordings(prev => ({ ...prev, [itemKey]: '(Could not capture speech — try again or skip)' }));
-    };
-
-    recognition.onend = () => {
-      setIsRecording(false);
-    };
-
-    recognitionRef.current = recognition;
-    recognition.start();
-    setIsRecording(true);
   };
 
   const stopRecording = () => {
-    if (recognitionRef.current) {
+    if (recognitionRef.current && recognitionRef.current.state !== 'inactive') {
       recognitionRef.current.stop();
       recognitionRef.current = null;
     }
@@ -322,9 +351,17 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
     // Teil 1 (form): 5 points if user filled in fields
     const formFieldsFilled = Object.keys(schreibenFormAnswers).length;
     const teil1Score = formFieldsFilled > 0 ? 5 : 0;
-    // Teil 2 (message): 10 points if submitted with content, 0 if empty/not submitted
-    const teil2Score = schreibenSubmitted && schreibenMessage.trim().length > 10 ? 8 :
-                       schreibenSubmitted && schreibenMessage.trim().length > 0 ? 5 : 0;
+    
+    // Teil 2 (message): 10 points based on AI score (which is 0-100)
+    let teil2Score = 0;
+    if (aiSchreibenFeedback) {
+      teil2Score = Math.round((aiSchreibenFeedback.score / 100) * 10);
+    } else if (schreibenSubmitted && schreibenMessage.trim().length > 10) {
+      teil2Score = 8;
+    } else if (schreibenSubmitted && schreibenMessage.trim().length > 0) {
+      teil2Score = 5;
+    }
+    
     return teil1Score + teil2Score;
   };
 
@@ -902,12 +939,32 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                         {schreibenMessage.trim().split(/\s+/).filter(Boolean).length} Wörter
                       </p>
                       <Button
-                        onClick={() => {
-                          setSchreibenSubmitted(true);
+                        onClick={async () => {
+                          if (!schreibenMessage.trim() || isCheckingSchreiben) return;
+                          setIsCheckingSchreiben(true);
+                          try {
+                            const res = await fetch('/api/check-german', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({
+                                expected: test.schreiben?.teil2?.sample_answer || '',
+                                userInput: schreibenMessage,
+                                context: test.schreiben?.teil2?.prompt + ' ' + (test.schreiben?.teil2?.points?.join(', ') || ''),
+                              }),
+                            });
+                            const data = await res.json();
+                            setAiSchreibenFeedback(data);
+                          } catch (e) {
+                            console.error('Failed to check schreiben:', e);
+                          } finally {
+                            setIsCheckingSchreiben(false);
+                            setSchreibenSubmitted(true);
+                          }
                         }}
                         size="sm"
+                        disabled={!schreibenMessage.trim() || isCheckingSchreiben}
                       >
-                        <Send className="w-3.5 h-3.5" /> Abgeben
+                        {isCheckingSchreiben ? 'Prüfung...' : <><Send className="w-3.5 h-3.5" /> Abgeben</>}
                       </Button>
                     </div>
                   </>
@@ -917,6 +974,24 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                       <p className="text-xs text-[var(--foreground)]/40 mb-1">Ihre Antwort:</p>
                       <p className="text-sm whitespace-pre-line">{schreibenMessage || '(Nichts geschrieben)'}</p>
                     </div>
+                    
+                    {aiSchreibenFeedback && (
+                      <div className={`p-4 rounded-lg mb-3 border ${aiSchreibenFeedback.score > 70 ? 'bg-[#27ae60]/10 border-[#27ae60]/20' : 'bg-[#d4a520]/10 border-[#d4a520]/20'}`}>
+                        <p className="text-sm font-bold mb-1" style={{ color: aiSchreibenFeedback.score > 70 ? '#27ae60' : '#d4a520' }}>
+                          AI Bewertung: {Math.round((aiSchreibenFeedback.score / 100) * 10)}/10 Punkte
+                        </p>
+                        <p className="text-sm mb-2">{aiSchreibenFeedback.feedback}</p>
+                        {aiSchreibenFeedback.corrections && aiSchreibenFeedback.corrections.length > 0 && (
+                          <div className="text-xs text-[var(--foreground)]/70 mt-2 bg-[var(--foreground)]/5 p-2 rounded">
+                            <p className="font-semibold mb-1">Corrections:</p>
+                            <ul className="list-disc list-inside">
+                              {aiSchreibenFeedback.corrections.map((c, i) => <li key={i}>{c}</li>)}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
                     <div className="p-3 bg-[#27ae60]/10 border border-[#27ae60]/20 rounded-lg">
                       <p className="text-xs text-[#27ae60] font-semibold mb-1">Musterantwort (sample):</p>
                       <p className="text-sm italic">{test.schreiben?.teil2?.sample_answer}</p>
@@ -934,8 +1009,8 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                     <p className="text-sm font-semibold text-[#d4a520]">Schreiben abgeschlossen</p>
                   </div>
                   <p className="text-xs text-[var(--foreground)]/50 mt-1">
-                    Form: 5 Punkte {Object.keys(schreibenFormAnswers).length > 0 ? '✓' : '(leer)'} |
-                    Nachricht: {schreibenMessage.trim().length > 10 ? '8' : schreibenMessage.trim().length > 0 ? '5' : '0'} Punkte
+                    Formular: {Object.keys(schreibenFormAnswers).length > 0 ? '5' : '0'} Punkte |
+                    Nachricht: {aiSchreibenFeedback ? Math.round((aiSchreibenFeedback.score / 100) * 10) : (schreibenMessage.trim().length > 10 ? '8' : schreibenMessage.trim().length > 0 ? '5' : '0')} Punkte
                   </p>
                 </Card>
                 <Button onClick={() => showSectionIntro('sprechen')} fullWidth>

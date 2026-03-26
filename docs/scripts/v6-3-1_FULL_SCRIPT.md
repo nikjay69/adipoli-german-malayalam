@@ -178,7 +178,7 @@ I give the step. You say the German.
 4. **Order your food** → ⏸️ (4s) → ✅ 'Ich hätte gern das Schnitzel, bitte.'
 5. **Order a drink** → ⏸️ (4s) → ✅ 'Und einen Orangensaft, bitte.'
 
-All five? Adipoli! 🎯 Now let's see the complete dialogue."
+All five? *Mass!* 🎯 Now let's see the complete dialogue."
 
 ---
 

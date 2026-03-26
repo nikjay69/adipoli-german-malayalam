@@ -98,7 +98,7 @@ Listen and repeat:
 
 ### Practice Pause: ⏸️ (8 seconds — student repeats all 6)
 
-*Adipoli! Ippol nee German conjugate cheyyunnu!*"
+*Set aanu!* Ippol nee German conjugate cheyyunnu!*"
 
 ---
 

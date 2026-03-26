@@ -178,7 +178,7 @@ Casual. For parties, friends of friends.
 
 ### Practice Pause: ⏸️ (5 seconds)
 
-*Randu dialogue practice cheythu kazhinjhu. Adipoli!*"
+*Randu dialogue practice cheythu kazhinjhu. *Set aanu!*"
 
 ---
 

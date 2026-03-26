@@ -11,68 +11,56 @@ import { getDueCount } from '@/lib/srs';
 const practices = [
   {
     id: 'pronunciation',
-    name: 'Pronunciation Check',
-    description: 'Say German words and phrases — get instant feedback on your pronunciation',
+    name: 'Pronunciation',
     icon: '🎙️',
     color: '#ef4444',
     badge: 'FREE',
     badgeColor: '#27ae60',
-    detail: 'Uses your microphone · No limits',
     href: '/practice/pronunciation',
   },
   {
     id: 'speak',
     name: 'Speak & Check',
-    description: 'Pimsleur-style: Listen to German → Repeat → Get scored. Builds real speaking confidence.',
     icon: '🗣️',
     color: '#8b5cf6',
     badge: 'FREE',
     badgeColor: '#27ae60',
-    detail: '10 rounds · 3 difficulty levels',
     href: '/practice/speak',
   },
   {
     id: 'review',
     name: 'Daily Review',
-    description: 'Spaced repetition flashcards. Review vocab at the perfect time to lock it in forever.',
     icon: '🧠',
     color: '#d4a520',
     badge: 'SRS',
     badgeColor: '#d4a520',
-    detail: 'SM-2 algorithm · Anki-style intervals',
     href: '/practice/review',
   },
   {
     id: 'write',
-    name: 'Schreiben (Writing)',
-    description: 'Practice Goethe A1 writing: fill forms, write messages, and get AI feedback on your German.',
+    name: 'Schreiben',
     icon: '✍️',
     color: '#ec4899',
     badge: 'AI',
     badgeColor: '#d4a520',
-    detail: 'Form filling · Message writing · Free write',
     href: '/practice/write',
   },
   {
     id: 'intro',
     name: 'Sich Vorstellen',
-    description: 'Goethe Sprechen Teil 1: Introduce yourself in German on 6 topics with a 2-minute timer.',
     icon: '🎤',
     color: '#f59e0b',
     badge: 'EXAM',
     badgeColor: '#c0392b',
-    detail: '6 topics · 2 min timer · Speech recognition',
     href: '/practice/intro',
   },
   {
     id: 'chat',
     name: 'Ask Kuttan',
-    description: 'Chat with your AI German tutor. Ask grammar questions, practice sentences, clear doubts.',
     icon: '💬',
     color: '#3b82f6',
     badge: 'AI',
     badgeColor: '#d4a520',
-    detail: '20 messages per session · Powered by Gemini',
     href: '/practice/chat',
   },
 ];
@@ -97,54 +85,48 @@ export default function PracticePage() {
   );
 
   return (
-    <div className="min-h-screen px-4 py-4 safe-top safe-bottom max-w-2xl mx-auto">
-      <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-        <button onClick={() => router.push('/')} className="flex items-center gap-2 text-[var(--foreground)]/50 mb-3 text-sm">
-          <ArrowLeft className="w-4 h-4" /> Back
+    <div className="min-h-screen px-3 py-3 safe-top safe-bottom max-w-2xl mx-auto">
+      <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="flex items-center gap-2 mb-2">
+        <button onClick={() => router.push('/')} className="text-[var(--foreground)]/50 text-sm">
+          <ArrowLeft className="w-4 h-4" />
         </button>
-        <h1 className="text-2xl font-bold mb-1">
+        <h1 className="text-sm font-bold">
           <span className="gradient-text">Practice</span>
+          <span className="text-[var(--foreground)]/40 font-normal ml-1.5">{practices.length} modes</span>
         </h1>
-        <p className="text-[var(--foreground)]/40 text-sm mb-3">
-          Two-way practice — speak, listen, and get feedback
-        </p>
       </motion.div>
 
-      {/* Practice modes */}
-      <div className="space-y-2">
+      {/* 2-column practice grid */}
+      <div className="grid grid-cols-2 gap-2">
         {practices.map((p, i) => (
           <motion.div
             key={p.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 + i * 0.05 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.05 + i * 0.04 }}
           >
             <Link href={p.href}>
-              <motion.div whileTap={{ scale: 0.98 }}
-                className="game-card p-3 cursor-pointer hover:bg-[var(--foreground)]/5 transition-colors">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
-                    style={{ backgroundColor: `${p.color}15`, border: `2px solid ${p.color}30` }}>
+              <motion.div whileTap={{ scale: 0.96 }}
+                className="game-card p-2.5 cursor-pointer transition-colors h-full">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center text-lg flex-shrink-0"
+                    style={{ backgroundColor: `${p.color}15`, border: `1.5px solid ${p.color}30` }}>
                     {p.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-0.5">
-                      <h3 className="font-bold text-sm">{p.name}</h3>
-                      <span className="text-xs font-bold px-1.5 py-0.5 rounded-full"
-                        style={{ backgroundColor: `${p.badgeColor}20`, color: p.badgeColor }}>
-                        {p.badge}
-                      </span>
-                    </div>
-                    <p className="text-xs text-[var(--foreground)]/40 leading-relaxed mb-1 line-clamp-1">{p.description}</p>
-                    <div className="flex items-center gap-2">
-                      <p className="text-xs text-[var(--foreground)]/40">{p.detail}</p>
-                      {p.id === 'review' && dueCount > 0 && (
-                        <span className="text-xs font-bold px-1.5 py-0.5 rounded-full bg-[#c0392b]/20 text-[#c0392b]">
-                          {dueCount} due
-                        </span>
-                      )}
-                    </div>
+                    <h3 className="font-bold text-sm leading-tight truncate">{p.name}</h3>
                   </div>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-xs font-bold px-1.5 py-0.5 rounded-full"
+                    style={{ backgroundColor: `${p.badgeColor}20`, color: p.badgeColor }}>
+                    {p.badge}
+                  </span>
+                  {p.id === 'review' && dueCount > 0 && (
+                    <span className="text-xs font-bold px-1.5 py-0.5 rounded-full bg-[#c0392b]/20 text-[#c0392b]">
+                      {dueCount} due
+                    </span>
+                  )}
                 </div>
               </motion.div>
             </Link>

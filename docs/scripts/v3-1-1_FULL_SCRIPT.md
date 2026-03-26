@@ -208,7 +208,7 @@ Now FAST — like you're counting down a rocket launch:
 
 ⏸️ **zehn, neun, acht, sieben, sechs, fünf, vier, drei, zwei, eins, null! (8s)**
 
-*Backwards without hesitation? Adipoli! 🎉*"
+*Backwards without hesitation? Poli! 🎉*"
 
 ---
 

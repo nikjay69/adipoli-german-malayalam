@@ -159,7 +159,7 @@ Most of you: **ledig**. If married, bring your Heiratsurkunde (marriage certific
 
 ### Practice Pause: ⏸️ (5 seconds)
 
-**indisch** ... **ledig** ... **männlich**. Got all three? Adipoli!"
+**indisch** ... **ledig** ... **männlich**. Got all three? *Set aanu!*"
 
 ---
 
@@ -278,7 +278,7 @@ You just practiced real German life AND 12.5% of your exam score. Two birds, one
 
 Next lesson — we'll cover ALL 20 form field words you'll see across every German form: doctor's office, library, language school, insurance. Those 20 words = every form in Germany.
 
-*Anmeldung kazhinjaal, Germany-yile official life thudangi! Adipoli!*
+*Anmeldung kazhinjaal, Germany-yile official life thudangi! *Set aanu!*
 
 Auf Wiedersehen — und vergessen Sie nicht: Anmeldung zuerst!"
 

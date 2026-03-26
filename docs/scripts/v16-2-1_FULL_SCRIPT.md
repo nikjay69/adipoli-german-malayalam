@@ -183,7 +183,7 @@ Round 5: 'The clock hangs ON the wall.' ... **Wo!** Dativ. 'Die Uhr hängt **an 
 ⏸️ [PAUSE — 3 seconds per round]
 
 **NARRATOR:**
-"If you got 4 or 5 right — adipoli! The rule is clicking. If not — rewind, try again. Wo → Dativ, Wohin → Akkusativ."
+"If you got 4 or 5 right — set aanu! The rule is clicking. If not — rewind, try again. Wo → Dativ, Wohin → Akkusativ."
 
 ---
 

@@ -14,7 +14,7 @@
 - [x] **Max 3–4 items per block** — safe words (4), fun slang (4), everyday (4), text (4) — each block capped
 - [x] **Practice pauses ≥ 8** — 12 practice pauses with specific prompts
 - [x] **Active recall before summary** — Section 8 tests all categories + register decisions
-- [x] **Malayalam bridges structural** — Machane↔Alter, Adipoli↔Geil, register parallels (ningal/nee/eda)
+- [x] **Malayalam bridges structural** — Machane↔Alter, Poli!↔Geil, register parallels (ningal/nee/eda)
 - [x] **Energy cues every section** — ✅
 - [x] **[CULTURE-TIP] markers** — 3 (register safety, WhatsApp norms, exam warning)
 
@@ -91,7 +91,7 @@ Number one:
 
 ⚠️ Quick warning: the original meaning of "geil" is... let's say "excited" in a way you wouldn't say to your grandmother. But TODAY, especially among younger people, it just means "awesome." "Das Essen ist geil!" = The food is amazing!
 
-Adipoli ennu parayan pole — slang aanu, but everyone understands. 😄
+Mass! ennu parayan pole — slang aanu, but everyone understands. 😄
 
 Number two:
 
@@ -348,7 +348,7 @@ Before we go — the moment you've been waiting for. Malayalam slang meets Germa
 | Malayalam | German | Meaning |
 |-----------|--------|---------|
 | Machane! | Alter! | Dude! |
-| Adipoli! | Geil! | Awesome! |
+| Set aanu! | Geil! | Awesome! |
 | Enthu mwone! | Krass! | Crazy! |
 | Ariyilla | Keine Ahnung | No idea |
 | Madi / Bore | Kein Bock | Can't be bothered |
