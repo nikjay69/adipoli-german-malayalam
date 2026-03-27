@@ -3,3 +3,4 @@ export { Confetti, XPGain, Celebration, Stars } from './Confetti';
 export { GameButton, ChoiceButton } from './GameButton';
 export { ModuleComplete } from './ModuleComplete';
 export { GameResults } from './GameResults';
+export { ComboMeter, ComboBadge } from './ComboMeter';

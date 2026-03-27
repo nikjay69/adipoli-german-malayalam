@@ -48,10 +48,11 @@ export interface UserProgress {
   currentJourneyLocation: string;
   journeyMilestones: string[];
   soundEnabled: boolean;
+  ambienceEnabled: boolean;
   activeLessonCheckpoint?: {
     lessonId: string;
     moduleId: number;
-    stepType: 'intro' | 'video' | 'vocab' | 'exercise' | 'complete';
+    stepType: 'intro' | 'scene-intro' | 'video' | 'vocab' | 'contextual-vocab' | 'decision-point' | 'exercise' | 'scene-conclusion' | 'complete';
     stepIndex: number;
     correctCount: number;
     hearts: number;
@@ -63,6 +64,7 @@ export interface UserProgress {
   studyPlan?: StudyPlan;
   completedTaskIds: string[];   // task IDs completed today
   bookmarkedVocab: string[];    // vocab IDs bookmarked for review
+  bossesDefeated: string[];     // module IDs where boss was beaten
 }
 
 // Level thresholds
@@ -151,11 +153,13 @@ const getInitialProgress = (): UserProgress => ({
   currentJourneyLocation: 'kerala-village',
   journeyMilestones: [],
   soundEnabled: true,
+  ambienceEnabled: true,
   activeLessonCheckpoint: undefined,
   srsCards: {},
   studyPlan: undefined,
   completedTaskIds: [],
   bookmarkedVocab: [],
+  bossesDefeated: [],
 });
 
 const calculateLevel = (xp: number): number => {

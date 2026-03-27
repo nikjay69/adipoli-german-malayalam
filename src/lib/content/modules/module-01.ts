@@ -41,7 +41,7 @@ export const MODULE_1: Module = {
             "Know about opportunities in Germany for Indians",
             "Speak your first German sentence: 'Ich lerne Deutsch.'"
           ],
-          placeholderThumbnail: "/images/thumbnails/why-german.jpg",
+          placeholderThumbnail: "/images/university_library.png",
           richContent: [
             {
               type: "note",
@@ -93,7 +93,7 @@ export const MODULE_1: Module = {
             "Learn the specific German level required for your goal",
             "Understand the unique 'Ausbildung' system"
           ],
-          placeholderThumbnail: "/images/thumbnails/pathways.jpg",
+          placeholderThumbnail: "/images/hiwi_student.png",
           richContent: [
             {
               type: "note",
@@ -181,7 +181,7 @@ export const MODULE_1: Module = {
             "Distinguish between the two 'ch' sounds",
             "Avoid the 4 most common spelling/pronunciation traps"
           ],
-          placeholderThumbnail: "/images/thumbnails/pronunciation.jpg",
+          placeholderThumbnail: "/images/home_office.png",
           richContent: [
             {
               type: "note",
@@ -234,7 +234,7 @@ export const MODULE_1: Module = {
             "Say any phone number using the German pairing system",
             "Master the 7 letters that differ from English names"
           ],
-          placeholderThumbnail: "/images/thumbnails/alphabet.jpg",
+          placeholderThumbnail: "/images/home_office.png",
           richContent: [
             {
               type: "note",
@@ -300,6 +300,53 @@ export const MODULE_1: Module = {
       description: "Teach greetings as real communication, not just word lists. By the end, learners should be able to greet, respond, and choose between formal and informal situations with confidence — exactly the kind of control A1 speaking expects.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Berlin Hauptbahnhof",
+          sceneType: "bahnhof",
+          timeOfDay: "morning",
+          description: "You step off the plane and onto a train. Berlin Hauptbahnhof is enormous — glass ceilings, rushing commuters, announcements in German. This is it. Your new life starts now.",
+        },
+        narrative: {
+          previousRecap: "You learned why German matters and practiced the sounds. Now it's time to actually talk to people!",
+          currentObjective: "Greet people properly at the train station",
+          nextTeaser: "Next up: saying goodbye without being awkward...",
+        },
+        kuttanIntro: [
+          "Machane! Nammude first day in Berlin! Train station-il ethiyirikkunnu. Aarenkilum 'Hallo' parayan padikkaam!",
+          "Berlin Hauptbahnhof-il aanu nammal! Ee station kandu nee shock aayikaanum... but don't worry, I'm here! Let's learn to greet people!",
+          "Enthayaalum nammal Berlin-il ethii! First thing first — greetings padikkaam. Ini aarenkilum parichayapedaan pattum!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab1-3-1", encounterMoment: "A friendly person on the platform smiles at you. 'Hallo!' they say warmly.", contextSentence: "Hallo, wie geht's?" },
+          { vocabId: "vocab1-3-2", encounterMoment: "It's 8 AM. The coffee shop attendant greets you: 'Guten Morgen! Was möchten Sie?'", contextSentence: "Guten Morgen, Herr Müller!" },
+          { vocabId: "vocab1-3-3", encounterMoment: "At the info desk, the officer nods professionally. 'Guten Tag, kann ich Ihnen helfen?'", contextSentence: "Guten Tag, kann ich Ihnen helfen?" },
+          { vocabId: "vocab1-3-4", encounterMoment: "Later, arriving at your hostel in the evening, the receptionist greets you: 'Guten Abend, willkommen!'", contextSentence: "Guten Abend, willkommen!" },
+          { vocabId: "vocab1-3-5", encounterMoment: "Your roommate yawns and heads to bed. 'Gute Nacht, schlaf gut!' they whisper.", contextSentence: "Gute Nacht, schlaf gut!" },
+          { vocabId: "vocab1-3-6", encounterMoment: "The police officer at the station asks formally: 'Wie heißen Sie?' — he uses 'Sie', the respectful form.", contextSentence: "Wie heißen Sie?" },
+          { vocabId: "vocab1-3-7", encounterMoment: "A student your age waves casually: 'Hey! Wie heißt du?' — the friendly 'du' form.", contextSentence: "Wie heißt du?" },
+          { vocabId: "vocab1-3-8", encounterMoment: "A Bavarian tourist on the platform says something unexpected: 'Grüß Gott!' — a regional greeting from southern Germany.", contextSentence: "Grüß Gott, Frau Schmidt!" },
+          { vocabId: "vocab1-3-9", encounterMoment: "Two guys in Hamburg FC scarves walk past: 'Moin!' they say to each other — the northern German hello.", contextSentence: "Moin! Alles klar?" },
+          { vocabId: "vocab1-3-10", encounterMoment: "A big banner at the station exit reads: 'Herzlich willkommen in Deutschland!'", contextSentence: "Herzlich willkommen in Deutschland!" },
+        ],
+        decisionPoints: [
+          {
+            moment: "You approach the info desk. The officer looks up. It's 3 PM. How do you greet them?",
+            options: [
+              { text: "Guten Tag!", isCorrect: true, response: "The officer smiles and answers your question helpfully. Perfect — formal and time-appropriate!", kuttanReaction: "Adipoli! Guten Tag is perfect for afternoon + formal situation! 💪" },
+              { text: "Hallo!", isCorrect: false, response: "The officer helps you, but looks slightly surprised. 'Hallo' works, but 'Guten Tag' would be more appropriate in a formal setting.", kuttanReaction: "Hallo works machane, but Guten Tag is better for formal situations! No worries though! 😊" },
+              { text: "Guten Morgen!", isCorrect: false, response: "The officer raises an eyebrow — it's 3 PM, not morning! They help you anyway.", kuttanReaction: "Aiyyo! Guten Morgen is for morning only! It's afternoon now — Guten Tag aanu correct! 😅" },
+            ],
+          },
+          {
+            moment: "At the hostel, a student your age introduces herself. 'Hi! Ich bin Lisa. Und du?' What do you say?",
+            options: [
+              { text: "Hallo! Ich bin [your name]. Wie geht's?", isCorrect: true, response: "Lisa grins. 'Mir geht's gut, danke! Bist du auch neu hier?' A friendship is forming!", kuttanReaction: "Perfect machane! Informal greeting + asking how they are = friendly and natural! You're making friends already! 🔥" },
+              { text: "Guten Tag, Frau Lisa. Wie geht es Ihnen?", isCorrect: false, response: "Lisa laughs. 'Frau Lisa?! Das ist so süß! Du kannst einfach Lisa sagen.' She's amused but it's too formal for someone your age.", kuttanReaction: "Enthayaalum too formal aanu machane! She's your age — use du, not Sie! But she liked the effort 😂" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v1-3-1",
@@ -319,7 +366,7 @@ export const MODULE_1: Module = {
             "Differentiate between formal and informal social contexts",
             "Respond naturally to 'How are you?' questions"
           ],
-          placeholderThumbnail: "/images/thumbnails/greetings.jpg",
+          placeholderThumbnail: "/images/kaffeeklatsch.png",
           richContent: [
             {
               type: "note",
@@ -369,7 +416,7 @@ export const MODULE_1: Module = {
             "Pair 'Sie' and 'du' with correct verb endings",
             "Navigate social transitions from formal to informal"
           ],
-          placeholderThumbnail: "/images/thumbnails/sie-vs-du.jpg",
+          placeholderThumbnail: "/images/kaffee_kuchen.png",
           richContent: [
             {
               type: "table",
@@ -453,7 +500,7 @@ export const MODULE_1: Module = {
             "Apply the Danke/Bitte exchange naturally",
             "Differentiate between the two types of German apologies"
           ],
-          placeholderThumbnail: "/images/thumbnails/goodbyes.jpg",
+          placeholderThumbnail: "/images/berlin_people.png",
           richContent: [
             {
               type: "note",
@@ -504,7 +551,7 @@ export const MODULE_1: Module = {
             "Sound like a pro at the supermarket checkout",
             "Ask for help from strangers with the correct attention-getter"
           ],
-          placeholderThumbnail: "/images/thumbnails/politeness-scenarios.jpg",
+          placeholderThumbnail: "/images/berlin_people.png",
           richContent: [
             {
               type: "note",
@@ -568,6 +615,49 @@ export const MODULE_1: Module = {
       description: "Put it all together! Practice your first complete German conversation. Imagine you just landed at Frankfurt Airport and need to talk to people — let's get you ready!",
       duration: "30 min",
       xpReward: 200,
+      storyScene: {
+        setting: {
+          name: "Café Einstein, Berlin",
+          sceneType: "cafe",
+          timeOfDay: "afternoon",
+          description: "You push open the door of a cozy Berlin café. The smell of fresh coffee fills the air. A friendly face at the next table catches your eye — time for your first real German conversation!",
+        },
+        narrative: {
+          previousRecap: "You learned to greet people and say goodbye. Now let's put it ALL together in a real conversation!",
+          currentObjective: "Have your first full conversation in German",
+          nextTeaser: "Next: mastering the formal vs informal balance — crucial for work and daily life...",
+        },
+        kuttanIntro: [
+          "Machane! Café-il keraam! Ivide oru conversation nadakkaan pokkunnu — nee ready aano?!",
+          "Ithaa nammude first German conversation! Café Einstein-il aaanu nammal. Coffee order cheyyaam, aarenkilum parichayapedaam!",
+          "Berlin café life start aakkaaam! Ee café-il nee someone-ne parichayapedaan pokkunnu. Let's go!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab1-5-1", encounterMoment: "The café owner approaches your table formally: 'Guten Tag! Wie geht es Ihnen?' — the polite version.", contextSentence: "Guten Tag, wie geht es Ihnen?" },
+          { vocabId: "vocab1-5-2", encounterMoment: "A student at the next table leans over casually: 'Hey! Wie geht's?' — the friendly version.", contextSentence: "Hey, wie geht's?" },
+          { vocabId: "vocab1-5-3", encounterMoment: "You respond naturally: 'Gut, danke!' The student smiles — you nailed it!", contextSentence: "Mir geht es gut, danke!" },
+          { vocabId: "vocab1-5-7", encounterMoment: "Time to introduce yourself! 'Ich bin...' — say your name with confidence.", contextSentence: "Ich bin Rahul aus Kerala." },
+          { vocabId: "vocab1-5-9", encounterMoment: "The student asks: 'Wie heißt du?' — your chance to respond!", contextSentence: "Hallo! Wie heißt du?" },
+          { vocabId: "vocab1-5-10", encounterMoment: "You answer smoothly: 'Ich heiße...' — your first self-introduction in German!", contextSentence: "Ich heiße Maria." },
+          { vocabId: "vocab1-5-6", encounterMoment: "The waiter brings your coffee. You hand over money: 'Hier, bitte!'", contextSentence: "Hier, bitte — mein Pass." },
+        ],
+        decisionPoints: [
+          {
+            moment: "The student says 'Ich bin Lisa! Woher kommst du?' (Where do you come from?) How do you answer?",
+            options: [
+              { text: "Ich komme aus Indien — aus Kerala!", isCorrect: true, response: "Lisa's eyes light up! 'Kerala! Ich liebe indisches Essen!' The conversation flows naturally!", kuttanReaction: "Adipoli machane! Perfect answer! She loves Indian food — nee already making friends! 🎉" },
+              { text: "India.", isCorrect: false, response: "Lisa nods but waits for more. A one-word answer doesn't keep the conversation going!", kuttanReaction: "Ath sheriyaa but try a full sentence machane! 'Ich komme aus...' enna parayan padikk! Conversation is about sharing! 💬" },
+            ],
+          },
+          {
+            moment: "The café owner approaches: 'Noch etwas?' (Anything else?) You want to order an Apfelschorle. What do you say?",
+            options: [
+              { text: "Eine Apfelschorle, bitte!", isCorrect: true, response: "The owner smiles: 'Kommt sofort!' (Coming right away!) You just ordered like a local!", kuttanReaction: "WUNDERBAR! '[Item], bitte' — ee formula arinjaal Germany survive cheyyaam! 🍹" },
+              { text: "Apfelschorle.", isCorrect: false, response: "The owner nods but seems to expect a 'bitte'. In Germany, 'bitte' is the magic word!", kuttanReaction: "Almost! Just add 'bitte' at the end machane. 'Bitte' is like our 'please' — Germans expect it! 😊" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v1-5-1",
@@ -597,7 +687,7 @@ export const MODULE_1: Module = {
             "Respond appropriately to common questions",
             "Feel confident using learned vocabulary"
           ],
-          placeholderThumbnail: "/images/thumbnails/conversation-1.jpg"
+          placeholderThumbnail: "/images/berlin_people.png",
         },
         {
           id: "v1-5-2",
@@ -630,7 +720,7 @@ export const MODULE_1: Module = {
             "Order food/drinks using polite phrases",
             "Introduce yourself in an informal setting"
           ],
-          placeholderThumbnail: "/images/thumbnails/conversation-2.jpg"
+          placeholderThumbnail: "/images/berlin_people.png",
         }
       ],
       exercises: [
@@ -699,7 +789,7 @@ export const MODULE_1: Module = {
             "Recognize when someone offers to switch to Du",
             "Avoid common formality mistakes in Germany"
           ],
-          placeholderThumbnail: "/images/thumbnails/formal-informal.jpg"
+          placeholderThumbnail: "/images/kaffee_kuchen.png",
         },
         {
           id: "v1-6-2",
@@ -726,7 +816,7 @@ export const MODULE_1: Module = {
             "Know the difference between formal and informal writing",
             "Type special German characters or use substitutes"
           ],
-          placeholderThumbnail: "/images/thumbnails/formal-writing.jpg"
+          placeholderThumbnail: "/images/home_office.png"
         }
       ],
       exercises: [

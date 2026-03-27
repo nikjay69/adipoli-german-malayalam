@@ -8,6 +8,7 @@ import { CharacterGuide } from '@/components/character';
 import { Confetti, Stars } from '@/components/game';
 import { useGameStore } from '@/lib/store';
 import type { KuttanMood } from '@/components/character';
+import { GameStoryWrapper, GAME_STORIES } from '@/components/game/GameStoryWrapper';
 
 // --- Types ---
 type GreetingPeriod = 'morning' | 'afternoon' | 'evening' | 'night';
@@ -460,6 +461,7 @@ export default function GreetingTimeGame() {
   };
 
   return (
+    <GameStoryWrapper story={GAME_STORIES['greeting-time']}>
     <div className="px-4 py-6 max-w-4xl mx-auto relative">
       <Confetti isActive={showConfetti} />
 
@@ -1009,5 +1011,6 @@ export default function GreetingTimeGame() {
         )}
       </AnimatePresence>
     </div>
+    </GameStoryWrapper>
   );
 }

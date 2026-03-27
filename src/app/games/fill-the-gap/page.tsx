@@ -8,6 +8,7 @@ import { Card, Button, ProgressBar } from '@/components/ui';
 import { CharacterGuide } from '@/components/character';
 import type { KuttanMood } from '@/components/character';
 import { useGameStore } from '@/lib/store';
+import { GameStoryWrapper, GAME_STORIES } from '@/components/game/GameStoryWrapper';
 
 // ── Kuttan Manglish reactions ──────────────────────────────────────────
 const CORRECT_REACTIONS = [
@@ -640,6 +641,7 @@ export default function FillTheGapGame() {
 
   // ── Render ──
   return (
+    <GameStoryWrapper story={GAME_STORIES['fill-the-gap']}>
     <div className="px-4 py-6 max-w-4xl mx-auto">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
@@ -1049,5 +1051,6 @@ export default function FillTheGapGame() {
         )}
       </AnimatePresence>
     </div>
+    </GameStoryWrapper>
   );
 }

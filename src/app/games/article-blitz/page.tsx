@@ -8,6 +8,8 @@ import { Card, Button, ProgressBar } from '@/components/ui';
 import { CharacterGuide } from '@/components/character';
 import type { KuttanMood } from '@/components/character/Kuttan';
 import { useGameStore } from '@/lib/store';
+import { GameStoryWrapper, GAME_STORIES } from '@/components/game/GameStoryWrapper';
+import { ComboMeter } from '@/components/game/ComboMeter';
 
 // ── Types ──────────────────────────────────────────────────────────────
 
@@ -647,6 +649,7 @@ export default function ArticleBlitzGame() {
   };
 
   return (
+    <GameStoryWrapper story={GAME_STORIES['article-blitz']}>
     <div className="px-4 py-6 max-w-4xl mx-auto">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
@@ -1238,5 +1241,6 @@ export default function ArticleBlitzGame() {
         )}
       </AnimatePresence>
     </div>
+    </GameStoryWrapper>
   );
 }

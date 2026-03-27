@@ -4,7 +4,11 @@ import { use, useState, useEffect, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Volume2, Loader2, Bookmark, ChevronLeft } from 'lucide-react';
-import { playVocabAudio, playExampleAudio } from '@/lib/audio';
+import { playVocabAudio, playExampleAudio, useGermanTTS } from '@/lib/audio';
+import { startAmbience, stopAmbience, duckAmbience, getSceneForModule } from '@/lib/audio/ambience';
+import { SpeakButton, PronunciationCompare } from '@/components/speaking';
+import { NarrativeIntro, ContextualVocab, DecisionPoint, SceneConclusion } from '@/components/lesson';
+import { SceneBackground } from '@/components/visual';
 import { GameButton, ChoiceButton, Confetti, Celebration, ModuleComplete } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
 import { VideoPlayer } from '@/components/media/VideoPlayer';
@@ -32,7 +36,7 @@ const MODULE_GAME_MAP: Record<number, { path: string; name: string; icon: string
   11: { path: '/games/dialogue-dash', name: 'Dialogue Dash', icon: '💬', description: 'Practice real-world dialogues!' },
   12: { path: '/games/fill-the-gap', name: 'Fill the Gap', icon: '✍️', description: 'Fill in the missing words!' },
   13: { path: '/games/story-builder', name: 'Story Builder', icon: '📖', description: 'Build stories in past tense!' },
-  14: { path: '/games/word-match', name: 'Word Match', icon: '🔗', description: 'Match German words to meanings!' },
+  14: { path: '/games/scene-sort', name: 'Scene Sort', icon: '🔗', description: 'Match German words to meanings!' },
   15: { path: '/games/speed-quiz', name: 'Speed Quiz', icon: '⚡', description: 'Test your vocab speed!' },
   16: { path: '/games/sentence-builder', name: 'Sentence Builder', icon: '🧩', description: 'Build complex sentences!' },
   17: { path: '/games/dialogue-dash', name: 'Dialogue Dash', icon: '💬', description: 'Final conversation practice!' },
@@ -41,10 +45,14 @@ const MODULE_GAME_MAP: Record<number, { path: string; name: string; icon: string
 
 type Step =
   | { type: 'intro' }
+  | { type: 'scene-intro' }                        // Story: narrative opening
   | { type: 'video'; index: number }
   | { type: 'vocab'; index: number }
+  | { type: 'contextual-vocab'; index: number }     // Story: vocab in narrative context
+  | { type: 'decision-point'; index: number }        // Story: "what do you say?"
   | { type: 'game-suggest' }
   | { type: 'exercise'; index: number }
+  | { type: 'scene-conclusion' }                     // Story: wrap-up + teaser
   | { type: 'complete' };
 
 export default function PlayLesson({ params }: { params: Promise<{ moduleId: string; lessonId: string }> }) {
@@ -72,12 +80,17 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   // Typing exercise state
   const [typedAnswer, setTypedAnswer] = useState('');
   const [typeAnswerState, setTypeAnswerState] = useState<'default' | 'correct' | 'incorrect'>('default');
+  // Speaking exercise state
+  const [speakingResult, setSpeakingResult] = useState<{ transcript: string; confidence: number; isMatch: boolean } | null>(null);
   // Vocab teaching: intro (show word) → challenge (mini-encounter to prove recall)
   const [vocabPhase, setVocabPhase] = useState<'intro' | 'challenge'>('intro');
   const [vocabEncounter, setVocabEncounter] = useState<Encounter | null>(null);
   const [vocabSelectedOption, setVocabSelectedOption] = useState<number | null>(null);
   const [vocabAnswerState, setVocabAnswerState] = useState<'default' | 'correct' | 'wrong'>('default');
   const allVocabPool = getAllVocabulary();
+
+  // ── Audio: TTS + Ambient Soundscape ──
+  const { speak: speakGerman, stop: stopTTS } = useGermanTTS();
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -97,6 +110,16 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       router.replace('/learn');
     }
   }, [mounted, isLessonUnlocked, router]);
+
+  // Start ambient soundscape based on module context
+  useEffect(() => {
+    if (mounted && module && userProgress.soundEnabled) {
+      const scene = getSceneForModule(module.id);
+      startAmbience(scene, 0.3);
+    }
+    return () => { stopAmbience(800); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mounted, module?.id]);
 
   // Resume from checkpoint on mount
   useEffect(() => {
@@ -133,9 +156,15 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   }, [mounted, step.type]);
 
   // Auto-play vocab audio when a new vocab card appears
+  // Try MP3 first, fall back to TTS. Duck ambience during playback.
   useEffect(() => {
     if (mounted && lesson && step.type === 'vocab' && lesson.vocabulary[step.index]) {
-      playVocabAudio(lesson.vocabulary[step.index].id).catch(() => {});
+      const vocab = lesson.vocabulary[step.index];
+      duckAmbience(2000);
+      playVocabAudio(vocab.id).catch(() => {
+        // MP3 not available — use browser TTS as fallback
+        speakGerman(vocab.german);
+      });
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted, step]);
@@ -231,13 +260,21 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
 
   const suggestedGameForModule = MODULE_GAME_MAP[module?.id ?? 0] ?? null;
   const hasGameSuggest = suggestedGameForModule && lesson.vocabulary.length > 0;
-  const totalSteps = 1 + lesson.videos.length + lesson.vocabulary.length + (hasGameSuggest ? 1 : 0) + allExercises.length + 1;
+  const hasStory = !!lesson.storyScene;
+  const storyDecisionCount = lesson.storyScene?.decisionPoints?.length ?? 0;
+
+  // Step counting — adapts for story mode vs regular mode
+  const totalSteps = hasStory
+    ? 1 + lesson.videos.length + lesson.vocabulary.length + storyDecisionCount + (hasGameSuggest ? 1 : 0) + allExercises.length + 2
+    : 1 + lesson.videos.length + lesson.vocabulary.length + (hasGameSuggest ? 1 : 0) + allExercises.length + 1;
   const currentStepNumber =
-    step.type === 'intro' ? 1 :
+    step.type === 'intro' || step.type === 'scene-intro' ? 1 :
     step.type === 'video' ? 2 + step.index :
-    step.type === 'vocab' ? 2 + lesson.videos.length + step.index :
-    step.type === 'game-suggest' ? 2 + lesson.videos.length + lesson.vocabulary.length :
-    step.type === 'exercise' ? 2 + lesson.videos.length + lesson.vocabulary.length + (hasGameSuggest ? 1 : 0) + step.index :
+    step.type === 'vocab' || step.type === 'contextual-vocab' ? 2 + lesson.videos.length + step.index :
+    step.type === 'decision-point' ? 2 + lesson.videos.length + lesson.vocabulary.length + step.index :
+    step.type === 'game-suggest' ? 2 + lesson.videos.length + lesson.vocabulary.length + storyDecisionCount :
+    step.type === 'exercise' ? 2 + lesson.videos.length + lesson.vocabulary.length + storyDecisionCount + (hasGameSuggest ? 1 : 0) + step.index :
+    step.type === 'scene-conclusion' ? totalSteps - 1 :
     totalSteps;
   const progress = (currentStepNumber / totalSteps) * 100;
 
@@ -306,14 +343,81 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     }
   };
 
+  // After decision points, go to game suggest or exercises
+  const afterDecisionPoints = () => {
+    if (suggestedGame) {
+      setStep({ type: 'game-suggest' });
+    } else {
+      goToExercises();
+    }
+  };
+
   const goNext = () => {
-    if (step.type === 'intro') {
+    // ── Story flow (when storyScene exists) ──
+    if (step.type === 'scene-intro') {
       if (lesson.videos.length > 0) setStep({ type: 'video', index: 0 });
-      else if (lesson.vocabulary.length > 0) { setStep({ type: 'vocab', index: 0 }); resetVocabChallenge(); }
-      else setStep({ type: 'exercise', index: 0 });
+      else if (lesson.vocabulary.length > 0) { setStep({ type: 'contextual-vocab', index: 0 }); resetVocabChallenge(); }
+      else if (storyDecisionCount > 0) setStep({ type: 'decision-point', index: 0 });
+      else goToExercises();
+      return;
+    }
+    if (step.type === 'contextual-vocab') {
+      // Same challenge logic as regular vocab
+      if (vocabPhase === 'intro') {
+        const target = lesson.vocabulary[step.index];
+        const encounter = generateEncounter(target, allVocabPool);
+        setVocabEncounter(encounter);
+        setVocabPhase('challenge');
+        setVocabSelectedOption(null);
+        setVocabAnswerState('default');
+        return;
+      }
+      // Advance contextual vocab
+      learnVocabulary(lesson.vocabulary[step.index].id);
+      addSRSCard(createCard(lesson.vocabulary[step.index].id));
+      if (step.index < lesson.vocabulary.length - 1) {
+        setStep({ type: 'contextual-vocab', index: step.index + 1 });
+        resetVocabChallenge();
+      } else if (storyDecisionCount > 0) {
+        setStep({ type: 'decision-point', index: 0 });
+        resetVocabChallenge();
+      } else {
+        resetVocabChallenge();
+        afterDecisionPoints();
+      }
+      return;
+    }
+    if (step.type === 'decision-point') {
+      if (step.index < storyDecisionCount - 1) {
+        setStep({ type: 'decision-point', index: step.index + 1 });
+      } else {
+        afterDecisionPoints();
+      }
+      return;
+    }
+    if (step.type === 'scene-conclusion') {
+      finishLesson();
+      return;
+    }
+
+    // ── Regular flow ──
+    if (step.type === 'intro') {
+      if (hasStory) {
+        setStep({ type: 'scene-intro' });
+      } else if (lesson.videos.length > 0) {
+        setStep({ type: 'video', index: 0 });
+      } else if (lesson.vocabulary.length > 0) {
+        setStep({ type: 'vocab', index: 0 }); resetVocabChallenge();
+      } else {
+        setStep({ type: 'exercise', index: 0 });
+      }
     } else if (step.type === 'video') {
       if (step.index < lesson.videos.length - 1) setStep({ type: 'video', index: step.index + 1 });
-      else if (lesson.vocabulary.length > 0) { setStep({ type: 'vocab', index: 0 }); resetVocabChallenge(); }
+      else if (lesson.vocabulary.length > 0) {
+        setStep({ type: hasStory ? 'contextual-vocab' : 'vocab', index: 0 });
+        resetVocabChallenge();
+      }
+      else if (hasStory && storyDecisionCount > 0) setStep({ type: 'decision-point', index: 0 });
       else setStep({ type: 'exercise', index: 0 });
     } else if (step.type === 'vocab') {
       // Vocab intro phase: generate a challenge encounter
@@ -332,12 +436,15 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       // Skip game → go to exercises
       goToExercises();
     } else if (step.type === 'exercise') {
-      if (step.index < allExercises.length - 1) { setStep({ type: 'exercise', index: step.index + 1 }); setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false); setTypedAnswer(''); setTypeAnswerState('default'); }
+      if (step.index < allExercises.length - 1) { setStep({ type: 'exercise', index: step.index + 1 }); setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false); setTypedAnswer(''); setTypeAnswerState('default'); setSpeakingResult(null); }
+      else if (hasStory) setStep({ type: 'scene-conclusion' });
       else finishLesson();
     }
   };
 
   const finishLesson = () => {
+    stopAmbience(1000); // Fade out ambience on lesson completion
+    stopTTS();
     const score = allExercises.length > 0 ? Math.round((correctCount / allExercises.length) * 100) : 100;
 
     if (score < 50 && allExercises.length > 0) {
@@ -397,6 +504,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
 
   return (
     <div className="min-h-screen flex flex-col safe-top safe-bottom">
+      {/* Scene background for story-driven lessons */}
+      {hasStory && lesson.storyScene && step.type !== 'complete' && (
+        <SceneBackground scene={lesson.storyScene.setting.sceneType} opacity={0.2} />
+      )}
+
       {showExitConfirm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <motion.div
@@ -417,7 +529,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 Stay
               </button>
               <button
-                onClick={() => router.push('/')}
+                onClick={() => { stopAmbience(); router.push('/'); }}
                 className="flex-1 py-2.5 rounded-xl bg-[#c0392b] text-white font-medium text-sm"
               >
                 Leave
@@ -618,6 +730,119 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             </motion.div>
           )}
 
+          {/* SCENE INTRO (Story mode) */}
+          {step.type === 'scene-intro' && lesson.storyScene && (
+            <NarrativeIntro
+              scene={lesson.storyScene}
+              lessonTitle={lesson.title}
+              lessonTitleGerman={lesson.titleGerman}
+              moduleIcon={module.icon}
+              onContinue={goNext}
+            />
+          )}
+
+          {/* CONTEXTUAL VOCAB (Story mode) */}
+          {step.type === 'contextual-vocab' && lesson.storyScene && vocabPhase === 'intro' && (
+            <ContextualVocab
+              vocab={lesson.vocabulary[step.index]}
+              encounter={lesson.storyScene.vocabEncounters[step.index] || {
+                vocabId: lesson.vocabulary[step.index].id,
+                encounterMoment: lesson.vocabulary[step.index].example,
+                contextSentence: lesson.vocabulary[step.index].example,
+              }}
+              index={step.index}
+              total={lesson.vocabulary.length}
+              isBookmarked={(userProgress.bookmarkedVocab || []).includes(lesson.vocabulary[step.index].id)}
+              onPlayAudio={() => {
+                const vocab = lesson.vocabulary[step.index];
+                duckAmbience(2000);
+                playVocabAudio(vocab.id).catch(() => speakGerman(vocab.german));
+              }}
+              onBookmark={() => toggleBookmark(lesson.vocabulary[step.index].id)}
+            />
+          )}
+
+          {/* CONTEXTUAL VOCAB — Challenge phase (reuses existing vocab challenge UI) */}
+          {step.type === 'contextual-vocab' && vocabPhase === 'challenge' && vocabEncounter && (
+            <motion.div
+              key={`ctx-vocab-challenge-${step.index}`}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ type: 'spring', damping: 25 }}
+              className="flex-1 flex flex-col"
+            >
+              <div className="flex items-start gap-2 mb-4">
+                <CharacterGuide
+                  messages={vocabAnswerState === 'correct' ? getRandomMessage('correct')
+                    : vocabAnswerState === 'wrong' ? getRandomMessage('wrong')
+                    : vocabEncounter.kuttanSays}
+                  mood={vocabAnswerState === 'correct' ? 'celebrating' : vocabAnswerState === 'wrong' ? 'sad' : 'thinking'}
+                  size="sm"
+                />
+              </div>
+              <div className="flex-1 flex flex-col justify-center">
+                {vocabEncounter.contextGerman && (
+                  <p className="text-center text-sm text-[var(--foreground)]/50 italic mb-2">{vocabEncounter.contextGerman}</p>
+                )}
+                <h2 className="text-lg font-bold text-center mb-5">{vocabEncounter.prompt}</h2>
+                <div className="space-y-2">
+                  {vocabEncounter.options.map((opt, i) => {
+                    const isSelected = vocabSelectedOption === i;
+                    const isCorrectOpt = i === vocabEncounter.correctIndex;
+                    let optState: 'default' | 'selected' | 'correct' | 'incorrect' = 'default';
+                    if (vocabAnswerState === 'correct' && isCorrectOpt) optState = 'correct';
+                    else if (vocabAnswerState === 'wrong' && isSelected) optState = 'incorrect';
+                    else if (vocabAnswerState === 'wrong' && isCorrectOpt) optState = 'correct';
+                    return (
+                      <ChoiceButton
+                        key={i}
+                        onClick={() => {
+                          if (vocabAnswerState !== 'default') return;
+                          setVocabSelectedOption(i);
+                          if (i === vocabEncounter.correctIndex) {
+                            setVocabAnswerState('correct');
+                            feedbackCorrect();
+                            setTimeout(() => goNext(), 1200);
+                          } else {
+                            setVocabAnswerState('wrong');
+                            feedbackWrong();
+                            setTimeout(() => goNext(), 2000);
+                          }
+                        }}
+                        state={optState}
+                        disabled={vocabAnswerState !== 'default'}
+                      >
+                        {opt}
+                      </ChoiceButton>
+                    );
+                  })}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* DECISION POINT (Story mode) */}
+          {step.type === 'decision-point' && lesson.storyScene && lesson.storyScene.decisionPoints[step.index] && (
+            <DecisionPoint
+              decision={lesson.storyScene.decisionPoints[step.index]}
+              onComplete={(wasCorrect) => {
+                if (wasCorrect) setCorrectCount(prev => prev + 1);
+                goNext();
+              }}
+            />
+          )}
+
+          {/* SCENE CONCLUSION (Story mode) */}
+          {step.type === 'scene-conclusion' && lesson.storyScene && (
+            <SceneConclusion
+              scene={lesson.storyScene}
+              correctCount={correctCount}
+              totalExercises={allExercises.length}
+              vocabLearned={lesson.vocabulary.length}
+            />
+          )}
+
           {/* VIDEO */}
           {step.type === 'video' && (
             <motion.div
@@ -688,7 +913,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               <div className="flex items-center gap-3 mt-4">
                 <motion.button
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => playVocabAudio(lesson.vocabulary[step.index].id)}
+                  onClick={() => {
+                    const vocab = lesson.vocabulary[step.index];
+                    duckAmbience(2000);
+                    playVocabAudio(vocab.id).catch(() => speakGerman(vocab.german));
+                  }}
                   className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
                 >
                   <Volume2 className="w-4 h-4 text-[#d4a520]" />
@@ -945,6 +1174,81 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                   );
                 })() :
 
+                /* SPEAKING EXERCISE */
+                allExercises[step.index].type === 'speaking' ? (() => {
+                  const exercise = allExercises[step.index];
+                  const expectedAnswer = typeof exercise.correctAnswer === 'string' ? exercise.correctAnswer : exercise.correctAnswer[0];
+
+                  const handleSpeakResult = (transcript: string, confidence: number, isMatch: boolean) => {
+                    setSpeakingResult({ transcript, confidence, isMatch });
+                    setTotalAttempted(prev => prev + 1);
+                    if (isMatch) {
+                      setCorrectCount(prev => prev + 1);
+                      setKuttanMsg(getRandomMessage('correct'));
+                      feedbackCorrect();
+                      setTimeout(() => goNext(), 2500);
+                    } else {
+                      setKuttanMsg(getRandomMessage('wrong'));
+                      feedbackWrong();
+                    }
+                  };
+
+                  return (
+                    <div className="space-y-4 flex flex-col items-center">
+                      {/* Prompt */}
+                      <div className="bg-[var(--foreground)]/5 rounded-xl px-4 py-3 text-center w-full max-w-sm">
+                        <p className="text-lg font-bold text-[#d4a520]">{expectedAnswer}</p>
+                        {exercise.questionGerman && exercise.questionGerman !== expectedAnswer && (
+                          <p className="text-xs text-[var(--foreground)]/40 mt-1 italic">{exercise.questionGerman}</p>
+                        )}
+                      </div>
+
+                      {/* Listen to native button */}
+                      <motion.button
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => { duckAmbience(2000); speakGerman(expectedAnswer); }}
+                        className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-sm text-[var(--foreground)]/70"
+                      >
+                        <Volume2 className="w-4 h-4 text-[#d4a520]" /> Listen first
+                      </motion.button>
+
+                      {/* Speak button or comparison */}
+                      {!speakingResult ? (
+                        <SpeakButton
+                          expectedText={expectedAnswer}
+                          onResult={handleSpeakResult}
+                          size="lg"
+                          label="Tap to speak"
+                        />
+                      ) : (
+                        <PronunciationCompare
+                          expected={expectedAnswer}
+                          transcript={speakingResult.transcript}
+                          confidence={speakingResult.confidence}
+                          onRetry={() => setSpeakingResult(null)}
+                        />
+                      )}
+
+                      {/* Skip button for speaking (graceful fallback) */}
+                      {!speakingResult && (
+                        <button
+                          onClick={() => { setTotalAttempted(prev => prev + 1); goNext(); }}
+                          className="text-xs text-[var(--foreground)]/30 underline"
+                        >
+                          Skip speaking exercise
+                        </button>
+                      )}
+
+                      {/* Continue after failed attempt */}
+                      {speakingResult && !speakingResult.isMatch && (
+                        <GameButton onClick={goNext} variant="ghost">
+                          Continue anyway
+                        </GameButton>
+                      )}
+                    </div>
+                  );
+                })() :
+
                 /* MATCHING EXERCISE */
                 allExercises[step.index].type === 'matching' && Array.isArray(allExercises[step.index].correctAnswer) ? (() => {
                   const exercise = allExercises[step.index];
@@ -1115,9 +1419,13 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
         </AnimatePresence>
       </div>
 
-      {/* Bottom Button — hidden during vocab challenge (answers handle progression) */}
-      {step.type !== 'complete' && step.type !== 'exercise' && step.type !== 'game-suggest' && !(step.type === 'vocab' && vocabPhase === 'challenge') && (
-        <div className="px-4 py-5">
+      {/* Bottom Button — hidden during challenges, exercises, and decision points */}
+      {step.type !== 'complete' && step.type !== 'exercise' && step.type !== 'game-suggest'
+        && step.type !== 'decision-point'
+        && !(step.type === 'vocab' && vocabPhase === 'challenge')
+        && !(step.type === 'contextual-vocab' && vocabPhase === 'challenge')
+        && (
+        <div className="px-4 py-5 relative z-10">
           <GameButton
             onClick={goNext}
             size="lg"
@@ -1125,8 +1433,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             variant="primary"
           >
             {step.type === 'intro' ? "Let's Start" :
+             step.type === 'scene-intro' ? "Let's Go!" :
              step.type === 'video' ? 'Continue' :
              step.type === 'vocab' ? "Got it — test me!" :
+             step.type === 'contextual-vocab' ? "Got it — test me!" :
+             step.type === 'scene-conclusion' ? 'Finish Lesson' :
              'Continue'}
           </GameButton>
         </div>

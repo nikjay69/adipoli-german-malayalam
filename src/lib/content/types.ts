@@ -37,6 +37,46 @@ export interface Exercise {
   audioUrl?: string;
 }
 
+// ── Story Scene System ──────────────────────────────────────────
+// Transforms lessons from linear steps into immersive mini-adventures
+
+export interface DecisionOption {
+  text: string;
+  isCorrect: boolean;
+  response: string;       // What happens in the story after choosing this
+  kuttanReaction: string; // Kuttan's Manglish reaction
+}
+
+export interface VocabEncounter {
+  vocabId: string;
+  encounterMoment: string;  // e.g. "The baker says 'Möchten Sie ein Brötchen?'"
+  contextSentence: string;  // The sentence where the word naturally appears
+}
+
+export interface DecisionPoint {
+  moment: string;           // Scene description at this choice point
+  options: DecisionOption[];
+}
+
+export interface StoryScene {
+  setting: {
+    name: string;           // e.g. "Bäckerei Schmidt"
+    sceneType: string;      // Maps to SceneBackground + ambience (cafe, bahnhof, street, etc.)
+    timeOfDay: 'morning' | 'afternoon' | 'evening';
+    description: string;    // Narrative text: "You push open the bakery door..."
+  };
+  narrative: {
+    previousRecap?: string;     // "Yesterday you arrived in Berlin..."
+    currentObjective: string;   // "Order breakfast at the bakery"
+    nextTeaser?: string;        // "Tomorrow you'll navigate the U-Bahn..."
+  };
+  kuttanIntro: string[];        // Manglish scene-setting lines from Kuttan
+  vocabEncounters: VocabEncounter[];
+  decisionPoints: DecisionPoint[];
+}
+
+// ── Lesson ──────────────────────────────────────────────────────
+
 export interface Lesson {
   id: string;
   title: string;
@@ -47,6 +87,8 @@ export interface Lesson {
   videos: Video[];
   exercises: Exercise[];
   vocabulary: VocabItem[];
+  /** Optional story scene data — when present, lesson uses immersive story flow */
+  storyScene?: StoryScene;
 }
 
 export interface VocabItem {

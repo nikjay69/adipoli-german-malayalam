@@ -7,6 +7,7 @@ import { ArrowLeft, Trophy, RefreshCw, Clock, Zap } from 'lucide-react';
 import { CharacterGuide } from '@/components/character';
 import { Confetti, Stars } from '@/components/game';
 import { useGameStore } from '@/lib/store';
+import { GameStoryWrapper, GAME_STORIES } from '@/components/game/GameStoryWrapper';
 
 // ─── Situation-based questions ─────────────────────────────
 // Every question is a REAL scenario. No bare translation.
@@ -450,6 +451,7 @@ export default function SpeedQuizGame() {
   };
 
   return (
+    <GameStoryWrapper story={GAME_STORIES['speed-quiz']}>
     <div className="px-4 py-6 max-w-4xl mx-auto relative">
       <Confetti isActive={showConfetti} />
 
@@ -764,5 +766,6 @@ export default function SpeedQuizGame() {
         )}
       </AnimatePresence>
     </div>
+    </GameStoryWrapper>
   );
 }

@@ -22,42 +22,11 @@ import { useGameStore } from '@/lib/store';
 import { Kuttan } from '@/components/character/Kuttan';
 
 // ---------------------------------------------------------------------------
-// Web Speech API types
-// ---------------------------------------------------------------------------
-
-interface SpeechRecognitionEvent extends Event {
-  readonly resultIndex: number;
-  readonly results: SpeechRecognitionResultList;
-}
-
-interface SpeechRecognitionErrorEvent extends Event {
-  readonly error: string;
-  readonly message: string;
-}
-
-interface SpeechRecognitionInstance extends EventTarget {
-  lang: string;
-  continuous: boolean;
-  interimResults: boolean;
-  maxAlternatives: number;
-  onstart: ((this: SpeechRecognitionInstance, ev: Event) => void) | null;
-  onresult: ((this: SpeechRecognitionInstance, ev: SpeechRecognitionEvent) => void) | null;
-  onerror: ((this: SpeechRecognitionInstance, ev: SpeechRecognitionErrorEvent) => void) | null;
-  onend: ((this: SpeechRecognitionInstance, ev: Event) => void) | null;
-  start(): void;
-  stop(): void;
-  abort(): void;
-}
-
-interface SpeechRecognitionConstructor {
-  new (): SpeechRecognitionInstance;
-}
+// SpeechRecognition types declared globally in src/types/speech-recognition.d.ts
 
 function getSpeechRecognitionClass(): SpeechRecognitionConstructor | null {
   if (typeof window === 'undefined') return null;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const w = window as any;
-  return w.SpeechRecognition || w.webkitSpeechRecognition || null;
+  return window.SpeechRecognition || window.webkitSpeechRecognition || null;
 }
 
 // ---------------------------------------------------------------------------
@@ -208,7 +177,7 @@ export default function IntroSpeakPage() {
   const [isListening, setIsListening] = useState(false);
   const [interimText, setInterimText] = useState('');
   const [micError, setMicError] = useState<string | null>(null);
-  const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   // Timer (2 minutes)
   const timer = useTimer(120);

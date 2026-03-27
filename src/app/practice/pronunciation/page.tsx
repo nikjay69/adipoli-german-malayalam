@@ -9,39 +9,11 @@ import { Kuttan, SpeechBubble } from '@/components/character';
 import type { KuttanMood } from '@/components/character';
 import { useGameStore } from '@/lib/store';
 import { getAllVocabulary, type VocabItem } from '@/lib/content/modules';
-import { playVocabAudio } from '@/lib/audio';
+import { playVocabAudio, useGermanTTS } from '@/lib/audio';
+import { PronunciationCompare } from '@/components/speaking';
 
 // ---------------------------------------------------------------------------
-// Web Speech API types (not in all TS libs)
-// ---------------------------------------------------------------------------
-
-interface SpeechRecognitionEvent extends Event {
-  readonly resultIndex: number;
-  readonly results: SpeechRecognitionResultList;
-}
-
-interface SpeechRecognitionErrorEvent extends Event {
-  readonly error: string;
-  readonly message: string;
-}
-
-interface SpeechRecognitionInstance extends EventTarget {
-  lang: string;
-  continuous: boolean;
-  interimResults: boolean;
-  maxAlternatives: number;
-  onstart: ((this: SpeechRecognitionInstance, ev: Event) => void) | null;
-  onresult: ((this: SpeechRecognitionInstance, ev: SpeechRecognitionEvent) => void) | null;
-  onerror: ((this: SpeechRecognitionInstance, ev: SpeechRecognitionErrorEvent) => void) | null;
-  onend: ((this: SpeechRecognitionInstance, ev: Event) => void) | null;
-  start(): void;
-  stop(): void;
-  abort(): void;
-}
-
-interface SpeechRecognitionConstructor {
-  new (): SpeechRecognitionInstance;
-}
+// SpeechRecognition types declared globally in src/types/speech-recognition.d.ts
 
 // ---------------------------------------------------------------------------
 // Types
@@ -85,9 +57,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 function getSpeechRecognitionClass(): SpeechRecognitionConstructor | null {
   if (typeof window === 'undefined') return null;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const w = window as any;
-  return w.SpeechRecognition || w.webkitSpeechRecognition || null;
+  return window.SpeechRecognition || window.webkitSpeechRecognition || null;
 }
 
 // Kuttan reactions per score band
@@ -126,10 +96,11 @@ const MODE_DESCRIPTIONS: Record<Mode, string> = {
 export default function PronunciationPage() {
   const router = useRouter();
   const { addXP, incrementGamesPlayed } = useGameStore();
+  const { speak: speakTTS, speakSlow } = useGermanTTS();
 
   // --- speech recognition support ---
   const [isSupported, setIsSupported] = useState(true);
-  const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   // --- vocab pool ---
   const [vocab, setVocab] = useState<VocabItem[]>([]);
@@ -335,15 +306,9 @@ export default function PronunciationPage() {
     try {
       await playVocabAudio(currentItem.id);
     } catch {
-      // Fallback: use browser TTS
-      if (typeof window !== 'undefined' && window.speechSynthesis) {
-        const utter = new SpeechSynthesisUtterance(
-          mode === 'phrases' ? currentItem.example : currentItem.german,
-        );
-        utter.lang = 'de-DE';
-        utter.rate = 0.85;
-        window.speechSynthesis.speak(utter);
-      }
+      // Fallback: use shared German TTS hook
+      const text = mode === 'phrases' ? currentItem.example : currentItem.german;
+      speakTTS(text, { rate: 0.85 });
     } finally {
       setIsPlayingAudio(false);
     }
@@ -733,7 +698,7 @@ export default function PronunciationPage() {
         )}
       </AnimatePresence>
 
-      {/* Result */}
+      {/* Result — uses PronunciationCompare for word/phrase modes */}
       <AnimatePresence>
         {result && (
           <motion.div
@@ -742,72 +707,21 @@ export default function PronunciationPage() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ type: 'spring', damping: 18 }}
+            className="mb-5"
           >
-            <Card
-              className={`mb-5 overflow-hidden ${
-                result.score === 100
-                  ? 'ring-2 ring-[#27ae60]'
-                  : result.score >= 0 && result.score < 50
-                  ? 'animate-shake ring-2 ring-[#c0392b]'
-                  : ''
-              }`}
-            >
-              {mode !== 'free' && result.score >= 0 && (
-                <>
-                  {/* Score bar */}
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-semibold text-gray-600 dark:text-gray-400">
-                      Score
-                    </span>
-                    <motion.span
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className="text-2xl font-bold"
-                      style={{ color: scoreColor(result.score) }}
-                    >
-                      {result.score}%
-                    </motion.span>
-                  </div>
-
-                  {/* Progress bar */}
-                  <div className="w-full h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden mb-4">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${result.score}%` }}
-                      transition={{ duration: 0.6, ease: 'easeOut' }}
-                      className="h-full rounded-full"
-                      style={{ backgroundColor: scoreColor(result.score) }}
-                    />
-                  </div>
-
-                  {/* What was heard vs expected */}
-                  <div className="space-y-3">
-                    <div>
-                      <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
-                        You said
-                      </p>
-                      <p className={`text-base font-medium ${
-                        result.score === 100
-                          ? 'text-[#27ae60]'
-                          : 'text-[#c0392b]'
-                      }`}>
-                        &ldquo;{result.heard}&rdquo;
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
-                        Expected
-                      </p>
-                      <p className="text-base font-medium text-gray-800 dark:text-gray-200">
-                        &ldquo;{result.expected}&rdquo;
-                      </p>
-                    </div>
-                  </div>
-                </>
-              )}
-
-              {/* Free mode result */}
-              {mode === 'free' && (
+            {mode !== 'free' && result.score >= 0 ? (
+              <PronunciationCompare
+                expected={result.expected}
+                transcript={result.heard}
+                confidence={result.score / 100}
+                pronunciation={currentItem?.pronunciation}
+                onRetry={() => {
+                  setResult(null);
+                  setInterimText('');
+                }}
+              />
+            ) : (
+              <Card className="mb-5 overflow-hidden">
                 <div>
                   <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
                     Transcription
@@ -816,8 +730,8 @@ export default function PronunciationPage() {
                     &ldquo;{result.heard}&rdquo;
                   </p>
                 </div>
-              )}
-            </Card>
+              </Card>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

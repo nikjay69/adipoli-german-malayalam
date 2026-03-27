@@ -9,6 +9,7 @@ import type { KuttanMood } from '@/components/character';
 import { Confetti, XPGain } from '@/components/game';
 import { GameButton } from '@/components/game';
 import { useGameStore } from '@/lib/store';
+import { GameStoryWrapper, GAME_STORIES } from '@/components/game/GameStoryWrapper';
 
 // ── Food menu items ─────────────────────────────────────────────────────
 interface FoodItem {
@@ -270,6 +271,7 @@ export default function FoodOrderGame() {
   const receiptTotal = "15,50";
 
   return (
+    <GameStoryWrapper story={GAME_STORIES['food-order']}>
     <div className="min-h-screen px-4 py-6 max-w-lg mx-auto relative overflow-hidden">
       {/* Confetti */}
       <Confetti isActive={showConfetti} />
@@ -797,5 +799,6 @@ export default function FoodOrderGame() {
         )}
       </AnimatePresence>
     </div>
+    </GameStoryWrapper>
   );
 }
