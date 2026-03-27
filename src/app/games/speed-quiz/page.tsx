@@ -456,7 +456,7 @@ export default function SpeedQuizGame() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <button
-          onClick={() => router.back()}
+          onClick={() => router.push('/games')}
           className="flex items-center gap-2 text-[var(--foreground)]/60 hover:text-[var(--foreground)]"
         >
           <ArrowLeft className="w-5 h-5" />

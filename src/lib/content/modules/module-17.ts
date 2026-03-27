@@ -171,6 +171,22 @@ export const MODULE_17: Module = {
           correctAnswer: "Viel Glück",
           explanation: "Wunderbar! A must-know phrase for exam day.",
           xpReward: 30
+        },
+        {
+          id: "ex17-6-12",
+          type: "free-text",
+          question: "Translate: 'The film starts at 8 PM.' (8 PM = 20 Uhr)",
+          correctAnswer: "Der Film beginnt um 20 Uhr",
+          explanation: "Wunderbar! Use 'um' and the 24-hour format correctly.",
+          xpReward: 30
+        },
+        {
+          id: "ex17-6-13",
+          type: "free-text",
+          question: "Write in German: 'I am coming tomorrow.' (tomorrow = morgen)",
+          correctAnswer: "Ich komme morgen",
+          explanation: "Excellent! A simple but essential phrase for communication.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -582,6 +598,15 @@ export const MODULE_17: Module = {
           correctAnswer: "Ich habe Hunger",
           explanation: "Excellent! This is a key phrase for any restaurant or food-related dialogue.",
           xpReward: 30
+        },
+        {
+          id: "ex17-3-14",
+          type: "dictation",
+          question: "Listen and type: Haben Sie frisches Brot?",
+          correctAnswer: "Haben Sie frisches Brot",
+          explanation: "Perfect! A clear and natural question for the bakery.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-fresh-bread.mp3"
         }
       ],
       vocabulary: [
