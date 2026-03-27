@@ -2,17 +2,16 @@ import type { Module } from '../types';
 
 export const MODULE_1: Module = {
   id: 1,
-  title: "Welcome to German!",
-  titleGerman: "Willkommen!",
-  description: "Your true beginner foundation: motivation, core sounds, greetings, and first conversation patterns. This module is designed to reduce fear, build correct pronunciation early, and prepare learners for basic A1 speaking and listening tasks.",
-
-  icon: "👋",
+  title: "First Steps - Namaskaram Germany!",
+  titleGerman: "Erste Schritte",
+  description: "Start your journey here! Learn why Germany is a dream for Malayalis, master the sounds, and survive your first conversations.",
+  icon: "🚀",
   color: "#e94560",
   totalHours: 12,
   learningTips: [
-    "Say every new word OUT LOUD — your mouth needs practice too!",
-    "Don't memorize — LISTEN and REPEAT. Your brain learns better through sound.",
-    "German pronunciation is regular: once you learn the rules, you can read any word.",
+    "German sounds are logical - learn the rules once, and you can read anything!",
+    "When in doubt about respect, use 'Sie'. It's always safer.",
+    "Punctuality is a religion in Germany - if you're on time, you're late! Be 5 mins early."
   ],
   lessons: [
     // ===================== LESSON 1-1 =====================
@@ -28,54 +27,106 @@ export const MODULE_1: Module = {
           id: "v1-1-1",
           title: "Why German? A Malayali's Gateway to Europe",
           duration: "10:00",
-          description: "An inspiring introduction to German opportunities for Malayalis",
+          description: "An inspiring introduction to German opportunities for Malayalis. Why learn this language? Because it's your ticket to free education and huge careers!",
           scriptOutline: [
-            "Opening: 'Namaskaram! Guten Tag!' - greet in both languages",
-            "The German Economy: 4th largest economy, job opportunities",
-            "Free Education: German universities offer free/low-cost education",
-            "Kerala-Germany Connection: Thousands of Malayali nurses, IT professionals in Germany",
-            "German Companies in India: Bosch, Siemens, BMW presence in Kerala/India",
-            "Success Stories: Brief mention of Malayalis who made it in Germany",
-            "Salary comparison: Average German salary vs Indian salary — mind = blown",
-            "The language advantage: B1/B2 German = direct ticket to Ausbildung or university",
-            "Cultural parallels: Germans value punctuality (unlike our 'IST - Indian Stretchable Time'!)",
-            "What you'll learn in this course - overview",
-            "Motivation: 'By the end of this course, you'll be able to have basic conversations!'",
-            "Closing challenge: 'Tell one person today that you are learning German!'"
+            "Economy: 4th largest in the world",
+            "Free Education: €0 tuition at public universities",
+            "Salary: Compare Kochi vs Munich (mind-blown!)",
+            "The Kerala Connection: 30,000+ Malayalis already there",
+            "First 3 Words: Deutsch, Deutschland, lernen"
           ],
           keyVocabulary: ["Deutsch", "Deutschland", "lernen"],
           learningObjectives: [
             "Understand why German is valuable for career growth",
             "Know about opportunities in Germany for Indians",
-            "Feel motivated to start the learning journey"
+            "Speak your first German sentence: 'Ich lerne Deutsch.'"
           ],
-          placeholderThumbnail: "/images/thumbnails/why-german.jpg"
+          placeholderThumbnail: "/images/thumbnails/why-german.jpg",
+          richContent: [
+            {
+              type: "note",
+              title: "Why Germany?",
+              variant: "info",
+              content: "Free university education (over 400 public universities), 4th largest economy, and salaries 4-5x higher than in India. Germany literally pays you to learn through 'Ausbildung' (vocational training)!"
+            },
+            {
+              type: "table",
+              title: "Salary Comparison (Annual)",
+              headers: ["Role", "Kochi", "Munich"],
+              rows: [
+                ["Software Engineer", "₹6–8 Lakhs", "€60,000 (~₹55L)"],
+                ["Nurse", "₹2.5–4 Lakhs", "€35,000 (~₹32L)"],
+                ["Student Part-time", "₹50k-1L", "€12,000 (~₹11L)"]
+              ]
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Deutsch", english: "German", malayalam: "ജർമ്മൻ", pronunciation: "doych" },
+                { german: "Deutschland", english: "Germany", malayalam: "ജർമ്മനി", pronunciation: "doych-land" },
+                { german: "lernen", english: "to learn", malayalam: "പഠിക്കുക", pronunciation: "ler-nen" }
+              ]
+            },
+            {
+              type: "note",
+              title: "Pünktlichkeit (Punctuality)",
+              variant: "tip",
+              content: "Germans worship time! If a meeting is at 10:00, you arrive at 09:55. 'Indian Stretchable Time' (IST) doesn't work there — punctuality is a sign of respect."
+            }
+          ]
         },
         {
           id: "v1-1-2",
-          title: "Malayalis in Germany — Real Success Stories",
+          title: "Malayalis in Germany: Which Path is Yours?",
           duration: "10:00",
-          description: "Hear how real Malayalis built their careers in Germany — nurses, engineers, and students who made it big",
+          description: "Nursing, IT, Studies, or Ausbildung? Find out which career pathway fits your background and what level of German you actually need.",
           scriptOutline: [
-            "Opening: 'Nammude aalukal Germany-il entha cheyyunne? Ella field-ilum und!'",
-            "Nursing boom: Kerala nurses-inu Germany-il kooduthal pay and better work-life balance und!",
-            "IT sector: Malayali software engineers at SAP, Siemens, and startups - mass entry!",
-            "Student stories: Free university education — TU Munich, RWTH Aachen — fee illaa!",
-            "Ausbildung path: Work cheythu padikkam, salary-um kittum!",
-            "The numbers: 20,000+ Indians move to Germany every year — trend set aanu!",
-            "Visa types: Blue Card, Student Visa — options galore!",
-            "Quality of life: Healthcare, travel, pinne 30 days vacation — chill cheyyaam!",
-            "Language requirement: A1 for family reunion, B1/B2 for jobs — scene illa, set aakkaam!",
-            "Kerala foods: Berlin-ilum Munich-ilum Malabar parotta kittum — extra level!",
-            "Motivational close: 'Ingane oru opportunity vere evideyum illa — let's grab it!'"
+            "The 4 Main Paths: Nursing, IT, Ausbildung, Studium",
+            "Requirements at a glance (Degree + Language)",
+            "The Blue Card: Fast-track for technical pros",
+            "Ausbildung: The 'earn while you learn' secret",
+            "Studium: Free master's and bachelor's degrees"
           ],
-          keyVocabulary: ["Arbeit", "Studium", "Ausbildung", "Visum"],
+          keyVocabulary: ["Krankenpfleger", "Ingenieur", "Ausbildung", "Studium", "Visum"],
           learningObjectives: [
-            "Know the different career paths available in Germany",
-            "Understand visa and language level requirements",
-            "Feel inspired by real Malayali success stories"
+            "Identify your personal career path to Germany",
+            "Learn the specific German level required for your goal",
+            "Understand the unique 'Ausbildung' system"
           ],
-          placeholderThumbnail: "/images/thumbnails/malayalis-germany.jpg"
+          placeholderThumbnail: "/images/thumbnails/pathways.jpg",
+          richContent: [
+            {
+              type: "note",
+              title: "Career Entry Points",
+              variant: "info",
+              content: "Germany offers 4 main entry points for Indians: Nursing (massive demand!), IT/Engineering (via Blue Card), Ausbildung (paid vocational training), and University Studium (free tuition)."
+            },
+            {
+              type: "table",
+              title: "Requirements at a Glance",
+              headers: ["Pathway", "Degree Needed", "German Level"],
+              rows: [
+                ["Nursing", "BSc/GNM", "B1 / B2"],
+                ["IT / Engg", "B.Tech/MCA", "A1 / B1"],
+                ["Ausbildung", "10th / 12th", "B1 / B2"],
+                ["Studium", "12th / Bachelors", "B2 / C1"]
+              ]
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Krankenpfleger", english: "Nurse", malayalam: "നഴ്സ്", pronunciation: "krahn-ken-pfley-ger" },
+                { german: "Ingenieur", english: "Engineer", malayalam: "എൻജിനീയർ", pronunciation: "in-zhen-yer" },
+                { german: "Ausbildung", english: "Vocational Tr.", malayalam: "തൊഴിൽ പഠനം", pronunciation: "ows-bil-doong" }
+              ]
+            },
+            {
+              type: "note",
+              title: "Ausbildung - The Hidden Gem",
+              variant: "tip",
+              content: "In an 'Ausbildung', you don't pay fees. Instead, the company pays YOU (€800–€1,200/month) while you learn the trade. It's the most stable way to settle without a university degree!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -114,68 +165,117 @@ export const MODULE_1: Module = {
       videos: [
         {
           id: "v1-2-1",
-          title: "You Already Know Some German Sounds!",
-          duration: "10:00",
-          description: "Malayalam sounds that match German - you're already ahead!",
+          title: "German Sounds: No Perfect Accent Needed",
+          duration: "11:30",
+          description: "Stop worrying about sounding like a movie star. Learn the key sounds that actually matter for being understood: Umlauts (ä, ö, ü) and 'ch'.",
           scriptOutline: [
-            "Introduction: 'Good news - you already know many German sounds!'",
-            "The 'ch' in 'ich' - similar to Malayalam ച sound",
-            "German 'r' - similar to Malayalam ര (not English R)",
-            "Hard consonants: k, t, p - same as Malayalam ക, ട, പ",
-            "The 'sch' sound = Malayalam ശ/ഷ — you already say this!",
-            "German 'w' sounds like English 'v' — think 'Wasser' = 'Vasser'",
-            "German 'v' sounds like English 'f' — think 'Vater' = 'Fahter'",
-            "The 'z' in German = 'ts' sound — like 'pizza' without the 'pi'",
-            "Practice words: ich, machen, Kuchen",
-            "Comparison exercise: Say Malayalam word, then German word",
-            "Common mistakes Indians make (and how to avoid them)",
-            "Tongue twisters: 'Fischers Fritz fischt frische Fische' — try it!"
+            "Goal: Be understood, not perfect native accent",
+            "Mouth Tricks: Easy ways to shape 'ö' and 'ü'",
+            "The Forward 'ä': Like the 'bed' in English",
+            "The Back and Front 'ch': Buch vs ich",
+            "Spelling Traps: W, V, Z, and St/Sp"
           ],
-          keyVocabulary: ["ich", "machen", "Kuchen"],
+          keyVocabulary: ["ä", "ö", "ü", "ch"],
           learningObjectives: [
-            "Recognize German sounds similar to Malayalam",
-            "Pronounce basic German words correctly",
-            "Build confidence in German pronunciation"
+            "Master the 3 Umlauts using simple mouth tricks",
+            "Distinguish between the two 'ch' sounds",
+            "Avoid the 4 most common spelling/pronunciation traps"
           ],
-          placeholderThumbnail: "/images/thumbnails/sounds-1.jpg"
+          placeholderThumbnail: "/images/thumbnails/pronunciation.jpg",
+          richContent: [
+            {
+              type: "note",
+              title: "Mouth Position Trick",
+              variant: "tip",
+              content: "Umlauts are easier than they look! \n- ö: Shape your mouth for 'E', but round your lips like 'O'. \n- ü: Shape your mouth for 'EE', but round your lips like 'U'. \nTry it: schön, München!"
+            },
+            {
+              type: "table",
+              title: "The 4 Spelling Traps",
+              headers: ["Letter", "Sounds Like", "Example"],
+              rows: [
+                ["W", "V", "Wasser (Vah-ser)"],
+                ["V", "F", "Vater (Fah-ter)"],
+                ["Z", "TS", "Zeit (Tsyte)"],
+                ["St / Sp", "Sht / Shp", "Straße / Spielen"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The two 'ch' sounds",
+              variant: "info",
+              content: "German has 2 sounds for 'ch': \n- Back (ach-Laut): After A, O, U (e.g., Buch, auch). Like clearing your throat! \n- Front (ich-Laut): After E, I, Ä, Ö, Ü (e.g., ich, Milch). Soft like a cat hissing."
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "schön", english: "beautiful", malayalam: "മനോഹരം", pronunciation: "shurn" },
+                { german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "muun-khen" },
+                { german: "Wasser", english: "water", malayalam: "വെള്ളം", pronunciation: "vahs-ser" }
+              ]
+            }
+          ]
         },
         {
           id: "v1-2-2",
-          title: "The Special German Sounds",
+          title: "Alphabet & Spelling: The Amt Survival Skill",
           duration: "10:00",
-          description: "Master the Umlauts and other unique German sounds",
+          description: "Learn how to spell your name and say your phone number in German. Essential for every visit to a government office (Amt) or filling out forms.",
           scriptOutline: [
-            "The Umlauts: ä, ö, ü - what they are",
-            "ä - like 'e' in 'bed' but longer",
-            "ö - round your lips like 'o', say 'e' (like Malayalam ഓ + എ mixed)",
-            "ü - round your lips like 'u', say 'i'",
-            "Practice ö: Think of it like saying 'e' through a straw — lips round, tongue forward",
-            "Practice ü: Whistle position + 'ee' sound = perfect ü",
-            "The ß (Eszett) - just a long 's' sound",
-            "The 'ch' sounds - ich-Laut vs ach-Laut",
-            "ich-Laut (after e, i, ä, ö, ü, consonants): soft, like a cat hissing gently",
-            "ach-Laut (after a, o, u, au): deeper, like you're clearing your throat after Malabar biryani",
-            "Practice: Mädchen, schön, München, Straße",
-            "The 'ei' vs 'ie' trap: 'ei' = 'eye', 'ie' = 'ee' — NEVER mix them up!",
-            "Tips for practicing at home: Record yourself, listen back, compare"
+            "The Amt Moment: 'Können Sie Ihren Namen buchstabieren?'",
+            "The 7 Trap Letters: J, W, V, Z, Y, R, ß",
+            "Spelling Your Name: Common Malayali name examples",
+            "Buchstabiertafel: Using 'A wie Anton' for clarity",
+            "Phone Numbers: Why Germans read them in pairs"
           ],
-          keyVocabulary: ["Mädchen", "schön", "München", "Straße"],
+          keyVocabulary: ["buchstabieren", "Buchstabe", "A wie Anton", "Telefonnummer"],
           learningObjectives: [
-            "Pronounce German Umlauts correctly",
-            "Understand when to use different 'ch' sounds",
-            "Know what ß represents"
+            "Spell your full name confidently in German",
+            "Say any phone number using the German pairing system",
+            "Master the 7 letters that differ from English names"
           ],
-          placeholderThumbnail: "/images/thumbnails/sounds-2.jpg"
+          placeholderThumbnail: "/images/thumbnails/alphabet.jpg",
+          richContent: [
+            {
+              type: "note",
+              title: "The 7 Trap Letters",
+              variant: "warning",
+              content: "These letters sound NOTHING like English. If you use the English names at a German office, the clerk will write the wrong thing! \n- J = 'yot', W = 'vay', V = 'fow', Z = 'tset', Y = 'üpsilon', R = 'err', ß = 'Eszett'."
+            },
+            {
+              type: "table",
+              title: "Phone Number Etiquette",
+              headers: ["Section", "How to Speak", "Example"],
+              rows: [
+                ["Prefix (0176)", "Digit by Digit", "null-eins-sieben-sechs"],
+                ["The Rest", "In Pairs (34 56)", "vierunddreißig..."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Clarifying on the Phone",
+              variant: "tip",
+              content: "Use 'Letter + wie + Name' to be super clear. \n- 'V wie Viktor' (not W) \n- 'J wie Julius' (not G)"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "buchstabieren", english: "to spell", malayalam: "അക്ഷരവിന്യാസം", pronunciation: "bookh-shtah-bee-ren" },
+                { german: "der Buchstabe", english: "letter", malayalam: "അക്ഷരം", pronunciation: "bookh-shtah-be" },
+                { german: "das Visum", english: "visa", malayalam: "വിസ", pronunciation: "vee-zoom" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
-        { id: "ex1-2-1", type: "multiple-choice", question: "Which German city name is often hard for English speakers, but easier for Malayalis due to the 'ch' and 'ü' sounds?", questionGerman: "Welcher Stadtname ist für Malayalis wegen 'ch' und 'ü' einfacher?", options: ["München", "Berlin", "Frankfurt", "Hamburg"], correctAnswer: "München", explanation: "English speakers say 'Munich', but the German 'München' uses the soft 'ch' (like Malayalam ച) and the 'ü'. Malayalis often master these 'tricky' sounds faster because our language has similar mouth positions!", xpReward: 10 },
+        { id: "ex1-2-1", type: "multiple-choice", question: "In German, 'schon' means 'already'. Adding two dots changes it to 'schön'. What does 'schön' mean?", questionGerman: "Was bedeutet 'schön'?", options: ["Beautiful", "Fast", "Old", "New"], correctAnswer: "Beautiful", explanation: "Two tiny dots (Umlaut) completely change the meaning! schon = already, schön = beautiful. These dots are NOT decorative — they change the vowel sound and meaning.", xpReward: 10 },
         { id: "ex1-2-2", type: "multiple-choice", question: "What is the ß called in German?", questionGerman: "Wie heißt das Zeichen 'ß'?", options: ["Eszett", "Umlaut", "Doppel-S", "Scharfes B"], correctAnswer: "Eszett", explanation: "ß (Eszett) = a long 'ss' sound. It appears after long vowels: Straße, Fuß. After short vowels, German uses 'ss' instead: Wasser, essen.", xpReward: 10 },
         { id: "ex1-2-3", type: "multiple-choice", question: "You see a sign that says 'Straße'. What does the ß tell you?", questionGerman: "Was bedeutet das ß in 'Straße'?", options: ["The 'a' before it is long", "It's a foreign word", "It's an old spelling", "The word is plural"], correctAnswer: "The 'a' before it is long", explanation: "ß (Eszett) appears after LONG vowels: Straße, Fuß, Maß. After SHORT vowels, German uses 'ss': Wasser, essen. The ß is your clue to stretch the vowel!", xpReward: 15 },
         { id: "ex1-2-4", type: "fill-blank", question: "German meaning changes with dots! 'Schon' means 'already', but 'Sch___n' means 'beautiful'.", questionGerman: "Schon = schon, aber Sch___n = schön. Ergänzen Sie:", options: ["ö", "ä", "ü", "o"], correctAnswer: "ö", explanation: "Small dots, big difference! 'Schon' (already) vs 'Schön' (beautiful). This is why mastering Umlauts (ä, ö, ü) is essential from Lesson 1.", xpReward: 10 },
-        { id: "ex1-2-5", type: "multiple-choice", question: "How is the German 'w' pronounced?", questionGerman: "Wie spricht man das 'w' aus?", options: ["Like English 'v'", "Like English 'w'", "Like English 'f'", "It is silent"], correctAnswer: "Like English 'v'", explanation: "Memory trick: German W = English V, German V = English F. So Wasser = 'Vasser', Vater = 'Fahter'. The letters are 'shifted' one position!", xpReward: 10 },
+        { id: "ex1-2-5", type: "multiple-choice", question: "You see a German menu that says 'Wasser'. An English speaker would read it as 'Wasser', but Germans actually say it more like...?", questionGerman: "Wie sagen Deutsche 'Wasser'?", options: ["Vasser", "Wasser (same as English)", "Fasser", "Hasser"], correctAnswer: "Vasser", explanation: "German W = English V sound. So Wasser sounds like 'Vasser'. Similarly, 'Wein' (wine) = 'Vine'. This W→V shift trips up every beginner!", xpReward: 10 },
         { id: "ex1-2-6", type: "multiple-choice", question: "You're in Germany and someone says 'Tseit' out loud. Which word did they say?", questionGerman: "Jemand sagt 'Tseit'. Welches Wort?", options: ["Zeit (time)", "Seit (since)", "Seite (page)", "Ziel (goal)"], correctAnswer: "Zeit (time)", explanation: "German Z is always pronounced 'ts'. So 'Zeit' (time) sounds like 'Tsait'. This 'ts' start catches every beginner — but you'll hear it everywhere: Zeitung (newspaper), zusammen (together), Zimmer (room).", xpReward: 15 },
-        { id: "ex1-2-7", type: "multiple-choice", question: "In the word 'Bier' (beer), how is 'ie' pronounced?", questionGerman: "Wie spricht man 'ie' in 'Bier' aus?", options: ["Like 'ee' in 'see'", "Like 'eye'", "Like 'ay'", "It is silent"], correctAnswer: "Like 'ee' in 'see'", explanation: "The 'ie' vs 'ei' rule: the SECOND letter wins. 'ie' → the 'e' sound = 'ee'. 'ei' → the 'i' sound = 'eye'. Bier = 'beer', Bein = 'byne'.", xpReward: 10 },
+        { id: "ex1-2-7", type: "multiple-choice", question: "German 'ie' and 'ei' look similar but sound completely different. 'Bier' means beer, 'Bein' means leg. Which rule helps you remember?", questionGerman: "Wie unterscheidet man 'ie' und 'ei'?", options: ["The SECOND letter determines the sound", "The FIRST letter determines the sound", "They sound the same", "It depends on the word"], correctAnswer: "The SECOND letter determines the sound", explanation: "The second letter wins! ie → long 'ee' (Bier = beer), ei → long 'eye' (Bein = byne). This rule NEVER has exceptions in German. Memorize it once, use it forever.", xpReward: 10 },
         { id: "ex1-2-8", type: "multiple-choice", question: "A German friend texts you 'Ich wohne in der Königstraße'. What two special characters appear?", questionGerman: "Welche zwei besonderen Zeichen stehen in 'Königstraße'?", options: ["ö and ß", "ä and ü", "ö and ü", "ß and ä"], correctAnswer: "ö and ß", explanation: "König (king) has ö, Straße (street) has ß. You'll see these special characters everywhere in German — get comfortable spotting them!", xpReward: 15 }
       ],
       vocabulary: [
@@ -203,57 +303,104 @@ export const MODULE_1: Module = {
       videos: [
         {
           id: "v1-3-1",
-          title: "Saying Hello the German Way",
-          duration: "10:00",
-          description: "Master all the German greetings for different times of day",
+          title: "Guten Tag! German Greetings for Real Life",
+          duration: "10:30",
+          description: "Forget 10 greetings, start with the 4 you actually need. Master the safe defaults for shops, offices, and exams.",
           scriptOutline: [
-            "Opening: Start with 'Namaskaram... or should I say, Guten Tag!'",
-            "Hallo! - Common 'Hi' (informal)",
-            "Guten Morgen! - Morning wish (like nammude normal 'Morning'!)",
-            "Guten Tag! - Good day (formal, evening vare upayogikkaam)",
-            "Guten Abend! - Evening wish",
-            "Gute Nacht! - Only for bed-time (urungaan pokumpo mathram!)",
-            "Regional: Grüß Gott (Bavaria), Moin (North), Servus (Austria) — kidu variations!",
-            "Practice: Meeting boss vs meeting friend — level change und!",
-            "The handshake: Germans shake hands a lot — firm handshake mass aanu!",
-            "Kerala parallel: Like 'Enna vishesham' vs formal 'Namasthe'",
-            "Body language: Nod correctly, don't do the Indian head wobble — trap aanu!",
-            "Quick practice: Say each 3 times — set aakkaam!"
+            "The 5-second rule: Why greetings matter in Germany",
+            "The Starter Toolkit: Morgen, Tag, Abend, Hallo",
+            "Formal or Casual? Choosing between Sie and du",
+            "Wie geht's? The 'Ask Back' rule",
+            "Roleplays: Safe formal and informal openings"
           ],
-          keyVocabulary: ["Hallo", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht"],
+          keyVocabulary: ["Guten Tag", "Guten Morgen", "Guten Abend", "Hallo"],
           learningObjectives: [
-            "Greet people appropriately at different times",
-            "Know when to use formal vs informal greetings",
-            "Pronounce greetings correctly"
+            "Greet anyone appropriately based on the time of day",
+            "Differentiate between formal and informal social contexts",
+            "Respond naturally to 'How are you?' questions"
           ],
-          placeholderThumbnail: "/images/thumbnails/greetings-1.jpg"
+          placeholderThumbnail: "/images/thumbnails/greetings.jpg",
+          richContent: [
+            {
+              type: "note",
+              title: "The Starter Toolkit",
+              variant: "info",
+              content: "You only need 4 tools to greet anyone in Germany! \n- Guten Morgen: Morning (until ~11:00) \n- Guten Tag: Day (Standard safe default!) \n- Guten Abend: Evening (after ~18:00) \n- Hallo: Anytime / Informal"
+            },
+            {
+              type: "table",
+              title: "Respect Levels: Sie vs. du",
+              headers: ["German", "Malayalam Parallel", "Relationship"],
+              rows: [
+                ["Sie (Formal)", "നിങ്ങൾ / താങ്കൾ", "Officials, Bosses, Strangers"],
+                ["du (Informal)", "നീ", "Friends, Family, Classmates"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The 'Ask Back' Rule",
+              variant: "tip",
+              content: "In Germany, if someone asks 'How are you?', it's polite to ask back. \n- Formal: 'Gut, danke! Und Ihnen?' \n- Informal: 'Gut, danke! Und dir?' \nNever just say 'I am fine' and stop — it sounds abrupt!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Guten Tag", english: "Good day", malayalam: "ശുഭദിനം", pronunciation: "goo-ten tahk" },
+                { german: "Wie geht es Ihnen?", english: "How are you? (F)", malayalam: "എങ്ങനെയുണ്ട്?", pronunciation: "vee geyt es ee-nen" },
+                { german: "Freut mich", english: "Nice to meet you", malayalam: "കണ്ടതിൽ സന്തോഷം", pronunciation: "froy-t mikh" }
+              ]
+            }
+          ]
         },
         {
           id: "v1-3-2",
-          title: "Formal vs Informal - Like 'Ningal' vs 'Nee'",
+          title: "Formal vs Informal: Like 'Ningal' vs 'Nee'",
           duration: "10:00",
-          description: "Understanding Sie vs Du - the German respect system",
+          description: "Master the German respect system using your Malayalam intuition. Learn exactly when to switch and how it affects the grammar.",
           scriptOutline: [
-            "Introduction: Germans also have formal/informal like Malayalam!",
-            "Sie - formal 'you' (like Malayalam 'Ningal/Thangal')",
-            "Du - informal 'you' (like Malayalam 'Nee')",
-            "When to use Sie: Boss, strangers, elderly, officials",
-            "When to use Du: Friends, family, children, peers who offer",
-            "The 'Duzen' - when someone offers to use Du",
-            "Real-world scenario: Your first day at a German office",
-            "Common mistake: Using Du with professors/bosses — could be super awkward!",
-            "Practice dialogues: Formal meeting vs casual café chat",
-            "How verb forms change: 'Haben Sie..?' vs 'Hast du..?'",
-            "Email etiquette: 'Sehr geehrte/r...' (formal) vs 'Liebe/r...' (informal)",
-            "Tip: When in doubt, use Sie! Better to be too formal than too casual"
+            "Direct Parallel: Sie = Ningal / du = Nee",
+            "The Verb Change: -en vs -st endings",
+            "The 'Duzen' Switch: Moving from formal to casual",
+            "Exam Tip: Why you should ALWAYS use 'Sie' in exams"
           ],
-          keyVocabulary: ["Sie", "du", "Herr", "Frau"],
+          keyVocabulary: ["Sie", "du", "Ihnen", "dir"],
           learningObjectives: [
-            "Understand the Sie/Du distinction",
-            "Know when to use each form",
-            "Avoid common respect-related mistakes"
+            "Use your Malayalam intuition to choose the right pronoun",
+            "Pair 'Sie' and 'du' with correct verb endings",
+            "Navigate social transitions from formal to informal"
           ],
-          placeholderThumbnail: "/images/thumbnails/greetings-2.jpg"
+          placeholderThumbnail: "/images/thumbnails/sie-vs-du.jpg",
+          richContent: [
+            {
+              type: "table",
+              title: "Like Malayalam!",
+              headers: ["German", "Malayalam Parellel", "Relationship"],
+              rows: [
+                ["Sie (Formal)", "നിങ്ങൾ / താങ്കൾ", "Bosses, Strangers, Elders"],
+                ["du (Informal)", "നീ", "Friends, Family, Kids"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Verb Endings Change",
+              variant: "info",
+              content: "It's not just the word 'you' that changes. The verb must match: \n- Sie takes -en (e.g., Wo wohnen Sie?) \n- du takes -st (e.g., Wo wohnst du?) \nTip: 'Sie' is smooth, 'du' has a hiss!"
+            },
+            {
+              type: "note",
+              title: "The Exam Rule",
+              variant: "warning",
+              content: "In the Goethe A1 exam, NEVER use 'du' with the examiner. Always use Sie, even if they are friendly."
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Wie heißen Sie?", english: "What is your name? (F)", malayalam: "താങ്കളുടെ പേരെന്താണ്?", pronunciation: "vee hy-sen zee" },
+                { german: "Ihnen", english: "to you (F)", malayalam: "താങ്കൾക്ക്", pronunciation: "ee-nen" },
+                { german: "dir", english: "to you (I)", malayalam: "നിനക്ക്", pronunciation: "deer" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -264,7 +411,7 @@ export const MODULE_1: Module = {
         { id: "ex1-3-5", type: "fill-blank", question: "Complete: Guten _____, wie geht es Ihnen? (It's 3 PM)", questionGerman: "Ergänzen Sie: Guten _____, wie geht es Ihnen?", options: ["Tag", "Morgen", "Abend", "Nacht"], correctAnswer: "Tag", explanation: "'Guten Tag' covers noon to ~6 PM. Memory trick: Tag = day = daylight hours. Once the sun sets, switch to 'Guten Abend'.", xpReward: 10 },
         { id: "ex1-3-6", type: "multiple-choice", question: "Which regional German greeting is used in Bavaria (southern Germany)?", questionGerman: "Welcher regionale Gruß wird in Bayern verwendet?", options: ["Grüß Gott", "Moin", "Tach", "Ahoi"], correctAnswer: "Grüß Gott", explanation: "Germany has regional greetings! Grüß Gott (Bavaria/Austria), Moin (North), Servus (Austria). At A1 level, stick with Hallo/Guten Tag — universally understood.", xpReward: 10 },
         { id: "ex1-3-7", type: "ordering", question: "Put these greetings in order from morning to night:", questionGerman: "Bringen Sie die Grüße in die richtige Reihenfolge (Morgen bis Nacht):", options: ["Gute Nacht", "Guten Morgen", "Guten Abend", "Guten Tag"], correctAnswer: ["Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht"], xpReward: 20 },
-        { id: "ex1-3-8", type: "fill-blank", question: "You walk into a small local bakery. What is the expected polite greeting?", questionGerman: "Sie gehen in eine kleine Bäckerei. Wie grüßen Sie?", options: ["Guten Tag", "Tschüss", "Gute Nacht", "Mahnzeit"], correctAnswer: "Guten Tag", explanation: "In Germany, when entering small shops, bakeries, or doctors' offices, it is polite and expected to say 'Guten Tag' or 'Hallo' to everyone, not just the staff. It's part of being 'höflich' (polite).", xpReward: 10 }
+        { id: "ex1-3-8", type: "multiple-choice", question: "You walk into a small local bakery. What is the expected polite greeting?", questionGerman: "Sie gehen in eine kleine Bäckerei. Wie grüßen Sie?", options: ["Guten Tag", "Tschüss", "Gute Nacht", "Mahnzeit"], correctAnswer: "Guten Tag", explanation: "In Germany, when entering small shops, bakeries, or doctors' offices, it is polite and expected to say 'Guten Tag' or 'Hallo' to everyone, not just the staff. It's part of being 'höflich' (polite).", xpReward: 10 }
       ],
       vocabulary: [
         { id: "vocab1-3-1", german: "Hallo", english: "Hello", malayalam: "ഹലോ", pronunciation: "hah-loh", example: "Hallo, wie geht's?", exampleTranslation: "Hello, how are you?" },
@@ -283,84 +430,127 @@ export const MODULE_1: Module = {
     // ===================== LESSON 1-4 =====================
     {
       id: "1-4",
-      title: "Goodbye & Polite Words",
-      titleGerman: "Auf Wiedersehen & Höfliche Wörter",
-      description: "Learn to say goodbye politely and master essential courtesy phrases. Germans take politeness seriously — 'Bitte' and 'Danke' are your survival toolkit!",
+      title: "Goodbyes & Politeness (The Survival Kit)",
+      titleGerman: "Abschied und Höflichkeit",
+      description: "Ending a conversation is as important as starting one. Master the 'Danke/Bitte' dance and learn which 'sorry' to use when you're in a pinch.",
       duration: "45 min",
       xpReward: 120,
       videos: [
         {
           id: "v1-4-1",
           title: "Saying Goodbye & Being Polite",
-          duration: "10:00",
-          description: "Master farewell expressions and essential polite words",
+          duration: "10:45",
+          description: "A compact polite-exit toolkit: the safest goodbyes, the Danke/Bitte exchange, and common beginner traps.",
           scriptOutline: [
-            "Opening: 'Before we say Auf Wiedersehen to this lesson...'",
-            "Auf Wiedersehen! - Formal goodbye (pinne kaanaam type)",
-            "Tschüss! - Casual 'Bye!'",
-            "Bis bald! - See you soon",
-            "Bis später! - See you later",
-            "Bis morgen! - See you tomorrow — office-il ithu main aanu",
-            "Danke! - Thanks (nammude standard 'Nanni' system)",
-            "Danke schön! / Vielen Dank! - Thank you very much / Big thanks",
-            "Bitte! - Please / You're welcome (2-in-1 tool aanu!)",
-            "Entschuldigung! - Excuse me / Sorry (light focus)",
-            "Es tut mir leid - I'm sorry (more sincere than Entschuldigung)",
-            "Practice scenarios: Leaving office, leaving friend's house, shopping",
-            "Pro tip: Germans say 'Bitte schön' when handing something to you — reply 'Danke schön'"
+            "Exit Toolkit: Auf Wiedersehen, Tschüss, Gute Nacht",
+            "Phone Logic: Seeing (sehen) vs Hearing (hören)",
+            "The Danke / Bitte Dance: More than just thanks",
+            "Entschuldigung vs Es tut mir leid: getting attention vs real apologies"
           ],
           keyVocabulary: ["Auf Wiedersehen", "Tschüss", "Danke", "Bitte", "Entschuldigung"],
           learningObjectives: [
-            "Say goodbye in formal and informal situations",
-            "Use thank you and please appropriately",
-            "Apologize or get attention politely"
+            "Use the correct goodbye based on formal/informal setting",
+            "Apply the Danke/Bitte exchange naturally",
+            "Differentiate between the two types of German apologies"
           ],
-          placeholderThumbnail: "/images/thumbnails/goodbye-1.jpg"
+          placeholderThumbnail: "/images/thumbnails/goodbyes.jpg",
+          richContent: [
+            {
+              type: "note",
+              title: "The 3 Goodbyes",
+              variant: "info",
+              content: "Don't just say 'Bye'. Choose the right level: \n- Auf Wiedersehen: Formal (Offices, shops, exams) \n- Tschüss: Casual (Friends, classmates) \n- Gute Nacht: ONLY for bedtime!"
+            },
+            {
+              type: "table",
+              title: "The 'Bitte' Magic Word",
+              headers: ["Context", "Meaning", "Example"],
+              rows: [
+                ["After 'Danke'", "You're welcome", "Danke! - Bitte!"],
+                ["Making a request", "Please", "Ein Brot, bitte."],
+                ["Giving something", "Here you go", "Hier, bitte."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Entschuldigung vs. Es tut mir leid",
+              variant: "warning",
+              content: "Which 'Sorry' should you use? \n- Entschuldigung: Getting attention or a small mistake (Excuse me). \n- Es tut mir leid: A real apology for something bigger (I'm sorry). \nTip: Use 'Entschuldigung' at a counter to get the staff's attention!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Auf Wiederhören", english: "Goodbye (Phone)", malayalam: "ഫോണിൽ സംസാരിച്ച് തീരുമ്പോൾ", pronunciation: "owf-vee-der-her-ren" },
+                { german: "Danke schön", english: "Thank you very much", malayalam: "വളരെയധികം നന്ദി", pronunciation: "dahn-ke shurn" },
+                { german: "Bitte schön", english: "You're very welcome", malayalam: "സന്തോഷമേയുള്ളൂ", pronunciation: "bit-te shurn" }
+              ]
+            }
+          ]
         },
         {
           id: "v1-4-2",
-          title: "Polite Phrases That Will Save Your Life in Germany",
+          title: "Survival Politeness: The Magic Words at Work",
           duration: "10:00",
-          description: "Essential phrases for daily survival — shopping, asking directions, and not being rude!",
+          description: "Watch the magic words in action at 3 real-world spots: the bakery, the supermarket, and the street.",
           scriptOutline: [
-            "Opening: 'These phrases are your BEST friends in Germany!'",
-            "At the bakery: 'Ein Brötchen, bitte!' — ordering bread rolls (Germans LOVE their bread!)",
-            "At the Kasse (checkout): 'Bitte' when paying, 'Danke' when receiving change",
-            "Asking for help: 'Entschuldigung, können Sie mir helfen?'",
-            "When you don't understand: 'Entschuldigung, ich verstehe nicht'",
-            "Saying sorry when you bump someone: 'Oh! Entschuldigung!'",
-            "The magic word combo: 'Bitte schön' + 'Danke schön' — use them EVERYWHERE",
-            "Kein Problem! — No problem! (When someone thanks you)",
-            "Gern geschehen! — You're welcome! (More polite version)",
-            "Kerala parallel: Think of German 'Bitte' as our 'Please' — it opens all doors",
-            "Common situation: Holding the door open — Germans expect 'Danke' every time!",
-            "Practice: Role-play buying chai... err, Kaffee at a German café"
+            "The Bakery Pattern: Number + Item + bitte",
+            "The Supermarket Kasse: 'Einen schönen Tag noch!'",
+            "The Street: 'Entschuldigung, können Sie mir helfen?'",
+            "The Exam Rule: 'Wie bitte?' for easy points"
           ],
-          keyVocabulary: ["Kein Problem", "Gern geschehen", "ich verstehe nicht", "helfen"],
+          keyVocabulary: ["Bäckerei", "Kasse", "Karte", "helfen"],
           learningObjectives: [
-            "Handle basic polite interactions in shops and streets",
-            "Know what to say when you don't understand something",
-            "Use polite phrases naturally in daily life"
+            "Order food and drink using the standard polite pattern",
+            "Sound like a pro at the supermarket checkout",
+            "Ask for help from strangers with the correct attention-getter"
           ],
-          placeholderThumbnail: "/images/thumbnails/polite-phrases.jpg"
+          placeholderThumbnail: "/images/thumbnails/politeness-scenarios.jpg",
+          richContent: [
+            {
+              type: "note",
+              title: "The Magic Bakery Pattern",
+              variant: "info",
+              content: "When ordering at a German bakery (Bäckerei), use this pattern: \n- Number + Item + bitte. \n- Example: 'Ein Brötchen, bitte.' (One roll, please.)"
+            },
+            {
+              type: "table",
+              title: "Politeness Matrix",
+              headers: ["Action", "Phrase", "Meaning"],
+              rows: [
+                ["Handing something over", "Hier, bitte schön.", "Here you go."],
+                ["Leaving a shop", "Einen schönen Tag noch!", "Have a nice day!"],
+                ["Responding to thanks", "Gern geschehen!", "You're welcome!"],
+                ["Pardon? (To examiner)", "Wie bitte?", "What please? / Pardon?"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The 'Magic Exit' Phrase",
+              variant: "tip",
+              content: "Instead of just saying 'Tschüss' at the checkout, say: \n- 'Einen schönen Tag noch!' (Have a nice day!) \n- The staff will reply: 'Danke, ebenfalls!' (Thanks, you too!)"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "die Bäckerei", english: "bakery", malayalam: "ബേക്കറി", pronunciation: "beck-er-eye" },
+                { german: "Mit Karte, bitte", english: "With card, please", malayalam: "കാർഡ് വഴി പേ ചെയ്യാം", pronunciation: "mit kar-te bit-te" },
+                { german: "Wie viel kostet das?", english: "How much is it?", malayalam: "ഇതിന് എത്ര രൂപയാകും?", pronunciation: "vee-feel kos-tet dahs" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
-        { id: "ex1-4-1", type: "multiple-choice", question: "You're leaving a business meeting. What do you say?", questionGerman: "Sie verlassen ein Geschäftstreffen. Was sagen Sie?", options: ["Auf Wiedersehen!", "Tschüss!", "Bis bald!", "Hallo!"], correctAnswer: "Auf Wiedersehen!", explanation: "'Auf Wiedersehen' literally means 'until we see again' — formal and polite. For casual goodbyes, use 'Tschüss'. Rule: formal setting = Auf Wiedersehen.", xpReward: 10 },
-        { id: "ex1-4-2", type: "multiple-choice", question: "What does 'Bitte' mean when someone says 'Danke' to you?", questionGerman: "Was bedeutet 'Bitte', wenn jemand 'Danke' sagt?", options: ["You're welcome", "Please", "Sorry", "Hello"], correctAnswer: "You're welcome", explanation: "'Bitte' is a 2-in-1 word! Before getting something: 'Bitte' = please. After 'Danke': 'Bitte' = you're welcome. Context decides the meaning.", xpReward: 10 },
-        { id: "ex1-4-3", type: "fill-blank", question: "Complete: _____ schön! (Thank you very much)", questionGerman: "Ergänzen Sie: _____ schön!", options: ["Danke", "Bitte", "Guten", "Auf"], correctAnswer: "Danke", xpReward: 10 },
-        { id: "ex1-4-4", type: "multiple-choice", question: "You accidentally bump into someone. What do you say?", questionGerman: "Sie stoßen versehentlich gegen jemanden. Was sagen Sie?", options: ["Entschuldigung!", "Danke!", "Tschüss!", "Bitte!"], correctAnswer: "Entschuldigung!", explanation: "'Entschuldigung' works for both bumping into someone AND getting attention. It's your Swiss Army knife for polite German interactions.", xpReward: 10 },
-        { id: "ex1-4-5", type: "matching", question: "Match the German phrase to its English meaning:", questionGerman: "Verbinden Sie den deutschen Ausdruck mit dem Englischen:", options: ["Auf Wiedersehen", "Bis bald", "Bis morgen", "Tschüss"], correctAnswer: ["Goodbye (formal)", "See you soon", "See you tomorrow", "Bye (casual)"], xpReward: 15 },
-        { id: "ex1-4-6", type: "fill-blank", question: "You don't understand something. Complete: Entschuldigung, ich _____ nicht.", questionGerman: "Sie verstehen etwas nicht. Ergänzen Sie: Entschuldigung, ich _____ nicht.", options: ["verstehe", "spreche", "danke", "bitte"], correctAnswer: "verstehe", explanation: "'Ich verstehe nicht' = 'I don't understand'. This is your survival phrase #1 in Germany. Say it confidently and Germans will slow down for you.", xpReward: 10 },
-        { id: "ex1-4-7", type: "ordering", question: "You're at a traditional German bakery. Order of a typical 'Nur Barzahlung' (Cash only) interaction:", questionGerman: "Bringen Sie die Interaktion in einer traditionellen Bäckerei (Barzahlung) in die richtige Reihenfolge:", options: ["'Nur Barzahlung!' (Cash only!)", "'Ein Brötchen, bitte!'", "'Danke schön!'", "Wait for change (Wechselgeld)"], correctAnswer: ["'Ein Brötchen, bitte!'", "'Nur Barzahlung!' (Cash only!)", "Wait for change (Wechselgeld)", "'Danke schön!'"], explanation: "Many small German shops and bakeries still follow the 'Nur Bares ist Wahres' (Only cash is true) rule. Always carry some coins — your card might not be welcome at the local Bäckerei!", xpReward: 20 },
-        { id: "ex1-4-8", type: "multiple-choice", question: "Which phrase expresses a more sincere apology than 'Entschuldigung'?", questionGerman: "Welcher Ausdruck ist eine ehrlichere Entschuldigung?", options: ["Es tut mir leid", "Danke schön", "Auf Wiedersehen", "Kein Problem"], correctAnswer: "Es tut mir leid", explanation: "Two levels of sorry: 'Entschuldigung' = light (oops!), 'Es tut mir leid' = sincere (I'm truly sorry). Use 'Es tut mir leid' when something is genuinely your fault.", xpReward: 10 }
+        { id: "ex1-4-1", type: "multiple-choice", question: "Which phrase is used specifically for goodbyes on the PHONE?", questionGerman: "Welche Phrase nutzt man speziell für Verabschiedungen am TELEFON?", options: ["Auf Wiedersehen", "Auf Wiederhören", "Tschüss", "Gute Nacht"], correctAnswer: "Auf Wiederhören", explanation: "Sehen = to see, Hören = to hear. On the phone, you don't see them, you hear them! 'Auf Wiederhören' shows you have great German telephone habits.", xpReward: 10 },
+        { id: "ex1-4-2", type: "multiple-choice", question: "You bumped into someone accidentally at the train station. What do you say?", questionGerman: "Sie sind am Bahnhof gegen jemanden gestoßen. Was sagen Sie?", options: ["Entschuldigung!", "Bitte!", "Guten Tag!", "Kein Problem!"], correctAnswer: "Entschuldigung!", explanation: "Use 'Entschuldigung' for small interruptions or accidental bumps. It works just like 'Excuse me' or 'Sorry'.", xpReward: 10 },
+        { id: "ex1-4-3", type: "fill-blank", question: "Complete the checkout phrase: Einen _____ Tag noch!", questionGerman: "Ergänzen Sie den Kassenspruch: Einen _____ Tag noch!", options: ["schönen", "guten", "bitte", "danke"], correctAnswer: "schönen", explanation: "'Einen schönen Tag noch!' (Have a nice day) is the pro way to leave a shop or supermarket.", xpReward: 10 }
       ],
       vocabulary: [
         { id: "vocab1-4-1", german: "Auf Wiedersehen", english: "Goodbye (formal)", malayalam: "വിട (ഔപചാരികം)", pronunciation: "owf vee-der-zey-en", example: "Auf Wiedersehen, bis Montag!", exampleTranslation: "Goodbye, see you Monday!" },
         { id: "vocab1-4-2", german: "Tschüss", english: "Bye (casual)", malayalam: "ബൈ", pronunciation: "chüss", example: "Tschüss, mach's gut!", exampleTranslation: "Bye, take care!" },
         { id: "vocab1-4-3", german: "Danke", english: "Thank you", malayalam: "നന്ദി", pronunciation: "dahn-ke", example: "Danke für die Hilfe!", exampleTranslation: "Thank you for the help!" },
         { id: "vocab1-4-4", german: "Bitte", english: "Please / You're welcome", malayalam: "ദയവായി / ഒന്നുമില്ല", pronunciation: "bit-te", example: "Kann ich bitte einen Kaffee haben?", exampleTranslation: "Can I please have a coffee?" },
-        { id: "vocab1-4-5", german: "Entschuldigung", english: "Excuse me / Sorry", malayalam: "ക്ഷമിക്കണം", pronunciation: "ent-shool-di-goong", example: "Entschuldigung, wo ist der Bahnhof?", exampleTranslation: "Excuse me, where is the train station?" },
+        { id: "vocab1-4-5", german: "Entschuldigung", english: "Excuse me / Sorry", malayalam: "ക്ഷമിക്കണം", pronunciation: "ent-shool-di-goong", example: "Entschuldigung, wo ist der Bahnhof?", exampleTranslation: "Excuse me, where is the train station!" },
         { id: "vocab1-4-6", german: "Vielen Dank", english: "Many thanks", malayalam: "വളരെ നന്ദി", pronunciation: "fee-len dahnk", example: "Vielen Dank für alles!", exampleTranslation: "Many thanks for everything!" },
         { id: "vocab1-4-7", german: "Bis bald", english: "See you soon", malayalam: "ഉടനെ കാണാം", pronunciation: "bis bahlt", example: "Tschüss, bis bald!", exampleTranslation: "Bye, see you soon!" },
         { id: "vocab1-4-8", german: "Es tut mir leid", english: "I'm sorry", malayalam: "എനിക്ക് ദുഃഖമുണ്ട്", pronunciation: "es toot meer lyte", example: "Es tut mir leid, das war mein Fehler.", exampleTranslation: "I'm sorry, that was my mistake." },

@@ -1,136 +1,305 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, RefreshCw } from 'lucide-react';
+import { ArrowLeft, RefreshCw, Send } from 'lucide-react';
 import { CharacterGuide } from '@/components/character';
 import { Confetti, Stars } from '@/components/game';
 import { useGameStore } from '@/lib/store';
 import type { KuttanMood } from '@/components/character';
 
-// --- Scenario data ---
+// --- Types ---
+type GreetingPeriod = 'morning' | 'afternoon' | 'evening' | 'night';
+type Difficulty = 'basic' | 'farewell' | 'formal';
+
 interface GreetingScenario {
   time: string;
   scene: string;
   who: string;
-  answer: string;
-  period: 'morning' | 'afternoon' | 'evening' | 'night';
+  answers: string[];          // all acceptable greetings (first is the "best" one shown)
+  period: GreetingPeriod;
   culturalNote: string;
+  difficulty: Difficulty;
+  hint?: string;              // shown below the input for harder rounds
 }
 
-const SCENARIOS: GreetingScenario[] = [
+// --- Scenario pool ---
+const ALL_SCENARIOS: GreetingScenario[] = [
+  // ===== BASIC (Rounds 1-5): Morgen / Tag / Abend / Nacht =====
   {
     time: '7:30',
     scene: 'You wake up and call your German friend.',
     who: 'your friend Lisa',
-    answer: 'Guten Morgen',
+    answers: ['Guten Morgen'],
     period: 'morning',
-    culturalNote: 'Germans typically greet friends with "Guten Morgen" until about 11 AM. Close friends might just say "Morgen!"',
+    difficulty: 'basic',
+    culturalNote:
+      'Germans typically greet friends with "Guten Morgen" until about 11 AM. Close friends might just say "Morgen!"',
   },
   {
     time: '9:00',
     scene: 'You arrive at the office. Your boss is at reception.',
     who: 'Herr Mueller (boss)',
-    answer: 'Guten Morgen',
+    answers: ['Guten Morgen'],
     period: 'morning',
-    culturalNote: 'In Germany, you greet your boss with "Guten Morgen, Herr Mueller!" — formal and polite! Always use the last name unless invited to use first names.',
+    difficulty: 'basic',
+    culturalNote:
+      'In Germany, you greet your boss with "Guten Morgen, Herr Mueller!" \u2014 formal and polite! Always use the last name unless invited to use first names.',
   },
   {
     time: '12:30',
     scene: 'You enter a restaurant for lunch.',
     who: 'the waiter',
-    answer: 'Guten Tag',
+    answers: ['Guten Tag'],
     period: 'afternoon',
-    culturalNote: '"Guten Tag" is the universal safe greeting from late morning onwards. In restaurants, some people just say "Tag!" informally.',
-  },
-  {
-    time: '15:00',
-    scene: 'You meet a neighbor on the street.',
-    who: 'Frau Schmidt',
-    answer: 'Guten Tag',
-    period: 'afternoon',
-    culturalNote: 'Meeting neighbors? "Guten Tag, Frau Schmidt!" — Germans love their polite greetings. Kerala-il "namaskaram" parayunna pole!',
+    difficulty: 'basic',
+    culturalNote:
+      '"Guten Tag" is the universal safe greeting from late morning onwards. In restaurants, some people just say "Tag!" informally.',
   },
   {
     time: '18:30',
     scene: 'You arrive at a dinner party.',
     who: 'your host couple',
-    answer: 'Guten Abend',
+    answers: ['Guten Abend'],
     period: 'evening',
-    culturalNote: '"Guten Abend" starts around 6 PM. At dinner parties, you greet each person individually — very different from a group "hello"!',
-  },
-  {
-    time: '20:00',
-    scene: 'You join a late study group at the library.',
-    who: 'fellow students',
-    answer: 'Guten Abend',
-    period: 'evening',
-    culturalNote: 'Even at 8 PM, "Guten Abend" is correct. With friends you might hear "Na?" or "Hey!" but "Guten Abend" is always safe.',
-  },
-  {
-    time: '22:30',
-    scene: 'Your roommate is going to bed.',
-    who: 'your roommate',
-    answer: 'Gute Nacht',
-    period: 'night',
-    culturalNote: '"Gute Nacht" is specifically for saying goodbye at night / when someone is going to sleep. Kerala-il "shubha rathri" parayunna pole!',
+    difficulty: 'basic',
+    culturalNote:
+      '"Guten Abend" starts around 6 PM. At dinner parties, you greet each person individually \u2014 very different from a group "hello"!',
   },
   {
     time: '23:45',
     scene: 'You finish a video call with your family in Kerala.',
     who: 'your Amma',
-    answer: 'Gute Nacht',
+    answers: ['Gute Nacht'],
     period: 'night',
-    culturalNote: '"Gute Nacht" to end a late night call is perfect. Your Amma would be proud you\'re learning German properly!',
+    difficulty: 'basic',
+    culturalNote:
+      '"Gute Nacht" to end a late night call is perfect. Your Amma would be proud you\'re learning German properly!',
+  },
+
+  // ===== FAREWELL (Rounds 6-10): Tsch\u00fcss / Auf Wiedersehen / Bis morgen / Bis bald =====
+  {
+    time: '17:00',
+    scene: 'You leave the office for the day. Your colleagues wave.',
+    who: 'your colleagues',
+    answers: ['Tsch\u00fcss', 'Tschuss'],
+    period: 'afternoon',
+    difficulty: 'farewell',
+    hint: 'Informal goodbye \u2014 among colleagues you see daily',
+    culturalNote:
+      '"Tsch\u00fcss" is the everyday informal goodbye. Think of it as the German "bye!" \u2014 Kerala-il "poyitt varaam" enna parayan pole.',
+  },
+  {
+    time: '16:00',
+    scene: 'You leave the doctor\u2019s office after your appointment.',
+    who: 'Dr. Braun and the receptionist',
+    answers: ['Auf Wiedersehen'],
+    period: 'afternoon',
+    difficulty: 'farewell',
+    hint: 'Formal goodbye \u2014 professional setting',
+    culturalNote:
+      '"Auf Wiedersehen" literally means "until we see each other again." Use it with doctors, officials, and strangers you\'re being polite to.',
+  },
+  {
+    time: '15:00',
+    scene: 'You meet a neighbor on the street and chat briefly.',
+    who: 'Frau Schmidt',
+    answers: ['Auf Wiedersehen', 'Tsch\u00fcss', 'Tschuss'],
+    period: 'afternoon',
+    difficulty: 'farewell',
+    hint: 'Saying goodbye to a neighbor \u2014 polite or casual both work',
+    culturalNote:
+      'With neighbors, either "Auf Wiedersehen" (polite) or "Tsch\u00fcss" (friendly) works. Depends on how well you know them!',
+  },
+  {
+    time: '22:00',
+    scene: 'You\u2019re leaving a study group. You\u2019ll see everyone tomorrow.',
+    who: 'fellow students',
+    answers: ['Bis morgen'],
+    period: 'night',
+    difficulty: 'farewell',
+    hint: 'You\u2019ll see them tomorrow!',
+    culturalNote:
+      '"Bis morgen" = "See you tomorrow." Germans love being specific. If you\u2019ll meet later today, it\u2019s "Bis sp\u00e4ter!"',
+  },
+  {
+    time: '14:00',
+    scene: 'A friend is leaving after coffee. You\u2019re not sure when you\u2019ll meet next.',
+    who: 'your friend Max',
+    answers: ['Bis bald', 'Tsch\u00fcss', 'Tschuss'],
+    period: 'afternoon',
+    difficulty: 'farewell',
+    hint: 'Casual goodbye \u2014 you\u2019ll see them again sometime soon',
+    culturalNote:
+      '"Bis bald" = "See you soon!" \u2014 a warm, casual farewell when you don\u2019t have a specific date. Like "pinne kaanam" in Malayalam!',
+  },
+
+  // ===== FORMAL VS INFORMAL (Rounds 11-16): Sie vs du situations =====
+  {
+    time: '10:00',
+    scene: 'You walk into your German class on the first day.',
+    who: 'Professor Weber',
+    answers: ['Guten Morgen'],
+    period: 'morning',
+    difficulty: 'formal',
+    hint: 'First meeting with a professor \u2014 keep it formal and time-appropriate',
+    culturalNote:
+      'With professors, always start formal: "Guten Morgen, Herr/Frau Professor!" Some profs will later say "Sie k\u00f6nnen mich duzen" \u2014 meaning you can switch to informal. Until then, stay formal!',
+  },
+  {
+    time: '20:00',
+    scene: 'You enter a small shop in the evening to buy groceries.',
+    who: 'the shopkeeper',
+    answers: ['Guten Abend'],
+    period: 'evening',
+    difficulty: 'formal',
+    hint: 'Entering a shop \u2014 greet the shopkeeper appropriately for the time',
+    culturalNote:
+      'In Germany, you greet shopkeepers when entering! "Guten Abend" in the evening, "Guten Tag" during the day. Not doing it is considered rude \u2014 very different from Kerala shops!',
+  },
+  {
+    time: '11:00',
+    scene: 'Your phone rings. It\u2019s an unknown number \u2014 turns out to be your landlord.',
+    who: 'Herr Fischer (landlord)',
+    answers: ['Guten Tag', 'Hallo'],
+    period: 'afternoon',
+    difficulty: 'formal',
+    hint: 'Phone call \u2014 you pick up not knowing who\u2019s calling',
+    culturalNote:
+      'Germans often answer the phone by stating their last name: "Fischer, guten Tag!" For unknown numbers, "Hallo?" or "Guten Tag" both work. Never answer with just "Hello?" like in English \u2014 it sounds rude!',
+  },
+  {
+    time: '23:00',
+    scene: 'You send a late-night text to your German classmate about tomorrow\u2019s exam.',
+    who: 'your classmate Anna',
+    answers: ['Hallo', 'Hey'],
+    period: 'night',
+    difficulty: 'formal',
+    hint: 'Text message to a friend at night \u2014 casual!',
+    culturalNote:
+      'In text messages, time-based greetings are rarely used. "Hallo" or "Hey" works any time. You don\u2019t text "Gute Nacht" as an opening \u2014 that\u2019s only for saying goodbye!',
+  },
+  {
+    time: '14:30',
+    scene: 'Someone knocks on your office door. You call them in.',
+    who: 'a colleague you don\u2019t know well',
+    answers: ['Hallo', 'Guten Tag'],
+    period: 'afternoon',
+    difficulty: 'formal',
+    hint: 'Someone enters your office \u2014 polite but not overly formal',
+    culturalNote:
+      'When someone enters your office, a friendly "Hallo!" or "Guten Tag!" works great. Germans always knock and wait \u2014 barging in is a big no-no. Sherikkum door-il knock cheyyanam!',
+  },
+  {
+    time: '17:30',
+    scene: 'Your project is done. Time to say goodbye to your boss for the weekend.',
+    who: 'Frau Hoffmann (boss)',
+    answers: ['Auf Wiedersehen', 'Sch\u00f6nes Wochenende', 'Schones Wochenende'],
+    period: 'evening',
+    difficulty: 'formal',
+    hint: 'Friday evening \u2014 saying goodbye to your boss for the weekend',
+    culturalNote:
+      '"Auf Wiedersehen" is always safe with your boss. But on Fridays, Germans love to add "Sch\u00f6nes Wochenende!" (Have a nice weekend!) \u2014 it shows you\'re learning the culture, not just the words!',
   },
 ];
 
-const GREETINGS = ['Guten Morgen', 'Guten Tag', 'Guten Abend', 'Gute Nacht'];
+// Build ordered scenario list: 5 basic, 5 farewell, 6 formal
+function buildScenarioList(): GreetingScenario[] {
+  const basic = ALL_SCENARIOS.filter((s) => s.difficulty === 'basic');
+  const farewell = ALL_SCENARIOS.filter((s) => s.difficulty === 'farewell');
+  const formal = ALL_SCENARIOS.filter((s) => s.difficulty === 'formal');
 
-// Manglish reactions per period
+  // Shuffle within each tier
+  const shuffle = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
+
+  return [...shuffle(basic), ...shuffle(farewell), ...shuffle(formal)];
+}
+
+// --- Matching logic ---
+function normalize(s: string): string {
+  return s
+    .trim()
+    .toLowerCase()
+    .replace(/[!?.,:;'"]/g, '')  // strip punctuation
+    .replace(/\u00fc/g, 'ue')    // u-umlaut
+    .replace(/\u00f6/g, 'oe')    // o-umlaut
+    .replace(/\u00e4/g, 'ae')    // a-umlaut
+    .replace(/\u00df/g, 'ss')    // eszett
+    .replace(/\s+/g, ' ');
+}
+
+function isCorrect(input: string, scenario: GreetingScenario): boolean {
+  const normInput = normalize(input);
+  return scenario.answers.some((a) => normalize(a) === normInput);
+}
+
+// --- Reactions (Manglish) ---
 const CORRECT_REACTIONS: Record<string, string[]> = {
-  morning: [
-    "Guten Morgen! Adipoli start to the day!",
-    "Correct! Early bird machaa!",
-    "Seri! Germans love a proper morning greeting!",
+  basic: [
+    'Adipoli! Correct greeting, machaa!',
+    'Seri! That\u2019s exactly right!',
+    'Perfect! You sound like a true German already!',
+    'Nailed it! Kuttan is impressed!',
   ],
-  afternoon: [
-    "Guten Tag! Germans love a proper greeting, machaa!",
-    "Adipoli! That's how you do it!",
-    "Correct! Guten Tag is the safest bet!",
+  farewell: [
+    'Adipoli! You know how to say goodbye like a German!',
+    'Correct! Farewell game strong, machaa!',
+    'Seri! That\u2019s the right way to leave!',
+    'Perfect goodbye! Germans would approve!',
   ],
-  evening: [
-    "Guten Abend! Kerala-il 'santhya namaskaram' pole!",
-    "Perfect evening greeting, machaa!",
-    "Adipoli! Herr Professor would approve!",
-  ],
-  night: [
-    "Gute Nacht! Sleep well, machaa!",
-    "Seri! Time for sweet dreams in German!",
-    "Nailed it! Gute Nacht and good night!",
+  formal: [
+    'Adipoli! Perfect situational awareness, machaa!',
+    'You read the room perfectly! Respect!',
+    'Seri! That\u2019s exactly what a German would say!',
+    'Machaa, your Sprachgef\u00fchl is on point!',
   ],
 };
+
 const WRONG_REACTIONS = [
-  "Aiyyo! That's not the right greeting for this time!",
-  "Not quite machaa! Check the time again!",
-  "Hmm, try thinking about what time it is!",
-  "Paravaala! You'll get the next one!",
+  'Aiyyo! Not quite \u2014 look at the situation again!',
+  'Not this one, machaa! Think about who you\u2019re talking to.',
+  'Hmm, read the scenario one more time!',
+  'Paravaala! Mistakes = learning!',
+  'Almost there machaa, try to picture yourself in the scene!',
+];
+
+const CLOSE_REACTIONS = [
+  'So close! You had the right idea, just a small spelling thing.',
+  'Almost machaa! Check the spelling once more.',
+  'Aiyyo, tiny typo! But your instinct was right!',
 ];
 
 function pickRandom(arr: string[]) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-// Time-of-day emoji
+// Check if the answer is "close" (within edit distance 2 of any correct answer)
+function isCloseAnswer(input: string, scenario: GreetingScenario): boolean {
+  const normInput = normalize(input);
+  return scenario.answers.some((a) => {
+    const normA = normalize(a);
+    if (normInput === normA) return false; // exact match isn't "close"
+    if (Math.abs(normInput.length - normA.length) > 2) return false;
+    // Simple check: starts the same or very similar
+    const minLen = Math.min(normInput.length, normA.length);
+    let diffs = 0;
+    for (let i = 0; i < minLen; i++) {
+      if (normInput[i] !== normA[i]) diffs++;
+    }
+    diffs += Math.abs(normInput.length - normA.length);
+    return diffs <= 2;
+  });
+}
+
+// --- Visual constants ---
 const PERIOD_EMOJI: Record<string, string> = {
-  morning: '☀️',
-  afternoon: '🌤️',
-  evening: '🌅',
-  night: '🌙',
+  morning: '\u2600\ufe0f',
+  afternoon: '\ud83c\udf24\ufe0f',
+  evening: '\ud83c\udf05',
+  night: '\ud83c\udf19',
 };
 
-// Background gradients per period
 const PERIOD_GRADIENTS: Record<string, string> = {
   morning: 'linear-gradient(135deg, rgba(255, 165, 0, 0.15), rgba(255, 223, 61, 0.1))',
   afternoon: 'linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(0, 217, 165, 0.08))',
@@ -138,7 +307,6 @@ const PERIOD_GRADIENTS: Record<string, string> = {
   night: 'linear-gradient(135deg, rgba(67, 56, 202, 0.2), rgba(30, 27, 75, 0.15))',
 };
 
-// Border accents per period
 const PERIOD_BORDER: Record<string, string> = {
   morning: 'rgba(255, 165, 0, 0.3)',
   afternoon: 'rgba(59, 130, 246, 0.3)',
@@ -146,114 +314,149 @@ const PERIOD_BORDER: Record<string, string> = {
   night: 'rgba(99, 102, 241, 0.3)',
 };
 
+const DIFFICULTY_LABELS: Record<Difficulty, { label: string; color: string }> = {
+  basic: { label: 'Basic Greetings', color: 'var(--success)' },
+  farewell: { label: 'Farewells', color: 'var(--primary)' },
+  formal: { label: 'Formal vs Informal', color: '#ffd93d' },
+};
+
+// --- Component ---
 export default function GreetingTimeGame() {
   const router = useRouter();
   const { addXP, incrementGamesPlayed } = useGameStore();
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const [gameState, setGameState] = useState<'ready' | 'playing' | 'cultural-note' | 'complete'>('ready');
+  const [gameState, setGameState] = useState<'ready' | 'playing' | 'feedback' | 'complete'>('ready');
   const [scenarios, setScenarios] = useState<GreetingScenario[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-  const [showResult, setShowResult] = useState(false);
+  const [typedAnswer, setTypedAnswer] = useState('');
+  const [submitted, setSubmitted] = useState(false);
   const [lastCorrect, setLastCorrect] = useState(false);
+  const [lastClose, setLastClose] = useState(false);
   const [reactionText, setReactionText] = useState('');
   const [kuttanMood, setKuttanMood] = useState<KuttanMood>('excited');
   const [showConfetti, setShowConfetti] = useState(false);
   const [consecutiveCorrect, setConsecutiveCorrect] = useState(0);
+  const [lastDifficultyAnnounced, setLastDifficultyAnnounced] = useState<Difficulty | null>(null);
 
-  // Shuffle scenarios
+  const TOTAL = ALL_SCENARIOS.length; // 16
+
   const initGame = useCallback(() => {
-    const shuffled = [...SCENARIOS].sort(() => Math.random() - 0.5);
-    setScenarios(shuffled);
+    setScenarios(buildScenarioList());
     setCurrentQuestion(0);
     setScore(0);
-    setSelectedAnswer(null);
-    setShowResult(false);
+    setTypedAnswer('');
+    setSubmitted(false);
     setLastCorrect(false);
+    setLastClose(false);
     setReactionText('');
     setKuttanMood('excited');
     setShowConfetti(false);
     setConsecutiveCorrect(0);
+    setLastDifficultyAnnounced(null);
   }, []);
 
   useEffect(() => {
     initGame();
   }, [initGame]);
 
+  // Focus input when entering playing state
+  useEffect(() => {
+    if (gameState === 'playing' && inputRef.current) {
+      // Small delay so animation finishes
+      const t = setTimeout(() => inputRef.current?.focus(), 300);
+      return () => clearTimeout(t);
+    }
+  }, [gameState, currentQuestion]);
+
   const startGame = () => {
     setGameState('playing');
     setKuttanMood('happy');
   };
 
-  const endGame = () => {
+  const endGame = (finalScore: number) => {
     setGameState('complete');
     incrementGamesPlayed();
-    addXP(score * 5 + 10);
+    addXP(finalScore * 5 + 10);
 
-    if (score === scenarios.length) {
+    if (finalScore === TOTAL) {
       setKuttanMood('celebrating');
       setShowConfetti(true);
-    } else if (score >= 6) {
+    } else if (finalScore >= 12) {
       setKuttanMood('happy');
     } else {
       setKuttanMood('sad');
     }
   };
 
-  const handleAnswer = (answer: string) => {
-    if (showResult) return;
+  const handleSubmit = () => {
+    if (submitted || !typedAnswer.trim()) return;
 
-    setSelectedAnswer(answer);
-    setShowResult(true);
+    setSubmitted(true);
+    const scenario = scenarios[currentQuestion];
+    const correct = isCorrect(typedAnswer, scenario);
+    const close = !correct && isCloseAnswer(typedAnswer, scenario);
 
-    const currentScenario = scenarios[currentQuestion];
-    const correct = answer === currentScenario.answer;
     setLastCorrect(correct);
+    setLastClose(close);
 
     if (correct) {
-      setScore(prev => prev + 1);
-      setConsecutiveCorrect(prev => prev + 1);
+      setScore((prev) => prev + 1);
+      setConsecutiveCorrect((prev) => prev + 1);
       setKuttanMood('happy');
-      setReactionText(pickRandom(CORRECT_REACTIONS[currentScenario.period]));
+      setReactionText(pickRandom(CORRECT_REACTIONS[scenario.difficulty]));
+    } else if (close) {
+      setConsecutiveCorrect(0);
+      setKuttanMood('thinking');
+      setReactionText(pickRandom(CLOSE_REACTIONS));
     } else {
       setConsecutiveCorrect(0);
       setKuttanMood('sad');
       setReactionText(pickRandom(WRONG_REACTIONS));
     }
-
-    // After showing result, transition to cultural note
-    setTimeout(() => {
-      setGameState('cultural-note');
-    }, 1200);
   };
 
-  const advanceFromNote = () => {
+  const advanceFromFeedback = () => {
     if (currentQuestion < scenarios.length - 1) {
-      setCurrentQuestion(prev => prev + 1);
-      setSelectedAnswer(null);
-      setShowResult(false);
+      const nextQ = currentQuestion + 1;
+      setCurrentQuestion(nextQ);
+      setTypedAnswer('');
+      setSubmitted(false);
+      setLastCorrect(false);
+      setLastClose(false);
       setReactionText('');
       setKuttanMood('thinking');
       setGameState('playing');
     } else {
-      endGame();
+      endGame(score);
     }
   };
 
-  const currentScenario = scenarios[currentQuestion];
-  const getStars = () => {
-    if (score >= 8) return 3;
-    if (score >= 6) return 2;
-    if (score >= 4) return 1;
-    return 0;
+  const goToFeedback = () => {
+    setGameState('feedback');
   };
 
-  // Dynamic Kuttan mood during gameplay based on performance
-  const getPlayingMood = (): KuttanMood => {
-    if (consecutiveCorrect >= 4) return 'excited';
-    if (consecutiveCorrect >= 2) return 'happy';
-    return 'thinking';
+  const currentScenario = scenarios[currentQuestion];
+
+  // Determine if we need to show a difficulty tier announcement
+  const shouldAnnounceTier =
+    currentScenario &&
+    currentScenario.difficulty !== lastDifficultyAnnounced &&
+    gameState === 'playing';
+
+  // Mark tier as announced on render
+  useEffect(() => {
+    if (shouldAnnounceTier && currentScenario) {
+      setLastDifficultyAnnounced(currentScenario.difficulty);
+    }
+  }, [shouldAnnounceTier, currentScenario]);
+
+  const getStars = () => {
+    if (score >= 14) return 3;
+    if (score >= 10) return 2;
+    if (score >= 6) return 1;
+    return 0;
   };
 
   return (
@@ -269,13 +472,17 @@ export default function GreetingTimeGame() {
           <ArrowLeft className="w-5 h-5" />
           <span>Back</span>
         </button>
-        {(gameState === 'playing' || gameState === 'cultural-note') && (
+        {(gameState === 'playing' || gameState === 'feedback') && (
           <div className="flex items-center gap-2 text-sm text-[var(--foreground)]/50">
-            <span className="font-bold" style={{ color: 'var(--primary)' }}>{score}</span>
+            <span className="font-bold" style={{ color: 'var(--primary)' }}>
+              {score}
+            </span>
             <span>/</span>
-            <span>{currentQuestion + (showResult ? 1 : 0)}</span>
+            <span>{currentQuestion + (submitted ? 1 : 0)}</span>
             <span className="mx-2 text-[var(--foreground)]/20">|</span>
-            <span>{currentQuestion + 1}/{scenarios.length}</span>
+            <span>
+              {currentQuestion + 1}/{scenarios.length}
+            </span>
           </div>
         )}
       </div>
@@ -291,7 +498,7 @@ export default function GreetingTimeGame() {
             className="flex flex-col items-center"
           >
             <CharacterGuide
-              messages="Kuttan just arrived in Germany! He needs to greet people correctly at different times of day. Help him out, machaa!"
+              messages="Kuttan just arrived in Germany! He needs to greet people correctly in different situations. Type the right greeting for each scene \u2014 no multiple choice, machaa!"
               mood="excited"
               size="lg"
               showAppu
@@ -300,47 +507,103 @@ export default function GreetingTimeGame() {
             />
 
             <div className="glass-card p-6 w-full">
-              <h1 className="text-2xl font-bold text-center mb-4 gradient-text">
-                Greeting Time
-              </h1>
+              <h1 className="text-2xl font-bold text-center mb-4 gradient-text">Greeting Time</h1>
 
               {/* Quick Guide */}
               <div
-                className="rounded-xl p-4 mb-5"
-                style={{ background: 'rgba(245, 240, 232, 0.05)', border: '1px solid rgba(245, 240, 232, 0.1)' }}
+                className="rounded-xl p-4 mb-4"
+                style={{
+                  background: 'rgba(245, 240, 232, 0.05)',
+                  border: '1px solid rgba(245, 240, 232, 0.1)',
+                }}
               >
-                <h3 className="font-semibold text-[var(--foreground)] mb-3 text-sm">Quick Guide:</h3>
+                <h3 className="font-semibold text-[var(--foreground)] mb-3 text-sm">
+                  Greetings you&apos;ll need:
+                </h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center gap-3">
-                    <span className="text-xl">☀️</span>
+                    <span className="text-lg">{'\u2600\ufe0f'}</span>
                     <span className="text-[var(--foreground)]/80">
-                      <strong className="text-[var(--foreground)]">Guten Morgen</strong> — Morning (until ~11 AM)
+                      <strong className="text-[var(--foreground)]">Guten Morgen</strong> — Morning
+                      (until ~11 AM)
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-xl">🌤️</span>
+                    <span className="text-lg">{'\ud83c\udf24\ufe0f'}</span>
                     <span className="text-[var(--foreground)]/80">
-                      <strong className="text-[var(--foreground)]">Guten Tag</strong> — Day (11 AM - 6 PM)
+                      <strong className="text-[var(--foreground)]">Guten Tag</strong> — Day (11 AM
+                      - 6 PM)
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-xl">🌅</span>
+                    <span className="text-lg">{'\ud83c\udf05'}</span>
                     <span className="text-[var(--foreground)]/80">
-                      <strong className="text-[var(--foreground)]">Guten Abend</strong> — Evening (6 PM - 9 PM)
+                      <strong className="text-[var(--foreground)]">Guten Abend</strong> — Evening
+                      (6 PM onwards)
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-xl">🌙</span>
+                    <span className="text-lg">{'\ud83c\udf19'}</span>
                     <span className="text-[var(--foreground)]/80">
-                      <strong className="text-[var(--foreground)]">Gute Nacht</strong> — Night (going to sleep)
+                      <strong className="text-[var(--foreground)]">Gute Nacht</strong> — Goodnight
+                      (going to sleep)
                     </span>
+                  </div>
+                  <div
+                    className="border-t pt-2 mt-2"
+                    style={{ borderColor: 'rgba(245, 240, 232, 0.1)' }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-lg">{'\ud83d\udc4b'}</span>
+                      <span className="text-[var(--foreground)]/80">
+                        <strong className="text-[var(--foreground)]">Tsch\u00fcss</strong> — Bye
+                        (casual) &nbsp;|&nbsp;{' '}
+                        <strong className="text-[var(--foreground)]">Auf Wiedersehen</strong> — Goodbye (formal)
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3 mt-2">
+                      <span className="text-lg">{'\ud83d\udcac'}</span>
+                      <span className="text-[var(--foreground)]/80">
+                        <strong className="text-[var(--foreground)]">Bis morgen</strong> — See you
+                        tomorrow &nbsp;|&nbsp;{' '}
+                        <strong className="text-[var(--foreground)]">Bis bald</strong> — See you soon
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
 
+              {/* Difficulty tiers info */}
+              <div
+                className="rounded-xl p-4 mb-5"
+                style={{
+                  background: 'rgba(245, 240, 232, 0.03)',
+                  border: '1px solid rgba(245, 240, 232, 0.08)',
+                }}
+              >
+                <h3 className="font-semibold text-[var(--foreground)] mb-2 text-sm">
+                  3 levels of difficulty:
+                </h3>
+                <div className="space-y-1.5 text-xs text-[var(--foreground)]/60">
+                  <p>
+                    <span style={{ color: 'var(--success)' }}>Rounds 1-5</span> — Basic
+                    time-of-day greetings
+                  </p>
+                  <p>
+                    <span style={{ color: 'var(--primary)' }}>Rounds 6-10</span> — Farewells:
+                    Tsch\u00fcss, Auf Wiedersehen, Bis morgen...
+                  </p>
+                  <p>
+                    <span style={{ color: '#ffd93d' }}>Rounds 11-16</span> — Formal vs informal
+                    situations
+                  </p>
+                </div>
+              </div>
+
               <div className="flex items-center justify-center gap-4 mb-5 text-sm text-[var(--foreground)]/50">
-                <span>8 scenarios</span>
-                <span>Up to 50 XP</span>
+                <span>16 scenarios</span>
+                <span>Type your answers</span>
+                <span>Up to 90 XP</span>
               </div>
 
               <button onClick={startGame} className="game-button text-lg w-full py-4">
@@ -358,25 +621,49 @@ export default function GreetingTimeGame() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
           >
-            {/* Progress dots */}
-            <div className="flex gap-1.5 justify-center mb-4">
-              {scenarios.map((_, i) => (
+            {/* Progress bar */}
+            <div className="flex gap-1 justify-center mb-4">
+              {scenarios.map((s, i) => (
                 <div
                   key={i}
                   className="h-1.5 rounded-full transition-all duration-300"
                   style={{
-                    width: i === currentQuestion ? '24px' : '8px',
-                    background: i < currentQuestion
-                      ? 'var(--success)'
-                      : i === currentQuestion
-                      ? 'var(--primary)'
-                      : 'rgba(245, 240, 232, 0.15)',
+                    width: i === currentQuestion ? '20px' : '6px',
+                    background:
+                      i < currentQuestion
+                        ? 'var(--success)'
+                        : i === currentQuestion
+                        ? DIFFICULTY_LABELS[s.difficulty].color
+                        : 'rgba(245, 240, 232, 0.15)',
                   }}
                 />
               ))}
             </div>
 
-            {/* Scene Card - time-based gradient */}
+            {/* Difficulty tier badge (shows when entering a new tier) */}
+            {shouldAnnounceTier && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center mb-3"
+              >
+                <span
+                  className="inline-block text-xs font-semibold px-3 py-1 rounded-full"
+                  style={{
+                    color: DIFFICULTY_LABELS[currentScenario.difficulty].color,
+                    background: `${DIFFICULTY_LABELS[currentScenario.difficulty].color}15`,
+                    border: `1px solid ${DIFFICULTY_LABELS[currentScenario.difficulty].color}40`,
+                  }}
+                >
+                  {currentScenario.difficulty === 'basic' && 'Level 1: '}
+                  {currentScenario.difficulty === 'farewell' && 'Level 2: '}
+                  {currentScenario.difficulty === 'formal' && 'Level 3: '}
+                  {DIFFICULTY_LABELS[currentScenario.difficulty].label}
+                </span>
+              </motion.div>
+            )}
+
+            {/* Scene Card */}
             <motion.div
               className="rounded-2xl p-6 mb-4"
               style={{
@@ -406,11 +693,26 @@ export default function GreetingTimeGame() {
                 {currentScenario.scene}
               </p>
               <p className="text-center text-[var(--foreground)]/60 text-xs">
-                You need to greet <strong className="text-[var(--foreground)]/90">{currentScenario.who}</strong>
+                You need to greet{' '}
+                <strong className="text-[var(--foreground)]/90">{currentScenario.who}</strong>
               </p>
             </motion.div>
 
-            {/* Reaction feedback */}
+            {/* Hint for farewell/formal rounds */}
+            {currentScenario.hint && (
+              <div
+                className="text-center text-xs mb-3 px-3 py-2 rounded-lg"
+                style={{
+                  background: 'rgba(255, 217, 61, 0.08)',
+                  border: '1px solid rgba(255, 217, 61, 0.2)',
+                  color: '#ffd93d',
+                }}
+              >
+                {'\ud83d\udca1'} {currentScenario.hint}
+              </div>
+            )}
+
+            {/* Reaction feedback (after submit) */}
             <AnimatePresence>
               {reactionText && (
                 <motion.div
@@ -421,16 +723,28 @@ export default function GreetingTimeGame() {
                   style={{
                     background: lastCorrect
                       ? 'rgba(0, 217, 165, 0.12)'
+                      : lastClose
+                      ? 'rgba(255, 217, 61, 0.12)'
                       : 'rgba(192, 57, 43, 0.12)',
                     border: lastCorrect
                       ? '1px solid rgba(0, 217, 165, 0.3)'
+                      : lastClose
+                      ? '1px solid rgba(255, 217, 61, 0.3)'
                       : '1px solid rgba(192, 57, 43, 0.3)',
                   }}
                 >
-                  <span className="text-lg">{lastCorrect ? '✅' : '😬'}</span>
+                  <span className="text-lg">
+                    {lastCorrect ? '\u2705' : lastClose ? '\ud83e\udd14' : '\ud83d\ude2c'}
+                  </span>
                   <span
                     className="text-sm font-medium"
-                    style={{ color: lastCorrect ? 'var(--success)' : 'var(--danger)' }}
+                    style={{
+                      color: lastCorrect
+                        ? 'var(--success)'
+                        : lastClose
+                        ? '#ffd93d'
+                        : 'var(--danger)',
+                    }}
                   >
                     {reactionText}
                   </span>
@@ -438,55 +752,119 @@ export default function GreetingTimeGame() {
               )}
             </AnimatePresence>
 
-            {/* Greeting Options - 2x2 grid */}
-            <div className="grid grid-cols-2 gap-3">
-              {GREETINGS.map((greeting, index) => {
-                const isSelected = selectedAnswer === greeting;
-                const greetingIsCorrect = greeting === currentScenario.answer;
-                const showCorrectGlow = showResult && greetingIsCorrect;
-                const showWrongShake = showResult && isSelected && !greetingIsCorrect;
+            {/* Show correct answer after wrong submission */}
+            {submitted && !lastCorrect && (
+              <motion.div
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center mb-3 px-3 py-2 rounded-lg"
+                style={{
+                  background: 'rgba(0, 217, 165, 0.08)',
+                  border: '1px solid rgba(0, 217, 165, 0.2)',
+                }}
+              >
+                <span className="text-xs text-[var(--foreground)]/50">Correct answer: </span>
+                <span className="text-sm font-bold" style={{ color: 'var(--success)' }}>
+                  {currentScenario.answers[0]}
+                </span>
+              </motion.div>
+            )}
 
-                return (
-                  <motion.button
-                    key={index}
-                    onClick={() => handleAnswer(greeting)}
-                    disabled={showResult}
-                    whileTap={{ scale: showResult ? 1 : 0.95 }}
-                    animate={showWrongShake ? { x: [-5, 5, -5, 5, 0] } : {}}
-                    transition={showWrongShake ? { duration: 0.3 } : undefined}
-                    className="p-4 rounded-xl text-center font-medium transition-all"
+            {/* Input area */}
+            <div className="relative mb-3">
+              <input
+                ref={inputRef}
+                type="text"
+                value={typedAnswer}
+                onChange={(e) => setTypedAnswer(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    if (!submitted) {
+                      handleSubmit();
+                    } else {
+                      goToFeedback();
+                    }
+                  }
+                }}
+                disabled={submitted}
+                placeholder="Type your greeting here..."
+                className="w-full px-4 py-4 pr-14 rounded-xl text-base font-medium outline-none transition-all"
+                style={{
+                  background: submitted
+                    ? lastCorrect
+                      ? 'rgba(0, 217, 165, 0.1)'
+                      : 'rgba(192, 57, 43, 0.1)'
+                    : 'var(--card-bg)',
+                  border: submitted
+                    ? lastCorrect
+                      ? '2px solid rgba(0, 217, 165, 0.5)'
+                      : '2px solid rgba(192, 57, 43, 0.4)'
+                    : '2px solid var(--card-border)',
+                  color: 'var(--foreground)',
+                  backdropFilter: 'blur(8px)',
+                }}
+                autoComplete="off"
+                autoCapitalize="off"
+                spellCheck={false}
+              />
+
+              {/* Submit button inside input */}
+              {!submitted && (
+                <button
+                  onClick={handleSubmit}
+                  disabled={!typedAnswer.trim()}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 rounded-lg transition-all"
+                  style={{
+                    background: typedAnswer.trim()
+                      ? 'var(--primary)'
+                      : 'rgba(245, 240, 232, 0.1)',
+                    color: typedAnswer.trim() ? '#fff' : 'rgba(245, 240, 232, 0.3)',
+                  }}
+                >
+                  <Send className="w-5 h-5" />
+                </button>
+              )}
+            </div>
+
+            {/* After submit: show cultural note button */}
+            {submitted && (
+              <motion.button
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                onClick={goToFeedback}
+                className="game-button text-base w-full py-3"
+              >
+                {lastCorrect ? 'See Cultural Note' : 'Learn More'}
+              </motion.button>
+            )}
+
+            {/* Umlaut helper (below input) */}
+            {!submitted && (
+              <div className="flex justify-center gap-2 mt-2">
+                {['\u00e4', '\u00f6', '\u00fc', '\u00df'].map((char) => (
+                  <button
+                    key={char}
+                    onClick={() => {
+                      setTypedAnswer((prev) => prev + char);
+                      inputRef.current?.focus();
+                    }}
+                    className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all hover:scale-105"
                     style={{
-                      background: showCorrectGlow
-                        ? 'rgba(0, 217, 165, 0.2)'
-                        : showWrongShake
-                        ? 'rgba(192, 57, 43, 0.2)'
-                        : 'var(--card-bg)',
-                      border: showCorrectGlow
-                        ? '2px solid rgba(0, 217, 165, 0.6)'
-                        : showWrongShake
-                        ? '2px solid rgba(192, 57, 43, 0.6)'
-                        : '2px solid var(--card-border)',
-                      color: showCorrectGlow
-                        ? 'var(--success)'
-                        : showWrongShake
-                        ? 'var(--danger)'
-                        : 'var(--foreground)',
-                      boxShadow: showCorrectGlow
-                        ? '0 0 15px rgba(0, 217, 165, 0.2)'
-                        : 'none',
-                      backdropFilter: 'blur(8px)',
+                      background: 'rgba(245, 240, 232, 0.08)',
+                      border: '1px solid rgba(245, 240, 232, 0.15)',
+                      color: 'var(--foreground)',
                     }}
                   >
-                    {greeting}
-                  </motion.button>
-                );
-              })}
-            </div>
+                    {char}
+                  </button>
+                ))}
+              </div>
+            )}
           </motion.div>
         )}
 
-        {/* ==================== CULTURAL NOTE SCREEN ==================== */}
-        {gameState === 'cultural-note' && currentScenario && (
+        {/* ==================== FEEDBACK / CULTURAL NOTE SCREEN ==================== */}
+        {gameState === 'feedback' && currentScenario && (
           <motion.div
             key={`note-${currentQuestion}`}
             initial={{ opacity: 0, y: 20 }}
@@ -509,20 +887,28 @@ export default function GreetingTimeGame() {
               }}
             >
               <div className="text-center">
-                <p className="text-xs text-[var(--foreground)]/50 mb-1">The correct greeting was:</p>
-                <p className="text-2xl font-bold" style={{ color: 'var(--success)' }}>
-                  {currentScenario.answer}
+                <p className="text-xs text-[var(--foreground)]/50 mb-1">
+                  {lastCorrect ? 'You answered:' : 'The correct greeting was:'}
                 </p>
-                <p className="text-sm text-[var(--foreground)]/60 mt-1">
-                  {PERIOD_EMOJI[currentScenario.period]} {currentScenario.time} — {currentScenario.who}
+                <p className="text-2xl font-bold" style={{ color: 'var(--success)' }}>
+                  {currentScenario.answers[0]}
+                </p>
+                {currentScenario.answers.length > 1 && (
+                  <p className="text-xs text-[var(--foreground)]/40 mt-1">
+                    Also accepted:{' '}
+                    {currentScenario.answers
+                      .slice(1)
+                      .join(', ')}
+                  </p>
+                )}
+                <p className="text-sm text-[var(--foreground)]/60 mt-2">
+                  {PERIOD_EMOJI[currentScenario.period]} {currentScenario.time} &mdash;{' '}
+                  {currentScenario.who}
                 </p>
               </div>
             </div>
 
-            <button
-              onClick={advanceFromNote}
-              className="game-button text-base w-full py-3"
-            >
+            <button onClick={advanceFromFeedback} className="game-button text-base w-full py-3">
               {currentQuestion < scenarios.length - 1 ? 'Next Scenario' : 'See Results'}
             </button>
           </motion.div>
@@ -538,18 +924,18 @@ export default function GreetingTimeGame() {
           >
             <CharacterGuide
               messages={
-                score === 8
-                  ? "PERFECT! Machaa, you greeted everyone like a true German! Kuttan is so proud!"
-                  : score >= 6
-                  ? "Great job machaa! Kuttan can greet almost everyone properly now!"
-                  : score >= 4
-                  ? "Not bad! Kuttan needs a bit more practice with greetings."
-                  : "Aiyyo! Kuttan kept confusing the greetings. Let's try again, machaa!"
+                score === TOTAL
+                  ? 'PERFECT! Machaa, you greeted everyone like a true German! Kuttan is so proud!'
+                  : score >= 12
+                  ? 'Great job machaa! Kuttan can handle almost every situation now!'
+                  : score >= 8
+                  ? 'Not bad! Kuttan needs a bit more practice with some greetings.'
+                  : 'Aiyyo! Kuttan kept mixing up greetings. Let\u2019s try again, machaa!'
               }
               mood={kuttanMood}
               size="md"
-              showAppu={score === 8}
-              appuMood={score === 8 ? 'celebrating' : 'idle'}
+              showAppu={score === TOTAL}
+              appuMood={score === TOTAL ? 'celebrating' : 'idle'}
               className="mb-4"
             />
 
@@ -557,10 +943,21 @@ export default function GreetingTimeGame() {
               <h1
                 className="text-2xl font-bold mb-2"
                 style={{
-                  color: score >= 6 ? 'var(--success)' : score >= 4 ? 'var(--primary)' : 'var(--foreground)',
+                  color:
+                    score >= 12
+                      ? 'var(--success)'
+                      : score >= 8
+                      ? 'var(--primary)'
+                      : 'var(--foreground)',
                 }}
               >
-                {score === 8 ? 'Perfect Greetings!' : score >= 6 ? 'Great Job!' : score >= 4 ? 'Good Try!' : 'Keep Practicing!'}
+                {score === TOTAL
+                  ? 'Perfect Greetings!'
+                  : score >= 12
+                  ? 'Great Job!'
+                  : score >= 8
+                  ? 'Good Try!'
+                  : 'Keep Practicing!'}
               </h1>
 
               {/* Stars */}

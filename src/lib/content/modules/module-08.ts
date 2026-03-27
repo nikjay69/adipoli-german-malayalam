@@ -33,15 +33,15 @@ export const MODULE_8: Module = {
           description: "Take a virtual tour of a typical German apartment and learn the name of every room.",
           scriptOutline: [
             "Opening: 'Swantham flat-il thamasikan ishtamulla ellarkkum oru special lesson aanu ithu! Welcome to a German Wohnung!'",
-            "The entrance: der Flur (hallway) — 'Germany-yil veerinte akathu footwear allow cheyyില്ല! Flur-il thanne shoes vekkanam!'",
-            "Heart of the home: die Küche (kitchen) — 'Nammalkku kitchen pachanayulla sthalam aanel, Germans-inu ithu oru laboratory pole aanu!'",
-            "Living space: das Wohnzimmer (living room) — 'Wohn' means living, 'Zimmer' means room. Easy, machane!",
-            "Sleep zone: das Schlafzimmer (bedroom) — 'Schlaf' = sleep. No TV usually, just for rest!",
-            "Clean zone: das Badezimmer (bathroom). Tips on 'Lüften' (airing out) even in winter!",
-            "Outdoor bonus: der Balkon (balcony) — 'Balkon-il irunnu chai kudikkunnathinte oru sukham! Very common here.'",
-            "CULTURAL SHOCK: German apartments often come WITHOUT a kitchen — 'Nee thanne kitchen counter-um sink-um vanganum! Imagine that!'",
-            "Word building: Just attach the activity to 'Zimmer' and you have the room name!",
-            "Practical Check: Can you name every room in your Kerala home in German now?"
+            "The entrance: der Flur (hallway) — 'Germany-yil default rule! Shoes akathu allow cheyilla. Flur-il thanne shoes vekkanam!'",
+            "Heart: die Küche (kitchen) — 'Nammalkku kitchen pachanayulla sthalam, Germans-innu ithu oru laboratory pole aanu!'",
+            "Living: das Wohnzimmer (living room) — 'Wohn' means living, 'Zimmer' means room. Set aanu machane!",
+            "Sleep: das Schlafzimmer (bedroom) — 'Schlaf' = sleep. Usually simple setup.",
+            "Bath: das Badezimmer. Advice on 'Lüften' (airing out) winter-ilum important aanu!",
+            "Balcony: der Balkon — 'Balkon-il irunnu chai kudikkunnathinte oru sukham! Most flats-ilum undakum.'",
+            "SHOCK: German apartments often come WITHOUT a kitchen — 'Nee thanne kitchen setup vanganum! Imagine that!'",
+            "Logic: Just attach the activity to 'Zimmer' and you have the room name!",
+            "Practice: Name 3 rooms in your house in German, right now!"
           ],
           keyVocabulary: ["die Wohnung", "der Flur", "die Küche", "das Wohnzimmer", "das Schlafzimmer", "der Balkon"],
           learningObjectives: [
@@ -298,14 +298,14 @@ export const MODULE_8: Module = {
           scriptOutline: [
             "Opening: 'Mobile evide? Keys evide? Finding things in German is all about Prepositions!'",
             "The big 8: in, auf, unter, neben, vor, hinter, zwischen, über.",
-            "Visual demos: 'Die Katze ist AUF dem Tisch.' (cat is ON the table). 'Die Maus ist UNTER dem Bett.'",
-            "auf = surface contact, über = floating above. Don't mix them up, machane!",
-            "KEY GRAMMAR: Location (Wo?) = Dative Case. This is the first boss level of German!",
-            "Dative shortcut: der → dem, das → dem. 'Dem' replaces 'der/das' for location.",
-            "Feminine check: die → der. 'In der Küche' (in the kitchen).",
-            "Contractions are key: in + dem = im, an + dem = am. Always use 'im' it sounds more natural!",
-            " Kerala Home Tip: Describe your room layout to a friend in German for practice.",
-            "Summary: Location always needs Datur. Just memorize: Masculine/Neuter = DEM, Feminine = DER."
+            "Visuals: 'Die Katze ist AUF dem Tisch.' (cat is ON table). 'Die Maus ist UNTER dem Bett.'",
+            "Trap: auf = surface contact, über = floating above. Ithu confuse aavalle!",
+            "BOSS LEVEL: Location (Wo?) = Dative Case. This is where German gets real, machane!",
+            "Dative logic: der → dem, das → dem. 'Dem' replaces 'der/das' for location.",
+            "Feminine: die → der. 'In der Küche'. Strange right? But logic fixed aanu.",
+            "Shortcuts: in + dem = im, an + dem = am. Always use 'im', natural sound kitti theeroo!",
+            "Kerala Home Tip: Describe your room to a friend in German for practice.",
+            "Summary: Location always needs Dative. Masculine/Neuter = DEM, Feminine = DER."
           ],
           keyVocabulary: ["im", "am", "auf dem", "unter dem", "neben dem", "hinter dem"],
           learningObjectives: [
@@ -547,14 +547,14 @@ export const MODULE_8: Module = {
           description: "Everything you need to know about finding a place to live in Germany — especially the WG (shared apartment) culture.",
           scriptOutline: [
             "Opening: 'Germany-yil flat kittan oru interview pass aakanam ennu paranjaal viswasikkumo? Welcome to WG-Suche!'",
-            "WG = Wohngemeinschaft. 'Namukku college hostels pole oru internal system, but for adults!'",
-            "How WG life works: You don't just 'rent' a room, you join a 'community'. Cleaning schedules (Putzplan) are sacred!",
-            "CULTURAL HOCK: The 'WG-Casting'. 'Oru job interview pole flatmates-inte munnil poyi performance tharanam!'",
-            "Key phrases: die Miete (rent), die Kaution (deposit). 'Kaution usually 3 months rent aanu — budget set cheyyanam!'",
-            "Kaltmiete (base) vs Warmmiete (all-in). 'Warmmiete-yil heating-um water-um okke undakum.'",
-            "Nebenkosten (NK): Extra costs. 'Electricity and Internet are usually extra — chodikkan marakkenda!'",
-            "Where to look: WG-Gesucht.de is the Bible for students. 'eBay Kleinanzeigen also works, but beware of scams!'",
-            "Indian Parallel: Like a PG, but you have equal rights and shared chores. No 'warden' here!"
+            "WG = Wohngemeinschaft. 'Shared flat culture aanu. Dorm pole alla, it's a family!'",
+            "Sacred rule: Putzplan (cleaning schedule). Rules follow cheyyanam, machane!",
+            "WG-CASTING: 'Flat-inu vendi audition perform cheyyunnathu pole aanu! Best of luck!'",
+            "Money talk: die Miete (rent), die Kaution (deposit). Kaution level set cheyyanam!",
+            "Cold vs Warm: Kaltmiete (base) vs Warmmiete (all-in). Warm covers heating/water.",
+            "Nebenkosten (NK): Extra charges. Electricity and Internet usually separate aanu.",
+            "Bible sites: WG-Gesucht.de and eBay Kleinanzeigen. Scams avoid cheyyaan care venam!",
+            "Parallel: Like a PG, but with freedom and equal responsibilities. No warden scenes!"
           ],
           keyVocabulary: ["die WG", "das Casting", "die Miete", "die Kaution", "die Warmmiete", "die Nebenkosten"],
           learningObjectives: [

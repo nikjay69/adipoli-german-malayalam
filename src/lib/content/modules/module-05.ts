@@ -35,14 +35,14 @@ export const MODULE_5: Module = {
           description:
             "Understand the logic behind German verb conjugation and how it compares to Malayalam verb endings.",
           scriptOutline: [
-            "Opening: 'Hallo! Today we crack the German verb code.'",
-            "Every German verb has an infinitive form ending in -en (machen, spielen, lernen)",
-            "To conjugate: remove -en to get the stem, then add endings",
-            "Present tense endings: ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en",
-            "Kerala parallel: Malayalam-ilum verb endings marunnu — German-ilum athupole!",
-            "Walk through 'machen': ich mache, du machst, er macht, wir machen, ihr macht, sie machen",
-            "Formal vs informal: 'Sie machen' (formal you) = 'sie machen' (they) — same form!",
-            "Quick practice: conjugate 'spielen' together"
+            "Opening: 'Namaskaram machane! Verb conjugation names kandaal katti povum, but logic simple aanu!'",
+            "Every German verb has an infinitive ending in -en (machen, lernen...)",
+            "Conjugation rule: remove -en (stem) then add endings. Simple math!",
+            "Endings: ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en",
+            "Kerala parallel: Nammal verbs endings maarunnathu pole (njan varunnu, nee varunnu...) German-ilum pattern und!",
+            "Conjugation walk-through: 'machen' (ich mache, du machst...)",
+            "Formal you (Sie) uses the same form as 'they' (sie). Ithu oru shortcut aanu!",
+            "Practice: Let's conjugate 'spielen' — set aakkaam!"
           ],
           keyVocabulary: ["machen", "spielen", "lernen", "wohnen"],
           learningObjectives: [
@@ -277,14 +277,14 @@ export const MODULE_5: Module = {
           description:
             "Walk through a typical morning routine using simple German sentences.",
           scriptOutline: [
-            "Opening: 'Guten Morgen! Let me tell you about my morning.'",
-            "Ich stehe um 7 Uhr auf. (I get up at 7 o'clock.)",
-            "Ich dusche. / Ich nehme eine Dusche. (I shower.)",
-            "Ich putze mir die Zähne. (I brush my teeth.)",
-            "Ich frühstücke. (I have breakfast.) — Kerala style: Puttu und Kadala!",
-            "Time expressions: zuerst (first), dann (then), danach (after that)",
-            "Putting it all together into a short paragraph",
-            "Practice: describe YOUR morning"
+            "Opening: 'Guten Morgen! Nammude normal day-il cheyyunna karyangall German-il parayaam!'",
+            "7:00 AM: Ich stehe um 7 Uhr auf. (Prefix end-il povan marakkaruthu!)",
+            "Action: Ich dusche. (Shower level set!)",
+            "Action: Ich putze mir die Zähne. (Brush cheyyuka.)",
+            "Breakfast: Ich frühstücke. — Puttu, Appam, or just bread! Adipoli!",
+            "Sequence: zuerst (first), dann (then), danach (after that). Chain cheyyaam!",
+            "Full Sentence: 'Zuerst stehe ich auf, dann frühstücke ich.'",
+            "Challenge: Describe YOUR morning right now!"
           ],
           keyVocabulary: ["aufstehen", "duschen", "frühstücken", "Zähne putzen"],
           learningObjectives: [
@@ -497,14 +497,13 @@ export const MODULE_5: Module = {
           description:
             "Understand why German verbs split apart and how to handle the prefix at the end.",
           scriptOutline: [
-            "Opening: 'German verbs do something crazy — they SPLIT!'",
-            "What is a separable verb? A verb with a detachable prefix.",
-            "Common prefixes: auf-, ein-, an-, ab-, mit-, fern-, zu-",
-            "The rule: in a main clause the prefix goes to the END",
-            "aufstehen → Ich stehe um 7 Uhr auf.",
-            "Think of it like a boomerang — the prefix flies to the end!",
-            "How to spot separable verbs: stress on the PREFIX (AUFstehen, not aufSTEHen)",
-            "Practice: 'Ich stehe auf. Ich kaufe ein. Ich fange an.'"
+            "Opening: 'Verb logical split — Boomerang effect aanu machane!'",
+            "Separable Verbs: Verbs with a detachable prefix (auf-, ein-, an-).",
+            "The Rule: Prefix flies to the END of the sentence.",
+            "aufstehen → Ich stehe um 7 Uhr AUF.",
+            "Visual: Think of the prefix as a boomerang. It starts at the front, but lands at the end!",
+            "Stress Rule: Separable verbs always have stress on the prefix (AUF-stehen).",
+            "Practice verbs: aufstehen, einkaufen, anfangen. Team-work aanu!",
           ],
           keyVocabulary: ["aufstehen", "einkaufen", "anfangen"],
           learningObjectives: [

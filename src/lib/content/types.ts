@@ -1,5 +1,12 @@
 // Shared types for course content
 
+
+export type RichElement = 
+  | { type: 'table'; title?: string; headers: string[]; rows: string[][] }
+  | { type: 'note'; title?: string; content: string; variant: 'info' | 'tip' | 'warning' }
+  | { type: 'list'; title?: string; items: string[] }
+  | { type: 'vocabulary'; items: { german: string; english: string; malayalam: string; pronunciation: string }[] };
+
 export interface Video {
   id: string;
   title: string;
@@ -13,6 +20,8 @@ export interface Video {
   script?: string;
   /** URL once video is uploaded */
   videoUrl?: string;
+  /** Automatically generated rich content from the script */
+  richContent?: RichElement[];
 }
 
 export interface Exercise {

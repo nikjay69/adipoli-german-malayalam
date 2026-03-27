@@ -21,6 +21,7 @@ import { Card, Button, ProgressBar, Badge } from '@/components/ui';
 import { playVocabAudio } from '@/lib/audio';
 import { useGameStore } from '@/lib/store';
 import { ALL_MODULES, getLessonById, getModuleById, type Lesson, type Exercise, type VocabItem } from '@/lib/content/modules';
+import { RichContentRenderer } from '@/components/learn/RichContentRenderer';
 
 type LessonSection = 'overview' | 'video' | 'vocabulary' | 'exercises' | 'complete';
 
@@ -443,8 +444,13 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                   {currentVideo.description}
                 </p>
 
+                {/* Video Rich Content (Generated via Gemini) */}
+                {currentVideo.richContent && (
+                  <RichContentRenderer elements={currentVideo.richContent} />
+                )}
+
                 {/* Video Script Outline */}
-                <div className="bg-[var(--foreground)]/5 rounded-xl p-4 mb-4">
+                <div className="bg-[var(--foreground)]/5 rounded-xl p-4 mb-4 mt-6">
                   <h3 className="font-semibold text-[var(--foreground)] mb-2">
                     Video Content Outline:
                   </h3>

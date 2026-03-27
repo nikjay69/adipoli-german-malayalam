@@ -31,16 +31,15 @@ export const MODULE_7: Module = {
           duration: "12:00",
           description: "A complete guide to grocery shopping in a German supermarket — from entering to checkout.",
           scriptOutline: [
-            "Opening: Welcome to a German Supermarkt! Very different from our kirana stores back home.",
-            "Walkthrough of a typical German supermarket layout — produce, dairy, bakery, frozen",
-            "Key grocery items with articles: die Milch, das Brot, die Butter, das Ei / die Eier",
-            "More essentials: der Zucker, das Mehl, die Nudeln, der Joghurt",
-            "Useful phrases: 'Wo finde ich...?' (Where can I find...?)",
-            "Asking for help: 'Haben Sie...?' (Do you have...?) and 'Entschuldigung...'",
-            "At the checkout: 'Das ist alles.' (That's all.) and bringing your own bag!",
-            "Cultural note: Germans bring their own bags — no free plastic bags like in India",
-            "Quick comparison: supermarket culture vs Kerala kirana stores — self-service vs personal touch",
-            "Practice: Mini shopping list challenge — can you say all items in German?"
+            "Opening: 'Welcome to a German Supermarkt! Nammude kirana shop pole alla, full self-service aanu!'",
+            "Supermarket Layout: entry-il fruit pinne dairy, bread... standard plan aanu.",
+            "Items with articles: die Milch, das Brot, die Butter, das Ei / die Eier. Articles focus venam!",
+            "Essentials: der Zucker, das Mehl, die Nudeln (Malayalis-innu semiya pole!), der Joghurt.",
+            "Helper phrase: 'Wo finde ich...?' (Where can I find...?)",
+            "Checkout logic: 'Das ist alles.' (That's all.) Pinne speed venam! Germans are fast at the scan!",
+            "Cultural shock: Bag free alla! Either bring your own or buy 'die Tüte'. No plastic freebies!",
+            "Comparing: Personal kirana touch vs Efficient German self-service. Speed is respect!",
+            "Challenge: List 5 items you need today in German!"
           ],
           keyVocabulary: ["die Milch", "das Brot", "die Butter", "das Ei", "die Eier", "der Zucker", "das Mehl", "die Nudeln", "der Joghurt", "Wo finde ich...?"],
           learningObjectives: [
@@ -207,16 +206,16 @@ export const MODULE_7: Module = {
           duration: "11:00",
           description: "Everything you need to know about German currency and talking about prices like a pro.",
           scriptOutline: [
-            "Opening: Let's talk about paisa — I mean, Geld (money)!",
-            "Euro and Cent: denominations, coins, and bills — visual walkthrough",
-            "Asking prices: 'Was kostet das?' and 'Wie viel kostet...?'",
-            "Saying prices: 'Das kostet drei Euro fünfzig' (3,50 €) — note: comma instead of decimal point!",
-            "Key vocabulary: teuer (expensive), billig (cheap), günstig (affordable/good value)",
-            "Payment methods: bar zahlen (pay cash), mit Karte zahlen (pay by card)",
-            "Die Quittung / der Kassenbon — always keep your receipt in Germany!",
-            "Cultural note: Germany loves cash! Many places don't accept cards — unlike India's UPI revolution",
-            "Practice: Price guessing game with common German products",
-            "Tip: German number system in prices — 3,50 not 3.50"
+            "Opening: 'Let's talk about paisa — German-il Geld (money)!'",
+            "Euro and Cent: Coins and bills walkthrough. 1 and 2 Euro coins are heavy!",
+            "Prices: 'Was kostet das?' and 'Wie viel kostet...?' Both logic-il same aanu.",
+            "Comma logic: '3,50 €' (drei Euro fünfzig). German-il dot (.) alla, comma (,) aanu decimal!",
+            "Adjectives: teuer (expensive), billig (cheap), günstig (value for money).",
+            "Payment: bar zahlen (pay cash) vs mit Karte zahlen (pay by card).",
+            "TRAP ALERT: Germany-il UPI illa! Cash is still king. 'Nur Barzahlung' kandaal katti povum!",
+            "Quittung: Receipt ennalum Kassenbon ennalum paper kittiye theeroo!",
+            "Culture: India-il scanning set aanu, but Germany-il cash venam pala shops-ilum.",
+            "Rule: , (comma) decimal system arinjale budget set aavoo!"
           ],
           keyVocabulary: ["Was kostet das?", "Wie viel kostet...?", "der Euro", "der Cent", "teuer", "billig", "günstig", "bar", "mit Karte", "die Quittung"],
           learningObjectives: [
@@ -392,12 +391,12 @@ export const MODULE_7: Module = {
           duration: "8:00",
           description: "Master all the basic colors in German with fun visual associations.",
           scriptOutline: [
-            "Opening: The world is colorful — let's learn to describe it in German!",
-            "Primary colors: rot (red), blau (blue), gelb (yellow), grün (green)",
-            "Neutral colors: schwarz (black), weiß (white), grau (grey), braun (brown)",
-            "Extra colors: rosa (pink), lila (purple) — these don't change form!",
-            "Memory trick: Think of Kerala — grüne Palmen (green palms), blaues Meer (blue sea)",
-            "Quick practice: Point and name colors around you"
+            "Opening: 'World is colorful — let's describe it in German!'",
+            "Primary: rot (red), blau (blue), gelb (yellow), grün (green).",
+            "Neutrals: schwarz (black), weiß (white), grau (grey), braun (brown).",
+            "Special: rosa (pink), lila (purple) — ithu marilla endings-il!",
+            "Kerala connect: grüne Palmen (green palms), blaues Meer (blue sea). Vibes aanu!",
+            "Pointing drill: Name 3 colors in your room right now!"
           ],
           keyVocabulary: ["rot", "blau", "grün", "gelb", "schwarz", "weiß", "braun", "grau", "rosa", "lila"],
           learningObjectives: [
@@ -634,16 +633,15 @@ export const MODULE_7: Module = {
           duration: "12:00",
           description: "Real shopping dialogues you'll encounter in German clothing stores and shops.",
           scriptOutline: [
-            "Opening: Time to actually TALK in a German shop — no more pointing and hoping!",
-            "Scene 1 — Entering a shop: 'Kann ich Ihnen helfen?' (Can I help you?) — polite 'Ihnen' form",
-            "Responding: 'Ich suche...' (I'm looking for...) + item name",
-            "Asking about sizes: 'Haben Sie das in Größe M?' (Do you have this in size M?)",
-            "Trying on: 'Kann ich das anprobieren?' (Can I try this on?)",
-            "The fitting room: 'Die Umkleidekabine ist dort drüben.' (The fitting room is over there.)",
-            "Giving opinions: 'Das steht Ihnen gut!' (That suits you!) / 'Das passt nicht.' (That doesn't fit.)",
-            "At checkout: 'Die Kasse ist dort.' — der Kassenzettel (receipt)",
-            "Full dialogue: Role-play a complete shopping scenario from entry to purchase",
-            "Kerala parallel: Imagine shopping at Lulu Mall but everything is in German!"
+            "Opening: 'Shop-il ninnu help chodikkaan \"Ich suche...\" parayam!'",
+            "Entering: 'Kann ich Ihnen helfen?' (Help venamo?) — polite 'Ihnen' form.",
+            "Responding: 'Ich suche...' (I'm looking for...) + your list.",
+            "Sizes: 'Haben Sie das in Größe M?' (M size undu?)",
+            "Fitting: 'Kann ich das anprobieren?' (Try cheyyanam!)",
+            "Logic: 'Die Umkleidekabine' (fitting room) evideya?",
+            "Verdict: 'Das passt gut!' (Fits well) or 'Das passt nicht.'",
+            "Register: 'Die Kasse' checkout logic.",
+            "Lulu Mall Visual: Imagine shopping in Kochi but in full German logic!"
           ],
           keyVocabulary: ["Kann ich Ihnen helfen?", "Ich suche...", "Haben Sie das in Größe M?", "Kann ich das anprobieren?", "die Umkleidekabine", "die Kasse", "der Kassenzettel"],
           learningObjectives: [

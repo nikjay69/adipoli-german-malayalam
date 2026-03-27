@@ -35,15 +35,15 @@ export const MODULE_6: Module = {
           description:
             "Discover the most common German food vocabulary with articles and pronunciation.",
           scriptOutline: [
-            "Opening: 'Essen! Food! — The best topic ever!'",
-            "das Brot (bread) — Germans LOVE bread, over 300 varieties!",
-            "der Reis (rice) — 'Nammalkkum Reis ishtam alle?' Rice is universal!",
-            "das Fleisch (meat), der Fisch (fish) — with articles!",
-            "das Gemüse (vegetables) — a collective noun, no plural needed",
-            "das Obst (fruit) — also collective: Ich esse Obst.",
-            "die Kartoffel (potato) — Germans love potatoes like Malayalis love rice!",
-            "der Käse (cheese) — 'Kä-ze', not 'case'!",
-            "Remember the articles: der (masc), die (fem), das (neuter) — they matter!"
+            "Opening: 'Essen! Food! — Nammude favourite topic alle? Let's eat German!'",
+            "das Brot (bread) — German-il 300-il adhikam bread varieties undu! Nammude parotta pole common aanu.",
+            "der Reis (rice) — 'Choru' universal aanu, but quality-il difference undu.",
+            "das Fleisch (meat), der Fisch (fish) — fish lovers-innu scene illa evide!",
+            "das Gemüse (vegetables) — collective noun aanu, plural venda.",
+            "das Obst (fruit) — fruits-um collective aanu.",
+            "die Kartoffel (potato) — Malayalis-innu rice pole aanu Germans-innu potato!",
+            "der Käse (cheese) — 'Kä-ze' (kay-zeh), not cheese/case!",
+            "Remember: Article (der, die, das) arinjale food order cheyyan pattu!"
           ],
           keyVocabulary: [
             "das Brot",
@@ -67,15 +67,13 @@ export const MODULE_6: Module = {
           description:
             "How to describe your favourite Kerala and Indian dishes using German vocabulary.",
           scriptOutline: [
-            "Opening: 'Let's talk about OUR food in German!'",
-            "das Curry — same word, different pronunciation: 'kuh-ree'",
-            "der Reis — 'Reis ist auch in Kerala wichtig!' (Rice is also important in Kerala!)",
-            "die Linsen — that's dal/parippu! 'Ich esse gern Linsen.'",
-            "das Naan / das Chapati — flatbreads Germans already know",
-            "das Hühnchen (chicken), das Lammfleisch (lamb) — for non-veg dishes",
-            "scharf (spicy) — 'Kerala Curry ist sehr scharf!' — Germans can't handle it! 😄",
-            "Describing your favourite dish: 'Mein Lieblingsessen ist Biryani mit Reis.'",
-            "Vegetarian/vegan vocabulary: vegetarisch, vegan — very common in Germany too!"
+            "Opening: 'Nammude Kerala food German-il parayam!'",
+            "das Curry — same word, but 'kuh-ree' ennu parayanam.",
+            "die Linsen — parippu/dal logic! 'Ich esse gern Linsen.'",
+            "das Naan / das Chapati — Germans-innu ithu parayanda aavashyam illa, standard aanu.",
+            "scharf (spicy) — 'Kerala Curry ist sehr scharf!' — Germans-innu ithu thangan pattiya level alla! 😄",
+            "Lieblingsessen: 'Mein Lieblingsessen ist Biryani.' — biryani-il no compromise!",
+            "Vegetarian/vegan: vegetarisch, vegan. Germany-il ithu valya scene illa, ellidathum undu."
           ],
           keyVocabulary: [
             "das Curry",
@@ -304,16 +302,15 @@ export const MODULE_6: Module = {
           description:
             "Learn common drink vocabulary and how to express your preferences using 'gern'.",
           scriptOutline: [
-            "Opening: 'Was trinkst du? — Chai? Kaffee? Let's learn drinks in German!'",
-            "der Kaffee (coffee) — Germans drink A LOT of coffee, more than beer!",
-            "der Tee (tea) — 'Ich trinke gern Tee.' — chai lovers, this is for you!",
-            "das Wasser (water) — with/without fizz: mit/ohne Kohlensäure",
-            "der Saft (juice) — der Orangensaft, der Apfelsaft",
-            "die Milch (milk) — 'In Kerala trinken wir Milch mit Kurkuma!'",
-            "das Bier (beer), der Wein (wine) — Germany is famous for both!",
-            "Using 'gern': Ich trinke gern Tee. (I like to drink tea.)",
-            "Nicht gern: Ich trinke nicht gern Bier. (I don't like to drink beer.)",
-            "Ordering: 'Ich hätte gern einen Kaffee, bitte.' (I'd like a coffee, please.)"
+            "Opening: 'Was trinkst du? — Chai? Kaffee? Let's order!'",
+            "der Kaffee (coffee) — Germans drink MORE coffee than beer! Satyam!",
+            "der Tee (tea) — 'Ich trinke gern Tee.' — chai lovers point!",
+            "das Wasser (water) — THE TRAP: 'mit Kohlensäure' (soda/fizz) or 'ohne Kohlensäure' (still).",
+            "Cultural shock: Plain water order cheyyaan 'still' or 'ohne Gas' parayenam!",
+            "der Saft (juice) — Orangensaft, Apfelsaft (apple juice is HUGE here).",
+            "die Milch (milk) — standard article care.",
+            "Using 'gern': 'Ich trinke gern Tee.' (I enjoy drinking tea.)",
+            "Ordering: 'Ich hätte gern einen Kaffee, bitte.' (The magic polite phrase!)"
           ],
           keyVocabulary: [
             "der Kaffee",
@@ -528,13 +525,12 @@ export const MODULE_6: Module = {
             "Learn how to ask for the bill, pay, and tip in Germany — quite different from India!",
           scriptOutline: [
             "Asking for the bill: 'Die Rechnung, bitte!' or 'Zahlen, bitte!'",
-            "How to pay: 'Zusammen oder getrennt?' (Together or separate?) — Germans often split!",
-            "Tipping in Germany: round up or add 5-10% — not like US tipping culture",
-            "Saying the tip: 'Stimmt so!' (Keep the change!) or state the total you want to pay",
-            "Cash vs card: 'Kann ich mit Karte zahlen?' (Can I pay by card?)",
-            "Complimenting the food: 'Das war sehr lecker!' (That was very delicious!)",
-            "Saying goodbye: 'Vielen Dank! Auf Wiedersehen!'",
-            "Cultural note: No one rushes you in German restaurants — take your time!"
+            "The Split: 'Zusammen oder getrennt?' (Together or separate?) — Friends often pay separately!",
+            "Tipping: State the total you want to pay. E.g., 18.50-innu 20 ennu parayuka.",
+            "Stimmt so!: 'Keep the change!' machane. Most common way to tip.",
+            "Cash/Card: 'Kann ich mit Karte zahlen?' (Always check first, small shops love cash!).",
+            "Yummy: 'Das war sehr lecker!' — waiter happy aavum!",
+            "Culture: Nobody rushes you in a German restaurant. Feel free to chill!"
           ],
           keyVocabulary: [
             "die Rechnung",
