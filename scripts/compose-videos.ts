@@ -40,6 +40,7 @@ interface ScriptSection {
   tag: string;        // e.g. "INTRO", "SECTION 1 — Greetings"
   timestamp?: string; // e.g. "0:00-0:30"
   content: string;    // narration text for this section
+  type?: 'intro' | 'vocab' | 'table' | 'dialogue' | 'tip' | 'summary';
 }
 
 // ── Helpers ────────────────────────────────────────────────────────────────
@@ -87,19 +88,30 @@ function parseScriptSections(script: string): ScriptSection[] {
 
   // parts alternates: text-before, header, text-after, header, text-after...
   for (let i = 1; i < parts.length; i += 2) {
-    const header = parts[i].trim();
+    const headerStr = parts[i].trim();
     const content = (parts[i + 1] || '').trim();
 
     if (!content) continue;
 
-    // Parse header: "SECTION 1 — Topic — 0:00-3:00"
-    const timePart = header.match(/(\d+:\d+[-–]\d+:\d+)/);
-    const tag = header.replace(/\s*[-–—]\s*\d+:\d+[-–]\d+:\d+\s*$/, '').trim();
+    // Parse headerStr: "SECTION 1 — VOCAB — 0:30-3:00"
+    const timeMatch = headerStr.match(/(\d+:\d+[-–]\d+:\d+)/);
+    const timestamp = timeMatch ? timeMatch[1] : undefined;
+    
+    // Clean header of timestamp to find type: "SECTION 1 — VOCAB"
+    const cleanHeader = headerStr.replace(/\s*[-–—]\s*\d+:\d+[-–]\d+:\d+\s*$/, '').trim();
+    
+    let type: any = 'intro';
+    if (cleanHeader.includes('VOCAB')) type = 'vocab';
+    else if (cleanHeader.includes('TABLE') || cleanHeader.includes('CONJUGATION')) type = 'table';
+    else if (cleanHeader.includes('DIALOGUE') || cleanHeader.includes('CONVERSATION')) type = 'dialogue';
+    else if (cleanHeader.includes('TIP') || cleanHeader.includes('EXAM')) type = 'tip';
+    else if (cleanHeader.match(/INTRO/i)) type = 'intro';
 
     sections.push({
-      tag,
-      timestamp: timePart ? timePart[1] : undefined,
+      tag: cleanHeader,
+      timestamp,
       content,
+      type
     });
   }
 
@@ -128,12 +140,83 @@ async function generateSlideImage(
     throw new Error('Puppeteer not installed. Run: npm install puppeteer');
   }
 
-  // Extract key points from content (first 3 non-empty lines)
+  const type = section.type || 'intro';
+  const tagStr = section.tag.toUpperCase();
+
+  // Extract key points from content
   const contentLines = section.content
     .split('\n')
     .map((l) => l.trim())
-    .filter((l) => l && !l.startsWith('(') && l.length > 10)
-    .slice(0, 4);
+    .filter((l) => l && !l.startsWith('(') && l.length > 5);
+
+  let templateHtml = '';
+
+  if (tagStr.includes('VOCAB') || tagStr.includes('WORDS') || type === 'vocab') {
+    // VOCABULARY TEMPLATE
+    const vocabItems = contentLines.slice(0, 5).map(line => {
+      const parts = line.split(/[—:-]/).map(s => s.trim());
+      return { 
+        german: parts[0] || '', 
+        english: parts[1] || '' 
+      };
+    });
+
+    templateHtml = `
+      <div class="vocab-grid">
+        ${vocabItems.map(item => `
+          <div class="vocab-item">
+            <div class="vocab-de">${escapeHtml(item.german)}</div>
+            <div class="vocab-en">${escapeHtml(item.english)}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  } else if (tagStr.includes('TABLE') || tagStr.includes('CONJUGATION') || type === 'table') {
+    // TABLE TEMPLATE
+    const rows = contentLines.slice(0, 6).map(line => line.split(/[|—:-]/).map(s => s.trim()));
+    templateHtml = `
+      <table class="grammar-table">
+        ${rows.map(cols => `
+          <tr>${cols.map(c => `<td>${escapeHtml(c)}</td>`).join('')}</tr>
+        `).join('')}
+      </table>
+    `;
+  } else if (tagStr.includes('DIALOGUE') || tagStr.includes('CONVERSATION') || type === 'dialogue') {
+    // DIALOGUE TEMPLATE
+    templateHtml = `
+      <div class="dialogue-container">
+        ${contentLines.slice(0, 4).map((line, i) => `
+          <div class="bubble ${i % 2 === 0 ? 'left' : 'right'}">
+            ${escapeHtml(line)}
+          </div>
+        `).join('')}
+      </div>
+    `;
+  } else if (tagStr.includes('TIP') || tagStr.includes('EXAM') || type === 'tip') {
+    // EXAM TIP TEMPLATE
+    templateHtml = `
+      <div class="tip-card">
+        <div class="tip-icon">🎯</div>
+        <div class="tip-content">
+          ${contentLines.slice(0, 3).map(line => `
+            <div class="tip-line">${escapeHtml(line)}</div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  } else {
+    // GENERIC CARD TEMPLATE
+    templateHtml = `
+      <div class="content">
+        ${contentLines.slice(0, 4)
+          .map((line) => {
+            const isGerman = /[äöüßÄÖÜ]/.test(line) || /\b(ich|du|er|sie|mein|ist|bin|haben|sein)\b/i.test(line);
+            return `<div class="content-line ${isGerman ? 'german' : ''}">${escapeHtml(line)}</div>`;
+          })
+          .join('\n      ')}
+      </div>
+    `;
+  }
 
   const html = `<!DOCTYPE html>
 <html>
@@ -169,56 +252,68 @@ async function generateSlideImage(
     max-width: 1400px;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 24px;
+    border-radius: 32px;
     padding: 60px 80px;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   }
   .section-tag {
     display: inline-block;
-    background: rgba(255,107,157,0.3);
-    border: 1px solid rgba(255,107,157,0.5);
+    background: rgba(255,107,157,0.2);
+    border: 1px solid rgba(255,107,157,0.4);
     border-radius: 30px;
     padding: 8px 24px;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: #ff6b9d;
     margin-bottom: 24px;
   }
   .video-title {
     font-size: 28px;
     font-weight: 600;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 16px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 32px;
   }
-  .content {
-    margin-top: 32px;
-  }
+  /* Template Styles */
   .content-line {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 400;
     line-height: 1.6;
     color: rgba(255,255,255,0.9);
-    margin-bottom: 16px;
-    padding-left: 20px;
-    border-left: 3px solid rgba(255,107,157,0.4);
+    margin-bottom: 20px;
+    padding-left: 24px;
+    border-left: 4px solid #ff6b9d;
   }
-  .content-line.german {
-    color: #ffd93d;
-    font-weight: 600;
-    font-style: italic;
-    border-left-color: #ffd93d;
-  }
+  .content-line.german { color: #ffd93d; border-left-color: #ffd93d; font-weight: 700; }
+  
+  .vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+  .vocab-item { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); }
+  .vocab-de { font-size: 32px; font-weight: 800; color: #ffd93d; margin-bottom: 8px; }
+  .vocab-en { font-size: 20px; color: rgba(255,255,255,0.6); }
+
+  .grammar-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .grammar-table td { padding: 20px; border: 1px solid rgba(255,255,255,0.1); font-size: 28px; background: rgba(255,255,255,0.03); }
+  .grammar-table tr:first-child td { font-weight: 800; color: #ff6b9d; background: rgba(255,107,157,0.1); }
+
+  .dialogue-container { display: flex; flex-direction: column; gap: 24px; margin-top: 20px; }
+  .bubble { max-width: 80%; padding: 24px 32px; border-radius: 20px; font-size: 28px; line-height: 1.4; }
+  .bubble.left { align-self: flex-start; background: rgba(255,107,157,0.2); border-bottom-left-radius: 4px; border: 1px solid rgba(255,107,157,0.3); }
+  .bubble.right { align-self: flex-end; background: rgba(0,217,165,0.2); border-bottom-right-radius: 4px; border: 1px solid rgba(0,217,165,0.3); text-align: right; }
+
+  .tip-card { background: linear-gradient(135deg, rgba(255,107,157,0.1) 0%, rgba(255,217,61,0.1) 100%); border: 2px solid #ffd93d; border-radius: 24px; padding: 40px; display: flex; align-items: center; gap: 40px; }
+  .tip-icon { font-size: 100px; filter: drop-shadow(0 0 20px #ffd93d); }
+  .tip-line { font-size: 38px; font-weight: 700; color: #ffd93d; line-height: 1.4; margin-bottom: 20px; }
+
   .brand {
     position: absolute;
     bottom: 40px;
     right: 60px;
-    font-size: 16px;
-    font-weight: 700;
-    background: linear-gradient(90deg, #ff6b9d, #ffd93d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 18px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
   }
 </style>
 </head>
@@ -228,16 +323,9 @@ async function generateSlideImage(
   <div class="card">
     <div class="section-tag">${escapeHtml(section.tag)}</div>
     <div class="video-title">${escapeHtml(videoTitle)}</div>
-    <div class="content">
-      ${contentLines
-        .map((line) => {
-          const isGerman = /[äöüßÄÖÜ]/.test(line) || /\b(ich|du|er|sie|mein|ist|bin|haben|sein)\b/i.test(line);
-          return `<div class="content-line ${isGerman ? 'german' : ''}">${escapeHtml(line)}</div>`;
-        })
-        .join('\n      ')}
-    </div>
+    ${templateHtml}
   </div>
-  <div class="brand">Adipoli German Course</div>
+  <div class="brand">ADIPOLI GERMAN COURSE</div>
 </body>
 </html>`;
 
@@ -426,9 +514,29 @@ async function main() {
       const sections = parseScriptSections(script);
       console.log(`    Sections: ${sections.length}, Duration: ${totalDuration.toFixed(1)}s`);
 
-      // Calculate duration per section (evenly split)
-      const perSection = totalDuration / sections.length;
-      const durations = sections.map(() => perSection);
+      // Try to load precise timing metadata
+      const timingPath = path.join(NARRATION_DIR, `${id}_timing.json`);
+      let durations: number[] = [];
+
+      if (fs.existsSync(timingPath)) {
+        try {
+          const timingData = JSON.parse(fs.readFileSync(timingPath, 'utf-8'));
+          // Map timing sections to script sections by tag
+          durations = sections.map(sec => {
+            const match = timingData.sections.find((s: any) => s.tag === sec.tag);
+            return match ? match.duration : totalDuration / sections.length;
+          });
+          console.log(`    Using precise timing from JSON`);
+        } catch (e) {
+          console.warn(`    Could not parse timing JSON, falling back to equal split`);
+        }
+      }
+
+      if (durations.length === 0) {
+        // Fallback: Calculate duration per section (evenly split)
+        const perSection = totalDuration / sections.length;
+        durations = sections.map(() => perSection);
+      }
 
       // Generate slide images
       const slideFiles: string[] = [];

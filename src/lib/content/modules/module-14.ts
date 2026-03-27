@@ -94,6 +94,7 @@ export const MODULE_14: Module = {
           question: "Match the German form field to its English meaning:",
           options: ["Vorname", "Nachname", "Geburtsdatum", "Geburtsort", "Familienstand"],
           correctAnswer: ["first name", "surname", "date of birth", "place of birth", "marital status"],
+          explanation: "These are the 'Core Five'. You will fill these out hundreds of times in Germany. 'Vor' means 'before', so Vor-name = Name-before (First name).",
           xpReward: 15
         },
         {
@@ -102,7 +103,7 @@ export const MODULE_14: Module = {
           question: "What is the correct German date format for March 15, 1998?",
           options: ["15.03.1998", "03/15/1998", "1998-03-15", "15-March-1998"],
           correctAnswer: "15.03.1998",
-          explanation: "Germany uses TT.MM.JJJJ (day.month.year) with dots as separators.",
+          explanation: "CRUCIAL: Germany uses dots (.), not slashes (/). The order is Day.Month.Year. Using the US format (03/15) will confuse German officials or break automated forms!",
           xpReward: 10
         },
         {
@@ -111,7 +112,7 @@ export const MODULE_14: Module = {
           question: "Complete: Meine _____ ist Indisch. (My nationality is Indian.)",
           options: ["Staatsangehörigkeit", "Familienstand", "Geburtsdatum", "Adresse"],
           correctAnswer: "Staatsangehörigkeit",
-          explanation: "Staatsangehörigkeit = nationality. For Indians: Indisch.",
+          explanation: "Staats-angehörigkeit (State-belonging). It’s a long word, but just look for 'Staats' and you'll know they mean your passport/nationality.",
           xpReward: 10
         },
         {
@@ -120,7 +121,7 @@ export const MODULE_14: Module = {
           question: "What is 'Anmeldung'?",
           options: ["Mandatory address registration", "A job application", "A bank account opening", "A visa application"],
           correctAnswer: "Mandatory address registration",
-          explanation: "Anmeldung is the mandatory registration of your address — you must do it within 14 days of moving to a new city in Germany.",
+          explanation: "In Germany, you don't just 'live' somewhere; you 'register' (anmelden) there. This paper is the key to everything else—bank accounts, phone SIMs, and your Tax ID.",
           xpReward: 10
         },
         {
@@ -129,7 +130,7 @@ export const MODULE_14: Module = {
           question: "If you are not married, what do you write for 'Familienstand'?",
           options: ["ledig", "verheiratet", "geschieden", "verwitwet"],
           correctAnswer: "ledig",
-          explanation: "ledig = single/unmarried. verheiratet = married, geschieden = divorced, verwitwet = widowed.",
+          explanation: "'Ledig' means single. 'Ver-heiratet' (married) comes from 'Heirat' (marriage). Getting this right affects your 'Steuerklasse' (tax class), so don't mis-fill!",
           xpReward: 10
         },
         {
@@ -138,7 +139,7 @@ export const MODULE_14: Module = {
           question: "Complete: Die _____ ist 5 Ziffern lang. (The postal code is 5 digits long.) [abbreviation]",
           options: ["PLZ", "DOB", "PIN", "ZIP"],
           correctAnswer: "PLZ",
-          explanation: "PLZ = Postleitzahl (postal code). German PLZ codes are 5 digits, e.g., 10115 for Berlin Mitte.",
+          explanation: "PLZ stands for Post-leit-zahl. Every German city has a 5-digit code. Berlin starts with 1, Munich with 8, etc. Mentioning the PLZ helps people know exactly which city district you mean.",
           xpReward: 10
         },
         {
@@ -147,6 +148,7 @@ export const MODULE_14: Module = {
           question: "Put these Anmeldung steps in the correct order:",
           options: ["Receive your Meldebescheinigung", "Book a Termin online at the Bürgeramt", "Fill out the Anmeldeformular", "Collect documents: passport, Mietvertrag, Wohnungsgeberbestätigung", "Go to your appointment at the Bürgeramt"],
           correctAnswer: ["Book a Termin online at the Bürgeramt", "Collect documents: passport, Mietvertrag, Wohnungsgeberbestätigung", "Fill out the Anmeldeformular", "Go to your appointment at the Bürgeramt", "Receive your Meldebescheinigung"],
+          explanation: "The logic of German Bureaucracy: 1. Get the slot (Termin), 2. Prepare the proof, 3. Show up (on time!), 4. Get the paper. No paper = no existence!",
           xpReward: 20
         },
         {
@@ -155,7 +157,25 @@ export const MODULE_14: Module = {
           question: "Match these address-related German terms to their English meaning:",
           options: ["die Straße", "die Hausnummer", "der Ort", "die Postleitzahl", "die Unterschrift"],
           correctAnswer: ["street", "house number", "city / town", "postal code", "signature"],
+          explanation: "Fun fact: In Germany, the Hausnummer ALWAYS comes AFTER the street name (e.g., Mainstreet 5). Don't swap them!",
           xpReward: 15
+        },
+        {
+          id: "ex14-1-9",
+          type: "dictation",
+          question: "Listen and type: Mein Vorname ist Arun.",
+          correctAnswer: "Mein Vorname ist Arun",
+          explanation: "Great! 'Vorname' is your first name. Keep it simple and clear on forms.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-my-firstname.mp3"
+        },
+        {
+          id: "ex14-1-10",
+          type: "free-text",
+          question: "Write your date of birth in German format (Example: 15.03.1998)",
+          correctAnswer: "15.03.1998",
+          explanation: "Wunderbar! Remember the dots (.) instead of slashes (/). DD.MM.YYYY is the way to go!",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -248,7 +268,7 @@ export const MODULE_14: Module = {
           question: "Where do you go to get your residence permit (Aufenthaltserlaubnis)?",
           options: ["Ausländerbehörde", "Rathaus", "Supermarkt", "Bahnhof"],
           correctAnswer: "Ausländerbehörde",
-          explanation: "The Ausländerbehörde (foreigners office) handles all visa and residence permit matters.",
+          explanation: "Literal meaning: Foreigner-Authority. This office is the boss of your legal stay. Keep their location pinned on your map!",
           xpReward: 10
         },
         {
@@ -257,7 +277,7 @@ export const MODULE_14: Module = {
           question: "Complete: Ich brauche einen _____ bei der Ausländerbehörde. (I need an appointment...)",
           options: ["Termin", "Ausweis", "Formular", "Brief"],
           correctAnswer: "Termin",
-          explanation: "Termin = appointment. Always book a Termin before visiting German offices!",
+          explanation: "'No Termin, no entry' — that’s the golden rule of German offices. Even if the office is empty, they usually insist on a pre-booked appointment.",
           xpReward: 10
         },
         {
@@ -266,6 +286,7 @@ export const MODULE_14: Module = {
           question: "Match the German office to its function:",
           options: ["Ausländerbehörde", "Bürgeramt", "Rathaus", "Finanzamt"],
           correctAnswer: ["residence permits for foreigners", "address registration & ID cards", "general city administration", "taxes & Steuer-ID"],
+          explanation: "Knowing 'Wer macht was' (who does what) saves you hours of traveling to the wrong office!",
           xpReward: 15
         },
         {
@@ -274,7 +295,7 @@ export const MODULE_14: Module = {
           question: "What does 'Unterlagen' mean?",
           options: ["documents / paperwork", "office hours", "appointment", "signature"],
           correctAnswer: "documents / paperwork",
-          explanation: "Unterlagen = documents/paperwork. 'Bringen Sie Ihre Unterlagen mit' means 'Bring your documents along'.",
+          explanation: "The magic word for your file folder. When they say 'Haben Sie Ihre Unterlagen dabei?' they want to see your certificates and contracts.",
           xpReward: 10
         },
         {
@@ -283,7 +304,7 @@ export const MODULE_14: Module = {
           question: "Complete: Bitte füllen Sie das _____ aus. (Please fill out the form.)",
           options: ["Formular", "Termin", "Ausweis", "Konto"],
           correctAnswer: "Formular",
-          explanation: "Formular = form. 'ausfüllen' = to fill out.",
+          explanation: "Formular (Form). The verb 'aus-füllen' (to fill out) is separable—the 'aus' jumps to the end of the instruction!",
           xpReward: 10
         },
         {
@@ -292,6 +313,7 @@ export const MODULE_14: Module = {
           question: "Put these steps in the correct order for visiting the Ausländerbehörde:",
           options: ["Get your residence permit", "Collect all required documents", "Go to your appointment on time", "Book a Termin online"],
           correctAnswer: ["Book a Termin online", "Collect all required documents", "Go to your appointment on time", "Get your residence permit"],
+          explanation: "Structure is everything. Most offices won't even talk to you without a 'Terminbestätigung' (appointment confirmation).",
           xpReward: 20
         },
         {
@@ -300,7 +322,7 @@ export const MODULE_14: Module = {
           question: "What is a 'Beglaubigung'?",
           options: ["A certified copy / notarization", "A bank statement", "An appointment booking", "A visa application"],
           correctAnswer: "A certified copy / notarization",
-          explanation: "Beglaubigung = certified copy / notarization. Some German offices require beglaubigte Kopien (certified copies) of your documents.",
+          explanation: "German offices love proof. A 'Beglaubigung' is an official stamp (usually from the Rathaus or Bürgeramt) confirming a copy is identical to the original.",
           xpReward: 10
         },
         {
@@ -309,8 +331,25 @@ export const MODULE_14: Module = {
           question: "Complete: Ich möchte einen _____ stellen. (I'd like to submit an application.)",
           options: ["Antrag", "Termin", "Ausweis", "Brief"],
           correctAnswer: "Antrag",
-          explanation: "Antrag = application. 'Einen Antrag stellen' = to submit/file an application. Very common phrase at German offices!",
+          explanation: "The phrase is 'einen Antrag stellen' (to place an application). It's formal legalese. You don't 'give' an application, you 'place' it.",
           xpReward: 10
+        },
+        {
+          id: "ex14-2-9",
+          type: "dictation",
+          question: "Listen and type: Ich habe einen Termin.",
+          correctAnswer: "Ich habe einen Termin",
+          explanation: "Perfect! This is the most important sentence when you arrive at any German office.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-have-appointment.mp3"
+        },
+        {
+          id: "ex14-2-10",
+          type: "free-text",
+          question: "Translate to German: 'I need a residence permit.' (residence permit = Aufenthaltserlaubnis)",
+          correctAnswer: "Ich brauche eine Aufenthaltserlaubnis",
+          explanation: "Excellent! 'Aufenthaltserlaubnis' is a long word, but you've mastered it. Don't forget 'eine' (feminine).",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -405,7 +444,7 @@ export const MODULE_14: Module = {
           question: "What is a 'Girokonto'?",
           options: ["A checking / current account", "A savings account", "A credit card", "A loan"],
           correctAnswer: "A checking / current account",
-          explanation: "Girokonto is the standard everyday bank account (checking/current account) for salary, payments, and transfers.",
+          explanation: "In Germany, a 'Girokonto' is your survival account. Salary comes here, rent goes from here. It's the equivalent of a Checking or Current account.",
           xpReward: 10
         },
         {
@@ -414,7 +453,7 @@ export const MODULE_14: Module = {
           question: "Complete: Ich möchte ein Konto _____. (I'd like to open an account.)",
           options: ["eröffnen", "schließen", "kaufen", "machen"],
           correctAnswer: "eröffnen",
-          explanation: "eröffnen = to open (an account, a shop). 'Ein Konto eröffnen' = to open an account.",
+          explanation: "'Eröffnen' is the formal verb for opening something official like a bank account or a business. Use this to sound professional at the bank counter!",
           xpReward: 10
         },
         {
@@ -423,6 +462,7 @@ export const MODULE_14: Module = {
           question: "Match the German banking term to its English meaning:",
           options: ["die Überweisung", "der Geldautomat", "die EC-Karte", "der Kontoauszug", "der Dauerauftrag"],
           correctAnswer: ["bank transfer", "ATM", "debit card", "bank statement", "standing order"],
+          explanation: "Vocabulary is money! Knowing 'Überweisung' is key because there is no UPI in Germany—everyone uses bank transfers.",
           xpReward: 15
         },
         {
@@ -431,7 +471,7 @@ export const MODULE_14: Module = {
           question: "What is 'Schufa'?",
           options: ["Germany's credit rating system", "A type of bank account", "A German bank name", "An insurance company"],
           correctAnswer: "Germany's credit rating system",
-          explanation: "Schufa is the main credit reporting agency in Germany, similar to CIBIL in India.",
+          explanation: "Schufa is the 'CIBIL' Score of Germany. Every time you pay (or miss) a bill, your Schufa record changes. Landlords will ALWAYS ask for a Schufa report!",
           xpReward: 10
         },
         {
@@ -440,7 +480,7 @@ export const MODULE_14: Module = {
           question: "What do you need for opening a bank account in Germany?",
           options: ["Passport and Anmeldung", "Only a passport", "Only an email address", "A German driver's license"],
           correctAnswer: "Passport and Anmeldung",
-          explanation: "Most German banks require your passport and Meldebescheinigung (proof of registration/Anmeldung).",
+          explanation: "The 'Golden Duo'. Without your registration paper (Anmeldung), most banks won't give you an account, even with a valid passport.",
           xpReward: 10
         },
         {
@@ -449,7 +489,7 @@ export const MODULE_14: Module = {
           question: "Complete: Wo ist der nächste _____? (Where is the nearest ATM?)",
           options: ["Geldautomat", "Kontoauszug", "Überweisung", "Girokonto"],
           correctAnswer: "Geldautomat",
-          explanation: "Geldautomat = ATM (literally: money machine). Geld = money, Automat = machine.",
+          explanation: "Geld (Money) + Automat (Machine). Since Germany is very cash-heavy compared to India or the UK, you'll need to find these often!",
           xpReward: 10
         },
         {
@@ -458,6 +498,7 @@ export const MODULE_14: Module = {
           question: "Put the steps for opening a bank account in correct order:",
           options: ["Receive your EC-Karte and PIN by mail", "Choose a bank (Sparkasse, N26, etc.)", "Set up Onlinebanking", "Bring passport and Meldebescheinigung to the bank", "Sign the Kontoeröffnungsantrag (account opening form)"],
           correctAnswer: ["Choose a bank (Sparkasse, N26, etc.)", "Bring passport and Meldebescheinigung to the bank", "Sign the Kontoeröffnungsantrag (account opening form)", "Receive your EC-Karte and PIN by mail", "Set up Onlinebanking"],
+          explanation: "German banks often send the card and the PIN in TWO separate letters for security. Don't throw away the first letter thinking it's trash!",
           xpReward: 20
         },
         {
@@ -466,8 +507,25 @@ export const MODULE_14: Module = {
           question: "Complete: Ich habe meine EC-Karte _____. Kann ich eine neue bekommen? (I lost my debit card.)",
           options: ["verloren", "gefunden", "gekauft", "bezahlt"],
           correctAnswer: "verloren",
-          explanation: "verloren = lost (past participle of verlieren). 'Ich habe meine Karte verloren' = I lost my card.",
+          explanation: "'Ich habe ... verloren' (I have lost). This is the Perfekt tense form of 'verlieren'. Essential for reporting emergencies!",
           xpReward: 10
+        },
+        {
+          id: "ex14-3-9",
+          type: "dictation",
+          question: "Listen and type: Ich möchte ein Girokonto eröffnen.",
+          correctAnswer: "Ich möchte ein Girokonto eröffnen",
+          explanation: "Great job! This is the correct way to tell the bank clerk your objective.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-open-account.mp3"
+        },
+        {
+          id: "ex14-3-10",
+          type: "free-text",
+          question: "Write in German: 'Where is the ATM?' (use Geldautomat)",
+          correctAnswer: "Wo ist der Geldautomat",
+          explanation: "Wunderbar! 'Wo ist der Geldautomat?' is a survival must in cash-heavy Germany.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -565,7 +623,7 @@ export const MODULE_14: Module = {
           question: "What is the standard formal greeting when you don't know the recipient's name?",
           options: ["Sehr geehrte Damen und Herren,", "Lieber Freund,", "Hallo zusammen,", "Hey,"],
           correctAnswer: "Sehr geehrte Damen und Herren,",
-          explanation: "Sehr geehrte Damen und Herren (Dear Ladies and Gentlemen) is the standard formal greeting for unknown recipients.",
+          explanation: "This is the king of formal greetings. Note: Always use a COMMA at the end, and the first word after the greeting starts with a SMALL letter (unless it's a noun)!",
           xpReward: 10
         },
         {
@@ -574,16 +632,16 @@ export const MODULE_14: Module = {
           question: "Complete the closing: Mit freundlichen _____",
           options: ["Grüßen", "Grüße", "Gruß", "Grüssen"],
           correctAnswer: "Grüßen",
-          explanation: "Mit freundlichen Grüßen (With friendly greetings) is the standard formal letter closing.",
+          explanation: "Mit freundlichen Grüßen (With friendly regards). Pro tip: NO comma after this closing. Just your name on the next line.",
           xpReward: 10
         },
         {
           id: "ex14-4-3",
           type: "multiple-choice",
           question: "In a Nebensatz with 'weil', where does the verb go?",
-          options: ["At the end of the clause", "At the beginning", "In the middle", "Before weil"],
+          options: ["At the end of the clause", "At the beginning", "In the second position", "It doesn't change"],
           correctAnswer: "At the end of the clause",
-          explanation: "In subordinate clauses with weil (because) or dass (that), the conjugated verb goes to the END: 'Ich schreibe, weil ich einen Termin brauche.'",
+          explanation: "THE VERB-FINAL RULE: Words like 'weil' (because) and 'dass' (that) kick the conjugated verb to the very end of the sub-clause. It's the ultimate test of B1-level fluency!",
           xpReward: 15
         },
         {
@@ -592,6 +650,7 @@ export const MODULE_14: Module = {
           question: "Match the compound noun to its meaning:",
           options: ["Krankenversicherung", "Aufenthaltsgenehmigung", "Mietvertrag", "Kündigungsfrist", "Kontoeröffnung"],
           correctAnswer: ["health insurance", "residence authorization", "rental contract", "cancellation period", "account opening"],
+          explanation: "Compound Nouns = Lego bricks. Krank (Sick) + Versicherung (Insurance). German stacks meanings like this. Break them apart to understand them!",
           xpReward: 15
         },
         {
@@ -600,6 +659,7 @@ export const MODULE_14: Module = {
           question: "Put the parts of a formal letter in the correct order:",
           options: ["Mit freundlichen Grüßen + Unterschrift", "Sehr geehrte Damen und Herren,", "Betreff: Terminanfrage", "Absender (your address) + Empfänger (their address) + Datum", "Ich schreibe Ihnen, weil ich einen Termin brauche."],
           correctAnswer: ["Absender (your address) + Empfänger (their address) + Datum", "Betreff: Terminanfrage", "Sehr geehrte Damen und Herren,", "Ich schreibe Ihnen, weil ich einen Termin brauche.", "Mit freundlichen Grüßen + Unterschrift"],
+          explanation: "German formality is a ritual: Headers -> Topic -> Greeting -> Body -> Sign-off. Skipping any part makes the letter look unprofessional.",
           xpReward: 20
         },
         {
@@ -608,7 +668,7 @@ export const MODULE_14: Module = {
           question: "Complete: Ich schreibe, _____ ich einen Termin brauche. (I write because I need an appointment.)",
           options: ["weil", "dass", "wenn", "ob"],
           correctAnswer: "weil",
-          explanation: "weil = because. It introduces a reason: 'Ich schreibe, weil ich einen Termin brauche.' Note: the verb goes to the end!",
+          explanation: "'Weil' is for reasons. Notice the verb 'brauche' at the end? That's the 'weil' effect in action!",
           xpReward: 10
         },
         {
@@ -628,6 +688,39 @@ export const MODULE_14: Module = {
           correctAnswer: "kündige",
           explanation: "kündigen = to cancel/terminate. 'Hiermit kündige ich...' is the standard phrase for contract cancellation letters.",
           xpReward: 10
+        },
+        {
+          id: "ex14-4-9",
+          type: "dictation",
+          question: "Listen and type: Sehr geehrte Damen und Herren,",
+          correctAnswer: "Sehr geehrte Damen und Herren",
+          explanation: "Perfect! This is the gold standard for formal greetings in letters.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-formal-greeting.mp3"
+        },
+        {
+          id: "ex14-4-10",
+          type: "free-text",
+          question: "Write in German: 'With friendly regards' (the formal closing)",
+          correctAnswer: "Mit freundlichen Grüßen",
+          explanation: "Excellent! 'Mit freundlichen Grüßen' is the correct formal sign-off. No comma after it!",
+          xpReward: 30
+        },
+        {
+          id: "ex14-4-11",
+          type: "free-text",
+          question: "Translate to German: 'I am writing because I need help.' (use weil, help = Hilfe)",
+          correctAnswer: "Ich schreibe, weil ich Hilfe brauche",
+          explanation: "Wunderbar! 'brauche' moves to the end of the clause because of 'weil'.",
+          xpReward: 30
+        },
+        {
+          id: "ex14-4-12",
+          type: "free-text",
+          question: "Translate to German: 'I hereby cancel my contract.' (use kündige)",
+          correctAnswer: "Hiermit kündige ich meinen Vertrag",
+          explanation: "Great job! This is the standard legal phrase for cancellation.",
+          xpReward: 30
         }
       ],
       vocabulary: [

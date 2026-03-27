@@ -154,6 +154,23 @@ export const MODULE_6: Module = {
           correctAnswer: "My favourite food",
           explanation: "German builds compound words: Lieblings (favourite) + Essen (food) = Lieblingsessen. You can use 'Lieblings-' with anything: Lieblingsfilm (favourite movie), Lieblingslied (favourite song)!",
           xpReward: 10
+        },
+        {
+          id: "ex6-1-7",
+          type: "dictation",
+          question: "Listen and type: Ich esse gern Reis mit Curry.",
+          correctAnswer: "Ich esse gern Reis mit Curry",
+          explanation: "Super! A very typical sentence for a Malayali learning German. No article needed for 'Reis' or 'Curry' when speaking generally!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-rice-curry.mp3"
+        },
+        {
+          id: "ex6-1-8",
+          type: "free-text",
+          question: "Translate to German: 'Bread is healthy.' (Bread = Brot, healthy = gesund)",
+          correctAnswer: "Brot ist gesund",
+          explanation: "Wunderbar! 'Brot ist gesund.' — remember that all nouns must be capitalized!",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -367,6 +384,23 @@ export const MODULE_6: Module = {
           explanation:
             "Like → gern, Don't like → nicht gern. Position: verb + NICHT + gern. 'Ich trinke nicht gern Bier.' This pattern works with any verb!",
           xpReward: 10
+        },
+        {
+          id: "ex6-2-6",
+          type: "dictation",
+          question: "Listen and type: Ich trinke gern Tee mit Milch.",
+          correctAnswer: "Ich trinke gern Tee mit Milch",
+          explanation: "Perfect! 'Tee mit Milch' — exactly how many Malayalis like their chai!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-tea-milk.mp3"
+        },
+        {
+          id: "ex6-2-7",
+          type: "free-text",
+          question: "Write in German: 'I would like a water, please.' (I would like = Ich hätte gern, water = Wasser)",
+          correctAnswer: "Ich hätte gern ein Wasser, bitte",
+          explanation: "Excellent! 'Ich hätte gern ein Wasser, bitte.' — the most polite way to order!",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -623,6 +657,23 @@ export const MODULE_6: Module = {
             "Together or separate?"
           ],
           xpReward: 15
+        },
+        {
+          id: "ex6-3-8",
+          type: "dictation",
+          question: "Listen and type: Die Rechnung, bitte!",
+          correctAnswer: "Die Rechnung, bitte",
+          explanation: "Great! This is the most important phrase when you're finished eating!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-bill-please.mp3"
+        },
+        {
+          id: "ex6-3-9",
+          type: "free-text",
+          question: "Translate to German: 'A table for two, please.'",
+          correctAnswer: "Einen Tisch für zwei, bitte",
+          explanation: "Wunderbar! 'Tisch' is masculine, so it's 'einen Tisch' in this context.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -845,6 +896,23 @@ export const MODULE_6: Module = {
           explanation:
             "Feminine form: Vegetarierin. Masculine: Vegetarier. 'Ich bin Vegetarierin.' = I am a vegetarian (female).",
           xpReward: 15
+        },
+        {
+          id: "ex6-4-7",
+          type: "dictation",
+          question: "Listen and type: Ich mag indisches Essen.",
+          correctAnswer: "Ich mag indisches Essen",
+          explanation: "Perfect! 'indisches' describes the food. And don't forget the capital 'E' for 'Essen'!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-indian-food.mp3"
+        },
+        {
+          id: "ex6-4-8",
+          type: "free-text",
+          question: "Translate to German: 'I don't like meat.' (meat = Fleisch)",
+          correctAnswer: "Ich mag kein Fleisch",
+          explanation: "Excellent! 'kein' is used to negate nouns like 'Fleisch'.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -1100,6 +1168,23 @@ export const MODULE_6: Module = {
           correctAnswer: "Die Suppe ist sehr gut",
           explanation: "'Die Suppe ist sehr gut.' — 'Die' because Suppe is feminine, 'sehr' means very, 'gut' means good. Simple and correct!",
           xpReward: 15
+        },
+        {
+          id: "ex6-5-11",
+          type: "dictation",
+          question: "Listen and type: Ich nehme einen Kaffee.",
+          correctAnswer: "Ich nehme einen Kaffee",
+          explanation: "Great! Remember the accusative: 'einen Kaffee' because it's the object of the action.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-take-coffee.mp3"
+        },
+        {
+          id: "ex6-5-12",
+          type: "free-text",
+          question: "Write in German: 'I am not hungry.' (Hunger is masculine)",
+          correctAnswer: "Ich habe keinen Hunger",
+          explanation: "Wunderbar! 'keinen' because Hunger is masculine and in the accusative case.",
+          xpReward: 30
         }
       ],
       vocabulary: [

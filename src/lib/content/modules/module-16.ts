@@ -85,7 +85,7 @@ export const MODULE_16: Module = {
           question: "What is the dative form of 'der Mann'?",
           options: ["dem Mann", "den Mann", "der Mann", "des Mannes"],
           correctAnswer: "dem Mann",
-          explanation: "In the dative case, 'der' (masculine) becomes 'dem'. So 'der Mann' → 'dem Mann'.",
+          explanation: "In German Dative, 'der' becomes 'dem'. Think of Dative as the 'To Whom' case. If you're giving something TO the man, he is 'dem Mann'.",
           xpReward: 10
         },
         {
@@ -94,7 +94,7 @@ export const MODULE_16: Module = {
           question: "Complete: Ich gebe _____ Frau das Geschenk. (I give the gift to the woman.)",
           options: ["der", "die", "dem", "den"],
           correctAnswer: "der",
-          explanation: "In the dative case, 'die' (feminine) becomes 'der'. So 'die Frau' → 'der Frau' in dative.",
+          explanation: "SURPRISE! In Dative, feminine 'die' becomes 'der'. It's one of the most confusing things for beginners. Just remember: Dative-Fem = 'der'.",
           xpReward: 10
         },
         {
@@ -103,6 +103,7 @@ export const MODULE_16: Module = {
           question: "Match the nominative article to its dative form:",
           options: ["der (masc.)", "die (fem.)", "das (neut.)", "die (plural)"],
           correctAnswer: ["dem", "der", "dem", "den + n"],
+          explanation: "The Dative DNA: M/N become 'dem', Fem becomes 'der', and Plural becomes 'den' with an extra 'n' on the noun itself!",
           xpReward: 15
         },
         {
@@ -111,7 +112,7 @@ export const MODULE_16: Module = {
           question: "Which sentence is correct?",
           options: ["Ich helfe dir.", "Ich helfe dich.", "Ich helfe du.", "Ich helfe den."],
           correctAnswer: "Ich helfe dir.",
-          explanation: "'Helfen' always takes the dative case. The dative form of 'du' is 'dir', so 'Ich helfe dir' is correct.",
+          explanation: "'Helfen' is a Dative Verb. In Malayalam, we say 'ninakku' (to you) help cheyyam. German does the same: 'dir' (to you) is dative, 'dich' (you) is accusative.",
           xpReward: 10
         },
         {
@@ -120,7 +121,7 @@ export const MODULE_16: Module = {
           question: "Complete: Das Buch gehört _____. (The book belongs to me.)",
           options: ["mir", "mich", "ich", "mein"],
           correctAnswer: "mir",
-          explanation: "'Gehören' takes the dative case. The dative form of 'ich' is 'mir'.",
+          explanation: "'Gehören' (belongs to) is another Dative Verb. It's like the book belongs TO me. Dative of 'ich' is 'mir'.",
           xpReward: 10
         },
         {
@@ -129,7 +130,7 @@ export const MODULE_16: Module = {
           question: "Which verb does NOT take the dative case?",
           options: ["sehen (to see)", "helfen (to help)", "gefallen (to please)", "danken (to thank)"],
           correctAnswer: "sehen (to see)",
-          explanation: "'Sehen' takes the accusative case (Ich sehe dich). The others — helfen, gefallen, danken — all require dative.",
+          explanation: "'Sehen' is simple. You see an object directly (Accusative). But helping, pleasing, or thanking someone usually involves their engagement—hence Dative!",
           xpReward: 10
         },
         {
@@ -138,6 +139,7 @@ export const MODULE_16: Module = {
           question: "Put the words in the correct order: gefällt / die Stadt / mir",
           options: ["Die Stadt", "gefällt", "mir."],
           correctAnswer: ["Die Stadt", "gefällt", "mir."],
+          explanation: "Logic: [Subject: The City] + [Verb: Pleases] + [Dative Object: Me]. In German, you don't 'like' the city; the city 'pleases' you!",
           xpReward: 15
         },
         {
@@ -146,8 +148,33 @@ export const MODULE_16: Module = {
           question: "Complete: Ich gebe _____ Kindern die Schokolade. (I give the chocolate to the children.)",
           options: ["den", "die", "dem", "der"],
           correctAnswer: "den",
-          explanation: "In the dative plural, 'die' becomes 'den' and the noun gets an -n ending: 'den Kindern'.",
+          explanation: "Plural Dative Rule: The article becomes 'den' and most nouns take an extra 'n' (Kind-er → Kinder-n). It's the 'Plural -n rule'!",
           xpReward: 10
+        },
+        {
+          id: "ex16-1-9",
+          type: "dictation",
+          question: "Listen and type: Ich helfe der Frau.",
+          correctAnswer: "Ich helfe der Frau",
+          explanation: "Perfect! Remember: 'helfen' is a dative verb, and dative feminine is 'der'.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-help-woman.mp3"
+        },
+        {
+          id: "ex16-1-10",
+          type: "free-text",
+          question: "Translate to German: 'I give the man the book.' (the man = der Mann)",
+          correctAnswer: "Ich gebe dem Mann das Buch",
+          explanation: "Wunderbar! 'der Mann' becomes 'dem Mann' in dative.",
+          xpReward: 30
+        },
+        {
+          id: "ex16-1-11",
+          type: "free-text",
+          question: "Translate to German: 'The book belongs to me.' (belong = gehören, me = mir)",
+          correctAnswer: "Das Buch gehört mir",
+          explanation: "Excellent! 'gehören' always takes the dative case.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -298,7 +325,7 @@ export const MODULE_16: Module = {
           question: "Which case do two-way prepositions take when showing LOCATION (no movement)?",
           options: ["Dativ", "Akkusativ", "Nominativ", "Genitiv"],
           correctAnswer: "Dativ",
-          explanation: "When there is no movement (answering 'wo?' — where?), two-way prepositions take the dative case.",
+          explanation: "If you're already there, it's Dative (Static). If you're going there, it's Accusative (Action). Static = Dative, Action = Accusative!",
           xpReward: 10
         },
         {
@@ -307,7 +334,7 @@ export const MODULE_16: Module = {
           question: "Complete: Das Buch liegt auf _____ Tisch. (The book is lying on the table.)",
           options: ["dem", "den", "der", "das"],
           correctAnswer: "dem",
-          explanation: "The book is lying (location, no movement) → dative. 'Der Tisch' in dative = 'dem Tisch'.",
+          explanation: "The book is just 'lying' there (static). Since 'Tisch' is masculine, we use dative 'dem'.",
           xpReward: 10
         },
         {
@@ -316,7 +343,7 @@ export const MODULE_16: Module = {
           question: "Complete: Ich lege das Buch auf _____ Tisch. (I put the book on the table.)",
           options: ["den", "dem", "der", "das"],
           correctAnswer: "den",
-          explanation: "Putting the book (movement/direction) → accusative. 'Der Tisch' in accusative = 'den Tisch'.",
+          explanation: "You are 'moving' the book onto the table. Movement = Accusative. Masculine 'der' becomes 'den' in Accusative.",
           xpReward: 10
         },
         {
@@ -325,6 +352,7 @@ export const MODULE_16: Module = {
           question: "Match the sentence to the correct case used:",
           options: ["Ich bin im Zimmer.", "Ich gehe ins Zimmer.", "Die Katze sitzt auf dem Stuhl.", "Die Katze springt auf den Stuhl."],
           correctAnswer: ["Dativ (location)", "Akkusativ (movement)", "Dativ (location)", "Akkusativ (movement)"],
+          explanation: "Im = in dem (Dativ). Ins = in das (Akkusativ). It's all about the 'Wohin?' (Where to?) vs 'Wo?' (Where?) question.",
           xpReward: 15
         },
         {
@@ -333,7 +361,7 @@ export const MODULE_16: Module = {
           question: "Which are the correct contractions?",
           options: ["in dem = im, in das = ins", "in dem = indem, in das = indas", "in der = ir, in die = ie", "in den = inden, in dem = indem"],
           correctAnswer: "in dem = im, in das = ins",
-          explanation: "The standard contractions are: in dem → im, in das → ins, an dem → am, an das → ans.",
+          explanation: "German loves shortcuts! 'Im' and 'Ins' are way more common than 'in dem' or 'in das' in daily speech.",
           xpReward: 10
         },
         {
@@ -342,7 +370,7 @@ export const MODULE_16: Module = {
           question: "Which sentence is correct? 'The picture hangs on the wall.'",
           options: ["Das Bild hängt an der Wand.", "Das Bild hängt an die Wand.", "Das Bild hängt an dem Wand.", "Das Bild hängt an den Wand."],
           correctAnswer: "Das Bild hängt an der Wand.",
-          explanation: "The picture is hanging (location, no movement) → dative. 'Die Wand' (feminine) in dative = 'der Wand'.",
+          explanation: "Vertical surface! 'An' is used. Since the picture is already hanging (static), we use dative. Fem 'die Wand' becomes 'der Wand'.",
           xpReward: 10
         },
         {
@@ -351,6 +379,7 @@ export const MODULE_16: Module = {
           question: "Put the words in the correct order: stelle / den Schrank / ich / neben / den Stuhl",
           options: ["Ich", "stelle", "den Schrank", "neben", "den Stuhl."],
           correctAnswer: ["Ich", "stelle", "den Schrank", "neben", "den Stuhl."],
+          explanation: "Standard S-V-O-PP order. 'Stelle' implies movement, so 'den Stuhl' stays in Accusative after 'neben'.",
           xpReward: 15
         },
         {
@@ -359,8 +388,33 @@ export const MODULE_16: Module = {
           question: "Complete: Die Kinder spielen _____ den Bäumen. (The children play between the trees.)",
           options: ["zwischen", "neben", "über", "unter"],
           correctAnswer: "zwischen",
-          explanation: "'Zwischen' means 'between.' The children play between the trees (location) → dative: zwischen den Bäumen.",
+          explanation: "'Zwischen' means between. Since they are playing there (location), we use dative plural: 'den Bäumen' (Bäume + n rule).",
           xpReward: 10
+        },
+        {
+          id: "ex16-2-9",
+          type: "dictation",
+          question: "Listen and type: Ich bin im Haus.",
+          correctAnswer: "Ich bin im Haus",
+          explanation: "Great! 'im' is the contraction of 'in dem' (location/dative).",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-in-house.mp3"
+        },
+        {
+          id: "ex16-2-10",
+          type: "free-text",
+          question: "Write in German: 'The book is on the table.' (location, table = der Tisch)",
+          correctAnswer: "Das Buch liegt auf dem Tisch",
+          explanation: "Wunderbar! Use 'liegt' (static) and dative 'dem'.",
+          xpReward: 30
+        },
+        {
+          id: "ex16-2-11",
+          type: "free-text",
+          question: "Write in German: 'I put the book on the table.' (movement, table = der Tisch)",
+          correctAnswer: "Ich lege das Buch auf den Tisch",
+          explanation: "Excellent! Use 'lege' (action) and accusative 'den'.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -450,33 +504,21 @@ export const MODULE_16: Module = {
       videos: [
         {
           id: "v16-3-1",
-          title: "Reflexive Verbs - sich waschen, sich freuen...",
+          title: "Reflexive Verbs - The Mirror Verbs",
           duration: "12:00",
-          description: "Understanding reflexive verbs and pronouns — when you do something to yourself",
+          description: "Understanding reflexive verbs — when the action reflects back to you like a mirror",
           scriptOutline: [
-            "Opening: 'In German, sometimes YOU do something to YOURSELF. That's reflexive!'",
-            "What is a reflexive verb? The subject and object are the SAME person",
-            "sich waschen — to wash oneself: Ich wasche MICH. (I wash myself.)",
-            "sich anziehen — to get dressed: Er zieht SICH an. (He gets himself dressed.)",
-            "sich setzen — to sit down: Bitte setzen Sie SICH. (Please sit down.)",
-            "sich freuen — to be happy/glad: Ich freue MICH auf den Urlaub! (I'm looking forward to the holiday!)",
-            "sich erinnern — to remember: Erinnerst du DICH an Kerala? (Do you remember Kerala?)",
-            "sich fühlen — to feel: Wie fühlst du DICH? (How do you feel?)",
-            "Reflexive pronouns: mich/mir, dich/dir, sich, uns, euch, sich",
-            "Akkusativ reflexive vs Dativ reflexive:",
-            "  Akkusativ: Ich wasche MICH. (washing all of me)",
-            "  Dativ: Ich wasche MIR die Hände. (washing a specific body part)",
-            "Full conjugation table for sich waschen",
-            "Kerala parallel: Like saying 'ഞാന്‍ എന്നെത്തന്നെ' — doing something to yourself",
-            "Common reflexive verbs list for daily routines"
+            "Opening: 'Reflexive verbs are like mirrors. Action thirichu nammalilekku thanne varum!'",
+            "CONCEPT: I wash MYSHELF. I dress MYSELF. Subject = Object.",
+            "PRONOUNS: mich, dich, sich, uns, euch, sich. (Most are same as Accusative!)",
+            "THE BODY PART TRAP: Ich wasche MICH (whole body) vs Ich wasche MIR die Hände (just hands).",
+            "Why Dative for hands? Because 'die Hände' is already the object, so 'myself' becomes the secondary/dative receiver.",
+            "COMMONS: sich freuen (happy), sich beeilen (hurry), sich setzen (sit).",
+            "Malayalam parallel: 'Nyan enne-thanne bhakshanam kodukkunnu' — exactly that structure!",
+            "Pro-tip: Don't forget the 'sich'. Without it, the sentence feels naked to a German ear."
           ],
-          keyVocabulary: ["sich waschen", "sich anziehen", "sich freuen", "sich erinnern", "sich fühlen", "sich setzen"],
-          learningObjectives: [
-            "Understand what reflexive verbs are",
-            "Know all reflexive pronouns (accusative and dative)",
-            "Conjugate common reflexive verbs",
-            "Distinguish between accusative and dative reflexive pronouns"
-          ],
+          keyVocabulary: ["sich waschen", "sich freuen", "sich beeilen", "sich setzen"],
+          learningObjectives: ["Identify reflexive verbs", "Use mich/dich/sich correctly", "Understand Accusative vs Dative reflexive usage"],
           placeholderThumbnail: "/images/thumbnails/reflexive-verbs.jpg"
         }
       ],
@@ -487,7 +529,7 @@ export const MODULE_16: Module = {
           question: "Complete: Ich wasche _____ jeden Morgen. (I wash myself every morning.)",
           options: ["mich", "mir", "sich", "dich"],
           correctAnswer: "mich",
-          explanation: "With 'sich waschen' (washing your whole self, no specific body part), use the accusative reflexive pronoun: 'mich' for 'ich'.",
+          explanation: "You are the ONLY object here. The action stays with you. So we use the standard reflexive 'mich'.",
           xpReward: 10
         },
         {
@@ -496,7 +538,7 @@ export const MODULE_16: Module = {
           question: "Which sentence is correct?",
           options: ["Er wäscht sich die Hände.", "Er wäscht mich die Hände.", "Er wäscht ihn die Hände.", "Er wäscht dich die Hände."],
           correctAnswer: "Er wäscht sich die Hände.",
-          explanation: "Since 'er' is washing HIS OWN hands, the reflexive pronoun 'sich' is used. The dative is used because a body part (die Hände) is specified.",
+          explanation: "'Die Hände' is the Direct Object (Accusative). Since 'he' is doing it to HIS OWN hands, we use the Dative reflexive 'sich'.",
           xpReward: 10
         },
         {
@@ -505,6 +547,7 @@ export const MODULE_16: Module = {
           question: "Match the subject to the correct reflexive pronoun (accusative):",
           options: ["ich", "du", "er/sie/es", "wir"],
           correctAnswer: ["mich", "dich", "sich", "uns"],
+          explanation: "Most look like Accusative pronouns, but 'er/sie/es' and 'Sie' always use 'sich'. It's the most flexible pronoun in German!",
           xpReward: 15
         },
         {
@@ -513,7 +556,7 @@ export const MODULE_16: Module = {
           question: "Complete: Wir freuen _____ auf die Ferien! (We are looking forward to the holidays!)",
           options: ["uns", "sich", "euch", "mich"],
           correctAnswer: "uns",
-          explanation: "The reflexive pronoun for 'wir' is 'uns'. 'Sich freuen auf' means 'to look forward to.'",
+          explanation: "The 'wir' form of the mirror pronoun is 'uns'. You are making 'yourselves' happy about the future!",
           xpReward: 10
         },
         {
@@ -522,7 +565,7 @@ export const MODULE_16: Module = {
           question: "What does 'Ich erinnere mich an meinen Urlaub' mean?",
           options: ["I remember my vacation.", "I remind my vacation.", "I forget my vacation.", "I plan my vacation."],
           correctAnswer: "I remember my vacation.",
-          explanation: "'Sich erinnern an' means 'to remember.' The reflexive pronoun 'mich' shows the remembering is done by the subject about themselves.",
+          explanation: "Sich erinnern = To remind oneself (To remember). German grammar thinks of remembering as a repetitive internal action.",
           xpReward: 10
         },
         {
@@ -531,7 +574,7 @@ export const MODULE_16: Module = {
           question: "Complete: Bitte setzen Sie _____! (Please sit down! — formal)",
           options: ["sich", "Sie", "mich", "Ihnen"],
           correctAnswer: "sich",
-          explanation: "The reflexive pronoun for 'Sie' (formal) is 'sich'. 'Sich setzen' means 'to sit down.'",
+          explanation: "Even in formal 'Sie', the mirror pronoun is 'sich'. You are literally asking them to 'set themselves' down.",
           xpReward: 10
         },
         {
@@ -540,7 +583,33 @@ export const MODULE_16: Module = {
           question: "Put the words in the correct order: mich / fühle / heute / ich / gut",
           options: ["Ich", "fühle", "mich", "heute", "gut."],
           correctAnswer: ["Ich", "fühle", "mich", "heute", "gut."],
+          explanation: "Sentence structure: [Subject] + [Verb] + [Mirror Pronoun] + [Time] + [Adjective]. Perfect A2 flow!",
           xpReward: 15
+        },
+        {
+          id: "ex16-3-8",
+          type: "dictation",
+          question: "Listen and type: Ich freue mich.",
+          correctAnswer: "Ich freue mich",
+          explanation: "Great job! This is the standard way to express joy using a reflexive verb.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-i-am-happy.mp3"
+        },
+        {
+          id: "ex16-3-9",
+          type: "free-text",
+          question: "Translate to German: 'I wash myself.' (reflexive)",
+          correctAnswer: "Ich wasche mich",
+          explanation: "Perfect! 'mich' is the reflexive pronoun for 'ich'.",
+          xpReward: 30
+        },
+        {
+          id: "ex16-3-10",
+          type: "free-text",
+          question: "Write in German: 'Hurry up!' (du-form, reflexive, hurry = beeilen)",
+          correctAnswer: "Beeil dich",
+          explanation: "Wunderbar! In the imperative du-form, we drop the 'st' and keep the reflexive 'dich'.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -697,7 +766,7 @@ export const MODULE_16: Module = {
           question: "Where does the conjugated verb go in a subordinate clause?",
           options: ["At the end of the clause", "In second position", "At the beginning", "It doesn't change position"],
           correctAnswer: "At the end of the clause",
-          explanation: "In German subordinate clauses (after weil, dass, wenn, als, ob...), the conjugated verb always moves to the end of the clause.",
+          explanation: "This is the 'Climax Rule'. Words like 'weil', 'dass', and 'wenn' are so powerful they kick the verb to the very end of the sentence. Wait for it!",
           xpReward: 10
         },
         {
@@ -706,7 +775,7 @@ export const MODULE_16: Module = {
           question: "Complete: Ich lerne Deutsch, weil ich in Deutschland leben _____. (I learn German because I want to live in Germany.)",
           options: ["möchte", "möchten", "will", "wollen"],
           correctAnswer: "möchte",
-          explanation: "In the subordinate clause with 'weil,' the verb 'möchte' goes to the end. 'Möchte' matches 'ich.'",
+          explanation: "Even though 'ich' usually has 'möchte' in position 2, 'weil' forces it to the finish line. '...leben möchte' is the only correct way.",
           xpReward: 10
         },
         {
@@ -715,7 +784,7 @@ export const MODULE_16: Module = {
           question: "Which sentence uses 'dass' correctly?",
           options: ["Ich denke, dass Deutsch interessant ist.", "Ich denke, dass ist Deutsch interessant.", "Ich denke, Deutsch dass interessant ist.", "Ich denke dass, Deutsch interessant ist."],
           correctAnswer: "Ich denke, dass Deutsch interessant ist.",
-          explanation: "After 'dass,' the verb 'ist' moves to the end: 'Ich denke, dass Deutsch interessant IST.'",
+          explanation: "'Dass' (that) and 'ist' (is). The verb 'ist' must park itself at the very end after the adjective 'interessant'.",
           xpReward: 10
         },
         {
@@ -724,6 +793,7 @@ export const MODULE_16: Module = {
           question: "Build the correct sentence: es / wenn / bleibe / regnet / ich / zu Hause",
           options: ["Wenn", "es", "regnet,", "bleibe", "ich", "zu Hause."],
           correctAnswer: ["Wenn", "es", "regnet,", "bleibe", "ich", "zu Hause."],
+          explanation: "Pro Rule: If the sub-clause comes FIRST, the main clause starts with the VERB. 'Wenn es regnet (1), bleibe (2) ich...' Verb-Verb Sandwich!",
           xpReward: 15
         },
         {
@@ -732,7 +802,7 @@ export const MODULE_16: Module = {
           question: "When do you use 'als' instead of 'wenn'?",
           options: ["For a single event in the past", "For repeated events", "For present situations", "For future plans"],
           correctAnswer: "For a single event in the past",
-          explanation: "'Als' is used for one-time events in the past. 'Wenn' is used for present situations, future, or repeated past events.",
+          explanation: "'Als' is for that ONE time something happened (e.g., when I was born). 'Wenn' is for 'whenever' or 'if'.",
           xpReward: 10
         },
         {
@@ -741,7 +811,7 @@ export const MODULE_16: Module = {
           question: "Complete: _____ ich ein Kind war, habe ich in Kerala gewohnt. (When I was a child, I lived in Kerala.)",
           options: ["Als", "Wenn", "Weil", "Dass"],
           correctAnswer: "Als",
-          explanation: "Being a child is a one-time period in the past, so we use 'als' (not 'wenn').",
+          explanation: "Since childhood is a specific past era/event, 'Als' is the correct pilot. And notice 'war' at the end of its clause!",
           xpReward: 10
         },
         {
@@ -750,7 +820,7 @@ export const MODULE_16: Module = {
           question: "What does 'Ich weiß nicht, ob er kommt' mean?",
           options: ["I don't know whether he's coming.", "I don't know because he's coming.", "I don't know that he's coming.", "I know that he's not coming."],
           correctAnswer: "I don't know whether he's coming.",
-          explanation: "'Ob' means 'whether/if' and is used for indirect yes/no questions. The verb 'kommt' goes to the end.",
+          explanation: "'Ob' is for Yes/No questions. 'Does he come? I don't know.' becomes 'I don't know IF/WHETHER he comes'.",
           xpReward: 10
         },
         {
@@ -760,6 +830,31 @@ export const MODULE_16: Module = {
           options: ["Ich", "hoffe,", "dass", "du", "bald", "kommst."],
           correctAnswer: ["Ich", "hoffe,", "dass", "du", "bald", "kommst."],
           xpReward: 15
+        },
+        {
+          id: "ex16-4-9",
+          type: "dictation",
+          question: "Listen and type: Ich hoffe, dass du kommst.",
+          correctAnswer: "Ich hoffe dass du kommst",
+          explanation: "Perfect! Remember the verb 'kommst' goes to the end because of 'dass'.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-hope-you-come.mp3"
+        },
+        {
+          id: "ex16-4-10",
+          type: "free-text",
+          question: "Combine into one sentence using 'weil': 'Ich lerne Deutsch.' + 'Ich möchte in Deutschland leben.'",
+          correctAnswer: "Ich lerne Deutsch, weil ich in Deutschland leben möchte",
+          explanation: "Wunderbar! 'möchte' moves to the very end of the second clause.",
+          xpReward: 30
+        },
+        {
+          id: "ex16-4-11",
+          type: "free-text",
+          question: "Translate to German: 'I don't know whether he is coming.' (whether = ob)",
+          correctAnswer: "Ich weiß nicht, ob er kommt",
+          explanation: "Excellent! 'ob' is used for indirect yes/no questions.",
+          xpReward: 30
         }
       ],
       vocabulary: [

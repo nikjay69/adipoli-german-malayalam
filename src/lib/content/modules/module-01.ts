@@ -98,7 +98,8 @@ export const MODULE_1: Module = {
         { id: "vocab1-1-7", german: "Ausbildung", english: "vocational training", malayalam: "തൊഴിൽ പരിശീലനം", pronunciation: "ows-bil-doong", example: "Eine Ausbildung dauert drei Jahre.", exampleTranslation: "A vocational training lasts three years." },
         { id: "vocab1-1-8", german: "Universität", english: "university", malayalam: "സർവകലാശാല", pronunciation: "oo-ni-ver-zi-tayt", example: "Die Universität ist groß.", exampleTranslation: "The university is big." },
         { id: "vocab1-1-9", german: "Visum", english: "visa", malayalam: "വിസ", pronunciation: "vee-zoom", example: "Ich brauche ein Visum.", exampleTranslation: "I need a visa." },
-        { id: "vocab1-1-10", german: "Chance", english: "opportunity / chance", malayalam: "അവസരം", pronunciation: "shahn-se", example: "Das ist eine gute Chance!", exampleTranslation: "That is a good opportunity!" }
+        { id: "vocab1-1-10", german: "Chance", english: "opportunity / chance", malayalam: "അവസരം", pronunciation: "shahn-se", example: "Das ist eine gute Chance!", exampleTranslation: "That is a good opportunity!" },
+        { id: "vocab1-1-11", german: "warum", english: "why", malayalam: "എന്തുകൊണ്ട്", pronunciation: "vah-room", example: "Warum lernst du Deutsch?", exampleTranslation: "Why are you learning German?" }
       ]
     },
 
@@ -173,14 +174,14 @@ export const MODULE_1: Module = {
         { id: "ex1-2-3", type: "matching", question: "Match the German letter to its sound description:", questionGerman: "Verbinden Sie die Buchstaben mit den Lauten:", options: ["ä", "ö", "ü"], correctAnswer: ["Like 'e' in bed", "Lips like 'o', say 'e'", "Lips like 'u', say 'i'"], xpReward: 15 },
         { id: "ex1-2-4", type: "fill-blank", question: "German meaning changes with dots! 'Schon' means 'already', but 'Sch___n' means 'beautiful'.", questionGerman: "Schon = schon, aber Sch___n = schön. Ergänzen Sie:", options: ["ö", "ä", "ü", "o"], correctAnswer: "ö", explanation: "Small dots, big difference! 'Schon' (already) vs 'Schön' (beautiful). This is why mastering Umlauts (ä, ö, ü) is essential from Lesson 1.", xpReward: 10 },
         { id: "ex1-2-5", type: "multiple-choice", question: "How is the German 'w' pronounced?", questionGerman: "Wie spricht man das 'w' aus?", options: ["Like English 'v'", "Like English 'w'", "Like English 'f'", "It is silent"], correctAnswer: "Like English 'v'", explanation: "Memory trick: German W = English V, German V = English F. So Wasser = 'Vasser', Vater = 'Fahter'. The letters are 'shifted' one position!", xpReward: 10 },
-        { id: "ex1-2-6", type: "matching", question: "Match the German word to its correct pronunciation:", questionGerman: "Verbinden Sie die Wörter mit der Aussprache:", options: ["Wasser", "Vater", "Zeit", "schön"], correctAnswer: ["Vasser", "Fahter", "Tsyte", "Shurn"], xpReward: 15 },
+        { id: "ex1-2-6", type: "multiple-choice", question: "You're in Germany and someone says 'Tseit' out loud. Which word did they say?", questionGerman: "Jemand sagt 'Tseit'. Welches Wort?", options: ["Zeit (time)", "Seit (since)", "Seite (page)", "Ziel (goal)"], correctAnswer: "Zeit (time)", explanation: "German Z is always pronounced 'ts'. So 'Zeit' (time) sounds like 'Tsait'. This 'ts' start catches every beginner — but you'll hear it everywhere: Zeitung (newspaper), zusammen (together), Zimmer (room).", xpReward: 15 },
         { id: "ex1-2-7", type: "multiple-choice", question: "In the word 'Bier' (beer), how is 'ie' pronounced?", questionGerman: "Wie spricht man 'ie' in 'Bier' aus?", options: ["Like 'ee' in 'see'", "Like 'eye'", "Like 'ay'", "It is silent"], correctAnswer: "Like 'ee' in 'see'", explanation: "The 'ie' vs 'ei' rule: the SECOND letter wins. 'ie' → the 'e' sound = 'ee'. 'ei' → the 'i' sound = 'eye'. Bier = 'beer', Bein = 'byne'.", xpReward: 10 },
         { id: "ex1-2-8", type: "ordering", question: "Order these German sounds by how much you need to round your lips (from flat to most round):", questionGerman: "Bringen Sie die Laute in eine Reihenfolge (Lippenrundung):", options: ["ü (maximum rounding)", "i (flat/smile)", "u (medium rounding)"], correctAnswer: ["i (flat/smile)", "u (medium rounding)", "ü (maximum rounding)"], xpReward: 20 }
       ],
       vocabulary: [
         { id: "vocab1-2-1", german: "ich", english: "I", malayalam: "ഞാൻ", pronunciation: "ikh (soft ch)", example: "Ich bin hier.", exampleTranslation: "I am here." },
         { id: "vocab1-2-2", german: "Mädchen", english: "girl", malayalam: "പെൺകുട്ടി", pronunciation: "med-khen", example: "Das Mädchen spielt.", exampleTranslation: "The girl is playing." },
-        { id: "vocab1-2-3", german: "schön", english: "beautiful", malayalam: "സുന്ദരം", pronunciation: "shurn", example: "Das ist schön!", exampleTranslation: "That is beautiful!" },
+        { id: "vocab1-2-3", german: "schön", english: "beautiful", malayalam: "സുന്ദരം", pronunciation: "shöhn (round lips like 'o', say 'e')", example: "Das ist schön!", exampleTranslation: "That is beautiful!" },
         { id: "vocab1-2-4", german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "myn-khen", example: "München ist groß.", exampleTranslation: "Munich is big." },
         { id: "vocab1-2-5", german: "Straße", english: "street", malayalam: "തെരുവ്", pronunciation: "shtrah-se", example: "Die Straße ist lang.", exampleTranslation: "The street is long." },
         { id: "vocab1-2-6", german: "Wasser", english: "water", malayalam: "വെള്ളം", pronunciation: "vah-ser", example: "Das Wasser ist kalt.", exampleTranslation: "The water is cold." },
@@ -463,7 +464,9 @@ export const MODULE_1: Module = {
         { id: "vocab1-5-7", german: "Ich bin...", english: "I am...", malayalam: "ഞാൻ ... ആണ്", pronunciation: "ikh bin", example: "Ich bin Rahul aus Kerala.", exampleTranslation: "I am Rahul from Kerala." },
         { id: "vocab1-5-8", german: "Wie heißen Sie?", english: "What is your name? (formal)", malayalam: "നിങ്ങളുടെ പേര് എന്താണ്?", pronunciation: "vee hy-sen zee", example: "Guten Tag! Wie heißen Sie?", exampleTranslation: "Good day! What is your name?" },
         { id: "vocab1-5-9", german: "Wie heißt du?", english: "What is your name? (informal)", malayalam: "നിന്റെ പേര് എന്താ?", pronunciation: "vee hyst doo", example: "Hallo! Wie heißt du?", exampleTranslation: "Hello! What's your name?" },
-        { id: "vocab1-5-10", german: "Ich heiße...", english: "My name is...", malayalam: "എന്റെ പേര് ... ആണ്", pronunciation: "ikh hy-se", example: "Ich heiße Maria.", exampleTranslation: "My name is Maria." }
+        { id: "vocab1-5-10", german: "Ich heiße...", english: "My name is...", malayalam: "എന്റെ പേര് ... ആണ്", pronunciation: "ikh hy-se", example: "Ich heiße Maria.", exampleTranslation: "My name is Maria." },
+        { id: "vocab1-5-11", german: "schlecht", english: "bad", malayalam: "മോശം", pronunciation: "shlekht", example: "Mir geht es schlecht.", exampleTranslation: "I am doing badly." },
+        { id: "vocab1-5-12", german: "wohin", english: "where to", malayalam: "എങ്ങോട്ട്", pronunciation: "vo-hin", example: "Wohin gehst du?", exampleTranslation: "Where are you going?" }
       ]
     },
 
@@ -619,23 +622,21 @@ export const MODULE_1: Module = {
         },
         {
           id: "ex1-6-9",
-          type: "fill-blank",
-          question: "Type in German: 'My name is...' (Ich...)",
-          questionGerman: "Tippen Sie auf Deutsch: 'My name is...' (Ich...)",
-          options: ["Ich heiße", "Ich bin", "Ich heißt", "Mein Name"],
-          correctAnswer: "Ich heiße",
-          explanation: "'Ich heiße...' is the standard way to say 'My name is...' in German.",
-          xpReward: 15
-        },
-        {
-          id: "ex1-6-10",
-          type: "fill-blank",
+          type: "multiple-choice",
           question: "German is unique! Which words are ALWAYS capitalized in a sentence?",
           questionGerman: "Welche Wörter werden im Deutschen IMMER großgeschrieben?",
           options: ["Nouns (all naming words)", "Only names of people", "Only the first word", "Verbs (action words)"],
           correctAnswer: "Nouns (all naming words)",
           explanation: "In German, every single noun (Person, Table, Idea, Milk) must start with a CAPITAL letter. It makes reading easier once you get used to it! Example: 'Ich trinke Milch.' (not 'milch').",
           xpReward: 15
+        },
+        {
+          id: "ex1-6-10",
+          type: "free-text",
+          question: "How do you say 'I am learning German because it is interesting' in German? (Hint: Ich lerne Deutsch, weil...)",
+          correctAnswer: "Ich lerne Deutsch, weil es interessant ist.",
+          explanation: "Verb-Third/End Rule! The verb 'ist' goes to the end after 'weil'. Great job with this advanced A1 pattern!",
+          xpReward: 35
         }
       ],
       vocabulary: [

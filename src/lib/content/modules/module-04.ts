@@ -142,6 +142,31 @@ export const MODULE_4: Module = {
           correctAnswer: "The siblings",
           explanation: "'Geschwister' = siblings (all brothers + sisters). It's always plural (die Geschwister). Useful A1 question: 'Hast du Geschwister?' (Do you have siblings?)",
           xpReward: 15
+        },
+        {
+          id: "ex4-1-7",
+          type: "dictation",
+          question: "Listen and type: Meine Mutter kommt aus Kerala.",
+          correctAnswer: "Meine Mutter kommt aus Kerala",
+          explanation: "Perfect! 'Meine Mutter' (My mother) is feminine, so we use 'meine'. 'Kommt aus' means 'comes from'.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-mother-kerala.mp3"
+        },
+        {
+          id: "ex4-1-8",
+          type: "free-text",
+          question: "How do you say 'grandfather' in German? (Formal or casual)",
+          correctAnswer: "Großvater / Opa",
+          explanation: "Both are correct! 'Großvater' is the official term, while 'Opa' is what children (and adults!) usually call their grandfather.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-1-9",
+          type: "free-text",
+          question: "Translate into German: 'I have two brothers.'",
+          correctAnswer: "Ich habe zwei Brüder",
+          explanation: "Note the plural of Bruder is Brüder (with an Umlaut!). 'Habere' triggers the accusative, but for masculine plural, 'zwei' stays the same.",
+          xpReward: 35
         }
       ],
       vocabulary: [
@@ -386,13 +411,36 @@ export const MODULE_4: Module = {
         {
           id: "ex4-2-6",
           type: "ordering",
-          question: "You are describing a group of friends in Berlin. Form this sentence: 'Mein Freund ist groß und hat schwarze Haare.'",
-          questionGerman: "Stellen Sie den Satz richtig zusammen:",
+          question: "Arrange this description: 'Mein / Freund / ist / groß / und / hat / schwarze / Haare'",
           options: ["Mein Freund", "ist groß", "und", "hat", "schwarze Haare"],
           correctAnswer: ["Mein Freund", "ist groß", "und", "hat", "schwarze Haare"],
-          explanation: "Physical description uses TWO verbs: 'ist' for general traits (tall, nice) and 'hat' for features (hair, eyes). 'Schwarze' means black — the most common hair colour in Kerala!",
-          xpReward: 20,
-          imageUrl: "/images/berlin_people.png"
+          explanation: "'Mein Freund ist groß und hat schwarze Haare.' — Using two verbs for description: 'ist' for general traits and 'hat' for physical features.",
+          xpReward: 20
+        },
+        {
+          id: "ex4-2-7",
+          type: "dictation",
+          question: "Listen and type: Mein Vater ist groß und nett.",
+          correctAnswer: "Mein Vater ist groß und nett",
+          explanation: "Great! Remember that 'groß' means tall when describing people. No ending is needed for adjectives that come after 'ist'!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-father-description.mp3"
+        },
+        {
+          id: "ex4-2-8",
+          type: "free-text",
+          question: "Describe yourself in German. (e.g. Ich bin fleißig / Ich bin lustig)",
+          correctAnswer: "Ich bin ...",
+          explanation: "Wunderbar! Using 'fleißig' is very German. It shows you value hard work!",
+          xpReward: 30
+        },
+        {
+          id: "ex4-2-9",
+          type: "free-text",
+          question: "Translate: 'She is very friendly.'",
+          correctAnswer: "Sie ist sehr freundlich",
+          explanation: "Friendly = freundlich. 'Sehr' means 'very'. German word order is just like English here!",
+          xpReward: 35
         }
       ],
       vocabulary: [
@@ -603,8 +651,33 @@ export const MODULE_4: Module = {
           question: "'Her name is Anna': _____ Name ist Anna.",
           options: ["Ihr", "Ihre", "Ihrem", "Ihren"],
           correctAnswer: "Ihr",
-          explanation: "Name is masculine (der Name) → no extra ending: Ihr Name. Tricky: 'ihr' can mean 'her', 'their', or 'your (formal)'. Context tells you which!",
+          explanation: "Name is masculine (der Name) → Ihr Name (no ending).",
           xpReward: 15
+        },
+        {
+          id: "ex4-3-8",
+          type: "dictation",
+          question: "Listen and type: Wie heißt deine Schwester?",
+          correctAnswer: "Wie heißt deine Schwester?",
+          explanation: "Perfect! 'Deine' (your) has the '-e' ending because 'Schwester' is feminine.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-sister-name.mp3"
+        },
+        {
+          id: "ex4-3-9",
+          type: "free-text",
+          question: "Translate: 'My parents live in Kochi.'",
+          correctAnswer: "Meine Eltern wohnen in Kochi",
+          explanation: "Parents = Eltern (always plural). So we use 'meine' and the verb 'wohnen' (plural for they).",
+          xpReward: 35
+        },
+        {
+          id: "ex4-3-10",
+          type: "free-text",
+          question: "How do you say 'his brother' in German?",
+          correctAnswer: "sein Bruder",
+          explanation: "Sein (his) + Bruder (masculine). No extra ending needed!",
+          xpReward: 20
         }
       ],
       vocabulary: [
@@ -829,15 +902,40 @@ export const MODULE_4: Module = {
         {
           id: "ex4-4-8",
           type: "multiple-choice",
-          question: "Malayalam doesn't have articles. What's the best strategy for learning German articles?",
+          question: "How should you learn German articles effectively?",
           options: [
-            "Ignore them — people will understand anyway",
-            "Always learn a noun WITH its article (der Tisch, not just Tisch)",
-            "Just use 'die' for everything",
-            "Only learn articles for exam words"
+            "Ignore them",
+            "Learn every noun with its article (der Tisch, etc.)",
+            "Substitute everything with 'die'",
+            "Use articles only in writing"
           ],
-          correctAnswer: "Always learn a noun WITH its article (der Tisch, not just Tisch)",
-          explanation: "The best strategy is to learn every noun with its article from day one. Think of the article as part of the word!",
+          correctAnswer: "Learn every noun with its article (der Tisch, etc.)",
+          explanation: "Correct! The article is effectively part of the word in German.",
+          xpReward: 15
+        },
+        {
+          id: "ex4-4-9",
+          type: "dictation",
+          question: "Listen and type: Die Zeitung ist interessant.",
+          correctAnswer: "Die Zeitung ist interessant",
+          explanation: "Newspaper = die Zeitung. Did you remember to capitalize 'Zeitung'? All German nouns MUST be capitalized!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-newspaper.mp3"
+        },
+        {
+          id: "ex4-4-10",
+          type: "free-text",
+          question: "Type the correct article (der/die/das) for 'Mädchen': _____",
+          correctAnswer: "das",
+          explanation: "Correct! Even though it means girl, the '-chen' ending makes it grammatical neuter (das).",
+          xpReward: 15
+        },
+        {
+          id: "ex4-4-11",
+          type: "free-text",
+          question: "Type the correct article (der/die/das) for 'Wohnung': _____",
+          correctAnswer: "die",
+          explanation: "Correct! '-ung' endings are always feminine.",
           xpReward: 15
         }
       ],
@@ -1039,7 +1137,7 @@ export const MODULE_4: Module = {
           question: "Type in German: 'My mother is a teacher.' (Meine Mutter...)",
           options: ["Meine Mutter ist Lehrerin", "Meine Mutter ist eine Lehrerin", "Meine Mutter bist Lehrerin", "Mein Mutter ist Lehrerin"],
           correctAnswer: "Meine Mutter ist Lehrerin",
-          explanation: "'Meine Mutter ist Lehrerin.' — Remember: no article before professions in German! And 'meine' because Mutter is feminine.",
+          explanation: "'Meine Mutter ist Lehrerin.' — Remember: no article before professions in German!",
           xpReward: 15
         },
         {
@@ -1048,8 +1146,33 @@ export const MODULE_4: Module = {
           question: "Type in German: 'I have two brothers.' (Ich habe...)",
           options: ["Ich habe zwei Brüder", "Ich habe zwei Bruder", "Ich habe zwei Bruders", "Ich zwei Brüder habe"],
           correctAnswer: "Ich habe zwei Brüder",
-          explanation: "'Brüder' is the plural of 'Bruder' — notice the umlaut! 'Ich habe zwei Brüder.' = I have two brothers.",
+          explanation: "'Brüder' is the plural of 'Bruder' — notice the umlaut!",
           xpReward: 15
+        },
+        {
+          id: "ex4-5-9",
+          type: "dictation",
+          question: "Listen and type: Mein Onkel wohnt in Deutschland.",
+          correctAnswer: "Mein Onkel wohnt in Deutschland",
+          explanation: "Uncle = Onkel. Lives = wohnt. Germany = Deutschland. Perfect!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-uncle-germany.mp3"
+        },
+        {
+          id: "ex4-5-10",
+          type: "free-text",
+          question: "Translate: 'My family is big.'",
+          correctAnswer: "Meine Familie ist groß",
+          explanation: "Familie is feminine (die), so 'meine'. Big = groß.",
+          xpReward: 25
+        },
+        {
+          id: "ex4-5-11",
+          type: "free-text",
+          question: "Tell us about your brother: 'My brother is called Arjun and he is young.'",
+          correctAnswer: "Mein Bruder heißt Arjun und er ist jung",
+          explanation: "Excellent! You combined the name (heißt) and description (ist) perfectly.",
+          xpReward: 40
         }
       ],
       vocabulary: [

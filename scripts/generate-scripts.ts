@@ -62,6 +62,7 @@ interface Module {
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const MODULES_DIR = path.join(PROJECT_ROOT, 'src', 'lib', 'content', 'modules');
 const EXISTING_SCRIPTS_FILE = path.join(PROJECT_ROOT, 'src', 'lib', 'content', 'video-scripts.ts');
+const LEGACY_SCRIPTS_DIR = path.join(PROJECT_ROOT, 'docs', 'scripts');
 const OUTPUT_DIR = path.join(PROJECT_ROOT, 'src', 'lib', 'content', 'video-scripts');
 
 const GEMINI_MODEL = 'gemini-2.5-flash';
@@ -142,16 +143,28 @@ function loadExistingScripts(): Record<string, string> {
 function loadGeneratedScripts(): Record<string, string> {
   const scripts: Record<string, string> = {};
 
-  if (!fs.existsSync(OUTPUT_DIR)) return scripts;
+  // Check new output dir
+  if (fs.existsSync(OUTPUT_DIR)) {
+    const files = fs.readdirSync(OUTPUT_DIR).filter((f) => f.endsWith('.ts'));
+    for (const file of files) {
+      const content = fs.readFileSync(path.join(OUTPUT_DIR, file), 'utf-8');
+      // Match patterns like: 'v3-1-1': `...`,
+      const regex = /'(v[\d]+-[\d]+-[\d]+)':\s*`([\s\S]*?)`/g;
+      let match: RegExpExecArray | null;
+      while ((match = regex.exec(content)) !== null) {
+        scripts[match[1]] = match[2].trim();
+      }
+    }
+  }
 
-  const files = fs.readdirSync(OUTPUT_DIR).filter((f) => f.endsWith('.ts'));
-  for (const file of files) {
-    const content = fs.readFileSync(path.join(OUTPUT_DIR, file), 'utf-8');
-    // Match patterns like: 'v3-1-1': `...`,
-    const regex = /'(v[\d]+-[\d]+-[\d]+)':\s*`([\s\S]*?)`/g;
-    let match: RegExpExecArray | null;
-    while ((match = regex.exec(content)) !== null) {
-      scripts[match[1]] = match[2].trim();
+  // Check legacy docs dir
+  if (fs.existsSync(LEGACY_SCRIPTS_DIR)) {
+    const files = fs.readdirSync(LEGACY_SCRIPTS_DIR).filter((f) => f.includes('FULL_SCRIPT.md'));
+    for (const file of files) {
+      const idMatch = file.match(/^v(\d+-\d+-\d+)_/);
+      if (idMatch) {
+        scripts[idMatch[1]] = fs.readFileSync(path.join(LEGACY_SCRIPTS_DIR, file), 'utf-8');
+      }
     }
   }
 
@@ -163,36 +176,66 @@ function loadGeneratedScripts(): Record<string, string> {
 // ---------------------------------------------------------------------------
 
 function buildSystemPrompt(fewShotExamples: string): string {
-  return `You are a script writer for a German-Malayalam language learning video series.
+  return `You are a script writer for a German-Malayalam language learning video series called "Adipoli German".
 
 TARGET AUDIENCE: Young Malayalees (16-30) who know basic English and want to learn German for career/study. They're familiar with Kerala culture, memes, and Manglish (Malayalam+English natural mix).
 
 TONE & STYLE:
-- Manglish narration: Mix Malayalam and English naturally in the script, exactly how young Malayalees actually talk. Example: "Ariyamo, German universities-il tuition almost zero aanu!"
-- Peer-to-peer feel: You are a friendly senior/friend teaching them, NOT a formal teacher. Use "nee", "machaa", "bro" — not "ningal".
-- Include German words naturally throughout with pronunciation help in parentheses where needed.
-- Kerala cultural parallels: Draw connections to Kerala life, food, culture, festivals wherever relevant.
-- Humor: Light, relatable humor. "IST = Indian Stretchable Time", Kerala exam stress references, Malayali memes, etc.
-- Characters: Kuttan (young Malayali guide) and Appu (elephant sidekick) are the mascots. You can reference them.
+- Manglish narration: Mix Malayalam and English naturally in the script. Example: "Ariyamo, German universities-il tuition almost zero aanu!"
+- Peer-to-peer feel: Friendly senior/friend teaching them. Use "nee", "machaa", "bro" — not "ningal".
+- Kerala cultural parallels: Draw connections to Kerala life, food, culture, festivals (IST, Kerala exam stress, Malabar parotta, etc.).
+- Humor: Light, relatable humor.
+
+INTEGRATED PRODUCTION SYSTEM:
+This is an "Integrated" script. You MUST include these production tags:
+
+1. SONIC BRANDING: Every energy cue MUST include a sonic signature chime in brackets:
+    - 🎬 [Energy: SET-AANU.mp3] — For success, sorting rules, or nailing a pattern.
+    - 🎬 [Energy: POLI-MASS.mp3] — For celebrations, module openers/closers, or big wins.
+    - 🎬 [Energy: SCENE-AANU.mp3] — For highlighting traps, common mistakes, or "danger" areas.
+
+2. VISUAL CONTINUITY: At the start of every section, include a hybrid visual bridge from the cinematic world:
+    - Example: [VISUAL: Seamless zoom push from Kuttan's scene into the lesson slide]
+    - Example: [VISUAL: Kuttan's notebook page fills the camera to show the grammar table]
+    - Example: [VISUAL: Transition from Kuttan's phone screen into the course slide]
+
+3. INTERACTIVE ANCHORS: Every script MUST end with a mandatory "Next Step: Interactive Practice" block after the closing.
 
 SCRIPT FORMAT:
-- Use [SECTION — timestamp] format for sections. Example: [INTRO — 0:00-0:30], [SECTION 1 — TOPIC — 0:30-3:00]
-- Start with [INTRO] and end with [CLOSING]
-- Target 350-500 words per script
-- Include ALL keyVocabulary words provided — every single one must appear in the script
-- Include pronunciation guides for German words in parentheses: "Entschuldigung" (ent-shool-di-goong)
-- Make it speakable — this will be narrated aloud in a video
+- Use [SECTION — TEMPLATE — timestamp] format for sections.
+- Templates: CARD, VOCAB, TABLE (conjugations/grammar), DIALOGUE, TIP (Goethe A1 tips).
+- Include pronunciation guides for German words: "Entschuldigung" (ent-shool-di-goong).
+- Target 350-500 words.
 
 STRUCTURE:
-1. [INTRO] — Hook + context (what are we learning and why it matters)
-2. [SECTION 1-N] — Teaching content, broken into digestible chunks
-3. [CLOSING] — Recap, practice encouragement, preview of next lesson
+1. [INTRO] — Hook + context + [VISUAL BRIDGE]
+2. [SECTION 1-N] — Teaching content + [VISUAL BRIDGES] + [SONIC SIGNATURES]
+3. [CLOSING] — Recap + encouragement + preview
+4. [🔥 NEXT STEP: INTERACTIVE PRACTICE] — Mandatory call-to-action to a specific drill.
 
-Here are examples of existing scripts in the exact style you should follow:
+Example of the new integrated style:
+
+--- EXAMPLE START ---
+[INTRO — CARD — 0:00-1:00]
+🎬 [Energy: POLI-MASS.mp3]
+[VISUAL: Zooming from Kuttan's staring face in Video 1 into this lesson title card]
+"Namaskaram! Adipoli German-inte start-ing-il-aanu nee ippo! Last cinematic-il Kuttan fan-il nokki irunnu chirikkunnathu kandille? Athu ninteyum chiriyanu starting today. Innu nammal padikkum why German matters..."
+
+... (teaching content) ...
+
+[CLOSING — CARD — 9:00-10:00]
+"Athre ullu! First module basic aanu, pakshe trust me, ithu ninte life-inte track maatum. Bis morgen! Tschüss!"
+
+[🔥 NEXT STEP: INTERACTIVE PRACTICE]
+**Action:** Close this video and open **Exercise X.Y: Title**.
+**Goal:** Speak the patterns we learned into the AI voice evaluator.
+**Reward:** 50 XP + streak protection!
+*Poli! Ippo start cheyyu, set aakaam!* 🚀
+--- EXAMPLE END ---
 
 ${fewShotExamples}
 
-Generate ONLY the script text. Do not include the video ID, export statements, or any code. Just the raw script content starting with [INTRO ...] and ending after [CLOSING ...].`;
+Generate ONLY the script text. No video ID, no export statements. Just raw script content.`;
 }
 
 function buildUserPrompt(video: Video, moduleTitle: string, lessonTitle: string): string {
@@ -213,7 +256,8 @@ ${video.keyVocabulary.map((v) => `  - ${v}`).join('\n')}
 LEARNING OBJECTIVES (ensure the script teaches all of these):
 ${video.learningObjectives.map((o) => `  - ${o}`).join('\n')}
 
-Remember: 350-500 words, Manglish tone, [SECTION — timestamp] format, include pronunciation for German words.`;
+Remember: 350-500 words, Manglish tone, [SECTION — TEMPLATE — timestamp] format, include pronunciation for German words. Choose the best template for each section's pedagogical goal.
+`;
 }
 
 async function callGemini(

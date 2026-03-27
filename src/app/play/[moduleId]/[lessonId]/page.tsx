@@ -12,14 +12,38 @@ import { getRandomMessage } from '@/lib/content/dialogue';
 import { getVideoScript } from '@/lib/content/video-scripts';
 import { createCard } from '@/lib/srs';
 import { useGameStore } from '@/lib/store';
-import { getLessonById, getModuleById, ALL_MODULES } from '@/lib/content/modules';
+import { getLessonById, getModuleById, ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { isLessonUnlocked as checkLessonUnlocked } from '@/lib/curriculum';
 import { feedbackCorrect, feedbackWrong, feedbackCelebration, feedbackFlip } from '@/lib/feedback';
+import { generateEncounter, type Encounter } from '@/lib/encounters';
+
+// Map modules → relevant games to suggest after vocab learning
+const MODULE_GAME_MAP: Record<number, { path: string; name: string; icon: string; description: string } | null> = {
+  1: { path: '/games/greeting-time', name: 'Greeting Time', icon: '👋', description: 'Practice the greetings you just learned!' },
+  2: { path: '/games/speed-quiz', name: 'Speed Quiz', icon: '⚡', description: 'Quick-fire vocab recall — test your speed!' },
+  3: { path: '/games/article-blitz', name: 'Article Blitz', icon: '📝', description: 'der, die, or das? Practice articles!' },
+  4: { path: '/games/number-blitz', name: 'Number Blitz', icon: '🔢', description: 'German numbers at the Kochi fish market!' },
+  5: { path: '/games/time-attack', name: 'Time Attack', icon: '🕐', description: 'Tell time in German — Wie spät ist es?' },
+  6: { path: '/games/food-order', name: 'Food Order', icon: '🍽️', description: 'Order food at a German restaurant!' },
+  7: { path: '/games/room-builder', name: 'Room Builder', icon: '🏠', description: 'Furnish your WG room — learn prepositions!' },
+  8: { path: '/games/dialogue-dash', name: 'Dialogue Dash', icon: '💬', description: 'Complete real conversations in German!' },
+  9: { path: '/games/verb-rush', name: 'Verb Rush', icon: '🏃', description: 'Conjugate verbs under pressure!' },
+  10: { path: '/games/sentence-builder', name: 'Sentence Builder', icon: '🧩', description: 'Build correct German sentences!' },
+  11: { path: '/games/dialogue-dash', name: 'Dialogue Dash', icon: '💬', description: 'Practice real-world dialogues!' },
+  12: { path: '/games/fill-the-gap', name: 'Fill the Gap', icon: '✍️', description: 'Fill in the missing words!' },
+  13: { path: '/games/story-builder', name: 'Story Builder', icon: '📖', description: 'Build stories in past tense!' },
+  14: { path: '/games/word-match', name: 'Word Match', icon: '🔗', description: 'Match German words to meanings!' },
+  15: { path: '/games/speed-quiz', name: 'Speed Quiz', icon: '⚡', description: 'Test your vocab speed!' },
+  16: { path: '/games/sentence-builder', name: 'Sentence Builder', icon: '🧩', description: 'Build complex sentences!' },
+  17: { path: '/games/dialogue-dash', name: 'Dialogue Dash', icon: '💬', description: 'Final conversation practice!' },
+  18: { path: '/games/speed-quiz', name: 'Speed Quiz', icon: '🏆', description: 'Full vocab speed run!' },
+};
 
 type Step =
   | { type: 'intro' }
   | { type: 'video'; index: number }
   | { type: 'vocab'; index: number }
+  | { type: 'game-suggest' }
   | { type: 'exercise'; index: number }
   | { type: 'complete' };
 
@@ -45,6 +69,15 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const [matchPairs, setMatchPairs] = useState<Record<number, number>>({}); // left index -> right index
   const [matchSelected, setMatchSelected] = useState<number | null>(null); // selected left index
   const [matchChecked, setMatchChecked] = useState(false);
+  // Typing exercise state
+  const [typedAnswer, setTypedAnswer] = useState('');
+  const [typeAnswerState, setTypeAnswerState] = useState<'default' | 'correct' | 'incorrect'>('default');
+  // Vocab teaching: intro (show word) → challenge (mini-encounter to prove recall)
+  const [vocabPhase, setVocabPhase] = useState<'intro' | 'challenge'>('intro');
+  const [vocabEncounter, setVocabEncounter] = useState<Encounter | null>(null);
+  const [vocabSelectedOption, setVocabSelectedOption] = useState<number | null>(null);
+  const [vocabAnswerState, setVocabAnswerState] = useState<'default' | 'correct' | 'wrong'>('default');
+  const allVocabPool = getAllVocabulary();
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -77,7 +110,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
 
   // Save checkpoint on step changes
   useEffect(() => {
-    if (step.type !== 'intro' && step.type !== 'complete' && module && lesson) {
+    if (step.type !== 'intro' && step.type !== 'complete' && step.type !== 'game-suggest' && module && lesson) {
       saveCheckpoint({
         lessonId: lesson.id,
         moduleId: module.id,
@@ -176,40 +209,108 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     );
   }
 
-  const totalSteps = 1 + lesson.videos.length + lesson.vocabulary.length + lesson.exercises.length + 1;
+  // Auto-generate typing exercises from lesson vocabulary (production practice)
+  // Pick up to 3 random vocab words to type — inserted before authored exercises
+  const autoTypingExercises: import('@/lib/content/types').Exercise[] = lesson.vocabulary.length > 0
+    ? lesson.vocabulary
+        .slice()
+        .sort(() => 0.5 - Math.random())
+        .slice(0, Math.min(3, lesson.vocabulary.length))
+        .map((v, i) => ({
+          id: `auto-type-${v.id}-${i}`,
+          type: 'type-answer' as const,
+          question: `Type the German word for "${v.english}"`,
+          questionGerman: v.example,
+          options: [],
+          correctAnswer: v.german,
+          explanation: `${v.german} [${v.pronunciation}] = ${v.english} (${v.malayalam})`,
+          xpReward: 5,
+        }))
+    : [];
+  const allExercises = [...autoTypingExercises, ...lesson.exercises];
+
+  const suggestedGameForModule = MODULE_GAME_MAP[module?.id ?? 0] ?? null;
+  const hasGameSuggest = suggestedGameForModule && lesson.vocabulary.length > 0;
+  const totalSteps = 1 + lesson.videos.length + lesson.vocabulary.length + (hasGameSuggest ? 1 : 0) + allExercises.length + 1;
   const currentStepNumber =
     step.type === 'intro' ? 1 :
     step.type === 'video' ? 2 + step.index :
     step.type === 'vocab' ? 2 + lesson.videos.length + step.index :
-    step.type === 'exercise' ? 2 + lesson.videos.length + lesson.vocabulary.length + step.index :
+    step.type === 'game-suggest' ? 2 + lesson.videos.length + lesson.vocabulary.length :
+    step.type === 'exercise' ? 2 + lesson.videos.length + lesson.vocabulary.length + (hasGameSuggest ? 1 : 0) + step.index :
     totalSteps;
   const progress = (currentStepNumber / totalSteps) * 100;
+
+  const resetVocabChallenge = () => {
+    setVocabPhase('intro');
+    setVocabEncounter(null);
+    setVocabSelectedOption(null);
+    setVocabAnswerState('default');
+  };
+
+  const suggestedGame = suggestedGameForModule;
+
+  const goToExercises = () => {
+    if (allExercises.length > 0) {
+      setStep({ type: 'exercise', index: 0 });
+      setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false); setTypedAnswer(''); setTypeAnswerState('default');
+    } else {
+      finishLesson();
+    }
+  };
+
+  const advanceFromVocab = () => {
+    learnVocabulary(lesson.vocabulary[(step as { type: 'vocab'; index: number }).index].id);
+    addSRSCard(createCard(lesson.vocabulary[(step as { type: 'vocab'; index: number }).index].id));
+    const idx = (step as { type: 'vocab'; index: number }).index;
+    if (idx < lesson.vocabulary.length - 1) {
+      setStep({ type: 'vocab', index: idx + 1 });
+      resetVocabChallenge();
+    } else if (suggestedGame) {
+      // Show game suggestion between vocab and exercises
+      setStep({ type: 'game-suggest' });
+      resetVocabChallenge();
+    } else {
+      resetVocabChallenge();
+      goToExercises();
+    }
+  };
 
   const goNext = () => {
     if (step.type === 'intro') {
       if (lesson.videos.length > 0) setStep({ type: 'video', index: 0 });
-      else if (lesson.vocabulary.length > 0) { setStep({ type: 'vocab', index: 0 }); setShowVocabMeaning(false); }
+      else if (lesson.vocabulary.length > 0) { setStep({ type: 'vocab', index: 0 }); resetVocabChallenge(); }
       else setStep({ type: 'exercise', index: 0 });
     } else if (step.type === 'video') {
       if (step.index < lesson.videos.length - 1) setStep({ type: 'video', index: step.index + 1 });
-      else if (lesson.vocabulary.length > 0) { setStep({ type: 'vocab', index: 0 }); setShowVocabMeaning(false); }
+      else if (lesson.vocabulary.length > 0) { setStep({ type: 'vocab', index: 0 }); resetVocabChallenge(); }
       else setStep({ type: 'exercise', index: 0 });
     } else if (step.type === 'vocab') {
-      learnVocabulary(lesson.vocabulary[step.index].id);
-      addSRSCard(createCard(lesson.vocabulary[step.index].id));
-      if (step.index < lesson.vocabulary.length - 1) { setStep({ type: 'vocab', index: step.index + 1 }); setShowVocabMeaning(false); }
-      else if (lesson.exercises.length > 0) { setStep({ type: 'exercise', index: 0 }); setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false); }
-      else finishLesson();
+      // Vocab intro phase: generate a challenge encounter
+      if (vocabPhase === 'intro') {
+        const target = lesson.vocabulary[step.index];
+        const encounter = generateEncounter(target, allVocabPool);
+        setVocabEncounter(encounter);
+        setVocabPhase('challenge');
+        setVocabSelectedOption(null);
+        setVocabAnswerState('default');
+        return;
+      }
+      // After challenge: advance to next word
+      advanceFromVocab();
+    } else if (step.type === 'game-suggest') {
+      // Skip game → go to exercises
+      goToExercises();
     } else if (step.type === 'exercise') {
-      if (step.index < lesson.exercises.length - 1) { setStep({ type: 'exercise', index: step.index + 1 }); setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false); }
+      if (step.index < allExercises.length - 1) { setStep({ type: 'exercise', index: step.index + 1 }); setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false); setTypedAnswer(''); setTypeAnswerState('default'); }
       else finishLesson();
     }
   };
 
   const finishLesson = () => {
-    const score = lesson.exercises.length > 0 ? Math.round((correctCount / lesson.exercises.length) * 100) : 100;
+    const score = allExercises.length > 0 ? Math.round((correctCount / allExercises.length) * 100) : 100;
 
-    if (score < 50 && lesson.exercises.length > 0) {
+    if (score < 50 && allExercises.length > 0) {
       // Failed — don't complete, show retry
       setLessonFailed(true);
       clearCheckpoint();
@@ -244,7 +345,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     if (answerState !== 'default') return;
     setSelectedAnswer(answer);
     setTotalAttempted(prev => prev + 1);
-    const exercise = lesson.exercises[(step as { type: 'exercise'; index: number }).index];
+    const exercise = allExercises[(step as { type: 'exercise'; index: number }).index];
     const isCorrect = answer === exercise.correctAnswer;
 
     if (isCorrect) {
@@ -318,8 +419,8 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
         // Calculate avg score for this module's lessons
         const moduleLessonScores = module.lessons.map(l => {
           if (l.id === lesson.id) {
-            return lesson.exercises.length > 0
-              ? Math.round((correctCount / lesson.exercises.length) * 100)
+            return allExercises.length > 0
+              ? Math.round((correctCount / allExercises.length) * 100)
               : 100;
           }
           const progress = userProgress.completedLessons.find(cl => cl.lessonId === l.id);
@@ -365,7 +466,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             <p className="text-5xl mb-3">😤</p>
             <h2 className="text-xl font-bold text-[#c0392b] mb-2">Not enough to pass</h2>
             <p className="text-sm text-[var(--foreground)]/50 mb-1">
-              You scored {lesson.exercises.length > 0 ? Math.round((correctCount / lesson.exercises.length) * 100) : 0}% — need 50% to pass.
+              You scored {allExercises.length > 0 ? Math.round((correctCount / allExercises.length) * 100) : 0}% — need 50% to pass.
             </p>
             <p className="text-xs text-[var(--foreground)]/30 mb-4">
               Review the material and try again!
@@ -460,7 +561,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                     📚 {lesson.vocabulary.length} words
                   </span>
                   <span className="rounded-full border border-[#27ae60]/20 bg-[#27ae60]/10 px-3 py-1 text-[#86efac]">
-                    📝 {lesson.exercises.length} exercise{lesson.exercises.length === 1 ? '' : 's'}
+                    📝 {allExercises.length} exercise{allExercises.length === 1 ? '' : 's'}
                   </span>
                 </div>
                 <div className="mt-4 rounded-2xl border border-[var(--foreground)]/10 bg-[var(--foreground)]/5 p-4 text-left max-w-md mx-auto">
@@ -497,86 +598,211 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             </motion.div>
           )}
 
-          {/* VOCABULARY */}
-          {step.type === 'vocab' && (
+          {/* VOCABULARY — Phase 1: Intro, Phase 2: Challenge */}
+          {step.type === 'vocab' && vocabPhase === 'intro' && (
             <motion.div
-              key={`vocab-${step.index}`}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
+              key={`vocab-intro-${step.index}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ type: 'spring', damping: 25 }}
               className="flex-1 flex flex-col items-center justify-center"
             >
-              <p className="text-[var(--foreground)]/40 text-sm mb-4">
-                Word {step.index + 1} of {lesson.vocabulary.length}
+              <p className="text-[var(--foreground)]/40 text-xs mb-3">
+                New word {step.index + 1} of {lesson.vocabulary.length}
               </p>
 
-              {/* Flashcard */}
-              <motion.div
-                onClick={() => { setShowVocabMeaning(!showVocabMeaning); feedbackFlip(); }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full max-w-sm aspect-[4/3] cursor-pointer"
-                style={{ perspective: '1000px' }}
-              >
-                <motion.div
-                  animate={{ rotateY: showVocabMeaning ? 180 : 0 }}
-                  transition={{ duration: 0.5, type: 'spring', damping: 20 }}
-                  style={{ transformStyle: 'preserve-3d' }}
-                  className="relative w-full h-full"
-                >
-                  {/* Front — German */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-br from-[#2a4a2a] to-[#1b3d1b] border-2 border-[#d4a520]/30 rounded-2xl flex flex-col items-center justify-center p-6"
-                    style={{ backfaceVisibility: 'hidden' }}
-                  >
-                    <span className="text-2xl mb-3">🇩🇪</span>
-                    <h2 className="text-3xl font-bold mb-2">
-                      {lesson.vocabulary[step.index].german}
-                    </h2>
-                    <p className="text-[var(--foreground)]/50 text-sm">/{lesson.vocabulary[step.index].pronunciation}/</p>
-                    <p className="text-[var(--foreground)]/25 text-xs mt-4">Tap to flip</p>
-                  </div>
+              {/* Word intro card — everything visible, no flipping */}
+              <div className="w-full max-w-sm bg-gradient-to-br from-[#2a4a2a] to-[#1b3d1b] border-2 border-[#d4a520]/30 rounded-2xl p-6 text-center">
+                <span className="text-xl mb-2 block">🇩🇪</span>
+                <h2 className="text-3xl font-bold mb-1">
+                  {lesson.vocabulary[step.index].german}
+                </h2>
+                <p className="text-[var(--foreground)]/40 text-sm mb-4">/{lesson.vocabulary[step.index].pronunciation}/</p>
 
-                  {/* Back — Meaning */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-br from-[#1e4a2e] to-[#143d20] border-2 border-[#27ae60]/30 rounded-2xl flex flex-col items-center justify-center p-6"
-                    style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
-                  >
-                    <h2 className="text-2xl font-bold mb-2">
-                      {lesson.vocabulary[step.index].english}
-                    </h2>
-                    <p className="text-[#d4a520] text-lg mb-3">
-                      {lesson.vocabulary[step.index].malayalam}
+                <div className="w-10 h-0.5 bg-[var(--foreground)]/10 mx-auto mb-4" />
+
+                <p className="text-xl font-semibold mb-1">
+                  {lesson.vocabulary[step.index].english}
+                </p>
+                <p className="text-[#d4a520] text-base mb-4">
+                  {lesson.vocabulary[step.index].malayalam}
+                </p>
+
+                {lesson.vocabulary[step.index].example && (
+                  <div className="bg-[var(--foreground)]/5 rounded-xl px-4 py-3 text-left">
+                    <p className="text-sm text-[var(--foreground)]/60 italic">
+                      &ldquo;{lesson.vocabulary[step.index].example}&rdquo;
                     </p>
-                    {lesson.vocabulary[step.index].example && (
-                      <div className="text-[var(--foreground)]/40 text-center text-sm">
-                        <p className="italic">"{lesson.vocabulary[step.index].example}"</p>
-                        {lesson.vocabulary[step.index].exampleTranslation && (
-                          <p className="mt-1">{lesson.vocabulary[step.index].exampleTranslation}</p>
-                        )}
-                      </div>
+                    {lesson.vocabulary[step.index].exampleTranslation && (
+                      <p className="text-xs text-[var(--foreground)]/30 mt-1">
+                        {lesson.vocabulary[step.index].exampleTranslation}
+                      </p>
                     )}
                   </div>
-                </motion.div>
-              </motion.div>
+                )}
+              </div>
 
               {/* Audio + Bookmark */}
-              <div className="flex items-center gap-3 mt-5">
+              <div className="flex items-center gap-3 mt-4">
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={() => playVocabAudio(lesson.vocabulary[step.index].id)}
-                  className="w-12 h-12 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center hover:bg-[var(--foreground)]/5 transition-colors"
+                  className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
                 >
-                  <Volume2 className="w-5 h-5 text-[#d4a520]" />
+                  <Volume2 className="w-4 h-4 text-[#d4a520]" />
                 </motion.button>
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={() => toggleBookmark(lesson.vocabulary[step.index].id)}
-                  className="w-12 h-12 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center hover:bg-[var(--foreground)]/5 transition-colors"
+                  className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
                 >
-                  <Bookmark className={`w-5 h-5 ${(userProgress.bookmarkedVocab || []).includes(lesson.vocabulary[step.index].id) ? 'text-[#e94560] fill-[#e94560]' : 'text-[var(--foreground)]/40'}`} />
+                  <Bookmark className={`w-4 h-4 ${(userProgress.bookmarkedVocab || []).includes(lesson.vocabulary[step.index].id) ? 'text-[#e94560] fill-[#e94560]' : 'text-[var(--foreground)]/40'}`} />
                 </motion.button>
               </div>
+            </motion.div>
+          )}
+
+          {/* VOCABULARY — Challenge phase */}
+          {step.type === 'vocab' && vocabPhase === 'challenge' && vocabEncounter && (
+            <motion.div
+              key={`vocab-challenge-${step.index}`}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ type: 'spring', damping: 25 }}
+              className="flex-1 flex flex-col"
+            >
+              {/* Mini Kuttan prompt */}
+              <div className="flex items-start gap-2 mb-4">
+                <CharacterGuide
+                  messages={vocabAnswerState === 'correct' ? getRandomMessage('correct')
+                    : vocabAnswerState === 'wrong' ? getRandomMessage('wrong')
+                    : vocabEncounter.kuttanSays}
+                  mood={vocabAnswerState === 'correct' ? 'celebrating' : vocabAnswerState === 'wrong' ? 'sad' : 'thinking'}
+                  size="sm"
+                />
+              </div>
+
+              {/* Encounter question */}
+              <div className="flex-1 flex flex-col justify-center">
+                <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-5 mb-4">
+                  {vocabEncounter.contextGerman && (
+                    <p className="text-lg font-semibold leading-relaxed whitespace-pre-line mb-3">
+                      {vocabEncounter.contextGerman}
+                    </p>
+                  )}
+                  <p className="text-sm text-[var(--foreground)]/60">
+                    {vocabEncounter.prompt}
+                  </p>
+                </div>
+
+                {/* Options */}
+                <div className="space-y-2.5">
+                  {vocabEncounter.options.map((option, idx) => {
+                    const isSelected = vocabSelectedOption === idx;
+                    const isCorrectOption = idx === vocabEncounter.correctIndex;
+                    const showCorrect = vocabAnswerState === 'correct' && isCorrectOption;
+                    const showWrong = isSelected && vocabAnswerState === 'wrong';
+
+                    let state: 'default' | 'selected' | 'correct' | 'incorrect' = 'default';
+                    if (showCorrect) state = 'correct';
+                    else if (showWrong) state = 'incorrect';
+                    else if (vocabAnswerState === 'wrong' && isCorrectOption) state = 'correct';
+
+                    return (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: idx * 0.05 }}
+                      >
+                        <ChoiceButton
+                          onClick={() => {
+                            if (vocabAnswerState !== 'default') return;
+                            setVocabSelectedOption(idx);
+                            if (idx === vocabEncounter.correctIndex) {
+                              setVocabAnswerState('correct');
+                              feedbackCorrect();
+                              playVocabAudio(lesson.vocabulary[step.index].id).catch(() => {});
+                              // Auto-advance after showing correct
+                              setTimeout(() => advanceFromVocab(), 1400);
+                            } else {
+                              setVocabAnswerState('wrong');
+                              feedbackWrong();
+                              // Show correct answer, then advance
+                              setTimeout(() => advanceFromVocab(), 2000);
+                            }
+                          }}
+                          state={state}
+                          disabled={vocabAnswerState !== 'default'}
+                        >
+                          {option}
+                        </ChoiceButton>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+
+                {/* Explanation after answering */}
+                {vocabAnswerState !== 'default' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 px-4 py-3"
+                  >
+                    <p className="text-xs text-[var(--foreground)]/60 leading-relaxed">
+                      {vocabEncounter.explanation}
+                    </p>
+                  </motion.div>
+                )}
+              </div>
+            </motion.div>
+          )}
+
+          {/* GAME SUGGESTION — between vocab and exercises */}
+          {step.type === 'game-suggest' && suggestedGame && (
+            <motion.div
+              key="game-suggest"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="flex-1 flex flex-col items-center justify-center text-center"
+            >
+              <CharacterGuide
+                messages="Vocab done! Want to play a game before exercises? It'll help lock in what you just learned! 🎮"
+                mood="excited"
+                size="md"
+              />
+
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="mt-6 w-full max-w-sm"
+              >
+                <div className="game-card p-6 text-center mb-4">
+                  <span className="text-4xl mb-3 block">{suggestedGame.icon}</span>
+                  <h3 className="text-xl font-bold mb-1">{suggestedGame.name}</h3>
+                  <p className="text-sm text-[var(--foreground)]/50">{suggestedGame.description}</p>
+                </div>
+
+                <GameButton
+                  onClick={() => router.push(suggestedGame.path)}
+                  fullWidth
+                  variant="primary"
+                  size="lg"
+                >
+                  Play Now
+                </GameButton>
+
+                <button
+                  onClick={goToExercises}
+                  className="w-full mt-3 py-2.5 text-sm text-[var(--foreground)]/40 hover:text-[var(--foreground)]/60 transition-colors"
+                >
+                  Skip — go to exercises
+                </button>
+              </motion.div>
             </motion.div>
           )}
 
@@ -604,12 +830,83 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               {/* Question */}
               <div className="flex-1 flex flex-col justify-center">
                 <h2 className="text-xl font-bold text-center mb-6 leading-snug">
-                  {highlightGerman(lesson.exercises[step.index].question)}
+                  {highlightGerman(allExercises[step.index].question)}
                 </h2>
 
-                {/* MATCHING EXERCISE */}
-                {lesson.exercises[step.index].type === 'matching' && Array.isArray(lesson.exercises[step.index].correctAnswer) ? (() => {
-                  const exercise = lesson.exercises[step.index];
+                {/* TYPE-ANSWER EXERCISE — production practice */}
+                {allExercises[step.index].type === 'type-answer' ? (() => {
+                  const exercise = allExercises[step.index];
+                  const correctAnswer = (typeof exercise.correctAnswer === 'string' ? exercise.correctAnswer : exercise.correctAnswer[0]).trim();
+
+                  const handleTypeSubmit = () => {
+                    if (typeAnswerState !== 'default' || !typedAnswer.trim()) return;
+                    setTotalAttempted(prev => prev + 1);
+                    // Flexible matching: case-insensitive, trim whitespace
+                    const isCorrect = typedAnswer.trim().toLowerCase() === correctAnswer.toLowerCase();
+                    if (isCorrect) {
+                      setTypeAnswerState('correct');
+                      setCorrectCount(prev => prev + 1);
+                      setKuttanMsg(getRandomMessage('correct'));
+                      feedbackCorrect();
+                      setTimeout(() => goNext(), 1400);
+                    } else {
+                      setTypeAnswerState('incorrect');
+                      setKuttanMsg(getRandomMessage('wrong'));
+                      feedbackWrong();
+                      setTimeout(() => goNext(), 2500);
+                    }
+                  };
+
+                  return (
+                    <div className="space-y-4">
+                      {exercise.questionGerman && (
+                        <div className="bg-[var(--foreground)]/5 rounded-xl px-4 py-3 text-center">
+                          <p className="text-sm text-[var(--foreground)]/50 italic">
+                            &ldquo;{exercise.questionGerman}&rdquo;
+                          </p>
+                        </div>
+                      )}
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          value={typedAnswer}
+                          onChange={(e) => setTypedAnswer(e.target.value)}
+                          onKeyDown={(e) => { if (e.key === 'Enter') handleTypeSubmit(); }}
+                          placeholder="Type the German word..."
+                          disabled={typeAnswerState !== 'default'}
+                          autoFocus
+                          className={`flex-1 px-4 py-3 rounded-xl border-2 text-base bg-[var(--card-bg)] outline-none transition-colors ${
+                            typeAnswerState === 'correct' ? 'border-[#27ae60] text-[#27ae60]' :
+                            typeAnswerState === 'incorrect' ? 'border-[#c0392b] text-[#c0392b]' :
+                            'border-[var(--card-border)] focus:border-[#d4a520]'
+                          }`}
+                        />
+                        <GameButton
+                          onClick={handleTypeSubmit}
+                          disabled={typeAnswerState !== 'default' || !typedAnswer.trim()}
+                          variant="primary"
+                        >
+                          Check
+                        </GameButton>
+                      </div>
+                      {typeAnswerState === 'incorrect' && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="text-center"
+                        >
+                          <p className="text-sm text-[var(--foreground)]/50">
+                            Correct answer: <span className="font-bold text-[#27ae60]">{correctAnswer}</span>
+                          </p>
+                        </motion.div>
+                      )}
+                    </div>
+                  );
+                })() :
+
+                /* MATCHING EXERCISE */
+                allExercises[step.index].type === 'matching' && Array.isArray(allExercises[step.index].correctAnswer) ? (() => {
+                  const exercise = allExercises[step.index];
                   const leftItems = exercise.options || [];
                   const rightItems = exercise.correctAnswer as string[];
                   // Shuffle right side once (use exercise id as stable seed)
@@ -729,9 +1026,9 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 })() : (
                   /* MULTIPLE CHOICE / FILL-BLANK EXERCISE */
                   <div className="space-y-3">
-                    {lesson.exercises[step.index].options?.map((option, i) => {
+                    {allExercises[step.index].options?.map((option, i) => {
                       const isSelected = selectedAnswer === option;
-                      const isCorrect = option === lesson.exercises[step.index].correctAnswer;
+                      const isCorrect = option === allExercises[step.index].correctAnswer;
                       let state: 'default' | 'selected' | 'correct' | 'incorrect' = 'default';
                       if (answerState === 'correct' && isCorrect) state = 'correct';
                       else if (answerState === 'incorrect' && isSelected) state = 'incorrect';
@@ -759,7 +1056,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 )}
 
                 {/* Explanation — shown after answering */}
-                {answerState !== 'default' && lesson.exercises[step.index].explanation && (
+                {answerState !== 'default' && allExercises[step.index].explanation && (
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -767,7 +1064,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                   >
                     <p className="text-xs text-[var(--foreground)]/60 leading-relaxed">
                       <span className="font-semibold text-[#d4a520]">Explanation:</span>{' '}
-                      {lesson.exercises[step.index].explanation}
+                      {allExercises[step.index].explanation}
                     </p>
                   </motion.div>
                 )}
@@ -777,19 +1074,18 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
         </AnimatePresence>
       </div>
 
-      {/* Bottom Button */}
-      {step.type !== 'complete' && step.type !== 'exercise' && (
+      {/* Bottom Button — hidden during vocab challenge (answers handle progression) */}
+      {step.type !== 'complete' && step.type !== 'exercise' && step.type !== 'game-suggest' && !(step.type === 'vocab' && vocabPhase === 'challenge') && (
         <div className="px-4 py-5">
           <GameButton
             onClick={goNext}
             size="lg"
             fullWidth
-            variant={step.type === 'vocab' && showVocabMeaning ? 'success' : 'primary'}
-            disabled={step.type === 'vocab' && !showVocabMeaning}
+            variant="primary"
           >
             {step.type === 'intro' ? "Let's Start" :
              step.type === 'video' ? 'Continue' :
-             step.type === 'vocab' ? (showVocabMeaning ? 'Got It' : 'Tap the card first') :
+             step.type === 'vocab' ? "Got it — test me!" :
              'Continue'}
           </GameButton>
         </div>

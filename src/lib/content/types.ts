@@ -17,7 +17,7 @@ export interface Video {
 
 export interface Exercise {
   id: string;
-  type: 'multiple-choice' | 'fill-blank' | 'matching' | 'ordering' | 'speaking' | 'free-text' | 'dictation' | 'image-prompt';
+  type: 'multiple-choice' | 'fill-blank' | 'matching' | 'ordering' | 'speaking' | 'free-text' | 'dictation' | 'image-prompt' | 'type-answer';
   question: string;
   questionGerman?: string;
   options?: string[];

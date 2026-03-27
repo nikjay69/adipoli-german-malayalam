@@ -57,7 +57,7 @@ export const MODULE_17: Module = {
             "Know what to bring and expect on exam day"
           ],
           placeholderThumbnail: "/images/thumbnails/exam-overview.jpg"
-        }
+        },
       ],
       exercises: [
         {
@@ -66,7 +66,7 @@ export const MODULE_17: Module = {
           question: "How many parts does the Goethe A1 exam have in total?",
           options: ["3 parts: Hören, Lesen, Schreiben", "4 parts: Hören, Lesen, Schreiben, Sprechen", "5 parts: Hören, Lesen, Schreiben, Sprechen, Grammatik", "2 parts: Written and Oral"],
           correctAnswer: "4 parts: Hören, Lesen, Schreiben, Sprechen",
-          explanation: "The Goethe A1 (Start Deutsch 1) exam has exactly 4 parts: Hören (Listening, ~20 min), Lesen (Reading, 25 min), Schreiben (Writing, 20 min), and Sprechen (Speaking, ~15 min).",
+          explanation: "The 'Big Four': Hören (Listen), Lesen (Read), Schreiben (Write), and Sprechen (Speak). There is NO separate grammar section—your grammar is tested through how you use it in these four parts!",
           xpReward: 10
         },
         {
@@ -75,7 +75,7 @@ export const MODULE_17: Module = {
           question: "How many parts does the Hören (Listening) section have?",
           options: ["2 parts", "3 parts", "4 parts", "1 part"],
           correctAnswer: "3 parts",
-          explanation: "Hören has 3 parts: Teil 1 — short messages (Richtig/Falsch), Teil 2 — short dialogues (multiple choice a/b/c), Teil 3 — public announcements (matching to situations).",
+          explanation: "Three distinct challenges: 1. Phone messages (Short), 2. Dialogues (Medium), 3. Public announcements (Crowded places). Each tests a different 'ear'!",
           xpReward: 10
         },
         {
@@ -84,7 +84,7 @@ export const MODULE_17: Module = {
           question: "In Hören Teil 1, what do you need to decide for each statement?",
           options: ["Choose from a/b/c options", "Richtig (True) or Falsch (False)", "Match to a picture", "Write the answer in your own words"],
           correctAnswer: "Richtig (True) or Falsch (False)",
-          explanation: "In Hören Teil 1, you hear short everyday messages (phone messages, announcements) and decide if a given statement is Richtig (True) or Falsch (False).",
+          explanation: "Richtig/Falsch (True/False). It sounds easy, but watch out for 'NICHT' (Not)—it can flip the whole meaning in a split second!",
           xpReward: 10
         },
         {
@@ -93,7 +93,7 @@ export const MODULE_17: Module = {
           question: "How many parts does the Lesen (Reading) section have?",
           options: ["2 parts", "3 parts", "4 parts", "5 parts"],
           correctAnswer: "3 parts",
-          explanation: "Lesen has 3 parts: Teil 1 — short notices/signs (matching), Teil 2 — classifieds/ads (Richtig/Falsch), Teil 3 — short emails or letters (multiple choice).",
+          explanation: "Lesen is a 3-act play: 1. Signs/Ads (Short), 2. Classifieds (Detailed), 3. Short letters/emails (Social). 25 minutes for the whole thing!",
           xpReward: 10
         },
         {
@@ -102,7 +102,7 @@ export const MODULE_17: Module = {
           question: "In Lesen Teil 2, you read advertisements and classifieds. What format are the questions?",
           options: ["Multiple choice a/b/c", "Richtig (True) or Falsch (False)", "Match to pictures", "Fill in the blanks"],
           correctAnswer: "Richtig (True) or Falsch (False)",
-          explanation: "In Lesen Teil 2, you read short ads or classifieds and decide if given statements about them are Richtig (True) or Falsch (False).",
+          explanation: "You get a situation (e.g., 'You want a cheap car') and an ad. Is the ad a match? Richtig or Falsch. Match the details, not just the keywords!",
           xpReward: 10
         },
         {
@@ -116,7 +116,7 @@ export const MODULE_17: Module = {
             "Focus only on the first sentence of each audio"
           ],
           correctAnswer: "Read the questions and answer options BEFORE the audio plays",
-          explanation: "Reading the questions first helps you know exactly what information to listen for. You hear each audio TWICE, so use the first listen for general understanding and the second for specific details.",
+          explanation: "The 'Golden Strategy': The 15 seconds of silence before the audio starts is your most important time. Read the question so your brain is ready to 'catch' the answer!",
           xpReward: 10
         },
         {
@@ -125,7 +125,7 @@ export const MODULE_17: Module = {
           question: "How many times do you hear each audio in the Hören section?",
           options: ["Once only", "Twice", "Three times", "It depends on the Teil"],
           correctAnswer: "Twice",
-          explanation: "In all 3 parts of the Hören section, you hear each audio TWICE. Use the first listen to understand the general context and the second to confirm your answer.",
+          explanation: "You get a second chance! Use the first time to get the 'feel' and your initial guess. Use the second time to TRIPLE check and catch any 'nicht' or 'aber' traps.",
           xpReward: 10
         },
         {
@@ -134,15 +134,16 @@ export const MODULE_17: Module = {
           question: "What percentage do you need to pass the Goethe A1 exam?",
           options: ["50%", "60%", "70%", "80%"],
           correctAnswer: "60%",
-          explanation: "You need at least 60% (60 out of 100 points) to pass the Goethe A1 exam. Each of the 4 sections is worth 25 points.",
+          explanation: "60 out of 100. Even if you mess up one section (like Sprechen), you can pass if you're strong in others. But aim for 100, machane!",
           xpReward: 10
         },
         {
           id: "ex17-1-9",
           type: "matching",
           question: "Match each exam section to its duration:",
-          options: ["H\u00f6ren", "Lesen", "Schreiben", "Sprechen"],
+          options: ["Hören", "Lesen", "Schreiben", "Sprechen"],
           correctAnswer: ["20 Minuten", "25 Minuten", "20 Minuten", "15 Minuten"],
+          explanation: "Total time: about 80 minutes. It's a sprint, not a marathon. Stay focused for that one hour and you're golden!",
           xpReward: 15
         },
         {
@@ -151,8 +152,25 @@ export const MODULE_17: Module = {
           question: "If you don't know an answer on the exam, what should you do?",
           options: ["Leave it blank", "Make your best guess and move on", "Spend 10 minutes thinking about it", "Ask the examiner for help"],
           correctAnswer: "Make your best guess and move on",
-          explanation: "Never leave an answer blank \u2014 you have at least a 25% or 50% chance of guessing correctly! Mark your best guess, then move on. Time management is crucial.",
+          explanation: "NEVER leave a blank! There's no negative marking in A1. If you leave it blank, you get 0. If you guess, you have a 33% or 50% chance of a free point!",
           xpReward: 10
+        },
+        {
+          id: "ex17-1-11",
+          type: "dictation",
+          question: "Listen and type the exam name: Start Deutsch eins.",
+          correctAnswer: "Start Deutsch eins",
+          explanation: "Perfect! 'Start Deutsch 1' is the official name of the Goethe A1 exam.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-exam-name.mp3"
+        },
+        {
+          id: "ex17-1-12",
+          type: "free-text",
+          question: "Translate to German: 'Good luck!' (use 'Viel Glück')",
+          correctAnswer: "Viel Glück",
+          explanation: "Wunderbar! A must-know phrase for exam day.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -228,19 +246,19 @@ export const MODULE_17: Module = {
           duration: "12:00",
           description: "Understand the exact format of Hören Teil 1: short phone messages, voicemails, and announcements with Richtig/Falsch questions.",
           scriptOutline: [
-            "Opening: 'Hören Teil 1 — ithinte format exact-aayi padikkam!'",
-            "Format: You hear 6 short messages (voicemails, announcements, phone messages)",
-            "Each message: ~30 seconds, you hear it TWICE",
-            "For each message: one statement is given — decide Richtig or Falsch",
+            "Opening: 'Hören Teil 1 — ithinte format exact-aayi padikkam! This is where your 'listening for details' skill gets tested.'",
+            "Format: You hear 6 short messages (voicemails, announcements, phone messages). Think of it like listening to a quick announcement at a bus stand in Kerala.",
+            "Each message: ~30 seconds, you hear it TWICE. Use the first listen for the general idea, the second for specific details.",
+            "For each message: one statement is given — decide Richtig (True) or Falsch (False).",
             "Example walkthrough: 'Hallo Maria, hier ist Peter. Ich komme heute nicht zum Unterricht. Ich bin krank.'",
             "Statement: 'Peter kommt heute zum Unterricht.' → FALSCH (he said 'nicht'!)",
-            "Trap #1: Negation words — nicht, kein, nie, niemand",
-            "Trap #2: Numbers that sound similar — 13/30, 14/40, 15/50",
-            "Trap #3: Time confusion — 'am Dienstag' vs. 'am Donnerstag'",
-            "Tip: The statement often PARAPHRASES the message — same meaning, different words",
-            "Tip: If the message says the opposite of the statement, it's FALSCH",
-            "Practice: We'll simulate this as reading exercises — read the message, judge the statement",
-            "Closing: 'Negation is the #1 trap — always listen for nicht and kein!'"
+            "Trap #1: Negation words — nicht, kein, nie, niemand. These are the tricksters! Always listen carefully for them. 'Nicht' is like a 'no' that can change everything.",
+            "Trap #2: Numbers that sound similar — 13/30, 14/40, 15/50. Practice these number pairs. 'Dreizehn' vs 'Dreißig' – a small difference, big mistake!",
+            "Trap #3: Time confusion — 'am Dienstag' vs. 'am Donnerstag'. Days of the week and times can be tricky. Double-check!",
+            "Tip: The statement often PARAPHRASES the message — same meaning, different words. Don't expect exact word-for-word matches.",
+            "Tip: If the message says the opposite of the statement, it's FALSCH. Simple logic, machane!",
+            "Practice: We'll simulate this as reading exercises — read the 'heard' message, then judge the statement. Imagine the audio playing in your head.",
+            "Closing: 'Negation is the #1 trap — always listen for nicht and kein! Your 'keyword spotting' skill is crucial here. Adipoli!'"
           ],
           keyVocabulary: ["die Nachricht", "der Anrufbeantworter", "richtig", "falsch", "nicht"],
           learningObjectives: [
@@ -259,7 +277,7 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Achtung! Der Zug nach München fährt heute von Gleis 5, nicht von Gleis 3. Ich wiederhole: Gleis 5.\'\n\n📝 Statement: Der Zug nach München fährt von Gleis 3.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "The announcement says 'von Gleis 5, NICHT von Gleis 3' — from platform 5, NOT platform 3. The statement says platform 3, which is explicitly corrected. → Falsch",
+          explanation: "The Classic Trap: They say 'Gleis 3' first, then 'NICHT', then the real answer 'Gleis 5'. If you hear '3' and stop listening, you'll get it wrong. The 'nicht' flips the statement to Falsch!",
           xpReward: 15
         },
         {
@@ -268,7 +286,7 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Hallo Frau Schmidt, hier ist die Arztpraxis Dr. Meier. Ihr Termin am Mittwoch um 10 Uhr muss leider verschoben werden. Können Sie stattdessen am Donnerstag um 14 Uhr kommen? Bitte rufen Sie uns zurück.\'\n\n📝 Statement: Der Termin am Mittwoch findet wie geplant statt.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "'Muss leider verschoben werden' means must unfortunately be postponed. The Wednesday appointment does NOT take place as planned — they suggest Thursday at 14:00 instead. → Falsch",
+          explanation: "'Verschoben werden' = to be postponed. In Malayalam: 'Maatti vechu'. Since it's postponed, it is NOT happening as planned (Falsch).",
           xpReward: 15
         },
         {
@@ -277,7 +295,7 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Hallo Thomas, hier ist Petra. Ich möchte dich zu meiner Geburtstagsfeier am Samstag einladen. Die Party beginnt um 19 Uhr bei mir zu Hause. Bring bitte etwas zu trinken mit!\'\n\n📝 Statement: Die Party beginnt um 19 Uhr.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Richtig",
-          explanation: "Petra says 'Die Party beginnt um 19 Uhr' — the party starts at 19:00 (7 PM). The statement matches exactly. → Richtig",
+          explanation: "Clear match. She says 19:00, the statement says 19:00. This is an 'easy point' question—grab it and move on!",
           xpReward: 15
         },
         {
@@ -286,7 +304,7 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Liebe Kunden, unser Geschäft ist heute wegen Inventur geschlossen. Ab morgen sind wir wieder zu den normalen Öffnungszeiten für Sie da. Vielen Dank für Ihr Verständnis.\'\n\n📝 Statement: Das Geschäft hat heute normal geöffnet.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "'Heute wegen Inventur geschlossen' — today closed due to inventory. The store is NOT open normally today. → Falsch",
+          explanation: "'Geschlossen' = Closed. If it's closed for 'Inventur' (stock checking), it can't be 'geöffnet' (Open). Falsch!",
           xpReward: 15
         },
         {
@@ -295,7 +313,7 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Guten Tag, hier ist Ihre Hausverwaltung. Am Montag, den 15. März, wird zwischen 9 und 14 Uhr das Wasser abgestellt. Bitte füllen Sie vorher genug Wasser ab.\'\n\n📝 Statement: Das Wasser wird am Montag für einige Stunden abgestellt.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Richtig",
-          explanation: "'Am Montag zwischen 9 und 14 Uhr das Wasser abgestellt' — water shut off on Monday from 9 to 14 (5 hours). The statement says 'for some hours' which is correct. → Richtig",
+          explanation: "Paraphrasing Trap: The audio gives exact times (9 to 14), but the statement says 'for some hours'. 5 hours counts as 'some hours'! Richtig.",
           xpReward: 15
         },
         {
@@ -304,7 +322,7 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Hallo Markus, hier ist Julia. Ich habe zwei Karten für das Konzert am Freitag. Hast du Lust mitzukommen? Es fängt um 20 Uhr an. Ruf mich bitte heute noch an!\'\n\n📝 Statement: Julia hat keine Karten für das Konzert.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "Julia says 'Ich habe zwei Karten' — she HAS two tickets. The statement says she has NO tickets (keine Karten). → Falsch",
+          explanation: "Keyword: 'Keine' (None/No). Julia says 'Ich habe zwei Karten'. 'Zwei' (two) vs 'Keine' (none) = total contradiction. Falsch!",
           xpReward: 15
         },
         {
@@ -313,7 +331,7 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Sehr geehrte Fluggäste, der Flug LH 417 nach Istanbul hat eine Verspätung von 45 Minuten. Neuer Abflug: 16:15 Uhr. Wir bitten um Entschuldigung.\'\n\n📝 Statement: Der Flug nach Istanbul ist pünktlich.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "'Verspätung von 45 Minuten' means a delay of 45 minutes. The flight is NOT on time (pünktlich). → Falsch",
+          explanation: "Verspätung (Delay) is the enemy of Pünktlich (Punctual). If there is a delay, it's not punctual. Period. Falsch!",
           xpReward: 15
         },
         {
@@ -322,7 +340,7 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Hallo Herr Weber, hier ist das Reisebüro SunTravel. Ihre Reise nach Spanien ist gebucht. Abflug ist am 15. Juni um 8:30 Uhr ab Frankfurt. Bitte seien Sie zwei Stunden vorher am Flughafen.\'\n\n📝 Statement: Herr Weber soll um 6:30 Uhr am Flughafen sein.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Richtig",
-          explanation: "Flight at 8:30, 'zwei Stunden vorher' (two hours before) = 6:30 Uhr. The statement is correct. → Richtig",
+          explanation: "Math Trap: 8:30 - 2 hours = 6:30. A1 examiners love small math puzzles to see if you really understood the numbers. Richtig!",
           xpReward: 15
         },
         {
@@ -331,7 +349,7 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Hallo Sabine, hier ist deine Mutter. Ich komme morgen nicht zu Besuch, weil ich erkältet bin. Ich komme nächste Woche, wenn es mir besser geht. Bis dann!\'\n\n📝 Statement: Sabines Mutter kommt morgen zu Besuch.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "'Ich komme morgen NICHT zu Besuch' — she is NOT coming tomorrow because she has a cold. She'll come next week. → Falsch",
+          explanation: "Listen for the 'Nicht'! 'Ich komme morgen NICHT' — she is NOT coming tomorrow because she has a cold. She'll come next week. One tiny word changes the whole story. Falsch!",
           xpReward: 15
         },
         {
@@ -340,8 +358,33 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Liebe Schüler, der Mathematik-Unterricht fällt morgen aus. Stattdessen haben wir zwei Stunden Deutsch. Bitte bringt eure Deutschbücher mit.\'\n\n📝 Statement: Morgen haben die Schüler Mathematik-Unterricht.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "'Der Mathematik-Unterricht fällt morgen aus' — math class is CANCELLED tomorrow. Instead they have German class. → Falsch",
+          explanation: "'Fällt aus' = Cancelled. If math is cancelled and replaced by German, they don't have math! Falsch.",
           xpReward: 15
+        },
+        {
+          id: "ex17-2-11",
+          type: "dictation",
+          question: "Listen and type: Der Zug fährt von Gleis 5.",
+          correctAnswer: "Der Zug fährt von Gleis 5",
+          explanation: "Great! 'Gleis' is a key word for train announcements.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-train-platform.mp3"
+        },
+        {
+          id: "ex17-2-12",
+          type: "free-text",
+          question: "Translate to German: 'The train is late.' (late/delay = Verspätung)",
+          correctAnswer: "Der Zug hat Verspätung",
+          explanation: "Wunderbar! This is a very common phrase in German train stations.",
+          xpReward: 30
+        },
+        {
+          id: "ex17-2-13",
+          type: "free-text",
+          question: "Translate to German: 'Where is the train?' (Zug = train)",
+          correctAnswer: "Wo ist der Zug",
+          explanation: "Excellent! A simple but vital question in everyday travel.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -410,7 +453,7 @@ export const MODULE_17: Module = {
             "Example: 'Sonderangebot: Kaffee nur 3,99 Euro' → Situation: You want to buy cheap coffee",
             "Key words tell you the situation: Gleis = train, Flug = airport, Angebot = shopping",
             "Common traps: Two options might seem right — pick the MOST specific one",
-            "Closing: 'Context clues and keywords — that's how you crack Teil 2 and 3!'"
+            "Closing: 'Context clues and keywords — that's how you crack Teil 2 and 3! Remember, it's all about understanding the main idea and spotting those crucial details, just like understanding a quick chat in the market!'"
           ],
           keyVocabulary: ["das Gespräch", "die Durchsage", "die Situation", "zuordnen"],
           learningObjectives: [
@@ -430,7 +473,7 @@ export const MODULE_17: Module = {
           question: "🗣️ Dialogue:\nFrau: 'Entschuldigung, wo finde ich Milch?'\nMann: 'Die Milch steht im Gang 3, direkt neben dem Käse.'\nFrau: 'Danke! Und haben Sie auch frisches Brot?'\nMann: 'Ja, die Bäckerei ist gleich am Eingang links.'\n\n❓ Wo findet die Frau die Milch?",
           options: ["a) Am Eingang links", "b) Im Gang 3, neben dem Käse", "c) An der Kasse"],
           correctAnswer: "b) Im Gang 3, neben dem Käse",
-          explanation: "The man says 'Die Milch steht im Gang 3, direkt neben dem Käse' — the milk is in aisle 3, right next to the cheese. The bakery (not the milk) is at the entrance.",
+          explanation: "Specific Information: They mention two places (Gang 3 and Eingang). You must listen for WHICH one is linked to 'Milch'. He explicitly says Gang 3 for milk. The entrance is for bread!",
           xpReward: 15
         },
         {
@@ -439,7 +482,7 @@ export const MODULE_17: Module = {
           question: "🗣️ Dialogue:\nAnna: 'Hallo Peter, wollen wir am Samstag zusammen essen gehen?'\nPeter: 'Gerne! Wohin möchtest du?'\nAnna: 'Wie wäre es mit dem italienischen Restaurant in der Mozartstraße?'\nPeter: 'Super! Um wie viel Uhr?'\nAnna: 'Um 19 Uhr. Ich reserviere einen Tisch für zwei.'\n\n❓ Was macht Anna am Samstag?",
           options: ["a) Sie kocht zu Hause", "b) Sie geht mit Peter in ein italienisches Restaurant", "c) Sie geht allein ins Restaurant"],
           correctAnswer: "b) Sie geht mit Peter in ein italienisches Restaurant",
-          explanation: "Anna invites Peter to 'dem italienischen Restaurant' — they are going together to an Italian restaurant on Saturday at 19:00. She is reserving a table for two ('für zwei').",
+          explanation: "Quantity matters: 'Für zwei' (for two) and 'zusammen' (together) prove she isn't going alone. They chose the Italian place over cooking at home.",
           xpReward: 15
         },
         {
@@ -448,7 +491,7 @@ export const MODULE_17: Module = {
           question: "🗣️ Dialogue:\nKunde: 'Guten Tag, ich suche ein Geschenk für meinen Sohn. Er wird 10 Jahre alt.'\nVerkäuferin: 'Wie wäre es mit einem Buch oder einem Spiel?'\nKunde: 'Ein Spiel ist eine gute Idee. Was können Sie empfehlen?'\nVerkäuferin: 'Dieses Spiel hier ist sehr beliebt. Es kostet 24,99 Euro.'\n\n❓ Was kauft der Kunde?",
           options: ["a) Ein Buch für 24,99 Euro", "b) Ein Geschenk für seine Tochter", "c) Ein Spiel für seinen Sohn"],
           correctAnswer: "c) Ein Spiel für seinen Sohn",
-          explanation: "The customer is looking for a gift for his SON ('meinen Sohn'). He decides on a game ('Ein Spiel ist eine gute Idee'). The book was only a suggestion he didn't take.",
+          explanation: "The Final Decision: The seller suggested a book, but the buyer chose the game ('Spiel'). Always listen for the 'Decision Word' (Ja/Gute Idee).",
           xpReward: 15
         },
         {
@@ -457,7 +500,7 @@ export const MODULE_17: Module = {
           question: "🗣️ Dialogue:\nMann: 'Entschuldigung, wie komme ich zum Bahnhof?'\nFrau: 'Gehen Sie hier geradeaus, dann an der Ampel links. Der Bahnhof ist dann auf der rechten Seite. Etwa 10 Minuten zu Fuß.'\nMann: 'Vielen Dank!'\n\n❓ Wie weit ist der Bahnhof?",
           options: ["a) Etwa 5 Minuten zu Fuß", "b) Etwa 10 Minuten zu Fuß", "c) Etwa 20 Minuten mit dem Bus"],
           correctAnswer: "b) Etwa 10 Minuten zu Fuß",
-          explanation: "The woman says 'Etwa 10 Minuten zu Fuß' — about 10 minutes on foot. She gives directions: straight ahead, then left at the traffic light, station on the right.",
+          explanation: "Direct Match: She says '10 Minuten zu Fuß'. A1 listening often has one answer that's a direct quote. Catch it and you're set!",
           xpReward: 15
         },
         {
@@ -466,7 +509,7 @@ export const MODULE_17: Module = {
           question: "🗣️ Dialogue:\nArzt: 'Was fehlt Ihnen denn?'\nPatientin: 'Ich habe seit drei Tagen Kopfschmerzen und Fieber.'\nArzt: 'Ich verschreibe Ihnen Tabletten. Nehmen Sie dreimal täglich eine Tablette nach dem Essen.'\nPatientin: 'Und soll ich zu Hause bleiben?'\nArzt: 'Ja, bleiben Sie bitte bis Freitag im Bett.'\n\n❓ Was soll die Patientin machen?",
           options: ["a) Dreimal täglich eine Tablette nehmen und bis Freitag im Bett bleiben", "b) Sofort ins Krankenhaus gehen", "c) Nur eine Tablette am Tag nehmen"],
           correctAnswer: "a) Dreimal täglich eine Tablette nehmen und bis Freitag im Bett bleiben",
-          explanation: "The doctor says: 'Dreimal täglich eine Tablette nach dem Essen' (3 times daily, one tablet after meals) AND 'bis Freitag im Bett bleiben' (stay in bed until Friday). Option a) combines both instructions correctly.",
+          explanation: "Two-Part Answer: The patient has two jobs: take pills (3x daily) and stay in bed. Option (a) covers both bases perfectly.",
           xpReward: 15
         },
         // Teil 3 style: Announcement → Match to situation
@@ -476,7 +519,7 @@ export const MODULE_17: Module = {
           question: "📢 Announcement:\n\'Liebe Kundinnen und Kunden, heute im Sonderangebot: frische Erdbeeren aus der Region, nur 1,99 Euro pro Schale. Sie finden die Erdbeeren in der Obstabteilung.\'\n\n❓ In welcher Situation hören Sie das?",
           options: ["a) Am Bahnhof", "b) Im Supermarkt", "c) Im Krankenhaus"],
           correctAnswer: "b) Im Supermarkt",
-          explanation: "'Kundinnen und Kunden' (customers), 'Sonderangebot' (special offer), 'Erdbeeren' (strawberries), 'Obstabteilung' (fruit section) — this is clearly a supermarket announcement.",
+          explanation: "Context Clues: 'Kundinnen und Kunden' (customers), 'Sonderangebot' (special offer), 'Erdbeeren' (strawberries), 'Obstabteilung' (fruit section) — these are all supermarket keywords. It's like hearing 'Special offer for Onam sadhya items' at Lulu Hypermarket!",
           xpReward: 15
         },
         {
@@ -485,7 +528,7 @@ export const MODULE_17: Module = {
           question: "📢 Announcement:\n\'Sehr geehrte Fahrgäste, der ICE 579 nach Berlin Hauptbahnhof, planmäßige Abfahrt 14:23 Uhr, fährt heute von Gleis 8 statt von Gleis 12. Wir bitten um Beachtung.\'\n\n❓ In welcher Situation hören Sie das?",
           options: ["a) Am Flughafen", "b) In einem Restaurant", "c) Am Bahnhof"],
           correctAnswer: "c) Am Bahnhof",
-          explanation: "'ICE' (German high-speed train), 'Fahrgäste' (passengers), 'Gleis' (platform), 'Abfahrt' (departure) — these are all train station keywords. The platform changed from 12 to 8.",
+          explanation: "Keywords: 'ICE' (German high-speed train), 'Fahrgäste' (passengers), 'Gleis' (platform), 'Abfahrt' (departure) — these are all train station vocabulary. The platform changed from 12 to 8. Just like a railway announcement in Ernakulam Junction!",
           xpReward: 15
         },
         {
@@ -494,7 +537,7 @@ export const MODULE_17: Module = {
           question: "📢 Announcement:\n\'Und nun das Wetter für morgen: Im Norden regnet es den ganzen Tag. Im Süden wird es sonnig bei Temperaturen um 25 Grad. Packen Sie also Ihre Sonnenbrille ein!\'\n\n❓ In welcher Situation hören Sie das?",
           options: ["a) Im Radio (Wettervorhersage)", "b) In der Schule", "c) Im Flugzeug"],
           correctAnswer: "a) Im Radio (Wettervorhersage)",
-          explanation: "'Das Wetter für morgen' (the weather for tomorrow), regions (Norden, Süden), temperatures — this is a classic radio weather forecast (Wettervorhersage).",
+          explanation: "Context Clues: 'Das Wetter für morgen' (the weather for tomorrow), regions (Norden, Süden), temperatures — this is a classic radio weather forecast (Wettervorhersage). You'd hear this on your morning drive, not in a classroom or plane.",
           xpReward: 15
         },
         {
@@ -503,7 +546,7 @@ export const MODULE_17: Module = {
           question: "📢 Announcement:\n\'Achtung bitte! Flug EW 4521 nach Barcelona, Boarding beginnt jetzt an Gate B22. Alle Passagiere werden gebeten, sich sofort zum Gate zu begeben. Letzter Aufruf!\'\n\n❓ In welcher Situation hören Sie das?",
           options: ["a) Im Reisebüro", "b) Am Flughafen", "c) Am Busbahnhof"],
           correctAnswer: "b) Am Flughafen",
-          explanation: "'Flug' (flight), 'Boarding', 'Gate B22', 'Passagiere' (passengers), 'letzter Aufruf' (last call) — all airport vocabulary. This is a final boarding call.",
+          explanation: "Keywords: 'Flug' (flight), 'Boarding', 'Gate B22', 'Passagiere' (passengers), 'letzter Aufruf' (last call) — all airport vocabulary. This is a final boarding call, just like at Cochin International Airport!",
           xpReward: 15
         },
         {
@@ -512,8 +555,33 @@ export const MODULE_17: Module = {
           question: "📢 Announcement:\n\'Liebe Eltern, wegen des starken Regens fällt der Sportunterricht heute aus. Die Kinder haben stattdessen eine zusätzliche Stunde Kunst. Bitte holen Sie Ihre Kinder wie gewohnt um 13 Uhr ab.\'\n\n❓ In welcher Situation hören Sie das?",
           options: ["a) In einer Schule", "b) In einem Sportstudio", "c) Im Schwimmbad"],
           correctAnswer: "a) In einer Schule",
-          explanation: "'Eltern' (parents), 'Sportunterricht' (PE class), 'Kinder abholen' (pick up children), 'Stunde Kunst' (art class) — this is a school announcement about a class change due to rain.",
+          explanation: "Context Clues: 'Eltern' (parents), 'Sportunterricht' (PE class), 'Kinder abholen' (pick up children), 'Stunde Kunst' (art class) — this is a school announcement about a class change due to rain. Very common, like a school notice about a holiday!",
           xpReward: 15
+        },
+        {
+          id: "ex17-3-11",
+          type: "dictation",
+          question: "Listen and type: Ich möchte ein Geschenk kaufen.",
+          correctAnswer: "Ich möchte ein Geschenk kaufen",
+          explanation: "Perfect! A useful sentence for shopping dialogues.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-buy-gift.mp3"
+        },
+        {
+          id: "ex17-3-12",
+          type: "free-text",
+          question: "Write in German: 'Where is the milk?' (milk = Milch)",
+          correctAnswer: "Wo ist die Milch",
+          explanation: "Wunderbar! A simple but essential question for the supermarket.",
+          xpReward: 30
+        },
+        {
+          id: "ex17-3-13",
+          type: "free-text",
+          question: "Write in German: 'I am hungry.' (hungry = hungrig / use 'Ich habe Hunger')",
+          correctAnswer: "Ich habe Hunger",
+          explanation: "Excellent! This is a key phrase for any restaurant or food-related dialogue.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -572,8 +640,8 @@ export const MODULE_17: Module = {
             "Strategy: Read the SITUATION first, then look for the matching text",
             "Key words to spot: geöffnet/geschlossen, verboten/erlaubt, kostenlos/frei, ab/bis",
             "Practice: Match 5 signs to their situations step by step",
-            "Tip: You don't need every word — focus on the KEY information!",
-            "Closing: 'Signs use simple, direct language — focus on the action words!'"
+            "Tip: You don't need every word — focus on the KEY information! Decoding opening hours (Öffnungszeiten) is like checking shop timings in Kochi – 'Sunday closed' is a big deal!",
+            "Closing: 'Signs use simple, direct language — focus on the action words! Understanding these signs is like navigating a new city, you need to know what's allowed and what's not. Adipoli!'"
           ],
           keyVocabulary: ["das Schild", "die Anzeige", "geöffnet", "geschlossen", "verboten"],
           learningObjectives: [
@@ -597,7 +665,7 @@ export const MODULE_17: Module = {
             "d) At an outdoor café"
           ],
           correctAnswer: "b) In a no-smoking area (e.g., hospital, restaurant)",
-          explanation: "'Rauchen verboten' = smoking forbidden. 'Auch E-Zigaretten' = also e-cigarettes. This sign is in a no-smoking zone like a hospital, school, or indoor restaurant.",
+          explanation: "'Verboten' = Forbidden. If it's forbidden, you can't do it there. This is a common sign in public buildings in Germany, just like 'No Smoking' signs in Kerala hospitals or public transport.",
           xpReward: 15
         },
         {
@@ -611,7 +679,7 @@ export const MODULE_17: Module = {
             "d) Ja, aber nur nachmittags"
           ],
           correctAnswer: "c) Nein, sonntags ist geschlossen",
-          explanation: "'So und Feiertage: geschlossen' — Sunday and holidays: closed. You cannot shop on Sunday. Saturday is only until 13:00.",
+          explanation: "Opening Hours Decoding: In Germany, Sunday (Sonntag) is 'Ruhetag' (rest day). Almost all shops are 'geschlossen' (closed). Remember this for real life too, like how many shops in Kerala close on Sundays or specific holidays!",
           xpReward: 15
         },
         {
@@ -625,7 +693,7 @@ export const MODULE_17: Module = {
             "d) Man muss extra für das Frühstück bezahlen"
           ],
           correctAnswer: "b) Das Zimmer kostet 45 € pro Person und Nacht, mit Frühstück und WLAN",
-          explanation: "'45 € pro Nacht / Person' = 45 euros per night per person. 'Mit Frühstück' = with breakfast. 'WLAN inklusive' = WiFi included. For two people, it would be 90 € per night total.",
+          explanation: "Details Matter: 'Pro Nacht / Person' means 'per night per person'. If two people stay, it's 90€. But the price INCLUDES (inklusive) breakfast and WiFi. Always check if the price is per person or per room, just like booking a homestay in Munnar!",
           xpReward: 15
         },
         {
@@ -639,7 +707,7 @@ export const MODULE_17: Module = {
             "d) Einen anderen Eingang nehmen"
           ],
           correctAnswer: "b) Die Treppe benutzen",
-          explanation: "'Aufzug außer Betrieb' = elevator out of order. 'Bitte benutzen Sie die Treppe' = please use the stairs. The sign clearly tells you to take the stairs.",
+          explanation: "Direct Instruction: 'Außer Betrieb' = Out of order (working alla). If the lift isn't working, 'Treppe' (stairs) is your only option. Get some exercise, machane! This is a common notice in any building, be it in Germany or India.",
           xpReward: 15
         },
         {
@@ -653,7 +721,7 @@ export const MODULE_17: Module = {
             "d) Das Angebot gilt den ganzen Monat"
           ],
           correctAnswer: "b) Die Äpfel sind diese Woche im Angebot — 1,49 € statt 2,99 € pro Kilo",
-          explanation: "'Diese Woche' = this week only. 'Nur 1,49 statt 2,99' = only 1.49 instead of 2.99 per kg. 'Nur solange der Vorrat reicht' = only while stocks last — so it's limited!",
+          explanation: "Offer Details: 'Statt' means 'instead of'. It was 2.99, now it's 1.49. But only 'solange der Vorrat reicht' (until stocks last). First come, first served! Just like a flash sale at a supermarket in Kerala!",
           xpReward: 15
         },
         {
@@ -667,7 +735,7 @@ export const MODULE_17: Module = {
             "d) Das Stadtbad ist nur am Wochenende geschlossen"
           ],
           correctAnswer: "b) Zum Hallenbad Ost gehen — das Stadtbad ist geschlossen",
-          explanation: "The Stadtbad is closed from 10.03. to 25.03. (March 15 falls in this range). 'Hallenbad Ost bleibt als Alternative geöffnet' — the Hallenbad Ost stays open as an alternative.",
+          explanation: "Dates Matter! March 15th is between March 10th and 25th. So 'Stadtbad' is closed. The notice says 'Alternative: Hallenbad Ost'. Go there instead! Always check the dates carefully, like when your local swimming pool is closed for maintenance.",
           xpReward: 15
         },
         {
@@ -681,7 +749,7 @@ export const MODULE_17: Module = {
             "d) 25 € Gebühr bezahlen"
           ],
           correctAnswer: "b) Sich bis zum 20. März bei Frau Klein anmelden und 5 € Standgebühr bezahlen",
-          explanation: "'Anmeldung bis 20.03. bei Frau Klein' = register by March 20 with Frau Klein. 'Standgebühr: 5 €' = stand fee is 5 euros. You must register in advance AND pay 5 euros.",
+          explanation: "Deadlines! You can't just show up. You must register (Anmeldung) by the 20th and pay the fee (Gebühr). This is like registering for a local fair or exhibition in Kerala – there's always a deadline and a fee!",
           xpReward: 15
         },
         {
@@ -695,7 +763,7 @@ export const MODULE_17: Module = {
             "d) Parken kostet 2 Euro pro Stunde"
           ],
           correctAnswer: "b) Nur Kunden dürfen hier maximal 2 Stunden parken",
-          explanation: "'Nur für Kunden' = only for customers. 'Maximale Parkdauer: 2 Stunden' = maximum parking time: 2 hours. 'Falschparker werden abgeschleppt' = illegally parked cars will be towed!",
+          explanation: "Rules and Consequences: 'Abschleppen' means being towed away (vandi kondu povum). To avoid that, you must be a customer AND stay less than 2 hours. Strict German rules, just like 'No Parking' zones in busy Indian cities!",
           xpReward: 15
         },
         {
@@ -709,7 +777,7 @@ export const MODULE_17: Module = {
             "d) Eine Schule für ihre Tochter"
           ],
           correctAnswer: "b) Nachhilfe für ihre Tochter in Mathe — 2x pro Woche",
-          explanation: "'Suche Nachhilfe in Mathematik für meine Tochter' = looking for math tutoring for my daughter. '2x pro Woche, nachmittags' = twice a week, afternoons. She pays 15 €/hour.",
+          explanation: "Understanding 'Suche': 'Nachhilfe' = Tutoring. She isn't looking for a job; she's looking to HIRE someone for her daughter. Don't mix up 'Suche' (search) with 'Biete' (offer). It's like placing an ad for a home tutor for your child.",
           xpReward: 15
         },
         {
@@ -725,6 +793,32 @@ export const MODULE_17: Module = {
           correctAnswer: "b) Am Donnerstagvormittag den Zugang zur Wohnung ermöglichen",
           explanation: "'Wartung der Heizungsanlage' = maintenance of the heating system. 'Stellen Sie sicher, dass ein Zugang möglich ist' = make sure access to your apartment is possible. Tenants need to be available or leave a key on Thursday morning.",
           xpReward: 15
+        },
+        {
+          id: "ex17-4-11",
+          type: "dictation",
+          question: "Listen and type: Rauchen verboten!",
+          correctAnswer: "Rauchen verboten",
+          explanation: "Great! One of the most common signs you'll see in Germany.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-no-smoking.mp3"
+        },
+        {
+          id: "ex17-4-12",
+          type: "free-text",
+          question: "Write in German: 'Sunday closed' (Sunday = Sonntag, closed = geschlossen)",
+          correctAnswer: "Sonntag geschlossen",
+          explanation: "Wunderbar! This is a very important piece of information for life in Germany.",
+          xpReward: 30
+        },
+        {
+          id: "ex17-4-13",
+          type: "dictation",
+          question: "Listen and type: Der Aufzug ist außer Betrieb.",
+          correctAnswer: "Der Aufzug ist außer Betrieb",
+          explanation: "Perfect! 'Außer Betrieb' (out of order) is a phrase you should recognize and be able to type.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-elevator-out.mp3"
         }
       ],
       vocabulary: [
@@ -814,7 +908,7 @@ export const MODULE_17: Module = {
           question: "📰 Read the classified ad:\n\n\'Verkaufe Fahrrad, 3 Jahre alt, guter Zustand.\nFarbe: blau. Preis: 120 €.\nNur Abholung in München-Schwabing.\nTel: 0176-555-8901 (abends ab 18 Uhr)\'\n\n📝 Statement: Das Fahrrad kann man sich liefern lassen.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "'Nur Abholung' = pickup only. The bike cannot be delivered — you must pick it up yourself in München-Schwabing. 'Liefern lassen' (have it delivered) is not possible.",
+          explanation: "'Nur Abholung' = Pickup only. In Germany, if the ad says this, the seller WON'T bring it to you. You need to go there yourself. Kerala-il 'direct pickup' enn parayille? Athe pole thanne!",
           xpReward: 15
         },
         {
@@ -823,7 +917,7 @@ export const MODULE_17: Module = {
           question: "📰 Read the classified ad:\n\n\'Restaurant Napoli sucht Kellner/in\nTeilzeit, 20 Std./Woche\nArbeitszeit: Do–So, 17:00–22:00 Uhr\nErfahrung in der Gastronomie erwünscht\nGute Deutschkenntnisse erforderlich\nBewerbung an: napoli@restaurant.de\'\n\n📝 Statement: Man arbeitet auch am Montag.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "'Do–So' means Thursday to Sunday. Monday (Montag) is NOT included in the work days. You work Thursday through Sunday evenings.",
+          explanation: "Abbreviations check: 'Do–So' = Thursday to Sunday. Monday (Montag) is NOT in that list. Don't assume typical Kochi 'work all days' culture—Germans are very specific about shift days!",
           xpReward: 15
         },
         {
@@ -832,7 +926,7 @@ export const MODULE_17: Module = {
           question: "📰 Read the ad:\n\n\'Wohnung zu vermieten:\n3 Zimmer, Küche, Bad\n72 m², 3. OG (kein Aufzug)\nMiete: 580 € + 120 € NK\nAb 01.05. frei\nKontakt: Hausverwaltung Müller, 0761-444-5678\'\n\n📝 Statement: Die Gesamtmiete beträgt 580 Euro pro Monat.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "'580 € + 120 € NK' = rent 580 plus utilities (Nebenkosten) 120 = total 700 € per month. The statement says 580 €, which is only the base rent without NK. → Falsch",
+          explanation: "The NK Trap: 580€ is 'Kaltmiete' (cold rent). You MUST add the 120€ 'Nebenkosten' (NK) for water/heating. Total = 700€. 580€ is just the base—it's not the 'Gesamtmiete' (total rent)!",
           xpReward: 15
         },
         {
@@ -841,7 +935,7 @@ export const MODULE_17: Module = {
           question: "📰 Read the ad:\n\n\'Deutschkurs für Anfänger (A1)\nVolkshochschule Frankfurt\nStart: 10. April, jeden Dienstag und Donnerstag\n18:00–20:00 Uhr\n12 Wochen, Kursgebühr: 180 €\nAnmeldung online: www.vhs-frankfurt.de\'\n\n📝 Statement: Der Kurs findet dreimal pro Woche statt.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "'Jeden Dienstag und Donnerstag' = every Tuesday and Thursday — that's TWICE a week, not three times. The course runs for 12 weeks.",
+          explanation: "'Dienstag und Donnerstag' = 2 days. The statement says 'dreimal' (thrice). Simple math logic. Always match the number of days exactly!",
           xpReward: 15
         },
         {
@@ -850,7 +944,7 @@ export const MODULE_17: Module = {
           question: "📰 Read the ad:\n\n\'Babysitter gesucht!\nFür zwei Kinder (3 und 6 Jahre)\nMontag und Mittwoch, 14:00–18:00 Uhr\n12 € pro Stunde\nNichtraucher/in, Erfahrung mit Kindern\nFamilie Schmidt, Tel: 0151-222-3456\'\n\n📝 Statement: Die Familie sucht einen Babysitter für ein Kind.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
-          explanation: "'Für zwei Kinder (3 und 6 Jahre)' = for TWO children aged 3 and 6. The statement says one child (ein Kind), but it's two. → Falsch",
+          explanation: "Number Check: Ad says 'zwei Kinder' (two children). Statement says 'ein Kind' (one child). Don't let the singular 'Babysitter' confuse you—look at the number of kids!",
           xpReward: 15
         },
         // Teil 3 style: Emails → Multiple choice
@@ -864,7 +958,7 @@ export const MODULE_17: Module = {
             "c) Um ihre Bewerbung abzulehnen"
           ],
           correctAnswer: "b) Um sie zu einem Vorstellungsgespräch einzuladen",
-          explanation: "'Wir möchten Sie gern zu einem Vorstellungsgespräch einladen' = We would like to invite you to a job interview. She hasn't gotten the job yet — it's just an interview invitation.",
+          explanation: "'Vorstellungsgespräch' = Interview. This is a very common email for job seekers. They haven't given her the job YET, just an interview invite!",
           xpReward: 15
         },
         {
@@ -877,7 +971,7 @@ export const MODULE_17: Module = {
             "c) Sie möchte das Treffen ganz absagen"
           ],
           correctAnswer: "b) Sie möchte das Treffen auf Dienstag nächste Woche verschieben",
-          explanation: "Sophie cancels Friday ('muss absagen') because her mother is sick. But she doesn't cancel completely — she suggests 'nächste Woche Dienstag' (next week Tuesday) at the same time and place ('gleiche Zeit, gleicher Ort').",
+          explanation: "Verschieben = Postpone/Move. She says 'muss absagen' for Friday but immediately asks for 'nächste Woche Dienstag'. That's a classic schedule move!",
           xpReward: 15
         },
         {
@@ -890,7 +984,7 @@ export const MODULE_17: Module = {
             "c) Die Rechnung"
           ],
           correctAnswer: "b) Seinen Personalausweis",
-          explanation: "'Bitte bringen Sie Ihren Personalausweis mit' = Please bring your ID card. Herr Braun needs his ID to pick up the package at the DHL branch.",
+          explanation: "Golden Rule: In Germany, you ALWAYS need your 'Personalausweis' (ID card) to pick up a package. It's a non-negotiable rule. Malayalam-il 'Passport konduva' enn parayunna pole!",
           xpReward: 15
         },
         {
@@ -903,7 +997,7 @@ export const MODULE_17: Module = {
             "c) Er bittet die Nachbarn, leise zu sein"
           ],
           correctAnswer: "b) Er informiert sie über seine Party und entschuldigt sich im Voraus für den Lärm",
-          explanation: "Tim informs neighbors about his 30th birthday party. 'Es kann etwas lauter werden — ich bitte um Verständnis' = it might get a bit loud — I ask for your understanding. He's politely warning them about the noise AND inviting them for cake.",
+          explanation: "Cultural Note: 'Ruhezeit' (Quiet Hours) is sacred in Germany. If you have a party, you MUST warn neighbors. He's being a 'Gute Nachbar' (Good Neighbor)!",
           xpReward: 15
         },
         {

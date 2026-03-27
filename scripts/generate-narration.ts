@@ -18,9 +18,22 @@ import { execSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
-const OUTPUT_DIR = path.join(__dirname, 'output', 'narration');
+const NARRATION_DIR = path.join(__dirname, 'output', 'narration');
 const VOICE_EN = 'en-IN-PrabhatNeural';
 const VOICE_DE = 'de-DE-ConradNeural';
+
+/** Helper to get duration of an audio file using ffprobe */
+function getAudioDuration(audioPath: string): number {
+  try {
+    const result = execSync(
+      `ffprobe -v error -show_entries format=duration -of csv=p=0 "${audioPath}"`,
+      { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] }
+    );
+    return parseFloat(result.trim()) || 0;
+  } catch {
+    return 0;
+  }
+}
 
 /**
  * Split script into segments — German phrases (in quotes after pronunciation guides)
@@ -169,8 +182,12 @@ function concatAudioFiles(files: string[], outputPath: string): void {
 async function main() {
   console.log('=== German-Malayalam Narration Generator ===\n');
 
+  // Parse CLI args
+  const args = process.argv.slice(2);
+  const videoFilter = args.indexOf('--video') >= 0 ? args[args.indexOf('--video') + 1] : null;
+
   // Ensure output directory exists
-  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  fs.mkdirSync(NARRATION_DIR, { recursive: true });
 
   // Dynamically import video scripts
   let videoScripts: Array<{ id: string; title: string; script?: string }>;
@@ -208,7 +225,11 @@ async function main() {
     // Generated scripts directory may not exist yet — that's fine
   }
 
-  const scriptsWithContent = videoScripts.filter((v) => v.script && v.script.trim().length > 0);
+  let scriptsWithContent = videoScripts.filter((v) => v.script && v.script.trim().length > 0);
+
+  if (videoFilter) {
+    scriptsWithContent = scriptsWithContent.filter((v) => v.id === videoFilter);
+  }
 
   if (scriptsWithContent.length === 0) {
     console.log('No video scripts with content found. Nothing to generate.');
@@ -224,10 +245,11 @@ async function main() {
 
   for (let i = 0; i < scriptsWithContent.length; i++) {
     const video = scriptsWithContent[i];
-    const outputFile = path.join(OUTPUT_DIR, `${video.id}.mp3`);
+    const outputFile = path.join(NARRATION_DIR, `${video.id}.mp3`);
+    const timingFile = path.join(NARRATION_DIR, `${video.id}_timing.json`);
 
-    // Skip if already exists
-    if (fs.existsSync(outputFile)) {
+    // Skip if both audio and timing exist
+    if (fs.existsSync(outputFile) && fs.existsSync(timingFile)) {
       console.log(`  [SKIP] (${i + 1}/${scriptsWithContent.length}) ${video.id} — already exists`);
       skipped++;
       continue;
@@ -236,24 +258,66 @@ async function main() {
     console.log(`  [${i + 1}/${scriptsWithContent.length}] Generating: ${video.id}`);
 
     try {
-      const segments = splitSegments(video.script!);
+      const script = video.script!;
+      // Split script into sections manually to preserve tags
+      const sectionRegex = /\[(.*?)\]/g;
+      const parts = script.split(/\[([^\]]+)\]/);
+      
+      const sectionsData: Array<{ tag: string; duration: number }> = [];
+      const allSegmentFiles: string[] = [];
+      let totalVideoDuration = 0;
 
-      if (segments.length === 1) {
-        // Single voice — simple generation
-        generateSegmentAudio(segments[0].text, segments[0].voice, outputFile);
-      } else {
-        // Multi-voice — generate segments then concat
-        const segmentFiles: string[] = [];
-        for (let j = 0; j < segments.length; j++) {
-          const segFile = path.join(OUTPUT_DIR, `${video.id}_seg${j}.mp3`);
-          generateSegmentAudio(segments[j].text, segments[j].voice, segFile);
-          segmentFiles.push(segFile);
+      // parts alternates: text-before (usually empty or intro), header, text-after, header, text-after...
+      for (let j = 1; j < parts.length; j += 2) {
+        const header = parts[j].trim();
+        const content = (parts[j + 1] || '').trim();
+        if (!content) continue;
+
+        const segments = splitSegments(content);
+        let sectionDuration = 0;
+        
+        for (let k = 0; k < segments.length; k++) {
+          const segFile = path.join(NARRATION_DIR, `${video.id}_s${j}_g${k}.mp3`);
+          generateSegmentAudio(segments[k].text, segments[k].voice, segFile);
+          
+          const dur = getAudioDuration(segFile);
+          sectionDuration += dur;
+          allSegmentFiles.push(segFile);
         }
-        concatAudioFiles(segmentFiles, outputFile);
+
+        sectionsData.push({
+          tag: header,
+          duration: sectionDuration,
+        });
+        totalVideoDuration += sectionDuration;
       }
 
-      const deCount = segments.filter((s) => s.voice === VOICE_DE).length;
-      console.log(`    -> Done (${segments.length} segments, ${deCount} German)`);
+      // Handle cases where no [SECTION] tags were found
+      if (sectionsData.length === 0 && script.trim()) {
+        const segments = splitSegments(script);
+        let sectionDuration = 0;
+        for (let k = 0; k < segments.length; k++) {
+          const segFile = path.join(NARRATION_DIR, `${video.id}_g${k}.mp3`);
+          generateSegmentAudio(segments[k].text, segments[k].voice, segFile);
+          const dur = getAudioDuration(segFile);
+          sectionDuration += dur;
+          allSegmentFiles.push(segFile);
+        }
+        sectionsData.push({ tag: 'FULL', duration: sectionDuration });
+        totalVideoDuration = sectionDuration;
+      }
+
+      // Concat all segments into one video narration
+      concatAudioFiles(allSegmentFiles, outputFile);
+
+      // Save timing metadata
+      fs.writeFileSync(timingFile, JSON.stringify({
+        videoId: video.id,
+        totalDuration: totalVideoDuration,
+        sections: sectionsData
+      }, null, 2));
+
+      console.log(`    -> Done (${sectionsData.length} sections, ${totalVideoDuration.toFixed(1)}s total)`);
       generated++;
     } catch (err) {
       console.error(`    -> FAILED: ${(err as Error).message}`);
@@ -265,7 +329,7 @@ async function main() {
   console.log(`  Generated: ${generated}`);
   console.log(`  Skipped:   ${skipped}`);
   console.log(`  Failed:    ${failed}`);
-  console.log(`  Output:    ${OUTPUT_DIR}`);
+  console.log(`  Output:    ${NARRATION_DIR}`);
 }
 
 main().catch(console.error);

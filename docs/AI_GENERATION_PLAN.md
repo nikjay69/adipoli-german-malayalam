@@ -146,6 +146,21 @@ npx tsx scripts/generate-narration.ts
 
 ---
 
+### Phase 3.5 — Sonic Branding & Signature Audio (~30 min, FREE)
+
+**What:** Create/source 3-5 short signature audio chimes for recurring emotional moments.
+
+**Why:** Audio cues help students subconsciously recognize success and stay engaged.
+
+**Signature Cues:**
+- `SET-AANU.mp3` — Short, digital "ding" for when a conjugation lands.
+- `POLI-MASS.mp3` — Slightly Bass-heavy "woosh" for module completion.
+- `SCENE-AANU.mp3` — Minimalist tension sound for highlighting common traps.
+
+**Usage:** These will be injected via `compose-videos.ts` at the specific 🎬 energy marker transitions.
+
+---
+
 ### Phase 4 — Thumbnails (~10 min, FREE)
 
 **What:** Generate 1280×720 branded JPEG thumbnails for all videos using Puppeteer.

@@ -135,6 +135,23 @@ export const MODULE_3: Module = {
           correctAnswer: "zwanzig",
           explanation: "'-zig' is the German suffix for tens: zwanzig (20), dreißig (30), vierzig (40)... Exception: dreißig uses '-ßig' instead of '-zig'. All others are regular!",
           xpReward: 20
+        },
+        {
+          id: "ex3-1-7",
+          type: "dictation",
+          question: "Listen and type the number: 17 (siebzehn)",
+          correctAnswer: "siebzehn",
+          explanation: "Remember the spelling: sieben loses the 'en' when combined with 'zehn'.",
+          xpReward: 20,
+          audioUrl: "/audio/exercises/dictation-17.mp3"
+        },
+        {
+          id: "ex3-1-8",
+          type: "free-text",
+          question: "How do you say 'fifteen' in German?",
+          correctAnswer: "fünfzehn",
+          explanation: "Fünf (5) + zehn (10) = fünfzehn (15). Just like English, except simpler!",
+          xpReward: 25
         }
       ],
       vocabulary: [
@@ -349,6 +366,23 @@ export const MODULE_3: Module = {
           correctAnswer: "dreiundachtzig",
           explanation: "To build any 2-digit number: say the ones digit, add 'und', then the tens. 83 = drei+und+achtzig. Practice with your age, phone number, and house number!",
           xpReward: 20
+        },
+        {
+          id: "ex3-2-6",
+          type: "free-text",
+          question: "How do you say 42 in German? (Hint: two-and-forty)",
+          correctAnswer: "zweiundvierzig",
+          explanation: "Ones bit (zwei) + und + Tens bit (vierzig). No spaces in German numbers!",
+          xpReward: 30
+        },
+        {
+          id: "ex3-2-7",
+          type: "dictation",
+          question: "Listen and type the number: einundzwanzig (21)",
+          correctAnswer: "einundzwanzig",
+          explanation: "Ein (1) + und + zwanzig (20) = 21. Perfect reversal!",
+          xpReward: 20,
+          audioUrl: "/audio/exercises/dictation-21.mp3"
         }
       ],
       vocabulary: [
@@ -550,6 +584,23 @@ export const MODULE_3: Module = {
           correctAnswer: ["morgens → in the morning", "nachmittags → in the afternoon", "abends → in the evening", "pünktlich → on time"],
           explanation: "These time-of-day words help specify AM or PM when using the informal 12-hour clock.",
           xpReward: 20
+        },
+        {
+          id: "ex3-3-7",
+          type: "free-text",
+          question: "It is 8:30 AM. Write this informally (use 'halb').",
+          correctAnswer: "Es ist halb neun",
+          explanation: "Crucial! 'halb neun' means half *before* nine. Always think of the next hour!",
+          xpReward: 35
+        },
+        {
+          id: "ex3-3-8",
+          type: "dictation",
+          question: "Listen and type: Viertel vor acht.",
+          correctAnswer: "Viertel vor acht",
+          explanation: "Quarter before eight = 7:45. Good job handling the prepositions!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-745.mp3"
         }
       ],
       vocabulary: [
@@ -720,6 +771,23 @@ export const MODULE_3: Module = {
           correctAnswer: "März",
           explanation: "März (March) looks and sounds the most different due to the Umlaut. Most other months are nearly identical to English.",
           xpReward: 15
+        },
+        {
+          id: "ex3-4-6",
+          type: "free-text",
+          question: "Which day is 'middle of the week'? Write it in German.",
+          correctAnswer: "Mittwoch",
+          explanation: "Mitte (Middle) + Woche (Week) = Mittwoch! German logic is awesome.",
+          xpReward: 25
+        },
+        {
+          id: "ex3-4-7",
+          type: "dictation",
+          question: "Listen and type: Heute ist Montag.",
+          correctAnswer: "Heute ist Montag",
+          explanation: "Today is Monday. Remember: days of the week are names, so CAPITALize them!",
+          xpReward: 20,
+          audioUrl: "/audio/exercises/dictation-montag.mp3"
         }
       ],
       vocabulary: [
@@ -924,6 +992,23 @@ export const MODULE_3: Module = {
           correctAnswer: ["erste → first", "zweite → second", "dritte → third", "achte → eighth"],
           explanation: "Erste, zweite, dritte, and achte are all irregular ordinal numbers in German.",
           xpReward: 20
+        },
+        {
+          id: "ex3-5-6",
+          type: "free-text",
+          question: "When is your birthday? Type: Ich habe im [Month] Geburtstag. (e.g. im Januar)",
+          correctAnswer: "Ich habe im ... Geburtstag",
+          explanation: "Perfect! 'Ich habe im [Month] Geburtstag' is the standard way to answer. Germans love being wished a happy birthday, but NEVER before the actual day – it's bad luck!",
+          xpReward: 30
+        },
+        {
+          id: "ex3-5-7",
+          type: "dictation",
+          question: "Listen and type the date: 15.08.1947",
+          correctAnswer: "fünfzehnte August neunzehnhundertsiebenundvierzig",
+          explanation: "Mastering years in German: before 2000, we say 'nineteen-hundred-seven-and-forty'. After 2000, we say 'two-thousand-twenty-four'. Practice this!",
+          xpReward: 40,
+          audioUrl: "/audio/exercises/dictation-independence.mp3"
         }
       ],
       vocabulary: [

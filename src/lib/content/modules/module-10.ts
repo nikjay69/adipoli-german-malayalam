@@ -81,7 +81,24 @@ export const MODULE_10: Module = {
         { id: "ex10-1-5", type: "ordering", question: "Arrange: 'My back hurts a lot'", options: ["Mein", "Rücken", "tut", "sehr", "weh"], correctAnswer: ["Mein", "Rücken", "tut", "sehr", "weh"], explanation: "Structure: Subject + Verb (tut) + Adverb (sehr) + Separable Prefix (weh).", xpReward: 15 },
         { id: "ex10-1-6", type: "fill-blank", question: "Mein ___ ist gebrochen. (arm)", options: ["Arm", "Bein", "Fuß", "Kopf"], correctAnswer: "Arm", explanation: "'Arm' is masculine ('der Arm'), so it uses 'Mein' (no ending for masculine/neuter nominative).", xpReward: 10 },
         { id: "ex10-1-7", type: "multiple-choice", question: "Which body part is 'das Ohr'?", options: ["ear", "eye", "mouth", "nose"], correctAnswer: "ear", explanation: "das Ohr (ear) is neuter. The plural is 'die Ohren'. Think of 'Hear' having 'ear' in it!", xpReward: 10 },
-        { id: "ex10-1-8", type: "matching", question: "Match the body part to its correct article:", options: ["der Rücken", "die Hand", "das Bein", "der Mund", "das Ohr"], correctAnswer: ["back", "hand", "leg", "mouth", "ear"], explanation: "Memorizing articles with the nouns is non-negotiable in German. der Rücken (m), die Hand (f), das Bein (n).", xpReward: 15 }
+        { id: "ex10-1-8", type: "matching", question: "Match the body part to its correct article:", options: ["der Rücken", "die Hand", "das Bein", "der Mund", "das Ohr"], correctAnswer: ["back", "hand", "leg", "mouth", "ear"], explanation: "Memorizing articles with the nouns is non-negotiable in German. der Rücken (m), die Hand (f), das Bein (n).", xpReward: 15 },
+        {
+          id: "ex10-1-9",
+          type: "dictation",
+          question: "Listen and type: Mein Kopf tut weh.",
+          correctAnswer: "Mein Kopf tut weh",
+          explanation: "Great! 'tut weh' is for singular body parts. And remember to capitalize 'Kopf'!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-head-hurts.mp3"
+        },
+        {
+          id: "ex10-1-10",
+          type: "free-text",
+          question: "Write in German: 'My hand hurts.' (hand = Hand)",
+          correctAnswer: "Meine Hand tut weh",
+          explanation: "Wunderbar! 'Meine Hand' because Hand is feminine. 'tut weh' because it's one hand.",
+          xpReward: 30
+        }
       ],
       vocabulary: [
         { id: "vocab10-1-1", german: "der Kopf", english: "head", malayalam: "തല", pronunciation: "kopf", example: "Mein Kopf tut weh.", exampleTranslation: "My head hurts." },
@@ -164,7 +181,24 @@ export const MODULE_10: Module = {
         { id: "ex10-2-5", type: "ordering", question: "Arrange: 'I am sick and have a fever'", options: ["Ich", "bin", "krank", "und", "habe", "Fieber"], correctAnswer: ["Ich", "bin", "krank", "und", "habe", "Fieber"], xpReward: 15 },
         { id: "ex10-2-6", type: "fill-blank", question: "___ geht es dir? (How are you? — informal)", options: ["Wie", "Was", "Wo", "Wer"], correctAnswer: "Wie", explanation: "'Wie geht es dir?' means 'How are you?' (informal). 'Wie' = how, 'geht' = goes, 'es' = it, 'dir' = to you (Dativ). Literally: 'How goes it to you?'", xpReward: 10 },
         { id: "ex10-2-7", type: "fill-blank", question: "Ich habe ___ . (sore throat)", options: ["Halsschmerzen", "Halsweh", "Halskrank", "Halsfieber"], correctAnswer: "Halsschmerzen", explanation: "'Halsschmerzen' = Hals (throat/neck) + Schmerzen (pains). German builds compound nouns by stacking — just combine the body part with 'Schmerzen'!", xpReward: 10 },
-        { id: "ex10-2-8", type: "multiple-choice", question: "What does 'Mir ist schlecht' mean?", options: ["I feel nauseous / I feel unwell", "I am a bad person", "I am feeling sad", "I have bad luck"], correctAnswer: "I feel nauseous / I feel unwell", explanation: "'Mir ist schlecht' uses Dativ and means 'I feel unwell/nauseous'. If you said 'Ich bin schlecht', it would mean 'I am a bad person' — a classic beginner mistake!", xpReward: 10 }
+        { id: "ex10-2-8", type: "multiple-choice", question: "What does 'Mir ist schlecht' mean?", options: ["I feel nauseous / I feel unwell", "I am a bad person", "I am feeling sad", "I have bad luck"], correctAnswer: "I feel nauseous / I feel unwell", explanation: "'Mir ist schlecht' uses Dativ and means 'I feel unwell/nauseous'. If you said 'Ich bin schlecht', it would mean 'I am a bad person' — a classic beginner mistake!", xpReward: 10 },
+        {
+          id: "ex10-2-9",
+          type: "dictation",
+          question: "Listen and type: Mir geht es nicht gut.",
+          correctAnswer: "Mir geht es nicht gut",
+          explanation: "Perfect! Remember to use 'Mir' (Dative) when talking about how you are feeling.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-feel-not-good.mp3"
+        },
+        {
+          id: "ex10-2-10",
+          type: "free-text",
+          question: "Translate to German: 'I have a fever and a cough.' (fever = Fieber, cough = Husten)",
+          correctAnswer: "Ich habe Fieber und Husten",
+          explanation: "Excellent! 'Ich habe Fieber und Husten.' — nouns are capitalized and no articles are needed here.",
+          xpReward: 30
+        }
       ],
       vocabulary: [
         { id: "vocab10-2-1", german: "krank", english: "sick / ill", malayalam: "രോഗിയായ / അസുഖമുള്ള", pronunciation: "krahnk", example: "Ich bin heute krank.", exampleTranslation: "I am sick today." },
@@ -244,7 +278,24 @@ export const MODULE_10: Module = {
         { id: "ex10-3-5", type: "ordering", question: "Arrange: 'I have had a stomachache since yesterday'", options: ["Ich", "habe", "seit", "gestern", "Bauchschmerzen"], correctAnswer: ["Ich", "habe", "seit", "gestern", "Bauchschmerzen"], explanation: "Structure: Subject + Verb + Time Clause (seit gestern) + The Ailment (Bauch+Schmerzen). Focus on the compound noun 'Bauchschmerzen'.", xpReward: 15 },
         { id: "ex10-3-6", type: "fill-blank", question: "Ich habe Schmerzen ___ . (here)", options: ["hier", "dort", "da", "wo"], correctAnswer: "hier", explanation: "'Hier' (here) is essential when pointing to where it hurts. Simple but very practical!", xpReward: 10 },
         { id: "ex10-3-7", type: "multiple-choice", question: "In Germany, where do you get your medicine after visiting the doctor?", options: ["At the Apotheke (pharmacy) with a Rezept", "The doctor gives you medicine directly", "At the supermarket", "At the Krankenhaus (hospital)"], correctAnswer: "At the Apotheke (pharmacy) with a Rezept", explanation: "CRITICAL: German doctors don't sell medicine. They give you a 'Rezept' (prescription), and you walk to a separate 'Apotheke'. This is a major cultural difference from many Indian clinics.", xpReward: 10 },
-        { id: "ex10-3-8", type: "fill-blank", question: "Die Schmerzen sind ___ . (unbearable)", options: ["unerträglich", "stark", "dumpf", "brennend"], correctAnswer: "unerträglich", explanation: "'Un-erträglich' = Not-bearable. Use this only if the pain is truly extreme. For normal pain, use 'stark' (strong).", xpReward: 10 }
+        { id: "ex10-3-8", type: "fill-blank", question: "Die Schmerzen sind ___ . (unbearable)", options: ["unerträglich", "stark", "dumpf", "brennend"], correctAnswer: "unerträglich", explanation: "'Un-erträglich' = Not-bearable. Use this only if the pain is truly extreme. For normal pain, use 'stark' (strong).", xpReward: 10 },
+        {
+          id: "ex10-3-9",
+          type: "dictation",
+          question: "Listen and type: Ich möchte einen Termin machen.",
+          correctAnswer: "Ich möchte einen Termin machen",
+          explanation: "Great job! This is the standard phrase for making an appointment in Germany.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-make-appointment.mp3"
+        },
+        {
+          id: "ex10-3-10",
+          type: "free-text",
+          question: "Write in German: 'Where is the doctor's office?' (doctor's office = Arztpraxis)",
+          correctAnswer: "Wo ist die Arztpraxis",
+          explanation: "Wunderbar! 'Wo ist die Arztpraxis?' — 'die' because it's feminine.",
+          xpReward: 30
+        }
       ],
       vocabulary: [
         { id: "vocab10-3-1", german: "die Arztpraxis", english: "doctor's office", malayalam: "ഡോക്ടറുടെ ക്ലിനിക്ക്", pronunciation: "ahrts-prah-xis", example: "Ich muss zur Arztpraxis.", exampleTranslation: "I have to go to the doctor's office." },
@@ -325,7 +376,24 @@ export const MODULE_10: Module = {
         { id: "ex10-4-5", type: "ordering", question: "Arrange: 'I have a prescription from the doctor'", options: ["Ich", "habe", "ein", "Rezept", "vom", "Arzt"], correctAnswer: ["Ich", "habe", "ein", "Rezept", "vom", "Arzt"], explanation: "Structure: Subject (Ich) + Verb (habe) + Object (ein Rezept) + Origin (vom Arzt).", xpReward: 15 },
         { id: "ex10-4-6", type: "fill-blank", question: "Wie oft ___ ich das nehmen? (should)", options: ["soll", "will", "kann", "muss"], correctAnswer: "soll", explanation: "Use the modal verb 'sollen' (should) when asking for advice or instructions. Use 'müssen' (must) if the doctor ordered it.", xpReward: 10 },
         { id: "ex10-4-7", type: "multiple-choice", question: "You need something for allergies. How do you ask at the Apotheke?", options: ["Ich brauche etwas gegen Allergien.", "Ich will Allergien haben.", "Wo sind die Allergien?", "Haben Sie Allergien?"], correctAnswer: "Ich brauche etwas gegen Allergien.", explanation: "'Ich brauche etwas gegen...' is the universal formula. Learn it, use it, survive!", xpReward: 10 },
-        { id: "ex10-4-8", type: "ordering", question: "Arrange: 'Take one tablet three times daily'", options: ["Nehmen", "Sie", "dreimal", "täglich", "eine", "Tablette"], correctAnswer: ["Nehmen", "Sie", "dreimal", "täglich", "eine", "Tablette"], explanation: "Command structure: Verb (Nehmen) + Polite Subject (Sie) + Frequency (dreimal täglich) + Object (eine Tablette).", xpReward: 15 }
+        { id: "ex10-4-8", type: "ordering", question: "Arrange: 'Take one tablet three times daily'", options: ["Nehmen", "Sie", "dreimal", "täglich", "eine", "Tablette"], correctAnswer: ["Nehmen", "Sie", "dreimal", "täglich", "eine", "Tablette"], explanation: "Command structure: Verb (Nehmen) + Polite Subject (Sie) + Frequency (dreimal täglich) + Object (eine Tablette).", xpReward: 15 },
+        {
+          id: "ex10-4-9",
+          type: "dictation",
+          question: "Listen and type: Ich brauche etwas gegen Kopfschmerzen.",
+          correctAnswer: "Ich brauche etwas gegen Kopfschmerzen",
+          explanation: "Perfect! 'gegen' is used for medications. And remember to capitalize 'Kopfschmerzen'!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-need-headache-med.mp3"
+        },
+        {
+          id: "ex10-4-10",
+          type: "free-text",
+          question: "Translate to German: 'Is it over-the-counter?' (over-the-counter = rezeptfrei)",
+          correctAnswer: "Ist es rezeptfrei",
+          explanation: "Excellent! 'Ist es rezeptfrei?' — very important question at the pharmacy.",
+          xpReward: 30
+        }
       ],
       vocabulary: [
         { id: "vocab10-4-1", german: "die Apotheke", english: "pharmacy", malayalam: "ഫാർമസി / മരുന്നുകട", pronunciation: "ah-po-tey-ke", example: "Die Apotheke ist neben dem Supermarkt.", exampleTranslation: "The pharmacy is next to the supermarket." },
@@ -385,7 +453,24 @@ export const MODULE_10: Module = {
         { id: "ex10-5-3", type: "matching", question: "Match the German emergency word to its English meaning:", options: ["der Unfall", "die Verletzung", "das Blut", "die Notaufnahme", "der Notfall"], correctAnswer: ["accident", "injury", "blood", "emergency room", "emergency"], explanation: "Knowing these words helps the dispatcher send the right help. Note: 'Notfall' is any emergency; 'Unfall' is specifically an accident.", xpReward: 15 },
         { id: "ex10-5-4", type: "ordering", question: "Arrange: 'Someone is injured, call an ambulance!'", options: ["Jemand", "ist", "verletzt,", "rufen", "Sie", "einen", "Krankenwagen!"], correctAnswer: ["Jemand", "ist", "verletzt,", "rufen", "Sie", "einen", "Krankenwagen!"], explanation: "Command: rufen Sie! Object: einen Krankenwagen! Information: Jemand ist verletzt!", xpReward: 15 },
         { id: "ex10-5-5", type: "multiple-choice", question: "What does 'Es gab einen Unfall' mean?", options: ["There was an accident", "There is a fire", "Someone is bleeding", "I need a doctor"], correctAnswer: "There was an accident", explanation: "'Es gab' is the past of 'Es gibt' (There is). Use this to report what already happened when the police arrive.", xpReward: 10 },
-        { id: "ex10-5-6", type: "fill-blank", question: "Jemand ist ___ ! (injured)", options: ["verletzt", "krank", "müde", "tot"], correctAnswer: "verletzt", explanation: "Verletzt comes from 'verletzen' (to injure). It's a key word for reporting casualties at an accident scene.", xpReward: 10 }
+        { id: "ex10-5-6", type: "fill-blank", question: "Jemand ist ___ ! (injured)", options: ["verletzt", "krank", "müde", "tot"], correctAnswer: "verletzt", explanation: "Verletzt comes from 'verletzen' (to injure). It's a key word for reporting casualties at an accident scene.", xpReward: 10 },
+        {
+          id: "ex10-5-7",
+          type: "dictation",
+          question: "Listen and type: Rufen Sie einen Krankenwagen!",
+          correctAnswer: "Rufen Sie einen Krankenwagen",
+          explanation: "Perfect! A life-saving sentence. Remember the capital 'K' for 'Krankenwagen'!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-call-ambulance.mp3"
+        },
+        {
+          id: "ex10-5-8",
+          type: "free-text",
+          question: "Write in German: 'I need help!' (help = Hilfe)",
+          correctAnswer: "Ich brauche Hilfe",
+          explanation: "Wunderbar! 'Ich brauche Hilfe!' — direct and clear.",
+          xpReward: 30
+        }
       ],
       vocabulary: [
         { id: "vocab10-5-1", german: "der Notfall", english: "emergency", malayalam: "അടിയന്തരാവസ്ഥ", pronunciation: "noht-fahl", example: "Das ist ein Notfall!", exampleTranslation: "This is an emergency!" },

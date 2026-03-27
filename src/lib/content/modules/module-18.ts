@@ -60,7 +60,7 @@ export const MODULE_18: Module = {
           question: "📋 ANMELDEFORMULAR — Volkshochschule Berlin\n\nYou are registering for a German course. Your name is Arun Krishnan Nair.\n\nForm field: 'Vorname' → ___",
           options: ["Arun Krishnan", "Nair", "Arun Krishnan Nair", "Krishnan"],
           correctAnswer: "Arun Krishnan",
-          explanation: "'Vorname' means first name (given name). In German forms, your first name(s) go here. Your Vorname is 'Arun Krishnan'. Your Familienname/Nachname would be 'Nair'.",
+          explanation: "Point Check: 'Vorname' is your First Name (Arun Krishnan). Your family name/surname is the 'Nachname' (Nair). Don't swap them, or the system might call you 'Mr. Arun' instead of 'Mr. Nair'!",
           xpReward: 12
         },
         {
@@ -69,7 +69,7 @@ export const MODULE_18: Module = {
           question: "📋 ANMELDEFORMULAR — Volkshochschule Berlin\n\nYou are Priya Menon, born 23rd March 1999.\n\nForm field: 'Familienname' → ___",
           options: ["Menon", "Priya", "Priya Menon", "Nair"],
           correctAnswer: "Menon",
-          explanation: "'Familienname' (also 'Nachname') means family name / surname. Your surname is 'Menon'. Remember: Vorname = first name, Familienname = last name.",
+          explanation: "'Familienname' is just another word for 'Nachname'. In Kerala, we often put initials first, but in Germany, the family name is the big one. Here, it's 'Menon'.",
           xpReward: 12
         },
         {
@@ -78,7 +78,7 @@ export const MODULE_18: Module = {
           question: "📋 ANMELDEFORMULAR — Sprachkurs\n\nYou were born on 7th November 2001.\n\nForm field: 'Geburtsdatum' → ___",
           options: ["07.11.2001", "11.07.2001", "7/11/2001", "2001-11-07"],
           correctAnswer: "07.11.2001",
-          explanation: "German date format is TT.MM.JJJJ (Tag.Monat.Jahr). 7th November 2001 = 07.11.2001. Always use two digits for day and month, four for year, separated by dots.",
+          explanation: "The Golden Format: Day.Month.Year (TT.MM.JJJJ). If you write 11.07, they will think you were born in July! Use dots, not slashes.",
           xpReward: 12
         },
         {
@@ -87,7 +87,7 @@ export const MODULE_18: Module = {
           question: "📋 BIBLIOTHEKSAUSWEIS — Stadtbibliothek München\n\nYou live at Schillerstraße 24 in München. The postal code is 80336.\n\nForm field: 'Straße, Hausnummer' → ___",
           options: ["Schillerstraße 24", "24 Schillerstraße", "80336 München", "München Schillerstraße"],
           correctAnswer: "Schillerstraße 24",
-          explanation: "In German addresses, you write the street name first, then the house number: 'Schillerstraße 24'. The PLZ (postal code) and Stadt (city) go in separate fields.",
+          explanation: "Street Logic: In Germany, it's [Name] + [Number]. Schillerstraße 24. No commas needed between them on this line!",
           xpReward: 12
         },
         {
@@ -96,7 +96,7 @@ export const MODULE_18: Module = {
           question: "📋 BIBLIOTHEKSAUSWEIS — Stadtbibliothek München\n\nYou live at Schillerstraße 24, 80336 München.\n\nForm field: 'PLZ, Ort' → ___",
           options: ["80336 München", "Schillerstraße 24", "München 80336", "80336"],
           correctAnswer: "80336 München",
-          explanation: "'PLZ' = Postleitzahl (postal code), 'Ort' = place/city. Write them together: '80336 München'. German PLZ codes are always 5 digits.",
+          explanation: "PLZ is your Pincode. 'Ort' is your City. 80336 München. Always 5 digits for the PLZ in Germany!",
           xpReward: 12
         },
         {
@@ -105,7 +105,7 @@ export const MODULE_18: Module = {
           question: "📋 ANMELDEFORMULAR — Sprachschule\n\nYou see the field 'Geburtsort'. What should you write here?",
           options: ["Your date of birth", "The city where you were born", "Your current address", "Your nationality"],
           correctAnswer: "The city where you were born",
-          explanation: "'Geburtsort' = Geburt (birth) + Ort (place) = place of birth. You write the city where you were born, e.g., 'Kochi' or 'Thiruvananthapuram'. Don't confuse with 'Geburtsdatum' (date of birth).",
+          explanation: "'Ort' = Place. 'Geburt' = Birth. So, 'Geburtsort' is your birthplace. E.g., Kochi, Thrissur, etc.",
           xpReward: 12
         },
         {
@@ -114,7 +114,7 @@ export const MODULE_18: Module = {
           question: "📋 SPRACHKURS-ANMELDUNG — Goethe-Institut\n\nYou are a software engineer (male).\n\nForm field: 'Beruf' → ___",
           options: ["Softwareentwickler", "Software", "Ingenieur", "Programm"],
           correctAnswer: "Softwareentwickler",
-          explanation: "'Beruf' means profession/occupation. A male software engineer is 'Softwareentwickler' (female: 'Softwareentwicklerin'). Other common answers: Student/Studentin, Ingenieur/Ingenieurin, Krankenpfleger/Krankenschwester.",
+          explanation: "Professional Vocabulary: 'Beruf' is your job. Softwareentwickler is the common term. Don't just write 'IT' or 'Software'—be specific!",
           xpReward: 12
         },
         {
@@ -123,7 +123,7 @@ export const MODULE_18: Module = {
           question: "📋 ANMELDEFORMULAR\n\nThe form asks for 'Staatsangehörigkeit'. You are from India. What do you write?",
           options: ["Indien", "indisch", "Inder", "India"],
           correctAnswer: "indisch",
-          explanation: "'Staatsangehörigkeit' = nationality/citizenship. You write the adjective form: 'indisch' (Indian). NOT the country name 'Indien'. Similarly: 'deutsch' (German), 'türkisch' (Turkish).",
+          explanation: "Citizenship Rule: Use the adjective (indisch) or the noun for the people (Inder). 'Indien' is the country. A1 usually prefers 'indisch'.",
           xpReward: 12
         },
         {
@@ -132,7 +132,7 @@ export const MODULE_18: Module = {
           question: "📋 BIBLIOTHEKSAUSWEIS — Antrag\n\nForm field: 'Telefonnummer' — Your German mobile number is 0152 3847 6521.\n\nWhat do you write? → ___",
           options: ["0152 3847 6521", "3847 6521", "+49 152 3847 6521", "0152"],
           correctAnswer: "0152 3847 6521",
-          explanation: "'Telefonnummer' = telephone number. Write your full number including the mobile prefix (0152, 0176, 0170, etc.). German mobile numbers start with 015x, 016x, or 017x.",
+          explanation: "Mobile Format: Start with the zero (0152...). It's the standard way to write your local mobile number on a German form.",
           xpReward: 12
         },
         {
@@ -141,8 +141,32 @@ export const MODULE_18: Module = {
           question: "📋 SPRACHKURS-ANMELDUNG\n\nThe form has a field: 'Geschlecht: □ männlich □ weiblich □ divers'\n\nWhat does this field ask?",
           options: ["Your age", "Your gender", "Your marital status", "Your profession"],
           correctAnswer: "Your gender",
-          explanation: "'Geschlecht' = gender/sex. 'männlich' = male, 'weiblich' = female, 'divers' = diverse/non-binary. You tick the appropriate box. Don't confuse with 'Familienstand' (marital status).",
+          explanation: "'Geschlecht' is Gender. Männlich (Male) or Weiblich (Female). 'Divers' is the German legal term for non-binary/other. You tick the appropriate box. Don't confuse with 'Familienstand' (marital status).",
           xpReward: 12
+        },
+        {
+          id: "ex18-1-11",
+          type: "free-text",
+          question: "Type your first name as it would appear in the 'Vorname' field (e.g., Arun Krishnan):",
+          correctAnswer: "Arun Krishnan",
+          explanation: "Wunderbar! Remember, 'Vorname' is your first name(s).",
+          xpReward: 30
+        },
+        {
+          id: "ex18-1-12",
+          type: "free-text",
+          question: "Type today's date in German format (TT.MM.JJJJ) - e.g., 27.03.2024:",
+          correctAnswer: "27.03.2024",
+          explanation: "Perfect! Always use dots and the DD.MM.YYYY order in Germany.",
+          xpReward: 30
+        },
+        {
+          id: "ex18-1-13",
+          type: "free-text",
+          question: "Type your city of birth as it would appear in the 'Geburtsort' field (e.g., Kochi):",
+          correctAnswer: "Kochi",
+          explanation: "Wunderbar! 'Geburtsort' = Place of birth.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -242,7 +266,7 @@ export const MODULE_18: Module = {
             "Liebe Frau Müller, ich möchte eine Pizza bestellen. Können Sie mir helfen? Danke!"
           ],
           correctAnswer: "Liebe Frau Müller, es tut mir leid, ich kann morgen nicht zum Kurs kommen. Ich bin leider krank. Können Sie mir bitte die Hausaufgaben per E-Mail schicken? Vielen Dank und viele Grüße, Arun",
-          explanation: "This answer covers all 3 Inhaltspunkte: (1) Entschuldigung — 'es tut mir leid', (2) Grund — 'ich bin krank', (3) Hausaufgaben — 'Können Sie mir die Hausaufgaben schicken?' It also has proper Anrede and Gruß.",
+          explanation: "The 3-Point Rule: To get full marks, you MUST cover all three prompts. (1) Apology ('es tut mir leid'), (2) Reason ('krank'), (3) Request ('Hausaufgaben schicken'). This option hits all three perfectly with a polite tone.",
           xpReward: 15
         },
         {
@@ -251,7 +275,7 @@ export const MODULE_18: Module = {
           question: "📝 SCHREIBEN TEIL 2\n\nYou are writing to your friend Tom to invite him to dinner.\n\nComplete the greeting: '___ Tom, ich möchte dich zum Abendessen einladen.'",
           options: ["Lieber", "Liebe", "Sehr geehrter", "Hallo"],
           correctAnswer: "Lieber",
-          explanation: "'Lieber' is used for a male friend (Lieber Tom). For a female friend, use 'Liebe' (Liebe Anna). For formal letters, use 'Sehr geehrter Herr...' or 'Sehr geehrte Frau...'.",
+          explanation: "Gender Matching: Use 'Lieber' for boys (Tom) and 'Liebe' for girls (Anna). It's like 'Priya pettu' vs 'Priya petta' in Malayalam—gender matters for the ending!",
           xpReward: 15
         },
         {
@@ -265,7 +289,7 @@ export const MODULE_18: Module = {
             "Lieber Max, ich brauche Hilfe beim Umzug am Samstag. Kannst du kommen? Viele Grüße, Priya"
           ],
           correctAnswer: "Lieber Max, vielen Dank für deine Hilfe beim Umzug! Ich möchte dich am Samstag zum Essen einladen. Was isst du gern? Liebe Grüße, Priya",
-          explanation: "All 3 Inhaltspunkte are covered: (1) sich bedanken — 'vielen Dank für deine Hilfe', (2) einladen — 'am Samstag zum Essen einladen', (3) fragen — 'Was isst du gern?'. Proper informal greeting and closing too.",
+          explanation: "Coverage is Key: You thanked him, invited him for Saturday, and asked his preference. Option B is too short (robot style), and Option C is way too formal for a friend named Max.",
           xpReward: 15
         },
         {
@@ -274,7 +298,7 @@ export const MODULE_18: Module = {
           question: "📝 SCHREIBEN TEIL 2\n\nYou want to apologize for not coming: 'Es tut mir ___, ich kann leider nicht kommen.'",
           options: ["leid", "Leid", "schlecht", "traurig"],
           correctAnswer: "leid",
-          explanation: "'Es tut mir leid' = I'm sorry. This is the standard apology phrase. In Schreiben Teil 2, you'll often need this when writing about cancellations or absences.",
+          explanation: "The Fixed Phrase: 'Es tut mir leid' (I am sorry). This is your bread and butter for cancelling plans in the exam. Small 'l' for 'leid' here!",
           xpReward: 15
         },
         {
@@ -288,7 +312,7 @@ export const MODULE_18: Module = {
             "Hallo Freund"
           ],
           correctAnswer: "Sehr geehrte Damen und Herren",
-          explanation: "When responding to a formal ad and you don't know the person's name, use 'Sehr geehrte Damen und Herren' (Dear Sir or Madam). This is formal — matching the Vermieter (landlord) context.",
+          explanation: "Formality Trap: If you're writing to a 'Vermieter' (landlord) you don't know, 'Sehr geehrte Damen und Herren' is the gold standard. It's safe and professional.",
           xpReward: 15
         },
         {
@@ -302,7 +326,7 @@ export const MODULE_18: Module = {
             "Sehr geehrte Damen und Herren, ich möchte eine Wohnung mieten. Mit freundlichen Grüßen."
           ],
           correctAnswer: "Sehr geehrte Damen und Herren, ich muss leider meinen Termin am Montag um 14 Uhr absagen. Ich muss an dem Tag arbeiten. Kann ich am Mittwoch kommen? Mit freundlichen Grüßen, Rahul Nair",
-          explanation: "All 3 Inhaltspunkte: (1) Termin absagen — 'ich muss meinen Termin absagen', (2) Grund — 'ich muss arbeiten', (3) neuer Termin — 'Kann ich am Mittwoch kommen?' Formal greeting and closing for a doctor's office.",
+          explanation: "Clarity over Speed: You cancelled the specific slot, gave the reason ('arbeiten'), and proposed the new day (Wednesday). This is a 5/5 score message.",
           xpReward: 15
         },
         {
@@ -345,6 +369,39 @@ export const MODULE_18: Module = {
           correctAnswer: "verschieben",
           explanation: "'verschieben' = to postpone/reschedule. 'Ich möchte meinen Termin verschieben' = I would like to reschedule my appointment. Very common in Schreiben Teil 2 tasks about changing plans.",
           xpReward: 15
+        },
+        {
+          id: "ex18-2-11",
+          type: "dictation",
+          question: "Listen and type: Liebe Maria, wie geht es dir?",
+          correctAnswer: "Liebe Maria wie geht es dir",
+          explanation: "Great! This is the standard informal greeting and opening for an email.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-greeting.mp3"
+        },
+        {
+          id: "ex18-2-12",
+          type: "free-text",
+          question: "Write in German: 'I am coming on Saturday.' (Saturday = Samstag)",
+          correctAnswer: "Ich komme am Samstag",
+          explanation: "Wunderbar! 'am' is used for days of the week.",
+          xpReward: 30
+        },
+        {
+          id: "ex18-2-13",
+          type: "free-text",
+          question: "Write in German: 'I am sorry, I am sick.' (sorry = leid, sick = krank)",
+          correctAnswer: "Es tut mir leid ich bin krank",
+          explanation: "Excellent! A perfect way to cancel an appointment.",
+          xpReward: 30
+        },
+        {
+          id: "ex18-2-14",
+          type: "free-text",
+          question: "Write in German: 'Can we meet at 6 PM?' (6 PM = 18 Uhr)",
+          correctAnswer: "Können wir uns um 18 Uhr treffen",
+          explanation: "Wunderbar! Using 'um' and 'treffen' correctly.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -437,7 +494,7 @@ export const MODULE_18: Module = {
             "Ich Name ist Deepa."
           ],
           correctAnswer: "Ich heiße Deepa Krishnan.",
-          explanation: "'Ich heiße ...' = My name is / I am called. Always answer in a complete sentence: 'Ich heiße Deepa Krishnan.' You can also say 'Mein Name ist Deepa Krishnan.'",
+          explanation: "The Full Sentence Rule: Never just say your name. Use 'Ich heiße...' or 'Mein Name ist...'. In the exam, full sentences show confidence!",
           xpReward: 15
         },
         {
@@ -446,7 +503,7 @@ export const MODULE_18: Module = {
           question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Alter?'\n\nYou are 25 years old. Complete: 'Ich ___ 25 Jahre alt.'",
           options: ["bin", "habe", "ist", "war"],
           correctAnswer: "bin",
-          explanation: "'Ich bin ... Jahre alt' = I am ... years old. Use 'bin' (the ich-form of 'sein') with age. This is different from English where we 'have' years — in German you 'are' years old.",
+          explanation: "Logic Shift: In English, we ARE years old. In German too! 'Ich bin...'. Don't use 'habe' (I have)—that's a common mistake for non-native speakers.",
           xpReward: 15
         },
         {
@@ -455,12 +512,12 @@ export const MODULE_18: Module = {
           question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Land?'\n\nWhich sentence correctly states where you come from?",
           options: [
             "Ich komme aus Indien.",
-            "Ich gehe aus Indien.",
-            "Ich fahre Indien.",
-            "Mein Land Indien."
+            "Ich komme aus Kerala.",
+            "Both are great!",
+            "Ich fahre Indien."
           ],
-          correctAnswer: "Ich komme aus Indien.",
-          explanation: "'Ich komme aus ...' = I come from. Use 'kommen' + 'aus' for country of origin. You can add detail: 'Ich komme aus Indien, aus Kerala.'",
+          correctAnswer: "Both are great!",
+          explanation: "Origin Story: 'Ich komme aus Indien' is perfect. If you add 'aus Kerala', the examiner will be impressed by your extra detail! Always use 'aus' for origin.",
           xpReward: 15
         },
         {
@@ -469,7 +526,7 @@ export const MODULE_18: Module = {
           question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Sprachen?'\n\nComplete: 'Ich ___ Malayalam, Englisch und ein bisschen Deutsch.'",
           options: ["spreche", "rede", "sage", "habe"],
           correctAnswer: "spreche",
-          explanation: "'Ich spreche ...' = I speak. Use 'sprechen' to talk about languages. 'Ein bisschen' = a little — useful for languages you're still learning!",
+          explanation: "Spoken Rule: 'Ich spreche' (I speak). Saying 'Ein bisschen Deutsch' is very humble and totally fine for an A1 student!",
           xpReward: 15
         },
         {
@@ -483,7 +540,7 @@ export const MODULE_18: Module = {
             "Ich mache Krankenschwester."
           ],
           correctAnswer: "Ich bin Krankenschwester von Beruf.",
-          explanation: "'Ich bin ... von Beruf.' = I am a ... by profession. No article needed! For students: 'Ich bin Student/Studentin.' You can also say: 'Ich arbeite als Krankenschwester.'",
+          explanation: "Job Talk: In German, you don't need 'a' for jobs. Just say 'Ich bin Krankenschwester'. Adiyipoli sentence structure!",
           xpReward: 15
         },
         {
@@ -563,6 +620,23 @@ export const MODULE_18: Module = {
           correctAnswer: "aus",
           explanation: "'Ich komme aus Indien, aus Kerala.' You can specify both country and state using 'aus'.",
           xpReward: 15
+        },
+        {
+          id: "ex18-3-13",
+          type: "dictation",
+          question: "Listen and type: Ich heiße Rahul Menon.",
+          correctAnswer: "Ich heiße Rahul Menon",
+          explanation: "Great job! A perfect self-introduction sentence.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-intro-name.mp3"
+        },
+        {
+          id: "ex18-3-14",
+          type: "free-text",
+          question: "Translate to German: 'I come from India.'",
+          correctAnswer: "Ich komme aus Indien",
+          explanation: "Excellent! 'aus' is the correct preposition for origin.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -769,6 +843,41 @@ export const MODULE_18: Module = {
           correctAnswer: ["Wo", "arbeiten", "Sie", "?"],
           explanation: "'Wo arbeiten Sie?' = Where do you work? In W-Fragen, the word order is: W-Wort + Verb + Subjekt. This is a standard question structure for Sprechen Teil 2.",
           xpReward: 15
+        },
+        {
+          id: "ex18-4-11",
+          type: "dictation",
+          question: "Listen and type: Wo ist der Supermarkt?",
+          correctAnswer: "Wo ist der Supermarkt",
+          explanation: "Perfect! A clear and useful question for navigation.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-supermarket.mp3"
+        },
+        {
+          id: "ex18-4-12",
+          type: "free-text",
+          question: "Write a question for the topic 'Essen' (Food):",
+          correctAnswer: "Was essen Sie gern",
+          explanation: "Excellent question! 'Was essen Sie gern?' is the classic way to ask.",
+          xpReward: 30
+        },
+        {
+          id: "ex18-4-13",
+          type: "dictation",
+          question: "Listen and type: Können Sie das bitte wiederholen?",
+          correctAnswer: "Können Sie das bitte wiederholen",
+          explanation: "Essential! This phrase is a lifesaver in the oral exam.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-repeat.mp3"
+        },
+        {
+          id: "ex18-4-14",
+          type: "dictation",
+          question: "Listen and type: Was machen Sie beruflich?",
+          correctAnswer: "Was machen Sie beruflich",
+          explanation: "Great! This is the most common way to ask about someone's job.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-job-question.mp3"
         }
       ],
       vocabulary: [

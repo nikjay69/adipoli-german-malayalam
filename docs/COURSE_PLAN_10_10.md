@@ -33,6 +33,42 @@ Critical self-assessment rated the course 5.5/10 for actually passing Goethe A1.
 9. **Selective video production using scripts + controlled templates**
 10. **Engagement science extras** (weekly reports, mastery visuals, forgetting curve, streak protection)
 
+### Core Identity — What This Course IS
+
+**We are NOT a Duolingo clone. We are not a flashcard app. We are not "pick the right word, get XP, repeat."**
+
+This is an **immersive, story-driven German course** built for one specific community. The difference:
+
+| What we are NOT | What we ARE |
+|---|---|
+| Generic gamification, same for everyone | Kerala-specific identity — Manglish, culture, humor |
+| Isolated flashcards with no context | Immersive encounters — words learned inside stories, scenes, situations |
+| Sterile, corporate learning app | Kuttan + Appu characters with real emotional arc |
+| 5-minute dopamine hits, no depth | Real A1 mastery — students WILL pass Goethe |
+| Language drills for "streaks" | A journey from Kerala to Germany that uses German as the unlock |
+| "Lesson 1: Greetings" | "Kuttan's first morning in a new world. The alarm goes off. 'Guten Morgen' means something now." |
+
+**Every feature, every exercise, every screen must pass this test:**
+> "Does this feel like the student is INSIDE the language? Or are they just looking at it from outside?"
+
+If an exercise could exist in any generic language app, it's not good enough for us.
+
+### Immersive Learning Principles
+
+1. **Context over isolation.** Never teach a word alone. Every word appears inside a situation — a scene, a conversation, a story moment. "der Bahnhof" is not a flashcard. It's the place Kuttan needs to find when he lands in Frankfurt.
+
+2. **Emotion drives retention.** People remember what they FEEL. Kuttan's late-night study session, the family dinner where he tries German for the first time, the nervous exam morning — these moments anchor vocabulary in memory better than any spaced repetition algorithm alone.
+
+3. **Cultural grounding, not translation.** We don't translate Kerala into German. We BUILD BRIDGES. "Punctuality in Germany is like temple timing in Kerala — except Germans actually follow it." The student's existing world becomes the scaffolding for the new one.
+
+4. **Encounter before drill.** Students should MEET a word in context (story, scene, dialogue) BEFORE being asked to recall it. First encounter = immersive and natural. Then practice. Then production. Never bare flashcard first.
+
+5. **Fun is not decoration, it's architecture.** The games, the humor, the Manglish banter — these are not added on top of learning. They ARE the learning environment. Remove the fun and the course breaks, because students stop showing up.
+
+6. **The journey IS the curriculum.** Kuttan's 15-video arc from Kerala home to airport boarding gate is not a wrapper around lessons. It IS the reason students keep going. Each module should feel like a chapter in a story they want to finish.
+
+7. **No busywork exercises.** If an exercise doesn't make the student THINK in German, delete it. "Match word to translation" is a flashcard pretending to be an exercise. "You're at a German bakery — the lady says 'Bitte schön?' — what do you say?" is immersive. See `docs/EXERCISE_QUALITY_RULES.md`.
+
 ### Design principles to preserve while building
 - **AI should assist, not become the judge of truth.** Use rubrics, acceptable answer bands, and pattern checks wherever possible.
 - **Train safe A1 output.** Short, correct, high-probability answers beat fancy German.
@@ -40,6 +76,7 @@ Critical self-assessment rated the course 5.5/10 for actually passing Goethe A1.
 - **Measure readiness.** Add checkpoints that prove the learner can pass, not just consume content.
 - **Do not assume AI video is reliable enough for bulk course production.** Use it selectively for prototyping, short explainers, promo assets, and high-impact lessons — not as the blind default for hours of teaching.
 - **Protect the credit budget.** The €250 Google credit pool should be reserved for high-leverage media tasks that are hard to replace cheaply, not spent on mass generation with uncertain output quality.
+- **Never reduce to flashcards.** If a feature feels like a flashcard app, redesign it. Every interaction should have context, story, or situation around it.
 
 ---
 

@@ -144,6 +144,23 @@ export const MODULE_2: Module = {
           correctAnswer: "Z",
           explanation: "German Z = 'tset', not 'zee'! Tricky German letters: J='yot', V='fow', W='veh', Y='üpsilon', Z='tset'. These catch Indians off-guard the most.",
           xpReward: 10
+        },
+        {
+          id: "ex2-1-9",
+          type: "dictation",
+          question: "Listen and spell the name: A - R - U - N",
+          correctAnswer: "Arun",
+          explanation: "Spelling is a core A1 skill. You'll often have to spell your name at the 'Bürgeramt' or bank.",
+          xpReward: 20,
+          audioUrl: "/audio/exercises/dictation-arun.mp3"
+        },
+        {
+          id: "ex2-1-10",
+          type: "free-text",
+          question: "How do you say 'Nice to meet you' in German?",
+          correctAnswer: "Freut mich",
+          explanation: "Short and sweet: 'Freut mich!'. Use it every time you meet someone new.",
+          xpReward: 25
         }
       ],
       vocabulary: [
@@ -318,7 +335,25 @@ export const MODULE_2: Module = {
           question: "Match the continent to its German name:",
           options: ["Asia", "Africa", "South America"],
           correctAnswer: ["Asien", "Afrika", "Südamerika"],
+          explanation: "Mastering the vowel changes (e→i, e→ie, a→ä) is essential for natural German speech.",
           xpReward: 15
+        },
+        {
+          id: "ex2-2-9",
+          type: "free-text",
+          question: "Where are you from? Type: I come from [Place] in [Country]. (Use German!)",
+          correctAnswer: "Ich komme aus ..., in ...",
+          explanation: "Perfect! 'Ich komme aus' + your location. Example: 'Ich komme aus Kochi in Indien.'",
+          xpReward: 30
+        },
+        {
+          id: "ex2-2-10",
+          type: "dictation",
+          question: "Listen and type: Ich komme aus Indien.",
+          correctAnswer: "Ich komme aus Indien",
+          explanation: "Capitalize 'Indien' and 'Ich'. German capitalization is strict!",
+          xpReward: 20,
+          audioUrl: "/audio/exercises/dictation-indien.mp3"
         }
       ],
       vocabulary: [
@@ -499,6 +534,23 @@ export const MODULE_2: Module = {
           correctAnswer: "ist",
           explanation: "'Er ist' = he is. Same form for sie (she) ist and es (it) ist. All three third-person singulars use 'ist' — that's one less thing to memorize!",
           xpReward: 10
+        },
+        {
+          id: "ex2-3-9",
+          type: "free-text",
+          question: "What do you do for work? Type: I am a/an [Profession]. (e.g. Student/Ingenieur)",
+          correctAnswer: "Ich bin ...",
+          explanation: "Remember: No 'ein' or 'eine' before professions in German! Just 'Ich bin Student.'",
+          xpReward: 30
+        },
+        {
+          id: "ex2-3-10",
+          type: "dictation",
+          question: "Listen and type: Ich bin Ingenieur.",
+          correctAnswer: "Ich bin Ingenieur",
+          explanation: "Ingenieur (Engineer) — a very common path for Malayalis in Germany!",
+          xpReward: 20,
+          audioUrl: "/audio/exercises/dictation-ingenieur.mp3"
         }
       ],
       vocabulary: [
@@ -673,12 +725,29 @@ export const MODULE_2: Module = {
         },
         {
           id: "ex2-4-8",
-          type: "matching",
-          question: "Match the verb to its du-form:",
-          options: ["sprechen", "lesen", "fahren"],
-          correctAnswer: ["du sprichst", "du liest", "du fährst"],
+          type: "multiple-choice",
+          question: "Why is mastering vowel changes important in German?",
+          options: ["They are optional in speech", "They make your German sound natural", "They only apply in writing", "They are rare exceptions"],
+          correctAnswer: "They make your German sound natural",
           explanation: "Mastering the vowel changes (e→i, e→ie, a→ä) is essential for natural German speech.",
           xpReward: 15
+        },
+        {
+          id: "ex2-4-9",
+          type: "free-text",
+          question: "What languages do you speak? Type your answer correctly in German! (e.g. Ich spreche Malayalam und ein bisschen Deutsch).",
+          correctAnswer: "Ich spreche ...",
+          explanation: "Awesome! 'Ich spreche' + your languages. Malayalis are usually polyglots!",
+          xpReward: 35
+        },
+        {
+          id: "ex2-4-10",
+          type: "dictation",
+          question: "Listen and type: Ich spreche Englisch.",
+          correctAnswer: "Ich spreche Englisch",
+          explanation: "Don't forget to capitalize 'Englisch'. Languages are always capitalized in German!",
+          xpReward: 20,
+          audioUrl: "/audio/exercises/dictation-englisch.mp3"
         }
       ],
       vocabulary: [
@@ -899,12 +968,28 @@ export const MODULE_2: Module = {
         },
         {
           id: "ex2-5-10",
-          type: "fill-blank",
+          type: "free-text",
           question: "Type in German: 'I speak a little German.' (Ich...)",
-          options: ["Ich spreche ein bisschen Deutsch", "Ich spreche wenig Deutsch", "Ich kann ein bisschen Deutsch", "Ich rede ein bisschen Deutsch"],
           correctAnswer: "Ich spreche ein bisschen Deutsch",
           explanation: "'Ich spreche ein bisschen Deutsch' is the standard way to say you speak a little German. 'Ein bisschen' = a little bit.",
           xpReward: 15
+        },
+        {
+          id: "ex2-5-11",
+          type: "dictation",
+          question: "Listen and type: Mein Name ist Meera.",
+          correctAnswer: "Mein Name ist Meera",
+          explanation: "Formal self-introduction using 'Mein Name ist...'. Excellent!",
+          xpReward: 20,
+          audioUrl: "/audio/exercises/dictation-meera.mp3"
+        },
+        {
+          id: "ex2-5-12",
+          type: "free-text",
+          question: "How do you ask 'How old are you?' informally in German?",
+          correctAnswer: "Wie alt bist du?",
+          explanation: "Perfect! 'Wie alt bist du?' (informal) or 'Wie alt sind Sie?' (formal).",
+          xpReward: 25
         }
       ],
       vocabulary: [

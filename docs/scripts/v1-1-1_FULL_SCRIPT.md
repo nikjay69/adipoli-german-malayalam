@@ -275,6 +275,14 @@ See you in the next video — we'll learn about real careers and success stories
 
 ---
 
+## 🔥 Next Step: Interactive Practice
+**Action:** Close this video and open **Exercise 1.1: The Three Word Drill**.
+**Goal:** Speak those first 3 words (*Deutsch, Deutschland, lernen*) into the AI voice evaluator. 
+**Reward:** 50 XP + first lesson streak! 
+*Poli! Ippo start cheyyu, set aakaam!* 🚀
+
+---
+
 ## Quality Checklist
 
 | Axis | Status | Notes |

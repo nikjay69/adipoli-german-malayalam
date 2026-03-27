@@ -152,6 +152,23 @@ export const MODULE_11: Module = {
           correctAnswer: ["I study computer science.", "I am doing vocational training.", "I work in the hospital."],
           explanation: "Distinguishing between these 3 states (Student, Trainee, Worker) is essential for your residence permit paperwork too!",
           xpReward: 15
+        },
+        {
+          id: "ex11-1-9",
+          type: "dictation",
+          question: "Listen and type: Ich arbeite als Krankenschwester.",
+          correctAnswer: "Ich arbeite als Krankenschwester",
+          explanation: "Great job! A very important sentence for thousands of Malayalis in Germany.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-work-nurse.mp3"
+        },
+        {
+          id: "ex11-1-10",
+          type: "free-text",
+          question: "Write in German: 'What is your profession?' (formal)",
+          correctAnswer: "Was sind Sie von Beruf",
+          explanation: "Wunderbar! 'Was sind Sie von Beruf?' is the polite way to ask about someone's job.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -301,6 +318,23 @@ export const MODULE_11: Module = {
           options: ["Guten Tag, hier spricht...", "Ich sende Ihnen die Datei.", "Wie war Ihr Wochenende?"],
           correctAnswer: ["Hello, this is... speaking", "I'll send you the file.", "How was your weekend?"],
           xpReward: 15
+        },
+        {
+          id: "ex11-2-9",
+          type: "dictation",
+          question: "Listen and type: Das Büro ist im dritten Stock.",
+          correctAnswer: "Das Büro ist im dritten Stock",
+          explanation: "Perfect! 'Stock' means floor. And remember: 'im' = in + dem (Dative).",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-office-floor.mp3"
+        },
+        {
+          id: "ex11-2-10",
+          type: "free-text",
+          question: "Translate to German: 'I have a meeting at 10 o'clock.' (meeting = Besprechung)",
+          correctAnswer: "Ich habe eine Besprechung um 10 Uhr",
+          explanation: "Excellent! 'um' is used for exact times. German meetings always start 'pünktlich'!",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -453,6 +487,23 @@ export const MODULE_11: Module = {
           correctAnswer: "In der Anlage finden Sie meinen Lebenslauf.",
           explanation: "The standard 'Business German' formula. 'In der Anlage' = In the attachment. 'finden Sie' = you find. 'Lebenslauf' = life's-run (CV).",
           xpReward: 10
+        },
+        {
+          id: "ex11-3-9",
+          type: "dictation",
+          question: "Listen and type: Sehr geehrte Damen und Herren,",
+          correctAnswer: "Sehr geehrte Damen und Herren",
+          explanation: "Great! This is the most formal way to address people when you don't know their names.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-email-formal-greeting.mp3"
+        },
+        {
+          id: "ex11-3-10",
+          type: "free-text",
+          question: "Write in German: 'Kind regards' (formal email closing)",
+          correctAnswer: "Mit freundlichen Grüßen",
+          explanation: "Wunderbar! 'Mit freundlichen Grüßen' is the gold standard for formal closings.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -605,6 +656,23 @@ export const MODULE_11: Module = {
           correctAnswer: "beherrschen",
           explanation: "To master something at a high level. Use this for languages or software you know inside out. 'Ich beherrsche Java.'",
           xpReward: 10
+        },
+        {
+          id: "ex11-4-9",
+          type: "dictation",
+          question: "Listen and type: Ich kann Deutsch sprechen.",
+          correctAnswer: "Ich kann Deutsch sprechen",
+          explanation: "Perfect! Modal verb in position 2, main verb at the end. That's a great skill to have!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-can-speak-german.mp3"
+        },
+        {
+          id: "ex11-4-10",
+          type: "free-text",
+          question: "Translate to German: 'I am interested in computer science.' (computer science = Informatik)",
+          correctAnswer: "Ich interessiere mich für Informatik",
+          explanation: "Excellent! 'sich interessieren für' is the reflexive phrase you need. Don't forget 'mich'!",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -758,6 +826,23 @@ export const MODULE_11: Module = {
           options: ["What are your weaknesses?", "Where do you see yourself in 5 years?", "Why should we hire you?"],
           correctAnswer: ["Was sind Ihre Schwächen?", "Wo sehen Sie sich in fünf Jahren?", "Warum sollten wir Sie einstellen?"],
           xpReward: 15
+        },
+        {
+          id: "ex11-5-9",
+          type: "dictation",
+          question: "Listen and type: Erzählen Sie etwas über sich.",
+          correctAnswer: "Erzählen Sie etwas über sich",
+          explanation: "Great job! This is the most common invitation to introduce yourself in an interview.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-tell-about-self.mp3"
+        },
+        {
+          id: "ex11-5-10",
+          type: "free-text",
+          question: "Write in German: 'I have three years of experience.' (experience = Erfahrung)",
+          correctAnswer: "Ich habe drei Jahre Erfahrung",
+          explanation: "Wunderbar! 'Ich habe drei Jahre Erfahrung.' — This is exactly what employers want to hear!",
+          xpReward: 30
         }
       ],
       vocabulary: [

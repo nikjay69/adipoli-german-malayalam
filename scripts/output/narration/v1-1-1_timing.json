@@ -1,0 +1,30 @@
+{
+  "videoId": "v1-1-1",
+  "totalDuration": 154.94400000000002,
+  "sections": [
+    {
+      "tag": "INTRO — 0:00-0:30",
+      "duration": 20.736
+    },
+    {
+      "tag": "SECTION 1 — FREE EDUCATION — 0:30-2:30",
+      "duration": 34.2
+    },
+    {
+      "tag": "SECTION 2 — JOBS — 2:30-4:30",
+      "duration": 32.976
+    },
+    {
+      "tag": "SECTION 3 — MALAYALI CONNECTION — 4:30-6:30",
+      "duration": 26.592
+    },
+    {
+      "tag": "SECTION 4 — WHAT YOU'LL LEARN — 6:30-8:30",
+      "duration": 23.712
+    },
+    {
+      "tag": "CLOSING — 8:30-10:00",
+      "duration": 16.728
+    }
+  ]
+}

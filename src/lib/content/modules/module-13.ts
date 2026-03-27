@@ -69,7 +69,24 @@ export const MODULE_13: Module = {
         { id: "ex13-1-5", type: "fill-blank", question: "Complete: Wir _____ gestern Deutsch _____. (We learned German yesterday.)", options: ["haben ... gelernt", "sind ... gelernt", "habt ... gelernt", "haben ... lernen"], correctAnswer: "haben ... gelernt", explanation: "'Wir' uses 'haben'. Lernen is an activity (not travel/change of state), so it uses haben. gelernt is the correct participle form.", xpReward: 10 },
         { id: "ex13-1-6", type: "ordering", question: "Put the words in the correct order to form a Perfekt sentence:", options: ["habe", "Ich", "gekauft", "ein Buch"], correctAnswer: ["Ich", "habe", "ein Buch", "gekauft"], explanation: "Remember the Sandwich! Haben (habe) at Position 2, and the participle (gekauft) at the very end. The object (ein Buch) goes in the middle.", xpReward: 20 },
         { id: "ex13-1-7", type: "multiple-choice", question: "Which conjugation of 'haben' goes with 'ihr'?", options: ["habt", "haben", "hast", "hat"], correctAnswer: "habt", explanation: "'Ihr' (you all) always takes 'habt'. Example: 'Ihr habt gut gelernt.' (You all learned well.)", xpReward: 10 },
-        { id: "ex13-1-8", type: "fill-blank", question: "Complete: Du _____ sehr gut _____. (You cooked very well.)", options: ["hast ... gekocht", "hat ... gekocht", "haben ... gekocht", "habe ... gekocht"], correctAnswer: "hast ... gekocht", explanation: "'Du' takes 'hast'. kochen is a regular verb: ge- + koch + -t = gekocht.", xpReward: 10 }
+        { id: "ex13-1-8", type: "fill-blank", question: "Complete: Du _____ sehr gut _____. (You cooked very well.)", options: ["hast ... gekocht", "hat ... gekocht", "haben ... gekocht", "habe ... gekocht"], correctAnswer: "hast ... gekocht", explanation: "'Du' takes 'hast'. kochen is a regular verb: ge- + koch + -t = gekocht.", xpReward: 10 },
+        {
+          id: "ex13-1-9",
+          type: "dictation",
+          question: "Listen and type: Ich habe Deutsch gelernt.",
+          correctAnswer: "Ich habe Deutsch gelernt",
+          explanation: "Perfect! 'Haben' in position 2, 'gelernt' at the very end. The classic Perfekt sandwich!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-learned-german.mp3"
+        },
+        {
+          id: "ex13-1-10",
+          type: "free-text",
+          question: "Write in German: 'I cooked' (use gekocht)",
+          correctAnswer: "Ich habe gekocht",
+          explanation: "Wunderbar! 'Ich habe gekocht' is the correct past tense for 'I cooked'.",
+          xpReward: 30
+        }
       ],
       vocabulary: [
         { id: "vocab13-1-1", german: "haben", english: "to have", malayalam: "\u0D09\u0D23\u0D4D\u0D1F\u0D3E\u0D2F\u0D3F\u0D30\u0D3F\u0D15\u0D4D\u0D15\u0D41\u0D15", pronunciation: "hah-ben", example: "Ich habe einen Hund.", exampleTranslation: "I have a dog." },
@@ -122,7 +139,24 @@ export const MODULE_13: Module = {
         { id: "ex13-2-4", type: "multiple-choice", question: "What is the helper verb for 'bleiben' (to stay)?", options: ["sein", "haben", "ist", "war"], correctAnswer: "sein", explanation: "'Bleiben' is a famous exception! Even though there's no movement, it always takes 'sein' in the past tense.", xpReward: 10 },
         { id: "ex13-2-5", type: "fill-blank", question: "Complete: Wir _____ nach Berlin geflogen.", options: ["sind", "haben", "seid", "ist"], correctAnswer: "sind", explanation: "'Wir' takes 'sind'. Flying (fliegen) is movement, so we use the helper verb 'sein'.", xpReward: 10 },
         { id: "ex13-2-6", type: "ordering", question: "Put the words in order: ist / Er / gekommen / gestern", options: ["Er", "ist", "gestern", "gekommen."], correctAnswer: ["Er", "ist", "gestern", "gekommen."], explanation: "The 'Sein' sandwich! Helper verb 'ist' at position 2, and the participle 'gekommen' at the very end.", xpReward: 20 },
-        { id: "ex13-2-7", type: "multiple-choice", question: "Is the sentence 'Ich habe nach Hause gegangen' correct?", options: ["No, it should be 'Ich bin nach Hause gegangen'", "Yes, it is correct", "Only in formal German", "No, it should be 'Ich bin nach Hause gegangen'"], correctAnswer: "No, it should be 'Ich bin nach Hause gegangen'", explanation: "'Gehen' is a verb of movement. In German, movement verbs MUST use 'sein' (bin, bist, ist...). English uses 'have gone', but German says 'am gone'.", xpReward: 10 }
+        { id: "ex13-2-7", type: "multiple-choice", question: "Is the sentence 'Ich habe nach Hause gegangen' correct?", options: ["No, it should be 'Ich bin nach Hause gegangen'", "Yes, it is correct", "Only in formal German", "No, it should be 'Ich bin nach Hause gegangen'"], correctAnswer: "No, it should be 'Ich bin nach Hause gegangen'", explanation: "'Gehen' is a verb of movement. In German, movement verbs MUST use 'sein' (bin, bist, ist...). English uses 'have gone', but German says 'am gone'.", xpReward: 10 },
+        {
+          id: "ex13-2-8",
+          type: "dictation",
+          question: "Listen and type: Ich bin nach Hause gegangen.",
+          correctAnswer: "Ich bin nach Hause gegangen",
+          explanation: "Perfect! 'Gehen' is a movement verb, so it takes 'sein' (bin).",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-went-home.mp3"
+        },
+        {
+          id: "ex13-2-9",
+          type: "free-text",
+          question: "Translate to German: 'We flew to Kerala.' (flew = geflogen)",
+          correctAnswer: "Wir sind nach Kerala geflogen",
+          explanation: "Excellent! 'Fliegen' is movement, so we use 'sind'.",
+          xpReward: 30
+        }
       ],
       vocabulary: [
         { id: "vocab13-2-1", german: "gegangen", english: "gone / walked (past participle)", malayalam: "\u0D2A\u0D4B\u0D2F\u0D3F", pronunciation: "ge-gang-en", example: "Ich bin ins Kino gegangen.", exampleTranslation: "I went to the cinema." },
@@ -172,7 +206,24 @@ export const MODULE_13: Module = {
         { id: "ex13-3-3", type: "multiple-choice", question: "Which past participle is correct for 'sehen' (to see)?", options: ["gesehen", "geseht", "gesohn", "gesiehen"], correctAnswer: "gesehen", explanation: "'Sehen' stays very similar but ends in -en: ge-seh-en. No vowel change here!", xpReward: 10 },
         { id: "ex13-3-4", type: "multiple-choice", question: "What is the past participle of 'schreiben' (to write)?", options: ["geschrieben", "geschreibt", "geschreiben", "geschrobben"], correctAnswer: "geschrieben", explanation: "In 'schreiben', the 'ei' flips to 'ie' in the past participle: ge-schr-ie-ben.", xpReward: 10 },
         { id: "ex13-3-5", type: "fill-blank", question: "Complete: Hast du das Buch _____? (Have you read the book?)", options: ["gelesen", "gelest", "gelest", "gelesen"], correctAnswer: "gelesen", explanation: "'Lesen' (to read) is irregular and ends in -en: ge-les-en.", xpReward: 10 },
-        { id: "ex13-3-6", type: "multiple-choice", question: "How do you say 'I have seen you'?", options: ["Ich habe dich gesehen.", "Ich habe dich geseht.", "Ich bin dich gesehen.", "Ich habe du gesehen."], correctAnswer: "Ich habe dich gesehen.", explanation: "Structure: Subject (Ich) + Helper (habe) + Object (dich) + Participle (gesehen). 'Sehen' is not movement, so we use 'haben'.", xpReward: 10 }
+        { id: "ex13-3-6", type: "multiple-choice", question: "How do you say 'I have seen you'?", options: ["Ich habe dich gesehen.", "Ich habe dich geseht.", "Ich bin dich gesehen.", "Ich habe du gesehen."], correctAnswer: "Ich habe dich gesehen.", explanation: "Structure: Subject (Ich) + Helper (habe) + Object (dich) + Participle (gesehen). 'Sehen' is not movement, so we use 'haben'.", xpReward: 10 },
+        {
+          id: "ex13-3-7",
+          type: "dictation",
+          question: "Listen and type: Ich habe Biryani gegessen.",
+          correctAnswer: "Ich habe Biryani gegessen",
+          explanation: "Great! 'Essen' becomes 'gegessen' in the past. Adipoli!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-ate-biryani.mp3"
+        },
+        {
+          id: "ex13-3-8",
+          type: "free-text",
+          question: "Write in German: 'He drank a coffee.' (drank = getrunken, coffee = einen Kaffee)",
+          correctAnswer: "Er hat einen Kaffee getrunken",
+          explanation: "Wunderbar! 'Er hat einen Kaffee getrunken.' — 'getrunken' goes to the very end.",
+          xpReward: 30
+        }
       ],
       vocabulary: [
         { id: "vocab13-3-1", german: "gegessen", english: "eaten (past participle)", malayalam: "\u0D15\u0D34\u0D3F\u0D1A\u0D4D\u0D1A\u0D41", pronunciation: "ge-gess-en", example: "Ich habe Biryani gegessen.", exampleTranslation: "I ate Biryani." },
@@ -205,7 +256,24 @@ export const MODULE_13: Module = {
         { id: "ex13-4-5", type: "multiple-choice", question: "What does 'Ich habe eingekauft' mean?", options: ["I went shopping", "I cooked", "I went out", "I cleaned up"], correctAnswer: "I went shopping", explanation: "einkaufen = to shop. Ich habe eingekauft = I went shopping.", xpReward: 10 },
         { id: "ex13-4-6", type: "ordering", question: "Arrange the connectors from first to last:", options: ["zum Schluss", "danach", "zuerst", "dann"], correctAnswer: ["zuerst", "dann", "danach", "zum Schluss"], xpReward: 15 },
         { id: "ex13-4-7", type: "fill-blank", question: "Complete: Am Sonntag _____ ich lange _____. (On Sunday I slept in.)", options: ["habe ... geschlafen", "bin ... geschlafen", "habe ... schlafen", "bin ... geschlaft"], correctAnswer: "habe ... geschlafen", explanation: "schlafen uses haben (no movement). schlafen \u2192 geschlafen (irregular).", xpReward: 10 },
-        { id: "ex13-4-8", type: "ordering", question: "Build a weekend story \u2014 put in logical order:", options: ["Danach habe ich einen Film gesehen.", "Zuerst bin ich joggen gegangen.", "Sp\u00e4ter habe ich zu Abend gegessen.", "Dann habe ich geduscht und gefr\u00fchst\u00fcckt."], correctAnswer: ["Zuerst bin ich joggen gegangen.", "Dann habe ich geduscht und gefr\u00fchst\u00fcckt.", "Danach habe ich einen Film gesehen.", "Sp\u00e4ter habe ich zu Abend gegessen."], xpReward: 20 }
+        { id: "ex13-4-8", type: "ordering", question: "Build a weekend story \u2014 put in logical order:", options: ["Danach habe ich einen Film gesehen.", "Zuerst bin ich joggen gegangen.", "Sp\u00e4ter habe ich zu Abend gegessen.", "Dann habe ich geduscht und gefr\u00fchst\u00fcckt."], correctAnswer: ["Zuerst bin ich joggen gegangen.", "Dann habe ich geduscht und gefr\u00fchst\u00fcckt.", "Danach habe ich einen Film gesehen.", "Sp\u00e4ter habe ich zu Abend gegessen."], xpReward: 20 },
+        {
+          id: "ex13-4-9",
+          type: "dictation",
+          question: "Listen and type: Zuerst habe ich gefrühstückt.",
+          correctAnswer: "Zuerst habe ich gefrühstückt",
+          explanation: "Great job! Using connectors makes your German sound more natural.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-first-breakfast.mp3"
+        },
+        {
+          id: "ex13-4-10",
+          type: "free-text",
+          question: "Translate to German: 'Then I went shopping.' (Then = Dann, shopping = eingekauft)",
+          correctAnswer: "Dann habe ich eingekauft",
+          explanation: "Excellent! 'Dann' occupies position 1, 'habe' stays at position 2.",
+          xpReward: 30
+        }
       ],
       vocabulary: [
         { id: "vocab13-4-1", german: "zuerst", english: "first / at first", malayalam: "\u0D06\u0D26\u0D4D\u0D2F\u0D02", pronunciation: "tsoo-airst", example: "Zuerst habe ich gefr\u00fchst\u00fcckt.", exampleTranslation: "First I had breakfast." },
@@ -238,7 +306,24 @@ export const MODULE_13: Module = {
         { id: "ex13-5-5", type: "ordering", question: "Order from most recent to longest ago:", options: ["vor einem Jahr", "vorgestern", "gestern", "letzte Woche"], correctAnswer: ["gestern", "vorgestern", "letzte Woche", "vor einem Jahr"], xpReward: 20 },
         { id: "ex13-5-6", type: "fill-blank", question: "Complete: Ich bin _____ drei Monaten nach Deutschland gekommen. (3 months ago)", options: ["vor", "seit", "in", "nach"], correctAnswer: "vor", explanation: "vor + Dativ = 'ago'. vor drei Monaten = three months ago.", xpReward: 10 },
         { id: "ex13-5-7", type: "fill-blank", question: "Complete: _____ Jahr bin ich nach Deutschland geflogen. (Last year...)", options: ["Letztes", "Letzte", "Letzten", "Letzter"], correctAnswer: "Letztes", explanation: "das Jahr (neuter) \u2192 letztes Jahr.", xpReward: 10 },
-        { id: "ex13-5-8", type: "multiple-choice", question: "Translate: 'Vor einer Stunde habe ich gegessen.'", options: ["I ate an hour ago.", "I ate for one hour.", "I will eat in an hour.", "I have been eating since one hour."], correctAnswer: "I ate an hour ago.", explanation: "'Vor einer Stunde' = an hour ago. vor + Dativ = ago.", xpReward: 10 }
+        { id: "ex13-5-8", type: "multiple-choice", question: "Translate: 'Vor einer Stunde habe ich gegessen.'", options: ["I ate an hour ago.", "I ate for one hour.", "I will eat in an hour.", "I have been eating since one hour."], correctAnswer: "I ate an hour ago.", explanation: "'Vor einer Stunde' = an hour ago. vor + Dativ = ago.", xpReward: 10 },
+        {
+          id: "ex13-5-9",
+          type: "dictation",
+          question: "Listen and type: Gestern habe ich viel gelernt.",
+          correctAnswer: "Gestern habe ich viel gelernt",
+          explanation: "Perfect! Time expression first, followed by the auxiliary verb.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-learned-much-yesterday.mp3"
+        },
+        {
+          id: "ex13-5-10",
+          type: "free-text",
+          question: "Write in German: 'I came to Germany three months ago.' (three months ago = vor drei Monaten, came = gekommen)",
+          correctAnswer: "Ich bin vor drei Monaten nach Deutschland gekommen",
+          explanation: "Wunderbar! 'Ich bin vor drei Monaten nach Deutschland gekommen.' — perfect use of 'vor' and 'sein'.",
+          xpReward: 30
+        }
       ],
       vocabulary: [
         { id: "vocab13-5-1", german: "gestern", english: "yesterday", malayalam: "\u0D07\u0D28\u0D4D\u0D28\u0D32\u0D46", pronunciation: "gess-tern", example: "Gestern bin ich sp\u00e4t aufgestanden.", exampleTranslation: "Yesterday I woke up late." },

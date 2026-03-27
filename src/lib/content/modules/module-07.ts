@@ -97,6 +97,23 @@ export const MODULE_7: Module = {
           correctAnswer: "die Eier",
           explanation: "The plural of das Ei is die Eier. All plural nouns in German use the article 'die'.",
           xpReward: 10
+        },
+        {
+          id: "ex7-1-6",
+          type: "dictation",
+          question: "Listen and type: Ich kaufe sechs Eier.",
+          correctAnswer: "Ich kaufe sechs Eier",
+          explanation: "Great! 'Eier' is the plural of 'Ei'. And remember to capitalize all nouns!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-buy-eggs.mp3"
+        },
+        {
+          id: "ex7-1-7",
+          type: "free-text",
+          question: "Write in German: 'Where can I find the milk?' (milk = Milch)",
+          correctAnswer: "Wo finde ich die Milch",
+          explanation: "Wunderbar! 'Wo finde ich...' is the perfect phrase for the supermarket. 'die Milch' because Milch is feminine.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -265,6 +282,23 @@ export const MODULE_7: Module = {
           correctAnswer: ["teuer → expensive", "billig → cheap", "bar → cash", "die Quittung → receipt"],
           explanation: "These are essential words for any shopping situation in Germany.",
           xpReward: 15
+        },
+        {
+          id: "ex7-2-7",
+          type: "dictation",
+          question: "Listen and type: Das kostet fünf Euro.",
+          correctAnswer: "Das kostet fünf Euro",
+          explanation: "Perfect! 'Euro' stays singular after a number: fünf Euro, zehn Euro.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-cost-5.mp3"
+        },
+        {
+          id: "ex7-2-8",
+          type: "free-text",
+          question: "Translate to German: 'That is very expensive.' (expensive = teuer)",
+          correctAnswer: "Das ist sehr teuer",
+          explanation: "Excellent! 'sehr' means 'very'. 'Das ist sehr teuer!'",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -454,6 +488,23 @@ export const MODULE_7: Module = {
           correctAnswer: "coat",
           explanation: "'der Mantel' = the coat. Think of it as a 'mantle' — they share the same root!",
           xpReward: 10
+        },
+        {
+          id: "ex7-3-7",
+          type: "dictation",
+          question: "Listen and type: Das rote Kleid ist schön.",
+          correctAnswer: "Das rote Kleid ist schön",
+          explanation: "Super! 'rote' is the adjective form after 'das'. And 'schön' means beautiful/nice.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-red-dress.mp3"
+        },
+        {
+          id: "ex7-3-8",
+          type: "free-text",
+          question: "Write in German: 'I am wearing a white shirt.' (shirt = Hemd, white = weiß)",
+          correctAnswer: "Ich trage ein weißes Hemd",
+          explanation: "Wunderbar! 'Ich trage ein weißes Hemd.' — note the '-es' ending for neuter objects with 'ein'.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -670,6 +721,23 @@ export const MODULE_7: Module = {
           correctAnswer: "Größe",
           explanation: "'Größe' means 'size'. 'Haben Sie das in Größe L?' is how you ask about available sizes.",
           xpReward: 10
+        },
+        {
+          id: "ex7-4-7",
+          type: "dictation",
+          question: "Listen and type: Kann ich das anprobieren?",
+          correctAnswer: "Kann ich das anprobieren",
+          explanation: "Excellent! 'anprobieren' is the verb for trying on clothes.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-try-on.mp3"
+        },
+        {
+          id: "ex7-4-8",
+          type: "free-text",
+          question: "Translate to German: 'I am looking for a jacket.' (jacket = Jacke)",
+          correctAnswer: "Ich suche eine Jacke",
+          explanation: "Perfect! 'Ich suche eine Jacke.' — 'eine' because Jacke is feminine.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -853,6 +921,23 @@ export const MODULE_7: Module = {
           correctAnswer: "Das Kleid ist schöner als die Hose.",
           explanation: "Use 'als' (not 'wie') with comparatives. 'schöner als' = more beautiful than.",
           xpReward: 15
+        },
+        {
+          id: "ex7-5-8",
+          type: "dictation",
+          question: "Listen and type: Berlin ist größer als Kochi.",
+          correctAnswer: "Berlin ist größer als Kochi",
+          explanation: "Great job! 'größer als' = bigger than. A perfect comparison!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-berlin-kochi.mp3"
+        },
+        {
+          id: "ex7-5-9",
+          type: "free-text",
+          question: "Write in German: 'This restaurant is the best.' (best = am besten)",
+          correctAnswer: "Dieses Restaurant ist am besten",
+          explanation: "Wunderbar! 'Dieses Restaurant ist am besten.' — using the superlative correctly!",
+          xpReward: 30
         }
       ],
       vocabulary: [

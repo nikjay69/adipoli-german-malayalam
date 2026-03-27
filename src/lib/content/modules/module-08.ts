@@ -150,6 +150,23 @@ export const MODULE_8: Module = {
           correctAnswer: "They often come without a kitchen (you bring your own!)",
           explanation: "In Germany, many rental apartments come without a fitted kitchen. Tenants buy and install their own — and take it with them when they move!",
           xpReward: 10
+        },
+        {
+          id: "ex8-1-7",
+          type: "dictation",
+          question: "Listen and type: Das Wohnzimmer ist groß.",
+          correctAnswer: "Das Wohnzimmer ist groß",
+          explanation: "Great! 'Wohnzimmer' is neuter (das) and must be capitalized.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-livingroom-big.mp3"
+        },
+        {
+          id: "ex8-1-8",
+          type: "free-text",
+          question: "Write in German: 'The kitchen is clean.' (clean = sauber)",
+          correctAnswer: "Die Küche ist sauber",
+          explanation: "Wunderbar! 'Die Küche' because it is feminine. Good job!",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -401,6 +418,23 @@ export const MODULE_8: Module = {
           correctAnswer: "der Küche",
           explanation: "Feminine nouns: die → der in dative. So 'in die Küche' (accusative/motion) but 'in der Küche' (dative/location).",
           xpReward: 15
+        },
+        {
+          id: "ex8-2-8",
+          type: "dictation",
+          question: "Listen and type: Die Katze ist auf dem Tisch.",
+          correctAnswer: "Die Katze ist auf dem Tisch",
+          explanation: "Perfect! 'auf dem Tisch' — 'dem' because of the dative case for location.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-cat-table.mp3"
+        },
+        {
+          id: "ex8-2-9",
+          type: "free-text",
+          question: "Translate to German: 'The shoes are under the bed.' (shoes = die Schuhe, bed = Bett)",
+          correctAnswer: "Die Schuhe sind unter dem Bett",
+          explanation: "Excellent! 'unter dem Bett' — 'dem' is the dative article for 'das Bett'.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -625,6 +659,23 @@ export const MODULE_8: Module = {
           correctAnswer: "security deposit",
           explanation: "'die Kaution' = security deposit. Usually 2-3 months of Kaltmiete, returned when you move out (if no damage).",
           xpReward: 10
+        },
+        {
+          id: "ex8-3-7",
+          type: "dictation",
+          question: "Listen and type: Ich suche eine WG.",
+          correctAnswer: "Ich suche eine WG",
+          explanation: "Great! 'WG' stands for 'Wohngemeinschaft' — shared apartment.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-seek-wg.mp3"
+        },
+        {
+          id: "ex8-3-8",
+          type: "free-text",
+          question: "Write in German: 'The rent is 500 Euro.'",
+          correctAnswer: "Die Miete ist 500 Euro",
+          explanation: "Wunderbar! 'Die Miete ist 500 Euro.' — Euro remains singular in this context.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -814,6 +865,23 @@ export const MODULE_8: Module = {
           correctAnswer: "Liebe Grüße",
           explanation: "'Liebe Grüße' = 'Best regards' (informal). For WG applications, a friendly tone with 'du' is usually preferred.",
           xpReward: 10
+        },
+        {
+          id: "ex8-4-7",
+          type: "dictation",
+          question: "Listen and type: Mit freundlichen Grüßen",
+          correctAnswer: "Mit freundlichen Grüßen",
+          explanation: "Perfect! This is the most formal way to end a letter in German.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-formal-closing.mp3"
+        },
+        {
+          id: "ex8-4-8",
+          type: "free-text",
+          question: "Translate to German: 'May I introduce myself?'",
+          correctAnswer: "Darf ich mich vorstellen",
+          explanation: "Excellent! 'Darf ich mich vorstellen?' is a very polite opening.",
+          xpReward: 30
         }
       ],
       vocabulary: [

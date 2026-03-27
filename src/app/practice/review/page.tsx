@@ -1,25 +1,58 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Volume2, RotateCcw, Sparkles, Clock, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, Volume2, Clock, Zap, ChevronRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
 import { getAllVocabulary } from '@/lib/content/modules';
 import type { VocabItem } from '@/lib/content/modules';
-import { reviewCard, createCard, getDueCards, getDueCount, type Rating, type SRSCard } from '@/lib/srs';
+import { reviewCard, createCard, getDueCards, getDueCount, type SRSCard } from '@/lib/srs';
+import {
+  generateEncounterBatch,
+  deriveRating,
+  ENCOUNTER_TYPE_LABELS,
+  type Encounter,
+  type EncounterResult,
+} from '@/lib/encounters';
+import { Kuttan } from '@/components/character/Kuttan';
 import { Appu } from '@/components/character/Appu';
 import { playVocabAudio } from '@/lib/audio';
-import { Kuttan } from '@/components/character/Kuttan';
 
-type ReviewState = 'loading' | 'reviewing' | 'complete' | 'empty';
+type ReviewState = 'loading' | 'reviewing' | 'feedback' | 'complete' | 'empty';
 
-interface ReviewStats {
+interface SessionStats {
   total: number;
-  again: number;
-  hard: number;
-  good: number;
-  easy: number;
+  correct: number;   // first-try correct
+  struggled: number;  // got it after mistakes
+  missed: number;     // multiple wrong
+  xpEarned: number;
+}
+
+// Feedback messages based on performance
+const FEEDBACK_CORRECT_FAST = [
+  "Adipoli! Lightning fast! ⚡",
+  "Machane, speed aanu! 🔥",
+  "Boom! No hesitation! 💥",
+  "Mwone, nee rockstar aanu! 🎸",
+];
+
+const FEEDBACK_CORRECT = [
+  "Correct! Nannayittund! ✅",
+  "Adipoli! You nailed it! 🎯",
+  "Seri aanu machane! 👏",
+  "Nice one! Keep going! 💪",
+];
+
+const FEEDBACK_WRONG = [
+  "Aiyyo! Not quite... 😅",
+  "Paravaala! Let's try again!",
+  "Almost machane! Look carefully 👀",
+  "Hmm, not that one... try once more!",
+];
+
+function pickRandom<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export default function ReviewPage() {
@@ -27,105 +60,171 @@ export default function ReviewPage() {
   const { userProgress, updateSRSCard, addSRSCard, addXP, updateStreak } = useGameStore();
   const [mounted, setMounted] = useState(false);
   const [state, setState] = useState<ReviewState>('loading');
-  const [dueVocabIds, setDueVocabIds] = useState<string[]>([]);
+  const [encounters, setEncounters] = useState<Encounter[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [revealed, setRevealed] = useState(false);
-  const [stats, setStats] = useState<ReviewStats>({ total: 0, again: 0, hard: 0, good: 0, easy: 0 });
-  const [xpEarned, setXpEarned] = useState(0);
+  const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const [wrongAttempts, setWrongAttempts] = useState(0);
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [feedbackText, setFeedbackText] = useState('');
+  const [isCorrect, setIsCorrect] = useState(false);
+  const [stats, setStats] = useState<SessionStats>({ total: 0, correct: 0, struggled: 0, missed: 0, xpEarned: 0 });
+  const encounterStartTime = useRef<number>(Date.now());
+  const [kuttanMood, setKuttanMood] = useState<'thinking' | 'happy' | 'excited' | 'sad'>('thinking');
 
   // Build vocab lookup map once
+  const allVocab = useMemo(() => getAllVocabulary(), []);
   const vocabMap = useMemo(() => {
     const map: Record<string, VocabItem> = {};
-    getAllVocabulary().forEach((v) => {
-      map[v.id] = v;
-    });
+    allVocab.forEach((v) => { map[v.id] = v; });
     return map;
-  }, []);
+  }, [allVocab]);
 
-  // Initialize: ensure all learned vocab has SRS cards, then get due cards
+  // Initialize
   useEffect(() => {
     setMounted(true);
   }, []);
 
   useEffect(() => {
+    if (!mounted) return;
 
     // Create SRS cards for any learned vocab that doesn't have one yet
-    const learnedVocab = userProgress.learnedVocabulary;
-    learnedVocab.forEach((vocabId) => {
+    userProgress.learnedVocabulary.forEach((vocabId) => {
       if (!userProgress.srsCards[vocabId]) {
         addSRSCard(createCard(vocabId));
       }
     });
 
     // Get due cards
-    const due = getDueCards(userProgress.srsCards);
-    if (due.length === 0) {
+    const dueIds = getDueCards(userProgress.srsCards);
+    if (dueIds.length === 0) {
       setState('empty');
-    } else {
-      setDueVocabIds(due);
-      setState('reviewing');
+      return;
     }
+
+    // Resolve to VocabItems
+    const dueVocab = dueIds
+      .map((id) => vocabMap[id])
+      .filter(Boolean) as VocabItem[];
+
+    if (dueVocab.length === 0) {
+      setState('empty');
+      return;
+    }
+
+    // Build map of last encounter types from SRS cards so we don't repeat formats
+    const lastEncounterTypes: Record<string, string | undefined> = {};
+    dueIds.forEach((id) => {
+      lastEncounterTypes[id] = userProgress.srsCards[id]?.lastEncounterType;
+    });
+
+    // Generate immersive encounters — each word gets a DIFFERENT format than last time
+    const batch = generateEncounterBatch(dueVocab, allVocab, lastEncounterTypes);
+    setEncounters(batch);
+    setState('reviewing');
+    encounterStartTime.current = Date.now();
   }, [mounted]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const currentVocab = useMemo(() => {
-    if (dueVocabIds.length === 0 || currentIndex >= dueVocabIds.length) return null;
-    return vocabMap[dueVocabIds[currentIndex]] || null;
-  }, [dueVocabIds, currentIndex, vocabMap]);
+  const currentEncounter = encounters[currentIndex] || null;
+  const dueCount = useMemo(() => {
+    if (!mounted) return 0;
+    return getDueCount(userProgress.srsCards);
+  }, [mounted, userProgress.srsCards]);
 
-  const handleReveal = useCallback(() => {
-    setRevealed(true);
-    if (currentVocab) {
-      playVocabAudio(currentVocab.id).catch(() => {});
+  const handleOptionSelect = useCallback((optionIndex: number) => {
+    if (showFeedback && isCorrect) return; // Already showing correct feedback, ignore taps
+
+    const encounter = encounters[currentIndex];
+    if (!encounter) return;
+
+    const correct = optionIndex === encounter.correctIndex;
+
+    if (correct) {
+      // Correct answer!
+      const responseTime = Date.now() - encounterStartTime.current;
+      const firstTry = wrongAttempts === 0;
+      const fast = responseTime < 4000;
+
+      setSelectedOption(optionIndex);
+      setIsCorrect(true);
+      setShowFeedback(true);
+
+      if (firstTry && fast) {
+        setFeedbackText(pickRandom(FEEDBACK_CORRECT_FAST));
+        setKuttanMood('excited');
+      } else if (firstTry) {
+        setFeedbackText(pickRandom(FEEDBACK_CORRECT));
+        setKuttanMood('happy');
+      } else {
+        setFeedbackText("Got it! " + encounter.explanation);
+        setKuttanMood('happy');
+      }
+
+      // Derive SRS rating implicitly
+      const result: EncounterResult = {
+        encounter,
+        firstTryCorrect: firstTry,
+        wrongAttempts,
+        responseTimeMs: responseTime,
+      };
+      const rating = deriveRating(result);
+
+      // Update SRS card — also remember which encounter type was used
+      const vocabId = encounter.targetVocab.id;
+      const card = userProgress.srsCards[vocabId] || createCard(vocabId);
+      const updatedCard = reviewCard(card, rating);
+      updatedCard.lastEncounterType = encounter.type;
+      updateSRSCard(vocabId, updatedCard);
+
+      // Update stats
+      const xpForCard = firstTry ? 3 : 1;
+      setStats((prev) => ({
+        total: prev.total + 1,
+        correct: prev.correct + (firstTry && !fast ? 1 : 0) + (firstTry && fast ? 1 : 0),
+        struggled: prev.struggled + (!firstTry && wrongAttempts === 1 ? 1 : 0),
+        missed: prev.missed + (wrongAttempts >= 2 ? 1 : 0),
+        xpEarned: prev.xpEarned + xpForCard,
+      }));
+      addXP(xpForCard);
+
+      // Play audio for the word
+      playVocabAudio(encounter.targetVocab.id).catch(() => {});
+    } else {
+      // Wrong answer
+      setSelectedOption(optionIndex);
+      setWrongAttempts((prev) => prev + 1);
+      setFeedbackText(pickRandom(FEEDBACK_WRONG));
+      setKuttanMood('sad');
+      setShowFeedback(true);
+      setIsCorrect(false);
+
+      // Clear wrong selection after a beat so they can try again
+      setTimeout(() => {
+        setSelectedOption(null);
+        setShowFeedback(false);
+      }, 1200);
     }
-  }, [currentVocab]);
+  }, [encounters, currentIndex, wrongAttempts, showFeedback, isCorrect, userProgress.srsCards, updateSRSCard, addXP]);
 
-  const handleRating = useCallback((rating: Rating) => {
-    if (!currentVocab) return;
-
-    const vocabId = currentVocab.id;
-    const card = userProgress.srsCards[vocabId] || createCard(vocabId);
-    const updatedCard = reviewCard(card, rating);
-    updateSRSCard(vocabId, updatedCard);
-
-    // Update stats
-    setStats((prev) => ({
-      ...prev,
-      total: prev.total + 1,
-      [rating]: prev[rating] + 1,
-    }));
-
-    // Award XP per card
-    const cardXP = 2;
-    setXpEarned((prev) => prev + cardXP);
-    addXP(cardXP);
-
-    // Move to next card
+  const handleNext = useCallback(() => {
     const nextIndex = currentIndex + 1;
-    if (nextIndex >= dueVocabIds.length) {
-      // Completion bonus
+    if (nextIndex >= encounters.length) {
+      // Session complete
       const bonusXP = 10;
-      setXpEarned((prev) => prev + bonusXP);
       addXP(bonusXP);
+      setStats((prev) => ({ ...prev, xpEarned: prev.xpEarned + bonusXP }));
       updateStreak();
       setState('complete');
     } else {
       setCurrentIndex(nextIndex);
-      setRevealed(false);
+      setSelectedOption(null);
+      setWrongAttempts(0);
+      setShowFeedback(false);
+      setIsCorrect(false);
+      setFeedbackText('');
+      setKuttanMood('thinking');
+      encounterStartTime.current = Date.now();
     }
-  }, [currentVocab, currentIndex, dueVocabIds.length, userProgress.srsCards, updateSRSCard, addXP, updateStreak]);
-
-  const handlePlayAudio = useCallback(() => {
-    if (currentVocab) {
-      playVocabAudio(currentVocab.id).catch(() => {});
-    }
-  }, [currentVocab]);
-
-  const dueCount = useMemo(() => {
-
-    if (!mounted) return;
-    if (!mounted) return 0;
-    return getDueCount(userProgress.srsCards);
-  }, [mounted, userProgress.srsCards]);
+  }, [currentIndex, encounters.length, addXP, updateStreak]);
 
   // Loading state
   if (!mounted) {
@@ -165,19 +264,19 @@ export default function ReviewPage() {
           </div>
           <h2 className="text-xl font-bold mb-2">All caught up!</h2>
           <p className="text-[var(--foreground)]/50 text-sm mb-1">
-            No cards due right now. Appu is taking a nap.
+            No words need practice right now. Appu is napping.
           </p>
           {(() => {
             const cards = Object.values(userProgress.srsCards);
             if (cards.length === 0) return (
               <p className="text-[var(--foreground)]/30 text-xs mb-6">
-                Learn words in lessons to build your review deck.
+                Learn words in lessons to start building your practice sessions.
               </p>
             );
             const futureCards = cards.filter(c => c.nextReview > Date.now());
             if (futureCards.length === 0) return (
               <p className="text-[var(--foreground)]/30 text-xs mb-6">
-                All words mastered. Adipoli! 🏆
+                All words mastered. Adipoli!
               </p>
             );
             const nextTime = Math.min(...futureCards.map(c => c.nextReview));
@@ -186,7 +285,7 @@ export default function ReviewPage() {
             const minutes = Math.floor((diffMs % 3600000) / 60000);
             return (
               <p className="text-[var(--foreground)]/30 text-xs mb-6">
-                Next review in {hours > 0 ? `${hours}h ` : ''}{minutes}m · {futureCards.length} cards upcoming
+                Next session in {hours > 0 ? `${hours}h ` : ''}{minutes}m · {futureCards.length} words upcoming
               </p>
             );
           })()}
@@ -204,7 +303,7 @@ export default function ReviewPage() {
   // Completion state
   if (state === 'complete') {
     const accuracy = stats.total > 0
-      ? Math.round(((stats.good + stats.easy) / stats.total) * 100)
+      ? Math.round((stats.correct / stats.total) * 100)
       : 0;
 
     return (
@@ -222,70 +321,71 @@ export default function ReviewPage() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.1 }}
-          className="mt-10"
+          className="mt-8"
         >
-          {/* Celebration header */}
-          <div className="text-center mb-8">
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ type: 'spring', delay: 0.3 }}
-              className="text-5xl mb-3"
-            >
-              🏆
-            </motion.div>
-            <h2 className="text-2xl font-bold mb-1">Review Complete!</h2>
+          {/* Celebration */}
+          <div className="text-center mb-6">
+            <div className="flex justify-center items-end gap-2 mb-4">
+              <Kuttan mood="celebrating" size="lg" />
+              <Appu mood="happy" size="sm" />
+            </div>
+            <h2 className="text-2xl font-bold mb-1">Session Complete!</h2>
             <p className="text-[var(--foreground)]/40 text-sm">
-              Adipoli! You reviewed all your due cards.
+              {accuracy >= 80 ? "Adipoli machane! You crushed it!" :
+               accuracy >= 50 ? "Good effort! Getting stronger!" :
+               "Paravaala! Every session makes you better!"}
             </p>
           </div>
 
-          {/* Stats grid */}
+          {/* Stats */}
           <div className="game-card p-5 mb-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#d4a520]">{stats.total}</div>
-                <div className="text-xs text-[var(--foreground)]/40 mt-1">Cards reviewed</div>
+                <div className="text-3xl font-bold text-[#00d9a5]">{stats.total}</div>
+                <div className="text-xs text-[var(--foreground)]/40 mt-1">Words practiced</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#27ae60]">{accuracy}%</div>
-                <div className="text-xs text-[var(--foreground)]/40 mt-1">Accuracy</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#d4a520]">+{xpEarned}</div>
+                <div className="text-3xl font-bold text-[#ffd93d]">+{stats.xpEarned}</div>
                 <div className="text-xs text-[var(--foreground)]/40 mt-1">XP earned</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#8b5cf6]">{userProgress.streak}</div>
-                <div className="text-xs text-[var(--foreground)]/40 mt-1">Day streak</div>
-              </div>
             </div>
           </div>
 
-          {/* Rating breakdown */}
+          {/* Performance breakdown */}
           <div className="game-card p-4 mb-6">
-            <h3 className="text-sm font-bold mb-3">Breakdown</h3>
-            <div className="flex justify-between text-xs">
-              <div className="flex items-center gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-[#c0392b]" />
-                <span className="text-[var(--foreground)]/50">Again: {stats.again}</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-[#e67e22]" />
-                <span className="text-[var(--foreground)]/50">Hard: {stats.hard}</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-[#27ae60]" />
-                <span className="text-[var(--foreground)]/50">Good: {stats.good}</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-[#3b82f6]" />
-                <span className="text-[var(--foreground)]/50">Easy: {stats.easy}</span>
-              </div>
+            <h3 className="text-sm font-bold mb-3">How it went</h3>
+            <div className="space-y-2">
+              {stats.correct > 0 && (
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00d9a5]" />
+                    <span className="text-xs text-[var(--foreground)]/60">Nailed it first try</span>
+                  </div>
+                  <span className="text-sm font-bold text-[#00d9a5]">{stats.correct}</span>
+                </div>
+              )}
+              {stats.struggled > 0 && (
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffd93d]" />
+                    <span className="text-xs text-[var(--foreground)]/60">Got it after a try</span>
+                  </div>
+                  <span className="text-sm font-bold text-[#ffd93d]">{stats.struggled}</span>
+                </div>
+              )}
+              {stats.missed > 0 && (
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff6b9d]" />
+                    <span className="text-xs text-[var(--foreground)]/60">Need more practice</span>
+                  </div>
+                  <span className="text-sm font-bold text-[#ff6b9d]">{stats.missed}</span>
+                </div>
+              )}
             </div>
           </div>
 
-          {/* Action buttons */}
+          {/* Actions */}
           <div className="flex gap-3">
             <button
               onClick={() => router.push('/practice')}
@@ -305,10 +405,14 @@ export default function ReviewPage() {
     );
   }
 
-  // Review state
-  const progress = dueVocabIds.length > 0
-    ? ((currentIndex) / dueVocabIds.length) * 100
+  // ─── Active Review State ───────────────────────────────────
+  if (!currentEncounter) return null;
+
+  const progress = encounters.length > 0
+    ? (currentIndex / encounters.length) * 100
     : 0;
+
+  const encounterMeta = ENCOUNTER_TYPE_LABELS[currentEncounter.type];
 
   return (
     <div className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto flex flex-col">
@@ -321,26 +425,23 @@ export default function ReviewPage() {
           >
             <ArrowLeft className="w-4 h-4" /> Back
           </button>
-          <div className="flex items-center gap-2">
-            <Clock className="w-3.5 h-3.5 text-[#d4a520]" />
-            <span className="text-xs font-bold text-[#d4a520]">{dueCount} due</span>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1.5">
+              <Zap className="w-3.5 h-3.5 text-[#ffd93d]" />
+              <span className="text-xs font-bold text-[#ffd93d]">+{stats.xpEarned} XP</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-[var(--foreground)]/30" />
+              <span className="text-xs text-[var(--foreground)]/30">{currentIndex + 1}/{encounters.length}</span>
+            </div>
           </div>
         </div>
 
-        <div className="flex items-center justify-between mb-2">
-          <h1 className="text-xl font-bold">
-            <span className="gradient-text">Daily Review</span>
-          </h1>
-          <span className="text-xs text-[var(--foreground)]/40">
-            Card {currentIndex + 1} of {dueVocabIds.length}
-          </span>
-        </div>
-
         {/* Progress bar */}
-        <div className="w-full h-2 bg-[var(--foreground)]/10 rounded-full overflow-hidden mb-6">
+        <div className="w-full h-2 bg-[var(--foreground)]/10 rounded-full overflow-hidden mb-5">
           <motion.div
             className="h-full rounded-full"
-            style={{ background: 'linear-gradient(90deg, #d4a520, #27ae60)' }}
+            style={{ background: 'linear-gradient(90deg, #ff6b9d, #00d9a5)' }}
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
@@ -348,212 +449,142 @@ export default function ReviewPage() {
         </div>
       </motion.div>
 
-      {/* Kuttan guidance */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-        className="flex items-center gap-2.5 game-card px-3 py-2 mb-3"
-      >
-        <Kuttan mood="thinking" size="sm" entrance={false} />
-        <p className="text-xs text-[var(--foreground)]/60 leading-snug">Focus on the ones you get wrong — that&apos;s where the real learning happens! 🧠</p>
-      </motion.div>
-
-      {/* Card area */}
-      <div className="flex-1 flex flex-col justify-center">
+      {/* Encounter Card */}
+      <div className="flex-1 flex flex-col">
         <AnimatePresence mode="wait">
-          {currentVocab && (
-            <motion.div
-              key={currentVocab.id}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.25 }}
-            >
-              {/* Flashcard */}
-              <div
-                className="game-card p-6 mb-6 cursor-pointer select-none"
-                onClick={!revealed ? handleReveal : undefined}
+          <motion.div
+            key={`${currentIndex}-${currentEncounter.targetVocab.id}`}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.25 }}
+            className="flex-1 flex flex-col"
+          >
+            {/* Kuttan speech bubble */}
+            <div className="flex items-start gap-2.5 mb-4">
+              <Kuttan mood={kuttanMood} size="sm" entrance={false} />
+              <motion.div
+                key={feedbackText || currentEncounter.kuttanSays}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="game-card px-3 py-2 flex-1"
               >
-                {/* German word — always visible */}
-                <div className="text-center mb-4">
-                  <motion.div
-                    className="text-4xl font-bold mb-2"
-                    initial={{ scale: 0.9 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
-                    {currentVocab.german}
-                  </motion.div>
-                  <div className="text-sm text-[var(--foreground)]/30">
-                    {currentVocab.pronunciation}
-                  </div>
+                <p className="text-xs text-[var(--foreground)]/70 leading-snug">
+                  {showFeedback ? feedbackText : currentEncounter.kuttanSays}
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Encounter type badge */}
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-sm">{encounterMeta.icon}</span>
+              <span className="text-xs font-medium text-[var(--foreground)]/40">{encounterMeta.label}</span>
+            </div>
+
+            {/* Prompt */}
+            <div className="game-card p-5 mb-4">
+              {/* German context (sentence, dialogue, etc.) */}
+              {currentEncounter.contextGerman && (
+                <div className="mb-4">
+                  <p className="text-lg font-semibold leading-relaxed whitespace-pre-line">
+                    {currentEncounter.contextGerman}
+                  </p>
                 </div>
+              )}
 
-                {/* Divider */}
-                <div className="w-12 h-0.5 bg-[var(--foreground)]/10 mx-auto mb-4" />
+              {/* Question */}
+              <p className="text-sm text-[var(--foreground)]/60">
+                {currentEncounter.prompt}
+              </p>
 
-                {/* Reveal area */}
-                <AnimatePresence>
-                  {!revealed ? (
-                    <motion.div
-                      key="prompt"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="text-center py-6"
-                    >
-                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#d4a520]/10 border border-[#d4a520]/20">
-                        <RotateCcw className="w-4 h-4 text-[#d4a520]" />
-                        <span className="text-sm text-[#d4a520] font-medium">Tap to reveal</span>
-                      </div>
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="answer"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="space-y-3"
-                    >
-                      {/* English */}
-                      <div className="text-center">
-                        <div className="text-xl font-bold text-[#d4a520]">
-                          {currentVocab.english}
-                        </div>
-                      </div>
+              {/* Audio button for the word */}
+              <button
+                onClick={() => playVocabAudio(currentEncounter.targetVocab.id).catch(() => {})}
+                className="mt-3 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 hover:bg-[#8b5cf6]/20 transition-colors"
+              >
+                <Volume2 className="w-3.5 h-3.5 text-[#8b5cf6]" />
+                <span className="text-[11px] text-[#8b5cf6] font-medium">Listen</span>
+              </button>
+            </div>
 
-                      {/* Malayalam */}
-                      <div className="text-center">
-                        <span className="text-sm text-[var(--foreground)]/50">
-                          {currentVocab.malayalam}
-                        </span>
-                      </div>
+            {/* Options */}
+            <div className="grid grid-cols-2 gap-2.5 mb-4">
+              {currentEncounter.options.map((option, idx) => {
+                const isSelected = selectedOption === idx;
+                const isCorrectOption = idx === currentEncounter.correctIndex;
+                const showCorrectHighlight = showFeedback && isCorrect && isCorrectOption;
+                const showWrongHighlight = isSelected && showFeedback && !isCorrect;
 
-                      {/* Example */}
-                      {currentVocab.example && (
-                        <div className="game-card p-3 mt-3">
-                          <p className="text-xs text-[var(--foreground)]/60 italic leading-relaxed">
-                            &ldquo;{currentVocab.example}&rdquo;
-                          </p>
-                          {currentVocab.exampleTranslation && (
-                            <p className="text-xs text-[var(--foreground)]/30 mt-1">
-                              {currentVocab.exampleTranslation}
-                            </p>
-                          )}
-                        </div>
-                      )}
+                let borderColor = 'border-[var(--foreground)]/10';
+                let bgColor = 'bg-transparent';
+                let textColor = 'text-[var(--foreground)]';
 
-                      {/* Audio button */}
-                      <div className="flex justify-center pt-2">
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handlePlayAudio();
-                          }}
-                          className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#8b5cf6]/15 border border-[#8b5cf6]/25 hover:bg-[#8b5cf6]/25 transition-colors"
-                        >
-                          <Volume2 className="w-4 h-4 text-[#8b5cf6]" />
-                          <span className="text-xs text-[#8b5cf6] font-medium">Play audio</span>
-                        </button>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.div>
-          )}
+                if (showCorrectHighlight) {
+                  borderColor = 'border-[#00d9a5]';
+                  bgColor = 'bg-[#00d9a5]/15';
+                  textColor = 'text-[#00d9a5]';
+                } else if (showWrongHighlight) {
+                  borderColor = 'border-[#ff6b9d]';
+                  bgColor = 'bg-[#ff6b9d]/15';
+                  textColor = 'text-[#ff6b9d]';
+                }
+
+                return (
+                  <motion.button
+                    key={`${idx}-${option}`}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleOptionSelect(idx)}
+                    disabled={showFeedback && isCorrect}
+                    className={`p-3.5 rounded-xl border-2 ${borderColor} ${bgColor} transition-all duration-200 text-left`}
+                  >
+                    <span className={`text-sm font-medium ${textColor}`}>
+                      {option}
+                    </span>
+                  </motion.button>
+                );
+              })}
+            </div>
+
+            {/* Explanation + Next button (shown after correct answer) */}
+            <AnimatePresence>
+              {showFeedback && isCorrect && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="mt-auto"
+                >
+                  {/* Explanation card */}
+                  <div className="game-card p-4 mb-4 border-l-4 border-[#00d9a5]">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-lg font-bold">{currentEncounter.targetVocab.german}</span>
+                      <span className="text-xs text-[var(--foreground)]/30">[{currentEncounter.targetVocab.pronunciation}]</span>
+                    </div>
+                    <p className="text-xs text-[var(--foreground)]/50 leading-relaxed">
+                      {currentEncounter.targetVocab.english} · {currentEncounter.targetVocab.malayalam}
+                    </p>
+                    {currentEncounter.targetVocab.example && (
+                      <p className="text-xs text-[var(--foreground)]/35 mt-1.5 italic">
+                        &ldquo;{currentEncounter.targetVocab.example}&rdquo; — {currentEncounter.targetVocab.exampleTranslation}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Next button */}
+                  <motion.button
+                    whileTap={{ scale: 0.97 }}
+                    onClick={handleNext}
+                    className="w-full game-button py-3.5 text-sm flex items-center justify-center gap-2"
+                  >
+                    {currentIndex + 1 >= encounters.length ? 'Finish' : 'Next'}
+                    <ChevronRight className="w-4 h-4" />
+                  </motion.button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
         </AnimatePresence>
       </div>
-
-      {/* Rating buttons — only shown when revealed */}
-      <AnimatePresence>
-        {revealed && (
-          <motion.div
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 40, opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="pb-4"
-          >
-            <p className="text-center text-xs text-[var(--foreground)]/30 mb-3">
-              How well did you know this?
-            </p>
-            <div className="grid grid-cols-4 gap-2">
-              <RatingButton
-                label="Again"
-                sublabel="1 min"
-                color="#c0392b"
-                onClick={() => handleRating('again')}
-              />
-              <RatingButton
-                label="Hard"
-                sublabel="< 1d"
-                color="#e67e22"
-                onClick={() => handleRating('hard')}
-              />
-              <RatingButton
-                label="Good"
-                sublabel={getIntervalPreview(userProgress.srsCards[dueVocabIds[currentIndex]], 'good')}
-                color="#27ae60"
-                onClick={() => handleRating('good')}
-              />
-              <RatingButton
-                label="Easy"
-                sublabel={getIntervalPreview(userProgress.srsCards[dueVocabIds[currentIndex]], 'easy')}
-                color="#3b82f6"
-                onClick={() => handleRating('easy')}
-              />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
-}
-
-// Rating button component
-function RatingButton({
-  label,
-  sublabel,
-  color,
-  onClick,
-}: {
-  label: string;
-  sublabel: string;
-  color: string;
-  onClick: () => void;
-}) {
-  return (
-    <motion.button
-      whileTap={{ scale: 0.93 }}
-      onClick={onClick}
-      className="flex flex-col items-center gap-0.5 py-3 px-2 rounded-xl transition-colors"
-      style={{
-        backgroundColor: `${color}15`,
-        border: `2px solid ${color}30`,
-      }}
-    >
-      <span className="text-sm font-bold" style={{ color }}>
-        {label}
-      </span>
-      <span className="text-[10px] opacity-50" style={{ color }}>
-        {sublabel}
-      </span>
-    </motion.button>
-  );
-}
-
-// Preview the next interval for a given rating
-function getIntervalPreview(card: SRSCard | undefined, rating: Rating): string {
-  if (!card) return '1d';
-
-  const preview = reviewCard(card, rating);
-  const days = preview.interval;
-
-  if (days === 0) return '1 min';
-  if (days === 1) return '1d';
-  if (days < 30) return `${days}d`;
-  if (days < 365) return `${Math.round(days / 30)}mo`;
-  return `${(days / 365).toFixed(1)}y`;
 }

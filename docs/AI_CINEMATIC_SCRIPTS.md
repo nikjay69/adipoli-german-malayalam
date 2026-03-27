@@ -75,7 +75,7 @@ Ceiling fan, distant rain, crickets outside. No music until final card — then 
 60 seconds
 
 ### Transition
-Fade → "Willkommen bei Adipoli German!" → Module 1 begins
+Fade → [VISUAL: Kuttan's phone screen zooms in to fill camera] → Module 1 begins
 
 ---
 
@@ -115,7 +115,7 @@ Kerala street ambience — autorickshaw, birdsong, tea stall sounds. Playful mus
 45 seconds
 
 ### Transition
-Fade → Module 2 lesson begins
+Fade → [VISUAL: The "Guten Morgen" text overlay becomes the module header] → Module 2 lesson begins
 
 ---
 
@@ -136,12 +136,12 @@ Cinematic. A young Malayali man (24, dark hair, casual collared shirt, backpack)
 ```
 [0:00] — "Kochi. Three weeks in."
 [0:12] — (stops at poster)
-[0:18] — "Goethe Institut."
-[0:24] — "A1 Prüfung."
-[0:30] — (tourist nearby)
-[0:36] — "He catches one word."
-[0:42] — (writes in notebook: "Entschuldigung")
-[0:48] — "Chapter 3: Numbers, Time & Dates"
+[0:18] — "Goethe Institut. A1 Prüfung."
+[0:24] — (tourist nearby: "Entschuldigung... where is...?")
+[0:30] — (Kuttan knows the answer, but his mouth stays shut. He has no words yet.)
+[0:38] — (opens notebook, writes: "Entschuldigung")
+[0:44] — "Next time, I'll speak."
+[0:52] — "Chapter 3: Numbers, Time & Dates"
 ```
 
 ### Kuttan's German this video
@@ -154,7 +154,7 @@ City ambience — metro announcement, traffic, Malayalam chatter. Music builds s
 45 seconds
 
 ### Transition
-Fade → Module 3 lesson begins
+Fade → [VISUAL: Kuttan's notebook page fills the screen] → Module 3 lesson begins
 
 ---
 
@@ -526,12 +526,12 @@ Cinematic. A young Malayali man (24, dark hair, neat formal shirt, backpack) at 
 
 ### Text Overlays
 ```
-[0:00] — "Goethe Institut Kochi."
-[0:10] — "Registration day."
+[0:00] — "Goethe Institut Kochi. Registration day."
+[0:10] — (mind: "Don't say 'register cheyyanam'... say it in German.")
 [0:22] — (receptionist speaks German)
-[0:28] — "Ja, mein Name ist Kuttan. Ich möchte die A1-Prüfung anmelden."
-[0:40] — (slides form across)
-[0:48] — (walks out into sunlight)
+[0:28] — "Ja, Kuttan. Ich möchte... mich für die A1-Prüfung anmelden."
+[0:40] — (receptionist smiles: "Sehr gut!")
+[0:48] — (walks out into sunlight — exhale)
 [0:56] — "Two weeks to go."
 [1:02] — "Chapters 13 & 14: Past Tense & Official Forms"
 ```

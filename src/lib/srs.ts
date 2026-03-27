@@ -8,6 +8,8 @@ export interface SRSCard {
   easeFactor: number;    // 1.3 to 2.5 (starts at 2.5)
   repetitions: number;   // successful reviews in a row
   lastReview: number;    // timestamp of last review
+  /** Last encounter format used, so next review picks a different one */
+  lastEncounterType?: string;
 }
 
 export type Rating = 'again' | 'hard' | 'good' | 'easy';

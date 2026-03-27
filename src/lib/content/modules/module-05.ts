@@ -145,6 +145,23 @@ export const MODULE_5: Module = {
           correctAnswer: ["Er", "kocht", "gut"],
           explanation: "In German: Subject + Verb + Rest → Er kocht gut. (He cooks well.)",
           xpReward: 15
+        },
+        {
+          id: "ex5-1-8",
+          type: "dictation",
+          question: "Listen and type: Ich lerne Deutsch.",
+          correctAnswer: "Ich lerne Deutsch",
+          explanation: "Wunderbar! You are doing exactly that right now. Remember to capitalize 'Deutsch' as it is a noun!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-learn-german.mp3"
+        },
+        {
+          id: "ex5-1-9",
+          type: "free-text",
+          question: "Translate to German: 'He is cooking at home.'",
+          correctAnswer: "Er kocht zu Hause",
+          explanation: "Great! 'zu Hause' means 'at home'. Remember the verb position (2nd).",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -366,6 +383,23 @@ export const MODULE_5: Module = {
           options: ["duschen", "Zähne putzen", "sich anziehen", "frühstücken"],
           correctAnswer: ["to shower", "to brush teeth", "to get dressed", "to have breakfast"],
           xpReward: 15
+        },
+        {
+          id: "ex5-2-7",
+          type: "dictation",
+          question: "Listen and type: Ich stehe um 7 Uhr auf.",
+          correctAnswer: "Ich stehe um 7 Uhr auf",
+          explanation: "Perfect! Did you hear how the prefix 'auf' comes at the very end? That's the separable verb rule!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-wakeup-7.mp3"
+        },
+        {
+          id: "ex5-2-8",
+          type: "free-text",
+          question: "Translate to German: 'I am brushing my teeth.'",
+          correctAnswer: "Ich putze mir die Zähne",
+          explanation: "Correct! Note the reflexive 'mir' and the capitalization of 'Zähne'.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -584,6 +618,23 @@ export const MODULE_5: Module = {
           explanation:
             "In yes/no questions, the conjugated verb goes FIRST, but the prefix still goes to the END: 'Kommst du morgen MIT?' The prefix is loyal to the end position!",
           xpReward: 15
+        },
+        {
+          id: "ex5-3-8",
+          type: "dictation",
+          question: "Listen and type: Ich kaufe im Supermarkt ein.",
+          correctAnswer: "Ich kaufe im Supermarkt ein",
+          explanation: "Super! 'einkaufen' is a team. 'Ich kaufe... ein.' The prefix 'ein' marks the end of the action.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-shopping.mp3"
+        },
+        {
+          id: "ex5-3-9",
+          type: "free-text",
+          question: "Write in German: 'The film starts at 8 o'clock.' (Start = anfangen)",
+          correctAnswer: "Der Film fängt um 8 Uhr an",
+          explanation: "Excellent! 'anfangen' splits → 'fängt... an'. And remember the umlaut in 'fängt'!",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -786,6 +837,23 @@ export const MODULE_5: Module = {
           options: ["morgens", "mittags", "nachmittags", "abends"],
           correctAnswer: ["in the morning", "at noon", "in the afternoon", "in the evening"],
           xpReward: 15
+        },
+        {
+          id: "ex5-4-7",
+          type: "dictation",
+          question: "Listen and type: Um 12 Uhr esse ich zu Mittag.",
+          correctAnswer: "Um 12 Uhr esse ich zu Mittag",
+          explanation: "Great job! Note the inversion: when 'Um 12 Uhr' starts the sentence, the verb 'esse' comes second, then the subject 'ich'.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-lunch.mp3"
+        },
+        {
+          id: "ex5-4-8",
+          type: "free-text",
+          question: "Translate to German: 'In the evening I watch TV.' (In the evening = Abends, watch TV = fernsehen)",
+          correctAnswer: "Abends sehe ich fern",
+          explanation: "Wunderbar! 'fernsehen' splits into 'sehe... fern'.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -1010,6 +1078,23 @@ export const MODULE_5: Module = {
           correctAnswer: "Ich trinke immer morgens Tee",
           explanation: "'Immer' (always) typically comes right after the conjugated verb. 'Ich trinke immer morgens Tee.' — a great daily routine sentence!",
           xpReward: 15
+        },
+        {
+          id: "ex5-5-9",
+          type: "dictation",
+          question: "Listen and type: Am Montag arbeite ich.",
+          correctAnswer: "Am Montag arbeite ich",
+          explanation: "Perfect! On Monday = Am Montag. And don't forget the verb-second rule!",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-monday-work.mp3"
+        },
+        {
+          id: "ex5-5-10",
+          type: "free-text",
+          question: "Write in German: 'On the weekend I sleep long.' (On the weekend = Am Wochenende, sleep = schlafen)",
+          correctAnswer: "Am Wochenende schlafe ich lange",
+          explanation: "Super! 'Am Wochenende schlafe ich lange.' — A very useful sentence for your routine!",
+          xpReward: 30
         }
       ],
       vocabulary: [

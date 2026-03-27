@@ -82,7 +82,7 @@ export const MODULE_15: Module = {
           question: "You're invited to dinner at a German friend's house at 19:00. When should you arrive?",
           options: ["At exactly 19:00", "Around 19:30 (fashionably late)", "At 18:30 (early to help)", "Anytime between 19:00 and 20:00"],
           correctAnswer: "At exactly 19:00",
-          explanation: "Pünktlichkeit! In Germany, if the invitation says 19:00, you arrive at 19:00. Being late is rude, and arriving too early can also be awkward.",
+          explanation: "In Germany, time is not a suggestion—it's a contract. Arriving at 19:05 is 'late', and 18:55 is 'early'. Aim for the exact minute to show respect for your host's planning!",
           xpReward: 10
         },
         {
@@ -91,6 +91,7 @@ export const MODULE_15: Module = {
           question: "Match the trash type to the correct bin:",
           options: ["Banana peel", "Old newspaper", "Broken glass", "Plastic wrapper"],
           correctAnswer: ["Biomüll", "Papier", "Glas", "Gelber Sack / Plastik"],
+          explanation: "Mülltrennung (Trash-sorting) is a German national hobby. Bio = natural/food. Papier = clean paper. Glas = jars/bottles. Yellow = plastic/packaging. Get it wrong, and your neighbors might leave you a polite 'note'!",
           xpReward: 15
         },
         {
@@ -99,7 +100,7 @@ export const MODULE_15: Module = {
           question: "What is 'Ruhezeit' in Germany?",
           options: ["Quiet hours (22:00-06:00 and Sundays)", "Lunch break at work", "School holidays", "A type of German bread"],
           correctAnswer: "Quiet hours (22:00-06:00 and Sundays)",
-          explanation: "Ruhezeit means quiet hours. From 22:00 to 06:00 and on Sundays, loud noise (drilling, loud music, lawn mowing) is not allowed.",
+          explanation: "Ruhe (Quiet) + Zeit (Time). From 10 PM to 6 AM, and ALL DAY Sunday, noise is restricted. No drilling, no loud music, no vacuuming. It's the law of the land!",
           xpReward: 10
         },
         {
@@ -108,7 +109,7 @@ export const MODULE_15: Module = {
           question: "Complete: Die _____ ist in Deutschland sehr wichtig. (Punctuality is very important in Germany.)",
           options: ["Pünktlichkeit", "Freundlichkeit", "Gemütlichkeit", "Sauberkeit"],
           correctAnswer: "Pünktlichkeit",
-          explanation: "Pünktlichkeit (punctuality) is considered one of the most important values in German culture.",
+          explanation: "Pünkt-lich-keit. It comes from 'Punkt' (point/dot). Be 'on the point'. It's the foundation of trust in German society.",
           xpReward: 10
         },
         {
@@ -117,8 +118,25 @@ export const MODULE_15: Module = {
           question: "What happens on Sundays in Germany?",
           options: ["Most shops are closed", "Everything is open as usual", "Only restaurants close", "People work overtime"],
           correctAnswer: "Most shops are closed",
-          explanation: "Sonntagsruhe! In Germany, most shops are closed on Sundays. This is very different from Kerala where shops are open every day.",
+          explanation: "Sonntagsruhe! Sunday is for family, church, or walking in the woods. Shops are CLOSED (except at main train stations). If you run out of milk on Sunday, you'll have to wait until Monday!",
           xpReward: 10
+        },
+        {
+          id: "ex15-1-6",
+          type: "dictation",
+          question: "Listen and type: Pünktlichkeit ist sehr wichtig.",
+          correctAnswer: "Pünktlichkeit ist sehr wichtig",
+          explanation: "Perfect! This is the #1 rule for a successful life in Germany.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-punctuality-important.mp3"
+        },
+        {
+          id: "ex15-1-7",
+          type: "free-text",
+          question: "Translate to German: 'Sunday is a quiet day.' (quiet = ruhig, day = Tag)",
+          correctAnswer: "Sonntag ist ein ruhiger Tag",
+          explanation: "Wunderbar! 'Sonntagsruhe' is a real thing. No loud noises allowed!",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -212,16 +230,16 @@ export const MODULE_15: Module = {
           duration: "10:00",
           description: "Discover the major festivals celebrated across Germany",
           scriptOutline: [
-            "Opening: 'Kerala has Onam, Vishu, Christmas. Germany has its own amazing festivals!'",
-            "Oktoberfest — world's biggest folk festival in Munich (September-October)",
-            "Fun fact: Oktoberfest is actually mostly in September!",
-            "Karneval / Fasching — German carnival season (before Lent)",
-            "Costumes, parades, and 'Helau!' or 'Alaaf!' depending on the region",
-            "Weihnachten (Christmas) — the BIG one in Germany",
-            "Weihnachtsmarkt — magical Christmas markets with Glühwein and Lebkuchen",
-            "Adventskranz — the Advent wreath, lighting candles each Sunday before Christmas",
-            "Kerala parallel: Onam vs Oktoberfest — BOTH are harvest festivals! Pookalam vs Lederhosen!",
-            "Kerala parallel: Christmas in Kerala vs Christmas in Germany — both celebrate big, different style!"
+            "Opening: 'Kerala has Onam, Vishu, Christmas. Germany has its own amazing festivals, often with deep historical roots!'",
+            "Oktoberfest — world's biggest folk festival in Munich (September-October). Think beer, traditional clothes, and massive tents!",
+            "Fun fact: Oktoberfest is actually mostly in September! It's a harvest festival, celebrating the end of the agricultural year.",
+            "Karneval / Fasching — German carnival season (before Lent). A time for wild parties, costumes, and parades, especially in the Rhineland.",
+            "Costumes, parades, and 'Helau!' or 'Alaaf!' depending on the region. It's a chance to let loose before the solemnity of Lent.",
+            "Weihnachten (Christmas) — the BIG one in Germany. It's a magical time focused on family, reflection, and tradition.",
+            "Weihnachtsmarkt — magical Christmas markets with Glühwein (mulled wine) and Lebkuchen (gingerbread). A must-experience sensory delight!",
+            "Adventskranz — the Advent wreath, lighting candles each Sunday before Christmas. A beautiful tradition marking the countdown to Christmas.",
+            "Kerala parallel: Onam vs Oktoberfest — BOTH are harvest festivals! Imagine the vibrant colors of Pookalam meeting the rustic charm of Lederhosen!",
+            "Kerala parallel: Christmas in Kerala vs Christmas in Germany — both celebrate big, but with different styles and traditions. From fireworks to quiet family gatherings."
           ],
           keyVocabulary: ["Oktoberfest", "Weihnachten", "der Karneval", "der Weihnachtsmarkt"],
           learningObjectives: [
@@ -238,16 +256,16 @@ export const MODULE_15: Module = {
           duration: "10:00",
           description: "Learn about German public holidays and how they vary by state",
           scriptOutline: [
-            "Opening: 'Germany has public holidays — but here's the twist: each state has different ones!'",
-            "National holidays everyone gets: Tag der Deutschen Einheit (Oct 3), Neujahr (Jan 1)",
-            "Ostern (Easter) — Good Friday and Easter Monday are holidays",
-            "Christi Himmelfahrt — also Vatertag (Father's Day), men go on hikes with beer wagons!",
-            "Silvester (New Year's Eve) — fireworks EVERYWHERE at midnight",
-            "Regional holidays: Heilige Drei Könige (Jan 6) only in some states",
-            "Bayern (Bavaria) has the MOST holidays — lucky them!",
-            "Brückentag — 'bridge day' between holiday and weekend, everyone takes off",
-            "Kerala parallel: We have Onam, Vishu, and SO many state holidays too!",
-            "Pro tip: Check your Bundesland's holidays when planning trips"
+            "Opening: 'Germany has public holidays — but here's the twist: each state has different ones! It's a federal system, even for holidays.'",
+            "National holidays everyone gets: Tag der Deutschen Einheit (October 3rd, German Unity Day), Neujahr (January 1st, New Year's Day).",
+            "Ostern (Easter) — Good Friday and Easter Monday are holidays. A time for spring, family, and chocolate eggs.",
+            "Christi Himmelfahrt — also Vatertag (Father's Day), where men often go on hikes with beer wagons! A unique German tradition.",
+            "Silvester (New Year's Eve) — fireworks EVERYWHERE at midnight. Germans love their fireworks!",
+            "Regional holidays: Heilige Drei Könige (January 6th, Epiphany) only in some states like Bavaria. Always check your Bundesland!",
+            "Bayern (Bavaria) has the MOST holidays — lucky them! It's often due to strong Catholic traditions.",
+            "Brückentag — 'bridge day' between a holiday and a weekend. Everyone takes off to create a long weekend. A smart way to maximize leisure time!",
+            "Kerala parallel: We have Onam, Vishu, and SO many state holidays too! The concept of regional holidays is familiar.",
+            "Pro tip: Check your Bundesland's holidays when planning trips or expecting closures. Don't get caught out!"
           ],
           keyVocabulary: ["der Feiertag", "Ostern", "Silvester", "Neujahr"],
           learningObjectives: [
@@ -266,7 +284,7 @@ export const MODULE_15: Module = {
           question: "What is the German word for Christmas?",
           options: ["Weihnachten", "Silvester", "Ostern", "Karneval"],
           correctAnswer: "Weihnachten",
-          explanation: "Weihnachten is Christmas in German. It comes from 'geweihte Nächte' (holy nights).",
+          explanation: "Weih-nachten (Holy Nights). In Germany, the celebration peaks on the evening of Dec 24th (Heiligabend), unlike the morning focus in many other cultures.",
           xpReward: 10
         },
         {
@@ -275,6 +293,7 @@ export const MODULE_15: Module = {
           question: "Match the German festival to its description:",
           options: ["Oktoberfest", "Karneval", "Silvester", "Ostern"],
           correctAnswer: ["Folk festival with beer in Munich", "Costume parades before Lent", "New Year's Eve fireworks", "Easter celebrations in spring"],
+          explanation: "Germans work hard, but they celebrate HARD too. Every season has its major 'Event'!",
           xpReward: 15
         },
         {
@@ -283,7 +302,7 @@ export const MODULE_15: Module = {
           question: "Which Kerala festival is most similar to Oktoberfest?",
           options: ["Onam (both are harvest festivals)", "Vishu", "Thrissur Pooram", "Christmas"],
           correctAnswer: "Onam (both are harvest festivals)",
-          explanation: "Both Onam and Oktoberfest have roots as harvest celebrations, even though they look very different today!",
+          explanation: "Octoberfest is basically 'Bavarian Onam'—a celebration of the harvest, full of traditional clothes (Lederhosen/Sari), music, and community spirit!",
           xpReward: 10
         },
         {
@@ -292,7 +311,7 @@ export const MODULE_15: Module = {
           question: "Complete: Der _____ ist ein heißes Getränk auf dem Weihnachtsmarkt. (_____ is a hot drink at the Christmas market.)",
           options: ["Glühwein", "Kaffee", "Apfelsaft", "Bier"],
           correctAnswer: "Glühwein",
-          explanation: "Glühwein (mulled wine) is the iconic hot drink at German Christmas markets.",
+          explanation: "Glüh-wein (Mulled wine). It's hot, spiced wine that keeps you warm while you browse the stalls in -5°C weather. A true sensory experience of German winter!",
           xpReward: 10
         },
         {
@@ -301,8 +320,25 @@ export const MODULE_15: Module = {
           question: "What is a 'Brückentag'?",
           options: ["A day off between a holiday and the weekend", "A special bridge in Germany", "A type of bread", "A festival in June"],
           correctAnswer: "A day off between a holiday and the weekend",
-          explanation: "Brückentag (bridge day) is when a holiday falls on a Thursday or Tuesday, and people take the Friday or Monday off to create a long weekend.",
+          explanation: "Brücke (Bridge) + Tag (Day). If Thursday is a holiday, Friday is the 'Bridge' to the weekend. Smart Germans book this day off months in advance!",
           xpReward: 10
+        },
+        {
+          id: "ex15-2-6",
+          type: "dictation",
+          question: "Listen and type: Wir feiern Weihnachten.",
+          correctAnswer: "Wir feiern Weihnachten",
+          explanation: "Great! 'feiern' means to celebrate. Christmas is the biggest festival in Germany.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-celebrate-christmas.mp3"
+        },
+        {
+          id: "ex15-2-7",
+          type: "free-text",
+          question: "Write in German: 'Oktoberfest is in Munich.' (Munich = München)",
+          correctAnswer: "Oktoberfest ist in München",
+          explanation: "Wunderbar! Munich is the home of the world-famous Oktoberfest.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -396,20 +432,18 @@ export const MODULE_15: Module = {
           duration: "12:00",
           description: "A fun comparison of everyday cultural differences between Kerala and Germany",
           scriptOutline: [
-            "Opening: 'Okay, let's talk about what will SHOCK you in Germany!'",
-            "FOOD: Brot (bread) for breakfast — not idli-dosa! Germans eat bread for breakfast AND dinner",
-            "Abendbrot (evening bread) — cold dinner is totally normal. No hot rice and curry!",
-            "Socializing: Germans need personal space. Don't stand too close!",
-            "Invitations: You NEED an invite to visit. Don't just 'drop by' like in Kerala!",
-            "'In Kerala, everyone is family. In Germany, even family needs an appointment!'",
-            "SHOES OFF indoors — same as Kerala actually! One thing in common!",
-            "Directness: If a German says 'That's not good,' they mean exactly that. Not rude, just direct.",
-            "Small talk: Germans don't do as much chit-chat as Malayalis",
-            "Privacy: Don't ask salary, age, or personal questions to people you just met",
-            "die Gastfreundschaft — German hospitality exists but it's different. They won't force-feed you like ammachi!",
-            "Weather obsession: Germans LOVE talking about das Wetter",
-            "The good: Respect for rules, efficient systems, work-life balance",
-            "Closing: 'Different isn't bad — just different! Adapt and enjoy both cultures!'"
+            "Opening: 'Okay, let's talk about what will SHOCK you in Germany! Kerala life-um German life-um thammilulla main diffs!'",
+            "THE BREAD TRAGEDY: Abendbrot (evening bread). Germans eat cold bread for dinner! No hot kanji or fish curry, machaa!",
+            "FOOD: Brot for breakfast — IDLI-DOSA-nu full rest aanu. You'll miss your morning sambar!",
+            "Socializing: Germans need PERSONAL SPACE. Imagine a 1.5-meter bubble. Don't stand too close in queues!",
+            "Invitations: You MUST have a plan. In Kerala, we just drop by. In Germany, even parents might call a week before visiting!",
+            "'In Kerala, the whole colony is family. In Germany, even your neighbor needs an appointment for a chat!'",
+            "THE COMMON GROUND: Shoes OFF indoors. Same as our homes. At least something is easy!",
+            "THE DIRECTNESS: If they say 'Das ist nicht gut,' it's not an insult. They just don't sugarcoat like we do.",
+            "Small talk: Minimal. No 'Ninte veedu evideya?' to strangers on the train. Privacy is sacred.",
+            "die Gastfreundschaft: Hospitality exists, but nobody will force-feed you. If you say 'No thanks', they actually believe you!",
+            "Weather obsession: The national topic. 'Es ist kalt, oder?' is the German version of 'Enthella vishesham?'",
+            "The good stuff: Life is organized, rules are for everyone, and your boss won't call you after 5 PM (Feierabend!)"
           ],
           keyVocabulary: ["die Gastfreundschaft", "das Abendbrot", "die Einladung", "die Direktheit"],
           learningObjectives: [
@@ -428,7 +462,7 @@ export const MODULE_15: Module = {
           question: "What is 'Abendbrot' in Germany?",
           options: ["A cold dinner, usually with bread", "A type of evening prayer", "A special cake eaten at night", "The evening news program"],
           correctAnswer: "A cold dinner, usually with bread",
-          explanation: "Abendbrot literally means 'evening bread.' Many Germans eat a cold dinner with bread, cheese, and cold cuts — quite different from our hot Kerala dinner!",
+          explanation: "Abend (Evening) + Brot (Bread). It’s the ritual of eating bread, cheese, and meats for dinner. For Malayalis used to hot rice, this is often the biggest culture shock!",
           xpReward: 10
         },
         {
@@ -437,7 +471,7 @@ export const MODULE_15: Module = {
           question: "What should you do before visiting a German friend's home?",
           options: ["Get an invitation or call ahead", "Just drop by anytime", "Bring your whole family unannounced", "Wait outside until they notice you"],
           correctAnswer: "Get an invitation or call ahead",
-          explanation: "Unlike in Kerala where dropping by is common, Germans expect you to plan visits in advance. Always call or get an invitation first!",
+          explanation: "Spontaneous visits are rare in Germany. 'Terminkultur' extends to friendship! Always ask 'Hast du Zeit?' before heading over.",
           xpReward: 10
         },
         {
@@ -446,7 +480,7 @@ export const MODULE_15: Module = {
           question: "Complete: Deutsche _____ ist anders als in Kerala — sie bieten Essen an, aber zwingen nicht! (German _____ is different from Kerala.)",
           options: ["Gastfreundschaft", "Freundschaft", "Partnerschaft", "Nachbarschaft"],
           correctAnswer: "Gastfreundschaft",
-          explanation: "Gastfreundschaft (hospitality) exists in Germany, but it's less insistent than Kerala-style hospitality where guests are practically force-fed!",
+          explanation: "Gast-freund-schaft (Guest-friend-ship). In Germany, the guest's 'No' is respected immediately. In Kerala, you often have to say 'No' three times before people believe you!",
           xpReward: 10
         },
         {
@@ -455,6 +489,7 @@ export const MODULE_15: Module = {
           question: "Match the cultural behavior to the correct country:",
           options: ["Cold dinner with bread is normal", "Dropping by friends' houses unannounced", "Very direct communication", "Flexible with time"],
           correctAnswer: ["Germany", "Kerala", "Germany", "Kerala"],
+          explanation: "Understanding these differences helps you avoid 'Culture Shock' and helps you integrate faster.",
           xpReward: 15
         },
         {
@@ -463,8 +498,33 @@ export const MODULE_15: Module = {
           question: "Which cultural habit is actually SIMILAR in both Kerala and Germany?",
           options: ["Taking shoes off indoors", "Eating bread for breakfast", "Being very punctual", "Cold dinner"],
           correctAnswer: "Taking shoes off indoors",
-          explanation: "Both in Kerala and Germany, people take their shoes off when entering a home! That's one thing you won't need to adjust to.",
+          explanation: "Surprise! Both cultures value clean floors. Taking your shoes off at the door is standard practice in both Kochi and Köln.",
           xpReward: 10
+        },
+        {
+          id: "ex15-3-6",
+          type: "dictation",
+          question: "Listen and type: Ich esse gern Biryani.",
+          correctAnswer: "Ich esse gern Biryani",
+          explanation: "Perfect! You can always talk about your favorite food from home.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-like-biryani.mp3"
+        },
+        {
+          id: "ex15-3-7",
+          type: "free-text",
+          question: "Translate to German: 'German hospitality is warm.' (hospitality = Gastfreundschaft, warm = herzlich)",
+          correctAnswer: "Deutsche Gastfreundschaft ist herzlich",
+          explanation: "Excellent! 'herzlich' (from the heart) is a great word for warm hospitality.",
+          xpReward: 30
+        },
+        {
+          id: "ex15-3-8",
+          type: "free-text",
+          question: "Write in German: 'I like bread.' (bread = Brot)",
+          correctAnswer: "Ich mag Brot",
+          explanation: "Wunderbar! Since bread is a staple in Germany, this is a useful sentence.",
+          xpReward: 30
         }
       ],
       vocabulary: [
@@ -572,7 +632,7 @@ export const MODULE_15: Module = {
           question: "What does 'Kein Bock' mean in colloquial German?",
           options: ["I don't feel like it", "No goat", "No book", "No money"],
           correctAnswer: "I don't feel like it",
-          explanation: "Kein Bock is informal slang meaning 'I don't feel like it' or 'I can't be bothered.' Don't use it in formal situations!",
+          explanation: "Literally 'No ram/male-goat'. In slang, it means 'I zero-percent want to do this'. It’s the German version of 'Oru mood-um illa'!",
           xpReward: 10
         },
         {
@@ -581,6 +641,7 @@ export const MODULE_15: Module = {
           question: "Match the slang to its meaning:",
           options: ["Krass!", "Na?", "Alter!", "Keine Ahnung"],
           correctAnswer: ["Crazy / Wow!", "Hey, what's up?", "Dude!", "No idea"],
+          explanation: "Slang makes you sound alive. 'Alter' is used exactly like 'Machane' or 'Aliya' in Malayalam.",
           xpReward: 15
         },
         {
@@ -589,7 +650,7 @@ export const MODULE_15: Module = {
           question: "What does 'LG' stand for in a German text message?",
           options: ["Liebe Grüße (kind regards)", "Lustige Geschichte (funny story)", "Letzte Grenze (last border)", "Langsames Gehen (slow walking)"],
           correctAnswer: "Liebe Grüße (kind regards)",
-          explanation: "LG = Liebe Grüße (kind regards/love). It's the most common sign-off in informal German texts and messages.",
+          explanation: "The standard WhatsApp sign-off. If you're being slightly formal, you use 'VG' (Viele Grüße).",
           xpReward: 10
         },
         {
@@ -598,7 +659,7 @@ export const MODULE_15: Module = {
           question: "Complete: Kannst du mir _____ sagen? (Can you let me know?)",
           options: ["Bescheid", "Kein Bock", "Krass", "Geil"],
           correctAnswer: "Bescheid",
-          explanation: "'Bescheid sagen' means 'to let someone know.' It's an extremely common phrase in everyday German.",
+          explanation: "'Bescheid sagen' is a massive part of German life. It means 'to inform' or 'give a heads-up'. It helps everyone stay 'pünktlich'!",
           xpReward: 10
         },
         {
@@ -607,7 +668,7 @@ export const MODULE_15: Module = {
           question: "In which situation should you NOT use slang like 'geil' or 'Alter'?",
           options: ["In a job interview", "Chatting with friends", "Texting your buddy", "At a party with peers"],
           correctAnswer: "In a job interview",
-          explanation: "Slang is for informal situations only! Never use words like 'geil' or 'Alter' in job interviews, with professors, or in formal emails.",
+          explanation: "Formal situations demand 'Sie' and proper grammar. Slang is your 'off-duty' language for friends and family.",
           xpReward: 10
         },
         {
@@ -617,6 +678,31 @@ export const MODULE_15: Module = {
           options: ["MfG", "vllt", "LG"],
           correctAnswer: ["Mit freundlichen Grüßen", "vielleicht", "Liebe Grüße"],
           xpReward: 15
+        },
+        {
+          id: "ex15-4-7",
+          type: "dictation",
+          question: "Listen and type: Keine Ahnung!",
+          correctAnswer: "Keine Ahnung",
+          explanation: "Great! This is the most common way to say 'No idea' in everyday German.",
+          xpReward: 25,
+          audioUrl: "/audio/exercises/dictation-no-idea.mp3"
+        },
+        {
+          id: "ex15-4-8",
+          type: "free-text",
+          question: "Write 'Dude!' in German slang.",
+          correctAnswer: "Alter",
+          explanation: "Wunderbar! 'Alter' is the German equivalent of 'Machane' or 'Aliya'.",
+          xpReward: 30
+        },
+        {
+          id: "ex15-4-9",
+          type: "free-text",
+          question: "Translate to German: 'That is awesome!' (use geil)",
+          correctAnswer: "Das ist geil",
+          explanation: "Excellent! 'geil' is very common slang for awesome.",
+          xpReward: 30
         }
       ],
       vocabulary: [
