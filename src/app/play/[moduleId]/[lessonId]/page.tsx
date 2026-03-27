@@ -158,8 +158,8 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   // Auto-play vocab audio when a new vocab card appears
   // Try MP3 first, fall back to TTS. Duck ambience during playback.
   useEffect(() => {
-    if (mounted && lesson && step.type === 'vocab' && lesson.vocabulary[step.index]) {
-      const vocab = lesson.vocabulary[step.index];
+    if (mounted && lesson && (step.type === 'vocab' || step.type === 'contextual-vocab') && shownVocab[step.index]) {
+      const vocab = shownVocab[step.index];
       duckAmbience(2000);
       playVocabAudio(vocab.id).catch(() => {
         // MP3 not available — use browser TTS as fallback
@@ -258,22 +258,27 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     : [];
   const allExercises = [...autoTypingExercises, ...lesson.exercises];
 
+  // Limit vocab cards shown to max 4 — rest are learned through exercises
+  const MAX_VOCAB_CARDS = 4;
+  const shownVocab = lesson.vocabulary.slice(0, MAX_VOCAB_CARDS);
+
   const suggestedGameForModule = MODULE_GAME_MAP[module?.id ?? 0] ?? null;
-  const hasGameSuggest = suggestedGameForModule && lesson.vocabulary.length > 0;
+  const hasGameSuggest = suggestedGameForModule && shownVocab.length > 0;
   const hasStory = !!lesson.storyScene;
   const storyDecisionCount = lesson.storyScene?.decisionPoints?.length ?? 0;
 
-  // Step counting — adapts for story mode vs regular mode
+  // Step counting — uses shownVocab (capped at 4) not full vocabulary
+  const vocabStepCount = shownVocab.length;
   const totalSteps = hasStory
-    ? 1 + lesson.videos.length + lesson.vocabulary.length + storyDecisionCount + (hasGameSuggest ? 1 : 0) + allExercises.length + 2
-    : 1 + lesson.videos.length + lesson.vocabulary.length + (hasGameSuggest ? 1 : 0) + allExercises.length + 1;
+    ? 1 + lesson.videos.length + vocabStepCount + storyDecisionCount + (hasGameSuggest ? 1 : 0) + allExercises.length + 2
+    : 1 + lesson.videos.length + vocabStepCount + (hasGameSuggest ? 1 : 0) + allExercises.length + 1;
   const currentStepNumber =
     step.type === 'intro' || step.type === 'scene-intro' ? 1 :
     step.type === 'video' ? 2 + step.index :
     step.type === 'vocab' || step.type === 'contextual-vocab' ? 2 + lesson.videos.length + step.index :
-    step.type === 'decision-point' ? 2 + lesson.videos.length + lesson.vocabulary.length + step.index :
-    step.type === 'game-suggest' ? 2 + lesson.videos.length + lesson.vocabulary.length + storyDecisionCount :
-    step.type === 'exercise' ? 2 + lesson.videos.length + lesson.vocabulary.length + storyDecisionCount + (hasGameSuggest ? 1 : 0) + step.index :
+    step.type === 'decision-point' ? 2 + lesson.videos.length + vocabStepCount + step.index :
+    step.type === 'game-suggest' ? 2 + lesson.videos.length + vocabStepCount + storyDecisionCount :
+    step.type === 'exercise' ? 2 + lesson.videos.length + vocabStepCount + storyDecisionCount + (hasGameSuggest ? 1 : 0) + step.index :
     step.type === 'scene-conclusion' ? totalSteps - 1 :
     totalSteps;
   const progress = (currentStepNumber / totalSteps) * 100;
@@ -303,11 +308,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     } else if (step.type === 'exercise' && step.index === 0) {
       // Go back to last vocab or game-suggest
       if (hasGameSuggest) setStep({ type: 'game-suggest' });
-      else if (lesson.vocabulary.length > 0) setStep({ type: 'vocab', index: lesson.vocabulary.length - 1 });
+      else if (shownVocab.length > 0) setStep({ type: 'vocab', index: shownVocab.length - 1 });
       else if (lesson.videos.length > 0) setStep({ type: 'video', index: lesson.videos.length - 1 });
       else setStep({ type: 'intro' });
     } else if (step.type === 'game-suggest') {
-      if (lesson.vocabulary.length > 0) setStep({ type: 'vocab', index: lesson.vocabulary.length - 1 });
+      if (shownVocab.length > 0) setStep({ type: 'vocab', index: shownVocab.length - 1 });
       else if (lesson.videos.length > 0) setStep({ type: 'video', index: lesson.videos.length - 1 });
       else setStep({ type: 'intro' });
     } else if (step.type === 'vocab' && step.index > 0) {
@@ -327,10 +332,10 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const canGoPrev = step.type !== 'intro' && step.type !== 'complete';
 
   const advanceFromVocab = () => {
-    learnVocabulary(lesson.vocabulary[(step as { type: 'vocab'; index: number }).index].id);
-    addSRSCard(createCard(lesson.vocabulary[(step as { type: 'vocab'; index: number }).index].id));
+    learnVocabulary(shownVocab[(step as { type: 'vocab'; index: number }).index].id);
+    addSRSCard(createCard(shownVocab[(step as { type: 'vocab'; index: number }).index].id));
     const idx = (step as { type: 'vocab'; index: number }).index;
-    if (idx < lesson.vocabulary.length - 1) {
+    if (idx < shownVocab.length - 1) {
       setStep({ type: 'vocab', index: idx + 1 });
       resetVocabChallenge();
     } else if (suggestedGame) {
@@ -356,7 +361,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     // ── Story flow (when storyScene exists) ──
     if (step.type === 'scene-intro') {
       if (lesson.videos.length > 0) setStep({ type: 'video', index: 0 });
-      else if (lesson.vocabulary.length > 0) { setStep({ type: 'contextual-vocab', index: 0 }); resetVocabChallenge(); }
+      else if (shownVocab.length > 0) { setStep({ type: 'contextual-vocab', index: 0 }); resetVocabChallenge(); }
       else if (storyDecisionCount > 0) setStep({ type: 'decision-point', index: 0 });
       else goToExercises();
       return;
@@ -364,7 +369,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     if (step.type === 'contextual-vocab') {
       // Same challenge logic as regular vocab
       if (vocabPhase === 'intro') {
-        const target = lesson.vocabulary[step.index];
+        const target = shownVocab[step.index];
         const encounter = generateEncounter(target, allVocabPool);
         setVocabEncounter(encounter);
         setVocabPhase('challenge');
@@ -373,9 +378,9 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
         return;
       }
       // Advance contextual vocab
-      learnVocabulary(lesson.vocabulary[step.index].id);
-      addSRSCard(createCard(lesson.vocabulary[step.index].id));
-      if (step.index < lesson.vocabulary.length - 1) {
+      learnVocabulary(shownVocab[step.index].id);
+      addSRSCard(createCard(shownVocab[step.index].id));
+      if (step.index < shownVocab.length - 1) {
         setStep({ type: 'contextual-vocab', index: step.index + 1 });
         resetVocabChallenge();
       } else if (storyDecisionCount > 0) {
@@ -406,14 +411,14 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
         setStep({ type: 'scene-intro' });
       } else if (lesson.videos.length > 0) {
         setStep({ type: 'video', index: 0 });
-      } else if (lesson.vocabulary.length > 0) {
+      } else if (shownVocab.length > 0) {
         setStep({ type: 'vocab', index: 0 }); resetVocabChallenge();
       } else {
         setStep({ type: 'exercise', index: 0 });
       }
     } else if (step.type === 'video') {
       if (step.index < lesson.videos.length - 1) setStep({ type: 'video', index: step.index + 1 });
-      else if (lesson.vocabulary.length > 0) {
+      else if (shownVocab.length > 0) {
         setStep({ type: hasStory ? 'contextual-vocab' : 'vocab', index: 0 });
         resetVocabChallenge();
       }
@@ -422,7 +427,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     } else if (step.type === 'vocab') {
       // Vocab intro phase: generate a challenge encounter
       if (vocabPhase === 'intro') {
-        const target = lesson.vocabulary[step.index];
+        const target = shownVocab[step.index];
         const encounter = generateEncounter(target, allVocabPool);
         setVocabEncounter(encounter);
         setVocabPhase('challenge');
@@ -744,21 +749,21 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
           {/* CONTEXTUAL VOCAB (Story mode) */}
           {step.type === 'contextual-vocab' && lesson.storyScene && vocabPhase === 'intro' && (
             <ContextualVocab
-              vocab={lesson.vocabulary[step.index]}
+              vocab={shownVocab[step.index]}
               encounter={lesson.storyScene.vocabEncounters[step.index] || {
-                vocabId: lesson.vocabulary[step.index].id,
-                encounterMoment: lesson.vocabulary[step.index].example,
-                contextSentence: lesson.vocabulary[step.index].example,
+                vocabId: shownVocab[step.index].id,
+                encounterMoment: shownVocab[step.index].example,
+                contextSentence: shownVocab[step.index].example,
               }}
               index={step.index}
-              total={lesson.vocabulary.length}
-              isBookmarked={(userProgress.bookmarkedVocab || []).includes(lesson.vocabulary[step.index].id)}
+              total={shownVocab.length}
+              isBookmarked={(userProgress.bookmarkedVocab || []).includes(shownVocab[step.index].id)}
               onPlayAudio={() => {
-                const vocab = lesson.vocabulary[step.index];
+                const vocab = shownVocab[step.index];
                 duckAmbience(2000);
                 playVocabAudio(vocab.id).catch(() => speakGerman(vocab.german));
               }}
-              onBookmark={() => toggleBookmark(lesson.vocabulary[step.index].id)}
+              onBookmark={() => toggleBookmark(shownVocab[step.index].id)}
             />
           )}
 
@@ -839,7 +844,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               scene={lesson.storyScene}
               correctCount={correctCount}
               totalExercises={allExercises.length}
-              vocabLearned={lesson.vocabulary.length}
+              vocabLearned={shownVocab.length}
             />
           )}
 
@@ -875,34 +880,34 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               className="flex-1 flex flex-col items-center justify-center"
             >
               <p className="text-[var(--foreground)]/40 text-xs mb-3">
-                New word {step.index + 1} of {lesson.vocabulary.length}
+                New word {step.index + 1} of {shownVocab.length}
               </p>
 
               {/* Word intro card — everything visible, no flipping */}
               <div className="w-full max-w-sm bg-gradient-to-br from-[#2a4a2a] to-[#1b3d1b] border-2 border-[#d4a520]/30 rounded-2xl p-6 text-center">
                 <span className="text-xl mb-2 block">🇩🇪</span>
                 <h2 className="text-3xl font-bold mb-1">
-                  {lesson.vocabulary[step.index].german}
+                  {shownVocab[step.index].german}
                 </h2>
-                <p className="text-[var(--foreground)]/40 text-sm mb-4">/{lesson.vocabulary[step.index].pronunciation}/</p>
+                <p className="text-[var(--foreground)]/40 text-sm mb-4">/{shownVocab[step.index].pronunciation}/</p>
 
                 <div className="w-10 h-0.5 bg-[var(--foreground)]/10 mx-auto mb-4" />
 
                 <p className="text-xl font-semibold mb-1">
-                  {lesson.vocabulary[step.index].english}
+                  {shownVocab[step.index].english}
                 </p>
                 <p className="text-[#d4a520] text-base mb-4">
-                  {lesson.vocabulary[step.index].malayalam}
+                  {shownVocab[step.index].malayalam}
                 </p>
 
-                {lesson.vocabulary[step.index].example && (
+                {shownVocab[step.index].example && (
                   <div className="bg-[var(--foreground)]/5 rounded-xl px-4 py-3 text-left">
                     <p className="text-sm text-[var(--foreground)]/60 italic">
-                      &ldquo;{lesson.vocabulary[step.index].example}&rdquo;
+                      &ldquo;{shownVocab[step.index].example}&rdquo;
                     </p>
-                    {lesson.vocabulary[step.index].exampleTranslation && (
+                    {shownVocab[step.index].exampleTranslation && (
                       <p className="text-xs text-[var(--foreground)]/30 mt-1">
-                        {lesson.vocabulary[step.index].exampleTranslation}
+                        {shownVocab[step.index].exampleTranslation}
                       </p>
                     )}
                   </div>
@@ -914,7 +919,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {
-                    const vocab = lesson.vocabulary[step.index];
+                    const vocab = shownVocab[step.index];
                     duckAmbience(2000);
                     playVocabAudio(vocab.id).catch(() => speakGerman(vocab.german));
                   }}
@@ -924,10 +929,10 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 </motion.button>
                 <motion.button
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => toggleBookmark(lesson.vocabulary[step.index].id)}
+                  onClick={() => toggleBookmark(shownVocab[step.index].id)}
                   className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
                 >
-                  <Bookmark className={`w-4 h-4 ${(userProgress.bookmarkedVocab || []).includes(lesson.vocabulary[step.index].id) ? 'text-[#e94560] fill-[#e94560]' : 'text-[var(--foreground)]/40'}`} />
+                  <Bookmark className={`w-4 h-4 ${(userProgress.bookmarkedVocab || []).includes(shownVocab[step.index].id) ? 'text-[#e94560] fill-[#e94560]' : 'text-[var(--foreground)]/40'}`} />
                 </motion.button>
               </div>
             </motion.div>
@@ -994,7 +999,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                             if (idx === vocabEncounter.correctIndex) {
                               setVocabAnswerState('correct');
                               feedbackCorrect();
-                              playVocabAudio(lesson.vocabulary[step.index].id).catch(() => {});
+                              playVocabAudio(shownVocab[step.index].id).catch(() => {});
                               // Auto-advance after showing correct
                               setTimeout(() => advanceFromVocab(), 1400);
                             } else {
@@ -1027,6 +1032,40 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                   </motion.div>
                 )}
               </div>
+            </motion.div>
+          )}
+
+          {/* VOCAB CHALLENGE FALLBACK — when encounter fails to generate, show skip button */}
+          {step.type === 'vocab' && vocabPhase === 'challenge' && !vocabEncounter && (
+            <motion.div
+              key="vocab-fallback"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex-1 flex flex-col items-center justify-center"
+            >
+              <p className="text-sm text-[var(--foreground)]/50 mb-4">
+                Word learned! Moving on...
+              </p>
+              <GameButton onClick={() => advanceFromVocab()} variant="primary">
+                Continue
+              </GameButton>
+            </motion.div>
+          )}
+
+          {/* CONTEXTUAL VOCAB CHALLENGE FALLBACK */}
+          {step.type === 'contextual-vocab' && vocabPhase === 'challenge' && !vocabEncounter && (
+            <motion.div
+              key="ctx-vocab-fallback"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex-1 flex flex-col items-center justify-center"
+            >
+              <p className="text-sm text-[var(--foreground)]/50 mb-4">
+                Word learned! Moving on...
+              </p>
+              <GameButton onClick={() => goNext()} variant="primary">
+                Continue
+              </GameButton>
             </motion.div>
           )}
 

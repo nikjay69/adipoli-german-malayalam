@@ -1,8 +1,6 @@
 // Audio playback utility for vocabulary pronunciation
-import { showToast } from '@/components/ui/Toast';
 
 let currentAudio: HTMLAudioElement | null = null;
-let lastToastTime = 0;
 
 export function playAudio(url: string): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -22,21 +20,12 @@ export function playAudio(url: string): Promise<void> {
 
     audio.onerror = () => {
       currentAudio = null;
-      // Show toast max once per 5 seconds to avoid spam
-      const now = Date.now();
-      if (now - lastToastTime > 5000) {
-        lastToastTime = now;
-        showToast('Audio not available — check your connection', 'error');
-      }
-      reject(new Error(`Failed to play audio: ${url}`));
+      // Silently reject — callers should fall back to TTS
+      reject(new Error(`Audio unavailable: ${url}`));
     };
 
     audio.play().catch((err) => {
-      const now = Date.now();
-      if (now - lastToastTime > 5000) {
-        lastToastTime = now;
-        showToast('Audio not available — check your connection', 'error');
-      }
+      // Silently reject — no toast spam, TTS fallback handles it
       reject(err);
     });
   });
