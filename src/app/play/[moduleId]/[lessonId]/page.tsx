@@ -3,7 +3,7 @@
 import { use, useState, useEffect, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Volume2, Loader2, Bookmark } from 'lucide-react';
+import { X, Volume2, Loader2, Bookmark, ChevronLeft } from 'lucide-react';
 import { playVocabAudio, playExampleAudio } from '@/lib/audio';
 import { GameButton, ChoiceButton, Confetti, Celebration, ModuleComplete } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
@@ -259,6 +259,36 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     }
   };
 
+  const goPrev = () => {
+    if (step.type === 'exercise' && step.index > 0) {
+      setStep({ type: 'exercise', index: step.index - 1 });
+      setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false);
+    } else if (step.type === 'exercise' && step.index === 0) {
+      // Go back to last vocab or game-suggest
+      if (hasGameSuggest) setStep({ type: 'game-suggest' });
+      else if (lesson.vocabulary.length > 0) setStep({ type: 'vocab', index: lesson.vocabulary.length - 1 });
+      else if (lesson.videos.length > 0) setStep({ type: 'video', index: lesson.videos.length - 1 });
+      else setStep({ type: 'intro' });
+    } else if (step.type === 'game-suggest') {
+      if (lesson.vocabulary.length > 0) setStep({ type: 'vocab', index: lesson.vocabulary.length - 1 });
+      else if (lesson.videos.length > 0) setStep({ type: 'video', index: lesson.videos.length - 1 });
+      else setStep({ type: 'intro' });
+    } else if (step.type === 'vocab' && step.index > 0) {
+      setStep({ type: 'vocab', index: step.index - 1 });
+      resetVocabChallenge();
+    } else if (step.type === 'vocab' && step.index === 0) {
+      if (lesson.videos.length > 0) setStep({ type: 'video', index: lesson.videos.length - 1 });
+      else setStep({ type: 'intro' });
+    } else if (step.type === 'video' && step.index > 0) {
+      setStep({ type: 'video', index: step.index - 1 });
+    } else if (step.type === 'video' && step.index === 0) {
+      setStep({ type: 'intro' });
+    }
+    // intro has nowhere to go back to
+  };
+
+  const canGoPrev = step.type !== 'intro' && step.type !== 'complete';
+
   const advanceFromVocab = () => {
     learnVocabulary(lesson.vocabulary[(step as { type: 'vocab'; index: number }).index].id);
     addSRSCard(createCard(lesson.vocabulary[(step as { type: 'vocab'; index: number }).index].id));
@@ -496,13 +526,24 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       {/* Header */}
       <div className="px-4 pt-4 pb-2">
         <div className="flex items-center justify-between mb-2">
-          <motion.button
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setShowExitConfirm(true)}
-            className="w-10 h-10 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
-          >
-            <X className="w-5 h-5 text-[var(--foreground)]/60" />
-          </motion.button>
+          <div className="flex items-center gap-1.5">
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setShowExitConfirm(true)}
+              className="w-10 h-10 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
+            >
+              <X className="w-5 h-5 text-[var(--foreground)]/60" />
+            </motion.button>
+            {canGoPrev && (
+              <motion.button
+                whileTap={{ scale: 0.9 }}
+                onClick={goPrev}
+                className="w-10 h-10 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
+              >
+                <ChevronLeft className="w-5 h-5 text-[var(--foreground)]/60" />
+              </motion.button>
+            )}
+          </div>
 
           {/* Progress Bar */}
           <div className="flex-1 mx-3 h-2.5 bg-[var(--foreground)]/8 rounded-full overflow-hidden">
