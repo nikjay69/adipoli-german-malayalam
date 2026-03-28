@@ -1,162 +1,234 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Volume2 } from 'lucide-react';
 import { speakGerman } from '@/lib/audio/useGermanTTS';
+import { feedbackCorrect, feedbackWrong, feedbackCombo } from '@/lib/feedback';
 import type { VocabItem } from '@/lib/content/types';
 
 interface VocabDiscoveryGameProps {
-  vocab: VocabItem;
-  onComplete: () => void;
-  onCorrect: () => void;
-  onWrong: () => void;
+  /** ALL vocab to learn in this scene (3-6 words) */
+  vocabList: VocabItem[];
+  /** Scene context line (short) */
+  sceneHint?: string;
+  onComplete: (score: number, total: number) => void;
 }
 
-type Phase = 'reveal' | 'test';
+type Phase = 'absorb' | 'challenge';
 
 /**
- * Two-phase vocab discovery:
- * 1. REVEAL (2 seconds) — word appears big, TTS speaks it, meaning shown briefly
- * 2. TEST — immediate quick game to prove you learned it
- *
- * No "Got it!" button. No reading. Learn by doing.
+ * Scene-based vocab discovery.
+ * Phase 1 (ABSORB): All words appear together in a visual layout — tap any to hear.
+ *   Auto-advances after a few seconds. Words are SEEN in context, not one-by-one.
+ * Phase 2 (CHALLENGE): Rapid-fire games testing ALL words mixed together.
+ *   Multiple game types rotate: match meaning, identify word, listen & pick.
  */
-export function VocabDiscoveryGame({ vocab, onComplete, onCorrect, onWrong }: VocabDiscoveryGameProps) {
-  const [phase, setPhase] = useState<Phase>('reveal');
-  const [testAnswer, setTestAnswer] = useState<'correct' | 'wrong' | null>(null);
+export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDiscoveryGameProps) {
+  const [phase, setPhase] = useState<Phase>('absorb');
+  const [tappedWords, setTappedWords] = useState<Set<string>>(new Set());
+  const [challengeIdx, setChallengeIdx] = useState(0);
+  const [score, setScore] = useState(0);
+  const [combo, setCombo] = useState(0);
+  const [answered, setAnswered] = useState<string | null>(null);
 
-  // Pick a random test type for variety
-  const testType = useMemo(() => {
-    const types = ['match-meaning', 'match-word', 'listen-pick'] as const;
-    return types[Math.floor(Math.random() * types.length)];
-  }, []);
+  const words = vocabList.slice(0, 6);
 
-  // Generate fake options for the test
-  const fakeOptions = useMemo(() => {
-    const fakes = ['Hallo', 'Danke', 'Bitte', 'Tschüss', 'Ja', 'Nein', 'Gut', 'Schlecht',
-      'Wasser', 'Brot', 'Milch', 'Kaffee', 'Haus', 'Auto', 'Schule', 'Arbeit',
-      'Hello', 'Thanks', 'Please', 'Goodbye', 'Water', 'Bread', 'House', 'Work',
-      'Good', 'Bad', 'Big', 'Small', 'Yes', 'No', 'One', 'Two'];
-    const relevant = testType === 'match-meaning'
-      ? fakes.filter(f => f !== vocab.english && !/[äöüß]/.test(f)).slice(0, 20)
-      : fakes.filter(f => f !== vocab.german && f !== vocab.english).slice(0, 20);
-    // Pick 3 random fakes
-    const shuffled = relevant.sort(() => Math.random() - 0.5).slice(0, 3);
-    const correct = testType === 'match-meaning' ? vocab.english : vocab.german;
-    const all = [...shuffled, correct].sort(() => Math.random() - 0.5);
-    return { options: all, correct };
-  }, [vocab, testType]);
+  // Build challenges — one per word, shuffled
+  const challenges = useMemo(() => {
+    const types = ['meaning', 'word', 'listen'] as const;
+    return words.map((vocab, i) => {
+      const type = types[i % types.length];
+      // Generate 3 wrong options from other words
+      const otherWords = words.filter(w => w.id !== vocab.id);
+      const wrongOptions = type === 'meaning'
+        ? otherWords.map(w => w.english).slice(0, 3)
+        : otherWords.map(w => w.german).slice(0, 3);
+      // Fill with generic options if not enough
+      const genericEn = ['Hello', 'Thanks', 'Goodbye', 'Water', 'Bread', 'Good'];
+      const genericDe = ['Hallo', 'Danke', 'Tschüss', 'Wasser', 'Brot', 'Gut'];
+      while (wrongOptions.length < 3) {
+        const pool = type === 'meaning' ? genericEn : genericDe;
+        const pick = pool[Math.floor(Math.random() * pool.length)];
+        if (!wrongOptions.includes(pick) && pick !== vocab.english && pick !== vocab.german) {
+          wrongOptions.push(pick);
+        }
+      }
+      const correct = type === 'meaning' ? vocab.english : vocab.german;
+      const options = [...wrongOptions.slice(0, 3), correct].sort(() => Math.random() - 0.5);
+      return { vocab, type, options, correct };
+    }).sort(() => Math.random() - 0.5);
+  }, [words]);
 
-  // Auto-speak and auto-advance from reveal to test
+  const currentChallenge = challenges[challengeIdx];
+
+  // Auto-advance from absorb to challenge after 4 seconds or when all words tapped
   useEffect(() => {
-    if (phase === 'reveal') {
-      try { speakGerman(vocab.german, 0.8); } catch {}
-      const timer = setTimeout(() => setPhase('test'), 2200);
+    if (phase === 'absorb') {
+      const timer = setTimeout(() => setPhase('challenge'), 5000);
       return () => clearTimeout(timer);
     }
-  }, [phase, vocab.german]);
+  }, [phase]);
 
-  const handleTestAnswer = (answer: string) => {
-    if (testAnswer) return;
-    const isCorrect = answer === fakeOptions.correct;
-    setTestAnswer(isCorrect ? 'correct' : 'wrong');
-    if (isCorrect) onCorrect(); else onWrong();
-    // Don't call onComplete — the handleCorrect/handleWrong in parent will advance
-  };
+  useEffect(() => {
+    if (phase === 'absorb' && tappedWords.size >= words.length) {
+      setTimeout(() => setPhase('challenge'), 800);
+    }
+  }, [phase, tappedWords.size, words.length]);
+
+  // Speak word on first challenge
+  useEffect(() => {
+    if (phase === 'challenge' && currentChallenge?.type === 'listen') {
+      setTimeout(() => { try { speakGerman(currentChallenge.vocab.german, 0.8); } catch {} }, 300);
+    }
+  }, [phase, challengeIdx, currentChallenge]);
+
+  const handleWordTap = useCallback((vocab: VocabItem) => {
+    try { speakGerman(vocab.german, 0.85); } catch {}
+    setTappedWords(prev => new Set(prev).add(vocab.id));
+  }, []);
+
+  const handleAnswer = useCallback((option: string) => {
+    if (answered || !currentChallenge) return;
+    setAnswered(option);
+    const isCorrect = option === currentChallenge.correct;
+
+    if (isCorrect) {
+      const c = combo + 1;
+      setCombo(c);
+      setScore(s => s + 1);
+      feedbackCombo(c);
+    } else {
+      setCombo(0);
+      feedbackWrong();
+    }
+
+    setTimeout(() => {
+      setAnswered(null);
+      if (challengeIdx + 1 >= challenges.length) {
+        onComplete(score + (isCorrect ? 1 : 0), challenges.length);
+      } else {
+        setChallengeIdx(i => i + 1);
+      }
+    }, isCorrect ? 600 : 1000);
+  }, [answered, currentChallenge, combo, challengeIdx, challenges.length, score, onComplete]);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       <AnimatePresence mode="wait">
-        {/* ── PHASE 1: REVEAL — see the word, hear it ── */}
-        {phase === 'reveal' && (
-          <motion.div
-            key="reveal"
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 1.1, opacity: 0 }}
-            transition={{ type: 'spring', damping: 12 }}
-            className="flex flex-col items-center"
-          >
-            {/* Big word with glow */}
-            <motion.div
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="relative"
-            >
-              <div className="absolute inset-0 bg-[#d4a520]/20 blur-2xl rounded-full" />
-              <div className="relative bg-black/50 backdrop-blur-xl border border-[#d4a520]/40 rounded-3xl px-8 py-6 text-center">
-                <h2 className="text-4xl font-black text-[#d4a520] mb-1">{vocab.german}</h2>
-                <p className="text-white/80 text-lg font-semibold">{vocab.english}</p>
-                <p className="text-[#d4a520]/50 text-sm">{vocab.malayalam}</p>
-              </div>
-            </motion.div>
+        {/* ═══ ABSORB — all words at once ═══ */}
+        {phase === 'absorb' && (
+          <motion.div key="absorb"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="w-full max-w-[320px]">
 
-            {/* Pulsing "listen" indicator */}
-            <motion.div
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ repeat: Infinity, duration: 1 }}
-              className="mt-3 flex items-center gap-1 text-white/30 text-xs"
-            >
-              <Volume2 className="w-3 h-3" /> Listening...
-            </motion.div>
+            {sceneHint && (
+              <p className="text-xs text-white/40 text-center mb-3">{sceneHint}</p>
+            )}
+
+            {/* Word cloud — all words visible, tap to hear */}
+            <div className="grid grid-cols-2 gap-2">
+              {words.map((vocab, i) => {
+                const isTapped = tappedWords.has(vocab.id);
+                return (
+                  <motion.button key={vocab.id}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                    whileTap={{ scale: 0.92 }}
+                    onClick={() => handleWordTap(vocab)}
+                    className={`relative px-3 py-3 rounded-xl border text-center transition-all ${
+                      isTapped
+                        ? 'bg-[#d4a520]/15 border-[#d4a520]/40'
+                        : 'bg-white/5 border-white/10 animate-pulse'
+                    }`}
+                  >
+                    <p className={`text-lg font-black ${isTapped ? 'text-[#d4a520]' : 'text-white/80'}`}>
+                      {vocab.german}
+                    </p>
+                    {isTapped && (
+                      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                        className="text-xs text-white/50 mt-0.5">
+                        {vocab.english}
+                      </motion.p>
+                    )}
+                    {!isTapped && (
+                      <p className="text-[10px] text-white/30 mt-0.5">tap to hear</p>
+                    )}
+                  </motion.button>
+                );
+              })}
+            </div>
+
+            <p className="text-[10px] text-white/20 text-center mt-3">
+              Tap each word to hear it • {tappedWords.size}/{words.length}
+            </p>
           </motion.div>
         )}
 
-        {/* ── PHASE 2: TEST — prove you learned it ── */}
-        {phase === 'test' && (
-          <motion.div
-            key="test"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="w-full max-w-[300px]"
-          >
+        {/* ═══ CHALLENGE — rapid-fire testing all words ═══ */}
+        {phase === 'challenge' && currentChallenge && (
+          <motion.div key={`challenge-${challengeIdx}`}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -30 }}
+            className="w-full max-w-[300px]">
+
+            {/* Progress dots */}
+            <div className="flex justify-center gap-1 mb-3">
+              {challenges.map((_, i) => (
+                <div key={i} className={`w-2 h-2 rounded-full ${
+                  i < challengeIdx ? 'bg-[#27ae60]' : i === challengeIdx ? 'bg-[#d4a520]' : 'bg-white/15'
+                }`} />
+              ))}
+            </div>
+
             {/* Question */}
             <p className="text-sm text-white/70 text-center mb-3 font-medium">
-              {testType === 'match-meaning'
-                ? `What does "${vocab.german}" mean?`
-                : testType === 'match-word'
-                ? `How do you say "${vocab.english}"?`
-                : `You just heard a word. Which one?`
+              {currentChallenge.type === 'meaning'
+                ? <span>What does <span className="text-[#d4a520] font-black">{currentChallenge.vocab.german}</span> mean?</span>
+                : currentChallenge.type === 'word'
+                ? <span>How do you say <span className="text-white font-black">{currentChallenge.vocab.english}</span>?</span>
+                : <span>🔊 Which word did you hear?</span>
               }
             </p>
 
-            {/* Options — 2x2 grid for speed */}
+            {/* Listen button for audio challenges */}
+            {currentChallenge.type === 'listen' && (
+              <motion.button whileTap={{ scale: 0.9 }}
+                onClick={() => { try { speakGerman(currentChallenge.vocab.german, 0.8); } catch {} }}
+                className="mx-auto mb-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#d4a520]/15 border border-[#d4a520]/20 text-xs text-[#d4a520]">
+                <Volume2 className="w-3 h-3" /> Listen again
+              </motion.button>
+            )}
+
+            {/* 2x2 answer grid */}
             <div className="grid grid-cols-2 gap-2">
-              {fakeOptions.options.map((opt, i) => {
-                const isCorrectOpt = opt === fakeOptions.correct;
+              {currentChallenge.options.map((opt, i) => {
+                const isCorrectOpt = opt === currentChallenge.correct;
                 return (
-                  <motion.button
-                    key={opt}
+                  <motion.button key={`${challengeIdx}-${i}`}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: i * 0.08 }}
+                    transition={{ delay: i * 0.05 }}
                     whileTap={{ scale: 0.9 }}
-                    onClick={() => handleTestAnswer(opt)}
-                    disabled={!!testAnswer}
+                    onClick={() => handleAnswer(opt)}
+                    disabled={!!answered}
                     className={`py-3 rounded-xl text-sm font-bold border transition-all ${
-                      testAnswer && isCorrectOpt
-                        ? 'bg-[#27ae60]/30 border-[#27ae60] text-[#27ae60]'
-                        : testAnswer && opt === fakeOptions.options.find(o => o !== fakeOptions.correct && testAnswer === 'wrong')
-                        ? 'bg-[#c0392b]/30 border-[#c0392b] text-[#c0392b]'
-                        : 'bg-white/8 border-white/15 text-white hover:border-[#d4a520]/50'
-                    }`}
-                  >
+                      answered && isCorrectOpt ? 'bg-[#27ae60]/30 border-[#27ae60] text-[#27ae60]' :
+                      answered === opt && !isCorrectOpt ? 'bg-[#c0392b]/30 border-[#c0392b] text-[#c0392b]' :
+                      'bg-white/8 border-white/15 text-white'
+                    }`}>
                     {opt}
                   </motion.button>
                 );
               })}
             </div>
 
-            {/* Listen again button for listen-pick type */}
-            {testType === 'listen-pick' && !testAnswer && (
-              <motion.button
-                whileTap={{ scale: 0.9 }}
-                onClick={() => { try { speakGerman(vocab.german, 0.8); } catch {} }}
-                className="mt-3 mx-auto flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#d4a520]/15 border border-[#d4a520]/20 text-xs text-[#d4a520]"
-              >
-                <Volume2 className="w-3 h-3" /> Listen again
-              </motion.button>
+            {/* Combo */}
+            {combo > 1 && (
+              <motion.p initial={{ scale: 1.5 }} animate={{ scale: 1 }}
+                className="text-center text-xs font-black text-[#d4a520] mt-2">{combo}x 🔥</motion.p>
             )}
           </motion.div>
         )}

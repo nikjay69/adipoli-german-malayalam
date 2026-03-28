@@ -174,9 +174,18 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
               </div>
             )}
 
-            {/* ═══ WORD DISCOVER — learn through interaction, not reading ═══ */}
-            {m.type === 'word-discover' && m.vocab && (
-              <VocabDiscoveryGame vocab={m.vocab} onComplete={advance} onCorrect={handleCorrect} onWrong={handleWrong} />
+            {/* ═══ WORD DISCOVER — all words at once, scene-based ═══ */}
+            {m.type === 'word-discover' && m.vocabList && m.vocabList.length > 0 && (
+              <VocabDiscoveryGame
+                vocabList={m.vocabList}
+                sceneHint="Tap each word to hear it, then prove you know them!"
+                onComplete={(vocabScore, vocabTotal) => {
+                  setScore(s => s + vocabScore);
+                  setTotal(t => t + vocabTotal);
+                  setMaxCombo(p => Math.max(p, vocabScore)); // approximate
+                  advance();
+                }}
+              />
             )}
 
             {/* ═══ DIALOGUE — choices (the game IS the learning) ═══ */}

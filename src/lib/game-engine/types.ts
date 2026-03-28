@@ -35,6 +35,8 @@ export interface GameMoment {
 
   // Word discovery (for 'word-discover' type)
   vocab?: VocabItem;
+  /** ALL vocab for scene-based discovery */
+  vocabList?: VocabItem[];
   /** Which game to use for discovery: listen-match, tap-reveal, catch */
   discoveryGame?: 'listen-match' | 'tap-reveal' | 'word-catch' | 'memory';
 

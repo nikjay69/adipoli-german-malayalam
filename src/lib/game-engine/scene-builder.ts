@@ -79,29 +79,16 @@ export function buildGameSequence(
     autoAdvanceMs: 2500,
   });
 
-  // ── 2. Vocab discovery — each word is a game ──
-  shownVocab.forEach((vocab, i) => {
-    // Word discovery game — different type each time
+  // ── 2. Vocab discovery — ALL words at once in a scene, not one-by-one ──
+  if (shownVocab.length > 0) {
     moments.push({
       id: id(),
       type: 'word-discover',
       sceneImage,
-      vocab,
-      discoveryGame: pickDiscoveryGame(i),
-      kuttan: { mood: 'pointing', position: 'left' },
+      vocabList: shownVocab,
+      kuttan: { mood: 'excited', position: 'left' },
     });
-
-    // Kuttan reaction only every 3 words (not every word — too slow)
-    if (i > 0 && i % 3 === 2 && i < shownVocab.length - 1) {
-      moments.push({
-        id: id(),
-        type: 'reaction',
-        kuttan: { mood: 'thumbsup' },
-        dialogue: { speaker: 'Kuttan', text: pick(KUTTAN_VOCAB_REACT) },
-        autoAdvanceMs: 1000,
-      });
-    }
-  });
+  }
 
   // ── 3. Decision points from story (if any) ──
   if (scene?.decisionPoints) {
