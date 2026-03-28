@@ -43,6 +43,13 @@ function pick<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+/** Truncate without cutting mid-word */
+function trim(text: string, max: number): string {
+  if (text.length <= max) return text;
+  const cut = text.lastIndexOf(' ', max);
+  return (cut > max * 0.5 ? text.slice(0, cut) : text.slice(0, max)) + '...';
+}
+
 /**
  * Build the game sequence for a lesson.
  * Every moment is interactive — zero passive reading screens.
@@ -106,11 +113,11 @@ export function buildGameSequence(
         kuttan: { mood: 'thinking', position: 'left' },
         dialogue: {
           speaker: 'Kuttan',
-          text: dp.moment.slice(0, 80),
+          text: trim(dp.moment, 80),
           choices: dp.options.map(opt => ({
             text: opt.text,
             isCorrect: opt.isCorrect,
-            response: opt.kuttanReaction.slice(0, 40),
+            response: trim(opt.kuttanReaction, 50),
             kuttanMood: opt.isCorrect ? 'celebrating' as const : 'sad' as const,
           })),
         },
@@ -173,7 +180,7 @@ export function buildGameSequence(
     kuttan: { mood: 'celebrating', position: 'center' },
     dialogue: {
       speaker: 'Kuttan',
-      text: scene?.narrative.nextTeaser?.slice(0, 50) || 'Adventure complete! 🎉',
+      text: scene?.narrative.nextTeaser ? trim(scene.narrative.nextTeaser, 50) : 'Level complete! 🎉',
     },
   });
 

@@ -7,7 +7,7 @@ import { KuttanImage } from '@/components/character/KuttanImage';
 import { GameButton } from '@/components/game';
 import { Confetti } from '@/components/game';
 import { ComboMeter } from '@/components/game/ComboMeter';
-import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop } from '@/components/exercise-games';
+import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop, ArticleSort, MemoryFlip, QuizShow, SpeedRound } from '@/components/exercise-games';
 import { speakGerman } from '@/lib/audio/useGermanTTS';
 import { feedbackCombo, feedbackComboBreak, feedbackWrong, feedbackCelebration } from '@/lib/feedback';
 import type { GameMoment, GameChoice } from '@/lib/game-engine/types';
@@ -242,7 +242,13 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
             {m.type === 'game' && m.exercise && (
               <div className="bg-black/40 backdrop-blur-xl rounded-3xl border border-white/10 p-4">
                 <p className="text-sm text-white font-medium text-center mb-3">
-                  {m.exercise.question.slice(0, 100)}
+                  {(() => {
+                    const q = m.exercise!.question;
+                    // Strip long narrative text, keep just the question
+                    const cleaned = q.replace(/^.*?[.!][\s]*/,'').trim() || q;
+                    if (cleaned.length <= 80) return cleaned;
+                    return cleaned.slice(0, cleaned.lastIndexOf(' ', 80)) + '...';
+                  })()}
                 </p>
                 {renderGame(m, handleGameResult)}
               </div>
@@ -283,12 +289,34 @@ function renderGame(m: GameMoment, onResult: (correct: boolean) => void) {
       return ex.options?.length
         ? <WordBank sentence={ex.question} options={ex.options} correctAnswer={correct} onResult={onResult} />
         : <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
-    case 'falling':
+    case 'falling': {
       const d = (ex.options || []).filter(o => o !== correct).slice(0, 3);
       return <FallingWords correctWord={correct} distractors={d.length >= 2 ? d : ['Hallo', 'Danke', 'Bitte']} hint="Catch it!" onResult={onResult} />;
+    }
     case 'bubble':
       return Array.isArray(ex.correctAnswer)
         ? <BubblePop leftItems={ex.options || []} rightItems={ex.correctAnswer as string[]} onResult={onResult} />
+        : <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
+    case 'article-sort': {
+      // Extract article from correct answer (e.g. "der Tisch" → article="der", noun="Tisch")
+      const match = correct.match(/^(der|die|das)\s+(.+)$/i);
+      if (match) {
+        return <ArticleSort noun={match[2]} correctArticle={match[1].toLowerCase() as 'der' | 'die' | 'das'} onResult={onResult} />;
+      }
+      return ex.options?.length
+        ? <QuizShow question="" options={ex.options} correctAnswer={correct} onResult={onResult} />
+        : <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
+    }
+    case 'memory-flip': {
+      if (Array.isArray(ex.correctAnswer) && ex.options?.length) {
+        const pairs: [string, string][] = ex.options.map((opt, i) => [opt, (ex.correctAnswer as string[])[i] || opt]);
+        return <MemoryFlip pairs={pairs} onResult={onResult} />;
+      }
+      return <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
+    }
+    case 'quiz-show':
+      return ex.options?.length
+        ? <QuizShow question="" options={ex.options} correctAnswer={correct} onResult={onResult} />
         : <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
     case 'scramble':
       return <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;

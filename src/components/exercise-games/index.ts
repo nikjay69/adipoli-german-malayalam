@@ -3,3 +3,7 @@ export { WordScramble } from './WordScramble';
 export { WordBank } from './WordBank';
 export { FallingWords } from './FallingWords';
 export { BubblePop } from './BubblePop';
+export { ArticleSort } from './ArticleSort';
+export { MemoryFlip } from './MemoryFlip';
+export { QuizShow } from './QuizShow';
+export { SpeedRound } from './SpeedRound';

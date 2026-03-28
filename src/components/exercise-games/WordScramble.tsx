@@ -4,20 +4,25 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface WordScrambleProps {
-  /** The hint/question shown above */
   hint: string;
-  /** The correct answer to spell */
   answer: string;
   onResult: (correct: boolean) => void;
 }
 
 /**
- * Scrambled letter tiles — tap to spell the word.
- * No keyboard needed. Feels like a puzzle game.
+ * Letter tiles game — tap letters to spell the word.
+ * Includes special German characters (ä, ö, ü, ß) as extra tiles.
  */
 export function WordScramble({ hint, answer, onResult }: WordScrambleProps) {
+  // Add German special chars if answer contains them
+  const specialChars = ['ä', 'ö', 'ü', 'ß', 'Ä', 'Ö', 'Ü'];
+  const hasSpecial = specialChars.some(c => answer.includes(c));
+
   const letters = useMemo(() => {
     const arr = answer.split('').map((char, i) => ({ char, id: `${char}-${i}` }));
+    // Add 2-3 distractor letters to make it harder
+    const distractors = 'enrstl'.split('').filter(c => !answer.toLowerCase().includes(c)).slice(0, 2);
+    distractors.forEach((c, i) => arr.push({ char: c, id: `d-${c}-${i}` }));
     // Shuffle
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -30,19 +35,17 @@ export function WordScramble({ hint, answer, onResult }: WordScrambleProps) {
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
 
   const remaining = letters.filter(l => !placed.some(p => p.id === l.id));
-  const currentWord = placed.map(p => p.char).join('');
 
   const handleTapLetter = (letter: { char: string; id: string }) => {
     if (result) return;
     const newPlaced = [...placed, letter];
     setPlaced(newPlaced);
 
-    // Check when all letters placed
-    if (newPlaced.length === letters.length) {
+    if (newPlaced.length === answer.length) {
       const word = newPlaced.map(p => p.char).join('');
-      const isCorrect = word === answer;
+      const isCorrect = word.toLowerCase() === answer.toLowerCase();
       setResult(isCorrect ? 'correct' : 'wrong');
-      setTimeout(() => onResult(isCorrect), isCorrect ? 800 : 1500);
+      setTimeout(() => onResult(isCorrect), isCorrect ? 600 : 1200);
     }
   };
 
@@ -53,60 +56,53 @@ export function WordScramble({ hint, answer, onResult }: WordScrambleProps) {
 
   return (
     <div className="flex flex-col items-center">
-      <p className="text-sm text-[var(--foreground)]/60 text-center mb-3">{hint}</p>
+      {hint && <p className="text-xs text-white/50 text-center mb-2">{hint}</p>}
 
-      {/* Built word area */}
-      <div className="flex items-center gap-1 mb-4 min-h-[48px] px-3">
+      {/* Built word — slots */}
+      <div className="flex items-center gap-0.5 mb-3 flex-wrap justify-center">
         {answer.split('').map((_, i) => (
-          <motion.div
-            key={i}
-            className={`w-9 h-11 rounded-lg flex items-center justify-center text-lg font-bold border-2 ${
+          <motion.div key={i}
+            className={`w-8 h-10 rounded-lg flex items-center justify-center text-base font-bold border-2 ${
               placed[i]
                 ? result === 'correct' ? 'bg-[#27ae60]/20 border-[#27ae60]/40 text-[#27ae60]'
                 : result === 'wrong' ? 'bg-[#c0392b]/20 border-[#c0392b]/40 text-[#c0392b]'
                 : 'bg-[#d4a520]/15 border-[#d4a520]/30 text-[#d4a520]'
-                : 'bg-[var(--foreground)]/5 border-[var(--foreground)]/15 border-dashed'
+                : 'bg-white/5 border-white/15 border-dashed'
             }`}
-            animate={placed[i] ? { scale: [1.2, 1] } : {}}
+            animate={placed[i] ? { scale: [1.15, 1] } : {}}
           >
             {placed[i]?.char || ''}
           </motion.div>
         ))}
-
-        {/* Backspace */}
         {placed.length > 0 && !result && (
-          <motion.button
-            whileTap={{ scale: 0.9 }}
-            onClick={handleRemoveLast}
-            className="w-9 h-11 rounded-lg bg-[var(--foreground)]/10 flex items-center justify-center text-sm ml-1"
-          >
+          <motion.button whileTap={{ scale: 0.9 }} onClick={handleRemoveLast}
+            className="w-8 h-10 rounded-lg bg-white/10 flex items-center justify-center text-sm ml-1">
             ←
           </motion.button>
         )}
       </div>
 
-      {/* Wrong answer correction */}
       {result === 'wrong' && (
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-xs text-[#27ae60] mb-3">
-          Answer: <span className="font-bold">{answer}</span>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-xs text-[#27ae60] mb-2">
+          <span className="font-bold">{answer}</span>
         </motion.p>
       )}
 
-      {/* Available letters */}
-      <div className="flex flex-wrap gap-2 justify-center max-w-[300px]">
+      {/* Letter tiles */}
+      <div className="flex flex-wrap gap-1.5 justify-center max-w-[300px]">
         <AnimatePresence>
           {remaining.map((letter, i) => (
-            <motion.button
-              key={letter.id}
-              initial={{ scale: 0, rotate: -20 }}
-              animate={{ scale: 1, rotate: 0 }}
-              exit={{ scale: 0, opacity: 0 }}
-              transition={{ delay: i * 0.03 }}
+            <motion.button key={letter.id}
+              initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}
+              transition={{ delay: i * 0.02 }}
               whileTap={{ scale: 0.85 }}
               onClick={() => handleTapLetter(letter)}
               disabled={!!result}
-              className="w-10 h-11 rounded-xl bg-gradient-to-b from-[var(--card-bg)] to-[var(--foreground)]/5 border border-[var(--card-border)] flex items-center justify-center text-lg font-bold shadow-sm active:shadow-none"
-            >
+              className={`w-9 h-10 rounded-xl flex items-center justify-center text-base font-bold shadow-sm border ${
+                specialChars.includes(letter.char)
+                  ? 'bg-[#d4a520]/20 border-[#d4a520]/30 text-[#d4a520]'
+                  : 'bg-white/10 border-white/10 text-white'
+              }`}>
               {letter.char}
             </motion.button>
           ))}

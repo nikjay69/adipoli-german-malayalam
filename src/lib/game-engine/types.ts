@@ -75,19 +75,44 @@ export const SCENE_IMAGES: Record<string, string> = {
 
 // ── Game Type Selection ──────────────────────────────────────
 
-/** Pick the best game type for an exercise based on its type */
+// Counter to rotate game types and prevent repetition
+let lastGameType = '';
+
+/** Pick the best game type for an exercise — rotates to avoid repetition */
 export function pickGameType(exercise: Exercise): GameMoment['gameType'] {
+  const candidates: GameMoment['gameType'][] = [];
+
   switch (exercise.type) {
-    case 'multiple-choice': return 'swipe';
-    case 'fill-blank': return exercise.options?.length ? 'word-bank' : 'scramble';
-    case 'type-answer': return 'scramble';
-    case 'free-text': return 'scramble';
-    case 'dictation': return 'falling';
-    case 'matching': return 'bubble';
-    case 'ordering': return 'scramble';
-    case 'speaking': return 'swipe'; // fallback
-    default: return 'swipe';
+    case 'multiple-choice':
+      candidates.push('swipe', 'quiz-show');
+      // If question mentions article/der/die/das, use article-sort
+      if (/der|die|das|article/i.test(exercise.question)) candidates.push('article-sort');
+      break;
+    case 'fill-blank':
+      candidates.push(exercise.options?.length ? 'word-bank' : 'scramble', 'quiz-show');
+      break;
+    case 'type-answer':
+    case 'free-text':
+      candidates.push('scramble');
+      break;
+    case 'dictation':
+      candidates.push('falling');
+      break;
+    case 'matching':
+      candidates.push('bubble', 'memory-flip');
+      break;
+    case 'ordering':
+      candidates.push('scramble');
+      break;
+    default:
+      candidates.push('swipe', 'quiz-show');
   }
+
+  // Avoid repeating the same game type
+  const filtered = candidates.filter(c => c !== lastGameType);
+  const pick = filtered.length > 0 ? filtered[Math.floor(Math.random() * filtered.length)] : candidates[0];
+  lastGameType = pick || 'swipe';
+  return pick;
 }
 
 /** Pick a discovery game type — rotates to avoid repetition */
