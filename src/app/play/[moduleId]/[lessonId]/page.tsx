@@ -8,8 +8,8 @@ import { playVocabAudio, playExampleAudio, useGermanTTS } from '@/lib/audio';
 import { startAmbience, stopAmbience, duckAmbience, getSceneForModule } from '@/lib/audio/ambience';
 import { SpeakButton, PronunciationCompare } from '@/components/speaking';
 import { NarrativeIntro, ContextualVocab, DecisionPoint, SceneConclusion } from '@/components/lesson';
-import { AdventurePlayer } from '@/components/lesson/AdventurePlayer';
-import { buildAdventure } from '@/lib/adventure-engine';
+import { GameRenderer } from '@/components/game-engine/GameRenderer';
+import { buildGameSequence } from '@/lib/game-engine/scene-builder';
 import { SceneBackground } from '@/components/visual';
 import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop } from '@/components/exercise-games';
 import { GameButton, ChoiceButton, Confetti, Celebration, ModuleComplete } from '@/components/game';
@@ -556,21 +556,16 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     }
   };
 
-  // ═══ ADVENTURE MODE — the new seamless co-learning flow ═══
-  // When lesson has storyScene, use the AdventurePlayer instead of step-by-step
+  // ═══ GAME MODE — visual novel × language game ═══
   if (hasStory && lesson.storyScene) {
-    const adventureMoments = buildAdventure(lesson, shownVocab, allExercises);
+    const gameMoments = buildGameSequence(lesson, shownVocab, allExercises);
     return (
-      <AdventurePlayer
-        moments={adventureMoments}
-        module={module}
-        lesson={lesson}
-        allVocab={allVocabPool}
-        shownVocab={shownVocab}
-        onComplete={(adventureScore, adventureTotal, adventureCombo) => {
-          const score = adventureTotal > 0 ? Math.round((adventureScore / adventureTotal) * 100) : 100;
-          if (score >= 50 || adventureTotal === 0) {
-            completeLesson(lesson.id, score);
+      <GameRenderer
+        moments={gameMoments}
+        onComplete={(gameScore, gameTotal, gameCombo) => {
+          const pct = gameTotal > 0 ? Math.round((gameScore / gameTotal) * 100) : 100;
+          if (pct >= 50 || gameTotal === 0) {
+            completeLesson(lesson.id, pct);
             clearCheckpoint();
             addXP(lesson.xpReward);
             lesson.vocabulary.forEach(v => { learnVocabulary(v.id); addSRSCard(createCard(v.id)); });
