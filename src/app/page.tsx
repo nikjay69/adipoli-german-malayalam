@@ -34,7 +34,7 @@ const DAILY_TIPS = [
 
 export default function Home() {
   const router = useRouter();
-  const { userProgress, updateStreak, completeTask } = useGameStore();
+  const { userProgress, updateStreak, completeTask, unlockAchievement, addXP } = useGameStore();
   const [mounted, setMounted] = useState(false);
   const [kuttanMessage, setKuttanMessage] = useState('');
   const [newAchievement, setNewAchievement] = useState<AchievementDef | null>(null);
@@ -58,6 +58,12 @@ export default function Home() {
       achievements: userProgress.achievements,
     });
     if (earned.length > 0) {
+      // Mark ALL earned achievements as unlocked so they don't repeat
+      earned.forEach(a => {
+        unlockAchievement(a.id);
+        addXP(a.xpReward);
+      });
+      // Show only the first one as popup
       setNewAchievement(earned[0]);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
