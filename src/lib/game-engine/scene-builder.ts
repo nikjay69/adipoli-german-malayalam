@@ -76,7 +76,7 @@ export function buildGameSequence(
       speaker: 'Kuttan',
       text: pick(KUTTAN_INTROS),
     },
-    autoAdvanceMs: 2500,
+    // No autoAdvanceMs — user taps to start
   });
 
   // ── 2. Vocab discovery — ALL words at once in a scene, not one-by-one ──
@@ -100,11 +100,11 @@ export function buildGameSequence(
         kuttan: { mood: 'thinking', position: 'left' },
         dialogue: {
           speaker: 'Kuttan',
-          text: trim(dp.moment, 80),
+          text: trim(dp.moment, 40),
           choices: dp.options.map(opt => ({
             text: opt.text,
             isCorrect: opt.isCorrect,
-            response: trim(opt.kuttanReaction, 50),
+            response: trim(opt.kuttanReaction, 30),
             kuttanMood: opt.isCorrect ? 'celebrating' as const : 'sad' as const,
           })),
         },

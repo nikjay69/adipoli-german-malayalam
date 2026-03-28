@@ -84,7 +84,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
       setCombo(0);
     }
     setChoiceResult({ correct: choice.isCorrect, response: choice.response, mood: choice.kuttanMood });
-    setTimeout(advance, 1800);
+    setTimeout(advance, 800);
   }, [combo, advance]);
 
   // Auto-advance for reaction moments
@@ -95,13 +95,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
     }
   }, [idx, m, advance]);
 
-  // Auto-advance for scene moments (tap anywhere)
-  useEffect(() => {
-    if (m?.type === 'scene' && m.autoAdvanceMs) {
-      const t = setTimeout(advance, m.autoAdvanceMs);
-      return () => clearTimeout(t);
-    }
-  }, [idx, m, advance]);
+  // Scene moments: no auto-advance, user taps to start
 
   // Auto-speak vocab
   useEffect(() => {
@@ -153,12 +147,15 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
           >
             {/* ═══ SCENE — brief moment, auto-advances or tap ═══ */}
             {m.type === 'scene' && (
-              <div className="flex items-end gap-3 cursor-pointer" onClick={advance}>
-                <KuttanImage mood={m.kuttan?.mood || 'waving'} size="md" animate={true} grounded enterFrom="left" />
-                <div className="bg-black/50 backdrop-blur-md rounded-2xl rounded-bl-sm px-4 py-3 flex-1 max-w-[250px]">
-                  <p className="text-xs text-white/40 mb-0.5">{m.dialogue?.speaker}</p>
-                  <p className="text-sm text-white font-medium">{m.dialogue?.text}</p>
-                </div>
+              <div className="flex flex-col items-center justify-center cursor-pointer h-full" onClick={advance}>
+                <motion.p
+                  animate={{ opacity: [0.4, 1, 0.4] }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                  className="text-lg font-black text-white/80 mb-2"
+                >
+                  TAP TO START
+                </motion.p>
+                <p className="text-xs text-white/30">{m.dialogue?.text}</p>
               </div>
             )}
 
