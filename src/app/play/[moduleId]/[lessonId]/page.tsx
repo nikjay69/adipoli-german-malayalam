@@ -929,6 +929,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 duration={lesson.videos[step.index].duration}
                 videoUrl={lesson.videos[step.index].videoUrl}
                 learningObjectives={lesson.videos[step.index].learningObjectives?.slice(0, 3)}
+                richContent={lesson.videos[step.index].richContent}
                 script={getVideoScript(lesson.videos[step.index].id)}
               />
             </motion.div>
