@@ -14,7 +14,9 @@ export type EncounterType =
   | 'how-do-you-say'      // See English meaning + scene → pick German word (production!)
   | 'spot-the-error'      // A sentence with a wrong word swapped in — find it
   | 'mini-dialogue'       // Short conversation with a blank to fill
-  | 'context-clue';       // See a situation description → pick the right German word
+  | 'context-clue'        // See a situation description → pick the right German word
+  | 'type-it'             // See English meaning → TYPE the German word (no options!)
+  | 'listen-type';        // HEAR the word via TTS → TYPE what you heard
 
 export interface Encounter {
   type: EncounterType;
@@ -25,10 +27,12 @@ export interface Encounter {
   prompt: string;
   /** Optional German context shown above the prompt */
   contextGerman?: string;
-  /** The options to choose from */
+  /** The options to choose from (empty for typing encounters) */
   options: string[];
-  /** Index of the correct option */
+  /** Index of the correct option (-1 for typing encounters) */
   correctIndex: number;
+  /** The correct text answer (for typing encounters) */
+  correctText?: string;
   /** Explanation shown after answering */
   explanation: string;
   /** Optional scene image URL (for future Gemini images) */
@@ -292,16 +296,65 @@ function generateContextClue(
   };
 }
 
+// ─── Type-It Generator (no options, user must type) ─────────
+
+const KUTTAN_TYPE_IT = [
+  "Type cheyyuka machane! Keyboard ready aano? ⌨️",
+  "Ithinte German type cheyyuka — no hints! 💪",
+  "Options illa! German word type cheyy! 🧠",
+  "Nee ariyum ith! Type it out! ✍️",
+  "Production time! Brain-il ninnu German varavoo? 🎯",
+];
+
+function generateTypeIt(target: VocabItem, _pool: VocabItem[]): Encounter {
+  return {
+    type: 'type-it',
+    targetVocab: target,
+    kuttanSays: pickRandom(KUTTAN_TYPE_IT),
+    prompt: `Type the German word for "${target.english}"`,
+    options: [], // No options — must type
+    correctIndex: -1,
+    correctText: target.german,
+    explanation: `${target.german} [${target.pronunciation}] = ${target.english} (${target.malayalam})`,
+  };
+}
+
+// ─── Listen-Type Generator (hear TTS, type what you heard) ──
+
+const KUTTAN_LISTEN_TYPE = [
+  "Kelkkuka, type cheyyuka! Ears + fingers combo! 👂⌨️",
+  "Audio kelkku, German type cheyy! Dictation round! 🎧",
+  "Ithokke kelkkaan ariyaamo? Type what you hear! 🔊",
+  "Listen carefully machane... type it back! 📝",
+  "Ear training time! Type enthaa kelkkunnath! 👂",
+];
+
+function generateListenType(target: VocabItem, _pool: VocabItem[]): Encounter {
+  return {
+    type: 'listen-type',
+    targetVocab: target,
+    kuttanSays: pickRandom(KUTTAN_LISTEN_TYPE),
+    prompt: 'Listen and type what you hear',
+    contextGerman: '🔊 Tap to listen',
+    options: [], // No options — must type after hearing
+    correctIndex: -1,
+    correctText: target.german,
+    explanation: `You heard: "${target.german}" [${target.pronunciation}] = ${target.english}`,
+  };
+}
+
 // ─── Main Generator ──────────────────────────────────────────
 
 /** All encounter generators, weighted by learning value */
 const ENCOUNTER_GENERATORS = [
-  { gen: generateSentenceComplete, weight: 25 },   // Reading comprehension
-  { gen: generateWhatDoesItMean, weight: 15 },      // Recognition (easier)
-  { gen: generateHowDoYouSay, weight: 25 },         // Production (harder, more valuable)
-  { gen: generateMiniDialogue, weight: 15 },         // Conversational context
-  { gen: generateSpotTheError, weight: 10 },         // Error detection
-  { gen: generateContextClue, weight: 10 },          // Situational application
+  { gen: generateSentenceComplete, weight: 18 },   // Reading comprehension
+  { gen: generateWhatDoesItMean, weight: 12 },      // Recognition (easier)
+  { gen: generateHowDoYouSay, weight: 15 },         // Production (harder, more valuable)
+  { gen: generateMiniDialogue, weight: 12 },         // Conversational context
+  { gen: generateSpotTheError, weight: 8 },          // Error detection
+  { gen: generateContextClue, weight: 8 },           // Situational application
+  { gen: generateTypeIt, weight: 15 },               // Type the answer (no options!)
+  { gen: generateListenType, weight: 12 },           // Listen & type (dictation-style)
 ];
 
 /** Pick a weighted random encounter type, optionally excluding certain types */
@@ -331,6 +384,8 @@ const GENERATOR_TYPE_MAP = new Map<typeof ENCOUNTER_GENERATORS[number]['gen'], E
   [generateMiniDialogue, 'mini-dialogue'],
   [generateSpotTheError, 'spot-the-error'],
   [generateContextClue, 'context-clue'],
+  [generateTypeIt, 'type-it'],
+  [generateListenType, 'listen-type'],
 ]);
 
 /**
@@ -422,6 +477,8 @@ export const ENCOUNTER_TYPE_LABELS: Record<EncounterType, { label: string; icon:
   'spot-the-error': { label: 'Spot the Error', icon: '🔍' },
   'mini-dialogue': { label: 'Mini Dialogue', icon: '💬' },
   'context-clue': { label: 'Context Clue', icon: '🎭' },
+  'type-it': { label: 'Type It!', icon: '⌨️' },
+  'listen-type': { label: 'Listen & Type', icon: '👂' },
 };
 
 // ─── Helpers ─────────────────────────────────────────────────

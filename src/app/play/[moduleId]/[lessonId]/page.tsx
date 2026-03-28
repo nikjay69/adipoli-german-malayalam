@@ -283,7 +283,10 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
           xpReward: 5,
         }))
     : [];
-  const allExercises = [...autoTypingExercises, ...lesson.exercises];
+  // Shuffle exercises so order varies each time — prevents predictability
+  // Keep auto-typing at front (warm-up), shuffle the rest
+  const shuffledLessonExercises = [...lesson.exercises].sort(() => Math.random() - 0.5);
+  const allExercises = [...autoTypingExercises, ...shuffledLessonExercises];
 
   // Limit vocab cards shown to max 6 — rest are learned through exercises
   const MAX_VOCAB_CARDS = 6;
@@ -1020,7 +1023,60 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                   </p>
                 </div>
 
-                {/* Options */}
+                {/* Encounter input — typing or MCQ depending on type */}
+                {(vocabEncounter.type === 'type-it' || vocabEncounter.type === 'listen-type') ? (
+                  <div className="space-y-3">
+                    {vocabEncounter.type === 'listen-type' && (
+                      <div className="flex justify-center">
+                        <motion.button whileTap={{ scale: 0.95 }}
+                          onClick={() => { try { speakGerman(vocabEncounter.correctText || shownVocab[step.index].german); } catch {} }}
+                          className="w-12 h-12 rounded-full bg-gradient-to-b from-[#d4a520] to-[#b8891a] text-white flex items-center justify-center text-lg">
+                          🔊
+                        </motion.button>
+                      </div>
+                    )}
+                    <div className="flex gap-2">
+                      <input
+                        type="text" value={typedAnswer} onChange={e => setTypedAnswer(e.target.value)}
+                        onKeyDown={e => {
+                          if (e.key === 'Enter' && typedAnswer.trim() && vocabAnswerState === 'default') {
+                            const correct = (vocabEncounter.correctText || shownVocab[step.index].german).toLowerCase().trim();
+                            const isRight = typedAnswer.toLowerCase().trim() === correct;
+                            if (isRight) {
+                              setVocabAnswerState('correct'); feedbackCorrect();
+                              setTimeout(() => { setTypedAnswer(''); advanceFromVocab(); }, 1400);
+                            } else {
+                              setVocabAnswerState('wrong'); feedbackWrong();
+                              setTimeout(() => { setTypedAnswer(''); advanceFromVocab(); }, 2000);
+                            }
+                          }
+                        }}
+                        placeholder={vocabEncounter.type === 'listen-type' ? 'Type what you heard...' : 'Type the German word...'}
+                        disabled={vocabAnswerState !== 'default'} autoFocus
+                        className={`flex-1 px-4 py-3 rounded-xl border-2 text-base bg-[var(--card-bg)] outline-none ${
+                          vocabAnswerState === 'correct' ? 'border-[#27ae60]' : vocabAnswerState === 'wrong' ? 'border-[#c0392b]' : 'border-[var(--card-border)] focus:border-[#d4a520]'
+                        }`}
+                      />
+                      <GameButton onClick={() => {
+                        if (!typedAnswer.trim() || vocabAnswerState !== 'default') return;
+                        const correct = (vocabEncounter.correctText || shownVocab[step.index].german).toLowerCase().trim();
+                        const isRight = typedAnswer.toLowerCase().trim() === correct;
+                        if (isRight) {
+                          setVocabAnswerState('correct'); feedbackCorrect();
+                          setTimeout(() => { setTypedAnswer(''); advanceFromVocab(); }, 1400);
+                        } else {
+                          setVocabAnswerState('wrong'); feedbackWrong();
+                          setTimeout(() => { setTypedAnswer(''); advanceFromVocab(); }, 2000);
+                        }
+                      }} disabled={vocabAnswerState !== 'default' || !typedAnswer.trim()} variant="primary">Go</GameButton>
+                    </div>
+                    {vocabAnswerState === 'wrong' && (
+                      <p className="text-xs text-center text-[var(--foreground)]/50">
+                        Answer: <span className="text-[#27ae60] font-bold">{vocabEncounter.correctText || shownVocab[step.index].german}</span>
+                      </p>
+                    )}
+                  </div>
+                ) : (
                 <div className="space-y-2.5">
                   {vocabEncounter.options.map((option, idx) => {
                     const isSelected = vocabSelectedOption === idx;
@@ -1048,12 +1104,10 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                               setVocabAnswerState('correct');
                               feedbackCorrect();
                               playVocabAudio(shownVocab[step.index].id).catch(() => {});
-                              // Auto-advance after showing correct
                               setTimeout(() => advanceFromVocab(), 1400);
                             } else {
                               setVocabAnswerState('wrong');
                               feedbackWrong();
-                              // Show correct answer, then advance
                               setTimeout(() => advanceFromVocab(), 2000);
                             }
                           }}
@@ -1066,6 +1120,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                     );
                   })}
                 </div>
+                )}
 
                 {/* Explanation after answering */}
                 {vocabAnswerState !== 'default' && (
@@ -1194,7 +1249,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             <motion.div
               key={`exercise-${step.index}`}
               initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
+              animate={
+                answerState === 'incorrect' ? { opacity: 1, x: [0, -8, 8, -4, 4, 0] } :
+                answerState === 'correct' ? { opacity: 1, x: 0, scale: [1, 1.02, 1] } :
+                { opacity: 1, x: 0 }
+              }
               exit={{ opacity: 0, x: -40 }}
               transition={{ type: 'spring', damping: 25 }}
               className="flex-1 flex flex-col"
