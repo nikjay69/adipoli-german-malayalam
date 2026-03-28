@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Volume2 } from 'lucide-react';
 import { KuttanImage } from '@/components/character/KuttanImage';
+import type { KuttanMoodImage } from '@/components/character/KuttanImage';
 import { GameButton } from '@/components/game';
 import { Confetti } from '@/components/game';
 import { ComboMeter } from '@/components/game/ComboMeter';
@@ -11,6 +12,7 @@ import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop, ArticleSor
 import { speakGerman } from '@/lib/audio/useGermanTTS';
 import { feedbackCombo, feedbackComboBreak, feedbackWrong, feedbackCelebration } from '@/lib/feedback';
 import type { GameMoment, GameChoice } from '@/lib/game-engine/types';
+import { VocabDiscoveryGame } from './VocabDiscoveryGame';
 
 interface GameRendererProps {
   moments: GameMoment[];
@@ -152,7 +154,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
             {/* ═══ SCENE — brief moment, auto-advances or tap ═══ */}
             {m.type === 'scene' && (
               <div className="flex items-end gap-3 cursor-pointer" onClick={advance}>
-                <KuttanImage mood={m.kuttan?.mood || 'waving'} size="md" animate={false} />
+                <KuttanImage mood={m.kuttan?.mood || 'waving'} size="md" animate={true} grounded enterFrom="left" />
                 <div className="bg-black/50 backdrop-blur-md rounded-2xl rounded-bl-sm px-4 py-3 flex-1 max-w-[250px]">
                   <p className="text-xs text-white/40 mb-0.5">{m.dialogue?.speaker}</p>
                   <p className="text-sm text-white font-medium">{m.dialogue?.text}</p>
@@ -164,7 +166,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
             {m.type === 'reaction' && (
               <div className="flex items-end gap-3">
                 <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 0.4 }}>
-                  <KuttanImage mood={m.kuttan?.mood || 'happy'} size="sm" animate={false} />
+                  <KuttanImage mood={m.kuttan?.mood || 'happy'} size="sm" animate={true} grounded />
                 </motion.div>
                 <div className="bg-black/40 backdrop-blur-md rounded-2xl rounded-bl-sm px-3 py-2">
                   <p className="text-sm text-[#d4a520] font-bold">{m.dialogue?.text}</p>
@@ -172,52 +174,16 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
               </div>
             )}
 
-            {/* ═══ WORD DISCOVER — interactive game for each word ═══ */}
+            {/* ═══ WORD DISCOVER — learn through interaction, not reading ═══ */}
             {m.type === 'word-discover' && m.vocab && (
-              <div className="flex flex-col items-center">
-                {/* Kuttan tiny reaction */}
-                <div className="flex items-center gap-2 mb-3">
-                  <KuttanImage mood="excited" size="xs" animate={false} />
-                  <span className="text-xs text-white/50">New word!</span>
-                </div>
-
-                {/* Word card — the discovery */}
-                <motion.div
-                  initial={{ scale: 0.3, rotateY: 180, opacity: 0 }}
-                  animate={{ scale: 1, rotateY: 0, opacity: 1 }}
-                  transition={{ type: 'spring', damping: 10 }}
-                  className="w-full max-w-[300px] bg-black/60 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden"
-                >
-                  <div className="bg-[#d4a520]/15 px-5 pt-4 pb-3 flex items-center justify-center gap-3">
-                    <motion.h2 className="text-3xl font-black text-[#d4a520]"
-                      animate={{ scale: [1, 1.03, 1] }} transition={{ repeat: Infinity, duration: 2 }}>
-                      {m.vocab.german}
-                    </motion.h2>
-                    <motion.button whileTap={{ scale: 0.85 }}
-                      onClick={() => { try { speakGerman(m.vocab!.german); } catch {} }}
-                      className="w-9 h-9 rounded-full bg-[#d4a520]/30 flex items-center justify-center">
-                      <Volume2 className="w-4 h-4 text-[#d4a520]" />
-                    </motion.button>
-                  </div>
-                  <div className="px-5 py-3 text-center">
-                    <p className="text-white text-base font-semibold">{m.vocab.english}</p>
-                    <p className="text-[#d4a520]/70 text-sm">{m.vocab.malayalam}</p>
-                  </div>
-                </motion.div>
-
-                {/* Next button */}
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
-                  className="mt-4 w-full max-w-[300px]">
-                  <GameButton onClick={advance} fullWidth variant="primary">Got it!</GameButton>
-                </motion.div>
-              </div>
+              <VocabDiscoveryGame vocab={m.vocab} onComplete={advance} onCorrect={handleCorrect} onWrong={handleWrong} />
             )}
 
             {/* ═══ DIALOGUE — choices (the game IS the learning) ═══ */}
             {m.type === 'dialogue' && m.dialogue && (
               <div className="flex flex-col">
                 <div className="flex items-end gap-3 mb-3">
-                  <KuttanImage mood={choiceResult ? (choiceResult.mood as import('@/components/character/KuttanImage').KuttanMoodImage) : (m.kuttan?.mood || 'thinking')} size="sm" animate={false} />
+                  <KuttanImage mood={choiceResult ? (choiceResult.mood as KuttanMoodImage) : (m.kuttan?.mood || 'thinking')} size="sm" animate={true} grounded />
                   <div className="bg-black/50 backdrop-blur-md rounded-2xl rounded-bl-sm px-4 py-3 flex-1 max-w-[260px]">
                     <p className="text-sm text-white">{choiceResult?.response || m.dialogue.text}</p>
                   </div>
@@ -254,22 +220,55 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
               </div>
             )}
 
-            {/* ═══ VICTORY ═══ */}
-            {m.type === 'victory' && (
-              <div className="flex flex-col items-center text-center">
-                <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-                  <KuttanImage mood="celebrating" size="xl" animate={false} />
-                </motion.div>
-                <motion.p initial={{ scale: 0 }} animate={{ scale: 1 }}
-                  className="text-2xl font-black text-white mt-4">Level Complete! 🎉</motion.p>
-                <p className="text-sm text-white/50 mt-1">{score}/{total} correct • {maxCombo}x best combo</p>
-                <div className="mt-4 w-full max-w-[280px]">
-                  <GameButton onClick={() => onComplete(score, total, maxCombo)} fullWidth variant="primary">
-                    Continue Journey
-                  </GameButton>
+            {/* ═══ VICTORY — #40 Enhanced with XP and treasures ═══ */}
+            {m.type === 'victory' && (() => {
+              const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+              const xpEarned = score * 10 + (maxCombo >= 5 ? 25 : 0);
+              const vocabCount = moments.filter(mm => mm.type === 'word-discover').length;
+              return (
+                <div className="flex flex-col items-center text-center">
+                  <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
+                    <KuttanImage mood="celebrating" size="xl" animate={true} grounded />
+                  </motion.div>
+                  <motion.p initial={{ scale: 0 }} animate={{ scale: 1 }}
+                    className="text-2xl font-black text-white mt-4">Level Complete!</motion.p>
+
+                  {/* Stats grid */}
+                  <div className="grid grid-cols-3 gap-3 mt-4 w-full max-w-[300px]">
+                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+                      className="bg-black/40 backdrop-blur-md rounded-xl p-2 border border-white/10">
+                      <p className="text-lg font-black text-[#d4a520]">{pct}%</p>
+                      <p className="text-[9px] text-white/40 uppercase font-bold">Accuracy</p>
+                    </motion.div>
+                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}
+                      className="bg-black/40 backdrop-blur-md rounded-xl p-2 border border-white/10">
+                      <p className="text-lg font-black text-[#27ae60]">+{xpEarned}</p>
+                      <p className="text-[9px] text-white/40 uppercase font-bold">XP Earned</p>
+                    </motion.div>
+                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
+                      className="bg-black/40 backdrop-blur-md rounded-xl p-2 border border-white/10">
+                      <p className="text-lg font-black text-[#a855f7]">{maxCombo}x</p>
+                      <p className="text-[9px] text-white/40 uppercase font-bold">Best Combo</p>
+                    </motion.div>
+                  </div>
+
+                  {/* Treasures (new words) found */}
+                  {vocabCount > 0 && (
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}
+                      className="mt-3 flex items-center gap-2 text-xs text-white/40">
+                      <span className="text-sm">{'\uD83D\uDC8E'}</span>
+                      <span>{vocabCount} new {vocabCount === 1 ? 'word' : 'words'} discovered</span>
+                    </motion.div>
+                  )}
+
+                  <div className="mt-4 w-full max-w-[280px]">
+                    <GameButton onClick={() => onComplete(score, total, maxCombo)} fullWidth variant="primary">
+                      Continue Journey
+                    </GameButton>
+                  </div>
                 </div>
-              </div>
-            )}
+              );
+            })()}
           </motion.div>
         </AnimatePresence>
       </div>
