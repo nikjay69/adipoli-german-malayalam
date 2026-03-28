@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { CharacterGuide } from '@/components/character';
+import { Typewriter } from '@/components/ui/Typewriter';
 import type { StoryScene } from '@/lib/content/types';
 
 interface NarrativeIntroProps {
@@ -121,7 +122,7 @@ export function NarrativeIntro({
         className="mt-2 w-full max-w-sm"
       >
         <p className="text-xs leading-relaxed text-[var(--foreground)]/60 italic px-1">
-          {scene.setting.description}
+          <Typewriter text={scene.setting.description} speed={35} delay={400} />
         </p>
 
         {/* Mission */}

@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ChevronRight, Lock, CheckCircle, Clock, Star, Play } from 'lucide-react';
 import { Card, Button, ProgressBar, Badge } from '@/components/ui';
+import { JourneyMap } from '@/components/lesson';
 import { useGameStore } from '@/lib/store';
 import { getModuleById } from '@/lib/content/modules';
 
@@ -136,11 +137,26 @@ export default function ModulePage({ params }: { params: Promise<{ moduleId: str
         </Card>
       </motion.div>
 
+      {/* Journey Map — visual progress path */}
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="mb-4"
+      >
+        <JourneyMap
+          module={module}
+          completedLessonIds={userProgress.completedLessons.map(l => l.lessonId)}
+          currentLessonId={nextLesson?.id}
+          onLessonTap={(lessonId) => router.push(`/play/${module.id}/${lessonId}`)}
+        />
+      </motion.div>
+
       {/* Lessons List */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
+        transition={{ delay: 0.15 }}
       >
         <h2 className="text-lg font-bold text-[var(--foreground)] mb-4">Lessons</h2>
         <div className="space-y-3">

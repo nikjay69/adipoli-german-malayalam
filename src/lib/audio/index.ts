@@ -10,3 +10,4 @@ export {
   getSceneForModule, MODULE_SCENE_MAP,
   type SceneType,
 } from './ambience';
+export { speakAsCharacter, speakDialogueLine } from './multiVoiceTTS';

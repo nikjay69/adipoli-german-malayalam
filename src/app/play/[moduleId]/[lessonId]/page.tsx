@@ -20,6 +20,7 @@ import { getLessonById, getModuleById, ALL_MODULES, getAllVocabulary } from '@/l
 import { isLessonUnlocked as checkLessonUnlocked } from '@/lib/curriculum';
 import { feedbackCorrect, feedbackWrong, feedbackCelebration, feedbackFlip, feedbackCombo, feedbackComboBreak } from '@/lib/feedback';
 import { ComboMeter } from '@/components/game/ComboMeter';
+import { MiniGameEmbed } from '@/components/game/MiniGameEmbed';
 import { generateEncounter, type Encounter } from '@/lib/encounters';
 import { checkForSurprise, type SurpriseEvent } from '@/lib/engagement/surprise-engine';
 
@@ -52,6 +53,7 @@ type Step =
   | { type: 'vocab'; index: number }
   | { type: 'contextual-vocab'; index: number }     // Story: vocab in narrative context
   | { type: 'decision-point'; index: number }        // Story: "what do you say?"
+  | { type: 'mini-game' }                            // Quick game break before exercises
   | { type: 'game-suggest' }
   | { type: 'exercise'; index: number }
   | { type: 'scene-conclusion' }                     // Story: wrap-up + teaser
@@ -358,9 +360,12 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     }
   };
 
-  // After decision points, go to game suggest or exercises
+  // After decision points/vocab → mini-game → game suggest → exercises
+  const hasMiniGame = shownVocab.length >= 3;
   const afterDecisionPoints = () => {
-    if (suggestedGame) {
+    if (hasMiniGame) {
+      setStep({ type: 'mini-game' });
+    } else if (suggestedGame) {
       setStep({ type: 'game-suggest' });
     } else {
       goToExercises();
@@ -447,8 +452,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       }
       // After challenge: advance to next word
       advanceFromVocab();
+    } else if (step.type === 'mini-game') {
+      // After mini-game → game suggest or exercises
+      if (suggestedGame) setStep({ type: 'game-suggest' });
+      else goToExercises();
     } else if (step.type === 'game-suggest') {
-      // Skip game → go to exercises
       goToExercises();
     } else if (step.type === 'exercise') {
       if (step.index < allExercises.length - 1) { setStep({ type: 'exercise', index: step.index + 1 }); setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false); setTypedAnswer(''); setTypeAnswerState('default'); setSpeakingResult(null); }
@@ -1094,6 +1102,27 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             </motion.div>
           )}
 
+          {/* MINI-GAME — quick vocab reinforcement before exercises */}
+          {step.type === 'mini-game' && (
+            <motion.div
+              key="mini-game"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              className="flex-1 flex flex-col justify-center"
+            >
+              <MiniGameEmbed
+                type={shownVocab.length >= 5 ? 'speed-tap' : 'listen-pick'}
+                items={shownVocab.map(v => ({ german: v.german, english: v.english }))}
+                onComplete={(score, total) => {
+                  if (score > 0) addXP(score * 3);
+                  setTimeout(() => goNext(), 1500);
+                }}
+                timeLimit={25}
+              />
+            </motion.div>
+          )}
+
           {/* GAME SUGGESTION — between vocab and exercises */}
           {step.type === 'game-suggest' && suggestedGame && (
             <motion.div
@@ -1485,7 +1514,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
 
       {/* Bottom Button — hidden during challenges, exercises, and decision points */}
       {step.type !== 'complete' && step.type !== 'exercise' && step.type !== 'game-suggest'
-        && step.type !== 'decision-point'
+        && step.type !== 'decision-point' && step.type !== 'mini-game'
         && !(step.type === 'vocab' && vocabPhase === 'challenge')
         && !(step.type === 'contextual-vocab' && vocabPhase === 'challenge')
         && (

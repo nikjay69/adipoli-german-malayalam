@@ -11,6 +11,7 @@ import { Confetti, XPGain } from '@/components/game';
 import { GameStoryWrapper, GAME_STORIES } from '@/components/game/GameStoryWrapper';
 import { useGameStore } from '@/lib/store';
 import { useGermanTTS } from '@/lib/audio/useGermanTTS';
+import { speakDialogueLine } from '@/lib/audio/multiVoiceTTS';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -483,15 +484,15 @@ export default function EavesdropGame() {
   // Current scenario
   const scenario = scenarios[currentRound] || null;
 
-  // Auto-speak German text when new scenario appears
+  // Auto-speak German text with character voice when new scenario appears
   useEffect(() => {
     if (gameState === 'playing' && scenario) {
       const timer = setTimeout(() => {
-        try { speakDE(scenario.germanText, { rate: 0.85 }); } catch { /* noop */ }
+        try { speakDialogueLine(scenario.germanText); } catch { /* noop */ }
       }, 400);
       return () => clearTimeout(timer);
     }
-  }, [gameState, currentRound, scenario, speakDE]);
+  }, [gameState, currentRound, scenario]);
 
   // ---------------------------------------------------------------------------
   // Start / Reset
@@ -735,7 +736,7 @@ export default function EavesdropGame() {
               {/* Listen again button */}
               <motion.button
                 whileTap={{ scale: 0.9 }}
-                onClick={() => { try { speakDE(scenario.germanText, { rate: 0.85 }); } catch {} }}
+                onClick={() => { try { speakDialogueLine(scenario.germanText); } catch {} }}
                 className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#d4a520]/20 flex items-center justify-center"
               >
                 <Volume2 className="w-4 h-4 text-[#d4a520]" />

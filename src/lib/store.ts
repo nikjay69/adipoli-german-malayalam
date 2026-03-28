@@ -52,7 +52,7 @@ export interface UserProgress {
   activeLessonCheckpoint?: {
     lessonId: string;
     moduleId: number;
-    stepType: 'intro' | 'scene-intro' | 'video' | 'vocab' | 'contextual-vocab' | 'decision-point' | 'exercise' | 'scene-conclusion' | 'complete';
+    stepType: 'intro' | 'scene-intro' | 'video' | 'vocab' | 'contextual-vocab' | 'decision-point' | 'mini-game' | 'exercise' | 'scene-conclusion' | 'complete';
     stepIndex: number;
     correctCount: number;
     hearts: number;
