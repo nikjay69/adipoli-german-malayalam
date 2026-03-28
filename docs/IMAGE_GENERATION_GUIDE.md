@@ -108,6 +108,42 @@ Dimensions: **512x512** (square)
 - [ ] **vocab-christmas-market.png**
   Prompt: "German Weihnachtsmarkt (Christmas market) stall, Glühwein cups, gingerbread hearts, twinkling lights, wooden hut, snow, illustrated flat design style, warm festive colors, no text"
 
+## BATCH 6: Module 6-18 Scene Backgrounds (missing scenes only)
+Save to: `public/images/scenes/`
+Most modules already have matching images. These are scenes with NO existing image match.
+
+### Pending
+
+- [ ] **scene-mod6-restaurant-ordering.png**
+  Prompt: "German traditional restaurant table set for two, menu on table, waiter approaching with notepad, rustic wooden interior, beer glasses, illustrated flat design style, warm colors, no text"
+
+- [ ] **scene-mod10-doctor-office.png**
+  Prompt: "German doctor's consultation room, stethoscope on desk, body anatomy poster on wall, medical equipment, patient chair, bright clean room, illustrated flat design style, warm colors, no text"
+
+- [ ] **scene-mod11-coworking.png**
+  Prompt: "German coworking office space, standing desks, laptops open, diverse colleagues chatting, whiteboard with project notes, large windows with city view, illustrated flat design style, warm colors, no text"
+
+- [ ] **scene-mod12-park-hobbies.png**
+  Prompt: "Berlin Tiergarten park scene, people jogging and cycling, picnic blanket, soccer ball, autumn trees, relaxed weekend atmosphere, illustrated flat design style, warm colors, no text"
+
+- [ ] **scene-mod13-living-room-stories.png**
+  Prompt: "Cozy German living room evening, photo album open on coffee table, warm lamp light, bookshelf, sofa with blankets, nostalgic atmosphere for telling stories, illustrated flat design style, warm colors, no text"
+
+- [ ] **scene-mod14-rathaus.png**
+  Prompt: "German Rathaus (city hall) interior, information desk, official documents and forms, waiting area, government building with high ceilings, illustrated flat design style, formal atmosphere, no text"
+
+- [ ] **scene-mod15-christmas-market.png**
+  Prompt: "German Weihnachtsmarkt (Christmas market), wooden stalls, Glühwein cups, gingerbread hearts, twinkling lights, snow falling, festive crowd, illustrated flat design style, warm festive colors, no text"
+
+- [ ] **scene-mod16-study-desk.png**
+  Prompt: "Study desk with German A1 textbook open, grammar notes pinned to wall, highlighters, flashcards spread out, desk lamp on, coffee cup, late night study session, illustrated flat design style, warm colors, no text"
+
+- [ ] **scene-mod17-exam-room.png**
+  Prompt: "Goethe-Institut exam room, rows of individual desks with exam papers, clock on wall showing exam time, pencils ready, nervous atmosphere, official Goethe-Institut green branding, illustrated flat design style, no text"
+
+- [ ] **scene-mod18-graduation.png**
+  Prompt: "Certificate ceremony scene, A1 Zertifikat document on podium, small German and Indian flags, confetti, celebration atmosphere, proud moment, illustrated flat design style, warm celebratory colors, no text"
+
 ---
 
 ## Already Exists (reuse these — no need to regenerate)

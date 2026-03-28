@@ -23,6 +23,46 @@ export const MODULE_16: Module = {
       description: "Master the dative case — articles, pronouns, and verbs that demand dative!",
       duration: "60 min",
       xpReward: 180,
+      storyScene: {
+        setting: {
+          name: "University Library (In der Uni-Bibliothek)",
+          sceneType: "office",
+          timeOfDay: "afternoon",
+          description: "A huge, silent library with rows of old books. You see a professor struggling to find a misplaced textbook on the top shelf. You decide to step in: 'Darf ich Ihnen helfen?'. You're learning the 'Dativ Case' today—the logic of the indirect object. It's like our Malayalam '-ന്' energy (To someone). You're identifying who things 'gehören' (belong to) and 'zeigen' (showing) the way. Precision is key here, machane!",
+        },
+        narrative: {
+          previousRecap: "You've mastered the daily life. Now, let's level up your grammar to the A2 bridge!",
+          currentObjective: "Correctly use dative articles (dem, der) and common dative verbs like helfen and gehören",
+          nextTeaser: "Next: Two-way prepositions! Let's see if the cat is ON or GOING ON the table!",
+        },
+        kuttanIntro: [
+          "Machane! Welcome to the Boss Level of grammar: DATIV. Nammude '-ന്' (To whom) logic aanu ithu. 'Ich helfe DIR' (I help TO you).",
+          "Article-il confusion varum. Masculine 'der' becomes 'dem', but feminine 'die' becomes 'der'! Yes, 'der Frau' means 'to the woman'. Sradhicho!",
+          "When you give something, the receiver always takes Dative. 'Ich gebe DEM Mann das Buch'. Let's master the article flip!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab16-1-1", encounterMoment: "You ask the professor: 'Kann ich Ihnen helfen?'", contextSentence: "Ich helfe dir bei den Hausaufgaben." },
+          { vocabId: "vocab16-1-3", encounterMoment: "You check the name tag: 'Gehört das Buch Ihnen?'", contextSentence: "Das Buch gehört mir." },
+          { vocabId: "vocab16-1-6", encounterMoment: "You pass the book: 'Ich gebe dem Professor das Buch.'", contextSentence: "Ich gebe dem Lehrer das Buch." },
+          { vocabId: "vocab16-1-7", encounterMoment: "You point to the shelf: 'Ich zeige Ihnen den Platz.'", contextSentence: "Kannst du mir den Weg zeigen?" },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'I give the gift to the woman'. What is the correct dative article for 'Frau'?",
+            options: [
+              { text: "der Frau.", isCorrect: true, response: "Exactly! In Dative, feminine 'die' becomes 'der'.", kuttanReaction: "Adipoli! Dative article logic perfectly capture cheythallo! 🔥" },
+              { text: "dem Frau.", isCorrect: false, response: "Aiyyo! 'dem' is for masc/neut. Fem logic different aanu, machaa!", kuttanReaction: "Vite machane! Dative flip sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "Which verb ALWAYS takes dative for the person receiving the action?",
+            options: [
+              { text: "helfen (to help).", isCorrect: true, response: "Correct! You always help 'to' someone in German grammar.", kuttanReaction: "Superb! Dative verb logic correctly picked! ⭐" },
+              { text: "sehen (to see).", isCorrect: false, response: "No! 'Sehen' is simple Akkusativ. Direct action objects are usually Akkusativ.", kuttanReaction: "Aiyyo! Verbs logic change aakkalle machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v16-1-1",
@@ -47,7 +87,7 @@ export const MODULE_16: Module = {
             "Transform nominative articles to dative",
             "Use dative in simple sentences"
           ],
-          placeholderThumbnail: "/images/thumbnails/dative-case.jpg"
+          placeholderThumbnail: "/images/university_library.png"
         },
         {
           id: "v16-1-2",
@@ -73,7 +113,7 @@ export const MODULE_16: Module = {
             "Use dative pronouns correctly in sentences",
             "Avoid the common mistake of using accusative with dative verbs"
           ],
-          placeholderThumbnail: "/images/thumbnails/dative-pronouns.jpg"
+          placeholderThumbnail: "/images/university_library.png"
         }
       ],
       exercises: [
@@ -259,6 +299,46 @@ export const MODULE_16: Module = {
       description: "Master the nine prepositions that switch between accusative and dative — depending on movement vs location!",
       duration: "60 min",
       xpReward: 180,
+      storyScene: {
+        setting: {
+          name: "New Apartment (In der neuen Wohnung)",
+          sceneType: "home",
+          timeOfDay: "afternoon",
+          description: "Boxes, furniture, and tools are scattered everywhere. You and Arjun are finally setting up your new place. You're holding a heavy lamp: 'Arjun, where does this go?'. You're facing the ultimate German grammar challenge: the nine 'Wechselpräpositionen' (two-way prepositions). If you are *moving* something to a spot, it's Akkusativ. If it's *already* there, it's Dativ. 'Wo?' vs 'Wohin?'. It's all about the action, machane!",
+        },
+        narrative: {
+          previousRecap: "You've mastered the dative verbs. now let's see how dative and accusative battle for the prepositions!",
+          currentObjective: "Correctly identify movement vs location to choose the right case for two-way prepositions",
+          nextTeaser: "Next: Reflexive verbs! Let's talk about those 'self-centerd' verbs like 'sich waschen'!",
+        },
+        kuttanIntro: [
+          "Machane! These 9 prepositions (in, an, auf...) are like a switch. Action undo? Akkusativ. Irippundo? Dativ!",
+          "Think about it: 'Ich stelle das Buch AUF DEN Tisch' (I'm putting it there - Movement). 'Das Buch liegt AUF DEM Tisch' (It's already there - Static).",
+          "Nammude 'mēšayil irikkunnu' (sitting on table) vs 'mēšayil vekkunnu' (putting on table) logic pole thanne! Let's get moving!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab16-2-1", encounterMoment: "You point to the kitchen: 'Ich bin in der Küche.'", contextSentence: "Ich bin im Haus." },
+          { vocabId: "vocab16-2-2", encounterMoment: "You put a box down: 'Ich lege es auf den Boden.'", contextSentence: "Das Buch liegt auf dem Tisch." },
+          { vocabId: "vocab16-2-8", encounterMoment: "Arjun looks for the broom: 'Er ist hinter dem Schrank.'", contextSentence: "Der Garten ist hinter dem Haus." },
+          { vocabId: "vocab16-2-6", encounterMoment: "You suggest: 'Stell die Lampe neben den Stuhl.'", contextSentence: "Das Café ist neben der Bäckerei." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You're asking 'WHERE are you?'. Which case should follow the preposition 'in'?",
+            options: [
+              { text: "Dativ (Location).", isCorrect: true, response: "Exactly! 'Wo?' always asks for the location, which is Dative.", kuttanReaction: "Adipoli! Location logic perfectly capture cheythallo! 🔥" },
+              { text: "Akkusativ (Movement).", isCorrect: false, response: "Aiyyo! Akkusativ is for 'Wohin?' (Where to?). Since you're already there, it's Dative.", kuttanReaction: "Vite machane! Static mode sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You are putting a picture ON the wall. Is this an action (movement) or a state (static)?",
+            options: [
+              { text: "Action (Akkusativ).", isCorrect: true, response: "Correct! You are moving the picture from your hand to the wall. So use Akkusativ 'an die'.", kuttanReaction: "Superb! Action logic correctly picked! ⭐" },
+              { text: "State (Dativ).", isCorrect: false, response: "No! Once it's hanging, it's Dativ. But since you are *putting* it there, it's Akkusativ.", kuttanReaction: "Aiyyo! Movement logic marakkallae machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v16-2-1",
@@ -282,7 +362,7 @@ export const MODULE_16: Module = {
             "Know the contractions (im, ins, am, ans)",
             "Apply the correct case with each preposition"
           ],
-          placeholderThumbnail: "/images/thumbnails/wechselpraepositionen.jpg"
+          placeholderThumbnail: "/images/german_apartment_living_room_v2.png"
         },
         {
           id: "v16-2-2",
@@ -309,7 +389,7 @@ export const MODULE_16: Module = {
             "Know the verb pairs: liegen/legen, stehen/stellen, sitzen/setzen",
             "Form correct sentences with two-way prepositions"
           ],
-          placeholderThumbnail: "/images/thumbnails/wohin-vs-wo.jpg"
+          placeholderThumbnail: "/images/german_train_station.png"
         }
       ],
       exercises: [
@@ -495,6 +575,46 @@ export const MODULE_16: Module = {
       description: "Learn verbs where the action reflects back on the subject — sich waschen, sich freuen, and more!",
       duration: "45 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "WG Bathroom (Im Badezimmer)",
+          sceneType: "home",
+          timeOfDay: "morning",
+          description: "A small, tidy bathroom with a steamed-up mirror. You're splashing cold water on your face, trying to wake up. Arjun knocks on the door: 'Machane, beeil dich! We're late!'. You're learning about 'Mirror Verbs' (Reflexive verbs). In German, many actions 'reflect' back on you. You don't just 'wash', you 'wash yourself'. You're preparing for the day, and you 'freust dich' (are happy) about the future. Ready to reflect, machane?",
+        },
+        narrative: {
+          previousRecap: "You've sorted the apartment furniture. Now, let's look at yourself!",
+          currentObjective: "Correctly use reflexive pronouns (mich, dich, sich) and understand the 'body part' rule",
+          nextTeaser: "Final Lesson: Complex sentences! Let's use 'weil' and 'dass' to explain your life!",
+        },
+        kuttanIntro: [
+          "Machane! Reflexive verbs are like a mirror. Action thirichu nammalilekku thanne varum. 'Ich wasche MICH'.",
+          "Most pronouns are like Akkusativ, but sradhikkanne: 'Er/Sie' and 'Formal Sie' eppolum 'SICH' use cheyyam. Ith oru master pronoun aanu!",
+          "Pinne oru small trap und: If you wash your hands, it's 'Ich wasche MIR die Hände'. Standard Dative vs Akkusativ logic. Let's practice!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab16-3-1", encounterMoment: "You look in the mirror: 'Ich wasche mich.'", contextSentence: "Ich wasche mich jeden Morgen." },
+          { vocabId: "vocab16-3-8", encounterMoment: "Arjun yells: 'Beeil dich!'", contextSentence: "Beeil dich! Wir sind spät dran." },
+          { vocabId: "vocab16-3-4", encounterMoment: "You smile: 'Ich freue mich auf den Tag.'", contextSentence: "Ich freue mich auf den Urlaub." },
+          { vocabId: "vocab16-3-3", encounterMoment: "You point to the chair: 'Sich setzen, bitte.'", contextSentence: "Bitte setzen Sie sich!" },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'I am getting dressed'. Which reflexive pronoun do you use with 'ich'?",
+            options: [
+              { text: "mich.", isCorrect: true, response: "Exactly! 'mich' is the standard accusative reflexive pronoun for 'ich'.", kuttanReaction: "Adipoli! Mirror logic perfectly capture cheythallo! 🔥" },
+              { text: "sich.", isCorrect: false, response: "Aiyyo! 'sich' is only for Er/Sie/Es and Formal Sie. For yourself, it's 'mich'.", kuttanReaction: "Vite machane! Pronouns sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You see a friend looking stressed. You want to tell them 'Hurry up!'. How do you say it in the informal 'du' form?",
+            options: [
+              { text: "Beeil dich!", isCorrect: true, response: "Correct! The verb 'beeilen' needs its mirror part 'dich' for the person you're talking to.", kuttanReaction: "Superb! Imperative logic correctly picked! ⭐" },
+              { text: "Ich beeile mich.", isCorrect: false, response: "No! That means 'I am hurrying'. You want them to hurry!", kuttanReaction: "Aiyyo! Meaning change aakkalle machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v16-3-1",
@@ -513,7 +633,7 @@ export const MODULE_16: Module = {
           ],
           keyVocabulary: ["sich waschen", "sich freuen", "sich beeilen", "sich setzen"],
           learningObjectives: ["Identify reflexive verbs", "Use mich/dich/sich correctly", "Understand Accusative vs Dative reflexive usage"],
-          placeholderThumbnail: "/images/thumbnails/reflexive-verbs.jpg"
+          placeholderThumbnail: "/images/home_office.png"
         }
       ],
       exercises: [
@@ -690,6 +810,46 @@ export const MODULE_16: Module = {
       description: "Learn to build complex sentences with weil, dass, wenn, and als — where the verb goes to the END!",
       duration: "60 min",
       xpReward: 180,
+      storyScene: {
+        setting: {
+          name: "Cozy Cafe (Im Café)",
+          sceneType: "station",
+          timeOfDay: "afternoon",
+          description: "A small, warm cafe with the smell of freshly ground coffee and warm pretzels. You and Arjun are having a deep conversation about your future. You're trying to explain your motivations: 'Ich lerne Deutsch, weil...'. You're learning the 'Verb-Kicker' rule. Words like 'weil', 'dass', and 'wenn' are so powerful they kick the verb to the very end of the sentence. It's like a suspense movie—you have to wait for the verb until the finish line! Ready to sound like a philosopher, machane?",
+        },
+        narrative: {
+          previousRecap: "You've reflected on yourself. Now, let's connect your ideas into complex logic!",
+          currentObjective: "Correctly position the conjugated verb at the end of subordinate clauses using weil, dass, and wenn",
+          nextTeaser: "Final Modules! You're ready for the Goethe A1 Exam Preparation. Let's get that certificate!",
+        },
+        kuttanIntro: [
+          "Machane! This is the sign of a real pro. Subordinate clauses make your German flow. But remember: Verb moves to the very last position!",
+          "If you say 'Ich hoffe, DASS du kommst', 'kommst' stands at the end. It's like nammude Malayalam structure in some ways—verb at the end!",
+          "Also, 'als' and 'wenn'. 'Als' is for that one time in the past (like your first day in Germany). 'Wenn' is for 'whenever' or 'if'. Let's build some logic!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab16-4-1", encounterMoment: "You explain: 'Ich lerne, weil es wichtig ist.'", contextSentence: "Ich lerne Deutsch, weil ich in Deutschland wohnen möchte." },
+          { vocabId: "vocab16-4-3", encounterMoment: "You share a hope: 'Ich hoffe, dass alles gut geht.'", contextSentence: "Ich hoffe, dass du kommst." },
+          { vocabId: "vocab16-4-2", encounterMoment: "You plan: 'Wenn ich Zeit habe, komme ich.'", contextSentence: "Wenn es regnet, bleibe ich zu Hause." },
+          { vocabId: "vocab16-4-3", encounterMoment: "You ask Arjun: 'Weißt du, ob das Café offen ist?'", contextSentence: "Ich weiß nicht, ob er kommt." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'I am happy because you are coming'. Where do you place 'bist' in 'Ich bin froh, weil du hier...'?",
+            options: [
+              { text: "At the very end of the sentence (bist).", isCorrect: true, response: "Exactly! 'weil' kicks the verb to the very end.", kuttanReaction: "Adipoli! Sub-clause logic perfectly capture cheythallo! 🔥" },
+              { text: "In position 2 after 'du' (bist).", isCorrect: false, response: "Aiyyo! In a subordinate clause, the verb moves from Pos 2 to the end.", kuttanReaction: "Vite machane! Verb-kicker rule sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You are talking about the ONE time you arrived in Berlin. Which word do you use for 'When'?",
+            options: [
+              { text: "Als (single past event).", isCorrect: true, response: "Correct! 'Als' is used for unique, non-repeating events in the past.", kuttanReaction: "Superb! Time logic correctly picked! ⭐" },
+              { text: "Wenn (repeated/present).", isCorrect: false, response: "No! 'Wenn' is for habits or if-situations. For a one-time past event, use 'als'.", kuttanReaction: "Aiyyo! Past logic marakkallae machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v16-4-1",
@@ -713,7 +873,7 @@ export const MODULE_16: Module = {
             "Move the verb to the end of subordinate clauses",
             "Handle word order when subordinate clause comes first"
           ],
-          placeholderThumbnail: "/images/thumbnails/subordinate-clauses.jpg"
+          placeholderThumbnail: "/images/university_library.png"
         },
         {
           id: "v16-4-2",
@@ -743,7 +903,7 @@ export const MODULE_16: Module = {
             "Combine multiple subordinate clauses",
             "Produce A2-level complex sentences"
           ],
-          placeholderThumbnail: "/images/thumbnails/connecting-ideas.jpg"
+          placeholderThumbnail: "/images/university_library.png"
         }
       ],
       exercises: [
@@ -910,6 +1070,49 @@ export const MODULE_16: Module = {
       description: "Practice reading real German texts — emails, ads, blogs — and build your reading confidence for A2!",
       duration: "60 min",
       xpReward: 200,
+      storyScene: {
+        setting: {
+          name: "Vorbereitungsraum B2",
+          sceneType: "classroom",
+          timeOfDay: "morning",
+          description: "A quiet classroom with practice texts pinned on the walls. Students sit with highlighters and dictionaries, preparing for the reading section of their German exam.",
+        },
+        narrative: {
+          previousRecap: "You've built strong grammar and vocabulary foundations. Now it's time to put it all together — reading REAL German texts!",
+          currentObjective: "Practice reading comprehension strategies on German emails, ads, and short articles",
+          nextTeaser: "Next: writing practice — time to produce your own German texts!",
+        },
+        kuttanIntro: [
+          "Machane! Ippol real German texts vayikkan time aayi. Pazhaya school exam-il English comprehension cheythathu pole thanneyaanu — but German-il!",
+          "Important tip: every word manasilaakanam ennu illa! Key words nokkuka, context-il ninnu guess cheyyuka. Scanning strategy use cheyyuka.",
+          "Cognates — English-umaai similar aayi irikkunna words — athanu nammude best friend. 'Telefon', 'Computer', 'Musik' okke same aanu! Let's read!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab16-5-1", encounterMoment: "The teacher hands out a passage: 'Lesen Sie den Text aufmerksam.'", contextSentence: "Lesen Sie den Text und beantworten Sie die Fragen." },
+          { vocabId: "vocab16-5-2", encounterMoment: "You read a sentence twice: 'Jetzt verstehe ich den Text.'", contextSentence: "Ich verstehe den Text gut." },
+          { vocabId: "vocab16-5-3", encounterMoment: "The teacher points to a section: 'Schauen Sie sich den ersten Absatz an.'", contextSentence: "Lesen Sie den ersten Absatz." },
+          { vocabId: "vocab16-5-4", encounterMoment: "You encounter an unknown word and try to guess: 'Was ist die Bedeutung?'", contextSentence: "Was ist die Bedeutung dieses Wortes?" },
+          { vocabId: "vocab16-5-5", encounterMoment: "The teacher explains: 'Den Zusammenhang benutzen — guess from context!'", contextSentence: "Man kann die Bedeutung aus dem Zusammenhang erraten." },
+          { vocabId: "vocab16-5-6", encounterMoment: "You open a German book confidently: 'Ich lese gern auf Deutsch.'", contextSentence: "Ich lese gern deutsche Bücher." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You see an unknown word in a German email: 'Krankenversicherung'. You don't know it. What's your best strategy?",
+            options: [
+              { text: "Break it into parts: Kranken + Versicherung (sick + insurance) = health insurance!", isCorrect: true, response: "Exactly! German compound words can be split into smaller parts you already know. 'Krankenversicherung' = health insurance.", kuttanReaction: "Adipoli! Compound words split cheythu manasilaakkiyath valya karyam. German-il ithaanu the superpower! 🔥" },
+              { text: "Skip it completely and move on.", isCorrect: false, response: "Skipping can work sometimes, but this word might be key to the text. Try breaking it into parts first!", kuttanReaction: "Machane! Skip cheyyunnathinnu munpu compound word split cheythu nokkaam. 'Kranken' + 'Versicherung' — try it!" },
+            ],
+          },
+          {
+            moment: "A reading passage asks 'Wann hat die Bäckerei geöffnet?' and you see 'Mo-Fr: 6:00-18:00, Sa: 7:00-14:00'. What's the answer for Saturday?",
+            options: [
+              { text: "Am Samstag von 7 bis 14 Uhr.", isCorrect: true, response: "Correct! 'Sa' = Samstag (Saturday), and the hours are 7:00-14:00.", kuttanReaction: "Perfect! Abbreviations manasilaakkiyath nannaayi. 'Sa' = Samstag, numbers = opening hours. Simple! ⭐" },
+              { text: "Am Samstag von 6 bis 18 Uhr.", isCorrect: false, response: "Those are the Monday-Friday hours (Mo-Fr). Saturday (Sa) has different hours: 7:00-14:00.", kuttanReaction: "Aiyyo! Athu Monday to Friday-nte hours aanu. Saturday-inu separate line nokkuka — 7:00-14:00!" },
+              { text: "Am Samstag ist die Bäckerei geschlossen.", isCorrect: false, response: "Saturday hours are listed as 7:00-14:00, so it IS open on Saturday, just with shorter hours.", kuttanReaction: "Illa machane! 'Sa: 7:00-14:00' ennu kaanunnund — athu open aanu, but shorter hours-il!" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v16-5-1",
@@ -941,7 +1144,7 @@ export const MODULE_16: Module = {
             "Extract specific information from emails and advertisements",
             "Build confidence reading authentic German materials"
           ],
-          placeholderThumbnail: "/images/thumbnails/reading-comprehension.jpg"
+          placeholderThumbnail: "/images/university_library.png"
         }
       ],
       exercises: [

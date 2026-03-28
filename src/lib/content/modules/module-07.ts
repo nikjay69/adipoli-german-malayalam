@@ -24,6 +24,47 @@ export const MODULE_7: Module = {
       description: "Learn everyday grocery items and how to navigate a German supermarket. Kerala kirana store vibes, but make it Deutsch!",
       duration: "45 min",
       xpReward: 120,
+      storyScene: {
+        setting: {
+          name: "Lidl / Aldi Supermarket",
+          sceneType: "market",
+          timeOfDay: "afternoon",
+          description: "The fluorescent lights hum, and the air is filled with the smell of the bakery section. People are moving with purpose. There's no time to chat like at a Kerala village store. It's a high-speed efficiency test. Time to find your groceries and get through that checkout line, machane!",
+        },
+        narrative: {
+          previousRecap: "You've survived the restaurant meal. Now, let's learn how to fill your own fridge!",
+          currentObjective: "Identify grocery items with articles and manage the 'express' checkout experience",
+          nextTeaser: "Next: the price is right! Let me tell you about Euros and Cents!",
+        },
+        kuttanIntro: [
+          "Machane! German supermarkets are separate scene. Nammude kirana shop-il 'chettan' ennu vilichu help chodikkam, but ivide full self-service aanu.",
+          "Items-inte articles (der, die, das) focus cheyyane. 'Das Brot', 'Die Milch' — ithu fix cheythal billing simple aakum.",
+          "Ettavum main point: Checkout. Scan cheyyumpol nammal bag ready aakki nilkkanam. Speed is key! Let's shop!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab7-1-1", encounterMoment: "You pick up a carton: 'Die Milch steht hier.' (The milk is here).", contextSentence: "Ich brauche die Milch." },
+          { vocabId: "vocab7-1-2", encounterMoment: "You grab a loaf: 'Das Brot ist billig.' (The bread is cheap).", contextSentence: "Das Brot ist frisch." },
+          { vocabId: "vocab7-1-4", encounterMoment: "You find some eggs: 'Sechs Eier, bitte.' (Six eggs, please).", contextSentence: "Ich kaufe sechs Eier." },
+          { vocabId: "vocab7-1-5", encounterMoment: "You look for sugar: 'Wo finde ich den Zucker?' (Where can I find the sugar?).", contextSentence: "Wo finde ich den Zucker?" },
+          { vocabId: "vocab7-1-7", encounterMoment: "You spot the pasta: 'Die Nudeln sind dort.' (The noodles are there).", contextSentence: "Die Nudeln sind lecker." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You reach the register. The cashier scans everything at lightning speed. You haven't brought a bag. What do you say?",
+            options: [
+              { text: "Ich brauche eine Tüte, bitte.", isCorrect: true, response: "Exactly! You need to buy a bag (die Tüte). In Germany, no bag is free!", kuttanReaction: "Adipoli! Germany-il plastic bags free aayittilla. 'Tüte' venam enkal athu muthale parayanam. Correct move! 🔥" },
+              { text: "Haben Sie Plastic-Cover?", isCorrect: false, response: "Aiyyo! 'Plastic-Cover' is Manglish. They use 'Tüte'. And remember, they cost money!", kuttanReaction: "Vite machane! 'Cover' ennu paranjal Germans-inu manassilaavoolla. 'Tüte' ennu fix cheythoru! Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You are finished. How do you tell the cashier 'That's all'?",
+            options: [
+              { text: "Das ist alles, danke.", isCorrect: true, response: "Correct! This signals the end of the transaction.", kuttanReaction: "Superb! 'Das ist alles' signals the end. Next step: payment! ⭐" },
+              { text: "Ich bin fertig.", isCorrect: false, response: "Technically okay, but 'Das ist alles' is the standard phrase at the checkout.", kuttanReaction: "Aiyyo! 'Fertig' is more for tasks. Checkout-il 'Das ist alles' aanu natural form. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v7-1-1",
@@ -48,7 +89,7 @@ export const MODULE_7: Module = {
             "Use basic shopping phrases at the checkout",
             "Understand cultural differences in German shopping"
           ],
-          placeholderThumbnail: "/images/thumbnails/supermarkt.jpg"
+          placeholderThumbnail: "/images/supermarket_checkout.png"
         }
       ],
       exercises: [
@@ -199,6 +240,47 @@ export const MODULE_7: Module = {
       description: "Master talking about prices, understanding Euro currency, and handling money conversations in German.",
       duration: "45 min",
       xpReward: 120,
+      storyScene: {
+        setting: {
+          name: "Weekly Market (Annas Wochenmarkt)",
+          sceneType: "market",
+          timeOfDay: "morning",
+          description: "Stalls are overflowing with fresh cheese, honey, and seasonal vegetables. No prices are fixed in your head yet — you need to ask! The air is chilly, and you need to calculate fast. Euro coins are heavy, and some stalls have a scary sign: 'Nur Barzahlung' (Cash Only). Time to handle the cash, machane!",
+        },
+        narrative: {
+          previousRecap: "You've survived the supermarket speed test. Now, let's learn how to actually pay for all those groceries!",
+          currentObjective: "Ask for prices, understand Euro/Cent combinations, and choose payment methods",
+          nextTeaser: "Next: dressing up! Colors, clothes, and autumn vibes!",
+        },
+        kuttanIntro: [
+          "Machane! Money matters are serious. German-il decimals parayumpo check cheyyam. Dot (.) alla, comma (,) aanu ivide use cheyyunnathu.",
+          "Prices chodikkaan 'Was kostet das?' mathi. Bill kandaal 2,50 ennal 'Zwei Euro fünfzig' ennu parayanam.",
+          "Main trap: Many small shops and markets only take cash. UPI nammude Kochi-il ulla athra ivide illatto! Keep some Euros in your pocket!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab7-2-1", encounterMoment: "You point to some cheese: 'Was kostet das Stück Käse?' (What does the piece of cheese cost?).", contextSentence: "Was kostet das Brot?" },
+          { vocabId: "vocab7-2-4", encounterMoment: "You see some exotic fruits: 'Das ist sehr teuer!' (That is very expensive!). Better stick to apples.", contextSentence: "Das ist sehr teuer!" },
+          { vocabId: "vocab7-2-7", encounterMoment: "You reach the counter: 'Ich möchte bar zahlen.' (I would like to pay cash).", contextSentence: "Ich möchte bar zahlen." },
+          { vocabId: "vocab7-2-8", encounterMoment: "The seller hands you a piece of paper: 'Hier ist Ihre Quittung.' (Here is your receipt).", contextSentence: "Kann ich die Quittung haben?" },
+          { vocabId: "vocab7-2-6", encounterMoment: "You find some discount milk: 'Das ist günstig.' (That is affordable).", contextSentence: "Der Supermarkt ist günstig." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You see a price tag '3,50 €'. How do you say this amount correctly in German?",
+            options: [
+              { text: "Drei Euro fünfzig.", isCorrect: true, response: "Exactly! You say the big unit (Euro) then the smaller unit (Cent) without saying 'Cent' usually.", kuttanReaction: "Adipoli! Price logic perfect aayi handle cheythallo. You're ready for the market! 🔥" },
+              { text: "Drei Punkt fünfzig Euro.", isCorrect: false, response: "Aiyyo! 'Punkt' means point, but in Germany we use a comma. 'Drei Euro fünfzig' is the way to say it.", kuttanReaction: "Vite machane! German-il comma decimal aanu system. 'Zwei Euro fünfzig' ennu fix cheytho! Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You see a sign 'Nur Barzahlung'. What does this mean for your payment?",
+            options: [
+              { text: "I must pay with cash.", isCorrect: true, response: "Correct! 'Barzahlung' means cash payment only. No cards or mobile pay here!", kuttanReaction: "Superb! German cash culture logic catch cheythallo. ATM-il ninnu cash edukkan marakkaalle! ⭐" },
+              { text: "I can pay with Google Pay.", isCorrect: false, response: "No! 'Nur' means only. If it says 'Barzahlung', no cards or apps will work!", kuttanReaction: "Aiyyo! 'Nur Barzahlung' kandaal katti poyene. Cash mathame edukkoolla ennanu artham. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v7-2-1",
@@ -224,7 +306,7 @@ export const MODULE_7: Module = {
             "Use vocabulary for expensive, cheap, and affordable",
             "Know common payment terms and cultural differences"
           ],
-          placeholderThumbnail: "/images/thumbnails/euro-cent.jpg"
+          placeholderThumbnail: "/images/supermarket_checkout.png"
         }
       ],
       exercises: [
@@ -234,6 +316,7 @@ export const MODULE_7: Module = {
           question: "How do you ask 'How much does this cost?' in German?",
           options: ["Was ist das?", "Wie viel kostet das?", "Wo ist das?", "Was machst du?"],
           correctAnswer: "Wie viel kostet das?",
+          imageUrl: "/images/german_menu.png",
           explanation: "'Wie viel kostet das?' = 'How much does that cost?' You can also say 'Was kostet das?'",
           xpReward: 10
         },
@@ -384,6 +467,47 @@ export const MODULE_7: Module = {
       description: "Learn to describe colors, name clothing items, and get a first taste of adjective endings in German!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Shopping Center 'Arkaden'",
+          sceneType: "mall",
+          timeOfDay: "afternoon",
+          description: "The mall is bright and crowded. Windows are full of autumn fashion. In Kochi, we mostly wear light clothes and Mundu, but here, the layers (Zwiebeltechnik — onion principle!) are essential. You need a jacket, a sweater, and some warm shoes. Time to pick your colors and build your German style, machane!",
+        },
+        narrative: {
+          previousRecap: "You've mastered the market prices. Now, let's use that money to upgrade your wardrobe!",
+          currentObjective: "Identify clothing items and colors, and use basic adjective endings (das rote Hemd)",
+          nextTeaser: "Next: talk to the staff! Let's handle a real shopping dialogue!",
+        },
+        kuttanIntro: [
+          "Machane! Dressing up in Germany is a separate level game. Autumn muthal winter vare nammal 'Zwiebel-prinzip' (onion principle) follow cheyyaam — layers layers mathame! 😄",
+          "Colors (rot, blau, grün) and clothing (Hose, Hemd, Jacke) focus cheyyane. Adjective endings (rote, blaues) small peek ivide kittaam.",
+          "Pinne 'die Hose' (trousers) singular aanu German-il ennorkkane. English-il oru pair aayirunnallo. Let's start shopping!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab7-3-1", encounterMoment: "You see a red shirt: 'Das rote Hemd gefällt mir.' (I like the red shirt).", contextSentence: "Die Blume ist rot." },
+          { vocabId: "vocab7-3-10", encounterMoment: "You try on a jacket: 'Die Jacke ist grün.' (The jacket is green).", contextSentence: "Nimm die Jacke mit, es ist kalt!" },
+          { vocabId: "vocab7-3-7", encounterMoment: "Lara suggests: 'Schau mal, das blaue Hemd!' (Look, the blue shirt!).", contextSentence: "Ich trage ein blaues Hemd." },
+          { vocabId: "vocab7-3-12", encounterMoment: "You need shoes: 'Die schwarzen Schuhe sind teuer.' (The black shoes are expensive).", contextSentence: "Die schwarzen Schuhe gefallen mir." },
+          { vocabId: "vocab7-3-8", encounterMoment: "You pick up trousers: 'Die Hose ist blau.' (The pants are blue).", contextSentence: "Die Hose ist zu lang." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You see a beautiful red dress (das Kleid). How do you say 'The red dress' correctly?",
+            options: [
+              { text: "Das rote Kleid.", isCorrect: true, response: "Exactly! After 'das', the adjective gets an '-e' ending. Perfect agreement!", kuttanReaction: "Adipoli! 'das' + adjective + noun logic correctly catch cheythallo. You're a pro! 🔥" },
+              { text: "Das rot Kleid.", isCorrect: false, response: "Aiyyo! Adjectives between the article and noun ALWAYS need an ending. 'rot' cannot stay pure here!", kuttanReaction: "Vite machane! Ending '-e' koodi add cheythal 'das rote Kleid' aavum. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "Which statement about 'die Hose' (trousers) is correct in German?",
+            options: [
+              { text: "It is a singular noun (one item).", isCorrect: true, response: "Correct! Even though it has two legs, it's one 'Hose' in German.", kuttanReaction: "Superb! In English 'trousers' are plural, but in German 'die Hose' is singular. Point noted! ⭐" },
+              { text: "It is always plural.", isCorrect: false, response: "No! Unlike English, German 'Hose' is singular. 'Die Hose ist...' not 'are'.", kuttanReaction: "Aiyyo! English logic ivide apply cheyyalle. German-il ithu singular aanu. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v7-3-1",
@@ -404,7 +528,7 @@ export const MODULE_7: Module = {
             "Associate colors with everyday objects",
             "Understand that rosa and lila are special (indeclinable)"
           ],
-          placeholderThumbnail: "/images/thumbnails/farben.jpg"
+          placeholderThumbnail: "/images/berlin_people.png"
         },
         {
           id: "v7-3-2",
@@ -430,7 +554,7 @@ export const MODULE_7: Module = {
             "Understand the basic pattern of adjective endings after definite articles",
             "Describe what you or others are wearing"
           ],
-          placeholderThumbnail: "/images/thumbnails/kleidung.jpg"
+          placeholderThumbnail: "/images/supermarket_checkout.png"
         }
       ],
       exercises: [
@@ -626,6 +750,47 @@ export const MODULE_7: Module = {
       description: "Practice real-world shopping conversations — from asking for help to trying on clothes and paying at the register.",
       duration: "45 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Global Fashion Store (H&M)",
+          sceneType: "mall",
+          timeOfDay: "afternoon",
+          description: "Rows of clothes stretching as far as the eye can see. You've picked up a nice jacket, but you're not sure if it fits. A sales assistant is circling around. In Kochi, they might follow you closely, but here they wait until you look confused. Time to speak up and handle the dialogue, machane!",
+        },
+        narrative: {
+          previousRecap: "You've picked your colors and clothes. Now, let's learn how to interact with the people in the shop!",
+          currentObjective: "Navigate a complete shopping conversation including help requests, sizes, and fitting",
+          nextTeaser: "Module 7 complete! Next: Let's travel! Train stations, tickets, and the DB experience!",
+        },
+        kuttanIntro: [
+          "Machane! Shop-il ninnu help chodikkunnathu oru separate skill aanu. 'Ich suche...' (I'm looking for) ennu thudangiyaal baaki ellam simple aakum.",
+          "Size-inte karyam parayumpo 'Größe M' (size M) ennu parayanam. Pinne dress try cheyyaan 'anprobieren' use cheyyam.",
+          "Umkleidekabine (fitting room) evideyaannu nokkane. Ellaam polite aayi handle cheyyaam!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab7-4-1", encounterMoment: "The assistant approaches: 'Kann ich Ihnen helfen?' (Can I help you?). You're ready!", contextSentence: "Kann ich Ihnen helfen?" },
+          { vocabId: "vocab7-4-2", encounterMoment: "You answer: 'Ich suche eine Jacke in Blau.' (I'm looking for a blue jacket).", contextSentence: "Ich suche einen Pullover." },
+          { vocabId: "vocab7-4-4", encounterMoment: "You find the right one: 'Kann ich das anprobieren?' (Can I try this on?).", contextSentence: "Kann ich das anprobieren?" },
+          { vocabId: "vocab7-4-5", encounterMoment: "The assistant points: 'Die Umkleidekabine ist dort.' (The fitting room is there).", contextSentence: "Die Umkleidekabine ist dort drüben." },
+          { vocabId: "vocab7-4-6", encounterMoment: "Verdict: 'Das passt gut! Wo ist die Kasse?' (That fits well! Where is the checkout?).", contextSentence: "Bitte zahlen Sie an der Kasse." },
+        ],
+        decisionPoints: [
+          {
+            moment: "The assistant asks 'Kann ich Ihnen helfen?'. You want to say 'Yes, I am looking for a shirt'. What do you say?",
+            options: [
+              { text: "Ja, ich suche ein Hemd.", isCorrect: true, response: "Perfect! 'suche' is the right verb for shopping. The assistant starts looking for you!", kuttanReaction: "Adipoli! 'Ich suche' logic correctly catch cheythallo. Direct and polite. 🔥" },
+              { text: "Ja, ich habe ein Hemd.", isCorrect: false, response: "Aiyyo! 'ich habe' means you already HAVE a shirt. They won't help you find one if you say that!", kuttanReaction: "Vite machane! 'Habe' means possess. Search cheyyumpo 'suche' venam. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "The jacket is too small. How do you ask 'Do you have this in size L?'",
+            options: [
+              { text: "Haben Sie das in Größe L?", isCorrect: true, response: "Exactly! 'Größe' is the word for size. You've asked perfectly.", kuttanReaction: "Superb! Size selection logic correctly handled. 'Größe' is the key word! ⭐" },
+              { text: "Haben Sie das in Nummer L?", isCorrect: false, response: "No, 'Nummer' is for numbers (like phone numbers). For clothes, we always use 'Größe'.", kuttanReaction: "Aiyyo! Number alla, 'Größe' aanu clothing context-il better. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v7-4-1",
@@ -650,7 +815,7 @@ export const MODULE_7: Module = {
             "Understand and respond to sales staff",
             "Complete a purchase using correct phrases"
           ],
-          placeholderThumbnail: "/images/thumbnails/shopping-dialogue.jpg"
+          placeholderThumbnail: "/images/supermarket_checkout.png"
         }
       ],
       exercises: [
@@ -822,6 +987,49 @@ export const MODULE_7: Module = {
       description: "Learn to compare things in German — bigger, better, cheapest! Master comparatives and superlatives.",
       duration: "45 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Einkaufsstraße am Marktplatz",
+          sceneType: "street",
+          timeOfDay: "afternoon",
+          description: "A busy German shopping street with store windows full of sale signs. You're comparing products and prices with a friend before deciding what to buy.",
+        },
+        narrative: {
+          previousRecap: "You've learned adjectives and descriptions. Now it's time to COMPARE — bigger, cheaper, best!",
+          currentObjective: "Use comparative (-er) and superlative (am -sten) forms to compare products and prices",
+          nextTeaser: "Next: prepositions of place — where exactly IS that shop?",
+        },
+        kuttanIntro: [
+          "Machane! Shopping time aanu! Germany-il sales season-il prices compare cheyyaan ariyaanam. Nammude Lulu Mall sale pole thanneyaanu!",
+          "German-il comparison easy aanu — adjective + '-er' for comparative. 'Groß' becomes 'größer', 'billig' becomes 'billiger'. English-nte '-er' pole thanne!",
+          "But some words are irregular — 'gut' becomes 'besser', not 'guter'. Pinne 'als' means 'than'. Let's go compare cheyyaam!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab7-5-1", encounterMoment: "You compare two bags: 'Diese Tasche ist größer als die andere.'", contextSentence: "Berlin ist größer als Kochi." },
+          { vocabId: "vocab7-5-2", encounterMoment: "Your friend picks a small wallet: 'Das ist kleiner und praktischer.'", contextSentence: "Mein Zimmer ist kleiner als deins." },
+          { vocabId: "vocab7-5-3", encounterMoment: "You spot a sale rack: 'Im Angebot! Alles ist billiger heute.'", contextSentence: "Im Supermarkt ist es billiger." },
+          { vocabId: "vocab7-5-4", encounterMoment: "You try two chocolates: 'Diese Schokolade ist besser!'", contextSentence: "Dieses Brot ist besser." },
+          { vocabId: "vocab7-5-5", encounterMoment: "You check a price tag and gasp: 'Das Kleid ist viel teurer als ich dachte!'", contextSentence: "Das Kleid ist teurer als die Hose." },
+          { vocabId: "vocab7-5-6", encounterMoment: "Your friend declares: 'Dieses Geschäft ist am besten für Kleidung.'", contextSentence: "Dieses Restaurant ist am besten." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say the red jacket is cheaper than the blue one. How do you say it?",
+            options: [
+              { text: "Die rote Jacke ist billiger als die blaue.", isCorrect: true, response: "Correct! 'Billiger als' is the perfect comparative construction.", kuttanReaction: "Adipoli! Comparison king aayallo nee! 'Billiger als' — perfect use of comparative + als! 🔥" },
+              { text: "Die rote Jacke ist mehr billig als die blaue.", isCorrect: false, response: "In German, you don't say 'mehr billig'. Unlike English 'more cheap', German uses 'billiger' directly.", kuttanReaction: "Aiyyo! German-il 'mehr + adjective' alla, direct '-er' add cheyyuka. 'Billiger' ennu mathram mathi!" },
+            ],
+          },
+          {
+            moment: "Your friend asks which shop has the best prices. You want to say 'This shop is the cheapest.' What do you say?",
+            options: [
+              { text: "Dieses Geschäft ist am billigsten.", isCorrect: true, response: "Perfect superlative! 'Am billigsten' = the cheapest. The 'am + -sten' pattern works great.", kuttanReaction: "Superb machane! Superlative form 'am billigsten' — nee shopping expert aanu ipo! ⭐" },
+              { text: "Dieses Geschäft ist am billigeren.", isCorrect: false, response: "'Billigeren' is not the superlative form. Superlative uses 'am + stem + sten': am billigsten.", kuttanReaction: "Machane! Superlative-inu '-sten' venam, '-eren' alla. 'Am billigsten' aanu correct form!" },
+              { text: "Dieses Geschäft ist der billigste.", isCorrect: false, response: "Close! 'Der billigste' works before a noun ('der billigste Laden'), but after 'ist' you need 'am billigsten'.", kuttanReaction: "Almost! 'Ist' kazhinjaal 'am billigsten' venam. 'Der billigste' noun-inu munpil mathram use cheyyuka!" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v7-5-1",
@@ -848,7 +1056,7 @@ export const MODULE_7: Module = {
             "Handle common irregular comparatives (gut → besser, teuer → teurer)",
             "Apply comparisons to real shopping scenarios"
           ],
-          placeholderThumbnail: "/images/thumbnails/comparisons.jpg"
+          placeholderThumbnail: "/images/supermarket_checkout.png"
         }
       ],
       exercises: [

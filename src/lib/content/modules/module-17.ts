@@ -25,6 +25,46 @@ export const MODULE_17: Module = {
       description: "Everything you need to know about the Start Deutsch 1 (Goethe A1) exam — format, scoring, time management, and smart strategies to pass.",
       duration: "45 min",
       xpReward: 100,
+      storyScene: {
+        setting: {
+          name: "Goethe-Institut Entrance (Vor dem Goethe-Institut)",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "A bright morning at the entrance of the Goethe-Institut. Candidates from all over are standing with their passports and coffee cups. You're feeling that nervous 'exam energy' in the air. Arjun gives you a friendly slap on the back: 'Machane, no tension! Strategy focus cheythal kireedam namukku mathram!'. You're reviewing the 'The 4 Pillars' (Hören, Lesen, Schreiben, Sprechen) and the magic number—60 points to pass. Ready to become a Goethe-certified pro?",
+        },
+        narrative: {
+          previousRecap: "You've built the grammar bridge. Now, it's time to prove yourself in the arena!",
+          currentObjective: "Understand the exam structure, scoring system, and the primary strategies for passing the Goethe A1",
+          nextTeaser: "First Test: Hören Teil 1. Let's put on those headphones and hear some messages!",
+        },
+        kuttanIntro: [
+          "Machane! Today is the day. Goethe Guru mode ON! The official name is 'Start Deutsch 1'. Ithu kittiye theeroo!",
+          "Total points are 100, but namukku venandhathu minimum 60 aanu. Even if one section is hard, bakki 3 bits vechu score cheyyaam!",
+          "And remember the Golden strategy: SILENCE read cheyyan aanu. Question audio-ku mbue read cheyyunnathu 100 marks tactic aanu. Let's start!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab17-1-1", encounterMoment: "You look at your entry pass: 'Heute ist die Prüfung.'", contextSentence: "Die Prüfung ist am Montag." },
+          { vocabId: "vocab17-1-2", encounterMoment: "Arjun smiles: 'Du wirst die Prüfung bestehen.'", contextSentence: "Ich möchte die Prüfung bestehen." },
+          { vocabId: "vocab17-1-4", encounterMoment: "You read the instructions: 'Lies die Aufgabe genau.'", contextSentence: "Lesen Sie die Aufgabe genau." },
+          { vocabId: "vocab17-1-6", encounterMoment: "You check the score requirements: 'Die Punktzahl ist wichtig.'", contextSentence: "Sie brauchen mindestens 60 Punkte." },
+        ],
+        decisionPoints: [
+          {
+            moment: "How many parts does the Goethe A1 exam have in total?",
+            options: [
+              { text: "4 parts: Hören, Lesen, Schreiben, Sprechen.", isCorrect: true, response: "Exactly! Listening, Reading, Writing, and Speaking—the complete package.", kuttanReaction: "Adipoli! Exam logic perfectly capture cheythallo! 🔥" },
+              { text: "2 parts: Only Written and Oral.", isCorrect: false, response: "Aiyyo! It's split into 4 distinct sections. Don't skip any, machaa!", kuttanReaction: "Vite machane! Sections sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "What is the minimum overall score you need to pass out of 100?",
+            options: [
+              { text: "60 points.", isCorrect: true, response: "Correct! Score 60 total and you get that certificate.", kuttanReaction: "Superb! Passing logic correctly picked! ⭐" },
+              { text: "100 points.", isCorrect: false, response: "No! 100 is great but 60 is enough to pass ('bestehen').", kuttanReaction: "Aiyyo! 100 is for toppers, but 60 is enough. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v17-1-1",
@@ -50,7 +90,7 @@ export const MODULE_17: Module = {
             "Learn time management and elimination strategies",
             "Know what to bring and expect on exam day"
           ],
-          placeholderThumbnail: "/images/thumbnails/exam-overview.jpg"
+          placeholderThumbnail: "/images/german_train_station.png"
         },
       ],
       exercises: [
@@ -249,6 +289,46 @@ export const MODULE_17: Module = {
       description: "Practice the Hören Teil 1 exam format: listen to short everyday messages and decide Richtig or Falsch. Simulated as text passages since we can't play audio — read the 'heard' message, then judge the statement.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Exam Hall (Im Prüfungssaal)",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "You're sitting in a large, silent room with a few dozen other candidates. You've got your headphones on. You've tested the volume. The examiner says 'Teil 1. Sie hören sechs kurze Nachrichten. Sie hören jede Nachricht zweimal.'. The first audio starts—a train station announcement. You're listening for 'nicht' and 'kein' like a detective. One tiny word can flip 'Richtig' to 'Falsch'. Focus, machane!",
+        },
+        narrative: {
+          previousRecap: "You've understood the strategy. Now, let's play the real game!",
+          currentObjective: "Correctly identify negation traps (nicht, kein) and extract key details like numbers and times in short messages",
+          nextTeaser: "Next: Dialogues! Let's listen to people making plans and buying groceries!",
+        },
+        kuttanIntro: [
+          "Machane! Headphones on, focus 100%. Negation traps are the biggest enemy here. 'Nicht' kandaal full logic reverse aakum!",
+          "Pinne numbers sradhikkuka. 13 (Dreizehn) and 30 (Dreißig) sound similar—listen for the sharp 't' at the end of 13.",
+          "Every audio plays TWICE. Use the first one to catch the vibe, and the second to lock the answer. Let's practice!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab17-2-1", encounterMoment: "You hear the train station speaker: 'Das ist eine Durchsage.'", contextSentence: "Bitte hören Sie die Durchsage." },
+          { vocabId: "vocab17-2-2", encounterMoment: "You listen for the platform: 'Von welchem Gleis?'", contextSentence: "Der Zug fährt auf Gleis 5 ab." },
+          { vocabId: "vocab17-2-3", encounterMoment: "You hear about a delay: 'Der Zug hat Verspätung.'", contextSentence: "Der Zug hat 20 Minuten Verspätung." },
+          { vocabId: "vocab17-2-4", encounterMoment: "The doctor's office calls: 'Wir müssen den Termin verschieben.'", contextSentence: "Wir müssen den Termin verschieben." },
+        ],
+        decisionPoints: [
+          {
+            moment: "📢 You hear: 'Der Zug nach München fährt von Gleis 5, nicht von Gleis 3.' \n📝 Statement: 'Der Zug fährt von Gleis 3.' Is this correct?",
+            options: [
+              { text: "Falsch.", isCorrect: true, response: "Exactly! The 'nicht' before 'Gleis 3' means it's the WRONG platform.", kuttanReaction: "Adipoli! Negation logic perfectly capture cheythallo! 🔥" },
+              { text: "Richtig.", isCorrect: false, response: "Aiyyo! Did you miss the 'nicht'? It flips the whole information, machaa!", kuttanReaction: "Vite machane! Negation sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "What does 'Termin verschieben' mean in an announcement?",
+            options: [
+              { text: "Reschedule/Postpone the appointment.", isCorrect: true, response: "Correct! If a meeting is shifted, it's 'verschoben'.", kuttanReaction: "Superb! Meaning logic correctly picked! ⭐" },
+              { text: "Confirm the appointment.", isCorrect: false, response: "No! 'Bestätigen' is confirm. 'Verschieben' means moving it to a later time.", kuttanReaction: "Aiyyo! Meaning mistake machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v17-2-1",
@@ -273,7 +353,7 @@ export const MODULE_17: Module = {
             "Practice Richtig/Falsch decision-making with short messages",
             "Recognize paraphrased statements"
           ],
-          placeholderThumbnail: "/images/thumbnails/hoeren-teil1.jpg"
+          placeholderThumbnail: "/images/german_train_station.png"
         }
       ],
       exercises: [
@@ -283,6 +363,7 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Achtung! Der Zug nach München fährt heute von Gleis 5, nicht von Gleis 3. Ich wiederhole: Gleis 5.\'\n\n📝 Statement: Der Zug nach München fährt von Gleis 3.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
+          imageUrl: "/images/german_train_station.png",
           explanation: "The Classic Trap: They say 'Gleis 3' first, then 'NICHT', then the real answer 'Gleis 5'. If you hear '3' and stop listening, you'll get it wrong. The 'nicht' flips the statement to Falsch!",
           xpReward: 15
         },
@@ -292,6 +373,7 @@ export const MODULE_17: Module = {
           question: "📢 You hear:\n\'Hallo Frau Schmidt, hier ist die Arztpraxis Dr. Meier. Ihr Termin am Mittwoch um 10 Uhr muss leider verschoben werden. Können Sie stattdessen am Donnerstag um 14 Uhr kommen? Bitte rufen Sie uns zurück.\'\n\n📝 Statement: Der Termin am Mittwoch findet wie geplant statt.",
           options: ["Richtig", "Falsch", "Nicht im Text"],
           correctAnswer: "Falsch",
+          imageUrl: "/images/doctor_waiting_room.png",
           explanation: "'Verschoben werden' = to be postponed. In Malayalam: 'Maatti vechu'. Since it's postponed, it is NOT happening as planned (Falsch).",
           xpReward: 15
         },
@@ -441,6 +523,45 @@ export const MODULE_17: Module = {
       description: "Practice Hören Teil 2 (short dialogues with multiple choice) and Teil 3 (announcements matched to situations). Read the dialogues, then answer like the real exam.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Exam Hall (Im Prüfungssaal)",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "The challenge is increasing. You're hearing dialogues between two people—Anna and Peter making plans, a customer in a gift shop. You hear each twice. In Teil 3, short announcements come fast—radio weather, airport boarding calls, supermarket deals. You're matching them to situations. 'Gleis' means train, 'Flug' means airport. It's like listening to the busy sounds of a German city and picking out exactly what you need. Stay sharp, machane!",
+        },
+        narrative: {
+          previousRecap: "You've survived the short messages. Now, let's look at the bigger picture of conversations!",
+          currentObjective: "Correctly identify the main goal and specific details (times, locations) in dialogues and match announcements to situations",
+          nextTeaser: "Next: Reading! Let's scan some signs and ads for keywords!",
+        },
+        kuttanIntro: [
+          "Machane! This is the most interactive part. Dialogues are like nammude daily chattings in a shop or cafe. Focus on the 'final decision' they make!",
+          "In Teil 3, it's a matching game. Situation matches announcement. If you hear 'Sonderangebot', match it to 'Shopping'. Very logical!",
+          "Watch out for the 'Location Clues'. 'Bahnhof' = train, 'Flughafen' = plane, 'Stadtbad' = swimming pool. Catch the place, catch the point!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab17-3-1", encounterMoment: "The examiner says: 'Wir hören nun ein Gespräch.'", contextSentence: "Hören Sie das Gespräch und antworten Sie." },
+          { vocabId: "vocab17-3-2", encounterMoment: "You hear a speaker: 'Das ist eine weitere Durchsage.'", contextSentence: "Achten Sie auf die Durchsage am Bahnhof." },
+          { vocabId: "vocab17-3-3", encounterMoment: "Instructions say: 'Ordnen Sie die Texte zu.'", contextSentence: "Ordnen Sie die Texte den Situationen zu." },
+        ],
+        decisionPoints: [
+          {
+            moment: "📢 You hear an announcement about 'Bio-Äpfel' for 1,49 € in the 'Obstabteilung'. Which situation does this match?",
+            options: [
+              { text: "Searching for cheap fruit in a supermarket.", isCorrect: true, response: "Exactly! 'Obstabteilung' and price details point directly to grocery shopping.", kuttanReaction: "Adipoli! Context logic perfectly capture cheythallo! 🔥" },
+              { text: "Waiting for a train at the station.", isCorrect: false, response: "Aiyyo! Train station-il apples-inte promo varilla, machaa!", kuttanReaction: "Vite machane! Location sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "In a dialogue, a staff member says: 'The milk is in Aisle 3, next to the cheese'. Where is the milk?",
+            options: [
+              { text: "Aisle 3, next to the cheese.", isCorrect: true, response: "Correct! The specific location was clearly stated.", kuttanReaction: "Superb! Detail logic correctly picked! ⭐" },
+              { text: "At the entrance.", isCorrect: false, response: "No! The entrance was mentioned for bread, not milk. Listen carefully!", kuttanReaction: "Aiyyo! Detail mistake machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v17-3-1",
@@ -468,7 +589,7 @@ export const MODULE_17: Module = {
             "Practice identifying key information in short conversations",
             "Learn to match announcements to the correct everyday situations"
           ],
-          placeholderThumbnail: "/images/thumbnails/hoeren-teil2-3.jpg"
+          placeholderThumbnail: "/images/german_train_station.png"
         }
       ],
       exercises: [
@@ -515,6 +636,7 @@ export const MODULE_17: Module = {
           question: "🗣️ Dialogue:\nArzt: 'Was fehlt Ihnen denn?'\nPatientin: 'Ich habe seit drei Tagen Kopfschmerzen und Fieber.'\nArzt: 'Ich verschreibe Ihnen Tabletten. Nehmen Sie dreimal täglich eine Tablette nach dem Essen.'\nPatientin: 'Und soll ich zu Hause bleiben?'\nArzt: 'Ja, bleiben Sie bitte bis Freitag im Bett.'\n\n❓ Was soll die Patientin machen?",
           options: ["a) Dreimal täglich eine Tablette nehmen und bis Freitag im Bett bleiben", "b) Sofort ins Krankenhaus gehen", "c) Nur eine Tablette am Tag nehmen"],
           correctAnswer: "a) Dreimal täglich eine Tablette nehmen und bis Freitag im Bett bleiben",
+          imageUrl: "/images/german_apotheke.png",
           explanation: "Two-Part Answer: The patient has two jobs: take pills (3x daily) and stay in bed. Option (a) covers both bases perfectly.",
           xpReward: 15
         },
@@ -525,6 +647,7 @@ export const MODULE_17: Module = {
           question: "📢 Announcement:\n\'Liebe Kundinnen und Kunden, heute im Sonderangebot: frische Erdbeeren aus der Region, nur 1,99 Euro pro Schale. Sie finden die Erdbeeren in der Obstabteilung.\'\n\n❓ In welcher Situation hören Sie das?",
           options: ["a) Am Bahnhof", "b) Im Supermarkt", "c) Im Krankenhaus"],
           correctAnswer: "b) Im Supermarkt",
+          imageUrl: "/images/supermarket_checkout.png",
           explanation: "Context Clues: 'Kundinnen und Kunden' (customers), 'Sonderangebot' (special offer), 'Erdbeeren' (strawberries), 'Obstabteilung' (fruit section) — these are all supermarket keywords. It's like hearing 'Special offer for Onam sadhya items' at Lulu Hypermarket!",
           xpReward: 15
         },
@@ -594,6 +717,7 @@ export const MODULE_17: Module = {
           type: "dictation",
           question: "Listen and type: Haben Sie frisches Brot?",
           correctAnswer: "Haben Sie frisches Brot",
+          imageUrl: "/images/german_bakery.png",
           explanation: "Perfect! A clear and natural question for the bakery.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-fresh-bread.mp3"
@@ -638,6 +762,46 @@ export const MODULE_17: Module = {
       description: "Practice reading German signs, notices, and short ads — then match them to the correct situation, exactly like the real Goethe A1 Lesen Teil 1.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Exam Hall (Im Prüfungssaal)",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "The audio has stopped. The room is silent except for the scratching of pens and the turning of pages. You've opened your reading booklet to Teil 1. You're looking at signs and short notices. One says 'Rauchen verboten!', another lists 'Öffnungszeiten'. You're matching them to situational descriptions. 'Where can I park?', 'Is the shop open on Sunday?'. It's all about scanning for that one key word that gives you the answer. Keyword is King, machane!",
+        },
+        narrative: {
+          previousRecap: "Listening is done! Now, let's use our eyes to scan for German logic!",
+          currentObjective: "Correctly identify the meaning of common German signs and notices and match them to situational descriptions",
+          nextTeaser: "Final Reading: Classified ads and emails! Let's find that perfect apartment!",
+        },
+        kuttanIntro: [
+          "Machane! Reading is all about speed and keywords. 'Verboten' means forbidden, 'Erlaubt' means allowed. Simple choice mathram!",
+          "In Germany, Sunday (Sonntag/So) is almost always 'geschlossen' (closed). If a notice says 'So: geschlossen', don't plan a trip there, machaa!",
+          "Strategy: Read the SITUATION first. What do you need? Then search for the keyword in the sign. Let's decode these notices!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab17-4-1", encounterMoment: "You look at the first task: 'Welches Schild passt?'", contextSentence: "Das Schild ist an der Tür." },
+          { vocabId: "vocab17-4-2", encounterMoment: "You read a job offer: 'Das ist eine interessante Anzeige.'", contextSentence: "Ich lese die Anzeige in der Zeitung." },
+          { vocabId: "vocab17-4-3", encounterMoment: "You check the timings: 'Wann hat der Laden geöffnet?'", contextSentence: "Der Laden ist von 8 bis 20 Uhr geöffnet." },
+          { vocabId: "vocab17-2-4", encounterMoment: "You see a red sign: 'Hier ist Parken verboten.'", contextSentence: "Rauchen ist hier verboten." },
+        ],
+        decisionPoints: [
+          {
+            moment: "📋 You see a sign that says: 'Rauchen verboten! Auch E-Zigaretten!'. What does it mean?",
+            options: [
+              { text: "Smoking is not allowed here.", isCorrect: true, response: "Exactly! 'Verboten' is the key word for 'forbidden' or 'not allowed'.", kuttanReaction: "Adipoli! Sign logic perfectly capture cheythallo! 🔥" },
+              { text: "Smoking is free here.", isCorrect: false, response: "Aiyyo! 'Verboten' means NO. Don't light up here, machaa!", kuttanReaction: "Vite machane! Action words sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "📋 A shop notice says: 'So und Feiertage: geschlossen'. Can you go shopping there on Sunday?",
+            options: [
+              { text: "No, it's closed.", isCorrect: true, response: "Correct! 'Sonntag' + 'geschlossen' = Stay home and relax.", kuttanReaction: "Superb! Sunday logic correctly picked! ⭐" },
+              { text: "Yes, all day.", isCorrect: false, response: "No! In Germany, most shops close on Sundays. Follow the 'geschlossen' rule!", kuttanReaction: "Aiyyo! Sunday mistake machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v17-4-1",
@@ -662,7 +826,7 @@ export const MODULE_17: Module = {
             "Recognize common abbreviations in German notices",
             "Use keywords to quickly identify the correct match"
           ],
-          placeholderThumbnail: "/images/thumbnails/lesen-teil1.jpg"
+          placeholderThumbnail: "/images/university_library.png"
         }
       ],
       exercises: [
@@ -881,6 +1045,46 @@ export const MODULE_17: Module = {
       description: "Practice reading classifieds (Richtig/Falsch) and short emails with multiple choice — the exact format of Lesen Teil 2 and Teil 3 of the Goethe A1 exam.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Exam Hall (Im Prüfungssaal)",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "You're on the last part of the reading section. You're skimming through classified ads for apartments and job offers (Teil 2). Then, you're reading short emails from friends or landlords (Teil 3). You've only got 10 minutes left. You're looking for 'ZKB' (Zimmer-Küche-Bad) and 'Bezahlung' (payment). You're matching the situation to the text. Almost there, machane!",
+        },
+        narrative: {
+          previousRecap: "You've decoded the signs! Now, let's look at the longer ads and personal messages!",
+          currentObjective: "Correctly identify matches between situational descriptions and classified ads, and extract correct details from short emails",
+          nextTeaser: "Final Strategy: The Mock Test! Let's put everything we've learned together for a full run!",
+        },
+        kuttanIntro: [
+          "Machane! This is the 'Speed Run'. Detailed reading slow cheyyum, scanning faster aakum. If the situation says 'billig' (cheap), scan for the price point first!",
+          "In Teil 2, situations match ads. A person wants to travel on Saturday — check if the hotel ad lists Saturday explicitly. If yes, Richtig! If not, Falsch!",
+          "In Teil 3, emails help us solve life's little puzzles. Match the sender (Absender) to the situation (Betreff). Let's finish this!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab17-5-1", encounterMoment: "You look at an apartment ad: 'Das ist eine Wohnungsanzeige.'", contextSentence: "Ich lese die Wohnungsanzeige." },
+          { vocabId: "vocab17-5-3", encounterMoment: "You read a message: 'Das ist eine E-Mail von Maria.'", contextSentence: "Schreiben Sie eine E-Mail." },
+          { vocabId: "vocab17-5-4", encounterMoment: "You check the price: 'Ist das Frühstück inklusive?'", contextSentence: "Das Angebot ist inklusive Frühstück." },
+          { vocabId: "vocab17-5-6", encounterMoment: "You look for info: 'Ich brauche mehr Information.'", contextSentence: "Hier finden Sie alle Informationen." },
+        ],
+        decisionPoints: [
+          {
+            moment: "📋 Situation: You want a cheap hotel for a weekend trip (Sat-Sun). Ad says: 'Hotel am See, Fr-Mo, 99€'. Does it match?",
+            options: [
+              { text: "Richtig (Yes).", isCorrect: true, response: "Exactly! Fr-Mo covers the Sat-Sun weekend period perfectly.", kuttanReaction: "Adipoli! Time logic perfectly capture cheythallo! 🔥" },
+              { text: "Falsch (No).", isCorrect: false, response: "Aiyyo! Fr-Mo includes Sat and Sun, machaa! Logic mistake.", kuttanReaction: "Vite machane! Range sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "📋 Ad says: 'Übernachtung im Einzelzimmer: 60€, inklusive Frühstück'. What does this mean?",
+            options: [
+              { text: "The 60€ includes breakfast.", isCorrect: true, response: "Correct! 'Inklusive' means it's already in the price.", kuttanReaction: "Superb! Inklusive logic correctly picked! ⭐" },
+              { text: "You have to pay extra for breakfast.", isCorrect: false, response: "No! 'Zuzüglich' would mean extra. 'Inklusive' means it's included, machaa!", kuttanReaction: "Aiyyo! Meaning mistake machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v17-5-1",
@@ -909,7 +1113,7 @@ export const MODULE_17: Module = {
             "Extract key information: who, what, when, where, why",
             "Distinguish between formal and informal German emails"
           ],
-          placeholderThumbnail: "/images/thumbnails/lesen-teil2-3.jpg"
+          placeholderThumbnail: "/images/university_library.png"
         }
       ],
       exercises: [
@@ -1065,6 +1269,49 @@ export const MODULE_17: Module = {
       description: "Full mock exam covering ALL parts of Hören (Teil 1, 2, 3) and Lesen (Teil 1, 2, 3). 15 exercises in real exam format — test yourself under exam conditions!",
       duration: "90 min",
       xpReward: 250,
+      storyScene: {
+        setting: {
+          name: "Goethe-Institut Prüfungsraum",
+          sceneType: "classroom",
+          timeOfDay: "morning",
+          description: "The exam hall is quiet and tense. Desks are spaced apart, answer sheets are face-down, and the clock on the wall reads 9:00. This is it — mock test day!",
+        },
+        narrative: {
+          previousRecap: "You've practiced every section individually — Hören and Lesen, Teil 1 through 3. Now it all comes together in one full mock exam.",
+          currentObjective: "Complete a full Goethe A1 mock exam under timed conditions covering all Hören and Lesen sections",
+          nextTeaser: "After this: review your results and target weak spots before the real exam!",
+        },
+        kuttanIntro: [
+          "Machane! Ithaa — the big day! Full mock exam aanu, real Goethe exam pole thanne. Nee prepare cheythath okke ippol show cheyyuka!",
+          "Strategy remember cheyyuka: Hören-il questions first vayikkuka, keywords listen cheyyuka. Lesen-il scan cheyyuka, word-by-word translate cheyyaruthu!",
+          "Oru question-il stuck aayaal — best guess pick cheyth MOVE ON. Time waste cheyyaruthu. Viel Erfolg machane — nee ready aanu! 💪",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab17-1-1", encounterMoment: "You look at the exam paper cover: 'Goethe-Zertifikat A1 — Prüfung'", contextSentence: "Die Prüfung ist am Montag." },
+          { vocabId: "vocab17-1-2", encounterMoment: "You tell yourself: 'Ich werde die Prüfung bestehen!'", contextSentence: "Ich möchte die Prüfung bestehen." },
+          { vocabId: "vocab17-1-4", encounterMoment: "The examiner announces: 'Lesen Sie jede Aufgabe genau durch.'", contextSentence: "Lesen Sie die Aufgabe genau." },
+          { vocabId: "vocab17-1-6", encounterMoment: "You check the scoring guide: 'Mindestens 60 Punkte zum Bestehen.'", contextSentence: "Sie brauchen mindestens 60 Punkte." },
+          { vocabId: "vocab17-2-1", encounterMoment: "The Hören section begins: 'Sie hören jetzt eine Durchsage.'", contextSentence: "Bitte hören Sie die Durchsage." },
+          { vocabId: "vocab17-3-1", encounterMoment: "Part 2 starts: 'Hören Sie das Gespräch.'", contextSentence: "Hören Sie das Gespräch und antworten Sie." },
+        ],
+        decisionPoints: [
+          {
+            moment: "The Hören section is about to start. You have 30 seconds before the audio plays. What do you do?",
+            options: [
+              { text: "Read all the questions and options first so I know what to listen for.", isCorrect: true, response: "Smart! Pre-reading questions helps you focus on the right keywords when the audio plays.", kuttanReaction: "Adipoli strategy! Questions first vayichal keywords ariyaam — audio-il athu listen cheythal mathi! 🔥" },
+              { text: "Relax and wait for the audio to start.", isCorrect: false, response: "Those 30 seconds are golden! Use them to read the questions so you know exactly what to listen for.", kuttanReaction: "Aiyyo machane! 30 seconds waste aakkalle. Questions vayikkaan ulla time aanu athu — use it!" },
+            ],
+          },
+          {
+            moment: "In Lesen Teil 3, you encounter a long email with many unfamiliar words. What's your approach?",
+            options: [
+              { text: "Scan for keywords that match the question, skip unknown words.", isCorrect: true, response: "Perfect strategy! You don't need to understand every word — just find the information the question asks for.", kuttanReaction: "Superb! Every word manasilaakkanam ennilla. Question-inu ulla answer keywords scan cheythu find cheyyuka! ⭐" },
+              { text: "Read the entire email word by word and try to translate everything.", isCorrect: false, response: "Word-by-word reading wastes precious time. Focus on the question and scan for relevant keywords.", kuttanReaction: "Time kalayalle machane! Word-by-word venda. Question nokkuka, keywords scan cheyyuka, answer find cheyyuka!" },
+              { text: "Skip this question and come back later.", isCorrect: false, response: "Better to attempt it now with scanning. Coming back might mean you run out of time entirely.", kuttanReaction: "Skip cheyyaruthu! Scanning strategy use cheyth quick-aayi answer cheyyuka. Later-inu time illaatheyaaykollum!" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v17-6-1",
@@ -1090,7 +1337,7 @@ export const MODULE_17: Module = {
             "Build confidence for the actual Goethe A1 exam",
             "Identify any remaining weak areas for further practice"
           ],
-          placeholderThumbnail: "/images/thumbnails/mock-exam-hoeren-lesen.jpg"
+          placeholderThumbnail: "/images/university_library.png"
         }
       ],
       exercises: [

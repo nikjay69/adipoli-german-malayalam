@@ -22,16 +22,32 @@ const SCENE_IMAGES: Record<string, string> = {
   'office': '/images/office_building.png',
 };
 
-// Override for specific lesson settings
+// Override for specific lesson settings — maps setting names to existing images
 const SETTING_IMAGE_OVERRIDES: Record<string, string> = {
+  // Module 1
   'Berlin Hauptbahnhof': '/images/german_train_station.png',
   'Café Einstein, Berlin': '/images/kaffeeklatsch.png',
+  // Module 6
+  'Gasthaus zum Goldenen Hirsch': '/images/german_menu.png',
+  // Module 7
   'REWE Supermarkt': '/images/supermarket_checkout.png',
-  'Gasthof zum Bären': '/images/german_menu.png',
+  'Einkaufsstraße am Marktplatz': '/images/german_price_tag.png',
+  // Module 8
   'WG Kitchen, Berlin': '/images/wg_living.png',
+  // Module 9
+  'Gasthof zum Bären': '/images/german_menu.png',
+  // Module 10
   'Dr. Meier Praxis': '/images/doctor_waiting_room.png',
   'Berliner Apotheke': '/images/german_apotheke.png',
+  // Module 11
   'Bäckerei Schmidt': '/images/german_bakery.png',
+  // Module 14
+  'Bürgeramt Neukölln': '/images/anmeldung.png',
+  // Module 15
+  'Feierabend': '/images/feierabend.png',
+  // Generated scenes (will work once images are created)
+  'Goethe-Institut Prüfungsraum': '/images/scenes/scene-mod17-exam-room.png',
+  'Vorbereitungsraum B2': '/images/scenes/scene-mod16-study-desk.png',
 };
 
 function getSceneImage(scene: StoryScene): string | null {
