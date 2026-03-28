@@ -91,14 +91,14 @@ export function buildGameSequence(
       kuttan: { mood: 'pointing', position: 'left' },
     });
 
-    // Brief Kuttan reaction (auto-advances)
-    if (i < shownVocab.length - 1) {
+    // Kuttan reaction only every 3 words (not every word — too slow)
+    if (i > 0 && i % 3 === 2 && i < shownVocab.length - 1) {
       moments.push({
         id: id(),
         type: 'reaction',
-        kuttan: { mood: i % 2 === 0 ? 'thumbsup' : 'happy' },
+        kuttan: { mood: 'thumbsup' },
         dialogue: { speaker: 'Kuttan', text: pick(KUTTAN_VOCAB_REACT) },
-        autoAdvanceMs: 1200,
+        autoAdvanceMs: 1000,
       });
     }
   });
@@ -125,32 +125,10 @@ export function buildGameSequence(
     });
   }
 
-  // ── 4. Mid-celebration ──
-  moments.push({
-    id: id(),
-    type: 'reaction',
-    kuttan: { mood: 'celebrating' },
-    dialogue: { speaker: 'Kuttan', text: pick(KUTTAN_CELEBRATIONS) },
-    autoAdvanceMs: 1500,
-  });
-
-  // ── 5. Exercise games — each one a different game type ──
-  // Shuffle exercises for variety
+  // ── 4. Exercise games — straight into the action, no filler ──
   const shuffled = [...exercises].sort(() => Math.random() - 0.5);
 
   shuffled.forEach((exercise, i) => {
-    // Kuttan intro for first game
-    if (i === 0) {
-      moments.push({
-        id: id(),
-        type: 'reaction',
-        kuttan: { mood: 'excited' },
-        dialogue: { speaker: 'Kuttan', text: pick(KUTTAN_GAME_INTROS) },
-        autoAdvanceMs: 1200,
-      });
-    }
-
-    // The game itself
     moments.push({
       id: id(),
       type: 'game',
@@ -160,14 +138,14 @@ export function buildGameSequence(
       kuttan: { mood: 'thinking', position: 'left' },
     });
 
-    // Celebration every 3 games
-    if (i > 0 && i % 3 === 2 && i < shuffled.length - 1) {
+    // Brief celebration every 4 games (not every 3 — less interruption)
+    if (i > 0 && i % 4 === 3 && i < shuffled.length - 1) {
       moments.push({
         id: id(),
         type: 'reaction',
         kuttan: { mood: 'celebrating' },
         dialogue: { speaker: 'Kuttan', text: pick(KUTTAN_CELEBRATIONS) },
-        autoAdvanceMs: 1500,
+        autoAdvanceMs: 1000,
       });
     }
   });
