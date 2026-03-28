@@ -11,7 +11,7 @@ import { NarrativeIntro, ContextualVocab, DecisionPoint, SceneConclusion } from 
 import { SceneBackground } from '@/components/visual';
 import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop } from '@/components/exercise-games';
 import { GameButton, ChoiceButton, Confetti, Celebration, ModuleComplete } from '@/components/game';
-import { CharacterGuide } from '@/components/character';
+import { CharacterGuide, KuttanSpeech, mapMoodToImage } from '@/components/character';
 import { VideoPlayer } from '@/components/media/VideoPlayer';
 import { getRandomMessage } from '@/lib/content/dialogue';
 import { getVideoScript } from '@/lib/content/video-scripts';

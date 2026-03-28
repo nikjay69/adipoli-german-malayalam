@@ -211,16 +211,9 @@ export function Kuttan({ mood = 'idle', size = 'md', className = '', entrance = 
             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           />
 
-          {/* Shirt collar */}
-          <path d="M 42 54 L 48 58 L 54 54" stroke="#1e8449" strokeWidth="1.5" fill="none" />
-          {/* Shirt design - small DE flag stripe */}
-          <rect x="42" y="70" width="12" height="2" rx="1" fill="#1a1a1a" opacity="0.4" />
-          <rect x="42" y="73" width="12" height="2" rx="1" fill="#c0392b" opacity="0.4" />
-          <rect x="42" y="76" width="12" height="2" rx="1" fill="#d4a520" opacity="0.4" />
-
-          {/* Backpack straps */}
-          <line x1="36" y1="56" x2="34" y2="75" stroke="#8B6914" strokeWidth="3" strokeLinecap="round" />
-          <line x1="60" y1="56" x2="62" y2="75" stroke="#8B6914" strokeWidth="3" strokeLinecap="round" />
+          {/* Polo collar */}
+          <path d="M 40 54 L 48 58 L 56 54" stroke="#1e8449" strokeWidth="2" fill="none" />
+          <circle cx="48" cy="60" r="1" fill="#1e8449" />{/* Button */}
 
           {/* Left arm */}
           <motion.g style={{ originX: '36px', originY: '60px' }} animate={leftArmAnim[mood]}>
@@ -234,13 +227,13 @@ export function Kuttan({ mood = 'idle', size = 'md', className = '', entrance = 
             <circle cx="74" cy="79" r="4" fill="#D4956A" />
           </motion.g>
 
-          {/* Mundu */}
-          <path d="M 33 85 L 30 105 L 42 105 L 48 90 L 54 105 L 66 105 L 63 85 Z" fill="#F0EBE0" />
-          <path d="M 30 103 L 42 103 L 48 88 L 54 103 L 66 103" stroke="#d4a520" strokeWidth="1.5" fill="none" opacity="0.6" />
+          {/* White shorts */}
+          <path d="M 33 85 L 31 100 L 42 100 L 48 90 L 54 100 L 65 100 L 63 85 Z" fill="#F5F0E8" />
+          <line x1="48" y1="85" x2="48" y2="100" stroke="#E0D8CC" strokeWidth="0.8" opacity="0.5" />
 
           {/* Legs */}
-          <line x1="38" y1="105" x2="37" y2="118" stroke="#D4956A" strokeWidth="6" strokeLinecap="round" />
-          <line x1="58" y1="105" x2="59" y2="118" stroke="#D4956A" strokeWidth="6" strokeLinecap="round" />
+          <line x1="38" y1="100" x2="37" y2="118" stroke="#D4956A" strokeWidth="6" strokeLinecap="round" />
+          <line x1="58" y1="100" x2="59" y2="118" stroke="#D4956A" strokeWidth="6" strokeLinecap="round" />
 
           {/* Chappal */}
           <ellipse cx="36" cy="120" rx="7" ry="3.5" fill="#8B5E34" />

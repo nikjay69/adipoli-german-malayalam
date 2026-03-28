@@ -5,3 +5,6 @@ export type { AppuMood } from './Appu';
 export { SpeechBubble } from './SpeechBubble';
 export { CharacterGuide } from './CharacterGuide';
 export type { DialogueLine } from './CharacterGuide';
+export { KuttanImage, mapMoodToImage } from './KuttanImage';
+export type { KuttanMoodImage } from './KuttanImage';
+export { KuttanSpeech } from './KuttanSpeech';
