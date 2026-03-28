@@ -17,10 +17,10 @@ Save to: `public/images/scenes/`
 ### Pending
 
 - [ ] **scene-1-1-kerala-home.png**
-  Prompt: "Cozy Kerala bedroom in evening, warm yellow light from table lamp, young Indian man sitting on bed looking at phone, WhatsApp notification glow, window showing coconut palms at dusk, illustrated flat design style, warm colors, no text"
+  Prompt: "Cozy Kerala bedroom in evening, warm yellow light from table lamp, phone on bed showing WhatsApp notification glow, window showing coconut palms at dusk, illustrated flat design style, warm colors, no text"
 
 - [ ] **scene-1-2-goethe-institut.png**
-  Prompt: "Language school classroom morning, bright windows, whiteboard with German letters ä ö ü ß written on it, rows of desks with notebooks, Indian students sitting attentively, female teacher at whiteboard, illustrated flat design style, warm colors, no text"
+  Prompt: "Language school classroom morning, bright windows, whiteboard with German letters ä ö ü ß written on it, rows of desks with notebooks, students sitting attentively, illustrated flat design style, warm colors, no text"
 
 - [ ] **scene-1-4-hostel-lobby.png**
   Prompt: "Cozy youth hostel lobby in evening, string fairy lights, diverse group of young travelers sitting around wooden table, backpacks on floor, warm ambient lighting, world map on wall, illustrated flat design style, warm colors, no text"
@@ -70,24 +70,7 @@ These are used as subtle backgrounds during lessons in each module.
   Prompt: "Berlin U-Bahn station platform, yellow train arriving, passengers waiting, underground station signs, ticket machine, illustrated flat design style, warm colors, no text"
 
 ## BATCH 4: Character Scenes (Kuttan moments)
-Save to: `public/images/characters/`
-
-### Pending
-
-- [ ] **kuttan-kerala-dreaming.png**
-  Prompt: "Young Indian man (brown skin, dark curly hair, casual white shirt) sitting on Kerala house verandah, looking at laptop showing German flag, thought bubble with Alps and Euro sign, coconut palms in background, illustrated flat design style, warm evening colors, no text"
-
-- [ ] **kuttan-berlin-arrival.png**
-  Prompt: "Young Indian man with backpack stepping out of Berlin train station, wide-eyed amazement, TV tower (Fernsehturm) in background, modern city skyline, winter coat, illustrated flat design style, bright hopeful colors, no text"
-
-- [ ] **kuttan-cafe-conversation.png**
-  Prompt: "Young Indian man chatting with a European girl at a Berlin café table, coffee cups between them, both smiling, relaxed atmosphere, illustrated flat design style, warm colors, no text"
-
-- [ ] **kuttan-studying-night.png**
-  Prompt: "Young Indian man studying German at desk late at night, desk lamp on, German textbook open, sticky notes on wall with German words, cup of chai, determined expression, illustrated flat design style, warm colors, no text"
-
-- [ ] **kuttan-first-job.png**
-  Prompt: "Young Indian man in business casual at German office, colleagues greeting him, modern open-plan office, laptop with German email, slightly nervous but smiling, illustrated flat design style, warm colors, no text"
+**⏸️ ON HOLD — Kuttan's character design not finalized yet. Will add prompts after deciding his look.**
 
 ## BATCH 5: Vocab Context Images (expand beyond basics)
 Save to: `public/images/vocab/`
