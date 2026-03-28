@@ -29,8 +29,11 @@ export default function Error({
         <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">
           Aiyyo! Something went wrong
         </h2>
-        <p className="text-sm text-[var(--foreground)]/50 mb-6">
+        <p className="text-sm text-[var(--foreground)]/50 mb-2">
           Don&apos;t worry, your progress is saved. Try again.
+        </p>
+        <p className="text-xs text-[#c0392b]/60 mb-4 font-mono break-all px-2">
+          {error?.message || 'Unknown error'}
         </p>
 
         <div className="flex gap-3 justify-center">
