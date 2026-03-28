@@ -87,7 +87,30 @@ export const MODULE_16: Module = {
             "Transform nominative articles to dative",
             "Use dative in simple sentences"
           ],
-          placeholderThumbnail: "/images/university_library.png"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Dative Article Changes",
+              headers: ["Case", "Masculine", "Feminine", "Neuter", "Plural"],
+              rows: [
+                ["Nominativ", "der / ein", "die / eine", "das / ein", "die"],
+                ["Dativ", "dem / einem", "der / einer", "dem / einem", "den + -n"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Dativ = 'To Whom?'",
+              variant: "info",
+              content: "The Dativ case marks the indirect object — the RECEIVER of the action. 'Ich gebe DEM Mann das Buch' = I give the book TO THE man. Think of Malayalam '-ന്' (to someone)."
+            },
+            {
+              type: "note",
+              title: "Plural Dative Trap",
+              variant: "warning",
+              content: "In Dative plural, the article becomes 'den' AND the noun adds '-n' if possible: die Kinder → den Kindern, die Männer → den Männern."
+            }
+          ]
         },
         {
           id: "v16-1-2",
@@ -113,7 +136,29 @@ export const MODULE_16: Module = {
             "Use dative pronouns correctly in sentences",
             "Avoid the common mistake of using accusative with dative verbs"
           ],
-          placeholderThumbnail: "/images/university_library.png"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Dative Personal Pronouns",
+              headers: ["Person", "Nominativ", "Dativ"],
+              rows: [
+                ["I", "ich", "mir"],
+                ["you (informal)", "du", "dir"],
+                ["he", "er", "ihm"],
+                ["she", "sie", "ihr"],
+                ["we", "wir", "uns"],
+                ["you (plural)", "ihr", "euch"],
+                ["they / you (formal)", "sie / Sie", "ihnen / Ihnen"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Dative Verbs — Memorize These!",
+              variant: "tip",
+              content: "helfen (help), gefallen (please/like), gehören (belong to), danken (thank), folgen (follow) — all ALWAYS take Dative! 'Ich helfe DIR' not 'Ich helfe dich'!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -362,7 +407,37 @@ export const MODULE_16: Module = {
             "Know the contractions (im, ins, am, ans)",
             "Apply the correct case with each preposition"
           ],
-          placeholderThumbnail: "/images/german_apartment_living_room_v2.png"
+          placeholderThumbnail: "/images/german_apartment_living_room_v2.png",
+          richContent: [
+            {
+              type: "table",
+              title: "The 9 Two-Way Prepositions",
+              headers: ["German", "English", "Dativ (Location)", "Akkusativ (Movement)"],
+              rows: [
+                ["in", "in/into", "im Zimmer", "ins Zimmer"],
+                ["an", "at/on (vertical)", "am Fenster", "ans Fenster"],
+                ["auf", "on (horizontal)", "auf dem Tisch", "auf den Tisch"],
+                ["über", "over/above", "über dem Bild", "über das Bild"],
+                ["unter", "under", "unter dem Tisch", "unter den Tisch"],
+                ["vor", "in front of", "vor der Tür", "vor die Tür"],
+                ["hinter", "behind", "hinter dem Haus", "hinter das Haus"],
+                ["neben", "next to", "neben der Lampe", "neben die Lampe"],
+                ["zwischen", "between", "zwischen den Stühlen", "zwischen die Stühle"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Golden Rule",
+              variant: "tip",
+              content: "Movement (A→B) = Akkusativ. Location (staying at A) = Dativ. Ask yourself: Wo? (where, location) = Dativ. Wohin? (where to, movement) = Akkusativ."
+            },
+            {
+              type: "note",
+              title: "Contractions to Know",
+              variant: "info",
+              content: "in dem = im, in das = ins, an dem = am, an das = ans. These shortened forms are standard in everyday German — use them!"
+            }
+          ]
         },
         {
           id: "v16-2-2",
@@ -389,7 +464,34 @@ export const MODULE_16: Module = {
             "Know the verb pairs: liegen/legen, stehen/stellen, sitzen/setzen",
             "Form correct sentences with two-way prepositions"
           ],
-          placeholderThumbnail: "/images/german_train_station.png"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Verb Pairs: Location vs Movement",
+              headers: ["Location (Dativ)", "Movement (Akkusativ)", "Meaning"],
+              rows: [
+                ["liegen (lies)", "legen (lay/put)", "horizontal position"],
+                ["stehen (stands)", "stellen (place)", "vertical position"],
+                ["sitzen (sits)", "setzen (seat)", "sitting position"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Wo vs Wohin Trick",
+              variant: "tip",
+              content: "Ask yourself: 'Wo?' (Where is it?) = Dativ: 'Das Buch liegt auf DEM Tisch.' 'Wohin?' (Where to?) = Akkusativ: 'Ich lege das Buch auf DEN Tisch.'"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "liegen", english: "to lie (location)", malayalam: "കിടക്കുന്നു", pronunciation: "lee-gen" },
+                { german: "legen", english: "to lay (movement)", malayalam: "വെക്കുന്നു", pronunciation: "lay-gen" },
+                { german: "stehen", english: "to stand (location)", malayalam: "നിൽക്കുന്നു", pronunciation: "shtay-en" },
+                { german: "stellen", english: "to place (movement)", malayalam: "നിർത്തുന്നു", pronunciation: "shtel-en" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -633,7 +735,36 @@ export const MODULE_16: Module = {
           ],
           keyVocabulary: ["sich waschen", "sich freuen", "sich beeilen", "sich setzen"],
           learningObjectives: ["Identify reflexive verbs", "Use mich/dich/sich correctly", "Understand Accusative vs Dative reflexive usage"],
-          placeholderThumbnail: "/images/home_office.png"
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Reflexive Pronouns (Accusative)",
+              headers: ["Person", "Pronoun", "Example"],
+              rows: [
+                ["ich", "mich", "Ich wasche mich."],
+                ["du", "dich", "Du freust dich."],
+                ["er/sie/es", "sich", "Er beeilt sich."],
+                ["wir", "uns", "Wir setzen uns."],
+                ["ihr", "euch", "Ihr wascht euch."],
+                ["sie/Sie", "sich", "Sie freuen sich."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Body Part Trap!",
+              variant: "warning",
+              content: "Ich wasche MICH (whole body) = Accusative. Ich wasche MIR die Hände (just hands) = Dative. When a specific body part is the object, the reflexive pronoun switches to Dative!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "sich waschen", english: "to wash oneself", malayalam: "കുളിക്കുക", pronunciation: "zikh va-shen" },
+                { german: "sich freuen", english: "to be happy", malayalam: "സന്തോഷിക്കുക", pronunciation: "zikh froy-en" },
+                { german: "sich beeilen", english: "to hurry", malayalam: "തിരക്കുക", pronunciation: "zikh be-eye-len" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -873,7 +1004,31 @@ export const MODULE_16: Module = {
             "Move the verb to the end of subordinate clauses",
             "Handle word order when subordinate clause comes first"
           ],
-          placeholderThumbnail: "/images/university_library.png"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Subordinate Clause Connectors",
+              headers: ["Connector", "Meaning", "Example"],
+              rows: [
+                ["weil", "because", "..., weil ich Deutsch lerne."],
+                ["dass", "that", "..., dass du kommst."],
+                ["wenn", "if / when", "Wenn es regnet, bleibe ich."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Verb Goes to the END!",
+              variant: "warning",
+              content: "In subordinate clauses (weil, dass, wenn), the conjugated verb MUST go to the very last position: 'Ich lerne Deutsch, weil ich in Deutschland wohnen MÖCHTE.' — möchte goes to the end!"
+            },
+            {
+              type: "note",
+              title: "Sub-Clause First? Verb-Verb!",
+              variant: "tip",
+              content: "When the subordinate clause comes FIRST, the main clause starts with the verb: 'Wenn es REGNET, BLEIBE ich zu Hause.' Two verbs meet at the comma!"
+            }
+          ]
         },
         {
           id: "v16-4-2",
@@ -903,7 +1058,25 @@ export const MODULE_16: Module = {
             "Combine multiple subordinate clauses",
             "Produce A2-level complex sentences"
           ],
-          placeholderThumbnail: "/images/university_library.png"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "als vs wenn vs ob",
+              headers: ["Connector", "When to Use", "Example"],
+              rows: [
+                ["als", "One-time past event", "Als ich ein Kind WAR, ..."],
+                ["wenn", "Repeated / present / future", "Wenn es REGNET, ..."],
+                ["ob", "Whether / indirect question", "Ich weiß nicht, ob er KOMMT."]
+              ]
+            },
+            {
+              type: "note",
+              title: "als = One-Time Past Only!",
+              variant: "warning",
+              content: "'Als ich in Kerala WAR' (one-time event in the past). For habits or present situations, always use 'wenn': 'Wenn ich Hunger HABE, esse ich.' Never mix them up!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -1144,7 +1317,35 @@ export const MODULE_16: Module = {
             "Extract specific information from emails and advertisements",
             "Build confidence reading authentic German materials"
           ],
-          placeholderThumbnail: "/images/university_library.png"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Reading Strategies",
+              headers: ["Strategy", "What to Do", "When to Use"],
+              rows: [
+                ["Scanning", "Look for specific info (dates, prices)", "Ads, schedules"],
+                ["Context Guessing", "Guess meaning from surrounding words", "Unknown vocabulary"],
+                ["Key Words", "Focus on nouns, verbs, question words", "All texts"],
+                ["Cognates", "Find words similar to English", "Technical texts"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Don't Translate Every Word!",
+              variant: "tip",
+              content: "You don't need to understand 100% of a text. Focus on KEY information: Who? What? When? Where? How much? This is exactly how the A1 exam tests you."
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "der Text", english: "text", malayalam: "വാചകം", pronunciation: "tekst" },
+                { german: "verstehen", english: "to understand", malayalam: "മനസ്സിലാക്കുക", pronunciation: "fer-shtay-en" },
+                { german: "die Bedeutung", english: "meaning", malayalam: "അർത്ഥം", pronunciation: "be-doy-tung" },
+                { german: "der Zusammenhang", english: "context", malayalam: "സന്ദർഭം", pronunciation: "tsoo-za-men-hang" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [

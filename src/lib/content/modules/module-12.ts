@@ -23,6 +23,46 @@ export const MODULE_12: Module = {
       description: "Learn to talk about your favourite hobbies and activities in German — from Fußball to Cricket, reading to reels scrolling! Ninte hobby enth aanu?",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Main Park (Im Park)",
+          sceneType: "station",
+          timeOfDay: "afternoon",
+          description: "A beautiful sunny Saturday at the city park. Families are picnicking, people are jogging, and a group of youngsters is practicing 'Fußball' (football) nearby. You're here with Arjun, taking in the 'Freizeit' (free time) vibes. In Kerala, a park is for evening snacks, but here, it's where everyone does their 'Hobby'. Whether it's reading or sports, Germans take their leisure time seriously. Ready to join in, machane?",
+        },
+        narrative: {
+          previousRecap: "You've mastered the vocational world. Now, let's look at what helps you relax after work!",
+          currentObjective: "Describe your personal hobbies and express likes/dislikes using 'gern'",
+          nextTeaser: "Next: The Weather! Let's see if we can handle a German winter!",
+        },
+        kuttanIntro: [
+          "Machane! 'Freizeit' (free time) is sacred in Germany. People wait for the weekend to do what they love. Nammude main tool 'gern' (to like) aanu. 'Ich lese gern' (I like reading).",
+          "Germany-yil 'Fußball' (football) is like a religion, similar to Cricket in Kerala. Oru 'Verein' (club) illathe keralam illa, ithengine undallo?",
+          "Pinne 'Sport treiben' ennu parayumbol, regular physical activity ennu mean cheyyunnu — gym or jogging. Let's find out what everyone's doing!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab12-1-10", encounterMoment: "Arjun exhales: 'Endlich Freizeit!' (Finally free time!).", contextSentence: "Was machst du in deiner Freizeit?" },
+          { vocabId: "vocab12-1-1", encounterMoment: "A passerby asks: 'Was ist dein Hobby?' (What is your hobby?).", contextSentence: "Mein Hobby ist Lesen." },
+          { vocabId: "vocab12-1-5", encounterMoment: "You watch the game: 'Fußball ist überall!' (Football is everywhere).", contextSentence: "Fußball ist sehr beliebt in Deutschland." },
+          { vocabId: "vocab12-1-6", encounterMoment: "Arjun puts on headphones: 'Ich höre gern Musik.' (I like listening to music).", contextSentence: "Ich höre gern Musik." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'I like swimming'. Where do you place 'gern'?",
+            options: [
+              { text: "Ich schwimme gern.", isCorrect: true, response: "Exactly! 'gern' goes after the verb.", kuttanReaction: "Adipoli! Word order logic perfectly capture cheythallo! 🔥" },
+              { text: "Ich gern schwimme.", isCorrect: false, response: "Aiyyo! In German, 'gern' cannot come before the verb in a standard sentence.", kuttanReaction: "Vite machane! Verb configuration sradhikkanne. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "A German friend asks if you want to join a 'Cricket-Verein'. What are they inviting you to?",
+            options: [
+              { text: "A formal Cricket club.", isCorrect: true, response: "Correct! 'Verein' is a registered club or association.", kuttanReaction: "Superb! German club culture correct aayi pick cheythallo! ⭐" },
+              { text: "A casual meeting in the park.", isCorrect: false, response: "No! A 'Verein' implies a formal structure with membership and regular play.", kuttanReaction: "Aiyyo! 'Verein' indicates a formal club. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v12-1-1",
@@ -48,7 +88,39 @@ export const MODULE_12: Module = {
             "Name at least 8 common hobbies in German",
             "Ask and answer questions about hobbies"
           ],
-          placeholderThumbnail: "/images/thumbnails/hobbies.jpg"
+          placeholderThumbnail: "/images/berlin_people.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Common Hobbies in German",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["lesen", "reading", "വായിക്കുക"],
+                ["kochen", "cooking", "പാചകം ചെയ്യുക"],
+                ["tanzen", "dancing", "നൃത്തം ചെയ്യുക"],
+                ["reisen", "travelling", "യാത്ര ചെയ്യുക"],
+                ["singen", "singing", "പാടുക"],
+                ["Musik hören", "listening to music", "സംഗീതം കേൾക്കുക"],
+                ["Videospiele spielen", "playing video games", "വീഡിയോ ഗെയിം കളിക്കുക"]
+              ]
+            },
+            {
+              type: "table",
+              title: "gern vs nicht gern",
+              headers: ["Like", "Don't Like"],
+              rows: [
+                ["Ich lese gern.", "Ich lese nicht gern."],
+                ["Ich koche gern.", "Ich koche nicht gern."],
+                ["Ich schwimme gern.", "Ich schwimme nicht gern."]
+              ]
+            },
+            {
+              type: "note",
+              title: "'gern' Goes After the Verb!",
+              variant: "tip",
+              content: "Place 'gern' right after the verb to say you enjoy doing something: Ich lese gern (I like reading). For dislikes, use 'nicht gern': Ich koche nicht gern (I don't like cooking). Super simple!"
+            }
+          ]
         },
         {
           id: "v12-1-2",
@@ -76,7 +148,41 @@ export const MODULE_12: Module = {
             "Talk about your favourite sports",
             "Explain Indian sports like Cricket and Kabaddi in German"
           ],
-          placeholderThumbnail: "/images/thumbnails/sports.jpg"
+          placeholderThumbnail: "/images/berlin_people.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Sports Vocabulary",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["der Fußball", "football/soccer", "ഫുട്ബോൾ"],
+                ["das Schwimmen", "swimming", "നീന്തൽ"],
+                ["das Joggen", "jogging", "ജോഗിങ്"],
+                ["das Yoga", "yoga", "യോഗ"],
+                ["das Cricket", "cricket", "ക്രിക്കറ്റ്"],
+                ["das Wandern", "hiking", "ഹൈക്കിങ്"],
+                ["das Tauziehen", "tug of war", "വടംവലി"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Sports Verbs & Phrases",
+              headers: ["German", "English"],
+              rows: [
+                ["Ich spiele gern Fußball.", "I like playing football."],
+                ["Ich schwimme gern.", "I like swimming."],
+                ["Treibst du Sport?", "Do you do sports?"],
+                ["Ich schaue gern Cricket.", "I like watching cricket."],
+                ["Sport treiben", "to do sports (general)"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Wandern — The German National Hobby!",
+              variant: "info",
+              content: "Germans are obsessed with 'Wandern' (hiking). It's like how Malayalis love road trips! There are marked trails everywhere. A great way to make German friends: join a Wanderverein (hiking club)."
+            }
+          ]
         }
       ],
       exercises: [
@@ -191,6 +297,46 @@ export const MODULE_12: Module = {
       description: "Talk about the weather and seasons in German — and discover how different Germany's climate is from Kerala! Mazha allenkil snow, Germany-il ellaam undu machaa!",
       duration: "55 min",
       xpReward: 140,
+      storyScene: {
+        setting: {
+          name: "WG Balcony (Auf dem Balkon)",
+          sceneType: "home",
+          timeOfDay: "morning",
+          description: "A cold morning in Germany. You step onto the balcony and see your breath for the first time. The sky is grey, but then — something magical! White flakes are falling. It's snowing! You quickly message Arjun: 'Es schneit!'. In Kerala, we have the heavy 'Regen' (rain) during monsoon, but here, the 'Wetter' (weather) changes every hour. Time to learn how to complain about the cold like a real German, machane!",
+        },
+        narrative: {
+          previousRecap: "You've shared your hobbies. Now, let's see which weather suits them best!",
+          currentObjective: "Identify various weather conditions and seasons and describe the temperature",
+          nextTeaser: "Next: Making plans! Let's see if the rain stops us from going out!",
+        },
+        kuttanIntro: [
+          "Machane! German weather is legendary for being unpredictable. 'Es regnet' (it rains) is most common, but 'Es schneit' (it snows) is the real hero!",
+          "Nammude seasons-um Germany-yile 'Jahreszeiten' (seasons) different aanu. Winter-il 0 degrees common aanu. Cold alert is real!",
+          "Fun fact: Germans 30 degrees choodayirikumpol 'Es ist heiß!' (it is hot) ennu parayum. Malayalis-inu ithu normal climate aanu. Let's check the forecast!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab12-2-1", encounterMoment: "You check the app: 'Wie ist das Wetter?' (How is the weather?).", contextSentence: "Wie ist das Wetter heute?" },
+          { vocabId: "vocab12-2-3", encounterMoment: "You shout: 'Es schneit!' (It's snowing!).", contextSentence: "Im Dezember schneit es oft." },
+          { vocabId: "vocab12-2-6", encounterMoment: "Arjun replies: 'Ja, es ist sehr kalt.' (Yes, it's very cold).", contextSentence: "Im Winter ist es sehr kalt." },
+          { vocabId: "vocab12-2-2", encounterMoment: "You remember home: 'In Kerala regnet es viel.' (In Kerala it rains a lot).", contextSentence: "Es regnet den ganzen Tag." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You see the first snow falling. How do you describe it in German?",
+            options: [
+              { text: "Es schneit.", isCorrect: true, response: "Exactly! 'schneien' is the verb for snowing.", kuttanReaction: "Adipoli! Snow logic perfectly capture cheythallo! ❄️" },
+              { text: "Es regnet.", isCorrect: false, response: "Aiyyo! 'Regnen' is rain. Snow logic is 'schneien'.", kuttanReaction: "Vite machane! White powder snow aanu, rain alla. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "It's a hot July day, 32°C. How do you describe the temperature?",
+            options: [
+              { text: "Es ist heiß.", isCorrect: true, response: "Correct! Even for a Malayali, 32°C in Germany feels hot because of the humidity and lack of AC.", kuttanReaction: "Superb! German summer logic correctly picked! ⭐" },
+              { text: "Es ist kalt.", isCorrect: false, response: "No! 'kalt' is for winter. 32°C is definitely not cold!", kuttanReaction: "Aiyyo! Kalt logic winter-inu vendi ulla thaannu. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v12-2-1",
@@ -216,7 +362,40 @@ export const MODULE_12: Module = {
             "Name all four seasons in German",
             "Compare German and Kerala weather/climate"
           ],
-          placeholderThumbnail: "/images/thumbnails/weather.jpg"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Weather Vocabulary",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["Es regnet.", "It's raining.", "മഴ പെയ്യുന്നു."],
+                ["Es schneit.", "It's snowing.", "മഞ്ഞ് പെയ്യുന്നു."],
+                ["Es ist sonnig.", "It's sunny.", "വെയിലുണ്ട്."],
+                ["Es ist bewölkt.", "It's cloudy.", "മേഘാവൃതമാണ്."],
+                ["Es ist windig.", "It's windy.", "കാറ്റുണ്ട്."],
+                ["Es ist kalt.", "It's cold.", "തണുപ്പാണ്."],
+                ["Es ist warm.", "It's warm.", "ചൂടാണ്."]
+              ]
+            },
+            {
+              type: "table",
+              title: "The Four Seasons",
+              headers: ["German", "English", "Months", "Temperature"],
+              rows: [
+                ["der Frühling", "Spring", "March - May", "5-20°C"],
+                ["der Sommer", "Summer", "June - August", "20-35°C"],
+                ["der Herbst", "Autumn", "September - November", "5-15°C"],
+                ["der Winter", "Winter", "December - February", "-10 to 5°C"]
+              ]
+            },
+            {
+              type: "note",
+              title: "All Seasons Are Masculine!",
+              variant: "tip",
+              content: "All four seasons take 'der': der Frühling, der Sommer, der Herbst, der Winter. And yes, German winter can go to -10°C or below — a massive shock for anyone from Kerala's 25°C+ weather!"
+            }
+          ]
         },
         {
           id: "v12-2-2",
@@ -242,7 +421,37 @@ export const MODULE_12: Module = {
             "Express your favourite season and give a reason",
             "Use 'Im + season' to describe when you do activities"
           ],
-          placeholderThumbnail: "/images/thumbnails/seasons-activities.jpg"
+          placeholderThumbnail: "/images/kaffeeklatsch.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Seasonal Activities",
+              headers: ["Season", "German Activity", "English"],
+              rows: [
+                ["Frühling", "Im Frühling gehe ich gern spazieren.", "In spring I like going for walks."],
+                ["Sommer", "Im Sommer schwimme ich gern.", "In summer I like swimming."],
+                ["Herbst", "Im Herbst trinke ich gern heißen Tee.", "In autumn I like drinking hot tea."],
+                ["Winter", "Im Winter baue ich einen Schneemann.", "In winter I build a snowman."]
+              ]
+            },
+            {
+              type: "table",
+              title: "Kerala Seasons ↔ German Seasons",
+              headers: ["Kerala Event", "Approx. German Season", "German"],
+              rows: [
+                ["Vishu (April)", "Frühling", "der Frühling"],
+                ["Monsoon (June-Sept)", "Sommer/Herbst", "der Sommer"],
+                ["Onam (Aug-Sept)", "Herbst", "der Herbst"],
+                ["Christmas (Dec)", "Winter", "der Winter"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Weather = German Small Talk!",
+              variant: "info",
+              content: "Germans LOVE talking about the weather — it's their #1 small talk topic! 'Schönes Wetter heute!' (Nice weather today!) is the perfect conversation starter. Use 'Im [season] + verb + gern' to talk about what you enjoy in each season."
+            }
+          ]
         }
       ],
       exercises: [
@@ -360,6 +569,46 @@ export const MODULE_12: Module = {
       description: "Learn to suggest, accept, and decline plans in German — the social survival kit! Friends-ne koode plan cheyyaan padikkaam, katta set aakaam!",
       duration: "55 min",
       xpReward: 140,
+      storyScene: {
+        setting: {
+          name: "WG Kitchen (In der Küche)",
+          sceneType: "home",
+          timeOfDay: "evening",
+          description: "Arjun is looking at a movie trailer on his phone. He looks up and asks: 'Hast du Lust, ins Kino zu gehen?'. In Kerala, we might plan a movie 30 minutes before the show, but in Germany, the 'Wochenende' (weekend) is planned days in advance. You're learning how to suggest plans with 'Wollen wir...?' and how to decline politely with 'Leider'. Sunday shops are closed, so Saturday is your only chance! Ready to socialise, machane?",
+        },
+        narrative: {
+          previousRecap: "You've complained about the cold. Now, let's find some fun indoor activities!",
+          currentObjective: "Suggest and respond to plans using 'Hast du Lust...?' and 'Wollen wir...?'",
+          nextTeaser: "Next: Formal Invitations! Let's see how we handle a party invite!",
+        },
+        kuttanIntro: [
+          "Machane! Friends-ne invite cheyyaan 'Hast du Lust...?' (Have you desire / Do you feel like...?) is the most natural way. 'Hast du Lust, Pizza zu essen?'.",
+          "Pinne 'Wollen wir...?' (Shall we...?) oru straight invitation aanu. Agreement-inu 'Klar!' or 'Ja, gern!' use cheyyaam.",
+          "Sunday warning: Remember, shops and supermarkets Germany-yil Sunday closed aanu. So plan all your activities for Saturday! Let's get out there!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab12-3-1", encounterMoment: "Arjun asks: 'Hast du Lust, ins Kino zu gehen?'.", contextSentence: "Hast du Lust, ins Kino zu gehen?" },
+          { vocabId: "vocab12-3-9", encounterMoment: "You say: 'Am Wochenende habe ich Zeit.' (On the weekend I have time).", contextSentence: "Am Wochenende gehe ich ins Kino." },
+          { vocabId: "vocab12-3-2", encounterMoment: "You suggest: 'Wollen wir zusammen essen?' (Shall we eat together?).", contextSentence: "Wollen wir zusammen lernen?" },
+          { vocabId: "vocab12-3-5", encounterMoment: "Stefan declines: 'Leider kann ich nicht.' (Unfortunately I can't).", contextSentence: "Leider kann ich nicht, ich muss arbeiten." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Arjun asks 'Hast du Lust, ins Kino zu gehen?'. You really want to go. How do you respond?",
+            options: [
+              { text: "Ja, gern! Wann denn?", isCorrect: true, response: "Exactly! 'Ja, gern' is a enthusiastic acceptance.", kuttanReaction: "Adipoli! Social logic perfectly capture cheythallo! 🔥" },
+              { text: "Nein, danke.", isCorrect: false, response: "Aiyyo! 'Nein, danke' is a polite no, but you wanted to go!", kuttanReaction: "Vite machane! Confused aano? Accept cheyyanne. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to suggest eating at a restaurant with 'Wollen'. Which is correct?",
+            options: [
+              { text: "Wollen wir ins Restaurant gehen?", isCorrect: true, response: "Correct! 'Wollen wir' starts the question.", kuttanReaction: "Superb! Question structure correct aayi pick cheythallo. ⭐" },
+              { text: "Wir wollen ins Restaurant gehen?", isCorrect: false, response: "No! In a question, the verb 'Wollen' should come first.", kuttanReaction: "Aiyyo! Question logic marakkallae machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v12-3-1",
@@ -385,7 +634,36 @@ export const MODULE_12: Module = {
             "Decline politely without being rude",
             "Set time and place for meeting up"
           ],
-          placeholderThumbnail: "/images/thumbnails/making-plans.jpg"
+          placeholderThumbnail: "/images/kaffee_kuchen.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Three Ways to Suggest Plans",
+              headers: ["Structure", "German", "English"],
+              rows: [
+                ["Hast du Lust...?", "Hast du Lust, ins Kino zu gehen?", "Do you feel like going to the cinema?"],
+                ["Wollen wir...?", "Wollen wir essen gehen?", "Shall we go eat?"],
+                ["Lass uns...!", "Lass uns Pizza bestellen!", "Let's order pizza!"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Accepting & Declining",
+              headers: ["Accepting", "Declining"],
+              rows: [
+                ["Ja, gern!", "Leider kann ich nicht."],
+                ["Super Idee!", "Tut mir leid, ich habe keine Zeit."],
+                ["Auf jeden Fall!", "Vielleicht nächstes Mal."],
+                ["Ich bin dabei!", "Ich muss leider arbeiten."]
+              ]
+            },
+            {
+              type: "note",
+              title: "German Punctuality for Social Plans Too!",
+              variant: "warning",
+              content: "When you agree to meet at 18:00, Germans expect you at 18:00 — not 18:15! The 'on my way' excuse doesn't work here. If you're running late, text immediately. Punctuality shows respect in Germany."
+            }
+          ]
         },
         {
           id: "v12-3-2",
@@ -411,7 +689,35 @@ export const MODULE_12: Module = {
             "Use correct prepositions with going-out places",
             "Confirm and finalize plans naturally"
           ],
-          placeholderThumbnail: "/images/thumbnails/weekend-plans.jpg"
+          placeholderThumbnail: "/images/kaffee_kuchen.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Weekend Places & Prepositions",
+              headers: ["German", "English", "Preposition Pattern"],
+              rows: [
+                ["ins Kino gehen", "go to the cinema", "in + das = ins"],
+                ["ins Restaurant gehen", "go to a restaurant", "in + das = ins"],
+                ["in die Kneipe gehen", "go to the pub", "in + die = in die"],
+                ["in den Park gehen", "go to the park", "in + den (Akk. masc.)"],
+                ["zu Hause bleiben", "stay at home", "zu Hause (fixed phrase)"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Friday Question",
+              variant: "tip",
+              content: "Every Friday, Germans ask: 'Was machst du am Wochenende?' (What are you doing this weekend?) Have an answer ready! 'Ich gehe ins Kino.' / 'Ich treffe Freunde.' / 'Ich bleibe zu Hause.'"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Alles klar!", english: "All clear! / Got it!", malayalam: "ശരി!", pronunciation: "al-les klahr" },
+                { german: "Bis dann!", english: "See you then!", malayalam: "പിന്നെ കാണാം!", pronunciation: "bis dan" },
+                { german: "Bis Samstag!", english: "See you Saturday!", malayalam: "ശനിയാഴ്ച കാണാം!", pronunciation: "bis zams-tahk" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -527,6 +833,46 @@ export const MODULE_12: Module = {
       description: "Learn to invite, accept, and decline invitations in German — plus your first taste of 'weil' clauses and preference rankings with gern/lieber/am liebsten! Party invite muthal Onam sadya invite vare!",
       duration: "55 min",
       xpReward: 160,
+      storyScene: {
+        setting: {
+          name: "WG Party (Die Einladung)",
+          sceneType: "home",
+          timeOfDay: "evening",
+          description: "Music is playing, the kitchen is full of drinks, and the doorbell is ringing. You've received your first real 'Einladung' (invitation)! In Kerala, we just show up at a friend's house, but in Germany, invitations are official and usually include a request to 'mitbringen' (bring along) something. You're explaining why you're a bit late using 'weil'. It's your first time using complex German grammar. Good luck, machane!",
+        },
+        narrative: {
+          previousRecap: "You've made casual plans. Now, let's learn how to handle formal invitations!",
+          currentObjective: "Form 'weil' clauses correctly and express preference rankings using gern/lieber/am liebsten",
+          nextTeaser: "Module 12 complete! You're now a social butterfly! Next: Module 13 - Media and Technology!",
+        },
+        kuttanIntro: [
+          "Machane! Invitations accept cheyyan 'Ich komme gern' or 'Ich bin dabei!' use cheyyaam. Very cool phrases!",
+          "Ivide oru grammar twist undu — 'weil' (because). After 'weil', the conjugated verb eppozhum clause-ude END-il pokum. 'Ich komme, weil ich Zeit HABE'. Catch the logic?",
+          "Pinne preferences parayaan 'gern', 'lieber', 'am liebsten' scale use cheyyuka. 'Ich esse gern Pizza, aber am liebsten Biryani!'. Nammude taste buds marakkalle!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab12-4-2", encounterMoment: "Lara sends you a text: 'Danke für die Einladung!'", contextSentence: "Danke für die Einladung!" },
+          { vocabId: "vocab12-4-6", encounterMoment: "You explain: 'Ich bin spät, weil ich gearbeitet habe.'", contextSentence: "Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte." },
+          { vocabId: "vocab12-4-5", encounterMoment: "You point to the food: 'Am liebsten esse ich Biryani.'", contextSentence: "Am liebsten esse ich Biryani." },
+          { vocabId: "vocab12-4-9", encounterMoment: "You ask Lara: 'Soll ich etwas mitbringen?' (Should I bring something?).", contextSentence: "Soll ich etwas mitbringen?" },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'I am learning German because I want to work in Germany'. Where does 'möchte' go?",
+            options: [
+              { text: "At the very end of the sentence.", isCorrect: true, response: "Exactly! In a 'weil' clause, the conjugated verb (möchte) goes to the end.", kuttanReaction: "Adipoli! Verb-final logic perfectly capture cheythallo! 🔥" },
+              { text: "Right after 'weil'.", isCorrect: false, response: "Aiyyo! In German, 'weil' kicks the verb to the very end of the clause.", kuttanReaction: "Vite machane! Grammar logic catch aayillya. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to say you like Biryani the MOST. Which word do you use?",
+            options: [
+              { text: "am liebsten.", isCorrect: true, response: "Correct! 'am liebsten' is the superlative form for likes.", kuttanReaction: "Superb! Taste bud logic correctly noted! ⭐" },
+              { text: "lieber.", isCorrect: false, response: "No! 'lieber' is for comparing two things. For the top choice, use 'am liebsten'.", kuttanReaction: "Aiyyo! 'lieber' comparison-u vendi ulla thaannu. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v12-4-1",
@@ -550,7 +896,37 @@ export const MODULE_12: Module = {
             "Use gern/lieber/am liebsten to express preferences",
             "Offer to bring something to a gathering"
           ],
-          placeholderThumbnail: "/images/thumbnails/invitations.jpg"
+          placeholderThumbnail: "/images/kaffeeklatsch.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Preference Scale: gern → lieber → am liebsten",
+              headers: ["Level", "German", "English", "Example"],
+              rows: [
+                ["Like", "gern", "gladly", "Ich esse gern Biryani."],
+                ["Prefer", "lieber", "rather/prefer", "Ich esse lieber Fried Rice."],
+                ["Favourite", "am liebsten", "most of all", "Am liebsten esse ich Sadya!"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Invitation Phrases",
+              headers: ["German", "English"],
+              rows: [
+                ["Ich lade dich ein!", "I'm inviting you!"],
+                ["Kommst du zu meiner Party?", "Are you coming to my party?"],
+                ["Ich komme gern!", "I'd love to come!"],
+                ["Ich bin dabei!", "Count me in!"],
+                ["Soll ich etwas mitbringen?", "Should I bring something?"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Always Offer to Bring Something!",
+              variant: "tip",
+              content: "When invited to a German home, always ask 'Soll ich etwas mitbringen?' (Should I bring something?). Bringing a bottle of wine, cake, or flowers is standard etiquette. Never arrive empty-handed!"
+            }
+          ]
         },
         {
           id: "v12-4-2",
@@ -577,7 +953,38 @@ export const MODULE_12: Module = {
             "Give reasons for accepting or declining invitations",
             "Answer 'Warum?' questions with 'weil' clauses"
           ],
-          placeholderThumbnail: "/images/thumbnails/weil-clauses.jpg"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "weil-Clause: Verb Goes to the END!",
+              headers: ["Normal Sentence", "With 'weil' (because)"],
+              rows: [
+                ["Ich muss arbeiten.", "...weil ich arbeiten muss."],
+                ["Ich bin krank.", "...weil ich krank bin."],
+                ["Es ist lecker.", "...weil es lecker ist."],
+                ["Ich möchte studieren.", "...weil ich studieren möchte."],
+                ["Cricket ist der beste Sport.", "...weil Cricket der beste Sport ist."]
+              ]
+            },
+            {
+              type: "table",
+              title: "Warum? → Weil... (Question & Answer)",
+              headers: ["Question", "Answer with weil"],
+              rows: [
+                ["Warum lernst du Deutsch?", "Weil ich in Deutschland studieren möchte."],
+                ["Warum kannst du nicht kommen?", "Weil ich arbeiten muss."],
+                ["Warum spielst du Cricket?", "Weil Cricket der beste Sport ist!"],
+                ["Warum bist du müde?", "Weil ich bis spät gelernt habe."]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Big Grammar Shift!",
+              variant: "warning",
+              content: "After 'weil', the conjugated verb MUST jump to the end of the clause. This is your first taste of German subordinate clauses. Normal: 'Ich muss arbeiten.' → weil: '...weil ich arbeiten MUSS.' The verb flips position!"
+            }
+          ]
         }
       ],
       exercises: [

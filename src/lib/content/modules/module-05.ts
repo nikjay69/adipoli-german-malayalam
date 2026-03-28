@@ -91,7 +91,34 @@ export const MODULE_5: Module = {
             "Know all six present tense conjugation endings",
             "Conjugate regular verbs confidently"
           ],
-          placeholderThumbnail: "/images/home_office.png"
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Regular Verb Conjugation Pattern",
+              headers: ["Person", "Ending", "machen (to do)", "spielen (to play)"],
+              rows: [
+                ["ich", "-e", "mache", "spiele"],
+                ["du", "-st", "machst", "spielst"],
+                ["er/sie/es", "-t", "macht", "spielt"],
+                ["wir", "-en", "machen", "spielen"],
+                ["ihr", "-t", "macht", "spielt"],
+                ["sie/Sie", "-en", "machen", "spielen"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Simple Formula",
+              variant: "info",
+              content: "Step 1: Take the infinitive (e.g., 'machen'). Step 2: Remove '-en' to get the stem ('mach-'). Step 3: Add the correct ending (-e, -st, -t, -en, -t, -en). That is it! Works for most verbs."
+            },
+            {
+              type: "note",
+              title: "Sie = sie (they)!",
+              variant: "tip",
+              content: "Formal 'Sie' (you) uses the exact same form as 'sie' (they) — always the '-en' ending. This is a useful shortcut: if you know the 'they' form, you automatically know the formal 'you' form!"
+            }
+          ]
         },
         {
           id: "v5-1-2",
@@ -115,7 +142,35 @@ export const MODULE_5: Module = {
             "Handle the special -eten/-aten pattern (arbeiten)",
             "Use verbs in simple questions and answers"
           ],
-          placeholderThumbnail: "/images/office_building.png"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Common Verbs Conjugated",
+              headers: ["Verb", "ich", "du", "er/sie/es"],
+              rows: [
+                ["arbeiten (work)", "arbeite", "arbeitest", "arbeitet"],
+                ["kochen (cook)", "koche", "kochst", "kocht"],
+                ["wohnen (live)", "wohne", "wohnst", "wohnt"],
+                ["lernen (learn)", "lerne", "lernst", "lernt"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The '-eten' Exception (arbeiten)",
+              variant: "warning",
+              content: "Verbs with stems ending in '-t' or '-d' need an extra '-e-' for pronunciation: arbeit-E-st, arbeit-E-t. Without it, 'arbeitt' would be impossible to say! Same applies to 'finden' -> du findest."
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "arbeiten", english: "to work", malayalam: "ജോലി ചെയ്യുക", pronunciation: "ar-bye-ten" },
+                { german: "kochen", english: "to cook", malayalam: "പാചകം ചെയ്യുക", pronunciation: "ko-khen" },
+                { german: "wohnen", english: "to live/reside", malayalam: "താമസിക്കുക", pronunciation: "vo-nen" },
+                { german: "lernen", english: "to learn", malayalam: "പഠിക്കുക", pronunciation: "ler-nen" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -374,7 +429,36 @@ export const MODULE_5: Module = {
             "Use time-sequencing words (zuerst, dann, danach)",
             "Tell the time with 'um … Uhr'"
           ],
-          placeholderThumbnail: "/images/home_office.png"
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Morning Routine Verbs",
+              headers: ["German", "English", "Example Sentence"],
+              rows: [
+                ["aufstehen", "to get up", "Ich stehe um 7 Uhr auf."],
+                ["duschen", "to shower", "Dann dusche ich."],
+                ["Zähne putzen", "to brush teeth", "Ich putze mir die Zähne."],
+                ["frühstücken", "to eat breakfast", "Um 8 Uhr frühstücke ich."]
+              ]
+            },
+            {
+              type: "table",
+              title: "Sequencing Words",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["zuerst", "first", "ആദ്യം"],
+                ["dann", "then", "പിന്നെ"],
+                ["danach", "after that", "അതിനു ശേഷം"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Separable Verb Alert!",
+              variant: "warning",
+              content: "'aufstehen' splits in a sentence: 'Ich stehe um 7 Uhr AUF.' The prefix 'auf' flies to the END. Don't say 'Ich aufstehe' — that is wrong in main clauses!"
+            }
+          ]
         },
         {
           id: "v5-2-2",
@@ -398,7 +482,38 @@ export const MODULE_5: Module = {
             "Use reflexive pronouns correctly (mich, dich, sich)",
             "Combine reflexive and separable verb patterns"
           ],
-          placeholderThumbnail: "/images/home_office.png"
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Reflexive Pronouns",
+              headers: ["Person", "Pronoun", "Example"],
+              rows: [
+                ["ich", "mich", "Ich wasche mich."],
+                ["du", "dich", "Du wäschst dich."],
+                ["er/sie/es", "sich", "Er wäscht sich."],
+                ["wir", "uns", "Wir waschen uns."],
+                ["ihr", "euch", "Ihr wascht euch."],
+                ["sie/Sie", "sich", "Sie waschen sich."]
+              ]
+            },
+            {
+              type: "table",
+              title: "Reflexive Morning Verbs",
+              headers: ["German", "English", "Sentence"],
+              rows: [
+                ["sich waschen", "to wash oneself", "Ich wasche mich."],
+                ["sich anziehen", "to get dressed", "Ich ziehe mich an."],
+                ["sich kämmen", "to comb one's hair", "Ich kämme mich."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Reflexive + Separable = Double Fun!",
+              variant: "info",
+              content: "'sich anziehen' is both reflexive AND separable! So it becomes: 'Ich ziehe MICH an.' The reflexive pronoun (mich) goes in the middle, and the prefix (an) goes to the end."
+            }
+          ]
         }
       ],
       exercises: [
@@ -634,7 +749,34 @@ export const MODULE_5: Module = {
             "Identify separable prefixes",
             "Place the prefix correctly at the end of main clauses"
           ],
-          placeholderThumbnail: "/images/kaffeeklatsch.png"
+          placeholderThumbnail: "/images/kaffeeklatsch.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Common Separable Prefixes",
+              headers: ["Prefix", "Meaning Hint", "Example Verb"],
+              rows: [
+                ["auf-", "up/open", "aufstehen (get up)"],
+                ["an-", "on/at", "anfangen (begin)"],
+                ["ein-", "in/into", "einkaufen (shop)"],
+                ["mit-", "with/along", "mitkommen (come along)"],
+                ["fern-", "far/remote", "fernsehen (watch TV)"],
+                ["zurück-", "back", "zurückkommen (come back)"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Boomerang Rule",
+              variant: "tip",
+              content: "Think of the prefix as a boomerang: it starts attached to the verb, but in a main clause it flies to the END of the sentence. 'aufstehen' -> 'Ich stehe um 7 Uhr AUF.' Always stressed on the prefix: AUF-stehen."
+            },
+            {
+              type: "note",
+              title: "How to Spot Separable Verbs",
+              variant: "info",
+              content: "If the stress is on the PREFIX (AUFstehen), it is separable. If the stress is on the STEM (verSTEhen), it is inseparable. Listen for the emphasis!"
+            }
+          ]
         },
         {
           id: "v5-3-2",
@@ -658,7 +800,33 @@ export const MODULE_5: Module = {
             "Form questions with separable verbs",
             "Build negative sentences with separable verbs"
           ],
-          placeholderThumbnail: "/images/supermarket_checkout.png"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "5 Essential Separable Verbs",
+              headers: ["Infinitive", "Sentence", "English"],
+              rows: [
+                ["einkaufen", "Ich kaufe im Supermarkt ein.", "I shop at the supermarket."],
+                ["fernsehen", "Abends sehe ich fern.", "I watch TV in the evening."],
+                ["anfangen", "Der Film fängt um 8 Uhr an.", "The film starts at 8."],
+                ["aufräumen", "Ich räume mein Zimmer auf.", "I tidy my room."],
+                ["mitkommen", "Kommst du mit?", "Are you coming along?"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Negation with Separable Verbs",
+              variant: "info",
+              content: "'nicht' goes BEFORE the prefix at the end: 'Ich kaufe heute NICHT ein.' (I am not shopping today.) The prefix always stays at the very end, and 'nicht' comes just before it."
+            },
+            {
+              type: "note",
+              title: "Questions with Separable Verbs",
+              variant: "tip",
+              content: "In questions, the verb moves to position 1, but the prefix STILL goes to the end: 'Stehst du früh auf?' (Do you get up early?) The split happens in questions too!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -916,7 +1084,38 @@ export const MODULE_5: Module = {
             "Use time expressions for different parts of the day",
             "Combine regular, separable, and reflexive verbs in a coherent text"
           ],
-          placeholderThumbnail: "/images/berlin_people.png"
+          placeholderThumbnail: "/images/berlin_people.png",
+          richContent: [
+            {
+              type: "table",
+              title: "A Full Day in German",
+              headers: ["Time", "German", "English"],
+              rows: [
+                ["7:00", "Ich stehe auf.", "I get up."],
+                ["7:15", "Ich dusche und putze mir die Zähne.", "I shower and brush my teeth."],
+                ["8:00", "Ich frühstücke.", "I eat breakfast."],
+                ["9:00", "Ich fange mit der Arbeit an.", "I start work."],
+                ["12:00", "Ich esse zu Mittag.", "I eat lunch."],
+                ["18:00", "Ich koche und esse zu Abend.", "I cook and eat dinner."],
+                ["21:00", "Ich sehe fern.", "I watch TV."],
+                ["22:00", "Ich gehe ins Bett.", "I go to bed."]
+              ]
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "zu Mittag essen", english: "to eat lunch", malayalam: "ഉച്ചഭക്ഷണം കഴിക്കുക", pronunciation: "tsoo mi-tahg es-en" },
+                { german: "zu Abend essen", english: "to eat dinner", malayalam: "അത്താഴം കഴിക്കുക", pronunciation: "tsoo ah-bent es-en" },
+                { german: "ins Bett gehen", english: "to go to bed", malayalam: "ഉറങ്ങാൻ പോകുക", pronunciation: "ins bet gay-en" }
+              ]
+            },
+            {
+              type: "note",
+              title: "Chain Your Day with Connectors",
+              variant: "tip",
+              content: "Use 'zuerst' (first), 'dann' (then), 'danach' (after that), and 'zum Schluss' (finally) to chain your daily routine into a smooth text. This is exactly what A1 exams expect!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -1174,7 +1373,38 @@ export const MODULE_5: Module = {
             "Use 'am + day' to say when you do something",
             "Express how often you do activities with frequency adverbs"
           ],
-          placeholderThumbnail: "/images/university_library.png"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Frequency Adverbs",
+              headers: ["German", "English", "Frequency"],
+              rows: [
+                ["immer", "always", "100%"],
+                ["oft", "often", "~75%"],
+                ["manchmal", "sometimes", "~50%"],
+                ["selten", "rarely", "~15%"],
+                ["nie", "never", "0%"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Weekly Schedule Pattern",
+              headers: ["Day", "Example Sentence"],
+              rows: [
+                ["Am Montag", "Am Montag arbeite ich."],
+                ["Am Dienstag", "Am Dienstag lerne ich Deutsch."],
+                ["Am Mittwoch", "Am Mittwoch koche ich."],
+                ["Am Wochenende", "Am Wochenende schlafe ich lange!"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Word Order with Time",
+              variant: "info",
+              content: "When the day comes first, the verb MUST come second (V2 rule): 'Am Montag ARBEITE ich.' NOT 'Am Montag ich arbeite.' The subject flips to after the verb. This is a key German grammar rule!"
+            }
+          ]
         }
       ],
       exercises: [

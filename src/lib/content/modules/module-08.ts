@@ -25,6 +25,47 @@ export const MODULE_8: Module = {
       description: "Learn the names of rooms in a German home and the furniture you'll find in them. From Küche to Schlafzimmer!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "The WG (First Apartment Tour)",
+          sceneType: "home",
+          timeOfDay: "afternoon",
+          description: "Your new WG (Wohngemeinschaft) is spacious and light. Stefan is showing you around. Each room has a different vibe — the cozy living room, the busy kitchen, and your own private sanctuary. But before you step further, there's a sacred German ritual to follow: the shoe-swap in the Flur. Time to name your territory, machane!",
+        },
+        narrative: {
+          previousRecap: "You've survived the shopping mall. Now, let's settle into your new German home!",
+          currentObjective: "Identify rooms and furniture with correct articles and understand the 'Flur' culture",
+          nextTeaser: "Next: decoration! Let's arrange your furniture using prepositions!",
+        },
+        kuttanIntro: [
+          "Machane! Flat-il thamasichu thudangumbol first priority 'der Flur' aanu. Shoes ellam avide thanne vekkanam. Germany-il house interiors valare clean aayittaanu Germans maintain cheyyunnathu.",
+          "Rooms-inde names simple aanu — Zimmer (room) with the activity. 'Wohnzimmer' (living), 'Schlafzimmer' (sleeping), 'Badezimmer' (bathing).",
+          "Pinne kitchen (die Küche) — ithu WG-ile main social spot aanu. Ellaam articles-oodu koodi vegam set aakkaam!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab8-1-5", encounterMoment: "Stefan points to the rack: 'Lass deine Schuhe im Flur.' (Leave your shoes in the hallway).", contextSentence: "Die Schuhe sind im Flur." },
+          { vocabId: "vocab8-1-2", encounterMoment: "The living room: 'Das Wohnzimmer ist gemütlich.' (The living room is cozy).", contextSentence: "Das Wohnzimmer ist gemütlich." },
+          { vocabId: "vocab8-1-1", encounterMoment: "The kitchen: 'Die Küche ist klein, aber fein.' (The kitchen is small but nice).", contextSentence: "In der Küche kochen wir Curry." },
+          { vocabId: "vocab8-1-12", encounterMoment: "You look for a snack: 'Unser Kühlschrank ist voll.' (Our fridge is full).", contextSentence: "Die Milch ist im Kühlschrank." },
+          { vocabId: "vocab8-1-7", encounterMoment: "You sit down: 'Der Tisch ist aus Holz.' (The table is made of wood).", contextSentence: "Das Essen ist auf dem Tisch." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You enter the flat for the first time. Where is the correct place to leave your shoes?",
+            options: [
+              { text: "Im Flur.", isCorrect: true, response: "Exactly! Shoes stay in the hallway rack. You've respected the first house rule!", kuttanReaction: "Adipoli! German house culture-il ithu valre important aanu. First impression thanne super! 🔥" },
+              { text: "Im Wohnzimmer.", isCorrect: false, response: "Aiyyo! No one wears outdoor shoes in the living room in Germany. You'll make the floor dirty!", kuttanReaction: "Vite machane! 'Flur'-il thanne shoes vekkanam. Ithu oru strict rule aanu pala house-ilum. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "How do you correctly say 'The fridge' (Cool-Cupboard)?",
+            options: [
+              { text: "Der Kühlschrank.", isCorrect: true, response: "Correct! Kühl (cool) + Schrank (cupboard). Masculine like most furniture.", kuttanReaction: "Superb! Compound words logic perfect aayi handle cheythallo. 'Cool-cupboard' logic simple alle? ⭐" },
+              { text: "Die Kühlschrank.", isCorrect: false, response: "No, 'Schrank' is masculine, so 'Kühlschrank' is also masculine.", kuttanReaction: "Aiyyo! Furniture items mostly 'der' aayirukkum. Masculine gender fix cheyyane! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v8-1-1",
@@ -50,7 +91,35 @@ export const MODULE_8: Module = {
             "Recognize the unique German situation of 'apartments without kitchens'",
             "Master the compound word pattern with '-zimmer'"
           ],
-          placeholderThumbnail: "/images/thumbnails/german-rooms.jpg"
+          placeholderThumbnail: "/images/german_apartment.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Rooms in a German Apartment",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["die Wohnung", "apartment", "ഫ്ലാറ്റ്"],
+                ["der Flur", "hallway", "ഇടനാഴി"],
+                ["die Küche", "kitchen", "അടുക്കള"],
+                ["das Wohnzimmer", "living room", "സ്വീകരണ മുറി"],
+                ["das Schlafzimmer", "bedroom", "കിടപ്പുമുറി"],
+                ["das Badezimmer", "bathroom", "കുളിമുറി"],
+                ["der Balkon", "balcony", "ബാൽക്കണി"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Zimmer Trick",
+              variant: "tip",
+              content: "German room names are compound words: activity + Zimmer (room). Wohn (living) + Zimmer = Wohnzimmer. Schlaf (sleep) + Zimmer = Schlafzimmer. Learn the activity word and you know the room!"
+            },
+            {
+              type: "note",
+              title: "Shoes Off at the Door!",
+              variant: "warning",
+              content: "In Germany, shoes stay in the 'Flur' (hallway). Walking inside with shoes is considered extremely rude. Many homes even provide 'Hausschuhe' (house slippers) for guests!"
+            }
+          ]
         },
         {
           id: "v8-1-2",
@@ -76,7 +145,36 @@ export const MODULE_8: Module = {
             "Understand the 'Do-It-Yourself' assembly culture in Germany",
             "Use 'es gibt' to describe what is in a room"
           ],
-          placeholderThumbnail: "/images/thumbnails/german-furniture.jpg"
+          placeholderThumbnail: "/images/german_apartment_living_room_v2.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Furniture & Appliances",
+              headers: ["German", "English", "Article"],
+              rows: [
+                ["der Kühlschrank", "fridge", "der (m)"],
+                ["der Herd", "stove", "der (m)"],
+                ["das Sofa", "sofa", "das (n)"],
+                ["der Tisch", "table", "der (m)"],
+                ["die Lampe", "lamp", "die (f)"],
+                ["das Bett", "bed", "das (n)"],
+                ["der Schrank", "cupboard/wardrobe", "der (m)"],
+                ["der Stuhl", "chair", "der (m)"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Big Furniture = Masculine!",
+              variant: "tip",
+              content: "Notice a pattern? Most big furniture items are masculine (der): der Tisch, der Stuhl, der Schrank, der Kühlschrank. This isn't a 100% rule, but it helps as a memory trick!"
+            },
+            {
+              type: "note",
+              title: "IKEA Assembly Culture",
+              variant: "info",
+              content: "In Germany, most people assemble furniture themselves from IKEA or similar stores. There's no calling a 'thachan' (carpenter)! 'Es gibt' (there is/are) is key: 'In meinem Wohnzimmer gibt es ein Sofa.'"
+            }
+          ]
         }
       ],
       exercises: [
@@ -289,6 +387,47 @@ export const MODULE_8: Module = {
       description: "Master prepositions of place and describe where things are in a room. Plus: your first taste of the dative case!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Your New Bedroom",
+          sceneType: "home",
+          timeOfDay: "afternoon",
+          description: "Boxes are scattered everywhere. You've just finished assembling your bed and desk (assemble cheyyan IKEA instructions help cheythilla, but German grammar will!). Now you need to decide where everything goes. Is the lamp on the table? Are the shoes under the bed? This is Dative Case training in action, machane!",
+        },
+        narrative: {
+          previousRecap: "You've seen the whole flat. Now, let's make your room a home!",
+          currentObjective: "Use prepositions of place correctly and apply dative article changes (dem/der)",
+          nextTeaser: "Next: house hunting! Let's learn how to read apartment ads like a pro!",
+        },
+        kuttanIntro: [
+          "Machane! Room set cheyyunpathu oru valya karyamaanu. Prepositions (auf, unter, neben) use cheyyanam.",
+          "Location (Wo?) parayumpo Dative case logic switch aakum. Masculine and Neuter articles 'dem' aayi maarum. 'Auf dem Tisch', 'Unter dem Bett'.",
+          "Feminine 'die' becomes 'der'. 'In der Küche'. Ithu oru fixed pattern aanu, vegam catch cheyyaam!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab8-2-2", encounterMoment: "You place a cup: 'Die Tasse ist auf dem Tisch.' (The cup is on the table).", contextSentence: "Die Tasse ist auf dem Tisch." },
+          { vocabId: "vocab8-2-3", encounterMoment: "You tuck away your sneakers: 'Die Schuhe sind unter dem Bett.' (The shoes are under the bed).", contextSentence: "Die Schuhe sind unter dem Bett." },
+          { vocabId: "vocab8-2-4", encounterMoment: "You place the chair: 'Der Stuhl ist neben dem Tisch.' (The chair is next to the table).", contextSentence: "Der Stuhl ist neben dem Tisch." },
+          { vocabId: "vocab8-2-9", encounterMoment: "You're finally resting: 'Ich bin im Wohnzimmer.' (in + dem = im).", contextSentence: "Ich bin im Wohnzimmer." },
+          { vocabId: "vocab8-2-7", encounterMoment: "You put a book between others: 'Das Buch ist zwischen den Heften.'", contextSentence: "Die Lampe steht zwischen dem Sofa und dem Tisch." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'The lamp is on the table' (der Tisch). What is the correct dative article?",
+            options: [
+              { text: "Die Lampe ist auf dem Tisch.", isCorrect: true, response: "Exactly! For masculine 'Tisch', the article 'der' becomes 'dem' in the dative case for location.", kuttanReaction: "Adipoli! Dative case logic catch cheythallo. 'dem' is the way! 🔥" },
+              { text: "Die Lampe ist auf der Tisch.", isCorrect: false, response: "Aiyyo! 'der' is for feminine in dative. 'Tisch' is masculine, so it must be 'dem'.", kuttanReaction: "Vite machane! Masculine/Neuter = 'dem'. Ithu mathrame orkkanam. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "How do you say 'The shoes are under the bed' (das Bett)?",
+            options: [
+              { text: "Die Schuhe sind unter dem Bett.", isCorrect: true, response: "Correct! 'das Bett' also changes to 'dem Bett' in dative.", kuttanReaction: "Superb! Masculine and Neuter same logical pattern follow cheyyunnathu valare helpful alle? ⭐" },
+              { text: "Die Schuhe sind unter das Bett.", isCorrect: false, response: "No! 'unter das' is for motion (putting them there). For location (they ARE there), we use dative 'dem'.", kuttanReaction: "Aiyyo! Location = Dative. 'dem' venam ennanu artham. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v8-2-1",
@@ -314,7 +453,40 @@ export const MODULE_8: Module = {
             "Use contractions 'im' and 'am' naturally",
             "Describe the position of objects in any room"
           ],
-          placeholderThumbnail: "/images/thumbnails/prepositions.jpg"
+          placeholderThumbnail: "/images/german_apartment_living_room_v2.png",
+          richContent: [
+            {
+              type: "table",
+              title: "8 Key Prepositions of Place",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["in", "in/inside", "ഉള്ളിൽ"],
+                ["auf", "on (surface)", "മുകളിൽ"],
+                ["unter", "under", "അടിയിൽ"],
+                ["neben", "next to", "അടുത്ത്"],
+                ["vor", "in front of", "മുൻപിൽ"],
+                ["hinter", "behind", "പിറകിൽ"],
+                ["zwischen", "between", "ഇടയിൽ"],
+                ["über", "above (floating)", "മുകളിൽ (തൊടാതെ)"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Dative Article Changes (Location)",
+              headers: ["Nominative", "Dative (Wo?)", "Contraction"],
+              rows: [
+                ["der (masculine)", "dem", "in + dem = im"],
+                ["das (neuter)", "dem", "an + dem = am"],
+                ["die (feminine)", "der", "—"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Location = DATIVE!",
+              variant: "warning",
+              content: "When describing WHERE something is (Wo?), you MUST use dative articles. der → dem, das → dem, die → der. Use 'im' and 'am' contractions — they sound much more natural!"
+            }
+          ]
         },
         {
           id: "v8-2-2",
@@ -340,7 +512,27 @@ export const MODULE_8: Module = {
             "Use dative articles naturally in context",
             "Describe your own room in German"
           ],
-          placeholderThumbnail: "/images/thumbnails/room-layout.jpg"
+          placeholderThumbnail: "/images/german_apartment.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Room Descriptions — Example Sentences",
+              headers: ["German", "English"],
+              rows: [
+                ["Das Bett ist neben dem Fenster.", "The bed is next to the window."],
+                ["Der Kühlschrank ist neben dem Herd.", "The fridge is next to the stove."],
+                ["Die Lampe ist auf dem Tisch.", "The lamp is on the table."],
+                ["Das Sofa ist vor dem Fernseher.", "The sofa is in front of the TV."],
+                ["Die Bücher sind auf dem Regal.", "The books are on the shelf."]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Golden Pattern",
+              variant: "tip",
+              content: "[Thing] + ist + [preposition] + [dem/der] + [location]. Master this one pattern and you can describe any room! Remember: 'dem' for masculine/neuter, 'der' for feminine."
+            }
+          ]
         }
       ],
       exercises: [
@@ -539,6 +731,47 @@ export const MODULE_8: Module = {
       description: "Navigate the German housing market! Learn to read apartment ads, understand WG culture, and decode rental terminology.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "WG Kitchen (Late Night Chat)",
+          sceneType: "home",
+          timeOfDay: "evening",
+          description: "Stefan and Lara are sharing some snacks in the kitchen. They're telling you stories about their own 'WG-Casting' experiences — it sounds like a reality TV show! You also see a laptop open with some apartment ads. Time to learn the code of the German housing market, machane!",
+        },
+        narrative: {
+          previousRecap: "You've arranged your own room. Now, let's learn how to find one in the first place!",
+          currentObjective: "Understand WG search culture and decode abbreviations in apartment ads (EBK, OG, Zi)",
+          nextTeaser: "Next: writing the email! Let's get you that viewing appointment!",
+        },
+        kuttanIntro: [
+          "Machane! Apartment searching in Germany is a separate level struggle. 'WG-Casting' ennu paranjaal oru interview pole aanu, nammude vibe set aano ennu nokkana sthalam.",
+          "Ads-il abbreviations valare common aanu. Zi (Zimmer), EBK (Einbauküche), OG (Obergeschoss). Ithu decode cheyyunnathu oru puzzle poleyaanu.",
+          "Miete-il 'Warm' and 'Kalt' difference valare important aanu. Warm covers building costs, but electricity separate aayirukkum. Let's crack the code!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab8-3-1", encounterMoment: "Lara explains: 'In einer WG teilt man sich alles.' (In a WG, you share everything).", contextSentence: "Wir wohnen in einer WG." },
+          { vocabId: "vocab8-3-2", encounterMoment: "Stefan checks the price: 'Die Miete ist 450 Euro warm.' (The rent is 450 Euro warm).", contextSentence: "Die Miete ist 500 Euro warm." },
+          { vocabId: "vocab8-3-3", encounterMoment: "You ask about safety: 'Wie hoch ist die Kaution?' (How high is the deposit?).", contextSentence: "Die Kaution ist hoch." },
+          { vocabId: "vocab8-3-4", encounterMoment: "You find an ad: 'Ich brauche einen Besichtigungstermin.' (I need a viewing appointment).", contextSentence: "Haben Sie einen Besichtigungstermin?" },
+          { vocabId: "vocab8-3-7", encounterMoment: "Lara points to the wall: 'Schau, unser Putzplan.' (Look, our cleaning schedule). Sacred document!", contextSentence: "Wir haben einen Putzplan in der WG." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You see an ad that says '500€ warm'. What does 'warm' usually mean in this context?",
+            options: [
+              { text: "Includes heating and building utilities.", isCorrect: true, response: "Exactly! Warmmiete includes the building's operating costs (heating, water, garbage).", kuttanReaction: "Adipoli! Rent logic correctly catch cheythallo. 'Warm' is the all-in building price. 🔥" },
+              { text: "Includes electricity and internet.", isCorrect: false, response: "Aiyyo! Usually, electricity (Strom) and Internet are separate private contracts, even in 'warm' rent!", kuttanReaction: "Vite machane! Strom and Internet separate bills aayirukkum. Ithu koodi orkkanam. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "What does the abbreviation 'EBK' stand for in an ad?",
+            options: [
+              { text: "Einbauküche (Fitted Kitchen).", isCorrect: true, response: "Correct! If the ad has EBK, you don't need to bring your own stove or sink!", kuttanReaction: "Superb! EBK kandaal flat luck aanu machane. Kitchen already set aanu! ⭐" },
+              { text: "Extra Bad (Extra Bathroom).", isCorrect: false, response: "No! EBK is all about the kitchen (Küche).", kuttanReaction: "Aiyyo! EBK = Einbau-Küche. Kitchen setup ready aano ennu nokkana abbreviation aayirunnu ithu. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v8-3-1",
@@ -563,7 +796,35 @@ export const MODULE_8: Module = {
             "Recognize common rental red flags and scams",
             "Navigate the top housing websites in Germany"
           ],
-          placeholderThumbnail: "/images/thumbnails/wg-suche.jpg"
+          placeholderThumbnail: "/images/german_apartment.png",
+          richContent: [
+            {
+              type: "table",
+              title: "WG & Rental Vocabulary",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["die WG (Wohngemeinschaft)", "shared apartment", "ഷെയർഡ് ഫ്ലാറ്റ്"],
+                ["die Miete", "rent", "വാടക"],
+                ["die Kaution", "deposit", "കോഷൻ മണി"],
+                ["die Warmmiete", "rent incl. heating", "ഹീറ്റിങ് ഉൾപ്പെടെ വാടക"],
+                ["die Kaltmiete", "base rent", "അടിസ്ഥാന വാടക"],
+                ["die Nebenkosten", "extra charges", "അധിക ചെലവുകൾ"],
+                ["der Putzplan", "cleaning schedule", "വൃത്തിയാക്കൽ ഷെഡ്യൂൾ"]
+              ]
+            },
+            {
+              type: "note",
+              title: "WG-Casting = Flatmate Interview!",
+              variant: "info",
+              content: "In Germany, finding a WG is like an audition! Current flatmates will interview you to check if you fit their vibe. Be prepared to talk about your hobbies, cooking, and cleaning habits. First impressions matter!"
+            },
+            {
+              type: "note",
+              title: "Kaltmiete vs Warmmiete",
+              variant: "warning",
+              content: "Always check if the rent is 'kalt' (base only) or 'warm' (includes heating/water/garbage). Electricity and internet are usually separate even in Warmmiete. Ask: 'Ist das kalt oder warm?'"
+            }
+          ]
         },
         {
           id: "v8-3-2",
@@ -589,7 +850,29 @@ export const MODULE_8: Module = {
             "Extract key information: size, price, floor, amenities",
             "Compare apartments based on ad descriptions"
           ],
-          placeholderThumbnail: "/images/thumbnails/apartment-ads.jpg"
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Apartment Ad Abbreviations",
+              headers: ["Abbreviation", "Full Form", "English"],
+              rows: [
+                ["Zi", "Zimmer", "rooms"],
+                ["qm", "Quadratmeter", "square meters"],
+                ["OG", "Obergeschoss", "upper floor"],
+                ["EG", "Erdgeschoss", "ground floor"],
+                ["EBK", "Einbauküche", "fitted kitchen"],
+                ["NK", "Nebenkosten", "additional costs"],
+                ["warm/kalt", "Warmmiete/Kaltmiete", "incl./excl. heating"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Decoding a Real Ad",
+              variant: "tip",
+              content: "Sample: '2-Zi-Wohnung, 65 qm, 550€ warm, 3. OG, Balkon' = 2-room apartment, 65 square meters, €550 rent (heating included), 3rd floor, with a balcony. EBK is a big plus — it means the kitchen is already installed!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -762,6 +1045,47 @@ export const MODULE_8: Module = {
       description: "Learn to write a formal message in German — reply to apartment ads, use 'es gibt', and master the polite letter format.",
       duration: "45 min",
       xpReward: 180,
+      storyScene: {
+        setting: {
+          name: "WG Desk (Writing Session)",
+          sceneType: "home",
+          timeOfDay: "evening",
+          description: "You're sitting at your desk, the glow of your laptop lighting up the room. Your friend Arjun just moved to Germany and is struggling to get a reply for apartments. 'Machane, help me write a proper German email!' he says. This is your chance to master formal structures and 'es gibt' once and for all!",
+        },
+        narrative: {
+          previousRecap: "You've decoded the apartment ads. now, let's write the message that gets you through the door!",
+          currentObjective: "Write a formal/semi-formal apartment application using correct greetings and 'es gibt' (Accusative)",
+          nextTeaser: "Module 8 complete! Next: Let's explore the city! Directions, locations, and city life!",
+        },
+        kuttanIntro: [
+          "Machane! German email writing is a separate level game. Formal aayi ezhuthumpol 'Sehr geehrte...' ennu thanne thudanganam.",
+          "Nammude interest express cheyyaan 'Ich interessiere mich für...' use cheyyaam. Pinne flat-ile details chodikkaan 'Gibt es...?' logic simple aanu.",
+          "Main grammar rule: 'es gibt' eppozhum Accusative case edukkum. 'Gibt es EINEN Balkon?' ennu chodikkaam. Let's write that email!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab8-4-1", encounterMoment: "You start the draft: 'Sehr geehrte Damen und Herren,' — the classic formal opening.", contextSentence: "Sehr geehrte Damen und Herren," },
+          { vocabId: "vocab8-4-5", encounterMoment: "You ask about features: 'Es gibt einen Balkon, richtig?' (There is a balcony, right?).", contextSentence: "Es gibt einen Balkon." },
+          { vocabId: "vocab8-3-4", encounterMoment: "The goal: 'Ich möchte einen Besichtigungstermin.' (I would like a viewing appointment).", contextSentence: "Haben Sie einen Besichtigungstermin?" },
+          { vocabId: "vocab8-4-4", encounterMoment: "Closing: 'Mit freundlichen Grüßen,' — the polite way to say goodbye.", contextSentence: "Mit freundlichen Grüßen," },
+          { vocabId: "vocab8-1-1", encounterMoment: "Checking features: 'Gibt es eine Küche?' (Is there a kitchen?). Important for the rent!", contextSentence: "In der Küche kochen wir Curry." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You are writing to a formal landlord. Which greeting do you use?",
+            options: [
+              { text: "Sehr geehrte Damen und Herren,", isCorrect: true, response: "Exactly! This is the standard formal greeting when you don't know the recipient's name.", kuttanReaction: "Adipoli! Formal tone perfect aayi set cheythallo. Professionalism is key in Germany! 🔥" },
+              { text: "Hallo, wie geht's?", isCorrect: false, response: "Aiyyo! Too informal for a landlord. Save this for your friends!", kuttanReaction: "Vite machane! Rental market competition-il formal tone venam. 'Sehr geehrte' thanne use cheyyane. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to ask 'Is there a balcony?' (der Balkon). Which sentence is grammatically correct with 'es gibt'?",
+            options: [
+              { text: "Gibt es einen Balkon?", isCorrect: true, response: "Correct! 'es gibt' takes the Accusative case, so 'der' becomes 'einen'.", kuttanReaction: "Superb! Accusative agreement 'es gibt'-inu correct aayi apply cheythallo! ⭐" },
+              { text: "Gibt es ein Balkon?", isCorrect: false, response: "No! 'Balkon' is masculine, so it needs 'einen' in the Accusative case after 'es gibt'.", kuttanReaction: "Aiyyo! 'es gibt' takes Accusative. Masculine ends in '-en'. 'Einen Balkon' ennu fix cheyyane! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v8-4-1",
@@ -786,7 +1110,35 @@ export const MODULE_8: Module = {
             "Distinguish between formal and informal email structures",
             "Suggest a viewing appointment (Besichtigungstermin) politely"
           ],
-          placeholderThumbnail: "/images/thumbnails/german-message.jpg"
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Formal vs Informal Email Structure",
+              headers: ["Part", "Formal (Landlord)", "Informal (WG)"],
+              rows: [
+                ["Greeting", "Sehr geehrte Damen und Herren,", "Hallo, liebe WG!"],
+                ["Intro", "Ich heiße... und ich komme aus...", "Ich bin... aus..."],
+                ["Interest", "Ich interessiere mich für das Zimmer.", "Das Zimmer klingt super!"],
+                ["Closing", "Über eine Nachricht würde ich mich freuen.", "Ich freue mich auf eure Antwort!"],
+                ["Sign-off", "Mit freundlichen Grüßen", "Liebe Grüße"]
+              ]
+            },
+            {
+              type: "note",
+              title: "'es gibt' Takes Accusative!",
+              variant: "warning",
+              content: "'Es gibt' (there is/are) ALWAYS uses the Accusative case. 'Es gibt einen Balkon' (There is a balcony) — 'einen' because Balkon is masculine. This is a common grammar trap!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Sehr geehrte Damen und Herren", english: "Dear Sir/Madam", malayalam: "ബഹുമാനപ്പെട്ടവരേ", pronunciation: "zehr ge-ehr-te dah-men oont heh-ren" },
+                { german: "Mit freundlichen Grüßen", english: "With kind regards", malayalam: "സ്നേഹപൂർവ്വം", pronunciation: "mit froynt-likh-en groo-sen" },
+                { german: "der Besichtigungstermin", english: "viewing appointment", malayalam: "സന്ദർശന സമയം", pronunciation: "be-zikh-ti-goongs-ter-meen" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [

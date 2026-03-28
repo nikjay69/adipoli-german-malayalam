@@ -23,6 +23,47 @@ export const MODULE_9: Module = {
       description: "Learn all the ways to get around in Germany — buses, trains, bikes, and more. KSRTC bus-il kayari parichayam ullavarkku German bus system piece of cake aanu! Plus, master 'mit + Dativ' for saying how you travel!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Hauptbahnhof (Central Station)",
+          sceneType: "station",
+          timeOfDay: "morning",
+          description: "The station is a massive glass and steel cathedral of movement. Trains (Züge) are pulling in and overground/underground lines (S-Bahn/U-Bahn) are crisscrossing. In Kerala, we might wait for the 'Fast Passenger', but here, timing is everything. It's a symphony of efficiency, machane! Time to find your ride.",
+        },
+        narrative: {
+          previousRecap: "You've settled into your room. Now, let's explore the whole city!",
+          currentObjective: "Identify different modes of transport and use 'mit + Dativ' correctly",
+          nextTeaser: "Next: ticket trauma! Let's learn to use the ticket machine without panic!",
+        },
+        kuttanIntro: [
+          "Machane! Germany-yil travel cheyyunnathu oru separate experience aanu. Nammude KSRTC-yil 'chechi, side seat tharumo' ennu chodikkunnathu pole alla ivide logic.",
+          "Main modes of transport (Bus, Zug, S-Bahn, U-Bahn) focus cheyyane. Pinne 'mit' logic eppozhum Dativ case edukkum.",
+          "Important point: U-Bahn = Underground (city center focus), S-Bahn = Suburban (connecting the suburbs). Don't get lost on the wrong platform!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab9-1-1", encounterMoment: "A bright yellow bus pulls up: 'Der Bus ist pünktlich.' (The bus is on time).", contextSentence: "Der Bus kommt in fünf Minuten." },
+          { vocabId: "vocab9-1-2", encounterMoment: "An ICE train screams past: 'Der Zug fährt nach Berlin.' (The train goes to Berlin).", contextSentence: "Der Zug fährt nach Berlin." },
+          { vocabId: "vocab9-1-4", encounterMoment: "You head down the escalator: 'Die U-Bahn fährt alle fünf Minuten.' (The subway runs every 5 min).", contextSentence: "Die U-Bahn ist sehr schnell." },
+          { vocabId: "vocab9-1-8", encounterMoment: "You see someone cycling past: 'Das Fahrrad ist schnell.' (The bicycle is fast).", contextSentence: "Ich fahre gern mit dem Fahrrad." },
+          { vocabId: "vocab9-1-10", encounterMoment: "Stefan explains: 'Ich fahre mit dem Bus.' (I travel by bus).", contextSentence: "Ich fahre mit dem Bus." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'I travel by train' (der Zug). Which sentence uses the correct Dativ article after 'mit'?",
+            options: [
+              { text: "Ich fahre mit dem Zug.", isCorrect: true, response: "Exactly! 'mit' takes Dativ, so 'der Zug' becomes 'dem Zug'. Perfect agreement!", kuttanReaction: "Adipoli! Dative logic correct aayi travel-il apply cheythallo! 🔥" },
+              { text: "Ich fahre mit den Zug.", isCorrect: false, response: "Aiyyo! 'den' is for Accusative (masculine). After 'mit', it MUST be 'dem' (Dativ).", kuttanReaction: "Vite machane! 'mit' kandaal article 'dem' aayi maarum. Ithu fixed rule aanu. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You are in the city center and need the underground metro. Which one are you looking for?",
+            options: [
+              { text: "Die U-Bahn.", isCorrect: true, response: "Correct! 'U' stands for 'Untergrund' (Underground). Perfect for city travel.", kuttanReaction: "Superb! U-Bahn logic catch cheythallo. Suburban connecting train venal 'S-Bahn' edukkanam. ⭐" },
+              { text: "Der ICE.", isCorrect: false, response: "No! ICE is the high-speed long-distance train. For city center underground, you need the U-Bahn.", kuttanReaction: "Aiyyo! ICE long-distance long-trip aanu. City center-il U-Bahn mathi! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v9-1-1",
@@ -50,7 +91,37 @@ export const MODULE_9: Module = {
             "Understand the difference between U-Bahn and S-Bahn",
             "Compare German and Kerala transport systems for cultural context"
           ],
-          placeholderThumbnail: "/images/thumbnails/transport-overview.jpg"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "German Transportation",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["der Bus", "bus", "ബസ്"],
+                ["der Zug / die Bahn", "train", "ട്രെയിൻ"],
+                ["die Straßenbahn", "tram", "ട്രാം"],
+                ["die U-Bahn", "underground/metro", "മെട്രോ"],
+                ["die S-Bahn", "suburban train", "സബർബൻ ട്രെയിൻ"],
+                ["das Fahrrad", "bicycle", "സൈക്കിൾ"],
+                ["das Auto", "car", "കാർ"],
+                ["das Taxi", "taxi", "ടാക്സി"],
+                ["das Flugzeug", "airplane", "വിമാനം"]
+              ]
+            },
+            {
+              type: "note",
+              title: "'mit' + Dative for Transport",
+              variant: "tip",
+              content: "Use 'Ich fahre mit + DATIV' to say how you travel. der Bus → mit dem Bus, die Bahn → mit der Bahn, das Fahrrad → mit dem Fahrrad. The preposition 'mit' always triggers the dative case!"
+            },
+            {
+              type: "note",
+              title: "U-Bahn vs S-Bahn",
+              variant: "info",
+              content: "U-Bahn (Untergrundbahn) runs underground in city centres. S-Bahn (Stadtschnellbahn) connects the city with suburbs and mostly runs above ground. Both use the same ticket system!"
+            }
+          ]
         },
         {
           id: "v9-1-2",
@@ -76,7 +147,35 @@ export const MODULE_9: Module = {
             "Navigate basic ticket purchasing",
             "Learn about discount passes and apps"
           ],
-          placeholderThumbnail: "/images/thumbnails/public-transport.jpg"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Public Transport System",
+              headers: ["Term", "German", "English"],
+              rows: [
+                ["National Rail", "Deutsche Bahn (DB)", "German Railways"],
+                ["Ticket", "die Fahrkarte", "ticket"],
+                ["Machine", "der Fahrkartenautomat", "ticket machine"],
+                ["Zone", "die Zone", "fare zone"],
+                ["Fine", "Schwarzfahren", "riding without ticket"],
+                ["Discount Card", "die BahnCard", "rail discount card"],
+                ["Monthly Pass", "das Deutschlandticket", "Germany-wide pass"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Schwarzfahren = €60 Fine!",
+              variant: "warning",
+              content: "Travelling without a valid ticket ('Schwarzfahren') results in an immediate €60 fine. There are no conductors on most buses/trams, but random inspectors check tickets. Always validate your ticket!"
+            },
+            {
+              type: "note",
+              title: "DB Navigator App",
+              variant: "tip",
+              content: "Download the 'DB Navigator' app — it's the Google Maps of German trains. You can check schedules, buy tickets, and even see real-time delays. English language option available!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -128,6 +227,47 @@ export const MODULE_9: Module = {
       description: "Master the art of buying travel tickets in Germany — at the counter, from machines, and online. KSRTC conductor-inu cheyyunna pole alla, ivide automat-il nee thanne ticket vanganum!",
       duration: "45 min",
       xpReward: 120,
+      storyScene: {
+        setting: {
+          name: "Ticket Machine (Fahrkartenautomat)",
+          sceneType: "station",
+          timeOfDay: "afternoon",
+          description: "You're standing in front of a large, glowing red machine. There's a small line behind you, and you feel the pressure. Do you want one-way? Round trip? First class? In Kochi, the conductor just comes to you, but here, the 'Automat' is the gatekeeper. Time to pick your destination and pay up, machane!",
+        },
+        narrative: {
+          previousRecap: "You've identified your ride. Now, let's learn how to pay for it!",
+          currentObjective: "Navigate the ticket machine and choose between 'einfach' and 'hin und zurück' options",
+          nextTeaser: "Next: lost in the city? Let's learn how to ask for directions!",
+        },
+        kuttanIntro: [
+          "Machane! Ticket machine kandaal panic aavenda. Touch screen-il language change cheyyaan option undu. Athu first fix cheyyane.",
+          "'Einfach' ennal one-way trip, 'Hin und zurück' ennal round trip (there and back) ennanu artham. Weekend trip poyal pinne thirichu varunnamallo, so round trip choose cheyyaam.",
+          "Pinne students-innum young people-innum 'Ermäßigung' (discount) undakum. Athu check cheythaal paisa save cheyyaam. Let's get that ticket!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab9-2-1", encounterMoment: "You select: 'Eine Fahrkarte, bitte.' (A ticket, please).", contextSentence: "Ich brauche eine Fahrkarte." },
+          { vocabId: "vocab9-2-3", encounterMoment: "You decide on a weekend visit: 'Hin und zurück, bitte.' (There and back, please).", contextSentence: "Einmal Hamburg, hin und zurück." },
+          { vocabId: "vocab9-2-7", encounterMoment: "Stefan points to the screen: 'Am Automaten ist es billiger.' (At the machine it is cheaper).", contextSentence: "Am Automaten kann man Fahrkarten kaufen." },
+          { vocabId: "vocab9-2-5", encounterMoment: "You check for savings: 'Gibt es eine Ermäßigung für Studenten?' (Is there a student discount?).", contextSentence: "Studenten bekommen eine Ermäßigung." },
+          { vocabId: "vocab9-2-10", encounterMoment: "Final step: 'Ich möchte mit Karte bezahlen.' (I want to pay by card).", contextSentence: "Kann ich mit Karte bezahlen?" },
+        ],
+        decisionPoints: [
+          {
+            moment: "You are going to Berlin and coming back on Sunday. Which ticket type should you buy?",
+            options: [
+              { text: "Hin und zurück.", isCorrect: true, response: "Exactly! 'Hin und zurück' means round trip. It's often cheaper than two single tickets.", kuttanReaction: "Adipoli! Round trip logic correct aayi pick cheythallo. Paisa save cheythallo! 🔥" },
+              { text: "Einfach.", isCorrect: false, response: "Aiyyo! 'Einfach' is just one-way. You'll need to buy another ticket to come back!", kuttanReaction: "Vite machane! Thirichu varunnamallo, so 'Hin und zurück' mathiri set aakkunnathaanu easy. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "What does 'Ermäßigung' mean in the ticket context?",
+            options: [
+              { text: "A discount or reduced price.", isCorrect: true, response: "Correct! Always check for 'Ermäßigung' if you are a student or under 27.", kuttanReaction: "Superb! Student context kandaal 'Ermäßigung' chodikkaan marakkaalle! ⭐" },
+              { text: "A first-class seat.", isCorrect: false, response: "No! 'Ermäßigung' means a discount. First class is 'Erste Klasse'.", kuttanReaction: "Aiyyo! Ithu price reduction aanu artham. 'Eerste Klasse' vere logic. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v9-2-1",
@@ -155,7 +295,39 @@ export const MODULE_9: Module = {
             "Read a basic Fahrplan (schedule)",
             "Use a ticket machine (Fahrkartenautomat) confidently"
           ],
-          placeholderThumbnail: "/images/thumbnails/buying-tickets.jpg"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Buying Tickets — Key Phrases",
+              headers: ["German", "English"],
+              rows: [
+                ["Eine Fahrkarte nach Berlin, bitte.", "A ticket to Berlin, please."],
+                ["Einfach oder hin und zurück?", "One-way or round trip?"],
+                ["Erste Klasse oder zweite Klasse?", "First class or second class?"],
+                ["Gibt es eine Ermäßigung?", "Is there a discount?"],
+                ["Wann fährt der nächste Zug?", "When does the next train leave?"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Reading the Departure Board",
+              headers: ["German", "English"],
+              rows: [
+                ["Abfahrt", "Departure"],
+                ["Ankunft", "Arrival"],
+                ["Gleis", "Platform/Track"],
+                ["Verspätung", "Delay"],
+                ["Umsteigen", "Transfer/Change"]
+              ]
+            },
+            {
+              type: "note",
+              title: "nach vs in die",
+              variant: "warning",
+              content: "Use 'nach' for cities (nach Berlin, nach München). Use 'in die' for countries with articles (in die Schweiz, in die Türkei). Most countries have no article, so use 'nach' (nach Indien, nach Deutschland)."
+            }
+          ]
         },
         {
           id: "v9-2-2",
@@ -182,7 +354,36 @@ export const MODULE_9: Module = {
             "Make informed decisions about which ticket type to buy",
             "Ask about refunds and changes in German"
           ],
-          placeholderThumbnail: "/images/thumbnails/smart-ticketing.jpg"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Ticket Pricing Tiers",
+              headers: ["Type", "Price", "Flexibility"],
+              rows: [
+                ["Super Sparpreis", "Cheapest (book early)", "Non-refundable, fixed train"],
+                ["Sparpreis", "Cheap (book early)", "Limited changes, small fee"],
+                ["Flexpreis", "Full price", "Any train, fully refundable"],
+                ["Deutschlandticket", "€49/month", "All local/regional transport"]
+              ]
+            },
+            {
+              type: "table",
+              title: "BahnCard Discount Options",
+              headers: ["Card", "Discount", "Student Price"],
+              rows: [
+                ["BahnCard 25", "25% off all tickets", "~€40/year"],
+                ["BahnCard 50", "50% off all tickets", "~€70/year"],
+                ["BahnCard 100", "Free travel", "€4,000+/year"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Book Early = Save Big!",
+              variant: "tip",
+              content: "Unlike India's Tatkal (last-minute = expensive), German trains work the opposite way — early booking = cheapest fares! Sparpreis tickets are available up to 6 months in advance. Set a reminder!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -234,6 +435,47 @@ export const MODULE_9: Module = {
       description: "Never get lost in Germany! Learn to ask 'Wo ist...?' and understand direction words like geradeaus, links, and rechts. Kerala-yil 'chettan, bus stand evide aanu?' ennodu chodicha pole German-ilum chodichu padikkaam!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Main Square (Lost in the City)",
+          sceneType: "station",
+          timeOfDay: "afternoon",
+          description: "Google Maps is spinning, and you're at a busy crossroads. There's a fountain, a church, and about five different streets. You need to find the station (Bahnhof) before your train leaves. In Kochi, we'd just ask someone 'Chetta, station evideya?'. Here, we need to be a bit more formal but the goal is the same. Time to speak up, machane!",
+        },
+        narrative: {
+          previousRecap: "You've got your ticket. Now, you just need to find the train!",
+          currentObjective: "Ask for directions politely and understand navigational words (links, rechts, geradeaus)",
+          nextTeaser: "Next: landing! Let's handle the airport and station logistics!",
+        },
+        kuttanIntro: [
+          "Machane! Lost aavunnathu oru normal thing aanu. Google Maps eppozhum correct aavenam ennilla. So asking someone is a great skill.",
+          "Direction words eppozhum fixed aanu: 'links' (left), 'rechts' (right), 'geradeaus' (straight). Ithu munnittennu padichal full set!",
+          "Pinne oru person approach cheyyumpo eppozhum 'Entschuldigung' (excuse me) ennu thudangane. Polite aayirunnal aalukal help cheyyunthine oru sandhosham ulu. Let's find the way!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab9-3-1", encounterMoment: "A passerby points: 'Gehen Sie geradeaus.' (Go straight ahead).", contextSentence: "Gehen Sie geradeaus." },
+          { vocabId: "vocab9-3-2", encounterMoment: "Then add: 'Biegen Sie links ab.' (Turn left).", contextSentence: "Biegen Sie links ab." },
+          { vocabId: "vocab9-3-3", encounterMoment: "Or maybe: 'Die Apotheke ist rechts.' (The pharmacy is on the right).", contextSentence: "Die Apotheke ist rechts." },
+          { vocabId: "vocab9-3-8", encounterMoment: "You ask: 'Können Sie mir den Weg zeigen?' (Can you show me the way?).", contextSentence: "Können Sie mir den Weg zeigen?" },
+          { vocabId: "vocab9-3-9", encounterMoment: "You ask: 'Ist es weit von hier?' (Is it far from here?).", contextSentence: "Ist es weit von hier?" },
+        ],
+        decisionPoints: [
+          {
+            moment: "You see a person you want to ask for directions. How do you start the conversation politely?",
+            options: [
+              { text: "Entschuldigung, können Sie mir helfen?", isCorrect: true, response: "Exactly! Starting with 'Entschuldigung' is essential for politeness in Germany.", kuttanReaction: "Adipoli! Politeness level super level-il maintain cheythallo. You're ready to communicate! 🔥" },
+              { text: "He, wo ist der Bahnhof?", isCorrect: false, response: "Aiyyo! Too blunt. In Germany, 'Entschuldigung' is the key to getting a friendly response.", kuttanReaction: "Vite machane! 'Entschuldigung' illathe thudangiyar sariyaavoolla. Ithu fix cheytho! Try again! 😬" },
+            ],
+          },
+          {
+            moment: "The person says 'Gehen Sie rechts'. Which direction should you turn?",
+            options: [
+              { text: "Right.", isCorrect: true, response: "Correct! 'rechts' = right.", kuttanReaction: "Superb! Direction logic perfect aayi handle cheythallo. Destination is near! ⭐" },
+              { text: "Left.", isCorrect: false, response: "No! 'links' is left. 'rechts' is right.", kuttanReaction: "Aiyyo! 'links' left, 'rechts' right. Marakkaruthu, machane! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v9-3-1",
@@ -261,7 +503,36 @@ export const MODULE_9: Module = {
             "Understand basic responses about locations",
             "Use alternative phrasing when asking for places"
           ],
-          placeholderThumbnail: "/images/thumbnails/asking-directions.jpg"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Asking for Directions",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["Wo ist der Bahnhof?", "Where is the station?", "സ്റ്റേഷൻ എവിടെയാണ്?"],
+                ["Wie komme ich zum Bahnhof?", "How do I get to the station?", "സ്റ്റേഷനിലേക്ക് എങ്ങനെ പോകും?"],
+                ["Wie komme ich zur Post?", "How do I get to the post office?", "പോസ്റ്റ് ഓഫീസിലേക്ക് എങ്ങനെ?"],
+                ["Ist es weit von hier?", "Is it far from here?", "ഇവിടെ നിന്ന് ദൂരമുണ്ടോ?"],
+                ["Entschuldigung, können Sie mir helfen?", "Excuse me, can you help me?", "ക്ഷമിക്കണം, സഹായിക്കാമോ?"]
+              ]
+            },
+            {
+              type: "table",
+              title: "zum vs zur",
+              headers: ["Gender", "zu + Article", "Contraction", "Example"],
+              rows: [
+                ["Masculine/Neuter", "zu + dem", "zum", "zum Bahnhof, zum Krankenhaus"],
+                ["Feminine", "zu + der", "zur", "zur Post, zur Uni"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Always Start Polite!",
+              variant: "tip",
+              content: "Begin with 'Entschuldigung' (excuse me) before asking for directions. Germans appreciate politeness. If you don't understand the answer, say: 'Können Sie das bitte wiederholen?' (Can you please repeat that?)"
+            }
+          ]
         },
         {
           id: "v9-3-2",
@@ -289,7 +560,38 @@ export const MODULE_9: Module = {
             "Use location prepositions (gegenüber, neben, zwischen)",
             "Count streets and identify landmarks in directions"
           ],
-          placeholderThumbnail: "/images/thumbnails/giving-directions.jpg"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Direction Words",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["geradeaus", "straight ahead", "നേരെ പോകൂ"],
+                ["links", "left", "ഇടത്ത്"],
+                ["rechts", "right", "വലത്ത്"],
+                ["die Kreuzung", "intersection", "കവല"],
+                ["die Ampel", "traffic light", "ട്രാഫിക് ലൈറ്റ്"],
+                ["die Ecke", "corner", "മൂല"],
+                ["gegenüber", "opposite", "എതിർവശം"],
+                ["die Brücke", "bridge", "പാലം"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Direction Sentence Pattern",
+              variant: "tip",
+              content: "Typical direction sentences: 'Gehen Sie geradeaus, dann links an der Ampel.' (Go straight, then left at the traffic light.) Listen for the keywords: geradeaus, links, rechts, Kreuzung, Ampel — you'll understand the route!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "die erste Straße", english: "the first street", malayalam: "ആദ്യത്തെ തെരുവ്", pronunciation: "dee ers-te shtrah-se" },
+                { german: "die zweite Straße", english: "the second street", malayalam: "രണ്ടാമത്തെ തെരുവ്", pronunciation: "dee tsvai-te shtrah-se" },
+                { german: "die dritte Straße", english: "the third street", malayalam: "മൂന്നാമത്തെ തെരുവ്", pronunciation: "dee drit-te shtrah-se" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -341,6 +643,47 @@ export const MODULE_9: Module = {
       description: "Navigate airports and train stations with confidence — from passport control to finding your platform. Kochi airport-il ninnu Frankfurt airport-il irangunna Malayali-kku vendi ulla survival guide!",
       duration: "45 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Frankfurt Airport (Arrivals)",
+          sceneType: "station",
+          timeOfDay: "morning",
+          description: "The smell of jet fuel and overpriced coffee. You've just stepped off the long flight from Kochi. The halls are endless, and the signs are everywhere. You need to clear passport control, grab your 'Gepäck', and find the train station. Welcome to Germany, machane! The real journey starts now.",
+        },
+        narrative: {
+          previousRecap: "You've successfully navigated the city directions. Now, let's look at the bigger picture — international travel!",
+          currentObjective: "Handle airport procedures (passport control, baggage claim) and understand train station logistics (delays, platforms)",
+          nextTeaser: "Next: Power Verbs! Let's learn to say what you 'can' and 'must' do!",
+        },
+        kuttanIntro: [
+          "Machane! Frankfurt airport-il landing oru separate scene aanu. Kochi-ye kalum valre big aanu ithu. Keep your 'Reisepass' (passport) ready.",
+          "Luggage collector-inu 'Gepäckausgabe' ennu parayum. Athu vertical signs-il sradhikkanam.",
+          "Pinne train station-il 'Verspätung' (delay) announcement kettal panic aavenda — Germans-inu athu oru common headache aanu. Platform-nu 'Gleis' ennu parayum. Let's find your train!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab9-4-1", encounterMoment: "You look around: 'Der Flughafen ist riesig!' (The airport is huge!).", contextSentence: "Der Flughafen ist sehr groß." },
+          { vocabId: "vocab9-4-4", encounterMoment: "You wait at the belt: 'Wo ist mein Gepäck?' (Where is my luggage?).", contextSentence: "Mein Gepäck ist schwer." },
+          { vocabId: "vocab9-4-2", encounterMoment: "The officer asks: 'Ihren Reisepass, bitte.' (Your passport, please).", contextSentence: "Die Passkontrolle war schnell." },
+          { vocabId: "vocab9-4-10", encounterMoment: "The board flashes red: 'Der Zug hat Verspätung.' (The train is delayed). Aiyyo!", contextSentence: "Der Zug hat zehn Minuten Verspätung." },
+          { vocabId: "vocab9-4-9", encounterMoment: "You find the spot: 'Der Zug fährt auf Gleis 4.' (The train departs from platform 4).", contextSentence: "Der Zug fährt auf Gleis 3 ab." },
+        ],
+        decisionPoints: [
+          {
+            moment: "At passport control, the officer says 'Ihren Reisepass, bitte.' What is your polite response?",
+            options: [
+              { text: "Hier ist mein Reisepass.", isCorrect: true, response: "Exactly! Handing over the passport with a clear sentence is perfect.", kuttanReaction: "Adipoli! Confidence level super aanu. Passport check clear! 🔥" },
+              { text: "Was möchten Sie?", isCorrect: false, response: "Aiyyo! Too confrontational. They asked for your passport, so just give it to them!", kuttanReaction: "Vite machane! Asking 'what do you want' to a police officer is not recommended! Try again! 😬" },
+            ],
+          },
+          {
+            moment: "An announcement says 'Der Zug hat zehn Minuten Verspätung'. What does this mean?",
+            options: [
+              { text: "The train is 10 minutes late.", isCorrect: true, response: "Correct! 'Verspätung' = delay. You'll have extra time for a coffee.", kuttanReaction: "Superb! Announcement logic correctly catch cheythallo. 10 mins wait cheyyam! ⭐" },
+              { text: "The train is on platform 10.", isCorrect: false, response: "No! 'Gleis' is platform. 'Verspätung' is delay.", kuttanReaction: "Aiyyo! 'Verspätung' kandaal timing-il problem undu ennanu artham. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v9-4-1",
@@ -368,7 +711,42 @@ export const MODULE_9: Module = {
             "Read airport signs in German",
             "Ask for help when something goes wrong"
           ],
-          placeholderThumbnail: "/images/thumbnails/airport-station.jpg"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Airport Vocabulary",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["der Flughafen", "airport", "വിമാനത്താവളം"],
+                ["die Passkontrolle", "passport control", "പാസ്പോർട്ട് ചെക്ക്"],
+                ["der Zoll", "customs", "കസ്റ്റംസ്"],
+                ["das Gepäck", "luggage", "സാധനങ്ങൾ"],
+                ["das Handgepäck", "hand luggage", "ഹാൻഡ് ബാഗ്"],
+                ["der Abflug", "departure", "പുറപ്പാട്"],
+                ["die Ankunft", "arrival", "വരവ്"],
+                ["die Gepäckausgabe", "baggage claim", "ലഗേജ് കളക്ഷൻ"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Airport Phrases",
+              headers: ["Situation", "German Phrase"],
+              rows: [
+                ["Check in", "Ich möchte einchecken."],
+                ["Show passport", "Hier ist mein Reisepass."],
+                ["Lost luggage", "Ich habe meinen Koffer verloren!"],
+                ["Customs", "Ich habe nichts zu verzollen."],
+                ["Connecting flight", "Wo ist mein Anschlussflug?"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Airport Signs to Know",
+              variant: "info",
+              content: "Key signs: Ausgang (exit), Ankunft (arrivals), Abflug (departures), Gepäckausgabe (baggage claim), Toiletten. Look for these words when you land — they won't always have English translations!"
+            }
+          ]
         },
         {
           id: "v9-4-2",
@@ -396,7 +774,39 @@ export const MODULE_9: Module = {
             "Understand common announcements about delays",
             "Handle train connections and changes"
           ],
-          placeholderThumbnail: "/images/thumbnails/train-station.jpg"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Train Station Vocabulary",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["der Bahnhof", "train station", "റെയിൽവേ സ്റ്റേഷൻ"],
+                ["der Hauptbahnhof (Hbf)", "main station", "പ്രധാന സ്റ്റേഷൻ"],
+                ["das Gleis", "platform/track", "പ്ലാറ്റ്ഫോം"],
+                ["die Verspätung", "delay", "താമസം"],
+                ["die Abfahrt", "departure (train)", "പുറപ്പാട്"],
+                ["die Schließfächer", "lockers", "ലോക്കർ"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Useful Station Phrases",
+              headers: ["German", "English"],
+              rows: [
+                ["Auf welchem Gleis fährt der Zug?", "Which platform does the train leave from?"],
+                ["Muss ich umsteigen?", "Do I need to change trains?"],
+                ["Der Zug hat 10 Minuten Verspätung.", "The train is 10 minutes late."],
+                ["Zurückbleiben, bitte!", "Stand back, please! (doors closing)"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Departure Board Color Code",
+              variant: "tip",
+              content: "Yellow board = Abfahrt (departures). White board = Ankunft (arrivals). Check the board for: train number, destination (Ziel), platform (Gleis), time, and delays (shown in red). Deutsche Bahn delays are so famous that Germans joke about it!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -448,6 +858,47 @@ export const MODULE_9: Module = {
       description: "Unlock the power verbs of German! können, müssen, dürfen, wollen, sollen, mögen — the verbs that change everything. Ee verbs illathe German sentences undaakkaan pattoola, machane! Think of them as the masala in your sentence-curry!",
       duration: "60 min",
       xpReward: 180,
+      storyScene: {
+        setting: {
+          name: "WG Kitchen (Weekend Planning)",
+          sceneType: "home",
+          timeOfDay: "evening",
+          description: "The team is gathered around a laptop. You're planning a trip to the Alps. Everyone has their own ideas and constraints. 'Ich will wandern' (I want to hike), 'Ich muss arbeiten' (I must work), 'Ich kann kochen' (I can cook). These modal verbs are the engine of your conversation. Time to master the power verbs, machane!",
+        },
+        narrative: {
+          previousRecap: "You've survived the airport and the station. Now, let's learn how to express your wishes and duties!",
+          currentObjective: "Master all 6 modal verbs and understand the 'verb at the end' sentence structure",
+          nextTeaser: "Module 9 complete! Next: Let's talk about Health! Doctor visits, body parts, and lifestyle!",
+        },
+        kuttanIntro: [
+          "Machane! Modal verbs German-il valare essential aanu. 'Can', 'Must', 'Want' — ithoke illathe nammalku onnum parayan pattoola.",
+          "Main rule: Modal verb 2nd position-il aayirukkum, but actual action verb sentence-inte ETTAVUM END-ilekk pokum. 'Ich KANN Deutsch SPRECHEN.'",
+          "Politeness context-il 'wollen' (want) kurachu rude aayirukkum, so 'möchten' (would like) use cheyyunthinaan nallathu. Let's plan that trip!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab9-5-1", encounterMoment: "Lara says: 'Ich kann gut Karten lesen.' (I can read maps well).", contextSentence: "Ich kann Deutsch sprechen." },
+          { vocabId: "vocab9-5-2", encounterMoment: "Stefan sighs: 'Ich muss am Samstag arbeiten.' (I must work on Sat).", contextSentence: "Ich muss jetzt gehen." },
+          { vocabId: "vocab9-5-7", encounterMoment: "You suggest: 'Ich möchte nach München fahren.' (I would like to go to Munich).", contextSentence: "Ich möchte einen Tee, bitte." },
+          { vocabId: "vocab9-5-11", encounterMoment: "Lara asks: 'Wollen wir fliegen?' (Do we want to fly?). Stefan says 'Zu teuer!'.", contextSentence: "Wir fliegen morgen nach Berlin." },
+          { vocabId: "vocab9-5-9", encounterMoment: "Stefan offers: 'Ich kann euch helfen.' (I can help you guys).", contextSentence: "Können Sie mir bitte helfen?" },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'I can speak German' (Ich / können / Deutsch / sprechen). Which word order is correct?",
+            options: [
+              { text: "Ich kann Deutsch sprechen.", isCorrect: true, response: "Exactly! Modal verb follows the subject, and the main verb (sprechen) goes to the end.", kuttanReaction: "Adipoli! Sentence structure logic perfect aayi handle cheythallo. Rule noted! 🔥" },
+              { text: "Ich kann sprechen Deutsch.", isCorrect: false, response: "Aiyyo! In English, 'speak' comes after 'can'. But in German, it MUST go to the end of the sentence!", kuttanReaction: "Vite machane! Action verb-ine thalli end-ilekk vidanam. Ithu fix cheytho! Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You are at a ticket counter. Which modal verb is more polite to use for your request?",
+            options: [
+              { text: "möchten (would like)", isCorrect: true, response: "Correct! 'Ich möchte...' is the standard polite way to ask for things.", kuttanReaction: "Superb! Politnes logic correct aayi pick cheythallo. 'Wollen' children use cheyyana demanding tone aanu. ⭐" },
+              { text: "wollen (want)", isCorrect: false, response: "No! 'Ich will...' sounds like a demand. In service situations, 'möchten' is much better.", kuttanReaction: "Aiyyo! 'möchten' uses politeness. 'wollen' kurachu rude aannu artham. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v9-5-1",
@@ -474,7 +925,34 @@ export const MODULE_9: Module = {
             "Use modal verbs in practical travel situations",
             "Know that dürfen + nicht = not allowed/forbidden"
           ],
-          placeholderThumbnail: "/images/thumbnails/modal-verbs-1.jpg"
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Modal Verbs: können, müssen, dürfen",
+              headers: ["Pronoun", "können (can)", "müssen (must)", "dürfen (may)"],
+              rows: [
+                ["ich", "kann", "muss", "darf"],
+                ["du", "kannst", "musst", "darfst"],
+                ["er/sie/es", "kann", "muss", "darf"],
+                ["wir", "können", "müssen", "dürfen"],
+                ["ihr", "könnt", "müsst", "dürft"],
+                ["sie/Sie", "können", "müssen", "dürfen"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The BIG Modal Verb Rule",
+              variant: "warning",
+              content: "Modal verb goes to position 2 (conjugated), main verb goes to the END (infinitive). Example: Ich KANN Deutsch SPRECHEN. Ich MUSS jetzt GEHEN. Du DARFST hier nicht PARKEN. Never put both verbs together!"
+            },
+            {
+              type: "note",
+              title: "dürfen + nicht = FORBIDDEN",
+              variant: "info",
+              content: "'nicht dürfen' means something is forbidden/not allowed. 'Hier darf man nicht rauchen' = Smoking is not allowed here. It's much stronger than 'kann nicht' (cannot). Think of it as a legal restriction!"
+            }
+          ]
         },
         {
           id: "v9-5-2",
@@ -502,7 +980,38 @@ export const MODULE_9: Module = {
             "Combine modal verbs with travel vocabulary",
             "Understand cultural implications of verb choice"
           ],
-          placeholderThumbnail: "/images/thumbnails/modal-verbs-2.jpg"
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Modal Verbs: wollen, sollen, mögen/möchten",
+              headers: ["Pronoun", "wollen (want)", "sollen (should)", "möchten (would like)"],
+              rows: [
+                ["ich", "will", "soll", "möchte"],
+                ["du", "willst", "sollst", "möchtest"],
+                ["er/sie/es", "will", "soll", "möchte"],
+                ["wir", "wollen", "sollen", "möchten"],
+                ["ihr", "wollt", "sollt", "möchtet"],
+                ["sie/Sie", "wollen", "sollen", "möchten"]
+              ]
+            },
+            {
+              type: "table",
+              title: "wollen vs möchten — Politeness",
+              headers: ["Situation", "Rude (wollen)", "Polite (möchten)"],
+              rows: [
+                ["Ordering coffee", "Ich will einen Kaffee!", "Ich möchte einen Kaffee, bitte."],
+                ["At a restaurant", "Ich will die Rechnung!", "Ich möchte die Rechnung, bitte."],
+                ["Asking to leave", "Ich will gehen!", "Ich möchte gehen."]
+              ]
+            },
+            {
+              type: "note",
+              title: "möchten > wollen in Public!",
+              variant: "warning",
+              content: "'Ich will' sounds like a demand — like a child saying 'I WANT!' Always use 'Ich möchte' (I would like) in restaurants, shops, and with strangers. Save 'wollen' for casual situations with friends."
+            }
+          ]
         }
       ],
       exercises: [

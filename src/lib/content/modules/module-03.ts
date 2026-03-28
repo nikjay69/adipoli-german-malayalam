@@ -24,6 +24,47 @@ export const MODULE_3: Module = {
       description: "This lesson should make 0–20 automatic enough for prices, phone numbers, ages, and simple listening tasks. The goal is not just recognition, but fast retrieval under light pressure.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Lidl Supermarket, checkout line",
+          sceneType: "shopping",
+          timeOfDay: "afternoon",
+          description: "The familiar blue-and-yellow beep of the Lidl checkout. You've got a bag of Brötchen, some milk, and eggs. The line is moving fast — typical German efficiency. You need to understand the price the cashier says before the person behind you starts getting impatient. No pressure, machane!",
+        },
+        narrative: {
+          previousRecap: "You've successfully introduced yourself at the airport. Now, you need to survive your first grocery run!",
+          currentObjective: "Understand prices and small numbers (0-20) in a fast-paced retail environment",
+          nextTeaser: "Next: bigger numbers at the bakery! Time for the 'one-and-twenty' reversal twist!",
+        },
+        kuttanIntro: [
+          "Machane! Germany-il Lidl/Aldi checkout line-il 'patience' kuravaanu. Cashier lightning speed-ile barcode scan cheyyu — speed level 100!",
+          "Nammal total samyam mathramalla, 'Cent' vs 'Euro' price-um catch cheyyanam. Digital board-ile comma (,) nokkan marakkalle, athanu decimal separator.",
+          "0-20 numbers simple aanu — English 'eleven' and 'twelve' pole 'elf' and 'zwölf' mathram oru special case. Let's clear this level!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab3-1-3", encounterMoment: "The cashier holds up two fingers: 'Zwei Euro, bitte.' She's waiting for your coins.", contextSentence: "Das macht zwei Euro." },
+          { vocabId: "vocab3-1-5", encounterMoment: "You see a pack of 5 eggs. 'Fünf Eier,' you count to yourself. Numbers are getting useful!", contextSentence: "Fünf Eier, bitte." },
+          { vocabId: "vocab3-1-9", encounterMoment: "The total price on the screen shows 15,40. The cashier says: 'Fünfzehn Euro vierzig.'", contextSentence: "Das macht fünfzehn Euro vierzig." },
+          { vocabId: "vocab3-1-10", encounterMoment: "You hand over a 20 Euro note. 'Zwanzig Euro,' the cashier acknowledges with a nod.", contextSentence: "Hier sind zwanzig Euro." },
+          { vocabId: "vocab3-1-8", encounterMoment: "You see the number of eggs in a carton: 'Zwölf Stück.' Twelve pieces. 'Zwölf' is a rebel number, machane!", contextSentence: "Zwölf Eier." },
+        ],
+        decisionPoints: [
+          {
+            moment: "The screen says '4,50 €'. The cashier is looking at you. How do you prepare the money?",
+            options: [
+              { text: "Four Euro and fifty cents.", isCorrect: true, response: "Exactly! You count out four Euros and two twenty-cent coins + one ten-cent coin. Pro level!", kuttanReaction: "Adipoli! 4,50 ennu digital board-il kandaal 'Vier Euro fünfzig' ennu vayikkaam. Comma decimal separator aano ennorkkane! 😉" },
+              { text: "Forty-five Euro.", isCorrect: false, response: "The cashier laughs gently: 'Nein, vier Euro fünfzig Cent, bitte!' That comma is a decimal, not a thousands separator!", kuttanReaction: "Aiyyo! 4,50 kandaal 45 aano? Decimal separator ivide comma aanu (,)! Pinne 45 Euro-inu oru paal-um bread-um kittillallo! Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You hear 'Zwölf' for the egg carton. Which number is that?",
+            options: [
+              { text: "12", isCorrect: true, response: "Correct! 'Zwölf' is 12. You're starting to hear the difference!", kuttanReaction: "Super machane! 11 is 'elf', 12 is 'zwölf'. Ithu randum pattern-il varatha numbers aanu, so memorize cheyyanam. High-five! ✋" },
+              { text: "20", isCorrect: false, response: "Incorrect! 20 is 'zwanzig'. 'Zwölf' is lower, machane!", kuttanReaction: "Vite machane! 20 is 'zwanzig' (Z-sounding). 12 is 'zwölf' (Tsv-sounding). Confusion venal training koottaam! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v3-1-1",
@@ -52,7 +93,39 @@ export const MODULE_3: Module = {
             "Pronounce each number correctly",
             "Recognize German numbers when heard"
           ],
-          placeholderThumbnail: "/images/thumbnails/numbers-0-10.jpg"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "German Numbers 0-10",
+              headers: ["Number", "German", "Pronunciation"],
+              rows: [
+                ["0", "null", "nool"],
+                ["1", "eins", "eye-ns"],
+                ["2", "zwei", "tsvye"],
+                ["3", "drei", "dry"],
+                ["4", "vier", "feer"],
+                ["5", "fünf", "fuenf"],
+                ["6", "sechs", "zeks"],
+                ["7", "sieben", "zee-ben"],
+                ["8", "acht", "ahkt"],
+                ["9", "neun", "noyn"],
+                ["10", "zehn", "tsayn"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Decimal Separator Trap!",
+              variant: "warning",
+              content: "Germany uses a COMMA (,) as the decimal separator, not a dot! So 4,50 means four euros and fifty cents. Don't confuse 4,50 with 450!"
+            },
+            {
+              type: "note",
+              title: "Quick Memory Trick",
+              variant: "tip",
+              content: "'zwei' starts with 'ts' like 'tsunami'. 'drei' rhymes with English 'dry'. 'vier' rhymes with 'fear'. Count your fingers in German every morning!"
+            }
+          ]
         },
         {
           id: "v3-1-2",
@@ -79,7 +152,32 @@ export const MODULE_3: Module = {
             "Understand the pattern for teen numbers",
             "Recognize the irregularities in 11, 12, 16, and 17"
           ],
-          placeholderThumbnail: "/images/thumbnails/numbers-11-20.jpg"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Numbers 11-20",
+              headers: ["Number", "German", "Pattern"],
+              rows: [
+                ["11", "elf", "Irregular!"],
+                ["12", "zwölf", "Irregular!"],
+                ["13", "dreizehn", "drei + zehn"],
+                ["14", "vierzehn", "vier + zehn"],
+                ["15", "fünfzehn", "fünf + zehn"],
+                ["16", "sechzehn", "sech + zehn (no 's'!)"],
+                ["17", "siebzehn", "sieb + zehn (no 'en'!)"],
+                ["18", "achtzehn", "acht + zehn"],
+                ["19", "neunzehn", "neun + zehn"],
+                ["20", "zwanzig", "First round number!"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Watch Out for 16 and 17!",
+              variant: "warning",
+              content: "16 is 'sechzehn' (NOT 'sechszehn' — the 's' is dropped). 17 is 'siebzehn' (NOT 'siebenzehn' — the 'en' is dropped). These are the two sneaky exceptions in the teens!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -283,6 +381,47 @@ export const MODULE_3: Module = {
       description: "Here's the German twist — they say numbers backwards! Twenty-one is 'one-and-twenty'. Once you get the pattern, it's actually fun!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Traditional Bakery (Bäckerei), Berlin",
+          sceneType: "cafe",
+          timeOfDay: "morning",
+          description: "The divine smell of freshly baked Brot and cinnamon rolls. You're at the counter of a 'Kiez-Bäckerei'. It's busy, and the cashier is calling out totals. You've ordered for yourself and your WG friend. Now comes the real challenge: German two-digit numbers.",
+        },
+        narrative: {
+          previousRecap: "You've survived the supermarket. Now, let's move to 21-100. It's time to learn the 'one-and-twenty' logic!",
+          currentObjective: "Master the reversed number system (ones before tens) in a social context",
+          nextTeaser: "Next: catch the U-Bahn on time! The 'halb' time trap awaits!",
+        },
+        kuttanIntro: [
+          "Machane! German numbers-inte logic oru bit weird aanu. English-il 'twenty-one' ennu parayumpo, German-il 'one-and-twenty' (einundzwanzig) ennu parayanam.",
+          "Mirror image logic aanu — last digit first parayanam. Ithu thudiakkathil nalla confusion undakkum. But relax, once it clicks, it's actually fun!",
+          "Bakery-il 24 Euro ennu parayumpo, mind-il 'four-and-twenty' (vierundzwanzig) ennu thonnikkanam. Let's practice this twist!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab3-2-1", encounterMoment: "The cashier says: 'Das macht einundzwanzig Euro, bitte.' You pause to do the mental math.", contextSentence: "Das macht einundzwanzig Euro." },
+          { vocabId: "vocab3-2-2", encounterMoment: "You see a sign: 'Großes Frühstück für dreißig Euro.' A bit pricey, but looks delicious!", contextSentence: "Dreißig Euro, bitte." },
+          { vocabId: "vocab3-2-3", encounterMoment: "Another customer pays 'vierzig Euro' for a huge birthday cake. You're getting the hang of the tens!", contextSentence: "Mein Vater ist vierzig." },
+          { vocabId: "vocab3-2-7", encounterMoment: "The bakery has been open for 'hundert Jahre'. A century of baking tradition!", contextSentence: "Hundert Prozent richtig!" },
+          { vocabId: "vocab3-2-5", encounterMoment: "You check your watch: 'Sechzig Minuten' to your next appointment. Time is flying!", contextSentence: "Sechzig Minuten sind eine Stunde." },
+        ],
+        decisionPoints: [
+          {
+            moment: "The total is 32 Euro. The cashier says 'Zweiunddreißig Euro'. How do you interpret this?",
+            options: [
+              { text: "Two-and-thirty (32)", isCorrect: true, response: "Exactly! Zwei (2) + und + dreißig (30) = 32. You've got the logic down!", kuttanReaction: "Kiraathakam machane! 'Zwei' then 'dreißig'. Reverse pattern perfectly catch cheythu. Gold star! ⭐" },
+              { text: "Twenty-three (23)", isCorrect: false, response: "Wait! That would be 'dreiundzwanzig'. 32 is 'zweiunddreißig'!", kuttanReaction: "Aiyyo! First digit unit aanu, second digit tens aanu. 32-inu 'zwei' mumpil varanam. Don't flip it again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to buy 4 croissants. Each costs 1,20. Total is 4,80. Cashier says 'Vier Euro achtzig'. Which is 80?",
+            options: [
+              { text: "achtzig", isCorrect: true, response: "Correct! 'Achtzig' is 80. 'Acht' (8) + 'zig' (tens suffix).", kuttanReaction: "Superb! 'zig' suffix kandaal tens aanennu urappichoro. 80 = achtzig. Correct aayi paranjallo! 🔥" },
+              { text: "achtzehn", isCorrect: false, response: "No! 'Achtzehn' is 18 (acht + zehn). 80 is 'achtzig'!", kuttanReaction: "Vite machane! 'zehn' end cheythaal teens, 'zig' end cheythaal tens. Confusion aayaruthe! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v3-2-1",
@@ -310,7 +449,37 @@ export const MODULE_3: Module = {
             "Count by tens from 20 to 100",
             "Recognize the irregular tens (dreißig, sechzig, siebzig)"
           ],
-          placeholderThumbnail: "/images/thumbnails/numbers-big.jpg"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Tens (20-100)",
+              headers: ["Number", "German", "Note"],
+              rows: [
+                ["20", "zwanzig", ""],
+                ["30", "dreißig", "Uses 'ßig' not 'zig'!"],
+                ["40", "vierzig", ""],
+                ["50", "fünfzig", ""],
+                ["60", "sechzig", "Drops the 's' (not sechszig)"],
+                ["70", "siebzig", "Drops the 'en' (not siebenzig)"],
+                ["80", "achtzig", ""],
+                ["90", "neunzig", ""],
+                ["100", "hundert", ""]
+              ]
+            },
+            {
+              type: "note",
+              title: "The German Number Twist!",
+              variant: "info",
+              content: "For 21-99, Germans say the ones BEFORE the tens! 21 = einundzwanzig (one-and-twenty). 45 = fünfundvierzig (five-and-forty). Think of it as reading the number backwards!"
+            },
+            {
+              type: "note",
+              title: "The 'und' Glue",
+              variant: "tip",
+              content: "The word 'und' (and) always connects the ones and tens: drei-UND-vierzig (43), acht-UND-fünfzig (58). No exceptions for 21-99!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -467,6 +636,47 @@ export const MODULE_3: Module = {
       description: "Learn to tell time in German — both the formal 24-hour clock and the casual way Germans talk about time in daily life.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Alexanderplatz U-Bahn Station, Berlin",
+          sceneType: "shopping",
+          timeOfDay: "afternoon",
+          description: "The echoing corridors of Alexanderplatz station. You're standing on the yellow line, looking at the digital display board. The next U8 train is arriving soon. You need to meet a friend at a specific time, but the 'halb' logic is spinning in your head. Punctuality is the goal, machane!",
+        },
+        narrative: {
+          previousRecap: "You've mastered prices at the bakery. Now, it's time to master the German clock before you miss your train!",
+          currentObjective: "Navigate the 24-hour clock and avoid the 'halb' time trap",
+          nextTeaser: "Next: don't forget the trash! Time to learn days of the week and the 'Mittwoch' rule!",
+        },
+        kuttanIntro: [
+          "Machane! Germany-il time parayunnathu oru logic puzzle poleyaanu. '3:30' ennu parayan 'half past three' ennu parayilla — avaru 'half to four' (halb vier) ennu parayum!",
+          "Ithu kure perkk 'Termin' miss aakan ulla reason aanu. Always think about the NEXT hour when you hear 'halb'.",
+          "Pinne, official schedules-il ellam 24-hour clock aanu. 15:00 kandaal athu 3 PM aanennu catch cheyyanam. Let's make sure we're pünktlich!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab3-3-1", encounterMoment: "An old lady with a suitcase asks: 'Entschuldigung, wie spät ist es?' You check your phone quickly.", contextSentence: "Wie spät ist es?" },
+          { vocabId: "vocab3-3-3", encounterMoment: "Your friend texts: 'Wir treffen uns um halb sechs.' You calculate: half before six... 5:30!", contextSentence: "Es ist halb sechs." },
+          { vocabId: "vocab3-3-2", encounterMoment: "You look at the station clock: 'Die Uhr zeigt 16:15.' Quarter past four.", contextSentence: "Es ist vier Uhr fünfzehn." },
+          { vocabId: "vocab3-3-8", encounterMoment: "The display says the train is 'pünktlich'. In Germany, this is a beautiful word!", contextSentence: "Der Zug ist pünktlich." },
+          { vocabId: "vocab3-3-4", encounterMoment: "The announcement says: 'Viertel vor fünf.' Quarter to five. Time to move!", contextSentence: "Es ist Viertel vor fünf." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Your friend says: 'Komm bitte um halb acht.' What time should you be there?",
+            options: [
+              { text: "7:30", isCorrect: true, response: "Correct! 'Halb acht' = half before eight = 7:30. You pass the trap!", kuttanReaction: "Mass machane! Ithanu njan paranja 'halb' trap. 7:30-inu 'halb acht' ennu parayum. Confusion illaathe catch cheythallo! 🔥" },
+              { text: "8:30", isCorrect: false, response: "Aiyyo! That would be 'halb neun'. You're one hour late!", kuttanReaction: "Vite machane! German-il 'halb' parayumpo NEXT hour-iloottu aanu njan look cheyyunnathu. So 8:30 is NOT 'halb acht'. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You see '18:45' on the schedule. How do you say this informally?",
+            options: [
+              { text: "Viertel vor sieben", isCorrect: true, response: "Exactly! Quarter before seven. You're thinking like a local now.", kuttanReaction: "Adipoli! 18:45 is 6:45 PM. So 'Viertel vor sieben' (quarter to 7) is perfect. Keep it up! 🎯" },
+              { text: "Viertel nach sechs", isCorrect: false, response: "No, that would be 6:15 (18:15). 18:45 is much later!", kuttanReaction: "Aiyyo! 'nach' is after, 'vor' is before. 6:45 is before 7! So it's 'vor sieben'. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v3-3-1",
@@ -492,7 +702,36 @@ export const MODULE_3: Module = {
             "Tell time using full hours, half hours, and quarter hours",
             "Understand that 'halb' refers to half BEFORE the next hour"
           ],
-          placeholderThumbnail: "/images/thumbnails/time-basics.jpg"
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Telling Time in German",
+              headers: ["Time", "German (informal)", "Literal Meaning"],
+              rows: [
+                ["3:00", "Es ist drei Uhr", "It is three o'clock"],
+                ["3:15", "Viertel nach drei", "Quarter after three"],
+                ["3:30", "halb vier", "Half (before) four!"],
+                ["3:45", "Viertel vor vier", "Quarter before four"],
+                ["3:05", "fünf nach drei", "Five after three"],
+                ["3:55", "fünf vor vier", "Five before four"]
+              ]
+            },
+            {
+              type: "note",
+              title: "THE Biggest Trap: 'halb'",
+              variant: "warning",
+              content: "'halb vier' = 3:30 (NOT 4:30!). German 'halb' means half BEFORE the next hour. This is the #1 reason foreigners miss appointments! Think of it as: the hour is only 'half' done."
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Wie spät ist es?", english: "What time is it?", malayalam: "സമയം എത്രയായി?", pronunciation: "vee shpayt ist es" },
+                { german: "die Uhr", english: "clock / o'clock", malayalam: "മണി", pronunciation: "oor" },
+                { german: "halb", english: "half (before)", malayalam: "അര (അടുത്ത മണിക്കൂറിന്)", pronunciation: "halp" }
+              ]
+            }
+          ]
         },
         {
           id: "v3-3-2",
@@ -517,7 +756,38 @@ export const MODULE_3: Module = {
             "Understand when to use formal vs informal time",
             "Know time-of-day words (morning, afternoon, evening)"
           ],
-          placeholderThumbnail: "/images/thumbnails/time-formal.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "24-Hour vs 12-Hour Time",
+              headers: ["24-Hour (Formal)", "12-Hour (Informal)", "Context"],
+              rows: [
+                ["dreizehn Uhr", "ein Uhr (nachmittags)", "Train schedule vs conversation"],
+                ["fünfzehn Uhr dreißig", "halb vier", "Appointment vs friend"],
+                ["achtzehn Uhr", "sechs Uhr (abends)", "Office hours vs casual"],
+                ["null Uhr / Mitternacht", "zwölf Uhr (nachts)", "Official vs spoken"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Time of Day Words",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["morgens", "in the morning", "രാവിലെ"],
+                ["mittags", "at noon", "ഉച്ചയ്ക്ക്"],
+                ["nachmittags", "in the afternoon", "ഉച്ചകഴിഞ്ഞ്"],
+                ["abends", "in the evening", "വൈകുന്നേരം"],
+                ["nachts", "at night", "രാത്രി"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Pünktlichkeit (Punctuality)!",
+              variant: "tip",
+              content: "Germans are extremely punctual. If your train says '15:32', it means 15:32, not 'around 3:30 PM'. Read 24-hour time fluently — you will see it on every schedule, ticket, and appointment slip."
+            }
+          ]
         }
       ],
       exercises: [
@@ -685,6 +955,47 @@ export const MODULE_3: Module = {
       description: "From Montag to Sonntag and Januar to Dezember — learn the calendar in German, plus the four seasons!",
       duration: "45 min",
       xpReward: 120,
+      storyScene: {
+        setting: {
+          name: "WG Apartment, Trash Storage Room (Müllraum)",
+          sceneType: "home",
+          timeOfDay: "morning",
+          description: "A small, tidy room with four different colored bins: Blue, Yellow, Brown, and Grey. Stefan is showing you the 'Müllkalender' (trash calendar). In Germany, every day has a purpose, and missing the collection day is a cardinal sin. It's time to master the days of the week, machane!",
+        },
+        narrative: {
+          previousRecap: "You've successfully caught the train on time. Now, let's make sure you don't mess up the house rules!",
+          currentObjective: "Learn the days of the week and months to manage your German schedule",
+          nextTeaser: "Next: happy birthday! Time to learn dates and the verb 'haben'!",
+        },
+        kuttanIntro: [
+          "Machane! Germany-il 'Mülltrennung' (trash separation) oru religion poleyaanu. Athepole importance aanu 'collection days'-um.",
+          "Nammal 'Mittwoch' (Wednesday) kandaal athu middle of the week aanennu catch cheyyanam. Pinne German week Montag (Monday) aanu thudangunnathu.",
+          "Months names almost English pole thanneyaanu — 'März' (March) and 'Januar' (January) mathram care venam. Let's set our calendar!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab3-4-1", encounterMoment: "Stefan points to the calendar: 'Am Montag wird das Altpapier abgeholt.' Blue bin day!", contextSentence: "Am Montag ist Altpapier." },
+          { vocabId: "vocab3-4-3", encounterMoment: "He warns you: 'Vergiss Mittwoch nicht! Da kommt die graue Tonne.' General waste day.", contextSentence: "Mittwoch ist sehr wichtig." },
+          { vocabId: "vocab3-4-5", encounterMoment: "You look forward to the weekend: 'Am Freitag haben wir keine Vorlesung.' No lectures on Friday!", contextSentence: "Freitag ist mein Lieblingstag." },
+          { vocabId: "vocab3-4-8", encounterMoment: "Stefan says: 'Diesen Monat haben wir viel Müll.' This month we have a lot of trash.", contextSentence: "Ein Jahr hat zwölf Monate." },
+          { vocabId: "vocab3-4-11", encounterMoment: "You look at the 'Winter' section of the calendar. 'Januar is real cold,' Stefan notes.", contextSentence: "Im Winter ist es kalt." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Stefan asks: 'Welcher Tag ist heute?' (What day is today?). It's the middle of the week. What do you say?",
+            options: [
+              { text: "Heute ist Mittwoch.", isCorrect: true, response: "Exactly! 'Mittwoch' = Middle (Mitte) + Week (Woche). Logical alle?", kuttanReaction: "Correct machane! German-il Wednesday 'Mittwoch' aanu. Ithu oru bit unique name aanu, so carefully thiriayanam! 🎯" },
+              { text: "Heute ist Montag.", isCorrect: false, response: "Stefan shakes his head: 'Nein, Montag war vorgestern. Heute ist Mittwoch!'", kuttanReaction: "Aiyyo! Monday collection day alla! Wednesday aanu nammude general waste collection. Don't miss it! 😬" },
+            ],
+          },
+          {
+            moment: "Which month in German sounds the most like 'March'?",
+            options: [
+              { text: "März", isCorrect: true, response: "Correct! 'März' has the umlaut but the 'M-r-z' core is like 'March'.", kuttanReaction: "Adipoli! März is for March. Umlaut care venam — 'mairts' ennu parayanam. Gold star! ⭐" },
+              { text: "Mai", isCorrect: false, response: "No, 'Mai' is May! 'März' is the one for March.", kuttanReaction: "Vite machane! Confusion aayallo? Mai is May, März is March. Ithu randum different aanu! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v3-4-1",
@@ -712,7 +1023,40 @@ export const MODULE_3: Module = {
             "Know the 4 seasons in German",
             "Understand German calendar conventions"
           ],
-          placeholderThumbnail: "/images/thumbnails/days-months.jpg"
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Days of the Week",
+              headers: ["German", "English", "Memory Trick"],
+              rows: [
+                ["Montag", "Monday", "Moon-day (Mond)"],
+                ["Dienstag", "Tuesday", "Service day"],
+                ["Mittwoch", "Wednesday", "Middle of week!"],
+                ["Donnerstag", "Thursday", "Thunder day (Thor!)"],
+                ["Freitag", "Friday", "Free day feeling"],
+                ["Samstag", "Saturday", "Sabbath day"],
+                ["Sonntag", "Sunday", "Sun day (Sonne)"]
+              ]
+            },
+            {
+              type: "table",
+              title: "4 Seasons",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["der Frühling", "Spring", "വസന്തം"],
+                ["der Sommer", "Summer", "വേനൽക്കാലം"],
+                ["der Herbst", "Autumn", "ശരത്കാലം"],
+                ["der Winter", "Winter", "ശീതകാലം"]
+              ]
+            },
+            {
+              type: "note",
+              title: "German Week Starts on Monday!",
+              variant: "info",
+              content: "Unlike in India/USA where calendars start on Sunday, German calendars start on MONDAY. Also, all days and months are masculine (der Montag, der Januar). They are always capitalized!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -906,6 +1250,47 @@ export const MODULE_3: Module = {
       description: "Learn ordinal numbers, the German date format, and how to ask about birthdays. Plus — master the important verb 'haben' (to have)!",
       duration: "45 min",
       xpReward: 120,
+      storyScene: {
+        setting: {
+          name: "WG Living Room, Birthday Planning",
+          sceneType: "home",
+          timeOfDay: "evening",
+          description: "Lara and Stefan are sitting on the couch with a calendar. 'Kuttan, wann hast du Geburtstag?' Lara asks. They're planning a surprise party (Well, not a surprise anymore!). In Germany, birthdays are a big deal, and the date format is Tag.Monat.Jahr — just like in India!",
+        },
+        narrative: {
+          previousRecap: "You've mastered the trash schedule. Now, let's move to the fun stuff — birthdays and celebrations!",
+          currentObjective: "Express dates correctly and use the essential verb 'haben'",
+          nextTeaser: "Next: the final challenge! Scheduling a formal 'Termin' like a pro!",
+        },
+        kuttanIntro: [
+          "Machane! Birthdays in Germany are slightly different. Common sense rule: Never wish someone 'Happy Birthday' before the actual day — it's considered bad luck (Undaampori logic!).",
+          "Date format nammude 'Tag.Monat.Jahr' (DD.MM.YYYY) thanneyaanu. So America-kkaare pole confuse aakenda.",
+          "Pinne 'haben' verb. 'Ich habe... du hast...' Ithu 'sein' pole thanne super important aanu. Let's celebrate our progress!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab3-5-1", encounterMoment: "Lara looks at the calendar: 'Mein Geburtstag ist im Mai.' She's excited about the spring party.", contextSentence: "Wann hast du Geburtstag?" },
+          { vocabId: "vocab3-5-2", encounterMoment: "Stefan checks the invite: 'Welches Datum ist heute?' He needs to write it down correctly.", contextSentence: "Welches Datum ist heute?" },
+          { vocabId: "vocab3-5-3", encounterMoment: "You answer Lara's question: 'Ich habe im Januar Geburtstag.' You specify the month with 'haben'.", contextSentence: "Ich habe im Januar Geburtstag." },
+          { vocabId: "vocab3-3-8", encounterMoment: "Lara adds a note: 'Bitte pünktlich sein!' Even for a party, Germans like the 8:00 start!", contextSentence: "Pünktlich sein ist wichtig." },
+          { vocabId: "vocab3-5-4", encounterMoment: "Stefan notes a holiday: 'Der erste Januar ist Neujahr.' The very first day of the year.", contextSentence: "Der erste Januar ist Neujahr." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Lara asks: 'Wann hast du Geburtstag?' Your birthday is on the 15th of August. How do you answer using the German date format?",
+            options: [
+              { text: "Ich habe am fünfzehnten August Geburtstag.", isCorrect: true, response: "Perfect! You used the ordinal '-ten' ending and the correct month.", kuttanReaction: "Adipoli machane! 'fünfzehnte' becomes 'fünfzehnten' when you use 'am'. Real pro German vibe! 🎂" },
+              { text: "Ich bin August fünfzehn.", isCorrect: false, response: "Lara looks confused: 'Du BIST August? Und... August fünfzehn?' You're mixing stay English patterns, machane!", kuttanReaction: "Aiyyo! 'Ich habe' (I have) use cheyyeda! Pinne Month first parayalle — 'Tag.Monat' aanu rule. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to say 'You have a cake'. Which conjugation of 'haben' is correct for 'du'?",
+            options: [
+              { text: "Du hast einen Kuchen.", isCorrect: true, response: "Correct! 'Du hast' is the right form.", kuttanReaction: "Superb! 'Ich habe, du hast, er hat'. Pattern correctly catch cheythallo! Let's eat! 🍰" },
+              { text: "Du habst einen Kuchen.", isCorrect: false, response: "No, 'habst' is not a word. It's 'hast' — a bit irregular like 'bist'!", kuttanReaction: "Vite machane! 'haben' vowel-change pole small shortcut undu — it's 'hast', not 'habst'. Small mistake, big difference! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v3-5-1",
@@ -935,7 +1320,41 @@ export const MODULE_3: Module = {
             "Conjugate 'haben' (to have) in the present tense",
             "Ask and answer birthday questions"
           ],
-          placeholderThumbnail: "/images/thumbnails/dates-birthday.jpg"
+          placeholderThumbnail: "/images/kaffeeklatsch.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Conjugation of 'haben' (to have)",
+              headers: ["Person", "German", "English"],
+              rows: [
+                ["ich", "habe", "I have"],
+                ["du", "hast", "you have"],
+                ["er/sie/es", "hat", "he/she/it has"],
+                ["wir", "haben", "we have"],
+                ["ihr", "habt", "you all have"],
+                ["sie/Sie", "haben", "they/you (formal) have"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Ordinal Numbers (Dates)",
+              headers: ["Number", "Ordinal", "Rule"],
+              rows: [
+                ["1", "erste", "Irregular"],
+                ["2", "zweite", "Irregular"],
+                ["3", "dritte", "Irregular"],
+                ["4-19", "vierte, fünfte...", "Add '-te'"],
+                ["8", "achte", "Drops a 't' (not achtte)"],
+                ["20+", "zwanzigste, dreißigste...", "Add '-ste'"]
+              ]
+            },
+            {
+              type: "note",
+              title: "German Date Format",
+              variant: "info",
+              content: "Germany writes dates as DD.MM.YYYY (day.month.year) — same as India! Example: 15.08.1947 = der fünfzehnte August. Always use ordinal numbers for the day."
+            }
+          ]
         }
       ],
       exercises: [
@@ -1073,6 +1492,47 @@ export const MODULE_3: Module = {
       description: "Put it all together — schedule meetings, make plans, and ask about times like a pro. Germans take punctuality seriously!",
       duration: "45 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Doctor's Reception (Arztpraxis), Berlin-Mitte",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "A clean, minimalist reception area with the scent of disinfectant and fresh flowers. You're at the front desk, facing a receptionist with a headset. You need a check-up, but the calendar is full. It's time to use every number, day, and time phrase you've learned to secure that 'Termin'.",
+        },
+        narrative: {
+          previousRecap: "You've survived the party planning. Now, it's time for the ultimate adulting task — making a formal appointment!",
+          currentObjective: "Schedule a professional meeting using specific time and date prepositions",
+          nextTeaser: "Congratulations! Module 3 complete. Next: I am hungry! Time to learn about food and shopping!",
+        },
+        kuttanIntro: [
+          "Machane! Germany-il 'Termin' paranjaal athu oru holy thing poleyaanu. Without a Termin, you can't see a doctor, open a bank account, or sometimes even get a haircut!",
+          "Ivide preposition care venam. Days-in 'am' (Am Montag), Time-in 'um' (Um zehn Uhr). Pinne 'von... bis' (from... to) duration parayan super aanu.",
+          "Be polite, be pünktlich, and be clear. Let's get that appointment set! Ready alle?",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab3-6-1", encounterMoment: "The receptionist asks: 'Haben Sie einen Termin?' You answer: 'Nein, ich möchte einen Termin machen.'", contextSentence: "Ich möchte einen Termin machen." },
+          { vocabId: "vocab3-6-2", encounterMoment: "She checks her screen: 'Wann haben Sie Zeit?' She's giving you the choice of days.", contextSentence: "Wann haben Sie Zeit?" },
+          { vocabId: "vocab3-6-3", encounterMoment: "You suggest a range: 'Ich habe von Montag bis Mittwoch Zeit.' Flexing those day names!", contextSentence: "Von Montag bis Mittwoch." },
+          { vocabId: "vocab3-3-8", encounterMoment: "She confirms: 'Dienstag um neun Uhr. Seien Sie bitte pünktlich!' The P-word again!", contextSentence: "Seien Sie bitte pünktlich." },
+          { vocabId: "vocab3-6-5", encounterMoment: "You ask about the duration: 'Wie lange dauert der Termin?' You have a class later.", contextSentence: "Wie lange dauert das?" },
+        ],
+        decisionPoints: [
+          {
+            moment: "The receptionist offers: 'Dienstag um zehn Uhr oder Mittwoch um vierzehn Uhr?' Which one works for 'Tuesday at 10:00'?",
+            options: [
+              { text: "Dienstag um zehn Uhr.", isCorrect: true, response: "Correct! She writes it down. 'Abgemacht! Dienstag um zehn.'", kuttanReaction: "Adipoli! Selasaicha (Tuesday) 10 mani. Correct aayi pick cheythallo! 'Dienstag' is Tuesday. 🎯" },
+              { text: "Mittwoch um vierzehn Uhr.", isCorrect: false, response: "Wait! That's Wednesday at 2 PM. You wanted Tuesday!", kuttanReaction: "Aiyyo! 'Mittwoch' is Wednesday, machane! Tuesday 'Dienstag' aanu. Day maari poyal doctor-ne kaanan pattilla! Try again! 😬" },
+            ],
+          },
+          {
+            moment: "How do you say 'On Monday at three o'clock' using the correct prepositions?",
+            options: [
+              { text: "Am Montag um drei Uhr.", isCorrect: true, response: "Perfect prepositions! 'Am' for days, 'um' for time.", kuttanReaction: "Mass machane! 'Am' and 'Um' pair perfectly catch cheythu. Ithanu basic grammar rules! Well done! 🔥" },
+              { text: "Um Montag am drei Uhr.", isCorrect: false, response: "No, you swapped them! 'Am' is for the day, 'um' is for the time.", kuttanReaction: "Vite machane! Prepositions maari poyi. 'Am' for Days (Monday), 'Um' for Time (3:00). Swap it back! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v3-6-1",
@@ -1104,7 +1564,35 @@ export const MODULE_3: Module = {
             "Use 'von...bis...' for time ranges",
             "Understand German punctuality culture"
           ],
-          placeholderThumbnail: "/images/thumbnails/appointments.jpg"
+          placeholderThumbnail: "/images/doctor_waiting_room.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Scheduling Prepositions",
+              headers: ["Preposition", "Used With", "Example"],
+              rows: [
+                ["am", "Days / Dates", "Am Montag (On Monday)"],
+                ["um", "Clock times", "Um drei Uhr (At 3 o'clock)"],
+                ["von...bis", "Time ranges", "Von 9 bis 17 Uhr (9 to 5)"],
+                ["im", "Months / Seasons", "Im Januar (In January)"]
+              ]
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "der Termin", english: "appointment", malayalam: "അപ്പോയിന്റ്മെന്റ്", pronunciation: "ter-meen" },
+                { german: "Wann?", english: "When?", malayalam: "എപ്പോൾ?", pronunciation: "van" },
+                { german: "Um wie viel Uhr?", english: "At what time?", malayalam: "എത്ര മണിക്ക്?", pronunciation: "oom vee feel oor" },
+                { german: "Wie lange?", english: "How long?", malayalam: "എത്ര നേരം?", pronunciation: "vee lan-ge" }
+              ]
+            },
+            {
+              type: "note",
+              title: "IST Won't Work Here!",
+              variant: "warning",
+              content: "'Indian Stretchable Time' does not exist in Germany! If your doctor's appointment is at 10:00, arrive at 09:55. Being late is considered extremely rude and unprofessional."
+            }
+          ]
         }
       ],
       exercises: [

@@ -23,6 +23,46 @@ export const MODULE_11: Module = {
       description: "Learn detailed profession names in German with masculine and feminine forms — plus how to ask someone what they do. Nursing, IT, engineering — nammude Malayali favorites ellam und!",
       duration: "50 min",
       xpReward: 140,
+      storyScene: {
+        setting: {
+          name: "Career Fair (Jobmesse)",
+          sceneType: "university",
+          timeOfDay: "morning",
+          description: "A huge hall filled with company booths, banners, and free coffee. You're here with Arjun to check out the job market. There are posters for 'IT-Ingenieure' and 'Pflegefachkräfte' everywhere. In Kerala, a job is a job, but here, every 'Beruf' has a masculine and a feminine name. Mastering these is your first step to a German career. Ready to network, machane?",
+        },
+        narrative: {
+          previousRecap: "You've mastered the language of your body and health. Now, let's look at your professional life!",
+          currentObjective: "Identify various professions with gendered forms and ask/answer 'What is your profession?'",
+          nextTeaser: "Next: Office and Uni life! Let's see where you'll actually work!",
+        },
+        kuttanIntro: [
+          "Machane! Professions German-il parayumbol gender valare important aanu. Masculine-il 'er' ennu theerum, but feminine-il 'in' add cheyyanam — 'Informatiker' vs 'Informatikerin'.",
+          "Nursing (Krankenschwester) and IT (Programmierer) jobs-inu Germany-yil bhayankara demand aanu. Nammude Malayali favorites!",
+          "Pinne 'Anerkennung' (recognition) enna word sradhikkanne. Kerala-yile degrees Germany-yil recognize cheyyunnthinnaanu ithu parayunnathu. Let's find some jobs!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab11-1-1", encounterMoment: "A recruiter asks: 'Was sind Sie von Beruf?' (What is your profession?).", contextSentence: "Was sind Sie von Beruf?" },
+          { vocabId: "vocab11-1-4", encounterMoment: "You see a booth for: 'Krankenschwester gesucht' (Nurse wanted).", contextSentence: "Viele Malayalis arbeiten als Krankenschwester in Deutschland." },
+          { vocabId: "vocab11-1-3", encounterMoment: "Arjun points to SAP: 'Ich will Programmierer werden.' (I want to be a programmer).", contextSentence: "Sie arbeitet als Programmiererin bei SAP." },
+          { vocabId: "vocab11-1-10", encounterMoment: "A consultant notes: 'Sie brauchen die Anerkennung.' (You need the recognition).", contextSentence: "Die Anerkennung meines Diploms dauert drei Monate." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You are meeting a female engineer. How do you correctly refer to her profession?",
+            options: [
+              { text: "die Ingenieurin.", isCorrect: true, response: "Exactly! Add '-in' for the feminine form.", kuttanReaction: "Adipoli! Gender logic perfectly catch cheythallo! 🔥" },
+              { text: "der Ingenieur.", isCorrect: false, response: "Aiyyo! 'der Ingenieur' is for a man. For a woman, you need the '-in' ending.", kuttanReaction: "Vite machane! Gender endings important aanu in German. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "Someone asks you 'Was sind Sie von Beruf?'. You are an accountant. How do you respond?",
+            options: [
+              { text: "Ich bin Buchhalter.", isCorrect: true, response: "Correct! Note that you don't say 'a' accountant in German.", kuttanReaction: "Superb! Sentence structure correct aayi pick cheythallo. ⭐" },
+              { text: "Ich bin ein Buchhalter.", isCorrect: false, response: "Aiyyo! In German, we usually drop the 'ein' (a) when stating professions.", kuttanReaction: "Aiyyo! 'ein' use cheyyenda necessary illa, just profession paranjaal mathi. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v11-1-1",
@@ -48,7 +88,36 @@ export const MODULE_11: Module = {
             "Form both masculine and feminine versions of professions",
             "Ask and answer 'What is your profession?' formally and informally"
           ],
-          placeholderThumbnail: "/images/thumbnails/professions.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Professions — Masculine & Feminine",
+              headers: ["Masculine (der)", "Feminine (die)", "English"],
+              rows: [
+                ["der Ingenieur", "die Ingenieurin", "engineer"],
+                ["der Programmierer", "die Programmiererin", "programmer"],
+                ["der Krankenpfleger", "die Krankenschwester", "nurse"],
+                ["der Lehrer", "die Lehrerin", "teacher"],
+                ["der Arzt", "die Ärztin", "doctor"],
+                ["der Buchhalter", "die Buchhalterin", "accountant"],
+                ["der Koch", "die Köchin", "chef/cook"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Gender Endings for Jobs",
+              variant: "tip",
+              content: "Most masculine professions end in '-er'. Add '-in' to make it feminine: Lehrer → Lehrerin, Programmierer → Programmiererin. Some get Umlauts: Arzt → Ärztin, Koch → Köchin. Always learn both forms!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Was sind Sie von Beruf?", english: "What is your profession? (formal)", malayalam: "നിങ്ങളുടെ ജോലി എന്താണ്?", pronunciation: "vas zint zee fon be-roof" },
+                { german: "Was machst du beruflich?", english: "What do you do for work? (informal)", malayalam: "നീ എന്ത് ജോലി ചെയ്യുന്നു?", pronunciation: "vas mahkst doo be-roof-likh" }
+              ]
+            }
+          ]
         },
         {
           id: "v11-1-2",
@@ -74,7 +143,38 @@ export const MODULE_11: Module = {
             "Distinguish between Ausbildung and Studium",
             "Talk about where and what you work"
           ],
-          placeholderThumbnail: "/images/thumbnails/career-path.jpg"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Talking About Your Career",
+              headers: ["German", "English", "Example"],
+              rows: [
+                ["Ich arbeite als...", "I work as a...", "Ich arbeite als Krankenschwester."],
+                ["Ich studiere...", "I study...", "Ich studiere Informatik."],
+                ["Ich habe ... studiert.", "I studied...", "Ich habe Medizin studiert."],
+                ["Ich mache eine Ausbildung als...", "I'm doing vocational training as...", "...als Pflegefachmann."],
+                ["Ich arbeite bei...", "I work at...", "Ich arbeite bei Siemens."]
+              ]
+            },
+            {
+              type: "table",
+              title: "Ausbildung vs Studium",
+              headers: ["", "Ausbildung", "Studium"],
+              rows: [
+                ["Type", "Vocational training", "University degree"],
+                ["Duration", "2-3.5 years", "3-5 years"],
+                ["Salary", "Paid (€800-1200/month)", "No salary (part-time jobs)"],
+                ["Popular for Malayalis", "Nursing, mechanics", "IT, engineering, medicine"]
+              ]
+            },
+            {
+              type: "note",
+              title: "die Anerkennung — Critical for Indians!",
+              variant: "warning",
+              content: "If you have an Indian degree, you need 'Anerkennung' (recognition) to work in Germany. Nurses, doctors, and engineers must get their qualifications officially recognized. Start the process early — it can take months!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -190,6 +290,46 @@ export const MODULE_11: Module = {
       description: "Learn essential vocabulary for your workplace and university life in Germany. Office culture ingane aanu, Uni life ithu pole!",
       duration: "50 min",
       xpReward: 140,
+      storyScene: {
+        setting: {
+          name: "Main Office (Modernes Büro)",
+          sceneType: "station",
+          timeOfDay: "morning",
+          description: "It's your first day at a German office. The air is filled with the smell of fresh coffee and the sound of quiet typing. Your 'Schreibtisch' (desk) is ready. You're meeting your 'Kollegen' (colleagues). In Kerala, we might have a long chat over chai, but here, the 'Besprechung' (meeting) starts exactly on time. And when 5 PM hits, everyone yells 'Schönen Feierabend!'. Let's master the office lingo, machane!",
+        },
+        narrative: {
+          previousRecap: "You've identified what you want to do. Now, let's see where you'll do it!",
+          currentObjective: "Navigate office and university spaces and understand the concepts of meetings, cafeteria, and end-of-work",
+          nextTeaser: "Next: Writing emails! Let's get that formal tone right!",
+        },
+        kuttanIntro: [
+          "Machane! Office culture German-il valare structured aanu. 'Pünktlichkeit' (punctuality) is not just a word, it's a religion!",
+          "Lunch time-il everyone goes to the 'Mensa' (canteen). Cheap food and socialising logic! IT sector-il 'Chef' ennu paranjaal boss aannu, kitchen cook alla.",
+          "Pinne 'Feierabend' — my favorite German word. Work kazhinjaal pinne rest! No more emails! Let's get through the day!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab11-2-1", encounterMoment: "You walk in: 'Hier ist mein Büro.' (Here is my office).", contextSentence: "Ich arbeite im Büro." },
+          { vocabId: "vocab11-2-4", encounterMoment: "Stefan says: 'Die Besprechung beginnt.' (The meeting starts).", contextSentence: "Die Besprechung beginnt um 10 Uhr." },
+          { vocabId: "vocab11-2-8", encounterMoment: "Lunch break: 'Gehen wir in die Mensa?' (Shall we go to the canteen?).", contextSentence: "Das Essen in der Mensa ist günstig." },
+          { vocabId: "vocab11-2-10", encounterMoment: "Clock hits 5: 'Schönen Feierabend!' (Have a nice evening/work's over!).", contextSentence: "Ich mache um 17 Uhr Feierabend." },
+        ],
+        decisionPoints: [
+          {
+            moment: "It's lunch time at the university. Where should you go for a cheap student meal?",
+            options: [
+              { text: "die Mensa.", isCorrect: true, response: "Exactly! The Mensa is the student cafeteria.", kuttanReaction: "Adipoli! Cheap food logic correctly capture cheythallo! 🔥" },
+              { text: "der Hörsaal.", isCorrect: false, response: "Aiyyo! That's the lecture hall! You can't eat a full meal during a lecture!", kuttanReaction: "Vite machane! Study logic and food logic separate cheyyanne. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "Your colleague says 'Schönen Feierabend!'. What does it mean?",
+            options: [
+              { text: "Work is done for the day, enjoy your free time.", isCorrect: true, response: "Correct! It's the sacred end of the workday.", kuttanReaction: "Superb! Best German concept correctly noted! ⭐" },
+              { text: "Merry Christmas!", isCorrect: false, response: "No! 'Feier' means party/celebration, but 'Feierabend' is specifically for finishing work.", kuttanReaction: "Aiyyo! Every day Christmas alla machane! Just work ending aanu. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v11-2-1",
@@ -214,7 +354,36 @@ export const MODULE_11: Module = {
             "Use basic workplace phrases for meetings, calls, and emails",
             "Understand key German work culture concepts"
           ],
-          placeholderThumbnail: "/images/thumbnails/office-vocabulary.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Office Vocabulary",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["das Büro", "office", "ഓഫീസ്"],
+                ["der Schreibtisch", "desk", "മേശ"],
+                ["der Computer", "computer", "കമ്പ്യൂട്ടർ"],
+                ["der Bildschirm", "screen", "സ്ക്രീൻ"],
+                ["der Chef / die Chefin", "boss", "ബോസ്"],
+                ["die Besprechung", "meeting", "മീറ്റിങ്"],
+                ["der Kollege / die Kollegin", "colleague", "സഹപ്രവർത്തകൻ"],
+                ["die Mittagspause", "lunch break", "ഉച്ച ഭക്ഷണ ഇടവേള"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Pünktlichkeit — On Time = Already Late!",
+              variant: "warning",
+              content: "German work culture worships punctuality! If the meeting is at 10:00, arrive by 09:55. Being late is seen as disrespectful. Also respect 'Feierabend' (end of work) — no emails after hours!"
+            },
+            {
+              type: "note",
+              title: "Du vs Sie at Work",
+              variant: "info",
+              content: "ALWAYS start with 'Sie' (formal you) at work. Only switch to 'Du' (informal) when the boss or senior colleague explicitly offers it. Using 'Du' too early is a social mistake in German offices!"
+            }
+          ]
         },
         {
           id: "v11-2-2",
@@ -240,7 +409,38 @@ export const MODULE_11: Module = {
             "Use essential phrases for student life",
             "Understand differences between Indian and German university culture"
           ],
-          placeholderThumbnail: "/images/thumbnails/university-life.jpg"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "University Vocabulary",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["die Vorlesung", "lecture", "ക്ലാസ്"],
+                ["das Seminar", "seminar", "സെമിനാർ"],
+                ["die Prüfung", "exam", "പരീക്ഷ"],
+                ["die Hausarbeit", "term paper", "പ്രോജക്ട്"],
+                ["die Bibliothek", "library", "ലൈബ്രറി"],
+                ["die Mensa", "cafeteria", "കാന്റീൻ"],
+                ["der Hörsaal", "lecture hall", "ലക്ചർ ഹാൾ"],
+                ["das Studentenwohnheim", "student dorm", "ഹോസ്റ്റൽ"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Semesterticket = Free Transport!",
+              variant: "tip",
+              content: "Most German universities include a 'Semesterticket' in your tuition fee — free public transport across the city! This alone can save you €200+ per semester. Check your university's specific coverage area."
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "sich einschreiben", english: "to enroll/register", malayalam: "രജിസ്റ്റർ ചെയ്യുക", pronunciation: "zikh ayn-shry-ben" },
+                { german: "die Immatrikulation", english: "enrollment", malayalam: "പ്രവേശനം", pronunciation: "im-ma-tri-ku-la-tsion" },
+                { german: "die Lerngruppe", english: "study group", malayalam: "പഠന ഗ്രൂപ്പ്", pronunciation: "lern-groo-pe" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -355,6 +555,46 @@ export const MODULE_11: Module = {
       description: "Learn to write formal and informal emails in German — essential for university applications, job inquiries, and impressing your German boss!",
       duration: "60 min",
       xpReward: 160,
+      storyScene: {
+        setting: {
+          name: "WG Living Room (The Laptop Screen)",
+          sceneType: "home",
+          timeOfDay: "evening",
+          description: "You're sitting at your desk, laptop open, deep in concentration. You need to write a 'Bewerbung' (application). In Kerala, we might be a bit loose with email structure, but in Germany, it's like a scientific formula. You need a 'Betreff' (subject), a correct greeting, and the 'Anlage' (attachment). Master the block-building approach, machane!",
+        },
+        narrative: {
+          previousRecap: "You've navigated the office corridors. Now, let's master the office communications!",
+          currentObjective: "Draft a formal email with the correct structure, greeting, and professional closing",
+          nextTeaser: "Next: Skills! Let's talk about what YOU can bring to the table!",
+        },
+        kuttanIntro: [
+          "Machane! German emails-il first step eppozhum correct 'Betreff' (subject) ezhuthaan aanu. Subject line clear aayirunnal mathrame aalukal open cheyyoo.",
+          "Greeting logic sradhikkanne: if name ariyamel 'Sehr geehrte Frau [Name]', if name ariyamel 'Sehr geehrte Damen und Herren'. Super formal energy!",
+          "Pinne 'Anlage' (attachment) specify cheyyaan marakkaruthu. 'In der Anlage finden Sie...' — gold standard phrase for sending your CV. Let's write it!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab11-3-1", encounterMoment: "You type the subject: 'Betreff: Bewerbung'.", contextSentence: "Der Betreff muss klar sein." },
+          { vocabId: "vocab11-3-2", encounterMoment: "You start the greeting: 'Sehr geehrte Damen und Herren,'.", contextSentence: "Sehr geehrter Herr Müller, ..." },
+          { vocabId: "vocab11-3-7", encounterMoment: "You check the file: 'Die Anlage ist bereit.' (The attachment is ready).", contextSentence: "In der Anlage finden Sie meinen Lebenslauf." },
+          { vocabId: "vocab11-3-3", encounterMoment: "You sign off: 'Mit freundlichen Grüßen, Kuttan'.", contextSentence: "Mit freundlichen Grüßen, Anna Schmidt." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You are writing to a company but don't know the person's name. What is the correct formal greeting?",
+            options: [
+              { text: "Sehr geehrte Damen und Herren,", isCorrect: true, response: "Exactly! This is the universal formal greeting when the name is unknown.", kuttanReaction: "Adipoli! Formal logic perfectly capture cheythallo! 🔥" },
+              { text: "Hallo zusammen,", isCorrect: false, response: "Aiyyo! 'Hallo zusammen' is too casual for a job inquiry! Use 'Sehr geehrte Damen und Herren'.", kuttanReaction: "Vite machane! Business formal mode-il 'Hallo' use cheyyaruthu. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to say 'Best regards' at the end of a formal email. Which phrase is correct?",
+            options: [
+              { text: "Mit freundlichen Grüßen.", isCorrect: true, response: "Correct! The gold standard for formal closings.", kuttanReaction: "Superb! Sign-off logic correctly noted! ⭐" },
+              { text: "Tschüss!", isCorrect: false, response: "No! 'Tschüss' is 'Bye' for friends. In an email, use 'Mit freundlichen Grüßen'.", kuttanReaction: "Aiyyo! Company-il 'Tschüss' paranjaal serious aayi edukilla. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v11-3-1",
@@ -379,7 +619,35 @@ export const MODULE_11: Module = {
             "Use appropriate formal greetings and closings",
             "Write a polite request or inquiry email"
           ],
-          placeholderThumbnail: "/images/thumbnails/formal-email.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Formal Email Structure",
+              headers: ["Part", "German", "English"],
+              rows: [
+                ["Subject", "Betreff: Anfrage bezüglich...", "Subject: Inquiry regarding..."],
+                ["Greeting (known)", "Sehr geehrte Frau Müller,", "Dear Ms. Müller,"],
+                ["Greeting (unknown)", "Sehr geehrte Damen und Herren,", "Dear Sir/Madam,"],
+                ["Opening", "Ich schreibe Ihnen bezüglich...", "I am writing regarding..."],
+                ["Request", "Könnten Sie mir bitte...", "Could you please..."],
+                ["Closing", "Ich freue mich auf Ihre Antwort.", "I look forward to your reply."],
+                ["Sign-off", "Mit freundlichen Grüßen", "With kind regards"]
+              ]
+            },
+            {
+              type: "note",
+              title: "MfG — The Email Sign-Off",
+              variant: "tip",
+              content: "'Mit freundlichen Grüßen' (MfG) is the gold standard formal closing. For semi-formal, use 'Viele Grüße' or 'Beste Grüße'. For friends: 'Liebe Grüße' (LG). Never use 'MfG' abbreviation in truly formal emails!"
+            },
+            {
+              type: "note",
+              title: "Always Use 'Sie' in Formal Emails",
+              variant: "warning",
+              content: "In formal emails, use 'Sie' (You) and 'Ihnen' (to You) throughout. Write 'Sie' and 'Ihr' with capital letters to show respect. Switching to 'du' in a formal email is a serious faux pas!"
+            }
+          ]
         },
         {
           id: "v11-3-2",
@@ -406,7 +674,34 @@ export const MODULE_11: Module = {
             "Switch between formal and semi-formal email styles",
             "Use common email phrases naturally"
           ],
-          placeholderThumbnail: "/images/thumbnails/sample-emails.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Email Templates by Situation",
+              headers: ["Situation", "Greeting", "Key Phrase", "Sign-off"],
+              rows: [
+                ["To professor", "Sehr geehrte Frau Prof. ...,", "Ich bin Student im Fach...", "MfG"],
+                ["To landlord", "Sehr geehrte Damen und Herren,", "Ich interessiere mich für...", "MfG"],
+                ["To colleague", "Liebe Frau Schmidt,", "Könnten Sie mir bitte...", "Viele Grüße"],
+                ["Job application", "Sehr geehrte Damen und Herren,", "Hiermit bewerbe ich mich...", "MfG"],
+                ["To friend", "Hallo [Name]!", "Hast du Lust...?", "LG"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Formal vs Semi-Formal",
+              variant: "tip",
+              content: "After a few emails, a German contact may switch from 'Sehr geehrte/r' to 'Liebe/r'. This is a signal that you can also become less formal. Follow their lead — if they use 'Liebe Grüße', you can too!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "hiermit bewerbe ich mich", english: "I hereby apply", malayalam: "ഞാൻ ഇതിനാൽ അപേക്ഷിക്കുന്നു", pronunciation: "heer-mit be-ver-be ikh mikh" },
+                { german: "sich interessieren für", english: "to be interested in", malayalam: "താൽപ്പര്യമുണ്ട്", pronunciation: "zikh in-te-re-see-ren foor" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -522,6 +817,46 @@ export const MODULE_11: Module = {
       description: "Learn to describe your skills, qualifications, and interests in German — essential for job applications, LinkedIn profiles, and networking at meetups!",
       duration: "50 min",
       xpReward: 140,
+      storyScene: {
+        setting: {
+          name: "Networking Mixer (Stammtisch)",
+          sceneType: "station",
+          timeOfDay: "evening",
+          description: "You're at a local 'Stammtisch' for professionals. People are exchanging business cards and talking about their 'Erfahrung' (experience). In Kerala, we might be humble about our skills, but here, you need to clearly state 'Ich kann...' (I can...). Whether it's programming or nursing, your 'Fähigkeiten' (abilities) are your currency. Time to pitch yourself, machane!",
+        },
+        narrative: {
+          previousRecap: "You've written the email. Now, let's talk about what's IN that resume!",
+          currentObjective: "Describe your professional skills and interests using 'Ich kann...' and 'Ich interessiere mich für...'",
+          nextTeaser: "Final lesson: The Job Interview! Let's land that dream job!",
+        },
+        kuttanIntro: [
+          "Machane! Skills parayumpol 'können' (can) enna modal verb aanu nammude main weapon. 'Ich kann Java' or 'Ich kann Blut abnehmen' (I can take blood).",
+          "German-il 'Erfahrung' (experience) eppozhum pratheykichu mention cheyyaname. Pinne 'zuverlässig' (reliable) ennu paranjaal boss-inu nalla impression kuttum.",
+          "Interests-ine patti samsaarikkan 'sich interessieren für' use cheyyaam. Ithoru reflexive phrase aanu, so 'mich' add cheyyanam. Let's showcase your talents!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab11-4-4", encounterMoment: "You say: 'Ich kann gut programmieren.' (I can program well).", contextSentence: "Ich kann drei Sprachen sprechen." },
+          { vocabId: "vocab11-4-1", encounterMoment: "Stefan asks: 'Haben Sie Erfahrung?' (Do you have experience?).", contextSentence: "Ich habe viel Erfahrung mit Java." },
+          { vocabId: "vocab11-4-6", encounterMoment: "The recruiter notes: 'Er ist sehr zuverlässig.' (He is very reliable).", contextSentence: "Er ist ein sehr zuverlässiger Mitarbeiter." },
+          { vocabId: "vocab11-4-7", encounterMoment: "You mention: 'Hier ist mein Zeugnis.' (Here is my certificate).", contextSentence: "Bitte senden Sie Ihre Zeugnisse." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'I can speak German' using a modal verb. Which structure is correct?",
+            options: [
+              { text: "Ich kann Deutsch sprechen.", isCorrect: true, response: "Exactly! Modal verb in position 2, main verb (sprechen) at the end.", kuttanReaction: "Adipoli! Sentence structure logic perfectly capture cheythallo! 🔥" },
+              { text: "Ich kann sprechen Deutsch.", isCorrect: false, response: "Aiyyo! In German, the action verb 'sprechen' MUST go to the end of the sentence.", kuttanReaction: "Vite machane! Verb-final rule marakkalle! Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to say 'I am interested in technology'. Which phrase is reflexive?",
+            options: [
+              { text: "Ich interessiere mich für Technik.", isCorrect: true, response: "Correct! 'mich' makes it reflexive.", kuttanReaction: "Superb! Reflexive grammar logic correctly noted! ⭐" },
+              { text: "Ich interessiere für Technik.", isCorrect: false, response: "No! 'Sich interessieren für' is reflexive, so you MUST include 'mich'.", kuttanReaction: "Aiyyo! 'mich' missing aanu machane! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v11-4-1",
@@ -549,7 +884,39 @@ export const MODULE_11: Module = {
             "Talk about experience, knowledge, and soft skills",
             "Express interests using 'sich interessieren für'"
           ],
-          placeholderThumbnail: "/images/thumbnails/skills.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Describing Your Skills",
+              headers: ["Structure", "German Example", "English"],
+              rows: [
+                ["Ich kann + verb", "Ich kann gut programmieren.", "I can program well."],
+                ["Ich habe Erfahrung mit + Dativ", "Ich habe Erfahrung mit Programmierung.", "I have experience with programming."],
+                ["Ich bin gut in + Dativ", "Ich bin gut in Mathematik.", "I'm good at maths."],
+                ["Ich interessiere mich für + Akk.", "Ich interessiere mich für Technik.", "I'm interested in technology."],
+                ["Ich spreche fließend...", "Ich spreche fließend Englisch.", "I speak fluent English."]
+              ]
+            },
+            {
+              type: "table",
+              title: "Soft Skills in German",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["teamfähig", "team-oriented", "ടീം വർക്ക്"],
+                ["flexibel", "flexible", "ഫ്ലെക്സിബിൾ"],
+                ["pünktlich", "punctual", "സമയനിഷ്ഠ"],
+                ["zuverlässig", "reliable", "വിശ്വസനീയം"],
+                ["kreativ", "creative", "സർഗ്ഗാത്മകം"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Confident but Humble",
+              variant: "tip",
+              content: "In Germany, say 'Ich kann gut programmieren' (I can program well) — not 'Ich bin der Beste!' (I'm the best!). Germans value honest self-assessment. Overconfidence is a turnoff in professional settings."
+            }
+          ]
         },
         {
           id: "v11-4-2",
@@ -575,7 +942,40 @@ export const MODULE_11: Module = {
             "Talk about your education and degrees",
             "Describe your language proficiency levels"
           ],
-          placeholderThumbnail: "/images/thumbnails/qualifications.jpg"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Qualifications & Certificates",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["das Zeugnis", "certificate/transcript", "സർട്ടിഫിക്കറ്റ്"],
+                ["der Abschluss", "degree/diploma", "ബിരുദം"],
+                ["das Diplom", "diploma", "ഡിപ്ലോമ"],
+                ["der Führerschein", "driving license", "ഡ്രൈവിങ് ലൈസൻസ്"],
+                ["das Sprachzertifikat", "language certificate", "ഭാഷാ സർട്ടിഫിക്കറ്റ്"],
+                ["die Weiterbildung", "further training", "കൂടുതൽ പരിശീലനം"]
+              ]
+            },
+            {
+              type: "table",
+              title: "German Language Levels",
+              headers: ["Level", "What You Can Do", "Required For"],
+              rows: [
+                ["A1", "Basic greetings, simple phrases", "Family reunion visa"],
+                ["A2", "Everyday conversations", "Some Ausbildung programs"],
+                ["B1", "Independent communication", "Nursing, most Ausbildung"],
+                ["B2", "Complex topics, fluent speech", "University, many jobs"],
+                ["C1", "Near-native proficiency", "Medicine, law, teaching"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Get Everything Documented!",
+              variant: "warning",
+              content: "Germans value formal certificates above all else. Get your degrees translated (beglaubigte Übersetzung), obtain your Goethe-Zertifikat or telc certificate, and keep everything in a tidy folder. 'Ohne Zeugnis, kein Beweis!' (No certificate, no proof!)"
+            }
+          ]
         }
       ],
       exercises: [
@@ -691,6 +1091,46 @@ export const MODULE_11: Module = {
       description: "Prepare for a German job interview — common questions, key vocabulary, and cultural tips. Germany-yil interview crack cheyyaan ulla complete guide!",
       duration: "60 min",
       xpReward: 180,
+      storyScene: {
+        setting: {
+          name: "Conference Room (Besprechungsraum)",
+          sceneType: "station",
+          timeOfDay: "morning",
+          description: "This is it. The big moment. You're sitting in a sleek glass conference room, opposite two interviewers. Your 'Lebenslauf' (CV) is on the table between you. In Kerala, we might be a bit modest, but here, 'Direktheit' (directness) and clarity are valued. You've practiced your intro 100 times. Time to show them the Malayali spirit, machane!",
+        },
+        narrative: {
+          previousRecap: "You've listed your skills. Now, let's defend them in person!",
+          currentObjective: "Answer common interview questions confidently and describe your strengths professionally in German",
+          nextTeaser: "Module 11 complete! You're professional ready! Next: Module 12 - House and Home!",
+        },
+        kuttanIntro: [
+          "Machane! Interview-il first impression eppozhum correct aayirikkanam. Handshake firm aayirikkanum, but principal rule 'Pünktlichkeit' aanu. 5 mins early reach cheyyanam!",
+          "Main question: 'Erzählen Sie etwas über sich' (Tell me about yourself). Name -> Origin -> Studies -> Experience — ee order-il short aayi parayuka.",
+          "Pinne 'Stärken' (strengths) chodikumpo 'teamfähig' (team player) and 'zuverlässig' (reliable) ennu parayaan marakkaruthu. Let's land this job!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab11-5-1", encounterMoment: "The email says: 'Ihr Vorstellungsgespräch ist um 9 Uhr.'", contextSentence: "Mein Vorstellungsgespräch ist morgen." },
+          { vocabId: "vocab11-5-5", encounterMoment: "Interviewer asks: 'Was sind Ihre Stärken?' (What are your strengths?).", contextSentence: "Was sind Ihre Stärken?" },
+          { vocabId: "vocab11-5-7", encounterMoment: "You answer: 'Ich bin sehr teamfähig.' (I am very good in a team).", contextSentence: "Ich bin sehr teamfähig." },
+          { vocabId: "vocab11-5-10", encounterMoment: "You conclude: 'Ich möchte mich weiterentwickeln.' (I want to further develop myself).", contextSentence: "Ich möchte mich beruflich weiterentwickeln." },
+        ],
+        decisionPoints: [
+          {
+            moment: "The interviewer asks 'Erzählen Sie etwas über sich'. How do you start your professional intro?",
+            options: [
+              { text: "Ich komme aus Kerala, Indien. Ich habe Informatik studiert...", isCorrect: true, response: "Exactly! Start with your origin and education to ground your background.", kuttanReaction: "Adipoli! Intro correct aayi start cheythallo! 🔥" },
+              { text: "Ich habe ein Hobby. Ich spiele Fußball.", isCorrect: false, response: "Aiyyo! Hobbies specify cheyyanam, but intro-yil professional points first venam.", kuttanReaction: "Vite machane! Career points first, then personality. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to say you are a reliable person. Which word should you use?",
+            options: [
+              { text: "zuverlässig.", isCorrect: true, response: "Correct! 'Zuverlässig' is one of the most valued traits in Germany.", kuttanReaction: "Superb! Character logic correctly picked! ⭐" },
+              { text: "müde.", isCorrect: false, response: "No! 'müde' means tired. Don't say that in an interview!", kuttanReaction: "Aiyyo! Enthina tired ennu parayunnathu? Active aayi irikkaam! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v11-5-1",
@@ -717,7 +1157,39 @@ export const MODULE_11: Module = {
             "Know what to expect in a German interview",
             "Introduce yourself professionally in German"
           ],
-          placeholderThumbnail: "/images/thumbnails/interview-prep.jpg"
+          placeholderThumbnail: "/images/job_interview.png",
+          richContent: [
+            {
+              type: "table",
+              title: "German Job Application Package",
+              headers: ["German", "English", "What It Is"],
+              rows: [
+                ["die Bewerbung", "application", "The complete package"],
+                ["der Lebenslauf", "CV / resume", "Photo + details + experience"],
+                ["das Anschreiben", "cover letter", "Why you want this job"],
+                ["das Zeugnis", "certificate", "Education & work certificates"],
+                ["die Bewerbungsmappe", "application folder", "Everything in one neat folder"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Interview Flow",
+              headers: ["Step", "What Happens"],
+              rows: [
+                ["1. Greeting", "Firm handshake, eye contact, arrive 5 min early"],
+                ["2. Self-intro", "Name → Background → Education → Experience"],
+                ["3. Questions", "They ask about skills, motivation, weaknesses"],
+                ["4. Your questions", "You ask about team, training, next steps"],
+                ["5. Goodbye", "Thank them, firm handshake again"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Direktheit (Directness) is Key",
+              variant: "tip",
+              content: "Germans value directness in interviews. Be clear and concise — no beating around the bush. State your qualifications confidently: 'Ich habe drei Jahre Erfahrung in...' Prepare a 2-minute self-introduction!"
+            }
+          ]
         },
         {
           id: "v11-5-2",
@@ -746,7 +1218,36 @@ export const MODULE_11: Module = {
             "Describe your strengths and weaknesses professionally",
             "Ask appropriate questions and discuss salary expectations"
           ],
-          placeholderThumbnail: "/images/thumbnails/interview-questions.jpg"
+          placeholderThumbnail: "/images/job_interview.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Common Interview Questions & Sample Answers",
+              headers: ["German Question", "English", "Sample Start"],
+              rows: [
+                ["Erzählen Sie etwas über sich.", "Tell me about yourself.", "Ich komme aus Kerala..."],
+                ["Warum möchten Sie hier arbeiten?", "Why do you want to work here?", "Ihre Firma ist führend..."],
+                ["Was sind Ihre Stärken?", "What are your strengths?", "Ich bin teamfähig und..."],
+                ["Was sind Ihre Schwächen?", "What are your weaknesses?", "Manchmal bin ich zu..."],
+                ["Wo sehen Sie sich in 5 Jahren?", "Where do you see yourself in 5 years?", "Ich möchte mich zum..."],
+                ["Haben Sie noch Fragen?", "Do you have any questions?", "Wie groß ist das Team?"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Weakness Question Trick",
+              variant: "tip",
+              content: "For 'Was sind Ihre Schwächen?', pick a real weakness but show you're working on it: 'Manchmal bin ich zu perfektionistisch, aber ich lerne, Aufgaben besser zu delegieren.' Never say 'I have no weaknesses'!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "die Gehaltsvorstellung", english: "salary expectation", malayalam: "ശമ്പള പ്രതീക്ഷ", pronunciation: "ge-halts-for-shtel-oong" },
+                { german: "sich weiterentwickeln", english: "to develop further", malayalam: "കൂടുതൽ വളരുക", pronunciation: "zikh vy-ter-ent-vik-eln" },
+                { german: "die Stärke", english: "strength", malayalam: "ശക്തി", pronunciation: "shtehr-ke" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [

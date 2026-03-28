@@ -23,6 +23,46 @@ export const MODULE_18: Module = {
       description: "Master Schreiben Teil 1! Practice filling out real German forms — Anmeldeformular, Bibliotheksausweis, and Sprachkurs-Anmeldung with correct date and address formats.",
       duration: "45 min",
       xpReward: 120,
+      storyScene: {
+        setting: {
+          name: "Exam Hall (Im Prüfungssaal)",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "Silence. Only the sound of pens. You've got an 'Anmeldeformular' (registration form) in front of you. You need to fill in 5 fields using a short text about a person. 'Vorname', 'Nachname', 'Geburtsdatum'... simple copy-paste, right? But wait! The date must be DD.MM.YYYY, and the address must be Street + Number. No mistakes, machane!",
+        },
+        narrative: {
+          previousRecap: "You've mastered the listening and reading. Now, let's show them your writing skills!",
+          currentObjective: "Correctly extract personal information from a short text and fill out a German form with 100% accuracy",
+          nextTeaser: "Final Writing: The Email challenge! Let's write a perfect 30-word message!",
+        },
+        kuttanIntro: [
+          "Machane! This is the 'Free Marks' section. No complicated grammar, just careful copying from the text into the form.",
+          "Check the labels: 'Vorname' is your first name, 'Nachname' or 'Familienname' is your surname. Kerala-il initials mbue varum, but ivide sequence sradhikkuka!",
+          "And remember the Golden Date: TT.MM.JJJJ (05.03.1998). Dots use cheyyanam, slashes alla! Let's fill these forms like a pro!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab18-1-1", encounterMoment: "You look at the paper: 'Bitte füllen Sie das Formular aus.'", contextSentence: "Das Formular ist für die Anmeldung." },
+          { vocabId: "vocab18-1-2", encounterMoment: "The examiner says: 'Sie müssen alles ausfüllen.'", contextSentence: "Ich helfe dir beim Ausfüllen." },
+          { vocabId: "vocab18-1-3", encounterMoment: "You check the DOB field: 'Ihr Geburtsdatum, bitte.'", contextSentence: "Mein Geburtsdatum ist der 10. Mai." },
+          { vocabId: "vocab18-1-5", encounterMoment: "You look for nationality: 'Ihre Staatsangehörigkeit ist indisch.'", contextSentence: "Was ist Ihre Staatsangehörigkeit?" },
+        ],
+        decisionPoints: [
+          {
+            moment: "You're filling out a form for 'Arun Krishnan Nair'. Which name goes into the 'Nachname' field?",
+            options: [
+              { text: "Nair.", isCorrect: true, response: "Exactly! The last name is the 'Nachname' or 'Familienname'.", kuttanReaction: "Adipoli! Name logic perfectly capture cheythallo! 🔥" },
+              { text: "Arun Krishnan.", isCorrect: false, response: "Aiyyo! That's the 'Vorname' (First Name). Don't swap them, machaa!", kuttanReaction: "Vite machane! Labels sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You need to write the date: 7th November 2001. Which format is correct for a German form?",
+            options: [
+              { text: "07.11.2001.", isCorrect: true, response: "Correct! Day.Month.Year with dots is the German standard.", kuttanReaction: "Superb! Date logic correctly picked! ⭐" },
+              { text: "11/07/2001.", isCorrect: false, response: "No! Slashes are for English. Use dots in Germany, or they'll think you were born in July!", kuttanReaction: "Aiyyo! Date mistake machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v18-1-1",
@@ -47,7 +87,34 @@ export const MODULE_18: Module = {
             "Use the correct German date format (TT.MM.JJJJ)",
             "Write German addresses in correct format (Straße Nr, PLZ Stadt)"
           ],
-          placeholderThumbnail: "/images/thumbnails/schreiben-forms.jpg"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Schreiben Teil 1 — Form Fields",
+              headers: ["Field", "German", "Example"],
+              rows: [
+                ["First name", "Vorname", "Arun Krishnan"],
+                ["Surname", "Nachname / Familienname", "Nair"],
+                ["Date of birth", "Geburtsdatum", "05.03.1998"],
+                ["Place of birth", "Geburtsort", "Kochi"],
+                ["Nationality", "Staatsangehörigkeit", "indisch"],
+                ["Address", "Adresse", "Mozartstr. 12, 10115 Berlin"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Free Marks Section!",
+              variant: "tip",
+              content: "Schreiben Teil 1 is the EASIEST section. Just copy information from the text into the correct form fields. No spelling mistakes, correct date format (TT.MM.JJJJ), and you get full marks!"
+            },
+            {
+              type: "note",
+              title: "Vorname vs Nachname",
+              variant: "warning",
+              content: "Vorname = first/given name. Nachname = family/surname. If you are 'Priya Menon', Vorname = Priya, Nachname = Menon. Don't swap them!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -57,6 +124,7 @@ export const MODULE_18: Module = {
           question: "📋 ANMELDEFORMULAR — Volkshochschule Berlin\n\nYou are registering for a German course. Your name is Arun Krishnan Nair.\n\nForm field: 'Vorname' → ___",
           options: ["Arun Krishnan", "Nair", "Arun Krishnan Nair", "Krishnan"],
           correctAnswer: "Arun Krishnan",
+          imageUrl: "/images/university_library.png",
           explanation: "Point Check: 'Vorname' is your First Name (Arun Krishnan). Your family name/surname is the 'Nachname' (Nair). Don't swap them, or the system might call you 'Mr. Arun' instead of 'Mr. Nair'!",
           xpReward: 12
         },
@@ -223,6 +291,46 @@ export const MODULE_18: Module = {
       description: "Master Schreiben Teil 2! Write short messages of about 30 words responding to real exam prompts — each with 3 Inhaltspunkte to address.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Exam Hall (Im Prüfungssaal)",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "The final writing task! You have to write an email (around 30 words) based on 3 points. You're writing to your teacher, Frau Müller, because you can't come to class. You're sick. You're asking for homework. You remember the golden rule: Apologize, give a reason, and make a request. Informal vs formal greetings... 'Liebe Frau Müller' or 'Sehr geehrte...'? You've got this, machane!",
+        },
+        narrative: {
+          previousRecap: "Forms are filled! Now, let's flex those sentence-building muscles!",
+          currentObjective: "Write a short, grammatically correct German email that addresses all three provided content points accurately",
+          nextTeaser: "Final Score: Speaking! Let's introduce ourselves to the examiners!",
+        },
+        kuttanIntro: [
+          "Machane! This is where we show off our writing. 30 words ezhuthiyaal mathi, but those 30 words must hit 3 target points (Inhaltspunkte).",
+          "One point miss aayaal marks pokum. Each point-inum oru sentence ezhuthaname! Keep it simple—subject, verb, object.",
+          "Check the audience: If it's a friend, use 'Lieber/Liebe'. If it's a teacher or landlord, go formal with 'Sehr geehrte...'. Let's draft a perfect message!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab18-2-1", encounterMoment: "You look at the prompt: 'Schreiben Sie eine Nachricht.'", contextSentence: "Die Nachricht ist sehr kurz." },
+          { vocabId: "vocab18-2-2", encounterMoment: "You start the email: 'Ich möchte mich entschuldigen.'", contextSentence: "Sie müssen sich beim Lehrer entschuldigen." },
+          { vocabId: "vocab18-2-3", encounterMoment: "You write to a friend: 'Vielen Dank für die Einladung.'", contextSentence: "Ich sende dir eine Einladung." },
+          { vocabId: "vocab18-2-4", encounterMoment: "You check your points: 'Drei Inhaltspunkte sind wichtig.'", contextSentence: "Beachten Sie alle Inhaltspunkte." },
+        ],
+        decisionPoints: [
+          {
+            moment: "📋 Situation: You're inviting Max to dinner on Saturday. You need to thank him for helping you move, invite him, and ask what he likes to eat. Which sentence covers the food part correctly?",
+            options: [
+              { text: "Was isst du gern?", isCorrect: true, response: "Exactly! A direct question about his preference.", kuttanReaction: "Adipoli! Food logic perfectly capture cheythallo! 🔥" },
+              { text: "Was machen wir am Samstag?", isCorrect: false, response: "Aiyyo! That's too general. You specifically need to ask about what he eats, machaa!", kuttanReaction: "Vite machane! Prompt sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You're writing to your friend Tom. Which greeting is correct?",
+            options: [
+              { text: "Lieber Tom.", isCorrect: true, response: "Correct! 'Lieber' for boys, 'Liebe' for girls. Simple gender logic.", kuttanReaction: "Superb! Greeting logic correctly picked! ⭐" },
+              { text: "Sehr geehrter Tom.", isCorrect: false, response: "No! 'Sehr geehrter' is too formal for a friend, machaa! Sounds weird.", kuttanReaction: "Aiyyo! Tone mistake machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v18-2-1",
@@ -247,7 +355,33 @@ export const MODULE_18: Module = {
             "Use appropriate greetings (Anrede) and closings (Gruß)",
             "Keep within the 30-word target"
           ],
-          placeholderThumbnail: "/images/thumbnails/schreiben-messages.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Schreiben Teil 2 — Email Structure",
+              headers: ["Part", "Formal", "Informal"],
+              rows: [
+                ["Greeting", "Sehr geehrte Damen und Herren,", "Lieber Tom, / Liebe Anna,"],
+                ["Point 1", "(e.g., apologize / cancel)", "(e.g., apologize / cancel)"],
+                ["Point 2", "(e.g., give reason)", "(e.g., give reason)"],
+                ["Point 3", "(e.g., ask / suggest)", "(e.g., ask / suggest)"],
+                ["Closing", "Mit freundlichen Grüßen", "Viele Grüße"]
+              ]
+            },
+            {
+              type: "note",
+              title: "3 Points = Full Marks!",
+              variant: "warning",
+              content: "You MUST address all 3 Inhaltspunkte (content points). Missing even one point costs you marks. Write one sentence per point — simple and grammatically correct is better than complex and wrong."
+            },
+            {
+              type: "note",
+              title: "Gender in Greetings",
+              variant: "tip",
+              content: "'Lieber' for male recipients (Lieber Tom), 'Liebe' for female recipients (Liebe Anna). After the comma, the next word starts with a SMALL letter (unless it's a noun)."
+            }
+          ]
         }
       ],
       exercises: [
@@ -448,6 +582,46 @@ export const MODULE_18: Module = {
       description: "Nail Sprechen Teil 1! Practice self-introductions covering Name, Alter, Land, Sprachen, Beruf, Wohnort, Familie, and Hobbys — with topic cards just like the real exam.",
       duration: "45 min",
       xpReward: 120,
+      storyScene: {
+        setting: {
+          name: "Speaking Room (Im Prüfungszimmer)",
+          sceneType: "office",
+          timeOfDay: "afternoon",
+          description: "You're in a quiet room with 3 other candidates and 2 examiners. It's your turn. 'Bitte stellen Sie sich vor.' You take a deep breath. 'Ich heiße Kuttan, ich bin 25 Jahre alt, ich komme aus Indien...'. You follow the 7 points: Name, Age, Country, City, Languages, Profession, Hobbies. Then, the examiner asks you to spell your name. 'K-U-T-T-A-N'. Perfect. Then your phone number. 'Null-Eins-Fünf...'. You're speaking German, machane!",
+        },
+        narrative: {
+          previousRecap: "Writing is done! Now, let's let the world hear your German voice!",
+          currentObjective: "Introduce yourself fluently covering all 7 required topics and respond correctly to basic personal questions",
+          nextTeaser: "Final Challenge: Interaction! Let's ask and answer questions with our partners!",
+        },
+        kuttanIntro: [
+          "Machane! This is your 'Grand Entry'. Nammale patti full fluently parayanam. Mirror practice cheythathu ippol helpful aakum!",
+          "The examiners are friendly. Don't rush. One sentence for each point. 'Ich heiße...', 'Ich komme aus...', 'Ich wohne in...'. Simple and clear.",
+          "Watch out for the 'Spelling Trap'. If they say 'Buchstabieren Sie bitte!', spell your name slowly. A-B-C-D... ready aayirikkiu!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab18-3-1", encounterMoment: "The examiner says: 'Bitte stellen Sie sich vor.'", contextSentence: "Können Sie sich vorstellen?" },
+          { vocabId: "vocab18-3-2", encounterMoment: "You look at the list: 'Hier ist Ihr Steckbrief.'", contextSentence: "Der Steckbrief hat alle Informationen." },
+          { vocabId: "vocab18-3-4", encounterMoment: "You state your city: 'Mein Wohnort ist München.'", contextSentence: "Wo ist Ihr Wohnort?" },
+          { vocabId: "vocab18-3-5", encounterMoment: "You pick a card: 'Ziehen Sie eine Wortkarte.'", contextSentence: "Die Wortkarte hat ein Thema." },
+        ],
+        decisionPoints: [
+          {
+            moment: "🎤 Examiner asks: 'Wie alt sind Sie?' How do you answer correctly?",
+            options: [
+              { text: "Ich bin 25 Jahre alt.", isCorrect: true, response: "Exactly! Use 'sein' (bin) for age in German.", kuttanReaction: "Adipoli! Age logic perfectly capture cheythallo! 🔥" },
+              { text: "Ich habe 25 Jahre alt.", isCorrect: false, response: "Aiyyo! In English we say 'I have', but in German we ARE. 'Ich bin...', machaa!", kuttanReaction: "Vite machane! Verb selection sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "🎤 Examiner says: 'Buchstabieren Sie Ihren Namen, bitte.' What should you do?",
+            options: [
+              { text: "Spell your name letter by letter in German (A, B, C...).", isCorrect: true, response: "Correct! That's what 'buchstabieren' means.", kuttanReaction: "Superb! Spelling logic correctly picked! ⭐" },
+              { text: "Repeat your full name slowly.", isCorrect: false, response: "No! Spelling means letters, machaa! K-U-T-T-A-N.", kuttanReaction: "Aiyyo! Instruction mistake machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v18-3-1",
@@ -472,7 +646,35 @@ export const MODULE_18: Module = {
             "Create a personal Steckbrief (profile card)",
             "Speak clearly and confidently in exam conditions"
           ],
-          placeholderThumbnail: "/images/thumbnails/sprechen-vorstellen.jpg"
+          placeholderThumbnail: "/images/job_interview.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Sprechen Teil 1 — Self-Introduction Topics",
+              headers: ["Topic", "German Phrase", "Example"],
+              rows: [
+                ["Name", "Ich heiße...", "Ich heiße Arun Nair."],
+                ["Age", "Ich bin ... Jahre alt.", "Ich bin 25 Jahre alt."],
+                ["Country", "Ich komme aus...", "Ich komme aus Indien, aus Kerala."],
+                ["City", "Ich wohne in...", "Ich wohne in Berlin."],
+                ["Languages", "Ich spreche...", "Ich spreche Malayalam, Englisch und ein bisschen Deutsch."],
+                ["Job", "Ich bin... / Ich arbeite als...", "Ich bin Student."],
+                ["Hobbies", "Meine Hobbys sind...", "Meine Hobbys sind Cricket und Kochen."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Spelling & Numbers!",
+              variant: "warning",
+              content: "The examiner may ask 'Buchstabieren Sie bitte!' (Spell it!). Practice spelling your name in German letters. Also practice saying your phone number digit by digit: null, eins, zwei..."
+            },
+            {
+              type: "note",
+              title: "Mirror Practice = Guaranteed Marks",
+              variant: "tip",
+              content: "Practice your self-introduction in front of a mirror 10 times. It should become automatic. Eye contact + clear voice + confident delivery = full marks!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -533,6 +735,7 @@ export const MODULE_18: Module = {
             "Ich mache Krankenschwester."
           ],
           correctAnswer: "Ich bin Krankenschwester von Beruf.",
+          imageUrl: "/images/job_interview.png",
           explanation: "Job Talk: In German, you don't need 'a' for jobs. Just say 'Ich bin Krankenschwester'. Adiyipoli sentence structure!",
           xpReward: 15
         },
@@ -689,6 +892,46 @@ export const MODULE_18: Module = {
       description: "Master Sprechen Teil 2! Draw topic cards (Wortkarten) like 'Supermarkt', 'Essen', or 'Reisen' and practice formulating questions and giving complete answers.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Speaking Room (Im Prüfungszimmer)",
+          sceneType: "office",
+          timeOfDay: "afternoon",
+          description: "Card game time! You and your partner are taking turns. You pick a card with a keyword like 'Essen' or 'Reisen' and a theme like 'Einkaufen'. You have to ask your partner a question. 'Was essen Sie gern?'. Your partner answers. Then they ask you. You keep the conversation going. It's like a real-life chat in a German market or cafe. Stay friendly and clear, machane!",
+        },
+        narrative: {
+          previousRecap: "Introduction is done! Now, let's talk about the world around us with our fellow candidates!",
+          currentObjective: "Formulate correct questions based on topic cards and provide detailed, natural answers to partner's questions",
+          nextTeaser: "Final Score: Requests! Let's ask for things using image-based cards!",
+        },
+        kuttanIntro: [
+          "Machane! This is the most interactive part. Draw a card, look at the word, and ask a question. The theme is usually something like 'Einkaufen' (Shopping) or 'Essen' (Food).",
+          "Don't go off-topic! If the card says 'Supermarkt' and the theme is 'Einkaufen', don't ask about hobbies. Ask: 'Wo kaufen Sie meistens ein?'.",
+          "When you answer, don't just say 'Ja' or 'Nein'. Add a detail. 'Ja, ich esse gern Biryani... oops, ich meine, ich esse gern Curry!'. Let's practice!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab18-4-1", encounterMoment: "The examiner says: 'Stellen Sie eine Frage.'", contextSentence: "Ich habe eine Frage zum Supermarkt." },
+          { vocabId: "vocab18-4-2", encounterMoment: "Your partner answers: 'Hier ist meine Antwort.'", contextSentence: "Die Antwort ist richtig." },
+          { vocabId: "vocab18-4-3", encounterMoment: "Instructions say: 'Fragen stellen und beantworten.'", contextSentence: "Kannst du die Frage stellen?" },
+          { vocabId: "vocab18-4-5", encounterMoment: "You check the theme: 'Das Thema ist Reisen.'", contextSentence: "Was ist das Thema heute?" },
+        ],
+        decisionPoints: [
+          {
+            moment: "🎤 You draw a card with 'Supermarkt' for the theme 'Einkaufen'. Which question is best?",
+            options: [
+              { text: "Wo kaufen Sie meistens ein?", isCorrect: true, response: "Exactly! It matches the keyword 'Supermarkt' and the theme perfectly.", kuttanReaction: "Adipoli! Question logic perfectly capture cheythallo! 🔥" },
+              { text: "Haben Sie ein Auto?", isCorrect: false, response: "Aiyyo! That has nothing to do with a supermarket, machaa!", kuttanReaction: "Vite machane! Card content sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "🎤 Your partner asks: 'Haben Sie Geschwister?' What is the best way to answer?",
+            options: [
+              { text: "Ja, ich habe zwei Schwestern.", isCorrect: true, response: "Correct! A full sentence with a detail gets you those extra marks.", kuttanReaction: "Superb! Answer logic correctly picked! ⭐" },
+              { text: "Ja.", isCorrect: false, response: "No! Just 'Ja' is too short for a 10/10 student, machaa! Add something more.", kuttanReaction: "Aiyyo! Detail mistake machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v18-4-1",
@@ -713,7 +956,33 @@ export const MODULE_18: Module = {
             "Give complete answers (not just Ja/Nein)",
             "Handle 7 common exam topics: Essen, Familie, Wohnung, Freizeit, Arbeit, Reisen, Einkaufen"
           ],
-          placeholderThumbnail: "/images/thumbnails/sprechen-fragen.jpg"
+          placeholderThumbnail: "/images/job_interview_setting.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Sprechen Teil 2 — Topic Card Questions",
+              headers: ["Topic Card", "W-Frage", "Ja/Nein-Frage"],
+              rows: [
+                ["Essen", "Was essen Sie gern?", "Mögen Sie Curry?"],
+                ["Reisen", "Wohin reisen Sie gern?", "Haben Sie ein Auto?"],
+                ["Familie", "Haben Sie Geschwister?", "Sind Sie verheiratet?"],
+                ["Einkaufen", "Wo kaufen Sie meistens ein?", "Gehen Sie gern in den Supermarkt?"],
+                ["Hobby", "Was machen Sie in der Freizeit?", "Spielen Sie gern Fußball?"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Never Just Say 'Ja' or 'Nein'!",
+              variant: "warning",
+              content: "Always give a FULL answer: 'Ja, ich habe zwei Schwestern.' NOT just 'Ja.' Adding details shows fluency and earns more marks. Even one extra sentence makes a big difference!"
+            },
+            {
+              type: "note",
+              title: "Didn't Hear? Ask Politely!",
+              variant: "tip",
+              content: "If you didn't understand, say: 'Entschuldigung, können Sie das bitte noch einmal sagen?' (Excuse me, can you say that again?). This is totally acceptable in the exam!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -943,7 +1212,37 @@ export const MODULE_18: Module = {
             "Handle common everyday request scenarios from the exam",
             "Use politeness markers: bitte, danke, Entschuldigung"
           ],
-          placeholderThumbnail: "/images/thumbnails/sprechen-bitten.jpg"
+          placeholderThumbnail: "/images/job_interview_setting.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Polite Request Phrases",
+              headers: ["Phrase", "Meaning", "Politeness Level"],
+              rows: [
+                ["Können Sie mir bitte...?", "Can you please...?", "Polite"],
+                ["Könnten Sie bitte...?", "Could you please...?", "More polite"],
+                ["Darf ich...?", "May I...?", "Asking permission"],
+                ["Ich möchte gern...", "I would like...", "Polite request"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Response Phrases",
+              headers: ["Response", "Meaning", "When to Use"],
+              rows: [
+                ["Ja, natürlich!", "Yes, of course!", "Happy to help"],
+                ["Ja, gern!", "Yes, gladly!", "Willing to help"],
+                ["Ja, bitte!", "Yes, please!", "Giving permission"],
+                ["Tut mir leid, das geht leider nicht.", "Sorry, that's not possible.", "Declining politely"]
+              ]
+            },
+            {
+              type: "note",
+              title: "bitte & danke = Your Best Friends!",
+              variant: "tip",
+              content: "Always add 'bitte' (please) in requests and 'danke' (thank you) in responses. These magic words make any sentence more polite and are expected in the exam!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -1141,14 +1440,53 @@ export const MODULE_18: Module = {
       ]
     },
 
-    // ==================== LESSON 18-6 ====================
-    {
+{
       id: "18-6",
       title: "Kompletter Übungstest — Alle 4 Teile",
       titleGerman: "Kompletter Übungstest — Hören, Lesen, Schreiben, Sprechen",
-      description: "Take a complete Goethe A1 mock exam! All 4 parts — Hören (5), Lesen (5), Schreiben (3), Sprechen (3) — in authentic exam format. You've got this!",
-      duration: "90 min",
+      description: "Full mock exam covering ALL parts — Hören, Lesen, Schreiben, and Sprechen. Test yourself under real exam conditions to build final confidence!",
+      duration: "120 min",
       xpReward: 300,
+      storyScene: {
+        setting: {
+          name: "Goethe-Institut (Prüfungszentrum)",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "This is it. The real feel. You're sitting in the exam hall, clock ticking. Hören, Lesen, Schreiben, Sprechen—all sections in one go. You've got your black pen (Kugelschreiber), your ID (Ausweis), and 100% focus. You're applying everything you've learned. From 'Namaskaram' to this moment, you've built the bridge. Let's finish this with an Adipoli score!",
+        },
+        narrative: {
+          previousRecap: "You've practiced the parts. Now, let's conquer the whole!",
+          currentObjective: "Complete a full A1 exam simulation and prove your readiness for the official certificate",
+          nextTeaser: "Final Score: Celebration! Let's celebrate your A1 journey at the cafe!",
+        },
+        kuttanIntro: [
+          "Machane! This is the 'Diamond Run'. No more practice, this is the real deal simulation. 120 minutes of 100% concentration.",
+          "Keep an eye on the clock. Hören goes fast, Lesen needs scanning, and Schreiben needs precision. Don't let one hard question slow you down.",
+          "You've learned the logic, the culture, and the vocabulary. Trust your instincts. 'Koppippadi' isn't enough—you've got the real Adipoli German foundations now. Let's start!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab18-6-1", encounterMoment: "You start the paper: 'Das ist eine Übungsprüfung.'", contextSentence: "Die Übungsprüfung ist sehr nützlich." },
+          { vocabId: "vocab18-6-2", encounterMoment: "You set your goal: 'Ich möchte die Prüfung bestehen.'", contextSentence: "Sie werden die Prüfung bestehen." },
+          { vocabId: "vocab18-6-3", encounterMoment: "You check the rules: 'Die Prüfung dauert zwei Stunden.'", contextSentence: "Wann beginnt die Prüfung?" },
+          { vocabId: "vocab18-6-4", encounterMoment: "You think of the future: 'Wie ist mein Ergebnis?'", contextSentence: "Das Ergebnis war sehr gut." },
+        ],
+        decisionPoints: [
+          {
+            moment: "📢 Hören Teil 1: 'Der Zug nach Berlin fährt heute nicht um 9 Uhr, sondern um 9:30 Uhr.' When does the train leave?",
+            options: [
+              { text: "9:30 Uhr.", isCorrect: true, response: "Exactly! 'Nicht... sondern' logic perfectly captured.", kuttanReaction: "Adipoli! Time logic perfectly capture cheythallo! 🔥" },
+              { text: "9:00 Uhr.", isCorrect: false, response: "Aiyyo! 'Nicht um 9' means NOT at 9, machaa! Listen for the 'sondern' part.", kuttanReaction: "Vite machane! Negation sradhikkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "📖 Lesen Ad: 'Schöne Wohnung, 650€ warm. Keine Haustiere.' Can you bring a dog?",
+            options: [
+              { text: "No.", isCorrect: true, response: "Correct! 'Keine Haustiere' means no pets at all.", kuttanReaction: "Superb! Ad logic correctly picked! ⭐" },
+              { text: "Yes.", isCorrect: false, response: "No! 'Haustiere' are pets, and 'Keine' is zero, machaa!", kuttanReaction: "Aiyyo! Vocab mistake machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v18-6-1",
@@ -1174,7 +1512,41 @@ export const MODULE_18: Module = {
             "Manage time effectively across the full exam",
             "Build confidence for exam day"
           ],
-          placeholderThumbnail: "/images/thumbnails/mock-exam-final.jpg"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Exam Day — Section-by-Section Tips",
+              headers: ["Section", "Key Tip", "Max Points"],
+              rows: [
+                ["Hören", "Read questions first, listen for keywords", "25"],
+                ["Lesen", "Scan for keywords, don't translate word-by-word", "25"],
+                ["Schreiben", "Teil 1: copy carefully. Teil 2: cover all 3 points", "25"],
+                ["Sprechen", "Teil 1: memorize intro. Teil 2: full sentences. Teil 3: be polite!", "25"]
+              ]
+            },
+            {
+              type: "note",
+              title: "What to Bring",
+              variant: "warning",
+              content: "Ausweis (ID/passport), Bestätigung (confirmation email), schwarzer Kugelschreiber (black pen). Arrive 30 minutes early. No phones allowed during the exam!"
+            },
+            {
+              type: "note",
+              title: "You've Got This!",
+              variant: "info",
+              content: "60/100 points to pass. Maximum 25 points per section. Don't get stuck on one question — mark it and move on. Trust your preparation from Module 1 to 18. Adipoli performance nadakatte!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "bestehen", english: "to pass (an exam)", malayalam: "പാസാകുക", pronunciation: "be-shtay-en" },
+                { german: "die Prüfung", english: "exam", malayalam: "പരീക്ഷ", pronunciation: "prü-fung" },
+                { german: "schaffen", english: "to manage / to achieve", malayalam: "നേടുക", pronunciation: "sha-fen" },
+                { german: "Viel Erfolg!", english: "Good luck!", malayalam: "ആശംസകൾ!", pronunciation: "feel er-folk" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -1368,6 +1740,86 @@ export const MODULE_18: Module = {
         }
       ],
       vocabulary: []
+    },
+
+    // ==================== LESSON 18-7: Adipoli A1 Conclusion ====================
+    {
+      id: "18-7",
+      title: "Adipoli A1 Conclusion — Celebration!",
+      titleGerman: "Kursabschluss — Herzlichen Glückwunsch!",
+      description: "You've done it! Celebrate your journey from Module 1 to Module 18. Reflect on how far you've come and look forward to the future!",
+      duration: "30 min",
+      xpReward: 500,
+      storyScene: {
+        setting: {
+          name: "Cozy Cafe (Im Café)",
+          sceneType: "restaurant",
+          timeOfDay: "evening",
+          description: "It's all over! The exam is done, and you're feeling a mix of relief and pride. You're sitting with Arjun and Priya at a cozy cafe in Munich. The 'Stammtisch' feel is real. Kuttan pulls out his phone to show a photo of his results: 'PASS!'. Arjun clinks his glass against yours. 'Herzlichen Glückwunsch, machaa! You're officially an A1 speaker now!'. Priya smiles: 'Next stop, A2?'. You take a sip of your drink and look out at the Munich streets. From Kerala to here—you've built the bridge. Adipoli!",
+        },
+        narrative: {
+          previousRecap: "You've conquered the Goethe A1 exam!",
+          currentObjective: "Celebrate your success and reflect on your learning journey",
+          nextTeaser: "Coming Soon: Adipoli A2! The journey continues!",
+        },
+        kuttanIntro: [
+          "Machane! We did it! From 'Namaskaram' in Module 1 to 'Herzlichen Glückwunsch' today. It wasn't just about grammar—it was about building a new life.",
+          "Think back to the first time you tried to say 'Ich heiße...'. Now look at you, decoding apartment ads and making polite requests like a pro. You've earned this celebration!",
+          "This is not the end, it's just the 'Golden Beginning'. German is now a part of you. Let's celebrate our Erfolg (success) together!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab18-7-1", encounterMoment: "Arjun raises his glass: 'Das ist ein großer Erfolg!'", contextSentence: "Viel Erfolg für die Zukunft!" },
+          { vocabId: "vocab18-7-2", encounterMoment: "You look at your results: 'Das Zertifikat ist da.'", contextSentence: "Ich habe mein A1-Zertifikat bekommen." },
+          { vocabId: "vocab18-7-3", encounterMoment: "Priya asks about plans: 'Was machst du in der Zukunft?'", contextSentence: "Die Zukunft ist voller Möglichkeiten." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Looking back at the 18 modules, what was your favorite part of learning German with 'Adipoli German'?",
+            options: [
+              { text: "The Kerala-German cultural parallels (Manglish bridges).", isCorrect: true, response: "Exactly! That's the heart of our journey—context is everything.", kuttanReaction: "Adipoli! That's what makes us special, machane! 🔥" },
+              { text: "The structured exam practice.", isCorrect: true, response: "Great! Preparation is the key to confidence.", kuttanReaction: "Superb! Strategy marks jeyippikkum! ⭐" },
+            ],
+          },
+          {
+            moment: "What are your plans for the Zukunft (future)?",
+            options: [
+              { text: "Continue with Adipoli A2 and master the language!", isCorrect: true, response: "Wunderbar! The bridge gets stronger from here.", kuttanReaction: "Adipoli! A2-il kaanaam, machane! 🔥" },
+              { text: "Use my A1 skills to find a job or study in Germany.", isCorrect: true, response: "Superb! That's the goal. You have the foundation now.", kuttanReaction: "Adipoli! All the best for your career, machane! ⭐" },
+            ],
+          },
+        ],
+      },
+      videos: [],
+      exercises: [],
+      vocabulary: [
+        {
+          id: "vocab18-7-1",
+          german: "der Erfolg",
+          english: "the success",
+          malayalam: "വിജയം",
+          pronunciation: "dehr er-folk",
+          example: "Viel Erfolg!",
+          exampleTranslation: "Much success!"
+        },
+        {
+          id: "vocab18-7-2",
+          german: "das Zertifikat",
+          english: "the certificate",
+          malayalam: "സർട്ടിഫിക്കറ്റ്",
+          pronunciation: "dahs tser-ti-fi-kaht",
+          example: "Ich habe das A1-Zertifikat.",
+          exampleTranslation: "I have the A1 certificate."
+        },
+        {
+          id: "vocab18-7-3",
+          german: "die Zukunft",
+          english: "the future",
+          malayalam: "ഭാവി",
+          pronunciation: "dee tsoo-koonft",
+          example: "Alles Gute für die Zukunft!",
+          exampleTranslation: "All the best for the future!"
+        }
+      ]
     }
   ]
-};
+};

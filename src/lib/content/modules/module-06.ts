@@ -99,7 +99,36 @@ export const MODULE_6: Module = {
             "Understand the importance of grammatical gender with food nouns",
             "Recognize German food culture basics"
           ],
-          placeholderThumbnail: "/images/german_bakery.png"
+          placeholderThumbnail: "/images/german_bakery.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Essential Food Vocabulary",
+              headers: ["German", "Article", "English", "Malayalam"],
+              rows: [
+                ["Brot", "das", "bread", "റൊട്ടി"],
+                ["Reis", "der", "rice", "ചോറ്"],
+                ["Fleisch", "das", "meat", "ഇറച്ചി"],
+                ["Fisch", "der", "fish", "മീൻ"],
+                ["Gemüse", "das", "vegetables", "പച്ചക്കറി"],
+                ["Obst", "das", "fruit", "പഴം"],
+                ["Kartoffel", "die", "potato", "ഉരുളക്കിഴങ്ങ്"],
+                ["Käse", "der", "cheese", "ചീസ്"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Bread is King in Germany!",
+              variant: "info",
+              content: "Germany has over 300 types of bread — more than any other country! 'Brot' and 'Brötchen' (bread rolls) are staple items. For Malayalis, think of bread as the German equivalent of rice."
+            },
+            {
+              type: "note",
+              title: "Articles Matter for Food!",
+              variant: "tip",
+              content: "Learn every food word WITH its article: 'das Brot', 'der Reis', 'die Kartoffel'. You will need the correct article when ordering: 'Ich nehme DEN Reis' (accusative!)."
+            }
+          ]
         },
         {
           id: "v6-1-2",
@@ -128,7 +157,39 @@ export const MODULE_6: Module = {
             "Use 'scharf' and other food adjectives",
             "Talk about dietary preferences (vegetarisch, vegan)"
           ],
-          placeholderThumbnail: "/images/kaffeeklatsch.png"
+          placeholderThumbnail: "/images/kaffeeklatsch.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Indian/Kerala Foods in German",
+              headers: ["Food", "German", "Useful Phrase"],
+              rows: [
+                ["Curry", "das Curry", "Ich esse gern Curry."],
+                ["Dal/Parippu", "die Linsen", "Ich esse gern Linsen."],
+                ["Chicken", "das Hühnchen", "Hühnchen Curry, bitte!"],
+                ["Biryani", "der Biryani", "Mein Lieblingsessen ist Biryani."],
+                ["Naan", "das Naan", "Naan mit Curry."],
+                ["Chapati", "das Chapati", "Zwei Chapati, bitte."]
+              ]
+            },
+            {
+              type: "table",
+              title: "Dietary Preferences",
+              headers: ["German", "English", "Sentence"],
+              rows: [
+                ["vegetarisch", "vegetarian", "Ich bin Vegetarier/in."],
+                ["vegan", "vegan", "Ich esse vegan."],
+                ["scharf", "spicy", "Ich esse gern scharf."],
+                ["Lieblingsessen", "favourite food", "Mein Lieblingsessen ist..."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Germans and Spice",
+              variant: "tip",
+              content: "What Malayalis consider 'mild' is already 'sehr scharf' (very spicy) for most Germans! When describing Kerala food, always warn: 'Vorsicht, das ist SEHR scharf!' They will thank you later."
+            }
+          ]
         }
       ],
       exercises: [
@@ -408,7 +469,37 @@ export const MODULE_6: Module = {
             "Use 'gern' and 'nicht gern' to express drink preferences",
             "Order a drink politely in German"
           ],
-          placeholderThumbnail: "/images/water_types.png"
+          placeholderThumbnail: "/images/water_types.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Common German Drinks",
+              headers: ["German", "Article", "English"],
+              rows: [
+                ["Kaffee", "der", "coffee"],
+                ["Tee", "der", "tea"],
+                ["Wasser", "das", "water"],
+                ["Saft", "der", "juice"],
+                ["Milch", "die", "milk"],
+                ["Bier", "das", "beer"],
+                ["Wein", "der", "wine"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Water Trap!",
+              variant: "warning",
+              content: "If you order 'Wasser' in Germany, you will get SPARKLING water (mit Kohlensäure)! For still water, always say: 'Stilles Wasser, bitte' or 'Wasser ohne Kohlensäure'. Otherwise, prepare for bubbles!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Ich hätte gern...", english: "I would like...", malayalam: "എനിക്ക് ... വേണം", pronunciation: "ikh het-te gairn" },
+                { german: "mit Kohlensäure", english: "sparkling", malayalam: "സോഡ/ബബിൾസ്", pronunciation: "mit ko-len-zoy-re" },
+                { german: "ohne Kohlensäure", english: "still (no gas)", malayalam: "സാധാരണ വെള്ളം", pronunciation: "oh-ne ko-len-zoy-re" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -639,7 +730,39 @@ export const MODULE_6: Module = {
             "Read basic menu sections (Vorspeise, Hauptgericht, Nachspeise)",
             "Ask for recommendations and make special requests"
           ],
-          placeholderThumbnail: "/images/german_menu.png"
+          placeholderThumbnail: "/images/german_menu.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Restaurant Ordering Phrases",
+              headers: ["German", "English", "When to Use"],
+              rows: [
+                ["Einen Tisch für zwei, bitte.", "A table for two, please.", "Entering"],
+                ["Die Speisekarte, bitte!", "The menu, please!", "Sitting down"],
+                ["Ich hätte gern das Schnitzel.", "I would like the schnitzel.", "Ordering"],
+                ["Ich nehme die Suppe.", "I'll take the soup.", "Ordering"],
+                ["Was empfehlen Sie?", "What do you recommend?", "Unsure"],
+                ["Ohne Zwiebeln, bitte.", "Without onions, please.", "Special request"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Menu Sections",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["die Vorspeise", "starter/appetizer", "സ്റ്റാർട്ടർ"],
+                ["das Hauptgericht", "main course", "പ്രധാന വിഭവം"],
+                ["die Nachspeise", "dessert", "ഡെസ്സേർട്ട്"],
+                ["die Getränke", "drinks", "പാനീയങ്ങൾ"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Speisekarte vs Menü",
+              variant: "warning",
+              content: "Don't say 'das Menü' when you want the menu! 'Menü' means a fixed set meal (like a combo). The word for menu is 'die Speisekarte' (literally: food card). This is a classic mistake!"
+            }
+          ]
         },
         {
           id: "v6-3-2",
@@ -668,7 +791,33 @@ export const MODULE_6: Module = {
             "Understand German tipping culture",
             "Use polite restaurant exit phrases"
           ],
-          placeholderThumbnail: "/images/tipping_gesture.png"
+          placeholderThumbnail: "/images/tipping_gesture.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Paying & Tipping Phrases",
+              headers: ["German", "English", "Context"],
+              rows: [
+                ["Die Rechnung, bitte!", "The bill, please!", "Asking to pay"],
+                ["Zahlen, bitte!", "Pay, please!", "Shorter version"],
+                ["Zusammen oder getrennt?", "Together or separate?", "Waiter asks"],
+                ["Stimmt so!", "Keep the change!", "Leaving a tip"],
+                ["Kann ich mit Karte zahlen?", "Can I pay by card?", "Checking payment"]
+              ]
+            },
+            {
+              type: "note",
+              title: "German Tipping Culture",
+              variant: "info",
+              content: "In Germany, tips are 5-10% (not 15-20% like the USA). The easiest way: if the bill is 18.50, say 'Zwanzig, bitte' or 'Stimmt so!' when handing over 20 euros. The waiter keeps the rest."
+            },
+            {
+              type: "note",
+              title: "Cash is Still King!",
+              variant: "warning",
+              content: "Many German restaurants, bakeries, and small shops ONLY accept cash (Nur Barzahlung). Always carry some cash with you! 'Kann ich mit Karte zahlen?' — ask this BEFORE ordering at small places."
+            }
+          ]
         }
       ],
       exercises: [
@@ -972,7 +1121,38 @@ export const MODULE_6: Module = {
             "Use 'möchten' for polite requests",
             "Differentiate between mögen, möchten, and gern"
           ],
-          placeholderThumbnail: "/images/kaffee_kuchen.png"
+          placeholderThumbnail: "/images/kaffee_kuchen.png",
+          richContent: [
+            {
+              type: "table",
+              title: "3 Ways to Express Likes",
+              headers: ["Form", "Meaning", "Example", "Use When"],
+              rows: [
+                ["mögen", "to like (general)", "Ich mag Reis.", "Talking about general taste"],
+                ["gern + verb", "enjoy doing", "Ich esse gern Curry.", "Talking about activities"],
+                ["möchten", "would like (polite)", "Ich möchte einen Kaffee.", "Ordering / requesting now"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Conjugation of 'mögen' (to like)",
+              headers: ["Person", "mögen", "möchten"],
+              rows: [
+                ["ich", "mag", "möchte"],
+                ["du", "magst", "möchtest"],
+                ["er/sie/es", "mag", "möchte"],
+                ["wir", "mögen", "möchten"],
+                ["ihr", "mögt", "möchtet"],
+                ["sie/Sie", "mögen", "möchten"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Negation with 'kein'",
+              variant: "info",
+              content: "To say you don't like something: 'Ich mag KEIN Fleisch.' (neuter) / 'Ich mag KEINEN Fisch.' (masculine) / 'Ich mag KEINE Milch.' (feminine). Use 'kein' (not 'nicht') when negating a noun after mögen."
+            }
+          ]
         }
       ],
       exercises: [
@@ -1236,7 +1416,32 @@ export const MODULE_6: Module = {
             "Know that only masculine articles change in the accusative",
             "Apply accusative articles in food-related sentences"
           ],
-          placeholderThumbnail: "/images/university_library.png"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Accusative Case — Article Changes",
+              headers: ["Gender", "Nominative (Subject)", "Accusative (Object)", "Change?"],
+              rows: [
+                ["Masculine", "der / ein", "den / einen", "YES!"],
+                ["Feminine", "die / eine", "die / eine", "No change"],
+                ["Neuter", "das / ein", "das / ein", "No change"],
+                ["Plural", "die", "die", "No change"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Only Masculine Changes!",
+              variant: "tip",
+              content: "Think of it this way: masculine is the 'drama queen' of German grammar — ONLY masculine articles change in the accusative. Feminine, neuter, and plural all stay exactly the same. Just remember: der -> den, ein -> einen."
+            },
+            {
+              type: "note",
+              title: "Subject vs Object",
+              variant: "info",
+              content: "Nominative = the doer (subject): 'DER Mann trinkt.' Accusative = the receiver (direct object): 'Ich sehe DEN Mann.' Ask 'Who does it?' (nominative) vs 'Who/what receives the action?' (accusative)."
+            }
+          ]
         },
         {
           id: "v6-5-2",
@@ -1266,7 +1471,38 @@ export const MODULE_6: Module = {
             "Negate nouns with kein/keine/keinen in the accusative",
             "Build complete sentences with accusative objects"
           ],
-          placeholderThumbnail: "/images/supermarket_checkout.png"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Accusative with Food — Practice",
+              headers: ["Nominative", "Accusative", "Example"],
+              rows: [
+                ["der Reis (masc)", "den Reis", "Ich nehme den Reis."],
+                ["die Suppe (fem)", "die Suppe", "Ich esse die Suppe."],
+                ["das Brot (neut)", "das Brot", "Ich kaufe das Brot."],
+                ["ein Kaffee (masc)", "einen Kaffee", "Ich trinke einen Kaffee."],
+                ["eine Cola (fem)", "eine Cola", "Ich möchte eine Cola."],
+                ["ein Wasser (neut)", "ein Wasser", "Ich hätte gern ein Wasser."]
+              ]
+            },
+            {
+              type: "table",
+              title: "Negation with 'kein' in Accusative",
+              headers: ["Gender", "kein (Nom)", "kein (Akk)", "Example"],
+              rows: [
+                ["Masculine", "kein", "keinen", "Ich habe keinen Hunger."],
+                ["Feminine", "keine", "keine", "Ich trinke keine Milch."],
+                ["Neuter", "kein", "kein", "Ich esse kein Fleisch."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Verbs That Take Accusative",
+              variant: "info",
+              content: "These common verbs always need an accusative object: essen (eat), trinken (drink), nehmen (take), haben (have), möchten (would like), kaufen (buy), sehen (see). If you use these verbs, the noun after them is in accusative!"
+            }
+          ]
         }
       ],
       exercises: [

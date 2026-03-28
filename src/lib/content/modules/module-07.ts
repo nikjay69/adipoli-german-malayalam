@@ -89,7 +89,38 @@ export const MODULE_7: Module = {
             "Use basic shopping phrases at the checkout",
             "Understand cultural differences in German shopping"
           ],
-          placeholderThumbnail: "/images/supermarket_checkout.png"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Supermarket Essentials",
+              headers: ["German", "English", "Article"],
+              rows: [
+                ["die Milch", "milk", "die (f)"],
+                ["das Brot", "bread", "das (n)"],
+                ["die Butter", "butter", "die (f)"],
+                ["das Ei / die Eier", "egg / eggs", "das (n)"],
+                ["der Zucker", "sugar", "der (m)"],
+                ["das Mehl", "flour", "das (n)"],
+                ["die Nudeln", "pasta/noodles", "die (pl)"],
+                ["der Joghurt", "yoghurt", "der (m)"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Bring Your Own Bag!",
+              variant: "warning",
+              content: "German supermarkets do NOT give free bags! You must bring your own or buy 'die Tüte' (bag) at the checkout. Also, be fast at packing — Germans scan items at lightning speed!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Wo finde ich...?", english: "Where can I find...?", malayalam: "എവിടെ കിട്ടും...?", pronunciation: "vo fin-de ikh" },
+                { german: "Das ist alles.", english: "That's all.", malayalam: "അത്രയേ ഉള്ളൂ.", pronunciation: "das ist al-les" },
+                { german: "die Tüte", english: "bag", malayalam: "സഞ്ചി", pronunciation: "doo-te" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -306,7 +337,44 @@ export const MODULE_7: Module = {
             "Use vocabulary for expensive, cheap, and affordable",
             "Know common payment terms and cultural differences"
           ],
-          placeholderThumbnail: "/images/supermarket_checkout.png"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Talking About Prices",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["Was kostet das?", "What does this cost?", "ഇതിന്റെ വില എത്ര?"],
+                ["Wie viel kostet...?", "How much does ... cost?", "എത്ര വിലയാണ്...?"],
+                ["teuer", "expensive", "വിലകൂടിയ"],
+                ["billig", "cheap", "വിലകുറഞ്ഞ"],
+                ["günstig", "affordable / good value", "മിതമായ വില"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Comma = Decimal in Germany!",
+              variant: "warning",
+              content: "Germans write 3,50 € (not 3.50 €). The comma is the decimal separator! 'Drei Euro fünfzig' = €3.50. Also, dots are used for thousands: 1.000 = one thousand!"
+            },
+            {
+              type: "table",
+              title: "Payment Methods",
+              headers: ["German", "English"],
+              rows: [
+                ["bar zahlen", "pay cash"],
+                ["mit Karte zahlen", "pay by card"],
+                ["die Quittung / der Kassenbon", "receipt"],
+                ["Nur Barzahlung", "cash only"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Cash is King!",
+              variant: "tip",
+              content: "Unlike India's UPI revolution, many German shops still prefer cash. Always carry some Euro notes and coins. If you see 'Nur Barzahlung', it means cash only — no card accepted!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -528,7 +596,32 @@ export const MODULE_7: Module = {
             "Associate colors with everyday objects",
             "Understand that rosa and lila are special (indeclinable)"
           ],
-          placeholderThumbnail: "/images/berlin_people.png"
+          placeholderThumbnail: "/images/berlin_people.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Basic Colors in German",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["rot", "red", "ചുവപ്പ്"],
+                ["blau", "blue", "നീല"],
+                ["grün", "green", "പച്ച"],
+                ["gelb", "yellow", "മഞ്ഞ"],
+                ["schwarz", "black", "കറുപ്പ്"],
+                ["weiß", "white", "വെള്ള"],
+                ["braun", "brown", "തവിട്ട്"],
+                ["grau", "grey", "ചാരനിറം"],
+                ["rosa", "pink", "പിങ്ക്"],
+                ["lila", "purple", "നീലലോഹിതം"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Special Colors: rosa & lila",
+              variant: "tip",
+              content: "Unlike other colors, 'rosa' and 'lila' do NOT change their endings when used before nouns. They stay the same! Example: ein rosa Kleid (a pink dress), NOT 'ein rosas Kleid'."
+            }
+          ]
         },
         {
           id: "v7-3-2",
@@ -554,7 +647,40 @@ export const MODULE_7: Module = {
             "Understand the basic pattern of adjective endings after definite articles",
             "Describe what you or others are wearing"
           ],
-          placeholderThumbnail: "/images/supermarket_checkout.png"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Clothing Vocabulary",
+              headers: ["German", "English", "Article"],
+              rows: [
+                ["das Hemd", "shirt", "das (n)"],
+                ["der Pullover", "sweater", "der (m)"],
+                ["die Jacke", "jacket", "die (f)"],
+                ["der Mantel", "coat", "der (m)"],
+                ["die Hose", "trousers", "die (f)"],
+                ["der Rock", "skirt", "der (m)"],
+                ["das Kleid", "dress", "das (n)"],
+                ["die Schuhe", "shoes (pl)", "die (pl)"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Adjective Endings After Definite Articles",
+              headers: ["Article", "Pattern", "Example"],
+              rows: [
+                ["das (neuter)", "adj + -e", "das rote Kleid"],
+                ["der (masculine)", "adj + -e", "der schwarze Mantel"],
+                ["die (feminine)", "adj + -e", "die grüne Jacke"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Adjective Endings Preview",
+              variant: "info",
+              content: "Good news! After definite articles (der/die/das), adjectives always end in '-e' in the nominative case. Don't panic about other endings yet — we'll cover them step by step later!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -815,7 +941,37 @@ export const MODULE_7: Module = {
             "Understand and respond to sales staff",
             "Complete a purchase using correct phrases"
           ],
-          placeholderThumbnail: "/images/supermarket_checkout.png"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Shopping Conversation Flow",
+              headers: ["Step", "German", "English"],
+              rows: [
+                ["1. Greeting", "Kann ich Ihnen helfen?", "Can I help you?"],
+                ["2. Looking for", "Ich suche...", "I'm looking for..."],
+                ["3. Size", "Haben Sie das in Größe M?", "Do you have this in size M?"],
+                ["4. Try on", "Kann ich das anprobieren?", "Can I try this on?"],
+                ["5. Fitting room", "Wo ist die Umkleidekabine?", "Where is the fitting room?"],
+                ["6. Verdict", "Das passt gut!", "That fits well!"],
+                ["7. Checkout", "Wo ist die Kasse?", "Where is the checkout?"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Formal 'Ihnen' in Shops",
+              variant: "info",
+              content: "Shop staff will always use 'Sie/Ihnen' (formal you) with customers. Never switch to 'du' with staff you don't know — it's considered rude in Germany!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "die Umkleidekabine", english: "fitting room", malayalam: "ട്രയൽ റൂം", pronunciation: "oom-kly-de-ka-bee-ne" },
+                { german: "die Kasse", english: "checkout", malayalam: "കൗണ്ടർ", pronunciation: "kas-se" },
+                { german: "der Kassenzettel", english: "receipt", malayalam: "രസീത്", pronunciation: "kas-sen-tset-tel" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -1056,7 +1212,38 @@ export const MODULE_7: Module = {
             "Handle common irregular comparatives (gut → besser, teuer → teurer)",
             "Apply comparisons to real shopping scenarios"
           ],
-          placeholderThumbnail: "/images/supermarket_checkout.png"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Comparative & Superlative Forms",
+              headers: ["Base", "Comparative (+er)", "Superlative (am ...sten)"],
+              rows: [
+                ["groß (big)", "größer", "am größten"],
+                ["klein (small)", "kleiner", "am kleinsten"],
+                ["billig (cheap)", "billiger", "am billigsten"],
+                ["schnell (fast)", "schneller", "am schnellsten"],
+                ["langsam (slow)", "langsamer", "am langsamsten"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Irregular Comparatives",
+              headers: ["Base", "Comparative", "Superlative"],
+              rows: [
+                ["gut (good)", "besser", "am besten"],
+                ["teuer (expensive)", "teurer", "am teuersten"],
+                ["viel (much)", "mehr", "am meisten"],
+                ["gern (gladly)", "lieber", "am liebsten"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Comparison Word: als",
+              variant: "tip",
+              content: "'als' means 'than' in comparisons. Example: 'Berlin ist größer als Kochi.' (Berlin is bigger than Kochi.) Don't confuse 'als' with 'wie' — 'wie' is used for equals: 'so groß wie' (as big as)."
+            }
+          ]
         }
       ],
       exercises: [

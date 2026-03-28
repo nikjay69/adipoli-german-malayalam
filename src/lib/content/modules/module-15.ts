@@ -23,6 +23,46 @@ export const MODULE_15: Module = {
       description: "Discover the unwritten rules of living in Germany — from punctuality to trash sorting!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Backyard Trash Area (Im Hinterhof)",
+          sceneType: "home",
+          timeOfDay: "afternoon",
+          description: "A clean, paved backyard with five different colored bins (Blue, Yellow, Brown, Grey, Green). Arjun is watching you with a smirk: 'Indha machaa, trash sorting is the real citizenship test!'. In Kerala, we might have one or two bins, but here, it's a national sport called 'Mülltrennung'. You also learn about 'Ruhezeit'—if you vacuum on Sunday, the neighbors will send you more than just a dirty look. Welcome to the world of German 'Ordnung'!",
+        },
+        narrative: {
+          previousRecap: "You've mastered the official paperwork. Now, let's learn the unofficial rules for daily life!",
+          currentObjective: "Understand core German social values like Pünktlichkeit, Mülltrennung, and Ruhezeit",
+          nextTeaser: "Next: Festivals! Let's see how Germany celebrates harvest versus Kerala!",
+        },
+        kuttanIntro: [
+          "Machane! Germany-yil 'Pünktlichkeit' (punctuality) is not a suggestion, it's a social contract. 10:00 means 09:55-in reach aakanam!",
+          "Pinne ee 'Mülltrennung' (trash sorting) logic sradhikkanne. Paper in the Blue bin, Food in the Brown bin. Skip cheythaal neighborhood-il big issue aakum!",
+          "Finally, 'Ruhezeit' (quiet time). From 10 PM to 6 AM and ALL DAY Sunday, noise strictly forbidden. Total peace mode! Let's get sorted!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab15-1-2", encounterMoment: "You hold a pizza box: 'Wait, does this go in Blue or Grey?'", contextSentence: "Die Mülltrennung ist in Deutschland Pflicht." },
+          { vocabId: "vocab15-1-1", encounterMoment: "Arjun checks his watch: 'We need to be at the party in 5 mins. Pünktlichkeit!'", contextSentence: "Pünktlichkeit ist in Deutschland sehr wichtig." },
+          { vocabId: "vocab15-1-3", encounterMoment: "You turn down the music: 'It's 10 PM. Ruhezeit.'", contextSentence: "Während der Ruhezeit darf man keinen Lärm machen." },
+          { vocabId: "vocab15-1-6", encounterMoment: "You put a bottle in a tote: 'Don't throw this, it has Pfand!'", contextSentence: "Die Flasche hat 25 Cent Pfand." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You have an empty glass jar of jam. Where do you throw it?",
+            options: [
+              { text: "In the 'Glas' container (Altglas).", isCorrect: true, response: "Exactly! Glass must be separated by color (White, Brown, Green).", kuttanReaction: "Adipoli! Recycling logic perfectly capture cheythallo! 🔥" },
+              { text: "In the general waste (Restmüll) bin.", isCorrect: false, response: "Aiyyo! Enthe ninnu parayunne? Jar logic different aanu, separate bin-ilaanu!", kuttanReaction: "Vite machane! Ordnung marakkallae. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "It's 2 PM on a Sunday. Can you drill a hole in your wall to hang a picture?",
+            options: [
+              { text: "No, Sunday is 'Ruhezeit' all day.", isCorrect: true, response: "Correct! No loud noises allowed on Sundays in Germany.", kuttanReaction: "Superb! Peace logic correctly picked! ⭐" },
+              { text: "Yes, it only takes 5 minutes.", isCorrect: false, response: "No! Even 1 minute of drilling will violate the peace. Wait for Monday!", kuttanReaction: "Aiyyo! Neighbors complaint tharum machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v15-1-1",
@@ -46,7 +86,35 @@ export const MODULE_15: Module = {
             "Be aware of quiet hours and Sunday rules",
             "Recognize key cultural differences from Kerala"
           ],
-          placeholderThumbnail: "/images/thumbnails/german-customs.jpg"
+          placeholderThumbnail: "/images/kaffee_kuchen.png",
+          richContent: [
+            {
+              type: "table",
+              title: "German Cultural Rules",
+              headers: ["Rule", "German", "What It Means"],
+              rows: [
+                ["Punctuality", "Pünktlichkeit", "10:00 means arrive by 09:55"],
+                ["Order", "Ordnung", "Everything has its place"],
+                ["Trash sorting", "Mülltrennung", "Separate Bio, Paper, Plastic, Glass"],
+                ["Quiet hours", "Ruhezeit", "22:00-06:00 — no loud noise"],
+                ["Sunday rest", "Sonntagsruhe", "No drilling, shops closed"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Sunday is Sacred!",
+              variant: "warning",
+              content: "Shops are CLOSED on Sundays. No drilling, no vacuuming, no loud music. Plan your grocery shopping for Saturday! Neighbors will complain if you break Sonntagsruhe."
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "die Pünktlichkeit", english: "punctuality", malayalam: "സമയനിഷ്ഠ", pronunciation: "pünkt-likh-kite" },
+                { german: "die Mülltrennung", english: "waste sorting", malayalam: "മാലിന്യ വേർതിരിക്കൽ", pronunciation: "mül-tren-nung" },
+                { german: "die Ruhezeit", english: "quiet hours", malayalam: "നിശ്ശബ്ദ സമയം", pronunciation: "roo-he-tsayt" }
+              ]
+            }
+          ]
         },
         {
           id: "v15-1-2",
@@ -71,7 +139,35 @@ export const MODULE_15: Module = {
             "Learn about the bottle deposit (Pfand) system",
             "Be prepared for cash-heavy culture"
           ],
-          placeholderThumbnail: "/images/thumbnails/german-rules.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Must-Know Rules in Germany",
+              headers: ["Rule", "German", "Fine If Broken?"],
+              rows: [
+                ["Register address", "Anmeldung", "Up to 1000 EUR"],
+                ["Health insurance", "Versicherung", "Mandatory!"],
+                ["TV/Radio tax", "Rundfunkbeitrag", "18.36 EUR/month"],
+                ["Bottle deposit", "Pfand", "Return to get money back"],
+                ["No jaywalking", "Rote Ampel", "5-10 EUR fine"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Pfand System",
+              variant: "tip",
+              content: "Most bottles in Germany have a deposit (Pfand) of 0.08-0.25 EUR. Return them at the Pfandautomat in any supermarket to get your money back. It's also great for recycling!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "die Versicherung", english: "insurance", malayalam: "ഇൻഷുറൻസ്", pronunciation: "fer-zi-khe-rung" },
+                { german: "das Pfand", english: "bottle deposit", malayalam: "കുപ്പി ഡെപ്പോസിറ്റ്", pronunciation: "pfant" },
+                { german: "das Bargeld", english: "cash", malayalam: "പണം", pronunciation: "bar-gelt" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -222,6 +318,46 @@ export const MODULE_15: Module = {
       description: "Explore German festivals from Oktoberfest to Weihnachtsmarkt — and see how they compare to Kerala celebrations!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Old Town Market (Am Weihnachtsmarkt)",
+          sceneType: "station",
+          timeOfDay: "evening",
+          description: "A magical, freezing winter evening in the town square. Hundreds of tiny lights are draped over wooden huts. The air smells like roasted almonds and 'Glühwein'. Arjun handed you a steaming mug: 'Sookshichu kudikka, ithu nalla choodanu!'. You're experiencing your first 'Weihnachtsmarkt'. You talk about 'Oktoberfest' and realize that while the clothes and food are different, the spirit of celebration is exactly like Onam or Vishu. Cultures are closer than they look, machane!",
+        },
+        narrative: {
+          previousRecap: "You've sorted the trash. Now, let's join the celebration!",
+          currentObjective: "Identify major German festivals and understand their cultural parallels to Kerala culture",
+          nextTeaser: "Next: Culture shock! Let's talk about those 'strange' German habits!",
+        },
+        kuttanIntro: [
+          "Machane! German festivals are legendary. 'Oktoberfest' in Munich is the biggest. Like our harvest festivals, it's about food, music, and community.",
+          "Winter-il 'Weihnachten' (Christmas) and the markets are the main events. Spiced 'Glühwein' is the standard fuel to keep you warm!",
+          "Pinne 'Silvester' (New Year's Eve) fireworks vallya karyam aanu. Kerala-yil Vishu-vin padakkam pottikkunna pole thanne! Let's party!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab15-2-3", encounterMoment: "You look at the wooden stalls: 'Der Weihnachtsmarkt ist schön.'", contextSentence: "Der Weihnachtsmarkt in Nürnberg ist sehr berühmt." },
+          { vocabId: "vocab15-2-1", encounterMoment: "Arjun talks about plan: 'Wir feiern Weihnachten.'", contextSentence: "Wir feiern Weihnachten am 25. Dezember." },
+          { vocabId: "vocab15-2-4", encounterMoment: "You take a sip: 'Der Glühwein schmeckt gut.'", contextSentence: "Möchtest du einen Glühwein?" },
+          { vocabId: "vocab15-2-6", encounterMoment: "You check the calendar: 'Morgen ist ein Feiertag.'", contextSentence: "Morgen ist ein Feiertag." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You're at a Christmas market and it's 2°C. What is the traditional hot drink to try?",
+            options: [
+              { text: "Glühwein.", isCorrect: true, response: "Exactly! Hot spiced wine is the essence of German winter markets.", kuttanReaction: "Adipoli! Winter logic perfectly capture cheythallo! 🔥" },
+              { text: "Cold Lemonade.", isCorrect: false, response: "Aiyyo! Enthe ninnu parayunne? 2 degree-yil ice-venda, machaa!", kuttanReaction: "Vite machane! Hot item venam. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "Which German festival is most similar in origin to Kerala's 'Onam' (Harvest festival)?",
+            options: [
+              { text: "Oktoberfest.", isCorrect: true, response: "Correct! Both are traditional harvest celebrations with regional food and costumes.", kuttanReaction: "Superb! Cultural parallel logic correctly noted! ⭐" },
+              { text: "Karneval.", isCorrect: false, response: "No! Karneval is a pre-Lent celebration of masks and parties. Oktoberfest is the harvest one.", kuttanReaction: "Aiyyo! Harvest logic sradhikkanne machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v15-2-1",
@@ -247,7 +383,34 @@ export const MODULE_15: Module = {
             "Draw parallels between German and Kerala festivals",
             "Use festival-related vocabulary"
           ],
-          placeholderThumbnail: "/images/thumbnails/german-festivals.jpg"
+          placeholderThumbnail: "/images/kaffeeklatsch.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Major German Festivals",
+              headers: ["Festival", "When", "Kerala Parallel"],
+              rows: [
+                ["Oktoberfest", "Sep-Oct (Munich)", "Onam (harvest festival)"],
+                ["Weihnachten", "Dec 24-26", "Christmas in Kerala"],
+                ["Karneval/Fasching", "Feb-Mar (before Lent)", "Carnival/Theyyam season"],
+                ["Silvester", "Dec 31", "New Year's Eve"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Weihnachtsmarkt Magic!",
+              variant: "info",
+              content: "Christmas markets (Weihnachtsmärkte) run from late November to December. Enjoy Glühwein (mulled wine), Lebkuchen (gingerbread), and a magical atmosphere. A must-experience in Germany!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "Weihnachten", english: "Christmas", malayalam: "ക്രിസ്മസ്", pronunciation: "vy-nakh-ten" },
+                { german: "der Weihnachtsmarkt", english: "Christmas market", malayalam: "ക്രിസ്മസ് മാർക്കറ്റ്", pronunciation: "vy-nakhts-markt" },
+                { german: "der Karneval", english: "carnival", malayalam: "കാർണിവൽ", pronunciation: "kar-ne-vahl" }
+              ]
+            }
+          ]
         },
         {
           id: "v15-2-2",
@@ -273,7 +436,33 @@ export const MODULE_15: Module = {
             "Learn the concept of Brückentag",
             "Relate German holidays to familiar Kerala holidays"
           ],
-          placeholderThumbnail: "/images/thumbnails/german-holidays.jpg"
+          placeholderThumbnail: "/images/kaffeeklatsch.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Key German Public Holidays",
+              headers: ["Holiday", "Date", "German Name"],
+              rows: [
+                ["New Year's Day", "Jan 1", "Neujahr"],
+                ["Easter", "Mar/Apr", "Ostern"],
+                ["German Unity Day", "Oct 3", "Tag der Deutschen Einheit"],
+                ["Christmas", "Dec 25-26", "Weihnachten"],
+                ["New Year's Eve", "Dec 31", "Silvester"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Brückentag = Smart Holiday!",
+              variant: "tip",
+              content: "When a holiday falls on Thursday, Germans take Friday off as a 'Brückentag' (bridge day) to create a 4-day weekend. Plan your leave requests early — everyone does this!"
+            },
+            {
+              type: "note",
+              title: "Bayern = Most Holidays!",
+              variant: "info",
+              content: "Bavaria (Bayern) has the most public holidays in Germany (up to 14!). Other states may have fewer. Always check YOUR Bundesland's holiday calendar."
+            }
+          ]
         }
       ],
       exercises: [
@@ -424,6 +613,46 @@ export const MODULE_15: Module = {
       description: "A fun, honest look at what surprises Malayalis most about life in Germany — from cold dinners to personal space!",
       duration: "45 min",
       xpReward: 120,
+      storyScene: {
+        setting: {
+          name: "WG Dinner Table (Beim Abendessen)",
+          sceneType: "home",
+          timeOfDay: "evening",
+          description: "It's 7 PM. You're sitting at the table, expecting something hot. Instead, Arjun brings out a variety of breads, some cheese, and pickles. 'Welcome to Abendbrot, machaa!'. You're learning that Germans love cold dinners. You're also learning about 'Direktheit'—if Arjun says the coffee is too bitter, he's just stating a fact, not starting a fight. And remember the Golden Rule of German hospitality: if someone says 'No', they actually mean it. No need for the Kerala 3-times-ask ritual!",
+        },
+        narrative: {
+          previousRecap: "You've celebrated with the locals. Now, let's look at the daily shocks that every Malayali faces!",
+          currentObjective: "Understand German social norms regarding food, directness, and personal space",
+          nextTeaser: "Final Lesson: The local talk! Let's learn some real German slang!",
+        },
+        kuttanIntro: [
+          "Machane! First culture shock 'Abendbrot' aanu. Cold bread for dinner is the standard. If you want hot Kanju-um Payarum, you have to cook it yourself!",
+          "Pinne 'Direktheit' (directness) sradhikkanne. Germans don't sugarcoat. If they say 'Das ist falsch', it's just information. Don't take it personally!",
+          "Privacy is the most important item here. Queue-il nilkkumpol physical distance venam. 'Muttu nilkkunna' habit strictly avoid cheయ్యുക! Let's adapt!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab15-3-2", encounterMoment: "You look at the plate: 'Ist das Abendbrot?'", contextSentence: "Zum Abendbrot essen wir Brot mit Käse." },
+          { vocabId: "vocab15-3-4", encounterMoment: "Arjun gives direct feedback: 'That is not good.'", contextSentence: "Die deutsche Direktheit ist nicht unhöflich." },
+          { vocabId: "vocab15-3-1", encounterMoment: "You talk about hospitality: 'Gastfreundschaft ist anders.'", contextSentence: "Deutsche Gastfreundschaft ist herzlich." },
+          { vocabId: "vocab15-3-3", encounterMoment: "Arjun checks his mail: 'Ich habe eine Einladung.'", contextSentence: "Hast du eine Einladung zur Party?" },
+        ],
+        decisionPoints: [
+          {
+            moment: "You offer a German friend more Biryani. They say 'Nein, danke' once. What do you do?",
+            options: [
+              { text: "Accept it and stop offering.", isCorrect: true, response: "Exactly! In Germany, 'No' means 'No'. Repeated asking is felt as pressure.", kuttanReaction: "Adipoli! Social logic perfectly capture cheythallo! 🔥" },
+              { text: "Ask two more times like we do in Kerala.", isCorrect: false, response: "Aiyyo! Ente machaa, they will think you are force-feeding them!", kuttanReaction: "Vite machane! One 'No' is enough here. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "What does 'Abendbrot' literally mean?",
+            options: [
+              { text: "Evening bread.", isCorrect: true, response: "Correct! It refers to the traditional cold evening meal with bread.", kuttanReaction: "Superb! Food logic correctly noted! ⭐" },
+              { text: "Late-night party.", isCorrect: false, response: "No! 'Abend' = Evening, 'Brot' = Bread. It's just a simple cold dinner.", kuttanReaction: "Aiyyo! Brot logic marakkallae machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v15-3-1",
@@ -449,7 +678,35 @@ export const MODULE_15: Module = {
             "Prepare mentally for common culture shocks",
             "Appreciate both cultures' unique qualities"
           ],
-          placeholderThumbnail: "/images/thumbnails/kerala-vs-germany.jpg"
+          placeholderThumbnail: "/images/berlin_people.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Kerala vs Germany — Cultural Differences",
+              headers: ["Topic", "Kerala", "Germany"],
+              rows: [
+                ["Dinner", "Hot rice & curry", "Abendbrot (cold bread)"],
+                ["Personal space", "Close contact normal", "1.5m bubble"],
+                ["Visiting", "Drop-in anytime", "Call a week ahead"],
+                ["Feedback", "Indirect / polite", "Direct & honest"],
+                ["After work", "Calls ok anytime", "Feierabend = no work calls"]
+              ]
+            },
+            {
+              type: "note",
+              title: "'No Thanks' Means No!",
+              variant: "tip",
+              content: "In Kerala, we offer chai 3 times before they accept. In Germany, if you say 'Nein, danke', they STOP offering. Mean what you say the first time!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "das Abendbrot", english: "cold evening meal", malayalam: "രാത്രി ഭക്ഷണം (ബ്രെഡ്)", pronunciation: "ah-bent-broht" },
+                { german: "die Gastfreundschaft", english: "hospitality", malayalam: "ആതിഥ്യം", pronunciation: "gast-froynt-shaft" },
+                { german: "die Direktheit", english: "directness", malayalam: "നേരിട്ടുള്ള സമീപനം", pronunciation: "di-rekt-hite" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -590,6 +847,46 @@ export const MODULE_15: Module = {
       description: "Learn everyday German slang and abbreviations that textbooks never teach you!",
       duration: "45 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "City Park (Im Park)",
+          sceneType: "station",
+          timeOfDay: "afternoon",
+          description: "A sunny afternoon in the park. You're sitting on a bench with Arjun, watching skaters and students. A group nearby is laughing, calling each other 'Alter!'. You hear 'Krass!' and 'Geil!' every few seconds. Arjun translates the street-vibe for you: 'Aliya, textbook German oru side-il vekkam. Local aakan slang venam!'. You're learning the 'Umgangssprache' (slang)—the secret code of German friendship. Ready to sound like a real Berliner, machane?",
+        },
+        narrative: {
+          previousRecap: "You've survived the culture shocks. Now, let's learn how to actually TALK like a local!",
+          currentObjective: "Understand common German slang terms and identify appropriate contexts for their use",
+          nextTeaser: "Module 15 Complete! You're officially a 'German-Malayali Expert'. Next: Module 16 - Health & Fitness!",
+        },
+        kuttanIntro: [
+          "Machane! Textbook German and Slang are two different worlds. 'Alter!' is like our 'Aliya!' or 'Machane!'. Use it with your besties mathram!",
+          "Pinne 'Krass' (wow) and 'Geil' (cool). Ivide everything 'Geil' aanu if it's good. But sradhikkanne, formal situations-il ithu paadilla!",
+          "If you have zero mood for something, just say 'Kein Bock'. It's the ultimate 'Mood-illa' phrase. Let's get krass!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab15-4-3", encounterMoment: "You greet a friend: 'Na? Alles klar, Alter?'", contextSentence: "Alter, das war knapp!" },
+          { vocabId: "vocab15-4-1", encounterMoment: "You look at a cool bike: 'Das ist geil!'", contextSentence: "Das Konzert war echt geil!" },
+          { vocabId: "vocab15-4-2", encounterMoment: "Arjun tells a crazy story: 'Krass! Echt?'", contextSentence: "Krass! Das habe ich nicht erwartet!" },
+          { vocabId: "vocab15-4-6", encounterMoment: "You're tired of studying: 'Ich habe keinen Bock.'", contextSentence: "Ich habe keinen Bock auf Hausaufgaben." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You're with a group of friends and someone shows you a really cool new app. What do you say?",
+            options: [
+              { text: "Echt geil!", isCorrect: true, response: "Exactly! 'Geil' is the go-to word for 'cool' or 'awesome' among friends.", kuttanReaction: "Adipoli! Slang logic perfectly capture cheythallo! 🔥" },
+              { text: "Sehr geehrte App.", isCorrect: false, response: "Aiyyo! Enthe ninnu parayunne? App-ine honorifics kodukkanda, machaa!", kuttanReaction: "Vite machane! Slang mode ON aakkuka. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "Arjun asks if you want to go for a run, but you are exhausted. How do you say 'I don't feel like it'?",
+            options: [
+              { text: "Kein Bock.", isCorrect: true, response: "Correct! 'Kein Bock' is the perfect colloquial way to express lack of motivation.", kuttanReaction: "Superb! Vibe logic correctly noted! ⭐" },
+              { text: "Ich habe kein Buch.", isCorrect: false, response: "No! 'Bock' (mood/ram) and 'Buch' (book) are totally different items!", kuttanReaction: "Aiyyo! Vocabulary mistake machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v15-4-1",
@@ -614,7 +911,39 @@ export const MODULE_15: Module = {
             "Recognize common German text abbreviations",
             "Distinguish between formal and colloquial registers"
           ],
-          placeholderThumbnail: "/images/thumbnails/german-slang.jpg"
+          placeholderThumbnail: "/images/berlin_people.png",
+          richContent: [
+            {
+              type: "table",
+              title: "German Slang Decoded",
+              headers: ["Slang", "Meaning", "Malayalam Equivalent"],
+              rows: [
+                ["Geil!", "Awesome/Cool", "കിടു!"],
+                ["Krass!", "Wow/Extreme", "പൊളിച്ചു!"],
+                ["Alter!", "Dude!", "മച്ചാനേ!"],
+                ["Na?", "What's up?", "എന്തുണ്ട്?"],
+                ["Kein Bock", "No mood / Don't feel like it", "ഒരു മൂഡും ഇല്ല"],
+                ["Bescheid sagen", "Give a heads-up", "അറിയിക്കുക"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Context Matters!",
+              variant: "warning",
+              content: "Slang is ONLY for friends and casual settings. Never say 'Geil!' or 'Alter!' in a formal meeting or at the Ausländerbehörde. Use 'Sie' in formal contexts, 'du' with friends."
+            },
+            {
+              type: "table",
+              title: "Common Text Abbreviations",
+              headers: ["Abbreviation", "Full Form", "Meaning"],
+              rows: [
+                ["LG", "Liebe Grüße", "Kind regards"],
+                ["MfG", "Mit freundlichen Grüßen", "With best regards"],
+                ["vllt", "vielleicht", "maybe"],
+                ["bzgl.", "bezüglich", "regarding"]
+              ]
+            }
+          ]
         }
       ],
       exercises: [

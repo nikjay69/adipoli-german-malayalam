@@ -24,6 +24,47 @@ export const MODULE_4: Module = {
       description: "Meet the German family — from Mutter and Vater to Onkel and Tante. Kerala kudumbam, now in German!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Kuttan's WG Bedroom, Desk",
+          sceneType: "home",
+          timeOfDay: "evening",
+          description: "A cozy room in a shared apartment. You're on a WhatsApp video call with your family in Kerala. Your roommate, Stefan, pops his head in to say 'Hallo'. You decide to introduce your family to him in German — the ultimate 'Chettan-to-Bruder' translation challenge, machane!",
+        },
+        narrative: {
+          previousRecap: "You've survived the 'Termin' battle at the doctor. Now, it's time to share your roots with your new German family!",
+          currentObjective: "Introduce immediate and extended family members with their correct German articles",
+          nextTeaser: "Next: describing your best friend! Is he/she tall, funny, or both?",
+        },
+        kuttanIntro: [
+          "Machane! Nammude Kerala families are massive, alle? But German-il family words simple aanu. Onkel, Tante, Bruder, Schwester — sound familiar?",
+          "Ivide oru important thing: 'Chettan' and 'Chechi'-kku unique words illa. You have to say 'älterer Bruder' (older brother) or 'jüngere Schwester' (younger sister).",
+          "Oma (Ammoomma) and Opa (Appooppan) mathram casual context-il use cheyyaam. Let's make our first family intro!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab4-1-1", encounterMoment: "You point to the screen: 'Das ist meine Mutter Lakshmi.' Stefan waves 'Hallo!'", contextSentence: "Das ist meine Mutter." },
+          { vocabId: "vocab4-1-2", encounterMoment: "Next you show your dad: 'Das ist mein Vater Rajesh.' He's smiling from the couch.", contextSentence: "Das ist mein Vater." },
+          { vocabId: "vocab4-1-3", encounterMoment: "You point to your 'Chettan': 'Das ist mein Bruder Arjun.' Arjun is a bit shy in front of foreigners!", contextSentence: "Das ist mein Bruder." },
+          { vocabId: "vocab4-1-4", encounterMoment: "Your sister 'Priya' jumps into the frame: 'Das ist meine Schwester.' She's already learned 'Tschüss'!", contextSentence: "Das ist meine Schwester." },
+          { vocabId: "vocab4-1-11", encounterMoment: "Stefan asks: 'Wo wohnen deine Eltern?' (Where do your parents live?). You answer: 'In Kerala.'", contextSentence: "Meine Eltern wohnen in Kerala." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Stefan asks: 'Hast du Geschwister?' (Do you have siblings?). You have one brother and one sister. How do you answer?",
+            options: [
+              { text: "Ich habe einen Bruder und eine Schwester.", isCorrect: true, response: "Exactly! 'Einen Bruder' (masc acc) and 'eine Schwester' (fem acc). Well said!", kuttanReaction: "Adipoli! Article care venam — masc-inu 'einen' and fem-inu 'eine'. Perfect grammar, machane! 🔥" },
+              { text: "Ich habe ein Bruder und ein Schwester.", isCorrect: false, response: "Aiyyo! Those articles are for neuter nouns. You're missing the gender endings!", kuttanReaction: "Vite machane! Bruder masculine aanu, so 'einen' venam. Schwester feminine aanu, so 'eine' venam. Patterns orkkane! 😬" },
+            ],
+          },
+          {
+            moment: "Stefan meets your grandfather on screen. You tell him: 'Das ist mein...'?",
+            options: [
+              { text: "Opa", isCorrect: true, response: "Correct! 'Opa' is the warm, casual way to say grandfather. Stefan gets it immediately.", kuttanReaction: "Super machane! 'Großvater' formal context-il mathram mathi. Casual conversation-il 'Opa' is the king of family words! ⭐" },
+              { text: "Oma", isCorrect: false, response: "Stefan looks confused: 'But that's a man, isn't it?'", kuttanReaction: "Aiyyo! Oma Ammoomma aanu! Opa Appooppan aanu! Gender maari poyal valya confusion undakum. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v4-1-1",
@@ -50,7 +91,29 @@ export const MODULE_4: Module = {
             "Name grandparents and siblings",
             "Talk about your own family using simple sentences"
           ],
-          placeholderThumbnail: "/images/thumbnails/family-core.jpg"
+          placeholderThumbnail: "/images/kaffeeklatsch.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Core Family Members",
+              headers: ["German", "English", "Malayalam", "Article"],
+              rows: [
+                ["die Mutter", "mother", "അമ്മ", "die (fem)"],
+                ["der Vater", "father", "അച്ഛൻ", "der (masc)"],
+                ["der Bruder", "brother", "സഹോദരൻ", "der (masc)"],
+                ["die Schwester", "sister", "സഹോദരി", "die (fem)"],
+                ["die Oma", "grandmother", "അമ്മൂമ്മ", "die (fem)"],
+                ["der Opa", "grandfather", "അപ്പൂപ്പൻ", "der (masc)"],
+                ["das Kind", "child", "കുട്ടി", "das (neut)"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Gender Pattern in Family Words",
+              variant: "tip",
+              content: "Male family members are always 'der' (der Vater, der Bruder, der Opa). Female family members are always 'die' (die Mutter, die Schwester, die Oma). The article matches the actual gender — easy to remember!"
+            }
+          ]
         },
         {
           id: "v4-1-2",
@@ -76,7 +139,36 @@ export const MODULE_4: Module = {
             "Understand the difference between Malayalam and German family terminology",
             "Introduce family members in simple sentences"
           ],
-          placeholderThumbnail: "/images/thumbnails/family-extended.jpg"
+          placeholderThumbnail: "/images/kaffee_kuchen.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Extended Family",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["der Onkel", "uncle", "അമ്മാവൻ / ചിറ്റപ്പൻ"],
+                ["die Tante", "aunt", "അമ്മായി / ചിറ്റമ്മ"],
+                ["der Cousin", "male cousin", "കസിൻ (ആൺ)"],
+                ["die Cousine", "female cousin", "കസിൻ (പെൺ)"],
+                ["der Neffe", "nephew", "അനന്തരവൻ"],
+                ["die Nichte", "niece", "അനന്തരവൾ"],
+                ["der Mann", "husband", "ഭർത്താവ്"],
+                ["die Frau", "wife", "ഭാര്യ"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Malayalam vs German Family Terms",
+              variant: "info",
+              content: "Malayalam has different words for maternal uncle (Ammavan) vs paternal uncle (Chittappan). German only has ONE word: 'Onkel'. Same for aunt — just 'Tante'. Much simpler system!"
+            },
+            {
+              type: "note",
+              title: "Cousin Pronunciation",
+              variant: "tip",
+              content: "'Cousin' and 'Cousine' are borrowed from French! Pronounce them the French way: 'koo-zaN' (male) and 'koo-zee-nuh' (female). NOT like English 'cousin'."
+            }
+          ]
         }
       ],
       exercises: [
@@ -297,6 +389,47 @@ export const MODULE_4: Module = {
       description: "Learn to describe how people look and their personality traits — from groß to klein, from nett to lustig!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Tempelhofer Feld, Berlin",
+          sceneType: "park",
+          timeOfDay: "afternoon",
+          description: "The massive open space of the former airport, now a giant park filled with skaters, cyclists, and families. You and Stefan are sitting on the grass, enjoying a Späti-drink. It's the perfect spot for people-watching. Stefan challenge you: 'Beschreibe die Leute dort!' (Describe the people there!). Time to flex your adjectives, machane!",
+        },
+        narrative: {
+          previousRecap: "You've introduced your family on video call. Now, let's learn to describe the strangers you meet in the streets of Berlin!",
+          currentObjective: "Use adjectives to describe physical appearance and personality traits",
+          nextTeaser: "Next: who owns this? Master possessive pronouns (my, your, his, her)!",
+        },
+        kuttanIntro: [
+          "Machane! Berlin streets-il variety people-ine kaanaam. Chilar tall aanu (groß), chilar short aanu (klein).",
+          "Adjectives parayumpo small rule undu. Adjective 'ist' kazhinju varayil simple aanu (Er ist groß). But noun-te mumpil (height, hair) varumbol small ending care venam.",
+          "Personality describe cheyyan 'nett' (nice) or 'lustig' (funny) use cheyyaam. Let's start the people-watching challenge!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab4-2-1", encounterMoment: "Stefan points to a basketball player: 'Guck mal, er ist sehr groß!' He's truly tall, machane!", contextSentence: "Mein Vater ist sehr groß." },
+          { vocabId: "vocab4-2-2", encounterMoment: "You see a small child learn to skate: 'Das Kind ist noch klein.' So cute!", contextSentence: "Das Kind ist noch klein." },
+          { vocabId: "vocab4-2-4", encounterMoment: "A girl with dyed hair passes by: 'Sie hat blaue Haare!' In Berlin, anything goes!", contextSentence: "Sie hat lange, schwarze Haare." },
+          { vocabId: "vocab4-2-5", encounterMoment: "The bubble-tea vendor is very polite. 'Er ist sehr nett,' you note.", contextSentence: "Unsere Nachbarn sind sehr nett." },
+          { vocabId: "vocab4-2-9", encounterMoment: "You see someone studying intensely on a bench: 'Sie ist sehr fleißig.' Hard-working spirit!", contextSentence: "Deutsche Studenten sind fleißig." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You see a jogger. How do you say 'He is tall and athletic' in German?",
+            options: [
+              { text: "Er ist groß und sportlich.", isCorrect: true, response: "Exactly! Adjectives after 'ist' don't need any special endings. Simple and clean!", kuttanReaction: "Adipoli! 'ist' kazhinju adjective mathram paranjaal mathi. No extra tension. Gold star! ⭐" },
+              { text: "Er hat groß und sportlich.", isCorrect: false, response: "Aiyyo! 'Hat' (has) is for features like hair or eyes. For 'is', use 'ist'!", kuttanReaction: "Vite machane! 'He is' → 'Er ist'. 'He has' → 'Er hat'. Characteristics-inu 'ist' thanne use cheyyanam. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "Stefan asks about your best friend back in Kerala. 'Hat er schwarze Haare?' (Does he have black hair?). You want to say 'Yes, and brown eyes'.",
+            options: [
+              { text: "Ja, und braune Augen.", isCorrect: true, response: "Correct! 'Augen' is plural, so 'braun' gets the '-e' ending.", kuttanReaction: "Super machane! Plural nouns (eyes, hair) mumpil adjective varumbol '-e' ending venam. Logic correct aayi catch cheythallo! 🔥" },
+              { text: "Ja, und braun Augen.", isCorrect: false, response: "Nearly! But 'Augen' is plural, so you need that tiny '-e' at the end of 'braun'.", kuttanReaction: "Aiyyo! Plural article illaathe varumbol adjective-inu '-e' ending venam. 'braune Augen' is the correct way. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v4-2-1",
@@ -324,7 +457,38 @@ export const MODULE_4: Module = {
             "Talk about hair colour and eye colour",
             "Form sentences with 'ist' and 'hat'"
           ],
-          placeholderThumbnail: "/images/thumbnails/describe-looks.jpg"
+          placeholderThumbnail: "/images/berlin_people.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Physical Description Adjectives",
+              headers: ["German", "English", "Opposite"],
+              rows: [
+                ["groß", "tall/big", "klein (short/small)"],
+                ["alt", "old", "jung (young)"],
+                ["schlank", "slim", "dick (fat — be careful!)"],
+                ["lang", "long", "kurz (short)"],
+                ["sportlich", "athletic", "—"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Hair & Eye Colours",
+              headers: ["Hair (die Haare)", "Eyes (die Augen)"],
+              rows: [
+                ["schwarze Haare (black)", "braune Augen (brown)"],
+                ["braune Haare (brown)", "blaue Augen (blue)"],
+                ["blonde Haare (blonde)", "grüne Augen (green)"],
+                ["rote Haare (red)", "graue Augen (grey)"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Sentence Pattern",
+              variant: "tip",
+              content: "Use 'ist' for descriptions and 'hat' for features: 'Er ist groß und hat schwarze Haare.' (He is tall and has black hair.) Most Malayalis: 'Ich habe schwarze Haare und braune Augen.'"
+            }
+          ]
         },
         {
           id: "v4-2-2",
@@ -353,7 +517,28 @@ export const MODULE_4: Module = {
             "Combine physical and personality descriptions",
             "Form longer descriptive sentences"
           ],
-          placeholderThumbnail: "/images/thumbnails/describe-personality.jpg"
+          placeholderThumbnail: "/images/berlin_people.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Personality Adjectives",
+              headers: ["Positive (German)", "English", "Negative (German)", "English"],
+              rows: [
+                ["nett", "nice", "faul", "lazy"],
+                ["freundlich", "friendly", "langweilig", "boring"],
+                ["lustig", "funny", "streng", "strict"],
+                ["intelligent", "intelligent", "unhöflich", "rude"],
+                ["fleißig", "hard-working", "schüchtern", "shy"],
+                ["ehrlich", "honest", "—", "—"]
+              ]
+            },
+            {
+              type: "note",
+              title: "'Fleißig' — The German Superpower",
+              variant: "info",
+              content: "'Fleißig' (diligent/hard-working) is the most valued trait in German culture. Calling someone 'fleißig' is a huge compliment. It is like our 'kashtappedunna aallu' — a person who works hard and earns respect!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -544,6 +729,47 @@ export const MODULE_4: Module = {
       description: "My, your, his, her — learn how to say who owns what in German. Spoiler: possessives change with gender!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "WG Hallway & Storage Area",
+          sceneType: "home",
+          timeOfDay: "morning",
+          description: "The hallway is a bit cluttered after the weekend. Jackets, bags, and umbrellas are everywhere. Stefan is trying to tidy up and is asking who owns what. It's the ultimate test of 'mein' vs 'meine', and 'dein' vs 'seine'. Time to claim your stuff, machane!",
+        },
+        narrative: {
+          previousRecap: "You've survived the people-watching challenge at the park. Now, let's sort out your belongings in the WG!",
+          currentObjective: "Use possessive pronouns correctly with gender agreement",
+          nextTeaser: "Next: the ultimate article battle! 'der, die, das' — let's crack the code!",
+        },
+        kuttanIntro: [
+          "Machane! 'Ente', 'ninte', 'avante' — Malalaym-il simple aanu. But German-il possessives change with gender. 'Mein' brother, but 'Meine' sister.",
+          "Nammal owned noun-inte gender nokkanam. Masculine/Neuter aano? Ending illa. Feminine/Plural aano? '-e' ending venam.",
+          "Stefan-inte questions 'dein' aano ennu aakum. Answer 'mein' aayirikkum. Let's practice this 'me/you' switch!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab4-3-1", encounterMoment: "Stefan points to a backpack: 'Ist das dein Rucksack?' You answer: 'Ja, das ist mein Rucksack.'", contextSentence: "Das ist mein Haus." },
+          { vocabId: "vocab4-3-2", encounterMoment: "You find a bag: 'Lara, ist das deine Tasche?' Feminine ending care venam!", contextSentence: "Ist das deine Tasche?" },
+          { vocabId: "vocab4-3-3", encounterMoment: "Stefan points to a jacket: 'Das ist sein Mantel.' He's talking about Arjun's coat.", contextSentence: "Sein Vater ist Arzt." },
+          { vocabId: "vocab4-3-4", encounterMoment: "You see a scarf: 'Ist das ihre Schal?' No, 'Schal' is masculine, so 'ist das ihr Schal?'", contextSentence: "Ihre Schwester wohnt in Deutschland." },
+          { vocabId: "vocab4-3-6", encounterMoment: "You show Stefan a photo: 'Meine Familie ist groß.' He's impressed by the crowd!", contextSentence: "Meine Familie kommt aus Kerala." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Stefan holds up a pen (der Stift): 'Ist das dein Stift?' How do you answer 'Yes, that is my pen'?",
+            options: [
+              { text: "Ja, das ist mein Stift.", isCorrect: true, response: "Correct! 'Stift' is masculine, so 'mein' has no ending.", kuttanReaction: "Adipoli! Masculine noun-inu 'mein' mathi. Simple logic perfectly apply cheythallo! 🔥" },
+              { text: "Ja, das ist meine Stift.", isCorrect: false, response: "Aiyyo! 'Stift' is masculine (der Stift). '-e' ending is ONLY for feminine/plural!", kuttanReaction: "Vite machane! Gender article check cheyyu. 'der' kandaal 'mein' mathi. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You find a key (der Schlüssel). It belongs to Lara. How do you tell Stefan 'That is her key'?",
+            options: [
+              { text: "Das ist ihr Schlüssel.", isCorrect: true, response: "Exactly! 'ihr' for her, and no ending because 'Schlüssel' is masculine.", kuttanReaction: "Superb! 'her' is 'ihr'. 'ihr' + masc noun = ihr. Logic correct aayi catch cheythallo! ⭐" },
+              { text: "Das ist ihre Schlüssel.", isCorrect: false, response: "Nearly! But 'Schlüssel' is masculine, so it should be 'ihr', not 'ihre'.", kuttanReaction: "Aiyyo! '-e' ending Lara-kkalla, key-ykkaanu kodukkunnathu. Key masculine aayathu kondu 'ihr' mathi. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v4-3-1",
@@ -576,7 +802,40 @@ export const MODULE_4: Module = {
             "Distinguish between 'mein' (masculine/neuter) and 'meine' (feminine/plural)",
             "Form sentences about possession and family"
           ],
-          placeholderThumbnail: "/images/thumbnails/possessives.jpg"
+          placeholderThumbnail: "/images/german_apartment_living_room_v2.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Possessive Pronouns",
+              headers: ["Person", "Base Form", "+ Feminine/Plural"],
+              rows: [
+                ["ich", "mein", "meine"],
+                ["du", "dein", "deine"],
+                ["er/es", "sein", "seine"],
+                ["sie (she)", "ihr", "ihre"],
+                ["wir", "unser", "unsere"],
+                ["ihr (you all)", "euer", "eure"],
+                ["sie/Sie", "ihr/Ihr", "ihre/Ihre"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Ending Rules",
+              headers: ["Noun Gender", "Ending", "Example"],
+              rows: [
+                ["Masculine (der)", "mein", "mein Bruder"],
+                ["Neuter (das)", "mein", "mein Kind"],
+                ["Feminine (die)", "meine", "meine Schwester"],
+                ["Plural (die)", "meine", "meine Eltern"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Key Difference from Malayalam",
+              variant: "info",
+              content: "Malayalam possessives (ente, ninte, avante) stay the same regardless of what follows. But in German, the ending changes based on the THING owned: 'mein Bruder' but 'meine Schwester'. The possessive adapts to the noun's gender!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -763,6 +1022,47 @@ export const MODULE_4: Module = {
       description: "The most famous challenge in German! Three words for 'the' — and you have to memorise which one goes with which noun. Let's crack the code!",
       duration: "60 min",
       xpReward: 180,
+      storyScene: {
+        setting: {
+          name: "WG Kitchen, The Sticky Note Challenge",
+          sceneType: "home",
+          timeOfDay: "afternoon",
+          description: "The kitchen is covered in colorful Post-its. Stefan has challenge you to label every object with its correct article: der, die, or das. It feels like a high-stakes puzzle game. One wrong article and the logic of the German language collapses (okay, not really, but it feels like it, machane!).",
+        },
+        narrative: {
+          previousRecap: "You've sorted out the possessives in the hallway. Now, it's time to tackle the big one — the three-headed monster of German articles!",
+          currentObjective: "Identify grammatical gender and use the correct definite (der/die/das) and indefinite (ein/eine) articles",
+          nextTeaser: "Next: the finale! Describe your whole family in a full conversation!",
+        },
+        kuttanIntro: [
+          "Machane! German-ile 'der, die, das' logic illathoru scene aanu. Table masculine aanu, lamp feminine aanu, child neuter aanu. Aiyyo!",
+          "But don't panic. Chila shortcuts undu — ending in '-ung' is always feminine (die), ending in '-chen' is always neuter (das).",
+          "Nammal nouns articles-oodu koodi thanne padikkanam. Let's start labelling the kitchen and crack this code!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab4-4-1", encounterMoment: "Stefan points to the table: 'Der Tisch ist groß.' Blue sticky note for masculine!", contextSentence: "Der Mann trinkt Kaffee." },
+          { vocabId: "vocab4-4-2", encounterMoment: "You pick up a lamp: 'Die Lampe ist neu.' Red sticky note for feminine!", contextSentence: "Die Frau liest ein Buch." },
+          { vocabId: "vocab4-4-3", encounterMoment: "You look at the window: 'Das Fenster ist sauber.' Green sticky note for neuter!", contextSentence: "Das Kind spielt im Garten." },
+          { vocabId: "vocab4-4-5", encounterMoment: "Stefan says: 'Die Wohnung ist schön.' Ending in '-ung', so it's die! Easy rule.", contextSentence: "Die Wohnung ist groß." },
+          { vocabId: "vocab4-4-6", encounterMoment: "You see a photo of a girl: 'Das Mädchen'. Even though it means girl, it's das. Logic, machane!", contextSentence: "Das Mädchen ist zehn Jahre alt." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You see the word 'Zeitung' (newspaper). Based on the ending, which article do you choose?",
+            options: [
+              { text: "die Zeitung", isCorrect: true, response: "Exactly! Any word ending in '-ung' is ALWAYS feminine. One less thing to worry about!", kuttanReaction: "Adipoli! '-ung' rule perfect aayi use cheythallo. Ithu pole shortcuts kandaal padikkan nalla sugamaanu! 🔥" },
+              { text: "der Zeitung", isCorrect: false, response: "Aiyyo! Did you forget the '-ung' rule? It's the most reliable rule for feminine nouns!", kuttanReaction: "Vite machane! '-ung' ending kandaal 'die' fix cheythoru. Masculine-il athu varilla! Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to say 'a book'. Book is 'das Buch'. Which one is correct?",
+            options: [
+              { text: "ein Buch", isCorrect: true, response: "Correct! 'das' nouns use 'ein' for the indefinite article.", kuttanReaction: "Superb! 'der' and 'das' randinum 'ein' mathi. 'die'-kku mathram 'eine' venam. Logic clear alle? ⭐" },
+              { text: "eine Buch", isCorrect: false, response: "No, 'eine' is only for feminine (die) nouns. Buch is neuter!", kuttanReaction: "Aiyyo! Buch 'das' aanu, so 'ein' mathi. '-e' ending feminine context-il mathram use cheyyaam. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v4-4-1",
@@ -789,7 +1089,32 @@ export const MODULE_4: Module = {
             "Know the indefinite articles: ein, eine",
             "Understand why this concept is challenging for Malayalam speakers"
           ],
-          placeholderThumbnail: "/images/thumbnails/articles-intro.jpg"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "The Three Genders",
+              headers: ["Gender", "Definite (the)", "Indefinite (a/an)", "Example"],
+              rows: [
+                ["Masculine", "der", "ein", "der Mann (the man)"],
+                ["Feminine", "die", "eine", "die Frau (the woman)"],
+                ["Neuter", "das", "ein", "das Kind (the child)"],
+                ["Plural", "die", "—", "die Kinder (the children)"]
+              ]
+            },
+            {
+              type: "note",
+              title: "'das Mädchen' is NEUTER?!",
+              variant: "warning",
+              content: "Yes, 'das Mädchen' (the girl) is neuter, NOT feminine! Why? Because '-chen' is a diminutive suffix, and ALL diminutives (-chen, -lein) are neuter in German. Logic beats biology here!"
+            },
+            {
+              type: "note",
+              title: "Golden Rule",
+              variant: "tip",
+              content: "Always learn a noun WITH its article. Don't just memorize 'Tisch' — memorize 'der Tisch'. Think of the article as part of the word itself. This saves you from guessing later!"
+            }
+          ]
         },
         {
           id: "v4-4-2",
@@ -824,7 +1149,36 @@ export const MODULE_4: Module = {
             "Know common patterns for neuter nouns",
             "Apply pattern recognition to guess articles for new words"
           ],
-          placeholderThumbnail: "/images/thumbnails/articles-tips.jpg"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Article Cheat Codes by Ending",
+              headers: ["Ending", "Gender", "Examples"],
+              rows: [
+                ["-er (often)", "der (masc)", "der Computer, der Lehrer"],
+                ["-ling", "der (masc)", "der Frühling, der Schmetterling"],
+                ["-ung (ALWAYS!)", "die (fem)", "die Wohnung, die Zeitung"],
+                ["-heit / -keit", "die (fem)", "die Freiheit, die Möglichkeit"],
+                ["-tion", "die (fem)", "die Nation, die Situation"],
+                ["-ment", "das (neut)", "das Dokument, das Instrument"],
+                ["-chen / -lein", "das (neut)", "das Mädchen, das Brötchen"],
+                ["-um", "das (neut)", "das Museum, das Datum"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The -ung Rule is 100% Reliable!",
+              variant: "tip",
+              content: "Any word ending in '-ung' is ALWAYS feminine: die Wohnung, die Zeitung, die Übung, die Rechnung. This is the most reliable pattern in German. Memorize it and you will never get these wrong!"
+            },
+            {
+              type: "note",
+              title: "Colour-Code Your Vocabulary",
+              variant: "tip",
+              content: "Write 'der' words in blue, 'die' words in red, and 'das' words in green. Visual association helps your brain remember the gender much faster than plain text."
+            }
+          ]
         }
       ],
       exercises: [
@@ -1020,6 +1374,47 @@ export const MODULE_4: Module = {
       description: "Put it ALL together — describe your family using everything you've learned: family words, descriptions, possessives, and articles!",
       duration: "45 min",
       xpReward: 200,
+      storyScene: {
+        setting: {
+          name: "WG Kitchen, Friday Dinner",
+          sceneType: "home",
+          timeOfDay: "evening",
+          description: "Pasta is on the table, and the vibe is relaxed. Stefan and Lara are curious about your life in Kerala. 'Erzähl uns von deiner Familie,' (Tell us about your family), Lara says. This is your moment to bring it all together — names, ages, looks, and jobs. Every family word you've learned is now a tool for connection.",
+        },
+        narrative: {
+          previousRecap: "You've survived the article challenge in the kitchen. Now, it's time for the final project — a complete family introduction!",
+          currentObjective: "Combine vocabulary, possessives, and descriptions into a cohesive narrative",
+          nextTeaser: "Congratulations! Module 4 complete. Next: I am hungry! Time to learn about food and shopping!",
+        },
+        kuttanIntro: [
+          "Machane! Ithanu final level. Nammude family-ne patti oru full story parayanam. 'Meine Familie ist groß' ennu thudangaam.",
+          "Ivide possessives (mein/meine) and adjective endings (groß/nett) correctly use cheyyaan makkalle! Professionals parayumpo article (ein/eine) venam ennorkkane.",
+          "Kerala connections and professions — focus on the Golden Formula: Name → Description → Job. Let's make them feel like they're in Kerala with us!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab4-1-1", encounterMoment: "You start with your mother: 'Meine Mutter heißt Lakshmi. Sie ist Lehrerin.' Lara nods.", contextSentence: "Meine Mutter ist Lehrerin." },
+          { vocabId: "vocab4-1-2", encounterMoment: "Next is your dad: 'Mein Vater ist Ingenieur. Er ist sehr fleißig.' Engineering pride!", contextSentence: "Mein Vater arbeitet in Kochi." },
+          { vocabId: "vocab4-5-1", encounterMoment: "You explain where everyone is: 'Meine Eltern kommen aus Kochi.' A beautiful coastal city!", contextSentence: "Ich komme aus Thiruvananthapuram." },
+          { vocabId: "vocab4-5-7", encounterMoment: "You mention your uncle: 'Mein Onkel ist auch Ingenieur.' Engineering runs in the family!", contextSentence: "Mein Onkel ist Ingenieur bei Bosch." },
+          { vocabId: "vocab4-5-6", encounterMoment: "You conclude: 'Wir leben zusammen in Kerala.' A happy family photo on your phone ends the story.", contextSentence: "Wir leben zusammen in einem Haus." },
+        ],
+        decisionPoints: [
+          {
+            moment: "How do you correctly say 'My brother is called Arjun and he is funny'?",
+            options: [
+              { text: "Mein Bruder heißt Arjun und er ist lustig.", isCorrect: true, response: "Perfect! You used 'heißt' for the name and 'ist' for the description.", kuttanReaction: "Kiraathakam machane! Name and personality logic correct aayi join cheythallo! 🔥" },
+              { text: "Meine Bruder ist Arjun und he ist lustig.", isCorrect: false, response: "Aiyyo! 'Bruder' is masculine, so it should be 'mein'. And use 'er', not 'he'!", kuttanReaction: "Vite machane! Possessive and pronoun care venam. 'Mein' (mask) and 'er' (he) aanu correct. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to say your mother is a teacher. How do you say 'She is a teacher' properly in German?",
+            options: [
+              { text: "Sie ist Lehrerin.", isCorrect: true, response: "Correct! In German, we don't use 'a/an' before professions in this context.", kuttanReaction: "Adipoli! 'Ich bin Student', 'Sie ist Lehrerin' — profession-nu article venda. German logic simple alle? ⭐" },
+              { text: "Sie ist eine Lehrerin.", isCorrect: false, response: "Technically understandable, but sounds unnatural. Professionals usually drop the article!", kuttanReaction: "Aiyyo! Common mistake! Article kooduthalaanu ivide. 'Sie ist Lehrerin' mathi. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v4-5-1",
@@ -1050,7 +1445,34 @@ export const MODULE_4: Module = {
             "Use proper article and possessive agreement",
             "Speak multiple connected sentences about family"
           ],
-          placeholderThumbnail: "/images/thumbnails/family-description.jpg"
+          placeholderThumbnail: "/images/kaffeeklatsch.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Family Description Building Blocks",
+              headers: ["Purpose", "Pattern", "Example"],
+              rows: [
+                ["Name", "Mein/e ... heißt ...", "Mein Vater heißt Rajesh."],
+                ["Origin", "Er/Sie kommt aus ...", "Er kommt aus Kochi."],
+                ["Description", "Er/Sie ist ...", "Sie ist nett und intelligent."],
+                ["Job", "Er/Sie ist ...", "Er ist Ingenieur."],
+                ["Feature", "Er/Sie hat ...", "Sie hat lange, schwarze Haare."],
+                ["Home", "Er/Sie wohnt in ...", "Er wohnt in Deutschland."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Possessives Must Match!",
+              variant: "warning",
+              content: "Remember: 'mein Bruder' (der Bruder = masculine) but 'meine Schwester' (die Schwester = feminine). The possessive ending must agree with the gender of the family member, not your own gender!"
+            },
+            {
+              type: "note",
+              title: "Pro Tip: Structure Your Description",
+              variant: "tip",
+              content: "Start with a general intro ('Meine Familie ist groß.'), then introduce each person with: name + description + job. This structure works for A1 exams and real conversation!"
+            }
+          ]
         }
       ],
       exercises: [

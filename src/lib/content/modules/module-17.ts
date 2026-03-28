@@ -90,7 +90,33 @@ export const MODULE_17: Module = {
             "Learn time management and elimination strategies",
             "Know what to bring and expect on exam day"
           ],
-          placeholderThumbnail: "/images/german_train_station.png"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Goethe A1 Exam Structure",
+              headers: ["Section", "Duration", "Max Points"],
+              rows: [
+                ["Hören (Listening)", "~20 min", "25 points"],
+                ["Lesen (Reading)", "~25 min", "25 points"],
+                ["Schreiben (Writing)", "~20 min", "25 points"],
+                ["Sprechen (Speaking)", "~15 min", "25 points"],
+                ["TOTAL", "~80 min", "100 points"]
+              ]
+            },
+            {
+              type: "note",
+              title: "60/100 = You Pass!",
+              variant: "info",
+              content: "You need a minimum of 60 points total to pass. Even if one section is weak, a strong performance in others can save you. Focus on your strengths!"
+            },
+            {
+              type: "note",
+              title: "Exam Day Checklist",
+              variant: "warning",
+              content: "Bring: Valid passport/ID, exam confirmation letter, black pen. Arrive 30 minutes early. Late arrivals may NOT be allowed in. No phones allowed during the exam!"
+            }
+          ]
         },
       ],
       exercises: [
@@ -353,7 +379,37 @@ export const MODULE_17: Module = {
             "Practice Richtig/Falsch decision-making with short messages",
             "Recognize paraphrased statements"
           ],
-          placeholderThumbnail: "/images/german_train_station.png"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Hören Teil 1 Format",
+              headers: ["Detail", "Info"],
+              rows: [
+                ["Number of items", "6 short messages"],
+                ["Plays", "Each audio plays TWICE"],
+                ["Task", "Richtig (True) or Falsch (False)"],
+                ["Content", "Voicemails, announcements, phone messages"],
+                ["Time", "~7 minutes"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Negation Trap!",
+              variant: "warning",
+              content: "Watch out for 'nicht', 'kein', 'niemand'. These words REVERSE the meaning! If you hear 'Der Termin ist NICHT am Montag', and the statement says 'Montag', it's FALSCH!"
+            },
+            {
+              type: "table",
+              title: "Common Audio Traps",
+              headers: ["Trap", "Example", "Watch For"],
+              rows: [
+                ["Number confusion", "13 vs 30", "dreizehn vs dreißig"],
+                ["Day swap", "Dienstag vs Donnerstag", "Listen until the end"],
+                ["Time change", "Original vs corrected time", "'nicht... sondern...'"]
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -589,7 +645,36 @@ export const MODULE_17: Module = {
             "Practice identifying key information in short conversations",
             "Learn to match announcements to the correct everyday situations"
           ],
-          placeholderThumbnail: "/images/german_train_station.png"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Hören Teil 2 & 3 Format",
+              headers: ["Part", "Items", "Task", "Content"],
+              rows: [
+                ["Teil 2", "4 dialogues", "Multiple choice (a/b/c)", "Everyday conversations"],
+                ["Teil 3", "5 announcements", "Match to 8 situations", "Public announcements"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Read Options BEFORE Listening!",
+              variant: "tip",
+              content: "Use the 15-second pause before each audio to read ALL the options. Know what you're listening for BEFORE the audio starts. This is the biggest time-saver!"
+            },
+            {
+              type: "table",
+              title: "Keyword → Location Clues",
+              headers: ["Keyword", "Location"],
+              rows: [
+                ["Gleis, Zug", "Train station"],
+                ["Flug, Gate", "Airport"],
+                ["Angebot, Sonderpreis", "Supermarket"],
+                ["Sprechstunde, Termin", "Doctor's office"],
+                ["Unterricht, Kurs", "School / Language class"]
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -826,7 +911,40 @@ export const MODULE_17: Module = {
             "Recognize common abbreviations in German notices",
             "Use keywords to quickly identify the correct match"
           ],
-          placeholderThumbnail: "/images/university_library.png"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Key Words on German Signs",
+              headers: ["German", "English", "What It Means"],
+              rows: [
+                ["geöffnet", "open", "The place is open"],
+                ["geschlossen", "closed", "The place is closed"],
+                ["verboten", "forbidden", "You CANNOT do this"],
+                ["kostenlos / frei", "free", "No charge"],
+                ["Sonderangebot", "special offer", "Discounted price"],
+                ["Achtung!", "Attention!", "Important warning"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Read the SITUATION First!",
+              variant: "tip",
+              content: "In Lesen Teil 1, always read the situation/question FIRST, then scan the sign for matching keywords. Don't waste time reading every word on the sign."
+            },
+            {
+              type: "table",
+              title: "Common Abbreviations",
+              headers: ["Abbreviation", "Full Form", "Meaning"],
+              rows: [
+                ["NK", "Nebenkosten", "Utilities/Side costs"],
+                ["ZKB", "Zimmer-Küche-Bad", "Room-Kitchen-Bath"],
+                ["EG", "Erdgeschoss", "Ground floor"],
+                ["So", "Sonntag", "Sunday"],
+                ["Mo-Fr", "Montag bis Freitag", "Mon to Fri"]
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -1113,7 +1231,36 @@ export const MODULE_17: Module = {
             "Extract key information: who, what, when, where, why",
             "Distinguish between formal and informal German emails"
           ],
-          placeholderThumbnail: "/images/university_library.png"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Lesen Teil 2 & 3 Format",
+              headers: ["Part", "Items", "Task", "Content"],
+              rows: [
+                ["Teil 2", "5 ads/classifieds", "Richtig / Falsch", "Apartment, job, event ads"],
+                ["Teil 3", "5 short emails", "Multiple choice (a/b/c)", "Invitations, requests, cancellations"]
+              ]
+            },
+            {
+              type: "note",
+              title: "5 Key Questions for Ads",
+              variant: "tip",
+              content: "When reading classifieds, always extract: WAS? (What), WO? (Where), WANN? (When), WIE VIEL? (How much), KONTAKT? (Contact). These 5 answers solve most questions."
+            },
+            {
+              type: "table",
+              title: "Email Clue Words",
+              headers: ["Word/Phrase", "Type of Email"],
+              rows: [
+                ["Einladung, einladen", "Invitation"],
+                ["absagen, leider nicht", "Cancellation"],
+                ["Bitte, Können Sie...?", "Request"],
+                ["Vielen Dank für...", "Thank you"],
+                ["Beschwerde, Problem", "Complaint"]
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -1337,7 +1484,34 @@ export const MODULE_17: Module = {
             "Build confidence for the actual Goethe A1 exam",
             "Identify any remaining weak areas for further practice"
           ],
-          placeholderThumbnail: "/images/university_library.png"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Quick Strategy Recap",
+              headers: ["Section", "Top Strategy", "Time"],
+              rows: [
+                ["Hören 1", "Watch for negation (nicht/kein)", "~7 min"],
+                ["Hören 2", "Read options before listening", "~7 min"],
+                ["Hören 3", "Match keywords to situations", "~6 min"],
+                ["Lesen 1", "Scan signs for key action words", "~8 min"],
+                ["Lesen 2", "Extract: What, Where, When, How much", "~8 min"],
+                ["Lesen 3", "Read question first, scan email for answer", "~9 min"]
+              ]
+            },
+            {
+              type: "note",
+              title: "If Stuck, Guess & Move On!",
+              variant: "warning",
+              content: "Don't spend more than 1 minute on any single question. Make your best guess and move on. Each question is worth the same — don't let one hard question steal time from easy ones!"
+            },
+            {
+              type: "note",
+              title: "Viel Erfolg!",
+              variant: "info",
+              content: "You've prepared well through all lessons. Stay calm, trust your preparation. Each question is independent — one wrong answer doesn't affect the next. You've got this!"
+            }
+          ]
         }
       ],
       exercises: [

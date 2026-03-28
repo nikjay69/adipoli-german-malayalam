@@ -22,6 +22,46 @@ export const MODULE_13: Module = {
       description: "Master the most common past tense in German \u2014 the Perfekt with haben. Like saying 'I have done' in English!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "WG Kitchen (In der Küche)",
+          sceneType: "home",
+          timeOfDay: "morning",
+          description: "A Tuesday morning. The kettle is whistling, and Arjun is scrolling through his phone. He asks: 'Was hast du gestern gemacht?' (What did you do yesterday?). In Kerala, we might just say 'Njan padichu' (I studied), but in German, you need a helper verb (haben) and a past participle (gelernt). It's like a 'Sandwich' where the action word sits at the very end. Let's build your first past tense sentence, machane!",
+        },
+        narrative: {
+          previousRecap: "You've mastered the present. Now, let's learn how to tell stories from the past!",
+          currentObjective: "Form 'haben' + past participle sentences and understand the 'ge-...-t' pattern",
+          nextTeaser: "Next: Movement verbs! Let's see how 'sein' joins the past tense party!",
+        },
+        kuttanIntro: [
+          "Machane! Past tense German-il 'Perfekt' ennu parayum. Ithu nammude 'Kazhichu', 'Vannu' logic pole thanne aanu. Verb eppozhum sentence-inde end-il aayirikkum.",
+          "Main tool 'haben' helper verb aanu. 'Ich habe...' + your activity. Most regular verbs stay simple: 'ge-' + stem + '-t'. 'gekocht' (cooked), 'gelernt' (learned).",
+          "Remember the 'Sandwich Rule': Bread 1 (haben) is at Position 2. Bread 2 (Participle) is at the VERY END. Let's make a sandwich!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab13-1-7", encounterMoment: "Arjun asks about the day: 'Was hast du gestern gemacht?'", contextSentence: "Gestern habe ich viel geschlafen." },
+          { vocabId: "vocab13-1-6", encounterMoment: "You point to the stove: 'Ich habe Meen Curry gekocht.'", contextSentence: "Wir haben Meen Curry gekocht." },
+          { vocabId: "vocab13-1-4", encounterMoment: "You check your notes: 'Ich habe Deutsch gelernt.'", contextSentence: "Ich habe Deutsch gelernt." },
+          { vocabId: "vocab13-1-2", encounterMoment: "Arjun nods: 'Gut gemacht!' (Well done!).", contextSentence: "Ich habe meine Hausaufgaben gemacht." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'I learned football'. Where do you place the word 'gespielt'?",
+            options: [
+              { text: "At the very end of the sentence.", isCorrect: true, response: "Exactly! Bread 2 always stays at the end of the sandwich.", kuttanReaction: "Adipoli! Sandwich logic perfectly capture cheythallo! 🔥" },
+              { text: "Right after 'haben'.", isCorrect: false, response: "Aiyyo! In German Perfekt, the participle MUST sit at the end. Don't crowd the helper!", kuttanReaction: "Vite machane! Bread logic marakkallae. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "How do you conjugate 'haben' for the subject 'Er' (He)?",
+            options: [
+              { text: "hat.", isCorrect: true, response: "Correct! Er hat, sie hat, es hat.", kuttanReaction: "Superb! Conjugation logic correctly picked! ⭐" },
+              { text: "hast.", isCorrect: false, response: "No! 'hast' is for 'Du'. For 'Er', we use 'hat'.", kuttanReaction: "Aiyyo! 'Du' logic and 'Er' logic separate aanu machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v13-1-1",
@@ -41,7 +81,37 @@ export const MODULE_13: Module = {
           ],
           keyVocabulary: ["haben", "gemacht", "gespielt", "gelernt", "gekauft", "gekocht"],
           learningObjectives: ["Understand the Perfekt tense structure with haben", "Conjugate haben correctly for all persons", "Form sentences about past activities using haben"],
-          placeholderThumbnail: "/images/thumbnails/perfekt-haben.jpg"
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "haben Conjugation in Perfekt",
+              headers: ["Person", "haben", "Example"],
+              rows: [
+                ["ich", "habe", "Ich habe gelernt."],
+                ["du", "hast", "Du hast gespielt."],
+                ["er/sie/es", "hat", "Er hat gekocht."],
+                ["wir", "haben", "Wir haben gekauft."],
+                ["ihr", "habt", "Ihr habt gemacht."],
+                ["sie/Sie", "haben", "Sie haben getanzt."]
+              ]
+            },
+            {
+              type: "note",
+              title: "The Sandwich Rule",
+              variant: "tip",
+              content: "Subject + haben (bread 1) + ... + past participle (bread 2 at the END!). Nothing can come after the participle. Malayalam-il 'kazhichu', 'padichu' end-il varunnathu pole thanne!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "haben", english: "to have", malayalam: "ഉണ്ടായിരിക്കുക", pronunciation: "hah-ben" },
+                { german: "gemacht", english: "done/made", malayalam: "ചെയ്തു", pronunciation: "ge-makht" },
+                { german: "gelernt", english: "learned", malayalam: "പഠിച്ചു", pronunciation: "ge-lernt" },
+                { german: "gekocht", english: "cooked", malayalam: "പാചകം ചെയ്തു", pronunciation: "ge-kokht" }
+              ]
+            }
+          ]
         },
         {
           id: "v13-1-2",
@@ -58,7 +128,33 @@ export const MODULE_13: Module = {
           ],
           keyVocabulary: ["gemacht", "gespielt", "gelernt", "gekauft", "gekocht"],
           learningObjectives: ["Form regular past participles using the ge-...-t pattern", "Recognize regular verb patterns", "Create past tense sentences with regular verbs"],
-          placeholderThumbnail: "/images/thumbnails/regular-participles.jpg"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Regular Past Participle: ge- + stem + -t",
+              headers: ["Verb", "Stem", "Participle"],
+              rows: [
+                ["machen", "mach", "gemacht"],
+                ["spielen", "spiel", "gespielt"],
+                ["lernen", "lern", "gelernt"],
+                ["kaufen", "kauf", "gekauft"],
+                ["kochen", "koch", "gekocht"]
+              ]
+            },
+            {
+              type: "note",
+              title: "90% Rule",
+              variant: "info",
+              content: "90% of regular German verbs follow the ge-...-t pattern. Learn this one formula and you can form the past tense of thousands of verbs!"
+            },
+            {
+              type: "note",
+              title: "Pronunciation Tip",
+              variant: "tip",
+              content: "The 'ge-' prefix is always short — say 'guh', not 'gay'. Practice: ge-makht, ge-shpeelt, ge-lernt."
+            }
+          ]
         }
       ],
       exercises: [
@@ -105,9 +201,49 @@ export const MODULE_13: Module = {
       id: "13-2",
       title: "Perfekt Tense with sein",
       titleGerman: "Perfekt mit sein",
-      description: "Some verbs use 'sein' instead of 'haben' in the past tense \u2014 mostly verbs about moving or changing!",
+      description: "Some verbs use 'sein' instead of 'haben' in the past tense — mostly verbs about moving or changing!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Main Station (Am Bahnhof)",
+          sceneType: "station",
+          timeOfDay: "afternoon",
+          description: "You're at the station, looking at the departure board. You just got back from a weekend trip. In German, if you travel from Point A to Point B, the 'haben' sandwich doesn't work. You need 'sein'. You tell Arjun: 'Ich bin nach Hamburg gefahren'. It feels strange at first—like saying 'I am driven' instead of 'I have driven'—but it's the only way to talk about your adventures! Ready to move, machane?",
+        },
+        narrative: {
+          previousRecap: "You've mastered the daily activities with 'haben'. Now, let's look at your travels!",
+          currentObjective: "Identify movement and change-of-state verbs that use 'sein' and form correct sentences",
+          nextTeaser: "Next: Irregular verbs! Let's see what happens to 'essen' and 'trinken'!",
+        },
+        kuttanIntro: [
+          "Machane! Every past tense verb 'haben' use cheyyilla. If there is movement (Point A to Point B), you MUST use 'sein'. 'Ich bin gegangen', 'Ich bin gefahren'. Travel logic!",
+          "Pinne oru special exception undu: 'bleiben' (to stay). Ivide movement illa, but still 'sein' thanne use cheyyanam. 'Ich bin zu Hause geblieben'. Don't ask why, just fix it in your mind!",
+          "Sentence structure same aanu — helper verb in Pos 2, participle at the VERY END. Let's go!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab13-2-2", encounterMoment: "You show a photo: 'Ich bin nach Hamburg gefahren.'", contextSentence: "Sie ist nach Hamburg gefahren." },
+          { vocabId: "vocab13-2-1", encounterMoment: "You point to the map: 'Ich bin ins Kino gegangen.'", contextSentence: "Ich bin ins Kino gegangen." },
+          { vocabId: "vocab13-2-8", encounterMoment: "You note: 'Gestern bin ich zu Hause geblieben.'", contextSentence: "Ich bin zu Hause geblieben." },
+          { vocabId: "vocab13-2-4", encounterMoment: "Arjun says: 'Er ist gestern gekommen.' (He came yesterday).", contextSentence: "Er ist gestern gekommen." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'I went to Berlin'. Which helper verb do you use?",
+            options: [
+              { text: "bin.", isCorrect: true, response: "Exactly! 'gehen' is movement, so use 'sein' (bin).", kuttanReaction: "Adipoli! Movement logic perfectly capture cheythallo! 🔥" },
+              { text: "habe.", isCorrect: false, response: "Aiyyo! 'haben' is for static activities. Movement verbs need 'sein'.", kuttanReaction: "Vite machane! Travel equals 'sein'. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You stayed at home all day. How do you say it correctly?",
+            options: [
+              { text: "Ich bin zu Hause geblieben.", isCorrect: true, response: "Correct! 'bleiben' is the famous exception that uses 'sein'.", kuttanReaction: "Superb! Exception logic correctly picked! ⭐" },
+              { text: "Ich habe zu Hause geblieben.", isCorrect: false, response: "No! Even though you didn't move, 'bleiben' always takes 'sein'.", kuttanReaction: "Aiyyo! 'bleiben' exception marakkallae machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v13-2-1",
@@ -128,9 +264,79 @@ export const MODULE_13: Module = {
           ],
           keyVocabulary: ["sein", "gegangen", "gefahren", "geflogen", "gekommen"],
           learningObjectives: ["Understand why some verbs use sein", "Identify movement and change-of-state verbs", "Form correct Perfekt sentences with sein"],
-          placeholderThumbnail: "/images/thumbnails/perfekt-sein.jpg"
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "sein Conjugation in Perfekt",
+              headers: ["Person", "sein", "Example"],
+              rows: [
+                ["ich", "bin", "Ich bin gegangen."],
+                ["du", "bist", "Du bist gefahren."],
+                ["er/sie/es", "ist", "Er ist gekommen."],
+                ["wir", "sind", "Wir sind geflogen."],
+                ["ihr", "seid", "Ihr seid gelaufen."],
+                ["sie/Sie", "sind", "Sie sind geblieben."]
+              ]
+            },
+            {
+              type: "note",
+              title: "When to Use sein?",
+              variant: "tip",
+              content: "Movement from A to B (gehen, fahren, fliegen) or change of state (aufwachen, sterben) = sein. Exception: 'bleiben' (stay) also uses sein even without movement!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "gegangen", english: "gone/walked", malayalam: "പോയി", pronunciation: "ge-gang-en" },
+                { german: "gefahren", english: "driven/traveled", malayalam: "യാത്ര ചെയ്തു", pronunciation: "ge-fah-ren" },
+                { german: "gekommen", english: "come", malayalam: "വന്നു", pronunciation: "ge-ko-men" },
+                { german: "geblieben", english: "stayed", malayalam: "താമസിച്ചു", pronunciation: "ge-blee-ben" }
+              ]
+            }
+          ]
         },
-        { id: "v13-2-2", title: "Common sein-Verbs", duration: "10:00", description: "Master the most frequently used verbs that take sein in the Perfekt", scriptOutline: ["gehen \u2192 gegangen, fahren \u2192 gefahren, fliegen \u2192 geflogen", "kommen \u2192 gekommen, laufen \u2192 gelaufen", "Special: sein \u2192 gewesen, werden \u2192 geworden, bleiben \u2192 geblieben", "bleiben uses sein even without movement!"], keyVocabulary: ["gegangen", "gefahren", "geflogen", "gekommen", "gelaufen", "gewesen", "geworden", "geblieben"], learningObjectives: ["Know the most common sein-verbs", "Use sein-verbs correctly in sentences", "Remember special cases like bleiben"], placeholderThumbnail: "/images/thumbnails/sein-verbs.jpg" }
+        {
+          id: "v13-2-2",
+          title: "Common sein-Verbs",
+          duration: "10:00",
+          description: "Master the most frequently used verbs that take sein in the Perfekt",
+          scriptOutline: ["gehen \u2192 gegangen, fahren \u2192 gefahren, fliegen \u2192 geflogen", "kommen \u2192 gekommen, laufen \u2192 gelaufen", "Special: sein \u2192 gewesen, werden \u2192 geworden, bleiben \u2192 geblieben", "bleiben uses sein even without movement!"],
+          keyVocabulary: ["gegangen", "gefahren", "geflogen", "gekommen", "gelaufen", "gewesen", "geworden", "geblieben"],
+          learningObjectives: ["Know the most common sein-verbs", "Use sein-verbs correctly in sentences", "Remember special cases like bleiben"],
+          placeholderThumbnail: "/images/german_train_station.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Common sein-Verbs & Their Participles",
+              headers: ["Verb", "Participle", "Meaning"],
+              rows: [
+                ["gehen", "gegangen", "went/walked"],
+                ["fahren", "gefahren", "drove/traveled"],
+                ["fliegen", "geflogen", "flew"],
+                ["kommen", "gekommen", "came"],
+                ["laufen", "gelaufen", "ran"],
+                ["bleiben", "geblieben", "stayed"],
+                ["sein", "gewesen", "was/been"],
+                ["werden", "geworden", "became"]
+              ]
+            },
+            {
+              type: "note",
+              title: "bleiben = Exception!",
+              variant: "warning",
+              content: "bleiben (to stay) uses 'sein' even though there's NO movement. It's the famous exception — memorize it! 'Ich bin zu Hause geblieben.'"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "gewesen", english: "been", malayalam: "ആയിരുന്നു", pronunciation: "ge-vay-zen" },
+                { german: "geworden", english: "became", malayalam: "ആയിത്തീർന്നു", pronunciation: "ge-vor-den" },
+                { german: "gelaufen", english: "ran", malayalam: "ഓടി", pronunciation: "ge-low-fen" }
+              ]
+            }
+          ]
+        }
       ],
       exercises: [
         { id: "ex13-2-1", type: "multiple-choice", question: "Which helper verb is used for 'gehen' (to go)?", options: ["sein", "haben", "werden", "machen"], correctAnswer: "sein", explanation: "'Gehen' involves movement from one place to another (Point A to Point B), so it requires 'sein' as the helper verb in Perfekt.", xpReward: 10 },
@@ -175,9 +381,49 @@ export const MODULE_13: Module = {
       id: "13-3",
       title: "Irregular Past Participles",
       titleGerman: "Unregelm\u00e4\u00dfige Partizipien",
-      description: "Tackle the tricky irregular verbs \u2014 they change their stem, but once you learn the patterns, they're not so scary!",
+      description: "Tackle the tricky irregular verbs — they change their stem, but once you learn the patterns, they're not so scary!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Local Restaurant (Im Restaurant)",
+          sceneType: "restaurant",
+          timeOfDay: "evening",
+          description: "A cozy dinner setting with warm lights. You're sharing a meal with Arjun. In Kerala, we say 'Kazhichu' (ate) for everything, but in German, 'essen' becomes 'gegessen' and 'trinken' becomes 'getrunken'. These are the 'Irregular' ones. They don't like the '-t' ending; they prefer '-en'. It's like learning the irregular plurals in English. But don't worry, the patterns are musical, machane!",
+        },
+        narrative: {
+          previousRecap: "You've moved across the city. Now, let's look at the verbs that change their shape!",
+          currentObjective: "Recognize irregular past participle patterns (ge-...-en) and use them correctly",
+          nextTeaser: "Next: Telling your full weekend story! Let's put everything together!",
+        },
+        kuttanIntro: [
+          "Machane! Some verbs in German are a bit rebellious. They don't end in '-t' for the past tense. Instead, they end in '-en'.",
+          "Main ones are eating and drinking — 'gegessen' and 'getrunken'. Vowel change sradhikkanne: 'trinken' becomes 'getrunken'. Musical vibe aanu!",
+          "Pinne 'sehen' (see) stays simple: 'gesehen'. If you see a movie, 'Ich habe einen Film gesehen'. Let's master these rebels!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab13-3-1", encounterMoment: "You look at your plate: 'Ich habe Biryani gegessen.'", contextSentence: "Ich habe Biryani gegessen." },
+          { vocabId: "vocab13-3-2", encounterMoment: "Arjun drinks water: 'Ich habe Wasser getrunken.'", contextSentence: "Er hat Kaffee getrunken." },
+          { vocabId: "vocab13-3-5", encounterMoment: "You mention: 'Ich habe einen Film gesehen.'", contextSentence: "Wir haben einen Film gesehen." },
+          { vocabId: "vocab13-3-7", encounterMoment: "Stefan adds: 'Wir haben Deutsch gesprochen.' (We spoke German).", contextSentence: "Wir haben Deutsch gesprochen." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'I ate'. Which past participle is correct?",
+            options: [
+              { text: "gegessen.", isCorrect: true, response: "Exactly! 'essen' becomes 'gegessen'.", kuttanReaction: "Adipoli! Irregular logic perfectly capture cheythallo! 🔥" },
+              { text: "geesst.", isCorrect: false, response: "Aiyyo! 'geesst' exists only in dreams. Use 'gegessen'.", kuttanReaction: "Vite machane! Rebels don't take '-t'. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to say 'I drank a coffee'. Where does 'getrunken' go?",
+            options: [
+              { text: "At the very end of the clause.", isCorrect: true, response: "Correct! Even for irregulars, the sandwich rule applies.", kuttanReaction: "Superb! Sentence structure remains the same. ⭐" },
+              { text: "Right after 'hat'.", isCorrect: false, response: "No! Participle stays at the end, regular or irregular.", kuttanReaction: "Aiyyo! Position 2 is for the helper verb only. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v13-3-1",
@@ -196,9 +442,70 @@ export const MODULE_13: Module = {
           ],
           keyVocabulary: ["gegessen", "getrunken", "geschrieben", "gelesen", "gesehen", "genommen", "gesprochen"],
           learningObjectives: ["Recognize the ge-...-en pattern", "Know common irregular past participles", "Use them in sentences"],
-          placeholderThumbnail: "/images/thumbnails/irregular-participles.jpg"
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Common Irregular Past Participles (ge-...-en)",
+              headers: ["Verb", "Participle", "Vowel Change?"],
+              rows: [
+                ["essen", "gegessen", "No"],
+                ["trinken", "getrunken", "i → u"],
+                ["schreiben", "geschrieben", "ei → ie"],
+                ["sehen", "gesehen", "No"],
+                ["lesen", "gelesen", "No"],
+                ["schlafen", "geschlafen", "No"],
+                ["sprechen", "gesprochen", "e → o"]
+              ]
+            },
+            {
+              type: "note",
+              title: "i-a-u Sound Group",
+              variant: "tip",
+              content: "Some verbs follow the i-a-u pattern: trinken (drank/getrunken), singen (sang/gesungen), springen (sprang/gesprungen). Practice the rhythm like a song!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "gegessen", english: "eaten", malayalam: "കഴിച്ചു", pronunciation: "ge-gess-en" },
+                { german: "getrunken", english: "drunk", malayalam: "കുടിച്ചു", pronunciation: "ge-trunk-en" },
+                { german: "geschrieben", english: "written", malayalam: "എഴുതി", pronunciation: "ge-shree-ben" },
+                { german: "gesprochen", english: "spoken", malayalam: "സംസാരിച്ചു", pronunciation: "ge-shpro-khen" }
+              ]
+            }
+          ]
         },
-        { id: "v13-3-2", title: "Most Common Irregular Verbs", duration: "10:00", description: "Special rules \u2014 verbs with no ge- prefix and -ieren verbs", scriptOutline: ["Inseparable prefixes: be-, er-, ver-, ent- \u2192 NO ge-!", "besuchen \u2192 besucht, verstehen \u2192 verstanden", "-ieren verbs: telefonieren \u2192 telefoniert, studieren \u2192 studiert"], keyVocabulary: ["besucht", "verstanden", "erz\u00e4hlt", "telefoniert", "studiert"], learningObjectives: ["Know which verbs don't take ge-", "Form past participles for inseparable prefix verbs", "Handle -ieren verbs"], placeholderThumbnail: "/images/thumbnails/no-ge-verbs.jpg" }
+        {
+          id: "v13-3-2",
+          title: "Most Common Irregular Verbs",
+          duration: "10:00",
+          description: "Special rules \u2014 verbs with no ge- prefix and -ieren verbs",
+          scriptOutline: ["Inseparable prefixes: be-, er-, ver-, ent- \u2192 NO ge-!", "besuchen \u2192 besucht, verstehen \u2192 verstanden", "-ieren verbs: telefonieren \u2192 telefoniert, studieren \u2192 studiert"],
+          keyVocabulary: ["besucht", "verstanden", "erz\u00e4hlt", "telefoniert", "studiert"],
+          learningObjectives: ["Know which verbs don't take ge-", "Form past participles for inseparable prefix verbs", "Handle -ieren verbs"],
+          placeholderThumbnail: "/images/university_library.png",
+          richContent: [
+            {
+              type: "table",
+              title: "No ge- Prefix Rules",
+              headers: ["Rule", "Verb", "Participle"],
+              rows: [
+                ["be-", "besuchen", "besucht"],
+                ["ver-", "verstehen", "verstanden"],
+                ["er-", "erzählen", "erzählt"],
+                ["ent-", "entschuldigen", "entschuldigt"],
+                ["-ieren", "telefonieren", "telefoniert"],
+                ["-ieren", "studieren", "studiert"]
+              ]
+            },
+            {
+              type: "note",
+              title: "No ge- for Inseparable Prefixes!",
+              variant: "warning",
+              content: "Verbs starting with be-, er-, ver-, ent-, emp-, zer- NEVER get 'ge-'. Also -ieren verbs skip 'ge-'. So it's 'besucht' NOT 'gebesucht'!"
+            }
+          ]
+        }
       ],
       exercises: [
         { id: "ex13-3-1", type: "multiple-choice", question: "What is the past participle of 'essen' (to eat)?", options: ["geessen", "gegessen", "geesst", "gegessent"], correctAnswer: "gegessen", explanation: "'Essen' is irregular. It follows the ge-...-en pattern, and adds an extra 'g' for pronunciation: ge-g-essen.", xpReward: 10 },
@@ -245,8 +552,83 @@ export const MODULE_13: Module = {
       description: "Put it all together! Tell a full story about your weekend using Perfekt, connectors, and time expressions.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Main Street (In der Stadt)",
+          sceneType: "station",
+          timeOfDay: "afternoon",
+          description: "A bright Monday. You're walking with Arjun near the city center. He wants to know everything about your weekend. In Kerala, we tell stories with 'ennitu' (and then) and 'pinne' (after that), and German has equivalent tools: 'zuerst', 'dann', and 'danach'. You're stitching your thoughts together into a real narrative. From the moment you 'aufgestanden' (woke up) to when you 'eingekauft' (shopped). This is your first long speech in German! You got this, machane!",
+        },
+        narrative: {
+          previousRecap: "You've learned the verbs. Now, let's learn how to connect them into a story!",
+          currentObjective: "Narrate a full weekend story using sequential connectors and correct past tense forms",
+          nextTeaser: "Final Lesson: Time expressions! Let's see how to say 'two days ago'!",
+        },
+        kuttanIntro: [
+          "Machane! Narrative parayumpol order is important. 'Zuerst' (first) ennu vechu start cheyyuka. 'Zuerst habe ich gefrühstückt'.",
+          "Pinne 'dann' (then) or 'danach' (after that) use cheythu flow maintain cheyyaam. Verb is always in Pos 2 if you start with these words!",
+          "Story end cheyyan 'zum Schluss' (finally) use cheyyuka. Full flow set aakaam. Let's practice your weekend report!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab13-4-1", encounterMoment: "You start your story: 'Zuerst bin ich joggen gegangen.'", contextSentence: "Zuerst habe ich gefrühstückt." },
+          { vocabId: "vocab13-4-2", encounterMoment: "You continue: 'Dann habe ich gefrühstückt.'", contextSentence: "Dann bin ich in die Stadt gefahren." },
+          { vocabId: "vocab13-4-5", encounterMoment: "You finish: 'Zum Schluss bin ich schlafen gegangen.'", contextSentence: "Zum Schluss bin ich ins Bett gegangen." },
+          { vocabId: "vocab13-4-8", encounterMoment: "You mention: 'Ich habe im Supermarkt eingekauft.'", contextSentence: "Wir haben im Supermarkt eingekauft." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to start your story with 'At first'. Which word do you choose?",
+            options: [
+              { text: "zuerst.", isCorrect: true, response: "Exactly! 'zuerst' is the standard way to begin a sequence.", kuttanReaction: "Adipoli! Connector logic perfectly capture cheythallo! 🔥" },
+              { text: "dann.", isCorrect: false, response: "Aiyyo! 'dann' usually follows 'zuerst'. Start with the first one!", kuttanReaction: "Vite machane! Sequence marakkallae. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "If you start a sentence with 'Dann', where does the verb 'habe' go?",
+            options: [
+              { text: "At position 2.", isCorrect: true, response: "Correct! The verb-second rule is non-negotiable.", kuttanReaction: "Superb! Sentence structure logic correctly noted! ⭐" },
+              { text: "At the end.", isCorrect: false, response: "No! Only the participle goes to the end. The helper verb stays in the second position.", kuttanReaction: "Aiyyo! Pos 2 is for the verb, Pos 1 can be 'Dann'. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
-        { id: "v13-4-1", title: "Mein Wochenende - Telling Stories in German", duration: "10:00", description: "Learn to narrate a full weekend story using the Perfekt tense and connecting words", scriptOutline: ["Connectors: zuerst (first), dann (then), danach (after that), sp\u00e4ter (later), zum Schluss (finally)", "Full story example using connectors", "Tips for flowing stories: Mix up word order!"], keyVocabulary: ["zuerst", "dann", "danach", "sp\u00e4ter", "zum Schluss", "am Ende", "aufgestanden", "gefr\u00fchst\u00fcckt", "eingekauft"], learningObjectives: ["Narrate a complete story in the Perfekt tense", "Use connecting words to create flowing narratives", "Combine haben and sein verbs naturally"], placeholderThumbnail: "/images/thumbnails/mein-wochenende.jpg" }
+        {
+          id: "v13-4-1",
+          title: "Mein Wochenende - Telling Stories in German",
+          duration: "10:00",
+          description: "Learn to narrate a full weekend story using the Perfekt tense and connecting words",
+          scriptOutline: ["Connectors: zuerst (first), dann (then), danach (after that), sp\u00e4ter (later), zum Schluss (finally)", "Full story example using connectors", "Tips for flowing stories: Mix up word order!"],
+          keyVocabulary: ["zuerst", "dann", "danach", "sp\u00e4ter", "zum Schluss", "am Ende", "aufgestanden", "gefr\u00fchst\u00fcckt", "eingekauft"],
+          learningObjectives: ["Narrate a complete story in the Perfekt tense", "Use connecting words to create flowing narratives", "Combine haben and sein verbs naturally"],
+          placeholderThumbnail: "/images/berlin_people.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Story Connectors (Time Order)",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["zuerst", "first", "ആദ്യം"],
+                ["dann", "then", "പിന്നെ"],
+                ["danach", "after that", "അതിനു ശേഷം"],
+                ["später", "later", "പിന്നീട്"],
+                ["zum Schluss", "finally", "ഒടുവിൽ"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Word Order with Connectors",
+              variant: "tip",
+              content: "When you start a sentence with a connector (Zuerst, Dann...), the verb comes right after it in position 2: 'Zuerst HABE ich gefrühstückt. Dann BIN ich in die Stadt gefahren.'"
+            },
+            {
+              type: "note",
+              title: "Mix haben & sein!",
+              variant: "info",
+              content: "A good weekend story uses BOTH helper verbs: 'Ich habe gefrühstückt' (haben) + 'Ich bin in die Stadt gefahren' (sein). Mixing them makes your German sound natural!"
+            }
+          ]
+        }
       ],
       exercises: [
         { id: "ex13-4-1", type: "ordering", question: "Put these weekend activities in a logical order:", options: ["Ich habe zu Abend gegessen.", "Ich bin aufgestanden.", "Ich habe gefr\u00fchst\u00fcckt.", "Ich bin ins Bett gegangen."], correctAnswer: ["Ich bin aufgestanden.", "Ich habe gefr\u00fchst\u00fcckt.", "Ich habe zu Abend gegessen.", "Ich bin ins Bett gegangen."], xpReward: 20 },
@@ -292,11 +674,88 @@ export const MODULE_13: Module = {
       id: "13-5",
       title: "Time Expressions for the Past",
       titleGerman: "Zeitausdr\u00fccke f\u00fcr die Vergangenheit",
-      description: "Learn to say when things happened \u2014 yesterday, last week, two days ago, and more!",
+      description: "Learn to say when things happened — yesterday, last week, two days ago, and more!",
       duration: "45 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Academic Office (Im Büro)",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "You're sitting with an advisor, discussing your progress. She asks: 'Wann sind Sie nach Deutschland gekommen?' (When did you come to Germany?). You want to say 'Three months ago'. In Malayalam, we say 'moonnu maasam mumbu', and in German, the logic is similar: 'vor drei Monaten'. You're pinpointing moments in time—yesterday, last month, last year. Time flies, machane, especially when you're busy learning! Let's master the clock of the past!",
+        },
+        narrative: {
+          previousRecap: "You've told your weekend story. Now, let's learn how to specify exactly WHEN things happened!",
+          currentObjective: "Use time expressions like gestern, letzte Woche, and 'vor + Dativ' correctly",
+          nextTeaser: "Module 13 complete! You're now a past tense storyteller! Next: Module 14 - Health and Body!",
+        },
+        kuttanIntro: [
+          "Machane! Time words are the salt of a story. Without them, it's just 'Ich habe gegessen'. Specifying 'Gestern' (yesterday) makes it real.",
+          "Main tool 'vor' (ago). It takes the Dativ case. 'vor zwei Tagen' (two days ago). Notice the extra '-n' in 'Tagen'! Case logic alert!",
+          "Pinne 'letzte Woche' (last week) vs 'letzten Monat' (last month) gender change sradhikkanne. Month is masculine, Week is feminine. Let's pin these dates!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab13-5-1", encounterMoment: "The advisor looks at your file: 'Gestern habe ich das gesehen.'", contextSentence: "Gestern bin ich spät aufgestanden." },
+          { vocabId: "vocab13-5-8", encounterMoment: "You reply: 'Ich bin vor drei Monaten gekommen.'", contextSentence: "Ich bin vor drei Monaten nach Deutschland gekommen." },
+          { vocabId: "vocab13-5-4", encounterMoment: "You mention: 'Letztes Jahr war ich in Kerala.'", contextSentence: "Letztes Jahr war ich in Kerala." },
+          { vocabId: "vocab13-5-3", encounterMoment: "She asks: 'Haben Sie letzte Woche gelernt?'", contextSentence: "Letzte Woche habe ich viel gelernt." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'Three days ago'. Which structure is correct?",
+            options: [
+              { text: "vor drei Tagen.", isCorrect: true, response: "Exactly! 'vor' + Number + Noun(+n for Dativ plural).", kuttanReaction: "Adipoli! Time-ago logic perfectly capture cheythallo! 🔥" },
+              { text: "drei Tage vor.", isCorrect: false, response: "Aiyyo! In German, the preposition 'vor' must come BEFORE the time unit.", kuttanReaction: "Vite machane! Word order marakkallae. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to say 'Last month'. Which form of 'letzte' do you use for 'der Monat'?",
+            options: [
+              { text: "letzten.", isCorrect: true, response: "Correct! Masculine time expressions take '-en' (letzten Monat).", kuttanReaction: "Superb! Gender logic correctly noted! ⭐" },
+              { text: "letzte.", isCorrect: false, response: "No! 'letzte' is for feminine (letzte Woche). Month is masculine.", kuttanReaction: "Aiyyo! Month logic sradhikkanne machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
-        { id: "v13-5-1", title: "Gestern, letzte Woche, vor 2 Tagen...", duration: "10:00", description: "Master the time expressions that tell people WHEN something happened", scriptOutline: ["Introduction: Time words are your storytelling tools — without them, everything is just 'sometime'!", "gestern (yesterday) and vorgestern (day before yesterday)", "letzte Woche, letztes Jahr, letzten Monat — gender matters! die Woche = letzte, das Jahr = letztes, der Monat = letzten", "vor + Dativ: vor zwei Tagen, vor einer Woche, vor drei Monaten — the 'ago' structure", "seit vs vor: seit = since/for (still ongoing), vor = ago (completed)", "Time expressions go at the start OR after the verb: 'Gestern habe ich gekocht' or 'Ich habe gestern gekocht'", "Practice: Narrate your last weekend using time expressions", "Common mistake: Don't say 'letzte Jahr' — it's 'letztes Jahr' (das Jahr = neuter!)"], keyVocabulary: ["gestern", "vorgestern", "letzte Woche", "letztes Jahr", "letzten Monat", "vor"], learningObjectives: ["Use gestern, vorgestern, and letzte/letztes/letzten correctly", "Form 'ago' expressions using vor + Dativ", "Place time expressions correctly in German sentences"], placeholderThumbnail: "/images/thumbnails/time-past.jpg" }
+        {
+          id: "v13-5-1",
+          title: "Gestern, letzte Woche, vor 2 Tagen...",
+          duration: "10:00",
+          description: "Master the time expressions that tell people WHEN something happened",
+          scriptOutline: ["Introduction: Time words are your storytelling tools — without them, everything is just 'sometime'!", "gestern (yesterday) and vorgestern (day before yesterday)", "letzte Woche, letztes Jahr, letzten Monat — gender matters! die Woche = letzte, das Jahr = letztes, der Monat = letzten", "vor + Dativ: vor zwei Tagen, vor einer Woche, vor drei Monaten — the 'ago' structure", "seit vs vor: seit = since/for (still ongoing), vor = ago (completed)", "Time expressions go at the start OR after the verb: 'Gestern habe ich gekocht' or 'Ich habe gestern gekocht'", "Practice: Narrate your last weekend using time expressions", "Common mistake: Don't say 'letzte Jahr' — it's 'letztes Jahr' (das Jahr = neuter!)"],
+          keyVocabulary: ["gestern", "vorgestern", "letzte Woche", "letztes Jahr", "letzten Monat", "vor"],
+          learningObjectives: ["Use gestern, vorgestern, and letzte/letztes/letzten correctly", "Form 'ago' expressions using vor + Dativ", "Place time expressions correctly in German sentences"],
+          placeholderThumbnail: "/images/home_office.png",
+          richContent: [
+            {
+              type: "table",
+              title: "'letzte' Changes by Gender",
+              headers: ["Noun", "Gender", "Correct Form"],
+              rows: [
+                ["die Woche", "feminine", "letzte Woche"],
+                ["der Monat", "masculine", "letzten Monat"],
+                ["das Jahr", "neuter", "letztes Jahr"]
+              ]
+            },
+            {
+              type: "table",
+              title: "vor + Dativ = 'ago'",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["vor zwei Tagen", "two days ago", "രണ്ടു ദിവസം മുമ്പ്"],
+                ["vor einer Woche", "a week ago", "ഒരാഴ്ച മുമ്പ്"],
+                ["vor drei Monaten", "three months ago", "മൂന്ന് മാസം മുമ്പ്"]
+              ]
+            },
+            {
+              type: "note",
+              title: "seit vs vor",
+              variant: "warning",
+              content: "'vor' = ago (completed action). 'seit' = since/for (still ongoing). 'Vor 3 Monaten bin ich gekommen' (I came 3 months ago) vs 'Seit 3 Monaten lerne ich Deutsch' (I've been learning German for 3 months)."
+            }
+          ]
+        }
       ],
       exercises: [
         { id: "ex13-5-1", type: "multiple-choice", question: "How do you say 'two days ago' in German?", options: ["vor zwei Tagen", "zwei Tage vor", "seit zwei Tagen", "in zwei Tagen"], correctAnswer: "vor zwei Tagen", explanation: "'ago' = vor + Dativ. Tage \u2192 Tagen (Dativ plural).", xpReward: 10 },

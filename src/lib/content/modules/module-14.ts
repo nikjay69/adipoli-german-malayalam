@@ -25,6 +25,46 @@ export const MODULE_14: Module = {
       description: "Master the Anmeldung and learn to fill out German forms — the FIRST thing you'll do when you arrive in Germany! India-yile ration card form pole, but German style!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Bürgeramt Lobby (Im Amt)",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "You're in a highly organized, quiet waiting room with numbered tickets and a ticking clock. It's time for your 'Anmeldung' (registration). In Kerala, we might skip a few details on a form, but in Germany, every field is critical. Arjun holds the folder: 'Indha paper kittiye alle bank-um phone-um okke set aaku!'. You need to master the exact German way of filling out 'Formulare'. From your 'Vorname' to your 'Unterschrift'. Welcome to the world of German Bürokratie, machane!",
+        },
+        narrative: {
+          previousRecap: "You've shared your past. Now, let's make your present in Germany official!",
+          currentObjective: "Understand the Anmeldung process and correctly identify common form fields and formats",
+          nextTeaser: "Next: More offices! Let's see how much paperwork the Ausländerbehörde wants!",
+        },
+        kuttanIntro: [
+          "Machane! Germany-yil 'Anmeldung' is your golden ticket. Address register cheythille enkil you don't exist in the system. No bank, no Sim card. Heavy weight item aanu!",
+          "Forms fill cheyyumpol 'Vorname' (First Name) and 'Nachname' (Surname) sradhikkanam. Date format eppolun 'TT.MM.JJJJ' with dots aayirikkum. No slashes!",
+          "Final touch 'Unterschrift' (signature) aanu. Forms kandaal pedi venda, logic simple aanu. Let's make you official!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab14-1-1", encounterMoment: "The clerk calls: 'Die Anmeldung, bitte.' (Registration, please).", contextSentence: "Ich muss die Anmeldung machen." },
+          { vocabId: "vocab14-1-2", encounterMoment: "You fill your name: 'Mein Vorname ist...'", contextSentence: "Mein Vorname ist Arun." },
+          { vocabId: "vocab14-1-10", encounterMoment: "Arjun points to the bottom line: 'Und die Unterschrift hier.'", contextSentence: "Bitte hier Ihre Unterschrift." },
+          { vocabId: "vocab14-1-6", encounterMoment: "You write under nationality: 'Indisch'.", contextSentence: "Meine Staatsangehörigkeit ist indisch." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Which document do you need most for your legal existence in Germany?",
+            options: [
+              { text: "Die Anmeldung (Meldebescheinigung).", isCorrect: true, response: "Exactly! This registration paper is the basis for everything else.", kuttanReaction: "Adipoli! System logic perfectly capture cheythallo! 🔥" },
+              { text: "A Netflix subscription.", isCorrect: false, response: "Aiyyo! Enthe ninnu parayunne? Registration illathe SIM card polum kittila!", kuttanReaction: "Vite machane! Paperwork first, entertainment late. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You need to write the date March 15, 1998 on the form. Which format is correct?",
+            options: [
+              { text: "15.03.1998", isCorrect: true, response: "Correct! Germany always uses DD.MM.YYYY with dots.", kuttanReaction: "Superb! Date logic correctly noted! ⭐" },
+              { text: "03/15/1998", isCorrect: false, response: "No! This is the US format. In Germany, we use dots and lead with the day.", kuttanReaction: "Aiyyo! German officials confuse aakum ithu kandaal. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v14-1-1",
@@ -50,7 +90,36 @@ export const MODULE_14: Module = {
             "Navigate the registration office confidently",
             "Avoid common mistakes that delay registration"
           ],
-          placeholderThumbnail: "/images/thumbnails/anmeldung.jpg"
+          placeholderThumbnail: "/images/anmeldung.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Anmeldung Checklist",
+              headers: ["Document", "German", "Malayalam"],
+              rows: [
+                ["Passport", "Reisepass", "പാസ്‌പോർട്ട്"],
+                ["Rent Contract", "Mietvertrag", "വാടക കരാർ"],
+                ["Landlord Confirmation", "Wohnungsgeberbestätigung", "വീട്ടുടമ സ്ഥിരീകരണം"],
+                ["Registration Form", "Anmeldeformular", "രജിസ്ട്രേഷൻ ഫോം"],
+                ["Registration Certificate", "Meldebescheinigung", "രജിസ്ട്രേഷൻ സർട്ടിഫിക്കറ്റ്"]
+              ]
+            },
+            {
+              type: "note",
+              title: "14-Day Deadline!",
+              variant: "warning",
+              content: "You MUST register within 14 days of moving in. Late registration can result in a fine up to 1000 EUR. Book your Termin (appointment) online as soon as possible!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "die Anmeldung", english: "registration", malayalam: "രജിസ്ട്രേഷൻ", pronunciation: "an-mel-dung" },
+                { german: "das Bürgeramt", english: "citizens' office", malayalam: "പൗര കാര്യാലയം", pronunciation: "bür-ger-amt" },
+                { german: "der Termin", english: "appointment", malayalam: "അപ്പോയിന്റ്മെന്റ്", pronunciation: "ter-meen" },
+                { german: "die Meldebescheinigung", english: "registration certificate", malayalam: "രജിസ്ട്രേഷൻ സർട്ടിഫിക്കറ്റ്", pronunciation: "mel-de-be-shy-ni-gung" }
+              ]
+            }
+          ]
         },
         {
           id: "v14-1-2",
@@ -82,7 +151,35 @@ export const MODULE_14: Module = {
             "Know the German date format and address format",
             "Avoid format errors that cause form rejection"
           ],
-          placeholderThumbnail: "/images/thumbnails/form-fields.jpg"
+          placeholderThumbnail: "/images/hiwi_student.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Common German Form Fields",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["Vorname", "First name", "പേര്"],
+                ["Nachname", "Surname", "കുടുംബപ്പേര്"],
+                ["Geburtsdatum", "Date of birth", "ജനനത്തീയതി"],
+                ["Geburtsort", "Place of birth", "ജനനസ്ഥലം"],
+                ["Staatsangehörigkeit", "Nationality", "ദേശീയത"],
+                ["Familienstand", "Marital status", "വൈവാഹിക നില"],
+                ["Unterschrift", "Signature", "ഒപ്പ്"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Date Format",
+              variant: "warning",
+              content: "Germany uses DD.MM.YYYY with DOTS. Example: 15.03.1998. Never use slashes (03/15/1998) — that's the US format and will confuse everyone!"
+            },
+            {
+              type: "note",
+              title: "Address Order",
+              variant: "tip",
+              content: "German address: Straße (street) + Hausnummer (house number), then PLZ (5-digit postal code) + Ort (city). Example: Mozartstraße 12, 10115 Berlin."
+            }
+          ]
         }
       ],
       exercises: [
@@ -200,6 +297,46 @@ export const MODULE_14: Module = {
       description: "Navigate German government offices — Ausländerbehörde, Rathaus, and more. Survive the Bürokratie! Collectorate-il poi queue nilkkunna experience undo? Ithu athinekkal organized aanu, but equally intense!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Foreigners Office (Ausländerbehörde)",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "You're in a waiting room filled with people from all over the world. The screen flashes numbers. Your 'Termin' (appointment) is at 10:15. In Kerala, a 10:15 appointment might mean 'around 11', but here, if you're not there at 10:14, you might lose your slot. You're clutching your folder of 'Unterlagen' (documents). One small paper missing could mean coming back next month. Deep breaths, machane. Let's get that 'Aufenthaltserlaubnis'!",
+        },
+        narrative: {
+          previousRecap: "You've registered your address. Now, let's secure your legal right to stay in Germany!",
+          currentObjective: "Understand the importance of appointments and punctuality and identify key office types",
+          nextTeaser: "Next: Banking! Let's see how much paperwork the bank needs for your account!",
+        },
+        kuttanIntro: [
+          "Machane! 'Ausländerbehörde' is probably the most important office for us. Visa matters and 'Aufenthaltserlaubnis' (residence permit) deal cheyyunnathu ivide aanu.",
+          "Rule number one: Always have a 'Termin'. Rule number two: Bring ALL your 'Unterlagen'. Paperwork-il oru loose-um venam. Collectorate logic ivide rules-inte base-ilaanu!",
+          "Pünktlichkeit is not a joke. 5 minutes late means your appointment is cancelled. Let's make sure we have everything ready!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab14-2-1", encounterMoment: "Arjun whispers: 'This is the Ausländerbehörde... stay sharp.'", contextSentence: "Ich habe einen Termin bei der Ausländerbehörde." },
+          { vocabId: "vocab14-2-5", encounterMoment: "The screen shows: 'Termin 412 - Zimmer 102'.", contextSentence: "Ich brauche einen Termin." },
+          { vocabId: "vocab14-2-6", encounterMoment: "You double-check: 'Hat wir alle Unterlagen?' (Do we have all docs?).", contextSentence: "Bringen Sie bitte alle Unterlagen mit." },
+          { vocabId: "vocab14-2-4", encounterMoment: "The clerk says: 'Hier ist Ihre Aufenthaltserlaubnis.'", contextSentence: "Meine Aufenthaltserlaubnis ist zwei Jahre gültig." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Your appointment is at 09:00. When should you arrive at the office?",
+            options: [
+              { text: "At 08:50 or 08:55.", isCorrect: true, response: "Exactly! In Germany, 'pünktlich' means being there a few minutes early.", kuttanReaction: "Adipoli! Punctuality logic perfectly capture cheythallo! 🔥" },
+              { text: "At 09:15, because it's only 15 minutes.", isCorrect: false, response: "Aiyyo! 15 minutes late means your appointment is gone. No exceptions!", kuttanReaction: "Vite machane! German timing is absolute. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "The clerk asks for your 'Unterlagen'. What do you give them?",
+            options: [
+              { text: "Your folder containing passport, contract, and photos.", isCorrect: true, response: "Correct! 'Unterlagen' means all your required documents.", kuttanReaction: "Superb! Paperwork logic correctly picked! ⭐" },
+              { text: "Just your phone with digital copies.", isCorrect: false, response: "No! German offices usually insist on physical paper or original documents.", kuttanReaction: "Aiyyo! Physical paper is the king here. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v14-2-1",
@@ -224,7 +361,34 @@ export const MODULE_14: Module = {
             "Prepare properly for office visits",
             "Understand the importance of punctuality in German bureaucracy"
           ],
-          placeholderThumbnail: "/images/thumbnails/german-offices.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Key German Offices",
+              headers: ["Office", "Purpose", "Kerala Equivalent"],
+              rows: [
+                ["Bürgeramt", "Registration & certificates", "Panchayat Office"],
+                ["Ausländerbehörde", "Visa & residence permit", "FRRO"],
+                ["Rathaus", "City Hall / general admin", "Corporation Office"],
+                ["Finanzamt", "Tax office / Tax-ID", "Income Tax Office"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Termin = MUST!",
+              variant: "warning",
+              content: "Almost every German office requires an appointment (Termin). Book online in advance! 'Ich brauche einen Termin' is your most important sentence. No Termin = No Entry!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "der Termin", english: "appointment", malayalam: "അപ്പോയിന്റ്മെന്റ്", pronunciation: "ter-meen" },
+                { german: "die Unterlagen", english: "documents", malayalam: "രേഖകൾ", pronunciation: "oon-ter-lah-gen" },
+                { german: "die Pünktlichkeit", english: "punctuality", malayalam: "സമയനിഷ്ഠ", pronunciation: "pünkt-likh-kite" }
+              ]
+            }
+          ]
         },
         {
           id: "v14-2-2",
@@ -253,7 +417,36 @@ export const MODULE_14: Module = {
             "Ask about document status and requirements",
             "Handle basic interactions at the Ausländerbehörde"
           ],
-          placeholderThumbnail: "/images/thumbnails/documents.jpg"
+          placeholderThumbnail: "/images/hiwi_student.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Essential Documents in Germany",
+              headers: ["German", "English", "Who Needs It?"],
+              rows: [
+                ["Aufenthaltserlaubnis", "Residence permit", "All non-EU foreigners"],
+                ["Reisepass", "Passport", "Everyone"],
+                ["Meldebescheinigung", "Registration cert.", "Everyone in Germany"],
+                ["Blaue Karte EU", "EU Blue Card", "Skilled workers"],
+                ["Formular", "Form", "For every application"],
+                ["Beglaubigung", "Certified copy", "For official copies"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Key Phrase at the Office",
+              variant: "tip",
+              content: "'Ich möchte meine Aufenthaltserlaubnis verlängern.' (I want to extend my residence permit.) — This is one of the most important sentences you'll ever say in Germany!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "der Antrag", english: "application", malayalam: "അപേക്ഷ", pronunciation: "an-trahg" },
+                { german: "die Aufenthaltserlaubnis", english: "residence permit", malayalam: "താമസ അനുമതി", pronunciation: "owf-ent-halts-er-lowb-nis" },
+                { german: "die Beglaubigung", english: "certification", malayalam: "സാക്ഷ്യപ്പെടുത്തൽ", pronunciation: "be-glow-bi-gung" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [
@@ -371,6 +564,46 @@ export const MODULE_14: Module = {
       description: "Learn the essential banking vocabulary to open an account, make transfers, and manage your money in Germany. India-yile SBI account pole alla machaa, ithu vere level!",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Local Bank (In der Sparkasse)",
+          sceneType: "office",
+          timeOfDay: "afternoon",
+          description: "A sleek, quiet bank branch with high ceilings and glass partitions. You're here with Arjun to open a 'Girokonto' (current account). You're used to G-Pay and UPI in India, but Arjun warns you: 'Germany-yil cash is king, machaa!'. You see people withdrawing cash from the 'Geldautomat'. You also need to keep your 'Schufa' (credit score) clean from day one. Ready to manage your 'Geld' (money) the German way?",
+        },
+        narrative: {
+          previousRecap: "You've survived the government offices. Now, let's set up your financial life!",
+          currentObjective: "Identify key banking terms and understand the process of opening an account and using cash",
+          nextTeaser: "Next: Formal letters! Let's see how much paperwork the landlord wants!",
+        },
+        kuttanIntro: [
+          "Machane! Banking logic ivide different aanu. UPI illaa, so manual 'Überweisung' (transfer) oru regular duty aanu. Every month Rent transfer cheyyan marakkallae!",
+          "Social security number pole 'Steuer-ID' and 'Schufa' eppolum bank-um landlords-um chodikkum. Keep your record clean, pinne pedikkanda!",
+          "Cash backup eppolum venam. Many small cafes 'Only Cash' board vekkum. Let's find the 'Geldautomat' and get started!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab14-3-2", encounterMoment: "You tell the clerk: 'Ich möchte ein Girokonto eröffnen.'", contextSentence: "Ich möchte ein Girokonto eröffnen." },
+          { vocabId: "vocab14-3-4", encounterMoment: "Arjun points outside: 'There is the Geldautomat.'", contextSentence: "Der Geldautomat ist um die Ecke." },
+          { vocabId: "vocab14-3-7", encounterMoment: "You note: 'Ich brauche eine Schufa-Auskunft.'", contextSentence: "Für den Mietvertrag brauche ich eine Schufa-Auskunft." },
+          { vocabId: "vocab14-3-5", encounterMoment: "You tap the card: 'Ich zahle mit EC-Karte.'", contextSentence: "Kann ich mit EC-Karte zahlen?" },
+        ],
+        decisionPoints: [
+          {
+            moment: "Which account type do you need for receiving salary and paying monthly rent?",
+            options: [
+              { text: "Ein Girokonto.", isCorrect: true, response: "Exactly! Girokonto is your daily checking/current account.", kuttanReaction: "Adipoli! Banking logic perfectly capture cheythallo! 🔥" },
+              { text: "A savings-only account.", isCorrect: false, response: "Aiyyo! Rent and salary standard checking account ('Girokonto') vazhi aayirikkum.", kuttanReaction: "Vite machane! Daily usage account venam. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You see a sign in a small bakery: 'Nur Barzahlung'. What does it mean?",
+            options: [
+              { text: "Only cash payments.", isCorrect: true, response: "Correct! 'Bar' means cash. This is very common in Germany.", kuttanReaction: "Superb! Cash logic correctly picked! ⭐" },
+              { text: "Cards only.", isCorrect: false, response: "No! 'Nur Bar' means cash only. Always keep 20-30 Euros with you!", kuttanReaction: "Aiyyo! Pettalao? Cash illa enkil bakshanam kittila. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v14-3-1",
@@ -397,7 +630,34 @@ export const MODULE_14: Module = {
             "Handle basic banking tasks in German",
             "Understand transfer methods: Überweisung, Dauerauftrag, Lastschrift"
           ],
-          placeholderThumbnail: "/images/thumbnails/banking.jpg"
+          placeholderThumbnail: "/images/supermarket_checkout.png",
+          richContent: [
+            {
+              type: "table",
+              title: "German Banking Vocabulary",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["das Girokonto", "checking account", "ചെക്കിംഗ് അക്കൗണ്ട്"],
+                ["die Überweisung", "bank transfer", "ബാങ്ക് ട്രാൻസ്ഫർ"],
+                ["der Dauerauftrag", "standing order", "സ്ഥിരം പേയ്മെന്റ്"],
+                ["die Lastschrift", "direct debit", "നേരിട്ടുള്ള ഡെബിറ്റ്"],
+                ["der Geldautomat", "ATM", "എടിഎം"],
+                ["die EC-Karte", "debit card", "ഡെബിറ്റ് കാർഡ്"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Cash is King!",
+              variant: "warning",
+              content: "Germany is much more cash-heavy than India's UPI culture. Always carry 20-30 EUR in cash. Many restaurants and small shops only accept 'Nur Bar' (cash only)!"
+            },
+            {
+              type: "note",
+              title: "SCHUFA = German CIBIL",
+              variant: "info",
+              content: "SCHUFA is your German credit score. Pay all bills on time! A bad SCHUFA score can prevent you from renting an apartment or getting a phone contract."
+            }
+          ]
         },
         {
           id: "v14-3-2",
@@ -425,7 +685,27 @@ export const MODULE_14: Module = {
             "Understand compound nouns in banking context",
             "Navigate online banking terminology"
           ],
-          placeholderThumbnail: "/images/thumbnails/bank-dialogue.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Useful Bank Dialogues",
+              headers: ["Situation", "German Phrase"],
+              rows: [
+                ["Open account", "Ich möchte ein Girokonto eröffnen."],
+                ["Ask about fees", "Was kostet das Girokonto pro Monat?"],
+                ["Lost card", "Ich habe meine EC-Karte verloren."],
+                ["Make transfer", "Ich möchte eine Überweisung machen."],
+                ["Check balance", "Wie hoch ist mein Kontostand?"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Compound Noun Trick",
+              variant: "tip",
+              content: "German banking loves compound nouns! Konto+führungs+gebühren = account maintenance fees. Konto+auszug = bank statement. Always read from right to left — the last word is the main meaning."
+            }
+          ]
         }
       ],
       exercises: [
@@ -543,6 +823,46 @@ export const MODULE_14: Module = {
       description: "Master the art of formal German writing — letter structure, polite phrases, email templates, and important compound nouns. 'Respected Sir' enna Indian style alla machaa, German-il vere formality aanu!",
       duration: "60 min",
       xpReward: 180,
+      storyScene: {
+        setting: {
+          name: "WG Desk (Am Schreibtisch)",
+          sceneType: "home",
+          timeOfDay: "evening",
+          description: "It's late evening, and the room is quiet. You're focus on your laptop, trying to write a 'Kündigung' (cancellation) for a contract. In Kerala, we might write a emotional letter, but in Germany, the 'Betreff' (subject) must be bold and the greeting must be precise. Arjun looks over: 'Eda, comma sradhikkanne!'. You're learning the 'Sandwich' of formal writing: Header, Greeting, Body, and the final 'Mit freundlichen Grüßen'. One small mistake and it's ignored. Ready to sound like a pro, machane?",
+        },
+        narrative: {
+          previousRecap: "You've set up your bank. Now, let's learn how to communicate formally with the rest of Germany!",
+          currentObjective: "Correctly structure a formal letter and use 'weil/dass' clauses with verb-final placement",
+          nextTeaser: "Module 14 complete! You're now a bureau-survivalist! Next: Module 15 - Shopping & Clothing!",
+        },
+        kuttanIntro: [
+          "Machane! Formal writing German-il oru ritual aanu. 'Sehr geehrte Damen und Herren' (Dear Sir/Madam) is the gold standard if you don't know the name.",
+          "Pinne 'Betreff' (subject line) bold aayi veykkunnu. Body-il 'weil' (because) or 'dass' (that) use cheyyumpol, remember: Verb goes to the end! 'Ich schreibe Ihnen, weil ich Hilfe BRAUCHE'.",
+          "Closing eppolum 'Mit freundlichen Grüßen' (With friendly regards) mathram pora, signature-um venam. Let's draft your first official letter!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab14-4-2", encounterMoment: "You type: 'Sehr geehrte Damen und Herren,'", contextSentence: "Sehr geehrte Damen und Herren, ich schreibe Ihnen wegen..." },
+          { vocabId: "vocab14-4-1", encounterMoment: "You center the text: 'Betreff: Terminanfrage'.", contextSentence: "Betreff: Terminanfrage" },
+          { vocabId: "vocab14-4-3", encounterMoment: "You sign off: 'Mit freundlichen Grüßen'.", contextSentence: "Mit freundlichen Grüßen, Arun Nair" },
+          { vocabId: "vocab14-4-9", encounterMoment: "Arjun reminds you: 'Kündigungsfrist (deadline) sradhikkani!'.", contextSentence: "Ich möchte eine Kündigung meines Vertrages einreichen." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You know the recipient is 'Herr Müller'. How do you start the letter?",
+            options: [
+              { text: "Sehr geehrter Herr Müller,", isCorrect: true, response: "Exactly! For men, use 'geehrter'. For women, 'geehrte'.", kuttanReaction: "Adipoli! Greeting logic perfectly capture cheythallo! 🔥" },
+              { text: "Respected Herr Müller,", isCorrect: false, response: "Aiyyo! 'Respected' works in India, but in Germany, we stay with 'Sehr geehrte'.", kuttanReaction: "Vite machane! Translation error aanu. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You want to say 'I am writing because I need help'. Where do you place 'brauche'?",
+            options: [
+              { text: "At the very end of the sentence.", isCorrect: true, response: "Correct! 'weil' kicks the verb to the end.", kuttanReaction: "Superb! Subordinate clause logic correctly noted! ⭐" },
+              { text: "Position 2 after 'Ich'.", isCorrect: false, response: "No! In a 'weil' clause, the verb moves from Pos 2 to the end.", kuttanReaction: "Aiyyo! Sub-clause logic sradhikkanne machane. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v14-4-1",
@@ -573,7 +893,35 @@ export const MODULE_14: Module = {
             "Know German letter formatting conventions",
             "Write a complete formal letter from scratch"
           ],
-          placeholderThumbnail: "/images/thumbnails/formal-letter.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Formal Letter Structure",
+              headers: ["Part", "German", "Example"],
+              rows: [
+                ["Sender", "Absender", "Arun Nair, Mozartstr. 12, 10115 Berlin"],
+                ["Recipient", "Empfänger", "Ausländerbehörde Berlin"],
+                ["Date", "Datum", "Berlin, den 15. März 2026"],
+                ["Subject", "Betreff", "Verlängerung meiner Aufenthaltserlaubnis"],
+                ["Greeting", "Anrede", "Sehr geehrte Damen und Herren,"],
+                ["Closing", "Schluss", "Mit freundlichen Grüßen"],
+                ["Signature", "Unterschrift", "(your handwritten signature)"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Comma After Greeting!",
+              variant: "warning",
+              content: "In German formal letters, use a COMMA after the greeting (not a colon like English). 'Sehr geehrte Damen und Herren,' — and the next line starts with a SMALL letter (unless it's a noun)!"
+            },
+            {
+              type: "note",
+              title: "No Comma After Closing!",
+              variant: "tip",
+              content: "'Mit freundlichen Grüßen' has NO comma after it. Just your name below. This is the opposite of the greeting rule!"
+            }
+          ]
         },
         {
           id: "v14-4-2",
@@ -604,7 +952,34 @@ export const MODULE_14: Module = {
             "Differentiate between letter and email conventions",
             "Use ready-made templates for appointment, cancellation, and complaint"
           ],
-          placeholderThumbnail: "/images/thumbnails/sample-letters.jpg"
+          placeholderThumbnail: "/images/office_building.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Email Greeting & Closing Formality Levels",
+              headers: ["Level", "Greeting", "Closing"],
+              rows: [
+                ["Very formal", "Sehr geehrte Damen und Herren,", "Mit freundlichen Grüßen"],
+                ["Formal", "Sehr geehrte Frau Müller,", "Freundliche Grüße"],
+                ["Professional", "Guten Tag Frau Müller,", "Beste Grüße"],
+                ["Informal", "Liebe/Lieber...,", "Viele Grüße"]
+              ]
+            },
+            {
+              type: "note",
+              title: "weil & dass = Verb to the END!",
+              variant: "warning",
+              content: "'Ich schreibe, weil ich einen Termin BRAUCHE.' — In subordinate clauses with weil/dass, the verb moves to the LAST position. This is non-negotiable in German!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "die Kündigung", english: "cancellation", malayalam: "റദ്ദാക്കൽ", pronunciation: "kün-di-gung" },
+                { german: "die Reklamation", english: "complaint", malayalam: "പരാതി", pronunciation: "re-kla-ma-tsion" },
+                { german: "die Bestätigung", english: "confirmation", malayalam: "സ്ഥിരീകരണം", pronunciation: "be-shtay-ti-gung" }
+              ]
+            }
+          ]
         }
       ],
       exercises: [

@@ -22,6 +22,46 @@ export const MODULE_10: Module = {
       description: "Learn the German words for body parts — from head to toe! Plus, learn to say 'My ... hurts' with 'tut weh'.",
       duration: "50 min",
       xpReward: 130,
+      storyScene: {
+        setting: {
+          name: "WG Living Room (Morning Workout)",
+          sceneType: "home",
+          timeOfDay: "morning",
+          description: "You're trying a home workout to stay fit in the German winter. Stefan is showing you some exercises. 'Kopf hoch!' (Head up!) he says. You're stretching your arms and legs. But wait, did you just pull a muscle? In Kerala, we'd say 'Ente thala vedanikkunnu'. Here, it's 'Mein Kopf tut weh'. Let's learn the parts before we break anything, machane!",
+        },
+        narrative: {
+          previousRecap: "You've mastered the city transport. Now, let's focus on yourself — starting with your body!",
+          currentObjective: "Identify basic body parts and express physical pain using 'tut weh' (singular) and 'tun weh' (plural)",
+          nextTeaser: "Next: feeling a bit under the weather? Let's describe how we're feeling!",
+        },
+        kuttanIntro: [
+          "Machane! Body parts padikkunnathu biology class pole alla, it's practical. Doctor-de aduthu chellan vayya ennu parayan ithu must aanu.",
+          "Main pattern: [Body Part] + tut weh. Singular aanel 'tut', plural aanel 'tun'. Easy logic!",
+          "Pinne 'Kopf' (head) eppozhum capitalize cheyyaname — German-il nouns ellaam capitals aanu. Let's do some reps!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab10-1-1", encounterMoment: "Stefan yells: 'Kopf hoch!' (Head up!).", contextSentence: "Mein Kopf tut weh." },
+          { vocabId: "vocab10-1-6", encounterMoment: "You stretch: 'Meine Arme sind lang.' (My arms are long).", contextSentence: "Mein Arm ist gebrochen." },
+          { vocabId: "vocab10-1-10", encounterMoment: "You lift a box and... 'Aiyyo, mein Rücken!' (Ouch, my back!).", contextSentence: "Ich have Rückenschmerzen." },
+          { vocabId: "vocab10-1-11", encounterMoment: "Lara jokes: 'Kommst du ins Krankenhaus?' (Are you going to the hospital?).", contextSentence: "Mein Bruder ist im Krankenhaus." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to say 'My head hurts'. Which sentence is grammatically correct?",
+            options: [
+              { text: "Mein Kopf tut weh.", isCorrect: true, response: "Exactly! 'tut weh' is for singular objects like one head.", kuttanReaction: "Adipoli! Grammar correct aayi pick cheythallo. Rule noted! 🔥" },
+              { text: "Mein Kopf tun weh.", isCorrect: false, response: "Aiyyo! 'tun weh' is for plural (two or more). For one head, use 'tut weh'.", kuttanReaction: "Vite machane! Singular/Plural difference sradhikkaname. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You are pointing to your back. What is the German word for it?",
+            options: [
+              { text: "der Rücken.", isCorrect: true, response: "Correct! 'der Rücken' means back.", kuttanReaction: "Superb! Body part logic catch cheythallo. ⭐" },
+              { text: "der Mund.", isCorrect: false, response: "No! 'der Mund' is the mouth. Back is 'Rücken'.", kuttanReaction: "Aiyyo! Mouth-um Back-um thammil confuse aavalle! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v10-1-1",
@@ -47,7 +87,33 @@ export const MODULE_10: Module = {
             "Use 'tut weh' to express pain in a specific body part",
             "Know the plural forms of common body parts"
           ],
-          placeholderThumbnail: "/images/thumbnails/body-parts.jpg"
+          placeholderThumbnail: "/images/doctor_waiting_room.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Body Parts in German",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["der Kopf", "head", "തല"],
+                ["das Auge (die Augen)", "eye (eyes)", "കണ്ണ് (കണ്ണുകൾ)"],
+                ["die Nase", "nose", "മൂക്ക്"],
+                ["der Mund", "mouth", "വായ"],
+                ["das Ohr (die Ohren)", "ear (ears)", "ചെവി (ചെവികൾ)"],
+                ["der Arm", "arm", "കൈ"],
+                ["die Hand", "hand", "കൈപ്പത്തി"],
+                ["das Bein", "leg", "കാൽ"],
+                ["der Fuß", "foot", "പാദം"],
+                ["der Rücken", "back", "മുതുക്"],
+                ["der Bauch", "stomach/belly", "വയറ്"]
+              ]
+            },
+            {
+              type: "note",
+              title: "The 'tut weh' Pattern",
+              variant: "tip",
+              content: "To say something hurts: [body part] + tut weh (singular) or tun weh (plural). 'Mein Kopf tut weh' (My head hurts). 'Meine Augen tun weh' (My eyes hurt). The 'weh' always goes to the end!"
+            }
+          ]
         },
         {
           id: "v10-1-2",
@@ -70,7 +136,37 @@ export const MODULE_10: Module = {
             "Add intensity modifiers to pain descriptions",
             "Produce full sentences about pain in different body parts"
           ],
-          placeholderThumbnail: "/images/thumbnails/tut-weh.jpg"
+          placeholderThumbnail: "/images/doctor_waiting_room.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Pain Intensity Scale",
+              headers: ["German", "English", "Level"],
+              rows: [
+                ["ein bisschen", "a little", "Mild"],
+                ["etwas", "somewhat", "Moderate"],
+                ["sehr", "very", "Strong"],
+                ["stark", "strong/intense", "Severe"],
+                ["furchtbar", "terribly", "Extreme"]
+              ]
+            },
+            {
+              type: "table",
+              title: "tut weh vs tun weh",
+              headers: ["Type", "Pattern", "Example"],
+              rows: [
+                ["Singular", "Mein [body part] tut weh", "Mein Kopf tut weh."],
+                ["Plural", "Meine [body parts] tun weh", "Meine Augen tun weh."],
+                ["With intensity", "Mein [part] tut [level] weh", "Mein Rücken tut sehr weh."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Doctor-Ready Phrases",
+              variant: "info",
+              content: "At the doctor, combine body part + intensity: 'Mein Kopf tut furchtbar weh' (My head hurts terribly). This helps the doctor understand exactly how bad it is. Keep it simple and direct!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -121,6 +217,46 @@ export const MODULE_10: Module = {
       description: "Express how you feel — from tired and sick to headaches and fever. Master the Dativ for feelings!",
       duration: "50 min",
       xpReward: 130,
+      storyScene: {
+        setting: {
+          name: "WG Kitchen (Morning Breakfast)",
+          sceneType: "home",
+          timeOfDay: "morning",
+          description: "The coffee is brewing, but you haven't touched your breakfast. You look a bit 'müde' (tired). Lara sits across from you and asks: 'Wie geht es dir?'. In Malayalam, we'd say 'Sugam thanne', but if you're not well, you need to say it. German uses Dativ for health: 'Mir geht es...' (To me it goes...). Time to describe the symptoms, machane!",
+        },
+        narrative: {
+          previousRecap: "You've identified the body parts. Now, let's talk about the sensations inside them!",
+          currentObjective: "Express health status using 'Mir geht es...' and describe ailments like fever and headaches",
+          nextTeaser: "Next: Doctor's visit! Let's handle the clinical conversation!",
+        },
+        kuttanIntro: [
+          "Machane! Physical feelings-inu German-il Dativ aanu artham. 'Mir ist kalt' (I feel cold) - 'Ich bin kalt' ennu parayalle!",
+          "'Ich habe' eppozhum ailments-inte koode varum. 'Ich habe Kopfschmerzen', 'Ich habe Fieber'. Ithu fixed structure aanu.",
+          "Pinne 'krank' (sick) enna word sradhikkanne. Kerala-yil nammukk vayya ennu parayunna pole Germany-yilum health important aanu. Let's express it!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab10-2-1", encounterMoment: "Lara checks your forehead: 'Bist du krank?' (Are you sick?).", contextSentence: "Ich bin heute krank." },
+          { vocabId: "vocab10-2-3", encounterMoment: "You yawn: 'Ich bin sehr müde.' (I am very tired).", contextSentence: "Ich bin sehr müde." },
+          { vocabId: "vocab10-2-4", encounterMoment: "You rub your temples: 'Ich habe Kopfschmerzen.' (I have a headache).", contextSentence: "Ich habe starke Kopfschmerzen." },
+          { vocabId: "vocab10-2-6", encounterMoment: "Lara gets a thermometer: 'Hast du Fieber?' (Do you have a fever?).", contextSentence: "Ich habe hohes Fieber." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Lara asks 'Wie geht es dir?'. You want to say 'I am not doing well'. Which response is correct?",
+            options: [
+              { text: "Mir geht es nicht gut.", isCorrect: true, response: "Exactly! Feelings use 'Mir' (Dativ) in German.", kuttanReaction: "Adipoli! Dativ power correctly use cheythallo! 🔥" },
+              { text: "Ich gehe nicht gut.", isCorrect: false, response: "Aiyyo! 'Ich gehe' means you are actually walking poorly. For feelings, its 'Mir geht es...'.", kuttanReaction: "Vite machane! Walking alla purpose, health aanu. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You feel nauseous. How do you say 'I feel sick/unwell' without calling yourself a bad person?",
+            options: [
+              { text: "Mir ist schlecht.", isCorrect: true, response: "Correct! 'Mir ist schlecht' means you feel unwell. 'Ich bin schlecht' means you are a bad person!", kuttanReaction: "Superb! Dativ Trap-il ninnu escape aayallo! Avoided the 'bad person' logic! ⭐" },
+              { text: "Ich bin schlecht.", isCorrect: false, response: "No! This means you are a villain or a bad human! Use 'Mir ist schlecht' for health.", kuttanReaction: "Aiyyo! Nee villain alla machane! Use 'Mir' for health. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v10-2-1",
@@ -145,7 +281,31 @@ export const MODULE_10: Module = {
             "Describe common ailments using 'Ich habe...'",
             "Understand why Dativ (Mir) is used for feelings, not Nominativ (Ich)"
           ],
-          placeholderThumbnail: "/images/thumbnails/feelings-health.jpg"
+          placeholderThumbnail: "/images/doctor_waiting_room.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Health & Feelings Vocabulary",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["Mir geht es gut.", "I'm doing well.", "എനിക്ക് സുഖമാണ്."],
+                ["Mir geht es schlecht.", "I'm not doing well.", "എനിക്ക് സുഖമില്ല."],
+                ["müde", "tired", "ക്ഷീണം"],
+                ["krank", "sick", "അസുഖം"],
+                ["gesund", "healthy", "ആരോഗ്യം"],
+                ["Kopfschmerzen", "headache", "തലവേദന"],
+                ["Fieber", "fever", "പനി"],
+                ["Husten", "cough", "ചുമ"],
+                ["Schnupfen", "cold/runny nose", "ജലദോഷം"]
+              ]
+            },
+            {
+              type: "note",
+              title: "DATIV Trap: 'Mir ist kalt' NOT 'Ich bin kalt'!",
+              variant: "warning",
+              content: "Physical feelings use Dativ (Mir), not Nominativ (Ich). 'Mir ist kalt' = I feel cold. 'Ich bin kalt' = I am cold-hearted! Same with 'Mir ist schlecht' (I feel nauseous) vs 'Ich bin schlecht' (I am a bad person)."
+            }
+          ]
         },
         {
           id: "v10-2-2",
@@ -170,7 +330,37 @@ export const MODULE_10: Module = {
             "Avoid the 'Ich bin schlecht' vs 'Mir ist schlecht' mistake",
             "Use Dativ correctly for physical sensations"
           ],
-          placeholderThumbnail: "/images/thumbnails/ailments-dativ.jpg"
+          placeholderThumbnail: "/images/doctor_waiting_room.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Compound Pain Nouns",
+              headers: ["Body Part", "+ Schmerzen =", "English"],
+              rows: [
+                ["Kopf (head)", "Kopfschmerzen", "headache"],
+                ["Hals (throat)", "Halsschmerzen", "sore throat"],
+                ["Zahn (tooth)", "Zahnschmerzen", "toothache"],
+                ["Bauch (stomach)", "Bauchschmerzen", "stomachache"],
+                ["Rücken (back)", "Rückenschmerzen", "backache"]
+              ]
+            },
+            {
+              type: "table",
+              title: "The Dativ Feeling Traps",
+              headers: ["Correct (Dativ)", "Meaning", "WRONG (Nominativ)", "Wrong Meaning"],
+              rows: [
+                ["Mir ist kalt.", "I feel cold.", "Ich bin kalt.", "I am cold-hearted."],
+                ["Mir ist schlecht.", "I feel nauseous.", "Ich bin schlecht.", "I am a bad person."],
+                ["Mir ist warm.", "I feel warm.", "Ich bin warm.", "I am gay (slang)."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Why Dativ for Feelings?",
+              variant: "info",
+              content: "In German, physical sensations happen TO you — they aren't part of your identity. That's why you say 'Mir ist kalt' (to me it is cold) instead of 'Ich bin kalt'. The sensation is external, so Dativ is used!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -220,6 +410,46 @@ export const MODULE_10: Module = {
       description: "Navigate a doctor's visit in Germany — from making an appointment to getting a prescription.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Reception (Arztpraxis)",
+          sceneType: "station",
+          timeOfDay: "afternoon",
+          description: "The waiting room is quiet and smells faintly of disinfectant. There's a glass partition at the front. You need to present your 'Versicherungskarte' (insurance card) and explain why you're here. In Kerala, we might just walk into a clinic, but here, the 'Termin' (appointment) is king. Time to be professional, machane!",
+        },
+        narrative: {
+          previousRecap: "You've identified how you feel. Now, let's get some professional help!",
+          currentObjective: "Make an appointment, handle the reception paperwork, and describe symptoms to the doctor",
+          nextTeaser: "Next: Pharmacy! Let's get that medicine!",
+        },
+        kuttanIntro: [
+          "Machane! Doctor-de aduthu poyal first 'Termin' undo ennu chodikkanam. Appointment illathe chellan vayya unless it's an emergency.",
+          "Main question doctor chodikkanth: 'Was fehlt Ihnen?' (What is missing from you? / What's wrong?). Ithoru fixed phrase aanu.",
+          "Pinne 'Versicherungskarte' (health insurance card) eppozhum kayyil venam. Without it, things can get complicated. Let's talk to the doc!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab10-3-1", encounterMoment: "You arrive: 'Ich bin in der Arztpraxis.' (I am in the doctor's office).", contextSentence: "Ich muss zur Arztpraxis." },
+          { vocabId: "vocab10-3-2", encounterMoment: "You ask: 'Haben Sie einen Termin?' (Do you have an appointment?).", contextSentence: "Haben Sie einen Termin?" },
+          { vocabId: "vocab10-3-3", encounterMoment: "Receptionist asks: 'Ihre Versicherungskarte, bitte.' (Your insurance card, please).", contextSentence: "Ihre Versicherungskarte, bitte." },
+          { vocabId: "vocab10-3-5", encounterMoment: "The doctor hands you a paper: 'Hier ist Ihr Rezept.' (Here is your prescription).", contextSentence: "Hier ist Ihr Rezept." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to make an appointment. Which German phrase should you use?",
+            options: [
+              { text: "Ich möchte einen Termin machen.", isCorrect: true, response: "Exactly! 'Einen Termin machen' is the standard way to schedule an appointment.", kuttanReaction: "Adipoli! Appointment schedule cheyyunnathu super aayi padichallo! 🔥" },
+              { text: "Ich will einen Platz haben.", isCorrect: false, response: "Aiyyo! 'Platz' is for a seat or a place. For a doctor's visit, you need a 'Termin'.", kuttanReaction: "Vite machane! Business or doctor logic-ail 'Termin' venam. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "The doctor asks 'Was fehlt Ihnen?'. What is she asking you?",
+            options: [
+              { text: "What's wrong with you / What are your symptoms?", isCorrect: true, response: "Correct! Literally 'What is missing from you?'.", kuttanReaction: "Superb! Medical opening correctly manasilakkiyallo. Ready to describe symptoms! ⭐" },
+              { text: "What's your name?", isCorrect: false, response: "No! That would be 'Wie heißen Sie?'. 'Was fehlt Ihnen?' is about your health.", kuttanReaction: "Aiyyo! Health-ine patti aanu choodickunnathu. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v10-3-1",
@@ -244,7 +474,37 @@ export const MODULE_10: Module = {
             "Describe symptoms to a doctor",
             "Understand the German healthcare process (Praxis → Rezept → Apotheke)"
           ],
-          placeholderThumbnail: "/images/thumbnails/at-the-doctor.jpg"
+          placeholderThumbnail: "/images/doctor_waiting_room.png",
+          richContent: [
+            {
+              type: "table",
+              title: "At the Doctor's Office",
+              headers: ["Step", "German", "English"],
+              rows: [
+                ["1. Appointment", "Ich möchte einen Termin machen.", "I'd like to make an appointment."],
+                ["2. Reception", "Hier ist meine Versicherungskarte.", "Here is my insurance card."],
+                ["3. Waiting", "Bitte nehmen Sie im Wartezimmer Platz.", "Please take a seat in the waiting room."],
+                ["4. Doctor asks", "Was fehlt Ihnen?", "What's wrong with you?"],
+                ["5. Duration", "Seit wann haben Sie die Schmerzen?", "Since when have you had the pain?"],
+                ["6. Medication", "Nehmen Sie Medikamente?", "Do you take any medication?"],
+                ["7. Prescription", "Hier ist Ihr Rezept.", "Here is your prescription."]
+              ]
+            },
+            {
+              type: "note",
+              title: "German Healthcare Flow",
+              variant: "info",
+              content: "In Germany: Arztpraxis (doctor's office) first, NOT the hospital! Doctor gives a Rezept (prescription), then you go to a separate Apotheke (pharmacy) to get medicine. Very different from Indian clinics that give medicine directly!"
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "die Arztpraxis", english: "doctor's office", malayalam: "ഡോക്ടറുടെ ക്ലിനിക്ക്", pronunciation: "ahrts-prah-xis" },
+                { german: "die Versicherungskarte", english: "insurance card", malayalam: "ഇൻഷുറൻസ് കാർഡ്", pronunciation: "fer-zikh-er-oongs-kar-te" },
+                { german: "das Rezept", english: "prescription", malayalam: "കുറിപ്പടി", pronunciation: "re-tsept" }
+              ]
+            }
+          ]
         },
         {
           id: "v10-3-2",
@@ -267,7 +527,32 @@ export const MODULE_10: Module = {
             "Understand common doctor instructions",
             "Know what to do with a Rezept (prescription)"
           ],
-          placeholderThumbnail: "/images/thumbnails/describing-symptoms.jpg"
+          placeholderThumbnail: "/images/doctor_waiting_room.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Describing Symptoms to the Doctor",
+              headers: ["Category", "German", "English"],
+              rows: [
+                ["Location", "Ich habe Schmerzen hier.", "I have pain here."],
+                ["Location", "Hier tut es weh.", "It hurts here."],
+                ["Duration", "Seit gestern", "Since yesterday"],
+                ["Duration", "Seit drei Tagen", "For three days"],
+                ["Duration", "Seit einer Woche", "For a week"],
+                ["Intensity", "stark", "strong/intense"],
+                ["Intensity", "unerträglich", "unbearable"],
+                ["Type", "stechend", "stabbing"],
+                ["Type", "dumpf", "dull"],
+                ["Type", "brennend", "burning"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Doctor's Instructions",
+              variant: "tip",
+              content: "Common instructions you'll hear: 'Machen Sie den Mund auf' (Open your mouth), 'Atmen Sie tief ein' (Breathe in deeply), 'Zeigen Sie mir, wo es weh tut' (Show me where it hurts). Just follow along!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -317,6 +602,46 @@ export const MODULE_10: Module = {
       description: "The German Apotheke is special! Learn to buy medicine, understand prescriptions, and navigate this unique institution.",
       duration: "50 min",
       xpReward: 130,
+      storyScene: {
+        setting: {
+          name: "The Pharmacy (Apotheke)",
+          sceneType: "station",
+          timeOfDay: "afternoon",
+          description: "You've walked into a bright, clean shop with a big red 'A' sign. The shelves are full of medical-grade skincare and herbal teas. Behind the counter, a professional-looking pharmacist in a white coat is waiting. No paracetamol in the supermarket here, machane! You need to ask 'Apotheker' for everything. Ready to get your meds?",
+        },
+        narrative: {
+          previousRecap: "You've got your prescription from the doctor. Now, let's turn that paper into pills!",
+          currentObjective: "Understand the 'Apotheke' culture, use 'gegen' for medications, and understand dosage instructions",
+          nextTeaser: "Final lesson: Emergency! What to do when things go really wrong!",
+        },
+        kuttanIntro: [
+          "Machane! Apotheke-yil pokumpo oru important grammar rule undu. Always say 'etwas GEGEN Kopfschmerzen' (something AGAINST headache). 'Für' (for) ennu paranjaal logic maarum.",
+          "Pinne 'rezeptfrei' enna word sradhikkanne. Prescription illathe kittunna medicine-inu 'rezeptfrei' ennu parayum. Like band-aids or light painkillers.",
+          "Dosage instruction kettal 'täglich' (daily) enna word eppozhum pratheykichu sradhikkanam. Let's get our medicine!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab10-4-1", encounterMoment: "You find the red A: 'Das ist die Apotheke.' (That is the pharmacy).", contextSentence: "Die Apotheke ist neben dem Supermarkt." },
+          { vocabId: "vocab10-4-8", encounterMoment: "You ask: 'Haben Sie ein Schmerzmittel?' (Do you have a painkiller?).", contextSentence: "Haben Sie ein Schmerzmittel?" },
+          { vocabId: "vocab10-4-6", encounterMoment: "The pharmacist says: 'Das ist rezeptfrei.' (This is over-the-counter).", contextSentence: "Ibuprofen ist rezeptfrei." },
+          { vocabId: "vocab10-4-10", encounterMoment: "The dosage: 'Nehmen Sie die Tablette täglich.' (Take the tablet daily).", contextSentence: "Nehmen Sie die Tablette zweimal täglich." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You want to ask for something to help with your cough. Which phrasing is correct in German?",
+            options: [
+              { text: "Ich brauche etwas gegen Husten.", isCorrect: true, response: "Exactly! In German, you take medicine 'against' (gegen) an illness.", kuttanReaction: "Adipoli! Grammar logic correctly catch cheythallo! 🔥" },
+              { text: "Ich brauche etwas für Husten.", isCorrect: false, response: "Aiyyo! If you say 'für Husten', it sounds like you WANT more cough. Use 'gegen'!", kuttanReaction: "Vite machane! Illness or pain logicaly 'against' aanu. Try again! 😬" },
+            ],
+          },
+          {
+            moment: "The pharmacist says 'Nehmen Sie die Tablette dreimal täglich'. How many times a day should you take it?",
+            options: [
+              { text: "Three times daily.", isCorrect: true, response: "Correct! 'dreimal' (three times) 'täglich' (daily).", kuttanReaction: "Superb! Timing logic correctly capture cheythallo. ⭐" },
+              { text: "Once every three days.", isCorrect: false, response: "No! 'dreimal täglich' means 3 times every day. Don't miss your dose!", kuttanReaction: "Aiyyo! Every day moonu thavana edukkanam. Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v10-4-1",
@@ -340,7 +665,35 @@ export const MODULE_10: Module = {
             "Ask for specific medicines using 'Ich brauche etwas gegen...'",
             "Know the difference between rezeptfrei and rezeptpflichtig"
           ],
-          placeholderThumbnail: "/images/thumbnails/pharmacy.jpg"
+          placeholderThumbnail: "/images/german_apotheke.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Pharmacy Vocabulary",
+              headers: ["German", "English", "Malayalam"],
+              rows: [
+                ["die Apotheke", "pharmacy", "മരുന്നുകട"],
+                ["die Tablette", "tablet/pill", "ഗുളിക"],
+                ["der Sirup", "syrup", "സിറപ്പ്"],
+                ["die Salbe", "ointment", "തേപ്പ്"],
+                ["das Pflaster", "band-aid", "പ്ലാസ്റ്റർ"],
+                ["rezeptfrei", "over-the-counter", "കുറിപ്പടി ഇല്ലാതെ"],
+                ["rezeptpflichtig", "prescription required", "കുറിപ്പടി വേണം"]
+              ]
+            },
+            {
+              type: "note",
+              title: "No Paracetamol at Supermarkets!",
+              variant: "warning",
+              content: "Even basic medicines like paracetamol can ONLY be bought at an Apotheke in Germany. Look for the big red 'A' sign. Supermarkets and convenience stores cannot sell any medicines — strict German law!"
+            },
+            {
+              type: "note",
+              title: "The Magic Phrase: 'etwas gegen...'",
+              variant: "tip",
+              content: "Say 'Ich brauche etwas gegen Kopfschmerzen' (I need something against headaches). Note: it's 'gegen' (against), not 'für' (for). In German, medicines fight AGAINST the illness!"
+            }
+          ]
         },
         {
           id: "v10-4-2",
@@ -364,7 +717,39 @@ export const MODULE_10: Module = {
             "Name common types of medicine in German",
             "Understand dosage instructions"
           ],
-          placeholderThumbnail: "/images/thumbnails/common-medicines.jpg"
+          placeholderThumbnail: "/images/german_apotheke.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Asking the Pharmacist",
+              headers: ["German", "English"],
+              rows: [
+                ["Können Sie mir etwas empfehlen?", "Can you recommend something?"],
+                ["Haben Sie ein Schmerzmittel?", "Do you have a painkiller?"],
+                ["Ich brauche etwas gegen Allergien.", "I need something for allergies."],
+                ["Wie oft soll ich das nehmen?", "How often should I take this?"],
+                ["Ich habe ein Rezept vom Arzt.", "I have a prescription from the doctor."]
+              ]
+            },
+            {
+              type: "table",
+              title: "Dosage Instructions",
+              headers: ["German", "English"],
+              rows: [
+                ["einmal täglich", "once daily"],
+                ["zweimal täglich", "twice daily"],
+                ["dreimal täglich", "three times daily"],
+                ["vor dem Essen", "before eating"],
+                ["nach dem Essen", "after eating"]
+              ]
+            },
+            {
+              type: "note",
+              title: "After-Hours Pharmacy (Notdienst)",
+              variant: "info",
+              content: "Need medicine on Sunday or at night? Every area has a rotating 'Notdienst' (emergency service) pharmacy that stays open. Check apotheken.de or look for the green cross sign lit up at night!"
+            }
+          ]
         }
       ],
       exercises: [
@@ -414,6 +799,47 @@ export const MODULE_10: Module = {
       description: "Know what to do in a German emergency — dial the right number, call for help, and navigate the Notaufnahme (ER).",
       duration: "50 min",
       xpReward: 140,
+      storyScene: {
+        setting: {
+          name: "Busy Street Corner (The Accident)",
+          sceneType: "station",
+          timeOfDay: "afternoon",
+          description: "Suddenly, you hear a screech of tires and a thud. A delivery rider on a bicycle has collided with a car door. People are gathering. Someone needs to call for help. In Kerala, everyone would rush in, but here, it's about following the system. Do you know the number? Do you know what to say? This is a 'Notfall', machane. Stay calm!",
+        },
+        narrative: {
+          previousRecap: "You've survived the pharmacy. Now, let's learn the language of emergencies!",
+          currentObjective: "Identify emergency numbers (112 for ambulance/fire, 110 for police) and call for help in German",
+          nextTeaser: "Module 10 complete! You're ready for anything Germany throws at you! See you in Module 11!",
+        },
+        kuttanIntro: [
+          "Machane! Emergency situations-il panic aavenam venda. Numbers eppozhum memory-yil venam. 112 for ambulance/fire, 110 for police.",
+          "First phrase eppozhum 'Ich brauche Hilfe!' (I need help) aayirikkaname. Use it loud and clear to get attention.",
+          "Pinne 'Krankenwagen' (ambulance) enna word sradhikkanne. Literally 'Sick-car'. Let's report this accident!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab10-5-1", encounterMoment: "Someone yells: 'Das ist ein Notfall!' (That is an emergency!).", contextSentence: "Das ist ein Notfall!" },
+          { vocabId: "vocab10-5-3", encounterMoment: "You say: 'Es gab einen Unfall.' (There was an accident).", contextSentence: "Es gab einen Unfall auf der Straße." },
+          { vocabId: "vocab10-5-2", encounterMoment: "You shout: 'Rufen Sie einen Krankenwagen!' (Call an ambulance!).", contextSentence: "Ich brauche einen Krankenwagen!" },
+          { vocabId: "vocab10-5-7", encounterMoment: "The police arrive: 'Die Polizei ist hier.' (The police are here).", contextSentence: "Rufen Sie die Polizei! Die Nummer ist 110." },
+          { vocabId: "vocab10-5-4", encounterMoment: "You point: 'Die Verletzung ist am Bein.' (The injury is on the leg).", contextSentence: "Die Verletzung ist nicht schlimm." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Someone is hurt and needs an ambulance. Which number do you dial in Germany?",
+            options: [
+              { text: "112.", isCorrect: true, response: "Exactly! 112 is the European emergency number for ambulance and fire.", kuttanReaction: "Adipoli! Number correct aayi pick cheythallo. Life-saver! 🔥" },
+              { text: "110.", isCorrect: false, response: "Aiyyo! 110 is only for the Police. For medical help, you need 112.", kuttanReaction: "Vite machane! Ambulance-inu 112 venam. Ithu fix cheytho! Try again! 😬" },
+            ],
+          },
+          {
+            moment: "You need to ask for help immediately. What is the clearest phrase?",
+            options: [
+              { text: "Ich brauche Hilfe!", isCorrect: true, response: "Correct! Simple, loud, and effective.", kuttanReaction: "Superb! Emergency communication logic catch cheythallo. ⭐" },
+              { text: "Was ist los?", isCorrect: false, response: "No! 'Was ist los?' means 'What's happening?'. You need to ask for help!", kuttanReaction: "Aiyyo! 'Hilfe' word missing aanu machane! Try again! 🚫" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v10-5-1",
@@ -443,7 +869,41 @@ export const MODULE_10: Module = {
             "Use key emergency vocabulary: Unfall, Verletzung, Blut, Krankenwagen",
             "Understand how the Notaufnahme (ER) works in Germany"
           ],
-          placeholderThumbnail: "/images/thumbnails/emergency.jpg"
+          placeholderThumbnail: "/images/doctor_waiting_room.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Emergency Numbers & Vocabulary",
+              headers: ["Number/Word", "Service", "Malayalam"],
+              rows: [
+                ["112", "Ambulance & Fire", "ആംബുലൻസ് & ഫയർ"],
+                ["110", "Police", "പോലീസ്"],
+                ["der Notfall", "emergency", "അടിയന്തരാവസ്ഥ"],
+                ["der Krankenwagen", "ambulance", "ആംബുലൻസ്"],
+                ["der Unfall", "accident", "അപകടം"],
+                ["die Verletzung", "injury", "പരിക്ക്"],
+                ["die Notaufnahme", "emergency room", "എമർജൻസി റൂം"]
+              ]
+            },
+            {
+              type: "table",
+              title: "Emergency Phrases",
+              headers: ["German", "English"],
+              rows: [
+                ["Ich brauche Hilfe!", "I need help!"],
+                ["Rufen Sie einen Krankenwagen!", "Call an ambulance!"],
+                ["Es gab einen Unfall!", "There was an accident!"],
+                ["Jemand ist verletzt!", "Someone is injured!"],
+                ["Ich bin in der [Straße].", "I am on [street name]."]
+              ]
+            },
+            {
+              type: "note",
+              title: "112 Works All Over Europe!",
+              variant: "warning",
+              content: "112 is the universal emergency number across all EU countries. It works even without a SIM card or credit! For police-only emergencies, use 110. For non-emergencies, call 116117 (doctor on-call service)."
+            }
+          ]
         }
       ],
       exercises: [
