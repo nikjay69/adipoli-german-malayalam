@@ -18,8 +18,10 @@ import { createCard } from '@/lib/srs';
 import { useGameStore } from '@/lib/store';
 import { getLessonById, getModuleById, ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { isLessonUnlocked as checkLessonUnlocked } from '@/lib/curriculum';
-import { feedbackCorrect, feedbackWrong, feedbackCelebration, feedbackFlip } from '@/lib/feedback';
+import { feedbackCorrect, feedbackWrong, feedbackCelebration, feedbackFlip, feedbackCombo, feedbackComboBreak } from '@/lib/feedback';
+import { ComboMeter } from '@/components/game/ComboMeter';
 import { generateEncounter, type Encounter } from '@/lib/encounters';
+import { checkForSurprise, type SurpriseEvent } from '@/lib/engagement/surprise-engine';
 
 // Map modules → relevant games to suggest after vocab learning
 const MODULE_GAME_MAP: Record<number, { path: string; name: string; icon: string; description: string } | null> = {
@@ -88,6 +90,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const [vocabSelectedOption, setVocabSelectedOption] = useState<number | null>(null);
   const [vocabAnswerState, setVocabAnswerState] = useState<'default' | 'correct' | 'wrong'>('default');
   const allVocabPool = getAllVocabulary();
+  // Combo tracking for exercises
+  const [combo, setCombo] = useState(0);
+  const [maxCombo, setMaxCombo] = useState(0);
+  // Surprise events
+  const [surprise, setSurprise] = useState<SurpriseEvent | null>(null);
 
   // ── Audio: TTS + Ambient Soundscape ──
   const { speak: speakGerman, stop: stopTTS } = useGermanTTS();
@@ -111,11 +118,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     }
   }, [mounted, isLessonUnlocked, router]);
 
-  // Start ambient soundscape based on module context
+  // Start ambient soundscape for every lesson — creates atmosphere
   useEffect(() => {
-    if (mounted && module && userProgress.soundEnabled) {
-      const scene = getSceneForModule(module.id);
-      startAmbience(scene, 0.3);
+    if (mounted && module) {
+      const scene = lesson?.storyScene?.setting.sceneType || getSceneForModule(module.id);
+      startAmbience(scene as import('@/lib/audio/ambience').SceneType, 0.25);
     }
     return () => { stopAmbience(800); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -258,8 +265,8 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     : [];
   const allExercises = [...autoTypingExercises, ...lesson.exercises];
 
-  // Limit vocab cards shown to max 4 — rest are learned through exercises
-  const MAX_VOCAB_CARDS = 4;
+  // Limit vocab cards shown to max 6 — rest are learned through exercises
+  const MAX_VOCAB_CARDS = 6;
   const shownVocab = lesson.vocabulary.slice(0, MAX_VOCAB_CARDS);
 
   const suggestedGameForModule = MODULE_GAME_MAP[module?.id ?? 0] ?? null;
@@ -463,6 +470,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     // Passed — complete the lesson
     completeLesson(lesson.id, score);
     clearCheckpoint();
+    // Mark ALL vocab in this lesson as learned (not just the shown cards)
+    lesson.vocabulary.forEach(v => {
+      learnVocabulary(v.id);
+      addSRSCard(createCard(v.id));
+    });
     addXP(lesson.xpReward);
     setStep({ type: 'complete' });
 
@@ -491,27 +503,35 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     const isCorrect = answer === exercise.correctAnswer;
 
     if (isCorrect) {
+      const newCombo = combo + 1;
+      setCombo(newCombo);
+      setMaxCombo(prev => Math.max(prev, newCombo));
       setAnswerState('correct');
       setCorrectCount(prev => prev + 1);
       setKuttanMsg(getRandomMessage('correct'));
-      feedbackCorrect();
+      feedbackCombo(newCombo);
+      // Check for surprise on correct answer
+      const surpriseEvent = checkForSurprise('correct_answer');
+      if (surpriseEvent) { setSurprise(surpriseEvent); setTimeout(() => setSurprise(null), 4000); }
       setTimeout(() => goNext(), 1400);
     } else {
+      if (combo > 2) feedbackComboBreak();
+      else feedbackWrong();
+      setCombo(0);
       setAnswerState('incorrect');
       setKuttanMsg(getRandomMessage('wrong'));
-      feedbackWrong();
-      // Show correct answer for a moment, then auto-advance
-      setTimeout(() => {
-        goNext();
-      }, 2000);
+      setTimeout(() => goNext(), 2000);
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col safe-top safe-bottom">
-      {/* Scene background for story-driven lessons */}
-      {hasStory && lesson.storyScene && step.type !== 'complete' && (
-        <SceneBackground scene={lesson.storyScene.setting.sceneType} opacity={0.2} />
+      {/* Scene background for ALL lessons — uses story scene type or module default */}
+      {step.type !== 'complete' && module && (
+        <SceneBackground
+          scene={lesson.storyScene?.setting.sceneType || getSceneForModule(module.id)}
+          opacity={0.2}
+        />
       )}
 
       {showExitConfirm && (
@@ -679,7 +699,36 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             </span>
           )}
         </div>
+
+        {/* Combo meter — shows during exercises */}
+        {step.type === 'exercise' && (combo > 0 || maxCombo > 0) && (
+          <div className="mt-1">
+            <ComboMeter combo={combo} maxCombo={maxCombo} />
+          </div>
+        )}
       </div>
+
+      {/* Surprise event overlay */}
+      <AnimatePresence>
+        {surprise && (
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            onClick={() => setSurprise(null)}
+            className="fixed top-16 left-1/2 -translate-x-1/2 z-[90] cursor-pointer"
+          >
+            <div className="bg-gradient-to-r from-[#d4a520]/20 to-[#27ae60]/20 border border-[#d4a520]/30 backdrop-blur-xl rounded-2xl px-5 py-3 flex items-center gap-3 shadow-lg max-w-[300px]">
+              <span className="text-2xl">{surprise.emoji}</span>
+              <div>
+                <p className="text-xs font-bold text-[#d4a520]">{surprise.title}</p>
+                <p className="text-[11px] text-[var(--foreground)]/60">{surprise.message}</p>
+                {surprise.xpBonus && <p className="text-[10px] text-[#27ae60] font-bold">+{surprise.xpBonus} XP</p>}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Main Content */}
       <div className="flex-1 px-4 flex flex-col overflow-y-auto">

@@ -22,6 +22,48 @@ export const MODULE_1: Module = {
       description: "Start with motivation and practical context, but keep the real goal clear: learners should leave this lesson able to say a few core German words confidently and understand why A1 matters for real Germany pathways.",
       duration: "45 min",
       xpReward: 100,
+      storyScene: {
+        setting: {
+          name: "Kuttan's Home, Thrissur",
+          sceneType: "classroom",
+          timeOfDay: "evening",
+          description: "It's a warm Kerala evening. You're sitting in your room scrolling through Instagram when a WhatsApp forward from your cousin in Munich catches your eye — a photo of snow-capped Alps with the caption 'Free university, machane!' Your world is about to change.",
+        },
+        narrative: {
+          currentObjective: "Discover why Germany is the land of opportunity for Malayalis",
+          nextTeaser: "Next up: mastering German sounds — your tongue is about to learn new tricks!",
+        },
+        kuttanIntro: [
+          "Machane! Nammude Germany journey thudangaam! Innale vare nee 'Deutsch' ennu kelkkumbol 'Oktoberfest' mathre aalochichirunullu — but ithil pinne valiya scope undu!",
+          "Ente cousin Munich-il aanu — free education, fat salary, Alps weekend trip... Nee sherikkum padikkaan ready aano?",
+          "Chill aayirikkeda! First step — enthukond German padikkanum, athinu enthokke opportunities undu ennokke nokkaam. Let's go!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab1-1-1", encounterMoment: "Your cousin texts: 'Bro, start learning Deutsch! Athaan gateway.' The word 'Deutsch' pops up everywhere in German life.", contextSentence: "Ich lerne Deutsch." },
+          { vocabId: "vocab1-1-2", encounterMoment: "You open Google Maps and zoom into Deutschland — it's right in the heart of Europe, surrounded by 9 countries!", contextSentence: "Deutschland ist schön." },
+          { vocabId: "vocab1-1-3", encounterMoment: "Your cousin sends a voice note: 'Nee lernen thudangu machane! Start learning today!' The word 'lernen' means to learn.", contextSentence: "Wir lernen zusammen." },
+          { vocabId: "vocab1-1-4", encounterMoment: "You find a YouTube video titled 'Arbeit in Deutschland' — work opportunities for Indians. The comment section is full of Malayalis!", contextSentence: "Die Arbeit ist interessant." },
+          { vocabId: "vocab1-1-5", encounterMoment: "A university website shows: 'Studium — 0 Euro Tuition!' Free studies? This can't be real... but it is!", contextSentence: "Mein Studium dauert vier Jahre." },
+          { vocabId: "vocab1-1-6", encounterMoment: "The Goethe-Institut page reads: 'Die deutsche Sprache öffnet Türen.' The German language opens doors. You feel the excitement building.", contextSentence: "Deutsch ist eine schöne Sprache." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Your cousin asks on a video call: 'So machane, which Germany pathway are you thinking — Studium, Ausbildung, or IT job?' What catches your eye?",
+            options: [
+              { text: "Studium — free university education sounds unreal!", isCorrect: true, response: "Your cousin grins: 'Over 400 public universities with zero tuition! You just need to learn German to B2 level.' He shares a link to DAAD.", kuttanReaction: "Adipoli! Free education + world-class degree = best investment ever! Padikkaam machane! 🎓" },
+              { text: "Ausbildung — earn while you learn? Sign me up!", isCorrect: true, response: "Your cousin nods excitedly: 'Companies PAY you €800-€1200/month while training you! No degree needed, just B1 German.' He sends you success stories.", kuttanReaction: "Smart choice machane! Ausbildung is Germany's hidden gem — padikkukayum salary vangukayum oru time-il! 💰" },
+              { text: "I'll just figure it out when I get there...", isCorrect: false, response: "Your cousin shakes his head: 'Machane, Germany is NOT like that. You need a plan and German language BEFORE you land.' He shares a checklist.", kuttanReaction: "Aiyyo! Germany plan illathe povaan pattilla machane! But don't worry — athinaanu nammude ee course! Let's plan it properly! 📋" },
+            ],
+          },
+          {
+            moment: "You sit down to tell your parents about your Germany plan. Amma asks: 'Enthinaa avide pokkunne? Ivide nalla job illayo?' What's your best response?",
+            options: [
+              { text: "Show the salary comparison — Kochi vs Munich numbers", isCorrect: true, response: "Amma's eyes widen at the salary table. 'Athrem difference aano?!' Even Achan puts down his newspaper to look. Facts win every time!", kuttanReaction: "Numbers don't lie machane! Amma-ye convince cheyyaan data venam — you nailed it! 📊" },
+              { text: "Just say 'Trust me, it'll work out'", isCorrect: false, response: "Amma gives you The Look. 'Concrete plan kondu vaa, pinne samsaarikaam.' You need better ammunition!", kuttanReaction: "Paravaala, but Malayali parents-ne convince cheyyaan proper data venam machane! Show them the numbers! 😅" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v1-1-1",
@@ -162,6 +204,48 @@ export const MODULE_1: Module = {
       description: "Build pronunciation deliberately from day one. This lesson should make Malayalam speakers notice what already transfers well, what needs extra care, and why sound accuracy matters for A1 listening and speaking confidence.",
       duration: "60 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Goethe-Institut, Kochi",
+          sceneType: "classroom",
+          timeOfDay: "morning",
+          description: "A bright morning at the Goethe-Institut in Kochi. The classroom smells of fresh marker ink and filter coffee from the canteen. Your German teacher, Frau Weber, writes strange letters on the whiteboard: ä, ö, ü. Twenty nervous Malayali students stare at the board.",
+        },
+        narrative: {
+          previousRecap: "You discovered why Germany is a goldmine for Malayalis. Now it's time to actually make German sounds come out of your mouth!",
+          currentObjective: "Master German sounds before the journey",
+          nextTeaser: "Next: your first real greetings — time to say 'Hallo' like a pro!",
+        },
+        kuttanIntro: [
+          "Machane! Nammude first German class! Goethe-Institut Kochi-il aanu nammal — Frau Weber sherikkum strict aanu, but she's the best!",
+          "Board-il nokkeda — aa randu dots ulla letters kaanunundo? Ä, Ö, Ü — ithu Malayalam-il illa, but nammude mouth-inu ithu padikkaan pattum!",
+          "Don't worry about perfect accent — goal is 'being understood', not 'sounding like a German movie star'. Let's crack these sounds!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab1-2-1", encounterMoment: "Frau Weber points at you: 'Sagen Sie: ich.' You try the soft 'ch' sound — it's like a cat hissing! 'Ich bin hier,' she demonstrates.", contextSentence: "Ich bin hier." },
+          { vocabId: "vocab1-2-2", encounterMoment: "She writes 'Mädchen' on the board. 'This word has BOTH tricky sounds — the ä AND the ch!' The class groans, but you're determined.", contextSentence: "Das Mädchen spielt." },
+          { vocabId: "vocab1-2-3", encounterMoment: "Frau Weber smiles and says: 'Schön! Das ist schön!' She makes the class repeat 'schön' — lips rounded like 'O' but saying 'E'. Mind = blown.", contextSentence: "Das ist schön!" },
+          { vocabId: "vocab1-2-4", encounterMoment: "A travel poster on the wall shows München. 'München has the ü sound!' Frau Weber says. 'Round your lips like a straw and say EE.'", contextSentence: "München ist groß." },
+          { vocabId: "vocab1-2-5", encounterMoment: "Frau Weber points to the street outside: 'Die Straße — notice the ß! It means a long S sound after a long vowel.' You spot the word on a map of Berlin.", contextSentence: "Die Straße ist lang." },
+          { vocabId: "vocab1-2-6", encounterMoment: "During the break, Frau Weber offers you water: 'Möchten Sie Wasser?' You notice she says 'Vasser' not 'Wasser' — German W = English V!", contextSentence: "Das Wasser ist kalt." },
+        ],
+        decisionPoints: [
+          {
+            moment: "Frau Weber asks the class to pronounce 'schön'. She's watching you closely. How do you shape your mouth?",
+            options: [
+              { text: "Round lips like 'O', but try to say 'E' inside", isCorrect: true, response: "Frau Weber claps! 'Sehr gut! Perfekt!' The ö sound comes out naturally. Your classmates look impressed.", kuttanReaction: "Adipoli machane! Ö sound crack cheythu! Round lips + E sound = perfect German ö! Frau Weber-kku ninte pronunciation ishttaayi! 🔥" },
+              { text: "Just say 'shown' like in English", isCorrect: false, response: "Frau Weber shakes her head gently: 'Nein, nicht wie Englisch. Die Lippen müssen rund sein!' She demonstrates the lip rounding again.", kuttanReaction: "Aiyyo! English 'shown' allaa machane! Lips round cheyyeda — 'O' pole lips, but 'E' parayan nokkeda! Try again! 💪" },
+            ],
+          },
+          {
+            moment: "A classmate writes 'Strasse' in their notebook instead of 'Straße'. Frau Weber asks: 'Who can tell me the difference between ss and ß?' You raise your hand.",
+            options: [
+              { text: "ß comes after LONG vowels, ss after SHORT vowels", isCorrect: true, response: "Frau Weber beams: 'Ausgezeichnet! Straße has a long A, Wasser has a short A — that's the rule!' She gives you a gold star sticker.", kuttanReaction: "Gold star machane! ß = long vowel, ss = short vowel — ee rule oru thavana padichaal life-il marakkilla! 🌟" },
+              { text: "They're the same thing, just different styles", isCorrect: false, response: "Frau Weber explains patiently: 'Nein! ß tells you the vowel before it is LONG. Very important difference!'", kuttanReaction: "Paravaala machane! Ithu common mistake aanu. Remember: ß = long vowel before it, ss = short vowel. Simple rule! 📝" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v1-2-1",
@@ -482,6 +566,49 @@ export const MODULE_1: Module = {
       description: "Ending a conversation is as important as starting one. Master the 'Danke/Bitte' dance and learn which 'sorry' to use when you're in a pinch.",
       duration: "45 min",
       xpReward: 120,
+      storyScene: {
+        setting: {
+          name: "Berlin Hostel Lobby",
+          sceneType: "cafe",
+          timeOfDay: "evening",
+          description: "It's your last evening at the Berlin hostel. The cozy lobby is warm with fairy lights and the hum of conversations in five languages. Your new friends — Lisa from the train station, Marco from Italy, and Yuki from Japan — are gathered around a table. Tomorrow everyone leaves for different cities. Time to say goodbye properly.",
+        },
+        narrative: {
+          previousRecap: "You mastered greetings and had your first German conversations. Now comes the harder part — saying goodbye without being awkward!",
+          currentObjective: "Learn to say goodbye properly",
+          nextTeaser: "Next: your first full German conversation — putting EVERYTHING together!",
+        },
+        kuttanIntro: [
+          "Machane! Hostel lobby-il last evening aanu — ninte new friends okke naalae povum. Goodbye parayan padikkaam, but ivide vivaravum manners-um important aanu!",
+          "Germans-nu goodbye oru art aanu! 'Tschüss' casual-aanu, 'Auf Wiedersehen' formal — wrong one use cheythaal awkward aakum!",
+          "Plus, 'Danke' and 'Bitte' — ee randu words illathe Germany-il survive cheyyaan pattilla. Let's learn the polite way!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab1-4-1", encounterMoment: "The hostel receptionist says formally: 'Auf Wiedersehen! Gute Reise!' as an older guest checks out. You notice this is the formal goodbye.", contextSentence: "Auf Wiedersehen, bis Montag!" },
+          { vocabId: "vocab1-4-2", encounterMoment: "Lisa waves casually to a friend leaving: 'Tschüss! Mach's gut!' — the easy, friendly goodbye you'll use with everyone your age.", contextSentence: "Tschüss, mach's gut!" },
+          { vocabId: "vocab1-4-3", encounterMoment: "Marco hands you a Berlin fridge magnet as a gift. 'Danke!' you say instinctively. The magic word works in every language!", contextSentence: "Danke für die Hilfe!" },
+          { vocabId: "vocab1-4-4", encounterMoment: "You pass the salt to Yuki at dinner. 'Bitte!' you say, handing it over. She grins — you used it like a real German!", contextSentence: "Kann ich bitte einen Kaffee haben?" },
+          { vocabId: "vocab1-4-5", encounterMoment: "You accidentally bump into someone's chair getting up. 'Entschuldigung!' flies out of your mouth. The person smiles — no harm done.", contextSentence: "Entschuldigung, wo ist der Bahnhof?" },
+          { vocabId: "vocab1-4-6", encounterMoment: "Lisa helped you book your train ticket online. You feel extra grateful: 'Vielen Dank, Lisa!' — the upgraded version of thanks.", contextSentence: "Vielen Dank für alles!" },
+        ],
+        decisionPoints: [
+          {
+            moment: "It's 11 PM. Lisa yawns and says she's heading to bed. Marco is staying up. How do you say goodbye to each?",
+            options: [
+              { text: "'Gute Nacht, Lisa!' to Lisa, 'Tschüss, bis morgen!' to Marco", isCorrect: true, response: "Lisa smiles: 'Gute Nacht! Schlaf gut!' Marco gives you a fist bump: 'Bis morgen, Freund!' You nailed both levels perfectly.", kuttanReaction: "Perfect machane! 'Gute Nacht' for someone going to SLEEP, 'Tschüss' for someone staying up — context is everything! 🌙" },
+              { text: "'Tschüss!' to both of them", isCorrect: false, response: "Lisa gives a small laugh: 'Nicht Tschüss — ich gehe schlafen! Sag Gute Nacht!' She's going to BED, not just leaving the room.", kuttanReaction: "Almost machane! Bedtime-nu 'Gute Nacht' aanu correct — 'Tschüss' is for people just leaving. Small difference, big impact! 😊" },
+              { text: "'Auf Wiedersehen' to both", isCorrect: false, response: "Marco chuckles: 'So formal! Wir sind doch Freunde!' — you're friends now, no need for the stiff goodbye.", kuttanReaction: "Enthaa machane, exam hall-il aano? Friends-odu 'Auf Wiedersehen' venda — 'Tschüss' mathiyaakum! Relax! 😂" },
+            ],
+          },
+          {
+            moment: "The next morning, you check out. The receptionist hands you your deposit back. What's the polite exchange?",
+            options: [
+              { text: "'Vielen Dank! Auf Wiedersehen!' and smile", isCorrect: true, response: "The receptionist beams: 'Gern geschehen! Einen schönen Tag noch!' — you just had a perfect German polite exchange!", kuttanReaction: "Wunderbar! 'Vielen Dank' + 'Auf Wiedersehen' = professional AND warm! Receptionist impressed aanu! ✨" },
+              { text: "Just take the money and walk out", isCorrect: false, response: "The receptionist looks a bit disappointed. In Germany, not saying 'Danke' when receiving something is considered quite rude.", kuttanReaction: "Aiyyo! Germany-il 'Danke' parayaathe poyaal rude aanu machane! Always say thanks — it costs nothing! 😬" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v1-4-1",
@@ -758,6 +885,49 @@ export const MODULE_1: Module = {
       description: "Master the art of formal and informal German — crucial for your first days in Germany! Get this wrong and it's like calling your boss 'machane' on day one.",
       duration: "45 min",
       xpReward: 150,
+      storyScene: {
+        setting: {
+          name: "Ausländerbehörde, Berlin",
+          sceneType: "office",
+          timeOfDay: "morning",
+          description: "You're sitting in the waiting room of the Ausländerbehörde (immigration office) in Berlin. The fluorescent lights hum. A number display reads 'A-247'. Your ticket says 'A-251'. The room is tense — everyone here needs something important. A stern-looking officer calls the next number. This is NOT the place for casual German.",
+        },
+        narrative: {
+          previousRecap: "You survived greetings, goodbyes, and your first conversations. Now it's time for the real test — formal German in an official setting!",
+          currentObjective: "Master formal German for official situations",
+          nextTeaser: "Module 1 complete! Next module: introducing yourself properly — name, age, country, and more!",
+        },
+        kuttanIntro: [
+          "Machane! Ausländerbehörde — ee word thanne scary aanu, but this is THE most important office for any foreigner in Germany. Calm aayirikkeda!",
+          "Ivide EVERYTHING formal aanu. 'Du' use cheythaal officer kalikku varum! 'Sie' mathram — like nammude 'Ningal' or 'Saar' basically.",
+          "Herr, Frau, Sie, Ihnen — ivide ee words ninte best friends aanu. Let me show you how to survive this place!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab1-6-1", encounterMoment: "The display shows: 'Herr Kumar — Zimmer 3.' They call men 'Herr' + last name. You stand up nervously.", contextSentence: "Guten Tag, Herr Schmidt!" },
+          { vocabId: "vocab1-6-2", encounterMoment: "A woman ahead of you is called: 'Frau Meier, bitte!' — the formal address for women. No first names here, ever.", contextSentence: "Frau Meier, können Sie mir helfen?" },
+          { vocabId: "vocab1-6-3", encounterMoment: "A sign on the wall reads: 'Bitte bleiben Sie formell.' Please remain formal. Even the signs remind you this isn't a café!", contextSentence: "Die Sprache ist sehr formell." },
+          { vocabId: "vocab1-6-4", encounterMoment: "Two students in the waiting room chat casually using 'du' with each other. But the moment their number is called, they switch to 'Sie' mode. Informell outside, formell inside.", contextSentence: "Unter Freunden ist es informell." },
+          { vocabId: "vocab1-6-5", encounterMoment: "The officer nods approvingly when you say 'Guten Tag, könnten Sie mir bitte helfen?' Being höflich (polite) gets you faster service here.", contextSentence: "Sei immer höflich!" },
+          { vocabId: "vocab1-6-6", encounterMoment: "A frustrated man shouts at the counter. The officer's face turns cold: 'Das ist unhöflich.' Being rude here can delay your visa by weeks.", contextSentence: "Das war unhöflich." },
+        ],
+        decisionPoints: [
+          {
+            moment: "You enter Zimmer 3. The officer behind the desk looks up. It's 9:30 AM. How do you greet them?",
+            options: [
+              { text: "Guten Morgen! Ich bin Herr Kumar. Ich habe einen Termin.", isCorrect: true, response: "The officer's stern face softens slightly. 'Guten Morgen, Herr Kumar. Bitte setzen Sie sich.' A perfect formal opening!", kuttanReaction: "PERFECT machane! 'Guten Morgen' + 'Herr' + last name + purpose = official greeting gold standard! Officer impressed aanu! 💯" },
+              { text: "Hallo! Ich bin Rahul. Wie geht's?", isCorrect: false, response: "The officer raises an eyebrow. 'Guten Morgen... Herr...?' They wait for your last name. Too casual for this setting!", kuttanReaction: "Aiyyo machane! Government office-il 'Hallo' and first name? That's like calling Collector-ne 'machane'! Sie + Herr/Frau use cheyyeda! 😬" },
+              { text: "Hey! Ich brauche mein Visum.", isCorrect: false, response: "The officer frowns deeply. 'Bitte sprechen Sie formell.' You just made this appointment twice as difficult.", kuttanReaction: "Enthayaalum machane! 'Hey' is for friends, NOT for the Ausländerbehörde! Formal aayille — ninte visa delay aakum! 🚫" },
+            ],
+          },
+          {
+            moment: "Your application is processed. The officer says: 'Alles in Ordnung, Herr Kumar. Ihr Visum kommt in zwei Wochen.' How do you respond and leave?",
+            options: [
+              { text: "Vielen Dank! Auf Wiedersehen!", isCorrect: true, response: "The officer nods respectfully: 'Auf Wiedersehen, Herr Kumar. Einen schönen Tag noch.' You walk out with your head held high — you survived the Ausländerbehörde!", kuttanReaction: "Adipoli machane! 'Vielen Dank' + 'Auf Wiedersehen' = perfect formal exit! Nee already Germany-il survive cheyyum! 🇩🇪" },
+              { text: "Danke, tschüss!", isCorrect: false, response: "The officer's lip twitches. It works, but 'Tschüss' in a government office is like wearing lungi to a wedding — technically fine, but not ideal.", kuttanReaction: "Paravaala machane, but 'Auf Wiedersehen' aanu ivide better. 'Tschüss' is too casual for office setting! Level up cheyyeda! 😊" },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v1-6-1",

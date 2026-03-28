@@ -25,7 +25,7 @@ interface GameDef {
 
 const games: GameDef[] = [
   {
-    id: 'word-match',
+    id: 'scene-sort',
     name: 'Scene Sort',
     description: 'Where does this word belong? Kitchen, Bahnhof, or Arztpraxis? Sort by scene!',
     icon: '🎭',
@@ -190,6 +190,30 @@ const games: GameDef[] = [
     timeEstimate: '2-3 min',
     unlockModule: 0,
     tag: 'REBUILT',
+  },
+  {
+    id: 'listen-act',
+    name: 'Listen & Act',
+    description: 'Hear German instructions, tap the right place on the map! Navigate a German town by ear.',
+    icon: '🗺️',
+    color: '#3b82f6',
+    difficulty: 'Medium',
+    xpReward: 45,
+    timeEstimate: '3-5 min',
+    unlockModule: 0,
+    tag: 'NEW',
+  },
+  {
+    id: 'boss/1',
+    name: 'Boss: The Border Officer',
+    description: 'Prove you can survive your first day in Germany! Defeat the border officer to enter the country!',
+    icon: '👮',
+    color: '#9333ea',
+    difficulty: 'Hard',
+    xpReward: 200,
+    timeEstimate: '3-5 min',
+    unlockModule: 1,
+    tag: 'BOSS',
   },
 ];
 

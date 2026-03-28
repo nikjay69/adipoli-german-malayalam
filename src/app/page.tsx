@@ -6,8 +6,10 @@ import { motion } from 'framer-motion';
 import { Clock, CheckCircle2, Circle, ArrowRight, Trophy, CalendarDays, Lightbulb, Zap } from 'lucide-react';
 import { GameButton } from '@/components/game';
 import { Kuttan } from '@/components/character/Kuttan';
+import { DailyChallenge, AchievementPopup } from '@/components/engagement';
 import { getRandomMessage } from '@/lib/content/dialogue';
 import { useGameStore } from '@/lib/store';
+import { checkNewAchievements, type AchievementDef } from '@/lib/engagement/achievements-v2';
 import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { getNextCoreLesson } from '@/lib/curriculum';
 import { getDailySchedule, type DailySchedule, type DailyTask } from '@/lib/study-plan';
@@ -35,11 +37,31 @@ export default function Home() {
   const { userProgress, updateStreak, completeTask } = useGameStore();
   const [mounted, setMounted] = useState(false);
   const [kuttanMessage, setKuttanMessage] = useState('');
+  const [newAchievement, setNewAchievement] = useState<AchievementDef | null>(null);
 
   useEffect(() => {
     setMounted(true);
     updateStreak();
   }, [updateStreak]);
+
+  // Check for new achievements on load
+  useEffect(() => {
+    if (!mounted) return;
+    const earned = checkNewAchievements({
+      xp: userProgress.xp,
+      level: userProgress.level,
+      streak: userProgress.streak,
+      completedLessons: userProgress.completedLessons,
+      learnedVocabulary: userProgress.learnedVocabulary,
+      gamesPlayed: userProgress.gamesPlayed,
+      bossesDefeated: userProgress.bossesDefeated || [],
+      achievements: userProgress.achievements,
+    });
+    if (earned.length > 0) {
+      setNewAchievement(earned[0]);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mounted]);
 
   useEffect(() => {
     if (mounted) {
@@ -146,11 +168,11 @@ export default function Home() {
           </div>
 
           {/* Compact stats row */}
-          <div className="flex items-center gap-3 mt-1.5 text-xs text-[var(--foreground)]/40">
+          <div className="flex items-center gap-3 mt-1.5 text-xs font-semibold text-[#d4a520]">
             <span>{completedCount}/{totalLessons} lessons</span>
             <span>{userProgress.learnedVocabulary.length} words</span>
             {userProgress.streak > 0 && (
-              <span>{userProgress.streak} day streak</span>
+              <span className="text-[#e94560]">{userProgress.streak} day streak</span>
             )}
           </div>
         </div>
@@ -357,6 +379,23 @@ export default function Home() {
           </motion.div>
         );
       })()}
+
+      {/* Achievement popup */}
+      <AchievementPopup
+        achievement={newAchievement}
+        isVisible={!!newAchievement}
+        onDismiss={() => setNewAchievement(null)}
+      />
+
+      {/* Daily Challenge */}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.4 }}
+        className="w-full max-w-sm mx-auto mt-3"
+      >
+        <DailyChallenge onTap={() => router.push('/games')} />
+      </motion.div>
 
       {/* Tip of the Day */}
       <motion.div
