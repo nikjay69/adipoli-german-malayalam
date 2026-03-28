@@ -1074,7 +1074,7 @@ export const MODULE_7: Module = {
           german: "Ich suche...",
           english: "I'm looking for...",
           malayalam: "ഞാന്‍ തിരയുകയാണ്...",
-          pronunciation: "ikh zoo-kheh",
+          pronunciation: "ikh zoo-khe",
           example: "Ich suche einen Pullover.",
           exampleTranslation: "I'm looking for a sweater."
         },

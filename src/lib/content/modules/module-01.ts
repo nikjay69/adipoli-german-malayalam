@@ -293,7 +293,7 @@ export const MODULE_1: Module = {
             {
               type: "vocabulary",
               items: [
-                { german: "schön", english: "beautiful", malayalam: "മനോഹരം", pronunciation: "shurn" },
+                { german: "schön", english: "beautiful", malayalam: "മനോഹരം", pronunciation: "shern" },
                 { german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "muen-shen" },
                 { german: "Wasser", english: "water", malayalam: "വെള്ളം", pronunciation: "vahs-ser" }
               ]
@@ -365,7 +365,7 @@ export const MODULE_1: Module = {
       vocabulary: [
         { id: "vocab1-2-1", german: "ich", english: "I", malayalam: "ഞാൻ", pronunciation: "ikh (soft ch)", example: "Ich bin hier.", exampleTranslation: "I am here." },
         { id: "vocab1-2-2", german: "Mädchen", english: "girl", malayalam: "പെൺകുട്ടി", pronunciation: "maid-shen", example: "Das Mädchen spielt.", exampleTranslation: "The girl is playing." },
-        { id: "vocab1-2-3", german: "schön", english: "beautiful", malayalam: "സുന്ദരം", pronunciation: "shöhn (round lips like 'o', say 'e')", example: "Das ist schön!", exampleTranslation: "That is beautiful!" },
+        { id: "vocab1-2-3", german: "schön", english: "beautiful", malayalam: "സുന്ദരം", pronunciation: "shern", example: "Das ist schön!", exampleTranslation: "That is beautiful!" },
         { id: "vocab1-2-4", german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "muen-shen", example: "München ist groß.", exampleTranslation: "Munich is big." },
         { id: "vocab1-2-5", german: "Straße", english: "street", malayalam: "തെരുവ്", pronunciation: "shtrah-se", example: "Die Straße ist lang.", exampleTranslation: "The street is long." },
         { id: "vocab1-2-6", german: "Wasser", english: "water", malayalam: "വെള്ളം", pronunciation: "vah-ser", example: "Das Wasser ist kalt.", exampleTranslation: "The water is cold." },
@@ -552,7 +552,7 @@ export const MODULE_1: Module = {
         { id: "vocab1-3-5", german: "Gute Nacht", english: "Good night", malayalam: "ശുഭ രാത്രി", pronunciation: "goo-te nakht", example: "Gute Nacht, schlaf gut!", exampleTranslation: "Good night, sleep well!" },
         { id: "vocab1-3-6", german: "Sie", english: "You (formal)", malayalam: "നിങ്ങൾ (ബഹുമാനം)", pronunciation: "zee", example: "Wie heißen Sie?", exampleTranslation: "What is your name? (formal)" },
         { id: "vocab1-3-7", german: "du", english: "You (informal)", malayalam: "നീ", pronunciation: "doo", example: "Wie heißt du?", exampleTranslation: "What is your name? (informal)" },
-        { id: "vocab1-3-8", german: "Grüß Gott", english: "Hello (Bavarian/Austrian)", malayalam: "ഹലോ (ബവേറിയൻ)", pronunciation: "grüss got", example: "Grüß Gott, Frau Schmidt!", exampleTranslation: "Hello, Mrs. Schmidt! (Bavarian style)" },
+        { id: "vocab1-3-8", german: "Grüß Gott", english: "Hello (Bavarian/Austrian)", malayalam: "ഹലോ (ബവേറിയൻ)", pronunciation: "grues got", example: "Grüß Gott, Frau Schmidt!", exampleTranslation: "Hello, Mrs. Schmidt! (Bavarian style)" },
         { id: "vocab1-3-9", german: "Moin", english: "Hello (Northern German)", malayalam: "ഹലോ (വടക്കൻ ജർമ്മൻ)", pronunciation: "moyn", example: "Moin! Alles klar?", exampleTranslation: "Hello! Everything okay?" },
         { id: "vocab1-3-10", german: "willkommen", english: "welcome", malayalam: "സ്വാഗതം", pronunciation: "vil-koh-men", example: "Herzlich willkommen in Deutschland!", exampleTranslation: "Warmly welcome to Germany!" }
       ]
@@ -721,7 +721,7 @@ export const MODULE_1: Module = {
       ],
       vocabulary: [
         { id: "vocab1-4-1", german: "Auf Wiedersehen", english: "Goodbye (formal)", malayalam: "വിട (ഔപചാരികം)", pronunciation: "owf vee-der-zey-en", example: "Auf Wiedersehen, bis Montag!", exampleTranslation: "Goodbye, see you Monday!" },
-        { id: "vocab1-4-2", german: "Tschüss", english: "Bye (casual)", malayalam: "ബൈ", pronunciation: "chüss", example: "Tschüss, mach's gut!", exampleTranslation: "Bye, take care!" },
+        { id: "vocab1-4-2", german: "Tschüss", english: "Bye (casual)", malayalam: "ബൈ", pronunciation: "chues", example: "Tschüss, mach's gut!", exampleTranslation: "Bye, take care!" },
         { id: "vocab1-4-3", german: "Danke", english: "Thank you", malayalam: "നന്ദി", pronunciation: "dahn-ke", example: "Danke für die Hilfe!", exampleTranslation: "Thank you for the help!" },
         { id: "vocab1-4-4", german: "Bitte", english: "Please / You're welcome", malayalam: "ദയവായി / ഒന്നുമില്ല", pronunciation: "bit-te", example: "Kann ich bitte einen Kaffee haben?", exampleTranslation: "Can I please have a coffee?" },
         { id: "vocab1-4-5", german: "Entschuldigung", english: "Excuse me / Sorry", malayalam: "ക്ഷമിക്കണം", pronunciation: "ent-shool-di-goong", example: "Entschuldigung, wo ist der Bahnhof?", exampleTranslation: "Excuse me, where is the train station!" },
@@ -1097,8 +1097,8 @@ export const MODULE_1: Module = {
         { id: "vocab1-6-5", german: "höflich", english: "polite", malayalam: "മര്യാദയുള്ള", pronunciation: "huf-likh", example: "Sei immer höflich!", exampleTranslation: "Always be polite!" },
         { id: "vocab1-6-6", german: "unhöflich", english: "impolite / rude", malayalam: "മര്യാദയില്ലാത്ത", pronunciation: "oon-huf-likh", example: "Das war unhöflich.", exampleTranslation: "That was rude." },
         { id: "vocab1-6-7", german: "Sehr geehrte/r", english: "Dear (formal letter)", malayalam: "ബഹുമാനപ്പെട്ട", pronunciation: "zair ge-air-te/ter", example: "Sehr geehrte Frau Müller, ...", exampleTranslation: "Dear Mrs. Müller, ..." },
-        { id: "vocab1-6-8", german: "Mit freundlichen Grüßen", english: "With kind regards", malayalam: "ബഹുമാനത്തോടെ", pronunciation: "mit froynt-li-khen grü-sen", example: "Mit freundlichen Grüßen, Rahul Kumar", exampleTranslation: "With kind regards, Rahul Kumar" },
-        { id: "vocab1-6-9", german: "Liebe Grüße", english: "Best wishes / Love (casual)", malayalam: "സ്നേഹത്തോടെ", pronunciation: "lee-be grü-se", example: "Liebe Grüße, Anna", exampleTranslation: "Best wishes, Anna" },
+        { id: "vocab1-6-8", german: "Mit freundlichen Grüßen", english: "With kind regards", malayalam: "ബഹുമാനത്തോടെ", pronunciation: "mit froynt-li-khen grue-sen", example: "Mit freundlichen Grüßen, Rahul Kumar", exampleTranslation: "With kind regards, Rahul Kumar" },
+        { id: "vocab1-6-9", german: "Liebe Grüße", english: "Best wishes / Love (casual)", malayalam: "സ്നേഹത്തോടെ", pronunciation: "lee-be grue-se", example: "Liebe Grüße, Anna", exampleTranslation: "Best wishes, Anna" },
         { id: "vocab1-6-10", german: "sprechen", english: "to speak", malayalam: "സംസാരിക്കുക", pronunciation: "shpre-khen", example: "Ich spreche ein bisschen Deutsch.", exampleTranslation: "I speak a little German." }
       ]
     }

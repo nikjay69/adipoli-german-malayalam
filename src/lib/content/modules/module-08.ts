@@ -273,7 +273,7 @@ export const MODULE_8: Module = {
           german: "die Küche",
           english: "kitchen",
           malayalam: "അടുക്കള",
-          pronunciation: "kue-kheh",
+          pronunciation: "kue-khe",
           example: "In der Küche kochen wir Curry.",
           exampleTranslation: "In the kitchen we cook curry."
         },
@@ -1134,7 +1134,7 @@ export const MODULE_8: Module = {
               type: "vocabulary",
               items: [
                 { german: "Sehr geehrte Damen und Herren", english: "Dear Sir/Madam", malayalam: "ബഹുമാനപ്പെട്ടവരേ", pronunciation: "zehr ge-ehr-te dah-men oont heh-ren" },
-                { german: "Mit freundlichen Grüßen", english: "With kind regards", malayalam: "സ്നേഹപൂർവ്വം", pronunciation: "mit froynt-likh-en groo-sen" },
+                { german: "Mit freundlichen Grüßen", english: "With kind regards", malayalam: "സ്നേഹപൂർവ്വം", pronunciation: "mit froynt-likh-en grue-sen" },
                 { german: "der Besichtigungstermin", english: "viewing appointment", malayalam: "സന്ദർശന സമയം", pronunciation: "be-zikh-ti-goongs-ter-meen" }
               ]
             }
