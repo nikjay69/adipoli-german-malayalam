@@ -172,14 +172,14 @@ export const MODULE_1: Module = {
         }
       ],
       exercises: [
-        { id: "ex1-1-1", type: "multiple-choice", question: "In German work culture, what does the term 'Feierabend' celebrate?", questionGerman: "Was feiert man mit dem Begriff 'Feierabend'?", options: ["The end of the workday", "A birthday at the office", "A national holiday", "A Friday night party"], correctAnswer: "The end of the workday", explanation: "'Feierabend' is a unique German concept. It's the sacred time after work ends when you stop checking emails and focus entirely on rest or hobbies. For Germans, work-life balance starts with a clear 'Feierabend'!", xpReward: 10, imageUrl: "/images/feierabend.png" },
-        { id: "ex1-1-2", type: "multiple-choice", question: "Germany is in the heart of Europe and borders 9 countries. Which of these is NOT a neighbor?", questionGerman: "Deutschland hat 9 Nachbarländer. Welches Land ist KEIN Nachbar?", options: ["United Kingdom", "France", "Poland", "Denmark"], correctAnswer: "United Kingdom", explanation: "Germany shares borders with 9 countries (Denmark, Poland, Czechia, Austria, Switzerland, France, Luxembourg, Belgium, and Netherlands). The UK is separated by the sea!", xpReward: 10 },
+        { id: "ex1-1-1", type: "fill-blank", question: "Complete: Nach der Arbeit ist _____.", options: ["Feierabend", "Frühstück", "Mittagessen", "Schule"], correctAnswer: "Feierabend", explanation: "'Feierabend' means the end of the workday. Germans take this sacred rest time seriously!", xpReward: 10, imageUrl: "/images/feierabend.png" },
+        { id: "ex1-1-2", type: "multiple-choice", question: "How do you say 'I need a visa' in German?", questionGerman: "Wie sagt man 'I need a visa'?", options: ["Ich brauche ein Visum", "Ich habe ein Visum", "Ich bin ein Visum", "Ich lerne ein Visum"], correctAnswer: "Ich brauche ein Visum", explanation: "'Brauche' = need. 'Ich brauche ein Visum' is one of the first sentences you'll use in Germany!", xpReward: 10 },
         { id: "ex1-1-3", type: "fill-blank", question: "Complete: Ich lerne _____ (I am learning German)", questionGerman: "Ergänzen Sie: Ich lerne _____", options: ["Deutsch", "Deutschland", "Englisch", "Hindi"], correctAnswer: "Deutsch", explanation: "'Deutsch' means the German language. 'Deutschland' means the country Germany.", xpReward: 10 },
-        { id: "ex1-1-4", type: "multiple-choice", question: "Students in Germany now get the 'Deutschlandsemesterticket'. What is its biggest advantage?", questionGerman: "Was ist der größte Vorteil des 'Deutschlandsemesterticket'?", options: ["Unlimited local transport across ALL of Germany", "Free rides on high-speed ICE trains", "It is completely free for all students", "It includes free international flights"], correctAnswer: "Unlimited local transport across ALL of Germany", explanation: "The new Deutschlandsemesterticket (priced at approx. €29.40/month in 2024) is a game-changer! Unlike the old regional tickets, this one lets you travel on all buses, trams, and regional trains from the Alps in the south to the Baltic Sea in the north.", xpReward: 10, imageUrl: "/images/deutschland_ticket.png" },
+        { id: "ex1-1-4", type: "fill-blank", question: "Complete: Das _____ ist groß. (The university is big.)", questionGerman: "Ergänzen Sie: Das _____ ist groß.", options: ["Universität", "Studium", "Sprache", "Arbeit"], correctAnswer: "Universität", explanation: "'Universität' = university. 'Die Universität ist groß' is a simple but useful sentence.", xpReward: 10 },
         { id: "ex1-1-5", type: "matching", question: "Match the German word to its English meaning:", questionGerman: "Verbinden Sie die Wörter:", options: ["Deutsch", "Deutschland", "lernen", "Arbeit"], correctAnswer: ["German (language)", "Germany", "to learn", "work"], xpReward: 15 },
-        { id: "ex1-1-6", type: "multiple-choice", question: "Most students in Germany live in a 'WG'. What is a 'WG' (Wohngemeinschaft)?", questionGerman: "Was ist eine 'WG' (Wohngemeinschaft)?", options: ["A shared apartment with flatmates", "A type of student dormitory", "A university library", "A German sports club"], correctAnswer: "A shared apartment with flatmates", explanation: "WG = Wohngemeinschaft. Instead of living alone, students share an apartment to save costs and make friends. It's the heart of German student social life!", xpReward: 10, imageUrl: "/images/wg_living.png" },
+        { id: "ex1-1-6", type: "multiple-choice", question: "What does 'Ich lerne Deutsch' mean?", questionGerman: "Was bedeutet 'Ich lerne Deutsch'?", options: ["I am learning German", "I speak German", "I need German", "I like German"], correctAnswer: "I am learning German", explanation: "'Ich lerne' = I am learning. 'Deutsch' = German (the language). Simple and essential!", xpReward: 10 },
         { id: "ex1-1-7", type: "ordering", question: "Order the steps of your German journey:", questionGerman: "Bringen Sie die Schritte in die richtige Reihenfolge:", options: ["Apply for a visa", "Move to Germany", "Learn A1 German", "Pass the A1 exam"], correctAnswer: ["Learn A1 German", "Pass the A1 exam", "Apply for a visa", "Move to Germany"], xpReward: 20 },
-        { id: "ex1-1-8", type: "multiple-choice", question: "If you are in Germany on a Sunday, what will you notice about 'Sonntagsruhe'?", questionGerman: "Was bemerkt man am Sonntag (Sonntagsruhe) in Deutschland?", options: ["Almost all shops are closed", "Everyone must wear formal clothes", "Public transport stops running", "Internet is turned off"], correctAnswer: ["Almost all shops are closed"], explanation: "Sunday is 'Ruhetag' (Day of rest). Shops/supermarkets are closed, and loud activities (like mowing the lawn) are discouraged. It's a day for family, walks, and 'Kaffee und Kuchen'!", xpReward: 10 }
+        { id: "ex1-1-8", type: "type-answer", question: "How do you say 'opportunity' in German?", correctAnswer: "Chance", explanation: "'Chance' is the same word in German! Pronounced 'shahn-se'. 'Das ist eine gute Chance!'", xpReward: 10 }
       ],
       vocabulary: [
         { id: "vocab1-1-1", german: "Deutsch", english: "German (language)", malayalam: "ജർമ്മൻ (ഭാഷ)", pronunciation: "doych", example: "Ich lerne Deutsch.", exampleTranslation: "I am learning German." },
@@ -353,13 +353,13 @@ export const MODULE_1: Module = {
         }
       ],
       exercises: [
-        { id: "ex1-2-1", type: "multiple-choice", question: "In German, 'schon' means 'already'. Adding two dots changes it to 'schön'. What does 'schön' mean?", questionGerman: "Was bedeutet 'schön'?", options: ["Beautiful", "Fast", "Old", "New"], correctAnswer: "Beautiful", explanation: "Two tiny dots (Umlaut) completely change the meaning! schon = already, schön = beautiful. These dots are NOT decorative — they change the vowel sound and meaning.", xpReward: 10 },
-        { id: "ex1-2-2", type: "multiple-choice", question: "What is the ß called in German?", questionGerman: "Wie heißt das Zeichen 'ß'?", options: ["Eszett", "Umlaut", "Doppel-S", "Scharfes B"], correctAnswer: "Eszett", explanation: "ß (Eszett) = a long 'ss' sound. It appears after long vowels: Straße, Fuß. After short vowels, German uses 'ss' instead: Wasser, essen.", xpReward: 10 },
-        { id: "ex1-2-3", type: "multiple-choice", question: "You see a sign that says 'Straße'. What does the ß tell you?", questionGerman: "Was bedeutet das ß in 'Straße'?", options: ["The 'a' before it is long", "It's a foreign word", "It's an old spelling", "The word is plural"], correctAnswer: "The 'a' before it is long", explanation: "ß (Eszett) appears after LONG vowels: Straße, Fuß, Maß. After SHORT vowels, German uses 'ss': Wasser, essen. The ß is your clue to stretch the vowel!", xpReward: 15 },
+        { id: "ex1-2-1", type: "multiple-choice", question: "How do you say 'beautiful' in German?", questionGerman: "Wie sagt man 'beautiful' auf Deutsch?", options: ["schön", "schon", "schnell", "schlecht"], correctAnswer: "schön", explanation: "'Schön' = beautiful. Don't confuse with 'schon' (already) — the Umlaut changes the meaning!", xpReward: 10 },
+        { id: "ex1-2-2", type: "type-answer", question: "How do you say 'street' in German?", correctAnswer: "Straße", explanation: "'Straße' = street. The ß makes a long 'ss' sound after the long 'a' vowel.", xpReward: 10 },
+        { id: "ex1-2-3", type: "fill-blank", question: "Complete: Das Mädchen ist _____. (The girl is beautiful.)", questionGerman: "Ergänzen Sie: Das Mädchen ist _____.", options: ["schön", "groß", "schnell", "hier"], correctAnswer: "schön", explanation: "'Schön' = beautiful. 'Das Mädchen ist schön' is a simple sentence using an Umlaut word.", xpReward: 15 },
         { id: "ex1-2-4", type: "fill-blank", question: "German meaning changes with dots! 'Schon' means 'already', but 'Sch___n' means 'beautiful'.", questionGerman: "Schon = schon, aber Sch___n = schön. Ergänzen Sie:", options: ["ö", "ä", "ü", "o"], correctAnswer: "ö", explanation: "Small dots, big difference! 'Schon' (already) vs 'Schön' (beautiful). This is why mastering Umlauts (ä, ö, ü) is essential from Lesson 1.", xpReward: 10 },
-        { id: "ex1-2-5", type: "multiple-choice", question: "You see a German menu that says 'Wasser'. An English speaker would read it as 'Wasser', but Germans actually say it more like...?", questionGerman: "Wie sagen Deutsche 'Wasser'?", options: ["Vasser", "Wasser (same as English)", "Fasser", "Hasser"], correctAnswer: "Vasser", explanation: "German W = English V sound. So Wasser sounds like 'Vasser'. Similarly, 'Wein' (wine) = 'Vine'. This W→V shift trips up every beginner!", xpReward: 10 },
-        { id: "ex1-2-6", type: "multiple-choice", question: "You're in Germany and someone says 'Tseit' out loud. Which word did they say?", questionGerman: "Jemand sagt 'Tseit'. Welches Wort?", options: ["Zeit (time)", "Seit (since)", "Seite (page)", "Ziel (goal)"], correctAnswer: "Zeit (time)", explanation: "German Z is always pronounced 'ts'. So 'Zeit' (time) sounds like 'Tsait'. This 'ts' start catches every beginner — but you'll hear it everywhere: Zeitung (newspaper), zusammen (together), Zimmer (room).", xpReward: 15 },
-        { id: "ex1-2-7", type: "multiple-choice", question: "German 'ie' and 'ei' look similar but sound completely different. 'Bier' means beer, 'Bein' means leg. Which rule helps you remember?", questionGerman: "Wie unterscheidet man 'ie' und 'ei'?", options: ["The SECOND letter determines the sound", "The FIRST letter determines the sound", "They sound the same", "It depends on the word"], correctAnswer: "The SECOND letter determines the sound", explanation: "The second letter wins! ie → long 'ee' (Bier = beer), ei → long 'eye' (Bein = byne). This rule NEVER has exceptions in German. Memorize it once, use it forever.", xpReward: 10 },
+        { id: "ex1-2-5", type: "multiple-choice", question: "What does 'Wasser' mean?", questionGerman: "Was bedeutet 'Wasser'?", options: ["Water", "Winter", "Weather", "Window"], correctAnswer: "Water", explanation: "'Wasser' = water. Pronounced 'vasser' — German W sounds like English V!", xpReward: 10 },
+        { id: "ex1-2-6", type: "multiple-choice", question: "What does 'Zeit' mean in English?", questionGerman: "Was bedeutet 'Zeit'?", options: ["Time", "Page", "Goal", "Since"], correctAnswer: "Time", explanation: "'Zeit' = time. Pronounced 'tsait'. You'll hear it everywhere: 'Keine Zeit!' (No time!)", xpReward: 15 },
+        { id: "ex1-2-7", type: "matching", question: "Match the German word to its meaning:", questionGerman: "Verbinden Sie:", options: ["Bier", "Bein", "Wein", "Eis"], correctAnswer: ["Beer", "Leg", "Wine", "Ice cream"], xpReward: 10 },
         { id: "ex1-2-8", type: "multiple-choice", question: "A German friend texts you 'Ich wohne in der Königstraße'. What two special characters appear?", questionGerman: "Welche zwei besonderen Zeichen stehen in 'Königstraße'?", options: ["ö and ß", "ä and ü", "ö and ü", "ß and ä"], correctAnswer: "ö and ß", explanation: "König (king) has ö, Straße (street) has ß. You'll see these special characters everywhere in German — get comfortable spotting them!", xpReward: 15 }
       ],
       vocabulary: [
@@ -535,12 +535,12 @@ export const MODULE_1: Module = {
         }
       ],
       exercises: [
-        { id: "ex1-3-1", type: "multiple-choice", question: "When greeting someone formally in Germany, what is the 'Golden Rule'?", questionGerman: "Was ist die 'Goldene Regel' bei einer formellen Begrüßung?", options: ["Firm handshake and direct eye contact", "A slight bow without touching", "Avoiding eye contact out of respect", "A high-five"], correctAnswer: "Firm handshake and direct eye contact", explanation: "In Germany, a firm (but not crushing) handshake with direct eye contact signals confidence and honesty. Avoiding eye contact can be seen as having something to hide!", xpReward: 10 },
+        { id: "ex1-3-1", type: "fill-blank", question: "Complete: Guten _____, wie geht es Ihnen? (9 AM)", questionGerman: "Ergänzen Sie: Guten _____.", options: ["Morgen", "Tag", "Abend", "Nacht"], correctAnswer: "Morgen", explanation: "'Guten Morgen' is used in the morning. At 9 AM, this is the right greeting!", xpReward: 10 },
         { id: "ex1-3-2", type: "multiple-choice", question: "You meet your professor for the first time. Which form should you use?", questionGerman: "Sie treffen Ihren Professor zum ersten Mal. Welche Form nutzen Sie?", options: ["Sie (formal)", "Du (informal)", "Either is fine", "No pronoun needed"], correctAnswer: "Sie (formal)", explanation: "Sie = formal 'you' (like Malayalam 'Ningal'). Use with strangers, bosses, and anyone older. When in doubt, use Sie!", xpReward: 10 },
-        { id: "ex1-3-3", type: "multiple-choice", question: "Which greeting is used ONLY when going to sleep?", questionGerman: "Welcher Gruß wird NUR vor dem Schlafengehen verwendet?", options: ["Gute Nacht", "Guten Abend", "Guten Tag", "Hallo"], correctAnswer: "Gute Nacht", explanation: "'Gute Nacht' = only when going to BED, not just evening. At 8 PM meeting someone? Say 'Guten Abend'. Leaving to sleep? 'Gute Nacht'.", xpReward: 10 },
+        { id: "ex1-3-3", type: "multiple-choice", question: "It's 8 PM. You meet your neighbor. You say...?", questionGerman: "Es ist 20 Uhr. Sie treffen Ihren Nachbarn.", options: ["Guten Abend", "Gute Nacht", "Guten Morgen", "Guten Tag"], correctAnswer: "Guten Abend", explanation: "'Guten Abend' = good evening, used when meeting people in the evening. 'Gute Nacht' is only for bedtime!", xpReward: 10 },
         { id: "ex1-3-4", type: "matching", question: "Match the time to the correct greeting:", questionGerman: "Ordnen Sie die Uhrzeit der richtigen Begrüßung zu:", options: ["8:00 AM", "2:00 PM", "7:00 PM"], correctAnswer: ["Guten Morgen", "Guten Tag", "Guten Abend"], xpReward: 15 },
         { id: "ex1-3-5", type: "fill-blank", question: "Complete: Guten _____, wie geht es Ihnen? (It's 3 PM)", questionGerman: "Ergänzen Sie: Guten _____, wie geht es Ihnen?", options: ["Tag", "Morgen", "Abend", "Nacht"], correctAnswer: "Tag", explanation: "'Guten Tag' covers noon to ~6 PM. Memory trick: Tag = day = daylight hours. Once the sun sets, switch to 'Guten Abend'.", xpReward: 10 },
-        { id: "ex1-3-6", type: "multiple-choice", question: "Which regional German greeting is used in Bavaria (southern Germany)?", questionGerman: "Welcher regionale Gruß wird in Bayern verwendet?", options: ["Grüß Gott", "Moin", "Tach", "Ahoi"], correctAnswer: "Grüß Gott", explanation: "Germany has regional greetings! Grüß Gott (Bavaria/Austria), Moin (North), Servus (Austria). At A1 level, stick with Hallo/Guten Tag — universally understood.", xpReward: 10 },
+        { id: "ex1-3-6", type: "type-answer", question: "How do you say 'Goodbye' formally in German?", correctAnswer: "Auf Wiedersehen", explanation: "'Auf Wiedersehen' = formal goodbye. Literally 'until we see again'. Use with strangers or bosses.", xpReward: 10 },
         { id: "ex1-3-7", type: "ordering", question: "Put these greetings in order from morning to night:", questionGerman: "Bringen Sie die Grüße in die richtige Reihenfolge (Morgen bis Nacht):", options: ["Gute Nacht", "Guten Morgen", "Guten Abend", "Guten Tag"], correctAnswer: ["Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht"], xpReward: 20 },
         { id: "ex1-3-8", type: "multiple-choice", question: "You walk into a small local bakery. What is the expected polite greeting?", questionGerman: "Sie gehen in eine kleine Bäckerei. Wie grüßen Sie?", options: ["Guten Tag", "Tschüss", "Gute Nacht", "Mahnzeit"], correctAnswer: "Guten Tag", explanation: "In Germany, when entering small shops, bakeries, or doctors' offices, it is polite and expected to say 'Guten Tag' or 'Hallo' to everyone, not just the staff. It's part of being 'höflich' (polite).", xpReward: 10 }
       ],
@@ -715,7 +715,7 @@ export const MODULE_1: Module = {
         }
       ],
       exercises: [
-        { id: "ex1-4-1", type: "multiple-choice", question: "Which phrase is used specifically for goodbyes on the PHONE?", questionGerman: "Welche Phrase nutzt man speziell für Verabschiedungen am TELEFON?", options: ["Auf Wiedersehen", "Auf Wiederhören", "Tschüss", "Gute Nacht"], correctAnswer: "Auf Wiederhören", explanation: "Sehen = to see, Hören = to hear. On the phone, you don't see them, you hear them! 'Auf Wiederhören' shows you have great German telephone habits.", xpReward: 10 },
+        { id: "ex1-4-1", type: "fill-blank", question: "At a shop: _____ schön! (Thank you very much!)", questionGerman: "Ergänzen Sie: _____ schön!", options: ["Danke", "Bitte", "Guten", "Auf"], correctAnswer: "Danke", explanation: "'Danke schön' = thank you very much. You'll use this dozens of times daily in Germany!", xpReward: 10 },
         { id: "ex1-4-2", type: "multiple-choice", question: "You bumped into someone accidentally at the train station. What do you say?", questionGerman: "Sie sind am Bahnhof gegen jemanden gestoßen. Was sagen Sie?", options: ["Entschuldigung!", "Bitte!", "Guten Tag!", "Kein Problem!"], correctAnswer: "Entschuldigung!", explanation: "Use 'Entschuldigung' for small interruptions or accidental bumps. It works just like 'Excuse me' or 'Sorry'.", xpReward: 10 },
         { id: "ex1-4-3", type: "fill-blank", question: "Complete the checkout phrase: Einen _____ Tag noch!", questionGerman: "Ergänzen Sie den Kassenspruch: Einen _____ Tag noch!", options: ["schönen", "guten", "bitte", "danke"], correctAnswer: "schönen", explanation: "'Einen schönen Tag noch!' (Have a nice day) is the pro way to leave a shop or supermarket.", xpReward: 10 }
       ],
@@ -1062,30 +1062,29 @@ export const MODULE_1: Module = {
         },
         {
           id: "ex1-6-8",
-          type: "multiple-choice",
-          question: "If you can't type the ü character, which substitute can you use?",
-          questionGerman: "Wenn Sie kein 'ü' tippen können, welchen Ersatz nutzen Sie?",
-          options: ["ue", "u", "ou", "oo"],
-          correctAnswer: "ue",
-          explanation: "Umlaut substitution rule: ä=ae, ö=oe, ü=ue, ß=ss. Germans accept these in emails/forms. 'München' = 'Muenchen', 'Straße' = 'Strasse'.",
+          type: "fill-blank",
+          question: "Email to your boss: Sehr geehrter _____ Müller,",
+          options: ["Herr", "Frau", "Du", "Lieber"],
+          correctAnswer: "Herr",
+          explanation: "'Sehr geehrter Herr Müller' = formal email opening to a man. Use 'Frau' for a woman.",
           xpReward: 10
         },
         {
           id: "ex1-6-9",
           type: "multiple-choice",
-          question: "German is unique! Which words are ALWAYS capitalized in a sentence?",
-          questionGerman: "Welche Wörter werden im Deutschen IMMER großgeschrieben?",
-          options: ["Nouns (all naming words)", "Only names of people", "Only the first word", "Verbs (action words)"],
-          correctAnswer: "Nouns (all naming words)",
-          explanation: "In German, every single noun (Person, Table, Idea, Milk) must start with a CAPITAL letter. It makes reading easier once you get used to it! Example: 'Ich trinke Milch.' (not 'milch').",
+          question: "Your friend texts 'Können wir uns duzen?' What do they want?",
+          questionGerman: "Was bedeutet 'Können wir uns duzen?'",
+          options: ["Can we use 'du' with each other?", "Can we meet tomorrow?", "Can you help me?", "Can we speak English?"],
+          correctAnswer: "Can we use 'du' with each other?",
+          explanation: "'Duzen' = to use the informal 'du'. When someone asks this, they want to drop formality with you!",
           xpReward: 15
         },
         {
           id: "ex1-6-10",
-          type: "free-text",
-          question: "How do you say 'I am learning German because it is interesting' in German? (Hint: Ich lerne Deutsch, weil...)",
-          correctAnswer: "Ich lerne Deutsch, weil es interessant ist.",
-          explanation: "Verb-Third/End Rule! The verb 'ist' goes to the end after 'weil'. Great job with this advanced A1 pattern!",
+          type: "type-answer",
+          question: "Say 'Please' and 'Thank you' in German.",
+          correctAnswer: "Bitte und Danke",
+          explanation: "'Bitte' = please, 'Danke' = thank you. The two most essential polite words in German!",
           xpReward: 35
         }
       ],

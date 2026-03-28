@@ -183,16 +183,13 @@ export const MODULE_3: Module = {
       exercises: [
         {
           id: "ex3-1-1",
-          type: "multiple-choice",
-          question: "You are at a LIDL supermarket. A carton of milk costs 79 cents. How will you see this price written in Germany?",
-          questionGerman: "Wie wird dieser Preis in Deutschland geschrieben?",
-          options: ["0,79 €", "0.79 €", "$ 0.79", "79,00 €"],
-          correctAnswer: "0,79 €",
-          explanation: "In Germany, we use a COMMA (,) as the decimal separator, not a DOT (.). So 79 cents is written as '0,79 €'. Also, the Euro symbol usually comes AFTER the number. Small details, big survival skills!",
-          xpReward: 15,
-          imageUrl: "/images/german_price_tag.png"
+          type: "type-answer",
+          question: "Write the number 7 in German.",
+          correctAnswer: "sieben",
+          explanation: "'Sieben' = 7. One of the first numbers to memorize!",
+          xpReward: 15
         },
-        { id: "ex3-1-2", type: "multiple-choice", question: "What is 'zwölf' in English?", questionGerman: "Was ist 'zwölf' auf Englisch?", options: ["10", "11", "12", "20"], correctAnswer: "12", explanation: "Zwölf (12) and elf (11) are the two special 'rebel' numbers that don't follow the pattern. Memorize these first!", xpReward: 10 },
+        { id: "ex3-1-2", type: "multiple-choice", question: "Which German number is 'zwölf'?", questionGerman: "Welche Zahl ist 'zwölf'?", options: ["12", "11", "20", "2"], correctAnswer: "12", explanation: "'Zwölf' = 12. It's irregular — just memorize it along with 'elf' (11)!", xpReward: 10 },
         {
           id: "ex3-1-3",
           type: "fill-blank",
@@ -213,16 +210,10 @@ export const MODULE_3: Module = {
         },
         {
           id: "ex3-1-5",
-          type: "multiple-choice",
-          question: "Why does 'sechzehn' (16) drop the 's' from 'sechs'?",
-          options: [
-            "It's a spelling mistake",
-            "For easier pronunciation — 'sechszehn' is hard to say",
-            "Because 16 is an unlucky number",
-            "It's an old German tradition"
-          ],
-          correctAnswer: "For easier pronunciation — 'sechszehn' is hard to say",
-          explanation: "Pronunciation shortcut rule: sechs → sech (drops 's') and sieben → sieb (drops 'en') in compounds. This applies to teens (16,17) AND tens (60,70). Less syllables = easier to say!",
+          type: "type-answer",
+          question: "Write 16 in German.",
+          correctAnswer: "sechzehn",
+          explanation: "'Sechzehn' = 16. Note: 'sechs' drops the 's' when combined with 'zehn' for easier pronunciation.",
           xpReward: 15
         },
         {
@@ -509,11 +500,10 @@ export const MODULE_3: Module = {
         },
         {
           id: "ex3-2-3",
-          type: "multiple-choice",
-          question: "Which tens number has a special spelling (uses 'ß' instead of 'z')?",
-          options: ["zwanzig (20)", "dreißig (30)", "vierzig (40)", "fünfzig (50)"],
-          correctAnswer: "dreißig (30)",
-          explanation: "Dreißig (30) is the ONLY odd one out — it uses 'ßig' instead of 'zig'. Memory trick: drei is special (3 is a magic number!). Everything else: vierzig, fünfzig, sechzig... regular '-zig'.",
+          type: "type-answer",
+          question: "Write 30 in German.",
+          correctAnswer: "dreißig",
+          explanation: "'Dreißig' = 30. Note the ß! It's the only tens number that uses 'ßig' instead of 'zig'.",
           xpReward: 20
         },
         {
@@ -1073,16 +1063,10 @@ export const MODULE_3: Module = {
         },
         {
           id: "ex3-4-2",
-          type: "multiple-choice",
-          question: "What does 'Mittwoch' literally mean?",
-          options: [
-            "My day",
-            "Middle of the week",
-            "Third day",
-            "Market day"
-          ],
-          correctAnswer: "Middle of the week",
-          explanation: "'Mittwoch' comes from 'Mitte der Woche' = middle of the week (Wednesday).",
+          type: "type-answer",
+          question: "What day comes after Dienstag?",
+          correctAnswer: "Mittwoch",
+          explanation: "'Mittwoch' = Wednesday. It follows 'Dienstag' (Tuesday) in the German week.",
           xpReward: 15
         },
         {
@@ -1105,11 +1089,11 @@ export const MODULE_3: Module = {
         },
         {
           id: "ex3-4-5",
-          type: "multiple-choice",
-          question: "Which month name is MOST different from its English equivalent?",
-          options: ["Februar", "Oktober", "März", "August"],
-          correctAnswer: "März",
-          explanation: "März (March) looks and sounds the most different due to the Umlaut. Most other months are nearly identical to English.",
+          type: "fill-blank",
+          question: "Complete: Mein Geburtstag ist im _____. (January)",
+          options: ["Januar", "Juni", "Juli", "März"],
+          correctAnswer: "Januar",
+          explanation: "'Januar' = January. 'Im Januar' = in January. Most German months are similar to English!",
           xpReward: 15
         },
         {
@@ -1360,16 +1344,11 @@ export const MODULE_3: Module = {
       exercises: [
         {
           id: "ex3-5-1",
-          type: "multiple-choice",
-          question: "How does Germany write the date 5th March 2024?",
-          options: [
-            "03.05.2024",
-            "05.03.2024",
-            "2024.03.05",
-            "5/3/2024"
-          ],
-          correctAnswer: "05.03.2024",
-          explanation: "Germany uses Tag.Monat.Jahr (DD.MM.YYYY): 05.03.2024.",
+          type: "fill-blank",
+          question: "Complete: Ich _____ am fünften März Geburtstag. (I have...)",
+          options: ["habe", "bin", "ist", "hat"],
+          correctAnswer: "habe",
+          explanation: "'Ich habe Geburtstag' = I have my birthday. 'Haben' with 'ich' = 'habe'.",
           xpReward: 15
         },
         {
@@ -1383,11 +1362,11 @@ export const MODULE_3: Module = {
         },
         {
           id: "ex3-5-3",
-          type: "multiple-choice",
-          question: "What is the ordinal form of 'drei' (3)?",
-          options: ["dreite", "dritte", "dreiste", "dreiete"],
+          type: "fill-blank",
+          question: "Complete: Heute ist der _____ Mai. (Today is the 3rd of May.)",
+          options: ["dritte", "dreite", "drei", "dritten"],
           correctAnswer: "dritte",
-          explanation: "'Dritte' (third) is irregular. It doesn't follow the regular '-te' pattern of 'dreite'.",
+          explanation: "'Dritte' = third. It's irregular — not 'dreite'. Used for dates: 'der dritte Mai' = the 3rd of May.",
           xpReward: 20
         },
         {
@@ -1639,11 +1618,11 @@ export const MODULE_3: Module = {
         },
         {
           id: "ex3-6-5",
-          type: "multiple-choice",
-          question: "What does 'der Termin' mean?",
-          options: ["The terminal", "The appointment", "The deadline", "The time"],
-          correctAnswer: "The appointment",
-          explanation: "'Der Termin' = the appointment / scheduled meeting. Don't confuse it with English 'terminal'!",
+          type: "fill-blank",
+          question: "Complete: Ich habe einen _____ um 10 Uhr. (appointment)",
+          options: ["Termin", "Zeit", "Stunde", "Tag"],
+          correctAnswer: "Termin",
+          explanation: "'Der Termin' = the appointment. 'Ich habe einen Termin' = I have an appointment.",
           xpReward: 15
         },
         {

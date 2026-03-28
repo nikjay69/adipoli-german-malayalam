@@ -202,26 +202,22 @@ export const MODULE_2: Module = {
       ],
       exercises: [
         {
-          id: "ex2-5-1",
+          id: "ex2-1-0",
           type: "multiple-choice",
-          question: "A neighbor invites you for 'Kaffee und Kuchen' at 3 PM. What is the social etiquette for arrival?",
-          questionGerman: "Wie pünktlich kommen Sie zur Einladung 'Kaffee und Kuchen'?",
-          options: ["Arrive exactly at 3:00 PM", "Arrive around 3:30 PM (Indian Stretchable Time)", "Arrive early at 2:45 PM", "Show up any time before 6 PM"],
-          correctAnswer: "Arrive exactly at 3:00 PM",
-          explanation: "Pünktlichkeit is king! 'Akademisches Viertel' (15 min late) only applies to some lectures. For private social visits, '3:00' means '3:00'. Anything else is considered 'unhöflich'!",
-          xpReward: 10,
-          imageUrl: "/images/kaffee_kuchen.png"
+          question: "You arrive late. Your host says 'Du bist spät!' What does it mean?",
+          options: ["You are late!", "You are welcome!", "You are early!", "You are tired!"],
+          correctAnswer: "You are late!",
+          explanation: "'Spät' = late. Germans value punctuality — 'Pünktlichkeit ist wichtig!' (Punctuality is important!)",
+          xpReward: 10
         },
         {
           id: "ex2-1-1",
-          type: "multiple-choice",
-          question: "You just moved into your new German WG. What is the FIRST administrative step you must take in person within 14 days?",
-          questionGerman: "Was ist der erste Behördengang nach dem Umzug?",
-          options: ["Anmeldung (City Registration)", "Opening a bank account", "Getting a SIM card", "Buying a coffee machine"],
-          correctAnswer: "Anmeldung (City Registration)",
-          explanation: "In Germany, you MUST register your address at the local 'Bürgeramt' within 2 weeks of moving. Without the 'Anmeldebescheinigung' (registration certificate), you can't open a bank account or get a student job. Essential survival step!",
-          xpReward: 10,
-          imageUrl: "/images/anmeldung.png"
+          type: "fill-blank",
+          question: "Complete: _____ heiße Anna. (My name is Anna.)",
+          options: ["Ich", "Du", "Er", "Wir"],
+          correctAnswer: "Ich",
+          explanation: "'Ich heiße' = My name is / I am called. The most basic self-introduction in German!",
+          xpReward: 10
         },
         { id: "ex2-1-2", type: "fill-blank", question: "Complete: '_____ heiße Rahul.' (My name is Rahul.)", questionGerman: "Ergänzen Sie: '_____ heiße Rahul.'", options: ["Ich", "Du", "Er", "Sie"], correctAnswer: "Ich", explanation: "'Ich heiße' = 'I am called'. It's the most common way to introduce yourself in Germany. Remember to capitalize nouns like 'Rahul'!", xpReward: 10 },
         { id: "ex2-1-3", type: "multiple-choice", question: "What does 'Freut mich!' mean when meeting someone?", questionGerman: "Was bedeutet 'Freut mich!'?", options: ["Nice to meet you!", "Where are you from?", "What's your name?", "I am fine"], correctAnswer: "Nice to meet you!", explanation: "Full version is 'Es freut mich, Sie kennenzulernen', but everyone just says 'Freut mich!'. It's the perfect way to build early rapport.", xpReward: 10 },
@@ -248,10 +244,10 @@ export const MODULE_2: Module = {
         {
           id: "ex2-1-8",
           type: "multiple-choice",
-          question: "Which letter in the German alphabet is pronounced 'tset'?",
-          options: ["Z", "C", "S", "T"],
-          correctAnswer: "Z",
-          explanation: "German Z = 'tset', not 'zee'! Tricky German letters: J='yot', V='fow', W='veh', Y='üpsilon', Z='tset'. These catch Indians off-guard the most.",
+          question: "Someone asks 'Wie heißen Sie?' You reply...?",
+          options: ["Ich heiße Rahul.", "Ich bin gut.", "Danke schön.", "Auf Wiedersehen."],
+          correctAnswer: "Ich heiße Rahul.",
+          explanation: "'Wie heißen Sie?' = What is your name? (formal). Answer with 'Ich heiße...' + your name.",
           xpReward: 10
         },
         {
@@ -498,22 +494,20 @@ export const MODULE_2: Module = {
         },
         {
           id: "ex2-2-4",
-          type: "multiple-choice",
-          question: "Germany has 16 states. Which is the largest by area (south) and home to many IT hubs like Munich?",
-          questionGerman: "Welches ist das größte Bundesland in Deutschland?",
-          options: ["Bayern (Bavaria)", "Berlin", "Hamburg", "Sachsen"],
-          correctAnswer: "Bayern (Bavaria)",
-          explanation: "Bayern is the largest state and a massive hub for technology, automobile, and healthcare. Many Malayalis move to Munich, the capital of Bayern!",
-          xpReward: 10,
-          imageUrl: "/images/germany_map.png"
+          type: "fill-blank",
+          question: "Complete: Ich komme _____ Indien. (I come from India.)",
+          options: ["aus", "in", "von", "nach"],
+          correctAnswer: "aus",
+          explanation: "'Ich komme aus' + country = I come from. 'Aus' is the preposition for origin.",
+          xpReward: 10
         },
         {
           id: "ex2-2-5",
           type: "multiple-choice",
-          question: "Which of these countries NEEDS an article in German?",
-          options: ["die Schweiz", "Indien", "Deutschland", "Spanien"],
-          correctAnswer: "die Schweiz",
-          explanation: "Most countries need NO article: 'aus Indien', 'aus Deutschland'. But some always need one: die Schweiz, die Türkei, die USA, der Iran. Memorize these 4 exceptions!",
+          question: "How do you say 'I live in Berlin' in German?",
+          options: ["Ich wohne in Berlin", "Ich komme in Berlin", "Ich bin aus Berlin", "Ich gehe in Berlin"],
+          correctAnswer: "Ich wohne in Berlin",
+          explanation: "'Ich wohne in' + city = I live in. 'Wohnen' is the verb for residing somewhere.",
           xpReward: 10
         },
         {
@@ -788,14 +782,12 @@ export const MODULE_2: Module = {
         },
         {
           id: "ex2-3-4",
-          type: "multiple-choice",
-          question: "You are a student and get a 'HiWi' job at your university. What is a 'HiWi'?",
-          questionGerman: "Was ist ein 'HiWi'-Job an der Universität?",
-          options: ["Student research assistant", "Cleaning staff", "Private tutor", "Library guard"],
-          correctAnswer: "Student research assistant",
-          explanation: "HiWi = Hilfswissenschaftler. It's the most prestigious and common part-time job for students. You help professors with research or teaching and get paid — great for your CV!",
-          xpReward: 10,
-          imageUrl: "/images/hiwi_student.png"
+          type: "fill-blank",
+          question: "Complete: Er _____ Ingenieur. (He is an engineer.)",
+          options: ["ist", "bin", "bist", "sind"],
+          correctAnswer: "ist",
+          explanation: "'Sein' conjugation: ich bin, du bist, er/sie/es ist. 'Er ist Ingenieur' = He is an engineer.",
+          xpReward: 10
         },
         {
           id: "ex2-3-5",
@@ -1116,20 +1108,20 @@ export const MODULE_2: Module = {
         },
         {
           id: "ex2-4-7",
-          type: "multiple-choice",
-          question: "Which of these is a stem-changing verb pattern in German?",
-          options: ["e → i (like sprechen → sprichst)", "o → u (like kommen → kummst)", "i → e (like bin → best)", "a → o (like machen → mochst)"],
-          correctAnswer: "e → i (like sprechen → sprichst)",
-          explanation: "Three vowel-change patterns to know: e→i (sprechen→sprichst), e→ie (lesen→liest), a→ä (fahren→fährst). Only du and er/sie/es are affected — the rest stay regular!",
+          type: "fill-blank",
+          question: "Complete: Er _____ gern Bücher. (He reads books.)",
+          options: ["liest", "lest", "lesen", "lese"],
+          correctAnswer: "liest",
+          explanation: "'Lesen' changes stem for er/sie/es: 'liest' (not 'lest'). This e→ie change is common in German verbs.",
           xpReward: 10
         },
         {
           id: "ex2-4-8",
           type: "multiple-choice",
-          question: "Why is mastering vowel changes important in German?",
-          options: ["They are optional in speech", "They make your German sound natural", "They only apply in writing", "They are rare exceptions"],
-          correctAnswer: "They make your German sound natural",
-          explanation: "Mastering the vowel changes (e→i, e→ie, a→ä) is essential for natural German speech.",
+          question: "'Du fährst nach Berlin.' What does 'fährst' mean?",
+          options: ["You drive/travel", "You fly", "You walk", "You run"],
+          correctAnswer: "You drive/travel",
+          explanation: "'Fahren' = to drive/travel. With 'du' it changes to 'fährst' (a→ä). 'Fährst du nach Berlin?'",
           xpReward: 15
         },
         {
