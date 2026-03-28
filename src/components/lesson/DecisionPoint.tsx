@@ -6,6 +6,7 @@ import { CharacterGuide } from '@/components/character';
 import type { DecisionPoint as DecisionPointType } from '@/lib/content/types';
 import { feedbackCorrect, feedbackWrong } from '@/lib/feedback';
 import { speakGerman } from '@/lib/audio/useGermanTTS';
+import { SpeakButton } from '@/components/speaking/SpeakButton';
 
 interface DecisionPointProps {
   decision: DecisionPointType;
@@ -15,12 +16,12 @@ interface DecisionPointProps {
 export function DecisionPoint({ decision, onComplete }: DecisionPointProps) {
   const [selected, setSelected] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
+  const [showSpeakPrompt, setShowSpeakPrompt] = useState(false);
 
   // Auto-speak the selected option's German text
   useEffect(() => {
     if (selected !== null && decision.options[selected]) {
       const text = decision.options[selected].text;
-      // Speak if it contains German (has common German patterns)
       if (/[äöüßÄÖÜ]|Guten|Ich |Wie |Danke|Bitte|Am /i.test(text)) {
         try { speakGerman(text, 0.9); } catch { /* noop */ }
       }
@@ -31,10 +32,17 @@ export function DecisionPoint({ decision, onComplete }: DecisionPointProps) {
     if (selected !== null) return;
     setSelected(index);
     const option = decision.options[index];
-    if (option.isCorrect) feedbackCorrect();
-    else feedbackWrong();
-    setShowResult(true);
-    setTimeout(() => onComplete(option.isCorrect), 2500);
+    if (option.isCorrect) {
+      feedbackCorrect();
+      setShowResult(true);
+      // Show "Say it!" prompt for correct answers before advancing
+      setTimeout(() => setShowSpeakPrompt(true), 1500);
+      setTimeout(() => onComplete(true), 5000); // longer delay for speaking
+    } else {
+      feedbackWrong();
+      setShowResult(true);
+      setTimeout(() => onComplete(false), 2500);
+    }
   };
 
   const selectedOption = selected !== null ? decision.options[selected] : null;
@@ -101,6 +109,22 @@ export function DecisionPoint({ decision, onComplete }: DecisionPointProps) {
                 className="text-xs text-[#27ae60] text-center mt-1">
                 Better: {decision.options.find(o => o.isCorrect)?.text}
               </motion.p>
+            )}
+
+            {/* "Say it!" speaking prompt for correct answers */}
+            {showSpeakPrompt && selectedOption?.isCorrect && (
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-3 text-center"
+              >
+                <p className="text-[10px] text-[var(--foreground)]/40 mb-2">Now say it out loud!</p>
+                <SpeakButton
+                  expectedText={selectedOption.text}
+                  size="sm"
+                  onResult={() => { onComplete(true); }}
+                />
+              </motion.div>
             )}
           </motion.div>
         )}
