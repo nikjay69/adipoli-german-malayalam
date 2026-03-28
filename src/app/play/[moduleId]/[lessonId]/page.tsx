@@ -9,6 +9,7 @@ import { startAmbience, stopAmbience, duckAmbience, getSceneForModule } from '@/
 import { SpeakButton, PronunciationCompare } from '@/components/speaking';
 import { NarrativeIntro, ContextualVocab, DecisionPoint, SceneConclusion } from '@/components/lesson';
 import { SceneBackground } from '@/components/visual';
+import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop } from '@/components/exercise-games';
 import { GameButton, ChoiceButton, Confetti, Celebration, ModuleComplete } from '@/components/game';
 import { CharacterGuide } from '@/components/character';
 import { VideoPlayer } from '@/components/media/VideoPlayer';
@@ -1402,537 +1403,87 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                   </h2>
                 )}
 
-                {/* TYPE-ANSWER EXERCISE — production practice */}
-                {allExercises[step.index].type === 'type-answer' ? (() => {
+                {/* ═══ GAME-BASED EXERCISE RENDERING ═══ */}
+                {(() => {
                   const exercise = allExercises[step.index];
-                  const correctAnswer = (typeof exercise.correctAnswer === 'string' ? exercise.correctAnswer : exercise.correctAnswer[0]).trim();
+                  const correctStr = typeof exercise.correctAnswer === 'string' ? exercise.correctAnswer : exercise.correctAnswer[0];
+                  const correctArr = Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer : [exercise.correctAnswer];
 
-                  const handleTypeSubmit = () => {
-                    if (typeAnswerState !== 'default' || !typedAnswer.trim()) return;
+                  const handleGameResult = (correct: boolean) => {
                     setTotalAttempted(prev => prev + 1);
-                    // Flexible matching: case-insensitive, trim whitespace
-                    const isCorrect = typedAnswer.trim().toLowerCase() === correctAnswer.toLowerCase();
-                    if (isCorrect) {
-                      setTypeAnswerState('correct');
-                      setCorrectCount(prev => prev + 1);
-                      setKuttanMsg(getRandomMessage('correct'));
-                      feedbackCorrect();
-                      setTimeout(() => goNext(), 1400);
-                    } else {
-                      setTypeAnswerState('incorrect');
-                      setKuttanMsg(getRandomMessage('wrong'));
-                      feedbackWrong();
-                      setTimeout(() => goNext(), 2500);
-                    }
-                  };
-
-                  return (
-                    <div className="space-y-4">
-                      {exercise.questionGerman && (
-                        <div className="bg-[var(--foreground)]/5 rounded-xl px-4 py-3 text-center">
-                          <p className="text-sm text-[var(--foreground)]/50 italic">
-                            &ldquo;{exercise.questionGerman}&rdquo;
-                          </p>
-                        </div>
-                      )}
-                      <div className="flex gap-2">
-                        <input
-                          type="text"
-                          value={typedAnswer}
-                          onChange={(e) => setTypedAnswer(e.target.value)}
-                          onKeyDown={(e) => { if (e.key === 'Enter') handleTypeSubmit(); }}
-                          placeholder="Type the German word..."
-                          disabled={typeAnswerState !== 'default'}
-                          autoFocus
-                          className={`flex-1 px-4 py-3 rounded-xl border-2 text-base bg-[var(--card-bg)] outline-none transition-colors ${
-                            typeAnswerState === 'correct' ? 'border-[#27ae60] text-[#27ae60]' :
-                            typeAnswerState === 'incorrect' ? 'border-[#c0392b] text-[#c0392b]' :
-                            'border-[var(--card-border)] focus:border-[#d4a520]'
-                          }`}
-                        />
-                        <GameButton
-                          onClick={handleTypeSubmit}
-                          disabled={typeAnswerState !== 'default' || !typedAnswer.trim()}
-                          variant="primary"
-                        >
-                          Check
-                        </GameButton>
-                      </div>
-                      {typeAnswerState === 'incorrect' && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 5 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          className="text-center"
-                        >
-                          <p className="text-sm text-[var(--foreground)]/50">
-                            Correct answer: <span className="font-bold text-[#27ae60]">{correctAnswer}</span>
-                          </p>
-                        </motion.div>
-                      )}
-                    </div>
-                  );
-                })() :
-
-                /* SPEAKING EXERCISE */
-                allExercises[step.index].type === 'speaking' ? (() => {
-                  const exercise = allExercises[step.index];
-                  const expectedAnswer = typeof exercise.correctAnswer === 'string' ? exercise.correctAnswer : exercise.correctAnswer[0];
-
-                  const handleSpeakResult = (transcript: string, confidence: number, isMatch: boolean) => {
-                    setSpeakingResult({ transcript, confidence, isMatch });
-                    setTotalAttempted(prev => prev + 1);
-                    if (isMatch) {
-                      setCorrectCount(prev => prev + 1);
-                      setKuttanMsg(getRandomMessage('correct'));
-                      feedbackCorrect();
-                      setTimeout(() => goNext(), 2500);
-                    } else {
-                      setKuttanMsg(getRandomMessage('wrong'));
-                      feedbackWrong();
-                    }
-                  };
-
-                  return (
-                    <div className="space-y-4 flex flex-col items-center">
-                      {/* Prompt */}
-                      <div className="bg-[var(--foreground)]/5 rounded-xl px-4 py-3 text-center w-full max-w-sm">
-                        <p className="text-lg font-bold text-[#d4a520]">{expectedAnswer}</p>
-                        {exercise.questionGerman && exercise.questionGerman !== expectedAnswer && (
-                          <p className="text-xs text-[var(--foreground)]/40 mt-1 italic">{exercise.questionGerman}</p>
-                        )}
-                      </div>
-
-                      {/* Listen to native button */}
-                      <motion.button
-                        whileTap={{ scale: 0.95 }}
-                        onClick={() => { try { duckAmbience(2000); speakGerman(expectedAnswer); } catch {} }}
-                        className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-sm text-[var(--foreground)]/70"
-                      >
-                        <Volume2 className="w-4 h-4 text-[#d4a520]" /> Listen first
-                      </motion.button>
-
-                      {/* Speak button or comparison */}
-                      {!speakingResult ? (
-                        <SpeakButton
-                          expectedText={expectedAnswer}
-                          onResult={handleSpeakResult}
-                          size="lg"
-                          label="Tap to speak"
-                        />
-                      ) : (
-                        <PronunciationCompare
-                          expected={expectedAnswer}
-                          transcript={speakingResult.transcript}
-                          confidence={speakingResult.confidence}
-                          onRetry={() => setSpeakingResult(null)}
-                        />
-                      )}
-
-                      {/* Skip button for speaking (graceful fallback) */}
-                      {!speakingResult && (
-                        <button
-                          onClick={() => { setTotalAttempted(prev => prev + 1); goNext(); }}
-                          className="text-xs text-[var(--foreground)]/30 underline"
-                        >
-                          Skip speaking exercise
-                        </button>
-                      )}
-
-                      {/* Continue after failed attempt */}
-                      {speakingResult && !speakingResult.isMatch && (
-                        <GameButton onClick={goNext} variant="ghost">
-                          Continue anyway
-                        </GameButton>
-                      )}
-                    </div>
-                  );
-                })() :
-
-                /* DICTATION EXERCISE — listen & type */
-                allExercises[step.index].type === 'dictation' ? (() => {
-                  const exercise = allExercises[step.index];
-                  const correctAnswer = (typeof exercise.correctAnswer === 'string' ? exercise.correctAnswer : exercise.correctAnswer[0]).trim();
-
-                  const handleDictationSubmit = () => {
-                    if (typeAnswerState !== 'default' || !typedAnswer.trim()) return;
-                    setTotalAttempted(prev => prev + 1);
-                    const normalize = (s: string) => s.toLowerCase().trim().replace(/[.,!?;:'"]/g, '');
-                    const isCorrect = normalize(typedAnswer) === normalize(correctAnswer);
-                    if (isCorrect) {
-                      setTypeAnswerState('correct');
-                      setCorrectCount(prev => prev + 1);
+                    if (correct) {
                       const newCombo = combo + 1;
                       setCombo(newCombo);
                       setMaxCombo(prev => Math.max(prev, newCombo));
-                      setKuttanMsg(getRandomMessage('correct'));
-                      feedbackCombo(newCombo);
-                      setTimeout(() => goNext(), 1400);
-                    } else {
-                      setTypeAnswerState('incorrect');
-                      if (combo > 2) feedbackComboBreak(); else feedbackWrong();
-                      setCombo(0);
-                      setKuttanMsg(getRandomMessage('wrong'));
-                      setTimeout(() => goNext(), 2500);
-                    }
-                  };
-
-                  return (
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-center gap-3 mb-2">
-                        <motion.button whileTap={{ scale: 0.95 }}
-                          onClick={() => { try { duckAmbience(2000); speakGerman(correctAnswer); } catch {} }}
-                          className="w-14 h-14 rounded-full bg-gradient-to-b from-[#d4a520] to-[#b8891a] text-white flex items-center justify-center text-xl">
-                          🔊
-                        </motion.button>
-                      </div>
-                      <div className="flex justify-center gap-2">
-                        <button onClick={() => { try { speakGerman(correctAnswer); } catch {} }}
-                          className="text-[10px] text-[#d4a520] px-3 py-1 rounded-full bg-[#d4a520]/10">
-                          Listen again
-                        </button>
-                        <button onClick={() => { try { const u = new SpeechSynthesisUtterance(correctAnswer); u.lang = 'de-DE'; u.rate = 0.6; speechSynthesis.speak(u); } catch {} }}
-                          className="text-[10px] text-[#3b82f6] px-3 py-1 rounded-full bg-[#3b82f6]/10">
-                          Slow
-                        </button>
-                      </div>
-                      <div className="flex gap-2">
-                        <input
-                          type="text" value={typedAnswer}
-                          onChange={e => setTypedAnswer(e.target.value)}
-                          onKeyDown={e => { if (e.key === 'Enter') handleDictationSubmit(); }}
-                          placeholder="Type what you hear..."
-                          disabled={typeAnswerState !== 'default'} autoFocus
-                          className={`flex-1 px-4 py-3 rounded-xl border-2 text-base bg-[var(--card-bg)] outline-none transition-colors ${
-                            typeAnswerState === 'correct' ? 'border-[#27ae60] text-[#27ae60]' :
-                            typeAnswerState === 'incorrect' ? 'border-[#c0392b] text-[#c0392b]' :
-                            'border-[var(--card-border)] focus:border-[#d4a520]'
-                          }`}
-                        />
-                        <GameButton onClick={handleDictationSubmit} disabled={typeAnswerState !== 'default' || !typedAnswer.trim()} variant="primary">
-                          Check
-                        </GameButton>
-                      </div>
-                      {typeAnswerState === 'incorrect' && (
-                        <motion.p initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} className="text-center text-sm text-[var(--foreground)]/50">
-                          Correct: <span className="font-bold text-[#27ae60]">{correctAnswer}</span>
-                        </motion.p>
-                      )}
-                    </div>
-                  );
-                })() :
-
-                /* ORDERING EXERCISE — tap to build sentence */
-                allExercises[step.index].type === 'ordering' ? (() => {
-                  const exercise = allExercises[step.index];
-                  const correctOrder = Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer : [exercise.correctAnswer];
-                  const fragments = exercise.options || correctOrder;
-                  // Use a stable shuffle based on exercise ID
-                  const shuffled = [...fragments].sort((a, b) => {
-                    const ha = a.charCodeAt(0) + exercise.id.charCodeAt(exercise.id.length - 1);
-                    const hb = b.charCodeAt(0) + exercise.id.charCodeAt(exercise.id.length - 1);
-                    return (ha % 7) - (hb % 7);
-                  });
-                  const placed = orderPlaced;
-                  const setPlaced = setOrderPlaced;
-                  const remaining = shuffled.filter(f => !placed.includes(f));
-
-                  const handleTapChip = (word: string) => {
-                    if (orderChecked) return;
-                    setPlaced(prev => [...prev, word]);
-                  };
-                  const handleRemoveChip = (index: number) => {
-                    if (orderChecked) return;
-                    setPlaced(prev => prev.filter((_, i) => i !== index));
-                  };
-                  const handleCheckOrder = () => {
-                    setOrderChecked(true);
-                    setTotalAttempted(prev => prev + 1);
-                    const isCorrect = placed.length === correctOrder.length &&
-                      placed.every((word, i) => word === correctOrder[i]);
-                    setOrderCorrect(isCorrect);
-                    if (isCorrect) {
                       setCorrectCount(prev => prev + 1);
-                      const newCombo = combo + 1;
-                      setCombo(newCombo);
-                      setMaxCombo(prev => Math.max(prev, newCombo));
-                      setKuttanMsg(getRandomMessage('correct'));
-                      feedbackCombo(newCombo);
-                      setTimeout(() => goNext(), 1400);
-                    } else {
-                      if (combo > 2) feedbackComboBreak(); else feedbackWrong();
-                      setCombo(0);
-                      setKuttanMsg(getRandomMessage('wrong'));
-                      setTimeout(() => goNext(), 2500);
-                    }
-                  };
-
-                  return (
-                    <div className="space-y-3">
-                      {/* Placed chips — sentence building area */}
-                      <div className="min-h-[52px] bg-[var(--foreground)]/5 border-2 border-dashed border-[var(--foreground)]/15 rounded-xl p-3 flex flex-wrap gap-1.5">
-                        {placed.length === 0 && (
-                          <span className="text-xs text-[var(--foreground)]/30 italic">Tap words below to build the sentence...</span>
-                        )}
-                        {placed.map((word, i) => (
-                          <motion.button key={`p-${i}`} initial={{ scale: 0.8 }} animate={{ scale: 1 }}
-                            onClick={() => handleRemoveChip(i)}
-                            className={`px-3 py-1.5 rounded-lg text-sm font-medium border ${
-                              orderChecked ? (word === correctOrder[i] ? 'bg-[#27ae60]/15 border-[#27ae60]/30 text-[#27ae60]' : 'bg-[#c0392b]/15 border-[#c0392b]/30 text-[#c0392b]')
-                              : 'bg-[#d4a520]/15 border-[#d4a520]/30 text-[#d4a520]'
-                            }`}>
-                            {word}
-                          </motion.button>
-                        ))}
-                      </div>
-
-                      {/* Available chips */}
-                      <div className="flex flex-wrap gap-1.5 justify-center">
-                        {remaining.map((word, i) => (
-                          <motion.button key={`r-${i}`} whileTap={{ scale: 0.95 }}
-                            onClick={() => handleTapChip(word)}
-                            disabled={orderChecked}
-                            className="px-3 py-1.5 rounded-lg text-sm font-medium bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[#d4a520]/50 transition-colors">
-                            {word}
-                          </motion.button>
-                        ))}
-                      </div>
-
-                      {/* Check button */}
-                      {placed.length === fragments.length && !orderChecked && (
-                        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-                          <GameButton onClick={handleCheckOrder} fullWidth variant="primary">Check Order</GameButton>
-                        </motion.div>
-                      )}
-
-                      {/* Correct answer on wrong */}
-                      {orderChecked && !orderCorrect && (
-                        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center text-xs text-[var(--foreground)]/50">
-                          Correct: <span className="text-[#27ae60] font-semibold">{correctOrder.join(' ')}</span>
-                        </motion.p>
-                      )}
-                    </div>
-                  );
-                })() :
-
-                /* FREE-TEXT EXERCISE — open production */
-                allExercises[step.index].type === 'free-text' ? (() => {
-                  const exercise = allExercises[step.index];
-                  const acceptedAnswers = Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer : [exercise.correctAnswer];
-
-                  const handleFreeTextSubmit = () => {
-                    if (typeAnswerState !== 'default' || !typedAnswer.trim()) return;
-                    setTotalAttempted(prev => prev + 1);
-                    const normalize = (s: string) => s.toLowerCase().trim().replace(/[.,!?;:'"]/g, '');
-                    const userNorm = normalize(typedAnswer);
-                    const isCorrect = acceptedAnswers.some(a => {
-                      const aNorm = normalize(a);
-                      if (userNorm === aNorm) return true;
-                      // Fuzzy: allow Levenshtein distance ≤ 2 for longer answers
-                      if (aNorm.length > 5) {
-                        let dist = 0;
-                        const longer = userNorm.length > aNorm.length ? userNorm : aNorm;
-                        const shorter = userNorm.length > aNorm.length ? aNorm : userNorm;
-                        if (longer.length - shorter.length > 2) return false;
-                        for (let i = 0; i < longer.length; i++) { if (longer[i] !== shorter[i]) dist++; }
-                        return dist <= 2;
-                      }
-                      return false;
-                    });
-                    if (isCorrect) {
-                      setTypeAnswerState('correct');
-                      setCorrectCount(prev => prev + 1);
-                      const newCombo = combo + 1;
-                      setCombo(newCombo);
-                      setMaxCombo(prev => Math.max(prev, newCombo));
-                      setKuttanMsg(getRandomMessage('correct'));
-                      feedbackCombo(newCombo);
-                      try { speakGerman(acceptedAnswers[0]); } catch {}
-                      setTimeout(() => goNext(), 1400);
-                    } else {
-                      setTypeAnswerState('incorrect');
-                      if (combo > 2) feedbackComboBreak(); else feedbackWrong();
-                      setCombo(0);
-                      setKuttanMsg(getRandomMessage('wrong'));
-                      setTimeout(() => goNext(), 2500);
-                    }
-                  };
-
-                  return (
-                    <div className="space-y-3">
-                      <textarea
-                        value={typedAnswer}
-                        onChange={e => setTypedAnswer(e.target.value)}
-                        onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleFreeTextSubmit(); } }}
-                        placeholder="Type your answer in German..."
-                        disabled={typeAnswerState !== 'default'} autoFocus rows={2}
-                        className={`w-full px-4 py-3 rounded-xl border-2 text-base bg-[var(--card-bg)] outline-none resize-none transition-colors ${
-                          typeAnswerState === 'correct' ? 'border-[#27ae60] text-[#27ae60]' :
-                          typeAnswerState === 'incorrect' ? 'border-[#c0392b] text-[#c0392b]' :
-                          'border-[var(--card-border)] focus:border-[#d4a520]'
-                        }`}
-                      />
-                      <GameButton onClick={handleFreeTextSubmit} disabled={typeAnswerState !== 'default' || !typedAnswer.trim()} fullWidth variant="primary">
-                        Submit
-                      </GameButton>
-                      {typeAnswerState === 'incorrect' && (
-                        <motion.p initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} className="text-center text-sm text-[var(--foreground)]/50">
-                          Accepted: <span className="font-bold text-[#27ae60]">{acceptedAnswers[0]}</span>
-                        </motion.p>
-                      )}
-                    </div>
-                  );
-                })() :
-
-                /* MATCHING EXERCISE */
-                allExercises[step.index].type === 'matching' && Array.isArray(allExercises[step.index].correctAnswer) ? (() => {
-                  const exercise = allExercises[step.index];
-                  const leftItems = exercise.options || [];
-                  const rightItems = exercise.correctAnswer as string[];
-                  // Shuffle right side once (use exercise id as stable seed)
-                  const shuffledRight = [...rightItems].sort((a, b) => {
-                    const ha = a.charCodeAt(0) + exercise.id.charCodeAt(exercise.id.length - 1);
-                    const hb = b.charCodeAt(0) + exercise.id.charCodeAt(exercise.id.length - 1);
-                    return (ha % 7) - (hb % 7);
-                  });
-
-                  const handleMatchLeft = (leftIdx: number) => {
-                    if (matchChecked) return;
-                    setMatchSelected(leftIdx);
-                  };
-
-                  const handleMatchRight = (rightIdx: number) => {
-                    if (matchChecked || matchSelected === null) return;
-                    setMatchPairs(prev => ({ ...prev, [matchSelected]: rightIdx }));
-                    setMatchSelected(null);
-                  };
-
-                  const allPaired = Object.keys(matchPairs).length === leftItems.length;
-
-                  const handleCheckMatches = () => {
-                    setMatchChecked(true);
-                    setTotalAttempted(prev => prev + 1);
-                    // Check: for each left index, the paired right item should match correctAnswer[leftIdx]
-                    const allCorrect = leftItems.every((_, leftIdx) => {
-                      const pairedRightIdx = matchPairs[leftIdx];
-                      if (pairedRightIdx === undefined) return false;
-                      return shuffledRight[pairedRightIdx] === rightItems[leftIdx];
-                    });
-                    if (allCorrect) {
                       setAnswerState('correct');
-                      setCorrectCount(prev => prev + 1);
                       setKuttanMsg(getRandomMessage('correct'));
-                      feedbackCorrect();
-                      setTimeout(() => goNext(), 1800);
+                      feedbackCombo(newCombo);
+                      const surpriseEvent = checkForSurprise('correct_answer');
+                      if (surpriseEvent) { setSurprise(surpriseEvent); setTimeout(() => setSurprise(null), 4000); }
+                      setTimeout(() => goNext(), 1000);
                     } else {
+                      if (combo > 2) feedbackComboBreak(); else feedbackWrong();
+                      setCombo(0);
                       setAnswerState('incorrect');
                       setKuttanMsg(getRandomMessage('wrong'));
-                      feedbackWrong();
-                      setTimeout(() => goNext(), 2500);
+                      setTimeout(() => goNext(), 1800);
                     }
                   };
 
-                  return (
-                    <div>
-                      <div className="grid grid-cols-2 gap-3">
-                        {/* Left column */}
-                        <div className="space-y-2">
-                          {leftItems.map((item, i) => {
-                            const isPaired = matchPairs[i] !== undefined;
-                            const isSelected = matchSelected === i;
-                            const isCorrectPair = matchChecked && isPaired && shuffledRight[matchPairs[i]] === rightItems[i];
-                            const isWrongPair = matchChecked && isPaired && shuffledRight[matchPairs[i]] !== rightItems[i];
-                            return (
-                              <motion.button
-                                key={i}
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: i * 0.05 }}
-                                onClick={() => handleMatchLeft(i)}
-                                className={`w-full p-3 rounded-xl border-2 text-left text-sm font-medium transition-all ${
-                                  isCorrectPair ? 'border-[#27ae60] bg-[#27ae60]/15' :
-                                  isWrongPair ? 'border-[#c0392b] bg-[#c0392b]/15' :
-                                  isSelected ? 'border-[#d4a520] bg-[#d4a520]/15' :
-                                  isPaired ? 'border-[#3b82f6]/50 bg-[#3b82f6]/10' :
-                                  'border-[var(--card-border)] bg-[var(--card-bg)]'
-                                }`}
-                              >
-                                {item}
-                              </motion.button>
-                            );
-                          })}
-                        </div>
-                        {/* Right column */}
-                        <div className="space-y-2">
-                          {shuffledRight.map((item, i) => {
-                            const pairedBy = Object.entries(matchPairs).find(([, v]) => v === i);
-                            const isPaired = pairedBy !== undefined;
-                            const leftIdx = pairedBy ? parseInt(pairedBy[0]) : -1;
-                            const isCorrectPair = matchChecked && isPaired && shuffledRight[i] === rightItems[leftIdx];
-                            const isWrongPair = matchChecked && isPaired && shuffledRight[i] !== rightItems[leftIdx];
-                            return (
-                              <motion.button
-                                key={i}
-                                initial={{ opacity: 0, x: 10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: i * 0.05 }}
-                                onClick={() => handleMatchRight(i)}
-                                className={`w-full p-3 rounded-xl border-2 text-left text-sm font-medium transition-all ${
-                                  isCorrectPair ? 'border-[#27ae60] bg-[#27ae60]/15' :
-                                  isWrongPair ? 'border-[#c0392b] bg-[#c0392b]/15' :
-                                  isPaired ? 'border-[#3b82f6]/50 bg-[#3b82f6]/10' :
-                                  matchSelected !== null ? 'border-[#d4a520]/30 hover:border-[#d4a520] hover:bg-[#d4a520]/10' :
-                                  'border-[var(--card-border)] bg-[var(--card-bg)]'
-                                }`}
-                              >
-                                {item}
-                              </motion.button>
-                            );
-                          })}
-                        </div>
-                      </div>
-                      {matchSelected !== null && (
-                        <p className="text-center text-xs text-[#d4a520] mt-2">Now tap the matching answer on the right</p>
-                      )}
-                      {allPaired && !matchChecked && (
-                        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-4">
-                          <GameButton onClick={handleCheckMatches} fullWidth variant="primary">
-                            Check Answers
-                          </GameButton>
-                        </motion.div>
-                      )}
-                    </div>
-                  );
-                })() : (
-                  /* MULTIPLE CHOICE / FILL-BLANK EXERCISE */
-                  <div className="space-y-3">
-                    {allExercises[step.index].options?.map((option, i) => {
-                      const isSelected = selectedAnswer === option;
-                      const isCorrect = option === allExercises[step.index].correctAnswer;
-                      let state: 'default' | 'selected' | 'correct' | 'incorrect' = 'default';
-                      if (answerState === 'correct' && isCorrect) state = 'correct';
-                      else if (answerState === 'incorrect' && isSelected) state = 'incorrect';
-                      else if (answerState === 'incorrect' && isCorrect) state = 'correct';
-                      else if (isSelected) state = 'selected';
+                  // TYPE-ANSWER & FREE-TEXT → WordScramble
+                  if (exercise.type === 'type-answer' || exercise.type === 'free-text') {
+                    return <WordScramble hint={exercise.questionGerman || ''} answer={correctStr.trim()} onResult={handleGameResult} />;
+                  }
 
-                      return (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: i * 0.05 }}
-                        >
-                          <ChoiceButton
-                            onClick={() => handleAnswerSelect(option)}
-                            state={state}
-                            disabled={answerState !== 'default'}
-                          >
-                            {option}
-                          </ChoiceButton>
-                        </motion.div>
-                      );
-                    })}
-                  </div>
-                )}
+                  // DICTATION → FallingWords
+                  if (exercise.type === 'dictation') {
+                    const distractors = (exercise.options || []).filter(o => o !== correctStr).slice(0, 3);
+                    // If no options, create from other exercise answers in this lesson
+                    const fallbackDistractors = distractors.length >= 2 ? distractors :
+                      allExercises.filter(e => e.id !== exercise.id).map(e => typeof e.correctAnswer === 'string' ? e.correctAnswer : e.correctAnswer[0]).filter(Boolean).slice(0, 3);
+                    return <FallingWords correctWord={correctStr.trim()} distractors={fallbackDistractors} hint={exercise.question} onResult={handleGameResult} />;
+                  }
+
+                  // ORDERING → WordScramble (spell from scrambled letters) or tap-to-order
+                  if (exercise.type === 'ordering') {
+                    const sentence = correctArr.join(' ');
+                    return <WordScramble hint="Build the correct sentence:" answer={sentence} onResult={handleGameResult} />;
+                  }
+
+                  // MATCHING → BubblePop
+                  if (exercise.type === 'matching' && Array.isArray(exercise.correctAnswer)) {
+                    return <BubblePop leftItems={exercise.options || []} rightItems={exercise.correctAnswer as string[]} onResult={handleGameResult} />;
+                  }
+
+                  // FILL-BLANK → WordBank
+                  if (exercise.type === 'fill-blank' && exercise.options?.length) {
+                    return <WordBank sentence={exercise.question} options={exercise.options} correctAnswer={correctStr} onResult={handleGameResult} />;
+                  }
+
+                  // SPEAKING → keep SpeakButton (already game-like)
+                  if (exercise.type === 'speaking') {
+                    return (
+                      <div className="space-y-4 flex flex-col items-center">
+                        <div className="bg-[#d4a520]/10 border border-[#d4a520]/20 rounded-xl px-4 py-3 text-center">
+                          <p className="text-lg font-bold text-[#d4a520]">{correctStr}</p>
+                        </div>
+                        <SpeakButton expectedText={correctStr} onResult={(_, __, isMatch) => handleGameResult(isMatch)} size="lg" label="Say it!" />
+                        <button onClick={() => handleGameResult(false)} className="text-xs text-[var(--foreground)]/30 underline">Skip</button>
+                      </div>
+                    );
+                  }
+
+                  // MCQ / DEFAULT → SwipeCards
+                  if (exercise.options?.length) {
+                    return <SwipeCards question={exercise.question} options={exercise.options} correctAnswer={correctStr} onResult={handleGameResult} />;
+                  }
+
+                  // Ultimate fallback — WordBank style
+                  return <WordScramble hint={exercise.question} answer={correctStr.trim()} onResult={handleGameResult} />;
+                })()}
+
+
 
                 {/* Explanation — shown after answering */}
                 {answerState !== 'default' && allExercises[step.index].explanation && (
