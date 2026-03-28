@@ -740,48 +740,35 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
           {step.type === 'intro' && (
             <motion.div
               key="intro"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              exit={{ opacity: 0, y: -15 }}
               className="flex-1 flex flex-col items-center justify-center text-center"
             >
-              <CharacterGuide
-                messages={kuttanMsg}
-                mood="excited"
-                size="md"
-              />
+              <CharacterGuide messages={kuttanMsg} mood="excited" size="sm" />
 
               <motion.div
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="mt-6"
+                transition={{ delay: 0.2 }}
+                className="mt-3"
               >
-                <div className="text-4xl mb-3">{module.icon}</div>
-                <h1 className="text-2xl font-bold mb-1">{lesson.title}</h1>
-                <p className="text-[var(--foreground)]/40 text-base mb-3">{lesson.titleGerman}</p>
-                <p className="max-w-md text-sm leading-relaxed text-[var(--foreground)]/60 px-2">
+                <div className="text-3xl mb-2">{module.icon}</div>
+                <h1 className="text-xl font-bold mb-0.5">{lesson.title}</h1>
+                <p className="text-[var(--foreground)]/40 text-sm mb-2">{lesson.titleGerman}</p>
+                <p className="max-w-sm text-xs leading-relaxed text-[var(--foreground)]/50 px-2">
                   {lesson.description}
                 </p>
-                <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs">
-                  <span className="rounded-full border border-[#3b82f6]/20 bg-[#3b82f6]/10 px-3 py-1 text-[#93c5fd]">
-                    🎬 {lesson.videos.length} video{lesson.videos.length === 1 ? '' : 's'}
+                <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5 text-[10px]">
+                  <span className="rounded-full border border-[#3b82f6]/20 bg-[#3b82f6]/10 px-2.5 py-0.5 text-[#93c5fd]">
+                    🎬 {lesson.videos.length}
                   </span>
-                  <span className="rounded-full border border-[#d4a520]/20 bg-[#d4a520]/10 px-3 py-1 text-[#d4a520]">
-                    📚 {lesson.vocabulary.length} words
+                  <span className="rounded-full border border-[#d4a520]/20 bg-[#d4a520]/10 px-2.5 py-0.5 text-[#d4a520]">
+                    📚 {lesson.vocabulary.length}
                   </span>
-                  <span className="rounded-full border border-[#27ae60]/20 bg-[#27ae60]/10 px-3 py-1 text-[#86efac]">
-                    📝 {allExercises.length} exercise{allExercises.length === 1 ? '' : 's'}
+                  <span className="rounded-full border border-[#27ae60]/20 bg-[#27ae60]/10 px-2.5 py-0.5 text-[#86efac]">
+                    📝 {allExercises.length}
                   </span>
-                </div>
-                <div className="mt-4 rounded-2xl border border-[var(--foreground)]/10 bg-[var(--foreground)]/5 p-4 text-left max-w-md mx-auto">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[var(--foreground)]/40 mb-2">How this lesson works</p>
-                  <ul className="space-y-1.5 text-sm text-[var(--foreground)]/60">
-                    <li>• Watch the short teaching videos first</li>
-                    <li>• Flip through vocabulary with audio</li>
-                    <li>• Finish the exercises to lock it in</li>
-                    <li>• Wrong answers show the correct one — learn as you go</li>
-                  </ul>
                 </div>
               </motion.div>
             </motion.div>
@@ -925,40 +912,34 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
           {step.type === 'vocab' && vocabPhase === 'intro' && (
             <motion.div
               key={`vocab-intro-${step.index}`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ type: 'spring', damping: 25 }}
+              exit={{ opacity: 0, y: -15 }}
               className="flex-1 flex flex-col items-center justify-center"
             >
-              <p className="text-[var(--foreground)]/40 text-xs mb-3">
-                New word {step.index + 1} of {shownVocab.length}
+              <p className="text-[var(--foreground)]/40 text-[10px] mb-2">
+                Word {step.index + 1} of {shownVocab.length}
               </p>
 
-              {/* Word intro card — everything visible, no flipping */}
-              <div className="w-full max-w-sm bg-gradient-to-br from-[#2a4a2a] to-[#1b3d1b] border-2 border-[#d4a520]/30 rounded-2xl p-6 text-center">
-                <span className="text-xl mb-2 block">🇩🇪</span>
-                <h2 className="text-3xl font-bold mb-1">
-                  {shownVocab[step.index].german}
-                </h2>
-                <p className="text-[var(--foreground)]/40 text-sm mb-4">/{shownVocab[step.index].pronunciation}/</p>
+              {/* Compact word card */}
+              <div className="w-full max-w-sm bg-gradient-to-br from-[#2a4a2a] to-[#1b3d1b] border-2 border-[#d4a520]/30 rounded-xl p-4 text-center">
+                <div className="flex items-center justify-center gap-2 mb-1">
+                  <h2 className="text-2xl font-bold">{shownVocab[step.index].german}</h2>
+                  <span className="text-[var(--foreground)]/40 text-xs">/{shownVocab[step.index].pronunciation}/</span>
+                </div>
 
-                <div className="w-10 h-0.5 bg-[var(--foreground)]/10 mx-auto mb-4" />
-
-                <p className="text-xl font-semibold mb-1">
-                  {shownVocab[step.index].english}
-                </p>
-                <p className="text-[#d4a520] text-base mb-4">
-                  {shownVocab[step.index].malayalam}
-                </p>
+                <div className="flex items-center justify-center gap-2 mt-1 mb-2">
+                  <span className="text-base font-semibold">{shownVocab[step.index].english}</span>
+                  <span className="text-[#d4a520] text-sm">{shownVocab[step.index].malayalam}</span>
+                </div>
 
                 {shownVocab[step.index].example && (
-                  <div className="bg-[var(--foreground)]/5 rounded-xl px-4 py-3 text-left">
-                    <p className="text-sm text-[var(--foreground)]/60 italic">
+                  <div className="bg-[var(--foreground)]/5 rounded-lg px-3 py-2 text-left">
+                    <p className="text-xs text-[var(--foreground)]/60 italic">
                       &ldquo;{shownVocab[step.index].example}&rdquo;
                     </p>
                     {shownVocab[step.index].exampleTranslation && (
-                      <p className="text-xs text-[var(--foreground)]/30 mt-1">
+                      <p className="text-[10px] text-[var(--foreground)]/30 mt-0.5">
                         {shownVocab[step.index].exampleTranslation}
                       </p>
                     )}
@@ -966,25 +947,17 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 )}
               </div>
 
-              {/* Audio + Bookmark */}
-              <div className="flex items-center gap-3 mt-4">
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => {
-                    const vocab = shownVocab[step.index];
-                    duckAmbience(2000);
-                    playVocabAudio(vocab.id).catch(() => speakGerman(vocab.german));
-                  }}
-                  className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
-                >
-                  <Volume2 className="w-4 h-4 text-[#d4a520]" />
+              {/* Compact audio + bookmark */}
+              <div className="flex items-center gap-2 mt-2">
+                <motion.button whileTap={{ scale: 0.95 }}
+                  onClick={() => { const v = shownVocab[step.index]; duckAmbience(2000); playVocabAudio(v.id).catch(() => speakGerman(v.german)); }}
+                  className="w-9 h-9 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
+                  <Volume2 className="w-3.5 h-3.5 text-[#d4a520]" />
                 </motion.button>
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
+                <motion.button whileTap={{ scale: 0.95 }}
                   onClick={() => toggleBookmark(shownVocab[step.index].id)}
-                  className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
-                >
-                  <Bookmark className={`w-4 h-4 ${(userProgress.bookmarkedVocab || []).includes(shownVocab[step.index].id) ? 'text-[#e94560] fill-[#e94560]' : 'text-[var(--foreground)]/40'}`} />
+                  className="w-9 h-9 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
+                  <Bookmark className={`w-3.5 h-3.5 ${(userProgress.bookmarkedVocab || []).includes(shownVocab[step.index].id) ? 'text-[#e94560] fill-[#e94560]' : 'text-[var(--foreground)]/40'}`} />
                 </motion.button>
               </div>
             </motion.div>

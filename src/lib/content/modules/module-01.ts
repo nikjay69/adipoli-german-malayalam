@@ -27,7 +27,7 @@ export const MODULE_1: Module = {
           name: "Kuttan's Home, Thrissur",
           sceneType: "classroom",
           timeOfDay: "evening",
-          description: "It's a warm Kerala evening. You're sitting in your room scrolling through Instagram when a WhatsApp forward from your cousin in Munich catches your eye — a photo of snow-capped Alps with the caption 'Free university, machane!' Your world is about to change.",
+          description: "A warm Kerala evening. Your cousin in Munich just sent a WhatsApp: 'Free university, machane!' Your world is about to change.",
         },
         narrative: {
           currentObjective: "Discover why Germany is the land of opportunity for Malayalis",
@@ -209,7 +209,7 @@ export const MODULE_1: Module = {
           name: "Goethe-Institut, Kochi",
           sceneType: "classroom",
           timeOfDay: "morning",
-          description: "A bright morning at the Goethe-Institut in Kochi. The classroom smells of fresh marker ink and filter coffee from the canteen. Your German teacher, Frau Weber, writes strange letters on the whiteboard: ä, ö, ü. Twenty nervous Malayali students stare at the board.",
+          description: "Goethe-Institut, Kochi. Frau Weber writes ä, ö, ü on the whiteboard. Twenty nervous students stare. Time to make your mouth do new things.",
         },
         narrative: {
           previousRecap: "You discovered why Germany is a goldmine for Malayalis. Now it's time to actually make German sounds come out of your mouth!",
@@ -389,7 +389,7 @@ export const MODULE_1: Module = {
           name: "Berlin Hauptbahnhof",
           sceneType: "bahnhof",
           timeOfDay: "morning",
-          description: "You step off the plane and onto a train. Berlin Hauptbahnhof is enormous — glass ceilings, rushing commuters, announcements in German. This is it. Your new life starts now.",
+          description: "Berlin Hauptbahnhof. Glass ceilings, rushing commuters, German announcements. Your new life starts now.",
         },
         narrative: {
           previousRecap: "You learned why German matters and practiced the sounds. Now it's time to actually talk to people!",
@@ -571,7 +571,7 @@ export const MODULE_1: Module = {
           name: "Berlin Hostel Lobby",
           sceneType: "cafe",
           timeOfDay: "evening",
-          description: "It's your last evening at the Berlin hostel. The cozy lobby is warm with fairy lights and the hum of conversations in five languages. Your new friends — Lisa from the train station, Marco from Italy, and Yuki from Japan — are gathered around a table. Tomorrow everyone leaves for different cities. Time to say goodbye properly.",
+          description: "Last evening at the Berlin hostel. Your new friends are gathered in the lobby. Tomorrow everyone leaves. Time to say goodbye properly.",
         },
         narrative: {
           previousRecap: "You mastered greetings and had your first German conversations. Now comes the harder part — saying goodbye without being awkward!",
@@ -747,7 +747,7 @@ export const MODULE_1: Module = {
           name: "Café Einstein, Berlin",
           sceneType: "cafe",
           timeOfDay: "afternoon",
-          description: "You push open the door of a cozy Berlin café. The smell of fresh coffee fills the air. A friendly face at the next table catches your eye — time for your first real German conversation!",
+          description: "A cozy Berlin café. Fresh coffee, a friendly face at the next table. Time for your first real German conversation.",
         },
         narrative: {
           previousRecap: "You learned to greet people and say goodbye. Now let's put it ALL together in a real conversation!",
@@ -890,7 +890,7 @@ export const MODULE_1: Module = {
           name: "Ausländerbehörde, Berlin",
           sceneType: "office",
           timeOfDay: "morning",
-          description: "You're sitting in the waiting room of the Ausländerbehörde (immigration office) in Berlin. The fluorescent lights hum. A number display reads 'A-247'. Your ticket says 'A-251'. The room is tense — everyone here needs something important. A stern-looking officer calls the next number. This is NOT the place for casual German.",
+          description: "Ausländerbehörde, Berlin. Your ticket says A-251. The display reads A-247. This is NOT the place for casual German.",
         },
         narrative: {
           previousRecap: "You survived greetings, goodbyes, and your first conversations. Now it's time for the real test — formal German in an official setting!",
