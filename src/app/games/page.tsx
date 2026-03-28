@@ -206,7 +206,7 @@ const games: GameDef[] = [
   {
     id: 'boss/1',
     name: 'Boss: The Border Officer',
-    description: 'Prove you can survive your first day in Germany! Defeat the border officer to enter the country!',
+    description: 'Prove you can survive your first day in Germany!',
     icon: '👮',
     color: '#9333ea',
     difficulty: 'Hard',
@@ -214,6 +214,38 @@ const games: GameDef[] = [
     timeEstimate: '3-5 min',
     unlockModule: 1,
     tag: 'BOSS',
+  },
+  {
+    id: 'boss/2', name: 'Boss: Die Bürgeramt Dame', description: 'Register at the Bürgeramt — answer every question correctly!',
+    icon: '👩‍💼', color: '#9333ea', difficulty: 'Hard', xpReward: 220, timeEstimate: '3-5 min', unlockModule: 2, tag: 'BOSS',
+  },
+  {
+    id: 'boss/3', name: 'Boss: Der Fahrkartenkontrolleur', description: 'Ticket inspector on the train! Numbers and time under pressure!',
+    icon: '🎫', color: '#9333ea', difficulty: 'Hard', xpReward: 240, timeEstimate: '3-5 min', unlockModule: 3, tag: 'BOSS',
+  },
+  {
+    id: 'boss/4', name: 'Boss: Die neugierige Nachbarin', description: 'Your nosy neighbor wants to know EVERYTHING about your family!',
+    icon: '👵', color: '#9333ea', difficulty: 'Hard', xpReward: 260, timeEstimate: '3-5 min', unlockModule: 4, tag: 'BOSS',
+  },
+  {
+    id: 'boss/5', name: 'Boss: Der strenge Chef', description: 'Job interview! Describe your daily routine perfectly!',
+    icon: '👔', color: '#9333ea', difficulty: 'Hard', xpReward: 280, timeEstimate: '3-5 min', unlockModule: 5, tag: 'BOSS',
+  },
+  {
+    id: 'boss/6', name: 'Boss: Der Sternekoch', description: 'Order a full German meal — the chef is judging you!',
+    icon: '👨‍🍳', color: '#9333ea', difficulty: 'Hard', xpReward: 300, timeEstimate: '3-5 min', unlockModule: 6, tag: 'BOSS',
+  },
+  {
+    id: 'boss/7', name: 'Boss: Die Kassiererin', description: 'Handle shopping transactions at lightning speed!',
+    icon: '🛒', color: '#9333ea', difficulty: 'Hard', xpReward: 320, timeEstimate: '3-5 min', unlockModule: 7, tag: 'BOSS',
+  },
+  {
+    id: 'boss/8', name: 'Boss: Der Vermieter', description: 'Impress the landlord to get the apartment!',
+    icon: '🏠', color: '#9333ea', difficulty: 'Hard', xpReward: 340, timeEstimate: '4-5 min', unlockModule: 8, tag: 'BOSS',
+  },
+  {
+    id: 'boss/9', name: 'Boss: Der Busfahrer', description: 'Navigate Berlin public transport — the bus driver tests you!',
+    icon: '🚌', color: '#9333ea', difficulty: 'Hard', xpReward: 380, timeEstimate: '4-5 min', unlockModule: 9, tag: 'BOSS',
   },
 ];
 

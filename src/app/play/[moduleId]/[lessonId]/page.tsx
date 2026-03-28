@@ -1127,9 +1127,14 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               className="flex-1 flex flex-col justify-center"
             >
               <MiniGameEmbed
-                type={shownVocab.length >= 5 ? 'speed-tap' : 'listen-pick'}
-                items={shownVocab.map(v => ({ german: v.german, english: v.english }))}
-                onComplete={(score, total) => {
+                type={(() => {
+                  // Rotate mini-game type per module so each feels different
+                  const types: ('speed-tap' | 'listen-pick' | 'quick-sort')[] = ['speed-tap', 'listen-pick', 'quick-sort'];
+                  return types[(module?.id || 1) % types.length];
+                })()}
+                items={shownVocab.map(v => ({ german: v.german, english: v.english, category: v.german.charAt(0) < 'M' ? 'A-L' : 'M-Z' }))}
+                categories={['A-L', 'M-Z']}
+                onComplete={(score) => {
                   if (score > 0) addXP(score * 3);
                   setTimeout(() => goNext(), 1500);
                 }}
