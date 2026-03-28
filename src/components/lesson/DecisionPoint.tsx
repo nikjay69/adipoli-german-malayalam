@@ -49,8 +49,8 @@ export function DecisionPoint({ decision, onComplete }: DecisionPointProps) {
     >
       {/* Scene moment */}
       <div className="w-full max-w-sm mb-5">
-        <div className="bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 rounded-2xl p-4 mb-4">
-          <p className="text-sm text-[var(--foreground)]/70 italic leading-relaxed">
+        <div className="bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 rounded-2xl p-5 mb-4">
+          <p className="text-base text-[var(--foreground)]/80 italic leading-relaxed">
             {decision.moment}
           </p>
         </div>
@@ -59,7 +59,7 @@ export function DecisionPoint({ decision, onComplete }: DecisionPointProps) {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-center text-sm font-semibold text-[#d4a520] mb-3"
+            className="text-center text-base font-bold text-[#d4a520] mb-3"
           >
             What do you say?
           </motion.p>
@@ -92,7 +92,7 @@ export function DecisionPoint({ decision, onComplete }: DecisionPointProps) {
                   }
                 `}
               >
-                <p className="text-sm font-medium">{option.text}</p>
+                <p className="text-base font-medium">{option.text}</p>
               </motion.button>
             ))}
           </motion.div>

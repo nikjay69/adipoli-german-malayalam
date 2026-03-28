@@ -121,10 +121,12 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   // Start ambient soundscape for every lesson — creates atmosphere
   useEffect(() => {
     if (mounted && module) {
-      const scene = lesson?.storyScene?.setting.sceneType || getSceneForModule(module.id);
-      startAmbience(scene as import('@/lib/audio/ambience').SceneType, 0.25);
+      try {
+        const scene = lesson?.storyScene?.setting.sceneType || getSceneForModule(module.id);
+        startAmbience(scene as import('@/lib/audio/ambience').SceneType, 0.25);
+      } catch { /* AudioContext may fail on some browsers — non-critical */ }
     }
-    return () => { stopAmbience(800); };
+    return () => { try { stopAmbience(800); } catch { /* noop */ } };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted, module?.id]);
 
@@ -166,12 +168,13 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   // Try MP3 first, fall back to TTS. Duck ambience during playback.
   useEffect(() => {
     if (mounted && lesson && (step.type === 'vocab' || step.type === 'contextual-vocab') && shownVocab[step.index]) {
-      const vocab = shownVocab[step.index];
-      duckAmbience(2000);
-      playVocabAudio(vocab.id).catch(() => {
-        // MP3 not available — use browser TTS as fallback
-        speakGerman(vocab.german);
-      });
+      try {
+        const vocab = shownVocab[step.index];
+        duckAmbience(2000);
+        playVocabAudio(vocab.id).catch(() => {
+          try { speakGerman(vocab.german); } catch { /* TTS unavailable */ }
+        });
+      } catch { /* non-critical audio error */ }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted, step]);
