@@ -105,11 +105,11 @@ export function ContextualVocab({
       {/* Compact action row */}
       <div className="flex items-center gap-2 mt-2">
         <motion.button whileTap={{ scale: 0.95 }} onClick={onPlayAudio}
-          className="w-9 h-9 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
+          className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
           <Volume2 className="w-3.5 h-3.5 text-[#d4a520]" />
         </motion.button>
         <motion.button whileTap={{ scale: 0.95 }} onClick={onBookmark}
-          className="w-9 h-9 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
+          className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
           <Bookmark className={`w-3.5 h-3.5 ${isBookmarked ? 'text-[#e94560] fill-[#e94560]' : 'text-[var(--foreground)]/40'}`} />
         </motion.button>
       </div>

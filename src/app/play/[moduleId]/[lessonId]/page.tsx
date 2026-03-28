@@ -711,13 +711,13 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             )}
           </div>
 
-          {/* Progress Bar */}
+          {/* Progress Bar — pulses on advance */}
           <div className="flex-1 mx-3 h-2.5 bg-[var(--foreground)]/8 rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-gradient-to-r from-[#d4a520] to-[#27ae60] rounded-full"
               initial={{ width: 0 }}
-              animate={{ width: `${progress}%` }}
-              transition={{ duration: 0.4, ease: 'easeOut' }}
+              animate={{ width: `${progress}%`, filter: ['brightness(1)', 'brightness(1.3)', 'brightness(1)'] }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
             />
           </div>
 
@@ -826,7 +826,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               onPlayAudio={() => {
                 const vocab = shownVocab[step.index];
                 duckAmbience(2000);
-                playVocabAudio(vocab.id).catch(() => speakGerman(vocab.german));
+                playVocabAudio(vocab.id).catch(() => { try { speakGerman(vocab.german); } catch {} });
               }}
               onBookmark={() => toggleBookmark(shownVocab[step.index].id)}
             />
@@ -917,10 +917,10 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
           {step.type === 'video' && (
             <motion.div
               key={`video-${step.index}`}
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -40 }}
-              transition={{ type: 'spring', damping: 25 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
               className="flex-1 flex flex-col justify-center py-4"
             >
               <VideoPlayer
@@ -938,9 +938,10 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
           {step.type === 'vocab' && vocabPhase === 'intro' && (
             <motion.div
               key={`vocab-intro-${step.index}`}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
+              initial={{ opacity: 0, rotateY: 15, scale: 0.9 }}
+              animate={{ opacity: 1, rotateY: 0, scale: 1 }}
+              exit={{ opacity: 0, rotateY: -15, scale: 0.9 }}
+              transition={{ type: 'spring', damping: 20 }}
               className="flex-1 flex flex-col items-center justify-center"
             >
               <p className="text-[var(--foreground)]/40 text-[10px] mb-2">
@@ -976,13 +977,13 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               {/* Compact audio + bookmark */}
               <div className="flex items-center gap-2 mt-2">
                 <motion.button whileTap={{ scale: 0.95 }}
-                  onClick={() => { const v = shownVocab[step.index]; duckAmbience(2000); playVocabAudio(v.id).catch(() => speakGerman(v.german)); }}
-                  className="w-9 h-9 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
+                  onClick={() => { const v = shownVocab[step.index]; try { duckAmbience(2000); } catch {} playVocabAudio(v.id).catch(() => { try { speakGerman(v.german); } catch {} }); }}
+                  className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
                   <Volume2 className="w-3.5 h-3.5 text-[#d4a520]" />
                 </motion.button>
                 <motion.button whileTap={{ scale: 0.95 }}
                   onClick={() => toggleBookmark(shownVocab[step.index].id)}
-                  className="w-9 h-9 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
+                  className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
                   <Bookmark className={`w-3.5 h-3.5 ${(userProgress.bookmarkedVocab || []).includes(shownVocab[step.index].id) ? 'text-[#e94560] fill-[#e94560]' : 'text-[var(--foreground)]/40'}`} />
                 </motion.button>
               </div>
@@ -1176,25 +1177,54 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
           {step.type === 'mini-game' && (
             <motion.div
               key="mini-game"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.1 }}
+              transition={{ type: 'spring', damping: 18 }}
               className="flex-1 flex flex-col justify-center"
             >
-              <MiniGameEmbed
-                type={(() => {
-                  // Rotate mini-game type per module so each feels different
-                  const types: ('speed-tap' | 'listen-pick' | 'quick-sort')[] = ['speed-tap', 'listen-pick', 'quick-sort'];
-                  return types[(module?.id || 1) % types.length];
-                })()}
-                items={shownVocab.map(v => ({ german: v.german, english: v.english, category: v.german.charAt(0) < 'M' ? 'A-L' : 'M-Z' }))}
-                categories={['A-L', 'M-Z']}
-                onComplete={(score) => {
-                  if (score > 0) addXP(score * 3);
-                  setTimeout(() => goNext(), 1500);
-                }}
-                timeLimit={25}
-              />
+              {(() => {
+                // Theme-based mini-game per module
+                const mid = module?.id || 1;
+                const lessonIdx = parseInt(lessonId.split('-')[1] || '1');
+                // Rotate within module: each lesson gets a different type
+                const types: ('speed-tap' | 'listen-pick' | 'quick-sort')[] = ['speed-tap', 'listen-pick', 'quick-sort'];
+                const gameType = types[(mid + lessonIdx) % types.length];
+
+                // Theme-based categories for quick-sort
+                const categoryMap: Record<number, [string, string]> = {
+                  1: ['Formal', 'Informal'],       // Greetings
+                  2: ['Persönlich', 'Beruflich'],   // Personal vs Professional
+                  3: ['Zahlen', 'Zeit'],            // Numbers vs Time
+                  4: ['Familie', 'Freunde'],        // Family vs Friends
+                  5: ['Morgens', 'Abends'],         // Morning vs Evening
+                  6: ['Essen', 'Trinken'],          // Food vs Drink
+                  7: ['Teuer', 'Günstig'],          // Expensive vs Cheap
+                  8: ['Küche', 'Wohnzimmer'],       // Kitchen vs Living room
+                  9: ['Bus', 'Zug'],                // Bus vs Train
+                };
+                const categories = categoryMap[mid] || ['A-L', 'M-Z'];
+
+                // Assign categories based on vocab index (odd/even)
+                const items = shownVocab.map((v, i) => ({
+                  german: v.german,
+                  english: v.english,
+                  category: i % 2 === 0 ? categories[0] : categories[1],
+                }));
+
+                return (
+                  <MiniGameEmbed
+                    type={gameType}
+                    items={items}
+                    categories={categories}
+                    onComplete={(score) => {
+                      if (score > 0) addXP(score * 3);
+                      setTimeout(() => goNext(), 1500);
+                    }}
+                    timeLimit={25}
+                  />
+                );
+              })()}
             </motion.div>
           )}
 
@@ -1378,7 +1408,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                       {/* Listen to native button */}
                       <motion.button
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => { duckAmbience(2000); speakGerman(expectedAnswer); }}
+                        onClick={() => { try { duckAmbience(2000); speakGerman(expectedAnswer); } catch {} }}
                         className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-sm text-[var(--foreground)]/70"
                       >
                         <Volume2 className="w-4 h-4 text-[#d4a520]" /> Listen first
