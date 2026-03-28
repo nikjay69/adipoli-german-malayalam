@@ -294,7 +294,7 @@ export const MODULE_1: Module = {
               type: "vocabulary",
               items: [
                 { german: "schön", english: "beautiful", malayalam: "മനോഹരം", pronunciation: "shurn" },
-                { german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "muun-khen" },
+                { german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "muen-shen" },
                 { german: "Wasser", english: "water", malayalam: "വെള്ളം", pronunciation: "vahs-ser" }
               ]
             }
@@ -366,7 +366,7 @@ export const MODULE_1: Module = {
         { id: "vocab1-2-1", german: "ich", english: "I", malayalam: "ഞാൻ", pronunciation: "ikh (soft ch)", example: "Ich bin hier.", exampleTranslation: "I am here." },
         { id: "vocab1-2-2", german: "Mädchen", english: "girl", malayalam: "പെൺകുട്ടി", pronunciation: "med-khen", example: "Das Mädchen spielt.", exampleTranslation: "The girl is playing." },
         { id: "vocab1-2-3", german: "schön", english: "beautiful", malayalam: "സുന്ദരം", pronunciation: "shöhn (round lips like 'o', say 'e')", example: "Das ist schön!", exampleTranslation: "That is beautiful!" },
-        { id: "vocab1-2-4", german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "myn-khen", example: "München ist groß.", exampleTranslation: "Munich is big." },
+        { id: "vocab1-2-4", german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "muen-shen", example: "München ist groß.", exampleTranslation: "Munich is big." },
         { id: "vocab1-2-5", german: "Straße", english: "street", malayalam: "തെരുവ്", pronunciation: "shtrah-se", example: "Die Straße ist lang.", exampleTranslation: "The street is long." },
         { id: "vocab1-2-6", german: "Wasser", english: "water", malayalam: "വെള്ളം", pronunciation: "vah-ser", example: "Das Wasser ist kalt.", exampleTranslation: "The water is cold." },
         { id: "vocab1-2-7", german: "Kuchen", english: "cake", malayalam: "കേക്ക്", pronunciation: "koo-khen", example: "Der Kuchen schmeckt gut.", exampleTranslation: "The cake tastes good." },

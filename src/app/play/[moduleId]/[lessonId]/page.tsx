@@ -3,7 +3,7 @@
 import { use, useState, useEffect, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Volume2, Loader2, Bookmark, ChevronLeft } from 'lucide-react';
+import { X, Volume2, Loader2, Bookmark, ChevronLeft, Trophy } from 'lucide-react';
 import { playVocabAudio, playExampleAudio, useGermanTTS } from '@/lib/audio';
 import { startAmbience, stopAmbience, duckAmbience, getSceneForModule } from '@/lib/audio/ambience';
 import { SpeakButton, PronunciationCompare } from '@/components/speaking';
@@ -690,51 +690,61 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       )}
 
       {/* Header */}
-      <div className="px-4 pt-4 pb-2">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-1.5">
+      <div className="relative z-20 px-4 pt-4 pb-4">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
             <motion.button
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.9, rotate: -90 }}
               onClick={() => setShowExitConfirm(true)}
-              className="w-10 h-10 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
+              className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md shadow-lg"
             >
-              <X className="w-5 h-5 text-[var(--foreground)]/60" />
+              <X className="w-5 h-5 text-white/60" />
             </motion.button>
             {canGoPrev && (
               <motion.button
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.9, x: -4 }}
                 onClick={goPrev}
-                className="w-10 h-10 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md shadow-lg"
               >
-                <ChevronLeft className="w-5 h-5 text-[var(--foreground)]/60" />
+                <ChevronLeft className="w-5 h-5 text-white/60" />
               </motion.button>
             )}
           </div>
 
-          {/* Progress Bar — pulses on advance */}
-          <div className="flex-1 mx-3 h-2.5 bg-[var(--foreground)]/8 rounded-full overflow-hidden">
+          {/* Progress Bar — with glow and gradient */}
+          <div className="flex-1 relative h-3 bg-white/5 rounded-full overflow-hidden border border-white/5 p-0.5 shadow-inner">
             <motion.div
-              className="h-full bg-gradient-to-r from-[#d4a520] to-[#27ae60] rounded-full"
+              className="h-full bg-gradient-to-r from-[#d4a520] via-[#ffd93d] to-[#27ae60] rounded-full shadow-[0_0_12px_rgba(212,165,32,0.4)]"
               initial={{ width: 0 }}
-              animate={{ width: `${progress}%`, filter: ['brightness(1)', 'brightness(1.3)', 'brightness(1)'] }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
+              animate={{ 
+                width: `${progress}%`,
+              }}
+              transition={{ duration: 0.8, ease: 'circOut' }}
             />
           </div>
 
-          {/* Score */}
-          {totalAttempted > 0 && (
-            <span className="text-xs font-bold text-[var(--foreground)]/50 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-full px-2.5 py-1">
-              {correctCount}/{totalAttempted}
-            </span>
-          )}
+          {/* Score / Counter */}
+          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-md shadow-lg">
+             <Trophy className="w-3.5 h-3.5 text-[#d4a520]" />
+             <span className="text-xs font-black text-white/80 tabular-nums">
+                {correctCount}
+             </span>
+          </div>
         </div>
 
         {/* Combo meter — shows during exercises */}
-        {step.type === 'exercise' && (combo > 0 || maxCombo > 0) && (
-          <div className="mt-1">
-            <ComboMeter combo={combo} maxCombo={maxCombo} />
-          </div>
-        )}
+        <AnimatePresence>
+          {step.type === 'exercise' && (combo > 0 || maxCombo > 0) && (
+            <motion.div 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="mt-2"
+            >
+              <ComboMeter combo={combo} maxCombo={maxCombo} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Surprise event overlay */}
@@ -939,54 +949,84 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
           {step.type === 'vocab' && vocabPhase === 'intro' && (
             <motion.div
               key={`vocab-intro-${step.index}`}
-              initial={{ opacity: 0, rotateY: 15, scale: 0.9 }}
-              animate={{ opacity: 1, rotateY: 0, scale: 1 }}
-              exit={{ opacity: 0, rotateY: -15, scale: 0.9 }}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -30, scale: 1.1 }}
               transition={{ type: 'spring', damping: 20 }}
-              className="flex-1 flex flex-col items-center justify-center"
+              className="flex-1 flex flex-col items-center justify-center p-4"
             >
-              <p className="text-[var(--foreground)]/40 text-[10px] mb-2">
-                Word {step.index + 1} of {shownVocab.length}
-              </p>
-
-              {/* Compact word card */}
-              <div className="w-full max-w-sm bg-gradient-to-br from-[#2a4a2a] to-[#1b3d1b] border-2 border-[#d4a520]/30 rounded-xl p-4 text-center">
-                <div className="flex items-center justify-center gap-2 mb-1">
-                  <h2 className="text-2xl font-bold">{shownVocab[step.index].german}</h2>
-                  <span className="text-[var(--foreground)]/40 text-xs">/{shownVocab[step.index].pronunciation}/</span>
-                </div>
-
-                <div className="flex items-center justify-center gap-2 mt-1 mb-2">
-                  <span className="text-base font-semibold">{shownVocab[step.index].english}</span>
-                  <span className="text-[#d4a520] text-sm">{shownVocab[step.index].malayalam}</span>
-                </div>
-
-                {shownVocab[step.index].example && (
-                  <div className="bg-[var(--foreground)]/5 rounded-lg px-3 py-2 text-left">
-                    <p className="text-xs text-[var(--foreground)]/60 italic">
-                      &ldquo;{shownVocab[step.index].example}&rdquo;
-                    </p>
-                    {shownVocab[step.index].exampleTranslation && (
-                      <p className="text-[10px] text-[var(--foreground)]/30 mt-0.5">
-                        {shownVocab[step.index].exampleTranslation}
-                      </p>
-                    )}
+              <div className="w-full max-w-md relative">
+                {/* Decorative glow behind the card */}
+                <div className="absolute inset-0 bg-[#d4a520]/10 blur-[100px] rounded-full" />
+                
+                <div className="relative bg-[#162416]/60 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-8 shadow-2xl overflow-hidden">
+                  <div className="absolute top-0 right-0 p-6 opacity-5">
+                    <span className="text-8xl font-black">{step.index + 1}</span>
                   </div>
-                )}
-              </div>
+                  
+                  <div className="text-center mb-8">
+                    <p className="text-[10px] font-black text-[#d4a520] uppercase tracking-[0.3em] mb-4">
+                      New Vocabulary learned
+                    </p>
+                    <h2 className="text-5xl font-black text-white mb-2 tracking-tight">
+                      {shownVocab[step.index].german}
+                    </h2>
+                    <p className="text-sm font-medium text-white/30 italic">
+                      /{shownVocab[step.index].pronunciation}/
+                    </p>
+                  </div>
 
-              {/* Compact audio + bookmark */}
-              <div className="flex items-center gap-2 mt-2">
-                <motion.button whileTap={{ scale: 0.95 }}
-                  onClick={() => { const v = shownVocab[step.index]; try { duckAmbience(2000); } catch {} playVocabAudio(v.id).catch(() => { try { speakGerman(v.german); } catch {} }); }}
-                  className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
-                  <Volume2 className="w-3.5 h-3.5 text-[#d4a520]" />
-                </motion.button>
-                <motion.button whileTap={{ scale: 0.95 }}
-                  onClick={() => toggleBookmark(shownVocab[step.index].id)}
-                  className="w-11 h-11 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center">
-                  <Bookmark className={`w-3.5 h-3.5 ${(userProgress.bookmarkedVocab || []).includes(shownVocab[step.index].id) ? 'text-[#e94560] fill-[#e94560]' : 'text-[var(--foreground)]/40'}`} />
-                </motion.button>
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+                      <p className="text-[10px] font-bold text-white/30 uppercase tracking-widest mb-1">English</p>
+                      <p className="text-lg font-bold text-white">{shownVocab[step.index].english}</p>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+                      <p className="text-[10px] font-bold text-white/30 uppercase tracking-widest mb-1">Malayalam</p>
+                      <p className="text-lg font-bold text-[#d4a520]">{shownVocab[step.index].malayalam}</p>
+                    </div>
+                  </div>
+
+                  {shownVocab[step.index].example && (
+                    <div className="bg-black/20 rounded-2xl p-5 border border-white/5 mb-2">
+                       <div className="flex gap-3">
+                          <div className="w-8 h-8 rounded-full bg-[#d4a520]/10 flex items-center justify-center flex-shrink-0">
+                             <Volume2 className="w-3.5 h-3.5 text-[#d4a520]" />
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-white/80 leading-relaxed italic">
+                              &ldquo;{shownVocab[step.index].example}&rdquo;
+                            </p>
+                            {shownVocab[step.index].exampleTranslation && (
+                              <p className="text-[11px] font-medium text-white/30 mt-1">
+                                {shownVocab[step.index].exampleTranslation}
+                              </p>
+                            )}
+                          </div>
+                       </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Interaction Row */}
+                <div className="flex justify-center gap-4 mt-8">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => { const v = shownVocab[step.index]; try { duckAmbience(2000); } catch {} playVocabAudio(v.id).catch(() => { try { speakGerman(v.german); } catch {} }); }}
+                    className="w-16 h-16 rounded-[1.5rem] bg-[#d4a520] text-[#1b2d1b] flex items-center justify-center shadow-[0_0_20px_rgba(212,165,32,0.4)]"
+                  >
+                    <Volume2 className="w-7 h-7" />
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => toggleBookmark(shownVocab[step.index].id)}
+                    className="w-14 h-14 rounded-[1.2rem] bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl"
+                  >
+                    <Bookmark className={`w-6 h-6 ${(userProgress.bookmarkedVocab || []).includes(shownVocab[step.index].id) ? 'text-[#e94560] fill-[#e94560]' : 'text-white/40'}`} />
+                  </motion.button>
+                </div>
               </div>
             </motion.div>
           )}
@@ -1012,18 +1052,31 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 />
               </div>
 
-              {/* Encounter question */}
+              {/* Encounter question — compact, game-like */}
               <div className="flex-1 flex flex-col justify-center">
-                <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-5 mb-4">
-                  {vocabEncounter.contextGerman && (
-                    <p className="text-lg font-semibold leading-relaxed whitespace-pre-line mb-3">
-                      {vocabEncounter.contextGerman}
-                    </p>
-                  )}
-                  <p className="text-sm text-[var(--foreground)]/60">
-                    {vocabEncounter.prompt}
-                  </p>
-                </div>
+                {/* Type badge */}
+                {vocabEncounter.type && (
+                  <div className="flex justify-center mb-2">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#d4a520]/10 text-[#d4a520] border border-[#d4a520]/20">
+                      {vocabEncounter.type === 'type-it' ? '⌨️ Type It' :
+                       vocabEncounter.type === 'listen-type' ? '👂 Listen' :
+                       vocabEncounter.type === 'how-do-you-say' ? '🗣️ Say It' :
+                       vocabEncounter.type === 'spot-the-error' ? '🔍 Find Error' :
+                       vocabEncounter.type === 'mini-dialogue' ? '💬 Dialogue' :
+                       '🧠 Quick Check'}
+                    </span>
+                  </div>
+                )}
+
+                <p className="text-base font-bold text-center mb-3 leading-snug">
+                  {vocabEncounter.prompt}
+                </p>
+
+                {vocabEncounter.contextGerman && (
+                  <div className="bg-[#d4a520]/10 border border-[#d4a520]/20 rounded-xl px-4 py-2.5 mb-3 text-center">
+                    <p className="text-base font-semibold text-[#d4a520]">{vocabEncounter.contextGerman}</p>
+                  </div>
+                )}
 
                 {/* Encounter input — typing or MCQ depending on type */}
                 {(vocabEncounter.type === 'type-it' || vocabEncounter.type === 'listen-type') ? (
@@ -1300,11 +1353,54 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 />
               </div>
 
-              {/* Question */}
+              {/* Question with visual type identity */}
               <div className="flex-1 flex flex-col justify-center">
-                <h2 className="text-xl font-bold text-center mb-6 leading-snug">
-                  {highlightGerman(allExercises[step.index].question)}
-                </h2>
+                {/* Exercise type badge */}
+                {(() => {
+                  const typeThemes: Record<string, { icon: string; label: string; color: string }> = {
+                    'multiple-choice': { icon: '📝', label: 'Pick One', color: '#d4a520' },
+                    'fill-blank': { icon: '✏️', label: 'Fill In', color: '#d4a520' },
+                    'dictation': { icon: '🎧', label: 'Listen & Type', color: '#3b82f6' },
+                    'ordering': { icon: '🧩', label: 'Build It', color: '#27ae60' },
+                    'free-text': { icon: '✍️', label: 'Write It', color: '#9333ea' },
+                    'matching': { icon: '🔗', label: 'Match Up', color: '#06b6d4' },
+                    'speaking': { icon: '🎤', label: 'Say It', color: '#e94560' },
+                    'type-answer': { icon: '⌨️', label: 'Type It', color: '#f59e0b' },
+                  };
+                  const theme = typeThemes[allExercises[step.index].type] || typeThemes['multiple-choice'];
+                  return (
+                    <div className="flex justify-center mb-2">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider"
+                        style={{ backgroundColor: `${theme.color}15`, color: theme.color, border: `1px solid ${theme.color}30` }}>
+                        {theme.icon} {theme.label}
+                      </span>
+                    </div>
+                  );
+                })()}
+
+                {/* Question — chat bubble style for dialogues, card style for others */}
+                {allExercises[step.index].question.includes('🧑') || allExercises[step.index].question.includes('Person') ? (
+                  <div className="mb-4 space-y-2 max-w-sm mx-auto w-full">
+                    {allExercises[step.index].question.split('\n').filter(Boolean).map((line, i) => {
+                      const isQuestion = line.includes('🧑') || line.includes('Person A') || line.includes('says');
+                      return (
+                        <div key={i} className={`flex ${isQuestion ? 'justify-start' : 'justify-end'}`}>
+                          <div className={`max-w-[80%] px-3 py-2 rounded-2xl text-sm ${
+                            isQuestion
+                              ? 'bg-[var(--foreground)]/8 rounded-bl-sm'
+                              : 'bg-[#d4a520]/15 border border-[#d4a520]/20 rounded-br-sm'
+                          }`}>
+                            {highlightGerman(line.replace(/🧑‍?🦱?/g, '').replace(/Person [AB]:?\s*/g, '').trim())}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <h2 className="text-lg font-bold text-center mb-4 leading-snug px-2">
+                    {highlightGerman(allExercises[step.index].question)}
+                  </h2>
+                )}
 
                 {/* TYPE-ANSWER EXERCISE — production practice */}
                 {allExercises[step.index].type === 'type-answer' ? (() => {
