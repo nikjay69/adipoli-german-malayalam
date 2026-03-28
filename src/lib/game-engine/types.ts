@@ -43,7 +43,7 @@ export interface GameMoment {
   // Game challenge (for 'game' type)
   exercise?: Exercise;
   /** Which game component to use */
-  gameType?: 'swipe' | 'scramble' | 'word-bank' | 'falling' | 'bubble' | 'article-sort' | 'memory-flip' | 'quiz-show' | 'speed-round' | 'scene-explore';
+  gameType?: 'swipe' | 'scramble' | 'word-bank' | 'falling' | 'bubble' | 'article-sort' | 'memory-flip' | 'quiz-show' | 'speed-round' | 'scene-explore' | 'word-ninja' | 'listen-blast' | 'word-builder';
 
   // Auto-advance timing (for 'reaction' type)
   autoAdvanceMs?: number;
@@ -86,28 +86,27 @@ export function pickGameType(exercise: Exercise): GameMoment['gameType'] {
 
   switch (exercise.type) {
     case 'multiple-choice':
-      candidates.push('swipe', 'quiz-show');
-      // If question mentions article/der/die/das, use article-sort
+      candidates.push('word-ninja', 'listen-blast', 'quiz-show');
       if (/der|die|das|article/i.test(exercise.question)) candidates.push('article-sort');
       break;
     case 'fill-blank':
-      candidates.push(exercise.options?.length ? 'word-bank' : 'scramble', 'quiz-show');
+      candidates.push(exercise.options?.length ? 'word-ninja' : 'word-builder', 'listen-blast');
       break;
     case 'type-answer':
     case 'free-text':
-      candidates.push('scramble');
+      candidates.push('word-builder', 'word-ninja');
       break;
     case 'dictation':
-      candidates.push('falling');
+      candidates.push('listen-blast');
       break;
     case 'matching':
-      candidates.push('bubble', 'memory-flip');
+      candidates.push('memory-flip');
       break;
     case 'ordering':
-      candidates.push('scramble');
+      candidates.push('word-builder');
       break;
     default:
-      candidates.push('swipe', 'quiz-show');
+      candidates.push('word-ninja', 'listen-blast');
   }
 
   // Avoid repeating the same game type

@@ -8,7 +8,7 @@ import type { KuttanMoodImage } from '@/components/character/KuttanImage';
 import { GameButton } from '@/components/game';
 import { Confetti } from '@/components/game';
 import { ComboMeter } from '@/components/game/ComboMeter';
-import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop, ArticleSort, MemoryFlip, QuizShow, SpeedRound } from '@/components/exercise-games';
+import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop, ArticleSort, MemoryFlip, QuizShow, SpeedRound, WordNinja, ListenBlast, WordBuilder } from '@/components/exercise-games';
 import { speakGerman } from '@/lib/audio/useGermanTTS';
 import { feedbackCombo, feedbackComboBreak, feedbackWrong, feedbackCelebration } from '@/lib/feedback';
 import type { GameMoment, GameChoice } from '@/lib/game-engine/types';
@@ -326,12 +326,29 @@ function renderGame(m: GameMoment, onResult: (correct: boolean) => void) {
       return ex.options?.length
         ? <QuizShow question="" options={ex.options} correctAnswer={correct} onResult={onResult} />
         : <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
+    case 'word-ninja': {
+      const targets = [correct];
+      const ninjaDistractors = (ex.options || []).filter(o => o !== correct).slice(0, 4);
+      if (ninjaDistractors.length < 2) ninjaDistractors.push('Hallo', 'Nein', 'Danke');
+      return <WordNinja prompt={ex.question.slice(0, 60)} targets={targets} distractors={ninjaDistractors} onResult={onResult} />;
+    }
+    case 'listen-blast': {
+      const blastDistractors = (ex.options || []).filter(o => o !== correct).slice(0, 3);
+      if (blastDistractors.length < 2) blastDistractors.push('Hallo', 'Danke', 'Bitte');
+      return <ListenBlast correctWord={correct} distractors={blastDistractors} onResult={onResult} />;
+    }
+    case 'word-builder':
+      return <WordBuilder answer={correct.trim()} hint={ex.question.slice(0, 50)} onResult={onResult} />;
     case 'scramble':
-      return <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
+      return <WordBuilder hint="" answer={correct.trim()} onResult={onResult} />;
     case 'swipe':
     default:
-      return ex.options?.length
-        ? <SwipeCards question="" options={ex.options} correctAnswer={correct} onResult={onResult} />
-        : <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
+      // Default to WordNinja if we have options, WordBuilder if not
+      if (ex.options?.length) {
+        const targets = [correct];
+        const dists = ex.options.filter(o => o !== correct).slice(0, 4);
+        return <WordNinja prompt="" targets={targets} distractors={dists} onResult={onResult} />;
+      }
+      return <WordBuilder hint="" answer={correct.trim()} onResult={onResult} />;
   }
 }

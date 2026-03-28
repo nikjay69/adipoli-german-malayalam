@@ -7,3 +7,7 @@ export { ArticleSort } from './ArticleSort';
 export { MemoryFlip } from './MemoryFlip';
 export { QuizShow } from './QuizShow';
 export { SpeedRound } from './SpeedRound';
+export { SceneExplorer } from './SceneExplorer';
+export { WordNinja } from './WordNinja';
+export { ListenBlast } from './ListenBlast';
+export { WordBuilder } from './WordBuilder';
