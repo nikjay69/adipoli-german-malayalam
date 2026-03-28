@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Volume2, Bookmark } from 'lucide-react';
 import type { VocabItem, VocabEncounter } from '@/lib/content/types';
+import { speakGerman } from '@/lib/audio/useGermanTTS';
 
 interface ContextualVocabProps {
   vocab: VocabItem;
@@ -25,6 +26,14 @@ export function ContextualVocab({
   onBookmark,
 }: ContextualVocabProps) {
   const [showDetails, setShowDetails] = useState(false);
+
+  // Auto-speak the German word when card appears
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      try { speakGerman(vocab.german, 0.85); } catch { /* noop */ }
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [vocab.german]);
 
   const highlightWord = (text: string, word: string) => {
     const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');

@@ -191,4 +191,11 @@ export const GAME_STORIES: Record<string, GameStoryContext> = {
     kuttanSays: 'Language school teacher-ude matching game! German-English pair cheyyuka — fastest wins!',
     emoji: '🧩',
   },
+  'memory': {
+    scene: 'cafe',
+    title: 'Eavesdrop at the Café!',
+    narrative: 'You\'re sitting in a Berlin café. Conversations float around you in German. Can you understand what people are saying?',
+    kuttanSays: 'Shh! Café-il aarenkilum samsaarikkunnath kelkkuka machane! German understand cheyyuka — nee spy aanu!',
+    emoji: '👂',
+  },
 };

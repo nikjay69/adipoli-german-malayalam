@@ -1,14 +1,16 @@
 'use client';
 
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Trophy, Star, RefreshCw, Ear } from 'lucide-react';
+import { ArrowLeft, Trophy, Star, RefreshCw, Ear, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { CharacterGuide } from '@/components/character';
 import type { KuttanMood } from '@/components/character/Kuttan';
 import { Confetti, XPGain } from '@/components/game';
+import { GameStoryWrapper, GAME_STORIES } from '@/components/game/GameStoryWrapper';
 import { useGameStore } from '@/lib/store';
+import { useGermanTTS } from '@/lib/audio/useGermanTTS';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -454,6 +456,7 @@ function getFinalReaction(score: number, total: number) {
 export default function EavesdropGame() {
   const router = useRouter();
   const { addXP, incrementGamesPlayed } = useGameStore();
+  const { speak: speakDE } = useGermanTTS();
 
   // Game state
   const [gameState, setGameState] = useState<'intro' | 'playing' | 'reveal' | 'complete'>('intro');
@@ -479,6 +482,16 @@ export default function EavesdropGame() {
 
   // Current scenario
   const scenario = scenarios[currentRound] || null;
+
+  // Auto-speak German text when new scenario appears
+  useEffect(() => {
+    if (gameState === 'playing' && scenario) {
+      const timer = setTimeout(() => {
+        try { speakDE(scenario.germanText, { rate: 0.85 }); } catch { /* noop */ }
+      }, 400);
+      return () => clearTimeout(timer);
+    }
+  }, [gameState, currentRound, scenario, speakDE]);
 
   // ---------------------------------------------------------------------------
   // Start / Reset
@@ -595,6 +608,7 @@ export default function EavesdropGame() {
   // ---------------------------------------------------------------------------
 
   return (
+    <GameStoryWrapper story={GAME_STORIES['memory']}>
     <div className="min-h-screen px-4 py-6 max-w-2xl mx-auto relative overflow-hidden">
       {/* Confetti + XP */}
       <Confetti isActive={showConfetti} />
@@ -718,13 +732,17 @@ export default function EavesdropGame() {
               animate={{ scale: 1 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Decorative ear icon */}
-              <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#ff6b9d]/20 flex items-center justify-center">
-                <Ear className="w-4 h-4 text-[#ff6b9d]" />
-              </div>
+              {/* Listen again button */}
+              <motion.button
+                whileTap={{ scale: 0.9 }}
+                onClick={() => { try { speakDE(scenario.germanText, { rate: 0.85 }); } catch {} }}
+                className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#d4a520]/20 flex items-center justify-center"
+              >
+                <Volume2 className="w-4 h-4 text-[#d4a520]" />
+              </motion.button>
 
-              <p className="text-[10px] uppercase tracking-widest text-[var(--foreground)]/40 mb-2 font-semibold">
-                You overhear...
+              <p className="text-[10px] uppercase tracking-widest text-[var(--foreground)]/40 mb-2 font-semibold flex items-center gap-1">
+                <Ear className="w-3 h-3" /> You overhear...
               </p>
               <p className="text-lg md:text-xl font-medium text-[var(--foreground)] leading-relaxed italic">
                 &ldquo;{scenario.germanText}&rdquo;
@@ -923,5 +941,6 @@ export default function EavesdropGame() {
         )}
       </AnimatePresence>
     </div>
+    </GameStoryWrapper>
   );
 }

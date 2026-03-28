@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CharacterGuide } from '@/components/character';
 import type { DecisionPoint as DecisionPointType } from '@/lib/content/types';
 import { feedbackCorrect, feedbackWrong } from '@/lib/feedback';
+import { speakGerman } from '@/lib/audio/useGermanTTS';
 
 interface DecisionPointProps {
   decision: DecisionPointType;
@@ -14,6 +15,17 @@ interface DecisionPointProps {
 export function DecisionPoint({ decision, onComplete }: DecisionPointProps) {
   const [selected, setSelected] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
+
+  // Auto-speak the selected option's German text
+  useEffect(() => {
+    if (selected !== null && decision.options[selected]) {
+      const text = decision.options[selected].text;
+      // Speak if it contains German (has common German patterns)
+      if (/[äöüßÄÖÜ]|Guten|Ich |Wie |Danke|Bitte|Am /i.test(text)) {
+        try { speakGerman(text, 0.9); } catch { /* noop */ }
+      }
+    }
+  }, [selected, decision.options]);
 
   const handleSelect = (index: number) => {
     if (selected !== null) return;

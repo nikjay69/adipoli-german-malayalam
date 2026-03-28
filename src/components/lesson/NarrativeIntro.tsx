@@ -12,11 +12,31 @@ interface NarrativeIntroProps {
   onContinue: () => void;
 }
 
-const TIME_EMOJI: Record<string, string> = {
-  morning: '🌅',
-  afternoon: '☀️',
-  evening: '🌆',
+// Map scene types to existing images in public/images/
+const SCENE_IMAGES: Record<string, string> = {
+  'cafe': '/images/kaffee_kuchen.png',
+  'bahnhof': '/images/german_train_station.png',
+  'street': '/images/berlin_people.png',
+  'classroom': '/images/university_library.png',
+  'kitchen': '/images/breakfast_merge.png',
+  'office': '/images/office_building.png',
 };
+
+// Override for specific lesson settings
+const SETTING_IMAGE_OVERRIDES: Record<string, string> = {
+  'Berlin Hauptbahnhof': '/images/german_train_station.png',
+  'Café Einstein, Berlin': '/images/kaffeeklatsch.png',
+  'REWE Supermarkt': '/images/supermarket_checkout.png',
+  'Gasthof zum Bären': '/images/german_menu.png',
+  'WG Kitchen, Berlin': '/images/wg_living.png',
+  'Dr. Meier Praxis': '/images/doctor_waiting_room.png',
+  'Berliner Apotheke': '/images/german_apotheke.png',
+  'Bäckerei Schmidt': '/images/german_bakery.png',
+};
+
+function getSceneImage(scene: StoryScene): string | null {
+  return SETTING_IMAGE_OVERRIDES[scene.setting.name] || SCENE_IMAGES[scene.setting.sceneType] || null;
+}
 
 export function NarrativeIntro({
   scene,
@@ -25,6 +45,7 @@ export function NarrativeIntro({
   moduleIcon,
 }: NarrativeIntroProps) {
   const kuttanText = scene.kuttanIntro[Math.floor(Math.random() * scene.kuttanIntro.length)];
+  const sceneImage = getSceneImage(scene);
 
   return (
     <motion.div
@@ -33,32 +54,61 @@ export function NarrativeIntro({
       exit={{ opacity: 0 }}
       className="flex-1 flex flex-col items-center justify-center text-center px-3"
     >
-      {/* Location + title — compact header */}
-      <div className="flex items-center gap-1.5 mb-2">
-        <span className="text-lg">{moduleIcon}</span>
-        <span className="text-xs font-semibold text-[#d4a520]">{scene.setting.name}</span>
-        <span className="text-xs">{TIME_EMOJI[scene.setting.timeOfDay] || '🕐'}</span>
-      </div>
-      <h1 className="text-lg font-bold">{lessonTitle}</h1>
-      <p className="text-[var(--foreground)]/40 text-xs mb-3">{lessonTitleGerman}</p>
+      {/* Scene image card — visual-first */}
+      {sceneImage && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.1 }}
+          className="w-full max-w-sm rounded-xl overflow-hidden mb-3 relative"
+          style={{ height: '140px' }}
+        >
+          <img
+            src={sceneImage}
+            alt={scene.setting.name}
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          {/* Location + title over image */}
+          <div className="absolute bottom-0 left-0 right-0 p-3">
+            <div className="flex items-center gap-1.5 mb-0.5">
+              <span className="text-sm">{moduleIcon}</span>
+              <span className="text-[10px] font-semibold text-[#d4a520]">{scene.setting.name}</span>
+            </div>
+            <h1 className="text-base font-bold text-white leading-tight">{lessonTitle}</h1>
+            <p className="text-white/50 text-[10px]">{lessonTitleGerman}</p>
+          </div>
+        </motion.div>
+      )}
+
+      {/* Fallback when no image */}
+      {!sceneImage && (
+        <>
+          <div className="flex items-center gap-1.5 mb-1">
+            <span className="text-lg">{moduleIcon}</span>
+            <span className="text-xs font-semibold text-[#d4a520]">{scene.setting.name}</span>
+          </div>
+          <h1 className="text-lg font-bold">{lessonTitle}</h1>
+          <p className="text-[var(--foreground)]/40 text-xs mb-2">{lessonTitleGerman}</p>
+        </>
+      )}
 
       {/* Kuttan — compact */}
       <CharacterGuide messages={kuttanText} mood="excited" size="sm" />
 
-      {/* Scene description — the main content */}
+      {/* Scene description — short */}
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="mt-3 w-full max-w-sm"
+        className="mt-2 w-full max-w-sm"
       >
-        <div className="bg-gradient-to-br from-[var(--card-bg)] to-[var(--foreground)]/5 border border-[var(--card-border)] rounded-xl p-4">
-          <p className="text-sm leading-relaxed text-[var(--foreground)]/70 italic">
-            {scene.setting.description}
-          </p>
-        </div>
+        <p className="text-xs leading-relaxed text-[var(--foreground)]/60 italic px-1">
+          {scene.setting.description}
+        </p>
 
-        {/* Mission — inline */}
+        {/* Mission */}
         <div className="mt-2 flex items-center gap-1.5 justify-center">
           <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--foreground)]/30">Mission:</span>
           <span className="text-xs font-semibold text-[#27ae60]">{scene.narrative.currentObjective}</span>
