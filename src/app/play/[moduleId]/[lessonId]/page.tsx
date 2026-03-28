@@ -113,11 +113,8 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const module = getModuleById(parseInt(moduleId));
   const lesson = getLessonById(lessonId);
 
-  // Check if lesson is unlocked (computed before hooks to avoid conditional hook calls)
-  const isLessonUnlocked = (() => {
-    if (!module || !lesson) return true;
-    return checkLessonUnlocked(module.id, lesson.id, userProgress.completedLessons);
-  })();
+  // Always allow access — any lesson can be replayed/tested
+  const isLessonUnlocked = true;
 
   // If locked, redirect (wrapped in effect to avoid calling router during render)
   useEffect(() => {
