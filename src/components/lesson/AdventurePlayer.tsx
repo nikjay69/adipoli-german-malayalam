@@ -147,28 +147,47 @@ export function AdventurePlayer({
             {/* ═══ VOCAB ENCOUNTER ═══ */}
             {moment.type === 'vocab-encounter' && moment.vocab && (
               <div className="flex-1 flex flex-col items-center justify-center">
-                {/* Compact Kuttan + word */}
-                <div className="flex items-center gap-3 mb-4">
-                  <KuttanImage mood="pointing" size="xs" animate={false} />
-                  <span className="text-xs text-white/40">New word!</span>
+                {/* Kuttan reacting to the word */}
+                <div className="flex items-center gap-3 mb-3">
+                  <motion.div animate={{ rotate: [0, -5, 5, 0] }} transition={{ duration: 0.5, delay: 0.3 }}>
+                    <KuttanImage mood="excited" size="sm" animate={false} />
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}
+                    className="bg-white/5 border border-white/10 rounded-2xl rounded-bl-sm px-3 py-1.5">
+                    <p className="text-xs text-white/60">Check this out! 👀</p>
+                  </motion.div>
                 </div>
-                {/* Big word card with glow */}
-                <motion.div initial={{ scale: 0.9, y: 10 }} animate={{ scale: 1, y: 0 }}
-                  className="relative w-full max-w-[280px]">
-                  <div className="absolute inset-0 bg-[#d4a520]/10 rounded-2xl blur-xl" />
-                  <div className="relative bg-gradient-to-br from-[#2a4a2a] to-[#1b3d1b] border-2 border-[#d4a520]/40 rounded-2xl p-5 text-center">
-                    <div className="flex items-center justify-center gap-2">
-                      <h2 className="text-3xl font-black text-[#d4a520]">{moment.vocab.german}</h2>
-                      <motion.button whileTap={{ scale: 0.9 }}
-                        onClick={() => { try { speakGerman(moment.vocab!.german); } catch {} }}
-                        className="w-8 h-8 rounded-full bg-[#d4a520]/20 flex items-center justify-center">
-                        <Volume2 className="w-4 h-4 text-[#d4a520]" />
-                      </motion.button>
+
+                {/* Word card — animated reveal */}
+                <motion.div
+                  initial={{ scale: 0.5, opacity: 0, rotateY: 90 }}
+                  animate={{ scale: 1, opacity: 1, rotateY: 0 }}
+                  transition={{ type: 'spring', damping: 12, delay: 0.2 }}
+                  className="relative w-full max-w-[300px]">
+                  {/* Glow */}
+                  <div className="absolute inset-0 bg-[#d4a520]/15 rounded-3xl blur-2xl" />
+                  <div className="relative bg-gradient-to-br from-[#1a3a1a] to-[#0d2a0d] border-2 border-[#d4a520]/50 rounded-3xl overflow-hidden">
+                    {/* Top section — big word */}
+                    <div className="bg-[#d4a520]/10 px-6 pt-5 pb-4 text-center">
+                      <motion.div className="flex items-center justify-center gap-3"
+                        animate={{ scale: [1, 1.02, 1] }} transition={{ repeat: Infinity, duration: 2 }}>
+                        <h2 className="text-4xl font-black text-[#d4a520] tracking-tight">{moment.vocab.german}</h2>
+                        <motion.button whileTap={{ scale: 0.85 }}
+                          onClick={() => { try { speakGerman(moment.vocab!.german); } catch {} }}
+                          className="w-10 h-10 rounded-full bg-[#d4a520]/20 border border-[#d4a520]/30 flex items-center justify-center">
+                          <Volume2 className="w-5 h-5 text-[#d4a520]" />
+                        </motion.button>
+                      </motion.div>
+                      <p className="text-white/25 text-xs mt-1 font-mono">/{moment.vocab.pronunciation}/</p>
                     </div>
-                    <p className="text-white/30 text-xs mt-1">/{moment.vocab.pronunciation}/</p>
-                    <div className="w-12 h-px bg-white/10 mx-auto my-3" />
-                    <p className="text-white font-semibold">{moment.vocab.english}</p>
-                    <p className="text-[#d4a520]/70 text-sm">{moment.vocab.malayalam}</p>
+                    {/* Bottom section — meaning */}
+                    <div className="px-6 py-4 text-center">
+                      <p className="text-lg font-bold text-white">{moment.vocab.english}</p>
+                      <p className="text-[#d4a520] text-sm mt-0.5">{moment.vocab.malayalam}</p>
+                      {moment.vocab.example && (
+                        <p className="text-[10px] text-white/30 mt-2 italic">&ldquo;{moment.vocab.example}&rdquo;</p>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               </div>

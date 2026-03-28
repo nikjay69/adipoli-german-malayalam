@@ -364,7 +364,7 @@ export const MODULE_1: Module = {
       ],
       vocabulary: [
         { id: "vocab1-2-1", german: "ich", english: "I", malayalam: "ഞാൻ", pronunciation: "ikh (soft ch)", example: "Ich bin hier.", exampleTranslation: "I am here." },
-        { id: "vocab1-2-2", german: "Mädchen", english: "girl", malayalam: "പെൺകുട്ടി", pronunciation: "med-khen", example: "Das Mädchen spielt.", exampleTranslation: "The girl is playing." },
+        { id: "vocab1-2-2", german: "Mädchen", english: "girl", malayalam: "പെൺകുട്ടി", pronunciation: "maid-shen", example: "Das Mädchen spielt.", exampleTranslation: "The girl is playing." },
         { id: "vocab1-2-3", german: "schön", english: "beautiful", malayalam: "സുന്ദരം", pronunciation: "shöhn (round lips like 'o', say 'e')", example: "Das ist schön!", exampleTranslation: "That is beautiful!" },
         { id: "vocab1-2-4", german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "muen-shen", example: "München ist groß.", exampleTranslation: "Munich is big." },
         { id: "vocab1-2-5", german: "Straße", english: "street", malayalam: "തെരുവ്", pronunciation: "shtrah-se", example: "Die Straße ist lang.", exampleTranslation: "The street is long." },
