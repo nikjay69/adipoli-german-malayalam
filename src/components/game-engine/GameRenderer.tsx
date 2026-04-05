@@ -163,7 +163,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
             {m.type === 'reaction' && (
               <div className="flex items-end gap-3">
                 <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 0.4 }}>
-                  <KuttanImage mood={m.kuttan?.mood || 'happy'} size="sm" animate={true} grounded />
+                  <KuttanImage mood={m.kuttan?.mood || 'happy'} size="sm" animate={true} />
                 </motion.div>
                 <div className="bg-black/40 backdrop-blur-md rounded-2xl rounded-bl-sm px-3 py-2">
                   <p className="text-sm text-[#d4a520] font-bold">{m.dialogue?.text}</p>
@@ -189,7 +189,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
             {m.type === 'dialogue' && m.dialogue && (
               <div className="flex flex-col">
                 <div className="flex items-end gap-3 mb-3">
-                  <KuttanImage mood={choiceResult ? (choiceResult.mood as KuttanMoodImage) : (m.kuttan?.mood || 'thinking')} size="sm" animate={true} grounded />
+                  <KuttanImage mood={choiceResult ? (choiceResult.mood as KuttanMoodImage) : (m.kuttan?.mood || 'thinking')} size="sm" animate={true} />
                   <div className="bg-black/50 backdrop-blur-md rounded-2xl rounded-bl-sm px-4 py-3 flex-1 max-w-[260px]">
                     <p className="text-sm text-white">{choiceResult?.response || m.dialogue.text}</p>
                   </div>
@@ -234,7 +234,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
               return (
                 <div className="flex flex-col items-center text-center">
                   <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-                    <KuttanImage mood="celebrating" size="xl" animate={true} grounded />
+                    <KuttanImage mood="celebrating" size="xl" animate={true} />
                   </motion.div>
                   <motion.p initial={{ scale: 0 }} animate={{ scale: 1 }}
                     className="text-2xl font-black text-white mt-4">Level Complete!</motion.p>
