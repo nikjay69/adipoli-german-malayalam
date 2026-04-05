@@ -36,7 +36,7 @@
 │     ├── Audio layers: narration + music (ducking)       │
 │     └── Title card + chapter transition bookends        │
 │                                                          │
-│  4. Render → MP4 (720p, 30fps)                          │
+│  4. Render → MP4 (720p, 24fps)                          │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -47,8 +47,7 @@
 ### Model & Endpoint
 
 ```
-Model:     veo-3.1-generate-001 (GA)
-           veo-3.1-fast-generate-001 (GA, cheaper)
+Model:     veo-3.1-fast-generate-001 (GA, all 15 videos)
 Endpoint:  Vertex AI (us-central1)
            POST https://us-central1-aiplatform.googleapis.com/v1/
            projects/{PROJECT}/locations/us-central1/
@@ -60,11 +59,11 @@ Endpoint:  Vertex AI (us-central1)
 ```json
 {
   "instances": [{
-    "prompt": "STYLE + CHARACTER + SCENE + CAMERA + MOOD",
+    "prompt": "STYLE + CHARACTER + SCENE + CAMERA + MOOD (must be 30+ words to reduce prompt rewriter interference)",
     "referenceImages": [
-      { "image": { "bytesBase64Encoded": "..." }, "referenceType": "asset" },
-      { "image": { "bytesBase64Encoded": "..." }, "referenceType": "asset" },
-      { "image": { "bytesBase64Encoded": "..." }, "referenceType": "asset" }
+      { "image": { "bytesBase64Encoded": "...", "mimeType": "image/png" }, "referenceType": "asset" },
+      { "image": { "bytesBase64Encoded": "...", "mimeType": "image/png" }, "referenceType": "asset" },
+      { "image": { "bytesBase64Encoded": "...", "mimeType": "image/png" }, "referenceType": "asset" }
     ]
   }],
   "parameters": {
@@ -72,9 +71,10 @@ Endpoint:  Vertex AI (us-central1)
     "resolution": "720p",
     "durationSeconds": 8,
     "seed": 42,
-    "sampleCount": 2,
+    "sampleCount": 1,
     "personGeneration": "allow_adult",
-    "enhancePrompt": false
+    "negativePrompt": "No text overlays. No subtitles. No watermark. No hat. No glasses. No beard. No realistic style. No live action. No anime.",
+    "storageUri": "gs://adipoli-veo/output/"
   }
 }
 ```
@@ -83,13 +83,19 @@ Endpoint:  Vertex AI (us-central1)
 
 | Parameter | Value | Why |
 |-----------|-------|-----|
-| `resolution` | `720p` | Budget-friendly. Scene Extension most reliable at 720p. |
-| `durationSeconds` | `8` | Required when using reference images. |
-| `seed` | `42` (fixed) | Slight reproducibility improvement. Same seed across all videos. |
-| `sampleCount` | `2` | Generate 2 variants per call, pick best. Doubles cost but halves retakes. |
-| `enhancePrompt` | `false` | **CRITICAL.** Prevents Veo from auto-modifying your prompt, which introduces variation between shots. |
+| `resolution` | `720p` | Budget-friendly. 1080p available but costs more. |
+| `durationSeconds` | `8` | **REQUIRED** when using reference images. Must be exactly 8s. |
+| `seed` | `42` (fixed) | Slight reproducibility hint. Effect is reduced since Veo 3.1's prompt rewriter is always active. |
+| `sampleCount` | `1` | One variant per call. Keeps costs predictable. Retake manually if needed. |
+| `negativePrompt` | (see JSON above) | Prevents unwanted visual elements (hats, glasses, text overlays, realistic style). |
 | `personGeneration` | `allow_adult` | Required for character generation. |
 | `referenceType` | `asset` | Anchors character appearance from reference images. |
+| `storageUri` | `gs://bucket/output/` | Required for downloading generated videos. Set per-project GCS bucket. |
+| `mimeType` | `image/png` | **REQUIRED** inside each reference image object. API returns 400 without it. |
+
+> **Veo 3.1 Prompt Rewriter:** Cannot be disabled on Veo 3.x models (`enhancePrompt: false` only works on Veo 2.0). The rewriter is always active but has less impact on prompts longer than 30 words. All our prompts are 40-60+ words, which minimizes rewriting. Rely on reference images + verbatim blocks + negative prompts as primary consistency tools.
+
+> **Reference Image Constraints:** Reference images ONLY work with `aspectRatio: "16:9"` and `durationSeconds: 8`. Cannot be combined with `image` or `lastFrame` parameters. If the GA model (`veo-3.1-fast-generate-001`) returns errors, try `veo-3.1-generate-preview` as fallback.
 
 ### Scene Extension API
 
@@ -130,9 +136,9 @@ Source: Generate from existing `kuttan-happy.png` using Imagen 4 with style-matc
 
 Format: PNG, sRGB color profile, ≤10MB each.
 
-### 2. Disable enhance_prompt (Critical)
+### 2. Long Prompts to Minimize Rewriter Impact (Critical)
 
-Set `enhancePrompt: false` in every API call. Default is true, which auto-adds cinematographic terms that vary between calls, breaking consistency.
+Veo 3.1's prompt rewriter cannot be disabled. However, it has less effect on prompts over 30 words. All our initial clip prompts are 40-60+ words (STYLE + CHARACTER + SCENE + CAMERA + MOOD), which minimizes rewriting. Keep every prompt above 30 words.
 
 ### 3. Verbatim Character Block
 
@@ -179,11 +185,13 @@ Scene Extension drift is stepped:
 - Extensions 4–5: Subtle color shifts possible
 - Extensions 6+: Noticeable character drift
 
-**Rule: Maximum 4 extensions per sequence (36 seconds).** For longer sequences, reset:
+**Rule: Maximum 3 extensions per sequence (29 seconds).** For longer sequences, reset:
 1. Download the current extended video
 2. Extract the last frame
-3. Start a new initial clip using that frame as input (Frames-to-Video)
+3. Start a new initial clip using that frame as input (Frames-to-Video / image-to-video mode)
 4. Continue extending from there
+
+> **Note:** The reset uses image-to-video, NOT text-to-video with reference images. This means the reset clip inherits appearance from the last frame rather than reference images. Test this in Phase 2 pilot to confirm acceptable consistency.
 
 ### 7. Split-Shot Multi-Character Scenes
 
@@ -194,12 +202,14 @@ Videos 2, 3, 6, 9, 10, 11, 13 include secondary characters. Rules:
 
 ### 8. Negative Prompting
 
-Use `negative_prompt` parameter to prevent recurring issues:
+Use `negativePrompt` parameter (camelCase) in the `parameters` block:
 
 ```
 "No text overlays. No subtitles. No watermark. No hat. No glasses.
-No beard. No realistic style. No live action."
+No beard. No realistic style. No live action. No anime."
 ```
+
+This is already included in the API JSON template above. Do NOT append to the positive prompt — use the dedicated parameter.
 
 ### 9. Per-Shot Consistency Checklist
 
@@ -254,11 +264,13 @@ Each cinematic video follows this structure:
 
 ### Duration Targets
 
-| Video Duration | Veo Sequences | Calls per Video |
-|---------------|---------------|-----------------|
-| 45 seconds | 2 × (8s + 2×7s) = 44s + bookends | 6 Veo calls |
-| 60 seconds | 2 × (8s + 3×7s) = 58s + bookends | 8 Veo calls |
-| 90 seconds | 3 × (8s + 3×7s) = 87s + bookends | 12 Veo calls |
+| Target | Veo Footage | Bookends (Remotion) | Total | Calls |
+|--------|-------------|---------------------|-------|-------|
+| ~50s | 2 × (8s + 2×7s) = 44s | Title (3s) + Chapter (3s) = 6s | ~50s | 6 |
+| ~65s | 2 × (8s + 3×7s) = 58s | Title (3s) + Chapter (3s) + transition (1s) = 7s | ~65s | 8 |
+| ~95s | 3 × (8s + 3×7s) = 87s | Title (3s) + Chapter (3s) + transitions (2s) = 8s | ~95s | 12 |
+
+> Veo outputs at **24fps**. Set Remotion composition fps to 24 to match. Do NOT use 30fps — frame timing mismatch causes stuttering.
 
 ---
 
@@ -305,12 +317,16 @@ Generated with MusicGen (Meta, Apache 2.0, free):
 ```python
 from audiocraft.models import MusicGen
 model = MusicGen.get_pretrained('facebook/musicgen-medium')
-model.set_generation_params(duration=120)
-wav = model.generate([
-  "warm cinematic background music, soft piano and sitar fusion, "
-  "Kerala meets European influences, gentle emotional, "
-  "educational video background, ambient"
-])
+model.set_generation_params(duration=30)  # 30s max per segment for quality
+segments = []
+for i in range(4):  # Generate 4 × 30s segments
+    wav = model.generate([
+        "warm cinematic background music, soft piano and sitar fusion, "
+        "Kerala meets European influences, gentle emotional, "
+        "educational video background, ambient"
+    ])
+    segments.append(wav)
+# Crossfade segments in post (ffmpeg) for a ~2 min seamless track
 ```
 
 One track, reused across all 15 videos for sonic consistency.
@@ -416,22 +432,26 @@ export const CinematicVideo: React.FC<{ videoId: number }> = ({ videoId }) => {
 ```bash
 npx remotion render CinematicVideo --props='{"videoId":1}' \
   --codec=h264 --crf=18 --output=output/cinematic-01.mp4
+# Composition must be defined with fps: 24 to match Veo's 24fps output
 ```
 
 ---
 
 ## Budget Breakdown ($300 GCP Credits)
 
-### Veo 3.1 Costs
+### Veo 3.1 Costs (All Fast Model, sampleCount: 1)
 
-| Category | Videos | Calls | Rate | Subtotal |
-|----------|--------|-------|------|----------|
-| Standard (key emotional) | 1, 4, 13, 14, 15 | 5×8×2 = 80 | ~$1.40/call | $112 |
-| Fast (remaining) | 2,3,5,6,7,8,9,10,11,12 | 10×7×2 = 140 | ~$0.60/call | $84 |
-| Retake buffer (~25%) | — | ~55 | ~$0.80/avg | $44 |
-| **Veo subtotal** | | | | **$240** |
+Pricing: Veo 3.1 Fast = **$0.15/second** generated. Each 8s clip = $1.20. Each 7s extension = $1.05.
 
-> `×2` in calls = `sampleCount: 2` (generate 2 variants, pick best)
+| Category | Videos | Veo Calls | Cost/Call (avg) | Subtotal |
+|----------|--------|-----------|-----------------|----------|
+| 50s videos (6 calls each) | 2,3,6,7,8,10 | 6×6 = 36 | ~$1.12 | $40 |
+| 65s videos (8 calls each) | 1,4,5,9,11,12,13,14 | 8×8 = 64 | ~$1.12 | $72 |
+| 95s video (12 calls) | 15 | 12 | ~$1.12 | $13 |
+| Retake buffer (~25%) | — | ~28 | ~$1.12 | $31 |
+| **Veo subtotal** | | **112 + 28** | | **$156** |
+
+> `sampleCount: 1` — one clip per call. If quality is poor, regenerate (retake budget covers this).
 
 ### Other GCP Costs
 
@@ -459,10 +479,12 @@ npx remotion render CinematicVideo --props='{"videoId":1}' \
 
 | Category | Cost |
 |----------|------|
-| Veo 3.1 video generation | $240 |
+| Veo 3.1 Fast video generation | $156 |
 | Images + TTS + other GCP | $20 |
-| **Total** | **$260** |
-| **Remaining buffer** | **$40** |
+| **Total** | **$176** |
+| **Remaining buffer** | **$124** |
+
+> $124 buffer is generous — enough for ~110 additional Veo Fast retakes if needed, or to upgrade select emotional anchor videos (1, 4, 14, 15) to Standard model ($0.40/s) for higher quality.
 
 ---
 
@@ -472,11 +494,12 @@ npx remotion render CinematicVideo --props='{"videoId":1}' \
 
 ```bash
 # Remotion
-npx create-video@latest adipoli-video --template=blank
+npx create-video --blank adipoli-video
 cd adipoli-video && npm install @remotion/transitions
 
-# Kokoro TTS
+# Kokoro TTS (Python — generates .mp3 files as a preprocessing step)
 pip install kokoro soundfile
+# OR for Node.js integration: npm i kokoro-js
 
 # MusicGen
 pip install audiocraft
@@ -496,9 +519,9 @@ pip install ffmpeg-normalize
 2. Review: all 3 must look like the same character
 3. Generate 15 establishing shot backgrounds
 4. Generate background music with MusicGen (one track, ~2 min)
-5. Test Malayalam TTS: generate sample with `ml-IN-Chirp3-HD-Kore`
+5. Test Malayalam TTS: run `client.list_voices(language_code="ml-IN")` to confirm `ml-IN-Chirp3-HD-Kore` exists. Have fallbacks ready (Aoede, Puck, Fenrir)
 
-### Phase 2 — Pilot: Video 1 (Day 2-3, ~$20)
+### Phase 2 — Pilot: Video 1 (Day 2-3, ~$10)
 
 Full pipeline validation on Video 1 only:
 1. Generate Veo Sequence A (initial + 3 extensions)
@@ -510,7 +533,7 @@ Full pipeline validation on Video 1 only:
 
 **Gate: Do NOT proceed to Phase 3 until Video 1 pilot is approved.**
 
-### Phase 3 — Batch Production (Day 3-8, ~$230)
+### Phase 3 — Batch Production (Day 3-8, ~$130)
 
 Priority order:
 1. **Tier 1** (emotional anchors): Videos 4, 13, 14, 15
@@ -518,7 +541,7 @@ Priority order:
 3. **Tier 3** (supporting): Videos 3, 6, 7, 8, 10
 
 Per video:
-- Generate Veo sequences (download within 48 hours!)
+- Generate Veo sequences (**download immediately — clips expire after 48 hours!**)
 - Generate TTS narration
 - Compose in Remotion
 - Review against consistency checklist
@@ -551,7 +574,7 @@ Can run alongside Phase 3:
 | 48-hour clip expiry | Lose generated video | Download immediately after each generation | Re-generate (costs extra) |
 | Malayalam TTS sounds robotic | Poor viewer experience | Test multiple Chirp 3 HD voices (28 options) | Edge-tts ml-IN-SobhanaNeural (free) |
 | MusicGen output mediocre | Bad audio | Generate 5+ variants, pick best | Use royalty-free library (Kevin MacLeod) |
-| Remotion rendering slow | Delays | Render at 720p, use --concurrency flag | Pre-render overnight |
+| Remotion rendering slow | Delays | Render at 720p, use `renderMedia({ concurrency })` in Node.js API | Pre-render overnight |
 
 ---
 

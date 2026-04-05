@@ -31,6 +31,8 @@ The young Indian man from the reference images,
 - **Videos 7–12:** `wearing a neat green collared shirt, jeans, brown shoes`
 - **Videos 13–15:** `wearing a clean formal blue shirt, dark trousers, polished shoes`
 
+> **Backpack rule:** Include "carrying a small black backpack" in wide/medium shots where the backpack would be visible. Omit for close-ups and indoor seated shots where it wouldn't be seen.
+
 ### NEGATIVE PROMPT (same for all calls)
 
 ```
@@ -49,14 +51,23 @@ No beard. No realistic style. No live action. No anime.
     "resolution": "720p",
     "durationSeconds": 8,
     "seed": 42,
-    "sampleCount": 2,
+    "sampleCount": 1,
     "personGeneration": "allow_adult",
-    "enhancePrompt": false
+    "negativePrompt": "No text overlays. No subtitles. No watermark. No hat. No glasses. No beard. No realistic style. No live action. No anime.",
+    "storageUri": "gs://adipoli-veo/output/"
   }
 }
 ```
 
-Reference images: 3 Kuttan Pixar poses (front, three-quarter, profile) attached as `referenceType: "asset"` on every **initial** clip. Extensions use the previous clip as input (no reference images needed).
+> **Model:** `veo-3.1-fast-generate-001` for all 15 videos. Budget allows upgrading emotional anchors (1, 4, 14, 15) to Standard if pilot quality is acceptable with Fast.
+
+> **Prompt rewriter:** Cannot be disabled on Veo 3.1. All initial prompts are 40-60+ words, which minimizes rewriter interference. Rely on reference images + verbatim blocks + negativePrompt for consistency.
+
+> **negativePrompt:** Included in `parameters` block (camelCase). Do NOT append negative instructions to the positive prompt.
+
+Reference images: 3 Kuttan Pixar poses (front, three-quarter, profile) attached as `referenceType: "asset"` with `"mimeType": "image/png"` on every **initial** clip. Reference images require exactly 16:9 aspect ratio and 8s duration. Extensions use the previous clip as input (no reference images needed).
+
+> **Extension prompt tip:** Prefix each extension with a brief style anchor (e.g., "Continuing Pixar-style 3D animation:") to reduce style drift across consecutive extensions. Veo's extension API inherits visual context from the source clip but a text reminder helps maintain consistency.
 
 ---
 
@@ -66,7 +77,7 @@ Reference images: 3 Kuttan Pixar poses (front, three-quarter, profile) attached 
 
 **TTS:** Google Cloud TTS Chirp 3 HD — `ml-IN-Chirp3-HD-Kore` (or test alternatives: Aoede, Puck, Fenrir)
 
-Malayalam narration text below is written in English for review. Final Malayalam translation to be done before TTS generation.
+Malayalam narration text below is provided in Malayalam script with English translations in parentheses for review.
 
 ---
 
@@ -74,8 +85,9 @@ Malayalam narration text below is written in English for review. Final Malayalam
 
 | Videos | Kuttan's German | What it sounds like |
 |--------|----------------|---------------------|
-| 1–2 | Zero German | Doesn't attempt it |
-| 3–4 | First broken attempts | "Gu... Guten Tag?" with a laugh |
+| 1 | Zero German | Doesn't attempt it |
+| 2 | First broken word | "Goo... Guten Morgen?" — mangles it |
+| 3–4 | First written/spoken attempts | "Entschuldigung" (written) / "Mein Name ist Kuttan" (broken) |
 | 5–6 | Short phrases, wrong stress | "Ich bin... Kuttan. Ja?" |
 | 7–8 | Simple sentences, grammar errors | "Ich möchte ein... the ticket?" |
 | 9–10 | More confident, self-correcting | Starts a sentence, fixes it mid-way |
@@ -88,7 +100,7 @@ Malayalam narration text below is written in English for review. Final Malayalam
 ## Video 1 — Kerala Home: The Spark
 
 **Module trigger:** Course intro / Module 1 opener
-**Duration:** 60 seconds | **Veo calls:** 8 (2 sequences × 4) | **Model:** Standard
+**Duration:** ~65s (58s Veo + bookends) | **Veo calls:** 8 (2 sequences × 4) | **Model:** Fast
 **German level:** Zero — Kuttan knows nothing yet
 
 **Story:** Late evening. Kuttan watches a reel of a Malayali guy in Germany. He watches it three times. Something shifts. A decision forms.
@@ -127,9 +139,9 @@ slippers. Close-up of his face in warm lamplight. Kerala bedroom.
 Evening. Thoughtful, still expression. Soft focus background.
 ```
 
-**Extension 1 (7s):** `A slow smile spreads across his face. Not a grin — quieter. A decision forming behind his eyes.`
+**Extension 1 (7s):** `A slow smile spreads across his face. Not a grin — quieter. His gaze sharpens, jaw sets slightly with resolve.`
 
-**Extension 2 (7s):** `He sits up straighter. Looks around the room — at the lamp, the walls, the window. Seeing it differently now.`
+**Extension 2 (7s):** `He sits up straighter. Looks around the room — at the lamp, the walls, the window. His eyes scan each object with fresh curiosity.`
 
 **Extension 3 (7s):** `He picks up his phone again with new purpose. Opens it. The light on his face is warmer now. Camera slowly pulls back to show the full room.`
 
@@ -142,8 +154,8 @@ Evening. Thoughtful, still expression. Soft focus background.
 [0:40]       "But something just changed."
 [0:50]       "Kuttan's German journey starts now."
 [0:54]       "He knows zero words."
-[0:58]       "Let's fix that."
-[1:00–1:03]  CHAPTER CARD: "Chapter 1: First Steps"
+[0:56]       "Let's fix that."
+[0:61–0:65]  CHAPTER CARD: "Chapter 1: First Steps" (Remotion bookend)
 ```
 
 ### Malayalam Narration (translate to Malayalam)
@@ -167,7 +179,7 @@ Evening. Thoughtful, still expression. Soft focus background.
 
 ### Technical Notes
 - This is the **pilot video** — validate full pipeline here before batch
-- Use Veo 3.1 Standard for best quality on this first impression
+- Start with Veo 3.1 Fast. Upgrade to Standard if quality insufficient (budget allows it)
 - Both sequences need warm Kerala evening lighting — include in every extension prompt
 
 ---
@@ -175,7 +187,7 @@ Evening. Thoughtful, still expression. Soft focus background.
 ## Video 2 — Kerala Neighbourhood: First Attempt
 
 **Module trigger:** Module 2 opener
-**Duration:** 45 seconds | **Veo calls:** 6 (2 × 3) | **Model:** Fast
+**Duration:** ~50s (44s Veo + bookends) | **Veo calls:** 6 (2 × 3) | **Model:** Fast
 **German level:** Zero → first broken word
 
 **Story:** Kuttan walks to the tea stall. Shows his friend Aby what he's been practicing. Tries "Guten Morgen" — mangles it completely. Tries again.
@@ -252,7 +264,7 @@ word. Playful, warm.
 ## Video 3 — Kochi City: The Poster
 
 **Module trigger:** Module 3 opener
-**Duration:** 45 seconds | **Veo calls:** 6 (2 × 3) | **Model:** Fast
+**Duration:** ~50s (44s Veo + bookends) | **Veo calls:** 6 (2 × 3) | **Model:** Fast
 **German level:** A few words — trying phrases
 
 **Story:** Kuttan in Kochi, spots a Goethe Institut poster. Takes a photo. Notices a foreign tourist asking for directions. Catches one word: "Entschuldigung." Writes it in his notebook.
@@ -329,7 +341,7 @@ Curious, determined expression.
 ## Video 4 — Kerala Home: The Family Question
 
 **Module trigger:** Module 4 opener
-**Duration:** 60 seconds | **Veo calls:** 8 (2 × 4) | **Model:** Standard
+**Duration:** ~65s (58s Veo + bookends) | **Veo calls:** 8 (2 × 4) | **Model:** Fast
 **German level:** First full (broken) sentence attempt
 
 **Story:** Dinner table. Amma asks Kuttan to say something in German. He tries: "Mein Name ist Kuttan. Ich bin... aus Kerala." Family reacts — impressed, amused, proud.
@@ -384,7 +396,7 @@ Warm tungsten kitchen light.
 [0:36]       (father looks up)
 [0:40]       (sister laughs)
 [0:48]       "Good enough for Amma."
-[0:55–0:60]  CHAPTER CARD: "Chapter 4: Family & People"
+[0:61–0:65]  CHAPTER CARD: "Chapter 4: Family & People" (Remotion bookend)
 ```
 
 ### Malayalam Narration
@@ -395,8 +407,8 @@ Warm tungsten kitchen light.
        (Kuttan tries...)
 [0:24] "'Mein Name ist Kuttan. Ich bin aus Kerala.'"
        (Direct quote — German TTS here)
-[0:36] "അച്ഛൻ impressed ആയി. ചേച്ചി ചിരിക്കുന്നു."
-       (Father is impressed. Sister is laughing.)
+[0:36] "അച്ഛൻ impressed ആയി. അനിയത്തി ചിരിക്കുന്നു."
+       (Father is impressed. Younger sister is laughing.)
 [0:48] "അമ്മയ്ക്ക് ഇത് enough ആയിരുന്നു. പക്ഷേ കുട്ടന് ഇത് just the beginning."
        (For Amma, this was enough. But for Kuttan, this is just the beginning.)
 ```
@@ -410,7 +422,7 @@ Warm tungsten kitchen light.
 ## Video 5 — Late Night Study: The Grind
 
 **Module trigger:** Module 5 opener
-**Duration:** 60 seconds | **Veo calls:** 8 (2 × 4) | **Model:** Fast
+**Duration:** ~65s (58s Veo + bookends) | **Veo calls:** 8 (2 × 4) | **Model:** Fast
 **German level:** Drilling verbs — mechanical but building
 
 **Story:** 1 AM. Kuttan at his desk drilling verbs. Gets it wrong. Tries again. Gets it right. Circles it in his notebook. Pure determination.
@@ -465,7 +477,7 @@ shifts from concentration to realization.
 [0:42]       "Again."
 [0:48]       "ich arbeite, du arbeitest, er arbeitet."
 [0:52]       (circles it — got it)
-[0:55–0:60]  CHAPTER CARD: "Chapter 5: Daily Routines & Verbs"
+[0:61–0:65]  CHAPTER CARD: "Chapter 5: Daily Routines & Verbs" (Remotion bookend)
 ```
 
 ### Malayalam Narration
@@ -492,7 +504,7 @@ shifts from concentration to realization.
 ## Video 6 — Video Call: Someone Already There
 
 **Module trigger:** Module 6 opener
-**Duration:** 45 seconds | **Veo calls:** 6 (2 × 3) | **Model:** Fast
+**Duration:** ~50s (44s Veo + bookends) | **Veo calls:** 6 (2 × 3) | **Model:** Fast
 **German level:** Attempting real conversation for the first time
 
 **Story:** Video call with cousin Raju in Germany. Raju tests him. Kuttan stumbles, checks notebook, gets a sentence right. First glimpse of what's coming.
@@ -566,7 +578,7 @@ turning to hope.
 ## Video 7 — Kochi Mall: Practice in Public
 
 **Module trigger:** Module 7 opener
-**Duration:** 45 seconds | **Veo calls:** 6 (2 × 3) | **Model:** Fast
+**Duration:** ~50s (44s Veo + bookends) | **Veo calls:** 6 (2 × 3) | **Model:** Fast
 **German level:** Shopping phrases — errors but functional
 
 **Story:** Kuttan in a Kochi mall, practicing German on products. Whispers "Wie viel kostet das?" to a product. Shop assistant stares. Kuttan laughs it off. Keeps practicing.
@@ -639,7 +651,7 @@ hand in a "never mind" gesture. Playful, self-conscious moment.
 ## Video 8 — Kerala Home: Describing the Room
 
 **Module trigger:** Module 8 opener
-**Duration:** 45 seconds | **Veo calls:** 6 (2 × 3) | **Model:** Fast
+**Duration:** ~50s (44s Veo + bookends) | **Veo calls:** 6 (2 × 3) | **Model:** Fast
 **German level:** Full descriptive sentences — still some errors
 
 **Story:** Kuttan narrates his room in German like a tour guide. Hits a wall on "ceiling fan." Looks it up. "Einen Ventilator!" Writes it triumphantly.
@@ -712,7 +724,7 @@ something. Afternoon light. Determined expression.
 ## Video 9 — Kochi Bus Stand: Asking Directions
 
 **Module trigger:** Module 9 opener
-**Duration:** 60 seconds | **Veo calls:** 8 (2 × 4) | **Model:** Fast
+**Duration:** ~65s (58s Veo + bookends) | **Veo calls:** 8 (2 × 4) | **Model:** Fast
 **German level:** Full exchange attempt — broken but two-way
 
 **Story:** Kuttan at Kochi bus stand. Spots a lost German tourist. Hesitates, then walks up. Gives broken directions in German. Tourist says "Danke." Kuttan walks away buzzing.
@@ -767,7 +779,7 @@ listens, nodding slowly. Warm, hopeful energy.
 [0:44]       "Danke!"
 [0:48]       (Kuttan turns back, huge grin)
 [0:52]       "It worked."
-[0:55–1:00]  CHAPTER CARD: "Chapter 9: Transport & Directions"
+[0:61–0:65]  CHAPTER CARD: "Chapter 9: Transport & Directions" (Remotion bookend)
 ```
 
 ### Malayalam Narration
@@ -793,7 +805,7 @@ listens, nodding slowly. Warm, hopeful energy.
 ## Video 10 — Study Group: Teaching Others
 
 **Module trigger:** Module 10 opener
-**Duration:** 45 seconds | **Veo calls:** 6 (2 × 3) | **Model:** Fast
+**Duration:** ~50s (44s Veo + bookends) | **Veo calls:** 6 (2 × 3) | **Model:** Fast
 **German level:** Teaching — with own gaps becoming visible
 
 **Story:** Kuttan teaches friends German body parts. Gets corrected on "das Knie." Accepts the correction gracefully. Teaching reveals his own gaps.
@@ -838,7 +850,7 @@ good-natured "you got me" expression. Evening light. Warm mood.
 [0:00–0:03]  TITLE CARD: "He teaches what he knows."
 [0:10]       "Der Kopf. Die Hand. Der Bauch."
 [0:20]       (friend checks phone)
-[0:26]       "'Das Knie.' Not 'die Knie.'"
+[0:26]       "'Das Knie' — not 'der Knie' (singular)"
 [0:32]       (Kuttan laughs — "you're right")
 [0:38]       (writes correction in notebook)
 [0:42–0:45]  CHAPTER CARD: "Chapter 10: Health & Body"
@@ -850,8 +862,8 @@ good-natured "you got me" expression. Evening light. Warm mood.
        (Today he's the teacher. Teaching friends German.)
 [0:10] "'Der Kopf. Die Hand. Der Bauch.' — confident ആയി."
        ('Der Kopf. Die Hand. Der Bauch.' — Confident.)
-[0:26] "ഒരു friend correct ചെയ്തു — 'das Knie', 'die' അല്ല."
-       (A friend corrected him — 'das Knie', not 'die'.)
+[0:26] "ഒരു friend correct ചെയ്തു — 'das Knie', 'der' അല്ല."
+       (A friend corrected him — 'das Knie', not 'der'.)
 [0:32] "Accept ചെയ്തു. Notebook-ൽ fix ചെയ്തു. Teacher-ഉം student-ഉം."
        (Accepted it. Fixed it in the notebook. Teacher and student.)
 ```
@@ -865,7 +877,7 @@ good-natured "you got me" expression. Evening light. Warm mood.
 ## Video 11 — Kochi Café: A German Customer
 
 **Module trigger:** Module 11 opener
-**Duration:** 60 seconds | **Veo calls:** 8 (2 × 4) | **Model:** Fast
+**Duration:** ~65s (58s Veo + bookends) | **Veo calls:** 8 (2 × 4) | **Model:** Fast
 **German level:** Sustained, natural — not performing anymore
 
 **Story:** Kuttan at a café. German couple struggling to order. Kuttan leans over and translates — German to English for the couple, Malayalam for the waiter. Natural and unhesitating. The German man claps his shoulder.
@@ -906,7 +918,7 @@ moment.
 
 **Extension 1 (7s):** `He smiles modestly and nods. Turns back to his own table. Picks up his coffee cup. Takes a sip.`
 
-**Extension 2 (7s):** `He looks down at his notebook with a quiet smile. The café feels warmer. He goes back to studying, but something is different about his posture. More confident.`
+**Extension 2 (7s):** `He looks down at his notebook with a quiet smile. Warm golden light fills the café. He goes back to studying, sitting taller than before. More confident posture.`
 
 **Extension 3 (7s):** `Wide shot of the café. Kuttan at his table, the couple at theirs. Normal café life. But we know what just happened. Warm, golden light.`
 
@@ -919,7 +931,7 @@ moment.
 [0:42]       (German man pats his shoulder)
 [0:48]       "Danke sehr!"
 [0:52]       (turns back to his coffee — quiet smile)
-[0:55–1:00]  CHAPTER CARD: "Chapter 11: Work & Professional Life"
+[0:61–0:65]  CHAPTER CARD: "Chapter 11: Work & Professional Life" (Remotion bookend)
 ```
 
 ### Malayalam Narration
@@ -945,7 +957,7 @@ moment.
 ## Video 12 — Kerala Backwaters: The Phone Call
 
 **Module trigger:** Module 12 opener
-**Duration:** 60 seconds | **Veo calls:** 8 (2 × 4) | **Model:** Standard
+**Duration:** ~65s (58s Veo + bookends) | **Veo calls:** 8 (2 × 4) | **Model:** Fast
 **German level:** Emotional, complex German — full sentences, natural
 
 **Story:** Golden hour. Kuttan by the backwaters, calling Raju. They joke in German. A quiet moment where he looks at the water. Kerala on one side of the phone, Germany on the other.
@@ -1000,7 +1012,7 @@ nostalgic.
 [0:42]       "Ich vermisse Kerala schon jetzt."
 [0:50]       (soft smile)
 [0:54]       "He's not even gone yet."
-[0:55–1:00]  CHAPTER CARD: "Chapter 12: Hobbies, Weather & Plans"
+[0:61–0:65]  CHAPTER CARD: "Chapter 12: Hobbies, Weather & Plans" (Remotion bookend)
 ```
 
 ### Malayalam Narration
@@ -1023,8 +1035,8 @@ nostalgic.
 
 ## Video 13 — Kochi Exam Centre: Registration Day
 
-**Module trigger:** Modules 13/14 opener
-**Duration:** 60 seconds | **Veo calls:** 8 (2 × 4) | **Model:** Standard
+**Module trigger:** Modules 13–14 opener
+**Duration:** ~65s (58s Veo + bookends) | **Veo calls:** 8 (2 × 4) | **Model:** Fast
 **German level:** Near-perfect — formal, composed
 
 **Story:** Goethe Institut Kochi. Registration for A1 exam. Fills form in German. Brief German exchange with receptionist. Clean, confident. Walks out into Kochi sun.
@@ -1078,7 +1090,7 @@ daylight. Shoulders slightly back. Quiet confidence.
 [0:42]       (walks out into sunlight)
 [0:48]       (looks at confirmation)
 [0:52]       "Two weeks to go."
-[0:55–1:00]  CHAPTER CARD: "Chapters 13 & 14: Past Tense & Official Forms"
+[0:61–0:65]  CHAPTER CARD: "Chapters 13 & 14: Past Tense & Official Forms" (Remotion bookend)
 ```
 
 ### Malayalam Narration
@@ -1103,8 +1115,8 @@ daylight. Shoulders slightly back. Quiet confidence.
 
 ## Video 14 — Goethe Exam Hall: The Final Boss
 
-**Module trigger:** Modules 17/18 opener
-**Duration:** 60 seconds | **Veo calls:** 8 (2 × 4) | **Model:** Standard
+**Module trigger:** Modules 15–18 opener
+**Duration:** ~65s (58s Veo + bookends) | **Veo calls:** 8 (2 × 4) | **Model:** Fast
 **German level:** Silent — everything has been building to this
 
 **Story:** Exam day. Kuttan walks in. Sits. Exam paper face-down. He closes his eyes. One breath. Opens them. Proctor turns the paper. He's ready. No German spoken — the silence says everything.
@@ -1160,7 +1172,7 @@ determined expression.
 [0:42]       (closes eyes, one breath)
 [0:48]       "It's all in there."
 [0:54]       (paper turns over — he begins)
-[0:55–1:00]  CHAPTER CARD: "Chapters 17 & 18: Exam Day"
+[0:61–0:65]  CHAPTER CARD: "Chapters 15–18: Review & Exam Prep" (Remotion bookend)
 ```
 
 ### Malayalam Narration
@@ -1187,7 +1199,7 @@ determined expression.
 ## Video 15 — Kochi Airport: Boarding the Plane
 
 **Module trigger:** A1 Course completion
-**Duration:** 90 seconds | **Veo calls:** 12 (3 × 4) | **Model:** Standard
+**Duration:** ~95s (87s Veo + bookends) | **Veo calls:** 12 (3 × 4) | **Model:** Fast
 **German level:** Earned, effortless, joyful
 
 **Story:** BESTANDEN. Kuttan at Kochi airport with boarding pass. Calls Amma — she cries. He holds it together, barely. Walks toward gate. One last look at Kerala through the terminal window. Walks through. "A2 — Coming Soon."
@@ -1251,7 +1263,7 @@ private smile. Golden light from the terminal windows.
 
 **Extension 2 (7s):** `Camera stays on the empty spot where he stood. The terminal window still showing Kerala sky. Golden light. The space where he was is quiet now.`
 
-**Extension 3 (7s):** `Slow fade. The empty terminal dissolves. Golden warmth lingers. A feeling more than an image. Camera slowly drifts toward the window and the Kerala sky.`
+**Extension 3 (7s):** `Slow fade. The empty terminal dissolves into warm golden light. Camera slowly drifts toward the window. The Kerala sky fills the frame — coconut trees silhouetted against sunset.`
 
 ### Text Overlays
 ```
@@ -1302,7 +1314,7 @@ private smile. Golden light from the terminal windows.
 
 ### Technical Notes
 - This video uses 3 sequences (longest video)
-- Use Standard model for all 3 sequences — this is the emotional payoff
+- Uses Fast model by default. Upgrade to Standard if budget allows after pilot — this is the emotional payoff
 - Sequence C extension 2-3 (empty terminal + fade) can be done in Remotion if Veo struggles with "empty space" shots
 - The "Amma... pass aayi" line needs separate TTS generation — Google Cloud TTS `ml-IN-Chirp3-HD-[male voice]`
 - Consider generating the Kerala-German fusion music specifically for this video (separate MusicGen prompt)
@@ -1313,24 +1325,26 @@ private smile. Golden light from the terminal windows.
 
 | Video | Duration | Sequences | Veo Calls | Model | Est. Cost |
 |-------|----------|-----------|-----------|-------|-----------|
-| 1 | 60s | 2 | 8 | Standard | ~$22 |
-| 2 | 45s | 2 | 6 | Fast | ~$7 |
-| 3 | 45s | 2 | 6 | Fast | ~$7 |
-| 4 | 60s | 2 | 8 | Standard | ~$22 |
-| 5 | 60s | 2 | 8 | Fast | ~$10 |
-| 6 | 45s | 2 | 6 | Fast | ~$7 |
-| 7 | 45s | 2 | 6 | Fast | ~$7 |
-| 8 | 45s | 2 | 6 | Fast | ~$7 |
-| 9 | 60s | 2 | 8 | Fast | ~$10 |
-| 10 | 45s | 2 | 6 | Fast | ~$7 |
-| 11 | 60s | 2 | 8 | Fast | ~$10 |
-| 12 | 60s | 2 | 8 | Standard | ~$22 |
-| 13 | 60s | 2 | 8 | Standard | ~$22 |
-| 14 | 60s | 2 | 8 | Standard | ~$22 |
-| 15 | 90s | 3 | 12 | Standard | ~$34 |
-| **Total** | **~13 min** | **31** | **112** | | **~$216** |
+| 1 | ~65s | 2 | 8 | Fast | ~$9 |
+| 2 | ~50s | 2 | 6 | Fast | ~$7 |
+| 3 | ~50s | 2 | 6 | Fast | ~$7 |
+| 4 | ~65s | 2 | 8 | Fast | ~$9 |
+| 5 | ~65s | 2 | 8 | Fast | ~$9 |
+| 6 | ~50s | 2 | 6 | Fast | ~$7 |
+| 7 | ~50s | 2 | 6 | Fast | ~$7 |
+| 8 | ~50s | 2 | 6 | Fast | ~$7 |
+| 9 | ~65s | 2 | 8 | Fast | ~$9 |
+| 10 | ~50s | 2 | 6 | Fast | ~$7 |
+| 11 | ~65s | 2 | 8 | Fast | ~$9 |
+| 12 | ~65s | 2 | 8 | Fast | ~$9 |
+| 13 | ~65s | 2 | 8 | Fast | ~$9 |
+| 14 | ~65s | 2 | 8 | Fast | ~$9 |
+| 15 | ~95s | 3 | 12 | Fast | ~$13 |
+| **Total** | **~14 min** | **31** | **112** | | **~$127** |
 
-> With sampleCount: 2 and ~25% retakes: **~$260 estimated Veo cost**
+> Pricing: Veo 3.1 Fast = $0.15/sec. Initial 8s clip = $1.20, extension 7s = $1.05. sampleCount: 1.
+> With ~25% retakes (~28 calls): **~$156 estimated Veo cost**. $124 buffer remaining from $300 budget.
+> Buffer allows upgrading emotional anchors (V1, V4, V14, V15) to Standard ($0.40/s) if Fast quality is insufficient.
 
 ---
 
