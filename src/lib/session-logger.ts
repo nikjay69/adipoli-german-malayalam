@@ -104,5 +104,7 @@ export async function logSession(userId: string): Promise<void> {
     timezone: data.timezone,
     language: data.language,
     platform: data.platform,
-  }).then(() => {}).catch(() => {}); // Silent — don't break UX if logging fails
+  }).then(({ error }: { error: { message: string } | null }) => {
+    if (error) console.warn('Session log failed:', error.message);
+  }).catch(() => {}); // Network errors are expected offline
 }

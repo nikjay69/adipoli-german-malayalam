@@ -22,11 +22,11 @@ export function syncProgressToSupabase(userId: string, progress: ProgressData) {
   saveTimeout = setTimeout(async () => {
     const supabase = getClientSafe();
     if (!supabase) return;
-    await supabase
+    const { error } = await supabase
       .from('profiles')
       .update({ progress_data: progress })
-      .eq('id', userId)
-      .then(() => {});
+      .eq('id', userId);
+    if (error) console.warn('Progress sync failed:', error.message);
   }, 30000); // Debounce: save at most once per 30 seconds
 }
 

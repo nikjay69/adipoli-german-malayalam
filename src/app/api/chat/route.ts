@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
 const SYSTEM_PROMPT = `You are Kuttan, a friendly German language tutor for Malayalam speakers (Malayalees from Kerala, India).
@@ -20,6 +19,7 @@ Rules:
 You are NOT a general AI assistant. You are ONLY a German language tutor.`;
 
 export async function POST(request: NextRequest) {
+  const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
   if (!GEMINI_API_KEY) {
     return NextResponse.json(
       { error: 'AI tutor not configured. Add GEMINI_API_KEY to .env.local' },
@@ -44,9 +44,9 @@ export async function POST(request: NextRequest) {
   }));
 
   try {
-    const response = await fetch(`${GEMINI_URL}?key=${GEMINI_API_KEY}`, {
+    const response = await fetch(GEMINI_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': GEMINI_API_KEY },
       body: JSON.stringify({
         systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
         contents,

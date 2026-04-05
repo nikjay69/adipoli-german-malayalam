@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
 const SYSTEM_PROMPT = `You are an expert German A1 language teacher and speech evaluator. 
@@ -23,6 +22,7 @@ Important criteria for A1:
 `;
 
 export async function POST(request: NextRequest) {
+  const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
   if (!GEMINI_API_KEY) {
     return NextResponse.json(
       { error: 'AI checker not configured. Add GEMINI_API_KEY to .env.local' },
@@ -54,9 +54,9 @@ export async function POST(request: NextRequest) {
       `Please transcribe and evaluate the attached audio.`
     ].filter(Boolean).join('\n');
 
-    const response = await fetch(`${GEMINI_URL}?key=${GEMINI_API_KEY}`, {
+    const response = await fetch(GEMINI_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': GEMINI_API_KEY },
       body: JSON.stringify({
         systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
         contents: [

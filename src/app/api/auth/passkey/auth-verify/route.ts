@@ -90,11 +90,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate counter to detect cloned authenticators (WebAuthn spec requirement)
+    const newCounter = verification.authenticationInfo.newCounter;
+    if (newCounter > 0 && newCounter <= credential.counter) {
+      console.error('Passkey counter did not increment — possible cloned authenticator');
+      return NextResponse.json(
+        { error: 'Security check failed. This passkey may have been compromised.' },
+        { status: 400 }
+      );
+    }
+
     // Update the credential counter to prevent replay attacks
     // Use RPC function (SECURITY DEFINER) since anon can't UPDATE passkey_credentials
     await supabase.rpc('update_passkey_counter', {
       cred_id: credentialId,
-      new_counter: verification.authenticationInfo.newCounter,
+      new_counter: newCounter,
     });
 
     // Clean up the used challenge

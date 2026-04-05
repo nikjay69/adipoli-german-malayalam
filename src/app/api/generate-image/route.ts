@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const IMAGEN_API_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict';
+  'https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict';
 
 const CACHE_DIR = path.join(process.cwd(), 'public', 'generated');
 
@@ -48,9 +48,9 @@ export async function POST(request: NextRequest) {
       : `${prompt}. Illustrated style, warm colors, no text, suitable as a background for a language learning app. Atmospheric, slightly blurred for readability.`;
 
     // Call Imagen API
-    const response = await fetch(`${IMAGEN_API_URL}?key=${apiKey}`, {
+    const response = await fetch(IMAGEN_API_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
       body: JSON.stringify({
         instances: [{ prompt: styledPrompt }],
         parameters: {

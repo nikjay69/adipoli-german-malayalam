@@ -73,12 +73,13 @@ function generateId(): string {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 9);
 }
 
-// Admin credentials (hardcoded for localStorage fallback)
-const ADMIN_EMAIL = 'admin';
-const ADMIN_PASSWORD = 'Admin123';
+// Admin credentials for localStorage demo fallback (must be set via env vars)
+const ADMIN_EMAIL = process.env.NEXT_PUBLIC_DEMO_ADMIN_EMAIL;
+const ADMIN_PASSWORD = process.env.DEMO_ADMIN_PASSWORD;
 
 // Track whether onAuthStateChange has been set up
 let authListenerActive = false;
+let sessionIntervalId: ReturnType<typeof setInterval> | null = null;
 
 // Helper: build a User object from a Supabase session + profile
 function buildUser(sessionUser: { id: string; email?: string; created_at: string; user_metadata?: Record<string, string> }, profile: Record<string, unknown> | null): User {
@@ -155,9 +156,9 @@ export const useAuthStore = create<AuthState>()(
               }
             });
           }
-          // Log session every 30 minutes while active
-          if (typeof window !== 'undefined') {
-            setInterval(() => {
+          // Log session every 30 minutes while active (prevent duplicate intervals)
+          if (typeof window !== 'undefined' && !sessionIntervalId) {
+            sessionIntervalId = setInterval(() => {
               const state = get();
               if (state.isLoggedIn && state.user) {
                 logSession(state.user.id).catch(() => {});
@@ -405,17 +406,14 @@ export const useAuthStore = create<AuthState>()(
 
       // ── Logout ─────────────────────────────────────────────────────────
       logout: () => {
-        if (isSupabaseConfigured()) {
-          try {
-            const supabase = createClient();
-            // Fire and forget — the onAuthStateChange listener handles state
-            supabase.auth.signOut();
-          } catch {
-            // Fall through to local cleanup
-          }
-        }
-
         set({ user: null, isLoggedIn: false });
+
+        if (isSupabaseConfigured()) {
+          const supabase = createClient();
+          supabase.auth.signOut().catch((err: unknown) => {
+            console.error('Supabase sign-out failed:', err);
+          });
+        }
       },
 
       // ── Upgrade Plan ───────────────────────────────────────────────────
@@ -432,13 +430,15 @@ export const useAuthStore = create<AuthState>()(
               saveStoredUsers(users);
             }
           } else {
-            // Update in Supabase (fire and forget)
+            // Update in Supabase
             const supabase = createClient();
             supabase
               .from('profiles')
               .update({ plan, updated_at: new Date().toISOString() })
               .eq('id', state.user!.id)
-              .then();
+              .then(({ error }: { error: unknown }) => {
+                if (error) console.error('Failed to sync plan upgrade:', error);
+              });
           }
 
           return {
