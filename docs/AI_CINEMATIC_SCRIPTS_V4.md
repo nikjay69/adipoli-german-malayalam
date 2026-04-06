@@ -526,14 +526,14 @@ comedic.
 
 ---
 
-## Video 9 — Kochi Bus Stand: Asking Directions
-**TIER: A | Duration: ≤55s | Veo calls: 6 (2 × 3)**
+## Video 9 — Kochi Bus Stop: First Real Directions
+**TIER: A | Duration: ≤45s | Veo calls: 4 (1 × 4)**
 
 **Module trigger**: Module 9 opener
 **German level**: Two-way broken exchange
-**Story**: Bus stand. German tourist lost. Kuttan walks up. Broken German + gestures. Works. Tourist says "Danke." Kuttan walks away buzzing.
+**Story**: A quieter Kochi bus stop. One German tourist looks lost. Kuttan walks up. Broken German + gestures. It works. Tourist says "Danke." Kuttan walks away buzzing.
 
-### Sequence A — The Approach (22s Veo)
+### Sequence A — The Exchange (29s Veo)
 
 **Initial clip (8s)**:
 ```
@@ -541,53 +541,37 @@ Pixar-style 3D animation. Warm cinematic lighting, soft ambient
 occlusion, rich saturated colors. Clean render, expressive
 character animation. The young Indian man from the reference
 images, wearing a neat green collared shirt, jeans, brown shoes,
-carrying a small black backpack. Standing at a busy Kochi bus
-stand. Crowds, buses, vibrant energy. He notices a foreign
-tourist studying a map, looking confused. Wide shot.
+carrying a small black backpack. Standing near a quieter Kochi
+bus stop bench at golden hour. One foreign tourist studies a map,
+clearly confused. Limited background people. Focus stays on the
+two characters. Warm, grounded, human.
 ```
 
-**Extension 1 (7s)**: `He watches the tourist for a moment. Other people walk past ignoring them. Kuttan debates. Then squares his shoulders and walks toward the tourist.`
+**Extension 1 (7s)**: `Kuttan watches for a moment. Debates internally. Then squares his shoulders and walks over. The tourist looks up hopefully.`
 
-**Extension 2 (7s)**: `He reaches the tourist and speaks — gestures + broken German. The tourist looks uncertain at first, tilting their head.`
+**Extension 2 (7s)**: `Kuttan gestures carefully and speaks broken German. The tourist looks uncertain at first, then starts to understand. Shared gestures help bridge the gap.`
 
-### Sequence B — The Win (22s Veo)
+**Extension 3 (7s)**: `The tourist smiles and says thank you. Kuttan turns away with a huge grin, walking off with a bounce in his step. Small, earned triumph.`
 
-**Initial clip (8s)**:
-```
-Pixar-style 3D animation. Warm cinematic lighting, soft ambient
-occlusion, rich saturated colors. Clean render, expressive
-character animation. The young Indian man from the reference
-images, wearing a neat green collared shirt, jeans, brown shoes.
-Medium shot at the bus stand. He gestures enthusiastically,
-pointing directions. The tourist nods, smiling broadly.
-```
-
-**Extension 1 (7s)**: `The tourist waves gratefully and walks off in the direction Kuttan pointed. Kuttan watches them go. Stands still for a moment.`
-
-**Extension 2 (7s)**: `He turns back. A huge grin spreads across his face. Walks away with a bounce in his step. Camera holds on his smiling face.`
-
-### Text Overlays (7 lines — Tier A budget)
+### Text Overlays (5 lines — Tier A budget)
 ```
 [0:00]  "A German tourist. Lost. In Kochi."
-[0:12]  "Kuttan walks up."
-[0:20]  "Geradeaus... dann links?"
-[0:28]  (gestures + broken German)
-[0:36]  "Danke!"
-[0:42]  (huge grin)
-[0:50]  Chapter 9: Transport & Directions
+[0:14]  "Geradeaus... dann links?"
+[0:24]  (shared gestures)
+[0:30]  "Danke!"
+[0:38]  Chapter 9: Transport & Directions
 ```
 
-### Malayalam Narration (4 bursts)
+### Malayalam Narration (3 bursts)
 ```
-[0:03]  "ഒരു German tourist. Kochi bus stand-ൽ lost."
-[0:12]  "കുട്ടൻ ആലോചിക്കുന്നു... try ചെയ്യണോ? — അതെ."
-[0:24]  "ആദ്യത്തെ real German conversation."
-[0:36]  "Danke. It worked."
+[0:03]  "ഒരു German tourist. Kochi-യിൽ lost."
+[0:14]  "കുട്ടൻ try ചെയ്യുന്നു. ആദ്യത്തെ real German conversation."
+[0:30]  "Danke. It worked."
 ```
 
 ### Audio
-- Ambient: bus horns, crowd noise, announcements
-- Music: builds to triumphant moment at "Danke"
+- Ambient: lighter roadside ambience, fewer crowd sounds, distant bus movement
+- Music: small triumphant swell at the "Danke" moment
 
 ---
 
@@ -678,7 +662,11 @@ café lighting.
 ### Malayalam Narration (3 bursts)
 ```
 [0:03]  "ഇനി ആലോചിച്ച് നിൽക്കുന്നില്ല."
-[0:16]  "German-ൽ couple-നോടും Malayalam-ൽ waiter-നോടും### Audio
+[0:16]  "German-ൽ couple-നോടും Malayalam-ൽ waiter-നോടും. Smooth ആയി."
+[0:30]  "ഇത് performance അല്ല. Just speaking."
+```
+
+### Audio
 - Ambient: espresso machine, soft café chatter
 - Music: warm, confident, swells at shoulder pat
 

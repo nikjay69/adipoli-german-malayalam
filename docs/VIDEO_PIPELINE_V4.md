@@ -75,6 +75,9 @@ Before any video generation begins, ALL of the following must be confirmed:
 - [ ] ffmpeg installed and verified
 - [ ] Remotion project bootstrapped (`npx create-video --blank adipoli-video`)
 - [ ] Download script tested: can pull from GCS to local `veo-clips/` within 10 minutes
+- [ ] Download script is automated inside the generation pipeline with retry logic (at least 5 retries) and hard failure alerts
+- [ ] "Amma... pass aayi" tested across at least 3 Malayalam voices before any pilot generation
+- [ ] Fine-motor action test completed: character writing in notebook and handling a phone both look acceptable in Veo Fast
 
 **Gate 0 owner**: automated pre-flight script. Run before Phase 1.
 
@@ -162,7 +165,11 @@ After pilot approval, produce in this order:
 
 | Priority | Video | Why Tier A | Reason for Order |
 |---|---|---|---|
-| 1 | **9** | Bus stand / tourist / first real German conversation | Emotional high point; tests multi-character split-shot |
+| 1 | **4** | Family dinner / Amma moment | Emotional anchor; intimate indoor scene, lower technical risk |
+| 2 | **12** | Backwaters / phone call | Quiet emotional; strong visual payoff with lower crowd complexity |
+| 3 | **14** | Exam hall / silence | Tests pure cinematic tension; no music risk |
+| 4 | **9** | First real German conversation | Important story beat, but technically harder due to multi-character interaction |
+| 5 | **15** | Airport / ending | Highest risk; do last so all learnings apply |
 | 2 | **4** | Family dinner / Amma moment | Emotional anchor; tests intimate indoor family scene |
 | 3 | **12** | Backwaters / phone call | Quiet emotional; tests natural outdoor + phone audio |
 | 4 | **14** | Exam hall / silence | Tests pure cinematic tension; no music risk |
@@ -180,7 +187,7 @@ After each Tier A video:
 
 | Video | Hard Cap | Rationale |
 |---|---|---|
-| 9 | ≤55s | Strong story, can fill 55s |
+| 9 | ≤45s | Must stay simpler than v3/v4 draft; multi-character complexity needs tighter runtime |
 | 4 | ≤55s | Family dinner has natural warmth |
 | 12 | ≤50s | Quiet beats; overlong = boring |
 | 14 | ≤45s | Tension works in less time |
@@ -295,6 +302,8 @@ After any sequence extension:
 |---|---|---|
 | Kuttan drift after 2 extensions | Reset sequence from last frame | Drift visible in last 3s |
 | Kuttan drift after reset | Abandon that sequence, simplify to still-image + Ken Burns | Reset clip still shows drift |
+| Malayalam TTS fails emotional test on the Amma line | Switch to human voice for all key Malayalam anchor lines | 3 tested voices all sound robotic / IVR-like |
+| Fine-motor writing action looks broken | Rewrite scene beats to avoid writing close-ups | Hand or pen action looks warped in pilot motion test |
 | Narration voice sounds robotic | Switch voice, re-record all Tier A narrations | Any 2 reviewers flag same voice |
 | Tier A video fails emotional test | Move to Tier B duration/approach | <60% emotional rating from test audience |
 | Budget exceeds $200 before Video 12 | Switch Tier B to Standard model for Tier A only | Budget tracker shows >$200 at Video 9 |
@@ -362,6 +371,12 @@ cd adipoli-video && npm install @remotion/transitions
 
 # 5. Test full download pipeline
 python scripts/test-gcs-download.py
+
+# 6. Test the key emotional line before any pilot render
+python scripts/test-amma-line.py
+
+# 7. Test fine-motor actions in Veo Fast
+npx tsx scripts/test-motion-risk.ts --action writing --action phone
 ```
 
 ### Phase 1 — Pilot (Day 2–3, ~$20)
@@ -371,7 +386,7 @@ python scripts/test-gcs-download.py
 - **Kill Gate A**: must pass before Tier A
 
 ### Phase 2 — Tier A (Day 4–7, ~$80)
-- Video 9 → QA → Video 4 → QA → Video 12 → QA → Video 14 → QA → Video 15 → QA
+- Video 4 → QA → Video 12 → QA → Video 14 → QA → Video 9 → QA → Video 15 → QA
 - Download immediately after each generation
 - Budget check after Video 9: if >$100 used, evaluate upgrade strategy
 
