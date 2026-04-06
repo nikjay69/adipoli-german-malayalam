@@ -1,22 +1,22 @@
 # AI Cinematic Scripts — Adipoli German: A1 (v4.0)
 > Kuttan's Journey: Kerala → Kochi Airport → Boarding the Plane
-> Version: 4.0 | Updated: 2026-04-05
-> Veo 3.1 + Pixar 3D Style + Streamlined Narration + Hard Duration Caps
+> Version: 4.1 | Updated: 2026-04-06
+> Veo 3.1 + Pixar 3D Style + Character-First Audio + Hard Duration Caps
 >
 > **Tier A**: 1, 4, 9, 12, 14, 15 (premium production)
 > **Tier B**: 2, 3, 6, 7, 8, 10, 11, 13 (simplified sequences)
 
 ---
 
-## Overlay Budget Rules (v4 Change)
+## Audio + Overlay Rules (v4.1 Change)
 
-| Tier | Max text overlay lines | Narration budget |
+| Tier | Max text overlay lines | Spoken line budget |
 |---|---|---|
-| Tier A | **8 lines** across all sequences | Max 5 narration bursts |
-| Tier B | **5 lines** across all sequences | Max 3 narration bursts |
+| Tier A | **8 lines** across all sequences | 2–5 Kuttan lines max |
+| Tier B | **5 lines** across all sequences | 1–3 Kuttan lines max |
 
-**Rule**: If an overlay line can be removed without losing story clarity, remove it.
-Text overlays should punctuate, not narrate. Let the images and pacing carry emotional weight.
+**Rule**: Kuttan should speak in every video.
+Narrator is optional. Text overlays should punctuate, not replace character voice.
 
 ---
 
@@ -70,6 +70,15 @@ No beard. No realistic style. No live action. No anime.
 **Model**: `veo-3.1-fast-generate-001` for all videos. Upgrade to Standard only for Video 15 if Fast quality is insufficient.
 
 ---
+
+## Character Voice Rule
+
+Kuttan is the primary voice of the series.
+That means:
+- he should speak in all 15 videos
+- narrator is optional, not structurally required
+- supporting voices appear only when story needs them
+- voice consistency matters more than narration density
 
 ## German Progression (unchanged from v3)
 
@@ -144,12 +153,11 @@ bedroom. Evening. Thoughtful expression. Soft focus background.
 [0:52]  Chapter 1: First Steps
 ```
 
-### Malayalam Narration (4 bursts)
+### Kuttan Voice
 ```
-[0:03]  "ഒരു സാധാരണ വൈകുന്നേരം."
-[0:12]  "ജർമ്മനിയിൽ ഒരു മലയാളി ചേട്ടൻ. Frankfurt-ൽ നടക്കുന്നു, German-ൽ സംസാരിക്കുന്നു."
-[0:28]  "കുട്ടൻ മൂന്ന് തവണ replay ചെയ്തു. എന്തോ ഒന്ന് മാറി."
-[0:38]  "ഇവിടെ നിന്നാണ് തുടങ്ങുന്നത്."
+[0:10]  "ഇവൻ ജർമ്മനിയിൽ ജീവിക്കുകയാണ്... Frankfurt-ൽ നടക്കുന്നു... German സംസാരിക്കുന്നു."
+[0:24]  "മൂന്നാം തവണയും replay ചെയ്തു. എന്തോ ഒന്ന് ഉള്ളിൽ മാറി."
+[0:38]  "Zero German. പക്ഷേ ഞാൻ തുടങ്ങും."
 ```
 
 ### Audio
@@ -194,11 +202,11 @@ parked scooters. Warm afternoon. Wide shot, gentle tracking.
 [0:38]  Chapter 2: Introducing Yourself
 ```
 
-### Malayalam Narration (3 bursts)
+### Kuttan Voice
 ```
-[0:03]  "മൂന്നാം ദിവസം. ചായക്കടയിൽ."
-[0:14]  "ആദ്യത്തെ German word try ചെയ്യുന്നു. കുളമായി. വീണ്ടും try ചെയ്യുന്നു."
-[0:28]  "ഇത്തവണ better ആയി!"
+[0:04]  "മൂന്നാം ദിവസം. ചായക്കടയിൽ practice തുടങ്ങാം."
+[0:18]  "Goo... Guten Morgen? Ayyo. വീണ്ടും."
+[0:28]  "Guten Morgen! ഹാ... ഇതാണ് better."
 ```
 
 ### Audio
@@ -306,12 +314,11 @@ mouth forming unfamiliar German words. Family watching.
 [0:50]  Chapter 4: Family & People
 ```
 
-### Malayalam Narration (4 bursts)
+### Dialogue / Monologue
 ```
-[0:03]  "അമ്മ German കേൾക്കണം."
-[0:14]  "'Mein Name ist Kuttan. Ich bin aus Kerala.' — കുട്ടൻ try ചെയ്യുന്നു."
-[0:34]  "അച്ഛൻ impressed ആയി. അനിയത്തി ചിരിക്കുന്നു. അമ്മ claps."
-[0:44]  "ഇത് just the beginning."
+Kuttan: [0:12] "അമ്മാ... കേൾക്കണേ. ഞാൻ try ചെയ്യാം."
+Kuttan: [0:20] "Mein Name ist Kuttan. Ich bin... aus Kerala."
+Kuttan: [0:42] "ശരി. ഒക്കെ തുടങ്ങിയത് മാത്രം."
 ```
 
 ### Audio
@@ -370,11 +377,11 @@ realization.
 [0:44]  Chapter 5: Daily Routines & Verbs
 ```
 
-### Malayalam Narration
-**Minimal — only 2 short bursts. Let the silence work.**
+### Kuttan Voice
+**Minimal. Let the scene breathe.**
 ```
-[0:05]  "രാത്രി ഒരു മണി. ഓരോ വാക്കും."
-[0:32]  "ഇത്തവണ ശരിയായി. എല്ലാവരും ഉറങ്ങിക്കഴിഞ്ഞപ്പോൾ."
+[0:10]  "ich arbeite... du arbeitest... അല്ലേ... വീണ്ടും."
+[0:32]  "ഇത്തവണ ശരി. ഒന്ന് ഒന്ന് കയറിക്കൊണ്ടിരിക്കുന്നു."
 ```
 
 ### Audio
@@ -418,11 +425,11 @@ screen. Night. He listens intently.
 [0:36]  Chapter 6: Food & Ordering
 ```
 
-### Malayalam Narration (3 bursts)
+### Dialogue / Monologue
 ```
-[0:03]  "Cousin Raju. Germany-യിൽ രണ്ട് വർഷമായി."
-[0:14]  "Raju test ചെയ്യുന്നു. കുട്ടൻ stumble ചെയ്യുന്നു. Notebook check ചെയ്യുന്നു."
-[0:28]  "ആദ്യത്തെ full sentence — ശരിയായി!"
+Kuttan: [0:08] "Raju, slow ആയി ചോദിക്കണേ..."
+Kuttan: [0:18] "Ich... möchte... ein... wait..."
+Kuttan: [0:28] "Ich möchte Kaffee, bitte."
 ```
 
 ### Audio
@@ -562,11 +569,11 @@ two characters. Warm, grounded, human.
 [0:38]  Chapter 9: Transport & Directions
 ```
 
-### Malayalam Narration (3 bursts)
+### Dialogue / Monologue
 ```
-[0:03]  "ഒരു German tourist. Kochi-യിൽ lost."
-[0:14]  "കുട്ടൻ try ചെയ്യുന്നു. ആദ്യത്തെ real German conversation."
-[0:30]  "Danke. It worked."
+Kuttan: [0:10] "Excuse me... maybe I can help."
+Kuttan: [0:14] "Geradeaus... dann links?"
+Kuttan: [0:32] "Yes! Work ആയി!"
 ```
 
 ### Audio
@@ -837,8 +844,11 @@ determined.
 [0:44]  Chapters 15–18: Review & Exam Prep
 ```
 
-### Malayalam Narration
-**None. Pure silence. This is the most powerful version of this video.**
+### Kuttan Voice
+**Almost none. One line max if the cut needs it.**
+```
+[0:34]  "എല്ലാം ഉള്ളിലുണ്ട്."
+```
 
 ### Audio
 - **Complete silence** — clock ticking, subtle paper shuffle only
@@ -918,16 +928,16 @@ Golden light from the terminal windows.
 [1:00]  "Herzlichen Glückwunsch. A2 — Coming Soon."
 ```
 
-### Malayalam Narration (3 bursts)
+### Dialogue / Monologue
 ```
-[0:06]  "BESTANDEN. Pass ആയി."
-[0:22]  "അമ്മയെ call ചെയ്യുന്നു. 'Amma... pass aayi.'"
-[0:42]  "ഒരു last look. Kerala sky. Coconut trees. നടന്നു. കടന്നു."
+Kuttan: [0:06] "BESTANDEN... pass ആയി."
+Kuttan: [0:22] "അമ്മാ... പാസ് ആയി."
+Kuttan: [0:42] "Kerala... ഞാൻ വരാം. പക്ഷേ ഇപ്പോൾ പോകണം."
 ```
 
 ### Audio Direction
 - [0:00–0:20]: Airport ambient — PA announcements, rolling suitcases. Near silence.
-- [0:22–0:40]: **"Amma... pass aayi."** — ONE spoken line in all 15 videos. Use Google Cloud TTS `ml-IN-Chirp3-HD-Kore` or best-selected voice. Emotional, quiet, earned. Not performed — felt.
+- [0:22–0:40]: **"അമ്മാ... പാസ് ആയി."** — real voice preferred. ElevenLabs only if it genuinely sounds human.
 - [0:42–1:00]: Kerala-German fusion score begins — sitar and piano, building slowly
 - [1:00–end]: Full emotional resolution. Score swells and fades as gate closes.
 - **This is the audio climax of the entire course. Do not rush it.**
@@ -935,7 +945,7 @@ Golden light from the terminal windows.
 ### Technical Notes
 - Only video that earns ≥70s runtime
 - Consider upgrading to Standard model if budget allows after pilot approval
-- Generate "Amma... pass aayi" in 3 variants; pick the most emotionally restrained one
+- Real voice is preferred for the Amma call beat and any line that needs emotional authenticity
 - Sequence C extension 2 (empty terminal + fade) can be done in Remotion if Veo struggles with "empty space" shots
 
 ---
@@ -985,5 +995,5 @@ Golden light from the terminal windows.
 
 ---
 
-> v4.0 — Pilot-gated production, streamlined overlays, Tier A/B separation, hardened emotional pacing, narration budget per tier
-> Changes from v3: overlay budgets enforced, narration trimmed, Tier A/B production differentiation, duration caps, silence rules for Videos 5 and 14
+> v4.1 — Character-first audio model, Kuttan speaks in every video, narrator optional, real voice treated as first-class
+> Changes from v4.0: Kuttan-centered spoken structure, spoken-line budgets replace narration budgets, real voice/ElevenLabs-first audio direction

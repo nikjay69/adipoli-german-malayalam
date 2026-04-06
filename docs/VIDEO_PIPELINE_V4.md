@@ -1,6 +1,6 @@
 # Video Pipeline — Technical Plan v4.0
-> Adipoli German A1 | Updated: 2026-04-05
-> Pixar 3D Style | Veo 3.1 + Remotion + Kokoro/Chirp 3 HD
+> Adipoli German A1 | Updated: 2026-04-06
+> Pixar 3D Style | Imagen + Veo 3.1 + ElevenLabs/Real Voice + Remotion
 > Budget: $300 GCP Trial Credits
 
 ---
@@ -17,6 +17,7 @@
 | No explicit kill criteria | **Every gate has hard pass/fail criteria** |
 | Overly dense text overlays in scripts | **Overlay budget per video: max 8 lines** |
 | Malayalam TTS voice untested | **Voice selection before any batch work** |
+| Audio strategy assumed TTS-first narration | **Voice becomes an art-directed layer: ElevenLabs or real voice are first-class options** |
 | Clip expiry risk (48h) mentioned but not actioned | **Immediate download + local backup as step 1 of every generation** |
 
 ---
@@ -28,8 +29,8 @@
 │                    PRE-PRODUCTION                        │
 │  Imagen 4 → Kuttan reference images (3 poses)           │
 │  Imagen 4 → 15 establishing shot backgrounds            │
-│  MusicGen → Background music track (Kerala-German)      │
-│  Voice test → Select best Malayalam TTS voice           │
+│  MusicGen / curated score → Background music palette    │
+│  Voice test → ElevenLabs or real voice selection        │
 │  PILOT GATE 0 → All above must pass before Phase 2      │
 └──────────────────────┬──────────────────────────────────┘
                        │
@@ -66,12 +67,16 @@ Before any video generation begins, ALL of the following must be confirmed:
 - [ ] All 3 reference images reviewed: same person, correct style, no drift
 - [ ] Establishing shot backgrounds generated (at least 3 test shots)
 - [ ] MusicGen tested: generates 30s clip, quality acceptable
-- [ ] Malayalam TTS voice selected:
-      Run `client.list_voices(language_code="ml-IN")`
-      Test at least 3 voices with a 50-word narration sample
-      Select best voice — lock it in for all Tier A
-      Fallback voices: `ml-IN-Chirp3-HD-Kore`, `ml-IN-Chirp3-HD-Aoede`, `ml-IN-Chirp3-HD-Puck`
-- [ ] Kokoro TTS installed and test English narration generated
+- [ ] Kuttan voice path selected before production:
+      choose one of:
+      - ElevenLabs Kuttan voice
+      - real recorded Kuttan voice
+- [ ] If using ElevenLabs: generate 3 short Kuttan test lines and lock one voice
+- [ ] If using real voice: record 3 short Kuttan test lines and approve delivery style
+- [ ] Supporting voice policy decided:
+      - Amma: real voice preferred for emotional scenes
+      - narrator: optional, not required everywhere
+      - side characters: only when story needs them
 - [ ] ffmpeg installed and verified
 - [ ] Remotion project bootstrapped (`npx create-video --blank adipoli-video`)
 - [ ] Download script tested: can pull from GCS to local `veo-clips/` within 10 minutes
@@ -100,8 +105,8 @@ Steps:
 1. Generate Sequence A (initial + 2 extensions = 22s Veo)
 2. Generate Sequence B (initial + 2 extensions = 22s Veo)
 3. **Download immediately** to `veo-clips/v1-a.mp4`, `v1-b.mp4`
-4. Generate Malayalam narration (~60s)
-5. Generate German phrase audio
+4. Generate Kuttan voice line(s) using ElevenLabs or real voice recording
+5. Generate any required supporting audio (German phrase / ambient / score)
 6. Compose in Remotion: title card → A → transition → B → chapter card
 7. Render → MP4
 8. Full QA (see checklist below)
@@ -146,11 +151,12 @@ After Videos 1 and 5 are rendered, evaluate ALL of the following:
 - [ ] No music needed — silence correct choice confirmed
 - [ ] Character consistency across all 4 clips
 
-#### Narration QA (Video 1 only)
-- [ ] Malayalam TTS voice sounds warm, not robotic
-- [ ] Prosody natural for storytelling register
+#### Voice QA (Video 1 only)
+- [ ] Kuttan voice sounds human and emotionally believable
+- [ ] Voice delivery matches character age and tone
 - [ ] German phrase audio correct accent
-- [ ] Audio levels balanced (narration > music)
+- [ ] Audio levels balanced (voice > music when needed)
+- [ ] Scene still works if narration is reduced or removed
 
 **Pass criteria**: ≥80% of checklist items pass.
 **Fail = pivot, not retry**: If consistency fails, adjust reference images or style prompts. If narration fails, select different voice. If pacing fails, cut duration targets.
@@ -218,35 +224,56 @@ Tier B videos use:
 
 ---
 
-## Narration System — Strengthened
+## Audio System — Character-First, Not TTS-First
+
+### Core Principle
+
+Automation can handle a lot of the pipeline:
+- reference images
+- Veo shot generation
+- download / asset handling
+- assembly in Remotion
+- timing and export
+
+But **voice is the art-directed layer**.
+The system should assume:
+- Kuttan speaks in every video
+- one consistent Kuttan voice must carry the full series
+- real voice is a first-class option, not a fallback embarrassment
 
 ### Voice Selection is Phase 0, Not Phase 3
 
-In v3, narration was deprioritized. In v4:
+**Step 0 (before any video generation)**: test and lock the Kuttan voice path.
 
-**Step 0 (before any video generation)**: Generate 5 test narration samples using different voices. Review with ear, not just log. Select and lock voice.
+Preferred order:
+1. **ElevenLabs Kuttan voice** — if it sounds natural and emotionally flexible
+2. **Real recorded Kuttan voice** — if ElevenLabs does not feel premium enough
+3. **Synthetic Google TTS** — prototype only, not final emotional delivery
 
-Test voices in this order:
-1. `ml-IN-Chirp3-HD-Kore` — primary candidate
-2. `ml-IN-Chirp3-HD-Aoede` — if Kore sounds too formal
-3. `ml-IN-Chirp3-HD-Puck` — if warmer tone needed
-4. `af_heart` (Kokoro) — if Cloud TTS Malayalam is unsatisfactory
+### Audio Principles
 
-### Narration Principles
+1. **Kuttan is the primary voice across the series**
+2. **Narrator is optional, not mandatory**
+3. **Use dialogue/monologue as the default cartoon mode**
+4. **Keep spoken lines short and purposeful**
+5. **Use silence, ambient, and score to prevent audio fatigue**
+6. **German phrases always remain correct and controlled**
 
-1. **Warm storyteller, not teacher voice**
-2. **Short lines**: max 120 characters per narration burst
-3. **German phrases always in German audio**, never narrated in Malayalam
-4. **Use narration only where visuals don't carry**: emotional context, inner state, story transition
-5. **Videos 5, 12, 14**: minimal or no narration — let visuals + ambient carry
+### Recommended Voice Roles
+
+- **Kuttan**: same voice in all 15 videos
+- **Amma**: real voice preferred for emotional scenes
+- **Narrator**: optional; use only where structure benefits
+- **Supporting characters**: minimal, only where story requires them
 
 ### Audio Layers (in Remotion)
 
 ```
-Layer 1: Background music (0.15–0.25 volume, loop)
-Layer 2: Narration (0.80–0.90 volume, per-segment)
-Layer 3: Ambient (0.05–0.10 volume, loop)
-Music ducks to 0.08 during narration
+Layer 1: Background music / score palette
+Layer 2: Character voice (Kuttan first)
+Layer 3: Ambient world sound
+Layer 4: Optional narrator or supporting voice
+Music ducks under dialogue/monologue when needed
 ```
 
 ---
@@ -302,6 +329,7 @@ After any sequence extension:
 |---|---|---|
 | Kuttan drift after 2 extensions | Reset sequence from last frame | Drift visible in last 3s |
 | Kuttan drift after reset | Abandon that sequence, simplify to still-image + Ken Burns | Reset clip still shows drift |
+| ElevenLabs Kuttan voice feels fake or emotionally weak | Switch to real recorded Kuttan voice | Voice test fails premium/character test |
 | Malayalam TTS fails emotional test on the Amma line | Switch to human voice for all key Malayalam anchor lines | 3 tested voices all sound robotic / IVR-like |
 | Fine-motor writing action looks broken | Rewrite scene beats to avoid writing close-ups | Hand or pen action looks warped in pilot motion test |
 | Narration voice sounds robotic | Switch voice, re-record all Tier A narrations | Any 2 reviewers flag same voice |
@@ -362,8 +390,8 @@ npx tsx scripts/pre-flight-check.ts
 # 2. Generate and review Kuttan reference images
 npx tsx scripts/generate-images.ts --type reference
 
-# 3. Select and lock Malayalam TTS voice
-python scripts/test-tts-voices.py  # generates 5 test samples
+# 3. Select and lock Kuttan voice path
+python scripts/test-kuttan-voice.py
 
 # 4. Bootstrap Remotion project
 npx create-video --blank adipoli-video
@@ -428,7 +456,7 @@ npx tsx scripts/generate-images.ts --type reference   # Kuttan references
 
 # Day 2: Pilot
 npx tsx scripts/generate-veo.ts --video 1  # then download immediately
-npx tsx scripts/generate-narration.ts --video 1
+python scripts/generate-kuttan-voice.py --video 1
 npx remotion render CinematicVideo --props='{"videoId":1}'
 # QA → Kill Gate A
 
