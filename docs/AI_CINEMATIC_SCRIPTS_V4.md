@@ -76,9 +76,10 @@ No beard. No realistic style. No live action. No anime.
 Kuttan is the primary voice of the series.
 That means:
 - he should speak in all 15 videos
-- narrator is optional, not structurally required
+- narrator should be avoided by default
 - supporting voices appear only when story needs them
 - voice consistency matters more than narration density
+- within one finished video, do not mix real Kuttan voice and ElevenLabs Kuttan voice
 
 ## German Progression (unchanged from v3)
 
@@ -850,6 +851,15 @@ determined.
 [0:34]  "എല്ലാം ഉള്ളിലുണ്ട്."
 ```
 
+### Safer Shot Note
+Avoid close-up pen-to-paper writing as the emotional center of the scene.
+Prefer:
+- Kuttan’s eyes
+- breathing
+- posture
+- exam paper reveal
+- implied writing instead of hand-detail hero shots
+
 ### Audio
 - **Complete silence** — clock ticking, subtle paper shuffle only
 - **No music** — this is the one video that earns and demands complete silence
@@ -946,6 +956,7 @@ Kuttan: [0:42] "Kerala... ഞാൻ വരാം. പക്ഷേ ഇപ്പ�
 - Only video that earns ≥70s runtime
 - Consider upgrading to Standard model if budget allows after pilot approval
 - Real voice is preferred for the Amma call beat and any line that needs emotional authenticity
+- If this video uses real Kuttan voice, use real Kuttan voice for the full video — do not mix voice sources inside the scene
 - Sequence C extension 2 (empty terminal + fade) can be done in Remotion if Veo struggles with "empty space" shots
 
 ---

@@ -65,6 +65,11 @@ Before any video generation begins, ALL of the following must be confirmed:
 - [ ] GCS bucket `gs://adipoli-veo/output/` created and writable
 - [ ] Kuttan reference images generated (3 poses, Pixar style, consistent character)
 - [ ] All 3 reference images reviewed: same person, correct style, no drift
+- [ ] Kuttan lighting stress test completed:
+      - night desk lighting
+      - golden hour outdoor lighting
+      - warm indoor family lighting
+      - cool exam-hall / fluorescent lighting
 - [ ] Establishing shot backgrounds generated (at least 3 test shots)
 - [ ] MusicGen tested: generates 30s clip, quality acceptable
 - [ ] Kuttan voice path selected before production:
@@ -75,8 +80,12 @@ Before any video generation begins, ALL of the following must be confirmed:
 - [ ] If using real voice: record 3 short Kuttan test lines and approve delivery style
 - [ ] Supporting voice policy decided:
       - Amma: real voice preferred for emotional scenes
-      - narrator: optional, not required everywhere
+      - narrator: avoid by default; only use if a specific scene structurally needs it
       - side characters: only when story needs them
+- [ ] One voice path per video rule accepted:
+      - either real Kuttan voice for the full video
+      - or ElevenLabs Kuttan voice for the full video
+      - do not mix both within the same video
 - [ ] ffmpeg installed and verified
 - [ ] Remotion project bootstrapped (`npx create-video --blank adipoli-video`)
 - [ ] Download script tested: can pull from GCS to local `veo-clips/` within 10 minutes
@@ -263,8 +272,16 @@ Preferred order:
 
 - **Kuttan**: same voice in all 15 videos
 - **Amma**: real voice preferred for emotional scenes
-- **Narrator**: optional; use only where structure benefits
+- **Narrator**: avoid by default; Kuttan should carry the story
 - **Supporting characters**: minimal, only where story requires them
+
+### Voice Consistency Rule
+
+Within one video, pick one Kuttan voice path:
+- full real voice
+- or full ElevenLabs voice
+
+Do not mix real Kuttan lines and ElevenLabs Kuttan lines in the same finished video.
 
 ### Audio Layers (in Remotion)
 
@@ -389,6 +406,9 @@ npx tsx scripts/pre-flight-check.ts
 
 # 2. Generate and review Kuttan reference images
 npx tsx scripts/generate-images.ts --type reference
+
+# 2b. Stress-test Kuttan across lighting
+npx tsx scripts/test-kuttan-lighting.ts
 
 # 3. Select and lock Kuttan voice path
 python scripts/test-kuttan-voice.py
