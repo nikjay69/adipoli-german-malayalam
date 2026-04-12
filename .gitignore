@@ -24,6 +24,12 @@
 .DS_Store
 *.pem
 
+# credentials — NEVER commit
+.google-veo-service-account.json
+*-service-account.json
+*credentials*.json
+gcp-key*.json
+
 # debug
 npm-debug.log*
 yarn-debug.log*
