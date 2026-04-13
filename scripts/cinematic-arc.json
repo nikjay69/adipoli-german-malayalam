@@ -2,7 +2,8 @@
   "version": 1,
   "description": "Single source of truth for the Adipoli German cinematic arc generation pipeline. Read by scripts/render-arc.py. Do NOT hand-edit prompt fields without also updating the rendered SERIES_FULL_SCRIPT.md (or regenerate it from this manifest).",
   "globals": {
-    "kuttan_reference": "pilot/references/kuttan-canonical.jpg",
+    "kuttan_reference": "pilot/video-1/seeds/s1-start.jpg",
+    "still_model": "gemini-2.5-flash-image",
     "imagen_model": "imagen-3.0-generate-001",
     "veo_model": "veo-3.1-fast-generate-001",
     "project_id": "gen-lang-client-0108425102",
@@ -21,40 +22,104 @@
       "id": 2,
       "title": "First German Words",
       "status": "to-generate",
-      "duration_target_seconds": 16,
-      "narrative": "The morning after the spark. First real contact with the language. Bedroom, morning light. Brand new textbook, alphabet, awkward pronunciation, quiet pride.",
+      "duration_target_seconds": 48,
+      "narrative": "The morning after the spark. First real contact with the language. Starts on the Kerala veranda, then moves to a bus ride, a tea shop, and home at night. The full first day of learning.",
       "scenes": [
         {
           "id": "v2-s1",
-          "title": "Opening the Book",
+          "title": "Veranda Morning — Opening the Book",
           "seed_strategy": "imagen",
-          "still_prompt": "A young Malayali man in his early 20s sitting cross-legged on the floor of a modest Kerala home, morning light through the window. In front of him is a brand new German language textbook, just opened to the first page. Beside it: a notebook, a pen, and his phone. His expression is focused and a little excited, like a beginner on day one. Same room as the spark scene, same warm Kerala morning light.",
-          "animation_prompt": "Gentle breath, small hand turning a page, slight forward lean of curiosity, tiny eye movement scanning the page.",
+          "still_prompt": "Medium-wide establishing shot. A young Malayali man in his early 20s sitting on the steps of a Kerala home veranda in warm golden morning light. Lush green garden with palm trees and tropical plants in soft focus behind him. A brand new German language textbook open on his lap, a notebook and pen beside him on the stone step, a steel cup of chai. His expression is focused and quietly excited — day one. White cotton shirt, jeans, bare feet on the warm stone. Dappled morning sunlight through overhead leaves.",
+          "animation_prompt": "Gentle breath, fingers carefully turning the first page of the textbook, slight forward lean of curiosity. Dappled sunlight shifts through the leaves above. Faint garden sounds. A tiny breeze moves a plant leaf in the background.",
           "duration": 4
         },
         {
           "id": "v2-s2",
-          "title": "First Word Out Loud",
+          "title": "Detail Insert — Fingers on the Page",
           "seed_strategy": "chain_from_previous",
           "chain_from": "v2-s1",
-          "animation_prompt": "Tiny mouth movement forming a German word like Hallo, small breath, slight head tilt, eyes flicking back to the book to check, slightly self-conscious expression.",
+          "animation_prompt": "Camera pushes in slowly toward the open textbook on his lap. Close-up of his fingers tracing the German alphabet letters on the page. Small careful finger movement along the text. Dappled sunlight on the page. Intimate detail shot.",
           "duration": 4
         },
         {
           "id": "v2-s3",
-          "title": "Writing in the Notebook",
+          "title": "Trying the First Word",
           "seed_strategy": "imagen",
-          "still_prompt": "Overhead-angle of a young Malayali man's hands and notebook on the floor of a Kerala home, morning light. The notebook page is partly filled with carefully written German letters and a few first words, beginner handwriting neat but slow. Pen mid-stroke. Textbook lies open beside the notebook. White cotton shirt sleeves and medium-brown skin visible.",
-          "animation_prompt": "Small careful hand movement writing a German letter, tiny breath, gentle paper rustle, occasional pause to glance at the textbook.",
+          "still_prompt": "Medium close-up. A young Malayali man in his early 20s sitting on Kerala home veranda steps, morning light, green garden behind him in soft focus. He is looking down at the open German textbook on his lap, lips slightly parted as if about to speak a word. His expression is concentrated and slightly self-conscious. White cotton shirt. Warm natural lighting on his face from the side.",
+          "animation_prompt": "Lips part slowly, forming the word Hallo — careful, deliberate pronunciation. Slight self-conscious head tilt. Eyes flick down to the book then back up. A tiny breath of effort. The look of someone hearing their own voice say something foreign for the first time.",
           "duration": 4
         },
         {
           "id": "v2-s4",
-          "title": "Quiet Satisfaction",
-          "seed_strategy": "imagen",
-          "still_prompt": "A young Malayali man leaning slightly back from his notebook on the floor of a Kerala home, morning light. He looks at the page he just filled with German letters. Expression is a small private smile, the quiet satisfaction of a first lesson done. Textbook and notebook visible in front of him. Same warm Kerala room as Video 1.",
-          "animation_prompt": "Gentle breath, small lean back, tiny private smile forming, calm eye shift from the page to the middle distance.",
+          "title": "Writing — Pen on Paper",
+          "seed_strategy": "chain_from_previous",
+          "chain_from": "v2-s3",
+          "animation_prompt": "He looks down and picks up his pen. Camera follows his hand as he begins writing carefully in the notebook on the veranda step. Small precise pen strokes forming German letters. Warm morning light on the page. Focused, quiet moment.",
           "duration": 4
+        },
+        {
+          "id": "v2-s5",
+          "title": "Something Clicked",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium shot. A young Malayali man in his early 20s sitting on Kerala home veranda steps, morning light. He has just looked up from his notebook, expression shifting from concentration to a small quiet realisation — something just clicked. The German textbook and notebook rest on his lap and the step beside him. Green garden and palm trees in soft focus behind. White cotton shirt. Morning light catches the side of his face. The faintest hint of a smile.",
+          "animation_prompt": "A gentle exhale. The faintest smile forms at the corner of his mouth. Eyes drift to the garden, then back. Small nod to himself. The morning light catches his face. The posture of someone who just understood something new.",
+          "duration": 4
+        },
+        {
+          "id": "v2-s6",
+          "title": "Quiet Pride in the Garden",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium-wide shot. A young Malayali man in his early 20s standing at the edge of a Kerala home garden, leaning against a veranda post. He holds the closed notebook loosely in one hand. Green palm trees and tropical plants surround him. His expression is calm and quietly proud — he just did something real. White cotton shirt, morning light filtering through the trees. Cinematic composition with depth.",
+          "animation_prompt": "Slow steady breath. Gentle breeze moves leaves around him. His gaze drifts across the Kerala morning garden. A small private smile forms. Tiny head lift — the posture of someone who feels a little taller than yesterday.",
+          "duration": 4
+        },
+        {
+          "id": "v2-s7",
+          "title": "On the Bus — Reading",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Gentle bus vibration, his eyes scanning the phone screen, tiny scroll movements, slight sway with the bus movement. Kerala countryside sliding past the window in soft focus.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting by the window of a Kerala public bus, afternoon light streaming in. He holds his phone, scrolling through a German learning app lesson. Earphones in one ear. Other passengers softly blurred. The Kerala landscape slides by outside the window. White cotton shirt. His backpack on the seat beside him."
+        },
+        {
+          "id": "v2-s8",
+          "title": "Bus — Mouthing Words",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "He mouths a German word silently to himself on the bus, looking down at his phone screen. Tiny lip movement, slight self-conscious glance around to check nobody noticed. Returns to reading.",
+          "duration": 4,
+          "chain_from": "v2-s7"
+        },
+        {
+          "id": "v2-s9",
+          "title": "Tea Shop — Practicing",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Small pen movements writing in the notebook. Tiny sip of chai. Focused, present. The quiet contentment of studying in a new place.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting at a small Kerala tea shop, a simple wooden bench and table. Steel glass of chai, the German textbook open in front of him, notebook beside it. He is writing in the notebook. Afternoon light, other customers in soft blur behind. A street and autorickshaw softly visible outside. White cotton shirt."
+        },
+        {
+          "id": "v2-s10",
+          "title": "Walking Home — Muttering Words",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Steady walking pace. Lips moving slightly, practicing pronunciation. Tiny smile when a word comes out right. Gentle arm swing. Golden light on his face.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s walking on a quiet Kerala residential lane in late afternoon golden light. Phone in one hand, earphone in one ear — listening to German audio. His lips are moving slightly — he is muttering German words to himself as he walks. Palm trees and Kerala houses in the background. White cotton shirt. Warm golden hour light."
+        },
+        {
+          "id": "v2-s11",
+          "title": "Home — Showing the Parents",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Animated hand gestures pointing at the textbook. Excited expression, speaking enthusiastically. Small head nods. The energy of someone who found something they love.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting in a Kerala home living room, holding the German textbook open and showing it to someone just off-camera. His expression is animated and excited, explaining something. Warm indoor lighting, a traditional Kerala living room with wooden furniture. White cotton shirt."
+        },
+        {
+          "id": "v2-s12",
+          "title": "Night — Lying in Bed with the Book",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Slow calm breath. Tiny smile. Eyes drift from the ceiling to the book on his chest. One hand gently touches the book cover. The lamp light flickers softly.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s lying on his bed in a Kerala bedroom at night, single warm lamp on. His phone rests on his chest, screen showing a German lesson app. The notebook and pen on the bedside. He stares at the ceiling with a faint smile — the satisfied look of someone who had a good first day. The notebook and pen on the bedside. White t-shirt."
         }
       ]
     },
@@ -62,14 +127,14 @@
       "id": 3,
       "title": "The German Class",
       "status": "to-generate",
-      "duration_target_seconds": 20,
-      "narrative": "First real classroom day at a Kerala German language institute. Nervous arrival, finds his seat, listens to the teacher, tries to participate, walks home energised.",
+      "duration_target_seconds": 48,
+      "narrative": "First real classroom day at a Kerala German language institute. Nervous arrival, class scenes, tea break, library, auto-rickshaw ride, walking home energised. The full arc of a first day at school.",
       "scenes": [
         {
           "id": "v3-s1",
           "title": "Arriving at the Institute",
           "seed_strategy": "imagen",
-          "still_prompt": "A young Malayali man in his early 20s standing outside a small modest German language institute building somewhere in urban Kerala, morning light. The building has a simple sign in the background suggesting a language school (no readable text). He holds a notebook and pen, small backpack on one shoulder. His expression is nervous but eager, the look of someone about to enter their first real class.",
+          "still_prompt": "Medium close-up. A young Malayali man in his early 20s standing outside, morning light. He holds his phone checking directions on a map app. Small backpack on one shoulder. A simple building entrance softly blurred behind him. His expression is nervous but eager — first class day. White cotton shirt. No other people visible.",
           "animation_prompt": "Gentle breath, small weight shift, slight glance up at the building, tiny adjustment of the notebook in his hands.",
           "duration": 4
         },
@@ -77,23 +142,23 @@
           "id": "v3-s2",
           "title": "Finding a Seat",
           "seed_strategy": "imagen",
-          "still_prompt": "Inside a small simple Kerala language classroom, plastic chairs, a whiteboard at the front, a few other students of mixed backgrounds already seated. A young Malayali man in his early 20s is just sitting down at a desk near the middle, placing his notebook in front of him. His expression is quietly nervous and observant, taking in the room. White cotton shirt, no readable text on the whiteboard.",
+          "still_prompt": "Inside a small simple Kerala language classroom, plastic chairs, a whiteboard at the front. A young Malayali man in his early 20s is just sitting down at a desk near the middle. He places his phone and a notebook in front of him — the phone shows a German learning app. His expression is quietly nervous and observant. White cotton shirt.",
           "animation_prompt": "Small movement of sitting down, gentle breath, tiny head turn glancing at classmates, careful placement of notebook on desk.",
           "duration": 4
         },
         {
           "id": "v3-s3",
           "title": "Listening to the Teacher",
-          "seed_strategy": "chain_from_previous",
-          "chain_from": "v3-s2",
-          "animation_prompt": "Gentle breath, tiny eye movement following the teacher gesturing at the whiteboard in soft-focus background, small forward lean of concentration, occasional blink of focus.",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium close-up inside a simple Kerala classroom. A young Malayali man in his early 20s sitting at a wooden desk, leaning forward in concentration. His phone lies on the desk showing a German vocabulary app as reference. A whiteboard softly blurred in the background. No other people visible — tight framing. White cotton shirt. Warm natural light.",
+          "animation_prompt": "Gentle breath, tiny eye movement following the teacher, small forward lean of concentration, occasional blink of focus.",
           "duration": 4
         },
         {
           "id": "v3-s4",
           "title": "Trying to Speak",
-          "seed_strategy": "chain_from_previous",
-          "chain_from": "v3-s3",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium close-up inside a simple Kerala classroom. A young Malayali man in his early 20s at his desk, mouth slightly open as if forming a German word. His phone on the desk shows a German phrase. His expression shows effort and slight nervousness — trying to speak in class for the first time. No other people visible. White cotton shirt.",
           "animation_prompt": "Small mouth movement forming a German sentence, tiny breath, half-raised hand, slight blush of effort, gentle gaze toward the teacher in soft-focus background.",
           "duration": 4
         },
@@ -101,9 +166,65 @@
           "id": "v3-s5",
           "title": "Walking Home",
           "seed_strategy": "imagen",
-          "still_prompt": "A young Malayali man walking on a Kerala street in the late afternoon golden light, away from a language institute. His notebook is tucked under his arm, small backpack on one shoulder. His expression is quietly energised, the first class went okay and he is hooked. Other people and small Kerala street life softly visible in the background.",
+          "still_prompt": "A young Malayali man in his early 20s walking on a Kerala street in late afternoon golden light, away from a language institute. His phone is in one hand, earphones in — listening to the German lesson audio review. Small backpack on one shoulder. His expression is quietly energised. Other people and Kerala street life softly visible.",
           "animation_prompt": "Steady walking pace, gentle arm swing, tiny private smile, slight head lift of new confidence.",
           "duration": 4
+        },
+        {
+          "id": "v3-s6",
+          "title": "Tea Break in the Corridor",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Small sip of tea. Glancing at phone screen. Tiny scroll through vocabulary. The quiet multitasking of tea break + app revision.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing in a simple corridor outside a Kerala classroom, holding a small steel glass of tea in one hand and his phone in the other — checking a German vocabulary app between classes. He leans against the wall. White cotton shirt."
+        },
+        {
+          "id": "v3-s7",
+          "title": "Library — Revising on the App",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Tiny finger movement tracing a word in the dictionary. Small writing movement in the notebook. Focused gaze. Quiet library atmosphere.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting at a wooden table in a small Kerala library. A tablet propped up on the table showing a German learning app with vocabulary flashcards. A notebook beside him where he writes down words. Warm natural light from a window. White cotton shirt. Focused expression."
+        },
+        {
+          "id": "v3-s8",
+          "title": "Auto-Rickshaw — Reading Notes",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Gentle rickshaw vibration and sway. Eyes scanning the phone screen. Tiny scrolls. Kerala street life sliding past in soft focus. Tiny nod of understanding.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting in the back of a Kerala auto-rickshaw, afternoon light. He holds his phone, scrolling through a German vocab app. His notebook is in his bag the day's notes. The Kerala street is softly visible through the open sides of the auto. His expression is absorbed. White cotton shirt. Backpack beside him."
+        },
+        {
+          "id": "v3-s9",
+          "title": "Auto-Rickshaw — Looking Up Smiling",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "He looks up from his phone and out through the open side of the auto-rickshaw. A small genuine smile. The Kerala afternoon passes by. He puts the phone away — thinking about what he learned today.",
+          "duration": 4,
+          "chain_from": "v3-s8"
+        },
+        {
+          "id": "v3-s10",
+          "title": "Evening — App Review on Terrace",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Gentle page turn. Eyes scanning notes. Tiny smile of recall. Sunset light shifting slowly. Peaceful evening study.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting on the terrace of his Kerala home in the evening, orange sunset light. He holds his phone, scrolling through completed German lessons on a learning app. His expression is calm and satisfied — good progress today. Kerala rooftops and palm trees in background. White cotton shirt."
+        },
+        {
+          "id": "v3-s11",
+          "title": "Night — Practicing with the App",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Tiny finger taps on the phone screen. Focused eyes. Small nod when getting an answer right. The engaged energy of app-based learning at night.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s lying on his bed in his Kerala bedroom at night, warm lamp. He holds his phone doing a German exercise on a learning app — tapping answers, focused. Earphones in. His expression is engaged, not tired. White t-shirt."
+        },
+        {
+          "id": "v3-s12",
+          "title": "Next Morning — Walking to Class Confidently",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Confident walking pace with earphones in. Slight spring in his step. Morning light on his face. Learning even while commuting.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s walking on a Kerala street in the morning, heading toward the language institute. Phone in hand with earphones in — listening to a German audio lesson as he walks. Small backpack. His stride is more confident than yesterday. Morning light. White cotton shirt. Small smile."
         }
       ]
     },
@@ -111,14 +232,14 @@
       "id": 4,
       "title": "The Struggle",
       "status": "to-generate",
-      "duration_target_seconds": 16,
-      "narrative": "Weeks have passed. The honeymoon is over. German grammar is hard. Kuttan is tired, frustrated, starting to doubt himself. Bedroom at night, dim lamp.",
+      "duration_target_seconds": 48,
+      "narrative": "Weeks have passed. The honeymoon is over. German grammar is hard. Kuttan is tired, frustrated, doubting himself. Multiple settings: bedroom at night, classroom confusion, bus staring, kitchen alone.",
       "scenes": [
         {
           "id": "v4-s1",
           "title": "Late Night Study",
           "seed_strategy": "imagen",
-          "still_prompt": "A young Malayali man sitting on the floor of his Kerala bedroom late at night, single lamp providing dim warm light. Around him: an open German textbook, a notebook covered in messy handwritten notes, his phone, an empty cup. His eyes look tired, his posture slightly slumped. He stares at the textbook page with the look of someone who has been studying for hours. White cotton shirt slightly rumpled.",
+          "still_prompt": "A young Malayali man sitting on the floor of his Kerala bedroom late at night, single lamp providing dim warm light. Around him: his phone showing a German learning app with a difficult grammar lesson, a notebook covered in messy handwritten notes, an empty cup. His eyes look tired, his posture slightly slumped. He stares at the phone screen with the look of someone who has been studying for hours. White cotton shirt slightly rumpled.",
           "animation_prompt": "Slow tired breath, tiny rub of one eye, slight head sway from fatigue, dim lamp flicker.",
           "duration": 4
         },
@@ -133,9 +254,9 @@
         {
           "id": "v4-s3",
           "title": "Crossed-Out Page",
-          "seed_strategy": "imagen",
-          "still_prompt": "Overhead-angle of a notebook page on the floor of a Kerala bedroom at night, lamp light. The notebook page shows handwritten German sentence attempts, several of them crossed out and rewritten. A pen lies across the page. One of the man's hands rests on the edge of the page. White cotton shirt sleeve and medium-brown skin visible. The only text in the frame is the in-world handwritten German.",
-          "animation_prompt": "Tiny hand movement, very faint breath, gentle lamp flicker, no other motion.",
+          "seed_strategy": "chain_from_previous",
+          "chain_from": "v4-s2",
+          "animation_prompt": "Camera drifts down to the notebook on the floor. Close-up of the page showing crossed-out German sentences. His hand rests on the edge of the page. Tiny hand movement, very faint breath, gentle lamp flicker.",
           "duration": 4
         },
         {
@@ -145,6 +266,70 @@
           "still_prompt": "A young Malayali man standing at the window of his Kerala bedroom, late at night. He looks out at the dark Kerala street and palm trees outside. His expression is quietly doubting, wondering if he can really do this. Dim lamp light from the room behind him casts a soft glow on his side. Faint reflection of his face in the window glass.",
           "animation_prompt": "Slow breath, tiny weight shift, gentle gaze out the window, faint reflection of his face moving slightly in the window glass.",
           "duration": 4
+        },
+        {
+          "id": "v4-s5",
+          "title": "Morning — Dragging Out of Bed",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Slow heavy breath. Hands rubbing face. Reluctant posture. The weight of having to get up and do it again.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting on the edge of his bed in a Kerala bedroom, early morning gray light. He looks exhausted, shoulders slumped. His phone lies on the bed showing a German app notification — a daily lesson reminder he does not want to open. White cotton shirt wrinkled from sleep."
+        },
+        {
+          "id": "v4-s6",
+          "title": "Bus — Staring Blankly",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Blank stare out the window. No movement except gentle bus sway. Tired eyes. The look of someone going through the motions.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting on a Kerala bus, afternoon. He stares blankly out the window, his phone face-down on his lap, the German app abandoned. His expression is distant and tired. Kerala landscape passing outside. White cotton shirt. No energy."
+        },
+        {
+          "id": "v4-s7",
+          "title": "Alone — App Exercise Failing",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Tiny frustrated tap on phone. Seeing wrong answer. Small head shake. Eyes closing briefly. The frustration of getting it wrong repeatedly.",
+          "duration": 4,
+          "still_prompt": "Medium close-up. A young Malayali man in his early 20s on his bed at night, holding his phone. The screen shows a German exercise with wrong answers marked in red. His expression is frustrated — he keeps getting it wrong. Notebook with crossed-out attempts beside him. White cotton shirt. Lamp light."
+        },
+        {
+          "id": "v4-s8",
+          "title": "Class — Putting the Pen Down",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "He puts the pen down on the notebook. Leans back slightly in the chair. A small exhale of defeat. Eyes close for a second. The moment of wanting to give up in class.",
+          "duration": 4,
+          "chain_from": "v4-s7"
+        },
+        {
+          "id": "v4-s9",
+          "title": "Kitchen — Eating Alone at Night",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Slow mechanical eating. Tired gaze at nothing. The loneliness of struggling alone. Gentle kitchen sounds.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting alone at a small table in a Kerala home kitchen late at night. A plate of rice in front of him, barely touched. His phone lies face-down on the table — he has abandoned the German app for the night. Single overhead light. White cotton shirt."
+        },
+        {
+          "id": "v4-s10",
+          "title": "Phone — Considering Quitting",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Tiny scroll movement on the phone. Conflicted expression. Small bite of the lip. Eyes that want to close. The weight of doubt.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s lying on his bed at night, phone held up above his face, screen glow lighting his features. His expression is conflicted — considering whether to keep going. The German textbook lies discarded at the foot of the bed. White t-shirt."
+        },
+        {
+          "id": "v4-s11",
+          "title": "Rain — Standing at the Window",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Rain sounds. His breath fogs the glass slightly. Tiny head lean against the window frame. Watching the rain with heavy eyes. A moment of reckoning.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing at the window of his Kerala bedroom, watching monsoon rain fall outside. Heavy rain on palm trees and rooftops. His expression is melancholy but not broken — somewhere between giving up and holding on. Dim gray light. White cotton shirt."
+        },
+        {
+          "id": "v4-s12",
+          "title": "Rain — A Decision Forming",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "His jaw tightens slightly. A small breath in. He turns away from the window slowly. Not defeated, not energised — just deciding to try one more time. Quiet resolve.",
+          "duration": 4,
+          "chain_from": "v4-s11"
         }
       ]
     },
@@ -152,15 +337,15 @@
       "id": 5,
       "title": "Breakthrough",
       "status": "to-generate",
-      "duration_target_seconds": 16,
-      "narrative": "The next morning. Or the next week. Something clicks. A sentence finally forms cleanly. Kuttan feels it.",
+      "duration_target_seconds": 48,
+      "narrative": "Something clicks. German starts making sense. Multiple settings: bedroom study, phone video, classroom confidence, helping others, peaceful night study.",
       "scenes": [
         {
           "id": "v5-s1",
           "title": "Calmer Study",
           "seed_strategy": "imagen",
-          "still_prompt": "A young Malayali man sitting on the floor of his Kerala bedroom in soft morning light. The German textbook is open in front of him, the notebook is tidier than before, the empty cup is replaced by chai. His expression is calmer, more present, less desperate. He is reading a sentence carefully. White cotton shirt, freshly composed.",
-          "animation_prompt": "Slow calm breath, tiny finger tracing the line of text, gentle lift of the chai cup, focused gaze.",
+          "still_prompt": "A young Malayali man sitting on the floor of his Kerala bedroom in soft morning light. His phone shows a German learning app open to a grammar lesson. A notebook beside him is tidier than before. His expression is calmer, more present. He is reading the lesson carefully on his phone. White cotton shirt, freshly composed.",
+          "animation_prompt": "Slow calm breath, tiny finger scrolling on the phone, gentle lift of a chai cup, focused gaze at the screen.",
           "duration": 4
         },
         {
@@ -168,7 +353,7 @@
           "title": "The Click",
           "seed_strategy": "chain_from_previous",
           "chain_from": "v5-s1",
-          "animation_prompt": "Tiny intake of breath, small widening of the eyes, lips part slightly in a small oh — the exact instant a German grammar pattern has clicked, looking at the textbook with new understanding. Almost imperceptible lift at the corner of the mouth.",
+          "animation_prompt": "Tiny intake of breath, small widening of the eyes, lips part slightly — the exact instant a German grammar pattern clicks while looking at the phone screen. Almost imperceptible lift at the corner of the mouth.",
           "duration": 4
         },
         {
@@ -186,6 +371,70 @@
           "still_prompt": "A young Malayali man standing on a small Kerala home terrace or balcony in the late morning. He has his notebook in one hand, looking out at the green Kerala surroundings. His expression is quietly proud — he can feel that something has shifted. There is calm in him now. White cotton shirt.",
           "animation_prompt": "Slow steady breath, tiny lift of the chin, gentle gaze across the view, small private smile.",
           "duration": 4
+        },
+        {
+          "id": "v5-s5",
+          "title": "Phone — Understanding a German Video",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Eyes widening slightly. Small smile of recognition. Tiny nod. The moment of understanding spoken German for the first time.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting on his bed in a Kerala bedroom, morning light. He holds his phone, watching something on screen. His expression is one of surprised recognition — he is understanding German being spoken. A small amazed smile forming. White cotton shirt."
+        },
+        {
+          "id": "v5-s6",
+          "title": "Phone — Laughing at Something",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "He laughs — a genuine small laugh at something he understood on the German video. Hand comes up to his mouth briefly. Eyes bright. He understood a joke in German.",
+          "duration": 4,
+          "chain_from": "v5-s5"
+        },
+        {
+          "id": "v5-s7",
+          "title": "Classroom — Answering Confidently",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Clear confident mouth movement. Steady gaze forward. Small emphatic hand gesture. The voice of someone who knows the answer.",
+          "duration": 4,
+          "still_prompt": "Medium close-up. A young Malayali man in his early 20s at his desk in a Kerala classroom. He is mid-answer, mouth forming a German sentence, expression focused but confident. No other students visible — tight framing. White cotton shirt."
+        },
+        {
+          "id": "v5-s8",
+          "title": "Completing a Lesson Streak",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Looking at the streak on the phone with a small proud smile. Setting the phone down gently. Picking up the pen to continue in the notebook. The satisfaction of consistency.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s at a library table, a laptop open showing a German learning app with a completion badge or streak counter. His expression is quietly proud. The notebook beside him has neat German notes. Warm natural light. White cotton shirt."
+        },
+        {
+          "id": "v5-s9",
+          "title": "Helping a Classmate",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Animated hand pointing at the notebook. Small explanatory gestures. Confident expression. The role reversal of helping someone else.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing in a simple Kerala classroom corridor, pointing at something in a notebook held by someone just off-camera. His expression is helpful and confident — explaining a German grammar point. White cotton shirt. Afternoon light."
+        },
+        {
+          "id": "v5-s10",
+          "title": "Evening Terrace — German Podcast",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Listening with eyes half-closed. Small nod of understanding. Tiny smile at something heard. Sip of tea. The peace of learning through listening.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting on the terrace of his Kerala home in golden evening light. Earphones in, phone in hand — listening to a German podcast or audio lesson. His expression is relaxed and absorbed, understanding naturally. Tea beside him. Kerala rooftops and palms in background. White cotton shirt."
+        },
+        {
+          "id": "v5-s11",
+          "title": "Night — Peaceful Study",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Steady confident pen strokes. Occasional look at the textbook and back. Small satisfied nod. Calm productive energy.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s at his desk in his Kerala bedroom at night. Warm lamp light. He is studying but the mood is completely different from V4 — calm, productive, in control. Neat notes, organised desk. Small smile. White cotton shirt."
+        },
+        {
+          "id": "v5-s12",
+          "title": "Morning — Looking in the Mirror",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Steady gaze at his own reflection. Small breath. Tiny nod to himself. Almost imperceptible smile. He sees someone who changed.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing in front of a mirror in his Kerala bedroom, morning light. He looks at his reflection with quiet confidence. He is different from the boy who started. No words needed — just a look that says he knows he can do this. White cotton shirt."
         }
       ]
     },
@@ -193,8 +442,8 @@
       "id": 6,
       "title": "The Goethe A1 Exam",
       "status": "to-generate",
-      "duration_target_seconds": 20,
-      "narrative": "Exam day. Goethe A1 in Kerala (Trivandrum or Kochi exam centre). Walking in nervous, sitting the written, the speaking part with an examiner, walking out, the moment he knows he passed.",
+      "duration_target_seconds": 48,
+      "narrative": "Exam day arc: intense preparation, morning of, bus ride, waiting room, exam sections, walking out, getting the result, calling parents.",
       "scenes": [
         {
           "id": "v6-s1",
@@ -235,8 +484,1172 @@
           "still_prompt": "A young Malayali man sitting on the floor of his Kerala home, evening lamp light, holding his phone in both hands. The phone screen shows a Goethe-style A1 result page (no readable text needed, just the visual shape of an official result). His expression is the moment of seeing the pass: eyes wide, breath caught, on the edge of a real smile. Same warm Kerala room as Video 1. White cotton shirt.",
           "animation_prompt": "Sharp small intake of breath, eyes widening, tiny tightening of the grip on the phone, the start of a real smile.",
           "duration": 4
+        },
+        {
+          "id": "v6-s6",
+          "title": "Days Before — Intense Study",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Quick pen movements. Eyes scanning between textbook and notes. Small mumbled German words. The focused energy of exam preparation.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s at his desk in his Kerala bedroom, a tablet propped up showing German exam prep exercises. Flashcards and practice questions on screen. Notebook with handwritten summaries beside it. Multiple colored pens. Intense concentrated expression. Evening lamp light. White cotton shirt."
+        },
+        {
+          "id": "v6-s7",
+          "title": "Exam Morning — Getting Ready",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Careful buttoning. Straightening the collar. Small breath in the mirror. Nervous but ready.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s in his Kerala bedroom, morning light. He is buttoning his white cotton shirt carefully, looking in the mirror. His expression is nervous but determined. The German textbook and exam materials are packed in a bag on the bed behind him. Neat hair."
+        },
+        {
+          "id": "v6-s8",
+          "title": "On the Bus to the Exam",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Eyes darting across the phone screen. Tiny finger taps on flashcard answers. Nervous energy. The focus of last-minute app revision.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s on a Kerala bus, morning. He holds his phone, doing last-minute vocabulary revision on the German app. Earphones in. His expression is nervous but focused. White cotton shirt tucked in."
+        },
+        {
+          "id": "v6-s9",
+          "title": "Waiting Room",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Small nervous weight shift. Hands clasping and unclasping. Glance at the clock. Deep breath. The tension of waiting.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting in a simple waiting room with plastic chairs. He sits alone, hands clasped, waiting to be called in. His expression is tense and focused. A clock on the wall. Simple institutional room. White cotton shirt tucked in."
+        },
+        {
+          "id": "v6-s10",
+          "title": "Celebration — Fist Pump",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Fist pump. Big genuine smile breaking across his face. Eyes bright with joy. Small jump or weight shift of celebration. Pure relief.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing outside a Kerala building in afternoon light. He has just seen his result on his phone — a contained but real celebration. One fist pumping subtly, a big genuine smile, eyes bright. White cotton shirt. The relief and joy of passing."
+        },
+        {
+          "id": "v6-s11",
+          "title": "Celebration — Calling Home",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "He immediately puts the phone to his ear, calling someone. Excited expression. Mouth forming words rapidly — telling someone the news. Walking in circles with happy energy.",
+          "duration": 4,
+          "chain_from": "v6-s10"
+        },
+        {
+          "id": "v6-s12",
+          "title": "Night — The Certificate on the Desk",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Gentle lamp flicker. Tiny shadow shift. Stillness. The quiet dignity of an achievement resting on a desk.",
+          "duration": 4,
+          "still_prompt": "Close-up of a desk in a Kerala bedroom at night, warm lamp light. A Goethe-Institut A1 certificate (simple official-looking document, no readable text needed) lies on the desk next to the German textbook, notebook, and pen that started it all. A steel cup of chai beside them. No person visible — just the objects that represent the journey. Warm intimate lighting."
         }
       ]
+    },
+    {
+      "id": 8,
+      "title": "Landing in Germany",
+      "status": "to-generate",
+      "duration_target_seconds": 48,
+      "narrative": "First moments in Germany. Airport, train, first glimpse of a German city, finding the dorm, first night alone. Everything is new, cold, and overwhelming.",
+      "scenes": [
+        {
+          "id": "v8-s1",
+          "title": "German Airport — Arrivals",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Steady walking, pulling suitcase. Head turning to take in the unfamiliar space. Wide eyes. The disorientation of arrival.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s walking through a modern German airport arrivals hall, pulling a large suitcase. Bright fluorescent lights, German signage softly visible. He wears a warm jacket over his white shirt — first time in winter clothing. His expression is overwhelmed and alert. Other travelers around him in soft blur."
+        },
+        {
+          "id": "v8-s2",
+          "title": "Airport — Standing Still",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "He stops walking and stands still for a moment in the airport hall. People flow around him. He takes a breath, looks around, processes. The smallness of being new in a huge foreign place.",
+          "duration": 4,
+          "chain_from": "v8-s1"
+        },
+        {
+          "id": "v8-s3",
+          "title": "German Train — Window",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Eyes following the landscape. Gentle train vibration. Gray sky and bare trees reflected in the window. Breath fogs the cold glass slightly.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting on a German regional train, looking out the window. Winter European landscape rolling past — bare trees, gray sky, small towns. His expression is a mix of wonder and loneliness. Warm jacket. Suitcase in the luggage rack. Clean modern train interior."
+        },
+        {
+          "id": "v8-s4",
+          "title": "German City Street — First Steps",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Walking slowly, head turning. Tiny shiver. Eyes wide at the unfamiliar architecture. Snowflakes catching the light. Steps on European cobblestones.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s walking on a German city street in winter, pulling his suitcase. European architecture, tram tracks, gray sky. A few snowflakes in the air. He is looking around at everything — street signs, buildings, people in winter coats. Warm jacket. The wonder and cold of a first walk in Europe."
+        },
+        {
+          "id": "v8-s5",
+          "title": "Finding the Building",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Looking up at the building. Glancing at the paper. Small breath. Reaching for the door buzzer. The threshold of his new life.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing outside a German apartment building or student dormitory, looking up at it. Winter afternoon light. He holds a piece of paper with an address. His suitcase beside him. The building is plain European architecture. His expression is searching and hopeful."
+        },
+        {
+          "id": "v8-s6",
+          "title": "The New Room",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Slow look around the bare room. Small breath. Touching the desk surface. Sitting down on the bed. The emptiness of a new beginning.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing in a small, bare German dorm room. Single bed, simple desk, empty bookshelf, radiator. Winter gray light from the window. His suitcase stands unopened in the middle of the room. He looks around the empty space. Warm jacket still on."
+        },
+        {
+          "id": "v8-s7",
+          "title": "Sitting on the Bed",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "He sits on the edge of the bed in the bare room. Suitcase still packed. He looks at his hands, then out the window at the gray German sky. A long exhale. Not sad, not happy — just processing.",
+          "duration": 4,
+          "chain_from": "v8-s6"
+        },
+        {
+          "id": "v8-s8",
+          "title": "Unpacking — The Phone and the App",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Hands placing the phone on the desk. Tapping it awake — the German app is there. A small anchor in a new world. Touching the notebook. Connection to the journey.",
+          "duration": 4,
+          "still_prompt": "Close-up. Hands unpacking a suitcase on a bed in a German dorm room. Among the clothes, a phone is placed on the desk. The familiar German learning app icon visible on the screen. Also a notebook from Kerala. Warm indoor light. The tools that brought him here."
+        },
+        {
+          "id": "v8-s9",
+          "title": "Window — German Evening",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Slow breath. Eyes scanning the unfamiliar skyline. Faint reflection in the glass. A hand touching the cold windowpane. The strangeness of being far from home.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing at the window of his German dorm room at dusk. City lights beginning to glow. European rooftops and church steeples. His reflection faint in the glass. His expression is contemplative — taking in this new world. White shirt, no jacket now."
+        },
+        {
+          "id": "v8-s10",
+          "title": "First Night — Lying Awake",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Slow breath. Eyes open, staring at the ceiling. Tiny head turn toward the desk. Silence and loneliness. The weight of the first night abroad.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s lying in bed in his German dorm room at night. Desk lamp on. He holds his phone — the familiar German learning app open, but now he is in the country where they speak this language. A small photo from Kerala on the desk. His expression is contemplative."
+        },
+        {
+          "id": "v8-s11",
+          "title": "Phone — Kerala at Night",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Small genuine smile seeing familiar faces. Tiny wave. Eyes glistening. The warmth of connection across distance.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s in his German dorm room bed at night, holding his phone. The screen shows a video call — a familiar Kerala living room softly visible on screen. His expression shifts from lonely to a small warm smile. Phone glow on his face in the dark room."
+        },
+        {
+          "id": "v8-s12",
+          "title": "Morning — First German Morning",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Slow sip of the warm drink. Watching the sunrise over the German city. Small breath. Tiny nod. A decision to begin.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing at the window of his German dorm room, early morning. Faint winter sunrise, a new day. He holds a cup of coffee or tea. His expression is calmer than last night — okay, he can do this. White shirt. The German textbook on the desk behind him."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "The Difficult Days",
+      "status": "to-generate",
+      "duration_target_seconds": 48,
+      "narrative": "The hard middle weeks in Germany. Language barrier in real life, university confusion, loneliness, homesickness, but also small beautiful moments — first snow, Kerala chai in a German kitchen.",
+      "scenes": [
+        {
+          "id": "v9-s1",
+          "title": "German Supermarket — Confused",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Holding phone up to a product. Checking the translation. Small nod of understanding. Putting the product in the basket. The phone as survival tool in a new country.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing in a German supermarket aisle, holding his phone up to scan or translate a German product label. The translation app on screen. Bright supermarket lighting. His expression is focused, using technology to navigate. Winter jacket."
+        },
+        {
+          "id": "v9-s2",
+          "title": "Cooking Alone",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Small stirring motion. Tasting. A pause, looking at the pot. Cooking alone in a foreign kitchen. Missing home-cooked food.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing in a small shared German kitchen, cooking something simple on the stove. He is alone. The kitchen is clean and European — different from Kerala. His expression is focused but lonely. Evening light. White shirt with sleeves rolled up."
+        },
+        {
+          "id": "v9-s3",
+          "title": "University Lecture — Lost",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Pen hovering but not writing. Eyes trying to follow. Small defeated exhale. The overwhelm of an academic lecture in a foreign language.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting in a large German university lecture hall. The hall is modern with tiered seating. He has a laptop open in front of him, trying to take notes. His expression is lost — the German is too fast, too academic. Other students are focused around him. Winter clothes."
+        },
+        {
+          "id": "v9-s4",
+          "title": "Cafeteria — Eating Alone",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Slow eating. Eyes glancing at the chatting groups around him. Small swallow. Looking back at his food. Alone in a crowd.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting alone at a table in a German university Mensa (cafeteria). A tray of European food in front of him. Around him, groups of students are chatting. He eats quietly, looking at his food. The isolation of being the new foreign student."
+        },
+        {
+          "id": "v9-s5",
+          "title": "Video Call Home — Holding Back",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Maintained smile that doesn't reach the eyes. Small nod. Reassuring gestures. The performance of being okay for family. A tiny crack in the composure.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting at the desk in his German dorm room, on a video call. The phone propped up. He is smiling for the camera but his eyes betray him — he is holding back how hard it actually is. The dorm room behind him. Evening."
+        },
+        {
+          "id": "v9-s6",
+          "title": "After the Call",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "The call ends. His smile drops immediately. He sits back in the chair. A long exhale. Hands on his face for a moment. The mask coming off. Then he straightens up. He has to keep going.",
+          "duration": 4,
+          "chain_from": "v9-s5"
+        },
+        {
+          "id": "v9-s7",
+          "title": "Making Kerala Chai",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Practiced stirring. Adding spices. The ritual of making chai. Steam rising. Pouring into a mug. A small piece of Kerala in Germany.",
+          "duration": 4,
+          "still_prompt": "Close-up of hands in a German kitchen, making chai the Kerala way — cardamom, ginger, milk boiling in a small pot. The hands are steady and practiced. This is the one thing that feels like home. A German stove, German mugs on the counter. White shirt sleeve."
+        },
+        {
+          "id": "v9-s8",
+          "title": "Drinking Chai at the Window",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "He carries the mug of chai to the dorm room window. Holds it with both hands, feeling the warmth. Looks out at the German city. Takes a sip. For a moment, with the chai in his hands, it feels a little less far from home.",
+          "duration": 4,
+          "chain_from": "v9-s7"
+        },
+        {
+          "id": "v9-s9",
+          "title": "First Snow",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Face tilting up. Snowflakes landing on his jacket. Hand reaching out. A snowflake melting on his palm. Wonder breaking through the loneliness. A genuine moment of magic.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing outside on a German street, looking up. Snow is falling for the first time in his life. His expression is pure wonder — mouth slightly open, eyes wide, hand reaching out to catch a snowflake. Warm winter jacket. European buildings and bare trees dusted with snow."
+        },
+        {
+          "id": "v9-s10",
+          "title": "Snow — Laughing",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "He laughs — a real, surprised laugh at the snow. Catches more snowflakes. Turns in a small circle. For a moment he forgets everything hard. Just a young man seeing snow for the first time.",
+          "duration": 4,
+          "chain_from": "v9-s9"
+        },
+        {
+          "id": "v9-s11",
+          "title": "Night Dorm — Kerala Photos",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Eyes drifting to the photos on the wall. Looking at a family photo. Then back to the textbook. A small breath. Two worlds in one small room.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting at his desk in his German dorm room at night. On the wall behind him: a few photos of Kerala — palm trees, family, his old bedroom. The German textbook open on the desk. His expression is homesick but not broken. Desk lamp. White shirt."
+        },
+        {
+          "id": "v9-s12",
+          "title": "Walking in the Snow — Alone but Okay",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Steady walking. Breath visible in cold air. Footsteps in fresh snow. Looking ahead. The quiet dignity of endurance.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s walking alone on a snow-covered German sidewalk at dusk. Streetlights glowing, snow on the ground and bare trees. He walks with his hands in his jacket pockets. His expression is quiet — not happy, not sad. Somewhere between. The blue hour light of a German winter evening."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Finding His Way",
+      "status": "to-generate",
+      "duration_target_seconds": 48,
+      "narrative": "Spring comes. Things start getting better. Study group, first German friends, cooking Kerala food for roommates, cycling, speaking confidently. Integration happening naturally.",
+      "scenes": [
+        {
+          "id": "v10-s1",
+          "title": "Spring Morning — New Energy",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Confident walking pace. Eyes noticing the spring buds. A genuine small smile. The mood lift of a season changing.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s walking on a German city street in early spring. Trees budding, warmer light, blue sky. He has a lighter jacket, more spring in his step. His expression is brighter — something has shifted. The city looks friendlier in spring."
+        },
+        {
+          "id": "v10-s2",
+          "title": "Study Group",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Animated pointing at notebook. Small discussion gestures. Confident expression. The comfort of finding your people.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting at a table in a German university library with two other international students (blurred or partially visible). A laptop open in front of him, shared study materials on screen. He is pointing at something, explaining. His expression is engaged and confident."
+        },
+        {
+          "id": "v10-s3",
+          "title": "German Friend — Walking Together",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Walking and talking naturally. Genuine expression. Hand gestures in conversation. The ease of a real friendship forming.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s walking on a German university campus path with another student beside him (partially visible). They are mid-conversation, walking together. Spring trees and a German university building in background. He is gesturing while talking — comfortable, natural. Lighter jacket."
+        },
+        {
+          "id": "v10-s4",
+          "title": "Cooking Kerala Food",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Confident cooking movements. Stirring, tasting, adding spices. A happy focused expression. Cooking as an act of identity.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s cooking in a German shared kitchen. Multiple pots on the stove — he is making a proper Kerala meal. Spices visible on the counter. His expression is happy, focused, in his element. Rolled-up sleeves. The kitchen smells like home."
+        },
+        {
+          "id": "v10-s5",
+          "title": "Friends Eating Together",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Watching with anticipation. Small proud smile. Gesturing to encourage someone to try. The joy of sharing food from home.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting at a table in a German shared apartment, plates of Kerala food on the table. He watches with anticipation as a hand reaches for a plate (other people not fully visible). His expression is proud and hopeful — sharing his culture. Warm kitchen light."
+        },
+        {
+          "id": "v10-s6",
+          "title": "Cycling Through the City",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Smooth cycling motion. Wind in his hair. Looking around with familiarity, not wonder. A city becoming home.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s cycling on a German city bike path. Spring greenery, European buildings, blue sky. He rides with a relaxed posture, a small smile. This city is becoming his city. Light jacket or just a shirt."
+        },
+        {
+          "id": "v10-s7",
+          "title": "Speaking German to a Shopkeeper",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Natural speaking gestures. Relaxed expression. Small smile. Receiving something across the counter. The normalcy of daily life in German.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s at the counter of a small German shop (Bäckerei or similar). He is mid-conversation with someone behind the counter (not fully visible). His expression is relaxed and natural — speaking German without stress. Casual clothes."
+        },
+        {
+          "id": "v10-s8",
+          "title": "Phone Call Home — Excited",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Animated talking. Big genuine smile. Gesturing even though nobody can see. The excitement of telling family it is going well.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s walking on a German street in spring, phone to his ear, talking animatedly. He is telling his family about his life here. His expression is genuinely excited and happy. Trees and spring light around him. Casual clothes."
+        },
+        {
+          "id": "v10-s9",
+          "title": "Park Bench — German Podcast",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Listening with a relaxed smile. Tiny nod. Understanding German audio effortlessly. The payoff of years of app-based learning.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting on a bench in a German city park in spring. Earphones in, phone in hand — listening to a German podcast, understanding everything naturally. His expression is absorbed and peaceful. Trees in bloom. Casual clothes. Dappled spring sunlight."
+        },
+        {
+          "id": "v10-s10",
+          "title": "Sunset — Rooftop or Bridge",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Slow breath. Eyes scanning the skyline. A genuine peaceful smile. The stillness of belonging.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing on a German rooftop terrace or bridge at sunset. The German city skyline in warm golden light. He looks out with a calm, content expression — this place is home now too. Casual clothes. Golden hour light on his face."
+        },
+        {
+          "id": "v10-s11",
+          "title": "Night — Writing Home in German",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Smooth confident writing. Glancing at the phone with a fond smile — the app that started it all. Two worlds in one room, at peace now.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s at his desk in his German dorm room at night. He writes in his notebook — in German, fluid and confident. His phone shows the German learning app — still installed, still used, but now he barely needs it. The Kerala photos still on the wall. Desk lamp. A cup of chai."
+        },
+        {
+          "id": "v10-s12",
+          "title": "Walking Home — He Belongs",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Easy confident stride. Familiar with the streets. Small smile. Evening light. The quiet confidence of someone who made it.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s walking on a German street at dusk. City lights coming on. His stride is easy, hands in pockets. He knows these streets now. A small smile. He is home in both worlds. Spring evening light."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Home in Both Worlds",
+      "status": "to-generate",
+      "duration_target_seconds": 48,
+      "narrative": "The full circle. German spring. University success. Video call showing the city to parents. Visiting a Kerala restaurant in Germany. Planning a trip home. The final scene mirrors the opening — but now he is the one who made the journey.",
+      "scenes": [
+        {
+          "id": "v11-s1",
+          "title": "German Spring — Campus Walk",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Confident stride. Eyes appreciating the spring bloom. The walk of someone who earned this. Warm light on his face.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s walking across a beautiful German university campus in full spring bloom. Cherry blossoms or spring flowers. Modern campus buildings. He walks with confidence and ease, a bag over his shoulder. Casual shirt. Warm spring light."
+        },
+        {
+          "id": "v11-s2",
+          "title": "University — Presenting in German",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Clear confident speaking. Hand gestures emphasizing points. Engaged expression. The payoff of years of language learning.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing at the front of a German university seminar room, speaking to an audience (blurred). A presentation screen behind him. He speaks German with confidence and clarity. Professional but relaxed. Button-up shirt."
+        },
+        {
+          "id": "v11-s3",
+          "title": "Good Grades",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Hands steady on the paper. A moment of stillness. Achievement measured in a simple document. The textbook that started it all beside it.",
+          "duration": 4,
+          "still_prompt": "Close-up. Hands holding a university transcript or result sheet on a desk. Good marks visible (no specific readable text needed). The familiar German textbook from Kerala is beside it on the desk. The notebook. A cup of chai. Warm lighting. Just the objects — the journey in objects."
+        },
+        {
+          "id": "v11-s4",
+          "title": "Video Call — Showing the City",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Turning the phone to show the city. Pointing at things. Excited narration. The pride of showing family where he lives now.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s on a German street in spring, holding his phone out in selfie mode for a video call. He is showing the street behind him to someone on the call — pointing at buildings, the spring trees, the tram. His expression is excited and proud. Casual clothes. Beautiful German street."
+        },
+        {
+          "id": "v11-s5",
+          "title": "Kerala Restaurant in Germany",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Eating with the hands, Kerala style. Eyes closing briefly at a familiar taste. Small satisfied smile. Home in a plate.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting in a small Indian/Kerala restaurant in Germany. A plate of Kerala food in front of him — sadya or biryani. He eats with his hands, the Kerala way. His expression is nostalgic and happy — taste of home in a foreign land. Warm restaurant lighting. Casual clothes."
+        },
+        {
+          "id": "v11-s6",
+          "title": "Notebook — German and Malayalam",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Gentle pen movement adding a word. The two scripts side by side on one page. Stillness. Beautiful visual metaphor.",
+          "duration": 4,
+          "still_prompt": "Close-up of an open notebook on a desk. The page shows writing in both German and Malayalam script — notes, thoughts, mixing both languages naturally. A pen rests across the page. The German textbook from Kerala visible nearby. Desk lamp. The visual representation of living in two languages."
+        },
+        {
+          "id": "v11-s7",
+          "title": "Train Station — Planning a Trip Home",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Looking up at the departure board. Glancing at his phone. A big genuine smile forming. The excitement of going home after making it.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing in a German train station, looking at the departure board. He holds his phone — booking a flight home. His expression is excited and emotional — he is going back to visit. Casual clothes. Grand European station architecture."
+        },
+        {
+          "id": "v11-s8",
+          "title": "Plane — Window Seat",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Watching the clouds. Peaceful expression. A tiny tear at the corner of his eye. Resting against the window. The emotion of return.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting in a plane, looking out the window. Clouds and sunlight. His expression is peaceful and emotional — going home changed, grown, proud. He rests his head against the window slightly. Casual clothes."
+        },
+        {
+          "id": "v11-s9",
+          "title": "Kerala Airport — Arrival",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Walking faster. Scanning the crowd. Breaking into a smile. The warmth and color of Kerala after months of German gray.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s walking through a Kerala airport arrivals gate. His expression is overwhelmed with emotion — he is home. The warm Kerala light pours in. He walks faster, searching for familiar faces. Casual clothes. Suitcase."
+        },
+        {
+          "id": "v11-s10",
+          "title": "Family Reunion",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Tight embrace. Closed eyes. The release of months of distance. Genuine emotion. Kerala warmth.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s standing outside the Kerala airport, embracing someone — just arms and shoulders visible of the other person. His expression is pure joy and relief. Warm Kerala sunlight. The green of Kerala visible behind. The moment of coming home."
+        },
+        {
+          "id": "v11-s11",
+          "title": "Kerala Veranda — Full Circle",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Looking at the phone app with a nostalgic smile. Looking up at the garden. Closing the app gently. A full-circle moment. Small emotional smile.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s sitting on the familiar Kerala veranda steps — the same veranda from Video 2. His phone in his hand showing the German learning app — the same app he started with. But now he can speak German fluently. Morning light, palm trees. The full circle. White cotton shirt."
+        },
+        {
+          "id": "v11-s12",
+          "title": "Veranda — Looking Forward",
+          "seed_strategy": "imagen",
+          "animation_prompt": "Long slow breath. Eyes on the horizon. The faintest smile. Head lifting. Ready for whatever comes next. Fade-worthy final moment.",
+          "duration": 4,
+          "still_prompt": "A young Malayali man in his early 20s on the Kerala veranda, morning light. He looks out at the Kerala garden one more time. His expression is calm, grateful, and ready. He has been here before but he is not the same person. A quiet breath. The story continues. White cotton shirt. Final shot."
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "title": "Intro V2 — Dynamic",
+      "status": "to-generate",
+      "duration_target_seconds": 64,
+      "narrative": "Dynamic intro with India-to-Germany transitions, dream bubbles, phone zooms, text animations, varied angles.",
+      "scenes": [
+        {
+          "id": "v100-s1",
+          "title": "Globe Spin — India to Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "Overhead cinematic shot of a stylized 3D globe showing India highlighted in warm gold. A glowing dotted line trails from Kerala across the globe toward Germany highlighted in blue. Dark space background with soft stars. The journey visualized as a path across the world. Pixar-style 3D, dramatic lighting.",
+          "animation_prompt": "Globe slowly rotating. The dotted trail line animates from India toward Germany, glowing as it travels. Cinematic, epic, the scale of the journey. Camera slowly pushes in on the path.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s2",
+          "title": "Kerala Sunrise — Low Angle",
+          "seed_strategy": "imagen",
+          "still_prompt": "Ultra-low angle shot looking up at Kerala palm trees against a golden sunrise sky. Coconut palms silhouetted dramatically. Warm orange and pink sky. Birds in the distance. Cinematic, breathtaking. Pixar-style 3D. No people.",
+          "animation_prompt": "Palm fronds swaying gently against the sunrise. Birds flying across. Light intensifying. Dramatic low-angle beauty.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s3",
+          "title": "Kuttan — Phone Close-Up",
+          "seed_strategy": "imagen",
+          "still_prompt": "Extreme close-up of a phone screen in someone's hands. The screen shows a colorful German learning app with the word HALLO prominently displayed and a play button. The hands have medium-brown skin. Warm morning light reflecting off the screen. Shallow depth of field — background completely blurred. Pixar-style 3D.",
+          "animation_prompt": "Thumb taps the play button on the app. The screen animates — a lesson begins. The phone slightly tilts as the person engages. The glow of the screen brightening. The moment learning begins.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s4",
+          "title": "Kuttan — Dream Bubble",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium shot of a young Malayali man in his early 20s on a Kerala veranda, looking up at the sky with a dreamy expression. Above his head: a translucent thought bubble showing a miniature German city skyline — Cologne Cathedral, a tram, snow. The bubble is soft and ethereal. White cotton shirt. Golden morning light. Pixar-style 3D.",
+          "animation_prompt": "His eyes drift upward. The dream bubble slowly forms and becomes clearer — the German city inside it comes alive with tiny movement. A smile forms as the dream takes shape. Magical, aspirational.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s5",
+          "title": "Text Slam — GERMAN IS HARD",
+          "seed_strategy": "imagen",
+          "still_prompt": "Bold 3D text DER DIE DAS floating in dark space, each word a different color — blue, pink, yellow. The letters are slightly chaotic, overlapping, intimidating. Below them: a small confused character looking up at the towering words. Pixar-style 3D. Dramatic lighting from above.",
+          "animation_prompt": "The giant DER DIE DAS words slam down from above one by one. The character below flinches with each impact. Comic timing. The intimidation of German grammar visualized.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s6",
+          "title": "Phone Zoom — App Interface",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "Camera zooms into the phone screen. App interface scrolling — lessons, games, progress visible. Smooth satisfying animation. The learning tool in action.",
+          "duration": 4,
+          "chain_from": "v100-s5"
+        },
+        {
+          "id": "v100-s7",
+          "title": "Split Screen — Kerala vs Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "Split screen composition. Left half: warm golden Kerala scene with palm trees, terracotta tiles, tropical green. Right half: cool blue German scene with European buildings, snow, bare trees. A dotted line divides them. Both halves equally beautiful in different ways. Pixar-style 3D.",
+          "animation_prompt": "Both halves alive with subtle movement — palm trees swaying on left, snow falling on right. The dotted line between them pulses. Two worlds. One journey.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s8",
+          "title": "Kuttan — Walking Tracking Shot",
+          "seed_strategy": "imagen",
+          "still_prompt": "Tracking shot from the side. A young Malayali man in his early 20s walking confidently on a Kerala street, earphones in, phone in hand. The background streaks past in cinematic motion blur. His expression is focused and determined. White cotton shirt. Warm golden light. Pixar-style 3D. Dynamic composition.",
+          "animation_prompt": "Tracking alongside him as he walks. Background in motion blur. His stride is purposeful. Phone in hand — learning while moving. Dynamic, cinematic energy.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s9",
+          "title": "Overhead — Study Flatlay",
+          "seed_strategy": "imagen",
+          "still_prompt": "Directly overhead shot looking down at a study setup on a wooden table. A phone showing a German app, a notebook with neat German handwriting, a cup of chai, earphones, a pen. Everything arranged cleanly. Warm natural light. Pixar-style 3D. The tools of learning from above.",
+          "animation_prompt": "Camera slowly drifts over the flatlay. A hand enters frame and picks up the phone. Slight movement of steam from the chai. Intimate, organized, peaceful overhead perspective.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s10",
+          "title": "Plane Trail — India to Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "A small airplane silhouette flying across a beautiful gradient sky — warm orange on the left fading to cool blue on the right. Below: the curvature of the Earth showing the landmass transition from India to Europe. A white contrail behind the plane. Cinematic, symbolic. Pixar-style 3D.",
+          "animation_prompt": "Plane moves steadily from left to right. Contrail extending behind it. Sky transitioning from warm Indian tones to cool European tones. The physical journey across the sky. Beautiful and symbolic.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s11",
+          "title": "Germany — Arrival POV",
+          "seed_strategy": "imagen",
+          "still_prompt": "POV shot looking through a German train window. Beautiful German countryside rushing past — green fields, red-roofed villages, a river. Soft reflections on the glass. The wonder of seeing Germany for the first time through a window. Semi-realistic cinematic style.",
+          "animation_prompt": "Countryside streaming past the window. Camera slowly looking around inside the train. The wonder of arrival. Beautiful German landscape rushing by.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s12",
+          "title": "Kuttan — Confident in Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium-wide shot. A young Malayali man in his early 20s standing on a German city bridge at golden hour. European cityscape behind him. He holds a coffee cup, casual jacket. His posture is confident and relaxed — he belongs here. The transformation complete. Pixar-style 3D. Cinematic golden light.",
+          "animation_prompt": "Standing confidently. Sipping coffee. Looking at the city with familiarity. A gentle breeze. The ease of someone who earned this. Golden hour light on his face.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s13",
+          "title": "Text Slam — A1 A2 B1",
+          "seed_strategy": "imagen",
+          "still_prompt": "Bold 3D text on dark background. A1 in green, A2 in blue, B1 in gold — stacked vertically like levels in a game. Arrows pointing upward between them. Clean, motivational, like a progress chart. Pixar-style 3D with dramatic lighting.",
+          "animation_prompt": "A1 lights up first — green glow. Then A2 — blue glow. Then B1 — gold glow. Each level illuminating like unlocking a game level. Satisfying progression. Motivational.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s14",
+          "title": "Montage Flash — Best Moments",
+          "seed_strategy": "chain_from_previous",
+          "chain_from": "v100-s13",
+          "animation_prompt": "Rapid montage flash — 1 second each of: phone app, veranda studying, classroom, exam, airport, snow, German café. Quick cinematic cuts. Energy building. The full journey in 4 seconds.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s15",
+          "title": "Kuttan — Direct Look with Smile",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up portrait. A young Malayali man in his early 20s looking directly at the camera with a warm confident smile. Kerala veranda behind in soft golden blur. His expression says: come with me, you can do this. Warm, personal, inviting. White cotton shirt. Pixar-style 3D. Beautiful cinematic portrait lighting.",
+          "animation_prompt": "Looking into the camera. A warm genuine smile forming. Small nod. The invitation. Direct, personal, the promise of a guide and a friend.",
+          "duration": 4
+        },
+        {
+          "id": "v100-s16",
+          "title": "End Card — Logo Space",
+          "seed_strategy": "imagen",
+          "still_prompt": "Clean dark background with a subtle gradient — warm gold at bottom fading to dark. Empty center space for a logo or text overlay. Small Kerala palm tree silhouette on the left, small German building silhouette on the right. Minimal, elegant, branded. Pixar-style 3D.",
+          "animation_prompt": "Subtle gradient pulsing. The silhouettes fading in gently. Clean ending frame. Space for branding. Elegant resolve.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "title": "Intro V3 — Cinematic",
+      "status": "to-generate",
+      "duration_target_seconds": 64,
+      "narrative": "Emotional cinematic intro. Slower, deeper, more feeling. Kerala beauty, intimate Kuttan moments, the weight of the dream, the transformation.",
+      "scenes": [
+        {
+          "id": "v101-s1",
+          "title": "Kerala Backwater — Aerial",
+          "seed_strategy": "imagen",
+          "still_prompt": "Breathtaking aerial shot of Kerala backwaters at golden hour. A traditional houseboat on still water reflecting palm trees and sky. Lush green on both sides. Morning mist rising from the water. Cinematic, majestic. Pixar-style 3D with photorealistic water reflections.",
+          "animation_prompt": "Slow drone glide over the backwaters. Mist swirling. Water reflecting the golden sky. Houseboat gently moving. The beauty of home. Slow, cinematic, emotional.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s2",
+          "title": "Kuttan — Morning Routine Close-ups",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up montage style. A hand turning off a phone alarm showing 6:00 AM. Kerala bedroom, warm morning light through wooden shutters. The phone screen briefly visible with app notifications. Intimate, real, morning energy. Pixar-style 3D. Warm tones.",
+          "animation_prompt": "Hand reaching for the phone. Turning off alarm. Briefly seeing the German app icon on the screen. The start of a day. Intimate close-up detail.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s3",
+          "title": "Walking — Feet on Kerala Earth",
+          "seed_strategy": "imagen",
+          "still_prompt": "Low angle close-up of bare feet walking on warm Kerala earth — terracotta tiles then stepping onto a garden path. Morning dew on grass. The groundedness of home. Only feet and ground visible. Warm morning light. Pixar-style 3D.",
+          "animation_prompt": "Feet walking steadily. From tiles to earth to grass. The texture of home underfoot. Grounded, intimate, symbolic.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s4",
+          "title": "Kuttan — Under a Tree with Phone",
+          "seed_strategy": "imagen",
+          "still_prompt": "Wide shot. A young Malayali man in his early 20s sitting under a large banyan or mango tree, leaning against the trunk. Phone in hand, earphones in — doing a German lesson. Dappled sunlight through leaves. Green Kerala garden. A beautiful, peaceful learning moment. White cotton shirt. Pixar-style 3D.",
+          "animation_prompt": "Dappled light shifting through leaves. His finger scrolling on the phone. A tiny smile when something clicks. Birds in the branches. Learning in nature. Peaceful, beautiful.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s5",
+          "title": "Phone Screen — Lesson Progress",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up of a phone screen showing a German learning app. A progress circle completing — 100%. A celebration animation on screen. The phone is held by hands with medium-brown skin. Warm background blur. The small victory of finishing a lesson. Pixar-style 3D.",
+          "animation_prompt": "Progress circle filling up. Reaching 100%. Small celebration burst on screen. The satisfaction of completion. Intimate close-up of the screen.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s6",
+          "title": "Dream Sequence — German Street Appears",
+          "seed_strategy": "imagen",
+          "still_prompt": "Surreal transition shot. A Kerala garden scene that gradually morphs into a German city street — palm trees becoming European buildings, warm earth becoming cobblestones, tropical birds becoming snowflakes. Half Kerala, half Germany, blending together. Magical, dreamlike. Pixar-style 3D.",
+          "animation_prompt": "The Kerala scene slowly transforms. Palm trees morph into building facades. Ground shifts from earth to cobblestones. Colors shift from warm gold to cool blue. A magical transition between two worlds.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s7",
+          "title": "Kuttan — Speaking German to Mirror",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man in his early 20s standing in front of a mirror, speaking. We see his reflection — concentrated, practicing German pronunciation. Bedroom behind him. Morning light. The intimacy of practicing alone. White cotton shirt. Pixar-style 3D.",
+          "animation_prompt": "Mouth moving, forming German words carefully. Eyes checking his own expression. A tiny nod of approval. Then trying again, better this time. The private discipline of language learning.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s8",
+          "title": "Map Animation — Kerala Dot to Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "A beautiful stylized map showing Southern India and Europe. Kerala marked with a warm glowing dot. Germany marked with a blue glowing dot. A curved dotted line connects them. The map is artistic and warm — not a Google map, a story map. Dark background. Pixar-style 3D.",
+          "animation_prompt": "The Kerala dot pulses warmly. The dotted line slowly draws itself toward Germany. The Germany dot lights up when the line arrives. The path illuminated. A journey on a map.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s9",
+          "title": "Boarding Pass — Close-Up",
+          "seed_strategy": "imagen",
+          "still_prompt": "Extreme close-up of a boarding pass being held by medium-brown skinned hands. The destination reads FRANKFURT. Departure reads KOCHI. Warm lighting. Slightly trembling hands — nervous excitement. Pixar-style 3D. The document that changes everything.",
+          "animation_prompt": "Hands slightly trembling holding the boarding pass. Camera slowly pulling focus. The weight of this piece of paper. Emotional, intimate.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s10",
+          "title": "Window Seat — Clouds",
+          "seed_strategy": "imagen",
+          "still_prompt": "View from an airplane window. Clouds below, blue sky above, golden sunlight streaming in. A faint reflection of a young man's face in the glass, looking out. Between two worlds — left home, haven't arrived yet. Pixar-style 3D. Cinematic, emotional.",
+          "animation_prompt": "Clouds drifting below. Sunlight shifting. The faint reflection blinking. Suspended between two lives. Cinematic and meditative.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s11",
+          "title": "Germany — First Footstep",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up of a shoe stepping onto European cobblestone for the first time. Winter light. Frost on the stones. One foot — the first step on German ground. Symbolic and intimate. Pixar-style 3D.",
+          "animation_prompt": "Foot landing on cobblestone. Weight shifting. The sound of a step on stone. Looking up — European buildings ahead. The first step in a new country.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s12",
+          "title": "Kuttan — Snow Wonder",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium close-up. A young Malayali man in his early 20s with snowflakes falling around him. He looks up with pure wonder — first time seeing snow. Open mouth, wide eyes, hand reaching out. Warm jacket. European buildings blurred behind. Pixar-style 3D. Magical winter light.",
+          "animation_prompt": "Snowflakes falling on his face. Hand reaching up to catch one. Wonder in his eyes. A snowflake melting on his palm. Magic of first snow.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s13",
+          "title": "Kuttan — Speaking Fluently at Café",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium shot. A young Malayali man in his early 20s at a German café table, speaking animatedly to someone off-camera. Natural, fluent, confident. A coffee on the table. Spring light through the window. European café interior. He has arrived. Casual clothes. Pixar-style 3D.",
+          "animation_prompt": "Natural animated conversation. Hand gestures. Genuine laugh. The ease of speaking German without effort. The destination reached.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s14",
+          "title": "Split — Young Kuttan and Confident Kuttan",
+          "seed_strategy": "imagen",
+          "still_prompt": "Split composition. Left side: a nervous young man on a Kerala veranda looking at his phone with uncertainty. Right side: the same young man on a German bridge, confident, smiling, holding a coffee. Same person, different chapters. Left is warm gold. Right is cool blue-gold. Pixar-style 3D. The transformation.",
+          "animation_prompt": "Both halves animate subtly. Left: nervous scrolling. Right: confident smile. The contrast between beginning and becoming. Powerful visual story.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s15",
+          "title": "Kuttan — Looks at Camera",
+          "seed_strategy": "imagen",
+          "still_prompt": "Tight close-up. A young Malayali man in his early 20s. Half his face lit by warm Kerala golden light, half by cool German blue light. He looks directly at camera. His expression is warm and knowing — I did this, and so can you. Pixar-style 3D. Dramatic split lighting.",
+          "animation_prompt": "Looking into the camera with split lighting. Warm and cool on one face. A slow nod. A small smile. The bridge between two worlds. Personal, powerful.",
+          "duration": 4
+        },
+        {
+          "id": "v101-s16",
+          "title": "End — Kerala Palm Meets German Tower",
+          "seed_strategy": "imagen",
+          "still_prompt": "A artistic composition. A Kerala coconut palm on the left and a German church steeple on the right, both silhouetted against a shared golden sunset sky. They lean slightly toward each other. Between them: empty space for a logo. Beautiful, symbolic, final. Pixar-style 3D.",
+          "animation_prompt": "Both silhouettes gently swaying. Sunset colors shifting. The two worlds framing the space between them. A final beautiful image. Resolution.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 201,
+      "title": "Intro V2 — Dynamic (Portrait)",
+      "status": "to-generate",
+      "duration_target_seconds": 64,
+      "narrative": "Dynamic intro with India-to-Germany transitions, dream bubbles, phone zooms, text animations, varied angles.",
+      "scenes": [
+        {
+          "id": "v201-s1",
+          "title": "Globe Spin — India to Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "Overhead cinematic shot of a stylized 3D globe showing India highlighted in warm gold. A glowing dotted line trails from Kerala across the globe toward Germany highlighted in blue. Dark space background with soft stars. The journey visualized as a path across the world. Pixar-style 3D, dramatic lighting.",
+          "animation_prompt": "Globe slowly rotating. The dotted trail line animates from India toward Germany, glowing as it travels. Cinematic, epic, the scale of the journey. Camera slowly pushes in on the path.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s2",
+          "title": "Kerala Sunrise — Low Angle",
+          "seed_strategy": "imagen",
+          "still_prompt": "Ultra-low angle shot looking up at Kerala palm trees against a golden sunrise sky. Coconut palms silhouetted dramatically. Warm orange and pink sky. Birds in the distance. Cinematic, breathtaking. Pixar-style 3D. No people.",
+          "animation_prompt": "Palm fronds swaying gently against the sunrise. Birds flying across. Light intensifying. Dramatic low-angle beauty.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s3",
+          "title": "Kuttan — Phone Close-Up",
+          "seed_strategy": "imagen",
+          "still_prompt": "Extreme close-up of a phone screen in someone's hands. The screen shows a colorful German learning app with the word HALLO prominently displayed and a play button. The hands have medium-brown skin. Warm morning light reflecting off the screen. Shallow depth of field — background completely blurred. Pixar-style 3D.",
+          "animation_prompt": "Thumb taps the play button on the app. The screen animates — a lesson begins. The phone slightly tilts as the person engages. The glow of the screen brightening. The moment learning begins.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s4",
+          "title": "Kuttan — Dream Bubble",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium shot of a young Malayali man in his early 20s on a Kerala veranda, looking up at the sky with a dreamy expression. Above his head: a translucent thought bubble showing a miniature German city skyline — Cologne Cathedral, a tram, snow. The bubble is soft and ethereal. White cotton shirt. Golden morning light. Pixar-style 3D.",
+          "animation_prompt": "His eyes drift upward. The dream bubble slowly forms and becomes clearer — the German city inside it comes alive with tiny movement. A smile forms as the dream takes shape. Magical, aspirational.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s5",
+          "title": "Text Slam — GERMAN IS HARD",
+          "seed_strategy": "imagen",
+          "still_prompt": "Bold 3D text DER DIE DAS floating in dark space, each word a different color — blue, pink, yellow. The letters are slightly chaotic, overlapping, intimidating. Below them: a small confused character looking up at the towering words. Pixar-style 3D. Dramatic lighting from above.",
+          "animation_prompt": "The giant DER DIE DAS words slam down from above one by one. The character below flinches with each impact. Comic timing. The intimidation of German grammar visualized.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s6",
+          "title": "Phone Zoom — App Interface",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "Camera zooms into the phone screen. App interface scrolling — lessons, games, progress visible. Smooth satisfying animation. The learning tool in action.",
+          "duration": 4,
+          "chain_from": "v201-s5"
+        },
+        {
+          "id": "v201-s7",
+          "title": "Split Screen — Kerala vs Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "Split screen composition. Left half: warm golden Kerala scene with palm trees, terracotta tiles, tropical green. Right half: cool blue German scene with European buildings, snow, bare trees. A dotted line divides them. Both halves equally beautiful in different ways. Pixar-style 3D.",
+          "animation_prompt": "Both halves alive with subtle movement — palm trees swaying on left, snow falling on right. The dotted line between them pulses. Two worlds. One journey.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s8",
+          "title": "Kuttan — Walking Tracking Shot",
+          "seed_strategy": "imagen",
+          "still_prompt": "Tracking shot from the side. A young Malayali man in his early 20s walking confidently on a Kerala street, earphones in, phone in hand. The background streaks past in cinematic motion blur. His expression is focused and determined. White cotton shirt. Warm golden light. Pixar-style 3D. Dynamic composition.",
+          "animation_prompt": "Tracking alongside him as he walks. Background in motion blur. His stride is purposeful. Phone in hand — learning while moving. Dynamic, cinematic energy.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s9",
+          "title": "Overhead — Study Flatlay",
+          "seed_strategy": "imagen",
+          "still_prompt": "Directly overhead shot looking down at a study setup on a wooden table. A phone showing a German app, a notebook with neat German handwriting, a cup of chai, earphones, a pen. Everything arranged cleanly. Warm natural light. Pixar-style 3D. The tools of learning from above.",
+          "animation_prompt": "Camera slowly drifts over the flatlay. A hand enters frame and picks up the phone. Slight movement of steam from the chai. Intimate, organized, peaceful overhead perspective.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s10",
+          "title": "Plane Trail — India to Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "A small airplane silhouette flying across a beautiful gradient sky — warm orange on the left fading to cool blue on the right. Below: the curvature of the Earth showing the landmass transition from India to Europe. A white contrail behind the plane. Cinematic, symbolic. Pixar-style 3D.",
+          "animation_prompt": "Plane moves steadily from left to right. Contrail extending behind it. Sky transitioning from warm Indian tones to cool European tones. The physical journey across the sky. Beautiful and symbolic.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s11",
+          "title": "Germany — Arrival POV",
+          "seed_strategy": "imagen",
+          "still_prompt": "POV shot looking through a German train window. Beautiful German countryside rushing past — green fields, red-roofed villages, a river. Soft reflections on the glass. The wonder of seeing Germany for the first time through a window. Semi-realistic cinematic style.",
+          "animation_prompt": "Countryside streaming past the window. Camera slowly looking around inside the train. The wonder of arrival. Beautiful German landscape rushing by.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s12",
+          "title": "Kuttan — Confident in Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium-wide shot. A young Malayali man in his early 20s standing on a German city bridge at golden hour. European cityscape behind him. He holds a coffee cup, casual jacket. His posture is confident and relaxed — he belongs here. The transformation complete. Pixar-style 3D. Cinematic golden light.",
+          "animation_prompt": "Standing confidently. Sipping coffee. Looking at the city with familiarity. A gentle breeze. The ease of someone who earned this. Golden hour light on his face.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s13",
+          "title": "Text Slam — A1 A2 B1",
+          "seed_strategy": "imagen",
+          "still_prompt": "Bold 3D text on dark background. A1 in green, A2 in blue, B1 in gold — stacked vertically like levels in a game. Arrows pointing upward between them. Clean, motivational, like a progress chart. Pixar-style 3D with dramatic lighting.",
+          "animation_prompt": "A1 lights up first — green glow. Then A2 — blue glow. Then B1 — gold glow. Each level illuminating like unlocking a game level. Satisfying progression. Motivational.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s14",
+          "title": "Montage Flash — Best Moments",
+          "seed_strategy": "chain_from_previous",
+          "chain_from": "v201-s13",
+          "animation_prompt": "Rapid montage flash — 1 second each of: phone app, veranda studying, classroom, exam, airport, snow, German café. Quick cinematic cuts. Energy building. The full journey in 4 seconds.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s15",
+          "title": "Kuttan — Direct Look with Smile",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up portrait. A young Malayali man in his early 20s looking directly at the camera with a warm confident smile. Kerala veranda behind in soft golden blur. His expression says: come with me, you can do this. Warm, personal, inviting. White cotton shirt. Pixar-style 3D. Beautiful cinematic portrait lighting.",
+          "animation_prompt": "Looking into the camera. A warm genuine smile forming. Small nod. The invitation. Direct, personal, the promise of a guide and a friend.",
+          "duration": 4
+        },
+        {
+          "id": "v201-s16",
+          "title": "End Card — Logo Space",
+          "seed_strategy": "imagen",
+          "still_prompt": "Clean dark background with a subtle gradient — warm gold at bottom fading to dark. Empty center space for a logo or text overlay. Small Kerala palm tree silhouette on the left, small German building silhouette on the right. Minimal, elegant, branded. Pixar-style 3D.",
+          "animation_prompt": "Subtle gradient pulsing. The silhouettes fading in gently. Clean ending frame. Space for branding. Elegant resolve.",
+          "duration": 4
+        }
+      ],
+      "aspect_ratio": "9:16"
+    },
+    {
+      "id": 202,
+      "title": "Intro V3 — Cinematic (Portrait)",
+      "status": "to-generate",
+      "duration_target_seconds": 64,
+      "narrative": "Emotional cinematic intro. Slower, deeper, more feeling. Kerala beauty, intimate Kuttan moments, the weight of the dream, the transformation.",
+      "scenes": [
+        {
+          "id": "v202-s1",
+          "title": "Kerala Backwater — Aerial",
+          "seed_strategy": "imagen",
+          "still_prompt": "Breathtaking aerial shot of Kerala backwaters at golden hour. A traditional houseboat on still water reflecting palm trees and sky. Lush green on both sides. Morning mist rising from the water. Cinematic, majestic. Pixar-style 3D with photorealistic water reflections.",
+          "animation_prompt": "Slow drone glide over the backwaters. Mist swirling. Water reflecting the golden sky. Houseboat gently moving. The beauty of home. Slow, cinematic, emotional.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s2",
+          "title": "Kuttan — Morning Routine Close-ups",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up montage style. A hand turning off a phone alarm showing 6:00 AM. Kerala bedroom, warm morning light through wooden shutters. The phone screen briefly visible with app notifications. Intimate, real, morning energy. Pixar-style 3D. Warm tones.",
+          "animation_prompt": "Hand reaching for the phone. Turning off alarm. Briefly seeing the German app icon on the screen. The start of a day. Intimate close-up detail.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s3",
+          "title": "Walking — Feet on Kerala Earth",
+          "seed_strategy": "imagen",
+          "still_prompt": "Low angle close-up of bare feet walking on warm Kerala earth — terracotta tiles then stepping onto a garden path. Morning dew on grass. The groundedness of home. Only feet and ground visible. Warm morning light. Pixar-style 3D.",
+          "animation_prompt": "Feet walking steadily. From tiles to earth to grass. The texture of home underfoot. Grounded, intimate, symbolic.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s4",
+          "title": "Kuttan — Under a Tree with Phone",
+          "seed_strategy": "imagen",
+          "still_prompt": "Wide shot. A young Malayali man in his early 20s sitting under a large banyan or mango tree, leaning against the trunk. Phone in hand, earphones in — doing a German lesson. Dappled sunlight through leaves. Green Kerala garden. A beautiful, peaceful learning moment. White cotton shirt. Pixar-style 3D.",
+          "animation_prompt": "Dappled light shifting through leaves. His finger scrolling on the phone. A tiny smile when something clicks. Birds in the branches. Learning in nature. Peaceful, beautiful.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s5",
+          "title": "Phone Screen — Lesson Progress",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up of a phone screen showing a German learning app. A progress circle completing — 100%. A celebration animation on screen. The phone is held by hands with medium-brown skin. Warm background blur. The small victory of finishing a lesson. Pixar-style 3D.",
+          "animation_prompt": "Progress circle filling up. Reaching 100%. Small celebration burst on screen. The satisfaction of completion. Intimate close-up of the screen.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s6",
+          "title": "Dream Sequence — German Street Appears",
+          "seed_strategy": "imagen",
+          "still_prompt": "Surreal transition shot. A Kerala garden scene that gradually morphs into a German city street — palm trees becoming European buildings, warm earth becoming cobblestones, tropical birds becoming snowflakes. Half Kerala, half Germany, blending together. Magical, dreamlike. Pixar-style 3D.",
+          "animation_prompt": "The Kerala scene slowly transforms. Palm trees morph into building facades. Ground shifts from earth to cobblestones. Colors shift from warm gold to cool blue. A magical transition between two worlds.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s7",
+          "title": "Kuttan — Speaking German to Mirror",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man in his early 20s standing in front of a mirror, speaking. We see his reflection — concentrated, practicing German pronunciation. Bedroom behind him. Morning light. The intimacy of practicing alone. White cotton shirt. Pixar-style 3D.",
+          "animation_prompt": "Mouth moving, forming German words carefully. Eyes checking his own expression. A tiny nod of approval. Then trying again, better this time. The private discipline of language learning.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s8",
+          "title": "Map Animation — Kerala Dot to Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "A beautiful stylized map showing Southern India and Europe. Kerala marked with a warm glowing dot. Germany marked with a blue glowing dot. A curved dotted line connects them. The map is artistic and warm — not a Google map, a story map. Dark background. Pixar-style 3D.",
+          "animation_prompt": "The Kerala dot pulses warmly. The dotted line slowly draws itself toward Germany. The Germany dot lights up when the line arrives. The path illuminated. A journey on a map.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s9",
+          "title": "Boarding Pass — Close-Up",
+          "seed_strategy": "imagen",
+          "still_prompt": "Extreme close-up of a boarding pass being held by medium-brown skinned hands. The destination reads FRANKFURT. Departure reads KOCHI. Warm lighting. Slightly trembling hands — nervous excitement. Pixar-style 3D. The document that changes everything.",
+          "animation_prompt": "Hands slightly trembling holding the boarding pass. Camera slowly pulling focus. The weight of this piece of paper. Emotional, intimate.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s10",
+          "title": "Window Seat — Clouds",
+          "seed_strategy": "imagen",
+          "still_prompt": "View from an airplane window. Clouds below, blue sky above, golden sunlight streaming in. A faint reflection of a young man's face in the glass, looking out. Between two worlds — left home, haven't arrived yet. Pixar-style 3D. Cinematic, emotional.",
+          "animation_prompt": "Clouds drifting below. Sunlight shifting. The faint reflection blinking. Suspended between two lives. Cinematic and meditative.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s11",
+          "title": "Germany — First Footstep",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up of a shoe stepping onto European cobblestone for the first time. Winter light. Frost on the stones. One foot — the first step on German ground. Symbolic and intimate. Pixar-style 3D.",
+          "animation_prompt": "Foot landing on cobblestone. Weight shifting. The sound of a step on stone. Looking up — European buildings ahead. The first step in a new country.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s12",
+          "title": "Kuttan — Snow Wonder",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium close-up. A young Malayali man in his early 20s with snowflakes falling around him. He looks up with pure wonder — first time seeing snow. Open mouth, wide eyes, hand reaching out. Warm jacket. European buildings blurred behind. Pixar-style 3D. Magical winter light.",
+          "animation_prompt": "Snowflakes falling on his face. Hand reaching up to catch one. Wonder in his eyes. A snowflake melting on his palm. Magic of first snow.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s13",
+          "title": "Kuttan — Speaking Fluently at Café",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium shot. A young Malayali man in his early 20s at a German café table, speaking animatedly to someone off-camera. Natural, fluent, confident. A coffee on the table. Spring light through the window. European café interior. He has arrived. Casual clothes. Pixar-style 3D.",
+          "animation_prompt": "Natural animated conversation. Hand gestures. Genuine laugh. The ease of speaking German without effort. The destination reached.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s14",
+          "title": "Split — Young Kuttan and Confident Kuttan",
+          "seed_strategy": "imagen",
+          "still_prompt": "Split composition. Left side: a nervous young man on a Kerala veranda looking at his phone with uncertainty. Right side: the same young man on a German bridge, confident, smiling, holding a coffee. Same person, different chapters. Left is warm gold. Right is cool blue-gold. Pixar-style 3D. The transformation.",
+          "animation_prompt": "Both halves animate subtly. Left: nervous scrolling. Right: confident smile. The contrast between beginning and becoming. Powerful visual story.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s15",
+          "title": "Kuttan — Looks at Camera",
+          "seed_strategy": "imagen",
+          "still_prompt": "Tight close-up. A young Malayali man in his early 20s. Half his face lit by warm Kerala golden light, half by cool German blue light. He looks directly at camera. His expression is warm and knowing — I did this, and so can you. Pixar-style 3D. Dramatic split lighting.",
+          "animation_prompt": "Looking into the camera with split lighting. Warm and cool on one face. A slow nod. A small smile. The bridge between two worlds. Personal, powerful.",
+          "duration": 4
+        },
+        {
+          "id": "v202-s16",
+          "title": "End — Kerala Palm Meets German Tower",
+          "seed_strategy": "imagen",
+          "still_prompt": "A artistic composition. A Kerala coconut palm on the left and a German church steeple on the right, both silhouetted against a shared golden sunset sky. They lean slightly toward each other. Between them: empty space for a logo. Beautiful, symbolic, final. Pixar-style 3D.",
+          "animation_prompt": "Both silhouettes gently swaying. Sunset colors shifting. The two worlds framing the space between them. A final beautiful image. Resolution.",
+          "duration": 4
+        }
+      ],
+      "aspect_ratio": "9:16"
+    },
+    {
+      "id": 200,
+      "title": "Intro V1 — Original (Portrait)",
+      "status": "to-generate",
+      "duration_target_seconds": 64,
+      "narrative": "Dynamic intro with India-to-Germany transitions, dream bubbles, phone zooms, text animations, varied angles.",
+      "scenes": [
+        {
+          "id": "v200-s1",
+          "title": "Globe Spin — India to Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "Overhead cinematic shot of a stylized 3D globe showing India highlighted in warm gold. A glowing dotted line trails from Kerala across the globe toward Germany highlighted in blue. Dark space background with soft stars. The journey visualized as a path across the world. Pixar-style 3D, dramatic lighting.",
+          "animation_prompt": "Globe slowly rotating. The dotted trail line animates from India toward Germany, glowing as it travels. Cinematic, epic, the scale of the journey. Camera slowly pushes in on the path.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s2",
+          "title": "Kerala Sunrise — Low Angle",
+          "seed_strategy": "imagen",
+          "still_prompt": "Ultra-low angle shot looking up at Kerala palm trees against a golden sunrise sky. Coconut palms silhouetted dramatically. Warm orange and pink sky. Birds in the distance. Cinematic, breathtaking. Pixar-style 3D. No people.",
+          "animation_prompt": "Palm fronds swaying gently against the sunrise. Birds flying across. Light intensifying. Dramatic low-angle beauty.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s3",
+          "title": "Kuttan — Phone Close-Up",
+          "seed_strategy": "imagen",
+          "still_prompt": "Extreme close-up of a phone screen in someone's hands. The screen shows a colorful German learning app with the word HALLO prominently displayed and a play button. The hands have medium-brown skin. Warm morning light reflecting off the screen. Shallow depth of field — background completely blurred. Pixar-style 3D.",
+          "animation_prompt": "Thumb taps the play button on the app. The screen animates — a lesson begins. The phone slightly tilts as the person engages. The glow of the screen brightening. The moment learning begins.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s4",
+          "title": "Kuttan — Dream Bubble",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium shot of a young Malayali man in his early 20s on a Kerala veranda, looking up at the sky with a dreamy expression. Above his head: a translucent thought bubble showing a miniature German city skyline — Cologne Cathedral, a tram, snow. The bubble is soft and ethereal. White cotton shirt. Golden morning light. Pixar-style 3D.",
+          "animation_prompt": "His eyes drift upward. The dream bubble slowly forms and becomes clearer — the German city inside it comes alive with tiny movement. A smile forms as the dream takes shape. Magical, aspirational.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s5",
+          "title": "Text Slam — GERMAN IS HARD",
+          "seed_strategy": "imagen",
+          "still_prompt": "Bold 3D text DER DIE DAS floating in dark space, each word a different color — blue, pink, yellow. The letters are slightly chaotic, overlapping, intimidating. Below them: a small confused character looking up at the towering words. Pixar-style 3D. Dramatic lighting from above.",
+          "animation_prompt": "The giant DER DIE DAS words slam down from above one by one. The character below flinches with each impact. Comic timing. The intimidation of German grammar visualized.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s6",
+          "title": "Phone Zoom — App Interface",
+          "seed_strategy": "chain_from_previous",
+          "animation_prompt": "Camera zooms into the phone screen. App interface scrolling — lessons, games, progress visible. Smooth satisfying animation. The learning tool in action.",
+          "duration": 4,
+          "chain_from": "v200-s5"
+        },
+        {
+          "id": "v200-s7",
+          "title": "Split Screen — Kerala vs Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "Split screen composition. Left half: warm golden Kerala scene with palm trees, terracotta tiles, tropical green. Right half: cool blue German scene with European buildings, snow, bare trees. A dotted line divides them. Both halves equally beautiful in different ways. Pixar-style 3D.",
+          "animation_prompt": "Both halves alive with subtle movement — palm trees swaying on left, snow falling on right. The dotted line between them pulses. Two worlds. One journey.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s8",
+          "title": "Kuttan — Walking Tracking Shot",
+          "seed_strategy": "imagen",
+          "still_prompt": "Tracking shot from the side. A young Malayali man in his early 20s walking confidently on a Kerala street, earphones in, phone in hand. The background streaks past in cinematic motion blur. His expression is focused and determined. White cotton shirt. Warm golden light. Pixar-style 3D. Dynamic composition.",
+          "animation_prompt": "Tracking alongside him as he walks. Background in motion blur. His stride is purposeful. Phone in hand — learning while moving. Dynamic, cinematic energy.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s9",
+          "title": "Overhead — Study Flatlay",
+          "seed_strategy": "imagen",
+          "still_prompt": "Directly overhead shot looking down at a study setup on a wooden table. A phone showing a German app, a notebook with neat German handwriting, a cup of chai, earphones, a pen. Everything arranged cleanly. Warm natural light. Pixar-style 3D. The tools of learning from above.",
+          "animation_prompt": "Camera slowly drifts over the flatlay. A hand enters frame and picks up the phone. Slight movement of steam from the chai. Intimate, organized, peaceful overhead perspective.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s10",
+          "title": "Plane Trail — India to Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "A small airplane silhouette flying across a beautiful gradient sky — warm orange on the left fading to cool blue on the right. Below: the curvature of the Earth showing the landmass transition from India to Europe. A white contrail behind the plane. Cinematic, symbolic. Pixar-style 3D.",
+          "animation_prompt": "Plane moves steadily from left to right. Contrail extending behind it. Sky transitioning from warm Indian tones to cool European tones. The physical journey across the sky. Beautiful and symbolic.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s11",
+          "title": "Germany — Arrival POV",
+          "seed_strategy": "imagen",
+          "still_prompt": "POV shot looking through a German train window. Beautiful German countryside rushing past — green fields, red-roofed villages, a river. Soft reflections on the glass. The wonder of seeing Germany for the first time through a window. Semi-realistic cinematic style.",
+          "animation_prompt": "Countryside streaming past the window. Camera slowly looking around inside the train. The wonder of arrival. Beautiful German landscape rushing by.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s12",
+          "title": "Kuttan — Confident in Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium-wide shot. A young Malayali man in his early 20s standing on a German city bridge at golden hour. European cityscape behind him. He holds a coffee cup, casual jacket. His posture is confident and relaxed — he belongs here. The transformation complete. Pixar-style 3D. Cinematic golden light.",
+          "animation_prompt": "Standing confidently. Sipping coffee. Looking at the city with familiarity. A gentle breeze. The ease of someone who earned this. Golden hour light on his face.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s13",
+          "title": "Text Slam — A1 A2 B1",
+          "seed_strategy": "imagen",
+          "still_prompt": "Bold 3D text on dark background. A1 in green, A2 in blue, B1 in gold — stacked vertically like levels in a game. Arrows pointing upward between them. Clean, motivational, like a progress chart. Pixar-style 3D with dramatic lighting.",
+          "animation_prompt": "A1 lights up first — green glow. Then A2 — blue glow. Then B1 — gold glow. Each level illuminating like unlocking a game level. Satisfying progression. Motivational.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s14",
+          "title": "Montage Flash — Best Moments",
+          "seed_strategy": "chain_from_previous",
+          "chain_from": "v200-s13",
+          "animation_prompt": "Rapid montage flash — 1 second each of: phone app, veranda studying, classroom, exam, airport, snow, German café. Quick cinematic cuts. Energy building. The full journey in 4 seconds.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s15",
+          "title": "Kuttan — Direct Look with Smile",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up portrait. A young Malayali man in his early 20s looking directly at the camera with a warm confident smile. Kerala veranda behind in soft golden blur. His expression says: come with me, you can do this. Warm, personal, inviting. White cotton shirt. Pixar-style 3D. Beautiful cinematic portrait lighting.",
+          "animation_prompt": "Looking into the camera. A warm genuine smile forming. Small nod. The invitation. Direct, personal, the promise of a guide and a friend.",
+          "duration": 4
+        },
+        {
+          "id": "v200-s16",
+          "title": "End Card — Logo Space",
+          "seed_strategy": "imagen",
+          "still_prompt": "Clean dark background with a subtle gradient — warm gold at bottom fading to dark. Empty center space for a logo or text overlay. Small Kerala palm tree silhouette on the left, small German building silhouette on the right. Minimal, elegant, branded. Pixar-style 3D.",
+          "animation_prompt": "Subtle gradient pulsing. The silhouettes fading in gently. Clean ending frame. Space for branding. Elegant resolve.",
+          "duration": 4
+        }
+      ],
+      "aspect_ratio": "9:16"
     }
   ]
 }

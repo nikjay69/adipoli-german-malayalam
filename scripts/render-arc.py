@@ -193,22 +193,34 @@ def log_cost(action_type, scene_id, units, cost_estimate_usd, output_path, statu
         )
 
 
-# ── Imagen 3 (Vertex AI) ──────────────────────────────────────────────────────
+# ── Still generation (Gemini Flash image gen, Vertex AI) ─────────────────────
+
+
+GEMINI_USD_PER_IMAGE = 0.04  # approximate; actual billing may differ
 
 
 def call_imagen(scene, output_path, globals_, dry_run=False):
-    """Generate a still image via Vertex AI Imagen 3."""
+    """Generate a still image via Gemini Flash image generation (Vertex AI).
+
+    Uses the same model Openclaw used for Videos 1 & 7:
+    google/gemini-3.1-flash-image-preview via :generateContent endpoint.
+    Negative prompt is inlined into the text prompt (Gemini has no negativePrompt param).
+    """
     project_id = globals_["project_id"]
     region = globals_["region"]
-    model = globals_["imagen_model"]
-    aspect = globals_["aspect_ratio"]
+    model = globals_.get("still_model", "gemini-2.5-flash-image")
+    aspect = globals_.get("_video_aspect") or globals_["aspect_ratio"]
 
+    # Build prompt: style + character + scene + negative instructions inline
+    negative = globals_.get("negative_prompt", "")
+    orientation = "Vertical portrait composition, tall and narrow framing. " if aspect == "9:16" else ""
     full_prompt = (
-        f"{globals_['style_block']} {globals_['character_block']} {scene['still_prompt']}"
+        f"{orientation}{globals_['style_block']} {globals_['character_block']} "
+        f"{scene['still_prompt']} {negative}"
     )
 
     if dry_run:
-        print(f"  [DRY RUN] Imagen → {output_path}")
+        print(f"  [DRY RUN] Gemini ({model}) → {output_path}")
         print(f"    Prompt ({len(full_prompt)} chars): {full_prompt[:140]}…")
         return
 
@@ -217,18 +229,48 @@ def call_imagen(scene, output_path, globals_, dry_run=False):
         return
 
     creds = get_credentials()
+    # Use v1beta1 for image generation config (aspect ratio support)
     endpoint = (
-        f"https://{region}-aiplatform.googleapis.com/v1/projects/{project_id}/"
-        f"locations/{region}/publishers/google/models/{model}:predict"
+        f"https://{region}-aiplatform.googleapis.com/v1beta1/projects/{project_id}/"
+        f"locations/{region}/publishers/google/models/{model}:generateContent"
     )
 
+    # Build content parts: optional reference image + text prompt
+    parts = []
+    ref_path = REPO_ROOT / globals_.get(
+        "kuttan_reference", "pilot/video-1/seeds/s1-start.jpg"
+    )
+    if ref_path.exists():
+        ref_b64 = base64.b64encode(ref_path.read_bytes()).decode("utf-8")
+        parts.append({
+            "inlineData": {
+                "mimeType": "image/jpeg",
+                "data": ref_b64,
+            }
+        })
+        # Prepend instruction to match only the character identity, not the scene
+        full_prompt = (
+            "Use the character from this reference image — match their exact "
+            "face, hair, and build. Do NOT copy the scene, pose, or props "
+            "from the reference. Instead, place this character in the "
+            "following new scene: " + full_prompt
+        )
+        print(f"  [REF] Kuttan reference image included as input")
+
+    parts.append({"text": full_prompt})
+
     payload = {
-        "instances": [{"prompt": full_prompt}],
-        "parameters": {
-            "sampleCount": 1,
-            "aspectRatio": aspect,
-            "personGeneration": "allow_adult",
-            "negativePrompt": globals_["negative_prompt"],
+        "contents": [
+            {
+                "role": "user",
+                "parts": parts,
+            }
+        ],
+        "generationConfig": {
+            "responseModalities": ["IMAGE", "TEXT"],
+            "imageConfig": {
+                "aspectRatio": aspect,
+            },
         },
     }
 
@@ -248,37 +290,49 @@ def call_imagen(scene, output_path, globals_, dry_run=False):
         if r.status_code != 200:
             err = f"HTTP {r.status_code}: {r.text[:300]}"
             log_action(
-                "imagen", scene["id"], full_prompt, output_path,
+                "gemini-img", scene["id"], full_prompt, output_path,
                 "failed", latency_ms=latency_ms, error=err,
             )
-            log_cost("imagen", scene["id"], 0, 0.0, output_path, "failed")
-            raise RuntimeError(f"Imagen API error — {err}")
+            log_cost("gemini-img", scene["id"], 0, 0.0, output_path, "failed")
+            raise RuntimeError(f"Gemini image API error — {err}")
 
         data = r.json()
-        predictions = data.get("predictions", [])
-        if not predictions:
-            raise RuntimeError(f"Imagen returned no predictions: {data}")
-        b64 = predictions[0].get("bytesBase64Encoded")
+        # Extract image from candidates[].content.parts[].inlineData
+        candidates = data.get("candidates", [])
+        if not candidates:
+            raise RuntimeError(f"Gemini returned no candidates: {data}")
+
+        b64 = None
+        for part in candidates[0].get("content", {}).get("parts", []):
+            if "inlineData" in part:
+                b64 = part["inlineData"]["data"]
+                break
+
         if not b64:
-            raise RuntimeError(f"Imagen prediction missing image: {predictions[0]}")
+            raise RuntimeError(
+                f"Gemini response has no image data: "
+                f"{json.dumps(data)[:400]}"
+            )
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_bytes(base64.b64decode(b64))
 
         log_action(
-            "imagen", scene["id"], full_prompt, output_path,
-            "ok", latency_ms=latency_ms, cost_estimate=IMAGEN_USD_PER_IMAGE,
+            "gemini-img", scene["id"], full_prompt, output_path,
+            "ok", latency_ms=latency_ms, cost_estimate=GEMINI_USD_PER_IMAGE,
         )
-        log_cost("imagen", scene["id"], 1, IMAGEN_USD_PER_IMAGE, output_path, "ok")
-        print(f"  ✓ Imagen → {output_path.name} ({latency_ms}ms, ~${IMAGEN_USD_PER_IMAGE:.3f})")
+        log_cost("gemini-img", scene["id"], 1, GEMINI_USD_PER_IMAGE, output_path, "ok")
+        print(f"  ✓ Gemini → {output_path.name} ({latency_ms}ms, ~${GEMINI_USD_PER_IMAGE:.3f})")
+        # Rate limit cooldown — Gemini Flash has tight RPM with reference images
+        time.sleep(35)
 
     except Exception as e:
         latency_ms = int((time.time() - t0) * 1000)
         log_action(
-            "imagen", scene["id"], full_prompt, output_path,
+            "gemini-img", scene["id"], full_prompt, output_path,
             "failed", latency_ms=latency_ms, error=str(e),
         )
-        log_cost("imagen", scene["id"], 0, 0.0, output_path, "failed")
+        log_cost("gemini-img", scene["id"], 0, 0.0, output_path, "failed")
         raise
 
 
@@ -290,7 +344,7 @@ def call_veo(scene, seed_image_path, output_path, globals_, dry_run=False):
     project_id = globals_["project_id"]
     region = globals_["region"]
     model = globals_["veo_model"]
-    aspect = globals_["aspect_ratio"]
+    aspect = globals_.get("_video_aspect") or globals_["aspect_ratio"]
     storage_uri = globals_["gcs_output_bucket"]
     duration = scene.get("duration", globals_["default_duration_seconds"])
 
@@ -663,7 +717,10 @@ def render_scene(scene, video, manifest, phase, dry_run, force):
     video_id = video["id"]
     paths = video_paths(video_id)
     ensure_video_dirs(video_id)
-    globals_ = manifest["globals"]
+    globals_ = dict(manifest["globals"])
+    # Per-video aspect ratio override
+    if "aspect_ratio" in video:
+        globals_["_video_aspect"] = video["aspect_ratio"]
     all_scenes = video["scenes"]
 
     print(f"\n--- Scene {scene['id']}: {scene['title']} (seed={scene.get('seed_strategy', 'imagen')}) ---")
