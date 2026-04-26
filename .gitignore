@@ -24,6 +24,11 @@
 .DS_Store
 *.pem
 
+# pilot/cinematic draft renders — large media, never commit
+/drafts/
+scripts/output/marketing/
+scripts/output/instagram/
+
 # credentials — NEVER commit
 .google-veo-service-account.json
 *-service-account.json
