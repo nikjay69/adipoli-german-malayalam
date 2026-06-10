@@ -26,8 +26,18 @@
 
 # pilot/cinematic draft renders — large media, never commit
 /drafts/
+/pilot/
+/public/preview/
+/public/videos/generated/
 scripts/output/marketing/
 scripts/output/instagram/
+scripts/output/.pass*-snapshot/
+scripts/output/.pre-pass*-snapshot/
+scripts/output/.pre-repair/
+scripts/output/.checkpoint*.json
+__pycache__/
+/tmp/
+/tmp_screenshot.js
 
 # credentials — NEVER commit
 .google-veo-service-account.json
