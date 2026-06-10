@@ -1,12 +1,18 @@
 # Module 1 · Lesson 01 Video Script — Start Listening: `Guten Morgen`
 
-Updated: 2026-06-02 11:05 CEST
+Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs)
 
 **Purpose:** This is the first owned MVP video. It must make the learner hear German, answer aloud, and feel: “I can actually do this.”
 
 **Presenter language:** Boss records the main explanation later in Malayalam/Manglish. This script uses English stage directions plus exact German/on-screen text.
 
-**Target length:** 25 minutes.
+**Target length:** 15 minutes. Dense, no filler — every block earns its minutes.
+
+**Recording spec (applies to every drill/pause in this script):**
+
+- Every practice pause: model audio → `[PAUSE 3s]` silence → model audio again. Writing pauses: `[PAUSE 15s]`.
+- All Frau Weber / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
+- Frau Weber appears in a video-call frame or at the Goethe Kochi desk. Kuttan and the learner are always physically in Kerala.
 
 **Learner output by end:** Say and recognise: `Guten Morgen, Frau Weber.` + `Ich lerne Deutsch.`
 
@@ -14,7 +20,7 @@ Updated: 2026-06-02 11:05 CEST
 
 ## 0:00–0:45 — Cold open: no lecture, just German
 
-**Visual:** Kerala evening study desk. Phone/laptop open. Frau Weber appears as teacher image/video frame.
+**Visual:** Kuttan at his study desk in Kochi, evening — fan on, chai beside the laptop, Goethe A1 exam date circled on the wall calendar. Frau Weber appears in a video-call frame on his screen.
 
 **Audio / on-screen German:**
 
@@ -35,11 +41,11 @@ You: Guten Morgen, Frau Weber.
 
 > Say it aloud now: **Guten Morgen, Frau Weber.**
 
-Pause 5 seconds.
+[PAUSE 5s] — the very first attempt gets extra time. All later pauses follow the 3s spec.
 
 ---
 
-## 0:45–3:00 — What just happened?
+## 0:45–2:30 — What just happened?
 
 **Teaching point:** `Guten Morgen` = Good morning. `Frau Weber` is a polite way to address a woman by surname.
 
@@ -63,7 +69,7 @@ Pause 5 seconds.
 
 ---
 
-## 3:00–6:30 — Why we start with listening
+## 2:30–4:30 — Why we start with listening
 
 **Teaching point:** A1 is not only grammar. Goethe A1 checks whether you can understand simple lines and respond.
 
@@ -90,7 +96,7 @@ Learner says:
 
 ---
 
-## 6:30–10:00 — Greeting by time
+## 4:30–7:30 — Greeting by time
 
 **Teaching point:** German has common greetings by time. For A1, learn the useful set, not every regional variation.
 
@@ -118,7 +124,7 @@ Listen/read → say the reply:
 
 ---
 
-## 10:00–13:30 — The first sentence: `Ich lerne Deutsch.`
+## 7:30–9:30 — The first sentence: `Ich lerne Deutsch.`
 
 **Teaching point:** The learner needs one identity sentence from day one.
 
@@ -147,7 +153,7 @@ Learner repeats three times:
 
 ---
 
-## 13:30–17:30 — Common beginner mistakes and repair
+## 9:30–11:30 — Common beginner mistakes and repair
 
 **Mistake 1:** using the wrong time greeting.
 
@@ -181,17 +187,17 @@ Repair:
 
 ---
 
-## 17:30–21:00 — Guided first conversation
+## 11:30–13:30 — Guided first conversation
 
-**Visual:** Simple two-person scene: Frau Weber at a language-school desk; learner entering.
+**Visual:** Kuttan's first live exchange: Frau Weber in the video-call frame, Kuttan at his Kochi desk sitting up straight like it is a real class. The learner performs Kuttan's lines.
 
 **Dialogue on screen:**
 
 ```text
 Frau Weber: Guten Morgen.
-Learner: Guten Morgen, Frau Weber.
+Kuttan: Guten Morgen, Frau Weber.
 Frau Weber: Lernen Sie Deutsch?
-Learner: Ja. Ich lerne Deutsch.
+Kuttan: Ja. Ich lerne Deutsch.
 Frau Weber: Sehr gut.
 ```
 
@@ -207,7 +213,7 @@ Presenter plays/reads Frau Weber lines. Learner answers aloud:
 
 ---
 
-## 21:00–23:30 — Closed mini-test
+## 13:30–14:30 — Closed mini-test
 
 **Instruction on screen:**
 
@@ -230,7 +236,7 @@ This is only to know what to fix.
 
 ---
 
-## 23:30–25:00 — CTA
+## 14:30–15:00 — CTA
 
 **Recap on screen:**
 

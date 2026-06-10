@@ -1,12 +1,18 @@
 # Module 1 · Lesson 05 Video Script — Politeness Survival
 
-Updated: 2026-06-02 15:20 CEST
+Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs)
 
 **Purpose:** Give learners a small formal-safe politeness toolkit: `bitte`, `danke`, `Entschuldigung`, and safer defaults.
 
 **Presenter language:** Boss records explanation later in Malayalam/Manglish. This script uses English stage directions plus exact German/on-screen text.
 
-**Target length:** 35 minutes.
+**Recording spec (applies to every drill/pause in this script):**
+
+- Every practice pause: model audio → `[PAUSE 3s]` silence → model audio again. Writing pauses: `[PAUSE 15s]`.
+- All Frau Weber / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
+- Frau Weber appears in a video-call frame or at the Goethe Kochi desk. Kuttan and the learner are always physically in Kerala.
+
+**Target length:** 25 minutes. Dense, no filler — every block earns its minutes.
 
 **Learner output by end:** Use `bitte`, `danke`, `Entschuldigung`, and formal-safe replies in tiny scenes.
 
@@ -14,19 +20,21 @@ Updated: 2026-06-02 15:20 CEST
 
 ## 0:00–1:00 — Hook: polite words reduce panic
 
-**Visual:** Learner at Goethe Kochi reception. They do not know what to say; three words appear.
+**SCENE:** Kuttan at the Goethe Kochi reception, mind blank, three words float in: Bitte. Danke. Entschuldigung.
 
 **On-screen:**
 
 ```text
-bitte
-danke
-Entschuldigung
+Bitte.
+Danke.
+Entschuldigung.
 ```
 
 **Presenter:**
 
 [Boss explains in Malayalam/Manglish: “When you know only a little German, politeness protects you. These words are survival tools.”]
+
+[Boss aside: “Entschuldigung capital aanu — German nouns get capitals; more on that later.”]
 
 **Practice pause:**
 
@@ -34,7 +42,7 @@ Entschuldigung
 
 ---
 
-## 1:00–6:00 — `danke` and `danke schön`
+## 1:00–4:30 — `danke` and `Danke schön`
 
 **Teaching point:** `danke` = thank you. `danke schön` = thank you very much / thanks nicely.
 
@@ -42,19 +50,12 @@ Entschuldigung
 
 | German | Meaning | Use |
 |---|---|---|
-| danke | thank you | normal thanks |
-| danke schön | thank you very much | warmer/polite thanks |
+| Danke | thank you | normal thanks |
+| Danke schön | thank you very much | warmer/polite thanks |
 
 **Presenter:**
 
-[Boss explains in Malayalam/Manglish: In formal situations, `danke` is never wasted. Use it after help, after a prompt, after receiving something.]
-
-**Dialogue:**
-
-```text
-Frau Weber: Sehr gut.
-You: Danke.
-```
+[Boss explains in Malayalam/Manglish: In formal situations, `danke` is never wasted — after help, after a prompt, after receiving something. One pass, keep it tight.]
 
 **Say-aloud drill:**
 
@@ -64,7 +65,7 @@ You: Danke.
 
 ---
 
-## 6:00–11:30 — `bitte`: please / here you are / you’re welcome
+## 4:30–8:30 — `bitte`: please / here you are / you’re welcome
 
 **Teaching point:** `bitte` is flexible. At A1, learn it as polite glue.
 
@@ -92,7 +93,7 @@ bitte = please / here you are / you’re welcome
 
 ---
 
-## 11:30–16:30 — `Entschuldigung`: excuse me / sorry
+## 8:30–12:30 — `Entschuldigung`: excuse me / sorry
 
 **Teaching point:** `Entschuldigung` helps before asking, interrupting, or repairing.
 
@@ -122,14 +123,14 @@ Ent-schul-di-gung
 **Tiny scene:**
 
 ```text
-You: Entschuldigung.
+Kuttan: Entschuldigung.
 Frau Weber: Ja?
-You: Noch einmal, bitte.
+Kuttan: Noch einmal, bitte.
 ```
 
 ---
 
-## 16:30–21:30 — Formal safer defaults
+## 12:30–16:30 — Formal safer defaults
 
 **Teaching point:** When unsure, choose the respectful/simple version.
 
@@ -140,11 +141,14 @@ You: Noch einmal, bitte.
 | Hey! | Guten Tag. |
 | Was? | Noch einmal, bitte. |
 | Hm? | Entschuldigung? |
+| Eh? (didn’t catch it) | Wie bitte? |
 | Bye! | Auf Wiedersehen. |
 
 **Presenter:**
 
 [Boss explains in Malayalam/Manglish: This is not about being stiff. It is about not sounding rude when your German is still small.]
+
+[Boss aside: `Wie bitte?` = “Pardon? / didn’t catch that” — very high-frequency in real German. `Entschuldigung?` also works; keep both.]
 
 **Repair drill:**
 
@@ -152,12 +156,13 @@ Presenter shows risky line. Learner says safer line.
 
 1. `Hey!` → **Guten Tag.**
 2. `Was?` → **Noch einmal, bitte.**
-3. `Bye!` → **Auf Wiedersehen.**
-4. no thank-you after help → **Danke.**
+3. Didn’t catch it → **Wie bitte?**
+4. `Bye!` → **Auf Wiedersehen.**
+5. no thank-you after help → **Danke.**
 
 ---
 
-## 21:30–26:30 — Politeness in Goethe speaking
+## 16:30–19:30 — Politeness in Goethe speaking
 
 **Exam relevance:** Goethe A1 speaking rewards understandable, appropriate simple language. Politeness helps in request cards and examiner interaction.
 
@@ -177,38 +182,44 @@ Leave politely.
 
 **Mini role-play:**
 
+Examiner hands over the picture card and says: **Bitte.**
+
 ```text
 Examiner: Guten Tag.
-You: Guten Tag.
-Examiner: Bitte.
-You: Danke.
+Kuttan: Guten Tag.
+Examiner: Bitte.   [hands over the picture card]
+Kuttan: Danke.
 ```
-
-**Practice pause:**
-
-> Greet, thank, leave:
->
-> **Guten Tag. Danke. Auf Wiedersehen.**
 
 ---
 
-## 26:30–31:30 — Active practice: choose the polite repair
+## 19:30–22:30 — Active practice: Kuttan at the reception, start to finish
 
-**Instructions:** Choose/say the safer answer.
+**SCENE:** One continuous mini-scene — Kuttan walks into the Goethe Kochi reception, gets a form, and leaves. The five polite moments happen in sequence. Same German as before, now a story.
 
-1. Someone helps you. Say: **Danke.**
-2. You need repetition. Say: **Noch einmal, bitte.**
-3. You interrupt politely. Say: **Entschuldigung.**
-4. You leave a formal place. Say: **Auf Wiedersehen.**
-5. Someone says `Danke`. Reply: **Bitte.**
+```text
+Kuttan: Entschuldigung.
+Receptionist: Ja? Guten Tag.
+Kuttan: Guten Tag.
+[Receptionist answers — too fast for Kuttan]
+Kuttan: Noch einmal, bitte.
+[Receptionist repeats slowly and hands over a form]
+Receptionist: Bitte.
+Kuttan: Danke.
+[Kuttan fills in the form and hands it back]
+Receptionist: Danke.
+Kuttan: Bitte. Auf Wiedersehen.
+```
+
+**Practice:** Replay the scene with Kuttan’s lines muted; learner performs Kuttan’s lines (pause spec applies).
 
 **Presenter:**
 
-[Boss explains in Malayalam/Manglish: This is enough for today. Do not collect 50 polite phrases. Use these five well.]
+[Boss explains in Malayalam/Manglish: This is enough for today. Five phrases used well beat fifty collected.]
 
 ---
 
-## 31:30–34:00 — Tiny closed check
+## 22:30–24:00 — Tiny closed check
 
 **Instruction on screen:**
 
@@ -232,12 +243,12 @@ Say the German.
 2. Bitte.
 3. Entschuldigung.
 4. Auf Wiedersehen.
-5. Noch einmal, bitte.
+5. Noch einmal, bitte. / Wie bitte?
 ```
 
 ---
 
-## 34:00–35:00 — CTA
+## 24:00–25:00 — CTA
 
 **Recap on screen:**
 
@@ -246,6 +257,7 @@ Polite survival set:
 bitte
 danke
 Entschuldigung
+Wie bitte?
 Noch einmal, bitte
 Auf Wiedersehen
 ```
@@ -262,6 +274,7 @@ Next: goodbye and repair phrases
 
 ## Production notes
 
-- Keep examples scene-based: reception, teacher, examiner, office.
+- Keep examples scene-based: Goethe Kochi reception, teacher video call, examiner desk.
 - Avoid a deep `du/Sie` lecture; use “formal safer default”.
 - Make learners say the phrases, not just recognise them.
+- Receptionist’s “too fast” line in the 19:30 scene is non-verbal/garbled in the script — no new German needed; stage it as muffled fast audio.

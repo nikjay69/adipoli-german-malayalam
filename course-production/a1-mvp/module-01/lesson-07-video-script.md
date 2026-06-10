@@ -1,31 +1,37 @@
 # Module 1 · Lesson 07 Video Script — First Mini-Conversation
 
-Updated: 2026-06-02 15:20 CEST
+Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs)
 
 **Purpose:** Combine Module 1 phrases into one useful first exchange: greet → answer → ask repeat if needed → thank → leave.
 
 **Presenter language:** Boss records explanation later in Malayalam/Manglish. This script uses English stage directions plus exact German/on-screen text.
 
-**Target length:** 40 minutes.
+**Recording spec (applies to every drill/pause in this script):**
+
+- Every practice pause: model audio → `[PAUSE 3s]` silence → model audio again. Writing pauses: `[PAUSE 15s]`.
+- All Frau Weber / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
+- Frau Weber appears in a video-call frame or at the Goethe Kochi desk. Kuttan and the learner are always physically in Kerala.
+
+**Target length:** 30 minutes. Dense, no filler — every block earns its minutes.
 
 **Learner output by end:** Perform a tiny formal conversation with Frau Weber and complete the Module 1 readiness check.
 
 ---
 
-## 0:00–1:00 — Hook: your first real German exchange
+## 0:00–1:30 — Hook: Kuttan’s first real conversation
 
-**Visual:** Frau Weber in a video-call/language-school frame. Learner stands/sits ready.
+**SCENE (locked staging):** Frau Weber on a video call; Kuttan at home in Kerala (window light, fan, chai). The learner performs Kuttan’s lines. This is the milestone lesson — Kuttan’s first real conversation with Frau Weber.
 
 **On-screen dialogue, one line at a time:**
 
 ```text
 Frau Weber: Guten Morgen.
-You: Guten Morgen, Frau Weber.
+Kuttan: Guten Morgen, Frau Weber.
 ```
 
 **Presenter:**
 
-[Boss explains in Malayalam/Manglish: “Today we connect the pieces. This is not a grammar class. This is your first German conversation.”]
+[Boss explains in Malayalam/Manglish: “Today we connect the pieces. This is not a grammar class. This is Kuttan’s — and your — first German conversation.”]
 
 **Practice pause:**
 
@@ -33,11 +39,24 @@ You: Guten Morgen, Frau Weber.
 
 ---
 
-## 1:00–5:30 — Conversation map
+## 1:30–5:00 — Hear the destination, then the map
 
-**Teaching point:** A tiny conversation has order. Learner follows a simple structure.
+**Play the FULL final dialogue once, start to finish** — “here’s where you’ll be in 25 minutes.”
 
-**On-screen:**
+```text
+Frau Weber: Guten Morgen.
+Kuttan: Guten Morgen, Frau Weber.
+Frau Weber: Lernen Sie Deutsch?
+Kuttan: Noch einmal, bitte.
+Frau Weber: Lernen Sie Deutsch?
+Kuttan: Ja. Ich lerne Deutsch.
+Frau Weber: Sehr gut.
+Kuttan: Danke.
+Frau Weber: Auf Wiedersehen.
+Kuttan: Auf Wiedersehen, Frau Weber.
+```
+
+**Then derive the map from what you just heard:**
 
 ```text
 1. Greet
@@ -49,7 +68,7 @@ You: Guten Morgen, Frau Weber.
 
 **Presenter:**
 
-[Boss explains in Malayalam/Manglish: If you know the order, you freeze less. In A1, simple and complete is better than fancy and broken.]
+[Boss explains in Malayalam/Manglish: That whole conversation? You already know every line. If you know the order, you freeze less. Simple and complete beats fancy and broken.]
 
 **Say the map aloud:**
 
@@ -57,20 +76,16 @@ You: Guten Morgen, Frau Weber.
 
 ---
 
-## 5:30–10:30 — Part 1: greet and answer
+## 5:00–8:00 — Part 1: greet and answer (assemble fast — review)
 
 **On-screen scene:**
 
 ```text
 Frau Weber: Guten Tag.
-You: Guten Tag.
+Kuttan: Guten Tag.
 ```
 
-**Teaching point:** Match the greeting or use the safe formal reply.
-
-**Presenter:**
-
-[Boss explains in Malayalam/Manglish: With teacher/examiner, safe formal energy. `Guten Tag` is your friend.]
+**Teaching point:** Match the greeting or use the safe formal reply. This is review — fast reps, no re-teaching.
 
 **Practice prompts:**
 
@@ -80,7 +95,7 @@ You: Guten Tag.
 
 ---
 
-## 10:30–16:00 — Part 2: answer the first question
+## 8:00–11:30 — Part 2: answer the first question
 
 **Teaching point:** Recognise and answer `Lernen Sie Deutsch?`
 
@@ -88,7 +103,7 @@ You: Guten Tag.
 
 ```text
 Frau Weber: Lernen Sie Deutsch?
-You: Ja. Ich lerne Deutsch.
+Kuttan: Ja. Ich lerne Deutsch.
 ```
 
 **Presenter:**
@@ -109,28 +124,18 @@ You: Ja. Ich lerne Deutsch.
 
 ---
 
-## 16:00–21:30 — Part 3: ask repeat if needed
+## 11:30–14:30 — Part 3: ask repeat if needed (assemble fast — review)
 
-**Teaching point:** Repair phrase keeps the conversation alive.
-
-**On-screen:**
-
-```text
-You: Noch einmal, bitte.
-```
+**Teaching point:** Repair phrase keeps the conversation alive. You drilled this in Lessons 5–6 — fast reps.
 
 **Mini-scene:**
 
 ```text
 Frau Weber: Lernen Sie Deutsch?
-You: Noch einmal, bitte.
+Kuttan: Noch einmal, bitte.
 Frau Weber: Lernen Sie Deutsch?
-You: Ja. Ich lerne Deutsch.
+Kuttan: Ja. Ich lerne Deutsch.
 ```
-
-**Presenter:**
-
-[Boss explains in Malayalam/Manglish: Asking again is not failure. In real German and A1 speaking, polite repair is a skill.]
 
 **Practice:**
 
@@ -140,7 +145,7 @@ You: Ja. Ich lerne Deutsch.
 
 ---
 
-## 21:30–26:00 — Part 4: thank and leave
+## 14:30–17:30 — Part 4: thank and leave (assemble fast — review)
 
 **Teaching point:** A clean ending makes the exchange complete.
 
@@ -148,14 +153,10 @@ You: Ja. Ich lerne Deutsch.
 
 ```text
 Frau Weber: Sehr gut.
-You: Danke.
+Kuttan: Danke.
 Frau Weber: Auf Wiedersehen.
-You: Auf Wiedersehen, Frau Weber.
+Kuttan: Auf Wiedersehen, Frau Weber.
 ```
-
-**Presenter:**
-
-[Boss explains in Malayalam/Manglish: Do not walk out of the conversation suddenly. Thank and leave politely.]
 
 **Say-aloud drill:**
 
@@ -165,87 +166,89 @@ You: Auf Wiedersehen, Frau Weber.
 
 ---
 
-## 26:00–32:00 — Full guided conversation
+## 17:30–22:00 — Full guided conversation: rounds 1 and 2
+
+**SCENE:** Frau Weber on the video call; Kuttan at home in Kerala. The learner performs Kuttan’s lines.
 
 **Instruction on screen:**
 
 ```text
 Listen to Frau Weber.
-Say only your lines aloud.
+Say only Kuttan’s lines aloud.
 ```
 
 **Full dialogue:**
 
 ```text
 Frau Weber: Guten Morgen.
-You: Guten Morgen, Frau Weber.
+Kuttan: Guten Morgen, Frau Weber.
 Frau Weber: Lernen Sie Deutsch?
-You: Noch einmal, bitte.
+Kuttan: Noch einmal, bitte.
 Frau Weber: Lernen Sie Deutsch?
-You: Ja. Ich lerne Deutsch.
+Kuttan: Ja. Ich lerne Deutsch.
 Frau Weber: Sehr gut.
-You: Danke.
+Kuttan: Danke.
 Frau Weber: Auf Wiedersehen.
-You: Auf Wiedersehen, Frau Weber.
+Kuttan: Auf Wiedersehen, Frau Weber.
+```
+
+**Round 1:** with full subtitles.
+
+**Round 2:** only Frau Weber’s lines visible/audio; `[GAP 4s]` after each Frau Weber line; learner supplies Kuttan’s lines.
+
+---
+
+## 22:00–24:00 — Round 3: the curveball
+
+**Setup:** Frau Weber opens with `Guten Tag.` instead of `Guten Morgen.` — adapt the reply. Only already-taught German. `[GAP 4s]` after each Frau Weber line.
+
+```text
+Frau Weber: Guten Tag.   [GAP 4s]
+Kuttan: Guten Tag, Frau Weber.
+Frau Weber: Lernen Sie Deutsch?   [GAP 4s]
+Kuttan: Ja. Ich lerne Deutsch.
+Frau Weber: Sehr gut.   [GAP 4s]
+Kuttan: Danke.
+Frau Weber: Auf Wiedersehen.   [GAP 4s]
+Kuttan: Auf Wiedersehen, Frau Weber.
 ```
 
 **Presenter:**
 
-[Boss explains in Malayalam/Manglish: Repeat once with subtitles. Then repeat once with only Frau Weber’s lines visible/audio.]
-
-**Practice round 1:** with full subtitles.
-
-**Practice round 2:** only Frau Weber lines; learner supplies own lines.
+[Boss explains in Malayalam/Manglish: Real conversations don’t follow your script exactly. Listen to the greeting, match it. Everything else stays the same.]
 
 ---
 
-## 32:00–36:30 — Common mistakes and repair
+## 24:00–25:30 — Common mistakes and repair (fast)
 
-**Mistake 1:** learner says only `Hallo` to examiner and stops.
-
-Repair:
+**Mistake 1:** Kuttan says only `Hallo` to the examiner and stops. `Hallo` is OK — but with an examiner, upgrade:
 
 > **Guten Tag.**
 
-**Mistake 2:** learner freezes after question.
-
-Repair:
+**Mistake 2:** Kuttan freezes after the question.
 
 > **Noch einmal, bitte.**
 
-**Mistake 3:** learner forgets the answer sentence.
-
-Repair:
+**Mistake 3:** Kuttan forgets the answer sentence.
 
 > **Ja. Ich lerne Deutsch.**
 
-**Mistake 4:** learner leaves casually in formal setting.
-
-Repair:
+**Mistake 4:** Kuttan leaves casually in a formal setting.
 
 > **Auf Wiedersehen, Frau Weber.**
 
-**Practice pause:**
-
-Say the four repair lines:
-
-```text
-Guten Tag.
-Noch einmal, bitte.
-Ja. Ich lerne Deutsch.
-Auf Wiedersehen, Frau Weber.
-```
-
 ---
 
-## 36:30–39:00 — Tiny closed check / Module 1 gate preview
+## 25:30–29:00 — Closed check / Module 1 gate
 
 **Instruction on screen:**
 
 ```text
 Closed check: no notes.
-Perform your lines aloud.
+Perform Kuttan’s lines aloud.
 ```
+
+Each item gets the full pause spec — no rushing the gate.
 
 **Items:**
 
@@ -265,15 +268,15 @@ Perform your lines aloud.
 5. Auf Wiedersehen, Frau Weber.
 ```
 
-**Exam relevance:**
+---
+
+## 29:00–30:00 — CTA
+
+**Exam relevance on screen:**
 
 ```text
 This is your first A1 speaking foundation.
 ```
-
----
-
-## 39:00–40:00 — CTA
 
 **Recap on screen:**
 
@@ -297,4 +300,5 @@ Start Module 1 checkpoint
 - This lesson should feel like a role-play, not a recap lecture.
 - Use one line at a time; no paragraph explanation during the conversation.
 - Required app practice after video: self-mark/record the full exchange.
-- If audio is used, model lines must be prerendered German, not browser SpeechSynthesis.
+- Model lines are prerendered German audio (see recording spec), never browser SpeechSynthesis.
+- Kuttan is at home in Kerala for the entire lesson; Frau Weber only ever appears in the video-call frame.

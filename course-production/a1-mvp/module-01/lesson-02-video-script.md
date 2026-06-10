@@ -1,41 +1,44 @@
 # Module 1 · Lesson 02 Video Script — Why A1 Matters for Malayalis
 
-Updated: 2026-06-02 15:20 CEST
+Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs)
 
 **Purpose:** Keep motivation short and practical: learners understand the exact A1 path and produce one personal reason sentence.
 
 **Presenter language:** Boss records explanation later in Malayalam/Manglish. This script uses English stage directions plus exact German/on-screen text.
 
-**Target length:** 25 minutes.
+**Recording spec (applies to every drill/pause in this script):**
+
+- Every practice pause: model audio → `[PAUSE 3s]` silence → model audio again. Writing pauses: `[PAUSE 15s]`.
+- All Frau Weber / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
+- Frau Weber appears in a video-call frame or at the Goethe Kochi desk. Kuttan and the learner are always physically in Kerala.
+
+**Target length:** 12 minutes. Dense, no filler — every block earns its minutes.
 
 **Learner output by end:** Say and write one A1-safe sentence: `Ich lerne Deutsch.` + an English/Manglish reason for learning.
 
 ---
 
-## 0:00–0:45 — Hook: A1 is not “German full language”
+## 0:00–0:45 — Hook: Kuttan's first full German sentence
 
-**Visual:** Kerala learner opening the Adipoli app. One card: `Goethe A1 path`.
+**Scene:** Kuttan in his Kochi room — ceiling fan on, chai on the desk. On the wall calendar, the Goethe A1 exam date is circled in red. He opens the Adipoli app: one card, `Goethe A1 path`. He takes a breath and says his first-ever full German sentence aloud.
+
+**Model audio (pre-rendered):**
+
+> **Ich lerne Deutsch.**
 
 **Presenter:**
 
-[Boss explains in Malayalam/Manglish: “A1 is not full German. A1 is the first survival/exam level. We will not study randomly. We will follow one path.”]
-
-**On-screen:**
-
-```text
-A1 = first German survival level.
-Goal: hear, speak, read, write simple German.
-```
+[Boss explains in Malayalam/Manglish: “A1 is not full German. A1 is the first survival/exam level. Kuttan has one date on the calendar and one path. So do you.”]
 
 **Practice pause:**
 
 > Say aloud: **Ich lerne Deutsch.**
 
-Pause 5 seconds.
+Model audio → `[PAUSE 3s]` → model audio again.
 
 ---
 
-## 0:45–4:00 — What Goethe A1 actually checks
+## 0:45–2:30 — What Goethe A1 actually checks
 
 **Teaching point:** Goethe A1 is practical: listening, reading, writing, speaking. It is not a grammar-only exam.
 
@@ -48,15 +51,11 @@ Pause 5 seconds.
 | Lesen | recognise short lines | match greetings |
 | Schreiben | write simple info | `Ich lerne Deutsch.` |
 
-**Presenter:**
-
-[Boss explains in Malayalam/Manglish: Learners from Kerala often waste time collecting materials. This course prescribes: watch this, say this, do this check, fix this weak spot.]
-
 **Mini recall:**
 
 > Which skill is used when you hear **Guten Morgen** and understand it?
 
-Answer on screen after pause:
+Model audio (`Guten Morgen`) → `[PAUSE 3s]` → answer on screen:
 
 ```text
 Hören = listening.
@@ -64,11 +63,11 @@ Hören = listening.
 
 ---
 
-## 4:00–7:30 — The Adipoli must-do path
+## 2:30–5:00 — How this course feeds you
 
-**Teaching point:** The course is spoon-fed. The learner should not decide among 20 resources.
+**Teaching point:** One path, prescribed. The learner never decides among 20 resources.
 
-**On-screen:**
+**On-screen (the one course-path graphic):**
 
 ```text
 Every lesson:
@@ -82,13 +81,29 @@ Every lesson:
 
 **Presenter:**
 
-[Boss explains in Malayalam/Manglish: If you are weak in listening, we do listening recovery. If weak in speaking, speaking recovery. Not “revise everything.”]
+[Boss explains in Malayalam/Manglish: This course is spoon-fed on purpose — watch this, say this, do this check, fix this weak spot. Weak in listening? Listening recovery. Weak in speaking? Speaking recovery. Not “revise everything.”]
+
+**Visual (20 seconds): Kuttan's app screen.** Two cards visible:
+
+```text
+Must-do: answer 5 greetings
+Score booster: shadow 10 more lines · 10m
+```
+
+[Boss explains in Malayalam/Manglish: Must-do = required to pass the path. Score booster = one extra task, one output, one time box. Never homework dumping.]
+
+**Closed-check rule, on screen:**
+
+```text
+Closed check = no notes, no Google, no ChatGPT.
+The weak spot it finds is the data we use to fix you.
+```
 
 **Practice pause:**
 
-Learner says the path aloud in English/Manglish or Malayalam:
+> Say the path aloud in English/Manglish or Malayalam: Watch → Listen → Say → Practice → Check → Fix.
 
-> Watch → Listen → Say → Check → Fix.
+`[PAUSE 3s]`
 
 **Exam relevance:**
 
@@ -99,7 +114,7 @@ Passive watching is not enough.
 
 ---
 
-## 7:30–11:00 — Your first German identity line
+## 5:00–7:00 — Your first German identity line
 
 **Teaching point:** Day one identity: “I am learning German.”
 
@@ -114,23 +129,23 @@ I am learning German.
 
 [Boss explains in Malayalam/Manglish: `Ich` = I. `lerne` = learn/am learning. `Deutsch` = German language. Keep it simple; this sentence is already useful.]
 
-**Say-aloud drill:**
+**Say-aloud drill (each step: model audio → `[PAUSE 3s]` → model audio again):**
 
 1. **Ich.**
 2. **Ich lerne.**
 3. **Ich lerne Deutsch.**
 
-Pause 3 seconds after each.
-
 **Writing pause:**
 
 > Write/type from memory: **Ich lerne Deutsch.**
 
+`[PAUSE 15s]`
+
 ---
 
-## 11:00–15:30 — Why are you learning? Keep the reason simple
+## 7:00–8:30 — Kuttan's reason — and yours
 
-**Teaching point:** Learner motivation should become a concrete course direction, not a long speech.
+**Scene:** Kuttan looks at the circled exam date. An imagination bubble opens above him: dream-Kuttan in an Ausbildung workshop in Germany. The bubble pops — he is still at his Kochi desk. He ticks one box in the app.
 
 **On-screen choices:**
 
@@ -139,82 +154,81 @@ My reason:
 □ Goethe A1 exam
 □ Family / partner
 □ Germany plan
-□ Work / Ausbildung
+☑ Work / Ausbildung   ← Kuttan's tick
 □ Confidence
 ```
 
 **Presenter:**
 
-[Boss explains in Malayalam/Manglish: Choose one reason now. The app can later adjust pace and recovery. Today we only need one sentence.]
+[Boss explains in Malayalam/Manglish: Kuttan's reason is the Ausbildung dream — for now it lives in the bubble, and the calendar date is the bridge. Choose one reason. Today we only need one sentence.]
 
 **Learner output:**
 
 > Say in English/Manglish: “I am learning German for ____.”
 
+`[PAUSE 3s]`
+
 **Optional on-screen German model, preview only:**
 
 ```text
 Ich lerne Deutsch.
-Ich möchte A1 schaffen.
+Ich möchte A1 schaffen.              (spoken-style)
+Ich möchte die A1-Prüfung bestehen.  (exam register)
 ```
 
-**A1 note:** `Ich möchte A1 schaffen.` = “I want to pass A1.” It is useful, but we only require recognition today.
+**A1 note:** `Ich möchte A1 schaffen.` = “I want to pass A1.” — spoken-style. The exam-register version is `Ich möchte die A1-Prüfung bestehen.` Recognition only today; no production required.
 
 ---
 
-## 15:30–18:30 — Must-do vs score-booster
+## 8:30–10:00 — Common mistakes and repair
 
-**Teaching point:** Must-do = required to pass the path. Score-booster = optional stronger marks. Both are prescribed.
+**Mistake 1:** saying `Ich lernen Deutsch.` ❌ — wrong verb form.
 
-**On-screen table:**
+Repair (no grammar lecture today — just the right form):
 
-| Track | Meaning | Example |
-|---|---|---|
-| Must-do | required next task | answer 5 greetings |
-| Score booster | extra marks/confidence | 10 more shadow lines |
+> **Ich lerne Deutsch.**
 
-**Presenter:**
+Model audio → `[PAUSE 3s]` → model audio again.
 
-[Boss explains in Malayalam/Manglish: Score booster is not homework dumping. We give one extra task, one output, one time box.]
+**Mistake 2:** collecting 5 apps and 3 playlists instead of one path.
 
-**Practice check:**
-
-> Is “watch any German playlist on YouTube” a good task?
-
-Pause. Answer:
+Repair:
 
 ```text
-No. Too broad.
-Better: shadow 10 greeting lines. 10m.
+One path: Watch → Listen → Say → Practice → Check → Fix.
+```
+
+**Mistake 3:** doing closed checks with notes open.
+
+Repair:
+
+```text
+Close the notes. A weak spot found is useful data, not shame.
 ```
 
 ---
 
-## 18:30–22:30 — Closed checks are your friend
+## 10:00–11:15 — Tiny closed check
 
-**Teaching point:** Closed checks diagnose. They are not shame.
-
-**On-screen:**
+**Instruction on screen:**
 
 ```text
-Closed check:
-No notes. No Google. No ChatGPT.
-Find the weak spot. Fix it.
+Closed check: no notes. No Google. No ChatGPT.
 ```
 
-**Presenter:**
+**Items:**
 
-[Boss explains in Malayalam/Manglish: If you use notes, the course cannot know what to fix. Weakness is useful data.]
-
-**Tiny closed check:**
-
-1. Say: **Ich lerne Deutsch.**
+1. Say: **Ich lerne Deutsch.** — `[PAUSE 3s]`, then model audio confirms.
 2. Choose the safer first reply to a teacher:
    - `Hey!`
    - `Guten Tag.`
+
+   `[PAUSE 3s]`
 3. What does A1 check?
    - only grammar
    - listening, speaking, reading, writing
+
+   `[PAUSE 3s]`
 
 **Expected answers:**
 
@@ -226,7 +240,9 @@ Find the weak spot. Fix it.
 
 ---
 
-## 22:30–25:00 — CTA
+## 11:15–12:00 — CTA
+
+**Scene:** Kuttan re-circles the exam date on the calendar and closes the app for the day.
 
 **Recap on screen:**
 
@@ -249,7 +265,8 @@ Next: train German sounds
 
 ## Production notes
 
-- Keep this lesson energetic; no long migration/Germany lecture.
-- Use one course-path graphic only; avoid dashboard/roadmap clutter.
+- Keep this lesson energetic; no long migration/Germany lecture. Germany appears only inside Kuttan's imagination bubble.
+- Use one course-path graphic only; avoid dashboard/roadmap clutter. Kuttan's app screen gets 20 seconds, no more.
 - Let Boss speak naturally in Malayalam/Manglish for motivation, but keep on-screen text short.
 - Exam seriousness: show A1 as practical output, not fear marketing.
+- All German model lines pre-rendered per the recording spec above.
