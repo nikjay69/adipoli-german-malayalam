@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "remotion:studio": "remotion studio",
+    "remotion:render": "tsx scripts/render-video.ts",
+    "remotion:tts": "tsx scripts/gen-tts.ts",
+    "audit:app-readiness": "tsx scripts/audit-app-readiness.ts"
   },
   "dependencies": {
     "@google/genai": "^1.46.0",
@@ -24,14 +28,21 @@
     "zustand": "^5.0.9"
   },
   "devDependencies": {
+    "@remotion/bundler": "^4.0.448",
+    "@remotion/cli": "^4.0.448",
+    "@remotion/player": "^4.0.448",
+    "@remotion/renderer": "^4.0.448",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
-    "puppeteer": "^24.40.0",
+    "msedge-tts": "^2.0.5",
+    "puppeteer": "^22.15.0",
+    "remotion": "^4.0.448",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
