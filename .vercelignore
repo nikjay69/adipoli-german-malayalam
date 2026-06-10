@@ -1,0 +1,10 @@
+pilot/
+pilot-video-*
+/*.mp4
+/*.jpg
+tmp/
+audit_results.txt
+.gemini/
+
+# Remotion build artifacts (not needed on Vercel — videos are pre-rendered into public/videos/)
+.remotion-cache/

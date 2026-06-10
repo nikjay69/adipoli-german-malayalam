@@ -1,0 +1,51 @@
+{
+  "lessonId": "v2-4-2",
+  "title": "How Well Do You Speak?",
+  "subtitle": "Module 2 · Lesson 4 · Part 2",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Proficiency words matter: do not overclaim, do not underclaim.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v2-4-2/v2-4-2-line-0.mp3"
+    },
+    {
+      "text": "ein bisschen = a little. gut = well. fließend = fluently.",
+      "german": "fließend",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v2-4-2/v2-4-2-line-1.mp3"
+    },
+    {
+      "text": "Honest A1 line: 'Ich spreche ein bisschen Deutsch.' Always safe, always polite.",
+      "german": "Ich spreche ein bisschen Deutsch.",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v2-4-2/v2-4-2-line-2.mp3"
+    },
+    {
+      "text": "Don't say fließend unless you really mean it. Germans will test you.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v2-4-2/v2-4-2-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "gut",
+      "english": "well / good",
+      "malayalam": "nalla",
+      "pronunciation": "goot"
+    },
+    {
+      "german": "fließend",
+      "english": "fluently",
+      "malayalam": "fluently",
+      "pronunciation": "flee-send"
+    },
+    {
+      "german": "ein bisschen",
+      "english": "a little",
+      "malayalam": "kurach",
+      "pronunciation": "ine biss-chen"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

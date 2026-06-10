@@ -1,0 +1,90 @@
+{
+  "elapsed": 26,
+  "clicks": 11,
+  "log": [
+    {
+      "step": 1,
+      "label": "01-entry",
+      "file": "scripts/output/playthrough/01-01-entry.png",
+      "text": "Skip to content Skip TAP TO START Ready? Let's do this! 💪",
+      "t": 1776288308212
+    },
+    {
+      "step": 2,
+      "label": "00-tap-start",
+      "file": "scripts/output/playthrough/02-00-tap-start.png",
+      "text": "Skip to content Skip Tap each word to hear it, then prove you know them! Deutsch tap Deutschland tap lernen tap Arbeit tap Studium tap Sprache tap",
+      "t": 1776288310127
+    },
+    {
+      "step": 3,
+      "label": "01-option-Deutschtap",
+      "file": "scripts/output/playthrough/03-01-option-Deutschtap.png",
+      "text": "Skip to content Skip Tap each word to hear it, then prove you know them! Deutsch German (language) Deutschland tap lernen tap Arbeit tap Studium tap Sprache tap",
+      "t": 1776288312026
+    },
+    {
+      "step": 4,
+      "label": "02-option-DeutschGerman__langu",
+      "file": "scripts/output/playthrough/04-02-option-DeutschGerman__langu.png",
+      "text": "Skip to content Skip Tap each word to hear it, then prove you know them! Deutsch German (language) Deutschland tap lernen tap Arbeit tap Studium tap Sprache tap",
+      "t": 1776288313936
+    },
+    {
+      "step": 5,
+      "label": "03-option-DeutschGerman__langu",
+      "file": "scripts/output/playthrough/05-03-option-DeutschGerman__langu.png",
+      "text": "Skip to content Skip Listen Deutsch Deutschland lernen Arbeit",
+      "t": 1776288315851
+    },
+    {
+      "step": 6,
+      "label": "04-option-Listen",
+      "file": "scripts/output/playthrough/06-04-option-Listen.png",
+      "text": "Skip to content Skip Listen Deutsch Deutschland lernen Arbeit",
+      "t": 1776288317766
+    },
+    {
+      "step": 7,
+      "label": "05-option-Listen",
+      "file": "scripts/output/playthrough/07-05-option-Listen.png",
+      "text": "Skip to content Skip Listen Deutsch Deutschland lernen Arbeit",
+      "t": 1776288319652
+    },
+    {
+      "step": 8,
+      "label": "06-option-Listen",
+      "file": "scripts/output/playthrough/08-06-option-Listen.png",
+      "text": "Skip to content Skip Listen Deutsch Deutschland lernen Arbeit ⏰ Deutsch",
+      "t": 1776288321520
+    },
+    {
+      "step": 9,
+      "label": "07-option-Listen",
+      "file": "scripts/output/playthrough/09-07-option-Listen.png",
+      "text": "Skip to content Skip Germany d u c e h n s l r D t a 11 letters",
+      "t": 1776288323440
+    },
+    {
+      "step": 10,
+      "label": "08-skip",
+      "file": "scripts/output/playthrough/10-08-skip.png",
+      "text": "Skip to content Skip Germany d u c e h n s l r D t a 11 letters",
+      "t": 1776288325342
+    },
+    {
+      "step": 11,
+      "label": "09-skip",
+      "file": "scripts/output/playthrough/11-09-skip.png",
+      "text": "Skip to content Skip Germany d u c e h n s l r D t a 11 letters",
+      "t": 1776288327225
+    },
+    {
+      "step": 12,
+      "label": "10-skip",
+      "file": "scripts/output/playthrough/12-10-skip.png",
+      "text": "Skip to content Skip Germany d u c e h n s l r D t a 11 letters",
+      "t": 1776288329124
+    }
+  ]
+}

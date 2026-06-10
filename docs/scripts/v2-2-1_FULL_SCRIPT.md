@@ -58,20 +58,24 @@ Even more specific:
 
 ---
 
-Now what about where you LIVE? That's a different pattern:
+Now what about where you LIVE? That's a different pattern.
 
-🔊 **Ich wohne in Berlin.** — I live in Berlin.
+For the A1 exam, you'll answer about where you actually live **right now** — which for most of you is still in Kerala. So the honest answer is:
+
+🔊 **Ich wohne in Thrissur.** / **Ich wohne in Kochi.** / **Ich wohne in Kerala.** — I live in Thrissur / Kochi / Kerala.
+
+(Someday, when you land, it'll change: *'Ich wohne jetzt in Berlin'* or wherever — but that's the A2 version.)
 
 [SLIDE: Side by side with arrows]
 - **aus** = from (origin ←)
 - **in** = in (where you live now 🏠)
 
-Combine them:
-🔊 **Ich komme aus Kerala, aber ich wohne jetzt in Berlin.**
+Combine them, right now:
+🔊 **Ich komme aus Kerala und ich wohne in Kochi.**
 
 *Origin = aus. Current city = in. Combine cheythal — complete picture!*
 
-⏸️ Try: 'Ich komme aus [hometown], aber ich wohne jetzt in [current city].'
+⏸️ Try with YOUR real city: 'Ich komme aus [hometown], und ich wohne in [current city].'
 
 ### Practice Pause: ⏸️ (5 seconds)"
 

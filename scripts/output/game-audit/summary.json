@@ -1,0 +1,130 @@
+[
+  {
+    "id": "hor-und-los",
+    "path": "/games/hor-und-los",
+    "status": "200",
+    "errors": [],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content Games 🎧 Hör & Los! LISTEN & GO — A1 HÖREN TRAINER 👂 German audio plays. Pick what you heard. ⚡ Faster answers = more points. Build combos. ❤️ 3 lives. 10 rounds. Real Hören prep. Los"
+  },
+  {
+    "id": "was-steht-da",
+    "path": "/games/was-steht-da",
+    "status": "200",
+    "errors": [],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content Games 📖 Was steht da? WHAT’S IT SAY? — A1 LESEN TRAINER Los geht’s! Home Games Audio Practice Tests Me"
+  },
+  {
+    "id": "sag-es",
+    "path": "/games/sag-es",
+    "status": "200",
+    "errors": [],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content Games 🎙️ Sag es! SAY IT! — A1 SPRECHEN TRAINER Los geht’s! Home Games Audio Practice Tests Me"
+  },
+  {
+    "id": "tipp-es",
+    "path": "/games/tipp-es",
+    "status": "200",
+    "errors": [],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content Games ⌨️ Tipp es! TYPE IT! — A1 SCHREIBEN TRAINER Los geht’s! Tip: ä, ö, ü, ß accepted — or type ae, oe, ue, ss instead. Home Games Audio Practice Tests Me"
+  },
+  {
+    "id": "listen-act",
+    "path": "/games/listen-act",
+    "status": "200",
+    "errors": [
+      "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client bran"
+    ],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content 🗺️ Navigate the Town! You just moved to a small German town. Listen to instructions and tap the right place on the map. Can you find your way around? Machane! Nammude new town-il navi"
+  },
+  {
+    "id": "memory",
+    "path": "/games/memory",
+    "status": "200",
+    "errors": [],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content 👂 Eavesdrop at the Café! You're sitting in a Berlin café. Conversations float around you in German. Can you understand what people are saying? Shh! Café-il aarenkilum samsaarikkunnath"
+  },
+  {
+    "id": "greeting-time",
+    "path": "/games/greeting-time",
+    "status": "200",
+    "errors": [
+      "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client bran"
+    ],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content 👋 A Day of Greetings! Walk through a full day in Germany — morning to night. Greet everyone you meet with the right words! Morning muthal night vare — ellarum-neyum correct-aayi greet"
+  },
+  {
+    "id": "scene-sort",
+    "path": "/games/scene-sort",
+    "status": "200",
+    "errors": [],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content Back Scene Sort! Imagine real places in Germany \\u2014 does each word belon| Kuttan Scene Sort Where does this word belong? Think about real German life! Words appear one at a time. De"
+  },
+  {
+    "id": "speed-quiz",
+    "path": "/games/speed-quiz",
+    "status": "200",
+    "errors": [],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content ✈️ Airport Dash! Your flight is boarding in 5 minutes! Answer vocab questions as fast as you can while running through the airport. Every second counts! Flight boarding aakunnuuuu! Spe"
+  },
+  {
+    "id": "fill-the-gap",
+    "path": "/games/fill-the-gap",
+    "status": "200",
+    "errors": [],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content 📱 WhatsApp from your Flatmate Your WG flatmate sent a WhatsApp message, but autocorrect mangled some words! Can you fix them before replying? Roommate WhatsApp-il message ayachirikkun"
+  },
+  {
+    "id": "boss-1",
+    "path": "/games/boss/1",
+    "status": "200",
+    "errors": [
+      "Blocked call to navigator.vibrate because user hasn't tapped on the frame or any embedded frame yet: https://www.chromestatus.com/feature/5644273861001216."
+    ],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content 👮 THE BORDER OFFICER Der Grenzbeamte Prove you can survive your first day in Germany! Answer the officer's questions correctly to enter the country! ⏱️ 120s ❓ 10 rounds ⭐ 200 XP Macha"
+  },
+  {
+    "id": "boss-2",
+    "path": "/games/boss/2",
+    "status": "200",
+    "errors": [
+      "Blocked call to navigator.vibrate because user hasn't tapped on the frame or any embedded frame yet: https://www.chromestatus.com/feature/5644273861001216."
+    ],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content 👩‍💼 THE REGISTRATION LADY Die Bürgeramt Dame Survive the dreaded German registration office — prove your identity in German or get sent to the back of the queue! ⏱️ 90s ❓ 10 rounds ⭐"
+  },
+  {
+    "id": "word-match",
+    "path": "/games/word-match",
+    "status": "404",
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/clien"
+    ],
+    "warnings": [],
+    "failed": [],
+    "textSnippet": "Skip to content 404 Aiyyo! This page doesn't exist. Kuttan is confused too. Let's go back. GO HOME Home Games Audio Practice Tests Me"
+  }
+]

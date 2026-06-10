@@ -259,7 +259,16 @@ export const MODULE_5: Module = {
           explanation: "Great! 'zu Hause' means 'at home'. Remember the verb position (2nd).",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex5-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Regular Verbs Present Tense): 'Morgens trinke ich Tee.'",
+          questionGerman: "Sprechen Sie laut: 'Morgens trinke ich Tee.'",
+          correctAnswer: "Morgens trinke ich Tee",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab5-1-1",
@@ -367,10 +376,10 @@ export const MODULE_5: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "WG Kitchen & Hallway, 7:30 AM",
+          name: "Kuttan's Home, Thrissur — Morning Routine Practice",
           sceneType: "home",
           timeOfDay: "morning",
-          description: "The coffee machine is whirring, and the smell of toasted Brot is in the air. Stefan is already in the kitchen with a mug. Everyone is trying to use the bathroom and get breakfast at the same time. It's a typical German 'WG-Morgen' (apartment morning) rush. Time to narrate your moves, machane!",
+          description: "Kuttan is at home in Thrissur, trying to describe his real morning before Goethe Kochi class. Amma is making breakfast, the bathroom queue is familiar, and the goal is practical: say the whole routine in simple German before Germany becomes real.",
         },
         narrative: {
           previousRecap: "You've mastered the basic verb endings. Now, let's put them to work in your daily life!",
@@ -378,20 +387,20 @@ export const MODULE_5: Module = {
           nextTeaser: "Next: the boomerang verbs! Learn more about Trennbare Verben!",
         },
         kuttanIntro: [
-          "Machane! Morning in Germany is all about timing. 'Ich stehe auf' (I get up) ennu parayumpo 'auf' end-il povan marakkaruthu.",
+          "Machane! Morning routine Kerala-il thanne practice cheyyam. 'Ich stehe auf' (I get up) ennu parayumpo 'auf' end-il povan marakkaruthu.",
           "Nammal reflexive actions (duschen, Zähne putzen) and sequence words (zuerst, dann) use cheythu full routine parayaam.",
           "Separable verbs split aakumbol pre-fixed part boomerang pole land cheyyunnathu pichakamaayi orkkane! Let's start our day!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab5-2-1", encounterMoment: "Stefan asks: 'Wann stehst du auf?' You answer: 'Ich stehe um 7 Uhr auf.'", contextSentence: "Ich stehe um 7 Uhr auf." },
-          { vocabId: "vocab5-2-2", encounterMoment: "The bathroom is free! 'Zuerst dusche ich,' you tell Stefan.", contextSentence: "Er duscht jeden Morgen." },
-          { vocabId: "vocab5-2-3", encounterMoment: "Stefan offers some bread: 'Willst du frühstücken?' You nod: 'Ja, ich frühstücke jetzt.'", contextSentence: "Wir frühstücken um 8 Uhr." },
+          { vocabId: "vocab5-2-1", encounterMoment: "Amma asks when you wake up. You answer in German: 'Ich stehe um 7 Uhr auf.'", contextSentence: "Ich stehe um 7 Uhr auf." },
+          { vocabId: "vocab5-2-2", encounterMoment: "The bathroom is free! 'Zuerst dusche ich,' you say before class.", contextSentence: "Er duscht jeden Morgen." },
+          { vocabId: "vocab5-2-3", encounterMoment: "Breakfast is ready: 'Ja, ich frühstücke jetzt.'", contextSentence: "Wir frühstücken um 8 Uhr." },
           { vocabId: "vocab5-2-5", encounterMoment: "You grab your toothbrush: 'Danach putze ich mir die Zähne.' Dental hygiene is key!", contextSentence: "Du putzt dir die Zähne." },
           { vocabId: "vocab5-2-6", encounterMoment: "You summarize: 'Zuerst dusche ich, dann frühstücke ich.' Perfect sequence!", contextSentence: "Zuerst dusche ich." },
         ],
         decisionPoints: [
           {
-            moment: "Stefan asks: 'Was machst du zuerst?' You want to say 'First I get up'. What is the correct German sentence?",
+            moment: "At home, Kuttan wants to say 'First I get up'. What is the correct German sentence?",
             options: [
               { text: "Zuerst stehe ich auf.", isCorrect: true, response: "Exactly! In German, if 'Zuerst' is first, the verb 'stehe' comes second, and the prefix 'auf' goes to the end.", kuttanReaction: "Adipoli! Word order rules correctly catch cheythallo. 'auf' end-il poyathu makkalle point! 🔥" },
               { text: "Zuerst ich stehe auf.", isCorrect: false, response: "Aiyyo! Verb MUST be in position 2. After 'Zuerst', the verb 'stehe' should come immediately.", kuttanReaction: "Vite machane! German logic-il verb position 2 is sacred. 'Zuerst stehe ich...' aanu right form. Try again! 😬" },
@@ -598,7 +607,16 @@ export const MODULE_5: Module = {
           explanation: "Correct! Note the reflexive 'mir' and the capitalization of 'Zähne'.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex5-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Morning Routine): 'Morgens trinke ich Tee.'",
+          questionGerman: "Sprechen Sie laut: 'Morgens trinke ich Tee.'",
+          correctAnswer: "Morgens trinke ich Tee",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab5-2-1",
@@ -926,7 +944,16 @@ export const MODULE_5: Module = {
           explanation: "Excellent! 'anfangen' splits → 'fängt... an'. And remember the umlaut in 'fängt'!",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex5-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Separable Verbs): 'Morgens trinke ich Tee.'",
+          questionGerman: "Sprechen Sie laut: 'Morgens trinke ich Tee.'",
+          correctAnswer: "Morgens trinke ich Tee",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab5-3-1",
@@ -1016,10 +1043,10 @@ export const MODULE_5: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "WG Living Room, 10:00 PM",
+          name: "Kuttan's Home, Thrissur — Night Review",
           sceneType: "home",
           timeOfDay: "evening",
-          description: "The day is winding down. The TV is on low volume, and you're sitting on the sofa, reflecting on your first few weeks in Germany. Stefan asks: 'Wie war dein Tag?' (How was your day?). This is the final challenge of Module 5 — narrating your full routine from sunrise to bedtime. You've got this, machane!",
+          description: "The day is winding down in Thrissur. The TV is on low volume, Kuttan has his Goethe notebook open, and he is trying to narrate a full day from sunrise to bedtime in clean A1 German. This is the final challenge of Module 5 — one complete daily routine.",
         },
         narrative: {
           previousRecap: "You've survived the supermarket split and the morning rush. Now, let's bring it all together!",
@@ -1027,9 +1054,9 @@ export const MODULE_5: Module = {
           nextTeaser: "Module 5 complete! Next: I am hungry! Time to learn about food and shopping!",
         },
         kuttanIntro: [
-          "Machane! Ithanu summery lesson. Morning muthal night vare ulla daily routine full German-il parayaam.",
+          "Machane! Ithanu summary lesson. Morning muthal night vare ulla daily routine full German-il parayaam.",
           "Ivide nammal padicha ellam rules (verb endings, separable splits, reflexives) correctly handle cheyyaan makkalle!",
-          "Stefan-odu nammude common day share cheyyaam. Ready alle? Let's finish Module 5 in style!",
+          "Goethe Kochi homework pole nammude common day share cheyyaam. Ready alle? Let's finish Module 5 in style!",
         ],
         vocabEncounters: [
           { vocabId: "vocab5-2-1", encounterMoment: "You start with the morning: 'Ich stehe um 7 Uhr auf.' Consistent as always!", contextSentence: "Ich stehe um 7 Uhr auf." },
@@ -1217,7 +1244,16 @@ export const MODULE_5: Module = {
           explanation: "Wunderbar! 'fernsehen' splits into 'sehe... fern'.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex5-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (My Day - From Morning to Night): 'Morgens trinke ich Tee.'",
+          questionGerman: "Sprechen Sie laut: 'Morgens trinke ich Tee.'",
+          correctAnswer: "Morgens trinke ich Tee",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab5-4-1",
@@ -1307,10 +1343,10 @@ export const MODULE_5: Module = {
       xpReward: 200,
       storyScene: {
         setting: {
-          name: "WG Kitchen, Berlin",
-          sceneType: "kitchen",
+          name: "Goethe-Institut Kochi — Weekly Planner Practice",
+          sceneType: "classroom",
           timeOfDay: "evening",
-          description: "Sunday evening. Your flatmates are planning the week on the shared kitchen whiteboard. Everyone writes their schedule. Your turn.",
+          description: "Sunday evening study circle at Goethe Kochi. Frau Weber puts a weekly planner on the board. Everyone writes a realistic Kerala week — class, work, family, practice — in German. Kuttan's turn is next.",
         },
         narrative: {
           previousRecap: "You can describe your full day in German. Now let's zoom out to the whole week.",
@@ -1318,24 +1354,24 @@ export const MODULE_5: Module = {
           nextTeaser: "Next module: German food and restaurants — time to eat!",
         },
         kuttanIntro: [
-          "Machane! WG kitchen-il weekly planning aanu! Whiteboard-il ninte schedule ezhuthuka — German-il!",
-          "Sunday evening = planning time! Ninte roommates ellam avarude week plan cheythu. Ninte turn!",
+          "Machane! Goethe Kochi-il weekly planning practice aanu! Whiteboard-il ninte schedule ezhuthuka — German-il!",
+          "Sunday evening = planning time! Classmates ellam avarude week plan cheythu. Ninte turn!",
           "Weekly schedule German-il parayaan padikkaam — Am Montag, Am Dienstag... Let's go!",
         ],
         vocabEncounters: [
           { vocabId: "vocab5-5-1", encounterMoment: "The whiteboard header reads 'Montag' — Monday, the start of the German work week.", contextSentence: "Am Montag arbeite ich." },
-          { vocabId: "vocab5-5-2", encounterMoment: "Your flatmate writes 'Dienstag: Sprachkurs' — Tuesday is language class day.", contextSentence: "Am Dienstag lerne ich Deutsch." },
-          { vocabId: "vocab5-5-3", encounterMoment: "Lisa writes 'Mittwoch: Sport' — Wednesday is gym day for her.", contextSentence: "Am Mittwoch gehe ich zum Sport." },
-          { vocabId: "vocab5-5-4", encounterMoment: "Marco adds 'immer' next to cooking — he always cooks on Thursdays.", contextSentence: "Ich koche immer am Donnerstag." },
-          { vocabId: "vocab5-5-5", encounterMoment: "'Manchmal' appears next to 'Kino' — sometimes they go to the movies.", contextSentence: "Manchmal gehen wir ins Kino." },
+          { vocabId: "vocab5-5-2", encounterMoment: "A classmate writes 'Dienstag: Sprachkurs' — Tuesday is language class day.", contextSentence: "Am Dienstag lerne ich Deutsch." },
+          { vocabId: "vocab5-5-3", encounterMoment: "Another learner writes 'Mittwoch: Sport' — Wednesday is gym day for her.", contextSentence: "Am Mittwoch gehe ich zum Sport." },
+          { vocabId: "vocab5-5-4", encounterMoment: "Kuttan adds 'immer' next to cooking — he always cooks on Thursdays.", contextSentence: "Ich koche immer am Donnerstag." },
+          { vocabId: "vocab5-5-5", encounterMoment: "'Manchmal' appears next to 'Kino' — sometimes the group goes to the movies.", contextSentence: "Manchmal gehen wir ins Kino." },
           { vocabId: "vocab5-5-6", encounterMoment: "The weekend section says 'Am Wochenende' in bold — sacred free time.", contextSentence: "Am Wochenende schlafe ich lange." },
         ],
         decisionPoints: [
           {
-            moment: "Your flatmate asks: 'Was machst du am Freitag?' — What do you do on Friday?",
+            moment: "Your classmate asks: 'Was machst du am Freitag?' — What do you do on Friday?",
             options: [
-              { text: "Am Freitag treffe ich Freunde!", isCorrect: true, response: "Everyone nods — Friday is friendship day. 'Wollen wir zusammen essen?' Lisa suggests.", kuttanReaction: "Perfect! Am + day + verb — nee structure manasilakki! 🎉" },
-              { text: "Freitag ich mache Party.", isCorrect: false, response: "Close! But the word order needs fixing. Your flatmate gently corrects: 'Am Freitag mache ich Party.'", kuttanReaction: "Word order machane! German-il verb second position-il varanam. Am Freitag MACHE ICH..." },
+              { text: "Am Freitag treffe ich Freunde!", isCorrect: true, response: "Everyone nods — Friday is friendship day. 'Wollen wir zusammen essen?' a classmate suggests.", kuttanReaction: "Perfect! Am + day + verb — nee structure manasilakki! 🎉" },
+              { text: "Freitag ich mache Party.", isCorrect: false, response: "Close! But the word order needs fixing. Your classmate gently corrects: 'Am Freitag mache ich Party.'", kuttanReaction: "Word order machane! German-il verb second position-il varanam. Am Freitag MACHE ICH..." },
             ],
           },
         ],
@@ -1524,7 +1560,16 @@ export const MODULE_5: Module = {
           explanation: "Super! 'Am Wochenende schlafe ich lange.' — A very useful sentence for your routine!",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex5-5-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Telling About Your Week): 'Morgens trinke ich Tee.'",
+          questionGerman: "Sprechen Sie laut: 'Morgens trinke ich Tee.'",
+          correctAnswer: "Morgens trinke ich Tee",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab5-5-1",

@@ -2,8 +2,10 @@
 
 import { Suspense, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { motion } from 'framer-motion';
 import { useAuthStore } from '@/lib/auth-store';
 import { isSupabaseConfigured } from '@/lib/supabase';
+import { Kuttan } from '@/components/character/Kuttan';
 
 function CallbackHandler() {
   const router = useRouter();
@@ -61,24 +63,46 @@ function CallbackHandler() {
   }, [initAuth, router, searchParams]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
+    <div className="min-h-screen flex items-center justify-center px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center max-w-sm"
+      >
         {error ? (
           <>
-            <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-6 h-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+            <div className="flex justify-center mb-4">
+              <Kuttan mood="sad" size="md" />
             </div>
-            <p className="text-sm text-red-400 mb-2">{error}</p>
-            <p className="text-xs text-[var(--foreground)]/30">Redirecting to login...</p>
+            <h2 className="text-lg font-bold text-[var(--foreground)] mb-2">Aiyyo, that didn&apos;t work</h2>
+            <p className="text-sm text-[#c0392b] mb-2">{error}</p>
+            <p className="text-xs text-[var(--foreground)]/40">Sending you back to login...</p>
           </>
         ) : (
           <>
-            <div className="w-12 h-12 border-3 border-[#d4a520]/30 border-t-[#d4a520] rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-sm text-[var(--foreground)]/50">Signing you in...</p>
+            <div className="flex justify-center mb-4">
+              <Kuttan mood="thinking" size="md" />
+            </div>
+            <h2 className="text-lg font-bold gradient-text mb-1">Signing you in...</h2>
+            <p className="text-sm text-[var(--foreground)]/60 mb-4">One sec, machaa.</p>
+            <div className="w-10 h-10 border-[3px] border-[#d4a520]/30 border-t-[#d4a520] rounded-full animate-spin mx-auto" />
           </>
         )}
+      </motion.div>
+    </div>
+  );
+}
+
+function CallbackFallback() {
+  return (
+    <div className="min-h-screen flex items-center justify-center px-4">
+      <div className="text-center max-w-sm">
+        <div className="flex justify-center mb-4">
+          <Kuttan mood="thinking" size="md" />
+        </div>
+        <h2 className="text-lg font-bold gradient-text mb-1">Signing you in...</h2>
+        <p className="text-sm text-[var(--foreground)]/60 mb-4">One sec, machaa.</p>
+        <div className="w-10 h-10 border-[3px] border-[#d4a520]/30 border-t-[#d4a520] rounded-full animate-spin mx-auto" />
       </div>
     </div>
   );
@@ -86,16 +110,7 @@ function CallbackHandler() {
 
 export default function AuthCallbackPage() {
   return (
-    <Suspense
-      fallback={
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-12 h-12 border-3 border-[#d4a520]/30 border-t-[#d4a520] rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-sm text-[var(--foreground)]/50">Signing you in...</p>
-          </div>
-        </div>
-      }
-    >
+    <Suspense fallback={<CallbackFallback />}>
       <CallbackHandler />
     </Suspense>
   );

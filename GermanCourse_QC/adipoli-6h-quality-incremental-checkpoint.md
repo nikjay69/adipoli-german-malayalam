@@ -1,0 +1,845 @@
+# Adipoli 6h quality + incremental improvement loop
+
+Started: pending
+Hard stop target: pending
+Run dir: pending
+Prompt: `/shared/german-course/GermanCourse_QC/adipoli-6h-quality-incremental-prompt-20260601.md`
+
+Boss request: work for 6h based on plan, focusing on quality and incremental improvements.
+
+Run stance:
+- one safe lane per iteration;
+- verify with source + browser/QA evidence;
+- no commit/push/deploy;
+- visuals only as route-scoped support assets, not reskin;
+- checkpoint PASS/WEAK/FAIL each iteration.
+
+# Adipoli 6h quality + incremental improvement loop
+
+Started: 2026-06-01T01:59:48+02:00
+Hard stop target: 2026-06-01T07:59:48+02:00
+Run dir: /shared/german-course/GermanCourse_QC/continuous-6h-quality-incremental-20260601-015948
+Prompt: /shared/german-course/GermanCourse_QC/adipoli-6h-quality-incremental-prompt-20260601.md
+Boss request: quality-focused incremental work based on the vision plan; visuals as support only, no reskin.
+
+Initial git status count: 263
+
+
+## Iteration 1 — 2026-06-01T02:00:16+02:00
+- Lane: Lane A — first-mission visual relatability experiment, scoped to `/intro` only.
+- Source/docs inspected: `GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md`; `GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`; `docs/COURSE_OPERATING_BRIEF_2026-05-19.md`; `docs/PRODUCT_DIRECTION_RESET_2026-05-20.md`; `docs/WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`; `src/app/intro/page.tsx`; `src/components/course/KeralaClassroomScene.tsx`; `scripts/qa_intro_start_path.mjs`; `scripts/qa_gold_slice_first_journey.mjs`; `scripts/qa_mission_pilot.py`; current server/git state.
+- Files changed: `src/components/course/KeralaClassroomScene.tsx` (untracked/inherited new file; added variant support and a contained `kochi-room` SVG/CSS scene); `src/app/intro/page.tsx` (used `variant="kochi-room"` only on `/intro`); `scripts/qa_intro_start_path.mjs` (guarded that `/intro` uses the route-scoped visual and `/learn/1` does not). No commit/push/deploy.
+- Improvement made: Replaced the `/intro` support asset's generic/abstract classroom feel with a contained adult-safe Kerala/Kochi classroom scene: chalkboard, palm-window cue, table/notebook, two adult learner/teacher figures. It adds no new learner-facing text beyond the existing tiny `A1`, does not change layout architecture, and stays scoped to `/intro` so it is not a global UI reskin.
+- Verification run: `date --iso-8601=seconds`; branch/commit/dirty count (`adipoli-page-by-page-reset-20260523-1802`, `b201d05`, 263 dirty/untracked entries); port/server check (`0.0.0.0:3000`, root HTTP 200); baseline full checks before patch all PASS; `npx tsc --noEmit --pretty false --incremental false` PASS after patch; `node scripts/qa_intro_start_path.mjs` PASS after patch; `node scripts/qa_gold_slice_first_journey.mjs` PASS after patch; `python3 scripts/qa_mission_pilot.py` PASS after patch; `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs` PASS after patch; Puppeteer `/intro` 390px browser check after patch: path `/intro`, `visualVariant="kochi-room"`, nav=false, search=false, one button, console/page errors=[]; Browser visual QA: scene remains a small contained support card above the headline, not a reskin, no mascot/childish feel, no crowding. `git diff --check -- ...` PASS.
+- PASS/WEAK/FAIL: PASS for a tiny route-scoped visual-support experiment. WEAK for visual richness: it is still lightweight CSS/SVG, not the generated high-relatability art sample; good enough to validate the "support asset, not reskin" pattern without paid/new media generation.
+- Weaknesses / next fix: Continue with Lane B next: prove Module 1 mission 1 → 2 → 3 → Module 2 handoff by actual browser clicks, including completion/repair gates, at 390px. Screenshots: before `/shared/german-course/GermanCourse_QC/continuous-6h-quality-incremental-20260601-015948/iteration-01-before-intro-mobile.png`; after `/shared/german-course/GermanCourse_QC/continuous-6h-quality-incremental-20260601-015948/iteration-01-after-intro-mobile.png`.
+===== ITERATION 1 END 2026-06-01T02:11:23+02:00 rc=0 =====
+Output: /shared/german-course/GermanCourse_QC/continuous-6h-quality-incremental-20260601-015948/iteration-01.log
+Git status after iteration 1:
+ M docs/A1_CURRICULUM_AUDIT.md
+ D docs/AI_CINEMATIC_SCRIPTS.md
+ D docs/AI_CINEMATIC_SCRIPTS_V3.md
+ M docs/AI_CINEMATIC_SCRIPTS_V4.md
+ M docs/AI_GENERATION_COSTS.md
+ M docs/AI_GENERATION_LOG.md
+ D docs/CINEMATIC_VIDEO_SERIES.md
+ M docs/COURSE_PLAN_10_10.md
+ M docs/EXERCISE_QUALITY_RULES.md
+ M docs/GOETHE_A1_EXAM_MAP.md
+ M docs/LESSON_BLUEPRINTS_PRIORITY.md
+ M docs/MODULE_BLUEPRINTS.md
+ M docs/SCRIPT_ARCHITECTURE.md
+ M docs/SERIES_ARC_PLAN.md
+ M docs/SERIES_FULL_SCRIPT.md
+ D docs/VIDEO_PIPELINE_V3.md
+ D docs/pilot-video-1-foundation.md
+ M docs/scripts/v1-2-2_FULL_SCRIPT.md
+ M docs/scripts/v1-4-2_FULL_SCRIPT.md
+ M docs/scripts/v1-5-2_FULL_SCRIPT.md
+ M docs/scripts/v1-6-1_FULL_SCRIPT.md
+ M docs/scripts/v2-2-1_FULL_SCRIPT.md
+ M package-lock.json
+ M package.json
+ M public/sw.js
+ D scripts/build-100-prompts.py
+ M scripts/cinematic-arc.json
+ A scripts/qa_mission_pilot.py
+ M src/app/auth/callback/page.tsx
+ M src/app/auth/login/page.tsx
+ M src/app/auth/signup/page.tsx
+ M src/app/error.tsx
+ M src/app/games/article-blitz/page.tsx
+ M src/app/games/dialogue-dash/page.tsx
+ M src/app/games/fill-the-gap/page.tsx
+ M src/app/games/food-order/page.tsx
+ M src/app/games/greeting-time/page.tsx
+ M src/app/games/listen-act/page.tsx
+ M src/app/games/number-blitz/page.tsx
+ M src/app/games/page.tsx
+ M src/app/games/sentence-builder/page.tsx
+ M src/app/games/verb-rush/page.tsx
+ D src/app/games/word-match/page.tsx
+ M src/app/intro/page.tsx
+ M src/app/landing/page.tsx
+ M src/app/layout.tsx
+ M src/app/learn/[moduleId]/[lessonId]/page.tsx
+ M src/app/learn/[moduleId]/page.tsx
+ M src/app/learn/page.tsx
+ A src/app/missions/module-2/_components/MissionUI.tsx
+ A src/app/missions/module-2/final-self-intro/page.tsx
+ A src/app/missions/module-2/from-kerala/page.tsx
+ A src/app/missions/module-2/job-languages/page.tsx
+ A src/app/missions/module-2/self-intro/page.tsx
+ A src/app/missions/module-2/spell-name/page.tsx
+ M src/app/not-found.tsx
+ M src/app/onboarding/page.tsx
+ M src/app/page.tsx
+ M src/app/plan/page.tsx
+ M src/app/play/[moduleId]/[lessonId]/page.tsx
+ M src/app/practice/chat/page.tsx
+ M src/app/practice/conversation/page.tsx
+ M src/app/practice/intro/page.tsx
+ M src/app/practice/page.tsx
+ M src/app/practice/pronunciation/page.tsx
+ M src/app/practice/review/page.tsx
+ M src/app/practice/shadowing/page.tsx
+ M src/app/practice/speak/page.tsx
+ M src/app/practice/write/page.tsx
+ M src/app/pricing/page.tsx
+ M src/app/privacy/page.tsx
+ M src/app/profile/page.tsx
+ M src/app/scripts/[moduleId]/page.tsx
+ M src/app/scripts/page.tsx
+ M src/app/template.tsx
+ M src/app/tests/[testId]/page.tsx
+ M src/app/tests/page.tsx
+ M src/app/vocabulary/page.tsx
+ M src/components/ServiceWorkerRegister.tsx
+ M src/components/character/Appu.tsx
+ M src/components/character/Kuttan.tsx
+ M src/components/exercise-games/WordNinja.tsx
+ M src/components/exercise-games/index.ts
+ M src/components/game-engine/GameRenderer.tsx
+ M src/components/game-engine/VocabDiscoveryGame.tsx
+ M src/components/game/GameStoryWrapper.tsx
+ M src/components/layout/Navigation.tsx
+ M src/components/ui/Card.tsx
+ M src/components/ui/GlobalSearch.tsx
+ M src/lib/app-config.ts
+ M src/lib/content/dialogue.ts
+ M src/lib/content/modules/module-01.ts
+ M src/lib/content/modules/module-02.ts
+ M src/lib/content/modules/module-03.ts
+ M src/lib/content/modules/module-04.ts
+ M src/lib/content/modules/module-05.ts
+ M src/lib/content/modules/module-06.ts
+ M src/lib/content/modules/module-07.ts
+ M src/lib/content/modules/module-08.ts
+ M src/lib/content/modules/module-09.ts
+ M src/lib/content/modules/module-10.ts
+ M src/lib/content/modules/module-11.ts
+ M src/lib/content/modules/module-12.ts
+ M src/lib/content/modules/module-13.ts
+ M src/lib/content/modules/module-14.ts
+ M src/lib/content/modules/module-15.ts
+ M src/lib/content/modules/module-16.ts
+ M src/lib/content/modules/module-17.ts
+ M src/lib/content/modules/module-18.ts
+ M src/lib/content/narrative-arcs.ts
+ M src/lib/content/video-scripts.ts
+ M src/lib/study-plan.ts
+ M supabase/schema.sql
+?? .vercelignore
+?? Agents
+?? Architecture
+?? Frontier.
+?? GermanCourse_QC/
+?? Inference
+?? LLM
+?? Modalities
+?? concrete
+?? docs/A1_STORY_BIBLE.md
+?? docs/AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md
+?? docs/COURSE_AGENT_PRODUCT_QA_SYSTEM_2026-05-20.md
+?? docs/COURSE_AUTOMATION_MARKETING_STRATEGY_2026-05-19.md
+?? docs/COURSE_GOALS_ENGAGEMENT_RETENTION_2026-05-20.md
+?? docs/COURSE_OPERATING_BRIEF_2026-05-19.md
+?? docs/GAME_AUDIT.md
+?? docs/LAUNCH_CHECKLIST.md
+?? docs/M1_AUDIT_REPORT.md
+?? docs/M2_M3_SETTING_AUDIT.md
+?? docs/MODULE_PRODUCT_SCORECARD_TEMPLATE.md
+?? docs/PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md
+?? docs/PRODUCT_DIRECTION_RESET_2026-05-20.md
+?? docs/README.md
+?? docs/REMOTION_PIPELINE.md
+?? docs/WHOLE_COURSE_MISSION_SPINE_2026-05-20.md
+?? docs/archive/AI_CINEMATIC_SCRIPTS_V3.md
+?? docs/archive/CINEMATIC_VIDEO_SERIES.md
+?? general
+?? pilot/intros/
+?? pilot/video-0/
+?? pilot/video-100/
+?? pilot/video-101/
+?? pilot/video-2/
+?? pilot/video-200/
+?? pilot/video-201/
+?? pilot/video-202/
+?? pilot/video-3/
+?? pilot/video-300/
+?? pilot/video-301/
+?? pilot/video-302/
+?? pilot/video-303/
+?? pilot/video-304/
+?? pilot/video-305/
+?? pilot/video-306/
+?? pilot/video-307/
+?? pilot/video-308/
+?? pilot/video-309/
+?? pilot/video-310/
+?? pilot/video-311/
+?? pilot/video-4/
+?? pilot/video-5/
+?? pilot/video-6/
+?? public/audio/hoeren/module-01/
+?? public/audio/hoeren/module-03/
+?? public/audio/hoeren/module-16/
+?? public/audio/hoeren/module-17/
+?? public/audio/hoeren/module-18/
+?? public/audio/missions/
+?? public/audio/pimsleur/
+?? public/audio/tts/
+?? public/preview/
+?? public/videos/
+?? remotion.config.ts
+?? scripts/__pycache__/
+?? scripts/adipoli_continuous_4h_vision_plan_loop.sh
+?? scripts/adipoli_continuous_6h_quality_incremental_loop.sh
+?? scripts/adipoli_continuous_6h_uiux_m1_m2_loop.sh
+?? scripts/adipoli_continuous_7h_loop.sh
+?? scripts/audit-all-lessons.mjs
+?? scripts/audit-app-readiness.ts
+?? scripts/audit-games.mjs
+?? scripts/audit-m1-lessons.mjs
+?? scripts/audit-nav.mjs
+?? scripts/batch_render.sh
+?? scripts/build_preview_index.sh
+?? scripts/cinematic-arc-v1-backup.json
+?? scripts/fix-production-floor.py
+?? scripts/gen-m1-videos.ts
+?? scripts/gen-pimsleur.ts
+?? scripts/gen-tts.ts
+?? scripts/get-gcp-token.py
+?? scripts/lib/
+?? scripts/m1-video-defs.json
+?? scripts/m2-video-defs.json
+?? scripts/output/.checkpoint.audit-pass1.json
+?? scripts/output/.checkpoint.json
+?? scripts/output/.pass1-snapshot/
+?? scripts/output/.pass2-snapshot/
+?? scripts/output/.pre-pass4-snapshot/
+?? scripts/output/.pre-repair/
+?? scripts/output/all-lesson-audit/
+?? scripts/output/audit-log.md
+?? scripts/output/game-audit/
+?? scripts/output/m1-lesson-audit/
+?? scripts/output/module-01.script.md
+?? scripts/output/module-02.script.md
+?? scripts/output/module-03.script.md
+?? scripts/output/module-04.script.md
+?? scripts/output/module-05.script.md
+?? scripts/output/module-06.script.md
+?? scripts/output/module-07.script.md
+?? scripts/output/module-08.script.md
+?? scripts/output/module-09.script.md
+?? scripts/output/module-10.script.md
+?? scripts/output/module-11.script.md
+?? scripts/output/module-12.script.md
+?? scripts/output/module-13.script.md
+?? scripts/output/module-14.script.md
+?? scripts/output/module-15.script.md
+?? scripts/output/module-16.script.md
+?? scripts/output/module-17.script.md
+?? scripts/output/module-18.script.md
+?? scripts/output/nav-audit/
+?? scripts/output/playthrough/
+?? scripts/output/tts-test/
+?? scripts/parse_script.py
+?? scripts/playthrough-ext.mjs
+?? scripts/playthrough.mjs
+?? scripts/props/
+?? scripts/qa_completed_ability_landings.mjs
+?? scripts/qa_direct_final_sequence_status.mjs
+?? scripts/qa_gold_slice_first_journey.mjs
+?? scripts/qa_intro_start_path.mjs
+?? scripts/qa_module2_production_mobile.mjs
+?? scripts/render-video.ts
+?? scripts/render_guide.sh
+?? scripts/repair_holdouts.py
+?? scripts/review-template.html
+?? scripts/script_audit_loop.py
+?? src/app/api/live/
+?? src/app/api/webhooks/
+?? src/app/games/hor-und-los/
+?? src/app/games/sag-es/
+?? src/app/games/tipp-es/
+?? src/app/games/was-steht-da/
+?? src/app/learn/roleplay/
+?? src/app/missions/module-1/
+?? src/app/on-the-go/
+?? src/components/course/
+?? src/components/exercise-games/FreeTextInput.tsx
+?? src/components/voice/
+?? src/lib/answer-match.ts
+?? src/lib/content/roleplay-scenarios.ts
+?? src/lib/geo.ts
+?? src/lib/missions/
+?? src/lib/plan.ts
+?? src/lib/pricing.ts
+
+## Iteration 2 — 2026-06-01T02:35:01+02:00
+- Lane: Lane B — Module 1 sequence closure, scoped to browser QA harness.
+- Source/docs inspected: `GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md`; `GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`; `docs/COURSE_OPERATING_BRIEF_2026-05-19.md`; `docs/PRODUCT_DIRECTION_RESET_2026-05-20.md`; `docs/WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`; `src/lib/missions/module1.ts`; all three `src/app/missions/module-1/*/page.tsx`; `src/app/missions/module-2/_components/MissionUI.tsx`; `src/app/learn/[moduleId]/page.tsx`; `scripts/qa_intro_start_path.mjs`; `scripts/qa_module2_production_mobile.mjs`; current server/git state.
+- Files changed: `scripts/qa_intro_start_path.mjs` only (untracked/inherited QA script; no app UI/content changes, no commit/push/deploy).
+- Improvement made: Strengthened the start-path QA to prove the full Module 1 closure by real mobile browser actions: Mission 1 → Mission 2 → Mission 3 → Module 2 handoff; each M1 mission must not complete on load, must not complete after passive listening alone, must keep repair choices hidden until audio ends, must persist completion only after the correct repair/output choice, and must expose the next listening link directly. Added a resilient `gotoPath` helper because Next dev/Puppeteer route reloads briefly returned empty bodies during this longer chained playthrough.
+- Verification run: `date --iso-8601=seconds`; branch/commit/dirty/server check (`adipoli-page-by-page-reset-20260523-1802`, `b201d05`, 263 dirty/untracked entries; original dev server died during QA and was restarted with `npm run dev -- -H 0.0.0.0`, root HTTP 200); `node --check scripts/qa_intro_start_path.mjs` PASS; `node scripts/qa_intro_start_path.mjs` PASS after patch; `npx tsc --noEmit --pretty false --incremental false` PASS; `node scripts/qa_gold_slice_first_journey.mjs` PASS; `python3 scripts/qa_mission_pilot.py` PASS; `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs` PASS; `git diff --check -- scripts/qa_intro_start_path.mjs` PASS.
+- PASS/WEAK/FAIL: PASS for Lane B verification coverage. The actual product already passed the stricter M1 sequence behavior; this iteration locked the behavior into automated browser QA rather than adding more UI polish.
+- Weaknesses / next fix: Continue with Lane C next: verify all five Module 2 mission routes as one coherent self-intro arc, with browser audio evidence per route and no long mobile typing burden.
+
+===== ITERATION 2 END 2026-06-01T02:35:51+02:00 rc=0 =====
+Output: /shared/german-course/GermanCourse_QC/continuous-6h-quality-incremental-20260601-015948/iteration-02.log
+Git status after iteration 2:
+ M docs/A1_CURRICULUM_AUDIT.md
+ D docs/AI_CINEMATIC_SCRIPTS.md
+ D docs/AI_CINEMATIC_SCRIPTS_V3.md
+ M docs/AI_CINEMATIC_SCRIPTS_V4.md
+ M docs/AI_GENERATION_COSTS.md
+ M docs/AI_GENERATION_LOG.md
+ D docs/CINEMATIC_VIDEO_SERIES.md
+ M docs/COURSE_PLAN_10_10.md
+ M docs/EXERCISE_QUALITY_RULES.md
+ M docs/GOETHE_A1_EXAM_MAP.md
+ M docs/LESSON_BLUEPRINTS_PRIORITY.md
+ M docs/MODULE_BLUEPRINTS.md
+ M docs/SCRIPT_ARCHITECTURE.md
+ M docs/SERIES_ARC_PLAN.md
+ M docs/SERIES_FULL_SCRIPT.md
+ D docs/VIDEO_PIPELINE_V3.md
+ D docs/pilot-video-1-foundation.md
+ M docs/scripts/v1-2-2_FULL_SCRIPT.md
+ M docs/scripts/v1-4-2_FULL_SCRIPT.md
+ M docs/scripts/v1-5-2_FULL_SCRIPT.md
+ M docs/scripts/v1-6-1_FULL_SCRIPT.md
+ M docs/scripts/v2-2-1_FULL_SCRIPT.md
+ M package-lock.json
+ M package.json
+ M public/sw.js
+ D scripts/build-100-prompts.py
+ M scripts/cinematic-arc.json
+ A scripts/qa_mission_pilot.py
+ M src/app/auth/callback/page.tsx
+ M src/app/auth/login/page.tsx
+ M src/app/auth/signup/page.tsx
+ M src/app/error.tsx
+ M src/app/games/article-blitz/page.tsx
+ M src/app/games/dialogue-dash/page.tsx
+ M src/app/games/fill-the-gap/page.tsx
+ M src/app/games/food-order/page.tsx
+ M src/app/games/greeting-time/page.tsx
+ M src/app/games/listen-act/page.tsx
+ M src/app/games/number-blitz/page.tsx
+ M src/app/games/page.tsx
+ M src/app/games/sentence-builder/page.tsx
+ M src/app/games/verb-rush/page.tsx
+ D src/app/games/word-match/page.tsx
+ M src/app/intro/page.tsx
+ M src/app/landing/page.tsx
+ M src/app/layout.tsx
+ M src/app/learn/[moduleId]/[lessonId]/page.tsx
+ M src/app/learn/[moduleId]/page.tsx
+ M src/app/learn/page.tsx
+ A src/app/missions/module-2/_components/MissionUI.tsx
+ A src/app/missions/module-2/final-self-intro/page.tsx
+ A src/app/missions/module-2/from-kerala/page.tsx
+ A src/app/missions/module-2/job-languages/page.tsx
+ A src/app/missions/module-2/self-intro/page.tsx
+ A src/app/missions/module-2/spell-name/page.tsx
+ M src/app/not-found.tsx
+ M src/app/onboarding/page.tsx
+ M src/app/page.tsx
+ M src/app/plan/page.tsx
+ M src/app/play/[moduleId]/[lessonId]/page.tsx
+ M src/app/practice/chat/page.tsx
+ M src/app/practice/conversation/page.tsx
+ M src/app/practice/intro/page.tsx
+ M src/app/practice/page.tsx
+ M src/app/practice/pronunciation/page.tsx
+ M src/app/practice/review/page.tsx
+ M src/app/practice/shadowing/page.tsx
+ M src/app/practice/speak/page.tsx
+ M src/app/practice/write/page.tsx
+ M src/app/pricing/page.tsx
+ M src/app/privacy/page.tsx
+ M src/app/profile/page.tsx
+ M src/app/scripts/[moduleId]/page.tsx
+ M src/app/scripts/page.tsx
+ M src/app/template.tsx
+ M src/app/tests/[testId]/page.tsx
+ M src/app/tests/page.tsx
+ M src/app/vocabulary/page.tsx
+ M src/components/ServiceWorkerRegister.tsx
+ M src/components/character/Appu.tsx
+ M src/components/character/Kuttan.tsx
+ M src/components/exercise-games/WordNinja.tsx
+ M src/components/exercise-games/index.ts
+ M src/components/game-engine/GameRenderer.tsx
+ M src/components/game-engine/VocabDiscoveryGame.tsx
+ M src/components/game/GameStoryWrapper.tsx
+ M src/components/layout/Navigation.tsx
+ M src/components/ui/Card.tsx
+ M src/components/ui/GlobalSearch.tsx
+ M src/lib/app-config.ts
+ M src/lib/content/dialogue.ts
+ M src/lib/content/modules/module-01.ts
+ M src/lib/content/modules/module-02.ts
+ M src/lib/content/modules/module-03.ts
+ M src/lib/content/modules/module-04.ts
+ M src/lib/content/modules/module-05.ts
+ M src/lib/content/modules/module-06.ts
+ M src/lib/content/modules/module-07.ts
+ M src/lib/content/modules/module-08.ts
+ M src/lib/content/modules/module-09.ts
+ M src/lib/content/modules/module-10.ts
+ M src/lib/content/modules/module-11.ts
+ M src/lib/content/modules/module-12.ts
+ M src/lib/content/modules/module-13.ts
+ M src/lib/content/modules/module-14.ts
+ M src/lib/content/modules/module-15.ts
+ M src/lib/content/modules/module-16.ts
+ M src/lib/content/modules/module-17.ts
+ M src/lib/content/modules/module-18.ts
+ M src/lib/content/narrative-arcs.ts
+ M src/lib/content/video-scripts.ts
+ M src/lib/study-plan.ts
+ M supabase/schema.sql
+?? .vercelignore
+?? Agents
+?? Architecture
+?? Frontier.
+?? GermanCourse_QC/
+?? Inference
+?? LLM
+?? Modalities
+?? concrete
+?? docs/A1_STORY_BIBLE.md
+?? docs/AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md
+?? docs/COURSE_AGENT_PRODUCT_QA_SYSTEM_2026-05-20.md
+?? docs/COURSE_AUTOMATION_MARKETING_STRATEGY_2026-05-19.md
+?? docs/COURSE_GOALS_ENGAGEMENT_RETENTION_2026-05-20.md
+?? docs/COURSE_OPERATING_BRIEF_2026-05-19.md
+?? docs/GAME_AUDIT.md
+?? docs/LAUNCH_CHECKLIST.md
+?? docs/M1_AUDIT_REPORT.md
+?? docs/M2_M3_SETTING_AUDIT.md
+?? docs/MODULE_PRODUCT_SCORECARD_TEMPLATE.md
+?? docs/PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md
+?? docs/PRODUCT_DIRECTION_RESET_2026-05-20.md
+?? docs/README.md
+?? docs/REMOTION_PIPELINE.md
+?? docs/WHOLE_COURSE_MISSION_SPINE_2026-05-20.md
+?? docs/archive/AI_CINEMATIC_SCRIPTS_V3.md
+?? docs/archive/CINEMATIC_VIDEO_SERIES.md
+?? general
+?? pilot/intros/
+?? pilot/video-0/
+?? pilot/video-100/
+?? pilot/video-101/
+?? pilot/video-2/
+?? pilot/video-200/
+?? pilot/video-201/
+?? pilot/video-202/
+?? pilot/video-3/
+?? pilot/video-300/
+?? pilot/video-301/
+?? pilot/video-302/
+?? pilot/video-303/
+?? pilot/video-304/
+?? pilot/video-305/
+?? pilot/video-306/
+?? pilot/video-307/
+?? pilot/video-308/
+?? pilot/video-309/
+?? pilot/video-310/
+?? pilot/video-311/
+?? pilot/video-4/
+?? pilot/video-5/
+?? pilot/video-6/
+?? public/audio/hoeren/module-01/
+?? public/audio/hoeren/module-03/
+?? public/audio/hoeren/module-16/
+?? public/audio/hoeren/module-17/
+?? public/audio/hoeren/module-18/
+?? public/audio/missions/
+?? public/audio/pimsleur/
+?? public/audio/tts/
+?? public/preview/
+?? public/videos/
+?? remotion.config.ts
+?? scripts/__pycache__/
+?? scripts/adipoli_continuous_4h_vision_plan_loop.sh
+?? scripts/adipoli_continuous_6h_quality_incremental_loop.sh
+?? scripts/adipoli_continuous_6h_uiux_m1_m2_loop.sh
+?? scripts/adipoli_continuous_7h_loop.sh
+?? scripts/audit-all-lessons.mjs
+?? scripts/audit-app-readiness.ts
+?? scripts/audit-games.mjs
+?? scripts/audit-m1-lessons.mjs
+?? scripts/audit-nav.mjs
+?? scripts/batch_render.sh
+?? scripts/build_preview_index.sh
+?? scripts/cinematic-arc-v1-backup.json
+?? scripts/fix-production-floor.py
+?? scripts/gen-m1-videos.ts
+?? scripts/gen-pimsleur.ts
+?? scripts/gen-tts.ts
+?? scripts/get-gcp-token.py
+?? scripts/lib/
+?? scripts/m1-video-defs.json
+?? scripts/m2-video-defs.json
+?? scripts/output/.checkpoint.audit-pass1.json
+?? scripts/output/.checkpoint.json
+?? scripts/output/.pass1-snapshot/
+?? scripts/output/.pass2-snapshot/
+?? scripts/output/.pre-pass4-snapshot/
+?? scripts/output/.pre-repair/
+?? scripts/output/all-lesson-audit/
+?? scripts/output/audit-log.md
+?? scripts/output/game-audit/
+?? scripts/output/m1-lesson-audit/
+?? scripts/output/module-01.script.md
+?? scripts/output/module-02.script.md
+?? scripts/output/module-03.script.md
+?? scripts/output/module-04.script.md
+?? scripts/output/module-05.script.md
+?? scripts/output/module-06.script.md
+?? scripts/output/module-07.script.md
+?? scripts/output/module-08.script.md
+?? scripts/output/module-09.script.md
+?? scripts/output/module-10.script.md
+?? scripts/output/module-11.script.md
+?? scripts/output/module-12.script.md
+?? scripts/output/module-13.script.md
+?? scripts/output/module-14.script.md
+?? scripts/output/module-15.script.md
+?? scripts/output/module-16.script.md
+?? scripts/output/module-17.script.md
+?? scripts/output/module-18.script.md
+?? scripts/output/nav-audit/
+?? scripts/output/playthrough/
+?? scripts/output/tts-test/
+?? scripts/parse_script.py
+?? scripts/playthrough-ext.mjs
+?? scripts/playthrough.mjs
+?? scripts/props/
+?? scripts/qa_completed_ability_landings.mjs
+?? scripts/qa_direct_final_sequence_status.mjs
+?? scripts/qa_gold_slice_first_journey.mjs
+?? scripts/qa_intro_start_path.mjs
+?? scripts/qa_module2_production_mobile.mjs
+?? scripts/render-video.ts
+?? scripts/render_guide.sh
+?? scripts/repair_holdouts.py
+?? scripts/review-template.html
+?? scripts/script_audit_loop.py
+?? src/app/api/live/
+?? src/app/api/webhooks/
+?? src/app/games/hor-und-los/
+?? src/app/games/sag-es/
+?? src/app/games/tipp-es/
+?? src/app/games/was-steht-da/
+?? src/app/learn/roleplay/
+?? src/app/missions/module-1/
+?? src/app/on-the-go/
+?? src/components/course/
+?? src/components/exercise-games/FreeTextInput.tsx
+?? src/components/voice/
+?? src/lib/answer-match.ts
+?? src/lib/content/roleplay-scenarios.ts
+?? src/lib/geo.ts
+?? src/lib/missions/
+?? src/lib/plan.ts
+?? src/lib/pricing.ts
+
+
+## Iteration 3 — 2026-06-01T02:43:12+02:00
+- Lane: Lane C — Module 2 gold path quality, scoped to the production/mobile QA harness and live browser proof.
+- Source/docs inspected: `GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md`; `GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`; `docs/COURSE_OPERATING_BRIEF_2026-05-19.md`; `docs/PRODUCT_DIRECTION_RESET_2026-05-20.md`; `docs/WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`; `src/lib/missions/module2.ts`; all five `src/app/missions/module-2/*/page.tsx`; `src/app/missions/module-2/_components/MissionUI.tsx`; `scripts/qa_module2_production_mobile.mjs`; `scripts/qa_mission_pilot.py`; current server/git state.
+- Files changed: `scripts/qa_module2_production_mobile.mjs` only (untracked/inherited QA script; no app UI/content changes, no commit/push/deploy).
+- Improvement made: Strengthened Lane C verification so Module 2 is proven as one coherent five-mission arc, not five isolated route loads. The QA now browser-plays real audio on each Module 2 mission, completes the audio-gated repair/output action with no long mobile typing, clicks the actual next-mission card through `self-intro → spell-name → from-kerala → job-languages → final-self-intro → /learn/2`, and checks localStorage completion for all five mission IDs.
+- Verification run: `date --iso-8601=seconds`; branch/commit/dirty/server check (`adipoli-page-by-page-reset-20260523-1802`, `b201d05`, 263 dirty/untracked entries). The inherited dev server on port 3000 hung during first QA attempt (`Navigation timeout` / `curl` timeout), so it was killed and restarted with `npm run dev -- -H 0.0.0.0`; root then returned HTTP 200. `node --check scripts/qa_module2_production_mobile.mjs` PASS. `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs` PASS, including `module2_sequence_audio[...]` for all five routes, next-card clicks to each next route, and `module2_sequence_completion=PASS completed=selfIntro,spellName,fromKerala,jobLanguages,finalSelfIntro`. `npx tsc --noEmit --pretty false --incremental false` PASS. `node scripts/qa_intro_start_path.mjs` PASS. `node scripts/qa_gold_slice_first_journey.mjs` PASS. `python3 scripts/qa_mission_pilot.py` PASS, including both local and Tailscale gold-slice checks. `git diff --check -- scripts/qa_module2_production_mobile.mjs` PASS.
+- PASS/WEAK/FAIL: PASS for Lane C verification coverage. The product behavior already passed; this iteration encoded the full Module 2 sequence, audio playback, next-pull, completion, and no-long-typing expectations into repeatable browser QA.
+- Weaknesses / next fix: This did not improve learner-facing content beyond M2. Continue with Lane D only if build lanes are blocked, otherwise the next useful build slice is Module 3 mission mapping/first audio-first numbers-time mission with the same evidence bar.
+===== ITERATION 3 END 2026-06-01T02:43:55+02:00 rc=0 =====
+Output: /shared/german-course/GermanCourse_QC/continuous-6h-quality-incremental-20260601-015948/iteration-03.log
+Git status after iteration 3:
+ M docs/A1_CURRICULUM_AUDIT.md
+ D docs/AI_CINEMATIC_SCRIPTS.md
+ D docs/AI_CINEMATIC_SCRIPTS_V3.md
+ M docs/AI_CINEMATIC_SCRIPTS_V4.md
+ M docs/AI_GENERATION_COSTS.md
+ M docs/AI_GENERATION_LOG.md
+ D docs/CINEMATIC_VIDEO_SERIES.md
+ M docs/COURSE_PLAN_10_10.md
+ M docs/EXERCISE_QUALITY_RULES.md
+ M docs/GOETHE_A1_EXAM_MAP.md
+ M docs/LESSON_BLUEPRINTS_PRIORITY.md
+ M docs/MODULE_BLUEPRINTS.md
+ M docs/SCRIPT_ARCHITECTURE.md
+ M docs/SERIES_ARC_PLAN.md
+ M docs/SERIES_FULL_SCRIPT.md
+ D docs/VIDEO_PIPELINE_V3.md
+ D docs/pilot-video-1-foundation.md
+ M docs/scripts/v1-2-2_FULL_SCRIPT.md
+ M docs/scripts/v1-4-2_FULL_SCRIPT.md
+ M docs/scripts/v1-5-2_FULL_SCRIPT.md
+ M docs/scripts/v1-6-1_FULL_SCRIPT.md
+ M docs/scripts/v2-2-1_FULL_SCRIPT.md
+ M package-lock.json
+ M package.json
+ M public/sw.js
+ D scripts/build-100-prompts.py
+ M scripts/cinematic-arc.json
+ A scripts/qa_mission_pilot.py
+ M src/app/auth/callback/page.tsx
+ M src/app/auth/login/page.tsx
+ M src/app/auth/signup/page.tsx
+ M src/app/error.tsx
+ M src/app/games/article-blitz/page.tsx
+ M src/app/games/dialogue-dash/page.tsx
+ M src/app/games/fill-the-gap/page.tsx
+ M src/app/games/food-order/page.tsx
+ M src/app/games/greeting-time/page.tsx
+ M src/app/games/listen-act/page.tsx
+ M src/app/games/number-blitz/page.tsx
+ M src/app/games/page.tsx
+ M src/app/games/sentence-builder/page.tsx
+ M src/app/games/verb-rush/page.tsx
+ D src/app/games/word-match/page.tsx
+ M src/app/intro/page.tsx
+ M src/app/landing/page.tsx
+ M src/app/layout.tsx
+ M src/app/learn/[moduleId]/[lessonId]/page.tsx
+ M src/app/learn/[moduleId]/page.tsx
+ M src/app/learn/page.tsx
+ A src/app/missions/module-2/_components/MissionUI.tsx
+ A src/app/missions/module-2/final-self-intro/page.tsx
+ A src/app/missions/module-2/from-kerala/page.tsx
+ A src/app/missions/module-2/job-languages/page.tsx
+ A src/app/missions/module-2/self-intro/page.tsx
+ A src/app/missions/module-2/spell-name/page.tsx
+ M src/app/not-found.tsx
+ M src/app/onboarding/page.tsx
+ M src/app/page.tsx
+ M src/app/plan/page.tsx
+ M src/app/play/[moduleId]/[lessonId]/page.tsx
+ M src/app/practice/chat/page.tsx
+ M src/app/practice/conversation/page.tsx
+ M src/app/practice/intro/page.tsx
+ M src/app/practice/page.tsx
+ M src/app/practice/pronunciation/page.tsx
+ M src/app/practice/review/page.tsx
+ M src/app/practice/shadowing/page.tsx
+ M src/app/practice/speak/page.tsx
+ M src/app/practice/write/page.tsx
+ M src/app/pricing/page.tsx
+ M src/app/privacy/page.tsx
+ M src/app/profile/page.tsx
+ M src/app/scripts/[moduleId]/page.tsx
+ M src/app/scripts/page.tsx
+ M src/app/template.tsx
+ M src/app/tests/[testId]/page.tsx
+ M src/app/tests/page.tsx
+ M src/app/vocabulary/page.tsx
+ M src/components/ServiceWorkerRegister.tsx
+ M src/components/character/Appu.tsx
+ M src/components/character/Kuttan.tsx
+ M src/components/exercise-games/WordNinja.tsx
+ M src/components/exercise-games/index.ts
+ M src/components/game-engine/GameRenderer.tsx
+ M src/components/game-engine/VocabDiscoveryGame.tsx
+ M src/components/game/GameStoryWrapper.tsx
+ M src/components/layout/Navigation.tsx
+ M src/components/ui/Card.tsx
+ M src/components/ui/GlobalSearch.tsx
+ M src/lib/app-config.ts
+ M src/lib/content/dialogue.ts
+ M src/lib/content/modules/module-01.ts
+ M src/lib/content/modules/module-02.ts
+ M src/lib/content/modules/module-03.ts
+ M src/lib/content/modules/module-04.ts
+ M src/lib/content/modules/module-05.ts
+ M src/lib/content/modules/module-06.ts
+ M src/lib/content/modules/module-07.ts
+ M src/lib/content/modules/module-08.ts
+ M src/lib/content/modules/module-09.ts
+ M src/lib/content/modules/module-10.ts
+ M src/lib/content/modules/module-11.ts
+ M src/lib/content/modules/module-12.ts
+ M src/lib/content/modules/module-13.ts
+ M src/lib/content/modules/module-14.ts
+ M src/lib/content/modules/module-15.ts
+ M src/lib/content/modules/module-16.ts
+ M src/lib/content/modules/module-17.ts
+ M src/lib/content/modules/module-18.ts
+ M src/lib/content/narrative-arcs.ts
+ M src/lib/content/video-scripts.ts
+ M src/lib/study-plan.ts
+ M supabase/schema.sql
+?? .vercelignore
+?? Agents
+?? Architecture
+?? Frontier.
+?? GermanCourse_QC/
+?? Inference
+?? LLM
+?? Modalities
+?? concrete
+?? docs/A1_STORY_BIBLE.md
+?? docs/AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md
+?? docs/COURSE_AGENT_PRODUCT_QA_SYSTEM_2026-05-20.md
+?? docs/COURSE_AUTOMATION_MARKETING_STRATEGY_2026-05-19.md
+?? docs/COURSE_GOALS_ENGAGEMENT_RETENTION_2026-05-20.md
+?? docs/COURSE_OPERATING_BRIEF_2026-05-19.md
+?? docs/GAME_AUDIT.md
+?? docs/LAUNCH_CHECKLIST.md
+?? docs/M1_AUDIT_REPORT.md
+?? docs/M2_M3_SETTING_AUDIT.md
+?? docs/MODULE_PRODUCT_SCORECARD_TEMPLATE.md
+?? docs/PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md
+?? docs/PRODUCT_DIRECTION_RESET_2026-05-20.md
+?? docs/README.md
+?? docs/REMOTION_PIPELINE.md
+?? docs/WHOLE_COURSE_MISSION_SPINE_2026-05-20.md
+?? docs/archive/AI_CINEMATIC_SCRIPTS_V3.md
+?? docs/archive/CINEMATIC_VIDEO_SERIES.md
+?? general
+?? pilot/intros/
+?? pilot/video-0/
+?? pilot/video-100/
+?? pilot/video-101/
+?? pilot/video-2/
+?? pilot/video-200/
+?? pilot/video-201/
+?? pilot/video-202/
+?? pilot/video-3/
+?? pilot/video-300/
+?? pilot/video-301/
+?? pilot/video-302/
+?? pilot/video-303/
+?? pilot/video-304/
+?? pilot/video-305/
+?? pilot/video-306/
+?? pilot/video-307/
+?? pilot/video-308/
+?? pilot/video-309/
+?? pilot/video-310/
+?? pilot/video-311/
+?? pilot/video-4/
+?? pilot/video-5/
+?? pilot/video-6/
+?? public/audio/hoeren/module-01/
+?? public/audio/hoeren/module-03/
+?? public/audio/hoeren/module-16/
+?? public/audio/hoeren/module-17/
+?? public/audio/hoeren/module-18/
+?? public/audio/missions/
+?? public/audio/pimsleur/
+?? public/audio/tts/
+?? public/preview/
+?? public/videos/
+?? remotion.config.ts
+?? scripts/__pycache__/
+?? scripts/adipoli_continuous_4h_vision_plan_loop.sh
+?? scripts/adipoli_continuous_6h_quality_incremental_loop.sh
+?? scripts/adipoli_continuous_6h_uiux_m1_m2_loop.sh
+?? scripts/adipoli_continuous_7h_loop.sh
+?? scripts/audit-all-lessons.mjs
+?? scripts/audit-app-readiness.ts
+?? scripts/audit-games.mjs
+?? scripts/audit-m1-lessons.mjs
+?? scripts/audit-nav.mjs
+?? scripts/batch_render.sh
+?? scripts/build_preview_index.sh
+?? scripts/cinematic-arc-v1-backup.json
+?? scripts/fix-production-floor.py
+?? scripts/gen-m1-videos.ts
+?? scripts/gen-pimsleur.ts
+?? scripts/gen-tts.ts
+?? scripts/get-gcp-token.py
+?? scripts/lib/
+?? scripts/m1-video-defs.json
+?? scripts/m2-video-defs.json
+?? scripts/output/.checkpoint.audit-pass1.json
+?? scripts/output/.checkpoint.json
+?? scripts/output/.pass1-snapshot/
+?? scripts/output/.pass2-snapshot/
+?? scripts/output/.pre-pass4-snapshot/
+?? scripts/output/.pre-repair/
+?? scripts/output/all-lesson-audit/
+?? scripts/output/audit-log.md
+?? scripts/output/game-audit/
+?? scripts/output/m1-lesson-audit/
+?? scripts/output/module-01.script.md
+?? scripts/output/module-02.script.md
+?? scripts/output/module-03.script.md
+?? scripts/output/module-04.script.md
+?? scripts/output/module-05.script.md
+?? scripts/output/module-06.script.md
+?? scripts/output/module-07.script.md
+?? scripts/output/module-08.script.md
+?? scripts/output/module-09.script.md
+?? scripts/output/module-10.script.md
+?? scripts/output/module-11.script.md
+?? scripts/output/module-12.script.md
+?? scripts/output/module-13.script.md
+?? scripts/output/module-14.script.md
+?? scripts/output/module-15.script.md
+?? scripts/output/module-16.script.md
+?? scripts/output/module-17.script.md
+?? scripts/output/module-18.script.md
+?? scripts/output/nav-audit/
+?? scripts/output/playthrough/
+?? scripts/output/tts-test/
+?? scripts/parse_script.py
+?? scripts/playthrough-ext.mjs
+?? scripts/playthrough.mjs
+?? scripts/props/
+?? scripts/qa_completed_ability_landings.mjs
+?? scripts/qa_direct_final_sequence_status.mjs
+?? scripts/qa_gold_slice_first_journey.mjs
+?? scripts/qa_intro_start_path.mjs
+?? scripts/qa_module2_production_mobile.mjs
+?? scripts/render-video.ts
+?? scripts/render_guide.sh
+?? scripts/repair_holdouts.py
+?? scripts/review-template.html
+?? scripts/script_audit_loop.py
+?? src/app/api/live/
+?? src/app/api/webhooks/
+?? src/app/games/hor-und-los/
+?? src/app/games/sag-es/
+?? src/app/games/tipp-es/
+?? src/app/games/was-steht-da/
+?? src/app/learn/roleplay/
+?? src/app/missions/module-1/
+?? src/app/on-the-go/
+?? src/components/course/
+?? src/components/exercise-games/FreeTextInput.tsx
+?? src/components/voice/
+?? src/lib/answer-match.ts
+?? src/lib/content/roleplay-scenarios.ts
+?? src/lib/geo.ts
+?? src/lib/missions/
+?? src/lib/plan.ts
+?? src/lib/pricing.ts
+

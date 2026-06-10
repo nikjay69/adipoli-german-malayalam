@@ -1,0 +1,212 @@
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -237,7 +237,7 @@
+                   >
+                     <div className="flex items-center justify-between gap-3">
+                       <span className="font-black text-white">{completedModule1MissionCount}/{module1MissionCards.length}</span>
+-                      <span className="text-white/55">Next line</span>
++                      <span className="sr-only">Next classroom line</span>
+                     </div>
+                     <div className="my-2 h-1.5 overflow-hidden rounded-full bg-white/10">
+                       <div
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -257,7 +257,7 @@
+                 >
+                   <div className="flex items-center justify-between gap-3">
+                     <span className="font-black text-white">{completedMissionCount}/5</span>
+-                    <span className="text-white/55">{module2SequenceComplete ? 'Done' : 'Your line'}</span>
++                    <span className="sr-only">{module2SequenceComplete ? 'Done' : 'Your line'}</span>
+                   </div>
+                   <div className="my-2 h-1.5 overflow-hidden rounded-full bg-white/10">
+                     <div
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -414,21 +414,12 @@
+               </div>
+             </div>
+           ) : (
+-            <div className="rounded-[1.5rem] border border-[#d4a520]/25 bg-[#d4a520]/8 p-4 shadow-inner shadow-[#d4a520]/10" aria-label="Module 1 mission progress">
+-              <div className="flex items-start justify-between gap-3">
+-                <div>
+-                  <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[#d4a520]">Next win</p>
+-                  <h2 className="mt-2 text-2xl font-black text-[var(--foreground)]">{nextModule1Mission.title}</h2>
+-                  <p className="mt-1 text-sm font-semibold text-[var(--foreground)]/64">{module1NextOutput}</p>
+-                </div>
+-                <span className="shrink-0 rounded-full bg-[#3fbf75] px-3 py-1 text-xs font-black text-[#102018]">{completedModule1MissionCount}/3</span>
+-              </div>
+-
+-              <div className="mt-4 grid grid-cols-3 gap-2" role="list" aria-label="Module 1 mission progress dots">
++            <div className="rounded-[1.5rem] border border-[#d4a520]/18 bg-[#d4a520]/6 p-3 shadow-inner shadow-[#d4a520]/10" aria-label="Module 1 mission progress">
++              <div className="flex items-center gap-2" role="list" aria-label="Module 1 compact mission dots">
+                 {module1MissionCards.map((mission, index) => {
+                   const isDone = completedModule1MissionSet.has(mission.id);
+                   const isNextMission = mission.id === nextModule1Mission.id && !module1Complete;
+-                  const dotClass = `flex h-11 items-center justify-center rounded-2xl border text-sm font-black transition ${
++                  const dotClass = `flex h-10 flex-1 items-center justify-center rounded-2xl border text-sm font-black transition ${
+                     isDone
+                       ? 'border-[#3fbf75]/40 bg-[#3fbf75]/12 text-[#2fbf75]'
+                       : isNextMission
+@@ -437,15 +428,16 @@
+                   }`;
+                   const status = isDone ? 'completed' : isNextMission ? 'next' : 'not started';
+                   return (
+-                    <Link key={mission.id} href={mission.href} role="listitem" aria-label={`${mission.missionNumber}: ${mission.title} — ${status}`}>
++                    <Link key={mission.id} href={mission.href} role="listitem" aria-label={`${mission.missionNumber}: ${mission.title} — ${status}`} className="flex-1">
+                       <span className={dotClass} title={`${mission.missionNumber}: ${mission.title}`}>
+                         {isDone ? <CheckCircle className="h-4 w-4" aria-hidden="true" /> : index + 1}
+                       </span>
+                     </Link>
+                   );
+                 })}
++                <span className="ml-auto shrink-0 rounded-full bg-[#3fbf75] px-3 py-1 text-xs font-black text-[#102018]">{completedModule1MissionCount}/3</span>
+               </div>
+-              <span className="sr-only">{completedModule1MissionCount}/3 complete. Next: {nextModule1Mission.title}.</span>
++              <span className="sr-only">{completedModule1MissionCount}/3 complete. Next: {nextModule1Mission.title}. Output: {module1NextOutput}.</span>
+             </div>
+           )}
+         </motion.div>
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -481,21 +481,12 @@
+               </div>
+             </div>
+           ) : (
+-            <div className="rounded-[1.5rem] border border-[#d4a520]/25 bg-[#d4a520]/8 p-4 shadow-inner shadow-[#d4a520]/10" aria-label="Module 2 mission progress">
+-              <div className="flex items-start justify-between gap-3">
+-                <div>
+-                  <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[#d4a520]">Next answer</p>
+-                  <h2 className="mt-2 text-2xl font-black text-[var(--foreground)]">{nextModule2Mission.title}</h2>
+-                  <p className="mt-1 text-sm font-semibold text-[var(--foreground)]/64">{module2NextOutput}</p>
+-                </div>
+-                <span className="shrink-0 rounded-full bg-[#3fbf75] px-3 py-1 text-xs font-black text-[#102018]">{completedMissionCount}/5</span>
+-              </div>
+-
+-              <div className="mt-4 grid grid-cols-5 gap-2" role="list" aria-label="Module 2 mission progress dots">
++            <div className="rounded-[1.5rem] border border-[#d4a520]/18 bg-[#d4a520]/6 p-3 shadow-inner shadow-[#d4a520]/10" aria-label="Module 2 mission progress">
++              <div className="flex items-center gap-2" role="list" aria-label="Module 2 compact mission dots">
+                 {module2MissionCards.map((mission, index) => {
+                   const isDone = completedMissionSet.has(mission.id);
+                   const isNextMission = mission.id === nextModule2Mission.id && !module2SequenceComplete;
+-                  const dotClass = `flex h-11 items-center justify-center rounded-2xl border text-sm font-black transition ${
++                  const dotClass = `flex h-10 flex-1 items-center justify-center rounded-2xl border text-sm font-black transition ${
+                     isDone
+                       ? 'border-[#3fbf75]/40 bg-[#3fbf75]/12 text-[#2fbf75]'
+                       : isNextMission
+@@ -512,15 +503,16 @@
+                   );
+ 
+                   return mission.active && mission.href ? (
+-                    <Link key={mission.title} href={mission.href} role="listitem" aria-label={`${mission.missionNumber}: ${mission.title} — ${status}`}>
++                    <Link key={mission.title} href={mission.href} role="listitem" aria-label={`${mission.missionNumber}: ${mission.title} — ${status}`} className="flex-1">
+                       {dot}
+                     </Link>
+                   ) : (
+-                    <span key={mission.title} role="listitem">{dot}</span>
++                    <span key={mission.title} role="listitem" className="flex-1">{dot}</span>
+                   );
+                 })}
++                <span className="ml-auto shrink-0 rounded-full bg-[#3fbf75] px-3 py-1 text-xs font-black text-[#102018]">{completedMissionCount}/5</span>
+               </div>
+-              <span className="sr-only">{completedMissionCount}/5 complete. Next: {nextModule2Mission.title}.</span>
++              <span className="sr-only">{completedMissionCount}/5 complete. Next: {nextModule2Mission.title}. Output: {module2NextOutput}.</span>
+             </div>
+           )}
+         </motion.div>
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -393,15 +393,14 @@
+         "['Hear', 'Say + type', 'Fix mistake']",
+         "module2NextOutput",
+         "Ability unlocked",
+-        "Your line",
+         "20-second Goethe self-intro",
+         "Say it, type it, repair one trap.",
+         "readCompletedModule2Missions",
+         "module2-mission-completed",
+         "Module 2 · ${module2SequenceComplete ? 'complete' : nextModule2Mission.missionNumber}",
+-        "Next answer",
++        "Module 1 compact mission dots",
+         "Module 2 mission progress",
+-        "Module 2 mission progress dots",
++        "Module 2 compact mission dots",
+         "Module 2 ability certificate",
+         "Goethe self-intro",
+         "Start listening",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -417,7 +417,7 @@
+     missing_module_static = [snippet for snippet in required_module_static if snippet not in module]
+     if missing_module_static:
+         fail(f"module 2 path missing mission-sequence snippets: {missing_module_static}")
+-    module2_crowding = [snippet for snippet in ["Start mission 1: name answer", "Start mission ${nextModule2Mission.missionNumber.replace('Mission ', '')}", "5 speaking wins", "Say now", "5 playable missions", ">Playable<", "Continue</span>", "Open step", "Do the next speaking win now.", "Do this now", "Launch current Module 2 mission", "One active mission is spotlighted", "Quiet path for review — main action is above.", "Tap any mission only if you want to jump or review.", "module2PathPreview", "One guided speaking arc", "Path: {module2PathPreview.join(' → ')}", "Recommended: start the next mission above; use this row to jump or review.", "Recommended start", "Five-mission sequence", "cards below are for review", "Module 2 · speaking mission sequence", "Module 2 path", "Your speaking mission sequence", "Speaking path", "Open mission map", "Start: ${nextModule2Mission.title}", "Exam answers", "See your path"] if snippet in module]
++    module2_crowding = [snippet for snippet in ["Start mission 1: name answer", "Start mission ${nextModule2Mission.missionNumber.replace('Mission ', '')}", "5 speaking wins", "Say now", "5 playable missions", ">Playable<", "Continue</span>", "Open step", "Do the next speaking win now.", "Do this now", "Launch current Module 2 mission", "One active mission is spotlighted", "Quiet path for review — main action is above.", "Tap any mission only if you want to jump or review.", "module2PathPreview", "One guided speaking arc", "Path: {module2PathPreview.join(' → ')}", "Recommended: start the next mission above; use this row to jump or review.", "Recommended start", "Five-mission sequence", "cards below are for review", "Module 2 · speaking mission sequence", "Module 2 path", "Your speaking mission sequence", "Speaking path", "Open mission map", "Start: ${nextModule2Mission.title}", "Exam answers", "See your path", "Next line", "Next win", "Next answer", "Module 1 mission progress dots", "Module 2 mission progress dots"] if snippet in module]
+     if module2_crowding:
+         fail(f"module 2 path reintroduced ambiguous CTA/system labels: {module2_crowding}")
+     required_module_data = [
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -628,9 +628,8 @@
+         ]),
+         ("/learn/1 module page", module, [
+             "Module 1 · ${module1Complete ? 'mission review' : nextModule1Mission.missionNumber}",
+-            "Next win",
+             "Module 1 mission progress",
+-            "Module 1 mission progress dots",
++            "Module 1 compact mission dots",
+             "KeralaClassroomScene",
+             "Listen first.",
+             "nextModule1Mission.title",
+  ┊ review diff
+a//shared/german-course/scripts/qa_completed_ability_landings.mjs → b//shared/german-course/scripts/qa_completed_ability_landings.mjs
+@@ -154,7 +154,7 @@
+   assert(state.path === '/learn/1', 'Module 1 partial landing did not load', state);
+   assert(state.text.includes('Handle thank-you politely'), 'Module 1 partial state should spotlight the next ability win', { text: state.text.slice(0, 1200) });
+   assert(state.text.includes('Danke. Bitte.'), 'Module 1 partial state should show the next German output', { text: state.text.slice(0, 1200) });
+-  assert(state.text.includes('NEXT WIN'), 'Module 1 partial state should use ability-first copy', { text: state.text.slice(0, 1200) });
++  assert(!state.text.includes('NEXT WIN'), 'Module 1 partial state should not expose old next-win label', { text: state.text.slice(0, 1200) });
+   assert(!state.text.includes('Your path'), 'Module 1 partial state should not show path-dashboard label', { text: state.text.slice(0, 1200) });
+   assert(!state.text.includes('See your path'), 'Module 1 partial state should not show expandable path map', { text: state.text.slice(0, 1200) });
+   assert(!state.text.includes('3 steps'), 'Module 1 partial state should not show procedural step-count copy', { text: state.text.slice(0, 1200) });
+
+session_id: 20260530_133505_25edc0
+Iteration 25 done.
+
+Changed:
+- `src/app/learn/[moduleId]/page.tsx`
+  - Compacted Module 1 and Module 2 progress cards into slim dot strips.
+  - Removed visible crowded labels:
+    - `Next line`
+    - `Next win`
+    - `Next answer`
+    - old mission-progress-dot labels
+  - Kept accessibility context in `sr-only`.
+
+- `scripts/qa_mission_pilot.py`
+  - Updated required snippets for compact M1/M2 progress strips.
+  - Added regression bans for the old crowded labels.
+
+- `scripts/qa_completed_ability_landings.mjs`
+  - Updated browser QA to reject the old visible `NEXT WIN` label instead of requiring it.
+
+- Appended checkpoint:
+  - `GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Verified:
+- `npx eslint 'src/app/learn/[moduleId]/page.tsx' scripts/qa_completed_ability_landings.mjs` PASS
+- `python3 -m py_compile scripts/qa_mission_pilot.py` PASS
+- `python3 scripts/qa_mission_pilot.py` PASS
+- Browser-clicked `/learn/1` CTA:
+  - lands on `/missions/module-1/greet-frau-weber?start=listen`
+  - no console errors
+- Browser-clicked `/learn/2` CTA:
+  - lands on `/missions/module-2/self-intro?start=listen`
+- Visual QA:
+  - `/learn/1` now looks text-minimal and intact.
+  - Compact mission strip is restrained.
+  - Minor remaining weakness: hero progress plus strip badge duplicates progress slightly, but it does not look broken or noisy.
+
+No generated images this run. Correct call: clutter was progress/copy chrome, not missing visuals.
+
+Next lane: audit Module 1 mission internals after the first listening step, 45m.

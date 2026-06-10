@@ -1044,7 +1044,7 @@ export default function DialogueDashGame() {
           >
             <div className="mb-6">
               <CharacterGuide
-                messages="Real German conversations machaa! Type your responses — no multiple choice crutch! If you get stuck, hints will help you out."
+                messages="Machaa! Real German chats waiting. Type fast, think sharp — you got this!"
                 mood="excited"
                 size="md"
                 showAppu
@@ -1461,11 +1461,21 @@ export default function DialogueDashGame() {
                 <div className="text-xl font-bold text-[#00d9a5]">{dialogueCount}</div>
                 <div className="text-[10px] text-[var(--foreground)]/40">Dialogues</div>
               </div>
-              <div className="game-card p-3 text-center">
+              <motion.div
+                initial={{ scale: 0.8 }}
+                animate={{ scale: [0.8, 1.15, 1] }}
+                transition={{ delay: 0.5, duration: 0.5, times: [0, 0.6, 1] }}
+                className="game-card p-3 text-center ring-2 ring-[#ffd93d]/40"
+              >
                 <div className="text-xl font-bold text-[#ffd93d]">+{totalXP}</div>
                 <div className="text-[10px] text-[var(--foreground)]/40">XP Earned</div>
-              </div>
+              </motion.div>
             </motion.div>
+
+            {/* Share */}
+            <p className="text-xs text-[var(--foreground)]/50 italic mb-4 text-center w-full">
+              Screenshot this and share the score machaa!
+            </p>
 
             {/* Input mode breakdown */}
             <motion.div

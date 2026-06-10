@@ -742,7 +742,7 @@ export default function ShadowingPage() {
               {/* Audio waveform */}
               <div className="my-6">
                 {(phase === 'playing_audio' || phase === 'shadowing') && (
-                  <div className="flex items-center justify-center gap-6">
+                  <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
                     <div className="text-center">
                       <Volume2 className="w-5 h-5 mx-auto mb-1 text-[#ff6b9d]" />
                       <AudioWaveform active={phase === 'playing_audio' || phase === 'shadowing'} color="#ff6b9d" />
@@ -786,7 +786,7 @@ export default function ShadowingPage() {
                   <p className="text-xs text-white/40">
                     {lastScore >= 85 ? 'Excellent shadowing!' :
                      lastScore >= 65 ? 'Good job!' :
-                     lastScore >= 40 ? 'Keep practicing!' : 'Try to match the rhythm'}
+                     lastScore >= 40 ? 'Adipoli! Close! Keep the flow!' : 'Rhythm is tough — one more time!'}
                   </p>
                   <p className="text-xs text-white/30 mt-2">Next phrase in a moment...</p>
                 </motion.div>

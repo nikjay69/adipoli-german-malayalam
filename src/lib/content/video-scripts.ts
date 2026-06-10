@@ -58,7 +58,7 @@ A1 level — ithanu nammude goal.
 
 [CLOSING — 8:30-10:00]
 Enthaayaalum, German padikkal oru adventure aanu.
-Njaan Kuttan, Appu-yum njanum koode undu.
+Njaan Kuttan, ninte koode padikkan undu.
 Nammal oru step at a time pokam.
 
 Ready? Dann los! — Athayathu, "Let's go!"

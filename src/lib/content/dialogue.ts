@@ -52,10 +52,10 @@ export const DIALOGUE = {
     "Nee doing great. Streak alive aanu.",
   ],
   intro: [
-    "Namaskaram! Njan Kuttan. Ith ente koottukaaran Appu.",
-    "Njangal ninne Kerala-il ninnu Germany-lekku kondu pokum.",
-    "German padikkal adipoli fun aakum.",
-    "Ready? Let's start.",
+    "Namaskaram! Njan Kuttan — ninte koode ithokke padikkaan varunnu.",
+    "Njan ninne Kerala-il ninnu Germany-lekku kondu pokum — ninte same boat-il aanu njanum.",
+    "German padikkal tough aanu, but together nammal pokum.",
+    "Ready? Pokam!",
   ],
   journey: [
     "Nammude yatra. Kerala to Germany.",
@@ -112,7 +112,8 @@ export function buildDialogueLine(context: DialogueContext, text?: string): Dial
     text: text || getRandomMessage(context),
     mood: getMoodForContext(context),
     appuMood: getAppuMoodForContext(context),
-    showAppu: context === 'celebrate' || context === 'lesson_complete' || context === 'intro',
+    // Appu is UI flourish only — silent, never part of the dialogue beat.
+    showAppu: false,
   };
 }
 
@@ -121,7 +122,7 @@ export function getIntroDialogue(): DialogueLine[] {
   return DIALOGUE.intro.map((text, i) => ({
     text,
     mood: i === 0 ? 'waving' as KuttanMood : i === 3 ? 'excited' as KuttanMood : 'happy' as KuttanMood,
-    appuMood: i === 0 ? 'happy' as AppuMood : i === 3 ? 'celebrating' as AppuMood : 'idle' as AppuMood,
-    showAppu: i === 0 || i === 3,
+    appuMood: 'idle' as AppuMood,
+    showAppu: false,
   }));
 }

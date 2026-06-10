@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { useGameStore } from '@/lib/store';
 import { Kuttan } from '@/components/character/Kuttan';
+import { Confetti } from '@/components/game';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -386,6 +387,16 @@ function countWords(text: string): number {
   return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
+// Character-count color ramp: gray -> gold -> green
+function charCountColor(chars: number, target: number): string {
+  if (chars === 0) return '#9ca3af'; // gray
+  const ratio = chars / target;
+  if (ratio < 0.4) return '#9ca3af'; // gray — just started
+  if (ratio < 0.9) return '#d4a520'; // gold — getting there
+  if (ratio <= 1.4) return '#27ae60'; // green — in the sweet spot
+  return '#e67e22'; // amber — too long
+}
+
 function shuffleArray<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -428,7 +439,20 @@ export default function WritePracticePage() {
   const [usedMessageIds, setUsedMessageIds] = useState<string[]>([]);
   const [usedFreeIds, setUsedFreeIds] = useState<string[]>([]);
 
+  // UX polish state
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [showHint, setShowHint] = useState(false);
+
   useEffect(() => { setMounted(true); }, []);
+
+  // Confetti when feedback arrives correct
+  useEffect(() => {
+    if (feedback?.isCorrect) {
+      setShowConfetti(true);
+      const t = setTimeout(() => setShowConfetti(false), 3000);
+      return () => clearTimeout(t);
+    }
+  }, [feedback]);
 
   // ---------------------------------------------------------------------------
   // Pick prompts
@@ -452,6 +476,7 @@ export default function WritePracticePage() {
     setMessageText('');
     setFeedback(null);
     setShowModel(false);
+    setShowHint(false);
     setXpAwarded(0);
     setUsedMessageIds(prev => [...prev, prompt.id]);
   }, [usedMessageIds]);
@@ -465,6 +490,7 @@ export default function WritePracticePage() {
     setFreeText('');
     setFeedback(null);
     setShowModel(false);
+    setShowHint(false);
     setXpAwarded(0);
     setUsedFreeIds(prev => [...prev, prompt.id]);
   }, [usedFreeIds]);
@@ -949,9 +975,13 @@ export default function WritePracticePage() {
 
   if (mode === 'message' && messagePrompt) {
     const wordCount = countWords(messageText);
+    const charCount = messageText.length;
+    const charTarget = 180; // ~30 words * ~6 chars
+    const charColor = charCountColor(charCount, charTarget);
 
     return (
       <div className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto">
+        <Confetti isActive={showConfetti} />
         <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
           <div className="flex items-center justify-between mb-4">
             <button
@@ -966,16 +996,26 @@ export default function WritePracticePage() {
           </div>
         </motion.div>
 
-        {/* Situation */}
+        {/* Situation — styled as an incoming message */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="game-card p-4 mb-4"
+          className="mb-4"
         >
-          <h2 className="font-bold text-sm mb-2 text-[#d4a520]">Situation</h2>
-          <p className="text-sm text-[var(--foreground)]/70 leading-relaxed">
-            {messagePrompt.situation}
-          </p>
+          <div className="flex items-end gap-2 mb-1">
+            <Kuttan mood="pointing" size="sm" entrance={false} />
+            <div className="flex-1 max-w-[85%] rounded-2xl rounded-bl-md bg-gradient-to-br from-[#d4a520]/25 to-[#d4a520]/10 border border-[#d4a520]/35 px-4 py-3 shadow-[0_2px_10px_rgba(212,165,32,0.15)]">
+              <p className="text-[10px] font-bold text-[#d4a520] uppercase tracking-wide mb-1">
+                Incoming message
+              </p>
+              <p className="text-sm text-[var(--foreground)]/85 leading-relaxed">
+                {messagePrompt.situation}
+              </p>
+              <p className="text-[11px] text-[var(--foreground)]/50 italic mt-2">
+                Write your reply in German.
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Inhaltspunkte */}

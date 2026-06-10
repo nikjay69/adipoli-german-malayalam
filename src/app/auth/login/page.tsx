@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { Mail, Lock, LogIn, Eye, EyeOff, AlertCircle, Info, Fingerprint } from 'lucide-react';
 import { useAuthStore, isSupabaseReady } from '@/lib/auth-store';
 import { startAuthentication } from '@simplewebauthn/browser';
+import { Kuttan } from '@/components/character/Kuttan';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -148,23 +149,42 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-8">
+    <div className="relative min-h-screen flex items-center justify-center px-4 py-8 overflow-hidden">
+      {/* Animated background glow */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 -left-32 w-[420px] h-[420px] rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(circle, rgba(212,165,32,0.25), transparent 70%)' }}
+        animate={{ x: [0, 30, 0], y: [0, 20, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-32 -right-24 w-[420px] h-[420px] rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(circle, rgba(39,174,96,0.22), transparent 70%)' }}
+        animate={{ x: [0, -30, 0], y: [0, -20, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+      />
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-md"
+        className="relative w-full max-w-md"
       >
-        {/* Header */}
+        {/* Header with Kuttan */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.15, duration: 0.4 }}
-          className="text-center mb-8"
+          className="text-center mb-6"
         >
-          <h1 className="text-3xl font-bold gradient-text mb-2">Welcome Back</h1>
-          <p className="text-[var(--foreground)]/50 text-sm">
-            Continue your German journey
+          <div className="flex justify-center mb-3">
+            <Kuttan mood="waving" size="md" />
+          </div>
+          <h1 className="text-3xl font-bold gradient-text mb-2">Welcome back, machaa!</h1>
+          <p className="text-[var(--foreground)]/60 text-sm">
+            Ready to continue? Your streak is waiting.
           </p>
         </motion.div>
 
@@ -347,18 +367,28 @@ export default function LoginPage() {
           </div>
         </motion.div>
 
+        {/* Guest mode reassurance */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.45 }}
+          className="mt-5 text-center text-xs text-[var(--foreground)]/50 leading-relaxed px-2"
+        >
+          No account? Keep going as guest — your progress stays on this device.
+        </motion.p>
+
         {/* Back to Home */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-6 text-center"
+          className="mt-4 text-center"
         >
           <Link
             href="/"
-            className="text-sm text-[var(--foreground)]/30 hover:text-[var(--foreground)]/60 transition-colors"
+            className="text-sm text-[var(--foreground)]/40 hover:text-[#d4a520] transition-colors"
           >
-            Back to Home
+            ← Back to Home
           </Link>
         </motion.div>
       </motion.div>

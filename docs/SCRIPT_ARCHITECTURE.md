@@ -11,6 +11,8 @@
 >
 > **Last updated:** 2026-03-23 08:10 UTC
 > **Companion docs:** `VIDEO_SCRIPT_TEMPLATE.md`, `SCRIPT_ARCHITECTURE_WAVE1.md` … `SCRIPT_ARCHITECTURE_WAVE5.md`, `SCRIPT_PRODUCTION_TRACKER.md`, `MODULE_BLUEPRINTS.md`
+>
+> **Narrative canon:** [`A1_STORY_BIBLE.md`](A1_STORY_BIBLE.md). Scripts can (and must) teach German including examples like "Ich wohne in Berlin" — that's target-culture exposure. The restriction is that Kuttan's own physical setting during A1 is always Kerala.
 
 ---
 

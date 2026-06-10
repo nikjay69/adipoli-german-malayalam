@@ -1,67 +1,57 @@
-// Narrative arcs connecting modules into a continuous story
-// Kuttan is on this journey WITH the user — fellow newcomer, not a teacher
+// Narrative arcs for A1.
+// A1 stays entirely in Kerala — the course ends with boarding a flight to Germany.
+// See docs/A1_STORY_BIBLE.md for the canonical story.
+// A2 will be the "arrival" arc; B1 the "thriving" arc.
 
 export interface NarrativeArc {
   moduleIds: number[];
   title: string;
   description: string;
-  kuttanState: string;  // What Kuttan is feeling/doing in this part of the journey
+  kuttanState: string; // What Kuttan is feeling/doing in this part of the journey
 }
 
 export const NARRATIVE_ARCS: NarrativeArc[] = [
   {
     moduleIds: [1, 2],
     title: 'The Dream Begins',
-    description: 'From Kerala to Germany — you and Kuttan dream of a new life abroad. Time to learn the basics before the big move.',
-    kuttanState: 'Excited but nervous, packing bags in Kerala',
+    description: 'Your cousin in Munich sends a WhatsApp: "Free university, machane!" You and Kuttan take the first step — the alphabet, the sounds, the first greeting. It all happens in Kerala.',
+    kuttanState: 'Nervous but hopeful, first days at Goethe-Institut Kochi',
   },
   {
     moduleIds: [3, 4],
-    title: 'First Days in Berlin',
-    description: 'You\'ve landed! Everything is new — the numbers, the time, the people. Kuttan is figuring it all out alongside you.',
-    kuttanState: 'Wide-eyed, exploring Berlin streets',
+    title: 'Building the Basics',
+    description: 'Numbers, time, family. The real grammar starts. Articles (der/die/das) are maddening — but you stick with it. Amma and Achan are still skeptical.',
+    kuttanState: 'Wrestling with grammar, studying at Goethe Kochi library',
   },
   {
     moduleIds: [5, 6],
-    title: 'Settling In',
-    description: 'Daily routines, food, and drinks. You\'re starting to feel at home — or at least, less lost.',
-    kuttanState: 'Getting comfortable, discovering German food',
+    title: 'Talking About Your Day',
+    description: 'Food, drinks, routines. Video calls with the Munich cousin become practice sessions. You can now hold a short conversation.',
+    kuttanState: 'Practicing on WhatsApp voice notes, building confidence',
   },
   {
     moduleIds: [7, 8],
-    title: 'Building a Life',
-    description: 'Shopping, money, and finding a place to live. The practical stuff that makes Germany feel like home.',
-    kuttanState: 'Apartment hunting, learning to budget in euros',
+    title: 'Getting Ready for the Move',
+    description: 'Shopping, money, describing an apartment. Practical German for the life you\'re about to live — all rehearsed from Kerala.',
+    kuttanState: 'Mock-shopping in Kochi, saving euros in his head',
   },
   {
-    moduleIds: [9, 10],
-    title: 'Getting Around & Staying Healthy',
-    description: 'Navigating trains, buses, and the German healthcare system. Essential survival skills.',
-    kuttanState: 'Confident on the U-Bahn, registered with a Hausarzt',
+    moduleIds: [9, 10, 11, 12],
+    title: 'Speaking Well (and Nearly Quitting)',
+    description: 'Travel, health, work, hobbies. Full small-talk conversations. But burnout hits. A Malayali who\'s returned from Germany visits — one tough-love chat pulls you back in.',
+    kuttanState: 'Almost gave up. Found a second wind.',
   },
   {
-    moduleIds: [11, 12],
-    title: 'Work, Study & Fun',
-    description: 'Finding work, making friends, and discovering hobbies. Germany isn\'t just about bureaucracy!',
-    kuttanState: 'Has a part-time job, joined a Verein',
-  },
-  {
-    moduleIds: [13, 14],
-    title: 'Telling Your Story',
-    description: 'Talking about the past, handling formal situations. You\'re becoming a real resident.',
-    kuttanState: 'Confidently handling Anmeldung and paperwork',
-  },
-  {
-    moduleIds: [15, 16],
-    title: 'Becoming German-ish',
-    description: 'Understanding the culture, bridging two worlds. Kerala meets Deutschland.',
-    kuttanState: 'Hosting Onam dinner for German friends',
+    moduleIds: [13, 14, 15, 16],
+    title: 'Visa Ready',
+    description: 'Past tense, formal German, letters. The paperwork beast. An embassy form gets rejected. Deadline panic. You push through.',
+    kuttanState: 'Refiling documents, prepping for the German consulate in Chennai',
   },
   {
     moduleIds: [17, 18],
-    title: 'The A1 Exam',
-    description: 'Everything has led to this. Time to prove your German to the Goethe-Institut.',
-    kuttanState: 'Nervous but prepared, exam day arrives',
+    title: 'The Gate',
+    description: 'Everything has led to this. Sit for the Goethe A1. Pass. Say goodbye at Kochi airport. Board the flight. Watch Kerala disappear below the clouds.',
+    kuttanState: 'Exam morning to boarding announcement — the biggest two weeks of his life',
   },
 ];
 

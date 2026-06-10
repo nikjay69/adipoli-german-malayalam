@@ -159,27 +159,28 @@ export function Kuttan({ mood = 'idle', size = 'md', className = '', entrance = 
       <motion.div
         key={mood}
         className={className}
-        initial={entrance ? { scale: 0.8, opacity: 0, y: 10 } : false}
-        animate={{ scale: 1, opacity: 1, y: 0, ...bodyAnim[mood] }}
-        transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+        initial={entrance ? { opacity: 0, scale: 0.92 } : false}
+        animate={entrance ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.35, ease: 'easeOut' }}
         style={{ width: s, height: s * 1.3 }}
       >
         <svg viewBox="0 0 96 125" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" role="img" aria-label={`Kuttan character feeling ${mood}`}>
           {/* Shadow */}
           <motion.ellipse
-            cx="48" cy="122" rx="18" ry="3"
+            cx={48} cy={122} ry={3}
             fill="black" opacity="0.08"
+            initial={{ rx: 18 }}
             animate={{ rx: mood === 'celebrating' ? [18, 14, 18] : [18, 16, 18] }}
             transition={{ duration: mood === 'celebrating' ? 1.2 : 3, repeat: Infinity }}
           />
 
           {/* Hair */}
-          <ellipse cx="48" cy="28" rx="24" ry="22" fill="#1a1a2e" />
+          <ellipse cx="48" cy="28" rx="24" ry="22" fill="#1a1a2e" stroke="#0a0a1a" strokeWidth="1.5" />
           <path d="M 26 35 Q 28 15 48 10 Q 68 15 70 35" fill="#1a1a2e" />
           <path d="M 30 25 Q 35 14 42 18 Q 38 12 48 10 Q 55 12 52 18 Q 58 14 64 22" fill="#1a1a2e" />
 
           {/* Face */}
-          <ellipse cx="48" cy="40" rx="20" ry="18" fill="#D4956A" />
+          <ellipse cx="48" cy="40" rx="20" ry="18" fill="#D4956A" stroke="#1a1a2e" strokeWidth="2" />
 
           {/* Cheeks — glow on positive moods */}
           {(mood === 'happy' || mood === 'excited' || mood === 'celebrating' || mood === 'waving') && (
@@ -196,11 +197,11 @@ export function Kuttan({ mood = 'idle', size = 'md', className = '', entrance = 
           {getMouth()}
 
           {/* Ears */}
-          <ellipse cx="28" cy="40" rx="4" ry="5" fill="#C48560" />
-          <ellipse cx="68" cy="40" rx="4" ry="5" fill="#C48560" />
+          <ellipse cx="28" cy="40" rx="4" ry="5" fill="#C48560" stroke="#1a1a2e" strokeWidth="1.5" />
+          <ellipse cx="68" cy="40" rx="4" ry="5" fill="#C48560" stroke="#1a1a2e" strokeWidth="1.5" />
 
           {/* Body / T-shirt — Kerala green */}
-          <path d="M 32 58 Q 32 55 35 54 L 48 52 L 61 54 Q 64 55 64 58 L 66 85 Q 66 88 63 88 L 33 88 Q 30 88 30 85 Z" fill="#27ae60" />
+          <path d="M 32 58 Q 32 55 35 54 L 48 52 L 61 54 Q 64 55 64 58 L 66 85 Q 66 88 63 88 L 33 88 Q 30 88 30 85 Z" fill="#27ae60" stroke="#1a1a2e" strokeWidth="2" strokeLinejoin="round" />
 
           {/* Breathing animation on shirt */}
           <motion.path
@@ -228,8 +229,8 @@ export function Kuttan({ mood = 'idle', size = 'md', className = '', entrance = 
           </motion.g>
 
           {/* White shorts */}
-          <path d="M 33 85 L 31 100 L 42 100 L 48 90 L 54 100 L 65 100 L 63 85 Z" fill="#F5F0E8" />
-          <line x1="48" y1="85" x2="48" y2="100" stroke="#E0D8CC" strokeWidth="0.8" opacity="0.5" />
+          <path d="M 33 85 L 31 100 L 42 100 L 48 90 L 54 100 L 65 100 L 63 85 Z" fill="#F5F0E8" stroke="#1a1a2e" strokeWidth="2" strokeLinejoin="round" />
+          <line x1="48" y1="85" x2="48" y2="100" stroke="#1a1a2e" strokeWidth="1" opacity="0.6" />
 
           {/* Legs */}
           <line x1="38" y1="100" x2="37" y2="118" stroke="#D4956A" strokeWidth="6" strokeLinecap="round" />

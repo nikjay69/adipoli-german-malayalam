@@ -1,0 +1,52 @@
+{
+  "lessonId": "v2-1-1",
+  "title": "What’s Your Name?",
+  "subtitle": "Module 2 · Lesson 1 · Part 1",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Mission start: tell the examiner your name, then ask back politely.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v2-1-1/v2-1-1-line-0.mp3"
+    },
+    {
+      "text": "Three ways to answer: Ich heiße, Mein Name ist, Ich bin. Pick any.",
+      "german": "Ich heiße",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v2-1-1/v2-1-1-line-1.mp3"
+    },
+    {
+      "text": "To ask: Wie heißt du? (casual) or Wie heißen Sie? (formal). Read the room.",
+      "german": "Wie heißen Sie?",
+      "mood": "thinking",
+      "audioSrc": "audio/tts/v2-1-1/v2-1-1-line-2.mp3"
+    },
+    {
+      "text": "Practice: 'Ich heiße Arun. Und Sie?' Use your real name next.",
+      "german": "Ich heiße Arun.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v2-1-1/v2-1-1-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Ich heiße",
+      "english": "My name is",
+      "malayalam": "enre peru",
+      "pronunciation": "ikh hy-se"
+    },
+    {
+      "german": "Wie heißen Sie?",
+      "english": "What's your name? (F)",
+      "malayalam": "perentha",
+      "pronunciation": "vee hy-sen zee"
+    },
+    {
+      "german": "Freut mich",
+      "english": "Nice to meet you",
+      "malayalam": "santhosham",
+      "pronunciation": "froyt mikh"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

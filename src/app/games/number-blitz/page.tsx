@@ -5,9 +5,16 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, RefreshCw, Clock, Zap, Keyboard } from 'lucide-react';
 import { CharacterGuide } from '@/components/character';
+import { Kuttan } from '@/components/character/Kuttan';
 import type { KuttanMood } from '@/components/character';
 import { Confetti, Stars } from '@/components/game';
 import { useGameStore } from '@/lib/store';
+
+function vibrateShort() {
+  if (typeof window !== 'undefined' && 'vibrate' in navigator) {
+    navigator.vibrate?.(20);
+  }
+}
 
 // =============================================================================
 // GERMAN NUMBER SYSTEM — full algorithmic generation, no hardcoded list
@@ -667,6 +674,7 @@ export default function NumberBlitzGame() {
     setIsCorrect(correct);
 
     if (correct) {
+      vibrateShort();
       const tierBonus = currentQ.tier; // 1, 2, or 3 coins based on difficulty
       setScore((prev) => prev + 1);
       setCoins((prev) => prev + tierBonus);

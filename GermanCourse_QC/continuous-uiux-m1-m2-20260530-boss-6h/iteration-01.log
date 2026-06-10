@@ -1,0 +1,175 @@
+  ┊ review diff
+a//shared/german-course/src/app/intro/page.tsx → b//shared/german-course/src/app/intro/page.tsx
+@@ -7,7 +7,8 @@
+ import { useGameStore } from '@/lib/store';
+ import { ArrowRight } from 'lucide-react';
+ 
+-const FIRST_MISSION_HREF = '/missions/module-1/greet-frau-weber';
++const FIRST_MISSION_PATH = '/missions/module-1/greet-frau-weber';
++const FIRST_MISSION_HREF = `${FIRST_MISSION_PATH}?start=listen`;
+ 
+ export default function IntroPage() {
+   const router = useRouter();
+  ┊ review diff
+a//shared/german-course/src/app/intro/page.tsx → b//shared/german-course/src/app/intro/page.tsx
+@@ -70,7 +70,7 @@
+           className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-[#1f9d55] px-8 py-4 text-base font-black uppercase tracking-wide text-white transition-all hover:bg-[#24ad61]"
+           style={{ boxShadow: '0 5px 0 0 #11602f, 0 8px 20px -4px rgba(31,157,85,0.34)' }}
+         >
+-          Start greeting <ArrowRight className="h-5 w-5" />
++          Start listening <ArrowRight className="h-5 w-5" />
+         </motion.button>
+       </motion.main>
+     </div>
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -93,7 +93,7 @@
+   await delay(700);
+   state = await pageState(page);
+   assert(state.path === '/missions/module-1/greet-frau-weber', 'intro CTA did not route directly to first M1 mission', state);
+-  assert(state.text.includes('Greet Frau Weber.'), 'first M1 mission intro not visible after click', { text: state.text.slice(0, 900) });
++  assert(state.text.includes('Listen first.'), 'intro CTA should bypass mission preamble and start listening', { text: state.text.slice(0, 900) });
+ 
+   const relevantErrors = consoleErrors.filter((line) => !line.includes('favicon') && !line.includes('404'));
+   assert(relevantErrors.length === 0, 'browser console/page errors during intro start-path QA', { consoleErrors: relevantErrors });
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -97,7 +97,7 @@
+ 
+   const relevantErrors = consoleErrors.filter((line) => !line.includes('favicon') && !line.includes('404'));
+   assert(relevantErrors.length === 0, 'browser console/page errors during intro start-path QA', { consoleErrors: relevantErrors });
+-  console.log('PASS: website first page + intro start-path browser QA (/ → listening, /intro → M1 mission)');
++  console.log('PASS: intro start-path browser QA (/ → listening, /intro → listening)');
+ } finally {
+   await browser.close();
+ }
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -237,8 +237,9 @@
+     required_intro = [
+         "Greet Frau Weber.",
+         "Guten Morgen, Frau Weber.",
+-        "Start greeting <ArrowRight",
+-        "const FIRST_MISSION_HREF = '/missions/module-1/greet-frau-weber'",
++        "Start listening <ArrowRight",
++        "const FIRST_MISSION_PATH = '/missions/module-1/greet-frau-weber'",
++        "const FIRST_MISSION_HREF = `${FIRST_MISSION_PATH}?start=listen`;",
+         "router.replace(FIRST_MISSION_HREF)",
+         "KeralaClassroomScene",
+     ]
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/scripts/qa_gold_slice_first_journey.mjs → b//shared/german-course/scripts/qa_gold_slice_first_journey.mjs
+@@ -127,19 +127,16 @@
+   await delay(700);
+   let current = await state(page);
+   assert(current.path === '/intro', 'intro route failed', current);
+-  assert(current.text.includes('Greet Frau Weber.') && current.text.includes('Guten Morgen, Frau Weber.') && current.text.toLowerCase().includes('start greeting'), 'intro copy/CTA not gold-slice aligned', { text: current.text.slice(0, 800) });
++  assert(current.text.includes('Greet Frau Weber.') && current.text.includes('Guten Morgen, Frau Weber.') && current.text.toLowerCase().includes('start listening'), 'intro copy/CTA not gold-slice aligned', { text: current.text.slice(0, 800) });
+   assert(current.buttons.filter((button) => button.text).length === 1, 'intro must keep one obvious primary action', current.buttons);
+ 
+-  await clickButtonContaining(page, 'Start greeting');
+-  await page.waitForFunction(() => window.location.pathname === '/missions/module-1/greet-frau-weber', { timeout: 10000 });
++  await clickButtonContaining(page, 'Start listening');
++  await page.waitForFunction(() => window.location.pathname === '/missions/module-1/greet-frau-weber' && document.body.innerText.includes('Listen first.'), { timeout: 10000 });
+   await delay(500);
+   current = await state(page);
+-  const openingText = current.text.toLowerCase();
+-  assert(openingText.includes('greet frau weber.') && openingText.includes('your classroom line') && openingText.includes('good morning, ms weber'), 'mission opening missing aligned scene/output/meaning', { text: current.text.slice(0, 1100) });
++  const listeningText = current.text.toLowerCase();
++  assert(listeningText.includes('listen first.') && !listeningText.includes('begin greeting practice'), 'intro CTA should bypass preamble and open listening step', { text: current.text.slice(0, 1100) });
+   assert(!current.nav && !current.search, 'focused mission path leaked global nav/search', { nav: current.nav, search: current.search });
+-
+-  await clickButtonContaining(page, 'Begin greeting practice');
+-  await page.waitForFunction(() => document.body.innerText.includes('Listen first.'), { timeout: 10000 });
+   current = await state(page);
+   assert(current.buttons.some((button) => button.text.includes('Choose the greeting') && button.disabled), 'hearing CTA should be locked before audio', current.buttons);
+   const hearAudio = await playAllVisibleAudio(page, 2);
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+@@ -7608,3 +7608,37 @@
+ Run dir: /shared/german-course/GermanCourse_QC/continuous-uiux-m1-m2-20260530-boss-6h
+ Prompt: /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-prompt.md
+ 
++## Iteration 1 checkpoint — 2026-05-30T10:36:10+02:00
++- Source/docs inspected:
++  - Course soul docs: COURSE_OPERATING_BRIEF, PRODUCT_DIRECTION_RESET, WHOLE_COURSE_MISSION_SPINE, AUTONOMOUS_EXECUTION_PLAN, PREMIUM_QUALITY_BAR.
++  - First-path files: src/app/page.tsx, src/app/intro/page.tsx, src/app/learn/page.tsx, src/app/learn/[moduleId]/page.tsx.
++  - M1/M2 mission files and QA guards: src/lib/missions/module1.ts, Module 1 route pages, Module 2 MissionUI, scripts/qa_intro_start_path.mjs, scripts/qa_gold_slice_first_journey.mjs, scripts/qa_mission_pilot.py.
++- Files changed:
++  - src/app/intro/page.tsx
++  - scripts/qa_intro_start_path.mjs
++  - scripts/qa_mission_pilot.py
++  - scripts/qa_gold_slice_first_journey.mjs
++- UX/text reductions made:
++  - /intro now uses one screen, one headline, one phrase preview, one CTA.
++  - /intro CTA now says Start listening and routes to /missions/module-1/greet-frau-weber?start=listen, bypassing the mission preamble.
++- M1/M2 learner path status:
++  - First learner path now enters the first M1 listening task directly from both / and /intro.
++  - M1/M2 mission path still has audio-gated hearing, recognition, builder, production, repair, and win checks passing.
++- Images/video/animation:
++  - Kept the existing Kerala classroom illustration; no new generated images added this run.
++  - Kept animation subtle: intro fade/slide and CTA tap feedback only.
++  - No video generation or paid avatar/API work.
++- QA run + PASS/WEAK/FAIL:
++  - PASS: npx eslint src/app/intro/page.tsx scripts/qa_intro_start_path.mjs scripts/qa_gold_slice_first_journey.mjs
++  - PASS: python3 -m py_compile scripts/qa_mission_pilot.py
++  - PASS: node scripts/qa_intro_start_path.mjs
++  - PASS: node scripts/qa_gold_slice_first_journey.mjs
++  - PASS: python3 scripts/qa_mission_pilot.py
++  - Evidence: routes_reachable=26, gold-slice first journey PASS on 127.0.0.1 and Tailscale, M1/M2 builder gates PASS, Module 2 mobile production audio unlocks PASS.
++  - WEAK: repo remains broadly dirty (258 paths); do not deploy/commit blindly.
++  - FAIL: app-wide lint/build-readiness still known inherited blocker from prior report; not rerun this small iteration.
++- Kuttan/name recommendation:
++  - No mass rename. Recommendation unchanged: public adult-safe protagonist should be Arun or Kiran; Kuttan can remain a family nickname if Boss wants Kerala warmth.
++- Next best lane:
++  - Continue page-by-page from /learn and /learn/1: remove any remaining dashboard/product labels, keep one direct mission action, and preserve QA guards.
++
+
+session_id: 20260530_103422_50d63f
+Iteration 1 done.
+
+Changed:
+- `src/app/intro/page.tsx`
+- `scripts/qa_intro_start_path.mjs`
+- `scripts/qa_gold_slice_first_journey.mjs`
+- `scripts/qa_mission_pilot.py`
+- checkpoint appended:
+  - `GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Product improvement:
+- `/intro` is now a single-screen start page:
+  - one headline: `Greet Frau Weber.`
+  - one phrase preview: `Guten Morgen, Frau Weber.`
+  - one CTA: `Start listening`
+- `/intro` now routes directly to:
+  - `/missions/module-1/greet-frau-weber?start=listen`
+- That bypasses the mission preamble and lands the learner straight in the first listening task.
+- Updated the gold-slice QA so it guards this direct-start behavior instead of expecting the old preamble.
+
+QA:
+- PASS: `npx eslint src/app/intro/page.tsx scripts/qa_intro_start_path.mjs scripts/qa_gold_slice_first_journey.mjs`
+- PASS: `python3 -m py_compile scripts/qa_mission_pilot.py`
+- PASS: `node scripts/qa_intro_start_path.mjs`
+- PASS: `node scripts/qa_gold_slice_first_journey.mjs`
+- PASS: `python3 scripts/qa_mission_pilot.py`
+
+Fresh QA evidence:
+- `routes_reachable=26`
+- gold-slice first journey PASS on localhost and Tailscale
+- M1/M2 builder gates PASS
+- Module 2 mobile production audio unlocks PASS
+- focused mission routes keep nav/search hidden
+- no browser SpeechSynthesis regression
+
+State:
+- Branch: `adipoli-page-by-page-reset-20260523-1802`
+- Commit base: `b201d05`
+- Repo still dirty: `258` paths
+- Do not commit/deploy blindly.
+
+Kuttan/name:
+- No rename done.
+- Recommendation unchanged: use `Arun` or `Kiran` as the adult-safe public learner name; keep `Kuttan` only as home/family nickname if wanted.
+
+Next: audit `/learn` and `/learn/1` labels, 45m.

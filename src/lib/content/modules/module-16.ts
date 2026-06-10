@@ -259,7 +259,16 @@ export const MODULE_16: Module = {
           explanation: "Excellent! 'gehören' always takes the dative case.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex16-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Dative Case Deep Dive): 'Ich verstehe den kurzen Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
+          correctAnswer: "Ich verstehe den kurzen Text",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab16-1-1",
@@ -592,7 +601,16 @@ export const MODULE_16: Module = {
           explanation: "Excellent! Use 'lege' (action) and accusative 'den'.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex16-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Two-Way Prepositions): 'Ich verstehe den kurzen Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
+          correctAnswer: "Ich verstehe den kurzen Text",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab16-2-1",
@@ -856,7 +874,16 @@ export const MODULE_16: Module = {
           explanation: "Wunderbar! In the imperative du-form, we drop the 'st' and keep the reflexive 'dich'.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex16-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Reflexive Verbs): 'Ich verstehe den kurzen Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
+          correctAnswer: "Ich verstehe den kurzen Text",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab16-3-1",
@@ -1176,7 +1203,16 @@ export const MODULE_16: Module = {
           explanation: "Excellent! 'ob' is used for indirect yes/no questions.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex16-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Subordinate Clauses): 'Ich verstehe den kurzen Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
+          correctAnswer: "Ich verstehe den kurzen Text",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab16-4-1",
@@ -1420,7 +1456,34 @@ export const MODULE_16: Module = {
           explanation: "Cognates are words that look and sound similar across languages. 'Telefon' is very close to 'telephone,' making it easy to guess!",
           xpReward: 10
         }
-      ],
+      ,
+        {
+          id: "ex16-5-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Reading Comprehension Practice): 'Ich verstehe den kurzen Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
+          correctAnswer: "Ich verstehe den kurzen Text",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        },
+        {
+          id: "ex16-5-prod-writing",
+          type: "free-text",
+          question: "Production writing: Write one sentence about understanding a short text.",
+          questionGerman: "Schreiben Sie einen vollständigen Satz.",
+          correctAnswer: ["Ich verstehe den kurzen Text", "Ich verstehe den kurzen Text."],
+          explanation: "A1 writing must be short, complete, and usable. One correct sentence beats five half-known phrases.",
+          xpReward: 20
+        },
+        {
+          id: "ex16-5-prod-dictation",
+          type: "dictation",
+          question: "Listen and type the A1 sentence you hear.",
+          audioUrl: "/audio/hoeren/module-16/ex16-5-prod-dictation.mp3",
+          correctAnswer: "Ich kann den Text verstehen",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab16-5-1",

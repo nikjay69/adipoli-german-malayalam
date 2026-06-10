@@ -1,0 +1,52 @@
+{
+  "lessonId": "v1-1-2",
+  "title": "Malayalis in Germany",
+  "subtitle": "Module 1 · Lesson 1 · Part 2",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Kerala to Goethe A1: today we keep the dream real and the first step small.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v1-1-2/v1-1-2-line-0.mp3"
+    },
+    {
+      "text": "Four main paths: Ausbildung, Nursing, IT, Studium.",
+      "german": "Vier Wege",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v1-1-2/v1-1-2-line-1.mp3"
+    },
+    {
+      "text": "Each has a German level needed. Some just A1, others B1/B2.",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v1-1-2/v1-1-2-line-2.mp3"
+    },
+    {
+      "text": "First word: der Weg — the path. Pokaam!",
+      "german": "der Weg",
+      "malayalam": "vazhi",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v1-1-2/v1-1-2-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Ausbildung",
+      "english": "vocational training",
+      "malayalam": "thozhil",
+      "pronunciation": "ows-bil-doong"
+    },
+    {
+      "german": "Krankenpfleger",
+      "english": "nurse (m)",
+      "malayalam": "nursing",
+      "pronunciation": "krahnken-pfleger"
+    },
+    {
+      "german": "der Weg",
+      "english": "the path",
+      "malayalam": "vazhi",
+      "pronunciation": "dair vayk"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

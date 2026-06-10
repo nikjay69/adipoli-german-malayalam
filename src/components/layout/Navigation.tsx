@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Home, Gamepad2, Mic, FileText, User } from 'lucide-react';
+import { Home, Gamepad2, Headphones, Mic, FileText, User } from 'lucide-react';
 import { clsx } from 'clsx';
 import { useAuthStore } from '@/lib/auth-store';
 import { FEATURE_FLAGS } from '@/lib/app-config';
@@ -12,6 +12,7 @@ import { FEATURE_FLAGS } from '@/lib/app-config';
 const navItems = [
   { href: '/', icon: Home, label: 'Home' },
   { href: '/games', icon: Gamepad2, label: 'Games' },
+  { href: '/on-the-go', icon: Headphones, label: 'Audio' },
   { href: '/practice', icon: Mic, label: 'Practice' },
   { href: '/tests', icon: FileText, label: 'Tests' },
   { href: '/profile', icon: User, label: 'Me' },
@@ -23,15 +24,32 @@ export function Navigation() {
   const { user, isLoggedIn } = useAuthStore();
 
   useEffect(() => {
-    setMounted(true);
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
+  if (!mounted) return null;
+
   // Hide navigation on immersive pages
-  if (pathname.startsWith('/play') || pathname.startsWith('/learn/') || pathname.startsWith('/intro') || pathname.startsWith('/scripts') || (pathname.startsWith('/tests/') && pathname !== '/tests') || (pathname.startsWith('/practice/') && pathname !== '/practice') || pathname.startsWith('/auth/')) {
+  if (
+    pathname === '/' ||
+    pathname.startsWith('/play') ||
+    pathname.startsWith('/intro') ||
+    pathname.startsWith('/landing') ||
+    pathname.startsWith('/pricing') ||
+    pathname.startsWith('/privacy') ||
+    pathname.startsWith('/scripts') ||
+    pathname.startsWith('/missions') ||
+    pathname === '/learn' ||
+    pathname === '/learn/1' ||
+    pathname === '/learn/2' ||
+    pathname.startsWith('/onboarding') ||
+    (pathname.startsWith('/tests/') && pathname !== '/tests') ||
+    (pathname.startsWith('/practice/') && pathname !== '/practice') ||
+    pathname.startsWith('/auth/')
+  ) {
     return null;
   }
-
-  if (!mounted) return null;
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 safe-bottom" aria-label="Main navigation">

@@ -1,0 +1,51 @@
+{
+  "lessonId": "v2-1-2",
+  "title": "Spelling Your Malayali Name",
+  "subtitle": "Module 2 · Lesson 1 · Part 2",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Malayali names need calm spelling. Buchstabieren is a rehearsed skill.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v2-1-2/v2-1-2-line-0.mp3"
+    },
+    {
+      "text": "German letter names: K is 'kah', U is 'ooh', A is 'ah'. Not English.",
+      "german": "Kah · Ooh · Ah",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v2-1-2/v2-1-2-line-1.mp3"
+    },
+    {
+      "text": "Clarify with 'K wie Kaiser' — K as in Kaiser. Germans do this all the time.",
+      "german": "K wie Kaiser",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v2-1-2/v2-1-2-line-2.mp3"
+    },
+    {
+      "text": "Try spelling a sample name: A-R-U-N — Ah, Err, Ooh, Enn. Then yours.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v2-1-2/v2-1-2-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "buchstabieren",
+      "english": "to spell",
+      "malayalam": "aksharam",
+      "pronunciation": "bookh-shta-bee-ren"
+    },
+    {
+      "german": "der Buchstabe",
+      "english": "letter",
+      "malayalam": "aksharam",
+      "pronunciation": "bookh-shta-be"
+    },
+    {
+      "german": "wie",
+      "english": "like / as",
+      "malayalam": "pole",
+      "pronunciation": "vee"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

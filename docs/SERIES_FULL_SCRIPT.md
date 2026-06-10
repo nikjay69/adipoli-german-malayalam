@@ -3,6 +3,8 @@
 
 > Status: LOCKED for Videos 1 & 7 (already in production). Videos 2–6 are the new Kerala learning arc — generate after review.
 > All prompts are Pixar-style 3D animation unless noted.
+>
+> **Canon:** [`A1_STORY_BIBLE.md`](A1_STORY_BIBLE.md) and [`SERIES_ARC_PLAN.md`](SERIES_ARC_PLAN.md). A1 stays in Kerala; Videos 2–6 are the learning journey at home, Goethe Kochi, and in Kerala daily life. Video 7 is departure.
 
 ---
 

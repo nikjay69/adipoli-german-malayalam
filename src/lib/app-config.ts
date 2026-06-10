@@ -8,6 +8,7 @@ export const APP_CONFIG = {
   },
   payments: {
     hasRazorpay: Boolean(process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID),
+    hasPaddle: Boolean(process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN),
     hasStripe: Boolean(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY),
   },
   ai: {
@@ -18,7 +19,10 @@ export const APP_CONFIG = {
 export const FEATURE_FLAGS = {
   authReady: APP_CONFIG.auth.hasRealAuth,
   demoAuthEnabled: APP_CONFIG.auth.enableDemoAuth,
-  paymentsReady: APP_CONFIG.payments.hasRazorpay || APP_CONFIG.payments.hasStripe,
+  paymentsReady:
+    APP_CONFIG.payments.hasRazorpay ||
+    APP_CONFIG.payments.hasPaddle ||
+    APP_CONFIG.payments.hasStripe,
   canCreateAccounts: APP_CONFIG.auth.hasRealAuth || APP_CONFIG.auth.enableDemoAuth,
 };
 

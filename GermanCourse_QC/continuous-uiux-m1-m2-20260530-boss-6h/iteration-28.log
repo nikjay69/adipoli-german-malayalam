@@ -1,0 +1,122 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -693,17 +693,20 @@
+ }) {
+   return (
+     <div className="grid gap-3">
+-      {options.map((option) => (
+-        <RepairChoiceButton key={option.id} onClick={() => onChange(option.id)} selected={value === option.id}>
+-          <b className="text-lg">{option.title}</b>
+-          {option.subtitle && (
+-            <>
+-              <br />
+-              <span className="text-white/60">{option.subtitle}</span>
+-            </>
+-          )}
+-        </RepairChoiceButton>
+-      ))}
++      {options.map((option) => {
++        const selected = value === option.id;
++        return (
++          <RepairChoiceButton key={option.id} onClick={() => onChange(option.id)} selected={selected}>
++            <b className="text-lg">{option.title}</b>
++            {option.subtitle && (
++              <>
++                <br />
++                <span className={selected ? 'text-white/60' : 'sr-only'}>{option.subtitle}</span>
++              </>
++            )}
++          </RepairChoiceButton>
++        );
++      })}
+       {value && !isCorrect && <p className="rounded-2xl bg-[#c0392b]/14 p-4 font-semibold text-[#ffc9c2]">{wrongFeedback}</p>}
+       {isCorrect && <p className="rounded-2xl bg-[#3fbf75]/14 p-4 font-semibold text-[#bcf7d0]">{correctFeedback}</p>}
+       <ActionRow>
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -253,6 +253,21 @@
+     if hits:
+         fail(f"learner-facing meta/internal labels present: {hits}")
+     print("visible_meta_labels=clean")
++
++
++def assert_choice_subtitles_stay_compact() -> None:
++    mission_ui = MISSION_UI.read_text(encoding="utf-8")
++    required = [
++        "const selected = value === option.id;",
++        "<span className={selected ? 'text-white/60' : 'sr-only'}>{option.subtitle}</span>",
++    ]
++    missing = [snippet for snippet in required if snippet not in mission_ui]
++    if missing:
++        fail(f"choice/repair subtitles must stay hidden until selected: {missing}")
++    always_visible_subtitle = "<span className=\"text-white/60\">{option.subtitle}</span>"
++    if always_visible_subtitle in mission_ui:
++        fail("choice/repair option subtitles are always visible again")
++    print("choice_subtitles=compact")
+ 
+ 
+ def assert_start_path_source() -> None:
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1237,6 +1237,7 @@
+     assert_audio_files()
+     assert_opening_text_light()
+     assert_no_learner_facing_meta_labels()
++    assert_choice_subtitles_stay_compact()
+     assert_start_path_source()
+     assert_mission_data_drives_path()
+     assert_self_intro_recognition_stays_focused()
+  ┊ review diff
+a//tmp/adipoli_iteration28_checkpoint.md → b//tmp/adipoli_iteration28_checkpoint.md
+@@ -0,0 +1,12 @@
++
++
++## 2026-05-30T13:57:21+02:00 — Iteration 28
++
++- Source/docs inspected: mandatory course soul docs (`COURSE_OPERATING_BRIEF`, `PRODUCT_DIRECTION_RESET`, `WHOLE_COURSE_MISSION_SPINE`, `AUTONOMOUS_EXECUTION_PLAN`, premium quality protocol), latest iteration 27 checkpoint, M1 mission routes, shared M1/M2 mission UI, mission QA guard.
++- Files changed: `src/app/missions/module-2/_components/MissionUI.tsx`, `scripts/qa_mission_pilot.py`, `GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`.
++- UX/text reductions made: repair/choice cards now hide option subtitle/helper lines until the learner selects a card. This cleans Module 1 repair screens (`Danke/Bitte`, polite exit) and the shared M1/M2 repair component without removing accessibility context.
++- M1/M2 learner path status: shared M1/M2 mission sequence remains intact; the first path, all three M1 missions, all five M2 missions, builder interactions, production audio gates, and completed-ability landings still pass the mission QA suite.
++- Images/video/animation: no generated images this iteration; not needed for this text-clutter lane. No video generation. Motion unchanged and remains subtle.
++- QA run + PASS/WEAK/FAIL: PASS `npx eslint src/app/missions/module-2/_components/MissionUI.tsx`; PASS `python3 -m py_compile scripts/qa_mission_pilot.py`; PASS `git diff --check -- src/app/missions/module-2/_components/MissionUI.tsx scripts/qa_mission_pilot.py`; PASS `python3 scripts/qa_mission_pilot.py` including new `choice_subtitles=compact`, local + Tailscale audio/route checks, start-path browser QA, M1/M2 builders, production unlocks, and gold-slice first journey. PASS browser visual QA on `/missions/module-1/please-thanks?adipoliQa=1&adipoliQaStep=5`: option cards visually show only `Bitte.`, `Danke.`, `Gute Nacht.` before selection; console has no JS errors. Overall status: PASS for scoped text-reduction change; product still needs more M1/M2 content depth before launch-grade.
++- Kuttan/name recommendation note: unchanged. Do not mass-rename. Adult-safe public name should likely be Arun or Kiran, with “Kuttan” as home nickname/family flavor only if Boss approves.
++- Next best lane: reduce remaining repair-step left-panel copy, 25m.
+
+session_id: 20260530_135345_a25c48
+Iteration 28 done.
+
+Changed:
+- `/shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx`
+- `/shared/german-course/scripts/qa_mission_pilot.py`
+- Appended checkpoint to `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+What improved:
+- Repair/choice cards now hide helper subtitles until a learner selects an option.
+- This cleans the Module 1 repair screens, especially:
+  - `Danke / Bitte`
+  - `Vielen Dank / Auf Wiedersehen`
+- Same compact behavior now applies through the shared M1/M2 mission UI.
+- Accessibility context stays available via `sr-only`; visual clutter is reduced.
+
+Verified:
+- PASS `npx eslint src/app/missions/module-2/_components/MissionUI.tsx`
+- PASS `python3 -m py_compile scripts/qa_mission_pilot.py`
+- PASS `git diff --check -- src/app/missions/module-2/_components/MissionUI.tsx scripts/qa_mission_pilot.py`
+- PASS `python3 scripts/qa_mission_pilot.py`
+  - includes local + Tailscale route/audio checks
+  - start-path browser QA
+  - M1/M2 builder gates
+  - production audio unlocks
+  - gold-slice first journey
+  - new guard: `choice_subtitles=compact`
+- PASS browser visual QA:
+  - `/missions/module-1/please-thanks?adipoliQa=1&adipoliQaStep=5`
+  - option cards visually show only `Bitte.`, `Danke.`, `Gute Nacht.` before selection
+  - console clean except normal React/HMR dev logs
+
+Status:
+- Scoped change passes.
+- M1/M2 path remains intact.
+- Still not launch-grade overall; next useful lane is cutting remaining repair-step left-panel explanation text.
+
+Next: Reduce repair-step left-panel copy, 25m.

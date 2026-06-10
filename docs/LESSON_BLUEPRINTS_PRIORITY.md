@@ -629,4 +629,21 @@ The course should have checkpoint gates at these specific lesson transitions:
 
 ---
 
+## 2026-04-14 Update — Blueprint checklist additions
+
+Add to the mandatory lesson-blueprint checklist:
+
+1. **Story arc beat.** Every lesson's `storyScene.setting` must come from `docs/A1_STORY_BIBLE.md`'s Kerala setting vocabulary. A1 stays in Kerala — no Berlin/Munich/Frankfurt scenes. Cousin video calls with Germany backdrop are OK.
+2. **Milestone + struggle.** Each lesson advances one concrete milestone and dramatizes one concrete struggle from the bible's 8-beat arc.
+3. **Exercise type floor.** Per `EXERCISE_QUALITY_RULES.md`, at least 3 production exercises per lesson.
+4. **Story tie-in for exercises.** Every exercise question stem references the lesson's setting or a recurring character.
+5. **No Appu in story beats.** Appu is silent UI mascot only — never in dialogue, decision points, or kuttanIntro lines.
+
+See:
+- `docs/A1_STORY_BIBLE.md` — canonical arc and character roster
+- `docs/M1_AUDIT_REPORT.md` — M1 grades + fix list
+- `docs/M2_M3_SETTING_AUDIT.md` — M2/M3 setting-swap plan
+
+---
+
 *This document should be updated as production exercises are implemented. Mark completed items with ✅.*

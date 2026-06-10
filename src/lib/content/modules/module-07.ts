@@ -186,7 +186,16 @@ export const MODULE_7: Module = {
           explanation: "Wunderbar! 'Wo finde ich...' is the perfect phrase for the supermarket. 'die Milch' because Milch is feminine.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex7-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (At the Supermarket): 'Wie viel kostet das?'",
+          questionGerman: "Sprechen Sie laut: 'Wie viel kostet das?'",
+          correctAnswer: "Wie viel kostet das",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab7-1-1",
@@ -450,7 +459,16 @@ export const MODULE_7: Module = {
           explanation: "Excellent! 'sehr' means 'very'. 'Das ist sehr teuer!'",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex7-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Prices & Currency): 'Wie viel kostet das?'",
+          questionGerman: "Sprechen Sie laut: 'Wie viel kostet das?'",
+          correctAnswer: "Wie viel kostet das",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab7-2-1",
@@ -755,7 +773,16 @@ export const MODULE_7: Module = {
           explanation: "Wunderbar! 'Ich trage ein weißes Hemd.' — note the '-es' ending for neuter objects with 'ein'.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex7-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Colors & Clothing): 'Wie viel kostet das?'",
+          questionGerman: "Sprechen Sie laut: 'Wie viel kostet das?'",
+          correctAnswer: "Wie viel kostet das",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab7-3-1",
@@ -1058,7 +1085,16 @@ export const MODULE_7: Module = {
           explanation: "Perfect! 'Ich suche eine Jacke.' — 'eine' because Jacke is feminine.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex7-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Shopping Dialogues): 'Wie viel kostet das?'",
+          questionGerman: "Sprechen Sie laut: 'Wie viel kostet das?'",
+          correctAnswer: "Wie viel kostet das",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab7-4-1",
@@ -1332,7 +1368,16 @@ export const MODULE_7: Module = {
           explanation: "Wunderbar! 'Dieses Restaurant ist am besten.' — using the superlative correctly!",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex7-5-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Comparing Things): 'Wie viel kostet das?'",
+          questionGerman: "Sprechen Sie laut: 'Wie viel kostet das?'",
+          correctAnswer: "Wie viel kostet das",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab7-5-1",

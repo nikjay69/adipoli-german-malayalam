@@ -1,0 +1,36 @@
+
+session_id: 20260531_190544_978fdd
+Done.
+
+Final plan:
+`/shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1906.md`
+
+Checkpoint updated:
+`/shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`
+
+Fresh final verification:
+- Branch: `adipoli-page-by-page-reset-20260523-1802`
+- Commit: `b201d05`
+- Dirty/untracked entries: `262`
+- Diff scale excluding QC: `113 files changed, 40117 insertions, 12439 deletions`
+- `python3 scripts/qa_mission_pilot.py`: FAIL only on stale intro/start-path snippets after core mission/audio/text/meta checks pass
+- `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs`: PASS, all 8 M1/M2 voice-first mobile missions
+
+The plan has all requested sections:
+1. Vision reconstruction
+2. Non-negotiables
+3. Current mismatch diagnosis
+4. Product model
+5. Student-interest plan
+6. SMART roadmap
+7. First 7 days execution plan
+8. First 48 hours exact build lane
+9. Launch-ready definition
+10. Boss decisions needed
+11. Verification harness
+12. Vision-alignment scorecard
+13. Boss summary
+
+Blunt conclusion: direction is now clear. The next lane is not more UI polish. It is QA-trust repair, first-path browser/audio proof, then Module 2 gold-standard hardening.
+
+Next: fix stale QA harness, 2h.

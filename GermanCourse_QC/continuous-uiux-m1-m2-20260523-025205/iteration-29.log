@@ -1,0 +1,95 @@
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -107,10 +107,11 @@
+     ? '20-second Goethe self-intro'
+     : nextModule2Mission.output;
+ 
+-  // Find next incomplete lesson
++  // Find next incomplete lesson. M1/M2 mission CTAs must not depend on stale old lesson progress.
+   const nextLesson = courseModule.lessons.find(
+     lesson => !userProgress.completedLessons.some(l => l.lessonId === lesson.id)
+   );
++  const showPrimaryCta = isModule1 || isModule2 || Boolean(nextLesson);
+   const primaryHref = isModule1 ? (module1Complete ? module1CompletionHref : nextModule1Mission.href) : isModule2 ? nextModule2Mission.href : `/play/${courseModule.id}/${nextLesson?.id ?? courseModule.lessons[0]?.id}`;
+ 
+   return (
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -276,7 +276,7 @@
+               )}
+ 
+               {/* CTA */}
+-              {nextLesson && (
++              {showPrimaryCta && (
+                 <motion.div
+                   initial={{ opacity: 0, y: 15 }}
+                   animate={{ opacity: 1, y: 0 }}
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -362,6 +362,8 @@
+         "Replay final answer",
+         "Preview Module 3",
+         "nextModule2Mission.href",
++        "showPrimaryCta = isModule1 || isModule2 || Boolean(nextLesson)",
++        "{showPrimaryCta && (",
+         "module2MissionCards.map",
+     ]
+     missing_module_static = [snippet for snippet in required_module_static if snippet not in module]
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+@@ -6535,6 +6535,24 @@
+ ===== ITERATION 28 END 2026-05-23T08:37:12+02:00 rc=0 =====
+ ===== ITERATION 28 END 2026-05-23T08:39:39+02:00 rc=0 =====
+ Output: /shared/german-course/GermanCourse_QC/continuous-uiux-m1-m2-20260523-025205/iteration-28.log
++
++## 2026-05-23T08:44:33+02:00 — Iteration 29
++
++- Source/docs inspected: required course-soul docs (`COURSE_OPERATING_BRIEF`, `PRODUCT_DIRECTION_RESET`, `WHOLE_COURSE_MISSION_SPINE`, `AUTONOMOUS_EXECUTION_PLAN`, `PREMIUM_QUALITY_BAR`), prior M1/M2 checkpoint tail, `/learn`, `/learn/[moduleId]`, homepage first-path source, Module 1 mission data, and `scripts/qa_mission_pilot.py`.
++- Files changed: `src/app/learn/[moduleId]/page.tsx`, `scripts/qa_mission_pilot.py`, `GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`.
++- UX/text reductions made: no extra copy or images added. Fixed a first-path reliability bug instead: the Module 1/2 landing primary mission CTA now renders from mission state even if the old lesson queue says all legacy lessons are complete. This keeps `/learn/1` and `/learn/2` mission-first and prevents stale lesson progress from hiding the obvious guided action.
++- M1/M2 learner path status: M1/M2 remain guided mission lanes with hear → recognize/build → speak/type → repair → win. Browser-verified `/learn/1` still shows `Start Mission 1.1` after simulating stale completed legacy Module 1 lessons and empty mission progress.
++- Images/video/animation work: intentionally skipped generated images and Remotion/video work this short run; the existing calm classroom visual remains. No new animations added; avoided clutter and focused on CTA reliability.
++- QA run + PASS/WEAK/FAIL:
++  - PASS targeted ESLint: `npx eslint 'src/app/learn/[moduleId]/page.tsx' scripts/qa_mission_pilot.py` (Python file ignored by ESLint warning only).
++  - PASS Python compile: `python3 -m py_compile scripts/qa_mission_pilot.py`.
++  - PASS dev server restart/verify on `0.0.0.0:3000`; curl 200 for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, `/missions/module-1/greet-frau-weber`, `/missions/module-2/self-intro`.
++  - PASS full mission QA after restart: `python3 scripts/qa_mission_pilot.py` → compact openings, audio HTTP, start-path browser QA, direct-final status, M1/M2 production unlocks, builder clicks, 26 route checks.
++  - PASS browser QA: clicked `/learn/1` primary CTA to `/missions/module-1/greet-frau-weber`; console had no JS errors. Simulated completed old Module 1 lessons in `german-malayali-progress` and confirmed mission CTA still appears.
++  - WEAK app-wide lint remains inherited-noisy: `npm run lint` fails with existing errors in auth/games/components/remotion/lib files; current changed TSX passed targeted lint.
++- Kuttan/name recommendation: unchanged. Do not mass rename. Public adult-safe lead should likely be `Arun` or `Kiran`; keep `Kuttan` as optional home nickname/family flavor if Boss approves.
++- Next best lane: stop polishing containers; if another iteration runs, add substance by strengthening Module 1/2 video-basis scripts or extracting one reusable landing/progress primitive only if it reduces duplicated mission UI without changing behavior.
++
+ Git status after iteration 28:
+  M docs/A1_CURRICULUM_AUDIT.md
+  D docs/AI_CINEMATIC_SCRIPTS.md
+
+session_id: 20260523_083946_32524e
+Iteration 29 done.
+
+Changed:
+- /shared/german-course/src/app/learn/[moduleId]/page.tsx
+- /shared/german-course/scripts/qa_mission_pilot.py
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Fix made:
+- M1/M2 landing CTA no longer depends on old lesson progress.
+- If legacy Module 1 lessons are marked complete but mission progress is empty, /learn/1 still shows the guided mission CTA instead of hiding the main action.
+- Added QA guard for this mission-state CTA behavior.
+
+Verified:
+- Targeted ESLint: PASS for changed TSX; Python file ignored by ESLint warning only.
+- Python compile: PASS.
+- Restarted dev server on 0.0.0.0:3000.
+- Curl 200: /, /intro, /learn, /learn/1, /learn/2, M1 mission, M2 self-intro.
+- Full mission QA: PASS.
+- Browser QA: clicked /learn/1 CTA to /missions/module-1/greet-frau-weber; no console errors.
+- Simulated stale completed old Module 1 lessons; /learn/1 still showed Start Mission 1.1.
+
+Weak:
+- npm run lint still fails from inherited app-wide issues in auth/games/components/remotion/lib. Not from this changed TSX.
+
+Checkpoint appended:
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Next best lane:
+- Stop container polish. Add substance: strengthen M1/M2 video-basis scripts or extract one reusable landing/progress primitive only if it reduces duplicated mission UI without behavior risk.

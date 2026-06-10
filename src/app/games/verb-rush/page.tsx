@@ -8,6 +8,9 @@ import { Card, Button, ProgressBar } from '@/components/ui';
 import { CharacterGuide } from '@/components/character';
 import type { KuttanMood } from '@/components/character';
 import { useGameStore } from '@/lib/store';
+import { Confetti } from '@/components/game/Confetti';
+
+const vibrate = (ms: number) => { try { navigator.vibrate?.(ms); } catch {} };
 
 // ── Kuttan Manglish reactions ──────────────────────────────────────────
 const CORRECT_REACTIONS = [
@@ -393,6 +396,7 @@ export default function VerbRushGame() {
     if (correct) {
       // ── Correct answer ──
       setFeedback('correct');
+      vibrate(20);
       setScore(prev => prev + 1);
       setTotalAnswered(prev => prev + 1);
       setTimeLeft(prev => Math.min(prev + 2, 99)); // +2s bonus
@@ -415,6 +419,7 @@ export default function VerbRushGame() {
       setTimeout(advanceToNext, 800);
     } else if (attempts === 0) {
       // ── First wrong → show hint ──
+      vibrate(30);
       setAttempts(1);
       setFeedback('hint');
       setStreak(0);
@@ -424,6 +429,7 @@ export default function VerbRushGame() {
       setTimeout(() => inputRef.current?.focus(), 100);
     } else {
       // ── Second wrong → show conjugation table, then advance ──
+      vibrate(40);
       setAttempts(2);
       setFeedback('table');
       setTotalAnswered(prev => prev + 1);
@@ -461,6 +467,7 @@ export default function VerbRushGame() {
   // ── Render ───────────────────────────────────────────────────────────
   return (
     <div className="px-4 py-6 max-w-4xl mx-auto">
+      <Confetti isActive={feedback === 'correct'} duration={900} />
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <button
@@ -672,7 +679,11 @@ export default function VerbRushGame() {
                 </div>
 
                 {/* The sentence with the gap */}
-                <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-4 mb-4">
+                <motion.div
+                  className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-4 mb-4"
+                  animate={feedback === 'hint' || feedback === 'table' ? { x: [0, -8, 8, -6, 6, 0] } : { x: 0 }}
+                  transition={{ duration: 0.4 }}
+                >
                   <p className="text-xl font-medium text-gray-900 dark:text-white text-center leading-relaxed">
                     {currentQ.sentence.split('______').map((part, i, arr) => (
                       <span key={i}>
@@ -693,7 +704,7 @@ export default function VerbRushGame() {
                       </span>
                     ))}
                   </p>
-                </div>
+                </motion.div>
 
                 {/* Verb info (shown in rounds 1-2) */}
                 {currentQ.showInfinitive && (

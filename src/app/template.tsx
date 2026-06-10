@@ -6,10 +6,21 @@ import { usePathname } from 'next/navigation';
 export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
+  const isFocusedFirstPath =
+    pathname === '/' ||
+    pathname === '/intro' ||
+    pathname === '/learn' ||
+    pathname === '/learn/1' ||
+    pathname === '/learn/2' ||
+    pathname.startsWith('/missions/');
   const isLesson = pathname.startsWith('/play') || (pathname.startsWith('/learn/') && pathname.split('/').length > 3);
   const isGame = pathname.startsWith('/games/') && pathname !== '/games';
   const isPractice = pathname.startsWith('/practice/') && pathname !== '/practice';
   const isTest = pathname.startsWith('/tests/') && pathname !== '/tests';
+
+  if (isFocusedFirstPath) {
+    return <>{children}</>;
+  }
 
   // Games: scale in from center (immersive feel)
   if (isGame) {

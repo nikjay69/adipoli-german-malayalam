@@ -1,0 +1,94 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -1024,7 +1024,7 @@
+       </div>
+       <div>
+         <PenLine className="mb-4 h-11 w-11 text-[#f1d27a]" />
+-        <label htmlFor={textareaId} className="text-sm font-black uppercase tracking-[0.22em] text-[#f1d27a]">{textareaLabel}</label>
++        <label htmlFor={textareaId} className="sr-only">{textareaLabel}</label>
+         <textarea
+           id={textareaId}
+           data-testid="module2-production-textarea"
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -250,6 +250,8 @@
+         "Ability unlocked",
+         "M1 wins",
+         "M2 wins",
++        "textareaLabel}",
++        "className=\"text-sm font-black uppercase tracking-[0.22em] text-[#f1d27a]\"",
+         "{done ? <Check className=\"h-3.5 w-3.5\" aria-hidden=\"true\" /> : index + 1}",
+     ]
+     hits = []
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -250,7 +250,6 @@
+         "Ability unlocked",
+         "M1 wins",
+         "M2 wins",
+-        "textareaLabel}",
+         "className=\"text-sm font-black uppercase tracking-[0.22em] text-[#f1d27a]\"",
+         "{done ? <Check className=\"h-3.5 w-3.5\" aria-hidden=\"true\" /> : index + 1}",
+     ]
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -894,6 +894,7 @@
+         "data-testid=\"module2-model-pattern\"",
+         "data-testid=\"module2-model-audio-card\"",
+         "data-testid=\"module2-production-textarea\"",
++        "<label htmlFor={textareaId} className=\"sr-only\">{textareaLabel}</label>",
+         "data-testid=\"module2-production-next-action\"",
+         "data-typing-locked={canTypeOutput ? 'false' : 'true'}",
+     ]
+  ┊ review diff
+a//shared/german-course/src/app/intro/page.tsx → b//shared/german-course/src/app/intro/page.tsx
+@@ -43,7 +43,7 @@
+   return (
+     <div className="fixed inset-0 z-50 overflow-hidden bg-[#f7ead0]">
+       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_24%_12%,rgba(212,165,32,0.28),transparent_30%),radial-gradient(circle_at_78%_86%,rgba(39,174,96,0.16),transparent_28%)]" />
+-      <motion.main
++      <motion.section
+         initial={{ opacity: 0, y: 12 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ duration: 0.34, ease: 'easeOut' }}
+  ┊ review diff
+a//shared/german-course/src/app/intro/page.tsx → b//shared/german-course/src/app/intro/page.tsx
+@@ -72,7 +72,7 @@
+         >
+           Start listening <ArrowRight className="h-5 w-5" />
+         </motion.button>
+-      </motion.main>
++      </motion.section>
+     </div>
+   );
+ }
+  ⟳ compacting context…
+
+session_id: 20260530_144322_ec2fbd
+Iteration 33 complete.
+
+Changed:
+- `src/app/missions/module-2/_components/MissionUI.tsx`
+  - Removed visible uppercase production textarea labels like `POLITE EXIT`.
+  - Kept the label as `sr-only` for accessibility.
+- `src/app/intro/page.tsx`
+  - Replaced nested `motion.main` with `motion.section`; root layout already owns `<main>`.
+- `scripts/qa_mission_pilot.py`
+  - Added/updated guards so visible uppercase production labels don’t creep back.
+
+Verified:
+- PASS targeted lint:
+  - `npx eslint src/app/intro/page.tsx src/app/missions/module-2/_components/MissionUI.tsx src/app/missions/module-1/please-thanks/page.tsx src/app/missions/module-1/polite-exit/page.tsx`
+- PASS mission QA:
+  - `python3 scripts/qa_mission_pilot.py`
+  - Covered `/`, `/intro`, `/learn/1`, M1/M2 builders, production unlocks, local + Tailscale gold-slice path, 26 reachable routes.
+- WEAK inherited:
+  - `npm run lint -- --quiet` still fails with 99 unrelated existing errors across auth/games/remotion/etc. Touched files pass.
+
+Checkpoint appended:
+- `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Kuttan note:
+- No rename done. Recommendation remains: use Arun/Kiran as public adult-safe name later if Boss approves; keep Kuttan as home nickname flavor.
+
+Next best lane, 45m: make one playable M1/M2 depth improvement, not more container polish.

@@ -37,12 +37,12 @@ export function WordNinja({ prompt, targets, distractors, onResult }: WordNinjaP
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState(3);
   const [gameOver, setGameOver] = useState(false);
-  const [targetsLeft, setTargetsLeft] = useState(targets.length);
   const spawnTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const nextId = useRef(0);
   const allTargets = useRef([...targets]);
   const allDistractors = useRef([...distractors]);
   const spawnedTargets = useRef(0);
+  const distractorCursor = useRef(0);
 
   // Spawn words at intervals
   useEffect(() => {
@@ -51,8 +51,10 @@ export function WordNinja({ prompt, targets, distractors, onResult }: WordNinjaP
     const spawnWord = () => {
       if (gameOver) return;
 
-      // Decide target or distractor
-      const useTarget = spawnedTargets.current < allTargets.current.length && Math.random() < 0.5;
+      // Decide target or distractor. Show the target first so the task never
+      // looks broken, then rotate distractors instead of repeating one word.
+      const useTarget = spawnedTargets.current < allTargets.current.length &&
+        (spawnedTargets.current === 0 || Math.random() < 0.35);
       let text: string;
       let isTarget: boolean;
 
@@ -61,7 +63,9 @@ export function WordNinja({ prompt, targets, distractors, onResult }: WordNinjaP
         spawnedTargets.current++;
         isTarget = true;
       } else {
-        text = allDistractors.current[Math.floor(Math.random() * allDistractors.current.length)] || 'Nein';
+        const pool = allDistractors.current.length > 0 ? allDistractors.current : ['Hallo', 'Danke', 'Bitte'];
+        text = pool[distractorCursor.current % pool.length] || 'Nein';
+        distractorCursor.current++;
         isTarget = false;
       }
 
@@ -72,13 +76,13 @@ export function WordNinja({ prompt, targets, distractors, onResult }: WordNinjaP
 
       switch (side) {
         case 0: // left
-          x = -10; y = 20 + Math.random() * 60; vx = speed; vy = (Math.random() - 0.5) * 0.3; break;
+          x = 6; y = 22 + Math.random() * 56; vx = speed; vy = (Math.random() - 0.5) * 0.25; break;
         case 1: // right
-          x = 110; y = 20 + Math.random() * 60; vx = -speed; vy = (Math.random() - 0.5) * 0.3; break;
+          x = 82; y = 22 + Math.random() * 56; vx = -speed; vy = (Math.random() - 0.5) * 0.25; break;
         case 2: // top
-          x = 20 + Math.random() * 60; y = -10; vx = (Math.random() - 0.5) * 0.3; vy = speed; break;
+          x = 18 + Math.random() * 64; y = 12; vx = (Math.random() - 0.5) * 0.25; vy = speed; break;
         default: // bottom
-          x = 20 + Math.random() * 60; y = 110; vx = (Math.random() - 0.5) * 0.3; vy = -speed; break;
+          x = 18 + Math.random() * 64; y = 82; vx = (Math.random() - 0.5) * 0.25; vy = -speed; break;
       }
 
       setWords(prev => [...prev, { id: nextId.current++, text, isTarget, x, y, vx, vy, alive: true, sliced: false }]);
@@ -107,11 +111,13 @@ export function WordNinja({ prompt, targets, distractors, onResult }: WordNinjaP
             if (w.isTarget && !w.sliced) {
               setLives(l => {
                 const nl = l - 1;
-                if (nl <= 0) setGameOver(true);
+                if (nl <= 0) {
+                  setGameOver(true);
+                  setTimeout(() => onResult(false), 800);
+                }
                 return nl;
               });
               feedbackWrong();
-              setTargetsLeft(t => t - 1);
             }
             return { ...w, alive: false };
           }
@@ -121,42 +127,37 @@ export function WordNinja({ prompt, targets, distractors, onResult }: WordNinjaP
       });
     }, 50);
     return () => clearInterval(interval);
-  }, [gameOver]);
+  }, [gameOver, onResult]);
 
-  // Check win
-  useEffect(() => {
-    if (score >= targets.length && !gameOver) {
-      setGameOver(true);
-      setTimeout(() => onResult(true), 800);
-    }
-  }, [score, targets.length, gameOver, onResult]);
-
-  // Check lose
-  useEffect(() => {
-    if (lives <= 0 && !gameOver) {
-      setGameOver(true);
-      setTimeout(() => onResult(false), 800);
-    }
-  }, [lives, gameOver, onResult]);
+  // Win/lose is resolved inside tap/escape handlers to avoid render-effect cascades.
 
   const handleTap = useCallback((word: FlyingWord) => {
     if (gameOver || word.sliced) return;
 
     if (word.isTarget) {
       feedbackCorrect();
-      setScore(s => s + 1);
-      setTargetsLeft(t => t - 1);
+      setScore(s => {
+        const next = s + 1;
+        if (next >= targets.length) {
+          setGameOver(true);
+          setTimeout(() => onResult(true), 800);
+        }
+        return next;
+      });
       setWords(prev => prev.map(w => w.id === word.id ? { ...w, sliced: true, alive: false } : w));
     } else {
       feedbackWrong();
       setLives(l => {
         const nl = l - 1;
-        if (nl <= 0) setGameOver(true);
+        if (nl <= 0) {
+          setGameOver(true);
+          setTimeout(() => onResult(false), 800);
+        }
         return nl;
       });
       setWords(prev => prev.map(w => w.id === word.id ? { ...w, sliced: true, alive: false } : w));
     }
-  }, [gameOver]);
+  }, [gameOver, onResult, targets.length]);
 
   return (
     <div className="relative w-full h-[280px] overflow-hidden rounded-2xl bg-black/30 border border-white/10">
@@ -172,7 +173,8 @@ export function WordNinja({ prompt, targets, distractors, onResult }: WordNinjaP
 
       {/* Prompt */}
       <div className="absolute top-8 left-0 right-0 text-center z-10">
-        <p className="text-xs text-[#d4a520] font-bold">{prompt}</p>
+        <p className="text-xs text-[#d4a520] font-black drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">{prompt}</p>
+        <p className="mt-0.5 text-[10px] font-semibold text-white/65">Tap the matching German word. Avoid the others.</p>
       </div>
 
       {/* Flying words */}

@@ -10,3 +10,4 @@ export { SpeedRound } from './SpeedRound';
 export { WordNinja } from './WordNinja';
 export { ListenBlast } from './ListenBlast';
 export { WordBuilder } from './WordBuilder';
+export { FreeTextInput } from './FreeTextInput';

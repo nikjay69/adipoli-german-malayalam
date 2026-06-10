@@ -693,7 +693,7 @@ export default function ArticleBlitzGame() {
             <Card className="text-center">
               <div className="mb-4">
                 <CharacterGuide
-                  messages="Articles in real German sentences! Not just bare nouns — you'll see how der, die, das actually work in conversation."
+                  messages="Let's go, machaa! Der, die, das — tap fast, think faster. Adipoli article brain unlocked!"
                   mood="excited"
                   size="sm"
                 />
@@ -1185,11 +1185,21 @@ export default function ArticleBlitzGame() {
                   </div>
                   <div className="text-xs text-gray-500 dark:text-gray-400">Best Streak</div>
                 </div>
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-amber-500">+{earnedXP}</div>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: [0, 1.2, 1] }}
+                  transition={{ delay: 0.5, duration: 0.5, times: [0, 0.6, 1] }}
+                  className="bg-gradient-to-br from-amber-100 to-amber-200 dark:from-amber-900/40 dark:to-amber-800/40 rounded-xl p-4 ring-2 ring-[#d4a520]/40"
+                >
+                  <div className="text-2xl font-bold text-[#d4a520]">+{earnedXP}</div>
                   <div className="text-xs text-gray-500 dark:text-gray-400">XP Earned</div>
-                </div>
+                </motion.div>
               </div>
+
+              {/* Share score */}
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 italic">
+                Share this score with your friends machaa — screenshot it!
+              </p>
 
               {/* Missed words review */}
               {answeredQuestions.filter(q => !q.correct).length > 0 && (

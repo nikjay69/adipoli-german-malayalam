@@ -1,0 +1,332 @@
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/scripts/m1-video-defs.json → b//shared/german-course/scripts/m1-video-defs.json
+@@ -4,7 +4,7 @@
+     "title": "Malayalis in Germany",
+     "subtitle": "Module 1 \u00B7 Lesson 1 \u00B7 Part 2",
+     "beats": [
+-      { "text": "Machane! 30,000+ Malayalis already live in Germany. How? Padikkaam!", "mood": "waving" },
++      { "text": "Kerala to Goethe A1: today we keep the dream real and the first step small.", "mood": "waving" },
+       { "text": "Four main paths: Ausbildung, Nursing, IT, Studium.", "german": "Vier Wege", "mood": "pointing" },
+       { "text": "Each has a German level needed. Some just A1, others B1/B2.", "mood": "happy" },
+       { "text": "First word: der Weg \u2014 the path. Pokaam!", "german": "der Weg", "malayalam": "vazhi", "mood": "celebrating" }
+@@ -20,7 +20,7 @@
+     "title": "German Sounds for Malayalis",
+     "subtitle": "Module 1 \u00B7 Lesson 2 \u00B7 Part 1",
+     "beats": [
+-      { "text": "Machaane! Good news: Malayalam speakers have a built-in advantage with German sounds.", "mood": "waving" },
++      { "text": "Good news: Malayalam speakers already know how to listen closely to sounds.", "mood": "waving" },
+       { "text": "Three umlauts to crack: \u00E4, \u00F6, \u00FC. Lip + tongue tricks.", "german": "\u00E4 \u00F6 \u00FC", "mood": "pointing" },
+       { "text": "Plus \u00DF \u2014 the double-s symbol. And the soft 'ch' like in 'ich'.", "german": "\u00DF", "mood": "thinking" },
+       { "text": "Goal today: confident pronunciation of sch\u00F6n and M\u00FCnchen.", "german": "sch\u00F6n", "mood": "celebrating" }
+@@ -36,7 +36,7 @@
+     "title": "Alphabet & Spelling",
+     "subtitle": "Module 1 \u00B7 Lesson 2 \u00B7 Part 2",
+     "beats": [
+-      { "text": "Imagine a German clerk: 'Buchstabieren Sie Ihren Namen.' Spell your name. Ready?", "mood": "pointing" },
++      { "text": "Exam rehearsal: 'Buchstabieren Sie Ihren Namen.' Spell your name slowly.", "mood": "pointing" },
+       { "text": "German alphabet: 30 letters. But the names are different.", "german": "Alphabet", "mood": "thinking" },
+       { "text": "Trap letters: J = 'yot', W = 'vay', V = 'fow', Z = 'tset'. English brain \u2014 rewire!", "mood": "happy" },
+       { "text": "Spell 'Kuttan': K-U-T-T-A-N. Ah, ooh, tay, tay, ah, en. Try your name now!", "mood": "celebrating" }
+@@ -52,7 +52,7 @@
+     "title": "Greetings for Real Life",
+     "subtitle": "Module 1 \u00B7 Lesson 3 \u00B7 Part 1",
+     "beats": [
+-      { "text": "Machaane! Greetings in German \u2014 not just Hallo. Time-dependent, formal-casual \u2014 all of it.", "mood": "waving" },
++      { "text": "Mission one: greet Frau Weber politely and sound calm from the first word.", "mood": "waving" },
+       { "text": "Four tools: Guten Morgen, Guten Tag, Guten Abend, Gute Nacht.", "german": "Guten Tag", "mood": "pointing" },
+       { "text": "Bonus: Hallo works anytime. Tsch\u00FCss for goodbye. Safe defaults.", "mood": "happy" },
+       { "text": "Try: Guten Tag! Wie geht es Ihnen? \u2014 the formal opener for any shop or office.", "german": "Wie geht es Ihnen?", "mood": "celebrating" }
+@@ -68,7 +68,7 @@
+     "title": "Sie vs Du \u2014 Like Ningal vs Nee",
+     "subtitle": "Module 1 \u00B7 Lesson 3 \u00B7 Part 2",
+     "beats": [
+-      { "text": "Machaane! Malayalam-il Ningal and Nee. German-il Sie and Du. Direct parallel!", "mood": "waving" },
++      { "text": "Malayalam has Ningal and Nee. German has Sie and du. Use the safe one first.", "mood": "waving" },
+       { "text": "Sie = formal (bosses, strangers, elders). Du = casual (friends, family, classmates).", "german": "Sie / du", "mood": "pointing" },
+       { "text": "In doubt \u2014 Sie. Always safer. Never rude.", "mood": "thinking" },
+       { "text": "Ask formally: Wie hei\u00DFen Sie? \u2014 What is your name? Try it!", "german": "Wie hei\u00DFen Sie?", "mood": "celebrating" }
+@@ -84,7 +84,7 @@
+     "title": "Goodbyes & Polite Words",
+     "subtitle": "Module 1 \u00B7 Lesson 4 \u00B7 Part 1",
+     "beats": [
+-      { "text": "Machaane! Starting conversations is one thing. Ending them politely \u2014 a skill.", "mood": "waving" },
++      { "text": "Mission two: exit politely. Ending well is a real beginner skill.", "mood": "waving" },
+       { "text": "Three goodbyes: Auf Wiedersehen (formal), Tsch\u00FCss (casual), Gute Nacht (bedtime).", "german": "Auf Wiedersehen", "mood": "pointing" },
+       { "text": "Plus the magic trio: Danke, Bitte, Entschuldigung. Use daily.", "mood": "happy" },
+       { "text": "Pro exit: 'Einen sch\u00F6nen Tag noch!' \u2014 Have a nice day! Kidu impression.", "german": "Einen sch\u00F6nen Tag noch!", "mood": "celebrating" }
+@@ -100,7 +100,7 @@
+     "title": "Survival Politeness",
+     "subtitle": "Module 1 \u00B7 Lesson 4 \u00B7 Part 2",
+     "beats": [
+-      { "text": "Machaane! Bakery, supermarket, street. Three places to master politeness.", "mood": "waving" },
++      { "text": "Politeness drill: one clear bitte, one calm Entschuldigung, one clean goodbye.", "mood": "waving" },
+       { "text": "Golden pattern: Number + Item + bitte. 'Ein Br\u00F6tchen, bitte.'", "german": "Ein Br\u00F6tchen, bitte.", "mood": "pointing" },
+       { "text": "Attention-getter on the street: 'Entschuldigung!' Always first.", "german": "Entschuldigung!", "mood": "happy" },
+       { "text": "Order a pretzel like a pro: 'Eine Brezel, bitte.' Try it!", "german": "Eine Brezel, bitte.", "mood": "celebrating" }
+@@ -116,7 +116,7 @@
+     "title": "Your First Conversation",
+     "subtitle": "Module 1 \u00B7 Lesson 5 \u00B7 Part 1",
+     "beats": [
+-      { "text": "Machaane! Time to combine everything. A real German conversation \u2014 first meeting.", "mood": "waving" },
++      { "text": "Mission three: combine greeting, name, and one answer in a short Goethe-style exchange.", "mood": "waving" },
+       { "text": "The opener: Hallo! Wie geht's? \u2014 Hello! How are you?", "german": "Wie geht's?", "mood": "pointing" },
+       { "text": "The reply: Gut, danke! Und dir? \u2014 Good, thanks! And you? Ask BACK!", "german": "Und dir?", "mood": "happy" },
+       { "text": "Introduce yourself: Ich hei\u00DFe Kuttan. Und du? Try with your name!", "german": "Ich hei\u00DFe Kuttan.", "mood": "celebrating" }
+@@ -132,15 +132,15 @@
+     "title": "Three Mock Scenarios",
+     "subtitle": "Module 1 \u00B7 Lesson 5 \u00B7 Part 2",
+     "beats": [
+-      { "text": "Machaane! Dress rehearsal: three German scenarios you'll face your first day.", "mood": "waving" },
+-      { "text": "Airport immigration, coffee shop, meeting your housemate.", "german": "Flughafen, Caf\u00E9, WG", "mood": "pointing" },
+-      { "text": "Formal Sie at immigration. Casual du with your roommate. Read the room.", "mood": "happy" },
+… omitted 135 diff line(s) across 2 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/scripts/props/v1-1-2.json → b//shared/german-course/scripts/props/v1-1-2.json
+@@ -5,7 +5,7 @@
+   "accentColor": "#d4a520",
+   "scriptLines": [
+     {
+-      "text": "Machane! 30,000+ Malayalis already live in Germany. How? Padikkaam!",
++      "text": "Kerala to Goethe A1: today we keep the dream real and the first step small.",
+       "mood": "waving",
+       "audioSrc": "audio/tts/v1-1-2/v1-1-2-line-0.mp3"
+     },
+a//shared/german-course/scripts/props/v1-2-1.json → b//shared/german-course/scripts/props/v1-2-1.json
+@@ -5,7 +5,7 @@
+   "accentColor": "#d4a520",
+   "scriptLines": [
+     {
+-      "text": "Machaane! Good news: Malayalam speakers have a built-in advantage with German sounds.",
++      "text": "Good news: Malayalam speakers already know how to listen closely to sounds.",
+       "mood": "waving",
+       "audioSrc": "audio/tts/v1-2-1/v1-2-1-line-0.mp3"
+     },
+a//shared/german-course/scripts/props/v1-2-2.json → b//shared/german-course/scripts/props/v1-2-2.json
+@@ -5,7 +5,7 @@
+   "accentColor": "#d4a520",
+   "scriptLines": [
+     {
+-      "text": "Imagine a German clerk: 'Buchstabieren Sie Ihren Namen.' Spell your name. Ready?",
++      "text": "Exam rehearsal: 'Buchstabieren Sie Ihren Namen.' Spell your name slowly.",
+       "mood": "pointing",
+       "audioSrc": "audio/tts/v1-2-2/v1-2-2-line-0.mp3"
+     },
+a//shared/german-course/scripts/props/v1-3-1.json → b//shared/german-course/scripts/props/v1-3-1.json
+@@ -5,7 +5,7 @@
+   "accentColor": "#d4a520",
+   "scriptLines": [
+     {
+-      "text": "Machaane! Greetings in German — not just Hallo. Time-dependent, formal-casual — all of it.",
++      "text": "Mission one: greet Frau Weber politely and sound calm from the first word.",
+       "mood": "waving",
+       "audioSrc": "audio/tts/v1-3-1/v1-3-1-line-0.mp3"
+     },
+a//shared/german-course/scripts/props/v1-3-2.json → b//shared/german-course/scripts/props/v1-3-2.json
+@@ -5,7 +5,7 @@
+   "accentColor": "#d4a520",
+   "scriptLines": [
+     {
+-      "text": "Machaane! Malayalam-il Ningal and Nee. German-il Sie and Du. Direct parallel!",
++      "text": "Malayalam has Ningal and Nee. German has Sie and du. Use the safe one first.",
+       "mood": "waving",
+       "audioSrc": "audio/tts/v1-3-2/v1-3-2-line-0.mp3"
+     },
+a//shared/german-course/scripts/props/v1-4-1.json → b//shared/german-course/scripts/props/v1-4-1.json
+@@ -5,7 +5,7 @@
+   "accentColor": "#d4a520",
+   "scriptLines": [
+     {
+-      "text": "Machaane! Starting conversations is one thing. Ending them politely — a skill.",
++      "text": "Mission two: exit politely. Ending well is a real beginner skill.",
+       "mood": "waving",
+       "audioSrc": "audio/tts/v1-4-1/v1-4-1-line-0.mp3"
+     },
+… omitted 234 diff line(s) across 15 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/scripts/m1-video-defs.json → b//shared/german-course/scripts/m1-video-defs.json
+@@ -39,7 +39,7 @@
+       { "text": "Exam rehearsal: 'Buchstabieren Sie Ihren Namen.' Spell your name slowly.", "mood": "pointing" },
+       { "text": "German alphabet: 30 letters. But the names are different.", "german": "Alphabet", "mood": "thinking" },
+       { "text": "Trap letters: J = 'yot', W = 'vay', V = 'fow', Z = 'tset'. English brain \u2014 rewire!", "mood": "happy" },
+-      { "text": "Spell 'Kuttan': K-U-T-T-A-N. Ah, ooh, tay, tay, ah, en. Try your name now!", "mood": "celebrating" }
++      { "text": "Spell a sample name: A-R-U-N. Ah, Err, Ooh, Enn. Then try your name.", "mood": "celebrating" }
+     ],
+     "vocabCards": [
+       { "german": "buchstabieren", "english": "to spell", "malayalam": "aksharam", "pronunciation": "bookh-shtah-beer-en" },
+a//shared/german-course/scripts/props/v1-1-1.json → b//shared/german-course/scripts/props/v1-1-1.json
+@@ -5,7 +5,7 @@
+   "accentColor": "#d4a520",
+   "scriptLines": [
+     {
+-      "text": "Machane! Why German? Njan parayam.",
++      "text": "Why German? For work, study, and Goethe A1 — start with one calm win.",
+       "mood": "waving",
+       "audioSrc": "audio/tts/v1-1-1/v1-1-1-line-0.mp3"
+     },
+a//shared/german-course/scripts/props/v1-1-1-tts-input.json → b//shared/german-course/scripts/props/v1-1-1-tts-input.json
+@@ -1,5 +1,5 @@
+ [
+-  { "id": "v1-1-1-line-0", "text": "Machane! Why German? Njan parayam.", "voice": "en-IN-NeerjaNeural" },
++  { "id": "v1-1-1-line-0", "text": "Why German? For work, study, and Goethe A1 — start with one calm win.", "voice": "en-IN-NeerjaNeural" },
+   { "id": "v1-1-1-line-1", "text": "Germany is Europe's biggest economy — over 400 free universities.", "voice": "en-IN-NeerjaNeural" },
+   { "id": "v1-1-1-line-2", "text": "For Malayalis — Ausbildung, nursing, IT — massive demand!", "voice": "en-IN-NeerjaNeural" },
+   { "id": "v1-1-1-line-3", "text": "First words: Deutsch, Deutschland, lernen. Padikkam!", "voice": "en-IN-NeerjaNeural" }
+a//shared/german-course/scripts/props/v1-2-2.json → b//shared/german-course/scripts/props/v1-2-2.json
+@@ -21,7 +21,7 @@
+       "audioSrc": "audio/tts/v1-2-2/v1-2-2-line-2.mp3"
+     },
+     {
+-      "text": "Spell 'Kuttan': K-U-T-T-A-N. Ah, ooh, tay, tay, ah, en. Try your name now!",
++      "text": "Spell a sample name: A-R-U-N. Ah, Err, Ooh, Enn. Then try your name.",
+       "mood": "celebrating",
+       "audioSrc": "audio/tts/v1-2-2/v1-2-2-line-3.mp3"
+     }
+a//shared/german-course/scripts/props/v1-5-1.json → b//shared/german-course/scripts/props/v1-5-1.json
+@@ -22,8 +22,8 @@
+       "audioSrc": "audio/tts/v1-5-1/v1-5-1-line-2.mp3"
+     },
+     {
+-      "text": "Introduce yourself: Ich heiße Kuttan. Und du? Try with your name!",
+-      "german": "Ich heiße Kuttan.",
++      "text": "Introduce yourself: Ich heiße Arun. Und Sie? Try with your name.",
++      "german": "Ich heiße Arun.",
+       "mood": "celebrating",
+       "audioSrc": "audio/tts/v1-5-1/v1-5-1-line-3.mp3"
+     }
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -43,6 +43,14 @@
+ GLOBAL_SEARCH = ROOT / "src/components/ui/GlobalSearch.tsx"
+ MISSION_UI = ROOT / "src/app/missions/module-2/_components/MissionUI.tsx"
+ MISSION_DATA = ROOT / "src/lib/missions/module2.ts"
++VIDEO_BASIS_FILES = [
++    ROOT / "scripts/m1-video-defs.json",
++    ROOT / "scripts/m2-video-defs.json",
++    ROOT / "scripts/props/v1-1-1.json",
++    ROOT / "scripts/props/v1-1-1-tts-input.json",
++    *sorted((ROOT / "scripts/props").glob("v1-*-*.json")),
++    *sorted((ROOT / "scripts/props").glob("v2-*-*.json")),
++]
+ AUDIO_DIR = ROOT / "public/audio/missions/module-2/self-intro"
+ MISSION_DIALOGUE_AUDIO_FILES = [
+     ROOT / "public/audio/missions/module-2/dialogue/spell-examiner-buchstabieren.mp3",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -770,6 +770,48 @@
+     print("sequence_status_completion_storage=ok")
+ 
+ 
++def assert_m1_m2_video_basis_adult_safe() -> None:
++    """Keep M1/M2 video source aligned with the mission-first adult product direction."""
++    banned_snippets = [
++        "Machaane!",
++        "Machane!",
++        "you'll face your first day",
++        "Airport immigration",
++        "meeting your housemate",
++        "your roommate",
++        "Flughafen, Café, WG",
++        "Ich heiße Kuttan",
++        "K-U-T-T-A-N",
++    ]
++    required_snippets = {
++        ROOT / "scripts/m1-video-defs.json": [
++            "Mission one: greet Frau Weber politely",
++            "Dress rehearsal in Kerala: Goethe desk",
++            "Guten Tag, Frau Weber.",
++        ],
++        ROOT / "scripts/m2-video-defs.json": [
++            "Mission start: tell the examiner your name",
++            "Ich heiße Arun.",
++            "Four lines, no drama.",
++        ],
++    }
++    hits = []
++    for path in VIDEO_BASIS_FILES:
++        if not path.exists():
++            fail(f"M1/M2 video basis file missing: {path}")
++        src = path.read_text(encoding="utf-8")
++        hits.extend(f"{path.relative_to(ROOT)}:{snippet}" for snippet in banned_snippets if snippet in src)
++    if hits:
++        fail(f"M1/M2 video basis still has childish or A1-canon-risk wording: {hits}")
++    missing_required = []
++    for path, snippets in required_snippets.items():
++        src = path.read_text(encoding="utf-8")
++        missing_required.extend(f"{path.relative_to(ROOT)}:{snippet}" for snippet in snippets if snippet not in src)
++    if missing_required:
++        fail(f"M1/M2 video basis lost mission-aligned adult wording: {missing_required}")
++    print(f"m1_m2_video_basis_adult_safe={len(VIDEO_BASIS_FILES)}")
++
++
+ def assert_intro_start_path_browser_guard() -> None:
+     script = ROOT / "scripts/qa_intro_start_path.mjs"
+     if not script.exists():
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -897,6 +897,7 @@
+     assert_module1_first_mission_path()
+     assert_mission_mobile_controls()
+     assert_sequence_status_uses_completion_storage()
++    assert_m1_m2_video_basis_adult_safe()
+     assert_intro_start_path_browser_guard()
+     assert_direct_final_sequence_status_browser_guard()
+     assert_routes_reachable()
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+@@ -3134,6 +3134,6 @@
+ - UX/text reductions made: tightened the M1/M2 generated-video basis from hypey/childish openers (`Machaane!`) into short mission/exam-output lines; removed M1 physical-Germany first-day framing from the video basis (`airport immigration`, `WG`, housemate) and reframed it as Kerala Goethe/bakery role-play; replaced public sample `Kuttan` self-intro/spelling with adult-safe `Arun` in M1/M2 video basis only.
+ - M1/M2 learner path status: app route path is still mission-first. Verified `/learn/1` exposes the first M1 mission link and click navigates to `/missions/module-1/greet-frau-weber`; clicked mission CTA and confirmed the hear step shows 2 native audio controls with no browser console errors.
+ - Images/video/animation work: no generated images this run; video source/basis improved instead. Did not re-render MP4/MP3 assets, so existing rendered videos/audio may still contain old narration until the local Remotion/TTS refresh lane runs. Animation work skipped intentionally; next value was M1/M2 video-basis adult-safety and canon guard.
+-- QA run + status: PASS for JSON parse/`py_compile`; PASS `assert_m1_m2_video_basis_adult_safe`; PASS `python3 scripts/qa_mission_pilot.py` after restarting hung dev server on `0.0.0.0:3000` (`routes_reachable=26`); PASS curl for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, three M1 missions, M2 self-intro, and M2 audio HTTP 200. `npm run lint` remains FAIL from inherited app-wide issues (99 errors/146 warnings, e.g. auth/signup setState-in-effect, games, Remotion cursor mutation, module variable naming), not from this JSON/QA-script change.
++- QA run + status: PASS for JSON parse/`py_compile`; PASS `assert_m1_m2_video_basis_adult_safe`; PASS `npx tsc --noEmit --pretty false`; PASS `python3 scripts/qa_mission_pilot.py` after restarting hung dev server on `0.0.0.0:3000` (`routes_reachable=26`); PASS curl for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, three M1 missions, M2 self-intro, and M2 audio HTTP 200. `npm run lint` remains FAIL from inherited app-wide issues (99 errors/146 warnings, e.g. auth/signup setState-in-effect, games, Remotion cursor mutation, module variable naming), not from this JSON/QA-script change.
+ - Kuttan/name recommendation: stronger now — public/example learner name should be `Arun` or `Kiran`; keep `Kuttan` only as a private/home nickname or companion flavor if Boss approves. Do not global-rename yet.
+ - Next best lane: regenerate only the changed M1/M2 Remotion props/audio/video assets locally or add a small source-vs-rendered-video freshness check; then browser-play all three M1 missions end-to-end with completion memory.
+
+session_id: 20260523_054651_abe9ef
+Iteration 14 done.
+
+Changed:
+- /shared/german-course/scripts/m1-video-defs.json
+- /shared/german-course/scripts/m2-video-defs.json
+- /shared/german-course/scripts/props/v1-*.json
+- /shared/german-course/scripts/props/v2-*.json
+- /shared/german-course/scripts/qa_mission_pilot.py
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+What improved:
+- Tightened M1/M2 video basis scripts from hypey/childish “Machaane!” style into shorter adult mission/exam-output language.
+- Removed risky M1 physical-Germany “first day / airport / WG / housemate” framing from the video basis.
+- Reframed M1 video basis around Kerala Goethe classroom / bakery role-play / polite exit.
+- Replaced public sample learner name “Kuttan” with “Arun” in M1/M2 video basis only. No mass rename.
+- Added QA guard in scripts/qa_mission_pilot.py so M1/M2 video basis cannot silently reintroduce:
+  - Machaane!/Machane!
+  - first-day Germany/airport/WG/housemate framing
+  - public “Ich heiße Kuttan” / “K-U-T-T-A-N” examples
+
+QA:
+- PASS: JSON parse for M1/M2 video defs + props
+- PASS: python compile for qa_mission_pilot.py
+- PASS: targeted adult-safe video-basis QA guard
+- PASS: npx tsc --noEmit --pretty false
+- PASS: python3 scripts/qa_mission_pilot.py
+  - routes_reachable=26
+- PASS: curl for /, /intro, /learn, /learn/1, /learn/2, three M1 missions, M2 self-intro, and M2 audio HTTP 200
+- PASS: browser clicked /learn/1 → /missions/module-1/greet-frau-weber
+- PASS: browser clicked first M1 mission CTA; hear step showed 2 native audio controls; console errors: 0
+
+Known weakness:
+- npm run lint still fails from inherited app-wide issues: 99 errors / 146 warnings, mostly auth/games/legacy React lint issues and Remotion cursor mutation. Not caused by this iteration.
+- I did not re-render MP4/MP3 assets. Existing rendered videos/audio may still contain old narration until the next Remotion/TTS refresh lane runs.
+
+Checkpoint appended:
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Name recommendation:
+- Use Arun or Kiran as the public adult-safe example learner name.
+- Keep Kuttan only as home nickname / companion flavor if Boss approves.
+- Do not global-rename yet.
+
+Next best lane:
+- Regenerate only the changed M1/M2 Remotion props/audio/video assets locally, or add a freshness check so source scripts and rendered videos cannot drift.
+- Then browser-play all three M1 missions end-to-end with completion memory.

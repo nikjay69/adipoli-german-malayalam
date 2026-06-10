@@ -103,7 +103,7 @@ export default function PracticePage() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="flex items-center gap-2.5 game-card px-3 py-2 mb-2"
+        className="flex flex-col gap-2.5 items-center text-center md:flex-row md:text-left md:gap-2.5 game-card p-3.5 md:p-4 mb-2"
       >
         <Kuttan mood="pointing" size="sm" entrance={false} />
         <p className="text-xs text-[var(--foreground)]/60 leading-snug">
@@ -124,9 +124,14 @@ export default function PracticePage() {
           >
             <Link href={p.href}>
               <motion.div whileTap={{ scale: 0.96 }}
-                className="game-card p-2.5 cursor-pointer transition-colors h-full">
+                className={`relative game-card p-2.5 cursor-pointer h-full border border-transparent hover:border-[#d4a520]/40 hover:-translate-y-0.5 transition-all ${
+                  p.id === 'review' && dueCount > 5 ? 'animate-pulse-glow' : ''
+                }`}>
+                {p.id === 'review' && dueCount > 0 && (
+                  <span className="absolute top-2 right-2 w-2 h-2 bg-[#c0392b] rounded-full animate-ping" />
+                )}
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center text-lg flex-shrink-0"
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center text-lg flex-shrink-0"
                     style={{ backgroundColor: `${p.color}15`, border: `1.5px solid ${p.color}30` }}>
                     {p.icon}
                   </div>

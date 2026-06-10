@@ -1,0 +1,51 @@
+{
+  "lessonId": "v1-4-1",
+  "title": "Goodbyes & Polite Words",
+  "subtitle": "Module 1 · Lesson 4 · Part 1",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Mission two: exit politely. Ending well is a real beginner skill.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v1-4-1/v1-4-1-line-0.mp3"
+    },
+    {
+      "text": "Three goodbyes: Auf Wiedersehen (formal), Tschüss (casual), Gute Nacht (bedtime).",
+      "german": "Auf Wiedersehen",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v1-4-1/v1-4-1-line-1.mp3"
+    },
+    {
+      "text": "Plus the magic trio: Danke, Bitte, Entschuldigung. Use daily.",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v1-4-1/v1-4-1-line-2.mp3"
+    },
+    {
+      "text": "Polished exit: 'Einen schönen Tag noch!' — a clean adult closer.",
+      "german": "Einen schönen Tag noch!",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v1-4-1/v1-4-1-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Auf Wiedersehen",
+      "english": "Goodbye (formal)",
+      "malayalam": "vida",
+      "pronunciation": "owf-vee-der-zey-en"
+    },
+    {
+      "german": "Danke",
+      "english": "Thanks",
+      "malayalam": "nandi",
+      "pronunciation": "dahn-ke"
+    },
+    {
+      "german": "Entschuldigung",
+      "english": "Excuse me",
+      "malayalam": "kshami",
+      "pronunciation": "ent-shool-di-goong"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

@@ -183,7 +183,16 @@ export const MODULE_13: Module = {
           explanation: "Wunderbar! 'Ich habe gekocht' is the correct past tense for 'I cooked'.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex13-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Perfekt Tense with haben): 'Gestern habe ich Deutsch gelernt.'",
+          questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
+          correctAnswer: "Gestern habe ich Deutsch gelernt",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab13-1-1", german: "haben", english: "to have", malayalam: "\u0D09\u0D23\u0D4D\u0D1F\u0D3E\u0D2F\u0D3F\u0D30\u0D3F\u0D15\u0D4D\u0D15\u0D41\u0D15", pronunciation: "hah-ben", example: "Ich habe einen Hund.", exampleTranslation: "I have a dog." },
         { id: "vocab13-1-2", german: "gemacht", english: "done / made", malayalam: "ചെയ്തു", pronunciation: "ge-makt", example: "Ich habe meine Hausaufgaben gemacht.", exampleTranslation: "I did my homework." },
@@ -363,7 +372,16 @@ export const MODULE_13: Module = {
           explanation: "Excellent! 'Fliegen' is movement, so we use 'sind'.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex13-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Perfekt Tense with sein): 'Gestern habe ich Deutsch gelernt.'",
+          questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
+          correctAnswer: "Gestern habe ich Deutsch gelernt",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab13-2-1", german: "gegangen", english: "gone / walked (past participle)", malayalam: "\u0D2A\u0D4B\u0D2F\u0D3F", pronunciation: "ge-gang-en", example: "Ich bin ins Kino gegangen.", exampleTranslation: "I went to the cinema." },
         { id: "vocab13-2-2", german: "gefahren", english: "driven / traveled (past participle)", malayalam: "\u0D2F\u0D3E\u0D24\u0D4D\u0D30 \u0D1A\u0D46\u0D2F\u0D4D\u0D24\u0D41", pronunciation: "ge-fah-ren", example: "Sie ist nach Hamburg gefahren.", exampleTranslation: "She drove to Hamburg." },
@@ -531,7 +549,16 @@ export const MODULE_13: Module = {
           explanation: "Wunderbar! 'Er hat einen Kaffee getrunken.' — 'getrunken' goes to the very end.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex13-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Irregular Past Participles): 'Gestern habe ich Deutsch gelernt.'",
+          questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
+          correctAnswer: "Gestern habe ich Deutsch gelernt",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab13-3-1", german: "gegessen", english: "eaten (past participle)", malayalam: "\u0D15\u0D34\u0D3F\u0D1A\u0D4D\u0D1A\u0D41", pronunciation: "ge-gess-en", example: "Ich habe Biryani gegessen.", exampleTranslation: "I ate Biryani." },
         { id: "vocab13-3-2", german: "getrunken", english: "drunk (past participle)", malayalam: "\u0D15\u0D41\u0D1F\u0D3F\u0D1A\u0D4D\u0D1A\u0D41", pronunciation: "ge-trunk-en", example: "Er hat Kaffee getrunken.", exampleTranslation: "He drank coffee." },
@@ -656,7 +683,16 @@ export const MODULE_13: Module = {
           explanation: "Excellent! 'Dann' occupies position 1, 'habe' stays at position 2.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex13-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Telling Stories — My Weekend): 'Gestern habe ich Deutsch gelernt.'",
+          questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
+          correctAnswer: "Gestern habe ich Deutsch gelernt",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab13-4-1", german: "zuerst", english: "first / at first", malayalam: "\u0D06\u0D26\u0D4D\u0D2F\u0D02", pronunciation: "tsoo-airst", example: "Zuerst habe ich gefr\u00fchst\u00fcckt.", exampleTranslation: "First I had breakfast." },
         { id: "vocab13-4-2", german: "dann", english: "then", malayalam: "\u0D2A\u0D3F\u0D28\u0D4D\u0D28\u0D46", pronunciation: "dahn", example: "Dann bin ich in die Stadt gefahren.", exampleTranslation: "Then I went to the city." },
@@ -783,7 +819,16 @@ export const MODULE_13: Module = {
           explanation: "Wunderbar! 'Ich bin vor drei Monaten nach Deutschland gekommen.' — perfect use of 'vor' and 'sein'.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex13-5-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Time Expressions for the Past): 'Gestern habe ich Deutsch gelernt.'",
+          questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
+          correctAnswer: "Gestern habe ich Deutsch gelernt",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab13-5-1", german: "gestern", english: "yesterday", malayalam: "\u0D07\u0D28\u0D4D\u0D28\u0D32\u0D46", pronunciation: "gess-tern", example: "Gestern bin ich sp\u00e4t aufgestanden.", exampleTranslation: "Yesterday I woke up late." },
         { id: "vocab13-5-2", german: "vorgestern", english: "day before yesterday", malayalam: "\u0D2E\u0D3F\u0D28\u0D3F\u0D1E\u0D4D\u0D1E\u0D3E\u0D28\u0D4D\u0D28\u0D4D", pronunciation: "for-gess-tern", example: "Vorgestern hat es geregnet.", exampleTranslation: "It rained the day before yesterday." },

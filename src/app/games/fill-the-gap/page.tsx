@@ -676,7 +676,7 @@ export default function FillTheGapGame() {
             <Card className="text-center">
               <div className="mb-4">
                 <CharacterGuide
-                  messages="You'll read real German notes, texts, signs, and emails. Type the missing word to complete each sentence!"
+                  messages="Alright machaa! Real Germans wrote these. Fill the missing word — your brain will thank you!"
                   mood="excited"
                   size="sm"
                 />
@@ -1029,13 +1029,22 @@ export default function FillTheGapGame() {
                   <div className="text-2xl font-bold text-red-500">{TOTAL_QUESTIONS - score}</div>
                   <div className="text-xs text-gray-500">Mistakes</div>
                 </div>
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-amber-500">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: [0, 1.2, 1] }}
+                  transition={{ delay: 0.5, duration: 0.5, times: [0, 0.6, 1] }}
+                  className="bg-gradient-to-br from-amber-100 to-amber-200 dark:from-amber-900/40 dark:to-amber-800/40 rounded-xl p-4 ring-2 ring-[#d4a520]/40"
+                >
+                  <div className="text-2xl font-bold text-[#d4a520]">
                     +{score * XP_PER_CORRECT}
                   </div>
                   <div className="text-xs text-gray-500">XP Earned</div>
-                </div>
+                </motion.div>
               </div>
+
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 italic">
+                Share this with the gang — screenshot the score machaa!
+              </p>
 
               <div className="flex flex-col gap-3">
                 <Button onClick={startGame} fullWidth>

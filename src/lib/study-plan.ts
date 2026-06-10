@@ -191,7 +191,7 @@ export function getDailySchedule(
     const gameOptions = [
       { title: 'Article Blitz', route: '/games/article-blitz', desc: 'der/die/das speed drill' },
       { title: 'Verb Rush', route: '/games/verb-rush', desc: 'Conjugation combos' },
-      { title: 'Word Match', route: '/games/word-match', desc: 'Match German to English' },
+      { title: 'Scene Sort', route: '/games/scene-sort', desc: 'Which place does each word belong to?' },
       { title: 'Fill the Gap', route: '/games/fill-the-gap', desc: 'Complete the sentence' },
       { title: 'Speed Quiz', route: '/games/speed-quiz', desc: 'Quick-fire vocabulary' },
       { title: 'Memory', route: '/games/memory', desc: 'Card matching game' },

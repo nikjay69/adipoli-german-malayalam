@@ -131,8 +131,9 @@ export function Appu({ mood = 'idle', size = 'sm', className = '', entrance = tr
         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" role="img" aria-label={`Appu elephant feeling ${mood}`}>
           {/* Shadow */}
           <motion.ellipse
-            cx="24" cy="46" rx="10" ry="2"
+            cx={24} cy={46} ry={2}
             fill="black" opacity="0.06"
+            initial={{ rx: 10 }}
             animate={{ rx: mood === 'celebrating' ? [10, 8, 10] : [10, 9, 10] }}
             transition={{ duration: mood === 'celebrating' ? 0.8 : 2.5, repeat: Infinity }}
           />

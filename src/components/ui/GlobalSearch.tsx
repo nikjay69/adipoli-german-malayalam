@@ -1,15 +1,14 @@
 'use client';
 
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X, BookOpen, Gamepad2, Languages } from 'lucide-react';
 import { getAllVocabulary, ALL_MODULES } from '@/lib/content/modules';
-import type { VocabItem } from '@/lib/content/modules';
 
 // Hardcoded game list with display names and icons
 const GAMES = [
-  { id: 'word-match', name: 'Word Match', icon: '🎯' },
+  { id: 'scene-sort', name: 'Scene Sort', icon: '🎭' },
   { id: 'memory', name: 'Memory Cards', icon: '🃏' },
   { id: 'speed-quiz', name: 'Speed Quiz', icon: '🏆' },
   { id: 'greeting-time', name: 'Greeting Time', icon: '👋' },
@@ -36,9 +35,11 @@ interface SearchResult {
 export function GlobalSearch() {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
+  const [mounted, setMounted] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const pathname = usePathname();
 
   // Load vocab once
   const allVocab = useMemo(() => getAllVocabulary(), []);
@@ -123,6 +124,11 @@ export function GlobalSearch() {
   const hasResults = results.vocab.length > 0 || results.lessons.length > 0 || results.games.length > 0;
   const showNoResults = query.trim().length >= 2 && !hasResults;
 
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
   // Auto-focus input when modal opens
   useEffect(() => {
     if (isOpen) {
@@ -159,6 +165,22 @@ export function GlobalSearch() {
     setIsOpen(true);
     setQuery('');
   };
+
+  const isFocusedRoute =
+    pathname === '/' ||
+    pathname.startsWith('/play') ||
+    pathname.startsWith('/intro') ||
+    pathname.startsWith('/missions') ||
+    pathname === '/learn' ||
+    pathname === '/learn/1' ||
+    pathname === '/learn/2' ||
+    pathname.startsWith('/onboarding') ||
+    (pathname.startsWith('/tests/') && pathname !== '/tests') ||
+    (pathname.startsWith('/practice/') && pathname !== '/practice') ||
+    pathname.startsWith('/auth/');
+
+  if (!mounted) return null;
+  if (isFocusedRoute) return null;
 
   return (
     <>

@@ -1,0 +1,77 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -1124,12 +1124,16 @@
+           </div>
+         </div>
+       </div>
+-      <div data-testid="tiny-write-step">
++      <div
++        data-testid="tiny-write-step"
++        data-optional-anchor-hidden={!requireTyped && !modelAudioFinished ? 'true' : 'false'}
++        className={clsx(!requireTyped && !modelAudioFinished && 'sr-only')}
++      >
+         <PenLine className="mb-4 h-11 w-11 text-[#f1d27a]" />
+         <label htmlFor={inputId} className="sr-only">{label}</label>
+         {!requireTyped && (
+           <p className="mb-3 text-sm font-semibold text-white/52">
+-            Optional anchor. Speak first.
++            Optional. Speak first.
+           </p>
+         )}
+         <input
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -23,6 +23,8 @@
+     'data-testid="immersive-reply-step"',
+     'data-testid="speak-write-step"',
+     'data-testid="tiny-write-step"',
++    'data-optional-anchor-hidden={!requireTyped && !modelAudioFinished ? \'true\' : \'false\'}',
++    "className={clsx(!requireTyped && !modelAudioFinished && 'sr-only')}",
+     'data-testid="tiny-write-input"',
+     'Listen',
+     'Say',
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1315,6 +1315,8 @@
+         "data-testid=\"immersive-reply-step\"",
+         "data-testid=\"speak-write-step\"",
+         "data-testid=\"tiny-write-step\"",
++        "data-optional-anchor-hidden={!requireTyped && !modelAudioFinished ? 'true' : 'false'}",
++        "className={clsx(!requireTyped && !modelAudioFinished && 'sr-only')}",
+         "data-testid=\"tiny-write-input\"",
+         "async function inspectImmersiveStep",
+         "modelLineHidden",
+  ⟳ compacting context…
+
+session_id: 20260530_212127_99d702
+Iteration 17 complete.
+
+Changed:
+- `/shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx`
+  - Optional tiny-writing anchor is now visually hidden until reply-model audio finishes when typing is optional.
+  - Helper copy shortened to: `Optional. Speak first.`
+  - Keeps the voice-first flow: hear → answer aloud → light repair → optional tiny anchor.
+
+- `/shared/german-course/scripts/qa_mission_pilot.py`
+- `/shared/german-course/scripts/qa_module2_production_mobile.mjs`
+  - Added source guards so this hidden-optional-anchor behavior cannot silently regress.
+
+- `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+  - Appended Iteration 17 checkpoint.
+
+Verified:
+- Targeted ESLint on changed mission UI/mobile QA: PASS
+- `python3 scripts/qa_mission_pilot.py`: PASS
+- Manual browser QA:
+  - optional field hidden before audio
+  - field enabled/visible after audio finishes
+  - no console/JS errors
+- Route smoke: PASS for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, M1 greet mission, M2 self-intro
+
+Caveat:
+- App-wide `npm run lint -- --max-warnings=0` still FAILS from inherited repo issues outside this patch: old game pages, auth signup effect, random-in-render, module variable naming, Remotion cursor mutation, etc.
+
+Kuttan/name note:
+- No rename done. Recommendation remains: consider public adult-safe name like Arun/Kiran, with Kuttan as home nickname, only after Boss approval.
+
+Next: remove remaining self-report chore loop, 25m.

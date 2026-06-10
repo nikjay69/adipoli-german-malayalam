@@ -366,7 +366,7 @@ export default function FoodOrderGame() {
             {/* Character */}
             <div className="mb-6">
               <CharacterGuide
-                messages="Kuttan is at a German restaurant! Help him order food machaa! The waiter is waiting!"
+                messages="Ooru German restaurant-il irikyya machaa! Tap the right food fast — don't keep the waiter waiting!"
                 mood="excited"
                 size="md"
                 showAppu
@@ -716,11 +716,21 @@ export default function FoodOrderGame() {
                 </div>
                 <div className="text-[10px] text-[var(--foreground)]/40">Best Streak</div>
               </div>
-              <div className="game-card p-3 text-center">
-                <div className="text-xl font-bold text-[#00d9a5]">+{totalXP}</div>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: [0, 1.2, 1] }}
+                transition={{ delay: 0.6, duration: 0.5, times: [0, 0.6, 1] }}
+                className="game-card p-3 text-center ring-2 ring-[#ffd93d]/40"
+              >
+                <div className="text-xl font-bold text-[#ffd93d]">+{totalXP}</div>
                 <div className="text-[10px] text-[var(--foreground)]/40">XP Earned</div>
-              </div>
+              </motion.div>
             </motion.div>
+
+            {/* Share */}
+            <p className="text-xs text-[var(--foreground)]/50 italic mb-3 text-center">
+              Screenshot &amp; share this Stammgast status machaa!
+            </p>
 
             {/* Receipt animation */}
             <AnimatePresence>

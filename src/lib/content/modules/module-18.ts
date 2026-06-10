@@ -233,7 +233,25 @@ export const MODULE_18: Module = {
           explanation: "Wunderbar! 'Geburtsort' = Place of birth.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex18-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Schreiben Teil 1 — Formulare ausfüllen): 'Können Sie mir bitte helfen?'",
+          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
+          correctAnswer: "Können Sie mir bitte helfen",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        },
+        {
+          id: "ex18-1-prod-dictation",
+          type: "dictation",
+          question: "At the Goethe Kochi writing desk, Kuttan plays a polite A1 help sentence. Listen and type the sentence you hear.",
+          audioUrl: "/audio/hoeren/module-18/ex18-1-prod-dictation.mp3",
+          correctAnswer: "Können Sie mir bitte helfen",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab18-1-1",
@@ -503,7 +521,7 @@ export const MODULE_18: Module = {
         {
           id: "ex18-2-11",
           type: "dictation",
-          question: "Listen and type: Liebe Maria, wie geht es dir?",
+          question: "Kuttan replays a short message opening after the Goethe Kochi writing mock. Listen and type: Liebe Maria, wie geht es dir?",
           correctAnswer: "Liebe Maria wie geht es dir",
           explanation: "Great! This is the standard informal greeting and opening for an email.",
           xpReward: 25,
@@ -533,7 +551,16 @@ export const MODULE_18: Module = {
           explanation: "Wunderbar! Using 'um' and 'treffen' correctly.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex18-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Schreiben Teil 2 — Kurze Nachrichten): 'Können Sie mir bitte helfen?'",
+          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
+          correctAnswer: "Können Sie mir bitte helfen",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab18-2-1",
@@ -656,7 +683,7 @@ export const MODULE_18: Module = {
                 ["Name", "Ich heiße...", "Ich heiße Arun Nair."],
                 ["Age", "Ich bin ... Jahre alt.", "Ich bin 25 Jahre alt."],
                 ["Country", "Ich komme aus...", "Ich komme aus Indien, aus Kerala."],
-                ["City", "Ich wohne in...", "Ich wohne in Berlin."],
+                ["City", "Ich wohne in...", "Ich wohne in Thrissur."],
                 ["Languages", "Ich spreche...", "Ich spreche Malayalam, Englisch und ein bisschen Deutsch."],
                 ["Job", "Ich bin... / Ich arbeite als...", "Ich bin Student."],
                 ["Hobbies", "Meine Hobbys sind...", "Meine Hobbys sind Cricket und Kochen."]
@@ -742,15 +769,15 @@ export const MODULE_18: Module = {
         {
           id: "ex18-3-6",
           type: "multiple-choice",
-          question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Wohnort?'\n\nYou live in Berlin. Which is the best response?",
+          question: "🎤 SPRECHEN TEIL 1 — Wortkarte: 'Wohnort?'\n\nYou live in Thrissur. Which is the best response?",
           options: [
-            "Ich wohne in Berlin.",
-            "Berlin.",
-            "Wohnort Berlin.",
-            "Ich gehe Berlin."
+            "Ich wohne in Thrissur.",
+            "Thrissur.",
+            "Wohnort Thrissur.",
+            "Ich gehe nach Thrissur."
           ],
-          correctAnswer: "Ich wohne in Berlin.",
-          explanation: "'Ich wohne in ...' = I live in. Always give a complete sentence. You can add detail: 'Ich wohne in Berlin, in einer kleinen Wohnung.'",
+          correctAnswer: "Ich wohne in Thrissur.",
+          explanation: "'Ich wohne in ...' = I live in. Always give a complete sentence. You can add detail: 'Ich wohne in Thrissur, in Kerala.'",
           xpReward: 15
         },
         {
@@ -820,7 +847,7 @@ export const MODULE_18: Module = {
         {
           id: "ex18-3-13",
           type: "dictation",
-          question: "Listen and type: Ich heiße Rahul Menon.",
+          question: "In the Goethe Kochi speaking warm-up, Frau Weber models a self-introduction. Listen and type: Ich heiße Rahul Menon.",
           correctAnswer: "Ich heiße Rahul Menon",
           explanation: "Great job! A perfect self-introduction sentence.",
           xpReward: 25,
@@ -829,12 +856,21 @@ export const MODULE_18: Module = {
         {
           id: "ex18-3-14",
           type: "free-text",
-          question: "Translate to German: 'I come from India.'",
+          question: "Frau Weber asks about Herkunft at the Goethe Kochi table. Write in German: 'I come from India.'",
           correctAnswer: "Ich komme aus Indien",
           explanation: "Excellent! 'aus' is the correct preposition for origin.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex18-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Sprechen Teil 1 — Sich vorstellen): 'Können Sie mir bitte helfen?'",
+          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
+          correctAnswer: "Können Sie mir bitte helfen",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab18-3-1",
@@ -1104,7 +1140,7 @@ export const MODULE_18: Module = {
         {
           id: "ex18-4-11",
           type: "dictation",
-          question: "Listen and type: Wo ist der Supermarkt?",
+          question: "During Kuttan's future-life rehearsal card at Goethe Kochi, listen and type: Wo ist der Supermarkt?",
           correctAnswer: "Wo ist der Supermarkt",
           explanation: "Perfect! A clear and useful question for navigation.",
           xpReward: 25,
@@ -1121,7 +1157,7 @@ export const MODULE_18: Module = {
         {
           id: "ex18-4-13",
           type: "dictation",
-          question: "Listen and type: Können Sie das bitte wiederholen?",
+          question: "At the Goethe Kochi speaking table, Kuttan reminds you to ask politely. Listen and type: Können Sie das bitte wiederholen?",
           correctAnswer: "Können Sie das bitte wiederholen",
           explanation: "Essential! This phrase is a lifesaver in the oral exam.",
           xpReward: 25,
@@ -1130,13 +1166,22 @@ export const MODULE_18: Module = {
         {
           id: "ex18-4-14",
           type: "dictation",
-          question: "Listen and type: Was machen Sie beruflich?",
+          question: "Frau Weber practices exam small talk with Kuttan. Listen and type: Was machen Sie beruflich?",
           correctAnswer: "Was machen Sie beruflich",
           explanation: "Great! This is the most common way to ask about someone's job.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-job-question.mp3"
         }
-      ],
+      ,
+        {
+          id: "ex18-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Sprechen Teil 2 — Fragen stellen und beantworten): 'Können Sie mir bitte helfen?'",
+          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
+          correctAnswer: "Können Sie mir bitte helfen",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab18-4-1",
@@ -1185,6 +1230,38 @@ export const MODULE_18: Module = {
       description: "Master Sprechen Teil 3! Make and respond to polite everyday requests using 'Können Sie...?', 'Könnten Sie...?', and 'Darf ich...?' in realistic situations.",
       duration: "45 min",
       xpReward: 120,
+      storyScene: {
+        setting: {
+          name: "Goethe Kochi Exam Hall — Sprechen Mock",
+          sceneType: "classroom",
+          timeOfDay: "afternoon",
+          description: "Kuttan sits in a Goethe Kochi mock speaking room with Frau Weber. Situation cards are on the table: pen, window, help, appointment. He is not in Germany yet — this is the final Kerala rehearsal before the real A1 speaking exam.",
+        },
+        narrative: {
+          previousRecap: "You practiced Sprechen Teil 2: asking and answering simple topic-card questions.",
+          currentObjective: "Make polite A1 requests and respond naturally during Sprechen Teil 3.",
+          nextTeaser: "Next, you will put all four exam parts together in a full Goethe A1 mock test.",
+        },
+        kuttanIntro: [
+          "Machane, ithu final speaking pressure zone aanu — but pattern simple aanu: bitte + polite verb + short request.",
+          "Frau Weber card kodukkum, nammal panic cheyyanda. One clean sentence mathi: Können Sie mir bitte helfen?",
+          "Germany-il later useful aavum, but innu nammal Goethe Kochi mock room-il practice cheyyunnu. Exam first, drama later!",
+        ],
+        vocabEncounters: [
+          { vocabId: "vocab18-5-1", encounterMoment: "Frau Weber points to a situation card and says: 'Formulieren Sie eine Bitte.'", contextSentence: "Ich habe eine Bitte an Sie." },
+          { vocabId: "vocab18-5-2", encounterMoment: "Kuttan starts too direct, and Frau Weber reminds him: 'Bitte höflich.'", contextSentence: "Bitte formulieren Sie Ihre Bitte höflich." },
+          { vocabId: "vocab18-5-3", encounterMoment: "The card shows a pen. Kuttan needs to borrow it politely.", contextSentence: "Können Sie mir bitte Ihren Kugelschreiber leihen?" },
+        ],
+        decisionPoints: [
+          {
+            moment: "Frau Weber gives Kuttan a card: 'Sie brauchen einen Kugelschreiber.' What should he say?",
+            options: [
+              { text: "Können Sie mir bitte einen Kugelschreiber leihen?", isCorrect: true, response: "Frau Weber nods. The sentence is polite, complete, and A1-safe.", kuttanReaction: "Adipoli! bitte + können Sie + object — ithu thanne exam pattern!" },
+              { text: "Kugelschreiber!", isCorrect: false, response: "Frau Weber raises an eyebrow. It is only a word, not a polite request.", kuttanReaction: "Aiyyo, one-word answer venda. Full polite sentence venam, machane." },
+            ],
+          },
+        ],
+      },
       videos: [
         {
           id: "v18-5-1",
@@ -1398,6 +1475,33 @@ export const MODULE_18: Module = {
           correctAnswer: "Tut mir leid, das geht leider nicht. Aber fragen Sie bitte an der Rezeption.",
           explanation: "'Tut mir leid, das geht leider nicht.' = I'm sorry, that's not possible. Then offer an alternative!",
           xpReward: 15
+        },
+        {
+          id: "ex18-5-13",
+          type: "speaking",
+          question: "Goethe Kochi mock card: 'Sie brauchen einen Kugelschreiber.' Say one complete polite request aloud.",
+          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte einen Kugelschreiber leihen?'",
+          correctAnswer: "Können Sie mir bitte einen Kugelschreiber leihen",
+          explanation: "This is the exact Sprechen Teil 3 skill: situation card → polite request. Short, complete, and A1-safe.",
+          xpReward: 25
+        },
+        {
+          id: "ex18-5-14",
+          type: "free-text",
+          question: "Frau Weber points to the window in the mock exam room. Write the polite question: 'May I open the window?'",
+          questionGerman: "Schreiben Sie: 'Darf ich das Fenster öffnen?'",
+          correctAnswer: ["Darf ich das Fenster öffnen", "Darf ich das Fenster öffnen?"],
+          explanation: "Use 'Darf ich...?' when you ask permission to do something yourself.",
+          xpReward: 20
+        },
+        {
+          id: "ex18-5-15",
+          type: "dictation",
+          question: "Listen to the polite request from the Goethe Kochi mock and type what you hear.",
+          audioUrl: "/audio/hoeren/module-18/ex18-5-15.mp3",
+          correctAnswer: "Können Sie mir bitte helfen",
+          explanation: "Dictation trains Hören + Schreiben together. The key polite pattern is 'Können Sie mir bitte...?'",
+          xpReward: 25
         }
       ],
       vocabulary: [
@@ -1449,10 +1553,10 @@ export const MODULE_18: Module = {
       xpReward: 300,
       storyScene: {
         setting: {
-          name: "Goethe-Institut (Prüfungszentrum)",
+          name: "Goethe Kochi Mock Prüfungszentrum",
           sceneType: "office",
           timeOfDay: "morning",
-          description: "This is it. The real feel. You're sitting in the exam hall, clock ticking. Hören, Lesen, Schreiben, Sprechen—all sections in one go. You've got your black pen (Kugelschreiber), your ID (Ausweis), and 100% focus. You're applying everything you've learned. From 'Namaskaram' to this moment, you've built the bridge. Let's finish this with an Adipoli score!",
+          description: "This is it: the real-exam simulation at Goethe Kochi in Kerala. You're sitting in the mock exam hall, clock ticking. Hören, Lesen, Schreiben, Sprechen—all sections in one go. You've got your black pen (Kugelschreiber), your ID (Ausweis), and 100% focus. You're applying everything you've learned. From 'Namaskaram' to this moment, you've built the bridge for your future Germany goal. Let's finish this with an Adipoli score!",
         },
         narrative: {
           previousRecap: "You've practiced the parts. Now, let's conquer the whole!",
@@ -1545,6 +1649,44 @@ export const MODULE_18: Module = {
                 { german: "schaffen", english: "to manage / to achieve", malayalam: "നേടുക", pronunciation: "sha-fen" },
                 { german: "Viel Erfolg!", english: "Good luck!", malayalam: "ആശംസകൾ!", pronunciation: "feel er-folk" }
               ]
+            },
+            {
+              type: "table",
+              title: "After the full mock: Goethe Kochi score review",
+              headers: ["Skill", "If weak, do this next", "A1 proof sentence"],
+              rows: [
+                ["Hören", "Replay one missed audio and write the keyword you missed.", "Ich höre die Ansage noch einmal."],
+                ["Lesen", "Underline the exact sentence that proves each answer.", "Ich lese die Aufgabe zuerst."],
+                ["Schreiben", "Check Anrede, three content points, and Gruß before submitting.", "Ich schreibe eine kurze Nachricht."],
+                ["Sprechen", "Say your introduction and one polite request aloud twice.", "Können Sie mir bitte helfen?"]
+              ]
+            },
+            {
+              type: "list",
+              title: "Final mock completion checklist",
+              items: [
+                "I finished the full mock in one sitting, like the real Goethe A1 exam.",
+                "I marked mistakes by skill: Hören, Lesen, Schreiben, or Sprechen.",
+                "I chose one weak skill to review today — not all four at once.",
+                "I can explain my next step to Kuttan in simple German: Ich übe Hören. / Ich übe Lesen. / Ich übe Schreiben. / Ich übe Sprechen."
+              ]
+            },
+            {
+              type: "table",
+              title: "Kuttan's score feedback bands — what to do after the mock",
+              headers: ["Mock result", "Meaning", "Next Kerala practice step"],
+              rows: [
+                ["80–100", "Exam-ready if timing was honest.", "Do one light review, sleep well, and keep your A1 sentences warm."],
+                ["60–79", "Pass zone, but one skill may still be shaky.", "Repeat only the weakest section tomorrow at Goethe Kochi mock speed."],
+                ["Below 60", "Not failure — diagnostic data.", "Pick two rescue drills: one Hören replay and one Sprechen self-introduction."],
+                ["Any score with panic", "Confidence needs training too.", "Run a 15-minute timed mini-mock with Kuttan before the next full attempt."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Canon-safe exam simulation frame",
+              variant: "tip",
+              content: "This full mock happens at Goethe Kochi in Kerala. German train, apartment, hotel, and office examples are exam materials or future-life rehearsal cards — Kuttan is not physically in Germany during A1."
             }
           ]
         }
@@ -1704,7 +1846,7 @@ export const MODULE_18: Module = {
         {
           id: "ex18-6-14",
           type: "ordering",
-          question: "🎤 SPRECHEN — Teil 1: Put these self-introduction sentences in a logical order:",
+          question: "🎤 SPRECHEN — Teil 1: In the Goethe Kochi mock room, Frau Weber asks Meera to introduce herself. Put these self-introduction sentences in a logical order:",
           options: ["Ich spreche Malayalam, Englisch und ein bisschen Deutsch.", "Ich heiße Meera Nair.", "Meine Hobbys sind Lesen und Tanzen.", "Ich komme aus Indien, aus Kerala.", "Ich bin 24 Jahre alt."],
           correctAnswer: ["Ich heiße Meera Nair.", "Ich bin 24 Jahre alt.", "Ich komme aus Indien, aus Kerala.", "Ich spreche Malayalam, Englisch und ein bisschen Deutsch.", "Meine Hobbys sind Lesen und Tanzen."],
           explanation: "A natural Vorstellung (self-introduction) follows this order: Name → Alter → Herkunft (origin) → Sprachen → Hobbys. This is the expected flow for Sprechen Teil 1. Each sentence covers one Wortkarte topic.",
@@ -1713,7 +1855,7 @@ export const MODULE_18: Module = {
         {
           id: "ex18-6-15",
           type: "multiple-choice",
-          question: "🎤 SPRECHEN — Teil 2 (Fragen & Antworten)\n\nWortkarte: 'Wohnen'\n\nYour partner asks: 'Wo wohnen Sie?'\n\nWhich is the best answer?",
+          question: "🎤 SPRECHEN — Teil 2 (Fragen & Antworten)\n\nAt the Goethe Kochi speaking table, the card says 'Wohnen'. Your partner asks: 'Wo wohnen Sie?'\n\nWhich is the best complete A1 answer?",
           options: [
             "Wohnen.",
             "Ja.",
@@ -1727,7 +1869,7 @@ export const MODULE_18: Module = {
         {
           id: "ex18-6-16",
           type: "multiple-choice",
-          question: "🎤 SPRECHEN — Teil 3 (Bitten)\n\nSituationskarte: 'Sie sind an der Hotelrezeption. Sie brauchen das WLAN-Passwort.'\n\nWhich request is best?",
+          question: "🎤 SPRECHEN — Teil 3 (Bitten)\n\nIn the Goethe Kochi mock, Frau Weber gives you this future-travel role card: 'Sie sind an der Hotelrezeption. Sie brauchen das WLAN-Passwort.'\n\nWhich request is best?",
           options: [
             "WLAN! Passwort! Schnell!",
             "Entschuldigung, könnten Sie mir bitte das WLAN-Passwort geben?",
@@ -1738,8 +1880,72 @@ export const MODULE_18: Module = {
           explanation: "'Entschuldigung, könnten Sie mir bitte das WLAN-Passwort geben?' = Excuse me, could you please give me the WiFi password? This uses 'Entschuldigung' + 'könnten' + 'bitte' — maximum politeness! Note: Germans say 'WLAN' (vey-lahn), not 'WiFi'.",
           xpReward: 20
         }
-      ],
-      vocabulary: []
+      ,
+        {
+          id: "ex18-6-prod-speaking",
+          type: "speaking",
+          question: "Kuttan's final Goethe Kochi mock check: say aloud before the Sprechen section: 'Können Sie mir bitte helfen?'",
+          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
+          correctAnswer: "Können Sie mir bitte helfen",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        },
+        {
+          id: "ex18-6-prod-writing",
+          type: "free-text",
+          question: "At the Goethe Kochi mock desk, write one polite request you can use if you need help during Sprechen.",
+          questionGerman: "Schreiben Sie einen vollständigen Satz.",
+          correctAnswer: ["Können Sie mir bitte helfen", "Können Sie mir bitte helfen."],
+          explanation: "A1 writing must be short, complete, and usable. One correct sentence beats five half-known phrases.",
+          xpReward: 20
+        },
+        {
+          id: "ex18-6-prod-dictation",
+          type: "dictation",
+          question: "Kuttan plays the final Goethe Kochi mock audio note. Listen and type the A1 request you hear.",
+          audioUrl: "/audio/hoeren/module-18/ex18-6-prod-dictation.mp3",
+          correctAnswer: "Können Sie mir bitte helfen",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        }],
+      vocabulary: [
+        {
+          id: "vocab18-6-1",
+          german: "die Übungsprüfung",
+          english: "the mock exam / practice exam",
+          malayalam: "മോക്ക് പരീക്ഷ",
+          pronunciation: "dee ü-boongs-prü-fung",
+          example: "Die Übungsprüfung ist sehr nützlich.",
+          exampleTranslation: "The mock exam is very useful."
+        },
+        {
+          id: "vocab18-6-2",
+          german: "bestehen",
+          english: "to pass",
+          malayalam: "പാസാകുക",
+          pronunciation: "be-shtay-en",
+          example: "Ich möchte die Prüfung bestehen.",
+          exampleTranslation: "I want to pass the exam."
+        },
+        {
+          id: "vocab18-6-3",
+          german: "die Prüfung",
+          english: "the exam",
+          malayalam: "പരീക്ഷ",
+          pronunciation: "dee prü-fung",
+          example: "Wann beginnt die Prüfung?",
+          exampleTranslation: "When does the exam begin?"
+        },
+        {
+          id: "vocab18-6-4",
+          german: "das Ergebnis",
+          english: "the result",
+          malayalam: "ഫലം",
+          pronunciation: "dahs er-gehp-nis",
+          example: "Das Ergebnis war sehr gut.",
+          exampleTranslation: "The result was very good."
+        }
+      ]
     },
 
     // ==================== LESSON 18-7: Adipoli A1 Conclusion ====================
@@ -1752,10 +1958,10 @@ export const MODULE_18: Module = {
       xpReward: 500,
       storyScene: {
         setting: {
-          name: "Cozy Cafe (Im Café)",
+          name: "Kerala Cafe — Goethe A1 Celebration",
           sceneType: "restaurant",
           timeOfDay: "evening",
-          description: "It's all over! The exam is done, and you're feeling a mix of relief and pride. You're sitting with Arjun and Priya at a cozy cafe in Munich. The 'Stammtisch' feel is real. Kuttan pulls out his phone to show a photo of his results: 'PASS!'. Arjun clinks his glass against yours. 'Herzlichen Glückwunsch, machaa! You're officially an A1 speaker now!'. Priya smiles: 'Next stop, A2?'. You take a sip of your drink and look out at the Munich streets. From Kerala to here—you've built the bridge. Adipoli!",
+          description: "It's all over! The Goethe Kochi exam is done, and you're feeling a mix of relief and pride. You're sitting with Arjun and Priya at a cozy cafe in Kerala after the exam. Kuttan pulls out his phone to show a photo of his results: 'PASS!'. Arjun clinks his glass against yours. 'Herzlichen Glückwunsch, machaa! You're officially an A1 speaker now!'. Priya smiles: 'Next stop, A2?'. You take a sip of your drink and look at a Munich street photo on the wall — not as today's location, but as the future you're now ready to rehearse for. From Kerala to Germany—you've built the bridge. Adipoli!",
         },
         narrative: {
           previousRecap: "You've conquered the Goethe A1 exam!",
@@ -1789,8 +1995,116 @@ export const MODULE_18: Module = {
           },
         ],
       },
-      videos: [],
-      exercises: [],
+      videos: [
+        {
+          id: "v18-7-1",
+          title: "A1 Celebration Recap — From Kerala to Goethe Confidence",
+          duration: "06:00",
+          videoUrl: "/videos/generated/v18-7-1.mp4",
+          description: "A short final recap that celebrates the Kerala-rooted A1 journey, reviews the Goethe skill checklist, and sends the learner into A2 with confidence.",
+          scriptOutline: [
+            "Opening at the Kerala cafe after Goethe Kochi: 'Machane, from Ich heiße to the full A1 mock — you actually did the work.'",
+            "Recap the four Goethe skills: Hören, Lesen, Schreiben, Sprechen.",
+            "Show the bridge: Kerala practice today, Germany future rehearsal tomorrow — no panic, just usable A1 sentences.",
+            "Final oral checklist: introduce yourself, ask one polite question, request help, thank someone, and say one future plan.",
+            "CTA: keep reviewing A1 for one week, then start the Adipoli A2 bridge."
+          ],
+          keyVocabulary: ["Herzlichen Glückwunsch", "der Erfolg", "das Zertifikat", "die Zukunft", "weiterlernen"],
+          learningObjectives: [
+            "Celebrate completion without losing exam seriousness",
+            "Recall the four Goethe A1 skill areas",
+            "Produce a final short A1 speaking checklist",
+            "Frame Germany as future rehearsal from Kerala"
+          ],
+          placeholderThumbnail: "/images/kerala_cafe.png",
+          richContent: [
+            {
+              type: "list",
+              title: "Final A1 confidence checklist",
+              items: [
+                "I can introduce myself in German.",
+                "I can ask for help politely: Können Sie mir bitte helfen?",
+                "I can write a short A1 message.",
+                "I can understand short exam-style announcements.",
+                "I can talk about one future plan in simple German."
+              ]
+            },
+            {
+              type: "table",
+              title: "Final oral A1 mini-check — say it before you celebrate",
+              headers: ["Skill", "Kerala practice prompt", "A1 model answer"],
+              rows: [
+                ["Introduce yourself", "Frau Weber asks at Goethe Kochi: Wie heißen Sie?", "Ich heiße Arun."],
+                ["Say where you live", "Kuttan points to the form: Wohnort?", "Ich wohne in Kochi."],
+                ["Ask politely", "You need help during practice.", "Können Sie mir bitte helfen?"],
+                ["Say a future plan", "At the Kerala cafe, Priya asks: Was machst du weiter?", "Ich lerne weiter Deutsch."],
+                ["Thank someone", "The examiner closes the speaking practice.", "Vielen Dank. Auf Wiedersehen."]
+              ]
+            },
+            {
+              type: "note",
+              title: "Course soul reminder",
+              variant: "tip",
+              content: "A1 started in Kerala and stays rooted there. Germany is the future goal you can now rehearse for with calm, simple German."
+            }
+          ]
+        }
+      ],
+      exercises: [
+        {
+          id: "ex18-7-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Adipoli A1 Conclusion — Celebration!): 'Können Sie mir bitte helfen?'",
+          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
+          correctAnswer: "Können Sie mir bitte helfen",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        },
+        {
+          id: "ex18-7-prod-writing",
+          type: "free-text",
+          question: "Production writing: Write one polite Goethe speaking request.",
+          questionGerman: "Schreiben Sie einen vollständigen Satz.",
+          correctAnswer: ["Können Sie mir bitte helfen", "Können Sie mir bitte helfen."],
+          explanation: "A1 writing must be short, complete, and usable. One correct sentence beats five half-known phrases.",
+          xpReward: 20
+        },
+        {
+          id: "ex18-7-prod-dictation",
+          type: "dictation",
+          question: "At the Kerala cafe, Kuttan plays one final Goethe A1 audio note. Listen and type the sentence you hear.",
+          audioUrl: "/audio/hoeren/module-18/ex18-7-prod-dictation.mp3",
+          correctAnswer: "Können Sie mir bitte helfen",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        },
+        {
+          id: "ex18-7-celebration-mcq",
+          type: "multiple-choice",
+          question: "At the Kerala cafe after Goethe Kochi, Kuttan raises a toast. Which A1 sentence fits the celebration?",
+          options: ["Herzlichen Glückwunsch!", "Ich habe Hunger.", "Wo ist der Bahnhof?", "Das kostet zwölf Euro."],
+          correctAnswer: "Herzlichen Glückwunsch!",
+          explanation: "Herzlichen Glückwunsch means congratulations. It fits the final A1 celebration scene.",
+          xpReward: 15
+        },
+        {
+          id: "ex18-7-final-speaking-checklist",
+          type: "speaking",
+          question: "Frau Weber's final oral check at Goethe Kochi: say your future plan in one simple sentence: 'Ich lerne weiter Deutsch.'",
+          questionGerman: "Sagen Sie: 'Ich lerne weiter Deutsch.'",
+          correctAnswer: "Ich lerne weiter Deutsch",
+          explanation: "A1 speaking confidence means one clear, complete sentence. This keeps the Germany goal as future preparation, not today's location.",
+          xpReward: 25
+        },
+        {
+          id: "ex18-7-final-writing-reflection",
+          type: "free-text",
+          question: "Kerala cafe reflection: write one final A1 sentence to Kuttan about your success.",
+          questionGerman: "Schreiben Sie einen Satz über Ihren Erfolg.",
+          correctAnswer: ["Ich habe Erfolg", "Ich habe Erfolg.", "Das ist ein Erfolg", "Das ist ein Erfolg."],
+          explanation: "Short A1 writing is enough: subject + verb + key noun. Keep it clean and exam-safe.",
+          xpReward: 20
+        }],
       vocabulary: [
         {
           id: "vocab18-7-1",
@@ -1822,4 +2136,4 @@ export const MODULE_18: Module = {
       ]
     }
   ]
-};
+};

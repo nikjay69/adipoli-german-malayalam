@@ -1,0 +1,51 @@
+{
+  "lessonId": "v2-5-1",
+  "title": "The Golden Self-Introduction",
+  "subtitle": "Module 2 · Lesson 5 · Part 1",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Final build: name, origin, job, languages. Four lines, no drama.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v2-5-1/v2-5-1-line-0.mp3"
+    },
+    {
+      "text": "Ich heiße Arun. Ich komme aus Kerala. Ich bin Student. Ich spreche Malayalam und Englisch.",
+      "german": "Goethe intro",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v2-5-1/v2-5-1-line-1.mp3"
+    },
+    {
+      "text": "Four sentences. Goethe A1 Sprechen Teil 1 — this is exactly what they test.",
+      "german": "Goethe A1",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v2-5-1/v2-5-1-line-2.mp3"
+    },
+    {
+      "text": "Memorize it with YOUR details. Say it aloud three times right now.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v2-5-1/v2-5-1-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Ich heiße",
+      "english": "My name is",
+      "malayalam": "enre peru",
+      "pronunciation": "ikh hy-se"
+    },
+    {
+      "german": "Ich komme aus",
+      "english": "I come from",
+      "malayalam": "njan vannu",
+      "pronunciation": "ikh kom-me"
+    },
+    {
+      "german": "Ich spreche",
+      "english": "I speak",
+      "malayalam": "njan samsarikkum",
+      "pronunciation": "ikh shprey-khe"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

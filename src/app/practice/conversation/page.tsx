@@ -24,6 +24,8 @@ interface Scenario {
   titleDe: string;
   icon: string;
   difficulty: 'Easy' | 'Medium' | 'Hard';
+  sceneChip: string; // e.g. "🌴 Kerala cafe", "🥨 Berlin bakery"
+  reflection: string; // end-of-session Kuttan line
   turns: ScenarioTurn[];
 }
 
@@ -34,6 +36,8 @@ const SCENARIOS: Scenario[] = [
     titleDe: 'Im Cafe',
     icon: '\u2615',
     difficulty: 'Easy',
+    sceneChip: '\u2615\ufe0f Berlin cafe',
+    reflection: 'You just ordered coffee in German, machaa. You could actually walk into a Berlin cafe now and do this.',
     turns: [
       { ai: 'Guten Tag! Was moechten Sie trinken?', hint: 'Order a drink (e.g. Kaffee, Tee, Wasser)', expectedPattern: /kaffee|tee|wasser|saft|cola|bier|milch/i },
       { ai: 'Moechten Sie auch etwas essen?', hint: 'Say yes/no + a food item', expectedPattern: /ja|nein|kuchen|brot|croissant|sandwich/i },
@@ -47,6 +51,8 @@ const SCENARIOS: Scenario[] = [
     titleDe: 'Beim Arzt',
     icon: '\uD83C\uDFE5',
     difficulty: 'Medium',
+    sceneChip: '\uD83C\uDFE5 German clinic',
+    reflection: 'You just described symptoms to a German doctor. That is a real-life superpower when you land in Germany.',
     turns: [
       { ai: 'Guten Tag. Was fehlt Ihnen?', hint: 'Describe a symptom (e.g. Kopfschmerzen, Fieber)', expectedPattern: /kopf|bauch|schmerzen|fieber|krank|hals|ruecken/i },
       { ai: 'Seit wann haben Sie die Schmerzen?', hint: 'Say since when (e.g. seit gestern, seit zwei Tagen)', expectedPattern: /gestern|tagen|woche|heute|seit|morgen/i },
@@ -60,6 +66,8 @@ const SCENARIOS: Scenario[] = [
     titleDe: 'Am Bahnhof',
     icon: '\uD83D\uDE82',
     difficulty: 'Medium',
+    sceneChip: '\uD83D\uDE82 Hauptbahnhof',
+    reflection: 'You just booked a German train ticket. Next stop — a real weekend trip across Deutschland.',
     turns: [
       { ai: 'Guten Tag. Wohin moechten Sie fahren?', hint: 'Say a German city (e.g. Berlin, Muenchen)', expectedPattern: /berlin|muenchen|m.nchen|hamburg|frankfurt|koeln|k.ln|dresden|stuttgart/i },
       { ai: 'Einfach oder hin und zurueck?', hint: 'One-way or round trip', expectedPattern: /einfach|zurueck|zur.ck|hin/i },
@@ -73,6 +81,8 @@ const SCENARIOS: Scenario[] = [
     titleDe: 'Wohnungsbesichtigung',
     icon: '\uD83C\uDFE0',
     difficulty: 'Hard',
+    sceneChip: '\uD83C\uDFE0 Berlin Wohnung',
+    reflection: 'Apartment hunting in German — done. The hardest Goethe A1 scenario, and you handled it.',
     turns: [
       { ai: 'Willkommen! Die Wohnung hat zwei Zimmer und eine Kueche. Moechten Sie sie sehen?', hint: 'Say yes (e.g. Ja, gerne!)', expectedPattern: /ja|gern|bitte|natuerlich|nat.rlich|klar/i },
       { ai: 'Hier ist das Wohnzimmer. Es ist sehr hell. Gefaellt es Ihnen?', hint: 'Say if you like it', expectedPattern: /ja|schoen|sch.n|gefaellt|gef.llt|gross|gro.|hell|gut|super|toll/i },
@@ -86,6 +96,8 @@ const SCENARIOS: Scenario[] = [
     titleDe: 'Im Supermarkt',
     icon: '\uD83D\uDED2',
     difficulty: 'Easy',
+    sceneChip: '\uD83D\uDED2 REWE Supermarkt',
+    reflection: 'Grocery run in German — easy, right? Now you can shop at any REWE or ALDI without stress.',
     turns: [
       { ai: 'Entschuldigung, kann ich Ihnen helfen?', hint: 'Ask where something is (e.g. Wo finde ich Milch?)', expectedPattern: /wo|finde|milch|brot|reis|obst|gemuese|gem.se/i },
       { ai: 'Das finden Sie in Gang drei, rechts neben dem Kaese.', hint: 'Say thank you', expectedPattern: /danke|vielen|super/i },
@@ -640,9 +652,16 @@ export default function ConversationPracticePage() {
         </div>
       </div>
 
-      {/* ─── Turn Progress Bar ──────────────────────────── */}
+      {/* ─── Scene Context Chip + Turn Progress Bar ──────── */}
       {selectedScenario && state !== 'scenario_select' && state !== 'complete' && (
         <div className="px-4 mb-3">
+          <motion.div
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-[#d4a520]/15 to-[#e94560]/10 border border-[#d4a520]/25 text-xs font-semibold text-[#d4a520] mb-2"
+          >
+            {selectedScenario.sceneChip}
+          </motion.div>
           <div className="flex gap-1.5">
             {selectedScenario.turns.map((_, i) => (
               <div
@@ -780,11 +799,11 @@ export default function ConversationPracticePage() {
                 >
                   {entry.role === 'ai' ? (
                     <div className="max-w-[85%] flex gap-2 items-end">
-                      {/* AI avatar */}
-                      <div className="w-8 h-8 rounded-full bg-[#d4a520]/20 flex items-center justify-center flex-shrink-0 text-sm">
-                        🤖
+                      {/* AI avatar — Kuttan */}
+                      <div className="flex-shrink-0">
+                        <Kuttan mood="happy" size="sm" entrance={false} />
                       </div>
-                      <div className="rounded-2xl rounded-bl-md bg-[rgba(39,62,39,0.8)] border border-[rgba(212,165,32,0.2)] px-4 py-3">
+                      <div className="rounded-2xl rounded-bl-md bg-gradient-to-br from-[#d4a520]/25 to-[#d4a520]/10 border border-[#d4a520]/35 px-4 py-3 shadow-[0_2px_10px_rgba(212,165,32,0.15)]">
                         <p className="text-sm leading-relaxed">{entry.text}</p>
 
                         {/* Speaker button on the latest AI message */}
@@ -803,10 +822,10 @@ export default function ConversationPracticePage() {
                   ) : (
                     <div className="max-w-[80%]">
                       <div
-                        className={`rounded-2xl rounded-br-md px-4 py-3 ${
+                        className={`rounded-2xl rounded-br-md px-4 py-3 shadow-[0_2px_10px_rgba(233,69,96,0.18)] ${
                           entry.correct === false
-                            ? 'bg-[#c0392b]/20 border border-[#c0392b]/30'
-                            : 'bg-[#27ae60]/20 border border-[#27ae60]/30'
+                            ? 'bg-gradient-to-br from-[#c0392b]/35 to-[#c0392b]/15 border border-[#c0392b]/40 text-white'
+                            : 'bg-gradient-to-br from-[#e94560]/35 to-[#c0392b]/20 border border-[#e94560]/40 text-white'
                         }`}
                       >
                         <p className="text-sm leading-relaxed">{entry.text}</p>
@@ -827,7 +846,7 @@ export default function ConversationPracticePage() {
                 </motion.div>
               ))}
 
-              {/* AI Speaking Indicator */}
+              {/* AI Speaking / Typing Indicator — Kuttan thinking */}
               {state === 'ai_speaking' && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
@@ -835,10 +854,10 @@ export default function ConversationPracticePage() {
                   className="flex justify-start"
                 >
                   <div className="flex gap-2 items-end">
-                    <div className="w-8 h-8 rounded-full bg-[#d4a520]/20 flex items-center justify-center flex-shrink-0 text-sm">
-                      🤖
+                    <div className="flex-shrink-0">
+                      <Kuttan mood="thinking" size="sm" entrance={false} />
                     </div>
-                    <div className="rounded-2xl bg-[rgba(39,62,39,0.8)] border border-[rgba(212,165,32,0.2)] px-4 py-3">
+                    <div className="rounded-2xl bg-gradient-to-br from-[#d4a520]/25 to-[#d4a520]/10 border border-[#d4a520]/35 px-4 py-3">
                       <div className="flex items-center gap-2">
                         <motion.div
                           animate={{ scale: [1, 1.3, 1] }}
@@ -893,31 +912,34 @@ export default function ConversationPracticePage() {
               <div ref={chatEndRef} />
             </div>
 
-            {/* ─── Feedback Bar ─────────────────────────── */}
+            {/* ─── Kuttan Coaching Between Turns ─────────── */}
             <AnimatePresence>
               {feedback && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
-                  className={`mx-4 mb-3 rounded-xl px-4 py-3 ${
+                  className={`mx-4 mb-3 rounded-xl px-4 py-3 flex items-start gap-3 ${
                     turnResult === 'correct'
-                      ? 'bg-[#27ae60]/15 border border-[#27ae60]/20'
-                      : 'bg-[#d4a520]/15 border border-[#d4a520]/20'
+                      ? 'bg-gradient-to-r from-[#27ae60]/20 to-[#27ae60]/8 border border-[#27ae60]/30'
+                      : 'bg-gradient-to-r from-[#d4a520]/20 to-[#d4a520]/8 border border-[#d4a520]/30'
                   }`}
                 >
-                  <div className="flex items-start gap-2">
-                    <span className="text-base mt-0.5">
-                      {turnResult === 'correct' ? '✅' : '💡'}
-                    </span>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium">{feedback}</p>
-                      {turnResult === 'retry' && selectedScenario && (
-                        <p className="text-xs text-[var(--foreground)]/50 mt-1">
-                          Hint: {selectedScenario.turns[currentTurn].hint}
-                        </p>
-                      )}
-                    </div>
+                  <div className="flex-shrink-0">
+                    <Kuttan
+                      mood={turnResult === 'correct' ? 'excited' : 'pointing'}
+                      size="sm"
+                      entrance={false}
+                    />
+                  </div>
+                  <div className="flex-1 pt-0.5">
+                    <p className="text-sm font-medium leading-snug">{feedback}</p>
+                    {turnResult === 'retry' && selectedScenario && (
+                      <p className="text-xs text-[var(--foreground)]/60 mt-1">
+                        <span className="text-[#d4a520] font-semibold">Kuttan&apos;s hint:</span>{' '}
+                        {selectedScenario.turns[currentTurn].hint}
+                      </p>
+                    )}
                   </div>
                 </motion.div>
               )}
@@ -1117,6 +1139,21 @@ export default function ConversationPracticePage() {
                 <span className="text-lg">⭐</span>
                 <span className="font-bold text-[#d4a520]">+{xpEarned} XP</span>
               </div>
+            </motion.div>
+
+            {/* Kuttan Reflection — "you could actually do this in Germany" */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="flex items-start gap-3 w-full max-w-xs mb-6 p-3 rounded-xl bg-gradient-to-br from-[#d4a520]/15 to-[#e94560]/10 border border-[#d4a520]/25"
+            >
+              <div className="flex-shrink-0">
+                <Kuttan mood="happy" size="sm" entrance={false} />
+              </div>
+              <p className="text-xs text-[var(--foreground)]/75 leading-relaxed pt-1">
+                {selectedScenario.reflection}
+              </p>
             </motion.div>
 
             {/* Action Buttons */}

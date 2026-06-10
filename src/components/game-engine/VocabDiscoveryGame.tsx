@@ -1,13 +1,12 @@
 'use client';
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Volume2 } from 'lucide-react';
 import { speakGerman } from '@/lib/audio/useGermanTTS';
-import { feedbackCorrect, feedbackWrong, feedbackCombo } from '@/lib/feedback';
+import { feedbackWrong, feedbackCombo } from '@/lib/feedback';
 import { ListenBlast } from '@/components/exercise-games/ListenBlast';
 import { WordBuilder } from '@/components/exercise-games/WordBuilder';
-import { WordNinja } from '@/components/exercise-games/WordNinja';
 import type { VocabItem } from '@/lib/content/types';
 
 interface VocabDiscoveryGameProps {
@@ -17,9 +16,9 @@ interface VocabDiscoveryGameProps {
 }
 
 type Phase = 'absorb' | 'challenge';
-type GameType = 'listen-blast' | 'word-builder' | 'word-ninja';
+type GameType = 'listen-blast' | 'word-builder';
 
-const GAME_CYCLE: GameType[] = ['listen-blast', 'word-builder', 'word-ninja'];
+const GAME_CYCLE: GameType[] = ['listen-blast', 'word-builder'];
 
 export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDiscoveryGameProps) {
   const [phase, setPhase] = useState<Phase>('absorb');
@@ -31,19 +30,11 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
   const words = vocabList.slice(0, 6);
   const totalChallenges = Math.min(words.length, 4); // Test max 4 words
 
-  // Auto-advance from absorb when all tapped or after 6 seconds
-  useEffect(() => {
-    if (phase === 'absorb') {
-      const timer = setTimeout(() => setPhase('challenge'), 6000);
-      return () => clearTimeout(timer);
-    }
-  }, [phase]);
+  // Move to the challenge only after the learner heard the set.
+  // No timer auto-skip: surprise transitions were making the first lesson feel broken/rushed.
 
-  useEffect(() => {
-    if (phase === 'absorb' && tappedWords.size >= words.length) {
-      setTimeout(() => setPhase('challenge'), 600);
-    }
-  }, [phase, tappedWords.size, words.length]);
+  // Stay in absorb until the learner explicitly continues; this prevents
+  // surprise jumps while audio/meaning is still being processed.
 
   const handleWordTap = useCallback((vocab: VocabItem) => {
     try { speakGerman(vocab.german, 0.85); } catch {}
@@ -88,7 +79,14 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: -20 }}
             className="w-full max-w-[320px]">
 
-            {sceneHint && <p className="text-xs text-white/30 text-center mb-2">{sceneHint}</p>}
+            {sceneHint && <p className="text-xs text-white/70 text-center mb-2">{sceneHint}</p>}
+
+            <div className="mb-3 rounded-2xl border border-white/10 bg-black/35 px-4 py-3 text-center shadow-xl backdrop-blur-md">
+              <p className="text-sm font-black text-white">Listen to each German word.</p>
+              <p className="text-xs text-white/65 mt-0.5">
+                {tappedWords.size}/{words.length} heard · meaning appears after tap
+              </p>
+            </div>
 
             <div className="grid grid-cols-2 gap-2">
               {words.map((vocab, i) => {
@@ -100,19 +98,22 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
                     transition={{ delay: i * 0.08 }}
                     whileTap={{ scale: 0.92 }}
                     onClick={() => handleWordTap(vocab)}
-                    className={`px-3 py-3 rounded-xl border text-center transition-all ${
+                    className={`px-3 py-3 rounded-xl border text-center transition-all shadow-lg backdrop-blur-md ${
                       isTapped
-                        ? 'bg-[#d4a520]/15 border-[#d4a520]/40'
-                        : 'bg-white/5 border-white/10 animate-pulse'
+                        ? 'bg-[#d4a520]/20 border-[#d4a520]/60 shadow-[#d4a520]/10'
+                        : 'bg-black/35 border-white/15 hover:border-[#d4a520]/45'
                     }`}>
-                    <p className={`text-lg font-black ${isTapped ? 'text-[#d4a520]' : 'text-white/80'}`}>
-                      {vocab.german}
-                    </p>
+                    <div className="flex items-center justify-center gap-1.5">
+                      <Volume2 className={`w-3.5 h-3.5 ${isTapped ? 'text-[#d4a520]' : 'text-white/55'}`} />
+                      <p className={`text-lg font-black ${isTapped ? 'text-[#d4a520]' : 'text-white'}`}>
+                        {vocab.german}
+                      </p>
+                    </div>
                     {isTapped && (
                       <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                        className="text-[10px] text-white/40 mt-0.5">{vocab.english}</motion.p>
+                        className="text-[11px] text-white/70 mt-1">{vocab.english} ✓</motion.p>
                     )}
-                    {!isTapped && <p className="text-[10px] text-white/20 mt-0.5">tap</p>}
+                    {!isTapped && <p className="text-[10px] text-white/45 mt-1">tap to hear</p>}
                   </motion.button>
                 );
               })}
@@ -123,6 +124,18 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
                 <div key={v.id} className={`w-1.5 h-1.5 rounded-full ${tappedWords.has(v.id) ? 'bg-[#d4a520]' : 'bg-white/15'}`} />
               ))}
             </div>
+
+            {tappedWords.size >= words.length && (
+              <motion.button
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => setPhase('challenge')}
+                className="mt-3 w-full rounded-2xl bg-[#d4a520] px-4 py-3 text-sm font-black text-[#1b2d1b] shadow-lg shadow-black/25"
+              >
+                Start the quick check →
+              </motion.button>
+            )}
           </motion.div>
         )}
 
@@ -161,14 +174,6 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
               />
             )}
 
-            {gameType === 'word-ninja' && (
-              <WordNinja
-                prompt={`Find: ${challengeWord.english}`}
-                targets={[challengeWord.german]}
-                distractors={distractors.length >= 3 ? distractors : [...distractors, 'Hallo', 'Danke', 'Bitte'].slice(0, 4)}
-                onResult={handleChallengeResult}
-              />
-            )}
           </motion.div>
         )}
       </AnimatePresence>

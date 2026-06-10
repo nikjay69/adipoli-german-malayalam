@@ -1,0 +1,243 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -872,6 +872,7 @@
+ 
+ export function ConversationRepairStep<T extends string>({
+   title,
++  sceneLabel = 'Goethe Kochi mock',
+   speakerName,
+   speakerLine,
+   learnerName = 'You',
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -767,6 +767,7 @@
+ 
+ export function ConversationSceneStep({
+   title,
++  sceneLabel = 'Goethe Kochi mock',
+   speakerName,
+   speakerLine,
+   learnerName = 'You',
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -781,6 +781,7 @@
+   turnCue = 'Your turn.',
+ }: {
+   title: string;
++  sceneLabel?: string;
+   speakerName: string;
+   speakerLine: string;
+   learnerName?: string;
+@@ -891,6 +892,7 @@
+   turnCue = 'Your turn.',
+ }: {
+   title: string;
++  sceneLabel?: string;
+   speakerName: string;
+   speakerLine: string;
+   learnerName?: string;
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -822,7 +822,7 @@
+           <div className="relative min-h-[17rem] rounded-[1.25rem] bg-gradient-to-br from-[#f7e5bd] via-[#f1d5a0] to-[#c9964d] p-4 text-[#132414] shadow-inner shadow-black/12">
+             <div className="absolute inset-x-4 top-4 flex justify-center">
+               <div className="rounded-xl bg-[#132414]/90 px-4 py-2 text-sm font-black text-[#f1d27a] shadow-lg">
+-                Goethe Kochi
++                {sceneLabel}
+               </div>
+             </div>
+             <div className="absolute bottom-5 left-5 flex flex-col items-center gap-1.5" aria-label={speakerName}>
+@@ -926,7 +926,7 @@
+           <div className="relative min-h-[17rem] rounded-[1.25rem] bg-gradient-to-br from-[#f7e5bd] via-[#f1d5a0] to-[#c9964d] p-4 text-[#132414] shadow-inner shadow-black/12">
+             <div className="absolute inset-x-4 top-4 flex justify-center">
+               <div className="rounded-xl bg-[#132414]/90 px-4 py-2 text-sm font-black text-[#f1d27a] shadow-lg">
+-                Goethe Kochi
++                {sceneLabel}
+               </div>
+             </div>
+             <div className="absolute bottom-5 left-5 flex flex-col items-center gap-1.5" aria-label={speakerName}>
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx → b//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx
+@@ -33,6 +33,7 @@
+           <>
+             <ConversationRepairStep
+               title="Morning class."
++              sceneLabel="Kerala classroom"
+               speakerName="Frau Weber"
+               speakerLine="Guten Morgen."
+               learnerName="You"
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -33,6 +33,7 @@
+           <>
+             <ConversationRepairStep
+               title="Notebook help."
++              sceneLabel="Kerala classroom"
+               speakerName="Frau Weber"
+               speakerLine="Bitte."
+               learnerName="You"
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -48,8 +48,8 @@
+               value={repairChoice}
+               onChange={setRepairChoice}
+               isCorrect={repairCorrect}
+-              wrongFeedback="After help: Danke."
+-              correctFeedback="Good. Danke first; Bitte replies."
++              wrongFeedback="After help: say Danke."
++              correctFeedback="Good. Danke after help. Bitte replies when someone thanks you."
+               cta={<>Fix Danke/Bitte <ArrowRight className="h-5 w-5" /></>}
+               onContinue={() => {}}
+               turnCue="Now answer."
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/polite-exit/page.tsx → b//shared/german-course/src/app/missions/module-1/polite-exit/page.tsx
+@@ -33,6 +33,7 @@
+           <>
+             <ConversationRepairStep
+               title="Leave the room."
++              sceneLabel="Kerala classroom"
+               speakerName="Frau Weber"
+               speakerLine="Auf Wiedersehen."
+               learnerName="You"
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1077,6 +1077,8 @@
+         "data-step-kind=\"conversation-scene\"",
+         "speakerLine: string",
+         "learnerLine: string",
++        "sceneLabel = 'Goethe Kochi mock'",
++        "sceneLabel?: string",
+         "audios: Array<{ src: string; label: string; turnCue?: string }>",
+         "lg:col-span-2 lg:mt-1",
+         "space-y-3 rounded-[1.55rem] border border-white/12 bg-black/18 p-3",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1123,6 +1123,15 @@
+     if missing_shared:
+         fail(f"shared mobile action controls missing snippets: {missing_shared}")
+ 
++    m1_scene_sources = {
++        "greet-frau-weber": (ROOT / "src/app/missions/module-1/greet-frau-weber/page.tsx").read_text(encoding="utf-8"),
++        "please-thanks": (ROOT / "src/app/missions/module-1/please-thanks/page.tsx").read_text(encoding="utf-8"),
++        "polite-exit": (ROOT / "src/app/missions/module-1/polite-exit/page.tsx").read_text(encoding="utf-8"),
++    }
++    missing_m1_scene_labels = [name for name, src in m1_scene_sources.items() if 'sceneLabel="Kerala classroom"' not in src]
++    if missing_m1_scene_labels:
++        fail(f"Module 1 conversation scenes must label the Kerala classroom, not hard-code Goethe mock: {missing_m1_scene_labels}")
++
+     old_inline_patterns = [
+         "mt-7 flex flex-wrap gap-3",
+         "mt-8 flex flex-wrap gap-3",
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -45,6 +45,8 @@
+     'disabled={!modelAudioFinished}',
+     'const primaryDisabled = !modelAudioFinished || (requireTyped && continueDisabled)',
+     'onEnded={() => setModelAudioFinished(true)}',
++    "sceneLabel = 'Goethe Kochi mock'",
++    'sceneLabel?: string',
+     'Optional. Speak first.',
+     'Finish the scene audio to unlock the next action.',
+     'Next action ready.',
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -81,6 +81,7 @@
+     if (source.includes('<BuilderStep') || source.includes('<ProductionStep')) throw new Error(`${name}: converted immersive path must not use builder/production chore steps`);
+     if (!hasVoiceFirstRepair && !hasVoiceOnlyReply && !source.includes('requireTyped={false}')) throw new Error(`${name}: phone-first path must make tiny writing optional after audio, not a gate`);
+     if (source.includes('title="Say it, then type it."')) throw new Error(`${name}: chore copy returned on immersive step`);
++    if (name.startsWith('m1-') && !source.includes('sceneLabel="Kerala classroom"')) throw new Error(`${name}: Module 1 must show the Kerala classroom scene label, not a generic Goethe mock label`);
+   }
+   const selfIntro = fs.readFileSync(path.join(ROOT, 'src/app/missions/module-2/self-intro/page.tsx'), 'utf8');
+   if (!selfIntro.includes('data-testid="flat-question-card"') || !selfIntro.includes('<NativeAudio src={currentQuestionReference.audio} label="Question" compact bare />')) {
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -48,8 +48,8 @@
+               value={repairChoice}
+               onChange={setRepairChoice}
+               isCorrect={repairCorrect}
+-              wrongFeedback="After help: say Danke."
+-              correctFeedback="Good. Danke after help. Bitte replies when someone thanks you."
++              wrongFeedback="After help: Danke."
++              correctFeedback="Good. Danke first; Bitte replies."
+               cta={<>Fix Danke/Bitte <ArrowRight className="h-5 w-5" /></>}
+               onContinue={() => {}}
+               turnCue="Now answer."
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1131,6 +1131,12 @@
+     missing_m1_scene_labels = [name for name, src in m1_scene_sources.items() if 'sceneLabel="Kerala classroom"' not in src]
+     if missing_m1_scene_labels:
+         fail(f"Module 1 conversation scenes must label the Kerala classroom, not hard-code Goethe mock: {missing_m1_scene_labels}")
++    please_thanks_src = m1_scene_sources["please-thanks"]
++    if "Danke after help. Bitte replies when someone thanks you." in please_thanks_src:
++        fail("please-thanks correct feedback is too explanatory for the one-screen scene; keep it short")
++    for required_short in ["wrongFeedback=\"After help: Danke.\"", "correctFeedback=\"Good. Danke first; Bitte replies.\""]:
++        if required_short not in please_thanks_src:
++            fail(f"please-thanks one-screen scene lost concise repair copy: {required_short}")
+ 
+     old_inline_patterns = [
+         "mt-7 flex flex-wrap gap-3",
+  ┊ review diff
+a//tmp/adipoli_iteration21_checkpoint.txt → b//tmp/adipoli_iteration21_checkpoint.txt
+@@ -0,0 +1,10 @@
++
++## 2026-05-31T05:16:44+02:00 — iteration 21
++- Source/docs inspected: COURSE_OPERATING_BRIEF, PRODUCT_DIRECTION_RESET, WHOLE_COURSE_MISSION_SPINE, AUTONOMOUS_EXECUTION_PLAN, PREMIUM_QUALITY_BAR, current M1/M2 QC/log tail, M1 mission pages, shared MissionUI, qa_mission_pilot.
++- Files changed: src/app/missions/module-1/please-thanks/page.tsx; scripts/qa_mission_pilot.py.
++- UX/text reductions made: tightened the M1 please-thanks one-screen repair feedback from an explanatory sentence to a short cue: `Good. Danke first; Bitte replies.` Kept the flow as one scene: Frau Weber says `Bitte.` → learner answers aloud → one tiny repair → inline win. Added a QA guard so the longer explanatory copy does not return.
++- M1/M2 learner path status: M1 please-thanks remains one screen, no builder, no typing gate, no separate recognition page; M1/M2 reviewed missions stay voice-first and audio-gated.
++- Images/video/animation: intentionally skipped new images/video this run; existing CSS two-person classroom scene reduced text better than adding art. Motion stayed reduced-motion safe.
++- QA run + PASS/WEAK/FAIL: PASS `python3 scripts/qa_mission_pilot.py`; PASS `node scripts/qa_module2_production_mobile.mjs`; PASS targeted `npx eslint src/app/missions/module-1/please-thanks/page.tsx src/app/missions/module-2/_components/MissionUI.tsx`; PASS curls for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, M1 mission routes, and `/missions/module-2/self-intro`. Browser QA on `/missions/module-1/please-thanks`: audio unlocked repair choices, correct answer showed inline win, nav/search hidden, console clean.
++- Kuttan/name recommendation: unchanged — public-facing adult-safe name should likely be Arun or Kiran, with Kuttan kept only as family nickname if Boss approves. No rename done.
++- Next best lane: trim the visible next-mission card copy after M1 inline wins, 25m.
+
+session_id: 20260531_051309_774e3f
+Iteration 21 complete.
+
+Changed:
+- /shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+- /shared/german-course/scripts/qa_mission_pilot.py
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Product fix:
+- Tightened M1 `please-thanks` repair copy.
+- Kept it as one in-place conversation scene:
+  Frau Weber says `Bitte.` → learner replies aloud `Danke.` → one tiny repair → inline win.
+- Removed the longer explanatory feedback:
+  `Good. Danke after help. Bitte replies when someone thanks you.`
+- Replaced with shorter visible copy:
+  `Good. Danke first; Bitte replies.`
+- Added QA guard so that long explanatory copy does not return.
+
+Verified:
+- PASS `python3 scripts/qa_mission_pilot.py`
+- PASS `node scripts/qa_module2_production_mobile.mjs`
+- PASS `npx eslint src/app/missions/module-1/please-thanks/page.tsx src/app/missions/module-2/_components/MissionUI.tsx`
+- PASS route curls:
+  - `/`
+  - `/intro`
+  - `/learn`
+  - `/learn/1`
+  - `/learn/2`
+  - `/missions/module-1/greet-frau-weber`
+  - `/missions/module-1/please-thanks`
+  - `/missions/module-1/polite-exit`
+  - `/missions/module-2/self-intro`
+- Browser QA on `/missions/module-1/please-thanks`:
+  - audio unlocked repair choices
+  - correct `Danke.` showed inline win
+  - nav/search hidden
+  - console clean
+
+Checkpoint appended:
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Caveat:
+- Repo dirty tree is still huge/inherited. I stayed scoped and did not commit/push.
+
+Kuttan recommendation unchanged:
+- Public adult-safe name should likely be Arun or Kiran.
+- Keep Kuttan only as family nickname if Boss approves.
+- No rename done.
+
+Next lane: trim M1 next-mission card copy, 25m.

@@ -11,9 +11,10 @@ import { NarrativeIntro, ContextualVocab, DecisionPoint, SceneConclusion } from 
 import { GameRenderer } from '@/components/game-engine/GameRenderer';
 import { buildGameSequence } from '@/lib/game-engine/scene-builder';
 import { SceneBackground } from '@/components/visual';
-import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop } from '@/components/exercise-games';
+import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop, FreeTextInput } from '@/components/exercise-games';
+import { matchesAnswer } from '@/lib/answer-match';
 import { GameButton, ChoiceButton, Confetti, Celebration, ModuleComplete } from '@/components/game';
-import { CharacterGuide, KuttanSpeech, mapMoodToImage } from '@/components/character';
+import { CharacterGuide, KuttanSpeech, Kuttan, mapMoodToImage } from '@/components/character';
 import { VideoPlayer } from '@/components/media/VideoPlayer';
 import { getRandomMessage } from '@/lib/content/dialogue';
 import { getVideoScript } from '@/lib/content/video-scripts';
@@ -102,8 +103,33 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   // Combo tracking for exercises
   const [combo, setCombo] = useState(0);
   const [maxCombo, setMaxCombo] = useState(0);
+  // Wrong-attempt tracking for first-try detection (per question)
+  const [wrongAttempts, setWrongAttempts] = useState(0);
+  // Extra confetti bursts (beyond exercise-correct) — fires for micro-wins
+  const [confettiBurst, setConfettiBurst] = useState(0);
+  // Score pulse trigger — increments each time correctCount increases, drives header animation
+  const [scorePulse, setScorePulse] = useState(0);
+  // Combo pulse trigger — drives bounce animation on increment
+  const [comboPulse, setComboPulse] = useState(0);
   // Surprise events
   const [surprise, setSurprise] = useState<SurpriseEvent | null>(null);
+
+  // Helper: trigger confetti burst for micro-wins
+  const triggerConfetti = () => setConfettiBurst(prev => prev + 1);
+  // Helper: haptic feedback for wrong answers (mobile)
+  const buzzWrong = () => {
+    if (typeof window !== 'undefined') {
+      try { navigator.vibrate?.(80); } catch { /* noop */ }
+    }
+  };
+  // Helper: register a correct answer → bumps score pulse, combo pulse,
+  // and triggers confetti on first-try + 3-combo milestones.
+  const registerCorrect = (firstTry: boolean, newCombo: number) => {
+    setScorePulse(p => p + 1);
+    setComboPulse(p => p + 1);
+    if (firstTry) triggerConfetti();
+    if (newCombo > 0 && newCombo % 3 === 0) triggerConfetti();
+  };
 
   // ── Audio: TTS + Ambient Soundscape ──
   const { speak: speakGerman, stop: stopTTS } = useGermanTTS();
@@ -318,6 +344,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     setVocabEncounter(null);
     setVocabSelectedOption(null);
     setVocabAnswerState('default');
+    setWrongAttempts(0);
   };
 
   const suggestedGame = suggestedGameForModule;
@@ -477,7 +504,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     } else if (step.type === 'game-suggest') {
       goToExercises();
     } else if (step.type === 'exercise') {
-      if (step.index < allExercises.length - 1) { setStep({ type: 'exercise', index: step.index + 1 }); setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false); setTypedAnswer(''); setTypeAnswerState('default'); setSpeakingResult(null); setOrderPlaced([]); setOrderChecked(false); setOrderCorrect(false); }
+      if (step.index < allExercises.length - 1) { setStep({ type: 'exercise', index: step.index + 1 }); setSelectedAnswer(null); setAnswerState('default'); setMatchPairs({}); setMatchSelected(null); setMatchChecked(false); setTypedAnswer(''); setTypeAnswerState('default'); setSpeakingResult(null); setOrderPlaced([]); setOrderChecked(false); setOrderCorrect(false); setWrongAttempts(0); }
       else if (hasStory) setStep({ type: 'scene-conclusion' });
       else finishLesson();
     }
@@ -529,16 +556,19 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     setSelectedAnswer(answer);
     setTotalAttempted(prev => prev + 1);
     const exercise = allExercises[(step as { type: 'exercise'; index: number }).index];
-    const isCorrect = answer === exercise.correctAnswer;
+    const isCorrect = matchesAnswer(answer, exercise.correctAnswer);
 
     if (isCorrect) {
       const newCombo = combo + 1;
+      const firstTry = wrongAttempts === 0;
       setCombo(newCombo);
       setMaxCombo(prev => Math.max(prev, newCombo));
       setAnswerState('correct');
       setCorrectCount(prev => prev + 1);
       setKuttanMsg(getRandomMessage('correct'));
       feedbackCombo(newCombo);
+      registerCorrect(firstTry, newCombo);
+      setWrongAttempts(0);
       // Check for surprise on correct answer
       const surpriseEvent = checkForSurprise('correct_answer');
       if (surpriseEvent) { setSurprise(surpriseEvent); setTimeout(() => setSurprise(null), 4000); }
@@ -546,7 +576,9 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     } else {
       if (combo > 2) feedbackComboBreak();
       else feedbackWrong();
+      buzzWrong();
       setCombo(0);
+      setWrongAttempts(prev => prev + 1);
       setAnswerState('incorrect');
       setKuttanMsg(getRandomMessage('wrong'));
       setTimeout(() => goNext(), 2000);
@@ -568,9 +600,9 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             lesson.vocabulary.forEach(v => { learnVocabulary(v.id); addSRSCard(createCard(v.id)); });
             feedbackCelebration();
           }
-          router.push('/');
+          router.push(`/learn/${module.id}`);
         }}
-        onExit={() => router.push('/')}
+        onExit={() => router.push(`/learn/${module.id}`)}
       />
     );
   }
@@ -606,7 +638,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 Stay
               </button>
               <button
-                onClick={() => { stopAmbience(); router.push('/'); }}
+                onClick={() => { stopAmbience(); router.push(`/learn/${module.id}`); }}
                 className="flex-1 py-2.5 rounded-xl bg-[#c0392b] text-white font-medium text-sm"
               >
                 Leave
@@ -617,12 +649,15 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       )}
 
       <Confetti isActive={answerState === 'correct'} duration={1500} />
+      {/* Micro-win confetti: vocab correct, first-try, 3-combo milestones.
+          Keyed by burst counter so each trigger remounts and fires fresh. */}
+      <Confetti key={`burst-${confettiBurst}`} isActive={confettiBurst > 0} duration={1200} />
       <Celebration
         isVisible={showCelebration}
         title="Lesson Complete!"
         subtitle={lesson.title}
         xpEarned={0}
-        onContinue={() => { setShowCelebration(false); router.push('/'); }}
+        onContinue={() => { setShowCelebration(false); router.push(`/learn/${module.id}`); }}
       />
 
       {/* Module Completion Celebration */}
@@ -746,22 +781,29 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
             />
           </div>
 
-          {/* Score / Counter */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-md shadow-lg">
+          {/* Score / Counter — animated on increment */}
+          <motion.div
+            key={`score-${scorePulse}`}
+            animate={scorePulse > 0 ? { scale: [1, 1.15, 1] } : undefined}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl backdrop-blur-md shadow-lg"
+          >
              <Trophy className="w-3.5 h-3.5 text-[#d4a520]" />
              <span className="text-xs font-black text-white/80 tabular-nums">
                 {correctCount}
              </span>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Combo meter — shows during exercises */}
+        {/* Combo meter — persistent across all lesson steps (top retention lever) */}
         <AnimatePresence>
-          {step.type === 'exercise' && (combo > 0 || maxCombo > 0) && (
-            <motion.div 
+          {(combo > 0 || maxCombo > 0) && step.type !== 'complete' && (
+            <motion.div
+              key={`combo-${comboPulse}`}
               initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0, scale: comboPulse > 0 ? [1, 1.04, 1] : 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.35, ease: 'easeOut' }}
               className="mt-2"
             >
               <ComboMeter combo={combo} maxCombo={maxCombo} />
@@ -804,6 +846,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               exit={{ opacity: 0, y: -15 }}
               className="flex-1 flex flex-col items-center justify-center text-center"
             >
+              <Kuttan mood="waving" size="md" />
               <CharacterGuide messages={kuttanMsg} mood="excited" size="sm" />
 
               <motion.div
@@ -889,7 +932,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                   <p className="text-center text-sm text-[var(--foreground)]/50 italic mb-2">{vocabEncounter.contextGerman}</p>
                 )}
                 <h2 className="text-lg font-bold text-center mb-5">{vocabEncounter.prompt}</h2>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {vocabEncounter.options.map((opt, i) => {
                     const isSelected = vocabSelectedOption === i;
                     const isCorrectOpt = i === vocabEncounter.correctIndex;
@@ -904,12 +947,22 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                           if (vocabAnswerState !== 'default') return;
                           setVocabSelectedOption(i);
                           if (i === vocabEncounter.correctIndex) {
+                            const firstTry = wrongAttempts === 0;
+                            const newCombo = combo + 1;
+                            setCombo(newCombo);
+                            setMaxCombo(prev => Math.max(prev, newCombo));
                             setVocabAnswerState('correct');
                             feedbackCorrect();
+                            triggerConfetti();
+                            registerCorrect(firstTry, newCombo);
+                            setWrongAttempts(0);
                             setTimeout(() => goNext(), 1200);
                           } else {
                             setVocabAnswerState('wrong');
                             feedbackWrong();
+                            buzzWrong();
+                            setCombo(0);
+                            setWrongAttempts(prev => prev + 1);
                             setTimeout(() => goNext(), 2000);
                           }
                         }}
@@ -1121,10 +1174,20 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                             const correct = (vocabEncounter.correctText || shownVocab[step.index].german).toLowerCase().trim();
                             const isRight = typedAnswer.toLowerCase().trim() === correct;
                             if (isRight) {
+                              const firstTry = wrongAttempts === 0;
+                              const newCombo = combo + 1;
+                              setCombo(newCombo);
+                              setMaxCombo(prev => Math.max(prev, newCombo));
                               setVocabAnswerState('correct'); feedbackCorrect();
+                              triggerConfetti();
+                              registerCorrect(firstTry, newCombo);
+                              setWrongAttempts(0);
                               setTimeout(() => { setTypedAnswer(''); advanceFromVocab(); }, 1400);
                             } else {
                               setVocabAnswerState('wrong'); feedbackWrong();
+                              buzzWrong();
+                              setCombo(0);
+                              setWrongAttempts(prev => prev + 1);
                               setTimeout(() => { setTypedAnswer(''); advanceFromVocab(); }, 2000);
                             }
                           }
@@ -1140,10 +1203,20 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                         const correct = (vocabEncounter.correctText || shownVocab[step.index].german).toLowerCase().trim();
                         const isRight = typedAnswer.toLowerCase().trim() === correct;
                         if (isRight) {
+                          const firstTry = wrongAttempts === 0;
+                          const newCombo = combo + 1;
+                          setCombo(newCombo);
+                          setMaxCombo(prev => Math.max(prev, newCombo));
                           setVocabAnswerState('correct'); feedbackCorrect();
+                          triggerConfetti();
+                          registerCorrect(firstTry, newCombo);
+                          setWrongAttempts(0);
                           setTimeout(() => { setTypedAnswer(''); advanceFromVocab(); }, 1400);
                         } else {
                           setVocabAnswerState('wrong'); feedbackWrong();
+                          buzzWrong();
+                          setCombo(0);
+                          setWrongAttempts(prev => prev + 1);
                           setTimeout(() => { setTypedAnswer(''); advanceFromVocab(); }, 2000);
                         }
                       }} disabled={vocabAnswerState !== 'default' || !typedAnswer.trim()} variant="primary">Go</GameButton>
@@ -1155,7 +1228,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                     )}
                   </div>
                 ) : (
-                <div className="space-y-2.5">
+                <div className="space-y-3">
                   {vocabEncounter.options.map((option, idx) => {
                     const isSelected = vocabSelectedOption === idx;
                     const isCorrectOption = idx === vocabEncounter.correctIndex;
@@ -1173,19 +1246,30 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
+                        className="min-h-[56px] py-0.5"
                       >
                         <ChoiceButton
                           onClick={() => {
                             if (vocabAnswerState !== 'default') return;
                             setVocabSelectedOption(idx);
                             if (idx === vocabEncounter.correctIndex) {
+                              const firstTry = wrongAttempts === 0;
+                              const newCombo = combo + 1;
+                              setCombo(newCombo);
+                              setMaxCombo(prev => Math.max(prev, newCombo));
                               setVocabAnswerState('correct');
                               feedbackCorrect();
+                              triggerConfetti();
+                              registerCorrect(firstTry, newCombo);
+                              setWrongAttempts(0);
                               playVocabAudio(shownVocab[step.index].id).catch(() => {});
                               setTimeout(() => advanceFromVocab(), 1400);
                             } else {
                               setVocabAnswerState('wrong');
                               feedbackWrong();
+                              buzzWrong();
+                              setCombo(0);
+                              setWrongAttempts(prev => prev + 1);
                               setTimeout(() => advanceFromVocab(), 2000);
                             }
                           }}
@@ -1435,26 +1519,46 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                     setTotalAttempted(prev => prev + 1);
                     if (correct) {
                       const newCombo = combo + 1;
+                      const firstTry = wrongAttempts === 0;
                       setCombo(newCombo);
                       setMaxCombo(prev => Math.max(prev, newCombo));
                       setCorrectCount(prev => prev + 1);
                       setAnswerState('correct');
                       setKuttanMsg(getRandomMessage('correct'));
                       feedbackCombo(newCombo);
+                      registerCorrect(firstTry, newCombo);
+                      setWrongAttempts(0);
                       const surpriseEvent = checkForSurprise('correct_answer');
                       if (surpriseEvent) { setSurprise(surpriseEvent); setTimeout(() => setSurprise(null), 4000); }
                       setTimeout(() => goNext(), 1000);
                     } else {
                       if (combo > 2) feedbackComboBreak(); else feedbackWrong();
+                      buzzWrong();
                       setCombo(0);
+                      setWrongAttempts(prev => prev + 1);
                       setAnswerState('incorrect');
                       setKuttanMsg(getRandomMessage('wrong'));
                       setTimeout(() => goNext(), 1800);
                     }
                   };
 
-                  // TYPE-ANSWER & FREE-TEXT → WordScramble
+                  // TYPE-ANSWER & FREE-TEXT:
+                  //  - Single word / short → WordScramble (letter tiles)
+                  //  - Sentence / array of accepted answers → FreeTextInput
                   if (exercise.type === 'type-answer' || exercise.type === 'free-text') {
+                    const isSentence =
+                      Array.isArray(exercise.correctAnswer) ||
+                      correctStr.trim().includes(' ') ||
+                      correctStr.length > 10;
+                    if (isSentence) {
+                      return (
+                        <FreeTextInput
+                          hint={exercise.questionGerman || ''}
+                          answer={exercise.correctAnswer}
+                          onResult={handleGameResult}
+                        />
+                      );
+                    }
                     return <WordScramble hint={exercise.questionGerman || ''} answer={correctStr.trim()} onResult={handleGameResult} />;
                   }
 
@@ -1491,7 +1595,6 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                           <p className="text-lg font-bold text-[#d4a520]">{correctStr}</p>
                         </div>
                         <SpeakButton expectedText={correctStr} onResult={(_, __, isMatch) => handleGameResult(isMatch)} size="lg" label="Say it!" />
-                        <button onClick={() => handleGameResult(false)} className="text-xs text-[var(--foreground)]/30 underline">Skip</button>
                       </div>
                     );
                   }
@@ -1504,6 +1607,16 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                   // Ultimate fallback — WordBank style
                   return <WordScramble hint={exercise.question} answer={correctStr.trim()} onResult={handleGameResult} />;
                 })()}
+
+                {/* Universal skip — advances without scoring */}
+                <div className="mt-3 flex justify-center">
+                  <button
+                    onClick={() => goNext()}
+                    className="text-[11px] text-[var(--foreground)]/35 hover:text-[var(--foreground)]/60 underline underline-offset-2"
+                  >
+                    Skip this exercise
+                  </button>
+                </div>
 
 
 

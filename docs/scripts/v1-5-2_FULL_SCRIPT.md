@@ -1,10 +1,10 @@
-# v1-5-2 — Three Real Life Scenarios: Airport, Café & First Meeting (FULL SCRIPT)
+# v1-5-2 — Three Mock Scenarios: Airport, Café & First Meeting (FULL SCRIPT)
 
 > **Module:** 1 | **Lesson:** 1-5 | **Duration:** 10:00 target
-> **Teaching Goal:** Apply greetings and personal info in three high-stakes situations for new arrivals.
+> **Teaching Goal:** Rehearse greetings + self-intro in three high-stakes situations the learner will meet once they fly to Germany. Setting stays in Kerala — this is a Goethe Kochi dress rehearsal.
 > **A1 Exam Link:** Sprechen Teil 1 (Self-intro) and Teil 2/3 (Requesting/Responding to information)
-> **Status:** NEW — v1.0
-> **Created:** 2026-03-26
+> **Status:** REWRITTEN — v2.0 (Kerala-setting compliant per A1_STORY_BIBLE)
+> **Created:** 2026-03-26 · **Updated:** 2026-04-15
 
 ---
 
@@ -18,87 +18,91 @@
 
 ## Section 1: Hook — The Three First Moments (0:12–1:00)
 
-### Visual: [Map of Germany with three pins: Frankfurt Airport / Street Café / Student Apartment]
+### Visual: [Goethe Kochi classroom. Frau Weber at the front, three folders on her desk labeled "Flughafen", "Café", "WG". Classmates settling in.]
 ### Narration: [ENERGY: high, visual]
-"You land in Germany. What are the first three things you'll actually do?
+"Today at Goethe Kochi, Frau Weber has set up something different. Three mock scenarios. A dress rehearsal — for the day you actually fly.
 
-[SCENE: Pins being clicked]
-1. You pass through **Immigration** at the airport.
-2. You buy your first **German coffee** (not chai, sorry! 😄).
-3. You meet your first **neighbor or housemate**.
+[SCENE: Frau Weber holds up folders one by one]
+1. **Flughafen** — passing through Immigration when you land.
+2. **Café** — buying your first German coffee (not chai, sorry! 😄).
+3. **WG** — meeting your first housemate.
 
-In this video, we're not just practicing German. We're rehearsing your first 24 hours in Germany.
+*'Naale Germany-lekku parakkunna divasam-nte oru rehearsal aanu ithu,'* Frau Weber explains. *Today we rehearse so that day you won't freeze.* Kuttan sits up straighter.
 
 *Panic cheyyanda. Ithi-nne nammal 'survival kit' ennu parayum. Ready?*"
 
 ---
 
-## Section 2: Scenario 1 — At the Airport Immigration (Beim Grenzschutz) (1:00–3:30)
+## Section 2: Scenario 1 — The Mock Immigration Counter (1:00–3:30)
 
-### Visual: [SCENE: The immigration counter at Frankfurt airport. A serious-looking officer in a blue uniform.]
+### Visual: [SCENE: A desk at the front of the Goethe Kochi classroom. Frau Weber sits behind it wearing a pretend blue badge. A folder and a passport-sized cardboard prop on the desk. A line of classmates waiting their turn.]
 ### Narration: [ENERGY: cautious, respectful]
-"You're tired from a long flight from Kochi or Bangalore. You reach the counter.
+"First up — the Flughafen counter. Frau Weber plays a German immigration officer. This is full formal — Sie, Herr/Frau, polite everything.
+
+Kuttan walks up. He's nervous, but this is just practice. The dialogue goes:
 
 **Officer:** Guten Tag.
-**You:** **Guten Tag!**
+**Kuttan:** **Guten Tag!**
 **Officer:** Ihren Pass, bitte? (Your passport, please?)
-**You:** **Hier, bitte. Mein Pass.** (Here, please. My passport.)
+**Kuttan:** **Hier, bitte. Mein Pass.** (Here, please. My passport.)
 **Officer:** Danke. Woher kommen Sie? (Where are you from?)
-**You:** **Ich komme aus Indien.**
+**Kuttan:** **Ich komme aus Indien.**
 **Officer:** [Checking] Was machen Sie in Deutschland? (What are you doing in Germany?)
-**You:** **Ich studiere hier.** (I'm studying here.) 
+**Kuttan:** **Ich studiere hier.** (I'm studying here.)
   **or** **Ich arbeite hier.** (I'm working here.)
-**Officer:** [Stamping] Willkommen in Deutschland! 
-**You:** **Vielen Dank! Auf Wiedersehen!**
+**Officer:** [Stamping the prop passport] Willkommen in Deutschland!
+**Kuttan:** **Vielen Dank! Auf Wiedersehen!**
 
-*Payyam, short sentences are safe. Do not over-explain. 'Hier, bitte' and 'Ich komme aus Indien' are your best buddies.*
+Frau Weber looks up: *'Sehr gut! Short sentences, safe. Don't over-explain.'* 'Hier, bitte' and 'Ich komme aus Indien' are your best buddies.
 
-⏸️ **Try the answer:** 🔊 'Hier, bitte — mein Pass.' ⏸️"
+⏸️ **Your turn at the mock counter:** 🔊 'Hier, bitte — mein Pass.' ⏸️"
 
 ---
 
-## Section 3: Scenario 2 — Ordering at a German Café (Im Café) (3:30–5:30)
+## Section 3: Scenario 2 — The Mock Café Counter (3:30–5:30)
 
-### Visual: [SCENE: A cozy café. A board shows 'Kaffee', 'Cappuccino', 'Milchkaffee'.]
+### Visual: [SCENE: Goethe Kochi courtyard turned into a café. A foldable counter, a menu board written in chalk — 'Kaffee', 'Cappuccino', 'Milchkaffee'. Akhil, your classmate from Trivandrum, plays the barista. A few Euro coin props on the counter.]
 ### Narration: [ENERGY: sensory, warm]
-"Now you're in the city. You need caffeine.
+"Now the Café mock. Akhil steps behind the counter, grinning. *'Ich bin der barista, machaa!'* He's used to Kochi café banter — but today, strict German.
 
-**Staff:** Guten Tag! Bitte schön?
-**You:** **Guten Tag! Einen Kaffee, bitte.** (A coffee, please.)
-**Staff:** Milch und Zucker? (Milk and sugar?)
-**You:** **Nur Milch, bitte. Danke.** (Only milk, please. Thanks.)
-**Staff:** Klein oder groß? (Small or large?)
-**You:** **Groß, bitte.** (Large, please.)
-**Staff:** Drei Euro vierzig, bitte.
-**You:** [Paying] **Hier, bitte.**
-**Staff:** Danke!
-**You:** **Danke schön! Auf Wiedersehen!**
+**Akhil:** Guten Tag! Bitte schön?
+**Kuttan:** **Guten Tag! Einen Kaffee, bitte.** (A coffee, please.)
+**Akhil:** Milch und Zucker? (Milk and sugar?)
+**Kuttan:** **Nur Milch, bitte. Danke.** (Only milk, please. Thanks.)
+**Akhil:** Klein oder groß? (Small or large?)
+**Kuttan:** **Groß, bitte.** (Large, please.)
+**Akhil:** Drei Euro vierzig, bitte.
+**Kuttan:** [Paying with a prop coin] **Hier, bitte.**
+**Akhil:** Danke!
+**Kuttan:** **Danke schön! Auf Wiedersehen!**
 
 Note the word **'Einen'** before Kaffee. Don't worry about the grammar for now. Just memorize the phrase:
 🔊 **'Einen Kaffee, bitte.'**
 
-*Germany-il 'tea' venam enkil 'Einen Tee, bitte' ennu paranjaal mathi. Pakshe nammude Malabar chaya expect cheyyaruthu! 😄*
+*Germany-il 'tea' venam enkil 'Einen Tee, bitte' ennu paranjaal mathi. Pakshe nammude Malabar chaya expect cheyyaruthu!* 😄
 
-⏸️ **Your turn:** Order a coffee with milk. ⏸️ 🔊 **'Einen Kaffee mit Milch, bitte.'**"
+⏸️ **Your turn to order:** Order a coffee with milk. ⏸️ 🔊 **'Einen Kaffee mit Milch, bitte.'**"
 
 ---
 
-## Section 4: Scenario 3 — Meeting Your New Housemate (In der WG) (5:30–7:30)
+## Section 4: Scenario 3 — The Mock WG Meeting (5:30–7:30)
 
-### Visual: [SCENE: An apartment door. A friendly German student (Anna) opens it.]
+### Visual: [SCENE: Two chairs at the back of the Goethe Kochi classroom, staged as a mock apartment door. Reshma, another classmate, plays the new housemate "Anna" who'll greet the learner in the future WG.]
 ### Narration: [ENERGY: friendly, casual]
-"You reach your new apartment (usually a 'WG' — shared apartment).
+"Last one. Reshma plays Anna — someone you'd meet at your first WG, your future shared apartment in Germany. This is full informal: *du* mode.
 
-**Anna:** Hallo! Ich bin Anna. Und du?
-**You:** **Hallo Anna! Ich bin [name]. Freut mich!**
+**Anna (Reshma):** Hallo! Ich bin Anna. Und du?
+**Kuttan:** **Hallo Anna! Ich bin Kuttan. Freut mich!**
 **Anna:** Freut mich auch! Wie geht's?
-**You:** **Gut, danke! Und dir?**
+**Kuttan:** **Gut, danke! Und dir?**
 **Anna:** Super! Willkommen in der WG!
-**You:** **Danke! Bis später!** (Thanks! See you later!)
+**Kuttan:** **Danke! Bis später!** (Thanks! See you later!)
 
-This is informal. We use **du**. We use **Hallo**. We use **Wie geht's?**.
+Notice: informal. We use **du**. We use **Hallo**. We use **Wie geht's?**.
 
-*Nammude roommate-inu 'Guten Tag, wie heißen Sie?' paranjaal athu oru formality-ude overload aakum. Stick to 'Hallo' and 'du'.*
+*Nammude WG roommate-inu 'Guten Tag, wie heißen Sie?' paranjaal athu oru formality-ude overload aakum. Stick to 'Hallo' and 'du'.*
+
+Frau Weber from the side: *'Very good — formal at the Amt, informal at the WG. Read the room.'*
 
 ⏸️ **Friendly response:** 🔊 'Hallo! Ich bin [Name]. Freut mich!' ⏸️"
 
@@ -116,7 +120,7 @@ This is informal. We use **du**. We use **Hallo**. We use **Wie geht's?**.
 | Leaving a friend | **'Bis später!'** |
 
 ### Narration: [ENERGY: crisp, summary]
-"These are your bricks. You can build a bridge with them.
+"These are your bricks. Today we rehearsed three scenes in one classroom — but the dialogues are exactly what will play out when you actually fly. You can build a bridge with these four phrases alone.
 
 [EXAM-TIP]
 In the exam, when you hear a question, listen for the **first word**.
@@ -130,9 +134,9 @@ If you know which question word is being used, your half of the dialogue is alre
 
 ## Section 6: Active Recall Drill — Fast Finish (8:45–9:30)
 
-### Visual: [Quick scenario flashcards]
+### Visual: [Quick scenario flashcards — Frau Weber holding each up]
 ### Narration: [ENERGY: fast, drill]
-"Quickly! Finish the sentence!
+"Frau Weber flips cards. Finish the phrase!
 
 **1.** You're at immigration. Say 'Here is my passport.'
 ⏸️ [pause] 🔊 **Hier, bitte. Mein Pass.**
@@ -150,13 +154,13 @@ If you know which question word is being used, your half of the dialogue is alre
 
 ## Section 7: Outro & Summary (9:30–10:00)
 
-### Visual: [Summary card: Airport, Café, WG. You have the tools.]
+### Visual: [Kuttan walking out of Goethe Kochi, folders under arm. Summary card overlay: Airport, Café, WG. You have the tools.]
 ### Narration: [ENERGY: inspiring]
-"You have survival phrases for your first day. You're no longer just a tourist; you're starting to function in German.
+"You rehearsed three scenes today — in one classroom, in Kochi. But the dialogues will be word-for-word real the day you land. You're no longer just a tourist; you're starting to function in German.
 
 In the next video, we'll dive deep into the formal vs informal system to make sure you never accidentally offend a boss or sound too cold to a friend.
 
-Keep practicing. Your first conversation is closer than you think.
+Keep practicing. Your first real conversation is closer than you think.
 
 **Tschüss! Bis bald!**"
 
@@ -164,10 +168,11 @@ Keep practicing. Your first conversation is closer than you think.
 
 ## Quality Checklist
 
-- [x] Hook is scenario-based and motivating
+- [x] Hook is scenario-based and motivating — Goethe Kochi mock rehearsal frame
 - [x] Three high-value scenarios covered (Immigration, Café, WG)
 - [x] "Einen Kaffee, bitte" taught as a fixed functional phrase
-- [x] direct Malayalam bridge for cultural nuance (Roommate informal vs formal)
+- [x] Direct Malayalam bridge for cultural nuance (Roommate informal vs formal)
+- [x] Kerala-setting compliant per A1_STORY_BIBLE — all three scenes are mocks at Goethe Kochi, played by Frau Weber + classmates (Akhil, Reshma)
 - [x] [EXAM-TIP] includes high-value question-word recognition
 - [x] Summary and active recall challenges included
 - [x] Target duration: 10:00 (approx 9:45 scripted)
@@ -175,9 +180,9 @@ Keep practicing. Your first conversation is closer than you think.
 
 ---
 
-## v1.0 Script Notes
+## v2.0 Script Notes (2026-04-15)
 
-- Designed to build 'scenario specific confidence'.
-- Replaces the missing v1-5-2 draft.
-- Focuses on the 'First 24 Hours' narrative to keep students engaged.
-- Uses the 'Blueprint' system (Situation -> Dialogue -> Phrase -> Drill).
+- **Critical fix:** v1.0 placed Kuttan at Frankfurt Airport / German café / German WG. Per A1_STORY_BIBLE, A1 stays in Kerala until M17-M18. Rewritten with **Goethe Kochi mock scenarios** — same teaching dialogues, but reframed as rehearsal with Frau Weber, Akhil, and Reshma playing the German-side characters.
+- All German dialogue unchanged; only the visual framing and narrator scene-set text updated.
+- Designed to build 'scenario-specific confidence' — the learner hears the exact phrases they'll need later, without the story breaking its own rules.
+- Replaces v1.0. References v1-1-1 opening Thrissur setup and L1-3 Goethe Kochi classroom continuity.

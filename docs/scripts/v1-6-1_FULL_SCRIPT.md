@@ -1,10 +1,10 @@
-# v1-6-1 — Mastering Sie and Du in Real Life (FULL SCRIPT)
+# v1-6-1 — Mastering Sie and Du: Four Social Zones (FULL SCRIPT)
 
 > **Module:** 1 | **Lesson:** 1-6 | **Duration:** 10:00 target
-> **Teaching Goal:** Navigate complex social situations in Germany using the correct register (Sie vs du) — at work, university, shops, and formal offices.
+> **Teaching Goal:** Prepare Kuttan for the four real Sie-vs-du decision points he'll face after he lands — the office, the university, the shop, and the formal office. Taught via Goethe Kochi mock scenarios + cousin's Munich stories. Kuttan is in Kerala; the scenes are previews.
 > **A1 Exam Link:** All Sprechen and Schreiben sections. Choosing the right register is a primary scoring criterion for A1.
-> **Status:** NEW — v1.0
-> **Created:** 2026-03-26
+> **Status:** REWRITTEN — v2.0 (Kerala-setting compliant per A1_STORY_BIBLE)
+> **Created:** 2026-03-26 · **Updated:** 2026-04-15
 
 ---
 
@@ -18,35 +18,34 @@
 
 ## Section 1: Hook — The German Respect Shield (0:12–1:00)
 
-### Visual: [SCENE: A busy German city square. Arrows pointing to different people: Police Officer (Sie), Barista (Sie/du?), Student (du), Boss (Sie).]
+### Visual: [SCENE: Goethe Kochi whiteboard. Frau Weber has drawn four quadrants: Office (Sie), Uni (Sie+du mix), Shops (Sie), Formal Amt (Sie). Arrows connecting example people to each.]
 ### Narration: [ENERGY: professional, alert]
-"You already know that **Sie** is formal and **du** is casual. You know it's like our **Ningal** and **Nee**.
+"You already know **Sie** is formal and **du** is casual — like our **Ningal** and **Nee**.
 
-But in the real world — at your new German office, your university, or your first visit to the immigration office — things can get tricky.
+But in the real world, Frau Weber warns, once you actually fly — at your first German office, your university, or a visit to the Amt — the choice gets tricky.
 
 If you get it right, you sound professional and respectful.
-If you get it wrong, you can sound rude, arrogant, or just plain weird.
+If you get it wrong, you sound rude, arrogant, or just plain weird.
 
-In this video, we're building your 'Respect Shield'. We'll look at the four real situations where you'll use German every day."
+Today we build your 'Respect Shield'. Four situations. Four mock rehearsals. Kuttan's cousin joins by video to play the German-side where helpful."
 
 ---
 
-## Section 2: Situation 1 — At the Office (Am Arbeitsplatz) (1:00–3:00)
+## Section 2: Situation 1 — The Office Mock (Am Arbeitsplatz) (1:00–3:00)
 
-### Visual: [SCENE: A modern German office office. You and three colleagues.]
+### Visual: [SCENE: Goethe Kochi classroom. Desks rearranged into a pretend office. Frau Weber sits as "Herr Schmidt, the manager". Kuttan approaches.]
 ### Narration: [ENERGY: cautious, professional]
-"You've just started your new job. You meet Herr Schmidt, the manager.
+"Scenario one. Frau Weber plays Herr Schmidt, a German manager. Kuttan walks in on his pretend first day.
 
-**You:** Guten Morgen, Herr Schmidt. Haben **Sie** meine E-Mail erhalten? (Did you receive my email?)
-**Boss:** Ja, danke! Und wie geht es **Ihnen**, [Name]?
+**Kuttan:** Guten Morgen, Herr Schmidt. Haben **Sie** meine E-Mail erhalten? (Did you receive my email?)
+**Frau Weber (as boss):** Ja, danke! Und wie geht es **Ihnen**, Herr Kumar?
 
 Here's the rule for the office:
 **Always start with 'Sie' and 'Herr' or 'Frau' + Last Name.**
 
 *Herr Schmidt, Frau Müller — ippozhum Last Name use cheyyanam. Formal aanu safety.*
 
-But wait! What if you're in a young tech startup in Berlin?
-Then everyone might say 'du' from day one.
+But wait. Kuttan's cousin chimes in from Munich on video: *'At my startup, everyone says du from day one, machaa. Tech companies are looser.'* Frau Weber nods: *'Correct — if the culture is casual, follow it. But with the boss, wait for them to offer du first.'*
 
 ### How to know?
 Look at how others address each other.
@@ -58,9 +57,9 @@ In the 'Schreiben' part of the exam, if you're writing to a company or a boss, y
 
 ---
 
-## Section 3: Situation 2 — At the University (An der Uni) (3:00–5:00)
+## Section 3: Situation 2 — The University Mock (An der Uni) (3:00–5:00)
 
-### Visual: [SCENE: A university lecture hall. A professor and students.]
+### Visual: [SCENE: Goethe Kochi classroom rearranged as a lecture hall. Frau Weber plays the professor this time, Akhil + Reshma play classmates. Cousin listens in from video.]
 ### Narration: [ENERGY: academic, structured]
 "If you're a student, the university has a double-rule.
 
@@ -81,9 +80,9 @@ Even if the student is 10 years older than you, **du** is the standard in German
 
 ---
 
-## Section 4: Situation 3 — Shops, Cafés & Strangers (5:00–7:00)
+## Section 4: Situation 3 — Shops, Cafés & Strangers (role-play over video) (5:00–7:00)
 
-### Visual: [SCENE: A busy supermarket or high-street shop.]
+### Visual: [SCENE: Kuttan at his home desk, video call with cousin in Munich. Cousin plays a German shop clerk.]
 ### Narration: [ENERGY: brisk, practical]
 "On the street, in a shop, or stopping a stranger for directions.
 

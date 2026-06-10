@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adipoli German — Reel Review</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,sans-serif;background:#0a0a0a;color:#e0e0e0;padding:16px}
+  h1{text-align:center;margin:16px 0;font-size:24px;color:#fff}
+  .stats{text-align:center;margin-bottom:20px;color:#888;font-size:14px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+  .stat{padding:6px 14px;border-radius:8px;background:#151515}
+  .stat b{font-size:18px;display:block}
+  .stat.s-approved b{color:#4ade80} .stat.s-redo b{color:#f87171}
+  .stat.s-archived b{color:#a78bfa} .stat.s-pending b{color:#fbbf24}
+  .filters{text-align:center;margin-bottom:20px}
+  .filters button{background:#222;color:#ccc;border:1px solid #333;padding:6px 14px;margin:3px;border-radius:16px;cursor:pointer;font-size:12px}
+  .filters button.active,.filters button:hover{background:#4a9eff;color:#fff;border-color:#4a9eff}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;max-width:1400px;margin:0 auto}
+  .card{background:#151515;border-radius:10px;overflow:hidden;border:2px solid #222;transition:all 0.2s}
+  .card.approved{border-color:#4ade80}
+  .card.redo{border-color:#f87171}
+  .card.archived{border-color:#a78bfa;opacity:0.5}
+  .video-wrap{position:relative;width:100%;aspect-ratio:9/16;background:#000}
+  .video-wrap video{width:100%;height:100%;object-fit:cover}
+  .num{position:absolute;top:6px;left:6px;background:rgba(0,0,0,0.7);color:#fff;padding:2px 7px;border-radius:6px;font-size:11px;font-weight:700;z-index:1}
+  .status-badge{position:absolute;top:6px;right:6px;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700;text-transform:uppercase;z-index:1;display:none}
+  .status-badge.approved{display:block;background:#4ade80;color:#000}
+  .status-badge.redo{display:block;background:#f87171;color:#000}
+  .status-badge.archived{display:block;background:#a78bfa;color:#000}
+  .info{padding:10px}
+  .badge{display:inline-block;background:#2a2a2a;color:#4a9eff;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:600;text-transform:uppercase;margin-bottom:4px}
+  .hook{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px}
+  .german{font-size:18px;font-weight:800;color:#4a9eff;margin-bottom:2px}
+  .english{font-size:12px;color:#999;margin-bottom:6px}
+  .actions{display:flex;gap:6px;margin-top:8px}
+  .actions button{flex:1;padding:8px;border:none;border-radius:6px;cursor:pointer;font-size:11px;font-weight:700;transition:all 0.15s}
+  .btn-approve{background:#1a3a1a;color:#4ade80} .btn-approve:hover{background:#4ade80;color:#000}
+  .btn-redo{background:#3a1a1a;color:#f87171} .btn-redo:hover{background:#f87171;color:#000}
+  .btn-archive{background:#2a1a3a;color:#a78bfa} .btn-archive:hover{background:#a78bfa;color:#000}
+  .export-bar{text-align:center;margin:24px 0}
+  .export-bar button{background:#4a9eff;color:#fff;border:none;padding:10px 24px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:700;margin:4px}
+  .export-bar button:hover{background:#3b8be0}
+  .export-bar button.reset{background:#333;color:#aaa}
+  textarea{width:100%;max-width:800px;margin:10px auto;display:block;background:#111;color:#4ade80;border:1px solid #333;border-radius:8px;padding:12px;font-family:monospace;font-size:12px;min-height:120px;display:none}
+  .saved-toast{position:fixed;bottom:20px;right:20px;background:#4ade80;color:#000;padding:10px 20px;border-radius:8px;font-weight:700;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:999}
+  .saved-toast.show{opacity:1}
+</style>
+</head>
+<body>
+<h1>Adipoli German — Reel Review</h1>
+<div class="stats">
+  <div class="stat s-approved"><b id="count-approved">0</b>Approved</div>
+  <div class="stat s-redo"><b id="count-redo">0</b>Redo</div>
+  <div class="stat s-archived"><b id="count-archived">0</b>Archived</div>
+  <div class="stat s-pending"><b id="count-pending">39</b>Pending</div>
+</div>
+
+<div class="filters">
+  <button class="active" onclick="filterBy('all')">All</button>
+  <button onclick="filterBy('pending')">Pending</button>
+  <button onclick="filterBy('approved')">Approved</button>
+  <button onclick="filterBy('redo')">Redo</button>
+  <button onclick="filterBy('archived')">Archived</button>
+  &nbsp;|&nbsp;
+  <button onclick="filterBy('cat:pronunciation')">Pronunciation</button>
+  <button onclick="filterBy('cat:pov')">POV</button>
+  <button onclick="filterBy('cat:lesson')">Lessons</button>
+  <button onclick="filterBy('cat:fact')">Facts</button>
+  <button onclick="filterBy('cat:motivation')">Motivation</button>
+</div>
+
+<div class="grid" id="grid">
+<div class="card" data-cat="pronunciation" data-num="1" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#1</span>
+    <span class="status-badge" id="badge-1"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/001-pron-broetchen.mp4?Expires=1776199064&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=jBgovSO%2BZ%2B584gXQmo1ETsOv8exCWnsQGkA2FC%2B8RVyA8OcQRL8or%2BDYStztBcai%2Fn6c2%2FyoZigjhqlZ8hjgwc6BSdbg0TtvQEW4RZoxIk9K2Q9VWbK6jEJEv3HZdUe%2BI4xdyEjaNJjDIM4jRBdlBD7%2BguXz7H1VA4g6Ww2fYCZfhUmrRJFfsr6llT8wRFD7VWuNi%2FjNnr%2B5sQhFlq0dw3sMU9FiQxeSKu%2F2XxwXjvTzEmZgLGdqndAy%2FZdwzF7nJbyy8aXFxYfsnwr4S73D2X%2BYUYZ3JfSsecgGjY8i%2BhBjxmBI1wnjSG1sgkBV%2FKlQppu1bCgiL4xd7S8vfuqpdQ%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">Can you say this?</div>
+    <div class="german">Brötchen</div>
+    <div class="english">bread roll</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(1,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(1,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(1,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="1" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#1</span>
+    <span class="status-badge" id="badge-1"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/001-pronunciation.mp4?Expires=1776199064&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=E7K841pmK1MvFY7KBZKZ71lQrrUQaVMlmGj8lmvqIQw%2F0A52fZQtVDSldsBnguzmIGGdRJJ%2FoQ59MtzWryy2PKGwaZqh1s88zk2vqr%2FLlIMAYGQPAxOX4yxuKeIuOQDaGvetr0W1C1FEFGoFmXnw%2FkfpKPvGtnOrU106QAS3fxTrxHHN4MAT3PevbDOn4dyUMyyMy4YZ%2Fl1nqL5fK07pw%2BQSdODf5TcZjXRick1KT7atxkUrMrdMChoOO36ZX8O4%2BZU%2BllwAX6nPhbXWp3X%2BUuiD4KcjSOCelCde0cZQ0AdNsk0RbfL%2B4yxaVM0joifdz4t7hvJ4DviJqIvu7mM0vw%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">Can you say this?</div>
+    <div class="german">Brötchen</div>
+    <div class="english">bread roll</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(1,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(1,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(1,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pov" data-num="2" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#2</span>
+    <span class="status-badge" id="badge-2"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/002-pov-first-morning.mp4?Expires=1776199064&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=R7nVQoLhu91dMIzsOI70pSDRUKZCqGAm1EhJYBnB6Wn6BVgLbqOFqICBCL%2Bev7GBFyKQLweUHasXa%2FvJZkKHDkxKWckSDBd0KR8%2BQBn9yddAM2YJLGMDK3VjHks08e6kkuV%2BqRANPKw%2FMqY74o1bxtnxu42ZvCAOMTD5L9HkWcnPuyPI6Hb3cxLieOB1E6Xv%2BQUTY24Vl7GiddfiUJqkvRSMMpvioNCqwgFtAU%2BnMuWCiHWPjmGXJPt1Z68bMeYhaNdGC2GEevueS%2BVjOxQtmPsQ%2BqfCrOI4nZ2%2BibWiwE4RqsT631I5Kr6O62yHhGHiPkTK8uirblJxWi0balQD%2FA%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pov</span>
+    <div class="hook">POV: First morning in Germany</div>
+    <div class="german">Guten Morgen</div>
+    <div class="english">Good morning</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(2,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(2,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(2,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="2" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#2</span>
+    <span class="status-badge" id="badge-2"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/002-pronunciation.mp4?Expires=1776199065&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=ThEc8595g6YCl6uD2jU%2F5NGUCdYE8VBwyeskpJjPhSKaXTKV9MuCfUEhmnWjrQDn5G%2B%2BJo4dlMo%2FJS5bPcGXcMBwNJhHHO55QDad2h14GzgwBwqBwONW67Ze1oUd2WYP96%2FTTKdSoyFqRtQVzyZ54h5AEz3P0wBWsfHJPHNbDbfAdvm2vQHYCCdoO75kNHEdB9YL1NDSyOTcAPNhyIppv4PBlCU%2FixZBm1dIQ3hSzmwqz%2B3vpBWACebx1dGz1qA8KQfqP7%2BLp7kz0QXV6JfYpp%2FNABkpMKcKvioWIk9zpBgGPBFr%2FESb1KMoZ9z9ahQ5F7%2FFfi79dAI317%2FK68GVzg%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">Repeat after me</div>
+    <div class="german">Entschuldigung</div>
+    <div class="english">excuse me</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(2,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(2,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(2,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="fact" data-num="3" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#3</span>
+    <span class="status-badge" id="badge-3"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/003-fact-bread.mp4?Expires=1776199065&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=G%2Fl%2FE7OuX7AO%2Fhp3Lj%2FuIP6II09kE5CkHRDmnATWnsvLymd%2FnMPqJKZseuKrHM4iu4s9ZuARbrtLOOhNomdN59zi%2FZ3P988F1l4oia05le2NoQ%2FhXs2WzW9jBrwNQhdB7T1uj1j%2B%2B6wMrB58REeU%2BFX7daIlE681dZLm6iDrRr37w0IraCE6L3M8Hqs4TyZrxgt7gjU29MkbUzz4T4%2BV61jz2BtwARcK8ZQY93d3u9uRfEWvLh0WORhJk8qa2OluvDK33xXapzTDrzqwPS20ydzAKjrEQMGdbMew7em629DSGrdlG%2BSef%2BFrAOXKV0B5mhsrOqUDYxi8wJlXkFNiWQ%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">fact</span>
+    <div class="hook">Did you know?</div>
+    <div class="german">Das Brot</div>
+    <div class="english">the bread</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(3,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(3,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(3,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="3" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#3</span>
+    <span class="status-badge" id="badge-3"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/003-pronunciation.mp4?Expires=1776199066&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=aqoF%2FMBZyUf66AsS2%2Fzb4N8cPZA%2B2FHx%2BGBBtJjg7zORH285Rwf0FDKcqVh4ZJrnFxufgJJW7SkgcTbJWu2hSFPBUD36AADCk0Tz1i%2B4lqT6tIkhuLGe1ze2ZNbjgXtF4q0LFVqVOMVp3bxLUOCPdJnN0sxjlQUFpdKiJdepYDjRXlfC%2BJtmqkdTBHbQTaaMG6pnd%2BdiEIHPStDKLnm9ioWzlIf6bigrGlIRyrSTZR0HmDGLT%2F77AwKtsh2ML5fxv%2B2%2Fcp6IUuytpne7nqC8Atr3UOjlFrkE%2FNwMQIzNSk%2BOg%2BlOO9AWYDEiZHdvGdwm0sjxJTaDQ%2BksYUvLSJzKCA%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">Try this German word</div>
+    <div class="german">Schmetterling</div>
+    <div class="english">butterfly</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(3,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(3,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(3,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="4" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#4</span>
+    <span class="status-badge" id="badge-4"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/004-pronunciation.mp4?Expires=1776199066&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=VTB4XC7Muoxo%2FxBkeuC%2F0W0ZYO%2B18XzCyy%2FrQkF4YsRmzTrPHQr5y3Cw7nm2vh5MMxD4tlYnKnSSronfIMrR44aAdtjq3mMZwJumokAh1UIdBrki4wsfeu1gF9TCGDilp%2FPaIOVdDalUO9DJeGjlsa%2F4JRF7AKaaaSgigjaLXvIs543thDW8Wnx6jCOclgg69ydfOK1J5AEW3I15U4hldLip6tg%2BXtDrG%2BaKk4OWcYkxj1BG2VkEfv7v8qRcVwZmM0j0k%2Bo%2Fjd4aczSe5P1ddhzFyiZFjIMLeI6C6ihtPbDL%2B%2BeJPxyLLTFrBgHZ7OxsWe6v6YiR%2FijiJ5q%2FMbK%2FUQ%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">Most people can't say this</div>
+    <div class="german">Eichhörnchen</div>
+    <div class="english">squirrel</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(4,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(4,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(4,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="5" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#5</span>
+    <span class="status-badge" id="badge-5"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/005-pronunciation.mp4?Expires=1776199066&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=LYJSsNAWF2RZShiHoF3pQf6dF1FVycJB2AONxkU1z5%2FsE7O7rdTVwtlx6s7fu45RZKRE84sp8u6vJSzqkmLPhyjtotn32cBj%2FUYa%2F1ypBewO8jiN%2BiaJ4j1APnbOqrgw8Ewi1yP1AsP%2BfF6%2FzUOzPXjEfyZwdqZgj7KHXwhKdnntvMwqUOX4z6NyJe5oZmjYLFY3A7kej%2F1sg9%2FMIitEzW2lgqjI%2B5ez0%2FWLKVG8mhrDNE0GLmLNtU2I5C6%2FOcT%2F%2FfT2fYKfZITyrOxSoJoZ0Zu4%2B037CZaxitVN3AR7Qe0q7ctY4oH2xbMR%2BKx6Q4kiMJ%2BPstWKZmnAv%2BPk%2Bo19FA%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">The most important German word</div>
+    <div class="german">Genau</div>
+    <div class="english">exactly / precisely</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(5,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(5,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(5,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pov" data-num="6" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#6</span>
+    <span class="status-badge" id="badge-6"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/006-pov.mp4?Expires=1776199067&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=krhxrnsM6nrS%2BffNgmXD%2Fdj9BC6jnWh2WpoXkDVj%2B2vBqP1tPHzkekHIAA9h3lqjE0sPi3EFeqMrA7hkD91ecqVF9SA1G%2Bs7rn8bd3DspB0EeJ7PQx%2BGoNB9cM8nwkkkhjJZATGA5Ied%2Bf0gEiPI3FO1kCuL71rDLMxgKd7s%2BY148k3BCg13FmI0C8RhXJbjESf8SX5%2FyuC7l0aJ88aYep7R544eYsRIpwYjH1o8t5Wm2PLGUbmqzSQDnKC7zVyJONiFFAPQ9G7i8hdRbxMIbkns%2Be55TjcDml1UmZhLshIhEGvMIQDcwCi0jdARVmmwndotIiqTBXaB6kHg6DfEWg%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pov</span>
+    <div class="hook">POV: First morning in Germany</div>
+    <div class="german">Guten Morgen</div>
+    <div class="english">Good morning</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(6,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(6,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(6,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="6" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#6</span>
+    <span class="status-badge" id="badge-6"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/006-pronunciation.mp4?Expires=1776199067&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=tBd6GwMLc87wJ8EW%2BRfgU0A6tdQnMPDBezigdOpd6Z1xuyDsTjlR%2FmELzDMIyWwtcxPAMmiXNFXKFxDsx9791aBmhb6rNwaX3ddk5YTX%2BMMqieFuxQfK7Ibsx%2B5iQcgjDDT2dlsgkgwlsvRiOs7YaiVuw2WUCpSsccLtvLAgcvJI5rMVQEyEGoT1I0k7cfrTv4YzzyngSDkLk3w6hcdQAkKw4kHxMr9WUwjoB5HE8%2FoPInIPt6B3JQI7b5gjFerBWMOBenCY59KT%2FBK994jY0XSCjULCvm5BQEHjT18Cpupy7VdkayzllM%2FauGw6NkyrOoFc78aeoVuXrqVraCRyPQ%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">This means glove</div>
+    <div class="german">Handschuh</div>
+    <div class="english">glove (hand-shoe)</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(6,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(6,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(6,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="7" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#7</span>
+    <span class="status-badge" id="badge-7"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/007-pronunciation.mp4?Expires=1776199067&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=W50oh6mpLyzK5ai7jHXQgilFRYjewTnwT64eSjoHmVLf5j%2Byfd3%2FtkZfO2zgSjh4kB1Pa7G3YrQscDgB91opxuimIUgg5o%2FEu95clsgPEm0QVcCcqpOmHwlZ%2BoIriJimGTaP0I%2BXrG2N%2B4STbU%2F0dSnPqiB5gcLoP%2FV%2B3rYubDOuv6bOyR0c10pjsFku0S0H3TsKSx%2FYVwL4aBldBEsOqgoPPItMbV1QRHlstF%2FP0xK0QgmnrF05dshl0HIlyHJPADJBulKPrYYUOsch72tVJpLrM9UPNtV%2FEQRq%2BepUfD74D4Z%2Bv7hcc%2BibNLyMQyrVbh8OXf3plabkueRskETK1w%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">German for fridge</div>
+    <div class="german">Kühlschrank</div>
+    <div class="english">fridge (cool-cabinet)</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(7,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(7,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(7,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="8" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#8</span>
+    <span class="status-badge" id="badge-8"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/008-pronunciation.mp4?Expires=1776199068&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=rlRKTsa3DqEahn2WDg0M1kkuAAMxD%2FRHsX5mXHByctye2bdwS9MzM6P58mo0KdJNDwA79OnjycaAGDFLXn%2BR0SGBAjMFUauQ7CJptzTfTHbGotvT8cRHGWkzU4In6cV5ASP4t9t0rdBFvG1k5DiDZe%2BVATAJEfFf3oESz90aVs5FjwrAlH4UNzd0L8P5QHfDRZSq%2FWm7D99u%2B3mwUImh3Dg4hShkjGcYIA3366TXSUEvsUzXnUGUYXyshxJ3DvHNec5ONK%2BvdGSDupU1YahmvCqneJ%2FD%2BLHPxNLObWcVdJOmjnpUtIE%2FgrMfDV4PgGmbOxvj6hwo0Q1C7paN5RiDVg%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">Say this at dinner</div>
+    <div class="german">Guten Appetit</div>
+    <div class="english">enjoy your meal</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(8,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(8,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(8,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="9" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#9</span>
+    <span class="status-badge" id="badge-9"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/009-pronunciation.mp4?Expires=1776199068&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=bIiX%2FxvC6DHT4xwtS5dV1FaboSXG7fFgck1hlBX4BgRbEaKiLfq4gF9i60psJVzfR5uBoU%2Fc3UylyWXKo119JrI8ox9IH%2FuMSrVNTULZN0Ob8TixID4YP7j%2FbCSNU1aBkTjhvAMNOihTJ3Iwdh%2Bpz4lAvXBdFp8kVgaQCu4OUbAlpXVgGGkxevyg0lMcnsHDRcwsdS6Jc1mb5IdpT9DDP%2FEADi2ghcmJnqTQXsongomtmJvZeDtcNDQXz5yXuBZrVIsrMAnrZWLqXLdhQig5C8yjkcH8t%2FylitqUube67b03S1pcTQr7mRD4MTsF9txWjnGg5meI7PKfe1x9se%2B7Sg%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">German for airplane</div>
+    <div class="german">Flugzeug</div>
+    <div class="english">airplane (fly-thing)</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(9,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(9,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(9,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="10" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#10</span>
+    <span class="status-badge" id="badge-10"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/010-pronunciation.mp4?Expires=1776199069&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=rGOqWLy7L9fP%2FW%2F6aQovZHvpjCLASXk1163uEDCAifgpT%2F3fIAu1w0I0x8daH59mRNdYqUTTNNMJRHHYSNx%2FeZYOTLCMp1ZzUSqedlTK6g9uVKS00YDuglL1I0NUFxq6PObaVK%2BQn2g5xzQhmU%2FGCF4N6NbwRFW7o1rC7puoXN1%2B1UVn6%2FQoeD7DaIPSOmz5Yy%2FWMXS9tshAlojV2nBUtLpHI%2B%2FVF6%2FaBg1IVwCE4BEDNsx7f0CQJFfuDF8iiB0GzhewJHAoYRvBzpdVM%2F86rbfPlOH1LrRGEAp%2FUF9%2Bp8QArgtomETrRXtfj%2BdMf6qEEbSJIT6V6m73ve0yAX9Crw%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">This means turtle</div>
+    <div class="german">Schildkröte</div>
+    <div class="english">turtle (shield-toad)</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(10,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(10,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(10,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="11" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#11</span>
+    <span class="status-badge" id="badge-11"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/011-pronunciation.mp4?Expires=1776199069&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=mP0Tu8yQ8na1RO%2BxDJ6j1oFqJFhKP%2FR1bD1Ny4gbdC3KFEztMGv%2F7IPptnT3dnzyi5P7UfApB1MGoVd2tUmdj1aAuJgfEjWK%2BDGUrLhqFZW50V8EHMEEE6jewFjBxLixMisYmDMzWXTRDrMLBifhx53YAB1Oid1Q71br%2BF0Tvc2oGXMtOhOKjx215ZZYvi3xpY1GtC1NGPAf5QaW5YV9s4kA7n5AAxY1EL%2F6Iy6O4G0x07Vbr3d2hmkExTELCfdQpMzH4WRwX%2FOxTfhz%2FI1dBfXGHpB6MLe6LAzIg6bQ2SN9ytA%2FwbcQDA8UgelyQD74Uf3oRTNrYpkmc%2B3UuOmpdg%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">Say cheers in German</div>
+    <div class="german">Prost!</div>
+    <div class="english">cheers!</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(11,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(11,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(11,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="12" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#12</span>
+    <span class="status-badge" id="badge-12"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/012-pronunciation.mp4?Expires=1776199069&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=UslJeY5ULQVDpOi1JczPUC2tlMVLBlQcjMcLrXeyOvyePLqrtnBE39s95U5rmLcQgWY2G9bdgZ%2FagM13MzjRUWuyOnpkOza15VXuAaYW2zKxwjOzMLq9GMn5Jh4Yx8cc3mKsjNFAYATysjRq6VvEi1b14XzLzZZoSXdzbrlR0NsM4KchW9QC%2BEII1bAJRue6%2BNJzferfGbNFbgbEIIO3wFfclnRL%2FPMZy9hL3rRefbPb7fIh6kmdYSbxUce2MTnerp2smohaYzgjq6qa1ec76Y55a6P7kO70blF9vP1lN8n2ndO2SSa1QOMKX3UQFXHihhAyyAip9iaEE2Vwi%2FW4ow%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">German for lightbulb</div>
+    <div class="german">Glühbirne</div>
+    <div class="english">lightbulb (glow-pear)</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(12,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(12,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(12,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="13" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#13</span>
+    <span class="status-badge" id="badge-13"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/013-pronunciation.mp4?Expires=1776199069&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=b%2FDhP%2F7ONGf6YjZeo0wF1WxwAmEwqUjG201TmV%2BEQCESy6Be4LUcry1CdE4DFfGMrToP%2FwjPE30pSxENj1lj1RLl3FNlq6vP42eqgLnqpAASxyoLUFAqnJ1pkhAksx9%2FAaiem0qaeLaNJQT%2F5oIJAtXK44RwkxgexE6cRExR6kLwEiVM6Yiy3AsAcsjAi0nOtaq6xnoFZ5nPiNouuoINUufYKB6MvZZQx0vtsm500alIdWwQRAT9KmIHBexQ630j8ll58iaLqSjRZBF98rSTu%2B8rAL4Ct2DidAIGl6Ix3aGqQQH3UtwA%2BcpOO99eKM5EnzOPsTr%2FIg1vriFx3ZgpGw%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">How to say thank you</div>
+    <div class="german">Danke schön</div>
+    <div class="english">thank you very much</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(13,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(13,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(13,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="14" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#14</span>
+    <span class="status-badge" id="badge-14"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/014-pronunciation.mp4?Expires=1776199070&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=ooIq3MglHy4A%2FgDRqzeqoBIwLQp5cP7P22ZUusOKcIOLsDCoRm6WszbYWjCQG1KlxurmQl39Zslo7G3Ymh71rQSIE94Dp463cnbwcd6h3PdPswuldFTdkZcTZnN3BHBC65Z1gUWetjFqCeEfzzD%2FZ5mHA%2FoL2pzc17OtLs3UeNpWahjT495noUal3JEbe84Q92OlKrIukZ%2BxHgz%2B2bREqHC16vpTcGN8LUMmLb7nlWjkPY8OugMITpOLfSObzWqHaeI8tjkP5hqGnJ29kfmza2u%2F2WdSfHPtrZ8iKUAGMvhIVot8NvS11prWiyZPJzNFnOEc1nVyU0WHxKrRpUw7Vw%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">German for hospital</div>
+    <div class="german">Krankenhaus</div>
+    <div class="english">hospital (sick-house)</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(14,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(14,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(14,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="lesson" data-num="15" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#15</span>
+    <span class="status-badge" id="badge-15"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/015-lesson.mp4?Expires=1776199070&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=Z3roOCI63x27zDk8KjI%2BfSmdH0G3GSSCQiqMvDFXY1BqG5fI5TDiKlaRRqiq%2Bci1g9q%2FwvU3RRVqCOXswn%2FiwgOuJehN%2FfOc%2FGko6a1pAPiy3dV%2B6vzqIiMEetyqf1PQqLeykBZApLXYS%2BGk2F9MqDjr922532h2Nep8jhJakpDVbZ0XQcxAf%2BQRo28nyAPiIv4iDfDaoT%2BVSNZ7%2F7dHYqOKxfrY7Grr3STG%2BAZe4%2FFVY6wJp7wiT%2FQ9%2FP5myV8KHiNRahqcgdYOXVECbMsvyJX4lh0G1wh90pHhQyAItQ1B%2BR%2FTAnltWD40j4ECcMWimTKiyGMB19Btqhthanj65Q%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">lesson</span>
+    <div class="hook">How to say NO like a German</div>
+    <div class="german">Doch!</div>
+    <div class="english">yes it IS! (contradicting a negative)</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(15,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(15,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(15,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="fact" data-num="16" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#16</span>
+    <span class="status-badge" id="badge-16"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/016-fact.mp4?Expires=1776199071&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=RAGtadi4wy6mL1cMsyb4Jz0mA%2B70DKhrqrbrhVQPhgwY35miGJTEXv16bIz%2B3lOsUhc7vW0ItYr9dGa9ubpmZ6LMk8RqLJ%2B6%2B5eDZ5VyPnXemXAgQ4uvgFZq2Kzpbd45gX6Ms%2Fo%2BYhsu2bfIjVwMSmc2Fr00G8iDhKzblDilVwh5M43EnWUF2Lo4s14tGl7YwmcSNpDviZL5J6qP3nMa3pTnZPESCXZTyO7FNFVldtVcJdmo25cousUf0bVa%2FMPcVCZ8j2Svy3NL0VE6fUW%2BdVwBuWD4kYrNNsujoGYYzUjQmNrSpVj9Lg2zQ4SXrTK4nI73h0U5nIpLRYAIixyxLA%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">fact</span>
+    <div class="hook">Did you know?</div>
+    <div class="german">Das Brot</div>
+    <div class="english">the bread</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(16,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(16,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(16,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="16" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#16</span>
+    <span class="status-badge" id="badge-16"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/016-pronunciation.mp4?Expires=1776199071&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=s%2Fr4MdKLN60Le7B%2BscFztVXMPBnXieJH7fSRAeR%2Bo%2FVsrCkcI6bzvfBaufbLzxQ7UVln8jJPNVh3cXKFkL2oIwS27g0Np7gL%2FAM6ACnXjaHYDvZr66lmCNyGcxvvjY8tdxx5HPvpfxidnfcM%2FAB8O2xpI%2BXfINF7faW5NSKwcKRrwnuGIxC1ZhfSdBSYDwWSvo%2BTL8HevJ8WJPt%2FjtfpXp2dLLQikOZ9gmeJVkYtKMRjadIoIOLdkTaGxxBkjtv8T9E1thRMdrZTj7y57yc7Bt%2Fe9414ojCA2eQFxMy2xgSPCPXA%2F7c%2F8UUiuQzML3xvMnmE9DKoPz5tTwXyExOL7A%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">German for vacuum cleaner</div>
+    <div class="german">Staubsauger</div>
+    <div class="english">vacuum (dust-sucker)</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(16,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(16,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(16,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="17" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#17</span>
+    <span class="status-badge" id="badge-17"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/017-pronunciation.mp4?Expires=1776199071&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=ZhRGdDH4j7TlJBwknPSMb%2BXxanC%2Bc1XTaTjGaIorzeDOqqfkHtEQV5SP1S0DfDNCk171X9WWI7k5IO40KW%2B3WUZINekv%2BUgGGzAR7esnMDj%2FNGqvemaq2Ts89W88p77yw39TIQOTWbfQYrAJcJHXimm8xUCbYMACbQHBUibumvriMxrFnqSOwHNs5ezr0vO5GljszE4fl0iaRwbozRECOCf1H7b%2FWspJFKkE6GHABizf2E0HEsjw8yutUOAcouBkJBaU6yFgSk5Kp9An%2BDQRdHia1zMD4KaKEQc4bgX9vyOLep%2BGOQ0k3lH3LWB%2FVdc9YRfwpKogmdPBZ10GzxlFow%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">How to count to 3</div>
+    <div class="german">Eins, Zwei, Drei</div>
+    <div class="english">one, two, three</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(17,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(17,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(17,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="viral" data-num="18" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#18</span>
+    <span class="status-badge" id="badge-18"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/018-viral.mp4?Expires=1776199072&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=qHttFfme7OGJ5lpvBgQVWgf2rF4WOUbrFBVPI19%2FGeEgtWh9BDeMfk7A9%2BKpCamu%2BGW2eACrLnYlIjlLErTqnJL7a4aFtEuiG7e%2BnCoDjOcLbxIHhn%2FytroskbZ%2BKPalfJj4fKYaje4MG8KBMlj%2FA82uM81FBmX9X1%2FXDZdfCRtN0LfpgPVuceTmx4W1sQX0csA9IGVQGoUVLt7vvqDwAg5G21BLcQ8953%2FDlGPAzy5yYqVXJJshfouYheRl%2F%2BiTSF7Wk40l7dlrzaUeI4DNnho7WI91JeotIK9u716uLbZEPOL7cUvfPs%2BpcsqArWmC8OWRPShqXeSgDWUz7ZOPYw%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">viral</span>
+    <div class="hook">Don't say I AM hot in German</div>
+    <div class="german">Mir ist heiß ≠ Ich bin heiß</div>
+    <div class="english">I feel hot ≠ I am sexy</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(18,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(18,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(18,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="19" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#19</span>
+    <span class="status-badge" id="badge-19"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/019-pronunciation.mp4?Expires=1776199072&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=RDHvqR44G3eAV0NGuf9%2FR0T7KgGwtW5iqeTTEaYEoz5GPXKc4c2qgvdv%2BKS75UTVox2M%2FrobVT3%2B86E7hOGWO8c5cfdehe7ZAWa1rJOT4%2FIdtYobLAAo0qtL6vkMdop0EtAmh4Kvg8%2FoJ%2BpIWHCCj6e1DKeU3yXLTqOqZRGeF8ZaNNyg9%2FPYT1Ucus7AMt%2BfFK2%2F3mf2xE6AA3GKaoWPxF4e3KunFvFUoJwi9746XhErPPBsXlcmBAl%2Bp5u0BbAEuz%2FogZ04ns7HfvjeI1wBGOQEUistvXi7eHmofyILcTdKSx3od5FnJ4xquJffrg36ahMxrhm%2F7w8l75XoCUY%2BVQ%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">German for birthday</div>
+    <div class="german">Geburtstag</div>
+    <div class="english">birthday</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(19,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(19,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(19,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="20" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#20</span>
+    <span class="status-badge" id="badge-20"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/020-pronunciation.mp4?Expires=1776199072&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=K5auddp%2F3uVM%2FvkgRE2uwj83AzCJPfmrHr6EdVsWHYs7j15ibFFm37d7kPsGtuj6HqY82AUhBK%2Ba2mF37KmIBcNMSbIKirnrs%2BErS73VmO29sesQZMHWveeVaNIit5ktH6RNLaLhNjnl5FZk4HmK6O59wZOTgjUAf4mplz9%2BT%2BpyGyXxLcDgExmGNoaik2ztiq5ub9Md%2FvXqd6QkEgTLFQmx9%2FrFW%2Fq8Z%2FS1zfYb1duqH4pQt9GQj%2BglZRYYacR1eywLCkeY4vd%2F8nlo44hTojyhgnePjWFEn1F7sAt0yQjuLGjKhB48oZZLglE5hbK928ZhZxgSux823Y%2B6VKJ89Q%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">The hardest German sound</div>
+    <div class="german">Hörnchen</div>
+    <div class="english">croissant (little horn)</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(20,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(20,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(20,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="21" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#21</span>
+    <span class="status-badge" id="badge-21"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/021-pronunciation.mp4?Expires=1776199073&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=MkN0j9F3m%2BA04K7dDPqd2rmGMU%2FKH%2B%2FjJSkgUf%2F8F1mbObt%2BpmqyKjxTcaUNXxX2FkEs8S3NVtJVFYQeGoHuWi48LQWQvOe0Pp1z3jh40%2Bl%2Fxtbrfa8uDxKhU%2F3F4tMGVSmPvQwUhTiGZPgzwf8AlqZJwhkgiwT7AB%2BrTY5gwzeY9XEMS8v6sQHjl00RvWMzXFXVwqNRWh8WEMERMRl3jwQw50sA9O0NNAB2azhiGoKwVISL05117k0tlpeplXYPf%2B811us9241q6qm9hbaa9FE23wOqnEF7FVGN%2Fe7jrz6KeQ1%2BlIVzuuAjrcYZWii1Vl0wTreuszKHOa%2FgVk6nVg%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">German for train station</div>
+    <div class="german">Bahnhof</div>
+    <div class="english">train station</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(21,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(21,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(21,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="22" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#22</span>
+    <span class="status-badge" id="badge-22"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/022-pronunciation.mp4?Expires=1776199073&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=QXUwWEAIoCr89xjHrkU8woNgNzOde1TglDw3sEEdjlVATEoaRMZSXnui9siD3D2q%2BPy41%2F98qdoJtVgrjpdEilRw%2FtYPK2oJK8FQQdIs1tPM%2FasVjcdAE6Iq4ZiOG0Xj3mF9QjXG0YvTmYJn2Z259y%2BpCuWMA725zKrW14Egn6SJBPDTrjwbQW85dDO7JbS84ogE5Tg1SyyG03%2BZ%2FZo0A1MamT9060urBm2m2dtMISzDW914%2FG2y880Tz1GjVD7663BTLT%2BcKIzCc3ZswolV8zJzEyvvfPu8x%2BqHKH2j2bwZOtrfhJLjBXVZZCdmDvuLeocZMhvMnYa6c3GD1PWAaw%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">Say I love you</div>
+    <div class="german">Ich liebe dich</div>
+    <div class="english">I love you</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(22,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(22,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(22,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="23" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#23</span>
+    <span class="status-badge" id="badge-23"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/023-pronunciation.mp4?Expires=1776199074&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=SbQXcLjxzZ6jrlgTO9lI7zmcjleRF4%2FZdkwBZPhPmiJs2Bn7KJxJEdVH2rQHZbkvoE9lBymDV1na3LWE6aryd9nox%2F4ciGwKm2wUwWkfuEqZCiivSv%2B5tYzFWP5nX%2BoZNQOcx0%2F5USG7pvwVKgTxirM9T5Xn37sHNP%2BYQBkLgkdif55ciBiGoxq4OgvMhaXBMdUUbRRf4Rr2nPRuF1zJiBvxuXo1LJ3azKWd7DNC1TtULbWcZ31A2YbEuXkzsErJSIAkdoYRqNky7cQbejwJdyZpxGR92j5h2mlNR8MaZNy4aYYL3aUT4mpi1HmXQ9kihjJtRbiti%2BC1aV43cJx9zw%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">German for ambulance</div>
+    <div class="german">Krankenwagen</div>
+    <div class="english">ambulance (sick-car)</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(23,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(23,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(23,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="25" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#25</span>
+    <span class="status-badge" id="badge-25"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/025-pronunciation.mp4?Expires=1776199074&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=byb5k9PGwKc53uC2%2FcJUB7hoGBaCQDxEyabZlVQTxgCDZ95GUjQf%2BIAOsu3hP33MUgPuGdIdblAzXZX%2BlQ85JfIkjifxtLeYCYDOypWXCWh8l2dbYMYe079Y71klAbR5qcaQDYKUiyPNdgBjuzzgBaPHapBPFcuS2FLJgXIQGZ1R5nyH11LDktg4I3HRzz0khMk%2BkB%2BeQT2ogMWbNWFPwQfS32rM%2FO6KCk7IXFUK5xYOj%2FhelZY7ghvTpDB8nuxh1hTkn4csobPsnb75occOTUpJoEAzd7%2BU51ixgIRNnPpGYE1oBVF%2B9FWtS21cDbaOrwS8knEFwtPk8H1ILmrLvQ%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">German for speed limit</div>
+    <div class="german">Geschwindigkeitsbegrenzung</div>
+    <div class="english">speed limit</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(25,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(25,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(25,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="26" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#26</span>
+    <span class="status-badge" id="badge-26"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/026-pronunciation.mp4?Expires=1776199074&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=pak3ZdwNpjX1jdA0iS%2FvSW6ddJmQUsRrwZOsZKJE2MO3iyqC5FysbN9lJoY%2Fjfi728%2BSpiljSajz91b8RXvHy%2BsqhUC5r8%2B1b2vTWvWpTiaeuOH3RZvqyx7P5Y6WkwCZ3N8qLRZutrrxTtLiln%2FPBraU%2FJrpOWfXT1CZeUPtgqz71DO%2BwimRSueONQdO2j%2FDX5sLlXaTotlhJQ6a5IMmGZ5us8d8G8H0TqmDT6oOKl67XLaVid2bPOMqvH5syWlGlRLpgu7D2IwBHOPetqfU8kZ7mSMxJHcAD8XFr%2BFUXPKxOso3aHEcdlPxm4NdgNZ%2FJahYbcDieh92sbkQUfvo2g%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">Say excuse me formally</div>
+    <div class="german">Verzeihen Sie</div>
+    <div class="english">forgive me / pardon</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(26,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(26,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(26,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="27" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#27</span>
+    <span class="status-badge" id="badge-27"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/027-pronunciation.mp4?Expires=1776199074&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=mFmsE%2BdlfY5GV2kOLXW0TrQvOmGfKOxmb4b4ZB2q7qHU9x0KSx8tSDyqaarHzWMn97ejQ5zlfwECPqtvF4UKOqMUTVzbtYfRksrbutQ4GEbsv69cnTVh9OfBfkq6mRtV9bmVReO7fCWjszdSq3OUPNvRHNVFE%2F8b7FRjCiEm2VFTs7PWncZvMY4spnjzZqL%2FHANec%2BBHitoI4Ie%2BbNkuERyqn7FAr2kbkAAuvZmVcY%2Fi0C3765yevbfk0CObJQriZ01mmu6sSt%2BIYByXjnWbu0yQMTe28FHIlAqvVcM7Ss9hqej%2FDCcM%2BOuyVBCHcdO%2BY3Qi0PmMvBkyp144jd%2BNHQ%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">German for breakfast</div>
+    <div class="german">Frühstück</div>
+    <div class="english">breakfast (early-piece)</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(27,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(27,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(27,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="28" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#28</span>
+    <span class="status-badge" id="badge-28"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/028-pronunciation.mp4?Expires=1776199075&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=EtZKDlGXMx1dUQXswrLYgCS58LAK4ogo4ZZJc6Vs%2F01hsB2kqMynEwlCbvU8%2B3uRfPngKT3IABIPc5Gb%2BB2FIN15DHWdVd94ENgr1AUkW05WNV6W3YZ3u%2B4mQqTTu39kzGHVfhWLFseCsMa0RVyoThuL0NHZ55bceEj5oHTr6RUdDkfWM1FqG%2B6CgLYdJhJclwQqL2rE5c8tFOQyjvx9M1XWIhHZ6u6t%2BZ6AtpDJGj7Q9QE2t12jyIjm%2FGmBC%2F2HXQ7Mv9jSGlLgl2Z0nS0PdlWT5q2WFdIig7hsF6QOf%2BZzgc3jbhsiIvMwXMQWV9qbmx9%2F3r8XjcTten8Sq7YEaA%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">Say where is...?</div>
+    <div class="german">Wo ist...?</div>
+    <div class="english">where is...?</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(28,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(28,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(28,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="29" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#29</span>
+    <span class="status-badge" id="badge-29"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/029-pronunciation.mp4?Expires=1776199075&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=WaRLjFi7DTqaXC7KWWW3vbfJFYzxNM2NFB7OJ2Zc%2FIo252zuKyMpRk7Aei3r6F25QyQs6PPZUiC7PzGMNKOY81uNkfFni76%2F3YvwermQAyj4yJHCS%2BbGskBvATkqwTTq557U%2FUK3jJtz7veZUjpi84jgnmqEogN%2FpWKjZUAcKlkXX4hChbgGMJF%2BD%2BDqWEgZ0AmcudlIlmyyULcn4gagUTwIOEuHb8Be%2BWhpKBUPJXmEEr9dhjI9yT438XSgR8WCl80aKtNAmePNtrte5vzLOsG2V1EH13U5srgIV%2BuP%2Bpmwe2lnksUQ9UoBEDhqiNXFwReHhDu1%2FUwSbJBw4cwJbw%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">German for ice cream</div>
+    <div class="german">Eis</div>
+    <div class="english">ice cream</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(29,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(29,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(29,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pronunciation" data-num="30" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#30</span>
+    <span class="status-badge" id="badge-30"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/030-pronunciation.mp4?Expires=1776199076&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=rZC4hm612U8QkThmJ23HTNzy2VXSgtgV7s0LSo3FFKNKuqluIcD5%2B1v76tJgPga8mDmikblPXsLhbIu7pKHcANmSYAaq6DarB3Ba7EQM%2Bmbc5GV8QvYvnWUffKZYC8Eanx1MgxH1orgEylipuY95OBhQrDOADXWFV10Uygy8gMcy9CalGr8oe1vXr1vp6VKZWUkvV1UpjU0Fyl6RQOMwpgeZHoN6%2Fola44gmgvsa%2B%2FmyH40WQPV2LHr%2Be0SmyR%2FSRN5lf5ro%2BO2B8Nq%2FRyQx%2Bii7b33irZReAPm5mTRwyyMogHdXFyKV1PA7KahWYOCAUg7dbqczhSeP2J%2FNYpgO4w%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pronunciation</span>
+    <div class="hook">The German R sound</div>
+    <div class="german">Rot</div>
+    <div class="english">red</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(30,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(30,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(30,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pov" data-num="31" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#31</span>
+    <span class="status-badge" id="badge-31"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/031-pov.mp4?Expires=1776199076&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=g2f%2FR15ovKSCu0OA%2F2vc4XkG6OxLGNJb%2BpvvGHZx8XknJ%2F6u53BPbHGYFZeY3wLP3otR9qQ7JknGA8HD3kBtDNT%2F%2BjZ1O2bmggtE6Wx3FAqpoj9kwbjNFw5UPmPaMzRHEwl%2BT1yrNdIAA6TOzZciDDZ8hHW2dlGTxYHnlYEZDhj%2FUEyr5SBxwkmqFkdSAQDxXEAIOb1A3moSsDZZ%2FSlkZTSodWNMpN9%2BkyA%2FWJegFDk%2BYdXshtjNWbFQhYLYXGo77YrSVwtRleTZY1pWa1kOyPtgyVLZy%2FqmecXM%2FJMJCIb7elzvpay0hZik7%2BKmzvSPp7iKXEr%2F6enVPe57PyDN%2FA%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pov</span>
+    <div class="hook">POV: First morning in Germany</div>
+    <div class="german">Guten Morgen</div>
+    <div class="english">Good morning</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(31,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(31,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(31,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pov" data-num="32" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#32</span>
+    <span class="status-badge" id="badge-32"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/032-pov.mp4?Expires=1776199076&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=QNhK6MZ1dkL5jwU0FW08IQ9R%2FNPxQKovDTv1Pbxh5aUMHaQdH%2BEEEV5MJ6hvMLe263%2BjuRlCfBCi1yjw8nDMqa8%2BTszEl%2FxejzZKIOVzN6AqaV64PzExqlt0AWDHc7IwvQxEWEXXTfZiIm%2FABkASHMLhW0cI%2F2eRooMqVJggrtUkB62IvQ%2BQqFRA6OGg2hs6S8pNEqRbBGdqRnoHMGLTN9peJA19AR%2F98SSAhgWi7U9WH%2B2QrmE%2FIwKBNcNw2EL456g11SCcqzKOUxo%2FGfhJhfY%2BQOL0uptW2751Wz%2B5%2FAs3%2Fx5mP73Mkn9QjwBf56UJyyLLNmRB6MiyvBYnr9TBTQ%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pov</span>
+    <div class="hook">POV: German bakery at 7am</div>
+    <div class="german">Ein Brötchen, bitte</div>
+    <div class="english">One roll, please</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(32,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(32,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(32,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pov" data-num="33" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#33</span>
+    <span class="status-badge" id="badge-33"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/033-pov.mp4?Expires=1776199076&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=LrCe01GsFw9syHDTHmZabisz9YtFOdpTLM9Ymej3%2F6%2Fz%2BMnhxwsQtH4BfL9k6Gv%2FWA%2ByNbBdaCJUtMgnah9xpy7JdNFi8MH4lh%2FwVSI1xI0raC7L6QFdGxJDw6ULAeYQzPQ4x4KOLLqu0ODh5cK53jCb1eswx86EOFiR049o8eu5BV3A6AwZNub6Yt4ug%2BAwebYcFYLAYEZRhDBbHZT9VokuzHlUHrfYPhLMriPO4ANc%2F%2FB%2BBXAE%2FXd8lpJLVVbCzAPGT7aso0YGr00WHX8wyGBYDKgomxbfHnL%2FNVi709J9e0SCPB1ZZ7trJN1IWzfJpDYAtU5BFZeEQ7llRBbZBA%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pov</span>
+    <div class="hook">POV: Christmas market</div>
+    <div class="german">Einen Glühwein, bitte</div>
+    <div class="english">One mulled wine, please</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(33,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(33,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(33,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pov" data-num="34" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#34</span>
+    <span class="status-badge" id="badge-34"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/034-pov.mp4?Expires=1776199077&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=i5tPscCXDvGRNGzGbTUZlXXX8Qf8c9rAUawkX9dkUWr5JMQI4VCTpILVELLdJ5K%2BZiEb5MaYzeAqhGXm0B2eN2YHrLPQtQPGlCvdcqaMayx9skaKO1JbKshaLFpcgFsUxO%2ByNEUCuYuwQP01DhkE5MxvEruaov9g%2B%2FNCa%2FF84j%2FhUNKJEi4IHULGVWh33eQlXInO%2BELCaQ35GYNP3uZH%2Fhs881JGTJ0G6oKJedufMTc08bXug0ewVV40W6mqWq2oKzUEe10qGsHxnZ9qMJcOLreEHRfyAav61grldCnHsnFWiwYdPQ%2BwKKPhH1U1OhQFtHvG53ybioeezZkEE09CiQ%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pov</span>
+    <div class="hook">POV: German train ride</div>
+    <div class="german">Ist hier frei?</div>
+    <div class="english">Is this seat free?</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(34,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(34,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(34,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+<div class="card" data-cat="pov" data-num="36" data-status="pending">
+  <div class="video-wrap">
+    <span class="num">#36</span>
+    <span class="status-badge" id="badge-36"></span>
+    <video src="https://storage.googleapis.com/adipoli-veo/review/marketing-review/036-pov.mp4?Expires=1776199077&GoogleAccessId=veo-runner%40gen-lang-client-0108425102.iam.gserviceaccount.com&Signature=eORtrfMVkyTSVz3GNVNSO5ihSFJxQamrqPF2Gd2qXumywglr6DsqeqsMoUGeZsFeOESNWv5xL3%2BaNbNE7FDiCjvDPNlCPW2KUehLg3aghGT37E2eHa0OHYTGpTDQDyz4imVFNrIQVMaRf5YGyPgcY%2FdwmhbX4n0%2FeQ9sDTxHmbMEl%2F%2FrBK92DTLipCKwFaVbShQ6%2B0XuRO3ia589EbY1QsAKjTHn5ka4We4NJJwnXHQZLqgY8f49bpFLOOp2jYDr1Cf9SxF3TffRxgyEo0zXWluCMAhALccgxRuPg7JKZc0ELKKrSNCJpQ6SkuCQqXNI1AHb8%2Bpjih6uAGOOcHpTLQ%3D%3D" controls preload="none" playsinline></video>
+  </div>
+  <div class="info">
+    <span class="badge">pov</span>
+    <div class="hook">POV: German supermarket</div>
+    <div class="german">Wo ist die Milch?</div>
+    <div class="english">Where is the milk?</div>
+    <div class="actions">
+      <button class="btn-approve" onclick="mark(36,'approved')">Approve</button>
+      <button class="btn-redo" onclick="mark(36,'redo')">Redo</button>
+      <button class="btn-archive" onclick="mark(36,'archived')">Archive</button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="export-bar">
+  <button onclick="exportReview()">Export Decisions</button>
+  <button class="reset" onclick="resetAll()">Reset All</button>
+</div>
+<textarea id="export-output"></textarea>
+<div class="saved-toast" id="toast">Saved</div>
+
+<script>
+// Load saved decisions from localStorage
+var decisions = {};
+try {
+  var saved = localStorage.getItem('adipoli-review');
+  if (saved) {
+    decisions = JSON.parse(saved);
+    // Apply saved decisions
+    var nums = Object.keys(decisions);
+    for (var i = 0; i < nums.length; i++) {
+      applyStatus(parseInt(nums[i]), decisions[nums[i]]);
+    }
+    updateCounts();
+  }
+} catch(e) {}
+
+function mark(num, status) {
+  decisions[num] = status;
+  applyStatus(num, status);
+  updateCounts();
+  // Save to localStorage
+  localStorage.setItem('adipoli-review', JSON.stringify(decisions));
+  showToast();
+}
+
+function applyStatus(num, status) {
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    if (cards[i].getAttribute('data-num') == num) {
+      cards[i].setAttribute('data-status', status);
+      cards[i].className = 'card ' + status;
+      break;
+    }
+  }
+  var badge = document.getElementById('badge-' + num);
+  if (badge) {
+    badge.className = 'status-badge ' + status;
+    if (status === 'approved') badge.textContent = 'KEEP';
+    else if (status === 'redo') badge.textContent = 'REDO';
+    else if (status === 'archived') badge.textContent = 'ARCHIVE';
+    else badge.textContent = '';
+  }
+}
+
+function updateCounts() {
+  var cards = document.querySelectorAll('.card');
+  var a=0, r=0, p=0, ar=0;
+  for (var i = 0; i < cards.length; i++) {
+    var s = cards[i].getAttribute('data-status');
+    if (s === 'approved') a++;
+    else if (s === 'redo') r++;
+    else if (s === 'archived') ar++;
+    else p++;
+  }
+  document.getElementById('count-approved').textContent = a;
+  document.getElementById('count-redo').textContent = r;
+  document.getElementById('count-archived').textContent = ar;
+  document.getElementById('count-pending').textContent = p;
+}
+
+function filterBy(f) {
+  var buttons = document.querySelectorAll('.filters button');
+  for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+  if (event && event.target) event.target.classList.add('active');
+
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    var card = cards[i];
+    var status = card.getAttribute('data-status');
+    var cat = card.getAttribute('data-cat');
+    var show = false;
+
+    if (f === 'all') show = true;
+    else if (f === 'pending' || f === 'approved' || f === 'redo' || f === 'archived') show = (status === f);
+    else if (f.indexOf('cat:') === 0) show = (cat === f.substring(4));
+
+    card.style.display = show ? '' : 'none';
+  }
+}
+
+function exportReview() {
+  var redo = [];
+  var approved = [];
+  var archived = [];
+  var nums = Object.keys(decisions);
+  for (var i = 0; i < nums.length; i++) {
+    var n = parseInt(nums[i]);
+    if (decisions[nums[i]] === 'redo') redo.push(n);
+    else if (decisions[nums[i]] === 'approved') approved.push(n);
+    else if (decisions[nums[i]] === 'archived') archived.push(n);
+  }
+  redo.sort(function(a,b){return a-b});
+  approved.sort(function(a,b){return a-b});
+  archived.sort(function(a,b){return a-b});
+  var output = {
+    approved: approved,
+    redo: redo,
+    archived: archived,
+    total_reviewed: approved.length + redo.length + archived.length
+  };
+  var ta = document.getElementById('export-output');
+  ta.style.display = 'block';
+  ta.value = JSON.stringify(output, null, 2);
+}
+
+function resetAll() {
+  if (!confirm('Reset all decisions?')) return;
+  decisions = {};
+  localStorage.removeItem('adipoli-review');
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].setAttribute('data-status', 'pending');
+    cards[i].className = 'card';
+  }
+  var badges = document.querySelectorAll('.status-badge');
+  for (var i = 0; i < badges.length; i++) {
+    badges[i].className = 'status-badge';
+    badges[i].textContent = '';
+  }
+  updateCounts();
+}
+
+function showToast() {
+  var t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 800);
+}
+</script>
+</body>
+</html>

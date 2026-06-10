@@ -1,0 +1,52 @@
+{
+  "lessonId": "v1-6-2",
+  "title": "Formal Emails & Messages",
+  "subtitle": "Module 1 · Lesson 6 · Part 2",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Writing formal is slower, but the same respect pattern stays.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v1-6-2/v1-6-2-line-0.mp3"
+    },
+    {
+      "text": "Formal email opener: 'Sehr geehrte Frau Müller' — Dear Mrs. Müller.",
+      "german": "Sehr geehrte",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v1-6-2/v1-6-2-line-1.mp3"
+    },
+    {
+      "text": "Formal close: 'Mit freundlichen Grüßen' — With kind regards.",
+      "german": "Mit freundlichen Grüßen",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v1-6-2/v1-6-2-line-2.mp3"
+    },
+    {
+      "text": "Text friend casually: Liebe Grüße (LG) or just Bis bald!",
+      "german": "Liebe Grüße",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v1-6-2/v1-6-2-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Sehr geehrte/r",
+      "english": "Dear (formal)",
+      "malayalam": "bahumanapetta",
+      "pronunciation": "zair ge-air-te"
+    },
+    {
+      "german": "Mit freundlichen Grüßen",
+      "english": "Kind regards",
+      "malayalam": "sneham",
+      "pronunciation": "mit froynt-li-khen"
+    },
+    {
+      "german": "Liebe Grüße",
+      "english": "Love / regards",
+      "malayalam": "snehathode",
+      "pronunciation": "lee-be grue-se"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

@@ -1,0 +1,51 @@
+{
+  "lessonId": "v1-3-2",
+  "title": "Sie vs Du — Like Ningal vs Nee",
+  "subtitle": "Module 1 · Lesson 3 · Part 2",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Malayalam has Ningal and Nee. German has Sie and du. Use the safe one first.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v1-3-2/v1-3-2-line-0.mp3"
+    },
+    {
+      "text": "Sie = formal (bosses, strangers, elders). Du = casual (friends, family, classmates).",
+      "german": "Sie / du",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v1-3-2/v1-3-2-line-1.mp3"
+    },
+    {
+      "text": "In doubt — Sie. Always safer. Never rude.",
+      "mood": "thinking",
+      "audioSrc": "audio/tts/v1-3-2/v1-3-2-line-2.mp3"
+    },
+    {
+      "text": "Ask formally: Wie heißen Sie? — What is your name? Try it!",
+      "german": "Wie heißen Sie?",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v1-3-2/v1-3-2-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Sie",
+      "english": "you (formal)",
+      "malayalam": "ningal",
+      "pronunciation": "zee"
+    },
+    {
+      "german": "du",
+      "english": "you (casual)",
+      "malayalam": "nee",
+      "pronunciation": "doo"
+    },
+    {
+      "german": "Ihnen",
+      "english": "to you (formal)",
+      "malayalam": "ningalku",
+      "pronunciation": "ee-nen"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

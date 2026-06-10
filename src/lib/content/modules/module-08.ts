@@ -266,7 +266,16 @@ export const MODULE_8: Module = {
           explanation: "Wunderbar! 'Die Küche' because it is feminine. Good job!",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex8-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Rooms & Furniture): 'Mein Zimmer ist klein, aber schön.'",
+          questionGerman: "Sprechen Sie laut: 'Mein Zimmer ist klein, aber schön.'",
+          correctAnswer: "Mein Zimmer ist klein, aber schön",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab8-1-1",
@@ -628,7 +637,16 @@ export const MODULE_8: Module = {
           explanation: "Excellent! 'unter dem Bett' — 'dem' is the dative article for 'das Bett'.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex8-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Where Is It?): 'Mein Zimmer ist klein, aber schön.'",
+          questionGerman: "Sprechen Sie laut: 'Mein Zimmer ist klein, aber schön.'",
+          correctAnswer: "Mein Zimmer ist klein, aber schön",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab8-2-1",
@@ -960,7 +978,16 @@ export const MODULE_8: Module = {
           explanation: "Wunderbar! 'Die Miete ist 500 Euro.' — Euro remains singular in this context.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex8-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Looking for an Apartment): 'Mein Zimmer ist klein, aber schön.'",
+          questionGerman: "Sprechen Sie laut: 'Mein Zimmer ist klein, aber schön.'",
+          correctAnswer: "Mein Zimmer ist klein, aber schön",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab8-3-1",
@@ -1235,7 +1262,16 @@ export const MODULE_8: Module = {
           explanation: "Excellent! 'Darf ich mich vorstellen?' is a very polite opening.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex8-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Writing a Simple Message): 'Mein Zimmer ist klein, aber schön.'",
+          questionGerman: "Sprechen Sie laut: 'Mein Zimmer ist klein, aber schön.'",
+          correctAnswer: "Mein Zimmer ist klein, aber schön",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab8-4-1",

@@ -1,0 +1,135 @@
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -140,8 +140,8 @@
+           <ArrowLeft className="h-3.5 w-3.5" /> Back
+         </button>
+ 
+-        <div className={`relative px-5 md:px-10 ${isModule2 ? 'py-8 md:py-9' : 'py-10 md:py-12 lg:py-14'}`}>
+-          <div className={`mx-auto max-w-4xl ${isModule2 ? '' : 'md:grid md:grid-cols-[1fr_auto] md:items-center md:gap-10'}`}>
++        <div className={`relative px-5 md:px-10 ${isModule1 || isModule2 ? 'py-8 md:py-9' : 'py-10 md:py-12 lg:py-14'}`}>
++          <div className={`mx-auto max-w-4xl ${isModule1 || isModule2 ? '' : 'md:grid md:grid-cols-[1fr_auto] md:items-center md:gap-10'}`}>
+             <div>
+               <motion.div
+                 initial={{ opacity: 0, y: 20 }}
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -321,7 +321,7 @@
+               initial={{ opacity: 0, scale: 0.6, rotate: -8 }}
+               animate={{ opacity: 1, scale: 1, rotate: 0 }}
+               transition={{ duration: 0.7, delay: 0.3, type: 'spring', bounce: 0.4 }}
+-              className={`mx-auto mt-8 hidden md:block ${isModule2 ? 'md:hidden' : ''}`}
++              className={`mx-auto mt-8 hidden md:block ${isModule1 || isModule2 ? 'md:hidden' : ''}`}
+             >
+               <motion.div
+                 animate={{ y: [0, -8, 0] }}
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -353,15 +353,12 @@
+               <p className="text-xs font-black uppercase tracking-[0.22em] text-[#d4a520]">Module 1 path</p>
+               <h2 className="mt-1 text-xl font-black text-[var(--foreground)] md:text-2xl">One mission now.</h2>
+               <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--foreground)]/62">
+-                Old lesson cards stay tucked away. Follow the next classroom win.
++                Old lesson cards stay tucked away. Use the main button above.
+               </p>
+             </div>
+-            <Link
+-              href={module1Complete ? module1CompletionHref : nextModule1Mission.href}
+-              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-[#d4a520] px-5 py-4 text-sm font-black text-[#102018] shadow-lg shadow-[#d4a520]/15 transition hover:bg-[#f1d27a]"
+-            >
+-              {module1Complete ? 'Start Module 2 speaking' : `Start ${nextModule1Mission.missionNumber}`} <ChevronRight className="h-4 w-4" />
+-            </Link>
++            <div className="rounded-2xl border border-[#d4a520]/25 bg-[#d4a520]/10 px-4 py-3 text-sm font-black text-[#d4a520] md:text-right">
++              {module1Complete ? 'Module 2 opens next' : `${nextModule1Mission.missionNumber} is queued`}
++            </div>
+           </div>
+ 
+           <details className="mt-4 rounded-2xl border border-[var(--foreground)]/10 bg-black/10 p-3">
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -496,7 +496,8 @@
+         ("/learn/1 module page", module, [
+             "Module 1 · ${module1Complete ? 'mission review' : nextModule1Mission.missionNumber}",
+             "One mission now.",
+-            "Old lesson cards stay tucked away. Follow the next classroom win.",
++            "Old lesson cards stay tucked away. Use the main button above.",
++            "is queued",
+             "Open the three-mission map",
+             "nextModule1Mission.href",
+             "module1CompletionHref = module2MissionCards[0]?.href",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -518,6 +518,8 @@
+         missing = [snippet for snippet in snippets if snippet not in src]
+         if missing:
+             fail(f"{label} missing Module 1 sequence snippets: {missing}")
++    if module.count("`Start ${nextModule1Mission.missionNumber}`") > 1:
++        fail("/learn/1 should expose one obvious primary Start Mission CTA, not a duplicate lower CTA")
+     if "pathname === '/learn/1'" not in navigation and "pathname === \'/learn/1\'" not in navigation:
+         fail("focused Module 1 landing should hide fixed bottom navigation")
+     if "pathname === '/learn/1'" not in global_search and "pathname === \'/learn/1\'" not in global_search:
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+@@ -2895,28 +2895,10 @@
+ 
+ ## Iteration 13 — 2026-05-23T05:35+02:00
+ - Source/docs inspected: course operating brief, product direction reset, whole-course mission spine, autonomous execution plan, premium QA protocol, M1 audit, current checkpoint tail, /learn, /learn/1, Module 1/2 mission data/routes, shared MissionUI, qa_mission_pilot.py.
+-- Files changed: ; .
+-- UX/text reductions made: Module 1 landing now has one obvious primary CTA only. Removed the duplicate lower  CTA, replaced it with a passive queued-status pill, and hid the decorative bobbing module icon/rocket on the focused M1 landing so pictures/motion do not compete with the mission action. Lower card now says to use the main button above.
+-- M1/M2 learner path status:  still points to ; browser click confirmed route change. Module 1 remains a 3-mission classroom path leading into Module 2; Module 2 sequence unchanged.
++- Files changed: `src/app/learn/[moduleId]/page.tsx`; `scripts/qa_mission_pilot.py`.
++- UX/text reductions made: Module 1 landing now has one obvious primary CTA only. Removed the duplicate lower `Start Mission 1.1` CTA, replaced it with a passive queued-status pill, and hid the decorative bobbing module icon/rocket on the focused M1 landing so pictures/motion do not compete with the mission action. Lower card now says to use the main button above.
++- M1/M2 learner path status: `/learn/1` still points to `/missions/module-1/greet-frau-weber`; browser click confirmed route change. Module 1 remains a 3-mission classroom path leading into Module 2; Module 2 sequence unchanged.
+ - Images/video/animation work: skipped image generation; no useful clarifying image needed this run. Animation fix was restraint: removed non-essential decorative hero motion on the focused M1 landing. No video generation or paid tooling used.
+-- QA run + verdict: PASS for targeted lane. native_audio_pages=5 shared_native_audio=ok
+-opening_words[self-intro]=2
+-opening_words[spell-name]=3
+-opening_words[from-kerala]=3
+-opening_words[job-languages]=3
+-opening_words[final-self-intro]=3
+-start_path_source=ok
+-module2_mission_data=shared sequence_progress=ok
+-module1_mission_sequence_path=ok
+-mobile_action_controls=shared all_missions=5
+-sequence_status_completion_storage=ok
+-PASS: intro start-path browser QA (/intro → /learn → M1 mission)
+-direct_final_sequence_status[module1-final-mission]=ok storage=["politeExit"] count=1/3 done
+-direct_final_sequence_status[module2-final-mission]=ok storage=["finalSelfIntro"] count=1/5 done
+-PASS: direct-final sequence status browser QA
+-routes_reachable=26
+-PASS: mission pilot QA basics PASS, including route/audio/source/browser checks.  PASS (the broader 
+-> german-malayali@0.1.0 lint
+-> eslint src/ ... remains FAIL due inherited repo-wide lint errors in auth/games/legacy components, not this change). Dev server verified on ; curl  returned 200; browser visual QA confirmed duplicate CTA/rocket gone and one clear main action; console had 0 errors after click.
++- QA run + verdict: PASS for targeted lane. `python3 scripts/qa_mission_pilot.py` PASS, including route/audio/source/browser checks. `npx eslint src/app/learn/[moduleId]/page.tsx` PASS. The broader `npm run lint` remains FAIL due inherited repo-wide lint errors in auth/games/legacy components, not this change. Dev server verified on `0.0.0.0:3000`; curl `/learn/1` returned 200; browser visual QA confirmed duplicate CTA/rocket gone and one clear main action; console had 0 errors after click.
+ - Kuttan/name recommendation: unchanged. Keep recommendation: public adult-safe name should likely be Arun or Kiran, with Kuttan retained only as a home nickname/family flavor, but do not mass-rename without Boss approval.
+ - Next best lane: tighten the actual first Module 1 mission opening screen: it still has compact but visible sequence ribbon + intro copy; play through audio gating and reduce any remaining repeated explanatory text before the hear step.
+
+session_id: 20260523_054237_7cd6ca
+Iteration 13 done.
+
+Changed:
+- /shared/german-course/src/app/learn/[moduleId]/page.tsx
+- /shared/german-course/scripts/qa_mission_pilot.py
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Product fix:
+- Module 1 landing now behaves like Module 2: one clear primary CTA, no duplicate lower “Start Mission 1.1” button.
+- Hid the decorative hero/rocket-style motion on focused M1/M2 landing pages.
+- Lower Module 1 card is now passive status: “Use the main button above” + queued mission state.
+- CTA click verified from /learn/1 to /missions/module-1/greet-frau-weber.
+- No image generation this run; correct call. The fix was text/action clarity, not more visuals.
+
+QA:
+- python3 scripts/qa_mission_pilot.py: PASS
+- Targeted ESLint on modified page: PASS
+- Broader lint still has inherited repo-wide failures outside this lane.
+- Dev server verified on 0.0.0.0:3000.
+- Browser visual QA confirmed: one primary CTA, no duplicate lower CTA, no decorative rocket, console clean after click.
+
+Checkpoint:
+- Appended and verified:
+  /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Name recommendation unchanged:
+- Don’t mass-rename Kuttan.
+- My recommendation remains: public/adult-safe learner name should likely be Arun or Kiran, with “Kuttan” kept as a home nickname/family flavor if Boss approves.

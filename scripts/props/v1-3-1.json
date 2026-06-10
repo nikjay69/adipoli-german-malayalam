@@ -1,0 +1,51 @@
+{
+  "lessonId": "v1-3-1",
+  "title": "Greetings for Real Life",
+  "subtitle": "Module 1 · Lesson 3 · Part 1",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Mission one: greet Frau Weber politely and sound calm from the first word.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v1-3-1/v1-3-1-line-0.mp3"
+    },
+    {
+      "text": "Four tools: Guten Morgen, Guten Tag, Guten Abend, Gute Nacht.",
+      "german": "Guten Tag",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v1-3-1/v1-3-1-line-1.mp3"
+    },
+    {
+      "text": "Bonus: Hallo works anytime. Tschüss for goodbye. Safe defaults.",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v1-3-1/v1-3-1-line-2.mp3"
+    },
+    {
+      "text": "Try: Guten Tag! Wie geht es Ihnen? — the formal opener for any shop or office.",
+      "german": "Wie geht es Ihnen?",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v1-3-1/v1-3-1-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Guten Tag",
+      "english": "Good day",
+      "malayalam": "nalla divasam",
+      "pronunciation": "goo-ten tahk"
+    },
+    {
+      "german": "Hallo",
+      "english": "Hello",
+      "malayalam": "halo",
+      "pronunciation": "hah-loh"
+    },
+    {
+      "german": "Tschüss",
+      "english": "Bye (casual)",
+      "malayalam": "bye",
+      "pronunciation": "chues"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

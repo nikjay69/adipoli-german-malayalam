@@ -1,0 +1,27 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -1134,11 +1134,12 @@
+   const currentMission = module2MissionCards[currentIndex];
+   const nextMission = currentMission?.next;
+   const finalPull = currentMission?.modulePull;
++  const nextHref = nextMission ? `${nextMission.href}?start=listen` : '/learn/2';
+ 
+   if (nextMission) {
+     return (
+       <Link
+-        href={nextMission.href}
++        href={nextHref}
+         className="block rounded-[1.8rem] border border-[#f1d27a]/20 bg-gradient-to-br from-[#f1d27a]/16 to-white/[0.04] p-6 transition hover:border-[#f1d27a]/45 hover:bg-[#f1d27a]/10"
+       >
+         <Sparkles className="mb-4 h-9 w-9 text-[#f1d27a]" />
+@@ -1210,7 +1211,8 @@
+   const currentMission = module1MissionCards[Math.max(currentIndex, 0)];
+   const nextMission = currentMission?.next;
+   const opensModule2 = nextMission?.href.startsWith('/missions/module-2');
+-  const href = opensModule2 && nextMission ? `${nextMission.href}?start=listen` : nextMission?.href ?? '/learn/2';
++  const opensMission = nextMission?.href.startsWith('/missions/');
++  const href = opensMission && nextMission ? `${nextMission.href}?start=listen` : nextMission?.href ?? '/learn/2';
+ 
+   return (
+     <Link
+  ⟳ compacting context…

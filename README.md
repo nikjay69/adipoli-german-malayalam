@@ -11,12 +11,21 @@ Live app: https://adipoli-german.vercel.app/
 - Zustand
 - Framer Motion
 
+## Current MVP direction
+- Guided A1 course first; games later
+- Target ~35h owned video lessons for Malayali beginners
+- Phone-first + desktop-friendly learner flow
+- Must-do path for passing Goethe A1
+- Score-booster path for stronger marks
+- Closed checkpoints that diagnose Hören/Lesen/Schreiben/Sprechen/grammar/vocab
+- Manual scoring/rubrics are acceptable for MVP; AI is optional support
+
 ## Current product shape
-- 18 learning modules
-- games and practice modes
+- 18 learning modules in the app scaffold
+- missions/practice modes, with games treated as later reinforcement
 - vocabulary audio + thumbnails
 - Goethe A1 test prep
-- AI tutor route (when Gemini is configured)
+- AI tutor route (when Gemini is configured, not required for MVP)
 
 ## Important runtime truth
 This repo currently ships in **guest-first mode** by default.

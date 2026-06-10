@@ -1,0 +1,72 @@
+{
+  "title": "Episode 2 — How are you? and the Magic Words",
+  "lines": [
+    { "voice": "narrator", "text": "Welcome back to Adipoli German — On the Go. Episode two.", "pauseAfterMs": 500 },
+    { "voice": "narrator", "text": "In this episode, you'll learn to ask how someone is, reply, and use three words that open every door in Germany. Let's begin.", "pauseAfterMs": 700 },
+
+    { "voice": "narrator", "text": "Remember from episode one — how do you say hello formally?", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Guten Tag.", "pauseAfterMs": 1800 },
+    { "voice": "narrator", "text": "And how do you say your name is Kuttan?", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Ich hei\u00DFe Kuttan.", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "Sehr gut. Now let's move forward.", "pauseAfterMs": 500 },
+
+    { "voice": "narrator", "text": "To ask 'how are you?' formally in German, you say:", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Wie geht es Ihnen?", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "Repeat.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Wie geht es Ihnen?", "pauseAfterMs": 3200 },
+    { "voice": "narrator", "text": "One more time.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Wie geht es Ihnen?", "pauseAfterMs": 3500 },
+
+    { "voice": "narrator", "text": "The casual version, with a friend, is shorter.", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Wie geht's?", "pauseAfterMs": 2200 },
+    { "voice": "narrator", "text": "Say it.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Wie geht's?", "pauseAfterMs": 2500 },
+
+    { "voice": "narrator", "text": "The standard reply — I'm good, thanks.", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Gut, danke.", "pauseAfterMs": 2200 },
+    { "voice": "narrator", "text": "Repeat.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Gut, danke.", "pauseAfterMs": 3000 },
+
+    { "voice": "narrator", "text": "In Germany, when someone asks how you are, you must ask back. It's polite. Like 'sukhamano, enna pinne?' — after gut danke, say:", "pauseAfterMs": 400 },
+    { "voice": "german", "text": "Und Ihnen?", "pauseAfterMs": 2000 },
+    { "voice": "narrator", "text": "Formally. Say it.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Und Ihnen?", "pauseAfterMs": 3000 },
+
+    { "voice": "narrator", "text": "With a friend, you'd say:", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Und dir?", "pauseAfterMs": 2000 },
+
+    { "voice": "narrator", "text": "Now combine. Someone says: Wie geht es Ihnen? You reply: Good, thanks. And you?", "pauseAfterMs": 4500 },
+    { "voice": "narrator", "text": "You say...", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Gut, danke. Und Ihnen?", "pauseAfterMs": 3500 },
+    { "voice": "narrator", "text": "Adipoli! Perfect exchange.", "pauseAfterMs": 500 },
+
+    { "voice": "narrator", "text": "Now, the three magic words. Thank you — Danke.", "pauseAfterMs": 400 },
+    { "voice": "german", "text": "Danke.", "pauseAfterMs": 2000 },
+    { "voice": "narrator", "text": "Say it.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Danke.", "pauseAfterMs": 2500 },
+
+    { "voice": "narrator", "text": "Please, or you're welcome — Bitte.", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Bitte.", "pauseAfterMs": 2000 },
+    { "voice": "narrator", "text": "Repeat.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Bitte.", "pauseAfterMs": 2500 },
+
+    { "voice": "narrator", "text": "Excuse me, or sorry — Entschuldigung.", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Entschuldigung.", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "A little longer. Say it.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Entschuldigung.", "pauseAfterMs": 3500 },
+
+    { "voice": "narrator", "text": "Now a scene. Imagine you bumped into someone in a Munich supermarket. What do you say?", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Entschuldigung!", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "Now imagine the cashier hands you a receipt. You say?", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Danke.", "pauseAfterMs": 2000 },
+
+    { "voice": "narrator", "text": "Finally — a full exchange to end the episode. Practice the whole flow. Imagine meeting your cousin's friend, formally. He says: Guten Tag, wie geht es Ihnen?", "pauseAfterMs": 800 },
+    { "voice": "narrator", "text": "You reply, politely, and ask back.", "pauseAfterMs": 4500 },
+    { "voice": "narrator", "text": "You say:", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Gut, danke. Und Ihnen?", "pauseAfterMs": 3000 },
+    { "voice": "narrator", "text": "Adipoli machaa. You now have the polite exchange ready for any first meeting.", "pauseAfterMs": 600 },
+
+    { "voice": "narrator", "text": "In the next episode, we learn numbers zero to twenty — for prices, phone numbers, and the age question. Until then — bis bald.", "pauseAfterMs": 600 },
+    { "voice": "german", "text": "Bis bald!", "pauseAfterMs": 300 }
+  ]
+}

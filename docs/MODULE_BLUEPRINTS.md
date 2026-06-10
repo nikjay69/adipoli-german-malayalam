@@ -2,8 +2,11 @@
 
 > Detailed planning document for all 18 course modules. This file is the script-planning blueprint for teaching, production, exam mapping, and future content expansion.
 >
-> **Updated:** 2026-03-23
+> **Updated:** 2026-03-23 (module design) · 2026-04-14 (arc alignment note below)
 > **Primary sources:** `docs/COURSE_PLAN_10_10.md`, `src/lib/content/modules/module-01.ts` ... `module-18.ts`
+>
+> **⚠ Narrative arc canon:** every `storyScene.setting` in `src/lib/content/modules/module-XX.ts` must be a Kerala location per [`A1_STORY_BIBLE.md`](A1_STORY_BIBLE.md). M1 L1-3 → L1-6 rewritten on 2026-04-14; M2 L2-1 and L2-5 rewritten; M2 L2-2/L2-3/L2-4 and all M3 pending (see [`M2_M3_SETTING_AUDIT.md`](M2_M3_SETTING_AUDIT.md)).
+> Teaching content (mentioning Berlin, Munich as target cities in example sentences) is fine — the restriction is only on *where Kuttan is physically standing* during A1.
 
 ---
 

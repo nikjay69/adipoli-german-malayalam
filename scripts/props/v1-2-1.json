@@ -1,0 +1,52 @@
+{
+  "lessonId": "v1-2-1",
+  "title": "German Sounds for Malayalis",
+  "subtitle": "Module 1 · Lesson 2 · Part 1",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Good news: Malayalam speakers already know how to listen closely to sounds.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v1-2-1/v1-2-1-line-0.mp3"
+    },
+    {
+      "text": "Three umlauts to crack: ä, ö, ü. Lip + tongue tricks.",
+      "german": "ä ö ü",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v1-2-1/v1-2-1-line-1.mp3"
+    },
+    {
+      "text": "Plus ß — the double-s symbol. And the soft 'ch' like in 'ich'.",
+      "german": "ß",
+      "mood": "thinking",
+      "audioSrc": "audio/tts/v1-2-1/v1-2-1-line-2.mp3"
+    },
+    {
+      "text": "Goal today: confident pronunciation of schön and München.",
+      "german": "schön",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v1-2-1/v1-2-1-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "schön",
+      "english": "beautiful",
+      "malayalam": "manoharam",
+      "pronunciation": "shern"
+    },
+    {
+      "german": "München",
+      "english": "Munich",
+      "malayalam": "myoonik",
+      "pronunciation": "muen-shen"
+    },
+    {
+      "german": "Straße",
+      "english": "street",
+      "malayalam": "teruv",
+      "pronunciation": "shtrah-se"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

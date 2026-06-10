@@ -1,0 +1,259 @@
+{
+  "version": 1,
+  "description": "Single source of truth for the Adipoli German cinematic arc generation pipeline. Read by scripts/render-arc.py. Do NOT hand-edit prompt fields without also updating the rendered SERIES_FULL_SCRIPT.md (or regenerate it from this manifest).",
+  "globals": {
+    "kuttan_reference": "pilot/video-1/seeds/s1-start.jpg",
+    "still_model": "gemini-2.5-flash-image",
+    "imagen_model": "imagen-3.0-generate-001",
+    "veo_model": "veo-3.1-fast-generate-001",
+    "project_id": "gen-lang-client-0108425102",
+    "region": "us-central1",
+    "gcs_output_bucket": "gs://adipoli-veo/output/",
+    "gcs_review_bucket": "gs://adipoli-veo/review/",
+    "aspect_ratio": "16:9",
+    "default_duration_seconds": 4,
+    "max_chained_extensions": 3,
+    "style_block": "Pixar-style 3D animation. Warm cinematic lighting, soft ambient occlusion, rich saturated colors. Clean render, expressive character animation. Premium animated-film quality.",
+    "character_block": "The young Malayali man from the reference images: early 20s, warm expressive face, medium-brown skin, black hair clean and simple, no beard, no glasses, wearing a casual white cotton shirt and jeans.",
+    "negative_prompt": "No text overlays. No subtitles. No watermark. No hat. No glasses. No beard. No realistic style. No live action. No anime."
+  },
+  "videos": [
+    {
+      "id": 2,
+      "title": "First German Words",
+      "status": "to-generate",
+      "duration_target_seconds": 24,
+      "narrative": "The morning after the spark. First real contact with the language. Kerala home veranda/courtyard, morning light, green garden. Brand new textbook, alphabet, awkward pronunciation, quiet pride. Fresh seeds for every face-showing scene to preserve character identity.",
+      "scenes": [
+        {
+          "id": "v2-s1",
+          "title": "Veranda Morning — Opening the Book",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium-wide establishing shot. A young Malayali man in his early 20s sitting on the steps of a Kerala home veranda in warm golden morning light. Lush green garden with palm trees and tropical plants in soft focus behind him. A brand new German language textbook open on his lap, a notebook and pen beside him on the stone step, a steel cup of chai. His expression is focused and quietly excited — day one. White cotton shirt, jeans, bare feet on the warm stone. Dappled morning sunlight through overhead leaves.",
+          "animation_prompt": "Gentle breath, fingers carefully turning the first page of the textbook, slight forward lean of curiosity. Dappled sunlight shifts through the leaves above. Faint garden sounds. A tiny breeze moves a plant leaf in the background.",
+          "duration": 4
+        },
+        {
+          "id": "v2-s2",
+          "title": "Detail Insert — Fingers on the Page",
+          "seed_strategy": "chain_from_previous",
+          "chain_from": "v2-s1",
+          "animation_prompt": "Camera pushes in slowly toward the open textbook on his lap. Close-up of his fingers tracing the German alphabet letters on the page. Small careful finger movement along the text. Dappled sunlight on the page. Intimate detail shot.",
+          "duration": 4
+        },
+        {
+          "id": "v2-s3",
+          "title": "Trying the First Word",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium close-up. A young Malayali man in his early 20s sitting on Kerala home veranda steps, morning light, green garden behind him in soft focus. He is looking down at the open German textbook on his lap, lips slightly parted as if about to speak a word. His expression is concentrated and slightly self-conscious. White cotton shirt. Warm natural lighting on his face from the side.",
+          "animation_prompt": "Lips part slowly, forming the word Hallo — careful, deliberate pronunciation. Slight self-conscious head tilt. Eyes flick down to the book then back up. A tiny breath of effort. The look of someone hearing their own voice say something foreign for the first time.",
+          "duration": 4
+        },
+        {
+          "id": "v2-s4",
+          "title": "Writing — Pen on Paper",
+          "seed_strategy": "chain_from_previous",
+          "chain_from": "v2-s3",
+          "animation_prompt": "He looks down and picks up his pen. Camera follows his hand as he begins writing carefully in the notebook on the veranda step. Small precise pen strokes forming German letters. Warm morning light on the page. Focused, quiet moment.",
+          "duration": 4
+        },
+        {
+          "id": "v2-s5",
+          "title": "Something Clicked",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium shot. A young Malayali man in his early 20s sitting on Kerala home veranda steps, morning light. He has just looked up from his notebook, expression shifting from concentration to a small quiet realisation — something just clicked. The German textbook and notebook rest on his lap and the step beside him. Green garden and palm trees in soft focus behind. White cotton shirt. Morning light catches the side of his face. The faintest hint of a smile.",
+          "animation_prompt": "A gentle exhale. The faintest smile forms at the corner of his mouth. Eyes drift to the garden, then back. Small nod to himself. The morning light catches his face. The posture of someone who just understood something new.",
+          "duration": 4
+        },
+        {
+          "id": "v2-s6",
+          "title": "Quiet Pride in the Garden",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium-wide shot. A young Malayali man in his early 20s standing at the edge of a Kerala home garden, leaning against a veranda post. He holds the closed notebook loosely in one hand. Green palm trees and tropical plants surround him. His expression is calm and quietly proud — he just did something real. White cotton shirt, morning light filtering through the trees. Cinematic composition with depth.",
+          "animation_prompt": "Slow steady breath. Gentle breeze moves leaves around him. His gaze drifts across the Kerala morning garden. A small private smile forms. Tiny head lift — the posture of someone who feels a little taller than yesterday.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The German Class",
+      "status": "to-generate",
+      "duration_target_seconds": 20,
+      "narrative": "First real classroom day at a Kerala German language institute. Nervous arrival, finds his seat, listens to the teacher, tries to participate, walks home energised.",
+      "scenes": [
+        {
+          "id": "v3-s1",
+          "title": "Arriving at the Institute",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man in his early 20s standing outside a small modest German language institute building somewhere in urban Kerala, morning light. The building has a simple sign in the background suggesting a language school (no readable text). He holds a notebook and pen, small backpack on one shoulder. His expression is nervous but eager, the look of someone about to enter their first real class.",
+          "animation_prompt": "Gentle breath, small weight shift, slight glance up at the building, tiny adjustment of the notebook in his hands.",
+          "duration": 4
+        },
+        {
+          "id": "v3-s2",
+          "title": "Finding a Seat",
+          "seed_strategy": "imagen",
+          "still_prompt": "Inside a small simple Kerala language classroom, plastic chairs, a whiteboard at the front, a few other students of mixed backgrounds already seated. A young Malayali man in his early 20s is just sitting down at a desk near the middle, placing his notebook in front of him. His expression is quietly nervous and observant, taking in the room. White cotton shirt, no readable text on the whiteboard.",
+          "animation_prompt": "Small movement of sitting down, gentle breath, tiny head turn glancing at classmates, careful placement of notebook on desk.",
+          "duration": 4
+        },
+        {
+          "id": "v3-s3",
+          "title": "Listening to the Teacher",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium close-up inside a simple Kerala classroom. A young Malayali man in his early 20s sitting at a wooden desk, leaning forward in concentration. A whiteboard is softly blurred in the background. No other people visible — tight framing on him alone. His expression is focused and absorbing. White cotton shirt. Warm natural light from a window.",
+          "animation_prompt": "Gentle breath, tiny eye movement following the teacher, small forward lean of concentration, occasional blink of focus.",
+          "duration": 4
+        },
+        {
+          "id": "v3-s4",
+          "title": "Trying to Speak",
+          "seed_strategy": "imagen",
+          "still_prompt": "Medium close-up inside a simple Kerala classroom. A young Malayali man in his early 20s at his desk, mouth slightly open as if forming a German word, one hand slightly raised. His expression shows effort and slight nervousness — trying to speak in class for the first time. No other people visible — tight framing on him alone. White cotton shirt.",
+          "animation_prompt": "Small mouth movement forming a German sentence, tiny breath, half-raised hand, slight blush of effort, gentle gaze toward the teacher in soft-focus background.",
+          "duration": 4
+        },
+        {
+          "id": "v3-s5",
+          "title": "Walking Home",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man walking on a Kerala street in the late afternoon golden light, away from a language institute. His notebook is tucked under his arm, small backpack on one shoulder. His expression is quietly energised, the first class went okay and he is hooked. Other people and small Kerala street life softly visible in the background.",
+          "animation_prompt": "Steady walking pace, gentle arm swing, tiny private smile, slight head lift of new confidence.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The Struggle",
+      "status": "to-generate",
+      "duration_target_seconds": 16,
+      "narrative": "Weeks have passed. The honeymoon is over. German grammar is hard. Kuttan is tired, frustrated, starting to doubt himself. Bedroom at night, dim lamp.",
+      "scenes": [
+        {
+          "id": "v4-s1",
+          "title": "Late Night Study",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man sitting on the floor of his Kerala bedroom late at night, single lamp providing dim warm light. Around him: an open German textbook, a notebook covered in messy handwritten notes, his phone, an empty cup. His eyes look tired, his posture slightly slumped. He stares at the textbook page with the look of someone who has been studying for hours. White cotton shirt slightly rumpled.",
+          "animation_prompt": "Slow tired breath, tiny rub of one eye, slight head sway from fatigue, dim lamp flicker.",
+          "duration": 4
+        },
+        {
+          "id": "v4-s2",
+          "title": "Frustrated",
+          "seed_strategy": "chain_from_previous",
+          "chain_from": "v4-s1",
+          "animation_prompt": "Pen down. Both hands move partially into his hair. Head bows slightly. Small frustrated breath, tiny head shake, eyes close for a second.",
+          "duration": 4
+        },
+        {
+          "id": "v4-s3",
+          "title": "Crossed-Out Page",
+          "seed_strategy": "chain_from_previous",
+          "chain_from": "v4-s2",
+          "animation_prompt": "Camera drifts down to the notebook on the floor. Close-up of the page showing crossed-out German sentences. His hand rests on the edge of the page. Tiny hand movement, very faint breath, gentle lamp flicker.",
+          "duration": 4
+        },
+        {
+          "id": "v4-s4",
+          "title": "Doubting at the Window",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man standing at the window of his Kerala bedroom, late at night. He looks out at the dark Kerala street and palm trees outside. His expression is quietly doubting, wondering if he can really do this. Dim lamp light from the room behind him casts a soft glow on his side. Faint reflection of his face in the window glass.",
+          "animation_prompt": "Slow breath, tiny weight shift, gentle gaze out the window, faint reflection of his face moving slightly in the window glass.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Breakthrough",
+      "status": "to-generate",
+      "duration_target_seconds": 16,
+      "narrative": "The next morning. Or the next week. Something clicks. A sentence finally forms cleanly. Kuttan feels it.",
+      "scenes": [
+        {
+          "id": "v5-s1",
+          "title": "Calmer Study",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man sitting on the floor of his Kerala bedroom in soft morning light. The German textbook is open in front of him, the notebook is tidier than before, the empty cup is replaced by chai. His expression is calmer, more present, less desperate. He is reading a sentence carefully. White cotton shirt, freshly composed.",
+          "animation_prompt": "Slow calm breath, tiny finger tracing the line of text, gentle lift of the chai cup, focused gaze.",
+          "duration": 4
+        },
+        {
+          "id": "v5-s2",
+          "title": "The Click",
+          "seed_strategy": "chain_from_previous",
+          "chain_from": "v5-s1",
+          "animation_prompt": "Tiny intake of breath, small widening of the eyes, lips part slightly in a small oh — the exact instant a German grammar pattern has clicked, looking at the textbook with new understanding. Almost imperceptible lift at the corner of the mouth.",
+          "duration": 4
+        },
+        {
+          "id": "v5-s3",
+          "title": "Speaking to the Mirror",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man standing in front of a small wall mirror in his Kerala bedroom, morning light. He is saying a German sentence to himself, mouth shaped mid-word, looking at his own reflection. His expression is focused and quietly proud — this one is coming out cleanly. White cotton shirt.",
+          "animation_prompt": "Clear mouth movement forming a full German sentence, gentle breath, tiny nod of self-approval, small smile forming at the end.",
+          "duration": 4
+        },
+        {
+          "id": "v5-s4",
+          "title": "Quiet Pride on the Terrace",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man standing on a small Kerala home terrace or balcony in the late morning. He has his notebook in one hand, looking out at the green Kerala surroundings. His expression is quietly proud — he can feel that something has shifted. There is calm in him now. White cotton shirt.",
+          "animation_prompt": "Slow steady breath, tiny lift of the chin, gentle gaze across the view, small private smile.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "The Goethe A1 Exam",
+      "status": "to-generate",
+      "duration_target_seconds": 20,
+      "narrative": "Exam day. Goethe A1 in Kerala (Trivandrum or Kochi exam centre). Walking in nervous, sitting the written, the speaking part with an examiner, walking out, the moment he knows he passed.",
+      "scenes": [
+        {
+          "id": "v6-s1",
+          "title": "Outside the Exam Centre",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man in his early 20s standing outside a modest exam centre building in urban Kerala, morning light. He is dressed slightly more formally than usual: same white cotton shirt but tucked in, neater. He holds an ID and a pen, a small bag on his shoulder. His expression is openly nervous but determined — exam day. Hair combed.",
+          "animation_prompt": "Nervous breath, small weight shift from foot to foot, tiny glance up at the building, slight tightening of the grip on the ID.",
+          "duration": 4
+        },
+        {
+          "id": "v6-s2",
+          "title": "The Written Paper",
+          "seed_strategy": "imagen",
+          "still_prompt": "Inside a Kerala exam hall, rows of single desks, fluorescent ceiling light, other candidates softly visible at other desks. In the foreground, the young Malayali man sits at his desk, pen in hand on the answer sheet, fully concentrated on the German written exam in front of him. His expression is intense, quietly focused. White cotton shirt tucked in.",
+          "animation_prompt": "Small careful pen movements, tiny breath, slight head tilt as he reads a question, focused unblinking gaze.",
+          "duration": 4
+        },
+        {
+          "id": "v6-s3",
+          "title": "The Speaking Part",
+          "seed_strategy": "imagen",
+          "still_prompt": "Inside a small Kerala exam interview room. A calm older examiner sits across a small table, with an exam sheet in front of them. On the near side of the table, the young Malayali man is mid-sentence, speaking German to the examiner. His expression is focused and trying very hard to keep it together — this is the speaking part. Soft natural light from a window.",
+          "animation_prompt": "Clear mouth movement of speaking a German sentence, small nervous breath, tiny hand gesture, gaze meeting the examiner.",
+          "duration": 4
+        },
+        {
+          "id": "v6-s4",
+          "title": "Walking Out",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man stepping out of a Kerala exam centre building into the afternoon sunlight. He is mid-exhale, the long breath of someone who has just finished a difficult exam. His expression is exhausted but light — it's done, whatever happens now. White cotton shirt.",
+          "animation_prompt": "Long slow exhale, gentle drop of the shoulders, tiny smile of relief, slight head tilt up toward the sky.",
+          "duration": 4
+        },
+        {
+          "id": "v6-s5",
+          "title": "The Result",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young Malayali man sitting on the floor of his Kerala home, evening lamp light, holding his phone in both hands. The phone screen shows a Goethe-style A1 result page (no readable text needed, just the visual shape of an official result). His expression is the moment of seeing the pass: eyes wide, breath caught, on the edge of a real smile. Same warm Kerala room as Video 1. White cotton shirt.",
+          "animation_prompt": "Sharp small intake of breath, eyes widening, tiny tightening of the grip on the phone, the start of a real smile.",
+          "duration": 4
+        }
+      ]
+    }
+  ]
+}

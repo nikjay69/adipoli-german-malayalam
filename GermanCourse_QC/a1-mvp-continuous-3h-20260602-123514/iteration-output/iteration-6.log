@@ -1,0 +1,906 @@
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1Practice.ts → b//shared/german-course/src/lib/missions/module1Practice.ts
+@@ -682,6 +682,110 @@
+   nextTask: 'Next: first mini-conversation',
+ };
+ 
++export const module1FirstConversationPractice: Module1PracticeSet = {
++  id: 'first-mini-conversation',
++  title: 'Practice: first mini-conversation',
++  route: '/missions/module-1/first-mini-conversation',
++  source: 'course-production/a1-mvp/module-01/module-01-must-do-and-score-booster-pack.md#10-lesson-7-first-mini-conversation',
++  scene: {
++    speakerName: 'Frau Weber',
++    speakerLine: 'Guten Tag. Wie geht es Ihnen?',
++    audioSrc: '/audio/tts/v1-3-1/v1-3-1-line-3.mp3',
++    turnCue: 'Now answer, then leave.',
++  },
++  outputLines: ['Guten Tag, Frau Weber. Gut, danke.', 'Noch einmal, bitte. Auf Wiedersehen.'],
++  practiceItems: [
++    {
++      id: 'answer-formal-check-in',
++      task: 'Greet Frau Weber and answer the check-in politely.',
++      expectedOutput: 'Guten Tag, Frau Weber. Gut, danke.',
++      timeBoxMinutes: 4,
++      weaknessTags: ['sprechen:formality', 'sprechen:question_answer'],
++    },
++    {
++      id: 'ask-repeat-if-needed',
++      task: 'If the question is missed, ask once more instead of freezing.',
++      expectedOutput: 'Noch einmal, bitte.',
++      timeBoxMinutes: 3,
++      weaknessTags: ['sprechen:request_phrase', 'hoeren:question_recognition'],
++    },
++    {
++      id: 'close-conversation',
++      task: 'Thank the teacher and leave formally.',
++      expectedOutput: 'Vielen Dank. Auf Wiedersehen.',
++      timeBoxMinutes: 3,
++      weaknessTags: ['vocab:goodbye_set', 'sprechen:formality'],
++    },
++  ],
++  repair: {
++    correctChoiceId: 'formal-mini-conversation',
++    options: [
++      { id: 'hey-was', title: 'Hey. Was?', weaknessTags: ['sprechen:formality', 'sprechen:request_phrase'] },
++      { id: 'formal-mini-conversation', title: 'Guten Tag, Frau Weber. Gut, danke.' },
++      { id: 'gute-nacht', title: 'Gute Nacht, Frau Weber.', weaknessTags: ['vocab:gute_nacht_trap'] },
++    ],
++    wrongFeedback: 'Keep the adult path: greet formally, answer shortly, ask repeat with bitte if needed.',
++    correctFeedback: 'Correct. Formal greeting plus short answer is enough for A1.',
++  },
++  miniCheck: {
++    closedBookInstruction: 'Closed check: no notes. Run the tiny exchange from memory.',
++    passRule: 'Pass when the learner greets, answers one question, asks repeat if needed, thanks, and leaves formally.',
++    items: [
++      {
++        id: 'mc-greet-answer',
++        mode: 'speak',
++        prompt: 'Frau Weber says: Guten Tag. Wie geht es Ihnen? Answer politely.',
++        expected: 'Guten Tag, Frau Weber. Gut, danke.',
++        pass: 'Learner gives a short formal answer without freezing.',
++        weaknessTags: ['sprechen:question_answer', 'sprechen:formality'],
++      },
++      {
++        id: 'mc-repeat-request',
++        mode: 'speak',
++        prompt: 'You missed the question. Ask once more.',
++        expected: 'Noch einmal, bitte.',
++        pass: 'Learner asks for repetition politely.',
++        weaknessTags: ['sprechen:request_phrase'],
++      },
++      {
++        id: 'mc-thank-leave',
++        mode: 'speak',
++        prompt: 'End the classroom conversation.',
++        expected: 'Vielen Dank. Auf Wiedersehen.',
++        pass: 'Learner thanks and leaves with the formal goodbye.',
++        weaknessTags: ['vocab:goodbye_set', 'sprechen:formality'],
++      },
++    ],
++  },
+… omitted 38 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1.ts → b//shared/german-course/src/lib/missions/module1.ts
+@@ -1,4 +1,4 @@
+-export type Module1MissionId = 'greetFrauWeber' | 'pleaseThanks' | 'politeExit';
++export type Module1MissionId = 'greetFrauWeber' | 'pleaseThanks' | 'politeExit' | 'firstMiniConversation';
+ 
+ export type Module1MissionCard = {
+   id: Module1MissionId;
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1.ts → b//shared/german-course/src/lib/missions/module1.ts
+@@ -72,6 +72,25 @@
+     tone: 'green',
+     steps: ['Scene + repair'],
+     next: {
++      href: '/missions/module-1/first-mini-conversation',
++      cta: 'Next: full mini-conversation',
++      title: 'Run the whole tiny exchange.',
++      pull: 'Now combine greet, answer, repeat request, thank, and goodbye in one scene.',
++    },
++  },
++  {
++    id: 'firstMiniConversation',
++    missionNumber: 'Mission 1.4',
++    title: 'Run the first mini-conversation',
++    output: 'Guten Tag, Frau Weber. Gut, danke. Auf Wiedersehen.',
++    proof: 'audio • answer aloud • quick repair',
++    href: '/missions/module-1/first-mini-conversation',
++    state: 'Playable now',
++    active: true,
++    railLabel: 'Module 1 · First mini-conversation',
++    tone: 'green',
++    steps: ['Scene + repair'],
++    next: {
+       href: '/missions/module-2/self-intro',
+       cta: 'Start Module 2 speaking',
+       title: 'Introduce yourself in the Goethe room.',
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1.ts → b//shared/german-course/src/lib/missions/module1.ts
+@@ -145,4 +145,8 @@
+     apologyContrast: '/audio/tts/v1-4-1/v1-4-1-line-2.mp3',
+     shopExitModel: '/audio/tts/v1-4-1/v1-4-1-line-3.mp3',
+   },
++  firstMiniConversation: {
++    formalOpener: '/audio/tts/v1-3-1/v1-3-1-line-3.mp3',
++    exitSet: '/audio/tts/v1-4-1/v1-4-1-line-0.mp3',
++  },
+ } as const;
+  ┊ review diff
+a/src/app/missions/module-1/first-mini-conversation/page.tsx → b/src/app/missions/module-1/first-mini-conversation/page.tsx
+@@ -0,0 +1,142 @@
++'use client';
++
++import { useEffect, useState } from 'react';
++import { ArrowRight } from 'lucide-react';
++import {
++  ConversationRepairStep,
++  MissionShell,
++  Module1NextMissionCard,
++  PremiumCard,
++  useMissionStepForQA,
++} from '@/app/missions/module-2/_components/MissionUI';
++import { module1MissionById, writeCompletedModule1Mission } from '@/lib/missions/module1';
++import { module1FirstConversationPractice } from '@/lib/missions/module1Practice';
++
++const mission = module1MissionById.firstMiniConversation;
++const practice = module1FirstConversationPractice;
++const missionSteps = mission.steps;
++const conversationContexts = ['answer question', 'ask repeat', 'thank + leave'];
++
++export default function Module1FirstMiniConversationPage() {
++  const [step] = useMissionStepForQA(0, missionSteps.length - 1);
++  const [repairChoice, setRepairChoice] = useState<string | null>(null);
++  const [context, setContext] = useState<string | null>(null);
++
++  const repairCorrect = repairChoice === practice.repair.correctChoiceId;
++
++  useEffect(() => {
++    if (!repairCorrect) return;
++    writeCompletedModule1Mission(mission.id);
++  }, [repairCorrect]);
++
++  return (
++    <MissionShell currentStep={step} steps={missionSteps} railLabel={mission.railLabel} tone={mission.tone} currentModule1MissionId={mission.id}>
++      <PremiumCard>
++        {step === 0 && (
++          <>
++            <ConversationRepairStep
++              title="Guten Tag."
++              hideTitle
++              sceneLabel="Kerala classroom"
++              sceneVisualVariant="ai-study"
++              speakerName={practice.scene.speakerName}
++              speakerLine={practice.scene.speakerLine}
++              learnerName="You"
++              learnerLine="Guten Tag, Frau Weber. Gut, danke."
++              audioSrc={practice.scene.audioSrc}
++              audioLabel="Frau Weber"
++              options={practice.repair.options}
++              value={repairChoice}
++              onChange={setRepairChoice}
++              isCorrect={repairCorrect}
++              wrongFeedback={practice.repair.wrongFeedback}
++              correctFeedback={practice.repair.correctFeedback}
++              cta={<>Fix mini-conversation <ArrowRight className="h-5 w-5" /></>}
++              onContinue={() => {}}
++              turnCue={practice.scene.turnCue}
++            />
++
++            {repairCorrect && (
++              <section
++                className="mt-5 rounded-[1.5rem] border border-white/12 bg-white/[0.055] p-5"
++                data-testid="lesson-7-first-conversation-micro-check-card"
++                aria-label="Lesson 7 first mini-conversation micro-check and recovery"
++              >
++                <div className="grid gap-4 lg:grid-cols-[0.8fr_1fr] lg:items-start">
++                  <div className="rounded-[1.35rem] border border-[#3fbf75]/25 bg-[#3fbf75]/12 p-5">
++                    <p className="text-sm font-black text-[#bcf7d0]">Locked.</p>
++                    <p className="mt-2 text-2xl font-black">Guten Tag. Gut, danke.</p>
++                  </div>
++
++                  <div className="rounded-[1.35rem] border border-[#f1d27a]/18 bg-[#f1d27a]/8 p-5">
++                    <p className="text-sm font-black text-[#f1d27a]">Run it</p>
++                    <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Choose the mini-conversation part to practise">
++                      {conversationContexts.map((item) => {
++                        const selected = context === item;
++                        return (
++                          <button
++                            key={item}
+… omitted 64 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -1720,7 +1720,7 @@
+       <div className="flex flex-wrap items-center justify-between gap-3">
+         <div>
+           <p className="text-sm font-black text-[#f1d27a]">Classroom wins</p>
+-          <p className="sr-only">Three classroom survival wins before Module 2 speaking.</p>
++          <p className="sr-only">Four classroom survival wins before Module 2 speaking.</p>
+         </div>
+         <p className="rounded-full border border-[#3fbf75]/25 bg-[#3fbf75]/12 px-3 py-1 text-sm font-black text-[#bcf7d0]">
+           {visibleCompletedCount}/{module1MissionCards.length} done
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -35,6 +35,7 @@
+     ROOT / "src/app/missions/module-1/greet-frau-weber/page.tsx",
+     ROOT / "src/app/missions/module-1/please-thanks/page.tsx",
+     ROOT / "src/app/missions/module-1/polite-exit/page.tsx",
++    ROOT / "src/app/missions/module-1/first-mini-conversation/page.tsx",
+ ]
+ MODULE1_MISSION_PAGE = MODULE1_MISSION_PAGES[0]
+ MODULE1_LESSON2_PRACTICE_PAGE = ROOT / "src/app/missions/module-1/why-a1/page.tsx"
+@@ -91,7 +92,7 @@
+     "http://127.0.0.1:3000",
+     "http://100.96.56.53:3000",
+ ]
+-ROUTE_PATHS = ["/", "/intro", "/learn", "/learn/1", "/learn/2", "/missions/module-1/greet-frau-weber", "/missions/module-1/why-a1", "/missions/module-1/german-sounds", "/missions/module-1/formal-greetings", "/missions/module-1/please-thanks", "/missions/module-1/polite-exit", "/missions/module-2/self-intro", "/missions/module-2/spell-name", "/missions/module-2/from-kerala", "/missions/module-2/job-languages", "/missions/module-2/final-self-intro"]
++ROUTE_PATHS = ["/", "/intro", "/learn", "/learn/1", "/learn/2", "/missions/module-1/greet-frau-weber", "/missions/module-1/why-a1", "/missions/module-1/german-sounds", "/missions/module-1/formal-greetings", "/missions/module-1/please-thanks", "/missions/module-1/polite-exit", "/missions/module-1/first-mini-conversation", "/missions/module-2/self-intro", "/missions/module-2/spell-name", "/missions/module-2/from-kerala", "/missions/module-2/job-languages", "/missions/module-2/final-self-intro"]
+ MAX_OPENING_VISIBLE_WORDS = 42
+ 
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -224,7 +224,7 @@
+         fail(f"shared compact MissionIntro missing snippets: {missing_intro_ui}")
+     for page in MISSION_PAGES + MODULE1_MISSION_PAGES:
+         src = page.read_text(encoding="utf-8")
+-        direct_scene_allowed = "module-1/greet-frau-weber" in page.as_posix() or "module-1/please-thanks" in page.as_posix() or "module-1/polite-exit" in page.as_posix() or "module-2/spell-name" in page.as_posix() or "module-2/from-kerala" in page.as_posix() or "module-2/job-languages" in page.as_posix()
++        direct_scene_allowed = "module-1/greet-frau-weber" in page.as_posix() or "module-1/please-thanks" in page.as_posix() or "module-1/polite-exit" in page.as_posix() or "module-1/first-mini-conversation" in page.as_posix() or "module-2/spell-name" in page.as_posix() or "module-2/from-kerala" in page.as_posix() or "module-2/job-languages" in page.as_posix()
+         if "<MissionIntro" not in src and not direct_scene_allowed:
+             fail(f"mission page should use compact shared MissionIntro or approved direct-scene start: {page}")
+         # Extract the step===0 JSX block roughly. This is deliberately simple and conservative.
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -943,7 +943,7 @@
+         fail(f"Module 1 win/ribbon reintroduced duplicate next CTA clutter: {module1_crowding_hits}")
+     for page, src in mission_pages:
+         page_path = page.as_posix()
+-        direct_scene_allowed = "module-1/greet-frau-weber" in page_path or "module-1/please-thanks" in page_path or "module-1/polite-exit" in page_path or "module-2/spell-name" in page_path or "module-2/job-languages" in page_path
++        direct_scene_allowed = "module-1/greet-frau-weber" in page_path or "module-1/please-thanks" in page_path or "module-1/polite-exit" in page_path or "module-1/first-mini-conversation" in page_path or "module-2/spell-name" in page_path or "module-2/job-languages" in page_path
+         module1_one_screen = "module-1/greet-frau-weber" in page_path or "module-1/please-thanks" in page_path or "module-1/polite-exit" in page_path
+         required_page = [
+             "Module1NextMissionCard",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -944,7 +944,7 @@
+     for page, src in mission_pages:
+         page_path = page.as_posix()
+         direct_scene_allowed = "module-1/greet-frau-weber" in page_path or "module-1/please-thanks" in page_path or "module-1/polite-exit" in page_path or "module-1/first-mini-conversation" in page_path or "module-2/spell-name" in page_path or "module-2/job-languages" in page_path
+-        module1_one_screen = "module-1/greet-frau-weber" in page_path or "module-1/please-thanks" in page_path or "module-1/polite-exit" in page_path
++        module1_one_screen = "module-1/greet-frau-weber" in page_path or "module-1/please-thanks" in page_path or "module-1/polite-exit" in page_path or "module-1/first-mini-conversation" in page_path
+         required_page = [
+             "Module1NextMissionCard",
+             "currentModule1MissionId={mission.id}",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -954,7 +954,8 @@
+             inline_win_testid = (
+                 "data-testid=\"greet-frau-weber-inline-win\"" if "module-1/greet-frau-weber" in page_path
+                 else "data-testid=\"please-thanks-inline-win\"" if "module-1/please-thanks" in page_path
+-                else "data-testid=\"polite-exit-inline-win\""
++                else "data-testid=\"polite-exit-inline-win\"" if "module-1/polite-exit" in page_path
++                else "data-testid=\"first-mini-conversation-inline-win\""
+             )
+             required_page.extend([
+                 "writeCompletedModule1Mission",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -981,7 +981,7 @@
+             extra_missing_page.append("<SpeakWriteStep, <SpeakRepairStep, or <ReplyAloudStep")
+         if "<RepairStep" not in src and not has_speak_repair:
+             extra_missing_page.append("<RepairStep")
+-        if not any(slug in str(page) for slug in ("module-1/greet-frau-weber", "module-1/please-thanks", "module-1/polite-exit")) and page != MODULE1_MISSION_PAGE and "RecognitionStep" not in src:
++        if not any(slug in str(page) for slug in ("module-1/greet-frau-weber", "module-1/please-thanks", "module-1/polite-exit", "module-1/first-mini-conversation")) and page != MODULE1_MISSION_PAGE and "RecognitionStep" not in src:
+             extra_missing_page.append("RecognitionStep")
+         if "<TinyWriteStep" in src:
+             fail(f"Module 1 mission must not add a separate tiny-write chore screen: {page}")
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -812,12 +812,15 @@
+             "greetFrauWeber",
+             "pleaseThanks",
+             "politeExit",
++            "firstMiniConversation",
+             "/missions/module-1/greet-frau-weber",
+             "/missions/module-1/please-thanks",
+             "/missions/module-1/polite-exit",
++            "/missions/module-1/first-mini-conversation",
+             "Guten Morgen, Frau Weber. Ich lerne Deutsch.",
+             "Danke. Bitte.",
+             "Vielen Dank. Auf Wiedersehen.",
++            "Guten Tag, Frau Weber. Gut, danke. Auf Wiedersehen.",
+             "/missions/module-2/self-intro",
+             "Start Module 2 speaking",
+             "readCompletedModule1Missions",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -924,7 +924,7 @@
+         "currentModule1MissionId?: Module1MissionId",
+         "export function Module1SequenceStatus",
+         "Classroom wins",
+-        "Three classroom survival wins before Module 2 speaking.",
++        "Four classroom survival wins before Module 2 speaking.",
+         "Module 1 compact win progress",
+         "Module 2 opens from the card on the right.",
+         "data-testid=\"say-aloud-then-tap\"",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1184,6 +1184,38 @@
+     missing_lesson6_data = [snippet for snippet in required_lesson6_data if snippet not in practice_data]
+     if missing_lesson6_data:
+         fail(f"Lesson 6 goodbye/repair practice data missing snippets: {missing_lesson6_data}")
++    first_conversation_src = MODULE1_MISSION_PAGES[3].read_text(encoding="utf-8")
++    required_first_conversation_focus = [
++        "module1FirstConversationPractice",
++        "title=\"Guten Tag.\"",
++        "hideTitle",
++        "data-testid=\"lesson-7-first-conversation-micro-check-card\"",
++        "data-testid=\"lesson-7-mini-check-items\"",
++        "data-testid=\"lesson-7-recovery-cards\"",
++        "practice.miniCheck.items.map",
++        "practice.recoveryCards.map",
++        "cta={<>Fix mini-conversation",
++        "data-testid=\"first-mini-conversation-inline-win\"",
++    ]
++    missing_first_conversation_focus = [snippet for snippet in required_first_conversation_focus if snippet not in first_conversation_src]
++    if missing_first_conversation_focus:
++        fail(f"Lesson 7 first mini-conversation practice wiring missing snippets: {missing_first_conversation_focus}")
++    required_lesson7_data = [
++        "export const module1FirstConversationPractice",
++        "route: '/missions/module-1/first-mini-conversation'",
++        "audioSrc: '/audio/tts/v1-3-1/v1-3-1-line-3.mp3'",
++        "Guten Tag, Frau Weber. Gut, danke.",
++        "Noch einmal, bitte. Auf Wiedersehen.",
++        "sprechen:question_answer",
++        "sprechen:request_phrase",
++        "vocab:goodbye_set",
++        "nextTask: 'Module 1 checkpoint'",
++    ]
++    missing_lesson7_data = [snippet for snippet in required_lesson7_data if snippet not in practice_data]
++    if missing_lesson7_data:
++        fail(f"Lesson 7 first mini-conversation practice data missing snippets: {missing_lesson7_data}")
++    if "SpeechSynthesisUtterance" in first_conversation_src or "speechSynthesis" in first_conversation_src or "new Audio(" in first_conversation_src:
++        fail("Lesson 7 first mini-conversation practice must use real audio UI, not browser/JS-only audio")
+     if "Gute Nacht." in polite_src or "Bedtime trap" in polite_src or "goodbye mistake" in polite_src or "Correct. Formal goodbye" in polite_src:
+         fail("Module 1 polite-exit reintroduced extra trap/copy clutter")
+     print("module1_mission_sequence_path=ok")
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1272,6 +1272,7 @@
+         "Fix greeting mistake",
+         "Fix Danke/Bitte",
+         "Fix goodbye",
++        "Fix mini-conversation",
+         "Fix ich komme",
+         "Fix letters",
+         "Fix aus/in",
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/first-mini-conversation/page.tsx → b//shared/german-course/src/app/missions/module-1/first-mini-conversation/page.tsx
+@@ -44,7 +44,7 @@
+               learnerName="You"
+               learnerLine="Guten Tag, Frau Weber. Gut, danke."
+               audioSrc={practice.scene.audioSrc}
+-              audioLabel="Frau Weber"
++              audioLabel="Your line"
+               options={practice.repair.options}
+               value={repairChoice}
+               onChange={setRepairChoice}
+  ┊ review diff
+a//shared/german-course/course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md → b//shared/german-course/course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md
+@@ -30,6 +30,10 @@
+ Practice: goodbye + repair phrases
+ Route: /missions/module-1/polite-exit
+ Source lesson: Lesson 6 — Goodbye and repair phrases
++
++Practice: first mini-conversation
++Route: /missions/module-1/first-mini-conversation
++Source lesson: Lesson 7 — First mini-conversation
+ ```
+ 
+ Goal: convert Module 1 video scripts into spoon-fed phone practice beats: hear one useful line, answer aloud, repair one trap, then see the exact micro-check/recovery/next task.
+  ┊ review diff
+a//shared/german-course/course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md → b//shared/german-course/course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md
+@@ -464,7 +464,60 @@
+ - repair phrase not automatic → 8m `Noch einmal, bitte` / `Langsam, bitte` drill;
+ - phone goodbye trap → 6m face/phone context sort.
+ 
+-Current status: **PASS/WEAK** — shared data and route integration exist, real existing audio plays technically, choices unlock after audio, `lesson-6-goodbye-repair-micro-check-card` renders, and the next card links into Module 2. Weak because this is still a self-check bridge, not a scored/submitted check engine, and human accent/audio-fit review is not done.
++Current status: **PASS/WEAK** — shared data and route integration exist, real existing audio plays technically, choices unlock after audio, `lesson-6-goodbye-repair-micro-check-card` renders, and the next card links to `/missions/module-1/first-mini-conversation?start=listen`. Weak because this is still a self-check bridge, not a scored/submitted check engine, and human accent/audio-fit review is not done.
++
++---
++
++## Lesson 7 practice set — first mini-conversation
++
++Seventh exported set:
++
++```ts
++module1FirstConversationPractice
++```
++
++It contains:
++
++- route: `/missions/module-1/first-mini-conversation`;
++- source lesson: Lesson 7 first mini-conversation;
++- real existing audio path: `/audio/tts/v1-3-1/v1-3-1-line-3.mp3`;
++- output set: `Guten Tag, Frau Weber. Gut, danke.` plus `Noch einmal, bitte. Auf Wiedersehen.`;
++- mini-conversation trap: rough `Hey. Was?` vs formal answer vs bedtime wrong-context line;
++- closed micro-check items for answering, repeat request, and thank+leave;
++- exact recovery cards for `sprechen:question_answer`, `sprechen:request_phrase`, and `sprechen:formality`;
++- next task: `Module 1 checkpoint`.
++
++The new Module 1 `first-mini-conversation` route imports this shared data and renders a Lesson 7 micro-check/recovery card after the correct formal mini-conversation repair.
++
++### Required learner flow
++
++1. Play the existing `Guten Tag. Wie geht es Ihnen?` audio.
++2. Learner answers aloud: `Guten Tag, Frau Weber. Gut, danke.`.
++3. Learner avoids rough `Hey. Was?` and wrong-context `Gute Nacht`.
++4. Learner practises one part: answer question, ask repeat, or thank + leave.
++5. Show the closed first-conversation micro-check and exact recovery tasks.
++
++### Closed micro-check
++
++Instruction:
++
++```text
++Closed check: no notes. Run the tiny exchange from memory.
++```
++
++Pass rule:
++
++```text
++Pass when the learner greets, answers one question, asks repeat if needed, thanks, and leaves formally.
++```
++
++Recovery is exact and bounded:
++
++- answer freezes → 10m replay/question-answer drill/retest;
++- repeat request weak → 8m `Noch einmal, bitte` / `Langsam, bitte` drill;
++- too casual → 8m formal-context greeting and goodbye drill.
++
++Current status: **PASS/WEAK** — shared data and route integration exist, real existing audio plays technically, choices unlock after audio, `lesson-7-first-conversation-micro-check-card` renders, and the next card links into Module 2. Weak because this is still a self-check bridge, not a scored/submitted check engine, and human accent/audio-fit review is not done.
+ 
+ ---
+ 
+  ┊ review diff
+a//shared/german-course/course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md → b//shared/german-course/course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md
+@@ -547,6 +547,9 @@
+ - `/missions/module-1/polite-exit` loads;
+ - Lesson 6 uses real existing audio from `/audio/tts/v1-4-1/v1-4-1-line-0.mp3`, not browser SpeechSynthesis;
+ - Lesson 6 renders `lesson-6-goodbye-repair-micro-check-card` after the correct formal-exit repair;
++- `/missions/module-1/first-mini-conversation` loads;
++- Lesson 7 uses real existing audio from `/audio/tts/v1-3-1/v1-3-1-line-3.mp3`, not browser SpeechSynthesis;
++- Lesson 7 renders `lesson-7-first-conversation-micro-check-card` after the correct mini-conversation repair;
+ - public resources are not claimed here.
+ 
+-Current status: **PASS/WEAK** — first route uses shared practice data, voice-first repair, and a rendered post-win mini-check/recovery card. Lessons 2, 3, 4, 5, and 6 now have shared practice data plus routes with micro-check/recovery bridges. Lesson 2 links to Lesson 3, Lesson 3 links to Lesson 4, Lesson 4 links to Lesson 5, Lesson 5 links to Lesson 6, and Lesson 6 links into Module 2. Still weak because these are self-check bridges, not scored lesson-check engines, and Lesson 7’s dedicated practice beat is not wired.
++Current status: **PASS/WEAK** — first route uses shared practice data, voice-first repair, and a rendered post-win mini-check/recovery card. Lessons 2, 3, 4, 5, 6, and 7 now have shared practice data plus routes with micro-check/recovery bridges. Lesson 2 links to Lesson 3, Lesson 3 links to Lesson 4, Lesson 4 links to Lesson 5, Lesson 5 links to Lesson 6, Lesson 6 links to Lesson 7, and Lesson 7 links into Module 2. Still weak because these are self-check bridges, not scored lesson-check engines.
+  ┊ review diff
+a//shared/german-course/docs/README.md → b//shared/german-course/docs/README.md
+@@ -39,7 +39,7 @@
+ - Exercise design: [`EXERCISE_QUALITY_RULES.md`](EXERCISE_QUALITY_RULES.md), [`PRODUCTION_EXERCISE_SPECS.md`](PRODUCTION_EXERCISE_SPECS.md)
+ - Story canon: [`A1_STORY_BIBLE.md`](A1_STORY_BIBLE.md)
+ - Video/script production: [`SCRIPT_ARCHITECTURE.md`](SCRIPT_ARCHITECTURE.md), [`VIDEO_SCRIPT_TEMPLATE.md`](VIDEO_SCRIPT_TEMPLATE.md), [`MANUAL_PRODUCTION_WORKFLOW.md`](MANUAL_PRODUCTION_WORKFLOW.md), [`REMOTION_PIPELINE.md`](REMOTION_PIPELINE.md)
+-- Active Module 1 production pack: [`../course-production/a1-mvp/module-01/`](../course-production/a1-mvp/module-01/) — brief, scripts 1–7, storyboard/slides, checkpoint rubric, must-do/score-booster pack, app-practice wiring spec, standalone Lesson 2–3 practice routes
++- Active Module 1 production pack: [`../course-production/a1-mvp/module-01/`](../course-production/a1-mvp/module-01/) — brief, scripts 1–7, storyboard/slides, checkpoint rubric, must-do/score-booster pack, app-practice wiring spec, and standalone Lesson 2–7 practice routes
+ - Module/product QA: [`MODULE_PRODUCT_SCORECARD_TEMPLATE.md`](MODULE_PRODUCT_SCORECARD_TEMPLATE.md), `GermanCourse_QC/`
+ - Launch/business later: [`LAUNCH_CHECKLIST.md`](LAUNCH_CHECKLIST.md), [`INSTAGRAM_MARKETING_PLAN.md`](INSTAGRAM_MARKETING_PLAN.md), [`CAMPAIGN_PLAN.md`](CAMPAIGN_PLAN.md)
+ 
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/first-mini-conversation/page.tsx → b//shared/german-course/src/app/missions/module-1/first-mini-conversation/page.tsx
+@@ -127,7 +127,7 @@
+ 
+                 <div className="mt-5 grid gap-4 lg:grid-cols-[0.8fr_1fr] lg:items-stretch" data-testid="first-mini-conversation-inline-win">
+                   <div className="rounded-[1.5rem] border border-[#3fbf75]/25 bg-[#3fbf75]/12 p-5">
+-                    <p className="text-sm font-black text-[#bcf7d0]">Module 1 ready</p>
++                    <p className="text-sm font-black text-[#bcf7d0]">Ready</p>
+                     <p className="mt-2 text-2xl font-black">“Guten Tag. Noch einmal, bitte. Auf Wiedersehen.”</p>
+                   </div>
+                   <Module1NextMissionCard currentMissionId={mission.id} />
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -378,6 +378,18 @@
+     winTestId: 'polite-exit-inline-win',
+     answerPattern: /^Auf Wiedersehen\.$/,
+     expectedAbility: 'Vielen Dank. Auf Wiedersehen.',
++    nextHref: '/missions/module-1/first-mini-conversation?start=listen',
++    nextPath: '/missions/module-1/first-mini-conversation',
++    nextSceneText: 'Guten Tag.',
++    nextVisibleLine: 'Guten Tag, Frau Weber. Gut, danke. Auf Wiedersehen.',
++    hiddenNextTitle: 'Run the first mini-conversation',
++  });
++  await completeModule1Mission(page, {
++    route: '/missions/module-1/first-mini-conversation',
++    missionId: 'firstMiniConversation',
++    winTestId: 'first-mini-conversation-inline-win',
++    answerPattern: /^Guten Tag, Frau Weber\. Gut, danke\.$/,
++    expectedAbility: 'Guten Tag. Noch einmal, bitte. Auf Wiedersehen.',
+     nextHref: '/missions/module-2/self-intro?start=listen',
+     nextPath: '/missions/module-2/self-intro',
+     nextSceneText: 'Goethe room.',
+@@ -386,8 +398,8 @@
+   });
+   const module1Closure = await page.evaluate(() => JSON.parse(window.localStorage.getItem('adipoli:module1:completedMissions') || '[]'));
+   assert(
+-    ['greetFrauWeber', 'pleaseThanks', 'politeExit'].every((id) => module1Closure.includes(id)),
+-    'Module 1 sequence should persist all three mission completions after output/repair gates',
++    ['greetFrauWeber', 'pleaseThanks', 'politeExit', 'firstMiniConversation'].every((id) => module1Closure.includes(id)),
++    'Module 1 sequence should persist all four mission completions after output/repair gates',
+     { module1Closure }
+   );
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_direct_final_sequence_status.mjs → b//shared/german-course/scripts/qa_direct_final_sequence_status.mjs
+@@ -155,13 +155,13 @@
+ 
+   await runOneScreenFinalCase(page, {
+     name: 'module1-final-mission',
+-    route: '/missions/module-1/polite-exit',
++    route: '/missions/module-1/first-mini-conversation',
+     storageKey: 'adipoli:module1:completedMissions',
+-    expectedId: 'politeExit',
+-    correctChoiceText: 'Auf Wiedersehen.',
+-    expectedWinText: 'You can now',
+-    expectedCount: '1/3 done',
+-    forbiddenCount: '3/3 done',
++    expectedId: 'firstMiniConversation',
++    correctChoiceText: 'Guten Tag, Frau Weber. Gut, danke.',
++    expectedWinText: 'Guten Tag. Noch einmal, bitte. Auf Wiedersehen.',
++    expectedCount: '1/4 done',
++    forbiddenCount: '4/4 done',
+     expectedNextHref: '/missions/module-2/self-intro?start=listen',
+   });
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_direct_final_sequence_status.mjs → b//shared/german-course/scripts/qa_direct_final_sequence_status.mjs
+@@ -58,6 +58,10 @@
+     const listenButton = document.querySelector('button[aria-label^="Listen to"], button[aria-label^="Play"]');
+     if (!(listenButton instanceof HTMLButtonElement)) throw new Error('Listen button missing');
+     listenButton.click();
++  });
++  await page.evaluate(() => {
++    const audio = document.querySelector('[data-testid="custom-mission-audio"] audio');
++    audio?.dispatchEvent(new Event('ended', { bubbles: true }));
+   });
+   await page.waitForFunction(
+     () => document.querySelector('[data-testid="immersive-reply-step"]')?.getAttribute('data-model-audio-finished') === 'true',
+  ┊ review diff
+a//shared/german-course/scripts/qa_completed_ability_landings.mjs → b//shared/german-course/scripts/qa_completed_ability_landings.mjs
+@@ -35,7 +35,7 @@
+ 
+ async function setCompletedState(page) {
+   await page.evaluateOnNewDocument((storage) => {
+-    window.localStorage.setItem(storage.m1, JSON.stringify(['greetFrauWeber', 'pleaseThanks', 'politeExit']));
++    window.localStorage.setItem(storage.m1, JSON.stringify(['greetFrauWeber', 'pleaseThanks', 'politeExit', 'firstMiniConversation']));
+     window.localStorage.setItem(storage.m2, JSON.stringify(['selfIntro', 'spellName', 'fromKerala', 'jobLanguages', 'finalSelfIntro']));
+   }, STORAGE);
+ }
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -21,8 +21,8 @@
+ - `course-production/a1-mvp/module-01/lessons-02-07-storyboards-and-slides.md` — compact storyboards/slides, visual prompts, talking-head notes, phone-friendly editing notes for lessons 2–7.
+ - `course-production/a1-mvp/module-01/module-01-checkpoint-rubric.md` — closed-book Module 1 diagnostic with scoring, weakness tags, recovery cards.
+ - `course-production/a1-mvp/module-01/module-01-must-do-and-score-booster-pack.md` — exact must-do practice path, recovery cards, and score-booster curation slots.
+-- `course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md` — app-practice wiring spec for Lessons 1–6, mini-checks, recovery cards, and acceptance gates.
+-- `src/lib/missions/module1Practice.ts` — shared Module 1 practice data for Lesson 1, Lesson 2, Lesson 3, Lesson 4, Lesson 5, and Lesson 6 app practice sets.
++- `course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md` — app-practice wiring spec for Lessons 1–7, mini-checks, recovery cards, and acceptance gates.
++- `src/lib/missions/module1Practice.ts` — shared Module 1 practice data for Lesson 1, Lesson 2, Lesson 3, Lesson 4, Lesson 5, Lesson 6, and Lesson 7 app practice sets.
+ - `src/app/missions/module-1/greet-frau-weber/page.tsx` — first Module 1 mission now reads Lesson 1 practice data instead of hardcoded repair content.
+ - `src/app/missions/module-1/why-a1/page.tsx` — standalone Lesson 2 reason/path practice route.
+ - `src/app/missions/module-1/german-sounds/page.tsx` — standalone Lesson 3 German-sounds practice route.
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -29,6 +29,7 @@
+ - `src/app/missions/module-1/formal-greetings/page.tsx` — standalone Lesson 4 formal-greetings practice route.
+ - `src/app/missions/module-1/please-thanks/page.tsx` — Lesson 5 politeness-survival practice now reads shared data and renders a micro-check/recovery bridge.
+ - `src/app/missions/module-1/polite-exit/page.tsx` — Lesson 6 goodbye/repair practice now reads shared data and renders a micro-check/recovery bridge.
++- `src/app/missions/module-1/first-mini-conversation/page.tsx` — Lesson 7 first mini-conversation practice now reads shared data, uses real audio, renders a micro-check/recovery bridge, and hands off to Module 2.
+ - `scripts/qa_mission_pilot.py` — QA guard now checks the new Module 1 practice data/spec and first-mission no-typing wiring.
+ - `public/images/mvp-style-samples/a1-kerala-study-evening-20260602.png` — MVP visual style sample, 1536x1024 PNG.
+ - `GermanCourse_QC/a1-mvp-course-design-latest.md` — status note from the syllabus pass.
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -98,8 +98,8 @@
+ - Storyboards/slides for Lesson 1 and compact storyboards/slides for Lessons 2–7.
+ - Closed-book Module 1 checkpoint rubric.
+ - Must-do and score-booster practice pack.
+-- App-practice wiring spec for Lesson 1, Lesson 2, Lesson 3, Lesson 4, Lesson 5, and Lesson 6 practice beats.
+-- Shared app-practice data for the Lesson 1 mission, Lesson 2 reason practice, Lesson 3 sounds practice, Lesson 4 formal-greetings practice, Lesson 5 politeness practice, and Lesson 6 goodbye/repair practice, including repair choices, mini-check items, weakness tags, and recovery cards.
++- App-practice wiring spec for Lesson 1, Lesson 2, Lesson 3, Lesson 4, Lesson 5, Lesson 6, and Lesson 7 practice beats.
++- Shared app-practice data for the Lesson 1 mission, Lesson 2 reason practice, Lesson 3 sounds practice, Lesson 4 formal-greetings practice, Lesson 5 politeness practice, Lesson 6 goodbye/repair practice, and Lesson 7 first mini-conversation practice, including repair choices, mini-check items, weakness tags, and recovery cards.
+ - Browser-verified first Module 1 mission path using shared practice data.
+ - Browser-verified standalone Lesson 2 reason practice route at `/missions/module-1/why-a1`.
+ - Browser-verified standalone Lesson 3 sounds practice route at `/missions/module-1/german-sounds`.
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -106,6 +106,7 @@
+ - Browser-verified standalone Lesson 4 formal-greetings practice route at `/missions/module-1/formal-greetings`.
+ - Browser-verified Lesson 5 politeness practice route at `/missions/module-1/please-thanks`.
+ - Browser-verified Lesson 6 goodbye/repair practice route at `/missions/module-1/polite-exit`.
++- Browser-verified Lesson 7 first mini-conversation practice route at `/missions/module-1/first-mini-conversation`.
+ 
+ Module 1 lesson map is now production-draft complete:
+ 
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -123,7 +123,7 @@
+ - No rendered video files.
+ - No recorded Boss Malayalam/Manglish narration.
+ - No final human audio/accent QA.
+-- No scored post-lesson mini-check engine yet; Lessons 1–6 now render compact self-check/recovery bridges from shared data, but they do not automatically score or submit results.
++- No scored post-lesson mini-check engine yet; Lessons 1–7 now render compact self-check/recovery bridges from shared data, but they do not automatically score or submit results.
+ - Public-resource links are not verified; score-booster slots are marked `LINK NEEDED — verify before publishing`.
+ 
+ ## Verification evidence
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -194,6 +194,18 @@
+ - `npx tsc --noEmit --pretty false`, targeted ESLint for Lesson 6/data, `python3 -m py_compile scripts/qa_mission_pilot.py`, and `python3 scripts/qa_mission_pilot.py` exited 0.
+ - Browser interaction on `/missions/module-1/polite-exit?adipoliQa=1` played real audio to `readyState=4`, showed choices after audio ended, selected `Auf Wiedersehen.`, rendered the Lesson 6 micro-check/recovery card, and console showed no JS errors.
+ 
++Iteration 9 added Lesson 7 first mini-conversation practice and tightened the sequence QA:
++
++- `src/lib/missions/module1Practice.ts` now exports `module1FirstConversationPractice` with `Guten Tag, Frau Weber. Gut, danke.`, `Noch einmal, bitte`, `Auf Wiedersehen`, weakness tags, and exact recovery cards.
++- `/missions/module-1/first-mini-conversation` now renders the Lesson 7 voice-first mini-conversation repair and `lesson-7-first-conversation-micro-check-card` after the correct choice.
++- Lesson 6 now hands off to Lesson 7, and Lesson 7 hands off to Module 2 listening.
++- `docs/README.md` and the Module 1 app-practice wiring spec now list standalone Lesson 2–7 practice routes.
++- `scripts/qa_intro_start_path.mjs`, `scripts/qa_direct_final_sequence_status.mjs`, and `scripts/qa_completed_ability_landings.mjs` were updated so the browser guards understand Module 1 as a four-mission sequence before Module 2.
++- `npx tsc --noEmit --pretty false` exited 0.
++- `npx eslint src/app/missions/module-1/first-mini-conversation/page.tsx src/lib/missions/module1Practice.ts --max-warnings=0` exited 0.
++- `python3 -m py_compile scripts/qa_mission_pilot.py` exited 0.
++- `python3 scripts/qa_mission_pilot.py` exited 0: `opening_words[first-mini-conversation]=42`, source guards passed, intro/start-path browser QA passed, direct-final browser QA passed, completed-ability browser QA passed on localhost and Tailscale, M1/M2 mobile QA passed, and gold-slice first-journey QA passed on localhost and Tailscale.
++
+ ## PASS / WEAK / FAIL against Boss's request
+ 
+ - Customer journey/page flow: **PASS**.
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -214,9 +214,9 @@
+ - Module 1 scripts 1–7: **PASS** for production-draft completeness.
+ - Module 1 storyboards/slides: **PASS** for lessons 1–7 coverage.
+ - Module 1 must-do/score-booster path: **PASS/WEAK** — tasks are exact; external links still need verification.
+-- Module 1 app-practice wiring: **PASS/WEAK** — Lesson 1 `answer Frau Weber`, Lesson 2 reason/path, Lesson 3 German sounds, Lesson 4 formal greetings, Lesson 5 politeness survival, and Lesson 6 goodbye/repair are wired with shared data, real existing audio, micro-check/recovery cards, source QA guards, and browser/route evidence. Still weak because checks are self-check bridges, not scored submissions, and Lesson 7’s dedicated app practice beat is not wired.
++- Module 1 app-practice wiring: **PASS/WEAK** — Lessons 1–7 are wired with shared data, real existing audio, micro-check/recovery cards, source QA guards, and browser/route evidence. Still weak because checks are self-check bridges, not scored submissions.
+ - Visual sample: **WEAK/PASS** — useful direction, not app-verified.
+-- App/browser QA: **PASS** for reviewed Module 1 Lesson 1–6 practice routes plus the existing M1/M2 mission path; **WEAK** for the full Module 1 pack because Lesson 7’s dedicated app beat is not wired.
++- App/browser QA: **PASS** for reviewed Module 1 Lesson 1–7 practice routes plus the existing M1/M2 mission path.
+ - Rendered videos: **NOT CLAIMED**.
+ 
+ Overall: **PASS for Module 1 production draft completeness; PASS/WEAK for early app-practice wiring; WEAK for publish readiness** because recording, human audio/accent QA, scored checks, Lesson 7 app practice, and public-link verification remain.
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -219,8 +219,8 @@
+ - App/browser QA: **PASS** for reviewed Module 1 Lesson 1–7 practice routes plus the existing M1/M2 mission path.
+ - Rendered videos: **NOT CLAIMED**.
+ 
+-Overall: **PASS for Module 1 production draft completeness; PASS/WEAK for early app-practice wiring; WEAK for publish readiness** because recording, human audio/accent QA, scored checks, Lesson 7 app practice, and public-link verification remain.
++Overall: **PASS for Module 1 production draft completeness; PASS/WEAK for early app-practice wiring; WEAK for publish readiness** because recording, human audio/accent QA, scored checks, and public-link verification remain.
+ 
+ ## Recommended next action
+ 
+-Wire Lesson 7’s first mini-conversation practice beat: greet → answer → repair → thank → leave + Module 1 checkpoint handoff. 60–90m.
++Build the scored Module 1 checkpoint/recovery engine from the existing rubric. 60–90m.
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -1,6 +1,6 @@
+ # A1 MVP course-design final report
+ 
+-Updated: 2026-06-02 15:35 CEST
++Updated: 2026-06-02 14:25 CEST
+ 
+ ## Files created/changed
+ 
+  ┊ review diff
+a/GermanCourse_QC/a1-mvp-continuous-3h-20260602-123514/iteration-8-report.md → b/GermanCourse_QC/a1-mvp-continuous-3h-20260602-123514/iteration-8-report.md
+@@ -0,0 +1,60 @@
++# Iteration 8 report — Module 1 Lesson 6–7 practice wiring
++
++## Files created/changed
++
++- `src/lib/missions/module1Practice.ts`
++- `src/lib/missions/module1.ts`
++- `src/app/missions/module-1/polite-exit/page.tsx`
++- `src/app/missions/module-1/first-mini-conversation/page.tsx`
++- `scripts/qa_mission_pilot.py`
++- `scripts/qa_intro_start_path.mjs`
++- `scripts/qa_direct_final_sequence_status.mjs`
++- `scripts/qa_completed_ability_landings.mjs`
++- `course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md`
++- `docs/README.md`
++- `GermanCourse_QC/a1-mvp-continuous-3h-checkpoint.md`
++- `GermanCourse_QC/a1-mvp-course-design-final-report.md`
++
++## Work done
++
++- Wired Lesson 6 goodbye/repair practice into shared Module 1 practice data and `/missions/module-1/polite-exit`.
++- Created the Lesson 7 first mini-conversation practice route at `/missions/module-1/first-mini-conversation`.
++- Added Lesson 7 shared practice data: mini-conversation line, repair choices, mini-check items, weakness tags, and recovery cards.
++- Updated Module 1 sequence so Lesson 6 hands off to Lesson 7, and Lesson 7 hands off to Module 2 listening.
++- Updated QA guards so Module 1 is now a four-mission browser-verified sequence before Module 2.
++- Updated the docs index, app-practice wiring spec, checkpoint, and final report.
++
++## Verification run
++
++Commands:
++
++```bash
++npx tsc --noEmit --pretty false
++npx eslint src/app/missions/module-1/first-mini-conversation/page.tsx src/lib/missions/module1Practice.ts --max-warnings=0
++python3 -m py_compile scripts/qa_mission_pilot.py
++python3 scripts/qa_mission_pilot.py
++```
++
++Results:
++
++- TypeScript: PASS, exit code 0.
++- Targeted ESLint: PASS, exit code 0.
++- Python compile: PASS, exit code 0.
++- Mission QA: PASS, exit code 0.
++- Route visible-text budgets include `opening_words[first-mini-conversation]=42`.
++- Browser guards passed: intro/start path, direct-final sequence, completed-ability landings on localhost and Tailscale, M1/M2 mobile QA, and gold-slice first journey on localhost and Tailscale.
++- QA reported `routes_reachable=34`.
++
++## PASS / WEAK / FAIL
++
++- Lesson 6 app-practice data + route: PASS.
++- Lesson 7 app-practice data + route: PASS.
++- Module 1 four-mission sequence into Module 2: PASS.
++- TypeScript / targeted ESLint / Python compile / mission QA: PASS.
++- Real audio technical playback: PASS for guarded routes; native accent/taste still requires human review.
++- Scored mini-check engine: WEAK — still self-check bridges, not submitted/scored checks.
++- Rendered videos / recorded Boss narration / human audio-accent QA / public-resource links: NOT CLAIMED.
++
++## Next unfinished item
++
++Build the scored Module 1 checkpoint/recovery engine from the existing rubric. 60–90m.
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-continuous-3h-checkpoint.md → b//shared/german-course/GermanCourse_QC/a1-mvp-continuous-3h-checkpoint.md
+@@ -410,3 +410,68 @@
+ 
+ - Iteration 7 exit code: 0 for TypeScript + targeted ESLint + Python compile + mission QA; report: /shared/german-course/GermanCourse_QC/a1-mvp-continuous-3h-20260602-123514/iteration-7-report.md
+ - Iteration 5 exit code: 0; log: /shared/german-course/GermanCourse_QC/a1-mvp-continuous-3h-20260602-123514/iteration-output/iteration-5.log
++
++---
++
++## Iteration 8
++
++### Files created/changed
++
++- `src/lib/missions/module1Practice.ts`
++- `src/lib/missions/module1.ts`
++- `src/app/missions/module-1/polite-exit/page.tsx`
++- `src/app/missions/module-1/first-mini-conversation/page.tsx`
++- `scripts/qa_mission_pilot.py`
++- `scripts/qa_intro_start_path.mjs`
++- `scripts/qa_direct_final_sequence_status.mjs`
++- `scripts/qa_completed_ability_landings.mjs`
++- `course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md`
++- `docs/README.md`
++- `GermanCourse_QC/a1-mvp-continuous-3h-20260602-123514/iteration-8-report.md`
++- `GermanCourse_QC/a1-mvp-continuous-3h-checkpoint.md`
++- `GermanCourse_QC/a1-mvp-course-design-final-report.md`
++
++### Work done
++
++- Wired Lesson 6 goodbye/repair practice into shared data and `/missions/module-1/polite-exit`.
++- Created/wired Lesson 7 first mini-conversation practice at `/missions/module-1/first-mini-conversation`.
++- Added Lesson 7 mini-check/recovery bridge and exact recovery cards.
++- Updated Module 1 sequence: Lesson 6 → Lesson 7 → Module 2 listening.
++- Updated browser guards so Module 1 is now a four-mission sequence before Module 2.
++- Updated docs index, app-practice spec, checkpoint, and final report.
++
++### Verification run
++
++Commands:
++
++```bash
++npx tsc --noEmit --pretty false
++npx eslint src/app/missions/module-1/first-mini-conversation/page.tsx src/lib/missions/module1Practice.ts --max-warnings=0
++python3 -m py_compile scripts/qa_mission_pilot.py
++python3 scripts/qa_mission_pilot.py
++```
++
++Results:
++
++- TypeScript: **PASS**, exit code 0.
++- Targeted ESLint: **PASS**, exit code 0.
++- Python compile: **PASS**, exit code 0.
++- Mission QA: **PASS**, exit code 0; `routes_reachable=34`.
++- Lesson 7 visible text budget: **PASS**, `opening_words[first-mini-conversation]=42`.
++- Browser guards: **PASS** — intro/start path, direct-final sequence, completed ability landings on localhost + Tailscale, M1/M2 mobile QA, and gold-slice first journey on localhost + Tailscale.
++
++### PASS / WEAK / FAIL
++
++- Lesson 6 app-practice data + route: **PASS**.
++- Lesson 7 app-practice data + route: **PASS**.
++- Module 1 four-mission sequence into Module 2: **PASS**.
++- TypeScript / targeted ESLint / Python compile / mission QA: **PASS**.
++- Real audio technical playback: **PASS** for guarded routes; accent/native quality still requires human review.
++- Scored mini-check engine: **WEAK** — current checks are self-check bridges, not scored submissions.
++- Rendered videos / recorded Boss narration / human audio-accent QA / public-resource links: **NOT CLAIMED**.
++
++### Next unfinished item
++
++Build the scored Module 1 checkpoint/recovery engine from the existing rubric. 60–90m.
++
++- Iteration 8 exit code: 0 for TypeScript + targeted ESLint + Python compile + mission QA; report: /shared/german-course/GermanCourse_QC/a1-mvp-continuous-3h-20260602-123514/iteration-8-report.md
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -23,6 +23,7 @@
+ - `course-production/a1-mvp/module-01/module-01-must-do-and-score-booster-pack.md` — exact must-do practice path, recovery cards, and score-booster curation slots.
+ - `course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md` — app-practice wiring spec for Lessons 1–7, mini-checks, recovery cards, and acceptance gates.
+ - `src/lib/missions/module1Practice.ts` — shared Module 1 practice data for Lesson 1, Lesson 2, Lesson 3, Lesson 4, Lesson 5, Lesson 6, and Lesson 7 app practice sets.
++- `src/lib/missions/module1.ts` — Module 1 mission sequence now includes the Lesson 7 first mini-conversation before Module 2.
+ - `src/app/missions/module-1/greet-frau-weber/page.tsx` — first Module 1 mission now reads Lesson 1 practice data instead of hardcoded repair content.
+ - `src/app/missions/module-1/why-a1/page.tsx` — standalone Lesson 2 reason/path practice route.
+ - `src/app/missions/module-1/german-sounds/page.tsx` — standalone Lesson 3 German-sounds practice route.
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -32,6 +32,9 @@
+ - `src/app/missions/module-1/polite-exit/page.tsx` — Lesson 6 goodbye/repair practice now reads shared data and renders a micro-check/recovery bridge.
+ - `src/app/missions/module-1/first-mini-conversation/page.tsx` — Lesson 7 first mini-conversation practice now reads shared data, uses real audio, renders a micro-check/recovery bridge, and hands off to Module 2.
+ - `scripts/qa_mission_pilot.py` — QA guard now checks the new Module 1 practice data/spec and first-mission no-typing wiring.
++- `scripts/qa_intro_start_path.mjs` — browser guard now checks the four-mission Module 1 sequence into Module 2.
++- `scripts/qa_direct_final_sequence_status.mjs` — direct-final browser guard now treats Lesson 7 as the Module 1 final mission.
++- `scripts/qa_completed_ability_landings.mjs` — completed-ability browser guard now marks all four Module 1 missions before the Module 2 bridge.
+ - `public/images/mvp-style-samples/a1-kerala-study-evening-20260602.png` — MVP visual style sample, 1536x1024 PNG.
+ - `GermanCourse_QC/a1-mvp-course-design-latest.md` — status note from the syllabus pass.
+ - `GermanCourse_QC/a1-mvp-continuous-3h-checkpoint.md` — current continuous-run checkpoint.
+Done.
+
+What moved:
+- Wired Lesson 6 goodbye/repair practice.
+- Wired Lesson 7 first mini-conversation practice:
+  - `/missions/module-1/first-mini-conversation`
+  - real existing audio
+  - voice-first repair
+  - mini-check/recovery card
+  - handoff into Module 2 listening
+- Updated Module 1 sequence to 4 missions:
+  1. greet Frau Weber
+  2. danke/bitte
+  3. polite exit
+  4. first mini-conversation
+- Updated QA guards so Module 1 completion is now understood as 4 missions before Module 2.
+- Updated docs/checkpoint/final report.
+
+Files updated/created:
+- `/shared/german-course/src/lib/missions/module1Practice.ts`
+- `/shared/german-course/src/lib/missions/module1.ts`
+- `/shared/german-course/src/app/missions/module-1/polite-exit/page.tsx`
+- `/shared/german-course/src/app/missions/module-1/first-mini-conversation/page.tsx`
+- `/shared/german-course/scripts/qa_mission_pilot.py`
+- `/shared/german-course/scripts/qa_intro_start_path.mjs`
+- `/shared/german-course/scripts/qa_direct_final_sequence_status.mjs`
+- `/shared/german-course/scripts/qa_completed_ability_landings.mjs`
+- `/shared/german-course/course-production/a1-mvp/module-01/module-01-app-practice-wiring-spec.md`
+- `/shared/german-course/docs/README.md`
+- `/shared/german-course/GermanCourse_QC/a1-mvp-continuous-3h-checkpoint.md`
+- `/shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md`
+- `/shared/german-course/GermanCourse_QC/a1-mvp-continuous-3h-20260602-123514/iteration-8-report.md`
+
+Verification passed:
+- `npx tsc --noEmit --pretty false` → PASS
+- `npx eslint src/app/missions/module-1/first-mini-conversation/page.tsx src/lib/missions/module1Practice.ts --max-warnings=0` → PASS
+- `python3 -m py_compile scripts/qa_mission_pilot.py` → PASS
+- `python3 scripts/qa_mission_pilot.py` → PASS
+  - `routes_reachable=34`
+  - `opening_words[first-mini-conversation]=42`
+  - intro/start-path browser QA passed
+  - direct-final sequence QA passed
+  - completed-ability landing QA passed on localhost + Tailscale
+  - M1/M2 mobile QA passed
+  - gold-slice first journey QA passed on localhost + Tailscale
+
+Status:
+- Module 1 scripts/storyboards/resource pack: PASS
+- Module 1 app-practice Lessons 1–7: PASS/WEAK
+- Weak because mini-checks are still self-check bridges, not scored submissions.
+- Rendered videos, Boss narration, human accent QA, verified public links: NOT CLAIMED
+- No commit/push/deploy/auth/pricing/payment changes.
+
+Next useful item: Build the scored Module 1 checkpoint/recovery engine from the existing rubric, 60–90m.
+
+session_id: 20260602_141519_76914f

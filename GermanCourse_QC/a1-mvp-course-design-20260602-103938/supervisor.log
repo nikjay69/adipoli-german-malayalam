@@ -1,0 +1,11 @@
+===== phase-1-customer-journey started 2026-06-02T10:39:38+02:00 =====
+===== phase-1-customer-journey exit 0 2026-06-02T10:42:44+02:00 =====
+===== phase-2-syllabus-assessment started 2026-06-02T10:42:44+02:00 =====
+===== phase-2-syllabus-assessment exit 0 2026-06-02T10:47:33+02:00 =====
+===== phase-3-module1-video-pack started 2026-06-02T10:47:33+02:00 =====
+===== phase-3-module1-video-pack exit 0 2026-06-02T10:47:48+02:00 =====
+===== final-report started 2026-06-02T10:47:48+02:00 =====
+===== final-report exit 0 2026-06-02T10:50:36+02:00 =====
+
+RUN_DIR=/shared/german-course/GermanCourse_QC/a1-mvp-course-design-20260602-103938
+FINAL_REPORT=/shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md

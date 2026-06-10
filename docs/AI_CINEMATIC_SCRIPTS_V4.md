@@ -3,6 +3,8 @@
 > Version: 4.1 | Updated: 2026-04-06
 > Veo 3.1 + Pixar 3D Style + Character-First Audio + Hard Duration Caps
 >
+> **Canonical narrative:** [`A1_STORY_BIBLE.md`](A1_STORY_BIBLE.md). This file is the production-side breakdown; the bible is the story-side canon. They agree on A1 = Kerala only.
+>
 > **Tier A**: 1, 4, 9, 12, 14, 15 (premium production)
 > **Tier B**: 2, 3, 6, 7, 8, 10, 11, 13 (simplified sequences)
 

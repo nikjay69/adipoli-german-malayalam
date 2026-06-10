@@ -1,0 +1,238 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -1,11 +1,9 @@
+ 'use client';
+ 
+ import { useEffect, useState } from 'react';
+-import { useSearchParams } from 'next/navigation';
+ import { ArrowRight, ChevronLeft } from 'lucide-react';
+ import {
+   ConversationRepairStep,
+-  MissionIntro,
+   MissionShell,
+   Module1MissionWinStep,
+   Module1NextMissionCard,
+@@ -20,20 +18,12 @@
+ 
+ export default function Module1PleaseThanksMissionPage() {
+   const [step, setStep] = useMissionStepForQA(0, missionSteps.length - 1);
+-  const searchParams = useSearchParams();
+   const [repairChoice, setRepairChoice] = useState<string | null>(null);
+ 
+   const repairCorrect = repairChoice === 'danke';
+ 
+   const next = () => setStep((value) => Math.min(value + 1, missionSteps.length - 1));
+   const back = () => setStep((value) => Math.max(value - 1, 0));
+-
+-  useEffect(() => {
+-    if (searchParams.get('adipoliQa') === '1') return;
+-    if (searchParams.get('start') !== 'listen') return;
+-    const timer = window.setTimeout(() => setStep((value) => (value === 0 ? 1 : value)), 0);
+-    return () => window.clearTimeout(timer);
+-  }, [searchParams, setStep]);
+ 
+   return (
+     <MissionShell currentStep={step} steps={missionSteps} railLabel={mission.railLabel} tone={mission.tone} currentModule1MissionId={mission.id}>
+@@ -45,17 +35,6 @@
+         )}
+ 
+         {step === 0 && (
+-          <MissionIntro
+-            title="Use Danke + Bitte."
+-            promise="Frau Weber helps you. One thank-you, one polite reply."
+-            output="Danke. Bitte."
+-            promises={['Hear', 'Say', 'Fix']}
+-            cta={<>Start danke drill <ArrowRight className="h-5 w-5" /></>}
+-            onStart={next}
+-          />
+-        )}
+-
+-        {step === 1 && (
+           <ConversationRepairStep
+             title="Notebook help."
+             speakerName="Frau Weber"
+@@ -80,7 +59,7 @@
+           />
+         )}
+ 
+-        {step === 2 && (
++        {step === 1 && (
+           <Module1MissionWinStep
+             currentMissionId={mission.id}
+             title="Politeness win."
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -1,6 +1,6 @@
+ 'use client';
+ 
+-import { useEffect, useState } from 'react';
++import { useState } from 'react';
+ import { ArrowRight, ChevronLeft } from 'lucide-react';
+ import {
+   ConversationRepairStep,
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1.ts → b//shared/german-course/src/lib/missions/module1.ts
+@@ -51,7 +51,7 @@
+     active: true,
+     railLabel: 'Module 1 · Danke + Bitte',
+     tone: 'green',
+-    steps: ['Start', 'Scene + repair', 'Win'],
++    steps: ['Scene + repair', 'Win'],
+     next: {
+       href: '/missions/module-1/polite-exit',
+       cta: 'Next: polite exit',
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1642,8 +1642,8 @@
+         "speakerLine=\"Bitte.\"",
+         "learnerLine=\"Danke.\"",
+         "cta={<>Fix Danke/Bitte",
+-        "{step === 2 && (",
+-        "steps: ['Start', 'Scene + repair', 'Win']",
++        "{step === 1 && (",
++        "steps: ['Scene + repair', 'Win']",
+         "proof: 'audio • answer aloud • quick repair'",
+     ]
+     missing = [snippet for snippet in required if snippet not in please_thanks + mission_data]
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1660,6 +1660,9 @@
+         "Choose the response",
+         "responseOptions",
+         "const [recognition",
++        "MissionIntro",
++        "Start danke drill",
++        "{step === 2 && (",
+         "{step === 5 && (",
+     ]
+     hits = [snippet for snippet in retired if snippet in please_thanks]
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -118,7 +118,7 @@
+       scrollWidth: document.documentElement.scrollWidth,
+       innerWidth: window.innerWidth,
+       hasFocusedProgress: Boolean(document.querySelector('[aria-hidden="true"]')),
+-      hasStartCta: /\b(Start|Begin)\b/i.test(body),
++      const hasStartCta = /\b(Start|Begin|Play)\b/i.test(body);
+       audios,
+       bodyStart: body.slice(0, 500),
+     };
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -118,7 +118,7 @@
+       scrollWidth: document.documentElement.scrollWidth,
+       innerWidth: window.innerWidth,
+       hasFocusedProgress: Boolean(document.querySelector('[aria-hidden="true"]')),
+-      const hasStartCta = /\b(Start|Begin|Play)\b/i.test(body);
++      hasStartCta: /\b(Start|Begin|Play)\b/i.test(body),
+       audios,
+       bodyStart: body.slice(0, 500),
+     };
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -133,7 +133,7 @@
+ 
+ async function inspectImmersiveStep(page, route, name, typedValue, repairAnswerPattern) {
+   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true });
+-  const immersiveStep = name === 'm1-please-thanks' || name === 'm1-polite-exit' || name === 'm2-spell-name' || name === 'm2-from-kerala' ? 1 : (name === 'm1-greet' ? 2 : 3);
++  const immersiveStep = name === 'm1-please-thanks' ? 0 : (name === 'm1-polite-exit' || name === 'm2-spell-name' || name === 'm2-from-kerala' ? 1 : (name === 'm1-greet' ? 2 : 3));
+   await page.goto(`${BASE_URL}${route}?adipoliQa=1&adipoliQaStep=${immersiveStep}`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+   await page.waitForSelector('[data-testid="immersive-reply-step"]', { timeout: 15000 });
+   await new Promise((resolve) => setTimeout(resolve, 300));
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -219,14 +219,18 @@
+         fail(f"shared compact MissionIntro missing snippets: {missing_intro_ui}")
+     for page in MISSION_PAGES + MODULE1_MISSION_PAGES:
+         src = page.read_text(encoding="utf-8")
+-        if "<MissionIntro" not in src:
+-            fail(f"mission page should use compact shared MissionIntro: {page}")
++        direct_scene_allowed = "module-1/please-thanks" in page.as_posix()
++        if "<MissionIntro" not in src and not direct_scene_allowed:
++            fail(f"mission page should use compact shared MissionIntro or approved direct-scene start: {page}")
+         # Extract the step===0 JSX block roughly. This is deliberately simple and conservative.
+         m = re.search(r"\{step === 0 && \((.*?)\n\s*\)\}\n\n\s*\{step === 1", src, re.S)
+         if not m:
+             fail(f"could not locate opening step block: {page}")
+         block = m.group(1)
+-        if "<MissionIntro" not in block:
++        if direct_scene_allowed:
++            if "<ConversationRepairStep" not in block:
++                fail(f"approved direct-scene start should open on the conversation repair beat: {page}")
++        elif "<MissionIntro" not in block:
+             fail(f"opening screen should use shared focused MissionIntro: {page}")
+         if "note=\"" in block:
+             fail(f"opening screen reintroduced explanatory note text instead of chips: {page}")
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -880,8 +880,8 @@
+     if module1_crowding_hits:
+         fail(f"Module 1 win/ribbon reintroduced duplicate next CTA clutter: {module1_crowding_hits}")
+     for page, src in mission_pages:
++        direct_scene_allowed = "module-1/please-thanks" in page.as_posix()
+         required_page = [
+-            "MissionIntro",
+             "Module1MissionWinStep",
+             "Module1NextMissionCard",
+             "currentModule1MissionId={mission.id}",
+@@ -889,6 +889,8 @@
+             "side={<Module1NextMissionCard currentMissionId={mission.id} />}",
+             "useMissionStepForQA(0, missionSteps.length - 1)",
+         ]
++        if not direct_scene_allowed:
++            required_page.append("MissionIntro")
+         extra_missing_page = []
+         if "HearStep" not in src and "ConversationSceneStep" not in src and "ConversationRepairStep" not in src:
+             extra_missing_page.append("HearStep, ConversationSceneStep, or ConversationRepairStep")
+
+session_id: 20260531_031904_a76382
+Iteration 13 done.
+
+Changed:
+- /shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+- /shared/german-course/src/lib/missions/module1.ts
+- /shared/german-course/scripts/qa_mission_pilot.py
+- /shared/german-course/scripts/qa_module2_production_mobile.mjs
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Product improvement:
+- Reduced M1 Danke/Bitte from:
+  Start → Scene + repair → Win
+- To:
+  Scene + repair → Win
+
+Now /missions/module-1/please-thanks opens directly on the two-person scene:
+- Frau Weber says: “Bitte.”
+- Learner answers aloud: “Danke.”
+- One quick repair tap checks Danke vs Bitte.
+- Then it lands on “Politeness win.”
+
+Removed:
+- separate intro/start screen
+- “Start danke drill” preamble
+- repeated start=listen skip logic for this route
+
+Evidence:
+- Fresh browser landing opens directly on the conversation scene.
+- Audio played and ended cleanly:
+  readyState=4, duration=2.856s, error=null.
+- Correct “Danke.” tap advanced to “Politeness win.”
+- Console clean.
+- No nav/search overlay.
+- Mobile QA: no horizontal overflow.
+
+QA:
+- PASS: targeted ESLint on touched TS/TSX.
+- PASS: node --check for qa_module2_production_mobile.mjs.
+- PASS: py_compile for qa_mission_pilot.py.
+- PASS: python3 scripts/qa_mission_pilot.py.
+- PASS: ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs.
+- PASS: HTTP 200 for /, /intro, /learn, /learn/1, /learn/2, please-thanks route.
+- WEAK/inherited: full npm run lint still fails repo-wide from old unrelated auth/game/remotion/content issues; touched files pass.
+
+Checkpoint appended:
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+No commit/push.
+
+Next: Convert M2 job-languages to one-screen conversation repair, 45m.

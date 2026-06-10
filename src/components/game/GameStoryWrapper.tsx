@@ -184,12 +184,12 @@ export const GAME_STORIES: Record<string, GameStoryContext> = {
     kuttanSays: 'Job application ezhuthanam machane! Sentence perfect aayirikkanam — manager-ne impress cheyyanam!',
     emoji: '💼',
   },
-  'word-match': {
+  'scene-sort': {
     scene: 'classroom',
-    title: 'Memory Game at Sprachschule!',
-    narrative: 'Your language school teacher has a matching game. Pair the German words with their English meanings!',
-    kuttanSays: 'Language school teacher-ude matching game! German-English pair cheyyuka — fastest wins!',
-    emoji: '🧩',
+    title: 'Scene Sort at Sprachschule!',
+    narrative: 'Which place does each word belong to? Sort German words into Küche, Bahnhof, or Arztpraxis.',
+    kuttanSays: 'Sprachschule-il Scene Sort machane! Oru word — ethu place-il cherum? Kitchen, station, clinic — sort cheyyuka!',
+    emoji: '🎭',
   },
   'memory': {
     scene: 'cafe',

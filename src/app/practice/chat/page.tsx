@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowLeft, Send, MessageCircle, Sparkles } from 'lucide-react';
+import { ArrowLeft, Send, MessageCircle, Sparkles, Clock } from 'lucide-react';
+import { Kuttan } from '@/components/character/Kuttan';
 
 interface ChatMessage {
   id: string;
@@ -124,6 +125,15 @@ export default function ChatPage() {
   };
 
   const limitReached = userMessageCount >= SESSION_LIMIT;
+  const showMeterWarning =
+    !limitReached && userMessageCount > SESSION_LIMIT * 0.6;
+  const messagesLeft = Math.max(0, SESSION_LIMIT - userMessageCount);
+  const showSuggestions =
+    !isLoading &&
+    !limitReached &&
+    (messages.length === 1 ||
+      error !== null ||
+      (userMessageCount > 0 && userMessageCount % 5 === 0));
 
   return (
     <div className="flex flex-col h-screen bg-[#1b2d1b]">
@@ -176,10 +186,12 @@ export default function ChatPage() {
                 msg.role === 'user' ? 'justify-end' : 'justify-start'
               }`}
             >
-              {/* Kuttan avatar */}
+              {/* Kuttan avatar - shown on every assistant message */}
               {msg.role === 'assistant' && (
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#27ae60] to-[#1e8449] flex items-center justify-center text-sm flex-shrink-0 mt-1">
-                  <span>👦</span>
+                <div className="flex-shrink-0 w-9 h-9 overflow-hidden flex items-center justify-center -mt-1">
+                  <div className="scale-[0.45] origin-center">
+                    <Kuttan size="sm" mood="happy" entrance={false} />
+                  </div>
                 </div>
               )}
 
@@ -187,7 +199,7 @@ export default function ChatPage() {
               <div
                 className={`max-w-[80%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-wrap break-words ${
                   msg.role === 'user'
-                    ? 'bg-gradient-to-br from-[#d4a520] to-[#b8891a] text-[#1b2d1b] rounded-br-md font-medium'
+                    ? 'bg-gradient-to-br from-[#c0392b] to-[#962d22] text-white rounded-br-md font-medium shadow-sm shadow-[#c0392b]/20'
                     : 'bg-[#f5f0e8]/10 text-[#f5f0e8] rounded-bl-md border border-white/5'
                 }`}
               >
@@ -197,28 +209,30 @@ export default function ChatPage() {
           ))}
         </AnimatePresence>
 
-        {/* Typing indicator */}
+        {/* Typing indicator - Kuttan thinking */}
         {isLoading && (
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex gap-2.5 justify-start"
           >
-            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#27ae60] to-[#1e8449] flex items-center justify-center text-sm flex-shrink-0 mt-1">
-              <span>👦</span>
+            <div className="flex-shrink-0 w-9 h-9 overflow-hidden flex items-center justify-center -mt-1">
+              <div className="scale-[0.45] origin-center">
+                <Kuttan size="sm" mood="thinking" entrance={false} />
+              </div>
             </div>
             <div className="bg-[#f5f0e8]/10 rounded-2xl rounded-bl-md px-4 py-3 border border-white/5">
-              <div className="flex gap-1.5">
+              <div className="flex gap-1.5 items-center h-4">
                 <span
-                  className="w-2 h-2 rounded-full bg-[#f5f0e8]/40 animate-bounce"
+                  className="w-2 h-2 rounded-full bg-[#d4a520] animate-bounce"
                   style={{ animationDelay: '0ms' }}
                 />
                 <span
-                  className="w-2 h-2 rounded-full bg-[#f5f0e8]/40 animate-bounce"
+                  className="w-2 h-2 rounded-full bg-[#d4a520] animate-bounce"
                   style={{ animationDelay: '150ms' }}
                 />
                 <span
-                  className="w-2 h-2 rounded-full bg-[#f5f0e8]/40 animate-bounce"
+                  className="w-2 h-2 rounded-full bg-[#d4a520] animate-bounce"
                   style={{ animationDelay: '300ms' }}
                 />
               </div>
@@ -239,17 +253,23 @@ export default function ChatPage() {
           </motion.div>
         )}
 
-        {/* Suggested questions - show only when there is just the greeting */}
-        {messages.length === 1 && !isLoading && (
+        {/* Suggested questions - on first msg, after error, or every 5 messages */}
+        {showSuggestions && (
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.4 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
             className="pt-2"
           >
-            <div className="flex items-center gap-1.5 mb-2.5 text-[#f5f0e8]/30 text-xs font-medium">
+            <div className="flex items-center gap-1.5 mb-2.5 text-[#f5f0e8]/40 text-xs font-medium">
               <Sparkles size={12} />
-              <span>Quick questions</span>
+              <span>
+                {messages.length === 1
+                  ? 'Quick questions'
+                  : error
+                    ? 'Try one of these instead'
+                    : 'More ideas to try'}
+              </span>
             </div>
             <div className="flex flex-wrap gap-2">
               {SUGGESTED_QUESTIONS.map((q) => (
@@ -265,19 +285,24 @@ export default function ChatPage() {
           </motion.div>
         )}
 
-        {/* Session limit reached */}
+        {/* Session limit reached - urgent pulsing banner */}
         {limitReached && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.9, y: 8 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
             className="flex justify-center pt-2"
           >
-            <div className="glass-card px-4 py-3 text-center max-w-[85%]">
-              <p className="text-[#d4a520] font-semibold text-sm mb-1">
-                Session limit reached!
+            <div className="animate-pulse border-2 border-[#d4a520]/50 bg-[#d4a520]/10 rounded-2xl px-5 py-4 text-center max-w-[90%] shadow-lg shadow-[#d4a520]/10">
+              <p className="text-[#d4a520] font-bold text-base mb-1.5 flex items-center justify-center gap-2">
+                <span role="img" aria-label="alarm clock">
+                  ⏰
+                </span>
+                Session ended!
               </p>
-              <p className="text-[#f5f0e8]/50 text-xs">
-                Refresh the page to start a new chat with Kuttan.
+              <p className="text-[#f5f0e8]/70 text-xs leading-relaxed">
+                You hit the {SESSION_LIMIT}-message limit. Refresh the page to
+                start a fresh chat with Kuttan.
               </p>
             </div>
           </motion.div>
@@ -285,6 +310,34 @@ export default function ChatPage() {
 
         <div ref={messagesEndRef} />
       </div>
+
+      {/* Sticky session warning bar - pulses as count climbs */}
+      <AnimatePresence>
+        {showMeterWarning && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.25 }}
+            className="flex-shrink-0 px-4 pt-2"
+          >
+            <div
+              className={`flex items-center justify-center gap-2 rounded-xl px-3.5 py-2 border text-xs font-medium ${
+                messagesLeft <= 3
+                  ? 'bg-[#c0392b]/15 border-[#c0392b]/40 text-[#f5a09a] animate-pulse'
+                  : messagesLeft <= 6
+                    ? 'bg-[#d4a520]/15 border-[#d4a520]/40 text-[#d4a520] animate-pulse'
+                    : 'bg-[#d4a520]/10 border-[#d4a520]/25 text-[#d4a520]/80'
+              }`}
+            >
+              <Clock size={13} />
+              <span>
+                {messagesLeft} message{messagesLeft === 1 ? '' : 's'} left today
+              </span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Input area */}
       <div className="flex-shrink-0 safe-bottom border-t border-white/10 bg-[#1b2d1b]/95 backdrop-blur-md">

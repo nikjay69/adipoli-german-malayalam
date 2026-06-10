@@ -1,10 +1,10 @@
 # v1-4-2 — Survival Politeness: The Magic Words (FULL SCRIPT)
 
 > **Module:** 1 | **Lesson:** 1-4 | **Duration:** 10:00 target
-> **Teaching Goal:** Apply the polite phrases (Bitte, Danke, Entschuldigung) in three real-world German scenarios: the bakery, the supermarket, and the street.
+> **Teaching Goal:** Apply the polite phrases (Bitte, Danke, Entschuldigung) in three everyday German scenarios — a bakery order, a supermarket checkout, asking for help on the street. Setting: Goethe Kochi role-play sessions + cousin's video calls from Munich. Kuttan stays in Kerala.
 > **A1 Exam Link:** Sprechen Teil 3 (Making requests), Hören Teil 1 (Understanding short shopping/service dialogues)
-> **Status:** NEW — v1.0
-> **Created:** 2026-03-26
+> **Status:** REWRITTEN — v2.0 (Kerala-setting compliant per A1_STORY_BIBLE)
+> **Created:** 2026-03-26 · **Updated:** 2026-04-15
 
 ---
 
@@ -18,15 +18,15 @@
 
 ## Section 1: Hook — The Magic Words that Open Doors (0:12–1:00)
 
-### Visual: [SCENE: A long line at a German bakery. Someone is ordering efficiently and politely. Everyone is nodding.]
+### Visual: [SCENE: Frau Weber at the front of Goethe Kochi classroom, chalk in hand. On the board: "Bitte. Danke. Entschuldigung." Students leaning in.]
 ### Narration: [ENERGY: encouraging, practical]
-"If you want things to go smoothly in Germany – if you want your coffee faster, your questions answered warmly, and your life easier – you only need three words.
+"Frau Weber starts today's class with a claim: *'If you master three words, Germany opens up.'*
 
 **Bitte**. **Danke**. **Entschuldigung**.
 
 But it's not just *what* you say. It's *where* and *how* you say it.
 
-In this video, we're going on a virtual trip to three places you'll visit every single day: the bakery, the Kasse (checkout), and the street. 
+Today, Frau Weber takes the class through three role-plays — the same three places you'll visit every single day once you land: the Bäckerei, the Kasse (checkout), and the street. Small counter at the back of the room, a chalkboard menu, and two classmates playing the German-side.
 
 *Bakery-il 'One bread' ennu paranjaal mathiyo? Alla. Politeness mathram alla, short correct communication um venam.*
 
@@ -34,25 +34,25 @@ Let's go."
 
 ---
 
-## Section 2: Scenario 1 — The Bakery (Beim Bäcker) (1:00–3:30)
+## Section 2: Scenario 1 — The Mock Bakery (Beim Bäcker) (1:00–3:30)
 
-### Visual: [SCENE: A beautiful German bakery counter. Trays of Brezeln, Brötchen, and Brot.]
+### Visual: [SCENE: Back corner of the Goethe Kochi classroom — a cardboard "Bäckerei" counter, a board menu with Brezeln, Brötchen, and Brot printed on paper. Akhil plays the bakery staff. Kuttan is next in line.]
 ### Narration: [ENERGY: sensory, focused]
-"Germans love their bread. You'll visit the 'Bäckerei' almost every morning.
+"Germans visit the Bäckerei almost every morning. Frau Weber has the class rehearse the exact rhythm.
 
 [SLIDE: The Golden Pattern]
 **Number + Item + bitte.**
 
-[SCENE: You talking to the bakery staff]
-**Staff:** Guten Tag! Bitte schön? (Good day! Yes, please?)
-**You:** Guten Tag! **Ein Brötchen, bitte.** (One bread roll, please.)
-**Staff:** Sonst noch was? (Anything else?)
-**You:** Nein, danke. **Wie viel kostet das?** (No, thanks. How much is it?)
-**Staff:** Sechzig Cent, bitte. (Sixty cents, please.)
-**You:** [handing coin] **Hier, bitte.** (Here you go.)
-**Staff:** Danke schön! (Thank you very much!)
-**You:** **Danke schön! Auf Wiedersehen!**
-**Staff:** Tschüss!
+[SCENE: Kuttan walking up to the mock counter]
+**Akhil (as staff):** Guten Tag! Bitte schön? (Good day! Yes, please?)
+**Kuttan:** Guten Tag! **Ein Brötchen, bitte.** (One bread roll, please.)
+**Akhil:** Sonst noch was? (Anything else?)
+**Kuttan:** Nein, danke. **Wie viel kostet das?** (No, thanks. How much is it?)
+**Akhil:** Sechzig Cent, bitte. (Sixty cents, please.)
+**Kuttan:** [handing a prop coin] **Hier, bitte.** (Here you go.)
+**Akhil:** Danke schön! (Thank you very much!)
+**Kuttan:** **Danke schön! Auf Wiedersehen!**
+**Akhil:** Tschüss!
 
 Did you see how many 'Bittes' we used?
 - **'Ein Brötchen, bitte.'** (Please)
@@ -65,18 +65,18 @@ Did you see how many 'Bittes' we used?
 
 ---
 
-## Section 3: Scenario 2 — The Supermarket Kasse (3:30–5:30)
+## Section 3: Scenario 2 — The Mock Supermarket Kasse (3:30–5:30)
 
-### Visual: [SCENE: Supermarket checkout. The beep-beep of the scanner.]
+### Visual: [SCENE: Frau Weber swaps the prop — now it's a Lidl-style checkout, a cardboard card reader, paper "receipts". Reshma plays the cashier. Kuttan at the counter with mock groceries.]
 ### Narration: [ENERGY: fast, alert]
-"German supermarkets can be stressful. The scanning is FAST. You need to pack quickly and be polite.
+"Real German supermarkets scan FAST. Frau Weber makes Reshma scan aggressively — to simulate the real pressure.
 
-[SCENE: At the checkout]
-**Staff:** [Scanning items] Zwölf Euro achtzig, bitte. (12.80, please.)
-**You:** [Paying] **Mit Karte, bitte.** (With card, please.)
-**Staff:** Einen Moment... [Handing receipt] Der Bon, bitte schön.
-**You:** **Danke schön! Einen schönen Tag noch!** (Thanks! Have a nice day!)
-**Staff:** Danke, ebenfalls! (Thanks, you too!)
+[SCENE: At the mock checkout]
+**Reshma (as cashier):** [Scanning items fast] Zwölf Euro achtzig, bitte. (12.80, please.)
+**Kuttan:** [Tapping the prop reader] **Mit Karte, bitte.** (With card, please.)
+**Reshma:** Einen Moment... [Handing paper receipt] Der Bon, bitte schön.
+**Kuttan:** **Danke schön! Einen schönen Tag noch!** (Thanks! Have a nice day!)
+**Reshma:** Danke, ebenfalls! (Thanks, you too!)
 
 Wait — did you catch that?
 **'Einen schönen Tag noch!'** (Have a nice day!)
@@ -90,28 +90,31 @@ It's much better than just saying 'Tschüss'.
 
 ---
 
-## Section 4: Scenario 3 — Asking for Help on the Street (5:30–7:15)
+## Section 4: Scenario 3 — Asking for Help (Role-play: Cousin on Video Call) (5:30–7:15)
 
-### Visual: [SCENE: A street in Munich. You're trying to find the train station (Bahnhof).]
+### Visual: [SCENE: Kuttan at his home desk, evening. Laptop open. His cousin in Munich on video call plays the role of a "random stranger in Munich" so Kuttan can rehearse.]
 ### Narration: [ENERGY: cautious, polite]
-"Imagine you're lost. You need to stop a stranger.
+"The cousin calls in from Munich to help. *'Njan stranger-aa acting chenjaam,'* he grins. Imagine you're lost on a Munich street. You need to stop someone.
+
 Do **not** just walk up and ask 'Where is the station?'
 
 Start with the magic attention word:
 🔊 **Entschuldigung!** (Excuse me!)
 
-[SCENE: You stopping a stranger]
-**You:** **Entschuldigung!** Können Sie mir helfen? (Excuse me! Can you help me?)
-**Stranger:** Ja? (Yes?)
-**You:** Wo ist der Bahnhof? (Where is the train station?)
-**Stranger:** Da vorne, rechts. (There ahead, on the right.)
-**You:** **Vielen Dank! Auf Wiedersehen!**
-**Stranger:** Keine Ursache! (No problem!)
+[SCENE: On video call, cousin plays the stranger]
+**Kuttan:** **Entschuldigung!** Können Sie mir helfen? (Excuse me! Can you help me?)
+**Cousin (stranger):** Ja? (Yes?)
+**Kuttan:** Wo ist der Bahnhof? (Where is the train station?)
+**Cousin:** Da vorne, rechts. (There ahead, on the right.)
+**Kuttan:** **Vielen Dank! Auf Wiedersehen!**
+**Cousin:** Keine Ursache! (No problem!)
+
+Cousin drops character: *'Adipoli machaa — formal Sie, Entschuldigung first, Danke last. Exactly how it works here.'*
 
 If the person looks annoyed or is in a hurry, you say:
 🔊 **Entschuldigung! Kein Problem.** (Sorry! No problem.)
 
-*Nammude 'Excuse me' pole thanne. Open cheyyan Entschuldigung venam. Exit-il Danke-yum.*
+*Nammude 'Excuse me' pole thanne. Open cheyyan Entschuldigung venam. Exit-il Danke-yum.* Rehearse it here with the cousin until it flows — then it'll be automatic the day you actually ask someone.
 
 ⏸️ **Say it with energy:** 🔊 'Entschuldigung, können Sie mir helfen?' ⏸️"
 

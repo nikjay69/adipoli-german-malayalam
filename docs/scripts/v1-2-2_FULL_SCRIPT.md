@@ -20,17 +20,17 @@
 ## Section 1: Hook — The Amt Spelling Moment (0:10–0:40)
 
 ### 🎬 [Energy: urgent, real-world scenario]
-### Visual: [Split screen: confused person at a German office counter, clerk waiting]
+### Visual: [Frau Weber at the Goethe Kochi board, acting out the scene: she pretends to be an Ausländerbehörde clerk, clipboard in hand. Kuttan sitting across, visibly bracing.]
 ### Narration:
-"You're at the Ausländerbehörde. The clerk says:
+"Frau Weber role-plays the scene many learners freeze at. Imagine you've landed in Germany. First day. The clerk looks up and says:
 
 🔊 *'Können Sie Ihren Namen buchstabieren?'*
 
 Can you spell your name?
 
-You freeze. You know how to SAY your name. But spelling it letter by letter in German? That's different.
+Most people freeze. You know how to SAY your name. But spelling it letter by letter — in German — is different.
 
-Today you learn exactly this skill. By the end, you'll spell your name, your address, and read phone numbers — confidently, in German."
+Today we rehearse it here at Goethe Kochi so that, when the real day comes, you won't freeze. By the end of this lesson, you'll spell your name, your address, and read phone numbers — confidently, in German."
 
 ---
 

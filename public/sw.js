@@ -49,20 +49,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Network-first for pages, with offline fallback
-  event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        if (response.ok) {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-        }
-        return response;
-      })
-      .catch(() => {
-        return caches.match(event.request).then((cached) => {
-          return cached || caches.match(OFFLINE_FALLBACK);
-        });
-      })
-  );
+  // Network-only for app pages. Do not cache HTML shells: stale page HTML + fresh JS
+  // is the fastest way to create hydration errors after a release or during QA.
+  event.respondWith(fetch(event.request).catch(() => caches.match(OFFLINE_FALLBACK)));
 });

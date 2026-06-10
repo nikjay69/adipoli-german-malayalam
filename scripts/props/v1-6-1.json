@@ -1,0 +1,51 @@
+{
+  "lessonId": "v1-6-1",
+  "title": "Sie and Du in Real Life",
+  "subtitle": "Module 1 · Lesson 6 · Part 1",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Adult rule: choose the register before you choose the sentence.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v1-6-1/v1-6-1-line-0.mp3"
+    },
+    {
+      "text": "Office: Sie + Herr/Frau. University profs: Sie. Classmates: du.",
+      "german": "Herr / Frau",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v1-6-1/v1-6-1-line-1.mp3"
+    },
+    {
+      "text": "Strangers and shops: Sie. Friends and pubs: often du. Read signals.",
+      "mood": "thinking",
+      "audioSrc": "audio/tts/v1-6-1/v1-6-1-line-2.mp3"
+    },
+    {
+      "text": "Safe default when unsure: 'Wie heißen Sie?' never fails.",
+      "german": "Wie heißen Sie?",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v1-6-1/v1-6-1-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Herr",
+      "english": "Mr.",
+      "malayalam": "shri",
+      "pronunciation": "hair"
+    },
+    {
+      "german": "Frau",
+      "english": "Mrs. / Ms.",
+      "malayalam": "shrimathi",
+      "pronunciation": "frow"
+    },
+    {
+      "german": "höflich",
+      "english": "polite",
+      "malayalam": "maryada",
+      "pronunciation": "hurf-likh"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

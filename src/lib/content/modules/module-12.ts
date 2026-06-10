@@ -189,7 +189,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-1",
           type: "fill-blank",
-          question: "Complete: Ich spiele _____ Fußball. (I like playing football.)",
+          question: "At the Kerala park, Kuttan points to the football game. Complete: Ich spiele _____ Fußball. (I like playing football.)",
           options: ["gern", "nicht", "gut", "viel"],
           correctAnswer: "gern",
           explanation: "'Gern' (gladly/with pleasure) is placed after the verb to express that you like doing something.",
@@ -198,7 +198,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-2",
           type: "multiple-choice",
-          question: "How do you say 'I don't like cooking' in German?",
+          question: "Kuttan is honest after a hostel cooking attempt. How do you say 'I don't like cooking' in German?",
           options: ["Ich koche nicht gern.", "Ich koche gern nicht.", "Ich nicht koche gern.", "Ich gern koche nicht."],
           correctAnswer: "Ich koche nicht gern.",
           explanation: "'Nicht gern' goes after the verb: Ich koche nicht gern.",
@@ -207,7 +207,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-3",
           type: "matching",
-          question: "Match the hobby to its German translation:",
+          question: "At the Kerala park, Arjun asks about weekend hobbies. Match each hobby to its German translation:",
           options: ["reading", "travelling", "dancing", "cooking"],
           correctAnswer: ["lesen", "reisen", "tanzen", "kochen"],
           xpReward: 15
@@ -215,7 +215,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-4",
           type: "multiple-choice",
-          question: "What does 'Treibst du Sport?' mean?",
+          question: "During Goethe Kochi speaking practice, Frau Weber asks: 'Treibst du Sport?' What does she mean?",
           options: ["Do you do sports?", "Do you play football?", "Do you like sports?", "Are you sporty?"],
           correctAnswer: "Do you do sports?",
           explanation: "'Sport treiben' is the idiomatic way to say 'engage in sports'. While you 'play' (spielen) football, you 'practice/do' (treiben) sports in general—like gym, swimming, or yoga.",
@@ -233,7 +233,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-6",
           type: "fill-blank",
-          question: "Complete: Was machst du in deiner _____? (What do you do in your free time?)",
+          question: "Kuttan asks about your Sunday after class. Complete: Was machst du in deiner _____? (What do you do in your free time?)",
           options: ["Freizeit", "Arbeit", "Schule", "Zeit"],
           correctAnswer: "Freizeit",
           explanation: "Frei (free) + Zeit (time). Simple compound! In Germany, your 'Freizeit' is protected by law—work-life balance is a real thing here.",
@@ -242,7 +242,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-7",
           type: "multiple-choice",
-          question: "Which sentence correctly says 'I like swimming'?",
+          question: "At the Kerala pool, Arjun wants a clean A1 sentence. Which sentence correctly says 'I like swimming'?",
           options: ["Ich schwimme gern.", "Ich gern schwimme.", "Ich schwimmen gern.", "Gern ich schwimme."],
           correctAnswer: "Ich schwimme gern.",
           explanation: "Conjugation check! For 'Ich', the verb must end in '-e' (schwimme). The word 'gern' cannot come before the verb in a standard statement.",
@@ -251,7 +251,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-8",
           type: "fill-blank",
-          question: "Complete: Mein Hobby _____ Fotografieren. (My hobby is photography.)",
+          question: "Priya shows photos from the Kerala cafe wall. Complete: Mein Hobby _____ Fotografieren. (My hobby is photography.)",
           options: ["ist", "sind", "hat", "bin"],
           correctAnswer: "ist",
           explanation: "When using 'Mein Hobby' (singular), use 'ist'. When listing multiple hobbies ('Meine Hobbys'), use 'sind'.",
@@ -260,7 +260,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-9",
           type: "dictation",
-          question: "Listen and type: Ich spiele gern Fußball.",
+          question: "Kuttan plays a short hobby audio at the Kerala park. Listen and type: Ich spiele gern Fußball.",
           correctAnswer: "Ich spiele gern Fußball",
           explanation: "Great! 'gern' goes after the verb 'spiele'. And don't forget the capital 'F'!",
           xpReward: 25,
@@ -274,7 +274,16 @@ export const MODULE_12: Module = {
           explanation: "Wunderbar! 'Was ist dein Hobby?' is the correct way to ask a friend about their interests.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex12-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Hobbies): 'Am Wochenende spiele ich gern Cricket.'",
+          questionGerman: "Sprechen Sie laut: 'Am Wochenende spiele ich gern Cricket.'",
+          correctAnswer: "Am Wochenende spiele ich gern Cricket",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab12-1-1", german: "das Hobby", english: "hobby", malayalam: "ഹോബി", pronunciation: "ho-bee", example: "Mein Hobby ist Lesen.", exampleTranslation: "My hobby is reading." },
         { id: "vocab12-1-2", german: "lesen", english: "to read", malayalam: "വായിക്കുക", pronunciation: "ley-zen", example: "Ich lese gern Romane.", exampleTranslation: "I like reading novels." },
@@ -543,7 +552,16 @@ export const MODULE_12: Module = {
           explanation: "Excellent! 'Es regnet' is the standard weather phrase, followed by the location.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex12-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Weather & Seasons): 'Am Wochenende spiele ich gern Cricket.'",
+          questionGerman: "Sprechen Sie laut: 'Am Wochenende spiele ich gern Cricket.'",
+          correctAnswer: "Am Wochenende spiele ich gern Cricket",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab12-2-1", german: "das Wetter", english: "weather", malayalam: "കാലാവസ്ഥ", pronunciation: "vet-ter", example: "Wie ist das Wetter heute?", exampleTranslation: "How is the weather today?" },
         { id: "vocab12-2-2", german: "Es regnet", english: "It's raining", malayalam: "മഴ പെയ്യുന്നു", pronunciation: "es reyg-net", example: "Es regnet den ganzen Tag.", exampleTranslation: "It's raining the whole day." },
@@ -810,7 +828,16 @@ export const MODULE_12: Module = {
           explanation: "Wunderbar! 'Wollen wir' is an excellent way to propose plans.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex12-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Making Plans with Friends): 'Am Wochenende spiele ich gern Cricket.'",
+          questionGerman: "Sprechen Sie laut: 'Am Wochenende spiele ich gern Cricket.'",
+          correctAnswer: "Am Wochenende spiele ich gern Cricket",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab12-3-1", german: "Hast du Lust?", english: "Do you feel like it?", malayalam: "നിനക്ക് താൽപ്പര്യമുണ്ടോ?", pronunciation: "hast doo loost", example: "Hast du Lust, ins Kino zu gehen?", exampleTranslation: "Do you feel like going to the cinema?" },
         { id: "vocab12-3-2", german: "Wollen wir...?", english: "Shall we...?", malayalam: "നമുക്ക്...?", pronunciation: "vol-len veer", example: "Wollen wir zusammen lernen?", exampleTranslation: "Shall we study together?" },
@@ -1092,7 +1119,16 @@ export const MODULE_12: Module = {
           explanation: "Great! A very polite question to ask when invited to someone's home.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex12-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Invitations): 'Am Wochenende spiele ich gern Cricket.'",
+          questionGerman: "Sprechen Sie laut: 'Am Wochenende spiele ich gern Cricket.'",
+          correctAnswer: "Am Wochenende spiele ich gern Cricket",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab12-4-1", german: "einladen", english: "to invite", malayalam: "ക്ഷണിക്കുക", pronunciation: "yn-lah-den", example: "Ich lade dich zu meiner Party ein.", exampleTranslation: "I'm inviting you to my party." },
         { id: "vocab12-4-2", german: "die Einladung", english: "invitation", malayalam: "ക്ഷണം", pronunciation: "yn-lah-doong", example: "Danke für die Einladung!", exampleTranslation: "Thank you for the invitation!" },

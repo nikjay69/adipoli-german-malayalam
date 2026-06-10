@@ -1,0 +1,52 @@
+{
+  "lessonId": "v2-4-1",
+  "title": "Flex Your Languages",
+  "subtitle": "Module 2 · Lesson 4 · Part 1",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Now add languages. Keep it honest and A1-safe.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v2-4-1/v2-4-1-line-0.mp3"
+    },
+    {
+      "text": "Ich spreche Malayalam, Englisch, Hindi, und ein bisschen Deutsch.",
+      "german": "Ich spreche",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v2-4-1/v2-4-1-line-1.mp3"
+    },
+    {
+      "text": "Verb trick: ich sprECHE, du sprICHst. Vowel changes e → i. Remember it.",
+      "german": "sprechen",
+      "mood": "thinking",
+      "audioSrc": "audio/tts/v2-4-1/v2-4-1-line-2.mp3"
+    },
+    {
+      "text": "Practice: Ich spreche drei Sprachen. 'I speak three languages.'",
+      "german": "Ich spreche drei Sprachen.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v2-4-1/v2-4-1-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "sprechen",
+      "english": "to speak",
+      "malayalam": "samsarikka",
+      "pronunciation": "shprey-khen"
+    },
+    {
+      "german": "Sprache",
+      "english": "language",
+      "malayalam": "bhasha",
+      "pronunciation": "shprah-khe"
+    },
+    {
+      "german": "ein bisschen",
+      "english": "a little",
+      "malayalam": "kurach",
+      "pronunciation": "ine biss-chen"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

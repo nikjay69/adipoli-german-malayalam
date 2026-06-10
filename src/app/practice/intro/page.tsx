@@ -513,7 +513,7 @@ export default function IntroSpeakPage() {
           transition={{ delay: 0.15 }}
           className="game-card p-4 mb-5"
         >
-          <h3 className="font-bold text-sm mb-3">6 Topics</h3>
+          <h3 className="font-bold text-sm mb-3">6 Topics — Sequential Flow</h3>
           <div className="grid grid-cols-3 gap-2">
             {TOPICS.map((topic, i) => (
               <motion.div
@@ -521,13 +521,19 @@ export default function IntroSpeakPage() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 + i * 0.05 }}
-                className="game-card p-2.5 text-center"
+                className="relative game-card p-2.5 text-center"
               >
                 <span className="text-xl">{topic.icon}</span>
                 <p className="text-[10px] font-bold mt-1 text-[var(--foreground)]/60">{topic.label}</p>
+                {i < TOPICS.length - 1 && (
+                  <span className="hidden md:inline absolute -right-1.5 top-1/2 -translate-y-1/2 text-[#d4a520]/50 text-sm font-bold z-10">→</span>
+                )}
               </motion.div>
             ))}
           </div>
+          <p className="text-center text-[10px] text-[#d4a520]/70 mt-2 font-semibold">
+            Name → Alter → Land → Sprachen → Beruf → Hobbys
+          </p>
         </motion.div>
 
         {/* Start button */}
@@ -600,23 +606,33 @@ export default function IntroSpeakPage() {
           </div>
         </motion.div>
 
-        {/* Progress dots */}
-        <div className="flex items-center justify-center gap-2 mb-5">
+        {/* Topic progress strip with sequential flow */}
+        <div className="flex items-center justify-center gap-1 mb-5 flex-wrap">
           {TOPICS.map((topic, i) => (
-            <motion.div
-              key={topic.id}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: i * 0.05 }}
-              className={`w-3 h-3 rounded-full transition-all ${
-                i < currentTopicIdx
-                  ? 'bg-[#27ae60]'
-                  : i === currentTopicIdx
-                  ? 'bg-[#d4a520] ring-4 ring-[#d4a520]/20'
-                  : 'bg-[var(--foreground)]/15'
-              }`}
-              title={topic.label}
-            />
+            <div key={topic.id} className="flex items-center gap-1">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{
+                  scale: i === currentTopicIdx ? 1.05 : 1,
+                }}
+                transition={{ delay: i * 0.05 }}
+                className={`flex flex-col items-center justify-center w-10 h-10 rounded-lg transition-all ${
+                  i < currentTopicIdx
+                    ? 'bg-[#27ae60]/15 border border-[#27ae60]/40'
+                    : i === currentTopicIdx
+                    ? 'bg-[#d4a520]/15 ring-2 ring-[#d4a520] scale-105'
+                    : 'bg-[var(--foreground)]/5 border border-[var(--foreground)]/10'
+                }`}
+                title={topic.label}
+              >
+                <span className="text-sm leading-none">{topic.icon}</span>
+              </motion.div>
+              {i < TOPICS.length - 1 && (
+                <span className={`text-xs font-bold ${
+                  i < currentTopicIdx ? 'text-[#27ae60]' : 'text-[var(--foreground)]/20'
+                }`}>→</span>
+              )}
+            </div>
           ))}
         </div>
 
@@ -666,7 +682,7 @@ export default function IntroSpeakPage() {
             className={`relative w-20 h-20 rounded-full flex items-center justify-center mb-3 ${
               isListening
                 ? 'bg-[#c0392b] shadow-[0_0_30px_rgba(192,57,43,0.4)]'
-                : 'bg-[#e94560] shadow-lg'
+                : 'bg-[#f59e0b] shadow-[0_0_30px_rgba(245,158,11,0.5)] animate-pulse'
             }`}
           >
             {isListening && (
@@ -686,12 +702,12 @@ export default function IntroSpeakPage() {
             {isListening ? (
               <Mic className="w-8 h-8 text-white relative z-10" />
             ) : (
-              <MicOff className="w-8 h-8 text-white/60 relative z-10" />
+              <MicOff className="w-8 h-8 text-white relative z-10" />
             )}
           </motion.div>
 
-          <p className="text-xs text-[var(--foreground)]/40">
-            {isListening ? 'Listening... Speak now!' : 'Mic stopped'}
+          <p className={`text-xs font-semibold ${isListening ? 'text-[var(--foreground)]/40' : 'text-[#f59e0b]'}`}>
+            {isListening ? 'Listening... Speak now!' : 'Paused — tap Resume Mic below'}
           </p>
         </div>
 
@@ -703,8 +719,8 @@ export default function IntroSpeakPage() {
         )}
 
         {/* Real-time transcript */}
-        <div className="game-card p-4 mb-5 min-h-[80px]">
-          <p className="text-[10px] font-bold text-[var(--foreground)]/30 uppercase tracking-wide mb-2">
+        <div className="game-card p-4 mb-5 min-h-[80px] max-h-[120px] overflow-y-auto">
+          <p className="text-[10px] font-bold text-[var(--foreground)]/30 uppercase tracking-wide mb-2 sticky top-0 bg-[var(--background)]/80 backdrop-blur-sm">
             Your Speech
           </p>
           {currentTranscript ? (
@@ -768,8 +784,28 @@ export default function IntroSpeakPage() {
     const coveredCount = Object.values(scores).filter(s => s === 'covered').length;
     const partialCount = Object.values(scores).filter(s => s === 'partial').length;
 
+    const isPerfect = coveredCount === TOPICS.length;
+
     return (
-      <div className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto">
+      <div className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto relative">
+        {/* Emoji confetti rain on perfect score */}
+        {isPerfect && (
+          <div className="pointer-events-none fixed inset-0 overflow-hidden z-50">
+            {Array.from({ length: 10 }).map((_, i) => (
+              <motion.span
+                key={i}
+                initial={{ y: -40, opacity: 1, x: 0 }}
+                animate={{ y: 400, opacity: 0 }}
+                transition={{ duration: 2 + Math.random() * 1.5, delay: i * 0.15, ease: 'easeIn' }}
+                className="absolute text-2xl"
+                style={{ left: `${5 + i * 9}%` }}
+              >
+                🎉
+              </motion.span>
+            ))}
+          </div>
+        )}
+
         {/* Header */}
         <motion.div
           initial={{ y: -20, opacity: 0 }}
@@ -861,6 +897,24 @@ export default function IntroSpeakPage() {
             );
           })}
         </div>
+
+        {/* Hint badge — draws attention to comparison section */}
+        {!showModelAnswers && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.35 }}
+            className="flex justify-center mb-2"
+          >
+            <motion.span
+              animate={{ y: [0, -2, 0] }}
+              transition={{ duration: 1.4, repeat: Infinity }}
+              className="inline-flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-1 rounded-full bg-[#d4a520]/15 text-[#d4a520] border border-[#d4a520]/30"
+            >
+              👀 Show comparison
+            </motion.span>
+          </motion.div>
+        )}
 
         {/* Model answers toggle */}
         <motion.button

@@ -12,6 +12,7 @@ import {
   ChevronRight,
   Play,
 } from 'lucide-react';
+import Link from 'next/link';
 import { Card, ProgressBar } from '@/components/ui';
 import { Kuttan } from '@/components/character/Kuttan';
 import { Appu } from '@/components/character/Appu';
@@ -150,7 +151,7 @@ export default function VocabularyPage() {
       setTimeout(() => {
         setSelectedOption(null);
         setShowFeedback(false);
-      }, 1200);
+      }, 800);
     }
   };
 
@@ -246,13 +247,13 @@ export default function VocabularyPage() {
               className="flex-1 flex flex-col"
             >
               {/* Kuttan */}
-              <div className="flex items-start gap-2.5 mb-4">
+              <div className="flex items-start gap-2.5 mb-4 max-w-sm mx-auto w-full">
                 <Kuttan
                   mood={isCorrect ? 'happy' : showFeedback ? 'sad' : 'thinking'}
                   size="sm"
                   entrance={false}
                 />
-                <div className="game-card px-3 py-2 flex-1">
+                <div className="game-card px-3 py-2 flex-1 min-h-[44px] flex items-center">
                   <p className="text-xs text-[var(--foreground)]/70 leading-snug">
                     {showFeedback ? feedbackText : encounter.kuttanSays}
                   </p>
@@ -285,7 +286,7 @@ export default function VocabularyPage() {
               </div>
 
               {/* Options */}
-              <div className="grid grid-cols-2 gap-2.5 mb-4">
+              <div className="grid gap-2.5 md:grid-cols-2 mb-4">
                 {encounter.options.map((option, idx) => {
                   const isSelected = selectedOption === idx;
                   const isCorrectOpt = idx === encounter.correctIndex;
@@ -348,121 +349,165 @@ export default function VocabularyPage() {
   }
 
   // ─── Browse Mode ──────────────────────────────────────────
+  const readyModule = ALL_MODULES.find((m) => {
+    const count = m.lessons.flatMap((l) => l.vocabulary).filter((v) =>
+      userProgress.learnedVocabulary.includes(v.id)
+    ).length;
+    return count >= 2;
+  });
+
   return (
-    <div className="px-4 py-6 max-w-4xl mx-auto">
-      {/* Header */}
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-6">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-blue-500/15 rounded-xl flex items-center justify-center">
-            <BookOpen className="w-6 h-6 text-blue-400" />
-          </div>
-          <div>
-            <h1 className="text-2xl font-bold text-[var(--foreground)]">Vocabulary</h1>
-            <p className="text-[var(--foreground)]/50 text-sm">Practice words by module</p>
-          </div>
+    <div className="min-h-screen px-4 py-4 md:px-8 md:py-8">
+      <div className="mx-auto max-w-md md:max-w-6xl">
+        {/* Compact header */}
+        <div className="mb-3 flex items-center justify-between md:mb-6">
+          <h1 className="text-xl font-bold md:text-2xl">Vocabulary</h1>
+          <span className="text-xs opacity-50 md:text-sm">{learnedCount}/{totalCount}</span>
         </div>
 
-        {/* Kuttan */}
-        <div className="flex items-center gap-2.5 game-card px-3 py-2 mb-4">
-          <Kuttan mood={learnedCount > 100 ? 'celebrating' : learnedCount > 0 ? 'happy' : 'pointing'} size="sm" entrance={false} />
-          <p className="text-xs text-[var(--foreground)]/60 leading-snug">
-            {learnedCount === 0
-              ? 'Start learning words in lessons — then come back here to practice! 📚'
-              : learnedCount < 50
-              ? `${learnedCount} words learned! Pick a module and practice them! 💪`
-              : `Adipoli! ${learnedCount} words! Keep practicing to lock them in! 🔥`}
-          </p>
+        <div className="md:grid md:grid-cols-[1fr_2.2fr] md:gap-6">
+        <div>
+
+        {/* Hero: learned count + practice CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative mb-5 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-blue-500/18 via-blue-500/6 to-transparent p-5"
+        >
+          <div className="pointer-events-none absolute -right-12 -top-12 h-56 w-56 rounded-full bg-blue-500/25 blur-3xl" />
+          <div className="pointer-events-none absolute -left-8 -bottom-8 h-40 w-40 rounded-full bg-emerald-400/15 blur-3xl" />
+          <div className="relative">
+            <div className="flex items-start justify-between">
+              <div className="flex-1">
+                <div className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] opacity-60">
+                  Words learned
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <div className="text-5xl font-extrabold tracking-tight">{learnedCount}</div>
+                  <div className="text-lg opacity-40">/ {totalCount}</div>
+                  {learnedCount % 5 === 0 && learnedCount > 0 && (
+                    <motion.span
+                      className="text-2xl"
+                      animate={{ scale: [1, 1.25, 1] }}
+                      transition={{ duration: 0.9, repeat: Infinity, ease: 'easeInOut' }}
+                      aria-label="milestone reached"
+                    >
+                      🎉
+                    </motion.span>
+                  )}
+                </div>
+              </div>
+              {learnedCount === 0 && (
+                <div className="flex-shrink-0 opacity-90" style={{ transform: 'scale(0.8)', transformOrigin: 'top right' }}>
+                  <Kuttan mood="pointing" size="sm" entrance={false} />
+                </div>
+              )}
+            </div>
+            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: `${(learnedCount / Math.max(totalCount, 1)) * 100}%` }}
+                transition={{ duration: 0.7, ease: 'easeOut' }}
+                className="h-full rounded-full bg-gradient-to-r from-blue-400 to-emerald-400"
+              />
+            </div>
+            {readyModule ? (
+              <motion.button
+                whileTap={{ scale: 0.97 }}
+                onClick={() => startPractice(readyModule.id)}
+                className="mt-4 flex w-full items-center justify-between rounded-2xl bg-gradient-to-r from-[#ff6b9d] to-[#e94560] px-4 py-4 text-base font-bold text-white shadow-xl shadow-[#ff6b9d]/40 active:translate-y-px transition-transform"
+              >
+                <span className="flex items-center gap-2">
+                  <Play className="h-4 w-4 fill-current" />
+                  Practice Module {readyModule.id} words
+                </span>
+                <ChevronRight className="h-4 w-4" />
+              </motion.button>
+            ) : learnedCount === 0 ? (
+              <Link
+                href="/learn"
+                className="mt-4 flex w-full items-center justify-between rounded-2xl bg-white/10 px-4 py-3 text-sm font-semibold hover:bg-white/15 transition-colors"
+              >
+                <span>Start your first lesson to collect words</span>
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            ) : (
+              <p className="mt-4 text-xs opacity-60">
+                Learn a couple more words before you can practice.
+              </p>
+            )}
+          </div>
+        </motion.div>
+
         </div>
 
-        {/* Overall progress */}
-        <Card className="mb-4">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-[var(--foreground)]/50">Total Words Learned</span>
-            <span className="font-medium text-[var(--foreground)]/80">{learnedCount}/{totalCount}</span>
-          </div>
-          <ProgressBar progress={(learnedCount / totalCount) * 100} color="success" size="md" />
-        </Card>
-
+        <div>
         {/* Search */}
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--foreground)]/40" />
+        <div className="relative mb-4">
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 opacity-40" />
           <input
             type="text"
-            placeholder="Search modules..."
+            placeholder="Search modules…"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[var(--card-border)] bg-[var(--foreground)]/5 text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#ff6b9d]"
+            className="w-full rounded-full border border-white/10 bg-white/5 py-2 pl-9 pr-3 text-sm placeholder:opacity-40 focus:outline-none focus:ring-2 focus:ring-[#ff6b9d]/40"
           />
         </div>
-      </motion.div>
 
-      {/* Module cards — practice or explore */}
-      <div className="space-y-3">
-        {ALL_MODULES
-          .filter(m => {
-            if (!searchQuery) return true;
-            const q = searchQuery.toLowerCase();
-            return m.title.toLowerCase().includes(q) || m.titleGerman.toLowerCase().includes(q);
-          })
-          .map((module, idx) => {
-          const moduleVocab = module.lessons.flatMap(l => l.vocabulary);
-          const learnedModuleVocab = moduleVocab.filter(v =>
-            userProgress.learnedVocabulary.includes(v.id)
-          );
-          const learnedModuleCount = learnedModuleVocab.length;
-          const canPractice = learnedModuleCount >= 2; // Need at least 2 words to practice
+        {/* Compact module grid — responsive columns */}
+        <div className="grid grid-cols-3 gap-2 pb-20 sm:grid-cols-4 md:grid-cols-4 md:pb-8 lg:grid-cols-5">
+          {ALL_MODULES
+            .filter((m) => {
+              if (!searchQuery) return true;
+              const q = searchQuery.toLowerCase();
+              return m.title.toLowerCase().includes(q) || m.titleGerman.toLowerCase().includes(q);
+            })
+            .map((module) => {
+              const moduleVocab = module.lessons.flatMap((l) => l.vocabulary);
+              const learnedModuleCount = moduleVocab.filter((v) =>
+                userProgress.learnedVocabulary.includes(v.id)
+              ).length;
+              const pct = moduleVocab.length > 0 ? (learnedModuleCount / moduleVocab.length) * 100 : 0;
+              const canPractice = learnedModuleCount >= 2;
 
-          return (
-            <motion.div
-              key={module.id}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.03 }}
-            >
-              <Card padding="sm" className="hover:border-[#ff6b9d]/30 transition-colors">
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
-                    style={{ backgroundColor: module.color + '20' }}
-                  >
-                    {module.icon}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-[var(--foreground)] text-sm">
-                      Module {module.id}: {module.title}
-                    </h3>
-                    <p className="text-xs text-[var(--foreground)]/40">
-                      {learnedModuleCount}/{moduleVocab.length} words learned
-                    </p>
-                    <div className="mt-1.5">
-                      <ProgressBar
-                        progress={moduleVocab.length > 0 ? (learnedModuleCount / moduleVocab.length) * 100 : 0}
-                        color="success"
-                        size="sm"
+              return (
+                <motion.button
+                  key={module.id}
+                  whileTap={{ scale: canPractice ? 0.96 : 1 }}
+                  onClick={() => canPractice && startPractice(module.id)}
+                  disabled={!canPractice}
+                  className={`relative overflow-hidden rounded-2xl border text-left transition-all ${
+                    canPractice
+                      ? 'border-white/10 bg-white/5 hover:border-[#ff6b9d]/40 hover:bg-white/10'
+                      : 'border-white/5 bg-white/2 opacity-50'
+                  }`}
+                >
+                  <div className="p-2.5">
+                    <div className="mb-1 flex items-center justify-between">
+                      <span className="text-lg">{module.icon}</span>
+                      {canPractice && (
+                        <Play className="h-3 w-3 text-[#ff6b9d]" />
+                      )}
+                    </div>
+                    <div className="text-[10px] font-semibold opacity-70">M{module.id}</div>
+                    <div className="line-clamp-2 text-[11px] leading-tight opacity-70">{module.title}</div>
+                    <div className="mt-1.5 flex items-baseline gap-1">
+                      <span className="text-xs font-semibold">{learnedModuleCount}</span>
+                      <span className="text-[10px] opacity-40">/{moduleVocab.length}</span>
+                    </div>
+                    <div className="mt-1 h-0.5 overflow-hidden rounded-full bg-white/10">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-blue-400 to-emerald-400"
+                        style={{ width: `${pct}%` }}
                       />
                     </div>
                   </div>
-
-                  {/* Practice button */}
-                  {canPractice ? (
-                    <motion.button
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => startPractice(module.id)}
-                      className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#ff6b9d]/15 border border-[#ff6b9d]/25 hover:bg-[#ff6b9d]/25 transition-colors"
-                    >
-                      <Play className="w-3.5 h-3.5 text-[#ff6b9d]" />
-                      <span className="text-xs font-medium text-[#ff6b9d]">Practice</span>
-                    </motion.button>
-                  ) : learnedModuleCount === 0 ? (
-                    <span className="text-xs text-[var(--foreground)]/25 px-2">No words yet</span>
-                  ) : (
-                    <span className="text-xs text-[var(--foreground)]/25 px-2">Learn more first</span>
-                  )}
-                </div>
-              </Card>
-            </motion.div>
-          );
-        })}
+                </motion.button>
+              );
+            })}
+        </div>
+        </div>
+        </div>
       </div>
     </div>
   );

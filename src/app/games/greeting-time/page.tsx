@@ -500,7 +500,7 @@ export default function GreetingTimeGame() {
             className="flex flex-col items-center"
           >
             <CharacterGuide
-              messages="Kuttan just arrived in Germany! He needs to greet people correctly in different situations. Type the right greeting for each scene \u2014 no multiple choice, machaa!"
+              messages="Germany-il Kuttan vannu, machaa! Guten Morgen? Tsch\u00fcss? Type the right greeting — you've got this!"
               mood="excited"
               size="lg"
               showAppu
@@ -979,13 +979,22 @@ export default function GreetingTimeGame() {
                   </div>
                   <div className="text-xs text-[var(--foreground)]/50">Correct</div>
                 </div>
-                <div className="glass-card p-3">
-                  <div className="text-2xl font-bold" style={{ color: 'var(--primary)' }}>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: [0, 1.2, 1] }}
+                  transition={{ delay: 0.5, duration: 0.5, times: [0, 0.6, 1] }}
+                  className="glass-card p-3 ring-2 ring-[#d4a520]/40"
+                >
+                  <div className="text-2xl font-bold" style={{ color: '#d4a520' }}>
                     +{score * 5 + 10}
                   </div>
                   <div className="text-xs text-[var(--foreground)]/50">XP Earned</div>
-                </div>
+                </motion.div>
               </div>
+
+              <p className="text-xs text-[var(--foreground)]/50 italic mb-4">
+                Share this score with your machans — screenshot it!
+              </p>
 
               <div className="flex flex-col gap-3">
                 <button

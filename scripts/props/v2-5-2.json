@@ -1,0 +1,51 @@
+{
+  "lessonId": "v2-5-2",
+  "title": "Your Intro in Real Dialogue",
+  "subtitle": "Module 2 · Lesson 5 · Part 2",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Monologue is step one. Now turn it into a polite two-person exchange.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v2-5-2/v2-5-2-line-0.mp3"
+    },
+    {
+      "text": "After your intro, ask back: 'Und Sie?' / 'Und du?' — And you?",
+      "german": "Und du?",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v2-5-2/v2-5-2-line-1.mp3"
+    },
+    {
+      "text": "React to theirs: 'Ach, interessant!' — Oh, interesting! Keeps flow alive.",
+      "german": "interessant",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v2-5-2/v2-5-2-line-2.mp3"
+    },
+    {
+      "text": "Imagine meeting someone at the Goethe exam waiting room. Try it now!",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v2-5-2/v2-5-2-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Und Sie?",
+      "english": "And you? (F)",
+      "malayalam": "ningalo",
+      "pronunciation": "oont zee"
+    },
+    {
+      "german": "Und du?",
+      "english": "And you? (casual)",
+      "malayalam": "neeyo",
+      "pronunciation": "oont doo"
+    },
+    {
+      "german": "interessant",
+      "english": "interesting",
+      "malayalam": "interest",
+      "pronunciation": "in-ter-ess-ant"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

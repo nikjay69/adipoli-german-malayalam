@@ -248,7 +248,16 @@ export const MODULE_17: Module = {
           explanation: "Excellent! A simple but essential phrase for communication.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex17-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Exam Format Overview & Tips): 'Ich höre zuerst die Frage und dann den Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
+          correctAnswer: "Ich höre zuerst die Frage und dann den Text",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab17-1-1",
@@ -530,7 +539,16 @@ export const MODULE_17: Module = {
           explanation: "Excellent! A simple but vital question in everyday travel.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex17-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Hören Teil 1 — Kurze Nachrichten): 'Ich höre zuerst die Frage und dann den Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
+          correctAnswer: "Ich höre zuerst die Frage und dann den Text",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab17-2-1",
@@ -807,7 +825,16 @@ export const MODULE_17: Module = {
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-fresh-bread.mp3"
         }
-      ],
+      ,
+        {
+          id: "ex17-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Hören Teil 2 & 3 — Gespräche): 'Ich höre zuerst die Frage und dann den Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
+          correctAnswer: "Ich höre zuerst die Frage und dann den Text",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab17-3-1",
@@ -1114,7 +1141,16 @@ export const MODULE_17: Module = {
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-elevator-out.mp3"
         }
-      ],
+      ,
+        {
+          id: "ex17-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Lesen Teil 1 — Schilder und Anzeigen): 'Ich höre zuerst die Frage und dann den Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
+          correctAnswer: "Ich höre zuerst die Frage und dann den Text",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab17-4-1",
@@ -1376,7 +1412,34 @@ export const MODULE_17: Module = {
           explanation: "'Fällt am Donnerstag aus' = cancelled on Thursday. 'Findet am Freitag, 17. März, zur gleichen Zeit statt' = takes place on Friday at the same time (18:00–20:00). The class is moved, not cancelled.",
           xpReward: 15
         }
-      ],
+      ,
+        {
+          id: "ex17-5-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Lesen Teil 2 & 3 — E-Mails und Texte): 'Ich höre zuerst die Frage und dann den Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
+          correctAnswer: "Ich höre zuerst die Frage und dann den Text",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        },
+        {
+          id: "ex17-5-prod-writing",
+          type: "free-text",
+          question: "Production writing: Write one Goethe listening/reading strategy sentence.",
+          questionGerman: "Schreiben Sie einen vollständigen Satz.",
+          correctAnswer: ["Ich lese zuerst die Frage", "Ich lese zuerst die Frage."],
+          explanation: "A1 writing must be short, complete, and usable. One correct sentence beats five half-known phrases.",
+          xpReward: 20
+        },
+        {
+          id: "ex17-5-prod-dictation",
+          type: "dictation",
+          question: "Listen and type the A1 sentence you hear.",
+          audioUrl: "/audio/hoeren/module-17/ex17-5-prod-dictation.mp3",
+          correctAnswer: "Ich höre die Ansage zweimal",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab17-5-1",
@@ -1418,10 +1481,10 @@ export const MODULE_17: Module = {
       xpReward: 250,
       storyScene: {
         setting: {
-          name: "Goethe-Institut Prüfungsraum",
+          name: "Goethe Kochi Mock Prüfungsraum",
           sceneType: "classroom",
           timeOfDay: "morning",
-          description: "The exam hall is quiet and tense. Desks are spaced apart, answer sheets are face-down, and the clock on the wall reads 9:00. This is it — mock test day!",
+          description: "The Goethe Kochi mock exam room is quiet and tense. Desks are spaced apart, answer sheets are face-down, and the clock on the wall reads 9:00. This is still Kerala practice, but it feels like the real A1 test day.",
         },
         narrative: {
           previousRecap: "You've practiced every section individually — Hören and Lesen, Teil 1 through 3. Now it all comes together in one full mock exam.",
@@ -1434,12 +1497,12 @@ export const MODULE_17: Module = {
           "Oru question-il stuck aayaal — best guess pick cheyth MOVE ON. Time waste cheyyaruthu. Viel Erfolg machane — nee ready aanu! 💪",
         ],
         vocabEncounters: [
-          { vocabId: "vocab17-1-1", encounterMoment: "You look at the exam paper cover: 'Goethe-Zertifikat A1 — Prüfung'", contextSentence: "Die Prüfung ist am Montag." },
-          { vocabId: "vocab17-1-2", encounterMoment: "You tell yourself: 'Ich werde die Prüfung bestehen!'", contextSentence: "Ich möchte die Prüfung bestehen." },
-          { vocabId: "vocab17-1-4", encounterMoment: "The examiner announces: 'Lesen Sie jede Aufgabe genau durch.'", contextSentence: "Lesen Sie die Aufgabe genau." },
-          { vocabId: "vocab17-1-6", encounterMoment: "You check the scoring guide: 'Mindestens 60 Punkte zum Bestehen.'", contextSentence: "Sie brauchen mindestens 60 Punkte." },
-          { vocabId: "vocab17-2-1", encounterMoment: "The Hören section begins: 'Sie hören jetzt eine Durchsage.'", contextSentence: "Bitte hören Sie die Durchsage." },
-          { vocabId: "vocab17-3-1", encounterMoment: "Part 2 starts: 'Hören Sie das Gespräch.'", contextSentence: "Hören Sie das Gespräch und antworten Sie." },
+          { vocabId: "vocab17-6-1", encounterMoment: "You look at the exam paper cover: 'Goethe-Zertifikat A1 — Prüfung'", contextSentence: "Die Prüfung ist am Montag." },
+          { vocabId: "vocab17-6-2", encounterMoment: "You tell yourself: 'Ich werde die Prüfung bestehen!'", contextSentence: "Ich möchte die Prüfung bestehen." },
+          { vocabId: "vocab17-6-3", encounterMoment: "The examiner announces: 'Lesen Sie jede Aufgabe genau durch.'", contextSentence: "Lesen Sie die Aufgabe genau." },
+          { vocabId: "vocab17-6-4", encounterMoment: "You check the scoring guide: 'Mindestens 60 Punkte zum Bestehen.'", contextSentence: "Sie brauchen mindestens 60 Punkte." },
+          { vocabId: "vocab17-6-5", encounterMoment: "The Hören section begins: 'Sie hören jetzt eine Durchsage.'", contextSentence: "Bitte hören Sie die Durchsage." },
+          { vocabId: "vocab17-6-6", encounterMoment: "Part 2 starts: 'Hören Sie das Gespräch.'", contextSentence: "Hören Sie das Gespräch und antworten Sie." },
         ],
         decisionPoints: [
           {
@@ -1465,6 +1528,7 @@ export const MODULE_17: Module = {
           title: "Mock Exam — Final Tips",
           duration: "8:00",
           description: "Last-minute tips and strategy before you take the full Hören & Lesen mock exam.",
+          videoUrl: "/videos/generated/v17-6-1.mp4",
           scriptOutline: [
             "Opening: 'Machane, ippol real exam feel aanu — are you ready?'",
             "Quick recap of all 6 parts: Hören 1/2/3 + Lesen 1/2/3",
@@ -1510,6 +1574,51 @@ export const MODULE_17: Module = {
               title: "Viel Erfolg!",
               variant: "info",
               content: "You've prepared well through all lessons. Stay calm, trust your preparation. Each question is independent — one wrong answer doesn't affect the next. You've got this!"
+            },
+            {
+              type: "list",
+              title: "After the mock: Goethe Kochi feedback routine",
+              items: [
+                "Mark every wrong answer as Hören or Lesen, not just 'mistake'.",
+                "For Hören: replay once, write the keyword you missed, then say the full answer aloud.",
+                "For Lesen: underline the sentence that proves the answer; do not rely on gut feeling.",
+                "Tell Kuttan one clear next step in German: Ich übe Hören. / Ich übe Lesen."
+              ]
+            },
+            {
+              type: "table",
+              title: "Goethe Kochi mock scorecard — Hören & Lesen",
+              headers: ["Skill", "Pass-ready proof", "If not ready, next drill"],
+              rows: [
+                ["Hören", "I catch time, place, price, and negation in short audio.", "Replay one missed item and write: Ich höre die Ansage zweimal."],
+                ["Lesen", "I can prove each answer by pointing to one exact line.", "Underline the proof line before checking the answer."],
+                ["Exam strategy", "I move on after one hard question and protect easy marks.", "Say to Kuttan: Ich mache weiter."]
+              ]
+            },
+            {
+              type: "list",
+              title: "Exam simulation rules — do this before tapping Start",
+              items: [
+                "Sit at one desk like the Goethe Kochi mock room; keep only pen, paper, water, and phone/audio ready.",
+                "Do Hören first without pausing the first attempt. Mark missed numbers, times, and negation after the section.",
+                "Do Lesen with proof lines: every answer needs one exact word or sentence from the text.",
+                "After scoring, choose one next drill only: Ich übe Hören. or Ich übe Lesen."
+              ]
+            },
+            {
+              type: "vocabulary",
+              items: [
+                { german: "die Durchsage", english: "announcement", malayalam: "അറിയിപ്പ്", pronunciation: "dee doorgh-zah-ge" },
+                { german: "das Gespräch", english: "conversation", malayalam: "സംഭാഷണം", pronunciation: "dahs ge-shprehkh" },
+                { german: "die Aufgabe", english: "task / question", malayalam: "ചോദ്യം / ടാസ്ക്", pronunciation: "dee owf-gah-be" },
+                { german: "mindestens", english: "at least", malayalam: "കുറഞ്ഞത്", pronunciation: "min-des-tens" }
+              ]
+            },
+            {
+              type: "note",
+              title: "Feedback rule after the mock",
+              variant: "tip",
+              content: "Do not label the result as simply 'good' or 'bad'. Label mistakes by skill: Hören = missed sound/detail; Lesen = missed proof line. Then tell Kuttan one A1 next step: Ich übe Hören. / Ich übe Lesen."
             }
           ]
         }
@@ -1679,8 +1788,99 @@ export const MODULE_17: Module = {
           explanation: "'Vielen Dank für das schöne Wochenende bei dir' = Thank you for the lovely weekend at your place. The main purpose is to THANK Maria. The Hamburg mention is secondary — a hope, not the main reason for writing.",
           xpReward: 15
         }
-      ],
-      vocabulary: []
+      ,
+        {
+          id: "ex17-6-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Übungstest — Hören & Lesen): 'Ich höre zuerst die Frage und dann den Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
+          correctAnswer: "Ich höre zuerst die Frage und dann den Text",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        },
+        {
+          id: "ex17-6-prod-writing",
+          type: "free-text",
+          question: "Production writing: Write one Goethe listening/reading strategy sentence.",
+          questionGerman: "Schreiben Sie einen vollständigen Satz.",
+          correctAnswer: ["Ich lese zuerst die Frage", "Ich lese zuerst die Frage."],
+          explanation: "A1 writing must be short, complete, and usable. One correct sentence beats five half-known phrases.",
+          xpReward: 20
+        },
+        {
+          id: "ex17-6-prod-dictation",
+          type: "dictation",
+          question: "Goethe Kochi mock review with Kuttan: listen and type the Hören strategy sentence you hear.",
+          audioUrl: "/audio/hoeren/module-17/ex17-6-prod-dictation.mp3",
+          correctAnswer: "Ich höre die Ansage zweimal",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        },
+        {
+          id: "ex17-6-mock-feedback-writing",
+          type: "free-text",
+          question: "After the Goethe Kochi mock, write one honest A1 feedback sentence for Kuttan: 'Ich übe ...' Choose Hören or Lesen.",
+          questionGerman: "Schreiben Sie einen Satz: 'Ich übe Hören.' oder 'Ich übe Lesen.'",
+          correctAnswer: ["Ich übe Hören", "Ich übe Hören.", "Ich übe Lesen", "Ich übe Lesen."],
+          explanation: "A mock test only helps if you convert the score into a next action. This sentence is short, exam-relevant, and usable after real practice too.",
+          xpReward: 20
+        }],
+      vocabulary: [
+        {
+          id: "vocab17-6-1",
+          german: "die Prüfung",
+          english: "the exam",
+          malayalam: "പരീക്ഷ",
+          pronunciation: "dee prü-fung",
+          example: "Die Prüfung ist am Montag.",
+          exampleTranslation: "The exam is on Monday."
+        },
+        {
+          id: "vocab17-6-2",
+          german: "bestehen",
+          english: "to pass",
+          malayalam: "പാസാകുക",
+          pronunciation: "be-shtay-en",
+          example: "Ich möchte die Prüfung bestehen.",
+          exampleTranslation: "I want to pass the exam."
+        },
+        {
+          id: "vocab17-6-3",
+          german: "die Aufgabe",
+          english: "the task / question",
+          malayalam: "ചോദ്യം / ടാസ്ക്",
+          pronunciation: "dee owf-gah-be",
+          example: "Lesen Sie die Aufgabe genau.",
+          exampleTranslation: "Read the task carefully."
+        },
+        {
+          id: "vocab17-6-4",
+          german: "mindestens",
+          english: "at least",
+          malayalam: "കുറഞ്ഞത്",
+          pronunciation: "min-des-tens",
+          example: "Sie brauchen mindestens 60 Punkte.",
+          exampleTranslation: "You need at least 60 points."
+        },
+        {
+          id: "vocab17-6-5",
+          german: "die Durchsage",
+          english: "the announcement",
+          malayalam: "അറിയിപ്പ്",
+          pronunciation: "dee doorgh-zah-ge",
+          example: "Bitte hören Sie die Durchsage.",
+          exampleTranslation: "Please listen to the announcement."
+        },
+        {
+          id: "vocab17-6-6",
+          german: "das Gespräch",
+          english: "the conversation",
+          malayalam: "സംഭാഷണം",
+          pronunciation: "dahs ge-shprehkh",
+          example: "Hören Sie das Gespräch und antworten Sie.",
+          exampleTranslation: "Listen to the conversation and answer."
+        }
+      ]
     }
   ]
 };
