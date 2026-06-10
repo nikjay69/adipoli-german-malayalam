@@ -341,11 +341,11 @@ export default function ReviewPage() {
           <div className="game-card p-5 mb-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#00d9a5]">{stats.total}</div>
+                <div className="text-3xl font-bold text-[#86efac]">{stats.total}</div>
                 <div className="text-xs text-[var(--foreground)]/40 mt-1">Words practiced</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#ffd93d]">+{stats.xpEarned}</div>
+                <div className="text-3xl font-bold text-[#fcd34d]">+{stats.xpEarned}</div>
                 <div className="text-xs text-[var(--foreground)]/40 mt-1">XP earned</div>
               </div>
             </div>
@@ -358,19 +358,19 @@ export default function ReviewPage() {
               {stats.correct > 0 && (
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#00d9a5]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#86efac]" />
                     <span className="text-xs text-[var(--foreground)]/60">Nailed it first try</span>
                   </div>
-                  <span className="text-sm font-bold text-[#00d9a5]">{stats.correct}</span>
+                  <span className="text-sm font-bold text-[#86efac]">{stats.correct}</span>
                 </div>
               )}
               {stats.struggled > 0 && (
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffd93d]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#fcd34d]" />
                     <span className="text-xs text-[var(--foreground)]/60">Got it after a try</span>
                   </div>
-                  <span className="text-sm font-bold text-[#ffd93d]">{stats.struggled}</span>
+                  <span className="text-sm font-bold text-[#fcd34d]">{stats.struggled}</span>
                 </div>
               )}
               {stats.missed > 0 && (
@@ -438,7 +438,7 @@ export default function ReviewPage() {
         </div>
 
         {/* Progress bar */}
-        <div className="w-full h-2 bg-[var(--foreground)]/10 rounded-full overflow-hidden mb-5">
+        <div className="relative w-full h-4 bg-[var(--foreground)]/10 rounded-full overflow-hidden mb-5">
           <motion.div
             className="h-full rounded-full"
             style={{ background: 'linear-gradient(90deg, #ff6b9d, #00d9a5)' }}
@@ -446,6 +446,11 @@ export default function ReviewPage() {
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
           />
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <span className="text-[11px] font-bold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+              {currentIndex + 1}/{encounters.length} cards
+            </span>
+          </div>
         </div>
       </motion.div>
 
@@ -469,7 +474,7 @@ export default function ReviewPage() {
                 animate={{ opacity: 1, y: 0 }}
                 className="game-card px-3 py-2 flex-1"
               >
-                <p className="text-xs text-[var(--foreground)]/70 leading-snug">
+                <p className="text-sm font-medium text-[var(--foreground)]/70 leading-snug">
                   {showFeedback ? feedbackText : currentEncounter.kuttanSays}
                 </p>
               </motion.div>
@@ -500,7 +505,7 @@ export default function ReviewPage() {
               {/* Audio button for the word */}
               <button
                 onClick={() => playVocabAudio(currentEncounter.targetVocab.id).catch(() => {})}
-                className="mt-3 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 hover:bg-[#8b5cf6]/20 transition-colors"
+                className="mt-3 inline-flex items-center gap-2 p-2.5 min-w-[44px] min-h-[44px] rounded-full bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 hover:bg-[#8b5cf6]/20 transition-colors"
               >
                 <Volume2 className="w-3.5 h-3.5 text-[#8b5cf6]" />
                 <span className="text-[11px] text-[#8b5cf6] font-medium">Listen</span>
@@ -508,7 +513,7 @@ export default function ReviewPage() {
             </div>
 
             {/* Options */}
-            <div className="grid grid-cols-2 gap-2.5 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 mb-4">
               {currentEncounter.options.map((option, idx) => {
                 const isSelected = selectedOption === idx;
                 const isCorrectOption = idx === currentEncounter.correctIndex;

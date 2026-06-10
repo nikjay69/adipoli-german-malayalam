@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Shield, Eye, Trash2, Mail } from 'lucide-react';
+import { Kuttan } from '@/components/character/Kuttan';
 
 export default function PrivacyPage() {
   const router = useRouter();
@@ -142,7 +143,22 @@ export default function PrivacyPage() {
         </section>
       </div>
 
-      <div className="mt-8 pt-4 border-t border-[var(--foreground)]/10 text-center text-xs text-[var(--foreground)]/30">
+      {/* Kuttan TL;DR footer */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="mt-8 p-4 rounded-2xl bg-gradient-to-br from-[#27ae60]/10 to-[#d4a520]/10 border border-[#27ae60]/20 flex items-center gap-3"
+      >
+        <div className="flex-shrink-0">
+          <Kuttan mood="happy" size="sm" entrance={false} />
+        </div>
+        <div className="text-sm text-[var(--foreground)]/80 leading-relaxed">
+          <span className="font-bold text-[#27ae60]">TL;DR:</span> we only store progress on your device. No tracking nonsense, machaa.
+        </div>
+      </motion.div>
+
+      <div className="mt-6 pt-4 border-t border-[var(--foreground)]/10 text-center text-xs text-[var(--foreground)]/30">
         Adipoli German · Privacy Policy · March 2026
       </div>
     </div>

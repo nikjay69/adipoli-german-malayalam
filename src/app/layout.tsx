@@ -49,9 +49,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <main id="main-content" className="min-h-screen pb-24" role="main">
-          {children}
-        </main>
+        {children}
         <Navigation />
         <GlobalSearch />
         <ToastContainer />

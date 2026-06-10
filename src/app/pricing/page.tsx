@@ -222,8 +222,11 @@ export default function PricingPage() {
 
         {/* Currency Toggle */}
         <div className="flex items-center justify-center gap-3 mt-6">
-          <button
+          <motion.button
             onClick={() => setCurrency('inr')}
+            whileTap={{ scale: 0.95 }}
+            animate={currency === 'inr' ? { scale: [1, 1.05, 1] } : { scale: 1 }}
+            transition={{ duration: 0.3 }}
             className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium transition-all ${
               currency === 'inr'
                 ? 'bg-[#d4a520]/20 text-[#d4a520] border border-[#d4a520]/30'
@@ -232,9 +235,12 @@ export default function PricingPage() {
           >
             <IndianRupee className="w-4 h-4" />
             INR
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             onClick={() => setCurrency('eur')}
+            whileTap={{ scale: 0.95 }}
+            animate={currency === 'eur' ? { scale: [1, 1.05, 1] } : { scale: 1 }}
+            transition={{ duration: 0.3 }}
             className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium transition-all ${
               currency === 'eur'
                 ? 'bg-[#d4a520]/20 text-[#d4a520] border border-[#d4a520]/30'
@@ -243,7 +249,7 @@ export default function PricingPage() {
           >
             <Globe className="w-4 h-4" />
             EUR
-          </button>
+          </motion.button>
         </div>
       </motion.div>
 
@@ -266,8 +272,9 @@ export default function PricingPage() {
               ? currency === 'inr'
                 ? 'Pay with Razorpay'
                 : 'Pay with Stripe'
-              : 'Join Waitlist';
+              : 'Reserve Spot \u00B7 Payment Coming Soon';
           const isCurrentPlan = isLoggedIn && user?.plan === plan.id;
+          const isWaitlist = plan.id !== 'free' && !FEATURE_FLAGS.paymentsReady;
 
           return (
             <motion.div
@@ -344,8 +351,8 @@ export default function PricingPage() {
                 {plan.features.map((feature, fi) => (
                   <div key={fi} className="flex items-start gap-2.5">
                     {feature.included ? (
-                      <div className="w-5 h-5 rounded-full bg-[#27ae60]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-[#27ae60]" />
+                      <div className="bg-[#27ae60] text-white rounded-full w-4 h-4 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-3 h-3" strokeWidth={3} />
                       </div>
                     ) : (
                       <div className="w-5 h-5 rounded-full bg-[var(--foreground)]/5 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -371,9 +378,13 @@ export default function PricingPage() {
                 whileHover={{ scale: 1.02 }}
                 onClick={() => handlePayment(plan.id)}
                 disabled={isCurrentPlan}
-                className={`w-full py-3 rounded-xl font-semibold text-sm transition-all ${plan.buttonClass} ${
+                className={`w-full py-3 rounded-xl font-semibold text-sm transition-all ${
+                  isWaitlist
+                    ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:bg-amber-500/30'
+                    : plan.buttonClass
+                } ${
                   isCurrentPlan ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
-                } ${plan.id !== 'free' ? 'shadow-lg' : ''}`}
+                } ${plan.id !== 'free' && !isWaitlist ? 'shadow-lg' : ''}`}
               >
                 {isCurrentPlan ? 'Current Plan' : paymentLabel}
               </motion.button>

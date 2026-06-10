@@ -211,7 +211,7 @@ export default function OnboardingPage() {
                     onClick={() => handleSelectHours(option.value)}
                     className={`w-full p-4 rounded-2xl border text-left transition-all duration-200 ${
                       isSelected
-                        ? 'bg-[#ff6b9d]/15 border-[#ff6b9d]/50 shadow-lg shadow-[#ff6b9d]/10'
+                        ? 'bg-[#ff6b9d]/10 border-[#ff6b9d]/80 shadow-[0_0_20px_rgba(255,107,157,0.2)]'
                         : 'bg-white/5 border-white/10 hover:border-white/20'
                     }`}
                   >
@@ -270,14 +270,16 @@ export default function OnboardingPage() {
               animate={{ opacity: selectedHours !== null ? 1 : 0 }}
               className="mt-8 w-full max-w-sm"
             >
-              <button
+              <motion.button
+                whileHover={selectedHours !== null ? { scale: 1.03 } : undefined}
+                whileTap={selectedHours !== null ? { scale: 0.97 } : undefined}
                 onClick={handleConfirmPlan}
                 disabled={selectedHours === null}
                 className="game-button w-full text-base py-4 flex items-center justify-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed"
               >
                 Confirm Plan
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </motion.button>
             </motion.div>
           </motion.div>
         )}
@@ -290,7 +292,7 @@ export default function OnboardingPage() {
             animate={{ opacity: 1, scale: 1 }}
             className="min-h-screen flex flex-col items-center justify-center px-6"
           >
-            <Confetti isActive={true} duration={4000} />
+            <Confetti isActive={true} duration={2500} />
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}

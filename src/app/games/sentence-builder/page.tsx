@@ -6,8 +6,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Trophy, Star, RefreshCw, Clock, CheckCircle, Zap } from 'lucide-react';
 import { Card, Button, ProgressBar } from '@/components/ui';
 import { CharacterGuide } from '@/components/character';
+import { Kuttan } from '@/components/character/Kuttan';
 import type { KuttanMood } from '@/components/character';
+import { Confetti } from '@/components/game';
 import { useGameStore } from '@/lib/store';
+
+// Haptic + vibration helper — gated for SSR safety
+function vibrateShort() {
+  if (typeof window !== 'undefined' && 'vibrate' in navigator) {
+    navigator.vibrate?.(20);
+  }
+}
 
 // ── Kuttan Manglish reactions ──────────────────────────────────────────
 const CORRECT_REACTIONS = [
@@ -79,6 +88,8 @@ export default function SentenceBuilderGame() {
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
   const [kuttanMood, setKuttanMood] = useState<KuttanMood>('excited');
   const [kuttanMsg, setKuttanMsg] = useState("Kuttan is writing a letter to his German university. Help him build proper sentences!");
+  const [combo, setCombo] = useState(0);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const shuffleArray = <T,>(array: T[]): T[] => {
     const newArray = [...array];
@@ -134,13 +145,18 @@ export default function SentenceBuilderGame() {
     incrementGamesPlayed();
     const earnedXP = score * 8;
     addXP(earnedXP);
-    // Set Kuttan's completion reaction
-    const comp = score >= 9 ? COMPLETION_MSGS.perfect
-      : score >= 6 ? COMPLETION_MSGS.great
-      : score >= 4 ? COMPLETION_MSGS.good
-      : COMPLETION_MSGS.tryAgain;
-    setKuttanMood(comp.mood);
-    setKuttanMsg(comp.msg);
+    const pct = score / 10;
+    if (pct >= 0.8) {
+      setKuttanMood('excited');
+      setKuttanMsg('Adipoli! You crushed it! German sentences flowing like poetry machaa!');
+      setShowConfetti(true);
+    } else if (pct >= 0.5) {
+      setKuttanMood('happy');
+      setKuttanMsg('Poli, machaa! Closer next round? Verb position is tricky — we got this!');
+    } else {
+      setKuttanMood('thinking');
+      setKuttanMsg("That's okay — tricky words. One more? Kuttan believes in you!");
+    }
   };
 
   const handleWordTap = (tappedWord: { word: string; id: number }) => {
@@ -164,6 +180,8 @@ export default function SentenceBuilderGame() {
     if (builtSentence === currentSentence.correct) {
       setFeedback('correct');
       setScore(prev => prev + 1);
+      setCombo(prev => prev + 1);
+      vibrateShort();
       setKuttanMood('celebrating');
       setKuttanMsg(CORRECT_REACTIONS[Math.floor(Math.random() * CORRECT_REACTIONS.length)]);
 
@@ -180,6 +198,7 @@ export default function SentenceBuilderGame() {
       }, 800);
     } else {
       setFeedback('wrong');
+      setCombo(0);
       setKuttanMood('thinking');
       setKuttanMsg(WRONG_REACTIONS[Math.floor(Math.random() * WRONG_REACTIONS.length)]);
       setTimeout(() => {
@@ -197,6 +216,7 @@ export default function SentenceBuilderGame() {
 
   return (
     <div className="px-4 py-6 max-w-4xl mx-auto">
+      <Confetti isActive={showConfetti} />
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <button
@@ -229,31 +249,38 @@ export default function SentenceBuilderGame() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
           >
-            <Card className="text-center">
-              <div className="mb-4">
-                <CharacterGuide messages="Kuttan is writing a letter to his German university. Help him build proper sentences! Brain use cheyyuka!" mood="excited" size="sm" />
+            <div className="game-card p-6 text-center">
+              <div className="mb-4 flex justify-center">
+                <Kuttan mood="excited" size="lg" />
               </div>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              <h1 className="text-3xl font-bold mb-2 gradient-text">
                 Sentence Builder
               </h1>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Tap the words in the correct order to build German sentences. Ithu rambam fun!
+              <p className="text-[var(--foreground)]/80 mb-2 text-base font-semibold">
+                Machaa! Kuttan&apos;s writing to his German uni — drag the words in order and let&apos;s sound adipoli!
               </p>
-              <div className="flex items-center justify-center gap-4 mb-6 text-sm text-gray-500">
+              <p className="text-[var(--foreground)]/50 mb-6 text-sm">
+                Verb in position 2, subject first — we&apos;ll crack this together!
+              </p>
+              <div className="flex items-center justify-center gap-4 mb-6 text-sm text-[var(--foreground)]/60">
                 <span className="flex items-center gap-1">
-                  <Clock className="w-4 h-4" /> 90 seconds
+                  <Clock className="w-4 h-4" /> 90s
                 </span>
                 <span className="flex items-center gap-1">
-                  <Zap className="w-4 h-4" /> 10 sentences
+                  <Zap className="w-4 h-4 text-[#d4a520]" /> 10 sentences
                 </span>
                 <span className="flex items-center gap-1">
-                  <Star className="w-4 h-4" /> Up to 80 XP
+                  <Star className="w-4 h-4 text-[#d4a520]" /> Up to 80 XP
                 </span>
               </div>
-              <Button onClick={startGame} size="lg" fullWidth>
-                Start Game
-              </Button>
-            </Card>
+              <button
+                onClick={startGame}
+                className="w-full py-4 rounded-xl text-lg font-bold text-white transition-transform active:scale-95"
+                style={{ background: 'linear-gradient(135deg, #d4a520, #e94560)', minHeight: '52px' }}
+              >
+                Poraa machaa — let&apos;s build!
+              </button>
+            </div>
           </motion.div>
         )}
 
@@ -272,7 +299,7 @@ export default function SentenceBuilderGame() {
 
             {/* Stats Bar */}
             <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 <motion.div
                   className="text-center"
                   animate={{ scale: score > 0 ? [1, 1.2, 1] : 1 }}
@@ -280,10 +307,24 @@ export default function SentenceBuilderGame() {
                   key={score}
                 >
                   <div className="text-xl font-bold text-[#e94560]">{score}</div>
-                  <div className="text-xs text-gray-500">Score</div>
+                  <div className="text-xs text-[var(--foreground)]/50">Score</div>
                 </motion.div>
+                {combo >= 2 && (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="flex items-center gap-1 px-2.5 py-1 rounded-full font-bold text-xs"
+                    style={{
+                      background: 'linear-gradient(135deg, #d4a520, #e94560)',
+                      color: '#fff',
+                    }}
+                  >
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>{combo}x combo</span>
+                  </motion.div>
+                )}
               </div>
-              <div className="text-sm text-gray-500">
+              <div className="text-sm text-[var(--foreground)]/60">
                 Sentence {currentIndex + 1}/{sentences.length}
               </div>
             </div>
@@ -385,8 +426,8 @@ export default function SentenceBuilderGame() {
                       delay: index * 0.05,
                     }}
                     onClick={() => handleWordTap(item)}
-                    whileTap={{ scale: 0.9 }}
-                    className="px-4 py-2.5 rounded-xl bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-[#e94560] dark:hover:border-[#e94560] text-gray-900 dark:text-white font-medium text-base shadow-sm hover:shadow-md transition-all"
+                    whileTap={{ scale: 0.96 }}
+                    className="px-4 py-3 min-h-[44px] min-w-[44px] rounded-xl bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-[#e94560] dark:hover:border-[#e94560] text-gray-900 dark:text-white font-medium text-base shadow-sm hover:shadow-md transition-all active:scale-95"
                   >
                     {item.word}
                   </motion.button>
@@ -415,57 +456,58 @@ export default function SentenceBuilderGame() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
           >
-            <Card className="text-center">
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.2, type: 'spring' }}
-                className="w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-4"
-              >
-                <Trophy className="w-10 h-10 text-white" />
-              </motion.div>
-
-              {/* Kuttan completion reaction */}
-              <div className="mb-4">
-                <CharacterGuide messages={kuttanMsg} mood={kuttanMood} size="sm" />
+            <div className="game-card p-6 text-center">
+              <div className="mb-4 flex justify-center">
+                <Kuttan mood={kuttanMood} size="lg" />
               </div>
 
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                {score >= 8 ? 'Adipoli!' : score >= 5 ? 'Good Job!' : 'Paravaala machaa!'}
+              <h1 className="text-3xl font-bold mb-2 gradient-text">
+                {score >= 8 ? 'Adipoli!' : score >= 5 ? 'Poli, machaa!' : 'Paravaala!'}
               </h1>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                {score === 10
-                  ? 'Perfect! All sentences built correctly!'
-                  : `You built ${score} out of 10 sentences correctly.`}
+              <p className="text-[var(--foreground)]/80 mb-6 text-sm font-medium">
+                {kuttanMsg}
               </p>
 
-              <div className="grid grid-cols-3 gap-4 mb-6">
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-emerald-500">{score}</div>
-                  <div className="text-xs text-gray-500">Correct</div>
+              <div className="grid grid-cols-3 gap-3 mb-6">
+                <div className="glass-card p-3">
+                  <div className="text-2xl font-bold text-[#27ae60]">{score}</div>
+                  <div className="text-xs text-[var(--foreground)]/50">Correct</div>
                 </div>
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-red-500">{10 - score}</div>
-                  <div className="text-xs text-gray-500">Missed</div>
+                <div className="glass-card p-3">
+                  <div className="text-2xl font-bold text-[#c0392b]">{10 - score}</div>
+                  <div className="text-xs text-[var(--foreground)]/50">Missed</div>
                 </div>
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-amber-500">
+                <motion.div
+                  className="glass-card p-3"
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: [0.8, 1.1, 1] }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                >
+                  <div className="text-2xl font-bold text-[#d4a520]">
                     +{earnedXP}
                   </div>
-                  <div className="text-xs text-gray-500">XP Earned</div>
-                </div>
+                  <div className="text-xs text-[var(--foreground)]/50">XP</div>
+                </motion.div>
               </div>
 
               <div className="flex flex-col gap-3">
-                <Button onClick={startGame} fullWidth>
+                <button
+                  onClick={startGame}
+                  className="w-full py-3 rounded-xl text-base font-bold text-white flex items-center justify-center gap-2 transition-transform active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #d4a520, #e94560)', minHeight: '48px' }}
+                >
                   <RefreshCw className="w-5 h-5" />
                   Play Again
-                </Button>
-                <Button variant="ghost" onClick={() => router.push('/games')} fullWidth>
+                </button>
+                <button
+                  onClick={() => router.push('/games')}
+                  className="w-full py-3 rounded-xl text-base font-medium text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors active:scale-95"
+                  style={{ background: 'rgba(245,240,232,0.05)', minHeight: '48px' }}
+                >
                   Back to Games
-                </Button>
+                </button>
               </div>
-            </Card>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

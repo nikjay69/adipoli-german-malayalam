@@ -22,6 +22,7 @@ import { playVocabAudio } from '@/lib/audio';
 import { useGameStore } from '@/lib/store';
 import { ALL_MODULES, getLessonById, getModuleById, type Lesson, type Exercise, type VocabItem } from '@/lib/content/modules';
 import { RichContentRenderer } from '@/components/learn/RichContentRenderer';
+import { Kuttan } from '@/components/character/Kuttan';
 
 type LessonSection = 'overview' | 'video' | 'vocabulary' | 'exercises' | 'complete';
 

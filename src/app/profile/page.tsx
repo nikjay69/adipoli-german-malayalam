@@ -23,6 +23,7 @@ import {
   AlertTriangle,
   CalendarDays,
   Clock,
+  Flame,
 } from 'lucide-react';
 import { Card, Button, Badge, ProgressBar } from '@/components/ui';
 import { useGameStore, ACHIEVEMENTS_DATA } from '@/lib/store';
@@ -234,17 +235,17 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="px-4 py-4 max-w-4xl mx-auto">
+    <div className="px-4 py-4 max-w-5xl mx-auto md:px-8 md:py-8">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-3"
+        className="md:grid md:grid-cols-2 md:gap-4 md:items-start"
       >
         {/* Account Section - Auth aware */}
         {isLoggedIn && user ? (
           /* Logged In Profile Card */
-          <Card padding="sm" className="text-center mb-3">
+          <Card padding="sm" className="text-center mb-3 md:col-span-2">
             <div className="w-16 h-16 bg-gradient-to-br from-[#d4a520] to-[#27ae60] rounded-full flex items-center justify-center mx-auto mb-3">
               <span className="text-2xl font-bold text-white">
                 {user.name.charAt(0).toUpperCase()}
@@ -315,7 +316,7 @@ export default function ProfilePage() {
           </Card>
         ) : (
           /* Not Logged In */
-          <Card padding="sm" className="text-center mb-3">
+          <Card padding="sm" className="text-center mb-3 md:col-span-2">
             <div className="w-16 h-16 bg-gradient-to-br from-[#e94560] to-[#0f3460] rounded-full flex items-center justify-center mx-auto mb-3">
               <User className="w-8 h-8 text-white" />
             </div>
@@ -369,32 +370,71 @@ export default function ProfilePage() {
           </Card>
         )}
 
-        {/* Kuttan greeting */}
+        {/* Kuttan greeting — larger, more delightful */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="flex items-center gap-2.5 game-card px-3 py-2 mb-3"
+          className="relative mb-3 overflow-hidden rounded-2xl border border-[var(--card-border)] bg-gradient-to-br from-[#d4a520]/10 via-[#27ae60]/5 to-transparent p-4 md:col-span-2"
         >
-          <Kuttan mood={coursePercent >= 100 ? 'celebrating' : coursePercent > 50 ? 'excited' : 'happy'} size="sm" entrance={false} />
-          <p className="text-xs text-[var(--foreground)]/60 leading-snug">
-            {coursePercent >= 100
-              ? 'Course complete! Adipoli work, machaa! 🏆'
-              : coursePercent > 50
-              ? `${coursePercent}% done — more than halfway! Keep pushing! 💪`
-              : coursePercent > 0
-              ? `${coursePercent}% done. Slow and steady wins, machaa! 🐢`
-              : 'Welcome! Your German journey starts here. Let\'s go! 🚀'}
-          </p>
+          <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#d4a520]/15 blur-3xl" />
+          <div className="relative flex items-center gap-3">
+            <div className="flex-shrink-0">
+              <Kuttan mood={coursePercent >= 100 ? 'celebrating' : coursePercent > 50 ? 'excited' : 'happy'} size="sm" entrance={true} />
+            </div>
+            <div className="flex-1">
+              <div className="mb-0.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#d4a520]">
+                Your German journey
+              </div>
+              <p className="text-sm leading-snug opacity-80">
+                {coursePercent >= 100
+                  ? 'Course complete! Adipoli work! 🏆'
+                  : coursePercent > 50
+                  ? `${coursePercent}% done — more than halfway there.`
+                  : coursePercent > 0
+                  ? `${coursePercent}% done. Every lesson gets you closer.`
+                  : 'Start your first lesson — Kerala to Germany, one word at a time.'}
+              </p>
+            </div>
+          </div>
         </motion.div>
 
-        {/* Study Pace */}
+        {/* Stats inline strip */}
+        <div className="mb-4 grid grid-cols-3 gap-2 md:col-span-2">
+          <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-3 text-center backdrop-blur-sm">
+            <div className="text-xl font-extrabold text-[var(--foreground)]">{completedLessons}</div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--foreground)]/50">Lessons</div>
+          </div>
+          <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-3 text-center backdrop-blur-sm">
+            <div className="text-xl font-extrabold text-[var(--foreground)]">{userProgress.learnedVocabulary.length}</div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--foreground)]/50">Words</div>
+          </div>
+          <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-3 text-center backdrop-blur-sm">
+            <motion.div
+              className="flex items-center justify-center gap-1 text-xl font-extrabold text-[var(--foreground)]"
+              animate={userProgress.streak > 0 ? { scale: [1, 1.1, 1] } : undefined}
+              transition={userProgress.streak > 0 ? { repeat: Infinity, duration: 1.8 } : undefined}
+            >
+              {userProgress.streak > 0 && <Flame className="h-4 w-4 text-orange-400" />}
+              {userProgress.streak}
+            </motion.div>
+            <div className="text-[11px] uppercase tracking-wider text-[var(--foreground)]/50">Streak</div>
+          </div>
+        </div>
+
+        {/* === SECTION: PROGRESS === */}
+        <div className="mb-3 mt-2 flex items-center gap-2 md:col-span-2">
+          <div className="h-4 w-1 rounded-full bg-[#e94560]" />
+          <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--foreground)]/60">Your progress</h2>
+        </div>
+
+        {/* Study Pace — compact inline */}
         <Card padding="sm" className="mb-3">
-          <div className="flex items-center justify-between mb-2">
-            <h2 className="font-semibold text-[var(--foreground)] flex items-center gap-2">
-              <CalendarDays className="w-4 h-4 text-[#e94560]" />
-              Study Pace
-            </h2>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <CalendarDays className="h-4 w-4 text-[#e94560]" />
+              <h3 className="text-sm font-semibold text-[var(--foreground)]">Study Pace</h3>
+            </div>
             <button
               onClick={() => setShowPaceEditor(!showPaceEditor)}
               className="text-xs text-[#e94560] font-medium"
@@ -402,17 +442,13 @@ export default function ProfilePage() {
               {showPaceEditor ? 'Cancel' : 'Change'}
             </button>
           </div>
-
           {userProgress.studyPlan ? (
-            <div className="flex items-center gap-4 text-sm text-[var(--foreground)]/60">
-              <span><strong className="text-[var(--foreground)]">{userProgress.studyPlan.dailyHours}h</strong>/day</span>
-              <span><strong className="text-[var(--foreground)]">{userProgress.studyPlan.totalDays}</strong> days total</span>
-              <span>Done by {getEstimatedCompletionDate(userProgress.studyPlan.dailyHours).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })}</span>
+            <div className="mt-1.5 text-xs text-[var(--foreground)]/60">
+              <strong className="text-[var(--foreground)]">{userProgress.studyPlan.dailyHours}h</strong>/day · <strong className="text-[var(--foreground)]">{userProgress.studyPlan.totalDays}</strong> days · Done by {getEstimatedCompletionDate(userProgress.studyPlan.dailyHours).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })}
             </div>
           ) : (
-            <p className="text-sm text-[var(--foreground)]/50">No study plan set yet.</p>
+            <p className="mt-1.5 text-xs text-[var(--foreground)]/50">No study plan set yet.</p>
           )}
-
           {showPaceEditor && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}
@@ -425,9 +461,9 @@ export default function ProfilePage() {
                   <button
                     key={option.value}
                     onClick={() => handleChangePace(option.value)}
-                    className={`w-full text-left p-3 rounded-xl border transition-all ${
+                    className={`w-full text-left p-2.5 rounded-xl border transition-all ${
                       isActive
-                        ? 'bg-[#e94560]/10 border-[#e94560]/30'
+                        ? 'bg-[#d4a520]/15 border-[#d4a520]/40 ring-2 ring-[#d4a520]'
                         : 'bg-[var(--foreground)]/5 border-[var(--foreground)]/10 hover:border-[var(--foreground)]/20'
                     }`}
                   >
@@ -445,56 +481,58 @@ export default function ProfilePage() {
         {/* Activity Calendar */}
         {userProgress.completedLessons.length > 0 && (
           <Card padding="sm" className="mb-3">
-            <h2 className="font-semibold text-[var(--foreground)] mb-2">Activity</h2>
+            <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2">Activity</h3>
             <StreakCalendar completedLessons={userProgress.completedLessons} />
           </Card>
         )}
 
-        {/* Quick Stats */}
-        <Card padding="sm" className="mb-3">
-          <div className="grid grid-cols-3 gap-3 text-center">
-            <div>
-              <div className="text-lg font-bold text-[var(--foreground)]">{completedLessons}</div>
-              <div className="text-xs text-[var(--foreground)]/50">Lessons</div>
-            </div>
-            <div>
-              <div className="text-lg font-bold text-[var(--foreground)]">{userProgress.learnedVocabulary.length}</div>
-              <div className="text-xs text-[var(--foreground)]/50">Words</div>
-            </div>
-            <div>
-              <div className="text-lg font-bold text-[var(--foreground)]">{userProgress.streak}</div>
-              <div className="text-xs text-[var(--foreground)]/50">Day Streak</div>
-            </div>
+        {/* Course Progress — compact grid */}
+        <Card padding="sm" className="mb-3 md:col-span-2">
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="font-semibold text-[var(--foreground)]">Course Progress</h2>
+            <span className="text-xs text-[var(--foreground)]/50">
+              {completedLessons}/{totalLessons} lessons
+            </span>
           </div>
-        </Card>
-
-        {/* Course Progress */}
-        <Card padding="sm" className="mb-3">
-          <h2 className="font-semibold text-[var(--foreground)] mb-3">Course Progress</h2>
-          <div className="space-y-3">
-            {ALL_MODULES.map(module => {
-              const moduleLessons = module.lessons.length;
-              const completedModuleLessons = userProgress.completedLessons.filter(l =>
-                module.lessons.some(ml => ml.id === l.lessonId)
+          <div className="grid grid-cols-6 gap-1.5 md:grid-cols-9 md:gap-2">
+            {ALL_MODULES.map((module) => {
+              const completedModuleLessons = userProgress.completedLessons.filter((l) =>
+                module.lessons.some((ml) => ml.id === l.lessonId)
               ).length;
-              const progress = (completedModuleLessons / moduleLessons) * 100;
-
+              const progress = (completedModuleLessons / module.lessons.length) * 100;
+              const isDone = progress === 100;
+              const hasStarted = progress > 0;
               return (
-                <div key={module.id}>
-                  <div className="flex items-center justify-between text-sm mb-1">
-                    <span className="text-[var(--foreground)]/80">
-                      {module.icon} Module {module.id}
-                    </span>
-                    <span className="text-[var(--foreground)]/50">
-                      {completedModuleLessons}/{moduleLessons}
-                    </span>
-                  </div>
-                  <ProgressBar
-                    progress={progress}
-                    color={progress === 100 ? 'success' : 'primary'}
-                    size="sm"
-                  />
-                </div>
+                <Link
+                  key={module.id}
+                  href={`/learn/${module.id}`}
+                  title={`Module ${module.id}: ${module.title}`}
+                  className={`relative flex aspect-square flex-col items-center justify-center rounded-lg border text-center transition-all ${
+                    isDone
+                      ? 'border-emerald-400/40 bg-emerald-400/10 ring-2 ring-[#27ae60]/50 shadow-[0_0_12px_rgba(39,174,96,0.2)]'
+                      : hasStarted
+                      ? 'border-[#e94560]/30 bg-[#e94560]/5'
+                      : 'border-[var(--foreground)]/10 bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10'
+                  }`}
+                >
+                  <div className="text-base">{module.icon}</div>
+                  <div className="text-[10px] font-semibold opacity-80">M{module.id}</div>
+                  {hasStarted && !isDone && (
+                    <div className="absolute inset-x-1 bottom-1 h-0.5 overflow-hidden rounded-full bg-white/10">
+                      <div
+                        className="h-full rounded-full bg-[#e94560]"
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
+                  )}
+                  {isDone && (
+                    <div className="absolute right-0.5 top-0.5">
+                      <div className="flex h-3 w-3 items-center justify-center rounded-full bg-emerald-400 text-white">
+                        <Check className="h-2 w-2" strokeWidth={4} />
+                      </div>
+                    </div>
+                  )}
+                </Link>
               );
             })}
           </div>
@@ -520,7 +558,7 @@ export default function ProfilePage() {
                   <Award className="w-5 h-5" style={{ color: readiness.color }} />
                   A1 Exam Readiness
                 </h2>
-                <span className={`text-2xl font-bold${readiness.score >= 60 ? ' animate-shimmer' : ''}`} style={{ color: readiness.color }}>{readiness.score}%</span>
+                <span className="text-2xl font-bold animate-shimmer" style={{ color: readiness.color }}>{readiness.score}%</span>
               </div>
               <ProgressBar progress={readiness.score} color={readiness.score >= 60 ? 'success' : 'warning'} size="md" />
               <p className="text-xs text-[var(--foreground)]/50 mt-1 mb-2">{readiness.label} · 60% needed to pass Goethe A1</p>
@@ -580,6 +618,12 @@ export default function ProfilePage() {
             </Card>
           );
         })()}
+
+        {/* === SECTION: SETTINGS === */}
+        <div className="mb-3 mt-4 flex items-center gap-2 md:col-span-2">
+          <div className="h-4 w-1 rounded-full bg-[#d4a520]" />
+          <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--foreground)]/60">Settings</h2>
+        </div>
 
         {/* Biometric Login */}
         {isLoggedIn && (
@@ -695,72 +739,58 @@ export default function ProfilePage() {
         )}
 
         {/* Lesson Scripts */}
-        <Card>
-          <h2 className="font-semibold text-[var(--foreground)] mb-2 flex items-center gap-2">
-            <FileText className="w-4 h-4 text-[#d4a520]" />
+        <Card padding="sm" className="mb-3">
+          <h3 className="text-sm font-semibold text-[var(--foreground)] mb-1.5 flex items-center gap-2">
+            <FileText className="h-4 w-4 text-[#d4a520]" />
             Lesson Scripts
-          </h2>
-          <p className="text-sm text-[var(--foreground)]/50 mb-3">
+          </h3>
+          <p className="text-xs text-[var(--foreground)]/50 mb-2.5">
             Download complete lesson scripts as PDF for offline study.
           </p>
-          <a href="/scripts" className="inline-flex items-center gap-2 bg-[#d4a520]/10 text-[#d4a520] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#d4a520]/20 transition-colors">
-            <Download className="w-4 h-4" />
-            View & Download Scripts
+          <a href="/scripts" className="inline-flex items-center gap-2 bg-[#d4a520]/10 text-[#d4a520] px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-[#d4a520]/20 transition-colors">
+            <Download className="h-3.5 w-3.5" />
+            View &amp; Download
           </a>
         </Card>
 
-        {/* Logout Button - only for logged in users */}
-        {isLoggedIn && (
-          <Card className="border-orange-500/30">
-            <h2 className="font-semibold text-[var(--foreground)] mb-2">Account</h2>
-            {!showLogoutConfirm ? (
-              <Button variant="ghost" onClick={() => setShowLogoutConfirm(true)} className="text-orange-500 hover:bg-orange-500/10">
-                <LogOut className="w-4 h-4" />
-                Log Out
-              </Button>
+        {/* Danger zone — logout + reset combined */}
+        <Card padding="sm" className="border-[#c0392b]/30">
+          <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2 flex items-center gap-2">
+            <AlertTriangle className="h-4 w-4 text-[#c0392b]" />
+            Danger zone
+          </h3>
+          <div className="space-y-2">
+            {isLoggedIn && (
+              <>
+                {!showLogoutConfirm ? (
+                  <button
+                    onClick={() => setShowLogoutConfirm(true)}
+                    className="flex w-full items-center gap-2 rounded-lg bg-orange-500/10 px-3 py-2 text-xs font-medium text-orange-400 hover:bg-orange-500/20 transition-colors"
+                  >
+                    <LogOut className="h-3.5 w-3.5" /> Log out
+                  </button>
+                ) : (
+                  <div className="flex gap-2">
+                    <button onClick={() => setShowLogoutConfirm(false)} className="flex-1 rounded-lg bg-white/5 px-3 py-2 text-xs text-[var(--foreground)]/60 hover:bg-white/10">Cancel</button>
+                    <button onClick={handleLogout} className="flex-1 rounded-lg bg-orange-500 px-3 py-2 text-xs font-medium text-white hover:bg-orange-600">Confirm logout</button>
+                  </div>
+                )}
+              </>
+            )}
+            {!showResetConfirm ? (
+              <button
+                onClick={() => setShowResetConfirm(true)}
+                className="flex w-full items-center gap-2 rounded-lg bg-[#c0392b]/10 px-3 py-2 text-xs font-medium text-red-400 hover:bg-[#c0392b]/20 transition-colors"
+              >
+                <RefreshCw className="h-3.5 w-3.5" /> Reset all progress
+              </button>
             ) : (
-              <div className="flex items-center gap-2">
-                <Button variant="ghost" onClick={() => setShowLogoutConfirm(false)} className="flex-1">
-                  Cancel
-                </Button>
-                <Button
-                  variant="warning"
-                  onClick={handleLogout}
-                  className="flex-1 bg-orange-500 hover:bg-orange-600"
-                >
-                  Confirm Logout
-                </Button>
+              <div className="flex gap-2">
+                <button onClick={() => setShowResetConfirm(false)} className="flex-1 rounded-lg bg-white/5 px-3 py-2 text-xs text-[var(--foreground)]/60 hover:bg-white/10">Cancel</button>
+                <button onClick={handleReset} className="flex-1 rounded-lg bg-red-500 px-3 py-2 text-xs font-medium text-white hover:bg-red-600">Confirm reset</button>
               </div>
             )}
-          </Card>
-        )}
-
-        {/* Reset Progress */}
-        <Card className="border-[#c0392b]/30">
-          <h2 className="font-semibold text-[var(--foreground)] mb-2">Danger Zone</h2>
-          <p className="text-sm text-[var(--foreground)]/50 mb-4">
-            Reset all your progress including completed lessons, vocabulary, and study plan.
-          </p>
-
-          {!showResetConfirm ? (
-            <Button variant="ghost" onClick={() => setShowResetConfirm(true)} className="text-red-500 hover:bg-[#c0392b]/10">
-              <RefreshCw className="w-4 h-4" />
-              Reset Progress
-            </Button>
-          ) : (
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" onClick={() => setShowResetConfirm(false)} className="flex-1">
-                Cancel
-              </Button>
-              <Button
-                variant="warning"
-                onClick={handleReset}
-                className="flex-1 bg-red-500 hover:bg-red-600"
-              >
-                Confirm Reset
-              </Button>
-            </div>
-          )}
+          </div>
         </Card>
       </motion.div>
     </div>

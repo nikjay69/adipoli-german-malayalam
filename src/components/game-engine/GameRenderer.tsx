@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Volume2 } from 'lucide-react';
+import { X, Volume2, SkipForward } from 'lucide-react';
 import { KuttanImage } from '@/components/character/KuttanImage';
 import type { KuttanMoodImage } from '@/components/character/KuttanImage';
 import { GameButton } from '@/components/game';
@@ -132,6 +132,14 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
           <motion.span initial={{ scale: 1.5 }} animate={{ scale: 1 }}
             className="text-xs font-black text-[#d4a520]">{combo}x🔥</motion.span>
         )}
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          onClick={advance}
+          className="h-8 px-2.5 rounded-full bg-black/40 backdrop-blur-sm flex items-center gap-1 text-[11px] font-semibold text-white/60 hover:text-white/90"
+          aria-label="Skip this moment"
+        >
+          Skip <SkipForward className="w-3 h-3" />
+        </motion.button>
       </div>
 
       {/* Main content area — bottom half */}

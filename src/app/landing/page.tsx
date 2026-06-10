@@ -18,11 +18,13 @@ function AnimatedCounter({ target, suffix = '', prefix = '' }: { target: number;
   const motionVal = useMotionValue(0);
   const rounded = useTransform(motionVal, (v) => Math.round(v));
   const [display, setDisplay] = useState(0);
+  const [pulse, setPulse] = useState(false);
 
   useEffect(() => {
     if (isInView) {
       const ctrl = animate(motionVal, target, { duration: 1.8, ease: 'easeOut' });
-      return () => ctrl.stop();
+      const t = setTimeout(() => setPulse(true), 1800);
+      return () => { ctrl.stop(); clearTimeout(t); };
     }
   }, [isInView, motionVal, target]);
 
@@ -32,9 +34,14 @@ function AnimatedCounter({ target, suffix = '', prefix = '' }: { target: number;
   }, [rounded]);
 
   return (
-    <span ref={ref}>
+    <motion.span
+      ref={ref}
+      animate={pulse ? { scale: [1, 1.1, 1] } : {}}
+      transition={{ duration: 0.45, ease: 'easeOut' }}
+      style={{ display: 'inline-block' }}
+    >
       {prefix}{display}{suffix}
-    </span>
+    </motion.span>
   );
 }
 
@@ -219,10 +226,12 @@ function FloatingParticles() {
    ================================================================ */
 export default function LandingPage() {
   const [showScrollHint, setShowScrollHint] = useState(true);
+  const [showStickyCta, setShowStickyCta] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) setShowScrollHint(false);
+      setShowStickyCta(window.scrollY > 500);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -243,13 +252,38 @@ export default function LandingPage() {
           <FloatingParticles />
         </div>
 
-        <div className="relative z-10 max-w-3xl mx-auto">
+        {/* Kerala → Germany journey rail */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute top-[12%] left-1/2 -translate-x-1/2 flex items-center gap-3 text-3xl sm:gap-5 sm:text-5xl z-10"
+        >
+          <motion.span
+            animate={{ y: [0, -4, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+          >🌴</motion.span>
+          <div className="h-px w-16 bg-gradient-to-r from-[#27ae60] via-[#d4a520] to-[#c0392b] sm:w-24" />
+          <motion.span
+            animate={{ x: [0, 6, 0] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="text-2xl sm:text-4xl"
+          >✈️</motion.span>
+          <div className="h-px w-16 bg-gradient-to-r from-[#c0392b] via-[#d4a520] to-[#f5f0e8] sm:w-24" />
+          <motion.span
+            animate={{ rotate: [0, 3, -3, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          >🏛️</motion.span>
+        </motion.div>
+
+        <div className="relative z-10 max-w-6xl mx-auto pt-24 sm:pt-28 w-full grid md:grid-cols-[1.15fr_1fr] md:gap-12 md:items-center md:text-left text-center">
+          <div>
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-[#d4a520]/10 border border-[#d4a520]/20 rounded-full px-4 py-1.5 mb-8"
+            className="inline-flex items-center gap-2 bg-[#d4a520]/10 border border-[#d4a520]/20 rounded-full px-4 py-1.5 mb-6"
           >
             <Sparkles className="w-4 h-4 text-[#d4a520]" />
             <span className="text-sm font-medium text-[#d4a520]">A1 to A2.1 CEFR Level</span>
@@ -260,10 +294,10 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-5"
           >
             <span className="block">Learn German.</span>
-            <span className="block mt-2 bg-gradient-to-r from-[#d4a520] via-[#e8c54a] to-[#d4a520] bg-clip-text text-transparent">
+            <span className="block mt-1 bg-gradient-to-r from-[#d4a520] via-[#e8c54a] to-[#d4a520] bg-clip-text text-transparent">
               From Kerala to Germany.
             </span>
           </motion.h1>
@@ -273,7 +307,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="text-lg sm:text-xl text-[#f5f0e8]/60 max-w-xl mx-auto mb-10 leading-relaxed"
+            className="text-lg sm:text-xl text-[#f5f0e8]/60 mb-8 leading-relaxed md:max-w-lg mx-auto md:mx-0"
           >
             The first German course designed for Malayalees. Learn with Manglish,
             Kerala culture, and fun.
@@ -284,16 +318,16 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+            className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4 mb-5"
           >
-            <Link href="/auth/signup">
+            <Link href="/play/1/1-1">
               <motion.button
                 whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(212, 165, 32, 0.3)' }}
                 whileTap={{ scale: 0.97 }}
                 className="game-button text-lg px-10 py-4 flex items-center gap-2"
               >
                 <Zap className="w-5 h-5" />
-                Start Free Trial
+                Try the first lesson
               </motion.button>
             </Link>
 
@@ -304,18 +338,123 @@ export default function LandingPage() {
               Already have an account? <span className="underline underline-offset-2">Log in</span>
             </Link>
           </motion.div>
+          </div>
 
-          {/* Goethe badge */}
+          {/* Product preview mock phone */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="flex items-center justify-center gap-2 text-[#f5f0e8]/30 text-sm"
+            initial={{ opacity: 0, y: 40, rotate: -3 }}
+            animate={{ opacity: 1, y: 0, rotate: 0 }}
+            transition={{ duration: 0.9, delay: 0.6, type: 'spring', bounce: 0.25 }}
+            className="mx-auto mt-10 md:mt-0 w-full max-w-[300px] md:max-w-[340px]"
           >
-            <GraduationCap className="w-4 h-4" />
-            <span>Goethe A1 Exam Prep Included</span>
+            <div className="relative">
+              <div className="pointer-events-none absolute -inset-8 rounded-[40px] bg-gradient-to-br from-[#d4a520]/20 via-[#27ae60]/10 to-transparent blur-2xl" />
+              <div className="relative rounded-[36px] border-[3px] border-[#f5f0e8]/10 bg-gradient-to-b from-[#0d1a0d] to-[#1b2d1b] p-2 shadow-2xl shadow-black/60">
+                <div className="relative overflow-hidden rounded-[28px] bg-[#0f1a0f]">
+                  {/* Mock top bar */}
+                  <div className="flex items-center justify-between px-4 pt-3 pb-2 text-[10px] text-[#f5f0e8]/50">
+                    <span className="font-mono">9:41</span>
+                    <div className="flex gap-1.5">
+                      <span>●●●</span>
+                      <span>🔋</span>
+                    </div>
+                  </div>
+                  {/* Mock lesson content */}
+                  <div className="px-4 pb-5 pt-2">
+                    <div className="mb-3 flex items-center justify-between">
+                      <div className="text-[10px] uppercase tracking-wider text-[#d4a520]/70">Lesson 1 · 30%</div>
+                      <div className="text-[10px] text-[#f5f0e8]/40">1/5</div>
+                    </div>
+                    <div className="mb-4 h-1 overflow-hidden rounded-full bg-[#f5f0e8]/10">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: '30%' }}
+                        transition={{ duration: 1.4, delay: 1.2, ease: 'easeOut' }}
+                        className="h-full rounded-full bg-gradient-to-r from-[#d4a520] to-[#27ae60]"
+                      />
+                    </div>
+
+                    {/* Kuttan speech */}
+                    <div className="mb-3 flex items-start gap-2">
+                      <motion.div
+                        animate={{ y: [0, -3, 0] }}
+                        transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                        className="text-2xl"
+                      >
+                        👦🏽
+                      </motion.div>
+                      <div className="flex-1 rounded-2xl rounded-tl-sm bg-[#f5f0e8]/8 px-3 py-2 text-[11px] leading-snug text-[#f5f0e8]/80">
+                        Adipoli! Ee word pattuo — <span className="font-semibold text-[#d4a520]">Kaffee</span>?
+                      </div>
+                    </div>
+
+                    {/* Vocab card */}
+                    <motion.div
+                      initial={{ scale: 0.95, opacity: 0.8 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 1.6 }}
+                      className="mb-3 rounded-2xl border border-[#d4a520]/20 bg-gradient-to-br from-[#d4a520]/10 to-transparent p-3"
+                    >
+                      <div className="mb-1 flex items-center justify-between">
+                        <div className="text-2xl font-bold text-[#f5f0e8]">Kaffee</div>
+                        <motion.div
+                          animate={{ scale: [1, 1.1, 1] }}
+                          transition={{ duration: 1.8, repeat: Infinity }}
+                          className="flex h-7 w-7 items-center justify-center rounded-full bg-[#d4a520]/20 text-[#d4a520]"
+                        >
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M11 5L6 9H2v6h4l5 4V5z M19.07 4.93l-1.41 1.41A7.953 7.953 0 0120 12c0 2.21-.9 4.21-2.34 5.66l1.41 1.41A9.972 9.972 0 0022 12c0-2.76-1.12-5.26-2.93-7.07z"/></svg>
+                        </motion.div>
+                      </div>
+                      <div className="text-[11px] text-[#f5f0e8]/60">coffee · കാപ്പി</div>
+                      <div className="mt-1.5 text-[10px] italic text-[#f5f0e8]/40">Ich möchte einen Kaffee, bitte.</div>
+                    </motion.div>
+
+                    {/* Option chips */}
+                    <div className="grid grid-cols-2 gap-2">
+                      {['Milch', 'Kaffee', 'Tee', 'Wasser'].map((w, i) => (
+                        <motion.div
+                          key={w}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 1.8 + i * 0.1 }}
+                          className={`rounded-xl border px-2 py-1.5 text-center text-[11px] font-medium ${
+                            w === 'Kaffee'
+                              ? 'border-[#27ae60]/50 bg-[#27ae60]/15 text-[#27ae60]'
+                              : 'border-[#f5f0e8]/10 bg-[#f5f0e8]/5 text-[#f5f0e8]/60'
+                          }`}
+                        >
+                          {w === 'Kaffee' ? '✓ ' : ''}{w}
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating "Adipoli!" feedback */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.6, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ delay: 2.4, type: 'spring', bounce: 0.5 }}
+                className="absolute -right-2 top-[30%] rounded-full border border-[#27ae60]/40 bg-[#1b2d1b] px-3 py-1.5 text-xs font-bold text-[#27ae60] shadow-lg shadow-[#27ae60]/20"
+              >
+                Adipoli! +10 XP
+              </motion.div>
+            </div>
           </motion.div>
+
         </div>
+
+        {/* Goethe badge — below grid */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="relative z-10 mt-10 flex items-center justify-center gap-2 text-[#f5f0e8]/30 text-sm"
+        >
+          <GraduationCap className="w-4 h-4" />
+          <span>Goethe A1 Exam Prep Included</span>
+        </motion.div>
 
         {/* Scroll hint */}
         <motion.div
@@ -480,7 +619,7 @@ export default function LandingPage() {
 
               {/* CTA */}
               <div className="text-center">
-                <Link href="/auth/signup">
+                <Link href="/play/1/1-1">
                   <motion.button
                     whileHover={{ scale: 1.04 }}
                     whileTap={{ scale: 0.97 }}
@@ -489,7 +628,7 @@ export default function LandingPage() {
                       boxShadow: '0 5px 0 #14572b, 0 7px 16px rgba(0,0,0,0.3)',
                     }}
                   >
-                    Start Free Trial
+                    Open Lesson 1
                     <ArrowRight className="w-5 h-5" />
                   </motion.button>
                 </Link>
@@ -522,7 +661,7 @@ export default function LandingPage() {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -6 }}
-                className={`relative rounded-2xl p-6 sm:p-8 transition-all duration-300 ${
+                className={`relative rounded-2xl p-4 sm:p-6 md:p-8 transition-all duration-300 ${
                   plan.recommended
                     ? 'bg-gradient-to-b from-[#d4a520]/[0.12] to-[rgba(39,62,39,0.6)] border-2 border-[#d4a520]/40 shadow-lg shadow-[#d4a520]/10'
                     : 'game-card'
@@ -669,14 +808,14 @@ export default function LandingPage() {
                 viewport={{ once: true }}
                 className="flex flex-col items-center gap-4"
               >
-                <Link href="/auth/signup">
+                <Link href="/play/1/1-1">
                   <motion.button
                     whileHover={{ scale: 1.05, boxShadow: '0 0 50px rgba(212, 165, 32, 0.3)' }}
                     whileTap={{ scale: 0.97 }}
                     className="game-button text-lg px-12 py-5 flex items-center gap-3"
                   >
                     <Zap className="w-5 h-5" />
-                    Start Free Trial
+                    Try the first lesson
                     <ArrowRight className="w-5 h-5" />
                   </motion.button>
                 </Link>
@@ -750,6 +889,28 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+
+      {/* ============================================================
+          STICKY FLOATING MOBILE CTA (appears after hero scroll)
+          ============================================================ */}
+      <motion.div
+        initial={false}
+        animate={showStickyCta ? { y: 0, opacity: 1 } : { y: 80, opacity: 0 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        className="fixed bottom-4 right-4 z-40 md:hidden"
+        style={{ pointerEvents: showStickyCta ? 'auto' : 'none' }}
+      >
+        <Link href="/play/1/1-1">
+          <motion.button
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-2 rounded-full bg-[#d4a520] px-5 py-3 text-sm font-extrabold text-[#1b2d1b] shadow-lg shadow-[#d4a520]/30"
+          >
+            <Zap className="w-4 h-4" />
+            Try Free
+            <ArrowRight className="w-4 h-4" />
+          </motion.button>
+        </Link>
+      </motion.div>
     </div>
   );
 }

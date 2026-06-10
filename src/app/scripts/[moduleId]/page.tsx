@@ -1,10 +1,32 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { ArrowLeft, Printer, BookOpen } from 'lucide-react';
+import { ArrowLeft, Printer, BookOpen, Copy, Check, List } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { getModuleById, ALL_MODULES } from '@/lib/content/modules';
 import type { Module } from '@/lib/content/types';
+import { Kuttan } from '@/components/character/Kuttan';
+
+function CopyLine({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+  return (
+    <button
+      type="button"
+      onClick={(e) => {
+        e.preventDefault();
+        navigator.clipboard?.writeText(text).then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 1200);
+        });
+      }}
+      className="print:hidden opacity-40 hover:opacity-100 hover:text-[#d4a520] transition ml-1 inline-flex align-middle"
+      aria-label="Copy"
+    >
+      {copied ? <Check className="w-3 h-3 text-[#27ae60]" /> : <Copy className="w-3 h-3" />}
+    </button>
+  );
+}
 
 function ModuleScript({ modules }: { modules: Module[] }) {
   return (
@@ -26,7 +48,7 @@ function ModuleScript({ modules }: { modules: Module[] }) {
           </div>
 
           {mod.lessons.map((lesson, li) => (
-            <div key={lesson.id} className="print-lesson">
+            <div key={lesson.id} id={`lesson-${lesson.id}`} className="print-lesson scroll-mt-24">
               {/* Lesson Header */}
               <div className="print-lesson-header">
                 <h3 className="print-lesson-title">
@@ -50,7 +72,10 @@ function ModuleScript({ modules }: { modules: Module[] }) {
                     <h5 className="print-subsection-title">Script Outline</h5>
                     <ol className="print-list-numbered">
                       {video.scriptOutline.map((point, i) => (
-                        <li key={i}>{point}</li>
+                        <li key={i}>
+                          {point}
+                          <CopyLine text={point} />
+                        </li>
                       ))}
                     </ol>
                   </div>
@@ -92,7 +117,10 @@ function ModuleScript({ modules }: { modules: Module[] }) {
                     <tbody>
                       {lesson.vocabulary.map((vocab) => (
                         <tr key={vocab.id}>
-                          <td className="print-vocab-german">{vocab.german}</td>
+                          <td className="print-vocab-german">
+                            {vocab.german}
+                            <CopyLine text={vocab.german} />
+                          </td>
                           <td>{vocab.english}</td>
                           <td className="print-vocab-malayalam">{vocab.malayalam}</td>
                           <td className="print-vocab-pron">{vocab.pronunciation}</td>
@@ -191,10 +219,19 @@ export default function ScriptPage() {
     ? 'Complete Course Script — A1 to A2.1'
     : `Module ${modules[0].id}: ${modules[0].title}`;
 
+  // Enable sticky TOC when the content is long (many lessons)
+  const totalLessons = modules.reduce((s, m) => s + m.lessons.length, 0);
+  const showStickyTOC = totalLessons > 6;
+
+  const scrollToLesson = (lessonId: string) => {
+    const el = document.getElementById(`lesson-${lessonId}`);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <div className="min-h-screen">
       {/* Screen-only controls */}
-      <div className="print:hidden px-4 py-4 sticky top-0 z-10 bg-[var(--background)] border-b border-[var(--card-border)]">
+      <div className="print:hidden px-4 py-4 sticky top-0 z-10 bg-[var(--background)]/95 backdrop-blur border-b border-[var(--card-border)]">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <button
             onClick={() => router.push('/scripts')}
@@ -204,12 +241,51 @@ export default function ScriptPage() {
           </button>
           <button
             onClick={handlePrint}
-            className="flex items-center gap-2 bg-[#d4a520] text-black px-4 py-2 rounded-lg font-bold text-sm"
+            className="flex items-center gap-2 bg-[#d4a520] text-black px-4 py-2 rounded-lg font-bold text-sm hover:brightness-110 transition"
           >
             <Printer className="w-4 h-4" /> Save as PDF
           </button>
         </div>
       </div>
+
+      {/* Kuttan hero — screen only */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="print:hidden max-w-3xl mx-auto px-4 pt-5"
+      >
+        <div className="game-card p-4 flex items-center gap-3 border border-[#d4a520]/20">
+          <Kuttan mood="thinking" size="sm" />
+          <div className="flex-1">
+            <p className="text-sm font-semibold">Here&apos;s the full script, machaa.</p>
+            <p className="text-xs text-[var(--foreground)]/60 leading-snug">
+              Read along or just scan. Every line has a copy button — grab the German for flashcards.
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Sticky quick-jump TOC (screen only, long files) */}
+      {showStickyTOC && (
+        <div className="print:hidden sticky top-[74px] z-[5] bg-[var(--background)]/90 backdrop-blur border-b border-[var(--card-border)]/60">
+          <div className="max-w-3xl mx-auto px-4 py-2 flex gap-2 overflow-x-auto no-scrollbar">
+            <span className="flex items-center gap-1 text-[11px] text-[var(--foreground)]/40 pr-1 flex-shrink-0">
+              <List className="w-3 h-3" /> Jump:
+            </span>
+            {modules.flatMap((m) =>
+              m.lessons.map((l, li) => (
+                <button
+                  key={l.id}
+                  onClick={() => scrollToLesson(l.id)}
+                  className="flex-shrink-0 text-[11px] px-2 py-1 rounded-full bg-[#d4a520]/10 text-[#d4a520] hover:bg-[#d4a520]/20 transition whitespace-nowrap"
+                >
+                  {isAll ? `M${m.id}·L${li + 1}` : `L${li + 1}`} {l.title.length > 18 ? l.title.slice(0, 18) + '…' : l.title}
+                </button>
+              ))
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Printable content */}
       <div ref={contentRef} className="print-content max-w-3xl mx-auto px-4 py-6">

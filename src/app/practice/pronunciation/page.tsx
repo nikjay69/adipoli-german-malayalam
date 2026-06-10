@@ -11,6 +11,7 @@ import { useGameStore } from '@/lib/store';
 import { getAllVocabulary, type VocabItem } from '@/lib/content/modules';
 import { playVocabAudio, useGermanTTS } from '@/lib/audio';
 import { PronunciationCompare } from '@/components/speaking';
+import { Confetti } from '@/components/game';
 
 // ---------------------------------------------------------------------------
 // SpeechRecognition types declared globally in src/types/speech-recognition.d.ts
@@ -60,21 +61,19 @@ function getSpeechRecognitionClass(): SpeechRecognitionConstructor | null {
   return window.SpeechRecognition || window.webkitSpeechRecognition || null;
 }
 
-// Kuttan reactions per score band
-function getReaction(score: number, streak: number): { mood: KuttanMood; message: string } {
-  if (score === 100 && streak >= 5)
-    return { mood: 'celebrating', message: 'Adipoli machaa! 5 in a row! You sound like a native!' };
-  if (score === 100 && streak >= 3)
-    return { mood: 'excited', message: 'Maaasss! Hat-trick streak! Keep it rolling!' };
-  if (score === 100)
-    return { mood: 'happy', message: 'Perfect! Nailed it! Your German is getting sharp!' };
-  if (score >= 75)
-    return { mood: 'happy', message: 'Almost there! One more try and you\'ll get it exact!' };
+// Kuttan reactions per score band — warm, never harsh
+function getReaction(score: number, streak: number, streak80: number): { mood: KuttanMood; message: string } {
+  if (score >= 90 && streak80 >= 5)
+    return { mood: 'celebrating', message: `Adipoli machaa! ${streak80} clean in a row — Native-level!` };
+  if (score >= 90 && streak >= 3)
+    return { mood: 'excited', message: 'Maaasss! Hat-trick! You sound like a Berliner already!' };
+  if (score >= 90)
+    return { mood: 'happy', message: 'Adipoli! Native-level pronunciation!' };
+  if (score >= 70)
+    return { mood: 'happy', message: 'Poli, machaa — very close! One tiny tweak and it\'s perfect!' };
   if (score >= 50)
-    return { mood: 'thinking', message: 'Decent try! Listen carefully and give it another shot.' };
-  if (score >= 25)
-    return { mood: 'pointing', message: 'Paravaala, it\'s a tough one. Try listening first, then speak slowly.' };
-  return { mood: 'sad', message: 'Aiyyo! That was tricky. Tap the speaker to hear it first!' };
+    return { mood: 'thinking', message: 'Keep trying — this sound is tricky. Listen once more and go slow.' };
+  return { mood: 'waving', message: 'Slow down and try again. Tap the speaker, take a breath, you got this.' };
 }
 
 const MODE_LABELS: Record<Mode, string> = {
@@ -120,9 +119,12 @@ export default function PronunciationPage() {
   // --- stats ---
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
+  const [streak80, setStreak80] = useState(0); // consecutive 80+
+  const [bestStreak80, setBestStreak80] = useState(0);
   const [totalAttempts, setTotalAttempts] = useState(0);
   const [totalCorrect, setTotalCorrect] = useState(0);
   const [xpEarned, setXpEarned] = useState(0);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   // --- kuttan ---
   const [kuttanMood, setKuttanMood] = useState<KuttanMood>('waving');
@@ -269,6 +271,17 @@ export default function PronunciationPage() {
       const score = compareText(expectedText, heard);
       setResult({ heard, expected: expectedText, score });
 
+      // 80+ streak counter (the emotional reward bar)
+      let newStreak80 = streak80;
+      if (score >= 80) {
+        newStreak80 = streak80 + 1;
+        setStreak80(newStreak80);
+        if (newStreak80 > bestStreak80) setBestStreak80(newStreak80);
+      } else {
+        newStreak80 = 0;
+        setStreak80(0);
+      }
+
       if (score === 100) {
         const newStreak = streak + 1;
         setStreak(newStreak);
@@ -281,19 +294,26 @@ export default function PronunciationPage() {
         addXP(xp);
         setXpEarned((p) => p + xp);
 
-        const reaction = getReaction(score, newStreak);
+        const reaction = getReaction(score, newStreak, newStreak80);
         setKuttanMood(reaction.mood);
         setKuttanMessage(reaction.message);
       } else {
         setStreak(0);
-        const reaction = getReaction(score, 0);
+        const reaction = getReaction(score, 0, newStreak80);
         setKuttanMood(reaction.mood);
         setKuttanMessage(reaction.message);
       }
+
+      // Confetti on 90+ (micro-reward)
+      if (score >= 90) {
+        setShowConfetti(true);
+        setTimeout(() => setShowConfetti(false), 2500);
+      }
+
       setShowBubble(true);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [mode, expectedText, streak, bestStreak, addXP],
+    [mode, expectedText, streak, bestStreak, streak80, bestStreak80, addXP],
   );
 
   // ---------------------------------------------------------------------------
@@ -443,7 +463,7 @@ export default function PronunciationPage() {
                   <div className="text-xs text-gray-500">Attempts</div>
                 </div>
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-3">
-                  <div className="text-2xl font-bold text-[#d4a520]">{bestStreak}</div>
+                  <div className="text-2xl font-bold text-[#d4a520]">{Math.max(bestStreak, bestStreak80)}</div>
                   <div className="text-xs text-gray-500">Best Streak</div>
                 </div>
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-3">
@@ -489,6 +509,7 @@ export default function PronunciationPage() {
 
   return (
     <div className="px-4 py-6 max-w-2xl mx-auto">
+      <Confetti isActive={showConfetti} />
       {/* Header */}
       <div className="flex items-center justify-between mb-5">
         <button
@@ -499,6 +520,18 @@ export default function PronunciationPage() {
           <span>Back</span>
         </button>
         <div className="flex items-center gap-3 text-sm">
+          {streak80 > 0 && (
+            <motion.div
+              key={`s80-${streak80}`}
+              initial={{ scale: 0.6 }}
+              animate={{ scale: [1.2, 1] }}
+              className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#27ae60]/15 border border-[#27ae60]/30 text-[#27ae60] font-bold text-xs"
+              title="Consecutive 80+ scores"
+            >
+              <Star className="w-3 h-3" />
+              {streak80} clean
+            </motion.div>
+          )}
           {streak > 0 && (
             <motion.div
               initial={{ scale: 0 }}
@@ -662,9 +695,38 @@ export default function PronunciationPage() {
         </motion.button>
       </div>
 
+      {/* Waveform visual — only while listening */}
+      <AnimatePresence>
+        {isListening && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="flex items-center justify-center gap-1 mb-3 h-10"
+          >
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+              <motion.span
+                key={i}
+                className="w-1 rounded-full bg-gradient-to-t from-[#c0392b] to-[#d4a520]"
+                animate={{
+                  height: ['20%', '90%', '35%', '75%', '20%'],
+                }}
+                transition={{
+                  duration: 0.9,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  delay: i * 0.06,
+                }}
+                style={{ height: '40%' }}
+              />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Status text */}
       <p className="text-center text-sm text-gray-500 dark:text-gray-400 mb-4">
-        {isListening ? 'Listening... Speak now!' : 'Tap the microphone to speak'}
+        {isListening ? 'Listening... Speak now, machaa!' : 'Tap the microphone to speak'}
       </p>
 
       {/* Interim text (greyed out, real-time) */}

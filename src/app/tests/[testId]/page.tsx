@@ -9,6 +9,7 @@ import { Confetti } from '@/components/game';
 import { useGameStore } from '@/lib/store';
 import { GOETHE_TESTS, getTestById } from '@/lib/content/goethe-tests';
 import { playAudio, stopAudio } from '@/lib/audio';
+import { Kuttan } from '@/components/character/Kuttan';
 
 type Section = 'overview' | 'hoeren' | 'lesen' | 'schreiben' | 'sprechen' | 'results';
 type SectionIntro = 'hoeren-intro' | 'lesen-intro' | 'schreiben-intro' | 'sprechen-intro' | null;
@@ -540,6 +541,24 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                 60 Punkte | 36 zum Bestehen | ~80 Minuten
               </p>
             </div>
+
+            {/* Kuttan pep-talk */}
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.15 }}
+              className="mb-4 rounded-2xl border border-[#d4a520]/25 bg-gradient-to-br from-[#d4a520]/10 to-transparent p-3 flex items-center gap-3"
+            >
+              <Kuttan mood="happy" size="sm" />
+              <div className="flex-1">
+                <p className="text-sm font-semibold text-[var(--foreground)] leading-snug">
+                  Breathe. You&apos;ve got this, machaa.
+                </p>
+                <p className="text-xs text-[var(--foreground)]/60 leading-snug">
+                  This is the real Goethe A1 format. Once you start, I&apos;ll stay quiet — just focus. See you at the results.
+                </p>
+              </div>
+            </motion.div>
 
             <div className="space-y-3 mb-4">
               {SECTION_ORDER.map((s) => {
@@ -1235,21 +1254,25 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
         {/* ─── RESULTS ───────────────────────────────────────────────────── */}
         {section === 'results' && (
           <motion.div key="results" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}>
-            <div className="text-center mb-6">
-              <motion.p initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', delay: 0.2 }}
-                className="text-6xl mb-3">
-                {passed ? '🎉' : '💪'}
-              </motion.p>
+            <div className="text-center mb-5">
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ type: 'spring', delay: 0.15 }}
+                className="flex justify-center mb-2"
+              >
+                <Kuttan mood={passed ? 'celebrating' : 'sad'} size="md" />
+              </motion.div>
               <h1 className="text-2xl font-bold mb-1">
                 {passed ? 'Bestanden!' : 'Nicht bestanden'}
               </h1>
               <p className="text-sm font-medium mb-1" style={{ color: passed ? '#27ae60' : '#c0392b' }}>
                 {passed ? '(Passed)' : '(Not passed)'}
               </p>
-              <p className="text-[var(--foreground)]/40 text-sm">
+              <p className="text-[var(--foreground)]/60 text-sm px-2 leading-snug">
                 {passed
-                  ? 'Adipoli! You passed the Goethe A1 simulation!'
-                  : 'You need 36/60 to pass. Keep practicing — you\'ll get there!'}
+                  ? 'Adipoli, machaa! That was the real Goethe A1 format and you cleared it. Kerala-to-Germany just got real.'
+                  : 'Oru chinna setback, that\'s all. You need 36/60 to pass — you\'re close. Let\'s find your weakest part and fix it together.'}
               </p>
             </div>
 

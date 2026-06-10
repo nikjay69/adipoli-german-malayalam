@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Lock, User, AtSign, UserPlus, Eye, EyeOff, AlertCircle, Info } from 'lucide-react';
 import { useAuthStore, isSupabaseReady } from '@/lib/auth-store';
+import { Kuttan } from '@/components/character/Kuttan';
 
 function getPasswordStrength(pw: string): { label: string; level: 0 | 1 | 2 | 3 } {
   if (pw.length === 0) return { label: '', level: 0 };
@@ -48,6 +49,7 @@ export default function SignupPage() {
   const [googleLoading, setGoogleLoading] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [supabaseActive, setSupabaseActive] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const strength = useMemo(() => getPasswordStrength(password), [password]);
 
@@ -87,7 +89,8 @@ export default function SignupPage() {
     setLoading(false);
 
     if (result.success) {
-      router.push('/');
+      setSuccess(true);
+      setTimeout(() => router.push('/'), 900);
     } else {
       setError(result.error || 'Signup failed');
     }
@@ -114,24 +117,61 @@ export default function SignupPage() {
     );
   }
 
+  if (success) {
+    return (
+      <div className="min-h-screen flex items-center justify-center px-4 py-8">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="text-center"
+        >
+          <div className="flex justify-center mb-4">
+            <Kuttan mood="celebrating" size="lg" />
+          </div>
+          <h1 className="text-3xl font-bold gradient-text mb-2">Poli! You&apos;re in.</h1>
+          <p className="text-[var(--foreground)]/60 text-sm">Let&apos;s go, machaa →</p>
+        </motion.div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-8">
+    <div className="relative min-h-screen flex items-center justify-center px-4 py-8 overflow-hidden">
+      {/* Animated background glow */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(circle, rgba(39,174,96,0.25), transparent 70%)' }}
+        animate={{ x: [0, -30, 0], y: [0, 20, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-32 -left-24 w-[420px] h-[420px] rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(circle, rgba(212,165,32,0.22), transparent 70%)' }}
+        animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+      />
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-md"
+        className="relative w-full max-w-md"
       >
-        {/* Header */}
+        {/* Header with Kuttan */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.15, duration: 0.4 }}
-          className="text-center mb-8"
+          className="text-center mb-6"
         >
-          <h1 className="text-3xl font-bold gradient-text mb-2">Start Learning German</h1>
-          <p className="text-[var(--foreground)]/50 text-sm">
-            Join the German-Malayalam learning crew
+          <div className="flex justify-center mb-3">
+            <Kuttan mood="excited" size="md" />
+          </div>
+          <h1 className="text-3xl font-bold gradient-text mb-2">Join the crew, machaa</h1>
+          <p className="text-[var(--foreground)]/60 text-sm">
+            Guest mode is fine too — we don&apos;t lock you out.
           </p>
         </motion.div>
 
@@ -342,18 +382,28 @@ export default function SignupPage() {
           </div>
         </motion.div>
 
+        {/* Guest mode note */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.45 }}
+          className="mt-5 text-center text-xs text-[var(--foreground)]/50 leading-relaxed px-2"
+        >
+          Prefer no account? Skip this — progress saves locally on your device.
+        </motion.p>
+
         {/* Back to Home */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-6 text-center"
+          className="mt-4 text-center"
         >
           <Link
             href="/"
-            className="text-sm text-[var(--foreground)]/30 hover:text-[var(--foreground)]/60 transition-colors"
+            className="text-sm text-[var(--foreground)]/40 hover:text-[#d4a520] transition-colors"
           >
-            Back to Home
+            ← Continue as guest
           </Link>
         </motion.div>
       </motion.div>

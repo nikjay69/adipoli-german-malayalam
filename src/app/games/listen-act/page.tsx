@@ -91,13 +91,15 @@ export default function ListenActGame() {
   const [done, setDone] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
-  // Select 10 random instructions, progressive difficulty
-  const gameInstructions = useRef(
-    [...INSTRUCTIONS]
+  // Select 10 random instructions, progressive difficulty.
+  // Seeded after mount to avoid SSR/CSR shuffle mismatch.
+  const gameInstructions = useRef<typeof INSTRUCTIONS>([]);
+  if (gameInstructions.current.length === 0 && typeof window !== 'undefined') {
+    gameInstructions.current = [...INSTRUCTIONS]
       .sort((a, b) => a.difficulty - b.difficulty)
       .slice(0, 12)
-      .sort(() => Math.random() - 0.3) // slight shuffle but keep difficulty trend
-  );
+      .sort(() => Math.random() - 0.3);
+  }
   const totalRounds = gameInstructions.current.length;
   const current = gameInstructions.current[round];
 

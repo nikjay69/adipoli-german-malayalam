@@ -31,7 +31,7 @@ export function Card({
       whileHover={hover ? { y: -4, boxShadow: '0 10px 25px rgba(0,0,0,0.1)' } : undefined}
       whileTap={onClick ? { scale: 0.98 } : undefined}
       className={clsx(
-        'bg-white dark:bg-gray-800 rounded-2xl shadow-md',
+        'bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl shadow-lg shadow-black/20 backdrop-blur-sm',
         paddingStyles[padding],
         onClick && 'cursor-pointer',
         className

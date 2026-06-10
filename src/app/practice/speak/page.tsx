@@ -174,7 +174,7 @@ function speakGerman(text: string): Promise<void> {
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'de-DE';
-    utterance.rate = 0.85;
+    utterance.rate = 0.75;
     utterance.pitch = 1.0;
 
     // Try to find a German voice
@@ -721,9 +721,20 @@ export default function SpeakPracticePage() {
           {/* Round indicator */}
           <div className="flex items-center justify-between text-xs text-[var(--foreground)]/40 px-1">
             <span>Round {round}/{TOTAL_ROUNDS}</span>
-            <span className="inline-flex items-center gap-1.5 bg-[var(--foreground)]/5 px-2.5 py-1 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#d4a520]" />
-              {getTierLabel()}
+            <span className="inline-flex items-center gap-1.5">
+              {(() => {
+                const tier = getTierForRound(round);
+                const tierColor = tier === 1 ? '#27ae60' : tier === 2 ? '#d4a520' : '#c0392b';
+                return (
+                  <span
+                    className="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full text-[10px] font-bold"
+                    style={{ backgroundColor: `${tierColor}26`, color: tierColor }}
+                  >
+                    T{tier}
+                  </span>
+                );
+              })()}
+              <span className="text-[var(--foreground)]/40">{getTierLabel()}</span>
             </span>
             <span className="text-[#d4a520] font-semibold">{totalXP} XP</span>
           </div>
@@ -858,7 +869,12 @@ export default function SpeakPracticePage() {
                   transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
                 />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#d4a520]/20 to-[#d4a520]/5 flex items-center justify-center">
-                  <Volume2 className="w-12 h-12 text-[#d4a520]" />
+                  <motion.div
+                    animate={{ scale: [0.9, 1.15, 0.9] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
+                  >
+                    <Volume2 className="w-12 h-12 text-[#d4a520]" />
+                  </motion.div>
                 </div>
               </motion.div>
 
@@ -886,8 +902,8 @@ export default function SpeakPracticePage() {
                 )}
               </AnimatePresence>
 
-              <p className="text-sm text-[var(--foreground)]/30 mt-4 animate-pulse">
-                Listening...
+              <p className="text-sm text-[var(--foreground)]/40 mt-4 animate-pulse">
+                🎧 Playing audio... Match the pronunciation!
               </p>
             </motion.div>
           )}
@@ -1163,17 +1179,20 @@ export default function SpeakPracticePage() {
             {Array.from({ length: TOTAL_ROUNDS }).map((_, i) => {
               const result = results[i];
               let dotColor = 'bg-[var(--foreground)]/10';
+              const isCurrent = !result && i === round - 1;
               if (result) {
                 if (result.score >= 70) dotColor = 'bg-[#27ae60]';
                 else if (result.score >= 40) dotColor = 'bg-[#e8a817]';
                 else dotColor = 'bg-[#c0392b]';
-              } else if (i === round - 1) {
+              } else if (isCurrent) {
                 dotColor = 'bg-[#d4a520] animate-pulse';
               }
               return (
                 <div
                   key={i}
-                  className={`w-2 h-2 rounded-full transition-colors ${dotColor}`}
+                  className={`w-3 h-3 rounded-full transition-colors ${dotColor} ${
+                    isCurrent ? 'ring-2 ring-offset-1 ring-[#d4a520] ring-offset-transparent' : ''
+                  }`}
                 />
               );
             })}
