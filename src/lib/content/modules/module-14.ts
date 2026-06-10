@@ -272,7 +272,16 @@ export const MODULE_14: Module = {
           explanation: "Wunderbar! Remember the dots (.) instead of slashes (/). DD.MM.YYYY is the way to go!",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex14-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Filling Out Forms): 'Ich möchte bitte einen Termin machen.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte bitte einen Termin machen.'",
+          correctAnswer: "Ich möchte bitte einen Termin machen",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab14-1-1", german: "die Anmeldung", english: "registration", malayalam: "രജിസ്ട്രേഷൻ", pronunciation: "an-mel-doong", example: "Ich muss die Anmeldung machen.", exampleTranslation: "I must do the registration." },
         { id: "vocab14-1-2", german: "der Vorname", english: "first name", malayalam: "പേര് (ആദ്യനാമം)", pronunciation: "for-nah-me", example: "Mein Vorname ist Arun.", exampleTranslation: "My first name is Arun." },
@@ -539,7 +548,16 @@ export const MODULE_14: Module = {
           explanation: "Excellent! 'Aufenthaltserlaubnis' is a long word, but you've mastered it. Don't forget 'eine' (feminine).",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex14-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (At the Office): 'Ich möchte bitte einen Termin machen.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte bitte einen Termin machen.'",
+          correctAnswer: "Ich möchte bitte einen Termin machen",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab14-2-1", german: "die Ausländerbehörde", english: "foreigners office / immigration office", malayalam: "വിദേശ കാര്യാലയം", pronunciation: "ows-len-der-be-hur-de", example: "Ich habe einen Termin bei der Ausländerbehörde.", exampleTranslation: "I have an appointment at the foreigners office." },
         { id: "vocab14-2-2", german: "das Rathaus", english: "city hall / town hall", malayalam: "നഗരസഭാ ഹാൾ", pronunciation: "raht-hows", example: "Das Rathaus ist am Marktplatz.", exampleTranslation: "The city hall is at the market square." },
@@ -798,7 +816,16 @@ export const MODULE_14: Module = {
           explanation: "Wunderbar! 'Wo ist der Geldautomat?' is a survival must in cash-heavy Germany.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex14-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Opening a Bank Account): 'Ich möchte bitte einen Termin machen.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte bitte einen Termin machen.'",
+          correctAnswer: "Ich möchte bitte einen Termin machen",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab14-3-1", german: "das Konto", english: "account", malayalam: "അക്കൗണ്ട്", pronunciation: "kon-to", example: "Ich habe ein Konto bei der Sparkasse.", exampleTranslation: "I have an account at the Sparkasse." },
         { id: "vocab14-3-2", german: "das Girokonto", english: "checking / current account", malayalam: "കറന്റ് അക്കൗണ്ട്", pronunciation: "gee-ro-kon-to", example: "Ich möchte ein Girokonto eröffnen.", exampleTranslation: "I'd like to open a checking account." },
@@ -1088,7 +1115,16 @@ export const MODULE_14: Module = {
           explanation: "Great job! This is the standard legal phrase for cancellation.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex14-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Writing Formal Letters & Emails): 'Ich möchte bitte einen Termin machen.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte bitte einen Termin machen.'",
+          correctAnswer: "Ich möchte bitte einen Termin machen",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab14-4-1", german: "der Betreff", english: "subject (of a letter)", malayalam: "വിഷയം", pronunciation: "be-treff", example: "Betreff: Terminanfrage", exampleTranslation: "Subject: Appointment request" },
         { id: "vocab14-4-2", german: "Sehr geehrte Damen und Herren", english: "Dear Sir or Madam", malayalam: "ബഹുമാനപ്പെട്ട മഹാശയ/മഹാശയി", pronunciation: "zair ge-air-te dah-men oont hair-en", example: "Sehr geehrte Damen und Herren, ich schreibe Ihnen wegen...", exampleTranslation: "Dear Sir or Madam, I am writing to you regarding..." },

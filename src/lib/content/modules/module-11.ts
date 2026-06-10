@@ -267,7 +267,16 @@ export const MODULE_11: Module = {
           explanation: "Wunderbar! 'Was sind Sie von Beruf?' is the polite way to ask about someone's job.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex11-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Professions in Detail): 'Ich studiere Deutsch und arbeite am Computer.'",
+          questionGerman: "Sprechen Sie laut: 'Ich studiere Deutsch und arbeite am Computer.'",
+          correctAnswer: "Ich studiere Deutsch und arbeite am Computer",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab11-1-1", german: "der Beruf", english: "profession", malayalam: "തൊഴിൽ", pronunciation: "beh-roof", example: "Was sind Sie von Beruf?", exampleTranslation: "What is your profession?" },
         { id: "vocab11-1-2", german: "der Ingenieur / die Ingenieurin", english: "engineer", malayalam: "എഞ്ചിനീയർ", pronunciation: "in-zheh-nyur / in-zheh-nyur-in", example: "Mein Vater ist Ingenieur.", exampleTranslation: "My father is an engineer." },
@@ -532,7 +541,16 @@ export const MODULE_11: Module = {
           explanation: "Excellent! 'um' is used for exact times. German meetings always start 'pünktlich'!",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex11-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (At the Office / University): 'Ich studiere Deutsch und arbeite am Computer.'",
+          questionGerman: "Sprechen Sie laut: 'Ich studiere Deutsch und arbeite am Computer.'",
+          correctAnswer: "Ich studiere Deutsch und arbeite am Computer",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab11-2-1", german: "das Büro", english: "office", malayalam: "ഓഫീസ്", pronunciation: "byu-roh", example: "Ich arbeite im Büro.", exampleTranslation: "I work in the office." },
         { id: "vocab11-2-2", german: "der Schreibtisch", english: "desk", malayalam: "മേശ", pronunciation: "shryb-tish", example: "Mein Schreibtisch ist aufgeräumt.", exampleTranslation: "My desk is tidy." },
@@ -794,7 +812,16 @@ export const MODULE_11: Module = {
           explanation: "Wunderbar! 'Mit freundlichen Grüßen' is the gold standard for formal closings.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex11-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Writing a Simple Email): 'Ich studiere Deutsch und arbeite am Computer.'",
+          questionGerman: "Sprechen Sie laut: 'Ich studiere Deutsch und arbeite am Computer.'",
+          correctAnswer: "Ich studiere Deutsch und arbeite am Computer",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab11-3-1", german: "der Betreff", english: "subject (of email)", malayalam: "വിഷയം", pronunciation: "beh-tref", example: "Der Betreff muss klar sein.", exampleTranslation: "The subject must be clear." },
         { id: "vocab11-3-2", german: "Sehr geehrte/r", english: "Dear (formal)", malayalam: "ബഹുമാനപ്പെട്ട", pronunciation: "zeyr geh-eyr-te/ter", example: "Sehr geehrter Herr Müller, ...", exampleTranslation: "Dear Mr. Müller, ..." },
@@ -982,7 +1009,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-4-1",
           type: "fill-blank",
-          question: "Complete: Ich _____ gut programmieren. (I can program well.)",
+          question: "At the Kerala Stammtisch prep with Kuttan, you want to say you can program well. Complete: Ich _____ gut programmieren.",
           options: ["kann", "bin", "habe", "mache"],
           correctAnswer: "kann",
           explanation: "Können (can) is the modal verb for skills and abilities. Verb 1 (kann) stays at position 2, and Verb 2 (programmieren) goes to the END. The 'Abhibhashaka-Rule' (Verb final).",
@@ -991,7 +1018,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-4-2",
           type: "multiple-choice",
-          question: "How do you say 'I have experience with programming' in German?",
+          question: "At the Kerala professionals' Stammtisch, Stefan asks about your CV. How do you say 'I have experience with programming' in German?",
           options: ["Ich habe Erfahrung mit Programmierung.", "Ich kann Erfahrung programmieren.", "Ich bin Erfahrung mit Programmierung.", "Ich mache Erfahrung Programmierung."],
           correctAnswer: "Ich habe Erfahrung mit Programmierung.",
           explanation: "The formula: Ich habe + Erfahrung + mit + [Dativ topic]. Dativ triggers here, but for nouns like Programmierung, it's straightforward.",
@@ -1000,7 +1027,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-4-3",
           type: "matching",
-          question: "Match the German skill word to its English meaning:",
+          question: "Kuttan is helping you polish a German-style CV in Kerala. Match each skill word to its English meaning:",
           options: ["teamfähig", "zuverlässig", "flexibel", "pünktlich"],
           correctAnswer: ["team-oriented", "reliable", "flexible", "punctual"],
           explanation: "These are 'Adjectives from Heaven' for your German CV. Germans value 'Zuverlässig' (Reliable) above almost everything else!",
@@ -1009,7 +1036,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-4-4",
           type: "fill-blank",
-          question: "Complete: Ich interessiere _____ für Technik. (I am interested in technology.)",
+          question: "At the Stammtisch practice table, Priya says she is interested in technology. Complete: Ich interessiere _____ für Technik.",
           options: ["mich", "mir", "ich", "mein"],
           correctAnswer: "mich",
           explanation: "'Sich interessieren für' is reflexive. Since the subject is 'Ich', the pronoun MUST be 'mich'. It means 'I interest MYSELF for tech'.",
@@ -1027,7 +1054,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-4-6",
           type: "multiple-choice",
-          question: "What does 'das Zeugnis' mean?",
+          question: "Frau Weber checks your application folder at Goethe Kochi. What does 'das Zeugnis' mean?",
           options: ["certificate / transcript", "job application", "interview", "contract"],
           correctAnswer: "certificate / transcript",
           explanation: "In Germany, 'Zeugnisse' are a way of life. From school to every job you leave, you get a Zeugnis. No Zeugnis = proof-of-work missing!",
@@ -1036,7 +1063,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-4-7",
           type: "fill-blank",
-          question: "Complete: Ich habe einen Bachelor-_____ in Informatik. (I have a Bachelor's degree in Computer Science.)",
+          question: "Kuttan points to the education line in your CV draft. Complete: Ich habe einen Bachelor-_____ in Informatik.",
           options: ["Abschluss", "Zeugnis", "Kenntnisse", "Erfahrung"],
           correctAnswer: "Abschluss",
           explanation: "Abschluss literally means 'Closing/Finishing'. It implies you finished the degree successfully. 'Bachelor-Abschluss' is the modern German way to say degree.",
@@ -1054,7 +1081,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-4-9",
           type: "dictation",
-          question: "Listen and type: Ich kann Deutsch sprechen.",
+          question: "Kuttan plays a short Stammtisch practice audio in Kerala. Listen and type: Ich kann Deutsch sprechen.",
           correctAnswer: "Ich kann Deutsch sprechen",
           explanation: "Perfect! Modal verb in position 2, main verb at the end. That's a great skill to have!",
           xpReward: 25,
@@ -1063,12 +1090,21 @@ export const MODULE_11: Module = {
         {
           id: "ex11-4-10",
           type: "free-text",
-          question: "Translate to German: 'I am interested in computer science.' (computer science = Informatik)",
+          question: "At the Kerala networking practice, write the German sentence for Priya's line: 'I am interested in computer science.' (computer science = Informatik)",
           correctAnswer: "Ich interessiere mich für Informatik",
           explanation: "Excellent! 'sich interessieren für' is the reflexive phrase you need. Don't forget 'mich'!",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex11-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Talking About Skills): 'Ich studiere Deutsch und arbeite am Computer.'",
+          questionGerman: "Sprechen Sie laut: 'Ich studiere Deutsch und arbeite am Computer.'",
+          correctAnswer: "Ich studiere Deutsch und arbeite am Computer",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab11-4-1", german: "die Erfahrung", english: "experience", malayalam: "അനുഭവം", pronunciation: "er-fah-roong", example: "Ich habe viel Erfahrung mit Java.", exampleTranslation: "I have a lot of experience with Java." },
         { id: "vocab11-4-2", german: "die Kenntnisse", english: "knowledge / skills (pl.)", malayalam: "അറിവ് / പരിജ്ഞാനം", pronunciation: "kent-ni-se", example: "Sie hat gute Englischkenntnisse.", exampleTranslation: "She has good English skills." },
@@ -1339,7 +1375,16 @@ export const MODULE_11: Module = {
           explanation: "Wunderbar! 'Ich habe drei Jahre Erfahrung.' — This is exactly what employers want to hear!",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex11-5-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Job Interview Basics): 'Ich studiere Deutsch und arbeite am Computer.'",
+          questionGerman: "Sprechen Sie laut: 'Ich studiere Deutsch und arbeite am Computer.'",
+          correctAnswer: "Ich studiere Deutsch und arbeite am Computer",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab11-5-1", german: "das Vorstellungsgespräch", english: "job interview", malayalam: "ജോബ് ഇന്റർവ്യൂ", pronunciation: "for-shtel-oongs-geh-shpreykh", example: "Mein Vorstellungsgespräch ist morgen.", exampleTranslation: "My job interview is tomorrow." },
         { id: "vocab11-5-2", german: "die Bewerbung", english: "application", malayalam: "അപേക്ഷ", pronunciation: "beh-ver-boong", example: "Ich schicke meine Bewerbung per E-Mail.", exampleTranslation: "I am sending my application by email." },

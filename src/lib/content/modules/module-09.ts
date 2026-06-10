@@ -204,7 +204,16 @@ export const MODULE_9: Module = {
           explanation: "Wunderbar! 'Ich fahre mit dem Zug.' — 'dem' because 'der Zug' is masculine and 'mit' is a dative preposition.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex9-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Transportation): 'Entschuldigung, wo ist der Bahnhof?'",
+          questionGerman: "Sprechen Sie laut: 'Entschuldigung, wo ist der Bahnhof?'",
+          correctAnswer: "Entschuldigung, wo ist der Bahnhof",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab9-1-1", german: "der Bus", english: "bus", malayalam: "ബസ്", pronunciation: "boos", example: "Der Bus kommt in fünf Minuten.", exampleTranslation: "The bus is coming in five minutes." },
         { id: "vocab9-1-2", german: "der Zug", english: "train", malayalam: "തീവണ്ടി", pronunciation: "tsook", example: "Der Zug fährt nach Berlin.", exampleTranslation: "The train goes to Berlin." },
@@ -412,7 +421,16 @@ export const MODULE_9: Module = {
           explanation: "Excellent! 'Einfach' for one-way and 'hin und zurück' for round trip.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex9-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Buying Tickets): 'Entschuldigung, wo ist der Bahnhof?'",
+          questionGerman: "Sprechen Sie laut: 'Entschuldigung, wo ist der Bahnhof?'",
+          correctAnswer: "Entschuldigung, wo ist der Bahnhof",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab9-2-1", german: "die Fahrkarte", english: "ticket (travel)", malayalam: "ടിക്കറ്റ്", pronunciation: "fahr-kar-te", example: "Ich brauche eine Fahrkarte.", exampleTranslation: "I need a ticket." },
         { id: "vocab9-2-2", german: "einfach", english: "one-way / simple", malayalam: "ഒരു വഴി", pronunciation: "ayn-fakh", example: "Eine Fahrkarte, einfach, bitte.", exampleTranslation: "A one-way ticket, please." },
@@ -620,7 +638,16 @@ export const MODULE_9: Module = {
           explanation: "Wunderbar! 'Gehen Sie geradeaus.' — don't forget the polite 'Sie' and the capital 'G'.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex9-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Asking for Directions): 'Entschuldigung, wo ist der Bahnhof?'",
+          questionGerman: "Sprechen Sie laut: 'Entschuldigung, wo ist der Bahnhof?'",
+          correctAnswer: "Entschuldigung, wo ist der Bahnhof",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab9-3-1", german: "geradeaus", english: "straight ahead", malayalam: "നേരെ", pronunciation: "ge-rah-de-ows", example: "Gehen Sie geradeaus.", exampleTranslation: "Go straight ahead." },
         { id: "vocab9-3-2", german: "links", english: "left", malayalam: "ഇടത്ത്", pronunciation: "links", example: "Biegen Sie links ab.", exampleTranslation: "Turn left." },
@@ -645,10 +672,10 @@ export const MODULE_9: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Frankfurt Airport (Arrivals)",
-          sceneType: "station",
+          name: "Kuttan's Home, Thrissur — Frankfurt Arrival Rehearsal",
+          sceneType: "home",
           timeOfDay: "morning",
-          description: "The smell of jet fuel and overpriced coffee. You've just stepped off the long flight from Kochi. The halls are endless, and the signs are everywhere. You need to clear passport control, grab your 'Gepäck', and find the train station. Welcome to Germany, machane! The real journey starts now.",
+          description: "Kuttan is still in Thrissur, watching his cousin's Frankfurt arrival video call and rehearsing the first airport steps before the real journey. The signs, passport control, baggage claim, and train station all become practice scenes — not a physical arrival yet.",
         },
         narrative: {
           previousRecap: "You've successfully navigated the city directions. Now, let's look at the bigger picture — international travel!",
@@ -656,20 +683,20 @@ export const MODULE_9: Module = {
           nextTeaser: "Next: Power Verbs! Let's learn to say what you 'can' and 'must' do!",
         },
         kuttanIntro: [
-          "Machane! Frankfurt airport-il landing oru separate scene aanu. Kochi-ye kalum valre big aanu ithu. Keep your 'Reisepass' (passport) ready.",
+          "Machane! Cousin video call-il Frankfurt airport kandappol manasilayi — landing oru separate scene aanu. Kochi-ye kalum valre big aanu ithu. Practice-il thanne 'Reisepass' (passport) ready aakkam.",
           "Luggage collector-inu 'Gepäckausgabe' ennu parayum. Athu vertical signs-il sradhikkanam.",
           "Pinne train station-il 'Verspätung' (delay) announcement kettal panic aavenda — Germans-inu athu oru common headache aanu. Platform-nu 'Gleis' ennu parayum. Let's find your train!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab9-4-1", encounterMoment: "You look around: 'Der Flughafen ist riesig!' (The airport is huge!).", contextSentence: "Der Flughafen ist sehr groß." },
-          { vocabId: "vocab9-4-4", encounterMoment: "You wait at the belt: 'Wo ist mein Gepäck?' (Where is my luggage?).", contextSentence: "Mein Gepäck ist schwer." },
-          { vocabId: "vocab9-4-2", encounterMoment: "The officer asks: 'Ihren Reisepass, bitte.' (Your passport, please).", contextSentence: "Die Passkontrolle war schnell." },
-          { vocabId: "vocab9-4-10", encounterMoment: "The board flashes red: 'Der Zug hat Verspätung.' (The train is delayed). Aiyyo!", contextSentence: "Der Zug hat zehn Minuten Verspätung." },
-          { vocabId: "vocab9-4-9", encounterMoment: "You find the spot: 'Der Zug fährt auf Gleis 4.' (The train departs from platform 4).", contextSentence: "Der Zug fährt auf Gleis 3 ab." },
+          { vocabId: "vocab9-4-1", encounterMoment: "On the video call, Kuttan sees the terminal: 'Der Flughafen ist riesig!' (The airport is huge!).", contextSentence: "Der Flughafen ist sehr groß." },
+          { vocabId: "vocab9-4-4", encounterMoment: "In the rehearsal, he asks: 'Wo ist mein Gepäck?' (Where is my luggage?).", contextSentence: "Mein Gepäck ist schwer." },
+          { vocabId: "vocab9-4-2", encounterMoment: "Frau Weber plays the officer: 'Ihren Reisepass, bitte.' (Your passport, please).", contextSentence: "Die Passkontrolle war schnell." },
+          { vocabId: "vocab9-4-10", encounterMoment: "The mock board flashes red: 'Der Zug hat Verspätung.' (The train is delayed). Aiyyo!", contextSentence: "Der Zug hat zehn Minuten Verspätung." },
+          { vocabId: "vocab9-4-9", encounterMoment: "Kuttan reads the mock sign: 'Der Zug fährt auf Gleis 4.' (The train departs from platform 4).", contextSentence: "Der Zug fährt auf Gleis 3 ab." },
         ],
         decisionPoints: [
           {
-            moment: "At passport control, the officer says 'Ihren Reisepass, bitte.' What is your polite response?",
+            moment: "In the passport-control rehearsal, the officer says 'Ihren Reisepass, bitte.' What is your polite response?",
             options: [
               { text: "Hier ist mein Reisepass.", isCorrect: true, response: "Exactly! Handing over the passport with a clear sentence is perfect.", kuttanReaction: "Adipoli! Confidence level super aanu. Passport check clear! 🔥" },
               { text: "Was möchten Sie?", isCorrect: false, response: "Aiyyo! Too confrontational. They asked for your passport, so just give it to them!", kuttanReaction: "Vite machane! Asking 'what do you want' to a police officer is not recommended! Try again! 😬" },
@@ -835,7 +862,16 @@ export const MODULE_9: Module = {
           explanation: "Excellent! 'Ihren' because 'Reisepass' is masculine and in the accusative case.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex9-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (At the Airport & Train Station): 'Entschuldigung, wo ist der Bahnhof?'",
+          questionGerman: "Sprechen Sie laut: 'Entschuldigung, wo ist der Bahnhof?'",
+          correctAnswer: "Entschuldigung, wo ist der Bahnhof",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab9-4-1", german: "der Flughafen", english: "airport", malayalam: "വിമാനത്താവളം", pronunciation: "flook-hah-fen", example: "Der Flughafen ist sehr groß.", exampleTranslation: "The airport is very big." },
         { id: "vocab9-4-2", german: "die Passkontrolle", english: "passport control", malayalam: "പാസ്പോർട്ട് പരിശോധന", pronunciation: "pahs-kon-troh-le", example: "Die Passkontrolle war schnell.", exampleTranslation: "The passport control was quick." },
@@ -1048,7 +1084,16 @@ export const MODULE_9: Module = {
           explanation: "Excellent! 'Ich möchte' is the polite way to express a wish.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex9-5-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Modal Verbs): 'Entschuldigung, wo ist der Bahnhof?'",
+          questionGerman: "Sprechen Sie laut: 'Entschuldigung, wo ist der Bahnhof?'",
+          correctAnswer: "Entschuldigung, wo ist der Bahnhof",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab9-5-1", german: "können", english: "can / to be able to", malayalam: "കഴിയുക / സാധിക്കുക", pronunciation: "kuh-nen", example: "Ich kann Deutsch sprechen.", exampleTranslation: "I can speak German." },
         { id: "vocab9-5-2", german: "müssen", english: "must / to have to", malayalam: "വേണം / ചെയ്യണം", pronunciation: "mü-sen", example: "Ich muss jetzt gehen.", exampleTranslation: "I must go now." },

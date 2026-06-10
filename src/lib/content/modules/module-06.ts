@@ -273,7 +273,16 @@ export const MODULE_6: Module = {
           explanation: "Wunderbar! 'Brot ist gesund.' — remember that all nouns must be capitalized!",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex6-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Common Foods): 'Ich möchte Reis und Fisch, bitte.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte Reis und Fisch, bitte.'",
+          correctAnswer: "Ich möchte Reis und Fisch, bitte",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab6-1-1",
@@ -573,7 +582,16 @@ export const MODULE_6: Module = {
           explanation: "Excellent! 'Ich hätte gern ein Wasser, bitte.' — the most polite way to order!",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex6-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Drinks): 'Ich möchte Reis und Fisch, bitte.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte Reis und Fisch, bitte.'",
+          correctAnswer: "Ich möchte Reis und Fisch, bitte",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab6-2-1",
@@ -944,7 +962,16 @@ export const MODULE_6: Module = {
           explanation: "Wunderbar! 'Tisch' is masculine, so it's 'einen Tisch' in this context.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex6-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (At the Restaurant): 'Ich möchte Reis und Fisch, bitte.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte Reis und Fisch, bitte.'",
+          correctAnswer: "Ich möchte Reis und Fisch, bitte",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab6-3-1",
@@ -1255,7 +1282,16 @@ export const MODULE_6: Module = {
           explanation: "Excellent! 'kein' is used to negate nouns like 'Fleisch'.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex6-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Likes & Dislikes): 'Ich möchte Reis und Fisch, bitte.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte Reis und Fisch, bitte.'",
+          correctAnswer: "Ich möchte Reis und Fisch, bitte",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab6-4-1",
@@ -1626,7 +1662,16 @@ export const MODULE_6: Module = {
           explanation: "Wunderbar! 'keinen' because Hunger is masculine and in the accusative case.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex6-5-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Accusative Case - Ich nehme EINEN Kaffee): 'Ich möchte Reis und Fisch, bitte.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte Reis und Fisch, bitte.'",
+          correctAnswer: "Ich möchte Reis und Fisch, bitte",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab6-5-1",

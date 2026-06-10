@@ -26,15 +26,15 @@ export const MODULE_3: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Lidl Supermarket, checkout line",
+          name: "Goethe Kochi classroom — mock supermarket checkout",
           sceneType: "shopping",
           timeOfDay: "afternoon",
-          description: "The familiar blue-and-yellow beep of the Lidl checkout. You've got a bag of Brötchen, some milk, and eggs. The line is moving fast — typical German efficiency. You need to understand the price the cashier says before the person behind you starts getting impatient. No pressure, machane!",
+          description: "Frau Weber turns the classroom into a small checkout counter with price tags, coins, and a fast cashier role-play. Kuttan has to hear small numbers clearly before his mock customer loses patience. This is Kerala practice for a real German supermarket later.",
         },
         narrative: {
-          previousRecap: "You've successfully introduced yourself at the airport. Now, you need to survive your first grocery run!",
-          currentObjective: "Understand prices and small numbers (0-20) in a fast-paced retail environment",
-          nextTeaser: "Next: bigger numbers at the bakery! Time for the 'one-and-twenty' reversal twist!",
+          previousRecap: "You've learned to introduce yourself. Now Kuttan starts using German for real-life numbers in Goethe Kochi practice.",
+          currentObjective: "Understand prices and small numbers (0-20) in a fast-paced mock retail setting",
+          nextTeaser: "Next: bigger prices in a bakery role-play — the 'one-and-twenty' reversal twist is coming.",
         },
         kuttanIntro: [
           "Machane! Germany-il Lidl/Aldi checkout line-il 'patience' kuravaanu. Cashier lightning speed-ile barcode scan cheyyu — speed level 100!",
@@ -242,7 +242,16 @@ export const MODULE_3: Module = {
           explanation: "Fünf (5) + zehn (10) = fünfzehn (15). Just like English, except simpler!",
           xpReward: 25
         }
-      ],
+      ,
+        {
+          id: "ex3-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Numbers 0-20): 'Der Termin ist am Montag um zehn Uhr.'",
+          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
+          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab3-1-1",
@@ -374,15 +383,15 @@ export const MODULE_3: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Traditional Bakery (Bäckerei), Berlin",
+          name: "Goethe Kochi courtyard — bakery counter role-play",
           sceneType: "cafe",
           timeOfDay: "morning",
-          description: "The divine smell of freshly baked Brot and cinnamon rolls. You're at the counter of a 'Kiez-Bäckerei'. It's busy, and the cashier is calling out totals. You've ordered for yourself and your WG friend. Now comes the real challenge: German two-digit numbers.",
+          description: "A bakery counter is set up after class with menu cards, mock Euros, and a strict time limit. Kuttan orders for himself and a classmate while the cashier calls out two-digit totals. The scene stays in Kerala, but the pressure feels like future Germany.",
         },
         narrative: {
-          previousRecap: "You've survived the supermarket. Now, let's move to 21-100. It's time to learn the 'one-and-twenty' logic!",
-          currentObjective: "Master the reversed number system (ones before tens) in a social context",
-          nextTeaser: "Next: catch the U-Bahn on time! The 'halb' time trap awaits!",
+          previousRecap: "You've survived the mock supermarket. Now Kuttan must handle bigger prices without freezing.",
+          currentObjective: "Master the reversed number system (ones before tens) in a bakery-ordering role-play",
+          nextTeaser: "Next: time and punctuality — the 'halb' trap awaits.",
         },
         kuttanIntro: [
           "Machane! German numbers-inte logic oru bit weird aanu. English-il 'twenty-one' ennu parayumpo, German-il 'one-and-twenty' (einundzwanzig) ennu parayanam.",
@@ -541,7 +550,16 @@ export const MODULE_3: Module = {
           xpReward: 20,
           audioUrl: "/audio/exercises/dictation-21.mp3"
         }
-      ],
+      ,
+        {
+          id: "ex3-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Numbers 21-100): 'Der Termin ist am Montag um zehn Uhr.'",
+          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
+          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab3-2-1",
@@ -628,15 +646,15 @@ export const MODULE_3: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Alexanderplatz U-Bahn Station, Berlin",
+          name: "Goethe Kochi library — German train schedule practice",
           sceneType: "shopping",
           timeOfDay: "afternoon",
-          description: "The echoing corridors of Alexanderplatz station. You're standing on the yellow line, looking at the digital display board. The next U8 train is arriving soon. You need to meet a friend at a specific time, but the 'halb' logic is spinning in your head. Punctuality is the goal, machane!",
+          description: "Kuttan studies a printed German train schedule in the Goethe Kochi library. A mock exam timer is running, and the 'halb' logic is spinning in his head. The goal is simple: read the time correctly before the next listening task starts.",
         },
         narrative: {
-          previousRecap: "You've mastered prices at the bakery. Now, it's time to master the German clock before you miss your train!",
+          previousRecap: "You've mastered bigger prices in the bakery role-play. Now Kuttan faces the German clock.",
           currentObjective: "Navigate the 24-hour clock and avoid the 'halb' time trap",
-          nextTeaser: "Next: don't forget the trash! Time to learn days of the week and the 'Mittwoch' rule!",
+          nextTeaser: "Next: days of the week and calendar habits — the 'Mittwoch' rule is coming.",
         },
         kuttanIntro: [
           "Machane! Germany-il time parayunnathu oru logic puzzle poleyaanu. '3:30' ennu parayan 'half past three' ennu parayilla — avaru 'half to four' (halb vier) ennu parayum!",
@@ -860,7 +878,16 @@ export const MODULE_3: Module = {
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-745.mp3"
         }
-      ],
+      ,
+        {
+          id: "ex3-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (What Time Is It?): 'Der Termin ist am Montag um zehn Uhr.'",
+          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
+          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab3-3-1",
@@ -947,13 +974,13 @@ export const MODULE_3: Module = {
       xpReward: 120,
       storyScene: {
         setting: {
-          name: "WG Apartment, Trash Storage Room (Müllraum)",
+          name: "Kuttan's home study desk — cousin's Müllkalender video call",
           sceneType: "home",
           timeOfDay: "morning",
-          description: "A small, tidy room with four different colored bins: Blue, Yellow, Brown, and Grey. Stefan is showing you the 'Müllkalender' (trash calendar). In Germany, every day has a purpose, and missing the collection day is a cardinal sin. It's time to master the days of the week, machane!",
+          description: "Kuttan's cousin joins on video from Munich and shows a Müllkalender on screen. Kuttan is still at his desk in Thrissur, copying the days and months into his notebook. The German life detail stays useful, without pretending Kuttan already lives in a WG.",
         },
         narrative: {
-          previousRecap: "You've successfully caught the train on time. Now, let's make sure you don't mess up the house rules!",
+          previousRecap: "You've read German times without missing the mock train. Now Kuttan uses a cousin video call to learn calendar words.",
           currentObjective: "Learn the days of the week and months to manage your German schedule",
           nextTeaser: "Next: happy birthday! Time to learn dates and the verb 'haben'!",
         },
@@ -963,18 +990,18 @@ export const MODULE_3: Module = {
           "Months names almost English pole thanneyaanu — 'März' (March) and 'Januar' (January) mathram care venam. Let's set our calendar!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab3-4-1", encounterMoment: "Stefan points to the calendar: 'Am Montag wird das Altpapier abgeholt.' Blue bin day!", contextSentence: "Am Montag ist Altpapier." },
-          { vocabId: "vocab3-4-3", encounterMoment: "He warns you: 'Vergiss Mittwoch nicht! Da kommt die graue Tonne.' General waste day.", contextSentence: "Mittwoch ist sehr wichtig." },
-          { vocabId: "vocab3-4-5", encounterMoment: "You look forward to the weekend: 'Am Freitag haben wir keine Vorlesung.' No lectures on Friday!", contextSentence: "Freitag ist mein Lieblingstag." },
-          { vocabId: "vocab3-4-8", encounterMoment: "Stefan says: 'Diesen Monat haben wir viel Müll.' This month we have a lot of trash.", contextSentence: "Ein Jahr hat zwölf Monate." },
-          { vocabId: "vocab3-4-11", encounterMoment: "You look at the 'Winter' section of the calendar. 'Januar is real cold,' Stefan notes.", contextSentence: "Im Winter ist es kalt." },
+          { vocabId: "vocab3-4-1", encounterMoment: "On the video call, Kuttan's cousin points to the calendar: 'Am Montag wird das Altpapier abgeholt.' Blue bin day!", contextSentence: "Am Montag ist Altpapier." },
+          { vocabId: "vocab3-4-3", encounterMoment: "The cousin warns: 'Vergiss Mittwoch nicht! Da kommt die graue Tonne.' Kuttan writes Mittwoch in his notebook.", contextSentence: "Mittwoch ist sehr wichtig." },
+          { vocabId: "vocab3-4-5", encounterMoment: "Kuttan marks Friday in his study calendar: 'Am Freitag haben wir keine Vorlesung.' No lectures on Friday!", contextSentence: "Freitag ist mein Lieblingstag." },
+          { vocabId: "vocab3-4-8", encounterMoment: "The cousin says: 'Diesen Monat haben wir viel Müll.' This month we have a lot of trash.", contextSentence: "Ein Jahr hat zwölf Monate." },
+          { vocabId: "vocab3-4-11", encounterMoment: "Kuttan looks at the 'Winter' section of the calendar. 'Januar is real cold,' the cousin notes from Munich.", contextSentence: "Im Winter ist es kalt." },
         ],
         decisionPoints: [
           {
-            moment: "Stefan asks: 'Welcher Tag ist heute?' (What day is today?). It's the middle of the week. What do you say?",
+            moment: "Frau Weber asks in class: 'Welcher Tag ist heute?' (What day is today?). It's the middle of the week. What do you say?",
             options: [
               { text: "Heute ist Mittwoch.", isCorrect: true, response: "Exactly! 'Mittwoch' = Middle (Mitte) + Week (Woche). Logical alle?", kuttanReaction: "Correct machane! German-il Wednesday 'Mittwoch' aanu. Ithu oru bit unique name aanu, so carefully thiriayanam! 🎯" },
-              { text: "Heute ist Montag.", isCorrect: false, response: "Stefan shakes his head: 'Nein, Montag war vorgestern. Heute ist Mittwoch!'", kuttanReaction: "Aiyyo! Monday collection day alla! Wednesday aanu nammude general waste collection. Don't miss it! 😬" },
+              { text: "Heute ist Montag.", isCorrect: false, response: "Frau Weber shakes her head: 'Nein, Montag war vorgestern. Heute ist Mittwoch!'", kuttanReaction: "Aiyyo! Monday alla — Wednesday aanu. Calendar words exam listening-il varum. Try again! 😬" },
             ],
           },
           {
@@ -1113,7 +1140,16 @@ export const MODULE_3: Module = {
           xpReward: 20,
           audioUrl: "/audio/exercises/dictation-montag.mp3"
         }
-      ],
+      ,
+        {
+          id: "ex3-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Days of the Week & Months): 'Der Termin ist am Montag um zehn Uhr.'",
+          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
+          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab3-4-1",
@@ -1236,13 +1272,13 @@ export const MODULE_3: Module = {
       xpReward: 120,
       storyScene: {
         setting: {
-          name: "WG Living Room, Birthday Planning",
+          name: "Kuttan's home, Thrissur — family birthday calendar",
           sceneType: "home",
           timeOfDay: "evening",
-          description: "Lara and Stefan are sitting on the couch with a calendar. 'Kuttan, wann hast du Geburtstag?' Lara asks. They're planning a surprise party (Well, not a surprise anymore!). In Germany, birthdays are a big deal, and the date format is Tag.Monat.Jahr — just like in India!",
+          description: "Kuttan sits with Amma's family calendar and writes birthdays in German. His cousin sends a voice note asking, 'Wann hast du Geburtstag?' The scene keeps the adult life skill — dates, birthdays, and forms — inside the Kerala A1 journey.",
         },
         narrative: {
-          previousRecap: "You've mastered the trash schedule. Now, let's move to the fun stuff — birthdays and celebrations!",
+          previousRecap: "You've learned German weekdays and months from the cousin's calendar. Now Kuttan uses dates for birthdays and forms.",
           currentObjective: "Express dates correctly and use the essential verb 'haben'",
           nextTeaser: "Next: the final challenge! Scheduling a formal 'Termin' like a pro!",
         },
@@ -1252,18 +1288,18 @@ export const MODULE_3: Module = {
           "Pinne 'haben' verb. 'Ich habe... du hast...' Ithu 'sein' pole thanne super important aanu. Let's celebrate our progress!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab3-5-1", encounterMoment: "Lara looks at the calendar: 'Mein Geburtstag ist im Mai.' She's excited about the spring party.", contextSentence: "Wann hast du Geburtstag?" },
-          { vocabId: "vocab3-5-2", encounterMoment: "Stefan checks the invite: 'Welches Datum ist heute?' He needs to write it down correctly.", contextSentence: "Welches Datum ist heute?" },
-          { vocabId: "vocab3-5-3", encounterMoment: "You answer Lara's question: 'Ich habe im Januar Geburtstag.' You specify the month with 'haben'.", contextSentence: "Ich habe im Januar Geburtstag." },
-          { vocabId: "vocab3-3-8", encounterMoment: "Lara adds a note: 'Bitte pünktlich sein!' Even for a party, Germans like the 8:00 start!", contextSentence: "Pünktlich sein ist wichtig." },
-          { vocabId: "vocab3-5-4", encounterMoment: "Stefan notes a holiday: 'Der erste Januar ist Neujahr.' The very first day of the year.", contextSentence: "Der erste Januar ist Neujahr." },
+          { vocabId: "vocab3-5-1", encounterMoment: "The cousin's voice note asks: 'Wann hast du Geburtstag?' Kuttan answers with the month from the family calendar.", contextSentence: "Wann hast du Geburtstag?" },
+          { vocabId: "vocab3-5-2", encounterMoment: "Frau Weber checks a mock form: 'Welches Datum ist heute?' Kuttan needs to write it down correctly.", contextSentence: "Welches Datum ist heute?" },
+          { vocabId: "vocab3-5-3", encounterMoment: "Kuttan answers the birthday question: 'Ich habe im Januar Geburtstag.' He specifies the month with 'haben'.", contextSentence: "Ich habe im Januar Geburtstag." },
+          { vocabId: "vocab3-3-8", encounterMoment: "Amma adds a family note: 'Bitte pünktlich sein!' Even in Kerala practice, exact time matters.", contextSentence: "Pünktlich sein ist wichtig." },
+          { vocabId: "vocab3-5-4", encounterMoment: "Kuttan notes a German holiday in his notebook: 'Der erste Januar ist Neujahr.' The very first day of the year.", contextSentence: "Der erste Januar ist Neujahr." },
         ],
         decisionPoints: [
           {
-            moment: "Lara asks: 'Wann hast du Geburtstag?' Your birthday is on the 15th of August. How do you answer using the German date format?",
+            moment: "The cousin asks on voice note: 'Wann hast du Geburtstag?' Your birthday is on the 15th of August. How do you answer using the German date format?",
             options: [
               { text: "Ich habe am fünfzehnten August Geburtstag.", isCorrect: true, response: "Perfect! You used the ordinal '-ten' ending and the correct month.", kuttanReaction: "Adipoli machane! 'fünfzehnte' becomes 'fünfzehnten' when you use 'am'. Real pro German vibe! 🎂" },
-              { text: "Ich bin August fünfzehn.", isCorrect: false, response: "Lara looks confused: 'Du BIST August? Und... August fünfzehn?' You're mixing stay English patterns, machane!", kuttanReaction: "Aiyyo! 'Ich habe' (I have) use cheyyeda! Pinne Month first parayalle — 'Tag.Monat' aanu rule. Try again! 😬" },
+              { text: "Ich bin August fünfzehn.", isCorrect: false, response: "The cousin laughs: 'Du BIST August? Und... August fünfzehn?' You're mixing English patterns, machane!", kuttanReaction: "Aiyyo! 'Ich habe' (I have) use cheyyeda! Pinne Month first parayalle — 'Tag.Monat' aanu rule. Try again! 😬" },
             ],
           },
           {
@@ -1345,7 +1381,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-1",
           type: "fill-blank",
-          question: "Complete: Ich _____ am fünften März Geburtstag. (I have...)",
+          question: "At Goethe Kochi, Kuttan fills in his birthday sentence for Frau Weber: Ich _____ am fünften März Geburtstag. (I have...)",
           options: ["habe", "bin", "ist", "hat"],
           correctAnswer: "habe",
           explanation: "'Ich habe Geburtstag' = I have my birthday. 'Haben' with 'ich' = 'habe'.",
@@ -1354,7 +1390,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-2",
           type: "fill-blank",
-          question: "Complete the conjugation: ich habe, du _____, er hat.",
+          question: "Frau Weber drills Kuttan before the birthday role-play: ich habe, du _____, er hat.",
           options: ["hast", "habe", "hat", "haben"],
           correctAnswer: "hast",
           explanation: "'Haben' conjugation: ich habe, du hast, er/sie/es hat.",
@@ -1363,7 +1399,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-3",
           type: "fill-blank",
-          question: "Complete: Heute ist der _____ Mai. (Today is the 3rd of May.)",
+          question: "Kuttan reads the date on the Goethe Kochi classroom board: Heute ist der _____ Mai. (Today is the 3rd of May.)",
           options: ["dritte", "dreite", "drei", "dritten"],
           correctAnswer: "dritte",
           explanation: "'Dritte' = third. It's irregular — not 'dreite'. Used for dates: 'der dritte Mai' = the 3rd of May.",
@@ -1372,7 +1408,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-4",
           type: "fill-blank",
-          question: "Wann _____ du Geburtstag? — When is your birthday?",
+          question: "At the Kerala birthday calendar activity, Priya asks Kuttan: Wann _____ du Geburtstag? — When is your birthday?",
           options: ["hast", "habe", "hat", "bist"],
           correctAnswer: "hast",
           explanation: "'Wann hast du Geburtstag?' uses 'du hast' (you have). German says 'you have birthday' not 'your birthday is'.",
@@ -1381,7 +1417,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-5",
           type: "matching",
-          question: "Match the ordinal numbers:",
+          question: "Frau Weber points to Kuttan's Goethe Kochi date cards. Match the ordinal numbers:",
           options: ["erste → first", "zweite → second", "dritte → third", "achte → eighth"],
           correctAnswer: ["erste → first", "zweite → second", "dritte → third", "achte → eighth"],
           explanation: "Erste, zweite, dritte, and achte are all irregular ordinal numbers in German.",
@@ -1404,7 +1440,16 @@ export const MODULE_3: Module = {
           xpReward: 40,
           audioUrl: "/audio/exercises/dictation-independence.mp3"
         }
-      ],
+      ,
+        {
+          id: "ex3-5-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Dates & Birthdays): 'Der Termin ist am Montag um zehn Uhr.'",
+          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
+          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab3-5-1",
@@ -1473,13 +1518,13 @@ export const MODULE_3: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Doctor's Reception (Arztpraxis), Berlin-Mitte",
+          name: "Goethe Kochi classroom — appointment desk role-play",
           sceneType: "office",
           timeOfDay: "morning",
-          description: "A clean, minimalist reception area with the scent of disinfectant and fresh flowers. You're at the front desk, facing a receptionist with a headset. You need a check-up, but the calendar is full. It's time to use every number, day, and time phrase you've learned to secure that 'Termin'.",
+          description: "Frau Weber sets up a reception desk and gives Kuttan a mock appointment card. He has to ask for a Termin using the right day, time, and politeness. This prepares him for Germany without moving the A1 story out of Kerala.",
         },
         narrative: {
-          previousRecap: "You've survived the party planning. Now, it's time for the ultimate adulting task — making a formal appointment!",
+          previousRecap: "You've practiced birthdays and dates. Now Kuttan has to combine days, times, and polite German in a formal appointment role-play.",
           currentObjective: "Schedule a professional meeting using specific time and date prepositions",
           nextTeaser: "Congratulations! Module 3 complete. Next: I am hungry! Time to learn about food and shopping!",
         },
@@ -1652,7 +1697,34 @@ export const MODULE_3: Module = {
           explanation: "'Ich habe am Montag einen Termin.' — Use 'am' before days of the week and 'einen' because Termin is masculine (accusative).",
           xpReward: 15
         }
-      ],
+      ,
+        {
+          id: "ex3-6-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Making Appointments): 'Der Termin ist am Montag um zehn Uhr.'",
+          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
+          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        },
+        {
+          id: "ex3-6-prod-writing",
+          type: "free-text",
+          question: "Production writing: Write one appointment sentence with a day and time.",
+          questionGerman: "Schreiben Sie einen vollständigen Satz.",
+          correctAnswer: ["Der Termin ist am Montag um zehn Uhr", "Der Termin ist am Montag um zehn Uhr."],
+          explanation: "A1 writing must be short, complete, and usable. One correct sentence beats five half-known phrases.",
+          xpReward: 20
+        },
+        {
+          id: "ex3-6-prod-dictation",
+          type: "dictation",
+          question: "Listen and type the A1 sentence you hear.",
+          audioUrl: "/audio/hoeren/module-03/ex3-6-prod-dictation.mp3",
+          correctAnswer: "Der Termin ist um zehn Uhr",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab3-6-1",

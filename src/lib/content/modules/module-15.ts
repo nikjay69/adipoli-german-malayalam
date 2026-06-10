@@ -233,7 +233,16 @@ export const MODULE_15: Module = {
           explanation: "Wunderbar! 'Sonntagsruhe' is a real thing. No loud noises allowed!",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex15-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (German Customs): 'Danke, das ist sehr freundlich.'",
+          questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
+          correctAnswer: "Danke, das ist sehr freundlich",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab15-1-1",
@@ -528,7 +537,16 @@ export const MODULE_15: Module = {
           explanation: "Wunderbar! Munich is the home of the world-famous Oktoberfest.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex15-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Festivals & Holidays): 'Danke, das ist sehr freundlich.'",
+          questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
+          correctAnswer: "Danke, das ist sehr freundlich",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab15-2-1",
@@ -780,7 +798,16 @@ export const MODULE_15: Module = {
           explanation: "Wunderbar! Since bread is a staple in Germany, this is a useful sentence.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex15-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Differences from Kerala Culture): 'Danke, das ist sehr freundlich.'",
+          questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
+          correctAnswer: "Danke, das ist sehr freundlich",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab15-3-1",
@@ -1025,7 +1052,16 @@ export const MODULE_15: Module = {
           explanation: "Excellent! 'geil' is very common slang for awesome.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex15-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Useful Slang & Colloquial German): 'Danke, das ist sehr freundlich.'",
+          questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
+          correctAnswer: "Danke, das ist sehr freundlich",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab15-4-1",

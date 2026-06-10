@@ -26,13 +26,13 @@ export const MODULE_4: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Kuttan's WG Bedroom, Desk",
+          name: "Kuttan's Home Study Desk, Thrissur",
           sceneType: "home",
           timeOfDay: "evening",
-          description: "A cozy room in a shared apartment. You're on a WhatsApp video call with your family in Kerala. Your roommate, Stefan, pops his head in to say 'Hallo'. You decide to introduce your family to him in German — the ultimate 'Chettan-to-Bruder' translation challenge, machane!",
+          description: "Kuttan is at home in Thrissur after Goethe Kochi class, with family photos open on his phone. His cousin joins from Munich on WhatsApp video and asks him to introduce Amma, Achan, and siblings in German — the ultimate 'Chettan-to-Bruder' translation challenge, machane!",
         },
         narrative: {
-          previousRecap: "You've survived the 'Termin' battle at the doctor. Now, it's time to share your roots with your new German family!",
+          previousRecap: "You've survived the 'Termin' practice at Goethe Kochi. Now, it's time to describe your own Kerala family clearly in German.",
           currentObjective: "Introduce immediate and extended family members with their correct German articles",
           nextTeaser: "Next: describing your best friend! Is he/she tall, funny, or both?",
         },
@@ -42,25 +42,25 @@ export const MODULE_4: Module = {
           "Oma (Ammoomma) and Opa (Appooppan) mathram casual context-il use cheyyaam. Let's make our first family intro!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab4-1-1", encounterMoment: "You point to the screen: 'Das ist meine Mutter Lakshmi.' Stefan waves 'Hallo!'", contextSentence: "Das ist meine Mutter." },
+          { vocabId: "vocab4-1-1", encounterMoment: "Kuttan points to a family photo: 'Das ist meine Mutter Lakshmi.' His cousin waves from Munich: 'Hallo!'", contextSentence: "Das ist meine Mutter." },
           { vocabId: "vocab4-1-2", encounterMoment: "Next you show your dad: 'Das ist mein Vater Rajesh.' He's smiling from the couch.", contextSentence: "Das ist mein Vater." },
           { vocabId: "vocab4-1-3", encounterMoment: "You point to your 'Chettan': 'Das ist mein Bruder Arjun.' Arjun is a bit shy in front of foreigners!", contextSentence: "Das ist mein Bruder." },
           { vocabId: "vocab4-1-4", encounterMoment: "Your sister 'Priya' jumps into the frame: 'Das ist meine Schwester.' She's already learned 'Tschüss'!", contextSentence: "Das ist meine Schwester." },
-          { vocabId: "vocab4-1-11", encounterMoment: "Stefan asks: 'Wo wohnen deine Eltern?' (Where do your parents live?). You answer: 'In Kerala.'", contextSentence: "Meine Eltern wohnen in Kerala." },
+          { vocabId: "vocab4-1-11", encounterMoment: "The cousin asks: 'Wo wohnen deine Eltern?' (Where do your parents live?). Kuttan answers: 'In Kerala.'", contextSentence: "Meine Eltern wohnen in Kerala." },
         ],
         decisionPoints: [
           {
-            moment: "Stefan asks: 'Hast du Geschwister?' (Do you have siblings?). You have one brother and one sister. How do you answer?",
+            moment: "On the video call, the cousin asks: 'Hast du Geschwister?' (Do you have siblings?). You have one brother and one sister. How do you answer?",
             options: [
               { text: "Ich habe einen Bruder und eine Schwester.", isCorrect: true, response: "Exactly! 'Einen Bruder' (masc acc) and 'eine Schwester' (fem acc). Well said!", kuttanReaction: "Adipoli! Article care venam — masc-inu 'einen' and fem-inu 'eine'. Perfect grammar, machane! 🔥" },
               { text: "Ich habe ein Bruder und ein Schwester.", isCorrect: false, response: "Aiyyo! Those articles are for neuter nouns. You're missing the gender endings!", kuttanReaction: "Vite machane! Bruder masculine aanu, so 'einen' venam. Schwester feminine aanu, so 'eine' venam. Patterns orkkane! 😬" },
             ],
           },
           {
-            moment: "Stefan meets your grandfather on screen. You tell him: 'Das ist mein...'?",
+            moment: "Your cousin sees your grandfather in the family photo. You tell him: 'Das ist mein...'?",
             options: [
-              { text: "Opa", isCorrect: true, response: "Correct! 'Opa' is the warm, casual way to say grandfather. Stefan gets it immediately.", kuttanReaction: "Super machane! 'Großvater' formal context-il mathram mathi. Casual conversation-il 'Opa' is the king of family words! ⭐" },
-              { text: "Oma", isCorrect: false, response: "Stefan looks confused: 'But that's a man, isn't it?'", kuttanReaction: "Aiyyo! Oma Ammoomma aanu! Opa Appooppan aanu! Gender maari poyal valya confusion undakum. Try again! 🚫" },
+              { text: "Opa", isCorrect: true, response: "Correct! 'Opa' is the warm, casual way to say grandfather. Your cousin gets it immediately.", kuttanReaction: "Super machane! 'Großvater' formal context-il mathram mathi. Casual conversation-il 'Opa' is the king of family words! ⭐" },
+              { text: "Oma", isCorrect: false, response: "Your cousin looks confused: 'But that's a man, isn't it?'", kuttanReaction: "Aiyyo! Oma Ammoomma aanu! Opa Appooppan aanu! Gender maari poyal valya confusion undakum. Try again! 🚫" },
             ],
           },
         ],
@@ -259,7 +259,16 @@ export const MODULE_4: Module = {
           explanation: "Note the plural of Bruder is Brüder (with an Umlaut!). 'Habere' triggers the accusative, but for masculine plural, 'zwei' stays the same.",
           xpReward: 35
         }
-      ],
+      ,
+        {
+          id: "ex4-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Family Members): 'Meine Mutter wohnt in Thrissur.'",
+          questionGerman: "Sprechen Sie laut: 'Meine Mutter wohnt in Thrissur.'",
+          correctAnswer: "Meine Mutter wohnt in Thrissur",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab4-1-1",
@@ -391,31 +400,31 @@ export const MODULE_4: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Tempelhofer Feld, Berlin",
-          sceneType: "park",
+          name: "Goethe Kochi Classroom — Berlin Photo Practice",
+          sceneType: "classroom",
           timeOfDay: "afternoon",
-          description: "The massive open space of the former airport, now a giant park filled with skaters, cyclists, and families. You and Stefan are sitting on the grass, enjoying a Späti-drink. It's the perfect spot for people-watching. Stefan challenge you: 'Beschreibe die Leute dort!' (Describe the people there!). Time to flex your adjectives, machane!",
+          description: "Frau Weber brings a printed photo of Tempelhofer Feld in Berlin to Goethe Kochi. You, Kuttan, and the class are still in Kerala, using the photo as future-life rehearsal. Frau Weber points to people in the picture and says: 'Beschreiben Sie die Leute dort!' (Describe the people there!). Time to flex your adjectives, machane!",
         },
         narrative: {
-          previousRecap: "You've introduced your family on video call. Now, let's learn to describe the strangers you meet in the streets of Berlin!",
+          previousRecap: "You've introduced your family on video call. Now, let's use a Berlin photo in Kerala to describe people you may meet in the future.",
           currentObjective: "Use adjectives to describe physical appearance and personality traits",
           nextTeaser: "Next: who owns this? Master possessive pronouns (my, your, his, her)!",
         },
         kuttanIntro: [
-          "Machane! Berlin streets-il variety people-ine kaanaam. Chilar tall aanu (groß), chilar short aanu (klein).",
+          "Machane! Frau Weber-inte Berlin photo nokki nammal Kerala classroom-il practice cheyyam. Chilar tall aanu (groß), chilar short aanu (klein).",
           "Adjectives parayumpo small rule undu. Adjective 'ist' kazhinju varayil simple aanu (Er ist groß). But noun-te mumpil (height, hair) varumbol small ending care venam.",
-          "Personality describe cheyyan 'nett' (nice) or 'lustig' (funny) use cheyyaam. Let's start the people-watching challenge!",
+          "Personality describe cheyyan 'nett' (nice) or 'lustig' (funny) use cheyyaam. Let's start the photo people-watching challenge!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab4-2-1", encounterMoment: "Stefan points to a basketball player: 'Guck mal, er ist sehr groß!' He's truly tall, machane!", contextSentence: "Mein Vater ist sehr groß." },
-          { vocabId: "vocab4-2-2", encounterMoment: "You see a small child learn to skate: 'Das Kind ist noch klein.' So cute!", contextSentence: "Das Kind ist noch klein." },
-          { vocabId: "vocab4-2-4", encounterMoment: "A girl with dyed hair passes by: 'Sie hat blaue Haare!' In Berlin, anything goes!", contextSentence: "Sie hat lange, schwarze Haare." },
-          { vocabId: "vocab4-2-5", encounterMoment: "The bubble-tea vendor is very polite. 'Er ist sehr nett,' you note.", contextSentence: "Unsere Nachbarn sind sehr nett." },
-          { vocabId: "vocab4-2-9", encounterMoment: "You see someone studying intensely on a bench: 'Sie ist sehr fleißig.' Hard-working spirit!", contextSentence: "Deutsche Studenten sind fleißig." },
+          { vocabId: "vocab4-2-1", encounterMoment: "Frau Weber points to a basketball player in the Berlin photo: 'Guck mal, er ist sehr groß!' He's truly tall, machane!", contextSentence: "Mein Vater ist sehr groß." },
+          { vocabId: "vocab4-2-2", encounterMoment: "Kuttan points to a small child in the picture: 'Das Kind ist noch klein.' So cute!", contextSentence: "Das Kind ist noch klein." },
+          { vocabId: "vocab4-2-4", encounterMoment: "In the printed photo, a girl has dyed hair: 'Sie hat blaue Haare!' Useful future-life vocabulary, practiced from Kerala.", contextSentence: "Sie hat lange, schwarze Haare." },
+          { vocabId: "vocab4-2-5", encounterMoment: "Frau Weber describes the cafe worker in the photo: 'Er ist sehr nett.'", contextSentence: "Unsere Nachbarn sind sehr nett." },
+          { vocabId: "vocab4-2-9", encounterMoment: "You spot someone studying intensely on a bench in the photo: 'Sie ist sehr fleißig.' Hard-working spirit!", contextSentence: "Deutsche Studenten sind fleißig." },
         ],
         decisionPoints: [
           {
-            moment: "You see a jogger. How do you say 'He is tall and athletic' in German?",
+            moment: "In Frau Weber's Berlin photo at Goethe Kochi, you see a jogger. How do you say 'He is tall and athletic' in German?",
             options: [
               { text: "Er ist groß und sportlich.", isCorrect: true, response: "Exactly! Adjectives after 'ist' don't need any special endings. Simple and clean!", kuttanReaction: "Adipoli! 'ist' kazhinju adjective mathram paranjaal mathi. No extra tension. Gold star! ⭐" },
               { text: "Er hat groß und sportlich.", isCorrect: false, response: "Aiyyo! 'Hat' (has) is for features like hair or eyes. For 'is', use 'ist'!", kuttanReaction: "Vite machane! 'He is' → 'Er ist'. 'He has' → 'Er hat'. Characteristics-inu 'ist' thanne use cheyyanam. Try again! 😬" },
@@ -545,7 +554,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-2-1",
           type: "matching",
-          question: "Match the opposites:",
+          question: "At Goethe Kochi, Kuttan labels Frau Weber's Berlin photo. Match the adjective opposites:",
           options: ["groß → klein", "alt → jung", "dick → dünn", "lang → kurz"],
           correctAnswer: ["groß → klein", "alt → jung", "dick → dünn", "lang → kurz"],
           explanation: "groß/klein (big/small), alt/jung (old/young), dick/dünn (fat/thin), lang/kurz (long/short).",
@@ -563,7 +572,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-2-3",
           type: "multiple-choice",
-          question: "What does 'fleißig' mean?",
+          question: "Frau Weber calls a student in the Berlin photo 'fleißig'. What does she mean?",
           options: ["lazy", "funny", "hard-working", "friendly"],
           correctAnswer: "hard-working",
           explanation: "'Fleißig' (hard-working) is the ultimate German compliment! Germans deeply value diligence. Calling someone 'fleißig' is like saying they're reliable and impressive.",
@@ -572,7 +581,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-2-4",
           type: "multiple-choice",
-          question: "How do you say 'He is funny and nice' in German?",
+          question: "Kuttan describes Arjun at the Kerala cafe. How do you say 'He is funny and nice' in German?",
           options: [
             "Er ist lustig und nett.",
             "Er hat lustig und nett.",
@@ -604,7 +613,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-2-7",
           type: "dictation",
-          question: "Listen and type: Mein Vater ist groß und nett.",
+          question: "Goethe Kochi dictation: listen to Kuttan describing his father and type the sentence you hear.",
           correctAnswer: "Mein Vater ist groß und nett",
           explanation: "Great! Remember that 'groß' means tall when describing people. No ending is needed for adjectives that come after 'ist'!",
           xpReward: 25,
@@ -621,12 +630,21 @@ export const MODULE_4: Module = {
         {
           id: "ex4-2-9",
           type: "free-text",
-          question: "Translate: 'She is very friendly.'",
+          question: "At Goethe Kochi, Frau Weber points to Priya and says: translate 'She is very friendly.'",
           correctAnswer: "Sie ist sehr freundlich",
           explanation: "Friendly = freundlich. 'Sehr' means 'very'. German word order is just like English here!",
           xpReward: 35
         }
-      ],
+      ,
+        {
+          id: "ex4-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Describing People): 'Meine Mutter wohnt in Thrissur.'",
+          questionGerman: "Sprechen Sie laut: 'Meine Mutter wohnt in Thrissur.'",
+          correctAnswer: "Meine Mutter wohnt in Thrissur",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab4-2-1",
@@ -937,7 +955,16 @@ export const MODULE_4: Module = {
           explanation: "Sein (his) + Bruder (masculine). No extra ending needed!",
           xpReward: 20
         }
-      ],
+      ,
+        {
+          id: "ex4-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Possessive Pronouns): 'Meine Mutter wohnt in Thrissur.'",
+          questionGerman: "Sprechen Sie laut: 'Meine Mutter wohnt in Thrissur.'",
+          correctAnswer: "Meine Mutter wohnt in Thrissur",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab4-3-1",
@@ -1289,7 +1316,16 @@ export const MODULE_4: Module = {
           explanation: "Correct! '-ung' endings are always feminine.",
           xpReward: 15
         }
-      ],
+      ,
+        {
+          id: "ex4-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Articles - der, die, das): 'Meine Mutter wohnt in Thrissur.'",
+          questionGerman: "Sprechen Sie laut: 'Meine Mutter wohnt in Thrissur.'",
+          correctAnswer: "Meine Mutter wohnt in Thrissur",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab4-4-1",
@@ -1593,7 +1629,16 @@ export const MODULE_4: Module = {
           explanation: "Excellent! You combined the name (heißt) and description (ist) perfectly.",
           xpReward: 40
         }
-      ],
+      ,
+        {
+          id: "ex4-5-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Talking About Your Family): 'Meine Mutter wohnt in Thrissur.'",
+          questionGerman: "Sprechen Sie laut: 'Meine Mutter wohnt in Thrissur.'",
+          correctAnswer: "Meine Mutter wohnt in Thrissur",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         {
           id: "vocab4-5-1",

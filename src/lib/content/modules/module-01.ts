@@ -70,6 +70,7 @@ export const MODULE_1: Module = {
           title: "Why German? A Malayali's Gateway to Europe",
           duration: "10:00",
           description: "An inspiring introduction to German opportunities for Malayalis. Why learn this language? Because it's your ticket to free education and huge careers!",
+          videoUrl: "/videos/generated/v1-1-1.mp4",
           scriptOutline: [
             "Economy: 4th largest in the world",
             "Free Education: €0 tuition at public universities",
@@ -105,7 +106,7 @@ export const MODULE_1: Module = {
               type: "vocabulary",
               items: [
                 { german: "Deutsch", english: "German", malayalam: "ജർമ്മൻ", pronunciation: "doych" },
-                { german: "Deutschland", english: "Germany", malayalam: "ജർമ്മനി", pronunciation: "doych-land" },
+                { german: "Deutschland", english: "Germany", malayalam: "ജർമ്മനി", pronunciation: "doych-lant" },
                 { german: "lernen", english: "to learn", malayalam: "പഠിക്കുക", pronunciation: "ler-nen" }
               ]
             },
@@ -121,6 +122,7 @@ export const MODULE_1: Module = {
           id: "v1-1-2",
           title: "Malayalis in Germany: Which Path is Yours?",
           duration: "10:00",
+          videoUrl: "/videos/generated/v1-1-2.mp4",
           description: "Nursing, IT, Studies, or Ausbildung? Find out which career pathway fits your background and what level of German you actually need.",
           scriptOutline: [
             "The 4 Main Paths: Nursing, IT, Ausbildung, Studium",
@@ -172,18 +174,26 @@ export const MODULE_1: Module = {
         }
       ],
       exercises: [
-        { id: "ex1-1-1", type: "fill-blank", question: "Complete: Nach der Arbeit ist _____.", options: ["Feierabend", "Frühstück", "Mittagessen", "Schule"], correctAnswer: "Feierabend", explanation: "'Feierabend' means the end of the workday. Germans take this sacred rest time seriously!", xpReward: 10, imageUrl: "/images/feierabend.png" },
         { id: "ex1-1-2", type: "multiple-choice", question: "How do you say 'I need a visa' in German?", questionGerman: "Wie sagt man 'I need a visa'?", options: ["Ich brauche ein Visum", "Ich habe ein Visum", "Ich bin ein Visum", "Ich lerne ein Visum"], correctAnswer: "Ich brauche ein Visum", explanation: "'Brauche' = need. 'Ich brauche ein Visum' is one of the first sentences you'll use in Germany!", xpReward: 10 },
-        { id: "ex1-1-3", type: "fill-blank", question: "Complete: Ich lerne _____ (I am learning German)", questionGerman: "Ergänzen Sie: Ich lerne _____", options: ["Deutsch", "Deutschland", "Englisch", "Hindi"], correctAnswer: "Deutsch", explanation: "'Deutsch' means the German language. 'Deutschland' means the country Germany.", xpReward: 10 },
-        { id: "ex1-1-4", type: "fill-blank", question: "Complete: Das _____ ist groß. (The university is big.)", questionGerman: "Ergänzen Sie: Das _____ ist groß.", options: ["Universität", "Studium", "Sprache", "Arbeit"], correctAnswer: "Universität", explanation: "'Universität' = university. 'Die Universität ist groß' is a simple but useful sentence.", xpReward: 10 },
+        { id: "ex1-1-3", type: "fill-blank", question: "Ich möchte in München arbeiten. Zuerst lerne ich _____.", questionGerman: "Ergänzen Sie: Zuerst lerne ich _____.", options: ["Deutsch", "Deutschland", "Englisch", "Hindi"], correctAnswer: "Deutsch", explanation: "'Deutsch' means the German language. 'Deutschland' means the country. You live in Deutschland, but you learn Deutsch.", xpReward: 10 },
+        { id: "ex1-1-4", type: "fill-blank", question: "Complete: Die _____ ist groß. (The university is big.)", questionGerman: "Ergänzen Sie: Die _____ ist groß.", options: ["Universität", "Studium", "Sprache", "Arbeit"], correctAnswer: "Universität", explanation: "'Universität' is feminine (die Universität). In German, every noun has a gender — articles matter! 'Die Universität ist groß.'", xpReward: 10 },
         { id: "ex1-1-5", type: "matching", question: "Match the German word to its English meaning:", questionGerman: "Verbinden Sie die Wörter:", options: ["Deutsch", "Deutschland", "lernen", "Arbeit"], correctAnswer: ["German (language)", "Germany", "to learn", "work"], xpReward: 15 },
-        { id: "ex1-1-6", type: "multiple-choice", question: "What does 'Ich lerne Deutsch' mean?", questionGerman: "Was bedeutet 'Ich lerne Deutsch'?", options: ["I am learning German", "I speak German", "I need German", "I like German"], correctAnswer: "I am learning German", explanation: "'Ich lerne' = I am learning. 'Deutsch' = German (the language). Simple and essential!", xpReward: 10 },
         { id: "ex1-1-7", type: "ordering", question: "Order the steps of your German journey:", questionGerman: "Bringen Sie die Schritte in die richtige Reihenfolge:", options: ["Apply for a visa", "Move to Germany", "Learn A1 German", "Pass the A1 exam"], correctAnswer: ["Learn A1 German", "Pass the A1 exam", "Apply for a visa", "Move to Germany"], xpReward: 20 },
-        { id: "ex1-1-8", type: "type-answer", question: "How do you say 'opportunity' in German?", correctAnswer: "Chance", explanation: "'Chance' is the same word in German! Pronounced 'shahn-se'. 'Das ist eine gute Chance!'", xpReward: 10 }
-      ],
+        { id: "ex1-1-8", type: "type-answer", question: "How do you say 'opportunity' in German?", correctAnswer: ["Chance", "Möglichkeit", "Gelegenheit"], explanation: "Three words all work. 'Chance' (French-origin, pronounced 'shahn-se') is the most casual and common. 'Möglichkeit' = possibility. 'Gelegenheit' = occasion/chance.", xpReward: 10 },
+        { id: "ex1-1-9", type: "speaking", question: "Say aloud: 'Ich lerne Deutsch.' — your first full German sentence. Take your time; the goal is being understood.", questionGerman: "Sprechen Sie laut: 'Ich lerne Deutsch.'", correctAnswer: "Ich lerne Deutsch", explanation: "This is your first real German sentence — 'I am learning German.' Germans love hearing learners try, even imperfectly. Sprich laut!", xpReward: 25 }
+      ,
+        {
+          id: "ex1-1-prod-dictation",
+          type: "dictation",
+          question: "Listen and type the A1 sentence you hear.",
+          audioUrl: "/audio/hoeren/module-01/ex1-1-prod-dictation.mp3",
+          correctAnswer: "Ich lerne Deutsch",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab1-1-1", german: "Deutsch", english: "German (language)", malayalam: "ജർമ്മൻ (ഭാഷ)", pronunciation: "doych", example: "Ich lerne Deutsch.", exampleTranslation: "I am learning German." },
-        { id: "vocab1-1-2", german: "Deutschland", english: "Germany", malayalam: "ജർമ്മനി", pronunciation: "doych-lant", example: "Deutschland ist schön.", exampleTranslation: "Germany is beautiful." },
+        { id: "vocab1-1-2", german: "Deutschland", english: "Germany", malayalam: "ജർമ്മനി", pronunciation: "doych-lant (final d sounds like t)", example: "Deutschland ist schön.", exampleTranslation: "Germany is beautiful." },
         { id: "vocab1-1-3", german: "lernen", english: "to learn", malayalam: "പഠിക്കുക", pronunciation: "lair-nen", example: "Wir lernen zusammen.", exampleTranslation: "We learn together." },
         { id: "vocab1-1-4", german: "Arbeit", english: "work", malayalam: "ജോലി", pronunciation: "ar-bite", example: "Die Arbeit ist interessant.", exampleTranslation: "The work is interesting." },
         { id: "vocab1-1-5", german: "Studium", english: "studies / university education", malayalam: "പഠനം", pronunciation: "shtoo-dee-um", example: "Mein Studium dauert vier Jahre.", exampleTranslation: "My studies last four years." },
@@ -191,7 +201,7 @@ export const MODULE_1: Module = {
         { id: "vocab1-1-7", german: "Ausbildung", english: "vocational training", malayalam: "തൊഴിൽ പരിശീലനം", pronunciation: "ows-bil-doong", example: "Eine Ausbildung dauert drei Jahre.", exampleTranslation: "A vocational training lasts three years." },
         { id: "vocab1-1-8", german: "Universität", english: "university", malayalam: "സർവകലാശാല", pronunciation: "oo-ni-ver-zi-tayt", example: "Die Universität ist groß.", exampleTranslation: "The university is big." },
         { id: "vocab1-1-9", german: "Visum", english: "visa", malayalam: "വിസ", pronunciation: "vee-zoom", example: "Ich brauche ein Visum.", exampleTranslation: "I need a visa." },
-        { id: "vocab1-1-10", german: "Chance", english: "opportunity / chance", malayalam: "അവസരം", pronunciation: "shahn-se", example: "Das ist eine gute Chance!", exampleTranslation: "That is a good opportunity!" },
+        { id: "vocab1-1-10", german: "Chance", english: "chance / opportunity (borrowed from French)", malayalam: "അവസരം", pronunciation: "shahn-se (French-style)", example: "Das ist eine gute Chance!", exampleTranslation: "That is a good opportunity!" },
         { id: "vocab1-1-11", german: "warum", english: "why", malayalam: "എന്തുകൊണ്ട്", pronunciation: "vah-room", example: "Warum lernst du Deutsch?", exampleTranslation: "Why are you learning German?" }
       ]
     },
@@ -251,6 +261,7 @@ export const MODULE_1: Module = {
           id: "v1-2-1",
           title: "German Sounds: No Perfect Accent Needed",
           duration: "11:30",
+          videoUrl: "/videos/generated/v1-2-1.mp4",
           description: "Stop worrying about sounding like a movie star. Learn the key sounds that actually matter for being understood: Umlauts (ä, ö, ü) and 'ch'.",
           scriptOutline: [
             "Goal: Be understood, not perfect native accent",
@@ -293,8 +304,8 @@ export const MODULE_1: Module = {
             {
               type: "vocabulary",
               items: [
-                { german: "schön", english: "beautiful", malayalam: "മനോഹരം", pronunciation: "shern" },
-                { german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "muen-shen" },
+                { german: "schön", english: "beautiful", malayalam: "മനോഹരം", pronunciation: "shurn (lip-O + tongue-E)" },
+                { german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "myoon-shen (lips round like a straw, say ee inside)" },
                 { german: "Wasser", english: "water", malayalam: "വെള്ളം", pronunciation: "vahs-ser" }
               ]
             }
@@ -304,6 +315,7 @@ export const MODULE_1: Module = {
           id: "v1-2-2",
           title: "Alphabet & Spelling: The Amt Survival Skill",
           duration: "10:00",
+          videoUrl: "/videos/generated/v1-2-2.mp4",
           description: "Learn how to spell your name and say your phone number in German. Essential for every visit to a government office (Amt) or filling out forms.",
           scriptOutline: [
             "The Amt Moment: 'Können Sie Ihren Namen buchstabieren?'",
@@ -356,20 +368,31 @@ export const MODULE_1: Module = {
         { id: "ex1-2-1", type: "multiple-choice", question: "How do you say 'beautiful' in German?", questionGerman: "Wie sagt man 'beautiful' auf Deutsch?", options: ["schön", "schon", "schnell", "schlecht"], correctAnswer: "schön", explanation: "'Schön' = beautiful. Don't confuse with 'schon' (already) — the Umlaut changes the meaning!", xpReward: 10 },
         { id: "ex1-2-2", type: "type-answer", question: "How do you say 'street' in German?", correctAnswer: "Straße", explanation: "'Straße' = street. The ß makes a long 'ss' sound after the long 'a' vowel.", xpReward: 10 },
         { id: "ex1-2-3", type: "fill-blank", question: "Complete: Das Mädchen ist _____. (The girl is beautiful.)", questionGerman: "Ergänzen Sie: Das Mädchen ist _____.", options: ["schön", "groß", "schnell", "hier"], correctAnswer: "schön", explanation: "'Schön' = beautiful. 'Das Mädchen ist schön' is a simple sentence using an Umlaut word.", xpReward: 15 },
-        { id: "ex1-2-4", type: "fill-blank", question: "German meaning changes with dots! 'Schon' means 'already', but 'Sch___n' means 'beautiful'.", questionGerman: "Schon = schon, aber Sch___n = schön. Ergänzen Sie:", options: ["ö", "ä", "ü", "o"], correctAnswer: "ö", explanation: "Small dots, big difference! 'Schon' (already) vs 'Schön' (beautiful). This is why mastering Umlauts (ä, ö, ü) is essential from Lesson 1.", xpReward: 10 },
-        { id: "ex1-2-5", type: "multiple-choice", question: "What does 'Wasser' mean?", questionGerman: "Was bedeutet 'Wasser'?", options: ["Water", "Winter", "Weather", "Window"], correctAnswer: "Water", explanation: "'Wasser' = water. Pronounced 'vasser' — German W sounds like English V!", xpReward: 10 },
-        { id: "ex1-2-6", type: "multiple-choice", question: "What does 'Zeit' mean in English?", questionGerman: "Was bedeutet 'Zeit'?", options: ["Time", "Page", "Goal", "Since"], correctAnswer: "Time", explanation: "'Zeit' = time. Pronounced 'tsait'. You'll hear it everywhere: 'Keine Zeit!' (No time!)", xpReward: 15 },
-        { id: "ex1-2-7", type: "matching", question: "Match the German word to its meaning:", questionGerman: "Verbinden Sie:", options: ["Bier", "Bein", "Wein", "Eis"], correctAnswer: ["Beer", "Leg", "Wine", "Ice cream"], xpReward: 10 },
-        { id: "ex1-2-8", type: "multiple-choice", question: "A German friend texts you 'Ich wohne in der Königstraße'. What two special characters appear?", questionGerman: "Welche zwei besonderen Zeichen stehen in 'Königstraße'?", options: ["ö and ß", "ä and ü", "ö and ü", "ß and ä"], correctAnswer: "ö and ß", explanation: "König (king) has ö, Straße (street) has ß. You'll see these special characters everywhere in German — get comfortable spotting them!", xpReward: 15 }
-      ],
+        { id: "ex1-2-4", type: "fill-blank", question: "Which umlaut turns 'schon' (already) into 'beautiful'?", questionGerman: "Welcher Umlaut macht aus 'schon' das Wort 'schön'?", options: ["ö", "ä", "ü", "ß"], correctAnswer: "ö", explanation: "Two dots flip the meaning: 'schon' (already) → 'schön' (beautiful). Umlauts (ä, ö, ü) aren't decoration — they're different letters.", xpReward: 10 },
+        { id: "ex1-2-5", type: "multiple-choice", question: "What does 'Wasser' mean?", questionGerman: "Was bedeutet 'Wasser'?", options: ["Water", "Tea", "Coffee", "Juice"], correctAnswer: "Water", explanation: "'Wasser' = water. Pronounced 'vasser' — German W sounds like English V. Watch for this: 'Ich trinke Wasser' sounds like 'ikh trink-e vasser'.", xpReward: 10 },
+        { id: "ex1-2-6", type: "fill-blank", question: "Frustrated Kuttan mutters: 'Aiyyo, keine _____!' (Oh no, no time!)", questionGerman: "Ergänzen Sie: 'Keine _____!' (keine Zeit)", options: ["Zeit", "Zeile", "Ziel", "Zelt"], correctAnswer: "Zeit", explanation: "'Zeit' = time. 'Keine Zeit!' = 'No time!' — you'll say this approximately 400 times in Germany. Pronounced 'tsait'.", xpReward: 15 },
+        { id: "ex1-2-7", type: "multiple-choice", question: "Which spelling is correct for 'street'?", questionGerman: "Welche Schreibweise ist richtig für 'street'?", options: ["Straße", "Strasse", "Strase", "Strass"], correctAnswer: "Straße", explanation: "Official spelling: 'Straße' with ß (eszett). 'Strasse' (with ss) is also accepted — Germans use it when ß isn't on the keyboard, and it's the Swiss standard. Never 'Strase' (missing letter) or 'Strass' (means rhinestone).", xpReward: 15 },
+        { id: "ex1-2-9", type: "speaking", question: "Say aloud: 'ich' — the soft 'ch' sound, like a cat hissing. Not a hard 'k' sound.", questionGerman: "Sprechen Sie laut: 'ich'", correctAnswer: "ich", explanation: "The 'ich-Laut' is the soft ch — tongue near the roof of the mouth, gentle breath. Practice this; every 'ch' after e/i/ä/ö/ü uses this sound.", xpReward: 20 },
+        { id: "ex1-2-10", type: "speaking", question: "Say aloud: 'schön' — shape your lips like an O, but say E inside.", questionGerman: "Sprechen Sie laut: 'schön'", correctAnswer: "schön", explanation: "The ö (umlaut) is the lip-O + tongue-E trick. This single sound shows up in schön, schöne, Köln, hören — master it once, use it everywhere.", xpReward: 20 },
+        { id: "ex1-2-11", type: "speaking", question: "Say aloud: 'München' — round your lips like a straw and say 'EE' for the ü.", questionGerman: "Sprechen Sie laut: 'München'", correctAnswer: "München", explanation: "ü = lips rounded like straw, tongue position for 'ee'. München, über, für, Tür — all use this sound.", xpReward: 20 }
+      ,
+        {
+          id: "ex1-2-prod-dictation",
+          type: "dictation",
+          question: "Listen and type the A1 sentence you hear.",
+          audioUrl: "/audio/hoeren/module-01/ex1-2-prod-dictation.mp3",
+          correctAnswer: "Ich lerne Deutsch",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab1-2-1", german: "ich", english: "I", malayalam: "ഞാൻ", pronunciation: "ikh (soft ch)", example: "Ich bin hier.", exampleTranslation: "I am here." },
         { id: "vocab1-2-2", german: "Mädchen", english: "girl", malayalam: "പെൺകുട്ടി", pronunciation: "maid-shen", example: "Das Mädchen spielt.", exampleTranslation: "The girl is playing." },
-        { id: "vocab1-2-3", german: "schön", english: "beautiful", malayalam: "സുന്ദരം", pronunciation: "shern", example: "Das ist schön!", exampleTranslation: "That is beautiful!" },
-        { id: "vocab1-2-4", german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "muen-shen", example: "München ist groß.", exampleTranslation: "Munich is big." },
+        { id: "vocab1-2-3", german: "schön", english: "beautiful", malayalam: "സുന്ദരം", pronunciation: "shurn (lip-O + tongue-E)", example: "Das ist schön!", exampleTranslation: "That is beautiful!" },
+        { id: "vocab1-2-4", german: "München", english: "Munich", malayalam: "മ്യൂണിക്ക്", pronunciation: "myoon-shen (lips round like a straw, say ee inside)", example: "München ist groß.", exampleTranslation: "Munich is big." },
         { id: "vocab1-2-5", german: "Straße", english: "street", malayalam: "തെരുവ്", pronunciation: "shtrah-se", example: "Die Straße ist lang.", exampleTranslation: "The street is long." },
         { id: "vocab1-2-6", german: "Wasser", english: "water", malayalam: "വെള്ളം", pronunciation: "vah-ser", example: "Das Wasser ist kalt.", exampleTranslation: "The water is cold." },
-        { id: "vocab1-2-7", german: "Kuchen", english: "cake", malayalam: "കേക്ക്", pronunciation: "koo-khen", example: "Der Kuchen schmeckt gut.", exampleTranslation: "The cake tastes good." },
+        { id: "vocab1-2-7", german: "Buch", english: "book", malayalam: "പുസ്തകം", pronunciation: "bookh (hard 'ch' after oo)", example: "Das Buch ist gut.", exampleTranslation: "The book is good." },
         { id: "vocab1-2-8", german: "Bier", english: "beer", malayalam: "ബിയർ", pronunciation: "beer", example: "Ein Bier, bitte!", exampleTranslation: "A beer, please!" },
         { id: "vocab1-2-9", german: "Vater", english: "father", malayalam: "അച്ഛൻ", pronunciation: "fah-ter", example: "Mein Vater ist nett.", exampleTranslation: "My father is nice." },
         { id: "vocab1-2-10", german: "Zeit", english: "time", malayalam: "സമയം", pronunciation: "tsyte", example: "Die Zeit vergeht schnell.", exampleTranslation: "Time passes quickly." }
@@ -386,47 +409,47 @@ export const MODULE_1: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Berlin Hauptbahnhof",
-          sceneType: "bahnhof",
+          name: "Goethe-Institut, Kochi — Classroom",
+          sceneType: "classroom",
           timeOfDay: "morning",
-          description: "Berlin Hauptbahnhof. Glass ceilings, rushing commuters, German announcements. Your new life starts now.",
+          description: "Goethe-Institut Kochi, day three of your A1 course. Twenty students from Thrissur, Kottayam, Trivandrum fill the room. Frau Weber claps: 'Partner up — greet each other in German. Los!' Your heart thumps.",
         },
         narrative: {
-          previousRecap: "You learned why German matters and practiced the sounds. Now it's time to actually talk to people!",
-          currentObjective: "Greet people properly at the train station",
-          nextTeaser: "Next up: saying goodbye without being awkward...",
+          previousRecap: "You cracked the umlauts and the soft ch. Now Frau Weber wants real greetings — out loud, to real people.",
+          currentObjective: "Greet your classmates and your teacher properly, in your first real German exchange",
+          nextTeaser: "Next up: your cousin is flying back to Munich tomorrow — time to say goodbye in German.",
         },
         kuttanIntro: [
-          "Machane! Nammude first day in Berlin! Train station-il ethiyirikkunnu. Aarenkilum 'Hallo' parayan padikkaam!",
-          "Berlin Hauptbahnhof-il aanu nammal! Ee station kandu nee shock aayikaanum... but don't worry, I'm here! Let's learn to greet people!",
-          "Enthayaalum nammal Berlin-il ethii! First thing first — greetings padikkaam. Ini aarenkilum parichayapedaan pattum!",
+          "Machaane! Goethe Kochi-il day three! Frau Weber paranju: 'Partner-e greet cheyyu, auf Deutsch!' Heart oru thump aanu.",
+          "Kerala-il ninnu ethraa perundu ivide — Thrissur, Kottayam, Trivandrum. Everyone is nervous — nammude same boat.",
+          "Time-depending choice, Sie vs du, Herr vs nothing — all at once. Polayaanu, but try cheyyaam!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab1-3-1", encounterMoment: "A friendly person on the platform smiles at you. 'Hallo!' they say warmly.", contextSentence: "Hallo, wie geht's?" },
-          { vocabId: "vocab1-3-2", encounterMoment: "It's 8 AM. The coffee shop attendant greets you: 'Guten Morgen! Was möchten Sie?'", contextSentence: "Guten Morgen, Herr Müller!" },
-          { vocabId: "vocab1-3-3", encounterMoment: "At the info desk, the officer nods professionally. 'Guten Tag, kann ich Ihnen helfen?'", contextSentence: "Guten Tag, kann ich Ihnen helfen?" },
-          { vocabId: "vocab1-3-4", encounterMoment: "Later, arriving at your hostel in the evening, the receptionist greets you: 'Guten Abend, willkommen!'", contextSentence: "Guten Abend, willkommen!" },
-          { vocabId: "vocab1-3-5", encounterMoment: "Your roommate yawns and heads to bed. 'Gute Nacht, schlaf gut!' they whisper.", contextSentence: "Gute Nacht, schlaf gut!" },
-          { vocabId: "vocab1-3-6", encounterMoment: "The police officer at the station asks formally: 'Wie heißen Sie?' — he uses 'Sie', the respectful form.", contextSentence: "Wie heißen Sie?" },
-          { vocabId: "vocab1-3-7", encounterMoment: "A student your age waves casually: 'Hey! Wie heißt du?' — the friendly 'du' form.", contextSentence: "Wie heißt du?" },
-          { vocabId: "vocab1-3-8", encounterMoment: "A Bavarian tourist on the platform says something unexpected: 'Grüß Gott!' — a regional greeting from southern Germany.", contextSentence: "Grüß Gott, Frau Schmidt!" },
-          { vocabId: "vocab1-3-9", encounterMoment: "Two guys in Hamburg FC scarves walk past: 'Moin!' they say to each other — the northern German hello.", contextSentence: "Moin! Alles klar?" },
-          { vocabId: "vocab1-3-10", encounterMoment: "A big banner at the station exit reads: 'Herzlich willkommen in Deutschland!'", contextSentence: "Herzlich willkommen in Deutschland!" },
+          { vocabId: "vocab1-3-1", encounterMoment: "Your partner Reshma from Kottayam smiles nervously and whispers: 'Hallo!' — the safest opener.", contextSentence: "Hallo, wie geht's?" },
+          { vocabId: "vocab1-3-2", encounterMoment: "It's 9 AM. Frau Weber enters: 'Guten Morgen, Klasse!' The whole room echoes back. Morning is Guten Morgen.", contextSentence: "Guten Morgen, Klasse!" },
+          { vocabId: "vocab1-3-3", encounterMoment: "A late classmate slips in at noon: 'Guten Tag, Frau Weber — Entschuldigung!' She nods. Tag covers midday to evening.", contextSentence: "Guten Tag, kann ich Ihnen helfen?" },
+          { vocabId: "vocab1-3-4", encounterMoment: "Frau Weber role-plays an evening shop scene: 'Guten Abend, Herr Kumar!' Everyone repeats. Abend is after ~6 PM.", contextSentence: "Guten Abend, willkommen!" },
+          { vocabId: "vocab1-3-5", encounterMoment: "She holds up a hand: 'Gute Nacht is ONLY for bedtime — not for leaving the café at 9 PM.' You note this carefully.", contextSentence: "Gute Nacht, schlaf gut!" },
+          { vocabId: "vocab1-3-6", encounterMoment: "'To me — your teacher — use Sie,' Frau Weber says, pointing at herself. 'Like Malayalam Ningal.'", contextSentence: "Wie heißen Sie?" },
+          { vocabId: "vocab1-3-7", encounterMoment: "'To Reshma, your classmate — use du. Like nee.' She gestures between you two.", contextSentence: "Wie heißt du?" },
+          { vocabId: "vocab1-3-8", encounterMoment: "'And if you ever travel to Bavaria,' Frau Weber laughs, 'Grüß Gott is their Hallo. Sounds strange, perfectly normal there.'", contextSentence: "Grüß Gott, Frau Schmidt!" },
+          { vocabId: "vocab1-3-9", encounterMoment: "'Up north in Hamburg — just Moin. Any time, any person.' The class chuckles at the shortest greeting.", contextSentence: "Moin! Alles klar?" },
+          { vocabId: "vocab1-3-10", encounterMoment: "A big poster above the whiteboard reads: 'Willkommen bei Goethe-Institut Kochi!' You smile — that's you, a week in.", contextSentence: "Willkommen bei Goethe-Institut Kochi!" },
         ],
         decisionPoints: [
           {
-            moment: "You approach the info desk. The officer looks up. It's 3 PM. How do you greet them?",
+            moment: "Frau Weber calls you to the front. 'Begrüßen Sie die Klasse' — greet the class. It's 10 AM, all eyes on you. How do you start?",
             options: [
-              { text: "Guten Tag!", isCorrect: true, response: "The officer smiles and answers your question helpfully. Perfect — formal and time-appropriate!", kuttanReaction: "Adipoli! Guten Tag is perfect for afternoon + formal situation! 💪" },
-              { text: "Hallo!", isCorrect: false, response: "The officer helps you, but looks slightly surprised. 'Hallo' works, but 'Guten Tag' would be more appropriate in a formal setting.", kuttanReaction: "Hallo works machane, but Guten Tag is better for formal situations! No worries though! 😊" },
-              { text: "Guten Morgen!", isCorrect: false, response: "The officer raises an eyebrow — it's 3 PM, not morning! They help you anyway.", kuttanReaction: "Aiyyo! Guten Morgen is for morning only! It's afternoon now — Guten Tag aanu correct! 😅" },
+              { text: "Guten Morgen! Ich bin Kuttan.", isCorrect: true, response: "Frau Weber nods approvingly. 'Sehr gut — formal, richtig für die Zeit.' The class repeats back: 'Guten Morgen, Kuttan!'", kuttanReaction: "Adipoli machaane! Classroom-il 9-11 AM = Guten Morgen. Formal + time-correct. Frau Weber happy aanu! 💪" },
+              { text: "Hallo!", isCorrect: false, response: "Frau Weber tilts her head: 'Hallo ist informell, Kuttan. Für den Klassenraum — Guten Morgen.' Gentle correction.", kuttanReaction: "Hallo work cheyyum, but classroom-il Guten Morgen better. Small tune-up! 😊" },
+              { text: "Guten Tag!", isCorrect: false, response: "Frau Weber smiles: 'Es ist erst zehn Uhr — also Guten Morgen.' It's 10 AM — still morning, not Tag.", kuttanReaction: "Aiyyo! 12 noon vare Guten Morgen aanu. Afternoon thudangumbol Guten Tag. Clock nokkeda! 😅" },
             ],
           },
           {
-            moment: "At the hostel, a student your age introduces herself. 'Hi! Ich bin Lisa. Und du?' What do you say?",
+            moment: "Break time. Reshma, your partner, grabs a chai and walks over. 'Hi, ich bin Reshma. Und du?' She's your age.",
             options: [
-              { text: "Hallo! Ich bin [your name]. Wie geht's?", isCorrect: true, response: "Lisa grins. 'Mir geht's gut, danke! Bist du auch neu hier?' A friendship is forming!", kuttanReaction: "Perfect machane! Informal greeting + asking how they are = friendly and natural! You're making friends already! 🔥" },
-              { text: "Guten Tag, Frau Lisa. Wie geht es Ihnen?", isCorrect: false, response: "Lisa laughs. 'Frau Lisa?! Das ist so süß! Du kannst einfach Lisa sagen.' She's amused but it's too formal for someone your age.", kuttanReaction: "Enthayaalum too formal aanu machane! She's your age — use du, not Sie! But she liked the effort 😂" },
+              { text: "Hallo! Ich bin Kuttan. Wie geht's?", isCorrect: true, response: "Reshma grins. 'Gut, danke! Nee engine aanu?' She switches to Manglish naturally. Your first Goethe friendship.", kuttanReaction: "Perfect machaane! Classmate = du + Hallo = warm + correct. Wie geht's asking-return = friendly! 🔥" },
+              { text: "Guten Tag, Frau Reshma. Wie geht es Ihnen?", isCorrect: false, response: "Reshma laughs out loud: 'Frau?! Njan 22 aanu da! Und Sie? Relax machaane — classmates-odu du enough.' Friendly amused.", kuttanReaction: "Over-polite aayi poyi! Peers-ne 'Frau' venda, 'du' mathi. Effort likes cheythu she did — but du! 😂" },
             ],
           },
         ],
@@ -436,6 +459,7 @@ export const MODULE_1: Module = {
           id: "v1-3-1",
           title: "Guten Tag! German Greetings for Real Life",
           duration: "10:30",
+          videoUrl: "/videos/generated/v1-3-1.mp4",
           description: "Forget 10 greetings, start with the 4 you actually need. Master the safe defaults for shops, offices, and exams.",
           scriptOutline: [
             "The 5-second rule: Why greetings matter in Germany",
@@ -487,6 +511,7 @@ export const MODULE_1: Module = {
           id: "v1-3-2",
           title: "Formal vs Informal: Like 'Ningal' vs 'Nee'",
           duration: "10:00",
+          videoUrl: "/videos/generated/v1-3-2.mp4",
           description: "Master the German respect system using your Malayalam intuition. Learn exactly when to switch and how it affects the grammar.",
           scriptOutline: [
             "Direct Parallel: Sie = Ningal / du = Nee",
@@ -539,11 +564,23 @@ export const MODULE_1: Module = {
         { id: "ex1-3-2", type: "multiple-choice", question: "You meet your professor for the first time. Which form should you use?", questionGerman: "Sie treffen Ihren Professor zum ersten Mal. Welche Form nutzen Sie?", options: ["Sie (formal)", "Du (informal)", "Either is fine", "No pronoun needed"], correctAnswer: "Sie (formal)", explanation: "Sie = formal 'you' (like Malayalam 'Ningal'). Use with strangers, bosses, and anyone older. When in doubt, use Sie!", xpReward: 10 },
         { id: "ex1-3-3", type: "multiple-choice", question: "It's 8 PM. You meet your neighbor. You say...?", questionGerman: "Es ist 20 Uhr. Sie treffen Ihren Nachbarn.", options: ["Guten Abend", "Gute Nacht", "Guten Morgen", "Guten Tag"], correctAnswer: "Guten Abend", explanation: "'Guten Abend' = good evening, used when meeting people in the evening. 'Gute Nacht' is only for bedtime!", xpReward: 10 },
         { id: "ex1-3-4", type: "matching", question: "Match the time to the correct greeting:", questionGerman: "Ordnen Sie die Uhrzeit der richtigen Begrüßung zu:", options: ["8:00 AM", "2:00 PM", "7:00 PM"], correctAnswer: ["Guten Morgen", "Guten Tag", "Guten Abend"], xpReward: 15 },
-        { id: "ex1-3-5", type: "fill-blank", question: "Complete: Guten _____, wie geht es Ihnen? (It's 3 PM)", questionGerman: "Ergänzen Sie: Guten _____, wie geht es Ihnen?", options: ["Tag", "Morgen", "Abend", "Nacht"], correctAnswer: "Tag", explanation: "'Guten Tag' covers noon to ~6 PM. Memory trick: Tag = day = daylight hours. Once the sun sets, switch to 'Guten Abend'.", xpReward: 10 },
+        { id: "ex1-3-5", type: "speaking", question: "At Berlin Hauptbahnhof, an officer looks up. Say aloud: 'Guten Tag, wie geht es Ihnen?'", questionGerman: "Sprechen Sie laut: 'Guten Tag, wie geht es Ihnen?'", correctAnswer: "Guten Tag, wie geht es Ihnen", explanation: "The full formal greeting. Emphasis on 'GU-ten TAG'. Practice this — you'll use it every day in Germany.", xpReward: 20 },
         { id: "ex1-3-6", type: "type-answer", question: "How do you say 'Goodbye' formally in German?", correctAnswer: "Auf Wiedersehen", explanation: "'Auf Wiedersehen' = formal goodbye. Literally 'until we see again'. Use with strangers or bosses.", xpReward: 10 },
         { id: "ex1-3-7", type: "ordering", question: "Put these greetings in order from morning to night:", questionGerman: "Bringen Sie die Grüße in die richtige Reihenfolge (Morgen bis Nacht):", options: ["Gute Nacht", "Guten Morgen", "Guten Abend", "Guten Tag"], correctAnswer: ["Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht"], xpReward: 20 },
-        { id: "ex1-3-8", type: "multiple-choice", question: "You walk into a small local bakery. What is the expected polite greeting?", questionGerman: "Sie gehen in eine kleine Bäckerei. Wie grüßen Sie?", options: ["Guten Tag", "Tschüss", "Gute Nacht", "Mahnzeit"], correctAnswer: "Guten Tag", explanation: "In Germany, when entering small shops, bakeries, or doctors' offices, it is polite and expected to say 'Guten Tag' or 'Hallo' to everyone, not just the staff. It's part of being 'höflich' (polite).", xpReward: 10 }
-      ],
+        { id: "ex1-3-8", type: "multiple-choice", question: "You walk into a small local bakery. What is the expected polite greeting?", questionGerman: "Sie gehen in eine kleine Bäckerei. Wie grüßen Sie?", options: ["Guten Tag", "Tschüss", "Gute Nacht", "Mahlzeit"], correctAnswer: "Guten Tag", explanation: "In Germany, when entering small shops, bakeries, or doctors' offices, it is polite and expected to say 'Guten Tag' or 'Hallo' to everyone, not just the staff. ('Mahlzeit!' is a different greeting — used around lunch time among colleagues.)", xpReward: 10 },
+        { id: "ex1-3-9", type: "matching", question: "Rapid fire: match each situation to du or Sie.", questionGerman: "Schnell: ordnen Sie jede Situation dem richtigen du oder Sie zu.", options: ["Your German professor", "The barista's 8-year-old daughter", "A police officer at a traffic stop", "Your new flatmate your age"], correctAnswer: ["Sie", "du", "Sie", "du"], explanation: "Rule of thumb: authority + strangers + work = Sie. Kids + close peers = du. When in doubt at 18+, start with Sie and let them offer du.", xpReward: 20 },
+        { id: "ex1-3-10", type: "fill-blank", question: "Your manager at the Pflegedienst asks 'Wie geht es Ihnen?' You answer 'Gut, danke! Und _____?'", questionGerman: "Ihr Chef fragt 'Wie geht es Ihnen?' Sie antworten 'Gut, danke! Und _____?'", options: ["Ihnen", "dir", "Sie", "du"], correctAnswer: "Ihnen", explanation: "The manager used 'Ihnen' (formal), so mirror it back: 'Und Ihnen?' Using 'dir' here would drop the register and feel rude. Always echo the formality they set.", xpReward: 15 },
+        { id: "ex1-3-11", type: "speaking", question: "In Munich, the default morning greeting is 'Guten Morgen.' But in Bavaria you'll also hear 'Grüß Gott'. Say it aloud.", questionGerman: "Sprechen Sie laut: 'Grüß Gott'", correctAnswer: "Grüß Gott", explanation: "'Grüß Gott' literally means 'greet God' — the Bavarian/Austrian regional default. Completely neutral, works all day. Hamburg and Northern Germany use 'Moin' instead. Kerala parallel: like 'namaskaaram' vs 'vanakkam'.", xpReward: 20 }
+      ,
+        {
+          id: "ex1-3-prod-dictation",
+          type: "dictation",
+          question: "Listen and type the A1 sentence you hear.",
+          audioUrl: "/audio/hoeren/module-01/ex1-3-prod-dictation.mp3",
+          correctAnswer: "Ich lerne Deutsch",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab1-3-1", german: "Hallo", english: "Hello", malayalam: "ഹലോ", pronunciation: "hah-loh", example: "Hallo, wie geht's?", exampleTranslation: "Hello, how are you?" },
         { id: "vocab1-3-2", german: "Guten Morgen", english: "Good morning", malayalam: "സുപ്രഭാതം", pronunciation: "goo-ten mor-gen", example: "Guten Morgen, Herr Müller!", exampleTranslation: "Good morning, Mr. Müller!" },
@@ -568,43 +605,43 @@ export const MODULE_1: Module = {
       xpReward: 120,
       storyScene: {
         setting: {
-          name: "Berlin Hostel Lobby",
-          sceneType: "cafe",
+          name: "Kuttan's Home, Thrissur — Cousin's Last Evening",
+          sceneType: "home",
           timeOfDay: "evening",
-          description: "Last evening at the Berlin hostel. Your new friends are gathered in the lobby. Tomorrow everyone leaves. Time to say goodbye properly.",
+          description: "Your cousin came home for Onam — ten days of sadya, banter, and surprise pop-quiz German lessons from him. Tonight is his last night. 5 AM flight to Munich tomorrow. The family is gathered. Time to say goodbye — in German.",
         },
         narrative: {
-          previousRecap: "You mastered greetings and had your first German conversations. Now comes the harder part — saying goodbye without being awkward!",
-          currentObjective: "Learn to say goodbye properly",
-          nextTeaser: "Next: your first full German conversation — putting EVERYTHING together!",
+          previousRecap: "You survived your first real classroom greetings. Now use it on family — your cousin wants to see your German before he flies back.",
+          currentObjective: "Say goodbye to your cousin and thank the family, mixing formal and informal registers",
+          nextTeaser: "Next: two German tourists get lost in Fort Kochi — time for your first real-world conversation with strangers.",
         },
         kuttanIntro: [
-          "Machane! Hostel lobby-il last evening aanu — ninte new friends okke naalae povum. Goodbye parayan padikkaam, but ivide vivaravum manners-um important aanu!",
-          "Germans-nu goodbye oru art aanu! 'Tschüss' casual-aanu, 'Auf Wiedersehen' formal — wrong one use cheythaal awkward aakum!",
-          "Plus, 'Danke' and 'Bitte' — ee randu words illathe Germany-il survive cheyyaan pattilla. Let's learn the polite way!",
+          "Machaane! Ente cousin-nte last evening at home. Naale Munich-lekku parakkukayaanu — 5 AM flight.",
+          "Avan test cheyyaan poyirikkukayaa — 'German-il goodbye paraya, Amma-kku Danke paraya, cheythu kaattu.' Pressure aanu!",
+          "Cousin-odu warm goodbye, Appachan-odu respectful, pinne Amma-kku heartfelt Danke for the sadya. Pokaam!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab1-4-1", encounterMoment: "The hostel receptionist says formally: 'Auf Wiedersehen! Gute Reise!' as an older guest checks out. You notice this is the formal goodbye.", contextSentence: "Auf Wiedersehen, bis Montag!" },
-          { vocabId: "vocab1-4-2", encounterMoment: "Lisa waves casually to a friend leaving: 'Tschüss! Mach's gut!' — the easy, friendly goodbye you'll use with everyone your age.", contextSentence: "Tschüss, mach's gut!" },
-          { vocabId: "vocab1-4-3", encounterMoment: "Marco hands you a Berlin fridge magnet as a gift. 'Danke!' you say instinctively. The magic word works in every language!", contextSentence: "Danke für die Hilfe!" },
-          { vocabId: "vocab1-4-4", encounterMoment: "You pass the salt to Yuki at dinner. 'Bitte!' you say, handing it over. She grins — you used it like a real German!", contextSentence: "Kann ich bitte einen Kaffee haben?" },
-          { vocabId: "vocab1-4-5", encounterMoment: "You accidentally bump into someone's chair getting up. 'Entschuldigung!' flies out of your mouth. The person smiles — no harm done.", contextSentence: "Entschuldigung, wo ist der Bahnhof?" },
-          { vocabId: "vocab1-4-6", encounterMoment: "Lisa helped you book your train ticket online. You feel extra grateful: 'Vielen Dank, Lisa!' — the upgraded version of thanks.", contextSentence: "Vielen Dank für alles!" },
+          { vocabId: "vocab1-4-1", encounterMoment: "Your cousin stacks his Goethe A1 books and hands them to you: 'Nee these venam. Auf Wiedersehen, kuttyy — formal because I'm proud of you.'", contextSentence: "Auf Wiedersehen, bis Montag!" },
+          { vocabId: "vocab1-4-2", encounterMoment: "His phone rings — a friend in Munich. He waves casually: 'Ja, ja, Tschüss!' and hangs up. Friends = Tschüss, no drama.", contextSentence: "Tschüss, mach's gut!" },
+          { vocabId: "vocab1-4-3", encounterMoment: "Amma passes you an extra piece of payasam. 'Danke, Amma!' you say, Germanified. She glows.", contextSentence: "Danke für die Hilfe!" },
+          { vocabId: "vocab1-4-4", encounterMoment: "Cousin slides his Munich apartment keys across the table to practice: 'Bitte — hier, bitte!' You repeat it, feeling the natural flow.", contextSentence: "Hier, bitte." },
+          { vocabId: "vocab1-4-5", encounterMoment: "You accidentally knock over Achan's cup of tea. 'Entschuldigung, Acha!' you gasp in German. He pretends not to understand — family comedy.", contextSentence: "Entschuldigung!" },
+          { vocabId: "vocab1-4-6", encounterMoment: "Cousin has gifted you his whole A1 exam guide. 'Vielen Dank, machaane!' you say, heartfelt. The 'Vielen' makes it bigger than just 'Danke'.", contextSentence: "Vielen Dank für alles!" },
         ],
         decisionPoints: [
           {
-            moment: "It's 11 PM. Lisa yawns and says she's heading to bed. Marco is staying up. How do you say goodbye to each?",
+            moment: "11 PM. Cousin stands up, yawning. '5 AM flight, da. I'm going to crash.' How do you say goodnight in German?",
             options: [
-              { text: "'Gute Nacht, Lisa!' to Lisa, 'Tschüss, bis morgen!' to Marco", isCorrect: true, response: "Lisa smiles: 'Gute Nacht! Schlaf gut!' Marco gives you a fist bump: 'Bis morgen, Freund!' You nailed both levels perfectly.", kuttanReaction: "Perfect machane! 'Gute Nacht' for someone going to SLEEP, 'Tschüss' for someone staying up — context is everything! 🌙" },
-              { text: "'Tschüss!' to both of them", isCorrect: false, response: "Lisa gives a small laugh: 'Nicht Tschüss — ich gehe schlafen! Sag Gute Nacht!' She's going to BED, not just leaving the room.", kuttanReaction: "Almost machane! Bedtime-nu 'Gute Nacht' aanu correct — 'Tschüss' is for people just leaving. Small difference, big impact! 😊" },
-              { text: "'Auf Wiedersehen' to both", isCorrect: false, response: "Marco chuckles: 'So formal! Wir sind doch Freunde!' — you're friends now, no need for the stiff goodbye.", kuttanReaction: "Enthaa machane, exam hall-il aano? Friends-odu 'Auf Wiedersehen' venda — 'Tschüss' mathiyaakum! Relax! 😂" },
+              { text: "Gute Nacht, machaane! Gute Reise!", isCorrect: true, response: "He hugs you hard. 'Adipoli German, kuttyy. Proud aanu.' He disappears into the guest room. Perfect — Gute Nacht for bedtime + Gute Reise because he's traveling.", kuttanReaction: "Wunderbar! Gute Nacht bedtime-nu, Gute Reise travel-nu. Combo perfect. Cousin-nu proud aayi! 🌙" },
+              { text: "Tschüss!", isCorrect: false, response: "He laughs: 'Tschüss is for when I LEAVE THE HOUSE, not for going to sleep! Gute Nacht aanu correct.' Light correction, no big deal.", kuttanReaction: "Almost! Bedtime = Gute Nacht mathram. Tschüss = leaving. Small but different! 😊" },
+              { text: "Auf Wiedersehen!", isCorrect: false, response: "He snorts: 'Cousin-odu Auf Wiedersehen?! Enthaa, visa interview aano? Gute Nacht enough!' Too stiff for your own cousin.", kuttanReaction: "Aiyyo! Cousin-odu Auf Wiedersehen venda — overly formal aanu! Gute Nacht aanu correct! 😂" },
             ],
           },
           {
-            moment: "The next morning, you check out. The receptionist hands you your deposit back. What's the polite exchange?",
+            moment: "5:30 AM at Kochi airport. Cousin has just checked in. He turns at the security gate for one last wave. What's your send-off?",
             options: [
-              { text: "'Vielen Dank! Auf Wiedersehen!' and smile", isCorrect: true, response: "The receptionist beams: 'Gern geschehen! Einen schönen Tag noch!' — you just had a perfect German polite exchange!", kuttanReaction: "Wunderbar! 'Vielen Dank' + 'Auf Wiedersehen' = professional AND warm! Receptionist impressed aanu! ✨" },
-              { text: "Just take the money and walk out", isCorrect: false, response: "The receptionist looks a bit disappointed. In Germany, not saying 'Danke' when receiving something is considered quite rude.", kuttanReaction: "Aiyyo! Germany-il 'Danke' parayaathe poyaal rude aanu machane! Always say thanks — it costs nothing! 😬" },
+              { text: "Vielen Dank für alles! Auf Wiedersehen, bis bald!", isCorrect: true, response: "He waves both hands over his head. 'Bis bald, kuttyy! Next Munich-il kaanaam — A1 pass cheyyathe varunillaa!' Then he's through security. You stand there, eyes stinging.", kuttanReaction: "Adipoli machaane! Vielen Dank + Auf Wiedersehen + Bis bald — triple combo for a big goodbye at an airport. This IS the German we're learning! ✨" },
+              { text: "Bye, da!", isCorrect: false, response: "He turns, wags a finger, mock-stern: 'Auf Deutsch! Nee paadikkunno illayo?!' You both laugh, but you missed the chance.", kuttanReaction: "Chance missed machaane! Real moment vannappo English venda. Vielen Dank parayaan marakkaruthu! 😅" },
             ],
           },
         ],
@@ -614,6 +651,7 @@ export const MODULE_1: Module = {
           id: "v1-4-1",
           title: "Saying Goodbye & Being Polite",
           duration: "10:45",
+          videoUrl: "/videos/generated/v1-4-1.mp4",
           description: "A compact polite-exit toolkit: the safest goodbyes, the Danke/Bitte exchange, and common beginner traps.",
           scriptOutline: [
             "Exit Toolkit: Auf Wiedersehen, Tschüss, Gute Nacht",
@@ -665,6 +703,7 @@ export const MODULE_1: Module = {
           id: "v1-4-2",
           title: "Survival Politeness: The Magic Words at Work",
           duration: "10:00",
+          videoUrl: "/videos/generated/v1-4-2.mp4",
           description: "Watch the magic words in action at 3 real-world spots: the bakery, the supermarket, and the street.",
           scriptOutline: [
             "The Bakery Pattern: Number + Item + bitte",
@@ -717,14 +756,28 @@ export const MODULE_1: Module = {
       exercises: [
         { id: "ex1-4-1", type: "fill-blank", question: "At a shop: _____ schön! (Thank you very much!)", questionGerman: "Ergänzen Sie: _____ schön!", options: ["Danke", "Bitte", "Guten", "Auf"], correctAnswer: "Danke", explanation: "'Danke schön' = thank you very much. You'll use this dozens of times daily in Germany!", xpReward: 10 },
         { id: "ex1-4-2", type: "multiple-choice", question: "You bumped into someone accidentally at the train station. What do you say?", questionGerman: "Sie sind am Bahnhof gegen jemanden gestoßen. Was sagen Sie?", options: ["Entschuldigung!", "Bitte!", "Guten Tag!", "Kein Problem!"], correctAnswer: "Entschuldigung!", explanation: "Use 'Entschuldigung' for small interruptions or accidental bumps. It works just like 'Excuse me' or 'Sorry'.", xpReward: 10 },
-        { id: "ex1-4-3", type: "fill-blank", question: "Complete the checkout phrase: Einen _____ Tag noch!", questionGerman: "Ergänzen Sie den Kassenspruch: Einen _____ Tag noch!", options: ["schönen", "guten", "bitte", "danke"], correctAnswer: "schönen", explanation: "'Einen schönen Tag noch!' (Have a nice day) is the pro way to leave a shop or supermarket.", xpReward: 10 }
-      ],
+        { id: "ex1-4-3", type: "fill-blank", question: "Complete the checkout phrase: Einen _____ Tag noch!", questionGerman: "Ergänzen Sie den Kassenspruch: Einen _____ Tag noch!", options: ["schönen", "guten", "bitte", "danke"], correctAnswer: "schönen", explanation: "'Einen schönen Tag noch!' (Have a nice day) is the pro way to leave a shop or supermarket.", xpReward: 10 },
+        { id: "ex1-4-4", type: "speaking", question: "At your hostel checkout, the receptionist hands back your deposit. Say aloud: 'Vielen Dank! Auf Wiedersehen!'", questionGerman: "Sprechen Sie laut: 'Vielen Dank! Auf Wiedersehen!'", correctAnswer: "Vielen Dank Auf Wiedersehen", explanation: "The warm-but-professional exit. Use this in shops, offices, and anywhere you want to sound put-together.", xpReward: 20 },
+        { id: "ex1-4-5", type: "multiple-choice", question: "You're leaving a bakery at 5 PM. What's the 'pro' goodbye that impresses the baker?", questionGerman: "Sie verlassen eine Bäckerei um 17 Uhr. Welcher Abschied klingt am besten?", options: ["Einen schönen Tag noch!", "Gute Nacht!", "Hallo!", "Auf Wiederhören!"], correctAnswer: "Einen schönen Tag noch!", explanation: "'Einen schönen Tag noch!' (Have a nice day still) is what regulars say. Staff reply 'Danke, ebenfalls!' It marks you as someone who knows the social code. 'Auf Wiederhören' is phone-only.", xpReward: 15 },
+        { id: "ex1-4-6", type: "matching", question: "Match each situation to the correct word to say:", questionGerman: "Verbinden Sie die Situation mit dem richtigen Wort:", options: ["Bumped into someone on the U-Bahn", "Received a gift from a friend", "Broke a friend's coffee mug"], correctAnswer: ["Entschuldigung", "Danke", "Es tut mir leid"], explanation: "Entschuldigung = small excuse-me. Danke = thanks. Es tut mir leid = a real apology for something significant. Germans use these three precisely — don't mix them.", xpReward: 20 },
+        { id: "ex1-4-7", type: "fill-blank", question: "Complete the sincere apology: Es tut mir _____, das war mein Fehler.", questionGerman: "Ergänzen Sie: Es tut mir _____, das war mein Fehler.", options: ["leid", "schade", "Danke", "bitte"], correctAnswer: "leid", explanation: "'Es tut mir leid' literally 'it does me sorrow' = 'I am sorry'. The full phrase for real apologies — save it for situations that deserve it.", xpReward: 15 },
+        { id: "ex1-4-8", type: "free-text", question: "You accidentally bumped someone's coffee at a café. Write a one-sentence polite apology in German.", questionGerman: "Schreiben Sie eine höfliche Entschuldigung auf Deutsch.", correctAnswer: ["Entschuldigung", "Oh, Entschuldigung", "Entschuldigung!", "Entschuldigung, das war mein Fehler", "Es tut mir leid", "Es tut mir leid!", "Es tut mir sehr leid", "Tut mir leid", "Oh, Entschuldigung!", "Oh, tut mir leid"], explanation: "'Entschuldigung' (excuse me) and 'Es tut mir leid' (I'm sorry) both work. Any variant with those words is natural.", xpReward: 25 }
+      ,
+        {
+          id: "ex1-4-prod-dictation",
+          type: "dictation",
+          question: "Listen and type the A1 sentence you hear.",
+          audioUrl: "/audio/hoeren/module-01/ex1-4-prod-dictation.mp3",
+          correctAnswer: "Ich lerne Deutsch",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab1-4-1", german: "Auf Wiedersehen", english: "Goodbye (formal)", malayalam: "വിട (ഔപചാരികം)", pronunciation: "owf vee-der-zey-en", example: "Auf Wiedersehen, bis Montag!", exampleTranslation: "Goodbye, see you Monday!" },
         { id: "vocab1-4-2", german: "Tschüss", english: "Bye (casual)", malayalam: "ബൈ", pronunciation: "chues", example: "Tschüss, mach's gut!", exampleTranslation: "Bye, take care!" },
         { id: "vocab1-4-3", german: "Danke", english: "Thank you", malayalam: "നന്ദി", pronunciation: "dahn-ke", example: "Danke für die Hilfe!", exampleTranslation: "Thank you for the help!" },
         { id: "vocab1-4-4", german: "Bitte", english: "Please / You're welcome", malayalam: "ദയവായി / ഒന്നുമില്ല", pronunciation: "bit-te", example: "Kann ich bitte einen Kaffee haben?", exampleTranslation: "Can I please have a coffee?" },
-        { id: "vocab1-4-5", german: "Entschuldigung", english: "Excuse me / Sorry", malayalam: "ക്ഷമിക്കണം", pronunciation: "ent-shool-di-goong", example: "Entschuldigung, wo ist der Bahnhof?", exampleTranslation: "Excuse me, where is the train station!" },
+        { id: "vocab1-4-5", german: "Entschuldigung", english: "Excuse me / Sorry", malayalam: "ക്ഷമിക്കണം", pronunciation: "ent-shool-di-goong", example: "Entschuldigung, wo ist der Bahnhof?", exampleTranslation: "Excuse me, where is the train station?" },
         { id: "vocab1-4-6", german: "Vielen Dank", english: "Many thanks", malayalam: "വളരെ നന്ദി", pronunciation: "fee-len dahnk", example: "Vielen Dank für alles!", exampleTranslation: "Many thanks for everything!" },
         { id: "vocab1-4-7", german: "Bis bald", english: "See you soon", malayalam: "ഉടനെ കാണാം", pronunciation: "bis bahlt", example: "Tschüss, bis bald!", exampleTranslation: "Bye, see you soon!" },
         { id: "vocab1-4-8", german: "Es tut mir leid", english: "I'm sorry", malayalam: "എനിക്ക് ദുഃഖമുണ്ട്", pronunciation: "es toot meer lyte", example: "Es tut mir leid, das war mein Fehler.", exampleTranslation: "I'm sorry, that was my mistake." },
@@ -739,48 +792,53 @@ export const MODULE_1: Module = {
       id: "1-5",
       title: "Your First Conversation",
       titleGerman: "Dein erstes Gespräch",
-      description: "Put it all together! Practice your first complete German conversation. Imagine you just landed at Frankfurt Airport and need to talk to people — let's get you ready!",
+      description: "Put it all together. A German tourist couple stops you in Fort Kochi to ask for directions — your first real German conversation with actual strangers. All from right here in Kerala.",
       duration: "30 min",
       xpReward: 200,
       storyScene: {
         setting: {
-          name: "Café Einstein, Berlin",
-          sceneType: "cafe",
+          name: "Fort Kochi — Saturday Afternoon",
+          sceneType: "street",
           timeOfDay: "afternoon",
-          description: "A cozy Berlin café. Fresh coffee, a friendly face at the next table. Time for your first real German conversation.",
+          description: "Saturday, 4 PM. You're at Fort Kochi with Kuttan — the beach walk, the Chinese fishing nets, tourists everywhere. A German couple in their 40s with a guidebook look lost. They glance your way. This is it — your first real conversation with actual Germans.",
         },
         narrative: {
-          previousRecap: "You learned to greet people and say goodbye. Now let's put it ALL together in a real conversation!",
-          currentObjective: "Have your first full conversation in German",
-          nextTeaser: "Next: mastering the formal vs informal balance — crucial for work and daily life...",
+          previousRecap: "You said goodbye to your cousin at Kochi airport. Now — a test with strangers, in your own city.",
+          currentObjective: "Help a German tourist couple using your first real German conversation",
+          nextTeaser: "Next: Frau Weber arranges a mock visa interview — formal register, maximum pressure.",
         },
         kuttanIntro: [
-          "Machane! Café-il keraam! Ivide oru conversation nadakkaan pokkunnu — nee ready aano?!",
-          "Ithaa nammude first German conversation! Café Einstein-il aaanu nammal. Coffee order cheyyaam, aarenkilum parichayapedaam!",
-          "Berlin café life start aakkaaam! Ee café-il nee someone-ne parichayapedaan pokkunnu. Let's go!",
+          "Machaane! Fort Kochi, Saturday evening — tourists everywhere!",
+          "Aa randu peru kaanunundo — maps kond pidichukondu lost aayi nilkkunnu. Accent keattaal German-aano enn thonnum.",
+          "Ithu ninte first real test aanu — classroom allaa, Frau Weber-um illa. Just go over and try!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab1-5-1", encounterMoment: "The café owner approaches your table formally: 'Guten Tag! Wie geht es Ihnen?' — the polite version.", contextSentence: "Guten Tag, wie geht es Ihnen?" },
-          { vocabId: "vocab1-5-2", encounterMoment: "A student at the next table leans over casually: 'Hey! Wie geht's?' — the friendly version.", contextSentence: "Hey, wie geht's?" },
-          { vocabId: "vocab1-5-3", encounterMoment: "You respond naturally: 'Gut, danke!' The student smiles — you nailed it!", contextSentence: "Mir geht es gut, danke!" },
-          { vocabId: "vocab1-5-7", encounterMoment: "Time to introduce yourself! 'Ich bin...' — say your name with confidence.", contextSentence: "Ich bin Rahul aus Kerala." },
-          { vocabId: "vocab1-5-9", encounterMoment: "The student asks: 'Wie heißt du?' — your chance to respond!", contextSentence: "Hallo! Wie heißt du?" },
-          { vocabId: "vocab1-5-10", encounterMoment: "You answer smoothly: 'Ich heiße...' — your first self-introduction in German!", contextSentence: "Ich heiße Maria." },
-          { vocabId: "vocab1-5-6", encounterMoment: "The waiter brings your coffee. You hand over money: 'Hier, bitte!'", contextSentence: "Hier, bitte — mein Pass." },
+          { vocabId: "vocab1-5-1", encounterMoment: "You walk over, smile, and lead with formality since they're strangers: 'Hallo, kann ich helfen? Wie geht es Ihnen?'", contextSentence: "Guten Tag, wie geht es Ihnen?" },
+          { vocabId: "vocab1-5-2", encounterMoment: "The wife nudges her husband. 'Oh, er spricht Deutsch! Wie geht's?' She instantly drops to casual — you're helping them.", contextSentence: "Hey, wie geht's?" },
+          { vocabId: "vocab1-5-3", encounterMoment: "You reply: 'Gut, danke!' And suddenly you're in a real German conversation in Fort Kochi.", contextSentence: "Gut, danke!" },
+          { vocabId: "vocab1-5-4", encounterMoment: "You remember the 'ask back' rule. 'Und Ihnen?' — polite version, because you don't know them.", contextSentence: "Gut, danke! Und Ihnen?" },
+          { vocabId: "vocab1-5-5", encounterMoment: "Their 10-year-old daughter Luna jumps in. You switch: 'Und dir?' — casual, because she's a kid.", contextSentence: "Super! Und dir?" },
+          { vocabId: "vocab1-5-6", encounterMoment: "You show them the walking route on your phone: 'Hier, bitte — die Straße ist hier.'", contextSentence: "Hier, bitte." },
+          { vocabId: "vocab1-5-7", encounterMoment: "The husband asks your name. You answer: 'Ich bin Kuttan — aus Thrissur.'", contextSentence: "Ich bin Kuttan aus Kerala." },
+          { vocabId: "vocab1-5-8", encounterMoment: "You ask formally back: 'Und wie heißen Sie?' Respect for strangers = Sie + wie heißen Sie.", contextSentence: "Wie heißen Sie?" },
+          { vocabId: "vocab1-5-9", encounterMoment: "To Luna (the kid) you ask casually: 'Und wie heißt du?'", contextSentence: "Wie heißt du?" },
+          { vocabId: "vocab1-5-10", encounterMoment: "The wife answers: 'Ich heiße Anna. Das ist Marco, mein Mann, und Luna.'", contextSentence: "Ich heiße Anna." },
+          { vocabId: "vocab1-5-11", encounterMoment: "Marco laughs: 'Mein Deutsch ist schlecht today — too much sun!' Anna nudges him playfully.", contextSentence: "Mir geht es schlecht." },
+          { vocabId: "vocab1-5-12", encounterMoment: "You ask: 'Wohin gehen Sie?' — where are you going? They point: the Chinese fishing nets.", contextSentence: "Wohin gehst du?" },
         ],
         decisionPoints: [
           {
-            moment: "The student says 'Ich bin Lisa! Woher kommst du?' (Where do you come from?) How do you answer?",
+            moment: "Marco says: 'Gibt es hier ein gutes Café?' — is there a good café nearby? You know Kashi Art Café is two streets away. How do you answer?",
             options: [
-              { text: "Ich komme aus Indien — aus Kerala!", isCorrect: true, response: "Lisa's eyes light up! 'Kerala! Ich liebe indisches Essen!' The conversation flows naturally!", kuttanReaction: "Adipoli machane! Perfect answer! She loves Indian food — nee already making friends! 🎉" },
-              { text: "India.", isCorrect: false, response: "Lisa nods but waits for more. A one-word answer doesn't keep the conversation going!", kuttanReaction: "Ath sheriyaa but try a full sentence machane! 'Ich komme aus...' enna parayan padikk! Conversation is about sharing! 💬" },
+              { text: "Ja! Kashi Café — hier, bitte. (points on map) Einen schönen Tag noch!", isCorrect: true, response: "Marco grins wide. 'Vielen Dank! Das war super nett.' He shakes your hand. Anna claps Luna on the shoulder: 'Siehst du? Kerala ist wunderbar!'", kuttanReaction: "Adipoli machaane! 'Hier, bitte' + map + 'schönen Tag noch' = complete German helper mode! You JUST had your first real German convo! 🎉" },
+              { text: "Yes, Kashi Café is right there.", isCorrect: false, response: "They smile and thank you — but Anna whispers something to Marco about missing a chance to practice. You walk away with a tiny pinch of regret.", kuttanReaction: "Missed chance machaane! Momentum English-lekku pokki. Try cheyyaan phayappedanda — 'Ja, hier bitte' mathram madhi! 😅" },
             ],
           },
           {
-            moment: "The café owner approaches: 'Noch etwas?' (Anything else?) You want to order an Apfelschorle. What do you say?",
+            moment: "As they're about to leave, Anna turns: 'Vielen Dank! Wie heißen Sie nochmal?' — she's asking your name again, to remember you.",
             options: [
-              { text: "Eine Apfelschorle, bitte!", isCorrect: true, response: "The owner smiles: 'Kommt sofort!' (Coming right away!) You just ordered like a local!", kuttanReaction: "WUNDERBAR! '[Item], bitte' — ee formula arinjaal Germany survive cheyyaam! 🍹" },
-              { text: "Apfelschorle.", isCorrect: false, response: "The owner nods but seems to expect a 'bitte'. In Germany, 'bitte' is the magic word!", kuttanReaction: "Almost! Just add 'bitte' at the end machane. 'Bitte' is like our 'please' — Germans expect it! 😊" },
+              { text: "Ich heiße Kuttan. Auf Wiedersehen!", isCorrect: true, response: "Anna pulls out a notebook and writes it down. 'Auf Wiedersehen, Kuttan! Bis bald vielleicht — wir kommen wieder nach Kochi.' Luna waves both hands.", kuttanReaction: "Wunderbar! Nee ore German person-nte notebook-il ethi! Ichiri kazhinjaal she might come back — real, lasting impression! ✨" },
+              { text: "Just smile and wave", isCorrect: false, response: "They wave and walk on. You realize you didn't use your name — they'll remember you as 'a helpful guy' instead of 'Kuttan from Kerala'.", kuttanReaction: "Name parayaan marakkaruthu machaane! Ich heiße [name] — oru word, big difference. Next time parayaam! 😊" },
             ],
           },
         ],
@@ -790,6 +848,7 @@ export const MODULE_1: Module = {
           id: "v1-5-1",
           title: "Putting It Together - Your First German Chat",
           duration: "10:00",
+          videoUrl: "/videos/generated/v1-5-1.mp4",
           description: "A complete conversation practice with Kerala context",
           scriptOutline: [
             "Opening: 'Time to use everything you've learned!'",
@@ -820,6 +879,7 @@ export const MODULE_1: Module = {
           id: "v1-5-2",
           title: "Real Situations — Airport, Café & First Meeting",
           duration: "10:00",
+          videoUrl: "/videos/generated/v1-5-2.mp4",
           description: "Practice conversations for three real-life scenarios you'll face in Germany",
           scriptOutline: [
             "Opening: 'Let's practice THREE real conversations you WILL need!'",
@@ -852,15 +912,24 @@ export const MODULE_1: Module = {
       ],
       exercises: [
         { id: "ex1-5-1", type: "ordering", question: "Put this conversation in the correct order:", questionGerman: "Bringen Sie das Gespräch in die richtige Reihenfolge:", options: ["Auch gut, danke!", "Guten Tag!", "Gut, danke! Und Ihnen?", "Hallo! Wie geht es Ihnen?"], correctAnswer: ["Guten Tag!", "Hallo! Wie geht es Ihnen?", "Gut, danke! Und Ihnen?", "Auch gut, danke!"], explanation: "A standard polite exchange: Greeting → How are you? → Answer and counter-question → Closing answer. This is the basic building block of any first meeting in Germany.", xpReward: 20 },
-        { id: "ex1-5-2", type: "free-text", question: "Someone says: 'Guten Tag! Wie heißen Sie?' Write your reply in German (e.g., 'Ich heiße...'):", questionGerman: "Jemand sagt: 'Guten Tag! Wie heißen Sie?' Antworten Sie auf Deutsch:", correctAnswer: "Ich heiße", explanation: "Start your reply with 'Ich heiße' followed by your name.", xpReward: 25 },
-        { id: "ex1-5-3", type: "fill-blank", question: "Complete: Wie geht es _____? (formal 'you')", questionGerman: "Ergänzen Sie: Wie geht es _____? (formell)", options: ["Ihnen", "dir", "du", "Sie"], correctAnswer: "Ihnen", explanation: "Formal: 'Wie geht es Ihnen?' (Ihnen = formal you). Informal: 'Wie geht es dir?' (dir = informal you). Just memorize these as fixed phrases for now.", xpReward: 10 },
-        { id: "ex1-5-4", type: "dictation", question: "Listen and type what you hear: (Imagine audio says 'Guten Tag')", questionGerman: "Hören Sie und tippen Sie, was Sie hören:", audioUrl: "/audio/hoeren/t1-h1-4.mp3", correctAnswer: "Guten Tag", explanation: "Spelling matters! Ensure nouns are capitalized.", xpReward: 30 },
+        { id: "ex1-5-2", type: "free-text", question: "You meet a German tourist. They ask: 'Guten Tag! Wie heißen Sie?' Introduce yourself as Kuttan (you can say 'Ich heiße Kuttan' or 'Mein Name ist Kuttan').", questionGerman: "Jemand sagt: 'Guten Tag! Wie heißen Sie?' Stellen Sie sich als Kuttan vor.", correctAnswer: ["Ich heiße Kuttan", "Ich bin Kuttan", "Mein Name ist Kuttan"], explanation: "Three equally correct ways: 'Ich heiße...', 'Ich bin...', or 'Mein Name ist...'. All three work in Germany.", xpReward: 25 },
+        { id: "ex1-5-3", type: "fill-blank", question: "Complete: Wie geht es _____? (formal 'you')", questionGerman: "Ergänzen Sie: Wie geht es _____? (formell)", options: ["Ihnen", "dir", "du", "Sie"], correctAnswer: "Ihnen", explanation: "'Ihnen' = dative form of 'Sie' (formal you). 'dir' = dative of 'du' (informal). You'll see this 'Sie→Ihnen' and 'du→dir' dative swap in many fixed phrases (Und Ihnen?, Mit dir, Wie geht es Ihnen/dir?). Learn one, unlock the rest.", xpReward: 10 },
         { id: "ex1-5-5", type: "matching", question: "Match the formal question to the informal version:", questionGerman: "Ordnen Sie die formelle Frage der informellen zu:", options: ["Wie geht es Ihnen?", "Wie heißen Sie?", "Und Ihnen?"], correctAnswer: ["Wie geht's dir?", "Wie heißt du?", "Und dir?"], explanation: "The formal 'Ihnen/Sie' changes to informal 'dir/du' among friends and peers. Matching these pairs is crucial for A1 communication.", xpReward: 15 },
         { id: "ex1-5-6", type: "ordering", question: "Put this café order in the correct sequence:", questionGerman: "Bringen Sie die Bestellung im Café in die richtige Reihenfolge:", options: ["Danke schön!", "Bitte schön! Zwei Euro fünfzig.", "Guten Tag! Einen Kaffee, bitte.", "Klein, bitte.", "Groß oder klein?"], correctAnswer: ["Guten Tag! Einen Kaffee, bitte.", "Groß oder klein?", "Klein, bitte.", "Bitte schön! Zwei Euro fünfzig.", "Danke schön!"], explanation: "A typical ordering flow: Greeting & Order → Request for size → Choosing size → Payment → Saying thanks. Essential for daily life!", xpReward: 20 },
-        { id: "ex1-5-7", type: "image-prompt", question: "What is this popular German drink (Apple juice + Sparkling water)? Tip: It ends with '-schorle'.", questionGerman: "Wie heißt dieses beliebte deutsche Getränk (Apfelsaft + Sprudel)?", imageUrl: "/images/apfelschorle.png", correctAnswer: "Apfelschorle", explanation: "Apfelschorle is the unofficial national drink of Germany! It's healthier than soda and perfect for a 'Durstlöscher' (thirst quencher). You'll see it everywhere!", xpReward: 25 },
+        { id: "ex1-5-7", type: "image-prompt", question: "What is this popular German drink? (Hint: Apfel = apple.)", questionGerman: "Wie heißt dieses beliebte deutsche Getränk?", imageUrl: "/images/apfelschorle.png", correctAnswer: ["Apfelschorle", "apfelschorle"], explanation: "Apfelschorle (apple juice + sparkling water) is the unofficial national drink of Germany! 'Schorle' = any juice mixed with sparkling water. Traubenschorle, Orangenschorle — same pattern.", xpReward: 25 },
         { id: "ex1-5-8", type: "fill-blank", question: "Someone introduces themselves: 'Hallo! Ich bin Anna. Und _____?'", questionGerman: "Jemand stellt sich vor: 'Hallo! Ich bin Anna. Und _____?'", options: ["du", "Sie", "ich", "wir"], correctAnswer: "du", explanation: "Context clue: 'Hallo' + first name = informal setting, so use 'du'. If they'd said 'Guten Tag, ich bin Frau Schmidt', you'd use 'Sie'.", xpReward: 10 },
-        { id: "ex1-5-9", type: "free-text", question: "You're at a restaurant. How do you politely order an Apfelschorle?", questionGerman: "Sie sind im Restaurant. Bestellen Sie höflich eine Apfelschorle:", correctAnswer: "Eine Apfelschorle, bitte", explanation: "The magic formula: '[Item name], bitte'. Simple, polite, and works 100% of the time in Germany!", xpReward: 25 }
-      ],
+        { id: "ex1-5-9", type: "free-text", question: "You're at a restaurant. How do you politely order an Apfelschorle?", questionGerman: "Sie sind im Restaurant. Bestellen Sie höflich eine Apfelschorle:", correctAnswer: ["Eine Apfelschorle, bitte", "Eine Apfelschorle bitte", "Ich möchte eine Apfelschorle, bitte", "Ich möchte eine Apfelschorle bitte", "Ich hätte gerne eine Apfelschorle", "Ich hätte gerne eine Apfelschorle, bitte"], explanation: "The magic formula: '[Item name], bitte'. Or the fancier 'Ich möchte... / Ich hätte gerne...'. All three work 100% of the time in Germany!", xpReward: 25 },
+        { id: "ex1-5-10", type: "speaking", question: "The Fort Kochi tourist couple approaches you. Say the full opener aloud: 'Hallo! Kann ich Ihnen helfen? Wie geht es Ihnen?'", questionGerman: "Sprechen Sie laut: 'Hallo! Kann ich Ihnen helfen? Wie geht es Ihnen?'", correctAnswer: "Hallo Kann ich Ihnen helfen Wie geht es Ihnen", explanation: "This is your first real German conversation opener — friendly but formal (you used Ihnen, not dir). Practice it aloud three times today. Muscle memory matters more than perfection.", xpReward: 30 }
+      ,
+        {
+          id: "ex1-5-prod-dictation",
+          type: "dictation",
+          question: "Listen and type the A1 sentence you hear.",
+          audioUrl: "/audio/hoeren/module-01/ex1-5-prod-dictation.mp3",
+          correctAnswer: "Ich lerne Deutsch",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab1-5-1", german: "Wie geht es Ihnen?", english: "How are you? (formal)", malayalam: "സുഖമാണോ? (ഔപചാരികം)", pronunciation: "vee gayt es ee-nen", example: "Guten Tag, wie geht es Ihnen?", exampleTranslation: "Good day, how are you?" },
         { id: "vocab1-5-2", german: "Wie geht's?", english: "How's it going? (casual)", malayalam: "എന്താ വിശേഷം?", pronunciation: "vee gayts", example: "Hey, wie geht's?", exampleTranslation: "Hey, how's it going?" },
@@ -883,47 +952,47 @@ export const MODULE_1: Module = {
       title: "Formal vs Informal",
       titleGerman: "Formell und Informell",
       description: "Master the art of formal and informal German — crucial for your first days in Germany! Get this wrong and it's like calling your boss 'machane' on day one.",
-      duration: "45 min",
+      duration: "60 min",
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Ausländerbehörde, Berlin",
+          name: "Goethe-Institut Kochi — Mock Visa Interview",
           sceneType: "office",
           timeOfDay: "morning",
-          description: "Ausländerbehörde, Berlin. Your ticket says A-251. The display reads A-247. This is NOT the place for casual German.",
+          description: "Goethe Kochi has set up a mock German consulate interview — practice for the real one coming in a few months. A visiting examiner, Herr Dr. Bauer from the Goethe Hauptstelle, plays the consular officer. Strict Sie. Formal German only. Your ticket is A-17. You wait in the corridor, palms sweaty.",
         },
         narrative: {
-          previousRecap: "You survived greetings, goodbyes, and your first conversations. Now it's time for the real test — formal German in an official setting!",
-          currentObjective: "Master formal German for official situations",
-          nextTeaser: "Module 1 complete! Next module: introducing yourself properly — name, age, country, and more!",
+          previousRecap: "You helped German tourists in Fort Kochi — real-world proof of your German. Now: a harder test in the controlled setting of Goethe Kochi.",
+          currentObjective: "Survive a mock visa interview using formal register only — Sie, Herr/Frau, full names",
+          nextTeaser: "Module 1 complete. Next: introducing yourself properly — name, age, country, nationality — the A1 interview classic.",
         },
         kuttanIntro: [
-          "Machane! Ausländerbehörde — ee word thanne scary aanu, but this is THE most important office for any foreigner in Germany. Calm aayirikkeda!",
-          "Ivide EVERYTHING formal aanu. 'Du' use cheythaal officer kalikku varum! 'Sie' mathram — like nammude 'Ningal' or 'Saar' basically.",
-          "Herr, Frau, Sie, Ihnen — ivide ee words ninte best friends aanu. Let me show you how to survive this place!",
+          "Machaane! Frau Weber paranju — Goethe Kochi-il mock visa interview. Herr Dr. Bauer vannirikkunnu, Hauptstelle-nte examiner.",
+          "Ivide EVERYTHING formal. 'Du' use cheythaal points poyi. 'Sie', 'Herr Dr. Bauer', full name — Malayalam-ile 'Ningal' + 'Saar' pole.",
+          "Scary alle, but ith practice aanu — real embassy trip vanaal ninakku confident aayi vara pattum. Pokaam!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab1-6-1", encounterMoment: "The display shows: 'Herr Kumar — Zimmer 3.' They call men 'Herr' + last name. You stand up nervously.", contextSentence: "Guten Tag, Herr Schmidt!" },
-          { vocabId: "vocab1-6-2", encounterMoment: "A woman ahead of you is called: 'Frau Meier, bitte!' — the formal address for women. No first names here, ever.", contextSentence: "Frau Meier, können Sie mir helfen?" },
-          { vocabId: "vocab1-6-3", encounterMoment: "A sign on the wall reads: 'Bitte bleiben Sie formell.' Please remain formal. Even the signs remind you this isn't a café!", contextSentence: "Die Sprache ist sehr formell." },
-          { vocabId: "vocab1-6-4", encounterMoment: "Two students in the waiting room chat casually using 'du' with each other. But the moment their number is called, they switch to 'Sie' mode. Informell outside, formell inside.", contextSentence: "Unter Freunden ist es informell." },
-          { vocabId: "vocab1-6-5", encounterMoment: "The officer nods approvingly when you say 'Guten Tag, könnten Sie mir bitte helfen?' Being höflich (polite) gets you faster service here.", contextSentence: "Sei immer höflich!" },
-          { vocabId: "vocab1-6-6", encounterMoment: "A frustrated man shouts at the counter. The officer's face turns cold: 'Das ist unhöflich.' Being rude here can delay your visa by weeks.", contextSentence: "Das war unhöflich." },
+          { vocabId: "vocab1-6-1", encounterMoment: "The receptionist calls: 'Herr Kumar — Raum 3.' You stand. Full last name. This room uses Herr + surname, nothing else.", contextSentence: "Guten Tag, Herr Schmidt!" },
+          { vocabId: "vocab1-6-2", encounterMoment: "A classmate before you — Reshma — was called 'Frau Menon.' No first names, no nicknames, no 'machaane'.", contextSentence: "Frau Meier, können Sie mir helfen?" },
+          { vocabId: "vocab1-6-3", encounterMoment: "A printed sign on Dr. Bauer's door reads: 'Bitte formell — auf Deutsch.' Stay formal. Stay in German. The rules are non-negotiable.", contextSentence: "Die Sprache ist sehr formell." },
+          { vocabId: "vocab1-6-4", encounterMoment: "Outside in the corridor, classmates chat informell with 'du'. The moment a name is called, they stand up and switch to Sie mode. Two registers, one building.", contextSentence: "Unter Freunden ist es informell." },
+          { vocabId: "vocab1-6-5", encounterMoment: "Dr. Bauer nods when you say 'Könnten Sie das bitte wiederholen?' (Could you please repeat?) — being höflich earns respect in German officialdom.", contextSentence: "Sei immer höflich!" },
+          { vocabId: "vocab1-6-6", encounterMoment: "Dr. Bauer hints that using 'du' with him would be unhöflich — rude. You keep Sie all the way through. This is what the real consulate will expect.", contextSentence: "Das war unhöflich." },
         ],
         decisionPoints: [
           {
-            moment: "You enter Zimmer 3. The officer behind the desk looks up. It's 9:30 AM. How do you greet them?",
+            moment: "You enter Raum 3. Dr. Bauer looks up over his glasses. It's 9:30 AM. How do you greet him?",
             options: [
-              { text: "Guten Morgen! Ich bin Herr Kumar. Ich habe einen Termin.", isCorrect: true, response: "The officer's stern face softens slightly. 'Guten Morgen, Herr Kumar. Bitte setzen Sie sich.' A perfect formal opening!", kuttanReaction: "PERFECT machane! 'Guten Morgen' + 'Herr' + last name + purpose = official greeting gold standard! Officer impressed aanu! 💯" },
-              { text: "Hallo! Ich bin Rahul. Wie geht's?", isCorrect: false, response: "The officer raises an eyebrow. 'Guten Morgen... Herr...?' They wait for your last name. Too casual for this setting!", kuttanReaction: "Aiyyo machane! Government office-il 'Hallo' and first name? That's like calling Collector-ne 'machane'! Sie + Herr/Frau use cheyyeda! 😬" },
-              { text: "Hey! Ich brauche mein Visum.", isCorrect: false, response: "The officer frowns deeply. 'Bitte sprechen Sie formell.' You just made this appointment twice as difficult.", kuttanReaction: "Enthayaalum machane! 'Hey' is for friends, NOT for the Ausländerbehörde! Formal aayille — ninte visa delay aakum! 🚫" },
+              { text: "Guten Morgen, Herr Dr. Bauer. Ich heiße Kuttan Kumar.", isCorrect: true, response: "He nods slightly, makes a tick mark on his paper. 'Guten Morgen, Herr Kumar. Bitte, setzen Sie sich.' You exhale — first hurdle cleared.", kuttanReaction: "PERFECT machaane! Guten Morgen + Herr + Dr. + last name + 'Ich heiße' — real consulate-level opener! Frau Weber proud aayirikkum! 💯" },
+              { text: "Hallo, ich bin Kuttan!", isCorrect: false, response: "Dr. Bauer's eyebrow goes up. 'Bitte, Herr Kumar — formell.' He makes a different mark on his paper. Feedback comes later: too casual.", kuttanReaction: "Aiyyo machaane! Official office-il Hallo + first name venda! Collector-ne 'machaane' ennu vili cheyyunna pole aakum athu! Sie + Herr! 😬" },
+              { text: "Namaste, Sir!", isCorrect: false, response: "Dr. Bauer smiles politely but firmly: 'Bitte auf Deutsch — das ist eine Prüfung auf Deutsch.' Back to German only.", kuttanReaction: "Warmth nalla sheri, but ithu German-nte practice aanu — Namaste venda, full German-il pokaam! Pattaalum try cheyyeda! 🇩🇪" },
             ],
           },
           {
-            moment: "Your application is processed. The officer says: 'Alles in Ordnung, Herr Kumar. Ihr Visum kommt in zwei Wochen.' How do you respond and leave?",
+            moment: "After the interview, Dr. Bauer says: 'Alles in Ordnung, Herr Kumar. Danke für Ihr Kommen.' How do you leave?",
             options: [
-              { text: "Vielen Dank! Auf Wiedersehen!", isCorrect: true, response: "The officer nods respectfully: 'Auf Wiedersehen, Herr Kumar. Einen schönen Tag noch.' You walk out with your head held high — you survived the Ausländerbehörde!", kuttanReaction: "Adipoli machane! 'Vielen Dank' + 'Auf Wiedersehen' = perfect formal exit! Nee already Germany-il survive cheyyum! 🇩🇪" },
-              { text: "Danke, tschüss!", isCorrect: false, response: "The officer's lip twitches. It works, but 'Tschüss' in a government office is like wearing lungi to a wedding — technically fine, but not ideal.", kuttanReaction: "Paravaala machane, but 'Auf Wiedersehen' aanu ivide better. 'Tschüss' is too casual for office setting! Level up cheyyeda! 😊" },
+              { text: "Vielen Dank, Herr Dr. Bauer. Auf Wiedersehen!", isCorrect: true, response: "He nods once. 'Auf Wiedersehen, Herr Kumar. Einen schönen Tag noch.' You walk out. In the corridor, Frau Weber catches your eye and gives you a thumbs-up.", kuttanReaction: "Adipoli machaane! Vielen Dank + Herr + Auf Wiedersehen = complete formal exit. Ithu real embassy-il valare perfect work cheyyum! 🇩🇪" },
+              { text: "Danke, tschüss!", isCorrect: false, response: "His mouth twitches. It works, but 'Tschüss' in a mock consulate is like wearing chappals to a job interview — technically fine, but not ideal. Feedback docks you a point.", kuttanReaction: "Almost! Office-il Auf Wiedersehen aanu better. Tschüss venda ivide — level up! 😊" },
             ],
           },
         ],
@@ -933,6 +1002,7 @@ export const MODULE_1: Module = {
           id: "v1-6-1",
           title: "Mastering Sie and Du in Real Life",
           duration: "10:00",
+          videoUrl: "/videos/generated/v1-6-1.mp4",
           description: "Navigate formal and informal German like a pro — at work, shops, and university",
           scriptOutline: [
             "Opening: 'You know Sie and Du exist — now let's master WHEN to switch!'",
@@ -960,11 +1030,31 @@ export const MODULE_1: Module = {
             "Avoid common formality mistakes in Germany"
           ],
           placeholderThumbnail: "/images/kaffee_kuchen.png",
+          richContent: [
+            {
+              type: "table",
+              title: "Goethe Kochi mock interview — Sie or du?",
+              headers: ["Person", "Use", "Safe A1 sentence"],
+              rows: [
+                ["Herr Dr. Bauer / official", "Sie", "Guten Morgen, Herr Dr. Bauer."],
+                ["Frau Weber / teacher", "Sie", "Können Sie das bitte wiederholen?"],
+                ["Classmate in the corridor", "du", "Wie geht es dir?"],
+                ["Unknown adult at an office", "Sie", "Können Sie mir bitte helfen?"]
+              ]
+            },
+            {
+              type: "note",
+              title: "Kerala bridge",
+              variant: "tip",
+              content: "Think of Sie as respectful 'ningal' mode. In official German spaces, start with Sie and switch to du only after the other person clearly offers it."
+            }
+          ]
         },
         {
           id: "v1-6-2",
           title: "Writing Formal vs Informal — Emails, Texts & More",
           duration: "10:00",
+          videoUrl: "/videos/generated/v1-6-2.mp4",
           description: "How to write German emails and messages — formal for your boss, casual for your friends",
           scriptOutline: [
             "Opening: 'Speaking formal German is one thing — WRITING it is another level!'",
@@ -1022,13 +1112,13 @@ export const MODULE_1: Module = {
         },
         {
           id: "ex1-6-4",
-          type: "multiple-choice",
-          question: "Your German colleague says 'Wir können uns duzen!' What does this mean?",
-          questionGerman: "Ihr deutscher Kollege sagt: 'Wir können uns duzen!' Was bedeutet das?",
-          options: ["They're offering to use the informal Du with each other", "They want you to leave", "They're asking your name", "They want to speak English instead"],
-          correctAnswer: "They're offering to use the informal Du with each other",
-          explanation: "'Duzen' = using Du, 'Siezen' = using Sie. The switch from Sie to Du is a mini-ceremony in German culture! The older/higher-ranking person offers it first.",
-          xpReward: 10
+          type: "fill-blank",
+          question: "Complete the formal email opening to a woman: 'Sehr _____ Frau Schmidt,'",
+          questionGerman: "Ergänzen Sie die formelle Anrede: 'Sehr _____ Frau Schmidt,'",
+          options: ["geehrte", "geehrter", "geehrten", "geehrtes"],
+          correctAnswer: "geehrte",
+          explanation: "Adjective agreement: 'Sehr geehrte Frau' (feminine) vs 'Sehr geehrter Herr' (masculine). A single letter changes the register — get it right or look careless.",
+          xpReward: 15
         },
         {
           id: "ex1-6-5",
@@ -1064,30 +1154,65 @@ export const MODULE_1: Module = {
           id: "ex1-6-8",
           type: "fill-blank",
           question: "Email to your boss: Sehr geehrter _____ Müller,",
+          questionGerman: "E-Mail an Ihren Chef: Sehr geehrter _____ Müller,",
           options: ["Herr", "Frau", "Du", "Lieber"],
           correctAnswer: "Herr",
-          explanation: "'Sehr geehrter Herr Müller' = formal email opening to a man. Use 'Frau' for a woman.",
+          explanation: "'Sehr geehrter Herr Müller' = formal email opening to a man. Note the -r on 'geehrter' (masculine). For a woman you'd write 'Sehr geehrte Frau ...'.",
           xpReward: 10
-        },
-        {
-          id: "ex1-6-9",
-          type: "multiple-choice",
-          question: "Your friend texts 'Können wir uns duzen?' What do they want?",
-          questionGerman: "Was bedeutet 'Können wir uns duzen?'",
-          options: ["Can we use 'du' with each other?", "Can we meet tomorrow?", "Can you help me?", "Can we speak English?"],
-          correctAnswer: "Can we use 'du' with each other?",
-          explanation: "'Duzen' = to use the informal 'du'. When someone asks this, they want to drop formality with you!",
-          xpReward: 15
         },
         {
           id: "ex1-6-10",
           type: "type-answer",
           question: "Say 'Please' and 'Thank you' in German.",
-          correctAnswer: "Bitte und Danke",
-          explanation: "'Bitte' = please, 'Danke' = thank you. The two most essential polite words in German!",
+          correctAnswer: ["Bitte und Danke", "Danke und Bitte", "Bitte, Danke", "Danke, Bitte", "Bitte. Danke.", "bitte und danke"],
+          explanation: "'Bitte' = please, 'Danke' = thank you. The two most essential polite words in German. Either order works — they're equally common.",
           xpReward: 35
+        },
+        {
+          id: "ex1-6-11",
+          type: "speaking",
+          question: "You enter the Ausländerbehörde at 9:30 AM. Say aloud, formal register: 'Guten Morgen, Herr Schmidt. Wie geht es Ihnen?'",
+          questionGerman: "Sprechen Sie laut, formell: 'Guten Morgen, Herr Schmidt. Wie geht es Ihnen?'",
+          correctAnswer: "Guten Morgen Herr Schmidt Wie geht es Ihnen",
+          explanation: "Formal register = slower, clearer pronunciation. 'IHnen' (not dir) is the key word — marks it as formal.",
+          xpReward: 25
+        },
+        {
+          id: "ex1-6-12",
+          type: "free-text",
+          question: "Write the first line of a formal email to your university supervisor, Professor Müller (female).",
+          questionGerman: "Schreiben Sie die erste Zeile einer formellen E-Mail an Frau Professor Müller.",
+          correctAnswer: [
+            "Sehr geehrte Frau Müller",
+            "Sehr geehrte Frau Müller,",
+            "Sehr geehrte Frau Professor Müller",
+            "Sehr geehrte Frau Professor Müller,",
+            "Sehr geehrte Frau Prof. Müller",
+            "Sehr geehrte Frau Prof. Müller,"
+          ],
+          explanation: "Three equally correct phrasings: 'Sehr geehrte Frau Müller', 'Sehr geehrte Frau Professor Müller', or 'Sehr geehrte Frau Prof. Müller'. Feminine gender → 'geehrte' (no -r).",
+          xpReward: 25
+        },
+        {
+          id: "ex1-6-13",
+          type: "multiple-choice",
+          question: "Your keyboard doesn't have the ü key. You need to type 'München' in an official form. What's the correct substitution?",
+          questionGerman: "Ihre Tastatur hat kein ü. Wie schreiben Sie 'München' richtig?",
+          options: ["Muenchen", "Munchen", "Muchen", "Mu:nchen"],
+          correctAnswer: "Muenchen",
+          explanation: "Standard substitutions: ü→ue, ö→oe, ä→ae, ß→ss. Germans accept 'Muenchen' on every official form. Never drop the umlaut (Munchen) — it changes meaning.",
+          xpReward: 15
         }
-      ],
+      ,
+        {
+          id: "ex1-6-prod-dictation",
+          type: "dictation",
+          question: "Listen and type the A1 sentence you hear.",
+          audioUrl: "/audio/hoeren/module-01/ex1-6-prod-dictation.mp3",
+          correctAnswer: "Ich lerne Deutsch",
+          explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab1-6-1", german: "Herr", english: "Mr.", malayalam: "ശ്രീ", pronunciation: "hair", example: "Guten Tag, Herr Schmidt!", exampleTranslation: "Good day, Mr. Schmidt!" },
         { id: "vocab1-6-2", german: "Frau", english: "Mrs. / Ms.", malayalam: "ശ്രീമതി", pronunciation: "frow", example: "Frau Meier, können Sie mir helfen?", exampleTranslation: "Mrs. Meier, can you help me?" },

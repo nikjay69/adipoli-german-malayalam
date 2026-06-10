@@ -195,7 +195,16 @@ export const MODULE_10: Module = {
           explanation: "Wunderbar! 'Meine Hand' because Hand is feminine. 'tut weh' because it's one hand.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex10-1-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Body Parts): 'Ich habe Kopfschmerzen und brauche einen Arzt.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe Kopfschmerzen und brauche einen Arzt.'",
+          correctAnswer: "Ich habe Kopfschmerzen und brauche einen Arzt",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab10-1-1", german: "der Kopf", english: "head", malayalam: "തല", pronunciation: "kopf", example: "Mein Kopf tut weh.", exampleTranslation: "My head hurts." },
         { id: "vocab10-1-2", german: "das Auge", english: "eye", malayalam: "കണ്ണ്", pronunciation: "ow-ge", example: "Ich habe blaue Augen.", exampleTranslation: "I have blue eyes." },
@@ -389,7 +398,16 @@ export const MODULE_10: Module = {
           explanation: "Excellent! 'Ich habe Fieber und Husten.' — nouns are capitalized and no articles are needed here.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex10-2-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (How Are You Feeling?): 'Ich habe Kopfschmerzen und brauche einen Arzt.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe Kopfschmerzen und brauche einen Arzt.'",
+          correctAnswer: "Ich habe Kopfschmerzen und brauche einen Arzt",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab10-2-1", german: "krank", english: "sick / ill", malayalam: "രോഗിയായ / അസുഖമുള്ള", pronunciation: "krahnk", example: "Ich bin heute krank.", exampleTranslation: "I am sick today." },
         { id: "vocab10-2-2", german: "gesund", english: "healthy", malayalam: "ആരോഗ്യമുള്ള", pronunciation: "ge-zoont", example: "Er ist wieder gesund.", exampleTranslation: "He is healthy again." },
@@ -581,7 +599,16 @@ export const MODULE_10: Module = {
           explanation: "Wunderbar! 'Wo ist die Arztpraxis?' — 'die' because it's feminine.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex10-3-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (At the Doctor): 'Ich habe Kopfschmerzen und brauche einen Arzt.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe Kopfschmerzen und brauche einen Arzt.'",
+          correctAnswer: "Ich habe Kopfschmerzen und brauche einen Arzt",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab10-3-1", german: "die Arztpraxis", english: "doctor's office", malayalam: "ഡോക്ടറുടെ ക്ലിനിക്ക്", pronunciation: "ahrts-prah-xis", example: "Ich muss zur Arztpraxis.", exampleTranslation: "I have to go to the doctor's office." },
         { id: "vocab10-3-2", german: "der Termin", english: "appointment", malayalam: "അപ്പോയിന്റ്മെന്റ്", pronunciation: "ter-meen", example: "Haben Sie einen Termin?", exampleTranslation: "Do you have an appointment?" },
@@ -778,7 +805,16 @@ export const MODULE_10: Module = {
           explanation: "Excellent! 'Ist es rezeptfrei?' — very important question at the pharmacy.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex10-4-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (At the Pharmacy): 'Ich habe Kopfschmerzen und brauche einen Arzt.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe Kopfschmerzen und brauche einen Arzt.'",
+          correctAnswer: "Ich habe Kopfschmerzen und brauche einen Arzt",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab10-4-1", german: "die Apotheke", english: "pharmacy", malayalam: "ഫാർമസി / മരുന്നുകട", pronunciation: "ah-po-tey-ke", example: "Die Apotheke ist neben dem Supermarkt.", exampleTranslation: "The pharmacy is next to the supermarket." },
         { id: "vocab10-4-2", german: "die Tablette", english: "tablet / pill", malayalam: "ഗുളിക", pronunciation: "tah-blet-te", example: "Nehmen Sie eine Tablette vor dem Essen.", exampleTranslation: "Take one tablet before eating." },
@@ -930,7 +966,16 @@ export const MODULE_10: Module = {
           explanation: "Wunderbar! 'Ich brauche Hilfe!' — direct and clear.",
           xpReward: 30
         }
-      ],
+      ,
+        {
+          id: "ex10-5-prod-speaking",
+          type: "speaking",
+          question: "Kuttan practice: Say aloud for this lesson (Emergency!): 'Ich habe Kopfschmerzen und brauche einen Arzt.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe Kopfschmerzen und brauche einen Arzt.'",
+          correctAnswer: "Ich habe Kopfschmerzen und brauche einen Arzt",
+          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          xpReward: 25
+        }],
       vocabulary: [
         { id: "vocab10-5-1", german: "der Notfall", english: "emergency", malayalam: "അടിയന്തരാവസ്ഥ", pronunciation: "noht-fahl", example: "Das ist ein Notfall!", exampleTranslation: "This is an emergency!" },
         { id: "vocab10-5-2", german: "der Krankenwagen", english: "ambulance", malayalam: "ആംബുലൻസ്", pronunciation: "krahn-ken-vah-gen", example: "Ich brauche einen Krankenwagen!", exampleTranslation: "I need an ambulance!" },
