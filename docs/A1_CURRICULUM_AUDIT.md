@@ -260,3 +260,57 @@ The course already has strong ambition and useful coverage.
 The most important scientific correction was to make sure learners are not forced into **A1+/A2 bridge grammar before core Goethe A1 exam prep**.
 
 That correction is now reflected in the curriculum logic and module framing.
+
+---
+
+## 2026-04-14 Update — Story arc + content audit findings
+
+### 1. Story arc inconsistency (fixed in session)
+
+`journey.ts` (A1 = Kerala → airport gate) and `narrative-arcs.ts` (had "First Days in Berlin" at M3) contradicted each other. M1 L1-3 through L1-6 and **all 11 lessons** of M2 + M3 were set in Germany — contradicting the intended arc.
+
+**Fixed:**
+- `narrative-arcs.ts` rewritten to Kerala-only A1.
+- M1 L1-3 → L1-6 storyScenes moved to Kerala (Goethe Kochi, home, Fort Kochi).
+- M2 L2-1 and L2-5 moved to Kerala (Goethe Kochi classroom + mock consulate).
+
+**Deferred:** M2 L2-2/L2-3/L2-4 and all M3 lessons. Setting-swap plan in `docs/M2_M3_SETTING_AUDIT.md`.
+
+### 2. Exercise type distribution below target
+
+Plan called for ≥30% production. M1 pre-fix reality: ~10% average.
+
+M1 post-fix (2026-04-14):
+
+| Lesson | Production ratio |
+|---|---|
+| L1-1 | 22% |
+| L1-2 | 36% |
+| L1-3 | 25% |
+| L1-4 | 25% |
+| L1-5 | 33% |
+| L1-6 | 25% |
+| **M1 avg** | **~28%** |
+
+L1-1 and L1-6 need one more production exercise each to fully clear the ≥30% floor.
+
+M2-M18 exercise distribution not yet audited.
+
+### 3. Correctness bugs fixed in M1
+
+- `module-01.ts:178` — gender bug "Das Universität" → "Die Universität" ✅
+- `module-01.ts:545` — typo "Mahnzeit" → "Mahlzeit" ✅
+- `module-01.ts:857` — broken audioUrl; converted to type-answer pending real dictation audio ✅
+
+### 4. Character system
+
+- **Kuttan** — protagonist/peer learner. Central.
+- **Appu** — demoted to silent UI mascot only (no dialogue, no plot beats). Previously he had dialogue in intros and decision points; now stripped out.
+- New characters established in bible: Amma/Achan, cousin in Munich (unseen), Frau Weber (Goethe Kochi), Akhil (classmate), the Malayali returnee, embassy officer.
+
+### Documents created in this pass
+
+- `docs/A1_STORY_BIBLE.md` — canonical arc, 8 beats, character bios, Kerala setting vocabulary
+- `docs/M1_AUDIT_REPORT.md` — per-lesson grade cards + fix list
+- `docs/M2_M3_SETTING_AUDIT.md` — setting swap plan for deferred lessons
+- Archived to `docs/archive/`: `AI_CINEMATIC_SCRIPTS.md` (superseded by V3/V4), `VIDEO_PIPELINE_V3.md` (V4 supersedes), `pilot-video-1-foundation.md` (pilot-specific)

@@ -1,5 +1,11 @@
 # Plan: Make the Course 10/10 — Scientifically Guaranteed A1 Success
 
+> **Canonical narrative arc:** see [`A1_STORY_BIBLE.md`](A1_STORY_BIBLE.md). A1 stays entirely in Kerala. The course ends with Kuttan flying to Germany. A2 is the arrival arc; B1 is the thriving arc.
+> **Active audits:** [`M1_AUDIT_REPORT.md`](M1_AUDIT_REPORT.md), [`M2_M3_SETTING_AUDIT.md`](M2_M3_SETTING_AUDIT.md).
+> **Exercise rules:** [`EXERCISE_QUALITY_RULES.md`](EXERCISE_QUALITY_RULES.md).
+> **Launch checklist:** [`LAUNCH_CHECKLIST.md`](LAUNCH_CHECKLIST.md).
+> **Doc index:** [`README.md`](README.md).
+
 ## Context
 Critical self-assessment rated the course 5.5/10 for actually passing Goethe A1. The app has great structure (18 modules, 690 exercises, 758 vocab, 8 games) but critical gaps in listening, writing, speaking, real instruction, spaced repetition, and production exercises. Goal: fix ALL gaps so a student using ONLY this course has >90% probability of acing Goethe A1.
 

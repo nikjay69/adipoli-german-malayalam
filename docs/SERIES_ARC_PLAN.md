@@ -2,6 +2,8 @@
 
 > Three arcs mapping to CEFR levels. Each arc is a chapter of Kuttan's journey.
 > The phone/app-based German course is the thread through everything.
+>
+> **Canonical story source:** [`A1_STORY_BIBLE.md`](A1_STORY_BIBLE.md) — character bios, setting vocabulary, milestones + struggles per arc beat. This video series arc and the bible agree on A1 = Kerala → Takeoff.
 
 ---
 

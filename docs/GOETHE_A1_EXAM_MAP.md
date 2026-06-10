@@ -260,4 +260,17 @@ Legend: ○ = minimal, ● = supports, ●● = significant, ●●● = primary
 
 ---
 
+## 2026-04-14 Update — Wortliste coverage audit needed
+
+Per-lesson Wortliste coverage has **not been systematically audited.** Spot check on M1 Lesson 1-1 surfaced that it teaches words NOT on the Goethe A1 Wortliste (Feierabend, Ausbildung, Studium, Chance) while core A1 words (Hallo, Danke, Bitte, ja, nein) don't appear until L1-3 or L1-4.
+
+**Action item:** Add a per-lesson Wortliste coverage column to the mapping tables above. For each module, list:
+- Words on Wortliste that are taught in that module
+- Words on Wortliste that are missing (and should be covered by this point in the course sequence)
+- Words taught that are NOT on Wortliste (candidates for removal or justification)
+
+Follow-up task — not addressed in the 2026-04-14 pass.
+
+---
+
 *This document should be updated as gaps are closed. Mark items ✅ when implemented.*

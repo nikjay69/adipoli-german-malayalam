@@ -35,3 +35,31 @@ Before adding any exercise, ask:
 > "Would a student groan and skip this? Or would they actually think?"
 
 If they'd groan, delete it.
+
+---
+
+## 2026-04-14 Update — Mandatory exercise type distribution
+
+Per-lesson distribution target (for 8 exercises):
+
+| Type | Target count | Why |
+|---|---|---|
+| multiple-choice | ≤ 2 | Recognition only, low effort |
+| fill-blank | ≤ 1 | Guided production |
+| matching / ordering | ≤ 1 | Organizational, light cognitive load |
+| **speaking** | **≥ 2** | Production — the weakest skill in pre-launch code |
+| **free-text / type-answer** | **≥ 1** | Production — writing the German word/phrase |
+| **dictation / listen-and-identify** | **≥ 1** | Listening comprehension, the 25% Hören block |
+
+**Hard floor: ≥ 3 production exercises per lesson.** Any lesson with < 3 production exercises is below launch grade.
+
+M1 audit (2026-04-14): 5/6 M1 lessons were below this floor before fixes. After the P0+P1 pass, average production ratio ~28% (target ≥30%).
+
+## Story tie-in requirement
+
+Every exercise's `question` field should reference the lesson's `storyScene.setting` or a recurring character from `docs/A1_STORY_BIBLE.md`.
+
+Bad: *"How do you say 'beautiful' in German?"*
+Good: *"At Goethe Kochi, Frau Weber points to a poster and says: 'schön!' What does she mean?"*
+
+Low-cost retrofit — change only the question stem, keep the answer options. Turns a worksheet into a story beat.
