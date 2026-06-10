@@ -1,0 +1,215 @@
+  ⟳ compacting context…
+  ┊ review diff
+a/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1554.md → b/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1554.md
+@@ -0,0 +1,980 @@
++# Adipoli German — Vision-to-SMART Reset Plan
++
++Generated: 2026-05-31T15:54:39+02:00
++Workdir: `/shared/german-course`
++
++This is the iteration-3 reset plan after reading Boss-written vision/product docs, recent QC loop outputs, source routes, mission data, content/audio structure, git state, and QA scripts.
++
++This is not a UI polish plan. This is the course/product contract agents must execute against.
++
++Evidence used before writing:
++- Boss/product docs synthesized: `docs/README.md`, `COURSE_OPERATING_BRIEF_2026-05-19.md`, `PRODUCT_DIRECTION_RESET_2026-05-20.md`, `WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`, `AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md`, `PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md`, `COURSE_GOALS_ENGAGEMENT_RETENTION_2026-05-20.md`, `COURSE_AUTOMATION_MARKETING_STRATEGY_2026-05-19.md`, `A1_STORY_BIBLE.md`, `COURSE_PLAN_10_10.md`, `GOETHE_A1_EXAM_MAP.md`, `EXERCISE_QUALITY_RULES.md`, `MODULE_BLUEPRINTS.md`, `SCRIPT_ARCHITECTURE.md`, `SERIES_ARC_PLAN.md`, `SERIES_FULL_SCRIPT.md`, `M1_AUDIT_REPORT.md`, `M2_M3_SETTING_AUDIT.md`, `GAME_AUDIT.md`, `LAUNCH_CHECKLIST.md`, `COURSE_AGENT_PRODUCT_QA_SYSTEM_2026-05-20.md`, `MODULE_PRODUCT_SCORECARD_TEMPLATE.md`.
++- Recent QC/run outputs inspected: `GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`, latest 6h M1/M2 immersive-phone-first checkpoint, existing `adipoli-vision-smart-plan-20260531-1547.md`, and gold-slice/page-start QA evidence.
++- Source inspected: `src/app/page.tsx`, `src/app/intro/page.tsx`, `src/app/learn/page.tsx`, `src/app/learn/[moduleId]/page.tsx`, all mission routes under `src/app/missions/`, `src/app/missions/module-2/_components/MissionUI.tsx`, `src/lib/missions/module1.ts`, `src/lib/missions/module2.ts`, and enough of `src/lib/content/modules/` to confirm the 18-module content backbone still exists.
++- Current source inventory: 18 module files, 8 mission routes, 23 mission MP3s, 134 Hören MP3s, 25 video files, QA scripts including `qa_mission_pilot.py`, `qa_gold_slice_first_journey.mjs`, `qa_intro_start_path.mjs`, `qa_module2_production_mobile.mjs`.
++- Git state: branch `adipoli-page-by-page-reset-20260523-1802`, commit `b201d05`, 262 dirty/untracked entries. Not safe to commit or push as one blob.
++- Checks run in this iteration:
++  - PASS: `npx tsc --noEmit --pretty false --incremental false`
++  - PASS: local HTTP 200 for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, `/missions/module-1/greet-frau-weber`, `/missions/module-2/self-intro`
++  - PASS: `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs` — 8 M1/M2 voice-first missions, no legacy builders on reviewed path, mobile overflow/chrome checks pass.
++  - FAIL/stale: `python3 scripts/qa_mission_pilot.py` fails because intro/start-path source expectations are stale.
++  - FAIL/stale: `node scripts/qa_gold_slice_first_journey.mjs` fails because it expects older intro copy/CTA: `Greet Frau Weber.` / `Start listening`, while current `/intro` says `Your first German moment.` / `Begin lesson 1`.
++  - FAIL/stale: `node scripts/qa_intro_start_path.mjs` expects root `/` to route directly to first mission copy, while current root is a compact course introduction with CTA to `/intro`.
++
++## 1. Vision reconstruction
++
++Boss is trying to build a complete paid web-app course, not a German content folder and not a pretty dashboard.
++
++Plain version:
++
++Adipoli German should take a Malayali adult beginner from zero German to a confident Goethe A1 attempt through short, phone-first story missions. The learner follows Kuttan’s Kerala-to-Germany pressure, but the learner is not passive. Every useful unit should make the student hear German, understand it, answer aloud, repair one real mistake, write/type only when exam-relevant, and leave with a visible ability win.
++
++The course should feel like:
++- Kerala-rooted and emotionally familiar, not generic German-app content.
++- Goethe A1 serious, not random phrase learning.
++- Adult-safe and useful, not childish mascot entertainment.
++- Audio-first and production-first, not text-first dashboards.
++- Cheap enough to scale, but polished enough to trust.
++- Self-sufficient: the learner knows what to do next without Boss explaining the product.
++
++Core product promise:
++
++“German A1 for Malayalis through short story missions: hear it, say it, fix it, use it, and prepare for Goethe.”
++
++Hard interpretation:
++
++If the app does not create a usable listening/speaking/writing ability in the learner, it is not matching Boss’s vision no matter how nice the UI looks.
++
++## 2. Non-negotiables
++
++These are hard rules. If a feature conflicts with them, cut or demote the feature.
++
++1. Malayali/Kerala identity
++- A1 physically happens in Kerala.
++- Kuttan stays in Kerala during A1.
++- Germany appears as goal, dream, video call, exam rehearsal, or learner imagination — not casual physical placement.
++- Manglish is a learning bridge, not a joke. It should help learners notice Malayalam/English transfer mistakes.
++- Kerala context must be functional: classroom, Goethe Kochi, family pressure, documentation anxiety, exam coaching, phone calls, cafes, transport, home scenes.
++
++2. Goethe A1 seriousness
++- Every module needs a clear A1 ability win.
++- Hören, Lesen, Schreiben, and Sprechen must all be practiced.
++- The final course must map to Goethe A1 tasks: listening prompts, notices, forms, short messages, self-introduction, spelling, asking/answering questions, requests, appointments, prices, times, numbers, and everyday survival language.
++- Entertainment is allowed only when it supports a Goethe/survival skill.
++
++3. Adult-safe tone
++- Kuttan can be warm, relatable, and funny.
++- Kuttan/Appu/mascot elements cannot make the paid adult course feel childish.
++- Public naming is still product-risky. “Kuttan” is culturally warm, but an adult-facing public name like Arun/Kiran may sell better, with Kuttan retained as a home nickname if Boss approves.
++
++4. Real audio
++- No browser SpeechSynthesis for reviewable German.
++- Mission audio must be real files and browser-verifiable: file exists, HTTP 200, audio content type, duration/progress visible, browser readyState clean.
++- If the learner must answer after hearing German, the UI must unlock on actual audio completion, not fake “heard” clicks.
++- Technical playback proof is not accent proof. Human/native accent review is separate before paid launch.
++
++5. Production-first learning
++- Recognition alone is not enough.
++- A mission must force output: answer aloud, write a tiny line, fill a form, spell a name, repair a mistake, or complete a Goethe-style response.
+… omitted 902 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md
+@@ -103,227 +103,46 @@
+ ===== ITERATION 2 END 2026-05-31T15:48:00+02:00 rc=0 =====
+ ===== ITERATION 2 END 2026-05-31T15:51:15+02:00 rc=0 =====
+ Output: /shared/german-course/GermanCourse_QC/continuous-4h-vision-plan-20260531-153735-vision-smart-plan/iteration-02.log
+-Git status after iteration 2:
+- M docs/A1_CURRICULUM_AUDIT.md
+- D docs/AI_CINEMATIC_SCRIPTS.md
+- D docs/AI_CINEMATIC_SCRIPTS_V3.md
+- M docs/AI_CINEMATIC_SCRIPTS_V4.md
+- M docs/AI_GENERATION_COSTS.md
+- M docs/AI_GENERATION_LOG.md
+- D docs/CINEMATIC_VIDEO_SERIES.md
+- M docs/COURSE_PLAN_10_10.md
+- M docs/EXERCISE_QUALITY_RULES.md
+- M docs/GOETHE_A1_EXAM_MAP.md
+- M docs/LESSON_BLUEPRINTS_PRIORITY.md
+- M docs/MODULE_BLUEPRINTS.md
+- M docs/SCRIPT_ARCHITECTURE.md
+- M docs/SERIES_ARC_PLAN.md
+- M docs/SERIES_FULL_SCRIPT.md
+- D docs/VIDEO_PIPELINE_V3.md
+- D docs/pilot-video-1-foundation.md
+- M docs/scripts/v1-2-2_FULL_SCRIPT.md
+- M docs/scripts/v1-4-2_FULL_SCRIPT.md
+- M docs/scripts/v1-5-2_FULL_SCRIPT.md
+- M docs/scripts/v1-6-1_FULL_SCRIPT.md
+- M docs/scripts/v2-2-1_FULL_SCRIPT.md
+- M package-lock.json
+- M package.json
+- M public/sw.js
+- D scripts/build-100-prompts.py
+- M scripts/cinematic-arc.json
+- A scripts/qa_mission_pilot.py
+- M src/app/auth/callback/page.tsx
+- M src/app/auth/login/page.tsx
+- M src/app/auth/signup/page.tsx
+- M src/app/error.tsx
+- M src/app/games/article-blitz/page.tsx
+- M src/app/games/dialogue-dash/page.tsx
+- M src/app/games/fill-the-gap/page.tsx
+- M src/app/games/food-order/page.tsx
+- M src/app/games/greeting-time/page.tsx
+- M src/app/games/listen-act/page.tsx
+- M src/app/games/number-blitz/page.tsx
+- M src/app/games/page.tsx
+- M src/app/games/sentence-builder/page.tsx
+- M src/app/games/verb-rush/page.tsx
+- D src/app/games/word-match/page.tsx
+- M src/app/intro/page.tsx
+- M src/app/landing/page.tsx
+- M src/app/layout.tsx
+- M src/app/learn/[moduleId]/[lessonId]/page.tsx
+- M src/app/learn/[moduleId]/page.tsx
+- M src/app/learn/page.tsx
+- A src/app/missions/module-2/_components/MissionUI.tsx
+- A src/app/missions/module-2/final-self-intro/page.tsx
+- A src/app/missions/module-2/from-kerala/page.tsx
+- A src/app/missions/module-2/job-languages/page.tsx
+- A src/app/missions/module-2/self-intro/page.tsx
+- A src/app/missions/module-2/spell-name/page.tsx
+- M src/app/not-found.tsx
+- M src/app/onboarding/page.tsx
+- M src/app/page.tsx
+- M src/app/plan/page.tsx
+- M src/app/play/[moduleId]/[lessonId]/page.tsx
+- M src/app/practice/chat/page.tsx
+- M src/app/practice/conversation/page.tsx
+- M src/app/practice/intro/page.tsx
+- M src/app/practice/page.tsx
+- M src/app/practice/pronunciation/page.tsx
+- M src/app/practice/review/page.tsx
+- M src/app/practice/shadowing/page.tsx
+- M src/app/practice/speak/page.tsx
+- M src/app/practice/write/page.tsx
+- M src/app/pricing/page.tsx
+- M src/app/privacy/page.tsx
+- M src/app/profile/page.tsx
+- M src/app/scripts/[moduleId]/page.tsx
+- M src/app/scripts/page.tsx
+… omitted 189 diff line(s) across 1 additional file(s)/section(s)
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md
+@@ -143,24 +143,4 @@
+ - Next iteration focus:
+   - Patch stale start-path QA to the chosen contract, then browser-prove `/` → `/intro` → first M1 audio mission before building Module 3.
+ ===== ITERATION 3 END 2026-05-31T15:54:39+02:00 rc=0 =====
+-?? scripts/output/module-15.script.md
+-?? scripts/output/module-16.script.md
+-?? scripts/output/module-17.script.md
+-?? scripts/output/module-18.script.md
+-?? scripts/output/nav-audit/
+-?? scripts/output/playthrough/
+-?? scripts/output/tts-test/
+-?? scripts/parse_script.py
+-?? scripts/playthrough-ext.mjs
+-?? scripts/playthrough.mjs
+-?? scripts/props/
+-?? scripts/qa_completed_ability_landings.mjs
+-?? scripts/qa_direct_final_sequence_status.mjs
+-?? scripts/qa_gold_slice_first_journey.mjs
+-?? scripts/qa_intro_start_path.mjs
+-?? scripts/qa_module2_production_mobile.mjs
+-?? scripts/render-video.ts
+-?? scripts/render_guide.sh
+-?? scripts/repair_holdouts.py
+-?? scripts/review-template.html
+ 
+
+session_id: 20260531_160015_aeed68
+Done.
+
+Final plan:
+`/shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1554.md`
+
+Checkpoint updated:
+`/shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`
+
+Verification run:
+- PASS: `npx tsc --noEmit --pretty false --incremental false`
+- PASS: local HTTP 200 for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, M1/M2 mission routes
+- PASS: `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs`
+- FAIL/stale: `python3 scripts/qa_mission_pilot.py`
+- FAIL/stale: `node scripts/qa_gold_slice_first_journey.mjs`
+- FAIL/stale: `node scripts/qa_intro_start_path.mjs`
+
+Blunt takeaway:
+M1/M2 mission direction is real and technically better than before. The trust gap is now source/QA contract mismatch on the first path, not lack of a plan.
+
+Next step: Patch start-path QA contract, 45m.

@@ -1,0 +1,33 @@
+
+session_id: 20260531_191337_787753
+Final plan:
+`/shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md`
+
+Top 5 plan bullets:
+1. Adipoli = Kerala-rooted Goethe A1 mission coach, not dashboard/script pile.
+2. Core loop = scene → real German audio → learner output → repair → ability win → next pull.
+3. Preserve M1/M2 mission direction; stop polishing containers.
+4. Fix stale QA before any more product claims.
+5. Scale next to Module 2 gold path, then Modules 3/14/17/18 and course-wide production/audio floors.
+
+First 48h build lane:
+- Freeze git/QA baseline.
+- Patch stale QA to current `/` → `/intro` → first M1 mission contract.
+- Browser-prove first path with audio playback/state evidence.
+- Verify Module 1 sequence and Module 2 gold path.
+- Run production/audio/canon inventories.
+- End with PASS/WEAK/FAIL report, not vibes.
+
+Evidence read/checked:
+- Checkpoint: `adipoli-4h-vision-plan-checkpoint.md`
+- Latest continuous logs through iteration 35
+- Final plan file above
+- Git: branch `adipoli-page-by-page-reset-20260523-1802`, commit `b201d05`, 262 dirty/untracked entries
+- Plan evidence: `tsc` pass, M1/M2 route 200s, M1/M2 mobile mission QA pass, `qa_mission_pilot.py` still stale-fails on old intro/start-path snippets
+
+Boss decisions needed:
+1. Beta scope: M1/M2 first, or wait for all 18 modules?
+2. Public name: keep Kuttan, or use Arun/Kiran publicly?
+3. Audio bar: generated audio OK for beta, or human/native review first?
+
+Next step: Fix stale QA harness, 2h.

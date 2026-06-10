@@ -1,0 +1,86 @@
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md → b//shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md
+@@ -1,8 +1,8 @@
+ # Adipoli German — vision-to-SMART execution plan
+ 
+-Generated: 2026-05-31 19:09 Europe/Berlin
++Generated: 2026-05-31 19:12 Europe/Berlin
+ Workdir: `/shared/german-course`
+-Loop: 4h continuous vision reset, iteration 34 / hard-stop final synthesis
++Loop: 4h continuous vision reset, iteration 35 / hard-stop final synthesis
+ 
+ This is the execution contract after Boss said he is losing faith. It is not another loose strategy doc.
+ 
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md → b//shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md
+@@ -41,7 +41,7 @@
+ - Audio/media structure: `public/audio/missions/`, `public/audio/hoeren/`, `public/audio/tts/`, `public/videos/`
+ - QA scripts: `scripts/qa_mission_pilot.py`, `scripts/qa_intro_start_path.mjs`, `scripts/qa_gold_slice_first_journey.mjs`, `scripts/qa_module2_production_mobile.mjs`
+ 
+-Fresh iteration-34 final verification:
++Fresh iteration-35 final verification:
+ - Time checked: `2026-05-31T19:09:14+02:00`.
+ - Branch: `adipoli-page-by-page-reset-20260523-1802`.
+ - Commit: `b201d05`.
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md → b//shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md
+@@ -42,7 +42,7 @@
+ - QA scripts: `scripts/qa_mission_pilot.py`, `scripts/qa_intro_start_path.mjs`, `scripts/qa_gold_slice_first_journey.mjs`, `scripts/qa_module2_production_mobile.mjs`
+ 
+ Fresh iteration-35 final verification:
+-- Time checked: `2026-05-31T19:09:14+02:00`.
++- Time checked: `2026-05-31T19:12:11+02:00`.
+ - Branch: `adipoli-page-by-page-reset-20260523-1802`.
+ - Commit: `b201d05`.
+ - Dirty/untracked status entries: `262`. Do not commit or push this as one blob.
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md → b//shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md
+@@ -57,7 +57,7 @@
+ - `python3 scripts/qa_mission_pilot.py`: partial PASS then FAIL. Custom audio, opening text budget, visible meta-label bans, compact choice subtitles, no-dead-button choice flow, compact repair explainer, and scene-copy checks pass. It still fails on stale intro/start-path snippets: `Greet Frau Weber.`, `Guten Morgen, Frau Weber.`, `Start listening <ArrowRight`, `FIRST_MISSION_PATH`, and `?start=listen`.
+ - Earlier loop evidence already captured in the checkpoint: browser click proof `/` -> `/intro` -> first M1 mission; first-mission audio proof with `readyState=4`, duration/progress movement, `error=null`; browser console clean.
+ - Iteration 33 re-run: `python3 scripts/qa_mission_pilot.py` still fails only on stale intro/start-path snippets after audio/text/meta/choice/repair/scene checks pass.
+-- Iteration 34 hard-stop refresh: branch/commit/dirty count and diff scale rechecked; unchanged at branch `adipoli-page-by-page-reset-20260523-1802`, commit `b201d05`, `262` dirty/untracked entries, 113 changed tracked files excluding `GermanCourse_QC/`, `40117 insertions(+)`, `12439 deletions(-)`.
++- Iteration 35 hard-stop refresh: branch/commit/dirty count rechecked; unchanged at branch `adipoli-page-by-page-reset-20260523-1802`, commit `b201d05`, `262` dirty/untracked entries. No product recommendation changed after the 19:09 final synthesis.
+ - Latest confirmed M1/M2 mobile mission QA from this loop: `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs` passes all 8 M1/M2 voice-first mobile missions.
+ - Current conclusion did not change: first-path/M1/M2 direction is worth preserving; trust is blocked by stale QA, incomplete mission coverage beyond M2, and unproven course-wide production/audio floors.
+ 
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md → b//shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md
+@@ -741,7 +741,7 @@
+ - More than 2 WEAK scores means “promising but not enough,” not “ready.”
+ - Stale QA or missing evidence is a trust FAIL, even if the route looks fine.
+ 
+-## Final iteration 34 addendum
++## Final iteration 35 addendum
+ 
+ No product recommendation changed at hard stop. The repeated evidence says the same thing:
+ - preserve the current mission-first M1/M2 direction;
+
+session_id: 20260531_191134_202b96
+Done.
+
+Final artifact:
+`/shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md`
+
+Checkpoint updated:
+`/shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`
+
+Core conclusion:
+Adipoli should be a Kerala-rooted Goethe A1 mission coach, not a dashboard, script pile, or generic German app. Current M1/M2 mission direction is worth preserving, but launch trust is blocked by stale QA, incomplete mission coverage beyond M2, unproven course-wide production/audio floors, and a huge dirty git tree.
+
+The plan includes all requested sections:
+1. Vision reconstruction
+2. Non-negotiables
+3. Current mismatch diagnosis
+4. Product model
+5. Student-interest plan
+6. SMART roadmap
+7. First 7 days execution plan
+8. First 48 hours exact build lane
+9. Definition of launch-ready
+10. Boss decisions needed
+11. Verification harness
+12. Vision-alignment scorecard
++ `## Boss summary`
+
+Next: Fix stale QA harness, 2h.

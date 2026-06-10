@@ -1,0 +1,94 @@
+
+session_id: 20260523_085532_e30e2d
+Adipoli German 6h UI/UX + M1/M2 loop final report
+
+Evidence sources:
+- Checkpoint: /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+- Latest run dir: /shared/german-course/GermanCourse_QC/continuous-uiux-m1-m2-20260523-025205/
+- Note: final-report.log is empty; evidence came from checkpoint + iteration logs + fresh QA rerun.
+
+Files changed / main product areas:
+- First path / entry UX:
+  - src/app/page.tsx
+  - src/app/intro/page.tsx
+  - src/app/learn/page.tsx
+  - src/app/learn/[moduleId]/page.tsx
+- Focused learning UI:
+  - src/components/layout/Navigation.tsx
+  - src/components/ui/GlobalSearch.tsx
+  - src/components/ServiceWorkerRegister.tsx
+  - public/sw.js
+- Module 1 mission path:
+  - src/lib/missions/module1.ts
+  - src/app/missions/module-1/greet-frau-weber/page.tsx
+  - src/app/missions/module-1/please-thanks/page.tsx
+  - src/app/missions/module-1/polite-exit/page.tsx
+- Module 2 mission path:
+  - src/app/missions/module-2/_components/MissionUI.tsx
+  - src/app/missions/module-2/self-intro/page.tsx
+  - src/app/missions/module-2/spell-name/page.tsx
+  - src/app/missions/module-2/from-kerala/page.tsx
+  - src/app/missions/module-2/job-languages/page.tsx
+  - src/app/missions/module-2/final-self-intro/page.tsx
+- QA/scripts:
+  - scripts/qa_mission_pilot.py
+  - scripts/qa_direct_final_sequence_status.mjs
+  - scripts/qa_intro_start_path.mjs
+  - scripts/qa_module2_production_mobile.mjs
+
+Current git state:
+- Dirty repo.
+- Tracked diff: 111 files changed, 39,290 insertions, 12,319 deletions.
+- Status counts: 97 modified, 7 deleted, 7 added tracked files, 146 untracked entries.
+- There are broad unrelated/pre-existing changes and tracked deletions in docs/games/scripts. Do not deploy/commit blindly without staging review.
+
+QA run:
+- Fresh rerun passed after restarting a hung/stale dev server:
+  - python3 scripts/qa_mission_pilot.py
+  - Result: PASS: mission pilot QA basics
+- Evidence from fresh QA:
+  - routes_reachable=26
+  - /intro → /learn → M1 mission browser path PASS
+  - direct-final sequence status PASS:
+    - Module 1 final route shows only 1/3 done when only final mission is stored
+    - Module 2 final route shows only 1/5 done when only final mission is stored
+  - 5 Module 2 production mission pages checked on mobile
+  - production audio unlocks PASS, audioReady=4
+  - 8 M1/M2 builder click gates PASS
+  - native_audio_pages=5
+  - opening screen word budgets are low: 2–3 words for mission openings
+- Targeted lint:
+  - PASS for touched TSX first-path/M1/M2 files.
+  - Python QA file is ignored by ESLint config, but script itself ran successfully.
+- App-wide lint:
+  - FAIL: npm run lint -- --quiet returns 99 errors.
+  - Current blockers include auth/signup set-state-in-effect, multiple game React Compiler/purity/immutability issues, tests no-explicit-any, module variable naming, speech/TTS hooks, Remotion cursor mutation.
+
+PASS / WEAK / FAIL:
+- PASS: M1/M2 mission pilot path is reviewable.
+- PASS: M1 now has 3 playable classroom-survival missions.
+- PASS: M2 has 5 production-style missions with native audio and builder gates.
+- PASS: focused routes hide nav/search crowding.
+- PASS: QA protects against browser SpeechSynthesis / JS-only hidden audio pattern.
+- WEAK: this is still a pilot slice, not whole-app launch readiness.
+- WEAK: repo hygiene is poor; many untracked files and broad dirty diff.
+- FAIL: app-wide lint/build-readiness is not clean.
+
+Review URL:
+- Verified reachable now:
+  - http://claude-desktop:3000/
+  - http://claude-desktop:3000/intro
+  - http://claude-desktop:3000/learn
+- Raw Tailscale fallback also verified:
+  - http://100.96.56.53:3000/
+
+Known weaknesses:
+- Whole app is not launch-grade because app-wide lint still fails.
+- Current repo has too many unstaged/untracked changes to treat as a clean PR.
+- The good work is concentrated on M1/M2 first-session mission flow; broader modules/games/tests still need cleanup.
+- Dev server had gone stale/hung once; restarted and verified, but that instability is worth noting.
+
+Kuttan/name recommendation:
+- Do not mass rename yet.
+- My recommendation: public adult-safe protagonist/learner name should be Arun or Kiran.
+- Keep “Kuttan” only as a home/family nickname if Boss wants Kerala warmth without making the paid Goethe-A1 product feel childish.

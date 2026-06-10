@@ -1,0 +1,126 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -724,7 +724,7 @@
+       <div>
+         <Headphones className="mb-4 h-11 w-11 text-[#f1d27a]" />
+         <h2 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h2>
+-        <p className="mt-3 max-w-xl text-base leading-7 text-white/66">{instructions}</p>
++        <p className="sr-only" data-testid="hear-step-instructions">{instructions}</p>
+         <div className="sr-only" aria-live="polite">
+           {audioStatusText}
+         </div>
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -797,7 +797,7 @@
+       <div>
+         <div className="mb-4 text-[#f1d27a]">{icon}</div>
+         <h2 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h2>
+-        <p className="mt-4 text-lg text-white/70">{prompt}</p>
++        <p className="sr-only" data-testid="recognition-prompt">{prompt}</p>
+         {side && (
+           <div className="mt-5 max-w-md" data-testid="recognition-scene-audio">
+             {side}
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/self-intro/page.tsx → b//shared/german-course/src/app/missions/module-2/self-intro/page.tsx
+@@ -182,7 +182,7 @@
+             side={<NextMissionCard currentMissionId={mission.id} />}
+           >
+             <div className="mt-7 max-w-xl">
+-              <NativeAudio src={audioSources.modelIntroFull} label="Full self-introduction model" />
++              <NativeAudio src={audioSources.modelIntroFull} label="Your full intro" />
+             </div>
+           </MissionWinStep>
+         )}
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -358,6 +358,37 @@
+     print("repair_explainer=compact")
+ 
+ 
++def assert_scene_check_copy_stays_visual_minimal() -> None:
++    mission_ui = MISSION_UI.read_text(encoding="utf-8")
++    required = [
++        "<p className=\"sr-only\" data-testid=\"hear-step-instructions\">{instructions}</p>",
++        "<p className=\"sr-only\" data-testid=\"recognition-prompt\">{prompt}</p>",
++        "data-testid=\"recognition-scene-audio\"",
++    ]
++    missing = [snippet for snippet in required if snippet not in mission_ui]
++    if missing:
++        fail(f"hear/recognition screens must keep instructional copy accessible-only and visual-light: {missing}")
++
++    hear_section = mission_ui.split("export function HearStep", 1)[1].split("export function RecognitionStep", 1)[0]
++    recognition_section = mission_ui.split("export function RecognitionStep", 1)[1].split("export function ReplyAloudStep", 1)[0]
++    banned_visible_patterns = [
++        "<p className=\"mt-3 max-w-xl text-base leading-7 text-white/66\">{instructions}</p>",
++        "<p className=\"mt-4 text-lg text-white/70\">{prompt}</p>",
++    ]
++    hits = [snippet for snippet in banned_visible_patterns if snippet in hear_section or snippet in recognition_section]
++    if hits:
++        fail(f"hear/recognition instruction prose is visible again: {hits}")
++
++    old_audio_labels = []
++    for page in MISSION_PAGES + MODULE1_MISSION_PAGES:
++        src = page.read_text(encoding="utf-8")
++        if "Full self-introduction model" in src:
++            old_audio_labels.append(str(page))
++    if old_audio_labels:
++        fail(f"learner-facing audio label still says model: {old_audio_labels}")
++    print("scene_check_copy=visual_minimal")
++
++
+ def assert_start_path_source() -> None:
+     intro = INTRO_PAGE.read_text(encoding="utf-8")
+     learn = LEARN_PAGE.read_text(encoding="utf-8")
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1497,6 +1497,7 @@
+     assert_choice_subtitles_stay_compact()
+     assert_choice_continue_is_not_a_dead_button()
+     assert_repair_explainer_stays_compact()
++    assert_scene_check_copy_stays_visual_minimal()
+     assert_start_path_source()
+     assert_mission_data_drives_path()
+     assert_self_intro_recognition_stays_focused()
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -29,6 +29,10 @@
+     'data-testid="immersive-model-line"',
+     'data-testid="speak-write-prompt"',
+     'data-testid="optional-anchor-note"',
++    'data-testid="hear-step-instructions"',
++    'data-testid="recognition-prompt"',
++    '<p className="sr-only" data-testid="hear-step-instructions">{instructions}</p>',
++    '<p className="sr-only" data-testid="recognition-prompt">{prompt}</p>',
+     'data-model-line-hidden={modelAudioFinished ? \'false\' : \'true\'}',
+     "modelAudioFinished ? 'opacity-100' : 'sr-only'",
+     'data-model-audio-finished={modelAudioFinished ? \'true\' : \'false\'}',
+  ⟳ compacting context…
+
+session_id: 20260530_224856_ddac24
+Iteration 26 done.
+
+Changed:
+- `src/app/missions/module-2/_components/MissionUI.tsx`
+  - Hid hear-step instruction prose visually; kept it as `sr-only`.
+  - Hid recognition prompt prose visually; kept it as `sr-only`.
+  - Added stable QA hooks so this text-heavy pattern does not return.
+- `src/app/missions/module-2/self-intro/page.tsx`
+  - Renamed learner-facing win audio label from `Full self-introduction model` to `Your full intro`.
+- `scripts/qa_mission_pilot.py`
+  - Added `scene_check_copy=visual_minimal` guard.
+- `scripts/qa_module2_production_mobile.mjs`
+  - Added mobile QA checks for accessible-only scene-check copy.
+- Appended checkpoint:
+  - `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+QA:
+- PASS: targeted ESLint for touched TSX files.
+- PASS: Python compile, Node syntax check, `git diff --check`.
+- PASS after rerun: `python3 scripts/qa_mission_pilot.py`
+- PASS: `ADIPOLI_QA_BASE_URL=http://100.96.56.53:3000 node scripts/qa_module2_production_mobile.mjs`
+- Browser visual QA: M2 recognition step is understandable and no longer prose-heavy. Remaining weight is mostly the nested audio-card styling.
+
+One note:
+- First full QA run hit a transient Puppeteer `/intro` snapshot with only `Skip to content`; direct guard rerun and full QA rerun both passed. I logged that honestly in the checkpoint.
+
+Next: Flatten recognition audio card styling, 25m.

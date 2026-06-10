@@ -1,0 +1,774 @@
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1.ts → b//shared/german-course/src/lib/missions/module1.ts
+@@ -1,4 +1,4 @@
+-export type Module1MissionId = 'greetFrauWeber';
++export type Module1MissionId = 'greetFrauWeber' | 'politeExit';
+ 
+ export type Module1MissionCard = {
+   id: Module1MissionId;
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1.ts → b//shared/german-course/src/lib/missions/module1.ts
+@@ -31,6 +31,25 @@
+     state: 'Start here',
+     active: true,
+     railLabel: 'Module 1 · First classroom greeting',
++    tone: 'green',
++    steps: ['Start', 'Hear', 'Catch', 'Build', 'Perform', 'Repair', 'Win'],
++    next: {
++      href: '/missions/module-1/polite-exit',
++      cta: 'Next: polite exit',
++      title: 'Leave the room politely.',
++      pull: 'Same classroom. Now close the interaction with Danke, Bitte, and Auf Wiedersehen.',
++    },
++  },
++  {
++    id: 'politeExit',
++    missionNumber: 'Mission 1.2',
++    title: 'Leave the room politely',
++    output: 'Vielen Dank. Auf Wiedersehen.',
++    proof: 'native audio • choose exit • speak + type • repair',
++    href: '/missions/module-1/polite-exit',
++    state: 'Playable now',
++    active: true,
++    railLabel: 'Module 1 · Polite classroom exit',
+     tone: 'green',
+     steps: ['Start', 'Hear', 'Catch', 'Build', 'Perform', 'Repair', 'Win'],
+     next: {
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1.ts → b//shared/german-course/src/lib/missions/module1.ts
+@@ -96,4 +96,10 @@
+     formalOpener: '/audio/tts/v1-3-1/v1-3-1-line-3.mp3',
+     ichLerneDeutsch: '/audio/hoeren/module-01/ex1-1-prod-dictation.mp3',
+   },
++  politeExit: {
++    exitSet: '/audio/tts/v1-4-1/v1-4-1-line-0.mp3',
++    dankeBitte: '/audio/tts/v1-4-1/v1-4-1-line-1.mp3',
++    apologyContrast: '/audio/tts/v1-4-1/v1-4-1-line-2.mp3',
++    shopExitModel: '/audio/tts/v1-4-1/v1-4-1-line-3.mp3',
++  },
+ } as const;
+  ┊ review diff
+a/src/app/missions/module-1/polite-exit/page.tsx → b/src/app/missions/module-1/polite-exit/page.tsx
+@@ -0,0 +1,230 @@
++'use client';
++
++import { useEffect, useMemo, useState } from 'react';
++import Link from 'next/link';
++import { ArrowRight, ChevronLeft, DoorOpen, Sparkles, Trophy } from 'lucide-react';
++import {
++  BuilderStep,
++  HearStep,
++  MissionIntro,
++  MissionShell,
++  NativeAudio,
++  PremiumCard,
++  PrimaryButton,
++  ProductionStep,
++  RecognitionStep,
++  RepairStep,
++  SecondaryLink,
++  normalizeMissionAnswer,
++  useMissionStepForQA,
++} from '@/app/missions/module-2/_components/MissionUI';
++import { module1MissionAudio, module1MissionById, writeCompletedModule1Mission } from '@/lib/missions/module1';
++
++const mission = module1MissionById.politeExit;
++const missionSteps = mission.steps;
++const audioSources = module1MissionAudio.politeExit;
++
++const exitOptions = [
++  { id: 'formal-exit', title: 'Vielen Dank. Auf Wiedersehen.', subtitle: 'Safe, polite classroom/office exit.' },
++  { id: 'bedtime', title: 'Danke. Gute Nacht.', subtitle: 'Only when bedtime is the context.' },
++  { id: 'phone', title: 'Danke. Auf Wiederhören.', subtitle: 'Phone goodbye, not face to face.' },
++];
++
++const builderWords = ['Vielen', 'Dank', 'Auf', 'Wiedersehen'];
++const builderBank = ['Vielen', 'Dank', 'Bitte', 'Auf', 'Wiedersehen', 'Gute', 'Nacht'];
++const correctExit = 'Vielen Dank Auf Wiedersehen';
++
++export default function Module1PoliteExitMissionPage() {
++  const [step, setStep] = useMissionStepForQA(0, missionSteps.length - 1);
++  const [heard, setHeard] = useState(false);
++  const [recognition, setRecognition] = useState<string | null>(null);
++  const [selectedWords, setSelectedWords] = useState<string[]>([]);
++  const [spokenChecked, setSpokenChecked] = useState(false);
++  const [typedAnswer, setTypedAnswer] = useState('');
++  const [repairChoice, setRepairChoice] = useState<string | null>(null);
++
++  const builtExit = selectedWords.join(' ');
++  const builderCorrect = builtExit === correctExit;
++  const recognitionCorrect = recognition === 'formal-exit';
++  const typedNormalized = normalizeMissionAnswer(typedAnswer);
++  const typedIsStrong = typedNormalized.includes('vielen dank') && typedNormalized.includes('auf wiedersehen');
++  const repairCorrect = repairChoice === 'auf-wiedersehen';
++
++  useEffect(() => {
++    if (step === missionSteps.length - 1) {
++      writeCompletedModule1Mission(mission.id);
++    }
++  }, [step]);
++
++  const canContinue = useMemo(() => {
++    switch (step) {
++      case 1:
++        return heard;
++      case 2:
++        return recognitionCorrect;
++      case 3:
++        return builderCorrect;
++      case 4:
++        return spokenChecked && typedIsStrong;
++      case 5:
++        return repairCorrect;
++      default:
++        return true;
++    }
++  }, [builderCorrect, heard, recognitionCorrect, repairCorrect, spokenChecked, step, typedIsStrong]);
++
++  const next = () => setStep((value) => Math.min(value + 1, missionSteps.length - 1));
++  const back = () => setStep((value) => Math.max(value - 1, 0));
++
+… omitted 152 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx → b//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx
+@@ -224,7 +224,7 @@
+               </div>
+               <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+                 <PrimaryButton onClick={() => setStep(0)}>Replay mission</PrimaryButton>
+-                <SecondaryLink href="/learn/2" emphasis>{mission.next.cta}</SecondaryLink>
++                <SecondaryLink href={mission.next.href} emphasis>{mission.next.cta}</SecondaryLink>
+               </div>
+             </div>
+             <Link href={mission.next.href} className="block rounded-[1.8rem] border border-[#f1d27a]/20 bg-gradient-to-br from-[#f1d27a]/16 to-white/[0.04] p-6 transition hover:border-[#f1d27a]/45 hover:bg-[#f1d27a]/10">
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx → b//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx
+@@ -229,7 +229,7 @@
+             </div>
+             <Link href={mission.next.href} className="block rounded-[1.8rem] border border-[#f1d27a]/20 bg-gradient-to-br from-[#f1d27a]/16 to-white/[0.04] p-6 transition hover:border-[#f1d27a]/45 hover:bg-[#f1d27a]/10">
+               <Sparkles className="mb-4 h-9 w-9 text-[#f1d27a]" />
+-              <p className="text-sm font-black uppercase tracking-[0.22em] text-[#f1d27a]">Next module</p>
++              <p className="text-sm font-black uppercase tracking-[0.22em] text-[#f1d27a]">Next mission</p>
+               <h3 className="mt-3 text-3xl font-black">{mission.next.title}</h3>
+               <p className="mt-4 leading-7 text-white/68">{mission.next.pull}</p>
+               <span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#f1d27a]">
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx → b//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx
+@@ -233,7 +233,7 @@
+               <h3 className="mt-3 text-3xl font-black">{mission.next.title}</h3>
+               <p className="mt-4 leading-7 text-white/68">{mission.next.pull}</p>
+               <span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#f1d27a]">
+-                Open Module 2 <ArrowRight className="h-4 w-4" />
++                Continue Module 1 <ArrowRight className="h-4 w-4" />
+               </span>
+             </Link>
+           </div>
+  ┊ review diff
+a//shared/german-course/src/app/learn/page.tsx → b//shared/german-course/src/app/learn/page.tsx
+@@ -124,6 +124,8 @@
+   const moduleColor = module.color || '#e94560';
+   const completedModule1MissionSet = new Set(completedModule1MissionIds);
+   const firstModule1Mission = module1MissionCards[0];
++  const nextModule1Mission = module1MissionCards.find((mission) => mission.active && !completedModule1MissionSet.has(mission.id)) ?? firstModule1Mission;
++  const completedModule1MissionCount = module1MissionCards.filter((mission) => completedModule1MissionSet.has(mission.id)).length;
+   const module1Complete = module1MissionCards.every((mission) => completedModule1MissionSet.has(mission.id));
+   const completedMissionSet = new Set(completedMissionIds);
+   const completedMissionCount = module2MissionCards.filter((mission) => completedMissionSet.has(mission.id)).length;
+  ┊ review diff
+a//shared/german-course/src/app/learn/page.tsx → b//shared/german-course/src/app/learn/page.tsx
+@@ -139,23 +139,23 @@
+       ? 'Module 2 review'
+       : `Speaking mission · ${nextModule2Mission.missionNumber.replace('Mission ', '')}`;
+   const learnHeroTitle = !module1Complete
+-    ? firstModule1Mission.title
++    ? nextModule1Mission.title
+     : module2SequenceComplete
+       ? 'Review your 20-second self-intro.'
+       : nextModule2Mission.title;
+   const learnHeroCopy = !module1Complete
+-    ? `Output: ${firstModule1Mission.output}`
++    ? `${completedModule1MissionCount}/${module1MissionCards.length} Module 1 done. Next output: ${nextModule1Mission.output}`
+     : module2SequenceComplete
+       ? 'All five Module 2 speaking missions are marked done. Replay the final answer before Module 3.'
+       : `${completedMissionCount}/5 done. Next output: ${nextMissionOutputSentence}`;
+   const learnHeroWhy = !module1Complete
+-    ? 'A short Goethe Kochi drill: hear the greeting, say it once, type it, then fix the time-of-day mistake.'
++    ? 'A short Goethe Kochi drill: hear the model, say it once, type it, then fix one real beginner trap.'
+     : module2SequenceComplete
+       ? 'Keep the full answer warm before moving into numbers and time.'
+       : 'A short Goethe-room drill: hear the examiner, answer once, then fix the mistake most beginners make.';
+-  const learnHeroHref = !module1Complete ? firstModule1Mission.href : nextModule2Mission.href;
++  const learnHeroHref = !module1Complete ? nextModule1Mission.href : nextModule2Mission.href;
+   const learnHeroCta = !module1Complete
+-    ? 'Start Mission 1.1'
++    ? `Start ${nextModule1Mission.missionNumber}`
+     : module2SequenceComplete
+       ? 'Review final mission'
+       : `Continue ${nextModule2Mission.missionNumber}`;
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -75,6 +75,8 @@
+   const isModule2 = courseModule.id === 2;
+   const completedModule1MissionSet = new Set(completedModule1MissionIds);
+   const firstModule1Mission = module1MissionCards[0];
++  const nextModule1Mission = module1MissionCards.find((mission) => mission.active && !completedModule1MissionSet.has(mission.id)) ?? firstModule1Mission;
++  const completedModule1MissionCount = module1MissionCards.filter((mission) => completedModule1MissionSet.has(mission.id)).length;
+   const module1Complete = module1MissionCards.every((mission) => completedModule1MissionSet.has(mission.id));
+   const completedMissionSet = new Set(completedMissionIds);
+   const completedMissionCount = isModule2
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -86,8 +86,8 @@
+   const module2SequenceComplete = completedMissionCount === module2MissionCards.length;
+   const heroDescription = isModule1
+     ? module1Complete
+-      ? 'First greeting mission complete. Replay it or move to Module 2.'
+-      : `${firstModule1Mission.title}. Hear it, choose it, say it, type it, repair it.`
++      ? 'Module 1 missions complete. Replay one or move to Module 2.'
++      : `${nextModule1Mission.title}. Hear it, choose it, say it, type it, repair it.`
+     : isModule2
+     ? module2SequenceComplete
+       ? 'Module 2 is complete. Review the final answer before Module 3.'
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -94,7 +94,7 @@
+       : `${nextModule2Mission.title}. Listen, speak, type, then fix one common mistake.`
+     : courseModule.description;
+   const heroChips = isModule1
+-    ? ['native audio', 'speak + type', 'time repair']
++    ? ['native audio', 'speak + type', 'repair trap']
+     : isModule2
+     ? ['native audio', 'speak + type', 'mistake repair']
+     : [`${courseModule.totalHours} hours`, `${courseModule.lessons.length} lessons`, `${courseModule.lessons.reduce((acc, l) => acc + l.vocabulary.length, 0)} words`];
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -109,7 +109,7 @@
+   const nextLesson = courseModule.lessons.find(
+     lesson => !userProgress.completedLessons.some(l => l.lessonId === lesson.id)
+   );
+-  const primaryHref = isModule1 ? firstModule1Mission.href : isModule2 ? nextModule2Mission.href : `/play/${courseModule.id}/${nextLesson?.id ?? courseModule.lessons[0]?.id}`;
++  const primaryHref = isModule1 ? nextModule1Mission.href : isModule2 ? nextModule2Mission.href : `/play/${courseModule.id}/${nextLesson?.id ?? courseModule.lessons[0]?.id}`;
+ 
+   return (
+     <div className="max-w-5xl mx-auto">
+@@ -150,7 +150,7 @@
+                 transition={{ delay: 0.15 }}
+                 className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm"
+               >
+-                {isModule1 ? 'Module 1 · first greeting mission' : isModule2 ? 'Module 2 · speaking mission sequence' : `Module ${courseModule.id}`}
++                {isModule1 ? `Module 1 · ${module1Complete ? 'mission review' : nextModule1Mission.missionNumber}` : isModule2 ? 'Module 2 · speaking mission sequence' : `Module ${courseModule.id}`}
+               </motion.div>
+ 
+               <motion.h1
+@@ -215,8 +215,8 @@
+                   transition={{ delay: 0.65 }}
+                   className="mb-5 rounded-2xl border border-white/10 bg-black/20 p-3 text-xs text-white/75 backdrop-blur-sm"
+                 >
+-                  <span className="font-black text-[#d4a520]">Output</span>
+-                  <p className="mt-1 text-base font-black text-white">{firstModule1Mission.output}</p>
++                  <span className="font-black text-[#d4a520]">Next output</span>
++                  <p className="mt-1 text-base font-black text-white">{nextModule1Mission.output}</p>
+                 </motion.div>
+               ) : isModule2 ? (
+                 <motion.div
+@@ -286,8 +286,8 @@
+                           : `Start: ${nextModule2Mission.title}`
+                         : isModule1
+                           ? module1Complete
+-                            ? 'Replay greeting mission'
+-                            : 'Start Mission 1.1'
++                            ? 'Replay Module 1 missions'
++                            : `Start ${nextModule1Mission.missionNumber}`
+                         : completedModuleLessons === 0
+                           ? 'Start module'
+                           : 'Continue learning'}
+@@ -342,25 +342,48 @@
+           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+             <div>
+               <p className="text-xs font-black uppercase tracking-[0.22em] text-[#d4a520]">Module 1 path</p>
+-              <h2 className="mt-1 text-xl font-black text-[var(--foreground)] md:text-2xl">One real classroom opener</h2>
++              <h2 className="mt-1 text-xl font-black text-[var(--foreground)] md:text-2xl">Two classroom survival missions</h2>
+               <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--foreground)]/62">
+-                No lesson dump here. Start with the greeting mission, then use the old lesson list only if you want extra detail.
++                Greet Frau Weber, then exit politely. Old lessons stay optional.
+               </p>
+             </div>
+             <Link
+-              href={firstModule1Mission.href}
++              href={nextModule1Mission.href}
+               className="inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-[#d4a520] px-5 py-4 text-sm font-black text-[#102018] shadow-lg shadow-[#d4a520]/15 transition hover:bg-[#f1d27a]"
+             >
+-              {module1Complete ? 'Replay Mission 1.1' : 'Start Mission 1.1'} <ChevronRight className="h-4 w-4" />
++              {module1Complete ? 'Replay Module 1' : `Start ${nextModule1Mission.missionNumber}`} <ChevronRight className="h-4 w-4" />
+             </Link>
+           </div>
+-          <div className="mt-4 grid gap-3 md:grid-cols-3">
+-            {['Hear native greeting', 'Say + type one answer', 'Repair Gute Nacht trap'].map((label, index) => (
+-              <div key={label} className="rounded-2xl border border-[var(--foreground)]/10 bg-black/10 p-4">
+-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#d4a520]/18 text-xs font-black text-[#d4a520]">{index + 1}</span>
+-                <p className="mt-3 text-sm font-black text-[var(--foreground)]">{label}</p>
+-              </div>
+-            ))}
++          <div className="mt-4 grid gap-3 md:grid-cols-2">
++            {module1MissionCards.map((mission, index) => {
++              const isDone = completedModule1MissionSet.has(mission.id);
++              const isNextMission = mission.id === nextModule1Mission.id && !module1Complete;
++              return (
++                <Link
++                  key={mission.id}
++                  href={mission.href}
++                  className={`rounded-2xl border p-4 transition ${
++                    isDone
++                      ? 'border-[#3fbf75]/35 bg-[#3fbf75]/10 text-[#2fbf75]'
++                      : isNextMission
+… omitted 21 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/app/learn/page.tsx → b//shared/german-course/src/app/learn/page.tsx
+@@ -134,7 +134,7 @@
+   const nextMissionOutput = nextModule2Mission.output;
+   const nextMissionOutputSentence = /[.!?]$/.test(nextMissionOutput) ? nextMissionOutput : `${nextMissionOutput}.`;
+   const learnHeroKicker = !module1Complete
+-    ? 'First mission · Module 1'
++    ? `Module 1 · ${nextModule1Mission.missionNumber}`
+     : module2SequenceComplete
+       ? 'Module 2 review'
+       : `Speaking mission · ${nextModule2Mission.missionNumber.replace('Mission ', '')}`;
+a//shared/german-course/src/app/page.tsx → b//shared/german-course/src/app/page.tsx
+@@ -117,30 +117,32 @@
+   const coursePercent = totalLessons > 0 ? Math.round((completedCount / totalLessons) * 100) : 0;
+   const completedModule1MissionSet = new Set(completedModule1MissionIds);
+   const firstModule1Mission = module1MissionCards[0];
++  const nextModule1Mission = module1MissionCards.find((mission) => mission.active && !completedModule1MissionSet.has(mission.id)) ?? firstModule1Mission;
++  const completedModule1MissionCount = module1MissionCards.filter((mission) => completedModule1MissionSet.has(mission.id)).length;
+   const module1Complete = module1MissionCards.every((mission) => completedModule1MissionSet.has(mission.id));
+   const completedModule2MissionSet = new Set(completedModule2MissionIds);
+   const completedModule2MissionCount = module2MissionCards.filter((mission) => completedModule2MissionSet.has(mission.id)).length;
+   const nextModule2Mission = module2MissionCards.find((mission) => mission.active && !completedModule2MissionSet.has(mission.id)) ?? module2MissionCards[module2MissionCards.length - 1];
+   const module2SequenceComplete = completedModule2MissionCount === module2MissionCards.length;
+   const module2HomeTitle = !module1Complete
+-    ? 'Start with your first greeting.'
++    ? nextModule1Mission.title
+     : completedModule2MissionCount > 0
+       ? 'Continue your speaking path.'
+       : 'Now introduce yourself.';
+   const module2HomeDescription = !module1Complete
+-    ? 'Module 1 begins with a short Goethe Kochi mission: hear, say, type, then repair one greeting mistake.'
++    ? `${completedModule1MissionCount}/${module1MissionCards.length} Module 1 done. Next: hear, say, type, repair one classroom phrase.`
+     : module2SequenceComplete
+       ? 'Module 2 is marked complete. Review the final self-introduction before moving on.'
+       : completedModule2MissionCount > 0
+         ? `You have ${completedModule2MissionCount}/5 Module 2 missions done. Continue at ${nextModule2Mission.missionNumber}: ${nextModule2Mission.title}.`
+         : 'Five short Goethe A1 speaking missions: listen to native audio, speak, type, then repair one real mistake.';
+   const module2HomeHref = !module1Complete
+-    ? firstModule1Mission.href
++    ? nextModule1Mission.href
+     : module2SequenceComplete
+       ? '/learn/2'
+       : nextModule2Mission.href;
+   const module2HomeCta = !module1Complete
+-    ? 'Begin Module 1 mission'
++    ? `Start ${nextModule1Mission.missionNumber}`
+     : module2SequenceComplete
+       ? 'Review Module 2 path'
+       : completedModule2MissionCount > 0
+@@ -214,8 +216,8 @@
+ 
+             <div className="mt-5 grid grid-cols-3 gap-2 text-center">
+               {[
+-                [!module1Complete ? 'M1' : String(completedModule2MissionCount), !module1Complete ? 'first mission' : 'missions done'],
+-                [!module1Complete ? '1.1' : module2SequenceComplete ? '5/5' : nextModule2Mission.missionNumber.replace('Mission ', ''), module2SequenceComplete ? 'ready to review' : 'next mission'],
++                [!module1Complete ? `${completedModule1MissionCount}/${module1MissionCards.length}` : String(completedModule2MissionCount), !module1Complete ? 'M1 done' : 'missions done'],
++                [!module1Complete ? nextModule1Mission.missionNumber.replace('Mission ', '') : module2SequenceComplete ? '5/5' : nextModule2Mission.missionNumber.replace('Mission ', ''), module2SequenceComplete ? 'ready to review' : 'next mission'],
+                 ['1', 'clear next step'],
+               ].map(([value, label]) => (
+                 <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.06] px-2 py-3">
+@@ -227,7 +229,7 @@
+ 
+             <div className="mt-5 rounded-2xl border border-[#27ae60]/20 bg-[#27ae60]/10 p-4">
+               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#9ce8b6]">{!module1Complete ? 'First useful answer' : completedModule2MissionCount > 0 ? 'Next useful answer' : 'First useful answer'}</p>
+-              <p className="mt-1 text-sm font-semibold text-white/78">{!module1Complete ? firstModule1Mission.output : module2SequenceComplete ? 'Replay and polish: Ich heiße ... Ich komme aus Kerala. Ich spreche ...' : nextModule2Mission.output}</p>
++              <p className="mt-1 text-sm font-semibold text-white/78">{!module1Complete ? nextModule1Mission.output : module2SequenceComplete ? 'Replay and polish: Ich heiße ... Ich komme aus Kerala. Ich spreche ...' : nextModule2Mission.output}</p>
+             </div>
+ 
+             <Link
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -28,7 +28,11 @@
+ FROM_KERALA_PAGE = MISSION_PAGES[2]
+ JOB_LANGUAGES_PAGE = MISSION_PAGES[3]
+ FINAL_SELF_INTRO_PAGE = MISSION_PAGES[4]
+-MODULE1_MISSION_PAGE = ROOT / "src/app/missions/module-1/greet-frau-weber/page.tsx"
++MODULE1_MISSION_PAGES = [
++    ROOT / "src/app/missions/module-1/greet-frau-weber/page.tsx",
++    ROOT / "src/app/missions/module-1/polite-exit/page.tsx",
++]
++MODULE1_MISSION_PAGE = MODULE1_MISSION_PAGES[0]
+ MODULE1_MISSION_DATA = ROOT / "src/lib/missions/module1.ts"
+ INTRO_PAGE = ROOT / "src/app/intro/page.tsx"
+ LEARN_PAGE = ROOT / "src/app/learn/page.tsx"
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -59,6 +59,16 @@
+     ROOT / "public/audio/missions/module-2/dialogue/final-model-full.mp3",
+     ROOT / "public/audio/missions/module-2/dialogue/final-module-wrap.mp3",
+     ROOT / "public/audio/missions/module-2/dialogue/final-rehearsal-prompt.mp3",
++]
++MODULE1_DIALOGUE_AUDIO_FILES = [
++    ROOT / "public/audio/tts/v1-3-1/v1-3-1-line-1.mp3",
++    ROOT / "public/audio/tts/v1-3-1/v1-3-1-line-2.mp3",
++    ROOT / "public/audio/tts/v1-3-1/v1-3-1-line-3.mp3",
++    ROOT / "public/audio/hoeren/module-01/ex1-1-prod-dictation.mp3",
++    ROOT / "public/audio/tts/v1-4-1/v1-4-1-line-0.mp3",
++    ROOT / "public/audio/tts/v1-4-1/v1-4-1-line-1.mp3",
++    ROOT / "public/audio/tts/v1-4-1/v1-4-1-line-2.mp3",
++    ROOT / "public/audio/tts/v1-4-1/v1-4-1-line-3.mp3",
+ ]
+ BASE_URLS = [
+     "http://127.0.0.1:3000",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -74,7 +74,7 @@
+     "http://127.0.0.1:3000",
+     "http://100.96.56.53:3000",
+ ]
+-ROUTE_PATHS = ["/", "/intro", "/learn", "/learn/1", "/learn/2", "/missions/module-1/greet-frau-weber", "/missions/module-2/self-intro", "/missions/module-2/spell-name", "/missions/module-2/from-kerala", "/missions/module-2/job-languages", "/missions/module-2/final-self-intro"]
++ROUTE_PATHS = ["/", "/intro", "/learn", "/learn/1", "/learn/2", "/missions/module-1/greet-frau-weber", "/missions/module-1/polite-exit", "/missions/module-2/self-intro", "/missions/module-2/spell-name", "/missions/module-2/from-kerala", "/missions/module-2/job-languages", "/missions/module-2/final-self-intro"]
+ MAX_OPENING_VISIBLE_WORDS = 42
+ 
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -96,7 +96,7 @@
+ def assert_no_browser_tts() -> None:
+     banned = ["SpeechSynthesisUtterance", "speechSynthesis", "new Audio("]
+     hits = []
+-    for page in MISSION_PAGES:
++    for page in MISSION_PAGES + MODULE1_MISSION_PAGES:
+         src = page.read_text(encoding="utf-8")
+         hits.extend(f"{page.name}:{word}" for word in banned if word in src)
+     if hits:
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -141,7 +141,7 @@
+     files = sorted(AUDIO_DIR.glob("*.mp3"))
+     if len(files) < 5:
+         fail(f"expected at least 5 mission mp3 files, found {len(files)}")
+-    all_files = files + MISSION_DIALOGUE_AUDIO_FILES
++    all_files = files + MISSION_DIALOGUE_AUDIO_FILES + MODULE1_DIALOGUE_AUDIO_FILES
+     for path in all_files:
+         if not path.exists():
+             fail(f"audio file missing: {path}")
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -218,7 +218,9 @@
+         fail("intro should not dump first-run learners into setup before the mission path")
+     required_home = [
+         "Guided A1 start",
+-        "Start with your first greeting.",
++        "nextModule1Mission",
++        "completedModule1MissionCount",
++        "`Start ${nextModule1Mission.missionNumber}`",
+         "Five short Goethe A1 speaking missions: listen to native audio, speak, type, then repair one real mistake.",
+         "Continue your speaking path.",
+         "You have ${completedModule2MissionCount}/5 Module 2 missions done.",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -447,22 +447,57 @@
+     home = (ROOT / "src/app/page.tsx").read_text(encoding="utf-8")
+     learn = LEARN_PAGE.read_text(encoding="utf-8")
+     module = MODULE_PAGE.read_text(encoding="utf-8")
+-    mission = MODULE1_MISSION_PAGE.read_text(encoding="utf-8")
+     data = MODULE1_MISSION_DATA.read_text(encoding="utf-8")
+     navigation = NAVIGATION.read_text(encoding="utf-8")
+     global_search = GLOBAL_SEARCH.read_text(encoding="utf-8")
++    mission_pages = [(page, page.read_text(encoding="utf-8")) for page in MODULE1_MISSION_PAGES]
+ 
+     required = [
+         ("module1 data", data, [
+             "greetFrauWeber",
++            "politeExit",
+             "/missions/module-1/greet-frau-weber",
++            "/missions/module-1/polite-exit",
+             "Guten Morgen. Ich lerne Deutsch.",
++            "Vielen Dank. Auf Wiedersehen.",
+             "readCompletedModule1Missions",
+             "writeCompletedModule1Mission",
+             "module1-mission-completed",
+             "/audio/tts/v1-3-1/v1-3-1-line-1.mp3",
++            "/audio/tts/v1-4-1/v1-4-1-line-0.mp3",
+         ]),
+-        ("module1 mission page", mission, [
++        ("/learn hero", learn, [
++            "Module 1 · ${nextModule1Mission.missionNumber}",
++            "Start ${nextModule1Mission.missionNumber}",
++            "nextModule1Mission.href",
++            "readCompletedModule1Missions",
++        ]),
++        ("/learn/1 module page", module, [
++            "Module 1 · ${module1Complete ? 'mission review' : nextModule1Mission.missionNumber}",
++            "Two classroom survival missions",
++            "Greet Frau Weber, then exit politely. Old lessons stay optional.",
++            "nextModule1Mission.href",
++            "module1MissionCards.map",
++            "Start next",
++        ]),
++        ("home", home, [
++            "nextModule1Mission",
++            "completedModule1MissionCount",
++            "`Start ${nextModule1Mission.missionNumber}`",
++            "nextModule1Mission.href",
++            "readCompletedModule1Missions",
++        ]),
++    ]
++    for label, src, snippets in required:
++        missing = [snippet for snippet in snippets if snippet not in src]
++        if missing:
++            fail(f"{label} missing Module 1 sequence snippets: {missing}")
++    if "pathname === '/learn/1'" not in navigation and "pathname === \'/learn/1\'" not in navigation:
++        fail("focused Module 1 landing should hide fixed bottom navigation")
++    if "pathname === '/learn/1'" not in global_search and "pathname === \'/learn/1\'" not in global_search:
++        fail("focused Module 1 landing should hide floating global search")
++    for page, src in mission_pages:
++        required_page = [
+             "MissionIntro",
+             "HearStep",
+             "RecognitionStep",
+@@ -470,38 +505,14 @@
+             "ProductionStep",
+             "RepairStep",
+             "writeCompletedModule1Mission(mission.id)",
+-            "Goethe Kochi classroom rehearsal",
+-        ]),
+-        ("/learn hero", learn, [
+-            "First mission · Module 1",
+-            "Start Mission 1.1",
+-            "firstModule1Mission.href",
+-            "readCompletedModule1Missions",
+-        ]),
+-        ("/learn/1 module page", module, [
+-            "Module 1 · first greeting mission",
+-            "One real classroom opener",
+-            "No lesson dump here.",
+-            "firstModule1Mission.href",
+-        ]),
+-        ("home", home, [
+… omitted 28 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -215,6 +215,16 @@
+                   transition={{ delay: 0.65 }}
+                   className="mb-5 rounded-2xl border border-white/10 bg-black/20 p-3 text-xs text-white/75 backdrop-blur-sm"
+                 >
++                  <div className="mb-2 flex items-center justify-between gap-3">
++                    <span className="font-black text-white">{completedModule1MissionCount}/{module1MissionCards.length} complete</span>
++                    <span className="text-white/55">Two short classroom wins</span>
++                  </div>
++                  <div className="mb-3 h-1.5 overflow-hidden rounded-full bg-white/10">
++                    <div
++                      className="h-full rounded-full bg-[#d4a520] transition-all"
++                      style={{ width: `${(completedModule1MissionCount / module1MissionCards.length) * 100}%` }}
++                    />
++                  </div>
+                   <span className="font-black text-[#d4a520]">Next output</span>
+                   <p className="mt-1 text-base font-black text-white">{nextModule1Mission.output}</p>
+                 </motion.div>
+  ┊ review diff
+a//tmp/adipoli_m1_tracking_qa.js → b//tmp/adipoli_m1_tracking_qa.js
+@@ -0,0 +1,77 @@
++const puppeteer = require('/shared/german-course/node_modules/puppeteer');
++
++(async () => {
++  const browser = await puppeteer.launch({
++    headless: 'new',
++    executablePath: '/usr/bin/google-chrome',
++    args: ['--no-sandbox'],
++  });
++  const page = await browser.newPage();
++  const errors = [];
++  page.on('console', msg => {
++    if (['error', 'warning'].includes(msg.type())) errors.push(`${msg.type()}: ${msg.text()}`);
++  });
++  page.on('pageerror', err => errors.push(`pageerror: ${err.message}`));
++
++  const base = 'http://127.0.0.1:3000';
++  async function settle() { await new Promise(resolve => setTimeout(resolve, 900)); }
++
++  await page.goto(`${base}/learn`, { waitUntil: 'domcontentloaded' });
++  await page.evaluate(() => localStorage.removeItem('adipoli:module1:completedMissions'));
++  await page.reload({ waitUntil: 'domcontentloaded' });
++  await settle();
++  const freshLearn = await page.evaluate(() => ({
++    title: document.querySelector('h1')?.textContent?.trim(),
++    hrefs: Array.from(document.querySelectorAll('a')).map(a => a.getAttribute('href')).filter(Boolean).slice(0, 8),
++    text: document.body.innerText.slice(0, 900),
++  }));
++  if (!freshLearn.hrefs.includes('/missions/module-1/greet-frau-weber')) throw new Error(`/learn fresh did not point to Mission 1.1: ${JSON.stringify(freshLearn)}`);
++
++  await page.evaluate(() => localStorage.setItem('adipoli:module1:completedMissions', JSON.stringify(['greetFrauWeber'])));
++  await page.goto(`${base}/learn`, { waitUntil: 'domcontentloaded' });
++  await settle();
++  const partialLearn = await page.evaluate(() => ({
++    title: document.querySelector('h1')?.textContent?.trim(),
++    hrefs: Array.from(document.querySelectorAll('a')).map(a => a.getAttribute('href')).filter(Boolean).slice(0, 8),
++    hasPoliteOutput: document.body.innerText.includes('Vielen Dank. Auf Wiedersehen.'),
++  }));
++  if (!partialLearn.hrefs.includes('/missions/module-1/polite-exit') || !partialLearn.hasPoliteOutput) throw new Error(`/learn partial did not point to Mission 1.2: ${JSON.stringify(partialLearn)}`);
++  await page.click('a[href="/missions/module-1/polite-exit"]');
++  await settle();
++  if (new URL(page.url()).pathname !== '/missions/module-1/polite-exit') throw new Error(`click from /learn went to ${page.url()}`);
++
++  await page.goto(`${base}/learn/1`, { waitUntil: 'domcontentloaded' });
++  await page.evaluate(() => localStorage.setItem('adipoli:module1:completedMissions', JSON.stringify(['greetFrauWeber'])));
++  await page.reload({ waitUntil: 'domcontentloaded' });
++  await settle();
++  const module1 = await page.evaluate(() => ({
++    ctaText: Array.from(document.querySelectorAll('a')).find(a => a.getAttribute('href') === '/missions/module-1/polite-exit')?.textContent?.replace(/\s+/g, ' ').trim(),
++    bodyHasProgress: document.body.innerText.includes('1/2 complete'),
++    bodyHasPolite: document.body.innerText.includes('Leave the room politely'),
++  }));
++  if (!module1.ctaText || !module1.bodyHasProgress || !module1.bodyHasPolite) throw new Error(`/learn/1 partial state weak: ${JSON.stringify(module1)}`);
++
++  await page.goto(`${base}/missions/module-1/polite-exit`, { waitUntil: 'domcontentloaded' });
++  await settle();
++  await page.click('button');
++  await settle();
++  const missionStep = await page.evaluate(() => ({
++    path: location.pathname,
++    hasAudio: document.querySelectorAll('audio[controls]').length,
++    text: document.body.innerText.slice(0, 800),
++  }));
++  if (missionStep.path !== '/missions/module-1/polite-exit' || missionStep.hasAudio < 2 || !missionStep.text.includes('Hear the exit toolkit')) {
++    throw new Error(`polite-exit first transition/audio failed: ${JSON.stringify(missionStep)}`);
++  }
++
++  const audioRes = await page.evaluate(async () => {
++    const res = await fetch('/audio/tts/v1-4-1/v1-4-1-line-0.mp3');
++    return { status: res.status, type: res.headers.get('content-type'), len: +(res.headers.get('content-length') || 0) };
++  });
++  if (audioRes.status !== 200 || !audioRes.type.startsWith('audio/')) throw new Error(`audio fetch failed: ${JSON.stringify(audioRes)}`);
++
++  const realErrors = errors.filter(e => !e.includes('Download the React DevTools'));
++  await browser.close();
++  console.log(JSON.stringify({ freshLearn, partialLearn, module1, missionStep, audioRes, errors: realErrors }, null, 2));
++  if (realErrors.length) throw new Error(`browser console errors/warnings: ${realErrors.join(' | ')}`);
++})();
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -214,7 +214,7 @@
+   const isBlue = tone === 'blue';
+ 
+   return (
+-    <main className={clsx('min-h-screen overflow-hidden text-[#fff8ea]', isBlue ? 'bg-[#101b26]' : 'bg-[#102018]')}>
++    <section className={clsx('min-h-screen overflow-hidden text-[#fff8ea]', isBlue ? 'bg-[#101b26]' : 'bg-[#102018]')}>
+       <div className="pointer-events-none fixed inset-0 overflow-hidden">
+         <div
+           className={clsx(
+@@ -248,7 +248,7 @@
+           </motion.section>
+         </AnimatePresence>
+       </div>
+-    </main>
++    </section>
+   );
+ }
+ 
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -49,7 +49,8 @@
+ 
+     const requestedStep = Number(params.get('adipoliQaStep'));
+     if (!Number.isInteger(requestedStep)) return;
+-    setStep(Math.min(Math.max(requestedStep, 0), maxStep));
++    const timer = window.setTimeout(() => setStep(Math.min(Math.max(requestedStep, 0), maxStep)), 0);
++    return () => window.clearTimeout(timer);
+   }, [maxStep]);
+ 
+   return [step, setStep] as const;
+@@ -272,7 +273,8 @@
+   const [mounted, setMounted] = useState(false);
+ 
+   useEffect(() => {
+-    setMounted(true);
++    const timer = window.setTimeout(() => setMounted(true), 0);
++    return () => window.clearTimeout(timer);
+   }, []);
+ 
+   const row = (
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+@@ -246,3 +246,19 @@
+ ?? scripts/output/module-18.script.md
+ ?? scripts/output/nav-audit/
+ 
++## 2026-05-23T03:26:17+02:00 — Iteration 2
++
++- Source/docs inspected: course operating brief, product direction reset, whole-course mission spine, autonomous execution plan, premium anti-hallucination protocol, existing M1/M2 checkpoint; active first path source (`/`, `/learn`, `/learn/1`), Module 1 mission data/pages, shared MissionUI, QA script.
++- Files changed: `src/lib/missions/module1.ts`, `src/app/missions/module-1/greet-frau-weber/page.tsx`, `src/app/missions/module-1/polite-exit/page.tsx`, `src/app/learn/page.tsx`, `src/app/learn/[moduleId]/page.tsx`, `src/app/page.tsx`, `src/app/missions/module-2/_components/MissionUI.tsx`, `scripts/qa_mission_pilot.py`, this checkpoint.
++- UX/text reductions made: returning learners no longer get bounced back to Mission 1.1 copy. `/`, `/learn`, and `/learn/1` now calculate the first incomplete Module 1 mission and show the next concrete output with compact status (`0/2`, `1/2`) instead of duplicated lesson-list explanations.
++- M1/M2 learner path status: added/play-tested Mission 1.2 `politeExit` (`/missions/module-1/polite-exit`) using the same 7-step pattern: start → hear → catch → build → perform → repair → win. Mission 1.1 now links to Mission 1.2; Mission 1.2 then pulls into Module 2. `/learn/1` now renders the two M1 mission cards with done/next states.
++- Images/video/animation: skipped generated images and video work this iteration; the high-leverage fix was sequencing and hydration. Fixed a mission-shell hydration issue by changing the nested route `<main>` to `<section>` inside the app layout `<main>`, keeping motion subtle and purposeful.
++- QA run + status:
++  - PASS targeted ESLint: `npx eslint src/lib/missions/module1.ts src/app/missions/module-2/_components/MissionUI.tsx src/app/missions/module-1/greet-frau-weber/page.tsx src/app/missions/module-1/polite-exit/page.tsx src/app/learn/page.tsx 'src/app/learn/[moduleId]/page.tsx' src/app/page.tsx`.
++  - WEAK app-wide lint: `npm run lint -- --quiet` still fails on inherited app issues (`auth/signup`, multiple games, `verb-rush` parse error, etc.); changed-file lint is clean.
++  - PASS mission QA: `python3 scripts/qa_mission_pilot.py` → `PASS: mission pilot QA basics`; extended it to guard Module 1.2 route, M1 audio, next-mission routing, and no browser/JS-only audio.
++  - PASS route curl: 200 HTML for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, `/missions/module-1/greet-frau-weber`, `/missions/module-1/polite-exit`.
++  - PASS browser QA with system Chrome: fresh `/learn` points to Mission 1.1; after localStorage `['greetFrauWeber']`, `/learn` and `/learn/1` point to `/missions/module-1/polite-exit`; clicking navigates correctly; polite-exit primary CTA advances to the hear step; 2 native audio controls appear; `/audio/tts/v1-4-1/v1-4-1-line-0.mp3` returns 200 `audio/mpeg`; console errors cleared after fixing nested `<main>` hydration.
++- Kuttan/name recommendation: unchanged: do not mass rename. Public learner name should probably be `Arun` or `Kiran`, with `Kuttan` retained only as a family/home nickname if Boss wants that flavor.
++- Next best lane: add a compact Module 1 completion ribbon/status primitive shared with Module 2, then start hardening Module 1 video/script basis for Mission 1.1/1.2 without adding more page text.
++
+
+session_id: 20260523_031926_0fdd8d
+Iteration 2 complete.
+
+Changed:
+- Added Module 1 Mission 1.2: `/missions/module-1/polite-exit`
+  - Output: “Vielen Dank. Auf Wiedersehen.”
+  - Same guided pattern: start → hear → catch → build → perform → repair → win.
+  - Uses existing pre-rendered German audio from `/audio/tts/v1-4-1/`.
+
+- Fixed Module 1 tracking:
+  - `/`, `/learn`, and `/learn/1` now choose the first incomplete Module 1 mission.
+  - Fresh learner: Mission 1.1.
+  - After `greetFrauWeber` complete: Mission 1.2.
+  - After Mission 1.2: pulls into Module 2.
+
+- Improved `/learn/1`:
+  - Replaced single “start Mission 1.1” behavior with a two-card Module 1 mission sequence.
+  - Shows done/next states and compact progress `0/2`, `1/2`.
+
+- Fixed mission-shell hydration issue:
+  - Shared `MissionShell` no longer nests a route `<main>` inside the app layout `<main>`.
+  - Changed it to `<section>`.
+  - Browser console is clean after this.
+
+- Extended QA:
+  - `scripts/qa_mission_pilot.py` now guards Module 1.2 route, M1 audio files, M1 next-mission routing, and no browser/JS-only audio.
+
+QA:
+- PASS targeted ESLint on changed source files.
+- PASS `python3 scripts/qa_mission_pilot.py`.
+- PASS curl 200 for:
+  - `/`
+  - `/intro`
+  - `/learn`
+  - `/learn/1`
+  - `/learn/2`
+  - `/missions/module-1/greet-frau-weber`
+  - `/missions/module-1/polite-exit`
+- PASS browser QA with system Chrome:
+  - fresh `/learn` points to Mission 1.1
+  - after localStorage `['greetFrauWeber']`, `/learn` and `/learn/1` point to Mission 1.2
+  - clicking navigates correctly
+  - polite-exit CTA advances to hear step
+  - 2 native audio controls appear
+  - audio fetch returns 200 `audio/mpeg`
+  - no console/hydration errors
+
+Weak:
+- App-wide lint still fails from inherited issues in unrelated files, especially games/auth and `verb-rush` parse error. Changed-file lint is clean.
+
+Checkpoint appended:
+`/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Next best lane:
+Add a compact Module 1 completion/status ribbon shared with Module 2, then harden the M1 video/script basis for Missions 1.1/1.2 without adding more page text.

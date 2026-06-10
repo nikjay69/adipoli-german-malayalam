@@ -1,0 +1,34 @@
+
+session_id: 20260531_190727_a86bd1
+Done.
+
+Final artifact:
+`/shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1907.md`
+
+Also appended final iteration checkpoint:
+`/shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`
+
+Verified the final plan contains all required sections:
+1. Vision reconstruction
+2. Non-negotiables
+3. Current mismatch diagnosis
+4. Product model
+5. Student-interest plan
+6. SMART roadmap
+7. First 7 days execution plan
+8. First 48 hours exact build lane
+9. Definition of launch-ready
+10. Boss decisions needed
+11. Verification harness
+12. Vision-alignment scorecard
++ `## Boss summary`
+
+Final evidence included:
+- Git dirty scale: 262 status entries — do not commit/push as one blob.
+- `qa_mission_pilot.py` re-run: still fails on stale intro/start-path snippets after passing audio/text/meta/choice/repair/scene checks.
+- Latest loop evidence kept: TypeScript pass, route 200s, browser first-path proof, first-mission audio proof, M1/M2 mobile mission QA pass.
+
+Blunt conclusion in the plan:
+The product direction is clear enough now. Stop polishing UI containers. First executable lane is QA truth repair, then prove `/` → `/intro` → M1 mission → Module 2 gold path with browser/audio evidence.
+
+Next step: Patch stale QA harness, 2h — start with `scripts/qa_mission_pilot.py`.

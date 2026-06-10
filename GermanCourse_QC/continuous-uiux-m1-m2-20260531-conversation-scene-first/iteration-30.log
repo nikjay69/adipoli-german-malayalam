@@ -1,0 +1,434 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/from-kerala/page.tsx → b//shared/german-course/src/app/missions/module-2/from-kerala/page.tsx
+@@ -1,17 +1,15 @@
+ 'use client';
+ 
+ import { useEffect, useState } from 'react';
+-import { useSearchParams } from 'next/navigation';
+ 
+-import { ArrowRight, ChevronLeft } from 'lucide-react';
++import { ArrowRight } from 'lucide-react';
+ import {
+   ConversationRepairStep,
+-  MissionIntro,
+   MissionShell,
+-  MissionWinStep,
+   NextMissionCard,
+   PremiumCard,
+   useMissionStepForQA,
++  writeCompletedModule2Mission,
+ } from '../_components/MissionUI';
+ import { module2MissionAudio, module2MissionById } from '@/lib/missions/module2';
+ 
+@@ -20,76 +18,55 @@
+ const audioSources = module2MissionAudio.fromKerala;
+ 
+ export default function Module2FromKeralaMissionPage() {
+-  const [step, setStep] = useMissionStepForQA(0, missionSteps.length - 1);
+-  const searchParams = useSearchParams();
++  const [step] = useMissionStepForQA(0, missionSteps.length - 1);
+   const [repairChoice, setRepairChoice] = useState<string | null>(null);
+ 
+   const repairCorrect = repairChoice === 'aus-in';
+ 
+-  const next = () => setStep((value) => Math.min(value + 1, missionSteps.length - 1));
+-  const back = () => setStep((value) => Math.max(value - 1, 0));
+-
+   useEffect(() => {
+-    if (searchParams.get('adipoliQa') === '1') return;
+-    if (searchParams.get('start') !== 'listen') return;
+-    const timer = window.setTimeout(() => setStep((value) => (value === 0 ? 1 : value)), 0);
+-    return () => window.clearTimeout(timer);
+-  }, [searchParams, setStep]);
++    if (!repairCorrect) return;
++    writeCompletedModule2Mission(mission.id);
++  }, [repairCorrect]);
+ 
+   return (
+     <MissionShell currentStep={step} steps={missionSteps} railLabel={mission.railLabel} tone={mission.tone} currentMissionId={mission.id}>
+       <PremiumCard>
+-        {step > 1 && (
+-          <button type="button" onClick={back} className="mb-6 inline-flex items-center gap-2 text-sm font-bold text-white/55 hover:text-white">
+-            <ChevronLeft className="h-4 w-4" /> Back
+-          </button>
+-        )}
++        {step === 0 && (
++          <>
++            <ConversationRepairStep
++              title="Woher kommen Sie?"
++              hideTitle
++              speakerName="Frau Weber"
++              speakerLine="Woher kommen Sie?"
++              learnerName="You"
++              learnerLine="Ich komme aus Kerala. Ich wohne in Kochi."
++              audioSrc={audioSources.modelKerala}
++              audioLabel="Your origin"
++              options={[
++                { id: 'in-aus', title: 'Ich komme in Kerala.' },
++                { id: 'aus-in', title: 'Ich komme aus Kerala.' },
++                { id: 'wohne-aus', title: 'Ich wohne aus Kochi.' },
++              ]}
++              value={repairChoice}
++              onChange={setRepairChoice}
++              isCorrect={repairCorrect}
++              wrongFeedback="Origin uses aus. Living place uses in."
++              correctFeedback="Aus Kerala. In Kochi."
++              cta={<>Fix aus/in <ArrowRight className="h-5 w-5" /></>}
++              onContinue={() => {}}
++              turnCue="Now answer."
++            />
+ 
+-        {step === 0 && (
+… omitted 57 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module2.ts → b//shared/german-course/src/lib/missions/module2.ts
+@@ -79,7 +79,7 @@
+     active: true,
+     railLabel: 'Module 2 · Origin answer',
+     tone: 'blue',
+-    steps: ['Start', 'Scene + repair', 'Win'],
++    steps: ['Scene + repair'],
+     next: {
+       href: '/missions/module-2/job-languages',
+       cta: 'Next: job + languages',
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -219,7 +219,7 @@
+         fail(f"shared compact MissionIntro missing snippets: {missing_intro_ui}")
+     for page in MISSION_PAGES + MODULE1_MISSION_PAGES:
+         src = page.read_text(encoding="utf-8")
+-        direct_scene_allowed = "module-1/greet-frau-weber" in page.as_posix() or "module-1/please-thanks" in page.as_posix() or "module-1/polite-exit" in page.as_posix() or "module-2/spell-name" in page.as_posix() or "module-2/job-languages" in page.as_posix()
++        direct_scene_allowed = "module-1/greet-frau-weber" in page.as_posix() or "module-1/please-thanks" in page.as_posix() or "module-1/polite-exit" in page.as_posix() or "module-2/spell-name" in page.as_posix() or "module-2/from-kerala" in page.as_posix() or "module-2/job-languages" in page.as_posix()
+         if "<MissionIntro" not in src and not direct_scene_allowed:
+             fail(f"mission page should use compact shared MissionIntro or approved direct-scene start: {page}")
+         # Extract the step===0 JSX block roughly. This is deliberately simple and conservative.
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -261,9 +261,32 @@
+   assert(!state.text.includes('K-U-T-T-A-N.'), 'Module 2 next-mission scene should hide the learner reply until audio finishes', { text: state.text.slice(0, 900) });
+   assert(!state.visibleButtons.some((button) => button.toLowerCase().includes('back')), 'Module 2 next-mission listening path should not show a competing Back button', state);
+ 
++  await page.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await page.evaluate(() => {
++    window.localStorage.setItem('adipoli:module2:completedMissions', JSON.stringify(['selfIntro', 'spellName']));
++  });
++  await page.goto(`${BASE_URL}/learn/2`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await page.waitForFunction(() => document.body.innerText.includes('Say where you come from'), { timeout: 12000 });
++  await delay(1200);
++  state = await pageState(page);
++  assert(state.text.includes('Ich komme aus Kerala.'), 'Module 2 origin-progress landing should surface the next spoken output', { text: state.text.slice(0, 900) });
++  assert(
++    state.links.some((link) => link.href === '/missions/module-2/from-kerala?start=listen' && link.text.toLowerCase().includes('start listening')),
++    'Module 2 origin-progress CTA should jump straight to origin listening',
++    state
++  );
++  await page.click('a[href="/missions/module-2/from-kerala?start=listen"]');
++  await page.waitForFunction(() => window.location.pathname === '/missions/module-2/from-kerala', { timeout: 10000 });
++  await delay(1200);
++  state = await pageState(page);
++  assert(state.text.includes('Woher kommen Sie?'), 'Module 2 origin CTA should start in the spoken origin scene', { text: state.text.slice(0, 900) });
++  assert(!state.text.includes('Say where you’re from.'), 'Module 2 origin mission should not land on a preamble/title card first', { text: state.text.slice(0, 900) });
++  assert(!state.text.includes('Ich wohne in Kochi.'), 'Module 2 origin scene should hide the learner reply until audio finishes', { text: state.text.slice(0, 900) });
++  assert(!state.visibleButtons.some((button) => button.toLowerCase().includes('back')), 'Module 2 origin listening path should not show a competing Back button', state);
++
+   const relevantErrors = consoleErrors.filter((line) => !line.includes('favicon') && !line.includes('404'));
+   assert(relevantErrors.length === 0, 'browser console/page errors during intro start-path QA', { consoleErrors: relevantErrors });
+-  console.log('PASS: intro start-path browser QA (/ → listening, /intro → listening, /learn/1 → listening, /learn/2 fresh+partial → listening)');
++  console.log('PASS: intro start-path browser QA (/ → listening, /intro → listening, /learn/1 → listening, /learn/2 fresh+partial+origin → listening)');
+ } finally {
+   await browser.close();
+ }
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -729,9 +729,10 @@
+             fail(f"mission page reintroduced local steps/audio data: {page}")
+         if "currentMissionId={mission.id}" not in src:
+             fail(f"mission shell missing cross-mission sequence ribbon wiring: {page}")
+-        if page == SPELL_NAME_PAGE:
+-            if "data-testid=\"spell-name-inline-win\"" not in src or "writeCompletedModule2Mission" not in src:
+-                fail(f"spell-name should keep one-screen inline win/completion wiring: {page}")
++        if page in (SPELL_NAME_PAGE, FROM_KERALA_PAGE):
++            inline_testid = 'spell-name-inline-win' if page == SPELL_NAME_PAGE else 'from-kerala-inline-win'
++            if f'data-testid="{inline_testid}"' not in src or "writeCompletedModule2Mission" not in src:
++                fail(f"direct-scene mission should keep one-screen inline win/completion wiring: {page}")
+         else:
+             if "<MissionWinStep" not in src:
+                 fail(f"mission win screen missing shared MissionWinStep: {page}")
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1225,8 +1225,9 @@
+     pages_with_old_inline = []
+     for page in MISSION_PAGES:
+         src = page.read_text(encoding="utf-8")
+-        if page == SPELL_NAME_PAGE:
+-            if "data-testid=\"spell-name-inline-win\"" not in src or "writeCompletedModule2Mission" not in src:
++        if page in (SPELL_NAME_PAGE, FROM_KERALA_PAGE):
++            inline_testid = 'spell-name-inline-win' if page == SPELL_NAME_PAGE else 'from-kerala-inline-win'
++            if f'data-testid="{inline_testid}"' not in src or "writeCompletedModule2Mission" not in src:
+                 pages_missing_shared.append(f"{page.name}:inline win/completion")
+         elif "<MissionWinStep" not in src and "<Module1MissionWinStep" not in src:
+             pages_missing_shared.append(f"{page.name}:mission win step")
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1382,7 +1382,7 @@
+         "Open a classroom moment.",
+         "Next output",
+         "Three short classroom wins",
+-        "PASS: intro start-path browser QA (/ → listening, /intro → listening, /learn/1 → listening, /learn/2 fresh+partial → listening)",
++        "PASS: intro start-path browser QA (/ → listening, /intro → listening, /learn/1 → listening, /learn/2 fresh+partial+origin → listening)",
+     ]
+     missing = [snippet for snippet in required if snippet not in src]
+     if missing:
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -112,6 +112,13 @@
+     ? []
+     : [`${courseModule.totalHours} hours`, `${courseModule.lessons.length} lessons`, `${courseModule.lessons.reduce((acc, l) => acc + l.vocabulary.length, 0)} words`];
+   const module1CompletionHref = module2MissionCards[0]?.href ? `${module2MissionCards[0].href}?start=listen` : '/learn/2';
++  const module1SceneLine = module1Complete
++    ? 'Wie heißen Sie?'
++    : nextModule1Mission.id === 'greetFrauWeber'
++      ? 'Guten Morgen.'
++      : nextModule1Mission.id === 'pleaseThanks'
++        ? 'Bitte.'
++        : 'Auf Wiedersehen.';
+   const module1NextOutput = module1Complete ? 'Ich heiße ...' : nextModule1Mission.output;
+   const module2NextOutput = module2SequenceComplete
+     ? '0–20, prices, phone numbers'
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -91,9 +91,7 @@
+     : `${nextModule2Mission.href}?start=listen`;
+ 
+   const heroTitle = isModule1
+-    ? module1Complete
+-      ? 'Now say who you are.'
+-      : nextModule1Mission.title
++    ? module1SceneLine
+     : isModule2
+     ? module2SequenceComplete
+       ? 'Now handle numbers.'
+@@ -101,8 +99,8 @@
+     : courseModule.title;
+   const heroDescription = isModule1
+     ? module1Complete
+-      ? 'Goethe room. Listen first.'
+-      : 'Listen first.'
++      ? 'Examiner speaks. You answer.'
++      : 'Frau Weber speaks. You answer.'
+     : isModule2
+     ? module2SequenceComplete
+       ? 'Price or phone number. Listen first.'
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -89,6 +89,13 @@
+   const nextModule2MissionHref = module2SequenceComplete
+     ? '/learn/3'
+     : `${nextModule2Mission.href}?start=listen`;
++  const module1SceneLine = module1Complete
++    ? 'Wie heißen Sie?'
++    : nextModule1Mission.id === 'greetFrauWeber'
++      ? 'Guten Morgen.'
++      : nextModule1Mission.id === 'pleaseThanks'
++        ? 'Bitte.'
++        : 'Auf Wiedersehen.';
+ 
+   const heroTitle = isModule1
+     ? module1SceneLine
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -117,13 +117,6 @@
+     ? []
+     : [`${courseModule.totalHours} hours`, `${courseModule.lessons.length} lessons`, `${courseModule.lessons.reduce((acc, l) => acc + l.vocabulary.length, 0)} words`];
+   const module1CompletionHref = module2MissionCards[0]?.href ? `${module2MissionCards[0].href}?start=listen` : '/learn/2';
+-  const module1SceneLine = module1Complete
+-    ? 'Wie heißen Sie?'
+-    : nextModule1Mission.id === 'greetFrauWeber'
+-      ? 'Guten Morgen.'
+-      : nextModule1Mission.id === 'pleaseThanks'
+-        ? 'Bitte.'
+-        : 'Auf Wiedersehen.';
+   const module1NextOutput = module1Complete ? 'Ich heiße ...' : nextModule1Mission.output;
+   const module2NextOutput = module2SequenceComplete
+     ? '0–20, prices, phone numbers'
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -131,12 +131,13 @@
+   assert(!state.visibleButtons.some((button) => button.toLowerCase().includes('back')), 'intro-to-listening path should not show a competing Back button', state);
+ 
+   await page.goto(`${BASE_URL}/learn/1`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+-  await page.waitForFunction(() => document.body.innerText.includes('Greet Frau Weber without freezing'), { timeout: 12000 });
++  await page.waitForFunction(() => document.body.innerText.includes('Guten Morgen.'), { timeout: 12000 });
+   await delay(1200);
+   state = await pageState(page);
+   assert(state.path === '/learn/1', 'Module 1 landing did not load on /learn/1', state);
+-  assert(state.text.includes('Greet Frau Weber without freezing'), 'Module 1 landing should lead with the current mission, not generic module copy', { text: state.text.slice(0, 900) });
+-  assert(state.text.includes('Listen first.'), 'Module 1 landing should keep the first action short', { text: state.text.slice(0, 900) });
++  assert(state.text.includes('Guten Morgen.'), 'Module 1 landing should lead with the spoken scene line, not a mission-title label', { text: state.text.slice(0, 900) });
++  assert(state.text.includes('Frau Weber speaks. You answer.'), 'Module 1 landing should frame the scene as a two-person exchange', { text: state.text.slice(0, 900) });
++  assert(!state.text.includes('Greet Frau Weber without freezing'), 'Module 1 landing should not lead with an abstract mission title', { text: state.text.slice(0, 900) });
+   assert(state.text.includes('Guten Morgen, Frau Weber. Ich lerne Deutsch.'), 'Module 1 landing phrase preview missing', { text: state.text.slice(0, 900) });
+   assert(state.classroomSceneVisible, 'Module 1 landing should show the two-person classroom scene on mobile', state);
+   assert(!state.text.includes('Open a classroom moment.'), 'Module 1 landing should not use generic dashboard headline', { text: state.text.slice(0, 900) });
+@@ -166,7 +167,7 @@
+     window.localStorage.setItem('adipoli:module1:completedMissions', JSON.stringify(['greetFrauWeber']));
+   });
+   await page.goto(`${BASE_URL}/learn/1`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+-  await page.waitForFunction(() => document.body.innerText.includes('Handle thank-you politely'), { timeout: 12000 });
++  await page.waitForFunction(() => document.body.innerText.includes('Bitte.'), { timeout: 12000 });
+   await delay(1200);
+   state = await pageState(page);
+   assert(state.text.includes('Danke. Bitte.'), 'Module 1 partial-progress landing should surface please/thanks as the next spoken output', { text: state.text.slice(0, 900) });
+@@ -190,7 +191,7 @@
+     window.localStorage.setItem('adipoli:module1:completedMissions', JSON.stringify(['greetFrauWeber', 'pleaseThanks']));
+   });
+   await page.goto(`${BASE_URL}/learn/1`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+-  await page.waitForFunction(() => document.body.innerText.includes('Leave the room politely'), { timeout: 12000 });
++  await page.waitForFunction(() => document.body.innerText.includes('Auf Wiedersehen.'), { timeout: 12000 });
+   await delay(1200);
+   state = await pageState(page);
+   assert(state.text.includes('Vielen Dank. Auf Wiedersehen.'), 'Module 1 later-progress landing should surface polite-exit as the next spoken output', { text: state.text.slice(0, 900) });
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -812,11 +812,10 @@
+             "Module 1 mission progress",
+             "Module 1 complete; Module 2 speaking is ready",
+             "KeralaClassroomScene",
+-            "Listen first.",
+-            "Now say who you are.",
+-            "Goethe room. Listen first.",
++            "Frau Weber speaks. You answer.",
++            "Examiner speaks. You answer.",
++            "module1SceneLine",
+             "Ich heiße ...",
+-            "nextModule1Mission.title",
+             "nextModule1Mission.href",
+             "module1CompletionHref = module2MissionCards[0]?.href",
+             "module1PrimaryHref",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1376,7 +1376,7 @@
+         "toLowerCase().includes('start')",
+         "window.location.pathname === '/missions/module-1/greet-frau-weber'",
+         "/missions/module-1/greet-frau-weber",
+-        "Module 1 landing should lead with the current mission",
++        "Module 1 landing should lead with the spoken scene line",
+         "Module 1 landing primary CTA should jump straight to listening",
+         "Open a classroom moment.",
+         "Next output",
+  ┊ review diff
+a//shared/german-course/scripts/qa_completed_ability_landings.mjs → b//shared/german-course/scripts/qa_completed_ability_landings.mjs
+@@ -68,8 +68,8 @@
+   await delay(800);
+   let state = await pageState(page);
+   assert(state.path === '/learn/1', 'Module 1 completed landing did not load', state);
+-  assert(state.text.includes('Now say who you are.'), 'Module 1 completed bridge should point to Module 2, not linger on a certificate', { text: state.text.slice(0, 1000) });
+-  assert(state.text.includes('Goethe room. Listen first.'), 'Module 1 completed bridge should keep one short context line', { text: state.text.slice(0, 1000) });
++  assert(state.text.includes('Wie heißen Sie?'), 'Module 1 completed bridge should lead with the next spoken exam prompt', { text: state.text.slice(0, 1000) });
++  assert(state.text.includes('Examiner speaks. You answer.'), 'Module 1 completed bridge should keep one short two-person context line', { text: state.text.slice(0, 1000) });
+   assert(state.text.includes('Ich heiße ...'), 'Module 1 completed bridge should preview the next Module 2 output', { text: state.text.slice(0, 1000) });
+   assert(!state.certificates.includes('Module 1 ability certificate'), 'Module 1 completed bridge should not show a lower certificate card', state);
+   assert(!state.text.includes('Classroom survival'), 'Module 1 completed bridge should not repeat prior ability card', { text: state.text.slice(0, 1000) });
+@@ -158,7 +158,8 @@
+   await delay(800);
+   state = await pageState(partialPage);
+   assert(state.path === '/learn/1', 'Module 1 partial landing did not load', state);
+-  assert(state.text.includes('Handle thank-you politely'), 'Module 1 partial state should spotlight the next ability win', { text: state.text.slice(0, 1200) });
++  assert(state.text.includes('Bitte.'), 'Module 1 partial state should spotlight the next spoken scene line', { text: state.text.slice(0, 1200) });
++  assert(!state.text.includes('Handle thank-you politely'), 'Module 1 partial state should not lead with an abstract mission title', { text: state.text.slice(0, 1200) });
+   assert(state.text.includes('Danke. Bitte.'), 'Module 1 partial state should show the next German output', { text: state.text.slice(0, 1200) });
+   assert(!state.text.includes('NEXT WIN'), 'Module 1 partial state should not expose old next-win label', { text: state.text.slice(0, 1200) });
+   assert(!state.text.includes('Your path'), 'Module 1 partial state should not show path-dashboard label', { text: state.text.slice(0, 1200) });
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1436,8 +1436,8 @@
+         fail(f"completed ability landing browser QA guard missing: {script}")
+     src = script.read_text(encoding="utf-8")
+     required = [
+-        "Now say who you are.",
+-        "Goethe room. Listen first.",
++        "Wie heißen Sie?",
++        "Examiner speaks. You answer.",
+         "Module 1 completed bridge should not show a lower certificate card",
+         "Module 1 completed hero CTA should start Module 2 directly at listening",
+         "Ich heiße ...",
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -367,8 +367,8 @@
+           aria-label={module1Complete ? 'Module 1 complete; Module 2 speaking is ready' : 'Module 1 mission progress'}
+         >
+           {module1Complete
+-            ? 'Module 1 complete. Next: Tell the examiner your name.'
+-            : `${completedModule1MissionCount}/3 complete. Next: ${nextModule1Mission.title}. Output: ${module1NextOutput}.`}
++            ? 'Module 1 complete. Next: examiner asks Wie heißen Sie?'
++            : `${completedModule1MissionCount}/3 complete. Next spoken line: ${module1SceneLine}. Say: ${module1NextOutput}.`}
+         </div>
+       ) : isModule2 ? (
+         <div
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1682,13 +1682,15 @@
+     mission_data = MISSION_DATA.read_text(encoding="utf-8")
+     required = [
+         "ConversationRepairStep",
+-        "title=\"Origin answer.\"",
++        "title=\"Woher kommen Sie?\"",
++        "hideTitle",
+         "speakerLine=\"Woher kommen Sie?\"",
+         "learnerLine=\"Ich komme aus Kerala. Ich wohne in Kochi.\"",
+         "audioSrc={audioSources.modelKerala}",
+         "turnCue=\"Now answer.\"",
+-        "{step === 2 && (",
+-        "steps: ['Start', 'Scene + repair', 'Win']",
++        "{step === 0 && (",
++        "data-testid=\"from-kerala-inline-win\"",
++        "steps: ['Scene + repair']",
+         "proof: 'audio • answer aloud • quick repair'",
+     ]
+     missing = [snippet for snippet in required if snippet not in from_kerala + mission_data]
+
+session_id: 20260531_064044_8df4fc
+Iteration 30 done.
+
+Changed:
+- `/shared/german-course/src/app/learn/[moduleId]/page.tsx`
+- `/shared/german-course/scripts/qa_intro_start_path.mjs`
+- `/shared/german-course/scripts/qa_completed_ability_landings.mjs`
+- `/shared/german-course/scripts/qa_mission_pilot.py`
+- `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+What improved:
+- `/learn/1` now leads with the spoken scene cue instead of abstract mission titles:
+  - `Guten Morgen.`
+  - `Bitte.`
+  - `Auf Wiedersehen.`
+  - completed M1 bridge: `Wie heißen Sie?`
+- Visible context is now conversational:
+  - `Frau Weber speaks. You answer.`
+  - `Examiner speaks. You answer.`
+- Removed old abstract M1 title leakage from hidden/accessibility copy in partial-progress state.
+- `/learn/1` still keeps one primary CTA and routes directly to the next mission with `?start=listen`.
+
+QA:
+- PASS targeted ESLint:
+  - `src/app/learn/[moduleId]/page.tsx`
+  - `scripts/qa_intro_start_path.mjs`
+  - `scripts/qa_completed_ability_landings.mjs`
+- PASS route curl smoke for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, and M1 mission routes.
+- PASS `ADIPOLI_BASE_URL=http://127.0.0.1:3000 node scripts/qa_intro_start_path.mjs`
+- PASS `ADIPOLI_BASE_URL=http://127.0.0.1:3000 node scripts/qa_completed_ability_landings.mjs`
+- PASS `python3 scripts/qa_mission_pilot.py`
+- PASS browser check:
+  - `/learn/1` CTA reaches `/missions/module-1/greet-frau-weber`
+  - console clean
+  - mission audio readyState=4, error=null
+
+Checkpoint appended:
+- `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Naming recommendation unchanged:
+- Public adult-safe lead: Arun or Kiran.
+- Keep Kuttan as home nickname/family flavor only.
+- No mass rename without approval.
+
+Next: Screen-reader dashboard wording cleanup, 25m.

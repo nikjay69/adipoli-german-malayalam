@@ -1,0 +1,388 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx → b//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx
+@@ -12,8 +12,7 @@
+   PremiumCard,
+   RecognitionStep,
+   RepairStep,
+-  SpeakWriteStep,
+-  normalizeMissionAnswer,
++  ReplyAloudStep,
+   useMissionStepForQA,
+ } from '@/app/missions/module-2/_components/MissionUI';
+ import { module1MissionAudio, module1MissionById } from '@/lib/missions/module1';
+@@ -33,12 +32,9 @@
+   const searchParams = useSearchParams();
+   const [heard, setHeard] = useState(false);
+   const [recognition, setRecognition] = useState<string | null>(null);
+-  const [typedAnswer, setTypedAnswer] = useState('');
+   const [repairChoice, setRepairChoice] = useState<string | null>(null);
+ 
+   const recognitionCorrect = recognition === 'guten-morgen';
+-  const typedNormalized = normalizeMissionAnswer(typedAnswer);
+-  const typedIsStrong = typedNormalized.includes('guten morgen');
+   const repairCorrect = repairChoice === 'guten-morgen';
+ 
+   const canContinue = useMemo(() => {
+@@ -48,13 +44,11 @@
+       case 2:
+         return recognitionCorrect;
+       case 3:
+-        return typedIsStrong;
+-      case 4:
+         return repairCorrect;
+       default:
+         return true;
+     }
+-  }, [heard, recognitionCorrect, repairCorrect, step, typedIsStrong]);
++  }, [heard, recognitionCorrect, repairCorrect, step]);
+ 
+   const next = () => setStep((value) => Math.min(value + 1, missionSteps.length - 1));
+   const back = () => setStep((value) => Math.max(value - 1, 0));
+@@ -121,25 +115,15 @@
+         )}
+ 
+         {step === 3 && (
+-          <SpeakWriteStep
++          <ReplyAloudStep
+             title="Answer aloud."
+-            prompt="Hear the model once. Say the full line. Optional: write the opener."
++            prompt="Hear the model once. Say it in the room. No typing here."
+             audioSrc={audioSources.formalOpener}
+             audioLabel="Your reply"
+             modelText="Guten Morgen, Frau Weber. Ich lerne Deutsch."
+-            inputId="typed-module1-greeting"
+-            label="Tiny anchor"
+-            value={typedAnswer}
+-            onChange={setTypedAnswer}
+-            placeholder="Guten Morgen"
+-            isStrong={typedIsStrong}
+-            weakFeedback={<>If you write it, use: <i>Guten Morgen</i>.</>}
+-            strongFeedback="Good."
+             cta={<>Fix greeting mistake <ArrowRight className="h-5 w-5" /></>}
+             onContinue={next}
+-            continueDisabled={!canContinue}
+             turnCue="Your turn."
+-            requireTyped={false}
+           />
+         )}
+ 
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx → b//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx
+@@ -43,7 +43,7 @@
+         return heard;
+       case 2:
+         return recognitionCorrect;
+-      case 3:
++      case 4:
+         return repairCorrect;
+       default:
+         return true;
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1.ts → b//shared/german-course/src/lib/missions/module1.ts
+@@ -26,7 +26,7 @@
+     missionNumber: 'Mission 1.1',
+     title: 'Greet Frau Weber without freezing',
+     output: 'Guten Morgen, Frau Weber. Ich lerne Deutsch.',
+-    proof: 'audio • answer aloud • tiny write • fix',
++    proof: 'audio • answer aloud • quick repair',
+     href: '/missions/module-1/greet-frau-weber',
+     state: 'Start here',
+     active: true,
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1.ts → b//shared/german-course/src/lib/missions/module1.ts
+@@ -32,7 +32,7 @@
+     active: true,
+     railLabel: 'Module 1 · First classroom greeting',
+     tone: 'green',
+-    steps: ['Start', 'Hear', 'Catch', 'Speak + write', 'Repair', 'Win'],
++    steps: ['Start', 'Hear', 'Catch', 'Speak aloud', 'Repair', 'Win'],
+     next: {
+       href: '/missions/module-1/please-thanks',
+       cta: 'Next: danke + bitte',
+  ┊ review diff
+a//shared/german-course/src/app/page.tsx → b//shared/german-course/src/app/page.tsx
+@@ -518,7 +518,7 @@
+             </h2>
+             <p className="text-[var(--foreground)]/70 text-sm mt-1 leading-snug">
+               {completedCount === 0
+-                ? 'Five short Goethe A1 speaking missions: listen to native audio, speak, type, then repair one real mistake.'
++                ? 'Five short Goethe A1 speaking missions: listen, answer aloud, then repair one real mistake.'
+                 : nextLesson.lesson.titleGerman}
+             </p>
+             <div className="flex flex-wrap items-center gap-2 mt-3">
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -439,7 +439,7 @@
+         "completedModule1MissionCount",
+         "Start listening",
+         "`${nextModule1Mission.href}?start=listen`",
+-        "Five short Goethe A1 speaking missions: listen to native audio, speak, type, then repair one real mistake.",
++        "Five short Goethe A1 speaking missions: listen, answer aloud, then repair one real mistake.",
+         "Continue your speaking path.",
+         "module2CompleteHomeTitle",
+         "module2CompleteHomeProof",
+@@ -452,7 +452,7 @@
+         "readCompletedModule2Missions",
+         "module2-mission-completed",
+         "Begin the speaking path",
+-        "Five short Goethe A1 speaking missions: listen to native audio, speak, type, then repair one real mistake.",
++        "Five short Goethe A1 speaking missions: listen, answer aloud, then repair one real mistake.",
+         "from-[#d4a520] to-[#b8891a]",
+         "const shouldShowModule2ResumeStrip = completedCount > 0 || completedModule1MissionCount > 0 || completedModule2MissionCount > 0;",
+         "const shouldSuppressHomeExtras = shouldShowModule2ResumeStrip;",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -888,15 +888,16 @@
+         extra_missing_page = []
+         has_speak_write = "<SpeakWriteStep" in src
+         has_speak_repair = "<SpeakRepairStep" in src
+-        if not (has_speak_write or has_speak_repair):
+-            extra_missing_page.append("<SpeakWriteStep or <SpeakRepairStep")
++        has_reply_aloud = "<ReplyAloudStep" in src
++        if not (has_speak_write or has_speak_repair or has_reply_aloud):
++            extra_missing_page.append("<SpeakWriteStep, <SpeakRepairStep, or <ReplyAloudStep")
+         if "<RepairStep" not in src and not has_speak_repair:
+             extra_missing_page.append("<RepairStep")
+-        if "<ReplyAloudStep" in src or "<TinyWriteStep" in src:
+-            fail(f"Module 1 mission must use merged SpeakWriteStep/SpeakRepairStep, not separate reply/write chore screens: {page}")
++        if "<TinyWriteStep" in src:
++            fail(f"Module 1 mission must not add a separate tiny-write chore screen: {page}")
+         if "<BuilderStep" in src or "<ProductionStep" in src:
+             fail(f"Module 1 mission must use immersive reply + optional anchor/repair, not builder/production chores: {page}")
+-        if not has_speak_repair and "requireTyped={false}" not in src:
++        if not has_speak_repair and not has_reply_aloud and "requireTyped={false}" not in src:
+             fail(f"Module 1 phone path must make tiny writing optional after audio: {page}")
+         if "title=\"Say it, then type it.\"" in src:
+             fail(f"Module 1 chore copy returned on immersive step: {page}")
+@@ -906,16 +907,19 @@
+         if "SpeechSynthesisUtterance" in src or "speechSynthesis" in src or "new Audio(" in src:
+             fail(f"Module 1 mission must not use browser/JS-only audio: {page}")
+     greet_src = MODULE1_MISSION_PAGE.read_text(encoding="utf-8")
+-    tiny_anchor_required = [
+-        "typedNormalized.includes('guten morgen');",
+-        "Optional: write the opener.",
+-        "placeholder=\"Guten Morgen\"",
+-        "Tiny anchor",
+-        "requireTyped={false}",
+-    ]
+-    missing_tiny_anchor = [snippet for snippet in tiny_anchor_required if snippet not in greet_src]
+-    if missing_tiny_anchor:
+-        fail(f"Module 1 first mission must keep phone typing to an optional tiny opener anchor: {missing_tiny_anchor}")
++    no_typing_required = [
++        "<ReplyAloudStep",
++        "No typing here.",
++        "Guten Morgen, Frau Weber. Ich lerne Deutsch.",
++        "Fix greeting mistake",
++    ]
++    missing_no_typing = [snippet for snippet in no_typing_required if snippet not in greet_src]
++    if missing_no_typing:
++        fail(f"Module 1 first mission must keep the first production beat voice-first/no-typing: {missing_no_typing}")
++    banned_first_mission_typing = ["typedAnswer", "typedNormalized", "placeholder=\"Guten Morgen\"", "Tiny anchor", "requireTyped={false}"]
++    typing_hits = [snippet for snippet in banned_first_mission_typing if snippet in greet_src]
++    if typing_hits:
++        fail(f"Module 1 first mission reintroduced typing chore snippets: {typing_hits}")
+     print("module1_mission_sequence_path=ok")
+ 
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -927,7 +927,7 @@
+     pages = MODULE1_MISSION_PAGES + MISSION_PAGES
+     for page in pages:
+         src = page.read_text(encoding="utf-8")
+-        voice_first_no_type = "<SpeakRepairStep" in src or "data-typing-required=\"false\"" in src
++        voice_first_no_type = "<SpeakRepairStep" in src or "<ReplyAloudStep" in src or "data-typing-required=\"false\"" in src
+         optional_tiny_write = "requireTyped={false}" in src
+         if not (voice_first_no_type or optional_tiny_write):
+             fail(f"M1/M2 production step must be voice-first: optional tiny writing or no typing gate: {page}")
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -869,7 +869,9 @@
+     <div
+       className="grid gap-6 lg:grid-cols-[0.85fr_1fr] lg:items-center"
+       data-testid="immersive-reply-step"
++      data-step-kind="reply-aloud"
+       data-model-audio-finished={modelAudioFinished ? 'true' : 'false'}
++      data-typing-required="false"
+     >
+       <div>
+         <Mic className="mb-4 h-11 w-11 text-[#f1d27a]" />
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -70,11 +70,12 @@
+     const hasSeparateSpeakWrite = source.includes('<ReplyAloudStep') && source.includes('<TinyWriteStep');
+     const hasMergedSpeakWrite = source.includes('<SpeakWriteStep');
+     const hasVoiceFirstRepair = source.includes('<SpeakRepairStep');
+-    if (!hasSeparateSpeakWrite && !hasMergedSpeakWrite && !hasVoiceFirstRepair) throw new Error(`${name}: missing immersive voice-first step`);
+-    if (!hasMergedSpeakWrite && !hasVoiceFirstRepair) throw new Error(`${name}: phone path must use merged SpeakWriteStep or SpeakRepairStep, not separate reply/write chore screens`);
++    const hasVoiceOnlyReply = source.includes('<ReplyAloudStep') && source.includes('<RepairStep');
++    if (!hasSeparateSpeakWrite && !hasMergedSpeakWrite && !hasVoiceFirstRepair && !hasVoiceOnlyReply) throw new Error(`${name}: missing immersive voice-first step`);
++    if (!hasMergedSpeakWrite && !hasVoiceFirstRepair && !hasVoiceOnlyReply) throw new Error(`${name}: phone path must use merged SpeakWriteStep, SpeakRepairStep, or voice-only ReplyAloudStep + RepairStep`);
+     if (hasSeparateSpeakWrite) throw new Error(`${name}: separate ReplyAloudStep + TinyWriteStep chore screens returned`);
+     if (source.includes('<BuilderStep') || source.includes('<ProductionStep')) throw new Error(`${name}: converted immersive path must not use builder/production chore steps`);
+-    if (!hasVoiceFirstRepair && !source.includes('requireTyped={false}')) throw new Error(`${name}: phone-first path must make tiny writing optional after audio, not a gate`);
++    if (!hasVoiceFirstRepair && !hasVoiceOnlyReply && !source.includes('requireTyped={false}')) throw new Error(`${name}: phone-first path must make tiny writing optional after audio, not a gate`);
+     if (source.includes('title="Say it, then type it."')) throw new Error(`${name}: chore copy returned on immersive step`);
+   }
+   const selfIntro = fs.readFileSync(path.join(ROOT, 'src/app/missions/module-2/self-intro/page.tsx'), 'utf8');
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -133,6 +133,7 @@
+     const step = document.querySelector('[data-testid="immersive-reply-step"]');
+     const merged = Boolean(document.querySelector('[data-testid="speak-write-step"]'));
+     const repairOnly = step?.getAttribute('data-step-kind') === 'speak-repair';
++    const replyOnly = step?.getAttribute('data-step-kind') === 'reply-aloud';
+     const audio = document.querySelector('[data-testid="custom-mission-audio"] audio');
+     const cta = Array.from(document.querySelectorAll('button')).find((button) => /write|repair|trap|fix/i.test(button.textContent ?? ''));
+     const input = document.querySelector('[data-testid="tiny-write-input"]');
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -141,6 +141,7 @@
+     return {
+       merged,
+       repairOnly,
++      replyOnly,
+       stepFinished: step?.getAttribute('data-model-audio-finished'),
+       modelLineHidden: document.querySelector('[data-testid="immersive-model-line"]')?.getAttribute('data-model-line-hidden'),
+       ctaDisabled: repairOnly ? true : cta?.disabled ?? null,
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -170,6 +170,7 @@
+     const step = document.querySelector('[data-testid="immersive-reply-step"]');
+     const merged = Boolean(document.querySelector('[data-testid="speak-write-step"]'));
+     const repairOnly = step?.getAttribute('data-step-kind') === 'speak-repair';
++    const replyOnly = step?.getAttribute('data-step-kind') === 'reply-aloud';
+     const button = Array.from(document.querySelectorAll('button')).find((candidate) => /write|repair|trap|fix/i.test(candidate.textContent ?? ''));
+     const input = document.querySelector('[data-testid="tiny-write-input"]');
+     const inlineRepair = document.querySelector('[data-testid="inline-repair-choice"]');
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -175,7 +175,7 @@
+     const input = document.querySelector('[data-testid="tiny-write-input"]');
+     const inlineRepair = document.querySelector('[data-testid="inline-repair-choice"]');
+     const hasRepairChoices = inlineRepair && !inlineRepair.classList.contains('sr-only') && inlineRepair.querySelectorAll('button').length >= 2;
+-    return step?.getAttribute('data-model-audio-finished') === 'true' && (repairOnly ? hasRepairChoices : button && (merged ? input && !input.disabled : !button.disabled));
++    return step?.getAttribute('data-model-audio-finished') === 'true' && (repairOnly ? hasRepairChoices : replyOnly ? button && !button.disabled : button && (merged ? input && !input.disabled : !button.disabled));
+   }, { timeout: 5000 });
+ 
+   const afterAudioBeforeTyping = await page.evaluate(() => {
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -179,8 +179,9 @@
+   }, { timeout: 5000 });
+ 
+   const afterAudioBeforeTyping = await page.evaluate(() => {
+-    const step = document.querySelector('[data-testid="speak-write-step"], [data-testid="immersive-reply-step"][data-step-kind="speak-repair"]');
++    const step = document.querySelector('[data-testid="speak-write-step"], [data-testid="immersive-reply-step"][data-step-kind="speak-repair"], [data-testid="immersive-reply-step"][data-step-kind="reply-aloud"]');
+     const repairOnly = step?.getAttribute('data-step-kind') === 'speak-repair';
++    const replyOnly = step?.getAttribute('data-step-kind') === 'reply-aloud';
+     const cta = Array.from(document.querySelectorAll('button')).find((button) => /(repair|trap|fix)/i.test(button.textContent ?? ''));
+     const inlineRepair = document.querySelector('[data-testid="inline-repair-choice"]');
+     return {
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -186,7 +186,7 @@
+     const inlineRepair = document.querySelector('[data-testid="inline-repair-choice"]');
+     return {
+       typingRequired: step?.getAttribute('data-typing-required') ?? null,
+-      ctaDisabled: repairOnly ? false : cta?.disabled ?? null,
++      ctaDisabled: repairOnly || replyOnly ? false : cta?.disabled ?? null,
+       repairVisible: repairOnly ? !inlineRepair?.classList.contains('sr-only') : null,
+     };
+   });
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -891,11 +891,12 @@
+         <div
+           className={clsx(
+             'mt-4 rounded-2xl border border-white/10 bg-[#0f1d14]/72 p-4 transition',
+-            modelAudioFinished ? 'opacity-100' : 'opacity-45'
++            modelAudioFinished ? 'opacity-100' : 'sr-only'
+           )}
+           data-testid="immersive-model-line"
++          data-model-line-hidden={modelAudioFinished ? 'false' : 'true'}
+         >
+-          <p className="sr-only">Your line</p>
++          <p className="sr-only">Your line appears after audio.</p>
+           <p className="text-2xl font-black leading-snug">{modelText}</p>
+         </div>
+       </div>
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -226,6 +226,18 @@
+     return;
+   }
+ 
++  if (before.replyOnly) {
++    const advanced = await page.evaluate(() => {
++      const cta = Array.from(document.querySelectorAll('button')).find((button) => /(repair|trap|fix)/i.test(button.textContent ?? ''));
++      cta?.click();
++      return Boolean(cta) && !cta.disabled && !document.querySelector('[data-testid="tiny-write-input"]');
++    });
++    await page.waitForFunction(() => /Fix the time trap\./i.test(document.body.innerText), { timeout: 5000 });
++    if (!advanced) throw new Error(`${name}: voice-only reply did not offer a no-typing repair transition`);
++    console.log(`immersive_reply_tiny_write[${name}]=PASS merged=reply-aloud audioGated=true noTyping=true`);
++    return;
++  }
++
+   await page.goto(`${BASE_URL}${route}?adipoliQa=1&adipoliQaStep=4`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+   await page.waitForSelector('[data-testid="tiny-write-step"]', { timeout: 15000 });
+   await page.type('[data-testid="tiny-write-input"]', typedValue);
+  ┊ review diff
+a//shared/german-course/scripts/qa_gold_slice_first_journey.mjs → b//shared/german-course/scripts/qa_gold_slice_first_journey.mjs
+@@ -168,10 +168,15 @@
+     return step?.getAttribute('data-model-audio-finished') === 'true' && button && (merged ? input && !input.disabled : !button.disabled);
+   }, { timeout: 10000 });
+ 
+-  immersive = await page.evaluate(() => ({ merged: Boolean(document.querySelector('[data-testid="speak-write-step"]')) }));
++  immersive = await page.evaluate(() => ({
++    merged: Boolean(document.querySelector('[data-testid="speak-write-step"]')),
++    replyOnly: document.querySelector('[data-testid="immersive-reply-step"]')?.getAttribute('data-step-kind') === 'reply-aloud',
++  }));
+   if (immersive.merged) {
+     await page.type('[data-testid="tiny-write-input"]', 'Guten Morgen');
+     await page.waitForFunction(() => Array.from(document.querySelectorAll('button')).some((button) => button.innerText.includes('Fix greeting mistake') && !button.disabled), { timeout: 10000 });
++  } else if (immersive.replyOnly) {
++    assert(!await page.$('[data-testid="tiny-write-input"]'), 'voice-only first mission should not expose tiny typing input', await state(page));
+   } else {
+     await clickButtonContaining(page, 'Write the anchor line');
+ 
+
+session_id: 20260531_001914_30b88f
+Iteration 34 done.
+
+What changed:
+- Removed the first Module 1 phone-typing chore from:
+  - `src/app/missions/module-1/greet-frau-weber/page.tsx`
+- First M1 production beat is now:
+  - hear model audio
+  - answer aloud
+  - go straight to repair
+  - no tiny writing input
+- Updated shared `ReplyAloudStep` so the model line stays hidden until audio ends:
+  - `src/app/missions/module-2/_components/MissionUI.tsx`
+- Updated QA guards so this no-typing path is protected:
+  - `scripts/qa_mission_pilot.py`
+  - `scripts/qa_module2_production_mobile.mjs`
+  - `scripts/qa_gold_slice_first_journey.mjs`
+- Updated home/M1 copy away from “speak + type” framing:
+  - `src/app/page.tsx`
+  - `src/lib/missions/module1.ts`
+
+Verification:
+- PASS: `python3 scripts/qa_mission_pilot.py`
+- PASS: M1/M2 immersive mobile QA across 8 reviewed missions
+- PASS: gold-slice first journey on local + Tailscale bases
+- PASS: `npx eslint src/app/missions/module-1/greet-frau-weber/page.tsx src/app/missions/module-2/_components/MissionUI.tsx`
+- WEAK: `npm run lint -- --file ...` is invalid with current ESLint flat config; targeted `npx eslint <files>` passed.
+
+Checkpoint appended:
+- `GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Kuttan note unchanged:
+- Keep `Kuttan` only as home/nickname flavor for now.
+- Public adult-safe name should likely be `Arun` or `Kiran`.
+- No mass rename without approval.
+
+Next lane: convert remaining M2 tiny-typing moments to voice-first optional writing, 45m.

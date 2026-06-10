@@ -1,0 +1,61 @@
+
+session_id: 20260531_064932_b7b43d
+Adipoli German — conversation-scene-first resume loop final report
+
+Run evidence:
+- Run dir: /shared/german-course/GermanCourse_QC/continuous-uiux-m1-m2-20260531-conversation-scene-first
+- Checkpoint read: /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+- Current branch: adipoli-page-by-page-reset-20260523-1802
+
+Loop-scoped files changed:
+- src/app/learn/[moduleId]/page.tsx
+- src/app/missions/module-1/greet-frau-weber/page.tsx
+- src/app/missions/module-1/please-thanks/page.tsx
+- src/app/missions/module-1/polite-exit/page.tsx
+- src/app/missions/module-2/_components/MissionUI.tsx
+- src/app/missions/module-2/self-intro/page.tsx
+- src/app/missions/module-2/spell-name/page.tsx
+- src/app/missions/module-2/from-kerala/page.tsx
+- src/app/missions/module-2/job-languages/page.tsx
+- src/app/missions/module-2/final-self-intro/page.tsx
+- src/lib/missions/module1.ts
+- src/lib/missions/module2.ts
+- scripts/qa_intro_start_path.mjs
+- scripts/qa_completed_ability_landings.mjs
+- scripts/qa_gold_slice_first_journey.mjs
+- scripts/qa_module2_production_mobile.mjs
+- scripts/qa_mission_pilot.py
+- GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Current git state:
+- Tracked diff: 113 files changed, 40107 insertions, 12439 deletions.
+- Status entries: 261 total — 99 modified, 7 added, 7 deleted, 148 untracked.
+- Weak: repo is not commit-ready as-is; dirty tree includes inherited/unrelated work beyond this loop.
+
+QA run fresh after restarting stale Next dev server:
+- PASS: ADIPOLI_BASE_URL=http://127.0.0.1:3000 node scripts/qa_intro_start_path.mjs
+- PASS: ADIPOLI_BASE_URL=http://127.0.0.1:3000 node scripts/qa_completed_ability_landings.mjs
+- PASS: python3 scripts/qa_mission_pilot.py
+- PASS: local curl / and mission routes returned HTTP 200.
+- PASS: raw Tailscale route passed inside QA for completed ability + gold-slice first journey.
+- PASS evidence from qa_mission_pilot:
+  - 8 voice-first M1/M2 missions.
+  - 0 legacy builders on reviewed path.
+  - routes_reachable=26.
+  - mobile routes nav=false/search=false.
+  - gold-slice first journey passed on localhost and Tailscale raw IP.
+  - audio-gated repair/speak flow passed.
+
+PASS / WEAK / FAIL:
+- PASS: scoped M1/M2 conversation-scene-first path is reviewable.
+- WEAK: full npm run lint remains inherited-failing on older app-wide issues outside this lane.
+- WEAK: dev server had gone stale once; restart fixed it and QA passed.
+- WEAK: QA proves audio playback/readiness, not human accent quality.
+- FAIL: none in current scoped QA after restart.
+
+Review URL:
+- Verified reachable: http://100.96.56.53:3000/
+- Tailscale Serve configured: https://claude-desktop.taila8fb8d.ts.net/ tailnet only, proxying to 127.0.0.1:3000.
+
+Next concrete action:
+- Screen-reader dashboard wording cleanup, 25m.

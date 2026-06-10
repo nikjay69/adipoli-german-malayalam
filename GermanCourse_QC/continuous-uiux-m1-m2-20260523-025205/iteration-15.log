@@ -1,0 +1,176 @@
+  ┊ review diff
+a//shared/german-course/src/app/page.tsx → b//shared/german-course/src/app/page.tsx
+@@ -159,14 +159,33 @@
+       ? 'Ich heiße ... Ich komme aus Kerala. Ich spreche ...'
+       : nextModule2Mission.output;
+   const shouldShowModule2ResumeStrip = completedCount > 0;
+-  const module2ResumeEyebrow = module2SequenceComplete ? 'Module 2 speaking path complete' : 'Continue Module 2 speaking path';
+-  const module2ResumeTitle = module2SequenceComplete ? 'Review your 20-second self-intro.' : `${nextModule2Mission.missionNumber}: ${nextModule2Mission.title}`;
+-  const module2ResumeDescription = module2SequenceComplete
+-    ? 'Keep the Goethe answer warm before moving into the next module.'
+-    : completedModule2MissionCount > 0
+-      ? `${completedModule2MissionCount}/5 done. Next output: ${nextModule2Mission.output}`
+-      : 'The old lesson queue can wait. Start with one listening, speaking, typing win.';
+-  const module2ResumeCta = module2SequenceComplete ? 'Review Module 2' : completedModule2MissionCount > 0 ? `Continue ${nextModule2Mission.missionNumber}` : 'Start speaking path';
++  const module2ResumeEyebrow = !module1Complete
++    ? 'Continue Module 1 classroom path'
++    : module2SequenceComplete
++      ? 'Module 2 speaking path complete'
++      : 'Continue Module 2 speaking path';
++  const module2ResumeTitle = !module1Complete
++    ? nextModule1Mission.title
++    : module2SequenceComplete
++      ? 'Review your 20-second self-intro.'
++      : `${nextModule2Mission.missionNumber}: ${nextModule2Mission.title}`;
++  const module2ResumeDescription = !module1Complete
++    ? `${completedModule1MissionCount}/${module1MissionCards.length} done. Next output: ${nextModule1Mission.output}`
++    : module2SequenceComplete
++      ? 'Keep the Goethe answer warm before moving into the next module.'
++      : completedModule2MissionCount > 0
++        ? `${completedModule2MissionCount}/5 done. Next output: ${nextModule2Mission.output}`
++        : 'The old lesson queue can wait. Start with one listening, speaking, typing win.';
++  const module2ResumeCta = !module1Complete
++    ? `Start ${nextModule1Mission.missionNumber}`
++    : module2SequenceComplete
++      ? 'Review Module 2'
++      : completedModule2MissionCount > 0
++        ? `Continue ${nextModule2Mission.missionNumber}`
++        : 'Start speaking path';
++  const module2ResumeProgressLabel = !module1Complete
++    ? `${completedModule1MissionCount}/${module1MissionCards.length}`
++    : `${completedModule2MissionCount}/5`;
+ 
+   const studyPlan = userProgress.studyPlan;
+   const schedule: DailySchedule | null = useMemo(() => {
+  ┊ review diff
+a//shared/german-course/src/app/page.tsx → b//shared/german-course/src/app/page.tsx
+@@ -365,7 +365,7 @@
+                 <h2 className="mt-1 text-lg font-black leading-tight">{module2ResumeTitle}</h2>
+               </div>
+               <span className="rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-xs font-black text-[#9ce8b6]">
+-                {completedModule2MissionCount}/5
++                {module2ResumeProgressLabel}
+               </span>
+             </div>
+             <p className="mt-2 text-sm leading-snug text-white/65">{module2ResumeDescription}</p>
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -251,9 +251,12 @@
+         "'/learn/2'",
+         "from-[#d4a520] to-[#b8891a]",
+         "shouldShowModule2ResumeStrip",
++        "Continue Module 1 classroom path",
+         "Continue Module 2 speaking path",
++        "`${completedModule1MissionCount}/${module1MissionCards.length} done. Next output: ${nextModule1Mission.output}`",
+         "The old lesson queue can wait. Start with one listening, speaking, typing win.",
+         "module2ResumeCta",
++        "module2ResumeProgressLabel",
+         "Review your 20-second self-intro.",
+         "showOldLessonQueue",
+         "Old lesson queue",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -183,7 +183,7 @@
+     missing_intro_ui = [snippet for snippet in required_intro_ui if snippet not in mission_ui]
+     if missing_intro_ui:
+         fail(f"shared compact MissionIntro missing snippets: {missing_intro_ui}")
+-    for page in MISSION_PAGES:
++    for page in MISSION_PAGES + MODULE1_MISSION_PAGES:
+         src = page.read_text(encoding="utf-8")
+         if "<MissionIntro" not in src:
+             fail(f"mission page should use compact shared MissionIntro: {page}")
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/src/app/learn/page.tsx → b//shared/german-course/src/app/learn/page.tsx
+@@ -144,10 +144,10 @@
+       ? 'Review your 20-second self-intro.'
+       : nextModule2Mission.title;
+   const learnHeroContext = !module1Complete
+-    ? `${completedModule1MissionCount}/${module1MissionCards.length} Module 1 done. Next: ${nextModule1Mission.output}`
++    ? `${completedModule1MissionCount}/${module1MissionCards.length} done. Next: ${nextModule1Mission.output}`
+     : module2SequenceComplete
+-      ? 'Module 2 complete. Replay the full answer before Module 3.'
+-      : `${completedMissionCount}/5 Module 2 done. Next: ${nextMissionOutputSentence}`;
++      ? 'Complete. Replay before Module 3.'
++      : `${completedMissionCount}/5 done. Next: ${nextMissionOutputSentence}`;
+   const learnHeroPromises = !module1Complete
+     ? ['Hear model', 'Speak + type', 'Repair trap']
+     : module2SequenceComplete
+@@ -234,16 +234,10 @@
+             animate={{
+               opacity: 1,
+               y: 0,
+-              boxShadow: [
+-                `0 0 0px 0px ${moduleColor}00`,
+-                `0 0 28px 2px ${moduleColor}55`,
+-                `0 0 0px 0px ${moduleColor}00`,
+-              ],
+             }}
+             transition={{
+               opacity: { duration: 0.4 },
+               y: { duration: 0.4 },
+-              boxShadow: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
+             }}
+             whileTap={{ scale: 0.98 }}
+             className="relative overflow-hidden rounded-3xl border border-white/10"
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -297,7 +297,9 @@
+         "learnHeroHref",
+         "learnHeroCta",
+         "nextMissionOutputSentence",
+-        "`${completedMissionCount}/5 Module 2 done. Next: ${nextMissionOutputSentence}`",
++        "`${completedMissionCount}/5 done. Next: ${nextMissionOutputSentence}`",
++        "`${completedModule1MissionCount}/${module1MissionCards.length} done. Next: ${nextModule1Mission.output}`",
++        "Complete. Replay before Module 3.",
+         "Review your 20-second self-intro.",
+         "Ich heiße ... Ich komme aus Kerala. Ich spreche ...",
+         "Need the old lesson map?",
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -72,7 +72,12 @@
+   await delay(700);
+   state = await pageState(page);
+   assert(state.path === '/learn', 'intro CTA did not route to /learn', state);
+-  assert(state.text.includes('Module 1') && state.text.includes('Mission 1.1'), '/learn did not open on the Module 1 guided mission lane', { text: state.text.slice(0, 900) });
++  const learnText = state.text.toLowerCase();
++  assert(
++    learnText.includes('module 1') && learnText.includes('mission 1.1'),
++    '/learn did not open on the Module 1 guided mission lane',
++    { text: state.text.slice(0, 900) }
++  );
+ 
+   const missionHref = await page.evaluate(() => {
+     const links = Array.from(document.querySelectorAll('a[href]'));
+
+session_id: 20260523_061018_04c7df
+Iteration 15 done.
+
+Changed:
+- /shared/german-course/src/app/learn/page.tsx
+  - Cut /learn hero context copy:
+    - “0/3 done. Next: Guten Morgen. Ich lerne Deutsch.”
+    - “0/5 done. Next: …”
+  - Removed the distracting infinite glow/pulse animation from the hidden classic lesson card.
+- /shared/german-course/src/app/page.tsx
+  - Keeps incomplete learners on Module 1 continuation before pushing Module 2.
+- /shared/german-course/scripts/qa_mission_pilot.py
+  - Added guards for shorter /learn copy and Module 1-first start behavior.
+- /shared/german-course/scripts/qa_intro_start_path.mjs
+  - Browser guard now handles uppercase visual text like “MODULE 1 · MISSION 1.1” without false failing.
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+  - Appended Iteration 15 checkpoint.
+
+QA:
+- PASS: python3 -m py_compile scripts/qa_mission_pilot.py && npx tsc --noEmit --pretty false
+- PASS: npx eslint src/app/learn/page.tsx scripts/qa_intro_start_path.mjs
+- PASS: route checks for /, /intro, /learn, /learn/1, /learn/2, M1 first mission, M2 first mission
+- PASS: python3 scripts/qa_mission_pilot.py
+- PASS: Browser click /learn CTA → /missions/module-1/greet-frau-weber
+- PASS: Browser console clean on checked path
+- WEAK/inherited: npm run lint still fails repo-wide with existing unrelated errors: 245 problems, 99 errors, 146 warnings.
+
+Product result:
+- /learn first screen is now leaner: one heading, one compact context line, three micro-promises, one CTA, one phrase preview.
+- M1-first path remains intact and browser-verified.
+- No generated image added; correct call this run. The page needed less clutter, not more decoration.
+- Kuttan recommendation unchanged: public adult-safe name should probably be Arun or Kiran, with Kuttan only as a home nickname if kept. No rename done.

@@ -1,0 +1,90 @@
+  ┊ review diff
+a//shared/german-course/src/app/learn/page.tsx → b//shared/german-course/src/app/learn/page.tsx
+@@ -150,7 +150,7 @@
+       ? 'Complete. Replay before Module 3.'
+       : 'One exam-room answer. Listen first.';
+   const learnHeroPromises = !module1Complete
+-    ? ['Hear model', 'Speak + type', 'Repair trap']
++    ? ['Hear model', 'Answer aloud', 'Fix mistake']
+     : module2SequenceComplete
+       ? ['Review answer', 'Speak once', 'Stay ready']
+       : ['Hear examiner', 'Answer aloud', 'Fix mistake'];
+a//shared/german-course/src/app/missions/module-2/self-intro/page.tsx → b//shared/german-course/src/app/missions/module-2/self-intro/page.tsx
+@@ -78,7 +78,7 @@
+             title="Introduce yourself."
+             promise="Goethe Kochi mock. Build your first clean answer."
+             output="Ich heiße … · Ich komme aus …"
+-            promises={['Hear model', 'Speak + type', 'Repair trap']}
++            promises={['Hear model', 'Answer aloud', 'Fix mistake']}
+             cta={<>Start mission <ArrowRight className="h-5 w-5" /></>}
+             onStart={next}
+           />
+a//shared/german-course/src/app/missions/module-2/spell-name/page.tsx → b//shared/german-course/src/app/missions/module-2/spell-name/page.tsx
+@@ -66,7 +66,7 @@
+             title="Spell your Kerala name."
+             promise="Goethe asks. Answer with German letters, slowly."
+             output="K-U-T-T-A-N · Kah, Ooh, Tay…"
+-            promises={['Hear', 'Spell aloud', 'Repair trap']}
++            promises={['Hear', 'Spell aloud', 'Fix mistake']}
+             cta={<>Start spelling mission <ArrowRight className="h-5 w-5" /></>}
+             onStart={next}
+           />
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -441,8 +441,8 @@
+         "learnHeroPromises",
+         "learnHeroPreview",
+         "Hear model",
+-        "Speak + type",
+-        "Repair trap",
++        "Answer aloud",
++        "Fix mistake",
+         "Speaking mission · ${nextModule2Mission.missionNumber.replace('Mission ', '')}",
+         "nextModule2MissionHref",
+         "`${nextModule2Mission.href}?start=listen`",
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -260,6 +260,8 @@
+         "Undo last chip",
+         "Reset slots",
+         "I said it aloud",
++        "Speak + type",
++        "Repair trap",
+         "Write one A1 answer",
+         "Model answer",
+         "Ability unlocked",
+
+session_id: 20260530_220414_975aff
+Iteration 22 complete.
+
+Changed:
+- `src/app/learn/page.tsx`
+- `src/app/missions/module-2/self-intro/page.tsx`
+- `src/app/missions/module-2/spell-name/page.tsx`
+- `scripts/qa_mission_pilot.py`
+- `GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Product improvement:
+- Replaced chore-ish learner promise copy:
+  - `Speak + type` → `Answer aloud`
+  - `Repair trap` → `Fix mistake`
+- Updated M2 self-intro + spell-name openings to stop signaling builder/typing-first work.
+- Added QA guard so `Speak + type` and `Repair trap` cannot quietly return in reviewed M1/M2 source.
+- Verified `/learn` CTA still goes straight into the M1 listening scene, not a dashboard/builder.
+- Played the Frau Weber audio in browser; after the clip ended, the route advanced to the recognition step.
+
+QA:
+- PASS: `python3 scripts/qa_mission_pilot.py`
+- PASS: `python3 -m py_compile scripts/qa_mission_pilot.py`
+- PASS: targeted ESLint for changed TSX files. ESLint ignored the Python file with warning only.
+- PASS: `git diff --check -- ...`
+- PASS: browser `/learn` visual check: sparse, CTA clear, no console errors.
+- PASS from QA script includes local + Tailscale checks, 8 M1/M2 voice-first missions, 0 legacy builders on reviewed path.
+
+Checkpoint appended:
+- `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Kuttan note:
+- Unchanged recommendation: keep `Kuttan` only as home/nickname flavor for now; use `Arun` or `Kiran` as adult-safe public name if Boss approves. No mass rename.
+
+Next lane: remove unused builder/Said-it affordances from `MissionUI.tsx`, 45m.

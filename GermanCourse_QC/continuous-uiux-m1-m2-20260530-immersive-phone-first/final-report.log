@@ -1,0 +1,96 @@
+
+session_id: 20260531_002510_48551a
+Adipoli German 6h UI/UX + M1/M2 loop — final evidence report
+
+Run evidence:
+- Run dir: /shared/german-course/GermanCourse_QC/continuous-uiux-m1-m2-20260530-immersive-phone-first
+- Checkpoint: /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+- Loop completed: 34 iterations, hard stop reached at 2026-05-31T00:25:09+02:00
+
+Files changed in the focused loop:
+- Mission UI/shared flow:
+  - src/app/missions/module-2/_components/MissionUI.tsx
+- Module 1 mission pages:
+  - src/app/missions/module-1/greet-frau-weber/page.tsx
+  - src/app/missions/module-1/please-thanks/page.tsx
+  - src/app/missions/module-1/polite-exit/page.tsx
+- Module 2 mission pages:
+  - src/app/missions/module-2/self-intro/page.tsx
+  - src/app/missions/module-2/spell-name/page.tsx
+  - src/app/missions/module-2/from-kerala/page.tsx
+  - src/app/missions/module-2/job-languages/page.tsx
+  - src/app/missions/module-2/final-self-intro/page.tsx
+- Landing/start path:
+  - src/app/page.tsx
+  - src/app/learn/page.tsx
+  - src/app/learn/[moduleId]/page.tsx
+  - src/app/layout.tsx
+  - src/app/template.tsx
+- Mission metadata:
+  - src/lib/missions/module1.ts
+  - src/lib/missions/module2.ts
+- QA:
+  - scripts/qa_mission_pilot.py
+  - scripts/qa_module2_production_mobile.mjs
+  - scripts/qa_gold_slice_first_journey.mjs
+  - scripts/qa_intro_start_path.mjs
+  - scripts/qa_completed_ability_landings.mjs
+- Checkpoint/logs:
+  - GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+  - GermanCourse_QC/continuous-uiux-m1-m2-20260530-immersive-phone-first/*
+
+Current git state:
+- Branch: adipoli-page-by-page-reset-20260523-1802
+- Staged files: 0
+- Tracked worktree diff: 113 files
+- Diff summary: 39,837 insertions, 12,439 deletions
+- Untracked entries: 148
+- Verdict: dirty and not commit-ready as-is. The repo contains large pre-existing/inherited churn outside this focused loop.
+
+QA run now:
+- PASS: python3 scripts/qa_mission_pilot.py
+  - local + Tailscale gold-slice first journey passed
+  - 26 routes reachable
+  - 8 M1/M2 voice-first missions checked
+  - 0 legacy builders on reviewed path
+  - no fixed nav/search crowding on reviewed mobile routes
+  - reduced-motion guard passed
+- PASS: ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs
+  - 8 reviewed missions passed mobile width/audio-gated checks
+- PASS: ADIPOLI_BASE_URL=http://127.0.0.1:3000 node scripts/qa_gold_slice_first_journey.mjs
+  - hearAudio=1, replyAudio=1
+- FAIL/WEAK: npm run lint -- --max-warnings=0
+  - 245 problems: 99 errors, 146 warnings
+  - Main blockers are outside this lane: auth/signup effect rules, game pages, Math.random/Date.now render purity, module variable naming, speech hooks, Remotion cursor mutation.
+
+Review URL:
+- Server is reachable.
+- Local: http://127.0.0.1:3000/
+- Tailscale raw IP: http://100.96.56.53:3000/
+- Good review routes:
+  - http://100.96.56.53:3000/missions/module-1/greet-frau-weber?start=listen
+  - http://100.96.56.53:3000/missions/module-2/self-intro?start=listen
+- Tailscale Serve: no HTTPS serve config active.
+
+What changed in product terms:
+- M1/M2 reviewed paths moved from chip-builder / typing chore flow to voice-first scenes.
+- First M1 mission now removes phone typing entirely: hear model → answer aloud → repair.
+- Model answer line is hidden until audio finishes.
+- M1/M2 landings and mission screens were stripped down: fewer counters, ribbons, duplicate titles, and dashboard-like chrome.
+- QA now guards against reintroducing builders, forced typing, visible sequence clutter, browser TTS, and audio-gate regressions.
+
+Pass / weak / fail:
+- PASS: Focused M1/M2 voice-first mission path is reviewable.
+- PASS: Local and raw Tailscale routes serve HTTP 200.
+- PASS: Gold-slice journey and M1/M2 mobile QA pass.
+- WEAK: Full repo lint still fails badly outside this lane.
+- WEAK: Repo dirty tree is too broad to commit without separating loop work from inherited churn.
+- WEAK: Some remaining M2 moments still have tiny typing: from-kerala, job-languages, final-self-intro. They pass QA because typing is audio-gated/short, but Boss’s phone-friction complaint means they are still suspect.
+
+Kuttan/name recommendation:
+- No rename was done.
+- Keep “Kuttan” only as home/nickname/family flavor for now.
+- Before public launch, use an adult-safe public lead name: Arun or Kiran.
+- Do not mass-rename without Boss approval.
+
+Next: M2 typing-friction cleanup, 45m.

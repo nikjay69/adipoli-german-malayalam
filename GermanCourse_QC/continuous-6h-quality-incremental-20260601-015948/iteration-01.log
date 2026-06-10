@@ -1,0 +1,164 @@
+  ┊ review diff
+a/src/components/course/KeralaClassroomScene.tsx → b/src/components/course/KeralaClassroomScene.tsx
+@@ -1,14 +1,15 @@
+ import { clsx } from 'clsx';
+ 
+-export function KeralaClassroomScene({ className = '' }: { className?: string }) {
++type KeralaClassroomSceneVariant = 'abstract' | 'kochi-room';
++
++type KeralaClassroomSceneProps = {
++  className?: string;
++  variant?: KeralaClassroomSceneVariant;
++};
++
++function AbstractClassroomScene() {
+   return (
+-    <div
+-      className={clsx(
+-        'relative overflow-hidden rounded-[1.55rem] border border-[#1a2e1a]/10 bg-gradient-to-br from-[#fff8e8] via-[#f6ddb0] to-[#d9b16b] shadow-[0_22px_60px_-42px_rgba(17,31,17,0.95)]',
+-        className
+-      )}
+-      aria-label="Calm Kerala classroom visual for the first German mission"
+-    >
++    <>
+       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.62),transparent_24%),radial-gradient(circle_at_84%_20%,rgba(31,157,85,0.18),transparent_22%),linear-gradient(135deg,rgba(255,255,255,0.0),rgba(17,31,17,0.1))]" />
+       <div className="relative p-4">
+         <div className="mx-auto w-full max-w-[15rem] rounded-[1.2rem] border border-[#1a2e1a]/12 bg-[#132414] p-3 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
+@@ -34,6 +35,71 @@
+           </div>
+         </div>
+       </div>
++    </>
++  );
++}
++
++function KochiClassroomScene() {
++  return (
++    <>
++      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.72),transparent_20%),radial-gradient(circle_at_86%_16%,rgba(31,157,85,0.2),transparent_24%),linear-gradient(140deg,rgba(255,255,255,0.04),rgba(17,31,17,0.14))]" />
++      <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-[linear-gradient(120deg,rgba(23,106,57,0.0)_20%,rgba(23,106,57,0.16)_21%,rgba(23,106,57,0.0)_24%),linear-gradient(58deg,rgba(23,106,57,0.0)_36%,rgba(23,106,57,0.18)_37%,rgba(23,106,57,0.0)_40%)]" />
++      <div className="relative flex h-full flex-col justify-between p-4">
++        <div className="grid grid-cols-[1fr_4.8rem] gap-3">
++          <div className="rounded-[1.15rem] border border-[#1a2e1a]/12 bg-[#142414] p-3 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
++            <div className="mb-2 flex items-center justify-between gap-3">
++              <span className="h-2 w-10 rounded-full bg-[#d4a520]/85" />
++              <span className="rounded-full bg-white/10 px-2 py-0.5 text-[0.62rem] font-black tracking-[0.18em] text-[#f1d27a]">A1</span>
++            </div>
++            <div className="space-y-1.5">
++              <span className="block h-2 rounded-full bg-white/72" />
++              <span className="block h-2 w-3/5 rounded-full bg-white/42" />
++            </div>
++          </div>
++
++          <div className="relative overflow-hidden rounded-[1rem] border border-[#1a2e1a]/10 bg-[#dff2c4]">
++            <span className="absolute left-3 top-3 h-16 w-1 rounded-full bg-[#7b4a20]" />
++            <span className="absolute left-3 top-2 h-10 w-14 -rotate-12 rounded-[80%] bg-[#1f9d55]/78" />
++            <span className="absolute left-5 top-6 h-10 w-14 rotate-12 rounded-[80%] bg-[#176a39]/70" />
++            <span className="absolute bottom-0 left-0 h-8 w-full bg-[#9bd37f]/65" />
++          </div>
++        </div>
++
++        <div className="mx-auto flex w-full max-w-[14.5rem] items-end justify-center gap-5">
++          <div className="flex flex-col items-center">
++            <div className="relative h-9 w-9 overflow-hidden rounded-full border border-[#1a2e1a]/12 bg-[#8d5524]">
++              <span className="absolute left-1 top-0 h-4 w-7 rounded-b-full bg-[#2b1b13]/58" />
++            </div>
++            <div className="h-9 w-12 rounded-t-[1.6rem] bg-[#176a39] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]" />
++          </div>
++
++          <div className="relative h-7 w-20 rounded-t-[1.35rem] border border-[#1a2e1a]/10 bg-[#8a5a2b]/82 shadow-[0_10px_22px_-18px_rgba(17,31,17,0.95)]">
++            <span className="absolute left-4 top-1 h-3 w-7 rotate-[-6deg] rounded-sm bg-[#fff7df]/75" />
++          </div>
++
++          <div className="flex flex-col items-center">
++            <div className="relative h-9 w-9 overflow-hidden rounded-full border border-[#1a2e1a]/12 bg-[#a66a35]">
++              <span className="absolute inset-x-0 top-0 h-3 rounded-b-full bg-[#3a2517]/52" />
++            </div>
++            <div className="h-9 w-12 rounded-t-[1.6rem] bg-[#d4a520] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.16)]" />
++          </div>
++        </div>
++      </div>
++    </>
+… omitted 17 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/app/intro/page.tsx → b//shared/german-course/src/app/intro/page.tsx
+@@ -49,7 +49,7 @@
+         className="relative mx-auto flex h-[100dvh] w-full max-w-md flex-col justify-center px-5 py-4 text-center text-[#1a2e1a]"
+       >
+         <div className="mx-auto mb-5 w-full max-w-[17rem]">
+-          <KeralaClassroomScene className="h-40" />
++          <KeralaClassroomScene className="h-40" variant="kochi-room" />
+         </div>
+ 
+         <h1 className="whitespace-nowrap text-[2.15rem] font-black leading-[0.96] tracking-[-0.045em] sm:text-5xl">
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -61,6 +61,9 @@
+         text: link.textContent?.trim() ?? '',
+         href: link.getAttribute('href'),
+       })),
++      sceneVariants: Array.from(document.querySelectorAll('[data-kerala-scene-variant]'))
++        .filter(isVisible)
++        .map((scene) => scene.getAttribute('data-kerala-scene-variant')),
+     };
+   });
+ }
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -116,6 +116,7 @@
+   state = await pageState(page);
+ 
+   assert(state.path === '/intro', 'intro did not load on /intro', state);
++  assert(state.sceneVariants.length === 1 && state.sceneVariants[0] === 'kochi-room', 'intro should use one route-scoped Kerala room support visual', state);
+   assert(state.text.includes('Your first German moment.'), 'single-screen intro headline missing', { text: state.text.slice(0, 700) });
+   assert(!state.text.includes('No dashboard wandering'), 'intro should not expose internal product-goal copy', { text: state.text.slice(0, 700) });
+   assert(state.text.includes('Meet Frau Weber, hear a real classroom greeting'), 'intro scene promise missing', { text: state.text.slice(0, 700) });
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -140,6 +140,7 @@
+   await delay(1200);
+   state = await pageState(page);
+   assert(state.path === '/learn/1', 'Module 1 landing did not load on /learn/1', state);
++  assert(!state.sceneVariants.includes('kochi-room'), 'Kochi room visual experiment should stay scoped to /intro', state);
+   assert(state.text.includes('Guten Morgen.'), 'Module 1 landing should lead with the spoken scene line, not a mission-title label', { text: state.text.slice(0, 900) });
+   assert(state.text.includes('Frau Weber speaks. You answer.'), 'Module 1 landing should frame the scene as a two-person exchange', { text: state.text.slice(0, 900) });
+   assert(!state.text.includes('Greet Frau Weber without freezing'), 'Module 1 landing should not lead with an abstract mission title', { text: state.text.slice(0, 900) });
+
+session_id: 20260601_015950_5a4716
+Iteration 1 done.
+
+Lane: A — `/intro` visual support experiment.
+
+Changed:
+- `src/components/course/KeralaClassroomScene.tsx`
+  - Added route-scoped `variant="kochi-room"` support.
+  - New contained CSS/SVG Kerala/Kochi classroom scene: chalkboard, palm-window cue, table/notebook, two adult figures.
+- `src/app/intro/page.tsx`
+  - Uses `variant="kochi-room"` only on `/intro`.
+- `scripts/qa_intro_start_path.mjs`
+  - Added guard: `/intro` must use the route-scoped visual.
+  - Added guard: `/learn/1` must not inherit the Kochi visual, preventing a quiet global reskin.
+
+Verified:
+- Dev server already running on `0.0.0.0:3000`; root HTTP 200.
+- Git state checked: branch `adipoli-page-by-page-reset-20260523-1802`, commit `b201d05`, dirty count `263`.
+- `npx tsc --noEmit --pretty false --incremental false` — PASS.
+- `node scripts/qa_intro_start_path.mjs` — PASS.
+- `node scripts/qa_gold_slice_first_journey.mjs` — PASS.
+- `python3 scripts/qa_mission_pilot.py` — PASS.
+- `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs` — PASS.
+- Puppeteer `/intro` mobile check: `visualVariant="kochi-room"`, nav=false, search=false, one CTA, console/page errors=[].
+- Browser visual QA: contained support card, not reskin; no mascot/childish feel; no extra text clutter.
+
+Screenshots:
+- Before: `/shared/german-course/GermanCourse_QC/continuous-6h-quality-incremental-20260601-015948/iteration-01-before-intro-mobile.png`
+- After: `/shared/german-course/GermanCourse_QC/continuous-6h-quality-incremental-20260601-015948/iteration-01-after-intro-mobile.png`
+
+Checkpoint appended:
+- `/shared/german-course/GermanCourse_QC/adipoli-6h-quality-incremental-checkpoint.md`
+
+Score: PASS, with one weakness: this is still lightweight CSS/SVG, not the richer generated-art direction. But it safely proves the right pattern: visual support asset, not UI reskin.
+
+No commit, push, deploy, or broad reformat.
+
+Next: Lane B Module 1 handoff browser playthrough, 45m.

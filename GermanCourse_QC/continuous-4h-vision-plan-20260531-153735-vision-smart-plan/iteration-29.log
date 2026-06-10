@@ -1,0 +1,21 @@
+
+session_id: 20260531_185633_ecf7bb
+Done.
+
+Final plan:
+`/shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1856.md`
+
+Checkpoint updated:
+`/shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`
+
+Verified in this final pass:
+- `npx tsc --noEmit --pretty false --incremental false`: PASS
+- Local route curl: PASS for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, all 3 Module 1 mission routes, all 5 Module 2 mission routes
+- `qa_module2_production_mobile.mjs`: PASS for 8 voice-first M1/M2 missions
+- `qa_mission_pilot.py`: PARTIAL/FAIL because the script still has stale intro/start-path expectations, not because M1/M2 direction is broken
+- Git tree still dirty/broad: 262 status entries, 113 tracked changed files excluding QC — do not commit/push as one blob
+
+Bottom line:
+The plan says stop polishing UI containers. The product direction is now clear enough: Kerala-rooted Goethe A1 mission coach, real audio, speaking/writing production, repair, named ability wins. The trust blocker is the verification harness plus unproven course-wide production/audio coverage beyond M2.
+
+Next step: Phase 0 QA harness repair, 90m — start there.

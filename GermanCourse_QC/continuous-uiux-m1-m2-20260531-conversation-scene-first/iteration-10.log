@@ -1,0 +1,114 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -1580,11 +1580,11 @@
+   const currentMission = module1MissionCards[Math.max(currentIndex, 0)];
+   const nextMission = currentMission?.next;
+   const opensModule2 = nextMission?.href.startsWith('/missions/module-2');
+-  const href = opensModule2 && nextMission ? `${nextMission.href}?start=listen` : nextMission?.href ?? '/learn/2';
++  const nextHref = nextMission ? `${nextMission.href}${nextMission.href.includes('?') ? '&' : '?'}start=listen` : '/learn/2';
+ 
+   return (
+     <Link
+-      href={href}
++      href={nextHref}
+       className="block rounded-[1.8rem] border border-[#f1d27a]/20 bg-gradient-to-br from-[#f1d27a]/16 to-white/[0.04] p-5 transition hover:border-[#f1d27a]/45 hover:bg-[#f1d27a]/10"
+     >
+       <Sparkles className="mb-3 h-8 w-8 text-[#f1d27a]" />
+@@ -1592,7 +1592,7 @@
+       <h3 className="mt-2 text-2xl font-black leading-tight">{nextMission?.title ?? 'Build your self-intro.'}</h3>
+       <p className="sr-only">
+         {nextMission?.pull ?? 'Module 2 speaking opens next.'} {nextMission?.cta ?? 'Start Module 2 speaking.'}
+-        {opensModule2 ? ' Opens the examiner audio directly.' : ''}
++        {opensModule2 ? ' Opens the examiner audio directly.' : ' Opens the next classroom audio directly.'}
+       </p>
+       <span className="mt-5 inline-flex min-h-12 items-center justify-center rounded-2xl bg-[#f1d27a] px-5 text-sm font-black text-[#162416] shadow-lg shadow-[#f1d27a]/15">
+         {opensModule2 ? 'Start M2' : 'Start next'}
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -93,7 +93,12 @@
+   if (firstM1Win.includes('label="Review"') || firstM1Win.includes('audioSources.ichLerneDeutsch')) {
+     throw new Error('m1-greet: first win screen reintroduced a review-audio chore instead of ending cleanly');
+   }
+-}
++
++  if (!missionUi.includes("const nextHref = nextMission ? `${nextMission.href}${nextMission.href.includes('?') ? '&' : '?'}start=listen` : '/learn/2';")) {
++    throw new Error('m1 sequence: next mission card must bypass repeated intro screens and open the next audio scene directly');
++  }
++}
++
+ 
+ async function inspectRoute(page, route, name) {
+   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true });
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -599,12 +599,13 @@
+     module1_data = MODULE1_MISSION_DATA.read_text(encoding="utf-8")
+     required_direct_handoff = [
+         "const opensModule2 = nextMission?.href.startsWith('/missions/module-2')",
+-        "const href = opensModule2 && nextMission ? `${nextMission.href}?start=listen` : nextMission?.href ?? '/learn/2'",
++        "const nextHref = nextMission ? `${nextMission.href}${nextMission.href.includes('?') ? '&' : '?'}start=listen` : '/learn/2'",
+         "Opens the examiner audio directly.",
++        "Opens the next classroom audio directly.",
+     ]
+     missing_direct_handoff = [snippet for snippet in required_direct_handoff if snippet not in mission_ui]
+     if missing_direct_handoff:
+-        fail(f"Module 1 -> Module 2 direct handoff missing snippets: {missing_direct_handoff}")
++        fail(f"Module 1 direct-listen handoff missing snippets: {missing_direct_handoff}")
+     if "href: '/missions/module-2/self-intro'" not in module1_data:
+         fail("Module 1 final mission should still target Module 2 self-intro, not a dashboard route")
+     required_module2_direct_listen = [
+  ┊ review diff
+a//shared/german-course/scripts/qa_gold_slice_first_journey.mjs → b//shared/german-course/scripts/qa_gold_slice_first_journey.mjs
+@@ -175,7 +175,7 @@
+   current = await state(page);
+   const winText = current.text.toLowerCase();
+   assert(winText.includes('you can now') && current.text.includes('Guten Morgen, Frau Weber. Ich lerne Deutsch.'), 'win screen missing explicit ability win', { text: current.text.slice(0, 1500) });
+-  assert(current.links.some((link) => link.href === '/missions/module-1/please-thanks'), 'win screen missing next-mission pull', { text: current.text.slice(0, 1800), links: current.links });
++  assert(current.links.some((link) => link.href === '/missions/module-1/please-thanks?start=listen'), 'win screen missing direct-listen next-mission pull', { text: current.text.slice(0, 1800), links: current.links });
+   assert(current.module1Storage?.includes('greetFrauWeber'), 'mission completion was not stored', { storage: current.module1Storage });
+ 
+   const relevantErrors = consoleErrors.filter((line) => !line.includes('favicon') && !line.includes('404'));
+
+session_id: 20260531_024849_2e6408
+Iteration 10 continuation done.
+
+Changed:
+- /shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+- /shared/german-course/scripts/qa_mission_pilot.py
+- /shared/german-course/scripts/qa_module2_production_mobile.mjs
+- /shared/german-course/scripts/qa_gold_slice_first_journey.mjs
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Product improvement:
+- M1 next-mission cards now append `?start=listen` for same-module handoffs.
+- From M1 greeting win, learner now goes directly to the Danke/Bitte audio scene instead of another intro screen.
+- From Danke/Bitte win, learner now goes directly to the polite-exit audio scene.
+- Added QA guards so the repeated-intro regression gets caught.
+
+Browser evidence:
+- `/missions/module-1/please-thanks?start=listen` lands on the conversation/repair beat after hydration.
+- Audio tested in browser:
+  - readyState 4
+  - duration 2.856s
+  - error null
+  - ended cleanly
+- Correct Danke repair advanced to the win screen.
+- Clicking the next card from Danke/Bitte win reached `/missions/module-1/polite-exit?start=listen`.
+- Console clean except normal React/HMR info.
+- nav/search hidden on focused mission path.
+
+QA:
+- PASS: targeted ESLint on touched files.
+- PASS: `node --check` for touched `.mjs` QA scripts.
+- PASS: `python3 -m py_compile scripts/qa_mission_pilot.py`
+- PASS: `python3 scripts/qa_mission_pilot.py`
+- PASS: `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs`
+- PASS: curl HTTP 200 for `/`, `/intro`, `/learn`, `/learn/1`, M1 greet, M1 please-thanks, direct-listen please-thanks.
+- WEAK/inherited: full `npm run lint` still fails from existing repo-wide issues outside this patch.
+
+Checkpoint appended:
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+No commit/push.
+
+Next: reduce polite-exit into one conversation-repair beat, 45m.
