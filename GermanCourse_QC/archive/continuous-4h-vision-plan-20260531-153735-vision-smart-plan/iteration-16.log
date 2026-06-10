@@ -1,0 +1,182 @@
+  ⟳ compacting context…
+  ┊ review diff
+a/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1742.md → b/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1742.md
+@@ -0,0 +1,780 @@
++# Adipoli German — vision-to-SMART execution plan
++
++Generated: 2026-05-31 17:42 Europe/Berlin
++Workdir: `/shared/german-course`
++Loop: 4h continuous vision reset, iteration 16
++
++This is the execution contract. It is not a mood board, not another strategy drift document, and not permission to keep polishing isolated UI. The course direction is now specific enough to build and judge against: Adipoli must become a Kerala-rooted, mission-based Goethe A1 coach for Malayali beginners, with real audio, production, repair, and exam proof.
++
++## Evidence inspected in this reset
++
++Mandatory vision/product docs synthesized:
++- `docs/README.md`
++- `docs/COURSE_OPERATING_BRIEF_2026-05-19.md`
++- `docs/PRODUCT_DIRECTION_RESET_2026-05-20.md`
++- `docs/WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`
++- `docs/AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md`
++- `docs/PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md`
++- `docs/COURSE_GOALS_ENGAGEMENT_RETENTION_2026-05-20.md`
++- `docs/COURSE_AUTOMATION_MARKETING_STRATEGY_2026-05-19.md`
++- `docs/A1_STORY_BIBLE.md`
++- `docs/COURSE_PLAN_10_10.md`
++- `docs/GOETHE_A1_EXAM_MAP.md`
++- `docs/EXERCISE_QUALITY_RULES.md`
++- `docs/MODULE_BLUEPRINTS.md`
++- `docs/SCRIPT_ARCHITECTURE.md`
++- `docs/SERIES_ARC_PLAN.md`
++- `docs/SERIES_FULL_SCRIPT.md`
++- `docs/M1_AUDIT_REPORT.md`
++- `docs/M2_M3_SETTING_AUDIT.md`
++- `docs/GAME_AUDIT.md`
++- `docs/LAUNCH_CHECKLIST.md`
++
++Recent QC/run evidence inspected:
++- `GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`
++- Prior drafts from this loop: `adipoli-vision-smart-plan-20260531-1540.md` through `20260531-1726.md`
++- Recent continuous UI/UX checkpoints about conversation-scene-first, text reduction, M1/M2 audio gates, first-page reset, and stale QA.
++
++Source inspected enough to judge feasibility:
++- First-path routes: `src/app/page.tsx`, `src/app/intro/page.tsx`, `src/app/learn/page.tsx`, `src/app/learn/[moduleId]/page.tsx`
++- Mission routes: all files under `src/app/missions/module-1/*/page.tsx` and `src/app/missions/module-2/*/page.tsx`
++- Shared mission UI: `src/app/missions/module-2/_components/MissionUI.tsx`
++- Mission data: `src/lib/missions/module1.ts`, `src/lib/missions/module2.ts`
++- Course content structure: `src/lib/content/modules/module-01.ts` through `module-18.ts`
++- Audio/media structure: `public/audio/missions/`, `public/audio/hoeren/`, `public/audio/tts/`, `public/videos/`
++- QA scripts: `scripts/qa_mission_pilot.py`, `scripts/qa_intro_start_path.mjs`, `scripts/qa_gold_slice_first_journey.mjs`, `scripts/qa_module2_production_mobile.mjs`
++
++Iteration 16 verification:
++- Time checked: `2026-05-31T17:38:35+02:00`.
++- Branch: `adipoli-page-by-page-reset-20260523-1802`.
++- Commit: `b201d05`.
++- Dirty/untracked status entries: `262`. Do not commit/push this as one blob.
++- `npx tsc --noEmit --pretty false --incremental false` → PASS.
++- Local HTTP route check → PASS 200 for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, all 3 Module 1 mission routes, all 5 Module 2 mission routes.
++- `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs` → PASS: 8 voice-first M1/M2 missions, 390px mobile viewport, nav/search hidden, no legacy builders on reviewed path.
++- `python3 scripts/qa_mission_pilot.py` → FAIL on stale intro/start-path expectations: it still expects old snippets like `Greet Frau Weber.`, `Guten Morgen, Frau Weber.`, `Start listening <ArrowRight`, `FIRST_MISSION_PATH`, and `?start=listen`.
++- `node scripts/qa_intro_start_path.mjs` → FAIL on old root-page headline/direct-start contract.
++- `node scripts/qa_gold_slice_first_journey.mjs` → FAIL on old intro copy/CTA expectations; current intro says `Your first German moment.` / `Begin lesson 1`.
++
++Current conclusion:
++- M1/M2 are directionally good enough to preserve: real mission routes, real audio, voice-first mobile QA passes.
++- The trust blocker is not TypeScript or route availability. The trust blocker is source/QA contract drift plus incomplete mission coverage beyond M2.
++- The first build lane must repair the verification harness, then prove the first learner path by browser/audio evidence. More UI polish before that is avoidance.
++
++## 1. Vision reconstruction — what Boss is trying to build
++
++Boss is not trying to build “German lessons in an app.”
++
++He is trying to build a premium, Kerala-rooted Goethe A1 course for Malayali beginners who want Germany but start from zero, with exam pressure, family/job/visa stakes, and low patience for textbook boredom.
++
++Plain version:
++
++Adipoli German should feel like a guided Kerala-to-Germany A1 coach. The learner opens the app, enters a tiny situation, hears real German, replies aloud or writes something useful, repairs one likely beginner mistake, and leaves with a named ability that helps in Goethe A1 and real life.
++
++The course should feel made for Malayalis:
++- Kerala situations, Goethe Kochi, Thrissur home, family pressure, visa/exam stakes.
++- Manglish support only where it lowers fear or makes memory sticky.
++- Kuttan as peer/older-cousin companion, not childish mascot.
++- Germany as dream/future/rehearsal during A1, not fake physical placement for Kuttan.
+… omitted 702 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md
+@@ -3801,61 +3801,31 @@
+ ## Iteration 16 — 2026-05-31T17:42:00+02:00
+ 
+ - Docs/source inspected:
+-  - Re-read/verified the current plan draft .
+-  - Re-inspected first-path routes: , , , .
+-  - Re-inspected mission data and routes: , , M1/M2 mission route files including , , and M1 greeting.
+-  - Re-inspected QA scripts: , , .
++  - Re-read/verified the current plan draft `GermanCourse_QC/adipoli-vision-smart-plan-20260531-1726.md`.
++  - Re-inspected first-path routes: `src/app/page.tsx`, `src/app/intro/page.tsx`, `src/app/learn/page.tsx`, `src/app/learn/[moduleId]/page.tsx`.
++  - Re-inspected mission data and routes: `src/lib/missions/module1.ts`, `src/lib/missions/module2.ts`, M1/M2 mission route files including `job-languages`, `final-self-intro`, and M1 greeting.
++  - Re-inspected QA scripts: `scripts/qa_mission_pilot.py`, `scripts/qa_gold_slice_first_journey.mjs`, `scripts/qa_module2_production_mobile.mjs`.
+   - Re-read key vision docs used to tighten the plan: goals/engagement/retention, Goethe exam map, exercise quality rules, A1 story bible, launch checklist.
+ - Vision findings:
+   - The course promise is stable: Kerala-rooted Goethe A1 mission coach for Malayali beginners.
+   - The mission loop must remain hear real German → answer aloud/write → repair one useful mistake → ability win → next pull.
+   - Verification is part of the product vision now, not a later engineering chore.
+ - Mismatch findings:
+-  - Current  uses  / ; QA still expects older copy like  and .
+-  - Current code direction for M1/M2 is promising: route checks pass,  passes, and M1/M2 mobile production QA passes.
++  - Current `/intro` uses `Your first German moment.` / `Begin lesson 1`; QA still expects older copy like `Greet Frau Weber.` and `Start listening`.
++  - Current code direction for M1/M2 is promising: route checks pass, `tsc` passes, and M1/M2 mobile production QA passes.
+   - Full-course mismatch remains: old dashboards/support routes exist, Modules 3–18 are not yet mission-spine complete, and Hören/production floors are not course-wide guaranteed.
+ - Verification run:
+-  - 2026-05-31T17:44:38+02:00: .
+-  - Branch , commit , dirty/untracked entries .
+-  - PASS: .
+-  - PASS: local curl HTTP 200 for , , , , , all 3 M1 mission routes, all 5 M2 mission routes.
+-  - PASS: mobile_route[m1-greet]=PASS overflow=390/390 nav=false search=false
+-immersive_reply_tiny_write[m1-greet]=PASS merged=speak-repair audioGated=true noTyping=true
+-mobile_route[m1-please-thanks]=PASS overflow=390/390 nav=false search=false
+-immersive_reply_tiny_write[m1-please-thanks]=PASS merged=speak-repair audioGated=true noTyping=true
+-mobile_route[m1-polite-exit]=PASS overflow=390/390 nav=false search=false
+-immersive_reply_tiny_write[m1-polite-exit]=PASS merged=speak-repair audioGated=true noTyping=true
+-mobile_route[m2-self-intro]=PASS overflow=390/390 nav=false search=false
+-immersive_reply_tiny_write[m2-self-intro]=PASS merged=speak-repair audioGated=true noTyping=true
+-mobile_route[m2-spell-name]=PASS overflow=390/390 nav=false search=false
+-immersive_reply_tiny_write[m2-spell-name]=PASS merged=speak-repair audioGated=true noTyping=true
+-mobile_route[m2-from-kerala]=PASS overflow=390/390 nav=false search=false
+-immersive_reply_tiny_write[m2-from-kerala]=PASS merged=speak-repair audioGated=true noTyping=true
+-mobile_route[m2-job-languages]=PASS overflow=390/390 nav=false search=false
+-immersive_reply_tiny_write[m2-job-languages]=PASS merged=speak-repair audioGated=true noTyping=true
+-mobile_route[m2-final-self-intro]=PASS overflow=390/390 nav=false search=false
+-immersive_reply_tiny_write[m2-final-self-intro]=PASS merged=speak-repair audioGated=true noTyping=true
+-PASS: M1/M2 immersive mobile QA (8 voice-first missions, 0 legacy builders on reviewed path) base=http://127.0.0.1:3000.
+-  - FAIL/stale: custom_audio_pages=5 shared_audio_ui=ok
+-opening_words[self-intro]=2
+-opening_words[spell-name]=12
+-opening_words[from-kerala]=11
+-opening_words[job-languages]=3
+-opening_words[final-self-intro]=3
+-opening_words[greet-frau-weber]=17
+-opening_words[please-thanks]=9
+-opening_words[polite-exit]=10
+-visible_meta_labels=clean
+-choice_subtitles=compact
+-choice_continue=no_dead_button
+-repair_explainer=compact
+-scene_check_copy=visual_minimal
+-FAIL: intro start path missing CTA/copy snippets: ['Greet Frau Weber.', 'Guten Morgen, Frau Weber.', 'Start listening <ArrowRight', "const FIRST_MISSION_PATH = '/missions/module-1/greet-frau-weber'", 'const FIRST_MISSION_HREF = `${FIRST_MISSION_PATH}?start=listen`;'] on old intro/start-path snippets.
+-  - FAIL/stale:  and  on old root/intro copy contract.
++  - `date --iso-8601=seconds`: `2026-05-31T17:38:35+02:00`.
++  - Branch `adipoli-page-by-page-reset-20260523-1802`, commit `b201d05`, dirty/untracked entries `262`.
++  - PASS: `npx tsc --noEmit --pretty false --incremental false`.
++  - PASS: local curl HTTP 200 for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, all 3 M1 mission routes, all 5 M2 mission routes.
++  - PASS: `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs`.
++  - FAIL/stale: `python3 scripts/qa_mission_pilot.py` on old intro/start-path snippets.
++  - FAIL/stale: `node scripts/qa_intro_start_path.mjs` and `node scripts/qa_gold_slice_first_journey.mjs` on old root/intro copy contract.
+ - Plan sections drafted/refined:
+   - Produced final iteration-16 plan with exact requested sections 1–12, updated evidence, SMART phases, 7-day plan, 48h lane, launch-ready gates, Boss decisions, verification harness, scorecard, and Boss summary.
+ - Final artifact:
+-  - 
++  - `/shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1742.md`
+ - Remaining questions/risks:
+   - Public protagonist naming remains a Boss decision.
+   - Audio accent quality remains human-review unless separately evaluated.
+
+session_id: 20260531_173759_4c5619
+Done.
+
+Final plan:
+`/shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1742.md`
+
+Checkpoint updated:
+`/shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`
+
+Verified in this iteration:
+- `tsc` PASS.
+- Local routes return 200 for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, all M1 missions, all M2 missions.
+- M1/M2 mobile production QA PASS.
+- `qa_mission_pilot.py`, `qa_intro_start_path.mjs`, and `qa_gold_slice_first_journey.mjs` still FAIL because they encode stale root/intro copy/path assumptions.
+- Git tree still dirty at 262 entries; do not commit/push as one blob.
+
+Blunt conclusion in the plan:
+M1/M2 are directionally worth preserving. The immediate trust blocker is stale QA + incomplete mission coverage beyond M2, not more visual polish.
+
+Fix stale QA harness, 2h — start there?

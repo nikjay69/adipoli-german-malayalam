@@ -1,0 +1,144 @@
+  ┊ review diff
+a//shared/german-course/src/app/page.tsx → b//shared/german-course/src/app/page.tsx
+@@ -131,7 +131,7 @@
+       ? 'Continue your speaking path.'
+       : 'Now introduce yourself.';
+   const module2HomeDescription = !module1Complete
+-    ? `${completedModule1MissionCount}/${module1MissionCards.length} Module 1 done. Next: hear, say, type, repair one classroom phrase.`
++    ? 'Hear, say, type, then repair one classroom phrase.'
+     : module2SequenceComplete
+       ? 'Module 2 is marked complete. Review the final self-introduction before moving on.'
+       : completedModule2MissionCount > 0
+@@ -172,7 +172,7 @@
+       ? 'Review your 20-second self-intro.'
+       : `${nextModule2Mission.missionNumber}: ${nextModule2Mission.title}`;
+   const module2ResumeDescription = !module1Complete
+-    ? `${completedModule1MissionCount}/${module1MissionCards.length} done. Next output: ${nextModule1Mission.output}`
++    ? `Next output: ${nextModule1Mission.output}`
+     : module2SequenceComplete
+       ? 'Keep the Goethe answer warm before moving into the next module.'
+       : completedModule2MissionCount > 0
+a//shared/german-course/src/app/learn/page.tsx → b//shared/german-course/src/app/learn/page.tsx
+@@ -144,10 +144,10 @@
+       ? 'Review your 20-second self-intro.'
+       : nextModule2Mission.title;
+   const learnHeroContext = !module1Complete
+-    ? `${completedModule1MissionCount}/${module1MissionCards.length} done. Next: ${nextModule1Mission.output}`
++    ? `Next: ${nextModule1Mission.output}`
+     : module2SequenceComplete
+       ? 'Complete. Replay before Module 3.'
+-      : `${completedMissionCount}/5 done. Next: ${nextMissionOutputSentence}`;
++      : `Next: ${nextMissionOutputSentence}`;
+   const learnHeroPromises = !module1Complete
+     ? ['Hear model', 'Speak + type', 'Repair trap']
+     : module2SequenceComplete
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -91,12 +91,12 @@
+     : courseModule.title;
+   const heroDescription = isModule1
+     ? module1Complete
+-      ? 'Module 1 is done. Move into your first self-introduction.'
+-      : `${nextModule1Mission.title}. Hear, choose, speak, type, repair.`
++      ? 'Move into your first self-introduction.'
++      : 'Hear, choose, speak, type, repair.'
+     : isModule2
+     ? module2SequenceComplete
+-      ? 'Module 2 is done. Review the final answer before Module 3.'
+-      : `${nextModule2Mission.title}. Say it, type it, repair one trap.`
++      ? 'Review the final answer before Module 3.'
++      : 'Say it, type it, repair one trap.'
+     : courseModule.description;
+   const heroChips = isModule1 || isModule2
+     ? ['Hear', 'Speak + type', 'Repair']
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -265,7 +265,7 @@
+         "const shouldSuppressHomeExtras = shouldShowModule2ResumeStrip && !module2SequenceComplete;",
+         "Continue Module 1 classroom path",
+         "Continue Module 2 speaking path",
+-        "`${completedModule1MissionCount}/${module1MissionCards.length} done. Next output: ${nextModule1Mission.output}`",
++            "`Next output: ${nextModule1Mission.output}`",
+         "The old lesson queue can wait. Start with one listening, speaking, typing win.",
+         "module2ResumeCta",
+         "module2ResumeProgressLabel",
+@@ -312,8 +312,8 @@
+         "learnHeroHref",
+         "learnHeroCta",
+         "nextMissionOutputSentence",
+-        "`${completedMissionCount}/5 done. Next: ${nextMissionOutputSentence}`",
+-        "`${completedModule1MissionCount}/${module1MissionCards.length} done. Next: ${nextModule1Mission.output}`",
++        "`Next: ${nextMissionOutputSentence}`",
++        "`Next: ${nextModule1Mission.output}`",
+         "Complete. Replay before Module 3.",
+         "Review your 20-second self-intro.",
+         "Ich heiße ... Ich komme aus Kerala. Ich spreche ...",
+  ┊ review diff
+a//shared/german-course/src/app/learn/page.tsx → b//shared/german-course/src/app/learn/page.tsx
+@@ -125,7 +125,6 @@
+   const completedModule1MissionSet = new Set(completedModule1MissionIds);
+   const firstModule1Mission = module1MissionCards[0];
+   const nextModule1Mission = module1MissionCards.find((mission) => mission.active && !completedModule1MissionSet.has(mission.id)) ?? firstModule1Mission;
+-  const completedModule1MissionCount = module1MissionCards.filter((mission) => completedModule1MissionSet.has(mission.id)).length;
+   const module1Complete = module1MissionCards.every((mission) => completedModule1MissionSet.has(mission.id));
+   const completedMissionSet = new Set(completedMissionIds);
+   const completedMissionCount = module2MissionCards.filter((mission) => completedMissionSet.has(mission.id)).length;
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -265,7 +265,7 @@
+         "const shouldSuppressHomeExtras = shouldShowModule2ResumeStrip && !module2SequenceComplete;",
+         "Continue Module 1 classroom path",
+         "Continue Module 2 speaking path",
+-            "`Next output: ${nextModule1Mission.output}`",
++        "`Next output: ${nextModule1Mission.output}`",
+         "The old lesson queue can wait. Start with one listening, speaking, typing win.",
+         "module2ResumeCta",
+         "module2ResumeProgressLabel",
+@@ -351,7 +351,7 @@
+         "Ready for review",
+         "Say now",
+         "20-second Goethe self-intro",
+-        "`${nextModule2Mission.title}. Say it, type it, repair one trap.`",
++        "Say it, type it, repair one trap.",
+         "readCompletedModule2Missions",
+         "module2-mission-completed",
+         "Module 2 · ${module2SequenceComplete ? 'review' : nextModule2Mission.missionNumber}",
+  ⟳ compacting context…
+
+session_id: 20260523_085357_022ee1
+Iteration 30 complete.
+
+Changed:
+- /shared/german-course/src/app/page.tsx
+- /shared/german-course/src/app/learn/page.tsx
+- /shared/german-course/src/app/learn/[moduleId]/page.tsx
+- /shared/german-course/scripts/qa_mission_pilot.py
+- Appended checkpoint to /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+What improved:
+- Cut noisy first-path progress-counter copy from homepage, /learn, and module landing descriptions.
+- Replaced “x/y done” style status text with direct learner action/output copy.
+- Updated QA guard so the shorter wording is now expected/protected.
+- Cleared stale Next dev processes and verified the fresh dev server responds.
+
+QA:
+- PASS curl 200:
+  - /
+  - /intro
+  - /learn
+  - /learn/1
+  - /learn/2
+  - /missions/module-1/greet-frau-weber
+  - /missions/module-2/self-intro
+- PASS full mission QA:
+  - python3 scripts/qa_mission_pilot.py
+  - intro browser path passed
+  - mobile route checks passed
+  - production audio unlocks passed
+  - all 8 M1/M2 builder click gates passed
+- PASS targeted lint on changed TSX files.
+- WEAK app-wide lint still fails from inherited broad issues outside this lane: auth/signup, games, speech/TTS hooks, Remotion, module variable naming, etc.
+
+Kuttan note:
+- Do not mass-rename.
+- My recommendation remains: public adult-safe learner/persona name should be Arun or Kiran; keep “Kuttan” only as home/family nickname flavor if Boss wants the warmth.
+
+Next best lane:
+- Stop polishing containers. Finish a fuller Module 1 chain or tighten the M1 → M2 ability-win transition so the product feels like a guided course, not just one polished entry path.

@@ -1,0 +1,298 @@
+  ┊ review diff
+a//shared/german-course/src/app/learn/page.tsx → b//shared/german-course/src/app/learn/page.tsx
+@@ -5,6 +5,7 @@
+ import { motion, AnimatePresence } from 'framer-motion';
+ import { ChevronRight, Lock, CheckCircle, Play, ChevronDown } from 'lucide-react';
+ import { Kuttan } from '@/components/character/Kuttan';
++import { KeralaClassroomScene } from '@/components/course/KeralaClassroomScene';
+ import { useGameStore } from '@/lib/store';
+ import type { LessonProgress } from '@/lib/store';
+ import { ALL_MODULES } from '@/lib/content/modules';
+  ┊ review diff
+a//shared/german-course/src/app/learn/page.tsx → b//shared/german-course/src/app/learn/page.tsx
+@@ -170,52 +170,52 @@
+     <div className="min-h-screen px-4 py-3 md:px-8 md:py-8">
+       <div className="mx-auto max-w-md md:max-w-6xl">
+         {/* Focused first-session compass */}
+-        <div className="mb-4 overflow-hidden rounded-[1.75rem] border border-[#d4a520]/30 bg-gradient-to-br from-[#d4a520]/18 via-white/[0.04] to-[#e94560]/12 shadow-xl shadow-black/20">
+-          <div className="p-4 md:p-5">
+-            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+-              <div>
+-                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[#d4a520]">{learnHeroKicker}</p>
+-                <h1 className="mt-1.5 text-3xl font-black leading-tight tracking-tight text-white md:text-4xl">
+-                  {learnHeroTitle}
+-                </h1>
+-                <p className="mt-2 max-w-2xl text-sm font-semibold leading-snug text-white/72 md:text-base">
+-                  {learnHeroContext}
+-                </p>
+-                <div className="mt-3 flex flex-wrap gap-2">
+-                  {learnHeroPromises.map((promise) => (
+-                    <span key={promise} className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-black text-white/72">
+-                      {promise}
+-                    </span>
+-                  ))}
+-                </div>
+-                <p className="mt-3 inline-flex rounded-2xl border border-[#d4a520]/25 bg-[#d4a520]/10 px-3 py-2 text-sm font-black text-[#f1d27a]">
+-                  {learnHeroPreview}
+-                </p>
+-              </div>
+-            </div>
+-
+-            <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center">
+-              <Link
+-                href={learnHeroHref}
+-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#e94560] px-5 py-4 text-base font-black text-white shadow-lg shadow-[#e94560]/25 transition hover:bg-[#ff5a72]"
+-              >
+-                {learnHeroCta} <ChevronRight className="h-4 w-4" />
+-              </Link>
++        <div className="mb-3 overflow-hidden rounded-[1.75rem] border border-[#d4a520]/30 bg-gradient-to-br from-[#d4a520]/18 via-white/[0.04] to-[#e94560]/12 shadow-xl shadow-black/20">
++          <div className="grid gap-4 p-4 md:grid-cols-[minmax(0,1fr)_16rem] md:items-center md:p-5">
++            <div>
++              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[#d4a520]">{learnHeroKicker}</p>
++              <h1 className="mt-1.5 text-3xl font-black leading-tight tracking-tight text-white md:text-4xl">
++                {learnHeroTitle}
++              </h1>
++              <p className="mt-2 max-w-2xl text-sm font-semibold leading-snug text-white/72 md:text-base">
++                {learnHeroContext}
++              </p>
++              <div className="mt-3 flex flex-wrap gap-2">
++                {learnHeroPromises.map((promise) => (
++                  <span key={promise} className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-black text-white/72">
++                    {promise}
++                  </span>
++                ))}
++              </div>
++              <p className="mt-3 inline-flex rounded-2xl border border-[#d4a520]/25 bg-[#d4a520]/10 px-3 py-2 text-sm font-black text-[#f1d27a]">
++                {learnHeroPreview}
++              </p>
++
++              <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center">
++                <Link
++                  href={learnHeroHref}
++                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#e94560] px-5 py-4 text-base font-black text-white shadow-lg shadow-[#e94560]/25 transition hover:bg-[#ff5a72]"
++                >
++                  {learnHeroCta} <ChevronRight className="h-4 w-4" />
++                </Link>
++              </div>
++            </div>
++
++            <div className="hidden md:block" aria-hidden="true">
++              <KeralaClassroomScene className="h-44 border-white/10 shadow-[0_24px_60px_-34px_rgba(0,0,0,0.9)]" />
+             </div>
+           </div>
+         </div>
+ 
+-        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-3 md:p-4">
++        <div className="mb-5 flex justify-end">
+           <button
+             type="button"
+             onClick={() => setShowCourseTools((v) => !v)}
+-            className="flex w-full items-center justify-between gap-3 rounded-2xl px-1 py-1 text-left text-sm font-bold text-white/62 transition hover:text-white"
++            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.025] px-3 py-2 text-left text-xs font-bold text-white/42 transition hover:text-white/75"
+… omitted 12 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -108,7 +108,7 @@
+       : 'Listen to the examiner first.'
+     : courseModule.description;
+   const heroChips = isModule1 || isModule2
+-    ? ['Hear', 'Say + type', 'Fix']
++    ? ['Hear', 'Say + type', 'Correct']
+     : [`${courseModule.totalHours} hours`, `${courseModule.lessons.length} lessons`, `${courseModule.lessons.reduce((acc, l) => acc + l.vocabulary.length, 0)} words`];
+   const module1CompletionHref = module2MissionCards[0]?.href ? `${module2MissionCards[0].href}?start=listen` : '/learn/2';
+   const module1NextOutput = module1Complete ? module2MissionCards[0]?.output : nextModule1Mission.output;
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -374,7 +374,7 @@
+           className="rounded-[1.75rem] border border-[#d4a520]/25 bg-[var(--card)]/75 p-3 shadow-xl shadow-black/10 md:p-4"
+         >
+           <div className="flex items-center justify-between gap-3 px-1">
+-            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--foreground)]/46">3 classroom wins</p>
++            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--foreground)]/46">Classroom path</p>
+             <span className="text-xs font-black text-[#3fbf75]">{completedModule1MissionCount}/3</span>
+           </div>
+ 
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -401,7 +401,7 @@
+ 
+           <details className="mt-3 rounded-2xl border border-[var(--foreground)]/10 bg-black/10 p-3">
+             <summary className="cursor-pointer text-sm font-black text-[var(--foreground)]/68">
+-              Mission map
++              See your path
+             </summary>
+             <div className="mt-3 grid gap-2 md:grid-cols-3">
+               {module1MissionCards.map((mission, index) => {
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -443,7 +443,7 @@
+           className="rounded-[1.75rem] border border-[var(--foreground)]/10 bg-[var(--card)]/75 p-3 shadow-xl shadow-black/10 md:p-4"
+         >
+           <div className="flex items-center justify-between gap-3 px-1">
+-            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--foreground)]/46">5 exam lines</p>
++            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--foreground)]/46">Exam answers</p>
+             <span className="text-xs font-black text-[#3fbf75]">{completedMissionCount}/5</span>
+           </div>
+ 
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -477,7 +477,7 @@
+           </div>
+ 
+           <details className="mt-3 rounded-2xl border border-[var(--foreground)]/10 bg-black/10 p-3">
+-            <summary className="cursor-pointer text-sm font-black text-[var(--foreground)]/68">Mission map</summary>
++            <summary className="cursor-pointer text-sm font-black text-[var(--foreground)]/68">See your path</summary>
+             <div className="mt-3 grid gap-2 sm:grid-cols-5">
+               {module2MissionCards.map((mission, index) => {
+                 const isDone = completedMissionSet.has(mission.id);
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -385,7 +385,7 @@
+         fail(f"/learn entry path missing guided Module 2 snippets: {missing_learn}")
+     required_module_static = [
+         "courseModule.titleGerman &&",
+-        "['Hear', 'Say + type', 'Fix']",
++        "['Hear', 'Say + type', 'Correct']",
+         "module2NextOutput",
+         "Ready for review",
+         "Your line",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -394,9 +394,9 @@
+         "readCompletedModule2Missions",
+         "module2-mission-completed",
+         "Module 2 · ${module2SequenceComplete ? 'review' : nextModule2Mission.missionNumber}",
+-        "5 exam lines",
++        "Exam answers",
+         "Compact Module 2 mission progress",
+-        "Mission map",
++        "See your path",
+         "Start listening",
+         "Continue ${nextModule2Mission.missionNumber.replace('Mission ', '')}",
+         "Replay final answer",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -622,9 +622,9 @@
+         ]),
+         ("/learn/1 module page", module, [
+             "Module 1 · ${module1Complete ? 'mission review' : nextModule1Mission.missionNumber}",
+-            "3 classroom wins",
++            "Classroom path",
+             "Compact Module 1 mission progress",
+-            "Mission map",
++            "See your path",
+             "KeralaClassroomScene",
+             "Listen first.",
+             "nextModule1Mission.title",
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -108,7 +108,7 @@
+       : 'Listen to the examiner first.'
+     : courseModule.description;
+   const heroChips = isModule1 || isModule2
+-    ? ['Hear', 'Say + type', 'Correct']
++    ? ['Hear', 'Say + type', 'Fix mistake']
+     : [`${courseModule.totalHours} hours`, `${courseModule.lessons.length} lessons`, `${courseModule.lessons.reduce((acc, l) => acc + l.vocabulary.length, 0)} words`];
+   const module1CompletionHref = module2MissionCards[0]?.href ? `${module2MissionCards[0].href}?start=listen` : '/learn/2';
+   const module1NextOutput = module1Complete ? module2MissionCards[0]?.output : nextModule1Mission.output;
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -230,7 +230,7 @@
+                 >
+                   <div className="flex items-center justify-between gap-3">
+                     <span className="font-black text-white">{completedModule1MissionCount}/{module1MissionCards.length}</span>
+-                    <span className="text-white/55">3 classroom wins</span>
++                    <span className="text-white/55">3 steps</span>
+                   </div>
+                   <div className="my-2 h-1.5 overflow-hidden rounded-full bg-white/10">
+                     <div
+  ┊ review diff
+a//shared/german-course/src/app/learn/[moduleId]/page.tsx → b//shared/german-course/src/app/learn/[moduleId]/page.tsx
+@@ -374,7 +374,7 @@
+           className="rounded-[1.75rem] border border-[#d4a520]/25 bg-[var(--card)]/75 p-3 shadow-xl shadow-black/10 md:p-4"
+         >
+           <div className="flex items-center justify-between gap-3 px-1">
+-            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--foreground)]/46">Classroom path</p>
++            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--foreground)]/46">Your path</p>
+             <span className="text-xs font-black text-[#3fbf75]">{completedModule1MissionCount}/3</span>
+           </div>
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -385,7 +385,7 @@
+         fail(f"/learn entry path missing guided Module 2 snippets: {missing_learn}")
+     required_module_static = [
+         "courseModule.titleGerman &&",
+-        "['Hear', 'Say + type', 'Correct']",
++        "['Hear', 'Say + type', 'Fix mistake']",
+         "module2NextOutput",
+         "Ready for review",
+         "Your line",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -622,7 +622,7 @@
+         ]),
+         ("/learn/1 module page", module, [
+             "Module 1 · ${module1Complete ? 'mission review' : nextModule1Mission.missionNumber}",
+-            "Classroom path",
++            "Your path",
+             "Compact Module 1 mission progress",
+             "See your path",
+             "KeralaClassroomScene",
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+@@ -11885,3 +11885,19 @@
+ ?? scripts/output/module-16.script.md
+ ?? scripts/output/module-17.script.md
+ 
++## 2026-05-30T12:35:11+02:00 — Iteration 19
++
++- Source/docs inspected: course operating brief, product direction reset, whole-course mission spine, autonomous execution plan, premium anti-hallucination protocol; recent Iteration 18 checkpoint; `/learn`, `/learn/1`, `/learn/[moduleId]`, shared mission QA guard.
++- Files changed: `src/app/learn/page.tsx`, `src/app/learn/[moduleId]/page.tsx`, `scripts/qa_mission_pilot.py`, `GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`.
++- UX/text reductions made: `/learn` desktop hero now uses the existing Kerala classroom visual to fill the empty right side without adding copy, and the old lesson map is reduced from a full-width panel to a muted secondary pill. `/learn/1` learner-facing labels were cleaned: `3 steps`, `Your path`, `See your path`, and `Fix mistake` replace more internal/ambiguous wording.
++- M1/M2 learner path status: no flow rewrite. M1 still starts at listening and routes through three classroom missions into M2; M2 still has five playable production missions with audio-gated listen/speak/type/repair/win sequence.
++- Images/video/animation: used the existing `KeralaClassroomScene` only; no generated images, no paid media, no video generation. Animation unchanged; this pass was layout balance and copy cleanup, not new motion.
++- QA run + status:
++  - PASS targeted lint/compile: `npx eslint src/app/learn/page.tsx src/app/learn/[moduleId]/page.tsx && python3 -m py_compile scripts/qa_mission_pilot.py`.
++  - PASS mission QA: `python3 scripts/qa_mission_pilot.py` -> PASS, including local + Tailscale gold-slice first journey, M1/M2 mobile routes, audio play gates, builder gates, and updated source guards.
++  - PASS route reachability: curl 200 for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, all 3 Module 1 mission routes, and `/missions/module-2/self-intro`.
++  - PASS browser visual QA: `/learn` right-side scene balances desktop and the old lesson map no longer competes with CTA; `/learn/1` shows clearer `3 steps` / `Your path` / `Fix mistake` wording with no console errors.
++  - WEAK inherited app-wide lint: `npm run lint -- --quiet` still exits 1 with 99 pre-existing errors across auth/games/tests/components/remotion/content; targeted changed-file lint passes.
++- Kuttan/name recommendation: unchanged. Do not mass-rename. Adult-safe recommendation remains Arun or Kiran as public learner name, keeping Kuttan only as a home nickname/family flavor if Boss approves.
++- Next best lane: inspect `/learn/2` and the Module 2 mission win/review screens for any remaining product-y labels, then cut one safe label or button that competes with the main action.
++
+  ⟳ compacting context…
+
+session_id: 20260530_123924_dfe54f
+Iteration 19 done.
+
+Changed:
+- `src/app/learn/page.tsx`
+  - Added the existing Kerala classroom visual to the `/learn` desktop hero so the page feels less empty without adding more text.
+  - Demoted the old lesson map into a small secondary pill instead of a competing full-width panel.
+
+- `src/app/learn/[moduleId]/page.tsx`
+  - Cleaned Module 1 visible labels:
+    - `3 beats` → `3 steps`
+    - `Mission path` → `Your path`
+    - `Open path` → `See your path`
+    - `Repair` → `Fix mistake`
+
+- `scripts/qa_mission_pilot.py`
+  - Extended source guards to protect the new `/learn` visual layout and `/learn/1` simplified wording.
+
+- `GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+  - Appended Iteration 19 checkpoint.
+
+QA:
+- PASS: targeted ESLint on changed app files.
+- PASS: Python compile for QA script.
+- PASS: `python3 scripts/qa_mission_pilot.py`.
+- PASS: curl 200 for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, M1 mission routes, and M2 self-intro.
+- PASS: browser visual QA on `/learn` and `/learn/1`; no console errors.
+- WEAK: app-wide lint still fails from inherited unrelated errors.
+
+Checkpoint written:
+`/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Next: inspect `/learn/2` + Module 2 win screens for product-y labels, 25m.

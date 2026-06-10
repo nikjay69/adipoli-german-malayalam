@@ -1,0 +1,70 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -6,6 +6,7 @@
+ import { AnimatePresence, motion } from 'framer-motion';
+ import { Check, Headphones, Mic, PenLine, ShieldCheck, Sparkles, Trophy } from 'lucide-react';
+ import { clsx } from 'clsx';
++import { KeralaClassroomScene } from '@/components/course/KeralaClassroomScene';
+ import { module1MissionCards, readCompletedModule1Missions, writeCompletedModule1Mission, type Module1MissionId } from '@/lib/missions/module1';
+ import { module2MissionCards, type Module2MissionId } from '@/lib/missions/module2';
+ 
+@@ -1055,9 +1056,10 @@
+           {note && <p className="max-w-md text-sm font-semibold leading-6 text-white/52">{note}</p>}
+         </div>
+       </div>
+-      <div className="rounded-[1.35rem] border border-white/12 bg-black/18 p-4 sm:p-5">
++      <div className="rounded-[1.35rem] border border-white/12 bg-black/18 p-3 sm:p-4">
++        <KeralaClassroomScene className="mb-4 h-28 border-white/10 shadow-none" />
+         <p className="text-[0.68rem] font-black uppercase tracking-[0.2em] text-[#f1d27a]">You will produce</p>
+-        <p className="mt-3 text-2xl font-black leading-tight text-white sm:text-3xl">{output}</p>
++        <p className="mt-2 text-xl font-black leading-tight text-white sm:text-2xl">{output}</p>
+       </div>
+     </div>
+   );
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -183,7 +183,8 @@
+         "aria-label=\"Mission promises\"",
+         "promises = ['Hear', 'Speak + type', 'Repair']",
+         "visiblePromises.map",
+-    ]
++        "KeralaClassroomScene",
++      ]
+     missing_intro_ui = [snippet for snippet in required_intro_ui if snippet not in mission_ui]
+     if missing_intro_ui:
+         fail(f"shared compact MissionIntro missing snippets: {missing_intro_ui}")
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -184,7 +184,7 @@
+         "promises = ['Hear', 'Speak + type', 'Repair']",
+         "visiblePromises.map",
+         "KeralaClassroomScene",
+-      ]
++    ]
+     missing_intro_ui = [snippet for snippet in required_intro_ui if snippet not in mission_ui]
+     if missing_intro_ui:
+         fail(f"shared compact MissionIntro missing snippets: {missing_intro_ui}")
+  ⟳ compacting context…
+
+session_id: 20260523_083925_fc0627
+Iteration 28 complete.
+
+Changed:
+- `/shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx`
+  - Added the existing calm `KeralaClassroomScene` visual into the shared M1/M2 mission intro card.
+  - Tightened padding and phrase-preview size so the intro stays text-light.
+- `/shared/german-course/scripts/qa_mission_pilot.py`
+  - Added a guard so the shared intro visual does not regress.
+- `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+  - Appended Iteration 28 checkpoint.
+
+QA:
+- PASS targeted ESLint for changed TSX.
+- PASS Python compile for QA script.
+- PASS full `python3 scripts/qa_mission_pilot.py` after restarting stale dev server.
+- PASS curl route smoke for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, M1 routes, M2 self-intro.
+- PASS browser visual/console check on M1 mission intro.
+- Clicked primary CTA and verified transition to audio-gated step.
+
+Judgment:
+- Good safe product-feel improvement: the mission intro now has a visual scene cue without extra text or AI-image artifact risk.
+- Not enough as a major product step. Next lane should be substance: improve Module 1 landing/sequence clarity or extract a reusable mission-sequence primitive, not more container polish.

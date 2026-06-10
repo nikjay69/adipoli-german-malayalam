@@ -1,0 +1,694 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -967,6 +967,122 @@
+         </div>
+       </div>
+       {side}
++      <ActionRow className="lg:col-span-2">
++        <PrimaryButton onClick={onContinue} disabled={continueDisabled}>{cta}</PrimaryButton>
++      </ActionRow>
++    </div>
++  );
++}
++
++export function ReplyAloudStep({
++  title,
++  prompt,
++  audioSrc,
++  audioLabel = 'Model',
++  modelText,
++  cta,
++  onContinue,
++  turnCue = 'Now answer.',
++}: {
++  title: string;
++  prompt: React.ReactNode;
++  audioSrc: string;
++  audioLabel?: string;
++  modelText: React.ReactNode;
++  cta: React.ReactNode;
++  onContinue: () => void;
++  turnCue?: string;
++}) {
++  const [modelAudioFinished, setModelAudioFinished] = useState(false);
++
++  return (
++    <div
++      className="grid gap-6 lg:grid-cols-[0.85fr_1fr] lg:items-center"
++      data-testid="immersive-reply-step"
++      data-model-audio-finished={modelAudioFinished ? 'true' : 'false'}
++    >
++      <div>
++        <Mic className="mb-4 h-11 w-11 text-[#f1d27a]" />
++        <h2 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h2>
++        <p className="mt-3 text-base leading-7 text-white/66">{prompt}</p>
++      </div>
++      <div className="rounded-[1.55rem] border border-[#f1d27a]/18 bg-[#f1d27a]/7 p-3 sm:p-4">
++        <NativeAudio
++          src={audioSrc}
++          label={audioLabel}
++          onEnded={() => setModelAudioFinished(true)}
++          started={modelAudioFinished}
++          showStatus
++          turnCue={turnCue}
++          compact
++        />
++        <div
++          className={clsx(
++            'mt-4 rounded-2xl border border-white/10 bg-[#0f1d14]/72 p-4 transition',
++            modelAudioFinished ? 'opacity-100' : 'opacity-45'
++          )}
++          data-testid="immersive-model-line"
++        >
++          <p className="sr-only">Reply model</p>
++          <p className="text-2xl font-black leading-snug">{modelText}</p>
++        </div>
++      </div>
++      <ActionRow className="lg:col-span-2">
++        <PrimaryButton onClick={onContinue} disabled={!modelAudioFinished}>{cta}</PrimaryButton>
++      </ActionRow>
++    </div>
++  );
++}
++
++export function TinyWriteStep({
++  title,
++  prompt,
++  inputId,
++  label,
++  value,
++  onChange,
++  placeholder,
+… omitted 44 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx → b//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx
+@@ -4,7 +4,6 @@
+ import { useSearchParams } from 'next/navigation';
+ import { ArrowRight, ChevronLeft, Headphones } from 'lucide-react';
+ import {
+-  BuilderStep,
+   HearStep,
+   MissionIntro,
+   MissionShell,
+@@ -12,9 +11,10 @@
+   Module1NextMissionCard,
+   NativeAudio,
+   PremiumCard,
+-  ProductionStep,
+   RecognitionStep,
+   RepairStep,
++  ReplyAloudStep,
++  TinyWriteStep,
+   normalizeMissionAnswer,
+   useMissionStepForQA,
+ } from '@/app/missions/module-2/_components/MissionUI';
+@@ -30,22 +30,14 @@
+   { id: 'tschuss', title: 'Tschüss' },
+ ];
+ 
+-const builderWords = ['Guten', 'Morgen', 'Frau', 'Weber'];
+-const builderBank = ['Guten', 'Morgen', 'Hallo', 'Frau', 'Weber', 'Tschüss'];
+-const correctBuiltGreeting = 'Guten Morgen Frau Weber';
+-
+ export default function Module1GreetingMissionPage() {
+   const [step, setStep] = useMissionStepForQA(0, missionSteps.length - 1);
+   const searchParams = useSearchParams();
+   const [heard, setHeard] = useState(false);
+   const [recognition, setRecognition] = useState<string | null>(null);
+-  const [selectedWords, setSelectedWords] = useState<string[]>([]);
+-  const [spokenChecked, setSpokenChecked] = useState(false);
+   const [typedAnswer, setTypedAnswer] = useState('');
+   const [repairChoice, setRepairChoice] = useState<string | null>(null);
+ 
+-  const builtGreeting = selectedWords.join(' ');
+-  const builderCorrect = builtGreeting === correctBuiltGreeting;
+   const recognitionCorrect = recognition === 'guten-morgen';
+   const typedNormalized = normalizeMissionAnswer(typedAnswer);
+   const typedIsStrong = typedNormalized.includes('guten morgen') && typedNormalized.includes('ich lerne deutsch');
+@@ -57,16 +49,14 @@
+         return heard;
+       case 2:
+         return recognitionCorrect;
+-      case 3:
+-        return builderCorrect;
+       case 4:
+-        return spokenChecked && typedIsStrong;
++        return typedIsStrong;
+       case 5:
+         return repairCorrect;
+       default:
+         return true;
+     }
+-  }, [builderCorrect, heard, recognitionCorrect, repairCorrect, spokenChecked, step, typedIsStrong]);
++  }, [heard, recognitionCorrect, repairCorrect, step, typedIsStrong]);
+ 
+   const next = () => setStep((value) => Math.min(value + 1, missionSteps.length - 1));
+   const back = () => setStep((value) => Math.max(value - 1, 0));
+@@ -134,39 +124,28 @@
+         )}
+ 
+         {step === 3 && (
+-          <div>
+-            <h2 className="text-3xl font-black leading-tight sm:text-5xl">Build the greeting.</h2>
+-            <BuilderStep
+-              bank={builderBank}
+-              selected={selectedWords}
+-              setSelected={setSelectedWords}
+-              targetLength={builderWords.length}
+-              placeholder="Tap the formal greeting…"
+-              feedback="Try again."
+-              successFeedback="Good."
+-              isCorrect={builderCorrect}
+-              onContinue={next}
+-              continueDisabled={!canContinue}
+… omitted 41 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/self-intro/page.tsx → b//shared/german-course/src/app/missions/module-2/self-intro/page.tsx
+@@ -7,7 +7,7 @@
+   ChevronLeft,
+   Headphones,
+ } from 'lucide-react';
+-import { BuilderStep, HearStep, MissionIntro, MissionShell, MissionWinStep, NativeAudio, NextMissionCard, PremiumCard, ProductionStep, RecognitionStep, RepairStep, normalizeMissionAnswer, useMissionStepForQA } from '../_components/MissionUI';
++import { HearStep, MissionIntro, MissionShell, MissionWinStep, NativeAudio, NextMissionCard, PremiumCard, RecognitionStep, RepairStep, ReplyAloudStep, TinyWriteStep, normalizeMissionAnswer, useMissionStepForQA } from '../_components/MissionUI';
+ import { module2MissionAudio, module2MissionById } from '@/lib/missions/module2';
+ 
+ const mission = module2MissionById.selfIntro;
+@@ -26,27 +26,16 @@
+   { id: 'where-from', title: 'Where from?', subtitle: 'Woher kommen Sie?' },
+ ];
+ 
+-const builderWords = ['Ich', 'heiße', 'Kuttan', 'und', 'komme', 'aus', 'Kerala'];
+-const builderBank = builderWords;
+-const correctBuiltSentence = 'Ich heiße Kuttan und komme aus Kerala';
+-
+-
+ export default function Module2SelfIntroMissionPage() {
+   const [step, setStep] = useMissionStepForQA(0, missionSteps.length - 1);
+   const searchParams = useSearchParams();
+   const [heard, setHeard] = useState(false);
+   const [recognition, setRecognition] = useState<string | null>(null);
+-  const [selectedWords, setSelectedWords] = useState<string[]>([]);
+-  const [spokenChecked, setSpokenChecked] = useState(false);
+   const [typedAnswer, setTypedAnswer] = useState('');
+   const [repairChoice, setRepairChoice] = useState<string | null>(null);
+ 
+-  const builtSentence = selectedWords.join(' ');
+-  const builderCorrect = builtSentence === correctBuiltSentence;
+   const typedNormalized = normalizeMissionAnswer(typedAnswer);
+-  const typedIsStrong =
+-    typedNormalized.includes('ich heisse') &&
+-    (typedNormalized.includes('kerala') || typedNormalized.includes('indien'));
++  const typedIsStrong = typedNormalized.includes('ich heisse');
+   const recognitionCorrect = recognition === 'formal-name-question';
+   const repairCorrect = repairChoice === 'ich-komme';
+ 
+@@ -56,16 +45,14 @@
+         return heard;
+       case 2:
+         return recognitionCorrect;
+-      case 3:
+-        return builderCorrect;
+       case 4:
+-        return spokenChecked && typedIsStrong;
++        return typedIsStrong;
+       case 5:
+         return repairCorrect;
+       default:
+         return true;
+     }
+-  }, [builderCorrect, heard, recognitionCorrect, repairCorrect, spokenChecked, step, typedIsStrong]);
++  }, [heard, recognitionCorrect, repairCorrect, step, typedIsStrong]);
+ 
+   const next = () => setStep((value) => Math.min(value + 1, missionSteps.length - 1));
+   const back = () => setStep((value) => Math.max(value - 1, 0));
+@@ -139,41 +126,30 @@
+         )}
+ 
+         {step === 3 && (
+-          <div>
+-            <h2 className="text-3xl font-black leading-tight sm:text-5xl">Build the answer.</h2>
+-            <p className="mt-4 text-lg text-white/70">Goethe answer pattern: <b className="text-white">Ich heiße Kuttan und komme aus Kerala.</b></p>
+-            <BuilderStep
+-              bank={builderBank}
+-              selected={selectedWords}
+-              setSelected={setSelectedWords}
+-              targetLength={builderWords.length}
+-              placeholder="Tap words in order…"
+-              feedback="Verb order matters."
+-              successFeedback="Locked."
+-              isCorrect={builderCorrect}
+-              onContinue={next}
+-              continueDisabled={!canContinue}
+-              cta={<>Perform your version <ArrowRight className="h-5 w-5" /></>}
+-            />
+-          </div>
++          <ReplyAloudStep
+… omitted 41 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx → b//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx
+@@ -126,7 +126,7 @@
+         {step === 3 && (
+           <ReplyAloudStep
+             title="Answer aloud."
+-            prompt="When Frau Weber stops, say the classroom line. No chip puzzle."
++            prompt="When Frau Weber stops, say the classroom line."
+             audioSrc={audioSources.formalOpener}
+             audioLabel="Reply model"
+             modelText="Guten Morgen, Frau Weber. Ich lerne Deutsch."
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1.ts → b//shared/german-course/src/lib/missions/module1.ts
+@@ -26,13 +26,13 @@
+     missionNumber: 'Mission 1.1',
+     title: 'Greet Frau Weber without freezing',
+     output: 'Guten Morgen, Frau Weber. Ich lerne Deutsch.',
+-    proof: 'audio • choose • speak/type • fix',
++    proof: 'audio • answer aloud • tiny write • fix',
+     href: '/missions/module-1/greet-frau-weber',
+     state: 'Start here',
+     active: true,
+     railLabel: 'Module 1 · First classroom greeting',
+     tone: 'green',
+-    steps: ['Start', 'Hear', 'Catch', 'Build', 'Perform', 'Repair', 'Win'],
++    steps: ['Start', 'Hear', 'Catch', 'Reply', 'Write', 'Repair', 'Win'],
+     next: {
+       href: '/missions/module-1/please-thanks',
+       cta: 'Next: danke + bitte',
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module2.ts → b//shared/german-course/src/lib/missions/module2.ts
+@@ -35,13 +35,13 @@
+     missionNumber: 'Mission 2.1',
+     title: 'Tell the examiner your name',
+     output: 'Ich heiße ...',
+-    proof: 'Listen • build • say • type • repair',
++    proof: 'Listen • answer aloud • tiny write • repair',
+     href: '/missions/module-2/self-intro',
+     state: 'Start here',
+     active: true,
+     railLabel: 'Module 2 · Goethe A1 Sprechen',
+     tone: 'green',
+-    steps: ['Start', 'Hear', 'Catch', 'Build', 'Perform', 'Repair', 'Win'],
++    steps: ['Start', 'Hear', 'Catch', 'Reply', 'Write', 'Repair', 'Win'],
+     next: {
+       href: '/missions/module-2/spell-name',
+       cta: 'Next: spell your name',
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -774,8 +774,6 @@
+             "MissionIntro",
+             "HearStep",
+             "RecognitionStep",
+-            "BuilderStep",
+-            "ProductionStep",
+             "RepairStep",
+             "Module1MissionWinStep",
+             "Module1NextMissionCard",
+@@ -784,6 +782,12 @@
+             "side={<Module1NextMissionCard currentMissionId={mission.id} />}",
+             "useMissionStepForQA(0, missionSteps.length - 1)",
+         ]
++        if page == MODULE1_MISSION_PAGE:
++            required_page.extend(["ReplyAloudStep", "TinyWriteStep", "<ReplyAloudStep", "<TinyWriteStep"])
++            if "<BuilderStep" in src or "<ProductionStep" in src:
++                fail("first Module 1 mission must use immersive reply + tiny write, not builder/production chores")
++        else:
++            required_page.extend(["BuilderStep", "ProductionStep"])
+         missing_page = [snippet for snippet in required_page if snippet not in src]
+         if missing_page:
+             fail(f"{page.name} missing Module 1 shared mission snippets: {missing_page}")
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -937,8 +937,18 @@
+             pages_missing_shared.append(f"{page.name}:<MissionWinStep")
+         if "<HearStep" not in src:
+             pages_missing_shared.append(f"{page.name}:<HearStep")
+-        if "<BuilderStep" not in src:
+-            pages_missing_shared.append(f"{page.name}:<BuilderStep")
++        if page == MISSION_PAGE:
++            if "<ReplyAloudStep" not in src:
++                pages_missing_shared.append(f"{page.name}:<ReplyAloudStep")
++            if "<TinyWriteStep" not in src:
++                pages_missing_shared.append(f"{page.name}:<TinyWriteStep")
++            if "<BuilderStep" in src or "<ProductionStep" in src:
++                pages_with_old_inline.append(f"{page.name}:builder/production chore on first Module 2 mission")
++        else:
++            if "<BuilderStep" not in src:
++                pages_missing_shared.append(f"{page.name}:<BuilderStep")
++            if "<ProductionStep" not in src:
++                pages_missing_shared.append(f"{page.name}:<ProductionStep")
+         if "<RepairStep" not in src:
+             pages_missing_shared.append(f"{page.name}:<RepairStep")
+         if "<ChoiceStep" in src:
+@@ -947,8 +957,6 @@
+             pages_missing_shared.append(f"{page.name}:<RecognitionStep")
+         if "useMissionStepForQA(0, missionSteps.length - 1)" not in src:
+             pages_missing_shared.append(f"{page.name}:useMissionStepForQA")
+-        if "<ProductionStep" not in src:
+-            pages_missing_shared.append(f"{page.name}:<ProductionStep")
+         if "<RepairChoiceButton" in src:
+             pages_with_old_inline.append(f"{page.name}:direct RepairChoiceButton")
+         direct_builder_primitives = [
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -7,18 +7,20 @@
+ const BASE_URL = process.env.ADIPOLI_QA_BASE_URL || 'http://100.96.56.53:3000';
+ 
+ const missions = [
+-  ['/missions/module-2/self-intro', 'self-intro'],
+   ['/missions/module-2/spell-name', 'spell-name'],
+   ['/missions/module-2/from-kerala', 'from-kerala'],
+   ['/missions/module-2/job-languages', 'job-languages'],
+   ['/missions/module-2/final-self-intro', 'final-self-intro'],
+ ];
+ 
++const immersiveMissions = [
++  ['/missions/module-1/greet-frau-weber', 'm1-greet', 'Guten Morgen, Frau Weber. Ich lerne Deutsch'],
++  ['/missions/module-2/self-intro', 'm2-self-intro', 'Ich heiße Kuttan'],
++];
++
+ const builderMissions = [
+-  ['/missions/module-1/greet-frau-weber', 'm1-greet', ['Guten', 'Morgen', 'Frau', 'Weber'], 'Guten Morgen Frau Weber'],
+   ['/missions/module-1/please-thanks', 'm1-please-thanks', ['Danke', 'Bitte'], 'Danke Bitte'],
+   ['/missions/module-1/polite-exit', 'm1-polite-exit', ['Vielen', 'Dank', 'Auf', 'Wiedersehen'], 'Vielen Dank Auf Wiedersehen'],
+-  ['/missions/module-2/self-intro', 'm2-self-intro', ['Ich', 'heiße', 'Kuttan', 'und', 'komme', 'aus', 'Kerala'], 'Ich heiße Kuttan und komme aus Kerala'],
+   ['/missions/module-2/spell-name', 'm2-spell-name', ['Kah', 'Ooh', 'Tay', 'Tay', 'Ah', 'Enn'], 'Kah Ooh Tay Tay Ah Enn'],
+   ['/missions/module-2/from-kerala', 'm2-from-kerala', ['Ich', 'komme', 'aus', 'Kerala', 'und', 'wohne', 'in', 'Kochi'], 'Ich komme aus Kerala und wohne in Kochi'],
+   ['/missions/module-2/job-languages', 'm2-job-languages', ['Ich', 'bin', 'Student', 'und', 'spreche', 'Malayalam', 'und', 'Englisch'], 'Ich bin Student und spreche Malayalam und Englisch'],
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -30,6 +30,9 @@
+ function assertSourceProductionGate() {
+   const missionUi = fs.readFileSync(path.join(ROOT, 'src/app/missions/module-2/_components/MissionUI.tsx'), 'utf8');
+   const required = [
++    'data-testid="immersive-reply-step"',
++    'data-testid="tiny-write-step"',
++    'data-testid="tiny-write-input"',
+     'Listen',
+     'Say',
+     'Type',
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -74,6 +74,14 @@
+     if (!source.includes('audioSrc=')) throw new Error(`${name}: production step must include real model audioSrc`);
+     if (!source.includes('typedIsStrong=')) throw new Error(`${name}: production step must keep typed output gate`);
+   }
++
++  const firstM2 = fs.readFileSync(path.join(ROOT, 'src/app/missions/module-2/self-intro/page.tsx'), 'utf8');
++  if (!firstM2.includes('<ReplyAloudStep') || !firstM2.includes('<TinyWriteStep')) throw new Error('self-intro: missing immersive reply/tiny write steps');
++  if (firstM2.includes('<BuilderStep') || firstM2.includes('<ProductionStep')) throw new Error('self-intro: first Module 2 path must not use builder/production chore steps');
++
++  const firstM1 = fs.readFileSync(path.join(ROOT, 'src/app/missions/module-1/greet-frau-weber/page.tsx'), 'utf8');
++  if (!firstM1.includes('<ReplyAloudStep') || !firstM1.includes('<TinyWriteStep')) throw new Error('m1-greet: missing immersive reply/tiny write steps');
++  if (firstM1.includes('<BuilderStep') || firstM1.includes('<ProductionStep')) throw new Error('m1-greet: first Module 1 path must not use builder/production chore steps');
+ }
+ 
+ async function inspectRoute(page, route, name) {
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -188,6 +188,59 @@
+   console.log(`production_unlock[${name}]=PASS beforeLocked=${before.textareaDisabled} afterUnlocked=${!after.textareaDisabled} audioReady=${before.audioReadyState}`);
+ }
+ 
++async function inspectImmersiveStep(page, route, name, typedValue) {
++  await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true });
++  await page.goto(`${BASE_URL}${route}?adipoliQa=1&adipoliQaStep=3`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await page.waitForSelector('[data-testid="immersive-reply-step"]', { timeout: 15000 });
++  await new Promise((resolve) => setTimeout(resolve, 300));
++
++  const before = await page.evaluate(() => {
++    const step = document.querySelector('[data-testid="immersive-reply-step"]');
++    const audio = document.querySelector('[data-testid="custom-mission-audio"] audio');
++    const cta = Array.from(document.querySelectorAll('button')).find((button) => /write/i.test(button.textContent ?? ''));
++    return {
++      stepFinished: step?.getAttribute('data-model-audio-finished'),
++      ctaDisabled: cta?.disabled ?? null,
++      audioReadyState: audio?.readyState ?? -1,
++      audioError: audio?.error?.code ?? null,
++      nav: Boolean(document.querySelector('nav')),
++      search: Boolean(document.querySelector('[role="search"], input[type="search"]')),
++      scrollWidth: document.documentElement.scrollWidth,
++      innerWidth: window.innerWidth,
++      bodyStart: document.body.innerText.slice(0, 500),
++    };
++  });
++  if (before.nav || before.search) throw new Error(`${name}: immersive QA chrome regression nav=${before.nav} search=${before.search}`);
++  if (before.scrollWidth > before.innerWidth + 1) throw new Error(`${name}: immersive QA overflow ${before.scrollWidth} > ${before.innerWidth}`);
++  if (before.stepFinished !== 'false' || before.ctaDisabled !== true || before.audioReadyState < 1 || before.audioError !== null) {
++    throw new Error(`${name}: immersive reply not gated by audio finish: ${JSON.stringify(before)}`);
++  }
++
++  await page.evaluate(() => {
++    const audio = document.querySelector('[data-testid="custom-mission-audio"] audio');
++    audio?.dispatchEvent(new Event('ended', { bubbles: true }));
++  });
++  await page.waitForFunction(() => {
++    const step = document.querySelector('[data-testid="immersive-reply-step"]');
++    const cta = Array.from(document.querySelectorAll('button')).find((button) => /write/i.test(button.textContent ?? ''));
++    return step?.getAttribute('data-model-audio-finished') === 'true' && cta && !cta.disabled;
++  }, { timeout: 5000 });
++
++  await page.goto(`${BASE_URL}${route}?adipoliQa=1&adipoliQaStep=4`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await page.waitForSelector('[data-testid="tiny-write-step"]', { timeout: 15000 });
++  await page.type('[data-testid="tiny-write-input"]', typedValue);
++  await page.waitForFunction(() => {
++    const cta = Array.from(document.querySelectorAll('button')).find((button) => /(repair|trap)/i.test(button.textContent ?? ''));
++    return cta && !cta.disabled;
++  }, { timeout: 5000 });
++  const after = await page.evaluate(() => ({
++    inputValue: document.querySelector('[data-testid="tiny-write-input"]')?.value ?? '',
++    feedback: document.body.innerText,
++  }));
++  if (!after.inputValue || !/good/i.test(after.feedback)) throw new Error(`${name}: tiny write did not accept short typed line: ${JSON.stringify(after)}`);
++  console.log(`immersive_reply_tiny_write[${name}]=PASS audioGated=true typed="${after.inputValue}"`);
++}
++
+ async function inspectBuilderStep(page, route, name, sequence, expectedSentence) {
+   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true });
+   await page.goto(`${BASE_URL}${route}?adipoliQa=1&adipoliQaStep=3`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -363,6 +363,10 @@
+     await withQaPage(`route:${name}`, (page) => inspectRoute(page, route, name));
+     await withQaPage(`production:${name}`, (page) => inspectProductionStep(page, route, name));
+   }
++  for (const [route, name, typedValue] of immersiveMissions) {
++    await withQaPage(`route:${name}`, (page) => inspectRoute(page, route, name));
++    await withQaPage(`immersive:${name}`, (page) => inspectImmersiveStep(page, route, name, typedValue));
++  }
+   for (const [route, name, sequence, expectedSentence] of builderMissions) {
+     await withQaPage(`builder:${name}`, (page) => inspectBuilderStep(page, route, name, sequence, expectedSentence));
+   }
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -373,7 +373,7 @@
+   if (browserIssues.length) {
+     throw new Error(`Browser console/page errors during M1/M2 mobile QA:\n${browserIssues.join('\n')}`);
+   }
+-  console.log(`PASS: module2 production mobile QA + M1/M2 builder click gates (${missions.length} production missions, ${builderMissions.length} builders) base=${BASE_URL}`);
++  console.log(`PASS: module2 production mobile QA + first-path immersive gates (${missions.length} production missions, ${immersiveMissions.length} immersive first missions, ${builderMissions.length} legacy builders) base=${BASE_URL}`);
+ } finally {
+   await browser.close();
+ }
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1209,8 +1209,16 @@
+         fail(f"M1/M2 builder browser QA guard missing: {script}")
+     src = script.read_text(encoding="utf-8")
+     required = [
++        "const immersiveMissions = [",
++        "'/missions/module-1/greet-frau-weber'",
++        "'/missions/module-2/self-intro'",
++        "data-testid=\"immersive-reply-step\"",
++        "data-testid=\"tiny-write-step\"",
++        "data-testid=\"tiny-write-input\"",
++        "async function inspectImmersiveStep",
++        "immersive_reply_tiny_write[${name}]=PASS",
++        "first-path immersive gates",
+         "const builderMissions = [",
+-        "'/missions/module-1/greet-frau-weber'",
+         "'/missions/module-1/please-thanks'",
+         "'/missions/module-1/polite-exit'",
+         "'/missions/module-2/final-self-intro'",
+@@ -1225,9 +1233,9 @@
+         "window.sessionStorage.clear()",
+         "route:${name}",
+         "production:${name}",
++        "immersive:${name}",
+         "builder:${name}",
+         "builder_clicks[${name}]=PASS",
+-        "M1/M2 builder click gates",
+     ]
+     mission_ui = MISSION_UI.read_text(encoding="utf-8")
+     missing = [snippet for snippet in required if snippet not in src and snippet not in mission_ui]
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -102,7 +102,7 @@
+       scrollWidth: document.documentElement.scrollWidth,
+       innerWidth: window.innerWidth,
+       hasFocusedProgress: Boolean(document.querySelector('[aria-hidden="true"]')),
+-      hasStartCta: /Start .*mission/i.test(body),
++      hasStartCta: /(Start .*mission|Begin .*practice)/i.test(body),
+       audios,
+       bodyStart: body.slice(0, 500),
+     };
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx → b//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx
+@@ -117,7 +117,7 @@
+             isCorrect={recognitionCorrect}
+             wrongFeedback="Not for morning."
+             correctFeedback="Correct."
+-            cta={<>Build it once <ArrowRight className="h-5 w-5" /></>}
++            cta={<>Answer aloud <ArrowRight className="h-5 w-5" /></>}
+             onContinue={next}
+             continueDisabled={!canContinue}
+           />
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/self-intro/page.tsx → b//shared/german-course/src/app/missions/module-2/self-intro/page.tsx
+@@ -108,7 +108,7 @@
+             isCorrect={recognitionCorrect}
+             wrongFeedback={<><i>heißen</i> points to name. Try the Goethe-safe answer.</>}
+             correctFeedback="Correct. Formal question, respectful answer."
+-            cta={<>Build Kuttan’s answer <ArrowRight className="h-5 w-5" /></>}
++            cta={<>Answer aloud <ArrowRight className="h-5 w-5" /></>}
+             onContinue={next}
+             continueDisabled={!canContinue}
+             side={(
+  ┊ review diff
+a//shared/german-course/scripts/qa_gold_slice_first_journey.mjs → b//shared/german-course/scripts/qa_gold_slice_first_journey.mjs
+@@ -151,27 +151,25 @@
+ 
+   await page.waitForFunction(() => document.body.innerText.includes('Pick the morning opener.'), { timeout: 10000 });
+   await chooseOption(page, 'Guten Morgen');
+-  await page.waitForFunction(() => Array.from(document.querySelectorAll('button')).some((button) => button.innerText.includes('Build it once') && !button.disabled), { timeout: 10000 });
+-  await clickButtonContaining(page, 'Build it once');
++  await page.waitForFunction(() => Array.from(document.querySelectorAll('button')).some((button) => button.innerText.includes('Answer aloud') && !button.disabled), { timeout: 10000 });
++  await clickButtonContaining(page, 'Answer aloud');
+ 
+-  await page.waitForSelector('[data-testid="builder-word-bank"]', { timeout: 10000 });
+-  await buildSentence(page, ['Guten', 'Morgen', 'Frau', 'Weber']);
+-  await clickButtonContaining(page, 'Say and type it');
++  await page.waitForSelector('[data-testid="immersive-reply-step"]', { timeout: 10000 });
++  let immersive = await page.evaluate(() => ({
++    finished: document.querySelector('[data-testid="immersive-reply-step"]')?.getAttribute('data-model-audio-finished'),
++    writeButtonDisabled: Array.from(document.querySelectorAll('button')).find((button) => button.innerText.includes('Write the anchor line'))?.disabled,
++  }));
++  assert(immersive.finished === 'false' && immersive.writeButtonDisabled === true, 'immersive reply should be gated before model audio finishes', immersive);
++  const replyAudio = await playAllVisibleAudio(page, 1);
++  await page.waitForFunction(() => {
++    const step = document.querySelector('[data-testid="immersive-reply-step"]');
++    const button = Array.from(document.querySelectorAll('button')).find((candidate) => candidate.innerText.includes('Write the anchor line'));
++    return step?.getAttribute('data-model-audio-finished') === 'true' && button && !button.disabled;
++  }, { timeout: 10000 });
++  await clickButtonContaining(page, 'Write the anchor line');
+ 
+-  await page.waitForSelector('[data-testid="module2-production-step"]', { timeout: 10000 });
+-  let production = await page.evaluate(() => ({
+-    finished: document.querySelector('[data-testid="module2-production-step"]')?.getAttribute('data-model-audio-finished'),
+-    textareaDisabled: document.querySelector('[data-testid="module2-production-textarea"]')?.disabled,
+-  }));
+-  assert(production.finished === 'false' && production.textareaDisabled === true, 'production should be gated before model audio finishes', production);
+-  const productionAudio = await playAllVisibleAudio(page, 1);
+-  await page.waitForFunction(() => {
+-    const step = document.querySelector('[data-testid="module2-production-step"]');
+-    const textarea = document.querySelector('[data-testid="module2-production-textarea"]');
+-    return step?.getAttribute('data-model-audio-finished') === 'true' && textarea && !textarea.disabled;
+-  }, { timeout: 10000 });
+-  await clickButtonContaining(page, 'Said it');
+-  await page.type('[data-testid="module2-production-textarea"]', 'Guten Morgen, Frau Weber. Ich lerne Deutsch.');
++  await page.waitForSelector('[data-testid="tiny-write-step"]', { timeout: 10000 });
++  await page.type('[data-testid="tiny-write-input"]', 'Guten Morgen, Frau Weber. Ich lerne Deutsch.');
+   await page.waitForFunction(() => Array.from(document.querySelectorAll('button')).some((button) => button.innerText.includes('Repair the trap') && !button.disabled), { timeout: 10000 });
+   await clickButtonContaining(page, 'Repair the trap');
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_gold_slice_first_journey.mjs → b//shared/german-course/scripts/qa_gold_slice_first_journey.mjs
+@@ -188,7 +188,7 @@
+   const relevantErrors = consoleErrors.filter((line) => !line.includes('favicon') && !line.includes('404'));
+   assert(relevantErrors.length === 0, 'browser console/page errors during gold-slice first journey QA', { consoleErrors: relevantErrors });
+ 
+-  console.log(`PASS: gold-slice first journey base=${BASE_URL} hearAudio=${hearAudio.length} productionAudio=${productionAudio.length}`);
++  console.log(`PASS: gold-slice first journey base=${BASE_URL} hearAudio=${hearAudio.length} replyAudio=${replyAudio.length}`);
+ } finally {
+   await browser.close();
+ }
+  ┊ review diff
+a/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md → b/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+@@ -29,3 +29,42 @@
+ Run dir: /shared/german-course/GermanCourse_QC/continuous-uiux-m1-m2-20260530-immersive-phone-first
+ Prompt: /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-prompt.md
+ 
++## Iteration 1 — 2026-05-30T18:27:46+02:00
++
++- Source/docs inspected:
++  - `docs/COURSE_OPERATING_BRIEF_2026-05-19.md`
++  - `docs/PRODUCT_DIRECTION_RESET_2026-05-20.md`
++  - `docs/WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`
++  - `docs/AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md`
++  - `docs/PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md`
++  - Active M1/M2 mission routes and reusable mission UI/QA scripts.
++- Files changed:
++  - `src/app/missions/module-2/_components/MissionUI.tsx`
++  - `src/app/missions/module-1/greet-frau-weber/page.tsx`
++  - `src/app/missions/module-2/self-intro/page.tsx`
++  - `scripts/qa_mission_pilot.py`
++  - `scripts/qa_module2_production_mobile.mjs`
++  - `scripts/qa_gold_slice_first_journey.mjs`
++  - `GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
++- UX/text reductions made:
++  - Replaced the first high-friction M1 builder/production chain with an immersive pattern: hear scene → pick meaning → answer aloud after real audio → tiny one-line phone input → repair → ability win.
++  - Replaced first Module 2 self-intro builder/production chain with the same immersive pattern: formal question → meaning check → aloud answer → tiny written name line → Manglish repair.
++  - Removed learner-facing `Build it once` / `Build Kuttan’s answer` CTAs from the first M1/M2 path; first production action now says `Answer aloud`.
++- M1/M2 learner path status:
++  - M1 first mission is no longer a chip-builder hero path. It is now voice-first with short writing only after speaking.
++  - M2 first mission is no longer a sentence-builder hero path. Remaining M1/M2 later missions still use legacy builders and should be the next conversion lane.
++- Images/video/animation work:
++  - Images intentionally skipped this iteration. No new image asset earned its place; the first visible path needed interaction-model surgery, not decoration.
++  - Video tooling not changed this iteration.
++  - Motion guard preserved: mission transitions still respect reduced-motion preferences.
++- QA run + PASS/WEAK/FAIL:
++  - PASS: `python3 scripts/qa_mission_pilot.py`
++  - PASS: `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs`
++  - PASS: `ADIPOLI_BASE_URL=http://127.0.0.1:3000 node scripts/qa_gold_slice_first_journey.mjs`
++  - PASS: `npx eslint src/app/missions/module-2/_components/MissionUI.tsx src/app/missions/module-1/greet-frau-weber/page.tsx src/app/missions/module-2/self-intro/page.tsx`
++  - WEAK/inherited: full `npm run lint` still fails on pre-existing app-wide lint issues outside this lane, including auth/signup effects, game pages, legacy random-in-render rules, module-variable lint, and Remotion cursor mutation.
++  - Browser visual check: `/intro` → first mission listening screen is clean, not text-heavy; CTA/audio state verified.
++- Kuttan/name recommendation:
++  - Keep `Kuttan` for now inside home/family flavor and existing story continuity, but recommend an adult-safe public name before launch: `Arun` or `Kiran`, with `Kuttan` as a nickname if Boss wants Kerala warmth. Do not mass-rename without approval.
++- Next best lane:
++  - Convert the next legacy builder-heavy missions (`module-1/please-thanks`, `module-1/polite-exit`, then `module-2/spell-name`) to the same immersive pattern and reduce visible chore controls.
+
+session_id: 20260530_181906_0b2acd
+Iteration 1 complete.
+
+Changed:
+- Reworked first M1 mission:
+  - Removed builder/production chore path from `module-1/greet-frau-weber`.
+  - New flow: listen → choose meaning → answer aloud → tiny one-line writing → repair → win.
+- Reworked first M2 mission:
+  - Removed builder/production chore path from `module-2/self-intro`.
+  - New flow: hear formal question → meaning check → answer aloud → tiny written name line → repair.
+- Added reusable immersive components:
+  - `ReplyAloudStep`
+  - `TinyWriteStep`
+- Updated QA so the old builder requirement no longer blocks the first M1/M2 missions.
+- Updated gold-slice browser journey QA to test the new immersive flow.
+- Checkpoint written:
+  - `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+QA:
+- PASS: `python3 scripts/qa_mission_pilot.py`
+- PASS: `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs`
+- PASS: `ADIPOLI_BASE_URL=http://127.0.0.1:3000 node scripts/qa_gold_slice_first_journey.mjs`
+- PASS: targeted ESLint on changed mission files.
+- WEAK/inherited: full `npm run lint` still fails on old app-wide issues outside this lane.
+
+Browser check:
+- `/intro` → first M1 listening step verified.
+- Visual check: clean, not text-heavy, clear audio-first hierarchy.
+- Tailscale/local QA passed inside `qa_mission_pilot.py`.
+
+Kuttan naming:
+- Recommendation unchanged: don’t mass-rename now.
+- Adult-safe public name should probably be `Arun` or `Kiran`, with `Kuttan` kept as home nickname/flavor if Boss wants that warmth.
+
+Next lane: convert `module-1/please-thanks` from builder chore to immersive hear→say→repair flow, 45m.

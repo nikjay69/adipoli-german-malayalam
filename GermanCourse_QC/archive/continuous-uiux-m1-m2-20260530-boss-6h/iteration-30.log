@@ -1,0 +1,193 @@
+  ┊ review diff
+a//shared/german-course/src/lib/content/modules/module-02.ts → b//shared/german-course/src/lib/content/modules/module-02.ts
+@@ -305,28 +305,28 @@
+       xpReward: 150,
+       storyScene: {
+         setting: {
+-          name: "Zum goldenen Hirschen (Kneipe), Berlin",
+-          sceneType: "cafe",
++          name: "Goethe-Institut Kochi — Origin Drill",
++          sceneType: "classroom",
+           timeOfDay: "evening",
+-          description: "A cozy, dim-lit traditional German Kneipe with dark wooden panels and the smell of pretzels. You're at the 'International Stammtisch' — a weekly meetup for newcomers. You're sitting with Marie from Switzerland and Carlos from Spain. The atmosphere is loud, friendly, and full of curiosity about the world.",
++          description: "Frau Weber pins a Kerala map and a small Europe map on the board. Two classmates, Marie and Carlos, join a mock A1 speaking circle. The task is simple: answer where you are from clearly, then correct one common nationality mistake.",
+         },
+         narrative: {
+-          previousRecap: "You've successfully introduced yourself at your WG interview. Now, it's time to tell your new friends where you're from!",
++          previousRecap: "You've introduced yourself in the Goethe Kochi classroom. Now the mock examiner asks where you are from.",
+           currentObjective: "Explain your origin and nationality with pride and precision",
+-          nextTeaser: "Next: what do you actually DO in Germany? Time to talk shop!",
++          nextTeaser: "Next: say your job or student status in one clean A1 line.",
+         },
+         kuttanIntro: [
+-          "Machane! Nammal oru 'Stammtisch'-ilaanu — basically common interests ulla aalkkar koodunna oru regular meetup. Ivide world-inte ellaa bhagathu ninnum aalkkar undu!",
+-          "Everyone is asking the same question: 'Woher kommst du?'. Nammal simple aayi parayam 'Ich komme aus Indien' — but be ready to explain Kerala! Germans love geography.",
+-          "One dangerous trap: Never say 'Indianer'. That's for Native Americans from movies! Say 'Inder' or 'Inderin'. Let's show them nammude swantham Kerala vibes!",
++          "Goethe Kochi mock circle aanu. Question short: 'Woher kommen Sie?' Answer short: 'Ich komme aus Kerala.'",
++          "If the examiner asks for country, add: 'Ich komme aus Indien.' Kerala and India both stay useful for A1.",
++          "One real trap: never say 'Indianer'. Say 'Inder' or 'Inderin'. Clean, adult, exam-safe.",
+         ],
+         vocabEncounters: [
+-          { vocabId: "vocab2-2-1", encounterMoment: "Marie from Switzerland turns to you: 'Hallo! Ich bin Marie. Und woher kommst du?' She's genuinely curious about your journey.", contextSentence: "Woher kommst du?" },
+-          { vocabId: "vocab2-2-4", encounterMoment: "You answer proudly: 'Ich komme aus Indien.' Her eyes light up. 'Oh, Indien! Ich liebe indisches Essen!' she says.", contextSentence: "Ich komme aus Indien." },
++          { vocabId: "vocab2-2-1", encounterMoment: "In the Goethe Kochi role-play, Marie turns to you: 'Hallo! Ich bin Marie. Und woher kommst du?'", contextSentence: "Woher kommst du?" },
++          { vocabId: "vocab2-2-4", encounterMoment: "You answer clearly: 'Ich komme aus Indien.' Frau Weber nods: short answer first, details after.", contextSentence: "Ich komme aus Indien." },
+           { vocabId: "vocab2-2-2", encounterMoment: "You add a little more detail: 'Ich komme aus Kerala, in Südindien.' You show her a photo of the backwaters on your phone.", contextSentence: "Ich komme aus Kerala." },
+-          { vocabId: "vocab2-2-6", encounterMoment: "Marie mentions her home: 'Ich komme aus der Schweiz.' Remember, Switzerland is one of those special countries with an article!", contextSentence: "Ich komme aus der Schweiz." },
+-          { vocabId: "vocab2-2-7", encounterMoment: "Someone mentions they want to travel: 'Europa ist so vielfältig!' Europe is so diverse! You realize how central Germany is in the continent.", contextSentence: "Europa ist ein schöner Kontinent." },
+-          { vocabId: "vocab2-2-10", encounterMoment: "A German guy at the table listens to your intro. 'Dein Deutsch ist schon gut!' Your German is already good! Compliments are the best motivation.", contextSentence: "Ich lerne die deutsche Sprache." },
++          { vocabId: "vocab2-2-6", encounterMoment: "Marie's sample card says: 'Ich komme aus der Schweiz.' Frau Weber marks the article: die Schweiz → aus der Schweiz.", contextSentence: "Ich komme aus der Schweiz." },
++          { vocabId: "vocab2-2-7", encounterMoment: "The map drill shows Europe as the future destination, not today's setting. You only need the simple A1 continent word now.", contextSentence: "Europa ist ein schöner Kontinent." },
++          { vocabId: "vocab2-2-10", encounterMoment: "After your answer, Frau Weber says: 'Gut. Sie lernen Deutsch.' The compliment belongs to the classroom rehearsal.", contextSentence: "Ich lerne die deutsche Sprache." },
+         ],
+         decisionPoints: [
+           {
+@@ -610,27 +610,27 @@
+       xpReward: 150,
+       storyScene: {
+         setting: {
+-          name: "TU Berlin Mensa (Cafeteria)",
+-          sceneType: "cafe",
++          name: "Goethe-Institut Kochi — Beruf Role-Play",
++          sceneType: "classroom",
+           timeOfDay: "afternoon",
+-          description: "The buzzing atmosphere of the Technical University Berlin cafeteria. Long wooden tables are filled with students from all over the world, trays of Schnitzel and Pasta everywhere. You're sitting across from a friendly student who just asked if the seat next to you is free. Time for a lunch-break networking session.",
++          description: "Frau Weber turns the classroom into a small A1 speaking desk. Each learner gets a role card: student, nurse, engineer, programmer. Your job is to answer 'Was sind Sie von Beruf?' without copying English articles into German.",
+         },
+         narrative: {
+-          previousRecap: "You've successfully shared your origin story at the Stammtisch. Now, it's time to talk about what you're doing in Germany!",
++          previousRecap: "You've shared your origin in the Goethe Kochi mock circle. Now you add job or student status.",
+           currentObjective: "Define your professional identity using the verb 'sein'",
+           nextTeaser: "Next: you speak more languages than you think! Time to flex those skills!",
+         },
+         kuttanIntro: [
+-          "Machane! Nammal University 'Mensa'-ilaanu — basically nammude canteen, but vere level vibe aanu! Ivide student aanu ennu parayan padikkaam.",
+-          "German-il profession parayumpo 'Ich bin A student' ennu parayilla. Veruthe 'Ich bin Student' mathiyam! English-ile 'a/an' German-il apply cheyyathe ippozhe practice cheyyo.",
+-          "Main thing: 'sein' verb. Ithu conjugation perfect aakanam. Bin, bist, ist... ithu thanneyaanu nammude base! Let's get to work!",
++          "Classroom role-play aanu. Frau Weber asks: 'Was sind Sie von Beruf?' You answer in one clean line.",
++          "German-il profession parayumpo 'Ich bin a student' alla. Just: 'Ich bin Student' or 'Ich bin Studentin'.",
++          "Main tool: sein. For your own answer, start with 'Ich bin...'. Keep it useful before full grammar tables.",
+         ],
+         vocabEncounters: [
+-          { vocabId: "vocab2-3-1", encounterMoment: "Your lunch partner asks: 'Und du, was ist dein Beruf?' or 'Was machst du hier?' They want to know your professional story.", contextSentence: "Was ist dein Beruf?" },
+-          { vocabId: "vocab2-3-5", encounterMoment: "You answer proudly: 'Ich bin Student.' You're here for that world-class German education!", contextSentence: "Ich bin Studentin in Berlin." },
++          { vocabId: "vocab2-3-1", encounterMoment: "Your role-play partner asks: 'Und du, was ist dein Beruf?' They need one clear A1 answer.", contextSentence: "Was ist dein Beruf?" },
++          { vocabId: "vocab2-3-5", encounterMoment: "You answer: 'Ich bin Student.' Frau Weber points out: no article before professions.", contextSentence: "Ich bin Studentin." },
+           { vocabId: "vocab2-3-2", encounterMoment: "You mention your friend back home: 'Mein Freund ist Ingenieur.' Engineering is the classic choice for many of us!", contextSentence: "Ich bin Ingenieur." },
+-          { vocabId: "vocab2-3-10", encounterMoment: "You look around the busy room and think: 'Ich will Student sein.' I want to be a student — and here I am!", contextSentence: "Ich will Arzt sein." },
+-          { vocabId: "vocab2-3-7", encounterMoment: "You see someone with a laptop full of code. 'Bist du Programmierer?' you ask. IT is everywhere in Berlin.", contextSentence: "Er ist Programmierer bei Bosch." },
++          { vocabId: "vocab2-3-10", encounterMoment: "A second card says: 'Ich will Arzt sein.' You notice how sein carries identity and plans.", contextSentence: "Ich will Arzt sein." },
++          { vocabId: "vocab2-3-7", encounterMoment: "The IT role card says: 'Programmierer'. You practice the job word without turning the scene into a Germany campus fantasy.", contextSentence: "Er ist Programmierer bei Bosch." },
+         ],
+… omitted 111 diff line(s) across 1 additional file(s)/section(s)
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -44,6 +44,7 @@
+ GLOBAL_SEARCH = ROOT / "src/components/ui/GlobalSearch.tsx"
+ MISSION_UI = ROOT / "src/app/missions/module-2/_components/MissionUI.tsx"
+ MISSION_DATA = ROOT / "src/lib/missions/module2.ts"
++MODULE2_CONTENT = ROOT / "src/lib/content/modules/module-02.ts"
+ VIDEO_BASIS_FILES = [
+     ROOT / "scripts/m1-video-defs.json",
+     ROOT / "scripts/m2-video-defs.json",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1029,6 +1029,38 @@
+     print(f"m1_m2_video_basis_adult_safe={len(VIDEO_BASIS_FILES)}")
+ 
+ 
++def assert_module2_legacy_scenes_stay_kerala_rehearsal() -> None:
++    """Prevent old Module 2 lesson pages from drifting back into physical-Germany fantasy scenes."""
++    src = MODULE2_CONTENT.read_text(encoding="utf-8")
++    banned_scene_snippets = [
++        "Zum goldenen Hirschen (Kneipe), Berlin",
++        "International Stammtisch",
++        "WG interview",
++        "TU Berlin Mensa",
++        "Mensa (Cafeteria)",
++        "Mauerpark, Berlin",
++        "Mauerpark-il Sunday park vibes",
++        "Scenario 1 — Airport Arrival in Frankfurt",
++        "Scenario 2 — University Orientation in Munich",
++        "Scenario 3 — First Day at Office in Berlin",
++        "University / WG",
++    ]
++    required_rehearsal_snippets = [
++        "Goethe-Institut Kochi — Origin Drill",
++        "Goethe-Institut Kochi — Beruf Role-Play",
++        "Goethe-Institut Kochi — Language Circle",
++        "Scenario — Goethe Kochi speaking mock",
++        "Future-use rehearsal: the same intro later helps at airports, universities, and offices — but today the scene stays in Kerala.",
++    ]
++    hits = [snippet for snippet in banned_scene_snippets if snippet in src]
++    if hits:
++        fail(f"Module 2 legacy lessons reintroduced physical-Germany setting drift: {hits}")
++    missing = [snippet for snippet in required_rehearsal_snippets if snippet not in src]
++    if missing:
++        fail(f"Module 2 legacy lessons lost Kerala/Goethe rehearsal framing: {missing}")
++    print("module2_legacy_scenes_kerala_rehearsal=pass")
++
++
+ def assert_intro_start_path_browser_guard() -> None:
+     script = ROOT / "scripts/qa_intro_start_path.mjs"
+     if not script.exists():
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1302,6 +1302,7 @@
+     assert_mission_mobile_controls()
+     assert_sequence_status_uses_completion_storage()
+     assert_m1_m2_video_basis_adult_safe()
++    assert_module2_legacy_scenes_stay_kerala_rehearsal()
+     assert_intro_start_path_browser_guard()
+     assert_direct_final_sequence_status_browser_guard()
+     assert_completed_ability_landings_browser_guard()
+
+session_id: 20260530_140834_789685
+Done — iteration 30 completed and checkpoint appended.
+
+Changed:
+- `/shared/german-course/src/lib/content/modules/module-02.ts`
+- `/shared/german-course/scripts/qa_mission_pilot.py`
+- Appended checkpoint:
+  `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+What improved:
+- Reframed old Module 2 lessons 2-2, 2-3, 2-4 away from physical Berlin/Munich fantasy scenes.
+- Converted them into compact Goethe Kochi classroom/mock-exam drills:
+  - origin drill
+  - profession role-play
+  - language circle
+- Collapsed the Module 2 final video basis from “airport/university/office in Germany” into one Goethe Kochi speaking mock, with Germany as future-use transfer.
+- Kept the learner physically in Kerala, matching course canon.
+- Added a QA guard so these specific M2 legacy scenes don’t drift back into Berlin/Munich/WG/Stammtisch/Mauerpark framing.
+
+QA:
+- PASS `python3 -m py_compile scripts/qa_mission_pilot.py`
+- PASS `npx tsc --noEmit --pretty false`
+- PASS curls for:
+  - `/`
+  - `/intro`
+  - `/learn`
+  - `/learn/1`
+  - `/learn/2`
+  - M1/M2 mission routes
+- PASS full:
+  `python3 scripts/qa_mission_pilot.py`
+- Browser checked `/learn/2`:
+  - visually clean
+  - CTA clicked
+  - landed on `/missions/module-2/self-intro?start=listen`
+  - no JS errors; only dev/HMR/smooth-scroll warnings
+
+Images/video/animation:
+- No generated image added. Existing `/learn/2` illustration already helps without clutter.
+- No Remotion render this run. I made the source/video basis more canon-safe for future regeneration.
+- No animation patch needed from this visual pass.
+
+Kuttan recommendation:
+- Still don’t mass-rename.
+- Best adult-safe compromise: use `Arun` or `Kiran` as the public learner/example name, keep `Kuttan` as a home nickname/family-flavor option only.
+
+Next best lane:
+- Tighten Module 2 mission top chrome if Boss still feels it reads dashboard-like: remove/soften `NOW`, progress/status copy, and remaining meta feel.

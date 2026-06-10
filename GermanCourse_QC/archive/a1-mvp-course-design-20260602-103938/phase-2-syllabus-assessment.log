@@ -1,0 +1,216 @@
+  ┊ review diff
+a/docs/A1_MVP_SYLLABUS_TEST_AND_RECOVERY.md → b/docs/A1_MVP_SYLLABUS_TEST_AND_RECOVERY.md
+@@ -0,0 +1,696 @@
++# Adipoli German A1 MVP — Syllabus, Test, and Recovery System
++
++Updated: 2026-06-02 10:43 CEST
++
++This is the active production artifact for the guided A1 video-course spine. It converts the existing 18-module course material into an 8-module MVP path with owned video lessons, must-do practice, closed diagnostics, weakness tags, and exact recovery prescriptions.
++
++## 1. Target course size
++
++### Owned video target
++
++Target: about 35 hours of Adipoli-owned guided video lessons.
++
++Recommended MVP allocation:
++
++- 56 owned video lessons.
++- 2,105 video minutes total = 35h 05m.
++- Phone-first lesson blocks: usually 25–45 minutes of video split into watchable chapters, followed by required app practice.
++- Public resources are reinforcement only. They never replace the Adipoli teaching spine.
++
++### Why not bloat to 40h now
++
++Do not expand to 40h unless checkpoint data proves a real A1 gap.
++
++40h would add about 5 extra owned video hours. For this audience, that is likely to hurt completion more than it helps pass rate if the extra time becomes more explanation, more dashboards, or more resource browsing.
++
++A1 readiness needs:
++
++1. clear sequence;
++2. repeated speaking/listening/writing production;
++3. closed diagnostics;
++4. exact recovery tasks;
++5. a final mock.
++
++It does not need 5 more hours of generic grammar explanation. If a module needs more help, add targeted recovery videos or booster drills, not more must-do video by default.
++
++Rule for adding video beyond 35h:
++
++- Add only when a checkpoint weakness repeats across learners.
++- The added video must map to one weakness tag, e.g. `hoeren:numbers` or `schreiben:three_points`.
++- The added video must have a retest task.
++- Prefer replacing a weak lesson over increasing total hours.
++
++## 2. 8-module MVP syllabus
++
++This 8-module structure covers Goethe A1 while preserving the Kerala-rooted, Manglish-friendly course identity. It is an MVP compression of the current 18 app modules, not a deletion plan.
++
++| MVP module | Learner outcome | Existing source coverage | Owned video lessons | Video minutes | Required practice minutes | Homework/review minutes | Checkpoint |
++| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
++| 1. First German moment | Hear, greet, pronounce, and hold a tiny formal/informal exchange | Current M1 + first mission | 7 | 240 | 300 | 120 | Mini oral + listening gate |
++| 2. Identity, numbers, time | Introduce self, spell, give origin/job/languages, use numbers/time/dates | Current M2 + M3 | 7 | 250 | 330 | 140 | Goethe speaking Teil 1 foundation gate |
++| 3. People, home, daily life | Talk about family, people, home, articles, present-tense routine | Current M4 + M5 + M8 basics | 7 | 255 | 340 | 150 | Reading + speaking daily-life gate |
++| 4. Food, shopping, money | Order food, buy items, understand prices, likes/dislikes, accusative basics | Current M6 + M7 | 7 | 255 | 350 | 150 | Listening numbers/prices + request gate |
++| 5. Travel, services, health | Ask directions, buy tickets, make appointments, handle doctor/pharmacy basics | Current M9 + M10 | 7 | 265 | 360 | 160 | Hören announcement + polite request gate |
++| 6. Work, study, free time, messages | Talk about work/study/hobbies/weather/plans and write simple invitations/messages | Current M11 + M12 | 7 | 265 | 360 | 170 | Writing short-message gate |
++| 7. Official life and exam skills | Fill forms, read notices/ads/emails, handle office/bank/form language | Current M14 + M17 Lesen/Hören prep | 7 | 260 | 380 | 180 | Goethe Hören/Lesen + form gate |
++| 8. Goethe A1 bootcamp | Complete all Goethe sections with timed mocks and recovery loops | Current M17 + M18 | 7 | 310 | 430 | 240 | Final full mock |
++| **Total** | Zero to Goethe A1 readiness path | Current M1–M18 compressed into MVP | **56** | **2,105** | **2,820** | **1,310** | **8 diagnostics + final mock** |
++
++### What happens to current Module 13, 15, and 16
++
++- Current Module 13 past tense: keep only A1-safe chunks needed for short personal talk, e.g. `Ich war krank`, `Am Wochenende habe ich gelernt`, as score-booster or Module 8 exam expression support. Do not make Perfekt depth a must-do MVP burden.
++- Current Module 15 culture: use as short context inserts inside relevant modules. Do not make culture a standalone must-do module unless it directly supports life/exam comprehension.
++- Current Module 16 A1+ grammar bridge: score-booster only. Dative deep dives, two-way prepositions, reflexive verbs, and subordinate clauses are not A1 MVP must-do unless a Goethe task truly needs the pattern.
++
++## 3. Module-by-module must-do and score-booster tracks
++
++Every module follows the same product rhythm:
++
++`scene hook → video lesson → app practice → closed mini-check → module diagnostic → recovery if weak → next module or score booster`
++
++A learner should never choose from a library. The app shows the next required block.
++
++### Module 1 — First German moment
++
++Purpose: give the learner a real German win before theory. Existing Module 1 already has the right raw ingredients: Kerala/Goethe Kochi setting, greetings, pronunciation, first conversation, and a first sentence/dictation such as `Ich lerne Deutsch.` The MVP must cut motivation bloat and lead quickly to hear/say/repair.
++
++Owned video lessons, 240m:
++
+… omitted 618 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/docs/README.md → b//shared/german-course/docs/README.md
+@@ -25,10 +25,11 @@
+ 
+ 1. [`COURSE_OPERATING_BRIEF_2026-05-19.md`](COURSE_OPERATING_BRIEF_2026-05-19.md) — source of truth.
+ 2. [`A1_MVP_CUSTOMER_JOURNEY_AND_PAGE_FLOW.md`](A1_MVP_CUSTOMER_JOURNEY_AND_PAGE_FLOW.md) — concrete customer-facing page flow, MVP page list, low-text UX rules, and customer PASS/WEAK/FAIL gate.
+-3. [`WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`](WHOLE_COURSE_MISSION_SPINE_2026-05-20.md) — module/mission arc.
+-4. [`PRODUCT_DIRECTION_RESET_2026-05-20.md`](PRODUCT_DIRECTION_RESET_2026-05-20.md) — why the app must be guided missions, not dashboard/game clutter.
+-5. [`PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md`](PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md) — PASS/WEAK/FAIL evidence gates.
+-6. [`AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md`](AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md) — what the agent may do without babysitting.
++3. [`A1_MVP_SYLLABUS_TEST_AND_RECOVERY.md`](A1_MVP_SYLLABUS_TEST_AND_RECOVERY.md) — active 35h A1 syllabus, must-do/score-booster tracks, checkpoints, weakness tags, scoring rubric, and recovery prescriptions.
++4. [`WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`](WHOLE_COURSE_MISSION_SPINE_2026-05-20.md) — module/mission arc.
++5. [`PRODUCT_DIRECTION_RESET_2026-05-20.md`](PRODUCT_DIRECTION_RESET_2026-05-20.md) — why the app must be guided missions, not dashboard/game clutter.
++6. [`PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md`](PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md) — PASS/WEAK/FAIL evidence gates.
++7. [`AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md`](AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md) — what the agent may do without babysitting.
+ 
+ ## Task-specific references
+ 
+  ┊ review diff
+a/GermanCourse_QC/a1-mvp-course-design-latest.md → b/GermanCourse_QC/a1-mvp-course-design-latest.md
+@@ -1,37 +1,74 @@
+ # A1 MVP course design — latest status
+ 
+-Updated: 2026-06-02 10:40 CEST
++Updated: 2026-06-02 10:43 CEST
+ 
+ ## Scope completed
+ 
+-Designed the Adipoli German A1 MVP from the customer’s first touch onward: cold Page 1, first mission taste, post-win onboarding, phone-first course flow, video/practice/checkpoint/recovery/score-booster placement, MVP vs later pages, low-text UX budgets, and customer PASS/WEAK/FAIL gates.
++Continued the 3h A1 MVP course-design run by locking the course syllabus and the spoon-fed test/recovery system.
++
++This pass created the active production artifact for:
++
++- ~35h owned-video A1 course target;
++- 8-module MVP structure covering Goethe A1;
++- lesson counts, video minutes, practice minutes, homework/review minutes;
++- exact must-do sequence per module;
++- exact score-booster resource type per module, without resource dumping;
++- lesson checks, module diagnostics, Goethe-style gates, and final mock;
++- weakness tags for Hören, Lesen, Schreiben, Sprechen, grammar, and vocab;
++- manual scoring rubrics for writing/speaking and objective scoring rules;
++- recovery prescriptions for each weak skill;
++- public-resource curation rules.
+ 
+ ## Files changed
+ 
+-- `docs/A1_MVP_CUSTOMER_JOURNEY_AND_PAGE_FLOW.md`
+-  - Created as the active concrete customer-journey/page-flow artifact.
+-  - Covers customer promise, first-page experience, onboarding path, phone-first flow, placement of video/practice/checkpoints/recovery/score boosters, MVP vs later pages, exact low-text UX rules, and customer PASS/WEAK/FAIL gate.
+-  - Anchors current route reality: `/` as Page 1, `/intro` as optional first-moment page, `/learn` as command center, mission routes as the scene-first proof path.
++- `docs/A1_MVP_SYLLABUS_TEST_AND_RECOVERY.md`
++  - Created as the active syllabus/test/recovery artifact.
++  - Locks the owned video target at 56 lessons / 2,105 minutes / 35h 05m.
++  - Explains why not to bloat to 40h unless checkpoint data proves a real gap.
++  - Compresses the existing 18-module source course into 8 MVP modules while preserving Goethe A1 coverage.
++  - Defines must-do and score-booster tracks module by module.
++  - Adds checkpoint schedule, weakness tags, manual scoring, and recovery prescriptions.
+ 
+ - `docs/README.md`
+-  - Patched the Active build stack so `A1_MVP_CUSTOMER_JOURNEY_AND_PAGE_FLOW.md` is listed as an active concrete artifact, not another strategy doc.
++  - Patched the Active build stack to include `A1_MVP_SYLLABUS_TEST_AND_RECOVERY.md` as the current syllabus/test/recovery source.
+ 
+ - `GermanCourse_QC/a1-mvp-course-design-latest.md`
+-  - Added this status note.
++  - Updated this status note with concrete decisions and next phase.
++
++## Concrete decisions locked
++
++1. The MVP target is ~35h owned video, not 40h.
++2. The concrete allocation is 56 video lessons / 2,105 minutes.
++3. The course is organized as 8 MVP modules:
++   - First German moment;
++   - Identity, numbers, time;
++   - People, home, daily life;
++   - Food, shopping, money;
++   - Travel, services, health;
++   - Work, study, free time, messages;
++   - Official life and exam skills;
++   - Goethe A1 bootcamp.
++4. Current Module 13 past tense becomes only A1-safe support/booster, not a heavy must-do block.
++5. Current Module 15 culture becomes embedded context, not a standalone must-do MVP module.
++6. Current Module 16 A1+ grammar becomes score-booster only.
++7. Recovery is tag-based and short: 1–3 tasks plus a retest, not generic revision.
++8. Public resources are allowed only as one assigned task at a time, with target tag, output, and time box.
++9. Manual scoring is acceptable for MVP writing/speaking; AI is optional support later.
++10. Games remain later unless directly tied to a recovery tag.
+ 
+ ## Next phase
+ 
+-Build one vertical course slice against the new flow, not another planning doc:
++Build one Module 1 vertical course slice against the new artifact:
+ 
+-1. Pick Module 1 first greeting or Module 2 self-introduction.
+-2. Create one presenter-ready video outline/script.
+-3. Add the post-video practice set.
+-4. Add one closed mini-check.
+-5. Add exact recovery prescriptions and one score-booster task.
+-6. Browser/phone-QA it against the low-text and customer PASS/WEAK/FAIL gates.
++1. Presenter-ready video outline/script for first greeting + first response.
+… omitted 13 diff line(s) across 1 additional file(s)/section(s)
+Done.
+
+Created/updated:
+- `/shared/german-course/docs/A1_MVP_SYLLABUS_TEST_AND_RECOVERY.md`
+- `/shared/german-course/docs/README.md`
+- `/shared/german-course/GermanCourse_QC/a1-mvp-course-design-latest.md`
+
+Concrete decisions locked:
+- MVP owned-video target: 56 lessons / 2,105 minutes / 35h 05m.
+- Explicit reason not to bloat to 40h unless checkpoint data proves a real gap.
+- 8-module A1 structure covering Goethe A1:
+  1. First German moment
+  2. Identity, numbers, time
+  3. People, home, daily life
+  4. Food, shopping, money
+  5. Travel, services, health
+  6. Work, study, free time, messages
+  7. Official life and exam skills
+  8. Goethe A1 bootcamp
+- Must-do and score-booster track per module.
+- Lesson mini-checks, module diagnostics, Goethe-style gates, final mock.
+- Weakness tags for Hören, Lesen, Schreiben, Sprechen, grammar, vocab.
+- Manual scoring rubrics for writing/speaking.
+- Exact recovery prescriptions per weak skill.
+- Public-resource curation rules: one assigned resource/task at a time, no dumping.
+
+Verified:
+- README active build stack now includes the new artifact.
+- QC latest status updated with files changed, decisions, and next phase.
+- No commit, push, deploy, deletion, or paid media/API generation done.
+
+Next: build the Module 1 greeting slice — video outline + practice + mini-check + recovery card, 45m.
+
+session_id: 20260602_104245_dbbdb1

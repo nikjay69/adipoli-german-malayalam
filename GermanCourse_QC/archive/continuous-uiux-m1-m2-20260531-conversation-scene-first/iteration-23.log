@@ -1,0 +1,119 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -32,7 +32,7 @@
+         {step === 0 && (
+           <>
+             <ConversationRepairStep
+-              title="Notebook help."
++              title="Danke."
+               sceneLabel="Kerala classroom"
+               speakerName="Frau Weber"
+               speakerLine="Bitte."
+@@ -43,13 +43,12 @@
+               options={[
+                 { id: 'bitte', title: 'Bitte.' },
+                 { id: 'danke', title: 'Danke.' },
+-                { id: 'gute-nacht', title: 'Gute Nacht.' },
+               ]}
+               value={repairChoice}
+               onChange={setRepairChoice}
+               isCorrect={repairCorrect}
+               wrongFeedback="After help: Danke."
+-              correctFeedback="Good. Danke first; Bitte replies."
++              correctFeedback="Danke first; Bitte replies."
+               cta={<>Fix Danke/Bitte <ArrowRight className="h-5 w-5" /></>}
+               onContinue={() => {}}
+               turnCue="Now answer."
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -957,6 +957,17 @@
+     typing_hits = [snippet for snippet in banned_first_mission_typing if snippet in greet_src]
+     if typing_hits:
+         fail(f"Module 1 first mission reintroduced typing chore snippets: {typing_hits}")
++    please_src = MODULE1_MISSION_PAGES[1].read_text(encoding="utf-8")
++    required_please_thanks_focus = [
++        "title=\"Danke.\"",
++        "correctFeedback=\"Danke first; Bitte replies.\"",
++        "data-testid=\"please-thanks-inline-win\"",
++    ]
++    missing_please_thanks_focus = [snippet for snippet in required_please_thanks_focus if snippet not in please_src]
++    if missing_please_thanks_focus:
++        fail(f"Module 1 please-thanks must stay a one-screen two-line exchange: {missing_please_thanks_focus}")
++    if "{ id: 'gute-nacht', title: 'Gute Nacht.' }" in please_src or "Notebook help." in please_src or "Good. Danke" in please_src:
++        fail("Module 1 please-thanks reintroduced extra trap/copy clutter")
+     print("module1_mission_sequence_path=ok")
+ 
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1155,7 +1155,7 @@
+     please_thanks_src = m1_scene_sources["please-thanks"]
+     if "Danke after help. Bitte replies when someone thanks you." in please_thanks_src:
+         fail("please-thanks correct feedback is too explanatory for the one-screen scene; keep it short")
+-    for required_short in ["wrongFeedback=\"After help: Danke.\"", "correctFeedback=\"Good. Danke first; Bitte replies.\""]:
++    for required_short in ["wrongFeedback=\"After help: Danke.\"", "correctFeedback=\"Danke first; Bitte replies.\""]:
+         if required_short not in please_thanks_src:
+             fail(f"please-thanks one-screen scene lost concise repair copy: {required_short}")
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1755,7 +1755,7 @@
+     mission_data = MODULE1_MISSION_DATA.read_text(encoding="utf-8")
+     required = [
+         "ConversationRepairStep",
+-        "title=\"Notebook help.\"",
++        "title=\"Danke.\"",
+         "speakerLine=\"Bitte.\"",
+         "learnerLine=\"Danke.\"",
+         "cta={<>Fix Danke/Bitte",
+
+session_id: 20260531_052624_5c1f76
+Iteration 23 complete.
+
+Changed:
+- /shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+- /shared/german-course/scripts/qa_mission_pilot.py
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Product fix:
+- Tightened M1 `please-thanks`.
+- Title cut from `Notebook help.` to `Danke.`
+- Removed the extra `Gute Nacht.` distractor.
+- Repair is now only two choices: `Bitte.` / `Danke.`
+- Correct feedback shortened to `Danke first; Bitte replies.`
+- Post-correct stale choices still collapse.
+- The next card still jumps directly to `/missions/module-1/polite-exit?start=listen`.
+
+Verified:
+- PASS `npx eslint src/app/missions/module-1/please-thanks/page.tsx`
+- PASS `python3 scripts/qa_mission_pilot.py`
+- PASS `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs`
+- PASS curl route checks:
+  - `/`
+  - `/intro`
+  - `/learn`
+  - `/learn/1`
+  - `/learn/2`
+  - `/missions/module-1/please-thanks`
+- Browser QA on `/missions/module-1/please-thanks`:
+  - audio readyState 4
+  - choices appeared only after audio
+  - correct `Danke.` collapsed choices
+  - inline win appeared
+  - next link correct
+  - nav/search hidden
+  - console clean
+
+Weak/inherited:
+- Full `npm run lint` still fails on existing app-wide issues outside this lane: auth/signup effect state, legacy game purity/effect errors, module variable naming, Remotion cursor mutation, etc.
+- No commit/push.
+
+Checkpoint appended:
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Kuttan recommendation unchanged:
+- Use `Arun` or `Kiran` as adult-safe public name if approved.
+- Keep `Kuttan` only as home nickname/family flavor.
+- No rename done.
+
+Next: reduce M1 polite-exit choice burden, 25m.

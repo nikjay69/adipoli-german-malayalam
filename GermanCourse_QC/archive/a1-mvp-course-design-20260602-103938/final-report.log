@@ -1,0 +1,106 @@
+  ┊ review diff
+a/GermanCourse_QC/a1-mvp-course-design-final-report.md → b/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -0,0 +1,137 @@
++# A1 MVP course-design final report
++
++Updated: 2026-06-02 11:05 CEST
++
++## Files created/changed
++
++Created/updated in this run, currently untracked by git:
++
++- `docs/README.md` — active docs index updated with the MVP-first direction and active A1 artifacts.
++- `docs/A1_MVP_CUSTOMER_JOURNEY_AND_PAGE_FLOW.md` — new customer journey, page flow, low-text UX rules, MVP/later page split, customer PASS/WEAK/FAIL gate.
++- `docs/A1_MVP_SYLLABUS_TEST_AND_RECOVERY.md` — new 35h A1 syllabus, test, scoring, weakness-tag, and recovery system.
++- `GermanCourse_QC/a1-mvp-course-design-latest.md` — latest status summary from the run.
++- `public/images/mvp-style-samples/a1-kerala-study-evening-20260602.png` — MVP visual style sample, 1536x1024 PNG.
++- `GermanCourse_QC/a1-mvp-course-design-final-report.md` — this final report.
++
++Present but not from this run:
++
++- `public/images/adipoli-ai/kerala-study-baseline.png` — older baseline image, 2026-06-01.
++
++Missing:
++
++- `course-production/a1-mvp/module-01/` — not present. No dedicated Module 1 production folder was created.
++
++Git state checked: branch `adipoli-page-by-page-reset-20260523-1802`, last commit `b201d05`. Dirty tree is large; no commit made.
++
++## Customer journey now
++
++The product direction is now a guided A1 video course, not a games/content-library app.
++
++Default cold-user flow:
++
++1. `/` — concise promise: Malayali-focused Goethe A1 course.
++2. First mission — hear one German line and answer aloud.
++3. Post-win onboarding — choose pace/goal only after first learning win.
++4. `/learn` — one prescribed next block, not a dashboard.
++5. Video lesson — one outcome.
++6. Practice — listen/speak/write tied to the video.
++7. Mini-check — closed quick check.
++8. Recovery if weak — exact tasks, not generic “revise more”.
++9. Module diagnostic and final Goethe mock later.
++
++Bluntly: the customer journey is much clearer now. The app is supposed to spoon-feed the path and make the learner act fast.
++
++## Full A1 MVP structure now
++
++Locked structure:
++
++- Target: 56 owned video lessons.
++- Total video: 2,105 minutes = 35h 05m.
++- MVP modules: 8.
++- Required practice: 2,820 minutes.
++- Homework/review: 1,310 minutes.
++- Diagnostics: module gates plus final mock.
++
++8-module spine:
++
++1. First German moment.
++2. Identity, numbers, time.
++3. People, home, daily life.
++4. Food, shopping, money.
++5. Travel, services, health.
++6. Work, study, free time, messages.
++7. Official life and exam skills.
++8. Goethe A1 bootcamp.
++
++System rules now defined:
++
++- Must-do path per module.
++- Score-booster path per module.
++- Lesson mini-checks.
++- Module diagnostics.
++- Goethe-style gates.
++- Final full mock.
++- Weakness tags for Hören, Lesen, Schreiben, Sprechen, grammar, vocab.
++- Manual scoring rubric for writing/speaking.
++- Exact recovery prescriptions.
++- Public resources allowed only as one assigned task with output and time box.
++
+… omitted 59 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md → b//shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md
+@@ -1,6 +1,6 @@
+ # A1 MVP course-design final report
+ 
+-Updated: 2026-06-02 11:05 CEST
++Updated: 2026-06-02 10:50 CEST
+ 
+ ## Files created/changed
+ 
+Done.
+
+Wrote and verified:
+`/shared/german-course/GermanCourse_QC/a1-mvp-course-design-final-report.md`
+
+Blunt call in the report:
+Overall: WEAK.
+The journey + syllabus spine are solid. Module 1 production pack is missing, and no app/browser QA or rendered video is claimed.
+
+No commit made.
+
+Recommended next action: Build Module 1 greeting pack — script, practice, mini-check, recovery card. 60m.
+
+session_id: 20260602_104749_22e371

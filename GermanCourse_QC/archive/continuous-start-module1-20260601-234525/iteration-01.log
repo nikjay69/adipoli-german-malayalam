@@ -1,0 +1,191 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -995,8 +995,12 @@
+           {modelAudioFinished && (
+             <div className="grid gap-3">
+               {!isCorrect && (
+-                <div className="flex flex-wrap gap-2" role="group" aria-label="Tap the line you would say">
+-                  {options.map((option) => {
++                <>
++                  <p className="text-sm font-black text-[#f1d27a]" data-testid="say-aloud-then-tap">
++                    Say it aloud. Then tap it.
++                  </p>
++                  <div className="flex flex-wrap gap-2" role="group" aria-label="Tap the line you would say">
++                    {options.map((option) => {
+                     const selected = value === option.id;
+                     return (
+                       <button
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -1001,27 +1001,28 @@
+                   </p>
+                   <div className="flex flex-wrap gap-2" role="group" aria-label="Tap the line you would say">
+                     {options.map((option) => {
+-                    const selected = value === option.id;
+-                    return (
+-                      <button
+-                        key={option.id}
+-                        type="button"
+-                        onClick={() => onChange(option.id)}
+-                        className={clsx(
+-                          'min-h-12 max-w-full rounded-full border px-4 py-3 text-left text-sm font-black leading-snug transition active:scale-[0.98]',
+-                          selected
+-                            ? 'border-[#f1d27a] bg-[#f1d27a]/18 text-[#f8dda0]'
+-                            : 'border-white/12 bg-white/[0.055] text-white/84 hover:border-white/24 hover:bg-white/[0.085]'
+-                        )}
+-                      >
+-                        <span>{option.title}</span>
+-                        {option.subtitle && (
+-                          <span className={selected ? 'ml-2 text-xs font-bold text-white/52' : 'sr-only'}>{option.subtitle}</span>
+-                        )}
+-                      </button>
+-                    );
+-                  })}
+-                </div>
++                      const selected = value === option.id;
++                      return (
++                        <button
++                          key={option.id}
++                          type="button"
++                          onClick={() => onChange(option.id)}
++                          className={clsx(
++                            'min-h-12 max-w-full rounded-full border px-4 py-3 text-left text-sm font-black leading-snug transition active:scale-[0.98]',
++                            selected
++                              ? 'border-[#f1d27a] bg-[#f1d27a]/18 text-[#f8dda0]'
++                              : 'border-white/12 bg-white/[0.055] text-white/84 hover:border-white/24 hover:bg-white/[0.085]'
++                          )}
++                        >
++                          <span>{option.title}</span>
++                          {option.subtitle && (
++                            <span className={selected ? 'ml-2 text-xs font-bold text-white/52' : 'sr-only'}>{option.subtitle}</span>
++                          )}
++                        </button>
++                      );
++                    })}
++                  </div>
++                </>
+               )}
+               {value && !isCorrect && <p className="rounded-2xl bg-[#c0392b]/14 px-4 py-3 text-sm font-bold text-[#ffc9c2]">{wrongFeedback}</p>}
+               {isCorrect && <p className="rounded-2xl bg-[#3fbf75]/14 px-4 py-3 text-sm font-bold text-[#bcf7d0]">{correctFeedback}</p>}
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -144,6 +144,8 @@
+   }, 'adipoli:module1:completedMissions', missionId, winTestId);
+   assert(!completion.completed.includes(missionId), `${missionId}: mission must not complete after passive listening only`, completion);
+   assert(!completion.hasInlineWin, `${missionId}: ability win must wait for correct repair`, completion);
++  state = await pageState(page);
++  assert(state.text.includes('Say it aloud. Then tap it.'), `${missionId}: production cue should tell learner to speak before tapping`, { text: state.text.slice(0, 900) });
+ 
+   const clicked = await page.evaluate((patternSource) => {
+     const pattern = new RegExp(patternSource, 'i');
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -878,6 +878,8 @@
+         "Three classroom survival wins before Module 2 speaking.",
+         "Module 1 compact win progress",
+         "Module 2 opens from the card on the right.",
++        "data-testid=\"say-aloud-then-tap\"",
++        "Say it aloud. Then tap it.",
+     ]
+     missing_module1_shared = [snippet for snippet in required_module1_shared if snippet not in mission_ui]
+     if missing_module1_shared:
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-6h-start-to-module1-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-6h-start-to-module1-checkpoint.md
+@@ -6,3 +6,53 @@
+ Prompt: /shared/german-course/GermanCourse_QC/adipoli-6h-start-to-module1-prompt.md
+ Scope: / → Module 1 journey only; no commit/push/deploy.
+ 
++## Iteration 1 — 2026-06-01T23:50:52+02:00
++
++- Course-soul docs/source inspected:
++  - `docs/COURSE_OPERATING_BRIEF_2026-05-19.md`
++  - `docs/PRODUCT_DIRECTION_RESET_2026-05-20.md`
++  - `docs/WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`
++  - `docs/PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md`
++  - `src/lib/missions/module1.ts`
++  - `src/app/page.tsx`
++  - `src/app/learn/[moduleId]/page.tsx`
++  - `src/app/missions/module-1/greet-frau-weber/page.tsx`
++  - `src/app/missions/module-1/please-thanks/page.tsx`
++  - `src/app/missions/module-1/polite-exit/page.tsx`
++  - `src/app/missions/module-2/_components/MissionUI.tsx`
++  - `scripts/qa_intro_start_path.mjs`
++  - `scripts/qa_mission_pilot.py`
++- Files changed:
++  - `src/app/missions/module-2/_components/MissionUI.tsx`
++  - `scripts/qa_intro_start_path.mjs`
++  - `scripts/qa_mission_pilot.py`
++  - `GermanCourse_QC/adipoli-6h-start-to-module1-checkpoint.md`
++- Visible text/UX cuts made:
++  - No new screen/page added.
++  - Added one short post-audio production cue inside the shared conversation-repair step: `Say it aloud. Then tap it.`
++  - Cue appears only after audio finishes and before the repair choices, so the learner is pushed to speak before tapping instead of treating Module 1 as a click quiz.
++  - Added QA guards so this voice-first cue cannot silently disappear from the Module 1 first journey.
++- Module 1 journey status:
++  - `/` still routes directly to `/missions/module-1/greet-frau-weber?start=listen`.
++  - `/learn/1` still surfaces the next Module 1 spoken output and one `Start listening` CTA.
++  - All three Module 1 missions remain one-screen scene-first flows with audio gating, hidden learner reply until audio completion, repair choice, inline ability win, and next-scene handoff.
++- Images/audio/animation work:
++  - Images intentionally skipped this iteration; existing root/landing visual already passed route-scoped visual QA, and adding a new image would risk UI reskin drift.
++  - Audio unchanged; verified real MP3 serving locally and over Tailscale.
++- QA/browser evidence:
++  - `npx tsc --noEmit --pretty false --noErrorTruncation` → PASS.
++  - `node scripts/qa_intro_start_path.mjs` → PASS.
++  - `python3 scripts/qa_mission_pilot.py` → PASS, including M1/M2 immersive mobile QA, gold-slice first journey local + Tailscale, route reachability, no nav/search clutter, no browser TTS/JS-only audio.
++  - Browser manual check on `http://127.0.0.1:3000/missions/module-1/greet-frau-weber?start=listen`: audio played, cue present after audio, correct repair persisted completion, inline win + next mission card displayed, console clean.
++  - Tailscale curl: `http://100.96.56.53:3000/missions/module-1/greet-frau-weber?start=listen` → HTTP 200; `/audio/tts/v1-3-1/v1-3-1-line-3.mp3` → HTTP 200 `audio/mpeg`.
++- Product bar:
++  - Immediate learner action: PASS.
++  - Low text: PASS for scoped change; visual post-repair screen remains compact.
++  - Conversation-scene UX: PASS.
++  - Audio evidence: PASS.
++  - Click economy: PASS; added no extra tap, only clarified the existing tap.
++  - Kerala/Malayali identity: WEAK but stable; Module 1 scene is Kerala classroom, but this iteration did not deepen cultural specificity.
++  - Adult-safe visual direction: PASS; no childish/reskin changes.
++- Next best lane:
++  - Browser-review the first 5 seconds of `/` and `/learn/1` on mobile/desktop, then make one route-scoped text/scene cut if either still feels like a pitch/dashboard instead of a German moment.
++
+
+session_id: 20260601_234527_f33d32
+Iteration 1 done.
+
+Changed:
+- `/shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx`
+- `/shared/german-course/scripts/qa_intro_start_path.mjs`
+- `/shared/german-course/scripts/qa_mission_pilot.py`
+- `/shared/german-course/GermanCourse_QC/adipoli-6h-start-to-module1-checkpoint.md`
+
+Fix made:
+- Added a tiny post-audio production cue in the shared conversation-repair step:
+  `Say it aloud. Then tap it.`
+- It appears only after the German audio finishes and before repair choices.
+- No new page, no extra tap, no dashboard/chore UI.
+- QA now guards that the voice-first cue stays in the Module 1 first journey.
+
+Verification:
+- `npx tsc --noEmit --pretty false --noErrorTruncation` → PASS
+- `node scripts/qa_intro_start_path.mjs` → PASS
+- `python3 scripts/qa_mission_pilot.py` → PASS
+- Browser manual check on `/missions/module-1/greet-frau-weber?start=listen`:
+  - audio played
+  - cue appeared after audio
+  - correct repair completed mission
+  - inline win + next mission card displayed
+  - console clean
+- Tailscale:
+  - `http://100.96.56.53:3000/missions/module-1/greet-frau-weber?start=listen` → HTTP 200
+  - Module 1 MP3 → HTTP 200 `audio/mpeg`
+
+Product bar:
+- Immediate learner action: PASS
+- Low text: PASS
+- Conversation-scene UX: PASS
+- Audio evidence: PASS
+- Click economy: PASS
+- Kerala/Malayali identity: WEAK but stable — classroom context exists, but I didn’t deepen cultural specificity this iteration.
+- Adult-safe visual direction: PASS
+
+Checkpoint appended:
+`/shared/german-course/GermanCourse_QC/adipoli-6h-start-to-module1-checkpoint.md`
+
+Next iteration: first-5-second mobile/desktop review of `/` and `/learn/1`, 25m.

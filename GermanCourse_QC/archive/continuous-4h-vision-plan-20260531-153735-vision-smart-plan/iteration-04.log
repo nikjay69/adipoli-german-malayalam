@@ -1,0 +1,174 @@
+  ┊ review diff
+a/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1604.md → b/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1604.md
+@@ -0,0 +1,813 @@
++# Adipoli German — Vision-to-SMART Reset Plan
++
++Generated: 2026-05-31T16:04:11+02:00
++Workdir: `/shared/german-course`
++Loop iteration: 4
++
++This is the execution contract after reading Boss’s vision/product docs, recent QC outputs, first-path source, mission data, content/audio structure, git state, and current QA scripts.
++
++This is not another broad strategy doc. It is the plan future agents must execute against and self-verify before claiming quality.
++
++Evidence used before writing:
++- Vision/product docs synthesized: `docs/README.md`, `COURSE_OPERATING_BRIEF_2026-05-19.md`, `PRODUCT_DIRECTION_RESET_2026-05-20.md`, `WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`, `AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md`, `PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md`, `COURSE_GOALS_ENGAGEMENT_RETENTION_2026-05-20.md`, `COURSE_AUTOMATION_MARKETING_STRATEGY_2026-05-19.md`, `A1_STORY_BIBLE.md`, `COURSE_PLAN_10_10.md`, `GOETHE_A1_EXAM_MAP.md`, `EXERCISE_QUALITY_RULES.md`, `MODULE_BLUEPRINTS.md`, `SCRIPT_ARCHITECTURE.md`, `SERIES_ARC_PLAN.md`, `SERIES_FULL_SCRIPT.md`, `M1_AUDIT_REPORT.md`, `M2_M3_SETTING_AUDIT.md`, `GAME_AUDIT.md`, `LAUNCH_CHECKLIST.md`, plus QA-system/scorecard docs.
++- Recent QC/run outputs inspected: `GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`, latest `adipoli-vision-smart-plan-*` files, and recent M1/M2 continuous-loop outputs.
++- Source inspected: `src/app/page.tsx`, `src/app/intro/page.tsx`, `src/app/learn/page.tsx`, `src/app/learn/[moduleId]/page.tsx`, mission routes under `src/app/missions/`, `src/app/missions/module-2/_components/MissionUI.tsx`, `src/lib/missions/module1.ts`, `src/lib/missions/module2.ts`, `src/lib/content/modules/`, existing QA scripts.
++- Current source inventory: 18 module content files, 8 M1/M2 mission routes, 23 mission MP3s, 134 Hören MP3s, 25 video files, multiple QA scripts.
++- Git state: branch `adipoli-page-by-page-reset-20260523-1802`, commit `b201d05`, 262 dirty/untracked entries. Do not commit/push as one blob.
++- Checks run:
++  - PASS: `npx tsc --noEmit --pretty false --incremental false` (`tsc_exit=0`).
++  - PASS: local HTTP 200 for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, all three M1 mission routes, and all five M2 mission routes.
++  - PASS: browser click path `/` -> `/intro` -> `/missions/module-1/greet-frau-weber`.
++  - PASS: browser audio on first mission: `readyState=4`, `duration=4.752`, `currentTime advanced`, `error=null`.
++  - PASS: `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs` — 8 voice-first M1/M2 missions, nav/search hidden, no legacy builders on reviewed path.
++  - FAIL/stale: `python3 scripts/qa_mission_pilot.py` fails on old intro/start-path snippets.
++  - FAIL/stale: `node scripts/qa_gold_slice_first_journey.mjs` expects older intro copy/CTA.
++  - FAIL/stale: `node scripts/qa_intro_start_path.mjs` expects a different root-page contract.
++
++## 1. Vision reconstruction
++
++Boss is trying to build a complete paid German A1 web-app course for Malayali adult beginners.
++
++Plain version:
++
++Adipoli German should take someone from zero German to a confident Goethe A1 attempt through short, phone-first, Kerala-rooted story missions. The learner follows Kuttan’s Kerala-to-Germany pressure, but the learner is not watching a cartoon or browsing a library. They hear German, understand it, answer aloud, repair one real beginner mistake, write/type only when it helps A1, and leave with a concrete ability win.
++
++The course should feel like:
++- made for Malayalis, not generic German learners;
++- exam-serious, not casual phrase entertainment;
++- warm and culturally familiar, not childish;
++- audio-first and production-first, not text-first dashboards;
++- self-guiding enough that Boss does not have to explain where to click;
++- affordable, but not cheap-feeling.
++
++Core product promise:
++
++German A1 for Malayalis through short story missions: hear it, say it, fix it, use it, and prepare for Goethe.
++
++Hard rule:
++
++If a student can finish a route without hearing, speaking, writing/typing, or proving a Goethe-relevant ability, the route does not match the vision.
++
++## 2. Non-negotiables
++
++1. Malayali/Kerala identity
++- A1 physically happens in Kerala.
++- Kuttan stays in Kerala during A1.
++- Germany appears as goal, dream, cousin video call, exam rehearsal, form simulation, or learner imagination.
++- Manglish is a bridge for real learning mistakes, not a joke layer.
++- Kerala context must do work: Goethe Kochi, family pressure, migration dream, documentation anxiety, exam prep, cousin in Germany, home study, Kerala classroom/cafe scenes.
++
++2. Goethe A1 seriousness
++- Every module must map to at least one A1 ability.
++- Hören, Lesen, Schreiben, and Sprechen must all be practiced.
++- Hören needs real audio, not visible text pretending to be listening.
++- Schreiben needs form-filling and short-message production.
++- Sprechen needs repeated self-intro, question, request, spelling, and response practice.
++- Entertainment is allowed only when it strengthens a survival/exam skill.
++
++3. Adult-safe tone
++- Kuttan can be relatable and warm.
++- Kuttan/Appu cannot make the paid product feel like a kids app.
++- Appu stays silent UI flavor unless Boss explicitly changes it.
++- Public naming is still a product risk: “Kuttan” is culturally warm but may feel childish to some buyers.
++
++4. Real audio
++- No browser SpeechSynthesis on reviewable German paths.
++- Audio must be real files, served over HTTP, with browser playback proof.
++- Audio UI must show duration/progress or equivalent reviewable playback state.
++- Learner turn must unlock after the relevant audio finishes, not after a fake “heard” click.
+… omitted 735 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md
+@@ -146,6 +146,45 @@
+ 
+ ===== ITERATION 3 END 2026-05-31T16:01:18+02:00 rc=0 =====
+ Output: /shared/german-course/GermanCourse_QC/continuous-4h-vision-plan-20260531-153735-vision-smart-plan/iteration-03.log
++
++## Iteration 4 — 2026-05-31T16:04:11+02:00
++
++- Docs/source inspected:
++  - Re-read core vision docs: README, operating brief, product reset, whole-course mission spine, autonomous execution plan, premium quality protocol, goals/retention, automation/marketing, story bible.
++  - Extracted/summarized mandatory supporting docs: course 10/10 plan, Goethe A1 exam map, exercise quality rules, module blueprints, script architecture, series arc/full script, M1 audit, M2/M3 setting audit, game audit, launch checklist, product QA system, module scorecard.
++  - Re-inspected source routes: `/`, `/intro`, `/learn`, `/learn/[moduleId]`, Module 2 mission data, `qa_mission_pilot.py`.
++  - Browser-inspected live local path `/` -> `/intro` -> `/missions/module-1/greet-frau-weber`.
++- Vision findings:
++  - Boss’s vision is stable: mission-based, Kerala-rooted, Goethe-serious, adult-safe, phone-first, audio/production-first, self-sufficient.
++  - The immediate product problem is not lack of direction; it is source/QA contract drift plus scaling the mission model beyond M1/M2.
++  - Root `/` can be concise professional framing without violating “action fast,” but QA must encode that choice explicitly.
++- Mismatch findings:
++  - M1/M2 route behavior works locally and first mission audio plays in browser.
++  - Start-path QA remains stale/failing: `qa_mission_pilot.py`, `qa_gold_slice_first_journey.mjs`, and `qa_intro_start_path.mjs` expect older copy/route decisions.
++  - Dirty git state remains 262 dirty/untracked entries; no commit/push as one blob.
++- Verification run:
++  - PASS: `npx tsc --noEmit --pretty false --incremental false` (`tsc_exit=0`).
++  - PASS: local HTTP 200 for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, all M1/M2 mission routes.
++  - PASS: browser click path `/` -> `/intro` -> `/missions/module-1/greet-frau-weber`.
++  - PASS: browser mission audio proof: `readyState=4`, `duration=4.752`, `currentTime advanced`, `error=null`.
++  - PASS: `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs`.
++  - FAIL/stale: `python3 scripts/qa_mission_pilot.py` on old intro/start-path snippets.
++  - FAIL/stale: `node scripts/qa_gold_slice_first_journey.mjs` on old intro copy/CTA.
++  - FAIL/stale: `node scripts/qa_intro_start_path.mjs` on old root-page contract.
++- Plan sections drafted/refined:
++  - Created final iteration-4 plan with all requested sections 1–12 plus `## Boss summary`.
++  - Tightened roadmap and first 48h lane around proof repair before Module 3.
++  - Added current browser/audio evidence and explicit anti-hallucination PASS/WEAK/FAIL gates.
++- Final artifact:
++  - `/shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1604.md`
++- Remaining questions/risks:
++  - First-path contract still needs to be locked in QA: recommended `/` framing -> `/intro` -> first M1 audio mission.
++  - Public protagonist naming remains Boss decision.
++  - Technical audio playback proof is not accent/native-quality proof.
++- Next iteration focus:
++  - Patch stale start-path QA scripts to current chosen contract, rerun checks, then only then begin Module 3 build.
++===== ITERATION 4 END 2026-05-31T16:04:11+02:00 rc=0 =====
++
+ Git status after iteration 3:
+  M docs/A1_CURRICULUM_AUDIT.md
+  D docs/AI_CINEMATIC_SCRIPTS.md
+  ⟳ compacting context…
+
+session_id: 20260531_160956_888f41
+Done.
+
+Final plan:
+`/shared/german-course/GermanCourse_QC/adipoli-vision-smart-plan-20260531-1604.md`
+
+Checkpoint updated:
+`/shared/german-course/GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`
+
+Verified the artifact contains all requested sections:
+1. Vision reconstruction
+2. Non-negotiables
+3. Current mismatch diagnosis
+4. Product model
+5. Student-interest plan
+6. SMART roadmap
+7. First 7 days execution plan
+8. First 48 hours exact build lane
+9. Definition of launch-ready
+10. Boss decisions needed
+11. Verification harness
+12. Vision-alignment scorecard
+13. Boss summary
+
+Important result:
+The plan says the direction is now clear enough. The next blocker is not “more strategy”; it is stale QA contracts and scaling the working M1/M2 mission model without drifting back into dashboards/builders/text-heavy screens.
+
+Evidence included in the plan:
+- Core vision/product docs synthesized.
+- Recent QC/run outputs inspected.
+- `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, and mission routes inspected.
+- Mission/content/audio structure inspected.
+- Git state noted: 262 dirty/untracked entries, do not commit as one blob.
+- `tsc` passed.
+- Local route checks passed.
+- Browser path `/` → `/intro` → first M1 mission passed.
+- Mission audio playback proof passed.
+- Module 2 production/mobile QA passed.
+- Old QA scripts flagged as stale/failing.
+
+Next step:
+Patch stale start-path QA scripts, 45m — lock `/` → `/intro` → first M1 audio mission as the current contract.

@@ -1,0 +1,488 @@
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -64,8 +64,84 @@
+       sceneVariants: Array.from(document.querySelectorAll('[data-kerala-scene-variant]'))
+         .filter(isVisible)
+         .map((scene) => scene.getAttribute('data-kerala-scene-variant')),
++      nav: Boolean(document.querySelector('nav')),
++      search: Boolean(document.querySelector('[role="search"], input[type="search"]')),
++      scrollWidth: document.documentElement.scrollWidth,
++      innerWidth: window.innerWidth,
+     };
+   });
++}
++
++async function completeModule1Mission(page, { route, missionId, answerPattern, expectedAbility, nextHref, nextPath, nextSceneText }) {
++  await page.goto(`${BASE_URL}${route}?start=listen`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await page.waitForSelector('[data-testid="immersive-reply-step"]', { timeout: 12000 });
++  await delay(500);
++
++  let state = await pageState(page);
++  assert(state.path === route, `${missionId}: mission route did not load`, state);
++  assert(!state.nav && !state.search, `${missionId}: focused mission route should hide nav/search`, state);
++  assert(state.scrollWidth <= state.innerWidth + 1, `${missionId}: mobile horizontal overflow`, state);
++
++  let completion = await page.evaluate((key, id) => {
++    const completed = JSON.parse(window.localStorage.getItem(key) || '[]');
++    return {
++      completed,
++      hasInlineWin: Boolean(document.querySelector(`[data-testid="${id}-inline-win"]`)),
++      modelAudioFinished: document.querySelector('[data-testid="immersive-reply-step"]')?.getAttribute('data-model-audio-finished'),
++      visibleRepairChoices: Array.from(document.querySelectorAll('[data-testid="inline-repair-choice"] button')).map((button) => button.textContent?.trim()),
++    };
++  }, 'adipoli:module1:completedMissions', missionId);
++  assert(!completion.completed.includes(missionId), `${missionId}: mission must not complete on page load`, completion);
++  assert(!completion.hasInlineWin, `${missionId}: ability win must not show before repair`, completion);
++  assert(completion.modelAudioFinished === 'false' && completion.visibleRepairChoices.length === 0, `${missionId}: repair choices must stay gated until audio ends`, completion);
++
++  await page.evaluate(() => {
++    const audio = document.querySelector('[data-testid="custom-mission-audio"] audio');
++    audio?.dispatchEvent(new Event('ended', { bubbles: true }));
++  });
++  await page.waitForFunction(() => {
++    const step = document.querySelector('[data-testid="immersive-reply-step"]');
++    const choices = document.querySelectorAll('[data-testid="inline-repair-choice"] button');
++    return step?.getAttribute('data-model-audio-finished') === 'true' && choices.length >= 2;
++  }, { timeout: 5000 });
++
++  completion = await page.evaluate((key, id) => {
++    const completed = JSON.parse(window.localStorage.getItem(key) || '[]');
++    return {
++      completed,
++      hasInlineWin: Boolean(document.querySelector(`[data-testid="${id}-inline-win"]`)),
++      visibleRepairChoices: Array.from(document.querySelectorAll('[data-testid="inline-repair-choice"] button')).map((button) => button.textContent?.trim()),
++    };
++  }, 'adipoli:module1:completedMissions', missionId);
++  assert(!completion.completed.includes(missionId), `${missionId}: mission must not complete after passive listening only`, completion);
++  assert(!completion.hasInlineWin, `${missionId}: ability win must wait for correct repair`, completion);
++
++  const clicked = await page.evaluate((patternSource) => {
++    const pattern = new RegExp(patternSource, 'i');
++    const buttons = Array.from(document.querySelectorAll('[data-testid="inline-repair-choice"] button'));
++    const answer = buttons.find((button) => pattern.test(button.textContent ?? ''));
++    answer?.click();
++    return Boolean(answer);
++  }, answerPattern.source);
++  assert(clicked, `${missionId}: could not find the correct repair choice`, completion);
++
++  await page.waitForFunction((key, id, href) => {
++    const completed = JSON.parse(window.localStorage.getItem(key) || '[]');
++    return completed.includes(id) && Boolean(document.querySelector(`a[href="${href}"]`));
++  }, { timeout: 8000 }, 'adipoli:module1:completedMissions', missionId, nextHref);
++  await delay(350);
++
++  state = await pageState(page);
++  assert(state.text.includes(expectedAbility), `${missionId}: ability win should appear only after repair`, { text: state.text.slice(0, 900) });
++  assert(state.links.some((link) => link.href === nextHref), `${missionId}: next mission handoff link missing`, state);
++
++  await page.click(`a[href="${nextHref}"]`);
++  await page.waitForFunction((pathName) => window.location.pathname === pathName, { timeout: 10000 }, nextPath);
++  await delay(700);
++  state = await pageState(page);
+… omitted 6 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -72,7 +72,7 @@
+   });
+ }
+ 
+-async function completeModule1Mission(page, { route, missionId, answerPattern, expectedAbility, nextHref, nextPath, nextSceneText }) {
++async function completeModule1Mission(page, { route, missionId, winTestId, answerPattern, expectedAbility, nextHref, nextPath, nextSceneText }) {
+   await page.goto(`${BASE_URL}${route}?start=listen`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+   await page.waitForSelector('[data-testid="immersive-reply-step"]', { timeout: 12000 });
+   await delay(500);
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -86,11 +86,11 @@
+     const completed = JSON.parse(window.localStorage.getItem(key) || '[]');
+     return {
+       completed,
+-      hasInlineWin: Boolean(document.querySelector(`[data-testid="${id}-inline-win"]`)),
++      hasInlineWin: Boolean(document.querySelector(`[data-testid="${winId}"]`)),
+       modelAudioFinished: document.querySelector('[data-testid="immersive-reply-step"]')?.getAttribute('data-model-audio-finished'),
+       visibleRepairChoices: Array.from(document.querySelectorAll('[data-testid="inline-repair-choice"] button')).map((button) => button.textContent?.trim()),
+     };
+-  }, 'adipoli:module1:completedMissions', missionId);
++  }, 'adipoli:module1:completedMissions', missionId, winTestId);
+   assert(!completion.completed.includes(missionId), `${missionId}: mission must not complete on page load`, completion);
+   assert(!completion.hasInlineWin, `${missionId}: ability win must not show before repair`, completion);
+   assert(completion.modelAudioFinished === 'false' && completion.visibleRepairChoices.length === 0, `${missionId}: repair choices must stay gated until audio ends`, completion);
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -82,7 +82,7 @@
+   assert(!state.nav && !state.search, `${missionId}: focused mission route should hide nav/search`, state);
+   assert(state.scrollWidth <= state.innerWidth + 1, `${missionId}: mobile horizontal overflow`, state);
+ 
+-  let completion = await page.evaluate((key, id) => {
++  let completion = await page.evaluate((key, id, winId) => {
+     const completed = JSON.parse(window.localStorage.getItem(key) || '[]');
+     return {
+       completed,
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -109,10 +109,10 @@
+     const completed = JSON.parse(window.localStorage.getItem(key) || '[]');
+     return {
+       completed,
+-      hasInlineWin: Boolean(document.querySelector(`[data-testid="${id}-inline-win"]`)),
++      hasInlineWin: Boolean(document.querySelector(`[data-testid="${winId}"]`)),
+       visibleRepairChoices: Array.from(document.querySelectorAll('[data-testid="inline-repair-choice"] button')).map((button) => button.textContent?.trim()),
+     };
+-  }, 'adipoli:module1:completedMissions', missionId);
++  }, 'adipoli:module1:completedMissions', missionId, winTestId);
+   assert(!completion.completed.includes(missionId), `${missionId}: mission must not complete after passive listening only`, completion);
+   assert(!completion.hasInlineWin, `${missionId}: ability win must wait for correct repair`, completion);
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -105,7 +105,7 @@
+     return step?.getAttribute('data-model-audio-finished') === 'true' && choices.length >= 2;
+   }, { timeout: 5000 });
+ 
+-  completion = await page.evaluate((key, id) => {
++  completion = await page.evaluate((key, id, winId) => {
+     const completed = JSON.parse(window.localStorage.getItem(key) || '[]');
+     return {
+       completed,
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -291,6 +291,45 @@
+   assert(!state.text.includes('Vielen Dank. Auf Wiedersehen.'), 'Module 1 polite-exit scene should hide the learner reply until audio finishes', { text: state.text.slice(0, 900) });
+   assert(!state.visibleButtons.some((button) => button.toLowerCase().includes('back')), 'Module 1 polite-exit listening path should not show a competing Back button', state);
+ 
++  await page.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await page.evaluate((key) => window.localStorage.removeItem(key), 'adipoli:module1:completedMissions');
++  await completeModule1Mission(page, {
++    route: '/missions/module-1/greet-frau-weber',
++    missionId: 'greetFrauWeber',
++    winTestId: 'greet-frau-weber-inline-win',
++    answerPattern: /Guten Morgen, Frau Weber\./,
++    expectedAbility: 'Guten Morgen, Frau Weber. Ich lerne Deutsch.',
++    nextHref: '/missions/module-1/please-thanks?start=listen',
++    nextPath: '/missions/module-1/please-thanks',
++    nextSceneText: 'Bitte.',
++  });
++  await completeModule1Mission(page, {
++    route: '/missions/module-1/please-thanks',
++    missionId: 'pleaseThanks',
++    winTestId: 'please-thanks-inline-win',
++    answerPattern: /^Danke\.$/,
++    expectedAbility: 'Danke. Bitte.',
++    nextHref: '/missions/module-1/polite-exit?start=listen',
++    nextPath: '/missions/module-1/polite-exit',
++    nextSceneText: 'Auf Wiedersehen.',
++  });
++  await completeModule1Mission(page, {
++    route: '/missions/module-1/polite-exit',
++    missionId: 'politeExit',
++    winTestId: 'polite-exit-inline-win',
++    answerPattern: /^Auf Wiedersehen\.$/,
++    expectedAbility: 'Vielen Dank. Auf Wiedersehen.',
++    nextHref: '/missions/module-2/self-intro?start=listen',
++    nextPath: '/missions/module-2/self-intro',
++    nextSceneText: 'Goethe room.',
++  });
++  const module1Closure = await page.evaluate(() => JSON.parse(window.localStorage.getItem('adipoli:module1:completedMissions') || '[]'));
++  assert(
++    ['greetFrauWeber', 'pleaseThanks', 'politeExit'].every((id) => module1Closure.includes(id)),
++    'Module 1 sequence should persist all three mission completions after output/repair gates',
++    { module1Closure }
++  );
++
+   await page.goto(`${BASE_URL}/learn/2`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+   await page.waitForFunction(() => document.body.innerText.includes('Tell the examiner your name'), { timeout: 12000 });
+   await delay(1200);
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -73,7 +73,10 @@
+ }
+ 
+ async function completeModule1Mission(page, { route, missionId, winTestId, answerPattern, expectedAbility, nextHref, nextPath, nextSceneText }) {
+-  await page.goto(`${BASE_URL}${route}?start=listen`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  const currentPath = await page.evaluate(() => window.location.pathname).catch(() => '');
++  if (currentPath !== route) {
++    await page.goto(`${BASE_URL}${route}?start=listen`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  }
+   await page.waitForSelector('[data-testid="immersive-reply-step"]', { timeout: 12000 });
+   await delay(500);
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -72,10 +72,21 @@
+   });
+ }
+ 
++async function gotoPath(page, pathOrRoute) {
++  const expectedPath = pathOrRoute.split('?')[0];
++  try {
++    await page.goto(`${BASE_URL}${pathOrRoute}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
++  } catch (error) {
++    const currentPath = await page.evaluate(() => window.location.pathname).catch(() => null);
++    if (currentPath !== expectedPath) throw error;
++  }
++  await page.waitForFunction((pathName) => window.location.pathname === pathName, { timeout: 15000 }, expectedPath);
++}
++
+ async function completeModule1Mission(page, { route, missionId, winTestId, answerPattern, expectedAbility, nextHref, nextPath, nextSceneText }) {
+   const currentPath = await page.evaluate(() => window.location.pathname).catch(() => '');
+   if (currentPath !== route) {
+-    await page.goto(`${BASE_URL}${route}?start=listen`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++    await gotoPath(page, `${route}?start=listen`);
+   }
+   await page.waitForSelector('[data-testid="immersive-reply-step"]', { timeout: 12000 });
+   await delay(500);
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -173,11 +173,11 @@
+   });
+   page.on('pageerror', (err) => consoleErrors.push(err.message));
+ 
+-  await page.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/');
+   await page.evaluate((keys) => {
+     for (const key of keys) window.localStorage.removeItem(key);
+   }, STORAGE_KEYS);
+-  await page.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/');
+   await delay(1200);
+   let state = await pageState(page);
+ 
+@@ -258,7 +258,7 @@
+   assert(state.text.includes('Morning class.'), 'Module 1 landing CTA should bypass mission preamble and start in the conversation scene', { text: state.text.slice(0, 900) });
+   assert(!state.visibleButtons.some((button) => button.toLowerCase().includes('back')), 'Module 1 landing-to-listening path should not show a competing Back button', state);
+ 
+-  await page.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/');
+   await page.evaluate(() => {
+     window.localStorage.setItem('adipoli:module1:completedMissions', JSON.stringify(['greetFrauWeber']));
+   });
+@@ -282,7 +282,7 @@
+   assert(!state.text.includes('Danke. Bitte.'), 'Module 1 please-thanks scene should hide the learner reply until audio finishes', { text: state.text.slice(0, 900) });
+   assert(!state.visibleButtons.some((button) => button.toLowerCase().includes('back')), 'Module 1 please-thanks listening path should not show a competing Back button', state);
+ 
+-  await page.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/');
+   await page.evaluate(() => {
+     window.localStorage.setItem('adipoli:module1:completedMissions', JSON.stringify(['greetFrauWeber', 'pleaseThanks']));
+   });
+@@ -305,7 +305,7 @@
+   assert(!state.text.includes('Vielen Dank. Auf Wiedersehen.'), 'Module 1 polite-exit scene should hide the learner reply until audio finishes', { text: state.text.slice(0, 900) });
+   assert(!state.visibleButtons.some((button) => button.toLowerCase().includes('back')), 'Module 1 polite-exit listening path should not show a competing Back button', state);
+ 
+-  await page.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/');
+   await page.evaluate((key) => window.localStorage.removeItem(key), 'adipoli:module1:completedMissions');
+   await completeModule1Mission(page, {
+     route: '/missions/module-1/greet-frau-weber',
+@@ -372,7 +372,7 @@
+   assert(state.text.includes('Goethe room.'), 'Module 2 landing CTA should bypass mission preamble and start in the conversation scene', { text: state.text.slice(0, 900) });
+   assert(!state.visibleButtons.some((button) => button.toLowerCase().includes('back')), 'Module 2 landing-to-listening path should not show a competing Back button', state);
+ 
+-  await page.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/');
+   await page.evaluate(() => {
+     window.localStorage.setItem('adipoli:module2:completedMissions', JSON.stringify(['selfIntro']));
+   });
+@@ -397,7 +397,7 @@
+   assert(!state.text.includes('K-U-T-T-A-N.'), 'Module 2 next-mission scene should hide the learner reply until audio finishes', { text: state.text.slice(0, 900) });
+   assert(!state.visibleButtons.some((button) => button.toLowerCase().includes('back')), 'Module 2 next-mission listening path should not show a competing Back button', state);
+ 
+-  await page.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/');
+   await page.evaluate(() => {
+     window.localStorage.setItem('adipoli:module2:completedMissions', JSON.stringify(['selfIntro', 'spellName']));
+   });
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -200,7 +200,7 @@
+   assert(state.text.includes('Your first German moment.'), 'website first page CTA should open the focused intro', { text: state.text.slice(0, 900) });
+   assert(!state.visibleButtons.some((button) => button.toLowerCase().includes('back')), 'intro screen should not show a competing Back button', state);
+ 
+-  await page.goto(`${BASE_URL}/intro`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/intro');
+   await page.waitForFunction(() => document.body.innerText.includes('Your first German moment.'), { timeout: 12000 });
+   await delay(1200);
+   state = await pageState(page);
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -225,7 +225,7 @@
+   assert(state.text.includes('Morning class.'), 'intro CTA should bypass mission preamble and start in the conversation scene', { text: state.text.slice(0, 900) });
+   assert(!state.visibleButtons.some((button) => button.toLowerCase().includes('back')), 'intro-to-listening path should not show a competing Back button', state);
+ 
+-  await page.goto(`${BASE_URL}/learn/1`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/learn/1');
+   await page.waitForFunction(() => document.body.innerText.includes('Guten Morgen.'), { timeout: 12000 });
+   await delay(1200);
+   state = await pageState(page);
+@@ -262,7 +262,7 @@
+   await page.evaluate(() => {
+     window.localStorage.setItem('adipoli:module1:completedMissions', JSON.stringify(['greetFrauWeber']));
+   });
+-  await page.goto(`${BASE_URL}/learn/1`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/learn/1');
+   await page.waitForFunction(() => document.body.innerText.includes('Bitte.'), { timeout: 12000 });
+   await delay(1200);
+   state = await pageState(page);
+@@ -286,7 +286,7 @@
+   await page.evaluate(() => {
+     window.localStorage.setItem('adipoli:module1:completedMissions', JSON.stringify(['greetFrauWeber', 'pleaseThanks']));
+   });
+-  await page.goto(`${BASE_URL}/learn/1`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/learn/1');
+   await page.waitForFunction(() => document.body.innerText.includes('Auf Wiedersehen.'), { timeout: 12000 });
+   await delay(1200);
+   state = await pageState(page);
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -344,7 +344,7 @@
+     { module1Closure }
+   );
+ 
+-  await page.goto(`${BASE_URL}/learn/2`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/learn/2');
+   await page.waitForFunction(() => document.body.innerText.includes('Tell the examiner your name'), { timeout: 12000 });
+   await delay(1200);
+   state = await pageState(page);
+@@ -376,7 +376,7 @@
+   await page.evaluate(() => {
+     window.localStorage.setItem('adipoli:module2:completedMissions', JSON.stringify(['selfIntro']));
+   });
+-  await page.goto(`${BASE_URL}/learn/2`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/learn/2');
+   await page.waitForFunction(() => document.body.innerText.includes('Spell a Kerala name cleanly'), { timeout: 12000 });
+   await delay(1200);
+   state = await pageState(page);
+@@ -401,7 +401,7 @@
+   await page.evaluate(() => {
+     window.localStorage.setItem('adipoli:module2:completedMissions', JSON.stringify(['selfIntro', 'spellName']));
+   });
+-  await page.goto(`${BASE_URL}/learn/2`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await gotoPath(page, '/learn/2');
+   await page.waitForFunction(() => document.body.innerText.includes('Say where you come from'), { timeout: 12000 });
+   await delay(1200);
+   state = await pageState(page);
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -149,8 +149,14 @@
+   assert(state.text.includes(expectedAbility), `${missionId}: ability win should appear only after repair`, { text: state.text.slice(0, 900) });
+   assert(state.links.some((link) => link.href === nextHref), `${missionId}: next mission handoff link missing`, state);
+ 
+-  await page.click(`a[href="${nextHref}"]`);
+-  await page.waitForFunction((pathName) => window.location.pathname === pathName, { timeout: 10000 }, nextPath);
++  const clickedNext = await page.evaluate((href) => {
++    const link = document.querySelector(`a[href="${href}"]`);
++    link?.scrollIntoView({ block: 'center', inline: 'center' });
++    link?.click();
++    return Boolean(link);
++  }, nextHref);
++  assert(clickedNext, `${missionId}: next handoff link could not be clicked`, state);
++  await page.waitForFunction((pathName) => window.location.pathname === pathName, { timeout: 15000 }, nextPath);
+   await delay(700);
+   state = await pageState(page);
+   assert(state.path === nextPath, `${missionId}: next handoff did not reach expected route`, state);
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -80,7 +80,6 @@
+     const currentPath = await page.evaluate(() => window.location.pathname).catch(() => null);
+     if (currentPath !== expectedPath) throw error;
+   }
+-  await page.waitForFunction((pathName) => window.location.pathname === pathName, { timeout: 15000 }, expectedPath);
+ }
+ 
+ async function completeModule1Mission(page, { route, missionId, winTestId, answerPattern, expectedAbility, nextHref, nextPath, nextSceneText }) {
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -156,6 +156,7 @@
+   }, nextHref);
+   assert(clickedNext, `${missionId}: next handoff link could not be clicked`, state);
+   await page.waitForFunction((pathName) => window.location.pathname === pathName, { timeout: 15000 }, nextPath);
++  await page.waitForFunction((text) => document.body.innerText.includes(text), { timeout: 15000 }, nextSceneText);
+   await delay(700);
+   state = await pageState(page);
+   assert(state.path === nextPath, `${missionId}: next handoff did not reach expected route`, state);
+  ┊ review diff
+a//shared/german-course/scripts/qa_intro_start_path.mjs → b//shared/german-course/scripts/qa_intro_start_path.mjs
+@@ -74,11 +74,27 @@
+ 
+ async function gotoPath(page, pathOrRoute) {
+   const expectedPath = pathOrRoute.split('?')[0];
++  const url = `${BASE_URL}${pathOrRoute}`;
+   try {
+-    await page.goto(`${BASE_URL}${pathOrRoute}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
+-  } catch (error) {
+-    const currentPath = await page.evaluate(() => window.location.pathname).catch(() => null);
+-    if (currentPath !== expectedPath) throw error;
++    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
++    await page.waitForFunction(
++      (pathName) => window.location.pathname === pathName && document.body.innerText.trim().length > 20,
++      { timeout: 15000 },
++      expectedPath
++    );
++    return;
++  } catch (firstError) {
++    const current = await page.evaluate(() => ({ path: window.location.pathname, textLength: document.body.innerText.trim().length })).catch(() => null);
++    if (current?.path === expectedPath && current.textLength > 20) return;
++    await page.goto('about:blank', { waitUntil: 'domcontentloaded', timeout: 10000 }).catch(() => {});
++    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
++    await page.waitForFunction(
++      (pathName) => window.location.pathname === pathName && document.body.innerText.trim().length > 20,
++      { timeout: 15000 },
++      expectedPath
++    ).catch((secondError) => {
++      throw secondError instanceof Error ? secondError : firstError;
++    });
+   }
+ }
+ 
+  ┊ review diff
+a//shared/german-course/GermanCourse_QC/adipoli-6h-quality-incremental-checkpoint.md → b//shared/german-course/GermanCourse_QC/adipoli-6h-quality-incremental-checkpoint.md
+@@ -297,3 +297,12 @@
+ ?? src/lib/plan.ts
+ ?? src/lib/pricing.ts
+ 
++## Iteration 2 — 2026-06-01T02:35:01+02:00
++- Lane: Lane B — Module 1 sequence closure, scoped to browser QA harness.
++- Source/docs inspected: `GermanCourse_QC/adipoli-vision-smart-plan-20260531-1912.md`; `GermanCourse_QC/adipoli-4h-vision-plan-checkpoint.md`; `docs/COURSE_OPERATING_BRIEF_2026-05-19.md`; `docs/PRODUCT_DIRECTION_RESET_2026-05-20.md`; `docs/WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`; `src/lib/missions/module1.ts`; all three `src/app/missions/module-1/*/page.tsx`; `src/app/missions/module-2/_components/MissionUI.tsx`; `src/app/learn/[moduleId]/page.tsx`; `scripts/qa_intro_start_path.mjs`; `scripts/qa_module2_production_mobile.mjs`; current server/git state.
++- Files changed: `scripts/qa_intro_start_path.mjs` only (untracked/inherited QA script; no app UI/content changes, no commit/push/deploy).
++- Improvement made: Strengthened the start-path QA to prove the full Module 1 closure by real mobile browser actions: Mission 1 → Mission 2 → Mission 3 → Module 2 handoff; each M1 mission must not complete on load, must not complete after passive listening alone, must keep repair choices hidden until audio ends, must persist completion only after the correct repair/output choice, and must expose the next listening link directly. Added a resilient `gotoPath` helper because Next dev/Puppeteer route reloads briefly returned empty bodies during this longer chained playthrough.
++- Verification run: `date --iso-8601=seconds`; branch/commit/dirty/server check (`adipoli-page-by-page-reset-20260523-1802`, `b201d05`, 263 dirty/untracked entries; original dev server died during QA and was restarted with `npm run dev -- -H 0.0.0.0`, root HTTP 200); `node --check scripts/qa_intro_start_path.mjs` PASS; `node scripts/qa_intro_start_path.mjs` PASS after patch; `npx tsc --noEmit --pretty false --incremental false` PASS; `node scripts/qa_gold_slice_first_journey.mjs` PASS; `python3 scripts/qa_mission_pilot.py` PASS; `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs` PASS; `git diff --check -- scripts/qa_intro_start_path.mjs` PASS.
++- PASS/WEAK/FAIL: PASS for Lane B verification coverage. The actual product already passed the stricter M1 sequence behavior; this iteration locked the behavior into automated browser QA rather than adding more UI polish.
++- Weaknesses / next fix: Continue with Lane C next: verify all five Module 2 mission routes as one coherent self-intro arc, with browser audio evidence per route and no long mobile typing burden.
++
+
+session_id: 20260601_021130_d8a4f2
+Iteration 2 done.
+
+Lane: B — Module 1 sequence closure.
+
+Changed:
+- /shared/german-course/scripts/qa_intro_start_path.mjs
+- /shared/german-course/GermanCourse_QC/adipoli-6h-quality-incremental-checkpoint.md
+
+Improvement:
+- Strengthened browser QA so Module 1 must prove:
+  - Mission 1 → Mission 2 → Mission 3 → Module 2 handoff
+  - no completion on route load
+  - no completion after passive listening only
+  - repair choices hidden until audio ends
+  - completion persists only after correct repair/output
+  - next mission opens directly in the listening scene
+- Added a more resilient `gotoPath` helper for flaky Next/Puppeteer route reloads during longer chained mobile QA.
+
+Verification:
+- Dev server had died during QA; restarted with `npm run dev -- -H 0.0.0.0`
+- Server now running on `0.0.0.0:3000`
+- `node --check scripts/qa_intro_start_path.mjs` PASS
+- `node scripts/qa_intro_start_path.mjs` PASS
+- `npx tsc --noEmit --pretty false --incremental false` PASS
+- `node scripts/qa_gold_slice_first_journey.mjs` PASS
+- `python3 scripts/qa_mission_pilot.py` PASS
+- `ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs` PASS
+- `git diff --check -- scripts/qa_intro_start_path.mjs` PASS
+
+Checkpoint appended:
+- /shared/german-course/GermanCourse_QC/adipoli-6h-quality-incremental-checkpoint.md
+
+PASS. No commit, push, deploy, or broad rewrite.
+
+Next: Lane C Module 2 arc/audio browser pass, 45m.

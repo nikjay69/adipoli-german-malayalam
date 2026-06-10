@@ -1,0 +1,74 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -1183,7 +1183,7 @@
+   outputLabel = 'Your first line',
+   meaning,
+   note,
+-  promises = ['1 Listen', '2 Say + type', '3 Fix mistake'],
++  promises = ['1 Listen', '2 Say aloud', '3 Fix mistake'],
+   cta,
+   onStart,
+ }: {
+a//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx → b//shared/german-course/src/app/missions/module-1/greet-frau-weber/page.tsx
+@@ -82,7 +82,7 @@
+             output="Guten Morgen, Frau Weber. Ich lerne Deutsch."
+             outputLabel="Your classroom line"
+             meaning="Good morning, Ms Weber. I am learning German."
+-            promises={['1 Listen', '2 Say + type', '3 Fix mistake']}
++            promises={['Hear', 'Say aloud', 'Fix']}
+             cta={<>Begin greeting practice <ArrowRight className="h-5 w-5" /></>}
+             onStart={next}
+           />
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -209,7 +209,7 @@
+         "outputLabel = 'Your first line'",
+         "meaning?: string",
+         "lg:grid-cols-[1fr_0.72fr]",
+-        "promises = ['1 Listen', '2 Say + type', '3 Fix mistake']",
++        "promises = ['1 Listen', '2 Say aloud', '3 Fix mistake']",
+         "promises.join(', ')",
+         "KeralaClassroomScene",
+     ]
+@@ -261,6 +261,7 @@
+         "Reset slots",
+         "I said it aloud",
+         "Speak + type",
++        "Say + type",
+         "Repair trap",
+         "Repair the trap",
+         "Repair common mistake",
+
+session_id: 20260531_000708_4a737e
+Iteration 33 done.
+
+Changed:
+- src/app/missions/module-2/_components/MissionUI.tsx
+- src/app/missions/module-1/greet-frau-weber/page.tsx
+- scripts/qa_mission_pilot.py
+- GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Product fix:
+- Removed the remaining “Say + type” promise from the shared mission intro and first Module 1 greeting screen.
+- First-path framing is now: listen → say aloud → fix.
+- Tiny writing stays optional after audio, not advertised as the hero action.
+- Added QA guard banning “Say + type” from reviewed M1/M2 mission source.
+
+QA:
+- PASS: python3 scripts/qa_mission_pilot.py
+- PASS: targeted TSX ESLint
+- PASS: python3 -m py_compile scripts/qa_mission_pilot.py
+- PASS: git diff --check on changed files
+- PASS: curls for /, /missions/module-1/greet-frau-weber, /missions/module-2/self-intro
+
+Weak/inherited:
+- One initial mixed ESLint command included the Python QA file and produced the expected “.py ignored” warning; reran TSX ESLint + Python compile separately and both passed.
+
+Checkpoint appended:
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Kuttan recommendation unchanged:
+- Keep Kuttan as nickname/prototype continuity.
+- Public adult-safe name should likely be Kiran or Arun before launch.
+- No mass rename without approval.
+
+Next: Convert /learn/3 into a voice-first bridge, 25m.

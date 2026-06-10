@@ -1,0 +1,235 @@
+  ┊ review diff
+a//shared/german-course/src/app/page.tsx → b//shared/german-course/src/app/page.tsx
+@@ -152,22 +152,20 @@
+   const shouldShowModule2ResumeStrip = completedCount > 0 || completedModule1MissionCount > 0 || completedModule2MissionCount > 0;
+   const shouldSuppressHomeExtras = shouldShowModule2ResumeStrip;
+   const module2ResumeEyebrow = !module1Complete
+-    ? 'Continue Module 1 classroom path'
++    ? 'Module 1'
+     : module2SequenceComplete
+       ? 'Ability unlocked'
+-      : 'Continue Module 2 speaking path';
++      : 'Module 2';
+   const module2ResumeTitle = !module1Complete
+     ? nextModule1Mission.title
+     : module2SequenceComplete
+       ? module2CompleteHomeTitle
+       : `${nextModule2Mission.missionNumber}: ${nextModule2Mission.title}`;
+   const module2ResumeDescription = !module1Complete
+-    ? `Next output: ${nextModule1Mission.output}`
++    ? nextModule1Mission.output
+     : module2SequenceComplete
+       ? module2CompleteHomeProof
+-      : completedModule2MissionCount > 0
+-        ? `${completedModule2MissionCount}/5 done. Next output: ${nextModule2Mission.output}`
+-        : 'The old lesson queue can wait. Start with one listening, speaking, typing win.';
++      : nextModule2Mission.output;
+   const module2ResumeCta = !module1Complete
+     ? 'Start listening'
+     : module2SequenceComplete
+@@ -349,7 +347,9 @@
+                 {module2ResumeProgressLabel}
+               </span>
+             </div>
+-            <p className="mt-2 text-sm leading-snug text-white/65">{module2ResumeDescription}</p>
++            <p className="mt-3 inline-flex rounded-2xl border border-[#d4a520]/25 bg-[#d4a520]/10 px-3 py-2 text-sm font-black leading-snug text-[#f1d27a]">
++              {module2ResumeDescription}
++            </p>
+             <div className="mt-3 inline-flex items-center gap-2 rounded-2xl bg-[#d4a520] px-4 py-2 text-sm font-black text-[#111f11]">
+               {module2ResumeCta} <ArrowRight className="h-4 w-4" />
+             </div>
+  ┊ review diff
+a//shared/german-course/scripts/m1-video-defs.json → b//shared/german-course/scripts/m1-video-defs.json
+@@ -38,7 +38,7 @@
+     "beats": [
+       { "text": "Exam rehearsal: 'Buchstabieren Sie Ihren Namen.' Spell your name slowly.", "mood": "pointing" },
+       { "text": "German alphabet: 30 letters. But the names are different.", "german": "Alphabet", "mood": "thinking" },
+-      { "text": "Trap letters: J = 'yot', W = 'vay', V = 'fow', Z = 'tset'. English brain \u2014 rewire!", "mood": "happy" },
++      { "text": "Trap letters: J = 'yot', W = 'vay', V = 'fow', Z = 'tset'. Switch from English letter names.", "mood": "happy" },
+       { "text": "Spell a sample name: A-R-U-N. Ah, Err, Ooh, Enn. Then try your name.", "mood": "celebrating" }
+     ],
+     "vocabCards": [
+@@ -87,7 +87,7 @@
+       { "text": "Mission two: exit politely. Ending well is a real beginner skill.", "mood": "waving" },
+       { "text": "Three goodbyes: Auf Wiedersehen (formal), Tsch\u00FCss (casual), Gute Nacht (bedtime).", "german": "Auf Wiedersehen", "mood": "pointing" },
+       { "text": "Plus the magic trio: Danke, Bitte, Entschuldigung. Use daily.", "mood": "happy" },
+-      { "text": "Pro exit: 'Einen sch\u00F6nen Tag noch!' \u2014 Have a nice day! Kidu impression.", "german": "Einen sch\u00F6nen Tag noch!", "mood": "celebrating" }
++      { "text": "Polished exit: 'Einen sch\u00F6nen Tag noch!' \u2014 a clean adult closer.", "german": "Einen sch\u00F6nen Tag noch!", "mood": "celebrating" }
+     ],
+     "vocabCards": [
+       { "german": "Auf Wiedersehen", "english": "Goodbye (formal)", "malayalam": "vida", "pronunciation": "owf-vee-der-zey-en" },
+a//shared/german-course/scripts/m2-video-defs.json → b//shared/german-course/scripts/m2-video-defs.json
+@@ -39,7 +39,7 @@
+       { "text": "Goethe A1 will ask origin clearly: Woher kommen Sie?", "mood": "waving" },
+       { "text": "Answer: Ich komme aus \u2014 I come from. Say your country, state, or city.", "german": "Ich komme aus", "mood": "pointing" },
+       { "text": "Ich komme aus Indien. Or: Ich komme aus Kerala. Or: Ich komme aus Thrissur.", "german": "Ich komme aus Kerala.", "mood": "happy" },
+-      { "text": "Kerala Malayali pride auf Deutsch! Say it with confidence.", "mood": "celebrating" }
++      { "text": "Keep the answer simple: Kerala, Indien, or your city. Say it with confidence.", "mood": "celebrating" }
+     ],
+     "vocabCards": [
+       { "german": "Woher?", "english": "From where?", "malayalam": "evide", "pronunciation": "vo-hair" },
+@@ -86,7 +86,7 @@
+     "beats": [
+       { "text": "Sein is irregular, but it gives you your first useful identity sentences.", "mood": "waving" },
+       { "text": "Ich bin \u00B7 du bist \u00B7 er/sie ist \u00B7 wir sind \u00B7 ihr seid \u00B7 Sie sind.", "german": "sein", "mood": "pointing" },
+-      { "text": "Ich bin glucklich \u2014 I'm happy. Du bist nett \u2014 You're nice. Simple blocks.", "german": "Ich bin gl\u00FCcklich", "mood": "happy" },
++      { "text": "Ich bin gl\u00FCcklich \u2014 I'm happy. Du bist nett \u2014 You're nice. Simple blocks.", "german": "Ich bin gl\u00FCcklich", "mood": "happy" },
+       { "text": "Memorize sein like a song. It unlocks every other verb.", "mood": "celebrating" }
+     ],
+     "vocabCards": [
+a//shared/german-course/scripts/props/v1-2-2.json → b//shared/german-course/scripts/props/v1-2-2.json
+@@ -16,7 +16,7 @@
+       "audioSrc": "audio/tts/v1-2-2/v1-2-2-line-1.mp3"
+     },
+     {
+-      "text": "Trap letters: J = 'yot', W = 'vay', V = 'fow', Z = 'tset'. English brain — rewire!",
++      "text": "Trap letters: J = 'yot', W = 'vay', V = 'fow', Z = 'tset'. Switch from English letter names.",
+       "mood": "happy",
+       "audioSrc": "audio/tts/v1-2-2/v1-2-2-line-2.mp3"
+     },
+a//shared/german-course/scripts/props/v1-4-1.json → b//shared/german-course/scripts/props/v1-4-1.json
+@@ -21,7 +21,7 @@
+       "audioSrc": "audio/tts/v1-4-1/v1-4-1-line-2.mp3"
+     },
+     {
+-      "text": "Pro exit: 'Einen schönen Tag noch!' — Have a nice day! Kidu impression.",
++      "text": "Polished exit: 'Einen schönen Tag noch!' — a clean adult closer.",
+       "german": "Einen schönen Tag noch!",
+       "mood": "celebrating",
+       "audioSrc": "audio/tts/v1-4-1/v1-4-1-line-3.mp3"
+a//shared/german-course/scripts/props/v2-2-1.json → b//shared/german-course/scripts/props/v2-2-1.json
+@@ -22,7 +22,7 @@
+       "audioSrc": "audio/tts/v2-2-1/v2-2-1-line-2.mp3"
+     },
+     {
+-      "text": "Kerala Malayali pride auf Deutsch! Say it with confidence.",
++      "text": "Keep the answer simple: Kerala, Indien, or your city. Say it with confidence.",
+       "mood": "celebrating",
+       "audioSrc": "audio/tts/v2-2-1/v2-2-1-line-3.mp3"
+     }
+a//shared/german-course/scripts/props/v2-3-2.json → b//shared/german-course/scripts/props/v2-3-2.json
+@@ -16,7 +16,7 @@
+       "audioSrc": "audio/tts/v2-3-2/v2-3-2-line-1.mp3"
+     },
+     {
+-      "text": "Ich bin glucklich — I'm happy. Du bist nett — You're nice. Simple blocks.",
++      "text": "Ich bin glücklich — I'm happy. Du bist nett — You're nice. Simple blocks.",
+       "german": "Ich bin glücklich",
+       "mood": "happy",
+       "audioSrc": "audio/tts/v2-3-2/v2-3-2-line-2.mp3"
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -299,11 +299,12 @@
+         "from-[#d4a520] to-[#b8891a]",
+         "const shouldShowModule2ResumeStrip = completedCount > 0 || completedModule1MissionCount > 0 || completedModule2MissionCount > 0;",
+         "const shouldSuppressHomeExtras = shouldShowModule2ResumeStrip;",
+-        "Continue Module 1 classroom path",
++        "module2ResumeEyebrow = !module1Complete",
+         "Ability unlocked",
+-        "Continue Module 2 speaking path",
+-        "`Next output: ${nextModule1Mission.output}`",
+-        "The old lesson queue can wait. Start with one listening, speaking, typing win.",
++        "? 'Module 1'",
++        ": 'Module 2'",
++        "? nextModule1Mission.output",
++        ": nextModule2Mission.output",
+         "module2ResumeCta",
+         "module2ResumeProgressLabel",
+         "You can introduce yourself.",
+@@ -952,6 +953,10 @@
+         "Flughafen, Café, WG",
+         "Ich heiße Kuttan",
+         "K-U-T-T-A-N",
++        "Kidu impression",
++        "Malayali pride auf Deutsch",
++        "English brain — rewire",
++        "Ich bin glucklich",
+     ]
+     required_snippets = {
+         ROOT / "scripts/m1-video-defs.json": [
+  ┊ review diff
+a//shared/german-course/scripts/qa_completed_ability_landings.mjs → b//shared/german-course/scripts/qa_completed_ability_landings.mjs
+@@ -115,11 +115,32 @@
+     state
+   );
+   assert(!state.text.includes('Continue your speaking path.'), 'Homepage completed compass should not use unfinished-path copy', { text: state.text.slice(0, 1000) });
++  assert(!state.text.includes('Next output:'), 'Homepage completed compass should not expose procedural Next output label', { text: state.text.slice(0, 1000) });
+   assert(!state.text.includes('Old lesson queue'), 'Homepage completed compass should not expose legacy lesson queue', { text: state.text.slice(0, 1200) });
+   await page.click('a[href="/learn/3"]');
+   await delay(500);
+   state = await pageState(page);
+   assert(state.path === '/learn/3', 'Homepage Start Module 3 CTA should navigate to Module 3', state);
++
++  const partialHomePage = await browser.newPage();
++  partialHomePage.on('console', (msg) => {
++    if (msg.type() === 'error') consoleErrors.push(msg.text());
++  });
++  partialHomePage.on('pageerror', (err) => consoleErrors.push(err.message));
++  await setPartialModule1State(partialHomePage);
++  await partialHomePage.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
++  await delay(800);
++  state = await pageState(partialHomePage);
++  assert(state.path === '/', 'Homepage partial Module 1 compass did not load', state);
++  assert(state.text.includes('Handle thank-you politely'), 'Homepage partial compass should surface the next Module 1 ability', { text: state.text.slice(0, 1000) });
++  assert(state.text.includes('Danke. Bitte.'), 'Homepage partial compass should show only the next German output as proof', { text: state.text.slice(0, 1000) });
++  assert(!state.text.includes('Next output:'), 'Homepage partial compass should not show procedural Next output label', { text: state.text.slice(0, 1000) });
++  assert(!state.text.includes('Continue Module 1 classroom path'), 'Homepage partial compass should not use long system-path copy', { text: state.text.slice(0, 1000) });
++  assert(
++    state.links.some((link) => link.href === '/missions/module-1/please-thanks?start=listen' && link.text.includes('Start listening')),
++    'Homepage partial compass should start the next Module 1 mission at listening',
++    state
++  );
+ 
+   const partialPage = await browser.newPage();
+   partialPage.on('console', (msg) => {
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -283,7 +283,6 @@
+         "`${nextModule1Mission.href}?start=listen`",
+         "Five short Goethe A1 speaking missions: listen to native audio, speak, type, then repair one real mistake.",
+         "Continue your speaking path.",
+-        "`${completedModule2MissionCount}/5 done. Next output: ${nextModule2Mission.output}`",
+         "module2CompleteHomeTitle",
+         "module2CompleteHomeProof",
+         "module2CompleteHomeHref = '/learn/3'",
+  ⟳ compacting context…
+
+session_id: 20260530_132730_7aedb8
+Iteration 24 done.
+
+Changed:
+- /shared/german-course/src/app/page.tsx
+- /shared/german-course/scripts/m1-video-defs.json
+- /shared/german-course/scripts/qa_mission_pilot.py
+- /shared/german-course/scripts/qa_completed_ability_landings.mjs
+- Appended checkpoint:
+  /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Product fix:
+- Homepage/resume path is cleaner.
+- Removed learner-facing procedural copy: `Next output:`
+- Partial Module 1 resume now surfaces the next ability plainly:
+  `Handle thank-you politely`
+  proof phrase: `Danke. Bitte.`
+- Old lesson queue stays suppressed behind the mission-first path.
+- M1/M2 video basis copy was tightened away from gimmicky/childish phrasing.
+
+QA:
+- PASS: targeted syntax/lint
+  - `python3 -m py_compile scripts/qa_mission_pilot.py`
+  - `node --check scripts/qa_completed_ability_landings.mjs`
+  - `npx eslint src/app/page.tsx scripts/qa_completed_ability_landings.mjs`
+- PASS: full mission QA
+  - `python3 scripts/qa_mission_pilot.py`
+- PASS: route curls returned 200 for:
+  - `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`
+  - all 3 Module 1 mission routes
+  - all 5 Module 2 mission routes
+- WEAK: app-wide lint still fails with 99 inherited errors across auth/games/tests/components/lib/remotion. I did not touch those broadly.
+
+Naming note:
+- Keep “Kuttan” only as home/family nickname flavor.
+- Public/adult-safe protagonist name should probably become Arun or Kiran before launch.
+- No mass rename done.
+
+Next: scoped inherited-lint rescue for first-path files, 45m.

@@ -1,0 +1,236 @@
+  ┊ review diff
+a/src/app/missions/module-2/from-kerala/page.tsx → b/src/app/missions/module-2/from-kerala/page.tsx
+@@ -1,10 +1,18 @@
+ 'use client';
+ 
+-import { useEffect, useMemo, useState } from 'react';
++import { useEffect, useState } from 'react';
+ import { useSearchParams } from 'next/navigation';
+ 
+-import { ArrowRight, ChevronLeft, MapPin } from 'lucide-react';
+-import { ConversationSceneStep, MissionIntro, MissionShell, MissionWinStep, NativeAudio, NextMissionCard, PremiumCard, RecognitionStep, RepairStep, SpeakWriteStep, normalizeMissionAnswer, useMissionStepForQA } from '../_components/MissionUI';
++import { ArrowRight, ChevronLeft } from 'lucide-react';
++import {
++  ConversationRepairStep,
++  MissionIntro,
++  MissionShell,
++  MissionWinStep,
++  NextMissionCard,
++  PremiumCard,
++  useMissionStepForQA,
++} from '../_components/MissionUI';
+ import { module2MissionAudio, module2MissionById } from '@/lib/missions/module2';
+ 
+ const mission = module2MissionById.fromKerala;
+@@ -14,30 +22,9 @@
+ export default function Module2FromKeralaMissionPage() {
+   const [step, setStep] = useMissionStepForQA(0, missionSteps.length - 1);
+   const searchParams = useSearchParams();
+-  const [heard, setHeard] = useState(false);
+-  const [meaning, setMeaning] = useState<string | null>(null);
+-  const [typedAnswer, setTypedAnswer] = useState('');
+   const [repairChoice, setRepairChoice] = useState<string | null>(null);
+ 
+-  const meaningCorrect = meaning === 'where-from';
+-  const typedNormalized = normalizeMissionAnswer(typedAnswer);
+-  const typedStrong = typedNormalized.includes('ich komme aus') && typedNormalized.includes('kerala');
+   const repairCorrect = repairChoice === 'aus-in';
+-
+-  const canContinue = useMemo(() => {
+-    switch (step) {
+-      case 1:
+-        return heard;
+-      case 2:
+-        return meaningCorrect;
+-      case 3:
+-        return typedStrong;
+-      case 4:
+-        return repairCorrect;
+-      default:
+-        return true;
+-    }
+-  }, [heard, meaningCorrect, repairCorrect, step, typedStrong]);
+ 
+   const next = () => setStep((value) => Math.min(value + 1, missionSteps.length - 1));
+   const back = () => setStep((value) => Math.max(value - 1, 0));
+@@ -60,103 +47,46 @@
+ 
+         {step === 0 && (
+           <MissionIntro
+-            title="Say where you are from."
+-            promise="Answer origin and current city without turning it into a long story."
+-            output="Ich komme aus Kerala. · Ich wohne in Kochi."
+-            promises={['Hear question', 'Say origin', 'Fix aus/in']}
+-            cta={<>Start origin mission <ArrowRight className="h-5 w-5" /></>}
++            title="Say where you’re from."
++            promise="Goethe asks. Answer with Kerala, then fix aus vs in."
++            output="Ich komme aus Kerala."
++            promises={['Hear', 'Answer', 'Fix']}
++            cta={<>Start origin scene <ArrowRight className="h-5 w-5" /></>}
+             onStart={next}
+           />
+         )}
+ 
+         {step === 1 && (
+-          <ConversationSceneStep
+-            title="Origin question."
++          <ConversationRepairStep
++            title="Origin answer."
+             speakerName="Frau Weber"
+             speakerLine="Woher kommen Sie?"
+             learnerName="You"
+… omitted 101 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module2.ts → b//shared/german-course/src/lib/missions/module2.ts
+@@ -73,13 +73,13 @@
+     missionNumber: 'Mission 2.3',
+     title: 'Say where you come from',
+     output: 'Ich komme aus Kerala.',
+-    proof: 'listen • answer aloud • tiny write • repair',
++    proof: 'audio • answer aloud • quick repair',
+     href: '/missions/module-2/from-kerala',
+     state: 'Playable now',
+     active: true,
+     railLabel: 'Module 2 · Origin answer',
+     tone: 'blue',
+-    steps: ['Start', 'Scene', 'Catch', 'Speak + write', 'Repair', 'Win'],
++    steps: ['Start', 'Scene + repair', 'Win'],
+     next: {
+       href: '/missions/module-2/job-languages',
+       cta: 'Next: job + languages',
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -133,7 +133,7 @@
+ 
+ async function inspectImmersiveStep(page, route, name, typedValue, repairAnswerPattern) {
+   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true });
+-  const immersiveStep = name === 'm1-please-thanks' || name === 'm1-polite-exit' || name === 'm2-spell-name' ? 1 : (name === 'm1-greet' ? 2 : 3);
++  const immersiveStep = name === 'm1-please-thanks' || name === 'm1-polite-exit' || name === 'm2-spell-name' || name === 'm2-from-kerala' ? 1 : (name === 'm1-greet' ? 2 : 3);
+   await page.goto(`${BASE_URL}${route}?adipoliQa=1&adipoliQaStep=${immersiveStep}`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+   await page.waitForSelector('[data-testid="immersive-reply-step"]', { timeout: 15000 });
+   await new Promise((resolve) => setTimeout(resolve, 300));
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -580,7 +580,7 @@
+         "/missions/module-2/self-intro",
+         "/missions/module-2/spell-name",
+         "/missions/module-2/from-kerala",
+-        "listen • answer aloud • tiny write • repair",
++        "audio • answer aloud • quick repair",
+         "/missions/module-2/job-languages",
+         "listen • answer aloud • tiny write • repair",
+         "/missions/module-2/final-self-intro",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1559,6 +1559,47 @@
+     print("spell_name_voice_first=merged_repair")
+ 
+ 
++def assert_from_kerala_is_voice_first_merged_repair() -> None:
++    from_kerala = (ROOT / "src/app/missions/module-2/from-kerala/page.tsx").read_text(encoding="utf-8")
++    mission_data = MISSION_DATA.read_text(encoding="utf-8")
++    required = [
++        "ConversationRepairStep",
++        "title=\"Origin answer.\"",
++        "speakerLine=\"Woher kommen Sie?\"",
++        "learnerLine=\"Ich komme aus Kerala. Ich wohne in Kochi.\"",
++        "audioSrc={audioSources.modelKerala}",
++        "turnCue=\"Now answer.\"",
++        "{step === 2 && (",
++        "steps: ['Start', 'Scene + repair', 'Win']",
++        "proof: 'audio • answer aloud • quick repair'",
++    ]
++    missing = [snippet for snippet in required if snippet not in from_kerala + mission_data]
++    if missing:
++        fail(f"from-kerala mission must keep one-screen no-typing origin repair path: {missing}")
++    retired = [
++        "SpeakWriteStep",
++        "<RepairStep",
++        "<RecognitionStep",
++        "<ConversationSceneStep",
++        "typedAnswer",
++        "typedNormalized",
++        "typedStrong",
++        "inputId=\"typed-origin\"",
++        "Optional origin anchor",
++        "What is she asking?",
++        "Catch meaning",
++        "const [meaning",
++        "const [heard",
++        "case 4:\n        return repairCorrect;",
++        "Speak + write",
++        "{step === 5 && (",
++    ]
++    hits = [snippet for snippet in retired if snippet in from_kerala]
++    if hits:
++        fail(f"from-kerala reintroduced separate scene/recognition/typing chore path: {hits}")
++    print("from_kerala_voice_first=one_screen_conversation_repair")
++
++
+ def assert_final_self_intro_is_voice_first_merged_repair() -> None:
+     final_self_intro = FINAL_SELF_INTRO_PAGE.read_text(encoding="utf-8")
+     mission_data = MISSION_DATA.read_text(encoding="utf-8")
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1757,6 +1757,7 @@
+     assert_please_thanks_is_voice_first_merged_repair()
+     assert_polite_exit_is_voice_first_merged_repair()
+     assert_spell_name_is_voice_first_merged_repair()
++    assert_from_kerala_is_voice_first_merged_repair()
+     assert_final_self_intro_is_voice_first_merged_repair()
+     assert_routes_reachable()
+     print("PASS: mission pilot QA basics")
+
+session_id: 20260531_031056_99a860
+Iteration 12 done.
+
+Changed:
+- /shared/german-course/src/app/missions/module-2/from-kerala/page.tsx
+- /shared/german-course/src/lib/missions/module2.ts
+- /shared/german-course/scripts/qa_mission_pilot.py
+- /shared/german-course/scripts/qa_module2_production_mobile.mjs
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Product improvement:
+- M2 from-Kerala was still too page/chore-heavy:
+  Start → Scene → Catch → Speak + write → Repair → Win
+- Reduced it to:
+  Start → Scene + repair → Win
+- Removed:
+  - separate meaning-check page
+  - optional typing anchor
+  - standalone repair page
+- Kept the learning beat:
+  Frau Weber asks “Woher kommen Sie?”
+  learner answers aloud “Ich komme aus Kerala”
+  one tap repairs the aus/in mistake.
+
+Evidence:
+- Browser playthrough on /missions/module-2/from-kerala?start=listen passed.
+- Audio played and ended cleanly:
+  readyState=4, duration=4.296s, error=null.
+- Correct repair advanced to Origin win.
+- Console clean.
+- HTTP 200 for /, /intro, /learn, /learn/1, /learn/2, from-Kerala, from-Kerala?start=listen.
+- Dev server restarted and verified on 0.0.0.0:3000.
+
+QA:
+- PASS: targeted ESLint on touched page + module2 data.
+- PASS: py_compile for qa_mission_pilot.py.
+- PASS: node --check for qa_module2_production_mobile.mjs.
+- PASS: python3 scripts/qa_mission_pilot.py.
+- PASS: ADIPOLI_QA_BASE_URL=http://127.0.0.1:3000 node scripts/qa_module2_production_mobile.mjs.
+- WEAK/inherited: full npm run lint still fails repo-wide from old unrelated auth/game/component/remotion issues; touched target lint passes.
+
+Images/video:
+- Skipped. This iteration needed interaction-model reduction, not decoration.
+
+Kuttan/name:
+- No rename. Recommendation unchanged: public adult-safe name should probably be Arun or Kiran, with Kuttan as home nickname if Boss wants Kerala warmth.
+
+Checkpoint appended:
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+No commit/push.
+
+Next: Convert M2 job-languages to one-screen conversation repair, 45m.

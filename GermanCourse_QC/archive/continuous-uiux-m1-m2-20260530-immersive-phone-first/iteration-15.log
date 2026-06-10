@@ -1,0 +1,161 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -942,31 +942,35 @@
+   side?: React.ReactNode;
+ }) {
+   return (
+-    <div className="grid gap-7 lg:grid-cols-[0.85fr_1fr] lg:items-center">
++    <div className="grid gap-7 lg:grid-cols-[0.85fr_1fr] lg:items-start">
+       <div>
+         <div className="mb-4 text-[#f1d27a]">{icon}</div>
+         <h2 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h2>
+         <p className="mt-4 text-lg text-white/70">{prompt}</p>
+-        <div className="mt-7 grid gap-3">
+-          {options.map((option) => {
+-            const selected = value === option.id;
+-            return (
+-              <RepairChoiceButton key={option.id} onClick={() => onChange(option.id)} selected={selected}>
+-                <b className="text-lg">{option.title}</b>
+-                {option.subtitle && (
+-                  <>
+-                    <br />
+-                    <span className={selected ? 'text-white/60' : 'sr-only'}>{option.subtitle}</span>
+-                  </>
+-                )}
+-              </RepairChoiceButton>
+-            );
+-          })}
+-          {value && !isCorrect && <p className="rounded-2xl bg-[#c0392b]/14 p-4 font-semibold text-[#ffc9c2]">{wrongFeedback}</p>}
+-          {isCorrect && <p className="rounded-2xl bg-[#3fbf75]/14 p-4 font-semibold text-[#bcf7d0]">{correctFeedback}</p>}
+-        </div>
+-      </div>
+-      {side}
++        {side && (
++          <div className="mt-5 max-w-md" data-testid="recognition-scene-audio">
++            {side}
++          </div>
++        )}
++      </div>
++      <div className="grid gap-3">
++        {options.map((option) => {
++          const selected = value === option.id;
++          return (
++            <RepairChoiceButton key={option.id} onClick={() => onChange(option.id)} selected={selected}>
++              <b className="text-lg">{option.title}</b>
++              {option.subtitle && (
++                <>
++                  <br />
++                  <span className={selected ? 'text-white/60' : 'sr-only'}>{option.subtitle}</span>
++                </>
++              )}
++            </RepairChoiceButton>
++          );
++        })}
++        {value && !isCorrect && <p className="rounded-2xl bg-[#c0392b]/14 p-4 font-semibold text-[#ffc9c2]">{wrongFeedback}</p>}
++        {isCorrect && <p className="rounded-2xl bg-[#3fbf75]/14 p-4 font-semibold text-[#bcf7d0]">{correctFeedback}</p>}
++      </div>
+       <ActionRow className="lg:col-span-2">
+         <PrimaryButton onClick={onContinue} disabled={continueDisabled}>{cta}</PrimaryButton>
+       </ActionRow>
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -114,7 +114,7 @@
+             cta={<>Answer aloud <ArrowRight className="h-5 w-5" /></>}
+             onContinue={next}
+             continueDisabled={!canContinue}
+-            side={<NativeAudio src={audioSources.exitSet} label="Classroom phrases" />}
++            side={<NativeAudio src={audioSources.exitSet} label="Frau Weber" />}
+           />
+         )}
+ 
+a//shared/german-course/src/app/missions/module-2/from-kerala/page.tsx → b//shared/german-course/src/app/missions/module-2/from-kerala/page.tsx
+@@ -100,7 +100,7 @@
+             cta={<>Answer aloud <ArrowRight className="h-5 w-5" /></>}
+             onContinue={next}
+             continueDisabled={!canContinue}
+-            side={<NativeAudio src={audioSources.ausIndien} label="Aus pattern" />}
++            side={<NativeAudio src={audioSources.ausIndien} label="Origin line" />}
+           />
+         )}
+ 
+a//shared/german-course/src/app/missions/module-2/job-languages/page.tsx → b//shared/german-course/src/app/missions/module-2/job-languages/page.tsx
+@@ -100,7 +100,7 @@
+             cta={<>Answer aloud <ArrowRight className="h-5 w-5" /></>}
+             onContinue={next}
+             continueDisabled={!canContinue}
+-            side={<NativeAudio src={audioSources.jobPattern} label="Job pattern" />}
++            side={<NativeAudio src={audioSources.jobPattern} label="Job line" />}
+           />
+         )}
+ 
+a//shared/german-course/src/app/missions/module-2/final-self-intro/page.tsx → b//shared/german-course/src/app/missions/module-2/final-self-intro/page.tsx
+@@ -103,7 +103,7 @@
+             cta={<>Answer aloud <ArrowRight className="h-5 w-5" /></>}
+             onContinue={next}
+             continueDisabled={!canContinue}
+-            side={<NativeAudio src={audioSources.moduleWrap} label="Module wrap" />}
++            side={<NativeAudio src={audioSources.moduleWrap} label="Full intro" />}
+           />
+         )}
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -255,6 +255,10 @@
+         "Write one A1 answer",
+         "Model answer",
+         "Ability unlocked",
++        "Aus pattern",
++        "Job pattern",
++        "Module wrap",
++        "Classroom phrases",
+         "M1 wins",
+         "M2 wins",
+         "className=\"text-sm font-black uppercase tracking-[0.22em] text-[#f1d27a]\"",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -943,6 +943,8 @@
+         "<PenLine className=\"mb-4 h-11 w-11 text-[#f1d27a]\" />",
+         "side?: React.ReactNode",
+         "lg:grid-cols-[0.85fr_1fr]",
++        "lg:items-start",
++        "data-testid=\"recognition-scene-audio\"",
+         "wrongFeedback",
+         "correctFeedback",
+         "value && !isCorrect",
+  ⟳ compacting context…
+
+session_id: 20260530_210418_c471a4
+Iteration 15 done.
+
+Changed:
+- Tightened `RecognitionStep` in `src/app/missions/module-2/_components/MissionUI.tsx`
+  - Moved recognition audio under the prompt so it feels like part of the scene, not a detached chore.
+  - Kept answer choices cleanly separated.
+  - Added `data-testid="recognition-scene-audio"` for QA coverage.
+
+- Reduced learner-facing jargon:
+  - `Classroom phrases` → `Frau Weber`
+  - `Aus pattern` → `Origin line`
+  - `Job pattern` → `Job line`
+  - `Module wrap` → `Full intro`
+
+- Updated `scripts/qa_mission_pilot.py`
+  - QA now forbids the old internal labels.
+  - QA now checks the new recognition-audio layout marker.
+
+Verified:
+- `npx eslint ...` passed on changed TSX files + mobile QA script.
+- `python3 -m py_compile scripts/qa_mission_pilot.py` passed.
+- `python3 scripts/qa_mission_pilot.py` passed.
+- Browser QA on Module 2 origin recognition:
+  - Correct answer unlocks `Answer aloud`.
+  - Flow advances to the voice-first answer step.
+  - Console: 0 messages, 0 JS errors.
+- Checkpoint appended:
+  - `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Honest weakness:
+- Wide desktop recognition still has some left/right gap.
+- Disabled `Answer aloud` may still feel inert before the learner selects the correct answer.
+
+Next iteration: hide inert recognition CTA until correct selection, 25m.

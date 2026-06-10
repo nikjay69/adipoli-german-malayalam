@@ -1,0 +1,176 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -963,19 +963,26 @@
+             compact
+           />
+         </div>
+-        <div className={clsx(!modelAudioFinished && 'sr-only')} data-testid="inline-repair-choice">
+-          <ChoiceStep
+-            options={options}
+-            value={value}
+-            onChange={onChange}
+-            isCorrect={isCorrect}
+-            wrongFeedback={wrongFeedback}
+-            correctFeedback={correctFeedback}
+-            cta={cta}
+-            onContinue={onContinue}
+-            continueDisabled={!modelAudioFinished || !isCorrect}
+-            autoContinueOnCorrect
+-          />
++        <div
++          className={clsx(!modelAudioFinished && 'sr-only')}
++          data-testid="inline-repair-choice"
++          data-pre-audio-buttons={modelAudioFinished ? 'false' : 'blocked'}
++          aria-hidden={!modelAudioFinished}
++        >
++          {modelAudioFinished && (
++            <ChoiceStep
++              options={options}
++              value={value}
++              onChange={onChange}
++              isCorrect={isCorrect}
++              wrongFeedback={wrongFeedback}
++              correctFeedback={correctFeedback}
++              cta={cta}
++              onContinue={onContinue}
++              continueDisabled={!isCorrect}
++              autoContinueOnCorrect
++            />
++          )}
+         </div>
+       </div>
+     </div>
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -27,6 +27,8 @@
+     "className={clsx(!requireTyped && !modelAudioFinished && 'sr-only')}",
+     'data-testid="tiny-write-input"',
+     'data-testid="immersive-model-line"',
++    'data-pre-audio-buttons={modelAudioFinished ? \'false\' : \'blocked\'}',
++    'aria-hidden={!modelAudioFinished}',
+     'data-testid="speak-write-prompt"',
+     'data-testid="optional-anchor-note"',
+     'data-testid="hear-step-instructions"',
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -159,6 +159,8 @@
+       ctaDisabled: repairOnly ? true : cta?.disabled ?? null,
+       inputDisabled: input?.disabled ?? null,
+       repairHidden: inlineRepair?.classList.contains('sr-only') ?? null,
++      repairButtonsBeforeAudio: inlineRepair?.querySelectorAll('button').length ?? null,
++      preAudioButtonGate: inlineRepair?.getAttribute('data-pre-audio-buttons') ?? null,
+       audioReadyState: audio?.readyState ?? -1,
+       audioError: audio?.error?.code ?? null,
+       nav: Boolean(document.querySelector('nav')),
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -175,6 +175,9 @@
+   if (before.stepFinished !== 'false' || before.modelLineHidden !== 'true' || before.ctaDisabled !== true || before.audioReadyState < 1 || before.audioError !== null) {
+     throw new Error(`${name}: immersive reply not audio-first/text-hidden before audio finish: ${JSON.stringify(before)}`);
+   }
++  if (before.repairOnly && (before.repairHidden !== true || before.repairButtonsBeforeAudio !== 0 || before.preAudioButtonGate !== 'blocked')) {
++    throw new Error(`${name}: repair choices must not be visible/clickable before audio finishes: ${JSON.stringify(before)}`);
++  }
+ 
+   await page.evaluate(() => {
+     const audio = document.querySelector('[data-testid="custom-mission-audio"] audio');
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -972,6 +972,9 @@
+         "phone-first path must make tiny writing optional after audio, not a gate",
+         "data-typing-required",
+         "phone path still gates progression on typing after audio",
++        "repair choices must not be visible/clickable before audio finishes",
++        "data-pre-audio-buttons",
++        "repairButtonsBeforeAudio",
+         "afterAudioBeforeTyping",
+     ]
+     missing_guard = [snippet for snippet in required_guard if snippet not in guard_src]
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -1199,19 +1199,26 @@
+           </div>
+         </div>
+       </div>
+-      <div className={clsx(!modelAudioFinished && 'sr-only')} data-testid="inline-repair-choice">
+-        <ChoiceStep
+-          options={options}
+-          value={value}
+-          onChange={onChange}
+-          isCorrect={isCorrect}
+-          wrongFeedback={wrongFeedback}
+-          correctFeedback={correctFeedback}
+-          cta={cta}
+-          onContinue={onContinue}
+-          continueDisabled={!modelAudioFinished || !isCorrect}
+-          autoContinueOnCorrect
+-        />
++      <div
++        className={clsx(!modelAudioFinished && 'sr-only')}
++        data-testid="inline-repair-choice"
++        data-pre-audio-buttons={modelAudioFinished ? 'false' : 'blocked'}
++        aria-hidden={!modelAudioFinished}
++      >
++        {modelAudioFinished && (
++          <ChoiceStep
++            options={options}
++            value={value}
++            onChange={onChange}
++            isCorrect={isCorrect}
++            wrongFeedback={wrongFeedback}
++            correctFeedback={correctFeedback}
++            cta={cta}
++            onContinue={onContinue}
++            continueDisabled={!isCorrect}
++            autoContinueOnCorrect
++          />
++        )}
+       </div>
+     </div>
+   );
+  ⟳ compacting context…
+
+session_id: 20260531_043932_5943c9
+Iteration 18 complete.
+
+Changed:
+- /shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Product fix:
+- Removed pre-audio repair-choice buttons from:
+  - ConversationRepairStep
+  - SpeakRepairStep
+- Repair choices now do not exist in the DOM until audio finishes.
+- This makes M1/M2 feel more like:
+  listen → answer aloud → tiny repair
+  instead of:
+  audio + quiz controls visible immediately
+
+Please-thanks status:
+- Still one in-place conversation scene.
+- Frau Weber says “Bitte.”
+- Learner replies “Danke.”
+- Then one light repair choice appears.
+- No builder, no typing, no extra page hop.
+
+Verified:
+- PASS targeted ESLint
+- PASS Python compile
+- PASS python3 scripts/qa_mission_pilot.py
+- PASS node scripts/qa_module2_production_mobile.mjs
+- PASS local curl /
+- PASS browser QA on /missions/module-1/please-thanks?start=listen
+- PASS console clean
+- PASS audio readyState/duration clean
+- PASS visual QA: not cluttered, two-person scene clear, compact choices
+
+Checkpoint appended:
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Kuttan recommendation unchanged:
+- Public name should probably be Arun or Kiran.
+- Keep Kuttan only as a family nickname if approved.
+- No rename done.
+
+Next best lane: Tighten mission header/ribbon leakage, 35m.

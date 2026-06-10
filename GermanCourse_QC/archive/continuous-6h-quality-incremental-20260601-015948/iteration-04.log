@@ -1,0 +1,191 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -1580,7 +1580,7 @@
+       <h3 className="mt-2 text-2xl font-black leading-tight">{finalPull?.title ?? 'Module 2 complete.'}</h3>
+       <p className="sr-only">{finalPull?.pull ?? 'Review the five-mission sequence before moving on.'}</p>
+       <span className="mt-5 inline-flex min-h-12 items-center justify-center rounded-2xl bg-[#f1d27a] px-5 text-sm font-black text-[#162416] shadow-lg shadow-[#f1d27a]/15">
+-        Review path
++        Start M3
+       </span>
+     </Link>
+   );
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -693,7 +693,7 @@
+         "finalPull?.title",
+         "Next mission",
+         "Start next",
+-        "Review path",
++        "Start M3",
+         "MODULE2_COMPLETED_MISSIONS_STORAGE_KEY",
+         "readCompletedModule2Missions",
+         "writeCompletedModule2Mission",
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -452,6 +452,28 @@
+   });
+   const missing = module2SequenceMissions.map((mission) => mission.completedId).filter((id) => !finalCompletedState.includes(id));
+   if (missing.length) throw new Error(`Module 2 sequence completion missing: ${missing.join(', ')} from ${JSON.stringify(finalCompletedState)}`);
++
++  const handoff = await page.evaluate(() => {
++    const body = document.body.innerText;
++    const module3Link = Array.from(document.querySelectorAll('a')).find((anchor) => {
++      try {
++        return new URL(anchor.href).pathname === '/learn/3';
++      } catch {
++        return false;
++      }
++    });
++    return {
++      path: window.location.pathname,
++      hasNumbersPrompt: /Now handle numbers\./i.test(body),
++      hasStartModule3Cta: /Start Module 3 numbers/i.test(body),
++      module3Href: module3Link?.href ?? null,
++      bodyStart: body.slice(0, 700),
++    };
++  });
++  if (handoff.path !== '/learn/2' || !handoff.hasNumbersPrompt || !handoff.hasStartModule3Cta || !handoff.module3Href) {
++    throw new Error(`Module 2 final handoff to Module 3 is unclear: ${JSON.stringify(handoff)}`);
++  }
++  console.log(`module2_to_module3_handoff=PASS href=${handoff.module3Href}`);
+   console.log(`module2_sequence_completion=PASS completed=${finalCompletedState.join(',')}`);
+ }
+ 
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -1572,11 +1572,11 @@
+ 
+   return (
+     <Link
+-      href="/learn/2"
++      href="/learn/3"
+       className="block rounded-[1.8rem] border border-[#f1d27a]/20 bg-gradient-to-br from-[#f1d27a]/16 to-white/[0.04] p-5 transition hover:border-[#f1d27a]/45 hover:bg-[#f1d27a]/10"
+     >
+       <Sparkles className="mb-3 h-8 w-8 text-[#f1d27a]" />
+-      <p className="sr-only">Review Module 2</p>
++      <p className="sr-only">Start Module 3</p>
+       <h3 className="mt-2 text-2xl font-black leading-tight">{finalPull?.title ?? 'Module 2 complete.'}</h3>
+       <p className="sr-only">{finalPull?.pull ?? 'Review the five-mission sequence before moving on.'}</p>
+       <span className="mt-5 inline-flex min-h-12 items-center justify-center rounded-2xl bg-[#f1d27a] px-5 text-sm font-black text-[#162416] shadow-lg shadow-[#f1d27a]/15">
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -55,7 +55,7 @@
+     name: 'm2-final-self-intro',
+     completedId: 'finalSelfIntro',
+     correctAnswer: /Ich heiße Kuttan\. Ich komme aus Kerala/i,
+-    expectedNextPath: '/learn/2',
++    expectedNextPath: '/learn/3',
+     expectedNextSearch: '',
+   },
+ ];
+  ┊ review diff
+a//shared/german-course/scripts/qa_module2_production_mobile.mjs → b//shared/german-course/scripts/qa_module2_production_mobile.mjs
+@@ -455,25 +455,17 @@
+ 
+   const handoff = await page.evaluate(() => {
+     const body = document.body.innerText;
+-    const module3Link = Array.from(document.querySelectorAll('a')).find((anchor) => {
+-      try {
+-        return new URL(anchor.href).pathname === '/learn/3';
+-      } catch {
+-        return false;
+-      }
+-    });
+     return {
+       path: window.location.pathname,
+-      hasNumbersPrompt: /Now handle numbers\./i.test(body),
+-      hasStartModule3Cta: /Start Module 3 numbers/i.test(body),
+-      module3Href: module3Link?.href ?? null,
++      hasModule3Title: /Numbers & Time/i.test(body),
++      hasStartModuleCta: /Start module|Continue learning/i.test(body),
+       bodyStart: body.slice(0, 700),
+     };
+   });
+-  if (handoff.path !== '/learn/2' || !handoff.hasNumbersPrompt || !handoff.hasStartModule3Cta || !handoff.module3Href) {
++  if (handoff.path !== '/learn/3' || !handoff.hasModule3Title || !handoff.hasStartModuleCta) {
+     throw new Error(`Module 2 final handoff to Module 3 is unclear: ${JSON.stringify(handoff)}`);
+   }
+-  console.log(`module2_to_module3_handoff=PASS href=${handoff.module3Href}`);
++  console.log('module2_to_module3_handoff=PASS path=/learn/3');
+   console.log(`module2_sequence_completion=PASS completed=${finalCompletedState.join(',')}`);
+ }
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_direct_final_sequence_status.mjs → b//shared/german-course/scripts/qa_direct_final_sequence_status.mjs
+@@ -169,7 +169,7 @@
+     expectedWinText: 'Module 2 win.',
+     expectedCount: '1/5 done',
+     forbiddenCount: '5/5 done',
+-    expectedNextHref: '/learn/2',
++    expectedNextHref: '/learn/3',
+   });
+ 
+   const relevantErrors = consoleErrors.filter((line) => !line.includes('favicon') && !line.includes('404'));
+  ┊ review diff
+a//shared/german-course/scripts/qa_completed_ability_landings.mjs → b//shared/german-course/scripts/qa_completed_ability_landings.mjs
+@@ -171,7 +171,7 @@
+     state
+   );
+   await partialPage.click('a[href="/missions/module-1/please-thanks?start=listen"]');
+-  await delay(500);
++  await partialPage.waitForFunction(() => window.location.pathname === '/missions/module-1/please-thanks', { timeout: 10000 });
+   state = await pageState(partialPage);
+   assert(state.path === '/missions/module-1/please-thanks', 'Module 1 partial CTA should navigate to the next mission', state);
+ 
+Traceback (most recent call last):
+  File "/home/nikhi/.hermes/hermes-agent/tools/environments/base.py", line 716, in _wait_for_process
+    time.sleep(_poll_sleep)
+  File "/home/nikhi/.hermes/hermes-agent/cli.py", line 15422, in _signal_handler_q
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/nikhi/.local/bin/hermes", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/nikhi/.hermes/hermes-agent/hermes_cli/main.py", line 14612, in main
+    args.func(args)
+  File "/home/nikhi/.hermes/hermes-agent/hermes_cli/main.py", line 1883, in cmd_chat
+    cli_main(**kwargs)
+  File "/home/nikhi/.hermes/hermes-agent/cli.py", line 15546, in main
+    result = cli.agent.run_conversation(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikhi/.hermes/hermes-agent/run_agent.py", line 4514, in run_conversation
+    return run_conversation(self, user_message, system_message, conversation_history, task_id, stream_callback, persist_user_message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikhi/.hermes/hermes-agent/agent/conversation_loop.py", line 3877, in run_conversation
+    agent._execute_tool_calls(assistant_message, messages, effective_task_id, api_call_count)
+  File "/home/nikhi/.hermes/hermes-agent/run_agent.py", line 4427, in _execute_tool_calls
+    return self._execute_tool_calls_sequential(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikhi/.hermes/hermes-agent/run_agent.py", line 4496, in _execute_tool_calls_sequential
+    return execute_tool_calls_sequential(self, assistant_message, messages, effective_task_id, api_call_count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikhi/.hermes/hermes-agent/agent/tool_executor.py", line 849, in execute_tool_calls_sequential
+    function_result = _ra().handle_function_call(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikhi/.hermes/hermes-agent/model_tools.py", line 986, in handle_function_call
+    result = registry.dispatch(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/nikhi/.hermes/hermes-agent/tools/registry.py", line 404, in dispatch
+    return entry.handler(args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikhi/.hermes/hermes-agent/tools/terminal_tool.py", line 2529, in _handle_terminal
+    return terminal_tool(
+           ^^^^^^^^^^^^^^
+  File "/home/nikhi/.hermes/hermes-agent/tools/terminal_tool.py", line 2212, in terminal_tool
+    result = env.execute(command, **execute_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikhi/.hermes/hermes-agent/tools/environments/base.py", line 872, in execute
+    result = self._wait_for_process(proc, timeout=effective_timeout)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikhi/.hermes/hermes-agent/tools/environments/base.py", line 735, in _wait_for_process
+    self._kill_process(proc)
+  File "/home/nikhi/.hermes/hermes-agent/tools/environments/local.py", line 568, in _kill_process
+    def _kill_process(self, proc):
+
+  File "/home/nikhi/.hermes/hermes-agent/cli.py", line 15422, in _signal_handler_q
+    raise KeyboardInterrupt()
+KeyboardInterrupt

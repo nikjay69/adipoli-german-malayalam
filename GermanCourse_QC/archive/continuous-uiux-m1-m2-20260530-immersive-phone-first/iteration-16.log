@@ -1,0 +1,117 @@
+  ⟳ compacting context…
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -767,9 +767,14 @@
+       })}
+       {value && !isCorrect && <p className="rounded-2xl bg-[#c0392b]/14 p-4 font-semibold text-[#ffc9c2]">{wrongFeedback}</p>}
+       {isCorrect && <p className="rounded-2xl bg-[#3fbf75]/14 p-4 font-semibold text-[#bcf7d0]">{correctFeedback}</p>}
+-      <ActionRow>
+-        <PrimaryButton onClick={onContinue} disabled={continueDisabled}>{cta}</PrimaryButton>
+-      </ActionRow>
++      <div className="sr-only" aria-live="polite">
++        {continueDisabled ? 'Choose the correct answer to continue.' : 'Continue is ready.'}
++      </div>
++      {!continueDisabled && (
++        <ActionRow>
++          <PrimaryButton onClick={onContinue}>{cta}</PrimaryButton>
++        </ActionRow>
++      )}
+     </div>
+   );
+ }
+@@ -971,9 +976,14 @@
+         {value && !isCorrect && <p className="rounded-2xl bg-[#c0392b]/14 p-4 font-semibold text-[#ffc9c2]">{wrongFeedback}</p>}
+         {isCorrect && <p className="rounded-2xl bg-[#3fbf75]/14 p-4 font-semibold text-[#bcf7d0]">{correctFeedback}</p>}
+       </div>
+-      <ActionRow className="lg:col-span-2">
+-        <PrimaryButton onClick={onContinue} disabled={continueDisabled}>{cta}</PrimaryButton>
+-      </ActionRow>
++      <div className="sr-only" aria-live="polite">
++        {continueDisabled ? 'Choose the correct answer to continue.' : 'Continue is ready.'}
++      </div>
++      {!continueDisabled && (
++        <ActionRow className="lg:col-span-2">
++          <PrimaryButton onClick={onContinue}>{cta}</PrimaryButton>
++        </ActionRow>
++      )}
+     </div>
+   );
+ }
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -288,6 +288,28 @@
+     if always_visible_subtitle in mission_ui:
+         fail("choice/repair option subtitles are always visible again")
+     print("choice_subtitles=compact")
++
++
++def assert_choice_continue_is_not_a_dead_button() -> None:
++    mission_ui = MISSION_UI.read_text(encoding="utf-8")
++    choice_section = mission_ui.split("export function ChoiceStep", 1)[1].split("export function RepairStep", 1)[0]
++    recognition_section = mission_ui.split("export function RecognitionStep", 1)[1].split("export function ReplyAloudStep", 1)[0]
++    required = [
++        "{!continueDisabled && (",
++        "<PrimaryButton onClick={onContinue}>{cta}</PrimaryButton>",
++        "Choose the correct answer to continue.",
++    ]
++    missing_choice = [snippet for snippet in required if snippet not in choice_section]
++    missing_recognition = [snippet for snippet in required if snippet not in recognition_section]
++    if missing_choice or missing_recognition:
++        fail(
++            "choice/recognition continue controls must stay hidden until useful: "
++            f"choice_missing={missing_choice} recognition_missing={missing_recognition}"
++        )
++    dead_cta = "<PrimaryButton onClick={onContinue} disabled={continueDisabled}>{cta}</PrimaryButton>"
++    if dead_cta in choice_section or dead_cta in recognition_section:
++        fail("choice/recognition screens reintroduced a visible disabled Continue chore")
++    print("choice_continue=no_dead_button")
+ 
+ 
+ def assert_repair_explainer_stays_compact() -> None:
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1444,6 +1444,7 @@
+     assert_opening_text_light()
+     assert_no_learner_facing_meta_labels()
+     assert_choice_subtitles_stay_compact()
++    assert_choice_continue_is_not_a_dead_button()
+     assert_repair_explainer_stays_compact()
+     assert_start_path_source()
+     assert_mission_data_drives_path()
+
+session_id: 20260530_210830_6d811f
+Iteration 16 done.
+
+Changed:
+- `/shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx`
+- `/shared/german-course/scripts/qa_mission_pilot.py`
+- Appended checkpoint:
+  `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Product fix:
+- Removed the visible disabled `Answer aloud` / continue CTA from choice + recognition screens.
+- Now the learner only sees the actual answer choices until the correct answer is selected.
+- After the correct choice, the mobile fixed CTA appears and advances normally.
+- Added QA guard: `choice_continue=no_dead_button`.
+
+Verified:
+- PASS: `python3 scripts/qa_mission_pilot.py`
+  - M1/M2 immersive mobile QA passed for 8 missions.
+  - Local + Tailscale gold-slice QA passed.
+  - `routes_reachable=26`
+- PASS: targeted eslint on changed TSX:
+  - `npx eslint src/app/missions/module-2/_components/MissionUI.tsx scripts/qa_mission_pilot.py`
+- PASS: Puppeteer mobile QA on:
+  - `/missions/module-2/from-kerala?adipoliQa=1&adipoliQaStep=2`
+  - Before correct choice: no `Answer aloud` CTA.
+  - After correct choice: fixed `Answer aloud` CTA appears.
+  - Click advances to answer-aloud step.
+  - nav/search hidden, no horizontal overflow, console errors 0.
+
+Weak:
+- App-wide `npm run lint` still fails on inherited unrelated files. No new failure from this iteration’s changed TSX.
+
+Kuttan note:
+- Still recommend: public adult-safe learner name should become Arun or Kiran later; keep Kuttan only as home/family nickname. No mass rename done.
+
+Next best lane, 25m: check Module 1 + final Module 2 for remaining dead “Continue” chore loops.

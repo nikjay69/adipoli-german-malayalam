@@ -1,0 +1,296 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -1,16 +1,15 @@
+ 'use client';
+ 
+-import { useState } from 'react';
+-import { ArrowRight, ChevronLeft } from 'lucide-react';
++import { useEffect, useState } from 'react';
++import { ArrowRight } from 'lucide-react';
+ import {
+   ConversationRepairStep,
+   MissionShell,
+-  Module1MissionWinStep,
+   Module1NextMissionCard,
+   PremiumCard,
+   useMissionStepForQA,
+ } from '@/app/missions/module-2/_components/MissionUI';
+-import { module1MissionAudio, module1MissionById } from '@/lib/missions/module1';
++import { module1MissionAudio, module1MissionById, writeCompletedModule1Mission } from '@/lib/missions/module1';
+ 
+ const mission = module1MissionById.pleaseThanks;
+ const missionSteps = mission.steps;
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -21,52 +21,49 @@
+ 
+   const repairCorrect = repairChoice === 'danke';
+ 
+-  const next = () => setStep((value) => Math.min(value + 1, missionSteps.length - 1));
+-  const back = () => setStep((value) => Math.max(value - 1, 0));
++  useEffect(() => {
++    if (!repairCorrect) return;
++    writeCompletedModule1Mission(mission.id);
++  }, [repairCorrect]);
+ 
+   return (
+     <MissionShell currentStep={step} steps={missionSteps} railLabel={mission.railLabel} tone={mission.tone} currentModule1MissionId={mission.id}>
+       <PremiumCard>
+-        {step > 1 && (
+-          <button type="button" onClick={back} className="mb-6 inline-flex items-center gap-2 text-sm font-bold text-white/55 hover:text-white">
+-            <ChevronLeft className="h-4 w-4" /> Back
+-          </button>
+-        )}
++        {step === 0 && (
++          <>
++            <ConversationRepairStep
++              title="Notebook help."
++              speakerName="Frau Weber"
++              speakerLine="Bitte."
++              learnerName="You"
++              learnerLine="Danke."
++              audioSrc={audioSources.dankeBitte}
++              audioLabel="Your reply"
++              options={[
++                { id: 'bitte', title: 'Bitte.' },
++                { id: 'danke', title: 'Danke.' },
++                { id: 'gute-nacht', title: 'Gute Nacht.' },
++              ]}
++              value={repairChoice}
++              onChange={setRepairChoice}
++              isCorrect={repairCorrect}
++              wrongFeedback="After help: Danke."
++              correctFeedback="Good. Danke first; Bitte replies."
++              cta={<>Fix Danke/Bitte <ArrowRight className="h-5 w-5" /></>}
++              onContinue={() => {}}
++              turnCue="Now answer."
++            />
+ 
+-        {step === 0 && (
+-          <ConversationRepairStep
+-            title="Notebook help."
+-            speakerName="Frau Weber"
+-            speakerLine="Bitte."
+-            learnerName="You"
+-            learnerLine="Danke."
+-            audioSrc={audioSources.dankeBitte}
+-            audioLabel="Your reply"
+-            options={[
+-              { id: 'bitte', title: 'Bitte.', subtitle: 'Reply / please, not first thank-you.' },
+-              { id: 'danke', title: 'Danke.', subtitle: 'Correct after help.' },
+-              { id: 'gute-nacht', title: 'Gute Nacht.', subtitle: 'Bedtime only.' },
+-            ]}
+-            value={repairChoice}
+-            onChange={setRepairChoice}
+-            isCorrect={repairCorrect}
+-            wrongFeedback="Use Danke first after help. Bitte is the reply or please."
+-            correctFeedback="Correct. Danke first, Bitte as reply/please."
+-            cta={<>Fix Danke/Bitte <ArrowRight className="h-5 w-5" /></>}
+-            onContinue={next}
+-            turnCue="Now answer."
+-          />
+-        )}
+-
+-        {step === 1 && (
+-          <Module1MissionWinStep
+-            currentMissionId={mission.id}
+-            title="Politeness win."
+-            summary="You can handle the first Danke/Bitte exchange in class."
+-            ability="“Danke. Bitte.”"
+-            onReplay={() => setStep(0)}
+-            side={<Module1NextMissionCard currentMissionId={mission.id} />}
+-          />
++            {repairCorrect && (
+… omitted 12 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -16,7 +16,7 @@
+ const audioSources = module1MissionAudio.pleaseThanks;
+ 
+ export default function Module1PleaseThanksMissionPage() {
+-  const [step, setStep] = useMissionStepForQA(0, missionSteps.length - 1);
++  const [step] = useMissionStepForQA(0, missionSteps.length - 1);
+   const [repairChoice, setRepairChoice] = useState<string | null>(null);
+ 
+   const repairCorrect = repairChoice === 'danke';
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -24,7 +24,7 @@
+   useEffect(() => {
+     if (!repairCorrect) return;
+     writeCompletedModule1Mission(mission.id);
+-  }, [repairCorrect]);
++  }, [repairCorrect, mission.id]);
+ 
+   return (
+     <MissionShell currentStep={step} steps={missionSteps} railLabel={mission.railLabel} tone={mission.tone} currentModule1MissionId={mission.id}>
+  ┊ review diff
+a//shared/german-course/src/lib/missions/module1.ts → b//shared/german-course/src/lib/missions/module1.ts
+@@ -51,7 +51,7 @@
+     active: true,
+     railLabel: 'Module 1 · Danke + Bitte',
+     tone: 'green',
+-    steps: ['Scene + repair', 'Win'],
++    steps: ['Scene + repair'],
+     next: {
+       href: '/missions/module-1/polite-exit',
+       cta: 'Next: polite exit',
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -880,15 +880,27 @@
+     if module1_crowding_hits:
+         fail(f"Module 1 win/ribbon reintroduced duplicate next CTA clutter: {module1_crowding_hits}")
+     for page, src in mission_pages:
+-        direct_scene_allowed = "module-1/please-thanks" in page.as_posix() or "module-2/job-languages" in page.as_posix()
++        page_path = page.as_posix()
++        direct_scene_allowed = "module-1/please-thanks" in page_path or "module-2/job-languages" in page_path
++        please_thanks_one_screen = "module-1/please-thanks" in page_path
+         required_page = [
+-            "Module1MissionWinStep",
+             "Module1NextMissionCard",
+             "currentModule1MissionId={mission.id}",
+-            "<Module1MissionWinStep",
+-            "side={<Module1NextMissionCard currentMissionId={mission.id} />}",
+             "useMissionStepForQA(0, missionSteps.length - 1)",
+         ]
++        if please_thanks_one_screen:
++            required_page.extend([
++                "writeCompletedModule1Mission",
++                "data-testid=\"please-thanks-inline-win\"",
++                "{repairCorrect && (",
++                "onContinue={() => {}}",
++            ])
++        else:
++            required_page.extend([
++                "Module1MissionWinStep",
++                "<Module1MissionWinStep",
++                "side={<Module1NextMissionCard currentMissionId={mission.id} />}",
++            ])
+         if not direct_scene_allowed:
+             required_page.append("MissionIntro")
+         extra_missing_page = []
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1703,8 +1703,10 @@
+         "speakerLine=\"Bitte.\"",
+         "learnerLine=\"Danke.\"",
+         "cta={<>Fix Danke/Bitte",
+-        "{step === 1 && (",
+-        "steps: ['Scene + repair', 'Win']",
++        "writeCompletedModule1Mission",
++        "data-testid=\"please-thanks-inline-win\"",
++        "{repairCorrect && (",
++        "steps: ['Scene + repair']",
+         "proof: 'audio • answer aloud • quick repair'",
+     ]
+     missing = [snippet for snippet in required if snippet not in please_thanks + mission_data]
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -1724,6 +1724,7 @@
+         "responseOptions",
+         "const [recognition",
+         "MissionIntro",
++        "Module1MissionWinStep",
+         "Start danke drill",
+         "{step === 2 && (",
+         "{step === 5 && (",
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -224,6 +224,8 @@
+             fail(f"mission page should use compact shared MissionIntro or approved direct-scene start: {page}")
+         # Extract the step===0 JSX block roughly. This is deliberately simple and conservative.
+         m = re.search(r"\{step === 0 && \((.*?)\n\s*\)\}\n\n\s*\{step === 1", src, re.S)
++        if not m and direct_scene_allowed:
++            m = re.search(r"\{step === 0 && \((.*?)\n\s*\)\}\n\s*</PremiumCard>", src, re.S)
+         if not m:
+             fail(f"could not locate opening step block: {page}")
+         block = m.group(1)
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx → b//shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+@@ -24,7 +24,7 @@
+   useEffect(() => {
+     if (!repairCorrect) return;
+     writeCompletedModule1Mission(mission.id);
+-  }, [repairCorrect, mission.id]);
++  }, [repairCorrect]);
+ 
+   return (
+     <MissionShell currentStep={step} steps={missionSteps} railLabel={mission.railLabel} tone={mission.tone} currentModule1MissionId={mission.id}>
+  ⟳ compacting context…
+  ┊ review diff
+a//tmp/adipoli_iteration15_checkpoint.md → b//tmp/adipoli_iteration15_checkpoint.md
+@@ -0,0 +1,38 @@
++
++## Iteration 15 — 2026-05-31T03:54:46+02:00
++
++- Source/docs inspected:
++  - `docs/COURSE_OPERATING_BRIEF_2026-05-19.md`
++  - `docs/PRODUCT_DIRECTION_RESET_2026-05-20.md`
++  - `docs/WHOLE_COURSE_MISSION_SPINE_2026-05-20.md`
++  - `docs/AUTONOMOUS_EXECUTION_PLAN_2026-05-21.md`
++  - `docs/PREMIUM_QUALITY_BAR_AND_ANTI_HALLUCINATION_PROTOCOL_2026-05-21.md`
++  - M1/M2 QC reports and active mission route sources.
++- Files changed:
++  - `src/app/missions/module-1/please-thanks/page.tsx`
++  - `src/lib/missions/module1.ts`
++  - `scripts/qa_mission_pilot.py`
++  - `GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
++- UX/text reductions made:
++  - Converted M1 `Please + thanks` from a multi-step intro/recognition/speak-write/repair chore into a two-screen conversation scene: Frau Weber asks for a pen, learner hears and answers aloud, then fixes one politeness phrase.
++  - Removed visible builder/typing/counter flow from this mission. The lesson now centers one scene, one German line, one learner reply, one repair, one win.
++  - Preserved adult Goethe intent: `Bitte`, `Danke`, and `Gern geschehen` stay tied to a concrete classroom exchange.
++- M1/M2 learner path status:
++  - M1 now has the first greeting mission and the please-thanks mission in voice-first scene form.
++  - M2 already has self-intro, spell-name, from-Kerala, job-languages, and final-self-intro guarded as voice-first/direct-repair routes from prior iterations.
++  - Remaining best M1 lane: check whether `polite-exit` still has extra page/chore friction and reduce if needed.
++- Images/video/animation work:
++  - Images intentionally skipped; this run needed interaction reduction, not extra visual assets.
++  - Video tooling not changed.
++  - Animation kept minimal via existing mission UI; no new janky motion added.
++- QA run + PASS/WEAK/FAIL:
++  - PASS: `npx eslint src/app/missions/module-1/please-thanks/page.tsx src/lib/missions/module1.ts`
++  - PASS: `python3 -m py_compile scripts/qa_mission_pilot.py`
++  - PASS: `python3 scripts/qa_mission_pilot.py`
++  - PASS: curl smoke for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, `/missions/module-1/please-thanks`.
++  - PASS: browser mobile check on `/missions/module-1/please-thanks`: no nav/search, audio plays and ends, `Now answer.` cue appears, correct repair advances to win, no console errors.
++  - WEAK/inherited: full `npm run lint` still fails repo-wide from unrelated older files: auth/signup effect state, game pages, random-in-render, module variable naming, Remotion cursor mutation, and other pre-existing warnings/errors.
++- Kuttan/name recommendation:
++  - Unchanged: recommend public adult-safe `Arun` or `Kiran`, keeping `Kuttan` as family nickname/home flavor only if Boss approves. No mass rename.
++- Next best lane:
++  - Reduce M1 `polite-exit` screen count and verify the full `/learn/1` → mission path on mobile. 45m.
+
+session_id: 20260531_035650_41c389
+Iteration 15 complete and checkpointed.
+
+Changed:
+- /shared/german-course/src/app/missions/module-1/please-thanks/page.tsx
+- /shared/german-course/src/lib/missions/module1.ts
+- /shared/german-course/scripts/qa_mission_pilot.py
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Product improvement:
+- M1 “Please + thanks” is now a direct conversation scene:
+  - Frau Weber asks for a pen.
+  - Learner hears the scene audio.
+  - Learner answers aloud.
+  - One small politeness repair.
+  - Then win screen.
+- Removed the older chore flow:
+  - intro/start screen
+  - separate recognition step
+  - speak/write page
+  - extra repair page
+  - typing/builder/counter friction
+
+Verified:
+- PASS targeted ESLint on changed TS/TSX files.
+- PASS Python QA compile.
+- PASS `python3 scripts/qa_mission_pilot.py`.
+- PASS curl smoke for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, `/missions/module-1/please-thanks`.
+- PASS browser mobile check: no nav/search, audio plays/ends, `Now answer.` appears, correct repair advances to win, no console errors.
+- WEAK inherited: full `npm run lint` still fails repo-wide from unrelated older lint debt.
+
+Checkpoint appended at:
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+Next iteration: reduce M1 polite-exit screen count, 45m.

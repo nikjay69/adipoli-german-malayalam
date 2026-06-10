@@ -1,0 +1,291 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -183,16 +183,9 @@
+             })}
+           </div>
+         </div>
+-        {nextMission ? (
+-          <Link href={nextMission.href} className="inline-flex min-h-10 items-center rounded-full border border-[#3fbf75]/20 bg-[#3fbf75]/8 px-3 text-[0.68rem] font-black uppercase tracking-[0.12em] text-[#bcf7d0] hover:border-[#3fbf75]/40 hover:text-white sm:min-h-0 sm:border-0 sm:bg-transparent sm:px-0 sm:text-xs sm:tracking-[0.14em]">
+-            <span className="sm:hidden">Next mission</span>
+-            <span className="hidden sm:inline">Next: {nextMission.title}</span>
+-          </Link>
+-        ) : (
+-          <Link href="/learn/2" className="inline-flex min-h-10 items-center rounded-full border border-[#3fbf75]/20 bg-[#3fbf75]/8 px-3 text-[0.68rem] font-black uppercase tracking-[0.12em] text-[#bcf7d0] hover:border-[#3fbf75]/40 hover:text-white sm:min-h-0 sm:border-0 sm:bg-transparent sm:px-0 sm:text-xs sm:tracking-[0.14em]">
+-            Module 2 review
+-          </Link>
+-        )}
++        <span className="sr-only">
++          {nextMission ? `Next mission: ${nextMission.title}` : 'Module 2 review opens from the win card.'}
++        </span>
+       </div>
+     </div>
+   );
+@@ -259,10 +252,9 @@
+             })}
+           </div>
+         </div>
+-        <Link href={nextMission?.href ?? '/learn/2'} className="inline-flex min-h-10 items-center rounded-full border border-[#3fbf75]/20 bg-[#3fbf75]/8 px-3 text-[0.68rem] font-black uppercase tracking-[0.12em] text-[#bcf7d0] hover:border-[#3fbf75]/40 hover:text-white sm:min-h-0 sm:border-0 sm:bg-transparent sm:px-0 sm:text-xs sm:tracking-[0.14em]">
+-          <span className="sm:hidden">Next</span>
+-          <span className="hidden sm:inline">Next: {nextMission?.title ?? 'Module 2'}</span>
+-        </Link>
++        <span className="sr-only">
++          {nextMission ? `Next mission: ${nextMission.title}` : 'Module 2 opens from the win card.'}
++        </span>
+       </div>
+     </div>
+   );
+@@ -1226,7 +1218,7 @@
+         </p>
+       </div>
+ 
+-      <div className="mt-4 grid gap-2 sm:grid-cols-3">
++      <div className="mt-4 flex items-center gap-2" aria-label="Module 1 compact win progress">
+         {module1MissionCards.map((mission, index) => {
+           const active = index === currentIndex;
+           const storedDone = completedMissionSet.has(mission.id);
+@@ -1238,7 +1230,7 @@
+               href={mission.href}
+               aria-label={`${mission.missionNumber}: ${mission.output} — ${status}`}
+               className={clsx(
+-                'rounded-2xl border p-3 transition',
++                'flex h-10 w-10 items-center justify-center rounded-full border text-xs font-black transition',
+                 active
+                   ? 'border-[#f1d27a]/55 bg-[#f1d27a]/14 text-white shadow-lg shadow-[#f1d27a]/10'
+                   : done
+@@ -1246,22 +1238,14 @@
+                     : 'border-white/10 bg-white/[0.045] text-white/45 hover:bg-white/[0.07]'
+               )}
+             >
+-              <div className="flex items-center justify-between gap-2">
+-                <p className="text-[0.65rem] font-black uppercase tracking-[0.18em]">{mission.missionNumber}</p>
+-                {(active || storedDone) && <span className="text-[0.62rem] font-black uppercase tracking-[0.14em] text-[#bcf7d0]">Done</span>}
+-              </div>
+-              <p className="mt-1 text-sm font-black leading-tight">{mission.output}</p>
++              {(active || storedDone) ? <Check className="h-4 w-4" aria-hidden="true" /> : index + 1}
+             </Link>
+           );
+         })}
+       </div>
+-
+-      <Link
+-        href={nextMission?.href ?? '/learn/2'}
+-        className="mt-4 inline-flex min-h-12 items-center justify-center rounded-2xl border border-[#f1d27a]/35 bg-[#f1d27a]/10 px-5 py-3 font-black text-[#f1d27a] transition hover:bg-[#f1d27a]/16"
+-      >
+-        Continue sequence: {nextMission?.cta ?? 'Open Module 2'}
+-      </Link>
++      <p className="mt-4 text-sm font-semibold text-white/55">
++        {nextMission ? nextMission.title : 'Module 2 opens from the card on the right.'}
++      </p>
+     </div>
+   );
+ }
+… omitted 57 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -426,10 +426,8 @@
+         "{safeIndex + 1}/5",
+         "hidden sm:inline",
+         "truncate font-bold",
+-        "Next: {nextMission.title}",
+-        "<span className=\"sm:hidden\">Next mission</span>",
+-        "sm:border-0 sm:bg-transparent",
+-        "Module 2 review",
++        "Next mission: ${nextMission.title}",
++        "Module 2 review opens from the win card.",
+         "Module 2 completion ribbon",
+         "Module 2 mission completion status",
+         "role=\"listitem\"",
+@@ -444,10 +442,10 @@
+         "Module2SequenceStatus",
+         "Module 2 sequence progress",
+         "One guided speaking arc, not five loose pages.",
+-        "Continue sequence:",
+-        "Module 2 complete — review the full path",
++        "Module 2 compact win progress",
++        "Module 2 complete. Review from the landing page.",
+         "module2MissionCards.map",
+-        "sm:w-auto",
++        "flex h-10 w-10 items-center justify-center rounded-full",
+         "min-h-[calc(100vh-132px)]",
+         "export function NextMissionCard",
+         "nextMission.pull",
+@@ -464,6 +462,16 @@
+     missing_sequence_ui = [snippet for snippet in required_sequence_ui if snippet not in mission_ui]
+     if missing_sequence_ui:
+         fail(f"shared mission sequence progress UI missing snippets: {missing_sequence_ui}")
++    ribbon_crowding = [
++        "<span className=\"sm:hidden\">Next mission</span>",
++        "Next: {nextMission.title}",
++        "sm:border-0 sm:bg-transparent",
++        "Continue sequence:",
++        "Module 2 complete — review the full path",
++    ]
++    ribbon_crowding_hits = [snippet for snippet in ribbon_crowding if snippet in mission_ui]
++    if ribbon_crowding_hits:
++        fail(f"mission win/ribbon reintroduced duplicate next CTA clutter: {ribbon_crowding_hits}")
+     for page in MISSION_PAGES:
+         src = page.read_text(encoding="utf-8")
+         if "module2MissionById" not in src or "module2MissionAudio" not in src:
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -569,11 +569,16 @@
+         "export function Module1SequenceStatus",
+         "Module 1 sequence progress",
+         "Three classroom survival wins before Module 2 speaking.",
+-        "Continue sequence: {nextMission?.cta ?? 'Open Module 2'}",
++        "Module 1 compact win progress",
++        "Module 2 opens from the card on the right.",
+     ]
+     missing_module1_shared = [snippet for snippet in required_module1_shared if snippet not in mission_ui]
+     if missing_module1_shared:
+         fail(f"shared Module 1 sequence UI missing snippets: {missing_module1_shared}")
++    module1_crowding = ["Continue sequence: {nextMission?.cta ?? 'Open Module 2'}", "<span className=\"hidden sm:inline\">Next: {nextMission?.title ?? 'Module 2'}</span>"]
++    module1_crowding_hits = [snippet for snippet in module1_crowding if snippet in mission_ui]
++    if module1_crowding_hits:
++        fail(f"Module 1 win/ribbon reintroduced duplicate next CTA clutter: {module1_crowding_hits}")
+     for page, src in mission_pages:
+         required_page = [
+             "MissionIntro",
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -1102,12 +1102,16 @@
+   }
+ 
+   return (
+-    <div className="rounded-[1.8rem] border border-[#f1d27a]/20 bg-gradient-to-br from-[#f1d27a]/16 to-white/[0.04] p-6">
++    <Link
++      href="/learn/2"
++      className="block rounded-[1.8rem] border border-[#f1d27a]/20 bg-gradient-to-br from-[#f1d27a]/16 to-white/[0.04] p-6 transition hover:border-[#f1d27a]/45 hover:bg-[#f1d27a]/10"
++    >
+       <Sparkles className="mb-4 h-9 w-9 text-[#f1d27a]" />
+-      <p className="text-sm font-black uppercase tracking-[0.22em] text-[#f1d27a]">Next pull</p>
++      <p className="text-sm font-black uppercase tracking-[0.22em] text-[#f1d27a]">Module review</p>
+       <h3 className="mt-3 text-3xl font-black">{finalPull?.title ?? 'Module 2 complete.'}</h3>
+       <p className="mt-4 leading-7 text-white/68">{finalPull?.pull ?? 'Review the five-mission sequence before moving on.'}</p>
+-    </div>
++      <span className="mt-5 inline-flex items-center gap-2 font-black text-[#f1d27a]">Review Module 2 path</span>
++    </Link>
+   );
+ }
+ 
+  ┊ review diff
+a//shared/german-course/scripts/qa_mission_pilot.py → b//shared/german-course/scripts/qa_mission_pilot.py
+@@ -451,7 +451,8 @@
+         "nextMission.pull",
+         "finalPull?.title",
+         "Next mission",
+-        "Next pull",
++        "Module review",
++        "Review Module 2 path",
+         "MODULE2_COMPLETED_MISSIONS_STORAGE_KEY",
+         "readCompletedModule2Missions",
+         "writeCompletedModule2Mission",
+  ┊ review diff
+a//tmp/adipoli_iter20_qa.mjs → b//tmp/adipoli_iter20_qa.mjs
+@@ -0,0 +1,52 @@
++import puppeteer from '/shared/german-course/node_modules/puppeteer/lib/esm/puppeteer/puppeteer.js';
++
++const browser = await puppeteer.launch({
++  headless: 'new',
++  executablePath: '/usr/bin/google-chrome',
++  args: ['--no-sandbox', '--disable-dev-shm-usage'],
++});
++const page = await browser.newPage();
++const errors = [];
++page.on('console', (msg) => {
++  if (['error', 'warning'].includes(msg.type())) errors.push(`${msg.type()}: ${msg.text()}`);
++});
++page.on('pageerror', (err) => errors.push(`pageerror: ${err.message}`));
++await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true });
++await page.goto('http://127.0.0.1:3000/missions/module-1/polite-exit?adipoliQa=1&adipoliQaStep=6', { waitUntil: 'domcontentloaded', timeout: 30000 });
++await new Promise((resolve) => setTimeout(resolve, 1000));
++const visual = await page.evaluate(() => ({
++  path: location.pathname,
++  bodyText: document.body.innerText.slice(0, 1400),
++  visibleNextColon: [...document.querySelectorAll('body *')].filter((el) => {
++    const rect = el.getBoundingClientRect();
++    const style = getComputedStyle(el);
++    return rect.width > 0 && rect.height > 0 && style.visibility !== 'hidden' && style.display !== 'none' && /Next:/.test(el.textContent || '');
++  }).length,
++  compactM1: !!document.querySelector('[aria-label="Module 1 compact win progress"]'),
++  module2CardHref: [...document.querySelectorAll('a')].map((a) => a.getAttribute('href')).find((href) => href === '/learn/2') || null,
++}));
++if (visual.visibleNextColon !== 0) throw new Error(`visible Next: clutter remains: ${visual.visibleNextColon}`);
++if (!visual.compactM1) throw new Error('compact M1 win progress missing');
++if (visual.module2CardHref !== '/learn/2') throw new Error('M1 final does not expose /learn/2 next card');
++await page.click('a[href="/learn/2"]');
++await page.waitForFunction(() => location.pathname === '/learn/2', { timeout: 10000 });
++await page.waitForSelector('a[href="/missions/module-2/self-intro"]', { timeout: 10000 });
++const learn2 = await page.evaluate(() => ({
++  path: location.pathname,
++  nav: !!document.querySelector('nav'),
++  search: !!document.querySelector('[data-testid="global-search"], [aria-label="Global search"]'),
++  primaryText: document.body.innerText.slice(0, 900),
++  firstMissionHref: [...document.querySelectorAll('a')].map((a) => a.getAttribute('href')).find((href) => href === '/missions/module-2/self-intro') || null,
++}));
++await page.click('a[href="/missions/module-2/self-intro"]');
++await page.waitForFunction(() => location.pathname === '/missions/module-2/self-intro', { timeout: 10000 });
++const mission2 = await page.evaluate(() => ({
++  path: location.pathname,
++  audioCount: document.querySelectorAll('audio[controls]').length,
++  bodyText: document.body.innerText.slice(0, 700),
++}));
++await browser.close();
++console.log(JSON.stringify({ visual, learn2, mission2, errors }, null, 2));
++if (errors.length) throw new Error(errors.join('\n'));
++if (learn2.nav || learn2.search) throw new Error('learn/2 focused path has nav/search crowding');
++if (mission2.audioCount < 1) throw new Error('Module 2 mission has no visible native audio');
+  ┊ review diff
+a//tmp/adipoli_iter20_qa.mjs → b//tmp/adipoli_iter20_qa.mjs
+@@ -40,6 +40,8 @@
+ }));
+ await page.click('a[href="/missions/module-2/self-intro"]');
+ await page.waitForFunction(() => location.pathname === '/missions/module-2/self-intro', { timeout: 10000 });
++await page.click('button');
++await page.waitForSelector('audio[controls]', { timeout: 10000 });
+ const mission2 = await page.evaluate(() => ({
+   path: location.pathname,
+   audioCount: document.querySelectorAll('audio[controls]').length,
+
+session_id: 20260523_065700_1da4b2
+Iteration 20 complete.
+
+Changed:
+- /shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+- /shared/german-course/scripts/qa_mission_pilot.py
+- /shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md
+
+What I improved:
+- Removed visible duplicate “Next:” CTA clutter from the top M1/M2 mission ribbons.
+- Compressed M1/M2 win-screen sequence status from full mini-cards + extra continue button into compact progress dots + one short next line.
+- Kept the real next action in the side win card only, so final screens have fewer competing CTAs.
+- Preserved path integrity:
+  M1 final -> /learn/2 -> /missions/module-2/self-intro
+- Kept Module 2 final linked back to /learn/2 review path.
+- Extended QA guard to prevent reintroducing duplicate ribbon/win CTA clutter.
+
+QA:
+- PASS: targeted lint on MissionUI.
+- PASS: python compile for qa_mission_pilot.py.
+- PASS: npx tsc --noEmit --pretty false.
+- PASS: python3 scripts/qa_mission_pilot.py.
+- PASS: curl 200 for /, /intro, /learn, /learn/1, /learn/2, M1 missions, M2 self-intro/final.
+- PASS: Puppeteer mobile QA:
+  - M1 final had zero visible “Next:” clutter.
+  - compact M1 progress present.
+  - /learn/2 had no nav/search crowding.
+  - first Module 2 mission launched.
+  - native audio appeared after clicking start.
+  - no console/page errors.
+- WEAK: npm run lint still fails on inherited unrelated app-wide issues; no new targeted lint/type errors from this lane.
+
+Note:
+- Dev server was wedged on audio/mission route during first QA run, so I restarted it and reran QA successfully.
+
+Kuttan recommendation unchanged:
+- Don’t mass-rename.
+- Public adult-safe lead should likely become Arun or Kiran.
+- Keep Kuttan as a family/home nickname if Boss approves that direction.
+
+Next best lane:
+- Reduce /learn/2 review-card text/labels like REPLAY, MISSION 2.x, repeated card titles, or make the Module 2 final win feel more like a clean ability certificate without adding another CTA.

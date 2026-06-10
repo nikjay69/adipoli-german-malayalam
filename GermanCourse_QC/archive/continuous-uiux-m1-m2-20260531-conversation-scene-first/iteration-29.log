@@ -1,0 +1,160 @@
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -101,6 +101,10 @@
+   const [currentTime, setCurrentTime] = useState(0);
+   const [duration, setDuration] = useState(0);
+   const progress = duration > 0 ? Math.min(100, Math.max(0, (currentTime / duration) * 100)) : 0;
++
++  useEffect(() => {
++    setEnded(started);
++  }, [src, started]);
+   const progressLabel = duration > 0
+     ? `${formatAudioTime(currentTime)} / ${formatAudioTime(duration)}`
+     : '0:00';
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -174,7 +174,12 @@
+         <button
+           type="button"
+           onClick={toggleAudio}
+-          className="min-h-11 shrink-0 rounded-2xl bg-[#f1d27a] px-4 text-sm font-black text-[#1a2415] shadow-[0_4px_0_#9d7420] transition hover:bg-[#ffe08a] active:translate-y-1 active:shadow-none"
++          className={clsx(
++            'min-h-11 shrink-0 rounded-2xl px-4 text-sm font-black transition active:translate-y-1 active:shadow-none',
++            ended
++              ? 'border border-[#f1d27a]/30 bg-[#f1d27a]/10 text-[#f1d27a] shadow-none hover:bg-[#f1d27a]/16'
++              : 'bg-[#f1d27a] text-[#1a2415] shadow-[0_4px_0_#9d7420] hover:bg-[#ffe08a]'
++          )}
+           aria-label={`${playing ? 'Pause' : 'Listen to'} ${label}`}
+         >
+           {playing ? 'Pause' : 'Listen'}
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -926,6 +926,12 @@
+ }) {
+   const [modelAudioFinished, setModelAudioFinished] = useState(false);
+ 
++  useEffect(() => {
++    if (!modelAudioFinished || !isCorrect) return;
++    const timer = window.setTimeout(onContinue, 650);
++    return () => window.clearTimeout(timer);
++  }, [isCorrect, modelAudioFinished, onContinue]);
++
+   return (
+     <div
+       className="grid gap-5 lg:grid-cols-[0.9fr_1fr] lg:items-center"
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -992,22 +992,44 @@
+           className={clsx(!modelAudioFinished && 'sr-only')}
+           data-testid="inline-repair-choice"
+           data-pre-audio-buttons={modelAudioFinished ? 'false' : 'blocked'}
++          data-repair-surface="inline-bubbles"
++          data-options-collapsed={isCorrect ? 'true' : 'false'}
+           aria-hidden={!modelAudioFinished}
+         >
+           {modelAudioFinished && (
+-            <ChoiceStep
+-              options={options}
+-              value={value}
+-              onChange={onChange}
+-              isCorrect={isCorrect}
+-              wrongFeedback={wrongFeedback}
+-              correctFeedback={correctFeedback}
+-              cta={cta}
+-              onContinue={onContinue}
+-              continueDisabled={!isCorrect}
+-              autoContinueOnCorrect
+-              collapseOnCorrect
+-            />
++            <div className="grid gap-3">
++              {!isCorrect && (
++                <div className="flex flex-wrap gap-2" role="group" aria-label="Tap the line you would say">
++                  {options.map((option) => {
++                    const selected = value === option.id;
++                    return (
++                      <button
++                        key={option.id}
++                        type="button"
++                        onClick={() => onChange(option.id)}
++                        className={clsx(
++                          'min-h-12 max-w-full rounded-full border px-4 py-3 text-left text-sm font-black leading-snug transition active:scale-[0.98]',
++                          selected
++                            ? 'border-[#f1d27a] bg-[#f1d27a]/18 text-[#f8dda0]'
++                            : 'border-white/12 bg-white/[0.055] text-white/84 hover:border-white/24 hover:bg-white/[0.085]'
++                        )}
++                      >
++                        <span>{option.title}</span>
++                        {option.subtitle && (
++                          <span className={selected ? 'ml-2 text-xs font-bold text-white/52' : 'sr-only'}>{option.subtitle}</span>
++                        )}
++                      </button>
++                    );
++                  })}
++                </div>
++              )}
++              {value && !isCorrect && <p className="rounded-2xl bg-[#c0392b]/14 px-4 py-3 text-sm font-bold text-[#ffc9c2]">{wrongFeedback}</p>}
++              {isCorrect && <p className="rounded-2xl bg-[#3fbf75]/14 px-4 py-3 text-sm font-bold text-[#bcf7d0]">{correctFeedback}</p>}
++              <div className="sr-only" aria-live="polite">
++                {isCorrect ? 'Correct. Moving forward.' : value ? 'Try the other spoken line.' : 'Tap the line you would say.'}
++              </div>
++              <div className="sr-only">{cta}</div>
++            </div>
+           )}
+         </div>
+       </div>
+  ┊ review diff
+a//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx → b//shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx
+@@ -101,10 +101,6 @@
+   const [currentTime, setCurrentTime] = useState(0);
+   const [duration, setDuration] = useState(0);
+   const progress = duration > 0 ? Math.min(100, Math.max(0, (currentTime / duration) * 100)) : 0;
+-
+-  useEffect(() => {
+-    setEnded(started);
+-  }, [src, started]);
+   const progressLabel = duration > 0
+     ? `${formatAudioTime(currentTime)} / ${formatAudioTime(duration)}`
+     : '0:00';
+  ⟳ compacting context…
+
+session_id: 20260531_062913_582e23
+Iteration 29 done.
+
+Changed:
+- `/shared/german-course/src/app/missions/module-1/please-thanks/page.tsx`
+- `/shared/german-course/src/app/missions/module-2/_components/MissionUI.tsx`
+- `/shared/german-course/scripts/qa_mission_pilot.py`
+- `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+What improved:
+- M1 please-thanks is now one conversation-scene screen:
+  Frau Weber says “Bitte.” → learner hears reply audio → chooses tiny repair → inline win.
+- Removed visible mission title/preamble, old multi-step feel, bulky answer cards, dead continue chore, builder/counter/undo/typing patterns.
+- Correct answer stores M1 completion inline and links straight to:
+  `/missions/module-1/polite-exit?start=listen`
+
+QA:
+- PASS targeted ESLint on changed TSX files.
+- PASS route smoke for `/`, `/intro`, `/learn`, `/learn/1`, `/learn/2`, M1 mission routes, M2 self-intro/spell-name.
+- PASS `ADIPOLI_BASE_URL=http://127.0.0.1:3000 node scripts/qa_intro_start_path.mjs`
+- PASS `python3 scripts/qa_mission_pilot.py`
+- PASS mobile Puppeteer audio check for `/missions/module-1/please-thanks?start=listen`
+  - before audio: 12 visible words
+  - unlocked: 16 visible words
+  - win state: 30 visible words
+  - audio duration: 2.856s
+  - repair surface: inline bubbles
+  - next route: `/missions/module-1/polite-exit?start=listen`
+
+Known inherited weakness:
+- Full `npm run lint` still fails on older app-wide issues outside this lane: legacy games, signup/effect-state lint, random-in-render, `module` variable naming, Remotion cursor mutation, speech hooks.
+
+Checkpoint appended:
+- `/shared/german-course/GermanCourse_QC/adipoli-6h-uiux-m1-m2-checkpoint.md`
+
+Naming recommendation unchanged:
+- Public adult-safe lead: Arun or Kiran.
+- Keep Kuttan only as home nickname/family flavor.
+- No mass rename without approval.
+
+Next: reduce `/learn/1` landing friction into direct first classroom audio, 25m.
