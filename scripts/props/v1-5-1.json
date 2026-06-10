@@ -1,0 +1,52 @@
+{
+  "lessonId": "v1-5-1",
+  "title": "Your First Conversation",
+  "subtitle": "Module 1 · Lesson 5 · Part 1",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Mission three: combine greeting, name, and one answer in a short Goethe-style exchange.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v1-5-1/v1-5-1-line-0.mp3"
+    },
+    {
+      "text": "The opener: Hallo! Wie geht's? — Hello! How are you?",
+      "german": "Wie geht's?",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v1-5-1/v1-5-1-line-1.mp3"
+    },
+    {
+      "text": "The reply: Gut, danke! Und dir? — Good, thanks! And you? Ask BACK!",
+      "german": "Und dir?",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v1-5-1/v1-5-1-line-2.mp3"
+    },
+    {
+      "text": "Introduce yourself: Ich heiße Arun. Und Sie? Try with your name.",
+      "german": "Ich heiße Arun.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v1-5-1/v1-5-1-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Wie geht's?",
+      "english": "How's it going?",
+      "malayalam": "sukhamano?",
+      "pronunciation": "vee gayts"
+    },
+    {
+      "german": "Gut, danke",
+      "english": "Good, thanks",
+      "malayalam": "nanni",
+      "pronunciation": "goot dahn-ke"
+    },
+    {
+      "german": "Ich heiße...",
+      "english": "My name is...",
+      "malayalam": "enre peru",
+      "pronunciation": "ikh hy-se"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

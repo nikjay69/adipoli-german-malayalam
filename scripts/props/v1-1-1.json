@@ -1,0 +1,38 @@
+{
+  "lessonId": "v1-1-1",
+  "title": "Why Learn German?",
+  "subtitle": "Module 1 \u00B7 Lesson 1",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Why German? For work, study, and Goethe A1 — start with one calm win.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v1-1-1/v1-1-1-line-0.mp3"
+    },
+    {
+      "text": "Germany is Europe's biggest economy \u2014 over 400 free universities.",
+      "german": "Freie Universit\u00E4ten",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v1-1-1/v1-1-1-line-1.mp3"
+    },
+    {
+      "text": "For Malayalis \u2014 Ausbildung, nursing, IT \u2014 massive demand!",
+      "german": "Ausbildung",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v1-1-1/v1-1-1-line-2.mp3"
+    },
+    {
+      "text": "First words: Deutsch, Deutschland, lernen. Padikkam!",
+      "german": "Ich lerne Deutsch.",
+      "malayalam": "\u0D7E\u0D1E\u0D3E\u0D7B \u0D1C\u0D7C\u0D2E\u0D4D\u0D2E\u0D7B \u0D2A\u0D20\u0D3F\u0D15\u0D4D\u0D15\u0D41\u0D28\u0D4D\u0D28\u0D41.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v1-1-1/v1-1-1-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    { "german": "Deutsch", "english": "German", "malayalam": "\u0D1C\u0D7C\u0D2E\u0D4D\u0D2E\u0D7B", "pronunciation": "doych" },
+    { "german": "Deutschland", "english": "Germany", "malayalam": "\u0D1C\u0D7C\u0D2E\u0D4D\u0D2E\u0D28\u0D3F", "pronunciation": "doych-lant" },
+    { "german": "lernen", "english": "to learn", "malayalam": "\u0D2A\u0D20\u0D3F\u0D15\u0D4D\u0D15\u0D41\u0D15", "pronunciation": "lair-nen" }
+  ],
+  "outroText": "Los geht\u2019s!"
+}

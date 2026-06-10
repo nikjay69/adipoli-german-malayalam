@@ -1,0 +1,18 @@
+[
+  { "id": "spell-examiner-buchstabieren", "voice": "de-DE-KatjaNeural", "text": "Buchstabieren Sie bitte Ihren Namen." },
+  { "id": "spell-letter-trap", "voice": "de-DE-KatjaNeural", "text": "Nicht Englisch. Deutsche Buchstaben, bitte. K wie Kaiser." },
+  { "id": "spell-clarify-k-wie-kaiser", "voice": "de-DE-ConradNeural", "text": "K wie Kaiser. U. T. T. A. N." },
+  { "id": "spell-kuttan-model", "voice": "de-DE-ConradNeural", "text": "Kuttan. K wie Kaiser, U, T, T, A, N." },
+  { "id": "origin-examiner-woher", "voice": "de-DE-KatjaNeural", "text": "Woher kommen Sie?" },
+  { "id": "origin-model-kerala-kochi", "voice": "de-DE-ConradNeural", "text": "Ich komme aus Kerala. Ich wohne in Kochi." },
+  { "id": "origin-aus-indien", "voice": "de-DE-ConradNeural", "text": "Ich komme aus Indien." },
+  { "id": "origin-wohnort-kochi", "voice": "de-DE-ConradNeural", "text": "Ich wohne in Kochi." },
+  { "id": "job-examiner-beruf-sprachen", "voice": "de-DE-KatjaNeural", "text": "Was sind Sie von Beruf? Welche Sprachen sprechen Sie?" },
+  { "id": "job-model-student-languages", "voice": "de-DE-ConradNeural", "text": "Ich bin Student. Ich spreche Malayalam und Englisch." },
+  { "id": "job-pattern-student", "voice": "de-DE-ConradNeural", "text": "Ich bin Student. Ich bin Ingenieur. Ich bin Krankenschwester." },
+  { "id": "job-language-pattern", "voice": "de-DE-ConradNeural", "text": "Ich spreche Malayalam, Englisch und ein bisschen Deutsch." },
+  { "id": "final-examiner-stellen-sie-sich-vor", "voice": "de-DE-KatjaNeural", "text": "Stellen Sie sich bitte kurz vor." },
+  { "id": "final-model-full", "voice": "de-DE-ConradNeural", "text": "Guten Morgen. Ich heiße Kuttan. Ich komme aus Kerala. Ich wohne in Kochi. Ich bin Student. Ich spreche Malayalam, Englisch und ein bisschen Deutsch." },
+  { "id": "final-module-wrap", "voice": "de-DE-KatjaNeural", "text": "Sehr gut. Das ist eine klare A1-Vorstellung." },
+  { "id": "final-rehearsal-prompt", "voice": "de-DE-KatjaNeural", "text": "Noch einmal. Sprechen Sie langsam und klar." }
+]

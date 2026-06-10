@@ -1,0 +1,67 @@
+{
+  "title": "Episode 1 — First German Greetings",
+  "lines": [
+    { "voice": "narrator", "text": "Welcome to Adipoli German — On the Go. Episode one.", "pauseAfterMs": 500 },
+    { "voice": "narrator", "text": "In this episode, you'll learn to say hello and goodbye in German, and to introduce yourself. Let's begin.", "pauseAfterMs": 700 },
+
+    { "voice": "narrator", "text": "First, listen. The German word for hello is...", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Hallo.", "pauseAfterMs": 2000 },
+    { "voice": "narrator", "text": "Repeat after me.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Hallo.", "pauseAfterMs": 3000 },
+    { "voice": "narrator", "text": "Again. Hallo.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Hallo.", "pauseAfterMs": 3000 },
+
+    { "voice": "narrator", "text": "Adipoli! Now, a more formal hello is Guten Tag — literally good day.", "pauseAfterMs": 400 },
+    { "voice": "german", "text": "Guten Tag.", "pauseAfterMs": 2200 },
+    { "voice": "narrator", "text": "Say it.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Guten Tag.", "pauseAfterMs": 3000 },
+    { "voice": "narrator", "text": "One more time. Guten Tag.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Guten Tag.", "pauseAfterMs": 3000 },
+
+    { "voice": "narrator", "text": "Now, imagine you're walking into a Kerala café — but in Germany. It's 10 in the morning. You greet the barista formally. What do you say?", "pauseAfterMs": 4500 },
+    { "voice": "narrator", "text": "You say...", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Guten Tag.", "pauseAfterMs": 2000 },
+    { "voice": "narrator", "text": "Seri seri. Next, let's learn to say your name.", "pauseAfterMs": 500 },
+
+    { "voice": "narrator", "text": "I am called, or my name is — Ich heiße.", "pauseAfterMs": 400 },
+    { "voice": "german", "text": "Ich hei\u00DFe.", "pauseAfterMs": 2200 },
+    { "voice": "narrator", "text": "Repeat.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Ich hei\u00DFe.", "pauseAfterMs": 3000 },
+
+    { "voice": "narrator", "text": "Now add your name. If your name is Kuttan, you'd say...", "pauseAfterMs": 400 },
+    { "voice": "german", "text": "Ich hei\u00DFe Kuttan.", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "Say your own name now. Ich heiße — and your name.", "pauseAfterMs": 4000 },
+
+    { "voice": "narrator", "text": "Adipoli! Now let's combine. How do you say: Hello, my name is Kuttan?", "pauseAfterMs": 4500 },
+    { "voice": "narrator", "text": "You say...", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Hallo. Ich hei\u00DFe Kuttan.", "pauseAfterMs": 3000 },
+    { "voice": "narrator", "text": "Try it with your name.", "pauseAfterMs": 4000 },
+
+    { "voice": "narrator", "text": "Let's try the formal version. Good day, my name is Kuttan.", "pauseAfterMs": 3500 },
+    { "voice": "narrator", "text": "You say...", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Guten Tag. Ich hei\u00DFe Kuttan.", "pauseAfterMs": 3500 },
+
+    { "voice": "narrator", "text": "Now to say goodbye. The casual goodbye, used with friends, is Tschüss.", "pauseAfterMs": 400 },
+    { "voice": "german", "text": "Tsch\u00FCss.", "pauseAfterMs": 2200 },
+    { "voice": "narrator", "text": "Repeat.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Tsch\u00FCss.", "pauseAfterMs": 3000 },
+
+    { "voice": "narrator", "text": "The formal goodbye, used with officials or in shops — Auf Wiedersehen.", "pauseAfterMs": 500 },
+    { "voice": "german", "text": "Auf Wiedersehen.", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "Say it.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Auf Wiedersehen.", "pauseAfterMs": 3500 },
+
+    { "voice": "narrator", "text": "Now, a quick recall. How do you say hello informally?", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Hallo.", "pauseAfterMs": 1800 },
+    { "voice": "narrator", "text": "How do you say hello formally — good day?", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Guten Tag.", "pauseAfterMs": 2000 },
+    { "voice": "narrator", "text": "How do you say my name is?", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Ich hei\u00DFe.", "pauseAfterMs": 2000 },
+    { "voice": "narrator", "text": "How do you say goodbye, formally?", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Auf Wiedersehen.", "pauseAfterMs": 2500 },
+
+    { "voice": "narrator", "text": "Adipoli machaa. You've just learned your first four German phrases. Practice them today — when you walk into a shop, when you meet someone, when you say goodbye.", "pauseAfterMs": 800 },
+    { "voice": "narrator", "text": "In the next episode, we'll learn to say where you're from and ask how someone is. Until then — bis bald.", "pauseAfterMs": 600 },
+    { "voice": "german", "text": "Bis bald!", "pauseAfterMs": 300 }
+  ]
+}

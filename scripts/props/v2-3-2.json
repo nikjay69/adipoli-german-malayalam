@@ -1,0 +1,51 @@
+{
+  "lessonId": "v2-3-2",
+  "title": "The Verb sein — I Am, You Are",
+  "subtitle": "Module 2 · Lesson 3 · Part 2",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Sein is irregular, but it gives you your first useful identity sentences.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v2-3-2/v2-3-2-line-0.mp3"
+    },
+    {
+      "text": "Ich bin · du bist · er/sie ist · wir sind · ihr seid · Sie sind.",
+      "german": "sein",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v2-3-2/v2-3-2-line-1.mp3"
+    },
+    {
+      "text": "Ich bin glücklich — I'm happy. Du bist nett — You're nice. Simple blocks.",
+      "german": "Ich bin glücklich",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v2-3-2/v2-3-2-line-2.mp3"
+    },
+    {
+      "text": "Memorize sein like a song. It unlocks every other verb.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v2-3-2/v2-3-2-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "sein",
+      "english": "to be",
+      "malayalam": "aanu",
+      "pronunciation": "zyne"
+    },
+    {
+      "german": "du bist",
+      "english": "you are",
+      "malayalam": "nee",
+      "pronunciation": "doo bist"
+    },
+    {
+      "german": "wir sind",
+      "english": "we are",
+      "malayalam": "njangal",
+      "pronunciation": "veer zint"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

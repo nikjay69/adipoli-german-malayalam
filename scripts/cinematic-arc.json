@@ -295,7 +295,7 @@
           "id": "v4-s8",
           "title": "Class — Putting the Pen Down",
           "seed_strategy": "chain_from_previous",
-          "animation_prompt": "He puts the pen down on the notebook. Leans back slightly in the chair. A small exhale of defeat. Eyes close for a second. The moment of wanting to give up in class.",
+          "animation_prompt": "He puts the pen down slowly on the notebook. Leans back. A long exhale. Eyes drift to the ceiling. The tiredness of not understanding. Quiet resignation.",
           "duration": 4,
           "chain_from": "v4-s7"
         },
@@ -1650,6 +1650,664 @@
         }
       ],
       "aspect_ratio": "9:16"
+    },
+    {
+      "id": 300,
+      "title": "Ad 1 — The Journey (Landscape)",
+      "status": "to-generate",
+      "duration_target_seconds": 32,
+      "narrative": "Emotional transformation ad. Kerala → app → learning → Germany.",
+      "scenes": [
+        {
+          "id": "v300-s1",
+          "title": "Kerala Morning",
+          "seed_strategy": "imagen",
+          "still_prompt": "Wide aerial shot of Kerala at golden hour. Palm trees, backwaters, mist. Breathtaking. No people. Pure beauty.",
+          "animation_prompt": "Slow drone glide over Kerala. Golden mist. Palm trees swaying. The beauty of home.",
+          "duration": 4
+        },
+        {
+          "id": "v300-s2",
+          "title": "Phone Discovery",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up of hands holding a phone. Screen shows a colorful German learning app. Morning light reflecting off screen. Medium-brown skin. Only hands visible.",
+          "animation_prompt": "Thumb taps the app. Lesson begins. The glow of starting something new.",
+          "duration": 4
+        },
+        {
+          "id": "v300-s3",
+          "title": "Learning Montage",
+          "seed_strategy": "imagen",
+          "still_prompt": "A young person on a bus with earphones, looking at phone. Kerala landscape through window. Only back of head and hands visible. Warm afternoon light.",
+          "animation_prompt": "Scrolling through lessons on the phone. Kerala sliding past the window. Learning on the move.",
+          "duration": 4
+        },
+        {
+          "id": "v300-s4",
+          "title": "Study Moments",
+          "seed_strategy": "imagen",
+          "still_prompt": "Overhead flatlay on a wooden table: phone showing German app, notebook with German handwriting, cup of chai, earphones, pen. Warm natural light. No person visible.",
+          "animation_prompt": "Hand picks up the chai. Sips. Returns to the phone. Peaceful productive study moment.",
+          "duration": 4
+        },
+        {
+          "id": "v300-s5",
+          "title": "The Struggle",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up of hands rubbing tired eyes. Dim lamp light. A phone with German app on the desk. Late night. The effort of learning.",
+          "animation_prompt": "Tired hands. Then picking the phone back up. Continuing. The persistence.",
+          "duration": 4
+        },
+        {
+          "id": "v300-s6",
+          "title": "Breakthrough + Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "A boarding pass being held by hands. Destination: FRANKFURT. Warm lighting. Trembling slightly with excitement. Close-up, no face.",
+          "animation_prompt": "Hands holding the boarding pass. Slight tremble. The document that changes everything.",
+          "duration": 4
+        },
+        {
+          "id": "v300-s7",
+          "title": "In Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "A person walking on a German city bridge at golden hour. Seen from behind. European cityscape. Confident stride. The destination reached.",
+          "animation_prompt": "Walking confidently. German city in golden light. Belonging. The payoff.",
+          "duration": 4
+        },
+        {
+          "id": "v300-s8",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "Clean dark gradient background with subtle warm gold at bottom. Space for logo in center. Kerala palm silhouette left, German steeple silhouette right. Minimal, elegant.",
+          "animation_prompt": "Silhouettes fade in gently. Subtle gradient pulse. Clean branded ending.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 301,
+      "title": "Ad 1 — The Journey (Portrait)",
+      "status": "to-generate",
+      "aspect_ratio": "9:16",
+      "duration_target_seconds": 32,
+      "narrative": "Same as V300 but portrait.",
+      "scenes": [
+        {
+          "id": "v301-s1",
+          "title": "Kerala Morning",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical composition. Kerala palm trees against golden sunrise sky. Shot from below looking up. Morning mist. Breathtaking vertical framing.",
+          "animation_prompt": "Palm fronds swaying against sunrise. Birds. Golden light intensifying.",
+          "duration": 4
+        },
+        {
+          "id": "v301-s2",
+          "title": "Phone Discovery",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Close-up of a phone held vertically. Screen shows German learning app with colorful interface. Hands with medium-brown skin. Warm morning light.",
+          "animation_prompt": "Thumb scrolling through the app. Tapping a lesson. The screen comes alive.",
+          "duration": 4
+        },
+        {
+          "id": "v301-s3",
+          "title": "Learning Montage",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Person sitting by a window with earphones, phone in hand. Seen from side, face not fully visible. Kerala greenery through window. Warm light.",
+          "animation_prompt": "Listening to German audio. Small nod of understanding. Learning in a quiet moment.",
+          "duration": 4
+        },
+        {
+          "id": "v301-s4",
+          "title": "Study Setup",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical overhead. Phone, notebook, chai, pen arranged on a surface. German handwriting visible in notebook. Warm tones. Clean composition.",
+          "animation_prompt": "Hand writing in notebook. Then picking up phone. The tools of transformation.",
+          "duration": 4
+        },
+        {
+          "id": "v301-s5",
+          "title": "Struggle",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Hands covering face in frustration. Phone on desk beside them. Dim lamp. The weight of difficulty.",
+          "animation_prompt": "Hands drop from face. Picks up phone again. Keeps going. Persistence.",
+          "duration": 4
+        },
+        {
+          "id": "v301-s6",
+          "title": "Boarding Pass",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Hands holding boarding pass. FRANKFURT visible. Shot from above. Emotional trembling hands.",
+          "animation_prompt": "Hands slightly shaking. The moment before everything changes.",
+          "duration": 4
+        },
+        {
+          "id": "v301-s7",
+          "title": "Germany",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. A person from behind walking into a German city scene. European buildings, golden hour. Confident posture. Vertical portrait framing.",
+          "animation_prompt": "Walking forward into the German city. Golden light. Arrival. Belonging.",
+          "duration": 4
+        },
+        {
+          "id": "v301-s8",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Clean dark background. Warm gold gradient at bottom. Palm silhouette and steeple silhouette. Logo space center. Elegant.",
+          "animation_prompt": "Elements fade in. Clean ending. Branded.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 302,
+      "title": "Ad 2 — Excuse Killer (Landscape)",
+      "status": "to-generate",
+      "duration_target_seconds": 16,
+      "narrative": "Fast punchy ad killing excuses.",
+      "scenes": [
+        {
+          "id": "v302-s1",
+          "title": "No Time",
+          "seed_strategy": "imagen",
+          "still_prompt": "A person on a bus with earphones and phone showing German app. Learning during commute. Kerala bus, afternoon. Only hands and phone visible from behind.",
+          "animation_prompt": "Quick phone scrolling. Learning on the move. No time? Make time.",
+          "duration": 4
+        },
+        {
+          "id": "v302-s2",
+          "title": "Too Hard",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up of phone screen showing a simple German exercise. A finger taps the correct answer. Green checkmark appears. It's not that hard.",
+          "animation_prompt": "Tap. Correct. Tap. Correct. Quick easy wins on the app. Momentum.",
+          "duration": 4
+        },
+        {
+          "id": "v302-s3",
+          "title": "Can't Afford",
+          "seed_strategy": "imagen",
+          "still_prompt": "A phone showing a German app with a START FREE button glowing. Clean, inviting. The barrier removed.",
+          "animation_prompt": "Camera slowly zooms into the START FREE button. The answer to the last excuse.",
+          "duration": 4
+        },
+        {
+          "id": "v302-s4",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "Bold clean composition. Dark background. A phone showing the Adipoli German app. Warm glow around it. Minimal. Premium feel.",
+          "animation_prompt": "Phone glows. Clean ending. The product speaks for itself.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 303,
+      "title": "Ad 2 — Excuse Killer (Portrait)",
+      "status": "to-generate",
+      "aspect_ratio": "9:16",
+      "duration_target_seconds": 16,
+      "narrative": "Same as V302 but portrait.",
+      "scenes": [
+        {
+          "id": "v303-s1",
+          "title": "No Time",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Hands holding phone on a bus. German app visible on screen. Earphones in. Kerala window behind. Quick learning moment.",
+          "animation_prompt": "Tapping through a quick lesson. Bus commute. Learning in stolen moments.",
+          "duration": 4
+        },
+        {
+          "id": "v303-s2",
+          "title": "Too Hard",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Phone screen close-up. Simple German exercise. Finger hovering. Then tapping correct answer. Green glow.",
+          "animation_prompt": "Tap. Correct. Easy. Another tap. Correct again. Building confidence.",
+          "duration": 4
+        },
+        {
+          "id": "v303-s3",
+          "title": "Free",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Phone with START FREE button. Warm inviting glow. Dark background. Clean vertical composition.",
+          "animation_prompt": "Zoom into the button. Warm pulse. The last barrier gone.",
+          "duration": 4
+        },
+        {
+          "id": "v303-s4",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Phone centered. App glowing. Dark elegant background. Minimal vertical branded frame.",
+          "animation_prompt": "Phone glows. Clean. Premium. Done.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 304,
+      "title": "Ad 3 — Before After (Landscape)",
+      "status": "to-generate",
+      "duration_target_seconds": 20,
+      "narrative": "Split screen transformation. Day 1 vs Day 180.",
+      "scenes": [
+        {
+          "id": "v304-s1",
+          "title": "Before: Confused",
+          "seed_strategy": "imagen",
+          "still_prompt": "Left half of frame: a person staring at phone with confused expression, dim Kerala room, overwhelmed. German text on screen. Tight crop, minimal face detail. Warm but dim lighting.",
+          "animation_prompt": "Confused scrolling. Overwhelmed expression. The very beginning. Day 1 energy.",
+          "duration": 4
+        },
+        {
+          "id": "v304-s2",
+          "title": "Learning Phase",
+          "seed_strategy": "imagen",
+          "still_prompt": "Hands writing German words in a notebook. Phone with app beside it. Cup of chai. Study setup. Warm light. Progress happening.",
+          "animation_prompt": "Writing steadily. Page filling up. The work happening. Montage energy.",
+          "duration": 4
+        },
+        {
+          "id": "v304-s3",
+          "title": "After: Confident",
+          "seed_strategy": "imagen",
+          "still_prompt": "A person at a German café, seen from behind. Speaking to someone across the table. Coffee on table. European café interior. Spring light. Confidence. The transformation complete.",
+          "animation_prompt": "Natural gestures. Relaxed conversation. Speaking German without effort. The payoff.",
+          "duration": 4
+        },
+        {
+          "id": "v304-s4",
+          "title": "Split Comparison",
+          "seed_strategy": "imagen",
+          "still_prompt": "Split composition. Left: dim Kerala room, confused hands on phone. Right: bright German café, confident posture. Same person, different world. The contrast tells the story.",
+          "animation_prompt": "Both halves alive with subtle motion. Left dim and struggling. Right bright and confident. The transformation visualized.",
+          "duration": 4
+        },
+        {
+          "id": "v304-s5",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "Clean dark background. Warm gradient. Space for text overlay: 180 days. One app. Elegant minimal branding frame.",
+          "animation_prompt": "Gradient pulses gently. Clean elegant ending.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 305,
+      "title": "Ad 3 — Before After (Portrait)",
+      "status": "to-generate",
+      "aspect_ratio": "9:16",
+      "duration_target_seconds": 20,
+      "narrative": "Same as V304 but portrait. Top/bottom split instead of left/right.",
+      "scenes": [
+        {
+          "id": "v305-s1",
+          "title": "Before",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Top half composition. A person hunched over phone in dim room. Confused. German on screen making no sense. Close framing, minimal face.",
+          "animation_prompt": "Scrolling confused. Overwhelmed. Day 1.",
+          "duration": 4
+        },
+        {
+          "id": "v305-s2",
+          "title": "Learning",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Overhead shot of study setup. Phone, notebook, chai. German writing in notebook. Warm light. Progress.",
+          "animation_prompt": "Hand writing. Page filling. The work.",
+          "duration": 4
+        },
+        {
+          "id": "v305-s3",
+          "title": "After",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Person from behind in a German city. Walking confidently. European buildings. Golden hour. Vertical portrait framing.",
+          "animation_prompt": "Confident walk. German city. Belonging. Freedom.",
+          "duration": 4
+        },
+        {
+          "id": "v305-s4",
+          "title": "Split",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical split. Top: dim confused Kerala moment. Bottom: bright confident Germany moment. Dramatic contrast. Vertical composition.",
+          "animation_prompt": "Both halves animate. Top struggling. Bottom thriving. The story in one frame.",
+          "duration": 4
+        },
+        {
+          "id": "v305-s5",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Dark background. Warm gradient. Logo space. Palm and steeple silhouettes. Elegant vertical ending.",
+          "animation_prompt": "Elements fade in. Clean. Branded. Done.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 306,
+      "title": "Ad 1 V2 — The Journey Alt (Landscape)",
+      "status": "to-generate",
+      "duration_target_seconds": 32,
+      "narrative": "Alternative journey ad. Different visuals, same emotional arc.",
+      "scenes": [
+        {
+          "id": "v306-s1",
+          "title": "Kerala Rain",
+          "seed_strategy": "imagen",
+          "still_prompt": "Monsoon rain on a Kerala tin roof. Green plants. Water dripping. The sound and feel of home. No people. Cinematic.",
+          "animation_prompt": "Rain falling. Drops on leaves. The beauty of Kerala in monsoon.",
+          "duration": 4
+        },
+        {
+          "id": "v306-s2",
+          "title": "App Close-Up",
+          "seed_strategy": "imagen",
+          "still_prompt": "Extreme close-up of a phone screen. German vocabulary flashcard visible. Finger about to tap. Shallow depth of field. Warm indoor light.",
+          "animation_prompt": "Finger taps. Card flips. Correct answer. Small satisfaction.",
+          "duration": 4
+        },
+        {
+          "id": "v306-s3",
+          "title": "Terrace Study",
+          "seed_strategy": "imagen",
+          "still_prompt": "A cup of chai on a Kerala terrace railing. Phone propped up next to it showing a German lesson. Sunset behind. Kerala rooftops and palms. No person, just objects.",
+          "animation_prompt": "Steam from chai. Sunset colors shifting. The phone screen glowing. Peaceful evening learning.",
+          "duration": 4
+        },
+        {
+          "id": "v306-s4",
+          "title": "Notebook Progress",
+          "seed_strategy": "imagen",
+          "still_prompt": "Close-up of notebook pages flipping. First page: messy beginner German. Last page: clean confident handwriting. The visual progression of learning.",
+          "animation_prompt": "Pages flipping rapidly. Handwriting improving with each page. Visual transformation.",
+          "duration": 4
+        },
+        {
+          "id": "v306-s5",
+          "title": "Airport",
+          "seed_strategy": "imagen",
+          "still_prompt": "A suitcase on an airport floor. Boarding pass tucked in the handle. Airport departure board softly blurred behind. The objects of departure.",
+          "animation_prompt": "Suitcase being lifted. Walking toward the gate. The journey beginning.",
+          "duration": 4
+        },
+        {
+          "id": "v306-s6",
+          "title": "First Snow",
+          "seed_strategy": "imagen",
+          "still_prompt": "A hand reaching out to catch snowflakes. Winter jacket sleeve visible. German city blurred behind. The wonder of arrival.",
+          "animation_prompt": "Snowflake landing on palm. Melting. Wonder. A new world.",
+          "duration": 4
+        },
+        {
+          "id": "v306-s7",
+          "title": "German Café",
+          "seed_strategy": "imagen",
+          "still_prompt": "Two coffee cups on a German café table. Through the window: a European street. Warm interior. The comfort of belonging.",
+          "animation_prompt": "Steam from coffee. People passing outside. Settled. Home.",
+          "duration": 4
+        },
+        {
+          "id": "v306-s8",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "A phone lying on a wooden table showing the Adipoli German app. Warm lamp light. Clean composition. The tool that made it all possible.",
+          "animation_prompt": "Phone screen glowing warmly. The beginning and the end. Clean.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 307,
+      "title": "Ad 1 V2 — The Journey Alt (Portrait)",
+      "status": "to-generate",
+      "aspect_ratio": "9:16",
+      "duration_target_seconds": 32,
+      "narrative": "Same as V306 but portrait.",
+      "scenes": [
+        {
+          "id": "v307-s1",
+          "title": "Kerala Rain",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Monsoon rain on Kerala plants. Close-up of water drops on a leaf. Green. Cinematic vertical framing.",
+          "animation_prompt": "Rain drops. Leaf trembling. Kerala monsoon beauty.",
+          "duration": 4
+        },
+        {
+          "id": "v307-s2",
+          "title": "Phone",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Phone held vertically showing German app. Finger on screen. Close-up. Warm light.",
+          "animation_prompt": "Tapping through a lesson. Quick. Engaging. Learning.",
+          "duration": 4
+        },
+        {
+          "id": "v307-s3",
+          "title": "Chai + Phone",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Chai and phone on terrace railing. Sunset behind. Kerala skyline. Warm vertical composition.",
+          "animation_prompt": "Steam and sunset. Phone glowing. Evening learning ritual.",
+          "duration": 4
+        },
+        {
+          "id": "v307-s4",
+          "title": "Notebook",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Notebook pages flipping. German handwriting improving. Close-up vertical framing.",
+          "animation_prompt": "Pages flipping. Progress visible. Growth.",
+          "duration": 4
+        },
+        {
+          "id": "v307-s5",
+          "title": "Airport",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Suitcase and boarding pass. Airport floor. Departure energy. Vertical close-up.",
+          "animation_prompt": "Suitcase lifted. Walking. Departure.",
+          "duration": 4
+        },
+        {
+          "id": "v307-s6",
+          "title": "Snow",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Hand catching snowflakes. German city blurred behind. Vertical wonder shot.",
+          "animation_prompt": "Snowflake on palm. Magic. New world.",
+          "duration": 4
+        },
+        {
+          "id": "v307-s7",
+          "title": "Café",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Coffee cup in foreground. German street through café window behind. Warm. Home.",
+          "animation_prompt": "Steam. Street life outside. Belonging.",
+          "duration": 4
+        },
+        {
+          "id": "v307-s8",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Phone on table showing app. Warm glow. Clean vertical branding frame.",
+          "animation_prompt": "Phone glows. Clean ending.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 308,
+      "title": "Ad 2 V2 — Excuse Killer Alt (Landscape)",
+      "status": "to-generate",
+      "duration_target_seconds": 16,
+      "narrative": "Alt excuse killer. Different scenarios.",
+      "scenes": [
+        {
+          "id": "v308-s1",
+          "title": "Too Old",
+          "seed_strategy": "imagen",
+          "still_prompt": "Hands of an older person holding a phone with German app. Reading glasses beside. Warm light. Age is not an excuse.",
+          "animation_prompt": "Older hands confidently tapping the app. Learning has no age limit.",
+          "duration": 4
+        },
+        {
+          "id": "v308-s2",
+          "title": "No Teacher",
+          "seed_strategy": "imagen",
+          "still_prompt": "A phone propped on a pillow on a bed. German app showing a lesson. Earphones. Midnight. Lamp light. Your teacher is always available.",
+          "animation_prompt": "Late night learning. The app as teacher. Available 24/7.",
+          "duration": 4
+        },
+        {
+          "id": "v308-s3",
+          "title": "Too Far",
+          "seed_strategy": "imagen",
+          "still_prompt": "A Kerala village scene. Simple house. A phone in someone's hand showing German app. Learning from anywhere. Distance is not a barrier.",
+          "animation_prompt": "Phone glowing in a village setting. Germany accessible from anywhere in Kerala.",
+          "duration": 4
+        },
+        {
+          "id": "v308-s4",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "Phone showing app on a clean dark background. Premium glow. Minimal.",
+          "animation_prompt": "Phone glows. Start today.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 309,
+      "title": "Ad 2 V2 — Excuse Killer Alt (Portrait)",
+      "status": "to-generate",
+      "aspect_ratio": "9:16",
+      "duration_target_seconds": 16,
+      "narrative": "Same as V308 but portrait.",
+      "scenes": [
+        {
+          "id": "v309-s1",
+          "title": "Too Old",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Older hands with phone. German app. Reading glasses. Warm. Learning is ageless.",
+          "animation_prompt": "Confident tapping. Age is just a number.",
+          "duration": 4
+        },
+        {
+          "id": "v309-s2",
+          "title": "No Teacher",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Phone on pillow. Midnight learning. Lamp glow. Earphones. Vertical intimate shot.",
+          "animation_prompt": "Late night lesson. Always available.",
+          "duration": 4
+        },
+        {
+          "id": "v309-s3",
+          "title": "Anywhere",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Phone in hand. Kerala village background. Simple setting. App glowing. Distance no barrier.",
+          "animation_prompt": "Learning from a village. Germany in your pocket.",
+          "duration": 4
+        },
+        {
+          "id": "v309-s4",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Phone. Dark background. Premium glow. Clean.",
+          "animation_prompt": "Glow. Start. Done.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 310,
+      "title": "Ad 3 V2 — Before After Alt (Landscape)",
+      "status": "to-generate",
+      "duration_target_seconds": 20,
+      "narrative": "Alt before/after. Object-based storytelling.",
+      "scenes": [
+        {
+          "id": "v310-s1",
+          "title": "Before: Empty Desk",
+          "seed_strategy": "imagen",
+          "still_prompt": "A bare desk in a dim Kerala room. Just a phone lying face-down. Empty notebook. Unused pen. The starting point. Nothing yet.",
+          "animation_prompt": "Empty desk. Stillness. Potential waiting.",
+          "duration": 4
+        },
+        {
+          "id": "v310-s2",
+          "title": "During: Full Desk",
+          "seed_strategy": "imagen",
+          "still_prompt": "Same desk now alive. Phone showing German app. Notebook filled with German. Chai. Earphones. Highlighters. A desk in full learning mode.",
+          "animation_prompt": "Active desk. Writing happening. Progress visible. Energy.",
+          "duration": 4
+        },
+        {
+          "id": "v310-s3",
+          "title": "After: German Desk",
+          "seed_strategy": "imagen",
+          "still_prompt": "A desk in a German dorm room. Laptop open. University books in German. Coffee (not chai). A German city outside the window. The same person, new world.",
+          "animation_prompt": "German desk. Laptop in use. City outside. The transformation through objects.",
+          "duration": 4
+        },
+        {
+          "id": "v310-s4",
+          "title": "All Three",
+          "seed_strategy": "imagen",
+          "still_prompt": "Three desks side by side. Kerala empty → Kerala full → Germany arrived. The three chapters told through desk setups. Clean cinematic composition.",
+          "animation_prompt": "Camera pans across all three. The story in three desks. Powerful visual metaphor.",
+          "duration": 4
+        },
+        {
+          "id": "v310-s5",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "Phone on a wooden surface. App glowing. Clean dark background. Logo space.",
+          "animation_prompt": "Phone glows. The tool. Clean ending.",
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "id": 311,
+      "title": "Ad 3 V2 — Before After Alt (Portrait)",
+      "status": "to-generate",
+      "aspect_ratio": "9:16",
+      "duration_target_seconds": 20,
+      "narrative": "Same as V310 but portrait. Stacked vertical.",
+      "scenes": [
+        {
+          "id": "v311-s1",
+          "title": "Before",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Bare desk from above. Phone face-down. Empty notebook. Dim. Waiting.",
+          "animation_prompt": "Empty. Still. Potential.",
+          "duration": 4
+        },
+        {
+          "id": "v311-s2",
+          "title": "During",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Same desk overhead, now alive. Phone with app. Notebook filled. Chai. The work happening.",
+          "animation_prompt": "Active learning. Writing. Progress.",
+          "duration": 4
+        },
+        {
+          "id": "v311-s3",
+          "title": "After",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. German desk from above. Laptop. German books. Coffee. City through window reflected on desk.",
+          "animation_prompt": "German life. The destination desk.",
+          "duration": 4
+        },
+        {
+          "id": "v311-s4",
+          "title": "Triptych",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Three desks stacked top to bottom: empty → learning → Germany. The vertical story of transformation.",
+          "animation_prompt": "Camera slides down through all three. Visual journey.",
+          "duration": 4
+        },
+        {
+          "id": "v311-s5",
+          "title": "CTA",
+          "seed_strategy": "imagen",
+          "still_prompt": "Vertical. Phone. App. Glow. Dark. Clean.",
+          "animation_prompt": "Glow. Done.",
+          "duration": 4
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,51 @@
+{
+  "lessonId": "v2-2-1",
+  "title": "Where Are You From?",
+  "subtitle": "Module 2 · Lesson 2 · Part 1",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Goethe A1 will ask origin clearly: Woher kommen Sie?",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v2-2-1/v2-2-1-line-0.mp3"
+    },
+    {
+      "text": "Answer: Ich komme aus — I come from. Say your country, state, or city.",
+      "german": "Ich komme aus",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v2-2-1/v2-2-1-line-1.mp3"
+    },
+    {
+      "text": "Ich komme aus Indien. Or: Ich komme aus Kerala. Or: Ich komme aus Thrissur.",
+      "german": "Ich komme aus Kerala.",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v2-2-1/v2-2-1-line-2.mp3"
+    },
+    {
+      "text": "Keep the answer simple: Kerala, Indien, or your city. Say it with confidence.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v2-2-1/v2-2-1-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Woher?",
+      "english": "From where?",
+      "malayalam": "evide",
+      "pronunciation": "vo-hair"
+    },
+    {
+      "german": "Ich komme aus",
+      "english": "I come from",
+      "malayalam": "njan vannu",
+      "pronunciation": "ikh kom-me ows"
+    },
+    {
+      "german": "Indien",
+      "english": "India",
+      "malayalam": "India",
+      "pronunciation": "in-dee-en"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

@@ -1,0 +1,63 @@
+{
+  "title": "Episode 3 — Who are you? Name, Origin, Job",
+  "lines": [
+    { "voice": "narrator", "text": "Welcome back to Adipoli German — On the Go. Episode three.", "pauseAfterMs": 500 },
+    { "voice": "narrator", "text": "In this episode, you'll learn to introduce yourself fully. Name, where you're from, and what you do. Let's begin.", "pauseAfterMs": 700 },
+
+    { "voice": "narrator", "text": "From the last episodes, how do you say hello, formally?", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Guten Tag.", "pauseAfterMs": 1800 },
+    { "voice": "narrator", "text": "And how do you ask how someone is, formally?", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Wie geht es Ihnen?", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "Sehr gut. Now let's go further.", "pauseAfterMs": 500 },
+
+    { "voice": "narrator", "text": "To say 'my name is' in German, you say:", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Ich hei\u00DFe.", "pauseAfterMs": 2200 },
+    { "voice": "narrator", "text": "Repeat.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Ich hei\u00DFe.", "pauseAfterMs": 3000 },
+
+    { "voice": "narrator", "text": "Now add your own name. If you are Kuttan, you'd say:", "pauseAfterMs": 400 },
+    { "voice": "german", "text": "Ich hei\u00DFe Kuttan.", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "Try it with your name now. Ich hei\u00DFe — and your name.", "pauseAfterMs": 4500 },
+
+    { "voice": "narrator", "text": "To ask formally, 'what is your name?', you say:", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Wie hei\u00DFen Sie?", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "Repeat.", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Wie hei\u00DFen Sie?", "pauseAfterMs": 3000 },
+
+    { "voice": "narrator", "text": "Now, to say where you're from. The pattern is Ich komme aus — I come from.", "pauseAfterMs": 400 },
+    { "voice": "german", "text": "Ich komme aus.", "pauseAfterMs": 2200 },
+    { "voice": "narrator", "text": "Followed by your place. Say:", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Ich komme aus Kerala.", "pauseAfterMs": 2800 },
+    { "voice": "narrator", "text": "Say it with YOUR region now. Ich komme aus — and where you're from.", "pauseAfterMs": 4500 },
+
+    { "voice": "narrator", "text": "Now combine. Imagine someone asks: Wie hei\u00DFen Sie und woher kommen Sie? What is your name and where are you from?", "pauseAfterMs": 4500 },
+    { "voice": "narrator", "text": "You might say:", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Ich hei\u00DFe Kuttan. Ich komme aus Kerala.", "pauseAfterMs": 3500 },
+    { "voice": "narrator", "text": "Try it with your details now.", "pauseAfterMs": 4500 },
+
+    { "voice": "narrator", "text": "Now, what do you do? The verb sein — to be — makes this easy. Ich bin — I am.", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Ich bin.", "pauseAfterMs": 1800 },
+
+    { "voice": "narrator", "text": "If you're a student, you say:", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Ich bin Student.", "pauseAfterMs": 2200 },
+    { "voice": "narrator", "text": "For women, add -in at the end:", "pauseAfterMs": 200 },
+    { "voice": "german", "text": "Ich bin Studentin.", "pauseAfterMs": 2500 },
+
+    { "voice": "narrator", "text": "If you're a nurse:", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Ich bin Krankenpfleger.", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "Or Krankenpflegerin, for a woman. A mouthful — but important.", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Krankenpflegerin.", "pauseAfterMs": 3000 },
+
+    { "voice": "narrator", "text": "Say your own job. Ich bin — and your profession. If you don't know the German word yet, just say your job in English — Germans will understand.", "pauseAfterMs": 4500 },
+
+    { "voice": "narrator", "text": "Now the full combo. Imagine the Goethe A1 examiner asks: Stellen Sie sich bitte vor. Please introduce yourself.", "pauseAfterMs": 800 },
+    { "voice": "narrator", "text": "You say, all together:", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Ich hei\u00DFe Kuttan. Ich komme aus Kerala. Ich bin Student.", "pauseAfterMs": 4500 },
+    { "voice": "narrator", "text": "Now you. Your name, your region, your job. All three sentences.", "pauseAfterMs": 6000 },
+
+    { "voice": "narrator", "text": "Adipoli machaa! That's a Goethe A1 pass-level self-introduction. Practice it all day today \u2014 in the mirror, on the train, while cooking.", "pauseAfterMs": 700 },
+
+    { "voice": "narrator", "text": "In the next episode, we learn numbers zero through twenty, and how to ask for prices. Until then, bis bald!", "pauseAfterMs": 500 },
+    { "voice": "german", "text": "Bis bald!", "pauseAfterMs": 300 }
+  ]
+}

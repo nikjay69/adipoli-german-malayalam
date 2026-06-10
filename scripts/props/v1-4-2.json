@@ -1,0 +1,52 @@
+{
+  "lessonId": "v1-4-2",
+  "title": "Survival Politeness",
+  "subtitle": "Module 1 · Lesson 4 · Part 2",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Politeness drill: one clear bitte, one calm Entschuldigung, one clean goodbye.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v1-4-2/v1-4-2-line-0.mp3"
+    },
+    {
+      "text": "Golden pattern: Number + Item + bitte. 'Ein Brötchen, bitte.'",
+      "german": "Ein Brötchen, bitte.",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v1-4-2/v1-4-2-line-1.mp3"
+    },
+    {
+      "text": "Attention-getter on the street: 'Entschuldigung!' Always first.",
+      "german": "Entschuldigung!",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v1-4-2/v1-4-2-line-2.mp3"
+    },
+    {
+      "text": "Order a pretzel like a pro: 'Eine Brezel, bitte.' Try it!",
+      "german": "Eine Brezel, bitte.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v1-4-2/v1-4-2-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Brötchen",
+      "english": "bread roll",
+      "malayalam": "roti",
+      "pronunciation": "brur-chen"
+    },
+    {
+      "german": "Brezel",
+      "english": "pretzel",
+      "malayalam": "pretzel",
+      "pronunciation": "breht-sel"
+    },
+    {
+      "german": "Einen schönen Tag noch!",
+      "english": "Have a nice day!",
+      "malayalam": "nalla divasam",
+      "pronunciation": "eye-nen shur-nen tahk nokh"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

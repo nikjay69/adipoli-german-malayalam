@@ -1,0 +1,52 @@
+{
+  "lessonId": "v2-2-2",
+  "title": "Where Do You Live?",
+  "subtitle": "Module 2 · Lesson 2 · Part 2",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Two similar questions: Woher is origin. Wo is current place.",
+      "mood": "waving",
+      "audioSrc": "audio/tts/v2-2-2/v2-2-2-line-0.mp3"
+    },
+    {
+      "text": "Ich wohne in Kochi. Ich wohne in Thrissur. Use YOUR real city — honest answer.",
+      "german": "Ich wohne in",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v2-2-2/v2-2-2-line-1.mp3"
+    },
+    {
+      "text": "Verb change: Du wohnst. Sie wohnen. Small grammar, big flow.",
+      "german": "wohnen",
+      "mood": "thinking",
+      "audioSrc": "audio/tts/v2-2-2/v2-2-2-line-2.mp3"
+    },
+    {
+      "text": "Combo: Ich komme aus Kerala und ich wohne in Kochi. Try it now!",
+      "german": "Ich wohne in Kochi.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v2-2-2/v2-2-2-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "Wo?",
+      "english": "Where?",
+      "malayalam": "evide",
+      "pronunciation": "voh"
+    },
+    {
+      "german": "Ich wohne",
+      "english": "I live",
+      "malayalam": "njan thaamasikkunu",
+      "pronunciation": "ikh voh-ne"
+    },
+    {
+      "german": "und",
+      "english": "and",
+      "malayalam": "and",
+      "pronunciation": "oont"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

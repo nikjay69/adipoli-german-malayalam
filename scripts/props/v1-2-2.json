@@ -1,0 +1,50 @@
+{
+  "lessonId": "v1-2-2",
+  "title": "Alphabet & Spelling",
+  "subtitle": "Module 1 · Lesson 2 · Part 2",
+  "accentColor": "#d4a520",
+  "scriptLines": [
+    {
+      "text": "Exam rehearsal: 'Buchstabieren Sie Ihren Namen.' Spell your name slowly.",
+      "mood": "pointing",
+      "audioSrc": "audio/tts/v1-2-2/v1-2-2-line-0.mp3"
+    },
+    {
+      "text": "German alphabet: 30 letters. But the names are different.",
+      "german": "Alphabet",
+      "mood": "thinking",
+      "audioSrc": "audio/tts/v1-2-2/v1-2-2-line-1.mp3"
+    },
+    {
+      "text": "Trap letters: J = 'yot', W = 'vay', V = 'fow', Z = 'tset'. Switch from English letter names.",
+      "mood": "happy",
+      "audioSrc": "audio/tts/v1-2-2/v1-2-2-line-2.mp3"
+    },
+    {
+      "text": "Spell a sample name: A-R-U-N. Ah, Err, Ooh, Enn. Then try your name.",
+      "mood": "celebrating",
+      "audioSrc": "audio/tts/v1-2-2/v1-2-2-line-3.mp3"
+    }
+  ],
+  "vocabCards": [
+    {
+      "german": "buchstabieren",
+      "english": "to spell",
+      "malayalam": "aksharam",
+      "pronunciation": "bookh-shtah-beer-en"
+    },
+    {
+      "german": "der Buchstabe",
+      "english": "the letter",
+      "malayalam": "aksharam",
+      "pronunciation": "bookh-shtah-be"
+    },
+    {
+      "german": "das Visum",
+      "english": "the visa",
+      "malayalam": "visa",
+      "pronunciation": "vee-zoom"
+    }
+  ],
+  "outroText": "Los geht’s!"
+}

@@ -1,0 +1,9 @@
+[
+  { "id": "examiner-prompt", "voice": "de-DE-KatjaNeural", "text": "Guten Morgen. Wie heißen Sie?" },
+  { "id": "wie-heissen-sie", "voice": "de-DE-KatjaNeural", "text": "Wie heißen Sie?" },
+  { "id": "ich-heisse-kuttan", "voice": "de-DE-ConradNeural", "text": "Ich heiße Kuttan." },
+  { "id": "ich-komme-aus-kerala", "voice": "de-DE-ConradNeural", "text": "Ich komme aus Kerala." },
+  { "id": "ich-spreche-malayalam-und-englisch", "voice": "de-DE-ConradNeural", "text": "Ich spreche Malayalam und Englisch." },
+  { "id": "model-intro-short", "voice": "de-DE-ConradNeural", "text": "Ich heiße Kuttan. Ich komme aus Kerala." },
+  { "id": "model-intro-full", "voice": "de-DE-ConradNeural", "text": "Guten Morgen. Ich heiße Kuttan. Ich komme aus Kerala. Ich spreche Malayalam und Englisch." }
+]
