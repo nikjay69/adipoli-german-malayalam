@@ -51,22 +51,22 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
     setMounted(true);
   }, []);
 
-  const module = getModuleById(parseInt(moduleId));
+  const courseModule = getModuleById(parseInt(moduleId));
   const lesson = getLessonById(lessonId);
 
   // --- Fix 1: Lesson unlock validation ---
   useEffect(() => {
-    if (!mounted || !module || !lesson) return;
+    if (!mounted || !courseModule || !lesson) return;
 
     const moduleIdNum = parseInt(moduleId);
 
     // First lesson of first module is always unlocked
     if (moduleIdNum === 1) {
-      const lessonIndex = module.lessons.findIndex(l => l.id === lessonId);
+      const lessonIndex = courseModule.lessons.findIndex(l => l.id === lessonId);
       if (lessonIndex === 0) return; // First lesson always unlocked
 
       // Check if the previous lesson in this module is completed
-      const prevLesson = module.lessons[lessonIndex - 1];
+      const prevLesson = courseModule.lessons[lessonIndex - 1];
       const prevCompleted = userProgress.completedLessons.some(
         cl => cl.lessonId === prevLesson.id && cl.completed
       );
@@ -90,9 +90,9 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
     }
 
     // Within the current module, check if the previous lesson is completed
-    const lessonIndex = module.lessons.findIndex(l => l.id === lessonId);
+    const lessonIndex = courseModule.lessons.findIndex(l => l.id === lessonId);
     if (lessonIndex > 0) {
-      const prevLesson = module.lessons[lessonIndex - 1];
+      const prevLesson = courseModule.lessons[lessonIndex - 1];
       const prevCompleted = userProgress.completedLessons.some(
         cl => cl.lessonId === prevLesson.id && cl.completed
       );
@@ -101,7 +101,7 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
         return;
       }
     }
-  }, [mounted, module, lesson, moduleId, lessonId, userProgress.completedLessons, router]);
+  }, [mounted, courseModule, lesson, moduleId, lessonId, userProgress.completedLessons, router]);
 
   // Helper: highlight German phrases in exercise questions
   const highlightGerman = (text: string) => {
@@ -156,7 +156,7 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
     );
   }
 
-  if (!module || !lesson) {
+  if (!courseModule || !lesson) {
     return (
       <div className="px-4 py-6 max-w-4xl mx-auto text-center">
         <h1 className="text-2xl font-bold text-[var(--foreground)]">Lesson not found</h1>
@@ -376,12 +376,12 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
               <Card className="text-center">
                 <div
                   className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-4"
-                  style={{ backgroundColor: module.color + '20' }}
+                  style={{ backgroundColor: courseModule.color + '20' }}
                 >
-                  {module.icon}
+                  {courseModule.icon}
                 </div>
                 <Badge variant="secondary" size="sm" className="mb-2">
-                  Module {module.id} - Lesson {lesson.id.split('-')[1]}
+                  Module {courseModule.id} - Lesson {lesson.id.split('-')[1]}
                 </Badge>
                 <h1 className="text-2xl font-bold text-[var(--foreground)] mb-1">
                   {lesson.title}
@@ -540,7 +540,7 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                           {currentVocab.malayalam}
                         </p>
                         <div className="text-white/50 text-sm">
-                          <p className="italic">"{currentVocab.example}"</p>
+                          <p className="italic">&ldquo;{currentVocab.example}&rdquo;</p>
                           <p>{currentVocab.exampleTranslation}</p>
                         </div>
                       </motion.div>
@@ -748,7 +748,7 @@ export default function LessonPage({ params }: { params: Promise<{ moduleId: str
                   Lesson Complete!
                 </h1>
                 <p className="text-[var(--foreground)]/60 mb-6">
-                  Great job! You've completed "{lesson.title}"
+                  Great job! You&rsquo;ve completed &ldquo;{lesson.title}&rdquo;
                 </p>
 
                 <div className="grid grid-cols-3 gap-4 mb-6">

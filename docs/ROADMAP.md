@@ -8,7 +8,10 @@ Status: **Source of truth.** Established 2026-06-11. Update the ledger and phase
 - **Video track** (owner production time, agent-prepared): ~60h baseline, up to ~150h. Owner expects ~60h suffices if preparation/automation is right.
 - AI budget: €100 cap (allocation in `TECH_ARCHITECTURE.md`).
 
-## CURRENT PHASE: Version A · Phase 0 — Reset (in progress 2026-06-11)
+## CURRENT PHASE: Version A · Phase 2 — Content bridge
+
+- Phase 0 (Reset): **done 2026-06-11** — 11 SOT docs, archives, CLAUDE.md, `npm run qa` v0 (lint:mvp + typecheck + 12,902 content checks, green).
+- Phase 1 (Spine): **done 2026-06-11** — Today screen (`/learn`), course path (`/course`), generic closed checkpoints for modules 2–8 (`/course/[id]/checkpoint`) with weakness tags + recovery prescriptions, skill-readiness bars, nav reduced to Today/Course/Practice/Me. Evidence: `scripts/output/phase1-playthrough/` (375px, zero console errors). Note: qa lint is scoped to the MVP surface (`lint:mvp`) because frozen legacy pages (games/auth) have pre-existing lint errors; widen the scope as files get touched.
 
 ## Version A — Rescue launch (Core ~100h + Video ~60h)
 

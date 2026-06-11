@@ -4,17 +4,18 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Home, Gamepad2, Headphones, Mic, FileText, User } from 'lucide-react';
+import { Sun, Map, Mic, User } from 'lucide-react';
 import { clsx } from 'clsx';
 import { useAuthStore } from '@/lib/auth-store';
 import { FEATURE_FLAGS } from '@/lib/app-config';
 
+// MVP nav (docs/LEARNER_JOURNEY.md): Today / Course / Practice / Me.
+// Games, tests, audio etc. stay reachable through the course path and
+// recovery prescriptions — not through global navigation.
 const navItems = [
-  { href: '/', icon: Home, label: 'Home' },
-  { href: '/games', icon: Gamepad2, label: 'Games' },
-  { href: '/on-the-go', icon: Headphones, label: 'Audio' },
+  { href: '/learn', icon: Sun, label: 'Today' },
+  { href: '/course', icon: Map, label: 'Course' },
   { href: '/practice', icon: Mic, label: 'Practice' },
-  { href: '/tests', icon: FileText, label: 'Tests' },
   { href: '/profile', icon: User, label: 'Me' },
 ];
 
@@ -30,7 +31,7 @@ export function Navigation() {
 
   if (!mounted) return null;
 
-  // Hide navigation on immersive pages
+  // Hide navigation on immersive/focused learning pages (hubs keep it)
   if (
     pathname === '/' ||
     pathname.startsWith('/play') ||
@@ -40,9 +41,8 @@ export function Navigation() {
     pathname.startsWith('/privacy') ||
     pathname.startsWith('/scripts') ||
     pathname.startsWith('/missions') ||
-    pathname === '/learn' ||
-    pathname === '/learn/1' ||
-    pathname === '/learn/2' ||
+    /^\/learn\/\d+\/.+/.test(pathname) ||
+    /^\/course\/\d+\/checkpoint/.test(pathname) ||
     pathname.startsWith('/onboarding') ||
     (pathname.startsWith('/tests/') && pathname !== '/tests') ||
     (pathname.startsWith('/practice/') && pathname !== '/practice') ||

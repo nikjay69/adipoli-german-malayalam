@@ -233,7 +233,7 @@ export const MODULE_17: Module = {
           xpReward: 30
         },
         {
-          id: "ex17-6-12",
+          id: "ex17-1-13",
           type: "free-text",
           question: "Translate: 'The film starts at 8 PM.' (8 PM = 20 Uhr)",
           correctAnswer: "Der Film beginnt um 20 Uhr",
@@ -241,7 +241,7 @@ export const MODULE_17: Module = {
           xpReward: 30
         },
         {
-          id: "ex17-6-13",
+          id: "ex17-1-14",
           type: "free-text",
           question: "Write in German: 'I am coming tomorrow.' (tomorrow = morgen)",
           correctAnswer: "Ich komme morgen",

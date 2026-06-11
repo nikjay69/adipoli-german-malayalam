@@ -134,9 +134,9 @@ export function getDailySchedule(
   const maxLessonsPerDay = plan.dailyHours <= 1 ? 1 : plan.dailyHours <= 2 ? 2 : 3;
   let lessonsAdded = 0;
 
-  for (const module of allModules) {
+  for (const courseModule of allModules) {
     if (lessonsAdded >= maxLessonsPerDay) break;
-    for (const lesson of module.lessons) {
+    for (const lesson of courseModule.lessons) {
       if (lessonsAdded >= maxLessonsPerDay) break;
       if (completedLessonIds.has(lesson.id)) continue;
 
@@ -149,11 +149,11 @@ export function getDailySchedule(
         type: 'lesson',
         title: lesson.title,
         titleGerman: lesson.titleGerman,
-        description: `Module ${module.id}: ${module.title}`,
+        description: `Module ${courseModule.id}: ${courseModule.title}`,
         estimatedMinutes: lessonMinutes,
-        moduleId: module.id,
+        moduleId: courseModule.id,
         lessonId: lesson.id,
-        route: `/play/${module.id}/${lesson.id}`,
+        route: `/play/${courseModule.id}/${lesson.id}`,
         completed: completedTaskIds.has(taskId),
         xpReward: lesson.xpReward,
       });

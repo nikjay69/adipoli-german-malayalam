@@ -45,8 +45,8 @@ export const getAllVocabulary = (): VocabItem[] => {
 
 // Helper function to get lesson by ID
 export const getLessonById = (lessonId: string): Lesson | undefined => {
-  for (const module of ALL_MODULES) {
-    const lesson = module.lessons.find(l => l.id === lessonId);
+  for (const courseModule of ALL_MODULES) {
+    const lesson = courseModule.lessons.find(l => l.id === lessonId);
     if (lesson) return lesson;
   }
   return undefined;

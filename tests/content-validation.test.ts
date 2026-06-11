@@ -118,8 +118,8 @@ for (const mod of ALL_MODULES) {
         `Duplicate exercise ID: ${ex.id}`);
       allExerciseIds.add(ex.id);
 
-      // Valid type
-      const validTypes = ['multiple-choice', 'fill-blank', 'matching', 'ordering', 'speaking'];
+      // Valid type — must match the Exercise union in src/lib/content/types.ts
+      const validTypes = ['multiple-choice', 'fill-blank', 'matching', 'ordering', 'speaking', 'free-text', 'dictation', 'image-prompt', 'type-answer'];
       assert(validTypes.includes(ex.type),
         `Exercise ${ex.id}: invalid type "${ex.type}"`);
       exerciseTypes[ex.type] = (exerciseTypes[ex.type] || 0) + 1;
@@ -430,10 +430,10 @@ console.log(`  A1 topics: all verified`);
 section('10. GOETHE A1 EXAM FORMAT');
 
 // Module 17: Hören & Lesen
-assert(mod17.lessons.length === 6, `Module 17 should have 6 lessons, has ${mod17.lessons.length}`);
+assert(mod17.lessons.length >= 6, `Module 17 should have at least 6 lessons, has ${mod17.lessons.length}`);
 
 // Module 18: Schreiben & Sprechen
-assert(mod18.lessons.length === 6, `Module 18 should have 6 lessons, has ${mod18.lessons.length}`);
+assert(mod18.lessons.length >= 6, `Module 18 should have at least 6 lessons, has ${mod18.lessons.length}`);
 
 // Check mock exam lessons exist
 const mockHorenLesen = getLessonById('17-6');

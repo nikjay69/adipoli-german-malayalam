@@ -8,9 +8,9 @@ function isLessonCompleted(completedLessons: LessonProgress[], lessonId: string)
 }
 
 function isModuleCompleted(moduleId: number, completedLessons: LessonProgress[]) {
-  const module = ALL_MODULES.find((m) => m.id === moduleId);
-  if (!module) return false;
-  return module.lessons.every((lesson) => isLessonCompleted(completedLessons, lesson.id));
+  const courseModule = ALL_MODULES.find((m) => m.id === moduleId);
+  if (!courseModule) return false;
+  return courseModule.lessons.every((lesson) => isLessonCompleted(completedLessons, lesson.id));
 }
 
 export function isModuleUnlocked(moduleId: number, completedLessons: LessonProgress[]) {
@@ -28,23 +28,23 @@ export function isModuleUnlocked(moduleId: number, completedLessons: LessonProgr
 }
 
 export function isLessonUnlocked(moduleId: number, lessonId: string, completedLessons: LessonProgress[]) {
-  const module = ALL_MODULES.find((m) => m.id === moduleId);
-  if (!module) return false;
+  const courseModule = ALL_MODULES.find((m) => m.id === moduleId);
+  if (!courseModule) return false;
   if (!isModuleUnlocked(moduleId, completedLessons)) return false;
 
-  const lessonIndex = module.lessons.findIndex((lesson) => lesson.id === lessonId);
+  const lessonIndex = courseModule.lessons.findIndex((lesson) => lesson.id === lessonId);
   if (lessonIndex === -1) return false;
   if (lessonIndex === 0) return true;
 
-  return isLessonCompleted(completedLessons, module.lessons[lessonIndex - 1].id);
+  return isLessonCompleted(completedLessons, courseModule.lessons[lessonIndex - 1].id);
 }
 
 export function getNextCoreLesson(completedLessons: LessonProgress[]) {
   const preferredModules = ALL_MODULES.filter((m) => !OPTIONAL_MODULE_IDS.has(m.id));
-  for (const module of preferredModules) {
-    for (const lesson of module.lessons) {
-      if (!isLessonCompleted(completedLessons, lesson.id) && isLessonUnlocked(module.id, lesson.id, completedLessons)) {
-        return { module, lesson };
+  for (const courseModule of preferredModules) {
+    for (const lesson of courseModule.lessons) {
+      if (!isLessonCompleted(completedLessons, lesson.id) && isLessonUnlocked(courseModule.id, lesson.id, completedLessons)) {
+        return { module: courseModule, lesson };
       }
     }
   }

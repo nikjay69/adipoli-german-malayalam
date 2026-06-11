@@ -32,6 +32,16 @@ export interface Achievement {
   unlockedAt?: number;
 }
 
+export interface SpineCheckpointResult {
+  moduleId: number;
+  percent: number;
+  state: 'PASS' | 'WEAK' | 'FAIL';
+  failedTags: string[];
+  /** skill section id (hoeren/sprechen/lesen/schreiben/grammarVocab) -> percent 0-100 */
+  sectionPercents: Record<string, number>;
+  savedAt: number;
+}
+
 export interface UserProgress {
   xp: number;
   level: number;
@@ -65,6 +75,8 @@ export interface UserProgress {
   completedTaskIds: string[];   // task IDs completed today
   bookmarkedVocab: string[];    // vocab IDs bookmarked for review
   bossesDefeated: string[];     // module IDs where boss was beaten
+  /** spine module id (2-8) -> latest closed-checkpoint result; module 1 keeps its own storage */
+  spineCheckpoints: Record<number, SpineCheckpointResult>;
 }
 
 // Level thresholds
@@ -136,6 +148,7 @@ interface GameState {
   completeTask: (taskId: string) => void;
   resetDailyTasks: () => void;
   toggleBookmark: (vocabId: string) => void;
+  saveSpineCheckpointResult: (result: SpineCheckpointResult) => void;
 }
 
 const getInitialProgress = (): UserProgress => ({
@@ -160,6 +173,7 @@ const getInitialProgress = (): UserProgress => ({
   completedTaskIds: [],
   bookmarkedVocab: [],
   bossesDefeated: [],
+  spineCheckpoints: {},
 });
 
 const calculateLevel = (xp: number): number => {
@@ -513,6 +527,18 @@ export const useGameStore = create<GameState>()(
         }));
       },
 
+      saveSpineCheckpointResult: (result: SpineCheckpointResult) => {
+        set((state) => ({
+          userProgress: {
+            ...state.userProgress,
+            spineCheckpoints: {
+              ...state.userProgress.spineCheckpoints,
+              [result.moduleId]: result,
+            },
+          },
+        }));
+      },
+
       toggleBookmark: (vocabId: string) => {
         set((state) => {
           const bookmarks = state.userProgress.bookmarkedVocab || [];
@@ -554,6 +580,7 @@ export const useGameStore = create<GameState>()(
             srsCards: merged.userProgress.srsCards || {},
             completedTaskIds: merged.userProgress.completedTaskIds || [],
             bookmarkedVocab: merged.userProgress.bookmarkedVocab || [],
+            spineCheckpoints: merged.userProgress.spineCheckpoints || {},
           };
         }
         return merged;
