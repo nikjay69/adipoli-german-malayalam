@@ -42,6 +42,16 @@ export interface SpineCheckpointResult {
   savedAt: number;
 }
 
+export interface MockGateResult {
+  gateId: string;
+  testId: string;
+  percent: number;
+  band: 'ready' | 'pass-likely' | 'risky' | 'not-ready';
+  /** tested section -> percent 0-100 */
+  sectionPercents: Record<string, number>;
+  savedAt: number;
+}
+
 export interface UserProgress {
   xp: number;
   level: number;
@@ -77,6 +87,8 @@ export interface UserProgress {
   bossesDefeated: string[];     // module IDs where boss was beaten
   /** spine module id (2-8) -> latest closed-checkpoint result; module 1 keeps its own storage */
   spineCheckpoints: Record<number, SpineCheckpointResult>;
+  /** mock gate id (mini-4/half-6/full-7/final-8a/final-8b) -> latest result */
+  mockResults: Record<string, MockGateResult>;
 }
 
 // Level thresholds
@@ -149,6 +161,7 @@ interface GameState {
   resetDailyTasks: () => void;
   toggleBookmark: (vocabId: string) => void;
   saveSpineCheckpointResult: (result: SpineCheckpointResult) => void;
+  saveMockResult: (result: MockGateResult) => void;
 }
 
 const getInitialProgress = (): UserProgress => ({
@@ -174,6 +187,7 @@ const getInitialProgress = (): UserProgress => ({
   bookmarkedVocab: [],
   bossesDefeated: [],
   spineCheckpoints: {},
+  mockResults: {},
 });
 
 const calculateLevel = (xp: number): number => {
@@ -539,6 +553,18 @@ export const useGameStore = create<GameState>()(
         }));
       },
 
+      saveMockResult: (result: MockGateResult) => {
+        set((state) => ({
+          userProgress: {
+            ...state.userProgress,
+            mockResults: {
+              ...state.userProgress.mockResults,
+              [result.gateId]: result,
+            },
+          },
+        }));
+      },
+
       toggleBookmark: (vocabId: string) => {
         set((state) => {
           const bookmarks = state.userProgress.bookmarkedVocab || [];
@@ -581,6 +607,7 @@ export const useGameStore = create<GameState>()(
             completedTaskIds: merged.userProgress.completedTaskIds || [],
             bookmarkedVocab: merged.userProgress.bookmarkedVocab || [],
             spineCheckpoints: merged.userProgress.spineCheckpoints || {},
+            mockResults: merged.userProgress.mockResults || {},
           };
         }
         return merged;

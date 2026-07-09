@@ -181,7 +181,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-1-1",
           type: "matching",
-          question: "Match the German rooms with their English meanings:",
+          question: "Your cousin pans his phone camera around the WG, room by room. Match each German room to what you see:",
           options: [
             "die Küche",
             "das Wohnzimmer",
@@ -220,7 +220,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-1-4",
           type: "multiple-choice",
-          question: "What does 'der Kühlschrank' literally mean?",
+          question: "Your cousin swings the camera to 'der Kühlschrank'. What does the word literally mean?",
           options: ["Cool cupboard", "Cold room", "Ice machine", "Electricity box"],
           correctAnswer: "Cool cupboard",
           explanation: "German is like Lego! Kühl (cool) + Schrank (cupboard) = Kühlschrank (fridge). If you know the parts, you know the word!",
@@ -229,7 +229,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-1-5",
           type: "ordering",
-          question: "Put these words in order: 'In the living room there is a sofa'",
+          question: "The camera reaches the living room — describe it: 'In the living room there is a sofa.' Build the German:",
           options: ["Wohnzimmer", "gibt", "es", "ein Sofa", "Im"],
           correctAnswer: ["Im", "Wohnzimmer", "gibt", "es", "ein Sofa"],
           explanation: "'Im Wohnzimmer' (In the living room) + 'gibt es' (there is) + 'ein Sofa'. 'Es gibt' is the magic phrase for 'There is'!",
@@ -252,7 +252,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-1-7",
           type: "dictation",
-          question: "Listen and type: Das Wohnzimmer ist groß.",
+          question: "Your cousin describes one room while the camera is off. Listen and type the sentence you hear.",
           correctAnswer: "Das Wohnzimmer ist groß",
           explanation: "Great! 'Wohnzimmer' is neuter (das) and must be capitalized.",
           xpReward: 25,
@@ -270,10 +270,21 @@ export const MODULE_8: Module = {
         {
           id: "ex8-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Rooms & Furniture): 'Mein Zimmer ist klein, aber schön.'",
+          question: "Your cousin asks about YOUR room back in Thrissur — say aloud: 'Mein Zimmer ist klein, aber schön.'",
           questionGerman: "Sprechen Sie laut: 'Mein Zimmer ist klein, aber schön.'",
           correctAnswer: "Mein Zimmer ist klein, aber schön",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          explanation: "'klein, aber schön' — small but nice. The 'aber' pivot makes any one-line description sound natural. Use it about your real room in Sprechen.",
+          audioUrl: "/audio/exercises/ex8-1-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex8-1-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's tour line: he says 'Der Küche ist sauber.' Küche is feminine! Say it right: 'Die Küche ist sauber.'",
+          questionGerman: "Sprechen Sie laut: 'Die Küche ist sauber.'",
+          correctAnswer: "Die Küche ist sauber",
+          explanation: "die Küche, das Zimmer, der Flur — room genders power this whole module (in DER Küche, IM Wohnzimmer). Learn each room with its article, always.",
+          audioUrl: "/audio/exercises/ex8-1-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -566,7 +577,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-2-3",
           type: "multiple-choice",
-          question: "How do you say 'In the living room' naturally?",
+          question: "Unpacking day in your imagined German room: how do you say 'In the living room' naturally?",
           options: ["In das Wohnzimmer", "Im Wohnzimmer", "In der Wohnzimmer", "In dem Wohnzimmer (less common)"],
           correctAnswer: "Im Wohnzimmer",
           explanation: "Germans always contract 'in dem' to 'im'. It's smoother! 'In das' is for motion (going into), not location.",
@@ -575,7 +586,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-2-4",
           type: "matching",
-          question: "Match the prepositions with their meanings:",
+          question: "Appu hides somewhere new every time you look up. Match the prepositions that track him:",
           options: [
             "auf",
             "neben",
@@ -596,7 +607,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-2-5",
           type: "multiple-choice",
-          question: "What does 'hinter der Tür' mean?",
+          question: "Found him — Appu was 'hinter der Tür'! Where was he hiding?",
           options: ["Behind the door", "In front of the door", "Next to the door", "Under the door"],
           correctAnswer: "Behind the door",
           explanation: "'hinter' = behind. 'die Tür' (door) changed to 'der Tür' in Dativ. Yes, feminine 'die' becomes 'der' in Dativ—tricky, right?",
@@ -612,18 +623,9 @@ export const MODULE_8: Module = {
           xpReward: 10
         },
         {
-          id: "ex8-2-7",
-          type: "multiple-choice",
-          question: "In dative case, what does 'die Küche' become after a preposition?",
-          options: ["dem Küche", "der Küche", "den Küche", "des Küche"],
-          correctAnswer: "der Küche",
-          explanation: "Feminine nouns: die → der in dative. So 'in die Küche' (accusative/motion) but 'in der Küche' (dative/location).",
-          xpReward: 15
-        },
-        {
           id: "ex8-2-8",
           type: "dictation",
-          question: "Listen and type: Die Katze ist auf dem Tisch.",
+          question: "Eyes closed — where is the cat now? Listen and type the sentence you hear.",
           correctAnswer: "Die Katze ist auf dem Tisch",
           explanation: "Perfect! 'auf dem Tisch' — 'dem' because of the dative case for location.",
           xpReward: 25,
@@ -632,7 +634,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-2-9",
           type: "free-text",
-          question: "Translate to German: 'The shoes are under the bed.' (shoes = die Schuhe, bed = Bett)",
+          question: "Morning panic — where are they? Write in German: 'The shoes are under the bed.' (shoes = die Schuhe)",
           correctAnswer: "Die Schuhe sind unter dem Bett",
           explanation: "Excellent! 'unter dem Bett' — 'dem' is the dative article for 'das Bett'.",
           xpReward: 30
@@ -641,10 +643,21 @@ export const MODULE_8: Module = {
         {
           id: "ex8-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Where Is It?): 'Mein Zimmer ist klein, aber schön.'",
-          questionGerman: "Sprechen Sie laut: 'Mein Zimmer ist klein, aber schön.'",
-          correctAnswer: "Mein Zimmer ist klein, aber schön",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Room tour, your turn — point and say aloud: 'Die Lampe ist auf dem Tisch.'",
+          questionGerman: "Sprechen Sie laut: 'Die Lampe ist auf dem Tisch.'",
+          correctAnswer: "Die Lampe ist auf dem Tisch",
+          explanation: "auf + dem because it's a location. Say five more about your real room — examiners love 'Wo ist...?' questions.",
+          audioUrl: "/audio/exercises/ex8-2-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex8-2-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's answer: he says 'Die Katze ist unter den Tisch.' Location takes Dativ! Say it right: 'Die Katze ist unter dem Tisch.'",
+          questionGerman: "Sprechen Sie laut: 'Die Katze ist unter dem Tisch.'",
+          correctAnswer: "Die Katze ist unter dem Tisch",
+          explanation: "Location = Dativ: unter DEM Tisch. 'unter den Tisch' would mean the cat is crawling under it right now (motion). One letter, different scene.",
+          audioUrl: "/audio/exercises/ex8-2-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -953,18 +966,9 @@ export const MODULE_8: Module = {
           xpReward: 15
         },
         {
-          id: "ex8-3-6",
-          type: "multiple-choice",
-          question: "What is 'die Kaution'?",
-          options: ["monthly rent", "security deposit", "utility bill", "insurance"],
-          correctAnswer: "security deposit",
-          explanation: "'die Kaution' = security deposit. Usually 2-3 months of Kaltmiete, returned when you move out (if no damage).",
-          xpReward: 10
-        },
-        {
           id: "ex8-3-7",
           type: "dictation",
-          question: "Listen and type: Ich suche eine WG.",
+          question: "Late-night ad scrolling: Kuttan says what he's hunting for. Listen and type the sentence you hear.",
           correctAnswer: "Ich suche eine WG",
           explanation: "Great! 'WG' stands for 'Wohngemeinschaft' — shared apartment.",
           xpReward: 25,
@@ -982,10 +986,21 @@ export const MODULE_8: Module = {
         {
           id: "ex8-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Looking for an Apartment): 'Mein Zimmer ist klein, aber schön.'",
-          questionGerman: "Sprechen Sie laut: 'Mein Zimmer ist klein, aber schön.'",
-          correctAnswer: "Mein Zimmer ist klein, aber schön",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "WG-Casting rehearsal: introduce yourself at the door — say aloud: 'Hallo, ich bin Kuttan. Ich suche eine WG.'",
+          questionGerman: "Sprechen Sie laut: 'Hallo, ich bin Kuttan. Ich suche eine WG.'",
+          correctAnswer: "Hallo, ich bin Kuttan. Ich suche eine WG",
+          explanation: "Two short, confident sentences open every WG-Casting. Swap in your own name and say it until it sounds bored-casual.",
+          audioUrl: "/audio/exercises/ex8-3-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex8-3-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's question at the WG-Casting: he asks 'Was kostet der Miete?' Miete is feminine! Say it right: 'Was kostet die Miete?'",
+          questionGerman: "Sprechen Sie laut: 'Was kostet die Miete?'",
+          correctAnswer: "Was kostet die Miete",
+          explanation: "die Miete, die Kaution, die Nebenkosten — German housing money words are all feminine. Ask the question, then listen for 'warm' or 'kalt' in the answer.",
+          audioUrl: "/audio/exercises/ex8-3-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1195,7 +1210,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-4-3",
           type: "multiple-choice",
-          question: "What does 'es gibt' mean?",
+          question: "The room ad promises: 'Es gibt eine Einbauküche.' What does 'es gibt' tell you?",
           options: ["it gives", "there is / there are", "it goes", "it gets"],
           correctAnswer: "there is / there are",
           explanation: "'es gibt' literally means 'it gives' but is used as 'there is / there are'. It always takes the accusative case.",
@@ -1204,7 +1219,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-4-4",
           type: "ordering",
-          question: "Put these parts of a formal message in the correct order:",
+          question: "A copy-paste accident shuffled Kuttan's application message. Rebuild it in the right order:",
           options: [
             "Sehr geehrte Damen und Herren,",
             "Mein Name ist Arun und ich komme aus Kerala.",
@@ -1248,7 +1263,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-4-7",
           type: "dictation",
-          question: "Listen and type: Mit freundlichen Grüßen",
+          question: "Kuttan dictates his sign-off while typing the application. Listen and type what you hear.",
           correctAnswer: "Mit freundlichen Grüßen",
           explanation: "Perfect! This is the most formal way to end a letter in German.",
           xpReward: 25,
@@ -1257,7 +1272,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-4-8",
           type: "free-text",
-          question: "Translate to German: 'May I introduce myself?'",
+          question: "Last line before the viewing: write the polite opener 'May I introduce myself?' in German.",
           correctAnswer: "Darf ich mich vorstellen",
           explanation: "Excellent! 'Darf ich mich vorstellen?' is a very polite opening.",
           xpReward: 30
@@ -1266,10 +1281,21 @@ export const MODULE_8: Module = {
         {
           id: "ex8-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Writing a Simple Message): 'Mein Zimmer ist klein, aber schön.'",
-          questionGerman: "Sprechen Sie laut: 'Mein Zimmer ist klein, aber schön.'",
-          correctAnswer: "Mein Zimmer ist klein, aber schön",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Read your application line aloud before hitting send: 'Ich suche ein Zimmer ab dem ersten April.'",
+          questionGerman: "Sprechen Sie laut: 'Ich suche ein Zimmer ab dem ersten April.'",
+          correctAnswer: "Ich suche ein Zimmer ab dem ersten April",
+          explanation: "'ab dem ersten April' — from the first of April. Dates with 'ab dem' + ordinal appear in every housing ad and rental email.",
+          audioUrl: "/audio/exercises/ex8-4-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex8-4-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's email: he closes a formal application with 'Hey! Tschüss!' Formal needs formal. Say the correct frame aloud: 'Sehr geehrte Damen und Herren ... Mit freundlichen Grüßen.'",
+          questionGerman: "Sprechen Sie laut: 'Sehr geehrte Damen und Herren ... Mit freundlichen Grüßen.'",
+          correctAnswer: "Sehr geehrte Damen und Herren, Mit freundlichen Grüßen",
+          explanation: "Greeting and closing must match in register: Sehr geehrte... + Mit freundlichen Grüßen (formal), Liebe/r + Liebe Grüße (informal). Schreiben Teil 2 gives a free point for this frame.",
+          audioUrl: "/audio/exercises/ex8-4-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

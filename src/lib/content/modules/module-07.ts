@@ -145,7 +145,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-1-3",
           type: "matching",
-          question: "Match the German grocery items with their English meanings:",
+          question: "Amma's shopping list, German edition. Match the items before the trolley fills up:",
           options: ["die Milch → milk", "das Ei → egg", "der Zucker → sugar", "die Nudeln → noodles/pasta"],
           correctAnswer: ["die Milch → milk", "das Ei → egg", "der Zucker → sugar", "die Nudeln → noodles/pasta"],
           explanation: "These are everyday grocery items you'll find in any German supermarket.",
@@ -190,10 +190,11 @@ export const MODULE_7: Module = {
         {
           id: "ex7-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (At the Supermarket): 'Wie viel kostet das?'",
+          question: "Mystery item in the trolley with no price tag — ask the staff aloud: 'Wie viel kostet das?'",
           questionGerman: "Sprechen Sie laut: 'Wie viel kostet das?'",
           correctAnswer: "Wie viel kostet das",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          explanation: "'Wie viel kostet das?' works for everything in every shop. Ask it, then catch the number in the answer — that's Hören Teil 1.",
+          audioUrl: "/audio/exercises/ex7-1-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -436,7 +437,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-2-6",
           type: "matching",
-          question: "Match the German money words with their meanings:",
+          question: "Price-tag decoding at the imagined Edeka. Match the money words:",
           options: ["teuer → expensive", "billig → cheap", "bar → cash", "die Quittung → receipt"],
           correctAnswer: ["teuer → expensive", "billig → cheap", "bar → cash", "die Quittung → receipt"],
           explanation: "These are essential words for any shopping situation in Germany.",
@@ -463,10 +464,11 @@ export const MODULE_7: Module = {
         {
           id: "ex7-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Prices & Currency): 'Wie viel kostet das?'",
-          questionGerman: "Sprechen Sie laut: 'Wie viel kostet das?'",
-          correctAnswer: "Wie viel kostet das",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "You're the cashier now. Read the total aloud: 'Das kostet zwölf Euro fünfzig.'",
+          questionGerman: "Sprechen Sie laut: 'Das kostet zwölf Euro fünfzig.'",
+          correctAnswer: "Das kostet zwölf Euro fünfzig",
+          explanation: "German prices say Euro between the numbers: zwölf Euro fünfzig = 12,50 €. Saying prices makes hearing them easy.",
+          audioUrl: "/audio/exercises/ex7-2-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -705,7 +707,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-3-1",
           type: "matching",
-          question: "Match the German colors with their English meanings:",
+          question: "Kuttan sorts the T-shirt rack by colour for the shop display. Match the colours:",
           options: ["rot → red", "blau → blue", "gelb → yellow", "grün → green", "schwarz → black"],
           correctAnswer: ["rot → red", "blau → blue", "gelb → yellow", "grün → green", "schwarz → black"],
           explanation: "These are the five most essential German colors to know.",
@@ -777,10 +779,11 @@ export const MODULE_7: Module = {
         {
           id: "ex7-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Colors & Clothing): 'Wie viel kostet das?'",
-          questionGerman: "Sprechen Sie laut: 'Wie viel kostet das?'",
-          correctAnswer: "Wie viel kostet das",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "The blue T-shirt has your name on it. Ask the price aloud: 'Wie viel kostet das T-Shirt?'",
+          questionGerman: "Sprechen Sie laut: 'Wie viel kostet das T-Shirt?'",
+          correctAnswer: "Wie viel kostet das T-Shirt",
+          explanation: "Swap 'das' for the real noun and the question gets sharper: Wie viel kostet das T-Shirt / die Jacke / der Pulli?",
+          audioUrl: "/audio/exercises/ex7-3-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1089,10 +1092,11 @@ export const MODULE_7: Module = {
         {
           id: "ex7-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Shopping Dialogues): 'Wie viel kostet das?'",
-          questionGerman: "Sprechen Sie laut: 'Wie viel kostet das?'",
-          correctAnswer: "Wie viel kostet das",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Saturday market role-play — order like a regular: 'Ich hätte gern ein Kilo Tomaten, bitte.'",
+          questionGerman: "Sprechen Sie laut: 'Ich hätte gern ein Kilo Tomaten, bitte.'",
+          correctAnswer: "Ich hätte gern ein Kilo Tomaten, bitte",
+          explanation: "'Ich hätte gern ...' is the native-sounding upgrade of 'Ich möchte'. Goethe examiners hear it and smile.",
+          audioUrl: "/audio/exercises/ex7-4-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1372,10 +1376,11 @@ export const MODULE_7: Module = {
         {
           id: "ex7-5-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Comparing Things): 'Wie viel kostet das?'",
-          questionGerman: "Sprechen Sie laut: 'Wie viel kostet das?'",
-          correctAnswer: "Wie viel kostet das",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Two T-shirts, one budget. Compare them aloud: 'Das T-Shirt ist billiger als die Jacke.'",
+          questionGerman: "Sprechen Sie laut: 'Das T-Shirt ist billiger als die Jacke.'",
+          correctAnswer: "Das T-Shirt ist billiger als die Jacke",
+          explanation: "billiger als = cheaper than. Comparative -er + als is all A1 needs for comparing prices.",
+          audioUrl: "/audio/exercises/ex7-5-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

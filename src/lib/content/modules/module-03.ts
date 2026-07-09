@@ -184,16 +184,16 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-1",
           type: "type-answer",
-          question: "Write the number 7 in German.",
+          question: "Frau Weber holds up a price tag at the mock checkout: '7 €'. Write the number she wants to hear, in German.",
           correctAnswer: "sieben",
           explanation: "'Sieben' = 7. One of the first numbers to memorize!",
           xpReward: 15
         },
-        { id: "ex3-1-2", type: "multiple-choice", question: "Which German number is 'zwölf'?", questionGerman: "Welche Zahl ist 'zwölf'?", options: ["12", "11", "20", "2"], correctAnswer: "12", explanation: "'Zwölf' = 12. It's irregular — just memorize it along with 'elf' (11)!", xpReward: 10 },
+        { id: "ex3-1-2", type: "multiple-choice", question: "Frau Weber calls across the mock checkout: 'Das macht zwölf Euro!' Which price tag is yours?", questionGerman: "Welche Zahl ist 'zwölf'?", options: ["12", "11", "20", "2"], correctAnswer: "12", explanation: "'Zwölf' = 12. It's irregular — just memorize it along with 'elf' (11)!", xpReward: 10 },
         {
           id: "ex3-1-3",
           type: "fill-blank",
-          question: "Complete the pattern: dreizehn (13), vierzehn (14), _____ (15)",
+          question: "The price tags on the checkout belt count up: dreizehn (13), vierzehn (14), _____ (15).",
           options: ["fünfzehn", "sechzehn", "fünfzig", "fünf"],
           correctAnswer: "fünfzehn",
           explanation: "Teen numbers = unit + zehn. So 15 = fünf+zehn = fünfzehn. But watch for shortcuts: sechs drops the 's' (sechzehn), sieben drops the 'en' (siebzehn).",
@@ -202,7 +202,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-4",
           type: "ordering",
-          question: "Put these German numbers in order from smallest to largest:",
+          question: "The number cards for the checkout game fell off Frau Weber's desk. Rebuild the row from smallest to largest:",
           options: ["neun", "drei", "sieben", "eins", "fünf"],
           correctAnswer: ["eins", "drei", "fünf", "sieben", "neun"],
           explanation: "eins (1), drei (3), fünf (5), sieben (7), neun (9) — all the odd numbers!",
@@ -211,7 +211,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-5",
           type: "type-answer",
-          question: "Write 16 in German.",
+          question: "Price tag check: 16 € on the mango crate. Write 16 in German.",
           correctAnswer: "sechzehn",
           explanation: "'Sechzehn' = 16. Note: 'sechs' drops the 's' when combined with 'zehn' for easier pronunciation.",
           xpReward: 15
@@ -219,7 +219,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-6",
           type: "fill-blank",
-          question: "Write the German word for 20: _____",
+          question: "The biggest note in the mock till is 20 €. Write its German number word: _____",
           options: ["zwanzig", "zweiundzwanzig", "zwölf", "dreißig"],
           correctAnswer: "zwanzig",
           explanation: "'-zig' is the German suffix for tens: zwanzig (20), dreißig (30), vierzig (40)... Exception: dreißig uses '-ßig' instead of '-zig'. All others are regular!",
@@ -228,7 +228,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-7",
           type: "dictation",
-          question: "Listen and type the number: 17 (siebzehn)",
+          question: "A price flies across the mock checkout. Listen and type the German number you hear.",
           correctAnswer: "siebzehn",
           explanation: "Remember the spelling: sieben loses the 'en' when combined with 'zehn'.",
           xpReward: 20,
@@ -237,7 +237,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-8",
           type: "free-text",
-          question: "How do you say 'fifteen' in German?",
+          question: "Your bill at the mock checkout is 15 €. Beat Frau Weber to it — write 15 in German.",
           correctAnswer: "fünfzehn",
           explanation: "Fünf (5) + zehn (10) = fünfzehn (15). Just like English, except simpler!",
           xpReward: 25
@@ -246,10 +246,21 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Numbers 0-20): 'Der Termin ist am Montag um zehn Uhr.'",
-          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
-          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Checkout role-play: you are the cashier, Frau Weber is the customer. Tell her the total — say aloud: 'Das macht zwanzig Euro, bitte.'",
+          questionGerman: "Sprechen Sie laut: 'Das macht zwanzig Euro, bitte.'",
+          correctAnswer: "Das macht zwanzig Euro, bitte",
+          explanation: "'Das macht ... Euro' is what you'll hear at every German till. Saying prices aloud locks the numbers in before the Hören paper tries to trick you.",
+          audioUrl: "/audio/exercises/ex3-1-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex3-1-spk2",
+          type: "speaking",
+          question: "Frau Weber deals you three price tags: 3 €, 13 €, 19 €. Call each price aloud: 'drei Euro, dreizehn Euro, neunzehn Euro.'",
+          questionGerman: "Sprechen Sie laut: 'drei Euro, dreizehn Euro, neunzehn Euro.'",
+          correctAnswer: "drei Euro, dreizehn Euro, neunzehn Euro",
+          explanation: "drei/dreizehn and the -zehn teens are the pairs the Goethe Hören loves to mix up. If your mouth knows the difference, your ear will too.",
+          audioUrl: "/audio/exercises/ex3-1-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -510,7 +521,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-2-3",
           type: "type-answer",
-          question: "Write 30 in German.",
+          question: "The bakery's birthday cake costs 30 €. Write 30 in German — careful, this one is special.",
           correctAnswer: "dreißig",
           explanation: "'Dreißig' = 30. Note the ß! It's the only tens number that uses 'ßig' instead of 'zig'.",
           xpReward: 20
@@ -536,7 +547,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-2-6",
           type: "free-text",
-          question: "How do you say 42 in German? (Hint: two-and-forty)",
+          question: "The bakery queue display ticks to your number: 42. German says it backwards — ones first. Write 42 in German.",
           correctAnswer: "zweiundvierzig",
           explanation: "Ones bit (zwei) + und + Tens bit (vierzig). No spaces in German numbers!",
           xpReward: 30
@@ -544,7 +555,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-2-7",
           type: "dictation",
-          question: "Listen and type the number: einundzwanzig (21)",
+          question: "The baker calls the next queue number. Listen and type the German number you hear.",
           correctAnswer: "einundzwanzig",
           explanation: "Ein (1) + und + zwanzig (20) = 21. Perfect reversal!",
           xpReward: 20,
@@ -554,10 +565,21 @@ export const MODULE_3: Module = {
         {
           id: "ex3-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Numbers 21-100): 'Der Termin ist am Montag um zehn Uhr.'",
-          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
-          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "After the bakery role-play, Frau Weber asks your age. Answer like a Goethe candidate — say aloud: 'Ich bin einundzwanzig Jahre alt.' (Use your real age once you can!)",
+          questionGerman: "Sprechen Sie laut: 'Ich bin einundzwanzig Jahre alt.'",
+          correctAnswer: "Ich bin einundzwanzig Jahre alt",
+          explanation: "Your age is guaranteed in Sprechen Teil 1. Saying the reversed number (ein-und-zwanzig) aloud now means no freezing in the exam room.",
+          audioUrl: "/audio/exercises/ex3-2-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex3-2-spk2",
+          type: "speaking",
+          question: "Your turn at the bakery counter: order, then ask the price — say aloud: 'Zwei Brötchen, bitte. Was kostet das?'",
+          questionGerman: "Sprechen Sie laut: 'Zwei Brötchen, bitte. Was kostet das?'",
+          correctAnswer: "Zwei Brötchen, bitte. Was kostet das?",
+          explanation: "Order + price question is the full loop: you speak, then your ear has to catch a 21–100 number in the answer. That's real bakery German and Hören practice in one.",
+          audioUrl: "/audio/exercises/ex3-2-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -821,7 +843,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-3-3",
           type: "multiple-choice",
-          question: "How do you say 7:45 in informal German?",
+          question: "Train schedule practice: Priya's train leaves at 7:45. How does she say that informally in German?",
           options: [
             "Viertel vor acht",
             "Viertel nach sieben",
@@ -855,7 +877,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-3-6",
           type: "matching",
-          question: "Match the German time expressions to their meanings:",
+          question: "Kuttan sticks a day-plan strip into his library notebook. Match each German time-of-day word to the part of his day:",
           options: ["morgens → in the morning", "nachmittags → in the afternoon", "abends → in the evening", "pünktlich → on time"],
           correctAnswer: ["morgens → in the morning", "nachmittags → in the afternoon", "abends → in the evening", "pünktlich → on time"],
           explanation: "These time-of-day words help specify AM or PM when using the informal 12-hour clock.",
@@ -872,7 +894,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-3-8",
           type: "dictation",
-          question: "Listen and type: Viertel vor acht.",
+          question: "A platform announcement crackles through the library practice audio. Listen and type the time phrase you hear.",
           correctAnswer: "Viertel vor acht",
           explanation: "Quarter before eight = 7:45. Good job handling the prepositions!",
           xpReward: 25,
@@ -882,10 +904,21 @@ export const MODULE_3: Module = {
         {
           id: "ex3-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (What Time Is It?): 'Der Termin ist am Montag um zehn Uhr.'",
-          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
-          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Read the next departure off the DB schedule board to your study partner — say aloud: 'Der Zug fährt um fünfzehn Uhr dreißig.'",
+          questionGerman: "Sprechen Sie laut: 'Der Zug fährt um fünfzehn Uhr dreißig.'",
+          correctAnswer: "Der Zug fährt um fünfzehn Uhr dreißig",
+          explanation: "Official Germany runs on the 24-hour clock. Reading schedule times aloud trains the exact skill the Hören announcements test.",
+          audioUrl: "/audio/exercises/ex3-3-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex3-3-spk2",
+          type: "speaking",
+          question: "Plan tomorrow's study session with Priya — and don't fall into the halb trap: 2:30 is 'halb DREI', not 'halb zwei'. Say aloud: 'Wir treffen uns um halb drei.'",
+          questionGerman: "Sprechen Sie laut: 'Wir treffen uns um halb drei.'",
+          correctAnswer: "Wir treffen uns um halb drei",
+          explanation: "'halb drei' = 2:30 — German points at the NEXT hour. Most missed appointments by A1 learners come from this one word.",
+          audioUrl: "/audio/exercises/ex3-3-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1091,7 +1124,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-4-2",
           type: "type-answer",
-          question: "What day comes after Dienstag?",
+          question: "Your cousin warns on the video call: 'The yellow bin goes out the day after Dienstag.' Write that day in German.",
           correctAnswer: "Mittwoch",
           explanation: "'Mittwoch' = Wednesday. It follows 'Dienstag' (Tuesday) in the German week.",
           xpReward: 15
@@ -1108,7 +1141,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-4-4",
           type: "matching",
-          question: "Match the seasons with their German names:",
+          question: "Your cousin flips his Müllkalender to the year overview. Match the German seasons:",
           options: ["Frühling → Spring", "Sommer → Summer", "Herbst → Autumn", "Winter → Winter"],
           correctAnswer: ["Frühling → Spring", "Sommer → Summer", "Herbst → Autumn", "Winter → Winter"],
           explanation: "Frühling (spring), Sommer (summer), Herbst (autumn), Winter (winter).",
@@ -1134,7 +1167,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-4-7",
           type: "dictation",
-          question: "Listen and type: Heute ist Montag.",
+          question: "Your cousin checks today's bin colour on the Müllkalender. Listen and type the sentence you hear.",
           correctAnswer: "Heute ist Montag",
           explanation: "Today is Monday. Remember: days of the week are names, so CAPITALize them!",
           xpReward: 20,
@@ -1144,10 +1177,21 @@ export const MODULE_3: Module = {
         {
           id: "ex3-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Days of the Week & Months): 'Der Termin ist am Montag um zehn Uhr.'",
-          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
-          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Tell your cousin your class schedule — say aloud: 'Der Deutschkurs ist am Montag und am Mittwoch.'",
+          questionGerman: "Sprechen Sie laut: 'Der Deutschkurs ist am Montag und am Mittwoch.'",
+          correctAnswer: "Der Deutschkurs ist am Montag und am Mittwoch",
+          explanation: "Days always take 'am'. Saying your real weekly schedule aloud is straight Sprechen Teil 2 material (Thema: Tagesablauf).",
+          audioUrl: "/audio/exercises/ex3-4-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex3-4-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's mistake: he tells his cousin 'Ich habe im Montag Deutschkurs.' Days take 'am', not 'im'! Say the fixed sentence aloud: 'Ich habe am Montag Deutschkurs.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe am Montag Deutschkurs.'",
+          correctAnswer: "Ich habe am Montag Deutschkurs",
+          explanation: "'im' belongs to months (im Januar), 'am' to days (am Montag). Malayalam doesn't split these two, so drill the pair until it's automatic.",
+          audioUrl: "/audio/exercises/ex3-4-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1434,7 +1478,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-7",
           type: "dictation",
-          question: "Listen and type the date: 15.08.1947",
+          question: "Family calendar quiz: 15.08.1947 — Indian Independence Day! Listen to the date in German and type the words you hear.",
           correctAnswer: "fünfzehnte August neunzehnhundertsiebenundvierzig",
           explanation: "Mastering years in German: before 2000, we say 'nineteen-hundred-seven-and-forty'. After 2000, we say 'two-thousand-twenty-four'. Practice this!",
           xpReward: 40,
@@ -1444,10 +1488,21 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Dates & Birthdays): 'Der Termin ist am Montag um zehn Uhr.'",
-          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
-          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Point at the family birthday calendar and tell Priya when yours is — say aloud: 'Ich habe im März Geburtstag.' (Swap in your real month!)",
+          questionGerman: "Sprechen Sie laut: 'Ich habe im März Geburtstag.'",
+          correctAnswer: "Ich habe im März Geburtstag",
+          explanation: "German says 'I HAVE birthday in March'. This exact sentence pattern is a Sprechen Teil 1 favourite — own it with your real month.",
+          audioUrl: "/audio/exercises/ex3-5-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex3-5-spk2",
+          type: "speaking",
+          question: "Repair time: Kuttan announces 'Ich habe am Juni Geburtstag.' Months take 'im', not 'am'! Say it right: 'Ich habe im Juni Geburtstag.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe im Juni Geburtstag.'",
+          correctAnswer: "Ich habe im Juni Geburtstag",
+          explanation: "am Montag (day) but im Juni (month). One small word, one exam mark — and one confused examiner avoided.",
+          audioUrl: "/audio/exercises/ex3-5-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1623,7 +1678,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-6-1",
           type: "multiple-choice",
-          question: "How do you ask 'At what time?' in German?",
+          question: "Appointment desk role-play: you need to ask 'At what time?'. Which German question do you use?",
           options: [
             "Wie spät ist es?",
             "Um wie viel Uhr?",
@@ -1680,15 +1735,6 @@ export const MODULE_3: Module = {
           xpReward: 15
         },
         {
-          id: "ex3-6-7",
-          type: "fill-blank",
-          question: "Type in German: 'It is three o'clock.' (Es ist...)",
-          options: ["Es ist drei Uhr", "Es ist drei", "Es drei Uhr ist", "Drei Uhr es ist"],
-          correctAnswer: "Es ist drei Uhr",
-          explanation: "'Es ist [number] Uhr' is the standard way to tell the time in German. Don't forget 'Uhr'!",
-          xpReward: 15
-        },
-        {
           id: "ex3-6-8",
           type: "fill-blank",
           question: "Type in German: 'I have an appointment on Monday.' (Ich habe...)",
@@ -1701,16 +1747,27 @@ export const MODULE_3: Module = {
         {
           id: "ex3-6-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Making Appointments): 'Der Termin ist am Montag um zehn Uhr.'",
-          questionGerman: "Sprechen Sie laut: 'Der Termin ist am Montag um zehn Uhr.'",
-          correctAnswer: "Der Termin ist am Montag um zehn Uhr",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Repair Kuttan's booking: he tells the receptionist 'Der Termin ist am zehn Uhr.' Clock times take 'um'! Say the fixed sentence aloud: 'Der Termin ist um zehn Uhr.'",
+          questionGerman: "Sprechen Sie laut: 'Der Termin ist um zehn Uhr.'",
+          correctAnswer: "Der Termin ist um zehn Uhr",
+          explanation: "The trio to drill: am Montag (day), im Juni (month), um zehn Uhr (clock time). Mix them up and the Termin happens without you.",
+          audioUrl: "/audio/exercises/ex3-6-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex3-6-spk2",
+          type: "speaking",
+          question: "Close the role-play like a pro — confirm your booking back to the receptionist, say aloud: 'Ich habe am Montag um zehn Uhr einen Termin.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe am Montag um zehn Uhr einen Termin.'",
+          correctAnswer: "Ich habe am Montag um zehn Uhr einen Termin",
+          explanation: "Day before time, verb in position 2, 'einen Termin' because Termin is masculine. One sentence, three exam skills.",
+          audioUrl: "/audio/exercises/ex3-6-spk2-model.mp3",
           xpReward: 25
         },
         {
           id: "ex3-6-prod-writing",
           type: "free-text",
-          question: "Production writing: Write one appointment sentence with a day and time.",
+          question: "The receptionist slides the visitor book over: write your appointment as one sentence with a day and a time.",
           questionGerman: "Schreiben Sie einen vollständigen Satz.",
           correctAnswer: ["Der Termin ist am Montag um zehn Uhr", "Der Termin ist am Montag um zehn Uhr."],
           explanation: "A1 writing must be short, complete, and usable. One correct sentence beats five half-known phrases.",
@@ -1719,7 +1776,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-6-prod-dictation",
           type: "dictation",
-          question: "Listen and type the A1 sentence you hear.",
+          question: "The receptionist confirms your slot over the desk phone. Listen and type the sentence you hear.",
           audioUrl: "/audio/hoeren/module-03/ex3-6-prod-dictation.mp3",
           correctAnswer: "Der Termin ist um zehn Uhr",
           explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",

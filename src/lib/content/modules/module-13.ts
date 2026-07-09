@@ -191,6 +191,7 @@ export const MODULE_13: Module = {
           questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
           correctAnswer: "Gestern habe ich Deutsch gelernt",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex13-1-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -380,6 +381,7 @@ export const MODULE_13: Module = {
           questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
           correctAnswer: "Gestern habe ich Deutsch gelernt",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex13-2-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -557,6 +559,7 @@ export const MODULE_13: Module = {
           questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
           correctAnswer: "Gestern habe ich Deutsch gelernt",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex13-3-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -691,6 +694,7 @@ export const MODULE_13: Module = {
           questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
           correctAnswer: "Gestern habe ich Deutsch gelernt",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex13-4-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -827,6 +831,7 @@ export const MODULE_13: Module = {
           questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
           correctAnswer: "Gestern habe ich Deutsch gelernt",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex13-5-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

@@ -210,6 +210,7 @@ export const MODULE_12: Module = {
           question: "At the Kerala park, Arjun asks about weekend hobbies. Match each hobby to its German translation:",
           options: ["reading", "travelling", "dancing", "cooking"],
           correctAnswer: ["lesen", "reisen", "tanzen", "kochen"],
+          explanation: "lesen, reisen, tanzen, kochen — hobby verbs drop straight into 'Ich ... gern': Ich lese gern, ich reise gern. Verb + gern = instant hobby sentence.",
           xpReward: 15
         },
         {
@@ -278,10 +279,11 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Hobbies): 'Am Wochenende spiele ich gern Cricket.'",
+          question: "Sprechen Teil 2, topic card 'Hobby' — answer aloud: 'Am Wochenende spiele ich gern Cricket.'",
           questionGerman: "Sprechen Sie laut: 'Am Wochenende spiele ich gern Cricket.'",
           correctAnswer: "Am Wochenende spiele ich gern Cricket",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          explanation: "Time first, verb second, gern after the verb. One sentence that scores in Teil 2 — swap in your real hobby.",
+          audioUrl: "/audio/exercises/ex12-1-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -530,9 +532,10 @@ export const MODULE_12: Module = {
         {
           id: "ex12-2-8",
           type: "matching",
-          question: "Match the weather description to its meaning:",
+          question: "Your cousin reports four German weather moods on the call. Match them:",
           options: ["Es ist heiß.", "Es ist windig.", "Es ist bewölkt.", "Es ist neblig."],
           correctAnswer: ["It's hot.", "It's windy.", "It's cloudy.", "It's foggy."],
+          explanation: "'Es ist + adjective' covers the whole forecast: heiß, windig, bewölkt, neblig. Only the rain brings its own verb: es regnet.",
           xpReward: 15
         },
         {
@@ -556,10 +559,11 @@ export const MODULE_12: Module = {
         {
           id: "ex12-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Weather & Seasons): 'Am Wochenende spiele ich gern Cricket.'",
-          questionGerman: "Sprechen Sie laut: 'Am Wochenende spiele ich gern Cricket.'",
-          correctAnswer: "Am Wochenende spiele ich gern Cricket",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Your cousin asks what Kerala looks like today. Report aloud: 'Heute ist es sonnig und warm.'",
+          questionGerman: "Sprechen Sie laut: 'Heute ist es sonnig und warm.'",
+          correctAnswer: "Heute ist es sonnig und warm",
+          explanation: "'es ist + weather word' covers every forecast. Heute ist es... regnet es? Start with the time word, verb stays second.",
+          audioUrl: "/audio/exercises/ex12-2-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -751,7 +755,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-3-2",
           type: "matching",
-          question: "Match the German response to its meaning:",
+          question: "Arjun's invitation lands in the group chat. Match the four possible replies:",
           options: ["Ja, gern!", "Leider kann ich nicht.", "Vielleicht nächstes Mal.", "Auf jeden Fall!"],
           correctAnswer: ["Yes, gladly!", "Unfortunately I can't.", "Maybe next time.", "Definitely!"],
           explanation: "Mastering these social responses helps you avoid coming off as rude or uninterested.",
@@ -832,10 +836,11 @@ export const MODULE_12: Module = {
         {
           id: "ex12-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Making Plans with Friends): 'Am Wochenende spiele ich gern Cricket.'",
-          questionGerman: "Sprechen Sie laut: 'Am Wochenende spiele ich gern Cricket.'",
-          correctAnswer: "Am Wochenende spiele ich gern Cricket",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Pin down the cricket plan — ask Arjun aloud: 'Hast du am Samstag Zeit?'",
+          questionGerman: "Sprechen Sie laut: 'Hast du am Samstag Zeit?'",
+          correctAnswer: "Hast du am Samstag Zeit",
+          explanation: "'Hast du ... Zeit?' is how friends actually make plans. Verb first for yes/no questions — no extra words needed.",
+          audioUrl: "/audio/exercises/ex12-3-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1084,6 +1089,7 @@ export const MODULE_12: Module = {
           question: "Put this weil-clause in correct order: 'because I want to study in Germany'",
           options: ["möchte", "in", "ich", "weil", "studieren", "Deutschland"],
           correctAnswer: ["weil", "ich", "in", "Deutschland", "studieren", "möchte"],
+          explanation: "weil kicks the verb to the very END: weil ich in Deutschland studieren MÖCHTE. The one A1 clause where verb-second does not apply.",
           xpReward: 20
         },
         {
@@ -1123,10 +1129,11 @@ export const MODULE_12: Module = {
         {
           id: "ex12-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Invitations): 'Am Wochenende spiele ich gern Cricket.'",
-          questionGerman: "Sprechen Sie laut: 'Am Wochenende spiele ich gern Cricket.'",
-          correctAnswer: "Am Wochenende spiele ich gern Cricket",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Your turn to host — invite Priya aloud: 'Kommst du am Samstag zu meiner Party?'",
+          questionGerman: "Sprechen Sie laut: 'Kommst du am Samstag zu meiner Party?'",
+          correctAnswer: "Kommst du am Samstag zu meiner Party",
+          explanation: "Invitation = verb-first question + day + zu meiner/meinem. The exact pattern Schreiben Teil 2 wants in writing, too.",
+          audioUrl: "/audio/exercises/ex12-4-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

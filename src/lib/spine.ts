@@ -7,7 +7,7 @@
 // WEAK unlocks the next module, FAIL prescribes recovery first.
 
 import { ALL_MODULES } from '@/lib/content/modules';
-import type { LessonProgress, SpineCheckpointResult } from '@/lib/store';
+import type { LessonProgress, MockGateResult, SpineCheckpointResult } from '@/lib/store';
 import { module1MissionCards, type Module1MissionId } from '@/lib/missions/module1';
 import { module2MissionCards, type Module2MissionId } from '@/lib/missions/module2';
 import {
@@ -16,6 +16,8 @@ import {
   scoreModule1Checkpoint,
 } from '@/lib/missions/module1Checkpoint';
 import { SPINE_CHECKPOINTS, findRecoveryCards } from '@/lib/spine-checkpoints';
+import { SPINE_SOURCE_MODULE_IDS } from '@/lib/spine-map';
+import { getMockGatesForModule } from '@/lib/mocks';
 
 export type SpineModuleDef = {
   id: number;
@@ -30,14 +32,14 @@ export type SpineModuleDef = {
 };
 
 export const SPINE_MODULES: SpineModuleDef[] = [
-  { id: 1, title: 'First German moment', promise: 'Greet, thank, and survive your first classroom exchange.', milestone: 'First real conversation', icon: '👋', color: '#e94560', sourceModuleIds: [], checkpointHref: '/missions/module-1/checkpoint' },
-  { id: 2, title: 'Identity, numbers, time', promise: 'Introduce yourself like a Goethe candidate. Catch numbers and times.', milestone: 'Sprechen Teil 1 foundation', icon: '🪪', color: '#d4a520', sourceModuleIds: [3], checkpointHref: '/course/2/checkpoint' },
-  { id: 3, title: 'People, home, daily life', promise: 'Talk about your family, your home, and your real day.', milestone: 'Daily-life speaking + reading', icon: '🏠', color: '#27ae60', sourceModuleIds: [4, 5, 8], checkpointHref: '/course/3/checkpoint' },
-  { id: 4, title: 'Food, shopping, money', promise: 'Order, buy, and understand prices without panic.', milestone: 'Half-mock gate', icon: '🍛', color: '#f97316', sourceModuleIds: [6, 7], checkpointHref: '/course/4/checkpoint' },
-  { id: 5, title: 'Travel, services, health', promise: 'Directions, tickets, appointments, and the doctor.', milestone: 'Schreiben Teil 1 forms', icon: '🚆', color: '#3b82f6', sourceModuleIds: [9, 10], checkpointHref: '/course/5/checkpoint' },
-  { id: 6, title: 'Work, free time, messages', promise: 'Talk about your work and hobbies. Write the 30-word message.', milestone: 'Schreiben Teil 2 + full mock gate', icon: '💼', color: '#a855f7', sourceModuleIds: [11, 12], checkpointHref: '/course/6/checkpoint' },
-  { id: 7, title: 'Official Germany', promise: 'Forms, notices, and office German without fear.', milestone: 'Exam-level reading', icon: '📋', color: '#14b8a6', sourceModuleIds: [14, 17], checkpointHref: '/course/7/checkpoint' },
-  { id: 8, title: 'Goethe A1 Bootcamp', promise: 'Timed mocks, the speaking simulation, and your 7-day plan.', milestone: 'Exam-ready', icon: '🎓', color: '#f1d27a', sourceModuleIds: [18], checkpointHref: '/course/8/checkpoint' },
+  { id: 1, title: 'First German moment', promise: 'Greet, thank, and survive your first classroom exchange.', milestone: 'First real conversation', icon: '👋', color: '#e94560', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[1], checkpointHref: '/missions/module-1/checkpoint' },
+  { id: 2, title: 'Identity, numbers, time', promise: 'Introduce yourself like a Goethe candidate. Catch numbers and times.', milestone: 'Sprechen Teil 1 foundation', icon: '🪪', color: '#d4a520', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[2], checkpointHref: '/course/2/checkpoint' },
+  { id: 3, title: 'People, home, daily life', promise: 'Talk about your family, your home, and your real day.', milestone: 'Daily-life speaking + reading', icon: '🏠', color: '#27ae60', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[3], checkpointHref: '/course/3/checkpoint' },
+  { id: 4, title: 'Food, shopping, money', promise: 'Order, buy, and understand prices without panic.', milestone: 'Mini-mock gate', icon: '🍛', color: '#f97316', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[4], checkpointHref: '/course/4/checkpoint' },
+  { id: 5, title: 'Travel, services, health', promise: 'Directions, tickets, appointments, and the doctor.', milestone: 'Schreiben Teil 1 forms', icon: '🚆', color: '#3b82f6', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[5], checkpointHref: '/course/5/checkpoint' },
+  { id: 6, title: 'Work, free time, messages', promise: 'Talk about your work and hobbies. Write the 30-word message.', milestone: 'Schreiben Teil 2 + half-mock gate', icon: '💼', color: '#a855f7', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[6], checkpointHref: '/course/6/checkpoint' },
+  { id: 7, title: 'Official Germany', promise: 'Forms, notices, and office German without fear.', milestone: 'Exam-level reading + full mock', icon: '📋', color: '#14b8a6', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[7], checkpointHref: '/course/7/checkpoint' },
+  { id: 8, title: 'Goethe A1 Bootcamp', promise: 'Timed mocks, the speaking simulation, and your 7-day plan.', milestone: 'Exam-ready', icon: '🎓', color: '#f1d27a', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[8], checkpointHref: '/course/8/checkpoint' },
 ];
 
 export type SpineBlock = {
@@ -65,6 +67,7 @@ export type SpineInputs = {
   module1MissionIds: Module1MissionId[];
   module2MissionIds: Module2MissionId[];
   module1Checkpoint: Module1CheckpointStored | null;
+  mockResults: Record<string, MockGateResult>;
 };
 
 export type SpineModuleView = SpineModuleDef & {
@@ -127,21 +130,26 @@ function buildBlocks(def: SpineModuleDef, inputs: SpineInputs): SpineBlock[] {
         id: `lesson-${lesson.id}`,
         kind: 'lesson',
         title: lesson.title,
-        href: `/learn/${source.id}/${lesson.id}`,
+        // Immersive AdventurePlayer is the spine lesson player (DECISIONS #9);
+        // the /learn textbook player redirects here.
+        href: `/play/${source.id}/${lesson.id}`,
         duration: lesson.duration,
         done: lessonDone(inputs.completedLessons, lesson.id),
       });
     }
   }
 
-  if (def.id === 8) {
+  // Mock cadence: mini after M4, half after M6, full after M7, two finals in M8.
+  // A gate counts as done once a result is saved and the band is above not-ready.
+  for (const gate of getMockGatesForModule(def.id)) {
+    const result = inputs.mockResults[gate.id];
     blocks.push({
-      id: 'mock-tests',
+      id: `mock-${gate.id}`,
       kind: 'mock',
-      title: 'Timed full mocks (Übungstest 1-8)',
-      href: '/tests',
-      done: false,
-      optional: true,
+      title: gate.title,
+      href: `/tests/${gate.testId}?gate=${gate.id}`,
+      duration: gate.durationLabel,
+      done: !!result && result.band !== 'not-ready',
     });
   }
 

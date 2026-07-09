@@ -5,6 +5,7 @@
 import type { Lesson, Exercise, VocabItem } from '@/lib/content/types';
 import type { GameMoment, GameChoice } from './types';
 import { SCENE_IMAGES, pickGameType, pickDiscoveryGame } from './types';
+import { lessonSceneImage } from '@/lib/scene-image';
 
 // Short Kuttan lines — max 50 chars. Punchy, not paragraphs.
 const KUTTAN_INTROS = [
@@ -62,7 +63,9 @@ export function buildGameSequence(
   const moments: GameMoment[] = [];
   const scene = lesson.storyScene;
   const sceneType = scene?.setting.sceneType || 'classroom';
-  const sceneImage = SCENE_IMAGES[sceneType] || SCENE_IMAGES.classroom;
+  // Per-lesson painterly backdrop (DECISIONS #9); GameRenderer's <img onError>
+  // falls back to the sceneType stock image.
+  const sceneImage = lessonSceneImage(lesson.id, sceneType, !!scene);
   let momentId = 0;
   const id = () => `m-${momentId++}`;
 

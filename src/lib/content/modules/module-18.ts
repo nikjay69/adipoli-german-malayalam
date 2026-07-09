@@ -237,10 +237,11 @@ export const MODULE_18: Module = {
         {
           id: "ex18-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Schreiben Teil 1 — Formulare ausfüllen): 'Können Sie mir bitte helfen?'",
-          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
-          correctAnswer: "Können Sie mir bitte helfen",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Read the form fields aloud like a pre-flight checklist: 'Vorname, Nachname, Straße, Wohnort.'",
+          questionGerman: "Sprechen Sie laut: 'Vorname, Nachname, Straße, Wohnort.'",
+          correctAnswer: "Vorname, Nachname, Straße, Wohnort",
+          explanation: "Vorname = first name, Nachname = family name — the #1 swap error on real forms. Saying the labels kills the confusion.",
+          audioUrl: "/audio/exercises/ex18-1-prod-speaking-model.mp3",
           xpReward: 25
         },
         {
@@ -555,10 +556,11 @@ export const MODULE_18: Module = {
         {
           id: "ex18-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Schreiben Teil 2 — Kurze Nachrichten): 'Können Sie mir bitte helfen?'",
-          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
-          correctAnswer: "Können Sie mir bitte helfen",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "The three points are the whole game. Say the rule aloud: 'Ich schreibe zu allen drei Punkten.'",
+          questionGerman: "Sprechen Sie laut: 'Ich schreibe zu allen drei Punkten.'",
+          correctAnswer: "Ich schreibe zu allen drei Punkten",
+          explanation: "Miss one content point and the message fails, however pretty the German. All three points, every time.",
+          audioUrl: "/audio/exercises/ex18-2-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -865,10 +867,11 @@ export const MODULE_18: Module = {
         {
           id: "ex18-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Sprechen Teil 1 — Sich vorstellen): 'Können Sie mir bitte helfen?'",
-          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
-          correctAnswer: "Können Sie mir bitte helfen",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Teil 1, examiner nods at you — deliver it aloud: 'Ich heiße Kuttan, ich komme aus Indien und ich wohne in Thrissur.'",
+          questionGerman: "Sprechen Sie laut: 'Ich heiße Kuttan, ich komme aus Indien und ich wohne in Thrissur.'",
+          correctAnswer: "Ich heiße Kuttan, ich komme aus Indien und ich wohne in Thrissur",
+          explanation: "Name, origin, home — the Teil 1 triple. Swap in your real details and rehearse until it's 15 smooth seconds.",
+          audioUrl: "/audio/exercises/ex18-3-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1176,10 +1179,11 @@ export const MODULE_18: Module = {
         {
           id: "ex18-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Sprechen Teil 2 — Fragen stellen und beantworten): 'Können Sie mir bitte helfen?'",
-          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
-          correctAnswer: "Können Sie mir bitte helfen",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Teil 2 word card: 'Wochenende'. Form the question aloud: 'Was machen Sie am Wochenende?'",
+          questionGerman: "Sprechen Sie laut: 'Was machen Sie am Wochenende?'",
+          correctAnswer: "Was machen Sie am Wochenende",
+          explanation: "Teil 2 tests asking as much as answering. W-word + verb + Sie + card word = a correct question from any card.",
+          audioUrl: "/audio/exercises/ex18-4-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1483,6 +1487,7 @@ export const MODULE_18: Module = {
           questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte einen Kugelschreiber leihen?'",
           correctAnswer: "Können Sie mir bitte einen Kugelschreiber leihen",
           explanation: "This is the exact Sprechen Teil 3 skill: situation card → polite request. Short, complete, and A1-safe.",
+          audioUrl: "/audio/exercises/ex18-5-13-model.mp3",
           xpReward: 25
         },
         {
@@ -1888,6 +1893,7 @@ export const MODULE_18: Module = {
           questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
           correctAnswer: "Können Sie mir bitte helfen",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex18-6-prod-speaking-model.mp3",
           xpReward: 25
         },
         {
@@ -2054,10 +2060,11 @@ export const MODULE_18: Module = {
         {
           id: "ex18-7-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Adipoli A1 Conclusion — Celebration!): 'Können Sie mir bitte helfen?'",
-          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte helfen?'",
-          correctAnswer: "Können Sie mir bitte helfen",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Say it loud, because it's true now: 'Ich bin bereit für die Prüfung!'",
+          questionGerman: "Sprechen Sie laut: 'Ich bin bereit für die Prüfung!'",
+          correctAnswer: "Ich bin bereit für die Prüfung",
+          explanation: "bereit für + accusative — and yes, you are. Book the exam while the confidence is fresh.",
+          audioUrl: "/audio/exercises/ex18-7-prod-speaking-model.mp3",
           xpReward: 25
         },
         {
@@ -2094,6 +2101,7 @@ export const MODULE_18: Module = {
           questionGerman: "Sagen Sie: 'Ich lerne weiter Deutsch.'",
           correctAnswer: "Ich lerne weiter Deutsch",
           explanation: "A1 speaking confidence means one clear, complete sentence. This keeps the Germany goal as future preparation, not today's location.",
+          audioUrl: "/audio/exercises/ex18-7-final-speaking-checklist-model.mp3",
           xpReward: 25
         },
         {

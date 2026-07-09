@@ -177,7 +177,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-1-1",
           type: "multiple-choice",
-          question: "How do you say 'I play' in German?",
+          question: "Kuttan starts a verb journal at his desk. First entry — 'I play' in German:",
           options: ["Ich spiele", "Ich spielst", "Ich spielen", "Ich spielt"],
           correctAnswer: "Ich spiele",
           explanation:
@@ -207,9 +207,10 @@ export const MODULE_5: Module = {
         {
           id: "ex5-1-4",
           type: "matching",
-          question: "Match each pronoun with the correct form of 'machen' (to do/make):",
+          question: "Verb journal, page two — machen. Match each pronoun to its form:",
           options: ["ich", "du", "wir"],
           correctAnswer: ["mache", "machst", "machen"],
+          explanation: "machen follows the universal pattern: ich mache (-e), du machst (-st), wir machen (-en). Crack one regular verb and you've cracked thousands.",
           xpReward: 15
         },
         {
@@ -224,16 +225,6 @@ export const MODULE_5: Module = {
           imageUrl: "/images/home_office.png"
         },
         {
-          id: "ex5-1-6",
-          type: "multiple-choice",
-          question: "What is the correct form: 'Ihr _____ Fußball.' (spielen)?",
-          options: ["spielen", "spielt", "spielst", "spiele"],
-          correctAnswer: "spielt",
-          explanation:
-            "'Ihr' (you all) gets -t, same as er/sie/es. 'Ihr spielt' = 'er spielt'. Context tells you who's doing the action. Two endings that match = less memorization!",
-          xpReward: 10
-        },
-        {
           id: "ex5-1-7",
           type: "ordering",
           question: "Arrange to form a correct sentence: 'er / gut / kocht'",
@@ -245,7 +236,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-1-8",
           type: "dictation",
-          question: "Listen and type: Ich lerne Deutsch.",
+          question: "Kuttan records a line for his study log. Listen and type the sentence you hear.",
           correctAnswer: "Ich lerne Deutsch",
           explanation: "Wunderbar! You are doing exactly that right now. Remember to capitalize 'Deutsch' as it is a noun!",
           xpReward: 25,
@@ -254,7 +245,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-1-9",
           type: "free-text",
-          question: "Translate to German: 'He is cooking at home.'",
+          question: "Diary entry about Arjun: write 'He is cooking at home' in German.",
           correctAnswer: "Er kocht zu Hause",
           explanation: "Great! 'zu Hause' means 'at home'. Remember the verb position (2nd).",
           xpReward: 30
@@ -263,10 +254,21 @@ export const MODULE_5: Module = {
         {
           id: "ex5-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Regular Verbs Present Tense): 'Morgens trinke ich Tee.'",
-          questionGerman: "Sprechen Sie laut: 'Morgens trinke ich Tee.'",
-          correctAnswer: "Morgens trinke ich Tee",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Close the verb journal and say today's entry aloud: 'Ich lerne Deutsch und ich arbeite zu Hause.'",
+          questionGerman: "Sprechen Sie laut: 'Ich lerne Deutsch und ich arbeite zu Hause.'",
+          correctAnswer: "Ich lerne Deutsch und ich arbeite zu Hause",
+          explanation: "Two regular verbs, both with the ich -e ending. Hear yourself say them and the conjugation table becomes muscle, not memory.",
+          audioUrl: "/audio/exercises/ex5-1-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex5-1-spk2",
+          type: "speaking",
+          question: "Repair the classic: Kuttan writes 'Ich bin lerne Deutsch.' One verb too many! Say the clean sentence aloud: 'Ich lerne Deutsch.'",
+          questionGerman: "Sprechen Sie laut: 'Ich lerne Deutsch.'",
+          correctAnswer: "Ich lerne Deutsch",
+          explanation: "English 'I am learning' tempts you into 'Ich bin lerne' — German uses ONE verb: Ich lerne. The #1 transfer error for Malayali learners, fixed for good.",
+          audioUrl: "/audio/exercises/ex5-1-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -530,7 +532,7 @@ export const MODULE_5: Module = {
           id: "ex5-2-1",
           type: "ordering",
           question:
-            "Put these morning activities in a logical order:",
+            "It's 6 AM in Thrissur and the mixie is already roaring. Put Kuttan's morning moves in order:",
           options: ["frühstücken", "aufstehen", "duschen", "Zähne putzen"],
           correctAnswer: ["aufstehen", "duschen", "Zähne putzen", "frühstücken"],
           explanation:
@@ -550,7 +552,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-2-3",
           type: "multiple-choice",
-          question: "What does 'Ich frühstücke um 8 Uhr' mean?",
+          question: "Kuttan narrates his morning aloud: 'Ich frühstücke um 8 Uhr.' What is he telling you?",
           options: [
             "I have breakfast at 8 o'clock",
             "I go to school at 8 o'clock",
@@ -565,7 +567,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-2-4",
           type: "multiple-choice",
-          question: "Which word means 'then' or 'after that'?",
+          question: "Kuttan chains his routine like a story: 'Zuerst dusche ich, ...' Which word continues it with 'then'?",
           options: ["zuerst", "dann", "um", "immer"],
           correctAnswer: "dann",
           explanation:
@@ -585,15 +587,16 @@ export const MODULE_5: Module = {
         {
           id: "ex5-2-6",
           type: "matching",
-          question: "Match the German morning activity with its English meaning:",
+          question: "Kuttan mimes his morning routine on the video call and his cousin shouts the German. Match each action:",
           options: ["duschen", "Zähne putzen", "sich anziehen", "frühstücken"],
           correctAnswer: ["to shower", "to brush teeth", "to get dressed", "to have breakfast"],
+          explanation: "duschen, Zähne putzen, sich anziehen, frühstücken — say each one aloud while you actually do it tomorrow morning. Routine + German = memory glue.",
           xpReward: 15
         },
         {
           id: "ex5-2-7",
           type: "dictation",
-          question: "Listen and type: Ich stehe um 7 Uhr auf.",
+          question: "Kuttan's recorded alarm voice note plays. Listen and type the sentence you hear.",
           correctAnswer: "Ich stehe um 7 Uhr auf",
           explanation: "Perfect! Did you hear how the prefix 'auf' comes at the very end? That's the separable verb rule!",
           xpReward: 25,
@@ -602,7 +605,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-2-8",
           type: "free-text",
-          question: "Translate to German: 'I am brushing my teeth.'",
+          question: "Toothbrush in hand, Kuttan texts the study group in German: 'I am brushing my teeth.' Write it.",
           correctAnswer: "Ich putze mir die Zähne",
           explanation: "Correct! Note the reflexive 'mir' and the capitalization of 'Zähne'.",
           xpReward: 30
@@ -611,10 +614,21 @@ export const MODULE_5: Module = {
         {
           id: "ex5-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Morning Routine): 'Morgens trinke ich Tee.'",
+          question: "Chai first, German second — narrate your real morning aloud: 'Morgens trinke ich Tee.'",
           questionGerman: "Sprechen Sie laut: 'Morgens trinke ich Tee.'",
           correctAnswer: "Morgens trinke ich Tee",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          explanation: "Notice the verb stayed in position 2: MORGENS trinke ICH. Start a sentence with a time word and the subject hops behind the verb.",
+          audioUrl: "/audio/exercises/ex5-2-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex5-2-spk2",
+          type: "speaking",
+          question: "Say your wake-up time aloud, boomerang prefix and all: 'Ich stehe um sechs Uhr auf.'",
+          questionGerman: "Sprechen Sie laut: 'Ich stehe um sechs Uhr auf.'",
+          correctAnswer: "Ich stehe um sechs Uhr auf",
+          explanation: "The prefix 'auf' boomerangs to the end — drop it and you're just standing somewhere. Sprechen examiners listen for exactly this.",
+          audioUrl: "/audio/exercises/ex5-2-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -887,7 +901,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-3-4",
           type: "multiple-choice",
-          question: "What does 'Der Film fängt um 8 Uhr an' mean?",
+          question: "Arjun checks tonight's cinema listings and reads out: 'Der Film fängt um 8 Uhr an.' What did he find out?",
           options: [
             "The film starts at 8 o'clock",
             "The film ends at 8 o'clock",
@@ -902,9 +916,10 @@ export const MODULE_5: Module = {
         {
           id: "ex5-3-5",
           type: "matching",
-          question: "Match the separable verb to its meaning:",
+          question: "Kuttan plans his imaginary German Saturday: shop, tidy, TV, friends. Match each separable verb to its meaning:",
           options: ["aufräumen", "einkaufen", "fernsehen", "mitkommen"],
           correctAnswer: ["to tidy up", "to shop", "to watch TV", "to come along"],
+          explanation: "All four are separable: auf|räumen, ein|kaufen, fern|sehen, mit|kommen. Spot the stressed prefix and you've spotted the split.",
           xpReward: 15
         },
         {
@@ -930,7 +945,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-3-8",
           type: "dictation",
-          question: "Listen and type: Ich kaufe im Supermarkt ein.",
+          question: "Supermarket rehearsal: one sentence plays over the practice audio. Listen and type what you hear.",
           correctAnswer: "Ich kaufe im Supermarkt ein",
           explanation: "Super! 'einkaufen' is a team. 'Ich kaufe... ein.' The prefix 'ein' marks the end of the action.",
           xpReward: 25,
@@ -948,10 +963,21 @@ export const MODULE_5: Module = {
         {
           id: "ex5-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Separable Verbs): 'Morgens trinke ich Tee.'",
-          questionGerman: "Sprechen Sie laut: 'Morgens trinke ich Tee.'",
-          correctAnswer: "Morgens trinke ich Tee",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Trolley ready — narrate the supermarket mission aloud: 'Ich kaufe im Supermarkt ein.'",
+          questionGerman: "Sprechen Sie laut: 'Ich kaufe im Supermarkt ein.'",
+          correctAnswer: "Ich kaufe im Supermarkt ein",
+          explanation: "Conjugated verb in position 2, prefix 'ein' at the very end. If your sentence ends without the prefix, the verb is broken.",
+          audioUrl: "/audio/exercises/ex5-3-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex5-3-spk2",
+          type: "speaking",
+          question: "Invite Priya along on the supermarket run — ask aloud: 'Kommst du mit?'",
+          questionGerman: "Sprechen Sie laut: 'Kommst du mit?'",
+          correctAnswer: "Kommst du mit",
+          explanation: "'Kommst du mit?' is the most useful two-second invitation in German. Verb first, prefix last — even in questions the prefix holds the door.",
+          audioUrl: "/audio/exercises/ex5-3-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1149,7 +1175,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-4-1",
           type: "ordering",
-          question: "Put these daily activities in chronological order:",
+          question: "Night review: Kuttan replays his whole day before sleep. Put it back in order:",
           options: [
             "zu Abend essen",
             "frühstücken",
@@ -1181,7 +1207,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-4-3",
           type: "multiple-choice",
-          question: "What does 'Ich esse zu Mittag' mean?",
+          question: "In his night review Kuttan mutters: 'Ich esse zu Mittag.' What part of the day is he replaying?",
           options: [
             "I eat lunch",
             "I eat breakfast",
@@ -1197,7 +1223,7 @@ export const MODULE_5: Module = {
           id: "ex5-4-4",
           type: "multiple-choice",
           question:
-            "Choose the correct sentence: 'In the evening I watch TV.'",
+            "Last diary line of the night — pick the correct German for 'In the evening I watch TV':",
           options: [
             "Abends sehe ich fern.",
             "Abends ich fernsehe.",
@@ -1222,15 +1248,16 @@ export const MODULE_5: Module = {
         {
           id: "ex5-4-6",
           type: "matching",
-          question: "Match the time of day to its German word:",
+          question: "Kuttan sorts his day into German time-of-day labels. Match them:",
           options: ["morgens", "mittags", "nachmittags", "abends"],
           correctAnswer: ["in the morning", "at noon", "in the afternoon", "in the evening"],
+          explanation: "morgens, mittags, nachmittags, abends — the -s ending means 'every morning/noon/afternoon/evening'. They're the glue of every routine story.",
           xpReward: 15
         },
         {
           id: "ex5-4-7",
           type: "dictation",
-          question: "Listen and type: Um 12 Uhr esse ich zu Mittag.",
+          question: "One line from today's review plays back. Listen and type the sentence you hear.",
           correctAnswer: "Um 12 Uhr esse ich zu Mittag",
           explanation: "Great job! Note the inversion: when 'Um 12 Uhr' starts the sentence, the verb 'esse' comes second, then the subject 'ich'.",
           xpReward: 25,
@@ -1239,7 +1266,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-4-8",
           type: "free-text",
-          question: "Translate to German: 'In the evening I watch TV.' (In the evening = Abends, watch TV = fernsehen)",
+          question: "Finish the diary in German: 'In the evening I watch TV.' (watch TV = fernsehen)",
           correctAnswer: "Abends sehe ich fern",
           explanation: "Wunderbar! 'fernsehen' splits into 'sehe... fern'.",
           xpReward: 30
@@ -1248,10 +1275,21 @@ export const MODULE_5: Module = {
         {
           id: "ex5-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (My Day - From Morning to Night): 'Morgens trinke ich Tee.'",
-          questionGerman: "Sprechen Sie laut: 'Morgens trinke ich Tee.'",
-          correctAnswer: "Morgens trinke ich Tee",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Wrap the night review — say your day in one line: 'Morgens lerne ich Deutsch und abends sehe ich fern.'",
+          questionGerman: "Sprechen Sie laut: 'Morgens lerne ich Deutsch und abends sehe ich fern.'",
+          correctAnswer: "Morgens lerne ich Deutsch und abends sehe ich fern",
+          explanation: "Time word first, verb second, prefix at the end — this one sentence carries the whole module. It's also a ready-made Sprechen Teil 2 answer.",
+          audioUrl: "/audio/exercises/ex5-4-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex5-4-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's sleepy German: he mumbles 'Abends ich sehe fern.' Verb in position 2! Say it right: 'Abends sehe ich fern.'",
+          questionGerman: "Sprechen Sie laut: 'Abends sehe ich fern.'",
+          correctAnswer: "Abends sehe ich fern",
+          explanation: "Start with a time word and the verb still claims position 2: Abends SEHE ich fern. The single most-tested word-order rule at A1.",
+          audioUrl: "/audio/exercises/ex5-4-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1447,7 +1485,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-5-1",
           type: "ordering",
-          question: "Put the days of the week in order, starting with Monday:",
+          question: "Frau Weber hands out blank weekly planners. Write the days across the top, Monday first:",
           options: [
             "Freitag",
             "Mittwoch",
@@ -1466,6 +1504,7 @@ export const MODULE_5: Module = {
             "Samstag",
             "Sonntag"
           ],
+          explanation: "Montag to Sonntag — Mittwoch sits in the middle (Mitte + Woche). And note: German weeks start on Montag, not Sunday!",
           xpReward: 15
         },
         {
@@ -1481,7 +1520,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-5-3",
           type: "multiple-choice",
-          question: "Which word means 'sometimes'?",
+          question: "Kuttan marks how often he cooks in his planner. Which German word means 'sometimes'?",
           options: ["immer", "oft", "manchmal", "nie"],
           correctAnswer: "manchmal",
           explanation:
@@ -1492,7 +1531,7 @@ export const MODULE_5: Module = {
           id: "ex5-5-4",
           type: "ordering",
           question:
-            "Order these frequency adverbs from most frequent to least frequent:",
+            "Frau Weber draws a frequency ladder on the board. Order the adverbs from always down to never:",
           options: ["manchmal", "immer", "nie", "selten", "oft"],
           correctAnswer: ["immer", "oft", "manchmal", "selten", "nie"],
           explanation:
@@ -1513,7 +1552,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-5-6",
           type: "multiple-choice",
-          question: "How do you say 'I never cook' in German?",
+          question: "Kuttan admits it to the whole class: he never cooks. How does he say 'I never cook'?",
           options: [
             "Ich koche nie.",
             "Ich nie koche.",
@@ -1546,7 +1585,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-5-9",
           type: "dictation",
-          question: "Listen and type: Am Montag arbeite ich.",
+          question: "Frau Weber reads one planner entry aloud. Listen and type the sentence you hear.",
           correctAnswer: "Am Montag arbeite ich",
           explanation: "Perfect! On Monday = Am Montag. And don't forget the verb-second rule!",
           xpReward: 25,
@@ -1564,10 +1603,21 @@ export const MODULE_5: Module = {
         {
           id: "ex5-5-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Telling About Your Week): 'Morgens trinke ich Tee.'",
-          questionGerman: "Sprechen Sie laut: 'Morgens trinke ich Tee.'",
-          correctAnswer: "Morgens trinke ich Tee",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Present your planner to the class — say aloud: 'Am Montag arbeite ich und am Wochenende schlafe ich lange.'",
+          questionGerman: "Sprechen Sie laut: 'Am Montag arbeite ich und am Wochenende schlafe ich lange.'",
+          correctAnswer: "Am Montag arbeite ich und am Wochenende schlafe ich lange",
+          explanation: "Two inverted sentences joined by 'und' — exactly the shape of a strong Sprechen Teil 2 answer about your week.",
+          audioUrl: "/audio/exercises/ex5-5-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex5-5-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's planner line: he reads out 'Am Samstag ich gehe einkaufen.' Verb second! Say it right: 'Am Samstag gehe ich einkaufen.'",
+          questionGerman: "Sprechen Sie laut: 'Am Samstag gehe ich einkaufen.'",
+          correctAnswer: "Am Samstag gehe ich einkaufen",
+          explanation: "After 'Am Samstag' the verb refuses to wait: gehe comes immediately, ich after. This inversion is the difference between a pass and 'understandable but wrong'.",
+          audioUrl: "/audio/exercises/ex5-5-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

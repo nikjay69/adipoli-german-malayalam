@@ -196,9 +196,10 @@ export const MODULE_6: Module = {
         {
           id: "ex6-1-1",
           type: "matching",
-          question: "Match the German food to its English meaning:",
+          question: "Kuttan labels the Goethe Kochi canteen counter in German. Match each food label:",
           options: ["das Brot", "der Reis", "das Gemüse", "der Käse", "das Obst"],
           correctAnswer: ["bread", "rice", "vegetables", "cheese", "fruit"],
+          explanation: "das Brot, der Reis, das Gemüse, der Käse, das Obst — learn every food WITH its article. You'll need it the second you order 'einen/ein/eine' anything.",
           xpReward: 15
         },
         {
@@ -277,10 +278,11 @@ export const MODULE_6: Module = {
         {
           id: "ex6-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Common Foods): 'Ich möchte Reis und Fisch, bitte.'",
+          question: "Lunch counter at the Goethe Kochi canteen — order aloud: 'Ich möchte Reis und Fisch, bitte.'",
           questionGerman: "Sprechen Sie laut: 'Ich möchte Reis und Fisch, bitte.'",
           correctAnswer: "Ich möchte Reis und Fisch, bitte",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          explanation: "'Ich möchte ..., bitte' is the politest food order in German — and Reis und Fisch is basically home. Say it until it's automatic.",
+          audioUrl: "/audio/exercises/ex6-1-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -515,9 +517,10 @@ export const MODULE_6: Module = {
         {
           id: "ex6-2-1",
           type: "matching",
-          question: "Match the German drink to its English meaning:",
+          question: "Chaya break: today the canteen drinks board is German-only. Match the drinks:",
           options: ["der Kaffee", "der Tee", "das Wasser", "die Milch", "der Saft"],
           correctAnswer: ["coffee", "tea", "water", "milk", "juice"],
+          explanation: "Most drinks are masculine (der Kaffee, der Tee, der Saft); das Wasser and die Milch are the rebels. That's why it's 'einen Kaffee' but 'ein Wasser'.",
           xpReward: 15
         },
         {
@@ -586,10 +589,11 @@ export const MODULE_6: Module = {
         {
           id: "ex6-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Drinks): 'Ich möchte Reis und Fisch, bitte.'",
-          questionGerman: "Sprechen Sie laut: 'Ich möchte Reis und Fisch, bitte.'",
-          correctAnswer: "Ich möchte Reis und Fisch, bitte",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "The canteen chechi points at the drinks fridge. Order yours aloud: 'Ich möchte einen Tee, bitte.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte einen Tee, bitte.'",
+          correctAnswer: "Ich möchte einen Tee, bitte",
+          explanation: "der Tee → einen Tee after möchten. Every drink order drills the accusative without you noticing.",
+          audioUrl: "/audio/exercises/ex6-2-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -930,7 +934,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-3-7",
           type: "matching",
-          question: "Match the German restaurant phrase to its meaning:",
+          question: "Restaurant rehearsal: match each phrase to the moment you'd actually use it:",
           options: [
             "Die Rechnung, bitte!",
             "Einen Tisch für zwei",
@@ -943,6 +947,7 @@ export const MODULE_6: Module = {
             "Pay, please! / Check, please!",
             "Together or separate?"
           ],
+          explanation: "'Einen Tisch für zwei' gets you seated; 'Die Rechnung, bitte!' and 'Zahlen, bitte!' both end the meal — the second is the casual one.",
           xpReward: 15
         },
         {
@@ -966,10 +971,11 @@ export const MODULE_6: Module = {
         {
           id: "ex6-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (At the Restaurant): 'Ich möchte Reis und Fisch, bitte.'",
-          questionGerman: "Sprechen Sie laut: 'Ich möchte Reis und Fisch, bitte.'",
-          correctAnswer: "Ich möchte Reis und Fisch, bitte",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "End of the meal at the imagined Berlin restaurant — call for the bill aloud: 'Ich möchte bitte zahlen.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte bitte zahlen.'",
+          correctAnswer: "Ich möchte bitte zahlen",
+          explanation: "'Ich möchte bitte zahlen' gets you the bill anywhere in Germany. Modal verb + infinitive at the end — the pattern you'll use daily.",
+          audioUrl: "/audio/exercises/ex6-3-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1227,7 +1233,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-4-4",
           type: "matching",
-          question: "Match the expression to its use:",
+          question: "Curry three ways — match each sentence to what Kuttan actually means:",
           options: [
             "Ich mag Curry.",
             "Ich esse gern Curry.",
@@ -1238,6 +1244,7 @@ export const MODULE_6: Module = {
             "I enjoy eating curry (action).",
             "I would like curry (right now)."
           ],
+          explanation: "mag = like it (general), esse gern = enjoy eating it, möchte = want it NOW. Mix up möchte and mag and you've ordered a curry you only meant to praise.",
           xpReward: 15
         },
         {
@@ -1286,10 +1293,11 @@ export const MODULE_6: Module = {
         {
           id: "ex6-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Likes & Dislikes): 'Ich möchte Reis und Fisch, bitte.'",
-          questionGerman: "Sprechen Sie laut: 'Ich möchte Reis und Fisch, bitte.'",
-          correctAnswer: "Ich möchte Reis und Fisch, bitte",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Frau Weber asks what you actually eat. Tell the truth aloud: 'Ich esse gern Reis, aber ich esse nicht gern Brot.'",
+          questionGerman: "Sprechen Sie laut: 'Ich esse gern Reis, aber ich esse nicht gern Brot.'",
+          correctAnswer: "Ich esse gern Reis, aber ich esse nicht gern Brot",
+          explanation: "gern after the verb = 'like to'. The 'aber' contrast sentence is a ready-made Sprechen Teil 2 answer about food.",
+          audioUrl: "/audio/exercises/ex6-4-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1596,9 +1604,10 @@ export const MODULE_6: Module = {
         {
           id: "ex6-5-6",
           type: "matching",
-          question: "Match nominative → accusative:",
+          question: "The waiter is waiting — flip each article into its accusative order form:",
           options: ["der → ?", "die → ?", "das → ?", "ein (masc) → ?"],
           correctAnswer: ["den", "die", "das", "einen"],
+          explanation: "Only the masculine moves: der→den, ein→einen. die and das don't change. One moving part — drill it once, use it forever.",
           xpReward: 20
         },
         {
@@ -1666,10 +1675,11 @@ export const MODULE_6: Module = {
         {
           id: "ex6-5-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Accusative Case - Ich nehme EINEN Kaffee): 'Ich möchte Reis und Fisch, bitte.'",
-          questionGerman: "Sprechen Sie laut: 'Ich möchte Reis und Fisch, bitte.'",
-          correctAnswer: "Ich möchte Reis und Fisch, bitte",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Final order of the day — get both articles right aloud: 'Ich nehme einen Kaffee und ein Wasser, bitte.'",
+          questionGerman: "Sprechen Sie laut: 'Ich nehme einen Kaffee und ein Wasser, bitte.'",
+          correctAnswer: "Ich nehme einen Kaffee und ein Wasser, bitte",
+          explanation: "einen Kaffee (der → einen) but ein Wasser (das stays ein). One sentence, the whole accusative survival rule.",
+          audioUrl: "/audio/exercises/ex6-5-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

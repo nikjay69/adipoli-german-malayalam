@@ -186,7 +186,7 @@ export const MODULE_14: Module = {
         {
           id: "ex14-1-1",
           type: "matching",
-          question: "Match the German form field to its English meaning:",
+          question: "Your first German form. Match the 'Core Five' fields before the pen runs dry:",
           options: ["Vorname", "Nachname", "Geburtsdatum", "Geburtsort", "Familienstand"],
           correctAnswer: ["first name", "surname", "date of birth", "place of birth", "marital status"],
           explanation: "These are the 'Core Five'. You will fill these out hundreds of times in Germany. 'Vor' means 'before', so Vor-name = Name-before (First name).",
@@ -249,7 +249,7 @@ export const MODULE_14: Module = {
         {
           id: "ex14-1-8",
           type: "matching",
-          question: "Match these address-related German terms to their English meaning:",
+          question: "The address block is next — match the parts before the official sighs:",
           options: ["die Straße", "die Hausnummer", "der Ort", "die Postleitzahl", "die Unterschrift"],
           correctAnswer: ["street", "house number", "city / town", "postal code", "signature"],
           explanation: "Fun fact: In Germany, the Hausnummer ALWAYS comes AFTER the street name (e.g., Mainstreet 5). Don't swap them!",
@@ -276,10 +276,11 @@ export const MODULE_14: Module = {
         {
           id: "ex14-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Filling Out Forms): 'Ich möchte bitte einen Termin machen.'",
-          questionGerman: "Sprechen Sie laut: 'Ich möchte bitte einen Termin machen.'",
-          correctAnswer: "Ich möchte bitte einen Termin machen",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "The form has a field you don't understand. Ask the official aloud: 'Können Sie mir mit dem Formular helfen, bitte?'",
+          questionGerman: "Sprechen Sie laut: 'Können Sie mir mit dem Formular helfen, bitte?'",
+          correctAnswer: "Können Sie mir mit dem Formular helfen, bitte",
+          explanation: "'Können Sie mir ... helfen?' is polite, formal, and unlocks every Amt visit. helfen takes mir — dative.",
+          audioUrl: "/audio/exercises/ex14-1-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -480,7 +481,7 @@ export const MODULE_14: Module = {
         {
           id: "ex14-2-3",
           type: "matching",
-          question: "Match the German office to its function:",
+          question: "Four offices, four jobs. Match who does what before you queue at the wrong one:",
           options: ["Ausländerbehörde", "Bürgeramt", "Rathaus", "Finanzamt"],
           correctAnswer: ["residence permits for foreigners", "address registration & ID cards", "general city administration", "taxes & Steuer-ID"],
           explanation: "Knowing 'Wer macht was' (who does what) saves you hours of traveling to the wrong office!",
@@ -552,10 +553,11 @@ export const MODULE_14: Module = {
         {
           id: "ex14-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (At the Office): 'Ich möchte bitte einen Termin machen.'",
+          question: "Bürgerbüro counter, your number just got called — say aloud: 'Ich möchte bitte einen Termin machen.'",
           questionGerman: "Sprechen Sie laut: 'Ich möchte bitte einen Termin machen.'",
           correctAnswer: "Ich möchte bitte einen Termin machen",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          explanation: "The Termin sentence is the key to official Germany. möchte in position 2, machen at the end, einen because Termin is masculine.",
+          audioUrl: "/audio/exercises/ex14-2-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -748,7 +750,7 @@ export const MODULE_14: Module = {
         {
           id: "ex14-3-3",
           type: "matching",
-          question: "Match the German banking term to its English meaning:",
+          question: "Sparkasse counter vocabulary — match the banking terms:",
           options: ["die Überweisung", "der Geldautomat", "die EC-Karte", "der Kontoauszug", "der Dauerauftrag"],
           correctAnswer: ["bank transfer", "ATM", "debit card", "bank statement", "standing order"],
           explanation: "Vocabulary is money! Knowing 'Überweisung' is key because there is no UPI in Germany—everyone uses bank transfers.",
@@ -820,10 +822,11 @@ export const MODULE_14: Module = {
         {
           id: "ex14-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Opening a Bank Account): 'Ich möchte bitte einen Termin machen.'",
-          questionGerman: "Sprechen Sie laut: 'Ich möchte bitte einen Termin machen.'",
-          correctAnswer: "Ich möchte bitte einen Termin machen",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "At the imagined Sparkasse desk — state your mission aloud: 'Ich möchte ein Konto eröffnen.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte ein Konto eröffnen.'",
+          correctAnswer: "Ich möchte ein Konto eröffnen",
+          explanation: "ein Konto (das) + eröffnen at the end. Say it confidently and the rest of the appointment is just forms.",
+          audioUrl: "/audio/exercises/ex14-3-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1040,7 +1043,7 @@ export const MODULE_14: Module = {
         {
           id: "ex14-4-4",
           type: "matching",
-          question: "Match the compound noun to its meaning:",
+          question: "Monster compound nouns on the contract — break them apart and match:",
           options: ["Krankenversicherung", "Aufenthaltsgenehmigung", "Mietvertrag", "Kündigungsfrist", "Kontoeröffnung"],
           correctAnswer: ["health insurance", "residence authorization", "rental contract", "cancellation period", "account opening"],
           explanation: "Compound Nouns = Lego bricks. Krank (Sick) + Versicherung (Insurance). German stacks meanings like this. Break them apart to understand them!",
@@ -1119,10 +1122,11 @@ export const MODULE_14: Module = {
         {
           id: "ex14-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Writing Formal Letters & Emails): 'Ich möchte bitte einen Termin machen.'",
-          questionGerman: "Sprechen Sie laut: 'Ich möchte bitte einen Termin machen.'",
-          correctAnswer: "Ich möchte bitte einen Termin machen",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Close your formal letter and read the last line aloud: 'Ich warte auf Ihre Antwort.'",
+          questionGerman: "Sprechen Sie laut: 'Ich warte auf Ihre Antwort.'",
+          correctAnswer: "Ich warte auf Ihre Antwort",
+          explanation: "'Ich warte auf Ihre Antwort' is the standard pre-closing line of formal German letters — warten auf + accusative.",
+          audioUrl: "/audio/exercises/ex14-4-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

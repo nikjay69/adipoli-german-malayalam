@@ -267,6 +267,7 @@ export const MODULE_16: Module = {
           questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
           correctAnswer: "Ich verstehe den kurzen Text",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex16-1-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -609,6 +610,7 @@ export const MODULE_16: Module = {
           questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
           correctAnswer: "Ich verstehe den kurzen Text",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex16-2-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -882,6 +884,7 @@ export const MODULE_16: Module = {
           questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
           correctAnswer: "Ich verstehe den kurzen Text",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex16-3-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1211,6 +1214,7 @@ export const MODULE_16: Module = {
           questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
           correctAnswer: "Ich verstehe den kurzen Text",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex16-4-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1464,6 +1468,7 @@ export const MODULE_16: Module = {
           questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
           correctAnswer: "Ich verstehe den kurzen Text",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex16-5-prod-speaking-model.mp3",
           xpReward: 25
         },
         {

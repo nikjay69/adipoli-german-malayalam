@@ -244,7 +244,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-1-8",
           type: "matching",
-          question: "Match the German sentence to its meaning:",
+          question: "The visa form asks what you do. Match each German status line:",
           options: ["Ich studiere Informatik.", "Ich mache eine Ausbildung.", "Ich arbeite im Krankenhaus."],
           correctAnswer: ["I study computer science.", "I am doing vocational training.", "I work in the hospital."],
           explanation: "Distinguishing between these 3 states (Student, Trainee, Worker) is essential for your residence permit paperwork too!",
@@ -271,10 +271,11 @@ export const MODULE_11: Module = {
         {
           id: "ex11-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Professions in Detail): 'Ich studiere Deutsch und arbeite am Computer.'",
+          question: "Interview warm-up at the imagined Münster office — introduce your work aloud: 'Ich studiere Deutsch und arbeite am Computer.'",
           questionGerman: "Sprechen Sie laut: 'Ich studiere Deutsch und arbeite am Computer.'",
           correctAnswer: "Ich studiere Deutsch und arbeite am Computer",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          explanation: "Two present-tense verbs joined with 'und' — exactly the shape of a Sprechen Teil 1 answer about your work.",
+          audioUrl: "/audio/exercises/ex11-1-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -456,7 +457,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-2-1",
           type: "matching",
-          question: "Match the German word to its English meaning:",
+          question: "First day on the imagined campus — match the places and machines:",
           options: ["die Besprechung", "der Drucker", "die Mensa", "der Hörsaal"],
           correctAnswer: ["meeting", "printer", "cafeteria", "lecture hall"],
           explanation: "Mastering these locations is the first step to navigating a German campus or office building.",
@@ -519,9 +520,10 @@ export const MODULE_11: Module = {
         {
           id: "ex11-2-8",
           type: "matching",
-          question: "Match the workplace phrase to its meaning:",
+          question: "Office survival lines — match each phrase to the moment it belongs to:",
           options: ["Guten Tag, hier spricht...", "Ich sende Ihnen die Datei.", "Wie war Ihr Wochenende?"],
           correctAnswer: ["Hello, this is... speaking", "I'll send you the file.", "How was your weekend?"],
+          explanation: "'Hier spricht...' answers the phone, 'Ich sende Ihnen die Datei' moves the work along, 'Wie war Ihr Wochenende?' is the Monday small-talk ritual.",
           xpReward: 15
         },
         {
@@ -545,10 +547,11 @@ export const MODULE_11: Module = {
         {
           id: "ex11-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (At the Office / University): 'Ich studiere Deutsch und arbeite am Computer.'",
-          questionGerman: "Sprechen Sie laut: 'Ich studiere Deutsch und arbeite am Computer.'",
-          correctAnswer: "Ich studiere Deutsch und arbeite am Computer",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "First day small talk in the imagined office kitchen — say aloud: 'Ich arbeite im Büro.'",
+          questionGerman: "Sprechen Sie laut: 'Ich arbeite im Büro.'",
+          correctAnswer: "Ich arbeite im Büro",
+          explanation: "im Büro = in dem Büro. Short, correct, and the answer to 'Wo arbeiten Sie?' in the exam and in life.",
+          audioUrl: "/audio/exercises/ex11-2-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -816,10 +819,11 @@ export const MODULE_11: Module = {
         {
           id: "ex11-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Writing a Simple Email): 'Ich studiere Deutsch und arbeite am Computer.'",
-          questionGerman: "Sprechen Sie laut: 'Ich studiere Deutsch und arbeite am Computer.'",
-          correctAnswer: "Ich studiere Deutsch und arbeite am Computer",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Read your email opener aloud before sending: 'Vielen Dank für Ihre E-Mail.'",
+          questionGerman: "Sprechen Sie laut: 'Vielen Dank für Ihre E-Mail.'",
+          correctAnswer: "Vielen Dank für Ihre E-Mail",
+          explanation: "'Vielen Dank für Ihre E-Mail' opens half of all polite German replies. Capital I in Ihre — it's the formal you.",
+          audioUrl: "/audio/exercises/ex11-3-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1099,10 +1103,11 @@ export const MODULE_11: Module = {
         {
           id: "ex11-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Talking About Skills): 'Ich studiere Deutsch und arbeite am Computer.'",
-          questionGerman: "Sprechen Sie laut: 'Ich studiere Deutsch und arbeite am Computer.'",
-          correctAnswer: "Ich studiere Deutsch und arbeite am Computer",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "The interviewer asks about languages. Sell yourself aloud: 'Ich kann gut Englisch sprechen.'",
+          questionGerman: "Sprechen Sie laut: 'Ich kann gut Englisch sprechen.'",
+          correctAnswer: "Ich kann gut Englisch sprechen",
+          explanation: "können + skill + infinitive at the end. Swap Englisch for Malayalam, Hindi, Deutsch — your whole skills answer.",
+          audioUrl: "/audio/exercises/ex11-4-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1299,7 +1304,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-5-2",
           type: "matching",
-          question: "Match the German term to its English equivalent:",
+          question: "The job ad demands your 'Unterlagen'. Match the application words:",
           options: ["die Bewerbung", "der Lebenslauf", "das Anschreiben", "die Stelle"],
           correctAnswer: ["application", "CV / resume", "cover letter", "position / job"],
           explanation: "Master the terminology! When an HR person asks for your 'Unterlagen', they want this whole set of documents.",
@@ -1353,9 +1358,10 @@ export const MODULE_11: Module = {
         {
           id: "ex11-5-8",
           type: "matching",
-          question: "Match the interview question to its German translation:",
+          question: "Interview prep flash round — match each classic question to its German:",
           options: ["What are your weaknesses?", "Where do you see yourself in 5 years?", "Why should we hire you?"],
           correctAnswer: ["Was sind Ihre Schwächen?", "Wo sehen Sie sich in fünf Jahren?", "Warum sollten wir Sie einstellen?"],
+          explanation: "These three questions appear in nearly every German interview. Recognize them instantly so your brain can spend its energy on the answer.",
           xpReward: 15
         },
         {
@@ -1379,10 +1385,11 @@ export const MODULE_11: Module = {
         {
           id: "ex11-5-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Job Interview Basics): 'Ich studiere Deutsch und arbeite am Computer.'",
-          questionGerman: "Sprechen Sie laut: 'Ich studiere Deutsch und arbeite am Computer.'",
-          correctAnswer: "Ich studiere Deutsch und arbeite am Computer",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Door opens, interview begins — deliver your opener aloud: 'Guten Tag, mein Name ist Kuttan. Ich komme aus Indien.'",
+          questionGerman: "Sprechen Sie laut: 'Guten Tag, mein Name ist Kuttan. Ich komme aus Indien.'",
+          correctAnswer: "Guten Tag, mein Name ist Kuttan. Ich komme aus Indien",
+          explanation: "Greeting, name, origin — the first ten seconds of every interview and of Sprechen Teil 1. Use your real name.",
+          audioUrl: "/audio/exercises/ex11-5-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

@@ -252,10 +252,11 @@ export const MODULE_17: Module = {
         {
           id: "ex17-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Exam Format Overview & Tips): 'Ich höre zuerst die Frage und dann den Text.'",
+          question: "Your exam-day mantra — say it aloud like you mean it: 'Ich höre zuerst die Frage und dann den Text.'",
           questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
           correctAnswer: "Ich höre zuerst die Frage und dann den Text",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          explanation: "Question first, then audio — the single biggest Hören score boost. Saying the strategy in German trains both at once.",
+          audioUrl: "/audio/exercises/ex17-1-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -543,10 +544,11 @@ export const MODULE_17: Module = {
         {
           id: "ex17-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Hören Teil 1 — Kurze Nachrichten): 'Ich höre zuerst die Frage und dann den Text.'",
-          questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
-          correctAnswer: "Ich höre zuerst die Frage und dann den Text",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Teil 1 rule check — say the format aloud: 'Ich höre jeden Text zweimal.'",
+          questionGerman: "Sprechen Sie laut: 'Ich höre jeden Text zweimal.'",
+          correctAnswer: "Ich höre jeden Text zweimal",
+          explanation: "Teil 1 plays each text twice — first pass for the gist, second for the detail. Knowing the format is free marks.",
+          audioUrl: "/audio/exercises/ex17-2-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -829,10 +831,11 @@ export const MODULE_17: Module = {
         {
           id: "ex17-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Hören Teil 2 & 3 — Gespräche): 'Ich höre zuerst die Frage und dann den Text.'",
-          questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
-          correctAnswer: "Ich höre zuerst die Frage und dann den Text",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Teil 2 plays only ONCE. Say your plan aloud: 'Ich markiere die Antwort sofort.'",
+          questionGerman: "Sprechen Sie laut: 'Ich markiere die Antwort sofort.'",
+          correctAnswer: "Ich markiere die Antwort sofort",
+          explanation: "In the one-play Teil 2 there is no second chance — mark immediately, never look back. sofort = immediately.",
+          audioUrl: "/audio/exercises/ex17-3-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1145,10 +1148,11 @@ export const MODULE_17: Module = {
         {
           id: "ex17-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Lesen Teil 1 — Schilder und Anzeigen): 'Ich höre zuerst die Frage und dann den Text.'",
-          questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
-          correctAnswer: "Ich höre zuerst die Frage und dann den Text",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Reading strategy, said aloud so it sticks: 'Ich lese zuerst die Aufgabe, dann den Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich lese zuerst die Aufgabe, dann den Text.'",
+          correctAnswer: "Ich lese zuerst die Aufgabe, dann den Text",
+          explanation: "Task before text — you read hunting for one detail instead of translating everything. The core Lesen strategy.",
+          audioUrl: "/audio/exercises/ex17-4-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1416,10 +1420,11 @@ export const MODULE_17: Module = {
         {
           id: "ex17-5-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Lesen Teil 2 & 3 — E-Mails und Texte): 'Ich höre zuerst die Frage und dann den Text.'",
-          questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
-          correctAnswer: "Ich höre zuerst die Frage und dann den Text",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Long email, two minutes — say your scanning plan aloud: 'Ich suche die wichtigen Wörter im Text.'",
+          questionGerman: "Sprechen Sie laut: 'Ich suche die wichtigen Wörter im Text.'",
+          correctAnswer: "Ich suche die wichtigen Wörter im Text",
+          explanation: "Names, times, prices, places, nicht/kein — scan for those and the answer surfaces. Never translate line by line.",
+          audioUrl: "/audio/exercises/ex17-5-prod-speaking-model.mp3",
           xpReward: 25
         },
         {
@@ -1792,10 +1797,11 @@ export const MODULE_17: Module = {
         {
           id: "ex17-6-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Übungstest — Hören & Lesen): 'Ich höre zuerst die Frage und dann den Text.'",
-          questionGerman: "Sprechen Sie laut: 'Ich höre zuerst die Frage und dann den Text.'",
-          correctAnswer: "Ich höre zuerst die Frage und dann den Text",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Before the timed run, one breath and one line aloud: 'Ich arbeite ruhig und schnell.'",
+          questionGerman: "Sprechen Sie laut: 'Ich arbeite ruhig und schnell.'",
+          correctAnswer: "Ich arbeite ruhig und schnell",
+          explanation: "Calm AND fast — timed sections reward steady pace over panic sprints. Say it, then start the clock.",
+          audioUrl: "/audio/exercises/ex17-6-prod-speaking-model.mp3",
           xpReward: 25
         },
         {

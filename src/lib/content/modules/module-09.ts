@@ -180,10 +180,10 @@ export const MODULE_9: Module = {
       ],
       exercises: [
         { id: "ex9-1-1", type: "multiple-choice", question: "How do you say 'I travel by train' in German?", options: ["Ich fahre mit dem Zug", "Ich gehe mit dem Zug", "Ich fahre mit den Zug", "Ich fahre in dem Zug"], correctAnswer: "Ich fahre mit dem Zug", explanation: "'mit' always takes the Dativ case. 'der Zug' becomes 'dem Zug' in Dativ. 'fahren' is used for vehicle travel, not 'gehen' (walking).", xpReward: 10 },
-        { id: "ex9-1-2", type: "matching", question: "Match the German transport word to its English meaning:", options: ["die Straßenbahn", "die U-Bahn", "das Fahrrad", "das Flugzeug"], correctAnswer: ["tram", "subway/underground", "bicycle", "airplane"], xpReward: 15 },
+        { id: "ex9-1-2", type: "matching", question: "Your cousin quizzes you on his commute options. Match each transport word:", options: ["die Straßenbahn", "die U-Bahn", "das Fahrrad", "das Flugzeug"], correctAnswer: ["tram", "subway/underground", "bicycle", "airplane"], explanation: "die Straßenbahn, die U-Bahn (Bahn is always die), das Fahrrad, das Flugzeug. The article decides 'mit der' vs 'mit dem' later in this lesson.", xpReward: 15 },
         { id: "ex9-1-3", type: "fill-blank", question: "Ich fahre mit ___ Bus zur Arbeit. (the — Dativ)", options: ["dem", "der", "den", "das"], correctAnswer: "dem", explanation: "'der Bus' is masculine. In Dativ (after 'mit'), 'der' becomes 'dem'. So: mit dem Bus.", xpReward: 10 },
         { id: "ex9-1-4", type: "multiple-choice", question: "What is the difference between U-Bahn and S-Bahn?", options: ["U-Bahn is underground, S-Bahn is suburban/above-ground", "U-Bahn is faster than S-Bahn", "S-Bahn is underground, U-Bahn is above-ground", "There is no difference"], correctAnswer: "U-Bahn is underground, S-Bahn is suburban/above-ground", explanation: "U-Bahn (Untergrundbahn) runs mostly underground in city centers. S-Bahn (Stadtschnellbahn) connects the city with suburban areas and mostly runs above ground.", xpReward: 10 },
-        { id: "ex9-1-5", type: "ordering", question: "Arrange to say 'I ride my bicycle to work':", options: ["Ich", "fahre", "mit", "dem", "Fahrrad", "zur Arbeit"], correctAnswer: ["Ich", "fahre", "mit", "dem", "Fahrrad", "zur Arbeit"], xpReward: 15 },
+        { id: "ex9-1-5", type: "ordering", question: "Arrange to say 'I ride my bicycle to work':", options: ["Ich", "fahre", "mit", "dem", "Fahrrad", "zur Arbeit"], correctAnswer: ["Ich", "fahre", "mit", "dem", "Fahrrad", "zur Arbeit"], explanation: "mit dem Fahrrad — 'mit' always pulls Dativ, so das Fahrrad becomes dem Fahrrad. And zur Arbeit = zu der Arbeit.", xpReward: 15 },
         { id: "ex9-1-6", type: "fill-blank", question: "Wir fahren mit ___ S-Bahn. (the — Dativ, feminine)", options: ["der", "dem", "die", "den"], correctAnswer: "der", explanation: "'die S-Bahn' is feminine. In Dativ, 'die' becomes 'der'. So: mit der S-Bahn.", xpReward: 10 },
         { id: "ex9-1-7", type: "multiple-choice", question: "What is 'Schwarzfahren' in German public transport?", options: ["Travelling without a valid ticket", "Travelling at night", "Travelling first class", "Travelling by car"], correctAnswer: "Travelling without a valid ticket", explanation: "'Schwarzfahren' literally means 'black-riding'. It refers to using public transport without a valid ticket. The fine is usually 60 euros — so always buy your ticket!", xpReward: 10 },
         { id: "ex9-1-8", type: "fill-blank", question: "Mein Bruder fährt mit ___ Motorrad. (the — Dativ, neuter)", options: ["dem", "der", "den", "das"], correctAnswer: "dem", explanation: "'das Motorrad' is neuter. In Dativ (after 'mit'), 'das' becomes 'dem'. So: mit dem Motorrad.", xpReward: 10 },
@@ -208,10 +208,11 @@ export const MODULE_9: Module = {
         {
           id: "ex9-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Transportation): 'Entschuldigung, wo ist der Bahnhof?'",
+          question: "Lost in your imagined first Munich morning — stop a stranger and ask aloud: 'Entschuldigung, wo ist der Bahnhof?'",
           questionGerman: "Sprechen Sie laut: 'Entschuldigung, wo ist der Bahnhof?'",
           correctAnswer: "Entschuldigung, wo ist der Bahnhof",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          explanation: "'Entschuldigung' opens, 'wo ist...' asks. This exact line is in the Sprechen Teil 3 question bank.",
+          audioUrl: "/audio/exercises/ex9-1-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -398,11 +399,11 @@ export const MODULE_9: Module = {
       exercises: [
         { id: "ex9-2-1", type: "fill-blank", question: "Eine Fahrkarte nach München, bitte. ___ . (round trip)", options: ["Hin und zurück", "Einfach", "Erste Klasse", "Zweite Klasse"], correctAnswer: "Hin und zurück", explanation: "'Hin und zurück' means round trip (literally 'there and back'). 'Einfach' means one-way.", xpReward: 10 },
         { id: "ex9-2-2", type: "multiple-choice", question: "What does 'Ermäßigung' mean?", options: ["Discount", "Platform", "Schedule", "Delay"], correctAnswer: "Discount", explanation: "'Ermäßigung' means discount or reduction. Students, seniors, and children often get an Ermäßigung.", xpReward: 10 },
-        { id: "ex9-2-3", type: "ordering", question: "Arrange to ask: 'A ticket to Hamburg, please. Round trip.'", options: ["Eine", "Fahrkarte", "nach", "Hamburg,", "bitte.", "Hin und zurück."], correctAnswer: ["Eine", "Fahrkarte", "nach", "Hamburg,", "bitte.", "Hin und zurück."], xpReward: 15 },
+        { id: "ex9-2-3", type: "ordering", question: "Arrange to ask: 'A ticket to Hamburg, please. Round trip.'", options: ["Eine", "Fahrkarte", "nach", "Hamburg,", "bitte.", "Hin und zurück."], correctAnswer: ["Eine", "Fahrkarte", "nach", "Hamburg,", "bitte.", "Hin und zurück."], explanation: "Eine Fahrkarte (die Fahrkarte — feminine) + nach + city. 'Hin und zurück' tacked on the end turns any ticket into a return.", xpReward: 15 },
         { id: "ex9-2-4", type: "multiple-choice", question: "Where can you buy tickets in Germany?", options: ["All of the above", "Am Schalter (at the counter)", "Am Automaten (at the machine)", "Online or via app"], correctAnswer: "All of the above", explanation: "In Germany, you can buy tickets at the counter (Schalter), from machines (Automat), or online through apps like DB Navigator.", xpReward: 10 },
-        { id: "ex9-2-5", type: "matching", question: "Match the German travel term to its English meaning:", options: ["einfach", "hin und zurück", "der Fahrplan", "der Automat"], correctAnswer: ["one-way", "round trip", "schedule/timetable", "ticket machine"], xpReward: 15 },
+        { id: "ex9-2-5", type: "matching", question: "Ticket machine screen, German-only. Match the terms before it times out:", options: ["einfach", "hin und zurück", "der Fahrplan", "der Automat"], correctAnswer: ["one-way", "round trip", "schedule/timetable", "ticket machine"], explanation: "einfach = one-way, hin und zurück = return, der Fahrplan tells you when, der Automat sells the ticket — usually with less queue than the counter.", xpReward: 15 },
         { id: "ex9-2-6", type: "fill-blank", question: "Gibt es eine ___ für Studenten? (discount)", options: ["Ermäßigung", "Fahrkarte", "Verspätung", "Abfahrt"], correctAnswer: "Ermäßigung", explanation: "'Ermäßigung' means discount. Students (Studenten) can often get reduced fares in Germany.", xpReward: 10 },
-        { id: "ex9-2-7", type: "ordering", question: "Arrange: 'I would like a round-trip ticket to Berlin, second class.'", options: ["Ich", "möchte", "eine Fahrkarte", "nach Berlin,", "zweite Klasse,", "hin und zurück."], correctAnswer: ["Ich", "möchte", "eine Fahrkarte", "nach Berlin,", "zweite Klasse,", "hin und zurück."], xpReward: 15 },
+        { id: "ex9-2-7", type: "ordering", question: "Arrange: 'I would like a round-trip ticket to Berlin, second class.'", options: ["Ich", "möchte", "eine Fahrkarte", "nach Berlin,", "zweite Klasse,", "hin und zurück."], correctAnswer: ["Ich", "möchte", "eine Fahrkarte", "nach Berlin,", "zweite Klasse,", "hin und zurück."], explanation: "möchte holds position 2 and everything else stacks behind: destination, class, return. Longer sentence, same verb-second skeleton.", xpReward: 15 },
         { id: "ex9-2-8", type: "multiple-choice", question: "What is the 'Deutschlandticket'?", options: ["A monthly pass for all local public transport in Germany", "A one-time ticket for tourists", "A first-class train ticket", "A flight ticket within Germany"], correctAnswer: "A monthly pass for all local public transport in Germany", explanation: "The Deutschlandticket is a monthly subscription that lets you use all local and regional public transport across Germany — buses, trams, U-Bahn, S-Bahn, and regional trains!", xpReward: 10 },
         {
           id: "ex9-2-9",
@@ -425,10 +426,11 @@ export const MODULE_9: Module = {
         {
           id: "ex9-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Buying Tickets): 'Entschuldigung, wo ist der Bahnhof?'",
-          questionGerman: "Sprechen Sie laut: 'Entschuldigung, wo ist der Bahnhof?'",
-          correctAnswer: "Entschuldigung, wo ist der Bahnhof",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Front of the ticket queue, eyes on you — order aloud: 'Einmal nach Berlin, bitte. Hin und zurück.'",
+          questionGerman: "Sprechen Sie laut: 'Einmal nach Berlin, bitte. Hin und zurück.'",
+          correctAnswer: "Einmal nach Berlin, bitte. Hin und zurück",
+          explanation: "einmal = one ticket, hin und zurück = return. Four words buy you any train ride in Germany.",
+          audioUrl: "/audio/exercises/ex9-2-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -615,9 +617,9 @@ export const MODULE_9: Module = {
       exercises: [
         { id: "ex9-3-1", type: "multiple-choice", question: "How do you ask 'Where is the train station?' in German?", options: ["Wo ist der Bahnhof?", "Was ist der Bahnhof?", "Wer ist der Bahnhof?", "Wie ist der Bahnhof?"], correctAnswer: "Wo ist der Bahnhof?", explanation: "'Wo' means 'where'. 'Wo ist...?' is the standard way to ask where something is located.", xpReward: 10 },
         { id: "ex9-3-2", type: "fill-blank", question: "Wie komme ich ___ Supermarkt? (to the — masculine Dativ)", options: ["zum", "zur", "zu dem", "bei dem"], correctAnswer: "zum", explanation: "'zu + dem' contracts to 'zum' for masculine and neuter nouns in Dativ. 'der Supermarkt' is masculine, so: zum Supermarkt.", xpReward: 10 },
-        { id: "ex9-3-3", type: "matching", question: "Match the German direction word to its English meaning:", options: ["geradeaus", "links", "rechts", "die Kreuzung", "die Ampel"], correctAnswer: ["straight ahead", "left", "right", "intersection", "traffic light"], xpReward: 15 },
+        { id: "ex9-3-3", type: "matching", question: "A helpful local fires directions at you. Match the words you just heard:", options: ["geradeaus", "links", "rechts", "die Kreuzung", "die Ampel"], correctAnswer: ["straight ahead", "left", "right", "intersection", "traffic light"], explanation: "geradeaus, links, rechts are the action words; die Kreuzung and die Ampel are the landmarks they hang on. Catch these five and any direction makes sense.", xpReward: 15 },
         { id: "ex9-3-4", type: "fill-blank", question: "Wie komme ich ___ Post? (to the — feminine Dativ)", options: ["zur", "zum", "zu der", "bei der"], correctAnswer: "zur", explanation: "'zu + der' contracts to 'zur' for feminine nouns in Dativ. 'die Post' is feminine, so: zur Post.", xpReward: 10 },
-        { id: "ex9-3-5", type: "ordering", question: "Arrange the directions: 'Go straight, then left at the traffic light'", options: ["Gehen Sie", "geradeaus,", "dann", "links", "an der", "Ampel"], correctAnswer: ["Gehen Sie", "geradeaus,", "dann", "links", "an der", "Ampel"], xpReward: 15 },
+        { id: "ex9-3-5", type: "ordering", question: "Arrange the directions: 'Go straight, then left at the traffic light'", options: ["Gehen Sie", "geradeaus,", "dann", "links", "an der", "Ampel"], correctAnswer: ["Gehen Sie", "geradeaus,", "dann", "links", "an der", "Ampel"], explanation: "Sie-imperative: verb first (Gehen Sie), then the route. 'an der Ampel' is Dativ — the location where you turn.", xpReward: 15 },
         { id: "ex9-3-6", type: "multiple-choice", question: "What does 'gegenüber dem Supermarkt' mean?", options: ["Opposite the supermarket", "Next to the supermarket", "Behind the supermarket", "Inside the supermarket"], correctAnswer: "Opposite the supermarket", explanation: "'gegenüber' means 'opposite' or 'across from'. It takes the Dativ case.", xpReward: 10 },
         { id: "ex9-3-7", type: "multiple-choice", question: "You want to ask politely for help with directions. What do you say first?", options: ["Entschuldigung, können Sie mir helfen?", "Hilfe! Wo ist der Bahnhof?", "Hey, wo ist der Bahnhof?", "Ich brauche den Bahnhof!"], correctAnswer: "Entschuldigung, können Sie mir helfen?", explanation: "Starting with 'Entschuldigung' (excuse me) and asking politely with 'können Sie mir helfen?' (can you help me?) is the standard polite approach in Germany.", xpReward: 10 },
         { id: "ex9-3-8", type: "fill-blank", question: "Nehmen Sie die zweite Straße ___ . (on the right)", options: ["rechts", "links", "geradeaus", "zurück"], correctAnswer: "rechts", explanation: "'Nehmen Sie die zweite Straße rechts' means 'Take the second street on the right'. This is a very common direction pattern in German.", xpReward: 10 },
@@ -642,10 +644,11 @@ export const MODULE_9: Module = {
         {
           id: "ex9-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Asking for Directions): 'Entschuldigung, wo ist der Bahnhof?'",
-          questionGerman: "Sprechen Sie laut: 'Entschuldigung, wo ist der Bahnhof?'",
-          correctAnswer: "Entschuldigung, wo ist der Bahnhof",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "The Bahnhof is hiding. Ask for the route aloud: 'Entschuldigung, wie komme ich zum Bahnhof?'",
+          questionGerman: "Sprechen Sie laut: 'Entschuldigung, wie komme ich zum Bahnhof?'",
+          correctAnswer: "Entschuldigung, wie komme ich zum Bahnhof",
+          explanation: "'Wie komme ich zu...?' asks for the way, not just the location. zum = zu + dem — your first useful dative contraction.",
+          audioUrl: "/audio/exercises/ex9-3-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -838,13 +841,13 @@ export const MODULE_9: Module = {
       ],
       exercises: [
         { id: "ex9-4-1", type: "multiple-choice", question: "How do you ask 'Which platform does the train to Berlin leave from?'", options: ["Auf welchem Gleis fährt der Zug nach Berlin?", "Wo ist der Zug nach Berlin?", "Wann fährt der Zug nach Berlin?", "Welcher Zug fährt nach Berlin?"], correctAnswer: "Auf welchem Gleis fährt der Zug nach Berlin?", explanation: "'Auf welchem Gleis' means 'on which platform'. 'Gleis' is the German word for platform/track at a train station.", xpReward: 10 },
-        { id: "ex9-4-2", type: "matching", question: "Match the German airport/station word to its English meaning:", options: ["die Passkontrolle", "der Zoll", "das Gepäck", "das Gleis", "die Verspätung"], correctAnswer: ["passport control", "customs", "luggage", "platform/track", "delay"], xpReward: 15 },
+        { id: "ex9-4-2", type: "matching", question: "Match the German airport/station word to its English meaning:", options: ["die Passkontrolle", "der Zoll", "das Gepäck", "das Gleis", "die Verspätung"], correctAnswer: ["passport control", "customs", "luggage", "platform/track", "delay"], explanation: "Five signs that matter: Passkontrolle, Zoll, Gepäck, Gleis, Verspätung. You'll meet all five in your first hour in Germany.", xpReward: 15 },
         { id: "ex9-4-3", type: "multiple-choice", question: "What does 'der Abflug' mean?", options: ["Departure (flight)", "Arrival", "Gate", "Luggage"], correctAnswer: "Departure (flight)", explanation: "'der Abflug' means departure (for flights). 'Ab' means 'away/off' and 'Flug' means 'flight'. For trains, 'die Abfahrt' is used.", xpReward: 10 },
         { id: "ex9-4-4", type: "fill-blank", question: "Der Zug hat 20 Minuten ___ . (delay)", options: ["Verspätung", "Ankunft", "Abfahrt", "Gepäck"], correctAnswer: "Verspätung", explanation: "'Verspätung' means delay. German trains having Verspätung is almost a national joke! 'Der Zug hat ... Minuten Verspätung' = The train is ... minutes late.", xpReward: 10 },
-        { id: "ex9-4-5", type: "ordering", question: "Arrange: 'The flight arrives at 3 o'clock'", options: ["Der Flug", "kommt", "um", "drei Uhr", "an"], correctAnswer: ["Der Flug", "kommt", "um", "drei Uhr", "an"], xpReward: 15 },
+        { id: "ex9-4-5", type: "ordering", question: "Arrange: 'The flight arrives at 3 o'clock'", options: ["Der Flug", "kommt", "um", "drei Uhr", "an"], correctAnswer: ["Der Flug", "kommt", "um", "drei Uhr", "an"], explanation: "ankommen is separable: kommt ... an. The prefix waits at the end of the sentence — even for flights.", xpReward: 15 },
         { id: "ex9-4-6", type: "multiple-choice", question: "You see a sign that says 'Gepäckausgabe'. What does it mean?", options: ["Baggage claim", "Check-in counter", "Security check", "Passport control"], correctAnswer: "Baggage claim", explanation: "'Gepäckausgabe' = Gepäck (luggage) + Ausgabe (output/dispensing). It's where you collect your luggage after a flight.", xpReward: 10 },
         { id: "ex9-4-7", type: "fill-blank", question: "Ihren ___ , bitte. (passport)", options: ["Reisepass", "Fahrkarte", "Koffer", "Gepäck"], correctAnswer: "Reisepass", explanation: "'der Reisepass' means passport. At passport control, the officer will say 'Ihren Reisepass, bitte' — your passport, please.", xpReward: 10 },
-        { id: "ex9-4-8", type: "ordering", question: "Arrange: 'I need to change trains in Frankfurt'", options: ["Ich", "muss", "in Frankfurt", "umsteigen"], correctAnswer: ["Ich", "muss", "in Frankfurt", "umsteigen"], xpReward: 15 },
+        { id: "ex9-4-8", type: "ordering", question: "Arrange: 'I need to change trains in Frankfurt'", options: ["Ich", "muss", "in Frankfurt", "umsteigen"], correctAnswer: ["Ich", "muss", "in Frankfurt", "umsteigen"], explanation: "Modal müssen takes position 2 and umsteigen (change trains) is exiled to the end as an infinitive. Classic modal sentence shape.", xpReward: 15 },
         {
           id: "ex9-4-9",
           type: "dictation",
@@ -866,10 +869,11 @@ export const MODULE_9: Module = {
         {
           id: "ex9-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (At the Airport & Train Station): 'Entschuldigung, wo ist der Bahnhof?'",
-          questionGerman: "Sprechen Sie laut: 'Entschuldigung, wo ist der Bahnhof?'",
-          correctAnswer: "Entschuldigung, wo ist der Bahnhof",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Platform chaos, departures board flickering — ask the conductor aloud: 'Wann fährt der nächste Zug nach Berlin?'",
+          questionGerman: "Sprechen Sie laut: 'Wann fährt der nächste Zug nach Berlin?'",
+          correctAnswer: "Wann fährt der nächste Zug nach Berlin",
+          explanation: "Wann + fährt + nach: the question that pairs with every announcement in Hören. Ask it, then listen for the time.",
+          audioUrl: "/audio/exercises/ex9-4-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1054,9 +1058,9 @@ export const MODULE_9: Module = {
         { id: "ex9-5-1", type: "multiple-choice", question: "What is the correct word order? 'I can speak German.'", options: ["Ich kann Deutsch sprechen.", "Ich Deutsch sprechen kann.", "Ich sprechen kann Deutsch.", "Ich kann sprechen Deutsch."], correctAnswer: "Ich kann Deutsch sprechen.", explanation: "With modal verbs, the modal goes in position 2 (conjugated) and the main verb (infinitive) goes to the END of the sentence.", xpReward: 15 },
         { id: "ex9-5-2", type: "fill-blank", question: "Ich ___ den Zug nehmen. (must)", options: ["muss", "kann", "darf", "will"], correctAnswer: "muss", explanation: "'müssen' means 'must/have to'. For 'ich', it becomes 'muss'. The main verb 'nehmen' goes to the end.", xpReward: 10 },
         { id: "ex9-5-3", type: "multiple-choice", question: "Which is the polite way to say 'I want a coffee'?", options: ["Ich möchte einen Kaffee.", "Ich will einen Kaffee.", "Ich muss einen Kaffee.", "Ich kann einen Kaffee."], correctAnswer: "Ich möchte einen Kaffee.", explanation: "'Ich möchte' (I would like) is much more polite than 'Ich will' (I want), which can sound demanding. Always use 'möchte' when ordering!", xpReward: 10 },
-        { id: "ex9-5-4", type: "matching", question: "Match the modal verb to its meaning:", options: ["können", "müssen", "dürfen", "wollen", "sollen"], correctAnswer: ["can / be able to", "must / have to", "may / be allowed to", "want to", "should / be supposed to"], xpReward: 15 },
+        { id: "ex9-5-4", type: "matching", question: "Five modal verbs run your whole German life. Match each one to the job it does:", options: ["können", "müssen", "dürfen", "wollen", "sollen"], correctAnswer: ["can / be able to", "must / have to", "may / be allowed to", "want to", "should / be supposed to"], explanation: "können (ability), müssen (necessity), dürfen (permission), wollen (desire), sollen (advice). Every one of them kicks its main verb to the end.", xpReward: 15 },
         { id: "ex9-5-5", type: "fill-blank", question: "___ ich hier sitzen? (May I)", options: ["Darf", "Kann", "Muss", "Will"], correctAnswer: "Darf", explanation: "'Dürfen' means 'to be allowed to / may'. 'Darf ich...?' is the polite way to ask permission. 'Kann ich...?' (Can I) is also possible but less formal.", xpReward: 10 },
-        { id: "ex9-5-6", type: "ordering", question: "Arrange: 'We want to travel to Munich'", options: ["Wir", "wollen", "nach", "München", "fahren"], correctAnswer: ["Wir", "wollen", "nach", "München", "fahren"], xpReward: 15 },
+        { id: "ex9-5-6", type: "ordering", question: "Arrange: 'We want to travel to Munich'", options: ["Wir", "wollen", "nach", "München", "fahren"], correctAnswer: ["Wir", "wollen", "nach", "München", "fahren"], explanation: "wollen in position 2, fahren at the end. 'nach München' sits in the middle — destinations with nach need no article.", xpReward: 15 },
         { id: "ex9-5-7", type: "fill-blank", question: "Du ___ mehr Deutsch lernen. (should)", options: ["sollst", "willst", "kannst", "darfst"], correctAnswer: "sollst", explanation: "'sollen' means 'should / be supposed to'. For 'du', it becomes 'sollst'.", xpReward: 10 },
         { id: "ex9-5-8", type: "multiple-choice", question: "What happens to the main verb in a sentence with a modal verb?", options: ["It goes to the end in infinitive form", "It stays next to the modal verb", "It gets conjugated too", "It disappears"], correctAnswer: "It goes to the end in infinitive form", explanation: "In German, when you use a modal verb, the main verb moves to the END of the sentence in its infinitive (unconjugated) form. E.g., Ich KANN gut SCHWIMMEN.", xpReward: 15 },
         {
@@ -1088,10 +1092,11 @@ export const MODULE_9: Module = {
         {
           id: "ex9-5-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Modal Verbs): 'Entschuldigung, wo ist der Bahnhof?'",
-          questionGerman: "Sprechen Sie laut: 'Entschuldigung, wo ist der Bahnhof?'",
-          correctAnswer: "Entschuldigung, wo ist der Bahnhof",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Ticket desk, modal verb test — say your plan aloud: 'Ich möchte eine Fahrkarte kaufen.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte eine Fahrkarte kaufen.'",
+          correctAnswer: "Ich möchte eine Fahrkarte kaufen",
+          explanation: "Modal in position 2, kaufen exiled to the end. If your sentence ends on the infinitive, you've got the modal pattern.",
+          audioUrl: "/audio/exercises/ex9-5-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

@@ -241,6 +241,7 @@ export const MODULE_15: Module = {
           questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
           correctAnswer: "Danke, das ist sehr freundlich",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex15-1-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -545,6 +546,7 @@ export const MODULE_15: Module = {
           questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
           correctAnswer: "Danke, das ist sehr freundlich",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex15-2-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -806,6 +808,7 @@ export const MODULE_15: Module = {
           questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
           correctAnswer: "Danke, das ist sehr freundlich",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex15-3-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1060,6 +1063,7 @@ export const MODULE_15: Module = {
           questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
           correctAnswer: "Danke, das ist sehr freundlich",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          audioUrl: "/audio/exercises/ex15-4-prod-speaking-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

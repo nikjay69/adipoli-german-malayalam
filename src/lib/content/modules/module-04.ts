@@ -175,7 +175,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-1-1",
           type: "matching",
-          question: "Match the German family words with their English meanings:",
+          question: "Kuttan spreads the family photo album on his study desk and labels each face in German. Match the family words:",
           options: ["die Mutter → mother", "der Vater → father", "der Bruder → brother", "die Schwester → sister", "die Oma → grandmother", "der Opa → grandfather"],
           correctAnswer: ["die Mutter → mother", "der Vater → father", "der Bruder → brother", "die Schwester → sister", "die Oma → grandmother", "der Opa → grandfather"],
           explanation: "Family words follow a gender pattern: male relatives = der (der Vater, der Bruder), female relatives = die (die Mutter, die Schwester). The article tells you the gender!",
@@ -228,7 +228,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-1-6",
           type: "multiple-choice",
-          question: "What does 'die Geschwister' mean?",
+          question: "Frau Weber's homework question reads: 'Hast du Geschwister?' What is she asking about?",
           options: ["The sisters", "The brothers", "The siblings", "The parents"],
           correctAnswer: "The siblings",
           explanation: "'Geschwister' = siblings (all brothers + sisters). It's always plural (die Geschwister). Useful A1 question: 'Hast du Geschwister?' (Do you have siblings?)",
@@ -246,7 +246,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-1-8",
           type: "free-text",
-          question: "How do you say 'grandfather' in German? (Formal or casual)",
+          question: "Kuttan taps Appooppan's photo in the album. What do Germans call grandfather? (formal or casual)",
           correctAnswer: "Großvater / Opa",
           explanation: "Both are correct! 'Großvater' is the official term, while 'Opa' is what children (and adults!) usually call their grandfather.",
           xpReward: 20
@@ -254,19 +254,30 @@ export const MODULE_4: Module = {
         {
           id: "ex4-1-9",
           type: "free-text",
-          question: "Translate into German: 'I have two brothers.'",
+          question: "Photo caption time: under the picture of his two brothers, Kuttan writes 'I have two brothers' in German. Type it.",
           correctAnswer: "Ich habe zwei Brüder",
-          explanation: "Note the plural of Bruder is Brüder (with an Umlaut!). 'Habere' triggers the accusative, but for masculine plural, 'zwei' stays the same.",
+          explanation: "Note the plural of Bruder is Brüder (with an Umlaut!). 'haben' triggers the accusative, but for plurals after 'zwei' nothing changes.",
           xpReward: 35
         }
       ,
         {
           id: "ex4-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Family Members): 'Meine Mutter wohnt in Thrissur.'",
+          question: "Hold up the first photo and introduce Amma — say aloud: 'Meine Mutter wohnt in Thrissur.'",
           questionGerman: "Sprechen Sie laut: 'Meine Mutter wohnt in Thrissur.'",
           correctAnswer: "Meine Mutter wohnt in Thrissur",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          explanation: "'Meine Mutter wohnt in ...' is the opening line of every family answer in Sprechen Teil 1. Your real family makes it stick.",
+          audioUrl: "/audio/exercises/ex4-1-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex4-1-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: he says 'Das ist mein Schwester.' Schwester is feminine — it needs 'meine'! Say it right: 'Das ist meine Schwester.'",
+          questionGerman: "Sprechen Sie laut: 'Das ist meine Schwester.'",
+          correctAnswer: "Das ist meine Schwester",
+          explanation: "mein Bruder, but meine Schwester — the -e on 'meine' matches die-words. This swap is the #1 family-talk error in Sprechen Teil 1.",
+          audioUrl: "/audio/exercises/ex4-1-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -639,10 +650,21 @@ export const MODULE_4: Module = {
         {
           id: "ex4-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Describing People): 'Meine Mutter wohnt in Thrissur.'",
-          questionGerman: "Sprechen Sie laut: 'Meine Mutter wohnt in Thrissur.'",
-          correctAnswer: "Meine Mutter wohnt in Thrissur",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Your turn in the Berlin photo game: describe Achan to the class — say aloud: 'Mein Vater ist sehr groß.'",
+          questionGerman: "Sprechen Sie laut: 'Mein Vater ist sehr groß.'",
+          correctAnswer: "Mein Vater ist sehr groß",
+          explanation: "Describing a family member is a guaranteed Sprechen prompt. 'ist + adjective' with no ending is the easiest correct German you'll ever say.",
+          audioUrl: "/audio/exercises/ex4-2-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex4-2-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's photo caption: he says 'Priya ist schwarze Haare.' Hair needs 'hat', not 'ist'! Say it right: 'Priya hat schwarze Haare.'",
+          questionGerman: "Sprechen Sie laut: 'Priya hat schwarze Haare.'",
+          correctAnswer: "Priya hat schwarze Haare",
+          explanation: "'ist' for traits (Sie ist nett), 'hat' for features (Sie hat schwarze Haare). English 'has black hair' matches German here — trust it.",
+          audioUrl: "/audio/exercises/ex4-2-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -901,7 +923,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-3-5",
           type: "matching",
-          question: "Match the possessive with the correct form:",
+          question: "On the WG video tour, your cousin points at the name tags on each door. Match the possessives:",
           options: ["mein Vater → my father", "meine Mutter → my mother", "sein Bruder → his brother", "ihre Schwester → her sister"],
           correctAnswer: ["mein Vater → my father", "meine Mutter → my mother", "sein Bruder → his brother", "ihre Schwester → her sister"],
           explanation: "Quick test: check the article of the owned noun. Der → mein/sein (no ending). Die → meine/seine/ihre (-e ending). Das → mein/sein (no ending). Die (plural) → meine/seine (-e).",
@@ -933,7 +955,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-3-8",
           type: "dictation",
-          question: "Listen and type: Wie heißt deine Schwester?",
+          question: "Your cousin's flatmate leans into the video call and asks about your family. Listen and type the question you hear.",
           correctAnswer: "Wie heißt deine Schwester?",
           explanation: "Perfect! 'Deine' (your) has the '-e' ending because 'Schwester' is feminine.",
           xpReward: 25,
@@ -950,7 +972,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-3-10",
           type: "free-text",
-          question: "How do you say 'his brother' in German?",
+          question: "Lightning round on the call: your cousin tests you — 'his brother' in German. Type it.",
           correctAnswer: "sein Bruder",
           explanation: "Sein (his) + Bruder (masculine). No extra ending needed!",
           xpReward: 20
@@ -959,10 +981,21 @@ export const MODULE_4: Module = {
         {
           id: "ex4-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Possessive Pronouns): 'Meine Mutter wohnt in Thrissur.'",
-          questionGerman: "Sprechen Sie laut: 'Meine Mutter wohnt in Thrissur.'",
-          correctAnswer: "Meine Mutter wohnt in Thrissur",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Tell your cousin's flatmates about home — say aloud: 'Meine Eltern wohnen in Kochi.'",
+          questionGerman: "Sprechen Sie laut: 'Meine Eltern wohnen in Kochi.'",
+          correctAnswer: "Meine Eltern wohnen in Kochi",
+          explanation: "Eltern is always plural: meine Eltern, wohnen with -en. This sentence appears in nearly every Sprechen Teil 1 about family.",
+          audioUrl: "/audio/exercises/ex4-3-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex4-3-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's intro: he says 'Das ist sein Schwester' about Arjun's sister. Schwester needs 'seine'! Say it right: 'Das ist seine Schwester.'",
+          questionGerman: "Sprechen Sie laut: 'Das ist seine Schwester.'",
+          correctAnswer: "Das ist seine Schwester",
+          explanation: "The ending matches the OWNED noun: die Schwester → seine. The owner's gender doesn't matter — different from Malayalam അവന്റെ/അവളുടെ, so drill it.",
+          audioUrl: "/audio/exercises/ex4-3-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1251,15 +1284,6 @@ export const MODULE_4: Module = {
           xpReward: 15
         },
         {
-          id: "ex4-4-5",
-          type: "multiple-choice",
-          question: "Which ending almost ALWAYS indicates a feminine noun?",
-          options: ["-er", "-ung", "-chen", "-ment"],
-          correctAnswer: "-ung",
-          explanation: "Nouns ending in '-ung' are virtually always feminine (die). This is one of the most reliable rules!",
-          xpReward: 20
-        },
-        {
           id: "ex4-4-6",
           type: "multiple-choice",
           question: "What is the indefinite article for 'Buch' (book)?",
@@ -1278,23 +1302,9 @@ export const MODULE_4: Module = {
           xpReward: 15
         },
         {
-          id: "ex4-4-8",
-          type: "multiple-choice",
-          question: "How should you learn German articles effectively?",
-          options: [
-            "Ignore them",
-            "Learn every noun with its article (der Tisch, etc.)",
-            "Substitute everything with 'die'",
-            "Use articles only in writing"
-          ],
-          correctAnswer: "Learn every noun with its article (der Tisch, etc.)",
-          explanation: "Correct! The article is effectively part of the word in German.",
-          xpReward: 15
-        },
-        {
           id: "ex4-4-9",
           type: "dictation",
-          question: "Listen and type: Die Zeitung ist interessant.",
+          question: "Sticky-note round: a flatmate reads one of the kitchen labels aloud. Listen and type the sentence you hear.",
           correctAnswer: "Die Zeitung ist interessant",
           explanation: "Newspaper = die Zeitung. Did you remember to capitalize 'Zeitung'? All German nouns MUST be capitalized!",
           xpReward: 25,
@@ -1320,10 +1330,21 @@ export const MODULE_4: Module = {
         {
           id: "ex4-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Articles - der, die, das): 'Meine Mutter wohnt in Thrissur.'",
-          questionGerman: "Sprechen Sie laut: 'Meine Mutter wohnt in Thrissur.'",
-          correctAnswer: "Meine Mutter wohnt in Thrissur",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Sticky-note challenge, speed round: slap the notes on and say the trio aloud: 'der Tisch, die Lampe, das Bett.'",
+          questionGerman: "Sprechen Sie laut: 'der Tisch, die Lampe, das Bett.'",
+          correctAnswer: "der Tisch, die Lampe, das Bett",
+          explanation: "Articles only stick when they're glued to the noun out loud. This exact trio comes back in your Module 3 checkpoint — bank it now.",
+          audioUrl: "/audio/exercises/ex4-4-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex4-4-spk2",
+          type: "speaking",
+          question: "House-tour German: point at two things in YOUR room and name them with ein/eine — model: 'Das ist eine Lampe und das ist ein Tisch.'",
+          questionGerman: "Sprechen Sie laut: 'Das ist eine Lampe und das ist ein Tisch.'",
+          correctAnswer: "Das ist eine Lampe und das ist ein Tisch",
+          explanation: "ein for der/das nouns, eine for die nouns. Naming real objects in your room every day is the fastest article drill there is.",
+          audioUrl: "/audio/exercises/ex4-4-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1533,7 +1554,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-5-3",
           type: "multiple-choice",
-          question: "Which sentence correctly says 'I have a sister'?",
+          question: "At the Friday dinner, the flatmates quiz Kuttan. Which sentence correctly says 'I have a sister'?",
           options: [
             "Ich habe ein Schwester.",
             "Ich habe eine Schwester.",
@@ -1570,7 +1591,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-5-6",
           type: "ordering",
-          question: "Put these sentences in a logical order for a family description:",
+          question: "Kuttan rehearses his family story before the dinner table goes quiet. Put the sentences in a natural order:",
           options: [
             "Mein Bruder heißt Arjun.",
             "Ich komme aus Kerala.",
@@ -1607,7 +1628,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-5-9",
           type: "dictation",
-          question: "Listen and type: Mein Onkel wohnt in Deutschland.",
+          question: "A flatmate mentions where Kuttan's uncle lives. Listen and type the sentence you hear.",
           correctAnswer: "Mein Onkel wohnt in Deutschland",
           explanation: "Uncle = Onkel. Lives = wohnt. Germany = Deutschland. Perfect!",
           xpReward: 25,
@@ -1616,7 +1637,7 @@ export const MODULE_4: Module = {
         {
           id: "ex4-5-10",
           type: "free-text",
-          question: "Translate: 'My family is big.'",
+          question: "Your turn at the dinner table: write 'My family is big' in German.",
           correctAnswer: "Meine Familie ist groß",
           explanation: "Familie is feminine (die), so 'meine'. Big = groß.",
           xpReward: 25
@@ -1633,10 +1654,21 @@ export const MODULE_4: Module = {
         {
           id: "ex4-5-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Talking About Your Family): 'Meine Mutter wohnt in Thrissur.'",
-          questionGerman: "Sprechen Sie laut: 'Meine Mutter wohnt in Thrissur.'",
-          correctAnswer: "Meine Mutter wohnt in Thrissur",
-          explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
+          question: "Friday dinner spotlight: open your family story — say aloud: 'Meine Familie ist groß. Mein Bruder heißt Arjun.'",
+          questionGerman: "Sprechen Sie laut: 'Meine Familie ist groß. Mein Bruder heißt Arjun.'",
+          correctAnswer: "Meine Familie ist groß. Mein Bruder heißt Arjun",
+          explanation: "Two short sentences beat one tangled long one — that's exactly how to score in Sprechen Teil 1. Swap in your real family next time.",
+          audioUrl: "/audio/exercises/ex4-5-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex4-5-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's dinner-table line: he says 'Ich habe ein Bruder.' Bruder is masculine and 'haben' wants einen! Say it right: 'Ich habe einen Bruder.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe einen Bruder.'",
+          correctAnswer: "Ich habe einen Bruder",
+          explanation: "After 'Ich habe', masculine nouns flip ein → einen; feminine stays eine (Ich habe eine Schwester). This one ending earns real marks in Sprechen and Schreiben.",
+          audioUrl: "/audio/exercises/ex4-5-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
