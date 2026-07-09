@@ -1,0 +1,381 @@
+# Spine premium-standard audit (LESSON_QUALITY_STANDARD.md)
+
+Generated: 2026-06-11T07:55:48.308Z
+
+Verdicts: FAIL = hard floor broken (production <3, no speaking, or banned exercise). WEAK = premium gaps named in fixes. PASS = clean against automated checks (human boredom scan still required).
+
+## Spine module 2 — 0 PASS / 5 WEAK / 1 FAIL
+
+- **3-1 Numbers 0-20** (lib M3) — WEAK
+  - ex=9 prod=5 spk=1 ft=3 dict=1 mc=1 fb=2 match/ord=1 repair=yes
+  - fixes: speaking 1/2 · fill-blank over cap (2/1) · 7 generic stems · 1 mechanical stems
+  - generic stems: ex3-1-1, ex3-1-2, ex3-1-3, ex3-1-4, ex3-1-6, ex3-1-7, ex3-1-8
+  - mechanical stems: ex3-1-prod-speaking
+- **3-2 Numbers 21-100** (lib M3) — WEAK
+  - ex=8 prod=4 spk=1 ft=2 dict=1 mc=1 fb=2 match/ord=1 repair=yes
+  - fixes: speaking 1/2 · fill-blank over cap (2/1) · 2 generic stems · 1 mechanical stems
+  - generic stems: ex3-2-6, ex3-2-7
+  - mechanical stems: ex3-2-prod-speaking
+- **3-3 What Time Is It?** (lib M3) — FAIL
+  - ex=9 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=1 repair=yes
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · 3 generic stems · 1 mechanical stems · 1 banned matching
+  - generic stems: ex3-3-3, ex3-3-6, ex3-3-8
+  - mechanical stems: ex3-3-prod-speaking
+  - banned: ex3-3-6
+- **3-4 Days of the Week & Months** (lib M3) — WEAK
+  - ex=8 prod=4 spk=1 ft=2 dict=1 mc=1 fb=2 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · fill-blank over cap (2/1) · 2 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex3-4-4, ex3-4-7
+  - mechanical stems: ex3-4-prod-speaking
+- **3-5 Dates & Birthdays** (lib M3) — WEAK
+  - ex=8 prod=3 spk=1 ft=1 dict=1 mc=0 fb=4 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · fill-blank over cap (4/1) · 1 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex3-5-7
+  - mechanical stems: ex3-5-prod-speaking
+- **3-6 Making Appointments** (lib M3) — WEAK
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=2 fb=6 match/ord=0 repair=NO
+  - fixes: speaking 1/2 · fill-blank over cap (6/1) · 1 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex3-6-prod-dictation
+  - mechanical stems: ex3-6-prod-speaking
+
+## Spine module 3 — 0 PASS / 9 WEAK / 5 FAIL
+
+- **4-1 Family Members** (lib M4) — FAIL
+  - ex=10 prod=4 spk=1 ft=2 dict=1 mc=3 fb=2 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · 4 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex4-1-1, ex4-1-6, ex4-1-8, ex4-1-9
+  - mechanical stems: ex4-1-prod-speaking
+  - banned: ex4-1-1
+- **4-2 Describing People** (lib M4) — WEAK
+  - ex=10 prod=4 spk=1 ft=2 dict=1 mc=2 fb=2 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · fill-blank over cap (2/1) · matching/ordering over cap (2/1) · 1 mechanical stems · no mistake-repair
+  - mechanical stems: ex4-2-prod-speaking
+- **4-3 Possessive Pronouns** (lib M4) — WEAK
+  - ex=11 prod=4 spk=1 ft=2 dict=1 mc=3 fb=3 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · 3 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex4-3-5, ex4-3-8, ex4-3-10
+  - mechanical stems: ex4-3-prod-speaking
+- **4-4 Articles - der, die, das** (lib M4) — WEAK
+  - ex=12 prod=4 spk=1 ft=2 dict=1 mc=5 fb=2 match/ord=1 repair=yes
+  - fixes: speaking 1/2 · MC over cap (5/2) · fill-blank over cap (2/1) · 1 generic stems · 1 mechanical stems
+  - generic stems: ex4-4-9
+  - mechanical stems: ex4-4-prod-speaking
+- **4-5 Talking About Your Family** (lib M4) — WEAK
+  - ex=12 prod=4 spk=1 ft=2 dict=1 mc=2 fb=4 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · fill-blank over cap (4/1) · matching/ordering over cap (2/1) · 4 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex4-5-3, ex4-5-6, ex4-5-9, ex4-5-10
+  - mechanical stems: ex4-5-prod-speaking
+- **5-1 Regular Verbs Present Tense** (lib M5) — WEAK
+  - ex=10 prod=3 spk=1 ft=1 dict=1 mc=4 fb=1 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (4/2) · matching/ordering over cap (2/1) · 1 empty explanations · 3 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex5-1-1, ex5-1-8, ex5-1-9
+  - mechanical stems: ex5-1-prod-speaking
+- **5-2 Morning Routine** (lib M5) — FAIL
+  - ex=9 prod=3 spk=1 ft=1 dict=1 mc=2 fb=2 match/ord=2 repair=yes
+  - fixes: speaking 1/2 · fill-blank over cap (2/1) · matching/ordering over cap (2/1) · 1 empty explanations · 6 generic stems · 1 mechanical stems · 1 banned matching
+  - generic stems: ex5-2-1, ex5-2-3, ex5-2-4, ex5-2-6, ex5-2-7, ex5-2-8
+  - mechanical stems: ex5-2-prod-speaking
+  - banned: ex5-2-6
+- **5-3 Separable Verbs** (lib M5) — FAIL
+  - ex=10 prod=3 spk=1 ft=1 dict=1 mc=2 fb=3 match/ord=2 repair=yes
+  - fixes: speaking 1/2 · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 1 empty explanations · 3 generic stems · 1 mechanical stems · 1 banned matching
+  - generic stems: ex5-3-4, ex5-3-5, ex5-3-8
+  - mechanical stems: ex5-3-prod-speaking
+  - banned: ex5-3-5
+- **5-4 My Day - From Morning to Night** (lib M5) — WEAK
+  - ex=9 prod=3 spk=1 ft=1 dict=1 mc=2 fb=2 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · fill-blank over cap (2/1) · matching/ordering over cap (2/1) · 1 empty explanations · 6 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex5-4-1, ex5-4-3, ex5-4-4, ex5-4-6, ex5-4-7, ex5-4-8
+  - mechanical stems: ex5-4-prod-speaking
+- **5-5 Telling About Your Week** (lib M5) — WEAK
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=2 fb=4 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · fill-blank over cap (4/1) · matching/ordering over cap (2/1) · 1 empty explanations · 4 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex5-5-3, ex5-5-4, ex5-5-6, ex5-5-9
+  - mechanical stems: ex5-5-prod-speaking
+- **8-1 Rooms & Furniture** (lib M8) — FAIL
+  - ex=9 prod=3 spk=1 ft=1 dict=1 mc=3 fb=1 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · matching/ordering over cap (2/1) · 4 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex8-1-1, ex8-1-4, ex8-1-5, ex8-1-7
+  - mechanical stems: ex8-1-prod-speaking
+  - banned: ex8-1-1
+- **8-2 Where Is It?** (lib M8) — FAIL
+  - ex=10 prod=3 spk=1 ft=1 dict=1 mc=4 fb=2 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · MC over cap (4/2) · fill-blank over cap (2/1) · 5 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex8-2-3, ex8-2-4, ex8-2-5, ex8-2-8, ex8-2-9
+  - mechanical stems: ex8-2-prod-speaking
+  - banned: ex8-2-4
+- **8-3 Looking for an Apartment** (lib M8) — WEAK
+  - ex=8 prod=3 spk=1 ft=1 dict=1 mc=3 fb=1 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · 1 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex8-3-7
+  - mechanical stems: ex8-3-prod-speaking
+- **8-4 Writing a Simple Message** (lib M8) — WEAK
+  - ex=9 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · 4 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex8-4-3, ex8-4-4, ex8-4-7, ex8-4-8
+  - mechanical stems: ex8-4-prod-speaking
+
+## Spine module 4 — 0 PASS / 4 WEAK / 6 FAIL
+
+- **6-1 Common Foods** (lib M6) — FAIL
+  - ex=9 prod=3 spk=1 ft=1 dict=1 mc=4 fb=1 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · MC over cap (4/2) · 1 empty explanations · 5 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex6-1-1, ex6-1-5, ex6-1-6, ex6-1-7, ex6-1-8
+  - mechanical stems: ex6-1-prod-speaking
+  - banned: ex6-1-1
+- **6-2 Drinks** (lib M6) — FAIL
+  - ex=8 prod=3 spk=1 ft=1 dict=1 mc=2 fb=2 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · fill-blank over cap (2/1) · 1 empty explanations · 3 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex6-2-1, ex6-2-2, ex6-2-6
+  - mechanical stems: ex6-2-prod-speaking
+  - banned: ex6-2-1
+- **6-3 At the Restaurant** (lib M6) — FAIL
+  - ex=10 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=2 repair=yes
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (2/1) · 1 empty explanations · 6 generic stems · 1 mechanical stems · 1 banned matching
+  - generic stems: ex6-3-3, ex6-3-4, ex6-3-5, ex6-3-7, ex6-3-8, ex6-3-9
+  - mechanical stems: ex6-3-prod-speaking
+  - banned: ex6-3-7
+- **6-4 Likes & Dislikes** (lib M6) — WEAK
+  - ex=9 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · 1 empty explanations · 4 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex6-4-1, ex6-4-4, ex6-4-7, ex6-4-8
+  - mechanical stems: ex6-4-prod-speaking
+- **6-5 Accusative Case - Ich nehme EINEN Kaffee** (lib M6) — WEAK
+  - ex=13 prod=3 spk=1 ft=1 dict=1 mc=4 fb=5 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · MC over cap (4/2) · fill-blank over cap (5/1) · 1 empty explanations · 2 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex6-5-7, ex6-5-11
+  - mechanical stems: ex6-5-prod-speaking
+- **7-1 At the Supermarket** (lib M7) — FAIL
+  - ex=8 prod=3 spk=1 ft=1 dict=1 mc=3 fb=1 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · 3 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex7-1-3, ex7-1-4, ex7-1-6
+  - mechanical stems: ex7-1-prod-speaking
+  - banned: ex7-1-3
+- **7-2 Prices & Currency** (lib M7) — FAIL
+  - ex=9 prod=3 spk=1 ft=1 dict=1 mc=3 fb=1 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · matching/ordering over cap (2/1) · 5 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex7-2-3, ex7-2-4, ex7-2-6, ex7-2-7, ex7-2-8
+  - mechanical stems: ex7-2-prod-speaking
+  - banned: ex7-2-6
+- **7-3 Colors & Clothing** (lib M7) — FAIL
+  - ex=9 prod=3 spk=1 ft=1 dict=1 mc=3 fb=1 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · matching/ordering over cap (2/1) · 3 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex7-3-1, ex7-3-5, ex7-3-7
+  - mechanical stems: ex7-3-prod-speaking
+  - banned: ex7-3-1
+- **7-4 Shopping Dialogues** (lib M7) — WEAK
+  - ex=9 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · 3 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex7-4-4, ex7-4-7, ex7-4-8
+  - mechanical stems: ex7-4-prod-speaking
+- **7-5 Comparing Things** (lib M7) — WEAK
+  - ex=10 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (2/1) · 4 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex7-5-3, ex7-5-5, ex7-5-6, ex7-5-7
+  - mechanical stems: ex7-5-prod-speaking
+
+## Spine module 5 — 0 PASS / 1 WEAK / 9 FAIL
+
+- **9-1 Transportation** (lib M9) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=3 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 2 empty explanations · 3 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex9-1-1, ex9-1-2, ex9-1-9
+  - mechanical stems: ex9-1-prod-speaking
+  - banned: ex9-1-2
+- **9-2 Buying Tickets** (lib M9) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=3 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (3/1) · 3 empty explanations · 3 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex9-2-2, ex9-2-5, ex9-2-10
+  - mechanical stems: ex9-2-prod-speaking
+  - banned: ex9-2-5
+- **9-3 Asking for Directions** (lib M9) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=3 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 2 empty explanations · 3 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex9-3-3, ex9-3-6, ex9-3-9
+  - mechanical stems: ex9-3-prod-speaking
+  - banned: ex9-3-3
+- **9-4 At the Airport & Train Station** (lib M9) — WEAK
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=3 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (3/1) · 3 empty explanations · 3 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex9-4-3, ex9-4-9, ex9-4-10
+  - mechanical stems: ex9-4-prod-speaking
+- **9-5 Modal Verbs** (lib M9) — FAIL
+  - ex=12 prod=4 spk=1 ft=2 dict=1 mc=3 fb=3 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 2 empty explanations · 3 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex9-5-4, ex9-5-9, ex9-5-11
+  - mechanical stems: ex9-5-prod-speaking
+  - banned: ex9-5-4
+- **10-1 Body Parts** (lib M10) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=3 repair=yes
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (3/1) · 4 generic stems · 1 mechanical stems · 1 banned matching
+  - generic stems: ex10-1-1, ex10-1-2, ex10-1-8, ex10-1-9
+  - mechanical stems: ex10-1-prod-speaking
+  - banned: ex10-1-1
+- **10-2 How Are You Feeling?** (lib M10) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=3 match/ord=2 repair=yes
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 2 empty explanations · 4 generic stems · 1 mechanical stems · 1 banned matching
+  - generic stems: ex10-2-3, ex10-2-8, ex10-2-9, ex10-2-10
+  - mechanical stems: ex10-2-prod-speaking
+  - banned: ex10-2-3
+- **10-3 At the Doctor** (lib M10) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=3 match/ord=2 repair=yes
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 2 generic stems · 1 mechanical stems · 1 banned matching
+  - generic stems: ex10-3-3, ex10-3-9
+  - mechanical stems: ex10-3-prod-speaking
+  - banned: ex10-3-3
+- **10-4 At the Pharmacy** (lib M10) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=3 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (3/1) · 4 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex10-4-3, ex10-4-4, ex10-4-9, ex10-4-10
+  - mechanical stems: ex10-4-prod-speaking
+  - banned: ex10-4-3
+- **10-5 Emergency!** (lib M10) — FAIL
+  - ex=9 prod=3 spk=1 ft=1 dict=1 mc=2 fb=2 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · fill-blank over cap (2/1) · matching/ordering over cap (2/1) · 4 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex10-5-1, ex10-5-3, ex10-5-5, ex10-5-7
+  - mechanical stems: ex10-5-prod-speaking
+  - banned: ex10-5-3
+
+## Spine module 6 — 0 PASS / 4 WEAK / 5 FAIL
+
+- **11-1 Professions in Detail** (lib M11) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=3 repair=yes
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (3/1) · 3 generic stems · 1 mechanical stems · 1 banned matching
+  - generic stems: ex11-1-2, ex11-1-8, ex11-1-9
+  - mechanical stems: ex11-1-prod-speaking
+  - banned: ex11-1-8
+- **11-2 At the Office / University** (lib M11) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=3 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (3/1) · 1 empty explanations · 5 generic stems · 1 mechanical stems · 2 banned matching · no mistake-repair
+  - generic stems: ex11-2-1, ex11-2-4, ex11-2-8, ex11-2-9, ex11-2-10
+  - mechanical stems: ex11-2-prod-speaking
+  - banned: ex11-2-1, ex11-2-8
+- **11-3 Writing a Simple Email** (lib M11) — WEAK
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=4 fb=2 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (4/2) · fill-blank over cap (2/1) · matching/ordering over cap (2/1) · 4 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex11-3-2, ex11-3-4, ex11-3-5, ex11-3-9
+  - mechanical stems: ex11-3-prod-speaking
+- **11-4 Talking About Skills** (lib M11) — WEAK
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=3 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 1 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex11-4-8
+  - mechanical stems: ex11-4-prod-speaking
+- **11-5 Job Interview Basics** (lib M11) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=3 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (3/1) · 1 empty explanations · 5 generic stems · 1 mechanical stems · 2 banned matching · no mistake-repair
+  - generic stems: ex11-5-1, ex11-5-2, ex11-5-4, ex11-5-8, ex11-5-9
+  - mechanical stems: ex11-5-prod-speaking
+  - banned: ex11-5-2, ex11-5-8
+- **12-1 Hobbies** (lib M12) — WEAK
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=3 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 1 empty explanations · 1 mechanical stems · no mistake-repair
+  - mechanical stems: ex12-1-prod-speaking
+- **12-2 Weather & Seasons** (lib M12) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=3 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (3/1) · 1 empty explanations · 6 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex12-2-1, ex12-2-2, ex12-2-4, ex12-2-8, ex12-2-9, ex12-2-10
+  - mechanical stems: ex12-2-prod-speaking
+  - banned: ex12-2-8
+- **12-3 Making Plans with Friends** (lib M12) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=3 match/ord=2 repair=yes
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 3 generic stems · 1 mechanical stems · 1 banned matching
+  - generic stems: ex12-3-1, ex12-3-2, ex12-3-9
+  - mechanical stems: ex12-3-prod-speaking
+  - banned: ex12-3-2
+- **12-4 Invitations** (lib M12) — WEAK
+  - ex=13 prod=5 spk=1 ft=3 dict=1 mc=3 fb=2 match/ord=3 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (3/1) · 1 empty explanations · 5 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex12-4-1, ex12-4-3, ex12-4-9, ex12-4-10, ex12-4-12
+  - mechanical stems: ex12-4-prod-speaking
+
+## Spine module 7 — 0 PASS / 6 WEAK / 4 FAIL
+
+- **14-1 Filling Out Forms** (lib M14) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=2 match/ord=3 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (2/1) · matching/ordering over cap (3/1) · 4 generic stems · 1 mechanical stems · 2 banned matching · no mistake-repair
+  - generic stems: ex14-1-1, ex14-1-7, ex14-1-8, ex14-1-9
+  - mechanical stems: ex14-1-prod-speaking
+  - banned: ex14-1-1, ex14-1-8
+- **14-2 At the Office** (lib M14) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=3 match/ord=2 repair=yes
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 5 generic stems · 1 mechanical stems · 1 banned matching
+  - generic stems: ex14-2-3, ex14-2-4, ex14-2-6, ex14-2-9, ex14-2-10
+  - mechanical stems: ex14-2-prod-speaking
+  - banned: ex14-2-3
+- **14-3 Opening a Bank Account** (lib M14) — FAIL
+  - ex=11 prod=3 spk=1 ft=1 dict=1 mc=3 fb=3 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 2 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex14-3-3, ex14-3-9
+  - mechanical stems: ex14-3-prod-speaking
+  - banned: ex14-3-3
+- **14-4 Writing Formal Letters & Emails** (lib M14) — FAIL
+  - ex=13 prod=5 spk=1 ft=3 dict=1 mc=3 fb=3 match/ord=2 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (3/1) · matching/ordering over cap (2/1) · 6 generic stems · 1 mechanical stems · 1 banned matching · no mistake-repair
+  - generic stems: ex14-4-2, ex14-4-4, ex14-4-7, ex14-4-9, ex14-4-11, ex14-4-12
+  - mechanical stems: ex14-4-prod-speaking
+  - banned: ex14-4-4
+- **17-1 Exam Format Overview & Tips** (lib M17) — WEAK
+  - ex=15 prod=5 spk=1 ft=3 dict=1 mc=9 fb=0 match/ord=1 repair=yes
+  - fixes: speaking 1/2 · MC over cap (9/2) · 2 generic stems · 1 mechanical stems
+  - generic stems: ex17-1-12, ex17-1-13
+  - mechanical stems: ex17-1-prod-speaking
+- **17-2 Hören Teil 1 — Kurze Nachrichten** (lib M17) — WEAK
+  - ex=14 prod=4 spk=1 ft=2 dict=1 mc=10 fb=0 match/ord=0 repair=yes
+  - fixes: speaking 1/2 · MC over cap (10/2) · 3 generic stems · 1 mechanical stems
+  - generic stems: ex17-2-11, ex17-2-12, ex17-2-13
+  - mechanical stems: ex17-2-prod-speaking
+- **17-3 Hören Teil 2 & 3 — Gespräche** (lib M17) — WEAK
+  - ex=15 prod=5 spk=1 ft=2 dict=2 mc=10 fb=0 match/ord=0 repair=NO
+  - fixes: speaking 1/2 · MC over cap (10/2) · 2 generic stems · 1 mechanical stems · no mistake-repair
+  - generic stems: ex17-3-11, ex17-3-14
+  - mechanical stems: ex17-3-prod-speaking
+- **17-4 Lesen Teil 1 — Schilder und Anzeigen** (lib M17) — WEAK
+  - ex=14 prod=4 spk=1 ft=1 dict=2 mc=10 fb=0 match/ord=0 repair=yes
+  - fixes: speaking 1/2 · MC over cap (10/2) · 2 generic stems · 1 mechanical stems
+  - generic stems: ex17-4-11, ex17-4-13
+  - mechanical stems: ex17-4-prod-speaking
+- **17-5 Lesen Teil 2 & 3 — E-Mails und Texte** (lib M17) — WEAK
+  - ex=13 prod=3 spk=1 ft=1 dict=1 mc=10 fb=0 match/ord=0 repair=yes
+  - fixes: speaking 1/2 · MC over cap (10/2) · 1 generic stems · 1 mechanical stems
+  - generic stems: ex17-5-prod-dictation
+  - mechanical stems: ex17-5-prod-speaking
+- **17-6 Übungstest — Hören & Lesen** (lib M17) — WEAK
+  - ex=19 prod=4 spk=1 ft=2 dict=1 mc=15 fb=0 match/ord=0 repair=yes
+  - fixes: speaking 1/2 · MC over cap (15/2) · 1 mechanical stems
+  - mechanical stems: ex17-6-prod-speaking
+
+## Spine module 8 — 0 PASS / 7 WEAK / 0 FAIL
+
+- **18-1 Schreiben Teil 1 — Formulare ausfüllen** (lib M18) — WEAK
+  - ex=15 prod=5 spk=1 ft=3 dict=1 mc=3 fb=7 match/ord=0 repair=NO
+  - fixes: speaking 1/2 · MC over cap (3/2) · fill-blank over cap (7/1) · 1 mechanical stems · no mistake-repair
+  - mechanical stems: ex18-1-prod-speaking
+- **18-2 Schreiben Teil 2 — Kurze Nachrichten** (lib M18) — WEAK
+  - ex=15 prod=5 spk=1 ft=3 dict=1 mc=6 fb=4 match/ord=0 repair=yes
+  - fixes: speaking 1/2 · MC over cap (6/2) · fill-blank over cap (4/1) · 1 mechanical stems
+  - mechanical stems: ex18-2-prod-speaking
+- **18-3 Sprechen Teil 1 — Sich vorstellen** (lib M18) — WEAK
+  - ex=15 prod=3 spk=1 ft=1 dict=1 mc=6 fb=4 match/ord=2 repair=yes
+  - fixes: speaking 1/2 · MC over cap (6/2) · fill-blank over cap (4/1) · matching/ordering over cap (2/1) · 1 mechanical stems
+  - mechanical stems: ex18-3-prod-speaking
+- **18-4 Sprechen Teil 2 — Fragen stellen und beantworten** (lib M18) — WEAK
+  - ex=15 prod=5 spk=1 ft=1 dict=3 mc=5 fb=4 match/ord=1 repair=NO
+  - fixes: speaking 1/2 · MC over cap (5/2) · fill-blank over cap (4/1) · 1 mechanical stems · no mistake-repair
+  - mechanical stems: ex18-4-prod-speaking
+- **18-5 Sprechen Teil 3 — Bitten formulieren** (lib M18) — WEAK
+  - ex=15 prod=3 spk=1 ft=1 dict=1 mc=9 fb=3 match/ord=0 repair=NO
+  - fixes: speaking 1/2 · MC over cap (9/2) · fill-blank over cap (3/1) · no mistake-repair
+- **18-6 Kompletter Übungstest — Alle 4 Teile** (lib M18) — WEAK
+  - ex=19 prod=3 spk=1 ft=1 dict=1 mc=13 fb=2 match/ord=1 repair=yes
+  - fixes: speaking 1/2 · MC over cap (13/2) · fill-blank over cap (2/1)
+- **18-7 Adipoli A1 Conclusion — Celebration!** (lib M18) — WEAK
+  - ex=6 prod=5 spk=2 ft=2 dict=1 mc=1 fb=0 match/ord=0 repair=NO
+  - fixes: 1 mechanical stems · no mistake-repair
+  - mechanical stems: ex18-7-prod-speaking
+
+## Totals
+- Spine lessons audited: 66 — 0 PASS / 36 WEAK / 30 FAIL
+- Generic stems needing scene tie-in: 194
+- Mechanical batch-generated stems: 64
+- Empty explanations: 29
+- Lessons with no mistake-repair: 45

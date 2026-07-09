@@ -18,11 +18,11 @@ A learner never chooses from a library. The app shows the next required block.
 |---|---|---|---|---|---|
 | 1 | **First German moment** | Hear, greet, pronounce, hold a tiny formal/informal exchange | sein basics, pronouns ich/du/Sie | 🗣 First real conversation | M1 + module-1 missions |
 | 2 | **Identity, numbers, time** | Introduce self, spell, give origin/job/languages, numbers 0–100, time/dates | haben, present tense, W-Fragen | 🗣 Full self-intro (= Sprechen Teil 1) · ✍ name/address fields | M2 + M3 + module-2 missions |
-| 3 | **People, home, daily life** | Family, describing people, home/rooms, present-tense routine | articles, possessives, plural basics, sentence order | 👂 Short dialogues · **Mini-mock gate after M2** | M4 + M5 + M8 basics |
-| 4 | **Food, shopping, money** | Order, buy, prices, likes/dislikes | accusative survival (einen/eine/ein), negation nicht/kein | 🗣 W-Frage asking (Teil 2) · 📖 ads/menus · **Half-mock gate** | M6 + M7 |
+| 3 | **People, home, daily life** | Family, describing people, home/rooms, present-tense routine | articles, possessives, plural basics, sentence order | 👂 Short dialogues | M4 + M5 + M8 basics |
+| 4 | **Food, shopping, money** | Order, buy, prices, likes/dislikes | accusative survival (einen/eine/ein), negation nicht/kein | 🗣 W-Frage asking (Teil 2) · 📖 ads/menus · **Mini-mock gate** | M6 + M7 |
 | 5 | **Travel, services, health** | Directions, tickets, announcements, appointments, doctor/pharmacy | modal verbs (können/müssen/möchten), common prepositions | ✍ Full form filling (Schreiben Teil 1) · 👂 announcements | M9 + M10 |
-| 6 | **Work, study, free time, messages** | Work/study/hobbies/weather/plans, invitations, simple email/SMS | separable verbs (practical), simple connectors | ✍ 30-word email, 3 Inhaltspunkte (Teil 2) · 🗣 requests (Teil 3) · **Full mock gate** | M11 + M12 |
-| 7 | **Official life and exam skills** | Forms, notices, ads, emails, office/bank language, reading strategy | simple requests, spiral review | 📖 Notices/signs at exam level · audio-to-form transfer | M14 + M17 (Lesen/Hören prep) |
+| 6 | **Work, study, free time, messages** | Work/study/hobbies/weather/plans, invitations, simple email/SMS | separable verbs (practical), simple connectors | ✍ 30-word email, 3 Inhaltspunkte (Teil 2) · 🗣 requests (Teil 3) · **Half-mock gate** | M11 + M12 |
+| 7 | **Official life and exam skills** | Forms, notices, ads, emails, office/bank language, reading strategy | simple requests, spiral review | 📖 Notices/signs at exam level · audio-to-form transfer · **Full-mock gate** | M14 + M17 (Lesen/Hören prep) |
 | 8 | **Goethe A1 Bootcamp** | Timed mocks, all section strategies, recovery loops, final 7-day plan | none new — spiral review | All four skills exam-ready · 2–3 timed full mocks | M17 + M18 + `goethe-tests.ts` (8 mocks) |
 | + | **A1+ bridge** (optional, post-exam) | weil/dass, reflexives, dative depth | — | Clearly labeled "after your exam" | M16 |
 

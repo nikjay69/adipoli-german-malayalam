@@ -63,3 +63,10 @@ next-env.d.ts
 
 .vercel
 .env*.local
+
+# raw generation candidates/renders — selected winners live in public/ (back up externally; Gemini creds deleted)
+scripts/output/vocab-candidates/
+scripts/output/scenes-candidates/
+scripts/output/veo-loops/
+scripts/output/kuttan-pack/
+scripts/output/videos/

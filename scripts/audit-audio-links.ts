@@ -1,0 +1,51 @@
+/**
+ * Asset link audit (roadmap fix #7): every audioUrl/imageUrl referenced by
+ * content must resolve to a real file in public/. Wired into `npm run qa` —
+ * exits 1 on any missing file so broken dictations can never ship silently.
+ *
+ *   npx tsx scripts/audit-audio-links.ts
+ */
+
+import * as fs from 'fs';
+import * as path from 'path';
+import { pathToFileURL } from 'url';
+
+const missing: string[] = [];
+let audioRefs = 0;
+let imageRefs = 0;
+
+function check(ref: string | undefined, kind: 'audio' | 'image', where: string) {
+  if (!ref) return;
+  if (kind === 'audio') audioRefs++;
+  else imageRefs++;
+  if (!fs.existsSync(path.join('public', ref))) missing.push(`${where}: ${ref}`);
+}
+
+async function main() {
+  for (let i = 1; i <= 18; i++) {
+    const p = String(i).padStart(2, '0');
+    const m = await import(pathToFileURL(path.resolve(`src/lib/content/modules/module-${p}.ts`)).href);
+    const mod = m[`MODULE_${i}`];
+    for (const lesson of mod.lessons) {
+      for (const ex of lesson.exercises ?? []) {
+        check(ex.audioUrl, 'audio', ex.id);
+        check(ex.imageUrl, 'image', ex.id);
+      }
+      for (const v of lesson.vocabulary ?? []) {
+        check(v.audioUrl, 'audio', v.id);
+        check(v.exampleAudioUrl, 'audio', v.id);
+      }
+    }
+  }
+
+  console.log(`asset links: ${audioRefs} audio + ${imageRefs} image refs checked, ${missing.length} missing`);
+  if (missing.length) {
+    for (const m of missing.slice(0, 25)) console.log('  MISSING ' + m);
+    process.exit(1);
+  }
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

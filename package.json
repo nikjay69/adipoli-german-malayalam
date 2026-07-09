@@ -10,11 +10,13 @@
     "lint:mvp": "eslint src/lib src/app/learn src/app/course src/components/layout --max-warnings 200",
     "typecheck": "tsc --noEmit",
     "test:content": "tsx tests/content-validation.test.ts",
-    "qa": "npm run lint:mvp && npm run typecheck && npm run test:content",
+    "test:assets": "tsx scripts/audit-audio-links.ts",
+    "qa": "npm run lint:mvp && npm run typecheck && npm run test:content && npm run test:assets",
     "remotion:studio": "remotion studio",
     "remotion:render": "tsx scripts/render-video.ts",
     "remotion:tts": "tsx scripts/gen-tts.ts",
-    "audit:app-readiness": "tsx scripts/audit-app-readiness.ts"
+    "audit:app-readiness": "tsx scripts/audit-app-readiness.ts",
+    "audit:spine": "tsx scripts/audit-spine-premium.ts"
   },
   "dependencies": {
     "@google/genai": "^1.46.0",

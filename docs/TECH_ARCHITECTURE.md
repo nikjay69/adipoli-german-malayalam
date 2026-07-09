@@ -52,6 +52,8 @@ New frameworks · content database/CMS · microservices · runtime AI dependence
 
 ~€60 TTS for missing native German audio (video model lines + app gaps) · ~€30 Gemini speech-eval during pilot · ~€10 reserve. **No image/video generation spend.** Gemini used sparingly and only with the sparkle badge on AI-derived content (existing policy).
 
+**Exception (DECISIONS #9, 2026-06-12):** a one-time batch converted the owner's expiring Google Cloud credits (€150–200 target, €198 hard cap) into pre-baked static assets — native German audio (Cloud TTS Chirp3-HD), painterly scene backdrops + vocab illustrations (Imagen 4), adult-Kuttan poses, and ambient Veo loops. Ledger: `scripts/output/gemini-spend-ledger.json`. This batch does not change the runtime rule: the app runs at €0 AI budget; all generated assets are static files in `public/`.
+
 ## Testing & CI
 
 - Vitest, seeded from `tests/content-validation.test.ts`: content schema · quiz answers valid & present in options · audio URLs resolve to real files · production-floor check (≥3 production exercises per spine lesson) · duplicate-exercise detection · empty-explanation scan.
