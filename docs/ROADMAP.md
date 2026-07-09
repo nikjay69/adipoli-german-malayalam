@@ -16,7 +16,7 @@ Each sprint pairs one experience fix (E) with one module content pass (C) to pre
 
 | Sprint | Experience fix | Content pass | Status |
 |---|---|---|---|
-| 1 | E1 One home (root = spine Today, one readiness source) | C1 · S4 (module-06/07) | — |
+| 1 | E1 One home (root = spine Today, one readiness source) | C1 · S4 (module-06/07) | **done 2026-07-10** — S4 10/10 PASS; audit 11 PASS / 35 FAIL (was 1/45); evidence `GermanCourse_QC/2026-07-10_sprint1-one-home-and-s4-premium-gate.md` |
 | 2 | E2 Real checkpoints (scored tasks, tags from misses) | C2 · S5 (module-09/10) | — |
 | 3 | E3 Honest exam scoring + dead-video fix | C3 · S6 (module-11/12) | — |
 | 4 | E4 Mission depth + storyScene coverage | C4 · S7 (module-14/17 exam-format rework) | — |

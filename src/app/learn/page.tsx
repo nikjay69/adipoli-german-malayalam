@@ -39,7 +39,7 @@ function isLessonDone(completed: { lessonId: string }[], id: string) {
 }
 
 export default function TodayPage() {
-  const { userProgress } = useGameStore();
+  const { userProgress, updateStreak } = useGameStore();
   const [mounted, setMounted] = useState(false);
   const [showLibrary, setShowLibrary] = useState(false);
   const [m1Missions, setM1Missions] = useState<Module1MissionId[]>([]);
@@ -55,6 +55,7 @@ export default function TodayPage() {
     const timer = window.setTimeout(() => {
       setMounted(true);
       refresh();
+      updateStreak(); // daily-visit streak used to be counted on the legacy dashboard home
     }, 0);
     window.addEventListener('module1-mission-completed', refresh);
     window.addEventListener('module2-mission-completed', refresh);
@@ -67,7 +68,7 @@ export default function TodayPage() {
       window.removeEventListener('module1-checkpoint-scored', refresh);
       window.removeEventListener('storage', refresh);
     };
-  }, []);
+  }, [updateStreak]);
 
   const inputs: SpineInputs = useMemo(() => ({
     completedLessons: userProgress.completedLessons,

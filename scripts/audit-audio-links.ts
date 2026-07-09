@@ -11,14 +11,27 @@ import * as path from 'path';
 import { pathToFileURL } from 'url';
 
 const missing: string[] = [];
+const pendingHits: string[] = [];
 let audioRefs = 0;
 let imageRefs = 0;
+
+// Files queued for the Sprint 6 TTS batch (DECISIONS #13) are pending, not missing.
+const ttsQueue: Set<string> = (() => {
+  try {
+    const q = JSON.parse(fs.readFileSync(path.resolve('scripts/tts-queue.json'), 'utf8'));
+    return new Set((q.pending ?? []).map((e: { file: string }) => e.file));
+  } catch {
+    return new Set<string>();
+  }
+})();
 
 function check(ref: string | undefined, kind: 'audio' | 'image', where: string) {
   if (!ref) return;
   if (kind === 'audio') audioRefs++;
   else imageRefs++;
-  if (!fs.existsSync(path.join('public', ref))) missing.push(`${where}: ${ref}`);
+  if (fs.existsSync(path.join('public', ref))) return;
+  if (ttsQueue.has(ref)) pendingHits.push(`${where}: ${ref}`);
+  else missing.push(`${where}: ${ref}`);
 }
 
 async function main() {
@@ -38,7 +51,11 @@ async function main() {
     }
   }
 
-  console.log(`asset links: ${audioRefs} audio + ${imageRefs} image refs checked, ${missing.length} missing`);
+  console.log(
+    `asset links: ${audioRefs} audio + ${imageRefs} image refs checked, ${missing.length} missing` +
+      (pendingHits.length ? `, ${pendingHits.length} pending TTS batch (scripts/tts-queue.json)` : '')
+  );
+  for (const p of pendingHits.slice(0, 25)) console.log('  PENDING ' + p);
   if (missing.length) {
     for (const m of missing.slice(0, 25)) console.log('  MISSING ' + m);
     process.exit(1);

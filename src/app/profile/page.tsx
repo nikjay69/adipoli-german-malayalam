@@ -30,8 +30,8 @@ import { useGameStore, ACHIEVEMENTS_DATA } from '@/lib/store';
 import { Kuttan } from '@/components/character/Kuttan';
 import { StreakCalendar } from '@/components/ui/StreakCalendar';
 import { HOUR_OPTIONS, getEstimatedDays, getEstimatedCompletionDate, createStudyPlan } from '@/lib/study-plan';
-import { ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
-import { calculateExamReadiness } from '@/lib/exam-readiness';
+import { ALL_MODULES } from '@/lib/content/modules';
+import { getSkillReadiness, readModule1CheckpointResult, type Module1CheckpointStored } from '@/lib/spine';
 import { useAuthStore } from '@/lib/auth-store';
 import { FEATURE_FLAGS, getAuthStatusMessage } from '@/lib/app-config';
 
@@ -42,8 +42,8 @@ export default function ProfilePage() {
   const [mounted, setMounted] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
-  const [showBreakdown, setShowBreakdown] = useState(false);
   const [showPaceEditor, setShowPaceEditor] = useState(false);
+  const [m1Checkpoint, setM1Checkpoint] = useState<Module1CheckpointStored | null>(null);
 
   // Passkey state
   const [webAuthnSupported, setWebAuthnSupported] = useState(false);
@@ -59,6 +59,7 @@ export default function ProfilePage() {
     setWebAuthnSupported(
       typeof window !== 'undefined' && !!window.PublicKeyCredential
     );
+    setM1Checkpoint(readModule1CheckpointResult());
   }, []);
 
   // Check if user has passkeys registered
@@ -538,83 +539,56 @@ export default function ProfilePage() {
           </div>
         </Card>
 
-        {/* Exam Readiness */}
-        {userProgress.completedLessons.length > 0 && (() => {
-          const totalLessonsCalc = ALL_MODULES.reduce((s, m) => s + m.lessons.length, 0);
-          const totalVocab = getAllVocabulary().length;
-          const readiness = calculateExamReadiness({
+        {/* Exam readiness — the SAME checkpoint-derived source as the Today screen.
+            The old count-based calculateExamReadiness score disagreed with it (DECISIONS #13). */}
+        {(() => {
+          const skills = getSkillReadiness({
             completedLessons: userProgress.completedLessons,
-            totalLessons: totalLessonsCalc,
-            learnedVocabulary: userProgress.learnedVocabulary.length,
-            totalVocabulary: totalVocab,
-            streak: userProgress.streak,
-            gamesPlayed: userProgress.gamesPlayed,
-            quizzesTaken: userProgress.quizzesTaken,
+            spineCheckpoints: userProgress.spineCheckpoints || {},
+            module1MissionIds: [],
+            module2MissionIds: [],
+            module1Checkpoint: m1Checkpoint,
+            mockResults: userProgress.mockResults || {},
           });
+          const skillRows = [
+            { key: 'hoeren' as const, label: 'Hören' },
+            { key: 'sprechen' as const, label: 'Sprechen' },
+            { key: 'lesen' as const, label: 'Lesen' },
+            { key: 'schreiben' as const, label: 'Schreiben' },
+          ];
+          const hasEvidence = skillRows.some(({ key }) => skills[key] > 0);
           return (
             <Card padding="sm" className="mb-3">
               <div className="flex items-center justify-between mb-2">
                 <h2 className="font-semibold text-[var(--foreground)] flex items-center gap-2">
-                  <Award className="w-5 h-5" style={{ color: readiness.color }} />
+                  <Award className="w-5 h-5 text-[#d4a520]" />
                   A1 Exam Readiness
                 </h2>
-                <span className="text-2xl font-bold animate-shimmer" style={{ color: readiness.color }}>{readiness.score}%</span>
+                <Link href="/course" className="inline-flex items-center gap-1 text-xs font-bold text-[var(--foreground)]/50 hover:text-[var(--foreground)]/80">
+                  Course path <ArrowUpRight className="h-3 w-3" />
+                </Link>
               </div>
-              <ProgressBar progress={readiness.score} color={readiness.score >= 60 ? 'success' : 'warning'} size="md" />
-              <p className="text-xs text-[var(--foreground)]/50 mt-1 mb-2">{readiness.label} · 60% needed to pass Goethe A1</p>
-
-              {/* Collapsible breakdown */}
-              <button onClick={() => setShowBreakdown(!showBreakdown)} className="text-xs text-[var(--foreground)]/40 text-center w-full py-1">
-                {showBreakdown ? 'Hide breakdown ▲' : 'Show breakdown ▼'}
-              </button>
-              {showBreakdown && (
-                <>
-                  {/* Course vs Supplementary */}
-                  <div className="grid grid-cols-2 gap-3 mb-3 mt-2">
-                    <div className="bg-[var(--foreground)]/5 rounded-lg p-2 text-center">
-                      <div className="text-lg font-bold" style={{ color: readiness.color }}>{readiness.courseScore}/80</div>
-                      <div className="text-xs text-[var(--foreground)]/40 mt-0.5">Course Path</div>
-                      <div className="flex justify-center gap-1 mt-1">
-                        {[
-                          { label: 'Lessons', value: readiness.breakdown.lessons, max: 35 },
-                          { label: 'Vocab', value: readiness.breakdown.vocabulary, max: 20 },
-                          { label: 'Accuracy', value: readiness.breakdown.accuracy, max: 25 },
-                        ].map(item => (
-                          <div key={item.label} className="text-center">
-                            <div className="text-xs font-bold text-[var(--foreground)]/80">{item.value}</div>
-                            <div className="text-xs text-[var(--foreground)]/40">/{item.max}</div>
-                          </div>
-                        ))}
-                      </div>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+                {skillRows.map(({ key, label }) => (
+                  <div key={key}>
+                    <div className="mb-1 flex items-center justify-between text-[11px] font-bold">
+                      <span className="text-[var(--foreground)]/60">{label}</span>
+                      <span className="text-[var(--foreground)]/40">{skills[key]}%</span>
                     </div>
-                    <div className="bg-[var(--foreground)]/5 rounded-lg p-2 text-center">
-                      <div className="text-lg font-bold" style={{ color: readiness.color, opacity: 0.7 }}>{readiness.supplementaryScore}/20</div>
-                      <div className="text-xs text-[var(--foreground)]/40 mt-0.5">Extras</div>
-                      <div className="flex justify-center gap-1 mt-1">
-                        {[
-                          { label: 'Games', value: readiness.breakdown.games, max: 8 },
-                          { label: 'Tests', value: readiness.breakdown.tests, max: 7 },
-                          { label: 'Streak', value: readiness.breakdown.streak, max: 5 },
-                        ].map(item => (
-                          <div key={item.label} className="text-center">
-                            <div className="text-xs font-bold text-[var(--foreground)]/80">{item.value}</div>
-                            <div className="text-xs text-[var(--foreground)]/40">/{item.max}</div>
-                          </div>
-                        ))}
-                      </div>
+                    <div className="h-1.5 overflow-hidden rounded-full bg-[var(--foreground)]/10">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-[#d4a520] to-[#27ae60]"
+                        style={{ width: `${skills[key]}%` }}
+                      />
                     </div>
                   </div>
-
-                  {/* Next action + tips */}
-                  <div className="bg-[var(--foreground)]/5 rounded-lg p-2">
-                    <p className="text-xs font-semibold text-[var(--foreground)]/60 mb-1">Next step:</p>
-                    <p className="text-xs text-[var(--foreground)]/50 mb-1">{readiness.nextAction}</p>
-                    {readiness.tips.length > 0 && readiness.tips.map((tip, i) => (
-                      <p key={i} className="text-xs text-[var(--foreground)]/40">- {tip}</p>
-                    ))}
-                  </div>
-                </>
-              )}
+                ))}
+              </div>
+              <p className="text-xs text-[var(--foreground)]/50 mt-2">
+                {hasEvidence
+                  ? 'Measured from your checkpoints and mocks · 60/100 needed to pass Goethe A1'
+                  : 'Pass your first module checkpoint to start measuring readiness.'}
+              </p>
             </Card>
           );
         })()}

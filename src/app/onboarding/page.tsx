@@ -29,10 +29,10 @@ export default function OnboardingPage() {
 
   useEffect(() => { setMounted(true); }, []);
 
-  // If study plan already exists, go home
+  // If study plan already exists, go to Today (the one home)
   useEffect(() => {
     if (mounted && userProgress.studyPlan) {
-      router.replace('/');
+      router.replace('/learn');
     }
   }, [mounted, userProgress.studyPlan, router]);
 
@@ -52,7 +52,7 @@ export default function OnboardingPage() {
   }, [selectedHours, setStudyPlan, markIntroSeen, userProgress.hasSeenIntro]);
 
   const handleStart = useCallback(() => {
-    router.replace('/');
+    router.replace('/learn');
   }, [router]);
 
   if (!mounted) {

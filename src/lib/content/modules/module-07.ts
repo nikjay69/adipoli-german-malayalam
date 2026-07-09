@@ -153,12 +153,11 @@ export const MODULE_7: Module = {
         },
         {
           id: "ex7-1-4",
-          type: "multiple-choice",
-          question: "How do you say 'That's all' at the checkout in German?",
-          options: ["Das ist gut.", "Das ist alles.", "Das ist fertig.", "Das ist genug."],
+          type: "free-text",
+          question: "The checkout uncle at the imagined German supermarket looks at Kuttan's trolley, waiting for more. There is no more. Type the German for 'That's all.':",
           correctAnswer: "Das ist alles.",
-          explanation: "'Das ist alles.' literally means 'That is everything.' — used when you're done shopping.",
-          xpReward: 10
+          explanation: "'Das ist alles.' literally means 'That is everything.' — the two-second phrase that ends every checkout conversation.",
+          xpReward: 25
         },
         {
           id: "ex7-1-5",
@@ -172,18 +171,18 @@ export const MODULE_7: Module = {
         {
           id: "ex7-1-6",
           type: "dictation",
-          question: "Listen and type: Ich kaufe sechs Eier.",
+          question: "Six eggs for Amma's cake experiment. At the checkout, Kuttan announces his mission to nobody in particular. Listen and type exactly what you hear.",
           correctAnswer: "Ich kaufe sechs Eier",
-          explanation: "Great! 'Eier' is the plural of 'Ei'. And remember to capitalize all nouns!",
+          explanation: "'Eier' is the plural of 'Ei' — and 'sechs Eier' is a tongue-twister worth mastering. Capitalize the noun!",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-buy-eggs.mp3"
         },
         {
           id: "ex7-1-7",
           type: "free-text",
-          question: "Write in German: 'Where can I find the milk?' (milk = Milch)",
+          question: "Lost between forty kinds of Joghurt at the imagined supermarket, milk nowhere in sight. Ask a worker in German — 'Where can I find the milk?':",
           correctAnswer: "Wo finde ich die Milch",
-          explanation: "Wunderbar! 'Wo finde ich...' is the perfect phrase for the supermarket. 'die Milch' because Milch is feminine.",
+          explanation: "'Wo finde ich...?' is the supermarket survival phrase. 'die Milch' because Milch is feminine — and the verb sits right after 'Wo'.",
           xpReward: 30
         }
       ,
@@ -195,6 +194,16 @@ export const MODULE_7: Module = {
           correctAnswer: "Wie viel kostet das",
           explanation: "'Wie viel kostet das?' works for everything in every shop. Ask it, then catch the number in the answer — that's Hören Teil 1.",
           audioUrl: "/audio/exercises/ex7-1-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex7-1-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: he asks the shelf-stacker 'Wo ich finde die Milch?' After a W-word the verb comes SECOND, then ich! Say it right: 'Wo finde ich die Milch?'",
+          questionGerman: "Sprechen Sie laut: 'Wo finde ich die Milch?'",
+          correctAnswer: "Wo finde ich die Milch",
+          explanation: "W-word, verb, subject: Wo FINDE ich...? Malayalam and English both let the verb drift in questions — German never does. This order is scored directly in Sprechen Teil 3.",
+          audioUrl: "/audio/exercises/ex7-1-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -389,16 +398,6 @@ export const MODULE_7: Module = {
       ],
       exercises: [
         {
-          id: "ex7-2-1",
-          type: "multiple-choice",
-          question: "How do you ask 'How much does this cost?' in German?",
-          options: ["Was ist das?", "Wie viel kostet das?", "Wo ist das?", "Was machst du?"],
-          correctAnswer: "Wie viel kostet das?",
-          imageUrl: "/images/german_menu.png",
-          explanation: "'Wie viel kostet das?' = 'How much does that cost?' You can also say 'Was kostet das?'",
-          xpReward: 10
-        },
-        {
           id: "ex7-2-2",
           type: "fill-blank",
           question: "Complete: 'Das _____ fünf Euro.' (That costs five euros.)",
@@ -410,20 +409,19 @@ export const MODULE_7: Module = {
         {
           id: "ex7-2-3",
           type: "multiple-choice",
-          question: "What does 'günstig' mean?",
+          question: "A shelf tag at the imagined Edeka shouts 'GÜNSTIG!' next to the rice, and Kuttan's eyes light up. What is the tag promising?",
           options: ["expensive", "free", "affordable / good value", "broken"],
           correctAnswer: "affordable / good value",
-          explanation: "'günstig' means affordable or good value — it's more positive than 'billig' (cheap), which can sound negative.",
+          explanation: "'günstig' means affordable or good value — it's more positive than 'billig' (cheap), which can sound negative. Ads in Lesen Teil 3 love this word.",
           xpReward: 10
         },
         {
           id: "ex7-2-4",
-          type: "ordering",
-          question: "Put these words in order to say 'I would like to pay by card': Ich / mit / möchte / Karte / zahlen",
-          options: ["Ich", "möchte", "mit", "Karte", "zahlen"],
-          correctAnswer: ["Ich", "möchte", "mit", "Karte", "zahlen"],
-          explanation: "'Ich möchte mit Karte zahlen.' = 'I would like to pay by card.' Note: möchte + verb at the end.",
-          xpReward: 15
+          type: "free-text",
+          question: "No cash in Kuttan's wallet, as usual. At the imagined Edeka till he holds up his card — type his line in German: 'I would like to pay by card.' (mit Karte zahlen):",
+          correctAnswer: "Ich möchte mit Karte zahlen",
+          explanation: "'Ich möchte mit Karte zahlen.' — möchte in slot 2, the real verb (zahlen) waits at the end. That bracket is the modal-verb pattern you'll use daily.",
+          xpReward: 30
         },
         {
           id: "ex7-2-5",
@@ -446,18 +444,18 @@ export const MODULE_7: Module = {
         {
           id: "ex7-2-7",
           type: "dictation",
-          question: "Listen and type: Das kostet fünf Euro.",
+          question: "Kuttan asks the stall owner what the mangoes cost. Catch the answer — this is exactly Hören Teil 1. Listen and type what you hear.",
           correctAnswer: "Das kostet fünf Euro",
-          explanation: "Perfect! 'Euro' stays singular after a number: fünf Euro, zehn Euro.",
+          explanation: "'Euro' stays singular after a number: fünf Euro, zehn Euro. Prices are the most reliable points in the whole Hören section.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-cost-5.mp3"
         },
         {
           id: "ex7-2-8",
           type: "free-text",
-          question: "Translate to German: 'That is very expensive.' (expensive = teuer)",
+          question: "The price tag on the tiny jar of saffron makes Kuttan gasp. Say it like a local — type in German: 'That is very expensive.' (teuer):",
           correctAnswer: "Das ist sehr teuer",
-          explanation: "Excellent! 'sehr' means 'very'. 'Das ist sehr teuer!'",
+          explanation: "'Das ist sehr teuer!' — sehr means 'very'. Half of German small talk is agreeing that things are teuer.",
           xpReward: 30
         }
       ,
@@ -469,6 +467,16 @@ export const MODULE_7: Module = {
           correctAnswer: "Das kostet zwölf Euro fünfzig",
           explanation: "German prices say Euro between the numbers: zwölf Euro fünfzig = 12,50 €. Saying prices makes hearing them easy.",
           audioUrl: "/audio/exercises/ex7-2-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex7-2-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: he reads the tag 2,50 € aloud as 'zwei Komma fünf Euro' — maths class German! Prices put Euro in the middle. Say it right: 'Das kostet zwei Euro fünfzig.'",
+          questionGerman: "Sprechen Sie laut: 'Das kostet zwei Euro fünfzig.'",
+          correctAnswer: "Das kostet zwei Euro fünfzig",
+          explanation: "2,50 € = zwei Euro fünfzig — number, Euro, number, no Komma, no Cents needed. Train the pattern out loud and Hören price questions become free points.",
+          audioUrl: "/audio/exercises/ex7-2-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -715,12 +723,11 @@ export const MODULE_7: Module = {
         },
         {
           id: "ex7-3-2",
-          type: "multiple-choice",
-          question: "What is 'die Hose' in English?",
-          options: ["shirt", "trousers", "socks", "hat"],
+          type: "type-answer",
+          question: "Inventory day at the imagined clothes shop: Kuttan reads a tag — 'die Hose, 19,99 €'. The visiting auditor wants the English word for the item. Type it:",
           correctAnswer: "trousers",
-          explanation: "'die Hose' means trousers/pants. Note: in German it's singular (die Hose), not plural like English 'trousers'.",
-          xpReward: 10
+          explanation: "'die Hose' means trousers/pants — and in German it's SINGULAR (die Hose), unlike English 'trousers'. Ein Hose-Paradox, if you like.",
+          xpReward: 15
         },
         {
           id: "ex7-3-3",
@@ -742,12 +749,13 @@ export const MODULE_7: Module = {
         },
         {
           id: "ex7-3-5",
-          type: "ordering",
-          question: "Put these words in order to say 'I am wearing a blue shirt': Ich / ein / trage / blaues / Hemd",
-          options: ["Ich", "trage", "ein", "blaues", "Hemd"],
-          correctAnswer: ["Ich", "trage", "ein", "blaues", "Hemd"],
-          explanation: "'Ich trage ein blaues Hemd.' — After 'ein' (neuter accusative), the adjective gets '-es'.",
-          xpReward: 15
+          type: "speaking",
+          question: "Repair Kuttan's slip: showing off his new shirt on the video call, he says 'Ich trage ein blau Hemd.' The adjective needs its -es ending after 'ein'! Say it right: 'Ich trage ein blaues Hemd.'",
+          questionGerman: "Sprechen Sie laut: 'Ich trage ein blaues Hemd.'",
+          correctAnswer: "Ich trage ein blaues Hemd",
+          explanation: "ein blauES Hemd — after 'ein' with a neuter noun, the adjective carries the -es. Dropping adjective endings is the most audible A1 slip there is; repairing it aloud fixes it fastest.",
+          audioUrl: "/audio/exercises/ex7-3-spk2-model.mp3",
+          xpReward: 25
         },
         {
           id: "ex7-3-6",
@@ -761,18 +769,18 @@ export const MODULE_7: Module = {
         {
           id: "ex7-3-7",
           type: "dictation",
-          question: "Listen and type: Das rote Kleid ist schön.",
+          question: "Window-shopping commentary: Priya points at a dress in the display and delivers her verdict. Listen and type exactly what you hear.",
           correctAnswer: "Das rote Kleid ist schön",
-          explanation: "Super! 'rote' is the adjective form after 'das'. And 'schön' means beautiful/nice.",
+          explanation: "'rote' is the adjective form after 'das' — and 'schön' (beautiful) is the sound to master: lips rounded like 'o', tongue saying 'e'.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-red-dress.mp3"
         },
         {
           id: "ex7-3-8",
           type: "free-text",
-          question: "Write in German: 'I am wearing a white shirt.' (shirt = Hemd, white = weiß)",
+          question: "Sprechen Teil 1 rehearsal: describe what you're wearing today. Keep it simple — type in German: 'I am wearing a white shirt.' (Hemd, weiß):",
           correctAnswer: "Ich trage ein weißes Hemd",
-          explanation: "Wunderbar! 'Ich trage ein weißes Hemd.' — note the '-es' ending for neuter objects with 'ein'.",
+          explanation: "'Ich trage ein weißes Hemd.' — the '-es' ending again, because Hemd is neuter and follows 'ein'. Same pattern as the blue one; now it's yours.",
           xpReward: 30
         }
       ,
@@ -1033,59 +1041,36 @@ export const MODULE_7: Module = {
           xpReward: 10
         },
         {
-          id: "ex7-4-4",
-          type: "ordering",
-          question: "Put these shopping steps in the correct order:",
-          options: [
-            "Kann ich Ihnen helfen?",
-            "Ich suche eine Jacke.",
-            "Kann ich das anprobieren?",
-            "Das passt gut! Ich nehme es.",
-            "An der Kasse zahlen."
-          ],
-          correctAnswer: [
-            "Kann ich Ihnen helfen?",
-            "Ich suche eine Jacke.",
-            "Kann ich das anprobieren?",
-            "Das passt gut! Ich nehme es.",
-            "An der Kasse zahlen."
-          ],
-          explanation: "A typical shopping flow: greeting → stating what you want → trying on → deciding → paying.",
+          id: "ex7-4-5",
+          type: "type-answer",
+          question: "Armful of shirts, Kuttan scans the imagined shop for a door marked 'Umkleidekabine'. Type in English what he's hunting for:",
+          correctAnswer: "fitting room",
+          explanation: "'die Umkleidekabine' = fitting room. 'Umkleiden' means to change clothes, 'Kabine' means cabin/booth — German just glues the story together into one word.",
           xpReward: 15
         },
         {
-          id: "ex7-4-5",
-          type: "multiple-choice",
-          question: "What is 'die Umkleidekabine'?",
-          options: ["checkout counter", "fitting room", "parking lot", "storage room"],
-          correctAnswer: "fitting room",
-          explanation: "'die Umkleidekabine' = fitting room. 'Umkleiden' means to change clothes, 'Kabine' means cabin/booth.",
-          xpReward: 10
-        },
-        {
           id: "ex7-4-6",
-          type: "fill-blank",
-          question: "Complete: 'Haben Sie das in _____ L?' (Do you have this in size L?)",
-          options: ["Größe", "Farbe", "Nummer", "Länge"],
+          type: "type-answer",
+          question: "The kurta is one size too small, as Amma predicted. Kuttan flags the assistant: 'Haben Sie das in ___ L?' Type the missing word (size):",
           correctAnswer: "Größe",
-          explanation: "'Größe' means 'size'. 'Haben Sie das in Größe L?' is how you ask about available sizes.",
-          xpReward: 10
+          explanation: "'Größe' means 'size'. 'Haben Sie das in Größe L?' is how you ask about available sizes — with ö said like 'e' through rounded lips.",
+          xpReward: 15
         },
         {
           id: "ex7-4-7",
           type: "dictation",
-          question: "Listen and type: Kann ich das anprobieren?",
+          question: "Kuttan holds the shirt up at the fitting-room door and asks the assistant one polite question. Listen and type exactly what you hear.",
           correctAnswer: "Kann ich das anprobieren",
-          explanation: "Excellent! 'anprobieren' is the verb for trying on clothes.",
+          explanation: "'anprobieren' — the trying-on verb. Kann ich...? + verb at the end: the modal bracket carries the whole request.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-try-on.mp3"
         },
         {
           id: "ex7-4-8",
           type: "free-text",
-          question: "Translate to German: 'I am looking for a jacket.' (jacket = Jacke)",
+          question: "Kerala monsoon shopping list, Germany edition: Kuttan needs rain protection. Tell the assistant in German — 'I am looking for a jacket.' (Jacke):",
           correctAnswer: "Ich suche eine Jacke",
-          explanation: "Perfect! 'Ich suche eine Jacke.' — 'eine' because Jacke is feminine.",
+          explanation: "'Ich suche eine Jacke.' — 'eine' because Jacke is feminine. 'Ich suche...' opens half of all shop conversations.",
           xpReward: 30
         }
       ,
@@ -1097,6 +1082,16 @@ export const MODULE_7: Module = {
           correctAnswer: "Ich hätte gern ein Kilo Tomaten, bitte",
           explanation: "'Ich hätte gern ...' is the native-sounding upgrade of 'Ich möchte'. Goethe examiners hear it and smile.",
           audioUrl: "/audio/exercises/ex7-4-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex7-4-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: he asks the shop assistant 'Hast du das in Größe L?' — a stranger serving you gets Sie, not du! Say it right: 'Haben Sie das in Größe L?'",
+          questionGerman: "Sprechen Sie laut: 'Haben Sie das in Größe L?'",
+          correctAnswer: "Haben Sie das in Größe L",
+          explanation: "du is for friends; every shop assistant, official, and examiner is Sie. The Goethe Sprechen rubric scores formality directly — 'Haben Sie...?' is free marks.",
+          audioUrl: "/audio/exercises/ex7-4-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1307,35 +1302,24 @@ export const MODULE_7: Module = {
         },
         {
           id: "ex7-5-3",
-          type: "multiple-choice",
-          question: "How do you say 'This is the cheapest' in German?",
-          options: ["Das ist billiger.", "Das ist am billigsten.", "Das ist billigste.", "Das ist der billig."],
+          type: "free-text",
+          question: "Three lungis, three price tags at the Saturday market. Kuttan holds up the winner and declares — type it in German: 'This is the cheapest.' (am billigsten):",
           correctAnswer: "Das ist am billigsten.",
-          explanation: "Superlative with 'am': 'am billigsten' = the cheapest. Pattern: am + adjective + -sten.",
-          xpReward: 10
+          explanation: "Superlative with 'am': 'am billigsten' = the cheapest. Pattern: am + adjective + -sten. The bargain-hunter's favourite sentence.",
+          xpReward: 30
         },
         {
           id: "ex7-5-4",
-          type: "fill-blank",
-          question: "Complete: 'Dieses Handy ist teurer _____ das andere.' (This phone is more expensive than the other one.)",
-          options: ["als", "wie", "und", "oder"],
+          type: "type-answer",
+          question: "Phone-shop debate with the cousin: 'Dieses Handy ist teurer ___ das andere.' Type the missing word (than):",
           correctAnswer: "als",
-          explanation: "'als' = 'than' in comparisons. Always use 'als' (not 'wie') when comparing with '-er' forms.",
-          xpReward: 10
-        },
-        {
-          id: "ex7-5-5",
-          type: "ordering",
-          question: "Put these in order from positive → comparative → superlative: am kleinsten / kleiner / klein",
-          options: ["klein", "kleiner", "am kleinsten"],
-          correctAnswer: ["klein", "kleiner", "am kleinsten"],
-          explanation: "klein (small) → kleiner (smaller) → am kleinsten (smallest). A regular pattern!",
-          xpReward: 10
+          explanation: "'als' = 'than' in comparisons. Always 'als' (never 'wie') after an -er form: teurer als, billiger als, größer als.",
+          xpReward: 15
         },
         {
           id: "ex7-5-6",
           type: "matching",
-          question: "Match the comparative forms:",
+          question: "Mock-prep drill: Kuttan races to match each adjective to its comparative before Frau Weber turns from the board:",
           options: ["groß → größer", "gut → besser", "billig → billiger", "schnell → schneller"],
           correctAnswer: ["groß → größer", "gut → besser", "billig → billiger", "schnell → schneller"],
           explanation: "Note: groß gets an umlaut, gut is completely irregular, but billig and schnell are regular.",
@@ -1344,7 +1328,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-5-7",
           type: "multiple-choice",
-          question: "Which sentence correctly compares two items?",
+          question: "In the shop, Priya compares the dress and the trousers. Which line is the correct German?",
           options: [
             "Das Kleid ist schöner wie die Hose.",
             "Das Kleid ist schöner als die Hose.",
@@ -1358,18 +1342,18 @@ export const MODULE_7: Module = {
         {
           id: "ex7-5-8",
           type: "dictation",
-          question: "Listen and type: Berlin ist größer als Kochi.",
+          question: "On the video call, the Berlin cousin drops a geography fact to end an argument. Listen and type exactly what you hear.",
           correctAnswer: "Berlin ist größer als Kochi",
-          explanation: "Great job! 'größer als' = bigger than. A perfect comparison!",
+          explanation: "'größer als' = bigger than. (Kuttan's counter-argument comes in the next exercise.)",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-berlin-kochi.mp3"
         },
         {
           id: "ex7-5-9",
           type: "free-text",
-          question: "Write in German: 'This restaurant is the best.' (best = am besten)",
+          question: "The family lands at their favourite thattukada and Kuttan makes it official — type in German: 'This restaurant is the best.' (am besten):",
           correctAnswer: "Dieses Restaurant ist am besten",
-          explanation: "Wunderbar! 'Dieses Restaurant ist am besten.' — using the superlative correctly!",
+          explanation: "'Dieses Restaurant ist am besten.' — gut → besser → am besten, the one superlative every A1 candidate must own.",
           xpReward: 30
         }
       ,
@@ -1381,6 +1365,16 @@ export const MODULE_7: Module = {
           correctAnswer: "Das T-Shirt ist billiger als die Jacke",
           explanation: "billiger als = cheaper than. Comparative -er + als is all A1 needs for comparing prices.",
           audioUrl: "/audio/exercises/ex7-5-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex7-5-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: defending home turf, he says 'Kochi ist schöner wie Berlin.' Comparatives take als, not wie! Say it right — and mean it: 'Kochi ist schöner als Berlin.'",
+          questionGerman: "Sprechen Sie laut: 'Kochi ist schöner als Berlin.'",
+          correctAnswer: "Kochi ist schöner als Berlin",
+          explanation: "'wie' after a comparative is the single most common spoken slip — even Germans do it. The exam doesn't forgive it: -er + als, every time.",
+          audioUrl: "/audio/exercises/ex7-5-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

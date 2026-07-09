@@ -23,7 +23,7 @@ export default function IntroPage() {
 
   useEffect(() => {
     if (mounted && userProgress.hasSeenIntro && !isLeavingIntro) {
-      router.replace('/');
+      router.replace('/learn');
     }
   }, [mounted, userProgress.hasSeenIntro, isLeavingIntro, router]);
 

@@ -1,0 +1,15 @@
+{
+  "note": "Native German audio pending the Sprint 6 Cloud TTS batch (DECISIONS #13). Every entry is an audioUrl already referenced by content; audit-audio-links reports these as PENDING (non-fatal) until the batch renders them, then this list is emptied. Voice: match the June batch (Cloud TTS Chirp3-HD, de-DE).",
+  "pending": [
+    { "file": "/audio/exercises/ex6-1-spk2-model.mp3", "german": "Ich esse gern Reis.", "kind": "speaking-model", "lesson": "6-1" },
+    { "file": "/audio/exercises/ex6-2-spk2-model.mp3", "german": "Ich möchte einen Kaffee, bitte.", "kind": "speaking-model", "lesson": "6-2" },
+    { "file": "/audio/exercises/ex6-3-spk2-model.mp3", "german": "Die Speisekarte, bitte!", "kind": "speaking-model", "lesson": "6-3" },
+    { "file": "/audio/exercises/ex6-4-spk2-model.mp3", "german": "Ich mag kein Fleisch.", "kind": "speaking-model", "lesson": "6-4" },
+    { "file": "/audio/exercises/ex6-5-spk2-model.mp3", "german": "Ich habe keinen Hunger.", "kind": "speaking-model", "lesson": "6-5" },
+    { "file": "/audio/exercises/ex7-1-spk2-model.mp3", "german": "Wo finde ich die Milch?", "kind": "speaking-model", "lesson": "7-1" },
+    { "file": "/audio/exercises/ex7-2-spk2-model.mp3", "german": "Das kostet zwei Euro fünfzig.", "kind": "speaking-model", "lesson": "7-2" },
+    { "file": "/audio/exercises/ex7-3-spk2-model.mp3", "german": "Ich trage ein blaues Hemd.", "kind": "speaking-model", "lesson": "7-3" },
+    { "file": "/audio/exercises/ex7-4-spk2-model.mp3", "german": "Haben Sie das in Größe L?", "kind": "speaking-model", "lesson": "7-4" },
+    { "file": "/audio/exercises/ex7-5-spk2-model.mp3", "german": "Kochi ist schöner als Berlin.", "kind": "speaking-model", "lesson": "7-5" }
+  ]
+}
