@@ -135,7 +135,8 @@ function auditLesson(spineModule: number, sourceModule: number, lesson: Lesson):
   if (!lesson.storyScene) fixes.push('no storyScene');
 
   // FAIL: hard floor broken or banned content. WEAK: premium gaps. PASS: clean.
-  const fail = production < 3 || speaking === 0 || bannedExercises.length > 0;
+  // Speaking floor is >=2 per LESSON_QUALITY_STANDARD ("speaking >=2" hard floor).
+  const fail = production < 3 || speaking < 2 || bannedExercises.length > 0;
   const weak = fixes.length > 0;
   const verdict: LessonRow['verdict'] = fail ? 'FAIL' : weak ? 'WEAK' : 'PASS';
 
@@ -178,7 +179,7 @@ function toMarkdown(rows: LessonRow[]): string {
   lines.push('');
   lines.push(`Generated: ${new Date().toISOString()}`);
   lines.push('');
-  lines.push('Verdicts: FAIL = hard floor broken (production <3, no speaking, or banned exercise). WEAK = premium gaps named in fixes. PASS = clean against automated checks (human boredom scan still required).');
+  lines.push('Verdicts: FAIL = hard floor broken (production <3, speaking <2, or banned exercise). WEAK = premium gaps named in fixes. PASS = clean against automated checks (human boredom scan still required).');
   lines.push('');
 
   const bySpine = new Map<number, LessonRow[]>();

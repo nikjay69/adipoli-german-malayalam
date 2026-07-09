@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T16:29:48.788Z",
+  "generatedAt": "2026-07-09T22:08:29.237Z",
   "lessons": [
     {
       "spineModule": 2,
@@ -517,7 +517,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (4/2)",
@@ -547,7 +547,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "fill-blank over cap (2/1)",
@@ -580,7 +580,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -612,7 +612,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -643,7 +643,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (4/2)",
@@ -674,7 +674,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -706,7 +706,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -737,7 +737,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -769,7 +769,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -802,7 +802,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -834,7 +834,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -866,7 +866,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -898,7 +898,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -931,7 +931,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -959,9 +959,7 @@
         "ex9-5-11"
       ],
       "mechanicalStems": [],
-      "bannedExercises": [
-        "ex9-5-4"
-      ],
+      "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
       "verdict": "FAIL",
@@ -971,7 +969,6 @@
         "fill-blank over cap (3/1)",
         "matching/ordering over cap (2/1)",
         "2 generic stems",
-        "1 banned matching",
         "no mistake-repair"
       ]
     },
@@ -998,7 +995,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1030,7 +1027,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1060,7 +1057,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1092,7 +1089,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1125,7 +1122,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "fill-blank over cap (2/1)",
@@ -1156,7 +1153,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1188,7 +1185,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1222,7 +1219,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (4/2)",
@@ -1253,7 +1250,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1286,7 +1283,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1315,7 +1312,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1349,7 +1346,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1381,7 +1378,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1415,7 +1412,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1447,7 +1444,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1481,7 +1478,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1511,7 +1508,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1546,7 +1543,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1578,7 +1575,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (9/2)",
@@ -1608,7 +1605,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (10/2)",
@@ -1637,7 +1634,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (10/2)",
@@ -1667,7 +1664,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (10/2)",
@@ -1695,7 +1692,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (10/2)",
@@ -1721,7 +1718,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (15/2)"
@@ -1746,7 +1743,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (3/2)",
@@ -1773,7 +1770,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (6/2)",
@@ -1799,7 +1796,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (6/2)",
@@ -1826,7 +1823,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (5/2)",
@@ -1853,7 +1850,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": false,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (9/2)",
@@ -1880,7 +1877,7 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "WEAK",
+      "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
         "MC over cap (13/2)",

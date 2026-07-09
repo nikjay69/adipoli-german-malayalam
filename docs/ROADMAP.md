@@ -8,7 +8,24 @@ Status: **Source of truth.** Established 2026-06-11. Update the ledger and phase
 - **Video track** (owner production time, agent-prepared): ~60h baseline, up to ~150h. Owner expects ~60h suffices if preparation/automation is right.
 - AI budget: €100 cap (allocation in `TECH_ARCHITECTURE.md`).
 
-## CURRENT PHASE: Version A · Phase 3 — Video M1–M2
+## CURRENT PHASE: Version A · Phase 3R — Quality Rescue (interleaved sprints)
+
+Re-sequenced 2026-07-10 (DECISIONS #13) after a three-part audit (content, learner experience, project status) found the course far below the envisioned bar: with the audit tightened to the written speaking≥2 floor, **45 of 66 spine lessons FAIL** (102 generic stems, ~30 lessons without mistake-repair, MC chains up to 15/lesson in M17/M18); checkpoints are self-graded ("Mark all passed"); two competing home screens; mock Sprechen scored by recording count; dead `videoUrl` refs. **Video M1–M2 is deferred** (owner decision; scripts stay record-ready; "video-enhanced, not video-blocked" holds).
+
+Each sprint pairs one experience fix (E) with one module content pass (C) to premium:
+
+| Sprint | Experience fix | Content pass | Status |
+|---|---|---|---|
+| 1 | E1 One home (root = spine Today, one readiness source) | C1 · S4 (module-06/07) | — |
+| 2 | E2 Real checkpoints (scored tasks, tags from misses) | C2 · S5 (module-09/10) | — |
+| 3 | E3 Honest exam scoring + dead-video fix | C3 · S6 (module-11/12) | — |
+| 4 | E4 Mission depth + storyScene coverage | C4 · S7 (module-14/17 exam-format rework) | — |
+| 5 | E5 Exam layer (simulator v1, readiness, 7-day plan) | C5 · S8 (module-18) + Kerala-canon storyScene fixes | — |
+| 6 | Final TTS batch (owner go-ahead at point of spend) + full-course QA gate | — | — |
+
+Done when: `audit:spine` 66/66 PASS · checkpoints administer scored tasks with tags from misses · one home, one readiness source · honest mock scoring · speaking simulator v1 live · cold-start 390px playthrough green.
+
+### Completed phases
 
 - Phase 0 (Reset): **done 2026-06-11** — 11 SOT docs, archives, CLAUDE.md, `npm run qa` v0 (lint:mvp + typecheck + 12,902 content checks, green).
 - Phase 1 (Spine): **done 2026-06-11** — Today screen (`/learn`), course path (`/course`), generic closed checkpoints for modules 2–8 (`/course/[id]/checkpoint`) with weakness tags + recovery prescriptions, skill-readiness bars, nav reduced to Today/Course/Practice/Me. Evidence: `scripts/output/phase1-playthrough/` (375px, zero console errors). Note: qa lint is scoped to the MVP surface (`lint:mvp`) because frozen legacy pages (games/auth) have pre-existing lint errors; widen the scope as files get touched.
