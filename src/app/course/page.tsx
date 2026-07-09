@@ -52,6 +52,7 @@ export default function CoursePage() {
     module1MissionIds: m1Missions,
     module2MissionIds: m2Missions,
     module1Checkpoint: m1Checkpoint,
+    mockResults: userProgress.mockResults || {},
   });
   const next = getNextBlock(modules);
   const completeCount = modules.filter((m) => m.status === 'complete').length;
@@ -123,7 +124,7 @@ export default function CoursePage() {
                             href={block.href}
                             className={`flex items-center gap-2.5 rounded-xl border px-3 py-2.5 transition ${
                               isNext
-                                ? 'border-[#e94560]/50 bg-[#e94560]/10'
+                                ? 'border-[#d4a520]/55 bg-[#d4a520]/12'
                                 : 'border-white/8 bg-black/15 hover:border-white/20'
                             }`}
                           >
@@ -138,7 +139,7 @@ export default function CoursePage() {
                               <span className="text-[10px] font-bold uppercase text-white/35">Optional</span>
                             )}
                             {isNext ? (
-                              <span className="flex items-center gap-1 rounded-full bg-[#e94560] px-2.5 py-1 text-[11px] font-black text-white">
+                              <span className="flex items-center gap-1 rounded-full bg-[#d4a520] px-2.5 py-1 text-[11px] font-black text-[#1b2d1b]">
                                 <Play className="h-3 w-3 fill-current" /> Next
                               </span>
                             ) : (

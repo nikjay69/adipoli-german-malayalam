@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, RotateCcw } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronDown, RotateCcw } from 'lucide-react';
 import {
   MissionShell,
   PremiumCard,
@@ -48,6 +48,11 @@ function itemModeLabel(item: Module1CheckpointItem) {
 export default function Module1CheckpointPage() {
   const [passedItemIds, setPassedItemIds] = useState<string[]>([]);
   const [saved, setSaved] = useState(false);
+  // Collapsible sections — only the first skill is open by default so the
+  // closed-check is a short scroll, not 7 screens. Mark one skill, move on.
+  const [openSections, setOpenSections] = useState<Set<string>>(new Set([module1CheckpointSections[0]?.id]));
+  const toggleSection = (id: string) =>
+    setOpenSections((cur) => { const n = new Set(cur); if (n.has(id)) n.delete(id); else n.add(id); return n; });
   const score = useMemo(() => scoreModule1Checkpoint(passedItemIds), [passedItemIds]);
   const selectedTags = new Set(score.failedTags);
   const recoveryCards = module1CheckpointRecoveryCards.filter((card) => selectedTags.has(card.weaknessTag)).slice(0, 3);
@@ -135,18 +140,29 @@ export default function Module1CheckpointPage() {
           </div>
 
           <div className="mt-7 grid gap-4" data-testid="module-1-checkpoint-items">
-            {module1CheckpointSections.map((section) => (
+            {module1CheckpointSections.map((section) => {
+              const open = openSections.has(section.id);
+              return (
               <section key={section.id} className="rounded-[1.45rem] border border-white/10 bg-white/[0.045] p-4 sm:p-5">
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
+                <button
+                  type="button"
+                  onClick={() => toggleSection(section.id)}
+                  aria-expanded={open}
+                  className="flex w-full items-start justify-between gap-3 text-left"
+                >
+                  <div className="min-w-0">
                     <h2 className="text-2xl font-black leading-tight">{section.title}</h2>
-                    <p className="mt-1 text-sm font-semibold text-white/58">{section.instruction}</p>
+                    {open && <p className="mt-1 text-sm font-semibold text-white/58">{section.instruction}</p>}
                   </div>
-                  <p className="rounded-full border border-white/10 bg-black/16 px-3 py-1 text-sm font-black text-white/60">
-                    {score.sectionScores[section.id].earned}/{section.maxPoints}
-                  </p>
-                </div>
+                  <div className="flex shrink-0 items-center gap-2">
+                    <p className="rounded-full border border-white/10 bg-black/16 px-3 py-1 text-sm font-black text-white/60">
+                      {score.sectionScores[section.id].earned}/{section.maxPoints}
+                    </p>
+                    <ChevronDown className={`h-5 w-5 text-white/45 transition ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+                  </div>
+                </button>
 
+                {open && (
                 <div className="mt-4 grid gap-3 lg:grid-cols-2">
                   {section.items.map((item) => {
                     const passed = passedItemIds.includes(item.id);
@@ -176,8 +192,10 @@ export default function Module1CheckpointPage() {
                     );
                   })}
                 </div>
+                )}
               </section>
-            ))}
+              );
+            })}
           </div>
 
           <div className="mt-7 grid gap-4 lg:grid-cols-[1fr_0.82fr] lg:items-start">

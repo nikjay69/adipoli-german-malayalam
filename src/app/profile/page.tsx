@@ -194,7 +194,7 @@ export default function ProfilePage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-pulse">
-          <div className="w-16 h-16 bg-gradient-to-br from-[#e94560] to-[#0f3460] rounded-2xl" />
+          <div className="w-16 h-16 bg-gradient-to-br from-[#d4a520] to-[#27ae60] rounded-2xl" />
         </div>
       </div>
     );
@@ -304,7 +304,7 @@ export default function ProfilePage() {
             <div className="max-w-xs mx-auto">
               <div className="flex items-center justify-between text-sm mb-1">
                 <span className="text-[var(--foreground)]/50">{completedLessons}/{totalLessons} lessons</span>
-                <span className="font-medium text-[#e94560]">{coursePercent}%</span>
+                <span className="font-medium text-[#d4a520]">{coursePercent}%</span>
               </div>
               <ProgressBar progress={coursePercent} color="primary" size="lg" />
               {userProgress.studyPlan && (
@@ -317,7 +317,7 @@ export default function ProfilePage() {
         ) : (
           /* Not Logged In */
           <Card padding="sm" className="text-center mb-3 md:col-span-2">
-            <div className="w-16 h-16 bg-gradient-to-br from-[#e94560] to-[#0f3460] rounded-full flex items-center justify-center mx-auto mb-3">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#d4a520] to-[#27ae60] rounded-full flex items-center justify-center mx-auto mb-3">
               <User className="w-8 h-8 text-white" />
             </div>
 
@@ -357,7 +357,7 @@ export default function ProfilePage() {
               <div className="max-w-xs mx-auto">
                 <div className="flex items-center justify-between text-sm mb-1">
                   <span className="text-[var(--foreground)]/50">{completedLessons}/{totalLessons} lessons</span>
-                  <span className="font-medium text-[#e94560]">{coursePercent}%</span>
+                  <span className="font-medium text-[#d4a520]">{coursePercent}%</span>
                 </div>
                 <ProgressBar progress={coursePercent} color="primary" size="lg" />
                 {userProgress.studyPlan && (
@@ -424,7 +424,7 @@ export default function ProfilePage() {
 
         {/* === SECTION: PROGRESS === */}
         <div className="mb-3 mt-2 flex items-center gap-2 md:col-span-2">
-          <div className="h-4 w-1 rounded-full bg-[#e94560]" />
+          <div className="h-4 w-1 rounded-full bg-[#d4a520]" />
           <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--foreground)]/60">Your progress</h2>
         </div>
 
@@ -432,12 +432,12 @@ export default function ProfilePage() {
         <Card padding="sm" className="mb-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <CalendarDays className="h-4 w-4 text-[#e94560]" />
+              <CalendarDays className="h-4 w-4 text-[#d4a520]" />
               <h3 className="text-sm font-semibold text-[var(--foreground)]">Study Pace</h3>
             </div>
             <button
               onClick={() => setShowPaceEditor(!showPaceEditor)}
-              className="text-xs text-[#e94560] font-medium"
+              className="text-xs text-[#d4a520] font-medium"
             >
               {showPaceEditor ? 'Cancel' : 'Change'}
             </button>
@@ -511,7 +511,7 @@ export default function ProfilePage() {
                     isDone
                       ? 'border-emerald-400/40 bg-emerald-400/10 ring-2 ring-[#27ae60]/50 shadow-[0_0_12px_rgba(39,174,96,0.2)]'
                       : hasStarted
-                      ? 'border-[#e94560]/30 bg-[#e94560]/5'
+                      ? 'border-[#d4a520]/30 bg-[#d4a520]/5'
                       : 'border-[var(--foreground)]/10 bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10'
                   }`}
                 >
@@ -520,7 +520,7 @@ export default function ProfilePage() {
                   {hasStarted && !isDone && (
                     <div className="absolute inset-x-1 bottom-1 h-0.5 overflow-hidden rounded-full bg-white/10">
                       <div
-                        className="h-full rounded-full bg-[#e94560]"
+                        className="h-full rounded-full bg-[#d4a520]"
                         style={{ width: `${progress}%` }}
                       />
                     </div>

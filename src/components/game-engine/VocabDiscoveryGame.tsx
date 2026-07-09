@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Volume2 } from 'lucide-react';
 import { speakGerman } from '@/lib/audio/useGermanTTS';
+import { playVocabAudio } from '@/lib/audio';
 import { feedbackWrong, feedbackCombo } from '@/lib/feedback';
 import { ListenBlast } from '@/components/exercise-games/ListenBlast';
 import { WordBuilder } from '@/components/exercise-games/WordBuilder';
@@ -26,6 +27,9 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
   const [challengeIdx, setChallengeIdx] = useState(0);
   const [score, setScore] = useState(0);
   const [combo, setCombo] = useState(0);
+  // Last tapped word — its pre-generated illustration is revealed above the grid.
+  const [focused, setFocused] = useState<VocabItem | null>(null);
+  const [focusImgFailed, setFocusImgFailed] = useState(false);
 
   const words = vocabList.slice(0, 6);
   const totalChallenges = Math.min(words.length, 4); // Test max 4 words
@@ -37,7 +41,10 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
   // surprise jumps while audio/meaning is still being processed.
 
   const handleWordTap = useCallback((vocab: VocabItem) => {
-    try { speakGerman(vocab.german, 0.85); } catch {}
+    // Pre-rendered native audio first; browser TTS only if the file is missing.
+    playVocabAudio(vocab.id).catch(() => { try { speakGerman(vocab.german, 0.85); } catch {} });
+    setFocusImgFailed(false);
+    setFocused(vocab);
     setTappedWords(prev => new Set(prev).add(vocab.id));
   }, []);
 
@@ -81,12 +88,37 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
 
             {sceneHint && <p className="text-xs text-white/70 text-center mb-2">{sceneHint}</p>}
 
-            <div className="mb-3 rounded-2xl border border-white/10 bg-black/35 px-4 py-3 text-center shadow-xl backdrop-blur-md">
-              <p className="text-sm font-black text-white">Listen to each German word.</p>
-              <p className="text-xs text-white/65 mt-0.5">
-                {tappedWords.size}/{words.length} heard · meaning appears after tap
-              </p>
-            </div>
+            {/* Reveal card — illustration + meaning for the last tapped word (visual-first) */}
+            <AnimatePresence mode="wait">
+              {focused ? (
+                <motion.div key={focused.id}
+                  initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                  className="mb-3 overflow-hidden rounded-2xl border border-[#d4a520]/30 bg-black/45 shadow-xl backdrop-blur-md">
+                  {!focusImgFailed && (
+                    <div className="relative h-28 w-full">
+                      <img
+                        src={`/images/vocab/${focused.id}.jpg`}
+                        alt=""
+                        onError={() => setFocusImgFailed(true)}
+                        className="h-full w-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    </div>
+                  )}
+                  <div className="px-4 py-2 text-center">
+                    <p className="text-lg font-black text-[#d4a520]">{focused.german}</p>
+                    <p className="text-xs text-white/75">{focused.english} · {focused.malayalam}</p>
+                  </div>
+                </motion.div>
+              ) : (
+                <div className="mb-3 rounded-2xl border border-white/10 bg-black/35 px-4 py-3 text-center shadow-xl backdrop-blur-md">
+                  <p className="text-sm font-black text-white">Tap a word — see it, hear it.</p>
+                  <p className="text-xs text-white/65 mt-0.5">
+                    {tappedWords.size}/{words.length} heard
+                  </p>
+                </div>
+              )}
+            </AnimatePresence>
 
             <div className="grid grid-cols-2 gap-2">
               {words.map((vocab, i) => {

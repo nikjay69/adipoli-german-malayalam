@@ -273,7 +273,7 @@ export default function Home() {
                   </>
                 )}
               </h2>
-              <span className="text-sm font-bold text-[#e94560]">
+              <span className="text-sm font-bold text-[#d4a520]">
                 {schedule ? schedule.percentComplete : coursePercent}%
               </span>
             </div>
@@ -281,7 +281,7 @@ export default function Home() {
             {/* Progress bar */}
             <div className="h-2.5 bg-[var(--foreground)]/8 rounded-full overflow-hidden">
               <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-[#e94560] to-[#e94560]/60"
+                className="h-full rounded-full bg-gradient-to-r from-[#d4a520] to-[#27ae60]"
                 initial={{ width: 0 }}
                 animate={{ width: `${schedule ? schedule.percentComplete : coursePercent}%` }}
                 transition={{ duration: 1, ease: 'easeOut' }}
@@ -293,7 +293,7 @@ export default function Home() {
               <span>{completedCount}/{totalLessons} lessons</span>
               <span>{userProgress.learnedVocabulary.length} words</span>
               {userProgress.streak > 0 && (
-                <span className={`text-[#e94560] ${userProgress.streak >= 3 ? 'animate-pulse' : ''}`}>
+                <span className={`text-[#e8a817] ${userProgress.streak >= 3 ? 'animate-pulse' : ''}`}>
                   🔥 {userProgress.streak} day streak
                 </span>
               )}

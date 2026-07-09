@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Lock, Trophy } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
-import { ALL_MODULES } from '@/lib/content/modules';
 import { Kuttan } from '@/components/character/Kuttan';
 import { SkeletonGrid } from '@/components/ui/Skeleton';
 
@@ -42,12 +41,19 @@ export default function TestsPage() {
 
   useEffect(() => { setMounted(true); }, []);
 
-  const completedModules = mounted ? ALL_MODULES.filter(m =>
-    m.lessons.every(l => userProgress.completedLessons.some(cl => cl.lessonId === l.id))
-  ).length : 0;
-
-  const getTestUnlockModule = (index: number) => Math.max(0, (Math.floor(index / 2) + 1) * 4);
-  const isTestUnlocked = (index: number) => completedModules >= getTestUnlockModule(index) || index < 2;
+  // Unlocking follows the spine mock cadence: tests 1-2 free, the rest open as
+  // module checkpoints pass (mini-mock at M4, half at M6, full at M7). Gate
+  // links from /course always open their test directly.
+  const spineCheckpoints = mounted ? (userProgress.spineCheckpoints || {}) : {};
+  const passedSpineModule = (id: number) => {
+    const result = spineCheckpoints[id];
+    return !!result && result.state !== 'FAIL';
+  };
+  const getTestUnlockModule = (index: number) => (index < 2 ? 0 : index < 4 ? 4 : index < 6 ? 6 : 7);
+  const isTestUnlocked = (index: number) => {
+    const required = getTestUnlockModule(index);
+    return required === 0 || passedSpineModule(required);
+  };
 
   if (!mounted) {
     return (
@@ -58,8 +64,8 @@ export default function TestsPage() {
     );
   }
 
-  const readinessPct = Math.min(100, Math.round((completedModules / 4) * 100));
-  const allUnlocked = completedModules >= 4;
+  const unlockedCount = tests.filter((_, i) => isTestUnlocked(i)).length;
+  const allUnlocked = unlockedCount === tests.length;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -101,7 +107,7 @@ export default function TestsPage() {
         <p className="text-xs text-[var(--foreground)]/60 leading-snug">
           {allUnlocked
             ? 'All tests unlocked! Crush the Goethe! 🚀'
-            : `Complete ${4 - completedModules} more module${4 - completedModules === 1 ? '' : 's'} to unlock tests! You're ${readinessPct}% ready! 🔥`}
+            : `${unlockedCount} of 8 unlocked. Pass your module checkpoints on the course path to open the rest! 🔥`}
         </p>
       </motion.div>
 
@@ -145,7 +151,7 @@ export default function TestsPage() {
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-[var(--foreground)]/30">Module {getTestUnlockModule(index)}</span>
+                    <span className="text-xs text-[var(--foreground)]/30">After Module {getTestUnlockModule(index)} checkpoint</span>
                     <Lock className="w-3.5 h-3.5 text-[var(--foreground)]/30 flex-shrink-0" />
                   </div>
                 </div>

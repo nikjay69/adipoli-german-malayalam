@@ -75,7 +75,8 @@ export default function TodayPage() {
     module1MissionIds: m1Missions,
     module2MissionIds: m2Missions,
     module1Checkpoint: m1Checkpoint,
-  }), [userProgress.completedLessons, userProgress.spineCheckpoints, m1Missions, m2Missions, m1Checkpoint]);
+    mockResults: userProgress.mockResults || {},
+  }), [userProgress.completedLessons, userProgress.spineCheckpoints, userProgress.mockResults, m1Missions, m2Missions, m1Checkpoint]);
 
   const spineModules = useMemo(() => (mounted ? getSpineModules(inputs) : []), [mounted, inputs]);
   const next = useMemo(() => getNextBlock(spineModules), [spineModules]);
@@ -256,7 +257,10 @@ export default function TodayPage() {
               </p>
               <div className="mb-2 grid grid-cols-3 gap-2 pb-4 md:grid-cols-6 md:gap-3">
                 {ALL_MODULES.map((m) => {
-                  const unlocked = isModuleUnlocked(m.id, userProgress.completedLessons);
+                  const unlocked = isModuleUnlocked(m.id, userProgress.completedLessons, {
+                    spineCheckpoints: userProgress.spineCheckpoints || {},
+                    module1Passed: (m1Checkpoint?.state ?? 'FAIL') !== 'FAIL',
+                  });
                   const done = m.lessons.filter((l) => isLessonDone(userProgress.completedLessons, l.id)).length;
                   const pct = Math.round((done / m.lessons.length) * 100);
                   const isComplete = pct === 100;

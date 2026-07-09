@@ -1,7 +1,7 @@
 'use client';
 
-import { use, useState, useEffect, useCallback, useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { use, useState, useEffect, useCallback, useRef, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Clock, ChevronRight, Award, ChevronDown, Mic, MicOff, Send, CheckCircle } from 'lucide-react';
 import { Card, Button, ProgressBar } from '@/components/ui';
@@ -10,6 +10,7 @@ import { useGameStore } from '@/lib/store';
 import { GOETHE_TESTS, getTestById } from '@/lib/content/goethe-tests';
 import { playAudio, stopAudio } from '@/lib/audio';
 import { Kuttan } from '@/components/character/Kuttan';
+import { getMockGate, computeMockBand, MOCK_BAND_LABELS, type MockSection } from '@/lib/mocks';
 
 type Section = 'overview' | 'hoeren' | 'lesen' | 'schreiben' | 'sprechen' | 'results';
 type SectionIntro = 'hoeren-intro' | 'lesen-intro' | 'schreiben-intro' | 'sprechen-intro' | null;
@@ -77,10 +78,26 @@ const SECTION_META = {
 
 const SECTION_ORDER: ('hoeren' | 'lesen' | 'schreiben' | 'sprechen')[] = ['hoeren', 'lesen', 'schreiben', 'sprechen'];
 
-export default function TestPage({ params }: { params: Promise<{ testId: string }> }) {
-  const { testId } = use(params);
+// Max points per section on the 60-point scale used by this player.
+const SECTION_MAX: Record<'hoeren' | 'lesen' | 'schreiben' | 'sprechen', number> = {
+  hoeren: 15,
+  lesen: 15,
+  schreiben: 15,
+  sprechen: 15,
+};
+
+function TestRunner({ testId }: { testId: string }) {
   const router = useRouter();
-  const { addXP, incrementQuizzesTaken } = useGameStore();
+  const searchParams = useSearchParams();
+  const { addXP, incrementQuizzesTaken, saveMockResult } = useGameStore();
+
+  // Spine mock gate (mini/half/full): scopes which sections run and saves a
+  // banded result back to the course spine. Only honored when the gate's
+  // testId matches this test.
+  const gateParam = searchParams.get('gate');
+  const gateCandidate = getMockGate(gateParam);
+  const gate = gateCandidate && gateCandidate.testId === testId ? gateCandidate : undefined;
+  const activeSections: MockSection[] = gate ? gate.sections : SECTION_ORDER;
 
   const [section, setSection] = useState<Section>('overview');
   const [sectionIntro, setSectionIntro] = useState<SectionIntro>(null);
@@ -174,6 +191,14 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
     setSectionIntro(`${s}-intro` as SectionIntro);
   };
 
+  /** Move to the next tested section (gate-aware) or finish. */
+  const advanceFrom = (s: 'hoeren' | 'lesen' | 'schreiben' | 'sprechen') => {
+    const idx = activeSections.indexOf(s);
+    const nextSection = activeSections[idx + 1];
+    if (nextSection) showSectionIntro(nextSection);
+    else finishTest();
+  };
+
   const startSection = (s: Section) => {
     setSection(s);
     setTeil('teil1');
@@ -247,11 +272,8 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
         if (teil === 'teil1') { setTeil('teil2'); setQuestionIndex(0); }
         else if (teil === 'teil2') { setTeil('teil3'); setQuestionIndex(0); }
         else {
-          // Section complete — move to next with intro
-          if (section === 'hoeren') showSectionIntro('lesen');
-          else if (section === 'lesen') showSectionIntro('schreiben');
-          else if (section === 'schreiben') showSectionIntro('sprechen');
-          else finishTest();
+          // Section complete — move to the next tested section (gate-aware)
+          advanceFrom(section as 'hoeren' | 'lesen' | 'schreiben' | 'sprechen');
         }
       }
     }, 1500);
@@ -366,13 +388,15 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
     return teil1Score + teil2Score;
   };
 
+  // Sprechen is worth 15 of the 60 points, same as every other section
+  // (the real Goethe A1 weights all four sections equally).
   const calculateSprechenScore = (): number => {
     const completedCount = Object.values(sprechenCompleted).filter(Boolean).length;
     const totalItems = getTotalSprechenItems();
     if (completedCount === 0) return 0;
-    if (completedCount >= totalItems) return 10;
-    if (completedCount >= totalItems / 2) return 7;
-    return 5;
+    if (completedCount >= totalItems) return 15;
+    if (completedCount >= totalItems / 2) return 10;
+    return 7;
   };
 
   const getTotalSprechenItems = (): number => {
@@ -383,34 +407,52 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
   };
 
   const finishTest = () => {
-    const hScore = calculateSectionScore('hoeren');
-    const lScore = calculateSectionScore('lesen');
-    const sScore = calculateSchreibenScore();
-    const spScore = calculateSprechenScore();
+    const scores = {
+      hoeren: calculateSectionScore('hoeren'),
+      lesen: calculateSectionScore('lesen'),
+      schreiben: calculateSchreibenScore(),
+      sprechen: calculateSprechenScore(),
+    };
 
-    setSectionScores({
-      hoeren: hScore,
-      lesen: lScore,
-      schreiben: sScore,
-      sprechen: spScore,
-    });
-
+    setSectionScores(scores);
     setSection('results');
     incrementQuizzesTaken();
-    const totalPoints = hScore + lScore + sScore + spScore;
-    addXP(Math.max(20, totalPoints * 2));
+
+    const testedPoints = activeSections.reduce((sum, s) => sum + scores[s], 0);
+    addXP(Math.max(20, testedPoints * 2));
+
+    if (gate) {
+      const sectionPercents: Record<string, number> = {};
+      for (const s of activeSections) {
+        sectionPercents[s] = Math.round((scores[s] / SECTION_MAX[s]) * 100);
+      }
+      const testedMax = activeSections.reduce((sum, s) => sum + SECTION_MAX[s], 0);
+      const percent = testedMax > 0 ? Math.round((testedPoints / testedMax) * 100) : 0;
+      saveMockResult({
+        gateId: gate.id,
+        testId,
+        percent,
+        band: computeMockBand(percent, sectionPercents),
+        sectionPercents,
+        savedAt: Date.now(),
+      });
+    }
   };
 
-  const totalScore = sectionScores.hoeren + sectionScores.lesen + sectionScores.schreiben + sectionScores.sprechen;
-  const passed = totalScore >= 36;
+  const totalScore = activeSections.reduce((sum, s) => sum + sectionScores[s], 0);
+  const maxScore = activeSections.reduce((sum, s) => sum + SECTION_MAX[s], 0);
+  const passed = totalScore >= Math.round(maxScore * 0.6);
+  const gateResultPercent = maxScore > 0 ? Math.round((totalScore / maxScore) * 100) : 0;
+  const gateBand = gate
+    ? computeMockBand(
+        gateResultPercent,
+        Object.fromEntries(activeSections.map((s) => [s, Math.round((sectionScores[s] / SECTION_MAX[s]) * 100)])),
+      )
+    : null;
 
   // Get current section index for progress dots
   const getCurrentSectionIndex = (): number => {
-    if (section === 'hoeren') return 0;
-    if (section === 'lesen') return 1;
-    if (section === 'schreiben') return 2;
-    if (section === 'sprechen') return 3;
-    return -1;
+    return activeSections.indexOf(section as MockSection);
   };
 
   const getSectionScoreForBreakdown = (kind: 'hoeren' | 'lesen') => {
@@ -446,7 +488,7 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
     const currentIdx = getCurrentSectionIndex();
     return (
       <div className="flex items-center justify-center gap-1.5 mb-4">
-        {SECTION_ORDER.map((s, i) => {
+        {activeSections.map((s, i) => {
           const meta = SECTION_META[s];
           const isActive = i === currentIdx;
           const isDone = i < currentIdx;
@@ -468,7 +510,7 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                   {meta.label}
                 </span>
               </div>
-              {i < SECTION_ORDER.length - 1 && (
+              {i < activeSections.length - 1 && (
                 <div className={`w-6 h-0.5 rounded mb-3 ${
                   isDone ? 'bg-[var(--foreground)]/30' : 'bg-[var(--foreground)]/10'
                 }`} />
@@ -511,8 +553,8 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
 
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <button onClick={() => router.push('/tests')} className="flex items-center gap-2 text-[var(--foreground)]/50 text-sm">
-          <ArrowLeft className="w-4 h-4" /> Tests
+        <button onClick={() => router.push(gate ? '/course' : '/tests')} className="flex items-center gap-2 text-[var(--foreground)]/50 text-sm">
+          <ArrowLeft className="w-4 h-4" /> {gate ? 'Course' : 'Tests'}
         </button>
         {section !== 'overview' && section !== 'results' && !sectionIntro && (
           <div className="flex items-center gap-2 text-sm font-mono">
@@ -535,10 +577,14 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
           <motion.div key="overview" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
             <div className="text-center mb-6">
               <p className="text-5xl mb-3">📝</p>
-              <h1 className="text-2xl font-bold">{test.name}</h1>
-              <p className="text-[var(--foreground)]/40 text-sm mt-1">{test.description}</p>
+              <h1 className="text-2xl font-bold">{gate ? gate.title : test.name}</h1>
+              <p className="text-[var(--foreground)]/40 text-sm mt-1">
+                {gate ? `Course gate · based on ${test.name}` : test.description}
+              </p>
               <p className="text-xs text-[var(--foreground)]/30 mt-2 font-mono">
-                60 Punkte | 36 zum Bestehen | ~80 Minuten
+                {gate
+                  ? `${maxScore} Punkte | ${Math.round(maxScore * 0.6)} zum Bestehen | ${gate.durationLabel.replace('~', '~')}`
+                  : '60 Punkte | 36 zum Bestehen | ~80 Minuten'}
               </p>
             </div>
 
@@ -561,7 +607,7 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
             </motion.div>
 
             <div className="space-y-3 mb-4">
-              {SECTION_ORDER.map((s) => {
+              {activeSections.map((s) => {
                 const meta = SECTION_META[s];
                 return (
                   <div key={s} className="game-card p-3 flex items-center gap-3">
@@ -580,17 +626,17 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
             <Card className="mb-4">
               <div className="flex items-center gap-3 p-1">
                 <div className="text-center flex-1">
-                  <div className="text-lg font-bold text-[#ffd93d]">60</div>
+                  <div className="text-lg font-bold text-[#ffd93d]">{maxScore}</div>
                   <div className="text-[9px] text-[var(--foreground)]/40">Max Points</div>
                 </div>
                 <div className="w-px h-8 bg-[var(--foreground)]/10" />
                 <div className="text-center flex-1">
-                  <div className="text-lg font-bold text-[#27ae60]">36</div>
+                  <div className="text-lg font-bold text-[#27ae60]">{Math.round(maxScore * 0.6)}</div>
                   <div className="text-[9px] text-[var(--foreground)]/40">To Pass (60%)</div>
                 </div>
                 <div className="w-px h-8 bg-[var(--foreground)]/10" />
                 <div className="text-center flex-1">
-                  <div className="text-lg font-bold text-[var(--foreground)]/60">~80</div>
+                  <div className="text-lg font-bold text-[var(--foreground)]/60">{gate ? gate.durationLabel.replace('m', '') : '~80'}</div>
                   <div className="text-[9px] text-[var(--foreground)]/40">Minutes</div>
                 </div>
               </div>
@@ -606,7 +652,7 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
               </ul>
             </Card>
 
-            <Button onClick={() => showSectionIntro('hoeren')} size="lg" fullWidth>
+            <Button onClick={() => showSectionIntro(activeSections[0])} size="lg" fullWidth>
               Start Prüfung
             </Button>
           </motion.div>
@@ -618,12 +664,12 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
             {(() => {
               const sKey = sectionIntro.replace('-intro', '') as keyof typeof SECTION_META;
               const meta = SECTION_META[sKey];
-              const sectionIdx = SECTION_ORDER.indexOf(sKey);
+              const sectionIdx = activeSections.indexOf(sKey);
               return (
                 <>
                   {/* Progress dots for intro too */}
                   <div className="flex items-center justify-center gap-1.5 mb-6">
-                    {SECTION_ORDER.map((s, i) => {
+                    {activeSections.map((s, i) => {
                       const m = SECTION_META[s];
                       const isActive = i === sectionIdx;
                       const isDone = i < sectionIdx;
@@ -643,7 +689,7 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                               {m.label}
                             </span>
                           </div>
-                          {i < SECTION_ORDER.length - 1 && (
+                          {i < activeSections.length - 1 && (
                             <div className={`w-6 h-0.5 rounded mb-3 ${isDone ? 'bg-[var(--foreground)]/30' : 'bg-[var(--foreground)]/10'}`} />
                           )}
                         </div>
@@ -1032,8 +1078,8 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                     Nachricht: {aiSchreibenFeedback ? Math.round((aiSchreibenFeedback.score / 100) * 10) : (schreibenMessage.trim().length > 10 ? '8' : schreibenMessage.trim().length > 0 ? '5' : '0')} Punkte
                   </p>
                 </Card>
-                <Button onClick={() => showSectionIntro('sprechen')} fullWidth>
-                  Continue to Sprechen <ChevronRight className="w-4 h-4" />
+                <Button onClick={() => advanceFrom('schreiben')} fullWidth>
+                  {activeSections.indexOf('schreiben') === activeSections.length - 1 ? 'Zum Ergebnis' : 'Continue to Sprechen'} <ChevronRight className="w-4 h-4" />
                 </Button>
               </div>
             )}
@@ -1283,63 +1329,78 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                   <span className="text-4xl font-bold" style={{ color: passed ? '#27ae60' : '#c0392b' }}>
                     {totalScore}
                   </span>
-                  <span className="text-lg text-[var(--foreground)]/40">/60</span>
+                  <span className="text-lg text-[var(--foreground)]/40">/{maxScore}</span>
                 </div>
                 <p className="text-xs text-[var(--foreground)]/30 mt-1">
-                  {Math.round((totalScore / 60) * 100)}% · 36 Punkte zum Bestehen
+                  {gateResultPercent}% · {Math.round(maxScore * 0.6)} Punkte zum Bestehen
                 </p>
               </div>
-              <ProgressBar progress={Math.round((totalScore / 60) * 100)}
+              <ProgressBar progress={gateResultPercent}
                 color={passed ? 'success' : 'warning'} size="md" />
+              {gate && gateBand && (
+                <div
+                  className="mt-3 rounded-xl px-3 py-2 text-center"
+                  style={{ backgroundColor: `${MOCK_BAND_LABELS[gateBand].color}1a`, border: `1px solid ${MOCK_BAND_LABELS[gateBand].color}40` }}
+                >
+                  <p className="text-sm font-bold" style={{ color: MOCK_BAND_LABELS[gateBand].color }}>
+                    {MOCK_BAND_LABELS[gateBand].label}
+                  </p>
+                  <p className="text-xs text-[var(--foreground)]/50 mt-0.5">{MOCK_BAND_LABELS[gateBand].detail}</p>
+                </div>
+              )}
             </Card>
 
             {/* Section-by-section breakdown */}
             <Card className="mb-4">
               <h3 className="font-bold text-sm mb-4">Ergebnis nach Prüfungsteilen</h3>
               <div className="space-y-3">
-                {/* Hören */}
-                <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-sm font-semibold text-[#3b82f6]">🎧 Hören</span>
-                    <span className="text-xs text-[var(--foreground)]/50">
-                      ({getSectionScoreForBreakdown('hoeren').correct}/{getSectionScoreForBreakdown('hoeren').total} richtig)
-                    </span>
+                {activeSections.includes('hoeren') && (
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-sm font-semibold text-[#3b82f6]">🎧 Hören</span>
+                      <span className="text-xs text-[var(--foreground)]/50">
+                        ({getSectionScoreForBreakdown('hoeren').correct}/{getSectionScoreForBreakdown('hoeren').total} richtig)
+                      </span>
+                    </div>
+                    <ScoreBar score={sectionScores.hoeren} max={15} color="#3b82f6" />
                   </div>
-                  <ScoreBar score={sectionScores.hoeren} max={15} color="#3b82f6" />
-                </div>
+                )}
 
-                {/* Lesen */}
-                <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-sm font-semibold text-[#27ae60]">📖 Lesen</span>
-                    <span className="text-xs text-[var(--foreground)]/50">
-                      ({getSectionScoreForBreakdown('lesen').correct}/{getSectionScoreForBreakdown('lesen').total} richtig)
-                    </span>
+                {activeSections.includes('lesen') && (
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-sm font-semibold text-[#27ae60]">📖 Lesen</span>
+                      <span className="text-xs text-[var(--foreground)]/50">
+                        ({getSectionScoreForBreakdown('lesen').correct}/{getSectionScoreForBreakdown('lesen').total} richtig)
+                      </span>
+                    </div>
+                    <ScoreBar score={sectionScores.lesen} max={15} color="#27ae60" />
                   </div>
-                  <ScoreBar score={sectionScores.lesen} max={15} color="#27ae60" />
-                </div>
+                )}
 
-                {/* Schreiben */}
-                <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-sm font-semibold text-[#d4a520]">✍️ Schreiben</span>
-                    <span className="text-xs text-[var(--foreground)]/50">
-                      (Form + Nachricht)
-                    </span>
+                {activeSections.includes('schreiben') && (
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-sm font-semibold text-[#d4a520]">✍️ Schreiben</span>
+                      <span className="text-xs text-[var(--foreground)]/50">
+                        (Form + Nachricht)
+                      </span>
+                    </div>
+                    <ScoreBar score={sectionScores.schreiben} max={15} color="#d4a520" />
                   </div>
-                  <ScoreBar score={sectionScores.schreiben} max={15} color="#d4a520" />
-                </div>
+                )}
 
-                {/* Sprechen */}
-                <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-sm font-semibold text-[#e94560]">🗣️ Sprechen</span>
-                    <span className="text-xs text-[var(--foreground)]/50">
-                      ({Object.values(sprechenCompleted).filter(Boolean).length}/{getTotalSprechenItems()} Teile gesprochen)
-                    </span>
+                {activeSections.includes('sprechen') && (
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-sm font-semibold text-[#e94560]">🗣️ Sprechen</span>
+                      <span className="text-xs text-[var(--foreground)]/50">
+                        ({Object.values(sprechenCompleted).filter(Boolean).length}/{getTotalSprechenItems()} Teile gesprochen)
+                      </span>
+                    </div>
+                    <ScoreBar score={sectionScores.sprechen} max={15} color="#e94560" />
                   </div>
-                  <ScoreBar score={sectionScores.sprechen} max={15} color="#e94560" />
-                </div>
+                )}
               </div>
 
               {/* Divider + total */}
@@ -1347,7 +1408,7 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-bold">Gesamt</span>
                   <span className="text-sm font-bold font-mono" style={{ color: passed ? '#27ae60' : '#c0392b' }}>
-                    {totalScore}/60 — {passed ? 'BESTANDEN ✓' : 'NICHT BESTANDEN ✗'}
+                    {totalScore}/{maxScore} — {passed ? 'BESTANDEN ✓' : 'NICHT BESTANDEN ✗'}
                   </span>
                 </div>
               </div>
@@ -1360,20 +1421,26 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
                 {passed
                   ? 'Great job! Now strengthen your weak areas. Focus on whichever section had the lowest score.'
                   : (() => {
-                      const scores = [
-                        { name: 'Hören (listening)', score: sectionScores.hoeren },
-                        { name: 'Lesen (reading)', score: sectionScores.lesen },
-                        { name: 'Schreiben (writing)', score: sectionScores.schreiben },
-                        { name: 'Sprechen (speaking)', score: sectionScores.sprechen },
-                      ];
-                      const weakest = scores.reduce((a, b) => a.score < b.score ? a : b);
-                      return `Your weakest section was ${weakest.name} with ${weakest.score}/15. Focus your practice there first, then retake the test.`;
+                      const names: Record<string, string> = {
+                        hoeren: 'Hören (listening)',
+                        lesen: 'Lesen (reading)',
+                        schreiben: 'Schreiben (writing)',
+                        sprechen: 'Sprechen (speaking)',
+                      };
+                      const scores = activeSections.map((s) => ({ name: names[s], score: sectionScores[s], max: SECTION_MAX[s] }));
+                      const weakest = scores.reduce((a, b) => a.score / a.max < b.score / b.max ? a : b);
+                      return `Your weakest section was ${weakest.name} with ${weakest.score}/${weakest.max}. Focus your practice there first, then retake the test.`;
                     })()}
               </p>
             </Card>
 
             <div className="flex flex-col gap-2">
-              <Button onClick={() => {
+              {gate && (
+                <Button onClick={() => router.push('/course')} fullWidth>
+                  Continue your course <ChevronRight className="w-4 h-4" />
+                </Button>
+              )}
+              <Button variant={gate ? 'ghost' : undefined} onClick={() => {
                 setAnswers({});
                 setSchreibenFormAnswers({});
                 setSchreibenMessage('');
@@ -1386,13 +1453,23 @@ export default function TestPage({ params }: { params: Promise<{ testId: string 
               }} fullWidth>
                 Try Again
               </Button>
-              <Button variant="ghost" onClick={() => router.push('/tests')} fullWidth>
-                Back to Tests
+              <Button variant="ghost" onClick={() => router.push(gate ? '/course' : '/tests')} fullWidth>
+                {gate ? 'Back to course' : 'Back to Tests'}
               </Button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+export default function TestPage({ params }: { params: Promise<{ testId: string }> }) {
+  const { testId } = use(params);
+  // useSearchParams (for ?gate=) requires a Suspense boundary.
+  return (
+    <Suspense fallback={null}>
+      <TestRunner testId={testId} />
+    </Suspense>
   );
 }

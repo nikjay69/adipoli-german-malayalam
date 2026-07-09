@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 import { ArrowRight, ChevronLeft, PencilLine } from 'lucide-react';
@@ -11,7 +11,7 @@ const mission = module2MissionById.finalSelfIntro;
 const missionSteps = mission.steps;
 const audioSources = module2MissionAudio.finalSelfIntro;
 
-export default function Module2FinalSelfIntroMissionPage() {
+function Module2FinalSelfIntroMissionContent() {
   const [step, setStep] = useMissionStepForQA(0, missionSteps.length - 1);
   const searchParams = useSearchParams();
   const [heard, setHeard] = useState(false);
@@ -137,5 +137,13 @@ export default function Module2FinalSelfIntroMissionPage() {
         )}
       </PremiumCard>
     </MissionShell>
+  );
+}
+
+export default function Module2FinalSelfIntroMissionPage() {
+  return (
+    <Suspense fallback={null}>
+      <Module2FinalSelfIntroMissionContent />
+    </Suspense>
   );
 }

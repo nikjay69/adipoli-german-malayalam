@@ -27,8 +27,8 @@ export function Button({
   const baseStyles = 'font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-2';
 
   const variants = {
-    primary: 'bg-[#e94560] hover:bg-[#d63d56] text-white shadow-lg hover:shadow-xl',
-    secondary: 'bg-[#0f3460] hover:bg-[#1a4a80] text-white shadow-lg hover:shadow-xl',
+    primary: 'bg-[#d4a520] hover:bg-[#b8891a] text-[#1b2d1b] shadow-lg hover:shadow-xl',
+    secondary: 'bg-[#c0392b] hover:bg-[#962d22] text-white shadow-lg hover:shadow-xl',
     success: 'bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl',
     warning: 'bg-amber-500 hover:bg-amber-600 text-white shadow-lg hover:shadow-xl',
     ghost: 'bg-transparent hover:bg-gray-100 text-gray-700 dark:text-gray-300 dark:hover:bg-gray-800',

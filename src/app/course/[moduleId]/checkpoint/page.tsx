@@ -3,7 +3,8 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { ArrowRight, CheckCircle2, RotateCcw } from 'lucide-react';
+import { ArrowRight, CheckCircle2, RotateCcw, Volume2 } from 'lucide-react';
+import { playAudio } from '@/lib/audio';
 import {
   MissionShell,
   PremiumCard,
@@ -22,6 +23,18 @@ import { SPINE_MODULES } from '@/lib/spine';
 
 const steps = ['Closed checkpoint'];
 
+// Spine-module checkpoint header backdrops (pre-generated hub scenes).
+const CHECKPOINT_SCENE_DEFAULT = '/images/scenes/hub-exam-hall.jpg';
+const CHECKPOINT_SCENES: Record<number, string> = {
+  2: '/images/scenes/hub-goethe-kochi-classroom.jpg',
+  3: '/images/scenes/hub-thrissur-home.jpg',
+  4: '/images/scenes/hub-supermarket.jpg',
+  5: '/images/scenes/hub-praxis.jpg',
+  6: '/images/scenes/hub-study-desk.jpg',
+  7: '/images/scenes/hub-amt-office.jpg',
+  8: '/images/scenes/hub-exam-hall.jpg',
+};
+
 function itemModeLabel(item: CheckpointItem) {
   if (item.mode === 'listen') return 'Hear';
   if (item.mode === 'speak') return 'Say';
@@ -36,6 +49,8 @@ export default function SpineCheckpointPage() {
   const moduleId = Number(params.moduleId);
   const checkpoint = getSpineCheckpoint(moduleId);
   const spineModule = SPINE_MODULES.find((m) => m.id === moduleId);
+  // Per-module painterly header backdrop (hub scene, DECISIONS #9).
+  const checkpointSceneImage = CHECKPOINT_SCENES[moduleId] ?? CHECKPOINT_SCENE_DEFAULT;
   const saveSpineCheckpointResult = useGameStore((s) => s.saveSpineCheckpointResult);
 
   const [passedItemIds, setPassedItemIds] = useState<string[]>([]);
@@ -92,6 +107,11 @@ export default function SpineCheckpointPage() {
     <MissionShell currentStep={0} steps={steps} railLabel={`Module ${checkpoint.moduleId} · Closed checkpoint`} tone="green">
       <PremiumCard>
         <section data-testid={`module-${checkpoint.moduleId}-scored-checkpoint`} aria-label={`Module ${checkpoint.moduleId} scored checkpoint`}>
+          <div className="relative mb-6 h-32 overflow-hidden rounded-[1.45rem] sm:h-40">
+            <img src={checkpointSceneImage} alt="" className="h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0d1a0d] via-[#0d1a0d]/40 to-transparent" />
+          </div>
+
           <div className="grid gap-6 lg:grid-cols-[0.82fr_1fr] lg:items-start">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.18em] text-[#f1d27a]">Closed check</p>
@@ -184,6 +204,17 @@ export default function SpineCheckpointPage() {
                           {passed && <CheckCircle2 className="h-5 w-5 shrink-0 text-[#bcf7d0]" aria-hidden="true" />}
                         </span>
                         <span className="mt-3 block text-base font-black leading-snug">{item.prompt}</span>
+                        {item.mode === 'listen' && (
+                          <span
+                            role="button"
+                            tabIndex={0}
+                            onClick={(e) => { e.stopPropagation(); playAudio(`/audio/checkpoints/${item.id}.mp3`).catch(() => {}); }}
+                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.stopPropagation(); playAudio(`/audio/checkpoints/${item.id}.mp3`).catch(() => {}); } }}
+                            className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#3b82f6]/40 bg-[#3b82f6]/12 px-3 py-1.5 text-xs font-bold text-[#9dc4ff] hover:bg-[#3b82f6]/20"
+                          >
+                            <Volume2 className="h-3.5 w-3.5" /> Play audio
+                          </span>
+                        )}
                         <span className="mt-2 block text-sm font-semibold leading-5 text-[#bcf7d0]">Expected: {item.expected}</span>
                       </button>
                     );

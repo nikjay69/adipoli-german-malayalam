@@ -1,12 +1,16 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CharacterGuide } from '@/components/character';
 import { Typewriter } from '@/components/ui/Typewriter';
+import { fallbackSceneImage } from '@/lib/scene-image';
 import type { StoryScene } from '@/lib/content/types';
 
 interface NarrativeIntroProps {
   scene: StoryScene;
+  /** Lesson id — selects the pre-generated per-lesson backdrop (DECISIONS #9). */
+  lessonId?: string;
   lessonTitle: string;
   lessonTitleGerman: string;
   moduleIcon: string;
@@ -57,12 +61,17 @@ function getSceneImage(scene: StoryScene): string | null {
 
 export function NarrativeIntro({
   scene,
+  lessonId,
   lessonTitle,
   lessonTitleGerman,
   moduleIcon,
 }: NarrativeIntroProps) {
   const kuttanText = scene.kuttanIntro[Math.floor(Math.random() * scene.kuttanIntro.length)];
-  const sceneImage = getSceneImage(scene);
+  // Prefer the pre-generated per-lesson backdrop; fall back to the legacy
+  // setting/sceneType map if the file is missing.
+  const [sceneImage, setSceneImage] = useState<string | null>(
+    lessonId ? `/images/scenes/${lessonId}.jpg` : getSceneImage(scene),
+  );
 
   return (
     <motion.div
@@ -83,6 +92,7 @@ export function NarrativeIntro({
           <img
             src={sceneImage}
             alt={scene.setting.name}
+            onError={() => setSceneImage(getSceneImage(scene) || fallbackSceneImage(scene.setting.sceneType))}
             className="w-full h-full object-cover"
           />
           {/* Gradient overlay for text readability */}

@@ -21,10 +21,10 @@ export function ProgressBar({
   const clampedProgress = Math.min(100, Math.max(0, progress));
 
   const colors = {
-    primary: 'bg-[#e94560]',
+    primary: 'bg-[#d4a520]',
     success: 'bg-emerald-500',
     warning: 'bg-amber-500',
-    secondary: 'bg-[#0f3460]',
+    secondary: 'bg-[#27ae60]',
   };
 
   const sizes = {
@@ -35,7 +35,7 @@ export function ProgressBar({
 
   return (
     <div className={clsx('w-full', className)}>
-      <div className={clsx('w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden', sizes[size])}>
+      <div className={clsx('w-full bg-[var(--foreground)]/10 rounded-full overflow-hidden', sizes[size])}>
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${clampedProgress}%` }}

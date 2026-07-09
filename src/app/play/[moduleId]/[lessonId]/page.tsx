@@ -4,7 +4,7 @@ import { use, useState, useEffect, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Volume2, Loader2, Bookmark, ChevronLeft, Trophy } from 'lucide-react';
-import { playVocabAudio, playExampleAudio, useGermanTTS } from '@/lib/audio';
+import { playVocabAudio, playExampleAudio, playAudio, useGermanTTS } from '@/lib/audio';
 import { startAmbience, stopAmbience, duckAmbience, getSceneForModule } from '@/lib/audio/ambience';
 import { SpeakButton, PronunciationCompare } from '@/components/speaking';
 import { NarrativeIntro, ContextualVocab, DecisionPoint, SceneConclusion } from '@/components/lesson';
@@ -22,6 +22,7 @@ import { createCard } from '@/lib/srs';
 import { useGameStore } from '@/lib/store';
 import { getLessonById, getModuleById, ALL_MODULES, getAllVocabulary } from '@/lib/content/modules';
 import { isLessonUnlocked as checkLessonUnlocked } from '@/lib/curriculum';
+import { readModule1CheckpointResult } from '@/lib/spine';
 import { feedbackCorrect, feedbackWrong, feedbackCelebration, feedbackFlip, feedbackCombo, feedbackComboBreak } from '@/lib/feedback';
 import { ComboMeter } from '@/components/game/ComboMeter';
 import { MiniGameEmbed } from '@/components/game/MiniGameEmbed';
@@ -49,6 +50,24 @@ const MODULE_GAME_MAP: Record<number, { path: string; name: string; icon: string
   17: { path: '/games/dialogue-dash', name: 'Dialogue Dash', icon: '💬', description: 'Final conversation practice!' },
   18: { path: '/games/speed-quiz', name: 'Speed Quiz', icon: '🏆', description: 'Full vocab speed run!' },
 };
+
+/** Pre-generated vocab illustration (DECISIONS #9); hides itself if the file
+ * doesn't exist so vocab without art keeps the clean text card. */
+function VocabStaticImage({ vocabId }: { vocabId: string }) {
+  const [hidden, setHidden] = useState(false);
+  if (hidden) return null;
+  return (
+    <div className="relative -mx-8 -mt-8 mb-6 h-40 overflow-hidden">
+      <img
+        src={`/images/vocab/${vocabId}.jpg`}
+        alt=""
+        onError={() => setHidden(true)}
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#162416] via-transparent to-transparent" />
+    </div>
+  );
+}
 
 type Step =
   | { type: 'intro' }
@@ -139,16 +158,22 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const module = getModuleById(parseInt(moduleId));
   const lesson = getLessonById(lessonId);
 
-  // Always allow access — any lesson can be replayed/tested
-  const isLessonUnlocked = true;
-
-  // If locked, redirect (wrapped in effect to avoid calling router during render)
+  // Spine-aware unlock: required spine lessons open with their spine module's
+  // progress; non-spine modules are open practice library (recovery fuel).
+  // Completed lessons stay replayable.
   useEffect(() => {
-    if (mounted && !isLessonUnlocked) {
+    if (!mounted || !module || !lesson) return;
+    const alreadyDone = userProgress.completedLessons.some((l) => l.lessonId === lesson.id);
+    if (alreadyDone) return;
+    const unlocked = checkLessonUnlocked(module.id, lesson.id, userProgress.completedLessons, {
+      spineCheckpoints: userProgress.spineCheckpoints || {},
+      module1Passed: (readModule1CheckpointResult()?.state ?? 'FAIL') !== 'FAIL',
+    });
+    if (!unlocked) {
       setIsBlocked(true);
       router.replace('/learn');
     }
-  }, [mounted, isLessonUnlocked, router]);
+  }, [mounted, module, lesson, userProgress.completedLessons, userProgress.spineCheckpoints, router]);
 
   // Start ambient soundscape for every lesson — creates atmosphere
   useEffect(() => {
@@ -211,12 +236,21 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted, step]);
 
-  // Auto-speak dictation exercises when they appear
+  // Auto-play dictation audio when the exercise appears. Pre-rendered native
+  // audio first (the law for learner German); browser TTS only as last resort.
   useEffect(() => {
     if (mounted && step.type === 'exercise' && allExercises[(step as {index: number}).index]?.type === 'dictation') {
-      const answer = allExercises[(step as {index: number}).index].correctAnswer;
+      const ex = allExercises[(step as {index: number}).index];
+      const answer = ex.correctAnswer;
       const text = typeof answer === 'string' ? answer : answer[0];
-      const timer = setTimeout(() => { try { duckAmbience(2000); speakGerman(text, { rate: 0.85 }); } catch {} }, 500);
+      const timer = setTimeout(() => {
+        try { duckAmbience(2000); } catch { /* noop */ }
+        if (ex.audioUrl) {
+          playAudio(ex.audioUrl).catch(() => { try { speakGerman(text, { rate: 0.85 }); } catch { /* noop */ } });
+        } else {
+          try { speakGerman(text, { rate: 0.85 }); } catch { /* noop */ }
+        }
+      }, 500);
       return () => clearTimeout(timer);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -880,6 +914,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
           {step.type === 'scene-intro' && lesson.storyScene && (
             <NarrativeIntro
               scene={lesson.storyScene}
+              lessonId={lesson.id}
               lessonTitle={lesson.title}
               lessonTitleGerman={lesson.titleGerman}
               moduleIcon={module.icon}
@@ -1036,10 +1071,11 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 <div className="absolute inset-0 bg-[#d4a520]/10 blur-[100px] rounded-full" />
                 
                 <div className="relative bg-[#162416]/60 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-8 shadow-2xl overflow-hidden">
+                  <VocabStaticImage key={shownVocab[step.index].id} vocabId={shownVocab[step.index].id} />
                   <div className="absolute top-0 right-0 p-6 opacity-5">
                     <span className="text-8xl font-black">{step.index + 1}</span>
                   </div>
-                  
+
                   <div className="text-center mb-8">
                     <p className="text-[10px] font-black text-[#d4a520] uppercase tracking-[0.3em] mb-4">
                       New Vocabulary learned
@@ -1594,6 +1630,14 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                         <div className="bg-[#d4a520]/10 border border-[#d4a520]/20 rounded-xl px-4 py-3 text-center">
                           <p className="text-lg font-bold text-[#d4a520]">{correctStr}</p>
                         </div>
+                        {exercise.audioUrl && (
+                          <button
+                            onClick={() => { try { duckAmbience(1500); } catch { /* noop */ } playAudio(exercise.audioUrl!).catch(() => { /* noop */ }); }}
+                            className="flex items-center gap-2 rounded-full border border-[var(--foreground)]/15 bg-[var(--foreground)]/5 px-4 py-2 text-sm font-semibold text-[var(--foreground)]/70 hover:border-[#d4a520]/40 hover:text-[#d4a520] transition"
+                          >
+                            <Volume2 className="h-4 w-4" /> Hear the model first
+                          </button>
+                        )}
                         <SpeakButton expectedText={correctStr} onResult={(_, __, isMatch) => handleGameResult(isMatch)} size="lg" label="Say it!" />
                       </div>
                     );

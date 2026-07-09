@@ -68,7 +68,11 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-b from-[#1a1a2e] to-[#0f3460] overflow-auto z-50">
+    <div className="fixed inset-0 z-50 overflow-auto bg-[#102018] text-[#fff8ea]">
+      {/* Warm Kerala-green backdrop — matches the mission shell (green/gold radials) */}
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(63,191,117,0.20),transparent_34%),radial-gradient(circle_at_82%_16%,rgba(241,210,122,0.18),transparent_30%),linear-gradient(135deg,#102018_0%,#17341f_42%,#0b1727_100%)]" />
+      <div className="pointer-events-none fixed -left-28 bottom-[-16rem] h-[34rem] w-[34rem] rounded-full bg-[#3fbf75]/18 blur-3xl" />
+      <div className="pointer-events-none fixed -right-28 top-20 h-[31rem] w-[31rem] rounded-full bg-[#d7b35a]/16 blur-3xl" />
       {/* Progress indicator */}
       <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex gap-2">
         {(['welcome', 'hours', 'ready'] as Step[]).map((s, i) => {
@@ -211,15 +215,15 @@ export default function OnboardingPage() {
                     onClick={() => handleSelectHours(option.value)}
                     className={`w-full p-4 rounded-2xl border text-left transition-all duration-200 ${
                       isSelected
-                        ? 'bg-[#ff6b9d]/10 border-[#ff6b9d]/80 shadow-[0_0_20px_rgba(255,107,157,0.2)]'
-                        : 'bg-white/5 border-white/10 hover:border-white/20'
+                        ? 'bg-[#f1d27a]/14 border-[#f1d27a]/80 shadow-[0_0_22px_rgba(241,210,122,0.28)]'
+                        : 'bg-[#0f1d14]/72 border-white/12 hover:border-white/28 hover:bg-[#0f1d14]/85'
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold ${
                           isSelected
-                            ? 'bg-[#ff6b9d]/20 text-[#ff6b9d]'
+                            ? 'bg-[#f1d27a]/20 text-[#f1d27a]'
                             : 'bg-white/10 text-white/60'
                         }`}>
                           {option.label.split(' ')[0]}
@@ -235,7 +239,7 @@ export default function OnboardingPage() {
                       </div>
 
                       <div className="text-right">
-                        <div className={`text-sm font-semibold ${isSelected ? 'text-[#ff6b9d]' : 'text-white/50'}`}>
+                        <div className={`text-sm font-semibold ${isSelected ? 'text-[#f1d27a]' : 'text-white/50'}`}>
                           {days} days
                         </div>
                         <div className="text-xs text-white/30">
@@ -248,11 +252,11 @@ export default function OnboardingPage() {
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
-                        className="mt-3 pt-3 border-t border-[#ff6b9d]/20"
+                        className="mt-3 pt-3 border-t border-[#f1d27a]/20"
                       >
                         <div className="flex items-center justify-between text-xs">
                           <span className="text-white/50">{formatEstimatedDuration(days)}</span>
-                          <span className="text-[#ff6b9d] font-medium flex items-center gap-1">
+                          <span className="text-[#f1d27a] font-medium flex items-center gap-1">
                             <CheckCircle2 className="w-3.5 h-3.5" />
                             Selected
                           </span>
@@ -322,17 +326,17 @@ export default function OnboardingPage() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.45 }}
-              className="w-full max-w-sm rounded-2xl bg-white/5 border border-white/10 p-5 mb-6"
+              className="w-full max-w-sm rounded-2xl bg-[#0f1d14]/72 border border-white/12 p-5 mb-6"
             >
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="text-center">
-                  <div className="text-3xl font-black text-[#ff6b9d]">
+                  <div className="text-3xl font-black text-[#f1d27a]">
                     {getEstimatedDays(selectedHours)}
                   </div>
                   <div className="text-xs text-white/40 mt-1">Total days</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-black text-[#ffd93d]">
+                  <div className="text-3xl font-black text-[#3fbf75]">
                     {selectedHours}h
                   </div>
                   <div className="text-xs text-white/40 mt-1">Per day</div>
@@ -341,13 +345,13 @@ export default function OnboardingPage() {
 
               <div className="border-t border-white/10 pt-4 space-y-2.5">
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="text-[#00d9a5]">
+                  <span className="text-[#3fbf75]">
                     <Sparkles className="w-4 h-4" />
                   </span>
                   <span className="text-white/70">18 modules, {TOTAL_COURSE_HOURS} hours of content</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="text-[#ffd93d]">
+                  <span className="text-[#3fbf75]">
                     <Calendar className="w-4 h-4" />
                   </span>
                   <span className="text-white/70">
@@ -360,7 +364,7 @@ export default function OnboardingPage() {
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="text-[#ff6b9d]">
+                  <span className="text-[#f1d27a]">
                     <CheckCircle2 className="w-4 h-4" />
                   </span>
                   <span className="text-white/70">Checkpoints every 5 days</span>

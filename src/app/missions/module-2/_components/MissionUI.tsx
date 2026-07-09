@@ -7,10 +7,88 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Check, Headphones, Mic, PenLine, RotateCcw, ShieldCheck, Sparkles, Trophy } from 'lucide-react';
 import { clsx } from 'clsx';
 import { KeralaClassroomScene } from '@/components/course/KeralaClassroomScene';
+import { KUTTAN_MOOD_IMAGES } from '@/components/character/KuttanImage';
+import { FrauWeber, type FrauWeberMood } from '@/components/character/FrauWeber';
 import { module1MissionCards, readCompletedModule1Missions, writeCompletedModule1Mission, type Module1MissionId } from '@/lib/missions/module1';
 import { module2MissionCards, type Module2MissionId } from '@/lib/missions/module2';
 
 type SceneVisualVariant = 'abstract' | 'kochi-room' | 'ai-study';
+
+// Painterly dialogue scene for the M1-M2 missions: full-bleed Goethe-Kochi
+// backdrop + the real Frau Weber and Kuttan characters (replaces the old SVG
+// panel + colored-dot avatars). DECISIONS #10.
+
+// Pick a painterly backdrop from the scene label so missions set outside the
+// classroom (study table, home) don't all show the same room.
+function missionBackdrop(sceneLabel: string): string {
+  const s = sceneLabel.toLowerCase();
+  if (s.includes('study') || s.includes('desk') || s.includes('home')) return '/images/scenes/hub-study-desk.jpg';
+  if (s.includes('chayakkada') || s.includes('tea') || s.includes('cafe')) return '/images/scenes/hub-chayakkada.jpg';
+  if (s.includes('street') || s.includes('outside')) return '/images/scenes/hub-kochi-street.jpg';
+  return '/images/scenes/hub-goethe-kochi-classroom.jpg';
+}
+
+function MissionDialogueScene({
+  sceneLabel,
+  speakerName,
+  speakerLine,
+  speakerMood = 'teaching',
+  learnerName,
+  learnerLine,
+  learnerReady,
+  learnerTestId,
+}: {
+  sceneLabel: string;
+  speakerName: string;
+  speakerLine: string;
+  speakerMood?: FrauWeberMood;
+  learnerName: string;
+  learnerLine: string;
+  learnerReady: boolean;
+  learnerTestId?: string;
+}) {
+  return (
+    <div className="relative h-[20rem] overflow-hidden rounded-[1.25rem] shadow-inner shadow-black/20">
+      {/* Painterly backdrop — varies by scene */}
+      <img src={missionBackdrop(sceneLabel)} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0d1a0d]/22 via-transparent to-[#0d1a0d]/68" />
+
+      {/* Scene label */}
+      <div className="absolute inset-x-4 top-3 flex justify-center">
+        <div className="rounded-xl bg-[#0d1a0d]/82 px-4 py-1.5 text-xs font-black text-[#f1d27a] shadow-lg backdrop-blur-sm">
+          {sceneLabel}
+        </div>
+      </div>
+
+      {/* Characters — trimmed figures anchored to the floor, facing each other */}
+      <FrauWeber mood={speakerMood} className="absolute bottom-0 left-2 h-[11rem] w-auto" />
+      <motion.img
+        src={KUTTAN_MOOD_IMAGES.happy}
+        alt={learnerName}
+        className="absolute bottom-0 right-2 h-[10.5rem] w-auto object-contain object-bottom drop-shadow-lg scale-x-[-1]"
+        animate={{ y: [0, -3, 0] }}
+        transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+      />
+      <span className="absolute bottom-2 left-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.62rem] font-black text-white/85">{speakerName}</span>
+      <span className="absolute bottom-2 right-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.62rem] font-black text-white/85">{learnerName}</span>
+
+      {/* Speech bubbles — above each speaker, pointing down toward them */}
+      <div className="absolute left-3 top-12 max-w-[56%] rounded-2xl rounded-bl-md bg-white px-3.5 py-2.5 text-sm font-black leading-tight text-[#132414] shadow-xl sm:text-base">
+        {speakerLine}
+      </div>
+      <div
+        className={clsx(
+          'absolute right-3 top-[6.5rem] max-w-[56%] rounded-2xl rounded-br-md bg-[#132414] px-3.5 py-2.5 text-sm font-black leading-tight text-white shadow-xl transition sm:text-base',
+          learnerReady ? 'opacity-100' : 'pointer-events-none opacity-0'
+        )}
+        data-testid={learnerTestId}
+        data-model-line-hidden={learnerTestId ? (learnerReady ? 'false' : 'true') : undefined}
+      >
+        {learnerReady ? learnerLine : '…'}
+      </div>
+    </div>
+  );
+}
 
 export const MODULE2_COMPLETED_MISSIONS_STORAGE_KEY = 'adipoli:module2:completedMissions';
 
@@ -832,43 +910,15 @@ export function ConversationSceneStep({
         <h2 className="text-3xl font-black leading-tight tracking-[-0.035em] sm:text-5xl">{title}</h2>
         <p className="sr-only">Listen to the speaker, then answer aloud.</p>
         <div className="mt-5 overflow-hidden rounded-[1.55rem] border border-white/12 bg-black/18 p-3 sm:p-4">
-          <div className="relative min-h-[17rem] overflow-hidden rounded-[1.25rem] bg-gradient-to-br from-[#f7e5bd] via-[#f1d5a0] to-[#c9964d] p-4 text-[#132414] shadow-inner shadow-black/12">
-            {sceneVisualVariant && (
-              <>
-                <KeralaClassroomScene
-                  variant={sceneVisualVariant}
-                  className="absolute inset-0 h-[17rem] w-full rounded-[1.25rem] border-0 opacity-80 shadow-none"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#fff8e6]/15 via-[#f2cf8f]/12 to-[#132414]/32" />
-              </>
-            )}
-            <div className="absolute inset-x-4 top-4 flex justify-center">
-              <div className="rounded-xl bg-[#132414]/90 px-4 py-2 text-sm font-black text-[#f1d27a] shadow-lg">
-                {sceneLabel}
-              </div>
-            </div>
-            <div className="absolute bottom-5 left-5 flex flex-col items-center gap-1.5" aria-label={speakerName}>
-              <span className="h-11 w-11 rounded-full border border-[#132414]/15 bg-[#9a6032] shadow-md" />
-              <span className="h-14 w-14 rounded-t-[1.5rem] bg-[#244d31] shadow-md" />
-              <span className="rounded-full bg-white/70 px-2 py-1 text-[0.68rem] font-black">{speakerName}</span>
-            </div>
-            <div className="absolute bottom-5 right-5 flex flex-col items-center gap-1.5" aria-label={learnerName}>
-              <span className="h-11 w-11 rounded-full border border-[#132414]/15 bg-[#b7763e] shadow-md" />
-              <span className="h-14 w-14 rounded-t-[1.5rem] bg-[#d7a33e] shadow-md" />
-              <span className="rounded-full bg-white/70 px-2 py-1 text-[0.68rem] font-black">{learnerName}</span>
-            </div>
-            <div className="absolute left-4 top-16 max-w-[72%] rounded-2xl rounded-bl-md bg-white px-4 py-3 text-lg font-black leading-tight shadow-lg">
-              {speakerLine}
-            </div>
-            <div
-              className={clsx(
-                'absolute bottom-24 right-4 max-w-[72%] rounded-2xl rounded-br-md bg-[#132414] px-4 py-3 text-lg font-black leading-tight text-white shadow-lg transition',
-                finished ? 'opacity-100' : 'pointer-events-none opacity-0'
-              )}
-            >
-              {finished ? learnerLine : '…'}
-            </div>
-          </div>
+          <MissionDialogueScene
+            sceneLabel={sceneLabel}
+            speakerName={speakerName}
+            speakerLine={speakerLine}
+            speakerMood="teaching"
+            learnerName={learnerName}
+            learnerLine={learnerLine}
+            learnerReady={finished}
+          />
         </div>
       </div>
       <div className="rounded-[1.55rem] border border-[#f1d27a]/18 bg-[#f1d27a]/7 p-3 sm:p-4">
@@ -955,45 +1005,16 @@ export function ConversationRepairStep<T extends string>({
         {!hideTitle && <h2 className="text-3xl font-black leading-tight tracking-[-0.035em] sm:text-5xl">{title}</h2>}
         <p className="sr-only">Listen to the speaker, answer aloud, then fix one tiny trap.</p>
         <div className={clsx(!hideTitle && 'mt-5', 'overflow-hidden rounded-[1.55rem] border border-white/12 bg-black/18 p-3 sm:p-4')}>
-          <div className="relative min-h-[17rem] overflow-hidden rounded-[1.25rem] bg-gradient-to-br from-[#f7e5bd] via-[#f1d5a0] to-[#c9964d] p-4 text-[#132414] shadow-inner shadow-black/12">
-            {sceneVisualVariant && (
-              <>
-                <KeralaClassroomScene
-                  variant={sceneVisualVariant}
-                  className="absolute inset-0 h-[17rem] w-full rounded-[1.25rem] border-0 opacity-80 shadow-none"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#fff8e6]/15 via-[#f2cf8f]/12 to-[#132414]/32" />
-              </>
-            )}
-            <div className="absolute inset-x-4 top-4 flex justify-center">
-              <div className="rounded-xl bg-[#132414]/90 px-4 py-2 text-sm font-black text-[#f1d27a] shadow-lg">
-                {sceneLabel}
-              </div>
-            </div>
-            <div className="absolute bottom-5 left-5 flex flex-col items-center gap-1.5" aria-label={speakerName}>
-              <span className="h-11 w-11 rounded-full border border-[#132414]/15 bg-[#9a6032] shadow-md" />
-              <span className="h-14 w-14 rounded-t-[1.5rem] bg-[#244d31] shadow-md" />
-              <span className="rounded-full bg-white/70 px-2 py-1 text-[0.68rem] font-black">{speakerName}</span>
-            </div>
-            <div className="absolute bottom-5 right-5 flex flex-col items-center gap-1.5" aria-label={learnerName}>
-              <span className="h-11 w-11 rounded-full border border-[#132414]/15 bg-[#b7763e] shadow-md" />
-              <span className="h-14 w-14 rounded-t-[1.5rem] bg-[#d7a33e] shadow-md" />
-              <span className="rounded-full bg-white/70 px-2 py-1 text-[0.68rem] font-black">{learnerName}</span>
-            </div>
-            <div className="absolute left-4 top-16 max-w-[72%] rounded-2xl rounded-bl-md bg-white px-4 py-3 text-lg font-black leading-tight shadow-lg">
-              {speakerLine}
-            </div>
-            <div
-              className={clsx(
-                'absolute bottom-24 right-4 max-w-[72%] rounded-2xl rounded-br-md bg-[#132414] px-4 py-3 text-lg font-black leading-tight text-white shadow-lg transition',
-                modelAudioFinished ? 'opacity-100' : 'pointer-events-none opacity-0'
-              )}
-              data-testid="immersive-model-line"
-              data-model-line-hidden={modelAudioFinished ? 'false' : 'true'}
-            >
-              {modelAudioFinished ? learnerLine : '…'}
-            </div>
-          </div>
+          <MissionDialogueScene
+            sceneLabel={sceneLabel}
+            speakerName={speakerName}
+            speakerLine={speakerLine}
+            speakerMood="teaching"
+            learnerName={learnerName}
+            learnerLine={learnerLine}
+            learnerReady={modelAudioFinished}
+            learnerTestId="immersive-model-line"
+          />
         </div>
       </div>
       <div className="space-y-4">

@@ -10,6 +10,7 @@ import { Confetti } from '@/components/game';
 import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop } from '@/components/exercise-games';
 import { SceneBackground } from '@/components/visual';
 import { speakGerman } from '@/lib/audio/useGermanTTS';
+import { playVocabAudio } from '@/lib/audio';
 import { feedbackCombo, feedbackComboBreak, feedbackWrong, feedbackCelebration } from '@/lib/feedback';
 import { getSceneForModule } from '@/lib/audio/ambience';
 import type { AdventureMoment } from '@/lib/adventure-engine';
@@ -51,7 +52,10 @@ export function AdventurePlayer({
   const moment = moments[currentIdx];
   const progress = ((currentIdx + 1) / moments.length) * 100;
   const sceneType = lesson.storyScene?.setting.sceneType || getSceneForModule(module.id);
-  const sceneImage = SCENE_IMAGES[sceneType] || SCENE_IMAGES.classroom;
+  // Per-lesson painterly backdrop (pre-generated, DECISIONS #9); falls back to
+  // the shared sceneType image if this lesson has no dedicated scene yet.
+  const [sceneImage, setSceneImage] = useState(`/images/scenes/${lesson.id}.jpg`);
+  const fallbackSceneImage = SCENE_IMAGES[sceneType] || SCENE_IMAGES.classroom;
 
   const advance = useCallback(() => {
     if (currentIdx >= moments.length - 1) { onComplete(score, total, maxCombo); return; }
@@ -73,10 +77,13 @@ export function AdventurePlayer({
     setTimeout(advance, correct ? 1000 : 1500);
   }, [combo, advance]);
 
-  // Auto-speak vocab
+  // Auto-speak vocab — pre-rendered native audio first, browser TTS last resort
   useEffect(() => {
     if (moment?.type === 'vocab-encounter' && moment.vocab) {
-      setTimeout(() => { try { speakGerman(moment.vocab!.german, 0.85); } catch {} }, 400);
+      const vocab = moment.vocab;
+      setTimeout(() => {
+        playVocabAudio(vocab.id).catch(() => { try { speakGerman(vocab.german, 0.85); } catch { /* noop */ } });
+      }, 400);
     }
   }, [currentIdx, moment]);
 
@@ -127,7 +134,7 @@ export function AdventurePlayer({
               <div className="flex-1 flex flex-col items-center justify-center">
                 {/* Scene image as background card */}
                 <div className="relative w-full max-w-sm h-36 rounded-2xl overflow-hidden mb-4">
-                  <img src={sceneImage} alt="" className="w-full h-full object-cover" />
+                  <img src={sceneImage} alt="" onError={() => setSceneImage(fallbackSceneImage)} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-3 left-4 right-4">
                     <h2 className="text-white font-bold text-base">{lesson.title}</h2>

@@ -110,11 +110,36 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
     <div className="fixed inset-0 flex flex-col bg-[#0d1a0d] overflow-hidden">
       <Confetti isActive={confetti} duration={800} />
 
-      {/* Scene background — full screen */}
+      {/* Scene background — full screen. Per-lesson painterly backdrop with a
+          stock fallback if the generated scene file is missing (DECISIONS #9). */}
       {m.sceneImage && (
         <div className="absolute inset-0">
-          <img src={m.sceneImage} alt="" className="w-full h-full object-cover" />
+          <img
+            src={m.sceneImage}
+            alt=""
+            onError={(e) => {
+              const img = e.currentTarget;
+              if (!img.dataset.fellBack) { img.dataset.fellBack = '1'; img.src = '/images/university_library.png'; }
+            }}
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+        </div>
+      )}
+
+      {/* Living celebration backdrop on the victory screen (ambient Veo loop,
+          DECISIONS #9). Silently absent if the file isn't present. */}
+      {m.type === 'victory' && (
+        <div className="absolute inset-0">
+          <video
+            src="/videos/scenes/celebration-lights.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="h-full w-full object-cover opacity-70"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
         </div>
       )}
 

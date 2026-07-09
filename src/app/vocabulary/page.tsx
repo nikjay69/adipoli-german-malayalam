@@ -230,7 +230,7 @@ export default function VocabularyPage() {
         <div className="w-full h-2 bg-[var(--foreground)]/10 rounded-full overflow-hidden mb-5">
           <motion.div
             className="h-full rounded-full"
-            style={{ background: 'linear-gradient(90deg, #ff6b9d, #00d9a5)' }}
+            style={{ background: 'linear-gradient(90deg, #d4a520, #27ae60)' }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.3 }}
           />
@@ -296,8 +296,8 @@ export default function VocabularyPage() {
                   let border = 'border-[var(--foreground)]/10';
                   let bg = 'bg-transparent';
                   let text = 'text-[var(--foreground)]';
-                  if (showCorrectHL) { border = 'border-[#00d9a5]'; bg = 'bg-[#00d9a5]/15'; text = 'text-[#00d9a5]'; }
-                  else if (showWrongHL) { border = 'border-[#ff6b9d]'; bg = 'bg-[#ff6b9d]/15'; text = 'text-[#ff6b9d]'; }
+                  if (showCorrectHL) { border = 'border-[#27ae60]'; bg = 'bg-[#27ae60]/15'; text = 'text-[#27ae60]'; }
+                  else if (showWrongHL) { border = 'border-[#c0392b]'; bg = 'bg-[#c0392b]/15'; text = 'text-[#e88b80]'; }
 
                   return (
                     <motion.button
@@ -321,7 +321,7 @@ export default function VocabularyPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="mt-auto"
                   >
-                    <div className="game-card p-4 mb-4 border-l-4 border-[#00d9a5]">
+                    <div className="game-card p-4 mb-4 border-l-4 border-[#27ae60]">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-lg font-bold">{encounter.targetVocab.german}</span>
                         <span className="text-xs text-[var(--foreground)]/30">[{encounter.targetVocab.pronunciation}]</span>
@@ -372,9 +372,9 @@ export default function VocabularyPage() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="relative mb-5 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-blue-500/18 via-blue-500/6 to-transparent p-5"
+          className="relative mb-5 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#d4a520]/18 via-[#d4a520]/7 to-transparent p-5"
         >
-          <div className="pointer-events-none absolute -right-12 -top-12 h-56 w-56 rounded-full bg-blue-500/25 blur-3xl" />
+          <div className="pointer-events-none absolute -right-12 -top-12 h-56 w-56 rounded-full bg-[#d4a520]/22 blur-3xl" />
           <div className="pointer-events-none absolute -left-8 -bottom-8 h-40 w-40 rounded-full bg-emerald-400/15 blur-3xl" />
           <div className="relative">
             <div className="flex items-start justify-between">
@@ -408,14 +408,14 @@ export default function VocabularyPage() {
                 initial={{ width: 0 }}
                 animate={{ width: `${(learnedCount / Math.max(totalCount, 1)) * 100}%` }}
                 transition={{ duration: 0.7, ease: 'easeOut' }}
-                className="h-full rounded-full bg-gradient-to-r from-blue-400 to-emerald-400"
+                className="h-full rounded-full bg-gradient-to-r from-[#d4a520] to-[#27ae60]"
               />
             </div>
             {readyModule ? (
               <motion.button
                 whileTap={{ scale: 0.97 }}
                 onClick={() => startPractice(readyModule.id)}
-                className="mt-4 flex w-full items-center justify-between rounded-2xl bg-gradient-to-r from-[#ff6b9d] to-[#e94560] px-4 py-4 text-base font-bold text-white shadow-xl shadow-[#ff6b9d]/40 active:translate-y-px transition-transform"
+                className="mt-4 flex w-full items-center justify-between rounded-2xl bg-gradient-to-r from-[#d4a520] to-[#b8891a] px-4 py-4 text-base font-bold text-[#1b2d1b] shadow-xl shadow-[#d4a520]/35 active:translate-y-px transition-transform"
               >
                 <span className="flex items-center gap-2">
                   <Play className="h-4 w-4 fill-current" />
@@ -450,7 +450,7 @@ export default function VocabularyPage() {
             placeholder="Search modules…"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-full border border-white/10 bg-white/5 py-2 pl-9 pr-3 text-sm placeholder:opacity-40 focus:outline-none focus:ring-2 focus:ring-[#ff6b9d]/40"
+            className="w-full rounded-full border border-white/10 bg-white/5 py-2 pl-9 pr-3 text-sm placeholder:opacity-40 focus:outline-none focus:ring-2 focus:ring-[#d4a520]/40"
           />
         </div>
 
@@ -478,7 +478,7 @@ export default function VocabularyPage() {
                   disabled={!canPractice}
                   className={`relative overflow-hidden rounded-2xl border text-left transition-all ${
                     canPractice
-                      ? 'border-white/10 bg-white/5 hover:border-[#ff6b9d]/40 hover:bg-white/10'
+                      ? 'border-white/10 bg-white/5 hover:border-[#d4a520]/40 hover:bg-white/10'
                       : 'border-white/5 bg-white/2 opacity-50'
                   }`}
                 >
@@ -486,7 +486,7 @@ export default function VocabularyPage() {
                     <div className="mb-1 flex items-center justify-between">
                       <span className="text-lg">{module.icon}</span>
                       {canPractice && (
-                        <Play className="h-3 w-3 text-[#ff6b9d]" />
+                        <Play className="h-3 w-3 text-[#d4a520]" />
                       )}
                     </div>
                     <div className="text-[10px] font-semibold opacity-70">M{module.id}</div>
@@ -497,7 +497,7 @@ export default function VocabularyPage() {
                     </div>
                     <div className="mt-1 h-0.5 overflow-hidden rounded-full bg-white/10">
                       <div
-                        className="h-full rounded-full bg-gradient-to-r from-blue-400 to-emerald-400"
+                        className="h-full rounded-full bg-gradient-to-r from-[#d4a520] to-[#27ae60]"
                         style={{ width: `${pct}%` }}
                       />
                     </div>

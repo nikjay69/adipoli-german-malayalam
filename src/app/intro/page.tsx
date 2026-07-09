@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { KeralaClassroomScene } from '@/components/course/KeralaClassroomScene';
+import { FrauWeber } from '@/components/character/FrauWeber';
+import { KUTTAN_MOOD_IMAGES } from '@/components/character/KuttanImage';
 import { useGameStore } from '@/lib/store';
 import { ArrowRight } from 'lucide-react';
 
@@ -48,11 +49,33 @@ export default function IntroPage() {
         transition={{ duration: 0.34, ease: 'easeOut' }}
         className="relative mx-auto flex h-[100dvh] w-full max-w-md flex-col justify-center px-5 py-4 text-center text-[#1a2e1a]"
       >
-        <div className="mx-auto mb-5 w-full max-w-[17rem]">
-          <KeralaClassroomScene className="h-40" variant="kochi-room" />
+        <div className="mx-auto mb-5 w-full max-w-[21rem]">
+          <div className="relative h-48 overflow-hidden rounded-[1.55rem] border border-[#1a2e1a]/12 shadow-[0_22px_60px_-42px_rgba(17,31,17,0.95)]">
+            <img
+              src="/images/scenes/hub-goethe-kochi-classroom.jpg"
+              alt="The Goethe-Kochi A1 classroom where your course begins"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0d1a0d]/14 via-transparent to-[#0d1a0d]/58" />
+            <div className="absolute inset-x-3 top-2.5 flex justify-center">
+              <span className="rounded-xl bg-[#0d1a0d]/82 px-3 py-1 text-[0.62rem] font-black uppercase tracking-[0.16em] text-[#f1d27a] shadow-lg backdrop-blur-sm">
+                Goethe-Kochi · A1
+              </span>
+            </div>
+            <FrauWeber mood="greeting" className="absolute bottom-0 left-1 h-[8.75rem] w-auto" />
+            <motion.img
+              src={KUTTAN_MOOD_IMAGES.waving}
+              alt="Kuttan, your study buddy, waving hello"
+              className="absolute bottom-0 right-1 h-[8.25rem] w-auto object-contain object-bottom drop-shadow-lg scale-x-[-1]"
+              animate={{ y: [0, -3, 0] }}
+              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+            />
+            <span className="absolute bottom-2 left-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.6rem] font-black text-white/85">Frau Weber</span>
+            <span className="absolute bottom-2 right-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.6rem] font-black text-white/85">Kuttan</span>
+          </div>
         </div>
 
-        <h1 className="whitespace-nowrap text-[2.15rem] font-black leading-[0.96] tracking-[-0.045em] sm:text-5xl">
+        <h1 className="text-[2.35rem] font-black leading-[0.98] tracking-[-0.045em] sm:text-5xl">
           Your first German moment.
         </h1>
 

@@ -12,7 +12,7 @@ interface KuttanImageProps {
   animate?: boolean;
 }
 
-const MOOD_IMAGES: Record<KuttanMoodImage, string> = {
+export const KUTTAN_MOOD_IMAGES: Record<KuttanMoodImage, string> = {
   happy: '/images/characters/kuttan-happy.png',
   thinking: '/images/characters/kuttan-thinking.png',
   excited: '/images/characters/kuttan-excited.png',
@@ -39,7 +39,7 @@ const SIZE_MAP = {
  * Replaces the old SVG Kuttan for a much richer visual experience.
  */
 export function KuttanImage({ mood = 'happy', size = 'md', className = '', animate = true }: KuttanImageProps) {
-  const src = MOOD_IMAGES[mood];
+  const src = KUTTAN_MOOD_IMAGES[mood];
 
   return (
     <motion.div

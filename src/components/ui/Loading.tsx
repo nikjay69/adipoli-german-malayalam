@@ -17,7 +17,7 @@ export function Loading({ message, size = 'md' }: LoadingProps) {
         {[0, 1, 2].map((i) => (
           <motion.div
             key={i}
-            className={`${dotSize} rounded-full bg-gradient-to-r from-[#e94560] to-[#0f3460]`}
+            className={`${dotSize} rounded-full bg-gradient-to-r from-[#d4a520] to-[#27ae60]`}
             animate={{
               y: [0, -10, 0],
               opacity: [0.4, 1, 0.4],

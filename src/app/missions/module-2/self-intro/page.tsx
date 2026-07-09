@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import {
   ArrowRight,
@@ -26,7 +26,7 @@ const recognitionOptions = [
   { id: 'where-from', title: 'Where from?', subtitle: 'Woher kommen Sie?' },
 ];
 
-export default function Module2SelfIntroMissionPage() {
+function Module2SelfIntroMissionContent() {
   const [step, setStep] = useMissionStepForQA(0, missionSteps.length - 1);
   const searchParams = useSearchParams();
   const [heard, setHeard] = useState(false);
@@ -161,5 +161,13 @@ export default function Module2SelfIntroMissionPage() {
         )}
       </PremiumCard>
     </MissionShell>
+  );
+}
+
+export default function Module2SelfIntroMissionPage() {
+  return (
+    <Suspense fallback={null}>
+      <Module2SelfIntroMissionContent />
+    </Suspense>
   );
 }
