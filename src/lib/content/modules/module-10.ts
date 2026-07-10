@@ -171,28 +171,27 @@ export const MODULE_10: Module = {
       ],
       exercises: [
         { id: "ex10-1-1", type: "matching", question: "The doctor points at the anatomy chart. Match each body part before your turn:", options: ["der Kopf", "das Auge", "die Hand", "der Fuß", "der Bauch"], correctAnswer: ["head", "eye", "hand", "foot", "stomach/belly"], explanation: "Identifying basic body parts is the foundation of medical German. Note the genders: der (masc), die (fem), das (neut).", xpReward: 15 },
-        { id: "ex10-1-2", type: "multiple-choice", question: "How do you say 'My head hurts' in German?", options: ["Mein Kopf tut weh.", "Mein Kopf ist weh.", "Ich habe Kopf weh.", "Mein Kopf schmerzt weh."], correctAnswer: "Mein Kopf tut weh.", explanation: "The standard pattern is [Body Part] + tut weh. 'Wehtun' is a separable verb, so 'weh' goes to the very end of the sentence.", xpReward: 10 },
+        { id: "ex10-1-2", type: "multiple-choice", question: "Kuttan slumps into the doctor's chair holding his head. Which line does the job?", options: ["Mein Kopf tut weh.", "Mein Kopf ist weh.", "Ich habe Kopf weh.", "Mein Kopf schmerzt weh."], correctAnswer: "Mein Kopf tut weh.", explanation: "The standard pattern is [Body Part] + tut weh. 'Wehtun' is a separable verb, so 'weh' goes to the very end of the sentence.", xpReward: 10 },
         { id: "ex10-1-3", type: "fill-blank", question: "Meine Augen tun ___ . (hurt — plural form)", options: ["weh", "schlecht", "krank", "Schmerzen"], correctAnswer: "weh", explanation: "When the body part is plural (Augen), the verb changes from 'tut' to 'tun'. Think of it as 'My eyes DO hurt'.", xpReward: 10 },
         { id: "ex10-1-4", type: "multiple-choice", question: "What is the correct article for 'Nase' (nose)?", options: ["die Nase", "der Nase", "das Nase", "den Nase"], correctAnswer: "die Nase", explanation: "'Nase' is feminine. A good mnemonic: 'Nase' ends in 'e', and many feminine nouns in German end in 'e'.", xpReward: 10 },
-        { id: "ex10-1-5", type: "ordering", question: "Arrange: 'My back hurts a lot'", options: ["Mein", "Rücken", "tut", "sehr", "weh"], correctAnswer: ["Mein", "Rücken", "tut", "sehr", "weh"], explanation: "Structure: Subject + Verb (tut) + Adverb (sehr) + Separable Prefix (weh).", xpReward: 15 },
-        { id: "ex10-1-6", type: "fill-blank", question: "Mein ___ ist gebrochen. (arm)", options: ["Arm", "Bein", "Fuß", "Kopf"], correctAnswer: "Arm", explanation: "'Arm' is masculine ('der Arm'), so it uses 'Mein' (no ending for masculine/neuter nominative).", xpReward: 10 },
-        { id: "ex10-1-7", type: "multiple-choice", question: "Which body part is 'das Ohr'?", options: ["ear", "eye", "mouth", "nose"], correctAnswer: "ear", explanation: "das Ohr (ear) is neuter. The plural is 'die Ohren'. Think of 'Hear' having 'ear' in it!", xpReward: 10 },
-        { id: "ex10-1-8", type: "matching", question: "Match the body part to its correct article:", options: ["der Rücken", "die Hand", "das Bein", "der Mund", "das Ohr"], correctAnswer: ["back", "hand", "leg", "mouth", "ear"], explanation: "Memorizing articles with the nouns is non-negotiable in German. der Rücken (m), die Hand (f), das Bein (n).", xpReward: 15 },
+        { id: "ex10-1-5", type: "free-text", question: "Too many hours hunched over the German workbook. Tell the doctor — type in German: 'My back hurts a lot.' (der Rücken, sehr):", correctAnswer: "Mein Rücken tut sehr weh", explanation: "Structure: Subject + Verb (tut) + Adverb (sehr) + Separable Prefix (weh) — 'weh' always holds the last word.", xpReward: 30 },
+        { id: "ex10-1-6", type: "type-answer", question: "Cricket disaster at the maidan — the X-ray confirms it: 'Mein ___ ist gebrochen.' Type the body part (arm):", correctAnswer: "Arm", explanation: "'Arm' is masculine ('der Arm'), so it uses 'Mein' with no ending — and yes, German Arm = English arm, one of the free words.", xpReward: 15 },
+        { id: "ex10-1-7", type: "type-answer", question: "The doctor taps 'das Ohr' on the anatomy chart and looks at Kuttan expectantly. Type what it is in English:", correctAnswer: "ear", explanation: "das Ohr (ear) is neuter. The plural is 'die Ohren'. Think of 'Hear' having 'ear' in it!", xpReward: 15 },
         {
           id: "ex10-1-9",
           type: "dictation",
-          question: "Listen and type: Mein Kopf tut weh.",
+          question: "The patient before Kuttan describes his problem through the thin clinic wall. Listen and type exactly what you hear.",
           correctAnswer: "Mein Kopf tut weh",
-          explanation: "Great! 'tut weh' is for singular body parts. And remember to capitalize 'Kopf'!",
+          explanation: "'tut weh' is for singular body parts — and Kopf gets its capital K like every German noun.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-head-hurts.mp3"
         },
         {
           id: "ex10-1-10",
           type: "free-text",
-          question: "Write in German: 'My hand hurts.' (hand = Hand)",
+          question: "Kuttan's writing hand is protesting after three pages of German. Tell the doctor — type it: 'My hand hurts.' (die Hand):",
           correctAnswer: "Meine Hand tut weh",
-          explanation: "Wunderbar! 'Meine Hand' because Hand is feminine. 'tut weh' because it's one hand.",
+          explanation: "'Meine Hand' because Hand is feminine — the -e on meine matches die-words. 'tut weh' because it's one hand.",
           xpReward: 30
         }
       ,
@@ -204,6 +203,16 @@ export const MODULE_10: Module = {
           correctAnswer: "Mein Bein tut weh",
           explanation: "'... tut weh' (hurts) + any body part = your complete pain vocabulary at A1. Mein Bein, mein Arm, mein Kopf.",
           audioUrl: "/audio/exercises/ex10-1-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex10-1-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: rubbing both eyes after midnight study, he groans 'Meine Augen tut weh.' Plural body parts take TUN! Say it right: 'Meine Augen tun weh.'",
+          questionGerman: "Sprechen Sie laut: 'Meine Augen tun weh.'",
+          correctAnswer: "Meine Augen tun weh",
+          explanation: "One Kopf TUT weh, two Augen TUN weh — the verb counts the body parts even when you're too tired to.",
+          audioUrl: "/audio/exercises/ex10-1-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -378,25 +387,24 @@ export const MODULE_10: Module = {
         { id: "ex10-2-2", type: "fill-blank", question: "Ich habe ___ . (headache)", options: ["Kopfschmerzen", "Kopfweh", "Kopf tut weh", "Kopfkrank"], correctAnswer: "Kopfschmerzen", explanation: "'Kopfschmerzen' literally means 'head pains' (Kopf + Schmerzen). It's the standard way to say 'headache'. 'Ich habe Kopfschmerzen' = I have a headache.", xpReward: 10 },
         { id: "ex10-2-3", type: "matching", question: "Describing your fever day to the doctor — match the health words:", options: ["müde", "krank", "das Fieber", "der Husten", "der Schnupfen"], correctAnswer: ["tired", "sick", "fever", "cough", "cold/runny nose"], explanation: "müde and krank describe you (ich BIN krank); das Fieber, der Husten, der Schnupfen are things you HAVE (ich HABE Fieber). bin vs habe is the trap here.", xpReward: 15 },
         { id: "ex10-2-4", type: "multiple-choice", question: "Why is 'Mir ist kalt' correct, but 'Ich bin kalt' wrong?", options: ["Feelings use Dativ (Mir); 'Ich bin kalt' means 'I am cold-hearted'", "'Mir' and 'Ich' mean the same thing here", "'Ich bin kalt' is actually correct too", "There is no difference"], correctAnswer: "Feelings use Dativ (Mir); 'Ich bin kalt' means 'I am cold-hearted'", explanation: "Physical sensations use Dativ in German: 'Mir ist kalt' = I feel cold. 'Ich bin kalt' would mean you're a cold-hearted person — very different!", xpReward: 15 },
-        { id: "ex10-2-5", type: "ordering", question: "Arrange: 'I am sick and have a fever'", options: ["Ich", "bin", "krank", "und", "habe", "Fieber"], correctAnswer: ["Ich", "bin", "krank", "und", "habe", "Fieber"], explanation: "Two verbs, one und: ich BIN krank (state) but ich HABE Fieber (possession). German splits sick-talk across sein and haben.", xpReward: 15 },
-        { id: "ex10-2-6", type: "fill-blank", question: "___ geht es dir? (How are you? — informal)", options: ["Wie", "Was", "Wo", "Wer"], correctAnswer: "Wie", explanation: "'Wie geht es dir?' means 'How are you?' (informal). 'Wie' = how, 'geht' = goes, 'es' = it, 'dir' = to you (Dativ). Literally: 'How goes it to you?'", xpReward: 10 },
-        { id: "ex10-2-7", type: "fill-blank", question: "Ich habe ___ . (sore throat)", options: ["Halsschmerzen", "Halsweh", "Halskrank", "Halsfieber"], correctAnswer: "Halsschmerzen", explanation: "'Halsschmerzen' = Hals (throat/neck) + Schmerzen (pains). German builds compound nouns by stacking — just combine the body part with 'Schmerzen'!", xpReward: 10 },
-        { id: "ex10-2-8", type: "multiple-choice", question: "What does 'Mir ist schlecht' mean?", options: ["I feel nauseous / I feel unwell", "I am a bad person", "I am feeling sad", "I have bad luck"], correctAnswer: "I feel nauseous / I feel unwell", explanation: "'Mir ist schlecht' uses Dativ and means 'I feel unwell/nauseous'. If you said 'Ich bin schlecht', it would mean 'I am a bad person' — a classic beginner mistake!", xpReward: 10 },
+        { id: "ex10-2-5", type: "free-text", question: "Kuttan texts Frau Weber why he's missing class. Type it in German — 'I am sick and have a fever.' (krank, Fieber):", correctAnswer: "Ich bin krank und habe Fieber", explanation: "Two verbs, one und: ich BIN krank (state) but ich HABE Fieber (possession). German splits sick-talk across sein and haben.", xpReward: 30 },
+        { id: "ex10-2-6", type: "type-answer", question: "Priya texts Kuttan, who's home sick: '___ geht es dir?' Type the missing W-word (how):", correctAnswer: "Wie", explanation: "'Wie geht es dir?' means 'How are you?' (informal). Literally: 'How goes it to you?' — the dir is Dativ, like all German feelings.", xpReward: 15 },
+        { id: "ex10-2-7", type: "type-answer", question: "One kulfi too many at Marine Drive: 'Ich habe ___.' Type the German compound for sore throat (Hals + Schmerzen):", correctAnswer: "Halsschmerzen", explanation: "'Halsschmerzen' = Hals (throat) + Schmerzen (pains). Any body part + Schmerzen = instant symptom vocabulary.", xpReward: 20 },
         {
           id: "ex10-2-9",
           type: "dictation",
-          question: "Listen and type: Mir geht es nicht gut.",
+          question: "Kuttan answers Priya's text with a voice note — four gloomy words. Listen and type exactly what you hear.",
           correctAnswer: "Mir geht es nicht gut",
-          explanation: "Perfect! Remember to use 'Mir' (Dative) when talking about how you are feeling.",
+          explanation: "'Mir' (Dative) opens every honest answer about how you feel — German asks how it goes TO you.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-feel-not-good.mp3"
         },
         {
           id: "ex10-2-10",
           type: "free-text",
-          question: "Translate to German: 'I have a fever and a cough.' (fever = Fieber, cough = Husten)",
+          question: "The doctor's receptionist asks for symptoms before booking. Type them in German — 'I have a fever and a cough.' (Fieber, Husten):",
           correctAnswer: "Ich habe Fieber und Husten",
-          explanation: "Excellent! 'Ich habe Fieber und Husten.' — nouns are capitalized and no articles are needed here.",
+          explanation: "'Ich habe Fieber und Husten.' — capitalize the nouns, skip the articles. Symptom German is mercifully simple.",
           xpReward: 30
         }
       ,
@@ -408,6 +416,16 @@ export const MODULE_10: Module = {
           correctAnswer: "Mir geht es nicht gut",
           explanation: "'Mir geht es gut/nicht gut' — German asks how it goes TO you (mir). The answer to every 'Wie geht es Ihnen?'",
           audioUrl: "/audio/exercises/ex10-2-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex10-2-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: shivering under the imagined Berlin sky, he announces 'Ich bin kalt.' That means cold-HEARTED! Say it right: 'Mir ist kalt.'",
+          questionGerman: "Sprechen Sie laut: 'Mir ist kalt.'",
+          correctAnswer: "Mir ist kalt",
+          explanation: "Physical sensations take Dativ: MIR ist kalt, MIR ist schlecht. 'Ich bin kalt' describes your personality — the single funniest and most common feelings-slip at A1.",
+          audioUrl: "/audio/exercises/ex10-2-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -580,25 +598,24 @@ export const MODULE_10: Module = {
         { id: "ex10-3-2", type: "fill-blank", question: "Ich möchte einen ___ machen. (appointment)", options: ["Termin", "Besuch", "Platz", "Dienst"], correctAnswer: "Termin", explanation: "'Einen Termin machen' is the colocation you need. In Germany, almost everything (doctor, bank, government) starts with a 'Termin'.", xpReward: 10 },
         { id: "ex10-3-3", type: "matching", question: "Praxis reception, five words on every sign. Match them:", options: ["die Arztpraxis", "das Rezept", "die Tabletten", "die Versicherungskarte", "der Termin"], correctAnswer: ["doctor's office", "prescription", "pills/tablets", "insurance card", "appointment"], explanation: "Mastering these 5 words makes your first doctor's visit 90% easier. Note that 'Rezept' means prescription, NOT food recipe (which is 'Rezept' too, but different context!)!", xpReward: 15 },
         { id: "ex10-3-4", type: "multiple-choice", question: "Your doctor asks 'Seit wann haben Sie die Schmerzen?' What does this mean?", options: ["Since when have you had the pain?", "Where do you have the pain?", "How strong is the pain?", "Do you have pain?"], correctAnswer: "Since when have you had the pain?", explanation: "'Seit wann' is a classic 'Since when' question. The doctor wants the timeline to diagnose you correctly.", xpReward: 10 },
-        { id: "ex10-3-5", type: "ordering", question: "Arrange: 'I have had a stomachache since yesterday'", options: ["Ich", "habe", "seit", "gestern", "Bauchschmerzen"], correctAnswer: ["Ich", "habe", "seit", "gestern", "Bauchschmerzen"], explanation: "Structure: Subject + Verb + Time Clause (seit gestern) + The Ailment (Bauch+Schmerzen). Focus on the compound noun 'Bauchschmerzen'.", xpReward: 15 },
-        { id: "ex10-3-6", type: "fill-blank", question: "Ich habe Schmerzen ___ . (here)", options: ["hier", "dort", "da", "wo"], correctAnswer: "hier", explanation: "'Hier' (here) is essential when pointing to where it hurts. Simple but very practical!", xpReward: 10 },
-        { id: "ex10-3-7", type: "multiple-choice", question: "In Germany, where do you get your medicine after visiting the doctor?", options: ["At the Apotheke (pharmacy) with a Rezept", "The doctor gives you medicine directly", "At the supermarket", "At the Krankenhaus (hospital)"], correctAnswer: "At the Apotheke (pharmacy) with a Rezept", explanation: "CRITICAL: German doctors don't sell medicine. They give you a 'Rezept' (prescription), and you walk to a separate 'Apotheke'. This is a major cultural difference from many Indian clinics.", xpReward: 10 },
-        { id: "ex10-3-8", type: "fill-blank", question: "Die Schmerzen sind ___ . (unbearable)", options: ["unerträglich", "stark", "dumpf", "brennend"], correctAnswer: "unerträglich", explanation: "'Un-erträglich' = Not-bearable. Use this only if the pain is truly extreme. For normal pain, use 'stark' (strong).", xpReward: 10 },
+        { id: "ex10-3-5", type: "free-text", question: "The doctor wants the timeline. Type it in German — 'I have had a stomachache since yesterday.' (seit gestern, Bauchschmerzen):", correctAnswer: "Ich habe seit gestern Bauchschmerzen", explanation: "Subject + Verb + seit gestern + the ailment. German uses the PRESENT tense with seit — 'I have since yesterday', not 'I have had'.", xpReward: 30 },
+        { id: "ex10-3-6", type: "type-answer", question: "'Wo genau?' asks the doctor. Kuttan points at his stomach: 'Ich habe Schmerzen ___.' Type the word (here):", correctAnswer: "hier", explanation: "'Hier' (here) plus a finger is a complete medical sentence. Simple but very practical.", xpReward: 15 },
+        { id: "ex10-3-8", type: "type-answer", question: "Kuttan, master of drama, rates his mild headache for the doctor: 'Die Schmerzen sind ___.' Type the big word (unbearable):", correctAnswer: "unerträglich", explanation: "'Un-erträglich' = not-bearable. Use it only if the pain is truly extreme — for normal pain, 'stark' (strong) keeps your credibility.", xpReward: 20 },
         {
           id: "ex10-3-9",
           type: "dictation",
-          question: "Listen and type: Ich möchte einen Termin machen.",
+          question: "Kuttan finally dials the Praxis. One polite sentence gets him in the book. Listen and type exactly what you hear.",
           correctAnswer: "Ich möchte einen Termin machen",
-          explanation: "Great job! This is the standard phrase for making an appointment in Germany.",
+          explanation: "The standard appointment phrase in Germany — doctor, bank, Amt, everything starts with this sentence.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-make-appointment.mp3"
         },
         {
           id: "ex10-3-10",
           type: "free-text",
-          question: "Write in German: 'Where is the doctor's office?' (doctor's office = Arztpraxis)",
+          question: "New neighbourhood, no map, mild fever. Ask a passerby — type in German: 'Where is the doctor's office?' (die Arztpraxis):",
           correctAnswer: "Wo ist die Arztpraxis",
-          explanation: "Wunderbar! 'Wo ist die Arztpraxis?' — 'die' because it's feminine.",
+          explanation: "'Wo ist die Arztpraxis?' — 'die' because it's feminine, and 'Wo ist...?' remains the hardest-working question at A1.",
           xpReward: 30
         }
       ,
@@ -610,6 +627,16 @@ export const MODULE_10: Module = {
           correctAnswer: "Ich habe Kopfschmerzen und brauche einen Arzt",
           explanation: "Symptom + need in one line. 'einen Arzt' because brauchen takes the accusative — der Arzt flips to einen.",
           audioUrl: "/audio/exercises/ex10-3-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex10-3-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: he barks at the receptionist 'Ich will einen Termin!' — demanding-toddler German! Say it right: 'Ich möchte einen Termin machen.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte einen Termin machen.'",
+          correctAnswer: "Ich möchte einen Termin machen",
+          explanation: "'Ich will' = I WANT (blunt); 'Ich möchte' = I would like (polite). Receptionists, examiners, and Ammas all hear the difference instantly.",
+          audioUrl: "/audio/exercises/ex10-3-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -786,26 +813,26 @@ export const MODULE_10: Module = {
         { id: "ex10-4-1", type: "multiple-choice", question: "What makes German pharmacies (Apotheke) different from Indian medical stores?", options: ["Even basic medicines like paracetamol can only be bought at an Apotheke", "They are open 24/7", "They are cheaper than Indian stores", "They sell groceries too"], correctAnswer: "Even basic medicines like paracetamol can only be bought at an Apotheke", explanation: "Germany has a strict 'Apothekenpflicht'. Even simple painkillers can't be sold in supermarkets. This ensures every medicine sale is supervised by a professional pharmacist.", xpReward: 10 },
         { id: "ex10-4-2", type: "fill-blank", question: "Ich brauche etwas ___ Kopfschmerzen. (for/against)", options: ["gegen", "für", "mit", "von"], correctAnswer: "gegen", explanation: "In German, medications are 'gegen' (against) an illness, not 'für' (for) it. If you say 'für', it sounds like you want to keep the headache!", xpReward: 10 },
         { id: "ex10-4-3", type: "matching", question: "Scanning the Apotheke shelves — match what each item actually is:", options: ["die Tablette", "der Sirup", "die Salbe", "das Pflaster", "das Schmerzmittel"], correctAnswer: ["tablet/pill", "syrup", "ointment/cream", "band-aid/plaster", "painkiller"], explanation: "Pflaster (band-aid) and Schmerzmittel (pain-killer) are the most common things people buy rezeptfrei (without prescription).", xpReward: 15 },
-        { id: "ex10-4-4", type: "multiple-choice", question: "What does 'rezeptpflichtig' mean?", options: ["Requires a prescription", "Over-the-counter", "Very expensive", "Only for children"], correctAnswer: "Requires a prescription", explanation: "Pflicht = duty/obligation. Rezept-pflichtig means a prescription is an absolute requirement. You can't talk your way out of it in Germany!", xpReward: 10 },
-        { id: "ex10-4-5", type: "ordering", question: "Arrange: 'I have a prescription from the doctor'", options: ["Ich", "habe", "ein", "Rezept", "vom", "Arzt"], correctAnswer: ["Ich", "habe", "ein", "Rezept", "vom", "Arzt"], explanation: "Structure: Subject (Ich) + Verb (habe) + Object (ein Rezept) + Origin (vom Arzt).", xpReward: 15 },
-        { id: "ex10-4-6", type: "fill-blank", question: "Wie oft ___ ich das nehmen? (should)", options: ["soll", "will", "kann", "muss"], correctAnswer: "soll", explanation: "Use the modal verb 'sollen' (should) when asking for advice or instructions. Use 'müssen' (must) if the doctor ordered it.", xpReward: 10 },
-        { id: "ex10-4-7", type: "multiple-choice", question: "You need something for allergies. How do you ask at the Apotheke?", options: ["Ich brauche etwas gegen Allergien.", "Ich will Allergien haben.", "Wo sind die Allergien?", "Haben Sie Allergien?"], correctAnswer: "Ich brauche etwas gegen Allergien.", explanation: "'Ich brauche etwas gegen...' is the universal formula. Learn it, use it, survive!", xpReward: 10 },
-        { id: "ex10-4-8", type: "ordering", question: "Arrange: 'Take one tablet three times daily'", options: ["Nehmen", "Sie", "dreimal", "täglich", "eine", "Tablette"], correctAnswer: ["Nehmen", "Sie", "dreimal", "täglich", "eine", "Tablette"], explanation: "Command structure: Verb (Nehmen) + Polite Subject (Sie) + Frequency (dreimal täglich) + Object (eine Tablette).", xpReward: 15 },
+        { id: "ex10-4-4", type: "type-answer", question: "The box Kuttan reaches for is stamped 'rezeptpflichtig' — the pharmacist shakes her head. Type in English what that stamp demands:", correctAnswer: "Requires a prescription", explanation: "Pflicht = duty/obligation. Rezept-pflichtig means a prescription is an absolute requirement. You can't talk your way out of it in Germany!", xpReward: 20 },
+        { id: "ex10-4-5", type: "free-text", question: "Kuttan slides the paper across the Apotheke counter. Type his line in German — 'I have a prescription from the doctor.' (das Rezept, vom Arzt):", correctAnswer: "Ich habe ein Rezept vom Arzt", explanation: "Subject + Verb + Object (ein Rezept) + Origin (vom Arzt = von dem Arzt). One sentence, one dative contraction.", xpReward: 30 },
+        { id: "ex10-4-6", type: "type-answer", question: "Instructions unclear, as always. Kuttan asks the pharmacist: 'Wie oft ___ ich das nehmen?' Type the modal verb (should):", correctAnswer: "soll", explanation: "Use 'sollen' (should) when asking for advice or instructions. Use 'müssen' (must) if the doctor ordered it.", xpReward: 15 },
+        { id: "ex10-4-7", type: "multiple-choice", question: "Mango season, and Kuttan's nose disagrees. He needs something for allergies at the Apotheke — which line works?", options: ["Ich brauche etwas gegen Allergien.", "Ich will Allergien haben.", "Wo sind die Allergien?", "Haben Sie Allergien?"], correctAnswer: "Ich brauche etwas gegen Allergien.", explanation: "'Ich brauche etwas gegen...' is the universal formula. Learn it, use it, survive!", xpReward: 10 },
+        { id: "ex10-4-8", type: "free-text", question: "Role-play flip: Kuttan is the pharmacist. Give the dosage instruction in German — 'Take one tablet three times daily.' (Nehmen Sie…, dreimal täglich):", correctAnswer: "Nehmen Sie dreimal täglich eine Tablette", explanation: "Command structure: Verb (Nehmen) + Polite Sie + Frequency (dreimal täglich) + Object (eine Tablette).", xpReward: 30 },
         {
           id: "ex10-4-9",
           type: "dictation",
-          question: "Listen and type: Ich brauche etwas gegen Kopfschmerzen.",
+          question: "The customer ahead of Kuttan states her business in one clean sentence. Listen and type exactly what you hear.",
           correctAnswer: "Ich brauche etwas gegen Kopfschmerzen",
-          explanation: "Perfect! 'gegen' is used for medications. And remember to capitalize 'Kopfschmerzen'!",
+          explanation: "'gegen' is the medication preposition — you buy something AGAINST the headache, never for it.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-need-headache-med.mp3"
         },
         {
           id: "ex10-4-10",
           type: "free-text",
-          question: "Translate to German: 'Is it over-the-counter?' (over-the-counter = rezeptfrei)",
+          question: "No Rezept in Kuttan's pocket — before the pharmacist rings it up, check. Type in German: 'Is it over-the-counter?' (rezeptfrei):",
           correctAnswer: "Ist es rezeptfrei",
-          explanation: "Excellent! 'Ist es rezeptfrei?' — very important question at the pharmacy.",
+          explanation: "'Ist es rezeptfrei?' — the question that saves you a trip back to the doctor.",
           xpReward: 30
         }
       ,
@@ -817,6 +844,16 @@ export const MODULE_10: Module = {
           correctAnswer: "Haben Sie etwas gegen Kopfschmerzen",
           explanation: "'etwas gegen ...' = something against/for. The universal pharmacy question — swap the symptom, keep the frame.",
           audioUrl: "/audio/exercises/ex10-4-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex10-4-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: he asks for 'etwas FÜR Kopfschmerzen' — that orders a headache to keep! Medicine works AGAINST the problem. Say it right: 'Ich brauche etwas gegen Kopfschmerzen.'",
+          questionGerman: "Sprechen Sie laut: 'Ich brauche etwas gegen Kopfschmerzen.'",
+          correctAnswer: "Ich brauche etwas gegen Kopfschmerzen",
+          explanation: "für = in favour of, gegen = against. English 'something for a headache' is exactly the trap — German pharmacists will smile, the exam won't.",
+          audioUrl: "/audio/exercises/ex10-4-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -947,27 +984,27 @@ export const MODULE_10: Module = {
         }
       ],
       exercises: [
-        { id: "ex10-5-1", type: "multiple-choice", question: "Which number do you call for an ambulance in Germany?", options: ["112", "110", "108", "911"], correctAnswer: "112", explanation: "EUROPE-WIDE RULE: Dial 112 for Ambulance and Fire. Dial 110 for Police. No credit? No SIM? 112 often still works! Memorize the 'Duo' — 110/112.", xpReward: 10 },
+        { id: "ex10-5-1", type: "multiple-choice", question: "Emergency drill with Frau Weber: a cyclist is down in your imagined German street. Which number gets the ambulance?", options: ["112", "110", "108", "911"], correctAnswer: "112", explanation: "EUROPE-WIDE RULE: Dial 112 for Ambulance and Fire. Dial 110 for Police. No credit? No SIM? 112 often still works! Memorize the 'Duo' — 110/112. (108 is Kerala's ambulance — not Germany's.)", xpReward: 10 },
         { id: "ex10-5-2", type: "fill-blank", question: "Ich brauche einen ___ ! (ambulance)", options: ["Krankenwagen", "Polizei", "Feuerwehr", "Arzt"], correctAnswer: "Krankenwagen", explanation: "Krank-en-wagen. Literally 'Sick-car'. It's the most important word in an emergency. If you forget, just scream 'Hilfe' and '112'!", xpReward: 10 },
         { id: "ex10-5-3", type: "matching", question: "112 call rehearsal: match the emergency words you would need first:", options: ["der Unfall", "die Verletzung", "das Blut", "die Notaufnahme", "der Notfall"], correctAnswer: ["accident", "injury", "blood", "emergency room", "emergency"], explanation: "Knowing these words helps the dispatcher send the right help. Note: 'Notfall' is any emergency; 'Unfall' is specifically an accident.", xpReward: 15 },
-        { id: "ex10-5-4", type: "ordering", question: "Arrange: 'Someone is injured, call an ambulance!'", options: ["Jemand", "ist", "verletzt,", "rufen", "Sie", "einen", "Krankenwagen!"], correctAnswer: ["Jemand", "ist", "verletzt,", "rufen", "Sie", "einen", "Krankenwagen!"], explanation: "Command: rufen Sie! Object: einen Krankenwagen! Information: Jemand ist verletzt!", xpReward: 15 },
-        { id: "ex10-5-5", type: "multiple-choice", question: "What does 'Es gab einen Unfall' mean?", options: ["There was an accident", "There is a fire", "Someone is bleeding", "I need a doctor"], correctAnswer: "There was an accident", explanation: "'Es gab' is the past of 'Es gibt' (There is). Use this to report what already happened when the police arrive.", xpReward: 10 },
-        { id: "ex10-5-6", type: "fill-blank", question: "Jemand ist ___ ! (injured)", options: ["verletzt", "krank", "müde", "tot"], correctAnswer: "verletzt", explanation: "Verletzt comes from 'verletzen' (to injure). It's a key word for reporting casualties at an accident scene.", xpReward: 10 },
+        { id: "ex10-5-4", type: "free-text", question: "Drill under pressure: type the full emergency call in German — 'Someone is injured, call an ambulance!' (Jemand…, rufen Sie…):", correctAnswer: "Jemand ist verletzt, rufen Sie einen Krankenwagen!", explanation: "Information first (Jemand ist verletzt), command second (rufen Sie einen Krankenwagen). In a real emergency this order saves seconds.", xpReward: 30 },
+        { id: "ex10-5-5", type: "multiple-choice", question: "The Polizei arrive and Kuttan reports: 'Es gab einen Unfall.' What did he just tell them?", options: ["There was an accident", "There is a fire", "Someone is bleeding", "I need a doctor"], correctAnswer: "There was an accident", explanation: "'Es gab' is the past of 'Es gibt' (There is). Use this to report what already happened when the police arrive.", xpReward: 10 },
+        { id: "ex10-5-6", type: "type-answer", question: "Kuttan points at the fallen cyclist and shouts into the phone: 'Jemand ist ___!' Type the word (injured):", correctAnswer: "verletzt", explanation: "Verletzt comes from 'verletzen' (to injure). It's the key word for reporting casualties at an accident scene.", xpReward: 15 },
         {
           id: "ex10-5-7",
           type: "dictation",
-          question: "Listen and type: Rufen Sie einen Krankenwagen!",
+          question: "A bystander in the drill shouts one command at the crowd. Listen and type exactly what you hear.",
           correctAnswer: "Rufen Sie einen Krankenwagen",
-          explanation: "Perfect! A life-saving sentence. Remember the capital 'K' for 'Krankenwagen'!",
+          explanation: "A life-saving sentence — Sie-imperative up front, capital K on Krankenwagen.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-call-ambulance.mp3"
         },
         {
           id: "ex10-5-8",
           type: "free-text",
-          question: "Write in German: 'I need help!' (help = Hilfe)",
+          question: "Simplest emergency German there is — when everything else fails, type it: 'I need help!' (die Hilfe):",
           correctAnswer: "Ich brauche Hilfe",
-          explanation: "Wunderbar! 'Ich brauche Hilfe!' — direct and clear.",
+          explanation: "'Ich brauche Hilfe!' — direct and clear. Three words that work in every emergency in every German city.",
           xpReward: 30
         }
       ,
@@ -979,6 +1016,16 @@ export const MODULE_10: Module = {
           correctAnswer: "Hilfe! Rufen Sie einen Krankenwagen, bitte",
           explanation: "In an emergency, the Sie-imperative (Rufen Sie...) is the fastest correct German there is. Drill it before you need it.",
           audioUrl: "/audio/exercises/ex10-5-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex10-5-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: adrenaline pumping, he shouts 'Rufen Sie ein Krankenwagen!' Even in a crisis, Krankenwagen is masculine — einen! Say it right: 'Rufen Sie einen Krankenwagen!'",
+          questionGerman: "Sprechen Sie laut: 'Rufen Sie einen Krankenwagen!'",
+          correctAnswer: "Rufen Sie einen Krankenwagen",
+          explanation: "der Krankenwagen → einen when it's the thing being called. Drilling the -en under fake pressure is what makes it survive real pressure.",
+          audioUrl: "/audio/exercises/ex10-5-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

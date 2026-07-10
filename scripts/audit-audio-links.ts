@@ -51,6 +51,17 @@ async function main() {
     }
   }
 
+  // spine checkpoint tasks (administered runner: dictation + model audio)
+  const sc = await import(pathToFileURL(path.resolve('src/lib/spine-checkpoints.ts')).href);
+  for (const cp of Object.values(sc.SPINE_CHECKPOINTS) as { sections: { items: { id: string; task?: { audioUrl?: string; modelAudioUrl?: string } }[] }[] }[]) {
+    for (const section of cp.sections) {
+      for (const item of section.items) {
+        check(item.task?.audioUrl, 'audio', item.id);
+        check(item.task?.modelAudioUrl, 'audio', item.id);
+      }
+    }
+  }
+
   console.log(
     `asset links: ${audioRefs} audio + ${imageRefs} image refs checked, ${missing.length} missing` +
       (pendingHits.length ? `, ${pendingHits.length} pending TTS batch (scripts/tts-queue.json)` : '')

@@ -1,14 +1,27 @@
 // Closed checkpoints for spine modules 2-8 (module 1 has its own bespoke
 // checkpoint in src/lib/missions/module1Checkpoint.ts).
 //
-// Same model as Module 1: self-marked, closed-book, diagnostic. Every item
-// carries weakness tags from docs/EXAM_PREP_DESIGN.md; failed tags select
-// recovery cards that prescribe 1-3 exact tasks + a retest, linking into the
-// practice library (old lessons, flagship games, SRS review).
+// ADMINISTERED, not self-marked (DECISIONS #13): every item carries a `task`
+// the checkpoint runner presents and grades. choice/type tasks are auto-scored
+// against verified answers; production tasks force real output before a model
+// answer + rubric self-score (EXAM_PREP_DESIGN 5-point: >=3 passes); auto tasks
+// derive from real mock results in the store. Every miss emits weakness tags
+// from docs/EXAM_PREP_DESIGN.md; failed tags select recovery cards that
+// prescribe 1-3 exact tasks + a retest, linking into the practice library.
 
-import type { SpineCheckpointResult } from '@/lib/store';
+import type { MockGateResult, SpineCheckpointResult } from '@/lib/store';
 
 export type SkillSectionId = 'hoeren' | 'sprechen' | 'lesen' | 'schreiben' | 'grammarVocab';
+
+export type CheckpointTask =
+  /** One tap among instructive distractors — auto-scored. */
+  | { kind: 'choice'; question: string; options: string[]; correctAnswer: string; audioUrl?: string }
+  /** Typed answer, matched with answer-match normalization — auto-scored. audioUrl = play-first dictation. */
+  | { kind: 'type'; question: string; accepted: string[]; audioUrl?: string; placeholder?: string }
+  /** Real production (say/write) → reveal model answer → honest rubric self-score (>=3 passes). */
+  | { kind: 'production'; action: 'say' | 'write'; question: string; modelAnswer: string; modelAudioUrl?: string; criteria: string[] }
+  /** Derived from real mock-gate results in the store — no self-report. */
+  | { kind: 'auto'; question: string; source: 'full-mock-exists' | 'full-mock-60' | 'full-mock-75' };
 
 export type CheckpointItem = {
   id: string;
@@ -19,7 +32,18 @@ export type CheckpointItem = {
   points: number;
   weaknessTags: string[];
   requiredForPass?: boolean;
+  task: CheckpointTask;
 };
+
+/** Full-mock gates that count as "a timed full mock" for auto tasks. */
+const FULL_MOCK_GATE_IDS = ['full-7', 'final-8a', 'final-8b'];
+
+export function evaluateAutoTask(source: 'full-mock-exists' | 'full-mock-60' | 'full-mock-75', mockResults: Record<string, MockGateResult>): boolean {
+  const fullMocks = FULL_MOCK_GATE_IDS.map((id) => mockResults[id]).filter(Boolean) as MockGateResult[];
+  if (source === 'full-mock-exists') return fullMocks.length > 0;
+  if (source === 'full-mock-60') return fullMocks.some((r) => r.percent >= 60);
+  return fullMocks.some((r) => r.percent >= 75);
+}
 
 export type CheckpointSection = {
   id: SkillSectionId;
@@ -76,40 +100,51 @@ const checkpoint2: SpineCheckpoint = {
     {
       id: 'hoeren',
       title: 'Hören — numbers and times',
-      instruction: 'Play the lesson audio or have someone read it. Mark only what you catch first time.',
+      instruction: 'Audio plays once for each task. Answer what you catch — that is the diagnosis.',
       items: [
-        { id: 'cp2-h-number', sectionId: 'hoeren', mode: 'listen', prompt: 'Hear: dreiundzwanzig, siebzehn, vierzig.', expected: '23, 17, 40 written correctly.', points: 2, weaknessTags: ['hoeren:numbers', 'vocab:numbers_time'] },
-        { id: 'cp2-h-phone', sectionId: 'hoeren', mode: 'listen', prompt: 'Catch a phone number read digit by digit.', expected: 'All digits in order.', points: 2, weaknessTags: ['hoeren:numbers'] },
-        { id: 'cp2-h-time', sectionId: 'hoeren', mode: 'listen', prompt: 'Hear: Der Termin ist um halb drei.', expected: 'Appointment at 2:30.', points: 2, weaknessTags: ['hoeren:time_dates', 'vocab:numbers_time'] },
+        { id: 'cp2-h-number', sectionId: 'hoeren', mode: 'listen', prompt: 'Hear: dreiundzwanzig, siebzehn, vierzig.', expected: '23, 17, 40 written correctly.', points: 2, weaknessTags: ['hoeren:numbers', 'vocab:numbers_time'],
+          task: { kind: 'type', question: 'Play the audio. Type the three numbers you hear as digits, in order (e.g. 5, 12, 30):', accepted: ['23, 17, 40', '23 17 40'], audioUrl: '/audio/checkpoints/cp2-h-number.mp3', placeholder: 'e.g. 5, 12, 30' } },
+        { id: 'cp2-h-phone', sectionId: 'hoeren', mode: 'listen', prompt: 'Catch a phone number read digit by digit.', expected: 'All digits in order.', points: 2, weaknessTags: ['hoeren:numbers'],
+          task: { kind: 'type', question: 'Play the audio. Type the phone number as digits:', accepted: ['047138926', '0471 38 92 6', '0471 3892 6'], audioUrl: '/audio/checkpoints/cp2-h-phone.mp3', placeholder: 'digits only' } },
+        { id: 'cp2-h-time', sectionId: 'hoeren', mode: 'listen', prompt: 'Hear: Der Termin ist um halb drei.', expected: 'Appointment at 2:30.', points: 2, weaknessTags: ['hoeren:time_dates', 'vocab:numbers_time'],
+          task: { kind: 'choice', question: 'Play the audio. When is the appointment?', options: ['2:30', '3:30', '3:00', '2:00'], correctAnswer: '2:30', audioUrl: '/audio/checkpoints/cp2-h-time.mp3' } },
       ],
     },
     {
       id: 'sprechen',
       title: 'Sprechen — who you are',
-      instruction: 'Say it aloud. Self-mark honestly; this is diagnostic.',
+      instruction: 'Say it aloud first — really aloud. Then compare with the model and score yourself honestly.',
       items: [
-        { id: 'cp2-s-intro', sectionId: 'sprechen', mode: 'speak', prompt: 'Say your full self-intro: Ich heiße ... Ich komme aus ... Ich wohne in ... Ich spreche ...', expected: 'Four lines without freezing, ~20 seconds.', points: 4, weaknessTags: ['sprechen:self_intro'], requiredForPass: true },
-        { id: 'cp2-s-spell', sectionId: 'sprechen', mode: 'speak', prompt: 'Spell your name with German letter names.', expected: 'No English letter names slipping in.', points: 2, weaknessTags: ['sprechen:spelling'] },
-        { id: 'cp2-s-age', sectionId: 'sprechen', mode: 'speak', prompt: 'Answer: Wie alt sind Sie?', expected: 'Ich bin ... Jahre alt.', points: 2, weaknessTags: ['sprechen:question_answer', 'vocab:personal_info'] },
+        { id: 'cp2-s-intro', sectionId: 'sprechen', mode: 'speak', prompt: 'Say your full self-intro: Ich heiße ... Ich komme aus ... Ich wohne in ... Ich spreche ...', expected: 'Four lines without freezing, ~20 seconds.', points: 4, weaknessTags: ['sprechen:self_intro'], requiredForPass: true,
+          task: { kind: 'production', action: 'say', question: 'The examiner nods at you. Deliver your full self-intro aloud — name, origin, home, languages — before you look at anything.', modelAnswer: 'Ich heiße Priya. Ich komme aus Indien. Ich wohne in Kochi. Ich spreche Malayalam, Englisch und ein bisschen Deutsch.', modelAudioUrl: '/audio/checkpoints/cp2-s-intro-model.mp3', criteria: ['All four lines said aloud', 'No freeze longer than a breath', 'Verb in second position every time'] } },
+        { id: 'cp2-s-spell', sectionId: 'sprechen', mode: 'speak', prompt: 'Spell your name with German letter names.', expected: 'No English letter names slipping in.', points: 2, weaknessTags: ['sprechen:spelling'],
+          task: { kind: 'production', action: 'say', question: 'The examiner asks: "Wie schreibt man das?" Spell YOUR name aloud with German letter names.', modelAnswer: 'KUTTAN → Ka, U, Te, Te, A, En.', modelAudioUrl: '/audio/checkpoints/cp2-s-spell-model.mp3', criteria: ['German letter names only — no English "kay" or "you"', 'Every letter of your name, in order'] } },
+        { id: 'cp2-s-age', sectionId: 'sprechen', mode: 'speak', prompt: 'Answer: Wie alt sind Sie?', expected: 'Ich bin ... Jahre alt.', points: 2, weaknessTags: ['sprechen:question_answer', 'vocab:personal_info'],
+          task: { kind: 'production', action: 'say', question: '"Wie alt sind Sie?" — answer aloud with your real age, full sentence.', modelAnswer: 'Ich bin dreiundzwanzig Jahre alt.', modelAudioUrl: '/audio/checkpoints/cp2-s-age-model.mp3', criteria: ['Full sentence: Ich bin ... Jahre alt', 'Your age said as a German number, not English'] } },
       ],
     },
     {
       id: 'schreiben',
       title: 'Schreiben — personal data',
-      instruction: 'Write from memory, then check.',
+      instruction: 'Forms are Schreiben Teil 1. Every field label matters.',
       items: [
-        { id: 'cp2-w-form', sectionId: 'schreiben', mode: 'write', prompt: 'Fill a mini-form: Vorname, Nachname, Land, Telefonnummer.', expected: 'Right data in the right field.', points: 2, weaknessTags: ['schreiben:form_fields', 'vocab:personal_info'] },
-        { id: 'cp2-w-date', sectionId: 'schreiben', mode: 'write', prompt: 'Write your birthday in German format.', expected: 'TT.MM.JJJJ, e.g. 07.11.2001.', points: 2, weaknessTags: ['schreiben:address_date_phone'] },
+        { id: 'cp2-w-form', sectionId: 'schreiben', mode: 'write', prompt: 'Fill a mini-form: Vorname, Nachname, Land, Telefonnummer.', expected: 'Right data in the right field.', points: 2, weaknessTags: ['schreiben:form_fields', 'vocab:personal_info'],
+          task: { kind: 'choice', question: 'The form has fields: Vorname · Nachname · Land · Telefonnummer. Kuttan\'s full name is "Kuttan Menon". What goes in "Nachname"?', options: ['Menon', 'Kuttan', 'Kuttan Menon', 'Indien'], correctAnswer: 'Menon' } },
+        { id: 'cp2-w-date', sectionId: 'schreiben', mode: 'write', prompt: 'Write your birthday in German format.', expected: 'TT.MM.JJJJ, e.g. 07.11.2001.', points: 2, weaknessTags: ['schreiben:address_date_phone'],
+          task: { kind: 'type', question: 'Write "7 November 2001" the way a German form wants it (TT.MM.JJJJ):', accepted: ['07.11.2001', '7.11.2001'], placeholder: 'TT.MM.JJJJ' } },
       ],
     },
     {
       id: 'grammarVocab',
       title: 'Grammar & vocab — exam questions',
-      instruction: 'Mark only what you can answer cleanly.',
+      instruction: 'Closed book. Answer, don\'t guess.',
       items: [
-        { id: 'cp2-g-wie', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Wie heißen Sie? — what is the examiner asking?', expected: 'Your name → Ich heiße ...', points: 2, weaknessTags: ['hoeren:question_words', 'vocab:personal_info'] },
-        { id: 'cp2-g-woher', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Woher kommen Sie? vs Wo wohnen Sie? — the difference.', expected: 'Origin vs current home.', points: 2, weaknessTags: ['hoeren:question_words', 'grammar:question_order'] },
-        { id: 'cp2-g-numbers', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Numbers 0-20 without counting up from null.', expected: 'Instant recall of any number.', points: 2, weaknessTags: ['vocab:numbers_time'] },
+        { id: 'cp2-g-wie', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Wie heißen Sie? — what is the examiner asking?', expected: 'Your name → Ich heiße ...', points: 2, weaknessTags: ['hoeren:question_words', 'vocab:personal_info'],
+          task: { kind: 'choice', question: 'The examiner asks: "Wie heißen Sie?" What do they want?', options: ['Your name', 'Your age', 'Your address', 'Your job'], correctAnswer: 'Your name' } },
+        { id: 'cp2-g-woher', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Woher kommen Sie? vs Wo wohnen Sie? — the difference.', expected: 'Origin vs current home.', points: 2, weaknessTags: ['hoeren:question_words', 'grammar:question_order'],
+          task: { kind: 'choice', question: '"Woher kommen Sie?" asks about your…', options: ['origin — where you come from', 'current home — where you live', 'destination — where you are going', 'workplace'], correctAnswer: 'origin — where you come from' } },
+        { id: 'cp2-g-numbers', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Numbers 0-20 without counting up from null.', expected: 'Instant recall of any number.', points: 2, weaknessTags: ['vocab:numbers_time'],
+          task: { kind: 'type', question: 'Instant recall, no counting up: type "siebzehn" as a digit:', accepted: ['17'], placeholder: 'digit' } },
       ],
     },
   ],
@@ -131,37 +166,45 @@ const checkpoint3: SpineCheckpoint = {
     {
       id: 'lesen',
       title: 'Lesen — people and profiles',
-      instruction: 'Read without looking back at the lessons.',
+      instruction: 'Read once, answer. No looking back at the lessons.',
       items: [
-        { id: 'cp3-l-profile', sectionId: 'lesen', mode: 'match', prompt: 'Read: Das ist Priya. Sie ist 25 Jahre alt. Sie wohnt in Kochi.', expected: 'Who, age, and where — all three.', points: 2, weaknessTags: ['lesen:emails', 'vocab:family_home'] },
-        { id: 'cp3-l-family', sectionId: 'lesen', mode: 'match', prompt: 'Read: Mein Bruder arbeitet in München.', expected: 'My brother works in Munich.', points: 2, weaknessTags: ['vocab:family_home'] },
+        { id: 'cp3-l-profile', sectionId: 'lesen', mode: 'match', prompt: 'Read: Das ist Priya. Sie ist 25 Jahre alt. Sie wohnt in Kochi.', expected: 'Who, age, and where — all three.', points: 2, weaknessTags: ['lesen:emails', 'vocab:family_home'],
+          task: { kind: 'choice', question: 'Read: "Das ist Priya. Sie ist 25 Jahre alt. Sie wohnt in Kochi." Which is true?', options: ['Priya is 25 and lives in Kochi', 'Priya is 35 and lives in Kochi', 'Priya is 25 and works in Kochi', 'Priya is 25 and comes from Kochi'], correctAnswer: 'Priya is 25 and lives in Kochi' } },
+        { id: 'cp3-l-family', sectionId: 'lesen', mode: 'match', prompt: 'Read: Mein Bruder arbeitet in München.', expected: 'My brother works in Munich.', points: 2, weaknessTags: ['vocab:family_home'],
+          task: { kind: 'choice', question: '"Mein Bruder arbeitet in München." means…', options: ['My brother works in Munich', 'My brother lives in Munich', 'My brother is visiting Munich', 'My uncle works in Munich'], correctAnswer: 'My brother works in Munich' } },
       ],
     },
     {
       id: 'sprechen',
       title: 'Sprechen — your real life',
-      instruction: 'Say it aloud. This is the Goethe family prompt.',
+      instruction: 'This is the Goethe family prompt. Say it aloud first, then compare with the model.',
       items: [
-        { id: 'cp3-s-family', sectionId: 'sprechen', mode: 'speak', prompt: 'Say 4 sentences about your family (Das ist meine Mutter. Sie heißt ...).', expected: 'Four understandable sentences.', points: 4, weaknessTags: ['sprechen:question_answer', 'vocab:family_home'], requiredForPass: true },
-        { id: 'cp3-s-routine', sectionId: 'sprechen', mode: 'speak', prompt: 'Describe your day in 3 sentences (Ich stehe um ... auf. Ich arbeite ... Ich lerne Deutsch.).', expected: 'Three routine sentences with correct verb position.', points: 2, weaknessTags: ['grammar:verb_position', 'vocab:family_home'] },
+        { id: 'cp3-s-family', sectionId: 'sprechen', mode: 'speak', prompt: 'Say 4 sentences about your family (Das ist meine Mutter. Sie heißt ...).', expected: 'Four understandable sentences.', points: 4, weaknessTags: ['sprechen:question_answer', 'vocab:family_home'], requiredForPass: true,
+          task: { kind: 'production', action: 'say', question: 'The examiner shows a card: "Familie". Say four sentences about YOUR family aloud, right now.', modelAnswer: 'Das ist meine Mutter. Sie heißt Lakshmi. Das ist mein Bruder. Er ist Student in Bangalore.', modelAudioUrl: '/audio/checkpoints/cp3-s-family-model.mp3', criteria: ['Four full sentences aloud', 'mein/meine matched to each person', 'A stranger would understand every sentence'] } },
+        { id: 'cp3-s-routine', sectionId: 'sprechen', mode: 'speak', prompt: 'Describe your day in 3 sentences (Ich stehe um ... auf. Ich arbeite ... Ich lerne Deutsch.).', expected: 'Three routine sentences with correct verb position.', points: 2, weaknessTags: ['grammar:verb_position', 'vocab:family_home'],
+          task: { kind: 'production', action: 'say', question: '"Wie ist Ihr Tag?" — describe your day aloud in three sentences.', modelAnswer: 'Ich stehe um sechs Uhr auf. Ich arbeite bis fünf Uhr. Abends lerne ich Deutsch.', modelAudioUrl: '/audio/checkpoints/cp3-s-routine-model.mp3', criteria: ['Three sentences aloud', 'Verb in second position each time', 'aufstehen split correctly: Ich stehe … auf'] } },
       ],
     },
     {
       id: 'schreiben',
       title: 'Schreiben — tiny routine',
-      instruction: 'Write from memory.',
+      instruction: 'Word order is scored in every written task.',
       items: [
-        { id: 'cp3-w-routine', sectionId: 'schreiben', mode: 'write', prompt: 'Write 3 daily-routine sentences.', expected: 'Verb in second position in all three.', points: 2, weaknessTags: ['schreiben:word_order', 'grammar:verb_position'] },
+        { id: 'cp3-w-routine', sectionId: 'schreiben', mode: 'write', prompt: 'Write 3 daily-routine sentences.', expected: 'Verb in second position in all three.', points: 2, weaknessTags: ['schreiben:word_order', 'grammar:verb_position'],
+          task: { kind: 'type', question: 'Kuttan wrote: "Ich um 7 Uhr aufstehe." — that word order fails the exam. Type the sentence correctly:', accepted: ['Ich stehe um 7 Uhr auf', 'Ich stehe um sieben Uhr auf'], placeholder: 'Ich …' } },
       ],
     },
     {
       id: 'grammarVocab',
       title: 'Grammar & vocab — survival patterns',
-      instruction: 'Mark only what you know cold.',
+      instruction: 'Closed book. Answer, don\'t guess.',
       items: [
-        { id: 'cp3-g-articles', sectionId: 'grammarVocab', mode: 'choose', prompt: 'der Tisch · die Lampe · das Bett — do you know all three articles?', expected: 'All three without guessing.', points: 2, weaknessTags: ['grammar:articles'] },
-        { id: 'cp3-g-possessive', sectionId: 'grammarVocab', mode: 'choose', prompt: 'mein Bruder / meine Schwester — when ein, when eine?', expected: 'mein + der/das words, meine + die words.', points: 2, weaknessTags: ['grammar:possessives'] },
-        { id: 'cp3-g-endings', sectionId: 'grammarVocab', mode: 'choose', prompt: 'ich wohne · du wohnst · er wohnt — verb endings.', expected: 'All three endings correct.', points: 2, weaknessTags: ['grammar:verb_ending'] },
+        { id: 'cp3-g-articles', sectionId: 'grammarVocab', mode: 'choose', prompt: 'der Tisch · die Lampe · das Bett — do you know all three articles?', expected: 'All three without guessing.', points: 2, weaknessTags: ['grammar:articles'],
+          task: { kind: 'choice', question: 'Pick the row where ALL THREE articles are correct:', options: ['der Tisch · die Lampe · das Bett', 'die Tisch · die Lampe · das Bett', 'der Tisch · das Lampe · das Bett', 'der Tisch · die Lampe · der Bett'], correctAnswer: 'der Tisch · die Lampe · das Bett' } },
+        { id: 'cp3-g-possessive', sectionId: 'grammarVocab', mode: 'choose', prompt: 'mein Bruder / meine Schwester — when ein, when eine?', expected: 'mein + der/das words, meine + die words.', points: 2, weaknessTags: ['grammar:possessives'],
+          task: { kind: 'type', question: 'Type the missing word: "___ Schwester heißt Anju." (my)', accepted: ['Meine', 'meine'], placeholder: 'mein / meine?' } },
+        { id: 'cp3-g-endings', sectionId: 'grammarVocab', mode: 'choose', prompt: 'ich wohne · du wohnst · er wohnt — verb endings.', expected: 'All three endings correct.', points: 2, weaknessTags: ['grammar:verb_ending'],
+          task: { kind: 'type', question: 'Complete the verb: "Du wohn__ in Kochi." Type the full verb form:', accepted: ['wohnst'], placeholder: 'wohn…' } },
       ],
     },
   ],
@@ -183,19 +226,23 @@ const checkpoint4: SpineCheckpoint = {
     {
       id: 'hoeren',
       title: 'Hören — prices and quantities',
-      instruction: 'Mark only what you catch first time.',
+      instruction: 'Audio plays once. Prices are the most reliable Hören points — catch them.',
       items: [
-        { id: 'cp4-h-price', sectionId: 'hoeren', mode: 'listen', prompt: 'Hear: Das kostet drei Euro fünfzig.', expected: '€3.50.', points: 2, weaknessTags: ['hoeren:prices'] },
-        { id: 'cp4-h-prices', sectionId: 'hoeren', mode: 'listen', prompt: 'Catch 5 prices in a row (e.g. 2,99 · 12,50 · 7,20).', expected: '4/5 written correctly.', points: 2, weaknessTags: ['hoeren:prices', 'hoeren:numbers'] },
+        { id: 'cp4-h-price', sectionId: 'hoeren', mode: 'listen', prompt: 'Hear: Das kostet drei Euro fünfzig.', expected: '€3.50.', points: 2, weaknessTags: ['hoeren:prices'],
+          task: { kind: 'type', question: 'Play the audio. Type the price you hear as numbers (e.g. 2,50):', accepted: ['3,50', '3.50', '350'], audioUrl: '/audio/checkpoints/cp4-h-price.mp3', placeholder: 'e.g. 2,50' } },
+        { id: 'cp4-h-prices', sectionId: 'hoeren', mode: 'listen', prompt: 'Catch 5 prices in a row (e.g. 2,99 · 12,50 · 7,20).', expected: '4/5 written correctly.', points: 2, weaknessTags: ['hoeren:prices', 'hoeren:numbers'],
+          task: { kind: 'choice', question: 'Play the audio — five prices in a row. Which price was NOT in the list?', options: ['8,45 €', '2,99 €', '12,50 €', '7,20 €'], correctAnswer: '8,45 €', audioUrl: '/audio/checkpoints/cp4-h-prices.mp3' } },
       ],
     },
     {
       id: 'sprechen',
       title: 'Sprechen — order and ask',
-      instruction: 'Say it aloud, restaurant-real.',
+      instruction: 'Say it aloud, restaurant-real. Then compare with the model.',
       items: [
-        { id: 'cp4-s-order', sectionId: 'sprechen', mode: 'speak', prompt: 'Order aloud: Ich hätte gern einen Kaffee, bitte.', expected: 'Polite order without freezing.', points: 4, weaknessTags: ['sprechen:request_phrase'], requiredForPass: true },
-        { id: 'cp4-s-price', sectionId: 'sprechen', mode: 'speak', prompt: 'Ask: Was kostet das? / Wie viel kostet das?', expected: 'One clean price question.', points: 2, weaknessTags: ['sprechen:question_answer'] },
+        { id: 'cp4-s-order', sectionId: 'sprechen', mode: 'speak', prompt: 'Order aloud: Ich hätte gern einen Kaffee, bitte.', expected: 'Polite order without freezing.', points: 4, weaknessTags: ['sprechen:request_phrase'], requiredForPass: true,
+          task: { kind: 'production', action: 'say', question: 'The waiter looks at you. Order a coffee aloud, politely — without reading anything first.', modelAnswer: 'Ich hätte gern einen Kaffee, bitte.', modelAudioUrl: '/audio/checkpoints/cp4-s-order-model.mp3', criteria: ['Polite frame: Ich hätte gern … bitte', 'einen Kaffee — the accusative -en said, not swallowed', 'No freeze before speaking'] } },
+        { id: 'cp4-s-price', sectionId: 'sprechen', mode: 'speak', prompt: 'Ask: Was kostet das? / Wie viel kostet das?', expected: 'One clean price question.', points: 2, weaknessTags: ['sprechen:question_answer'],
+          task: { kind: 'production', action: 'say', question: 'No price tag on the item in your hand. Ask the price aloud.', modelAnswer: 'Wie viel kostet das?', modelAudioUrl: '/audio/exercises/ex7-1-prod-speaking-model.mp3', criteria: ['One clean question aloud', 'W-word first, verb second'] } },
       ],
     },
     {
@@ -203,17 +250,21 @@ const checkpoint4: SpineCheckpoint = {
       title: 'Lesen — ads and menus',
       instruction: 'Read once, answer.',
       items: [
-        { id: 'cp4-l-ad', sectionId: 'lesen', mode: 'match', prompt: 'Ad: T-Shirt, blau, Größe M, 15 Euro. — What costs 15 euro, and what size?', expected: 'The T-shirt, size M.', points: 2, weaknessTags: ['lesen:ads', 'lesen:time_price_detail'] },
-        { id: 'cp4-l-menu', sectionId: 'lesen', mode: 'match', prompt: 'Menu line: Tomatensuppe 4,50 € — what is it and what does it cost?', expected: 'Tomato soup, €4.50.', points: 2, weaknessTags: ['lesen:ads', 'vocab:food_shopping'] },
+        { id: 'cp4-l-ad', sectionId: 'lesen', mode: 'match', prompt: 'Ad: T-Shirt, blau, Größe M, 15 Euro. — What costs 15 euro, and what size?', expected: 'The T-shirt, size M.', points: 2, weaknessTags: ['lesen:ads', 'lesen:time_price_detail'],
+          task: { kind: 'choice', question: 'Ad: "T-Shirt, blau, Größe M, 15 Euro." What do you know for sure?', options: ['A blue T-shirt in size M costs €15', 'A blue T-shirt in size L costs €15', 'A red T-shirt in size M costs €15', 'A blue T-shirt in size M costs €50'], correctAnswer: 'A blue T-shirt in size M costs €15' } },
+        { id: 'cp4-l-menu', sectionId: 'lesen', mode: 'match', prompt: 'Menu line: Tomatensuppe 4,50 € — what is it and what does it cost?', expected: 'Tomato soup, €4.50.', points: 2, weaknessTags: ['lesen:ads', 'vocab:food_shopping'],
+          task: { kind: 'type', question: 'Menu line: "Tomatensuppe 4,50 €". Type in English what dish this is:', accepted: ['tomato soup', 'tomatosoup', 'soup'], placeholder: 'the dish in English' } },
       ],
     },
     {
       id: 'grammarVocab',
       title: 'Grammar & vocab — buying patterns',
-      instruction: 'Mark only what you know cold.',
+      instruction: 'Closed book. Answer, don\'t guess.',
       items: [
-        { id: 'cp4-g-akkusativ', sectionId: 'grammarVocab', mode: 'choose', prompt: 'einen Kaffee · eine Cola · ein Wasser — pick correctly every time?', expected: 'Accusative survival pattern automatic.', points: 2, weaknessTags: ['grammar:accusative_survival'] },
-        { id: 'cp4-g-kein', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Ich esse kein Fleisch. — why kein and not nicht?', expected: 'kein negates nouns.', points: 2, weaknessTags: ['grammar:negation'] },
+        { id: 'cp4-g-akkusativ', sectionId: 'grammarVocab', mode: 'choose', prompt: 'einen Kaffee · eine Cola · ein Wasser — pick correctly every time?', expected: 'Accusative survival pattern automatic.', points: 2, weaknessTags: ['grammar:accusative_survival'],
+          task: { kind: 'type', question: 'Order the water: "Ich nehme ___ Wasser." Type the missing word:', accepted: ['ein'], placeholder: 'ein / eine / einen?' } },
+        { id: 'cp4-g-kein', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Ich esse kein Fleisch. — why kein and not nicht?', expected: 'kein negates nouns.', points: 2, weaknessTags: ['grammar:negation'],
+          task: { kind: 'choice', question: 'Why is it "Ich esse KEIN Fleisch" and not "nicht Fleisch"?', options: ['kein negates nouns; nicht negates verbs and adjectives', 'kein is more polite', 'nicht is only for the end of a sentence', 'No reason — both are correct'], correctAnswer: 'kein negates nouns; nicht negates verbs and adjectives' } },
       ],
     },
   ],
@@ -235,29 +286,36 @@ const checkpoint5: SpineCheckpoint = {
     {
       id: 'hoeren',
       title: 'Hören — announcements',
-      instruction: 'Catch the detail, not every word.',
+      instruction: 'Audio plays once. Catch the detail, not every word.',
       items: [
-        { id: 'cp5-h-zug', sectionId: 'hoeren', mode: 'listen', prompt: 'Hear: Der Zug nach Berlin fährt um 14:20 von Gleis 3.', expected: 'Time 14:20 and platform 3.', points: 2, weaknessTags: ['hoeren:announcements'] },
-        { id: 'cp5-h-form', sectionId: 'hoeren', mode: 'listen', prompt: 'Hear a name + time and write both into a note.', expected: 'Both fields right.', points: 2, weaknessTags: ['hoeren:audio_to_form'] },
+        { id: 'cp5-h-zug', sectionId: 'hoeren', mode: 'listen', prompt: 'Hear: Der Zug nach Berlin fährt um 14:20 von Gleis 3.', expected: 'Time 14:20 and platform 3.', points: 2, weaknessTags: ['hoeren:announcements'],
+          task: { kind: 'choice', question: 'Play the station announcement. The train to Berlin leaves…', options: ['at 14:20 from platform 3', 'at 14:20 from platform 13', 'at 4:20 from platform 3', 'at 14:02 from platform 3'], correctAnswer: 'at 14:20 from platform 3', audioUrl: '/audio/checkpoints/cp5-h-zug.mp3' } },
+        { id: 'cp5-h-form', sectionId: 'hoeren', mode: 'listen', prompt: 'Hear a name + time and write both into a note.', expected: 'Both fields right.', points: 2, weaknessTags: ['hoeren:audio_to_form'],
+          task: { kind: 'type', question: 'Play the audio — a name and an appointment time. Type the TIME into the note (HH:MM):', accepted: ['10:30', '10.30', '1030', 'zehn Uhr dreißig'], audioUrl: '/audio/checkpoints/cp5-h-form.mp3', placeholder: 'HH:MM' } },
       ],
     },
     {
       id: 'sprechen',
       title: 'Sprechen — survive the situation',
-      instruction: 'Say it aloud, stranger-real.',
+      instruction: 'Say it aloud, stranger-real. Then compare with the model.',
       items: [
-        { id: 'cp5-s-weg', sectionId: 'sprechen', mode: 'speak', prompt: 'Ask: Entschuldigung, wo ist der Bahnhof?', expected: 'Polite, clear question.', points: 4, weaknessTags: ['sprechen:request_phrase'], requiredForPass: true },
-        { id: 'cp5-s-arzt', sectionId: 'sprechen', mode: 'speak', prompt: 'Doctor line: Ich habe Kopfschmerzen. / Mein Bein tut weh.', expected: 'One clear symptom sentence.', points: 2, weaknessTags: ['vocab:travel_health', 'sprechen:question_answer'] },
-        { id: 'cp5-s-termin', sectionId: 'sprechen', mode: 'speak', prompt: 'Make an appointment: Ich möchte einen Termin machen.', expected: 'Modal verb sentence, machen at the end.', points: 2, weaknessTags: ['grammar:modal_word_order', 'sprechen:request_phrase'] },
+        { id: 'cp5-s-weg', sectionId: 'sprechen', mode: 'speak', prompt: 'Ask: Entschuldigung, wo ist der Bahnhof?', expected: 'Polite, clear question.', points: 4, weaknessTags: ['sprechen:request_phrase'], requiredForPass: true,
+          task: { kind: 'production', action: 'say', question: 'You are lost, phone dead. Stop a stranger and ask the way to the station — aloud, politely.', modelAnswer: 'Entschuldigung, wo ist der Bahnhof?', modelAudioUrl: '/audio/checkpoints/cp5-s-weg-model.mp3', criteria: ['Entschuldigung first — never skip the softener', 'Wo first, verb second', 'Clear enough for a stranger on a loud street'] } },
+        { id: 'cp5-s-arzt', sectionId: 'sprechen', mode: 'speak', prompt: 'Doctor line: Ich habe Kopfschmerzen. / Mein Bein tut weh.', expected: 'One clear symptom sentence.', points: 2, weaknessTags: ['vocab:travel_health', 'sprechen:question_answer'],
+          task: { kind: 'production', action: 'say', question: 'The doctor asks: "Was fehlt Ihnen?" Say one clear symptom sentence aloud.', modelAnswer: 'Ich habe Kopfschmerzen.', modelAudioUrl: '/audio/checkpoints/cp5-s-arzt-model.mp3', criteria: ['One full symptom sentence', 'A doctor would know what hurts'] } },
+        { id: 'cp5-s-termin', sectionId: 'sprechen', mode: 'speak', prompt: 'Make an appointment: Ich möchte einen Termin machen.', expected: 'Modal verb sentence, machen at the end.', points: 2, weaknessTags: ['grammar:modal_word_order', 'sprechen:request_phrase'],
+          task: { kind: 'production', action: 'say', question: 'The receptionist answers the phone: "Praxis Dr. Braun?" Ask for an appointment aloud.', modelAnswer: 'Ich möchte einen Termin machen.', modelAudioUrl: '/audio/checkpoints/cp5-s-termin-model.mp3', criteria: ['möchte in slot 2, machen at the very end', 'einen Termin — the -en said'] } },
       ],
     },
     {
       id: 'grammarVocab',
       title: 'Grammar & vocab — modal survival',
-      instruction: 'Mark only what you know cold.',
+      instruction: 'Closed book. Answer, don\'t guess.',
       items: [
-        { id: 'cp5-g-modal', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Ich kann morgen kommen. — where does the second verb go?', expected: 'To the end.', points: 2, weaknessTags: ['grammar:modal_word_order'] },
-        { id: 'cp5-g-koennen', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Können Sie mir helfen? — what are you asking?', expected: 'Can you help me (polite).', points: 2, weaknessTags: ['sprechen:request_phrase', 'vocab:travel_health'] },
+        { id: 'cp5-g-modal', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Ich kann morgen kommen. — where does the second verb go?', expected: 'To the end.', points: 2, weaknessTags: ['grammar:modal_word_order'],
+          task: { kind: 'choice', question: '"Ich kann morgen kommen." — why is kommen at the end?', options: ['The modal (kann) takes slot 2 and kicks the real verb to the end', 'kommen always goes last in German', 'It is a mistake — kommen belongs after kann', 'Because morgen is a time word'], correctAnswer: 'The modal (kann) takes slot 2 and kicks the real verb to the end' } },
+        { id: 'cp5-g-koennen', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Können Sie mir helfen? — what are you asking?', expected: 'Can you help me (polite).', points: 2, weaknessTags: ['sprechen:request_phrase', 'vocab:travel_health'],
+          task: { kind: 'choice', question: '"Können Sie mir helfen?" asks…', options: ['Can you help me? (polite)', 'Can I help you?', 'Do you need help?', 'Where is the help desk?'], correctAnswer: 'Can you help me? (polite)' } },
       ],
     },
   ],
@@ -278,19 +336,23 @@ const checkpoint6: SpineCheckpoint = {
     {
       id: 'sprechen',
       title: 'Sprechen — topic cards',
-      instruction: 'Answer aloud like in Sprechen Teil 2.',
+      instruction: 'Answer aloud like in Sprechen Teil 2, then compare with the model.',
       items: [
-        { id: 'cp6-s-beruf', sectionId: 'sprechen', mode: 'speak', prompt: 'Answer: Was sind Sie von Beruf?', expected: 'Ich bin ... / Ich arbeite als ... (no article before the job).', points: 2, weaknessTags: ['sprechen:question_answer', 'vocab:work_hobbies'] },
-        { id: 'cp6-s-freizeit', sectionId: 'sprechen', mode: 'speak', prompt: 'Answer: Was machen Sie in Ihrer Freizeit?', expected: 'Two hobby sentences.', points: 2, weaknessTags: ['sprechen:question_answer', 'vocab:work_hobbies'] },
+        { id: 'cp6-s-beruf', sectionId: 'sprechen', mode: 'speak', prompt: 'Answer: Was sind Sie von Beruf?', expected: 'Ich bin ... / Ich arbeite als ... (no article before the job).', points: 2, weaknessTags: ['sprechen:question_answer', 'vocab:work_hobbies'],
+          task: { kind: 'production', action: 'say', question: 'Topic card: "Beruf". The examiner asks: "Was sind Sie von Beruf?" Answer aloud with your real job or studies.', modelAnswer: 'Ich arbeite als Verkäufer. / Ich bin Studentin.', modelAudioUrl: '/audio/checkpoints/cp6-s-beruf-model.mp3', criteria: ['Full sentence aloud', 'NO article before the job: Ich bin Lehrer, never "ein Lehrer"'] } },
+        { id: 'cp6-s-freizeit', sectionId: 'sprechen', mode: 'speak', prompt: 'Answer: Was machen Sie in Ihrer Freizeit?', expected: 'Two hobby sentences.', points: 2, weaknessTags: ['sprechen:question_answer', 'vocab:work_hobbies'],
+          task: { kind: 'production', action: 'say', question: 'Topic card: "Freizeit". Say two sentences aloud about what you actually do.', modelAnswer: 'Ich spiele gern Cricket. Am Wochenende sehe ich Filme.', modelAudioUrl: '/audio/checkpoints/cp6-s-freizeit-model.mp3', criteria: ['Two full sentences', 'gern or a time phrase used naturally', 'Verb second in both'] } },
       ],
     },
     {
       id: 'schreiben',
       title: 'Schreiben — the 30-word message',
-      instruction: 'This is Schreiben Teil 2. All three points or it fails.',
+      instruction: 'This is Schreiben Teil 2. All three points or it fails — write it for real.',
       items: [
-        { id: 'cp6-w-message', sectionId: 'schreiben', mode: 'write', prompt: 'Write a ~30-word invitation covering: what, when, where.', expected: 'All 3 points present and understandable.', points: 4, weaknessTags: ['schreiben:three_points'], requiredForPass: true },
-        { id: 'cp6-w-frame', sectionId: 'schreiben', mode: 'write', prompt: 'Open and close correctly: Liebe/Lieber ... → Viele Grüße.', expected: 'Greeting + closing both present.', points: 2, weaknessTags: ['schreiben:greeting_closing'] },
+        { id: 'cp6-w-message', sectionId: 'schreiben', mode: 'write', prompt: 'Write a ~30-word invitation covering: what, when, where.', expected: 'All 3 points present and understandable.', points: 4, weaknessTags: ['schreiben:three_points'], requiredForPass: true,
+          task: { kind: 'production', action: 'write', question: 'Write a ~30-word invitation to a friend. It MUST answer: what is happening, when, and where. Write it in the box before you look at the model.', modelAnswer: 'Liebe Anna, ich mache am Samstag eine Party bei mir zu Hause. Wir beginnen um 18 Uhr. Kommst du? Bitte antworte mir. Viele Grüße, Kuttan', criteria: ['Point 1: WHAT is happening', 'Point 2: WHEN it happens', 'Point 3: WHERE it happens', 'Roughly 30 words, understandable throughout'] } },
+        { id: 'cp6-w-frame', sectionId: 'schreiben', mode: 'write', prompt: 'Open and close correctly: Liebe/Lieber ... → Viele Grüße.', expected: 'Greeting + closing both present.', points: 2, weaknessTags: ['schreiben:greeting_closing'],
+          task: { kind: 'choice', question: 'Which opening/closing pair is right for a message to a friend?', options: ['Liebe Anna, … Viele Grüße', 'Sehr geehrte Anna, … Hochachtungsvoll', 'Hey!! … Ende', 'Liebe Anna, … Mit freundlichen Grüßen, Herr K. Menon'], correctAnswer: 'Liebe Anna, … Viele Grüße' } },
       ],
     },
     {
@@ -298,16 +360,19 @@ const checkpoint6: SpineCheckpoint = {
       title: 'Lesen — messages',
       instruction: 'Read once, answer.',
       items: [
-        { id: 'cp6-l-sms', sectionId: 'lesen', mode: 'match', prompt: 'Read a short SMS invitation — find when, where, what.', expected: 'All three details.', points: 2, weaknessTags: ['lesen:emails'] },
+        { id: 'cp6-l-sms', sectionId: 'lesen', mode: 'match', prompt: 'Read a short SMS invitation — find when, where, what.', expected: 'All three details.', points: 2, weaknessTags: ['lesen:emails'],
+          task: { kind: 'choice', question: 'SMS: "Hallo! Wir treffen uns am Freitag um 17 Uhr im Café Milano. Bis dann!" — When and where?', options: ['Friday 17:00, Café Milano', 'Thursday 17:00, Café Milano', 'Friday 7:00 in the morning, Café Milano', 'Saturday 17:00, at home'], correctAnswer: 'Friday 17:00, Café Milano' } },
       ],
     },
     {
       id: 'grammarVocab',
       title: 'Grammar & vocab — connectors',
-      instruction: 'Mark only what you know cold.',
+      instruction: 'Closed book. Answer, don\'t guess.',
       items: [
-        { id: 'cp6-g-separable', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Ich stehe um 7 Uhr auf. — why is auf at the end?', expected: 'Separable verb: aufstehen.', points: 2, weaknessTags: ['grammar:verb_position'] },
-        { id: 'cp6-g-connector', sectionId: 'grammarVocab', mode: 'choose', prompt: 'und · aber · oder — use each in a sentence.', expected: 'Three connector sentences.', points: 2, weaknessTags: ['grammar:verb_position', 'vocab:work_hobbies'] },
+        { id: 'cp6-g-separable', sectionId: 'grammarVocab', mode: 'choose', prompt: 'Ich stehe um 7 Uhr auf. — why is auf at the end?', expected: 'Separable verb: aufstehen.', points: 2, weaknessTags: ['grammar:verb_position'],
+          task: { kind: 'choice', question: '"Ich stehe um 7 Uhr auf." Why is "auf" sitting at the end?', options: ['aufstehen is separable — the prefix flies to the end', 'auf is a preposition describing the bed', 'It is a word-order mistake', 'auf belongs to "Uhr"'], correctAnswer: 'aufstehen is separable — the prefix flies to the end' } },
+        { id: 'cp6-g-connector', sectionId: 'grammarVocab', mode: 'choose', prompt: 'und · aber · oder — use each in a sentence.', expected: 'Three connector sentences.', points: 2, weaknessTags: ['grammar:verb_position', 'vocab:work_hobbies'],
+          task: { kind: 'type', question: 'Join the two halves with the right connector: "Ich lerne Deutsch, ___ ich habe wenig Zeit." (but)', accepted: ['aber'], placeholder: 'und / aber / oder?' } },
       ],
     },
   ],
@@ -328,28 +393,34 @@ const checkpoint7: SpineCheckpoint = {
     {
       id: 'lesen',
       title: 'Lesen — signs, notices, ads',
-      instruction: 'Timed mindset: scan, don’t translate.',
+      instruction: 'Timed mindset: scan, don\'t translate.',
       items: [
-        { id: 'cp7-l-sign', sectionId: 'lesen', mode: 'match', prompt: 'Sign: Geöffnet Mo-Fr 9-17 Uhr. — Open on Saturday?', expected: 'No — weekdays only.', points: 2, weaknessTags: ['lesen:signs'] },
-        { id: 'cp7-l-notice', sectionId: 'lesen', mode: 'match', prompt: 'Notice: Bitte klingeln. — what should you do?', expected: 'Ring the bell.', points: 2, weaknessTags: ['lesen:signs', 'vocab:official_exam'] },
-        { id: 'cp7-l-scan', sectionId: 'lesen', mode: 'do', prompt: 'Scan 4 short ads for one detail each, under 5 minutes.', expected: '3/4 details found in time.', points: 2, weaknessTags: ['lesen:scanning', 'lesen:ads'] },
+        { id: 'cp7-l-sign', sectionId: 'lesen', mode: 'match', prompt: 'Sign: Geöffnet Mo-Fr 9-17 Uhr. — Open on Saturday?', expected: 'No — weekdays only.', points: 2, weaknessTags: ['lesen:signs'],
+          task: { kind: 'choice', question: 'Shop sign: "Geöffnet Mo–Fr 9–17 Uhr." You arrive on Saturday at 11. The shop is…', options: ['Closed — it opens weekdays only', 'Open until 17:00', 'Open until 12:00', 'Impossible to tell'], correctAnswer: 'Closed — it opens weekdays only' } },
+        { id: 'cp7-l-notice', sectionId: 'lesen', mode: 'match', prompt: 'Notice: Bitte klingeln. — what should you do?', expected: 'Ring the bell.', points: 2, weaknessTags: ['lesen:signs', 'vocab:official_exam'],
+          task: { kind: 'type', question: 'Notice on an office door: "Bitte klingeln." Type in English what you should do:', accepted: ['ring the bell', 'ring bell', 'ring', 'ring the doorbell'], placeholder: 'what do you do?' } },
+        { id: 'cp7-l-scan', sectionId: 'lesen', mode: 'do', prompt: 'Scan 4 short ads for one detail each, under 5 minutes.', expected: '3/4 details found in time.', points: 2, weaknessTags: ['lesen:scanning', 'lesen:ads'],
+          task: { kind: 'choice', question: 'Scan, don\'t read: 1) Fahrrad, gebraucht, 40 € · 2) Kinderbett mit Matratze, 25 € · 3) Sofa, rot, 60 € · 4) Handy, neu, 99 €. Which ad is for a child?', options: ['Ad 2', 'Ad 1', 'Ad 3', 'Ad 4'], correctAnswer: 'Ad 2' } },
       ],
     },
     {
       id: 'schreiben',
       title: 'Schreiben — official forms',
-      instruction: 'This is Schreiben Teil 1.',
+      instruction: 'This is Schreiben Teil 1. Wrong field = zero, even with correct German.',
       items: [
-        { id: 'cp7-w-form', sectionId: 'schreiben', mode: 'write', prompt: 'Fill a full form: Name, Adresse, Geburtsdatum, Staatsangehörigkeit, Unterschrift.', expected: 'Every field right, nothing swapped.', points: 4, weaknessTags: ['schreiben:form_fields', 'lesen:forms'], requiredForPass: true },
-        { id: 'cp7-w-audio-form', sectionId: 'schreiben', mode: 'write', prompt: 'Fill 2 form fields from spoken information.', expected: 'Both fields correct.', points: 2, weaknessTags: ['hoeren:audio_to_form'] },
+        { id: 'cp7-w-form', sectionId: 'schreiben', mode: 'write', prompt: 'Fill a full form: Name, Adresse, Geburtsdatum, Staatsangehörigkeit, Unterschrift.', expected: 'Every field right, nothing swapped.', points: 4, weaknessTags: ['schreiben:form_fields', 'lesen:forms'], requiredForPass: true,
+          task: { kind: 'choice', question: 'The form field says "Staatsangehörigkeit". Kuttan is from India. What does he write?', options: ['indisch', 'Indien', 'Kochi, Indien', 'Malayalam'], correctAnswer: 'indisch' } },
+        { id: 'cp7-w-audio-form', sectionId: 'schreiben', mode: 'write', prompt: 'Fill 2 form fields from spoken information.', expected: 'Both fields correct.', points: 2, weaknessTags: ['hoeren:audio_to_form'],
+          task: { kind: 'type', question: 'Play the audio — a caller leaves their details. Type the phone number into the form:', accepted: ['01759932', '0175 9932', '0175 99 32'], audioUrl: '/audio/checkpoints/cp7-w-audio-form.mp3', placeholder: 'digits' } },
       ],
     },
     {
       id: 'sprechen',
       title: 'Sprechen — office German',
-      instruction: 'Say it aloud, office-real.',
+      instruction: 'Say it aloud, office-real. Then compare with the model.',
       items: [
-        { id: 'cp7-s-office', sectionId: 'sprechen', mode: 'speak', prompt: 'Say: Ich möchte einen Termin. / Ich brauche ein Formular.', expected: 'Two office requests, polite register.', points: 2, weaknessTags: ['sprechen:request_phrase', 'vocab:official_exam'] },
+        { id: 'cp7-s-office', sectionId: 'sprechen', mode: 'speak', prompt: 'Say: Ich möchte einen Termin. / Ich brauche ein Formular.', expected: 'Two office requests, polite register.', points: 2, weaknessTags: ['sprechen:request_phrase', 'vocab:official_exam'],
+          task: { kind: 'production', action: 'say', question: 'At the Amt counter. Make BOTH requests aloud: an appointment, and a form.', modelAnswer: 'Ich möchte einen Termin. Ich brauche ein Formular.', modelAudioUrl: '/audio/checkpoints/cp7-s-office-model.mp3', criteria: ['Both requests said aloud', 'Polite register — Sie-world German', 'einen Termin / ein Formular articles right'] } },
       ],
     },
   ],
@@ -371,25 +442,28 @@ const checkpoint8: SpineCheckpoint = {
     {
       id: 'hoeren',
       title: 'Hören — timed section',
-      instruction: 'Use a real mock test, timed, closed-book.',
+      instruction: 'Checked automatically against your real mock results — no self-report.',
       items: [
-        { id: 'cp8-h-mock', sectionId: 'hoeren', mode: 'do', prompt: 'Completed a timed Hören section (20m).', expected: '≥18/25 honestly scored.', points: 3, weaknessTags: ['hoeren:dialogue_detail', 'hoeren:announcements'] },
+        { id: 'cp8-h-mock', sectionId: 'hoeren', mode: 'do', prompt: 'Completed a timed Hören section (20m).', expected: 'A full timed mock on record.', points: 3, weaknessTags: ['hoeren:dialogue_detail', 'hoeren:announcements'],
+          task: { kind: 'auto', question: 'A full timed mock (with its Hören section) exists in your results.', source: 'full-mock-exists' } },
       ],
     },
     {
       id: 'lesen',
       title: 'Lesen — timed section',
-      instruction: 'Timed, closed-book.',
+      instruction: 'Checked automatically against your real mock results.',
       items: [
-        { id: 'cp8-l-mock', sectionId: 'lesen', mode: 'do', prompt: 'Completed a timed Lesen section (25m).', expected: '≥18/25 honestly scored.', points: 3, weaknessTags: ['lesen:scanning', 'lesen:emails'] },
+        { id: 'cp8-l-mock', sectionId: 'lesen', mode: 'do', prompt: 'Completed a timed Lesen section (25m).', expected: 'A full timed mock on record.', points: 3, weaknessTags: ['lesen:scanning', 'lesen:emails'],
+          task: { kind: 'auto', question: 'A full timed mock (with its Lesen section) exists in your results.', source: 'full-mock-exists' } },
       ],
     },
     {
       id: 'schreiben',
       title: 'Schreiben — timed tasks',
-      instruction: 'Form + message under 20 minutes.',
+      instruction: 'Form + message under 20 minutes — write for real, then rubric-score.',
       items: [
-        { id: 'cp8-w-mock', sectionId: 'schreiben', mode: 'write', prompt: 'Form filled + 30-word message with all 3 points, in 20m.', expected: 'Rubric ≥3/5, no missing point.', points: 3, weaknessTags: ['schreiben:three_points', 'schreiben:form_fields'] },
+        { id: 'cp8-w-mock', sectionId: 'schreiben', mode: 'write', prompt: 'Form filled + 30-word message with all 3 points, in 20m.', expected: 'Rubric ≥3/5, no missing point.', points: 3, weaknessTags: ['schreiben:three_points', 'schreiben:form_fields'],
+          task: { kind: 'production', action: 'write', question: 'Set a 20-minute timer. Write a ~30-word message to your teacher: you are ill, you cannot come today, ask for the homework. Write it in the box.', modelAnswer: 'Liebe Frau Weber, ich bin krank und kann heute nicht zum Kurs kommen. Können Sie mir bitte die Hausaufgaben schicken? Vielen Dank. Viele Grüße, Kuttan', criteria: ['Point 1: you are ill', 'Point 2: you cannot come', 'Point 3: you ask for the homework', 'Greeting + closing present, ~30 words, done inside 20 minutes'] } },
       ],
     },
     {
@@ -397,17 +471,21 @@ const checkpoint8: SpineCheckpoint = {
       title: 'Sprechen — full simulation',
       instruction: 'All three Teile aloud: intro, word cards, requests.',
       items: [
-        { id: 'cp8-s-mock', sectionId: 'sprechen', mode: 'speak', prompt: 'Full speaking simulation done aloud (Teil 1-3).', expected: 'Intro fluent under 60s; cards and requests answered.', points: 4, weaknessTags: ['sprechen:self_intro', 'sprechen:question_answer', 'sprechen:request_phrase'], requiredForPass: true },
-        { id: 'cp8-s-mock2', sectionId: 'sprechen', mode: 'speak', prompt: 'Did the simulation a second time on a different day.', expected: 'Second run smoother than the first.', points: 2, weaknessTags: ['sprechen:fluency_pause'] },
+        { id: 'cp8-s-mock', sectionId: 'sprechen', mode: 'speak', prompt: 'Full speaking simulation done aloud (Teil 1-3).', expected: 'Intro fluent under 60s; cards and requests answered.', points: 4, weaknessTags: ['sprechen:self_intro', 'sprechen:question_answer', 'sprechen:request_phrase'], requiredForPass: true,
+          task: { kind: 'production', action: 'say', question: 'Run the full Sprechen now, aloud, in one go: Teil 1 — your self-intro (under 60s). Teil 2 — answer two topic-card questions (Essen, Familie). Teil 3 — make two polite requests.', modelAnswer: 'Teil 1: Ich heiße … Ich komme aus … Ich wohne in … Ich spreche … · Teil 2: Ich esse gern Reis. Meine Familie wohnt in Kochi. · Teil 3: Können Sie mir bitte helfen? Ich hätte gern ein Wasser.', criteria: ['Intro fluent, under 60 seconds', 'Both topic-card answers in full sentences', 'Both requests polite (Sie / bitte)'] } },
+        { id: 'cp8-s-mock2', sectionId: 'sprechen', mode: 'speak', prompt: 'Did the simulation a second time on a different day.', expected: 'Second run smoother than the first.', points: 2, weaknessTags: ['sprechen:fluency_pause'],
+          task: { kind: 'production', action: 'say', question: 'Second full run, different day: repeat all three Teile aloud. Score only the smoothness — fewer freezes than round one?', modelAnswer: 'Same three Teile — the measure is fewer frozen pauses than your first run.', criteria: ['All three Teile completed again', 'Noticeably fewer freezes than the first run'] } },
       ],
     },
     {
       id: 'grammarVocab',
       title: 'Full mocks',
-      instruction: 'The readiness proof.',
+      instruction: 'The readiness proof — read directly from your mock results.',
       items: [
-        { id: 'cp8-g-mock60', sectionId: 'grammarVocab', mode: 'do', prompt: 'One full timed mock completed, ≥60 overall.', expected: 'Pass level reached.', points: 3, weaknessTags: ['vocab:official_exam'] },
-        { id: 'cp8-g-mock75', sectionId: 'grammarVocab', mode: 'do', prompt: 'Second full timed mock ≥75 overall.', expected: 'Comfortable pass margin.', points: 2, weaknessTags: ['vocab:official_exam'] },
+        { id: 'cp8-g-mock60', sectionId: 'grammarVocab', mode: 'do', prompt: 'One full timed mock completed, ≥60 overall.', expected: 'Pass level reached.', points: 3, weaknessTags: ['vocab:official_exam'],
+          task: { kind: 'auto', question: 'One full timed mock scored ≥60 overall.', source: 'full-mock-60' } },
+        { id: 'cp8-g-mock75', sectionId: 'grammarVocab', mode: 'do', prompt: 'Second full timed mock ≥75 overall.', expected: 'Comfortable pass margin.', points: 2, weaknessTags: ['vocab:official_exam'],
+          task: { kind: 'auto', question: 'A full timed mock scored ≥75 overall — the comfortable-pass margin.', source: 'full-mock-75' } },
       ],
     },
   ],
