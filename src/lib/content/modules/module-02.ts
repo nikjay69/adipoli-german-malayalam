@@ -73,7 +73,7 @@ export const MODULE_2: Module = {
           id: "v2-1-1",
           title: "Ich heiße... - What's Your Name?",
           duration: "12:00",
-          videoUrl: "/videos/generated/v2-1-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v2-1-1.mp4"
           description: "Master introducing yourself and asking names — formal and informal, the full deal!",
           scriptOutline: [
             "Opening: 'Namaskaram! Today we learn the most important thing — your NAME in German! Nammude peru introduce cheyyaam!'",
@@ -145,7 +145,7 @@ export const MODULE_2: Module = {
           id: "v2-1-2",
           title: "Spelling Your Name — The German Alphabet",
           duration: "10:00",
-          videoUrl: "/videos/generated/v2-1-2.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v2-1-2.mp4"
           description: "Learn the German alphabet so you can spell your name like a boss — no more confusion at the Ausländerbehörde!",
           scriptOutline: [
             "Opening: 'Imagine you're at a German office and they ask you to spell your name... pinne?'",
@@ -351,7 +351,7 @@ export const MODULE_2: Module = {
           id: "v2-2-1",
           title: "Countries and Nationalities in German",
           duration: "12:00",
-          videoUrl: "/videos/generated/v2-2-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v2-2-1.mp4"
           description: "Learn how to say where you're from and what nationality you are — with the Kerala diaspora twist!",
           scriptOutline: [
             "Opening: 'Ich bin Inder — and proud! But how do we say all this in German? Let's check!'",
@@ -412,7 +412,7 @@ export const MODULE_2: Module = {
           id: "v2-2-2",
           title: "Continents and the Grammar of 'aus'",
           duration: "10:00",
-          videoUrl: "/videos/generated/v2-2-2.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v2-2-2.mp4"
           description: "Learn continents and master 'Ich komme aus + Dativ' — including the tricky countries that need articles!",
           scriptOutline: [
             "Opening: 'Europe, Asia, Africa — let's learn these auf Deutsch! Continents padikkaam!'",
@@ -656,7 +656,7 @@ export const MODULE_2: Module = {
           id: "v2-3-1",
           title: "Ich bin Ingenieur! — Professions in German",
           duration: "12:00",
-          videoUrl: "/videos/generated/v2-3-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v2-3-1.mp4"
           description: "Learn common professions and how to say what you do — with Kerala career vibes!",
           scriptOutline: [
             "Opening: 'Was machst du? Entha ninde job? Let's fix this auf Deutsch!'",
@@ -720,7 +720,7 @@ export const MODULE_2: Module = {
           id: "v2-3-2",
           title: "The Verb 'sein' — To Be or Not To Be!",
           duration: "12:00",
-          videoUrl: "/videos/generated/v2-3-2.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v2-3-2.mp4"
           description: "Master the most important German verb — sein (to be). Irregular? Yes. Essential? 100%!",
           scriptOutline: [
             "Opening: 'The most important verb in ANY language — sein! To be! Aayirikuka!'",
@@ -948,7 +948,7 @@ export const MODULE_2: Module = {
           id: "v2-4-1",
           title: "Ich spreche Malayalam und Englisch!",
           duration: "12:00",
-          videoUrl: "/videos/generated/v2-4-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v2-4-1.mp4"
           description: "Learn to talk about languages you speak — and how well you speak them. Malayali language flexing starts here!",
           scriptOutline: [
             "Opening: 'Malayalis are language superstars — most of us speak 3-4 languages! Germans will be impressed, trust me!'",
@@ -1029,7 +1029,7 @@ export const MODULE_2: Module = {
           id: "v2-4-2",
           title: "Verbs That Change Vowels — Stem-Changing Verbs",
           duration: "10:00",
-          videoUrl: "/videos/generated/v2-4-2.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v2-4-2.mp4"
           description: "sprechen isn't the only tricky verb! Learn the pattern of stem-changing verbs so you're ready for more.",
           scriptOutline: [
             "Opening: 'Remember how sprechen changes to sprichst? There are MORE verbs like this — but don't worry, there's a pattern!'",
@@ -1265,7 +1265,7 @@ export const MODULE_2: Module = {
           id: "v2-5-1",
           title: "Your Complete Self-Introduction in German",
           duration: "12:00",
-          videoUrl: "/videos/generated/v2-5-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v2-5-1.mp4"
           description: "Practice a full self-introduction in one Goethe Kochi mock exam, with future airport/university/office scenarios kept as later imagination.",
           scriptOutline: [
             "Opening: 'Adipoli! Time to put it ALL together — name, origin, job, languages! Full introduction, German style!'",
@@ -1335,7 +1335,7 @@ export const MODULE_2: Module = {
           id: "v2-5-2",
           title: "Common Follow-Up Questions and Answers",
           duration: "10:00",
-          videoUrl: "/videos/generated/v2-5-2.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v2-5-2.mp4"
           description: "After the intro, people ask more questions! Learn the most common follow-ups so you're never caught off-guard.",
           scriptOutline: [
             "Opening: 'Okay, you introduced yourself — adipoli! But people will ask MORE questions. Let's be ready!'",

@@ -11,6 +11,7 @@ import { GOETHE_TESTS, getTestById } from '@/lib/content/goethe-tests';
 import { playAudio, stopAudio } from '@/lib/audio';
 import { Kuttan } from '@/components/character/Kuttan';
 import { getMockGate, computeMockBand, MOCK_BAND_LABELS, type MockSection } from '@/lib/mocks';
+import { matchesAnswer } from '@/lib/answer-match';
 
 type Section = 'overview' | 'hoeren' | 'lesen' | 'schreiben' | 'sprechen' | 'results';
 type SectionIntro = 'hoeren-intro' | 'lesen-intro' | 'schreiben-intro' | 'sprechen-intro' | null;
@@ -126,6 +127,8 @@ function TestRunner({ testId }: { testId: string }) {
   const [isRecording, setIsRecording] = useState(false);
   const [sprechenRecordings, setSprechenRecordings] = useState<Record<string, string>>({});
   const [sprechenCompleted, setSprechenCompleted] = useState<Record<string, boolean>>({});
+  /** Real per-item speech-eval scores (0-100) from /api/check-speech — these drive the section score. */
+  const [sprechenScores, setSprechenScores] = useState<Record<string, number>>({});
   const [currentSprechenItem, setCurrentSprechenItem] = useState(0);
   const [sprechenSubmitted, setSprechenSubmitted] = useState(false);
   const recognitionRef = useRef<any>(null);
@@ -327,6 +330,9 @@ function TestRunner({ testId }: { testId: string }) {
           const data = await res.json();
           if (res.ok && data.transcript) {
             setSprechenRecordings(prev => ({ ...prev, [itemKey]: `"${data.transcript}" (Score: ${data.score}/100)` }));
+            if (typeof data.score === 'number') {
+              setSprechenScores(prev => ({ ...prev, [itemKey]: Math.max(0, Math.min(100, data.score)) }));
+            }
           } else {
             setSprechenRecordings(prev => ({ ...prev, [itemKey]: '(Failed to get transcript)' }));
           }
@@ -370,33 +376,55 @@ function TestRunner({ testId }: { testId: string }) {
     return total > 0 ? Math.round((correct / total) * 15) : 0;
   };
 
+  // Teil 1 (form, 5p): each field is scored against its verified answer — a filled
+  // form with wrong data is worth nothing, exactly like the real exam (DECISIONS #13).
+  const calculateSchreibenTeil1Score = (): number => {
+    const fields: { label: string; answer: string }[] = test?.schreiben?.teil1?.fields ?? [];
+    if (fields.length === 0) return 0;
+    const correct = fields.filter((f) => {
+      const given = (schreibenFormAnswers[f.label] || '').trim();
+      return given.length > 0 && matchesAnswer(given, f.answer);
+    }).length;
+    return Math.round((correct / fields.length) * 5);
+  };
+
   const calculateSchreibenScore = (): number => {
-    // Teil 1 (form): 5 points if user filled in fields
-    const formFieldsFilled = Object.keys(schreibenFormAnswers).length;
-    const teil1Score = formFieldsFilled > 0 ? 5 : 0;
-    
-    // Teil 2 (message): 10 points based on AI score (which is 0-100)
+    const teil1Score = calculateSchreibenTeil1Score();
+
+    // Teil 2 (message): 10 points based on AI score (which is 0-100); without AI,
+    // checklist heuristic — content-point keywords must actually appear.
     let teil2Score = 0;
     if (aiSchreibenFeedback) {
       teil2Score = Math.round((aiSchreibenFeedback.score / 100) * 10);
     } else if (schreibenSubmitted && schreibenMessage.trim().length > 10) {
-      teil2Score = 8;
+      const text = schreibenMessage.trim();
+      const words = text.split(/\s+/).length;
+      const hasGreeting = /\b(liebe|lieber|hallo|sehr geehrte)/i.test(text);
+      const hasClosing = /(viele grüße|viele gruesse|liebe grüße|liebe gruesse|bis bald|mit freundlichen grüßen|mit freundlichen gruessen)/i.test(text);
+      // length in Goethe range + frame present = 7; missing frame caps at 5 — never full marks unscored.
+      teil2Score = words >= 20 && words <= 60 ? (hasGreeting && hasClosing ? 7 : 5) : 4;
     } else if (schreibenSubmitted && schreibenMessage.trim().length > 0) {
-      teil2Score = 5;
+      teil2Score = 2;
     }
-    
+
     return teil1Score + teil2Score;
   };
 
   // Sprechen is worth 15 of the 60 points, same as every other section
-  // (the real Goethe A1 weights all four sections equally).
+  // (the real Goethe A1 weights all four sections equally). Items evaluated by
+  // /api/check-speech contribute their REAL score; recorded-but-unevaluated items
+  // (mic denied, zero AI budget) earn capped 60% credit — never full marks for
+  // just pressing record (DECISIONS #13).
   const calculateSprechenScore = (): number => {
-    const completedCount = Object.values(sprechenCompleted).filter(Boolean).length;
     const totalItems = getTotalSprechenItems();
-    if (completedCount === 0) return 0;
-    if (completedCount >= totalItems) return 15;
-    if (completedCount >= totalItems / 2) return 10;
-    return 7;
+    if (totalItems === 0) return 0;
+    let earned = 0;
+    for (const [itemKey, done] of Object.entries(sprechenCompleted)) {
+      if (!done) continue;
+      const ai = sprechenScores[itemKey];
+      earned += typeof ai === 'number' ? ai / 100 : 0.6;
+    }
+    return Math.min(15, Math.round((earned / totalItems) * 15));
   };
 
   const getTotalSprechenItems = (): number => {
@@ -1074,8 +1102,8 @@ function TestRunner({ testId }: { testId: string }) {
                     <p className="text-sm font-semibold text-[#d4a520]">Schreiben abgeschlossen</p>
                   </div>
                   <p className="text-xs text-[var(--foreground)]/50 mt-1">
-                    Formular: {Object.keys(schreibenFormAnswers).length > 0 ? '5' : '0'} Punkte |
-                    Nachricht: {aiSchreibenFeedback ? Math.round((aiSchreibenFeedback.score / 100) * 10) : (schreibenMessage.trim().length > 10 ? '8' : schreibenMessage.trim().length > 0 ? '5' : '0')} Punkte
+                    Formular: {calculateSchreibenTeil1Score()}/5 Punkte (Felder gegen die Lösung geprüft) |
+                    Nachricht: {calculateSchreibenScore() - calculateSchreibenTeil1Score()}/10 Punkte
                   </p>
                 </Card>
                 <Button onClick={() => advanceFrom('schreiben')} fullWidth>

@@ -33,6 +33,15 @@
     { "file": "/audio/exercises/ex10-2-spk2-model.mp3", "german": "Mir ist kalt.", "kind": "speaking-model", "lesson": "10-2" },
     { "file": "/audio/exercises/ex10-3-spk2-model.mp3", "german": "Ich möchte einen Termin machen.", "kind": "speaking-model", "lesson": "10-3" },
     { "file": "/audio/exercises/ex10-4-spk2-model.mp3", "german": "Ich brauche etwas gegen Kopfschmerzen.", "kind": "speaking-model", "lesson": "10-4" },
-    { "file": "/audio/exercises/ex10-5-spk2-model.mp3", "german": "Rufen Sie einen Krankenwagen!", "kind": "speaking-model", "lesson": "10-5" }
+    { "file": "/audio/exercises/ex10-5-spk2-model.mp3", "german": "Rufen Sie einen Krankenwagen!", "kind": "speaking-model", "lesson": "10-5" },
+    { "file": "/audio/exercises/ex11-1-spk2-model.mp3", "german": "Ich bin Student.", "kind": "speaking-model", "lesson": "11-1" },
+    { "file": "/audio/exercises/ex11-2-spk2-model.mp3", "german": "Ich habe eine Besprechung um 10 Uhr.", "kind": "speaking-model", "lesson": "11-2" },
+    { "file": "/audio/exercises/ex11-3-spk2-model.mp3", "german": "Sehr geehrte Damen und Herren.", "kind": "speaking-model", "lesson": "11-3" },
+    { "file": "/audio/exercises/ex11-4-spk2-model.mp3", "german": "Ich interessiere mich für Technik.", "kind": "speaking-model", "lesson": "11-4" },
+    { "file": "/audio/exercises/ex11-5-spk2-model.mp3", "german": "Ich möchte bei Ihrer Firma arbeiten.", "kind": "speaking-model", "lesson": "11-5" },
+    { "file": "/audio/exercises/ex12-1-spk2-model.mp3", "german": "Ich schwimme gern.", "kind": "speaking-model", "lesson": "12-1" },
+    { "file": "/audio/exercises/ex12-2-spk2-model.mp3", "german": "Im Sommer schwimme ich gern.", "kind": "speaking-model", "lesson": "12-2" },
+    { "file": "/audio/exercises/ex12-3-spk2-model.mp3", "german": "Hast du Lust, ins Kino zu gehen?", "kind": "speaking-model", "lesson": "12-3" },
+    { "file": "/audio/exercises/ex12-4-spk2-model.mp3", "german": "Ich kann nicht kommen, weil ich krank bin.", "kind": "speaking-model", "lesson": "12-4" }
   ]
 }

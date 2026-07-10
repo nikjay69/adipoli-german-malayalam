@@ -70,7 +70,7 @@ export const MODULE_1: Module = {
           title: "Why German? A Malayali's Gateway to Europe",
           duration: "10:00",
           description: "An inspiring introduction to German opportunities for Malayalis. Why learn this language? Because it's your ticket to free education and huge careers!",
-          videoUrl: "/videos/generated/v1-1-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-1-1.mp4"
           scriptOutline: [
             "Economy: 4th largest in the world",
             "Free Education: €0 tuition at public universities",
@@ -122,7 +122,7 @@ export const MODULE_1: Module = {
           id: "v1-1-2",
           title: "Malayalis in Germany: Which Path is Yours?",
           duration: "10:00",
-          videoUrl: "/videos/generated/v1-1-2.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-1-2.mp4"
           description: "Nursing, IT, Studies, or Ausbildung? Find out which career pathway fits your background and what level of German you actually need.",
           scriptOutline: [
             "The 4 Main Paths: Nursing, IT, Ausbildung, Studium",
@@ -261,7 +261,7 @@ export const MODULE_1: Module = {
           id: "v1-2-1",
           title: "German Sounds: No Perfect Accent Needed",
           duration: "11:30",
-          videoUrl: "/videos/generated/v1-2-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-2-1.mp4"
           description: "Stop worrying about sounding like a movie star. Learn the key sounds that actually matter for being understood: Umlauts (ä, ö, ü) and 'ch'.",
           scriptOutline: [
             "Goal: Be understood, not perfect native accent",
@@ -315,7 +315,7 @@ export const MODULE_1: Module = {
           id: "v1-2-2",
           title: "Alphabet & Spelling: The Amt Survival Skill",
           duration: "10:00",
-          videoUrl: "/videos/generated/v1-2-2.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-2-2.mp4"
           description: "Learn how to spell your name and say your phone number in German. Essential for every visit to a government office (Amt) or filling out forms.",
           scriptOutline: [
             "The Amt Moment: 'Können Sie Ihren Namen buchstabieren?'",
@@ -459,7 +459,7 @@ export const MODULE_1: Module = {
           id: "v1-3-1",
           title: "Guten Tag! German Greetings for Real Life",
           duration: "10:30",
-          videoUrl: "/videos/generated/v1-3-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-3-1.mp4"
           description: "Forget 10 greetings, start with the 4 you actually need. Master the safe defaults for shops, offices, and exams.",
           scriptOutline: [
             "The 5-second rule: Why greetings matter in Germany",
@@ -511,7 +511,7 @@ export const MODULE_1: Module = {
           id: "v1-3-2",
           title: "Formal vs Informal: Like 'Ningal' vs 'Nee'",
           duration: "10:00",
-          videoUrl: "/videos/generated/v1-3-2.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-3-2.mp4"
           description: "Master the German respect system using your Malayalam intuition. Learn exactly when to switch and how it affects the grammar.",
           scriptOutline: [
             "Direct Parallel: Sie = Ningal / du = Nee",
@@ -651,7 +651,7 @@ export const MODULE_1: Module = {
           id: "v1-4-1",
           title: "Saying Goodbye & Being Polite",
           duration: "10:45",
-          videoUrl: "/videos/generated/v1-4-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-4-1.mp4"
           description: "A compact polite-exit toolkit: the safest goodbyes, the Danke/Bitte exchange, and common beginner traps.",
           scriptOutline: [
             "Exit Toolkit: Auf Wiedersehen, Tschüss, Gute Nacht",
@@ -703,7 +703,7 @@ export const MODULE_1: Module = {
           id: "v1-4-2",
           title: "Survival Politeness: The Magic Words at Work",
           duration: "10:00",
-          videoUrl: "/videos/generated/v1-4-2.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-4-2.mp4"
           description: "Watch the magic words in action at 3 real-world spots: the bakery, the supermarket, and the street.",
           scriptOutline: [
             "The Bakery Pattern: Number + Item + bitte",
@@ -848,7 +848,7 @@ export const MODULE_1: Module = {
           id: "v1-5-1",
           title: "Putting It Together - Your First German Chat",
           duration: "10:00",
-          videoUrl: "/videos/generated/v1-5-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-5-1.mp4"
           description: "A complete conversation practice with Kerala context",
           scriptOutline: [
             "Opening: 'Time to use everything you've learned!'",
@@ -879,7 +879,7 @@ export const MODULE_1: Module = {
           id: "v1-5-2",
           title: "Real Situations — Airport, Café & First Meeting",
           duration: "10:00",
-          videoUrl: "/videos/generated/v1-5-2.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-5-2.mp4"
           description: "Practice conversations for three real-life scenarios you'll face in Germany",
           scriptOutline: [
             "Opening: 'Let's practice THREE real conversations you WILL need!'",
@@ -1002,7 +1002,7 @@ export const MODULE_1: Module = {
           id: "v1-6-1",
           title: "Mastering Sie and Du in Real Life",
           duration: "10:00",
-          videoUrl: "/videos/generated/v1-6-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-6-1.mp4"
           description: "Navigate formal and informal German like a pro — at work, shops, and university",
           scriptOutline: [
             "Opening: 'You know Sie and Du exist — now let's master WHEN to switch!'",
@@ -1054,7 +1054,7 @@ export const MODULE_1: Module = {
           id: "v1-6-2",
           title: "Writing Formal vs Informal — Emails, Texts & More",
           duration: "10:00",
-          videoUrl: "/videos/generated/v1-6-2.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v1-6-2.mp4"
           description: "How to write German emails and messages — formal for your boss, casual for your friends",
           scriptOutline: [
             "Opening: 'Speaking formal German is one thing — WRITING it is another level!'",

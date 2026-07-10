@@ -224,55 +224,43 @@ export const MODULE_12: Module = {
         },
         {
           id: "ex12-1-5",
-          type: "ordering",
-          question: "Put this sentence in the correct order: 'I like listening to music.'",
-          options: ["gern", "Ich", "Musik", "höre"],
-          correctAnswer: ["Ich", "höre", "gern", "Musik"],
-          explanation: "Verb-Second Rule: Subject (Ich) + Verb (höre) + The Quality (gern) + The Object (Musik). Grammatically, the 'gern' describes how you listen.",
-          xpReward: 15
+          type: "free-text",
+          question: "Headphones in, world out — Kuttan's default state. Type it in German: 'I like listening to music.' (hören, gern, die Musik):",
+          correctAnswer: "Ich höre gern Musik",
+          explanation: "Verb-Second Rule: Subject (Ich) + Verb (höre) + gern + Object (Musik). Grammatically, the 'gern' describes how you listen.",
+          xpReward: 30
         },
         {
           id: "ex12-1-6",
-          type: "fill-blank",
-          question: "Kuttan asks about your Sunday after class. Complete: Was machst du in deiner _____? (What do you do in your free time?)",
-          options: ["Freizeit", "Arbeit", "Schule", "Zeit"],
+          type: "type-answer",
+          question: "Kuttan asks about your Sunday after class: 'Was machst du in deiner ___?' Type the compound word (free time):",
           correctAnswer: "Freizeit",
-          explanation: "Frei (free) + Zeit (time). Simple compound! In Germany, your 'Freizeit' is protected by law—work-life balance is a real thing here.",
-          xpReward: 10
-        },
-        {
-          id: "ex12-1-7",
-          type: "multiple-choice",
-          question: "At the Kerala pool, Arjun wants a clean A1 sentence. Which sentence correctly says 'I like swimming'?",
-          options: ["Ich schwimme gern.", "Ich gern schwimme.", "Ich schwimmen gern.", "Gern ich schwimme."],
-          correctAnswer: "Ich schwimme gern.",
-          explanation: "Conjugation check! For 'Ich', the verb must end in '-e' (schwimme). The word 'gern' cannot come before the verb in a standard statement.",
-          xpReward: 10
+          explanation: "Frei (free) + Zeit (time). Simple compound! In Germany, your 'Freizeit' is protected by law — work-life balance is a real thing there.",
+          xpReward: 15
         },
         {
           id: "ex12-1-8",
-          type: "fill-blank",
-          question: "Priya shows photos from the Kerala cafe wall. Complete: Mein Hobby _____ Fotografieren. (My hobby is photography.)",
-          options: ["ist", "sind", "hat", "bin"],
+          type: "type-answer",
+          question: "Priya shows her photos on the Kerala cafe wall: 'Mein Hobby ___ Fotografieren.' Type the verb (is):",
           correctAnswer: "ist",
-          explanation: "When using 'Mein Hobby' (singular), use 'ist'. When listing multiple hobbies ('Meine Hobbys'), use 'sind'.",
-          xpReward: 10
+          explanation: "'Mein Hobby' (singular) takes 'ist'. When listing multiple hobbies ('Meine Hobbys'), it becomes 'sind'.",
+          xpReward: 15
         },
         {
           id: "ex12-1-9",
           type: "dictation",
-          question: "Kuttan plays a short hobby audio at the Kerala park. Listen and type: Ich spiele gern Fußball.",
+          question: "At the Kerala park, Arjun states his weekend religion in one German sentence. Listen and type exactly what you hear.",
           correctAnswer: "Ich spiele gern Fußball",
-          explanation: "Great! 'gern' goes after the verb 'spiele'. And don't forget the capital 'F'!",
+          explanation: "'gern' goes right after the verb 'spiele' — and Fußball keeps its capital F.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-like-football.mp3"
         },
         {
           id: "ex12-1-10",
           type: "free-text",
-          question: "Write in German: 'What is your hobby?'",
+          question: "Turn the interrogation around on Kuttan — type in German: 'What is your hobby?' (informal du):",
           correctAnswer: "Was ist dein Hobby",
-          explanation: "Wunderbar! 'Was ist dein Hobby?' is the correct way to ask a friend about their interests.",
+          explanation: "'Was ist dein Hobby?' — the friendly version. To an examiner it would be 'Was ist Ihr Hobby?'",
           xpReward: 30
         }
       ,
@@ -284,6 +272,16 @@ export const MODULE_12: Module = {
           correctAnswer: "Am Wochenende spiele ich gern Cricket",
           explanation: "Time first, verb second, gern after the verb. One sentence that scores in Teil 2 — swap in your real hobby.",
           audioUrl: "/audio/exercises/ex12-1-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex12-1-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: at the pool he declares 'Ich schwimmen gern.' The ich-form needs its -e! Say it right: 'Ich schwimme gern.'",
+          questionGerman: "Sprechen Sie laut: 'Ich schwimme gern.'",
+          correctAnswer: "Ich schwimme gern",
+          explanation: "ich schwimmE, du schwimmST, er schwimmT — dropping the ending and speaking in infinitives is the most audible beginner tell there is. One -e fixes it.",
+          audioUrl: "/audio/exercises/ex12-1-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -469,19 +467,18 @@ export const MODULE_12: Module = {
         {
           id: "ex12-2-1",
           type: "multiple-choice",
-          question: "How do you say 'It's raining' in German?",
+          question: "The monsoon hammers the Goethe Kochi roof mid-lesson. Frau Weber points at the window: 'Na, wie sagt man das auf Deutsch?' Which line is it?",
           options: ["Es regnet.", "Es schneit.", "Es ist sonnig.", "Es windet."],
           correctAnswer: "Es regnet.",
-          explanation: "In German, weather uses the dummy subject 'Es' (it). 'Regnen' is the verb. 'Es regnet' Literally is 'It rains'. Easy to remember for Malayalis because we have so much rain back home!",
+          explanation: "Weather uses the dummy subject 'Es' (it): 'Es regnet' = it rains. If any class on earth can feel this sentence, it's one in Kerala.",
           xpReward: 10
         },
         {
           id: "ex12-2-2",
-          type: "matching",
-          question: "Match the season to its German name:",
-          options: ["Spring", "Summer", "Autumn", "Winter"],
-          correctAnswer: ["der Frühling", "der Sommer", "der Herbst", "der Winter"],
-          explanation: "All four seasons are MASCULINE (der). Mnemonic: 'Seasons are like the kings of the year—always 'der'!",
+          type: "type-answer",
+          question: "Kuttan sketches Kerala's two seasons versus Germany's four — Frühling, Sommer, Herbst, Winter — and notices they all share ONE article. Type it:",
+          correctAnswer: "der",
+          explanation: "All four seasons are MASCULINE: der Frühling, der Sommer, der Herbst, der Winter. Seasons are the kings of the year — always 'der'.",
           xpReward: 15
         },
         {
@@ -495,30 +492,19 @@ export const MODULE_12: Module = {
         },
         {
           id: "ex12-2-4",
-          type: "multiple-choice",
-          question: "What does 'Es schneit' mean?",
-          options: ["It's snowing", "It's raining", "It's windy", "It's sunny"],
+          type: "type-answer",
+          question: "The cousin's video call pans across white rooftops: 'Es schneit!' he yells, grinning like a child. Type in English what's happening:",
           correctAnswer: "It's snowing",
-          explanation: "Schneien (to snow). For many Malayalis, the first snowfall in Germany is a core memory. Just remember: it's pretty, but it's cold!",
-          xpReward: 10
-        },
-        {
-          id: "ex12-2-5",
-          type: "ordering",
-          question: "Put the seasons in the correct order starting from spring:",
-          options: ["der Winter", "der Herbst", "der Frühling", "der Sommer"],
-          correctAnswer: ["der Frühling", "der Sommer", "der Herbst", "der Winter"],
-          explanation: "The cycle goes: Flowers (Frühling) -> Sun (Sommer) -> Leaves falling (Herbst) -> Snow (Winter).",
+          explanation: "Schneien (to snow). For many Malayalis, the first snowfall in Germany is a core memory. It's pretty — and it's cold.",
           xpReward: 15
         },
         {
           id: "ex12-2-6",
-          type: "fill-blank",
-          question: "Complete: Im _____ ist es sehr kalt in Deutschland. (In winter it's very cold in Germany.)",
-          options: ["Winter", "Sommer", "Frühling", "Herbst"],
+          type: "type-answer",
+          question: "The cousin's standing warning before any visit: 'Im ___ ist es sehr kalt in Deutschland.' Type the season (winter):",
           correctAnswer: "Winter",
-          explanation: "'Im Winter' means 'in winter'. German winters can reach well below 0°C!",
-          xpReward: 10
+          explanation: "'Im Winter' means 'in winter'. German winters go well below 0°C — pack accordingly, warns everyone, always.",
+          xpReward: 15
         },
         {
           id: "ex12-2-7",
@@ -541,18 +527,18 @@ export const MODULE_12: Module = {
         {
           id: "ex12-2-9",
           type: "dictation",
-          question: "Listen and type: Heute ist es sonnig.",
+          question: "For once, the cousin's weather report from Hamburg is good news. Listen and type exactly what you hear.",
           correctAnswer: "Heute ist es sonnig",
-          explanation: "Perfect! 'Heute' (today) can also start the sentence, followed by the verb 'ist'.",
+          explanation: "'Heute' (today) starts the sentence, so the verb 'ist' holds position 2 and 'es' slides behind it — inversion in the wild.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-today-sunny.mp3"
         },
         {
           id: "ex12-2-10",
           type: "free-text",
-          question: "Translate to German: 'It is raining in Germany.'",
+          question: "Kuttan ends the call smug: it's pouring in BOTH countries. Type his line in German — 'It is raining in Germany.':",
           correctAnswer: "Es regnet in Deutschland",
-          explanation: "Excellent! 'Es regnet' is the standard weather phrase, followed by the location.",
+          explanation: "'Es regnet' is the standard weather phrase, followed by the location. Same sky, same sentence shape.",
           xpReward: 30
         }
       ,
@@ -564,6 +550,16 @@ export const MODULE_12: Module = {
           correctAnswer: "Heute ist es sonnig und warm",
           explanation: "'es ist + weather word' covers every forecast. Heute ist es... regnet es? Start with the time word, verb stays second.",
           audioUrl: "/audio/exercises/ex12-2-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex12-2-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: dreaming of German summers, he says 'Im Sommer ich schwimme gern.' Time word first means the verb comes NEXT, then ich! Say it right: 'Im Sommer schwimme ich gern.'",
+          questionGerman: "Sprechen Sie laut: 'Im Sommer schwimme ich gern.'",
+          correctAnswer: "Im Sommer schwimme ich gern",
+          explanation: "Start with a time phrase and German flips subject and verb: Im Sommer SCHWIMME ICH. Forgetting the inversion is the #1 slip once sentences get ambitious — and Sprechen Teil 2 answers almost always start with a time word.",
+          audioUrl: "/audio/exercises/ex12-2-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -746,7 +742,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-3-1",
           type: "multiple-choice",
-          question: "How do you say 'Do you feel like going to the cinema?' in German?",
+          question: "New Mohanlal release, and Kuttan wants company. Which German line actually invites Priya to the cinema?",
           options: ["Hast du Lust, ins Kino zu gehen?", "Willst du Kino?", "Gehst du Kino?", "Kino, ja oder nein?"],
           correctAnswer: "Hast du Lust, ins Kino zu gehen?",
           explanation: "The 'Lust-Structure': [Hast du Lust] + [Activity] + [zu + Infinitive]. This is the most natural way to invite someone for a fun activity.",
@@ -780,56 +776,44 @@ export const MODULE_12: Module = {
           xpReward: 10
         },
         {
-          id: "ex12-3-5",
-          type: "ordering",
-          question: "Put this plan-making conversation in order:",
-          options: ["Super! Wir treffen uns um 19 Uhr.", "Hast du Lust, essen zu gehen?", "Ja, gern! Wann?", "Um 19 Uhr, passt das?"],
-          correctAnswer: ["Hast du Lust, essen zu gehen?", "Ja, gern! Wann?", "Um 19 Uhr, passt das?", "Super! Wir treffen uns um 19 Uhr."],
-          explanation: "The logical flow: Invite -> Accept & Ask time -> Propose time -> Confirm.",
-          xpReward: 20
-        },
-        {
           id: "ex12-3-6",
-          type: "fill-blank",
-          question: "Complete: Um wie viel _____ treffen wir uns? (At what time do we meet?)",
-          options: ["Uhr", "Zeit", "Tag", "Stunde"],
+          type: "type-answer",
+          question: "Plan agreed — now the logistics. Kuttan texts: 'Um wie viel ___ treffen wir uns?' Type the missing word (the clock word):",
           correctAnswer: "Uhr",
           explanation: "Clock time is always 'Uhr'. 'Um wie viel Uhr?' is the fixed phrase for 'At what time?'.",
-          xpReward: 10
+          xpReward: 15
         },
         {
           id: "ex12-3-7",
-          type: "multiple-choice",
-          question: "Which phrase means 'Let's order pizza!'?",
-          options: ["Lass uns Pizza bestellen!", "Wir Pizza bestellen!", "Pizza wir bestellen!", "Bestellen Pizza uns!"],
+          type: "free-text",
+          question: "Friday night at the hostel, one unanimous craving. Type the German — 'Let's order pizza!' (Lass uns…, bestellen):",
           correctAnswer: "Lass uns Pizza bestellen!",
-          explanation: "The 'Lass uns' (Let us) structure requires the verb (bestellen) to be in the infinitive at the very end.",
-          xpReward: 10
+          explanation: "The 'Lass uns' (Let us) structure sends the verb (bestellen) to the very end as an infinitive — the group-decision sentence shape.",
+          xpReward: 30
         },
         {
           id: "ex12-3-8",
-          type: "fill-blank",
-          question: "Complete: Was machst du am _____? (What are you doing on the weekend?)",
-          options: ["Wochenende", "Wochentag", "Mittwoch", "Abend"],
+          type: "type-answer",
+          question: "Priya opens every Friday chat the same way: 'Was machst du am ___?' Type the missing word (weekend):",
           correctAnswer: "Wochenende",
-          explanation: "Am Wochenende (on the weekend). Noun starts with a capital 'W'! It’s the time most Germans use for their Hobbys.",
-          xpReward: 10
+          explanation: "Am Wochenende (on the weekend) — capital W, and the question that starts half of all German small talk.",
+          xpReward: 15
         },
         {
           id: "ex12-3-9",
           type: "dictation",
-          question: "Listen and type: Hast du Lust, ins Kino zu gehen?",
+          question: "A voice note from Arjun lands in the chat — an invitation with a movie in it. Listen and type exactly what you hear.",
           correctAnswer: "Hast du Lust, ins Kino zu gehen",
-          explanation: "Great job! This is the most natural way to invite someone to the cinema.",
+          explanation: "'Hast du Lust, … zu + infinitive' — the most natural invitation shape in German. Catch it by ear and you'll never miss a plan.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-lust-kino.mp3"
         },
         {
           id: "ex12-3-10",
           type: "free-text",
-          question: "Write in German: 'Shall we go to a restaurant?' (using Wollen)",
+          question: "Kuttan counters the cinema plan with food, obviously. Type it in German — 'Shall we go to a restaurant?' (Wollen wir…):",
           correctAnswer: "Wollen wir ins Restaurant gehen",
-          explanation: "Wunderbar! 'Wollen wir' is an excellent way to propose plans.",
+          explanation: "'Wollen wir …?' proposes a plan; the verb 'gehen' waits at the end. Counter-proposals never sounded so grammatical.",
           xpReward: 30
         }
       ,
@@ -841,6 +825,16 @@ export const MODULE_12: Module = {
           correctAnswer: "Hast du am Samstag Zeit",
           explanation: "'Hast du ... Zeit?' is how friends actually make plans. Verb first for yes/no questions — no extra words needed.",
           audioUrl: "/audio/exercises/ex12-3-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex12-3-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: he invites Priya with 'Hast du Lust, ins Kino gehen?' The Lust-structure needs its zu! Say it right: 'Hast du Lust, ins Kino zu gehen?'",
+          questionGerman: "Sprechen Sie laut: 'Hast du Lust, ins Kino zu gehen?'",
+          correctAnswer: "Hast du Lust, ins Kino zu gehen",
+          explanation: "'Hast du Lust' always pulls 'zu + infinitive' behind it — dropping the zu is the classic invitation slip. Small word, scored structure.",
+          audioUrl: "/audio/exercises/ex12-3-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1023,7 +1017,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-4-1",
           type: "multiple-choice",
-          question: "How do you say 'You are invited!' in German?",
+          question: "Arjun's WhatsApp invite ends with a flourish. Which German line tells Kuttan he's actually on the guest list?",
           options: ["Du bist eingeladen!", "Du bist einladung!", "Du hast eingeladen!", "Du wirst einladen!"],
           correctAnswer: "Du bist eingeladen!",
           explanation: "Einladen (to invite) -> eingeladen (invited). Use the verb 'sein' (to be) for this state: 'Du BIST eingeladen'.",
@@ -1041,7 +1035,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-4-3",
           type: "matching",
-          question: "Match the preference level to the correct German word:",
+          question: "Kuttan ranks his chai loyalty on the German preference scale. Match each level:",
           options: ["like (doing something)", "prefer", "like most of all"],
           correctAnswer: ["gern", "lieber", "am liebsten"],
           explanation: "The Gern-Scale: Gern (Like) -> Lieber (Better/Prefer) -> Am Liebsten (Best/Most).",
@@ -1057,72 +1051,60 @@ export const MODULE_12: Module = {
           xpReward: 15
         },
         {
-          id: "ex12-4-5",
-          type: "ordering",
-          question: "Put this sentence in correct order: 'I can't come because I'm sick.'",
-          options: ["krank", "weil", "ich", "bin", "Ich kann nicht kommen,"],
-          correctAnswer: ["Ich kann nicht kommen,", "weil", "ich", "krank", "bin"],
-          explanation: "1. Main clause, 2. Connector (weil), 3. Subject (ich), 4. Adjective (krank), 5. Verb (bin).",
-          xpReward: 20
-        },
-        {
           id: "ex12-4-6",
-          type: "fill-blank",
-          question: "Complete: Ich tanze gern, aber ich singe _____. (I like dancing, but I prefer singing.)",
-          options: ["lieber", "gern", "am liebsten", "nicht gern"],
+          type: "type-answer",
+          question: "Kuttan's honest talent review: 'Ich tanze gern, aber ich singe ___.' Type the missing word (prefer / like better):",
           correctAnswer: "lieber",
-          explanation: "Use 'lieber' for comparisons. 'I like this, but I like that BETTER (lieber)'.",
-          xpReward: 10
+          explanation: "Use 'lieber' for comparisons: I like this, but I like that BETTER (lieber).",
+          xpReward: 15
         },
         {
           id: "ex12-4-7",
-          type: "multiple-choice",
-          question: "How do you politely decline an invitation in German?",
-          options: ["Es tut mir leid, ich kann leider nicht kommen.", "Nein, ich komme nicht.", "Ich will nicht.", "Das ist mir egal."],
+          type: "free-text",
+          question: "Amma's sadhya and Arjun's party landed on the same evening — Amma wins. Decline the party politely, in full. Type: 'I'm sorry, unfortunately I can't come.' (Es tut mir leid…, leider):",
           correctAnswer: "Es tut mir leid, ich kann leider nicht kommen.",
-          explanation: "'Es tut mir leid' (I'm sorry) + 'leider' (unfortunately) makes the decline very polite.",
-          xpReward: 10
+          explanation: "'Es tut mir leid' (I'm sorry) + 'leider' (unfortunately) makes the decline warm instead of cold. Germans forgive absence, not bluntness.",
+          xpReward: 30
         },
         {
           id: "ex12-4-8",
-          type: "ordering",
-          question: "Put this weil-clause in correct order: 'because I want to study in Germany'",
-          options: ["möchte", "in", "ich", "weil", "studieren", "Deutschland"],
-          correctAnswer: ["weil", "ich", "in", "Deutschland", "studieren", "möchte"],
+          type: "free-text",
+          question: "Kuttan's visa-essay line needs its ending. Type the weil-clause in German — 'because I want to study in Germany':",
+          correctAnswer: "weil ich in Deutschland studieren möchte",
           explanation: "weil kicks the verb to the very END: weil ich in Deutschland studieren MÖCHTE. The one A1 clause where verb-second does not apply.",
-          xpReward: 20
+          xpReward: 30
         },
         {
           id: "ex12-4-9",
           type: "dictation",
-          question: "Listen and type: Ich komme gern zu deiner Party.",
+          question: "Priya's reply to the party invite is instant and enthusiastic. Listen and type exactly what you hear.",
           correctAnswer: "Ich komme gern zu deiner Party",
-          explanation: "Perfect! 'Ich komme gern' is the standard way to accept an invite.",
+          explanation: "'Ich komme gern' is the standard way to accept an invite — gern doing its usual magic after the verb.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-come-party.mp3"
         },
         {
           id: "ex12-4-10",
           type: "free-text",
-          question: "Translate to German: 'I can't come because I am sick.' (using weil)",
+          question: "The classic excuse, grammatically weaponized. Type it in German — 'I can't come because I am sick.' (weil):",
           correctAnswer: "Ich kann nicht kommen, weil ich krank bin",
-          explanation: "Excellent! 'bin' moves to the end of the clause because of 'weil'.",
+          explanation: "'bin' moves to the end of the clause because of 'weil' — the verb-final rule in action.",
           xpReward: 30
         },
         {
           id: "ex12-4-11",
           type: "free-text",
-          question: "Write in German: 'I prefer tea.' (tea = Tee, prefer = lieber)",
+          question: "Coffee or chai? There was never a real contest. Type Kuttan's answer in German — 'I prefer (to drink) tea.' (lieber):",
           correctAnswer: "Ich trinke lieber Tee",
-          explanation: "Wunderbar! 'lieber' correctly expresses preference.",
+          explanation: "'lieber' after the verb expresses preference — the middle rung of the gern → lieber → am liebsten ladder.",
           xpReward: 30
         },
         {
           id: "ex12-4-12",
           type: "free-text",
-          question: "Translate: 'Should I bring something?'",
+          question: "Invited to a German home, Kuttan asks the question that makes every host smile. Type it — 'Should I bring something?' (Soll ich…, mitbringen):",
           correctAnswer: "Soll ich etwas mitbringen",
-          explanation: "Great! A very polite question to ask when invited to someone's home.",
+          explanation: "A very polite guest question — and mitbringen keeps its separable prefix attached because sollen already claimed position 2.",
           xpReward: 30
         }
       ,
@@ -1134,6 +1116,16 @@ export const MODULE_12: Module = {
           correctAnswer: "Kommst du am Samstag zu meiner Party",
           explanation: "Invitation = verb-first question + day + zu meiner/meinem. The exact pattern Schreiben Teil 2 wants in writing, too.",
           audioUrl: "/audio/exercises/ex12-4-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex12-4-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: excusing himself, he says 'Ich kann nicht kommen, weil ich bin krank.' After weil, the verb goes LAST! Say it right: 'Ich kann nicht kommen, weil ich krank bin.'",
+          questionGerman: "Sprechen Sie laut: 'Ich kann nicht kommen, weil ich krank bin.'",
+          correctAnswer: "Ich kann nicht kommen, weil ich krank bin",
+          explanation: "'weil ich bin krank' is the single most famous German learner error in existence. weil banishes the verb to the end: weil ich krank BIN. Repair it aloud until the wrong version sounds broken.",
+          audioUrl: "/audio/exercises/ex12-4-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

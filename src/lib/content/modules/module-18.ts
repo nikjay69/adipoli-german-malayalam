@@ -2006,7 +2006,7 @@ export const MODULE_18: Module = {
           id: "v18-7-1",
           title: "A1 Celebration Recap — From Kerala to Goethe Confidence",
           duration: "06:00",
-          videoUrl: "/videos/generated/v18-7-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v18-7-1.mp4"
           description: "A short final recap that celebrates the Kerala-rooted A1 journey, reviews the Goethe skill checklist, and sends the learner into A2 with confidence.",
           scriptOutline: [
             "Opening at the Kerala cafe after Goethe Kochi: 'Machane, from Ich heiße to the full A1 mock — you actually did the work.'",

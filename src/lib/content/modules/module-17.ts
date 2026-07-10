@@ -1533,7 +1533,7 @@ export const MODULE_17: Module = {
           title: "Mock Exam — Final Tips",
           duration: "8:00",
           description: "Last-minute tips and strategy before you take the full Hören & Lesen mock exam.",
-          videoUrl: "/videos/generated/v17-6-1.mp4",
+          // videoUrl pending owner recording (DECISIONS #13, video deferred): "/videos/generated/v17-6-1.mp4"
           scriptOutline: [
             "Opening: 'Machane, ippol real exam feel aanu — are you ready?'",
             "Quick recap of all 6 parts: Hören 1/2/3 + Lesen 1/2/3",

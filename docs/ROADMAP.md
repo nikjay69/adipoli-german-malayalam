@@ -18,7 +18,7 @@ Each sprint pairs one experience fix (E) with one module content pass (C) to pre
 |---|---|---|---|
 | 1 | E1 One home (root = spine Today, one readiness source) | C1 · S4 (module-06/07) | **done 2026-07-10** — S4 10/10 PASS; audit 11 PASS / 35 FAIL (was 1/45); evidence `GermanCourse_QC/2026-07-10_sprint1-one-home-and-s4-premium-gate.md` |
 | 2 | E2 Real checkpoints (scored tasks, tags from misses) | C2 · S5 (module-09/10) | **done 2026-07-10** — checkpoints administer+score, no self-report; S5 10/10 PASS; audit 21 PASS / 25 FAIL; evidence `GermanCourse_QC/2026-07-10_sprint2-real-checkpoints-and-s5-premium-gate.md` |
-| 3 | E3 Honest exam scoring + dead-video fix | C3 · S6 (module-11/12) | — |
+| 3 | E3 Honest exam scoring + dead-video fix | C3 · S6 (module-11/12) | **done 2026-07-10** — real Sprechen/Schreiben scoring, 24 dead videoUrls neutralized; S6 9/9 PASS; audit 30 PASS / 16 FAIL; evidence `GermanCourse_QC/2026-07-10_sprint3-honest-scoring-and-s6-premium-gate.md` |
 | 4 | E4 Mission depth + storyScene coverage | C4 · S7 (module-14/17 exam-format rework) | — |
 | 5 | E5 Exam layer (simulator v1, readiness, 7-day plan) | C5 · S8 (module-18) + Kerala-canon storyScene fixes | — |
 | 6 | Final TTS batch (owner go-ahead at point of spend) + full-course QA gate | — | — |

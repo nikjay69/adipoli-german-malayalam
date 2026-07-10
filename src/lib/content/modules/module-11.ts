@@ -179,18 +179,9 @@ export const MODULE_11: Module = {
       ],
       exercises: [
         {
-          id: "ex11-1-1",
-          type: "multiple-choice",
-          question: "How do you formally ask someone their profession in German?",
-          options: ["Was sind Sie von Beruf?", "Was machst du?", "Wer bist du?", "Wie heißen Sie?"],
-          correctAnswer: "Was sind Sie von Beruf?",
-          explanation: "'Was sind Sie von Beruf?' is the formal standard. Use this for anybody you don't know well. For friends, use 'Was machst du beruflich?'.",
-          xpReward: 10
-        },
-        {
           id: "ex11-1-2",
           type: "matching",
-          question: "Match the masculine profession to its feminine form:",
+          question: "Frau Weber lists the class's dream jobs on the board, masculine forms only. Match each to its feminine form:",
           options: ["der Arzt", "der Lehrer", "der Anwalt", "der Koch"],
           correctAnswer: ["die Ärztin", "die Lehrerin", "die Anwältin", "die Köchin"],
           explanation: "In German, adding '-in' makes the feminine form. Note the Umlaut change in Arzt -> Ärztin and Koch -> Köchin. Grammar follows gender here!",
@@ -216,21 +207,19 @@ export const MODULE_11: Module = {
         },
         {
           id: "ex11-1-5",
-          type: "ordering",
-          question: "Put this sentence in the correct word order: 'I am an engineer by profession.'",
-          options: ["von Beruf", "Ich", "Ingenieur", "bin"],
-          correctAnswer: ["Ich", "bin", "Ingenieur", "von Beruf"],
-          explanation: "Simple Subject-Verb-Complement structure. 'Von Beruf' always tags along at the end to specify that we're talking about work.",
-          xpReward: 15
+          type: "free-text",
+          question: "The Hamburg cousin's proud line, now Kuttan borrows it for practice. Type it in German — 'I am an engineer by profession.' (Ingenieur, von Beruf):",
+          correctAnswer: "Ich bin Ingenieur von Beruf",
+          explanation: "Subject-Verb-Complement, with 'von Beruf' tagging along at the end. And no 'ein' before the job — German drops the article there.",
+          xpReward: 30
         },
         {
           id: "ex11-1-6",
-          type: "fill-blank",
-          question: "Complete: Ich _____ als Programmiererin bei Siemens. (I work as a programmer at Siemens.)",
-          options: ["arbeite", "mache", "bin", "studiere"],
+          type: "type-answer",
+          question: "Priya rehearses her dream introduction: 'Ich ___ als Programmiererin bei Siemens.' Type the missing verb (work):",
           correctAnswer: "arbeite",
           explanation: "The formula is: [arbeiten] + [als] + [profession] + [bei] + [company]. Memorize this 'Als/Bei' combo!",
-          xpReward: 10
+          xpReward: 15
         },
         {
           id: "ex11-1-7",
@@ -243,28 +232,27 @@ export const MODULE_11: Module = {
         },
         {
           id: "ex11-1-8",
-          type: "matching",
-          question: "The visa form asks what you do. Match each German status line:",
-          options: ["Ich studiere Informatik.", "Ich mache eine Ausbildung.", "Ich arbeite im Krankenhaus."],
-          correctAnswer: ["I study computer science.", "I am doing vocational training.", "I work in the hospital."],
-          explanation: "Distinguishing between these 3 states (Student, Trainee, Worker) is essential for your residence permit paperwork too!",
-          xpReward: 15
+          type: "type-answer",
+          question: "The visa form asks Kuttan's current status. He's doing vocational training — type his German status line ('I am doing an Ausbildung'):",
+          correctAnswer: "Ich mache eine Ausbildung.",
+          explanation: "Three status lines run your paperwork life: Ich studiere … (student), Ich mache eine Ausbildung (trainee), Ich arbeite … (worker). Pick the true one, every form, every time.",
+          xpReward: 20
         },
         {
           id: "ex11-1-9",
           type: "dictation",
-          question: "Listen and type: Ich arbeite als Krankenschwester.",
+          question: "On the video call, the cousin's flatmate — one of thousands of Malayali nurses in Germany — introduces her work. Listen and type exactly what you hear.",
           correctAnswer: "Ich arbeite als Krankenschwester",
-          explanation: "Great job! A very important sentence for thousands of Malayalis in Germany.",
+          explanation: "Possibly the most-spoken German sentence in the Kerala-to-Germany story. arbeiten + als + profession.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-work-nurse.mp3"
         },
         {
           id: "ex11-1-10",
           type: "free-text",
-          question: "Write in German: 'What is your profession?' (formal)",
+          question: "Sprechen Teil 2, topic card 'Beruf': ask the formal question back to the examiner. Type it in German — 'What is your profession?':",
           correctAnswer: "Was sind Sie von Beruf",
-          explanation: "Wunderbar! 'Was sind Sie von Beruf?' is the polite way to ask about someone's job.",
+          explanation: "'Was sind Sie von Beruf?' — the polite standard. For friends it relaxes to 'Was machst du beruflich?'",
           xpReward: 30
         }
       ,
@@ -276,6 +264,16 @@ export const MODULE_11: Module = {
           correctAnswer: "Ich studiere Deutsch und arbeite am Computer",
           explanation: "Two present-tense verbs joined with 'und' — exactly the shape of a Sprechen Teil 1 answer about your work.",
           audioUrl: "/audio/exercises/ex11-1-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex11-1-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: at the interview he says 'Ich bin ein Student.' German drops the article before professions! Say it right: 'Ich bin Student.'",
+          questionGerman: "Sprechen Sie laut: 'Ich bin Student.'",
+          correctAnswer: "Ich bin Student",
+          explanation: "Ich bin Lehrer, Ich bin Krankenschwester, Ich bin Student — never 'ein'. English forces the article, German forbids it; this exact slip is on the examiner's checklist.",
+          audioUrl: "/audio/exercises/ex11-1-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -484,7 +482,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-2-4",
           type: "multiple-choice",
-          question: "What does 'Feierabend' mean in German work culture?",
+          question: "17:00 sharp, and the whole imagined office stands up at once. Kuttan's colleague grins: 'Feierabend!' What just happened?",
           options: ["End of the work day / quitting time", "Holiday party", "Friday evening", "Overtime"],
           correctAnswer: "End of the work day / quitting time",
           explanation: "It's a sacred German concept. It means work is DONE. Your computer is off, and you're officially a private person again. Malayalis used to long hours back home find this refreshing!",
@@ -492,55 +490,43 @@ export const MODULE_11: Module = {
         },
         {
           id: "ex11-2-5",
-          type: "ordering",
-          question: "Put this sentence in the correct order: 'The exam is next week.'",
-          options: ["nächste Woche", "Die", "ist", "Prüfung"],
-          correctAnswer: ["Die", "Prüfung", "ist", "nächste Woche"],
-          explanation: "Simple Subject (Die Prüfung) + Verb (ist) + Time (nächste Woche).",
-          xpReward: 15
+          type: "free-text",
+          question: "Kuttan checks the Goethe exam calendar and gulps. Type the fact in German — 'The exam is next week.' (die Prüfung, nächste Woche):",
+          correctAnswer: "Die Prüfung ist nächste Woche",
+          explanation: "Subject (Die Prüfung) + Verb (ist) + Time (nächste Woche). A sentence that motivates like nothing else.",
+          xpReward: 30
         },
         {
           id: "ex11-2-6",
-          type: "multiple-choice",
-          question: "Your colleague in Germany is called 'der Kollege'. What is the feminine form?",
-          options: ["die Kollegin", "die Kollegin", "die Kollegerin", "die Kollegatin"],
+          type: "type-answer",
+          question: "Kuttan's deskmate at the imagined office is Maria — so 'der Kollege' becomes…? Type the feminine form WITH its article:",
           correctAnswer: "die Kollegin",
-          explanation: "The masculine -e often drops to make room for the feminine -in. der Kollege -> die Kollegin.",
-          xpReward: 10
+          explanation: "The masculine -e drops to make room for the feminine -in: der Kollege → die Kollegin.",
+          xpReward: 15
         },
         {
           id: "ex11-2-7",
-          type: "fill-blank",
-          question: "Complete: Die Vorlesung _____ zwei Stunden. (The lecture lasts two hours.)",
-          options: ["dauert", "macht", "hat", "geht"],
+          type: "type-answer",
+          question: "Two hours in the Hörsaal and counting: 'Die Vorlesung ___ zwei Stunden.' Type the duration verb (lasts):",
           correctAnswer: "dauert",
           explanation: "'Dauern' is specifically for duration. 'How long does the movie/lecture/flight last?' = Wie lange DAUERT es?",
-          xpReward: 10
-        },
-        {
-          id: "ex11-2-8",
-          type: "matching",
-          question: "Office survival lines — match each phrase to the moment it belongs to:",
-          options: ["Guten Tag, hier spricht...", "Ich sende Ihnen die Datei.", "Wie war Ihr Wochenende?"],
-          correctAnswer: ["Hello, this is... speaking", "I'll send you the file.", "How was your weekend?"],
-          explanation: "'Hier spricht...' answers the phone, 'Ich sende Ihnen die Datei' moves the work along, 'Wie war Ihr Wochenende?' is the Monday small-talk ritual.",
           xpReward: 15
         },
         {
           id: "ex11-2-9",
           type: "dictation",
-          question: "Listen and type: Das Büro ist im dritten Stock.",
+          question: "Kuttan asks the receptionist where to go. Listen to her answer and type exactly what you hear.",
           correctAnswer: "Das Büro ist im dritten Stock",
-          explanation: "Perfect! 'Stock' means floor. And remember: 'im' = in + dem (Dative).",
+          explanation: "'Stock' means floor — and 'im' = in + dem (Dative). Third floor, no lift, welcome to Germany.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-office-floor.mp3"
         },
         {
           id: "ex11-2-10",
           type: "free-text",
-          question: "Translate to German: 'I have a meeting at 10 o'clock.' (meeting = Besprechung)",
+          question: "Kuttan blocks his calendar, German-style. Type it — 'I have a meeting at 10 o'clock.' (die Besprechung, um):",
           correctAnswer: "Ich habe eine Besprechung um 10 Uhr",
-          explanation: "Excellent! 'um' is used for exact times. German meetings always start 'pünktlich'!",
+          explanation: "'um' is used for exact times. German meetings always start 'pünktlich'!",
           xpReward: 30
         }
       ,
@@ -552,6 +538,16 @@ export const MODULE_11: Module = {
           correctAnswer: "Ich arbeite im Büro",
           explanation: "im Büro = in dem Büro. Short, correct, and the answer to 'Wo arbeiten Sie?' in the exam and in life.",
           audioUrl: "/audio/exercises/ex11-2-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex11-2-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: he announces 'Ich habe eine Besprechung in 10 Uhr.' Clock times take um, not in! Say it right: 'Ich habe eine Besprechung um 10 Uhr.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe eine Besprechung um 10 Uhr.'",
+          correctAnswer: "Ich habe eine Besprechung um 10 Uhr",
+          explanation: "um for clock times (um 10 Uhr), am for days (am Montag), im for months (im Juli). The um/in swap is a Hören trap too — announcements test exactly this.",
+          audioUrl: "/audio/exercises/ex11-2-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -738,38 +734,20 @@ export const MODULE_11: Module = {
         {
           id: "ex11-3-2",
           type: "fill-blank",
-          question: "Complete the formal email closing: Mit freundlichen _____",
+          question: "Kuttan signs off his first formal German email, tongue between his teeth: 'Mit freundlichen _____'",
           options: ["Grüßen", "Grüße", "Gruß", "Grüssen"],
           correctAnswer: "Grüßen",
           explanation: "The full phrase is 'Mit freundlichen Grüßen'. In emails, people often shorten it to 'MfG', but in formal writing, always write it out fully.",
           xpReward: 10
         },
         {
-          id: "ex11-3-3",
-          type: "multiple-choice",
-          question: "You don't know the recipient's name. How do you start your formal email?",
-          options: ["Sehr geehrte Damen und Herren,", "Hallo zusammen,", "An wen es betrifft,", "Liebe alle,"],
-          correctAnswer: "Sehr geehrte Damen und Herren,",
-          explanation: "Literally 'Very honored Ladies and Gentlemen'. Use this when emailing a general office or HR department where the specific person is unknown.",
-          xpReward: 10
-        },
-        {
           id: "ex11-3-4",
           type: "matching",
-          question: "Match the email element to its German term:",
+          question: "Frau Weber dissects a real German job-application email on the projector. Match each part to its German name:",
           options: ["Subject line", "Dear Mr.", "Kind regards", "Attachment"],
           correctAnswer: ["Betreff", "Sehr geehrter Herr", "Mit freundlichen Grüßen", "die Anlage"],
           explanation: "Crucial vocabulary! If you forget 'Betreff', your email might get filtered as spam. If you forget 'Anlage', they won't look for your CV!",
           xpReward: 15
-        },
-        {
-          id: "ex11-3-5",
-          type: "ordering",
-          question: "Put these email parts in the correct order:",
-          options: ["Mit freundlichen Grüßen, [Name]", "Sehr geehrte Frau Müller,", "Betreff: Frage zur Vorlesung", "Ich schreibe Ihnen bezüglich der Vorlesung am Montag."],
-          correctAnswer: ["Betreff: Frage zur Vorlesung", "Sehr geehrte Frau Müller,", "Ich schreibe Ihnen bezüglich der Vorlesung am Montag.", "Mit freundlichen Grüßen, [Name]"],
-          explanation: "Structure: Subject line FIRST. Then greeting. Then body. Then sign-off. Germans love this exact order.",
-          xpReward: 20
         },
         {
           id: "ex11-3-6",
@@ -782,37 +760,35 @@ export const MODULE_11: Module = {
         },
         {
           id: "ex11-3-7",
-          type: "fill-blank",
-          question: "Complete: Ich schreibe Ihnen _____ Ihrer Stellenanzeige. (I am writing to you regarding your job posting.)",
-          options: ["bezüglich", "über", "für", "mit"],
+          type: "type-answer",
+          question: "Kuttan opens his application for the Ausbildung posting: 'Ich schreibe Ihnen ___ Ihrer Stellenanzeige.' Type the formal word (regarding):",
           correctAnswer: "bezüglich",
-          explanation: "'Bezüglich' + Genitive (though colloquially used with Dative) is the formal way to say 'regarding'. It makes you sound very competent!",
-          xpReward: 10
+          explanation: "'Bezüglich' is the formal way to say 'regarding'. It makes you sound very competent — which is the whole point of a first email.",
+          xpReward: 20
         },
         {
           id: "ex11-3-8",
-          type: "multiple-choice",
-          question: "You want to say 'Please find my CV attached.' Which is correct?",
-          options: ["In der Anlage finden Sie meinen Lebenslauf.", "Ich habe meinen Lebenslauf.", "Mein Lebenslauf ist hier.", "Bitte sehen Sie meinen Lebenslauf."],
+          type: "free-text",
+          question: "CV attached, one sentence left to point at it. Type the business-German formula — 'Please find my CV attached.' (die Anlage, der Lebenslauf):",
           correctAnswer: "In der Anlage finden Sie meinen Lebenslauf.",
-          explanation: "The standard 'Business German' formula. 'In der Anlage' = In the attachment. 'finden Sie' = you find. 'Lebenslauf' = life's-run (CV).",
-          xpReward: 10
+          explanation: "The standard Business-German formula: 'In der Anlage' = in the attachment, 'finden Sie' = you find, 'Lebenslauf' = life's-run (CV).",
+          xpReward: 30
         },
         {
           id: "ex11-3-9",
           type: "dictation",
-          question: "Listen and type: Sehr geehrte Damen und Herren,",
+          question: "Frau Weber dictates the opener for emails to strangers — the one every applicant needs. Listen and type exactly what you hear.",
           correctAnswer: "Sehr geehrte Damen und Herren",
-          explanation: "Great! This is the most formal way to address people when you don't know their names.",
+          explanation: "The most formal way to address people when you don't know their names — HR departments read it a hundred times a day.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-email-formal-greeting.mp3"
         },
         {
           id: "ex11-3-10",
           type: "free-text",
-          question: "Write in German: 'Kind regards' (formal email closing)",
+          question: "Every formal German email ends the same three words. Kuttan types them without thinking now — you type them too ('Kind regards', formal):",
           correctAnswer: "Mit freundlichen Grüßen",
-          explanation: "Wunderbar! 'Mit freundlichen Grüßen' is the gold standard for formal closings.",
+          explanation: "'Mit freundlichen Grüßen' is the gold standard for formal closings — the Schreiben Teil 2 rubric looks for exactly this frame.",
           xpReward: 30
         }
       ,
@@ -824,6 +800,16 @@ export const MODULE_11: Module = {
           correctAnswer: "Vielen Dank für Ihre E-Mail",
           explanation: "'Vielen Dank für Ihre E-Mail' opens half of all polite German replies. Capital I in Ihre — it's the formal you.",
           audioUrl: "/audio/exercises/ex11-3-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex11-3-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: he opens his application to an unknown HR person with 'Liebe Damen und Herren'. First contact is 'Sehr geehrte'! Say the correct opener aloud: 'Sehr geehrte Damen und Herren'.",
+          questionGerman: "Sprechen Sie laut: 'Sehr geehrte Damen und Herren.'",
+          correctAnswer: "Sehr geehrte Damen und Herren",
+          explanation: "'Liebe/Lieber' is for people you know; 'Sehr geehrte/geehrter' is for strangers and officials. The Schreiben rubric scores this register choice directly.",
+          audioUrl: "/audio/exercises/ex11-3-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1012,9 +998,8 @@ export const MODULE_11: Module = {
       exercises: [
         {
           id: "ex11-4-1",
-          type: "fill-blank",
-          question: "At the Kerala Stammtisch prep with Kuttan, you want to say you can program well. Complete: Ich _____ gut programmieren.",
-          options: ["kann", "bin", "habe", "mache"],
+          type: "type-answer",
+          question: "At the Kerala Stammtisch prep with Kuttan, you want to say you can program well: 'Ich ___ gut programmieren.' Type the modal verb (can):",
           correctAnswer: "kann",
           explanation: "Können (can) is the modal verb for skills and abilities. Verb 1 (kann) stays at position 2, and Verb 2 (programmieren) goes to the END. The 'Abhibhashaka-Rule' (Verb final).",
           xpReward: 10
@@ -1048,12 +1033,11 @@ export const MODULE_11: Module = {
         },
         {
           id: "ex11-4-5",
-          type: "ordering",
-          question: "Put this sentence in correct order: 'I have good German skills.'",
-          options: ["Deutschkenntnisse", "gute", "habe", "Ich"],
-          correctAnswer: ["Ich", "habe", "gute", "Deutschkenntnisse"],
+          type: "free-text",
+          question: "The line every German CV needs — and after this course it'll even be true. Type it: 'I have good German skills.' (Deutschkenntnisse):",
+          correctAnswer: "Ich habe gute Deutschkenntnisse",
           explanation: "Subject (Ich) + Verb (habe) + Adjective (gute) + Compound Noun (Deutsch+kenntnisse). Knowledge of German = Deutschkenntnisse.",
-          xpReward: 15
+          xpReward: 30
         },
         {
           id: "ex11-4-6",
@@ -1066,28 +1050,26 @@ export const MODULE_11: Module = {
         },
         {
           id: "ex11-4-7",
-          type: "fill-blank",
-          question: "Kuttan points to the education line in your CV draft. Complete: Ich habe einen Bachelor-_____ in Informatik.",
-          options: ["Abschluss", "Zeugnis", "Kenntnisse", "Erfahrung"],
+          type: "type-answer",
+          question: "Kuttan points to the education line in your CV draft: 'Ich habe einen Bachelor-___ in Informatik.' Type the missing word (degree):",
           correctAnswer: "Abschluss",
           explanation: "Abschluss literally means 'Closing/Finishing'. It implies you finished the degree successfully. 'Bachelor-Abschluss' is the modern German way to say degree.",
           xpReward: 10
         },
         {
           id: "ex11-4-8",
-          type: "multiple-choice",
-          question: "Which German word means 'to master' a skill?",
-          options: ["beherrschen", "können", "lernen", "verstehen"],
+          type: "type-answer",
+          question: "CV verb upgrade: Kuttan knows Java inside out — 'kann' feels too small. Type the master-level verb ('to master a skill'):",
           correctAnswer: "beherrschen",
           explanation: "To master something at a high level. Use this for languages or software you know inside out. 'Ich beherrsche Java.'",
-          xpReward: 10
+          xpReward: 20
         },
         {
           id: "ex11-4-9",
           type: "dictation",
-          question: "Kuttan plays a short Stammtisch practice audio in Kerala. Listen and type: Ich kann Deutsch sprechen.",
+          question: "Kuttan plays a Stammtisch practice audio — the proudest CV line of all. Listen and type exactly what you hear.",
           correctAnswer: "Ich kann Deutsch sprechen",
-          explanation: "Perfect! Modal verb in position 2, main verb at the end. That's a great skill to have!",
+          explanation: "Modal verb in position 2, main verb at the end — and a sentence that's about to be true on your CV too.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-can-speak-german.mp3"
         },
@@ -1096,7 +1078,7 @@ export const MODULE_11: Module = {
           type: "free-text",
           question: "At the Kerala networking practice, write the German sentence for Priya's line: 'I am interested in computer science.' (computer science = Informatik)",
           correctAnswer: "Ich interessiere mich für Informatik",
-          explanation: "Excellent! 'sich interessieren für' is the reflexive phrase you need. Don't forget 'mich'!",
+          explanation: "'sich interessieren für' is the reflexive phrase you need — and the 'mich' is not optional.",
           xpReward: 30
         }
       ,
@@ -1108,6 +1090,16 @@ export const MODULE_11: Module = {
           correctAnswer: "Ich kann gut Englisch sprechen",
           explanation: "können + skill + infinitive at the end. Swap Englisch for Malayalam, Hindi, Deutsch — your whole skills answer.",
           audioUrl: "/audio/exercises/ex11-4-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex11-4-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: at the Stammtisch he says 'Ich interessiere für Technik.' The mich is not optional! Say it right: 'Ich interessiere mich für Technik.'",
+          questionGerman: "Sprechen Sie laut: 'Ich interessiere mich für Technik.'",
+          correctAnswer: "Ich interessiere mich für Technik",
+          explanation: "'sich interessieren für' is reflexive — German makes you interest YOURSELF in things. Dropping the mich is the most common reflexive slip at A1.",
+          audioUrl: "/audio/exercises/ex11-4-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1295,7 +1287,7 @@ export const MODULE_11: Module = {
         {
           id: "ex11-5-1",
           type: "multiple-choice",
-          question: "What does 'Erzählen Sie etwas über sich' mean?",
+          question: "Mock interview at Goethe Kochi: Frau Weber leans back and opens with 'Erzählen Sie etwas über sich.' What is she asking?",
           options: ["Tell me about yourself", "What are your strengths?", "Why do you want this job?", "Do you have questions?"],
           correctAnswer: "Tell me about yourself",
           explanation: "The standard opening of EVERY interview. It's your time to shine for 2 minutes. Focus on Your Origin -> Studies -> Experience.",
@@ -1303,12 +1295,11 @@ export const MODULE_11: Module = {
         },
         {
           id: "ex11-5-2",
-          type: "matching",
-          question: "The job ad demands your 'Unterlagen'. Match the application words:",
-          options: ["die Bewerbung", "der Lebenslauf", "das Anschreiben", "die Stelle"],
-          correctAnswer: ["application", "CV / resume", "cover letter", "position / job"],
-          explanation: "Master the terminology! When an HR person asks for your 'Unterlagen', they want this whole set of documents.",
-          xpReward: 15
+          type: "type-answer",
+          question: "HR replies to Kuttan: 'Bitte senden Sie Ihre vollständigen ___.' — the one word covering CV, cover letter, certificates, everything. Type it (documents):",
+          correctAnswer: "Unterlagen",
+          explanation: "'Unterlagen' is the whole application bundle: die Bewerbung (application), der Lebenslauf (CV), das Anschreiben (cover letter). When HR asks for Unterlagen, they want it all.",
+          xpReward: 20
         },
         {
           id: "ex11-5-3",
@@ -1321,30 +1312,19 @@ export const MODULE_11: Module = {
         },
         {
           id: "ex11-5-4",
-          type: "multiple-choice",
-          question: "What does 'teamfähig' mean?",
-          options: ["able to work in a team", "team leader", "team member", "team building"],
+          type: "type-answer",
+          question: "Every job ad Kuttan opens demands the same soft-skill word: 'teamfähig'. Type in English what it promises:",
           correctAnswer: "able to work in a team",
-          explanation: "'Team-fähig' = Team-capable. It’s the most requested soft skill in Germany. Mention it, and you're halfway there!",
-          xpReward: 10
-        },
-        {
-          id: "ex11-5-5",
-          type: "ordering",
-          question: "Put this self-introduction in logical order:",
-          options: ["Deshalb möchte ich bei Ihrer Firma arbeiten.", "Ich komme aus Kerala, Indien.", "Ich habe drei Jahre Erfahrung als Programmierer.", "Ich habe Informatik studiert."],
-          correctAnswer: ["Ich komme aus Kerala, Indien.", "Ich habe Informatik studiert.", "Ich habe drei Jahre Erfahrung als Programmierer.", "Deshalb möchte ich bei Ihrer Firma arbeiten."],
-          explanation: "Logic: Where you are from -> Your foundation (studies) -> Your practical proof (experience) -> Why you are HERE.",
-          xpReward: 20
+          explanation: "'Team-fähig' = Team-capable. It's the most requested soft skill in Germany. Mention it, and you're halfway there!",
+          xpReward: 15
         },
         {
           id: "ex11-5-6",
-          type: "fill-blank",
-          question: "Complete: Was sind Ihre _____? (What are your strengths?)",
-          options: ["Stärken", "Schwächen", "Fragen", "Hobbys"],
+          type: "type-answer",
+          question: "Frau Weber fires the classic follow-up: 'Was sind Ihre ___?' Type the missing word (strengths):",
           correctAnswer: "Stärken",
-          explanation: "'Stärken' means strengths. 'Was sind Ihre Stärken?' is a classic interview question.",
-          xpReward: 10
+          explanation: "'Stärken' means strengths — and its evil twin 'Schwächen' (weaknesses) usually follows right behind it.",
+          xpReward: 15
         },
         {
           id: "ex11-5-7",
@@ -1367,18 +1347,18 @@ export const MODULE_11: Module = {
         {
           id: "ex11-5-9",
           type: "dictation",
-          question: "Listen and type: Erzählen Sie etwas über sich.",
+          question: "The mock interview begins. Frau Weber's opening line is the one every interviewer uses. Listen and type exactly what you hear.",
           correctAnswer: "Erzählen Sie etwas über sich",
-          explanation: "Great job! This is the most common invitation to introduce yourself in an interview.",
+          explanation: "The most common invitation to introduce yourself in an interview — hear it, recognize it, and launch your prepared two minutes.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-tell-about-self.mp3"
         },
         {
           id: "ex11-5-10",
           type: "free-text",
-          question: "Write in German: 'I have three years of experience.' (experience = Erfahrung)",
+          question: "The interviewer flips to Kuttan's CV. Back it up in German — type: 'I have three years of experience.' (die Erfahrung):",
           correctAnswer: "Ich habe drei Jahre Erfahrung",
-          explanation: "Wunderbar! 'Ich habe drei Jahre Erfahrung.' — This is exactly what employers want to hear!",
+          explanation: "'Ich habe drei Jahre Erfahrung.' — exactly what employers want to hear, in exactly the word order they want to hear it.",
           xpReward: 30
         }
       ,
@@ -1390,6 +1370,16 @@ export const MODULE_11: Module = {
           correctAnswer: "Guten Tag, mein Name ist Kuttan. Ich komme aus Indien",
           explanation: "Greeting, name, origin — the first ten seconds of every interview and of Sprechen Teil 1. Use your real name.",
           audioUrl: "/audio/exercises/ex11-5-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex11-5-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: closing the interview he blurts 'Ich will bei Ihrer Firma arbeiten.' — demanding! The interview verb is möchte. Say it right: 'Ich möchte bei Ihrer Firma arbeiten.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte bei Ihrer Firma arbeiten.'",
+          correctAnswer: "Ich möchte bei Ihrer Firma arbeiten",
+          explanation: "'will' = I WANT (a toddler's demand); 'möchte' = I would like (a professional's wish). In interviews and in Sprechen Teil 3, möchte wins every time.",
+          audioUrl: "/audio/exercises/ex11-5-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
