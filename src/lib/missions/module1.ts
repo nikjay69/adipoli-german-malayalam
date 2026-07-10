@@ -32,7 +32,7 @@ export const module1MissionCards: Module1MissionCard[] = [
     active: true,
     railLabel: 'Module 1 · First classroom greeting',
     tone: 'green',
-    steps: ['Scene + repair'],
+    steps: ['Hear it', 'Say it aloud', 'Repair + win'],
     next: {
       href: '/missions/module-1/please-thanks',
       cta: 'Next: danke + bitte',

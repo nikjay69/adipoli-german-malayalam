@@ -227,17 +227,17 @@ export const MODULE_17: Module = {
         {
           id: "ex17-1-12",
           type: "free-text",
-          question: "Translate to German: 'Good luck!' (use 'Viel Glück')",
+          question: "Priya walks into her Goethe exam tomorrow. Send her the two-word German blessing — type it (good luck):",
           correctAnswer: "Viel Glück",
-          explanation: "Wunderbar! A must-know phrase for exam day.",
+          explanation: "'Viel Glück!' — the phrase you'll hear from Frau Weber, the cousin, and half of Kerala on your own exam morning.",
           xpReward: 30
         },
         {
           id: "ex17-1-13",
           type: "free-text",
-          question: "Translate: 'The film starts at 8 PM.' (8 PM = 20 Uhr)",
+          question: "Hören Teil 1 loves cinema times. Produce the sentence you'd need to catch — type in German: 'The film starts at 8 PM.' (20 Uhr):",
           correctAnswer: "Der Film beginnt um 20 Uhr",
-          explanation: "Wunderbar! Use 'um' and the 24-hour format correctly.",
+          explanation: "'um' + the 24-hour format — 20 Uhr, not 8 Uhr abends. Producing the pattern makes hearing it automatic.",
           xpReward: 30
         },
         {
@@ -257,6 +257,16 @@ export const MODULE_17: Module = {
           correctAnswer: "Ich höre zuerst die Frage und dann den Text",
           explanation: "Question first, then audio — the single biggest Hören score boost. Saying the strategy in German trains both at once.",
           audioUrl: "/audio/exercises/ex17-1-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex17-1-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's exam-day panic: the examiner speaks and he blurts 'Sorry, again please?' in English. The German rescue line exists — say it: 'Noch einmal, bitte.'",
+          questionGerman: "Sprechen Sie laut: 'Noch einmal, bitte.'",
+          correctAnswer: "Noch einmal, bitte",
+          explanation: "'Noch einmal, bitte' politely asks for a repeat and keeps you inside German — switching to English mid-exam costs marks. Drill it until panic says it for you.",
+          audioUrl: "/audio/exercises/ex17-1-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -518,26 +528,26 @@ export const MODULE_17: Module = {
         {
           id: "ex17-2-11",
           type: "dictation",
-          question: "Listen and type: Der Zug fährt von Gleis 5.",
+          question: "Exam-style announcement drill: one platform detail hides in the audio. Listen and type exactly what you hear.",
           correctAnswer: "Der Zug fährt von Gleis 5",
-          explanation: "Great! 'Gleis' is a key word for train announcements.",
+          explanation: "'Gleis' is THE key word in train announcements — Hören Teil 1 asks for it constantly.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-train-platform.mp3"
         },
         {
           id: "ex17-2-12",
           type: "free-text",
-          question: "Translate to German: 'The train is late.' (late/delay = Verspätung)",
+          question: "The announcement every Hören test includes at least once. Type it in German — 'The train is late.' (die Verspätung):",
           correctAnswer: "Der Zug hat Verspätung",
-          explanation: "Wunderbar! This is a very common phrase in German train stations.",
+          explanation: "German says the train HAS delay — hat Verspätung. Own the phrase and the exam item becomes free points.",
           xpReward: 30
         },
         {
           id: "ex17-2-13",
           type: "free-text",
-          question: "Translate to German: 'Where is the train?' (Zug = train)",
+          question: "Platform 5, no train, two minutes to departure — panic in German. Type: 'Where is the train?':",
           correctAnswer: "Wo ist der Zug",
-          explanation: "Excellent! A simple but vital question in everyday travel.",
+          explanation: "Simple, vital, and the shape of half the questions in Hören dialogues: Wo ist …?",
           xpReward: 30
         }
       ,
@@ -549,6 +559,16 @@ export const MODULE_17: Module = {
           correctAnswer: "Ich höre jeden Text zweimal",
           explanation: "Teil 1 plays each text twice — first pass for the gist, second for the detail. Knowing the format is free marks.",
           audioUrl: "/audio/exercises/ex17-2-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex17-2-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: he misses a word and barks 'Was?!' — street-rude. The exam-polite version is two words. Say it right: 'Wie bitte?'",
+          questionGerman: "Sprechen Sie laut: 'Wie bitte?'",
+          correctAnswer: "Wie bitte",
+          explanation: "'Wie bitte?' is the polite 'pardon?' — examiners hear it as good German. 'Was?!' they hear as a challenge to fight.",
+          audioUrl: "/audio/exercises/ex17-2-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -795,9 +815,9 @@ export const MODULE_17: Module = {
         {
           id: "ex17-3-11",
           type: "dictation",
-          question: "Listen and type: Ich möchte ein Geschenk kaufen.",
+          question: "Hören Teil 2 drill: a customer states her mission in a shop dialogue. Listen and type exactly what you hear.",
           correctAnswer: "Ich möchte ein Geschenk kaufen",
-          explanation: "Perfect! A useful sentence for shopping dialogues.",
+          explanation: "möchte + kaufen at the end — shopping dialogues in Hören Teil 2 almost always open with someone's mission statement.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-buy-gift.mp3"
         },
@@ -820,7 +840,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-3-14",
           type: "dictation",
-          question: "Listen and type: Haben Sie frisches Brot?",
+          question: "Bakery dialogue, Hören-style: the customer's opening question carries the answer to the exam item. Listen and type exactly what you hear.",
           correctAnswer: "Haben Sie frisches Brot",
           imageUrl: "/images/german_bakery.png",
           explanation: "Perfect! A clear and natural question for the bakery.",
@@ -836,6 +856,16 @@ export const MODULE_17: Module = {
           correctAnswer: "Ich markiere die Antwort sofort",
           explanation: "In the one-play Teil 2 there is no second chance — mark immediately, never look back. sofort = immediately.",
           audioUrl: "/audio/exercises/ex17-3-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex17-3-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's ear: the audio said vierzig (40) and he wrote 14. Drill the killer pair aloud with crisp endings: 'vierzehn … vierzig.'",
+          questionGerman: "Sprechen Sie laut: 'vierzehn, vierzig.'",
+          correctAnswer: "vierzehn, vierzig",
+          explanation: "-zehn (teen) vs -zig (ty) is the single most expensive listening confusion in Hören. If your own mouth makes the difference crisp, your ear starts hearing it.",
+          audioUrl: "/audio/exercises/ex17-3-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1121,9 +1151,9 @@ export const MODULE_17: Module = {
         {
           id: "ex17-4-11",
           type: "dictation",
-          question: "Listen and type: Rauchen verboten!",
+          question: "A sign read aloud — two words that appear in every Lesen Teil 1. Listen and type exactly what you hear.",
           correctAnswer: "Rauchen verboten",
-          explanation: "Great! One of the most common signs you'll see in Germany.",
+          explanation: "One of the most common signs in Germany — 'verboten' is the word Lesen Teil 1 loves to test.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-no-smoking.mp3"
         },
@@ -1138,9 +1168,9 @@ export const MODULE_17: Module = {
         {
           id: "ex17-4-13",
           type: "dictation",
-          question: "Listen and type: Der Aufzug ist außer Betrieb.",
+          question: "The building announcement nobody wants to hear on the fifth floor. Listen and type exactly what you hear.",
           correctAnswer: "Der Aufzug ist außer Betrieb",
-          explanation: "Perfect! 'Außer Betrieb' (out of order) is a phrase you should recognize and be able to type.",
+          explanation: "'Außer Betrieb' (out of order) — a sign-phrase and announcement-phrase in one; the exam uses it both ways.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-elevator-out.mp3"
         }
@@ -1153,6 +1183,16 @@ export const MODULE_17: Module = {
           correctAnswer: "Ich lese zuerst die Aufgabe, dann den Text",
           explanation: "Task before text — you read hunting for one detail instead of translating everything. The core Lesen strategy.",
           audioUrl: "/audio/exercises/ex17-4-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex17-4-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's sign-reading: he saw 'geschlossen' and walked in anyway, hoping. Say the pair that decides your day, cleanly: 'geöffnet … geschlossen.'",
+          questionGerman: "Sprechen Sie laut: 'geöffnet, geschlossen.'",
+          correctAnswer: "geöffnet, geschlossen",
+          explanation: "Open vs closed — Lesen Teil 1's favourite pair. Saying both aloud locks the meanings to the sounds, so the sign reads itself.",
+          audioUrl: "/audio/exercises/ex17-4-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1428,6 +1468,16 @@ export const MODULE_17: Module = {
           xpReward: 25
         },
         {
+          id: "ex17-5-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's skim: the email said 'Der Kurs findet nicht statt' and he showed up anyway. Say the whole sentence aloud and HIT the nicht: 'Der Kurs findet nicht statt.'",
+          questionGerman: "Sprechen Sie laut: 'Der Kurs findet nicht statt.'",
+          correctAnswer: "Der Kurs findet nicht statt",
+          explanation: "One skimmed-over 'nicht' flips the meaning of any Lesen text — it's the exam's favourite trap. Bonus: stattfinden is separable, so 'statt' waits at the end.",
+          audioUrl: "/audio/exercises/ex17-5-spk2-model.mp3",
+          xpReward: 25
+        },
+        {
           id: "ex17-5-prod-writing",
           type: "free-text",
           question: "Production writing: Write one Goethe listening/reading strategy sentence.",
@@ -1439,7 +1489,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-5-prod-dictation",
           type: "dictation",
-          question: "Listen and type the A1 sentence you hear.",
+          question: "Frau Weber's dictation round, exam conditions: one full A1 sentence, two plays, no mercy. Listen and type exactly what you hear.",
           audioUrl: "/audio/hoeren/module-17/ex17-5-prod-dictation.mp3",
           correctAnswer: "Ich höre die Ansage zweimal",
           explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
@@ -1802,6 +1852,16 @@ export const MODULE_17: Module = {
           correctAnswer: "Ich arbeite ruhig und schnell",
           explanation: "Calm AND fast — timed sections reward steady pace over panic sprints. Say it, then start the clock.",
           audioUrl: "/audio/exercises/ex17-6-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex17-6-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's mid-mock meltdown: halfway through Lesen he hisses 'Keine Zeit! Keine Zeit!' Breathe. Say the calm truth instead: 'Ich habe noch Zeit.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe noch Zeit.'",
+          correctAnswer: "Ich habe noch Zeit",
+          explanation: "'noch' turns panic into arithmetic — I STILL have time. Timed sections are lost to panic more often than to German; this sentence is the antidote.",
+          audioUrl: "/audio/exercises/ex17-6-spk2-model.mp3",
           xpReward: 25
         },
         {

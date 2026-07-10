@@ -42,6 +42,16 @@
     { "file": "/audio/exercises/ex12-1-spk2-model.mp3", "german": "Ich schwimme gern.", "kind": "speaking-model", "lesson": "12-1" },
     { "file": "/audio/exercises/ex12-2-spk2-model.mp3", "german": "Im Sommer schwimme ich gern.", "kind": "speaking-model", "lesson": "12-2" },
     { "file": "/audio/exercises/ex12-3-spk2-model.mp3", "german": "Hast du Lust, ins Kino zu gehen?", "kind": "speaking-model", "lesson": "12-3" },
-    { "file": "/audio/exercises/ex12-4-spk2-model.mp3", "german": "Ich kann nicht kommen, weil ich krank bin.", "kind": "speaking-model", "lesson": "12-4" }
+    { "file": "/audio/exercises/ex12-4-spk2-model.mp3", "german": "Ich kann nicht kommen, weil ich krank bin.", "kind": "speaking-model", "lesson": "12-4" },
+    { "file": "/audio/exercises/ex14-1-spk2-model.mp3", "german": "Ich wohne in der Gandhistraße 12.", "kind": "speaking-model", "lesson": "14-1" },
+    { "file": "/audio/exercises/ex14-2-spk2-model.mp3", "german": "Ich habe einen Termin.", "kind": "speaking-model", "lesson": "14-2" },
+    { "file": "/audio/exercises/ex14-3-spk2-model.mp3", "german": "Ich möchte ein Konto eröffnen.", "kind": "speaking-model", "lesson": "14-3" },
+    { "file": "/audio/exercises/ex14-4-spk2-model.mp3", "german": "Hiermit kündige ich meinen Vertrag.", "kind": "speaking-model", "lesson": "14-4" },
+    { "file": "/audio/exercises/ex17-1-spk2-model.mp3", "german": "Noch einmal, bitte.", "kind": "speaking-model", "lesson": "17-1" },
+    { "file": "/audio/exercises/ex17-2-spk2-model.mp3", "german": "Wie bitte?", "kind": "speaking-model", "lesson": "17-2" },
+    { "file": "/audio/exercises/ex17-3-spk2-model.mp3", "german": "vierzehn, vierzig", "kind": "speaking-model", "lesson": "17-3" },
+    { "file": "/audio/exercises/ex17-4-spk2-model.mp3", "german": "geöffnet, geschlossen", "kind": "speaking-model", "lesson": "17-4" },
+    { "file": "/audio/exercises/ex17-5-spk2-model.mp3", "german": "Der Kurs findet nicht statt.", "kind": "speaking-model", "lesson": "17-5" },
+    { "file": "/audio/exercises/ex17-6-spk2-model.mp3", "german": "Ich habe noch Zeit.", "kind": "speaking-model", "lesson": "17-6" }
   ]
 }

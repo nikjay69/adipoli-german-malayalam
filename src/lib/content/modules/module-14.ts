@@ -221,55 +221,43 @@ export const MODULE_14: Module = {
         },
         {
           id: "ex14-1-5",
-          type: "multiple-choice",
-          question: "If you are not married, what do you write for 'Familienstand'?",
-          options: ["ledig", "verheiratet", "geschieden", "verwitwet"],
+          type: "type-answer",
+          question: "Form line 'Familienstand:' — Kuttan is unmarried and intends to stay that way (Amma disagrees). Type what he writes (single):",
           correctAnswer: "ledig",
           explanation: "'Ledig' means single. 'Ver-heiratet' (married) comes from 'Heirat' (marriage). Getting this right affects your 'Steuerklasse' (tax class), so don't mis-fill!",
-          xpReward: 10
+          xpReward: 15
         },
         {
           id: "ex14-1-6",
-          type: "fill-blank",
-          question: "Complete: Die _____ ist 5 Ziffern lang. (The postal code is 5 digits long.) [abbreviation]",
-          options: ["PLZ", "DOB", "PIN", "ZIP"],
+          type: "type-answer",
+          question: "The imagined form wants a 5-digit code before the city name. Kuttan knows the abbreviation: 'Die ___ ist 5 Ziffern lang.' Type it:",
           correctAnswer: "PLZ",
-          explanation: "PLZ stands for Post-leit-zahl. Every German city has a 5-digit code. Berlin starts with 1, Munich with 8, etc. Mentioning the PLZ helps people know exactly which city district you mean.",
-          xpReward: 10
-        },
-        {
-          id: "ex14-1-7",
-          type: "ordering",
-          question: "Put these Anmeldung steps in the correct order:",
-          options: ["Receive your Meldebescheinigung", "Book a Termin online at the Bürgeramt", "Fill out the Anmeldeformular", "Collect documents: passport, Mietvertrag, Wohnungsgeberbestätigung", "Go to your appointment at the Bürgeramt"],
-          correctAnswer: ["Book a Termin online at the Bürgeramt", "Collect documents: passport, Mietvertrag, Wohnungsgeberbestätigung", "Fill out the Anmeldeformular", "Go to your appointment at the Bürgeramt", "Receive your Meldebescheinigung"],
-          explanation: "The logic of German Bureaucracy: 1. Get the slot (Termin), 2. Prepare the proof, 3. Show up (on time!), 4. Get the paper. No paper = no existence!",
-          xpReward: 20
+          explanation: "PLZ stands for Post-leit-zahl. Every German city has a 5-digit code — Berlin starts with 1, Munich with 8.",
+          xpReward: 15
         },
         {
           id: "ex14-1-8",
-          type: "matching",
-          question: "The address block is next — match the parts before the official sighs:",
-          options: ["die Straße", "die Hausnummer", "der Ort", "die Postleitzahl", "die Unterschrift"],
-          correctAnswer: ["street", "house number", "city / town", "postal code", "signature"],
-          explanation: "Fun fact: In Germany, the Hausnummer ALWAYS comes AFTER the street name (e.g., Mainstreet 5). Don't swap them!",
+          type: "type-answer",
+          question: "German addresses flip the Indian habit: street name FIRST, then the number. The field for that number is 'die ___'. Type it (house number):",
+          correctAnswer: "Hausnummer",
+          explanation: "In Germany the Hausnummer ALWAYS comes after the street name (Mainstraße 5, never 5 Mainstraße). Officials spot the swap instantly.",
           xpReward: 15
         },
         {
           id: "ex14-1-9",
           type: "dictation",
-          question: "Listen and type: Mein Vorname ist Arun.",
+          question: "At the imagined Bürgeramt window, the man ahead of Kuttan states his first name for the record. Listen and type exactly what you hear.",
           correctAnswer: "Mein Vorname ist Arun",
-          explanation: "Great! 'Vorname' is your first name. Keep it simple and clear on forms.",
+          explanation: "'Vorname' is your first name — the Name-before. Keep it simple and clear on forms.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-my-firstname.mp3"
         },
         {
           id: "ex14-1-10",
           type: "free-text",
-          question: "Write your date of birth in German format (Example: 15.03.1998)",
+          question: "The Geburtsdatum field stares back at Kuttan (born 15 March 1998). Write it the German way — dots, not slashes:",
           correctAnswer: "15.03.1998",
-          explanation: "Wunderbar! Remember the dots (.) instead of slashes (/). DD.MM.YYYY is the way to go!",
+          explanation: "Dots (.) instead of slashes (/), Day.Month.Year — the US order breaks German automated forms.",
           xpReward: 30
         }
       ,
@@ -281,6 +269,16 @@ export const MODULE_14: Module = {
           correctAnswer: "Können Sie mir mit dem Formular helfen, bitte",
           explanation: "'Können Sie mir ... helfen?' is polite, formal, and unlocks every Amt visit. helfen takes mir — dative.",
           audioUrl: "/audio/exercises/ex14-1-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex14-1-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: asked for his address, he says 'Ich wohne in der 12 Gandhistraße.' German puts the street FIRST, number after! Say it right: 'Ich wohne in der Gandhistraße 12.'",
+          questionGerman: "Sprechen Sie laut: 'Ich wohne in der Gandhistraße 12.'",
+          correctAnswer: "Ich wohne in der Gandhistraße 12",
+          explanation: "Straße first, Hausnummer after — the exact reverse of the Indian habit. Forms, envelopes, and Sprechen Teil 1 all test this order.",
+          audioUrl: "/audio/exercises/ex14-1-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -471,12 +469,11 @@ export const MODULE_14: Module = {
         },
         {
           id: "ex14-2-2",
-          type: "fill-blank",
-          question: "Complete: Ich brauche einen _____ bei der Ausländerbehörde. (I need an appointment...)",
-          options: ["Termin", "Ausweis", "Formular", "Brief"],
+          type: "type-answer",
+          question: "The cousin's rule number one for Germany: 'Ich brauche einen ___ bei der Ausländerbehörde.' Type the sacred word (appointment):",
           correctAnswer: "Termin",
-          explanation: "'No Termin, no entry' — that’s the golden rule of German offices. Even if the office is empty, they usually insist on a pre-booked appointment.",
-          xpReward: 10
+          explanation: "'No Termin, no entry' — the golden rule of German offices. Even if the office is empty, they usually insist on a pre-booked appointment.",
+          xpReward: 15
         },
         {
           id: "ex14-2-3",
@@ -488,31 +485,12 @@ export const MODULE_14: Module = {
           xpReward: 15
         },
         {
-          id: "ex14-2-4",
-          type: "multiple-choice",
-          question: "What does 'Unterlagen' mean?",
-          options: ["documents / paperwork", "office hours", "appointment", "signature"],
-          correctAnswer: "documents / paperwork",
-          explanation: "The magic word for your file folder. When they say 'Haben Sie Ihre Unterlagen dabei?' they want to see your certificates and contracts.",
-          xpReward: 10
-        },
-        {
           id: "ex14-2-5",
-          type: "fill-blank",
-          question: "Complete: Bitte füllen Sie das _____ aus. (Please fill out the form.)",
-          options: ["Formular", "Termin", "Ausweis", "Konto"],
+          type: "type-answer",
+          question: "The official slides a paper across the counter: 'Bitte füllen Sie das ___ aus.' Type the missing word (the form):",
           correctAnswer: "Formular",
-          explanation: "Formular (Form). The verb 'aus-füllen' (to fill out) is separable—the 'aus' jumps to the end of the instruction!",
-          xpReward: 10
-        },
-        {
-          id: "ex14-2-6",
-          type: "ordering",
-          question: "Put these steps in the correct order for visiting the Ausländerbehörde:",
-          options: ["Get your residence permit", "Collect all required documents", "Go to your appointment on time", "Book a Termin online"],
-          correctAnswer: ["Book a Termin online", "Collect all required documents", "Go to your appointment on time", "Get your residence permit"],
-          explanation: "Structure is everything. Most offices won't even talk to you without a 'Terminbestätigung' (appointment confirmation).",
-          xpReward: 20
+          explanation: "Formular (form). The verb 'aus-füllen' (to fill out) is separable — the 'aus' jumps to the end of the instruction!",
+          xpReward: 15
         },
         {
           id: "ex14-2-7",
@@ -535,18 +513,18 @@ export const MODULE_14: Module = {
         {
           id: "ex14-2-9",
           type: "dictation",
-          question: "Listen and type: Ich habe einen Termin.",
+          question: "The imagined Amt waiting room, number called — the woman at the counter opens with four confident words. Listen and type exactly what you hear.",
           correctAnswer: "Ich habe einen Termin",
-          explanation: "Perfect! This is the most important sentence when you arrive at any German office.",
+          explanation: "The most important sentence at any German office door — it's the password that opens it.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-have-appointment.mp3"
         },
         {
           id: "ex14-2-10",
           type: "free-text",
-          question: "Translate to German: 'I need a residence permit.' (residence permit = Aufenthaltserlaubnis)",
+          question: "Kuttan states his business at the Ausländerbehörde counter, rehearsed a hundred times. Type it in German — 'I need a residence permit.' (die Aufenthaltserlaubnis):",
           correctAnswer: "Ich brauche eine Aufenthaltserlaubnis",
-          explanation: "Excellent! 'Aufenthaltserlaubnis' is a long word, but you've mastered it. Don't forget 'eine' (feminine).",
+          explanation: "'Aufenthaltserlaubnis' — stay-permission, the longest word that matters most. 'eine', because it's feminine.",
           xpReward: 30
         }
       ,
@@ -558,6 +536,16 @@ export const MODULE_14: Module = {
           correctAnswer: "Ich möchte bitte einen Termin machen",
           explanation: "The Termin sentence is the key to official Germany. möchte in position 2, machen at the end, einen because Termin is masculine.",
           audioUrl: "/audio/exercises/ex14-2-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex14-2-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: at the Amt door he announces 'Ich habe ein Termin.' Termin is masculine — einen, even under bureaucratic stress! Say it right: 'Ich habe einen Termin.'",
+          questionGerman: "Sprechen Sie laut: 'Ich habe einen Termin.'",
+          correctAnswer: "Ich habe einen Termin",
+          explanation: "der Termin → einen Termin after haben. You'll say this sentence at every German counter for years — say it right from day one.",
+          audioUrl: "/audio/exercises/ex14-2-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -730,22 +718,12 @@ export const MODULE_14: Module = {
       ],
       exercises: [
         {
-          id: "ex14-3-1",
-          type: "multiple-choice",
-          question: "What is a 'Girokonto'?",
-          options: ["A checking / current account", "A savings account", "A credit card", "A loan"],
-          correctAnswer: "A checking / current account",
-          explanation: "In Germany, a 'Girokonto' is your survival account. Salary comes here, rent goes from here. It's the equivalent of a Checking or Current account.",
-          xpReward: 10
-        },
-        {
           id: "ex14-3-2",
-          type: "fill-blank",
-          question: "Complete: Ich möchte ein Konto _____. (I'd like to open an account.)",
-          options: ["eröffnen", "schließen", "kaufen", "machen"],
+          type: "type-answer",
+          question: "First stop after the Anmeldung: the imagined Sparkasse. Kuttan states his mission: 'Ich möchte ein Konto ___.' Type the formal verb (open):",
           correctAnswer: "eröffnen",
-          explanation: "'Eröffnen' is the formal verb for opening something official like a bank account or a business. Use this to sound professional at the bank counter!",
-          xpReward: 10
+          explanation: "'Eröffnen' is the formal verb for opening something official like a bank account. Plain 'öffnen' opens doors and windows — not accounts.",
+          xpReward: 15
         },
         {
           id: "ex14-3-3",
@@ -776,21 +754,11 @@ export const MODULE_14: Module = {
         },
         {
           id: "ex14-3-6",
-          type: "fill-blank",
-          question: "Complete: Wo ist der nächste _____? (Where is the nearest ATM?)",
-          options: ["Geldautomat", "Kontoauszug", "Überweisung", "Girokonto"],
+          type: "type-answer",
+          question: "Cash-only Imbiss, empty wallet — Kuttan needs a machine, fast: 'Wo ist der nächste ___?' Type the compound (ATM = money machine):",
           correctAnswer: "Geldautomat",
-          explanation: "Geld (Money) + Automat (Machine). Since Germany is very cash-heavy compared to India or the UK, you'll need to find these often!",
-          xpReward: 10
-        },
-        {
-          id: "ex14-3-7",
-          type: "ordering",
-          question: "Put the steps for opening a bank account in correct order:",
-          options: ["Receive your EC-Karte and PIN by mail", "Choose a bank (Sparkasse, N26, etc.)", "Set up Onlinebanking", "Bring passport and Meldebescheinigung to the bank", "Sign the Kontoeröffnungsantrag (account opening form)"],
-          correctAnswer: ["Choose a bank (Sparkasse, N26, etc.)", "Bring passport and Meldebescheinigung to the bank", "Sign the Kontoeröffnungsantrag (account opening form)", "Receive your EC-Karte and PIN by mail", "Set up Onlinebanking"],
-          explanation: "German banks often send the card and the PIN in TWO separate letters for security. Don't throw away the first letter thinking it's trash!",
-          xpReward: 20
+          explanation: "Geld (money) + Automat (machine). Germany is far more cash-loving than India's UPI world — you'll hunt these often. (Bonus tip: banks mail your card and PIN in TWO separate letters — don't bin the first one!)",
+          xpReward: 15
         },
         {
           id: "ex14-3-8",
@@ -804,18 +772,18 @@ export const MODULE_14: Module = {
         {
           id: "ex14-3-9",
           type: "dictation",
-          question: "Listen and type: Ich möchte ein Girokonto eröffnen.",
+          question: "The customer ahead of Kuttan at the Sparkasse states her objective in one clean sentence. Listen and type exactly what you hear.",
           correctAnswer: "Ich möchte ein Girokonto eröffnen",
-          explanation: "Great job! This is the correct way to tell the bank clerk your objective.",
+          explanation: "The exact way to tell the bank clerk your objective — Girokonto (the salary-in, rent-out survival account) plus the formal verb eröffnen.",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-open-account.mp3"
         },
         {
           id: "ex14-3-10",
           type: "free-text",
-          question: "Write in German: 'Where is the ATM?' (use Geldautomat)",
+          question: "The kulfi cart takes cash only. Ask a passerby in German — 'Where is the ATM?' (der Geldautomat):",
           correctAnswer: "Wo ist der Geldautomat",
-          explanation: "Wunderbar! 'Wo ist der Geldautomat?' is a survival must in cash-heavy Germany.",
+          explanation: "'Wo ist der Geldautomat?' — a survival must in cash-heavy Germany.",
           xpReward: 30
         }
       ,
@@ -827,6 +795,16 @@ export const MODULE_14: Module = {
           correctAnswer: "Ich möchte ein Konto eröffnen",
           explanation: "ein Konto (das) + eröffnen at the end. Say it confidently and the rest of the appointment is just forms.",
           audioUrl: "/audio/exercises/ex14-3-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex14-3-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: he tells the clerk 'Ich möchte ein Konto öffnen.' Accounts take the formal verb — eröffnen! Say it right: 'Ich möchte ein Konto eröffnen.'",
+          questionGerman: "Sprechen Sie laut: 'Ich möchte ein Konto eröffnen.'",
+          correctAnswer: "Ich möchte ein Konto eröffnen",
+          explanation: "öffnen opens doors and windows; eröffnen opens accounts, shops, and ceremonies. The er- prefix is what makes you sound like you belong at that counter.",
+          audioUrl: "/audio/exercises/ex14-3-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1014,22 +992,12 @@ export const MODULE_14: Module = {
       ],
       exercises: [
         {
-          id: "ex14-4-1",
-          type: "multiple-choice",
-          question: "What is the standard formal greeting when you don't know the recipient's name?",
-          options: ["Sehr geehrte Damen und Herren,", "Lieber Freund,", "Hallo zusammen,", "Hey,"],
-          correctAnswer: "Sehr geehrte Damen und Herren,",
-          explanation: "This is the king of formal greetings. Note: Always use a COMMA at the end, and the first word after the greeting starts with a SMALL letter (unless it's a noun)!",
-          xpReward: 10
-        },
-        {
           id: "ex14-4-2",
-          type: "fill-blank",
-          question: "Complete the closing: Mit freundlichen _____",
-          options: ["Grüßen", "Grüße", "Gruß", "Grüssen"],
+          type: "type-answer",
+          question: "Kuttan closes his letter to the Ausländerbehörde, one word missing: 'Mit freundlichen ___'. Type it:",
           correctAnswer: "Grüßen",
-          explanation: "Mit freundlichen Grüßen (With friendly regards). Pro tip: NO comma after this closing. Just your name on the next line.",
-          xpReward: 10
+          explanation: "Mit freundlichen Grüßen (With friendly regards). Pro tip: NO comma after this closing — just your name on the next line.",
+          xpReward: 15
         },
         {
           id: "ex14-4-3",
@@ -1050,31 +1018,20 @@ export const MODULE_14: Module = {
           xpReward: 15
         },
         {
-          id: "ex14-4-5",
-          type: "ordering",
-          question: "Put the parts of a formal letter in the correct order:",
-          options: ["Mit freundlichen Grüßen + Unterschrift", "Sehr geehrte Damen und Herren,", "Betreff: Terminanfrage", "Absender (your address) + Empfänger (their address) + Datum", "Ich schreibe Ihnen, weil ich einen Termin brauche."],
-          correctAnswer: ["Absender (your address) + Empfänger (their address) + Datum", "Betreff: Terminanfrage", "Sehr geehrte Damen und Herren,", "Ich schreibe Ihnen, weil ich einen Termin brauche.", "Mit freundlichen Grüßen + Unterschrift"],
-          explanation: "German formality is a ritual: Headers -> Topic -> Greeting -> Body -> Sign-off. Skipping any part makes the letter look unprofessional.",
-          xpReward: 20
-        },
-        {
           id: "ex14-4-6",
-          type: "fill-blank",
-          question: "Complete: Ich schreibe, _____ ich einen Termin brauche. (I write because I need an appointment.)",
-          options: ["weil", "dass", "wenn", "ob"],
+          type: "type-answer",
+          question: "Kuttan opens the letter body with his reason: 'Ich schreibe, ___ ich einen Termin brauche.' Type the connector (because):",
           correctAnswer: "weil",
-          explanation: "'Weil' is for reasons. Notice the verb 'brauche' at the end? That's the 'weil' effect in action!",
-          xpReward: 10
+          explanation: "'Weil' is for reasons — and notice the verb 'brauche' pushed to the end? That's the weil effect in action.",
+          xpReward: 15
         },
         {
           id: "ex14-4-7",
-          type: "multiple-choice",
-          question: "What does 'Betreff' mean in a formal letter?",
-          options: ["Subject line", "Greeting", "Closing", "Signature"],
+          type: "type-answer",
+          question: "The letter template Frau Weber shared has a line before the greeting labelled 'Betreff:'. Type in English what goes there:",
           correctAnswer: "Subject line",
-          explanation: "Betreff = subject line. It tells the reader what the letter is about, placed before the greeting.",
-          xpReward: 10
+          explanation: "Betreff = subject line. It tells the reader what the letter is about, placed before the greeting — skip it and officials may not read further.",
+          xpReward: 15
         },
         {
           id: "ex14-4-8",
@@ -1088,34 +1045,34 @@ export const MODULE_14: Module = {
         {
           id: "ex14-4-9",
           type: "dictation",
-          question: "Listen and type: Sehr geehrte Damen und Herren,",
+          question: "Frau Weber dictates the opening line of the official letter, slowly, like it's sacred. Listen and type exactly what you hear.",
           correctAnswer: "Sehr geehrte Damen und Herren",
-          explanation: "Perfect! This is the gold standard for formal greetings in letters.",
+          explanation: "The gold standard for formal letter greetings — comma at the end, and the next line starts lowercase (unless it's a noun).",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-formal-greeting.mp3"
         },
         {
           id: "ex14-4-10",
           type: "free-text",
-          question: "Write in German: 'With friendly regards' (the formal closing)",
+          question: "Sign off Kuttan's letter to the Amt the only acceptable way — type the formal closing ('With friendly regards'):",
           correctAnswer: "Mit freundlichen Grüßen",
-          explanation: "Excellent! 'Mit freundlichen Grüßen' is the correct formal sign-off. No comma after it!",
+          explanation: "'Mit freundlichen Grüßen' — the correct formal sign-off, with no comma after it.",
           xpReward: 30
         },
         {
           id: "ex14-4-11",
           type: "free-text",
-          question: "Translate to German: 'I am writing because I need help.' (use weil, help = Hilfe)",
+          question: "One line explains the whole letter. Type it in German — 'I am writing because I need help.' (weil, die Hilfe):",
           correctAnswer: "Ich schreibe, weil ich Hilfe brauche",
-          explanation: "Wunderbar! 'brauche' moves to the end of the clause because of 'weil'.",
+          explanation: "'brauche' moves to the end of the clause because of 'weil' — the verb-final rule earning its keep in Schreiben.",
           xpReward: 30
         },
         {
           id: "ex14-4-12",
           type: "free-text",
-          question: "Translate to German: 'I hereby cancel my contract.' (use kündige)",
+          question: "The gym membership from Kuttan's optimistic January must die. Type the legal phrase in German — 'I hereby cancel my contract.' (Hiermit…, kündigen):",
           correctAnswer: "Hiermit kündige ich meinen Vertrag",
-          explanation: "Great job! This is the standard legal phrase for cancellation.",
+          explanation: "'Hiermit kündige ich …' — the standard cancellation phrase. Every adult in Germany writes this letter eventually.",
           xpReward: 30
         }
       ,
@@ -1127,6 +1084,16 @@ export const MODULE_14: Module = {
           correctAnswer: "Ich warte auf Ihre Antwort",
           explanation: "'Ich warte auf Ihre Antwort' is the standard pre-closing line of formal German letters — warten auf + accusative.",
           audioUrl: "/audio/exercises/ex14-4-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex14-4-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: reading his cancellation draft aloud, he says 'Hiermit ich kündige meinen Vertrag.' Hiermit takes slot 1 — the verb comes NEXT! Say it right: 'Hiermit kündige ich meinen Vertrag.'",
+          questionGerman: "Sprechen Sie laut: 'Hiermit kündige ich meinen Vertrag.'",
+          correctAnswer: "Hiermit kündige ich meinen Vertrag",
+          explanation: "Start a sentence with Hiermit (or any adverb) and German flips subject and verb: Hiermit KÜNDIGE ICH. The inversion rule follows you all the way into legal letters.",
+          audioUrl: "/audio/exercises/ex14-4-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [

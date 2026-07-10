@@ -119,14 +119,20 @@ function auditLesson(spineModule: number, sourceModule: number, lesson: Lesson):
 
   const hasMistakeRepair = exercises.some((e) => REPAIR_RE.test(`${e.question} ${e.explanation ?? ''}`));
 
+  // Exam-drill lessons (library modules 17/18) deliberately mirror the Goethe
+  // sections, which ARE multiple-choice/matching — distribution caps don't
+  // apply to them (LESSON_QUALITY_STANDARD exam-drill profile, DECISIONS #14).
+  // Production floor, speaking >=2, repair, and scene-grounding still do.
+  const isExamDrill = sourceModule === 17 || sourceModule === 18;
+
   const fixes: string[] = [];
   if (production < 3) fixes.push(`production floor: ${production}/3`);
   if (speaking < 2) fixes.push(`speaking ${speaking}/2`);
   if (freeText < 1) fixes.push('no free-text/type-answer');
   if (dictation < 1) fixes.push('no dictation');
-  if (multipleChoice > 2) fixes.push(`MC over cap (${multipleChoice}/2)`);
-  if (fillBlank > 1) fixes.push(`fill-blank over cap (${fillBlank}/1)`);
-  if (matchingOrdering > 1) fixes.push(`matching/ordering over cap (${matchingOrdering}/1)`);
+  if (!isExamDrill && multipleChoice > 2) fixes.push(`MC over cap (${multipleChoice}/2)`);
+  if (!isExamDrill && fillBlank > 1) fixes.push(`fill-blank over cap (${fillBlank}/1)`);
+  if (!isExamDrill && matchingOrdering > 1) fixes.push(`matching/ordering over cap (${matchingOrdering}/1)`);
   if (emptyExplanations.length) fixes.push(`${emptyExplanations.length} empty explanations`);
   if (genericStems.length) fixes.push(`${genericStems.length} generic stems`);
   if (mechanicalStems.length) fixes.push(`${mechanicalStems.length} mechanical stems`);

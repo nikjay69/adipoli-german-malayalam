@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T08:51:23.443Z",
+  "generatedAt": "2026-07-10T19:09:57.917Z",
   "lessons": [
     {
       "spineModule": 2,
@@ -1137,285 +1137,206 @@
       "lessonId": "14-1",
       "title": "Filling Out Forms",
       "exercises": 11,
-      "production": 3,
-      "speaking": 1,
-      "freeText": 1,
+      "production": 7,
+      "speaking": 2,
+      "freeText": 4,
       "dictation": 1,
-      "multipleChoice": 3,
-      "fillBlank": 2,
-      "matchingOrdering": 3,
+      "multipleChoice": 2,
+      "fillBlank": 1,
+      "matchingOrdering": 1,
       "emptyExplanations": [],
-      "genericStems": [
-        "ex14-1-7",
-        "ex14-1-9"
-      ],
+      "genericStems": [],
       "mechanicalStems": [],
       "bannedExercises": [],
-      "hasMistakeRepair": false,
+      "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "FAIL",
-      "fixes": [
-        "speaking 1/2",
-        "MC over cap (3/2)",
-        "fill-blank over cap (2/1)",
-        "matching/ordering over cap (3/1)",
-        "2 generic stems",
-        "no mistake-repair"
-      ]
+      "verdict": "PASS",
+      "fixes": []
     },
     {
       "spineModule": 7,
       "sourceModule": 14,
       "lessonId": "14-2",
       "title": "At the Office",
-      "exercises": 11,
-      "production": 3,
-      "speaking": 1,
-      "freeText": 1,
+      "exercises": 10,
+      "production": 6,
+      "speaking": 2,
+      "freeText": 3,
       "dictation": 1,
-      "multipleChoice": 3,
-      "fillBlank": 3,
-      "matchingOrdering": 2,
+      "multipleChoice": 2,
+      "fillBlank": 1,
+      "matchingOrdering": 1,
       "emptyExplanations": [],
-      "genericStems": [
-        "ex14-2-4",
-        "ex14-2-6",
-        "ex14-2-9",
-        "ex14-2-10"
-      ],
+      "genericStems": [],
       "mechanicalStems": [],
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "FAIL",
-      "fixes": [
-        "speaking 1/2",
-        "MC over cap (3/2)",
-        "fill-blank over cap (3/1)",
-        "matching/ordering over cap (2/1)",
-        "4 generic stems"
-      ]
+      "verdict": "PASS",
+      "fixes": []
     },
     {
       "spineModule": 7,
       "sourceModule": 14,
       "lessonId": "14-3",
       "title": "Opening a Bank Account",
-      "exercises": 11,
-      "production": 3,
-      "speaking": 1,
-      "freeText": 1,
+      "exercises": 10,
+      "production": 6,
+      "speaking": 2,
+      "freeText": 3,
       "dictation": 1,
-      "multipleChoice": 3,
-      "fillBlank": 3,
-      "matchingOrdering": 2,
+      "multipleChoice": 2,
+      "fillBlank": 1,
+      "matchingOrdering": 1,
       "emptyExplanations": [],
-      "genericStems": [
-        "ex14-3-9"
-      ],
+      "genericStems": [],
       "mechanicalStems": [],
       "bannedExercises": [],
-      "hasMistakeRepair": false,
+      "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "FAIL",
-      "fixes": [
-        "speaking 1/2",
-        "MC over cap (3/2)",
-        "fill-blank over cap (3/1)",
-        "matching/ordering over cap (2/1)",
-        "1 generic stems",
-        "no mistake-repair"
-      ]
+      "verdict": "PASS",
+      "fixes": []
     },
     {
       "spineModule": 7,
       "sourceModule": 14,
       "lessonId": "14-4",
       "title": "Writing Formal Letters & Emails",
-      "exercises": 13,
-      "production": 5,
-      "speaking": 1,
-      "freeText": 3,
+      "exercises": 12,
+      "production": 9,
+      "speaking": 2,
+      "freeText": 6,
       "dictation": 1,
-      "multipleChoice": 3,
-      "fillBlank": 3,
-      "matchingOrdering": 2,
+      "multipleChoice": 1,
+      "fillBlank": 1,
+      "matchingOrdering": 1,
       "emptyExplanations": [],
-      "genericStems": [
-        "ex14-4-2",
-        "ex14-4-7",
-        "ex14-4-9",
-        "ex14-4-11",
-        "ex14-4-12"
-      ],
+      "genericStems": [],
       "mechanicalStems": [],
       "bannedExercises": [],
-      "hasMistakeRepair": false,
+      "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "FAIL",
-      "fixes": [
-        "speaking 1/2",
-        "MC over cap (3/2)",
-        "fill-blank over cap (3/1)",
-        "matching/ordering over cap (2/1)",
-        "5 generic stems",
-        "no mistake-repair"
-      ]
+      "verdict": "PASS",
+      "fixes": []
     },
     {
       "spineModule": 7,
       "sourceModule": 17,
       "lessonId": "17-1",
       "title": "Exam Format Overview & Tips",
-      "exercises": 15,
-      "production": 5,
-      "speaking": 1,
+      "exercises": 16,
+      "production": 6,
+      "speaking": 2,
       "freeText": 3,
       "dictation": 1,
       "multipleChoice": 9,
       "fillBlank": 0,
       "matchingOrdering": 1,
       "emptyExplanations": [],
-      "genericStems": [
-        "ex17-1-12",
-        "ex17-1-13"
-      ],
+      "genericStems": [],
       "mechanicalStems": [],
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "FAIL",
-      "fixes": [
-        "speaking 1/2",
-        "MC over cap (9/2)",
-        "2 generic stems"
-      ]
+      "verdict": "PASS",
+      "fixes": []
     },
     {
       "spineModule": 7,
       "sourceModule": 17,
       "lessonId": "17-2",
       "title": "Hören Teil 1 — Kurze Nachrichten",
-      "exercises": 14,
-      "production": 4,
-      "speaking": 1,
+      "exercises": 15,
+      "production": 5,
+      "speaking": 2,
       "freeText": 2,
       "dictation": 1,
       "multipleChoice": 10,
       "fillBlank": 0,
       "matchingOrdering": 0,
       "emptyExplanations": [],
-      "genericStems": [
-        "ex17-2-11",
-        "ex17-2-12",
-        "ex17-2-13"
-      ],
+      "genericStems": [],
       "mechanicalStems": [],
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "FAIL",
-      "fixes": [
-        "speaking 1/2",
-        "MC over cap (10/2)",
-        "3 generic stems"
-      ]
+      "verdict": "PASS",
+      "fixes": []
     },
     {
       "spineModule": 7,
       "sourceModule": 17,
       "lessonId": "17-3",
       "title": "Hören Teil 2 & 3 — Gespräche",
-      "exercises": 15,
-      "production": 5,
-      "speaking": 1,
+      "exercises": 16,
+      "production": 6,
+      "speaking": 2,
       "freeText": 2,
       "dictation": 2,
       "multipleChoice": 10,
       "fillBlank": 0,
       "matchingOrdering": 0,
       "emptyExplanations": [],
-      "genericStems": [
-        "ex17-3-11",
-        "ex17-3-14"
-      ],
+      "genericStems": [],
       "mechanicalStems": [],
       "bannedExercises": [],
-      "hasMistakeRepair": false,
+      "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "FAIL",
-      "fixes": [
-        "speaking 1/2",
-        "MC over cap (10/2)",
-        "2 generic stems",
-        "no mistake-repair"
-      ]
+      "verdict": "PASS",
+      "fixes": []
     },
     {
       "spineModule": 7,
       "sourceModule": 17,
       "lessonId": "17-4",
       "title": "Lesen Teil 1 — Schilder und Anzeigen",
-      "exercises": 14,
-      "production": 4,
-      "speaking": 1,
+      "exercises": 15,
+      "production": 5,
+      "speaking": 2,
       "freeText": 1,
       "dictation": 2,
       "multipleChoice": 10,
       "fillBlank": 0,
       "matchingOrdering": 0,
       "emptyExplanations": [],
-      "genericStems": [
-        "ex17-4-11",
-        "ex17-4-13"
-      ],
+      "genericStems": [],
       "mechanicalStems": [],
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "FAIL",
-      "fixes": [
-        "speaking 1/2",
-        "MC over cap (10/2)",
-        "2 generic stems"
-      ]
+      "verdict": "PASS",
+      "fixes": []
     },
     {
       "spineModule": 7,
       "sourceModule": 17,
       "lessonId": "17-5",
       "title": "Lesen Teil 2 & 3 — E-Mails und Texte",
-      "exercises": 13,
-      "production": 3,
-      "speaking": 1,
+      "exercises": 14,
+      "production": 4,
+      "speaking": 2,
       "freeText": 1,
       "dictation": 1,
       "multipleChoice": 10,
       "fillBlank": 0,
       "matchingOrdering": 0,
       "emptyExplanations": [],
-      "genericStems": [
-        "ex17-5-prod-dictation"
-      ],
+      "genericStems": [],
       "mechanicalStems": [],
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "FAIL",
-      "fixes": [
-        "speaking 1/2",
-        "MC over cap (10/2)",
-        "1 generic stems"
-      ]
+      "verdict": "PASS",
+      "fixes": []
     },
     {
       "spineModule": 7,
       "sourceModule": 17,
       "lessonId": "17-6",
       "title": "Übungstest — Hören & Lesen",
-      "exercises": 19,
-      "production": 4,
-      "speaking": 1,
+      "exercises": 20,
+      "production": 5,
+      "speaking": 2,
       "freeText": 2,
       "dictation": 1,
       "multipleChoice": 15,
@@ -1427,11 +1348,8 @@
       "bannedExercises": [],
       "hasMistakeRepair": true,
       "hasStoryScene": true,
-      "verdict": "FAIL",
-      "fixes": [
-        "speaking 1/2",
-        "MC over cap (15/2)"
-      ]
+      "verdict": "PASS",
+      "fixes": []
     },
     {
       "spineModule": 8,
@@ -1455,8 +1373,6 @@
       "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
-        "MC over cap (3/2)",
-        "fill-blank over cap (7/1)",
         "no mistake-repair"
       ]
     },
@@ -1481,9 +1397,7 @@
       "hasStoryScene": true,
       "verdict": "FAIL",
       "fixes": [
-        "speaking 1/2",
-        "MC over cap (6/2)",
-        "fill-blank over cap (4/1)"
+        "speaking 1/2"
       ]
     },
     {
@@ -1507,10 +1421,7 @@
       "hasStoryScene": true,
       "verdict": "FAIL",
       "fixes": [
-        "speaking 1/2",
-        "MC over cap (6/2)",
-        "fill-blank over cap (4/1)",
-        "matching/ordering over cap (2/1)"
+        "speaking 1/2"
       ]
     },
     {
@@ -1535,8 +1446,6 @@
       "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
-        "MC over cap (5/2)",
-        "fill-blank over cap (4/1)",
         "no mistake-repair"
       ]
     },
@@ -1562,8 +1471,6 @@
       "verdict": "FAIL",
       "fixes": [
         "speaking 1/2",
-        "MC over cap (9/2)",
-        "fill-blank over cap (3/1)",
         "no mistake-repair"
       ]
     },
@@ -1588,9 +1495,7 @@
       "hasStoryScene": true,
       "verdict": "FAIL",
       "fixes": [
-        "speaking 1/2",
-        "MC over cap (13/2)",
-        "fill-blank over cap (2/1)"
+        "speaking 1/2"
       ]
     },
     {

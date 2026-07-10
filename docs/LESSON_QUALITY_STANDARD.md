@@ -30,6 +30,8 @@ Every spine lesson (video + practice block) must contain:
 
 **Per-lesson distribution (for ~8 exercises):** multiple-choice ≤2 · fill-blank ≤1 · matching/ordering ≤1 · **speaking ≥2** · **free-text/type-answer ≥1** · **dictation/listening ≥1**. **Hard floor: ≥3 production exercises per lesson.** Below the floor = below launch grade.
 
+**Exam-drill profile (modules 17/18 only, DECISIONS #14):** lessons that simulate Goethe Hören/Lesen sections are exempt from the MC/fill-blank/matching caps — the real exam IS multiple-choice, and gutting the drills would make them less exam-like. Everything else still applies in full: speaking ≥2, mistake-repair, dictation, free-text, scene-grounded stems, no bare matching.
+
 **The groan test:** "Would a student groan and skip this, or actually think?" If they'd groan, delete it.
 
 ## Video lesson standard

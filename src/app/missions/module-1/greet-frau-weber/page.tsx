@@ -1,23 +1,31 @@
 'use client';
 
+// The course's first 90 seconds (LEARNER_JOURNEY): hear a German teacher →
+// say the reply ALOUD → repair one likely mistake → win. Extended from a
+// single tap-step to the full arc in Sprint 4 (DECISIONS #13).
+
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import {
   ConversationRepairStep,
+  HearStep,
   MissionShell,
   Module1NextMissionCard,
   PremiumCard,
+  ReplyAloudStep,
   useMissionStepForQA,
 } from '@/app/missions/module-2/_components/MissionUI';
-import { module1MissionById, writeCompletedModule1Mission } from '@/lib/missions/module1';
+import { module1MissionAudio, module1MissionById, writeCompletedModule1Mission } from '@/lib/missions/module1';
 import { module1AnswerFrauWeberPractice } from '@/lib/missions/module1Practice';
 
 const mission = module1MissionById.greetFrauWeber;
 const missionSteps = mission.steps;
 const practice = module1AnswerFrauWeberPractice;
+const audio = module1MissionAudio.greetFrauWeber;
 
 export default function Module1GreetingMissionPage() {
-  const [step] = useMissionStepForQA(0, missionSteps.length - 1);
+  const [step, setStep] = useMissionStepForQA(0, missionSteps.length - 1);
+  const [heard, setHeard] = useState(false);
   const [repairChoice, setRepairChoice] = useState<string | null>(null);
 
   const repairCorrect = repairChoice === practice.repair.correctChoiceId;
@@ -31,6 +39,32 @@ export default function Module1GreetingMissionPage() {
     <MissionShell currentStep={step} steps={missionSteps} railLabel={mission.railLabel} tone={mission.tone} currentModule1MissionId={mission.id}>
       <PremiumCard>
         {step === 0 && (
+          <HearStep
+            title="Frau Weber walks in."
+            instructions="Morning class at Goethe Kochi. Your teacher greets the room — listen to the German greeting set once, all the way through."
+            heard={heard}
+            onHeard={() => setHeard(true)}
+            audios={[{ src: audio.greetingSet, label: 'Frau Weber', turnCue: 'Just listen.' }]}
+            cta={<>I heard it <ArrowRight className="h-5 w-5" /></>}
+            onContinue={() => setStep(1)}
+            continueDisabled={!heard}
+          />
+        )}
+
+        {step === 1 && (
+          <ReplyAloudStep
+            title="Her eyes land on you."
+            prompt="The whole class waits. Hear the model line once — then say it ALOUD. Really aloud; whisper-German doesn't survive exam day."
+            audioSrc={audio.formalOpener}
+            audioLabel="Your line"
+            modelText={<>Guten Morgen, Frau Weber. <span className="text-[#f1d27a]">Ich lerne Deutsch.</span></>}
+            turnCue={practice.scene.turnCue}
+            cta={<>I said it aloud <ArrowRight className="h-5 w-5" /></>}
+            onContinue={() => setStep(2)}
+          />
+        )}
+
+        {step === 2 && (
           <>
             <ConversationRepairStep
               title="Morning class."
