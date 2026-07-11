@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { RotateCcw, Volume2 } from 'lucide-react';
 import { playVocabAudio } from '@/lib/audio';
 import { feedbackWrong, feedbackCombo } from '@/lib/feedback';
-import { ListenBlast } from '@/components/exercise-games/ListenBlast';
 import { WordBuilder } from '@/components/exercise-games/WordBuilder';
 import type { VocabItem } from '@/lib/content/types';
 
@@ -16,9 +15,9 @@ interface VocabDiscoveryGameProps {
 }
 
 type Phase = 'absorb' | 'challenge';
-type GameType = 'listen-blast' | 'word-builder';
+type GameType = 'listen-choice' | 'word-builder';
 
-const GAME_CYCLE: GameType[] = ['listen-blast', 'word-builder'];
+const GAME_CYCLE: GameType[] = ['listen-choice', 'word-builder'];
 
 export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDiscoveryGameProps) {
   const [phase, setPhase] = useState<Phase>('absorb');
@@ -207,11 +206,12 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
                   <RotateCcw className="h-4 w-4" /> Hear it and try again
                 </button>
               </div>
-            ) : gameType === 'listen-blast' ? (
-              <ListenBlast
+            ) : gameType === 'listen-choice' ? (
+              <VocabListenChoice
                 key={`listen-${challengeIdx}-${attemptKey}`}
-                correctWord={challengeWord.german}
-                distractors={distractors.length >= 3 ? distractors : [...distractors, 'Hallo', 'Danke', 'Bitte'].slice(0, 3)}
+                vocab={challengeWord}
+                distractors={distractors}
+                insertAt={challengeIdx % 4}
                 onResult={handleChallengeResult}
               />
             ) : (
@@ -226,6 +226,70 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
           </motion.div>
         )}
       </AnimatePresence>
+    </div>
+  );
+}
+
+function VocabListenChoice({
+  vocab,
+  distractors,
+  insertAt,
+  onResult,
+}: {
+  vocab: VocabItem;
+  distractors: string[];
+  insertAt: number;
+  onResult: (correct: boolean) => void;
+}) {
+  const [heard, setHeard] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const options = distractors.slice(0, 3);
+  options.splice(Math.min(insertAt, options.length), 0, vocab.german);
+
+  const play = async () => {
+    if (playing) return;
+    setPlaying(true);
+    setFailed(false);
+    try {
+      await playVocabAudio(vocab.id);
+      setHeard(true);
+    } catch {
+      setFailed(true);
+    } finally {
+      setPlaying(false);
+    }
+  };
+
+  return (
+    <div className="rounded-2xl border border-white/12 bg-black/50 p-4 shadow-xl backdrop-blur-md">
+      <p className="text-center text-sm font-black text-white">Which word did you hear?</p>
+      <button
+        type="button"
+        onClick={play}
+        disabled={playing}
+        className="mx-auto mt-3 flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-[#d4a520]/35 bg-[#d4a520]/12 px-5 py-3 text-sm font-black text-[#efd26d] disabled:opacity-50"
+      >
+        <Volume2 className={`h-5 w-5 ${playing ? 'animate-pulse' : ''}`} />
+        {playing ? 'Listening…' : failed ? 'Audio unavailable — retry' : heard ? 'Listen again' : 'Listen to the word'}
+      </button>
+
+      <div className="mt-4 grid grid-cols-2 gap-2">
+        {options.map((option) => (
+          <button
+            key={option}
+            type="button"
+            disabled={!heard}
+            onClick={() => onResult(option === vocab.german)}
+            className="min-h-12 rounded-xl border border-white/15 bg-white/8 px-3 py-3 text-sm font-black text-white transition hover:border-[#d4a520]/50 disabled:opacity-35"
+          >
+            {option}
+          </button>
+        ))}
+      </div>
+      <p className="mt-3 text-center text-xs font-semibold text-white/45">
+        {heard ? 'Choose the exact word.' : 'Options unlock after the audio.'}
+      </p>
     </div>
   );
 }

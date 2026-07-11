@@ -94,7 +94,10 @@ export default function Module1GermanSoundsPracticePage() {
                     <article key={item.id} className="rounded-2xl border border-white/10 bg-black/16 p-4">
                       <p className="text-xs font-black uppercase tracking-[0.18em] text-white/42">{item.mode}</p>
                       <p className="mt-2 text-base font-black text-white">{item.prompt}</p>
-                      <p className="mt-2 text-sm font-semibold text-[#bcf7d0]">Expected: {item.expected}</p>
+                      <details className="mt-3 rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                        <summary className="cursor-pointer text-sm font-black text-[#f1d27a]">Reveal after you answer</summary>
+                        <p className="mt-2 text-sm font-semibold text-[#bcf7d0]">Expected: {item.expected}</p>
+                      </details>
                     </article>
                   ))}
                 </div>

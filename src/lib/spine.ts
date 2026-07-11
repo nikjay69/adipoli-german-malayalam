@@ -292,6 +292,8 @@ export function getActiveRecovery(inputs: SpineInputs): ActiveRecovery | null {
       title: card.title,
       mustDo: card.mustDo,
       timeBoxMinutes: card.timeBoxMinutes,
+      libraryHref: card.libraryHref,
+      libraryLabel: card.libraryLabel,
       retestHref: '/missions/module-1/checkpoint',
     };
   }

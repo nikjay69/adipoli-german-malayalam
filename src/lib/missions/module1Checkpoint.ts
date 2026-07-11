@@ -1,3 +1,12 @@
+import {
+  scoreSpineCheckpoint,
+  type CheckpointItem,
+  type CheckpointScore,
+  type CheckpointSection,
+  type RecoveryCard,
+  type SpineCheckpoint,
+} from '@/lib/spine-checkpoints';
+
 export type Module1CheckpointSectionId = 'hoeren' | 'sprechen' | 'lesen' | 'schreiben' | 'grammarVocab';
 
 export type Module1CheckpointTag =
@@ -15,436 +24,237 @@ export type Module1CheckpointTag =
   | 'grammar:formal_context'
   | 'vocab:first_sentence_chunks';
 
-export type Module1CheckpointItem = {
-  id: string;
-  sectionId: Module1CheckpointSectionId;
-  mode: 'listen' | 'speak' | 'match' | 'write' | 'choose';
-  prompt: string;
-  expected: string;
-  points: number;
-  weaknessTags: Module1CheckpointTag[];
-  requiredForPass?: boolean;
-};
-
-export type Module1CheckpointSection = {
-  id: Module1CheckpointSectionId;
-  title: string;
-  instruction: string;
-  maxPoints: number;
-  items: Module1CheckpointItem[];
-};
-
-export type Module1CheckpointRecoveryCard = {
-  weaknessTag: Module1CheckpointTag;
-  title: string;
-  mustDo: string[];
-  output: string;
-  timeBoxMinutes: number;
-  retest: string;
-};
-
-export type Module1CheckpointScore = {
-  earnedPoints: number;
-  totalPoints: number;
-  percent: number;
-  state: 'PASS' | 'WEAK' | 'FAIL';
-  label: string;
-  sectionScores: Record<Module1CheckpointSectionId, { earned: number; total: number }>;
-  failedTags: Module1CheckpointTag[];
-  nextAction: string;
-};
+export type Module1CheckpointItem = CheckpointItem;
+export type Module1CheckpointSection = CheckpointSection;
+export type Module1CheckpointRecoveryCard = RecoveryCard;
+export type Module1CheckpointScore = Omit<CheckpointScore, 'failedTags'> & { failedTags: Module1CheckpointTag[] };
 
 export const MODULE1_CHECKPOINT_RESULT_STORAGE_KEY = 'adipoli:module1:checkpointResult';
 
-export const module1CheckpointSections: Module1CheckpointSection[] = [
-  {
-    id: 'hoeren',
-    title: 'Hören — greetings',
-    instruction: 'Hear/read the prompt. Mark only what you can answer without notes.',
-    maxPoints: 10,
-    items: [
-      {
-        id: 'hoeren-guten-morgen',
-        sectionId: 'hoeren',
-        mode: 'listen',
-        prompt: 'Frau Weber says: Guten Morgen.',
-        expected: 'Guten Morgen. / Guten Morgen, Frau Weber.',
-        points: 2,
-        weaknessTags: ['hoeren:greetings', 'vocab:greeting_set'],
-        requiredForPass: true,
-      },
-      {
-        id: 'hoeren-guten-tag',
-        sectionId: 'hoeren',
-        mode: 'listen',
-        prompt: 'Frau Weber says: Guten Tag.',
-        expected: 'Guten Tag.',
-        points: 2,
-        weaknessTags: ['hoeren:greetings', 'vocab:greeting_set'],
-      },
-      {
-        id: 'hoeren-guten-abend',
-        sectionId: 'hoeren',
-        mode: 'listen',
-        prompt: 'Frau Weber says: Guten Abend.',
-        expected: 'Guten Abend.',
-        points: 2,
-        weaknessTags: ['hoeren:greetings', 'vocab:greeting_set'],
-      },
-      {
-        id: 'hoeren-auf-wiedersehen',
-        sectionId: 'hoeren',
-        mode: 'listen',
-        prompt: 'Frau Weber says: Auf Wiedersehen.',
-        expected: 'Auf Wiedersehen.',
-        points: 2,
-        weaknessTags: ['hoeren:greetings', 'vocab:greeting_set'],
-      },
-      {
-        id: 'hoeren-lernen-sie-deutsch',
-        sectionId: 'hoeren',
-        mode: 'listen',
-        prompt: 'Frau Weber asks: Lernen Sie Deutsch?',
-        expected: 'Ja. Ich lerne Deutsch.',
-        points: 2,
-        weaknessTags: ['hoeren:question_recognition', 'vocab:first_sentence_chunks'],
-      },
-    ],
-  },
-  {
-    id: 'sprechen',
-    title: 'Sprechen — first reply',
-    instruction: 'Say the three chunks aloud. Self-mark honestly; this is diagnostic.',
-    maxPoints: 10,
-    items: [
-      {
-        id: 'sprechen-three-chunks',
-        sectionId: 'sprechen',
-        mode: 'speak',
-        prompt: 'Say: Guten Morgen, Frau Weber. Ich lerne Deutsch. Auf Wiedersehen.',
-        expected: 'All three chunks without freezing.',
-        points: 4,
-        weaknessTags: ['sprechen:greeting_reply'],
-        requiredForPass: true,
-      },
-      {
-        id: 'sprechen-understandable',
-        sectionId: 'sprechen',
-        mode: 'speak',
-        prompt: 'Pronunciation is mostly understandable.',
-        expected: 'Clear enough for a teacher/examiner.',
-        points: 2,
-        weaknessTags: ['pronunciation:ch_sch', 'pronunciation:w_v'],
-      },
-      {
-        id: 'sprechen-formal-tone',
-        sectionId: 'sprechen',
-        mode: 'speak',
-        prompt: 'Formal/polite tone is safe with Frau Weber.',
-        expected: 'Uses Frau Weber / Guten Tag / Auf Wiedersehen safely.',
-        points: 2,
-        weaknessTags: ['sprechen:formality', 'grammar:formal_context'],
-      },
-      {
-        id: 'sprechen-repeat-after-correction',
-        sectionId: 'sprechen',
-        mode: 'speak',
-        prompt: 'Can repeat once after correction.',
-        expected: 'No freezing after a correction prompt.',
-        points: 2,
-        weaknessTags: ['sprechen:greeting_reply'],
-      },
-    ],
-  },
-  {
-    id: 'lesen',
-    title: 'Lesen — recognise lines',
-    instruction: 'Match German to meaning without looking back at the lesson.',
-    maxPoints: 10,
-    items: [
-      {
-        id: 'lesen-guten-morgen',
-        sectionId: 'lesen',
-        mode: 'match',
-        prompt: 'Guten Morgen',
-        expected: 'Good morning.',
-        points: 2,
-        weaknessTags: ['lesen:greeting_recognition', 'vocab:greeting_set'],
-      },
-      {
-        id: 'lesen-guten-tag',
-        sectionId: 'lesen',
-        mode: 'match',
-        prompt: 'Guten Tag',
-        expected: 'Good day / hello.',
-        points: 2,
-        weaknessTags: ['lesen:greeting_recognition', 'vocab:greeting_set'],
-      },
-      {
-        id: 'lesen-auf-wiedersehen',
-        sectionId: 'lesen',
-        mode: 'match',
-        prompt: 'Auf Wiedersehen',
-        expected: 'Goodbye.',
-        points: 2,
-        weaknessTags: ['lesen:greeting_recognition', 'vocab:greeting_set'],
-      },
-      {
-        id: 'lesen-ich-lerne-deutsch',
-        sectionId: 'lesen',
-        mode: 'match',
-        prompt: 'Ich lerne Deutsch',
-        expected: 'I am learning German.',
-        points: 2,
-        weaknessTags: ['vocab:first_sentence_chunks'],
-      },
-      {
-        id: 'lesen-deutsch-language',
-        sectionId: 'lesen',
-        mode: 'match',
-        prompt: 'Deutsch',
-        expected: 'German language.',
-        points: 2,
-        weaknessTags: ['vocab:deutsch_vs_deutschland'],
-      },
-    ],
-  },
-  {
-    id: 'schreiben',
-    title: 'Schreiben — first sentence',
-    instruction: 'Write from memory: Ich lerne Deutsch.',
-    maxPoints: 5,
-    items: [
-      {
-        id: 'schreiben-ich-capital',
-        sectionId: 'schreiben',
-        mode: 'write',
-        prompt: 'Ich is present and capitalised.',
-        expected: 'Ich',
-        points: 2,
-        weaknessTags: ['schreiben:first_sentence', 'grammar:capitalisation_basics'],
-      },
-      {
-        id: 'schreiben-lerne',
-        sectionId: 'schreiben',
-        mode: 'write',
-        prompt: 'lerne is correct enough.',
-        expected: 'lerne',
-        points: 1,
-        weaknessTags: ['schreiben:first_sentence', 'vocab:first_sentence_chunks'],
-      },
-      {
-        id: 'schreiben-deutsch-capital',
-        sectionId: 'schreiben',
-        mode: 'write',
-        prompt: 'Deutsch is correct and capitalised.',
-        expected: 'Deutsch',
-        points: 1,
-        weaknessTags: ['schreiben:first_sentence', 'grammar:capitalisation_basics'],
-      },
-      {
-        id: 'schreiben-whole-sentence',
-        sectionId: 'schreiben',
-        mode: 'write',
-        prompt: 'Whole sentence is understandable.',
-        expected: 'Ich lerne Deutsch.',
-        points: 1,
-        weaknessTags: ['schreiben:first_sentence'],
-      },
-    ],
-  },
-  {
-    id: 'grammarVocab',
-    title: 'Grammar/vocab — safety traps',
-    instruction: 'Mark the tiny facts you can answer cleanly.',
-    maxPoints: 10,
-    items: [
-      {
-        id: 'grammar-deutsch-deutschland',
-        sectionId: 'grammarVocab',
-        mode: 'choose',
-        prompt: 'Deutsch is the language; Deutschland is the country.',
-        expected: 'True.',
-        points: 2,
-        weaknessTags: ['vocab:deutsch_vs_deutschland'],
-      },
-      {
-        id: 'grammar-formal-teacher',
-        sectionId: 'grammarVocab',
-        mode: 'choose',
-        prompt: 'Safer with a teacher/examiner: Hallo or Guten Tag?',
-        expected: 'Guten Tag.',
-        points: 2,
-        weaknessTags: ['grammar:formal_context', 'sprechen:formality'],
-      },
-      {
-        id: 'grammar-gute-nacht',
-        sectionId: 'grammarVocab',
-        mode: 'choose',
-        prompt: 'When do you use Gute Nacht?',
-        expected: 'Going to sleep, not a normal evening hello.',
-        points: 2,
-        weaknessTags: ['vocab:greeting_set'],
-      },
-      {
-        id: 'grammar-ich-meaning',
-        sectionId: 'grammarVocab',
-        mode: 'choose',
-        prompt: 'What does Ich mean?',
-        expected: 'I.',
-        points: 2,
-        weaknessTags: ['vocab:first_sentence_chunks'],
-      },
-      {
-        id: 'grammar-lernen-meaning',
-        sectionId: 'grammarVocab',
-        mode: 'choose',
-        prompt: 'What does lernen mean?',
-        expected: 'To learn.',
-        points: 2,
-        weaknessTags: ['vocab:first_sentence_chunks'],
-      },
-    ],
-  },
-];
+export const module1AdministeredCheckpoint: SpineCheckpoint = {
+  moduleId: 1,
+  title: 'First German moment',
+  passRule: '70%+, Hören and Sprechen both at least 50%, and the full greeting produced aloud.',
+  sectionFloorForPass: { hoeren: 50, sprechen: 50 },
+  sections: [
+    {
+      id: 'hoeren',
+      title: 'Hören — greetings in the room',
+      instruction: 'Listen before answering. Each clip plays twice maximum.',
+      items: [
+        {
+          id: 'm1-h-greeting-set',
+          sectionId: 'hoeren',
+          mode: 'listen',
+          prompt: 'Catch all three greetings, in order.',
+          expected: 'Guten Morgen · Guten Tag · Hallo',
+          points: 2,
+          weaknessTags: ['hoeren:greetings', 'vocab:greeting_set'],
+          task: {
+            kind: 'type',
+            question: 'Play the audio. Type the three greetings in the order you hear them.',
+            accepted: ['Guten Morgen Guten Tag Hallo', 'Guten Morgen, Guten Tag, Hallo'],
+            audioUrl: '/audio/tts/v1-3-1/v1-3-1-line-1.mp3',
+            placeholder: 'Greeting 1, greeting 2, greeting 3',
+          },
+        },
+        {
+          id: 'm1-h-formal-opener',
+          sectionId: 'hoeren',
+          mode: 'listen',
+          prompt: 'Understand Frau Weber’s morning exchange.',
+          expected: 'Formal morning greeting + I am learning German.',
+          points: 2,
+          weaknessTags: ['hoeren:greetings', 'hoeren:question_recognition', 'vocab:first_sentence_chunks'],
+          task: {
+            kind: 'choice',
+            question: 'Play the audio. What does the learner communicate?',
+            options: [
+              'A formal morning greeting, then “I am learning German.”',
+              'A casual goodbye, then “I live in Germany.”',
+              'An evening greeting, then “I speak English.”',
+              'An apology, then “Please speak slowly.”',
+            ],
+            correctAnswer: 'A formal morning greeting, then “I am learning German.”',
+            audioUrl: '/audio/tts/v1-3-1/v1-3-1-line-3.mp3',
+          },
+        },
+        {
+          id: 'm1-h-polite-exit',
+          sectionId: 'hoeren',
+          mode: 'listen',
+          prompt: 'Recognise a polite exit.',
+          expected: 'Thank you very much. Goodbye.',
+          points: 2,
+          weaknessTags: ['hoeren:greetings', 'vocab:greeting_set'],
+          task: {
+            kind: 'choice',
+            question: 'Play the audio. What is happening?',
+            options: ['Someone thanks and leaves politely', 'Someone asks for help', 'Someone introduces their name', 'Someone orders breakfast'],
+            correctAnswer: 'Someone thanks and leaves politely',
+            audioUrl: '/audio/tts/v1-4-1/v1-4-1-line-0.mp3',
+          },
+        },
+      ],
+    },
+    {
+      id: 'sprechen',
+      title: 'Sprechen — reply without freezing',
+      instruction: 'Produce first. The model stays hidden until after your attempt.',
+      items: [
+        {
+          id: 'm1-s-full-greeting',
+          sectionId: 'sprechen',
+          mode: 'speak',
+          prompt: 'Deliver the full classroom reply.',
+          expected: 'Guten Morgen, Frau Weber. Ich lerne Deutsch.',
+          points: 4,
+          weaknessTags: ['sprechen:greeting_reply', 'sprechen:formality', 'pronunciation:w_v'],
+          requiredForPass: true,
+          task: {
+            kind: 'production',
+            action: 'say',
+            question: 'Frau Weber greets you at 9 AM. Reply aloud with a greeting and say that you are learning German.',
+            speechTarget: 'Guten Morgen Frau Weber Ich lerne Deutsch',
+            modelAnswer: 'Guten Morgen, Frau Weber. Ich lerne Deutsch.',
+            modelAudioUrl: '/audio/tts/v1-3-1/v1-3-1-line-3.mp3',
+            criteria: ['Both sentences said aloud', 'Formal Frau Weber address used', 'Understandable without a long freeze'],
+          },
+        },
+        {
+          id: 'm1-s-polite-exit',
+          sectionId: 'sprechen',
+          mode: 'speak',
+          prompt: 'Close the exchange politely.',
+          expected: 'Vielen Dank. Auf Wiedersehen.',
+          points: 2,
+          weaknessTags: ['sprechen:greeting_reply', 'sprechen:formality', 'pronunciation:ch_sch'],
+          task: {
+            kind: 'production',
+            action: 'say',
+            question: 'Class is over. Thank Frau Weber and say goodbye aloud.',
+            speechTarget: 'Vielen Dank Auf Wiedersehen',
+            modelAnswer: 'Vielen Dank. Auf Wiedersehen.',
+            modelAudioUrl: '/audio/tts/v1-4-1/v1-4-1-line-0.mp3',
+            criteria: ['Both chunks said aloud', 'Auf Wiedersehen used instead of a casual Tschüss'],
+          },
+        },
+      ],
+    },
+    {
+      id: 'lesen',
+      title: 'Lesen — read the situation',
+      instruction: 'Read once and choose the meaning that fits.',
+      items: [
+        {
+          id: 'm1-l-morning-teacher',
+          sectionId: 'lesen',
+          mode: 'match',
+          prompt: 'Guten Morgen, Frau Weber.',
+          expected: 'A respectful morning greeting to the teacher.',
+          points: 1.5,
+          weaknessTags: ['lesen:greeting_recognition', 'grammar:formal_context'],
+          task: {
+            kind: 'choice',
+            question: '“Guten Morgen, Frau Weber.” fits which situation?',
+            options: ['Greeting your teacher at 9 AM', 'Leaving your friend at night', 'Ordering at a bakery', 'Asking someone’s name'],
+            correctAnswer: 'Greeting your teacher at 9 AM',
+          },
+        },
+        {
+          id: 'm1-l-deutsch',
+          sectionId: 'lesen',
+          mode: 'match',
+          prompt: 'Ich lerne Deutsch.',
+          expected: 'I am learning German.',
+          points: 1.5,
+          weaknessTags: ['lesen:greeting_recognition', 'vocab:deutsch_vs_deutschland', 'vocab:first_sentence_chunks'],
+          task: {
+            kind: 'choice',
+            question: 'What does “Ich lerne Deutsch.” mean?',
+            options: ['I am learning German', 'I live in Germany', 'I speak with a German person', 'I am travelling to Germany'],
+            correctAnswer: 'I am learning German',
+          },
+        },
+      ],
+    },
+    {
+      id: 'schreiben',
+      title: 'Schreiben — first sentence',
+      instruction: 'Type it from memory. Capitalisation counts.',
+      items: [
+        {
+          id: 'm1-w-first-sentence',
+          sectionId: 'schreiben',
+          mode: 'write',
+          prompt: 'Write: I am learning German.',
+          expected: 'Ich lerne Deutsch.',
+          points: 3,
+          weaknessTags: ['schreiben:first_sentence', 'grammar:capitalisation_basics', 'vocab:first_sentence_chunks'],
+          task: {
+            kind: 'type',
+            question: 'Without looking back, type “I am learning German” in German.',
+            accepted: ['Ich lerne Deutsch'],
+            placeholder: 'German sentence',
+          },
+        },
+      ],
+    },
+    {
+      id: 'grammarVocab',
+      title: 'Grammar & vocab — adult-safe choices',
+      instruction: 'Choose the line that fits the person and situation.',
+      items: [
+        {
+          id: 'm1-g-formal-teacher',
+          sectionId: 'grammarVocab',
+          mode: 'choose',
+          prompt: 'Teacher you just met: formal or casual?',
+          expected: 'Formal Frau Weber / Sie-world German.',
+          points: 1,
+          weaknessTags: ['grammar:formal_context', 'sprechen:formality'],
+          task: {
+            kind: 'choice',
+            question: 'You meet Frau Weber for the first time. Which line is safest?',
+            options: ['Guten Morgen, Frau Weber.', 'Hey Weber!', 'Na, du?', 'Tschüss, Anna!'],
+            correctAnswer: 'Guten Morgen, Frau Weber.',
+          },
+        },
+        {
+          id: 'm1-g-danke-bitte',
+          sectionId: 'grammarVocab',
+          mode: 'choose',
+          prompt: 'Danke → Bitte.',
+          expected: 'Thank you → You’re welcome.',
+          points: 1,
+          weaknessTags: ['vocab:greeting_set', 'grammar:formal_context'],
+          task: {
+            kind: 'choice',
+            question: 'A classmate says “Danke.” What is the natural reply?',
+            options: ['Bitte.', 'Gute Nacht.', 'Deutschland.', 'Ich heiße.'],
+            correctAnswer: 'Bitte.',
+          },
+        },
+      ],
+    },
+  ],
+  recoveryCards: [
+    { weaknessTag: 'hoeren:greetings', title: 'Hear the greeting moment', mustDo: ['Replay the greeting set twice.', 'Write the three greetings in order.', 'Retest with audio hidden until play.'], output: '3/3 greetings caught.', timeBoxMinutes: 10, retest: 'Catch all three on the first play.', libraryHref: '/missions/module-1/greet-frau-weber?start=listen', libraryLabel: 'Greeting mission' },
+    { weaknessTag: 'hoeren:question_recognition', title: 'Catch the full classroom line', mustDo: ['Replay the formal opener.', 'Shadow it twice.', 'Retest the meaning.'], output: 'Full line understood.', timeBoxMinutes: 8, retest: 'Hear once and explain the line.', libraryHref: '/missions/module-1/first-mini-conversation?start=listen', libraryLabel: 'Mini-conversation mission' },
+    { weaknessTag: 'sprechen:greeting_reply', title: 'Reply without freezing', mustDo: ['Hear the model once.', 'Shadow it three times.', 'Record one clean reply.'], output: 'One complete spoken reply.', timeBoxMinutes: 10, retest: 'Full greeting without a long pause.', libraryHref: '/missions/module-1/greet-frau-weber?start=listen', libraryLabel: 'Greeting mission' },
+    { weaknessTag: 'sprechen:formality', title: 'Formal classroom German', mustDo: ['Practise Frau Weber + Guten Morgen.', 'Practise Vielen Dank + Auf Wiedersehen.', 'Run one full exchange.'], output: 'Formal opening and exit.', timeBoxMinutes: 9, retest: 'Choose and say both formal lines.', libraryHref: '/missions/module-1/polite-exit?start=listen', libraryLabel: 'Polite exit mission' },
+    { weaknessTag: 'lesen:greeting_recognition', title: 'Read the greeting set', mustDo: ['Read five greeting cards.', 'Match each to time/person.', 'Retest two new situations.'], output: '5/5 situations matched.', timeBoxMinutes: 8, retest: 'Two unseen greeting situations.', libraryHref: '/practice/review', libraryLabel: '5-min review' },
+    { weaknessTag: 'schreiben:first_sentence', title: 'Write the first sentence', mustDo: ['Copy Ich lerne Deutsch once.', 'Cover it and write from memory twice.', 'Retest after five minutes.'], output: 'One clean sentence from memory.', timeBoxMinutes: 8, retest: 'Ich lerne Deutsch with capitals.', libraryHref: '/missions/module-1/first-mini-conversation?start=listen', libraryLabel: 'Mini-conversation mission' },
+    { weaknessTag: 'vocab:deutsch_vs_deutschland', title: 'Deutsch or Deutschland', mustDo: ['Say: Ich lerne Deutsch.', 'Say: Ich wohne in Deutschland.', 'Contrast both without notes.'], output: 'Language and country separated.', timeBoxMinutes: 6, retest: 'Choose the right word in two new lines.', libraryHref: '/practice/review', libraryLabel: '5-min review' },
+    { weaknessTag: 'grammar:formal_context', title: 'Choose the adult-safe line', mustDo: ['Sort teacher vs friend greetings.', 'Say both formal lines aloud.', 'Retest with one new person.'], output: 'Formal choice automatic.', timeBoxMinutes: 7, retest: 'Teacher, stranger, friend — 3/3.', libraryHref: '/missions/module-1/formal-greetings', libraryLabel: 'Formal greeting practice' },
+  ],
+};
 
+export const module1CheckpointSections = module1AdministeredCheckpoint.sections;
 export const module1CheckpointItems = module1CheckpointSections.flatMap((section) => section.items);
-
-export const module1CheckpointRecoveryCards: Module1CheckpointRecoveryCard[] = [
-  {
-    weaknessTag: 'hoeren:greetings',
-    title: 'Hören — greetings',
-    mustDo: ['Replay 10 greeting lines.', 'Choose the response without subtitles.', 'Retest 5 lines.'],
-    output: '4/5 greeting responses correct.',
-    timeBoxMinutes: 12,
-    retest: 'Hear 5 greetings; answer 4 correctly.',
-  },
-  {
-    weaknessTag: 'hoeren:question_recognition',
-    title: 'Question recognition',
-    mustDo: ['Replay Lernen Sie Deutsch?', 'Answer Ja. Ich lerne Deutsch. five times.', 'Retest with one hidden prompt.'],
-    output: 'One clean spoken answer to a question.',
-    timeBoxMinutes: 8,
-    retest: 'Hear Lernen Sie Deutsch? and answer without looking.',
-  },
-  {
-    weaknessTag: 'sprechen:greeting_reply',
-    title: 'Sprechen — first reply',
-    mustDo: ['Repeat Guten Morgen, Frau Weber. five times.', 'Repeat Ja. Ich lerne Deutsch. five times.', 'Say the full three-chunk line once.'],
-    output: 'One spoken greeting exchange.',
-    timeBoxMinutes: 10,
-    retest: 'Frau Weber greets once; answer aloud.',
-  },
-  {
-    weaknessTag: 'sprechen:formality',
-    title: 'Formal safer default',
-    mustDo: ['Sort 8 contexts into formal/casual.', 'Say Guten Tag and Auf Wiedersehen for the formal ones.', 'Retest 4 contexts.'],
-    output: '4 formal/casual choices correct.',
-    timeBoxMinutes: 8,
-    retest: 'Teacher/examiner context gets Guten Tag, not Hallo/Tschüss.',
-  },
-  {
-    weaknessTag: 'pronunciation:ch_sch',
-    title: 'ch / sch repair',
-    mustDo: ['Shadow ich, Deutsch, Tschüss, schön.', 'Identify ich vs isch in 8 lines.', 'Retest 5 words.'],
-    output: '5-word shadow set.',
-    timeBoxMinutes: 15,
-    retest: 'Say ich and schön distinctly enough.',
-  },
-  {
-    weaknessTag: 'pronunciation:w_v',
-    title: 'w / v repair',
-    mustDo: ['Compare Weber, Wasser, Visum, viel.', 'Say German w like English v.', 'Retest 6 words.'],
-    output: '6-word contrast set.',
-    timeBoxMinutes: 10,
-    retest: 'Say Weber and Visum without swapping them.',
-  },
-  {
-    weaknessTag: 'schreiben:first_sentence',
-    title: 'Write first sentence',
-    mustDo: ['Copy Ich lerne Deutsch. twice.', 'Hide it and write from memory.', 'Correct capital letters.'],
-    output: 'One clean written sentence.',
-    timeBoxMinutes: 8,
-    retest: 'Write Ich lerne Deutsch. from memory.',
-  },
-  {
-    weaknessTag: 'vocab:greeting_set',
-    title: 'Greeting set',
-    mustDo: ['Match 8 greeting/politeness words.', 'Use 4 in a mini-dialogue.', 'Retest 6 words.'],
-    output: '6/6 greeting match.',
-    timeBoxMinutes: 10,
-    retest: 'Choose the correct greeting in 6 short contexts.',
-  },
-  {
-    weaknessTag: 'vocab:deutsch_vs_deutschland',
-    title: 'Deutsch vs Deutschland',
-    mustDo: ['Write Deutsch = language.', 'Write Deutschland = country.', 'Say Ich lerne Deutsch. twice.'],
-    output: 'No language/country swap.',
-    timeBoxMinutes: 6,
-    retest: 'Pick Deutsch for language in 3 examples.',
-  },
-  {
-    weaknessTag: 'vocab:first_sentence_chunks',
-    title: 'First sentence chunks',
-    mustDo: ['Point to Ich = I.', 'Point to lerne = learn.', 'Say Ich lerne Deutsch. five times.'],
-    output: 'Chunk meaning recall.',
-    timeBoxMinutes: 7,
-    retest: 'Explain the sentence chunks without notes.',
-  },
-];
-
-const emptySectionScores = module1CheckpointSections.reduce((scores, section) => {
-  scores[section.id] = { earned: 0, total: section.maxPoints };
-  return scores;
-}, {} as Record<Module1CheckpointSectionId, { earned: number; total: number }>);
+export const module1CheckpointRecoveryCards = module1AdministeredCheckpoint.recoveryCards;
 
 export function scoreModule1Checkpoint(passedItemIds: string[]): Module1CheckpointScore {
-  const passed = new Set(passedItemIds);
-  const sectionScores = module1CheckpointSections.reduce((scores, section) => {
-    scores[section.id] = {
-      earned: section.items.reduce((sum, item) => sum + (passed.has(item.id) ? item.points : 0), 0),
-      total: section.maxPoints,
-    };
-    return scores;
-  }, { ...emptySectionScores } as Record<Module1CheckpointSectionId, { earned: number; total: number }>);
-
-  const totalPoints = module1CheckpointSections.reduce((sum, section) => sum + section.maxPoints, 0);
-  const earnedPoints = Object.values(sectionScores).reduce((sum, section) => sum + section.earned, 0);
-  const percent = Math.round((earnedPoints / totalPoints) * 100);
-
-  const failedTags = Array.from(new Set(
-    module1CheckpointItems
-      .filter((item) => !passed.has(item.id))
-      .flatMap((item) => item.weaknessTags)
-  ));
-
-  const hoerenFailed = sectionScores.hoeren.earned < 6 || !passed.has('hoeren-guten-morgen');
-  const sprechenFailed = sectionScores.sprechen.earned < 4 || !passed.has('sprechen-three-chunks');
-  const hardFail = percent < 60 || hoerenFailed || !passed.has('sprechen-three-chunks');
-  const weak = !hardFail && (percent < 70 || sprechenFailed || sectionScores.schreiben.earned < 3);
-  const state: Module1CheckpointScore['state'] = hardFail ? 'FAIL' : weak ? 'WEAK' : 'PASS';
-
-  const label = state === 'PASS'
-    ? 'Pass. Start Module 2.'
-    : state === 'WEAK'
-      ? 'Weak pass. Do one recovery, then start Module 2.'
-      : 'Recovery gate. Fix the first weak spot before Module 2.';
-
-  const firstRecovery = module1CheckpointRecoveryCards.find((card) => failedTags.includes(card.weaknessTag));
-  const nextAction = state === 'PASS'
-    ? 'Start Module 2 self-introduction.'
-    : firstRecovery
-      ? `${firstRecovery.title}: ${firstRecovery.mustDo[0]} ${firstRecovery.timeBoxMinutes}m.`
-      : 'Redo the checkpoint after one 10m review block.';
-
-  return {
-    earnedPoints,
-    totalPoints,
-    percent,
-    state,
-    label,
-    sectionScores,
-    failedTags,
-    nextAction,
-  };
+  const score = scoreSpineCheckpoint(module1AdministeredCheckpoint, passedItemIds);
+  return { ...score, failedTags: score.failedTags as Module1CheckpointTag[] };
 }

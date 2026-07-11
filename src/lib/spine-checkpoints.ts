@@ -20,7 +20,7 @@ export type CheckpointTask =
   /** Typed answer, matched with answer-match normalization — auto-scored. audioUrl = play-first dictation. */
   | { kind: 'type'; question: string; accepted: string[]; audioUrl?: string; placeholder?: string }
   /** Real production (say/write) → reveal model answer → honest rubric self-score (>=3 passes). */
-  | { kind: 'production'; action: 'say' | 'write'; question: string; modelAnswer: string; modelAudioUrl?: string; criteria: string[] }
+  | { kind: 'production'; action: 'say' | 'write'; question: string; modelAnswer: string; modelAudioUrl?: string; criteria: string[]; speechTarget?: string }
   /** Derived from real records (mock-gate results / simulator runs) — no self-report. */
   | { kind: 'auto'; question: string; source: AutoTaskSource };
 
@@ -74,6 +74,8 @@ export type SpineCheckpoint = {
   passRule: string;
   sections: CheckpointSection[];
   recoveryCards: RecoveryCard[];
+  /** Optional hard section floors. Falling below one makes the checkpoint FAIL. */
+  sectionFloorForPass?: Partial<Record<SkillSectionId, number>>;
 };
 
 export type CheckpointScore = {
@@ -539,7 +541,9 @@ export function scoreSpineCheckpoint(checkpoint: SpineCheckpoint, passedItemIds:
   ));
 
   const requiredMissed = allItems.some((item) => item.requiredForPass && !passed.has(item.id));
-  const state: CheckpointScore['state'] = percent < 60 || requiredMissed ? 'FAIL' : percent < 70 ? 'WEAK' : 'PASS';
+  const sectionFloorMissed = Object.entries(checkpoint.sectionFloorForPass || {}).some(([sectionId, floor]) =>
+    (sectionPercents[sectionId] ?? 0) < (floor ?? 0));
+  const state: CheckpointScore['state'] = percent < 60 || requiredMissed || sectionFloorMissed ? 'FAIL' : percent < 70 ? 'WEAK' : 'PASS';
 
   const isFinal = checkpoint.moduleId === 8;
   const label = state === 'PASS'
