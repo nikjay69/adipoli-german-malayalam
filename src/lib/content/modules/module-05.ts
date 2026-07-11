@@ -29,10 +29,10 @@ export const MODULE_5: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Kuttan's Desk (Home Office)",
+          name: "Imagined: Kuttan's Desk (Home Office)",
           sceneType: "home",
           timeOfDay: "morning",
-          description: "You're at your desk in the WG, surrounded by books and your laptop. Stefan walks in and asks what you're up to. 'Ich lerne Deutsch!' you say proudly. This desk is your battleground for mastering the German present tense. Every verb has a pattern, and you're about to crack it, machane!",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. You're at your desk in the WG, surrounded by books and your laptop. Stefan walks in and asks what you're up to. 'Ich lerne Deutsch!' you say proudly. This desk is your battleground for mastering the German present tense. Every verb has a pattern, and you're about to crack it, machane!",
         },
         narrative: {
           previousRecap: "You've successfully introduced your family. Now, let's learn how to describe everything you DO in Germany!",
@@ -720,10 +720,10 @@ export const MODULE_5: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Local Supermarket (Edeka/Rewe)",
+          name: "Imagined: Local Supermarket (Edeka/Rewe)",
           sceneType: "market",
           timeOfDay: "afternoon",
-          description: "The aisles are filled with fresh produce, bread, and of course, a massive 'Pfand' machine for bottles. You're here to buy ingredients for a group dinner. To explain what you're doing, you need 'Trennbare Verben' — the verbs that split like a coconut, machane! One part stays with the subject, and the other flies to the end.",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. The aisles are filled with fresh produce, bread, and of course, a massive 'Pfand' machine for bottles. You're here to buy ingredients for a group dinner. To explain what you're doing, you need 'Trennbare Verben' — the verbs that split like a coconut, machane! One part stays with the subject, and the other flies to the end.",
         },
         narrative: {
           previousRecap: "You've survived the morning rush. now, let's head out and get some shopping done using the 'split' verbs!",

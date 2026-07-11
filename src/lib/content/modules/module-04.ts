@@ -771,10 +771,10 @@ export const MODULE_4: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "WG Hallway & Storage Area",
+          name: "Imagined: WG Hallway & Storage Area",
           sceneType: "home",
           timeOfDay: "morning",
-          description: "The hallway is a bit cluttered after the weekend. Jackets, bags, and umbrellas are everywhere. Stefan is trying to tidy up and is asking who owns what. It's the ultimate test of 'mein' vs 'meine', and 'dein' vs 'seine'. Time to claim your stuff, machane!",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. The hallway is a bit cluttered after the weekend. Jackets, bags, and umbrellas are everywhere. Stefan is trying to tidy up and is asking who owns what. It's the ultimate test of 'mein' vs 'meine', and 'dein' vs 'seine'. Time to claim your stuff, machane!",
         },
         narrative: {
           previousRecap: "You've survived the people-watching challenge at the park. Now, let's sort out your belongings in the WG!",
@@ -1084,10 +1084,10 @@ export const MODULE_4: Module = {
       xpReward: 180,
       storyScene: {
         setting: {
-          name: "WG Kitchen, The Sticky Note Challenge",
+          name: "Imagined: WG Kitchen, The Sticky Note Challenge",
           sceneType: "home",
           timeOfDay: "afternoon",
-          description: "The kitchen is covered in colorful Post-its. Stefan has challenge you to label every object with its correct article: der, die, or das. It feels like a high-stakes puzzle game. One wrong article and the logic of the German language collapses (okay, not really, but it feels like it, machane!).",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. The kitchen is covered in colorful Post-its. Stefan has challenge you to label every object with its correct article: der, die, or das. It feels like a high-stakes puzzle game. One wrong article and the logic of the German language collapses (okay, not really, but it feels like it, machane!).",
         },
         narrative: {
           previousRecap: "You've sorted out the possessives in the hallway. Now, it's time to tackle the big one — the three-headed monster of German articles!",
@@ -1433,10 +1433,10 @@ export const MODULE_4: Module = {
       xpReward: 200,
       storyScene: {
         setting: {
-          name: "WG Kitchen, Friday Dinner",
+          name: "Imagined: WG Kitchen, Friday Dinner",
           sceneType: "home",
           timeOfDay: "evening",
-          description: "Pasta is on the table, and the vibe is relaxed. Stefan and Lara are curious about your life in Kerala. 'Erzähl uns von deiner Familie,' (Tell us about your family), Lara says. This is your moment to bring it all together — names, ages, looks, and jobs. Every family word you've learned is now a tool for connection.",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Pasta is on the table, and the vibe is relaxed. Stefan and Lara are curious about your life in Kerala. 'Erzähl uns von deiner Familie,' (Tell us about your family), Lara says. This is your moment to bring it all together — names, ages, looks, and jobs. Every family word you've learned is now a tool for connection.",
         },
         narrative: {
           previousRecap: "You've survived the article challenge in the kitchen. Now, it's time for the final project — a complete family introduction!",

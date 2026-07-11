@@ -2,7 +2,7 @@
 // Every moment in a lesson is a GameMoment — either a scene, dialogue, or game.
 // There are NO passive reading screens. Everything is interactive.
 
-import type { Exercise, VocabItem, StoryScene } from '@/lib/content/types';
+import type { Exercise, Video, VocabItem } from '@/lib/content/types';
 import type { KuttanMoodImage } from '@/components/character/KuttanImage';
 
 // ── Scene Types ──────────────────────────────────────────────
@@ -11,6 +11,7 @@ export type GameMomentType =
   | 'scene'           // Full-screen scene with dialogue overlay
   | 'dialogue'        // Character dialogue with choices
   | 'word-discover'   // Discover a new word through interaction
+  | 'teach'           // App-native teaching while recorded video is pending
   | 'game'            // A mini-game challenge
   | 'reaction'        // Brief Kuttan reaction (auto-advances in 1.5s)
   | 'victory'         // Lesson complete celebration
@@ -39,6 +40,9 @@ export interface GameMoment {
   vocabList?: VocabItem[];
   /** Which game to use for discovery: listen-match, tap-reveal, catch */
   discoveryGame?: 'listen-match' | 'tap-reveal' | 'word-catch' | 'memory';
+
+  // App-native teaching (video content remains useful before recording ships)
+  video?: Video;
 
   // Game challenge (for 'game' type)
   exercise?: Exercise;
@@ -77,43 +81,25 @@ export const SCENE_IMAGES: Record<string, string> = {
 
 // ── Game Type Selection ──────────────────────────────────────
 
-// Counter to rotate game types and prevent repetition
-let lastGameType = '';
-
-/** Pick the best game type for an exercise — rotates to avoid repetition */
+/** Pick a stable presentation. Production types are rendered directly. */
 export function pickGameType(exercise: Exercise): GameMoment['gameType'] {
-  const candidates: GameMoment['gameType'][] = [];
-
   switch (exercise.type) {
     case 'multiple-choice':
-      candidates.push('word-ninja', 'listen-blast', 'quiz-show');
-      if (/der|die|das|article/i.test(exercise.question)) candidates.push('article-sort');
-      break;
+      return /der|die|das|article/i.test(exercise.question) ? 'article-sort' : 'quiz-show';
     case 'fill-blank':
-      candidates.push(exercise.options?.length ? 'word-ninja' : 'word-builder', 'listen-blast');
-      break;
+      return exercise.options?.length ? 'word-bank' : 'word-builder';
     case 'type-answer':
     case 'free-text':
-      candidates.push('word-builder', 'word-ninja');
-      break;
+      return 'word-builder';
     case 'dictation':
-      candidates.push('listen-blast');
-      break;
+      return 'listen-blast';
     case 'matching':
-      candidates.push('memory-flip');
-      break;
+      return 'memory-flip';
     case 'ordering':
-      candidates.push('word-builder');
-      break;
+      return 'word-builder';
     default:
-      candidates.push('word-ninja', 'listen-blast');
+      return 'quiz-show';
   }
-
-  // Avoid repeating the same game type
-  const filtered = candidates.filter(c => c !== lastGameType);
-  const pick = filtered.length > 0 ? filtered[Math.floor(Math.random() * filtered.length)] : candidates[0];
-  lastGameType = pick || 'swipe';
-  return pick;
 }
 
 /** Pick a discovery game type — rotates to avoid repetition */

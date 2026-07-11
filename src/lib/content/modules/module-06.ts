@@ -29,10 +29,10 @@ export const MODULE_6: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Local Bäckerei Schmidt",
+          name: "Imagined: Local Bäckerei Schmidt",
           sceneType: "bakery",
           timeOfDay: "morning",
-          description: "The smell of fresh Brot and Brötchen is everywhere. The counter is filled with loaves of all shapes and sizes — 300 varieties! It feels like a high-stakes puzzle trying to choose just one. For a Malayali, bread is usually a side, but here it's the king of the table. Time to learn your staples, machane!",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. The smell of fresh Brot and Brötchen is everywhere. The counter is filled with loaves of all shapes and sizes — 300 varieties! It feels like a high-stakes puzzle trying to choose just one. For a Malayali, bread is usually a side, but here it's the king of the table. Time to learn your staples, machane!",
         },
         narrative: {
           previousRecap: "You've mastered the daily routine. Now, let's fuel up! Food is the heart of every culture, and Germany is no different.",
@@ -702,10 +702,10 @@ export const MODULE_6: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Gasthaus 'Zum Hirschen'",
+          name: "Imagined: Gasthaus 'Zum Hirschen'",
           sceneType: "restaurant",
           timeOfDay: "evening",
-          description: "A cozy, traditional German restaurant with wooden tables and a warm atmosphere. The menu (Speisekarte) is filled with hearty dishes. Stefan is across from you, and the waiter is approaching. It's time to put your German to the ultimate test: ordering a full meal and handled the bill like a local, machane!",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. A cozy, traditional German restaurant with wooden tables and a warm atmosphere. The menu (Speisekarte) is filled with hearty dishes. Stefan is across from you, and the waiter is approaching. It's time to put your German to the ultimate test: ordering a full meal and handled the bill like a local, machane!",
         },
         narrative: {
           previousRecap: "You've survived the breakfast drinks. Now, it's time for the main event — a real German dinner!",

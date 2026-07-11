@@ -27,10 +27,10 @@ export const MODULE_8: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "The WG (First Apartment Tour)",
+          name: "Imagined: The WG (First Apartment Tour)",
           sceneType: "home",
           timeOfDay: "afternoon",
-          description: "Your new WG (Wohngemeinschaft) is spacious and light. Stefan is showing you around. Each room has a different vibe — the cozy living room, the busy kitchen, and your own private sanctuary. But before you step further, there's a sacred German ritual to follow: the shoe-swap in the Flur. Time to name your territory, machane!",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Your new WG (Wohngemeinschaft) is spacious and light. Stefan is showing you around. Each room has a different vibe — the cozy living room, the busy kitchen, and your own private sanctuary. But before you step further, there's a sacred German ritual to follow: the shoe-swap in the Flur. Time to name your territory, machane!",
         },
         narrative: {
           previousRecap: "You've survived the shopping mall. Now, let's settle into your new German home!",
@@ -409,10 +409,10 @@ export const MODULE_8: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Your New Bedroom",
+          name: "Imagined: Your New Bedroom",
           sceneType: "home",
           timeOfDay: "afternoon",
-          description: "Boxes are scattered everywhere. You've just finished assembling your bed and desk (assemble cheyyan IKEA instructions help cheythilla, but German grammar will!). Now you need to decide where everything goes. Is the lamp on the table? Are the shoes under the bed? This is Dative Case training in action, machane!",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Boxes are scattered everywhere. You've just finished assembling your bed and desk (assemble cheyyan IKEA instructions help cheythilla, but German grammar will!). Now you need to decide where everything goes. Is the lamp on the table? Are the shoes under the bed? This is Dative Case training in action, machane!",
         },
         narrative: {
           previousRecap: "You've seen the whole flat. Now, let's make your room a home!",
@@ -764,10 +764,10 @@ export const MODULE_8: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "WG Kitchen (Late Night Chat)",
+          name: "Imagined: WG Kitchen (Late Night Chat)",
           sceneType: "home",
           timeOfDay: "evening",
-          description: "Stefan and Lara are sharing some snacks in the kitchen. They're telling you stories about their own 'WG-Casting' experiences — it sounds like a reality TV show! You also see a laptop open with some apartment ads. Time to learn the code of the German housing market, machane!",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Stefan and Lara are sharing some snacks in the kitchen. They're telling you stories about their own 'WG-Casting' experiences — it sounds like a reality TV show! You also see a laptop open with some apartment ads. Time to learn the code of the German housing market, machane!",
         },
         narrative: {
           previousRecap: "You've arranged your own room. Now, let's learn how to find one in the first place!",
@@ -1089,10 +1089,10 @@ export const MODULE_8: Module = {
       xpReward: 180,
       storyScene: {
         setting: {
-          name: "WG Desk (Writing Session)",
+          name: "Imagined: WG Desk (Writing Session)",
           sceneType: "home",
           timeOfDay: "evening",
-          description: "You're sitting at your desk, the glow of your laptop lighting up the room. Your friend Arjun just moved to Germany and is struggling to get a reply for apartments. 'Machane, help me write a proper German email!' he says. This is your chance to master formal structures and 'es gibt' once and for all!",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. You're sitting at your desk, the glow of your laptop lighting up the room. Your friend Arjun just moved to Germany and is struggling to get a reply for apartments. 'Machane, help me write a proper German email!' he says. This is your chance to master formal structures and 'es gibt' once and for all!",
         },
         narrative: {
           previousRecap: "You've decoded the apartment ads. now, let's write the message that gets you through the door!",

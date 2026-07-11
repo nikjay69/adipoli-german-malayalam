@@ -2,8 +2,7 @@
 
 import { useState, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Volume2 } from 'lucide-react';
-import { speakGerman } from '@/lib/audio/useGermanTTS';
+import { RotateCcw, Volume2 } from 'lucide-react';
 import { playVocabAudio } from '@/lib/audio';
 import { feedbackWrong, feedbackCombo } from '@/lib/feedback';
 import { ListenBlast } from '@/components/exercise-games/ListenBlast';
@@ -27,6 +26,8 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
   const [challengeIdx, setChallengeIdx] = useState(0);
   const [score, setScore] = useState(0);
   const [combo, setCombo] = useState(0);
+  const [needsRepair, setNeedsRepair] = useState(false);
+  const [attemptKey, setAttemptKey] = useState(0);
   // Last tapped word — its pre-generated illustration is revealed above the grid.
   const [focused, setFocused] = useState<VocabItem | null>(null);
   const [focusImgFailed, setFocusImgFailed] = useState(false);
@@ -41,8 +42,7 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
   // surprise jumps while audio/meaning is still being processed.
 
   const handleWordTap = useCallback((vocab: VocabItem) => {
-    // Pre-rendered native audio first; browser TTS only if the file is missing.
-    playVocabAudio(vocab.id).catch(() => { try { speakGerman(vocab.german, 0.85); } catch {} });
+    playVocabAudio(vocab.id).catch(() => { /* QA reports missing review audio. */ });
     setFocusImgFailed(false);
     setFocused(vocab);
     setTappedWords(prev => new Set(prev).add(vocab.id));
@@ -57,6 +57,8 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
     } else {
       setCombo(0);
       feedbackWrong();
+      setNeedsRepair(true);
+      return;
     }
 
     setTimeout(() => {
@@ -65,7 +67,7 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
       } else {
         setChallengeIdx(i => i + 1);
       }
-    }, correct ? 600 : 1000);
+    }, 600);
   }, [combo, challengeIdx, totalChallenges, score, onComplete]);
 
   // Current challenge word and game type
@@ -189,17 +191,32 @@ export function VocabDiscoveryGame({ vocabList, sceneHint, onComplete }: VocabDi
               {combo > 1 && <span className="text-[10px] font-black text-[#d4a520] ml-1">{combo}x🔥</span>}
             </div>
 
-            {/* Render the REAL game component */}
-            {gameType === 'listen-blast' && (
+            {needsRepair ? (
+              <div className="rounded-2xl border border-[#e9a23b]/30 bg-black/55 p-4 text-center backdrop-blur-md">
+                <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#f1c36d]">Repair the word</p>
+                <p className="mt-2 text-2xl font-black text-white">{challengeWord.german}</p>
+                <p className="mt-1 text-sm text-white/65">{challengeWord.english}</p>
+                <button
+                  onClick={() => {
+                    playVocabAudio(challengeWord.id).catch(() => {});
+                    setNeedsRepair(false);
+                    setAttemptKey((value) => value + 1);
+                  }}
+                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#d4a520] px-4 py-3 text-sm font-black text-[#182218]"
+                >
+                  <RotateCcw className="h-4 w-4" /> Hear it and try again
+                </button>
+              </div>
+            ) : gameType === 'listen-blast' ? (
               <ListenBlast
+                key={`listen-${challengeIdx}-${attemptKey}`}
                 correctWord={challengeWord.german}
                 distractors={distractors.length >= 3 ? distractors : [...distractors, 'Hallo', 'Danke', 'Bitte'].slice(0, 3)}
                 onResult={handleChallengeResult}
               />
-            )}
-
-            {gameType === 'word-builder' && (
+            ) : (
               <WordBuilder
+                key={`builder-${challengeIdx}-${attemptKey}`}
                 answer={challengeWord.german}
                 hint={challengeWord.english}
                 onResult={handleChallengeResult}

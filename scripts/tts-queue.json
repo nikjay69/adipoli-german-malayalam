@@ -52,6 +52,13 @@
     { "file": "/audio/exercises/ex17-3-spk2-model.mp3", "german": "vierzehn, vierzig", "kind": "speaking-model", "lesson": "17-3" },
     { "file": "/audio/exercises/ex17-4-spk2-model.mp3", "german": "geöffnet, geschlossen", "kind": "speaking-model", "lesson": "17-4" },
     { "file": "/audio/exercises/ex17-5-spk2-model.mp3", "german": "Der Kurs findet nicht statt.", "kind": "speaking-model", "lesson": "17-5" },
-    { "file": "/audio/exercises/ex17-6-spk2-model.mp3", "german": "Ich habe noch Zeit.", "kind": "speaking-model", "lesson": "17-6" }
+    { "file": "/audio/exercises/ex17-6-spk2-model.mp3", "german": "Ich habe noch Zeit.", "kind": "speaking-model", "lesson": "17-6" },
+    { "file": "/audio/exercises/ex18-1-spk2-model.mp3", "german": "Straße.", "kind": "speaking-model", "lesson": "18-1" },
+    { "file": "/audio/exercises/ex18-2-spk2-model.mp3", "german": "Viele Grüße.", "kind": "speaking-model", "lesson": "18-2" },
+    { "file": "/audio/exercises/ex18-3-spk2-model.mp3", "german": "Ich bin fünfundzwanzig Jahre alt.", "kind": "speaking-model", "lesson": "18-3" },
+    { "file": "/audio/exercises/ex18-4-spk2-model.mp3", "german": "Am Wochenende spiele ich Cricket.", "kind": "speaking-model", "lesson": "18-4" },
+    { "file": "/audio/exercises/ex18-5-spk2-model.mp3", "german": "Können Sie mir bitte das Formular geben?", "kind": "speaking-model", "lesson": "18-5" },
+    { "file": "/audio/exercises/ex18-6-spk2-model.mp3", "german": "Entschuldigung, ich habe eine Frage.", "kind": "speaking-model", "lesson": "18-6" },
+    { "file": "/audio/exercises/ex18-7-spk2-model.mp3", "german": "Ich kann Deutsch!", "kind": "speaking-model", "lesson": "18-7" }
   ]
 }

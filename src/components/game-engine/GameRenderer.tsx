@@ -1,17 +1,18 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Volume2, SkipForward } from 'lucide-react';
-import { KuttanImage } from '@/components/character/KuttanImage';
-import type { KuttanMoodImage } from '@/components/character/KuttanImage';
-import { GameButton } from '@/components/game';
-import { Confetti } from '@/components/game';
-import { ComboMeter } from '@/components/game/ComboMeter';
-import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop, ArticleSort, MemoryFlip, QuizShow, SpeedRound, WordNinja, ListenBlast, WordBuilder } from '@/components/exercise-games';
-import { speakGerman } from '@/lib/audio/useGermanTTS';
-import { feedbackCombo, feedbackComboBreak, feedbackWrong, feedbackCelebration } from '@/lib/feedback';
-import type { GameMoment, GameChoice } from '@/lib/game-engine/types';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowRight, BookOpen, Headphones, RotateCcw, Volume2, X } from 'lucide-react';
+import { KuttanImage, type KuttanMoodImage } from '@/components/character/KuttanImage';
+import { BubblePop, FreeTextInput, QuizShow, WordBank } from '@/components/exercise-games';
+import { Confetti, GameButton } from '@/components/game';
+import { SpeakButton } from '@/components/speaking';
+import { RichContentRenderer } from '@/components/learn/RichContentRenderer';
+import { playAudio } from '@/lib/audio';
+import { matchesAnswer, primaryAnswer } from '@/lib/answer-match';
+import { feedbackCombo, feedbackComboBreak, feedbackWrong } from '@/lib/feedback';
+import type { Exercise } from '@/lib/content/types';
+import type { GameChoice, GameMoment } from '@/lib/game-engine/types';
 import { VocabDiscoveryGame } from './VocabDiscoveryGame';
 
 interface GameRendererProps {
@@ -21,9 +22,9 @@ interface GameRendererProps {
 }
 
 /**
- * The Game Renderer — visual novel style lesson player.
- * Every screen is either a brief scene moment or an interactive game.
- * No passive reading. No "Next" buttons on content screens.
+ * The spine lesson renderer. It preserves the author-written order and keeps
+ * production exercises as production: learners type dictation, write answers,
+ * and speak aloud instead of receiving an unrelated arcade reskin.
  */
 export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps) {
   const [idx, setIdx] = useState(0);
@@ -31,105 +32,127 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
   const [total, setTotal] = useState(0);
   const [combo, setCombo] = useState(0);
   const [maxCombo, setMaxCombo] = useState(0);
+  const [repairCount, setRepairCount] = useState(0);
   const [confetti, setConfetti] = useState(false);
+  const [attemptKey, setAttemptKey] = useState(0);
+  const [gameResult, setGameResult] = useState<'wrong' | null>(null);
   const [choiceResult, setChoiceResult] = useState<{ correct: boolean; response: string; mood: string } | null>(null);
+  const countedMoments = useRef(new Set<string>());
+  const masteredMoments = useRef(new Set<string>());
 
-  const m = moments[idx];
-  const progress = ((idx + 1) / moments.length) * 100;
+  const moment = moments[idx];
+  const progress = moments.length > 0 ? ((idx + 1) / moments.length) * 100 : 0;
+
+  const resetMomentState = useCallback(() => {
+    setChoiceResult(null);
+    setGameResult(null);
+    setAttemptKey((value) => value + 1);
+  }, []);
 
   const advance = useCallback(() => {
-    setChoiceResult(null);
+    resetMomentState();
     if (idx >= moments.length - 1) {
       onComplete(score, total, maxCombo);
     } else {
-      setIdx(p => p + 1);
+      setIdx((value) => value + 1);
     }
-  }, [idx, moments.length, score, total, maxCombo, onComplete]);
+  }, [idx, maxCombo, moments.length, onComplete, resetMomentState, score, total]);
+
+  const countMomentOnce = useCallback(() => {
+    if (!moment || countedMoments.current.has(moment.id)) return;
+    countedMoments.current.add(moment.id);
+    setTotal((value) => value + 1);
+  }, [moment]);
 
   const handleCorrect = useCallback(() => {
-    setTotal(p => p + 1);
-    const c = combo + 1;
-    setCombo(c);
-    setMaxCombo(p => Math.max(p, c));
-    setScore(p => p + 1);
-    feedbackCombo(c);
+    if (!moment) return;
+    countMomentOnce();
+    if (!masteredMoments.current.has(moment.id)) {
+      masteredMoments.current.add(moment.id);
+      setScore((value) => value + 1);
+    }
+    const nextCombo = combo + 1;
+    setCombo(nextCombo);
+    setMaxCombo((value) => Math.max(value, nextCombo));
+    feedbackCombo(nextCombo);
     setConfetti(true);
-    setTimeout(() => setConfetti(false), 800);
-    setTimeout(advance, 1000);
-  }, [combo, advance]);
+    window.setTimeout(() => setConfetti(false), 700);
+    window.setTimeout(advance, 900);
+  }, [advance, combo, countMomentOnce, moment]);
 
   const handleWrong = useCallback(() => {
-    setTotal(p => p + 1);
-    if (combo > 2) feedbackComboBreak(); else feedbackWrong();
+    countMomentOnce();
+    if (combo > 2) feedbackComboBreak();
+    else feedbackWrong();
     setCombo(0);
-    setTimeout(advance, 1500);
-  }, [combo, advance]);
+    setRepairCount((value) => value + 1);
+    setGameResult('wrong');
+  }, [combo, countMomentOnce]);
 
   const handleGameResult = useCallback((correct: boolean) => {
-    if (correct) handleCorrect(); else handleWrong();
+    if (correct) handleCorrect();
+    else handleWrong();
   }, [handleCorrect, handleWrong]);
 
   const handleChoice = useCallback((choice: GameChoice) => {
-    setTotal(p => p + 1);
+    if (!moment) return;
+    countMomentOnce();
     if (choice.isCorrect) {
-      setScore(p => p + 1);
-      const c = combo + 1;
-      setCombo(c);
-      setMaxCombo(p => Math.max(p, c));
-      feedbackCombo(c);
+      if (!masteredMoments.current.has(moment.id)) {
+        masteredMoments.current.add(moment.id);
+        setScore((value) => value + 1);
+      }
+      const nextCombo = combo + 1;
+      setCombo(nextCombo);
+      setMaxCombo((value) => Math.max(value, nextCombo));
+      feedbackCombo(nextCombo);
       setConfetti(true);
-      setTimeout(() => setConfetti(false), 800);
-    } else {
-      if (combo > 2) feedbackComboBreak(); else feedbackWrong();
-      setCombo(0);
+      window.setTimeout(() => setConfetti(false), 700);
+      setChoiceResult({ correct: true, response: choice.response, mood: choice.kuttanMood });
+      window.setTimeout(advance, 1100);
+      return;
     }
-    setChoiceResult({ correct: choice.isCorrect, response: choice.response, mood: choice.kuttanMood });
-    setTimeout(advance, 800);
-  }, [combo, advance]);
 
-  // Auto-advance for reaction moments
+    if (combo > 2) feedbackComboBreak();
+    else feedbackWrong();
+    setCombo(0);
+    setRepairCount((value) => value + 1);
+    setChoiceResult({ correct: false, response: choice.response, mood: choice.kuttanMood });
+  }, [advance, combo, countMomentOnce, moment]);
+
   useEffect(() => {
-    if (m?.type === 'reaction' && m.autoAdvanceMs) {
-      const t = setTimeout(advance, m.autoAdvanceMs);
-      return () => clearTimeout(t);
-    }
-  }, [idx, m, advance]);
+    if (moment?.type !== 'reaction' || !moment.autoAdvanceMs) return;
+    const timer = window.setTimeout(advance, moment.autoAdvanceMs);
+    return () => window.clearTimeout(timer);
+  }, [advance, moment]);
 
-  // Scene moments: no auto-advance, user taps to start
+  if (!moment) return null;
 
-  // Auto-speak vocab
-  useEffect(() => {
-    if (m?.type === 'word-discover' && m.vocab) {
-      setTimeout(() => { try { speakGerman(m.vocab!.german, 0.85); } catch {} }, 500);
-    }
-  }, [idx, m]);
-
-  if (!m) return null;
+  const sceneLabel = moment.dialogue?.speaker || 'Adipoli German';
 
   return (
-    <div className="fixed inset-0 flex flex-col bg-[#0d1a0d] overflow-hidden">
-      <Confetti isActive={confetti} duration={800} />
+    <div className="fixed inset-0 flex flex-col overflow-hidden bg-[#0d1a0d]">
+      <Confetti isActive={confetti} duration={700} />
 
-      {/* Scene background — full screen. Per-lesson painterly backdrop with a
-          stock fallback if the generated scene file is missing (DECISIONS #9). */}
-      {m.sceneImage && (
+      {moment.sceneImage && (
         <div className="absolute inset-0">
           <img
-            src={m.sceneImage}
+            src={moment.sceneImage}
             alt=""
-            onError={(e) => {
-              const img = e.currentTarget;
-              if (!img.dataset.fellBack) { img.dataset.fellBack = '1'; img.src = '/images/university_library.png'; }
+            onError={(event) => {
+              const image = event.currentTarget;
+              if (!image.dataset.fellBack) {
+                image.dataset.fellBack = '1';
+                image.src = '/images/university_library.png';
+              }
             }}
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#071107] via-black/55 to-black/30" />
         </div>
       )}
 
-      {/* Living celebration backdrop on the victory screen (ambient Veo loop,
-          DECISIONS #9). Silently absent if the file isn't present. */}
-      {m.type === 'victory' && (
+      {moment.type === 'victory' && (
         <div className="absolute inset-0">
           <video
             src="/videos/scenes/celebration-lights.mp4"
@@ -137,248 +160,410 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
             loop
             muted
             playsInline
-            className="h-full w-full object-cover opacity-70"
+            className="h-full w-full object-cover opacity-65"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/30" />
         </div>
       )}
 
-      {/* Top bar — minimal, over the scene */}
-      <div className="relative z-20 px-4 pt-3 pb-1 flex items-center gap-3">
-        <motion.button whileTap={{ scale: 0.9 }} onClick={onExit}
-          className="w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
-          <X className="w-4 h-4 text-white/70" />
-        </motion.button>
-        <div className="flex-1 h-1.5 bg-white/15 rounded-full overflow-hidden">
-          <motion.div className="h-full bg-gradient-to-r from-[#d4a520] to-[#27ae60] rounded-full"
-            animate={{ width: `${progress}%` }} transition={{ duration: 0.3 }} />
-        </div>
-        {combo > 1 && (
-          <motion.span initial={{ scale: 1.5 }} animate={{ scale: 1 }}
-            className="text-xs font-black text-[#d4a520]">{combo}x🔥</motion.span>
-        )}
+      <header className="relative z-20 flex items-center gap-3 px-4 pb-2 pt-3">
         <motion.button
           whileTap={{ scale: 0.9 }}
-          onClick={advance}
-          className="h-8 px-2.5 rounded-full bg-black/40 backdrop-blur-sm flex items-center gap-1 text-[11px] font-semibold text-white/60 hover:text-white/90"
-          aria-label="Skip this moment"
+          onClick={onExit}
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/45 backdrop-blur-md"
+          aria-label="Leave lesson"
         >
-          Skip <SkipForward className="w-3 h-3" />
+          <X className="h-4 w-4 text-white/75" />
         </motion.button>
-      </div>
-
-      {/* Main content area — bottom half */}
-      <div className="relative z-10 flex-1 flex flex-col justify-end">
-        <AnimatePresence mode="wait">
+        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/15">
           <motion.div
-            key={m.id}
-            initial={{ opacity: 0, y: 30 }}
+            className="h-full rounded-full bg-gradient-to-r from-[#d4a520] to-[#27ae60]"
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 0.3 }}
+          />
+        </div>
+        <span className="min-w-10 text-right text-[11px] font-bold text-white/55">
+          {idx + 1}/{moments.length}
+        </span>
+      </header>
+
+      <main className="relative z-10 flex min-h-0 flex-1 flex-col justify-end overflow-y-auto">
+        <AnimatePresence mode="wait">
+          <motion.section
+            key={moment.id}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
-            className="px-4 pb-6"
+            exit={{ opacity: 0, y: -18 }}
+            transition={{ duration: 0.24 }}
+            className="px-4 pb-6 pt-12"
           >
-            {/* ═══ SCENE — brief moment, auto-advances or tap ═══ */}
-            {m.type === 'scene' && (
-              <div className="flex flex-col items-center justify-center cursor-pointer h-full" onClick={advance}>
-                <motion.p
-                  animate={{ opacity: [0.4, 1, 0.4] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                  className="text-lg font-black text-white/80 mb-2"
-                >
-                  TAP TO START
-                </motion.p>
-                <p className="text-xs text-white/30">{m.dialogue?.text}</p>
+            {moment.type === 'scene' && (
+              <div className="mx-auto max-w-md rounded-[1.75rem] border border-white/15 bg-black/55 p-5 shadow-2xl backdrop-blur-xl">
+                <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[#d4a520]">{sceneLabel}</p>
+                <h1 className="mt-2 text-2xl font-black leading-tight text-white">{moment.dialogue?.text}</h1>
+                <GameButton onClick={advance} fullWidth variant="primary">
+                  Enter the scene <ArrowRight className="h-4 w-4" />
+                </GameButton>
               </div>
             )}
 
-            {/* ═══ REACTION — auto-advances ═══ */}
-            {m.type === 'reaction' && (
-              <div className="flex items-end gap-3">
-                <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 0.4 }}>
-                  <KuttanImage mood={m.kuttan?.mood || 'happy'} size="sm" animate={true} />
-                </motion.div>
-                <div className="bg-black/40 backdrop-blur-md rounded-2xl rounded-bl-sm px-3 py-2">
-                  <p className="text-sm text-[#d4a520] font-bold">{m.dialogue?.text}</p>
+            {moment.type === 'reaction' && (
+              <div className="mx-auto flex max-w-md items-end gap-3">
+                <KuttanImage mood={moment.kuttan?.mood || 'happy'} size="sm" animate />
+                <div className="rounded-2xl rounded-bl-sm border border-white/10 bg-black/55 px-4 py-3 backdrop-blur-xl">
+                  <p className="text-sm font-bold text-[#d4a520]">{moment.dialogue?.text}</p>
                 </div>
               </div>
             )}
 
-            {/* ═══ WORD DISCOVER — all words at once, scene-based ═══ */}
-            {m.type === 'word-discover' && m.vocabList && m.vocabList.length > 0 && (
+            {moment.type === 'word-discover' && moment.vocabList && moment.vocabList.length > 0 && (
               <VocabDiscoveryGame
-                vocabList={m.vocabList}
-                sceneHint="Tap each word to hear it, then prove you know them!"
+                vocabList={moment.vocabList}
+                sceneHint={moment.dialogue?.text}
                 onComplete={(vocabScore, vocabTotal) => {
-                  setScore(s => s + vocabScore);
-                  setTotal(t => t + vocabTotal);
-                  setMaxCombo(p => Math.max(p, vocabScore)); // approximate
+                  setScore((value) => value + vocabScore);
+                  setTotal((value) => value + vocabTotal);
+                  setMaxCombo((value) => Math.max(value, vocabScore));
                   advance();
                 }}
               />
             )}
 
-            {/* ═══ DIALOGUE — choices (the game IS the learning) ═══ */}
-            {m.type === 'dialogue' && m.dialogue && (
-              <div className="flex flex-col">
-                <div className="flex items-end gap-3 mb-3">
-                  <KuttanImage mood={choiceResult ? (choiceResult.mood as KuttanMoodImage) : (m.kuttan?.mood || 'thinking')} size="sm" animate={true} />
-                  <div className="bg-black/50 backdrop-blur-md rounded-2xl rounded-bl-sm px-4 py-3 flex-1 max-w-[260px]">
-                    <p className="text-sm text-white">{choiceResult?.response || m.dialogue.text}</p>
+            {moment.type === 'teach' && moment.video && (
+              <div className="mx-auto max-w-md overflow-hidden rounded-[1.75rem] border border-white/12 bg-[#0c180c]/92 shadow-2xl backdrop-blur-xl">
+                <div className="border-b border-white/10 bg-gradient-to-br from-[#d4a520]/18 to-transparent p-5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#d4a520]/15">
+                      <BookOpen className="h-5 w-5 text-[#e8c85c]" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#d4a520]">Learn the pattern</p>
+                      <h2 className="mt-0.5 text-xl font-black leading-tight text-white">{moment.video.title}</h2>
+                    </div>
+                  </div>
+                  <p className="mt-3 text-sm font-semibold leading-relaxed text-white/68">{moment.video.description}</p>
+                </div>
+
+                <div className="max-h-[48vh] space-y-4 overflow-y-auto p-5">
+                  {moment.video.learningObjectives.length > 0 && (
+                    <div>
+                      <p className="mb-2 text-[10px] font-black uppercase tracking-[0.15em] text-white/40">After this, you can</p>
+                      <ul className="space-y-2">
+                        {moment.video.learningObjectives.slice(0, 3).map((objective) => (
+                          <li key={objective} className="flex gap-2 text-sm font-semibold leading-snug text-white/75">
+                            <span className="mt-0.5 text-[#7ee2a8]">✓</span>
+                            <span>{objective}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {moment.video.richContent && moment.video.richContent.length > 0 ? (
+                    <RichContentRenderer elements={moment.video.richContent} />
+                  ) : moment.video.scriptOutline.length > 0 ? (
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <p className="mb-2 text-[10px] font-black uppercase tracking-[0.15em] text-[#e8c85c]">Key ideas</p>
+                      <ul className="space-y-2">
+                        {moment.video.scriptOutline.slice(0, 5).map((idea) => (
+                          <li key={idea} className="text-sm leading-relaxed text-white/68">• {idea}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
+                </div>
+
+                <div className="border-t border-white/10 p-4">
+                  <GameButton onClick={advance} fullWidth variant="primary">
+                    Use it in the scene <ArrowRight className="h-4 w-4" />
+                  </GameButton>
+                </div>
+              </div>
+            )}
+
+            {moment.type === 'dialogue' && moment.dialogue && (
+              <div className="mx-auto max-w-md">
+                <div className="mb-4 flex items-end gap-3">
+                  <KuttanImage
+                    mood={choiceResult ? choiceResult.mood as KuttanMoodImage : moment.kuttan?.mood || 'thinking'}
+                    size="sm"
+                    animate
+                  />
+                  <div className="max-h-40 flex-1 overflow-y-auto rounded-2xl rounded-bl-sm border border-white/10 bg-black/60 px-4 py-3 backdrop-blur-xl">
+                    <p className="text-sm leading-relaxed text-white">{choiceResult?.response || moment.dialogue.text}</p>
                   </div>
                 </div>
-                {!choiceResult && m.dialogue.choices && (
-                  <div className="space-y-2 ml-14">
-                    {m.dialogue.choices.map((choice, i) => (
-                      <motion.button key={i}
-                        initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.1 }}
-                        whileTap={{ scale: 0.97 }}
+                {!choiceResult && moment.dialogue.choices && (
+                  <div className="space-y-2 pl-12">
+                    {moment.dialogue.choices.map((choice, choiceIndex) => (
+                      <motion.button
+                        key={`${choice.text}-${choiceIndex}`}
+                        initial={{ opacity: 0, x: 14 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: choiceIndex * 0.08 }}
+                        whileTap={{ scale: 0.98 }}
                         onClick={() => handleChoice(choice)}
-                        className="w-full text-left px-4 py-2.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-sm text-white font-medium">
+                        className="w-full rounded-xl border border-white/15 bg-black/45 px-4 py-3 text-left text-sm font-semibold leading-snug text-white backdrop-blur-md"
+                      >
                         {choice.text}
                       </motion.button>
                     ))}
                   </div>
                 )}
+                {choiceResult && !choiceResult.correct && (
+                  <div className="pl-12">
+                    <button
+                      onClick={() => {
+                        setChoiceResult(null);
+                        setAttemptKey((value) => value + 1);
+                      }}
+                      className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#d4a520] px-4 py-3 text-sm font-black text-[#182218]"
+                    >
+                      <RotateCcw className="h-4 w-4" /> Choose again
+                    </button>
+                  </div>
+                )}
               </div>
             )}
 
-            {/* ═══ GAME — exercise rendered as game component ═══ */}
-            {m.type === 'game' && m.exercise && (
-              <div className="bg-black/40 backdrop-blur-xl rounded-3xl border border-white/10 p-4">
-                <p className="text-sm text-white font-medium text-center mb-3">
-                  {(() => {
-                    const q = m.exercise!.question;
-                    // Strip long narrative text, keep just the question
-                    const cleaned = q.replace(/^.*?[.!][\s]*/,'').trim() || q;
-                    if (cleaned.length <= 80) return cleaned;
-                    return cleaned.slice(0, cleaned.lastIndexOf(' ', 80)) + '...';
-                  })()}
-                </p>
-                {renderGame(m, handleGameResult)}
+            {moment.type === 'game' && moment.exercise && (
+              <div className="mx-auto max-w-md rounded-[1.75rem] border border-white/12 bg-[#0c180c]/88 p-5 shadow-2xl backdrop-blur-xl">
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <span className="rounded-full border border-[#d4a520]/25 bg-[#d4a520]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-[#e8c85c]">
+                    {exerciseLabel(moment.exercise)}
+                  </span>
+                  {combo > 1 && <span className="text-xs font-black text-[#d4a520]">{combo}x</span>}
+                </div>
+                <h2 className="mb-5 text-center text-lg font-black leading-snug text-white">
+                  {moment.exercise.question}
+                </h2>
+
+                {gameResult === 'wrong' ? (
+                  <RepairPanel
+                    exercise={moment.exercise}
+                    onRetry={() => {
+                      setGameResult(null);
+                      setAttemptKey((value) => value + 1);
+                    }}
+                  />
+                ) : (
+                  <div key={`${moment.id}-${attemptKey}`}>
+                    <ExerciseInteraction exercise={moment.exercise} onResult={handleGameResult} />
+                  </div>
+                )}
               </div>
             )}
 
-            {/* ═══ VICTORY — #40 Enhanced with XP and treasures ═══ */}
-            {m.type === 'victory' && (() => {
-              const pct = total > 0 ? Math.round((score / total) * 100) : 0;
-              const xpEarned = score * 10 + (maxCombo >= 5 ? 25 : 0);
-              const vocabCount = moments.filter(mm => mm.type === 'word-discover').length;
+            {moment.type === 'victory' && (() => {
+              const mastery = total > 0 ? Math.round((score / total) * 100) : 100;
+              const vocabCount = moments.reduce((count, item) => count + (item.vocabList?.length || 0), 0);
               return (
-                <div className="flex flex-col items-center text-center">
-                  <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-                    <KuttanImage mood="celebrating" size="xl" animate={true} />
-                  </motion.div>
-                  <motion.p initial={{ scale: 0 }} animate={{ scale: 1 }}
-                    className="text-2xl font-black text-white mt-4">Level Complete!</motion.p>
+                <div className="mx-auto flex max-w-md flex-col items-center text-center">
+                  <KuttanImage mood="celebrating" size="xl" animate />
+                  <p className="mt-3 text-[11px] font-black uppercase tracking-[0.18em] text-[#d4a520]">Ability unlocked</p>
+                  <h2 className="mt-1 text-3xl font-black text-white">Lesson proved.</h2>
+                  <p className="mt-2 max-w-sm text-sm font-semibold leading-relaxed text-white/70">{moment.dialogue?.text}</p>
 
-                  {/* Stats grid */}
-                  <div className="grid grid-cols-3 gap-3 mt-4 w-full max-w-[300px]">
-                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-                      className="bg-black/40 backdrop-blur-md rounded-xl p-2 border border-white/10">
-                      <p className="text-lg font-black text-[#d4a520]">{pct}%</p>
-                      <p className="text-[9px] text-white/40 uppercase font-bold">Accuracy</p>
-                    </motion.div>
-                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}
-                      className="bg-black/40 backdrop-blur-md rounded-xl p-2 border border-white/10">
-                      <p className="text-lg font-black text-[#27ae60]">+{xpEarned}</p>
-                      <p className="text-[9px] text-white/40 uppercase font-bold">XP Earned</p>
-                    </motion.div>
-                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-                      className="bg-black/40 backdrop-blur-md rounded-xl p-2 border border-white/10">
-                      <p className="text-lg font-black text-[#a855f7]">{maxCombo}x</p>
-                      <p className="text-[9px] text-white/40 uppercase font-bold">Best Combo</p>
-                    </motion.div>
+                  <div className="mt-5 grid w-full grid-cols-3 gap-2">
+                    <ResultStat value={`${mastery}%`} label="Mastery" color="text-[#d4a520]" />
+                    <ResultStat value={String(repairCount)} label="Repairs" color="text-[#7ee2a8]" />
+                    <ResultStat value={String(vocabCount)} label="Chunks" color="text-[#c4a7ff]" />
                   </div>
 
-                  {/* Treasures (new words) found */}
-                  {vocabCount > 0 && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}
-                      className="mt-3 flex items-center gap-2 text-xs text-white/40">
-                      <span className="text-sm">{'\uD83D\uDC8E'}</span>
-                      <span>{vocabCount} new {vocabCount === 1 ? 'word' : 'words'} discovered</span>
-                    </motion.div>
-                  )}
-
-                  <div className="mt-4 w-full max-w-[280px]">
+                  <div className="mt-5 w-full">
                     <GameButton onClick={() => onComplete(score, total, maxCombo)} fullWidth variant="primary">
-                      Continue Journey
+                      Continue the course <ArrowRight className="h-4 w-4" />
                     </GameButton>
                   </div>
                 </div>
               );
             })()}
-          </motion.div>
+          </motion.section>
         </AnimatePresence>
-      </div>
+      </main>
     </div>
   );
 }
 
-// ── Game component selector ──────────────────────────────────
-
-function renderGame(m: GameMoment, onResult: (correct: boolean) => void) {
-  if (!m.exercise) return null;
-  const ex = m.exercise;
-  const correct = typeof ex.correctAnswer === 'string' ? ex.correctAnswer : ex.correctAnswer[0];
-
-  switch (m.gameType) {
-    case 'word-bank':
-      return ex.options?.length
-        ? <WordBank sentence={ex.question} options={ex.options} correctAnswer={correct} onResult={onResult} />
-        : <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
-    case 'falling': {
-      const d = (ex.options || []).filter(o => o !== correct).slice(0, 3);
-      return <FallingWords correctWord={correct} distractors={d.length >= 2 ? d : ['Hallo', 'Danke', 'Bitte']} hint="Catch it!" onResult={onResult} />;
-    }
-    case 'bubble':
-      return Array.isArray(ex.correctAnswer)
-        ? <BubblePop leftItems={ex.options || []} rightItems={ex.correctAnswer as string[]} onResult={onResult} />
-        : <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
-    case 'article-sort': {
-      // Extract article from correct answer (e.g. "der Tisch" → article="der", noun="Tisch")
-      const match = correct.match(/^(der|die|das)\s+(.+)$/i);
-      if (match) {
-        return <ArticleSort noun={match[2]} correctArticle={match[1].toLowerCase() as 'der' | 'die' | 'das'} onResult={onResult} />;
-      }
-      return ex.options?.length
-        ? <QuizShow question="" options={ex.options} correctAnswer={correct} onResult={onResult} />
-        : <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
-    }
-    case 'memory-flip': {
-      if (Array.isArray(ex.correctAnswer) && ex.options?.length) {
-        const pairs: [string, string][] = ex.options.map((opt, i) => [opt, (ex.correctAnswer as string[])[i] || opt]);
-        return <MemoryFlip pairs={pairs} onResult={onResult} />;
-      }
-      return <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
-    }
-    case 'quiz-show':
-      return ex.options?.length
-        ? <QuizShow question="" options={ex.options} correctAnswer={correct} onResult={onResult} />
-        : <WordScramble hint="" answer={correct.trim()} onResult={onResult} />;
-    case 'word-ninja': {
-      const targets = [correct];
-      const ninjaDistractors = (ex.options || []).filter(o => o !== correct).slice(0, 4);
-      if (ninjaDistractors.length < 2) ninjaDistractors.push('Hallo', 'Nein', 'Danke');
-      return <WordNinja prompt={ex.question.slice(0, 60)} targets={targets} distractors={ninjaDistractors} onResult={onResult} />;
-    }
-    case 'listen-blast': {
-      const blastDistractors = (ex.options || []).filter(o => o !== correct).slice(0, 3);
-      if (blastDistractors.length < 2) blastDistractors.push('Hallo', 'Danke', 'Bitte');
-      return <ListenBlast correctWord={correct} distractors={blastDistractors} onResult={onResult} />;
-    }
-    case 'word-builder':
-      return <WordBuilder answer={correct.trim()} hint={ex.question.slice(0, 50)} onResult={onResult} />;
-    case 'scramble':
-      return <WordBuilder hint="" answer={correct.trim()} onResult={onResult} />;
-    case 'swipe':
-    default:
-      // Default to WordNinja if we have options, WordBuilder if not
-      if (ex.options?.length) {
-        const targets = [correct];
-        const dists = ex.options.filter(o => o !== correct).slice(0, 4);
-        return <WordNinja prompt="" targets={targets} distractors={dists} onResult={onResult} />;
-      }
-      return <WordBuilder hint="" answer={correct.trim()} onResult={onResult} />;
+function exerciseLabel(exercise: Exercise) {
+  switch (exercise.type) {
+    case 'dictation': return 'Listen · write';
+    case 'speaking': return 'Listen · speak';
+    case 'free-text': return 'Produce · write';
+    case 'type-answer': return 'Recall · type';
+    case 'ordering': return 'Build the line';
+    case 'matching': return 'Connect meaning';
+    case 'fill-blank': return 'Complete the line';
+    default: return 'Understand · choose';
   }
+}
+
+function RepairPanel({ exercise, onRetry }: { exercise: Exercise; onRetry: () => void }) {
+  return (
+    <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
+      <div className="rounded-2xl border border-[#e9a23b]/30 bg-[#e9a23b]/10 p-4">
+        <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#f1c36d]">Repair before moving on</p>
+        <p className="mt-2 text-base font-black text-white">{primaryAnswer(exercise.correctAnswer)}</p>
+        {exercise.explanation && <p className="mt-2 text-sm leading-relaxed text-white/68">{exercise.explanation}</p>}
+      </div>
+      <button
+        onClick={onRetry}
+        className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#d4a520] px-4 py-3 text-sm font-black text-[#182218]"
+      >
+        <RotateCcw className="h-4 w-4" /> Try the repaired answer
+      </button>
+    </motion.div>
+  );
+}
+
+function ExerciseInteraction({ exercise, onResult }: { exercise: Exercise; onResult: (correct: boolean) => void }) {
+  const correct = primaryAnswer(exercise.correctAnswer);
+
+  if (exercise.type === 'dictation') {
+    return (
+      <div className="space-y-4">
+        <AudioPrompt audioUrl={exercise.audioUrl} label="Play the sentence" />
+        <FreeTextInput answer={exercise.correctAnswer} onResult={onResult} placeholder="Type exactly what you hear" />
+      </div>
+    );
+  }
+
+  if (exercise.type === 'speaking') {
+    return (
+      <div className="flex flex-col items-center gap-4">
+        {exercise.audioUrl && <AudioPrompt audioUrl={exercise.audioUrl} label="Hear the model" />}
+        <div className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center">
+          <p className="text-lg font-black text-[#e7c95d]">{correct}</p>
+        </div>
+        <SpeakButton
+          expectedText={correct}
+          matchFn={(expected, transcript) => matchesAnswer(transcript, expected)}
+          onResult={(_, __, isMatch) => onResult(isMatch)}
+          size="lg"
+          label="Say the full line"
+        />
+      </div>
+    );
+  }
+
+  if (exercise.type === 'free-text' || exercise.type === 'type-answer') {
+    return (
+      <FreeTextInput
+        hint={exercise.questionGerman}
+        answer={exercise.correctAnswer}
+        onResult={onResult}
+        placeholder={exercise.type === 'free-text' ? 'Write your German answer' : 'Type from memory'}
+      />
+    );
+  }
+
+  if (exercise.type === 'ordering') {
+    return <OrderingExercise exercise={exercise} onResult={onResult} />;
+  }
+
+  if (exercise.type === 'matching' && Array.isArray(exercise.correctAnswer)) {
+    return <BubblePop leftItems={exercise.options || []} rightItems={exercise.correctAnswer as string[]} onResult={onResult} />;
+  }
+
+  if (exercise.type === 'fill-blank' && exercise.options?.length) {
+    return <WordBank sentence={exercise.question} options={exercise.options} correctAnswer={correct} onResult={onResult} />;
+  }
+
+  if (exercise.options?.length) {
+    return <QuizShow question="" options={exercise.options} correctAnswer={correct} onResult={onResult} />;
+  }
+
+  return <FreeTextInput answer={exercise.correctAnswer} onResult={onResult} placeholder="Type your answer" />;
+}
+
+function AudioPrompt({ audioUrl, label }: { audioUrl?: string; label: string }) {
+  const [playing, setPlaying] = useState(false);
+  const [failed, setFailed] = useState(false);
+
+  const play = async () => {
+    if (!audioUrl || playing) return;
+    setPlaying(true);
+    setFailed(false);
+    try {
+      await playAudio(audioUrl);
+    } catch {
+      setFailed(true);
+    } finally {
+      setPlaying(false);
+    }
+  };
+
+  return (
+    <button
+      onClick={play}
+      disabled={!audioUrl || playing}
+      className="mx-auto flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-[#d4a520]/30 bg-[#d4a520]/10 px-5 py-3 text-sm font-black text-[#efd26d] disabled:opacity-45"
+    >
+      {playing ? <Headphones className="h-5 w-5 animate-pulse" /> : <Volume2 className="h-5 w-5" />}
+      {playing ? 'Listening…' : failed ? 'Model audio is still pending' : label}
+    </button>
+  );
+}
+
+function OrderingExercise({ exercise, onResult }: { exercise: Exercise; onResult: (correct: boolean) => void }) {
+  const expected = Array.isArray(exercise.correctAnswer)
+    ? [...exercise.correctAnswer]
+    : exercise.correctAnswer.split(/\s+/).filter(Boolean);
+  const source = exercise.options?.length
+    ? exercise.options
+    : expected.length > 1
+      ? [...expected.slice(1), expected[0]]
+      : expected;
+  const [selected, setSelected] = useState<number[]>([]);
+  const remaining = source.map((text, index) => ({ text, index })).filter((item) => !selected.includes(item.index));
+  const built = selected.map((index) => source[index]);
+
+  return (
+    <div className="space-y-4">
+      <div className="min-h-16 rounded-2xl border border-[#d4a520]/25 bg-[#d4a520]/8 p-3">
+        {built.length === 0 ? (
+          <p className="py-2 text-center text-sm text-white/40">Tap the parts in order</p>
+        ) : (
+          <div className="flex flex-wrap gap-2">
+            {built.map((text, index) => (
+              <button
+                key={`${text}-${index}`}
+                onClick={() => setSelected((items) => items.filter((_, itemIndex) => itemIndex !== index))}
+                className="rounded-lg bg-[#d4a520] px-3 py-2 text-sm font-black text-[#182218]"
+              >
+                {text}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+      <div className="flex flex-wrap justify-center gap-2">
+        {remaining.map((item) => (
+          <button
+            key={`${item.text}-${item.index}`}
+            onClick={() => setSelected((items) => [...items, item.index])}
+            className="rounded-lg border border-white/15 bg-white/8 px-3 py-2 text-sm font-bold text-white"
+          >
+            {item.text}
+          </button>
+        ))}
+      </div>
+      <button
+        onClick={() => onResult(built.length === expected.length && built.every((item, index) => item === expected[index]))}
+        disabled={built.length !== expected.length}
+        className="w-full rounded-xl bg-[#d4a520] px-4 py-3 text-sm font-black text-[#182218] disabled:opacity-35"
+      >
+        Check the order
+      </button>
+    </div>
+  );
+}
+
+function ResultStat({ value, label, color }: { value: string; label: string; color: string }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-black/45 p-3 backdrop-blur-md">
+      <p className={`text-xl font-black ${color}`}>{value}</p>
+      <p className="mt-0.5 text-[9px] font-black uppercase tracking-wider text-white/45">{label}</p>
+    </div>
+  );
 }

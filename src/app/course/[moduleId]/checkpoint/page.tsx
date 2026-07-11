@@ -395,7 +395,11 @@ export default function SpineCheckpointPage() {
                     <div>
                       <p className="font-black">{ok ? 'On record.' : 'Not on record yet.'}</p>
                       <p className="mt-1 text-sm font-semibold text-white/65">
-                        {ok ? 'Your mock results already prove this one.' : 'No qualifying timed mock in your results — the mock tests page is where this gets earned.'}
+                        {ok
+                          ? 'Your saved results already prove this one.'
+                          : task.source === 'simulator-2-days'
+                            ? 'Fewer than two simulator days on record — Practice → Speaking Simulator is where this gets earned.'
+                            : 'No qualifying timed mock in your results — the mock tests page is where this gets earned.'}
                       </p>
                     </div>
                   </div>

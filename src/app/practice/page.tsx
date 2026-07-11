@@ -12,6 +12,15 @@ import { SkeletonGrid } from '@/components/ui/Skeleton';
 
 const practices = [
   {
+    id: 'simulator',
+    name: 'Speaking Simulator',
+    icon: '🎧',
+    color: '#e94560',
+    badge: 'EXAM',
+    badgeColor: '#c0392b',
+    href: '/practice/simulator',
+  },
+  {
     id: 'pronunciation',
     name: 'Pronunciation',
     icon: '🎙️',

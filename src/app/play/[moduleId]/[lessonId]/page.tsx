@@ -325,28 +325,9 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
     );
   }
 
-  // Auto-generate typing exercises from lesson vocabulary (production practice)
-  // Pick up to 3 random vocab words to type — inserted before authored exercises
-  const autoTypingExercises: import('@/lib/content/types').Exercise[] = lesson.vocabulary.length > 0
-    ? lesson.vocabulary
-        .slice()
-        .sort(() => 0.5 - Math.random())
-        .slice(0, Math.min(3, lesson.vocabulary.length))
-        .map((v, i) => ({
-          id: `auto-type-${v.id}-${i}`,
-          type: 'type-answer' as const,
-          question: `Type the German word for "${v.english}"`,
-          questionGerman: v.example,
-          options: [],
-          correctAnswer: v.german,
-          explanation: `${v.german} [${v.pronunciation}] = ${v.english} (${v.malayalam})`,
-          xpReward: 5,
-        }))
-    : [];
-  // Shuffle exercises so order varies each time — prevents predictability
-  // Keep auto-typing at front (warm-up), shuffle the rest
-  const shuffledLessonExercises = [...lesson.exercises].sort(() => Math.random() - 0.5);
-  const allExercises = [...autoTypingExercises, ...shuffledLessonExercises];
+  // Exercise order is authored pedagogy. Never inject generic drills or shuffle
+  // this list: recognition, production, repair, and transfer must stay coherent.
+  const allExercises = lesson.exercises;
 
   // Limit vocab cards shown to max 6 — rest are learned through exercises
   const MAX_VOCAB_CARDS = 6;

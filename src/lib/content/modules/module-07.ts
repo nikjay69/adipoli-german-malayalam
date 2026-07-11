@@ -26,10 +26,10 @@ export const MODULE_7: Module = {
       xpReward: 120,
       storyScene: {
         setting: {
-          name: "Lidl / Aldi Supermarket",
+          name: "Imagined: Lidl / Aldi Supermarket",
           sceneType: "market",
           timeOfDay: "afternoon",
-          description: "The fluorescent lights hum, and the air is filled with the smell of the bakery section. People are moving with purpose. There's no time to chat like at a Kerala village store. It's a high-speed efficiency test. Time to find your groceries and get through that checkout line, machane!",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. The fluorescent lights hum, and the air is filled with the smell of the bakery section. People are moving with purpose. There's no time to chat like at a Kerala village store. It's a high-speed efficiency test. Time to find your groceries and get through that checkout line, machane!",
         },
         narrative: {
           previousRecap: "You've survived the restaurant meal. Now, let's learn how to fill your own fridge!",
@@ -916,10 +916,10 @@ export const MODULE_7: Module = {
       xpReward: 150,
       storyScene: {
         setting: {
-          name: "Global Fashion Store (H&M)",
+          name: "Imagined: Global Fashion Store (H&M)",
           sceneType: "mall",
           timeOfDay: "afternoon",
-          description: "Rows of clothes stretching as far as the eye can see. You've picked up a nice jacket, but you're not sure if it fits. A sales assistant is circling around. In Kochi, they might follow you closely, but here they wait until you look confused. Time to speak up and handle the dialogue, machane!",
+          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Rows of clothes stretching as far as the eye can see. You've picked up a nice jacket, but you're not sure if it fits. A sales assistant is circling around. In Kochi, they might follow you closely, but here they wait until you look confused. Time to speak up and handle the dialogue, machane!",
         },
         narrative: {
           previousRecap: "You've picked your colors and clothes. Now, let's learn how to interact with the people in the shop!",

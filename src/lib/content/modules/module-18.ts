@@ -245,6 +245,16 @@ export const MODULE_18: Module = {
           xpReward: 25
         },
         {
+          id: "ex18-1-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's tongue: he reads the form field 'Straße' English-style — 'strass-eh'. German st says SCHT! Say it right: 'Straße.'",
+          questionGerman: "Sprechen Sie laut: 'Straße.'",
+          correctAnswer: "Straße",
+          explanation: "st at the start of a German word = 'scht' (Schtraße). The examiner spelling-checks your form answers aloud in Teil 1 — the sound matters as much as the letters.",
+          audioUrl: "/audio/exercises/ex18-1-spk2-model.mp3",
+          xpReward: 25
+        },
+        {
           id: "ex18-1-prod-dictation",
           type: "dictation",
           question: "At the Goethe Kochi writing desk, Kuttan plays a polite A1 help sentence. Listen and type the sentence you hear.",
@@ -562,6 +572,16 @@ export const MODULE_18: Module = {
           explanation: "Miss one content point and the message fails, however pretty the German. All three points, every time.",
           audioUrl: "/audio/exercises/ex18-2-prod-speaking-model.mp3",
           xpReward: 25
+        },
+        {
+          id: "ex18-2-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's message: he signed his exam message to a friend with 'Tschüss'. The written closing is different! Say the correct sign-off: 'Viele Grüße.'",
+          questionGerman: "Sprechen Sie laut: 'Viele Grüße.'",
+          correctAnswer: "Viele Grüße",
+          explanation: "Tschüss is spoken German; messages close with Viele Grüße (friends) or Mit freundlichen Grüßen (officials). The Teil 2 rubric checks the frame explicitly.",
+          audioUrl: "/audio/exercises/ex18-2-spk2-model.mp3",
+          xpReward: 25
         }],
       vocabulary: [
         {
@@ -872,6 +892,16 @@ export const MODULE_18: Module = {
           correctAnswer: "Ich heiße Kuttan, ich komme aus Indien und ich wohne in Thrissur",
           explanation: "Name, origin, home — the Teil 1 triple. Swap in your real details and rehearse until it's 15 smooth seconds.",
           audioUrl: "/audio/exercises/ex18-3-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex18-3-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's intro: 'Ich bin fünfundzwanzig Jahre.' — the sentence dies without its last word! Say it right: 'Ich bin fünfundzwanzig Jahre alt.'",
+          questionGerman: "Sprechen Sie laut: 'Ich bin fünfundzwanzig Jahre alt.'",
+          correctAnswer: "Ich bin fünfundzwanzig Jahre alt",
+          explanation: "Jahre ALT — dropping the 'alt' is the classic Teil 1 self-intro slip. Small word, but the examiner is listening for the complete pattern.",
+          audioUrl: "/audio/exercises/ex18-3-spk2-model.mp3",
           xpReward: 25
         }],
       vocabulary: [
@@ -1185,6 +1215,16 @@ export const MODULE_18: Module = {
           explanation: "Teil 2 tests asking as much as answering. W-word + verb + Sie + card word = a correct question from any card.",
           audioUrl: "/audio/exercises/ex18-4-prod-speaking-model.mp3",
           xpReward: 25
+        },
+        {
+          id: "ex18-4-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's answer: asked about his weekend, he says 'Am Wochenende ich spiele Cricket.' Time word first flips the order! Say it right: 'Am Wochenende spiele ich Cricket.'",
+          questionGerman: "Sprechen Sie laut: 'Am Wochenende spiele ich Cricket.'",
+          correctAnswer: "Am Wochenende spiele ich Cricket",
+          explanation: "Teil 2 answers almost always start with a time phrase — and every one of them needs the inversion: Am Wochenende SPIELE ICH. Master this and your answers sound instantly German.",
+          audioUrl: "/audio/exercises/ex18-4-spk2-model.mp3",
+          xpReward: 25
         }],
       vocabulary: [
         {
@@ -1488,6 +1528,16 @@ export const MODULE_18: Module = {
           correctAnswer: "Können Sie mir bitte einen Kugelschreiber leihen",
           explanation: "This is the exact Sprechen Teil 3 skill: situation card → polite request. Short, complete, and A1-safe.",
           audioUrl: "/audio/exercises/ex18-5-13-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex18-5-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's slip: nerves make him bark 'Geben Sie mir das Formular!' — an order, not a request. Teil 3 wants polite. Say it right: 'Können Sie mir bitte das Formular geben?'",
+          questionGerman: "Sprechen Sie laut: 'Können Sie mir bitte das Formular geben?'",
+          correctAnswer: "Können Sie mir bitte das Formular geben",
+          explanation: "Bare imperatives sound like commands; Können Sie … bitte …? is the Teil 3 formula the rubric rewards. Same words, opposite impression.",
+          audioUrl: "/audio/exercises/ex18-5-spk2-model.mp3",
           xpReward: 25
         },
         {
@@ -1897,6 +1947,16 @@ export const MODULE_18: Module = {
           xpReward: 25
         },
         {
+          id: "ex18-6-spk2",
+          type: "speaking",
+          question: "Repair Kuttan's exam-hall panic: something's unclear and he whispers to himself in Malayalam. The invigilator line exists — say it: 'Entschuldigung, ich habe eine Frage.'",
+          questionGerman: "Sprechen Sie laut: 'Entschuldigung, ich habe eine Frage.'",
+          correctAnswer: "Entschuldigung, ich habe eine Frage",
+          explanation: "Asking the invigilator is allowed — in German. 'Entschuldigung, ich habe eine Frage' is part of the exam-day script; drill it now so exam-day nerves can't hide it.",
+          audioUrl: "/audio/exercises/ex18-6-spk2-model.mp3",
+          xpReward: 25
+        },
+        {
           id: "ex18-6-prod-writing",
           type: "free-text",
           question: "At the Goethe Kochi mock desk, write one polite request you can use if you need help during Sprechen.",
@@ -2065,6 +2125,16 @@ export const MODULE_18: Module = {
           correctAnswer: "Ich bin bereit für die Prüfung",
           explanation: "bereit für + accusative — and yes, you are. Book the exam while the confidence is fresh.",
           audioUrl: "/audio/exercises/ex18-7-prod-speaking-model.mp3",
+          xpReward: 25
+        },
+        {
+          id: "ex18-7-spk2",
+          type: "speaking",
+          question: "One last repair, for the road: mid-celebration Kuttan shouts 'Ich bin Deutsch!' — announcing he IS German! What he means needs kann. Say it right, and mean it: 'Ich kann Deutsch!'",
+          questionGerman: "Sprechen Sie laut: 'Ich kann Deutsch!'",
+          correctAnswer: "Ich kann Deutsch",
+          explanation: "'Ich bin Deutsch' claims a passport; 'Ich kann Deutsch' claims a skill — the one you just earned. Adipoli. Go book the exam.",
+          audioUrl: "/audio/exercises/ex18-7-spk2-model.mp3",
           xpReward: 25
         },
         {

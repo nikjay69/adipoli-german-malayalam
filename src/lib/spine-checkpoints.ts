@@ -10,6 +10,7 @@
 // prescribe 1-3 exact tasks + a retest, linking into the practice library.
 
 import type { MockGateResult, SpineCheckpointResult } from '@/lib/store';
+import { simulatorRunDays } from '@/lib/simulator-runs';
 
 export type SkillSectionId = 'hoeren' | 'sprechen' | 'lesen' | 'schreiben' | 'grammarVocab';
 
@@ -20,8 +21,10 @@ export type CheckpointTask =
   | { kind: 'type'; question: string; accepted: string[]; audioUrl?: string; placeholder?: string }
   /** Real production (say/write) → reveal model answer → honest rubric self-score (>=3 passes). */
   | { kind: 'production'; action: 'say' | 'write'; question: string; modelAnswer: string; modelAudioUrl?: string; criteria: string[] }
-  /** Derived from real mock-gate results in the store — no self-report. */
-  | { kind: 'auto'; question: string; source: 'full-mock-exists' | 'full-mock-60' | 'full-mock-75' };
+  /** Derived from real records (mock-gate results / simulator runs) — no self-report. */
+  | { kind: 'auto'; question: string; source: AutoTaskSource };
+
+export type AutoTaskSource = 'full-mock-exists' | 'full-mock-60' | 'full-mock-75' | 'simulator-2-days';
 
 export type CheckpointItem = {
   id: string;
@@ -38,7 +41,8 @@ export type CheckpointItem = {
 /** Full-mock gates that count as "a timed full mock" for auto tasks. */
 const FULL_MOCK_GATE_IDS = ['full-7', 'final-8a', 'final-8b'];
 
-export function evaluateAutoTask(source: 'full-mock-exists' | 'full-mock-60' | 'full-mock-75', mockResults: Record<string, MockGateResult>): boolean {
+export function evaluateAutoTask(source: AutoTaskSource, mockResults: Record<string, MockGateResult>): boolean {
+  if (source === 'simulator-2-days') return simulatorRunDays() >= 2;
   const fullMocks = FULL_MOCK_GATE_IDS.map((id) => mockResults[id]).filter(Boolean) as MockGateResult[];
   if (source === 'full-mock-exists') return fullMocks.length > 0;
   if (source === 'full-mock-60') return fullMocks.some((r) => r.percent >= 60);
@@ -473,8 +477,8 @@ const checkpoint8: SpineCheckpoint = {
       items: [
         { id: 'cp8-s-mock', sectionId: 'sprechen', mode: 'speak', prompt: 'Full speaking simulation done aloud (Teil 1-3).', expected: 'Intro fluent under 60s; cards and requests answered.', points: 4, weaknessTags: ['sprechen:self_intro', 'sprechen:question_answer', 'sprechen:request_phrase'], requiredForPass: true,
           task: { kind: 'production', action: 'say', question: 'Run the full Sprechen now, aloud, in one go: Teil 1 — your self-intro (under 60s). Teil 2 — answer two topic-card questions (Essen, Familie). Teil 3 — make two polite requests.', modelAnswer: 'Teil 1: Ich heiße … Ich komme aus … Ich wohne in … Ich spreche … · Teil 2: Ich esse gern Reis. Meine Familie wohnt in Kochi. · Teil 3: Können Sie mir bitte helfen? Ich hätte gern ein Wasser.', criteria: ['Intro fluent, under 60 seconds', 'Both topic-card answers in full sentences', 'Both requests polite (Sie / bitte)'] } },
-        { id: 'cp8-s-mock2', sectionId: 'sprechen', mode: 'speak', prompt: 'Did the simulation a second time on a different day.', expected: 'Second run smoother than the first.', points: 2, weaknessTags: ['sprechen:fluency_pause'],
-          task: { kind: 'production', action: 'say', question: 'Second full run, different day: repeat all three Teile aloud. Score only the smoothness — fewer freezes than round one?', modelAnswer: 'Same three Teile — the measure is fewer frozen pauses than your first run.', criteria: ['All three Teile completed again', 'Noticeably fewer freezes than the first run'] } },
+        { id: 'cp8-s-mock2', sectionId: 'sprechen', mode: 'speak', prompt: 'Speaking Simulator run on two different days.', expected: 'Two simulator runs on record.', points: 2, weaknessTags: ['sprechen:fluency_pause'],
+          task: { kind: 'auto', question: 'Two Speaking Simulator runs on record, on two different days — read from your saved runs, no self-report.', source: 'simulator-2-days' } },
       ],
     },
     {
