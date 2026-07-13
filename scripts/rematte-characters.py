@@ -32,6 +32,7 @@ import shutil
 import sys
 from pathlib import Path
 
+import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from rembg import new_session, remove
 
@@ -47,18 +48,86 @@ KUTTAN_MOODS = [
 ]
 FRAU_WEBER_MOODS = ["greeting", "neutral", "pleased", "teaching"]
 
-# Teal makes leftover white background pixels obvious.
+# Teal makes leftover white background pixels obvious; dark green matches
+# the classroom scene the owner reviews against.
 REVEAL_BG = (14, 116, 144, 255)
+DARK_BG = (26, 58, 42, 255)
 PAD = 8
 
 
+def estimate_bg(src_img: Image.Image) -> np.ndarray:
+    """Median color of the four 16px corner patches of the original render."""
+    arr = np.asarray(src_img.convert("RGB"), dtype=np.float64)
+    k = 16
+    corners = np.concatenate([
+        arr[:k, :k].reshape(-1, 3), arr[:k, -k:].reshape(-1, 3),
+        arr[-k:, :k].reshape(-1, 3), arr[-k:, -k:].reshape(-1, 3),
+    ])
+    return np.median(corners, axis=0)
+
+
+def _shift_apply(channel: np.ndarray, fn) -> np.ndarray:
+    """Apply fn over each pixel's 3x3 neighborhood via padded shifts."""
+    h, w = channel.shape
+    pad = np.pad(channel, 1, mode="edge")
+    stack = [pad[dy:dy + h, dx:dx + w] for dy in (0, 1, 2) for dx in (0, 1, 2)]
+    return fn(np.stack(stack), axis=0)
+
+
+def defringe(cutout: Image.Image, bg: np.ndarray) -> Image.Image:
+    """Remove baked-in background color from the matte's edge.
+
+    Two contamination kinds, two fixes — neither blurs the artwork:
+    1. Semi-transparent pixels are C = a*F + (1-a)*B with B the known studio
+       background; solving for F restores the true color exactly.
+    2. The outermost *opaque* pixel ring keeps the source render's own white
+       anti-aliasing, which no color math can undo — so the alpha is choked
+       1px (dropping exactly that ring) and re-feathered softly. 1px on a
+       ~930px-tall figure is invisible; the edge composites cleanly on any
+       background.
+    Finally, edge colors are bled outward into transparent pixels so image
+    scaling never samples stale background color.
+    """
+    from PIL import ImageFilter
+
+    arr = np.asarray(cutout.convert("RGBA"), dtype=np.float64)
+    rgb, a8 = arr[..., :3], arr[..., 3]
+    a = a8 / 255.0
+
+    # 1. decontaminate genuinely semi-transparent pixels
+    semi = (a > 0.0) & (a < 1.0)
+    if semi.any():
+        af = a[..., None]
+        true_fg = (rgb - (1.0 - af) * bg) / np.maximum(af, 1e-6)
+        rgb = np.where(semi[..., None], np.clip(true_fg, 0.0, 255.0), rgb)
+
+    # 2. choke 1px, then feather: soft edge now sits on clean foreground color
+    a = _shift_apply(a, np.min)
+    a_img = Image.fromarray((a * 255.0).astype(np.uint8), "L")
+    a = np.asarray(a_img.filter(ImageFilter.GaussianBlur(0.8)),
+                   dtype=np.float64) / 255.0
+    a = np.where(a < 0.03, 0.0, a)  # kill invisible haze ring
+
+    # 3. color bleed: transparent pixels inherit mean neighbor color (2 rings)
+    for _ in range(2):
+        vis = (a > 0.0).astype(np.float64)
+        sum_rgb = np.dstack([
+            _shift_apply(rgb[..., c] * vis, np.sum) for c in range(3)
+        ])
+        sum_w = _shift_apply(vis, np.sum)
+        fillable = (a == 0.0) & (sum_w > 0)
+        mean_rgb = sum_rgb / np.maximum(sum_w, 1e-6)[..., None]
+        rgb = np.where(fillable[..., None], mean_rgb, rgb)
+
+    out = np.dstack([np.clip(rgb, 0, 255), a * 255.0]).astype(np.uint8)
+    return Image.fromarray(out, "RGBA")
+
+
 def matte(session, src: Path) -> Image.Image:
-    """AI-matte one source render and crop to the alpha bounding box."""
-    out = remove(
-        Image.open(src).convert("RGB"),
-        session=session,
-        post_process_mask=True,
-    )
+    """AI-matte one source render, defringe it, crop to the alpha bbox."""
+    src_img = Image.open(src).convert("RGB")
+    out = remove(src_img, session=session, post_process_mask=True)
+    out = defringe(out, estimate_bg(src_img))
     bbox = out.getchannel("A").getbbox()
     if bbox is None:
         raise RuntimeError(f"empty matte for {src}")
@@ -113,12 +182,11 @@ def main() -> None:
 
     if apply:
         applied = 0
-        for staged in sorted(STAGING.glob("*.png")):
-            if staged.name.startswith("contact-sheet"):
-                continue
-            dest = PUBLIC / staged.name
-            if not dest.exists():
-                raise FileNotFoundError(f"unexpected target {dest}")
+        for target in build_targets():  # only real cutout names, not evidence
+            staged = STAGING / target
+            dest = PUBLIC / target
+            if not staged.exists() or not dest.exists():
+                raise FileNotFoundError(f"missing staged or target file for {target}")
             shutil.copyfile(staged, dest)
             applied += 1
         print(f"applied {applied} cutouts to {PUBLIC}")
@@ -166,7 +234,7 @@ def main() -> None:
             for img in (on_bg(old, tile, REVEAL_BG), on_bg(new, tile, REVEAL_BG)):
                 sheet.alpha_composite(img, (x, y))
                 x += tile[0] + 4
-            for img in (zoom_edge(old, REVEAL_BG), zoom_edge(new, REVEAL_BG)):
+            for img in (zoom_edge(old, DARK_BG), zoom_edge(new, DARK_BG)):
                 sheet.alpha_composite(img, (x, y))
                 x += zoom_w + 4
             y += tile[1]
