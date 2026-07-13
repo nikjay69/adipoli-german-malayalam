@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #0d1a0d; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #0d1a0d; }
+      #root > [data-composition-src] { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+      #root-dip { position: absolute; inset: 0; z-index: 99; background: #f1d27a; opacity: 0; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="module-01-lesson-01" data-start="0" data-duration="81" data-width="1920" data-height="1080">
+      <div id="el-first-sound" data-composition-id="m1l1-first-sound" data-composition-src="compositions/01-first-sound.html" data-start="0" data-duration="7" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-meaning-table" data-composition-id="m1l1-meaning-table" data-composition-src="compositions/02-meaning-table.html" data-start="7" data-duration="8" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-learning-loop" data-composition-id="m1l1-learning-loop" data-composition-src="compositions/03-learning-loop.html" data-start="15" data-duration="8" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-greeting-timeline" data-composition-id="m1l1-greeting-timeline" data-composition-src="compositions/04-greeting-timeline.html" data-start="23" data-duration="10" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-wrong-better" data-composition-id="m1l1-wrong-better" data-composition-src="compositions/05-wrong-vs-better.html" data-start="33" data-duration="8" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-first-sentence" data-composition-id="m1l1-first-sentence" data-composition-src="compositions/06-first-sentence.html" data-start="41" data-duration="10" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-pronunciation" data-composition-id="m1l1-pronunciation" data-composition-src="compositions/07-pronunciation.html" data-start="51" data-duration="8" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-dialogue" data-composition-id="m1l1-dialogue" data-composition-src="compositions/08-tiny-dialogue.html" data-start="59" data-duration="12" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-check-recap" data-composition-id="m1l1-check-recap" data-composition-src="compositions/09-check-recap-cta.html" data-start="71" data-duration="10" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="root-dip" class="clip" data-start="0" data-duration="81" data-track-index="9" aria-hidden="true"></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      [7, 15, 23, 33, 41, 51, 59, 71].forEach((cut) => {
+        tl.to("#root-dip", { opacity: 1, duration: 0.24, ease: "power2.in" }, cut - 0.24);
+        tl.to("#root-dip", { opacity: 0, duration: 0.32, ease: "power3.out" }, cut);
+      });
+      window.__timelines["module-01-lesson-01"] = tl;
+    </script>
+  </body>
+</html>
