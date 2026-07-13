@@ -22,6 +22,21 @@ Status: **Source of truth.** Established 2026-06-11. Absorbs the 10 hard gates a
 
 (Phase 0/1 task: merge these existing ad-hoc scripts into the single `npm run qa` command + Vitest suite.)
 
+## Proportionate evidence per change type (DECISIONS #17)
+
+Every chunk names its gate from this table in its PR-body contract; evidence goes on the PR.
+
+| Change type | Automated gate | Owner evidence |
+|---|---|---|
+| Docs / process | qa stays green | PR diff (+ DECISIONS entry if direction changed) |
+| App code (non-UI) | `npm run qa` | qa output verbatim in the handoff |
+| Learner-facing UI | qa + console clean | 390px playthrough screenshots + Vercel preview URL |
+| Lesson content / feel | qa + `audit:spine` | Feel Rubric grade by real playthrough (FLAT = sev-1) |
+| Video composition source | engine check / scene-contract validator | stills or contact sheet on the PR |
+| Rendered video | ffprobe + full decode + duration/size vs contract; native-audio transcript check against the manifest | contact sheet + ≤10 MB proxy on the PR + committed `render-report.json` |
+| App video integration | qa + audio/video link audit | 390px playthrough with the video actually playing |
+| Remote reproducibility (per V1 stage gate) | fresh-clone bootstrap + preflight + one unit render on a second machine or CI | log on the PR |
+
 ## Human review checklists
 
 **Content** (per lesson — full procedure in `LESSON_QUALITY_STANDARD.md`): A1 alignment · exam relevance · German correctness spot-check · Manglish naturalness · **boredom scan at 1.5× speed** (Reel Rule: any skippable stretch = FAIL) · production usefulness per skill · revision card quality.

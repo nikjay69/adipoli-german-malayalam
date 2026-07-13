@@ -60,3 +60,42 @@ New frameworks · content database/CMS · microservices · runtime AI dependence
 - Vitest, seeded from `tests/content-validation.test.ts`: content schema · quiz answers valid & present in options · audio URLs resolve to real files · production-floor check (≥3 production exercises per spine lesson) · duplicate-exercise detection · empty-explanation scan.
 - `npm run qa` = lint + typecheck + Vitest content suite. Required before any commit that claims a task done.
 - Build verification (`next build`) before any deploy.
+
+## Environment contract (DECISIONS #17)
+
+- **Versions:** Node ≥ 22.12 LTS, npm ≥ 10; `package-lock.json` is the lockfile (no yarn/pnpm). Bootstrap on any machine: `git clone` → `npm ci`.
+- **Video chunks additionally:** FFmpeg on PATH · first Remotion render downloads Chrome Headless Shell (~108 MB, once per machine) · Playwright playthroughs need installed Chrome (`channel: 'chrome'`) · HyperFrames runs via pinned `npx --yes hyperframes@0.7.54` (network on first use per machine).
+- **Secrets:** `.env.local` (gitignored). Key names: `GEMINI_API_KEY` · `RAZORPAY_KEY_ID`/`RAZORPAY_KEY_SECRET` · `STRIPE_PUBLISHABLE_KEY`/`STRIPE_SECRET_KEY` · `NEXT_PUBLIC_SUPABASE_URL`/`NEXT_PUBLIC_SUPABASE_ANON_KEY`/`SUPABASE_SERVICE_ROLE_KEY`. Values move owner→machine manually; never committed, logged, or pasted into PRs/handoffs.
+- **Paid gates:** any spend needs owner go-ahead at the point of spend (€100 cap; the app works at €0).
+- **Relative paths only** in scripts/configs/manifests; a machine-absolute path is a review-blocking defect.
+- **Platform/harness:** Windows 11 is the owner's primary; everything runs from repo root via `npm run …`/`node …` under PowerShell, cmd, or bash. Plain git + npm + CLI only — no dependence on Claude Code, Codex, Gemini CLI, or any MCP server (`AGENTS.md` is the shared entrypoint; the workspace Playwright MCP is a convenience with direct Playwright as the fallback).
+- **Deterministic validation:** `npm run qa` · `node experiments/module-01-video-hybrid/validate.mjs` · per-video-project `npm run check`/`npm run validate` · `ffprobe` on rendered files. Compositions stay deterministic — no `Date.now()`, no `Math.random()`, no network fetches.
+
+## Video production pipeline (DECISIONS #17)
+
+One master assembler, two bounded specialists — never three parallel lesson pipelines:
+
+| Responsibility | Owner |
+|---|---|
+| Scene timing, cuts, asset ledger (engine-neutral) | `lesson.scene.json` contract + validator (`experiments/module-01-video-hybrid/`) |
+| Exact German text + transcripts (canon) | `course-production/` scripts + scene-JSON `transcript` fields |
+| Teaching graphics | HyperFrames sub-compositions; each **approved** insert rendered once and frozen as checksummed media |
+| Long-form master assembly: owner footage, PIP, captions, audio placement, batch variants | Remotion, in its own project dir (frozen `src/remotion/` app internals stay untouched; stage a per-lesson `public/` dir — never bundle the app's 193 MB `public/`) |
+| Algorithmic diagrams, clocks, waveforms | Canvas insert factory → MP4/WebM consumed by Remotion |
+| Final encode + technical QC | FFmpeg/ffprobe → `render-report.json` (full decode check, duration/size vs contract) |
+| Learner-facing German audio | pre-rendered native audio ONLY (`public/audio/` Chirp3-HD batch); never msedge-tts/SpeechSynthesis (`scripts/gen-tts.ts` is non-learner scratch only) |
+| Lesson video length | **15–18 min dense per video** (owner ruling, DECISIONS #17.4) |
+
+Pipeline stages stay distinct: approval reel → recording kit → owner recording → vertical slice → finished lesson master → app integration.
+
+## Media & artifact storage (DECISIONS #17)
+
+| Artifact | Home |
+|---|---|
+| Composition/scene sources, storyboards, validators, manifests + SHA-256, contact sheets, render reports | Git — always |
+| Owner-review proxies (≤ ~10 MB, approval milestones only) | Git |
+| Full-res masters + raw owner footage | Google Drive `AdipoliGerman-Media/`, registered in a committed per-lesson `MEDIA_MANIFEST.json` (name, version, sha256, size, link, recovery steps) before "delivered" |
+| App-delivery videos (`videoUrl`) | Supabase Storage (stable CDN URL) |
+| Render work-caches, captured frames, per-project `node_modules`, temp outputs | Neither — gitignored, regenerable, freely deletable |
+
+Naming: `m<module>l<lesson>-<stage>-v<N>` (stages: reel/kit/slice/master/app). New version = new manifest entry; previous master kept until the owner deletes; raw footage kept permanently. Retrieval on another machine: manifest → download → verify sha256; missing or mismatching artifact = reported blocker. Git LFS rejected (free tier ≪ 20–25 h video).

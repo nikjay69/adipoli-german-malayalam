@@ -57,6 +57,7 @@ The automated audit (`audit:spine`) is the **floor**; this rubric is the **bar**
 - **Scene continuity** — one continuous situation with a payoff, not disconnected items sharing a backdrop. `table`/`note` blocks are furniture, not scenes; the M1 first-mission hear→say→repair arc is the model to converge on.
 - **Voice** — Kuttan/teaching lines a 22-year-old would screenshot and send to a cousin. Canned praise ("Great job! Keep going! 🎉") = FLAT.
 - **Production rhythm** — the learner speaks or writes before minute 2, and at least every ~3 exercises after.
+- **Calm** (owner law 2026-07-13, DECISIONS #17) — less distracting, more clean: one focal point per screen/scene, few simultaneous moving elements, motion only when the motion *is* the teaching, generous whitespace, restrained color count, less text. Applies equally to app screens and video graphics. Busy ≠ engaging; a cluttered screen is a Calm FAIL even if every element is individually good.
 
 FLAT = sev-1 (Reel Rule). Grades are recorded per lesson in `scripts/output/spine-premium-audit.json` (`feel` field) and are assigned only by playthrough — a feel grade without playthrough evidence is hallucinated.
 

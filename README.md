@@ -13,7 +13,7 @@ Live app: https://adipoli-german.vercel.app/
 
 ## Current MVP direction
 - Guided A1 course first; games later
-- Target ~35h owned video lessons for Malayali beginners
+- Target ~20–25h of dense, zero-filler owned video lessons for Malayali beginners (Reel Rule; 15–18 min per lesson video)
 - Phone-first + desktop-friendly learner flow
 - Must-do path for passing Goethe A1
 - Score-booster path for stronger marks
@@ -62,13 +62,27 @@ NEXT_PUBLIC_RAZORPAY_KEY_ID=
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
 ```
 
-## Getting started
+## Getting started (any machine, any AI harness)
+
 ```bash
-npm install
-npm run dev
+git clone https://github.com/nikjay69/adipoli-german-malayalam.git
+cd adipoli-german-malayalam
+npm ci          # Node >= 22.12 LTS, npm >= 10
+npm run dev     # http://localhost:3000
 ```
 
-Open http://localhost:3000
+Quality gate — required before any "done" claim:
+
+```bash
+npm run qa
+```
+
+Video-production work additionally needs FFmpeg on PATH and Chrome installed —
+see "Environment contract" in `docs/TECH_ARCHITECTURE.md`.
+
+**Agents/contributors:** read `AGENTS.md` first (session, chunk, and git protocol).
+The current phase and approved chunk live in `docs/ROADMAP.md`. Secrets go in
+`.env.local` (key names in `docs/TECH_ARCHITECTURE.md`; values are never committed).
 
 ## Build
 ```bash
