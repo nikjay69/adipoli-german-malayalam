@@ -8,25 +8,25 @@ Status: **Source of truth.** Established 2026-06-11. Update the ledger and phase
 - **Video track** (owner production time, agent-prepared): ~60h baseline, up to ~150h. Owner expects ~60h suffices if preparation/automation is right.
 - AI budget: €100 cap (allocation in `TECH_ARCHITECTURE.md`).
 
-## CURRENT PHASE: Version A · Phase 3R — Quality Rescue (interleaved sprints)
+## CURRENT PHASE: Version A · Phase 3P — Feel & Flows (quality pass before pilot)
 
-Re-sequenced 2026-07-10 (DECISIONS #13) after a three-part audit (content, learner experience, project status) found the course far below the envisioned bar: with the audit tightened to the written speaking≥2 floor, **45 of 66 spine lessons FAIL** (102 generic stems, ~30 lessons without mistake-repair, MC chains up to 15/lesson in M17/M18); checkpoints are self-graded ("Mark all passed"); two competing home screens; mock Sprechen scored by recording count; dead `videoUrl` refs. **Video M1–M2 is deferred** (owner decision; scripts stay record-ready; "video-enhanced, not video-blocked" holds).
+Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass the structural audit (47 PASS / 19 WEAK / 0 FAIL) yet **feel flat when played** — the audit was the floor mistaken for the bar, and the never-run human boredom scan is why the gap stayed invisible. Second finding: the one-path doctrine hardened into a **single rail** that blocks real learner intents (redo a module, rewatch a video, review vocab, retake a checkpoint). Phase 3P replaces the old Sprint 6 solo slot; the pilot (Phase 5) follows immediately after. The 56-video plan is owner-reaffirmed with a concrete V1 recording track.
 
-Each sprint pairs one experience fix (E) with one module content pass (C) to premium:
+**Execution cadence (DECISIONS #16):** complete Phase 3P as small, independently reviewable chunks—not as one autonomous run. One chunk = one named learner outcome or defect, narrow scope, explicit done condition, and proportionate QA/playthrough evidence. Stop for owner review before starting the next chunk; do not silently chain sprint items.
 
-| Sprint | Experience fix | Content pass | Status |
+| Sprint | Work | Done when | Status |
 |---|---|---|---|
-| 1 | E1 One home (root = spine Today, one readiness source) | C1 · S4 (module-06/07) | **done 2026-07-10** — S4 10/10 PASS; audit 11 PASS / 35 FAIL (was 1/45); evidence `GermanCourse_QC/2026-07-10_sprint1-one-home-and-s4-premium-gate.md` |
-| 2 | E2 Real checkpoints (scored tasks, tags from misses) | C2 · S5 (module-09/10) | **done 2026-07-10** — checkpoints administer+score, no self-report; S5 10/10 PASS; audit 21 PASS / 25 FAIL; evidence `GermanCourse_QC/2026-07-10_sprint2-real-checkpoints-and-s5-premium-gate.md` |
-| 3 | E3 Honest exam scoring + dead-video fix | C3 · S6 (module-11/12) | **done 2026-07-10** — real Sprechen/Schreiben scoring, 24 dead videoUrls neutralized; S6 9/9 PASS; audit 30 PASS / 16 FAIL; evidence `GermanCourse_QC/2026-07-10_sprint3-honest-scoring-and-s6-premium-gate.md` |
-| 4 | E4 Mission depth + storyScene coverage | C4 · S7 (module-14/17 exam-format rework) | **done 2026-07-10** — S7 10/10 PASS (exam-drill profile, DECISIONS #14); 0 generic stems course-wide; first-mission hear→say→repair arc live; remaining mission extensions carried to Sprint 5/6; evidence `GermanCourse_QC/2026-07-10_sprint4-mission-arc-and-s7-premium-gate.md` |
-| 5 | E5 Exam layer (simulator v1, readiness, 7-day plan) | C5 · S8 (module-18) + Kerala-canon storyScene fixes | **done 2026-07-11** — audit 47 PASS / 19 WEAK / 0 FAIL (mistake-repair 100%); 13 Germany-set scenes canon-framed; Speaking Simulator v1 live (`/practice/simulator`, 8 sets × 12 cards, existing sprechen audio) + cp8 `simulator-2-days` auto task; 7-day plan generator carried to Sprint 6; evidence `GermanCourse_QC/2026-07-11_sprint5-exam-layer-and-s8-premium-gate.md` |
-| 6 | Final TTS batch (owner go-ahead at point of spend) + full-course QA gate | — | — |
+| 6a Flows for real use | Learner-intent flows 1–8 (`LEARNER_JOURNEY.md`): redo/rewatch/review/retake/self-serve practice/peek-ahead/re-entry; wire the orphaned `/onboarding` into first-visit; route disposition audit of all ~158 routes (ON-PATH/REVISIT/PRESCRIBED/HIDDEN) | 390px walkthrough of all 8 intents green; redo provably never resets progress; disposition table committed | — |
+| 6b Feel pass | Feel Rubric (`LESSON_QUALITY_STANDARD.md`) applied depth-first: M1–M2 spine lessons to ADIPOLI (convert table/note-heavy lessons to scene arcs on the first-mission model), then worst-graded M3–M8; clear the 19 WEAK | No FLAT lesson on the spine; M1–M2 ADIPOLI by playthrough evidence | — |
+| 6c AI eval + plan | `/api/check-speech` into simulator + mission speaking steps; `/api/check-german` into Schreiben Teil 2 (sparkle badge, session cap, €0 fallbacks — TECH_ARCHITECTURE Build #7); 7-day plan generator (carried E5 item) | Human end-to-end mic+AI run recorded as QC evidence; €0-mode regression green | — |
+| 6d Audio + full gate | Cloud TTS creds re-provisioned (owner); render the 59-file batch (~€10–20, owner go-ahead at point of spend); remove browser-TTS fallback from the graded path; full-course QA gate incl. the first human boredom scan | 0 pending audio in `audit:app-readiness`; no SpeechSynthesis reachable from the spine; full gate report in `GermanCourse_QC/` | — |
+| V1 Video (parallel, owner track) | Agent prepares a recording kit for M1's 7 record-ready scripts (teleprompter files, shot checklist, per-lesson time budget); owner sets dates and records | First finished M1 video in the app — or an explicit dated deferral logged in DECISIONS | — |
 
-Done when: `audit:spine` 66/66 PASS · checkpoints administer scored tasks with tags from misses · one home, one readiness source · honest mock scoring · speaking simulator v1 live · cold-start 390px playthrough green.
+Done when: all 8 intent flows green · zero FLAT spine lessons · AI eval live with €0 fallback · 0 pending audio and no browser TTS on the graded path · full-course QA gate report · V1 video outcome logged. Then Phase 5 (Pilot).
 
 ### Completed phases
 
+- Phase 3R (Quality Rescue, Sprints 1–5): **done 2026-07-11** — five interleaved experience+content sprints (DECISIONS #13) took the spine from 1 PASS / 45 FAIL to **47 PASS / 19 WEAK / 0 FAIL**: one home (root = Today), administered scored checkpoints with tags from misses, honest Sprechen/Schreiben scoring + 24 dead videoUrls neutralized, first-mission hear→say→repair arc + 0 generic stems, exam layer (Speaking Simulator v1 at `/practice/simulator`, cp8 auto task, Kerala-canon scene fixes). The old Sprint 6 (TTS batch + full gate) is superseded by Phase 3P above. Evidence: `GermanCourse_QC/2026-07-10_sprint1…` through `2026-07-11_sprint5-exam-layer-and-s8-premium-gate.md`.
 - Phase 0 (Reset): **done 2026-06-11** — 11 SOT docs, archives, CLAUDE.md, `npm run qa` v0 (lint:mvp + typecheck + 12,902 content checks, green).
 - Phase 1 (Spine): **done 2026-06-11** — Today screen (`/learn`), course path (`/course`), generic closed checkpoints for modules 2–8 (`/course/[id]/checkpoint`) with weakness tags + recovery prescriptions, skill-readiness bars, nav reduced to Today/Course/Practice/Me. Evidence: `scripts/output/phase1-playthrough/` (375px, zero console errors). Note: qa lint is scoped to the MVP surface (`lint:mvp`) because frozen legacy pages (games/auth) have pre-existing lint errors; widen the scope as files get touched.
 - Phase 2 (Content bridge): **done 2026-06-11** — spine M1–M3 lessons (modules 03/04/05/08) raised to premium (scene-grounded stems, speaking ≥2 + mistake-repair per lesson, banned matching/mechanical stems gone, 6 padding cuts); boredom scan + acceptable-grade pass across all 66 spine lessons (0 FAIL on `scripts/audit-spine-premium.ts`, was 30); mock cadence wired (mini@M4 / half@M6 / full@M7 / 2 finals@M8 via `?gate=` on the test player, banded results in the store, spine blocks + `/tests` unlock spine-based); spine-aware lesson unlock fix (old 18-module sequencing dead-ended spine learners). Evidence: `GermanCourse_QC/2026-06-11_phase2-content-bridge-gate.md` + `scripts/output/phase2-playthrough/` (390px, zero console errors). Known debt: M4–M8 at acceptable grade (102 generic stems, speaking 1/2 in ~30 lessons — Version B), distribution-cap deviations documented per lesson, legacy `any` lint debt in the test player.
@@ -47,7 +47,7 @@ Done when: `audit:spine` 66/66 PASS · checkpoints administer scored tasks with 
 
 ## Version B — Strong (Core ~150h + Video ~100h)
 
-Version A plus: video through M6 (~12h finished) · M4–M8 content raised to premium · Gemini writing feedback (capped) · speaking simulator v2 (timed, full Teile) · second pilot wave (50+ learners) with exam-outcome tracking · flagship games wired into prescriptions.
+Version A plus: video through M6 (~12h finished) · speaking simulator v2 (timed, full Teile) · second pilot wave (50+ learners) with exam-outcome tracking · flagship games wired into prescriptions. (M4–M8 premium and Gemini writing feedback were pulled forward into Version A by DECISIONS #13/#15.)
 **Done when:** ≥2 pilot learners report passing the real A1 exam.
 
 ## Version C — Polished (Core ~200h + Video ~150h)
@@ -63,6 +63,6 @@ Version B plus: full video M1–M8 (~20–25h dense) · A1+ bridge unit live · 
 
 Payment webhooks · auth/passkeys · Supabase schema · the 18-module content files (map, don't rewrite) · games code (hide, don't delete) · Remotion internals · `pilot/` media assets (contains canonical Kuttan reference images).
 
-## Next prompt (use to start Phase 1 after Phase 0 is committed)
+## Next prompt (use to start Phase 3P Sprint 6a)
 
-> Enter Implementation Mode. Read docs/PRODUCT_VISION.md, docs/ROADMAP.md (Phase 1), docs/LEARNER_JOURNEY.md and docs/TECH_ARCHITECTURE.md. Build Phase 1 — the guided spine: Today screen, 8-module course path, checkpoint wiring, recovery prescriptions v1, and hide all non-MVP routes from navigation. Do not touch content files, payments, or games code. Finish with `npm run qa` green and a mobile (375px) playthrough of the M1 path with screenshots as evidence.
+> Enter Implementation Mode. Read docs/PRODUCT_VISION.md, docs/ROADMAP.md (Phase 3P), docs/LEARNER_JOURNEY.md (learner intents + route disposition rule) and docs/TECH_ARCHITECTURE.md (Build #7/#8). Build Sprint 6a — flows for real use: the 8 learner-intent flows (redo/rewatch/review/retake/self-serve practice/peek-ahead/re-entry), wire /onboarding into the first-visit flow, and produce the route disposition table for all routes. Redo must never reset progress (practice-attempt record, Build #8). Do not touch payments, auth, Supabase schema, or games code. Finish with `npm run qa` green and a 390px walkthrough of all 8 intents with screenshots as evidence.

@@ -34,6 +34,25 @@ Readiness checklist green → "Book your exam" screen
   (Goethe-Institut / Max Mueller Bhavan info for Kerala + Germany centres)
 ```
 
+## Learner intents — guided forward, open backward (DECISIONS #15)
+
+The journey above is the default path, not a rail. Real learners go back and sideways; every realistic intent below gets a **designed flow** (entry point → screens → exit back to Today). A journey that is blocked is a bug; a journey reachable only by accident is also a bug.
+
+| # | Intent | Designed flow |
+|---|---|---|
+| 1 | Continue today (default) | Today's active card → block → back to Today. Always the primary, most prominent action. |
+| 2 | Redo a lesson/mission | Module page or lesson history → replay in practice mode. **Progress is never reset or downgraded by a redo.** |
+| 3 | Rewatch a video | Module page lists completed videos → direct play → back. |
+| 4 | Review a module's vocab/phrases | Module page → per-module review sheet + SRS deck filtered to that module. |
+| 5 | Retake a checkpoint/mock | Result page → practice retake; stored as a practice attempt, separate from the gating attempt record. |
+| 6 | Practice a weak skill on purpose | Readiness bars → tap a skill → its prescription tasks, self-serve — not only when prescribed. |
+| 7 | Peek ahead | Course path shows locked modules read-only (outcome + lesson titles); gates still gate, curiosity isn't punished. |
+| 8 | Return after days away | Welcome-back screen → 5-min refresher (due SRS + last lesson's chunks) → resume the path. |
+
+Onboarding is part of the first-visit flow — intro → first mission → onboarding (pace/goal/exam date) → Today. The built `/onboarding` page is currently orphaned and gets wired in (Sprint 6a).
+
+**Route disposition rule:** every route is classified `ON-PATH` (in the journey) · `REVISIT` (reachable from module pages/history per the intents) · `PRESCRIBED` (recovery/booster targets only) · `HIDDEN`. The full table is committed with Sprint 6a. Flexibility is by design, never by leftover routes.
+
 ## MVP pages
 
 | Page | Job | Success condition |

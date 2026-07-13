@@ -9,7 +9,7 @@ Status: **Source of truth.** Established 2026-06-11 (documentation reset). Chang
 ## What this course is
 
 - A **spoon-fed A1 course**: owner-recorded video spine (Manglish-taught) + app practice layer + mock exams + test-and-recovery system.
-- **One path.** The learner never browses a library; the app always shows the next required block.
+- **Guided forward, open backward** (DECISIONS #15). The next required block is always the default, prominent action — but everything the learner has completed stays freely revisitable: rewatch a video, redo a lesson or whole module, replay audio, review vocab, retake a checkpoint or mock as practice. Forward is gated; backward and sideways are designed flows (`LEARNER_JOURNEY.md` learner intents), never blocked and never accidental. Redoing never destroys progress.
 - **Spine + Library**: an 8-module guided spine is the product; the existing 18-module lessons, flagship games, and SRS are a hidden practice library reached through recovery prescriptions and an optional Practice hub.
 - **Video-enhanced, not video-blocked**: every spine lesson is completable from the app alone (audio + interactive). Video deepens; its absence never blocks a module from shipping.
 
@@ -18,7 +18,7 @@ Status: **Source of truth.** Established 2026-06-11 (documentation reset). Chang
 - Not a content library or dashboard.
 - Not a games arcade (games are remediation/retention only).
 - Not a general "learn German" app — the promise is Goethe A1 readiness.
-- Not an AI-tutor product (AI is optional support, never the foundation).
+- Not an AI-tutor product (AI is optional support, never the foundation). Approved posture (DECISIONS #15): sparkle-badged Gemini speech/writing evaluation as enhancement only, with graceful €0 fallbacks always in place.
 - Not A2/B1 — yet.
 
 ## Who it is for / not for
@@ -48,6 +48,7 @@ Status: **Source of truth.** Established 2026-06-11 (documentation reset). Chang
 - **Production-first**: learners speak, write, listen, recall — not just click. No lesson is complete without a speaking or writing output.
 - **Dialogue-scene-first, phone-first**: a lived German moment (hear → respond → repair → win), not pages of explanation. Text is captions for a moment, not paragraphs.
 - **Self-sufficient**: onboarding, daily plan, checkpoints, and recovery replace the live teacher.
+- **Feel is the bar, audit is the floor** (DECISIONS #15): a lesson is premium only when a human/agent playthrough feel-check passes (Feel Rubric in `LESSON_QUALITY_STANDARD.md`) — structural audit PASS alone never makes a lesson premium.
 
 ## THE REEL RULE (hard law)
 
