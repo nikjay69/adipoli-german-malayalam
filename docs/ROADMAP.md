@@ -14,13 +14,30 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 
 **Execution cadence (DECISIONS #16):** complete Phase 3P as small, independently reviewable chunks—not as one autonomous run. One chunk = one named learner outcome or defect, narrow scope, explicit done condition, and proportionate QA/playthrough evidence. Stop for owner review before starting the next chunk; do not silently chain sprint items.
 
+**Chunk ledger (DECISIONS #17 — the only chunk list; each contract lives in its PR body).** IDs: `v1-xx` = operating-system/video track, `3p-xx` = Phase 3P core track.
+
+| Chunk | Outcome | Status |
+|---|---|---|
+| v1-00 · Durable baseline | repo = durable project memory; vision-fix docs + all video work committed; caches gitignored | **merged** (PR #2, 2026-07-13) |
+| v1-01 · SOT doc patches | dev OS + 2026-07-13 owner rulings codified in these docs | in review |
+| 3p-01 · Clean character cutouts (proposed) | no white fringing behind Frau Weber/Kuttan anywhere in the app | awaiting owner approval |
+| 3p-02 · /intro orients a stranger (proposed) | cold visitor understands what/for-whom/what-next in one glance, less text | awaiting owner approval |
+
 | Sprint | Work | Done when | Status |
 |---|---|---|---|
 | 6a Flows for real use | Learner-intent flows 1–8 (`LEARNER_JOURNEY.md`): redo/rewatch/review/retake/self-serve practice/peek-ahead/re-entry; wire the orphaned `/onboarding` into first-visit; route disposition audit of all ~158 routes (ON-PATH/REVISIT/PRESCRIBED/HIDDEN) | 390px walkthrough of all 8 intents green; redo provably never resets progress; disposition table committed | — |
 | 6b Feel pass | Feel Rubric (`LESSON_QUALITY_STANDARD.md`) applied depth-first: M1–M2 spine lessons to ADIPOLI (convert table/note-heavy lessons to scene arcs on the first-mission model), then worst-graded M3–M8; clear the 19 WEAK | No FLAT lesson on the spine; M1–M2 ADIPOLI by playthrough evidence | — |
 | 6c AI eval + plan | `/api/check-speech` into simulator + mission speaking steps; `/api/check-german` into Schreiben Teil 2 (sparkle badge, session cap, €0 fallbacks — TECH_ARCHITECTURE Build #7); 7-day plan generator (carried E5 item) | Human end-to-end mic+AI run recorded as QC evidence; €0-mode regression green | — |
 | 6d Audio + full gate | Cloud TTS creds re-provisioned (owner); render the 59-file batch (~€10–20, owner go-ahead at point of spend); remove browser-TTS fallback from the graded path; full-course QA gate incl. the first human boredom scan | 0 pending audio in `audit:app-readiness`; no SpeechSynthesis reachable from the spine; full gate report in `GermanCourse_QC/` | — |
-| V1 Video (parallel, owner track) | Agent prepares a recording kit for M1's 7 record-ready scripts (teleprompter files, shot checklist, per-lesson time budget); owner sets dates and records | First finished M1 video in the app — or an explicit dated deferral logged in DECISIONS | — |
+| V1 Video (parallel, owner track) | Staged track below (DECISIONS #17): pipeline decided → calm reel sign-off + recording kit → owner records → vertical slice → finished L1 in app → scale L2–L7 | First finished M1 video in the app — or an explicit dated deferral logged in DECISIONS | A done |
+
+### V1 Video track stages (DECISIONS #17)
+
+- **V1-A · Baseline & pipeline decision — done 2026-07-13:** repo baseline merged (PR #2); tool ownership decided (Remotion master assembler · HyperFrames frozen teaching inserts · Canvas algorithmic inserts · FFmpeg encode/QC; engine-neutral `lesson.scene.json`); storage policy set (`TECH_ARCHITECTURE.md`).
+- **V1-B · Calm reel sign-off + recording kit:** redesign the L1 approval reel to the calm-design law (LESSON_QUALITY_STANDARD Feel Rubric "Calm"), owner signs off the look; recording kit for all 7 M1 scripts (teleprompter files, shot checklist, pause map, 15–18 min budgets — DECISIONS #17 duration ruling).
+- **V1-C · Owner records L1 → vertical slice:** first ~3 min assembled through Remotion with real footage, native German audio, captions, PIP; owner reviews a short proxy.
+- **V1-D · Finished L1 + app integration:** full 15–18 min master, FFmpeg technical QC, storage per policy, `videoUrl` wired, 390px playthrough with the video playing.
+- **V1-E · Scale out L2–L7:** one lesson at a time, same review loop, reusing frozen inserts + per-lesson scene JSON.
 
 Done when: all 8 intent flows green · zero FLAT spine lessons · AI eval live with €0 fallback · 0 pending audio and no browser TTS on the graded path · full-course QA gate report · V1 video outcome logged. Then Phase 5 (Pilot).
 
@@ -63,6 +80,8 @@ Version B plus: full video M1–M8 (~20–25h dense) · A1+ bridge unit live · 
 
 Payment webhooks · auth/passkeys · Supabase schema · the 18-module content files (map, don't rewrite) · games code (hide, don't delete) · Remotion internals · `pilot/` media assets (contains canonical Kuttan reference images).
 
-## Next prompt (use to start Phase 3P Sprint 6a)
+## Next prompt (proposed chunk 3p-01 — paste into any agent AFTER the owner approves it)
 
-> Enter Implementation Mode. Read docs/PRODUCT_VISION.md, docs/ROADMAP.md (Phase 3P), docs/LEARNER_JOURNEY.md (learner intents + route disposition rule) and docs/TECH_ARCHITECTURE.md (Build #7/#8). Build Sprint 6a — flows for real use: the 8 learner-intent flows (redo/rewatch/review/retake/self-serve practice/peek-ahead/re-entry), wire /onboarding into the first-visit flow, and produce the route disposition table for all routes. Redo must never reset progress (practice-attempt record, Build #8). Do not touch payments, auth, Supabase schema, or games code. Finish with `npm run qa` green and a 390px walkthrough of all 8 intents with screenshots as evidence.
+> Enter Implementation Mode for chunk 3p-01 · Clean character cutouts. Follow AGENTS.md (session + chunk protocol) and the chunk ledger in docs/ROADMAP.md. Contract: the Frau Weber and Kuttan transparent PNGs show white flood-fill fringing in the app (owner screenshots 2026-07-13, DECISIONS #17.5); re-matte every character cutout PNG from its canonical source with a proper local alpha-matting tool (free/local only, no paid APIs; preserve the white-shirt rule from DECISIONS #9), and produce a before/after contact sheet. Allowed paths: public/images/characters/**, one re-matte script in scripts/, evidence outputs. Excluded: any UI/layout/copy change (that is 3p-02), video work, everything else. Done when: no visible halo on the mission scene card at 390px and at 2× zoom; before/after contact sheet posted on the PR; `npm run qa` green. Branch `chunk/3p-01-clean-cutouts`, contract as draft-PR body, stop after the handoff comment.
+
+(Sprint 6a — the 8 learner-intent flows, /onboarding wiring, route disposition table — remains next on the core track after 3p-01/3p-02; slice it into ledger chunks when the owner calls it.)
