@@ -1,0 +1,18 @@
+[
+  {
+    "localFile": "assets/guten-morgen.mp3",
+    "canonicalSource": "public/audio/vocab/vocab1-3-2.mp3",
+    "sourceMapping": "src/lib/content/modules/module-01.ts · vocab1-3-2.german",
+    "declaredTranscript": "Guten Morgen",
+    "timelineSeconds": 1.2,
+    "sha256": "CE5D19A7F04D633BDD2F5EF9F051E44A22C68EDC0A447C99315A5FEF478DBE07"
+  },
+  {
+    "localFile": "assets/ich-lerne-deutsch.mp3",
+    "canonicalSource": "public/audio/exercises/ex1-1-9-model.mp3",
+    "sourceMapping": "src/lib/content/modules/module-01.ts · exercise ex1-1-9 correctAnswer/audioUrl",
+    "declaredTranscript": "Ich lerne Deutsch",
+    "timelineSeconds": 24.4,
+    "sha256": "94EA2705FC8AA59C65536BB6FDF644E473B7A2AE24E6FD05C25B3027517E94BB"
+  }
+]

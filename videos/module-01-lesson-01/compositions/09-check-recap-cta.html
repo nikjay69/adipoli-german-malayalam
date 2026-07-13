@@ -1,0 +1,49 @@
+<!doctype html>
+<html><body><template>
+  <style>
+    #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; color: #f7f0dd; font-family: "EB Garamond", serif; }
+    .ground { position: absolute; inset: 0; background: radial-gradient(circle at 50% 70%, rgba(241,210,122,.17), rgba(241,210,122,0) 38%), #0d1a0d; }
+    .content { position: relative; width: 100%; height: 100%; }
+    .recap { position: absolute; inset: 0; padding: 96px 144px; display: flex; flex-direction: column; justify-content: center; gap: 38px; opacity: 0; }
+    .eyebrow, .principle, .cta, .closed-kicker, .closed-copy { font-family: "IBM Plex Mono", monospace; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+    .eyebrow { color: #f1d27a; font-size: 22px; }
+    .title { font: 700 86px/1 "Oswald", sans-serif; }
+    .phrases { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 26px; }
+    .phrase { min-height: 250px; padding: 42px; border-radius: 28px; border: 2px solid rgba(241,210,122,.27); background: rgba(22,36,22,.90); display: flex; align-items: flex-end; font-size: 50px; line-height: 1.06; }
+    .phrase:first-child { background: rgba(241,210,122,.12); border-color: #f1d27a; }
+    .principle { color: #bcf7d0; font-size: 18px; }
+    .cta { align-self: stretch; min-height: 104px; border-radius: 28px; background: #f1d27a; color: #162416; display: flex; align-items: center; justify-content: space-between; padding: 0 42px; font-size: 22px; box-shadow: 0 8px 0 #b8891a, 0 20px 50px rgba(0,0,0,.26); }
+    .arrow { font: 700 44px/1 "Oswald", sans-serif; }
+    .closed { position: absolute; inset: 0; padding: 160px 220px; display: flex; flex-direction: column; justify-content: center; gap: 34px; background: #0d1a0d; opacity: 1; }
+    .closed-kicker { color: #f1d27a; font-size: 22px; }
+    .closed-title { font: 700 120px/1 "Oswald", sans-serif; }
+    .closed-copy { color: #c8c2b1; font-size: 22px; }
+  </style>
+  <div id="root" data-composition-id="m1l1-check-recap" data-start="0" data-duration="10" data-width="1920" data-height="1080">
+    <div id="m1l1-check-recap-ground" class="clip ground" data-start="0" data-duration="10" data-track-index="0"></div>
+    <div id="m1l1-check-recap-content" class="clip content" data-start="0" data-duration="10" data-track-index="1">
+      <div class="recap"><div class="eyebrow">You can now say</div><div class="title">Three lines. First win.</div>
+      <div class="phrases"><div class="phrase">Guten Morgen, Frau Weber.</div><div class="phrase">Ich lerne Deutsch.</div><div class="phrase">Auf Wiedersehen.</div></div>
+      <div class="principle">Weakness = data, not shame.</div><div class="cta"><span>Practice: answer Frau Weber</span><span class="arrow">→</span></div></div>
+      <div class="closed"><div class="closed-kicker">Closed check</div><div class="closed-title">No notes.<br>No Google.</div><div class="closed-copy">Find the weak spot, then fix it.</div></div>
+    </div>
+  </div>
+  <script>
+    (() => {
+    window.__timelines=window.__timelines||{};
+    const tl=gsap.timeline({paused:true,defaults:{ease:"power3.out"}});
+    tl.fromTo(".closed-kicker",{opacity:0,x:-40},{opacity:1,x:0,duration:.5},0)
+      .fromTo(".closed-title",{opacity:0,y:40},{opacity:1,y:0,duration:.72},.14)
+      .fromTo(".closed-copy",{opacity:0,y:18},{opacity:1,y:0,duration:.48},.72)
+      .to(".closed",{opacity:0,duration:.52,ease:"power2.inOut"},2.6)
+      .fromTo(".recap",{opacity:0},{opacity:1,duration:.54,ease:"power2.inOut"},2.78)
+      .fromTo(".eyebrow",{opacity:0,x:-38},{opacity:1,x:0,duration:.45},2.92)
+      .fromTo(".title",{opacity:0,y:32},{opacity:1,y:0,duration:.58},3.0)
+      .fromTo(".phrase",{opacity:0,y:30,scale:.98},{opacity:1,y:0,scale:1,duration:.55,stagger:.13},3.3)
+      .fromTo(".principle",{opacity:0,x:-30},{opacity:1,x:0,duration:.44},3.82)
+      .fromTo(".cta",{opacity:0,y:28,scale:.99},{opacity:1,y:0,scale:1,duration:.62},4.0)
+      .to(".content",{opacity:0,duration:.8,ease:"sine.inOut"},9.1);
+    window.__timelines["m1l1-check-recap"]=tl;
+    })();
+  </script>
+</template></body></html>

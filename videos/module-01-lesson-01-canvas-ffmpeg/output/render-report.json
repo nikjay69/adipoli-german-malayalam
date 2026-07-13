@@ -1,0 +1,50 @@
+{
+  "project": "Module 01 Lesson 01 · Canvas/Puppeteer/FFmpeg comparison",
+  "source": [
+    "index.html",
+    "composition.js",
+    "render.js"
+  ],
+  "output": "output/module-01-lesson-01-canvas-ffmpeg.mp4",
+  "startedAt": "2026-07-12T04:34:35.374Z",
+  "endedAt": "2026-07-12T04:36:13.807Z",
+  "wallClockSeconds": 98.433,
+  "requested": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 24,
+    "durationSeconds": 48,
+    "frames": 1152
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "24/1",
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "24000",
+        "channels": 1,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "48.000000",
+      "size": "4311481",
+      "bit_rate": "718580"
+    }
+  }
+}

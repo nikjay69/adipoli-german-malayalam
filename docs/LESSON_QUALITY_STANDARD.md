@@ -49,10 +49,21 @@ Every spine lesson (video + practice block) must contain:
 | **Acceptable** | Correct German · A1-fit · ≥3 production exercises · clear next step · scene tie-in present |
 | **Premium** | Acceptable + emotionally engaging scene · Malayalam bridge where it helps memory · repair step for a real Malayali mistake · explicit exam connection · zero boring moments · learner would show it to a cousin |
 
+## The Feel Rubric (anti-flatness bar — DECISIONS #15)
+
+The automated audit (`audit:spine`) is the **floor**; this rubric is the **bar**. A lesson can pass every structural check and still fail here — that gap is exactly what the 2026-07-12 owner review found. Grade every spine lesson **FLAT / OK / ADIPOLI** by actually playing it (390px, audio on), never by inspecting the data:
+
+- **Momentum** — something changes every ~45 seconds: a scene turn, new stakes, a reveal, a register shift. Exercise → exercise → exercise with no arc = FLAT.
+- **Scene continuity** — one continuous situation with a payoff, not disconnected items sharing a backdrop. `table`/`note` blocks are furniture, not scenes; the M1 first-mission hear→say→repair arc is the model to converge on.
+- **Voice** — Kuttan/teaching lines a 22-year-old would screenshot and send to a cousin. Canned praise ("Great job! Keep going! 🎉") = FLAT.
+- **Production rhythm** — the learner speaks or writes before minute 2, and at least every ~3 exercises after.
+
+FLAT = sev-1 (Reel Rule). Grades are recorded per lesson in `scripts/output/spine-premium-audit.json` (`feel` field) and are assigned only by playthrough — a feel grade without playthrough evidence is hallucinated.
+
 ## How to review a lesson (use in QA Mode)
 
 1. Run automated checks (`QA_AND_EVALUATION_HARNESS.md`): schema, answers, audio links, production floor, empty explanations.
-2. **Boredom scan**: scrub the lesson/video at 1.5×; any stretch you would skip = FAIL, cut or enrich it.
+2. **Boredom scan + feel grade**: scrub the lesson/video at 1.5×; any stretch you would skip = FAIL, cut or enrich it. Then play it properly and assign FLAT/OK/ADIPOLI per the Feel Rubric above.
 3. German correctness spot-check (the M1 gate caught a real error — Tschüss taught with the wrong ch-sound — so this matters).
 4. Manglish naturalness read-aloud test: does it sound like an older cousin or a machine?
 5. Template completeness: all 13 elements above present.

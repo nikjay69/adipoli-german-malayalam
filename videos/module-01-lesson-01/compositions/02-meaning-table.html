@@ -1,0 +1,48 @@
+<!doctype html>
+<html><body><template>
+  <style>
+    #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; color: #f7f0dd; font-family: "EB Garamond", serif; }
+    .ground { position: absolute; inset: 0; background: radial-gradient(circle at 28% 50%, rgba(241,210,122,.15), rgba(241,210,122,0) 37%), #0d1a0d; }
+    .content { position: relative; width: 100%; height: 100%; padding: 96px 144px; display: flex; flex-direction: column; justify-content: center; gap: 36px; }
+    .ghost { position: absolute; left: -40px; top: 250px; font: 700 250px/1 "Oswald", sans-serif; color: rgba(241,210,122,.055); transform: rotate(-90deg); }
+    .eyebrow, .colhead, .note, .index { font-family: "IBM Plex Mono", monospace; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; }
+    .eyebrow { color: #f1d27a; font-size: 22px; }
+    .title { font: 700 82px/1 "Oswald", sans-serif; letter-spacing: -.02em; }
+    .table { border: 2px solid rgba(241,210,122,.26); border-radius: 28px; overflow: hidden; background: rgba(22,36,22,.88); }
+    .row { min-height: 150px; padding: 28px 44px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; align-items: center; gap: 42px; border-top: 2px solid rgba(247,240,221,.10); }
+    .row.head { min-height: 76px; background: rgba(241,210,122,.08); border-top: 0; }
+    .row.active { background: rgba(241,210,122,.12); box-shadow: inset 7px 0 0 #f1d27a; }
+    .colhead { font-size: 18px; color: #c8c2b1; }
+    .german { font-size: 48px; font-weight: 700; }
+    .meaning, .use { font-size: 36px; color: #c8c2b1; }
+    .note { align-self: flex-end; color: #f1d27a; font-size: 18px; border-bottom: 3px solid #f1d27a; padding-bottom: 8px; }
+    .index { position: absolute; right: 144px; top: 96px; color: #c8c2b1; font-size: 18px; }
+  </style>
+  <div id="root" data-composition-id="m1l1-meaning-table" data-start="0" data-duration="8" data-width="1920" data-height="1080">
+    <div id="m1l1-meaning-table-ground" class="clip ground" data-start="0" data-duration="8" data-track-index="0"></div>
+    <div id="m1l1-meaning-table-content" class="clip content" data-start="0" data-duration="8" data-track-index="1">
+      <div class="ghost">GUTEN</div><div class="index">02 / meaning + use</div><div class="eyebrow">What just happened?</div><div class="title">Three useful pieces</div>
+      <div class="table">
+        <div class="row head"><div class="colhead">German</div><div class="colhead">Meaning</div><div class="colhead">Use</div></div>
+        <div class="row active"><div class="german">Guten Morgen</div><div class="meaning">Good morning</div><div class="use">morning</div></div>
+        <div class="row"><div class="german">Frau Weber</div><div class="meaning">Ms/Mrs Weber</div><div class="use">polite address</div></div>
+        <div class="row"><div class="german">Hallo</div><div class="meaning">Hello</div><div class="use">casual / neutral</div></div>
+      </div>
+      <div class="note">Safe first reply → polite address</div>
+    </div>
+  </div>
+  <script>
+    (() => {
+    window.__timelines=window.__timelines||{};
+    const tl=gsap.timeline({paused:true,defaults:{ease:"power3.out"}});
+    tl.fromTo(".eyebrow",{opacity:0,x:-40},{opacity:1,x:0,duration:.5},0)
+      .fromTo(".title",{opacity:0,y:34},{opacity:1,y:0,duration:.62},.12)
+      .fromTo(".index",{opacity:0,x:34},{opacity:1,x:0,duration:.5},.14)
+      .fromTo(".table",{opacity:0,scale:.98,y:24},{opacity:1,scale:1,y:0,duration:.68},.35)
+      .fromTo(".row",{opacity:0},{opacity:1,duration:.52,stagger:.09},.55)
+      .fromTo(".note",{opacity:0,x:38},{opacity:1,x:0,duration:.5},1.18)
+      .fromTo(".ghost",{opacity:0,y:40},{opacity:1,y:0,duration:1.1,ease:"sine.inOut"},.22);
+    window.__timelines["m1l1-meaning-table"]=tl;
+    })();
+  </script>
+</template></body></html>

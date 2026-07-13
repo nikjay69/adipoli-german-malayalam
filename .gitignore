@@ -70,3 +70,13 @@ scripts/output/scenes-candidates/
 scripts/output/veo-loops/
 scripts/output/kuttan-pack/
 scripts/output/videos/
+
+# video render caches & per-project deps — regenerable, never commit (chunk V1-00)
+videos/**/node_modules/
+videos/**/renders/**
+experiments/**/output/**
+# re-included owner-review proxies & contact sheets (approval-milestone evidence only)
+!videos/module-01-lesson-01/renders/module-01-lesson-01-preview.mp4
+!experiments/remotion-module-01-lesson-01/output/module-01-lesson-01-remotion.mp4
+!experiments/remotion-module-01-lesson-01/output/contact-sheet-9-scenes.jpg
+!experiments/remotion-module-01-lesson-01/output/contact-sheet-rendered.jpg

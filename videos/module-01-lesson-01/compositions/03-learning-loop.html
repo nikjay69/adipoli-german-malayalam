@@ -1,0 +1,48 @@
+<!doctype html>
+<html><body><template>
+  <style>
+    #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; color: #f7f0dd; font-family: "Oswald", sans-serif; }
+    .ground { position: absolute; inset: 0; background: radial-gradient(circle at 18% 25%, rgba(63,191,117,.13), rgba(63,191,117,0) 32%), radial-gradient(circle at 82% 72%, rgba(241,210,122,.13), rgba(241,210,122,0) 34%), #0d1a0d; }
+    .grid { position: absolute; inset: 0; opacity: .13; background-image: linear-gradient(rgba(247,240,221,.24) 2px, transparent 2px), linear-gradient(90deg, rgba(247,240,221,.24) 2px, transparent 2px); background-size: 96px 96px; }
+    .content { position: relative; width: 100%; height: 100%; padding: 96px 144px; display: flex; flex-direction: column; justify-content: center; gap: 64px; }
+    .eyebrow, .marker, .note { font-family: "IBM Plex Mono", monospace; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+    .eyebrow { color: #f1d27a; font-size: 22px; }
+    .title { font-size: 86px; line-height: 1; letter-spacing: -.02em; }
+    .path { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 34px; align-items: center; }
+    .path-line { position: absolute; left: 8%; right: 8%; top: 52%; height: 6px; background: rgba(241,210,122,.28); }
+    .station { position: relative; z-index: 1; min-height: 240px; padding: 38px 28px; border-radius: 28px; background: #162416; border: 2px solid rgba(241,210,122,.28); display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 24px 70px rgba(0,0,0,.24); }
+    .station.active { background: #f1d27a; color: #162416; transform: translateY(-18px); }
+    .marker { font-size: 18px; color: #c8c2b1; }
+    .active .marker { color: #162416; opacity: .7; }
+    .verb { font-size: 50px; line-height: .96; }
+    .note { font-size: 18px; color: #c8c2b1; display: flex; justify-content: space-between; }
+    .continue { color: #3fbf75; }
+  </style>
+  <div id="root" data-composition-id="m1l1-learning-loop" data-start="0" data-duration="8" data-width="1920" data-height="1080">
+    <div id="m1l1-learning-loop-ground" class="clip ground" data-start="0" data-duration="8" data-track-index="0"></div>
+    <div id="m1l1-learning-loop-content" class="clip content" data-start="0" data-duration="8" data-track-index="1">
+      <div class="grid"></div><div class="eyebrow">The Adipoli path</div><div class="title">One exact next action</div>
+      <div class="path"><div class="path-line"></div>
+        <div class="station"><div class="marker">01</div><div class="verb">Watch</div></div>
+        <div class="station"><div class="marker">02</div><div class="verb">Listen</div></div>
+        <div class="station active"><div class="marker">03</div><div class="verb">Say</div></div>
+        <div class="station"><div class="marker">04</div><div class="verb">Check</div></div>
+        <div class="station"><div class="marker">05</div><div class="verb">Fix</div></div>
+      </div>
+      <div class="note"><span>No resource dumping</span><span class="continue">Fix → continue</span></div>
+    </div>
+  </div>
+  <script>
+    (() => {
+    window.__timelines=window.__timelines||{};
+    const tl=gsap.timeline({paused:true,defaults:{ease:"power3.out"}});
+    tl.fromTo(".eyebrow",{opacity:0,x:-42},{opacity:1,x:0,duration:.5},0)
+      .fromTo(".title",{opacity:0,y:38},{opacity:1,y:0,duration:.62},.12)
+      .fromTo(".path-line",{scaleX:0,transformOrigin:"left center"},{scaleX:1,duration:1.05,ease:"power2.out"},.42)
+      .fromTo(".station",{opacity:0,y:44,scale:.97},{opacity:1,y:0,scale:1,duration:.58,stagger:.11},.46)
+      .fromTo(".station.active",{scale:.96},{scale:1,duration:.58,ease:"power3.out"},1.08)
+      .fromTo(".note span",{opacity:0,y:18},{opacity:1,y:0,duration:.45,stagger:.16},1.35);
+    window.__timelines["m1l1-learning-loop"]=tl;
+    })();
+  </script>
+</template></body></html>

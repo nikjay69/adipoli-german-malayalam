@@ -12,7 +12,6 @@ Next.js (App Router) · React 19 · TypeScript strict · Tailwind 4 · Zustand 5
 - **Static TS content files.** Right call at this scale; no CMS, no content database, no migration.
 - SM-2 SRS, study-plan logic, goethe-tests engine and data.
 - Remotion + TTS + ffmpeg pipeline (now load-bearing: it serves owner video production).
-- Web Speech recognition + `/api/check-speech` Gemini evaluation.
 - Supabase schema and auth code (don't extend, don't break).
 
 ## Simplify
@@ -34,6 +33,8 @@ Pricing/payments UI · admin · AI chat tutor · on-the-go · scripts viewer · 
 4. **Speaking simulator** page (examiner audio → record → model answer → optional eval).
 5. **Readiness dashboard** (4 skill bars from checkpoint/mock history).
 6. Mission/lesson schema unification (the `Mission` interface direction from the May reset: id, situation, targetOutput, chunks, steps, mistakeRepair, celebration, nextPull) — introduce gradually, never a big-bang rewrite.
+7. **AI eval wiring** (DECISIONS #15 — was "keep frozen", now active): `/api/check-speech` into the speaking simulator + mission speaking steps; `/api/check-german` into Schreiben Teil 2 (mock player + M6 email lessons). Sparkle badge on all AI feedback · per-session client cap · spend inside the ~€30 pilot allocation · no key/503 → the existing heuristic and self-verdict fallbacks (€0 mode must stay fully functional). Consider bumping `gemini-2.0-flash` to the current flash tier at wiring time.
+8. **Practice-attempt record** (learner-intent flows): redos/retakes write to a practice-attempt record in the Zustand store, separate from gating state — a redo can never reset or downgrade progress. No Supabase schema change.
 
 ## Avoid
 
