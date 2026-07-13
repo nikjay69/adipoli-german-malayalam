@@ -1,0 +1,10 @@
+{
+  "name": "adipoli-m1l1-canvas-ffmpeg",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Independent HTML Canvas + Puppeteer + FFmpeg comparison reel for Module 1 Lesson 1",
+  "scripts": {
+    "validate": "node validate.js",
+    "render": "node render.js"
+  }
+}

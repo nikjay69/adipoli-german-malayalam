@@ -1,0 +1,9 @@
+{
+  "name": "adipoli-remotion-module-01-lesson-01-comparison",
+  "private": true,
+  "scripts": {
+    "compositions": "npx remotion compositions src/index.ts --public-dir=../../public",
+    "still": "npx remotion still src/index.ts Module01Lesson01 output/preview.png --frame=1050 --public-dir=../../public",
+    "render": "npx remotion render src/index.ts Module01Lesson01 output/module-01-lesson-01-remotion.mp4 --public-dir=../../public --codec=h264 --crf=18 --concurrency=2"
+  }
+}
