@@ -20,8 +20,9 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 |---|---|---|
 | v1-00 · Durable baseline | repo = durable project memory; vision-fix docs + all video work committed; caches gitignored | **merged** (PR #2, 2026-07-13) |
 | v1-01 · SOT doc patches | dev OS + 2026-07-13 owner rulings codified in these docs | in review |
-| 3p-01 · Clean character cutouts (proposed) | no white fringing behind Frau Weber/Kuttan anywhere in the app | awaiting owner approval |
-| 3p-02 · /intro orients a stranger (proposed) | cold visitor understands what/for-whom/what-next in one glance, less text | awaiting owner approval |
+| 3p-01 · Clean character cutouts | no white fringing behind Frau Weber/Kuttan anywhere in the app (rev2: defringe + 1px choke) | in review (PR #4, owner said "looks good" — merge pending) |
+| 3p-02 · /intro orients a stranger | cold visitor understands what/for-whom/what-next in one glance, less text, chips removed | in review |
+| next (owner picks) | slice Sprint 6a (intent flows) into chunks · or V1-B calm reel + recording kit | awaiting owner choice |
 
 | Sprint | Work | Done when | Status |
 |---|---|---|---|

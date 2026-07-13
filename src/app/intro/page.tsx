@@ -49,6 +49,13 @@ export default function IntroPage() {
         transition={{ duration: 0.34, ease: 'easeOut' }}
         className="relative mx-auto flex h-[100dvh] w-full max-w-md flex-col justify-center px-5 py-4 text-center text-[#1a2e1a]"
       >
+        <p className="text-[0.72rem] font-black uppercase tracking-[0.32em] text-[#176a39]">
+          Adipoli German
+        </p>
+        <p className="mx-auto mt-1.5 mb-5 max-w-[20rem] text-sm font-bold leading-snug text-[#35502c]">
+          The Goethe A1 course for Malayalis.
+        </p>
+
         <div className="mx-auto mb-5 w-full max-w-[21rem]">
           <div className="relative h-48 overflow-hidden rounded-[1.55rem] border border-[#1a2e1a]/12 shadow-[0_22px_60px_-42px_rgba(17,31,17,0.95)]">
             <img
@@ -79,15 +86,9 @@ export default function IntroPage() {
           Your first German moment.
         </h1>
 
-        <p className="mx-auto mt-4 max-w-[20rem] text-sm font-bold leading-snug text-[#35502c]">
-          Meet Frau Weber, hear a real classroom greeting, then say one useful A1 line aloud.
+        <p className="mx-auto mt-3 max-w-[20rem] text-sm font-bold leading-snug text-[#35502c]">
+          Hear a real greeting. Say it aloud. Two minutes.
         </p>
-
-        <div className="mx-auto mt-4 grid w-full max-w-[20rem] gap-2 text-left text-xs font-black uppercase tracking-[0.08em] text-[#176a39]">
-          <div className="rounded-2xl bg-white/55 px-4 py-3">Listen first</div>
-          <div className="rounded-2xl bg-white/55 px-4 py-3">Answer aloud</div>
-          <div className="rounded-2xl bg-white/55 px-4 py-3">Fix one common mistake</div>
-        </div>
 
         <motion.button
           initial={{ y: 10, opacity: 0 }}
@@ -95,7 +96,7 @@ export default function IntroPage() {
           transition={{ delay: 0.12, duration: 0.28 }}
           whileTap={{ y: 2, scale: 0.98 }}
           onClick={startJourney}
-          className="mt-5 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-[#1f9d55] px-8 py-4 text-base font-black uppercase tracking-wide text-white transition-all hover:bg-[#24ad61]"
+          className="mt-7 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-[#1f9d55] px-8 py-4 text-base font-black uppercase tracking-wide text-white transition-all hover:bg-[#24ad61]"
           style={{ boxShadow: '0 5px 0 0 #11602f, 0 8px 20px -4px rgba(31,157,85,0.34)' }}
         >
           Begin lesson 1 <ArrowRight className="h-5 w-5" />
