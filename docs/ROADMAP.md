@@ -14,15 +14,20 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 
 **Execution cadence (DECISIONS #16):** complete Phase 3P as small, independently reviewable chunks—not as one autonomous run. One chunk = one named learner outcome or defect, narrow scope, explicit done condition, and proportionate QA/playthrough evidence. Stop for owner review before starting the next chunk; do not silently chain sprint items.
 
-**Chunk ledger (DECISIONS #17 — the only chunk list; each contract lives in its PR body).** IDs: `v1-xx` = operating-system/video track, `3p-xx` = Phase 3P core track.
+**Chunk ledger (DECISIONS #17/#18 — the only chunk list; each contract lives in its PR body).** IDs: `v1-xx` = operating-system/video track, `3p-xx` = Phase 3P core track, `sec-xx` = protected-access track.
 
 | Chunk | Outcome | Status |
 |---|---|---|
 | v1-00 · Durable baseline | repo = durable project memory; vision-fix docs + all video work committed; caches gitignored | **merged** (PR #2, 2026-07-13) |
-| v1-01 · SOT doc patches | dev OS + 2026-07-13 owner rulings codified in these docs | in review |
-| 3p-01 · Clean character cutouts | no white fringing behind Frau Weber/Kuttan anywhere in the app (rev2: defringe + 1px choke) | in review (PR #4, owner said "looks good" — merge pending) |
-| 3p-02 · /intro orients a stranger | cold visitor understands what/for-whom/what-next in one glance, less text, chips removed | in review |
-| next (owner picks) | slice Sprint 6a (intent flows) into chunks · or V1-B calm reel + recording kit | awaiting owner choice |
+| v1-01 · SOT doc patches | dev OS + 2026-07-13 owner rulings codified in these docs | **merged** (PR #3, 2026-07-13) |
+| 3p-01 · Clean character cutouts | no white fringing behind Frau Weber/Kuttan anywhere in the app (rev2: defringe + 1px choke) | **merged** (PR #4, 2026-07-13) |
+| 3p-02 · /intro orients a stranger | cold visitor understands what/for-whom/what-next in one glance, less text, chips removed | **merged** (PR #5, 2026-07-14) |
+| sec-00 · Protected-access architecture | cost-capped video protection + two-device/one-activity policy + auth/schema boundary correction + staged QA plan | **in progress (conflict recovery)** |
+| sec-01 · Real premium authorization (proposed) | only a server-verified Supabase session + server-owned entitlement can reach protected resources | blocked on sec-00 owner review |
+| sec-02 · Protected M1L1 delivery slice (proposed) | one lesson plays from private HLS via opaque asset ID with bounded access + baked/dynamic watermark | blocked on sec-01 |
+| sec-03 · Trusted devices + activity leases (proposed) | two installations work; a second active video/mock gets a clear takeover flow | blocked on sec-02 |
+| sec-04 · Sharing signals + recovery/privacy (proposed) | intrusive prototype fingerprinting is retired; minimal server events run in shadow mode with purge/support paths | blocked on sec-03 |
+| sec-05 · Adversarial protected-pilot gate (proposed) | theft/replay/revocation/travel/accessibility/cost tests prove the boundary before enforcement | blocked on sec-04 |
 
 | Sprint | Work | Done when | Status |
 |---|---|---|---|
@@ -37,10 +42,23 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 - **V1-A · Baseline & pipeline decision — done 2026-07-13:** repo baseline merged (PR #2); tool ownership decided (Remotion master assembler · HyperFrames frozen teaching inserts · Canvas algorithmic inserts · FFmpeg encode/QC; engine-neutral `lesson.scene.json`); storage policy set (`TECH_ARCHITECTURE.md`).
 - **V1-B · Calm reel sign-off + recording kit:** redesign the L1 approval reel to the calm-design law (LESSON_QUALITY_STANDARD Feel Rubric "Calm"), owner signs off the look; recording kit for all 7 M1 scripts (teleprompter files, shot checklist, pause map, 15–18 min budgets — DECISIONS #17 duration ruling).
 - **V1-C · Owner records L1 → vertical slice:** first ~3 min assembled through Remotion with real footage, native German audio, captions, PIP; owner reviews a short proxy.
-- **V1-D · Finished L1 + app integration:** full 15–18 min master, FFmpeg technical QC, storage per policy, `videoUrl` wired, 390px playthrough with the video playing.
+- **V1-D · Finished L1 + app integration:** full 15–18 min master, FFmpeg technical QC, storage per policy, opaque `videoAssetId` wired through protected playback (DECISIONS #18), 390px playthrough with the video playing; no stable/public media URL.
 - **V1-E · Scale out L2–L7:** one lesson at a time, same review loop, reusing frozen inserts + per-lesson scene JSON.
 
-Done when: all 8 intent flows green · zero FLAT spine lessons · AI eval live with €0 fallback · 0 pending audio and no browser TTS on the graded path · full-course QA gate report · V1 video outcome logged. Then Phase 5 (Pilot).
+### Protected access track (DECISIONS #18)
+
+This track runs as separate small chunks because it crosses auth, schema, storage, privacy, and learner-support boundaries. The owner explicitly authorized auth/passkey/Supabase schema changes on 2026-07-14; they are no longer frozen. Each code chunk must still name exact paths and migrations in its PR contract and stop for owner review before the next chunk.
+
+1. **sec-00 · Architecture and cost guardrail:** record the honest threat boundary, no-new-vendor rule, Supabase Pro/Spend Cap exception, two-device/one-protected-activity policy, delivery design, privacy rules, adversarial QA, and change the obsolete auth/schema boundary. Docs only.
+2. **sec-01 · Real premium authorization:** audit the deployed Supabase configuration against committed SQL; establish a server-verifiable session + server-owned pilot/paid entitlement seam; ensure guest/demo/Zustand/manual-client auth cannot authorize it; add migration/RLS/bypass/recovery tests. No media work yet.
+3. **sec-02 · One protected delivery vertical:** first audit the public Git history/releases/PR artifacts and Drive sharing for course footage; locally encode M1L1 to private HLS; store only `videoAssetId`; compare private authenticated fetch vs rewritten short-signed manifests; gate the encryption key; add baked + pseudonymous moving marks; prove expiry/cache/replay/seek/native-Safari behavior. No protected footage/proxy in public Git and no public playback fallback.
+4. **sec-03 · Trusted installations and activity lease:** additive schema, device management/replacement, revoke-all, two-installation allowance, atomic one-video/one-timed-mock lease with heartbeat and deliberate takeover. No global single-session or IP lock.
+5. **sec-04 · Sharing signals, policy, and recovery:** remove/disable the current client fingerprint + public-IP prototype; add minimal server events, 30–90-day purge, shadow-mode rules, understandable notices, support override, compromise recovery, privacy/seat-policy text, and a human-review ladder.
+6. **sec-05 · Adversarial protected-pilot gate:** test copied URLs/keys, expiry/cache, revoked devices with existing JWT/buffer, two devices/third replacement, VPN/mobile/shared Wi-Fi, India↔Germany travel, accessibility, slow data, quota exhaustion, and watermark placement. Hard enforcement remains off until false-positive review passes.
+
+V1-B/C production may continue in parallel because masters remain private. The code repository is public: future protected lesson footage/proxies stay in restricted Drive storage, while only intentionally public promo/comparison media may enter Git. V1-D cannot expose the current stable `videoUrl`; sec-01 and sec-02 must land first. If protected playback is unavailable, the app-native lesson remains usable and the video waits—there is never an unprotected fallback. Supabase Pro is activated only if measured need requires it, with Spend Cap on and no paid add-ons/default-compute changes; every other recurring security/video vendor remains unapproved.
+
+Done when: all 8 intent flows green · zero FLAT spine lessons · AI eval live with €0 fallback · 0 pending audio and no browser TTS on the graded path · full-course QA gate report · V1 video outcome logged · any pilot video is behind the sec-05 protected-access gate with no public fallback. Then Phase 5 (Pilot).
 
 ### Completed phases
 
@@ -79,10 +97,12 @@ Version B plus: full video M1–M8 (~20–25h dense) · A1+ bridge unit live · 
 
 ## Do NOT touch yet
 
-Payment webhooks · auth/passkeys · Supabase schema · the 18-module content files (map, don't rewrite) · games code (hide, don't delete) · Remotion internals · `pilot/` media assets (contains canonical Kuttan reference images).
+Payment webhooks · the 18-module content files (map, don't rewrite) · games code (hide, don't delete) · Remotion internals · `pilot/` media assets (contains canonical Kuttan reference images).
 
-## Next prompt (proposed chunk 3p-01 — paste into any agent AFTER the owner approves it)
+Auth, passkeys, and the Supabase schema **may be changed** under the approved-chunk rule in AGENTS.md: exact files/tables/routes, a prior architecture decision, additive migration + rollback, RLS/authorization-bypass and recovery QA, and owner review. They are not a standing “do not touch” area.
 
-> Enter Implementation Mode for chunk 3p-01 · Clean character cutouts. Follow AGENTS.md (session + chunk protocol) and the chunk ledger in docs/ROADMAP.md. Contract: the Frau Weber and Kuttan transparent PNGs show white flood-fill fringing in the app (owner screenshots 2026-07-13, DECISIONS #17.5); re-matte every character cutout PNG from its canonical source with a proper local alpha-matting tool (free/local only, no paid APIs; preserve the white-shirt rule from DECISIONS #9), and produce a before/after contact sheet. Allowed paths: public/images/characters/**, one re-matte script in scripts/, evidence outputs. Excluded: any UI/layout/copy change (that is 3p-02), video work, everything else. Done when: no visible halo on the mission scene card at 390px and at 2× zoom; before/after contact sheet posted on the PR; `npm run qa` green. Branch `chunk/3p-01-clean-cutouts`, contract as draft-PR body, stop after the handoff comment.
+## Next protected-access prompt (proposed chunk sec-01 — use only after sec-00 owner approval/merge)
 
-(Sprint 6a — the 8 learner-intent flows, /onboarding wiring, route disposition table — remains next on the core track after 3p-01/3p-02; slice it into ledger chunks when the owner calls it.)
+> Enter Implementation Mode for chunk sec-01 · Real premium authorization. Follow AGENTS.md and DECISIONS #18. Start with a read-only comparison of deployed Supabase configuration/schema and committed SQL; report any unknown deployment state before migration. Outcome: one server-side authorization seam proves that a real Supabase session plus server-owned pilot/paid entitlement is required, while guest/demo/Zustand/manual-client auth cannot authorize protected resources. Contract must name exact auth/API/Supabase/test paths before edits. Include additive migration + rollback, RLS cross-account/service-role tests, expired/revoked-session behavior, recovery, no-store caching, and `npm run qa`. Exclude HLS/media delivery, device limits, sharing heuristics, payment webhooks, and unrelated auth UX. Branch `chunk/sec-01-real-premium-authorization`; draft PR + handoff; stop for owner review.
+
+(Sprint 6a — the 8 learner-intent flows, /onboarding wiring, route disposition table — remains next on the core track after 3p-02; slice it into ledger chunks when the owner calls it.)

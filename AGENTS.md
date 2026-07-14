@@ -17,7 +17,7 @@ A guided Goethe A1 course for Malayali learners: owner-recorded video spine + ap
 | Audit | Health check / something feels wrong | nothing | QC report with evidence |
 | Product Architect | Changing learner experience/course structure | VISION, ARCHITECTURE, JOURNEY + DECISIONS entry | Decision logged |
 | Documentation | Docs stale after work | `docs/` only | Patched existing doc — never a new file |
-| Technical Architect | Schema/stack/route changes | TECH_ARCHITECTURE + DECISIONS entry | Design before code |
+| Technical Architect | Schema/stack/route changes | TECH_ARCHITECTURE + DECISIONS entry; exact AGENTS/ROADMAP mirrors when the decision changes a governing boundary/ledger | Design before code |
 | Implementation | Building a ROADMAP phase | `src/`, content, scripts | `npm run qa` green + 390px playthrough evidence |
 | QA | Before any "done"/launch claim | nothing | PASS/WEAK/FAIL per gate (`docs/QA_AND_EVALUATION_HARNESS.md`) |
 | Regression/Fix | Something broke | minimal diff | qa green + cause noted |
@@ -50,7 +50,8 @@ A guided Goethe A1 course for Malayali learners: owner-recorded video spine + ap
 
 ## Hard boundaries
 
-- Don't touch: payment webhooks, auth/passkeys, Supabase schema, games code (hidden, not deleted), Remotion internals, `pilot/` media (canonical Kuttan references), the 18-module content files (map into the spine, don't rewrite).
+- Don't touch: payment webhooks, games code (hidden, not deleted), Remotion internals, `pilot/` media (canonical Kuttan references), the 18-module content files (map into the spine, don't rewrite).
+- **Auth, passkeys, and the Supabase schema are changeable, not frozen.** Change them only inside an owner-approved chunk that names the exact routes/files/tables and carries the necessary migration, rollback, RLS/authorization-bypass, recovery, and regression checks. A direction or schema change still starts in Technical Architect Mode with a `DECISIONS.md` entry; implementation follows in its own reviewed chunk.
 - AI budget €100 cap; Gemini sparingly with the sparkle badge; the app must work with zero AI budget.
 - German for learners is always pre-rendered native audio — never browser SpeechSynthesis.
 - UI labels in plain English; Manglish only in teaching voice (`docs/LANGUAGE_STRATEGY.md`).
