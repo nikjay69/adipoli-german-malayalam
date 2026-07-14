@@ -22,7 +22,7 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 | v1-01 · SOT doc patches | dev OS + 2026-07-13 owner rulings codified in these docs | **merged** (PR #3, 2026-07-13) |
 | 3p-01 · Clean character cutouts | no white fringing behind Frau Weber/Kuttan anywhere in the app (rev2: defringe + 1px choke) | **merged** (PR #4, 2026-07-13) |
 | 3p-02 · /intro orients a stranger | cold visitor understands what/for-whom/what-next in one glance, less text, chips removed | **merged** (PR #5, 2026-07-14) |
-| sec-00 · Protected-access architecture | cost-capped video protection + two-device/one-activity policy + auth/schema boundary correction + staged QA plan | **in progress (conflict recovery)** |
+| sec-00 · Protected-access architecture | cost-capped video protection + two-device/one-activity policy + auth/schema boundary correction + staged QA plan | in review (PR #7; replaces conflicted #6) |
 | sec-01 · Real premium authorization (proposed) | only a server-verified Supabase session + server-owned entitlement can reach protected resources | blocked on sec-00 owner review |
 | sec-02 · Protected M1L1 delivery slice (proposed) | one lesson plays from private HLS via opaque asset ID with bounded access + baked/dynamic watermark | blocked on sec-01 |
 | sec-03 · Trusted devices + activity leases (proposed) | two installations work; a second active video/mock gets a clear takeover flow | blocked on sec-02 |
