@@ -14,7 +14,7 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 
 **Execution cadence (DECISIONS #16):** complete Phase 3P as small, independently reviewable chunks—not as one autonomous run. One chunk = one named learner outcome or defect, narrow scope, explicit done condition, and proportionate QA/playthrough evidence. Stop for owner review before starting the next chunk; do not silently chain sprint items.
 
-**Chunk ledger (DECISIONS #17/#18 — the only chunk list; each contract lives in its PR body).** IDs: `pa-xx` = product-architecture decision, `v1-xx` = operating-system/video track, `3p-xx` = Phase 3P core track.
+**Chunk ledger (DECISIONS #17/#18/#19 — the only chunk list; each contract lives in its PR body).** IDs: `pa-xx` = product-architecture decision, `v1-xx` = operating-system/video track, `3p-xx` = Phase 3P core track.
 
 | Chunk | Outcome | Status |
 |---|---|---|
@@ -22,23 +22,23 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 | v1-01 · SOT doc patches | dev OS + 2026-07-13 owner rulings codified in these docs | **merged** (PR #3, 2026-07-13) |
 | 3p-01 · Clean character cutouts | no white fringing behind Frau Weber/Kuttan anywhere in the app (rev2: defringe + 1px choke) | **merged** (PR #4, 2026-07-13) |
 | 3p-02 · /intro orients a stranger | cold visitor understands what/for-whom/what-next in one glance, less text, chips removed | **merged** (PR #5, 2026-07-14); its copy-only screen is not the eventual public landing page and is superseded by the 2A system work below |
-| pa-01 · Parallel design/video plan | 2A becomes an evolvable design base; safe parallel video work, dependency gates, HeyGen boundary, and spend gate are durable | **current planning chunk** |
+| pa-01 · Parallel design/video plan | 2A becomes an evolvable design base; safe parallel Remotion/HyperFrames work and dependency gates are durable | **current planning chunk** |
 | 3p-03 · Design-language v0.1 contract | completed 2A board audited; owner approves tokens, type, components, states, responsive behavior, asset usage, public entry, course shell, module identity, lessons, checkpoints, and recovery as one system | awaiting completed Claude Design board + owner review |
-| v1-02 · Design-neutral Remotion element proof | isolated video project proves semantic/timing contract, owner-video/PIP frame, captions, phrase card, lower third, pause timer, native German audio placement, and FFmpeg QC without freezing the visual skin | proposed; may run in parallel with 3p-03 |
-| v1-03 · HeyGen owner-presenter feasibility | one 30–60 s owner-consented A/B using the same owner audio; frozen output compared with real owner footage inside the v1-02 Remotion frame | optional; only after v1-02 + owner assets + spend approval |
-| v1-04 · Calm skin + M1 recording kit | apply approved design v0.1 to video elements; owner signs off the reel; produce the seven M1 recording kits | waits for 3p-03 and the v1-03 keep/discard decision |
+| v1-02 · Design-neutral Remotion + HyperFrames proof | isolated projects prove the shared semantic/timing contract: Remotion master with owner-video/PIP placeholder, captions, lower third, pause timer, and native German audio; two frozen HyperFrames teaching inserts; FFmpeg QC; no final visual skin | proposed; may run in parallel with 3p-03 |
+| v1-03 · 2A video element system | apply approved design v0.1 to Remotion overlays and HyperFrames teaching inserts; owner signs off one calm approval reel; freeze the approved element versions | waits for 3p-03 + v1-02 |
+| v1-04 · M1 recording kit | produce teleprompter files, shot checklist, pause map, asset manifest, and 15–18 minute budget for all seven M1 scripts using the approved element system | waits for v1-03 |
 
-### Design-language gate and parallel work (DECISIONS #18)
+### Design-language gate and parallel work (DECISIONS #18/#19)
 
 **Selected direction, not permanent lock:** Direction 2A “Scenes & Daylight” is the working system. The current Claude Design completion board is evidence-in-progress, not implementation truth. Chunk 3p-03 audits it for coherent public entry → course shell → module identity → lesson → checkpoint → recovery behavior at 1440px and 390px, then records the owner-approved v0.1 contract. v0.1 is implemented through shared tokens/primitives so later colour, type, spacing, radius, or motion tuning can propagate safely. A change to the product metaphor or information hierarchy requires a new decision; ordinary tuning does not.
 
 | Lane | Safe now | Wait for design v0.1 |
 |---|---|---|
 | Core product | board audit, route/intent inventory, data/state logic, content and accessibility review | public landing implementation, learner-shell restyle, module/lesson/checkpoint/recovery UI, final visual QA |
-| Video | scene/timing manifest, transcript/caption structure, PIP geometry, phrase-card semantics, pause timers, native German audio placement, render/QC automation | final colours/type/spacing, branded title cards, motion skin, recording-kit visuals, batch rendering |
-| Synthetic presenter | consent and comparison protocol only | any paid generation, decision to keep it, or use beyond one A/B |
+| Remotion master | scene/timing manifest, transcript/caption structure, owner-footage/PIP geometry, captions, lower thirds, pause timers, native German audio placement, render/QC automation | final colours/type/spacing, branded overlays, motion skin, recording-kit visuals, batch rendering |
+| HyperFrames inserts | semantic teaching-insert prototypes such as phrase-build and mistake-repair; seek-safe deterministic motion; render/freeze/checksum handoff to Remotion | final 2A skin, approval-version renders, reusable branded insert kit |
 
-**Sequencing rule:** do not implement Sprint 6a’s learner-facing UI before 3p-03, or the team will build the same flows twice. Its route/state audit may proceed design-neutrally. The V1 video lane is no longer an either/or choice against the core lane: v1-02 can proceed in an isolated project while the 2A board is completed and audited.
+**Sequencing rule:** do not implement Sprint 6a’s learner-facing UI before 3p-03, or the team will build the same flows twice. Its route/state audit may proceed design-neutrally. The V1 video lane is no longer an either/or choice against the core lane: v1-02 can proceed in isolated Remotion and HyperFrames projects while the 2A board is completed and audited.
 
 | Sprint | Work | Done when | Status |
 |---|---|---|---|
@@ -46,14 +46,14 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 | 6b Feel pass | Feel Rubric (`LESSON_QUALITY_STANDARD.md`) applied depth-first: M1–M2 spine lessons to ADIPOLI (convert table/note-heavy lessons to scene arcs on the first-mission model), then worst-graded M3–M8; clear the 19 WEAK | No FLAT lesson on the spine; M1–M2 ADIPOLI by playthrough evidence | — |
 | 6c AI eval + plan | `/api/check-speech` into simulator + mission speaking steps; `/api/check-german` into Schreiben Teil 2 (sparkle badge, session cap, €0 fallbacks — TECH_ARCHITECTURE Build #7); 7-day plan generator (carried E5 item) | Human end-to-end mic+AI run recorded as QC evidence; €0-mode regression green | — |
 | 6d Audio + full gate | Cloud TTS creds re-provisioned (owner); render the 59-file batch (~€10–20, owner go-ahead at point of spend); remove browser-TTS fallback from the graded path; full-course QA gate incl. the first human boredom scan | 0 pending audio in `audit:app-readiness`; no SpeechSynthesis reachable from the spine; full gate report in `GermanCourse_QC/` | — |
-| V1 Video (parallel, owner track) | Staged track below (DECISIONS #17/#18): pipeline decided → design-neutral proof → optional presenter A/B → calm skin + recording kit → owner records → vertical slice → finished L1 in app → scale L2–L7 | First finished M1 video in the app — or an explicit dated deferral logged in DECISIONS | A done; v1-02 proposed |
+| V1 Video (parallel, owner track) | Staged track below (DECISIONS #17/#18/#19): pipeline decided → design-neutral Remotion/HyperFrames proof → 2A element-system sign-off → recording kit → owner records → vertical slice → finished L1 in app → scale L2–L7 | First finished M1 video in the app — or an explicit dated deferral logged in DECISIONS | A done; v1-02 proposed |
 
-### V1 Video track stages (DECISIONS #17/#18)
+### V1 Video track stages (DECISIONS #17/#18/#19)
 
 - **V1-A · Baseline & pipeline decision — done 2026-07-13:** repo baseline merged (PR #2); tool ownership decided (Remotion master assembler · HyperFrames frozen teaching inserts · Canvas algorithmic inserts · FFmpeg encode/QC; engine-neutral `lesson.scene.json`); storage policy set (`TECH_ARCHITECTURE.md`).
-- **V1-B1 · Design-neutral element proof (`v1-02`):** in an isolated Remotion project, prove 60–90 seconds of M1L1 from semantic scene JSON: owner-footage/PIP frame, captions, lower third, phrase card, pause timer, native German audio placement, deterministic render, and FFmpeg report. Use neutral placeholders/tokens; do not guess the final 2A skin.
-- **V1-B2 · Optional owner-presenter feasibility (`v1-03`):** compare 30–60 seconds of real owner footage with one owner-consented HeyGen render using the same approved owner audio, framed by the same Remotion composition. The owner judges authenticity, lip-sync, calmness, and production-time value. Keep or discard explicitly; it cannot block recording.
-- **V1-B3 · Calm skin + recording kit (`v1-04`):** after 3p-03, apply design v0.1 to the approved elements; owner signs off the reel; prepare teleprompter, shot checklist, pause map, asset manifest, and 15–18 minute budget for all seven M1 scripts.
+- **V1-B1 · Design-neutral Remotion + HyperFrames proof (`v1-02`):** prove 60–90 seconds of M1L1 from semantic scene JSON. Remotion owns the master timeline, owner-footage/PIP placeholder, captions, lower third, pause timer, and native German audio placement. HyperFrames renders two bounded teaching inserts—phrase-build and mistake-repair—once; Remotion consumes the checksummed outputs. Use neutral named tokens; do not guess the final 2A skin.
+- **V1-B2 · 2A video element system (`v1-03`):** after 3p-03, apply design v0.1 to the Remotion overlays and HyperFrames inserts; render one calm approval reel; owner approves/revises; freeze each accepted element with version and checksum.
+- **V1-B3 · M1 recording kit (`v1-04`):** prepare teleprompter, shot checklist, pause map, asset manifest, insert map, and 15–18 minute budget for all seven M1 scripts using the approved element system.
 - **V1-C · Owner records L1 → vertical slice:** first ~3 min assembled through Remotion with real footage, native German audio, captions, PIP; owner reviews a short proxy.
 - **V1-D · Finished L1 + app integration:** full 15–18 min master, FFmpeg technical QC, storage per policy, `videoUrl` wired, 390px playthrough with the video playing.
 - **V1-E · Scale out L2–L7:** one lesson at a time, same review loop, reusing frozen inserts + per-lesson scene JSON.
@@ -107,6 +107,6 @@ Payment webhooks · auth/passkeys · Supabase schema · the 18-module content fi
 
 **Video — safe to start immediately, without final design:**
 
-> Enter Implementation Mode for chunk v1-02 · Design-neutral Remotion element proof. Follow AGENTS.md, DECISIONS #17/#18, and the V1 pipeline in TECH_ARCHITECTURE.md. In a new isolated video project (do not touch frozen app `src/remotion/`), build a deterministic 60–90 s M1L1 proof driven by semantic `lesson.scene.json`: owner-footage/PIP placeholder, captions, lower third, phrase card, pause timer, native German audio placement, and FFmpeg/ffprobe report. Use named neutral tokens and placeholder surfaces—not final 2A colours/type/motion—and make the renderer ready to receive design v0.1 later. No HeyGen call, paid API, batch generation, app UI change, or final lesson render. Done when validation passes, the proxy and contact sheet are reviewable, and swapping renderer tokens requires no timing/content rewrite.
+> Enter Implementation Mode for chunk v1-02 · Design-neutral Remotion + HyperFrames proof. Follow AGENTS.md, DECISIONS #17/#18/#19, and the V1 pipeline in TECH_ARCHITECTURE.md. Use new isolated project directories; do not touch frozen app `src/remotion/`. Build a deterministic 60–90 s M1L1 proof driven by semantic `lesson.scene.json`. Remotion owns the master timeline, owner-footage/PIP placeholder, captions, lower third, pause timer, and native German audio placement. HyperFrames owns exactly two bounded teaching inserts—phrase-build and mistake-repair—which are rendered once, checksummed, and consumed by Remotion. Use named neutral tokens and placeholder surfaces, not final 2A colours/type/motion. No paid API, batch generation, app UI change, final lesson render, or duplicated whole-lesson pipeline. Done when both project checks pass, FFmpeg/ffprobe reports pass, the proxy/contact sheet are reviewable, and design v0.1 can replace renderer tokens without timing/content rewrites.
 
 (Sprint 6a remains next on the core implementation track after 3p-03. Its route/state audit may be split out earlier, but its visible UI waits for design v0.1.)
