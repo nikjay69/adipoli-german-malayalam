@@ -14,7 +14,7 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 
 **Execution cadence (DECISIONS #16):** complete Phase 3P as small, independently reviewable chunks—not as one autonomous run. One chunk = one named learner outcome or defect, narrow scope, explicit done condition, and proportionate QA/playthrough evidence. Stop for owner review before starting the next chunk; do not silently chain sprint items.
 
-**Chunk ledger (DECISIONS #17/#18 — the only chunk list; each contract lives in its PR body).** IDs: `v1-xx` = operating-system/video track, `3p-xx` = Phase 3P core track, `sec-xx` = protected-access track.
+**Chunk ledger (DECISIONS #17–#19 — the only chunk list; each contract lives in its PR body).** IDs: `pa-xx` = product-architecture decision, `v1-xx` = operating-system/video track, `3p-xx` = Phase 3P core track, `sec-xx` = protected-access track.
 
 | Chunk | Outcome | Status |
 |---|---|---|
@@ -28,19 +28,38 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 | sec-03 · Trusted devices + activity leases (proposed) | two installations work; a second active video/mock gets a clear takeover flow | blocked on sec-02 |
 | sec-04 · Sharing signals + recovery/privacy (proposed) | intrusive prototype fingerprinting is retired; minimal server events run in shadow mode with purge/support paths | blocked on sec-03 |
 | sec-05 · Adversarial protected-pilot gate (proposed) | theft/replay/revocation/travel/accessibility/cost tests prove the boundary before enforcement | blocked on sec-04 |
+| pa-01 · Parallel design/video plan | 2A becomes an evolvable design base; safe parallel video work, dependency gates, HeyGen boundary, and spend gate are durable | **current planning chunk** |
+| 3p-03 · Design-language v0.1 contract | completed 2A board audited; owner approves tokens, type, components, states, responsive behavior, asset usage, public entry, course shell, module identity, lessons, checkpoints, and recovery as one system | awaiting completed Claude Design board + owner review |
+| v1-02 · Design-neutral Remotion element proof | isolated video project proves semantic/timing contract, owner-video/PIP frame, captions, phrase card, lower third, pause timer, native German audio placement, and FFmpeg QC without freezing the visual skin | proposed; may run in parallel with 3p-03 |
+| v1-03 · HeyGen owner-presenter feasibility | one 30–60 s owner-consented A/B using the same owner audio; frozen output compared with real owner footage inside the v1-02 Remotion frame | optional; only after v1-02 + owner assets + spend approval |
+| v1-04 · Calm skin + M1 recording kit | apply approved design v0.1 to video elements; owner signs off the reel; produce the seven M1 recording kits | waits for 3p-03 and the v1-03 keep/discard decision |
+
+### Design-language gate and parallel work (DECISIONS #19)
+
+**Selected direction, not permanent lock:** Direction 2A “Scenes & Daylight” is the working system. The current Claude Design completion board is evidence-in-progress, not implementation truth. Chunk 3p-03 audits it for coherent public entry → course shell → module identity → lesson → checkpoint → recovery behavior at 1440px and 390px, then records the owner-approved v0.1 contract. v0.1 is implemented through shared tokens/primitives so later colour, type, spacing, radius, or motion tuning can propagate safely. A change to the product metaphor or information hierarchy requires a new decision; ordinary tuning does not.
+
+| Lane | Safe now | Wait for design v0.1 |
+|---|---|---|
+| Core product | board audit, route/intent inventory, data/state logic, content and accessibility review | public landing implementation, learner-shell restyle, module/lesson/checkpoint/recovery UI, final visual QA |
+| Video | scene/timing manifest, transcript/caption structure, PIP geometry, phrase-card semantics, pause timers, native German audio placement, render/QC automation | final colours/type/spacing, branded title cards, motion skin, recording-kit visuals, batch rendering |
+| Synthetic presenter | consent and comparison protocol only | any paid generation, decision to keep it, or use beyond one A/B |
+
+**Sequencing rule:** do not implement Sprint 6a’s learner-facing UI before 3p-03, or the team will build the same flows twice. Its route/state audit may proceed design-neutrally. The V1 video lane is no longer an either/or choice against the core lane: v1-02 can proceed in an isolated project while the 2A board is completed and audited.
 
 | Sprint | Work | Done when | Status |
 |---|---|---|---|
-| 6a Flows for real use | Learner-intent flows 1–8 (`LEARNER_JOURNEY.md`): redo/rewatch/review/retake/self-serve practice/peek-ahead/re-entry; wire the orphaned `/onboarding` into first-visit; route disposition audit of all ~158 routes (ON-PATH/REVISIT/PRESCRIBED/HIDDEN) | 390px walkthrough of all 8 intents green; redo provably never resets progress; disposition table committed | — |
+| 6a Flows for real use | Learner-intent flows 1–8 (`LEARNER_JOURNEY.md`): redo/rewatch/review/retake/self-serve practice/peek-ahead/re-entry; wire the orphaned `/onboarding` into first-visit; route disposition audit of all ~158 routes (ON-PATH/REVISIT/PRESCRIBED/HIDDEN) | 390px walkthrough of all 8 intents green; redo provably never resets progress; disposition table committed | route/state audit may proceed; learner-facing implementation waits for 3p-03 |
 | 6b Feel pass | Feel Rubric (`LESSON_QUALITY_STANDARD.md`) applied depth-first: M1–M2 spine lessons to ADIPOLI (convert table/note-heavy lessons to scene arcs on the first-mission model), then worst-graded M3–M8; clear the 19 WEAK | No FLAT lesson on the spine; M1–M2 ADIPOLI by playthrough evidence | — |
 | 6c AI eval + plan | `/api/check-speech` into simulator + mission speaking steps; `/api/check-german` into Schreiben Teil 2 (sparkle badge, session cap, €0 fallbacks — TECH_ARCHITECTURE Build #7); 7-day plan generator (carried E5 item) | Human end-to-end mic+AI run recorded as QC evidence; €0-mode regression green | — |
 | 6d Audio + full gate | Cloud TTS creds re-provisioned (owner); render the 59-file batch (~€10–20, owner go-ahead at point of spend); remove browser-TTS fallback from the graded path; full-course QA gate incl. the first human boredom scan | 0 pending audio in `audit:app-readiness`; no SpeechSynthesis reachable from the spine; full gate report in `GermanCourse_QC/` | — |
-| V1 Video (parallel, owner track) | Staged track below (DECISIONS #17): pipeline decided → calm reel sign-off + recording kit → owner records → vertical slice → finished L1 in app → scale L2–L7 | First finished M1 video in the app — or an explicit dated deferral logged in DECISIONS | A done |
+| V1 Video (parallel, owner track) | Staged track below (DECISIONS #17/#18): pipeline decided → design-neutral proof → optional presenter A/B → calm skin + recording kit → owner records → vertical slice → finished L1 in app → scale L2–L7 | First finished M1 video in the app — or an explicit dated deferral logged in DECISIONS | A done; v1-02 proposed |
 
-### V1 Video track stages (DECISIONS #17)
+### V1 Video track stages (DECISIONS #17/#18)
 
 - **V1-A · Baseline & pipeline decision — done 2026-07-13:** repo baseline merged (PR #2); tool ownership decided (Remotion master assembler · HyperFrames frozen teaching inserts · Canvas algorithmic inserts · FFmpeg encode/QC; engine-neutral `lesson.scene.json`); storage policy set (`TECH_ARCHITECTURE.md`).
-- **V1-B · Calm reel sign-off + recording kit:** redesign the L1 approval reel to the calm-design law (LESSON_QUALITY_STANDARD Feel Rubric "Calm"), owner signs off the look; recording kit for all 7 M1 scripts (teleprompter files, shot checklist, pause map, 15–18 min budgets — DECISIONS #17 duration ruling).
+- **V1-B1 · Design-neutral element proof (`v1-02`):** in an isolated Remotion project, prove 60–90 seconds of M1L1 from semantic scene JSON: owner-footage/PIP frame, captions, lower third, phrase card, pause timer, native German audio placement, deterministic render, and FFmpeg report. Use neutral placeholders/tokens; do not guess the final 2A skin.
+- **V1-B2 · Optional owner-presenter feasibility (`v1-03`):** compare 30–60 seconds of real owner footage with one owner-consented HeyGen render using the same approved owner audio, framed by the same Remotion composition. The owner judges authenticity, lip-sync, calmness, and production-time value. Keep or discard explicitly; it cannot block recording.
+- **V1-B3 · Calm skin + recording kit (`v1-04`):** after 3p-03, apply design v0.1 to the approved elements; owner signs off the reel; prepare teleprompter, shot checklist, pause map, asset manifest, and 15–18 minute budget for all seven M1 scripts.
 - **V1-C · Owner records L1 → vertical slice:** first ~3 min assembled through Remotion with real footage, native German audio, captions, PIP; owner reviews a short proxy.
 - **V1-D · Finished L1 + app integration:** full 15–18 min master, FFmpeg technical QC, storage per policy, opaque `videoAssetId` wired through protected playback (DECISIONS #18), 390px playthrough with the video playing; no stable/public media URL.
 - **V1-E · Scale out L2–L7:** one lesson at a time, same review loop, reusing frozen inserts + per-lesson scene JSON.
@@ -58,7 +77,7 @@ This track runs as separate small chunks because it crosses auth, schema, storag
 
 V1-B/C production may continue in parallel because masters remain private. The code repository is public: future protected lesson footage/proxies stay in restricted Drive storage, while only intentionally public promo/comparison media may enter Git. V1-D cannot expose the current stable `videoUrl`; sec-01 and sec-02 must land first. If protected playback is unavailable, the app-native lesson remains usable and the video waits—there is never an unprotected fallback. Supabase Pro is activated only if measured need requires it, with Spend Cap on and no paid add-ons/default-compute changes; every other recurring security/video vendor remains unapproved.
 
-Done when: all 8 intent flows green · zero FLAT spine lessons · AI eval live with €0 fallback · 0 pending audio and no browser TTS on the graded path · full-course QA gate report · V1 video outcome logged · any pilot video is behind the sec-05 protected-access gate with no public fallback. Then Phase 5 (Pilot).
+Done when: design language v0.1 is owner-approved and implemented through shared primitives on the public entry + learner shell · all 8 intent flows green · zero FLAT spine lessons · AI eval live with €0 fallback · 0 pending audio and no browser TTS on the graded path · full-course QA gate report · V1 video outcome logged · any pilot video is behind the sec-05 protected-access gate with no public fallback. Then Phase 5 (Pilot).
 
 ### Completed phases
 
@@ -106,3 +125,15 @@ Auth, passkeys, and the Supabase schema **may be changed** under the approved-ch
 > Enter Implementation Mode for chunk sec-01 · Real premium authorization. Follow AGENTS.md and DECISIONS #18. Start with a read-only comparison of deployed Supabase configuration/schema and committed SQL; report any unknown deployment state before migration. Outcome: one server-side authorization seam proves that a real Supabase session plus server-owned pilot/paid entitlement is required, while guest/demo/Zustand/manual-client auth cannot authorize protected resources. Contract must name exact auth/API/Supabase/test paths before edits. Include additive migration + rollback, RLS cross-account/service-role tests, expired/revoked-session behavior, recovery, no-store caching, and `npm run qa`. Exclude HLS/media delivery, device limits, sharing heuristics, payment webhooks, and unrelated auth UX. Branch `chunk/sec-01-real-premium-authorization`; draft PR + handoff; stop for owner review.
 
 (Sprint 6a — the 8 learner-intent flows, /onboarding wiring, route disposition table — remains next on the core track after 3p-02; slice it into ledger chunks when the owner calls it.)
+
+## Next prompts (owner chooses either lane; they may run concurrently)
+
+**Core/design — use after the completed 2A board/zip is available:**
+
+> Enter Product Architect Mode for chunk 3p-03 · Design-language v0.1 contract. Follow AGENTS.md and inspect the completed Direction 2A “Scenes & Daylight” board plus its source files. Audit the public entry, course shell, module identity, lesson, checkpoint, recovery, core states, and 1440px/390px behavior as one system; reconcile every screen with PRODUCT_VISION, LEARNER_JOURNEY, accessibility, and the real app’s content/assets. Patch the existing SOT docs only and produce a narrow implementation contract mapping tokens, shared primitives, assets, routes, states, and review evidence. Do not implement UI, invent new product scope, or treat the board as automatically correct. Done when the owner can approve/revise one coherent v0.1 contract and every unresolved design decision is explicit.
+
+**Video — safe to start immediately, without final design:**
+
+> Enter Implementation Mode for chunk v1-02 · Design-neutral Remotion element proof. Follow AGENTS.md, DECISIONS #17/#19, and the V1 pipeline in TECH_ARCHITECTURE.md. In a new isolated video project (do not touch frozen app `src/remotion/`), build a deterministic 60–90 s M1L1 proof driven by semantic `lesson.scene.json`: owner-footage/PIP placeholder, captions, lower third, phrase card, pause timer, native German audio placement, and FFmpeg/ffprobe report. Use named neutral tokens and placeholder surfaces—not final 2A colours/type/motion—and make the renderer ready to receive design v0.1 later. No HeyGen call, paid API, batch generation, app UI change, or final lesson render. Done when validation passes, the proxy and contact sheet are reviewable, and swapping renderer tokens requires no timing/content rewrite.
+
+(Sprint 6a remains next on the core implementation track after 3p-03. Its route/state audit may be split out earlier, but its visible UI waits for design v0.1.)

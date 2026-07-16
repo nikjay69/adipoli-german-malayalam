@@ -12,6 +12,8 @@ Status: **Source of truth.** Established 2026-06-11 (documentation reset). Chang
 - **Guided forward, open backward** (DECISIONS #15). The next required block is always the default, prominent action — but everything the learner has completed stays freely revisitable: rewatch a video, redo a lesson or whole module, replay audio, review vocab, retake a checkpoint or mock as practice. Forward is gated; backward and sideways are designed flows (`LEARNER_JOURNEY.md` learner intents), never blocked and never accidental. Redoing never destroys progress.
 - **Spine + Library**: an 8-module guided spine is the product; the existing 18-module lessons, flagship games, and SRS are a hidden practice library reached through recovery prescriptions and an optional Practice hub.
 - **Video-enhanced, not video-blocked**: every spine lesson is completable from the app alone (audio + interactive). Video deepens; its absence never blocks a module from shipping.
+- **One coherent, evolvable product world** (DECISIONS #18): public entry, course shell, modules, lessons, checkpoints, recovery, and video graphics must feel like one system. The owner-selected **2A “Scenes & Daylight”** direction is the working base: calm cream/daylight surfaces for orientation, reading, and recovery; deep-green “rooms” for lived scenes, missions, and checkpoints; gold for decisive action; numbered scene/module flags for place and progress. It becomes implementation-ready only after the completion board is audited and the owner approves **design language v0.1**. The approval freezes reusable tokens and shared components for a build cycle, not the product forever; later refinements happen centrally rather than as page-by-page restyling.
+- **Human-led video, automation-assisted**: the owner’s real Manglish teaching remains the canonical video spine. A synthetic presenter may be evaluated only as a small, owner-consented production aid; it is not the course identity, not a substitute for the owner, and never a launch dependency.
 
 ## What this course is NOT
 
@@ -49,6 +51,7 @@ Status: **Source of truth.** Established 2026-06-11 (documentation reset). Chang
 - **Dialogue-scene-first, phone-first**: a lived German moment (hear → respond → repair → win), not pages of explanation. Text is captions for a moment, not paragraphs.
 - **Self-sufficient**: onboarding, daily plan, checkpoints, and recovery replace the live teacher.
 - **Feel is the bar, audit is the floor** (DECISIONS #15): a lesson is premium only when a human/agent playthrough feel-check passes (Feel Rubric in `LESSON_QUALITY_STANDARD.md`) — structural audit PASS alone never makes a lesson premium.
+- **Calm contrast, not a full-dark wall** (DECISIONS #18): light space makes the product easier to enter and read; dark scene rooms create focus and emotional contrast. Neither treatment is decorative wallpaper — each communicates what kind of learning moment the learner is in.
 
 ## THE REEL RULE (hard law)
 
@@ -60,7 +63,7 @@ Corollary: the video promise is **"~20–25h of dense, zero-filler guided video"
 
 ## Must NOT be built now
 
-Payments flows · A2/B1 content · new games · AI tutor chat as core · cinematic AI video generation · marketing automation · admin tooling · any new strategy document (patch the existing 11 instead).
+Payments flows · A2/B1 content · new games · AI tutor chat as core · cinematic AI video generation · unreviewed or batch synthetic-presenter generation · marketing automation · admin tooling · any new strategy document (patch the existing 11 instead). The sole video-AI exception is the bounded, owner-consented feasibility slice defined in `ROADMAP.md`; it produces a review artifact, not final course inventory.
 
 ## Where everything else lives
 

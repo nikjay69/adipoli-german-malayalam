@@ -126,9 +126,11 @@ New frameworks · content database/CMS · microservices · runtime AI dependence
 
 ## AI budget (€100 cap)
 
-~€60 TTS for missing native German audio (video model lines + app gaps) · ~€30 Gemini speech-eval during pilot · ~€10 reserve. **No image/video generation spend.** Gemini used sparingly and only with the sparkle badge on AI-derived content (existing policy).
+~€60 TTS for missing native German audio (video model lines + app gaps) · ~€30 Gemini speech-eval during pilot · ~€10 reserve. **No routine image/video generation spend.** Gemini is used sparingly and only with the sparkle badge on AI-derived content (existing policy).
 
 **Exception (DECISIONS #9, 2026-06-12):** a one-time batch converted the owner's expiring Google Cloud credits (€150–200 target, €198 hard cap) into pre-baked static assets — native German audio (Cloud TTS Chirp3-HD), painterly scene backdrops + vocab illustrations (Imagen 4), adult-Kuttan poses, and ambient Veo loops. Ledger: `scripts/output/gemini-spend-ledger.json`. This batch does not change the runtime rule: the app runs at €0 AI budget; all generated assets are static files in `public/`.
+
+**Bounded presenter exception (DECISIONS #19, 2026-07-17):** the reserve may fund at most **€10** of HeyGen API usage for chunk v1-03, only after owner approval at the point of spend. It is one 30–60 second owner-consented comparison artifact, never a batch or runtime dependency. Actual spend is logged. If the comparison is not clearly authentic and useful, the artifact is discarded and the owner-recorded path continues unchanged.
 
 ## Testing & CI
 
@@ -140,8 +142,8 @@ New frameworks · content database/CMS · microservices · runtime AI dependence
 
 - **Versions:** Node ≥ 22.12 LTS, npm ≥ 10; `package-lock.json` is the lockfile (no yarn/pnpm). Bootstrap on any machine: `git clone` → `npm ci`.
 - **Video chunks additionally:** FFmpeg on PATH · first Remotion render downloads Chrome Headless Shell (~108 MB, once per machine) · Playwright playthroughs need installed Chrome (`channel: 'chrome'`) · HyperFrames runs via pinned `npx --yes hyperframes@0.7.54` (network on first use per machine).
-- **Secrets:** `.env.local` (gitignored). Key names: `GEMINI_API_KEY` · `RAZORPAY_KEY_ID`/`RAZORPAY_KEY_SECRET` · `STRIPE_PUBLISHABLE_KEY`/`STRIPE_SECRET_KEY` · `NEXT_PUBLIC_SUPABASE_URL`/`NEXT_PUBLIC_SUPABASE_ANON_KEY`/`SUPABASE_SERVICE_ROLE_KEY`. Values move owner→machine manually; never committed, logged, or pasted into PRs/handoffs.
-- **Paid gates:** the €100 cap applies to AI spend and the app still works at €0 AI. Supabase Pro is pre-approved only when required, with Spend Cap enabled. Every other new recurring platform/security vendor, overage path, or cap removal needs owner go-ahead at the point of spend (DECISIONS #18).
+- **Secrets:** `.env.local` (gitignored). Key names: `GEMINI_API_KEY` · `RAZORPAY_KEY_ID`/`RAZORPAY_KEY_SECRET` · `STRIPE_PUBLISHABLE_KEY`/`STRIPE_SECRET_KEY` · `NEXT_PUBLIC_SUPABASE_URL`/`NEXT_PUBLIC_SUPABASE_ANON_KEY`/`SUPABASE_SERVICE_ROLE_KEY`; add `HEYGEN_API_KEY` only if v1-03 is approved. Values move owner→machine manually; never committed, logged, or pasted into PRs/handoffs.
+- **Paid gates:** the €100 cap applies to AI spend and the app still works at €0 AI. Supabase Pro is pre-approved only when required, with Spend Cap enabled. Every other new recurring platform/security vendor, overage path, or cap removal needs owner go-ahead at the point of spend (DECISIONS #18). The bounded HeyGen comparison in DECISIONS #19 also requires point-of-spend approval.
 - **Relative paths only** in scripts/configs/manifests; a machine-absolute path is a review-blocking defect.
 - **Platform/harness:** Windows 11 is the owner's primary; everything runs from repo root via `npm run …`/`node …` under PowerShell, cmd, or bash. Plain git + npm + CLI only — no dependence on Claude Code, Codex, Gemini CLI, or any MCP server (`AGENTS.md` is the shared entrypoint; the workspace Playwright MCP is a convenience with direct Playwright as the fallback).
 - **Deterministic validation:** `npm run qa` · `node experiments/module-01-video-hybrid/validate.mjs` · per-video-project `npm run check`/`npm run validate` · `ffprobe` on rendered files. Compositions stay deterministic — no `Date.now()`, no `Math.random()`, no network fetches.
@@ -156,12 +158,22 @@ One master assembler, two bounded specialists — never three parallel lesson pi
 | Exact German text + transcripts (canon) | `course-production/` scripts + scene-JSON `transcript` fields |
 | Teaching graphics | HyperFrames sub-compositions; each **approved** insert rendered once and frozen as checksummed media |
 | Long-form master assembly: owner footage, PIP, captions, audio placement, batch variants | Remotion, in its own project dir (frozen `src/remotion/` app internals stay untouched; stage a per-lesson `public/` dir — never bundle the app's 193 MB `public/`) |
+| Optional synthetic presenter supplier | HeyGen v1-03 only: one owner-consented, owner-likeness render using approved owner audio; download immediately, checksum, and consume as frozen media in Remotion. No timeline ownership, runtime API call, or batch role |
 | Algorithmic diagrams, clocks, waveforms | Canvas insert factory → MP4/WebM consumed by Remotion |
 | Final encode + technical QC | FFmpeg/ffprobe → `render-report.json` (full decode check, duration/size vs contract) |
 | Learner-facing German audio | pre-rendered native audio ONLY (`public/audio/` Chirp3-HD batch); never msedge-tts/SpeechSynthesis (`scripts/gen-tts.ts` is non-learner scratch only) |
 | Lesson video length | **15–18 min dense per video** (owner ruling, DECISIONS #17.4) |
 
-Pipeline stages stay distinct: approval reel → recording kit → owner recording → vertical slice → finished lesson master → app integration.
+**Design/content separation (DECISIONS #18):** `lesson.scene.json` owns semantic scene type, timing, exact text/transcript, audio, and asset checksums — never literal hex values, font files, or page-specific layout. Renderer-level versioned tokens own colour, type, spacing, radius, and motion. v1-02 proves the semantic element system with neutral tokens while 3p-03 audits Direction 2A; design v0.1 is applied only after owner approval. Later token-level refinement can re-render inserts without rewriting scripts, timing, or owner footage.
+
+**HeyGen v1-03 guardrails:**
+
+- Owner likeness only, with the platform-required consent supplied by that same owner. Never synthesize Frau Weber, Kuttan, learners, or a third party.
+- Feed the same approved owner-recorded Manglish audio to both A/B candidates wherever supported; HeyGen does not write teaching copy or choose pronunciation. Learner-facing German remains the pre-rendered native audio named above, never a synthetic avatar voice.
+- Generate exactly one 30–60 second candidate after v1-02. Request transparent WebM only if the approved avatar supports matting; otherwise use a clean background that Remotion can frame. The generated file is immediately downloaded, checksummed, registered, and treated as disposable supplier media because hosted result URLs are not durable storage.
+- Owner review gate: authenticity, lip-sync, calmness, visual fit, and minutes saved must all be acceptable. A failed test is discarded; no second batch and no effect on the owner-recorded schedule unless a later decision explicitly changes that.
+
+Pipeline stages stay distinct: design-neutral element proof → optional presenter A/B → design v0.1 skin + approval reel → recording kit → owner recording → vertical slice → finished lesson master → app integration.
 
 ## Media & artifact storage (DECISIONS #17)
 
