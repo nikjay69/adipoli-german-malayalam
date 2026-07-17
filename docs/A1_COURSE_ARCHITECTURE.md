@@ -26,6 +26,23 @@ A learner never chooses from a library. The app shows the next required block.
 | 8 | **Goethe A1 Bootcamp** | Timed mocks, all section strategies, recovery loops, final 7-day plan | none new — spiral review | All four skills exam-ready · 2–3 timed full mocks | M17 + M18 + `goethe-tests.ts` (8 mocks) |
 | + | **A1+ bridge** (optional, post-exam) | weil/dass, reflexives, dative depth | — | Clearly labeled "after your exam" | M16 |
 
+### Module identity layer — 2A v0.1 candidate
+
+All eight modules use one template and one state model. Identity comes from a numbered scene flag, a real scene anchor, one restrained accent, and the module’s existing outcome—not eight unrelated brands.
+
+| Module | Scene anchor | Accent |
+|---|---|---|
+| M1 · First German moment | Goethe-Kochi classroom (`hub-goethe-kochi-classroom`) | rose `#E94560` |
+| M2 · Identity, numbers, time | study desk (`hub-study-desk`) | berry `#B2467F` |
+| M3 · People, home, daily life | Thrissur home (`hub-thrissur-home`) | moss `#7A8B2F` |
+| M4 · Food, shopping, money | chayakkada (`hub-chayakkada`) | tangerine `#F97316` |
+| M5 · Travel, services, health | dream platform (`hub-dream-platform`) | sky `#3B82F6` |
+| M6 · Work, study, free time, messages | Kerala–Germany video call (`hub-video-call-wg`) | violet `#A855F7` |
+| M7 · Official life and exam skills | Amt office (`hub-amt-office`) | teal `#14B8A6` |
+| M8 · Goethe A1 Bootcamp | exam hall (`hub-exam-hall`) | forest + gold numeral; no competing action accent |
+
+Required module states are completed, current, checkpoint due, recovery required, read-ahead, and focused/keyboard-active. Every state uses wording and/or an icon in addition to colour. Locked modules remain readable at outcome and lesson-title level; the gate blocks progression, not curiosity.
+
 ### Fate of old modules 13, 15, 16
 
 - **M13 (Perfekt)**: only A1-safe chunks for short personal talk (`Ich war krank`, `Am Wochenende habe ich gelernt`) as score-boosters / Module 8 expression support. No Perfekt depth in must-do.
