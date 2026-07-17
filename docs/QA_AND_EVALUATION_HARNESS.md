@@ -17,7 +17,11 @@ Status: **Source of truth.** Established 2026-06-11. Absorbs the 10 hard gates a
 | Production floor | Every spine lesson: ≥3 production exercises, ≥1 listening | from `scripts/audit-app-readiness.ts` |
 | Empty explanations | No empty `explanation` fields | `scripts/find-empty-explanations.js` |
 | Duplicate exercises | Near-identical question/answer detection | from `scripts/audit-deep.js` |
-| Wortliste coverage | Goethe A1 vocab themes covered | `scripts/check-wortliste.js` |
+| Wortliste coverage | Current official adult Start Deutsch 1 themes + ~650-entry passive inventory mapped to lessons/SRS; active target explicitly selected | current `scripts/check-wortliste.js` checks only a small hand-written list and is **insufficient**; replace before content freeze |
+| 56-row mastery coverage | Exactly `M1L1`–`M8L7`; every row has outcome, exam transfer, production proof, source, diagnostic tags, recovery, ≥2 fresh retests and spiral return | required by DECISIONS #22; validator added before M1 content lock |
+| Recovery completeness | Every emitted weakness tag resolves to recovery level 1 + alternate level 2; no orphan tag or generic “revise more” | required by DECISIONS #22; compare checkpoint/mini-check emitters to prescription registry |
+| Retest freshness | Retests share tag/difficulty but not prompt, order, audio or answer surface with diagnosis; ≥2 variants/tag | required by DECISIONS #22; seeded duplicate/item-bank check |
+| Official calibration | Current official adult A1 specification, Wortliste themes and three practice sets mapped; internal mocks compared for shape/difficulty/scoring | human + recorded fixture review before pilot; internal tests never self-certify |
 | Broken routes/links | All linked routes render | from `scripts/audit-nav.mjs` |
 | Video launch inventory | Exactly 56 spine videos; each has approved master, captions/transcript, native German audio, QC report, manifest/checksum, delivery URL, and verified playback evidence; zero placeholder/coming-soon video | required by DECISIONS #21; automated inventory gate added during V1 production |
 
@@ -39,6 +43,8 @@ Every chunk names its gate from this table in its PR-body contract; evidence goe
 | Remote reproducibility (per V1 stage gate) | fresh-clone bootstrap + preflight + one unit render on a second machine or CI | log on the PR |
 
 **Pilot/release hard stop (DECISIONS #21):** the full-course gate fails until the video inventory reports `56/56` complete and a browser sample plus link audit proves every app delivery URL is playable. A valid app-only fallback, finished recording kit, source timeline, or owner-review proxy is not a finished launch video.
+
+**Mastery hard stop (DECISIONS #22):** the full-course gate also fails if any of the 56 rows is incomplete, any emitted tag lacks exact recovery and two fresh retests, any core outcome can complete through watching/recognition alone, any required audio is missing, or the final A1 Ready state can be awarded without two `>=75` timed mocks (no section `<60`) plus the required speaking/writing evidence.
 
 ## Human review checklists
 

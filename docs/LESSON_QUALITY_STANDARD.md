@@ -20,6 +20,21 @@ Every spine lesson (video + practice block) must contain:
 12. **Self-check (mini-check)** — closed-book, 5–8 tasks, ≥1 production, emits weakness tags.
 13. **Next step** — explicit pull to the next block.
 
+## Per-lesson mastery artifact contract
+
+Every one of the 56 spine lessons has one durable row in `reference/GOETHE_A1_EXAM_MAP.md`. A lesson is not production-ready until its row and implementation agree on:
+
+- one non-skippable learner outcome and its Goethe/life transfer;
+- the required spoken/written/listening proof—not a watch event or recognition score;
+- 1–3 stable weakness tags emitted by the closed mini-check;
+- one exact first-recovery path per emitted tag, with a useful learner output;
+- a materially different second-recovery modality for repeated failure;
+- at least two unseen retest variants per emitted tag;
+- one SRS card set and one named later spiral-return point;
+- source lesson/practice inventory and honest status: `ready`, `partial`, `gap` or `unverified`.
+
+The test and recovery bank must be authored before the final recording kit freezes. A beautiful video cannot compensate for an orphan tag, recognition-only proof, repeated identical quiz or missing spiral return. Conversely, an adaptive route must not invent new teaching claims that are absent from the approved lesson transcript.
+
 ## Exercise rules
 
 **Never create:** match-word-to-phonetic-text · bare German↔English matching lists (flashcards in disguise) · any exercise that would work identically in a Spanish course.
