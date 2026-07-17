@@ -86,7 +86,7 @@ One master assembler, two bounded specialists — never three parallel lesson pi
 | Learner-facing German audio | pre-rendered native audio ONLY (`public/audio/` Chirp3-HD batch); never msedge-tts/SpeechSynthesis (`scripts/gen-tts.ts` is non-learner scratch only) |
 | Lesson video length | **15–18 min dense per video** (owner ruling, DECISIONS #17.4) |
 
-**Design/content separation (DECISIONS #18/#19):** `lesson.scene.json` owns semantic scene type, timing, exact text/transcript, audio, and asset checksums — never literal hex values, font files, or page-specific layout. Renderer-level versioned tokens own colour, type, spacing, radius, and motion. v1-02 proves the semantic element system with neutral tokens while 3p-03 audits Direction 2A; design v0.1 is applied only after owner approval. Later token-level refinement can re-render inserts without rewriting scripts, timing, or owner footage.
+**Design/content separation (DECISIONS #18/#19/#21):** `lesson.scene.json` owns semantic scene type, timing, exact text/transcript, audio, cast role, and asset checksums — never literal hex values, font files, or page-specific layout. A central cast registry resolves the fixed display identities Nivin, Meera, Frau Fischer, and Appu; renderers do not scatter legacy names through templates. Renderer-level versioned tokens own colour, type, spacing, radius, and motion. v1-02 proves the semantic element system with neutral tokens/roles while 3p-03 audits Direction 2A; design v0.1 and the fixed cast are applied only after owner approval/migration. Later token-level refinement can re-render inserts without rewriting scripts, timing, or owner footage.
 
 **Remotion ↔ HyperFrames handoff (DECISIONS #19):**
 
@@ -95,7 +95,9 @@ One master assembler, two bounded specialists — never three parallel lesson pi
 - Every insert handoff declares dimensions, frame rate, exact duration, background/alpha contract, safe area, audio contract (silent by default), source scene ID, version, and SHA-256. Remotion consumes only the rendered artifact, never a live HyperFrames runtime.
 - v1-02 proves two neutral inserts—phrase-build and mistake-repair—inside a 60–90 second Remotion master. After 3p-03, v1-03 applies design v0.1 and freezes only the owner-approved versions.
 
-Pipeline stages stay distinct: design-neutral Remotion/HyperFrames proof → design v0.1 element skin + approval reel → recording kit → owner recording → vertical slice → finished lesson master → app integration.
+Pipeline stages stay distinct: design-neutral Remotion/HyperFrames proof → design v0.1 element skin + approval reel → cast constitution/Meera asset approval → fixed-cast migration → recording kit → owner recording → vertical slice → finished lesson master → app integration. Repeat the reviewed lesson loop through all 56; a proof, kit, slice, or proxy never increments the launch-complete count.
+
+**All-56 release contract (DECISIONS #21):** maintain one machine-readable inventory row per spine video. `launchComplete` is derived, never manually asserted: approved master + exact transcript/captions + native German model-audio references + passing render report/full decode + `MEDIA_MANIFEST.json` checksum record + stable delivery URL + successful app playback evidence. Pilot/release requires exactly `56/56`, zero duplicate lesson IDs, zero missing delivery assets, and zero placeholder video states. App-only lesson continuity remains the outage fallback after delivery, not a release waiver.
 
 ## Media & artifact storage (DECISIONS #17)
 
@@ -103,8 +105,8 @@ Pipeline stages stay distinct: design-neutral Remotion/HyperFrames proof → des
 |---|---|
 | Composition/scene sources, storyboards, validators, manifests + SHA-256, contact sheets, render reports | Git — always |
 | Owner-review proxies (≤ ~10 MB, approval milestones only) | Git |
-| Full-res masters + raw owner footage | Google Drive `AdipoliGerman-Media/`, registered in a committed per-lesson `MEDIA_MANIFEST.json` (name, version, sha256, size, link, recovery steps) before "delivered" |
+| Full-res masters + raw owner footage | Google Drive `AdipoliGerman-Media/`, registered in a committed per-lesson `MEDIA_MANIFEST.json` (lesson ID, cast roles, name, version, sha256, size, link, recovery steps) before "delivered" |
 | App-delivery videos (`videoUrl`) | Supabase Storage (stable CDN URL) |
 | Render work-caches, captured frames, per-project `node_modules`, temp outputs | Neither — gitignored, regenerable, freely deletable |
 
-Naming: `m<module>l<lesson>-<stage>-v<N>` (stages: reel/kit/slice/master/app). New version = new manifest entry; previous master kept until the owner deletes; raw footage kept permanently. Retrieval on another machine: manifest → download → verify sha256; missing or mismatching artifact = reported blocker. Git LFS rejected (free tier ≪ 20–25 h video).
+Naming: `m<module>l<lesson>-<stage>-v<N>` (stages: reel/kit/slice/master/app). New version = new manifest entry; previous master kept until the owner deletes; raw footage kept permanently. Retrieval on another machine: manifest → download → verify sha256; missing or mismatching artifact = reported blocker. Git LFS remains unsuitable for 56 full-res lesson masters.

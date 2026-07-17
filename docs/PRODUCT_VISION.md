@@ -11,7 +11,7 @@ Status: **Source of truth.** Established 2026-06-11 (documentation reset). Chang
 - A **spoon-fed A1 course**: owner-recorded video spine (Manglish-taught) + app practice layer + mock exams + test-and-recovery system.
 - **Guided forward, open backward** (DECISIONS #15). The next required block is always the default, prominent action — but everything the learner has completed stays freely revisitable: rewatch a video, redo a lesson or whole module, replay audio, review vocab, retake a checkpoint or mock as practice. Forward is gated; backward and sideways are designed flows (`LEARNER_JOURNEY.md` learner intents), never blocked and never accidental. Redoing never destroys progress.
 - **Spine + Library**: an 8-module guided spine is the product; the existing 18-module lessons, flagship games, and SRS are a hidden practice library reached through recovery prescriptions and an optional Practice hub.
-- **Video-enhanced, not video-blocked**: every spine lesson is completable from the app alone (audio + interactive). Video deepens; its absence never blocks a module from shipping.
+- **Video-led and launch-gated** (DECISIONS #21): the owner-recorded Manglish videos are the teaching spine, not optional enhancement. All 56 finished lesson videos are required before the free pilot or public launch. App missions, diagnostics, recovery, native model audio, and readable lesson content support and reinforce the videos. They remain usable when playback fails, but that resilience is not permission to ship an incomplete video course.
 - **One coherent, evolvable product world** (DECISIONS #18): public entry, course shell, modules, lessons, checkpoints, recovery, and video graphics must feel like one system. The owner-selected **2A “Scenes & Daylight”** direction is the working base: calm cream/daylight surfaces for orientation, reading, and recovery; deep-green “rooms” for lived scenes, missions, and checkpoints; gold for decisive action; numbered scene/module flags for place and progress. It becomes implementation-ready only after the completion board is audited and the owner approves **design language v0.1**. The approval freezes reusable tokens and shared components for a build cycle, not the product forever; later refinements happen centrally rather than as page-by-page restyling.
 - **Human-led video, composited teaching graphics** (DECISIONS #17/#19): the owner’s real Manglish teaching remains the canonical video spine. Remotion assembles the long-form lesson; HyperFrames creates bounded teaching inserts that are rendered once and frozen into that master. Automation supports the owner’s teaching rather than replacing it.
 
@@ -41,11 +41,12 @@ Status: **Source of truth.** Established 2026-06-11 (documentation reset). Chang
 - **A1 success**: learner scores ≥75/100 on two full timed in-app mock exams (real pass mark is 60) AND completes the speaking simulator for all 3 Sprechen Teile.
 - **Exam-readiness**: all 8 module checkpoints passed + 2 timed full mocks ≥75 + readiness checklist green in all four skills.
 - **Practical German at A1**: introduce self, spell, handle numbers/prices/dates/time, talk about family/work/food/home/routine/hobbies, make appointments, navigate transport/doctor/forms, write a 30-word email, ask and answer W-/Ja-Nein questions.
+- **Launch-readiness**: all 56 videos have an approved master, exact captions/transcript, native German model audio, technical QC, durable media manifest/checksum, app delivery URL, and verified mobile playback. No “video coming soon” or placeholder owner frame remains on the spine.
 
 ## Course soul (protect, but exam goal wins over any device)
 
 - **Kerala-rooted**: A1 happens physically in Kerala. Germany appears as dream, cousin video call, exam rehearsal, or imagined scenario (canon: `reference/A1_STORY_BIBLE.md`).
-- **Kuttan as stakes, not mascot spam**: peer/older-cousin energy, adult-safe, never childish. Appu is a silent UI mascot.
+- **Nivin and Meera as equal learner stakes** (DECISIONS #21): two adult Malayali peers, each with independent goals, mistakes, and wins; neither is the token sidekick or the teacher. Lessons alternate whose lived scene carries the moment. Appu is the silent elephant mascot, not a narrative participant.
 - **Manglish-friendly, exam-serious**: warm teaching voice, serious German outcomes (full rules: `LANGUAGE_STRATEGY.md`).
 - **Production-first**: learners speak, write, listen, recall — not just click. No lesson is complete without a speaking or writing output.
 - **Dialogue-scene-first, phone-first**: a lived German moment (hear → respond → repair → win), not pages of explanation. Text is captions for a moment, not paragraphs.
@@ -55,7 +56,7 @@ Status: **Source of truth.** Established 2026-06-11 (documentation reset). Chang
 
 ## Design language v0.1 candidate — 2A “Scenes & Daylight”
 
-Status: **audited 2026-07-17; owner approval required before learner-facing implementation.** Review source: `# 2A Product System Completion (2).zip`, SHA-256 `E6F4D912485B9438D49AA56CDBF842BAAE374B1049570DBD7E57CAEA68E0B3E2` (C1–C9 complete; 109/109 board images loaded; no browser warnings/errors). DECISIONS #20 records the audit corrections.
+Status: **audited and owner-revised 2026-07-17; explicit visual-contract approval still required before learner-facing implementation.** Review source: `# 2A Product System Completion (2).zip`, SHA-256 `E6F4D912485B9438D49AA56CDBF842BAAE374B1049570DBD7E57CAEA68E0B3E2` (C1–C9 complete; 109/109 board images loaded; no browser warnings/errors). DECISIONS #20 records the board audit; #21 records the video/cast owner revisions.
 
 ### Experience grammar
 
@@ -86,7 +87,8 @@ The v0.1 build reuses these families instead of styling pages independently: `Sc
 
 ### Character and scene law
 
-- Frau Weber appears when the German teacher/classroom relationship is active. Adult Kuttan carries learner stakes and peer/older-cousin energy. Existing `Appu.tsx` is the Appu asset: he is a **rare, silent UI mascot**, never a speaking learner, M6 video-call peer, teacher, status icon, or CTA ornament.
+- **Fixed cast:** Nivin and Meera are equal recurring adult Malayali learners; Frau Fischer is the German teacher; existing `Appu.tsx` is the restrained, silent elephant mascot. The real learner may set an optional preferred name after the First German Moment, but that never renames the fixed cast and is never synthesized into pre-rendered audio.
+- Nivin and Meera alternate scene ownership and speaking examples. Give each a distinct motivation and full learner arc; do not make Meera a female duplicate, romance device, or background assistant. Frau Fischer appears when the German teacher/classroom relationship is active. Appu may mark rare empty/completion/achievement moments, but never speaks, teaches, acts as a learner, delivers status/errors, or ornaments every CTA.
 - An active dialogue may show its two participants. Outside an actual dialogue, use at most one relevant support character; never add a decorative third character or mascot stack.
 - Scene masters are portrait/vertical assets with explicit focal position by breakpoint. Do not stretch one large image across desktop. Approved stills ship first; ambient loops are optional garnish and never block a page.
 - Character assets require clean alpha edges on both cream and forest surfaces. White flood-fill fringes fail the calm-design law.
@@ -97,7 +99,7 @@ The v0.1 build reuses these families instead of styling pages independently: `Sc
 
 Every lesson, video, mission, and screen must pass a boredom scan before shipping: no padding, no repeated meta-lecture, no dead screens, no filler drills, no "stretch" content to hit a duration target. In a world of Instagram reels, one boring minute loses the learner — and the word-of-mouth. Precedent: the 2026-06-10 Module 1 quality gate cut 35% padding and the lessons got *better*. The Reel Rule outranks deadlines and duration promises.
 
-Corollary: the video promise is **"~20–25h of dense, zero-filler guided video"** — never inflate runtime to hit a number.
+Corollary: the video promise is **56 dense, zero-filler owner-led lessons**. At the current 15–18 minute target, the planning range is roughly 14–17 finished hours; do not advertise an hour total until the masters exist, and never inflate a lesson to hit one.
 
 ## Must NOT be built now
 
