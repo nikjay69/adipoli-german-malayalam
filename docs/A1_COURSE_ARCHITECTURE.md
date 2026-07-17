@@ -51,9 +51,10 @@ Required module states are completed, current, checkpoint due, recovery required
 
 ## Video lessons
 
-- 7 owned video lessons per module, 56 total. **Honest, dense lengths** — target ~20–25h total (the 35h figure was ~35% padding; see DECISIONS.md #6). Per-module runtime is whatever the material honestly needs after the boredom scan.
-- Module 1 scripts are record-ready: `course-production/a1-mvp/module-01/` (passed quality gate 2026-06-10).
+- 7 owned video lessons per module, 56 total. **All 56 are a launch gate** (DECISIONS #21), not a post-launch enhancement backlog. At the 15–18 minute target, the honest planning range is roughly **14–17h finished**; the public promise is the 56 dense lessons, not an hour claim. Per-module runtime is whatever the material honestly needs after the boredom scan.
+- Module 1's teaching structure passed its 2026-06-10 quality gate in `course-production/a1-mvp/module-01/`, but those scripts are **not record-ready again** until `3p-05` fixes the cast constitution and `3p-06` migrates/validates every legacy spoken/display name.
 - Each video lesson: one hook tied to a real A1 situation · 3–7 useful German chunks · Manglish explanation where it helps · practice pauses (`[PAUSE 3s]` model→silence→model) · exam link · the immediate next app task. Owner speaks Malayalam/Manglish; **all reviewable German lines are pre-rendered audio** (owner reacts, never voices the models).
+- The app practice path remains a playback-resilience and reinforcement layer, but a valid app-only fallback does not make a lesson launch-complete. A lesson counts toward the 56 only when its approved video master, captions, native German audio, manifest/checksum, delivery URL, and mobile playback evidence all exist.
 - Recording spec pattern and per-lesson outlines: see `course-production/a1-mvp/module-01/` and archived syllabus §3 for modules 2–8 lesson lists.
 
 ## Checkpoints and gates

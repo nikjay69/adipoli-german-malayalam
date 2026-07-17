@@ -26,7 +26,7 @@ Every spine lesson (video + practice block) must contain:
 
 **Every exercise must:** force a decision that requires understanding · be grounded in a real situation · teach a rule or pattern · have plausible, instructive distractors · build toward production.
 
-**Story tie-in:** question stems reference the lesson's scene or a canon character. Bad: "How do you say 'beautiful'?" Good: "At Goethe Kochi, Frau Weber points at a poster: 'schön!' What does she mean?" (Retrofit = rewrite the stem only; never change verified answers.)
+**Story tie-in:** question stems reference the lesson's scene or a canon character. Bad: "How do you say 'beautiful'?" Good: "At Goethe Kochi, Frau Fischer points at a poster: 'schön!' What does she mean?" (Retrofit = rewrite the stem only; never change verified answers.)
 
 **Per-lesson distribution (for ~8 exercises):** multiple-choice ≤2 · fill-blank ≤1 · matching/ordering ≤1 · **speaking ≥2** · **free-text/type-answer ≥1** · **dictation/listening ≥1**. **Hard floor: ≥3 production exercises per lesson.** Below the floor = below launch grade.
 
@@ -54,10 +54,12 @@ Use a dark room for hearing, responding, and closed focus; use an answer sheet f
 
 ## Video lesson standard
 
+- All 56 owner-led videos must pass this standard and be integrated before pilot/launch (DECISIONS #21). App-only completion is resilience, not a substitute launch artifact.
 - Honest length: the runtime the material needs after a boredom scan — never stretched to a target (Reel Rule).
 - Structure: hook → chunks with practice pauses → mistake repair → win → next app task.
-- Recording spec per script: `[PAUSE 3s]` model→silence→model pattern; owner speaks Manglish, **all reviewable German is pre-rendered native audio**; staging notes (Frau Weber via video-call frame / Goethe Kochi desk).
-- Reference pack: `course-production/a1-mvp/module-01/` (all 7 scripts passed the gate on 2026-06-10).
+- Recording spec per script: `[PAUSE 3s]` model→silence→model pattern; owner speaks Manglish, **all reviewable German is pre-rendered native audio**; staging notes (Frau Fischer via video-call frame / Goethe Kochi desk).
+- Nivin and Meera alternate as equal learner peers across the sequence. Each lesson chooses the peer whose goal/struggle best serves the outcome; a dialogue normally shows no more than that learner plus Frau Fischer or the other peer.
+- Reference pack: `course-production/a1-mvp/module-01/` (all 7 teaching structures passed the gate on 2026-06-10; cast/name text must pass `3p-05`/`3p-06` before recording).
 
 ## Bad / acceptable / premium
 
@@ -73,7 +75,7 @@ The automated audit (`audit:spine`) is the **floor**; this rubric is the **bar**
 
 - **Momentum** — something changes every ~45 seconds: a scene turn, new stakes, a reveal, a register shift. Exercise → exercise → exercise with no arc = FLAT.
 - **Scene continuity** — one continuous situation with a payoff, not disconnected items sharing a backdrop. `table`/`note` blocks are furniture, not scenes; the M1 first-mission hear→say→repair arc is the model to converge on.
-- **Voice** — Kuttan/teaching lines a 22-year-old would screenshot and send to a cousin. Canned praise ("Great job! Keep going! 🎉") = FLAT.
+- **Voice** — Nivin/Meera/teaching lines a 22-year-old would screenshot and send to a cousin. Canned praise ("Great job! Keep going! 🎉") = FLAT.
 - **Production rhythm** — the learner speaks or writes before minute 2, and at least every ~3 exercises after.
 - **Calm** (owner law 2026-07-13, DECISIONS #17) — less distracting, more clean: one focal point per screen/scene, few simultaneous moving elements, motion only when the motion *is* the teaching, generous whitespace, restrained color count, less text. Applies equally to app screens and video graphics. Busy ≠ engaging; a cluttered screen is a Calm FAIL even if every element is individually good.
 

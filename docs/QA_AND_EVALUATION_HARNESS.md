@@ -19,6 +19,7 @@ Status: **Source of truth.** Established 2026-06-11. Absorbs the 10 hard gates a
 | Duplicate exercises | Near-identical question/answer detection | from `scripts/audit-deep.js` |
 | Wortliste coverage | Goethe A1 vocab themes covered | `scripts/check-wortliste.js` |
 | Broken routes/links | All linked routes render | from `scripts/audit-nav.mjs` |
+| Video launch inventory | Exactly 56 spine videos; each has approved master, captions/transcript, native German audio, QC report, manifest/checksum, delivery URL, and verified playback evidence; zero placeholder/coming-soon video | required by DECISIONS #21; automated inventory gate added during V1 production |
 
 (Phase 0/1 task: merge these existing ad-hoc scripts into the single `npm run qa` command + Vitest suite.)
 
@@ -37,6 +38,8 @@ Every chunk names its gate from this table in its PR-body contract; evidence goe
 | App video integration | qa + audio/video link audit | 390px playthrough with the video actually playing |
 | Remote reproducibility (per V1 stage gate) | fresh-clone bootstrap + preflight + one unit render on a second machine or CI | log on the PR |
 
+**Pilot/release hard stop (DECISIONS #21):** the full-course gate fails until the video inventory reports `56/56` complete and a browser sample plus link audit proves every app delivery URL is playable. A valid app-only fallback, finished recording kit, source timeline, or owner-review proxy is not a finished launch video.
+
 ## Human review checklists
 
 **Content** (per lesson — full procedure in `LESSON_QUALITY_STANDARD.md`): A1 alignment · exam relevance · German correctness spot-check · Manglish naturalness · **boredom scan at 1.5× speed** (Reel Rule: any skippable stretch = FAIL) · production usefulness per skill · revision card quality.
@@ -54,7 +57,7 @@ No mission, module, or route is "premium" unless all 10 PASS, each with evidence
 3. **No boring dead moments** — action within 45–90s; no passive walls; one job per screen. Evidence: screen-sequence list with action type per step.
 4. **Production** — ≥1 speak-aloud, ≥1 written/typed output, ≥1 listening before completion (launch grade: ≥3 production exercises, speaking ≥2). Evidence: exercise inventory + screenshot.
 5. **Mistake repair** — teaches through ≥1 likely learner mistake with the why, not just right/wrong. Evidence: mistake-state screenshot/snippet.
-6. **Cultural/tone** — Kerala/Manglish bridge helps memory; Kuttan adult-safe; canon respected (Kuttan never physically in Germany during A1). Evidence: sample lines + canon scan.
+6. **Cultural/tone** — Kerala/Manglish bridge helps memory; Nivin and Meera both adult-safe and independently meaningful; neither named peer is physically in Germany during A1; Frau Fischer/Appu roles stay within canon. Evidence: sample lines + canon scan.
 7. **Visual trust** — clean mobile layout, comfortable taps, readable, purposeful motion. Evidence: visual QA screenshots + console + named remaining weaknesses.
 8. **Learning science** — context → input → recognition → production → repair → review hook. No bare flashcards, no random MCQ chains. Evidence: mapped step sequence.
 9. **Goethe readiness** — maps to ≥1 (ideally 2+) exam skills with a transfer statement.
@@ -68,7 +71,7 @@ Scorecard verdicts: `Launch-grade` · `Promising but not enough` · `Wrong direc
 
 ## Red flags — stop immediately
 
-Feels like a Duolingo clone with Kerala words pasted on · completable without speaking/writing · Kuttan childish · still looks cheap after visual QA · no clear next action · app getting more complex instead of more guided · report contains only praise.
+Feels like a Duolingo clone with Kerala words pasted on · completable without speaking/writing · Nivin treated as the only real learner · Meera tokenised/romanticised · Appu made childish or intrusive · still looks cheap after visual QA · no clear next action · app getting more complex instead of more guided · report contains only praise.
 
 ## Review bundle for the owner
 

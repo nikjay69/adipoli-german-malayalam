@@ -7,14 +7,15 @@ The learner must always be able to answer: **what do I do today · why it matter
 ## The journey
 
 ```
-First visit  → `/` promise screen (5s): "Adipoli German · A1 — German for
-               Malayalis. Goethe A1 with Kerala context." + tiny scene preview
-               (Frau Weber: "Guten Morgen." / You: ___) + ONE CTA: Start listening
+First visit  → `/` promise screen (5s): "Adipoli German · The guided Goethe A1
+               video course for Malayalis." + tiny Kerala scene preview
+               (Frau Fischer: "Guten Morgen." / You: ___) + ONE CTA: Start listening
   → First win BEFORE setup: first mission (hear → say reply aloud → one repair
     → win: "You can greet a German teacher.") — inside 90 seconds
-  → Light onboarding (only what changes the path):
-      daily pace (5/15/30 min) · goal (Pass A1 / Prepare for Germany / family)
-      · exam date (none / <3 months / <6 months)
+  → Light onboarding:
+      path questions only — daily pace (5/15/30 min) · goal
+      (Pass A1 / Prepare for Germany / family) · exam date (none / <3 months / <6 months)
+      optional presentation field — preferred name (never renames the fixed cast)
   → 2-min self-check: "new to German" vs "know some" → start M1 or placement M2/M3
 
 Daily loop — the "Today" screen is the only home:
@@ -88,7 +89,7 @@ Mobile behavior is not desktop scaled down: public opening becomes full-height, 
 | Post-win onboarding | Pace/goal/exam-date, minimal friction | User gets a prescribed next block |
 | Today (`/learn`) | Command center | ONE active card, one CTA; old maps hidden behind disclosure |
 | Module page | Current module path | Current lesson + checkpoint visible; future locked/collapsed |
-| Video lesson page | Teach one outcome | User watches and knows the next practice |
+| Video lesson page | Primary owner-led teaching for one outcome | Approved video plays with exact captions/native German models; user knows the next practice |
 | Practice steps | Input → output | User speaks/writes/repairs, not just clicks |
 | Mini-check | Confirm recall | Pass/weak feedback + tags |
 | Module checkpoint | Diagnose readiness | Skill-tagged result |
@@ -103,7 +104,7 @@ Mobile behavior is not desktop scaled down: public opening becomes full-height, 
 
 - **One screen, one job, one primary action** — visible without scrolling, thumb-zone friendly, works at 390px width.
 - `/`: headline ≤5 words · promise ≤12 words · scene preview ≤2 dialogue lines · ≤45 words above the fold · one CTA.
-- Mission: one situation line ≤12 words · one German line at a time · subtitles allowed, paragraph explanations banned · human labels only (`Frau Weber`, `You`, `Examiner`) — never internal labels (`GREETING SET`, `0 of N`, IDs).
+- Mission: one situation line ≤12 words · one German line at a time · subtitles allowed, paragraph explanations banned · human labels only (`Frau Fischer`, `Nivin`, `Meera`, `You`, `Examiner`) — never internal labels (`GREETING SET`, `0 of N`, IDs).
 - Video page: outcome-based title ≤9 words · pre-video context ≤20 words · one "after watching" task · transcript collapsed on phone.
 - Practice: instruction ≤10 words · one prompt, one action · typing targets <80 chars unless exam-writing · feedback ≤2 lines · no celebration that delays the next action.
 - Checkpoint: start instruction ≤35 words incl. closed-book rule (no Google/YouTube/ChatGPT/notes/dictionary) · never teach during the checkpoint · result page prescribes exact next work.
@@ -117,4 +118,4 @@ Mobile behavior is not desktop scaled down: public opening becomes full-height, 
 
 **WEAK** = right CTA but reads like a dashboard · hears German but produces nothing · video detached from practice · score without exact recovery → cut text, hide secondary systems, reconnect video→practice→check→recovery.
 
-**FAIL** = cold user can browse without hearing/saying German · Page 1 is a feature pitch · learner must choose among many resources · open-book or non-diagnostic checkpoints · recovery says "revise more" · SpeechSynthesis German · long typing before confidence · childish Kuttan → rebuild the page around one customer action.
+**FAIL** = cold user can browse without hearing/saying German · Page 1 is a feature pitch · learner must choose among many resources · open-book or non-diagnostic checkpoints · recovery says "revise more" · SpeechSynthesis German · long typing before confidence · childish or tokenised character treatment → rebuild the page around one customer action.
