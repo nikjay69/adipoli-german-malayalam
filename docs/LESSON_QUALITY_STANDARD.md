@@ -34,6 +34,24 @@ Every spine lesson (video + practice block) must contain:
 
 **The groan test:** "Would a student groan and skip this, or actually think?" If they'd groan, delete it.
 
+## 2A interaction-surface contract
+
+The completion board’s K1–K16 kit is the shared visual/behavioral vocabulary for learner work. It is not permission to turn every lesson into the same generic card stack.
+
+| Family | Required task patterns |
+|---|---|
+| Listen / notice | play and identify, replay a meaningful chunk, hear a contrast, audio-to-detail or audio-to-form |
+| Speak / respond | model → learner turn, reply aloud, phrase build, pronunciation contrast, request/question production |
+| Read / decide | notice/sign/ad/menu comprehension, order or sort when the order carries meaning, choose with evidence |
+| Write / transfer | fill a real field, type a phrase or message, repair a weak answer, check required content points |
+| Diagnose / recover | closed checkpoint item, tagged result, exact repair card, weak-tag retest |
+
+Every task component specifies the states that apply: ready, focused, playing/paused/ended, attempted, correct, needs-repair, retry, disabled-with-reason, loading, unavailable-with-alternative, offline, and saved. Do not encode a state through colour alone. A disabled primary action explains what is missing; an unavailable recording/evaluation path exposes the approved €0 fallback.
+
+Interaction hierarchy is consistent across lesson, mission, checkpoint, and recovery: scene/context first, exact learner action second, feedback third, next action last. Correct feedback confirms without delaying the learner; wrong feedback stays to at most two short lines, names the exact issue, and provides one useful repair before retry. A checkpoint never reveals teaching content before submission.
+
+Use a dark room for hearing, responding, and closed focus; use an answer sheet for reading, typing, choices, and inspectable feedback. German lines are typographically primary. Manglish/Malayalam supports the action but does not become a paragraph wall. The mobile floors, focus law, and reduced-motion behavior in `PRODUCT_VISION.md` are part of lesson quality, not optional polish.
+
 ## Video lesson standard
 
 - Honest length: the runtime the material needs after a boredom scan — never stretched to a target (Reel Rule).
