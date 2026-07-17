@@ -16,17 +16,21 @@ First visit  → `/` promise screen (5s): "Adipoli German · The guided Goethe A
       path questions only — daily pace (5/15/30 min) · goal
       (Pass A1 / Prepare for Germany / family) · exam date (none / <3 months / <6 months)
       optional presentation field — preferred name (never renames the fixed cast)
-  → 2-min self-check: "new to German" vs "know some" → start M1 or placement M2/M3
+  → 2-min self-check: "new to German" vs "know some" → both enter the
+    foundation; result adjusts scaffolding/practice density, never waives a
+    core outcome or gate (a future compact-validation path needs closed evidence)
 
 Daily loop — the "Today" screen is the only home:
   1. Next required block (video lesson or mission, 10–25 min)
   2. 5-min SRS review (due cards)
-  3. Optional: one prescribed recovery/booster task
+  3. Required recovery due now (if any); otherwise one optional score booster
   Always visible: module progress + 4 skill-readiness bars (Hören/Lesen/Schreiben/Sprechen)
 
 Module end → closed diagnostic (20–35 min)
-  → pass: celebration + pull to next module
-  → weak: recovery card → 1–3 exact tasks → retest weak tag only → unlock
+  → secure: celebration + pull to next module + later spiral review
+  → supporting weakness only: continue + mandatory scheduled recovery
+  → core/production weakness: recovery card → 1–3 exact tasks → fresh-item
+    retest of the weak tag only → unlock when secure
 
 Milestones: mini-mock after M4 · half-mock after M6 · full mock after M7
 Final phase (M8): 2–3 timed full mocks + speaking simulator + final 7-day plan
@@ -34,6 +38,8 @@ Final phase (M8): 2–3 timed full mocks + speaking simulator + final 7-day plan
 Readiness checklist green → "Book your exam" screen
   (Goethe-Institut / Max Mueller Bhavan info for Kerala + Germany centres)
 ```
+
+The default beginner journey completes all 56 lessons. Tests personalise **what support happens next**, not whether the learner is allowed to leave an unproven basic behind. Watching a block never marks its outcome secure; the mini-check, production evidence, spiral review and module gate do that (DECISIONS #23).
 
 ## Learner intents — guided forward, open backward (DECISIONS #15)
 

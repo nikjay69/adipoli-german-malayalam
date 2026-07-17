@@ -4,14 +4,14 @@ Status: **Source of truth.** Established 2026-06-11 (documentation reset). Chang
 
 ## One sentence
 
-> Adipoli German is a guided A1 exam-success course where a Malayali learner follows dense, never-boring video lessons + interactive missions, takes closed checkpoints that diagnose their Hören/Lesen/Schreiben/Sprechen weaknesses, receives exact recovery tasks, and walks into the Goethe A1 exam knowing they will pass.
+> Adipoli German is a guided A1 exam-success course where a Malayali learner follows dense, never-boring video lessons + interactive missions, takes closed checkpoints that diagnose their Hören/Lesen/Schreiben/Sprechen weaknesses, receives exact recovery tasks, and walks into the Goethe A1 exam with demonstrated evidence that they are ready to pass.
 
 ## What this course is
 
 - A **spoon-fed A1 course**: owner-recorded video spine (Manglish-taught) + app practice layer + mock exams + test-and-recovery system.
 - **Guided forward, open backward** (DECISIONS #15). The next required block is always the default, prominent action — but everything the learner has completed stays freely revisitable: rewatch a video, redo a lesson or whole module, replay audio, review vocab, retake a checkpoint or mock as practice. Forward is gated; backward and sideways are designed flows (`LEARNER_JOURNEY.md` learner intents), never blocked and never accidental. Redoing never destroys progress.
 - **Spine + Library**: an 8-module guided spine is the product; the existing 18-module lessons, flagship games, and SRS are a hidden practice library reached through recovery prescriptions and an optional Practice hub.
-- **Video-led and launch-gated** (DECISIONS #21): the owner-recorded Manglish videos are the teaching spine, not optional enhancement. All 56 finished lesson videos are required before the free pilot or public launch. App missions, diagnostics, recovery, native model audio, and readable lesson content support and reinforce the videos. They remain usable when playback fails, but that resilience is not permission to ship an incomplete video course.
+- **Video-led and launch-gated** (DECISIONS #22): the owner-recorded Manglish videos are the teaching spine, not optional enhancement. All 56 finished lesson videos are required before the free pilot or public launch. App missions, diagnostics, recovery, native model audio, and readable lesson content support and reinforce the videos. They remain usable when playback fails, but that resilience is not permission to ship an incomplete video course.
 - **One coherent, evolvable product world** (DECISIONS #18): public entry, course shell, modules, lessons, checkpoints, recovery, and video graphics must feel like one system. The owner-selected **2A “Scenes & Daylight”** direction is the working base: calm cream/daylight surfaces for orientation, reading, and recovery; deep-green “rooms” for lived scenes, missions, and checkpoints; gold for decisive action; numbered scene/module flags for place and progress. It becomes implementation-ready only after the completion board is audited and the owner approves **design language v0.1**. The approval freezes reusable tokens and shared components for a build cycle, not the product forever; later refinements happen centrally rather than as page-by-page restyling.
 - **Human-led video, composited teaching graphics** (DECISIONS #17/#19): the owner’s real Manglish teaching remains the canonical video spine. Remotion assembles the long-form lesson; HyperFrames creates bounded teaching inserts that are rendered once and frozen into that master. Automation supports the owner’s teaching rather than replacing it.
 
@@ -38,10 +38,23 @@ Status: **Source of truth.** Established 2026-06-11 (documentation reset). Chang
 
 ## Success definitions
 
-- **A1 success**: learner scores ≥75/100 on two full timed in-app mock exams (real pass mark is 60) AND completes the speaking simulator for all 3 Sprechen Teile.
-- **Exam-readiness**: all 8 module checkpoints passed + 2 timed full mocks ≥75 + readiness checklist green in all four skills.
+- **A1 success**: learner scores ≥75/100 on two distinct full timed in-app mock exams, no section below 60%, AND completes the speaking simulator for all 3 Sprechen Teile on two different days.
+- **Exam-readiness**: all 8 module checkpoints passed · every core weakness tag secure · 2 timed full mocks ≥75 with no section below 60% · readiness checklist green in all four skills · required form/message and speaking evidence complete.
 - **Practical German at A1**: introduce self, spell, handle numbers/prices/dates/time, talk about family/work/food/home/routine/hobbies, make appointments, navigate transport/doctor/forms, write a 30-word email, ask and answer W-/Ja-Nein questions.
-- **Launch-readiness**: all 56 videos have an approved master, exact captions/transcript, native German model audio, technical QC, durable media manifest/checksum, app delivery URL, and verified mobile playback. No “video coming soon” or placeholder owner frame remains on the spine.
+- **Launch-readiness**: all 56 videos have an approved master, exact captions/transcript, native German model audio, technical QC, durable media manifest/checksum, app delivery URL, and verified mobile playback **and** all 56 mastery rows have teaching/practice/diagnosis/recovery/two-retest/spiral evidence, zero orphan tags, and official calibration recorded. No “video coming soon,” placeholder owner frame or adaptive dead end remains on the spine.
+
+## Mastery doctrine — same destination, flexible support
+
+**The essential A1 foundation is common to every learner. Personalisation changes support, repetition and timing; it never lowers or deletes the outcome.**
+
+- The default zero-to-A1 path completes the full 56-lesson spine. A self-check may choose more scaffolding or a faster practice density; it does not let confidence alone skip a core production proof, spiral review, module gate or final readiness proof.
+- A test is a routing instrument, not merely a score. Every miss must identify a stable weakness tag and lead to one exact next teaching action.
+- Recovery means **re-explain → guided practice → useful learner output → fresh-item retest**. Repeating the same quiz or saying “revise more” is not recovery. A repeated miss changes the explanation or modality before another fresh retest.
+- Core prerequisite tags block progression until secure. Supporting weaknesses may travel forward only with mandatory scheduled recovery, and every unresolved tag must be cleared before the learner can become **A1 Ready**.
+- Video watching, streaks, clicks and recognition averages never substitute for speaking, writing, listening recall or closed-book evidence.
+- Internal readiness is calibrated against current official Goethe adult A1 specifications, Wortliste and practice sets before pilot. The responsible promise is a complete route to demonstrated readiness for a committed learner, not an unconditional result regardless of participation or exam-day performance.
+
+The row-level contract is `reference/GOETHE_A1_EXAM_MAP.md`; routing and retest rules are in `EXAM_PREP_DESIGN.md` (DECISIONS #23).
 
 ## Course soul (protect, but exam goal wins over any device)
 
