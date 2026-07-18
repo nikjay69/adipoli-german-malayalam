@@ -1,0 +1,26 @@
+{
+  "name": "adipoli-v1-02-remotion-proof",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Remotion long-form master for the M1L1 Remotion + HyperFrames trial.",
+  "scripts": {
+    "preflight": "node ../module-01-video-hybrid/finalize.mjs preflight",
+    "preflight:full": "node ../module-01-video-hybrid/finalize.mjs preflight --full",
+    "finalize:approved": "node ../module-01-video-hybrid/finalize.mjs render --approved",
+    "stage": "node scripts/stage-assets.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "compositions": "npm run stage && npx remotion compositions src/index.ts --public-dir=public",
+    "still": "npm run stage && npx remotion still src/index.ts V1M1L1Proof output/v1-m1-l1-proof.png --frame=1650 --public-dir=public",
+    "render": "npm run stage && npx remotion render src/index.ts V1M1L1Proof output/v1-m1-l1-proof.mp4 --public-dir=public --codec=h264 --crf=18 --concurrency=2"
+  },
+  "dependencies": {
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.448"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.448",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.0.0"
+  }
+}
