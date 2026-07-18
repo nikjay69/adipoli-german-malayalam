@@ -1,0 +1,11 @@
+{
+  "duration": 12,
+  "assertions": [
+    {"kind": "appearsBy", "selector": "#mr-title", "bySec": 1.2},
+    {"kind": "before", "a": "#mr-wrong", "b": "#mr-right"},
+    {"kind": "before", "a": "#mr-right", "b": "#mr-rule-strip"},
+    {"kind": "staysInFrame", "selector": "#mr-wrong"},
+    {"kind": "staysInFrame", "selector": "#mr-right"},
+    {"kind": "keepsMoving", "withinSelector": "#mr-root", "maxStaticSec": 2}
+  ]
+}

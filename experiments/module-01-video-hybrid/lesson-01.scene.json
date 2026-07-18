@@ -1,12 +1,19 @@
 {
-  "schemaVersion": 1,
-  "id": "module-01-lesson-01",
+  "schemaVersion": 2,
+  "id": "module-01-lesson-01-v1-02-proof",
+  "title": "Your first German morning",
   "fps": 30,
   "durationSeconds": 81,
   "durationFrames": 2430,
   "resolution": {
     "width": 1920,
     "height": 1080
+  },
+  "rendererTheme": "2a-scenes-daylight-v0.1-trial",
+  "castRoles": {
+    "presenter": "owner-presenter",
+    "teacher": "german-teacher",
+    "learner": "adult-learner"
   },
   "assets": [
     {
@@ -40,78 +47,155 @@
       }
     }
   ],
+  "inserts": [
+    {
+      "id": "phrase-build",
+      "engine": "hyperframes",
+      "engineVersion": "0.7.63",
+      "version": 1,
+      "intent": "assemble a useful sentence from meaning-bearing word units",
+      "sourceSceneId": "m1l1-phrase-build",
+      "durationSeconds": 11,
+      "durationFrames": 330,
+      "audioContract": "silent",
+      "backgroundContract": "opaque-2a-daylight-to-forest",
+      "alphaContract": "opaque",
+      "safeArea": {
+        "mode": "full-bleed",
+        "protectedInsetPx": {"top": 68, "right": 104, "bottom": 72, "left": 104},
+        "consumerOverlay": "none"
+      },
+      "sourcePath": "../v1-02-hyperframes/phrase-build",
+      "artifactPath": "../v1-02-hyperframes/phrase-build/renders/phrase-build-v1.mp4"
+    },
+    {
+      "id": "mistake-repair",
+      "engine": "hyperframes",
+      "engineVersion": "0.7.63",
+      "version": 1,
+      "intent": "replace a bedtime phrase with the safe evening greeting",
+      "sourceSceneId": "m1l1-mistake-repair",
+      "durationSeconds": 12,
+      "durationFrames": 360,
+      "audioContract": "silent",
+      "backgroundContract": "opaque-2a-forest-to-answer-sheet",
+      "alphaContract": "opaque",
+      "safeArea": {
+        "mode": "full-bleed",
+        "protectedInsetPx": {"top": 68, "right": 104, "bottom": 72, "left": 104},
+        "consumerOverlay": "none"
+      },
+      "sourcePath": "../v1-02-hyperframes/mistake-repair",
+      "artifactPath": "../v1-02-hyperframes/mistake-repair/renders/mistake-repair-v1.mp4"
+    }
+  ],
   "scenes": [
     {
-      "id": "m1l1-first-sound",
+      "id": "m1l1-hook",
+      "type": "lesson-hook",
+      "teachingIntent": "promise a spoken win before explaining rules",
+      "castRole": "owner-presenter",
       "startSeconds": 0,
-      "durationSeconds": 7,
+      "durationSeconds": 8,
       "startFrame": 0,
-      "durationFrames": 210,
-      "assetIds": ["guten-morgen"]
-    },
-    {
-      "id": "m1l1-meaning-table",
-      "startSeconds": 7,
-      "durationSeconds": 8,
-      "startFrame": 210,
       "durationFrames": 240,
-      "assetIds": []
+      "assetIds": [],
+      "caption": "In 81 seconds, answer your first German greeting."
     },
     {
-      "id": "m1l1-learning-loop",
-      "startSeconds": 15,
-      "durationSeconds": 8,
-      "startFrame": 450,
-      "durationFrames": 240,
-      "assetIds": []
-    },
-    {
-      "id": "m1l1-greeting-timeline",
-      "startSeconds": 23,
+      "id": "m1l1-model-response",
+      "type": "listen-and-respond",
+      "teachingIntent": "hear the model and answer aloud",
+      "castRole": "german-teacher",
+      "startSeconds": 8,
       "durationSeconds": 10,
-      "startFrame": 690,
+      "startFrame": 240,
       "durationFrames": 300,
-      "assetIds": ["guten-morgen"]
+      "assetIds": ["guten-morgen"],
+      "caption": "Guten Morgen. Now you answer: Guten Morgen, Frau Fischer."
     },
     {
-      "id": "m1l1-wrong-better",
-      "startSeconds": 33,
-      "durationSeconds": 8,
-      "startFrame": 990,
-      "durationFrames": 240,
-      "assetIds": []
+      "id": "m1l1-phrase-build",
+      "type": "teaching-insert",
+      "teachingIntent": "build Ich lerne Deutsch from three word roles",
+      "castRole": "adult-learner",
+      "insertId": "phrase-build",
+      "startSeconds": 18,
+      "durationSeconds": 11,
+      "startFrame": 540,
+      "durationFrames": 330,
+      "assetIds": ["ich-lerne-deutsch"],
+      "caption": "Ich means I. Lerne means am learning. Deutsch means German."
     },
     {
-      "id": "m1l1-first-sentence",
-      "startSeconds": 41,
-      "durationSeconds": 10,
-      "startFrame": 1230,
-      "durationFrames": 300,
-      "assetIds": ["ich-lerne-deutsch"]
+      "id": "m1l1-presenter-bridge",
+      "type": "presenter-bridge",
+      "teachingIntent": "connect the built phrase to a real learner response",
+      "castRole": "owner-presenter",
+      "startSeconds": 29,
+      "durationSeconds": 9,
+      "startFrame": 870,
+      "durationFrames": 270,
+      "assetIds": ["ich-lerne-deutsch"],
+      "caption": "Say the whole sentence once: Ich lerne Deutsch."
     },
     {
-      "id": "m1l1-pronunciation",
-      "startSeconds": 51,
-      "durationSeconds": 8,
-      "startFrame": 1530,
-      "durationFrames": 240,
-      "assetIds": ["ich-lerne-deutsch"]
-    },
-    {
-      "id": "m1l1-dialogue",
-      "startSeconds": 59,
+      "id": "m1l1-mistake-repair",
+      "type": "teaching-insert",
+      "teachingIntent": "repair the common evening greeting trap",
+      "castRole": "adult-learner",
+      "insertId": "mistake-repair",
+      "startSeconds": 38,
       "durationSeconds": 12,
-      "startFrame": 1770,
+      "startFrame": 1140,
       "durationFrames": 360,
-      "assetIds": ["guten-morgen", "ich-lerne-deutsch"]
+      "assetIds": [],
+      "caption": "At seven in the evening, say Guten Abend. Save Gute Nacht for bedtime."
     },
     {
-      "id": "m1l1-check-recap",
-      "startSeconds": 71,
+      "id": "m1l1-pause-practice",
+      "type": "timed-production",
+      "teachingIntent": "require an unaided spoken answer",
+      "castRole": "adult-learner",
+      "startSeconds": 50,
+      "durationSeconds": 14,
+      "startFrame": 1500,
+      "durationFrames": 420,
+      "assetIds": ["guten-morgen"],
+      "caption": "Frau Fischer greets you. Answer before the timer ends."
+    },
+    {
+      "id": "m1l1-mini-dialogue",
+      "type": "dialogue-performance",
+      "teachingIntent": "combine greeting and first sentence in one exchange",
+      "castRole": "german-teacher",
+      "startSeconds": 64,
       "durationSeconds": 10,
-      "startFrame": 2130,
+      "startFrame": 1920,
       "durationFrames": 300,
-      "assetIds": ["auf-wiedersehen"]
+      "assetIds": ["guten-morgen", "ich-lerne-deutsch"],
+      "caption": "Guten Morgen. Ja, ich lerne Deutsch."
+    },
+    {
+      "id": "m1l1-recap",
+      "type": "closed-recap",
+      "teachingIntent": "name the three phrases the learner can now produce",
+      "castRole": "owner-presenter",
+      "startSeconds": 74,
+      "durationSeconds": 7,
+      "startFrame": 2220,
+      "durationFrames": 210,
+      "assetIds": ["auf-wiedersehen"],
+      "caption": "You can greet, say you are learning German, and leave politely."
     }
+  ],
+  "audioPlacements": [
+    {"assetId": "guten-morgen", "startSeconds": 9, "startFrame": 270},
+    {"assetId": "guten-morgen", "startSeconds": 14, "startFrame": 420},
+    {"assetId": "ich-lerne-deutsch", "startSeconds": 30, "startFrame": 900},
+    {"assetId": "guten-morgen", "startSeconds": 51, "startFrame": 1530},
+    {"assetId": "guten-morgen", "startSeconds": 65, "startFrame": 1950},
+    {"assetId": "ich-lerne-deutsch", "startSeconds": 69, "startFrame": 2070},
+    {"assetId": "auf-wiedersehen", "startSeconds": 76, "startFrame": 2280}
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "name": "adipoli-v1-02-mistake-repair",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npx --yes hyperframes@0.7.63 check --snapshots --at 1.2,2.4,3.6,4.8,6.2,8,9.6,11.2",
+    "snapshot": "npx --yes hyperframes@0.7.63 snapshot --at 1.2,2.4,3.6,4.8,6.2,8,9.6,11.2",
+    "render": "npx --yes hyperframes@0.7.63 render --quality high --fps 30 --no-best-effort --strict-all --output renders/mistake-repair-v1.mp4"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "fonts": [
+    {
+      "family": "Source Serif 4",
+      "fileName": "source-serif-4-latin-variable.woff2",
+      "sourcePath": "../v1-02-hyperframes/phrase-build/assets/fonts/source-serif-4-latin-variable.woff2",
+      "sha256": "c1df4596be5029233ed2afbb8b2f6ea20784b3fb1aa5d6b5c6519ccd85eb3dfb"
+    },
+    {
+      "family": "Geist",
+      "fileName": "geist-sans-variable.woff2",
+      "sourcePath": "../v1-02-hyperframes/phrase-build/assets/fonts/geist-sans-variable.woff2",
+      "sha256": "a369fcf5628ea2aa4e1b9e2ec6a5b3624e365bda588e1f0f2f12b564f728fbb8"
+    },
+    {
+      "family": "Geist Mono",
+      "fileName": "geist-mono-variable.woff2",
+      "sourcePath": "../v1-02-hyperframes/phrase-build/assets/fonts/geist-mono-variable.woff2",
+      "sha256": "fba8f577f38a2bbcbe818efa6348dd58f36303a10b8737c42fefad275be563ab"
+    }
+  ]
+}

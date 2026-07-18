@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <script src="./assets/vendor/gsap-3.14.2.min.js"></script>
+    <style>
+      @font-face { font-family: "Source Serif 4"; src: url("./assets/fonts/source-serif-4-latin-variable.woff2") format("woff2"); font-style: normal; font-weight: 200 900; font-display: block; }
+      @font-face { font-family: "Geist"; src: url("./assets/fonts/geist-sans-variable.woff2") format("woff2"); font-style: normal; font-weight: 100 900; font-display: block; }
+      @font-face { font-family: "Geist Mono"; src: url("./assets/fonts/geist-mono-variable.woff2") format("woff2"); font-style: normal; font-weight: 100 900; font-display: block; }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #F5F0E8; }
+      body { color: #3F4D44; }
+      #pb-root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #F5F0E8; }
+
+      .pb-daylight { position: absolute; inset: 0; background: #F5F0E8; }
+      .pb-sun-cast { position: absolute; width: 980px; height: 1420px; right: -290px; top: -390px; background: rgba(212,165,32,.085); transform: rotate(-17deg); }
+      .pb-sun-cast::after { content: ""; position: absolute; left: 290px; top: 0; width: 94px; height: 100%; background: rgba(245,240,232,.72); }
+      .pb-horizon { position: absolute; left: 0; right: 0; bottom: 256px; height: 2px; background: rgba(63,77,68,.16); }
+
+      .pb-scene-flag { position: absolute; left: 106px; top: 70px; display: flex; align-items: center; gap: 18px; z-index: 8; }
+      .pb-flag-number { width: 54px; height: 44px; display: grid; place-items: center; border-radius: 4px; background: #D4A520; color: #0C1811; font: 800 22px/1 "Geist", sans-serif; }
+      .pb-flag-copy { font: 700 21px/1 "Geist", sans-serif; letter-spacing: .09em; text-transform: uppercase; color: #56635A; }
+      .pb-brand { position: absolute; right: 106px; top: 82px; z-index: 8; font: 700 20px/1 "Geist", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #56635A; }
+
+      .pb-intro { position: absolute; left: 108px; top: 160px; z-index: 5; }
+      .pb-kicker { font: 700 22px/1 "Geist Mono", monospace; letter-spacing: .11em; text-transform: uppercase; color: #8A5A2A; }
+      #pb-title { margin-top: 17px; font: 600 84px/.94 "Source Serif 4", Georgia, serif; letter-spacing: -.04em; color: #3F4D44; }
+
+      #pb-workspace { position: absolute; left: 94px; right: 94px; top: 318px; height: 470px; z-index: 4; }
+      .pb-guide-line { position: absolute; left: 120px; right: 120px; top: 258px; height: 3px; background: rgba(63,77,68,.18); transform-origin: left center; }
+      .pb-guide-line::before, .pb-guide-line::after { content: ""; position: absolute; top: -7px; width: 3px; height: 17px; background: rgba(63,77,68,.28); }
+      .pb-guide-line::before { left: 0; }
+      .pb-guide-line::after { right: 0; }
+
+      #pb-phrase { position: absolute; inset: 0; will-change: transform; }
+      .pb-token { position: absolute; top: 86px; height: 268px; padding: 40px 34px 22px; transform-origin: 50% 58%; will-change: transform, opacity; isolation: isolate; }
+      .pb-token-surface { position: absolute; inset: 0; z-index: -1; background: #F7EAD0; border: 2px solid rgba(138,90,42,.24); border-radius: 9px; box-shadow: 0 24px 58px rgba(63,77,68,.13); }
+      .pb-token::after { content: ""; position: absolute; left: 38px; right: 38px; bottom: 18px; z-index: 1; height: 2px; background: rgba(138,90,42,.22); }
+      .pb-word, .pb-meaning { position: relative; z-index: 2; display: block; }
+      .pb-word { font: 600 110px/.86 "Source Serif 4", Georgia, serif; letter-spacing: -.045em; color: #3F4D44; white-space: nowrap; }
+      .pb-meaning { margin-top: 44px; font: 700 21px/1 "Geist", sans-serif; letter-spacing: .08em; text-transform: uppercase; color: #56635A; }
+      #pb-token-ich { left: 128px; width: 340px; }
+      #pb-token-lerne { left: 512px; width: 450px; }
+      #pb-token-deutsch { left: 1002px; width: 590px; }
+      #pb-token-deutsch .pb-word { color: #8A5A2A; }
+
+      #pb-join-label { position: absolute; left: 128px; top: 30px; font: 700 22px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #1F7A44; }
+      .pb-join-stroke { position: absolute; left: 124px; top: 324px; width: 1480px; height: 52px; overflow: visible; }
+      .pb-join-stroke path { fill: none; stroke: #D4A520; stroke-width: 7; stroke-linecap: round; }
+
+      #pb-threshold { position: absolute; left: 0; right: 0; bottom: 0; height: 394px; z-index: 3; background: #0C1811; transform-origin: center bottom; overflow: hidden; }
+      #pb-threshold::before { content: ""; position: absolute; left: 92px; right: 92px; top: 36px; height: 2px; background: rgba(241,210,122,.28); }
+      #pb-threshold::after { content: ""; position: absolute; width: 560px; height: 560px; right: -160px; top: -120px; border: 3px solid rgba(241,210,122,.16); border-radius: 50%; }
+      .pb-say-cue { position: absolute; left: 108px; top: 86px; z-index: 2; }
+      .pb-say-label { font: 700 22px/1 "Geist Mono", monospace; letter-spacing: .11em; text-transform: uppercase; color: #F1D27A; }
+      #pb-spoken-sentence { position: absolute; left: 438px; top: 98px; z-index: 3; font: 700 126px/.94 "Source Serif 4", Georgia, serif; letter-spacing: -.045em; color: #F1D27A; white-space: nowrap; transform-origin: 45% 60%; }
+      .pb-spoken-line { position: absolute; left: 438px; top: 244px; width: 1080px; height: 42px; overflow: visible; z-index: 3; }
+      .pb-spoken-line path { fill: none; stroke: #D4A520; stroke-width: 7; stroke-linecap: round; }
+      .pb-wave { position: absolute; right: 112px; bottom: 78px; width: 220px; height: 120px; overflow: visible; z-index: 3; }
+      .pb-wave path { fill: none; stroke: #F1D27A; stroke-width: 5; stroke-linecap: round; opacity: .82; }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-qzcm" id="pb-root" data-composition-id="m1l1-phrase-build" data-width="1920" data-height="1080" data-start="0" data-duration="11">
+      <div data-hf-id="hf-hzrt" class="pb-daylight"></div>
+      <div data-hf-id="hf-j68w" class="pb-sun-cast" data-layout-ignore=""></div>
+      <div data-hf-id="hf-hpyt" class="pb-horizon" data-layout-ignore=""></div>
+
+      <div data-hf-id="hf-35lz" class="pb-scene-flag" id="pb-flag"><div data-hf-id="hf-xuv6" class="pb-flag-number">01</div><div data-hf-id="hf-2tvh" class="pb-flag-copy">Build the thought</div></div>
+      <div data-hf-id="hf-2ylv" class="pb-brand">Adipoli German · A1</div>
+      <div data-hf-id="hf-ey4v" class="pb-intro">
+        <div data-hf-id="hf-kfh0" class="pb-kicker" id="pb-kicker">Meaning → one sentence</div>
+        <div data-hf-id="hf-jxvz" id="pb-title">Build one thought.</div>
+      </div>
+
+      <div data-hf-id="hf-ar6v" id="pb-workspace">
+        <div data-hf-id="hf-81v6" class="pb-guide-line" id="pb-guide" data-layout-ignore=""></div>
+        <div data-hf-id="hf-ciy7" id="pb-phrase">
+          <div data-hf-id="hf-gijo" id="pb-join-label">One sentence</div>
+          <div data-hf-id="hf-uval" class="pb-token" id="pb-token-ich" data-layout-allow-occlusion=""><div data-hf-id="hf-cyr5" class="pb-token-surface" data-layout-ignore=""></div><span data-hf-id="hf-2i1k" class="pb-word">Ich</span><span data-hf-id="hf-okbd" class="pb-meaning">I · who</span></div>
+          <div data-hf-id="hf-xsqf" class="pb-token" id="pb-token-lerne" data-layout-allow-occlusion=""><div data-hf-id="hf-s6w5" class="pb-token-surface" data-layout-ignore=""></div><span data-hf-id="hf-nf2m" class="pb-word">lerne</span><span data-hf-id="hf-yeea" class="pb-meaning">learn · action</span></div>
+          <div data-hf-id="hf-mt1l" class="pb-token" id="pb-token-deutsch" data-layout-allow-occlusion=""><div data-hf-id="hf-tdt8" class="pb-token-surface" data-layout-ignore=""></div><span data-hf-id="hf-qm9u" class="pb-word">Deutsch.</span><span data-hf-id="hf-d88c" class="pb-meaning">German · language</span></div>
+          <svg data-hf-id="hf-mkuz" class="pb-join-stroke" viewBox="0 0 1480 52" aria-hidden="true"><path data-hf-id="hf-5ucq" id="pb-join-path" d="M 8 29 C 315 10, 760 47, 1470 19" /></svg>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-24ht" id="pb-threshold">
+        <div data-hf-id="hf-kx2q" class="pb-say-cue" id="pb-say-cue"><div data-hf-id="hf-yqlm" class="pb-say-label">Say it · one breath</div></div>
+        <div data-hf-id="hf-gxz8" id="pb-spoken-sentence">Ich lerne Deutsch.</div>
+        <svg data-hf-id="hf-qfow" class="pb-spoken-line" viewBox="0 0 1080 42" aria-hidden="true"><path data-hf-id="hf-dob1" id="pb-spoken-line-path" d="M 8 24 C 258 7, 694 38, 1070 18" /></svg>
+        <svg data-hf-id="hf-ouec" class="pb-wave" viewBox="0 0 220 120" aria-hidden="true">
+          <path data-hf-id="hf-wtco" id="pb-wave-1" d="M 16 60 C 52 24, 52 96, 88 60" />
+          <path data-hf-id="hf-v8hy" id="pb-wave-2" d="M 70 60 C 112 8, 112 112, 154 60" />
+          <path data-hf-id="hf-x54k" id="pb-wave-3" d="M 138 60 C 170 30, 170 90, 204 60" />
+        </svg>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({paused: true});
+      const drawPaths = ['pb-join-path', 'pb-spoken-line-path', 'pb-wave-1', 'pb-wave-2', 'pb-wave-3'].map((id) => document.getElementById(id));
+      drawPaths.forEach((path) => {
+        const length = path.getTotalLength();
+        path.style.strokeDasharray = String(length);
+        path.style.strokeDashoffset = String(length);
+      });
+
+      tl.fromTo('#pb-flag', {x: -36, opacity: 0}, {x: 0, opacity: 1, duration: .52, ease: 'power3.out'}, .12);
+      tl.fromTo('.pb-brand', {x: 30, opacity: 0}, {x: 0, opacity: 1, duration: .48, ease: 'power2.out'}, .2);
+      tl.fromTo('#pb-kicker', {y: 20, opacity: 0}, {y: 0, opacity: 1, duration: .46, ease: 'power2.out'}, .32);
+      tl.fromTo('#pb-title', {y: 34, opacity: 0}, {y: 0, opacity: 1, duration: .68, ease: 'power3.out'}, .48);
+      tl.fromTo('#pb-guide', {scaleX: 0, opacity: 0}, {scaleX: 1, opacity: 1, duration: .72, ease: 'power2.out'}, .82);
+
+      tl.fromTo('#pb-token-ich', {x: -170, y: 78, rotation: -7, opacity: 0}, {x: 0, y: 0, rotation: -2.5, opacity: 1, duration: .76, ease: 'power3.out'}, 1.0);
+      tl.fromTo('#pb-token-lerne', {x: 18, y: -125, rotation: 5, opacity: 0}, {x: 0, y: 0, rotation: 2.2, opacity: 1, duration: .84, ease: 'back.out(1.35)'}, 1.58);
+      tl.fromTo('#pb-token-deutsch', {x: 180, y: 82, rotation: -5, opacity: 0}, {x: 0, y: 0, rotation: -1.6, opacity: 1, duration: .78, ease: 'power3.out'}, 2.16);
+
+      tl.to('#pb-token-ich', {rotation: 0, x: 38, duration: .88, ease: 'power2.inOut'}, 3.46);
+      tl.to('#pb-token-lerne', {rotation: 0, x: 2, duration: .88, ease: 'power2.inOut'}, 3.46);
+      tl.to('#pb-token-deutsch', {rotation: 0, x: -40, duration: .88, ease: 'power2.inOut'}, 3.46);
+      tl.to('.pb-token-surface', {opacity: 0, duration: .5, ease: 'power1.out'}, 4.18);
+      tl.to('.pb-meaning', {opacity: 0, y: -8, duration: .42, ease: 'power2.in'}, 4.2);
+      tl.fromTo('#pb-join-label', {x: -18, opacity: 0}, {x: 0, opacity: 1, duration: .48, ease: 'power3.out'}, 4.42);
+      tl.to('#pb-join-path', {strokeDashoffset: 0, duration: .82, ease: 'power2.out'}, 4.76);
+
+      tl.fromTo('#pb-threshold', {scaleY: 0}, {scaleY: 1, duration: .78, ease: 'power3.inOut'}, 6.35);
+      tl.to('#pb-phrase', {scale: .84, opacity: 0, duration: .42, ease: 'power2.in'}, 6.5);
+      tl.to('#pb-guide', {opacity: 0, duration: .3, ease: 'power2.in'}, 6.42);
+      tl.fromTo('#pb-say-cue', {x: -28, opacity: 0}, {x: 0, opacity: 1, duration: .55, ease: 'power3.out'}, 7.26);
+      tl.fromTo('#pb-spoken-sentence', {scale: .74, opacity: 0}, {scale: 1, opacity: 1, duration: .72, ease: 'back.out(1.4)'}, 7.04);
+      tl.to('#pb-spoken-line-path', {strokeDashoffset: 0, duration: .76, ease: 'power2.out'}, 7.68);
+      tl.to('#pb-wave-1', {strokeDashoffset: 0, duration: .48, ease: 'power2.out'}, 8.0);
+      tl.to('#pb-wave-2', {strokeDashoffset: 0, duration: .55, ease: 'power2.out'}, 8.34);
+      tl.to('#pb-wave-3', {strokeDashoffset: 0, duration: .48, ease: 'power2.out'}, 8.72);
+      tl.fromTo('.pb-wave', {x: 12, opacity: .62}, {x: 0, opacity: 1, duration: .7, ease: 'sine.inOut'}, 9.32);
+
+      window.__timelines['m1l1-phrase-build'] = tl;
+    </script>
+  </body>
+</html>
