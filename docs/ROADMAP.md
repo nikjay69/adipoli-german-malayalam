@@ -14,7 +14,7 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 
 **Execution cadence (DECISIONS #16):** complete Phase 3P as small, independently reviewable chunks—not as one autonomous run. One chunk = one named learner outcome or defect, narrow scope, explicit done condition, and proportionate QA/playthrough evidence. Stop for owner review before starting the next chunk; do not silently chain sprint items.
 
-**Chunk ledger (DECISIONS #17–#23 — the only chunk list; each contract lives in its PR body).** IDs: `pa-xx` = product-architecture decision, `v1-xx` = operating-system/video track, `3p-xx` = Phase 3P core track, `sec-xx` = protected-access track.
+**Chunk ledger (DECISIONS #17–#25 — the only chunk list; each contract lives in its PR body).** IDs: `pa-xx` = product-architecture decision, `v1-xx` = operating-system/video track, `3p-xx` = Phase 3P core track, `sec-xx` = protected-access track.
 
 | Chunk | Outcome | Status |
 |---|---|---|
@@ -32,7 +32,7 @@ Re-scoped 2026-07-12 (DECISIONS #15) after an owner vision review: lessons pass 
 | pa-02 · A1 mastery system | common A1 destination + adaptive support fixed; canonical 56-row teaching/proof/recovery/retest/spiral map; gap register; M1 end-to-end contract | **complete on branch; owner review pending** |
 | 3p-03 · Design-language v0.1 contract | completed 2A board audited; owner approves tokens, type, components, states, responsive behavior, asset usage, public entry, course shell, module identity, lessons, checkpoints, and recovery as one system | **audit complete on branch; owner approval pending** |
 | 3p-04 · Shared visual foundation | app has one 2A token/type/icon/focus/motion foundation plus room/daylight/answer-sheet/scene-flag primitives; no learner page redesign yet | proposed; waits for 3p-03 owner approval |
-| 3p-05 · Cast constitution + Meera asset | Nivin/Meera have distinct approved backstories/voice/scene roles; existing male/teacher appearances are explicitly relabelled or rejected; one canonical adult Meera model sheet + minimal pose/cutout seed passes cream/forest edge review; Appu usage is frozen | proposed after 3p-04; owner asset review required |
+| 3p-05 · Cast constitution + Meera asset | Nivin/Meera have distinct approved backstories/voice/scene roles; existing male/teacher appearances are explicitly relabelled or rejected; one canonical adult Meera model sheet + minimal pose/cutout seed passes cream/forest edge review; Appu usage is frozen | proposed after 3p-04; canonical identity seed + consistency pose approved 2026-07-18; constitution, model sheet, cutout and edge review remain pending |
 | 3p-06 · Fixed-cast migration | shipping-path story/data/copy/scripts use Nivin + Meera as equal learner peers and Frau Fischer as teacher; optional user preferred name is separate; old names remain only in historical decisions/evidence or documented compatibility IDs | proposed after 3p-05; required before final audio/captions/video masters |
 | 3p-07 · Public boundary + First German Moment | genuine new visitor lands on `/`, understands the video-led offer, completes a real hear→say→repair win, and reaches onboarding; returning learner has a quiet login path | proposed after 3p-04 + 3p-06 |
 | 3p-08 · Learner shell + Today states | returning learner always sees one calm next action; fresh, active, review-due, recovery, checkpoint, returning, and complete states are coherent | proposed after 3p-04; may follow 3p-07 review |
