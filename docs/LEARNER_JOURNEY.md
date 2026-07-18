@@ -65,20 +65,22 @@ Onboarding is part of the first-visit flow — intro → first mission → onboa
 ### Public boundary
 
 - `/` is the canonical public homepage for a genuine new visitor. It must render the promise, who the course is for, how it works, curriculum preview, honest proof if any exists, and one primary CTA. A cold visitor must not be redirected straight into Today or a course dashboard.
-- The CTA opens the **First German Moment** in one action. `/intro` may remain its route-backed implementation so browser Back, focus return, deep-linking, and mobile full-screen behavior remain reliable; visually it is a dark room opened from the public page, not a second landing page.
+- The CTA opens the **First German Moment** in one action. `/intro` may remain its route-backed implementation so browser Back, focus return, deep-linking, and mobile full-screen behavior remain reliable; visually it is a brief dark room opened from the public page, with response and repair controls on a light task surface, not a second landing page.
 - The First German Moment uses an existing native mission audio asset after its exact line/transcript is validated. It ends in a real hear → say → repair → win, then hands off to the minimal onboarding and Today. Missing owner video does not block this path.
 - v0.1 uses the homepage anchor `/#curriculum`; a separate `/curriculum` route is deferred until the real content cannot remain clear on the homepage. The stale `/landing` page is hidden or redirected rather than maintained as a competing public entry.
 - Returning learners get a quiet Log in entry. Authentication screens stay provider-agnostic; choosing or changing an auth provider is outside this design chunk.
 
 ### Surface map
 
+**Surface rule:** sustained learning is light-first. Dark is reserved for public/landing and other high-level page heroes when purposeful, module thresholds, media stages, and brief immersive context; any explanation, table, choice, typing, control, or feedback within a dark frame uses a light task surface. A high-level page may carry a dark hero or threshold while its working body remains daylight.
+
 | Surface | Default mode | Required transition |
 |---|---|---|
 | Public homepage | dark cinematic opening → daylight explanation | First Moment opens a room; closing/back returns to the triggering control |
 | Today / Course / module planning | daylight | a dark threshold introduces the next lived scene without turning the whole dashboard dark |
 | Video lesson | daylight frame with a dark media stage | practice handoff stays visible and deterministic |
-| Mission / listening / checkpoint task | room + answer sheet where needed | completion/result returns to daylight |
-| Results / recovery / readiness / Practice / Me | daylight | retest may re-enter the relevant room |
+| Mission / listening / checkpoint task | daylight task surface; optional dark framing only for a brief scene or listening setup | any response, choice, typing, table, or feedback remains on a light sheet; completion/result remains daylight |
+| Results / recovery / readiness / Practice / Me | daylight | a retest may open with a brief relevant scene setup, but the task remains light |
 
 ### Responsive and accessibility evidence
 

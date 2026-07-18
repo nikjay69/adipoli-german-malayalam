@@ -65,13 +65,15 @@ Every task component specifies the states that apply: ready, focused, playing/pa
 
 Interaction hierarchy is consistent across lesson, mission, checkpoint, and recovery: scene/context first, exact learner action second, feedback third, next action last. Correct feedback confirms without delaying the learner; wrong feedback stays to at most two short lines, names the exact issue, and provides one useful repair before retry. A checkpoint never reveals teaching content before submission.
 
-Use a dark room for hearing, responding, and closed focus; use an answer sheet for reading, typing, choices, and inspectable feedback. German lines are typographically primary. Manglish/Malayalam supports the action but does not become a paragraph wall. The mobile floors, focus law, and reduced-motion behavior in `PRODUCT_VISION.md` are part of lesson quality, not optional polish.
+Sustained learner work is light-first: explanations, tables, reading, typing, choices, feedback, results, and recovery use daylight or a warm answer sheet by default. A dark room is a brief, purposeful frame for scene entry, listening/responding focus, thresholds, or payoff—not the default wrapper for an entire lesson, mission, checkpoint, or recovery flow. A dark frame may hold a light answer sheet. Choose by task and duration; if the dark treatment weakens hierarchy, contrast, legibility, or eye comfort, return to light. German lines are typographically primary. Manglish/Malayalam supports the action but does not become a paragraph wall. The mobile floors, focus law, and reduced-motion behavior in `PRODUCT_VISION.md` are part of lesson quality, not optional polish.
 
 ## Video lesson standard
 
 - All 56 owner-led videos must pass this standard and be integrated before pilot/launch (DECISIONS #21). App-only completion is resilience, not a substitute launch artifact.
 - Honest length: the runtime the material needs after a boredom scan — never stretched to a target (Reel Rule).
 - Structure: hook → chunks with practice pauses → mistake repair → win → next app task.
+- Human teaching model: the owner’s Manglish explanation is the spine, whether on camera or continuing as voice-over over a visual. Remotion assembles the full lesson; HyperFrames and Canvas provide bounded, purposeful cutaways—such as a grammar table, phrase build, contrast, repair, diagram, or worked example—not a motion-graphics replacement for the 15–18-minute lesson.
+- Every recording script/storyboard marks presenter → visualization → return to presenter for each cutaway and states its single teaching job, exact content, timing, and owner-voice/native-audio behavior. Creative visual moments are welcome when they improve comprehension or memory; decorative motion is cut.
 - Recording spec per script: `[PAUSE 3s]` model→silence→model pattern; owner speaks Manglish, **all reviewable German is pre-rendered native audio**; staging notes (Frau Fischer via video-call frame / Goethe Kochi desk).
 - Nivin and Meera alternate as equal learner peers across the sequence. Each lesson chooses the peer whose goal/struggle best serves the outcome; a dialogue normally shows no more than that learner plus Frau Fischer or the other peer.
 - Reference pack: `course-production/a1-mvp/module-01/` (all 7 teaching structures passed the gate on 2026-06-10; cast/name text must pass `3p-05`/`3p-06` before recording).
@@ -100,7 +102,8 @@ FLAT = sev-1 (Reel Rule). Grades are recorded per lesson in `scripts/output/spin
 
 1. Run automated checks (`QA_AND_EVALUATION_HARNESS.md`): schema, answers, audio links, production floor, empty explanations.
 2. **Boredom scan + feel grade**: scrub the lesson/video at 1.5×; any stretch you would skip = FAIL, cut or enrich it. Then play it properly and assign FLAT/OK/ADIPOLI per the Feel Rubric above.
-3. German correctness spot-check (the M1 gate caught a real error — Tschüss taught with the wrong ch-sound — so this matters).
-4. Manglish naturalness read-aloud test: does it sound like an older cousin or a machine?
-5. Template completeness: all 13 elements above present.
-6. Verdict per lesson: PASS / WEAK (named fixes) / FAIL — with evidence, never vibes.
+3. **Eye-comfort/legibility run:** at 390px, complete the lesson’s longest reading/table/form/feedback sequence; spot-check it at 1440px and 200% zoom. Production contrast/type floors must pass, hierarchy must be immediate, and the surface must remain comfortable through the whole task. Squinting, low-contrast metadata, or prolonged dark treatment that tires or competes with the work = FAIL; move the work to daylight/answer sheet or simplify it.
+4. German correctness spot-check (the M1 gate caught a real error — Tschüss taught with the wrong ch-sound — so this matters).
+5. Manglish naturalness read-aloud test: does it sound like an older cousin or a machine?
+6. Template completeness: all 13 elements above present.
+7. Verdict per lesson: PASS / WEAK (named fixes) / FAIL — with evidence, never vibes.
