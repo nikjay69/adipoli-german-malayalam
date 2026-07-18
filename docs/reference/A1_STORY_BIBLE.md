@@ -85,6 +85,9 @@ Mixing both cleanly = natural teaching + coherent story.
 - Equal narrative weight to Nivin: she owns lessons, makes mistakes, repairs them, and wins; she is not a romance device, assistant, or gender-swapped duplicate.
 - Speaks natural Manglish and brings a distinct temperament and problem-solving style.
 - Her goal and arc must remain independently understandable even when Nivin is absent from a scene.
+- **Owner-approved visual identity seed (2026-07-18):** [`meera-canonical-base-v1.png`](assets/meera/meera-canonical-base-v1.png) is the canonical image reference for Meera v1 (SHA-256 `FBBC2E2F9EB3397BCA9F027516F863B50B2C682353D6E1DBD2009012D5D9E576`). [`meera-consistency-pose-v1.png`](assets/meera/meera-consistency-pose-v1.png) is the approved same-character consistency proof (SHA-256 `C52932E7B78710681E39295D14017907E6C59A1FDE9D87D329647D5C64143A76`), not a second identity.
+- Future generation or editing must condition on the canonical base image rather than recreate Meera from text alone. Preserve her recognisable face, hair, apparent age, skin tone, body proportions, wardrobe language, and painterly illustration finish; vary only the expression, gesture, pose, crop, and scene required by the teaching moment.
+- These two portraits are source references, not app-ready cutouts. Chunk `3p-05` still owns the full character constitution, focused model sheet, minimal production pose/cutout seed, and clean-alpha review on cream and forest.
 
 ### Their families
 - Nivin's Amma + Achan begin as doubters ("Ivide nalla job illayo?") and gradually respond to his progress.

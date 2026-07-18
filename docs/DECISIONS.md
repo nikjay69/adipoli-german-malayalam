@@ -177,3 +177,14 @@ During review of the v1-02 HyperFrames proofs, the owner approved these refineme
 5. **Proof preference.** Of the two v1-02 HyperFrames trials, `phrase-build` is the preferred reference for its lighter surface, cleaner hierarchy, and visible teaching transformation. It is a direction, not a template to clone.
 
 **Why:** sustained learning must remain comfortable and legible, and generated motion should amplify the owner’s explanation rather than compete with it. This refines, but does not replace, DECISIONS #17/#19 pipeline ownership or #21’s 56-video launch gate. It approves these corrections only; the separate full design-language v0.1 approval gate remains open.
+
+## 24 · 2026-07-18 · Meera visual seed approved · remote image-review evidence
+
+The owner approved the first Meera portrait and then approved a second pose as a sufficient consistency check. This review fixes the identity reference for later cast work without prematurely completing chunk `3p-05`:
+
+1. **Canonical identity:** `docs/reference/assets/meera/meera-canonical-base-v1.png` is Meera v1’s canonical visual seed. `meera-consistency-pose-v1.png` is evidence that the same identity can survive a changed expression and pose; it is not an alternate model.
+2. **Reference-image continuity:** future Meera generation/editing must use the canonical image as an input reference and preserve recognisable identity traits. A fresh text-only recreation is not an acceptable continuation. Each new production pose still requires visual QA; approval of these two images is not blanket approval of later outputs.
+3. **The asset chunk remains open:** these are opaque-background source portraits. `3p-05` still owns Meera’s distinct backstory/voice/scene role, the focused model sheet, the minimal transparent production seed, and cream/forest alpha-edge review before the cast is migrated.
+4. **Remote review rule:** the owner reviews through Codex Remote and cannot rely on localhost, worker-absolute paths, or visualization sidecar files. Image review evidence must render in the remote conversation or PR; for inline Codex comparison boards, embed compressed image bytes directly in the board. This is a production-workflow rule, not app behavior.
+
+**Why:** the approved identity and the display method both need to survive this disposable chat session. The repo remains project memory under DECISIONS #17.
