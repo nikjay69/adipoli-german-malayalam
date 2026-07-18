@@ -1,5 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Archivo,
+  Geist,
+  Geist_Mono,
+  Noto_Sans_Malayalam,
+  Source_Serif_4,
+} from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { ToastContainer } from "@/components/ui/Toast";
@@ -16,6 +22,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
+  subsets: ["latin"],
+  weight: "variable",
+  axes: ["opsz"],
+  display: "swap",
+});
+
+const archivoImpact = Archivo({
+  variable: "--font-archivo",
+  subsets: ["latin"],
+  weight: "variable",
+  axes: ["wdth"],
+  display: "swap",
+});
+
+const notoMalayalam = Noto_Sans_Malayalam({
+  variable: "--font-noto-malayalam",
+  subsets: ["malayalam"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "German Malayalam - Learn German, Kerala Style",
   description: "An interactive German A1 course designed for Malayalam speakers from Kerala. Learn German with fun games, Kerala cultural references, and Malayalam translations.",
@@ -27,9 +56,10 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  themeColor: "#1b2d1b",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F5F0E8" },
+    { media: "(prefers-color-scheme: dark)", color: "#0C1811" },
+  ],
 };
 
 export default function RootLayout({
@@ -40,12 +70,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} ${archivoImpact.variable} ${notoMalayalam.variable} antialiased`}
       >
         {/* Skip to content for keyboard users */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:bg-[#d4a520] focus:text-[#1b2d1b] focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold focus:text-sm"
+          className="ag-skip-link"
         >
           Skip to content
         </a>

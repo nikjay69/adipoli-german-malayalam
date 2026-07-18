@@ -69,7 +69,7 @@ The row-level contract is `reference/GOETHE_A1_EXAM_MAP.md`; routing and retest 
 
 ## Design language v0.1 candidate — 2A “Scenes & Daylight”
 
-Status: **audited and owner-revised through 2026-07-18; explicit visual-contract approval still required before learner-facing implementation.** Review source: `# 2A Product System Completion (2).zip`, SHA-256 `E6F4D912485B9438D49AA56CDBF842BAAE374B1049570DBD7E57CAEA68E0B3E2` (C1–C9 complete; 109/109 board images loaded; no browser warnings/errors). DECISIONS #20 records the board audit; #21 records the video/cast owner revisions; #23 records the light-first learning and presenter-led visualization corrections.
+Status: **owner-approved 2026-07-18 as the v0.1 build-cycle contract; the isolated shared-foundation chunk `3p-04` is implemented and awaiting owner review before any learner-facing migration.** Review source: `# 2A Product System Completion (2).zip`, SHA-256 `E6F4D912485B9438D49AA56CDBF842BAAE374B1049570DBD7E57CAEA68E0B3E2` (C1–C9 complete; 109/109 board images loaded; no browser warnings/errors). DECISIONS #20 records the board audit; #21 records the video/cast owner revisions; #23 records the light-first learning and presenter-led visualization corrections; #25 records approval and the review cadence.
 
 ### Experience grammar
 

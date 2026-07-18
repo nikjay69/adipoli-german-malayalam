@@ -188,3 +188,14 @@ The owner approved the first Meera portrait and then approved a second pose as a
 4. **Remote review rule:** the owner reviews through Codex Remote and cannot rely on localhost, worker-absolute paths, or visualization sidecar files. Image review evidence must render in the remote conversation or PR; for inline Codex comparison boards, embed compressed image bytes directly in the board. This is a production-workflow rule, not app behavior.
 
 **Why:** the approved identity and the display method both need to survive this disposable chat session. The repo remains project memory under DECISIONS #17.
+
+## 25 · 2026-07-18 · Design language v0.1 approved · chunk-level compact reviews
+
+The owner explicitly approved design language v0.1 and authorized autonomous implementation of `3p-04 · Shared visual foundation` with a lighter-touch review cadence:
+
+1. **The candidate is now the build-cycle contract.** The corrected 2A system in `PRODUCT_VISION.md`, including DECISIONS #23’s light-first learning and presenter-led visualization rules, is approved for implementation. This approval is not a permanent aesthetic freeze; centrally implemented token tuning remains reviewable without reopening product strategy.
+2. **One chunk at a time remains the law.** An approved chunk may be completed autonomously end to end—implementation, tests, responsive/accessibility evidence, commit and push. The agent stops after the chunk and does not silently begin the next one.
+3. **Owner review must be easy.** Each visual chunk returns a remote-safe board with no localhost dependency, at most 2–3 representative views, a short named-weakness list, and one exact approval question. The owner should judge the system outcome, not supervise intermediate coding steps.
+4. **`3p-04` stays foundational.** It may add shared tokens, bundled font roles, calm outline-icon/focus/reduced-motion rules, opt-in daylight/room/answer-sheet/scene-flag primitives, a hidden review surface, and focused regression tests. It must not redesign learner routes or start `3p-05` cast work.
+
+**Why:** owner attention is most valuable at system gates and representative examples, while bounded implementation and mechanical QA can run autonomously between them.
