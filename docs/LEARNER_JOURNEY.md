@@ -7,32 +7,39 @@ The learner must always be able to answer: **what do I do today · why it matter
 ## The journey
 
 ```
-First visit  → `/` promise screen (5s): "Adipoli German · A1 — German for
-               Malayalis. Goethe A1 with Kerala context." + tiny scene preview
-               (Frau Weber: "Guten Morgen." / You: ___) + ONE CTA: Start listening
+First visit  → `/` promise screen (5s): "Adipoli German · The guided Goethe A1
+               video course for Malayalis." + tiny Kerala scene preview
+               (Frau Fischer: "Guten Morgen." / You: ___) + ONE CTA: Start listening
   → First win BEFORE setup: first mission (hear → say reply aloud → one repair
     → win: "You can greet a German teacher.") — inside 90 seconds
-  → Light onboarding (only what changes the path):
-      daily pace (5/15/30 min) · goal (Pass A1 / Prepare for Germany / family)
-      · exam date (none / <3 months / <6 months)
-  → 2-min self-check: "new to German" vs "know some" → start M1 or placement M2/M3
+  → Light onboarding:
+      path questions only — daily pace (5/15/30 min) · goal
+      (Pass A1 / Prepare for Germany / family) · exam date (none / <3 months / <6 months)
+      optional presentation field — preferred name (never renames the fixed cast)
+  → 2-min self-check: "new to German" vs "know some" → both enter the
+    foundation; result adjusts scaffolding/practice density, never waives a
+    core outcome or gate (a future compact-validation path needs closed evidence)
 
 Daily loop — the "Today" screen is the only home:
   1. Next required block (video lesson or mission, 10–25 min)
   2. 5-min SRS review (due cards)
-  3. Optional: one prescribed recovery/booster task
+  3. Required recovery due now (if any); otherwise one optional score booster
   Always visible: module progress + 4 skill-readiness bars (Hören/Lesen/Schreiben/Sprechen)
 
 Module end → closed diagnostic (20–35 min)
-  → pass: celebration + pull to next module
-  → weak: recovery card → 1–3 exact tasks → retest weak tag only → unlock
+  → secure: celebration + pull to next module + later spiral review
+  → supporting weakness only: continue + mandatory scheduled recovery
+  → core/production weakness: recovery card → 1–3 exact tasks → fresh-item
+    retest of the weak tag only → unlock when secure
 
-Milestones: mini-mock after M2 · half-mock after M4 · full mock after M6
+Milestones: mini-mock after M4 · half-mock after M6 · full mock after M7
 Final phase (M8): 2–3 timed full mocks + speaking simulator + final 7-day plan
   (day 7→1: one skill per day, weakest first, 20-min sessions)
 Readiness checklist green → "Book your exam" screen
   (Goethe-Institut / Max Mueller Bhavan info for Kerala + Germany centres)
 ```
+
+The default beginner journey completes all 56 lessons. Tests personalise **what support happens next**, not whether the learner is allowed to leave an unproven basic behind. Watching a block never marks its outcome secure; the mini-check, production evidence, spiral review and module gate do that (DECISIONS #23).
 
 ## Learner intents — guided forward, open backward (DECISIONS #15)
 
@@ -53,6 +60,34 @@ Onboarding is part of the first-visit flow — intro → first mission → onboa
 
 **Route disposition rule:** every route is classified `ON-PATH` (in the journey) · `REVISIT` (reachable from module pages/history per the intents) · `PRESCRIBED` (recovery/booster targets only) · `HIDDEN`. The full table is committed with Sprint 6a. Flexibility is by design, never by leftover routes.
 
+## 2A route, mode, and responsive contract
+
+### Public boundary
+
+- `/` is the canonical public homepage for a genuine new visitor. It must render the promise, who the course is for, how it works, curriculum preview, honest proof if any exists, and one primary CTA. A cold visitor must not be redirected straight into Today or a course dashboard.
+- The CTA opens the **First German Moment** in one action. `/intro` may remain its route-backed implementation so browser Back, focus return, deep-linking, and mobile full-screen behavior remain reliable; visually it is a brief dark room opened from the public page, with response and repair controls on a light task surface, not a second landing page.
+- The First German Moment uses an existing native mission audio asset after its exact line/transcript is validated. It ends in a real hear → say → repair → win, then hands off to the minimal onboarding and Today. Missing owner video does not block this path.
+- v0.1 uses the homepage anchor `/#curriculum`; a separate `/curriculum` route is deferred until the real content cannot remain clear on the homepage. The stale `/landing` page is hidden or redirected rather than maintained as a competing public entry.
+- Returning learners get a quiet Log in entry. Authentication screens stay provider-agnostic; choosing or changing an auth provider is outside this design chunk.
+
+### Surface map
+
+**Surface rule:** sustained learning is light-first. Dark is reserved for public/landing and other high-level page heroes when purposeful, module thresholds, media stages, and brief immersive context; any explanation, table, choice, typing, control, or feedback within a dark frame uses a light task surface. A high-level page may carry a dark hero or threshold while its working body remains daylight.
+
+| Surface | Default mode | Required transition |
+|---|---|---|
+| Public homepage | dark cinematic opening → daylight explanation | First Moment opens a room; closing/back returns to the triggering control |
+| Today / Course / module planning | daylight | a dark threshold introduces the next lived scene without turning the whole dashboard dark |
+| Video lesson | daylight frame with a dark media stage | practice handoff stays visible and deterministic |
+| Mission / listening / checkpoint task | daylight task surface; optional dark framing only for a brief scene or listening setup | any response, choice, typing, table, or feedback remains on a light sheet; completion/result remains daylight |
+| Results / recovery / readiness / Practice / Me | daylight | a retest may open with a brief relevant scene setup, but the task remains light |
+
+### Responsive and accessibility evidence
+
+The board’s 1440px and 390px screens plus written 320/768/1024 rules are sufficient for **design-contract approval**; extra drawn frames do not block `3p-04`. They are not sufficient to claim an implemented page responsive. Every implementation chunk must test the real page at 320, 390, 768, 1024, and 1440px, keyboard-only navigation, visible focus, reduced motion, and 200% zoom before it is done. Text and target floors in `PRODUCT_VISION.md` override smaller illustrative labels on the board.
+
+Mobile behavior is not desktop scaled down: public opening becomes full-height, rails become sheets/accordions, the bottom tab bar remains reachable, the active task stays ahead of secondary progress, and image focal position is set per breakpoint. No horizontal scroll is allowed at 320px.
+
 ## MVP pages
 
 | Page | Job | Success condition |
@@ -62,7 +97,7 @@ Onboarding is part of the first-visit flow — intro → first mission → onboa
 | Post-win onboarding | Pace/goal/exam-date, minimal friction | User gets a prescribed next block |
 | Today (`/learn`) | Command center | ONE active card, one CTA; old maps hidden behind disclosure |
 | Module page | Current module path | Current lesson + checkpoint visible; future locked/collapsed |
-| Video lesson page | Teach one outcome | User watches and knows the next practice |
+| Video lesson page | Primary owner-led teaching for one outcome | Approved video plays with exact captions/native German models; user knows the next practice |
 | Practice steps | Input → output | User speaks/writes/repairs, not just clicks |
 | Mini-check | Confirm recall | Pass/weak feedback + tags |
 | Module checkpoint | Diagnose readiness | Skill-tagged result |
@@ -77,7 +112,7 @@ Onboarding is part of the first-visit flow — intro → first mission → onboa
 
 - **One screen, one job, one primary action** — visible without scrolling, thumb-zone friendly, works at 390px width.
 - `/`: headline ≤5 words · promise ≤12 words · scene preview ≤2 dialogue lines · ≤45 words above the fold · one CTA.
-- Mission: one situation line ≤12 words · one German line at a time · subtitles allowed, paragraph explanations banned · human labels only (`Frau Weber`, `You`, `Examiner`) — never internal labels (`GREETING SET`, `0 of N`, IDs).
+- Mission: one situation line ≤12 words · one German line at a time · subtitles allowed, paragraph explanations banned · human labels only (`Frau Fischer`, `Nivin`, `Meera`, `You`, `Examiner`) — never internal labels (`GREETING SET`, `0 of N`, IDs).
 - Video page: outcome-based title ≤9 words · pre-video context ≤20 words · one "after watching" task · transcript collapsed on phone.
 - Practice: instruction ≤10 words · one prompt, one action · typing targets <80 chars unless exam-writing · feedback ≤2 lines · no celebration that delays the next action.
 - Checkpoint: start instruction ≤35 words incl. closed-book rule (no Google/YouTube/ChatGPT/notes/dictionary) · never teach during the checkpoint · result page prescribes exact next work.
@@ -91,4 +126,4 @@ Onboarding is part of the first-visit flow — intro → first mission → onboa
 
 **WEAK** = right CTA but reads like a dashboard · hears German but produces nothing · video detached from practice · score without exact recovery → cut text, hide secondary systems, reconnect video→practice→check→recovery.
 
-**FAIL** = cold user can browse without hearing/saying German · Page 1 is a feature pitch · learner must choose among many resources · open-book or non-diagnostic checkpoints · recovery says "revise more" · SpeechSynthesis German · long typing before confidence · childish Kuttan → rebuild the page around one customer action.
+**FAIL** = cold user can browse without hearing/saying German · Page 1 is a feature pitch · learner must choose among many resources · open-book or non-diagnostic checkpoints · recovery says "revise more" · SpeechSynthesis German · long typing before confidence · childish or tokenised character treatment → rebuild the page around one customer action.

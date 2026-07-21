@@ -7,7 +7,7 @@ Status: **Source of truth.** Established 2026-06-11.
 | Layer | Language | Rule |
 |---|---|---|
 | UI chrome, labels, buttons, stats | **Plain English** | "Lessons completed", "Continue", "Words". Forced Malayalam in UI chrome was explicitly rejected by the owner — it feels awkward. |
-| Teaching voice (video narration, Kuttan speech) | **Natural Manglish** | Like an older cousin teaching: "Machane! Time-depending choice, Sie vs du — polayaanu, but try cheyyaam!" Warm, never forced, never machine-written. |
+| Teaching voice (video narration, Nivin/Meera speech) | **Natural Manglish** | Like a trusted Malayali peer teaching alongside you: "Time-depending choice aanu, Sie vs du — but try cheyyaam." Warm, adult, never forced, never machine-written. Nivin and Meera have distinct voices; neither becomes a stereotype. |
 | Grammar explanations | **Manglish + Malayalam parallels** | Use Malayalam when German differs from English but matches Malayalam — that's the unfair advantage. |
 | Target content (what the learner hears/says/reads/writes) | **German, ramping up** | Real pre-rendered native audio. Never SpeechSynthesis. |
 
@@ -32,7 +32,7 @@ Status: **Source of truth.** Established 2026-06-11.
 1. **Hear before read; attempt before translate.** Translation appears after the learner's attempt, not before.
 2. **Crutch removal**: a chunk introduced with Malayalam support in module N must appear without it by module N+1 recall.
 3. **Production-first**: recall and production (say/write) are what complete a lesson — recognition never suffices.
-4. Kuttan may react in Manglish, but **model answers are always pure German**.
+4. Nivin and Meera may react in Manglish, but **model answers are always pure German**. Frau Fischer's model German remains native and exact.
 5. Mock exams and checkpoints are German-only environments (instructions mirror the real Goethe paper).
 
 ## Teaching without a live teacher

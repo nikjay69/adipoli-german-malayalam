@@ -20,13 +20,28 @@ Every spine lesson (video + practice block) must contain:
 12. **Self-check (mini-check)** — closed-book, 5–8 tasks, ≥1 production, emits weakness tags.
 13. **Next step** — explicit pull to the next block.
 
+## Per-lesson mastery artifact contract
+
+Every one of the 56 spine lessons has one durable row in `reference/GOETHE_A1_EXAM_MAP.md`. A lesson is not production-ready until its row and implementation agree on:
+
+- one non-skippable learner outcome and its Goethe/life transfer;
+- the required spoken/written/listening proof—not a watch event or recognition score;
+- 1–3 stable weakness tags emitted by the closed mini-check;
+- one exact first-recovery path per emitted tag, with a useful learner output;
+- a materially different second-recovery modality for repeated failure;
+- at least two unseen retest variants per emitted tag;
+- one SRS card set and one named later spiral-return point;
+- source lesson/practice inventory and honest status: `ready`, `partial`, `gap` or `unverified`.
+
+The test and recovery bank must be authored before the final recording kit freezes. A beautiful video cannot compensate for an orphan tag, recognition-only proof, repeated identical quiz or missing spiral return. Conversely, an adaptive route must not invent new teaching claims that are absent from the approved lesson transcript.
+
 ## Exercise rules
 
 **Never create:** match-word-to-phonetic-text · bare German↔English matching lists (flashcards in disguise) · any exercise that would work identically in a Spanish course.
 
 **Every exercise must:** force a decision that requires understanding · be grounded in a real situation · teach a rule or pattern · have plausible, instructive distractors · build toward production.
 
-**Story tie-in:** question stems reference the lesson's scene or a canon character. Bad: "How do you say 'beautiful'?" Good: "At Goethe Kochi, Frau Weber points at a poster: 'schön!' What does she mean?" (Retrofit = rewrite the stem only; never change verified answers.)
+**Story tie-in:** question stems reference the lesson's scene or a canon character. Bad: "How do you say 'beautiful'?" Good: "At Goethe Kochi, Frau Fischer points at a poster: 'schön!' What does she mean?" (Retrofit = rewrite the stem only; never change verified answers.)
 
 **Per-lesson distribution (for ~8 exercises):** multiple-choice ≤2 · fill-blank ≤1 · matching/ordering ≤1 · **speaking ≥2** · **free-text/type-answer ≥1** · **dictation/listening ≥1**. **Hard floor: ≥3 production exercises per lesson.** Below the floor = below launch grade.
 
@@ -34,12 +49,34 @@ Every spine lesson (video + practice block) must contain:
 
 **The groan test:** "Would a student groan and skip this, or actually think?" If they'd groan, delete it.
 
+## 2A interaction-surface contract
+
+The completion board’s K1–K16 kit is the shared visual/behavioral vocabulary for learner work. It is not permission to turn every lesson into the same generic card stack.
+
+| Family | Required task patterns |
+|---|---|
+| Listen / notice | play and identify, replay a meaningful chunk, hear a contrast, audio-to-detail or audio-to-form |
+| Speak / respond | model → learner turn, reply aloud, phrase build, pronunciation contrast, request/question production |
+| Read / decide | notice/sign/ad/menu comprehension, order or sort when the order carries meaning, choose with evidence |
+| Write / transfer | fill a real field, type a phrase or message, repair a weak answer, check required content points |
+| Diagnose / recover | closed checkpoint item, tagged result, exact repair card, weak-tag retest |
+
+Every task component specifies the states that apply: ready, focused, playing/paused/ended, attempted, correct, needs-repair, retry, disabled-with-reason, loading, unavailable-with-alternative, offline, and saved. Do not encode a state through colour alone. A disabled primary action explains what is missing; an unavailable recording/evaluation path exposes the approved €0 fallback.
+
+Interaction hierarchy is consistent across lesson, mission, checkpoint, and recovery: scene/context first, exact learner action second, feedback third, next action last. Correct feedback confirms without delaying the learner; wrong feedback stays to at most two short lines, names the exact issue, and provides one useful repair before retry. A checkpoint never reveals teaching content before submission.
+
+Sustained learner work is light-first: explanations, tables, reading, typing, choices, feedback, results, and recovery use daylight or a warm answer sheet by default. A dark room is a brief, purposeful frame for scene entry, listening/responding focus, thresholds, or payoff—not the default wrapper for an entire lesson, mission, checkpoint, or recovery flow. A dark frame may hold a light answer sheet. Choose by task and duration; if the dark treatment weakens hierarchy, contrast, legibility, or eye comfort, return to light. German lines are typographically primary. Manglish/Malayalam supports the action but does not become a paragraph wall. The mobile floors, focus law, and reduced-motion behavior in `PRODUCT_VISION.md` are part of lesson quality, not optional polish.
+
 ## Video lesson standard
 
+- All 56 owner-led videos must pass this standard and be integrated before pilot/launch (DECISIONS #22). App-only completion is resilience, not a substitute launch artifact.
 - Honest length: the runtime the material needs after a boredom scan — never stretched to a target (Reel Rule).
 - Structure: hook → chunks with practice pauses → mistake repair → win → next app task.
-- Recording spec per script: `[PAUSE 3s]` model→silence→model pattern; owner speaks Manglish, **all reviewable German is pre-rendered native audio**; staging notes (Frau Weber via video-call frame / Goethe Kochi desk).
-- Reference pack: `course-production/a1-mvp/module-01/` (all 7 scripts passed the gate on 2026-06-10).
+- Human teaching model: the owner’s Manglish explanation is the spine, whether on camera or continuing as voice-over over a visual. Remotion assembles the full lesson; HyperFrames and Canvas provide bounded, purposeful cutaways—such as a grammar table, phrase build, contrast, repair, diagram, or worked example—not a motion-graphics replacement for the 15–18-minute lesson.
+- Every recording script/storyboard marks presenter → visualization → return to presenter for each cutaway and states its single teaching job, exact content, timing, and owner-voice/native-audio behavior. Creative visual moments are welcome when they improve comprehension or memory; decorative motion is cut.
+- Recording spec per script: `[PAUSE 3s]` model→silence→model pattern; owner speaks Manglish, **all reviewable German is pre-rendered native audio**; staging notes (Frau Fischer via video-call frame / Goethe Kochi desk).
+- Nivin and Meera alternate as equal learner peers across the sequence. Each lesson chooses the peer whose goal/struggle best serves the outcome; a dialogue normally shows no more than that learner plus Frau Fischer or the other peer.
+- Reference pack: `course-production/a1-mvp/module-01/` (all 7 teaching structures passed the gate on 2026-06-10; cast/name text must pass `3p-05`/`3p-06` before recording).
 
 ## Bad / acceptable / premium
 
@@ -55,7 +92,7 @@ The automated audit (`audit:spine`) is the **floor**; this rubric is the **bar**
 
 - **Momentum** — something changes every ~45 seconds: a scene turn, new stakes, a reveal, a register shift. Exercise → exercise → exercise with no arc = FLAT.
 - **Scene continuity** — one continuous situation with a payoff, not disconnected items sharing a backdrop. `table`/`note` blocks are furniture, not scenes; the M1 first-mission hear→say→repair arc is the model to converge on.
-- **Voice** — Kuttan/teaching lines a 22-year-old would screenshot and send to a cousin. Canned praise ("Great job! Keep going! 🎉") = FLAT.
+- **Voice** — Nivin/Meera/teaching lines a 22-year-old would screenshot and send to a cousin. Canned praise ("Great job! Keep going! 🎉") = FLAT.
 - **Production rhythm** — the learner speaks or writes before minute 2, and at least every ~3 exercises after.
 - **Calm** (owner law 2026-07-13, DECISIONS #17) — less distracting, more clean: one focal point per screen/scene, few simultaneous moving elements, motion only when the motion *is* the teaching, generous whitespace, restrained color count, less text. Applies equally to app screens and video graphics. Busy ≠ engaging; a cluttered screen is a Calm FAIL even if every element is individually good.
 
@@ -65,7 +102,8 @@ FLAT = sev-1 (Reel Rule). Grades are recorded per lesson in `scripts/output/spin
 
 1. Run automated checks (`QA_AND_EVALUATION_HARNESS.md`): schema, answers, audio links, production floor, empty explanations.
 2. **Boredom scan + feel grade**: scrub the lesson/video at 1.5×; any stretch you would skip = FAIL, cut or enrich it. Then play it properly and assign FLAT/OK/ADIPOLI per the Feel Rubric above.
-3. German correctness spot-check (the M1 gate caught a real error — Tschüss taught with the wrong ch-sound — so this matters).
-4. Manglish naturalness read-aloud test: does it sound like an older cousin or a machine?
-5. Template completeness: all 13 elements above present.
-6. Verdict per lesson: PASS / WEAK (named fixes) / FAIL — with evidence, never vibes.
+3. **Eye-comfort/legibility run:** at 390px, complete the lesson’s longest reading/table/form/feedback sequence; spot-check it at 1440px and 200% zoom. Production contrast/type floors must pass, hierarchy must be immediate, and the surface must remain comfortable through the whole task. Squinting, low-contrast metadata, or prolonged dark treatment that tires or competes with the work = FAIL; move the work to daylight/answer sheet or simplify it.
+4. German correctness spot-check (the M1 gate caught a real error — Tschüss taught with the wrong ch-sound — so this matters).
+5. Manglish naturalness read-aloud test: does it sound like an older cousin or a machine?
+6. Template completeness: all 13 elements above present.
+7. Verdict per lesson: PASS / WEAK (named fixes) / FAIL — with evidence, never vibes.
