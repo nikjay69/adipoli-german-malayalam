@@ -11,6 +11,7 @@ import { Navigation } from "@/components/layout/Navigation";
 import { ToastContainer } from "@/components/ui/Toast";
 import { GlobalSearch } from "@/components/ui/GlobalSearch";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
+import { BRAND_DESCRIPTION, BRAND_NAME, brandAssets } from "@/lib/brand";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,11 +47,48 @@ const notoMalayalam = Noto_Sans_Malayalam({
 });
 
 export const metadata: Metadata = {
-  title: "German Malayalam - Learn German, Kerala Style",
-  description: "An interactive German A1 course designed for Malayalam speakers from Kerala. Learn German with fun games, Kerala cultural references, and Malayalam translations.",
-  keywords: ["German", "Malayalam", "Kerala", "Learn German", "A1 German", "German for Indians"],
-  authors: [{ name: "German Malayalam" }],
-  manifest: '/manifest.json',
+  applicationName: BRAND_NAME,
+  title: "Adipoli German · Goethe A1 course for Malayalis",
+  description: BRAND_DESCRIPTION,
+  keywords: [
+    "German A1",
+    "Goethe A1 preparation",
+    "Malayalam",
+    "Malayali learners",
+    "German course",
+  ],
+  authors: [{ name: BRAND_NAME }],
+  creator: BRAND_NAME,
+  publisher: BRAND_NAME,
+  category: "education",
+  manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: brandAssets.icons.favicon16, sizes: "16x16", type: "image/png" },
+      { url: brandAssets.icons.favicon32, sizes: "32x32", type: "image/png" },
+      { url: brandAssets.icons.favicon48, sizes: "48x48", type: "image/png" },
+    ],
+    shortcut: [{ url: brandAssets.icons.favicon48, type: "image/png" }],
+    apple: [
+      { url: brandAssets.icons.appleTouch, sizes: "180x180", type: "image/png" },
+    ],
+  },
+  openGraph: {
+    type: "website",
+    siteName: BRAND_NAME,
+    title: "Adipoli German · Goethe A1 course for Malayalis",
+    description: BRAND_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary",
+    title: "Adipoli German · Goethe A1 course for Malayalis",
+    description: BRAND_DESCRIPTION,
+  },
+  appleWebApp: {
+    capable: true,
+    title: BRAND_NAME,
+    statusBarStyle: "default",
+  },
 };
 
 export const viewport: Viewport = {

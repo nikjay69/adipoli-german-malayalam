@@ -1,9 +1,13 @@
-const CACHE_NAME = 'adipoli-v2';
+const CACHE_NAME = 'adipoli-v3-brand';
 const STATIC_ASSETS = [
   '/',
   '/manifest.json',
-  '/icon-192.svg',
-  '/icon-512.svg',
+  '/brand/logo/tile-a.svg',
+  '/brand/icons/favicon-32.png',
+  '/brand/icons/apple-touch-180.png',
+  '/brand/icons/pwa-192.png',
+  '/brand/icons/pwa-512.png',
+  '/brand/icons/maskable-512.png',
 ];
 
 const OFFLINE_FALLBACK = '/';
@@ -32,8 +36,12 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Cache-first for audio and image assets
-  if (url.pathname.startsWith('/audio/') || url.pathname.startsWith('/images/')) {
+  // Cache-first for audio, image, and canonical brand assets
+  if (
+    url.pathname.startsWith('/audio/')
+    || url.pathname.startsWith('/images/')
+    || url.pathname.startsWith('/brand/')
+  ) {
     event.respondWith(
       caches.match(event.request).then((cached) => {
         if (cached) return cached;
