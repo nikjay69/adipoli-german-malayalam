@@ -161,9 +161,9 @@ One master assembler, two bounded specialists — never three parallel lesson pi
 | Learner-facing German audio | pre-rendered native audio ONLY (`public/audio/` Chirp3-HD batch); never msedge-tts/SpeechSynthesis (`scripts/gen-tts.ts` is non-learner scratch only) |
 | Lesson video length | **15–18 min dense per video** (owner ruling, DECISIONS #17.4) |
 
-**Design/content separation (DECISIONS #18/#19/#21):** `lesson.scene.json` owns semantic scene type, timing, exact text/transcript, audio, cast role, and asset checksums — never literal hex values, font files, or page-specific layout. A central cast registry resolves the fixed display identities Nivin, Meera, Frau Fischer, and Appu; renderers do not scatter legacy names through templates. Renderer-level versioned tokens own colour, type, spacing, radius, and motion. v1-02 proves the semantic element system with neutral tokens/roles while 3p-03 audits Direction 2A; design v0.1 and the fixed cast are applied only after owner approval/migration. Later token-level refinement can re-render inserts without rewriting scripts, timing, or owner footage.
+**Design/content separation (DECISIONS #19/#21/#22):** `lesson.scene.json` owns semantic scene type, timing, exact text/transcript, audio, cast role, and asset checksums — never literal hex values, font files, or page-specific layout. A central cast registry resolves the fixed display identities Nivin, Meera, Frau Fischer, and Appu; renderers do not scatter legacy names through templates. Renderer-level versioned tokens own colour, type, spacing, radius, and motion. v1-02 proves the semantic element system with neutral tokens/roles while 3p-03 audits Direction 2A; design v0.1 and the fixed cast are applied only after owner approval/migration. Later token-level refinement can re-render inserts without rewriting scripts, timing, or owner footage.
 
-**Remotion ↔ HyperFrames handoff (DECISIONS #19):**
+**Remotion ↔ HyperFrames handoff (DECISIONS #19/#20):**
 
 - Remotion owns the only full lesson timeline and final audio mix. HyperFrames must never become a second whole-lesson edit.
 - One HyperFrames insert = one teaching intent (for example phrase-build, pronunciation contrast, mistake-repair, or exam-step reveal). It must be deterministic and seek-safe, with no render-time network dependency.

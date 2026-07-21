@@ -41,7 +41,7 @@ Status: **Source of truth.** Established 2026-06-11 (documentation reset). Chang
 - **A1 success**: learner scores ≥75/100 on two distinct full timed in-app mock exams, no section below 60%, AND completes the speaking simulator for all 3 Sprechen Teile on two different days.
 - **Exam-readiness**: all 8 module checkpoints passed · every core weakness tag secure · 2 timed full mocks ≥75 with no section below 60% · readiness checklist green in all four skills · required form/message and speaking evidence complete.
 - **Practical German at A1**: introduce self, spell, handle numbers/prices/dates/time, talk about family/work/food/home/routine/hobbies, make appointments, navigate transport/doctor/forms, write a 30-word email, ask and answer W-/Ja-Nein questions.
-- **Launch-readiness**: all 56 videos have an approved master, exact captions/transcript, native German model audio, technical QC, durable media manifest/checksum, app delivery URL, and verified mobile playback **and** all 56 mastery rows have teaching/practice/diagnosis/recovery/two-retest/spiral evidence, zero orphan tags, and official calibration recorded. No “video coming soon,” placeholder owner frame or adaptive dead end remains on the spine.
+- **Launch-readiness**: all 56 videos have an approved master, exact captions/transcript, native German model audio, technical QC, durable media manifest/checksum, protected app-delivery asset, and verified mobile playback **and** all 56 mastery rows have teaching/practice/diagnosis/recovery/two-retest/spiral evidence, zero orphan tags, and official calibration recorded. No “video coming soon,” placeholder owner frame or adaptive dead end remains on the spine.
 
 ## Mastery doctrine — same destination, flexible support
 
