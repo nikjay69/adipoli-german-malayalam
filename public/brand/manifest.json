@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "brand": "Adipoli German",
+  "selectedMark": "4a Triangle AG",
+  "source": {
+    "file": "# 2A Product System Completion (6).zip",
+    "sha256": "AFEEEC516489C4EB595C6777946957691988FD0AE3B2396445CFB32C89F535A1"
+  },
+  "runtimePolicy": {
+    "default": "Use flat forest, cream, and gold artwork for product UI, icons, documents, and ordinary print.",
+    "darkSurface": "Use the reversed triangle on forest surfaces; keep the gold trapezoid.",
+    "celebration": "German-tricolour variants remain outside the product runtime bundle and require a separately reviewed celebration or marketing context.",
+    "marketingOnly": "Gradient and restrained 3D artwork remain outside the product runtime bundle.",
+    "watermark": "Use the dark watermark on bright footage and the light watermark on dark footage at 55–60% opacity."
+  },
+  "minimumSizes": {
+    "markHeightPx": 12,
+    "tilePx": 24,
+    "horizontalWidthPx": 120,
+    "descriptorWidthPx": 200
+  },
+  "assets": [
+    {
+      "path": "logo/mark-triangle.svg",
+      "role": "default-mark",
+      "mimeType": "image/svg+xml",
+      "width": 48,
+      "height": 48,
+      "sha256": "B65EE297CA6B73B6541988BDDDD31F60904A9E2CCAD32906462ADA4E4DCEA2E2",
+      "sourceExact": true
+    },
+    {
+      "path": "logo/mark-triangle-reversed.svg",
+      "role": "dark-surface-mark",
+      "mimeType": "image/svg+xml",
+      "width": 48,
+      "height": 48,
+      "sha256": "469FA8DACAED09DB8BA32FA63CF3C575CDC1045936531EFF856CBCE461F493CF",
+      "sourceExact": true
+    },
+    {
+      "path": "logo/mark-triangle-mono-black.svg",
+      "role": "one-colour-dark-mark",
+      "mimeType": "image/svg+xml",
+      "width": 48,
+      "height": 48,
+      "sha256": "90D4D37EC4BF63E0A44A44E02781D15B04DA3C22024B6DAF86162AACE29940D8",
+      "sourceExact": true
+    },
+    {
+      "path": "logo/mark-triangle-mono-white.svg",
+      "role": "one-colour-light-mark",
+      "mimeType": "image/svg+xml",
+      "width": 48,
+      "height": 48,
+      "sha256": "9D5198085D5CAC2A582B45B5554B29696C4B5C6A06644B09BEEC266E0B69E7C8",
+      "sourceExact": true
+    },
+    {
+      "path": "logo/tile-a.svg",
+      "role": "default-product-tile",
+      "mimeType": "image/svg+xml",
+      "width": 48,
+      "height": 48,
+      "sha256": "16ABD867224B166873000F082B469AB5CC6D90793D95B4F2DDC2A2E76F681FEA",
+      "sourceExact": true
+    },
+    {
+      "path": "logo/logo-primary-horizontal.svg",
+      "role": "editable-horizontal-lockup-source",
+      "mimeType": "image/svg+xml",
+      "width": 210,
+      "height": 48,
+      "sha256": "773F97C9444A7888C9750533E7B77550CFA65BFC83B5E344868CC8B799B01307",
+      "sourceExact": true
+    },
+    {
+      "path": "logo/logo-stacked.svg",
+      "role": "editable-stacked-lockup-source",
+      "mimeType": "image/svg+xml",
+      "width": 120,
+      "height": 100,
+      "sha256": "41D4065E9E9DD80F651029B3768F6332E2196DFFC78117027747AFD4FE7CBEC0",
+      "sourceExact": true
+    },
+    {
+      "path": "logo/logo-descriptor.svg",
+      "role": "editable-descriptor-lockup-source",
+      "mimeType": "image/svg+xml",
+      "width": 260,
+      "height": 48,
+      "sha256": "78503F78C0CBF1291B7432483C673F992DD5405C7BC133EA88050C3E846C98D1",
+      "sourceExact": true
+    },
+    {
+      "path": "icons/favicon-16.png",
+      "role": "favicon-16",
+      "mimeType": "image/png",
+      "width": 16,
+      "height": 16,
+      "sha256": "DBD3E4FD7EDD2FE4E60919E9C34E5FC93EB4825A4D3BCF7598755FAE8B215177",
+      "sourceExact": true
+    },
+    {
+      "path": "icons/favicon-32.png",
+      "role": "favicon-32",
+      "mimeType": "image/png",
+      "width": 32,
+      "height": 32,
+      "sha256": "D48E18DA516A6A4C6183DBE0DA377E5DF1695D8D0ECBEF3B2A18B00289747DCD",
+      "sourceExact": true
+    },
+    {
+      "path": "icons/favicon-48.png",
+      "role": "favicon-48",
+      "mimeType": "image/png",
+      "width": 48,
+      "height": 48,
+      "sha256": "2911F037EB7F415B9D2C86F05122D38BF0A0510E215C41B89C68DE350B8A3558",
+      "sourceExact": true
+    },
+    {
+      "path": "icons/apple-touch-180.png",
+      "role": "apple-touch-icon",
+      "mimeType": "image/png",
+      "width": 180,
+      "height": 180,
+      "sha256": "623180A94A11C40D9D3D598C9E9717A9911440523A4DDBFCD490AA0C153F8A67",
+      "sourceExact": true
+    },
+    {
+      "path": "icons/pwa-192.png",
+      "role": "pwa-icon-192",
+      "mimeType": "image/png",
+      "width": 192,
+      "height": 192,
+      "sha256": "5036E26B51FBE4C288B2CFD6B07DBFC3451B85520C27F80653B988BAD39F8178",
+      "sourceExact": true
+    },
+    {
+      "path": "icons/pwa-512.png",
+      "role": "pwa-icon-512",
+      "mimeType": "image/png",
+      "width": 512,
+      "height": 512,
+      "sha256": "801B5F870126AC4B0D7E08B0019F484664C44C316FA1102D8668D2897C52B7C1",
+      "sourceExact": true
+    },
+    {
+      "path": "icons/maskable-512.png",
+      "role": "maskable-icon-512",
+      "mimeType": "image/png",
+      "width": 512,
+      "height": 512,
+      "sha256": "7C95C056F3BB07305DC5A0B4FF4B06C4598123A0ACE2B147971F51F5B30F8C92",
+      "sourceExact": true
+    },
+    {
+      "path": "icons/avatar-1080.png",
+      "role": "circle-avatar",
+      "mimeType": "image/png",
+      "width": 1080,
+      "height": 1080,
+      "sha256": "DC648A6CACA90D258BBF070080199DEA316A785E1ED3BA1EA9204A64FFCFDC97",
+      "sourceExact": true
+    },
+    {
+      "path": "watermarks/watermark-light-512.png",
+      "role": "dark-footage-watermark",
+      "mimeType": "image/png",
+      "width": 512,
+      "height": 512,
+      "sha256": "741CB636744E1F113D3BC2F05D62101A0DAAC9C19804122938DE57A1C3CF612F",
+      "sourceExact": true
+    },
+    {
+      "path": "watermarks/watermark-dark-512.png",
+      "role": "bright-footage-watermark",
+      "mimeType": "image/png",
+      "width": 512,
+      "height": 512,
+      "sha256": "497596917B4EDE2492FA58A4501DA5366C4EE3F992593F99A85BA2AF7C759A30",
+      "sourceExact": true
+    }
+  ]
+}
