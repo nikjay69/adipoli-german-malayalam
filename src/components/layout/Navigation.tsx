@@ -39,6 +39,7 @@ export function Navigation() {
     pathname.startsWith('/landing') ||
     pathname.startsWith('/pricing') ||
     pathname.startsWith('/privacy') ||
+    pathname.startsWith('/preview') ||
     pathname.startsWith('/scripts') ||
     pathname.startsWith('/missions') ||
     /^\/learn\/\d+\/.+/.test(pathname) ||

@@ -168,6 +168,7 @@ export function GlobalSearch() {
 
   const isFocusedRoute =
     pathname === '/' ||
+    pathname.startsWith('/preview') ||
     pathname.startsWith('/play') ||
     pathname.startsWith('/intro') ||
     pathname.startsWith('/missions') ||
