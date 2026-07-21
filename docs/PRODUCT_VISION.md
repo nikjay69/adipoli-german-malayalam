@@ -67,9 +67,9 @@ The row-level contract is `reference/GOETHE_A1_EXAM_MAP.md`; routing and retest 
 - **Feel is the bar, audit is the floor** (DECISIONS #15): a lesson is premium only when a human/agent playthrough feel-check passes (Feel Rubric in `LESSON_QUALITY_STANDARD.md`) — structural audit PASS alone never makes a lesson premium.
 - **Calm contrast, never a full-dark learning wall** (DECISIONS #18/#23): light is the default for sustained explanation and task legibility; dark framing creates focus and emotional contrast only for high-level heroes, module thresholds, media stages, and brief immersive moments. Any reading, choosing, typing, table, or feedback inside that framing remains on a light task surface.
 
-## Design language v0.1 candidate — 2A “Scenes & Daylight”
+## Design language v0.1 — 2A “Scenes & Daylight”
 
-Status: **audited and owner-revised through 2026-07-18; explicit visual-contract approval still required before learner-facing implementation.** Review source: `# 2A Product System Completion (2).zip`, SHA-256 `E6F4D912485B9438D49AA56CDBF842BAAE374B1049570DBD7E57CAEA68E0B3E2` (C1–C9 complete; 109/109 board images loaded; no browser warnings/errors). DECISIONS #20 records the board audit; #21 records the video/cast owner revisions; #23 records the light-first learning and presenter-led visualization corrections.
+Status: **owner-approved for the v0.1 build cycle on 2026-07-21.** Final approval source: `# 2A Product System Completion (6).zip`, SHA-256 `AFEEEC516489C4EB595C6777946957691988FD0AE3B2396445CFB32C89F535A1`. It retains the audited C1–C9 product system from `# 2A Product System Completion (2).zip` and adds the approved Triangle-A brand and marketing board. DECISIONS #20 records the product-board audit; #21 records the video/cast corrections; #23 records the light-first/presenter-led refinement; #25 records final design, logo, and marketing approval plus the delivery-boundary correction.
 
 ### Experience grammar
 
@@ -93,6 +93,21 @@ Status: **audited and owner-revised through 2026-07-18; explicit visual-contract
 | Spacing / radii | spacing `4/8/12/16/20/24/32/40/56`; radii chip 4, button 6, input 7, card 9, door 11, sheet 14px |
 
 Production floors override the board’s illustrative small labels: ordinary body is 15–16px on mobile, meaning-bearing metadata is at least 12px, German is at least 16px, and targets are at least 44×44px. Focus rings are 2px with 2px offset. Room entry is calm and short (about 320ms); return is shorter; `prefers-reduced-motion` removes non-essential transitions. Production fonts are bundled by the app, never fetched from a third-party host at runtime.
+
+### Brand identity — Triangle-A
+
+- **Selected mark:** option 4a, “Triangle AG.” The open triangle-A plus its gold trapezoid is the mark of record. The trapezoid is never removed; the mark is never rotated, skewed, arbitrarily recoloured, or combined with `A1`, a character, a flag, or another symbol.
+- **Default system:** flat forest `#102018`, cream `#F5F0E8`, and gold `#D4A520`. `mark-triangle.svg` is the everyday mark; `tile-a.svg` is the app/social icon; `logo-primary-horizontal.svg` is the default wordmark lockup; stacked, descriptor, reversed, and one-colour lockups serve their named constrained contexts.
+- **Usage hierarchy:** flat artwork is required in product UI, favicons/PWA icons, documents, and ordinary print. Gradient artwork is marketing-only. The restrained 3D extrusion is limited to reel covers and YouTube thumbnails. German-tricolour editions are celebration accents for Germany-topic/exam/result content and never replace the default app, header, favicon, watermark, or print mark.
+- **Safety:** use the documented clear space and minimum sizes (mark 12px tall, tile 24px, horizontal lockup 120px wide, descriptor 200px wide). On photography, use a forest scrim of at least 40%. Never imply Goethe-Institut or other institutional affiliation.
+- **Production authority:** the Stage 2 brand board plus the delivered `package/logo/`, `package/icons/`, `package/watermarks/`, `package/fonts.md`, and `package/manifest.md` in the approved ZIP are authoritative. Root-level legacy uploads/assets are evidence and source material, not blanket-approved production assets.
+
+### Marketing system and copy law
+
+- Approved claims may be used verbatim: “The Goethe A1 course for Malayalis.”; “56 dense owner-led lessons.”; “Video-led. App-supported.”; “Hear it. Say it. Repair it. Prove it.”; and “Build evidence that you’re A1 ready.” “Free pilot” is allowed only in an undated editable template whose seat count and dates are supplied by the owner at publish time.
+- Marketing may be faster and louder than the learning product, but keeps the same scene/type/colour/flag/cast/German-accuracy laws: one idea per slide, short verbs, Source Serif 4 for German, Malayalam glosses when useful, and one calm dominant action.
+- Hard bans: guaranteed-pass language; invented pass rates, testimonials, learner counts, review scores, prices, discounts, urgency, or hour totals; A2/B1 positioning; institutional affiliation or Goethe-Institut branding; legacy Kuttan/Frau Weber characters; fabricated owner/teacher portraits; “Kerala Style” positioning; or German-flag imagery outside the approved tricolour mark treatment.
+- Approved masters cover reel cover/end card, feed/announcement, YouTube, Open Graph/share, carousel, free-pilot, educational/cheatsheet, and promo-video graphic families. The final board contains their designs and copy, but the delivered ZIP does **not** contain the separately editable `templates/`, `educational/`, and `promo/` SVG directories promised by its board manifest. Chunk `3p-04b` must reconstruct and validate those masters from the approved board before they are called delivered production files.
 
 ### Shared product primitives
 
