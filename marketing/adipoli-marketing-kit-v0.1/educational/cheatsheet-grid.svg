@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="Adipoli German W-question cheatsheet">
+  <title>Adipoli German W-question cheatsheet</title>
+  <style>
+  .impact { font-family: 'Archivo', 'Arial Narrow', Arial, sans-serif; font-weight: 800; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+  .ui { font-family: 'Geist', Arial, sans-serif; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
+  text { text-rendering: geometricPrecision; }
+</style>
+
+  <rect width="1080" height="1350" fill="#F5F0E8"/>
+  <text x="80" y="115" class="mono" font-size="29" font-weight="700" letter-spacing="5" fill="#8A5A2A">SPICKZETTEL · CHEATSHEET</text><g id="triangle-a" transform="translate(945 70) scale(1)" opacity="1">
+    <path d="M24 6 L40 40 H33.6 L24 19.4 L14.4 40 H8 Z" fill="#102018"/>
+    <path d="M20.7 32 H27.3 L31 40 H17 Z" fill="#D4A520"/>
+  </g>
+  <text x="80" y="270" class="serif" font-size="76" fill="#102018">The 6 <tspan fill="#8A5A2A">W</tspan>-questions</text>
+  <g id="EDITABLE-COPY"><g id="QUESTION-1"><rect x="80" y="375" width="430" height="165" rx="24" fill="#FFFFFF" stroke="#102018" stroke-opacity=".14" stroke-width="3"/><text x="115" y="443" class="serif" font-size="51" fill="#102018"><tspan fill="#8A5A2A">W</tspan>er?</text><text x="115" y="497" class="ui" font-size="30" fill="#66756A">who · ആര്?</text></g>
+<g id="QUESTION-2"><rect x="550" y="375" width="430" height="165" rx="24" fill="#FFFFFF" stroke="#102018" stroke-opacity=".14" stroke-width="3"/><text x="585" y="443" class="serif" font-size="51" fill="#102018"><tspan fill="#8A5A2A">W</tspan>as?</text><text x="585" y="497" class="ui" font-size="30" fill="#66756A">what · എന്ത്?</text></g>
+<g id="QUESTION-3"><rect x="80" y="580" width="430" height="165" rx="24" fill="#FFFFFF" stroke="#102018" stroke-opacity=".14" stroke-width="3"/><text x="115" y="648" class="serif" font-size="51" fill="#102018"><tspan fill="#8A5A2A">W</tspan>o?</text><text x="115" y="702" class="ui" font-size="30" fill="#66756A">where · എവിടെ?</text></g>
+<g id="QUESTION-4"><rect x="550" y="580" width="430" height="165" rx="24" fill="#FFFFFF" stroke="#102018" stroke-opacity=".14" stroke-width="3"/><text x="585" y="648" class="serif" font-size="51" fill="#102018"><tspan fill="#8A5A2A">W</tspan>ann?</text><text x="585" y="702" class="ui" font-size="30" fill="#66756A">when · എപ്പോൾ?</text></g>
+<g id="QUESTION-5"><rect x="80" y="785" width="430" height="165" rx="24" fill="#FFFFFF" stroke="#102018" stroke-opacity=".14" stroke-width="3"/><text x="115" y="853" class="serif" font-size="51" fill="#102018"><tspan fill="#8A5A2A">W</tspan>ie?</text><text x="115" y="907" class="ui" font-size="30" fill="#66756A">how · എങ്ങനെ?</text></g>
+<g id="QUESTION-6"><rect x="550" y="785" width="430" height="165" rx="24" fill="#FFFFFF" stroke="#102018" stroke-opacity=".14" stroke-width="3"/><text x="585" y="853" class="serif" font-size="51" fill="#102018"><tspan fill="#8A5A2A">W</tspan>arum?</text><text x="585" y="907" class="ui" font-size="30" fill="#66756A">why · എന്തുകൊണ്ട്?</text></g></g>
+  <rect x="80" y="1080" width="105" height="52" rx="9" fill="#F1D27A"/><text x="132" y="1116" text-anchor="middle" class="mono" font-size="24" font-weight="800" fill="#102018">SAVE</text>
+  <text x="210" y="1118" class="ui" font-size="29" fill="#66756A">Every W-question appears in Hören Teil 1.</text>
+  <text x="210" y="1170" class="mono" font-size="22" fill="#B95B33">[OWNER VERIFIES EXAM FACT]</text>
+
+  <g id="EDITING-GUIDES" style="display:none"><rect x="60" y="60" width="960" height="1230" fill="none" stroke="#B95B33" stroke-width="4" stroke-dasharray="14 12"/><text x="72" y="90" class="mono" font-size="20" fill="#B95B33">FEED SAFE AREA · 60 PX</text></g>
+</svg>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Adipoli German Open Graph share image">
+  <title>Adipoli German Open Graph share image</title>
+  <style>
+  .impact { font-family: 'Archivo', 'Arial Narrow', Arial, sans-serif; font-weight: 800; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+  .ui { font-family: 'Geist', Arial, sans-serif; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
+  text { text-rendering: geometricPrecision; }
+</style>
+
+  <rect width="1200" height="630" fill="#F5F0E8"/>
+  <g id="EDITABLE-COPY">
+    <g id="triangle-a-tile"><rect x="72" y="84" width="76" height="76" rx="17.48" fill="#102018"/><g id="triangle-a" transform="translate(82.64 94.64) scale(1.14)" opacity="1">
+    <path d="M24 6 L40 40 H33.6 L24 19.4 L14.4 40 H8 Z" fill="#F5F0E8"/>
+    <path d="M20.7 32 H27.3 L31 40 H17 Z" fill="#D4A520"/>
+  </g></g>
+    <text x="176" y="133" class="impact" font-size="37" fill="#102018">ADIPOLI GERMAN</text>
+    <text x="72" y="265" class="serif" font-size="55" fill="#102018"><tspan x="72">The Goethe A1 course</tspan><tspan x="72" dy="70">for Malayalis</tspan></text>
+    <text x="72" y="445" class="ui" font-size="30" fill="#3F4D44"><tspan x="72">Video-led. App-supported.</tspan><tspan x="72" dy="45">Build evidence that you’re A1 ready.</tspan></text>
+  </g>
+  <g id="EDITABLE-SCENE"><rect x="700" y="0" width="500" height="630" fill="#0C1811"/><image href="../assets/scenes/hub-thrissur-home.jpg" x="700" y="0" width="500" height="630" preserveAspectRatio="xMidYMid slice"/></g>
+
+  <g id="EDITING-GUIDES" style="display:none"><rect x="40" y="40" width="1120" height="550" fill="none" stroke="#B95B33" stroke-width="4" stroke-dasharray="14 12"/><text x="52" y="70" class="mono" font-size="20" fill="#B95B33">OPEN GRAPH SAFE AREA · 40 PX</text></g>
+</svg>

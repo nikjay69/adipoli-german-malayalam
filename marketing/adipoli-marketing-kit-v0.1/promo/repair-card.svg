@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Adipoli German mistake-repair promo frame">
+  <title>Adipoli German mistake-repair promo frame</title>
+  <style>
+  .impact { font-family: 'Archivo', 'Arial Narrow', Arial, sans-serif; font-weight: 800; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+  .ui { font-family: 'Geist', Arial, sans-serif; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
+  text { text-rendering: geometricPrecision; }
+</style>
+
+  <rect width="1920" height="1080" fill="#F5F0E8"/>
+  <g id="EDITABLE-SLIP" text-anchor="middle"><text x="570" y="425" class="mono" font-size="39" font-weight="700" letter-spacing="6" fill="#B95B33">SLIP</text><text x="570" y="535" class="mono" font-size="78" font-weight="500" text-decoration="line-through" fill="#B95B33">das Frau</text></g>
+  <circle cx="960" cy="485" r="70" fill="#F1D27A"/><text x="960" y="512" text-anchor="middle" class="ui" font-size="74" font-weight="800" fill="#102018">→</text>
+  <g id="EDITABLE-FIX" text-anchor="middle"><text x="1350" y="425" class="mono" font-size="39" font-weight="700" letter-spacing="6" fill="#17606B">FIX</text><text x="1350" y="535" class="mono" font-size="88" font-weight="600" fill="#17606B">die Frau ✓</text></g>
+
+  <g id="EDITING-GUIDES" style="display:none"></g>
+</svg>

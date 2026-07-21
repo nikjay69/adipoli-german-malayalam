@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-label="Adipoli German reel end card">
+  <title>Adipoli German reel end card</title>
+  <style>
+  .impact { font-family: 'Archivo', 'Arial Narrow', Arial, sans-serif; font-weight: 800; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+  .ui { font-family: 'Geist', Arial, sans-serif; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
+  text { text-rendering: geometricPrecision; }
+</style>
+
+  <rect width="1080" height="1920" fill="#102018"/>
+  <g id="triangle-a" transform="translate(432 320) scale(4.5)" opacity="1">
+    <path d="M24 6 L40 40 H33.6 L24 19.4 L14.4 40 H8 Z" fill="#F5F0E8"/>
+    <path d="M20.7 32 H27.3 L31 40 H17 Z" fill="#D4A520"/>
+  </g>
+  <g id="EDITABLE-COPY" text-anchor="middle">
+    <text x="540" y="760" class="impact" font-size="90" fill="#F5F0E8"><tspan x="540">BUILD EVIDENCE</tspan><tspan x="540" dy="104">THAT YOU’RE</tspan><tspan x="540" dy="104">A1 READY.</tspan></text>
+    <text x="540" y="1160" class="mono" font-size="35" font-weight="600" letter-spacing="6" fill="#D4A520">VIDEO-LED · APP-SUPPORTED</text>
+    <rect x="280" y="1260" width="520" height="108" rx="24" fill="#D4A520"/>
+    <text x="540" y="1330" class="ui" font-size="38" font-weight="700" fill="#102018">Follow [HANDLE TBD]</text>
+  </g>
+
+  <g id="EDITING-GUIDES" style="display:none"><rect x="60" y="140" width="960" height="1640" fill="none" stroke="#B95B33" stroke-width="4" stroke-dasharray="14 12"/><text x="72" y="170" class="mono" font-size="20" fill="#B95B33">REEL SAFE AREA · 140 PX TOP/BOTTOM</text></g>
+</svg>

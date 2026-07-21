@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="Adipoli German lesson-drop feed post">
+  <title>Adipoli German lesson-drop feed post</title>
+  <style>
+  .impact { font-family: 'Archivo', 'Arial Narrow', Arial, sans-serif; font-weight: 800; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+  .ui { font-family: 'Geist', Arial, sans-serif; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
+  text { text-rendering: geometricPrecision; }
+</style>
+
+  <rect width="1080" height="1350" fill="#F5F0E8"/>
+  <g id="EDITABLE-SCENE"><rect x="0" y="0" width="1080" height="790" fill="#0C1811"/><image href="../assets/scenes/hub-library.jpg" x="0" y="0" width="1080" height="790" preserveAspectRatio="xMidYMid slice"/></g>
+  <g id="EDITABLE-COPY">
+    <text x="72" y="885" class="mono" font-size="30" font-weight="700" letter-spacing="6" fill="#8A5A2A">LESSON DROP</text>
+    <text x="72" y="980" class="serif" font-size="60" fill="#102018"><tspan x="72">Wie viel kostet das? —</tspan><tspan x="72" dy="76">asking prices without panic</tspan></text>
+    <g id="brand-lockup"><g id="triangle-a" transform="translate(72 1215) scale(1.0416666666666667)" opacity="1">
+    <path d="M24 6 L40 40 H33.6 L24 19.4 L14.4 40 H8 Z" fill="#102018"/>
+    <path d="M20.7 32 H27.3 L31 40 H17 Z" fill="#D4A520"/>
+  </g><text x="146" y="1247" class="impact" font-size="17" letter-spacing="0.5" fill="#102018">ADIPOLI GERMAN</text></g>
+    <text x="1008" y="1250" text-anchor="end" class="mono" font-size="28" font-weight="500" fill="#66756A">M3 · MARKET</text>
+  </g>
+
+  <g id="EDITING-GUIDES" style="display:none"><rect x="60" y="60" width="960" height="1230" fill="none" stroke="#B95B33" stroke-width="4" stroke-dasharray="14 12"/><text x="72" y="90" class="mono" font-size="20" fill="#B95B33">FEED SAFE AREA · 60 PX</text></g>
+</svg>

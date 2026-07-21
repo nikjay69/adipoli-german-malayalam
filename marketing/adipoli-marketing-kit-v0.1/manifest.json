@@ -1,0 +1,478 @@
+{
+  "schemaVersion": 1,
+  "packageVersion": "0.1",
+  "brand": "Adipoli German",
+  "selectedMark": "4a Triangle-A",
+  "source": {
+    "file": "# 2A Product System Completion (6).zip",
+    "sha256": "AFEEEC516489C4EB595C6777946957691988FD0AE3B2396445CFB32C89F535A1",
+    "authority": "Owner-approved Stage 2 design board"
+  },
+  "counts": {
+    "editableSvgMasters": 21,
+    "pngExports": 21,
+    "contactSheets": 3,
+    "sceneAssets": 5
+  },
+  "fonts": [
+    "Archivo",
+    "Source Serif 4",
+    "Geist",
+    "Geist Mono"
+  ],
+  "palette": {
+    "forest": "#102018",
+    "cream": "#F5F0E8",
+    "gold": "#D4A520",
+    "goldBright": "#F1D27A",
+    "teal": "#17606B",
+    "rust": "#B95B33"
+  },
+  "ownerSignoff": [
+    "Confirm public social handle.",
+    "Confirm owner name and title.",
+    "Supply pilot seat count and dates at publish time.",
+    "Verify exam-format facts against current exam-centre guidance.",
+    "Approve any optional Meera placement separately."
+  ],
+  "inventory": [
+    {
+      "path": "README.md",
+      "mimeType": "text/markdown",
+      "bytes": 1963,
+      "sha256": "BFB917463D14F00F7339D8B76A46C79E05A45EC99DF5C0676AD9923C9F5C1BBD"
+    },
+    {
+      "path": "assets/scenes/hub-chayakkada.jpg",
+      "mimeType": "image/jpeg",
+      "bytes": 175085,
+      "sha256": "5C5793CA0FCE032457B500AB7D14E95C5C08358263E2DE555AAE9DF27D4DD9E7"
+    },
+    {
+      "path": "assets/scenes/hub-dream-platform.jpg",
+      "mimeType": "image/jpeg",
+      "bytes": 133312,
+      "sha256": "3213E8B5F75BE5881AB4235C94DF3448634CE1267347372F82BC72CA8CC8C9BE"
+    },
+    {
+      "path": "assets/scenes/hub-library.jpg",
+      "mimeType": "image/jpeg",
+      "bytes": 135357,
+      "sha256": "DCBB231075AE33975AEC40A4263361A3DF69D5EEFEBF58A0AEFC68D82EE3007E"
+    },
+    {
+      "path": "assets/scenes/hub-study-desk.jpg",
+      "mimeType": "image/jpeg",
+      "bytes": 100624,
+      "sha256": "DC4DE4404C96BE800814C5E798F5E62442060F60EC411FA8A54BE198778FB7AC"
+    },
+    {
+      "path": "assets/scenes/hub-thrissur-home.jpg",
+      "mimeType": "image/jpeg",
+      "bytes": 171790,
+      "sha256": "6BBBD57D916CA7FFD64ABF0DFCCFF7E085AB08C5005221E12E48515C69D64235"
+    },
+    {
+      "path": "educational/cheatsheet-grid.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 3985,
+      "sha256": "39BB4D1B55EEF06C97E2EA60D3B6298DFF396155EC8FA7DC6E14D10D8FBD2045",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "educational/exam-cheatsheet.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 3309,
+      "sha256": "2EAA886B18A210D6549B9D01041B07597A5EC0AECA1B186A1B120B6944189611",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "educational/mistake-repair.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 2617,
+      "sha256": "A10EEC019437644DEC6FEC5EC40CAB9B6991020A3639D97AE90FE6CC411CAD25",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "educational/scene-of-week.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 2613,
+      "sha256": "0C320FC0D3580D265DBB0F17E2487D2784D45A9CC407B71050B561DD443D9E53",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "educational/word-of-day.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 2603,
+      "sha256": "542B2CC357C7D062CF2102A9121525E7F4AA7B926086EB874FAF4FA4F93A7B37",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "exports/educational/cheatsheet-grid.png",
+      "mimeType": "image/png",
+      "bytes": 99816,
+      "sha256": "A2F5184FCDC9006CE44D7F0E56378EF500C384D51A94D7889C1DD2C167EA9954",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "exports/educational/exam-cheatsheet.png",
+      "mimeType": "image/png",
+      "bytes": 95262,
+      "sha256": "8A892EB48B848D5619C4D74BE5469D1B2983BB92A6709D68E6D6D418CBF6F529",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "exports/educational/mistake-repair.png",
+      "mimeType": "image/png",
+      "bytes": 62833,
+      "sha256": "C9F055243E629B231C8E69EA0D9251D18D93BCD8F9BC9246A6CC4939A3CA3E0D",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "exports/educational/scene-of-week.png",
+      "mimeType": "image/png",
+      "bytes": 555625,
+      "sha256": "71D1F6772052598EE4F827B33A10C84005F3A89A3CD1FCCC04571627C7B98219",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "exports/educational/word-of-day.png",
+      "mimeType": "image/png",
+      "bytes": 114224,
+      "sha256": "5F00D5B8B4CBA017991CEE5828864ED0C5C83988F79728E1E09D5B48272F7D9D",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "exports/promo/app-frame.png",
+      "mimeType": "image/png",
+      "bytes": 67917,
+      "sha256": "8856F4A3C7B3FE18650941C83F851CE393C69EE62CA827DA7611BE321B4C5E4E",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "exports/promo/caption.png",
+      "mimeType": "image/png",
+      "bytes": 1037694,
+      "sha256": "DAE1B7D3022ECFDA7D722FDFD31DB402D88B4C3579303A687DD2404FAB132727",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "Caption pill is no wider than 70% of the frame."
+    },
+    {
+      "path": "exports/promo/cta.png",
+      "mimeType": "image/png",
+      "bytes": 47010,
+      "sha256": "391B9B5C8B2BAD3EFC9232F429B96CECA005B84B066B75EC99EFD866C95D1D01",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "exports/promo/german-example.png",
+      "mimeType": "image/png",
+      "bytes": 79910,
+      "sha256": "2826D28D5D61D627961085AED84434FB8C1451E561F8A73B640A09696CBB95DB",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "exports/promo/lesson-label.png",
+      "mimeType": "image/png",
+      "bytes": 33681,
+      "sha256": "31C18BB2A71646D86F0E29CD7738CFEAAB62B8B5CD81B7495AEA0892B52817F0",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "exports/promo/owner-frame.png",
+      "mimeType": "image/png",
+      "bytes": 142323,
+      "sha256": "A713412E7885F6DF02DB4C79CEDA014C66EEB40D720B085B3CADE1F5B760FE11",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "Lower-third and watermark are inset as drawn."
+    },
+    {
+      "path": "exports/promo/repair-card.png",
+      "mimeType": "image/png",
+      "bytes": 29149,
+      "sha256": "686AE7CEB78446081A6CD693E4E930993797A3095055B8F2607DC5A548186B89",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "exports/promo/title.png",
+      "mimeType": "image/png",
+      "bytes": 33903,
+      "sha256": "F9226AF60FAB6C9DED7E2AECEE6FCB45709F3C0EE43BC3F8C970A51DF111DAA4",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "exports/templates/announcement-1080.png",
+      "mimeType": "image/png",
+      "bytes": 53057,
+      "sha256": "D2AB02FC26C56622AD515F3AD6E5485628B1CBA0C3E3FE696A71D2F60F2F96A7",
+      "width": 1080,
+      "height": 1080,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "exports/templates/carousel-master.png",
+      "mimeType": "image/png",
+      "bytes": 72383,
+      "sha256": "53568AB04892BBCC1997C39AA7179BA0BD2DA68906CC1E608E40BC211A227CBF",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "exports/templates/feed-1080x1350.png",
+      "mimeType": "image/png",
+      "bytes": 693871,
+      "sha256": "81F0AE7CB5BD71156FC6127F0D5817E3F05D91897ACA27FFD3FFD7012A3606E1",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "exports/templates/free-pilot.png",
+      "mimeType": "image/png",
+      "bytes": 70086,
+      "sha256": "373A155738320399EE9EDE90D9A2AF3145C14276F3BBE5ADA9B9B0A59AE459CB",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "exports/templates/og-1200x630.png",
+      "mimeType": "image/png",
+      "bytes": 468000,
+      "sha256": "1451D857D35FA5E21B52F0F2CE832AFB87C749D38FF2D73E98B3A4FFB21EECEA",
+      "width": 1200,
+      "height": 630,
+      "safeArea": "Keep key content inside 40 px margins."
+    },
+    {
+      "path": "exports/templates/reel-cover.png",
+      "mimeType": "image/png",
+      "bytes": 1653318,
+      "sha256": "72F19C4759CF658D49C2F052FE5E48D28DB35B912419C13B157AFE8FB4947938",
+      "width": 1080,
+      "height": 1920,
+      "safeArea": "Keep 140 px clear at top and bottom."
+    },
+    {
+      "path": "exports/templates/reel-endcard.png",
+      "mimeType": "image/png",
+      "bytes": 46899,
+      "sha256": "90F692F77FA83847816D98B391C0C1C44267F1C3C7D63701DCD4EFFF7CD1DC19",
+      "width": 1080,
+      "height": 1920,
+      "safeArea": "Keep 140 px clear at top and bottom."
+    },
+    {
+      "path": "exports/templates/youtube-1280x720.png",
+      "mimeType": "image/png",
+      "bytes": 825337,
+      "sha256": "E4B978F701CDD96CDA2F46599E3AD3CA11F818E39A6F26AC9D29BC1F82968F11",
+      "width": 1280,
+      "height": 720,
+      "safeArea": "Keep 24 px margins and avoid the bottom-right timestamp corner."
+    },
+    {
+      "path": "manifest.md",
+      "mimeType": "text/markdown",
+      "bytes": 3393,
+      "sha256": "0A951A85A2244CEFAA274727FCEF9F7C549446597399F225172982B033E6C170"
+    },
+    {
+      "path": "preview/educational-contact-sheet.png",
+      "mimeType": "image/png",
+      "bytes": 247427,
+      "sha256": "05F4FDC8A6EFE18C51482E613A817B1D15A391809C0CA4D329675A2024502058"
+    },
+    {
+      "path": "preview/promo-contact-sheet.png",
+      "mimeType": "image/png",
+      "bytes": 177913,
+      "sha256": "45A0D01B426E4D3DA482162DD22E249064D345B3E45459AAAF55C03D2064D7B6"
+    },
+    {
+      "path": "preview/templates-contact-sheet.png",
+      "mimeType": "image/png",
+      "bytes": 464726,
+      "sha256": "B07DC14132BDDACF18476A10BBE048B04049934BB9ECEB9DD1DA7449FF248593"
+    },
+    {
+      "path": "promo/app-frame.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 1781,
+      "sha256": "1A14C8A98AE749539D6B4E139ED81AE5AE553C645DB331FFEBDAF7947467E409",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "promo/caption.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 1536,
+      "sha256": "AB2CCEB273A2FCC8682C85C73DF7156A2F1356351CDAE8449DF70B0706A234FF",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "Caption pill is no wider than 70% of the frame."
+    },
+    {
+      "path": "promo/cta.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 1325,
+      "sha256": "71B8A6B648990E45BFC437D23BCB1BF97FE431F3B4DE369D1776A6698E9DC5F8",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "promo/german-example.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 1198,
+      "sha256": "35D101C73DD599E511C82882A705C2A0FCB7C72B3F4AEF600564BE3BE5CBFEDE",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "promo/lesson-label.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 1294,
+      "sha256": "644F40637C519A8BB70E3538E6DB85C1C2B765FF4C601FAD62D171F7E019FC46",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "promo/owner-frame.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 2144,
+      "sha256": "8FFCF45C0921C94711A3149487B8CB0A713972F962B8B2C9396FCEEA6FA17E3C",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "Lower-third and watermark are inset as drawn."
+    },
+    {
+      "path": "promo/repair-card.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 1483,
+      "sha256": "A27B1DEF0584E89EA02DBFAE3FE56CF3645F93696B5DE8E49BAE8ED976B7A9A3",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "promo/title.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 1305,
+      "sha256": "3592A711DAA59A3461980109BF5E5CAEA3299F995827FB70BFE4D94A043E1DE5",
+      "width": 1920,
+      "height": 1080,
+      "safeArea": "All key artwork is inset inside the frame."
+    },
+    {
+      "path": "templates/announcement-1080.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 1560,
+      "sha256": "85862F7421F38C2BD33912DCE394AC15E7347366A4805F59B97AF074D7F71EE6",
+      "width": 1080,
+      "height": 1080,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "templates/carousel-master.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 3483,
+      "sha256": "B646725832BDA1733FAE90B2DA8F13B890171E9ABC2963AFF03DFF958E0A94FF",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "templates/feed-1080x1350.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 2006,
+      "sha256": "55F02C588615C9C4A57FB0DCBCF65B0EF265667B6EE476BFECD0B96E42350451",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "templates/free-pilot.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 2251,
+      "sha256": "CC7B08EB8EC745DBB712D68AF2CCEA9C63DAD970247E27BC5FA4A582CFCE0F57",
+      "width": 1080,
+      "height": 1350,
+      "safeArea": "Keep key content inside 60 px margins."
+    },
+    {
+      "path": "templates/og-1200x630.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 1985,
+      "sha256": "0A320F0D50B5C7FF98588F652E28789C68DABD3C9020E3129300C423B4C7C5BA",
+      "width": 1200,
+      "height": 630,
+      "safeArea": "Keep key content inside 40 px margins."
+    },
+    {
+      "path": "templates/reel-cover.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 2284,
+      "sha256": "77525C70AD6193612BF597D9B1E9D166AF18789FF51E2AA072627AD4C248D500",
+      "width": 1080,
+      "height": 1920,
+      "safeArea": "Keep 140 px clear at top and bottom."
+    },
+    {
+      "path": "templates/reel-endcard.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 1762,
+      "sha256": "616463227AEE155AA460258548F5AC0F7015D53EBC683E388FF2BD539113B150",
+      "width": 1080,
+      "height": 1920,
+      "safeArea": "Keep 140 px clear at top and bottom."
+    },
+    {
+      "path": "templates/youtube-1280x720.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 2405,
+      "sha256": "C0CB81B3551BAC623F4805AD000904E17946D4EFE5BE5B6AA8444907E62CF702",
+      "width": 1280,
+      "height": 720,
+      "safeArea": "Keep 24 px margins and avoid the bottom-right timestamp corner."
+    }
+  ]
+}

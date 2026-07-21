@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Adipoli German promo opening title">
+  <title>Adipoli German promo opening title</title>
+  <style>
+  .impact { font-family: 'Archivo', 'Arial Narrow', Arial, sans-serif; font-weight: 800; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+  .ui { font-family: 'Geist', Arial, sans-serif; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
+  text { text-rendering: geometricPrecision; }
+</style>
+
+  <rect width="1920" height="1080" fill="#102018"/>
+  <g id="triangle-a" transform="translate(816 215) scale(6)" opacity="1">
+    <path d="M24 6 L40 40 H33.6 L24 19.4 L14.4 40 H8 Z" fill="#F5F0E8"/>
+    <path d="M20.7 32 H27.3 L31 40 H17 Z" fill="#D4A520"/>
+  </g>
+  <text x="960" y="645" text-anchor="middle" class="impact" font-size="106" fill="#F5F0E8">ADIPOLI GERMAN</text>
+  <rect x="490" y="730" width="940" height="3" fill="#D4A520"/>
+  <text x="960" y="820" text-anchor="middle" class="mono" font-size="36" font-weight="700" letter-spacing="9" fill="#D4A520">THE GOETHE A1 COURSE FOR MALAYALIS</text>
+
+  <g id="EDITING-GUIDES" style="display:none"></g>
+</svg>

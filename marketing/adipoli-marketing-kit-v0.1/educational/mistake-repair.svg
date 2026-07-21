@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="Adipoli German mistake-repair educational post">
+  <title>Adipoli German mistake-repair educational post</title>
+  <style>
+  .impact { font-family: 'Archivo', 'Arial Narrow', Arial, sans-serif; font-weight: 800; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+  .ui { font-family: 'Geist', Arial, sans-serif; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
+  text { text-rendering: geometricPrecision; }
+</style>
+
+  <rect width="1080" height="1350" fill="#F5F0E8"/>
+  <text x="80" y="115" class="mono" font-size="31" font-weight="700" letter-spacing="6" fill="#8A5A2A">SAG ES RICHTIG</text><g id="triangle-a" transform="translate(945 70) scale(1)" opacity="1">
+    <path d="M24 6 L40 40 H33.6 L24 19.4 L14.4 40 H8 Z" fill="#102018"/>
+    <path d="M20.7 32 H27.3 L31 40 H17 Z" fill="#D4A520"/>
+  </g>
+  <g id="EDITABLE-COPY">
+    <rect x="80" y="230" width="920" height="285" rx="30" fill="#F9E2D8" stroke="#B95B33" stroke-opacity=".42" stroke-width="5"/>
+    <text x="130" y="320" class="mono" font-size="31" font-weight="800" letter-spacing="5" fill="#B95B33">✕ DER FEHLER</text>
+    <text x="130" y="425" class="mono" font-size="55" font-weight="600" text-decoration="line-through" fill="#B95B33">Ich bin 25 Jahre.</text>
+    <circle cx="540" cy="535" r="65" fill="#F1D27A"/><text x="540" y="558" text-anchor="middle" class="ui" font-size="56" font-weight="800" fill="#102018">↓</text>
+    <rect x="80" y="555" width="920" height="305" rx="30" fill="#DCEBE9" stroke="#17606B" stroke-opacity=".42" stroke-width="5"/>
+    <text x="130" y="670" class="mono" font-size="31" font-weight="800" letter-spacing="5" fill="#17606B">✓ DIE REPARATUR</text>
+    <text x="130" y="780" class="mono" font-size="55" font-weight="600" fill="#17606B">Ich bin 25 Jahre <tspan fill="#102018" style="paint-order:stroke;stroke:#F1D27A;stroke-width:24px;stroke-linejoin:round">alt</tspan>.</text>
+    <text x="80" y="1060" class="ui" font-size="38" fill="#3F4D44"><tspan x="80">One slip, one fix, one habit.</tspan><tspan x="80" dy="58" font-weight="700">Say the repaired line aloud — twice.</tspan></text>
+  </g>
+
+  <g id="EDITING-GUIDES" style="display:none"><rect x="60" y="60" width="960" height="1230" fill="none" stroke="#B95B33" stroke-width="4" stroke-dasharray="14 12"/><text x="72" y="90" class="mono" font-size="20" fill="#B95B33">FEED SAFE AREA · 60 PX</text></g>
+</svg>
