@@ -68,6 +68,13 @@ for (const required of [
 assert.doesNotMatch(firstMoment, /speechSynthesis|webkitSpeechRecognition/i, 'first win must not depend on browser speech APIs');
 assert.ok(existsSync(resolve(root, 'public/audio/tts/v1-3-1/v1-3-1-line-0.mp3')), 'first moment audio must exist');
 
+const frauFischerGreeting = read('public/images/characters/frau-weber-greeting.png');
+assert.equal(
+  sha256(frauFischerGreeting),
+  'bfe32e4efd713e3ba33afdd04fbc7f5bfaf0daf5228caf94b02b5eb968ab4426',
+  'Frau Fischer greeting cutout must retain the cleaned transparent arm-to-torso gap',
+);
+
 assert.match(legacyLanding, /redirect\('\/'\)/, 'legacy /landing must redirect to the canonical public route');
 assert.ok(navigation.includes("pathname === '/'"), 'learner navigation must stay hidden on the public homepage');
 assert.ok(navigation.includes("pathname.startsWith('/intro')"), 'learner navigation must stay hidden during the first moment');
