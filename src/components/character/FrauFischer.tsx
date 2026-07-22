@@ -6,7 +6,7 @@ export type FrauFischerMood = 'greeting' | 'teaching' | 'pleased' | 'neutral';
 
 // The filenames are documented compatibility IDs. Learner-facing labels use Frau Fischer.
 export const FRAU_FISCHER_IMAGES: Record<FrauFischerMood, string> = {
-  greeting: '/images/characters/frau-weber-greeting.png',
+  greeting: '/images/characters/frau-weber-greeting-clean.png',
   teaching: '/images/characters/frau-weber-teaching.png',
   pleased: '/images/characters/frau-weber-pleased.png',
   neutral: '/images/characters/frau-weber-neutral.png',

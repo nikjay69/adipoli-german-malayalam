@@ -68,7 +68,7 @@ for (const required of [
 assert.doesNotMatch(firstMoment, /speechSynthesis|webkitSpeechRecognition/i, 'first win must not depend on browser speech APIs');
 assert.ok(existsSync(resolve(root, 'public/audio/tts/v1-3-1/v1-3-1-line-0.mp3')), 'first moment audio must exist');
 
-const frauFischerGreeting = read('public/images/characters/frau-weber-greeting.png');
+const frauFischerGreeting = read('public/images/characters/frau-weber-greeting-clean.png');
 assert.equal(
   sha256(frauFischerGreeting),
   'd66ce5d9093a0a40679dfecfffeddbe61defbcb60b65b47e4df6c35639d96c55',
