@@ -1,0 +1,150 @@
+{
+  "version": "character-pack-v2",
+  "chunk": "3p-07a",
+  "method": "approved v1 pixels; two-source-pixel alpha contract; nearest opaque subject edge colour; bounded pale-rim cleanup; no face, pose, wardrobe, or identity regeneration",
+  "reviewSurfaces": {
+    "cream": "#F5F0E8",
+    "forest": "#102018"
+  },
+  "coverage": {
+    "nivinMoods": 11,
+    "frauFischerMoods": 4,
+    "meeraMoods": 2,
+    "runtimeAssetSlots": 17,
+    "highFrequencyIntentSet": [
+      "neutral/listen",
+      "greet",
+      "present/explain",
+      "think",
+      "repair/confused",
+      "read/study",
+      "confirm",
+      "celebrate"
+    ],
+    "highFrequencyIntentsCovered": 8
+  },
+  "knownGaps": [
+    "Meera mood expansion beyond neutral and presenting awaits an available identity-locked renderer; current shipping Meera uses are fully covered."
+  ],
+  "files": {
+    "frau-fischer-greeting-v2.png": {
+      "source": "public/images/characters/frau-weber-greeting-clean.png",
+      "sha256": "35D4EADB515F584F66F260BB0B248A10A99494EF3016B52C7FE57717EDF5256D",
+      "width": 310,
+      "height": 933,
+      "mode": "RGBA"
+    },
+    "frau-fischer-neutral-v2.png": {
+      "source": "public/images/characters/frau-weber-neutral.png",
+      "sha256": "A67F5615AA0A31A59C1F0372202A10833F50D35202E0A697C51F834C5F31B6D0",
+      "width": 267,
+      "height": 932,
+      "mode": "RGBA"
+    },
+    "frau-fischer-pleased-v2.png": {
+      "source": "public/images/characters/frau-weber-pleased.png",
+      "sha256": "1AD4E0CB1A22178068357355CE9549E506BD5B09C0421142015A0C0750571DE8",
+      "width": 275,
+      "height": 932,
+      "mode": "RGBA"
+    },
+    "frau-fischer-teaching-v2.png": {
+      "source": "public/images/characters/frau-weber-teaching.png",
+      "sha256": "E66526C5ED79047DCED7341F379AC6727D62802ADE98D9474AEB606C26B2F30D",
+      "width": 431,
+      "height": 931,
+      "mode": "RGBA"
+    },
+    "nivin-celebrating-v2.png": {
+      "source": "public/images/characters/kuttan-celebrating.png",
+      "sha256": "D86E2387F344F5B715056013799DD4B38D95A13C2D61DA3EB00CDDE815AA6854",
+      "width": 598,
+      "height": 968,
+      "mode": "RGBA"
+    },
+    "nivin-confused-v2.png": {
+      "source": "public/images/characters/kuttan-confused.png",
+      "sha256": "C3B18488AB3E01C3EE6741E22EC9AE1E868B9976681AFDD9CBB2C15CA6D32060",
+      "width": 355,
+      "height": 959,
+      "mode": "RGBA"
+    },
+    "nivin-excited-v2.png": {
+      "source": "public/images/characters/kuttan-excited.png",
+      "sha256": "2ADB54DAC9FA346DDF3A7995E88AA2F9C8B912B74E56DBA724F7D3E308701028",
+      "width": 409,
+      "height": 956,
+      "mode": "RGBA"
+    },
+    "nivin-happy-v2.png": {
+      "source": "public/images/characters/kuttan-happy.png",
+      "sha256": "CADA93BCDE3982B9386E88EB3717149ADDD9C5A3CD30DE82CD462ECBA76BD31C",
+      "width": 342,
+      "height": 967,
+      "mode": "RGBA"
+    },
+    "nivin-official-v2.png": {
+      "source": "public/images/characters/kuttan-official.png",
+      "sha256": "9FD4FFB89C91720D615A2ECFE7365B1F426748B8E15617F34B874443BFBECCD3",
+      "width": 330,
+      "height": 964,
+      "mode": "RGBA"
+    },
+    "nivin-pointing-v2.png": {
+      "source": "public/images/characters/kuttan-pointing.png",
+      "sha256": "58343342695C28C6C2CACC517CF996C77543F4D6B3F7017F8C30BE7E2CE69F23",
+      "width": 293,
+      "height": 970,
+      "mode": "RGBA"
+    },
+    "nivin-reading-v2.png": {
+      "source": "public/images/characters/kuttan-reading.png",
+      "sha256": "F932C20415EC43BC87BF02337D6CA8A9CB884A957943FB7EBFFC1D19C702365F",
+      "width": 322,
+      "height": 962,
+      "mode": "RGBA"
+    },
+    "nivin-sad-v2.png": {
+      "source": "public/images/characters/kuttan-sad.png",
+      "sha256": "4550D0B7F772E338576D7DFCDBD70704340C2DFFB00292020B31E4F3D746A522",
+      "width": 327,
+      "height": 956,
+      "mode": "RGBA"
+    },
+    "nivin-thinking-v2.png": {
+      "source": "public/images/characters/kuttan-thinking.png",
+      "sha256": "EE466BC5E4569C0C01C39BB8D886EFBE2BC61C1FE1C2199F22707AB44C015E41",
+      "width": 277,
+      "height": 954,
+      "mode": "RGBA"
+    },
+    "nivin-thumbsup-v2.png": {
+      "source": "public/images/characters/kuttan-thumbsup.png",
+      "sha256": "8855A6F6F8F777AAE82A4BAAC450C0676DB5726CC6FBCC298E399313C04D4D26",
+      "width": 361,
+      "height": 957,
+      "mode": "RGBA"
+    },
+    "nivin-waving-v2.png": {
+      "source": "public/images/characters/kuttan-waving.png",
+      "sha256": "38B0B42A96D9B3BB16B1838AD6E3680C919564468E077988C47996A7824DEA47",
+      "width": 463,
+      "height": 943,
+      "mode": "RGBA"
+    },
+    "meera-neutral-v2.png": {
+      "source": "docs/reference/assets/meera/meera-canonical-base-v1.png",
+      "sha256": "2091E55CD8351754911A2367934F3232333BD6976318A1D44AE2D82A3ADFFEF1",
+      "width": 455,
+      "height": 1669,
+      "mode": "RGBA"
+    },
+    "meera-presenting-v2.png": {
+      "source": "public/images/characters/meera-presenting.png",
+      "sha256": "4372A21D4FD1C01F812613737815D329F86C38E4CC8ECDA382E59DFB98A3B3B3",
+      "width": 548,
+      "height": 1611,
+      "mode": "RGBA"
+    }
+  }
+}
