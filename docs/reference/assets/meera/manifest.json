@@ -1,0 +1,63 @@
+{
+  "version": "meera-v1",
+  "chunk": "3p-05",
+  "identityAuthority": "meera-canonical-base-v1.png",
+  "productionPoseSource": "meera-consistency-pose-v1.png",
+  "productionMethod": "local rembg ISNet matte; background decontamination; 1px choke; 0.8px feather; bounded outer-rim cleanup",
+  "generationPolicy": "Future pose generation/editing must condition on the canonical identity image; never recreate Meera from text alone.",
+  "surfacesReviewed": {
+    "cream": "#F5F0E8",
+    "forest": "#102018"
+  },
+  "alphaMetrics": {
+    "transparentPixels": 490546,
+    "opaquePixels": 375710,
+    "partialPixels": 16572,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "lightNeutralEdgeCandidates": 28,
+    "reviewEdgePixels": 22882,
+    "lightNeutralEdgeRatio": 0.001224
+  },
+  "files": {
+    "meera-canonical-base-v1.png": {
+      "role": "owner-approved identity authority",
+      "sha256": "FBBC2E2F9EB3397BCA9F027516F863B50B2C682353D6E1DBD2009012D5D9E576",
+      "width": 872,
+      "height": 1804,
+      "mode": "RGB"
+    },
+    "meera-consistency-pose-v1.png": {
+      "role": "owner-approved consistency and production-pose source",
+      "sha256": "C52932E7B78710681E39295D14017907E6C59A1FDE9D87D329647D5C64143A76",
+      "width": 875,
+      "height": 1798,
+      "mode": "RGB"
+    },
+    "meera-production-cutout-v1.png": {
+      "role": "transparent production seed",
+      "sha256": "13F90F40545F62062D24271A88A007102B393112007B82476575D9DC712B71DE",
+      "width": 548,
+      "height": 1611,
+      "mode": "RGBA"
+    },
+    "meera-model-sheet-v1.png": {
+      "role": "mobile-review model sheet",
+      "sha256": "AF128C25751BB408879B73BA58103CCA207B081E0F840928D13AFFF1480A3FE5",
+      "width": 1400,
+      "height": 1800,
+      "mode": "RGB"
+    },
+    "meera-edge-review-v1.png": {
+      "role": "cream/forest alpha-edge review",
+      "sha256": "36280045DB85B51B48876D87B887D6E9290730C252961A9AC980CD8D01AB8099",
+      "width": 1400,
+      "height": 1900,
+      "mode": "RGB"
+    }
+  }
+}
