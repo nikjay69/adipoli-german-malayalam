@@ -16,6 +16,7 @@ const legacyLanding = readText('src/app/landing/page.tsx');
 const navigation = readText('src/components/layout/Navigation.tsx');
 const layout = readText('src/app/layout.tsx');
 const onboarding = readText('src/app/onboarding/page.tsx');
+const frauFischerComponent = readText('src/components/character/FrauFischer.tsx');
 
 for (const claim of [
   'The Goethe A1 course for Malayalis.',
@@ -45,8 +46,8 @@ for (const mobileBrandStructure of ['mobileBrand', 'finalBrand', 'footerBrand', 
 assert.match(publicStyles, /grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/, 'desktop scene flags must keep the approved four-column theatre');
 assert.match(publicStyles, /scroll-snap-type:\s*inline mandatory/, 'mobile scene flags must retain the approved swipe rail');
 assert.match(publicStyles, /overscroll-behavior-inline:\s*none/, 'mobile scene flags must stop cleanly at the right edge');
-assert.match(globalStyles, /html\s*\{[\s\S]*?overflow-x:\s*clip;[\s\S]*?overscroll-behavior:\s*none;/, 'the viewport must not rubber-band beyond the right or bottom edge');
-assert.match(globalStyles, /body\s*\{[\s\S]*?overflow-x:\s*clip;[\s\S]*?overscroll-behavior:\s*none;/, 'the app body must stay inside the viewport bounds');
+assert.match(globalStyles, /html\s*\{[\s\S]*?height:\s*100%;[\s\S]*?overflow:\s*hidden;[\s\S]*?overscroll-behavior:\s*none;/, 'the root viewport must be a hard, non-scrolling boundary');
+assert.match(globalStyles, /body\s*\{[\s\S]*?position:\s*fixed;[\s\S]*?height:\s*100dvh;[\s\S]*?overflow-x:\s*clip;[\s\S]*?overflow-y:\s*auto;[\s\S]*?overscroll-behavior:\s*none;/, 'the app body must be the bounded touch scroll container');
 assert.match(publicStyles, /"brand links"\s*\n\s*"meta meta"/, 'mobile footer must keep its collision-free two-row layout');
 assert.doesNotMatch(publicHome, /router\.replace|hasSeenIntro/, 'the canonical public route must not redirect visitors away');
 assert.doesNotMatch(
@@ -72,10 +73,11 @@ for (const required of [
 assert.doesNotMatch(firstMoment, /speechSynthesis|webkitSpeechRecognition/i, 'first win must not depend on browser speech APIs');
 assert.ok(existsSync(resolve(root, 'public/audio/tts/v1-3-1/v1-3-1-line-0.mp3')), 'first moment audio must exist');
 
-const frauFischerGreeting = read('public/images/characters/frau-weber-greeting-clean.png');
+assert.match(frauFischerComponent, /frau-fischer-greeting-v2\.png/, 'public Frau Fischer must use the canonical v2 cutout');
+const frauFischerGreeting = read('public/images/characters/frau-fischer-greeting-v2.png');
 assert.equal(
   sha256(frauFischerGreeting),
-  'd66ce5d9093a0a40679dfecfffeddbe61defbcb60b65b47e4df6c35639d96c55',
+  '35d4eadb515f584f66f260bb0b248a10a99494ef3016b52c7fe57717edf5256d',
   'Frau Fischer greeting cutout must retain the cleaned transparent arm-to-torso gap',
 );
 

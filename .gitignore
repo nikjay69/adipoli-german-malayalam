@@ -71,6 +71,9 @@ scripts/output/veo-loops/
 scripts/output/kuttan-pack/
 scripts/output/videos/
 
+# Character-pack staging duplicates are regenerated before apply; review sheets stay tracked.
+scripts/output/rematte/*-v2.png
+
 # video render caches & per-project deps — regenerable, never commit (chunk V1-00)
 videos/**/node_modules/
 videos/**/renders/**

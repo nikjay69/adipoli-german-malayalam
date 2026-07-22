@@ -12,19 +12,18 @@ interface NivinImageProps {
   animate?: boolean;
 }
 
-// The filenames are documented compatibility IDs. Learner-facing labels use Nivin.
 export const NIVIN_MOOD_IMAGES: Record<NivinMoodImage, string> = {
-  happy: '/images/characters/kuttan-happy.png',
-  thinking: '/images/characters/kuttan-thinking.png',
-  excited: '/images/characters/kuttan-excited.png',
-  sad: '/images/characters/kuttan-sad.png',
-  celebrating: '/images/characters/kuttan-celebrating.png',
-  pointing: '/images/characters/kuttan-pointing.png',
-  waving: '/images/characters/kuttan-waving.png',
-  confused: '/images/characters/kuttan-confused.png',
-  reading: '/images/characters/kuttan-reading.png',
-  thumbsup: '/images/characters/kuttan-thumbsup.png',
-  official: '/images/characters/kuttan-official.png',
+  happy: '/images/characters/nivin-happy-v2.png',
+  thinking: '/images/characters/nivin-thinking-v2.png',
+  excited: '/images/characters/nivin-excited-v2.png',
+  sad: '/images/characters/nivin-sad-v2.png',
+  celebrating: '/images/characters/nivin-celebrating-v2.png',
+  pointing: '/images/characters/nivin-pointing-v2.png',
+  waving: '/images/characters/nivin-waving-v2.png',
+  confused: '/images/characters/nivin-confused-v2.png',
+  reading: '/images/characters/nivin-reading-v2.png',
+  thumbsup: '/images/characters/nivin-thumbsup-v2.png',
+  official: '/images/characters/nivin-official-v2.png',
 };
 
 export function NivinImage({ mood = 'happy', size = 'md', className = '', animate = true }: NivinImageProps) {
