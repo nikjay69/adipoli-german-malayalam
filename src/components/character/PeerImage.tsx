@@ -3,6 +3,7 @@
 import type { LearnerPeerId } from '@/lib/cast';
 import { Meera } from './Meera';
 import { NivinImage, type NivinMoodImage } from './NivinImage';
+import type { PeerSize } from './peerSizing';
 
 export function PeerImage({
   peer,
@@ -13,7 +14,7 @@ export function PeerImage({
 }: {
   peer: LearnerPeerId;
   mood?: NivinMoodImage;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  size?: PeerSize;
   className?: string;
   animate?: boolean;
 }) {

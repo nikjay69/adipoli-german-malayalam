@@ -1,12 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { PEER_SIZE_MAP, type PeerSize } from './peerSizing';
 
 export type NivinMoodImage = 'happy' | 'thinking' | 'excited' | 'sad' | 'celebrating' | 'pointing' | 'waving' | 'confused' | 'reading' | 'thumbsup' | 'official';
 
 interface NivinImageProps {
   mood?: NivinMoodImage;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  size?: PeerSize;
   className?: string;
   animate?: boolean;
 }
@@ -26,14 +27,6 @@ export const NIVIN_MOOD_IMAGES: Record<NivinMoodImage, string> = {
   official: '/images/characters/kuttan-official.png',
 };
 
-const SIZE_MAP = {
-  xs: 'w-10 h-10',
-  sm: 'w-16 h-16',
-  md: 'w-24 h-24',
-  lg: 'w-32 h-32',
-  xl: 'w-40 h-40',
-};
-
 export function NivinImage({ mood = 'happy', size = 'md', className = '', animate = true }: NivinImageProps) {
   const src = NIVIN_MOOD_IMAGES[mood];
 
@@ -42,7 +35,7 @@ export function NivinImage({ mood = 'happy', size = 'md', className = '', animat
       initial={animate ? { scale: 0.8, opacity: 0 } : false}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ type: 'spring', damping: 12 }}
-      className={`relative flex-shrink-0 ${SIZE_MAP[size]} ${className}`}
+      className={`relative flex-shrink-0 ${PEER_SIZE_MAP[size]} ${className}`}
     >
       <img src={src} alt={`Nivin — ${mood}`} className="h-full w-full object-contain drop-shadow-lg" />
       {animate && (
