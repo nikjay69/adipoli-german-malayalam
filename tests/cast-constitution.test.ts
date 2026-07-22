@@ -99,6 +99,7 @@ const roadmap = text('docs/ROADMAP.md');
 
 for (const phrase of [
   '### Equal-peer scene law',
+  'Exact age, district, degree, occupation, and destination path stay open',
   'never give one peer more than two consecutive owned lessons',
   'Relabel as Nivin compatibility visual',
   'Relabel as Frau Fischer compatibility visual',
@@ -106,6 +107,22 @@ for (const phrase of [
   'never baked into pre-rendered audio or video',
 ]) {
   assert.ok(storyBible.includes(phrase), `story bible must retain cast guardrail: ${phrase}`);
+}
+
+for (const inventedResumeDetail of [
+  /24-year-old/i,
+  /27-year-old/i,
+  /electrical graduate/i,
+  /solar-installation/i,
+  /registered nurse/i,
+  /nursing-recognition/i,
+  /Kozhikode/i,
+]) {
+  assert.doesNotMatch(
+    `${storyBible}\n${decisions}`,
+    inventedResumeDetail,
+    `cast constitution must not freeze unnecessary résumé detail: ${inventedResumeDetail}`,
+  );
 }
 
 assert.match(decisions, /## 27 · 2026-07-22 · Fixed-cast constitution/);

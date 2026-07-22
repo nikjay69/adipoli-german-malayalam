@@ -75,22 +75,22 @@ Mixing both cleanly = natural teaching + coherent story.
 ## Core characters
 
 ### Nivin (learner co-lead)
-- **24, from Thrissur.** A BTech electrical graduate in his first job with a small solar-installation firm.
-- His Germany goal is an applied energy-systems study/work path. His older cousin in Munich makes the possibility tangible, but never makes decisions or solves German for him.
+- An adult Malayali learner. Exact age, district, degree, occupation, and destination path stay open unless a future teaching scene genuinely needs one and the owner approves it.
+- German is his next concrete step toward a self-chosen study/work opportunity. His older cousin in Munich makes the possibility tangible, but never makes decisions or solves German for him.
 - Fast, social, improvisational, and willing to speak before a sentence is perfect. His recurring slips are guessed articles/endings, switching `du`/`Sie` too quickly, and bluffing through speech he did not fully hear.
 - His repair habit is to slow down, repeat the usable chunk, and ask one clear follow-up. His wins come from recovering aloud and keeping the interaction moving—not from becoming the teacher.
 - Speaks short, energetic Manglish with self-aware humour. Avoid generic hype, constant `macha`, or turning his confidence into competence he has not earned.
-- His independent A1 arc is family doubt → energetic start → messy overconfidence → disciplined practice → exam-day control → A1 pass and the next concrete application step.
+- His independent A1 arc is family doubt → energetic start → messy overconfidence → disciplined practice → exam-day control → A1 pass and his own next concrete step.
 - The existing adult `kuttan-*.png` appearance/pose set is accepted as the **Nivin compatibility visual** for the `3p-06` migration. Legacy filenames/component IDs may remain temporarily behind the documented mapping, but learner-facing labels, alt text, and new prose become Nivin. The archived child Kuttan and any mascot/child interpretation are rejected.
 - Not a teacher. **A peer who's learning at the same time as you.**
 
 ### Meera (learner co-lead)
-- **27, from Kozhikode.** A registered nurse with several years of hospital experience.
-- Her Germany goal is the nursing-recognition pathway and the professional independence it can unlock. A former colleague in Hamburg shares practical reality checks, but is not a cousin-copy, rescuer, or off-screen teacher.
+- An adult Malayali learner with her own Germany goal. Exact age, district, degree, occupation, and destination path stay open unless a future teaching scene genuinely needs one and the owner approves it.
+- German is her next concrete step toward greater professional independence and mobility. Her motivation remains understandable without borrowing Nivin's cousin, family tension, or opportunity.
 - Observant, prepared, quietly funny, and initially reluctant to speak until the whole line feels correct. Her recurring slips are perfection freezes, overloaded word order, and losing the useful phrase while trying to decode every word of fast speech.
-- Her repair habit is to identify the one communicative job, use the shortest correct chunk, and confirm what she heard. Her wins come from decisive speaking and accurate real-world forms—not from tidying Nivin's mistakes.
+- Her repair habit is to identify the one communicative job, use the shortest correct chunk, and confirm what she heard. Her wins come from decisive speaking and accurate real-world tasks—not from tidying Nivin's mistakes.
 - Speaks measured, concrete Manglish with dry observations. Never write her as maternal, cautious-by-gender, a scold, or the permanently correct one.
-- Her independent A1 arc is secure-job/family concern → deliberate start → perfection pressure → first unscripted recovery → deadline strain → A1 pass and submission of her next recognition document.
+- Her independent A1 arc is family concern about a stable present → deliberate start → perfection pressure → first unscripted recovery → deadline strain → A1 pass and her own next concrete step.
 - Equal narrative weight to Nivin: she owns lessons, makes mistakes, repairs them, and wins; she is not a romance device, assistant, token inclusion, or gender-swapped duplicate.
 - Her goal and arc must remain independently understandable when Nivin is absent.
 - **Owner-approved visual identity seed (2026-07-18):** [`meera-canonical-base-v1.png`](assets/meera/meera-canonical-base-v1.png) is the canonical image reference for Meera v1 (SHA-256 `FBBC2E2F9EB3397BCA9F027516F863B50B2C682353D6E1DBD2009012D5D9E576`). [`meera-consistency-pose-v1.png`](assets/meera/meera-consistency-pose-v1.png) is the approved same-character consistency proof (SHA-256 `C52932E7B78710681E39295D14017907E6C59A1FDE9D87D329647D5C64143A76`), not a second identity.
@@ -106,7 +106,7 @@ Mixing both cleanly = natural teaching + coherent story.
 
 ### Their families
 - Nivin's Amma + Achan begin as doubters ("Ivide nalla job illayo?") and gradually respond to his progress.
-- Meera's family values her secure nursing job and worries about the financial/professional risk of restarting abroad. The tension is practical and affectionate, not permission-seeking or romance-led.
+- Meera's family values her stable present and worries about the practical risk of restarting abroad. The tension is practical and affectionate, not permission-seeking or romance-led.
 - Both family arcs recognise earned progress by the exam phase without collapsing into one shared household story.
 
 ### The Cousin in Munich (unseen mentor)
@@ -114,7 +114,7 @@ Mixing both cleanly = natural teaching + coherent story.
 - Appears only via WhatsApp voice notes, screenshots, video calls.
 - Represents the goal. Shares tips, encouragement, reality checks.
 - Does NOT appear in person in A1. (Reveal in A2.)
-- Meera's former nursing colleague in Hamburg is a separate, occasional reality-check contact. She provides process facts and honest voice notes, never answers exercises or replaces Meera's agency.
+- Meera's Germany-facing context stays independent of Nivin's cousin. If a future scene needs a contact, that person may provide a reality check but never answer exercises or replace Meera's agency.
 
 ### Frau Fischer (Goethe Kochi teacher)
 - Strict but warm. Has taught hundreds of Malayalis.
@@ -161,8 +161,8 @@ The real learner's optional preferred name remains separate from this cast. Ask 
 All M1-M16 `storyScene.setting.name` values should be drawn from this Kerala-only list. No Berlin / Munich / Frankfurt scenes in A1 except video-call backdrops of the cousin.
 
 **Home life:**
-- Nivin's home, Thrissur
-- Meera's Kerala home (district fixed before final scripts)
+- Nivin's Kerala home
+- Meera's Kerala home
 - The family WhatsApp group
 - Home study desk (with laptop + Goethe book)
 
