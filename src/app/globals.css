@@ -70,6 +70,13 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Prevent iOS from zooming the viewport when a compact learner field receives focus. */
+@media (max-width: 767px) {
+  :where(input, textarea, select) {
+    font-size: max(16px, 1em);
+  }
+}
+
 /* Hide scrollbar but keep functionality */
 ::-webkit-scrollbar {
   width: 0px;

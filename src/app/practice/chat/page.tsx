@@ -142,7 +142,8 @@ export default function ChatPage() {
         <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10 bg-[#1b2d1b]/90 backdrop-blur-md">
           <Link
             href="/practice"
-            className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/15 transition-colors"
+            aria-label="Back to practice"
+            className="ag-touch-target flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/15"
           >
             <ArrowLeft size={18} className="text-[#f5f0e8]" />
           </Link>
@@ -276,7 +277,7 @@ export default function ChatPage() {
                 <button
                   key={q}
                   onClick={() => handleSuggestionClick(q)}
-                  className="text-xs bg-[#f5f0e8]/8 hover:bg-[#f5f0e8]/14 border border-white/10 hover:border-[#d4a520]/40 text-[#f5f0e8]/70 hover:text-[#f5f0e8] rounded-full px-3.5 py-2 transition-all duration-200 active:scale-95"
+                  className="ag-touch-target rounded-full border border-white/10 bg-[#f5f0e8]/8 px-3.5 py-2 text-xs text-[#f5f0e8]/70 transition-all duration-200 hover:border-[#d4a520]/40 hover:bg-[#f5f0e8]/14 hover:text-[#f5f0e8] active:scale-95"
                 >
                   {q}
                 </button>
@@ -356,13 +357,14 @@ export default function ChatPage() {
                 : 'Ask Nivin anything about German...'
             }
             disabled={isLoading || limitReached}
-            className="flex-1 bg-[#f5f0e8]/8 border border-white/10 focus:border-[#d4a520]/50 rounded-xl px-4 py-2.5 text-sm text-[#f5f0e8] placeholder-[#f5f0e8]/30 outline-none transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            className="min-h-11 flex-1 rounded-xl border border-white/10 bg-[#f5f0e8]/8 px-4 py-2.5 text-base text-[#f5f0e8] outline-none transition-colors placeholder-[#f5f0e8]/30 focus:border-[#d4a520]/50 disabled:cursor-not-allowed disabled:opacity-40 sm:text-sm"
             autoComplete="off"
           />
           <button
             type="submit"
             disabled={!input.trim() || isLoading || limitReached}
-            className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-[#d4a520] to-[#b8891a] text-[#1b2d1b] disabled:opacity-30 disabled:cursor-not-allowed transition-opacity active:scale-95 flex-shrink-0"
+            aria-label="Send message"
+            className="ag-touch-target flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#d4a520] to-[#b8891a] text-[#1b2d1b] transition-opacity active:scale-95 disabled:cursor-not-allowed disabled:opacity-30"
           >
             <Send size={18} />
           </button>

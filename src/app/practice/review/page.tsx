@@ -246,7 +246,7 @@ export default function ReviewPage() {
         <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
           <button
             onClick={() => router.push('/practice')}
-            className="flex items-center gap-2 text-[var(--foreground)]/50 mb-4 text-sm"
+            className="ag-touch-target mb-4 flex items-center gap-2 text-sm text-[var(--foreground)]/50"
           >
             <ArrowLeft className="w-4 h-4" /> Back
           </button>
@@ -311,7 +311,7 @@ export default function ReviewPage() {
         <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
           <button
             onClick={() => router.push('/practice')}
-            className="flex items-center gap-2 text-[var(--foreground)]/50 mb-4 text-sm"
+            className="ag-touch-target mb-4 flex items-center gap-2 text-sm text-[var(--foreground)]/50"
           >
             <ArrowLeft className="w-4 h-4" /> Back
           </button>
@@ -421,7 +421,7 @@ export default function ReviewPage() {
         <div className="flex items-center justify-between mb-4">
           <button
             onClick={() => router.push('/practice')}
-            className="flex items-center gap-2 text-[var(--foreground)]/50 text-sm"
+            className="ag-touch-target flex items-center gap-2 text-sm text-[var(--foreground)]/50"
           >
             <ArrowLeft className="w-4 h-4" /> Back
           </button>

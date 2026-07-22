@@ -95,6 +95,13 @@ body {
   outline-offset: 2px;
 }
 
+/* Preserve compact visuals while keeping every deliberate control easy to tap. */
+.ag-touch-target {
+  min-width: 44px;
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
 .ag-skip-link {
   position: fixed;
   top: var(--ag-space-2);

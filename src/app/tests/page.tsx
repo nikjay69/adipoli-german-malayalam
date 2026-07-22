@@ -84,7 +84,11 @@ export default function TestsPage() {
     <div className="min-h-screen px-3 py-3 safe-top safe-bottom max-w-2xl mx-auto">
       {/* Header — compact */}
       <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="flex items-center gap-2 mb-2">
-        <button onClick={() => router.push('/')} className="text-[var(--foreground)]/50 text-sm">
+        <button
+          onClick={() => router.push('/')}
+          aria-label="Back to home"
+          className="ag-touch-target text-[var(--foreground)]/50 text-sm"
+        >
           <ArrowLeft className="w-4 h-4" />
         </button>
         <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#d4a520]/15 flex-shrink-0">
