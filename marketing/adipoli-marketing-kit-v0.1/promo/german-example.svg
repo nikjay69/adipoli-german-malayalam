@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Adipoli German example-card promo frame">
+  <title>Adipoli German example-card promo frame</title>
+  <style>
+  .impact { font-family: 'Archivo', 'Arial Narrow', Arial, sans-serif; font-weight: 800; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+  .ui { font-family: 'Geist', Arial, sans-serif; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
+  text { text-rendering: geometricPrecision; }
+</style>
+
+  <rect width="1920" height="1080" fill="#F5F0E8"/>
+  <g id="EDITABLE-GERMAN" text-anchor="middle"><text x="960" y="455" class="serif" font-size="125" fill="#102018">„Wo ist der Bahnhof?“</text><text x="960" y="575" class="ui" font-size="55" font-weight="500" fill="#3F4D44">Where is the station? · സ്റ്റേഷൻ എവിടെയാണ്?</text><text x="960" y="680" class="mono" font-size="43" font-weight="500" fill="#8A5A2A">[voː ɪst deːɐ̯ ˈbaːnhoːf]</text></g>
+
+  <g id="EDITING-GUIDES" style="display:none"></g>
+</svg>

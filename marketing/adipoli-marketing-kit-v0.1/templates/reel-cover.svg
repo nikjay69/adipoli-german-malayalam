@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-label="Adipoli German reel cover">
+  <title>Adipoli German reel cover</title>
+  <style>
+  .impact { font-family: 'Archivo', 'Arial Narrow', Arial, sans-serif; font-weight: 800; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+  .ui { font-family: 'Geist', Arial, sans-serif; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
+  text { text-rendering: geometricPrecision; }
+</style>
+
+  <defs><linearGradient id="reel-shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0C1811" stop-opacity=".5"/><stop offset=".34" stop-color="#0C1811" stop-opacity=".12"/><stop offset=".64" stop-color="#0C1811" stop-opacity=".8"/><stop offset="1" stop-color="#0C1811" stop-opacity=".98"/></linearGradient></defs>
+  <g id="EDITABLE-SCENE"><rect x="0" y="0" width="1080" height="1920" fill="#0C1811"/><image href="../assets/scenes/hub-chayakkada.jpg" x="0" y="0" width="1080" height="1920" preserveAspectRatio="xMidYMid slice"/></g>
+  <rect width="1080" height="1920" fill="url(#reel-shade)"/>
+  <g id="brand-lockup"><g id="triangle-a" transform="translate(72 166) scale(1.5)" opacity="1">
+    <path d="M24 6 L40 40 H33.6 L24 19.4 L14.4 40 H8 Z" fill="#F5F0E8"/>
+    <path d="M20.7 32 H27.3 L31 40 H17 Z" fill="#D4A520"/>
+  </g><text x="168" y="212.07999999999998" class="impact" font-size="24.48" letter-spacing="0.5" fill="#F5F0E8">ADIPOLI GERMAN</text></g>
+  <g id="EDITABLE-COPY">
+    <text x="72" y="1310" class="mono" font-size="34" font-weight="600" letter-spacing="5" fill="#F1D27A">THE GOETHE A1 COURSE FOR MALAYALIS</text>
+    <text x="72" y="1435" class="impact" font-size="112" fill="#F5F0E8"><tspan x="72">HEAR IT.</tspan><tspan x="72" dy="112">SAY IT.</tspan><tspan x="72" dy="112">REPAIR IT.</tspan><tspan x="72" dy="112">PROVE IT.</tspan></text>
+  </g>
+
+  <g id="EDITING-GUIDES" style="display:none"><rect x="60" y="140" width="960" height="1640" fill="none" stroke="#B95B33" stroke-width="4" stroke-dasharray="14 12"/><text x="72" y="170" class="mono" font-size="20" fill="#B95B33">REEL SAFE AREA · 140 PX TOP/BOTTOM</text></g>
+</svg>

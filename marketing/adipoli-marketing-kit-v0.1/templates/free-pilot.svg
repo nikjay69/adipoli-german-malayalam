@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="Adipoli German free-pilot recruitment template">
+  <title>Adipoli German free-pilot recruitment template</title>
+  <style>
+  .impact { font-family: 'Archivo', 'Arial Narrow', Arial, sans-serif; font-weight: 800; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+  .ui { font-family: 'Geist', Arial, sans-serif; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
+  text { text-rendering: geometricPrecision; }
+</style>
+
+  <rect width="1080" height="1350" fill="#F7EAD0"/>
+  <rect x="7" y="7" width="1066" height="1336" rx="28" fill="none" stroke="#B95B33" stroke-width="7" stroke-dasharray="24 18"/>
+  <g id="brand-lockup"><g id="triangle-a" transform="translate(80 90) scale(1.25)" opacity="1">
+    <path d="M24 6 L40 40 H33.6 L24 19.4 L14.4 40 H8 Z" fill="#102018"/>
+    <path d="M20.7 32 H27.3 L31 40 H17 Z" fill="#D4A520"/>
+  </g><text x="164" y="128.4" class="impact" font-size="20.400000000000002" letter-spacing="0.5" fill="#102018">ADIPOLI GERMAN</text></g>
+  <g id="EDITABLE-COPY">
+    <rect x="78" y="485" width="178" height="105" rx="10" fill="#F1D27A" opacity=".74"/>
+    <text x="80" y="460" class="serif" font-size="82" fill="#102018"><tspan x="80">Free pilot —</tspan><tspan x="80" dy="112"><tspan fill="#102018">[N]</tspan> seats for the</tspan><tspan x="80" dy="112">first batch.</tspan></text>
+    <text x="80" y="900" class="ui" font-size="34" fill="#3F4D44"><tspan x="80">Owner sets seat count and dates at publish time.</tspan><tspan x="80" dy="52">No dates or scarcity are baked in.</tspan></text>
+    <rect x="80" y="1050" width="360" height="94" rx="20" fill="#102018"/>
+    <text x="260" y="1110" text-anchor="middle" class="ui" font-size="31" font-weight="700" fill="#F5F0E8">Apply — link in bio</text>
+  </g>
+
+  <g id="EDITING-GUIDES" style="display:none"><rect x="60" y="60" width="960" height="1230" fill="none" stroke="#B95B33" stroke-width="4" stroke-dasharray="14 12"/><text x="72" y="90" class="mono" font-size="20" fill="#B95B33">FEED SAFE AREA · 60 PX</text></g>
+</svg>
