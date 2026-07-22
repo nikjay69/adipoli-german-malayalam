@@ -38,8 +38,12 @@ assert.equal((publicHome.match(/scene: '\/images\/scenes\/hub-/g) ?? []).length,
 for (const visualStructure of ['heroStage', 'methodSheet', 'moduleRail', 'momentTeaser', 'audioPreview']) {
   assert.ok(publicHome.includes(`styles.${visualStructure}`), `public home must retain the approved ${visualStructure} composition`);
 }
+for (const mobileBrandStructure of ['mobileBrand', 'finalBrand', 'footerBrand', 'footerMeta']) {
+  assert.ok(publicHome.includes(`styles.${mobileBrandStructure}`), `public home must retain the polished ${mobileBrandStructure} treatment`);
+}
 assert.match(publicStyles, /grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/, 'desktop scene flags must keep the approved four-column theatre');
 assert.match(publicStyles, /scroll-snap-type:\s*inline mandatory/, 'mobile scene flags must retain the approved swipe rail');
+assert.match(publicStyles, /"brand links"\s*\n\s*"meta meta"/, 'mobile footer must keep its collision-free two-row layout');
 assert.doesNotMatch(publicHome, /router\.replace|hasSeenIntro/, 'the canonical public route must not redirect visitors away');
 assert.doesNotMatch(
   publicHome,

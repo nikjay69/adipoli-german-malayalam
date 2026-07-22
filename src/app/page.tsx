@@ -46,7 +46,12 @@ export default function PublicHomePage() {
         <header className={styles.header}>
           <div className={`ag-container ag-container--public ${styles.headerInner}`}>
             <Link href="/" aria-label="Adipoli German home" className={styles.homeLink}>
-              <BrandLockup variant="horizontal" surface="dark" />
+              <span className={styles.desktopBrand}>
+                <BrandLockup variant="horizontal" surface="dark" />
+              </span>
+              <span className={styles.mobileBrand}>
+                <BrandLockup variant="stacked" surface="dark" />
+              </span>
             </Link>
             <nav className={styles.publicNav} aria-label="Public navigation">
               <a href="#curriculum">The places</a>
@@ -204,8 +209,10 @@ export default function PublicHomePage() {
 
       <section className={`ag-room ${styles.finalCta}`} aria-labelledby="final-title">
         <div className={`ag-container ag-container--public ${styles.finalCtaInner}`}>
-          <BrandLockup variant="stacked" surface="dark" />
-          <div>
+          <div className={styles.finalBrand}>
+            <BrandLockup variant="stacked" surface="dark" />
+          </div>
+          <div className={styles.finalCtaCopy}>
             <p className="ag-label">Your first win is ready</p>
             <h2 id="final-title" className={`ag-impact ${styles.finalTitle}`}>Hear it. Say it. Repair it. Prove it.</h2>
           </div>
@@ -217,8 +224,10 @@ export default function PublicHomePage() {
 
       <footer className={`ag-room ${styles.footer}`}>
         <div className={`ag-container ag-container--public ${styles.footerInner}`}>
-          <BrandLockup variant="horizontal" surface="dark" />
-          <p>Made for Malayali learners · Goethe A1 · Hören · Sprechen · Lesen · Schreiben</p>
+          <div className={styles.footerBrand}>
+            <BrandLockup variant="horizontal" surface="dark" />
+          </div>
+          <p className={styles.footerMeta}>Made for Malayali learners · Goethe A1 · Hören · Sprechen · Lesen · Schreiben</p>
           <div className={styles.footerLinks}>
             <Link href="/privacy">Privacy</Link>
             <Link href="/auth/login">Log in</Link>
