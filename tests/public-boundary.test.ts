@@ -9,6 +9,7 @@ const readText = (path: string) => read(path).toString('utf8');
 const sha256 = (contents: Buffer) => createHash('sha256').update(contents).digest('hex');
 
 const publicHome = readText('src/app/page.tsx');
+const publicStyles = readText('src/app/PublicBoundary.module.css');
 const firstMoment = readText('src/app/intro/page.tsx');
 const legacyLanding = readText('src/app/landing/page.tsx');
 const navigation = readText('src/components/layout/Navigation.tsx');
@@ -30,6 +31,15 @@ for (const destination of ['/intro', '/auth/login', '#curriculum']) {
 }
 
 assert.ok(publicHome.includes('SPINE_MODULES.map'), 'public home must show the canonical eight-module spine');
+assert.ok(publicHome.includes('Zero to Goethe A1-ready.'), 'public hero must retain the approved impact headline');
+assert.ok(publicHome.includes('/images/scenes/hub-goethe-kochi-classroom.jpg'), 'public hero must use the approved classroom scene');
+assert.ok(publicHome.includes('<FrauFischer mood="greeting"'), 'public hero must integrate Frau Fischer into the theatre');
+assert.equal((publicHome.match(/scene: '\/images\/scenes\/hub-/g) ?? []).length, 8, 'public curriculum must retain eight photographic scene flags');
+for (const visualStructure of ['heroStage', 'methodSheet', 'moduleRail', 'momentTeaser', 'audioPreview']) {
+  assert.ok(publicHome.includes(`styles.${visualStructure}`), `public home must retain the approved ${visualStructure} composition`);
+}
+assert.match(publicStyles, /grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/, 'desktop scene flags must keep the approved four-column theatre');
+assert.match(publicStyles, /scroll-snap-type:\s*inline mandatory/, 'mobile scene flags must retain the approved swipe rail');
 assert.doesNotMatch(publicHome, /router\.replace|hasSeenIntro/, 'the canonical public route must not redirect visitors away');
 assert.doesNotMatch(
   publicHome,

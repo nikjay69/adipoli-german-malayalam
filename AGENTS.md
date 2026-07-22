@@ -47,6 +47,7 @@ A guided Goethe A1 course for Malayali learners: owner-recorded video spine + ap
 3. **Autonomous loops run Implementation/QA only**, against an approved ROADMAP phase — never strategy or vision work.
 4. **The Reel Rule:** zero boring content; boring = sev-1 bug; outranks deadlines.
 5. **Evidence over vibes:** never claim quality without screenshots/qa output; a report with no weaknesses is hallucinated. A lesson feel-grade (FLAT/OK/ADIPOLI) requires an actual playthrough (`docs/LESSON_QUALITY_STANDARD.md` Feel Rubric).
+6. **Approved design quality is the floor:** consuming the right tokens or components is not enough. Preserve or improve the approved composition, hierarchy, spatial drama, imagery, character staging, typography, and responsive intent. Replacing a strong approved design with a safer generic layout is a regression. Every visible chunk must compare its implementation directly with the approved source board at mobile and desktop sizes.
 
 ## Hard boundaries
 

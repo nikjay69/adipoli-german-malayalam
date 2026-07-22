@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Check, Headphones, Mic2, RotateCcw } from 'lucide-react';
+import type { CSSProperties } from 'react';
+import { ArrowRight, Headphones, Mic2, Play, RotateCcw } from 'lucide-react';
 import { BrandLockup } from '@/components/brand';
 import { FrauFischer } from '@/components/character/FrauFischer';
 import { SPINE_MODULES } from '@/lib/spine';
@@ -8,164 +9,208 @@ import styles from './PublicBoundary.module.css';
 
 const METHOD_STEPS = [
   {
-    icon: Headphones,
-    label: 'Hear it',
-    copy: 'Start with a real German line in context.',
+    number: '01',
+    label: 'Watch',
+    title: 'Owner-taught video in Manglish.',
+    copy: 'See the idea, the trap, and the useful German line.',
   },
   {
-    icon: Mic2,
-    label: 'Say it',
-    copy: 'Speak before the lesson explains everything.',
+    number: '02',
+    label: 'Stand in the scene',
+    title: 'Listen, speak, read, write.',
+    copy: 'Practise inside real situations with native German audio.',
   },
   {
-    icon: RotateCcw,
-    label: 'Repair it',
-    copy: 'Notice the miss, then rebuild the line correctly.',
-  },
-  {
-    icon: Check,
+    number: '03',
     label: 'Prove it',
-    copy: 'Finish with evidence that the skill holds.',
+    title: 'Closed checkpoints. Exact recovery.',
+    copy: 'Repair the part that slipped, then prove it with a fresh attempt.',
   },
+] as const;
+
+const MODULE_VISUALS = [
+  { scene: '/images/scenes/hub-goethe-kochi-classroom.jpg', place: 'The classroom', accent: '#e94560', position: 'center 30%' },
+  { scene: '/images/scenes/hub-study-desk.jpg', place: 'The study desk', accent: '#b2467f', position: 'center 40%' },
+  { scene: '/images/scenes/hub-thrissur-home.jpg', place: 'The home', accent: '#7a8b2f', position: 'center 55%' },
+  { scene: '/images/scenes/hub-chayakkada.jpg', place: 'The chayakkada', accent: '#f97316', position: 'center 58%' },
+  { scene: '/images/scenes/hub-dream-platform.jpg', place: 'The platform', accent: '#3b82f6', position: 'center 45%' },
+  { scene: '/images/scenes/hub-video-call-wg.jpg', place: 'The video call', accent: '#a855f7', position: 'center 50%' },
+  { scene: '/images/scenes/hub-amt-office.jpg', place: 'The Amt', accent: '#14b8a6', position: 'center 45%' },
+  { scene: '/images/scenes/hub-exam-hall.jpg', place: 'The exam hall', accent: '#f1d27a', position: 'center 42%' },
 ] as const;
 
 export default function PublicHomePage() {
   return (
     <main id="main-content" className={`ag-foundation-shell ${styles.page}`}>
       <section className={`ag-room ${styles.hero}`} aria-labelledby="public-title">
-        <div className={`ag-container ag-container--public ${styles.heroInner}`}>
-          <header className={styles.header}>
-            <Link href="/" aria-label="Adipoli German home">
-              <BrandLockup variant="descriptor" surface="dark" />
+        <header className={styles.header}>
+          <div className={`ag-container ag-container--public ${styles.headerInner}`}>
+            <Link href="/" aria-label="Adipoli German home" className={styles.homeLink}>
+              <BrandLockup variant="horizontal" surface="dark" />
             </Link>
             <nav className={styles.publicNav} aria-label="Public navigation">
-              <a href="#curriculum">Course</a>
-              <Link href="/auth/login">Log in</Link>
+              <a href="#curriculum">The places</a>
+              <a href="#method">The method</a>
+              <Link href="/auth/login" className={styles.loginLink}>Log in</Link>
             </nav>
-          </header>
+          </div>
+        </header>
 
-          <div className={styles.heroGrid}>
+        <div className={styles.heroStage}>
+          <Image
+            src="/images/scenes/hub-goethe-kochi-classroom.jpg"
+            alt="A bright German classroom in Kochi"
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroBackdrop}
+          />
+          <div className={styles.heroShade} aria-hidden="true" />
+          <FrauFischer mood="greeting" animate={false} className={styles.heroTeacher} />
+
+          <div className={`ag-container ag-container--public ${styles.heroContent}`}>
             <div className={styles.heroCopy}>
-              <p className="ag-label">Guided Goethe A1 video course</p>
-              <h1 id="public-title" className="ag-display">
-                The Goethe A1 course for Malayalis.
+              <p className={styles.heroKicker}>The Goethe A1 course for Malayalis.</p>
+              <h1 id="public-title" className={`ag-impact ${styles.heroTitle}`}>
+                Zero to Goethe A1-ready.
               </h1>
-              <p className={styles.heroLead}>
-                56 dense owner-led lessons. Video-led. App-supported.
-              </p>
-              <p className={`ag-muted ${styles.heroSupport}`}>
-                Hear it. Say it. Repair it. Prove it. Build evidence that you&apos;re A1 ready.
+              <p className={styles.heroLead}>56 dense owner-led lessons.</p>
+              <p className={styles.heroSupport}>
+                Video-led. App-supported. Hear it. Say it. Repair it. Prove it. Build evidence that you&apos;re A1 ready.
               </p>
               <div className={styles.heroActions}>
-                <Link className="ag-action" href="/intro">
-                  Start listening <ArrowRight className="ag-icon" aria-hidden="true" />
+                <Link className={`ag-action ${styles.primaryAction}`} href="/intro">
+                  Try your first German moment <ArrowRight className="ag-icon" aria-hidden="true" />
                 </Link>
-                <a className={`ag-action ag-action--secondary ${styles.secondaryAction}`} href="#curriculum">
-                  See the course
-                </a>
+                <span className={styles.noSetup}>No sign-up · audio starts only when you press listen</span>
               </div>
-              <p className={styles.noSetup}>No account needed for your first German moment.</p>
             </div>
 
-            <div className={styles.scene} aria-label="Your first German classroom scene">
-              <Image
-                src="/images/scenes/hub-goethe-kochi-classroom.jpg"
-                alt="A bright German classroom in Kochi"
-                fill
-                priority
-                sizes="(min-width: 960px) 520px, 92vw"
-                className={styles.sceneImage}
-              />
-              <div className={styles.sceneShade} aria-hidden="true" />
-              <div className={styles.sceneLabel}>
-                <span>Scene 01</span>
-                <strong>First German moment</strong>
-              </div>
-              <div className={styles.speech}>
-                <span>Frau Fischer</span>
-                <strong lang="de">Guten Morgen.</strong>
-              </div>
-              <FrauFischer mood="greeting" animate={false} className={styles.teacher} />
-              <div className={styles.reply} aria-hidden="true">
-                <span>Your reply</span>
-                <span className={styles.replyLine} />
-              </div>
+            <div className={styles.firstLine}>
+              <span lang="de">»Guten Morgen.«</span>
+              <small>your first line · Module 1</small>
             </div>
           </div>
         </div>
       </section>
 
-      <section className={`ag-daylight ${styles.section}`} aria-labelledby="method-title">
-        <div className="ag-container ag-container--public">
-          <div className={styles.sectionIntro}>
-            <p className="ag-label">The learning loop</p>
-            <h2 id="method-title" className="ag-heading">German you can actually use.</h2>
-            <p className="ag-muted">
-              Short, guided actions turn a line you heard into something you can say and recover.
-            </p>
+      <section id="method" className={`ag-room ${styles.methodSection}`} aria-labelledby="method-title">
+        <div className={`ag-container ag-container--public ${styles.methodSheet}`}>
+          <div className={styles.methodHeading}>
+            <p className="ag-label">The method</p>
+            <h2 id="method-title" className="ag-heading">One lesson. One scene. One proof.</h2>
           </div>
           <ol className={styles.methodGrid}>
-            {METHOD_STEPS.map(({ icon: Icon, label, copy }, index) => (
-              <li key={label} className={styles.methodCard}>
-                <div className={styles.methodTop}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <Icon aria-hidden="true" />
-                </div>
-                <h3>{label}</h3>
-                <p>{copy}</p>
+            {METHOD_STEPS.map((step) => (
+              <li key={step.number} className={styles.methodStep}>
+                <span className={styles.methodNumber}>{step.number} · {step.label}</span>
+                <strong>{step.title}</strong>
+                <p>{step.copy}</p>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className={`ag-daylight ${styles.forWhom}`} aria-labelledby="for-whom-title">
-        <div className={`ag-container ag-container--public ${styles.forWhomGrid}`}>
-          <div>
-            <p className="ag-label">Built for the real starting point</p>
-            <h2 id="for-whom-title" className="ag-heading">For Malayalis starting German from zero.</h2>
-          </div>
-          <div className={styles.forWhomCopy}>
-            <p>
-              Learn through guided video lessons and an app that keeps listening, speaking, reading,
-              and writing connected.
-            </p>
-            <p className="ag-muted">
-              The path moves from your first greeting to timed Goethe A1 practice, one visible milestone at a time.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="curriculum" className={`ag-daylight ${styles.section} ${styles.curriculum}`} aria-labelledby="curriculum-title">
+      <section id="curriculum" className={`ag-room ${styles.curriculum}`} aria-labelledby="curriculum-title">
         <div className="ag-container ag-container--public">
-          <div className={styles.sectionIntro}>
-            <p className="ag-label">Eight guided modules</p>
-            <h2 id="curriculum-title" className="ag-heading">One clear path to Goethe A1.</h2>
-            <p className="ag-muted">Each module closes with a practical milestone before the next one opens.</p>
+          <div className={styles.curriculumHeading}>
+            <div>
+              <p className="ag-label">Eight guided modules</p>
+              <h2 id="curriculum-title" className={`ag-impact ${styles.curriculumTitle}`}>Eight flags to the exam.</h2>
+            </div>
+            <p>Each flag is a situation you&apos;ll learn to handle.</p>
+            <span>Swipe or scroll →</span>
           </div>
-          <ol className={styles.moduleList}>
-            {SPINE_MODULES.map((module) => (
-              <li key={module.id} className={styles.moduleRow}>
-                <span className={styles.moduleNumber}>{String(module.id).padStart(2, '0')}</span>
-                <div>
-                  <h3>{module.title}</h3>
-                  <p>{module.promise}</p>
-                </div>
-                <span className={styles.milestone}>{module.milestone}</span>
-              </li>
-            ))}
+
+          <ol className={styles.moduleRail}>
+            {SPINE_MODULES.map((module, index) => {
+              const visual = MODULE_VISUALS[index];
+              return (
+                <li key={module.id} className={styles.moduleCard} style={{ '--module-accent': visual.accent } as CSSProperties}>
+                  <div className={styles.moduleImage}>
+                    <Image
+                      src={visual.scene}
+                      alt=""
+                      fill
+                      sizes="(min-width: 900px) 275px, 76vw"
+                      style={{ objectPosition: visual.position }}
+                    />
+                    <span className={styles.moduleNumeral}>{module.id}</span>
+                  </div>
+                  <div className={styles.moduleCopy}>
+                    <h3>{module.title}</h3>
+                    <p>{visual.place} · {module.milestone}</p>
+                  </div>
+                </li>
+              );
+            })}
           </ol>
+        </div>
+      </section>
+
+      <section className={`ag-room ${styles.momentTeaser}`} aria-labelledby="moment-title">
+        <div className={`ag-container ag-container--public ${styles.momentTeaserInner}`}>
+          <div className={styles.momentTeaserCopy}>
+            <p className="ag-label">Your first German moment</p>
+            <h2 id="moment-title" className="ag-heading">Frau Fischer says one line. You answer it. That&apos;s the course.</h2>
+            <p>A real listen-and-respond from Module 1—before any account.</p>
+            <Link className="ag-action" href="/intro">
+              Open the classroom <ArrowRight className="ag-icon" aria-hidden="true" />
+            </Link>
+            <span>Nothing plays until you press listen</span>
+          </div>
+
+          <div className={styles.audioPreview} aria-label="Preview of the first listening and speaking moment">
+            <div className={styles.previewHeader}>
+              <span>Preview · Hören → Sprechen</span>
+              <span>Ready</span>
+            </div>
+            <div className={styles.previewRow}>
+              <span className={styles.previewPlay}><Play aria-hidden="true" /></span>
+              <span>
+                <strong lang="de">Guten Morgen.</strong>
+                <small>Frau Fischer · native German audio</small>
+              </span>
+            </div>
+            <div className={`${styles.previewRow} ${styles.previewResponse}`}>
+              <span className={styles.previewMic}><Mic2 aria-hidden="true" /></span>
+              <span>
+                Then you: <strong lang="de">Guten Morgen, Frau Fischer.</strong>
+                <small>Say it aloud · replay available</small>
+              </span>
+            </div>
+            <div className={styles.previewRepair}>
+              <RotateCcw aria-hidden="true" />
+              <span>Miss a word? Repair it and try again.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={`ag-daylight ${styles.promiseBand}`} aria-labelledby="promise-title">
+        <div className={`ag-container ag-container--public ${styles.promiseBandInner}`}>
+          <div>
+            <p className="ag-label">The complete path</p>
+            <h2 id="promise-title" className="ag-heading">Video-led. App-supported.</h2>
+          </div>
+          <div className={styles.promiseLines}>
+            <p><Headphones aria-hidden="true" /><span><strong>Hear the real line.</strong> Native German audio stays connected to the scene.</span></p>
+            <p><Mic2 aria-hidden="true" /><span><strong>Produce it yourself.</strong> Speaking and writing matter—not just watching.</span></p>
+            <p><RotateCcw aria-hidden="true" /><span><strong>Know what to repair.</strong> Checkpoints route you back to the exact weak piece.</span></p>
+          </div>
         </div>
       </section>
 
       <section className={`ag-room ${styles.finalCta}`} aria-labelledby="final-title">
-        <div className={`ag-container ${styles.finalCtaInner}`}>
-          <p className="ag-label">Your first win is ready</p>
-          <h2 id="final-title" className="ag-heading">Hear your first German line.</h2>
-          <p className="ag-muted">Listen, say it aloud, repair one small mistake, and finish with a real win.</p>
+        <div className={`ag-container ag-container--public ${styles.finalCtaInner}`}>
+          <BrandLockup variant="stacked" surface="dark" />
+          <div>
+            <p className="ag-label">Your first win is ready</p>
+            <h2 id="final-title" className={`ag-impact ${styles.finalTitle}`}>Hear it. Say it. Repair it. Prove it.</h2>
+          </div>
           <Link className="ag-action" href="/intro">
-            Start listening <ArrowRight className="ag-icon" aria-hidden="true" />
+            Try your first German moment <ArrowRight className="ag-icon" aria-hidden="true" />
           </Link>
         </div>
       </section>
@@ -173,9 +218,10 @@ export default function PublicHomePage() {
       <footer className={`ag-room ${styles.footer}`}>
         <div className={`ag-container ag-container--public ${styles.footerInner}`}>
           <BrandLockup variant="horizontal" surface="dark" />
+          <p>Made for Malayali learners · Goethe A1 · Hören · Sprechen · Lesen · Schreiben</p>
           <div className={styles.footerLinks}>
             <Link href="/privacy">Privacy</Link>
-            <Link href="/auth/login">Learner log in</Link>
+            <Link href="/auth/login">Log in</Link>
           </div>
         </div>
       </footer>
