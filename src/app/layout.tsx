@@ -47,6 +47,7 @@ const notoMalayalam = Noto_Sans_Malayalam({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://adipoli-german.vercel.app"),
   applicationName: BRAND_NAME,
   title: "Adipoli German · Goethe A1 course for Malayalis",
   description: BRAND_DESCRIPTION,
@@ -80,7 +81,7 @@ export const metadata: Metadata = {
     description: BRAND_DESCRIPTION,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Adipoli German · Goethe A1 course for Malayalis",
     description: BRAND_DESCRIPTION,
   },

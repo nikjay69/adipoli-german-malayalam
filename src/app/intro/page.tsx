@@ -1,107 +1,190 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { ArrowLeft, ArrowRight, Check, Headphones, Volume2 } from 'lucide-react';
+import { BrandLockup } from '@/components/brand';
 import { FrauFischer } from '@/components/character/FrauFischer';
-import { NIVIN_MOOD_IMAGES } from '@/components/character/NivinImage';
 import { useGameStore } from '@/lib/store';
-import { ArrowRight } from 'lucide-react';
+import styles from '../PublicBoundary.module.css';
 
-const FIRST_MISSION_HREF = '/missions/module-1/greet-frau-weber';
+const FIRST_LINE_AUDIO = '/audio/tts/v1-3-1/v1-3-1-line-0.mp3';
+const STAGES = ['hear', 'say', 'repair', 'win'] as const;
+type Stage = (typeof STAGES)[number];
+
+const STAGE_LABELS: Record<Stage, string> = {
+  hear: 'Hear',
+  say: 'Say',
+  repair: 'Repair',
+  win: 'Win',
+};
 
 export default function IntroPage() {
   const router = useRouter();
-  const { markIntroSeen, userProgress } = useGameStore();
-  const [mounted, setMounted] = useState(false);
-  const [isLeavingIntro, setIsLeavingIntro] = useState(false);
+  const { markIntroSeen, setJourneyLocation } = useGameStore();
+  const [stage, setStage] = useState<Stage>('hear');
+  const [audioState, setAudioState] = useState<'ready' | 'playing' | 'error'>('ready');
+  const [repairChoice, setRepairChoice] = useState<'wrong' | 'correct' | null>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setMounted(true), 0);
-    return () => window.clearTimeout(timer);
+    headingRef.current?.focus();
+  }, [stage]);
+
+  const playLine = useCallback(async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    try {
+      audio.currentTime = 0;
+      setAudioState('playing');
+      await audio.play();
+    } catch {
+      setAudioState('error');
+    }
   }, []);
 
-  useEffect(() => {
-    if (mounted && userProgress.hasSeenIntro && !isLeavingIntro) {
-      router.replace('/learn');
-    }
-  }, [mounted, userProgress.hasSeenIntro, isLeavingIntro, router]);
-
-  const startJourney = useCallback(() => {
-    setIsLeavingIntro(true);
+  const finishFirstMoment = useCallback(() => {
     markIntroSeen();
-    router.replace(FIRST_MISSION_HREF);
-    window.setTimeout(() => {
-      if (window.location.pathname === '/intro') {
-        window.location.assign(FIRST_MISSION_HREF);
-      }
-    }, 120);
-  }, [markIntroSeen, router]);
+    setJourneyLocation('onboarding');
+    router.push('/onboarding?from=first-moment');
+  }, [markIntroSeen, router, setJourneyLocation]);
 
-  if (!mounted) return null;
+  const stepIndex = STAGES.indexOf(stage);
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-[#f7ead0]">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_24%_12%,rgba(212,165,32,0.28),transparent_30%),radial-gradient(circle_at_78%_86%,rgba(39,174,96,0.16),transparent_28%)]" />
-      <motion.section
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.34, ease: 'easeOut' }}
-        className="relative mx-auto flex h-[100dvh] w-full max-w-md flex-col justify-center px-5 py-4 text-center text-[#1a2e1a]"
-      >
-        <p className="text-[0.72rem] font-black uppercase tracking-[0.32em] text-[#176a39]">
-          Adipoli German
-        </p>
-        <p className="mx-auto mt-1.5 mb-5 max-w-[20rem] text-sm font-bold leading-snug text-[#35502c]">
-          The Goethe A1 course for Malayalis.
-        </p>
+    <main id="main-content" className={`ag-foundation-shell ag-room ${styles.firstMoment}`}>
+      <audio
+        ref={audioRef}
+        src={FIRST_LINE_AUDIO}
+        preload="auto"
+        onEnded={() => {
+          setAudioState('ready');
+          setStage('say');
+        }}
+        onError={() => setAudioState('error')}
+      />
 
-        <div className="mx-auto mb-5 w-full max-w-[21rem]">
-          <div className="relative h-48 overflow-hidden rounded-[1.55rem] border border-[#1a2e1a]/12 shadow-[0_22px_60px_-42px_rgba(17,31,17,0.95)]">
-            <img
-              src="/images/scenes/hub-goethe-kochi-classroom.jpg"
-              alt="The Goethe-Kochi A1 classroom where your course begins"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0d1a0d]/14 via-transparent to-[#0d1a0d]/58" />
-            <div className="absolute inset-x-3 top-2.5 flex justify-center">
-              <span className="rounded-xl bg-[#0d1a0d]/82 px-3 py-1 text-[0.62rem] font-black uppercase tracking-[0.16em] text-[#f1d27a] shadow-lg backdrop-blur-sm">
-                Goethe-Kochi · A1
-              </span>
+      <div className={`ag-container ${styles.momentInner}`}>
+        <header className={styles.momentHeader}>
+          <Link href="/" className={styles.backLink}>
+            <ArrowLeft aria-hidden="true" /> Home
+          </Link>
+          <BrandLockup variant="horizontal" surface="dark" />
+          <span className={styles.stageCount}>{stepIndex + 1} / {STAGES.length}</span>
+        </header>
+
+        <ol className={styles.progress} aria-label="First German moment progress">
+          {STAGES.map((item, index) => (
+            <li key={item} data-active={item === stage} data-complete={index < stepIndex}>
+              <span>{index < stepIndex ? <Check aria-hidden="true" /> : index + 1}</span>
+              <span>{STAGE_LABELS[item]}</span>
+            </li>
+          ))}
+        </ol>
+
+        <section className={styles.momentCard} aria-live="polite">
+          <div className={styles.momentScene}>
+            <div className={styles.momentSceneCopy}>
+              <p className="ag-label">Kochi · Morning class</p>
+              <p>Frau Fischer looks up as you enter.</p>
             </div>
-            <FrauFischer mood="greeting" className="absolute bottom-0 left-1 h-[8.75rem] w-auto" />
-            <motion.img
-              src={NIVIN_MOOD_IMAGES.waving}
-              alt="Nivin, your study buddy, waving hello"
-              className="absolute bottom-0 right-1 h-[8.25rem] w-auto object-contain object-bottom drop-shadow-lg scale-x-[-1]"
-              animate={{ y: [0, -3, 0] }}
-              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+            <FrauFischer
+              mood={stage === 'win' ? 'pleased' : stage === 'repair' ? 'teaching' : 'greeting'}
+              animate={false}
+              className={styles.momentTeacher}
             />
-            <span className="absolute bottom-2 left-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.6rem] font-black text-white/85">Frau Fischer</span>
-            <span className="absolute bottom-2 right-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.6rem] font-black text-white/85">Nivin</span>
           </div>
-        </div>
 
-        <h1 className="text-[2.35rem] font-black leading-[0.98] tracking-[-0.045em] sm:text-5xl">
-          Your first German moment.
-        </h1>
+          <div className={`ag-answer-sheet ${styles.taskSheet}`}>
+            {stage === 'hear' ? (
+              <>
+                <p className="ag-label">01 · Hear it</p>
+                <h1 ref={headingRef} tabIndex={-1} className="ag-heading">Listen before you read.</h1>
+                <p className="ag-muted">Hear how Frau Fischer greets you. The next step opens when the line ends.</p>
+                <button type="button" className={`ag-action ${styles.listenButton}`} onClick={playLine} disabled={audioState === 'playing'}>
+                  {audioState === 'playing' ? <Volume2 className="ag-icon" aria-hidden="true" /> : <Headphones className="ag-icon" aria-hidden="true" />}
+                  {audioState === 'playing' ? 'Listening…' : 'Play the greeting'}
+                </button>
+                {audioState === 'error' ? (
+                  <p className={styles.errorText} role="alert">The audio did not start. Check your sound and try again.</p>
+                ) : null}
+              </>
+            ) : null}
 
-        <p className="mx-auto mt-3 max-w-[20rem] text-sm font-bold leading-snug text-[#35502c]">
-          Hear a real greeting. Say it aloud. Two minutes.
-        </p>
+            {stage === 'say' ? (
+              <>
+                <p className="ag-label">02 · Say it</p>
+                <h1 ref={headingRef} tabIndex={-1} className="ag-heading">Now greet her aloud.</h1>
+                <div className={styles.germanPrompt}>
+                  <span>Say</span>
+                  <strong lang="de">Guten Morgen, Frau Fischer.</strong>
+                </div>
+                <p className="ag-muted">Your voice stays with you—we only need your honest tap.</p>
+                <button type="button" className="ag-action" onClick={() => setStage('repair')}>
+                  I said it aloud <ArrowRight className="ag-icon" aria-hidden="true" />
+                </button>
+              </>
+            ) : null}
 
-        <motion.button
-          initial={{ y: 10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.12, duration: 0.28 }}
-          whileTap={{ y: 2, scale: 0.98 }}
-          onClick={startJourney}
-          className="mt-7 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-[#1f9d55] px-8 py-4 text-base font-black uppercase tracking-wide text-white transition-all hover:bg-[#24ad61]"
-          style={{ boxShadow: '0 5px 0 0 #11602f, 0 8px 20px -4px rgba(31,157,85,0.34)' }}
-        >
-          Begin lesson 1 <ArrowRight className="h-5 w-5" />
-        </motion.button>
-      </motion.section>
-    </div>
+            {stage === 'repair' ? (
+              <>
+                <p className="ag-label">03 · Repair it</p>
+                <h1 ref={headingRef} tabIndex={-1} className="ag-heading">Which greeting is complete?</h1>
+                <p className="ag-muted">One ending is missing. Choose the line you heard.</p>
+                <div className={styles.repairChoices}>
+                  <button
+                    type="button"
+                    data-selected={repairChoice === 'wrong'}
+                    onClick={() => setRepairChoice('wrong')}
+                  >
+                    <span>A</span><strong lang="de">Gute Morgen.</strong>
+                  </button>
+                  <button
+                    type="button"
+                    data-selected={repairChoice === 'correct'}
+                    data-correct={repairChoice === 'correct'}
+                    onClick={() => setRepairChoice('correct')}
+                  >
+                    <span>B</span><strong lang="de">Guten Morgen.</strong>
+                  </button>
+                </div>
+                {repairChoice === 'wrong' ? (
+                  <p className={styles.repairFeedback} data-tone="recovery">
+                    Almost. <strong lang="de">Morgen</strong> needs <strong lang="de">guten</strong> here. Try once more.
+                  </p>
+                ) : null}
+                {repairChoice === 'correct' ? (
+                  <div className={styles.repairSuccess}>
+                    <p className={styles.repairFeedback} data-tone="success">
+                      Exactly: <strong lang="de">Guten Morgen.</strong>
+                    </p>
+                    <button type="button" className="ag-action" onClick={() => setStage('win')}>
+                      See your first win <ArrowRight className="ag-icon" aria-hidden="true" />
+                    </button>
+                  </div>
+                ) : null}
+              </>
+            ) : null}
+
+            {stage === 'win' ? (
+              <>
+                <div className={styles.winMark}><Check aria-hidden="true" /></div>
+                <p className="ag-label">04 · First win</p>
+                <h1 ref={headingRef} tabIndex={-1} className="ag-heading">You can greet a German teacher.</h1>
+                <p>
+                  You heard the line, said it, found the missing ending, and repaired it.
+                </p>
+                <button type="button" className="ag-action" onClick={finishFirstMoment}>
+                  Build my learning plan <ArrowRight className="ag-icon" aria-hidden="true" />
+                </button>
+                <Link href="/" className={styles.quietLink}>Return home</Link>
+              </>
+            ) : null}
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }
