@@ -3,9 +3,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { Clock, Calendar, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import { BookOpen, Calendar, CheckCircle2, ArrowRight, Map, Sparkles } from 'lucide-react';
 import { Nivin } from '@/components/character/Nivin';
-import { Appu } from '@/components/character/Appu';
 import { Confetti } from '@/components/game/Confetti';
 import { feedbackCelebration } from '@/lib/feedback';
 import { useGameStore } from '@/lib/store';
@@ -15,7 +14,6 @@ import {
   getEstimatedCompletionDate,
   formatEstimatedDuration,
   HOUR_OPTIONS,
-  TOTAL_COURSE_HOURS,
 } from '@/lib/study-plan';
 
 type Step = 'welcome' | 'hours' | 'ready';
@@ -27,7 +25,10 @@ export default function OnboardingPage() {
   const [selectedHours, setSelectedHours] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => setMounted(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   // If study plan already exists, go to Today (the one home)
   useEffect(() => {
@@ -102,10 +103,9 @@ export default function OnboardingPage() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ type: 'spring', delay: 0.2 }}
-              className="flex items-end gap-2 mb-8"
+              className="mb-8"
             >
               <Nivin mood="waving" size="lg" />
-              <Appu mood="happy" size="sm" />
             </motion.div>
 
             <motion.h1
@@ -134,13 +134,13 @@ export default function OnboardingPage() {
               className="flex items-center gap-3 text-white/30 text-xs mb-10"
             >
               <div className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5" />
-                <span>{TOTAL_COURSE_HOURS}h total content</span>
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>56 dense lessons</span>
               </div>
               <span>-</span>
               <div className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5" />
-                <span>18 modules</span>
+                <Map className="w-3.5 h-3.5" />
+                <span>8 guided modules</span>
               </div>
             </motion.div>
 
@@ -301,10 +301,9 @@ export default function OnboardingPage() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: 'spring', delay: 0.1 }}
-              className="flex items-end gap-2 mb-6"
+              className="mb-6"
             >
               <Nivin mood="excited" size="lg" />
-              <Appu mood="celebrating" size="sm" />
             </motion.div>
 
             <motion.div
@@ -348,7 +347,7 @@ export default function OnboardingPage() {
                   <span className="text-[#3fbf75]">
                     <Sparkles className="w-4 h-4" />
                   </span>
-                  <span className="text-white/70">18 modules, {TOTAL_COURSE_HOURS} hours of content</span>
+                  <span className="text-white/70">56 dense lessons across 8 guided modules</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <span className="text-[#3fbf75]">
@@ -367,7 +366,7 @@ export default function OnboardingPage() {
                   <span className="text-[#f1d27a]">
                     <CheckCircle2 className="w-4 h-4" />
                   </span>
-                  <span className="text-white/70">Checkpoints every 5 days</span>
+                  <span className="text-white/70">Progress checkpoints through the course</span>
                 </div>
               </div>
             </motion.div>
