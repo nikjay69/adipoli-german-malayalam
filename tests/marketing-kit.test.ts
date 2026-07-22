@@ -139,6 +139,12 @@ assert.match(fs.readFileSync(path.join(ROOT, "templates/carousel-master.svg"), "
 assert.match(fs.readFileSync(path.join(ROOT, "templates/carousel-master.svg"), "utf8"), /VARIANT-CONTENT/);
 assert.match(fs.readFileSync(path.join(ROOT, "templates/carousel-master.svg"), "utf8"), /VARIANT-QUIET-CTA/);
 
+const promoTitle = fs.readFileSync(path.join(ROOT, "promo/title.svg"), "utf8");
+assert.match(promoTitle, /class="impact" font-stretch="125%"[^>]*>ADIPOLI GERMAN<\/text>/, "promo opening title must use the canonical 125% Archivo wordmark treatment");
+const builder = fs.readFileSync(path.resolve("scripts/build-marketing-kit.mts"), "utf8");
+assert.match(builder, /Archivo:wdth,wght@62\.\.125,300\.\.900/, "marketing exports must load Archivo's approved width axis");
+assert.match(fs.readFileSync(path.resolve(".gitattributes"), "utf8"), /marketing\/adipoli-marketing-kit-v0\.1\/\*\* -text/, "marketing-kit hashes must be protected from checkout line-ending conversion");
+
 for (const preview of ["templates", "educational", "promo"]) {
   const file = path.join(ROOT, "preview", `${preview}-contact-sheet.png`);
   const dimensions = pngDimensions(file);

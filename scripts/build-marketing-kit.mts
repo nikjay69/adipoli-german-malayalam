@@ -259,7 +259,7 @@ function promoFrame(label: string, body: string, guides = "") {
 const promoTitle = promoFrame("Adipoli German promo opening title", `
   <rect width="1920" height="1080" fill="${FOREST}"/>
   ${mark(816, 215, 288, true)}
-  <text x="960" y="645" text-anchor="middle" class="impact" font-size="106" fill="${CREAM}">ADIPOLI GERMAN</text>
+  <text x="960" y="645" text-anchor="middle" class="impact" font-stretch="125%" font-size="106" fill="${CREAM}">ADIPOLI GERMAN</text>
   <rect x="490" y="730" width="940" height="3" fill="${GOLD}"/>
   <text x="960" y="820" text-anchor="middle" class="mono" font-size="36" font-weight="700" letter-spacing="9" fill="${GOLD}">THE GOETHE A1 COURSE FOR MALAYALIS</text>
 `);
@@ -365,7 +365,7 @@ async function renderMaster(browser: Browser, master: Master) {
   const source = inlineSceneImages(fs.readFileSync(sourcePath, "utf8"));
   const page = await browser.newPage();
   await page.setViewport({ width: master.width, height: master.height, deviceScaleFactor: 1 });
-  await page.setContent(`<!doctype html><html><head><meta charset="utf-8"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,300..900&family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet"><style>html,body{margin:0;width:${master.width}px;height:${master.height}px;overflow:hidden}svg{display:block}</style></head><body>${source}</body></html>`, { waitUntil: "networkidle0", timeout: 60_000 });
+  await page.setContent(`<!doctype html><html><head><meta charset="utf-8"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet"><style>html,body{margin:0;width:${master.width}px;height:${master.height}px;overflow:hidden}svg{display:block}</style></head><body>${source}</body></html>`, { waitUntil: "networkidle0", timeout: 60_000 });
   await fontReady(page);
   await page.screenshot({ path: exportPath, clip: { x: 0, y: 0, width: master.width, height: master.height } });
   await page.close();
