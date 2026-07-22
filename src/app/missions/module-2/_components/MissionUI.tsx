@@ -7,15 +7,16 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Check, Headphones, Mic, PenLine, RotateCcw, ShieldCheck, Sparkles, Trophy } from 'lucide-react';
 import { clsx } from 'clsx';
 import { KeralaClassroomScene } from '@/components/course/KeralaClassroomScene';
-import { KUTTAN_MOOD_IMAGES } from '@/components/character/KuttanImage';
-import { FrauWeber, type FrauWeberMood } from '@/components/character/FrauWeber';
+import { PeerImage } from '@/components/character/PeerImage';
+import { FrauFischer, type FrauFischerMood } from '@/components/character/FrauFischer';
+import type { LearnerPeerId } from '@/lib/cast';
 import { module1MissionCards, readCompletedModule1Missions, writeCompletedModule1Mission, type Module1MissionId } from '@/lib/missions/module1';
 import { module2MissionCards, type Module2MissionId } from '@/lib/missions/module2';
 
 type SceneVisualVariant = 'abstract' | 'kochi-room' | 'ai-study';
 
 // Painterly dialogue scene for the M1-M2 missions: full-bleed Goethe-Kochi
-// backdrop + the real Frau Weber and Kuttan characters (replaces the old SVG
+// backdrop + the real Frau Fischer and Nivin characters (replaces the old SVG
 // panel + colored-dot avatars). DECISIONS #10.
 
 // Pick a painterly backdrop from the scene label so missions set outside the
@@ -34,6 +35,8 @@ function MissionDialogueScene({
   speakerLine,
   speakerMood = 'teaching',
   learnerName,
+  learnerPeer,
+  showLearnerPeer,
   learnerLine,
   learnerReady,
   learnerTestId,
@@ -41,8 +44,10 @@ function MissionDialogueScene({
   sceneLabel: string;
   speakerName: string;
   speakerLine: string;
-  speakerMood?: FrauWeberMood;
+  speakerMood?: FrauFischerMood;
   learnerName: string;
+  learnerPeer: LearnerPeerId;
+  showLearnerPeer: boolean;
   learnerLine: string;
   learnerReady: boolean;
   learnerTestId?: string;
@@ -61,14 +66,12 @@ function MissionDialogueScene({
       </div>
 
       {/* Characters — trimmed figures anchored to the floor, facing each other */}
-      <FrauWeber mood={speakerMood} className="absolute bottom-0 left-2 h-[11rem] w-auto" />
-      <motion.img
-        src={KUTTAN_MOOD_IMAGES.happy}
-        alt={learnerName}
-        className="absolute bottom-0 right-2 h-[10.5rem] w-auto object-contain object-bottom drop-shadow-lg scale-x-[-1]"
-        animate={{ y: [0, -3, 0] }}
-        transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-      />
+      <FrauFischer mood={speakerMood} className="absolute bottom-0 left-2 h-[11rem] w-auto" />
+      {showLearnerPeer && (
+        <div className="absolute bottom-0 right-2 scale-x-[-1]">
+          <PeerImage peer={learnerPeer} mood="happy" size="xl" />
+        </div>
+      )}
       <span className="absolute bottom-2 left-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.62rem] font-black text-white/85">{speakerName}</span>
       <span className="absolute bottom-2 right-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.62rem] font-black text-white/85">{learnerName}</span>
 
@@ -861,6 +864,8 @@ export function ConversationSceneStep({
   speakerName,
   speakerLine,
   learnerName = 'You',
+  learnerPeer = 'nivin',
+  showLearnerPeer = true,
   learnerLine,
   audioSrc,
   audioLabel,
@@ -876,6 +881,8 @@ export function ConversationSceneStep({
   speakerName: string;
   speakerLine: string;
   learnerName?: string;
+  learnerPeer?: LearnerPeerId;
+  showLearnerPeer?: boolean;
   learnerLine: string;
   audioSrc: string;
   audioLabel?: string;
@@ -916,6 +923,8 @@ export function ConversationSceneStep({
             speakerLine={speakerLine}
             speakerMood="teaching"
             learnerName={learnerName}
+            learnerPeer={learnerPeer}
+            showLearnerPeer={showLearnerPeer}
             learnerLine={learnerLine}
             learnerReady={finished}
           />
@@ -952,6 +961,8 @@ export function ConversationRepairStep<T extends string>({
   speakerName,
   speakerLine,
   learnerName = 'You',
+  learnerPeer = 'nivin',
+  showLearnerPeer = true,
   learnerLine,
   audioSrc,
   audioLabel,
@@ -972,6 +983,8 @@ export function ConversationRepairStep<T extends string>({
   speakerName: string;
   speakerLine: string;
   learnerName?: string;
+  learnerPeer?: LearnerPeerId;
+  showLearnerPeer?: boolean;
   learnerLine: string;
   audioSrc: string;
   audioLabel?: string;
@@ -1011,6 +1024,8 @@ export function ConversationRepairStep<T extends string>({
             speakerLine={speakerLine}
             speakerMood="teaching"
             learnerName={learnerName}
+            learnerPeer={learnerPeer}
+            showLearnerPeer={showLearnerPeer}
             learnerLine={learnerLine}
             learnerReady={modelAudioFinished}
             learnerTestId="immersive-model-line"

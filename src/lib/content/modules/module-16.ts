@@ -24,6 +24,7 @@ export const MODULE_16: Module = {
       duration: "60 min",
       xpReward: 180,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "University Library (In der Uni-Bibliothek)",
           sceneType: "office",
@@ -35,7 +36,7 @@ export const MODULE_16: Module = {
           currentObjective: "Correctly use dative articles (dem, der) and common dative verbs like helfen and gehören",
           nextTeaser: "Next: Two-way prepositions! Let's see if the cat is ON or GOING ON the table!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Welcome to the Boss Level of grammar: DATIV. Nammude '-ന്' (To whom) logic aanu ithu. 'Ich helfe DIR' (I help TO you).",
           "Article-il confusion varum. Masculine 'der' becomes 'dem', but feminine 'die' becomes 'der'! Yes, 'der Frau' means 'to the woman'. Sradhicho!",
           "When you give something, the receiver always takes Dative. 'Ich gebe DEM Mann das Buch'. Let's master the article flip!",
@@ -50,15 +51,15 @@ export const MODULE_16: Module = {
           {
             moment: "You want to say 'I give the gift to the woman'. What is the correct dative article for 'Frau'?",
             options: [
-              { text: "der Frau.", isCorrect: true, response: "Exactly! In Dative, feminine 'die' becomes 'der'.", kuttanReaction: "Adipoli! Dative article logic perfectly capture cheythallo! 🔥" },
-              { text: "dem Frau.", isCorrect: false, response: "Aiyyo! 'dem' is for masc/neut. Fem logic different aanu, machaa!", kuttanReaction: "Vite machane! Dative flip sradhikkuka. Try again! 😬" },
+              { text: "der Frau.", isCorrect: true, response: "Exactly! In Dative, feminine 'die' becomes 'der'.", peerReaction: "Adipoli! Dative article logic perfectly capture cheythallo! 🔥" },
+              { text: "dem Frau.", isCorrect: false, response: "Aiyyo! 'dem' is for masc/neut. Fem logic different aanu, machaa!", peerReaction: "Vite machane! Dative flip sradhikkuka. Try again! 😬" },
             ],
           },
           {
             moment: "Which verb ALWAYS takes dative for the person receiving the action?",
             options: [
-              { text: "helfen (to help).", isCorrect: true, response: "Correct! You always help 'to' someone in German grammar.", kuttanReaction: "Superb! Dative verb logic correctly picked! ⭐" },
-              { text: "sehen (to see).", isCorrect: false, response: "No! 'Sehen' is simple Akkusativ. Direct action objects are usually Akkusativ.", kuttanReaction: "Aiyyo! Verbs logic change aakkalle machane. Try again! 🚫" },
+              { text: "helfen (to help).", isCorrect: true, response: "Correct! You always help 'to' someone in German grammar.", peerReaction: "Superb! Dative verb logic correctly picked! ⭐" },
+              { text: "sehen (to see).", isCorrect: false, response: "No! 'Sehen' is simple Akkusativ. Direct action objects are usually Akkusativ.", peerReaction: "Aiyyo! Verbs logic change aakkalle machane. Try again! 🚫" },
             ],
           },
         ],
@@ -263,7 +264,7 @@ export const MODULE_16: Module = {
         {
           id: "ex16-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Dative Case Deep Dive): 'Ich verstehe den kurzen Text.'",
+          question: "Nivin practice: Say aloud for this lesson (Dative Case Deep Dive): 'Ich verstehe den kurzen Text.'",
           questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
           correctAnswer: "Ich verstehe den kurzen Text",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
@@ -355,6 +356,7 @@ export const MODULE_16: Module = {
       duration: "60 min",
       xpReward: 180,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "New Apartment (In der neuen Wohnung)",
           sceneType: "home",
@@ -366,7 +368,7 @@ export const MODULE_16: Module = {
           currentObjective: "Correctly identify movement vs location to choose the right case for two-way prepositions",
           nextTeaser: "Next: Reflexive verbs! Let's talk about those 'self-centerd' verbs like 'sich waschen'!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! These 9 prepositions (in, an, auf...) are like a switch. Action undo? Akkusativ. Irippundo? Dativ!",
           "Think about it: 'Ich stelle das Buch AUF DEN Tisch' (I'm putting it there - Movement). 'Das Buch liegt AUF DEM Tisch' (It's already there - Static).",
           "Nammude 'mēšayil irikkunnu' (sitting on table) vs 'mēšayil vekkunnu' (putting on table) logic pole thanne! Let's get moving!",
@@ -381,15 +383,15 @@ export const MODULE_16: Module = {
           {
             moment: "You're asking 'WHERE are you?'. Which case should follow the preposition 'in'?",
             options: [
-              { text: "Dativ (Location).", isCorrect: true, response: "Exactly! 'Wo?' always asks for the location, which is Dative.", kuttanReaction: "Adipoli! Location logic perfectly capture cheythallo! 🔥" },
-              { text: "Akkusativ (Movement).", isCorrect: false, response: "Aiyyo! Akkusativ is for 'Wohin?' (Where to?). Since you're already there, it's Dative.", kuttanReaction: "Vite machane! Static mode sradhikkuka. Try again! 😬" },
+              { text: "Dativ (Location).", isCorrect: true, response: "Exactly! 'Wo?' always asks for the location, which is Dative.", peerReaction: "Adipoli! Location logic perfectly capture cheythallo! 🔥" },
+              { text: "Akkusativ (Movement).", isCorrect: false, response: "Aiyyo! Akkusativ is for 'Wohin?' (Where to?). Since you're already there, it's Dative.", peerReaction: "Vite machane! Static mode sradhikkuka. Try again! 😬" },
             ],
           },
           {
             moment: "You are putting a picture ON the wall. Is this an action (movement) or a state (static)?",
             options: [
-              { text: "Action (Akkusativ).", isCorrect: true, response: "Correct! You are moving the picture from your hand to the wall. So use Akkusativ 'an die'.", kuttanReaction: "Superb! Action logic correctly picked! ⭐" },
-              { text: "State (Dativ).", isCorrect: false, response: "No! Once it's hanging, it's Dativ. But since you are *putting* it there, it's Akkusativ.", kuttanReaction: "Aiyyo! Movement logic marakkallae machane. Try again! 🚫" },
+              { text: "Action (Akkusativ).", isCorrect: true, response: "Correct! You are moving the picture from your hand to the wall. So use Akkusativ 'an die'.", peerReaction: "Superb! Action logic correctly picked! ⭐" },
+              { text: "State (Dativ).", isCorrect: false, response: "No! Once it's hanging, it's Dativ. But since you are *putting* it there, it's Akkusativ.", peerReaction: "Aiyyo! Movement logic marakkallae machane. Try again! 🚫" },
             ],
           },
         ],
@@ -606,7 +608,7 @@ export const MODULE_16: Module = {
         {
           id: "ex16-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Two-Way Prepositions): 'Ich verstehe den kurzen Text.'",
+          question: "Meera practice: Say aloud for this lesson (Two-Way Prepositions): 'Ich verstehe den kurzen Text.'",
           questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
           correctAnswer: "Ich verstehe den kurzen Text",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
@@ -698,6 +700,7 @@ export const MODULE_16: Module = {
       duration: "45 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "WG Bathroom (Im Badezimmer)",
           sceneType: "home",
@@ -709,7 +712,7 @@ export const MODULE_16: Module = {
           currentObjective: "Correctly use reflexive pronouns (mich, dich, sich) and understand the 'body part' rule",
           nextTeaser: "Final Lesson: Complex sentences! Let's use 'weil' and 'dass' to explain your life!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Reflexive verbs are like a mirror. Action thirichu nammalilekku thanne varum. 'Ich wasche MICH'.",
           "Most pronouns are like Akkusativ, but sradhikkanne: 'Er/Sie' and 'Formal Sie' eppolum 'SICH' use cheyyam. Ith oru master pronoun aanu!",
           "Pinne oru small trap und: If you wash your hands, it's 'Ich wasche MIR die Hände'. Standard Dative vs Akkusativ logic. Let's practice!",
@@ -724,15 +727,15 @@ export const MODULE_16: Module = {
           {
             moment: "You want to say 'I am getting dressed'. Which reflexive pronoun do you use with 'ich'?",
             options: [
-              { text: "mich.", isCorrect: true, response: "Exactly! 'mich' is the standard accusative reflexive pronoun for 'ich'.", kuttanReaction: "Adipoli! Mirror logic perfectly capture cheythallo! 🔥" },
-              { text: "sich.", isCorrect: false, response: "Aiyyo! 'sich' is only for Er/Sie/Es and Formal Sie. For yourself, it's 'mich'.", kuttanReaction: "Vite machane! Pronouns sradhikkuka. Try again! 😬" },
+              { text: "mich.", isCorrect: true, response: "Exactly! 'mich' is the standard accusative reflexive pronoun for 'ich'.", peerReaction: "Adipoli! Mirror logic perfectly capture cheythallo! 🔥" },
+              { text: "sich.", isCorrect: false, response: "Aiyyo! 'sich' is only for Er/Sie/Es and Formal Sie. For yourself, it's 'mich'.", peerReaction: "Vite machane! Pronouns sradhikkuka. Try again! 😬" },
             ],
           },
           {
             moment: "You see a friend looking stressed. You want to tell them 'Hurry up!'. How do you say it in the informal 'du' form?",
             options: [
-              { text: "Beeil dich!", isCorrect: true, response: "Correct! The verb 'beeilen' needs its mirror part 'dich' for the person you're talking to.", kuttanReaction: "Superb! Imperative logic correctly picked! ⭐" },
-              { text: "Ich beeile mich.", isCorrect: false, response: "No! That means 'I am hurrying'. You want them to hurry!", kuttanReaction: "Aiyyo! Meaning change aakkalle machane. Try again! 🚫" },
+              { text: "Beeil dich!", isCorrect: true, response: "Correct! The verb 'beeilen' needs its mirror part 'dich' for the person you're talking to.", peerReaction: "Superb! Imperative logic correctly picked! ⭐" },
+              { text: "Ich beeile mich.", isCorrect: false, response: "No! That means 'I am hurrying'. You want them to hurry!", peerReaction: "Aiyyo! Meaning change aakkalle machane. Try again! 🚫" },
             ],
           },
         ],
@@ -880,7 +883,7 @@ export const MODULE_16: Module = {
         {
           id: "ex16-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Reflexive Verbs): 'Ich verstehe den kurzen Text.'",
+          question: "Nivin practice: Say aloud for this lesson (Reflexive Verbs): 'Ich verstehe den kurzen Text.'",
           questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
           correctAnswer: "Ich verstehe den kurzen Text",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
@@ -972,6 +975,7 @@ export const MODULE_16: Module = {
       duration: "60 min",
       xpReward: 180,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Cozy Cafe (Im Café)",
           sceneType: "station",
@@ -983,7 +987,7 @@ export const MODULE_16: Module = {
           currentObjective: "Correctly position the conjugated verb at the end of subordinate clauses using weil, dass, and wenn",
           nextTeaser: "Final Modules! You're ready for the Goethe A1 Exam Preparation. Let's get that certificate!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! This is the sign of a real pro. Subordinate clauses make your German flow. But remember: Verb moves to the very last position!",
           "If you say 'Ich hoffe, DASS du kommst', 'kommst' stands at the end. It's like nammude Malayalam structure in some ways—verb at the end!",
           "Also, 'als' and 'wenn'. 'Als' is for that one time in the past (like your first day in Germany). 'Wenn' is for 'whenever' or 'if'. Let's build some logic!",
@@ -998,15 +1002,15 @@ export const MODULE_16: Module = {
           {
             moment: "You want to say 'I am happy because you are coming'. Where do you place 'bist' in 'Ich bin froh, weil du hier...'?",
             options: [
-              { text: "At the very end of the sentence (bist).", isCorrect: true, response: "Exactly! 'weil' kicks the verb to the very end.", kuttanReaction: "Adipoli! Sub-clause logic perfectly capture cheythallo! 🔥" },
-              { text: "In position 2 after 'du' (bist).", isCorrect: false, response: "Aiyyo! In a subordinate clause, the verb moves from Pos 2 to the end.", kuttanReaction: "Vite machane! Verb-kicker rule sradhikkuka. Try again! 😬" },
+              { text: "At the very end of the sentence (bist).", isCorrect: true, response: "Exactly! 'weil' kicks the verb to the very end.", peerReaction: "Adipoli! Sub-clause logic perfectly capture cheythallo! 🔥" },
+              { text: "In position 2 after 'du' (bist).", isCorrect: false, response: "Aiyyo! In a subordinate clause, the verb moves from Pos 2 to the end.", peerReaction: "Vite machane! Verb-kicker rule sradhikkuka. Try again! 😬" },
             ],
           },
           {
             moment: "You are talking about the ONE time you arrived in Berlin. Which word do you use for 'When'?",
             options: [
-              { text: "Als (single past event).", isCorrect: true, response: "Correct! 'Als' is used for unique, non-repeating events in the past.", kuttanReaction: "Superb! Time logic correctly picked! ⭐" },
-              { text: "Wenn (repeated/present).", isCorrect: false, response: "No! 'Wenn' is for habits or if-situations. For a one-time past event, use 'als'.", kuttanReaction: "Aiyyo! Past logic marakkallae machane. Try again! 🚫" },
+              { text: "Als (single past event).", isCorrect: true, response: "Correct! 'Als' is used for unique, non-repeating events in the past.", peerReaction: "Superb! Time logic correctly picked! ⭐" },
+              { text: "Wenn (repeated/present).", isCorrect: false, response: "No! 'Wenn' is for habits or if-situations. For a one-time past event, use 'als'.", peerReaction: "Aiyyo! Past logic marakkallae machane. Try again! 🚫" },
             ],
           },
         ],
@@ -1210,7 +1214,7 @@ export const MODULE_16: Module = {
         {
           id: "ex16-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Subordinate Clauses): 'Ich verstehe den kurzen Text.'",
+          question: "Meera practice: Say aloud for this lesson (Subordinate Clauses): 'Ich verstehe den kurzen Text.'",
           questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
           correctAnswer: "Ich verstehe den kurzen Text",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
@@ -1284,6 +1288,7 @@ export const MODULE_16: Module = {
       duration: "60 min",
       xpReward: 200,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Vorbereitungsraum B2",
           sceneType: "classroom",
@@ -1295,7 +1300,7 @@ export const MODULE_16: Module = {
           currentObjective: "Practice reading comprehension strategies on German emails, ads, and short articles",
           nextTeaser: "Next: writing practice — time to produce your own German texts!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Ippol real German texts vayikkan time aayi. Pazhaya school exam-il English comprehension cheythathu pole thanneyaanu — but German-il!",
           "Important tip: every word manasilaakanam ennu illa! Key words nokkuka, context-il ninnu guess cheyyuka. Scanning strategy use cheyyuka.",
           "Cognates — English-umaai similar aayi irikkunna words — athanu nammude best friend. 'Telefon', 'Computer', 'Musik' okke same aanu! Let's read!",
@@ -1312,16 +1317,16 @@ export const MODULE_16: Module = {
           {
             moment: "You see an unknown word in a German email: 'Krankenversicherung'. You don't know it. What's your best strategy?",
             options: [
-              { text: "Break it into parts: Kranken + Versicherung (sick + insurance) = health insurance!", isCorrect: true, response: "Exactly! German compound words can be split into smaller parts you already know. 'Krankenversicherung' = health insurance.", kuttanReaction: "Adipoli! Compound words split cheythu manasilaakkiyath valya karyam. German-il ithaanu the superpower! 🔥" },
-              { text: "Skip it completely and move on.", isCorrect: false, response: "Skipping can work sometimes, but this word might be key to the text. Try breaking it into parts first!", kuttanReaction: "Machane! Skip cheyyunnathinnu munpu compound word split cheythu nokkaam. 'Kranken' + 'Versicherung' — try it!" },
+              { text: "Break it into parts: Kranken + Versicherung (sick + insurance) = health insurance!", isCorrect: true, response: "Exactly! German compound words can be split into smaller parts you already know. 'Krankenversicherung' = health insurance.", peerReaction: "Adipoli! Compound words split cheythu manasilaakkiyath valya karyam. German-il ithaanu the superpower! 🔥" },
+              { text: "Skip it completely and move on.", isCorrect: false, response: "Skipping can work sometimes, but this word might be key to the text. Try breaking it into parts first!", peerReaction: "Machane! Skip cheyyunnathinnu munpu compound word split cheythu nokkaam. 'Kranken' + 'Versicherung' — try it!" },
             ],
           },
           {
             moment: "A reading passage asks 'Wann hat die Bäckerei geöffnet?' and you see 'Mo-Fr: 6:00-18:00, Sa: 7:00-14:00'. What's the answer for Saturday?",
             options: [
-              { text: "Am Samstag von 7 bis 14 Uhr.", isCorrect: true, response: "Correct! 'Sa' = Samstag (Saturday), and the hours are 7:00-14:00.", kuttanReaction: "Perfect! Abbreviations manasilaakkiyath nannaayi. 'Sa' = Samstag, numbers = opening hours. Simple! ⭐" },
-              { text: "Am Samstag von 6 bis 18 Uhr.", isCorrect: false, response: "Those are the Monday-Friday hours (Mo-Fr). Saturday (Sa) has different hours: 7:00-14:00.", kuttanReaction: "Aiyyo! Athu Monday to Friday-nte hours aanu. Saturday-inu separate line nokkuka — 7:00-14:00!" },
-              { text: "Am Samstag ist die Bäckerei geschlossen.", isCorrect: false, response: "Saturday hours are listed as 7:00-14:00, so it IS open on Saturday, just with shorter hours.", kuttanReaction: "Illa machane! 'Sa: 7:00-14:00' ennu kaanunnund — athu open aanu, but shorter hours-il!" },
+              { text: "Am Samstag von 7 bis 14 Uhr.", isCorrect: true, response: "Correct! 'Sa' = Samstag (Saturday), and the hours are 7:00-14:00.", peerReaction: "Perfect! Abbreviations manasilaakkiyath nannaayi. 'Sa' = Samstag, numbers = opening hours. Simple! ⭐" },
+              { text: "Am Samstag von 6 bis 18 Uhr.", isCorrect: false, response: "Those are the Monday-Friday hours (Mo-Fr). Saturday (Sa) has different hours: 7:00-14:00.", peerReaction: "Aiyyo! Athu Monday to Friday-nte hours aanu. Saturday-inu separate line nokkuka — 7:00-14:00!" },
+              { text: "Am Samstag ist die Bäckerei geschlossen.", isCorrect: false, response: "Saturday hours are listed as 7:00-14:00, so it IS open on Saturday, just with shorter hours.", peerReaction: "Illa machane! 'Sa: 7:00-14:00' ennu kaanunnund — athu open aanu, but shorter hours-il!" },
             ],
           },
         ],
@@ -1464,7 +1469,7 @@ export const MODULE_16: Module = {
         {
           id: "ex16-5-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Reading Comprehension Practice): 'Ich verstehe den kurzen Text.'",
+          question: "Nivin practice: Say aloud for this lesson (Reading Comprehension Practice): 'Ich verstehe den kurzen Text.'",
           questionGerman: "Sprechen Sie laut: 'Ich verstehe den kurzen Text.'",
           correctAnswer: "Ich verstehe den kurzen Text",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",

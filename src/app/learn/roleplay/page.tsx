@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Clock, ArrowRight, Sparkles } from 'lucide-react';
 import { ROLEPLAY_SCENARIOS } from '@/lib/content/roleplay-scenarios';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 const HOOKS: Record<string, string> = {
   cafe: 'The barista asks "Was darf es sein?" — can you order a Kaffee like you do at the chaayakkada?',
@@ -28,13 +28,13 @@ const LEVEL_COLORS: Record<string, string> = {
 export default function RoleplayIndexPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 safe-top safe-bottom">
-      {/* Kuttan hero */}
+      {/* Nivin hero */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-6 flex items-start gap-3"
       >
-        <Kuttan mood="excited" size="sm" />
+        <Nivin mood="excited" size="sm" />
         <div className="flex-1 pt-1">
           <h1 className="text-2xl font-bold">
             <span className="gradient-text">Speaking Roleplay</span>

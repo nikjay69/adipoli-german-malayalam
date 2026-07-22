@@ -28,18 +28,19 @@ export const MODULE_6: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Imagined: Local Bäckerei Schmidt",
           sceneType: "bakery",
           timeOfDay: "morning",
-          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. The smell of fresh Brot and Brötchen is everywhere. The counter is filled with loaves of all shapes and sizes — 300 varieties! It feels like a high-stakes puzzle trying to choose just one. For a Malayali, bread is usually a side, but here it's the king of the table. Time to learn your staples, machane!",
+          description: "Frau Fischer's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. The smell of fresh Brot and Brötchen is everywhere. The counter is filled with loaves of all shapes and sizes — 300 varieties! It feels like a high-stakes puzzle trying to choose just one. For a Malayali, bread is usually a side, but here it's the king of the table. Time to learn your staples, machane!",
         },
         narrative: {
           previousRecap: "You've mastered the daily routine. Now, let's fuel up! Food is the heart of every culture, and Germany is no different.",
           currentObjective: "Identify common foods with their correct articles and compare German/Kerala staples",
           nextTeaser: "Next: thirst quenchers! From Kaffee to the sparkling water mystery!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Food-inde karyathil no compromise. Germany-il bread ('Brot') aanu main player. Nammukku choru (rice) poleyaanu ivide bread.",
           "Articles (der, die, das) food words-innu valare important aanu. 'Die Kartoffel' (potato) is like our rice substitute. Ellaam articles-oodu koodi vegam set aakkaam!",
           "Pinne 'scharf' (spicy) — German level-um Kerala level-um thammil valya difference undorkkane! Let's eat!",
@@ -55,15 +56,15 @@ export const MODULE_6: Module = {
           {
             moment: "You want to say 'The potato is delicious' (Kartoffel = bread of Germany). Which article do you use?",
             options: [
-              { text: "Die Kartoffel ist lecker.", isCorrect: true, response: "Exactly! Kartoffel is feminine (die). You correctly paired the article and adjective!", kuttanReaction: "Adipoli! Food genders theriyaathe handle cheyyunnathu valya karyamaanu. You're a pro! 🔥" },
-              { text: "Der Kartoffel ist lecker.", isCorrect: false, response: "Aiyyo! 'Kartoffel' is feminine (die). Most vegetable words end in '-e' and are often feminine.", kuttanReaction: "Vite machane! Gender article care venam. 'die Kartoffel' ennu thanne parayanam. Try again! 😬" },
+              { text: "Die Kartoffel ist lecker.", isCorrect: true, response: "Exactly! Kartoffel is feminine (die). You correctly paired the article and adjective!", peerReaction: "Adipoli! Food genders theriyaathe handle cheyyunnathu valya karyamaanu. You're a pro! 🔥" },
+              { text: "Der Kartoffel ist lecker.", isCorrect: false, response: "Aiyyo! 'Kartoffel' is feminine (die). Most vegetable words end in '-e' and are often feminine.", peerReaction: "Vite machane! Gender article care venam. 'die Kartoffel' ennu thanne parayanam. Try again! 😬" },
             ],
           },
           {
             moment: "How do you tell someone 'I like it spicy' (scharf)?",
             options: [
-              { text: "Ich esse gern scharf.", isCorrect: true, response: "Correct! 'gern' (with pleasure) and 'scharf' (spicy) is a powerful combo for any Malayali!", kuttanReaction: "Superb! Kerala taste-inte brand ambassador thanne thanne! 'Scharf' is the way! ⭐" },
-              { text: "Ich esse scharf.", isCorrect: false, response: "Technically okay, but adding 'gern' makes it much more natural when speaking about preferences.", kuttanReaction: "Aiyyo! 'Gern' koodi add cheythal nalla vibe aayirunnu. Preference parayumpol athannu better. Try again! 🚫" },
+              { text: "Ich esse gern scharf.", isCorrect: true, response: "Correct! 'gern' (with pleasure) and 'scharf' (spicy) is a powerful combo for any Malayali!", peerReaction: "Superb! Kerala taste-inte brand ambassador thanne thanne! 'Scharf' is the way! ⭐" },
+              { text: "Ich esse scharf.", isCorrect: false, response: "Technically okay, but adding 'gern' makes it much more natural when speaking about preferences.", peerReaction: "Aiyyo! 'Gern' koodi add cheythal nalla vibe aayirunnu. Preference parayumpol athannu better. Try again! 🚫" },
             ],
           },
         ],
@@ -196,7 +197,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-1-1",
           type: "matching",
-          question: "Kuttan labels the Goethe Kochi canteen counter in German. Match each food label:",
+          question: "Nivin labels the Goethe Kochi canteen counter in German. Match each food label:",
           options: ["das Brot", "der Reis", "das Gemüse", "der Käse", "das Obst"],
           correctAnswer: ["bread", "rice", "vegetables", "cheese", "fruit"],
           explanation: "das Brot, der Reis, das Gemüse, der Käse, das Obst — learn every food WITH its article. You'll need it the second you order 'einen/ein/eine' anything.",
@@ -250,7 +251,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-1-6",
           type: "type-answer",
-          question: "Frau Weber writes 'Mein Lieblingsessen' on the board and points at Kuttan: 'Erzähl mal!' He freezes — help him out. Type in English what she wants him to talk about:",
+          question: "Frau Fischer writes 'Mein Lieblingsessen' on the board and points at Nivin: 'Erzähl mal!' He freezes — help him out. Type in English what she wants him to talk about:",
           correctAnswer: "My favourite food",
           explanation: "German builds compound words: Lieblings (favourite) + Essen (food) = Lieblingsessen. You can use 'Lieblings-' with anything: Lieblingsfilm (favourite movie), Lieblingslied (favourite song)!",
           xpReward: 15
@@ -258,7 +259,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-1-7",
           type: "dictation",
-          question: "Canteen chatter at Goethe Kochi: the cook asks Kuttan what he actually eats at home. Listen to his answer and type exactly what you hear.",
+          question: "Canteen chatter at Goethe Kochi: the cook asks Nivin what he actually eats at home. Listen to his answer and type exactly what you hear.",
           correctAnswer: "Ich esse gern Reis mit Curry",
           explanation: "A very typical sentence for a Malayali learning German — and no article needed for 'Reis' or 'Curry' when speaking generally!",
           xpReward: 25,
@@ -267,7 +268,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-1-8",
           type: "free-text",
-          question: "Kuttan's Amma eyes the bakery bread on the table with deep suspicion. Defend it in German — 'Bread is healthy.' (Brot, gesund):",
+          question: "Nivin's Amma eyes the bakery bread on the table with deep suspicion. Defend it in German — 'Bread is healthy.' (Brot, gesund):",
           correctAnswer: "Brot ist gesund",
           explanation: "'Brot ist gesund.' — remember that all German nouns are capitalized, even mid-sentence!",
           xpReward: 30
@@ -286,7 +287,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-1-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: at the canteen he announces 'Ich gern esse Reis.' The verb must stay in slot 2 — 'gern' comes after it! Say it right: 'Ich esse gern Reis.'",
+          question: "Repair Nivin's slip: at the canteen he announces 'Ich gern esse Reis.' The verb must stay in slot 2 — 'gern' comes after it! Say it right: 'Ich esse gern Reis.'",
           questionGerman: "Sprechen Sie laut: 'Ich esse gern Reis.'",
           correctAnswer: "Ich esse gern Reis",
           explanation: "Verb second, always: Ich ESSE gern Reis. Pushing the verb to slot 3 ('Ich gern esse') is the #1 Malayali word-order slip — English lets you say 'I gladly eat', German never does.",
@@ -417,6 +418,7 @@ export const MODULE_6: Module = {
       duration: "45 min",
       xpReward: 120,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "WG Kitchen, Weekend Breakfast",
           sceneType: "home",
@@ -428,7 +430,7 @@ export const MODULE_6: Module = {
           currentObjective: "Identify drinks with articles and express likes/dislikes using 'gern'",
           nextTeaser: "Next: formal dining! Let's order at a real German restaurant!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Welcome to the juice and water capital. Germans love their 'Saft' (juice) and their 'Sprudel' (sparkling water).",
           "Most drinks are masculine ('der Kaffee', 'der Tee'), but 'das Wasser' is neuter. Ithu oru shortcut aayi orkkane.",
           "Pinne order cheyyumpol 'Ich hätte gern...' ennu parayenam. Nalla polite aayi drinks set aakkaam!",
@@ -444,15 +446,15 @@ export const MODULE_6: Module = {
           {
             moment: "You want a plain water (no gas). What do you ask for?",
             options: [
-              { text: "Stilles Wasser, bitte.", isCorrect: true, response: "Exactly! 'Still' or 'ohne Gas' is what you need for non-fizzy water. You've avoided the trap!", kuttanReaction: "Adipoli! Sparkling water kudippikkaathe nallonam handle cheythallo. You're a pro! 🔥" },
-              { text: "Wasser mit Gas, bitte.", isCorrect: false, response: "Aiyyo! 'Mit Gas' means sparkling! Your mouth is about to get a bubble surprise!", kuttanReaction: "Vite machane! Bubbles venda enkil 'still' ennu thanne parayanam. Try again! 😬" },
+              { text: "Stilles Wasser, bitte.", isCorrect: true, response: "Exactly! 'Still' or 'ohne Gas' is what you need for non-fizzy water. You've avoided the trap!", peerReaction: "Adipoli! Sparkling water kudippikkaathe nallonam handle cheythallo. You're a pro! 🔥" },
+              { text: "Wasser mit Gas, bitte.", isCorrect: false, response: "Aiyyo! 'Mit Gas' means sparkling! Your mouth is about to get a bubble surprise!", peerReaction: "Vite machane! Bubbles venda enkil 'still' ennu thanne parayanam. Try again! 😬" },
             ],
           },
           {
             moment: "How do you say 'I like to drink tea' properly in German?",
             options: [
-              { text: "Ich trinke gern Tee.", isCorrect: true, response: "Correct! 'gern' (to like doing something) follows the verb immediately.", kuttanReaction: "Superb! 'Ich trinke gern' — regular pattern exactly catch cheythallo! ⭐" },
-              { text: "Ich gern trinke Tee.", isCorrect: false, response: "No, 'gern' doesn't come before the verb. Position 2 is for the verb, and 'gern' follows it.", kuttanReaction: "Aiyyo! Verb first, 'gern' second. Position properly fix cheyyaam. Try again! 🚫" },
+              { text: "Ich trinke gern Tee.", isCorrect: true, response: "Correct! 'gern' (to like doing something) follows the verb immediately.", peerReaction: "Superb! 'Ich trinke gern' — regular pattern exactly catch cheythallo! ⭐" },
+              { text: "Ich gern trinke Tee.", isCorrect: false, response: "No, 'gern' doesn't come before the verb. Position 2 is for the verb, and 'gern' follows it.", peerReaction: "Aiyyo! Verb first, 'gern' second. Position properly fix cheyyaam. Try again! 🚫" },
             ],
           },
         ],
@@ -534,7 +536,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-2-2",
           type: "multiple-choice",
-          question: "Frau Weber asks the class what they drink. Kuttan wants to say 'I like to drink tea' — which line does he say?",
+          question: "Frau Fischer asks the class what they drink. Meera wants to say 'I like to drink tea' — which line does she say?",
           options: [
             "Ich trinke gern Tee.",
             "Ich gern trinke Tee.",
@@ -569,7 +571,7 @@ export const MODULE_6: Module = {
           id: "ex6-2-5",
           type: "type-answer",
           question:
-            "A classmate offers Kuttan a beer after class. He declines politely: 'Ich trinke ___ gern Bier.' Type the missing word (the one that flips 'like' to 'don't like'):",
+            "A classmate offers Meera a beer after class. She declines politely: 'Ich trinke ___ gern Bier.' Type the missing word (the one that flips 'like' to 'don't like'):",
           correctAnswer: "nicht",
           explanation:
             "Like → gern, Don't like → nicht gern. Position: verb + NICHT + gern. 'Ich trinke nicht gern Bier.' This pattern works with any verb!",
@@ -578,7 +580,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-2-6",
           type: "dictation",
-          question: "The canteen chechi asks Kuttan how he takes his tea. Listen to his answer and type exactly what you hear.",
+          question: "The canteen chechi asks Meera how she takes her tea. Listen to her answer and type exactly what you hear.",
           correctAnswer: "Ich trinke gern Tee mit Milch",
           explanation: "'Tee mit Milch' — exactly how many Malayalis like their chai! gern right after the verb, as always.",
           xpReward: 25,
@@ -606,7 +608,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-2-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: he orders 'Ich möchte ein Kaffee, bitte.' Kaffee is masculine — after möchten it needs 'einen'! Say it right: 'Ich möchte einen Kaffee, bitte.'",
+          question: "Repair Meera's slip: she orders 'Ich möchte ein Kaffee, bitte.' Kaffee is masculine — after möchten it needs 'einen'! Say it right: 'Ich möchte einen Kaffee, bitte.'",
           questionGerman: "Sprechen Sie laut: 'Ich möchte einen Kaffee, bitte.'",
           correctAnswer: "Ich möchte einen Kaffee, bitte",
           explanation: "der Kaffee → einen Kaffee when it's the thing you want (accusative). 'Ein Kaffee, bitte' alone is heard everywhere, but after 'Ich möchte...' the -en is the exam-correct form.",
@@ -701,18 +703,19 @@ export const MODULE_6: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Imagined: Gasthaus 'Zum Hirschen'",
           sceneType: "restaurant",
           timeOfDay: "evening",
-          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. A cozy, traditional German restaurant with wooden tables and a warm atmosphere. The menu (Speisekarte) is filled with hearty dishes. Stefan is across from you, and the waiter is approaching. It's time to put your German to the ultimate test: ordering a full meal and handled the bill like a local, machane!",
+          description: "Frau Fischer's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. A cozy, traditional German restaurant with wooden tables and a warm atmosphere. The menu (Speisekarte) is filled with hearty dishes. Stefan is across from you, and the waiter is approaching. It's time to put your German to the ultimate test: ordering a full meal and handled the bill like a local, machane!",
         },
         narrative: {
           previousRecap: "You've survived the breakfast drinks. Now, it's time for the main event — a real German dinner!",
           currentObjective: "Order food and drinks politely, ask for recommendations, and handle the bill/tipping",
           nextTeaser: "Next: opinions! What do you like? What do you hate? Let's talk about preferences!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Restaurant experience is separate level scene aanu. Ivide nammal polite aayi 'Ich hätte gern...' ennu thanne parayanam.",
           "Speisekarte read cheyyunnathu pichakamaayi orkkane — Vorspeise (starter), Hauptgericht (main), Nachspeise (dessert).",
           "Pinne billing-il 'Stimmt so!' magic marakkaruthu. Tipping culture Germany-il special aanu. Let's order!",
@@ -728,15 +731,15 @@ export const MODULE_6: Module = {
           {
             moment: "The waiter asks what you'd like. How do you order the Schnitzel politely?",
             options: [
-              { text: "Ich hätte gern das Schnitzel.", isCorrect: true, response: "Perfect! 'Ich hätte gern' is the most polite and natural way to order. The waiter is impressed!", kuttanReaction: "Adipoli! 'Ich hätte gern' formula application super! Germany-il ithu oru magic phrase aanu. 🔥" },
-              { text: "Ich will das Schnitzel.", isCorrect: false, response: "Aiyyo! 'Ich will' (I want) sounds very rude and demanding. Use 'Ich hätte gern' instead!", kuttanReaction: "Vite machane! 'Ich will' command pole aayirikkum. Courteous aayi 'hätte gern' parayaam. Try again! 😬" },
+              { text: "Ich hätte gern das Schnitzel.", isCorrect: true, response: "Perfect! 'Ich hätte gern' is the most polite and natural way to order. The waiter is impressed!", peerReaction: "Adipoli! 'Ich hätte gern' formula application super! Germany-il ithu oru magic phrase aanu. 🔥" },
+              { text: "Ich will das Schnitzel.", isCorrect: false, response: "Aiyyo! 'Ich will' (I want) sounds very rude and demanding. Use 'Ich hätte gern' instead!", peerReaction: "Vite machane! 'Ich will' command pole aayirikkum. Courteous aayi 'hätte gern' parayaam. Try again! 😬" },
             ],
           },
           {
             moment: "The bill is 18.50 Euro. You give the waiter 20 Euro and want him to keep the change as a tip. What do you say?",
             options: [
-              { text: "Stimmt so!", isCorrect: true, response: "Exactly! This tells the waiter to keep the rest as a tip. It's the standard German way.", kuttanReaction: "Superb! 'Stimmt so!' means 'it fits like this'. Tipping culture perfect aayi catch cheythallo! ⭐" },
-              { text: "Danke, kein Geld.", isCorrect: false, response: "No, that doesn't make sense. If you say that, the waiter might think you're Refusing to pay or just confused!", kuttanReaction: "Aiyyo! 'Stimmt so!' aanu phrase. Tipping context-il ithu thanne fixed aanu. Try again! 🚫" },
+              { text: "Stimmt so!", isCorrect: true, response: "Exactly! This tells the waiter to keep the rest as a tip. It's the standard German way.", peerReaction: "Superb! 'Stimmt so!' means 'it fits like this'. Tipping culture perfect aayi catch cheythallo! ⭐" },
+              { text: "Danke, kein Geld.", isCorrect: false, response: "No, that doesn't make sense. If you say that, the waiter might think you're Refusing to pay or just confused!", peerReaction: "Aiyyo! 'Stimmt so!' aanu phrase. Tipping context-il ithu thanne fixed aanu. Try again! 🚫" },
             ],
           },
         ],
@@ -888,7 +891,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-3-3",
           type: "type-answer",
-          question: "Rehearsal scene: Kuttan plays the customer, Frau Weber the waiter. He looks up from the Speisekarte and asks her: 'Was empfehlen Sie?' Type in English what he just asked:",
+          question: "Rehearsal scene: Nivin plays the customer, Frau Fischer the waiter. He looks up from the Speisekarte and asks her: 'Was empfehlen Sie?' Type in English what he just asked:",
           correctAnswer: "What do you recommend?",
           explanation:
             "'Empfehlen' = to recommend (a stem-changer: du empfiehlst). 'Was empfehlen Sie?' is a great restaurant phrase — waiters love it when you ask for their recommendation!",
@@ -897,7 +900,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-3-5",
           type: "type-answer",
-          question: "The bill in the rehearsal is €17.50. Kuttan hands over a twenty and says 'Stimmt so!' — the waiter smiles. Type in English what Kuttan just told him:",
+          question: "The bill in the rehearsal is €17.50. Nivin hands over a twenty and says 'Stimmt so!' — the waiter smiles. Type in English what Nivin just told him:",
           correctAnswer: "Keep the change!",
           explanation:
             "'Stimmt so!' = keep the change. German tipping etiquette: round up or add 5-10%. If your bill is 17.50, say 'Zwanzig, bitte' (Twenty, please) and they keep the difference.",
@@ -906,7 +909,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-3-6",
           type: "type-answer",
-          question: "Empty plates at the practice dinner. Frau Weber waits for the one-word food compliment every German host wants to hear: 'Das war sehr ___!' Type the missing word (delicious):",
+          question: "Empty plates at the practice dinner. Frau Fischer waits for the one-word food compliment every German host wants to hear: 'Das war sehr ___!' Type the missing word (delicious):",
           correctAnswer: "lecker",
           explanation:
             "'Lecker' = delicious/yummy — the ultimate food compliment in German. Say 'Das war sehr lecker!' when you finish eating. Your host/waiter will beam with pride!",
@@ -934,7 +937,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-3-8",
           type: "dictation",
-          question: "The meal is over. Kuttan catches the waiter's eye and says the three most important words of the evening. Listen and type exactly what you hear.",
+          question: "The meal is over. Nivin catches the waiter's eye and says the three most important words of the evening. Listen and type exactly what you hear.",
           correctAnswer: "Die Rechnung, bitte",
           explanation: "'Die Rechnung, bitte!' — the phrase that ends every German restaurant visit. Never wait for the bill to arrive on its own; in Germany you must ask.",
           xpReward: 25,
@@ -943,7 +946,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-3-9",
           type: "free-text",
-          question: "You and Kuttan walk into the imagined Berlin restaurant. The host looks at you. Get a table in German — 'A table for two, please.':",
+          question: "You and Nivin walk into the imagined Berlin restaurant. The host looks at you. Get a table in German — 'A table for two, please.':",
           correctAnswer: "Einen Tisch für zwei, bitte",
           explanation: "'Einen Tisch für zwei, bitte.' — Tisch is masculine and it's the thing you're asking for, so ein → einen (accusative).",
           xpReward: 30
@@ -962,7 +965,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-3-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: he asks the waiter for 'das Menü, bitte' — in Germany that orders a fixed SET MEAL, not the menu card! Ask for what he actually wants: 'Die Speisekarte, bitte!'",
+          question: "Repair Nivin's slip: he asks the waiter for 'das Menü, bitte' — in Germany that orders a fixed SET MEAL, not the menu card! Ask for what he actually wants: 'Die Speisekarte, bitte!'",
           questionGerman: "Sprechen Sie laut: 'Die Speisekarte, bitte!'",
           correctAnswer: "Die Speisekarte, bitte",
           explanation: "Menü = set meal of the day; Speisekarte = the menu card. Every Malayali (and every English speaker) walks into this false-friend trap once — now you won't.",
@@ -1075,6 +1078,7 @@ export const MODULE_6: Module = {
       duration: "45 min",
       xpReward: 120,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "WG Kitchen, Late Night Dinner",
           sceneType: "home",
@@ -1086,7 +1090,7 @@ export const MODULE_6: Module = {
           currentObjective: "Express likes and dislikes generally (mögen) and specifically (möchten/gern)",
           nextTeaser: "Module 6 complete! Next: Let's go shopping! Clothes, colors, and the U-Bahn!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Preferences parayumpo confusion varaam. 'Ich mag' means you like it in general. 'Ich möchte' means you want it right now.",
           "Nammude Kerala food-ine patti parayumpol 'Ich mag Biryani' ennu vishamillathe parayaam. Germans-inu 'scharf' (spicy) food istam aanu, but level nokkanam!",
           "Vegetarian aano? 'Ich bin Vegetarier' ennu parayenam. Nammude preferences clear aayi German-il express cheyyaam!",
@@ -1102,15 +1106,15 @@ export const MODULE_6: Module = {
           {
             moment: "You want to say 'I like Biryani' in general. What is the correct German sentence?",
             options: [
-              { text: "Ich mag Biryani.", isCorrect: true, response: "Exactly! 'mögen' is for general likes. Everyone loves Biryani, machane!", kuttanReaction: "Adipoli! 'Ich mag' formula universal aanu. Biryani lovers unit! 🔥" },
-              { text: "Ich möchte Biryani.", isCorrect: false, response: "Nearly! But 'Ich möchte' means you want Biryani RIGHT NOW. 'Ich mag' is for general preference.", kuttanReaction: "Vite machane! Ithu 'wanted now' context alla. General like parayumpol 'mag' mathi. Try again! 😬" },
+              { text: "Ich mag Biryani.", isCorrect: true, response: "Exactly! 'mögen' is for general likes. Everyone loves Biryani, machane!", peerReaction: "Adipoli! 'Ich mag' formula universal aanu. Biryani lovers unit! 🔥" },
+              { text: "Ich möchte Biryani.", isCorrect: false, response: "Nearly! But 'Ich möchte' means you want Biryani RIGHT NOW. 'Ich mag' is for general preference.", peerReaction: "Vite machane! Ithu 'wanted now' context alla. General like parayumpol 'mag' mathi. Try again! 😬" },
             ],
           },
           {
             moment: "How do you correctly say 'I don't like coffee' (der Kaffee)?",
             options: [
-              { text: "Ich mag keinen Kaffee.", isCorrect: true, response: "Correct! 'Kaffee' is masculine, so 'kein' becomes 'keinen' (accusative case). Advanced move!", kuttanReaction: "Superb! Negative preference correct aayi handle cheythallo. You're getting better every day! ⭐" },
-              { text: "Ich mag nicht Kaffee.", isCorrect: false, response: "No, when negating a noun with 'like/have', we use 'kein/keine'.", kuttanReaction: "Aiyyo! Noun negation-u 'kein' venam. 'Ich mag keinen Kaffee' aanu correct form. Try again! 🚫" },
+              { text: "Ich mag keinen Kaffee.", isCorrect: true, response: "Correct! 'Kaffee' is masculine, so 'kein' becomes 'keinen' (accusative case). Advanced move!", peerReaction: "Superb! Negative preference correct aayi handle cheythallo. You're getting better every day! ⭐" },
+              { text: "Ich mag nicht Kaffee.", isCorrect: false, response: "No, when negating a noun with 'like/have', we use 'kein/keine'.", peerReaction: "Aiyyo! Noun negation-u 'kein' venam. 'Ich mag keinen Kaffee' aanu correct form. Try again! 🚫" },
             ],
           },
         ],
@@ -1183,10 +1187,10 @@ export const MODULE_6: Module = {
         {
           id: "ex6-4-1",
           type: "free-text",
-          question: "Frau Weber goes around the class collecting food preferences — not orders, just likes. Kuttan's turn. Type his line in German — 'I like rice' (in general):",
+          question: "Frau Fischer goes around the class collecting food preferences — not orders, just likes. Meera's turn. Type her line in German — 'I like rice' (in general):",
           correctAnswer: "Ich mag Reis.",
           explanation:
-            "'Mögen' expresses a general preference. 'Ich mag Reis.' = I like rice (in general). If he'd said 'Ich möchte Reis', Frau Weber would have sent him to the canteen — that's an order.",
+            "'Mögen' expresses a general preference. 'Ich mag Reis.' = I like rice (in general). If he'd said 'Ich möchte Reis', Frau Fischer would have sent him to the canteen — that's an order.",
           xpReward: 20
         },
         {
@@ -1218,7 +1222,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-4-4",
           type: "matching",
-          question: "Curry three ways — match each sentence to what Kuttan actually means:",
+          question: "Curry three ways — match each sentence to what Meera actually means:",
           options: [
             "Ich mag Curry.",
             "Ich esse gern Curry.",
@@ -1235,7 +1239,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-4-5",
           type: "type-answer",
-          question: "A Malayali who doesn't enjoy fish?! Kuttan's cousin exists, and says so in German: 'Ich esse ___ gern Fisch.' Type the missing word:",
+          question: "A Malayali who doesn't enjoy fish?! Meera's cousin exists, and says so in German: 'Ich esse ___ gern Fisch.' Type the missing word:",
           correctAnswer: "nicht",
           explanation:
             "'Nicht gern' expresses disliking an activity: 'Ich esse nicht gern Fisch.' = I don't like eating fish.",
@@ -1259,7 +1263,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-4-7",
           type: "dictation",
-          question: "A German classmate on the video call asks Kuttan what food he loves most. His answer surprises nobody. Listen and type exactly what you hear.",
+          question: "A German classmate on the video call asks Meera what food she loves most. Her answer surprises nobody. Listen and type exactly what you hear.",
           correctAnswer: "Ich mag indisches Essen",
           explanation: "'indisches' describes the food — adjective before the noun. And don't forget the capital 'E' for 'Essen'!",
           xpReward: 25,
@@ -1268,7 +1272,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-4-8",
           type: "free-text",
-          question: "The canteen chechi offers Kuttan the beef fry. He's vegetarian this month (Amma's orders). Type his refusal in German — 'I don't like meat.' (Fleisch):",
+          question: "The canteen chechi offers Meera the beef fry. She's vegetarian this month (Amma's orders). Type her refusal in German — 'I don't like meat.' (Fleisch):",
           correctAnswer: "Ich mag kein Fleisch",
           explanation: "'kein' negates nouns: Ich mag KEIN Fleisch. Using 'nicht' here ('Ich mag nicht Fleisch') is the classic slip — nicht negates verbs and adjectives, kein negates nouns.",
           xpReward: 30
@@ -1277,7 +1281,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-4-prod-speaking",
           type: "speaking",
-          question: "Frau Weber asks what you actually eat. Tell the truth aloud: 'Ich esse gern Reis, aber ich esse nicht gern Brot.'",
+          question: "Frau Fischer asks what you actually eat. Tell the truth aloud: 'Ich esse gern Reis, aber ich esse nicht gern Brot.'",
           questionGerman: "Sprechen Sie laut: 'Ich esse gern Reis, aber ich esse nicht gern Brot.'",
           correctAnswer: "Ich esse gern Reis, aber ich esse nicht gern Brot",
           explanation: "gern after the verb = 'like to'. The 'aber' contrast sentence is a ready-made Sprechen Teil 2 answer about food.",
@@ -1287,7 +1291,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-4-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: he waves away the beef fry with 'Ich mag nicht Fleisch.' Nouns take kein, not nicht! Say it right: 'Ich mag kein Fleisch.'",
+          question: "Repair Meera's slip: she waves away the beef fry with 'Ich mag nicht Fleisch.' Nouns take kein, not nicht! Say it right: 'Ich mag kein Fleisch.'",
           questionGerman: "Sprechen Sie laut: 'Ich mag kein Fleisch.'",
           correctAnswer: "Ich mag kein Fleisch",
           explanation: "nicht negates verbs and adjectives; kein negates nouns. 'Ich mag kein Fleisch' — this swap is one of the most common Goethe A1 grammar errors, and now it's yours to keep.",
@@ -1382,6 +1386,7 @@ export const MODULE_6: Module = {
       duration: "60 min",
       xpReward: 180,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Gasthaus zum Goldenen Hirsch",
           sceneType: "cafe",
@@ -1393,7 +1398,7 @@ export const MODULE_6: Module = {
           currentObjective: "Use accusative articles correctly when ordering food and expressing wants",
           nextTeaser: "Next up: dative case — giving things TO people gets even trickier!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Namukkipozhum restaurant-il aanu. German-il food order cheyyumbol articles maarum — 'ein' becomes 'einen'. Ithaanu accusative case!",
           "Think of it like this: subject cheyyunna action-nte object-aanu accusative. 'Ich nehme EINEN Kaffee' — 'einen' because Kaffee is masculine and it's the object.",
           "Ayyo don't worry, feminine and neuter articles don't change at all! Only masculine ones get the 'n' upgrade. Let's order!",
@@ -1410,16 +1415,16 @@ export const MODULE_6: Module = {
           {
             moment: "You want to order a coffee. The waiter is waiting. Which is correct?",
             options: [
-              { text: "Ich nehme einen Kaffee, bitte.", isCorrect: true, response: "Perfect! 'Kaffee' is masculine, so 'ein' becomes 'einen' in the accusative.", kuttanReaction: "Adipoli machane! Accusative case sheriyaakki. Waiter impressed aayirikkum! 🔥" },
-              { text: "Ich nehme ein Kaffee, bitte.", isCorrect: false, response: "'Kaffee' is masculine. When it's the object (accusative), 'ein' must become 'einen'.", kuttanReaction: "Aiyyo! Masculine objects-inu 'ein' alla, 'einen' venam. That extra '-en' is the accusative magic!" },
+              { text: "Ich nehme einen Kaffee, bitte.", isCorrect: true, response: "Perfect! 'Kaffee' is masculine, so 'ein' becomes 'einen' in the accusative.", peerReaction: "Adipoli machane! Accusative case sheriyaakki. Waiter impressed aayirikkum! 🔥" },
+              { text: "Ich nehme ein Kaffee, bitte.", isCorrect: false, response: "'Kaffee' is masculine. When it's the object (accusative), 'ein' must become 'einen'.", peerReaction: "Aiyyo! Masculine objects-inu 'ein' alla, 'einen' venam. That extra '-en' is the accusative magic!" },
             ],
           },
           {
             moment: "You're full and want to say you don't want any soup. How do you say it?",
             options: [
-              { text: "Ich möchte keine Suppe.", isCorrect: true, response: "Correct! 'Suppe' is feminine, and feminine accusative stays 'keine' — no change needed!", kuttanReaction: "Superb! Feminine accusative same aanu — no changes. Easy win! ⭐" },
-              { text: "Ich möchte keinen Suppe.", isCorrect: false, response: "'Suppe' is feminine (die Suppe). Only masculine words change in accusative. Feminine stays 'keine'.", kuttanReaction: "Machane, 'Suppe' feminine aanu! Masculine maathram aanu accusative-il maarunnathu. 'Keine Suppe' thanne correct!" },
-              { text: "Ich möchte kein Suppe.", isCorrect: false, response: "'Kein' is for neuter nouns. 'Suppe' is feminine, so it needs 'keine'.", kuttanReaction: "Aiyyo! 'Kein' neuter-inu aanu. Feminine-inu 'keine' venam. Gender article always check cheyyuka!" },
+              { text: "Ich möchte keine Suppe.", isCorrect: true, response: "Correct! 'Suppe' is feminine, and feminine accusative stays 'keine' — no change needed!", peerReaction: "Superb! Feminine accusative same aanu — no changes. Easy win! ⭐" },
+              { text: "Ich möchte keinen Suppe.", isCorrect: false, response: "'Suppe' is feminine (die Suppe). Only masculine words change in accusative. Feminine stays 'keine'.", peerReaction: "Machane, 'Suppe' feminine aanu! Masculine maathram aanu accusative-il maarunnathu. 'Keine Suppe' thanne correct!" },
+              { text: "Ich möchte kein Suppe.", isCorrect: false, response: "'Kein' is for neuter nouns. 'Suppe' is feminine, so it needs 'keine'.", peerReaction: "Aiyyo! 'Kein' neuter-inu aanu. Feminine-inu 'keine' venam. Gender article always check cheyyuka!" },
             ],
           },
         ],
@@ -1557,7 +1562,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-5-2",
           type: "type-answer",
-          question: "The Goethe Kochi canteen has a sambar-looking soup of the day. Kuttan goes for it: 'Ich esse ___ Suppe.' (die Suppe — feminine). Type the missing word:",
+          question: "The Goethe Kochi canteen has a sambar-looking soup of the day. Nivin goes for it: 'Ich esse ___ Suppe.' (die Suppe — feminine). Type the missing word:",
           correctAnswer: "eine",
           explanation:
             "'Suppe' is feminine. Feminine doesn't change in the accusative: eine Suppe. No trap here — the trap is only ever masculine.",
@@ -1566,7 +1571,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-5-3",
           type: "type-answer",
-          question: "At the imagined Bäckerei counter, Kuttan points at a loaf: 'Ich nehme ___ Brot.' (das Brot — neuter). Type the missing word:",
+          question: "At the imagined Bäckerei counter, Nivin points at a loaf: 'Ich nehme ___ Brot.' (das Brot — neuter). Type the missing word:",
           correctAnswer: "ein",
           explanation:
             "'Brot' is neuter. Neuter doesn't change in the accusative: ein Brot. Again — only masculine words move.",
@@ -1605,7 +1610,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-5-7",
           type: "free-text",
-          question: "Rehearsal café: Frau Weber orders for herself AND for Kuttan in one line. Type it in German — 'I would like a coffee and a cola.':",
+          question: "Rehearsal café: Frau Fischer orders for herself AND for Nivin in one line. Type it in German — 'I would like a coffee and a cola.':",
           correctAnswer: "Ich möchte einen Kaffee und eine Cola.",
           explanation:
             "Kaffee is masculine → einen Kaffee. Cola is feminine → eine Cola. One sentence, both halves of the rule — only masculine changes!",
@@ -1614,7 +1619,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-5-8",
           type: "type-answer",
-          question: "At the imagined Imbiss, the cook offers Kuttan a bratwurst. Vegetarian month, Amma's orders: 'Ich esse ___ Fleisch.' (Fleisch — neuter). Type the missing word:",
+          question: "At the imagined Imbiss, the cook offers Nivin a bratwurst. Vegetarian month, Amma's orders: 'Ich esse ___ Fleisch.' (Fleisch — neuter). Type the missing word:",
           correctAnswer: "kein",
           explanation:
             "'Fleisch' is neuter. Neuter kein doesn't change in the accusative: 'Ich esse kein Fleisch.'",
@@ -1631,7 +1636,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-5-11",
           type: "dictation",
-          question: "The canteen chechi asks Kuttan what he's having. One short sentence, one accusative. Listen and type exactly what you hear.",
+          question: "The canteen chechi asks Nivin what he's having. One short sentence, one accusative. Listen and type exactly what you hear.",
           correctAnswer: "Ich nehme einen Kaffee",
           explanation: "'einen Kaffee' — accusative, because the coffee is the object of the action. Hear that -en and you know who's doing what to what.",
           xpReward: 25,
@@ -1640,7 +1645,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-5-12",
           type: "free-text",
-          question: "Amma piles a third helping onto Kuttan's plate. He surrenders in German — 'I am not hungry.' (Hunger is masculine):",
+          question: "Amma piles a third helping onto Nivin's plate. He surrenders in German — 'I am not hungry.' (Hunger is masculine):",
           correctAnswer: "Ich habe keinen Hunger",
           explanation: "'keinen' — Hunger is masculine and in the accusative. (Amma will ignore the grammar and the message, but the examiner won't.)",
           xpReward: 30
@@ -1659,7 +1664,7 @@ export const MODULE_6: Module = {
         {
           id: "ex6-5-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: stuffed after lunch, he groans 'Ich habe kein Hunger.' Hunger is masculine — accusative kein needs -en! Say it right: 'Ich habe keinen Hunger.'",
+          question: "Repair Nivin's slip: stuffed after lunch, he groans 'Ich habe kein Hunger.' Hunger is masculine — accusative kein needs -en! Say it right: 'Ich habe keinen Hunger.'",
           questionGerman: "Sprechen Sie laut: 'Ich habe keinen Hunger.'",
           correctAnswer: "Ich habe keinen Hunger",
           explanation: "der Hunger → keinen Hunger after 'Ich habe'. Dropping the -en on masculine accusative is the single most common slip in this whole module — repair it out loud until it sounds wrong the other way.",

@@ -1,5 +1,7 @@
 // Shared types for course content
 
+import type { LearnerPeerId } from '@/lib/cast';
+
 
 export type RichElement = 
   | { type: 'table'; title?: string; headers: string[]; rows: string[][] }
@@ -44,7 +46,7 @@ export interface DecisionOption {
   text: string;
   isCorrect: boolean;
   response: string;       // What happens in the story after choosing this
-  kuttanReaction: string; // Kuttan's Manglish reaction
+  peerReaction: string; // Assigned peer's Manglish reaction
 }
 
 export interface VocabEncounter {
@@ -59,6 +61,7 @@ export interface DecisionPoint {
 }
 
 export interface StoryScene {
+  learnerOwner: LearnerPeerId;
   setting: {
     name: string;           // e.g. "Bäckerei Schmidt"
     sceneType: string;      // Maps to SceneBackground + ambience (cafe, bahnhof, street, etc.)
@@ -70,7 +73,7 @@ export interface StoryScene {
     currentObjective: string;   // "Order breakfast at the bakery"
     nextTeaser?: string;        // "Tomorrow you'll navigate the U-Bahn..."
   };
-  kuttanIntro: string[];        // Manglish scene-setting lines from Kuttan
+  peerIntro: string[];          // Manglish scene-setting lines from the assigned peer
   vocabEncounters: VocabEncounter[];
   decisionPoints: DecisionPoint[];
 }

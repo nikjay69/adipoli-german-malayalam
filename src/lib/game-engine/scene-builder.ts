@@ -6,6 +6,7 @@ import type { Lesson, Exercise, VocabItem } from '@/lib/content/types';
 import type { GameMoment } from './types';
 import { pickGameType } from './types';
 import { lessonSceneImage } from '@/lib/scene-image';
+import { learnerPeerName } from '@/lib/cast';
 
 /**
  * Build the game sequence for a lesson.
@@ -18,6 +19,8 @@ export function buildGameSequence(
 ): GameMoment[] {
   const moments: GameMoment[] = [];
   const scene = lesson.storyScene;
+  const learnerOwner = scene?.learnerOwner ?? 'nivin';
+  const learnerName = learnerPeerName(learnerOwner);
   const sceneType = scene?.setting.sceneType || 'classroom';
   // Per-lesson painterly backdrop (DECISIONS #9); GameRenderer's <img onError>
   // falls back to the sceneType stock image.
@@ -25,12 +28,12 @@ export function buildGameSequence(
   let momentId = 0;
   const id = () => `m-${momentId++}`;
 
-  // ── 1. Opening scene — Kuttan + scene image + 1 line ──
+  // ── 1. Opening scene — Nivin + scene image + 1 line ──
   moments.push({
     id: id(),
     type: 'scene',
     sceneImage,
-    kuttan: { mood: 'waving', position: 'center' },
+    peer: { id: learnerOwner, mood: 'waving', position: 'center' },
     dialogue: {
       speaker: scene?.setting.name || lesson.title,
       text: scene?.narrative.currentObjective || lesson.description,
@@ -45,7 +48,7 @@ export function buildGameSequence(
       type: 'word-discover',
       sceneImage,
       vocabList: shownVocab,
-      kuttan: { mood: 'excited', position: 'left' },
+      peer: { id: learnerOwner, mood: 'excited', position: 'left' },
       dialogue: {
         speaker: scene?.setting.name || 'Scene',
         text: 'Hear these useful chunks before you use them.',
@@ -75,15 +78,15 @@ export function buildGameSequence(
         id: id(),
         type: 'dialogue',
         sceneImage,
-        kuttan: { mood: 'thinking', position: 'left' },
+        peer: { id: learnerOwner, mood: 'thinking', position: 'left' },
         dialogue: {
-          speaker: 'Kuttan',
+          speaker: learnerName,
           text: dp.moment,
           choices: dp.options.map(opt => ({
             text: opt.text,
             isCorrect: opt.isCorrect,
-            response: opt.response || opt.kuttanReaction,
-            kuttanMood: opt.isCorrect ? 'celebrating' as const : 'sad' as const,
+            response: opt.response || opt.peerReaction,
+            peerMood: opt.isCorrect ? 'celebrating' as const : 'sad' as const,
           })),
         },
       });
@@ -98,7 +101,7 @@ export function buildGameSequence(
       sceneImage,
       exercise,
       gameType: pickGameType(exercise),
-      kuttan: { mood: 'thinking', position: 'left' },
+      peer: { id: learnerOwner, mood: 'thinking', position: 'left' },
     });
 
   });
@@ -108,9 +111,9 @@ export function buildGameSequence(
     id: id(),
     type: 'victory',
     sceneImage,
-    kuttan: { mood: 'celebrating', position: 'center' },
+    peer: { id: learnerOwner, mood: 'celebrating', position: 'center' },
     dialogue: {
-      speaker: 'Kuttan',
+      speaker: learnerName,
       text: scene?.narrative.nextTeaser || 'You proved the lesson ability. Keep going.',
     },
   });

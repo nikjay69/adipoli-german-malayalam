@@ -15,7 +15,7 @@ import {
   Headphones,
   Lock,
 } from 'lucide-react';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 /**
  * On-the-Go — Pimsleur-style audio companion.
@@ -138,7 +138,7 @@ export default function OnTheGoPage() {
         {/* Hero */}
         <div className="mb-6 text-center">
           <div className="mb-3 flex items-center justify-center gap-3">
-            <Kuttan mood={isPlaying ? 'happy' : 'waving'} size="sm" />
+            <Nivin mood={isPlaying ? 'happy' : 'waving'} size="sm" />
             <div className="text-6xl">🎧</div>
           </div>
           <h1 className="mb-1 text-3xl font-extrabold text-white">On the Go</h1>

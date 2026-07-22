@@ -1,4 +1,4 @@
-import type { KuttanMoodImage } from '@/components/character/KuttanImage';
+import type { NivinMoodImage } from '@/components/character/NivinImage';
 import type { VocabItem, Exercise, DecisionPoint } from '@/lib/content/types';
 
 export type VNSceneType = 
@@ -13,7 +13,7 @@ export interface VNCharacter {
   id: string;
   name: string;
   avatar?: string;
-  expression: KuttanMoodImage | string;
+  expression: NivinMoodImage | string;
   position: 'left' | 'center' | 'right';
 }
 

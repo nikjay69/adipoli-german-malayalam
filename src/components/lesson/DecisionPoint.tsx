@@ -4,16 +4,18 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CharacterGuide } from '@/components/character';
 import type { DecisionPoint as DecisionPointType } from '@/lib/content/types';
+import type { LearnerPeerId } from '@/lib/cast';
 import { feedbackCorrect, feedbackWrong } from '@/lib/feedback';
 import { speakGerman } from '@/lib/audio/useGermanTTS';
 import { SpeakButton } from '@/components/speaking/SpeakButton';
 
 interface DecisionPointProps {
   decision: DecisionPointType;
+  learnerOwner: LearnerPeerId;
   onComplete: (wasCorrect: boolean) => void;
 }
 
-export function DecisionPoint({ decision, onComplete }: DecisionPointProps) {
+export function DecisionPoint({ decision, learnerOwner, onComplete }: DecisionPointProps) {
   const [selected, setSelected] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [showSpeakPrompt, setShowSpeakPrompt] = useState(false);
@@ -100,7 +102,8 @@ export function DecisionPoint({ decision, onComplete }: DecisionPointProps) {
               <p className="text-sm text-[var(--foreground)]/70 leading-snug">{selectedOption?.response}</p>
             </div>
             <CharacterGuide
-              messages={selectedOption?.kuttanReaction || ''}
+              messages={selectedOption?.peerReaction || ''}
+              peer={learnerOwner}
               mood={selectedOption?.isCorrect ? 'celebrating' : 'thinking'}
               size="sm"
             />

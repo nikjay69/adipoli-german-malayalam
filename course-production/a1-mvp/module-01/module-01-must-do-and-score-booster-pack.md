@@ -16,7 +16,7 @@ By the end of Module 1, learner can:
 
 ```text
 Hear and answer a first formal greeting.
-Say: Guten Morgen, Frau Weber.
+Say: Guten Morgen, Frau Fischer.
 Say/write: Ich lerne Deutsch.
 Ask: Noch einmal, bitte. / Langsam, bitte.
 Leave: Auf Wiedersehen.
@@ -31,18 +31,18 @@ Closed Module 1 checkpoint comes after Lesson 7.
 ### 1. First audio reply
 
 - **When:** Before Lesson 1 / first mission.
-- **Task:** Play Frau Weber greeting once. Answer aloud.
-- **Input:** `Frau Weber: Guten Morgen.`
-- **Output:** Learner says `Guten Morgen, Frau Weber.`
+- **Task:** Play Frau Fischer greeting once. Answer aloud.
+- **Input:** `Frau Fischer: Guten Morgen.`
+- **Output:** Learner says `Guten Morgen, Frau Fischer.`
 - **Time box:** 3m.
 - **Weakness tag if failed:** `sprechen:greeting_reply`, `hoeren:greetings`.
 
-### 2. Lesson 1 practice — answer Frau Weber
+### 2. Lesson 1 practice — answer Frau Fischer
 
 - **When:** After Lesson 1.
 - **Task:** Shadow 5 lines, then answer 3 teacher prompts.
 - **Output:** Learner says:
-  1. `Guten Morgen, Frau Weber.`
+  1. `Guten Morgen, Frau Fischer.`
   2. `Ja. Ich lerne Deutsch.`
   3. `Auf Wiedersehen.`
 - **Time box:** 12m.
@@ -74,7 +74,7 @@ Closed Module 1 checkpoint comes after Lesson 7.
 - **Output:** Learner says all 10 lines:
   1. `Ich.`
   2. `Ich lerne Deutsch.`
-  3. `Guten Morgen, Frau Weber.`
+  3. `Guten Morgen, Frau Fischer.`
   4. `Auf Wiedersehen.`
   5. `Tschüss.`
   6. `Bitte.`
@@ -99,14 +99,14 @@ Closed Module 1 checkpoint comes after Lesson 7.
 - **When:** After Lesson 4.
 - **Task:** Answer 8 time/context prompts aloud.
 - **Output:**
-  1. 9 AM teacher → `Guten Morgen, Frau Weber.`
+  1. 9 AM teacher → `Guten Morgen, Frau Fischer.`
   2. 2 PM examiner → `Guten Tag.`
   3. 7 PM class → `Guten Abend.`
   4. leaving office → `Auf Wiedersehen.`
   5. friend message → `Hallo.`
   6. leaving friend → `Tschüss.`
   7. unknown adult counter → `Guten Tag.`
-  8. teacher goodbye → `Auf Wiedersehen, Frau Weber.`
+  8. teacher goodbye → `Auf Wiedersehen, Frau Fischer.`
 - **Time box:** 10m.
 - **Pass:** 7/8 context choices correct.
 - **Weakness tags:** `hoeren:greetings`, `sprechen:formality`, `vocab:greeting_set`.
@@ -141,14 +141,14 @@ Closed Module 1 checkpoint comes after Lesson 7.
 ### 10. Lesson 7 full mini-conversation
 
 - **When:** After Lesson 7.
-- **Task:** Perform learner lines aloud with only Frau Weber prompts shown/played.
+- **Task:** Perform learner lines aloud with only Frau Fischer prompts shown/played.
 - **Output:**
   ```text
-  Guten Morgen, Frau Weber.
+  Guten Morgen, Frau Fischer.
   Noch einmal, bitte.
   Ja. Ich lerne Deutsch.
   Danke.
-  Auf Wiedersehen, Frau Weber.
+  Auf Wiedersehen, Frau Fischer.
   ```
 - **Time box:** 12m.
 - **Pass:** completes without reading full transcript; repair phrase allowed.
@@ -177,7 +177,7 @@ Closed Module 1 checkpoint comes after Lesson 7.
 
 - **Do:** Repeat three target replies 5 times each.
 - **Output:** Say once without looking:
-  - `Guten Morgen, Frau Weber.`
+  - `Guten Morgen, Frau Fischer.`
   - `Ja. Ich lerne Deutsch.`
   - `Auf Wiedersehen.`
 - **Time box:** 10m.

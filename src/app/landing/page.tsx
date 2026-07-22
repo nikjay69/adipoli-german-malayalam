@@ -374,7 +374,7 @@ export default function LandingPage() {
                       />
                     </div>
 
-                    {/* Kuttan speech */}
+                    {/* Nivin speech */}
                     <div className="mb-3 flex items-start gap-2">
                       <motion.div
                         animate={{ y: [0, -3, 0] }}

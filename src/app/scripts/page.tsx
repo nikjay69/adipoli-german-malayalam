@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Download, FileText } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { ALL_MODULES } from '@/lib/content/modules';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { useGameStore } from '@/lib/store';
 
 export default function ScriptsPage() {
@@ -26,7 +26,7 @@ export default function ScriptsPage() {
           <ArrowLeft className="w-4 h-4" /> Back
         </button>
         <div className="flex items-start gap-3 mb-5">
-          <Kuttan mood="happy" size="sm" />
+          <Nivin mood="happy" size="sm" />
           <div className="flex-1 pt-2">
             <h1 className="text-2xl font-bold mb-1">
               <span className="gradient-text">Lesson Scripts</span>

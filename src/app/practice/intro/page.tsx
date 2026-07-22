@@ -19,7 +19,7 @@ import {
   EyeOff,
 } from 'lucide-react';
 import { useGameStore } from '@/lib/store';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 // ---------------------------------------------------------------------------
 // SpeechRecognition types declared globally in src/types/speech-recognition.d.ts
@@ -467,14 +467,14 @@ export default function IntroSpeakPage() {
           </p>
         </motion.div>
 
-        {/* Kuttan guidance */}
+        {/* Nivin guidance */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           className="flex items-center gap-2.5 game-card px-3 py-2 mb-3"
         >
-          <Kuttan mood="excited" size="sm" entrance={false} />
+          <Nivin mood="excited" size="sm" entrance={false} />
           <p className="text-xs text-[var(--foreground)]/60 leading-snug">Sich Vorstellen — introduce yourself like a pro at the Goethe exam! 🎤</p>
         </motion.div>
 

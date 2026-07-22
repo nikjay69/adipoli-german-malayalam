@@ -5,7 +5,7 @@
 export type SurpriseTrigger = 'correct_answer' | 'login' | 'combo_milestone' | 'vocab_milestone' | 'random';
 
 export interface SurpriseEvent {
-  type: 'bonus_xp' | 'fun_fact' | 'appu_trick' | 'cultural_tidbit' | 'kuttan_joke';
+  type: 'bonus_xp' | 'fun_fact' | 'cultural_tidbit' | 'peer_note';
   title: string;
   message: string;
   emoji: string;
@@ -32,10 +32,11 @@ const CULTURAL_TIDBITS: SurpriseEvent[] = [
   { type: 'cultural_tidbit', title: 'Culture Tip', message: 'In Germany, being 5 minutes late is considered RUDE. But in Kerala... well, we know IST (Indian Stretchable Time)! Time to adjust! 😅', emoji: '⏰' },
 ];
 
-const KUTTAN_JOKES: SurpriseEvent[] = [
-  { type: 'kuttan_joke', title: 'Kuttan says...', message: 'Machane, German grammar is like Kerala politics — everyone has a different opinion about what\'s correct! 😂', emoji: '🤣' },
-  { type: 'kuttan_joke', title: 'Kuttan says...', message: 'Why did the German article go to therapy? Because it had an identity crisis — der? die? das? 😅', emoji: '😂' },
-  { type: 'kuttan_joke', title: 'Kuttan says...', message: 'German word order: verb at the end, like a Malayalam sentence that forgot where it was going and then suddenly remembered! 🤯', emoji: '🧠' },
+const PEER_NOTES: SurpriseEvent[] = [
+  { type: 'peer_note', title: 'Nivin noticed', message: 'First answer out, then one clean repair. That is real speaking practice.', emoji: '🗣️' },
+  { type: 'peer_note', title: 'Meera noticed', message: 'The shortest correct chunk is enough. Use it before adding detail.', emoji: '✍️' },
+  { type: 'peer_note', title: 'Nivin noticed', message: 'A visible mistake is useful when you repair it yourself.', emoji: '🔧' },
+  { type: 'peer_note', title: 'Meera noticed', message: 'Do not wait for a perfect paragraph. Finish one clear A1 sentence.', emoji: '✅' },
 ];
 
 const BONUS_XP_EVENT: SurpriseEvent = {
@@ -44,14 +45,6 @@ const BONUS_XP_EVENT: SurpriseEvent = {
   message: 'The learning gods are pleased! Here\'s some extra XP!',
   emoji: '🌟',
   xpBonus: 15,
-};
-
-const APPU_TRICK: SurpriseEvent = {
-  type: 'appu_trick',
-  title: 'Appu says hi!',
-  message: 'Appu did a little trunk wave just for you! Keep up the great work!',
-  emoji: '🐘',
-  xpBonus: 5,
 };
 
 // ── Main logic ────────────────────────────────────────────────
@@ -71,15 +64,13 @@ export function checkForSurprise(trigger: SurpriseTrigger, context?: { combo?: n
     case 'correct_answer':
       // 3% chance of bonus XP
       if (roll < 0.03) return BONUS_XP_EVENT;
-      // 2% chance of Appu trick
-      if (roll < 0.05) return APPU_TRICK;
       return null;
 
     case 'login':
       // 15% chance of fun fact on login
       if (roll < 0.08) return randomPick(FUN_FACTS);
       if (roll < 0.12) return randomPick(CULTURAL_TIDBITS);
-      if (roll < 0.15) return randomPick(KUTTAN_JOKES);
+      if (roll < 0.15) return randomPick(PEER_NOTES);
       return null;
 
     case 'combo_milestone':
@@ -97,7 +88,7 @@ export function checkForSurprise(trigger: SurpriseTrigger, context?: { combo?: n
       return null;
 
     case 'random':
-      if (roll < 0.1) return randomPick([...FUN_FACTS, ...CULTURAL_TIDBITS, ...KUTTAN_JOKES]);
+      if (roll < 0.1) return randomPick([...FUN_FACTS, ...CULTURAL_TIDBITS, ...PEER_NOTES]);
       return null;
 
     default:

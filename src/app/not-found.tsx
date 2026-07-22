@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 export default function NotFound() {
   return (
@@ -21,7 +21,7 @@ export default function NotFound() {
         className="relative text-center max-w-sm"
       >
         <div className="flex justify-center mb-4">
-          <Kuttan mood="sad" size="lg" />
+          <Nivin mood="sad" size="lg" />
         </div>
 
         <h1 className="text-5xl font-black gradient-text mb-3">404</h1>

@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Clock, CheckCircle2, Circle, ArrowRight, Trophy, CalendarDays, Lightbulb } from 'lucide-react';
 import { GameButton } from '@/components/game';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { KeralaClassroomScene } from '@/components/course/KeralaClassroomScene';
 import { DailyChallenge, AchievementPopup } from '@/components/engagement';
 import { getRandomMessage } from '@/lib/content/dialogue';
@@ -41,7 +41,7 @@ export default function Home() {
   const router = useRouter();
   const { userProgress, updateStreak, completeTask, unlockAchievement, addXP } = useGameStore();
   const [mounted, setMounted] = useState(false);
-  const [kuttanMessage, setKuttanMessage] = useState('');
+  const [peerMessage, setPeerMessage] = useState('');
   const [newAchievement, setNewAchievement] = useState<AchievementDef | null>(null);
   const [completedModule1MissionIds, setCompletedModule1MissionIds] = useState<Module1MissionId[]>([]);
   const [completedModule2MissionIds, setCompletedModule2MissionIds] = useState<Module2MissionId[]>([]);
@@ -100,7 +100,7 @@ export default function Home() {
   useEffect(() => {
     if (mounted) {
       const isNewUser = userProgress.completedLessons.length === 0;
-      setKuttanMessage(getRandomMessage(isNewUser ? 'welcome' : 'comeback'));
+      setPeerMessage(getRandomMessage(isNewUser ? 'welcome' : 'comeback'));
     }
   }, [mounted, userProgress.completedLessons.length]);
 
@@ -219,10 +219,10 @@ export default function Home() {
             </div>
 
             <div className="mb-5 rounded-[1.4rem] border border-white/10 bg-white/8 p-4 text-sm font-bold text-white/88">
-              <p className="text-white/60">Frau Weber</p>
+              <p className="text-white/60">Frau Fischer</p>
               <p className="mt-1 text-xl font-black text-white">Guten Morgen.</p>
               <p className="mt-4 text-white/60">You</p>
-              <p className="mt-1 text-lg font-black text-[#f0c84d]">Guten Morgen, Frau Weber.</p>
+              <p className="mt-1 text-lg font-black text-[#f0c84d]">Guten Morgen, Frau Fischer.</p>
             </div>
 
             <Link
@@ -302,8 +302,8 @@ export default function Home() {
         </motion.div>
       )}
 
-      {/* Kuttan — centered, clear, friendly; hidden during M1/M2 focus to keep the home path lean */}
-      {kuttanMessage && !shouldSuppressHomeExtras && (
+      {/* Nivin — centered, clear, friendly; hidden during M1/M2 focus to keep the home path lean */}
+      {peerMessage && !shouldSuppressHomeExtras && (
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -312,9 +312,9 @@ export default function Home() {
         >
           <div className="flex items-center justify-center gap-3 game-card px-4 py-2.5 max-w-sm w-full mx-auto">
             <div className="flex-shrink-0">
-              <Kuttan mood={completedCount === 0 ? 'waving' : 'happy'} size="sm" />
+              <Nivin mood={completedCount === 0 ? 'waving' : 'happy'} size="sm" />
             </div>
-            <p className="text-sm text-[var(--foreground)]/80 leading-snug flex-1 line-clamp-2">{kuttanMessage}</p>
+            <p className="text-sm text-[var(--foreground)]/80 leading-snug flex-1 line-clamp-2">{peerMessage}</p>
           </div>
         </motion.div>
       )}

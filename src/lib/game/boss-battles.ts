@@ -9,7 +9,7 @@ export interface BossBattle {
   bossNameGerman: string;
   bossEmoji: string;
   description: string;
-  kuttanWarning: string;
+  peerWarning: string;
   /** Exercises mixed from the module */
   rounds: Exercise[];
   /** Total seconds for the entire battle */
@@ -33,7 +33,7 @@ export const BOSS_BATTLES: Record<number, BossBattle> = {
     bossNameGerman: 'Der Grenzbeamte',
     bossEmoji: '👮',
     description: 'Prove you can survive your first day in Germany! Answer the officer\'s questions correctly to enter the country!',
-    kuttanWarning: 'Machane... border officer ninnod chodikunnu! Ellaam correct-aayi answer cheythal maatre Germany-il keraan pattoo! Ready aano?!',
+    peerWarning: 'Machane... border officer ninnod chodikunnu! Ellaam correct-aayi answer cheythal maatre Germany-il keraan pattoo! Ready aano?!',
     sceneType: 'bahnhof',
     timeLimit: 120,
     passingScore: 70,
@@ -60,7 +60,7 @@ export const BOSS_BATTLES: Record<number, BossBattle> = {
     bossNameGerman: 'Die Bürgeramt Dame',
     bossEmoji: '👩‍💼',
     description: 'Survive the dreaded German registration office — prove your identity in German or get sent to the back of the queue!',
-    kuttanWarning: 'Machane... Bürgeramt-il queue-il nikkaan ishtam illenkil, ellaa questions-um sheriyaayi answer cheyyanam! Aval strict aanu, full German-il maatre samsaarikku!',
+    peerWarning: 'Machane... Bürgeramt-il queue-il nikkaan ishtam illenkil, ellaa questions-um sheriyaayi answer cheyyanam! Aval strict aanu, full German-il maatre samsaarikku!',
     sceneType: 'office',
     timeLimit: 90,
     passingScore: 70,
@@ -87,7 +87,7 @@ export const BOSS_BATTLES: Record<number, BossBattle> = {
     bossNameGerman: 'Der Fahrkartenkontrolleur',
     bossEmoji: '🎫',
     description: 'A stern ticket inspector boards your train — handle numbers, times, and ticket prices correctly or face a 60-euro fine!',
-    kuttanWarning: 'Aiyyo! Ticket inspector vannu! Numbers okke sheriyaayi paranjaal maatre fine adikkilla. German-il numbers reverse aanu, manasilaayi alle? Einundzwanzig = one-and-twenty!',
+    peerWarning: 'Aiyyo! Ticket inspector vannu! Numbers okke sheriyaayi paranjaal maatre fine adikkilla. German-il numbers reverse aanu, manasilaayi alle? Einundzwanzig = one-and-twenty!',
     sceneType: 'bahnhof',
     timeLimit: 100,
     passingScore: 70,
@@ -114,7 +114,7 @@ export const BOSS_BATTLES: Record<number, BossBattle> = {
     bossNameGerman: 'Die neugierige Nachbarin',
     bossEmoji: '👵',
     description: 'Your German neighbor wants to know EVERYTHING about your family — describe your Kerala kudumbam without making mistakes!',
-    kuttanWarning: 'Machane, ee Nachbarin full curious aanu! Ninte family-ye patti ellaam chodyam chodikyum. Mein, meine, der, die okke sheriyaayi use cheyyaanam, illenkil aval confuse aavum!',
+    peerWarning: 'Machane, ee Nachbarin full curious aanu! Ninte family-ye patti ellaam chodyam chodikyum. Mein, meine, der, die okke sheriyaayi use cheyyaanam, illenkil aval confuse aavum!',
     sceneType: 'kitchen',
     timeLimit: 110,
     passingScore: 70,
@@ -141,7 +141,7 @@ export const BOSS_BATTLES: Record<number, BossBattle> = {
     bossNameGerman: 'Der strenge Chef',
     bossEmoji: '👔',
     description: 'Your German boss interviews you about your daily routine — describe your day perfectly to land the job!',
-    kuttanWarning: 'Eda, ee Chef angane valya strict aanu! Ninte daily routine German-il sheriyaayi parayaanam. Separable verbs marakkaruthu — aufstehen, anfangen okke verb end-il varum!',
+    peerWarning: 'Eda, ee Chef angane valya strict aanu! Ninte daily routine German-il sheriyaayi parayaanam. Separable verbs marakkaruthu — aufstehen, anfangen okke verb end-il varum!',
     sceneType: 'office',
     timeLimit: 120,
     passingScore: 70,
@@ -168,7 +168,7 @@ export const BOSS_BATTLES: Record<number, BossBattle> = {
     bossNameGerman: 'Der Sternekoch',
     bossEmoji: '👨‍🍳',
     description: 'A Michelin-star chef tests your German food vocabulary — order a full meal correctly or go hungry tonight!',
-    kuttanWarning: 'Machane, ee chef-inte restaurant-il menu German-il maatre undu! Nee sheriyaayi order cheythillenkil biriyani-kku pakaram sauerkraut kittum! Food words ellaam padichittunde alle?',
+    peerWarning: 'Machane, ee chef-inte restaurant-il menu German-il maatre undu! Nee sheriyaayi order cheythillenkil biriyani-kku pakaram sauerkraut kittum! Food words ellaam padichittunde alle?',
     sceneType: 'cafe',
     timeLimit: 110,
     passingScore: 70,
@@ -195,7 +195,7 @@ export const BOSS_BATTLES: Record<number, BossBattle> = {
     bossNameGerman: 'Die Kassiererin',
     bossEmoji: '🛒',
     description: 'A lightning-fast German cashier fires prices and questions at you — handle your shopping like a pro!',
-    kuttanWarning: 'Eda, German supermarket-il cashier angane speed-il aanu! Tüte venamoo, Kassenbon venamoo okke chodikyum. Numbers sheriyaayi parayan padichittille? Ivide cash maatre nadakkoo, card illa!',
+    peerWarning: 'Eda, German supermarket-il cashier angane speed-il aanu! Tüte venamoo, Kassenbon venamoo okke chodikyum. Numbers sheriyaayi parayan padichittille? Ivide cash maatre nadakkoo, card illa!',
     sceneType: 'street',
     timeLimit: 120,
     passingScore: 70,
@@ -222,7 +222,7 @@ export const BOSS_BATTLES: Record<number, BossBattle> = {
     bossNameGerman: 'Der Vermieter',
     bossEmoji: '🏠',
     description: 'Impress a tough German landlord to get the apartment — describe your needs and understand the lease terms!',
-    kuttanWarning: 'Machane, Germany-il apartment kittaan enthu paadu aanu ariyaamalle! Ee Vermieter-odu rooms, furniture, rent okke German-il sheriyaayi samsaarikanam. Dativ prepositions marakalle — in DER Küche, in DEM Zimmer!',
+    peerWarning: 'Machane, Germany-il apartment kittaan enthu paadu aanu ariyaamalle! Ee Vermieter-odu rooms, furniture, rent okke German-il sheriyaayi samsaarikanam. Dativ prepositions marakalle — in DER Küche, in DEM Zimmer!',
     sceneType: 'kitchen',
     timeLimit: 130,
     passingScore: 70,
@@ -249,7 +249,7 @@ export const BOSS_BATTLES: Record<number, BossBattle> = {
     bossNameGerman: 'Der Busfahrer',
     bossEmoji: '🚌',
     description: 'A grumpy bus driver only speaks German — navigate public transport and give directions to prove you can survive on the streets!',
-    kuttanWarning: 'Aiyyo machane, ee bus driver samsaarikkunnathu German maatre aanu! KSRTC-yil kayariya experience undenkilum ivide German vേnam. Links, rechts, geradeaus okke padichittund alle? Bus stop kazhinjaal pani kittum!',
+    peerWarning: 'Aiyyo machane, ee bus driver samsaarikkunnathu German maatre aanu! KSRTC-yil kayariya experience undenkilum ivide German vേnam. Links, rechts, geradeaus okke padichittund alle? Bus stop kazhinjaal pani kittum!',
     sceneType: 'bahnhof',
     timeLimit: 150,
     passingScore: 70,

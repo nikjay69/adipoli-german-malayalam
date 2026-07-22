@@ -1,6 +1,6 @@
 # Module 1 · Lesson 02 Video Script — Why A1 Matters for Malayalis
 
-Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs)
+Updated: 2026-06-10 (quality pass: honest length, Meera thread, recording specs)
 
 **Purpose:** Keep motivation short and practical: learners understand the exact A1 path and produce one personal reason sentence.
 
@@ -9,8 +9,8 @@ Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs
 **Recording spec (applies to every drill/pause in this script):**
 
 - Every practice pause: model audio → `[PAUSE 3s]` silence → model audio again. Writing pauses: `[PAUSE 15s]`.
-- All Frau Weber / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
-- Frau Weber appears in a video-call frame or at the Goethe Kochi desk. Kuttan and the learner are always physically in Kerala.
+- All Frau Fischer / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
+- Frau Fischer appears in a video-call frame or at the Goethe Kochi desk. Meera and the learner are in the Kerala practice setting.
 
 **Target length:** 12 minutes. Dense, no filler — every block earns its minutes.
 
@@ -18,9 +18,9 @@ Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs
 
 ---
 
-## 0:00–0:45 — Hook: Kuttan's first full German sentence
+## 0:00–0:45 — Hook: Meera's first full German sentence
 
-**Scene:** Kuttan in his Kochi room — ceiling fan on, chai on the desk. On the wall calendar, the Goethe A1 exam date is circled in red. He opens the Adipoli app: one card, `Goethe A1 path`. He takes a breath and says his first-ever full German sentence aloud.
+**Scene:** Meera at a home study desk in Kerala — ceiling fan on, chai on the desk. On the wall calendar, the Goethe A1 exam date is circled in red. She opens the Adipoli app: one card, `Goethe A1 path`. She takes a breath and says her first full German sentence aloud.
 
 **Model audio (pre-rendered):**
 
@@ -28,7 +28,7 @@ Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs
 
 **Presenter:**
 
-[Boss explains in Malayalam/Manglish: “A1 is not full German. A1 is the first survival/exam level. Kuttan has one date on the calendar and one path. So do you.”]
+[Boss explains in Malayalam/Manglish: “A1 is not full German. A1 is the first survival/exam level. Meera has one date on the calendar and one path. So do you.”]
 
 **Practice pause:**
 
@@ -83,7 +83,7 @@ Every lesson:
 
 [Boss explains in Malayalam/Manglish: This course is spoon-fed on purpose — watch this, say this, do this check, fix this weak spot. Weak in listening? Listening recovery. Weak in speaking? Speaking recovery. Not “revise everything.”]
 
-**Visual (20 seconds): Kuttan's app screen.** Two cards visible:
+**Visual (20 seconds): Meera's app screen.** Two cards visible:
 
 ```text
 Must-do: answer 5 greetings
@@ -143,9 +143,9 @@ I am learning German.
 
 ---
 
-## 7:00–8:30 — Kuttan's reason — and yours
+## 7:00–8:30 — The reason picker — and yours
 
-**Scene:** Kuttan looks at the circled exam date. An imagination bubble opens above him: dream-Kuttan in an Ausbildung workshop in Germany. The bubble pops — he is still at his Kochi desk. He ticks one box in the app.
+**Scene:** Meera looks at the circled exam date. The app shows an editable reason picker. She does not choose a canonical reason on camera; the learner selects the one that is true for them.
 
 **On-screen choices:**
 
@@ -154,13 +154,13 @@ My reason:
 □ Goethe A1 exam
 □ Family / partner
 □ Germany plan
-☑ Work / Ausbildung   ← Kuttan's tick
+□ Work / Ausbildung
 □ Confidence
 ```
 
 **Presenter:**
 
-[Boss explains in Malayalam/Manglish: Kuttan's reason is the Ausbildung dream — for now it lives in the bubble, and the calendar date is the bridge. Choose one reason. Today we only need one sentence.]
+[Boss explains in Malayalam/Manglish: These are learner options, not Meera's résumé. Choose the one reason that is true for you. Today we only need one sentence.]
 
 **Learner output:**
 
@@ -242,7 +242,7 @@ Closed check: no notes. No Google. No ChatGPT.
 
 ## 11:15–12:00 — CTA
 
-**Scene:** Kuttan re-circles the exam date on the calendar and closes the app for the day.
+**Scene:** Meera re-circles the exam date on the calendar and closes the app for the day.
 
 **Recap on screen:**
 
@@ -265,8 +265,8 @@ Next: train German sounds
 
 ## Production notes
 
-- Keep this lesson energetic; no long migration/Germany lecture. Germany appears only inside Kuttan's imagination bubble.
-- Use one course-path graphic only; avoid dashboard/roadmap clutter. Kuttan's app screen gets 20 seconds, no more.
+- Keep this lesson energetic; no long migration/Germany lecture and no invented cast destination, degree, or occupation.
+- Use one course-path graphic only; avoid dashboard/roadmap clutter. Meera's app screen gets 20 seconds, no more.
 - Let Boss speak naturally in Malayalam/Manglish for motivation, but keep on-screen text short.
 - Exam seriousness: show A1 as practical output, not fear marketing.
 - All German model lines pre-rendered per the recording spec above.

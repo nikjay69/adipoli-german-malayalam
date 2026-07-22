@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { FrauWeber } from '@/components/character/FrauWeber';
-import { KUTTAN_MOOD_IMAGES } from '@/components/character/KuttanImage';
+import { FrauFischer } from '@/components/character/FrauFischer';
+import { NIVIN_MOOD_IMAGES } from '@/components/character/NivinImage';
 import { useGameStore } from '@/lib/store';
 import { ArrowRight } from 'lucide-react';
 
@@ -69,16 +69,16 @@ export default function IntroPage() {
                 Goethe-Kochi · A1
               </span>
             </div>
-            <FrauWeber mood="greeting" className="absolute bottom-0 left-1 h-[8.75rem] w-auto" />
+            <FrauFischer mood="greeting" className="absolute bottom-0 left-1 h-[8.75rem] w-auto" />
             <motion.img
-              src={KUTTAN_MOOD_IMAGES.waving}
-              alt="Kuttan, your study buddy, waving hello"
+              src={NIVIN_MOOD_IMAGES.waving}
+              alt="Nivin, your study buddy, waving hello"
               className="absolute bottom-0 right-1 h-[8.25rem] w-auto object-contain object-bottom drop-shadow-lg scale-x-[-1]"
               animate={{ y: [0, -3, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
             />
-            <span className="absolute bottom-2 left-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.6rem] font-black text-white/85">Frau Weber</span>
-            <span className="absolute bottom-2 right-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.6rem] font-black text-white/85">Kuttan</span>
+            <span className="absolute bottom-2 left-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.6rem] font-black text-white/85">Frau Fischer</span>
+            <span className="absolute bottom-2 right-2 rounded-full bg-[#0d1a0d]/78 px-2 py-0.5 text-[0.6rem] font-black text-white/85">Nivin</span>
           </div>
         </div>
 

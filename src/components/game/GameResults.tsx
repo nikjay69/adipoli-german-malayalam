@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { Appu } from '@/components/character/Appu';
 import { Confetti } from './Confetti';
 
@@ -45,7 +45,7 @@ export function GameResults({ score, stats, onPlayAgain, gameName }: GameResults
           transition={{ type: 'spring', delay: 0.2 }}
           className="flex items-end justify-center gap-2 mb-4"
         >
-          <Kuttan
+          <Nivin
             mood={isPerfect ? 'celebrating' : isGood ? 'happy' : 'sad'}
             size="md"
           />

@@ -36,9 +36,11 @@ export default function Module2FromKeralaMissionPage() {
             <ConversationRepairStep
               title="Woher kommen Sie?"
               hideTitle
-              speakerName="Frau Weber"
+              speakerName="Frau Fischer"
               speakerLine="Woher kommen Sie?"
-              learnerName="You"
+              learnerName="Example"
+              learnerPeer="meera"
+              showLearnerPeer={false}
               learnerLine="Ich komme aus Kerala. Ich wohne in Kochi."
               audioSrc={audioSources.modelKerala}
               audioLabel="Your origin"

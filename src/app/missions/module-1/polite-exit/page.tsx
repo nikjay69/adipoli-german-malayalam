@@ -41,7 +41,7 @@ export default function Module1PoliteExitMissionPage() {
               sceneVisualVariant="ai-study"
               speakerName={practice.scene.speakerName}
               speakerLine={practice.scene.speakerLine}
-              learnerName="You"
+              learnerName="Nivin"
               learnerLine="Vielen Dank. Auf Wiedersehen."
               audioSrc={practice.scene.audioSrc}
               audioLabel="Your line"

@@ -15,8 +15,10 @@ export interface GameStoryContext {
   title: string;
   /** Narrative setup text */
   narrative: string;
-  /** Kuttan's Manglish intro */
-  kuttanSays: string;
+  /** Nivin's Manglish intro */
+  peerSays?: string;
+  /** @deprecated Compatibility field for legacy game pages. */
+  kuttanSays?: string;
   /** Emoji for the scene */
   emoji: string;
 }
@@ -86,7 +88,7 @@ export function GameStoryWrapper({ story, children }: GameStoryWrapperProps) {
               transition={{ delay: 0.8 }}
             >
               <CharacterGuide
-                messages={story.kuttanSays}
+                messages={story.peerSays ?? story.kuttanSays ?? ''}
                 mood="excited"
                 size="sm"
               />
@@ -125,77 +127,77 @@ export const GAME_STORIES: Record<string, GameStoryContext> = {
     scene: 'street',
     title: 'Sorting Day at REWE!',
     narrative: 'You got a part-time job at REWE supermarket. Your task: sort every item into the right aisle — der, die, or das. The manager is watching!',
-    kuttanSays: 'Machane! REWE supermarket-il nammal job kittiyi! Items sort cheyyuka — der, die, das aisle-il! Manager nokkunnund!',
+    peerSays: 'Machane! REWE supermarket-il nammal job kittiyi! Items sort cheyyuka — der, die, das aisle-il! Manager nokkunnund!',
     emoji: '🛒',
   },
   'speed-quiz': {
     scene: 'bahnhof',
     title: 'Airport Dash!',
     narrative: 'Your flight is boarding in 5 minutes! Answer vocab questions as fast as you can while running through the airport. Every second counts!',
-    kuttanSays: 'Flight boarding aakunnuuuu! Speed-il answer cheyy machane — nee miss cheythal plane poyi!',
+    peerSays: 'Flight boarding aakunnuuuu! Speed-il answer cheyy machane — nee miss cheythal plane poyi!',
     emoji: '✈️',
   },
   'number-blitz': {
     scene: 'street',
     title: 'Kochi Fish Market... auf Deutsch!',
     narrative: 'Imagine the Kochi fish market, but all the vendors speak German! Can you understand the prices and numbers they\'re shouting?',
-    kuttanSays: 'Kochi fish market aanu machane, but vendors ellam German-il aanu parayunne! Numbers pidikkanam!',
+    peerSays: 'Kochi fish market aanu machane, but vendors ellam German-il aanu parayunne! Numbers pidikkanam!',
     emoji: '🐟',
   },
   'food-order': {
     scene: 'cafe',
     title: 'Dinner at Gasthof zum Bären',
     narrative: 'A traditional German restaurant. The waiter approaches with a notepad. It\'s time to order — auf Deutsch, natürlich!',
-    kuttanSays: 'German restaurant-il aanu nammal! Waiter vannu — enthaa order cheyyuka? German-il parayan padikkaam!',
+    peerSays: 'German restaurant-il aanu nammal! Waiter vannu — enthaa order cheyyuka? German-il parayan padikkaam!',
     emoji: '🍽️',
   },
   'fill-the-gap': {
     scene: 'kitchen',
     title: 'WhatsApp from your Flatmate',
     narrative: 'Your WG flatmate sent a WhatsApp message, but autocorrect mangled some words! Can you fix them before replying?',
-    kuttanSays: 'Roommate WhatsApp-il message ayachirikkunnu, but autocorrect kashttam aakki! Fix cheyyuka machane!',
+    peerSays: 'Roommate WhatsApp-il message ayachirikkunnu, but autocorrect kashttam aakki! Fix cheyyuka machane!',
     emoji: '📱',
   },
   'greeting-time': {
     scene: 'street',
     title: 'A Day of Greetings!',
     narrative: 'Walk through a full day in Germany — morning to night. Greet everyone you meet with the right words!',
-    kuttanSays: 'Morning muthal night vare — ellarum-neyum correct-aayi greet cheyyuka! Ready?',
+    peerSays: 'Morning muthal night vare — ellarum-neyum correct-aayi greet cheyyuka! Ready?',
     emoji: '👋',
   },
   'dialogue-dash': {
     scene: 'cafe',
     title: 'Café Conversations!',
     narrative: 'You\'re at a busy Berlin café. People keep starting conversations with you. Can you keep up?',
-    kuttanSays: 'Berlin café-il aarenkilum ninnod samsarikkaan varunnu! German-il reply cheyyuka — fast!',
+    peerSays: 'Berlin café-il aarenkilum ninnod samsarikkaan varunnu! German-il reply cheyyuka — fast!',
     emoji: '💬',
   },
   'verb-rush': {
     scene: 'classroom',
     title: 'Professor\'s Pop Quiz!',
     narrative: 'The German professor surprised everyone with a verb conjugation quiz. Conjugate under pressure!',
-    kuttanSays: 'Aiyyo! Professor surprise quiz thannirikkunu! Verbs conjugate cheyy — vega!',
+    peerSays: 'Aiyyo! Professor surprise quiz thannirikkunu! Verbs conjugate cheyy — vega!',
     emoji: '📝',
   },
   'sentence-builder': {
     scene: 'office',
     title: 'Your Bewerbung (Application)!',
     narrative: 'You\'re writing a job application letter. Build grammatically perfect German sentences to impress the hiring manager!',
-    kuttanSays: 'Job application ezhuthanam machane! Sentence perfect aayirikkanam — manager-ne impress cheyyanam!',
+    peerSays: 'Job application ezhuthanam machane! Sentence perfect aayirikkanam — manager-ne impress cheyyanam!',
     emoji: '💼',
   },
   'scene-sort': {
     scene: 'classroom',
     title: 'Scene Sort at Sprachschule!',
     narrative: 'Which place does each word belong to? Sort German words into Küche, Bahnhof, or Arztpraxis.',
-    kuttanSays: 'Sprachschule-il Scene Sort machane! Oru word — ethu place-il cherum? Kitchen, station, clinic — sort cheyyuka!',
+    peerSays: 'Sprachschule-il Scene Sort machane! Oru word — ethu place-il cherum? Kitchen, station, clinic — sort cheyyuka!',
     emoji: '🎭',
   },
   'memory': {
     scene: 'cafe',
     title: 'Eavesdrop at the Café!',
     narrative: 'You\'re sitting in a Berlin café. Conversations float around you in German. Can you understand what people are saying?',
-    kuttanSays: 'Shh! Café-il aarenkilum samsaarikkunnath kelkkuka machane! German understand cheyyuka — nee spy aanu!',
+    peerSays: 'Shh! Café-il aarenkilum samsaarikkunnath kelkkuka machane! German understand cheyyuka — nee spy aanu!',
     emoji: '👂',
   },
 };

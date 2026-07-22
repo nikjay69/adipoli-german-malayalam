@@ -58,7 +58,7 @@ A1 level — ithanu nammude goal.
 
 [CLOSING — 8:30-10:00]
 Enthaayaalum, German padikkal oru adventure aanu.
-Njaan Kuttan, ninte koode padikkan undu.
+Njaan Nivin, ninte koode padikkan undu.
 Nammal oru step at a time pokam.
 
 Ready? Dann los! — Athayathu, "Let's go!"
@@ -338,7 +338,7 @@ Germany-il ethumbol ithu first aavashyam aanu.
 
 [SECTION 1 — BASIC INTRO — 0:30-3:00]
 "Ich heiße..." — My name is...
-  "Ich heiße Kuttan" — My name is Kuttan.
+  "Ich heiße Nivin" — My name is Nivin.
   "heiße" = "hai-se" ennu pronounce cheyyuka.
 
 "Ich bin..." — I am...

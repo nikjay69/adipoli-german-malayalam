@@ -26,44 +26,45 @@ export const MODULE_2: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Goethe-Institut Kochi — Day 5 Icebreaker",
           sceneType: "classroom",
           timeOfDay: "morning",
-          description: "Day 5 at Goethe Kochi. Frau Weber rearranges the room: 'New partners today — introduce yourselves in German, spell your names.' She pairs you with Akhil — a software engineer from Trivandrum. Everyone groans playfully. Malayali names are the ultimate buchstabieren test.",
+          description: "Day 5 at Goethe Kochi. Frau Fischer rearranges the room: 'New partners today — introduce yourselves in German, spell your names.' She pairs you with Akhil — a software engineer from Trivandrum. Everyone groans playfully. Malayali names are the ultimate buchstabieren test.",
         },
         narrative: {
           previousRecap: "You survived mock interviews in Lesson 1-6. Now comes the personal-info backbone — who you are, where you're from, what you do.",
           currentObjective: "Introduce yourself and spell your name using the German alphabet",
           nextTeaser: "Next: where in India are you from? Time to locate your origin on a German map.",
         },
-        kuttanIntro: [
-          "Machaane! Goethe Kochi Day 5 — Frau Weber says new partners. Ente partner Akhil aanu, Trivandrum-ile software engineer.",
+        peerIntro: [
+          "Machaane! Goethe Kochi Day 5 — Frau Fischer says new partners. Ente partner Akhil aanu, Trivandrum-ile software engineer.",
           "Ivide ore challenge undu — Malayali names German-il spell cheyyaan tough aanu! 'Akhil' Avarkku 'A-kil' aayi kelkum.",
           "Ich heiße, Freut mich, plus German alphabet spell-out — ithokke ithiritharam kettal kittiya bore alla. Try cheyyaam!",
         ],
         vocabEncounters: [
           { vocabId: "vocab2-1-1", encounterMoment: "Akhil leans forward: 'Hi, ich bin Akhil. Wie heißt du?' His accent is still Malayali, but the German is clear.", contextSentence: "Wie heißt du?" },
-          { vocabId: "vocab2-1-3", encounterMoment: "You answer confidently: 'Ich heiße Kuttan.' Short, clear, correct form.", contextSentence: "Ich heiße Kuttan." },
-          { vocabId: "vocab2-1-5", encounterMoment: "Akhil extends a hand: 'Freut mich, Kuttan!' You shake: 'Freut mich!' back. First Goethe friendship locked in.", contextSentence: "Freut mich, Akhil!" },
-          { vocabId: "vocab2-1-6", encounterMoment: "Frau Weber circles past and smiles: 'Sehr gut — und die richtige Antwort ist?' You remember: 'Gleichfalls!'", contextSentence: "Freut mich! — Gleichfalls!" },
-          { vocabId: "vocab2-1-7", encounterMoment: "Akhil picks up a pen: 'Buchstabiere deinen Namen, bitte!' Time for the alphabet workout — K-U-T-T-A-N in German letters.", contextSentence: "Können Sie das buchstabieren?" },
-          { vocabId: "vocab2-1-2", encounterMoment: "Frau Weber quizzes: 'Und wenn der Interviewer am Konsulat fragt?' That would be formal: 'Wie heißen Sie?'. Different register, same question.", contextSentence: "Wie heißen Sie?" },
+          { vocabId: "vocab2-1-3", encounterMoment: "You answer confidently: 'Ich heiße Nivin.' Short, clear, correct form.", contextSentence: "Ich heiße Nivin." },
+          { vocabId: "vocab2-1-5", encounterMoment: "Akhil extends a hand: 'Freut mich, Nivin!' You shake: 'Freut mich!' back. First Goethe friendship locked in.", contextSentence: "Freut mich, Akhil!" },
+          { vocabId: "vocab2-1-6", encounterMoment: "Frau Fischer circles past and smiles: 'Sehr gut — und die richtige Antwort ist?' You remember: 'Gleichfalls!'", contextSentence: "Freut mich! — Gleichfalls!" },
+          { vocabId: "vocab2-1-7", encounterMoment: "Akhil picks up a pen: 'Buchstabiere deinen Namen, bitte!' Nivin models N-I-V-I-N, then you spell your own name.", contextSentence: "Können Sie das buchstabieren?" },
+          { vocabId: "vocab2-1-2", encounterMoment: "Frau Fischer quizzes: 'Und wenn der Interviewer am Konsulat fragt?' That would be formal: 'Wie heißen Sie?'. Different register, same question.", contextSentence: "Wie heißen Sie?" },
         ],
         decisionPoints: [
           {
             moment: "Akhil asks: 'Wie heißt du?' You want to sound friendly but complete — this is practice for the consulate later. What's your pick?",
             options: [
-              { text: "Ich heiße Kuttan. Freut mich!", isCorrect: true, response: "Akhil grins: 'Freut mich auch! Same boat — Trivandrum, Thrissur, Germany pokunnu.' Frau Weber gives a nod from across the room.", kuttanReaction: "Adipoli machaane! Ich heiße + Freut mich = textbook combo. Frau Weber watching, she's pleased! 😉" },
-              { text: "Mein Name ist Kuttan Kumar.", isCorrect: true, response: "Akhil nods: 'Hallo Kuttan — oh, full name version? Respect.' It's slightly formal but perfectly correct for A1.", kuttanReaction: "Correct aanu machaane! Mein Name ist = slightly more formal, but very clear. Keep going! 👍" },
-              { text: "Kuttan.", isCorrect: false, response: "Akhil waits a beat. 'Und... ich heiße Akhil. Freut mich.' Just the name is too short — Germans expect a full sentence.", kuttanReaction: "Aiyyo! Veruthe peru parayaal abrupt aanu. Full sentence — Ich heiße Kuttan — always! 😬" },
+              { text: "Ich heiße Nivin. Freut mich!", isCorrect: true, response: "Akhil grins: 'Freut mich auch! Same boat — Trivandrum, Thrissur, Germany pokunnu.' Frau Fischer gives a nod from across the room.", peerReaction: "Adipoli machaane! Ich heiße + Freut mich = textbook combo. Frau Fischer watching, she's pleased! 😉" },
+              { text: "Mein Name ist Nivin.", isCorrect: true, response: "Akhil nods: 'Hallo Nivin.' It's slightly formal but perfectly correct for A1.", peerReaction: "Correct aanu machaane! Mein Name ist = slightly more formal, but very clear. Keep going! 👍" },
+              { text: "Nivin.", isCorrect: false, response: "Akhil waits a beat. 'Und... ich heiße Akhil. Freut mich.' Just the name is too short — Germans expect a full sentence.", peerReaction: "Aiyyo! Veruthe peru parayaal abrupt aanu. Full sentence — Ich heiße Nivin — always! 😬" },
             ],
           },
           {
-            moment: "Akhil picks up a pen: 'Buchstabiere Kuttan, bitte.' You need to spell it using German letter names, not English. How do you start?",
+            moment: "Akhil picks up a pen: 'Buchstabiere Nivin, bitte.' You need to spell it using German letter names, not English. How do you start?",
             options: [
-              { text: "K (Kah) - U (Ooh) - T (Tay) - T (Tay) - A (Ah) - N (Enn)", isCorrect: true, response: "Akhil writes K-U-T-T-A-N cleanly. 'Super! Mein Name ist schwieriger — A-K-H-I-L.' You both laugh at the H drama.", kuttanReaction: "Gold star machaane! German letter names-il perfect spell! Kah not K, Tay not T — athaanu correct! ✋" },
-              { text: "K (Kay) - U (You) - T (Tee) - T (Tee) - A (Ay) - N (En)", isCorrect: false, response: "Akhil looks confused: 'Moment — English namen? Auf Deutsch bitte!' He starts demoing the German letter sounds.", kuttanReaction: "Aiyyo! Ithu German spell-out aanu, not English! K = Kah, A = Ah, T = Tay. Try cheyyu! 🚫" },
+              { text: "N (Enn) - I (Ee) - V (Fow) - I (Ee) - N (Enn)", isCorrect: true, response: "Akhil writes N-I-V-I-N cleanly. 'Super! Mein Name ist schwieriger — A-K-H-I-L.' You both laugh at the H drama.", peerReaction: "Gold star machaane! German letter names-il perfect spelling — athaanu correct! ✋" },
+              { text: "K (Kay) - U (You) - T (Tee) - T (Tee) - A (Ay) - N (En)", isCorrect: false, response: "Akhil looks confused: 'Moment — English namen? Auf Deutsch bitte!' He starts demoing the German letter sounds.", peerReaction: "Aiyyo! Ithu German spell-out aanu, not English! K = Kah, A = Ah, T = Tay. Try cheyyu! 🚫" },
             ],
           },
         ],
@@ -273,9 +274,9 @@ export const MODULE_2: Module = {
         {
           id: "ex2-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (What's Your Name?): 'Ich heiße Kuttan und komme aus Kerala.'",
-          questionGerman: "Sprechen Sie laut: 'Ich heiße Kuttan und komme aus Kerala.'",
-          correctAnswer: "Ich heiße Kuttan und komme aus Kerala",
+          question: "Nivin practice: Say aloud for this lesson (What's Your Name?): 'Ich heiße Nivin und komme aus Kerala.'",
+          questionGerman: "Sprechen Sie laut: 'Ich heiße Nivin und komme aus Kerala.'",
+          correctAnswer: "Ich heiße Nivin und komme aus Kerala",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
           audioUrl: "/audio/exercises/ex2-1-prod-speaking-model.mp3",
           xpReward: 25
@@ -305,43 +306,44 @@ export const MODULE_2: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Goethe-Institut Kochi — Origin Drill",
           sceneType: "classroom",
           timeOfDay: "evening",
-          description: "Frau Weber pins a Kerala map and a small Europe map on the board. Two classmates, Marie and Carlos, join a mock A1 speaking circle. The task is simple: answer where you are from clearly, then correct one common nationality mistake.",
+          description: "Frau Fischer pins a Kerala map and a small Europe map on the board. Two classmates, Marie and Carlos, join a mock A1 speaking circle. The task is simple: answer where you are from clearly, then correct one common nationality mistake.",
         },
         narrative: {
           previousRecap: "You've introduced yourself in the Goethe Kochi classroom. Now the mock examiner asks where you are from.",
           currentObjective: "Explain your origin and nationality with pride and precision",
           nextTeaser: "Next: say your job or student status in one clean A1 line.",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Goethe Kochi mock circle aanu. Question short: 'Woher kommen Sie?' Answer short: 'Ich komme aus Kerala.'",
           "If the examiner asks for country, add: 'Ich komme aus Indien.' Kerala and India both stay useful for A1.",
           "One real trap: never say 'Indianer'. Say 'Inder' or 'Inderin'. Clean, adult, exam-safe.",
         ],
         vocabEncounters: [
           { vocabId: "vocab2-2-1", encounterMoment: "In the Goethe Kochi role-play, Marie turns to you: 'Hallo! Ich bin Marie. Und woher kommst du?'", contextSentence: "Woher kommst du?" },
-          { vocabId: "vocab2-2-4", encounterMoment: "You answer clearly: 'Ich komme aus Indien.' Frau Weber nods: short answer first, details after.", contextSentence: "Ich komme aus Indien." },
+          { vocabId: "vocab2-2-4", encounterMoment: "You answer clearly: 'Ich komme aus Indien.' Frau Fischer nods: short answer first, details after.", contextSentence: "Ich komme aus Indien." },
           { vocabId: "vocab2-2-2", encounterMoment: "You add a little more detail: 'Ich komme aus Kerala, in Südindien.' You show her a photo of the backwaters on your phone.", contextSentence: "Ich komme aus Kerala." },
-          { vocabId: "vocab2-2-6", encounterMoment: "Marie's sample card says: 'Ich komme aus der Schweiz.' Frau Weber marks the article: die Schweiz → aus der Schweiz.", contextSentence: "Ich komme aus der Schweiz." },
+          { vocabId: "vocab2-2-6", encounterMoment: "Marie's sample card says: 'Ich komme aus der Schweiz.' Frau Fischer marks the article: die Schweiz → aus der Schweiz.", contextSentence: "Ich komme aus der Schweiz." },
           { vocabId: "vocab2-2-7", encounterMoment: "The map drill shows Europe as the future destination, not today's setting. You only need the simple A1 continent word now.", contextSentence: "Europa ist ein schöner Kontinent." },
-          { vocabId: "vocab2-2-10", encounterMoment: "After your answer, Frau Weber says: 'Gut. Sie lernen Deutsch.' The compliment belongs to the classroom rehearsal.", contextSentence: "Ich lerne die deutsche Sprache." },
+          { vocabId: "vocab2-2-10", encounterMoment: "After your answer, Frau Fischer says: 'Gut. Sie lernen Deutsch.' The compliment belongs to the classroom rehearsal.", contextSentence: "Ich lerne die deutsche Sprache." },
         ],
         decisionPoints: [
           {
             moment: "Carlos asks: 'Bist du Indianer?' He's using the wrong word. How do you gently correct him and state your nationality?",
             options: [
-              { text: "Nein, ich bin Inder. Ich komme aus Indien.", isCorrect: true, response: "Carlos realizes his mistake: 'Ah, sorry! Klar, Inder! Danke für die Korrektur.' He won't make that mistake again!", kuttanReaction: "Correct aayi parayeda machane! 'Inder' for Indians, 'Indianer' for Red Indians. Ithu clear aayillel confuse aakum! Well handled! 🎯" },
-              { text: "Ja, ich bin Indianer.", isCorrect: false, response: "Carlos looks confused. 'Bist du sicher? Also... wie in Western-Filmen?' You just told him you're a Native American, machane!", kuttanReaction: "Aiyyo! Entheeda ithu! 'Indianer' ennu paranjaal pipe smoke cheyyunna 'Red Indian' ennu avarkku thonnum! Nammal 'Inder' aanu! Try again! 🚫" },
+              { text: "Nein, ich bin Inder. Ich komme aus Indien.", isCorrect: true, response: "Carlos realizes his mistake: 'Ah, sorry! Klar, Inder! Danke für die Korrektur.' He won't make that mistake again!", peerReaction: "Correct aayi parayeda machane! 'Inder' for Indians, 'Indianer' for Red Indians. Ithu clear aayillel confuse aakum! Well handled! 🎯" },
+              { text: "Ja, ich bin Indianer.", isCorrect: false, response: "Carlos looks confused. 'Bist du sicher? Also... wie in Western-Filmen?' You just told him you're a Native American, machane!", peerReaction: "Aiyyo! Entheeda ithu! 'Indianer' ennu paranjaal pipe smoke cheyyunna 'Red Indian' ennu avarkku thonnum! Nammal 'Inder' aanu! Try again! 🚫" },
             ],
           },
           {
             moment: "Marie asks: 'Wo genau in Indien?' How do you describe Kerala's location?",
             options: [
-              { text: "Ich komme aus Kerala, im Süden von Indien.", isCorrect: true, response: "Marie nods: 'Südindien! Da ist es warm, oder? Toll!' You've just started a great conversation about home.", kuttanReaction: "Adipoli! 'Süden' (South) is a good word to know. Showing them the map makes the connection stronger. Kerala power! 🌴" },
-              { text: "Ich komme aus Kerala, im Norden von Indien.", isCorrect: false, response: "Marie looks at a map on her phone: 'Aber Kerala ist doch ganz unten, im Süden?' Geography fail, machane!", kuttanReaction: "Aiyyo! Kerala North-il aano? Nammal South (Süden) aanu machane! Direction maari poyalo? Norden is North! 😅" },
+              { text: "Ich komme aus Kerala, im Süden von Indien.", isCorrect: true, response: "Marie nods: 'Südindien! Da ist es warm, oder? Toll!' You've just started a great conversation about home.", peerReaction: "Adipoli! 'Süden' (South) is a good word to know. Showing them the map makes the connection stronger. Kerala power! 🌴" },
+              { text: "Ich komme aus Kerala, im Norden von Indien.", isCorrect: false, response: "Marie looks at a map on her phone: 'Aber Kerala ist doch ganz unten, im Süden?' Geography fail, machane!", peerReaction: "Aiyyo! Kerala North-il aano? Nammal South (Süden) aanu machane! Direction maari poyalo? Norden is North! 😅" },
             ],
           },
         ],
@@ -553,7 +555,7 @@ export const MODULE_2: Module = {
         {
           id: "ex2-2-9",
           type: "free-text",
-          question: "A German asks 'Woher kommen Sie?' Reply as Kuttan from Kochi, Kerala.",
+          question: "A German asks 'Woher kommen Sie?' Use the sample origin card: Kochi, Kerala.",
           correctAnswer: [
             "Ich komme aus Kochi",
             "Ich komme aus Kerala",
@@ -579,9 +581,9 @@ export const MODULE_2: Module = {
         {
           id: "ex2-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Where Are You From?): 'Ich heiße Kuttan und komme aus Kerala.'",
-          questionGerman: "Sprechen Sie laut: 'Ich heiße Kuttan und komme aus Kerala.'",
-          correctAnswer: "Ich heiße Kuttan und komme aus Kerala",
+          question: "Meera practice: Say aloud for this lesson (Where Are You From?): 'Ich heiße Meera und komme aus Kerala.'",
+          questionGerman: "Sprechen Sie laut: 'Ich heiße Meera und komme aus Kerala.'",
+          correctAnswer: "Ich heiße Meera und komme aus Kerala",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
           audioUrl: "/audio/exercises/ex2-2-prod-speaking-model.mp3",
           xpReward: 25
@@ -611,25 +613,26 @@ export const MODULE_2: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Goethe-Institut Kochi — Beruf Role-Play",
           sceneType: "classroom",
           timeOfDay: "afternoon",
-          description: "Frau Weber turns the classroom into a small A1 speaking desk. Each learner gets a role card: student, nurse, engineer, programmer. Your job is to answer 'Was sind Sie von Beruf?' without copying English articles into German.",
+          description: "Frau Fischer turns the classroom into a small A1 speaking desk. Each learner gets a role card: student, nurse, engineer, programmer. Your job is to answer 'Was sind Sie von Beruf?' without copying English articles into German.",
         },
         narrative: {
           previousRecap: "You've shared your origin in the Goethe Kochi mock circle. Now you add job or student status.",
           currentObjective: "Define your professional identity using the verb 'sein'",
           nextTeaser: "Next: you speak more languages than you think! Time to flex those skills!",
         },
-        kuttanIntro: [
-          "Classroom role-play aanu. Frau Weber asks: 'Was sind Sie von Beruf?' You answer in one clean line.",
+        peerIntro: [
+          "Classroom role-play aanu. Frau Fischer asks: 'Was sind Sie von Beruf?' You answer in one clean line.",
           "German-il profession parayumpo 'Ich bin a student' alla. Just: 'Ich bin Student' or 'Ich bin Studentin'.",
           "Main tool: sein. For your own answer, start with 'Ich bin...'. Keep it useful before full grammar tables.",
         ],
         vocabEncounters: [
           { vocabId: "vocab2-3-1", encounterMoment: "Your role-play partner asks: 'Und du, was ist dein Beruf?' They need one clear A1 answer.", contextSentence: "Was ist dein Beruf?" },
-          { vocabId: "vocab2-3-5", encounterMoment: "You answer: 'Ich bin Student.' Frau Weber points out: no article before professions.", contextSentence: "Ich bin Studentin." },
+          { vocabId: "vocab2-3-5", encounterMoment: "You answer: 'Ich bin Student.' Frau Fischer points out: no article before professions.", contextSentence: "Ich bin Studentin." },
           { vocabId: "vocab2-3-2", encounterMoment: "You mention your friend back home: 'Mein Freund ist Ingenieur.' Engineering is the classic choice for many of us!", contextSentence: "Ich bin Ingenieur." },
           { vocabId: "vocab2-3-10", encounterMoment: "A second card says: 'Ich will Arzt sein.' You notice how sein carries identity and plans.", contextSentence: "Ich will Arzt sein." },
           { vocabId: "vocab2-3-7", encounterMoment: "The IT role card says: 'Programmierer'. You practice the job word without turning the scene into a Germany campus fantasy.", contextSentence: "Er ist Programmierer bei Bosch." },
@@ -638,15 +641,15 @@ export const MODULE_2: Module = {
           {
             moment: "The student asks: 'Was bist du von Beruf?' How do you answer correctly without the 'a/an' trap?",
             options: [
-              { text: "Ich bin Student.", isCorrect: true, response: "Exactly! 'Ich bin Student' — simple, clear, and grammatically perfect. The student smiles and nods.", kuttanReaction: "Superb machane! Artikels venda professions-nu! 'Ich bin Student' paranjappol thanne nee pro aayi! 🎓" },
-              { text: "Ich bin ein Student.", isCorrect: false, response: "The student understands, but corrects you gently: 'In German we just say: Ich bin Student.' Always skip the 'ein' for jobs!", kuttanReaction: "Aiyyo! English 'a student' ne angane thanne copy cheyyalle! Professions parayumpo 'ein' vendeeda! Just say 'Ich bin Student'. Try again! 😬" },
+              { text: "Ich bin Student.", isCorrect: true, response: "Exactly! 'Ich bin Student' — simple, clear, and grammatically perfect. The student smiles and nods.", peerReaction: "Superb machane! Artikels venda professions-nu! 'Ich bin Student' paranjappol thanne nee pro aayi! 🎓" },
+              { text: "Ich bin ein Student.", isCorrect: false, response: "The student understands, but corrects you gently: 'In German we just say: Ich bin Student.' Always skip the 'ein' for jobs!", peerReaction: "Aiyyo! English 'a student' ne angane thanne copy cheyyalle! Professions parayumpo 'ein' vendeeda! Just say 'Ich bin Student'. Try again! 😬" },
             ],
           },
           {
             moment: "You want to introduce Priya who is also studying with you. What do you say?",
             options: [
-              { text: "Sie ist Studentin.", isCorrect: true, response: "Correct! Feminine form uses '-in'. Priya is a 'Studentin'.", kuttanReaction: "Correct aayille! Male student, female studentin. Ithu easy rule aanu, but important! Well done! ✨" },
-              { text: "Sie ist Student.", isCorrect: false, response: "At A1, this is wrong. Female professions always take the -in ending: Studentin, Lehrerin, Ärztin. 'Sie ist Student' sounds broken to German ears.", kuttanReaction: "Vite machane! Female-nu '-in' add cheyyanam. Studentin, Lehrerin, Ingenieurin — ithu fixed rule aanu. 📝" },
+              { text: "Sie ist Studentin.", isCorrect: true, response: "Correct! Feminine form uses '-in'. Priya is a 'Studentin'.", peerReaction: "Correct aayille! Male student, female studentin. Ithu easy rule aanu, but important! Well done! ✨" },
+              { text: "Sie ist Student.", isCorrect: false, response: "At A1, this is wrong. Female professions always take the -in ending: Studentin, Lehrerin, Ärztin. 'Sie ist Student' sounds broken to German ears.", peerReaction: "Vite machane! Female-nu '-in' add cheyyanam. Studentin, Lehrerin, Ingenieurin — ithu fixed rule aanu. 📝" },
             ],
           },
         ],
@@ -852,9 +855,9 @@ export const MODULE_2: Module = {
         {
           id: "ex2-3-9",
           type: "free-text",
-          question: "Someone asks 'Was machen Sie beruflich?' Reply as Kuttan, a student.",
+          question: "Someone asks 'Was machen Sie beruflich?' Use the male practice card: Student.",
           correctAnswer: ["Ich bin Student"],
-          explanation: "No 'ein' or 'eine' before professions! Just 'Ich bin Student.' Kuttan is male → Student (no -in). A female learner would say 'Ich bin Studentin'.",
+          explanation: "No 'ein' or 'eine' before professions: the male sample is 'Ich bin Student'; the female sample is 'Ich bin Studentin'. Use the form that matches the practice card.",
           xpReward: 30
         },
         {
@@ -870,9 +873,9 @@ export const MODULE_2: Module = {
         {
           id: "ex2-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (What Do You Do?): 'Ich heiße Kuttan und komme aus Kerala.'",
-          questionGerman: "Sprechen Sie laut: 'Ich heiße Kuttan und komme aus Kerala.'",
-          correctAnswer: "Ich heiße Kuttan und komme aus Kerala",
+          question: "Nivin practice: Say aloud for this lesson (What Do You Do?): 'Ich heiße Nivin und komme aus Kerala.'",
+          questionGerman: "Sprechen Sie laut: 'Ich heiße Nivin und komme aus Kerala.'",
+          correctAnswer: "Ich heiße Nivin und komme aus Kerala",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
           audioUrl: "/audio/exercises/ex2-3-prod-speaking-model.mp3",
           xpReward: 25
@@ -902,43 +905,44 @@ export const MODULE_2: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Goethe-Institut Kochi — Language Circle",
           sceneType: "classroom",
           timeOfDay: "afternoon",
-          description: "Frau Weber runs a quick language-circle drill. Every learner says their mother tongue, English, and the honest A1 line for German: 'ein bisschen Deutsch.' The scene stays in Kerala while the future Germany goal stays visible.",
+          description: "Frau Fischer runs a quick language-circle drill. Every learner says their mother tongue, English, and the honest A1 line for German: 'ein bisschen Deutsch.' The scene stays in Kerala while the future Germany goal stays visible.",
         },
         narrative: {
           previousRecap: "You've explained job or student status in the role-play. Now you add the languages you actually speak.",
           currentObjective: "Discuss language proficiency and the 'vowel-changing' verb sprechen",
           nextTeaser: "Next: the final challenge! Putting it all together for a full conversation!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Language circle aanu. Output simple: 'Ich spreche Malayalam, Englisch und ein bisschen Deutsch.'",
           "Malayali learners usually have a real multilingual advantage. Say it calmly; no flexing needed.",
           "Context care venam: 'sprechen' changes with du: 'du sprichst'. For your A1 intro, 'ich spreche' is enough.",
         ],
         vocabEncounters: [
           { vocabId: "vocab2-4-2", encounterMoment: "Your partner card asks: 'Welche Sprachen sprichst du?' You answer from your real life.", contextSentence: "Ich spreche drei Sprachen." },
-          { vocabId: "vocab2-4-9", encounterMoment: "You explain: 'Malayalam ist meine Muttersprache.' Frau Weber repeats it slowly for the class.", contextSentence: "Malayalam ist meine Muttersprache." },
+          { vocabId: "vocab2-4-9", encounterMoment: "You explain: 'Malayalam ist meine Muttersprache.' Frau Fischer repeats it slowly for the class.", contextSentence: "Malayalam ist meine Muttersprache." },
           { vocabId: "vocab2-4-3", encounterMoment: "The mock examiner checks: 'Sprechen Sie Englisch?' You answer with the safest phrase.", contextSentence: "Sprechen Sie Englisch?" },
           { vocabId: "vocab2-4-7", encounterMoment: "When they ask about your German progress, you stay humble: 'Ich spreche nur ein bisschen Deutsch.'", contextSentence: "Ich spreche ein bisschen Deutsch." },
-          { vocabId: "vocab2-4-8", encounterMoment: "Frau Weber labels 'fließend' as a future word. Today, the honest A1 answer is 'ein bisschen'.", contextSentence: "Sie spricht fließend Deutsch." },
+          { vocabId: "vocab2-4-8", encounterMoment: "Frau Fischer labels 'fließend' as a future word. Today, the honest A1 answer is 'ein bisschen'.", contextSentence: "Sie spricht fließend Deutsch." },
         ],
         decisionPoints: [
           {
             moment: "Sophie asks: 'Welche Sprachen sprichst du?' How do you answer while including your 'mother tongue'?",
             options: [
-              { text: "Malayalam ist meine Muttersprache. Ich spreche auch Englisch.", isCorrect: true, response: "Sophie's eyes widen: 'Wow, Malayalam! Das klingt cool.' She's never heard of it but loves the name.", kuttanReaction: "Adipoli machane! 'Muttersprache' (Mother tongue) ennu parayumpo oru mass undu! Always mention Malayalam first — it's our identity! 🇮🇳" },
-              { text: "Ich spreche Malayalam und Englisch.", isCorrect: true, response: "Simple and correct. Sophie nods: 'Zwei Sprachen? Toll!'", kuttanReaction: "Short and sweet! 'Ich spreche' is the core phrase. Good job machane! 👍" },
-              { text: "Ich bin Malayalam.", isCorrect: false, response: "Sophie looks confused: 'Du BIST eine Sprache? Wie geht das?' You said 'I AM Malayalam', machane!", kuttanReaction: "Aiyyo! Language-ne 'Ich bin' ennu parayalle! 'Ich spreche' (I speak) ennu parayeda! Nee manushyan alle, bhasha allalo? 😂" },
+              { text: "Malayalam ist meine Muttersprache. Ich spreche auch Englisch.", isCorrect: true, response: "Sophie's eyes widen: 'Wow, Malayalam! Das klingt cool.' She's never heard of it but loves the name.", peerReaction: "Adipoli machane! 'Muttersprache' (Mother tongue) ennu parayumpo oru mass undu! Always mention Malayalam first — it's our identity! 🇮🇳" },
+              { text: "Ich spreche Malayalam und Englisch.", isCorrect: true, response: "Simple and correct. Sophie nods: 'Zwei Sprachen? Toll!'", peerReaction: "Short and sweet! 'Ich spreche' is the core phrase. Good job machane! 👍" },
+              { text: "Ich bin Malayalam.", isCorrect: false, response: "Sophie looks confused: 'Du BIST eine Sprache? Wie geht das?' You said 'I AM Malayalam', machane!", peerReaction: "Aiyyo! Language-ne 'Ich bin' ennu parayalle! 'Ich spreche' (I speak) ennu parayeda! Nee manushyan alle, bhasha allalo? 😂" },
             ],
           },
           {
             moment: "You want to ask Sophie if she speaks English too. What's the correct conjugation for 'du'?",
             options: [
-              { text: "Sprichst du Englisch?", isCorrect: true, response: "Perfect stem change! 'Sprichst du' (e to i). Sophie answers: 'Ja, natürlich!'", kuttanReaction: "Mass machane! Vowel change (e to i) accurately catch cheythu! 'Sprichst du' is 10/10 German! 🔥" },
-              { text: "Sprechst du Englisch?", isCorrect: false, response: "Sophie understands, but 'sprechst' sounds a bit off. It should be 'sprichst'!", kuttanReaction: "Vite machane! 'sprechen' changes vowel for 'du'. It's 'sprichst'. Ithu oru bit tricky aanu, but practice cheythaal set aakum! 💪" },
+              { text: "Sprichst du Englisch?", isCorrect: true, response: "Perfect stem change! 'Sprichst du' (e to i). Sophie answers: 'Ja, natürlich!'", peerReaction: "Mass machane! Vowel change (e to i) accurately catch cheythu! 'Sprichst du' is 10/10 German! 🔥" },
+              { text: "Sprechst du Englisch?", isCorrect: false, response: "Sophie understands, but 'sprechst' sounds a bit off. It should be 'sprichst'!", peerReaction: "Vite machane! 'sprechen' changes vowel for 'du'. It's 'sprichst'. Ithu oru bit tricky aanu, but practice cheythaal set aakum! 💪" },
             ],
           },
         ],
@@ -1188,9 +1192,9 @@ export const MODULE_2: Module = {
         {
           id: "ex2-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Languages I Speak): 'Ich heiße Kuttan und komme aus Kerala.'",
-          questionGerman: "Sprechen Sie laut: 'Ich heiße Kuttan und komme aus Kerala.'",
-          correctAnswer: "Ich heiße Kuttan und komme aus Kerala",
+          question: "Meera practice: Say aloud for this lesson (Languages I Speak): 'Ich heiße Meera und komme aus Kerala.'",
+          questionGerman: "Sprechen Sie laut: 'Ich heiße Meera und komme aus Kerala.'",
+          correctAnswer: "Ich heiße Meera und komme aus Kerala",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
           audioUrl: "/audio/exercises/ex2-4-prod-speaking-model.mp3",
           xpReward: 25
@@ -1220,6 +1224,7 @@ export const MODULE_2: Module = {
       duration: "60 min",
       xpReward: 200,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Goethe-Institut Kochi — Mock Consulate, Full Self-Intro",
           sceneType: "office",
@@ -1231,14 +1236,14 @@ export const MODULE_2: Module = {
           currentObjective: "Deliver a complete self-introduction under consulate-level pressure",
           nextTeaser: "Module 2 complete. Next: numbers — prices at the Kerala supermarket, phone numbers, ages, dates. Numbers in German are backwards. Ready?",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machaane! Ithu njan paranja 'Boss Battle' aanu — Goethe Kochi-il mock consulate interview, Month 2.",
           "Herr Dr. Bauer vannirikkunnu again — Hauptstelle-nte examiner. Official aanu, but ithu practice aanu. Real-ul consulate-il poyaal confident aayi varum.",
           "Name, Origin, Profession, Language — naalu components flow-aayi parayaam. Full Sie. Deep breath. Pokaam!",
         ],
         vocabEncounters: [
           { vocabId: "vocab2-5-1", encounterMoment: "Dr. Bauer opens a folder. 'Guten Tag, Herr Kumar. Stellen Sie sich bitte vor.' He wants the full self-introduction.", contextSentence: "Stellen Sie sich vor!" },
-          { vocabId: "vocab2-5-3", encounterMoment: "You start the golden formula: 'Ich heiße Kuttan Kumar. Ich komme aus Thrissur, Indien. Ich bin Student.' He scribbles notes.", contextSentence: "Ich heiße Kuttan und komme aus Indien." },
+          { vocabId: "vocab2-5-3", encounterMoment: "You start the editable formula: 'Ich heiße … Ich komme aus … Ich bin von Beruf …' The examiner scribbles notes.", contextSentence: "Ich heiße … und komme aus …" },
           { vocabId: "vocab2-5-5", encounterMoment: "He asks about your German level. 'Ich lerne noch,' you answer modestly. Honest + effort-showing — always works.", contextSentence: "Ich lerne noch Deutsch." },
           { vocabId: "vocab2-1-5", encounterMoment: "He nods slowly. 'Ihre Aussprache ist gut. Freut mich, Sie kennenzulernen.' You reply carefully: 'Freut mich auch!'", contextSentence: "Freut mich!" },
           { vocabId: "vocab2-1-6", encounterMoment: "He says: 'Einen schönen Tag noch, Herr Kumar.' You respond: 'Gleichfalls, Herr Dr. Bauer.' The perfect formal exit.", contextSentence: "Einen schönen Tag noch! — Gleichfalls!" },
@@ -1247,15 +1252,15 @@ export const MODULE_2: Module = {
           {
             moment: "Dr. Bauer asks: 'Was wollen Sie in Deutschland machen?' You plan to study — what's the cleanest A1 answer?",
             options: [
-              { text: "Ich bin Student. Ich möchte in München Informatik studieren.", isCorrect: true, response: "Dr. Bauer looks up: 'Informatik in München? Sehr gut. Welche Universität?' Real follow-up question — which means your answer landed.", kuttanReaction: "Adipoli machaane! Student + clear city + subject = officer engaged! Follow-up question vannu — athaanu correct answer-inte sign! 🎓" },
-              { text: "Ich will nach Deutschland.", isCorrect: false, response: "Dr. Bauer frowns slightly: 'Ja, aber warum? Was machen Sie dort?' Vague answer → he has to dig. Not a pass-level response.", kuttanReaction: "Aiyyo! 'Will nach Deutschland' madiyilla — reason parayaan venam. Student aano? Arbeit aano? Specific aakku! 😅" },
+              { text: "Ich bin Student. Ich möchte in München Informatik studieren.", isCorrect: true, response: "Dr. Bauer looks up: 'Informatik in München? Sehr gut. Welche Universität?' Real follow-up question — which means your answer landed.", peerReaction: "Adipoli machaane! Student + clear city + subject = officer engaged! Follow-up question vannu — athaanu correct answer-inte sign! 🎓" },
+              { text: "Ich will nach Deutschland.", isCorrect: false, response: "Dr. Bauer frowns slightly: 'Ja, aber warum? Was machen Sie dort?' Vague answer → he has to dig. Not a pass-level response.", peerReaction: "Aiyyo! 'Will nach Deutschland' madiyilla — reason parayaan venam. Student aano? Arbeit aano? Specific aakku! 😅" },
             ],
           },
           {
             moment: "Dr. Bauer closes his folder. 'Danke, Herr Kumar. Das war gut.' How do you leave the mock interview?",
             options: [
-              { text: "Vielen Dank, Herr Dr. Bauer. Auf Wiedersehen!", isCorrect: true, response: "He stands and extends a hand. 'Auf Wiedersehen. Viel Erfolg für Ihre richtige Prüfung.' Outside, Frau Weber mouths 'gut gemacht'. You've passed the dress rehearsal.", kuttanReaction: "YOU DID IT machaane! Full introduction + formal exit = real consulate-ready. Ithanu cleaner — next step real interview! 🇩🇪" },
-              { text: "Thanks, tschüss!", isCorrect: false, response: "Dr. Bauer's eyebrow lifts. 'In einem Konsulatsinterview — Auf Wiedersehen, bitte.' Gentle but clear: Tschüss is not for this setting.", kuttanReaction: "Excitement koodi Tschüss paranju! Office-il Auf Wiedersehen aanu. Level up cheyyaam — you got the content right! 😂" },
+              { text: "Vielen Dank, Herr Dr. Bauer. Auf Wiedersehen!", isCorrect: true, response: "He stands and extends a hand. 'Auf Wiedersehen. Viel Erfolg für Ihre richtige Prüfung.' Outside, Frau Fischer mouths 'gut gemacht'. You've passed the dress rehearsal.", peerReaction: "YOU DID IT machaane! Full introduction + formal exit = real consulate-ready. Ithanu cleaner — next step real interview! 🇩🇪" },
+              { text: "Thanks, tschüss!", isCorrect: false, response: "Dr. Bauer's eyebrow lifts. 'In einem Konsulatsinterview — Auf Wiedersehen, bitte.' Gentle but clear: Tschüss is not for this setting.", peerReaction: "Excitement koodi Tschüss paranju! Office-il Auf Wiedersehen aanu. Level up cheyyaam — you got the content right! 😂" },
             ],
           },
         ],
@@ -1424,7 +1429,7 @@ export const MODULE_2: Module = {
           options: [
             "Ich studiere an der TU München.",
             "Ich komme aus Indien.",
-            "Ich heiße Kuttan.",
+            "Ich heiße Nivin.",
             "Ich spreche Deutsch."
           ],
           correctAnswer: "Ich studiere an der TU München.",
@@ -1539,9 +1544,9 @@ export const MODULE_2: Module = {
         {
           id: "ex2-5-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (My First Full Conversation): 'Ich heiße Kuttan und komme aus Kerala.'",
-          questionGerman: "Sprechen Sie laut: 'Ich heiße Kuttan und komme aus Kerala.'",
-          correctAnswer: "Ich heiße Kuttan und komme aus Kerala",
+          question: "Nivin practice: Say aloud for this lesson (My First Full Conversation): 'Ich heiße Nivin und komme aus Kerala.'",
+          questionGerman: "Sprechen Sie laut: 'Ich heiße Nivin und komme aus Kerala.'",
+          correctAnswer: "Ich heiße Nivin und komme aus Kerala",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
           audioUrl: "/audio/exercises/ex2-5-prod-speaking-model.mp3",
           xpReward: 25

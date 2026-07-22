@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Lock, Trophy } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { SkeletonGrid } from '@/components/ui/Skeleton';
 
 type Difficulty = 'Easy' | 'Medium' | 'Hard';
@@ -96,14 +96,14 @@ export default function TestsPage() {
         </h1>
       </motion.div>
 
-      {/* Kuttan */}
+      {/* Nivin */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.08 }}
         className="flex items-center gap-2.5 game-card px-3 py-2 mb-2"
       >
-        <Kuttan mood={allUnlocked ? 'excited' : 'thinking'} size="sm" entrance={false} />
+        <Nivin mood={allUnlocked ? 'excited' : 'thinking'} size="sm" entrance={false} />
         <p className="text-xs text-[var(--foreground)]/60 leading-snug">
           {allUnlocked
             ? 'All tests unlocked! Crush the Goethe! 🚀'

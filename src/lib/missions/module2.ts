@@ -53,7 +53,7 @@ export const module2MissionCards: Module2MissionCard[] = [
     id: 'spellName',
     missionNumber: 'Mission 2.2',
     title: 'Spell a Kerala name cleanly',
-    output: 'K-U-T-T-A-N · Kah, Ooh, Tay...',
+    output: 'M-E-E-R-A · Em, Eh, Eh, Er, Ah',
     proof: 'audio • spell aloud • quick repair',
     href: '/missions/module-2/spell-name',
     state: 'Playable now',
@@ -133,7 +133,7 @@ export const module2MissionAudio = {
   selfIntro: {
     examinerPrompt: '/audio/missions/module-2/self-intro/examiner-prompt.mp3',
     wieHeissenSie: '/audio/missions/module-2/self-intro/wie-heissen-sie.mp3',
-    ichHeisseKuttan: '/audio/missions/module-2/self-intro/ich-heisse-kuttan.mp3',
+    ichHeisseMeera: '/audio/missions/module-2/self-intro/ich-heisse-meera.mp3',
     ichKommeAusKerala: '/audio/missions/module-2/self-intro/ich-komme-aus-kerala.mp3',
     ichSpreche: '/audio/missions/module-2/self-intro/ich-spreche-malayalam-und-englisch.mp3',
     modelIntroShort: '/audio/missions/module-2/self-intro/model-intro-short.mp3',
@@ -142,8 +142,8 @@ export const module2MissionAudio = {
   spellName: {
     scene: '/audio/missions/module-2/dialogue/spell-examiner-buchstabieren.mp3',
     letterTrap: '/audio/missions/module-2/dialogue/spell-letter-trap.mp3',
-    clarify: '/audio/missions/module-2/dialogue/spell-clarify-k-wie-kaiser.mp3',
-    kuttanModel: '/audio/missions/module-2/dialogue/spell-kuttan-model.mp3',
+    clarify: '/audio/missions/module-2/dialogue/spell-clarify-m-wie-maria.mp3',
+    meeraModel: '/audio/missions/module-2/dialogue/spell-meera-model.mp3',
   },
   fromKerala: {
     scene: '/audio/missions/module-2/dialogue/origin-examiner-woher.mp3',

@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, Clock, Target } from 'lucide-react';
 import VoiceChat from '@/components/voice/VoiceChat';
 import { getScenario } from '@/lib/content/roleplay-scenarios';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 type Params = { scenarioId: string };
 
@@ -60,7 +60,7 @@ export default function RoleplayScenarioPage({ params }: { params: Promise<Param
       >
         <div className="rounded-2xl border border-[#d4a520]/20 bg-gradient-to-br from-[#d4a520]/10 to-transparent p-3 backdrop-blur">
           <div className="flex items-start gap-3">
-            <Kuttan mood="excited" size="sm" />
+            <Nivin mood="excited" size="sm" />
             <div className="flex-1">
               <div className="flex items-center gap-1.5 mb-0.5">
                 <span
@@ -81,7 +81,7 @@ export default function RoleplayScenarioPage({ params }: { params: Promise<Param
                 {scenario.goal}
               </p>
               <p className="text-[11px] text-[#d4a520]/90 leading-snug italic">
-                Kuttan says: {tip}
+                Nivin says: {tip}
               </p>
             </div>
           </div>

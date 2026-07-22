@@ -27,7 +27,7 @@ import {
 } from 'lucide-react';
 import { Card, Button, Badge, ProgressBar } from '@/components/ui';
 import { useGameStore, ACHIEVEMENTS_DATA } from '@/lib/store';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { StreakCalendar } from '@/components/ui/StreakCalendar';
 import { HOUR_OPTIONS, getEstimatedDays, getEstimatedCompletionDate, createStudyPlan } from '@/lib/study-plan';
 import { ALL_MODULES } from '@/lib/content/modules';
@@ -371,7 +371,7 @@ export default function ProfilePage() {
           </Card>
         )}
 
-        {/* Kuttan greeting — larger, more delightful */}
+        {/* Nivin greeting — larger, more delightful */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -381,7 +381,7 @@ export default function ProfilePage() {
           <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#d4a520]/15 blur-3xl" />
           <div className="relative flex items-center gap-3">
             <div className="flex-shrink-0">
-              <Kuttan mood={coursePercent >= 100 ? 'celebrating' : coursePercent > 50 ? 'excited' : 'happy'} size="sm" entrance={true} />
+              <Nivin mood={coursePercent >= 100 ? 'celebrating' : coursePercent > 50 ? 'excited' : 'happy'} size="sm" entrance={true} />
             </div>
             <div className="flex-1">
               <div className="mb-0.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#d4a520]">

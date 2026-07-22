@@ -27,17 +27,18 @@ export default function Module2SpellNameMissionPage() {
         {step === 0 && (
           <>
             <ConversationRepairStep
-              title="K-U-T-T-A-N."
+              title="M-E-E-R-A."
               hideTitle
-              speakerName="Frau Weber"
+              speakerName="Frau Fischer"
               speakerLine="Buchstabieren Sie bitte."
-              learnerName="You"
-              learnerLine="K-U-T-T-A-N."
-              audioSrc={audioSources.kuttanModel}
+              learnerName="Meera"
+            learnerPeer="meera"
+              learnerLine="M-E-E-R-A."
+              audioSrc={audioSources.meeraModel}
               audioLabel="Your spelling"
               options={[
-                { id: 'english-letters', title: 'Kay - You - Tee...' },
-                { id: 'german-letters', title: 'Kah - Ooh - Tay...' },
+                { id: 'english-letters', title: 'Em - Ee - Ee - Ar - Ay' },
+                { id: 'german-letters', title: 'Em - Eh - Eh - Er - Ah' },
               ]}
               value={repairChoice}
               onChange={setRepairChoice}
@@ -53,7 +54,7 @@ export default function Module2SpellNameMissionPage() {
               <div className="mt-5 grid gap-4 lg:grid-cols-[0.8fr_1fr] lg:items-stretch" data-testid="spell-name-inline-win">
                 <div className="rounded-[1.5rem] border border-[#3fbf75]/25 bg-[#3fbf75]/12 p-5">
                   <p className="text-sm font-black text-[#bcf7d0]">You can now</p>
-                  <p className="mt-2 text-2xl font-black">“K-U-T-T-A-N.”</p>
+                  <p className="mt-2 text-2xl font-black">“M-E-E-R-A.”</p>
                 </div>
                 <NextMissionCard currentMissionId={mission.id} />
               </div>

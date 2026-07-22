@@ -28,18 +28,18 @@
     { "voice": "narrator", "text": "Repeat.", "pauseAfterMs": 200 },
     { "voice": "german", "text": "Ich hei\u00DFe.", "pauseAfterMs": 3000 },
 
-    { "voice": "narrator", "text": "Now add your name. If your name is Kuttan, you'd say...", "pauseAfterMs": 400 },
-    { "voice": "german", "text": "Ich hei\u00DFe Kuttan.", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "Now add your name. If your name is Nivin, you'd say...", "pauseAfterMs": 400 },
+    { "voice": "german", "text": "Ich hei\u00DFe Nivin.", "pauseAfterMs": 2500 },
     { "voice": "narrator", "text": "Say your own name now. Ich heiße — and your name.", "pauseAfterMs": 4000 },
 
-    { "voice": "narrator", "text": "Adipoli! Now let's combine. How do you say: Hello, my name is Kuttan?", "pauseAfterMs": 4500 },
+    { "voice": "narrator", "text": "Adipoli! Now let's combine. How do you say: Hello, my name is Nivin?", "pauseAfterMs": 4500 },
     { "voice": "narrator", "text": "You say...", "pauseAfterMs": 200 },
-    { "voice": "german", "text": "Hallo. Ich hei\u00DFe Kuttan.", "pauseAfterMs": 3000 },
+    { "voice": "german", "text": "Hallo. Ich hei\u00DFe Nivin.", "pauseAfterMs": 3000 },
     { "voice": "narrator", "text": "Try it with your name.", "pauseAfterMs": 4000 },
 
-    { "voice": "narrator", "text": "Let's try the formal version. Good day, my name is Kuttan.", "pauseAfterMs": 3500 },
+    { "voice": "narrator", "text": "Let's try the formal version. Good day, my name is Nivin.", "pauseAfterMs": 3500 },
     { "voice": "narrator", "text": "You say...", "pauseAfterMs": 200 },
-    { "voice": "german", "text": "Guten Tag. Ich hei\u00DFe Kuttan.", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Guten Tag. Ich hei\u00DFe Nivin.", "pauseAfterMs": 3500 },
 
     { "voice": "narrator", "text": "Now to say goodbye. The casual goodbye, used with friends, is Tschüss.", "pauseAfterMs": 400 },
     { "voice": "german", "text": "Tsch\u00FCss.", "pauseAfterMs": 2200 },

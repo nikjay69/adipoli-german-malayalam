@@ -1,13 +1,13 @@
-import type { KuttanMood } from '@/components/character/Kuttan';
+import type { NivinMood } from '@/components/character/Nivin';
 import type { AppuMood } from '@/components/character/Appu';
 import type { DialogueLine } from '@/components/character/CharacterGuide';
 
-// All Kuttan & Appu dialogue, organized by context
+// All Nivin & Appu dialogue, organized by context
 // Manglish for conversational text, English for UI labels
 
 export const DIALOGUE = {
   welcome: [
-    "Namaskaram! Njan Kuttan. German padikkano? Njan help cheyyam.",
+    "Namaskaram! Njan Nivin. German padikkano? Njan help cheyyam.",
     "Hey! German padikkal fun aanu. Ready?",
     "Welcome machaa! Germany-lekku ninte first step.",
   ],
@@ -52,7 +52,7 @@ export const DIALOGUE = {
     "Nee doing great. Streak alive aanu.",
   ],
   intro: [
-    "Namaskaram! Njan Kuttan — ninte koode ithokke padikkaan varunnu.",
+    "Namaskaram! Njan Nivin — ninte koode ithokke padikkaan varunnu.",
     "Njan ninne Kerala-il ninnu Germany-lekku kondu pokum — ninte same boat-il aanu njanum.",
     "German padikkal tough aanu, but together nammal pokum.",
     "Ready? Pokam!",
@@ -73,8 +73,8 @@ export function getRandomMessage(context: DialogueContext): string {
 }
 
 /** Get mood appropriate for a dialogue context */
-export function getMoodForContext(context: DialogueContext): KuttanMood {
-  const moodMap: Record<DialogueContext, KuttanMood> = {
+export function getMoodForContext(context: DialogueContext): NivinMood {
+  const moodMap: Record<DialogueContext, NivinMood> = {
     welcome: 'waving',
     comeback: 'excited',
     correct: 'celebrating',
@@ -121,7 +121,7 @@ export function buildDialogueLine(context: DialogueContext, text?: string): Dial
 export function getIntroDialogue(): DialogueLine[] {
   return DIALOGUE.intro.map((text, i) => ({
     text,
-    mood: i === 0 ? 'waving' as KuttanMood : i === 3 ? 'excited' as KuttanMood : 'happy' as KuttanMood,
+    mood: i === 0 ? 'waving' as NivinMood : i === 3 ? 'excited' as NivinMood : 'happy' as NivinMood,
     appuMood: 'idle' as AppuMood,
     showAppu: false,
   }));

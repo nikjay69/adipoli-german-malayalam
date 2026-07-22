@@ -1,6 +1,6 @@
 # Module 1 · Lesson 05 Video Script — Politeness Survival
 
-Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs)
+Updated: 2026-06-10 (quality pass: honest length, Nivin thread, recording specs)
 
 **Purpose:** Give learners a small formal-safe politeness toolkit: `bitte`, `danke`, `Entschuldigung`, and safer defaults.
 
@@ -9,8 +9,8 @@ Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs
 **Recording spec (applies to every drill/pause in this script):**
 
 - Every practice pause: model audio → `[PAUSE 3s]` silence → model audio again. Writing pauses: `[PAUSE 15s]`.
-- All Frau Weber / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
-- Frau Weber appears in a video-call frame or at the Goethe Kochi desk. Kuttan and the learner are always physically in Kerala.
+- All Frau Fischer / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
+- Frau Fischer appears in a video-call frame or at the Goethe Kochi desk. Nivin and the learner are in the Kerala practice setting.
 
 **Target length:** 25 minutes. Dense, no filler — every block earns its minutes.
 
@@ -20,7 +20,7 @@ Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs
 
 ## 0:00–1:00 — Hook: polite words reduce panic
 
-**SCENE:** Kuttan at the Goethe Kochi reception, mind blank, three words float in: Bitte. Danke. Entschuldigung.
+**SCENE:** Nivin at the Goethe Kochi reception, mind blank, three words float in: Bitte. Danke. Entschuldigung.
 
 **On-screen:**
 
@@ -61,7 +61,7 @@ Entschuldigung.
 
 1. **Danke.**
 2. **Danke schön.**
-3. **Danke, Frau Weber.**
+3. **Danke, Frau Fischer.**
 
 ---
 
@@ -123,9 +123,9 @@ Ent-schul-di-gung
 **Tiny scene:**
 
 ```text
-Kuttan: Entschuldigung.
-Frau Weber: Ja?
-Kuttan: Noch einmal, bitte.
+Nivin: Entschuldigung.
+Frau Fischer: Ja?
+Nivin: Noch einmal, bitte.
 ```
 
 ---
@@ -186,32 +186,32 @@ Examiner hands over the picture card and says: **Bitte.**
 
 ```text
 Examiner: Guten Tag.
-Kuttan: Guten Tag.
+Nivin: Guten Tag.
 Examiner: Bitte.   [hands over the picture card]
-Kuttan: Danke.
+Nivin: Danke.
 ```
 
 ---
 
-## 19:30–22:30 — Active practice: Kuttan at the reception, start to finish
+## 19:30–22:30 — Active practice: Nivin at the reception, start to finish
 
-**SCENE:** One continuous mini-scene — Kuttan walks into the Goethe Kochi reception, gets a form, and leaves. The five polite moments happen in sequence. Same German as before, now a story.
+**SCENE:** One continuous mini-scene — Nivin walks into the Goethe Kochi reception, gets a form, and leaves. The five polite moments happen in sequence. Same German as before, now a story.
 
 ```text
-Kuttan: Entschuldigung.
+Nivin: Entschuldigung.
 Receptionist: Ja? Guten Tag.
-Kuttan: Guten Tag.
-[Receptionist answers — too fast for Kuttan]
-Kuttan: Noch einmal, bitte.
+Nivin: Guten Tag.
+[Receptionist answers — too fast for Nivin]
+Nivin: Noch einmal, bitte.
 [Receptionist repeats slowly and hands over a form]
 Receptionist: Bitte.
-Kuttan: Danke.
-[Kuttan fills in the form and hands it back]
+Nivin: Danke.
+[Nivin fills in the form and hands it back]
 Receptionist: Danke.
-Kuttan: Bitte. Auf Wiedersehen.
+Nivin: Bitte. Auf Wiedersehen.
 ```
 
-**Practice:** Replay the scene with Kuttan’s lines muted; learner performs Kuttan’s lines (pause spec applies).
+**Practice:** Replay the scene with Nivin’s lines muted; learner performs Nivin’s lines (pause spec applies).
 
 **Presenter:**
 

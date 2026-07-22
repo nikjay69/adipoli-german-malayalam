@@ -14,7 +14,7 @@ interface SceneConclusionProps {
 const CONCLUSION_MESSAGES = [
   "Adipoli machane! Scene complete! 🎬",
   "Wunderbar! You survived that scene! 💪",
-  "Nice one! Kuttan is proud of you! 🌟",
+  "Nice one! That repair landed cleanly! 🌟",
   "Scene cleared! Your German is growing! 🇩🇪",
   "Machane, you're becoming a real Berliner! 🐻",
 ];
@@ -40,6 +40,7 @@ export function SceneConclusion({
     >
       <CharacterGuide
         messages={message}
+        peer={scene.learnerOwner}
         mood="celebrating"
         size="md"
         showAppu={accuracy >= 80}

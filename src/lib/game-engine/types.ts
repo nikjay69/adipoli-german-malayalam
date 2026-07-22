@@ -3,7 +3,8 @@
 // There are NO passive reading screens. Everything is interactive.
 
 import type { Exercise, Video, VocabItem } from '@/lib/content/types';
-import type { KuttanMoodImage } from '@/components/character/KuttanImage';
+import type { NivinMoodImage } from '@/components/character/NivinImage';
+import type { LearnerPeerId } from '@/lib/cast';
 
 // ── Scene Types ──────────────────────────────────────────────
 
@@ -13,7 +14,7 @@ export type GameMomentType =
   | 'word-discover'   // Discover a new word through interaction
   | 'teach'           // App-native teaching while recorded video is pending
   | 'game'            // A mini-game challenge
-  | 'reaction'        // Brief Kuttan reaction (auto-advances in 1.5s)
+  | 'reaction'        // Brief Nivin reaction (auto-advances in 1.5s)
   | 'victory'         // Lesson complete celebration
 
 export interface GameMoment {
@@ -22,14 +23,15 @@ export interface GameMoment {
 
   // Visual
   sceneImage?: string;          // Background image URL
-  kuttan?: {
-    mood: KuttanMoodImage;
+  peer?: {
+    id: LearnerPeerId;
+    mood: NivinMoodImage;
     position?: 'left' | 'center' | 'right';
   };
 
   // Dialogue (for 'scene' and 'dialogue' types)
   dialogue?: {
-    speaker: string;            // "Kuttan" | "Baker" | "Officer" | etc.
+    speaker: string;            // "Nivin" | "Baker" | "Officer" | etc.
     text: string;               // MAX 60 chars — one short line
     choices?: GameChoice[];     // If present, user must choose (not tap "next")
   };
@@ -57,7 +59,7 @@ export interface GameChoice {
   text: string;                 // The choice text (in German for learning!)
   isCorrect: boolean;
   response: string;             // Brief response (max 40 chars)
-  kuttanMood: KuttanMoodImage;
+  peerMood: NivinMoodImage;
 }
 
 // ── Scene Image Mapping ──────────────────────────────────────

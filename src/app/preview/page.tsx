@@ -75,7 +75,7 @@ export default function PreviewPage() {
 
         <div className="mt-6">
           <Section title="Start / chrome" links={[['Landing', '/landing'], ['Onboarding', '/onboarding'], ['Intro', '/intro'], ['Today (home)', '/learn'], ['Course path', '/course'], ['Practice hub', '/practice'], ['Profile / Me', '/profile'], ['Plan', '/plan'], ['Vocabulary', '/vocabulary'], ['On the go', '/on-the-go'], ['Tests hub', '/tests'], ['Pricing', '/pricing'], ['Admin', '/admin']]} />
-          <Section title="Module 1 missions (Frau Weber)" links={m1Missions} />
+          <Section title="Module 1 missions (Frau Fischer)" links={m1Missions} />
           <Section title="Module 2 missions (self-intro)" links={m2Missions} />
           <Section title="Checkpoints" links={checkpoints} />
           <Section title="Mock-exam gates" links={mocks} />

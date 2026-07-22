@@ -5,6 +5,7 @@ import { CharacterGuide } from '@/components/character';
 import { GameButton } from '@/components/game';
 import { getArcForModule } from '@/lib/content/narrative-arcs';
 import { getStreakInfo } from '@/lib/engagement/streak-system';
+import { learnerPeerForLessonIndex, learnerPeerName } from '@/lib/cast';
 
 interface StoryRecapProps {
   streak: number;
@@ -35,6 +36,7 @@ export function StoryRecap({
   onContinue,
 }: StoryRecapProps) {
   const arc = getArcForModule(currentModuleId);
+  const peer = learnerPeerForLessonIndex(currentModuleId - 1);
   const streakInfo = getStreakInfo(streak);
   const welcomeMsg = WELCOME_MESSAGES[Math.floor(Math.random() * WELCOME_MESSAGES.length)];
 
@@ -45,7 +47,7 @@ export function StoryRecap({
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[var(--background)] p-6"
     >
-      {/* Kuttan welcome */}
+      {/* Nivin welcome */}
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -53,6 +55,7 @@ export function StoryRecap({
       >
         <CharacterGuide
           messages={welcomeMsg}
+          peer={peer}
           mood={daysSinceLastActive > 3 ? 'sad' : 'waving'}
           size="md"
         />
@@ -97,7 +100,7 @@ export function StoryRecap({
             {arc.description}
           </p>
           <p className="text-xs text-[#d4a520] mt-2 italic">
-            Kuttan: {arc.kuttanState}
+            {learnerPeerName(peer)}: {arc.peerStates[peer]}
           </p>
         </motion.div>
       )}

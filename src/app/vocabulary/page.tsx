@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { Card, ProgressBar } from '@/components/ui';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { Appu } from '@/components/character/Appu';
 import { useGameStore } from '@/lib/store';
 import { getAllVocabulary, ALL_MODULES, type VocabItem } from '@/lib/content/modules';
@@ -195,7 +195,7 @@ export default function VocabularyPage() {
       // All done
       return (
         <div className="min-h-screen px-4 py-6 max-w-2xl mx-auto flex flex-col items-center justify-center text-center">
-          <Kuttan mood="celebrating" size="lg" />
+          <Nivin mood="celebrating" size="lg" />
           <h2 className="text-2xl font-bold mt-4 mb-2">Practice Complete!</h2>
           <p className="text-[var(--foreground)]/50 text-sm mb-4">
             {sessionStats.correct}/{sessionStats.total} first try · +{sessionStats.xp} XP
@@ -246,16 +246,16 @@ export default function VocabularyPage() {
               exit={{ opacity: 0, x: -40 }}
               className="flex-1 flex flex-col"
             >
-              {/* Kuttan */}
+              {/* Nivin */}
               <div className="flex items-start gap-2.5 mb-4 max-w-sm mx-auto w-full">
-                <Kuttan
+                <Nivin
                   mood={isCorrect ? 'happy' : showFeedback ? 'sad' : 'thinking'}
                   size="sm"
                   entrance={false}
                 />
                 <div className="game-card px-3 py-2 flex-1 min-h-[44px] flex items-center">
                   <p className="text-xs text-[var(--foreground)]/70 leading-snug">
-                    {showFeedback ? feedbackText : encounter.kuttanSays}
+                    {showFeedback ? feedbackText : encounter.peerSays}
                   </p>
                 </div>
               </div>
@@ -399,7 +399,7 @@ export default function VocabularyPage() {
               </div>
               {learnedCount === 0 && (
                 <div className="flex-shrink-0 opacity-90" style={{ transform: 'scale(0.8)', transformOrigin: 'top right' }}>
-                  <Kuttan mood="pointing" size="sm" entrance={false} />
+                  <Nivin mood="pointing" size="sm" entrance={false} />
                 </div>
               )}
             </div>

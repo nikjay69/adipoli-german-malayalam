@@ -12,7 +12,7 @@
     { "file": "/audio/exercises/ex7-4-spk2-model.mp3", "german": "Haben Sie das in Größe L?", "kind": "speaking-model", "lesson": "7-4" },
     { "file": "/audio/exercises/ex7-5-spk2-model.mp3", "german": "Kochi ist schöner als Berlin.", "kind": "speaking-model", "lesson": "7-5" },
     { "file": "/audio/checkpoints/cp2-s-intro-model.mp3", "german": "Ich heiße Priya. Ich komme aus Indien. Ich wohne in Kochi. Ich spreche Malayalam, Englisch und ein bisschen Deutsch.", "kind": "checkpoint-model", "lesson": "cp2" },
-    { "file": "/audio/checkpoints/cp2-s-spell-model.mp3", "german": "K, U, T, T, A, N.", "kind": "checkpoint-model", "lesson": "cp2" },
+    { "file": "/audio/checkpoints/cp2-s-spell-model.mp3", "german": "M, E, E, R, A.", "kind": "checkpoint-model", "lesson": "cp2" },
     { "file": "/audio/checkpoints/cp2-s-age-model.mp3", "german": "Ich bin dreiundzwanzig Jahre alt.", "kind": "checkpoint-model", "lesson": "cp2" },
     { "file": "/audio/checkpoints/cp3-s-family-model.mp3", "german": "Das ist meine Mutter. Sie heißt Lakshmi. Das ist mein Bruder. Er ist Student in Bangalore.", "kind": "checkpoint-model", "lesson": "cp3" },
     { "file": "/audio/checkpoints/cp3-s-routine-model.mp3", "german": "Ich stehe um sechs Uhr auf. Ich arbeite bis fünf Uhr. Abends lerne ich Deutsch.", "kind": "checkpoint-model", "lesson": "cp3" },

@@ -6,8 +6,8 @@
 
     { "voice": "narrator", "text": "Remember from episode one — how do you say hello formally?", "pauseAfterMs": 3500 },
     { "voice": "german", "text": "Guten Tag.", "pauseAfterMs": 1800 },
-    { "voice": "narrator", "text": "And how do you say your name is Kuttan?", "pauseAfterMs": 3500 },
-    { "voice": "german", "text": "Ich hei\u00DFe Kuttan.", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "And how do you say your name is Nivin?", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Ich hei\u00DFe Nivin.", "pauseAfterMs": 2500 },
     { "voice": "narrator", "text": "Sehr gut. Now let's move forward.", "pauseAfterMs": 500 },
 
     { "voice": "narrator", "text": "To ask 'how are you?' formally in German, you say:", "pauseAfterMs": 300 },

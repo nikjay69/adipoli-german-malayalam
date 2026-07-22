@@ -1,6 +1,6 @@
 # Module 1 · Lesson 03 Video Script — German Sounds for Malayalam Speakers
 
-Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs)
+Updated: 2026-06-10 (quality pass: honest length, Nivin thread, recording specs)
 
 **Purpose:** Train the highest-risk beginner sounds early so learners can say greetings and first sentences confidently.
 
@@ -9,20 +9,20 @@ Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs
 **Recording spec (applies to every drill/pause in this script):**
 
 - Every practice pause: model audio → `[PAUSE 3s]` silence → model audio again. Writing pauses: `[PAUSE 15s]`.
-- All Frau Weber / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
-- Frau Weber appears in a video-call frame or at the Goethe Kochi desk. Kuttan and the learner are always physically in Kerala.
+- All Frau Fischer / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
+- Frau Fischer appears in a video-call frame or at the Goethe Kochi desk. Nivin and the learner are in the Kerala practice setting.
 
 **Target length:** 30 minutes. Dense, no filler — every block earns its minutes.
 
 **Learner output by end:** Shadow 10 lines using `ch`, `sch`, German `w/v`, and umlauts; recognise the dangerous differences.
 
-**Running gag (used in every sound block):** Kuttan, in his Kochi room, is on a video call with Frau Weber. He says “isch lerne Deutsch” — Frau Weber winces. After each repaired sound, the call replays and goes a little better.
+**Running gag (used in every sound block):** Nivin, in a Kerala home study scene, is on a video call with Frau Fischer. He says “isch lerne Deutsch” — Frau Fischer winces. After each repaired sound, the call replays and goes a little better.
 
 ---
 
 ## 0:00–1:00 — Hook: accent is not the goal; being understood is
 
-**Scene:** Kuttan in his Kochi room, video-call frame open: Frau Weber. Kuttan says “Isch lerne Deutsch.” — the audio waveform highlights `isch` and Frau Weber winces gently.
+**Scene:** Nivin in a Kerala home study scene, video-call frame open: Frau Fischer. Nivin says “Isch lerne Deutsch.” — the audio waveform highlights `isch` and Frau Fischer winces gently.
 
 **Presenter:**
 
@@ -76,7 +76,7 @@ Ich lerne Deutsch.
 | 4 | `Isch lerne Deutsch.` (A) vs `Ich lerne Deutsch.` (B) | B |
 | 5 | `ich` (A) vs `isch` (B) | A |
 
-**Kuttan beat:** Video call: Kuttan says “Isch lerne Deutsch.” Frau Weber winces. Kuttan tries again — **Ich lerne Deutsch.** — and the call replays: Frau Weber nods.
+**Nivin beat:** Video call: Nivin says “Isch lerne Deutsch.” Frau Fischer winces. Nivin tries again — **Ich lerne Deutsch.** — and the call replays: Frau Fischer nods.
 
 ---
 
@@ -116,7 +116,7 @@ Ich lerne Deutsch.
 | 4 | `Tschüss` with church-ch (A) vs soft ch (B) — which is right? | A |
 | 5 | `Deutsch` ends in church-ch (A) or soft ch (B)? | A |
 
-**Kuttan beat:** Call replays: Kuttan ends with a clean **Tschüss!** — Frau Weber smiles. Going better.
+**Nivin beat:** Call replays: Nivin ends with a clean **Tschüss!** — Frau Fischer smiles. Going better.
 
 ---
 
@@ -127,7 +127,7 @@ Ich lerne Deutsch.
 **On-screen:**
 
 ```text
-Frau Weber
+Frau Fischer
 German w ≈ English v
 ```
 
@@ -135,11 +135,11 @@ German w ≈ English v
 
 [Boss explains in Malayalam/Manglish: In German, `w` is not the English rounded “w”. Bite lightly with lip/teeth like English v.]
 
-**Hear it (native audio ×2):** **Frau Weber** … **Auf Wiedersehen.**
+**Hear it (native audio ×2):** **Frau Fischer** … **Auf Wiedersehen.**
 
 **Echo rounds (×3 — each: model audio → `[PAUSE 3s]` → model audio again):**
 
-1. **Weber** → **Frau Weber**
+1. **Weber** → **Frau Fischer**
 2. **Wasser**
 3. **Auf Wiedersehen** — drilled twice: once slow, once at normal speed.
 
@@ -148,12 +148,12 @@ German w ≈ English v
 | Item | Plays | Safer for German |
 |---|---|---|
 | 1 | `Weber` English-w (A) vs v-like (B) | B |
-| 2 | `Frau Weber` v-like (A) vs English-w (B) | A |
+| 2 | `Frau Fischer` v-like (A) vs English-w (B) | A |
 | 3 | `Wasser` English-w (A) vs v-like (B) | B |
 | 4 | `Auf Wiedersehen` v-like (A) vs English-w (B) | A |
 | 5 | `Wasser` v-like (A) vs English-w (B) | A |
 
-**Kuttan beat:** Call replays: Kuttan greets with **Guten Morgen, Frau Weber.** — v-sound clean. Frau Weber’s wince is gone.
+**Nivin beat:** Call replays: Nivin greets with **Guten Morgen, Frau Fischer.** — v-sound clean. Frau Fischer’s wince is gone.
 
 ---
 
@@ -180,7 +180,7 @@ German w ≈ English v
 
 1. **viel**
 2. **Visum** → **Video**
-3. **Frau Weber**
+3. **Frau Fischer**
 
 **Rapid A/B check (5 items, pre-rendered pairs; Boss reacts to playback; `[PAUSE 3s]` per item):**
 
@@ -192,7 +192,7 @@ German w ≈ English v
 | 4 | `Video` with f (A) vs with v (B) | B |
 | 5 | `Wasser` English-w (A) vs v-like (B) — repair from Sound 3 | B |
 
-**Kuttan beat:** Call replays: Kuttan says **Visum** with a clear v — Frau Weber gives a thumbs up.
+**Nivin beat:** Call replays: Nivin says **Visum** with a clear v — Frau Fischer gives a thumbs up.
 
 ---
 
@@ -249,9 +249,9 @@ They change sound.
 | 4 | `München` with ü (A) vs plain u (B) | A |
 | 5 | `Österreich` with ö (A) vs plain o (B) | A |
 
-**Kuttan beat (gag payoff):** The call replays one last time: Kuttan signs off — **Tschüss, Frau Weber!** — soft ch, real ü, v-sound all in place. Frau Weber smiles; the call is now going well.
+**Nivin beat (gag payoff):** The call replays one last time: Nivin signs off — **Tschüss, Frau Fischer!** — soft ch, real ü, v-sound all in place. Frau Fischer smiles; the call is now going well.
 
-**A1/canon note:** Germany/Austria city/country examples are pronunciation examples only — Kuttan stays in his Kochi room; Frau Weber stays in the video-call frame.
+**A1/canon note:** Germany/Austria city/country examples are pronunciation examples only — Nivin stays in the Kerala practice setting; Frau Fischer stays in the video-call frame.
 
 ---
 
@@ -272,7 +272,7 @@ Do not read fast.
 
 1. **Ich.**
 2. **Ich lerne Deutsch.**
-3. **Guten Morgen, Frau Weber.**
+3. **Guten Morgen, Frau Fischer.**
 4. **Auf Wiedersehen.**
 5. **Tschüss.**
 6. **Bitte.** (please)
@@ -315,7 +315,7 @@ Repair:
 
 ```text
 Ich.
-Frau Weber.
+Frau Fischer.
 Tschüss.
 Danke schön.
 ```
@@ -377,7 +377,7 @@ Next: choose the right greeting
 ## Production notes
 
 - Audio quality matters here: every German model and every A/B pair is pre-rendered native-quality audio (per the recording spec); never browser SpeechSynthesis.
-- The video-call running gag needs only one set: Kuttan's Kochi room + Frau Weber call frame. Re-use the frame; vary only her reaction (wince → nod → smile → thumbs up).
+- The video-call running gag needs only one set: Nivin's Kerala home study scene + Frau Fischer call frame. Re-use the frame; vary only her reaction (wince → nod → smile → thumbs up).
 - On-screen phonetic cues are approximate; do not overpromise perfect accent.
 - Use mouth-position visuals sparingly and adult-safe.
 - Keep every sound tied to a useful A1 phrase.

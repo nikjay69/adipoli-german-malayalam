@@ -44,7 +44,7 @@ export const PRICING: PricingTier[] = [
     features: [
       'All 18 modules',
       'All 8 games',
-      'AI voice practice (Kuttan roleplay)',
+      'AI voice practice (Nivin roleplay)',
       'Vocab SRS across devices',
       'Progress sync',
     ],

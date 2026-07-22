@@ -1,6 +1,6 @@
 # Module 1 · Lesson 07 Video Script — First Mini-Conversation
 
-Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs)
+Updated: 2026-06-10 (quality pass: honest length, Nivin thread, recording specs)
 
 **Purpose:** Combine Module 1 phrases into one useful first exchange: greet → answer → ask repeat if needed → thank → leave.
 
@@ -9,33 +9,33 @@ Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs
 **Recording spec (applies to every drill/pause in this script):**
 
 - Every practice pause: model audio → `[PAUSE 3s]` silence → model audio again. Writing pauses: `[PAUSE 15s]`.
-- All Frau Weber / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
-- Frau Weber appears in a video-call frame or at the Goethe Kochi desk. Kuttan and the learner are always physically in Kerala.
+- All Frau Fischer / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
+- Frau Fischer appears in a video-call frame or at the Goethe Kochi desk. Nivin and the learner are in the Kerala practice setting.
 
 **Target length:** 30 minutes. Dense, no filler — every block earns its minutes.
 
-**Learner output by end:** Perform a tiny formal conversation with Frau Weber and complete the Module 1 readiness check.
+**Learner output by end:** Perform a tiny formal conversation with Frau Fischer and complete the Module 1 readiness check.
 
 ---
 
-## 0:00–1:30 — Hook: Kuttan’s first real conversation
+## 0:00–1:30 — Hook: Nivin’s first real conversation
 
-**SCENE (locked staging):** Frau Weber on a video call; Kuttan at home in Kerala (window light, fan, chai). The learner performs Kuttan’s lines. This is the milestone lesson — Kuttan’s first real conversation with Frau Weber.
+**SCENE (locked staging):** Frau Fischer on a video call; Nivin at home in Kerala (window light, fan, chai). The learner performs Nivin’s lines. This is the milestone lesson — Nivin’s first real conversation with Frau Fischer.
 
 **On-screen dialogue, one line at a time:**
 
 ```text
-Frau Weber: Guten Morgen.
-Kuttan: Guten Morgen, Frau Weber.
+Frau Fischer: Guten Morgen.
+Nivin: Guten Morgen, Frau Fischer.
 ```
 
 **Presenter:**
 
-[Boss explains in Malayalam/Manglish: “Today we connect the pieces. This is not a grammar class. This is Kuttan’s — and your — first German conversation.”]
+[Boss explains in Malayalam/Manglish: “Today we connect the pieces. This is not a grammar class. This is Nivin’s — and your — first German conversation.”]
 
 **Practice pause:**
 
-> Reply aloud: **Guten Morgen, Frau Weber.**
+> Reply aloud: **Guten Morgen, Frau Fischer.**
 
 ---
 
@@ -44,16 +44,16 @@ Kuttan: Guten Morgen, Frau Weber.
 **Play the FULL final dialogue once, start to finish** — “here’s where you’ll be in 25 minutes.”
 
 ```text
-Frau Weber: Guten Morgen.
-Kuttan: Guten Morgen, Frau Weber.
-Frau Weber: Lernen Sie Deutsch?
-Kuttan: Noch einmal, bitte.
-Frau Weber: Lernen Sie Deutsch?
-Kuttan: Ja. Ich lerne Deutsch.
-Frau Weber: Sehr gut.
-Kuttan: Danke.
-Frau Weber: Auf Wiedersehen.
-Kuttan: Auf Wiedersehen, Frau Weber.
+Frau Fischer: Guten Morgen.
+Nivin: Guten Morgen, Frau Fischer.
+Frau Fischer: Lernen Sie Deutsch?
+Nivin: Noch einmal, bitte.
+Frau Fischer: Lernen Sie Deutsch?
+Nivin: Ja. Ich lerne Deutsch.
+Frau Fischer: Sehr gut.
+Nivin: Danke.
+Frau Fischer: Auf Wiedersehen.
+Nivin: Auf Wiedersehen, Frau Fischer.
 ```
 
 **Then derive the map from what you just heard:**
@@ -81,15 +81,15 @@ Kuttan: Auf Wiedersehen, Frau Weber.
 **On-screen scene:**
 
 ```text
-Frau Weber: Guten Tag.
-Kuttan: Guten Tag.
+Frau Fischer: Guten Tag.
+Nivin: Guten Tag.
 ```
 
 **Teaching point:** Match the greeting or use the safe formal reply. This is review — fast reps, no re-teaching.
 
 **Practice prompts:**
 
-1. Frau Weber: **Guten Morgen.** → **Guten Morgen, Frau Weber.**
+1. Frau Fischer: **Guten Morgen.** → **Guten Morgen, Frau Fischer.**
 2. Examiner: **Guten Tag.** → **Guten Tag.**
 3. Evening class: **Guten Abend.** → **Guten Abend.**
 
@@ -102,8 +102,8 @@ Kuttan: Guten Tag.
 **On-screen:**
 
 ```text
-Frau Weber: Lernen Sie Deutsch?
-Kuttan: Ja. Ich lerne Deutsch.
+Frau Fischer: Lernen Sie Deutsch?
+Nivin: Ja. Ich lerne Deutsch.
 ```
 
 **Presenter:**
@@ -118,7 +118,7 @@ Kuttan: Ja. Ich lerne Deutsch.
 
 **Practice pause:**
 
-> Frau Weber asks: **Lernen Sie Deutsch?**
+> Frau Fischer asks: **Lernen Sie Deutsch?**
 >
 > You answer: **Ja. Ich lerne Deutsch.**
 
@@ -131,10 +131,10 @@ Kuttan: Ja. Ich lerne Deutsch.
 **Mini-scene:**
 
 ```text
-Frau Weber: Lernen Sie Deutsch?
-Kuttan: Noch einmal, bitte.
-Frau Weber: Lernen Sie Deutsch?
-Kuttan: Ja. Ich lerne Deutsch.
+Frau Fischer: Lernen Sie Deutsch?
+Nivin: Noch einmal, bitte.
+Frau Fischer: Lernen Sie Deutsch?
+Nivin: Ja. Ich lerne Deutsch.
 ```
 
 **Practice:**
@@ -152,65 +152,65 @@ Kuttan: Ja. Ich lerne Deutsch.
 **On-screen:**
 
 ```text
-Frau Weber: Sehr gut.
-Kuttan: Danke.
-Frau Weber: Auf Wiedersehen.
-Kuttan: Auf Wiedersehen, Frau Weber.
+Frau Fischer: Sehr gut.
+Nivin: Danke.
+Frau Fischer: Auf Wiedersehen.
+Nivin: Auf Wiedersehen, Frau Fischer.
 ```
 
 **Say-aloud drill:**
 
 1. **Danke.**
 2. **Auf Wiedersehen.**
-3. **Danke. Auf Wiedersehen, Frau Weber.**
+3. **Danke. Auf Wiedersehen, Frau Fischer.**
 
 ---
 
 ## 17:30–22:00 — Full guided conversation: rounds 1 and 2
 
-**SCENE:** Frau Weber on the video call; Kuttan at home in Kerala. The learner performs Kuttan’s lines.
+**SCENE:** Frau Fischer on the video call; Nivin at home in Kerala. The learner performs Nivin’s lines.
 
 **Instruction on screen:**
 
 ```text
-Listen to Frau Weber.
-Say only Kuttan’s lines aloud.
+Listen to Frau Fischer.
+Say only Nivin’s lines aloud.
 ```
 
 **Full dialogue:**
 
 ```text
-Frau Weber: Guten Morgen.
-Kuttan: Guten Morgen, Frau Weber.
-Frau Weber: Lernen Sie Deutsch?
-Kuttan: Noch einmal, bitte.
-Frau Weber: Lernen Sie Deutsch?
-Kuttan: Ja. Ich lerne Deutsch.
-Frau Weber: Sehr gut.
-Kuttan: Danke.
-Frau Weber: Auf Wiedersehen.
-Kuttan: Auf Wiedersehen, Frau Weber.
+Frau Fischer: Guten Morgen.
+Nivin: Guten Morgen, Frau Fischer.
+Frau Fischer: Lernen Sie Deutsch?
+Nivin: Noch einmal, bitte.
+Frau Fischer: Lernen Sie Deutsch?
+Nivin: Ja. Ich lerne Deutsch.
+Frau Fischer: Sehr gut.
+Nivin: Danke.
+Frau Fischer: Auf Wiedersehen.
+Nivin: Auf Wiedersehen, Frau Fischer.
 ```
 
 **Round 1:** with full subtitles.
 
-**Round 2:** only Frau Weber’s lines visible/audio; `[GAP 4s]` after each Frau Weber line; learner supplies Kuttan’s lines.
+**Round 2:** only Frau Fischer’s lines visible/audio; `[GAP 4s]` after each Frau Fischer line; learner supplies Nivin’s lines.
 
 ---
 
 ## 22:00–24:00 — Round 3: the curveball
 
-**Setup:** Frau Weber opens with `Guten Tag.` instead of `Guten Morgen.` — adapt the reply. Only already-taught German. `[GAP 4s]` after each Frau Weber line.
+**Setup:** Frau Fischer opens with `Guten Tag.` instead of `Guten Morgen.` — adapt the reply. Only already-taught German. `[GAP 4s]` after each Frau Fischer line.
 
 ```text
-Frau Weber: Guten Tag.   [GAP 4s]
-Kuttan: Guten Tag, Frau Weber.
-Frau Weber: Lernen Sie Deutsch?   [GAP 4s]
-Kuttan: Ja. Ich lerne Deutsch.
-Frau Weber: Sehr gut.   [GAP 4s]
-Kuttan: Danke.
-Frau Weber: Auf Wiedersehen.   [GAP 4s]
-Kuttan: Auf Wiedersehen, Frau Weber.
+Frau Fischer: Guten Tag.   [GAP 4s]
+Nivin: Guten Tag, Frau Fischer.
+Frau Fischer: Lernen Sie Deutsch?   [GAP 4s]
+Nivin: Ja. Ich lerne Deutsch.
+Frau Fischer: Sehr gut.   [GAP 4s]
+Nivin: Danke.
+Frau Fischer: Auf Wiedersehen.   [GAP 4s]
+Nivin: Auf Wiedersehen, Frau Fischer.
 ```
 
 **Presenter:**
@@ -221,21 +221,21 @@ Kuttan: Auf Wiedersehen, Frau Weber.
 
 ## 24:00–25:30 — Common mistakes and repair (fast)
 
-**Mistake 1:** Kuttan says only `Hallo` to the examiner and stops. `Hallo` is OK — but with an examiner, upgrade:
+**Mistake 1:** Nivin says only `Hallo` to the examiner and stops. `Hallo` is OK — but with an examiner, upgrade:
 
 > **Guten Tag.**
 
-**Mistake 2:** Kuttan freezes after the question.
+**Mistake 2:** Nivin freezes after the question.
 
 > **Noch einmal, bitte.**
 
-**Mistake 3:** Kuttan forgets the answer sentence.
+**Mistake 3:** Nivin forgets the answer sentence.
 
 > **Ja. Ich lerne Deutsch.**
 
-**Mistake 4:** Kuttan leaves casually in a formal setting.
+**Mistake 4:** Nivin leaves casually in a formal setting.
 
-> **Auf Wiedersehen, Frau Weber.**
+> **Auf Wiedersehen, Frau Fischer.**
 
 ---
 
@@ -245,15 +245,15 @@ Kuttan: Auf Wiedersehen, Frau Weber.
 
 ```text
 Closed check: no notes.
-Perform Kuttan’s lines aloud.
+Perform Nivin’s lines aloud.
 ```
 
 Each item gets the full pause spec — no rushing the gate.
 
 **Items:**
 
-1. Frau Weber says `Guten Morgen.` Reply.
-2. Frau Weber asks `Lernen Sie Deutsch?` Answer.
+1. Frau Fischer says `Guten Morgen.` Reply.
+2. Frau Fischer asks `Lernen Sie Deutsch?` Answer.
 3. You did not catch the question. Ask for repeat.
 4. Say thank you.
 5. Leave formally.
@@ -261,11 +261,11 @@ Each item gets the full pause spec — no rushing the gate.
 **Expected learner lines:**
 
 ```text
-1. Guten Morgen, Frau Weber.
+1. Guten Morgen, Frau Fischer.
 2. Ja. Ich lerne Deutsch.
 3. Noch einmal, bitte.
 4. Danke.
-5. Auf Wiedersehen, Frau Weber.
+5. Auf Wiedersehen, Frau Fischer.
 ```
 
 ---
@@ -301,4 +301,4 @@ Start Module 1 checkpoint
 - Use one line at a time; no paragraph explanation during the conversation.
 - Required app practice after video: self-mark/record the full exchange.
 - Model lines are prerendered German audio (see recording spec), never browser SpeechSynthesis.
-- Kuttan is at home in Kerala for the entire lesson; Frau Weber only ever appears in the video-call frame.
+- Nivin is at home in Kerala for the entire lesson; Frau Fischer only ever appears in the video-call frame.

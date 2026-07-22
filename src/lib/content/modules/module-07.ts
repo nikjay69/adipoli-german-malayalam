@@ -25,18 +25,19 @@ export const MODULE_7: Module = {
       duration: "45 min",
       xpReward: 120,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Imagined: Lidl / Aldi Supermarket",
           sceneType: "market",
           timeOfDay: "afternoon",
-          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. The fluorescent lights hum, and the air is filled with the smell of the bakery section. People are moving with purpose. There's no time to chat like at a Kerala village store. It's a high-speed efficiency test. Time to find your groceries and get through that checkout line, machane!",
+          description: "Frau Fischer's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. The fluorescent lights hum, and the air is filled with the smell of the bakery section. People are moving with purpose. There's no time to chat like at a Kerala village store. It's a high-speed efficiency test. Time to find your groceries and get through that checkout line, machane!",
         },
         narrative: {
           previousRecap: "You've survived the restaurant meal. Now, let's learn how to fill your own fridge!",
           currentObjective: "Identify grocery items with articles and manage the 'express' checkout experience",
           nextTeaser: "Next: the price is right! Let me tell you about Euros and Cents!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! German supermarkets are separate scene. Nammude kirana shop-il 'chettan' ennu vilichu help chodikkam, but ivide full self-service aanu.",
           "Items-inte articles (der, die, das) focus cheyyane. 'Das Brot', 'Die Milch' — ithu fix cheythal billing simple aakum.",
           "Ettavum main point: Checkout. Scan cheyyumpol nammal bag ready aakki nilkkanam. Speed is key! Let's shop!",
@@ -52,15 +53,15 @@ export const MODULE_7: Module = {
           {
             moment: "You reach the register. The cashier scans everything at lightning speed. You haven't brought a bag. What do you say?",
             options: [
-              { text: "Ich brauche eine Tüte, bitte.", isCorrect: true, response: "Exactly! You need to buy a bag (die Tüte). In Germany, no bag is free!", kuttanReaction: "Adipoli! Germany-il plastic bags free aayittilla. 'Tüte' venam enkal athu muthale parayanam. Correct move! 🔥" },
-              { text: "Haben Sie Plastic-Cover?", isCorrect: false, response: "Aiyyo! 'Plastic-Cover' is Manglish. They use 'Tüte'. And remember, they cost money!", kuttanReaction: "Vite machane! 'Cover' ennu paranjal Germans-inu manassilaavoolla. 'Tüte' ennu fix cheythoru! Try again! 😬" },
+              { text: "Ich brauche eine Tüte, bitte.", isCorrect: true, response: "Exactly! You need to buy a bag (die Tüte). In Germany, no bag is free!", peerReaction: "Adipoli! Germany-il plastic bags free aayittilla. 'Tüte' venam enkal athu muthale parayanam. Correct move! 🔥" },
+              { text: "Haben Sie Plastic-Cover?", isCorrect: false, response: "Aiyyo! 'Plastic-Cover' is Manglish. They use 'Tüte'. And remember, they cost money!", peerReaction: "Vite machane! 'Cover' ennu paranjal Germans-inu manassilaavoolla. 'Tüte' ennu fix cheythoru! Try again! 😬" },
             ],
           },
           {
             moment: "You are finished. How do you tell the cashier 'That's all'?",
             options: [
-              { text: "Das ist alles, danke.", isCorrect: true, response: "Correct! This signals the end of the transaction.", kuttanReaction: "Superb! 'Das ist alles' signals the end. Next step: payment! ⭐" },
-              { text: "Ich bin fertig.", isCorrect: false, response: "Technically okay, but 'Das ist alles' is the standard phrase at the checkout.", kuttanReaction: "Aiyyo! 'Fertig' is more for tasks. Checkout-il 'Das ist alles' aanu natural form. Try again! 🚫" },
+              { text: "Das ist alles, danke.", isCorrect: true, response: "Correct! This signals the end of the transaction.", peerReaction: "Superb! 'Das ist alles' signals the end. Next step: payment! ⭐" },
+              { text: "Ich bin fertig.", isCorrect: false, response: "Technically okay, but 'Das ist alles' is the standard phrase at the checkout.", peerReaction: "Aiyyo! 'Fertig' is more for tasks. Checkout-il 'Das ist alles' aanu natural form. Try again! 🚫" },
             ],
           },
         ],
@@ -154,7 +155,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-1-4",
           type: "free-text",
-          question: "The checkout uncle at the imagined German supermarket looks at Kuttan's trolley, waiting for more. There is no more. Type the German for 'That's all.':",
+          question: "The checkout uncle at the imagined German supermarket looks at Nivin's trolley, waiting for more. There is no more. Type the German for 'That's all.':",
           correctAnswer: "Das ist alles.",
           explanation: "'Das ist alles.' literally means 'That is everything.' — the two-second phrase that ends every checkout conversation.",
           xpReward: 25
@@ -171,7 +172,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-1-6",
           type: "dictation",
-          question: "Six eggs for Amma's cake experiment. At the checkout, Kuttan announces his mission to nobody in particular. Listen and type exactly what you hear.",
+          question: "Six eggs for Amma's cake experiment. At the checkout, Nivin announces his mission to nobody in particular. Listen and type exactly what you hear.",
           correctAnswer: "Ich kaufe sechs Eier",
           explanation: "'Eier' is the plural of 'Ei' — and 'sechs Eier' is a tongue-twister worth mastering. Capitalize the noun!",
           xpReward: 25,
@@ -199,7 +200,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-1-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: he asks the shelf-stacker 'Wo ich finde die Milch?' After a W-word the verb comes SECOND, then ich! Say it right: 'Wo finde ich die Milch?'",
+          question: "Repair Nivin's slip: he asks the shelf-stacker 'Wo ich finde die Milch?' After a W-word the verb comes SECOND, then ich! Say it right: 'Wo finde ich die Milch?'",
           questionGerman: "Sprechen Sie laut: 'Wo finde ich die Milch?'",
           correctAnswer: "Wo finde ich die Milch",
           explanation: "W-word, verb, subject: Wo FINDE ich...? Malayalam and English both let the verb drift in questions — German never does. This order is scored directly in Sprechen Teil 3.",
@@ -291,6 +292,7 @@ export const MODULE_7: Module = {
       duration: "45 min",
       xpReward: 120,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Weekly Market (Annas Wochenmarkt)",
           sceneType: "market",
@@ -302,7 +304,7 @@ export const MODULE_7: Module = {
           currentObjective: "Ask for prices, understand Euro/Cent combinations, and choose payment methods",
           nextTeaser: "Next: dressing up! Colors, clothes, and autumn vibes!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Money matters are serious. German-il decimals parayumpo check cheyyam. Dot (.) alla, comma (,) aanu ivide use cheyyunnathu.",
           "Prices chodikkaan 'Was kostet das?' mathi. Bill kandaal 2,50 ennal 'Zwei Euro fünfzig' ennu parayanam.",
           "Main trap: Many small shops and markets only take cash. UPI nammude Kochi-il ulla athra ivide illatto! Keep some Euros in your pocket!",
@@ -318,15 +320,15 @@ export const MODULE_7: Module = {
           {
             moment: "You see a price tag '3,50 €'. How do you say this amount correctly in German?",
             options: [
-              { text: "Drei Euro fünfzig.", isCorrect: true, response: "Exactly! You say the big unit (Euro) then the smaller unit (Cent) without saying 'Cent' usually.", kuttanReaction: "Adipoli! Price logic perfect aayi handle cheythallo. You're ready for the market! 🔥" },
-              { text: "Drei Punkt fünfzig Euro.", isCorrect: false, response: "Aiyyo! 'Punkt' means point, but in Germany we use a comma. 'Drei Euro fünfzig' is the way to say it.", kuttanReaction: "Vite machane! German-il comma decimal aanu system. 'Zwei Euro fünfzig' ennu fix cheytho! Try again! 😬" },
+              { text: "Drei Euro fünfzig.", isCorrect: true, response: "Exactly! You say the big unit (Euro) then the smaller unit (Cent) without saying 'Cent' usually.", peerReaction: "Adipoli! Price logic perfect aayi handle cheythallo. You're ready for the market! 🔥" },
+              { text: "Drei Punkt fünfzig Euro.", isCorrect: false, response: "Aiyyo! 'Punkt' means point, but in Germany we use a comma. 'Drei Euro fünfzig' is the way to say it.", peerReaction: "Vite machane! German-il comma decimal aanu system. 'Zwei Euro fünfzig' ennu fix cheytho! Try again! 😬" },
             ],
           },
           {
             moment: "You see a sign 'Nur Barzahlung'. What does this mean for your payment?",
             options: [
-              { text: "I must pay with cash.", isCorrect: true, response: "Correct! 'Barzahlung' means cash payment only. No cards or mobile pay here!", kuttanReaction: "Superb! German cash culture logic catch cheythallo. ATM-il ninnu cash edukkan marakkaalle! ⭐" },
-              { text: "I can pay with Google Pay.", isCorrect: false, response: "No! 'Nur' means only. If it says 'Barzahlung', no cards or apps will work!", kuttanReaction: "Aiyyo! 'Nur Barzahlung' kandaal katti poyene. Cash mathame edukkoolla ennanu artham. Try again! 🚫" },
+              { text: "I must pay with cash.", isCorrect: true, response: "Correct! 'Barzahlung' means cash payment only. No cards or mobile pay here!", peerReaction: "Superb! German cash culture logic catch cheythallo. ATM-il ninnu cash edukkan marakkaalle! ⭐" },
+              { text: "I can pay with Google Pay.", isCorrect: false, response: "No! 'Nur' means only. If it says 'Barzahlung', no cards or apps will work!", peerReaction: "Aiyyo! 'Nur Barzahlung' kandaal katti poyene. Cash mathame edukkoolla ennanu artham. Try again! 🚫" },
             ],
           },
         ],
@@ -409,7 +411,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-2-3",
           type: "multiple-choice",
-          question: "A shelf tag at the imagined Edeka shouts 'GÜNSTIG!' next to the rice, and Kuttan's eyes light up. What is the tag promising?",
+          question: "A shelf tag at the imagined Edeka shouts 'GÜNSTIG!' next to the rice, and Meera's eyes light up. What is the tag promising?",
           options: ["expensive", "free", "affordable / good value", "broken"],
           correctAnswer: "affordable / good value",
           explanation: "'günstig' means affordable or good value — it's more positive than 'billig' (cheap), which can sound negative. Ads in Lesen Teil 3 love this word.",
@@ -418,7 +420,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-2-4",
           type: "free-text",
-          question: "No cash in Kuttan's wallet, as usual. At the imagined Edeka till he holds up his card — type his line in German: 'I would like to pay by card.' (mit Karte zahlen):",
+          question: "No cash in Meera's wallet, as usual. At the imagined Edeka till she holds up her card — type her line in German: 'I would like to pay by card.' (mit Karte zahlen):",
           correctAnswer: "Ich möchte mit Karte zahlen",
           explanation: "'Ich möchte mit Karte zahlen.' — möchte in slot 2, the real verb (zahlen) waits at the end. That bracket is the modal-verb pattern you'll use daily.",
           xpReward: 30
@@ -444,7 +446,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-2-7",
           type: "dictation",
-          question: "Kuttan asks the stall owner what the mangoes cost. Catch the answer — this is exactly Hören Teil 1. Listen and type what you hear.",
+          question: "Meera asks the stall owner what the mangoes cost. Catch the answer — this is exactly Hören Teil 1. Listen and type what you hear.",
           correctAnswer: "Das kostet fünf Euro",
           explanation: "'Euro' stays singular after a number: fünf Euro, zehn Euro. Prices are the most reliable points in the whole Hören section.",
           xpReward: 25,
@@ -453,7 +455,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-2-8",
           type: "free-text",
-          question: "The price tag on the tiny jar of saffron makes Kuttan gasp. Say it like a local — type in German: 'That is very expensive.' (teuer):",
+          question: "The price tag on the tiny jar of saffron makes Meera gasp. Say it like a local — type in German: 'That is very expensive.' (teuer):",
           correctAnswer: "Das ist sehr teuer",
           explanation: "'Das ist sehr teuer!' — sehr means 'very'. Half of German small talk is agreeing that things are teuer.",
           xpReward: 30
@@ -472,7 +474,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-2-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: he reads the tag 2,50 € aloud as 'zwei Komma fünf Euro' — maths class German! Prices put Euro in the middle. Say it right: 'Das kostet zwei Euro fünfzig.'",
+          question: "Repair Meera's slip: she reads the tag 2,50 € aloud as 'zwei Komma fünf Euro' — maths class German! Prices put Euro in the middle. Say it right: 'Das kostet zwei Euro fünfzig.'",
           questionGerman: "Sprechen Sie laut: 'Das kostet zwei Euro fünfzig.'",
           correctAnswer: "Das kostet zwei Euro fünfzig",
           explanation: "2,50 € = zwei Euro fünfzig — number, Euro, number, no Komma, no Cents needed. Train the pattern out loud and Hören price questions become free points.",
@@ -564,6 +566,7 @@ export const MODULE_7: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Shopping Center 'Arkaden'",
           sceneType: "mall",
@@ -575,7 +578,7 @@ export const MODULE_7: Module = {
           currentObjective: "Identify clothing items and colors, and use basic adjective endings (das rote Hemd)",
           nextTeaser: "Next: talk to the staff! Let's handle a real shopping dialogue!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Dressing up in Germany is a separate level game. Autumn muthal winter vare nammal 'Zwiebel-prinzip' (onion principle) follow cheyyaam — layers layers mathame! 😄",
           "Colors (rot, blau, grün) and clothing (Hose, Hemd, Jacke) focus cheyyane. Adjective endings (rote, blaues) small peek ivide kittaam.",
           "Pinne 'die Hose' (trousers) singular aanu German-il ennorkkane. English-il oru pair aayirunnallo. Let's start shopping!",
@@ -591,15 +594,15 @@ export const MODULE_7: Module = {
           {
             moment: "You see a beautiful red dress (das Kleid). How do you say 'The red dress' correctly?",
             options: [
-              { text: "Das rote Kleid.", isCorrect: true, response: "Exactly! After 'das', the adjective gets an '-e' ending. Perfect agreement!", kuttanReaction: "Adipoli! 'das' + adjective + noun logic correctly catch cheythallo. You're a pro! 🔥" },
-              { text: "Das rot Kleid.", isCorrect: false, response: "Aiyyo! Adjectives between the article and noun ALWAYS need an ending. 'rot' cannot stay pure here!", kuttanReaction: "Vite machane! Ending '-e' koodi add cheythal 'das rote Kleid' aavum. Try again! 😬" },
+              { text: "Das rote Kleid.", isCorrect: true, response: "Exactly! After 'das', the adjective gets an '-e' ending. Perfect agreement!", peerReaction: "Adipoli! 'das' + adjective + noun logic correctly catch cheythallo. You're a pro! 🔥" },
+              { text: "Das rot Kleid.", isCorrect: false, response: "Aiyyo! Adjectives between the article and noun ALWAYS need an ending. 'rot' cannot stay pure here!", peerReaction: "Vite machane! Ending '-e' koodi add cheythal 'das rote Kleid' aavum. Try again! 😬" },
             ],
           },
           {
             moment: "Which statement about 'die Hose' (trousers) is correct in German?",
             options: [
-              { text: "It is a singular noun (one item).", isCorrect: true, response: "Correct! Even though it has two legs, it's one 'Hose' in German.", kuttanReaction: "Superb! In English 'trousers' are plural, but in German 'die Hose' is singular. Point noted! ⭐" },
-              { text: "It is always plural.", isCorrect: false, response: "No! Unlike English, German 'Hose' is singular. 'Die Hose ist...' not 'are'.", kuttanReaction: "Aiyyo! English logic ivide apply cheyyalle. German-il ithu singular aanu. Try again! 🚫" },
+              { text: "It is a singular noun (one item).", isCorrect: true, response: "Correct! Even though it has two legs, it's one 'Hose' in German.", peerReaction: "Superb! In English 'trousers' are plural, but in German 'die Hose' is singular. Point noted! ⭐" },
+              { text: "It is always plural.", isCorrect: false, response: "No! Unlike English, German 'Hose' is singular. 'Die Hose ist...' not 'are'.", peerReaction: "Aiyyo! English logic ivide apply cheyyalle. German-il ithu singular aanu. Try again! 🚫" },
             ],
           },
         ],
@@ -715,7 +718,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-3-1",
           type: "matching",
-          question: "Kuttan sorts the T-shirt rack by colour for the shop display. Match the colours:",
+          question: "Nivin sorts the T-shirt rack by colour for the shop display. Match the colours:",
           options: ["rot → red", "blau → blue", "gelb → yellow", "grün → green", "schwarz → black"],
           correctAnswer: ["rot → red", "blau → blue", "gelb → yellow", "grün → green", "schwarz → black"],
           explanation: "These are the five most essential German colors to know.",
@@ -724,7 +727,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-3-2",
           type: "type-answer",
-          question: "Inventory day at the imagined clothes shop: Kuttan reads a tag — 'die Hose, 19,99 €'. The visiting auditor wants the English word for the item. Type it:",
+          question: "Inventory day at the imagined clothes shop: Nivin reads a tag — 'die Hose, 19,99 €'. The visiting auditor wants the English word for the item. Type it:",
           correctAnswer: "trousers",
           explanation: "'die Hose' means trousers/pants — and in German it's SINGULAR (die Hose), unlike English 'trousers'. Ein Hose-Paradox, if you like.",
           xpReward: 15
@@ -750,7 +753,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-3-5",
           type: "speaking",
-          question: "Repair Kuttan's slip: showing off his new shirt on the video call, he says 'Ich trage ein blau Hemd.' The adjective needs its -es ending after 'ein'! Say it right: 'Ich trage ein blaues Hemd.'",
+          question: "Repair Nivin's slip: showing off his new shirt on the video call, he says 'Ich trage ein blau Hemd.' The adjective needs its -es ending after 'ein'! Say it right: 'Ich trage ein blaues Hemd.'",
           questionGerman: "Sprechen Sie laut: 'Ich trage ein blaues Hemd.'",
           correctAnswer: "Ich trage ein blaues Hemd",
           explanation: "ein blauES Hemd — after 'ein' with a neuter noun, the adjective carries the -es. Dropping adjective endings is the most audible A1 slip there is; repairing it aloud fixes it fastest.",
@@ -915,18 +918,19 @@ export const MODULE_7: Module = {
       duration: "45 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Imagined: Global Fashion Store (H&M)",
           sceneType: "mall",
           timeOfDay: "afternoon",
-          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Rows of clothes stretching as far as the eye can see. You've picked up a nice jacket, but you're not sure if it fits. A sales assistant is circling around. In Kochi, they might follow you closely, but here they wait until you look confused. Time to speak up and handle the dialogue, machane!",
+          description: "Frau Fischer's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Rows of clothes stretching as far as the eye can see. You've picked up a nice jacket, but you're not sure if it fits. A sales assistant is circling around. In Kochi, they might follow you closely, but here they wait until you look confused. Time to speak up and handle the dialogue, machane!",
         },
         narrative: {
           previousRecap: "You've picked your colors and clothes. Now, let's learn how to interact with the people in the shop!",
           currentObjective: "Navigate a complete shopping conversation including help requests, sizes, and fitting",
           nextTeaser: "Module 7 complete! Next: Let's travel! Train stations, tickets, and the DB experience!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Shop-il ninnu help chodikkunnathu oru separate skill aanu. 'Ich suche...' (I'm looking for) ennu thudangiyaal baaki ellam simple aakum.",
           "Size-inte karyam parayumpo 'Größe M' (size M) ennu parayanam. Pinne dress try cheyyaan 'anprobieren' use cheyyam.",
           "Umkleidekabine (fitting room) evideyaannu nokkane. Ellaam polite aayi handle cheyyaam!",
@@ -942,15 +946,15 @@ export const MODULE_7: Module = {
           {
             moment: "The assistant asks 'Kann ich Ihnen helfen?'. You want to say 'Yes, I am looking for a shirt'. What do you say?",
             options: [
-              { text: "Ja, ich suche ein Hemd.", isCorrect: true, response: "Perfect! 'suche' is the right verb for shopping. The assistant starts looking for you!", kuttanReaction: "Adipoli! 'Ich suche' logic correctly catch cheythallo. Direct and polite. 🔥" },
-              { text: "Ja, ich habe ein Hemd.", isCorrect: false, response: "Aiyyo! 'ich habe' means you already HAVE a shirt. They won't help you find one if you say that!", kuttanReaction: "Vite machane! 'Habe' means possess. Search cheyyumpo 'suche' venam. Try again! 😬" },
+              { text: "Ja, ich suche ein Hemd.", isCorrect: true, response: "Perfect! 'suche' is the right verb for shopping. The assistant starts looking for you!", peerReaction: "Adipoli! 'Ich suche' logic correctly catch cheythallo. Direct and polite. 🔥" },
+              { text: "Ja, ich habe ein Hemd.", isCorrect: false, response: "Aiyyo! 'ich habe' means you already HAVE a shirt. They won't help you find one if you say that!", peerReaction: "Vite machane! 'Habe' means possess. Search cheyyumpo 'suche' venam. Try again! 😬" },
             ],
           },
           {
             moment: "The jacket is too small. How do you ask 'Do you have this in size L?'",
             options: [
-              { text: "Haben Sie das in Größe L?", isCorrect: true, response: "Exactly! 'Größe' is the word for size. You've asked perfectly.", kuttanReaction: "Superb! Size selection logic correctly handled. 'Größe' is the key word! ⭐" },
-              { text: "Haben Sie das in Nummer L?", isCorrect: false, response: "No, 'Nummer' is for numbers (like phone numbers). For clothes, we always use 'Größe'.", kuttanReaction: "Aiyyo! Number alla, 'Größe' aanu clothing context-il better. Try again! 🚫" },
+              { text: "Haben Sie das in Größe L?", isCorrect: true, response: "Exactly! 'Größe' is the word for size. You've asked perfectly.", peerReaction: "Superb! Size selection logic correctly handled. 'Größe' is the key word! ⭐" },
+              { text: "Haben Sie das in Nummer L?", isCorrect: false, response: "No, 'Nummer' is for numbers (like phone numbers). For clothes, we always use 'Größe'.", peerReaction: "Aiyyo! Number alla, 'Größe' aanu clothing context-il better. Try again! 🚫" },
             ],
           },
         ],
@@ -1043,7 +1047,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-4-5",
           type: "type-answer",
-          question: "Armful of shirts, Kuttan scans the imagined shop for a door marked 'Umkleidekabine'. Type in English what he's hunting for:",
+          question: "Armful of shirts, Meera scans the imagined shop for a door marked 'Umkleidekabine'. Type in English what she's hunting for:",
           correctAnswer: "fitting room",
           explanation: "'die Umkleidekabine' = fitting room. 'Umkleiden' means to change clothes, 'Kabine' means cabin/booth — German just glues the story together into one word.",
           xpReward: 15
@@ -1051,7 +1055,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-4-6",
           type: "type-answer",
-          question: "The kurta is one size too small, as Amma predicted. Kuttan flags the assistant: 'Haben Sie das in ___ L?' Type the missing word (size):",
+          question: "The kurta is one size too small, as Amma predicted. Meera flags the assistant: 'Haben Sie das in ___ L?' Type the missing word (size):",
           correctAnswer: "Größe",
           explanation: "'Größe' means 'size'. 'Haben Sie das in Größe L?' is how you ask about available sizes — with ö said like 'e' through rounded lips.",
           xpReward: 15
@@ -1059,7 +1063,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-4-7",
           type: "dictation",
-          question: "Kuttan holds the shirt up at the fitting-room door and asks the assistant one polite question. Listen and type exactly what you hear.",
+          question: "Meera holds the shirt up at the fitting-room door and asks the assistant one polite question. Listen and type exactly what you hear.",
           correctAnswer: "Kann ich das anprobieren",
           explanation: "'anprobieren' — the trying-on verb. Kann ich...? + verb at the end: the modal bracket carries the whole request.",
           xpReward: 25,
@@ -1068,7 +1072,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-4-8",
           type: "free-text",
-          question: "Kerala monsoon shopping list, Germany edition: Kuttan needs rain protection. Tell the assistant in German — 'I am looking for a jacket.' (Jacke):",
+          question: "Kerala monsoon shopping list, Germany edition: Meera needs rain protection. Tell the assistant in German — 'I am looking for a jacket.' (Jacke):",
           correctAnswer: "Ich suche eine Jacke",
           explanation: "'Ich suche eine Jacke.' — 'eine' because Jacke is feminine. 'Ich suche...' opens half of all shop conversations.",
           xpReward: 30
@@ -1087,7 +1091,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-4-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: he asks the shop assistant 'Hast du das in Größe L?' — a stranger serving you gets Sie, not du! Say it right: 'Haben Sie das in Größe L?'",
+          question: "Repair Meera's slip: she asks the shop assistant 'Hast du das in Größe L?' — a stranger serving you gets Sie, not du! Say it right: 'Haben Sie das in Größe L?'",
           questionGerman: "Sprechen Sie laut: 'Haben Sie das in Größe L?'",
           correctAnswer: "Haben Sie das in Größe L",
           explanation: "du is for friends; every shop assistant, official, and examiner is Sie. The Goethe Sprechen rubric scores formality directly — 'Haben Sie...?' is free marks.",
@@ -1179,6 +1183,7 @@ export const MODULE_7: Module = {
       duration: "45 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Einkaufsstraße am Marktplatz",
           sceneType: "street",
@@ -1190,7 +1195,7 @@ export const MODULE_7: Module = {
           currentObjective: "Use comparative (-er) and superlative (am -sten) forms to compare products and prices",
           nextTeaser: "Next: prepositions of place — where exactly IS that shop?",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Shopping time aanu! Germany-il sales season-il prices compare cheyyaan ariyaanam. Nammude Lulu Mall sale pole thanneyaanu!",
           "German-il comparison easy aanu — adjective + '-er' for comparative. 'Groß' becomes 'größer', 'billig' becomes 'billiger'. English-nte '-er' pole thanne!",
           "But some words are irregular — 'gut' becomes 'besser', not 'guter'. Pinne 'als' means 'than'. Let's go compare cheyyaam!",
@@ -1207,16 +1212,16 @@ export const MODULE_7: Module = {
           {
             moment: "You want to say the red jacket is cheaper than the blue one. How do you say it?",
             options: [
-              { text: "Die rote Jacke ist billiger als die blaue.", isCorrect: true, response: "Correct! 'Billiger als' is the perfect comparative construction.", kuttanReaction: "Adipoli! Comparison king aayallo nee! 'Billiger als' — perfect use of comparative + als! 🔥" },
-              { text: "Die rote Jacke ist mehr billig als die blaue.", isCorrect: false, response: "In German, you don't say 'mehr billig'. Unlike English 'more cheap', German uses 'billiger' directly.", kuttanReaction: "Aiyyo! German-il 'mehr + adjective' alla, direct '-er' add cheyyuka. 'Billiger' ennu mathram mathi!" },
+              { text: "Die rote Jacke ist billiger als die blaue.", isCorrect: true, response: "Correct! 'Billiger als' is the perfect comparative construction.", peerReaction: "Adipoli! Comparison king aayallo nee! 'Billiger als' — perfect use of comparative + als! 🔥" },
+              { text: "Die rote Jacke ist mehr billig als die blaue.", isCorrect: false, response: "In German, you don't say 'mehr billig'. Unlike English 'more cheap', German uses 'billiger' directly.", peerReaction: "Aiyyo! German-il 'mehr + adjective' alla, direct '-er' add cheyyuka. 'Billiger' ennu mathram mathi!" },
             ],
           },
           {
             moment: "Your friend asks which shop has the best prices. You want to say 'This shop is the cheapest.' What do you say?",
             options: [
-              { text: "Dieses Geschäft ist am billigsten.", isCorrect: true, response: "Perfect superlative! 'Am billigsten' = the cheapest. The 'am + -sten' pattern works great.", kuttanReaction: "Superb machane! Superlative form 'am billigsten' — nee shopping expert aanu ipo! ⭐" },
-              { text: "Dieses Geschäft ist am billigeren.", isCorrect: false, response: "'Billigeren' is not the superlative form. Superlative uses 'am + stem + sten': am billigsten.", kuttanReaction: "Machane! Superlative-inu '-sten' venam, '-eren' alla. 'Am billigsten' aanu correct form!" },
-              { text: "Dieses Geschäft ist der billigste.", isCorrect: false, response: "Close! 'Der billigste' works before a noun ('der billigste Laden'), but after 'ist' you need 'am billigsten'.", kuttanReaction: "Almost! 'Ist' kazhinjaal 'am billigsten' venam. 'Der billigste' noun-inu munpil mathram use cheyyuka!" },
+              { text: "Dieses Geschäft ist am billigsten.", isCorrect: true, response: "Perfect superlative! 'Am billigsten' = the cheapest. The 'am + -sten' pattern works great.", peerReaction: "Superb machane! Superlative form 'am billigsten' — nee shopping expert aanu ipo! ⭐" },
+              { text: "Dieses Geschäft ist am billigeren.", isCorrect: false, response: "'Billigeren' is not the superlative form. Superlative uses 'am + stem + sten': am billigsten.", peerReaction: "Machane! Superlative-inu '-sten' venam, '-eren' alla. 'Am billigsten' aanu correct form!" },
+              { text: "Dieses Geschäft ist der billigste.", isCorrect: false, response: "Close! 'Der billigste' works before a noun ('der billigste Laden'), but after 'ist' you need 'am billigsten'.", peerReaction: "Almost! 'Ist' kazhinjaal 'am billigsten' venam. 'Der billigste' noun-inu munpil mathram use cheyyuka!" },
             ],
           },
         ],
@@ -1303,7 +1308,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-5-3",
           type: "free-text",
-          question: "Three lungis, three price tags at the Saturday market. Kuttan holds up the winner and declares — type it in German: 'This is the cheapest.' (am billigsten):",
+          question: "Three lungis, three price tags at the Saturday market. Nivin holds up the winner and declares — type it in German: 'This is the cheapest.' (am billigsten):",
           correctAnswer: "Das ist am billigsten.",
           explanation: "Superlative with 'am': 'am billigsten' = the cheapest. Pattern: am + adjective + -sten. The bargain-hunter's favourite sentence.",
           xpReward: 30
@@ -1319,7 +1324,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-5-6",
           type: "matching",
-          question: "Mock-prep drill: Kuttan races to match each adjective to its comparative before Frau Weber turns from the board:",
+          question: "Mock-prep drill: Nivin races to match each adjective to its comparative before Frau Fischer turns from the board:",
           options: ["groß → größer", "gut → besser", "billig → billiger", "schnell → schneller"],
           correctAnswer: ["groß → größer", "gut → besser", "billig → billiger", "schnell → schneller"],
           explanation: "Note: groß gets an umlaut, gut is completely irregular, but billig and schnell are regular.",
@@ -1344,14 +1349,14 @@ export const MODULE_7: Module = {
           type: "dictation",
           question: "On the video call, the Berlin cousin drops a geography fact to end an argument. Listen and type exactly what you hear.",
           correctAnswer: "Berlin ist größer als Kochi",
-          explanation: "'größer als' = bigger than. (Kuttan's counter-argument comes in the next exercise.)",
+          explanation: "'größer als' = bigger than. (Nivin's counter-argument comes in the next exercise.)",
           xpReward: 25,
           audioUrl: "/audio/exercises/dictation-berlin-kochi.mp3"
         },
         {
           id: "ex7-5-9",
           type: "free-text",
-          question: "The family lands at their favourite thattukada and Kuttan makes it official — type in German: 'This restaurant is the best.' (am besten):",
+          question: "The family lands at their favourite thattukada and Nivin makes it official — type in German: 'This restaurant is the best.' (am besten):",
           correctAnswer: "Dieses Restaurant ist am besten",
           explanation: "'Dieses Restaurant ist am besten.' — gut → besser → am besten, the one superlative every A1 candidate must own.",
           xpReward: 30
@@ -1370,7 +1375,7 @@ export const MODULE_7: Module = {
         {
           id: "ex7-5-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: defending home turf, he says 'Kochi ist schöner wie Berlin.' Comparatives take als, not wie! Say it right — and mean it: 'Kochi ist schöner als Berlin.'",
+          question: "Repair Nivin's slip: defending home turf, he says 'Kochi ist schöner wie Berlin.' Comparatives take als, not wie! Say it right — and mean it: 'Kochi ist schöner als Berlin.'",
           questionGerman: "Sprechen Sie laut: 'Kochi ist schöner als Berlin.'",
           correctAnswer: "Kochi ist schöner als Berlin",
           explanation: "'wie' after a comparative is the single most common spoken slip — even Germans do it. The exam doesn't forgive it: -er + als, every time.",

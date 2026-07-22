@@ -17,7 +17,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { useGameStore } from '@/lib/store';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { Confetti } from '@/components/game';
 
 // ---------------------------------------------------------------------------
@@ -271,7 +271,7 @@ const MESSAGE_PROMPTS: MessagePrompt[] = [
       'Say how long they will be absent',
       'Ask for homework',
     ],
-    modelAnswer: 'Liebe Frau Weber,\n\nmein Sohn Arjun ist leider krank und kann diese Woche nicht in die Schule kommen. Er hat Fieber. Können Sie mir bitte die Hausaufgaben per E-Mail schicken?\n\nVielen Dank!\nArun Nair',
+    modelAnswer: 'Liebe Frau Fischer,\n\nmein Sohn Arjun ist leider krank und kann diese Woche nicht in die Schule kommen. Er hat Fieber. Können Sie mir bitte die Hausaufgaben per E-Mail schicken?\n\nVielen Dank!\nArun Nair',
     expectedTopics: 'Child is sick, duration of absence, request homework',
   },
   {
@@ -632,14 +632,14 @@ export default function WritePracticePage() {
           </p>
         </motion.div>
 
-        {/* Kuttan guidance */}
+        {/* Nivin guidance */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           className="flex items-center gap-2.5 game-card px-3 py-2 mb-3"
         >
-          <Kuttan mood="pointing" size="sm" entrance={false} />
+          <Nivin mood="pointing" size="sm" entrance={false} />
           <p className="text-xs text-[var(--foreground)]/60 leading-snug">Writing in German is the best practice. Don&apos;t worry about perfection! ✍️</p>
         </motion.div>
 
@@ -1003,7 +1003,7 @@ export default function WritePracticePage() {
           className="mb-4"
         >
           <div className="flex items-end gap-2 mb-1">
-            <Kuttan mood="pointing" size="sm" entrance={false} />
+            <Nivin mood="pointing" size="sm" entrance={false} />
             <div className="flex-1 max-w-[85%] rounded-2xl rounded-bl-md bg-gradient-to-br from-[#d4a520]/25 to-[#d4a520]/10 border border-[#d4a520]/35 px-4 py-3 shadow-[0_2px_10px_rgba(212,165,32,0.15)]">
               <p className="text-[10px] font-bold text-[#d4a520] uppercase tracking-wide mb-1">
                 Incoming message

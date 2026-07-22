@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Shield, Eye, Trash2, Mail } from 'lucide-react';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 export default function PrivacyPage() {
   const router = useRouter();
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
         </section>
       </div>
 
-      {/* Kuttan TL;DR footer */}
+      {/* Nivin TL;DR footer */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
         className="mt-8 p-4 rounded-2xl bg-gradient-to-br from-[#27ae60]/10 to-[#d4a520]/10 border border-[#27ae60]/20 flex items-center gap-3"
       >
         <div className="flex-shrink-0">
-          <Kuttan mood="happy" size="sm" entrance={false} />
+          <Nivin mood="happy" size="sm" entrance={false} />
         </div>
         <div className="text-sm text-[var(--foreground)]/80 leading-relaxed">
           <span className="font-bold text-[#27ae60]">TL;DR:</span> we only store progress on your device. No tracking nonsense, machaa.

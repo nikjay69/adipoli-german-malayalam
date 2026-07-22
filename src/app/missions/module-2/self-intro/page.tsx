@@ -82,9 +82,10 @@ function Module2SelfIntroMissionContent() {
         {step === 1 && (
           <ConversationSceneStep
             title="Goethe room."
-            speakerName="Frau Weber"
+            speakerName="Frau Fischer"
             speakerLine="Wie heißen Sie?"
-            learnerName="You"
+            learnerName="Meera"
+            learnerPeer="meera"
             learnerLine="Ich heiße …"
             audioSrc={audioSources.examinerPrompt}
             onFinished={() => setHeard(true)}
@@ -128,7 +129,7 @@ function Module2SelfIntroMissionContent() {
             prompt="Say the answer aloud. Then catch the one Manglish trap."
             audioSrc={audioSources.modelIntroShort}
             audioLabel="Your reply"
-            modelText="Ich heiße Kuttan. Ich komme aus Kerala."
+            modelText="Ich heiße Meera. Ich komme aus Kerala."
             options={[
               { id: 'ich-bin-komme', title: 'Ich bin komme aus Kerala.', subtitle: 'Extra bin creates the mistake.' },
               { id: 'ich-komme', title: 'Ich komme aus Kerala.', subtitle: 'Clean A1 answer.' },

@@ -24,6 +24,7 @@ export const MODULE_15: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Backyard Trash Area (Im Hinterhof)",
           sceneType: "home",
@@ -35,7 +36,7 @@ export const MODULE_15: Module = {
           currentObjective: "Understand core German social values like Pünktlichkeit, Mülltrennung, and Ruhezeit",
           nextTeaser: "Next: Festivals! Let's see how Germany celebrates harvest versus Kerala!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Germany-yil 'Pünktlichkeit' (punctuality) is not a suggestion, it's a social contract. 10:00 means 09:55-in reach aakanam!",
           "Pinne ee 'Mülltrennung' (trash sorting) logic sradhikkanne. Paper in the Blue bin, Food in the Brown bin. Skip cheythaal neighborhood-il big issue aakum!",
           "Finally, 'Ruhezeit' (quiet time). From 10 PM to 6 AM and ALL DAY Sunday, noise strictly forbidden. Total peace mode! Let's get sorted!",
@@ -50,15 +51,15 @@ export const MODULE_15: Module = {
           {
             moment: "You have an empty glass jar of jam. Where do you throw it?",
             options: [
-              { text: "In the 'Glas' container (Altglas).", isCorrect: true, response: "Exactly! Glass must be separated by color (White, Brown, Green).", kuttanReaction: "Adipoli! Recycling logic perfectly capture cheythallo! 🔥" },
-              { text: "In the general waste (Restmüll) bin.", isCorrect: false, response: "Aiyyo! Enthe ninnu parayunne? Jar logic different aanu, separate bin-ilaanu!", kuttanReaction: "Vite machane! Ordnung marakkallae. Try again! 😬" },
+              { text: "In the 'Glas' container (Altglas).", isCorrect: true, response: "Exactly! Glass must be separated by color (White, Brown, Green).", peerReaction: "Adipoli! Recycling logic perfectly capture cheythallo! 🔥" },
+              { text: "In the general waste (Restmüll) bin.", isCorrect: false, response: "Aiyyo! Enthe ninnu parayunne? Jar logic different aanu, separate bin-ilaanu!", peerReaction: "Vite machane! Ordnung marakkallae. Try again! 😬" },
             ],
           },
           {
             moment: "It's 2 PM on a Sunday. Can you drill a hole in your wall to hang a picture?",
             options: [
-              { text: "No, Sunday is 'Ruhezeit' all day.", isCorrect: true, response: "Correct! No loud noises allowed on Sundays in Germany.", kuttanReaction: "Superb! Peace logic correctly picked! ⭐" },
-              { text: "Yes, it only takes 5 minutes.", isCorrect: false, response: "No! Even 1 minute of drilling will violate the peace. Wait for Monday!", kuttanReaction: "Aiyyo! Neighbors complaint tharum machane. Try again! 🚫" },
+              { text: "No, Sunday is 'Ruhezeit' all day.", isCorrect: true, response: "Correct! No loud noises allowed on Sundays in Germany.", peerReaction: "Superb! Peace logic correctly picked! ⭐" },
+              { text: "Yes, it only takes 5 minutes.", isCorrect: false, response: "No! Even 1 minute of drilling will violate the peace. Wait for Monday!", peerReaction: "Aiyyo! Neighbors complaint tharum machane. Try again! 🚫" },
             ],
           },
         ],
@@ -237,7 +238,7 @@ export const MODULE_15: Module = {
         {
           id: "ex15-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (German Customs): 'Danke, das ist sehr freundlich.'",
+          question: "Nivin practice: Say aloud for this lesson (German Customs): 'Danke, das ist sehr freundlich.'",
           questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
           correctAnswer: "Danke, das ist sehr freundlich",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
@@ -329,6 +330,7 @@ export const MODULE_15: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Old Town Market (Am Weihnachtsmarkt)",
           sceneType: "station",
@@ -340,7 +342,7 @@ export const MODULE_15: Module = {
           currentObjective: "Identify major German festivals and understand their cultural parallels to Kerala culture",
           nextTeaser: "Next: Culture shock! Let's talk about those 'strange' German habits!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! German festivals are legendary. 'Oktoberfest' in Munich is the biggest. Like our harvest festivals, it's about food, music, and community.",
           "Winter-il 'Weihnachten' (Christmas) and the markets are the main events. Spiced 'Glühwein' is the standard fuel to keep you warm!",
           "Pinne 'Silvester' (New Year's Eve) fireworks vallya karyam aanu. Kerala-yil Vishu-vin padakkam pottikkunna pole thanne! Let's party!",
@@ -355,15 +357,15 @@ export const MODULE_15: Module = {
           {
             moment: "You're at a Christmas market and it's 2°C. What is the traditional hot drink to try?",
             options: [
-              { text: "Glühwein.", isCorrect: true, response: "Exactly! Hot spiced wine is the essence of German winter markets.", kuttanReaction: "Adipoli! Winter logic perfectly capture cheythallo! 🔥" },
-              { text: "Cold Lemonade.", isCorrect: false, response: "Aiyyo! Enthe ninnu parayunne? 2 degree-yil ice-venda, machaa!", kuttanReaction: "Vite machane! Hot item venam. Try again! 😬" },
+              { text: "Glühwein.", isCorrect: true, response: "Exactly! Hot spiced wine is the essence of German winter markets.", peerReaction: "Adipoli! Winter logic perfectly capture cheythallo! 🔥" },
+              { text: "Cold Lemonade.", isCorrect: false, response: "Aiyyo! Enthe ninnu parayunne? 2 degree-yil ice-venda, machaa!", peerReaction: "Vite machane! Hot item venam. Try again! 😬" },
             ],
           },
           {
             moment: "Which German festival is most similar in origin to Kerala's 'Onam' (Harvest festival)?",
             options: [
-              { text: "Oktoberfest.", isCorrect: true, response: "Correct! Both are traditional harvest celebrations with regional food and costumes.", kuttanReaction: "Superb! Cultural parallel logic correctly noted! ⭐" },
-              { text: "Karneval.", isCorrect: false, response: "No! Karneval is a pre-Lent celebration of masks and parties. Oktoberfest is the harvest one.", kuttanReaction: "Aiyyo! Harvest logic sradhikkanne machane. Try again! 🚫" },
+              { text: "Oktoberfest.", isCorrect: true, response: "Correct! Both are traditional harvest celebrations with regional food and costumes.", peerReaction: "Superb! Cultural parallel logic correctly noted! ⭐" },
+              { text: "Karneval.", isCorrect: false, response: "No! Karneval is a pre-Lent celebration of masks and parties. Oktoberfest is the harvest one.", peerReaction: "Aiyyo! Harvest logic sradhikkanne machane. Try again! 🚫" },
             ],
           },
         ],
@@ -542,7 +544,7 @@ export const MODULE_15: Module = {
         {
           id: "ex15-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Festivals & Holidays): 'Danke, das ist sehr freundlich.'",
+          question: "Meera practice: Say aloud for this lesson (Festivals & Holidays): 'Danke, das ist sehr freundlich.'",
           questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
           correctAnswer: "Danke, das ist sehr freundlich",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
@@ -634,6 +636,7 @@ export const MODULE_15: Module = {
       duration: "45 min",
       xpReward: 120,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "WG Dinner Table (Beim Abendessen)",
           sceneType: "home",
@@ -645,7 +648,7 @@ export const MODULE_15: Module = {
           currentObjective: "Understand German social norms regarding food, directness, and personal space",
           nextTeaser: "Final Lesson: The local talk! Let's learn some real German slang!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! First culture shock 'Abendbrot' aanu. Cold bread for dinner is the standard. If you want hot Kanju-um Payarum, you have to cook it yourself!",
           "Pinne 'Direktheit' (directness) sradhikkanne. Germans don't sugarcoat. If they say 'Das ist falsch', it's just information. Don't take it personally!",
           "Privacy is the most important item here. Queue-il nilkkumpol physical distance venam. 'Muttu nilkkunna' habit strictly avoid cheయ్యുക! Let's adapt!",
@@ -660,15 +663,15 @@ export const MODULE_15: Module = {
           {
             moment: "You offer a German friend more Biryani. They say 'Nein, danke' once. What do you do?",
             options: [
-              { text: "Accept it and stop offering.", isCorrect: true, response: "Exactly! In Germany, 'No' means 'No'. Repeated asking is felt as pressure.", kuttanReaction: "Adipoli! Social logic perfectly capture cheythallo! 🔥" },
-              { text: "Ask two more times like we do in Kerala.", isCorrect: false, response: "Aiyyo! Ente machaa, they will think you are force-feeding them!", kuttanReaction: "Vite machane! One 'No' is enough here. Try again! 😬" },
+              { text: "Accept it and stop offering.", isCorrect: true, response: "Exactly! In Germany, 'No' means 'No'. Repeated asking is felt as pressure.", peerReaction: "Adipoli! Social logic perfectly capture cheythallo! 🔥" },
+              { text: "Ask two more times like we do in Kerala.", isCorrect: false, response: "Aiyyo! Ente machaa, they will think you are force-feeding them!", peerReaction: "Vite machane! One 'No' is enough here. Try again! 😬" },
             ],
           },
           {
             moment: "What does 'Abendbrot' literally mean?",
             options: [
-              { text: "Evening bread.", isCorrect: true, response: "Correct! It refers to the traditional cold evening meal with bread.", kuttanReaction: "Superb! Food logic correctly noted! ⭐" },
-              { text: "Late-night party.", isCorrect: false, response: "No! 'Abend' = Evening, 'Brot' = Bread. It's just a simple cold dinner.", kuttanReaction: "Aiyyo! Brot logic marakkallae machane. Try again! 🚫" },
+              { text: "Evening bread.", isCorrect: true, response: "Correct! It refers to the traditional cold evening meal with bread.", peerReaction: "Superb! Food logic correctly noted! ⭐" },
+              { text: "Late-night party.", isCorrect: false, response: "No! 'Abend' = Evening, 'Brot' = Bread. It's just a simple cold dinner.", peerReaction: "Aiyyo! Brot logic marakkallae machane. Try again! 🚫" },
             ],
           },
         ],
@@ -804,7 +807,7 @@ export const MODULE_15: Module = {
         {
           id: "ex15-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Differences from Kerala Culture): 'Danke, das ist sehr freundlich.'",
+          question: "Nivin practice: Say aloud for this lesson (Differences from Kerala Culture): 'Danke, das ist sehr freundlich.'",
           questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
           correctAnswer: "Danke, das ist sehr freundlich",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
@@ -878,6 +881,7 @@ export const MODULE_15: Module = {
       duration: "45 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "City Park (Im Park)",
           sceneType: "station",
@@ -889,7 +893,7 @@ export const MODULE_15: Module = {
           currentObjective: "Understand common German slang terms and identify appropriate contexts for their use",
           nextTeaser: "Module 15 Complete! You're officially a 'German-Malayali Expert'. Next: Module 16 - Health & Fitness!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Textbook German and Slang are two different worlds. 'Alter!' is like our 'Aliya!' or 'Machane!'. Use it with your besties mathram!",
           "Pinne 'Krass' (wow) and 'Geil' (cool). Ivide everything 'Geil' aanu if it's good. But sradhikkanne, formal situations-il ithu paadilla!",
           "If you have zero mood for something, just say 'Kein Bock'. It's the ultimate 'Mood-illa' phrase. Let's get krass!",
@@ -904,15 +908,15 @@ export const MODULE_15: Module = {
           {
             moment: "You're with a group of friends and someone shows you a really cool new app. What do you say?",
             options: [
-              { text: "Echt geil!", isCorrect: true, response: "Exactly! 'Geil' is the go-to word for 'cool' or 'awesome' among friends.", kuttanReaction: "Adipoli! Slang logic perfectly capture cheythallo! 🔥" },
-              { text: "Sehr geehrte App.", isCorrect: false, response: "Aiyyo! Enthe ninnu parayunne? App-ine honorifics kodukkanda, machaa!", kuttanReaction: "Vite machane! Slang mode ON aakkuka. Try again! 😬" },
+              { text: "Echt geil!", isCorrect: true, response: "Exactly! 'Geil' is the go-to word for 'cool' or 'awesome' among friends.", peerReaction: "Adipoli! Slang logic perfectly capture cheythallo! 🔥" },
+              { text: "Sehr geehrte App.", isCorrect: false, response: "Aiyyo! Enthe ninnu parayunne? App-ine honorifics kodukkanda, machaa!", peerReaction: "Vite machane! Slang mode ON aakkuka. Try again! 😬" },
             ],
           },
           {
             moment: "Arjun asks if you want to go for a run, but you are exhausted. How do you say 'I don't feel like it'?",
             options: [
-              { text: "Kein Bock.", isCorrect: true, response: "Correct! 'Kein Bock' is the perfect colloquial way to express lack of motivation.", kuttanReaction: "Superb! Vibe logic correctly noted! ⭐" },
-              { text: "Ich habe kein Buch.", isCorrect: false, response: "No! 'Bock' (mood/ram) and 'Buch' (book) are totally different items!", kuttanReaction: "Aiyyo! Vocabulary mistake machane. Try again! 🚫" },
+              { text: "Kein Bock.", isCorrect: true, response: "Correct! 'Kein Bock' is the perfect colloquial way to express lack of motivation.", peerReaction: "Superb! Vibe logic correctly noted! ⭐" },
+              { text: "Ich habe kein Buch.", isCorrect: false, response: "No! 'Bock' (mood/ram) and 'Buch' (book) are totally different items!", peerReaction: "Aiyyo! Vocabulary mistake machane. Try again! 🚫" },
             ],
           },
         ],
@@ -1059,7 +1063,7 @@ export const MODULE_15: Module = {
         {
           id: "ex15-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Useful Slang & Colloquial German): 'Danke, das ist sehr freundlich.'",
+          question: "Meera practice: Say aloud for this lesson (Useful Slang & Colloquial German): 'Danke, das ist sehr freundlich.'",
           questionGerman: "Sprechen Sie laut: 'Danke, das ist sehr freundlich.'",
           correctAnswer: "Danke, das ist sehr freundlich",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",

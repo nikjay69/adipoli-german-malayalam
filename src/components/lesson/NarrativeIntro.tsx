@@ -66,7 +66,7 @@ export function NarrativeIntro({
   lessonTitleGerman,
   moduleIcon,
 }: NarrativeIntroProps) {
-  const kuttanText = scene.kuttanIntro[Math.floor(Math.random() * scene.kuttanIntro.length)];
+  const peerText = scene.peerIntro[Math.floor(Math.random() * scene.peerIntro.length)];
   // Prefer the pre-generated per-lesson backdrop; fall back to the legacy
   // setting/sceneType map if the file is missing.
   const [sceneImage, setSceneImage] = useState<string | null>(
@@ -121,8 +121,8 @@ export function NarrativeIntro({
         </>
       )}
 
-      {/* Kuttan — compact */}
-      <CharacterGuide messages={kuttanText} mood="excited" size="sm" />
+      {/* Nivin — compact */}
+      <CharacterGuide messages={peerText} mood="excited" size="sm" peer={scene.learnerOwner} />
 
       {/* Scene description — short */}
       <motion.div

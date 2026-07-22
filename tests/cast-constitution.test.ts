@@ -127,7 +127,7 @@ for (const inventedResumeDetail of [
 
 assert.match(decisions, /## 27 · 2026-07-22 · Fixed-cast constitution/);
 assert.match(decisions, /merge of this decision is the owner approval gate/i);
-assert.match(roadmap, /3p-05 · Cast constitution \+ Meera asset[\s\S]*owner review pending/);
+assert.match(roadmap, /3p-05 · Cast constitution \+ Meera asset[\s\S]*\*\*merged\*\* \(PR #14, 2026-07-22\)/);
 assert.doesNotMatch(storyBible, /Meera.+(?:romance device|assistant).+allowed/i);
 
 console.log('cast constitution: equal-peer law, legacy disposition, Meera lineage, hashes, alpha, and review surfaces verified');

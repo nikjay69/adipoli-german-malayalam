@@ -15,8 +15,8 @@
     { "voice": "narrator", "text": "Repeat.", "pauseAfterMs": 200 },
     { "voice": "german", "text": "Ich hei\u00DFe.", "pauseAfterMs": 3000 },
 
-    { "voice": "narrator", "text": "Now add your own name. If you are Kuttan, you'd say:", "pauseAfterMs": 400 },
-    { "voice": "german", "text": "Ich hei\u00DFe Kuttan.", "pauseAfterMs": 2500 },
+    { "voice": "narrator", "text": "Now add your own name. If you are Meera, you'd say:", "pauseAfterMs": 400 },
+    { "voice": "german", "text": "Ich hei\u00DFe Meera.", "pauseAfterMs": 2500 },
     { "voice": "narrator", "text": "Try it with your name now. Ich hei\u00DFe — and your name.", "pauseAfterMs": 4500 },
 
     { "voice": "narrator", "text": "To ask formally, 'what is your name?', you say:", "pauseAfterMs": 300 },
@@ -32,7 +32,7 @@
 
     { "voice": "narrator", "text": "Now combine. Imagine someone asks: Wie hei\u00DFen Sie und woher kommen Sie? What is your name and where are you from?", "pauseAfterMs": 4500 },
     { "voice": "narrator", "text": "You might say:", "pauseAfterMs": 200 },
-    { "voice": "german", "text": "Ich hei\u00DFe Kuttan. Ich komme aus Kerala.", "pauseAfterMs": 3500 },
+    { "voice": "german", "text": "Ich hei\u00DFe Meera. Ich komme aus Kerala.", "pauseAfterMs": 3500 },
     { "voice": "narrator", "text": "Try it with your details now.", "pauseAfterMs": 4500 },
 
     { "voice": "narrator", "text": "Now, what do you do? The verb sein — to be — makes this easy. Ich bin — I am.", "pauseAfterMs": 300 },
@@ -51,8 +51,8 @@
     { "voice": "narrator", "text": "Say your own job. Ich bin — and your profession. If you don't know the German word yet, just say your job in English — Germans will understand.", "pauseAfterMs": 4500 },
 
     { "voice": "narrator", "text": "Now the full combo. Imagine the Goethe A1 examiner asks: Stellen Sie sich bitte vor. Please introduce yourself.", "pauseAfterMs": 800 },
-    { "voice": "narrator", "text": "You say, all together:", "pauseAfterMs": 300 },
-    { "voice": "german", "text": "Ich hei\u00DFe Kuttan. Ich komme aus Kerala. Ich bin Student.", "pauseAfterMs": 4500 },
+    { "voice": "narrator", "text": "Here is a separate sample candidate. The job is an example, not Meera's biography:", "pauseAfterMs": 300 },
+    { "voice": "german", "text": "Ich hei\u00DFe Lara. Ich komme aus Kerala. Ich bin Studentin.", "pauseAfterMs": 4500 },
     { "voice": "narrator", "text": "Now you. Your name, your region, your job. All three sentences.", "pauseAfterMs": 6000 },
 
     { "voice": "narrator", "text": "Adipoli machaa! That's a Goethe A1 pass-level self-introduction. Practice it all day today \u2014 in the mirror, on the train, while cooking.", "pauseAfterMs": 700 },
