@@ -75,23 +75,38 @@ Mixing both cleanly = natural teaching + coherent story.
 ## Core characters
 
 ### Nivin (learner co-lead)
-- 20s, from Thrissur.
-- Dreamer + doer. Second-year BTech or finished-degree, exact background flexible.
-- Not a teacher. **A peer who's learning at the same time as you.** Speaks Manglish naturally.
-- Carries the emotional arc: doubt → hope → grind → panic → triumph → departure.
+- An adult Malayali learner. Exact age, district, degree, occupation, and destination path stay open unless a future teaching scene genuinely needs one and the owner approves it.
+- German is his next concrete step toward a self-chosen study/work opportunity. His older cousin in Munich makes the possibility tangible, but never makes decisions or solves German for him.
+- Fast, social, improvisational, and willing to speak before a sentence is perfect. His recurring slips are guessed articles/endings, switching `du`/`Sie` too quickly, and bluffing through speech he did not fully hear.
+- His repair habit is to slow down, repeat the usable chunk, and ask one clear follow-up. His wins come from recovering aloud and keeping the interaction moving—not from becoming the teacher.
+- Speaks short, energetic Manglish with self-aware humour. Avoid generic hype, constant `macha`, or turning his confidence into competence he has not earned.
+- His independent A1 arc is family doubt → energetic start → messy overconfidence → disciplined practice → exam-day control → A1 pass and his own next concrete step.
+- The existing adult `kuttan-*.png` appearance/pose set is accepted as the **Nivin compatibility visual** for the `3p-06` migration. Legacy filenames/component IDs may remain temporarily behind the documented mapping, but learner-facing labels, alt text, and new prose become Nivin. The archived child Kuttan and any mascot/child interpretation are rejected.
+- Not a teacher. **A peer who's learning at the same time as you.**
 
 ### Meera (learner co-lead)
-- 20s, adult Malayali learner with her own Germany goal; exact district/background is fixed in `3p-05` before final scripts.
-- Equal narrative weight to Nivin: she owns lessons, makes mistakes, repairs them, and wins; she is not a romance device, assistant, or gender-swapped duplicate.
-- Speaks natural Manglish and brings a distinct temperament and problem-solving style.
-- Her goal and arc must remain independently understandable even when Nivin is absent from a scene.
+- An adult Malayali learner with her own Germany goal. Exact age, district, degree, occupation, and destination path stay open unless a future teaching scene genuinely needs one and the owner approves it.
+- German is her next concrete step toward greater professional independence and mobility. Her motivation remains understandable without borrowing Nivin's cousin, family tension, or opportunity.
+- Observant, prepared, quietly funny, and initially reluctant to speak until the whole line feels correct. Her recurring slips are perfection freezes, overloaded word order, and losing the useful phrase while trying to decode every word of fast speech.
+- Her repair habit is to identify the one communicative job, use the shortest correct chunk, and confirm what she heard. Her wins come from decisive speaking and accurate real-world tasks—not from tidying Nivin's mistakes.
+- Speaks measured, concrete Manglish with dry observations. Never write her as maternal, cautious-by-gender, a scold, or the permanently correct one.
+- Her independent A1 arc is family concern about a stable present → deliberate start → perfection pressure → first unscripted recovery → deadline strain → A1 pass and her own next concrete step.
+- Equal narrative weight to Nivin: she owns lessons, makes mistakes, repairs them, and wins; she is not a romance device, assistant, token inclusion, or gender-swapped duplicate.
+- Her goal and arc must remain independently understandable when Nivin is absent.
 - **Owner-approved visual identity seed (2026-07-18):** [`meera-canonical-base-v1.png`](assets/meera/meera-canonical-base-v1.png) is the canonical image reference for Meera v1 (SHA-256 `FBBC2E2F9EB3397BCA9F027516F863B50B2C682353D6E1DBD2009012D5D9E576`). [`meera-consistency-pose-v1.png`](assets/meera/meera-consistency-pose-v1.png) is the approved same-character consistency proof (SHA-256 `C52932E7B78710681E39295D14017907E6C59A1FDE9D87D329647D5C64143A76`), not a second identity.
 - Future generation or editing must condition on the canonical base image rather than recreate Meera from text alone. Preserve her recognisable face, hair, apparent age, skin tone, body proportions, wardrobe language, and painterly illustration finish; vary only the expression, gesture, pose, crop, and scene required by the teaching moment.
-- These two portraits are source references, not app-ready cutouts. Chunk `3p-05` still owns the full character constitution, focused model sheet, minimal production pose/cutout seed, and clean-alpha review on cream and forest.
+- **Production seed (2026-07-22):** [`meera-production-cutout-v1.png`](assets/meera/meera-production-cutout-v1.png) is the minimal transparent presenting pose, derived only from the approved consistency pose with a local matte/defringe pass. [`meera-model-sheet-v1.png`](assets/meera/meera-model-sheet-v1.png) and [`meera-edge-review-v1.png`](assets/meera/meera-edge-review-v1.png) are the focused identity and cream/forest review boards. Checksums, dimensions, lineage, and alpha metrics live in [`manifest.json`](assets/meera/manifest.json).
+
+### Equal-peer scene law
+- Every lesson has one named learner scene owner: Nivin or Meera. Default to strict alternation; where the teaching outcome requires an exception, never give one peer more than two consecutive owned lessons and restore balance inside the module.
+- A two-person dialogue may include both peers, but ownership still belongs to the learner whose motivation, mistake, repair, or win changes in the scene.
+- Across each module, both peers must make a meaningful mistake, perform their own repair, and receive an independently legible win. Neither exists mainly to prompt, praise, translate for, or emotionally complete the other.
+- Peer speech may use natural Manglish. German model answers remain pure, exact German. Frau Fischer owns teacher explanation/correction; Nivin and Meera may share what worked for them but never become substitute instructors.
+- Romantic framing, flirtation as motivation, gendered competence, caretaker dynamics, and “boys versus girls” contrast are out of canon.
 
 ### Their families
 - Nivin's Amma + Achan begin as doubters ("Ivide nalla job illayo?") and gradually respond to his progress.
-- Meera's family dynamic must be independently defined before final scripts; do not copy Nivin's parents or reduce her stakes to permission/romance.
+- Meera's family values her stable present and worries about the practical risk of restarting abroad. The tension is practical and affectionate, not permission-seeking or romance-led.
 - Both family arcs recognise earned progress by the exam phase without collapsing into one shared household story.
 
 ### The Cousin in Munich (unseen mentor)
@@ -99,13 +114,15 @@ Mixing both cleanly = natural teaching + coherent story.
 - Appears only via WhatsApp voice notes, screenshots, video calls.
 - Represents the goal. Shares tips, encouragement, reality checks.
 - Does NOT appear in person in A1. (Reveal in A2.)
-- Meera's Germany-facing motivation/contact is defined separately in `3p-05`; it must not be a renamed copy of this cousin.
+- Meera's Germany-facing context stays independent of Nivin's cousin. If a future scene needs a contact, that person may provide a reality check but never answer exercises or replace Meera's agency.
 
 ### Frau Fischer (Goethe Kochi teacher)
 - Strict but warm. Has taught hundreds of Malayalis.
 - Introduced in M1-2. Recurring presence through M5 (classroom scenes).
 - Fades to background as Nivin and Meera gain independence in M6+.
 - Cameos at the Goethe A1 exam in M17 as encouragement.
+- Uses concise, exact German and bounded correction: identify the communicative miss, model the repair, then return the attempt to the learner. She is neither a comic stereotype nor an all-knowing narrator.
+- The existing adult `frau-weber-*.png` appearance/pose set is accepted as the **Frau Fischer compatibility visual** for `3p-06`. Legacy filenames/component IDs may remain temporarily; learner-facing names, alt text, scripts, captions, and audio become Frau Fischer. The old surname is not a second teacher.
 
 ### The Malayali Returnee (mid-course character)
 - Introduced M9 or M10.
@@ -120,9 +137,22 @@ Mixing both cleanly = natural teaching + coherent story.
 
 ### Appu (mascot, non-narrative)
 - NOT a character in the story. UI mascot only.
-- Appears in: empty states (sleeping), completion moments (silent cheer), achievement popups.
-- Does **not** have dialogue, decisions, or story beats. Do not give him a voice.
-- Think of him like Clippy in its quietest mode: visual only, never intrusive.
+- May appear only as an optional ambient illustration in a rare empty state (sleeping), completion moment (silent cheer), or achievement popup. The actual meaning must still be carried by normal text/icon semantics; Appu is never the status messenger.
+- Does **not** have dialogue, speech bubbles, decisions, story beats, lesson/exam prompts, teaching, error/recovery delivery, loading duty, or CTA decoration. Do not give him a voice or attach generated audio.
+- Never place Appu in an active dialogue or beside the fixed cast as a third narrative participant. Do not repeat him across a flow; omission is the default.
+- Existing `Appu.tsx` is the accepted v1 visual implementation. Its mood names are rendering options, not permission to expand his product role.
+
+### Legacy cast disposition for `3p-06`
+
+| Existing appearance/reference | Disposition | Migration rule |
+|---|---|---|
+| Adult `kuttan-*.png` pose set | **Relabel as Nivin compatibility visual** | New display copy/alt text says Nivin; compatibility filenames/IDs may remain temporarily. Old Kuttan biography/voice is not automatically canon. |
+| `_child-backup/` and any child Kuttan render | **Rejected** | Historical evidence only; never ship or regenerate as Nivin. |
+| Adult `frau-weber-*.png` pose set | **Relabel as Frau Fischer compatibility visual** | One teacher only; new copy/audio/captions say Frau Fischer. Compatibility filenames/IDs may remain temporarily. |
+| Meera images outside `assets/meera/` | **Rejected as identity authority** | Historical text may be audited, but only the canonical base may condition new visual work. |
+| `Appu.tsx` | **Keep, role frozen** | No narrative or instructional promotion during migration. |
+
+The real learner's optional preferred name remains separate from this cast. Ask only after the First German Moment; skipping is allowed. It may personalise live UI copy but never renames Nivin/Meera/Frau Fischer/Appu and is never baked into pre-rendered audio or video.
 
 ---
 
@@ -131,8 +161,8 @@ Mixing both cleanly = natural teaching + coherent story.
 All M1-M16 `storyScene.setting.name` values should be drawn from this Kerala-only list. No Berlin / Munich / Frankfurt scenes in A1 except video-call backdrops of the cousin.
 
 **Home life:**
-- Nivin's home, Thrissur
-- Meera's Kerala home (district fixed before final scripts)
+- Nivin's Kerala home
+- Meera's Kerala home
 - The family WhatsApp group
 - Home study desk (with laptop + Goethe book)
 
