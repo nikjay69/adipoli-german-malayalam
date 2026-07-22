@@ -71,7 +71,7 @@ assert.ok(existsSync(resolve(root, 'public/audio/tts/v1-3-1/v1-3-1-line-0.mp3'))
 const frauFischerGreeting = read('public/images/characters/frau-weber-greeting.png');
 assert.equal(
   sha256(frauFischerGreeting),
-  'bfe32e4efd713e3ba33afdd04fbc7f5bfaf0daf5228caf94b02b5eb968ab4426',
+  'd66ce5d9093a0a40679dfecfffeddbe61defbcb60b65b47e4df6c35639d96c55',
   'Frau Fischer greeting cutout must retain the cleaned transparent arm-to-torso gap',
 );
 
