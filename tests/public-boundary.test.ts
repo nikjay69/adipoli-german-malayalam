@@ -10,6 +10,7 @@ const sha256 = (contents: Buffer) => createHash('sha256').update(contents).diges
 
 const publicHome = readText('src/app/page.tsx');
 const publicStyles = readText('src/app/PublicBoundary.module.css');
+const globalStyles = readText('src/app/globals.css');
 const firstMoment = readText('src/app/intro/page.tsx');
 const legacyLanding = readText('src/app/landing/page.tsx');
 const navigation = readText('src/components/layout/Navigation.tsx');
@@ -43,6 +44,9 @@ for (const mobileBrandStructure of ['mobileBrand', 'finalBrand', 'footerBrand', 
 }
 assert.match(publicStyles, /grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/, 'desktop scene flags must keep the approved four-column theatre');
 assert.match(publicStyles, /scroll-snap-type:\s*inline mandatory/, 'mobile scene flags must retain the approved swipe rail');
+assert.match(publicStyles, /overscroll-behavior-inline:\s*none/, 'mobile scene flags must stop cleanly at the right edge');
+assert.match(globalStyles, /html\s*\{[\s\S]*?overflow-x:\s*clip;[\s\S]*?overscroll-behavior:\s*none;/, 'the viewport must not rubber-band beyond the right or bottom edge');
+assert.match(globalStyles, /body\s*\{[\s\S]*?overflow-x:\s*clip;[\s\S]*?overscroll-behavior:\s*none;/, 'the app body must stay inside the viewport bounds');
 assert.match(publicStyles, /"brand links"\s*\n\s*"meta meta"/, 'mobile footer must keep its collision-free two-row layout');
 assert.doesNotMatch(publicHome, /router\.replace|hasSeenIntro/, 'the canonical public route must not redirect visitors away');
 assert.doesNotMatch(
