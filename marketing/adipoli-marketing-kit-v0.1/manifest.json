@@ -228,8 +228,8 @@
     {
       "path": "exports/promo/title.png",
       "mimeType": "image/png",
-      "bytes": 33903,
-      "sha256": "F9226AF60FAB6C9DED7E2AECEE6FCB45709F3C0EE43BC3F8C970A51DF111DAA4",
+      "bytes": 33987,
+      "sha256": "46364E518506680FEDCF0A75DB94F5FBB0BA582AD8D860E4351F3724775BB85A",
       "width": 1920,
       "height": 1080,
       "safeArea": "All key artwork is inset inside the frame."
@@ -321,8 +321,8 @@
     {
       "path": "preview/promo-contact-sheet.png",
       "mimeType": "image/png",
-      "bytes": 177913,
-      "sha256": "45A0D01B426E4D3DA482162DD22E249064D345B3E45459AAAF55C03D2064D7B6"
+      "bytes": 178482,
+      "sha256": "30166A545426658967E67FCFE491E2AF0D121D0C43E593157EC60CA720815D16"
     },
     {
       "path": "preview/templates-contact-sheet.png",
@@ -396,8 +396,8 @@
     {
       "path": "promo/title.svg",
       "mimeType": "image/svg+xml",
-      "bytes": 1305,
-      "sha256": "3592A711DAA59A3461980109BF5E5CAEA3299F995827FB70BFE4D94A043E1DE5",
+      "bytes": 1325,
+      "sha256": "18F1814A3A936A3652D1B2B8725591A8F140D1193BE99FD939C55EF33416DA29",
       "width": 1920,
       "height": 1080,
       "safeArea": "All key artwork is inset inside the frame."
