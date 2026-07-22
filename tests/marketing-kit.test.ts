@@ -95,8 +95,8 @@ const bannedCopy = [
   /discount/i,
   /Goethe-Institut/i,
   /Kerala Style/i,
-  /Kuttan/i,
-  /Frau Weber/i,
+  /Nivin/i,
+  /Frau Fischer/i,
   /A2\/B1/i,
 ];
 

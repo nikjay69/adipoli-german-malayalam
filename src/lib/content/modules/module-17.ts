@@ -26,6 +26,7 @@ export const MODULE_17: Module = {
       duration: "45 min",
       xpReward: 100,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Goethe-Institut Entrance (Vor dem Goethe-Institut)",
           sceneType: "office",
@@ -37,7 +38,7 @@ export const MODULE_17: Module = {
           currentObjective: "Understand the exam structure, scoring system, and the primary strategies for passing the Goethe A1",
           nextTeaser: "First Test: Hören Teil 1. Let's put on those headphones and hear some messages!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Today is the day. Goethe Guru mode ON! The official name is 'Start Deutsch 1'. Ithu kittiye theeroo!",
           "Total points are 100, but namukku venandhathu minimum 60 aanu. Even if one section is hard, bakki 3 bits vechu score cheyyaam!",
           "And remember the Golden strategy: SILENCE read cheyyan aanu. Question audio-ku mbue read cheyyunnathu 100 marks tactic aanu. Let's start!",
@@ -52,15 +53,15 @@ export const MODULE_17: Module = {
           {
             moment: "How many parts does the Goethe A1 exam have in total?",
             options: [
-              { text: "4 parts: Hören, Lesen, Schreiben, Sprechen.", isCorrect: true, response: "Exactly! Listening, Reading, Writing, and Speaking—the complete package.", kuttanReaction: "Adipoli! Exam logic perfectly capture cheythallo! 🔥" },
-              { text: "2 parts: Only Written and Oral.", isCorrect: false, response: "Aiyyo! It's split into 4 distinct sections. Don't skip any, machaa!", kuttanReaction: "Vite machane! Sections sradhikkuka. Try again! 😬" },
+              { text: "4 parts: Hören, Lesen, Schreiben, Sprechen.", isCorrect: true, response: "Exactly! Listening, Reading, Writing, and Speaking—the complete package.", peerReaction: "Adipoli! Exam logic perfectly capture cheythallo! 🔥" },
+              { text: "2 parts: Only Written and Oral.", isCorrect: false, response: "Aiyyo! It's split into 4 distinct sections. Don't skip any, machaa!", peerReaction: "Vite machane! Sections sradhikkuka. Try again! 😬" },
             ],
           },
           {
             moment: "What is the minimum overall score you need to pass out of 100?",
             options: [
-              { text: "60 points.", isCorrect: true, response: "Correct! Score 60 total and you get that certificate.", kuttanReaction: "Superb! Passing logic correctly picked! ⭐" },
-              { text: "100 points.", isCorrect: false, response: "No! 100 is great but 60 is enough to pass ('bestehen').", kuttanReaction: "Aiyyo! 100 is for toppers, but 60 is enough. Try again! 🚫" },
+              { text: "60 points.", isCorrect: true, response: "Correct! Score 60 total and you get that certificate.", peerReaction: "Superb! Passing logic correctly picked! ⭐" },
+              { text: "100 points.", isCorrect: false, response: "No! 100 is great but 60 is enough to pass ('bestehen').", peerReaction: "Aiyyo! 100 is for toppers, but 60 is enough. Try again! 🚫" },
             ],
           },
         ],
@@ -229,7 +230,7 @@ export const MODULE_17: Module = {
           type: "free-text",
           question: "Priya walks into her Goethe exam tomorrow. Send her the two-word German blessing — type it (good luck):",
           correctAnswer: "Viel Glück",
-          explanation: "'Viel Glück!' — the phrase you'll hear from Frau Weber, the cousin, and half of Kerala on your own exam morning.",
+          explanation: "'Viel Glück!' — the phrase you'll hear from Frau Fischer, the cousin, and half of Kerala on your own exam morning.",
           xpReward: 30
         },
         {
@@ -262,7 +263,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-1-spk2",
           type: "speaking",
-          question: "Repair Kuttan's exam-day panic: the examiner speaks and he blurts 'Sorry, again please?' in English. The German rescue line exists — say it: 'Noch einmal, bitte.'",
+          question: "Repair Nivin's exam-day panic: the examiner speaks and he blurts 'Sorry, again please?' in English. The German rescue line exists — say it: 'Noch einmal, bitte.'",
           questionGerman: "Sprechen Sie laut: 'Noch einmal, bitte.'",
           correctAnswer: "Noch einmal, bitte",
           explanation: "'Noch einmal, bitte' politely asks for a repeat and keeps you inside German — switching to English mid-exam costs marks. Drill it until panic says it for you.",
@@ -336,6 +337,7 @@ export const MODULE_17: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Exam Hall (Im Prüfungssaal)",
           sceneType: "office",
@@ -347,7 +349,7 @@ export const MODULE_17: Module = {
           currentObjective: "Correctly identify negation traps (nicht, kein) and extract key details like numbers and times in short messages",
           nextTeaser: "Next: Dialogues! Let's listen to people making plans and buying groceries!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Headphones on, focus 100%. Negation traps are the biggest enemy here. 'Nicht' kandaal full logic reverse aakum!",
           "Pinne numbers sradhikkuka. 13 (Dreizehn) and 30 (Dreißig) sound similar—listen for the sharp 't' at the end of 13.",
           "Every audio plays TWICE. Use the first one to catch the vibe, and the second to lock the answer. Let's practice!",
@@ -362,15 +364,15 @@ export const MODULE_17: Module = {
           {
             moment: "📢 You hear: 'Der Zug nach München fährt von Gleis 5, nicht von Gleis 3.' \n📝 Statement: 'Der Zug fährt von Gleis 3.' Is this correct?",
             options: [
-              { text: "Falsch.", isCorrect: true, response: "Exactly! The 'nicht' before 'Gleis 3' means it's the WRONG platform.", kuttanReaction: "Adipoli! Negation logic perfectly capture cheythallo! 🔥" },
-              { text: "Richtig.", isCorrect: false, response: "Aiyyo! Did you miss the 'nicht'? It flips the whole information, machaa!", kuttanReaction: "Vite machane! Negation sradhikkuka. Try again! 😬" },
+              { text: "Falsch.", isCorrect: true, response: "Exactly! The 'nicht' before 'Gleis 3' means it's the WRONG platform.", peerReaction: "Adipoli! Negation logic perfectly capture cheythallo! 🔥" },
+              { text: "Richtig.", isCorrect: false, response: "Aiyyo! Did you miss the 'nicht'? It flips the whole information, machaa!", peerReaction: "Vite machane! Negation sradhikkuka. Try again! 😬" },
             ],
           },
           {
             moment: "What does 'Termin verschieben' mean in an announcement?",
             options: [
-              { text: "Reschedule/Postpone the appointment.", isCorrect: true, response: "Correct! If a meeting is shifted, it's 'verschoben'.", kuttanReaction: "Superb! Meaning logic correctly picked! ⭐" },
-              { text: "Confirm the appointment.", isCorrect: false, response: "No! 'Bestätigen' is confirm. 'Verschieben' means moving it to a later time.", kuttanReaction: "Aiyyo! Meaning mistake machane. Try again! 🚫" },
+              { text: "Reschedule/Postpone the appointment.", isCorrect: true, response: "Correct! If a meeting is shifted, it's 'verschoben'.", peerReaction: "Superb! Meaning logic correctly picked! ⭐" },
+              { text: "Confirm the appointment.", isCorrect: false, response: "No! 'Bestätigen' is confirm. 'Verschieben' means moving it to a later time.", peerReaction: "Aiyyo! Meaning mistake machane. Try again! 🚫" },
             ],
           },
         ],
@@ -564,7 +566,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-2-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: he misses a word and barks 'Was?!' — street-rude. The exam-polite version is two words. Say it right: 'Wie bitte?'",
+          question: "Repair Meera's slip: she misses a word and barks 'Was?!' — street-rude. The exam-polite version is two words. Say it right: 'Wie bitte?'",
           questionGerman: "Sprechen Sie laut: 'Wie bitte?'",
           correctAnswer: "Wie bitte",
           explanation: "'Wie bitte?' is the polite 'pardon?' — examiners hear it as good German. 'Was?!' they hear as a challenge to fight.",
@@ -620,6 +622,7 @@ export const MODULE_17: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Exam Hall (Im Prüfungssaal)",
           sceneType: "office",
@@ -631,7 +634,7 @@ export const MODULE_17: Module = {
           currentObjective: "Correctly identify the main goal and specific details (times, locations) in dialogues and match announcements to situations",
           nextTeaser: "Next: Reading! Let's scan some signs and ads for keywords!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! This is the most interactive part. Dialogues are like nammude daily chattings in a shop or cafe. Focus on the 'final decision' they make!",
           "In Teil 3, it's a matching game. Situation matches announcement. If you hear 'Sonderangebot', match it to 'Shopping'. Very logical!",
           "Watch out for the 'Location Clues'. 'Bahnhof' = train, 'Flughafen' = plane, 'Stadtbad' = swimming pool. Catch the place, catch the point!",
@@ -645,15 +648,15 @@ export const MODULE_17: Module = {
           {
             moment: "📢 You hear an announcement about 'Bio-Äpfel' for 1,49 € in the 'Obstabteilung'. Which situation does this match?",
             options: [
-              { text: "Searching for cheap fruit in a supermarket.", isCorrect: true, response: "Exactly! 'Obstabteilung' and price details point directly to grocery shopping.", kuttanReaction: "Adipoli! Context logic perfectly capture cheythallo! 🔥" },
-              { text: "Waiting for a train at the station.", isCorrect: false, response: "Aiyyo! Train station-il apples-inte promo varilla, machaa!", kuttanReaction: "Vite machane! Location sradhikkuka. Try again! 😬" },
+              { text: "Searching for cheap fruit in a supermarket.", isCorrect: true, response: "Exactly! 'Obstabteilung' and price details point directly to grocery shopping.", peerReaction: "Adipoli! Context logic perfectly capture cheythallo! 🔥" },
+              { text: "Waiting for a train at the station.", isCorrect: false, response: "Aiyyo! Train station-il apples-inte promo varilla, machaa!", peerReaction: "Vite machane! Location sradhikkuka. Try again! 😬" },
             ],
           },
           {
             moment: "In a dialogue, a staff member says: 'The milk is in Aisle 3, next to the cheese'. Where is the milk?",
             options: [
-              { text: "Aisle 3, next to the cheese.", isCorrect: true, response: "Correct! The specific location was clearly stated.", kuttanReaction: "Superb! Detail logic correctly picked! ⭐" },
-              { text: "At the entrance.", isCorrect: false, response: "No! The entrance was mentioned for bread, not milk. Listen carefully!", kuttanReaction: "Aiyyo! Detail mistake machane. Try again! 🚫" },
+              { text: "Aisle 3, next to the cheese.", isCorrect: true, response: "Correct! The specific location was clearly stated.", peerReaction: "Superb! Detail logic correctly picked! ⭐" },
+              { text: "At the entrance.", isCorrect: false, response: "No! The entrance was mentioned for bread, not milk. Listen carefully!", peerReaction: "Aiyyo! Detail mistake machane. Try again! 🚫" },
             ],
           },
         ],
@@ -861,7 +864,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-3-spk2",
           type: "speaking",
-          question: "Repair Kuttan's ear: the audio said vierzig (40) and he wrote 14. Drill the killer pair aloud with crisp endings: 'vierzehn … vierzig.'",
+          question: "Repair Nivin's ear: the audio said vierzig (40) and he wrote 14. Drill the killer pair aloud with crisp endings: 'vierzehn … vierzig.'",
           questionGerman: "Sprechen Sie laut: 'vierzehn, vierzig.'",
           correctAnswer: "vierzehn, vierzig",
           explanation: "-zehn (teen) vs -zig (ty) is the single most expensive listening confusion in Hören. If your own mouth makes the difference crisp, your ear starts hearing it.",
@@ -908,6 +911,7 @@ export const MODULE_17: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Exam Hall (Im Prüfungssaal)",
           sceneType: "office",
@@ -919,7 +923,7 @@ export const MODULE_17: Module = {
           currentObjective: "Correctly identify the meaning of common German signs and notices and match them to situational descriptions",
           nextTeaser: "Final Reading: Classified ads and emails! Let's find that perfect apartment!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Reading is all about speed and keywords. 'Verboten' means forbidden, 'Erlaubt' means allowed. Simple choice mathram!",
           "In Germany, Sunday (Sonntag/So) is almost always 'geschlossen' (closed). If a notice says 'So: geschlossen', don't plan a trip there, machaa!",
           "Strategy: Read the SITUATION first. What do you need? Then search for the keyword in the sign. Let's decode these notices!",
@@ -934,15 +938,15 @@ export const MODULE_17: Module = {
           {
             moment: "📋 You see a sign that says: 'Rauchen verboten! Auch E-Zigaretten!'. What does it mean?",
             options: [
-              { text: "Smoking is not allowed here.", isCorrect: true, response: "Exactly! 'Verboten' is the key word for 'forbidden' or 'not allowed'.", kuttanReaction: "Adipoli! Sign logic perfectly capture cheythallo! 🔥" },
-              { text: "Smoking is free here.", isCorrect: false, response: "Aiyyo! 'Verboten' means NO. Don't light up here, machaa!", kuttanReaction: "Vite machane! Action words sradhikkuka. Try again! 😬" },
+              { text: "Smoking is not allowed here.", isCorrect: true, response: "Exactly! 'Verboten' is the key word for 'forbidden' or 'not allowed'.", peerReaction: "Adipoli! Sign logic perfectly capture cheythallo! 🔥" },
+              { text: "Smoking is free here.", isCorrect: false, response: "Aiyyo! 'Verboten' means NO. Don't light up here, machaa!", peerReaction: "Vite machane! Action words sradhikkuka. Try again! 😬" },
             ],
           },
           {
             moment: "📋 A shop notice says: 'So und Feiertage: geschlossen'. Can you go shopping there on Sunday?",
             options: [
-              { text: "No, it's closed.", isCorrect: true, response: "Correct! 'Sonntag' + 'geschlossen' = Stay home and relax.", kuttanReaction: "Superb! Sunday logic correctly picked! ⭐" },
-              { text: "Yes, all day.", isCorrect: false, response: "No! In Germany, most shops close on Sundays. Follow the 'geschlossen' rule!", kuttanReaction: "Aiyyo! Sunday mistake machane. Try again! 🚫" },
+              { text: "No, it's closed.", isCorrect: true, response: "Correct! 'Sonntag' + 'geschlossen' = Stay home and relax.", peerReaction: "Superb! Sunday logic correctly picked! ⭐" },
+              { text: "Yes, all day.", isCorrect: false, response: "No! In Germany, most shops close on Sundays. Follow the 'geschlossen' rule!", peerReaction: "Aiyyo! Sunday mistake machane. Try again! 🚫" },
             ],
           },
         ],
@@ -1188,7 +1192,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-4-spk2",
           type: "speaking",
-          question: "Repair Kuttan's sign-reading: he saw 'geschlossen' and walked in anyway, hoping. Say the pair that decides your day, cleanly: 'geöffnet … geschlossen.'",
+          question: "Repair Meera's sign-reading: she saw 'geschlossen' and walked in anyway, hoping. Say the pair that decides your day, cleanly: 'geöffnet … geschlossen.'",
           questionGerman: "Sprechen Sie laut: 'geöffnet, geschlossen.'",
           correctAnswer: "geöffnet, geschlossen",
           explanation: "Open vs closed — Lesen Teil 1's favourite pair. Saying both aloud locks the meanings to the sounds, so the sign reads itself.",
@@ -1244,6 +1248,7 @@ export const MODULE_17: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Exam Hall (Im Prüfungssaal)",
           sceneType: "office",
@@ -1255,7 +1260,7 @@ export const MODULE_17: Module = {
           currentObjective: "Correctly identify matches between situational descriptions and classified ads, and extract correct details from short emails",
           nextTeaser: "Final Strategy: The Mock Test! Let's put everything we've learned together for a full run!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! This is the 'Speed Run'. Detailed reading slow cheyyum, scanning faster aakum. If the situation says 'billig' (cheap), scan for the price point first!",
           "In Teil 2, situations match ads. A person wants to travel on Saturday — check if the hotel ad lists Saturday explicitly. If yes, Richtig! If not, Falsch!",
           "In Teil 3, emails help us solve life's little puzzles. Match the sender (Absender) to the situation (Betreff). Let's finish this!",
@@ -1270,15 +1275,15 @@ export const MODULE_17: Module = {
           {
             moment: "📋 Situation: You want a cheap hotel for a weekend trip (Sat-Sun). Ad says: 'Hotel am See, Fr-Mo, 99€'. Does it match?",
             options: [
-              { text: "Richtig (Yes).", isCorrect: true, response: "Exactly! Fr-Mo covers the Sat-Sun weekend period perfectly.", kuttanReaction: "Adipoli! Time logic perfectly capture cheythallo! 🔥" },
-              { text: "Falsch (No).", isCorrect: false, response: "Aiyyo! Fr-Mo includes Sat and Sun, machaa! Logic mistake.", kuttanReaction: "Vite machane! Range sradhikkuka. Try again! 😬" },
+              { text: "Richtig (Yes).", isCorrect: true, response: "Exactly! Fr-Mo covers the Sat-Sun weekend period perfectly.", peerReaction: "Adipoli! Time logic perfectly capture cheythallo! 🔥" },
+              { text: "Falsch (No).", isCorrect: false, response: "Aiyyo! Fr-Mo includes Sat and Sun, machaa! Logic mistake.", peerReaction: "Vite machane! Range sradhikkuka. Try again! 😬" },
             ],
           },
           {
             moment: "📋 Ad says: 'Übernachtung im Einzelzimmer: 60€, inklusive Frühstück'. What does this mean?",
             options: [
-              { text: "The 60€ includes breakfast.", isCorrect: true, response: "Correct! 'Inklusive' means it's already in the price.", kuttanReaction: "Superb! Inklusive logic correctly picked! ⭐" },
-              { text: "You have to pay extra for breakfast.", isCorrect: false, response: "No! 'Zuzüglich' would mean extra. 'Inklusive' means it's included, machaa!", kuttanReaction: "Aiyyo! Meaning mistake machane. Try again! 🚫" },
+              { text: "The 60€ includes breakfast.", isCorrect: true, response: "Correct! 'Inklusive' means it's already in the price.", peerReaction: "Superb! Inklusive logic correctly picked! ⭐" },
+              { text: "You have to pay extra for breakfast.", isCorrect: false, response: "No! 'Zuzüglich' would mean extra. 'Inklusive' means it's included, machaa!", peerReaction: "Aiyyo! Meaning mistake machane. Try again! 🚫" },
             ],
           },
         ],
@@ -1470,7 +1475,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-5-spk2",
           type: "speaking",
-          question: "Repair Kuttan's skim: the email said 'Der Kurs findet nicht statt' and he showed up anyway. Say the whole sentence aloud and HIT the nicht: 'Der Kurs findet nicht statt.'",
+          question: "Repair Nivin's skim: the email said 'Der Kurs findet nicht statt' and he showed up anyway. Say the whole sentence aloud and HIT the nicht: 'Der Kurs findet nicht statt.'",
           questionGerman: "Sprechen Sie laut: 'Der Kurs findet nicht statt.'",
           correctAnswer: "Der Kurs findet nicht statt",
           explanation: "One skimmed-over 'nicht' flips the meaning of any Lesen text — it's the exam's favourite trap. Bonus: stattfinden is separable, so 'statt' waits at the end.",
@@ -1489,7 +1494,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-5-prod-dictation",
           type: "dictation",
-          question: "Frau Weber's dictation round, exam conditions: one full A1 sentence, two plays, no mercy. Listen and type exactly what you hear.",
+          question: "Frau Fischer's dictation round, exam conditions: one full A1 sentence, two plays, no mercy. Listen and type exactly what you hear.",
           audioUrl: "/audio/hoeren/module-17/ex17-5-prod-dictation.mp3",
           correctAnswer: "Ich höre die Ansage zweimal",
           explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
@@ -1535,6 +1540,7 @@ export const MODULE_17: Module = {
       duration: "90 min",
       xpReward: 250,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Goethe Kochi Mock Prüfungsraum",
           sceneType: "classroom",
@@ -1546,7 +1552,7 @@ export const MODULE_17: Module = {
           currentObjective: "Complete a full Goethe A1 mock exam under timed conditions covering all Hören and Lesen sections",
           nextTeaser: "After this: review your results and target weak spots before the real exam!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Ithaa — the big day! Full mock exam aanu, real Goethe exam pole thanne. Nee prepare cheythath okke ippol show cheyyuka!",
           "Strategy remember cheyyuka: Hören-il questions first vayikkuka, keywords listen cheyyuka. Lesen-il scan cheyyuka, word-by-word translate cheyyaruthu!",
           "Oru question-il stuck aayaal — best guess pick cheyth MOVE ON. Time waste cheyyaruthu. Viel Erfolg machane — nee ready aanu! 💪",
@@ -1563,16 +1569,16 @@ export const MODULE_17: Module = {
           {
             moment: "The Hören section is about to start. You have 30 seconds before the audio plays. What do you do?",
             options: [
-              { text: "Read all the questions and options first so I know what to listen for.", isCorrect: true, response: "Smart! Pre-reading questions helps you focus on the right keywords when the audio plays.", kuttanReaction: "Adipoli strategy! Questions first vayichal keywords ariyaam — audio-il athu listen cheythal mathi! 🔥" },
-              { text: "Relax and wait for the audio to start.", isCorrect: false, response: "Those 30 seconds are golden! Use them to read the questions so you know exactly what to listen for.", kuttanReaction: "Aiyyo machane! 30 seconds waste aakkalle. Questions vayikkaan ulla time aanu athu — use it!" },
+              { text: "Read all the questions and options first so I know what to listen for.", isCorrect: true, response: "Smart! Pre-reading questions helps you focus on the right keywords when the audio plays.", peerReaction: "Adipoli strategy! Questions first vayichal keywords ariyaam — audio-il athu listen cheythal mathi! 🔥" },
+              { text: "Relax and wait for the audio to start.", isCorrect: false, response: "Those 30 seconds are golden! Use them to read the questions so you know exactly what to listen for.", peerReaction: "Aiyyo machane! 30 seconds waste aakkalle. Questions vayikkaan ulla time aanu athu — use it!" },
             ],
           },
           {
             moment: "In Lesen Teil 3, you encounter a long email with many unfamiliar words. What's your approach?",
             options: [
-              { text: "Scan for keywords that match the question, skip unknown words.", isCorrect: true, response: "Perfect strategy! You don't need to understand every word — just find the information the question asks for.", kuttanReaction: "Superb! Every word manasilaakkanam ennilla. Question-inu ulla answer keywords scan cheythu find cheyyuka! ⭐" },
-              { text: "Read the entire email word by word and try to translate everything.", isCorrect: false, response: "Word-by-word reading wastes precious time. Focus on the question and scan for relevant keywords.", kuttanReaction: "Time kalayalle machane! Word-by-word venda. Question nokkuka, keywords scan cheyyuka, answer find cheyyuka!" },
-              { text: "Skip this question and come back later.", isCorrect: false, response: "Better to attempt it now with scanning. Coming back might mean you run out of time entirely.", kuttanReaction: "Skip cheyyaruthu! Scanning strategy use cheyth quick-aayi answer cheyyuka. Later-inu time illaatheyaaykollum!" },
+              { text: "Scan for keywords that match the question, skip unknown words.", isCorrect: true, response: "Perfect strategy! You don't need to understand every word — just find the information the question asks for.", peerReaction: "Superb! Every word manasilaakkanam ennilla. Question-inu ulla answer keywords scan cheythu find cheyyuka! ⭐" },
+              { text: "Read the entire email word by word and try to translate everything.", isCorrect: false, response: "Word-by-word reading wastes precious time. Focus on the question and scan for relevant keywords.", peerReaction: "Time kalayalle machane! Word-by-word venda. Question nokkuka, keywords scan cheyyuka, answer find cheyyuka!" },
+              { text: "Skip this question and come back later.", isCorrect: false, response: "Better to attempt it now with scanning. Coming back might mean you run out of time entirely.", peerReaction: "Skip cheyyaruthu! Scanning strategy use cheyth quick-aayi answer cheyyuka. Later-inu time illaatheyaaykollum!" },
             ],
           },
         ],
@@ -1637,7 +1643,7 @@ export const MODULE_17: Module = {
                 "Mark every wrong answer as Hören or Lesen, not just 'mistake'.",
                 "For Hören: replay once, write the keyword you missed, then say the full answer aloud.",
                 "For Lesen: underline the sentence that proves the answer; do not rely on gut feeling.",
-                "Tell Kuttan one clear next step in German: Ich übe Hören. / Ich übe Lesen."
+                "Tell Meera one clear next step in German: Ich übe Hören. / Ich übe Lesen."
               ]
             },
             {
@@ -1647,7 +1653,7 @@ export const MODULE_17: Module = {
               rows: [
                 ["Hören", "I catch time, place, price, and negation in short audio.", "Replay one missed item and write: Ich höre die Ansage zweimal."],
                 ["Lesen", "I can prove each answer by pointing to one exact line.", "Underline the proof line before checking the answer."],
-                ["Exam strategy", "I move on after one hard question and protect easy marks.", "Say to Kuttan: Ich mache weiter."]
+                ["Exam strategy", "I move on after one hard question and protect easy marks.", "Say to Meera: Ich mache weiter."]
               ]
             },
             {
@@ -1673,7 +1679,7 @@ export const MODULE_17: Module = {
               type: "note",
               title: "Feedback rule after the mock",
               variant: "tip",
-              content: "Do not label the result as simply 'good' or 'bad'. Label mistakes by skill: Hören = missed sound/detail; Lesen = missed proof line. Then tell Kuttan one A1 next step: Ich übe Hören. / Ich übe Lesen."
+              content: "Do not label the result as simply 'good' or 'bad'. Label mistakes by skill: Hören = missed sound/detail; Lesen = missed proof line. Then tell Meera one A1 next step: Ich übe Hören. / Ich übe Lesen."
             }
           ]
         }
@@ -1857,7 +1863,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-6-spk2",
           type: "speaking",
-          question: "Repair Kuttan's mid-mock meltdown: halfway through Lesen he hisses 'Keine Zeit! Keine Zeit!' Breathe. Say the calm truth instead: 'Ich habe noch Zeit.'",
+          question: "Repair Meera's mid-mock meltdown: halfway through Lesen she hisses 'Keine Zeit! Keine Zeit!' Breathe. Say the calm truth instead: 'Ich habe noch Zeit.'",
           questionGerman: "Sprechen Sie laut: 'Ich habe noch Zeit.'",
           correctAnswer: "Ich habe noch Zeit",
           explanation: "'noch' turns panic into arithmetic — I STILL have time. Timed sections are lost to panic more often than to German; this sentence is the antidote.",
@@ -1876,7 +1882,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-6-prod-dictation",
           type: "dictation",
-          question: "Goethe Kochi mock review with Kuttan: listen and type the Hören strategy sentence you hear.",
+          question: "Goethe Kochi mock review with Meera: listen and type the Hören strategy sentence you hear.",
           audioUrl: "/audio/hoeren/module-17/ex17-6-prod-dictation.mp3",
           correctAnswer: "Ich höre die Ansage zweimal",
           explanation: "Dictation connects Hören and Schreiben. Listen for the full sentence, not isolated words.",
@@ -1885,7 +1891,7 @@ export const MODULE_17: Module = {
         {
           id: "ex17-6-mock-feedback-writing",
           type: "free-text",
-          question: "After the Goethe Kochi mock, write one honest A1 feedback sentence for Kuttan: 'Ich übe ...' Choose Hören or Lesen.",
+          question: "After the Goethe Kochi mock, write one honest A1 feedback sentence for Meera: 'Ich übe ...' Choose Hören or Lesen.",
           questionGerman: "Schreiben Sie einen Satz: 'Ich übe Hören.' oder 'Ich übe Lesen.'",
           correctAnswer: ["Ich übe Hören", "Ich übe Hören.", "Ich übe Lesen", "Ich übe Lesen."],
           explanation: "A mock test only helps if you convert the score into a next action. This sentence is short, exam-relevant, and usable after real practice too.",

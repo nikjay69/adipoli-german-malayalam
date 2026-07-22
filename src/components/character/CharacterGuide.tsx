@@ -2,13 +2,16 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Kuttan, KuttanMood } from './Kuttan';
+import type { LearnerPeerId } from '@/lib/cast';
+import { learnerPeerName } from '@/lib/cast';
+import { PeerImage } from './PeerImage';
+import type { NivinMood } from './Nivin';
 import { Appu, AppuMood } from './Appu';
 import { SpeechBubble } from './SpeechBubble';
 
 export interface DialogueLine {
   text: string;
-  mood?: KuttanMood;
+  mood?: NivinMood;
   appuMood?: AppuMood;
   showAppu?: boolean;
 }
@@ -16,11 +19,13 @@ export interface DialogueLine {
 interface CharacterGuideProps {
   /** Single message or array of messages to show in sequence */
   messages: string | DialogueLine[];
-  /** Kuttan's mood (used when messages is a simple string) */
-  mood?: KuttanMood;
+  /** Peer mood (used when messages is a simple string) */
+  mood?: NivinMood;
+  /** The lesson's assigned learner peer. */
+  peer?: LearnerPeerId;
   /** Size of the character */
   size?: 'sm' | 'md' | 'lg';
-  /** Show Appu alongside Kuttan */
+  /** Show Appu alongside Nivin */
   showAppu?: boolean;
   /** Appu's mood */
   appuMood?: AppuMood;
@@ -40,6 +45,7 @@ interface CharacterGuideProps {
 export function CharacterGuide({
   messages,
   mood = 'happy',
+  peer = 'nivin',
   size = 'md',
   showAppu = false,
   appuMood = 'idle',
@@ -119,14 +125,14 @@ export function CharacterGuide({
       {/* Characters */}
       <div className="flex items-end gap-2">
         <div className="flex flex-col items-center">
-          <Kuttan mood={currentMood} size={size} />
+          <PeerImage peer={peer} mood={currentMood === 'idle' ? 'happy' : currentMood} size={size} />
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
             className="mt-1 bg-white/10 backdrop-blur-sm rounded-full px-3 py-0.5"
           >
-            <span className="text-white/80 text-xs font-medium">Kuttan</span>
+            <span className="text-white/80 text-xs font-medium">{learnerPeerName(peer)}</span>
           </motion.div>
         </div>
 

@@ -26,18 +26,19 @@ export const MODULE_8: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Imagined: The WG (First Apartment Tour)",
           sceneType: "home",
           timeOfDay: "afternoon",
-          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Your new WG (Wohngemeinschaft) is spacious and light. Stefan is showing you around. Each room has a different vibe — the cozy living room, the busy kitchen, and your own private sanctuary. But before you step further, there's a sacred German ritual to follow: the shoe-swap in the Flur. Time to name your territory, machane!",
+          description: "Frau Fischer's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Your new WG (Wohngemeinschaft) is spacious and light. Stefan is showing you around. Each room has a different vibe — the cozy living room, the busy kitchen, and your own private sanctuary. But before you step further, there's a sacred German ritual to follow: the shoe-swap in the Flur. Time to name your territory, machane!",
         },
         narrative: {
           previousRecap: "You've survived the shopping mall. Now, let's settle into your new German home!",
           currentObjective: "Identify rooms and furniture with correct articles and understand the 'Flur' culture",
           nextTeaser: "Next: decoration! Let's arrange your furniture using prepositions!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Flat-il thamasichu thudangumbol first priority 'der Flur' aanu. Shoes ellam avide thanne vekkanam. Germany-il house interiors valare clean aayittaanu Germans maintain cheyyunnathu.",
           "Rooms-inde names simple aanu — Zimmer (room) with the activity. 'Wohnzimmer' (living), 'Schlafzimmer' (sleeping), 'Badezimmer' (bathing).",
           "Pinne kitchen (die Küche) — ithu WG-ile main social spot aanu. Ellaam articles-oodu koodi vegam set aakkaam!",
@@ -53,15 +54,15 @@ export const MODULE_8: Module = {
           {
             moment: "You enter the flat for the first time. Where is the correct place to leave your shoes?",
             options: [
-              { text: "Im Flur.", isCorrect: true, response: "Exactly! Shoes stay in the hallway rack. You've respected the first house rule!", kuttanReaction: "Adipoli! German house culture-il ithu valre important aanu. First impression thanne super! 🔥" },
-              { text: "Im Wohnzimmer.", isCorrect: false, response: "Aiyyo! No one wears outdoor shoes in the living room in Germany. You'll make the floor dirty!", kuttanReaction: "Vite machane! 'Flur'-il thanne shoes vekkanam. Ithu oru strict rule aanu pala house-ilum. Try again! 😬" },
+              { text: "Im Flur.", isCorrect: true, response: "Exactly! Shoes stay in the hallway rack. You've respected the first house rule!", peerReaction: "Adipoli! German house culture-il ithu valre important aanu. First impression thanne super! 🔥" },
+              { text: "Im Wohnzimmer.", isCorrect: false, response: "Aiyyo! No one wears outdoor shoes in the living room in Germany. You'll make the floor dirty!", peerReaction: "Vite machane! 'Flur'-il thanne shoes vekkanam. Ithu oru strict rule aanu pala house-ilum. Try again! 😬" },
             ],
           },
           {
             moment: "How do you correctly say 'The fridge' (Cool-Cupboard)?",
             options: [
-              { text: "Der Kühlschrank.", isCorrect: true, response: "Correct! Kühl (cool) + Schrank (cupboard). Masculine like most furniture.", kuttanReaction: "Superb! Compound words logic perfect aayi handle cheythallo. 'Cool-cupboard' logic simple alle? ⭐" },
-              { text: "Die Kühlschrank.", isCorrect: false, response: "No, 'Schrank' is masculine, so 'Kühlschrank' is also masculine.", kuttanReaction: "Aiyyo! Furniture items mostly 'der' aayirukkum. Masculine gender fix cheyyane! Try again! 🚫" },
+              { text: "Der Kühlschrank.", isCorrect: true, response: "Correct! Kühl (cool) + Schrank (cupboard). Masculine like most furniture.", peerReaction: "Superb! Compound words logic perfect aayi handle cheythallo. 'Cool-cupboard' logic simple alle? ⭐" },
+              { text: "Die Kühlschrank.", isCorrect: false, response: "No, 'Schrank' is masculine, so 'Kühlschrank' is also masculine.", peerReaction: "Aiyyo! Furniture items mostly 'der' aayirukkum. Masculine gender fix cheyyane! Try again! 🚫" },
             ],
           },
         ],
@@ -280,7 +281,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-1-spk2",
           type: "speaking",
-          question: "Repair Kuttan's tour line: he says 'Der Küche ist sauber.' Küche is feminine! Say it right: 'Die Küche ist sauber.'",
+          question: "Repair Nivin's tour line: he says 'Der Küche ist sauber.' Küche is feminine! Say it right: 'Die Küche ist sauber.'",
           questionGerman: "Sprechen Sie laut: 'Die Küche ist sauber.'",
           correctAnswer: "Die Küche ist sauber",
           explanation: "die Küche, das Zimmer, der Flur — room genders power this whole module (in DER Küche, IM Wohnzimmer). Learn each room with its article, always.",
@@ -408,18 +409,19 @@ export const MODULE_8: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Imagined: Your New Bedroom",
           sceneType: "home",
           timeOfDay: "afternoon",
-          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Boxes are scattered everywhere. You've just finished assembling your bed and desk (assemble cheyyan IKEA instructions help cheythilla, but German grammar will!). Now you need to decide where everything goes. Is the lamp on the table? Are the shoes under the bed? This is Dative Case training in action, machane!",
+          description: "Frau Fischer's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Boxes are scattered everywhere. You've just finished assembling your bed and desk (assemble cheyyan IKEA instructions help cheythilla, but German grammar will!). Now you need to decide where everything goes. Is the lamp on the table? Are the shoes under the bed? This is Dative Case training in action, machane!",
         },
         narrative: {
           previousRecap: "You've seen the whole flat. Now, let's make your room a home!",
           currentObjective: "Use prepositions of place correctly and apply dative article changes (dem/der)",
           nextTeaser: "Next: house hunting! Let's learn how to read apartment ads like a pro!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Room set cheyyunpathu oru valya karyamaanu. Prepositions (auf, unter, neben) use cheyyanam.",
           "Location (Wo?) parayumpo Dative case logic switch aakum. Masculine and Neuter articles 'dem' aayi maarum. 'Auf dem Tisch', 'Unter dem Bett'.",
           "Feminine 'die' becomes 'der'. 'In der Küche'. Ithu oru fixed pattern aanu, vegam catch cheyyaam!",
@@ -435,15 +437,15 @@ export const MODULE_8: Module = {
           {
             moment: "You want to say 'The lamp is on the table' (der Tisch). What is the correct dative article?",
             options: [
-              { text: "Die Lampe ist auf dem Tisch.", isCorrect: true, response: "Exactly! For masculine 'Tisch', the article 'der' becomes 'dem' in the dative case for location.", kuttanReaction: "Adipoli! Dative case logic catch cheythallo. 'dem' is the way! 🔥" },
-              { text: "Die Lampe ist auf der Tisch.", isCorrect: false, response: "Aiyyo! 'der' is for feminine in dative. 'Tisch' is masculine, so it must be 'dem'.", kuttanReaction: "Vite machane! Masculine/Neuter = 'dem'. Ithu mathrame orkkanam. Try again! 😬" },
+              { text: "Die Lampe ist auf dem Tisch.", isCorrect: true, response: "Exactly! For masculine 'Tisch', the article 'der' becomes 'dem' in the dative case for location.", peerReaction: "Adipoli! Dative case logic catch cheythallo. 'dem' is the way! 🔥" },
+              { text: "Die Lampe ist auf der Tisch.", isCorrect: false, response: "Aiyyo! 'der' is for feminine in dative. 'Tisch' is masculine, so it must be 'dem'.", peerReaction: "Vite machane! Masculine/Neuter = 'dem'. Ithu mathrame orkkanam. Try again! 😬" },
             ],
           },
           {
             moment: "How do you say 'The shoes are under the bed' (das Bett)?",
             options: [
-              { text: "Die Schuhe sind unter dem Bett.", isCorrect: true, response: "Correct! 'das Bett' also changes to 'dem Bett' in dative.", kuttanReaction: "Superb! Masculine and Neuter same logical pattern follow cheyyunnathu valare helpful alle? ⭐" },
-              { text: "Die Schuhe sind unter das Bett.", isCorrect: false, response: "No! 'unter das' is for motion (putting them there). For location (they ARE there), we use dative 'dem'.", kuttanReaction: "Aiyyo! Location = Dative. 'dem' venam ennanu artham. Try again! 🚫" },
+              { text: "Die Schuhe sind unter dem Bett.", isCorrect: true, response: "Correct! 'das Bett' also changes to 'dem Bett' in dative.", peerReaction: "Superb! Masculine and Neuter same logical pattern follow cheyyunnathu valare helpful alle? ⭐" },
+              { text: "Die Schuhe sind unter das Bett.", isCorrect: false, response: "No! 'unter das' is for motion (putting them there). For location (they ARE there), we use dative 'dem'.", peerReaction: "Aiyyo! Location = Dative. 'dem' venam ennanu artham. Try again! 🚫" },
             ],
           },
         ],
@@ -653,7 +655,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-2-spk2",
           type: "speaking",
-          question: "Repair Kuttan's answer: he says 'Die Katze ist unter den Tisch.' Location takes Dativ! Say it right: 'Die Katze ist unter dem Tisch.'",
+          question: "Repair Meera's answer: she says 'Die Katze ist unter den Tisch.' Location takes Dativ! Say it right: 'Die Katze ist unter dem Tisch.'",
           questionGerman: "Sprechen Sie laut: 'Die Katze ist unter dem Tisch.'",
           correctAnswer: "Die Katze ist unter dem Tisch",
           explanation: "Location = Dativ: unter DEM Tisch. 'unter den Tisch' would mean the cat is crawling under it right now (motion). One letter, different scene.",
@@ -763,18 +765,19 @@ export const MODULE_8: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Imagined: WG Kitchen (Late Night Chat)",
           sceneType: "home",
           timeOfDay: "evening",
-          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Stefan and Lara are sharing some snacks in the kitchen. They're telling you stories about their own 'WG-Casting' experiences — it sounds like a reality TV show! You also see a laptop open with some apartment ads. Time to learn the code of the German housing market, machane!",
+          description: "Frau Fischer's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. Stefan and Lara are sharing some snacks in the kitchen. They're telling you stories about their own 'WG-Casting' experiences — it sounds like a reality TV show! You also see a laptop open with some apartment ads. Time to learn the code of the German housing market, machane!",
         },
         narrative: {
           previousRecap: "You've arranged your own room. Now, let's learn how to find one in the first place!",
           currentObjective: "Understand WG search culture and decode abbreviations in apartment ads (EBK, OG, Zi)",
           nextTeaser: "Next: writing the email! Let's get you that viewing appointment!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Apartment searching in Germany is a separate level struggle. 'WG-Casting' ennu paranjaal oru interview pole aanu, nammude vibe set aano ennu nokkana sthalam.",
           "Ads-il abbreviations valare common aanu. Zi (Zimmer), EBK (Einbauküche), OG (Obergeschoss). Ithu decode cheyyunnathu oru puzzle poleyaanu.",
           "Miete-il 'Warm' and 'Kalt' difference valare important aanu. Warm covers building costs, but electricity separate aayirukkum. Let's crack the code!",
@@ -790,15 +793,15 @@ export const MODULE_8: Module = {
           {
             moment: "You see an ad that says '500€ warm'. What does 'warm' usually mean in this context?",
             options: [
-              { text: "Includes heating and building utilities.", isCorrect: true, response: "Exactly! Warmmiete includes the building's operating costs (heating, water, garbage).", kuttanReaction: "Adipoli! Rent logic correctly catch cheythallo. 'Warm' is the all-in building price. 🔥" },
-              { text: "Includes electricity and internet.", isCorrect: false, response: "Aiyyo! Usually, electricity (Strom) and Internet are separate private contracts, even in 'warm' rent!", kuttanReaction: "Vite machane! Strom and Internet separate bills aayirukkum. Ithu koodi orkkanam. Try again! 😬" },
+              { text: "Includes heating and building utilities.", isCorrect: true, response: "Exactly! Warmmiete includes the building's operating costs (heating, water, garbage).", peerReaction: "Adipoli! Rent logic correctly catch cheythallo. 'Warm' is the all-in building price. 🔥" },
+              { text: "Includes electricity and internet.", isCorrect: false, response: "Aiyyo! Usually, electricity (Strom) and Internet are separate private contracts, even in 'warm' rent!", peerReaction: "Vite machane! Strom and Internet separate bills aayirukkum. Ithu koodi orkkanam. Try again! 😬" },
             ],
           },
           {
             moment: "What does the abbreviation 'EBK' stand for in an ad?",
             options: [
-              { text: "Einbauküche (Fitted Kitchen).", isCorrect: true, response: "Correct! If the ad has EBK, you don't need to bring your own stove or sink!", kuttanReaction: "Superb! EBK kandaal flat luck aanu machane. Kitchen already set aanu! ⭐" },
-              { text: "Extra Bad (Extra Bathroom).", isCorrect: false, response: "No! EBK is all about the kitchen (Küche).", kuttanReaction: "Aiyyo! EBK = Einbau-Küche. Kitchen setup ready aano ennu nokkana abbreviation aayirunnu ithu. Try again! 🚫" },
+              { text: "Einbauküche (Fitted Kitchen).", isCorrect: true, response: "Correct! If the ad has EBK, you don't need to bring your own stove or sink!", peerReaction: "Superb! EBK kandaal flat luck aanu machane. Kitchen already set aanu! ⭐" },
+              { text: "Extra Bad (Extra Bathroom).", isCorrect: false, response: "No! EBK is all about the kitchen (Küche).", peerReaction: "Aiyyo! EBK = Einbau-Küche. Kitchen setup ready aano ennu nokkana abbreviation aayirunnu ithu. Try again! 🚫" },
             ],
           },
         ],
@@ -968,7 +971,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-3-7",
           type: "dictation",
-          question: "Late-night ad scrolling: Kuttan says what he's hunting for. Listen and type the sentence you hear.",
+          question: "Late-night ad scrolling: Nivin says what he's hunting for. Listen and type the sentence you hear.",
           correctAnswer: "Ich suche eine WG",
           explanation: "Great! 'WG' stands for 'Wohngemeinschaft' — shared apartment.",
           xpReward: 25,
@@ -986,9 +989,9 @@ export const MODULE_8: Module = {
         {
           id: "ex8-3-prod-speaking",
           type: "speaking",
-          question: "WG-Casting rehearsal: introduce yourself at the door — say aloud: 'Hallo, ich bin Kuttan. Ich suche eine WG.'",
-          questionGerman: "Sprechen Sie laut: 'Hallo, ich bin Kuttan. Ich suche eine WG.'",
-          correctAnswer: "Hallo, ich bin Kuttan. Ich suche eine WG",
+          question: "WG-Casting rehearsal: introduce yourself at the door — say aloud: 'Hallo, ich bin Nivin. Ich suche eine WG.'",
+          questionGerman: "Sprechen Sie laut: 'Hallo, ich bin Nivin. Ich suche eine WG.'",
+          correctAnswer: "Hallo, ich bin Nivin. Ich suche eine WG",
           explanation: "Two short, confident sentences open every WG-Casting. Swap in your own name and say it until it sounds bored-casual.",
           audioUrl: "/audio/exercises/ex8-3-prod-speaking-model.mp3",
           xpReward: 25
@@ -996,7 +999,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-3-spk2",
           type: "speaking",
-          question: "Repair Kuttan's question at the WG-Casting: he asks 'Was kostet der Miete?' Miete is feminine! Say it right: 'Was kostet die Miete?'",
+          question: "Repair Nivin's question at the WG-Casting: he asks 'Was kostet der Miete?' Miete is feminine! Say it right: 'Was kostet die Miete?'",
           questionGerman: "Sprechen Sie laut: 'Was kostet die Miete?'",
           correctAnswer: "Was kostet die Miete",
           explanation: "die Miete, die Kaution, die Nebenkosten — German housing money words are all feminine. Ask the question, then listen for 'warm' or 'kalt' in the answer.",
@@ -1088,18 +1091,19 @@ export const MODULE_8: Module = {
       duration: "45 min",
       xpReward: 180,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Imagined: WG Desk (Writing Session)",
           sceneType: "home",
           timeOfDay: "evening",
-          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. You're sitting at your desk, the glow of your laptop lighting up the room. Your friend Arjun just moved to Germany and is struggling to get a reply for apartments. 'Machane, help me write a proper German email!' he says. This is your chance to master formal structures and 'es gibt' once and for all!",
+          description: "Frau Fischer's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. You're sitting at your desk, the glow of your laptop lighting up the room. Your friend Arjun just moved to Germany and is struggling to get a reply for apartments. 'Machane, help me write a proper German email!' he says. This is your chance to master formal structures and 'es gibt' once and for all!",
         },
         narrative: {
           previousRecap: "You've decoded the apartment ads. now, let's write the message that gets you through the door!",
           currentObjective: "Write a formal/semi-formal apartment application using correct greetings and 'es gibt' (Accusative)",
           nextTeaser: "Module 8 complete! Next: Let's explore the city! Directions, locations, and city life!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! German email writing is a separate level game. Formal aayi ezhuthumpol 'Sehr geehrte...' ennu thanne thudanganam.",
           "Nammude interest express cheyyaan 'Ich interessiere mich für...' use cheyyaam. Pinne flat-ile details chodikkaan 'Gibt es...?' logic simple aanu.",
           "Main grammar rule: 'es gibt' eppozhum Accusative case edukkum. 'Gibt es EINEN Balkon?' ennu chodikkaam. Let's write that email!",
@@ -1115,15 +1119,15 @@ export const MODULE_8: Module = {
           {
             moment: "You are writing to a formal landlord. Which greeting do you use?",
             options: [
-              { text: "Sehr geehrte Damen und Herren,", isCorrect: true, response: "Exactly! This is the standard formal greeting when you don't know the recipient's name.", kuttanReaction: "Adipoli! Formal tone perfect aayi set cheythallo. Professionalism is key in Germany! 🔥" },
-              { text: "Hallo, wie geht's?", isCorrect: false, response: "Aiyyo! Too informal for a landlord. Save this for your friends!", kuttanReaction: "Vite machane! Rental market competition-il formal tone venam. 'Sehr geehrte' thanne use cheyyane. Try again! 😬" },
+              { text: "Sehr geehrte Damen und Herren,", isCorrect: true, response: "Exactly! This is the standard formal greeting when you don't know the recipient's name.", peerReaction: "Adipoli! Formal tone perfect aayi set cheythallo. Professionalism is key in Germany! 🔥" },
+              { text: "Hallo, wie geht's?", isCorrect: false, response: "Aiyyo! Too informal for a landlord. Save this for your friends!", peerReaction: "Vite machane! Rental market competition-il formal tone venam. 'Sehr geehrte' thanne use cheyyane. Try again! 😬" },
             ],
           },
           {
             moment: "You want to ask 'Is there a balcony?' (der Balkon). Which sentence is grammatically correct with 'es gibt'?",
             options: [
-              { text: "Gibt es einen Balkon?", isCorrect: true, response: "Correct! 'es gibt' takes the Accusative case, so 'der' becomes 'einen'.", kuttanReaction: "Superb! Accusative agreement 'es gibt'-inu correct aayi apply cheythallo! ⭐" },
-              { text: "Gibt es ein Balkon?", isCorrect: false, response: "No! 'Balkon' is masculine, so it needs 'einen' in the Accusative case after 'es gibt'.", kuttanReaction: "Aiyyo! 'es gibt' takes Accusative. Masculine ends in '-en'. 'Einen Balkon' ennu fix cheyyane! Try again! 🚫" },
+              { text: "Gibt es einen Balkon?", isCorrect: true, response: "Correct! 'es gibt' takes the Accusative case, so 'der' becomes 'einen'.", peerReaction: "Superb! Accusative agreement 'es gibt'-inu correct aayi apply cheythallo! ⭐" },
+              { text: "Gibt es ein Balkon?", isCorrect: false, response: "No! 'Balkon' is masculine, so it needs 'einen' in the Accusative case after 'es gibt'.", peerReaction: "Aiyyo! 'es gibt' takes Accusative. Masculine ends in '-en'. 'Einen Balkon' ennu fix cheyyane! Try again! 🚫" },
             ],
           },
         ],
@@ -1219,7 +1223,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-4-4",
           type: "ordering",
-          question: "A copy-paste accident shuffled Kuttan's application message. Rebuild it in the right order:",
+          question: "A copy-paste accident shuffled Meera's application message. Rebuild it in the right order:",
           options: [
             "Sehr geehrte Damen und Herren,",
             "Mein Name ist Arun und ich komme aus Kerala.",
@@ -1263,7 +1267,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-4-7",
           type: "dictation",
-          question: "Kuttan dictates his sign-off while typing the application. Listen and type what you hear.",
+          question: "Meera dictates her sign-off while typing the application. Listen and type what you hear.",
           correctAnswer: "Mit freundlichen Grüßen",
           explanation: "Perfect! This is the most formal way to end a letter in German.",
           xpReward: 25,
@@ -1291,7 +1295,7 @@ export const MODULE_8: Module = {
         {
           id: "ex8-4-spk2",
           type: "speaking",
-          question: "Repair Kuttan's email: he closes a formal application with 'Hey! Tschüss!' Formal needs formal. Say the correct frame aloud: 'Sehr geehrte Damen und Herren ... Mit freundlichen Grüßen.'",
+          question: "Repair Meera's email: she closes a formal application with 'Hey! Tschüss!' Formal needs formal. Say the correct frame aloud: 'Sehr geehrte Damen und Herren ... Mit freundlichen Grüßen.'",
           questionGerman: "Sprechen Sie laut: 'Sehr geehrte Damen und Herren ... Mit freundlichen Grüßen.'",
           correctAnswer: "Sehr geehrte Damen und Herren, Mit freundlichen Grüßen",
           explanation: "Greeting and closing must match in register: Sehr geehrte... + Mit freundlichen Grüßen (formal), Liebe/r + Liebe Grüße (informal). Schreiben Teil 2 gives a free point for this frame.",

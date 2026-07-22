@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ClipboardList, Save, ArrowLeft, Shield, CheckCircle2, Sparkles } from 'lucide-react';
 import { Card, Button } from '@/components/ui';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { useAuthStore } from '@/lib/auth-store';
 
 export default function PlanPage() {
@@ -81,14 +81,14 @@ export default function PlanPage() {
           </Link>
         </div>
 
-        {/* Kuttan greeting */}
+        {/* Nivin greeting */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           className="flex items-center gap-3 mb-4 game-card p-3"
         >
-          <Kuttan mood="happy" size="sm" />
+          <Nivin mood="happy" size="sm" />
           <div className="flex-1">
             <p className="text-sm text-[var(--foreground)]/80 leading-snug">
               {canEdit

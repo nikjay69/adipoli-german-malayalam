@@ -23,14 +23,14 @@ Use as **scene support**, not global UI reskin.
 ### Scene 1 — First sound, not first lecture
 
 - Visual: Kerala learner at desk, phone/laptop open.
-- Audio: Frau Weber says `Guten Morgen.`
-- On-screen text: `Frau Weber: Guten Morgen.`
+- Audio: Frau Fischer says `Guten Morgen.`
+- On-screen text: `Frau Fischer: Guten Morgen.`
 - Boss: no long intro; just invite repeat.
 
 ### Scene 2 — Learner reply
 
 - Visual: same learner, highlighted reply bubble.
-- On-screen text: `You: Guten Morgen, Frau Weber.`
+- On-screen text: `You: Guten Morgen, Frau Fischer.`
 - Action: pause for learner to say it aloud.
 
 ### Scene 3 — Meaning micro-table
@@ -38,7 +38,7 @@ Use as **scene support**, not global UI reskin.
 | German | Meaning | Use |
 |---|---|---|
 | Guten Morgen | Good morning | morning |
-| Frau Weber | Ms/Mrs Weber | polite address |
+| Frau Fischer | Ms/Mrs Fischer | polite address |
 | Hallo | Hello | casual/neutral |
 
 - Boss explains in Malayalam/Manglish.
@@ -96,9 +96,9 @@ I am learning German.
 Dialogue appears one line at a time:
 
 ```text
-Frau Weber: Guten Morgen.
-Learner: Guten Morgen, Frau Weber.
-Frau Weber: Lernen Sie Deutsch?
+Frau Fischer: Guten Morgen.
+Learner: Guten Morgen, Frau Fischer.
+Frau Fischer: Lernen Sie Deutsch?
 Learner: Ja. Ich lerne Deutsch.
 ```
 
@@ -123,7 +123,7 @@ Text:
 
 ```text
 You can say:
-Guten Morgen, Frau Weber.
+Guten Morgen, Frau Fischer.
 Ich lerne Deutsch.
 Auf Wiedersehen.
 ```
@@ -135,7 +135,7 @@ Auf Wiedersehen.
 Button text:
 
 ```text
-Practice: answer Frau Weber
+Practice: answer Frau Fischer
 ```
 
 ## AI image prompts
@@ -146,7 +146,7 @@ Use only one image per scene family; avoid clutter.
 
 Adult-safe premium illustration for a Goethe A1 German course for Malayali learners. A serious young Malayali adult learner at a warm Kerala home-study desk, phone and notebook open, listening to a German teacher greeting on a laptop. Subtle Germany cue via small postcard/map only. Clean modern online-course style, low visible text, no logos, no childish mascot, no cartoon cuteness, not stock-photo generic.
 
-### Prompt B — Frau Weber video-call frame
+### Prompt B — Frau Fischer video-call frame
 
 Adult German language teacher in a simple friendly video-call frame, professional but warm, language-school context, neutral background, no exaggerated cartoon style, no visible random text, premium course illustration, suitable for adult learners.
 
@@ -158,7 +158,7 @@ Kerala language-school practice desk for an adult Goethe A1 learner, notebook wi
 
 - Keep every practice scene to one visible German line when possible.
 - Tables should appear briefly and collapse back to the current phrase.
-- Use large subtitle text for Frau Weber / learner turns.
+- Use large subtitle text for Frau Fischer / learner turns.
 - Do not show the full dialogue and the word table at the same time on mobile.
 - Maximum one German dialogue line visible at a time during practice.
 - Tables are allowed only for comparison, not for dense grammar.

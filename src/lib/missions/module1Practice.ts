@@ -58,23 +58,23 @@ export type Module1PracticeSet = {
   nextTask: string;
 };
 
-export const module1AnswerFrauWeberPractice: Module1PracticeSet = {
+export const module1AnswerFrauFischerPractice: Module1PracticeSet = {
   id: 'answer-frau-weber',
-  title: 'Practice: answer Frau Weber',
+  title: 'Practice: answer Frau Fischer',
   route: '/missions/module-1/greet-frau-weber',
   source: 'course-production/a1-mvp/module-01/module-01-must-do-and-score-booster-pack.md#2-lesson-1-practice--answer-frau-weber',
   scene: {
-    speakerName: 'Frau Weber',
+    speakerName: 'Frau Fischer',
     speakerLine: 'Guten Morgen.',
     audioSrc: '/audio/tts/v1-3-1/v1-3-1-line-3.mp3',
     turnCue: 'Now answer.',
   },
-  outputLines: ['Guten Morgen, Frau Weber.', 'Ich lerne Deutsch.'],
+  outputLines: ['Guten Morgen, Frau Fischer.', 'Ich lerne Deutsch.'],
   practiceItems: [
     {
       id: 'shadow-greeting',
       task: 'Listen once, then say the greeting aloud.',
-      expectedOutput: 'Guten Morgen, Frau Weber.',
+      expectedOutput: 'Guten Morgen, Frau Fischer.',
       timeBoxMinutes: 3,
       weaknessTags: ['hoeren:greetings', 'sprechen:greeting_reply'],
     },
@@ -96,9 +96,9 @@ export const module1AnswerFrauWeberPractice: Module1PracticeSet = {
   repair: {
     correctChoiceId: 'guten-morgen',
     options: [
-      { id: 'gute-nacht', title: 'Gute Nacht, Frau Weber.', weaknessTags: ['hoeren:greetings'] },
-      { id: 'guten-morgen', title: 'Guten Morgen, Frau Weber.' },
-      { id: 'tschuss', title: 'Tschüss, Frau Weber.', weaknessTags: ['sprechen:formality'] },
+      { id: 'gute-nacht', title: 'Gute Nacht, Frau Fischer.', weaknessTags: ['hoeren:greetings'] },
+      { id: 'guten-morgen', title: 'Guten Morgen, Frau Fischer.' },
+      { id: 'tschuss', title: 'Tschüss, Frau Fischer.', weaknessTags: ['sprechen:formality'] },
     ],
     wrongFeedback: 'Wrong moment. Replay once; morning class needs Guten Morgen.',
     correctFeedback: 'Correct. Morning class starts with Guten Morgen.',
@@ -110,8 +110,8 @@ export const module1AnswerFrauWeberPractice: Module1PracticeSet = {
       {
         id: 'mc-say-greeting',
         mode: 'speak',
-        prompt: 'Frau Weber says: Guten Morgen. Say a safe reply.',
-        expected: 'Guten Morgen, Frau Weber.',
+        prompt: 'Frau Fischer says: Guten Morgen. Say a safe reply.',
+        expected: 'Guten Morgen, Frau Fischer.',
         pass: 'Learner says a formal morning reply aloud.',
         weaknessTags: ['sprechen:greeting_reply', 'sprechen:formality'],
       },
@@ -145,10 +145,10 @@ export const module1AnswerFrauWeberPractice: Module1PracticeSet = {
     {
       weaknessTag: 'sprechen:greeting_reply',
       learnerMessage: 'The reply did not come out yet.',
-      mustDo: ['Repeat Guten Morgen, Frau Weber five times.', 'Repeat Ja. Ich lerne Deutsch five times.', 'Say one teacher exchange without looking.'],
+      mustDo: ['Repeat Guten Morgen, Frau Fischer five times.', 'Repeat Ja. Ich lerne Deutsch five times.', 'Say one teacher exchange without looking.'],
       output: 'One spoken greeting exchange.',
       timeBoxMinutes: 10,
-      retest: 'Frau Weber greets once; learner replies aloud.',
+      retest: 'Frau Fischer greets once; learner replies aloud.',
     },
     {
       weaknessTag: 'schreiben:first_sentence',
@@ -353,10 +353,10 @@ export const module1GermanSoundsPractice: Module1PracticeSet = {
     {
       weaknessTag: 'pronunciation:w_v',
       learnerMessage: 'German w still sounds English.',
-      mustDo: ['Say Weber with v-like w five times.', 'Say Wasser and Wiedersehen slowly.', 'Say Frau Weber once.'],
+      mustDo: ['Say Weber with v-like w five times.', 'Say Wasser and Wiedersehen slowly.', 'Say Frau Fischer once.'],
       output: 'Three v-like w words.',
       timeBoxMinutes: 8,
-      retest: 'Say Frau Weber and Auf Wiedersehen.',
+      retest: 'Say Frau Fischer and Auf Wiedersehen.',
     },
     {
       weaknessTag: 'pronunciation:umlaut',
@@ -376,7 +376,7 @@ export const module1FormalGreetingsPractice: Module1PracticeSet = {
   route: '/missions/module-1/formal-greetings',
   source: 'course-production/a1-mvp/module-01/module-01-must-do-and-score-booster-pack.md#6-lesson-4-formal-greetings',
   scene: {
-    speakerName: 'Frau Weber',
+    speakerName: 'Frau Fischer',
     speakerLine: 'Guten Tag.',
     audioSrc: '/audio/tts/v1-3-1/v1-3-1-line-1.mp3',
     turnCue: 'Now choose the safe greeting.',
@@ -480,7 +480,7 @@ export const module1PolitenessPractice: Module1PracticeSet = {
   route: '/missions/module-1/please-thanks',
   source: 'course-production/a1-mvp/module-01/module-01-must-do-and-score-booster-pack.md#8-lesson-5-politeness-repair',
   scene: {
-    speakerName: 'Frau Weber',
+    speakerName: 'Frau Fischer',
     speakerLine: 'Bitte.',
     audioSrc: '/audio/tts/v1-4-1/v1-4-1-line-1.mp3',
     turnCue: 'Now answer politely.',
@@ -584,7 +584,7 @@ export const module1GoodbyeRepairPractice: Module1PracticeSet = {
   route: '/missions/module-1/polite-exit',
   source: 'course-production/a1-mvp/module-01/module-01-must-do-and-score-booster-pack.md#9-lesson-6-repair-phrase-role-play',
   scene: {
-    speakerName: 'Frau Weber',
+    speakerName: 'Frau Fischer',
     speakerLine: 'Auf Wiedersehen.',
     audioSrc: '/audio/tts/v1-4-1/v1-4-1-line-0.mp3',
     turnCue: 'Now leave politely.',
@@ -688,17 +688,17 @@ export const module1FirstConversationPractice: Module1PracticeSet = {
   route: '/missions/module-1/first-mini-conversation',
   source: 'course-production/a1-mvp/module-01/module-01-must-do-and-score-booster-pack.md#10-lesson-7-first-mini-conversation',
   scene: {
-    speakerName: 'Frau Weber',
+    speakerName: 'Frau Fischer',
     speakerLine: 'Guten Tag. Wie geht es Ihnen?',
     audioSrc: '/audio/tts/v1-3-1/v1-3-1-line-3.mp3',
     turnCue: 'Now answer, then leave.',
   },
-  outputLines: ['Guten Tag, Frau Weber. Gut, danke.', 'Noch einmal, bitte. Auf Wiedersehen.'],
+  outputLines: ['Guten Tag, Frau Fischer. Gut, danke.', 'Noch einmal, bitte. Auf Wiedersehen.'],
   practiceItems: [
     {
       id: 'answer-formal-check-in',
-      task: 'Greet Frau Weber and answer the check-in politely.',
-      expectedOutput: 'Guten Tag, Frau Weber. Gut, danke.',
+      task: 'Greet Frau Fischer and answer the check-in politely.',
+      expectedOutput: 'Guten Tag, Frau Fischer. Gut, danke.',
       timeBoxMinutes: 4,
       weaknessTags: ['sprechen:formality', 'sprechen:question_answer'],
     },
@@ -721,8 +721,8 @@ export const module1FirstConversationPractice: Module1PracticeSet = {
     correctChoiceId: 'formal-mini-conversation',
     options: [
       { id: 'hey-was', title: 'Hey. Was?', weaknessTags: ['sprechen:formality', 'sprechen:request_phrase'] },
-      { id: 'formal-mini-conversation', title: 'Guten Tag, Frau Weber. Gut, danke.' },
-      { id: 'gute-nacht', title: 'Gute Nacht, Frau Weber.', weaknessTags: ['vocab:gute_nacht_trap'] },
+      { id: 'formal-mini-conversation', title: 'Guten Tag, Frau Fischer. Gut, danke.' },
+      { id: 'gute-nacht', title: 'Gute Nacht, Frau Fischer.', weaknessTags: ['vocab:gute_nacht_trap'] },
     ],
     wrongFeedback: 'Keep the adult path: greet formally, answer shortly, ask repeat with bitte if needed.',
     correctFeedback: 'Correct. Formal greeting plus short answer is enough for A1.',
@@ -734,8 +734,8 @@ export const module1FirstConversationPractice: Module1PracticeSet = {
       {
         id: 'mc-greet-answer',
         mode: 'speak',
-        prompt: 'Frau Weber says: Guten Tag. Wie geht es Ihnen? Answer politely.',
-        expected: 'Guten Tag, Frau Weber. Gut, danke.',
+        prompt: 'Frau Fischer says: Guten Tag. Wie geht es Ihnen? Answer politely.',
+        expected: 'Guten Tag, Frau Fischer. Gut, danke.',
         pass: 'Learner gives a short formal answer without freezing.',
         weaknessTags: ['sprechen:question_answer', 'sprechen:formality'],
       },
@@ -761,7 +761,7 @@ export const module1FirstConversationPractice: Module1PracticeSet = {
     {
       weaknessTag: 'sprechen:question_answer',
       learnerMessage: 'The answer freezes after the greeting.',
-      mustDo: ['Replay the Frau Weber question twice.', 'Say Gut, danke five times.', 'Run the greeting + answer once without looking.'],
+      mustDo: ['Replay the Frau Fischer question twice.', 'Say Gut, danke five times.', 'Run the greeting + answer once without looking.'],
       output: 'One complete greeting-answer pair.',
       timeBoxMinutes: 10,
       retest: 'Hear the question once; answer within five seconds.',
@@ -777,7 +777,7 @@ export const module1FirstConversationPractice: Module1PracticeSet = {
     {
       weaknessTag: 'sprechen:formality',
       learnerMessage: 'The tiny exchange is too casual.',
-      mustDo: ['Say Frau Weber with the greeting five times.', 'Use Guten Tag for teacher/office/examiner.', 'Close with Auf Wiedersehen twice.'],
+      mustDo: ['Say Frau Fischer with the greeting five times.', 'Use Guten Tag for teacher/office/examiner.', 'Close with Auf Wiedersehen twice.'],
       output: 'One formal mini-conversation.',
       timeBoxMinutes: 8,
       retest: 'Run greet → answer → thank → leave formally.',
@@ -787,7 +787,7 @@ export const module1FirstConversationPractice: Module1PracticeSet = {
 };
 
 export const module1PracticeSets: Module1PracticeSet[] = [
-  module1AnswerFrauWeberPractice,
+  module1AnswerFrauFischerPractice,
   module1WhyA1Practice,
   module1GermanSoundsPractice,
   module1FormalGreetingsPractice,

@@ -182,9 +182,9 @@ function speakGerman(text: string, rate = 0.85): Promise<void> {
   });
 }
 
-// ─── Kuttan Reactions ───────────────────────────────────────────
+// ─── Nivin Reactions ───────────────────────────────────────────
 
-const KUTTAN_REACTIONS = {
+const PEER_REACTIONS = {
   perfect: [
     "Adipoli! Your shadowing is on point!",
     "Wunderbar! Almost like an echo!",
@@ -217,8 +217,8 @@ const KUTTAN_REACTIONS = {
   ],
 };
 
-function getKuttanReaction(category: keyof typeof KUTTAN_REACTIONS): string {
-  const msgs = KUTTAN_REACTIONS[category];
+function getPeerReaction(category: keyof typeof PEER_REACTIONS): string {
+  const msgs = PEER_REACTIONS[category];
   return msgs[Math.floor(Math.random() * msgs.length)];
 }
 
@@ -295,8 +295,8 @@ export default function ShadowingPage() {
   const [results, setResults] = useState<RoundResult[]>([]);
   const [phraseQueue, setPhraseQueue] = useState<Phrase[]>([]);
 
-  const [kuttanMsg, setKuttanMsg] = useState('');
-  const [kuttanMood, setKuttanMood] = useState<'happy' | 'excited' | 'celebrating' | 'sad' | 'thinking' | 'pointing'>('happy');
+  const [peerMsg, setPeerMsg] = useState('');
+  const [peerMood, setNivinMood] = useState<'happy' | 'excited' | 'celebrating' | 'sad' | 'thinking' | 'pointing'>('happy');
   const [showExitConfirm, setShowExitConfirm] = useState(false);
 
   // Track if component is still mounted (for async callbacks)
@@ -394,8 +394,8 @@ export default function ShadowingPage() {
     setShowPhrase(false);
     setSpokenText('');
     setInterimText('');
-    setKuttanMsg(getKuttanReaction('shadowing'));
-    setKuttanMood('thinking');
+    setPeerMsg(getPeerReaction('shadowing'));
+    setNivinMood('thinking');
 
     // Start speech synthesis
     const speechPromise = speakGerman(phrase.german, 0.8);
@@ -426,8 +426,8 @@ export default function ShadowingPage() {
   const scoreRound = useCallback((phrase: Phrase, spoken: string) => {
     const score = calculateSimilarity(spoken, phrase.german);
     let xpEarned = 0;
-    let mood: typeof kuttanMood = 'happy';
-    let reactionKey: keyof typeof KUTTAN_REACTIONS = 'miss';
+    let mood: typeof peerMood = 'happy';
+    let reactionKey: keyof typeof PEER_REACTIONS = 'miss';
 
     if (score >= 85) {
       xpEarned = XP_PER_CORRECT;
@@ -460,15 +460,15 @@ export default function ShadowingPage() {
     }
 
     setLastScore(score);
-    setKuttanMsg(getKuttanReaction(reactionKey));
-    setKuttanMood(mood);
+    setPeerMsg(getPeerReaction(reactionKey));
+    setNivinMood(mood);
     setPhase('result');
 
     const result: RoundResult = { phrase, spoken, score, xpEarned };
     setResults(prev => [...prev, result]);
 
     return result;
-  }, [addXP, kuttanMood]);
+  }, [addXP, peerMood]);
 
   // ─── Start Session ──────────────────────────────────────────
 
@@ -478,8 +478,8 @@ export default function ShadowingPage() {
     setTotalXP(0);
     setResults([]);
     setPhase('ready');
-    setKuttanMsg(getKuttanReaction('start'));
-    setKuttanMood('happy');
+    setPeerMsg(getPeerReaction('start'));
+    setNivinMood('happy');
 
     // Auto-start first round
     setTimeout(() => {
@@ -503,8 +503,8 @@ export default function ShadowingPage() {
       updateStreak();
       setPhase('complete');
       setShowCelebration(true);
-      setKuttanMsg('Adipoli! Shadowing session complete!');
-      setKuttanMood('celebrating');
+      setPeerMsg('Adipoli! Shadowing session complete!');
+      setNivinMood('celebrating');
       return;
     }
 
@@ -585,7 +585,7 @@ export default function ShadowingPage() {
             className="glass-card p-8 text-center"
           >
             <div className="mb-4">
-              <CharacterGuide mood="celebrating" messages={kuttanMsg} />
+              <CharacterGuide mood="celebrating" messages={peerMsg} />
             </div>
 
             <h2 className="text-2xl font-bold text-white mb-2">Session Complete!</h2>
@@ -670,9 +670,9 @@ export default function ShadowingPage() {
           />
         </div>
 
-        {/* Kuttan */}
+        {/* Nivin */}
         <div className="mb-6">
-          <CharacterGuide mood={kuttanMood} messages={kuttanMsg} />
+          <CharacterGuide mood={peerMood} messages={peerMsg} />
         </div>
 
         {/* Ready state */}

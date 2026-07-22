@@ -9,7 +9,7 @@ import { Confetti } from '@/components/game';
 import { useGameStore } from '@/lib/store';
 import { GOETHE_TESTS, getTestById } from '@/lib/content/goethe-tests';
 import { playAudio, stopAudio } from '@/lib/audio';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { getMockGate, computeMockBand, MOCK_BAND_LABELS, type MockSection } from '@/lib/mocks';
 import { matchesAnswer } from '@/lib/answer-match';
 
@@ -616,14 +616,14 @@ function TestRunner({ testId }: { testId: string }) {
               </p>
             </div>
 
-            {/* Kuttan pep-talk */}
+            {/* Nivin pep-talk */}
             <motion.div
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.15 }}
               className="mb-4 rounded-2xl border border-[#d4a520]/25 bg-gradient-to-br from-[#d4a520]/10 to-transparent p-3 flex items-center gap-3"
             >
-              <Kuttan mood="happy" size="sm" />
+              <Nivin mood="happy" size="sm" />
               <div className="flex-1">
                 <p className="text-sm font-semibold text-[var(--foreground)] leading-snug">
                   Breathe. You&apos;ve got this, machaa.
@@ -1335,7 +1335,7 @@ function TestRunner({ testId }: { testId: string }) {
                 transition={{ type: 'spring', delay: 0.15 }}
                 className="flex justify-center mb-2"
               >
-                <Kuttan mood={passed ? 'celebrating' : 'sad'} size="md" />
+                <Nivin mood={passed ? 'celebrating' : 'sad'} size="md" />
               </motion.div>
               <h1 className="text-2xl font-bold mb-1">
                 {passed ? 'Bestanden!' : 'Nicht bestanden'}

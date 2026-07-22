@@ -1,6 +1,6 @@
 # Module 1 · Lesson 06 Video Script — Goodbye and Repair Phrases
 
-Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs)
+Updated: 2026-06-10 (quality pass: honest length, Meera thread, recording specs)
 
 **Purpose:** Teach learners to exit politely and recover when they do not understand: `Auf Wiedersehen`, `Tschüss`, `Noch einmal, bitte`, `Langsam, bitte`.
 
@@ -9,8 +9,8 @@ Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs
 **Recording spec (applies to every drill/pause in this script):**
 
 - Every practice pause: model audio → `[PAUSE 3s]` silence → model audio again. Writing pauses: `[PAUSE 15s]`.
-- All Frau Weber / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
-- Frau Weber appears in a video-call frame or at the Goethe Kochi desk. Kuttan and the learner are always physically in Kerala.
+- All Frau Fischer / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
+- Frau Fischer appears in a video-call frame or at the Goethe Kochi desk. Meera and the learner are in the Kerala practice setting.
 
 **Target length:** 20 minutes. Dense, no filler — every block earns its minutes.
 
@@ -20,15 +20,15 @@ Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs
 
 ## 0:00–1:00 — Hook: not understanding is normal
 
-**SCENE:** Kuttan at home in Kochi, on a video call. Frau Weber speaks too fast; Kuttan freezes for a beat, then deploys a repair phrase.
+**SCENE:** Meera at a home study desk in Kerala, on a video call. Frau Fischer speaks too fast; Meera freezes for a beat, then deploys a repair phrase.
 
-**Staging:** Frau Weber = voice-over + photo/avatar frame on video-call UI; the fast line is 1.5x time-stretched model audio.
+**Staging:** Frau Fischer = voice-over + photo/avatar frame on video-call UI; the fast line is 1.5x time-stretched model audio.
 
 **On-screen dialogue:**
 
 ```text
-Frau Weber: Lernen Sie Deutsch?   [1.5x speed]
-Kuttan: Noch einmal, bitte.
+Frau Fischer: Lernen Sie Deutsch?   [1.5x speed]
+Meera: Noch einmal, bitte.
 ```
 
 **Presenter:**
@@ -59,14 +59,14 @@ Goodbye.
 **Speed drill (no re-teaching, just reps):**
 
 1. **Auf Wiedersehen.**
-2. **Auf Wiedersehen, Frau Weber.**
+2. **Auf Wiedersehen, Frau Fischer.**
 3. **Danke. Auf Wiedersehen.**
 
 **Dialogue:**
 
 ```text
-Frau Weber: Auf Wiedersehen.
-Kuttan: Auf Wiedersehen, Frau Weber.
+Frau Fischer: Auf Wiedersehen.
+Meera: Auf Wiedersehen, Frau Fischer.
 ```
 
 ---
@@ -89,9 +89,9 @@ Kuttan: Auf Wiedersehen, Frau Weber.
 
 **Practice:**
 
-1. Kuttan’s friend leaves the chai shop: **Tschüss.**
+1. Meera’s friend leaves the chai shop: **Tschüss.**
 2. Goethe examiner leaves: **Auf Wiedersehen.**
-3. Frau Weber ends the video call: **Auf Wiedersehen, Frau Weber.**
+3. Frau Fischer ends the video call: **Auf Wiedersehen, Frau Fischer.**
 
 ---
 
@@ -108,10 +108,10 @@ Kuttan: Auf Wiedersehen, Frau Weber.
 **Mini-scene:**
 
 ```text
-Frau Weber: Lernen Sie Deutsch?   [spoken fast]
-Kuttan: Noch einmal, bitte.
-Frau Weber: Lernen Sie Deutsch?
-Kuttan: Ja. Ich lerne Deutsch.
+Frau Fischer: Lernen Sie Deutsch?   [spoken fast]
+Meera: Noch einmal, bitte.
+Frau Fischer: Lernen Sie Deutsch?
+Meera: Ja. Ich lerne Deutsch.
 ```
 
 ---
@@ -142,10 +142,10 @@ Slowly, please.
 **Mini-scene (slow-down demo):**
 
 ```text
-Frau Weber: Guten Abend.   [fast]
-Kuttan: Langsam, bitte.
-Frau Weber: Guten Abend.   [slow, stretched]
-Kuttan: Guten Abend.
+Frau Fischer: Guten Abend.   [fast]
+Meera: Langsam, bitte.
+Frau Fischer: Guten Abend.   [slow, stretched]
+Meera: Guten Abend.
 ```
 
 **Exam relevance:**
@@ -181,20 +181,20 @@ Speed is the problem → Langsam, bitte.
 
 **Decision drill (choose, don’t just recite):**
 
-Scenario A — Kuttan heard nothing (distracted):
+Scenario A — Meera heard nothing (distracted):
 
 ```text
-Frau Weber: Lernen Sie Deutsch?   [normal speed]
-Kuttan: Noch einmal, bitte.
+Frau Fischer: Lernen Sie Deutsch?   [normal speed]
+Meera: Noch einmal, bitte.
 ```
 
-Scenario B — Kuttan heard it, but too fast:
+Scenario B — Meera heard it, but too fast:
 
 ```text
-Frau Weber: Lernen Sie Deutsch?   [1.5x speed]
-Kuttan: Langsam, bitte.
-Frau Weber: Lernen Sie Deutsch?   [slow]
-Kuttan: Ja. Ich lerne Deutsch.
+Frau Fischer: Lernen Sie Deutsch?   [1.5x speed]
+Meera: Langsam, bitte.
+Frau Fischer: Lernen Sie Deutsch?   [slow]
+Meera: Ja. Ich lerne Deutsch.
 ```
 
 **Active practice:**
@@ -221,7 +221,7 @@ Say the repair phrase.
 2. Casual goodbye = ?
 3. “Once again, please” = ?
 4. “Slowly, please” = ?
-5. You did not understand Frau Weber. Which is safer than `Was?`?
+5. You did not understand Frau Fischer. Which is safer than `Was?`?
 
 **Answers:**
 
@@ -263,4 +263,4 @@ Next: first mini-conversation
 - Use the 1.5x speed effect to show the problem, then slow clean model audio.
 - Do not shame learners for not understanding; repair phrases are success tools.
 - Keep `Tschüss` casual and `Auf Wiedersehen` formal-safe.
-- Frau Weber stays in the video-call frame throughout; Kuttan never leaves Kerala.
+- Frau Fischer stays in the video-call frame throughout; Meera never leaves Kerala.

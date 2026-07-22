@@ -29,11 +29,14 @@ export default function Module2JobLanguagesMissionPage() {
         )}
 
         {step === 0 && (
+          <>
           <ConversationRepairStep
             title="Job + languages."
-            speakerName="Frau Weber"
+            speakerName="Frau Fischer"
             speakerLine="Was sind Sie von Beruf? Welche Sprachen sprechen Sie?"
-            learnerName="You"
+            learnerName="Example"
+            learnerPeer="meera"
+            showLearnerPeer={false}
             learnerLine="Ich bin Student und spreche Malayalam und Englisch."
             audioSrc={audioSources.modelLanguages}
             audioLabel="Your profile"
@@ -50,6 +53,8 @@ export default function Module2JobLanguagesMissionPage() {
             onContinue={next}
             turnCue="Now answer."
           />
+          <p className="mt-3 text-sm text-white/58">“Student” is only a grammar example. Replace it with your own profession; it is not Meera’s biography.</p>
+          </>
         )}
 
         {step === 1 && (

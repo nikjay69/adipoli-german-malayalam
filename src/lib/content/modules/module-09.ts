@@ -24,6 +24,7 @@ export const MODULE_9: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Hauptbahnhof (Central Station)",
           sceneType: "station",
@@ -35,7 +36,7 @@ export const MODULE_9: Module = {
           currentObjective: "Identify different modes of transport and use 'mit + Dativ' correctly",
           nextTeaser: "Next: ticket trauma! Let's learn to use the ticket machine without panic!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Germany-yil travel cheyyunnathu oru separate experience aanu. Nammude KSRTC-yil 'chechi, side seat tharumo' ennu chodikkunnathu pole alla ivide logic.",
           "Main modes of transport (Bus, Zug, S-Bahn, U-Bahn) focus cheyyane. Pinne 'mit' logic eppozhum Dativ case edukkum.",
           "Important point: U-Bahn = Underground (city center focus), S-Bahn = Suburban (connecting the suburbs). Don't get lost on the wrong platform!",
@@ -51,15 +52,15 @@ export const MODULE_9: Module = {
           {
             moment: "You want to say 'I travel by train' (der Zug). Which sentence uses the correct Dativ article after 'mit'?",
             options: [
-              { text: "Ich fahre mit dem Zug.", isCorrect: true, response: "Exactly! 'mit' takes Dativ, so 'der Zug' becomes 'dem Zug'. Perfect agreement!", kuttanReaction: "Adipoli! Dative logic correct aayi travel-il apply cheythallo! 🔥" },
-              { text: "Ich fahre mit den Zug.", isCorrect: false, response: "Aiyyo! 'den' is for Accusative (masculine). After 'mit', it MUST be 'dem' (Dativ).", kuttanReaction: "Vite machane! 'mit' kandaal article 'dem' aayi maarum. Ithu fixed rule aanu. Try again! 😬" },
+              { text: "Ich fahre mit dem Zug.", isCorrect: true, response: "Exactly! 'mit' takes Dativ, so 'der Zug' becomes 'dem Zug'. Perfect agreement!", peerReaction: "Adipoli! Dative logic correct aayi travel-il apply cheythallo! 🔥" },
+              { text: "Ich fahre mit den Zug.", isCorrect: false, response: "Aiyyo! 'den' is for Accusative (masculine). After 'mit', it MUST be 'dem' (Dativ).", peerReaction: "Vite machane! 'mit' kandaal article 'dem' aayi maarum. Ithu fixed rule aanu. Try again! 😬" },
             ],
           },
           {
             moment: "You are in the city center and need the underground metro. Which one are you looking for?",
             options: [
-              { text: "Die U-Bahn.", isCorrect: true, response: "Correct! 'U' stands for 'Untergrund' (Underground). Perfect for city travel.", kuttanReaction: "Superb! U-Bahn logic catch cheythallo. Suburban connecting train venal 'S-Bahn' edukkanam. ⭐" },
-              { text: "Der ICE.", isCorrect: false, response: "No! ICE is the high-speed long-distance train. For city center underground, you need the U-Bahn.", kuttanReaction: "Aiyyo! ICE long-distance long-trip aanu. City center-il U-Bahn mathi! Try again! 🚫" },
+              { text: "Die U-Bahn.", isCorrect: true, response: "Correct! 'U' stands for 'Untergrund' (Underground). Perfect for city travel.", peerReaction: "Superb! U-Bahn logic catch cheythallo. Suburban connecting train venal 'S-Bahn' edukkanam. ⭐" },
+              { text: "Der ICE.", isCorrect: false, response: "No! ICE is the high-speed long-distance train. For city center underground, you need the U-Bahn.", peerReaction: "Aiyyo! ICE long-distance long-trip aanu. City center-il U-Bahn mathi! Try again! 🚫" },
             ],
           },
         ],
@@ -179,14 +180,14 @@ export const MODULE_9: Module = {
         }
       ],
       exercises: [
-        { id: "ex9-1-1", type: "free-text", question: "The Hamburg cousin asks how Kuttan would get around Germany. Type his answer in German — 'I travel by train.' (der Zug, and mit pulls Dativ):", correctAnswer: "Ich fahre mit dem Zug", explanation: "'mit' always takes the Dativ case: der Zug → dem Zug. And it's 'fahren' for vehicles — 'gehen' means going on foot.", xpReward: 30 },
+        { id: "ex9-1-1", type: "free-text", question: "The Hamburg cousin asks how Nivin would get around Germany. Type his answer in German — 'I travel by train.' (der Zug, and mit pulls Dativ):", correctAnswer: "Ich fahre mit dem Zug", explanation: "'mit' always takes the Dativ case: der Zug → dem Zug. And it's 'fahren' for vehicles — 'gehen' means going on foot.", xpReward: 30 },
         { id: "ex9-1-2", type: "matching", question: "Your cousin quizzes you on his commute options. Match each transport word:", options: ["die Straßenbahn", "die U-Bahn", "das Fahrrad", "das Flugzeug"], correctAnswer: ["tram", "subway/underground", "bicycle", "airplane"], explanation: "die Straßenbahn, die U-Bahn (Bahn is always die), das Fahrrad, das Flugzeug. The article decides 'mit der' vs 'mit dem' later in this lesson.", xpReward: 15 },
         { id: "ex9-1-3", type: "fill-blank", question: "Ich fahre mit ___ Bus zur Arbeit. (the — Dativ)", options: ["dem", "der", "den", "das"], correctAnswer: "dem", explanation: "'der Bus' is masculine. In Dativ (after 'mit'), 'der' becomes 'dem'. So: mit dem Bus.", xpReward: 10 },
         { id: "ex9-1-4", type: "multiple-choice", question: "What is the difference between U-Bahn and S-Bahn?", options: ["U-Bahn is underground, S-Bahn is suburban/above-ground", "U-Bahn is faster than S-Bahn", "S-Bahn is underground, U-Bahn is above-ground", "There is no difference"], correctAnswer: "U-Bahn is underground, S-Bahn is suburban/above-ground", explanation: "U-Bahn (Untergrundbahn) runs mostly underground in city centers. S-Bahn (Stadtschnellbahn) connects the city with suburban areas and mostly runs above ground.", xpReward: 10 },
-        { id: "ex9-1-5", type: "free-text", question: "Eco-warrior week: Kuttan tells the cousin how he'd commute in Germany. Type it in German — 'I ride my bicycle to work.' (das Fahrrad, zur Arbeit):", correctAnswer: "Ich fahre mit dem Fahrrad zur Arbeit", explanation: "mit dem Fahrrad — 'mit' always pulls Dativ, so das Fahrrad becomes dem Fahrrad. And zur Arbeit = zu der Arbeit.", xpReward: 30 },
+        { id: "ex9-1-5", type: "free-text", question: "Eco-warrior week: Nivin tells the cousin how he'd commute in Germany. Type it in German — 'I ride my bicycle to work.' (das Fahrrad, zur Arbeit):", correctAnswer: "Ich fahre mit dem Fahrrad zur Arbeit", explanation: "mit dem Fahrrad — 'mit' always pulls Dativ, so das Fahrrad becomes dem Fahrrad. And zur Arbeit = zu der Arbeit.", xpReward: 30 },
         { id: "ex9-1-6", type: "type-answer", question: "The S-Bahn trap: die S-Bahn is feminine, but after 'mit' it changes. 'Wir fahren mit ___ S-Bahn.' Type the missing word:", correctAnswer: "der", explanation: "'die S-Bahn' is feminine. In Dativ, 'die' becomes 'der'. So: mit der S-Bahn — the swap everyone gets wrong first time.", xpReward: 15 },
         { id: "ex9-1-7", type: "multiple-choice", question: "What is 'Schwarzfahren' in German public transport?", options: ["Travelling without a valid ticket", "Travelling at night", "Travelling first class", "Travelling by car"], correctAnswer: "Travelling without a valid ticket", explanation: "'Schwarzfahren' literally means 'black-riding'. It refers to using public transport without a valid ticket. The fine is usually 60 euros — so always buy your ticket!", xpReward: 10 },
-        { id: "ex9-1-8", type: "type-answer", question: "Kuttan's brother and his beloved Bullet, German edition: 'Mein Bruder fährt mit ___ Motorrad.' (das Motorrad — neuter). Type the missing word:", correctAnswer: "dem", explanation: "'das Motorrad' is neuter. In Dativ (after 'mit'), 'das' becomes 'dem'. So: mit dem Motorrad.", xpReward: 15 },
+        { id: "ex9-1-8", type: "type-answer", question: "Nivin's brother and his beloved Bullet, German edition: 'Mein Bruder fährt mit ___ Motorrad.' (das Motorrad — neuter). Type the missing word:", correctAnswer: "dem", explanation: "'das Motorrad' is neuter. In Dativ (after 'mit'), 'das' becomes 'dem'. So: mit dem Motorrad.", xpReward: 15 },
         {
           id: "ex9-1-9",
           type: "dictation",
@@ -210,7 +211,7 @@ export const MODULE_9: Module = {
         {
           id: "ex9-1-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: he tells the cousin 'Ich gehe mit dem Bus.' — gehen is walking! Vehicles take fahren. Say it right: 'Ich fahre mit dem Bus.'",
+          question: "Repair Nivin's slip: he tells the cousin 'Ich gehe mit dem Bus.' — gehen is walking! Vehicles take fahren. Say it right: 'Ich fahre mit dem Bus.'",
           questionGerman: "Sprechen Sie laut: 'Ich fahre mit dem Bus.'",
           correctAnswer: "Ich fahre mit dem Bus",
           explanation: "English says 'go by bus', Malayalam says pokunnu — German insists on fahren for anything with wheels. 'Ich gehe mit dem Bus' paints you walking beside the bus.",
@@ -240,6 +241,7 @@ export const MODULE_9: Module = {
       duration: "45 min",
       xpReward: 120,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Ticket Machine (Fahrkartenautomat)",
           sceneType: "station",
@@ -251,7 +253,7 @@ export const MODULE_9: Module = {
           currentObjective: "Navigate the ticket machine and choose between 'einfach' and 'hin und zurück' options",
           nextTeaser: "Next: lost in the city? Let's learn how to ask for directions!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Ticket machine kandaal panic aavenda. Touch screen-il language change cheyyaan option undu. Athu first fix cheyyane.",
           "'Einfach' ennal one-way trip, 'Hin und zurück' ennal round trip (there and back) ennanu artham. Weekend trip poyal pinne thirichu varunnamallo, so round trip choose cheyyaam.",
           "Pinne students-innum young people-innum 'Ermäßigung' (discount) undakum. Athu check cheythaal paisa save cheyyaam. Let's get that ticket!",
@@ -267,15 +269,15 @@ export const MODULE_9: Module = {
           {
             moment: "You are going to Berlin and coming back on Sunday. Which ticket type should you buy?",
             options: [
-              { text: "Hin und zurück.", isCorrect: true, response: "Exactly! 'Hin und zurück' means round trip. It's often cheaper than two single tickets.", kuttanReaction: "Adipoli! Round trip logic correct aayi pick cheythallo. Paisa save cheythallo! 🔥" },
-              { text: "Einfach.", isCorrect: false, response: "Aiyyo! 'Einfach' is just one-way. You'll need to buy another ticket to come back!", kuttanReaction: "Vite machane! Thirichu varunnamallo, so 'Hin und zurück' mathiri set aakkunnathaanu easy. Try again! 😬" },
+              { text: "Hin und zurück.", isCorrect: true, response: "Exactly! 'Hin und zurück' means round trip. It's often cheaper than two single tickets.", peerReaction: "Adipoli! Round trip logic correct aayi pick cheythallo. Paisa save cheythallo! 🔥" },
+              { text: "Einfach.", isCorrect: false, response: "Aiyyo! 'Einfach' is just one-way. You'll need to buy another ticket to come back!", peerReaction: "Vite machane! Thirichu varunnamallo, so 'Hin und zurück' mathiri set aakkunnathaanu easy. Try again! 😬" },
             ],
           },
           {
             moment: "What does 'Ermäßigung' mean in the ticket context?",
             options: [
-              { text: "A discount or reduced price.", isCorrect: true, response: "Correct! Always check for 'Ermäßigung' if you are a student or under 27.", kuttanReaction: "Superb! Student context kandaal 'Ermäßigung' chodikkaan marakkaalle! ⭐" },
-              { text: "A first-class seat.", isCorrect: false, response: "No! 'Ermäßigung' means a discount. First class is 'Erste Klasse'.", kuttanReaction: "Aiyyo! Ithu price reduction aanu artham. 'Eerste Klasse' vere logic. Try again! 🚫" },
+              { text: "A discount or reduced price.", isCorrect: true, response: "Correct! Always check for 'Ermäßigung' if you are a student or under 27.", peerReaction: "Superb! Student context kandaal 'Ermäßigung' chodikkaan marakkaalle! ⭐" },
+              { text: "A first-class seat.", isCorrect: false, response: "No! 'Ermäßigung' means a discount. First class is 'Erste Klasse'.", peerReaction: "Aiyyo! Ithu price reduction aanu artham. 'Eerste Klasse' vere logic. Try again! 🚫" },
             ],
           },
         ],
@@ -400,16 +402,16 @@ export const MODULE_9: Module = {
       ],
       exercises: [
         { id: "ex9-2-1", type: "fill-blank", question: "Eine Fahrkarte nach München, bitte. ___ . (round trip)", options: ["Hin und zurück", "Einfach", "Erste Klasse", "Zweite Klasse"], correctAnswer: "Hin und zurück", explanation: "'Hin und zurück' means round trip (literally 'there and back'). 'Einfach' means one-way.", xpReward: 10 },
-        { id: "ex9-2-2", type: "type-answer", question: "The ticket-machine screen at the imagined Hauptbahnhof shows 'Ermäßigung' next to a student icon, and Kuttan perks up. Type in English what it's offering:", correctAnswer: "Discount", explanation: "'Ermäßigung' means discount or reduction. Students, seniors, and children often get an Ermäßigung — always worth asking.", xpReward: 15 },
+        { id: "ex9-2-2", type: "type-answer", question: "The ticket-machine screen at the imagined Hauptbahnhof shows 'Ermäßigung' next to a student icon, and Meera perks up. Type in English what it's offering:", correctAnswer: "Discount", explanation: "'Ermäßigung' means discount or reduction. Students, seniors, and children often get an Ermäßigung — always worth asking.", xpReward: 15 },
         { id: "ex9-2-4", type: "multiple-choice", question: "Where can you buy tickets in Germany?", options: ["All of the above", "Am Schalter (at the counter)", "Am Automaten (at the machine)", "Online or via app"], correctAnswer: "All of the above", explanation: "In Germany, you can buy tickets at the counter (Schalter), from machines (Automat), or online through apps like DB Navigator.", xpReward: 10 },
         { id: "ex9-2-5", type: "matching", question: "Ticket machine screen, German-only. Match the terms before it times out:", options: ["einfach", "hin und zurück", "der Fahrplan", "der Automat"], correctAnswer: ["one-way", "round trip", "schedule/timetable", "ticket machine"], explanation: "einfach = one-way, hin und zurück = return, der Fahrplan tells you when, der Automat sells the ticket — usually with less queue than the counter.", xpReward: 15 },
-        { id: "ex9-2-6", type: "type-answer", question: "Student ID in hand, Kuttan tries his luck at the counter: 'Gibt es eine ___ für Studenten?' Type the missing word (discount):", correctAnswer: "Ermäßigung", explanation: "'Ermäßigung' — the money-saving word. Students (Studenten) can often get reduced fares in Germany.", xpReward: 20 },
+        { id: "ex9-2-6", type: "type-answer", question: "The practice card shows a student ID at the counter: 'Gibt es eine ___ für Studenten?' Type the missing word (discount):", correctAnswer: "Ermäßigung", explanation: "'Ermäßigung' — the money-saving word. Students (Studenten) can often get reduced fares in Germany.", xpReward: 20 },
         { id: "ex9-2-7", type: "free-text", question: "The full order, counter rehearsal: a return ticket to Berlin, second class. Type it in German, starting with 'Ich möchte…':", correctAnswer: "Ich möchte eine Fahrkarte nach Berlin, zweite Klasse, hin und zurück.", explanation: "möchte holds position 2 and everything else stacks behind: destination, class, return. Longer sentence, same verb-second skeleton.", xpReward: 30 },
         { id: "ex9-2-8", type: "multiple-choice", question: "What is the 'Deutschlandticket'?", options: ["A monthly pass for all local public transport in Germany", "A one-time ticket for tourists", "A first-class train ticket", "A flight ticket within Germany"], correctAnswer: "A monthly pass for all local public transport in Germany", explanation: "The Deutschlandticket is a monthly subscription that lets you use all local and regional public transport across Germany — buses, trams, U-Bahn, S-Bahn, and regional trains!", xpReward: 10 },
         {
           id: "ex9-2-9",
           type: "dictation",
-          question: "The person ahead of Kuttan in the queue orders first — a perfect model. Listen and type exactly what they say.",
+          question: "The person ahead of Meera in the queue orders first — a perfect model. Listen and type exactly what they say.",
           correctAnswer: "Eine Fahrkarte nach Berlin, bitte",
           explanation: "The most common ticket request in Germany, word for word. Steal it — it's yours now.",
           xpReward: 25,
@@ -418,7 +420,7 @@ export const MODULE_9: Module = {
         {
           id: "ex9-2-10",
           type: "free-text",
-          question: "Class role-play: Kuttan is the ticket clerk now, and Priya wants a ticket to Kochi. Ask the clerk's classic follow-up — type in German: 'One-way or round trip?':",
+          question: "Class role-play: Meera is the ticket clerk now, and Priya wants a ticket to Kochi. Ask the clerk's classic follow-up — type in German: 'One-way or round trip?':",
           correctAnswer: "Einfach oder hin und zurück",
           explanation: "'Einfach' for one-way, 'hin und zurück' for round trip — the question every counter asks, so know it from both sides.",
           xpReward: 30
@@ -437,7 +439,7 @@ export const MODULE_9: Module = {
         {
           id: "ex9-2-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: at the counter he asks for 'eine Fahrkarte ZU Berlin'. Cities take nach, not zu! Say it right: 'Eine Fahrkarte nach Berlin, bitte.'",
+          question: "Repair Meera's slip: at the counter she asks for 'eine Fahrkarte ZU Berlin'. Cities take nach, not zu! Say it right: 'Eine Fahrkarte nach Berlin, bitte.'",
           questionGerman: "Sprechen Sie laut: 'Eine Fahrkarte nach Berlin, bitte.'",
           correctAnswer: "Eine Fahrkarte nach Berlin, bitte",
           explanation: "nach for cities and countries (nach Berlin, nach Indien), zu for people and places-as-buildings (zum Arzt, zur Bank). The zu/nach swap is a signature A1 slip — fix it in your mouth, not just your notes.",
@@ -467,6 +469,7 @@ export const MODULE_9: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Main Square (Lost in the City)",
           sceneType: "station",
@@ -478,7 +481,7 @@ export const MODULE_9: Module = {
           currentObjective: "Ask for directions politely and understand navigational words (links, rechts, geradeaus)",
           nextTeaser: "Next: landing! Let's handle the airport and station logistics!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Lost aavunnathu oru normal thing aanu. Google Maps eppozhum correct aavenam ennilla. So asking someone is a great skill.",
           "Direction words eppozhum fixed aanu: 'links' (left), 'rechts' (right), 'geradeaus' (straight). Ithu munnittennu padichal full set!",
           "Pinne oru person approach cheyyumpo eppozhum 'Entschuldigung' (excuse me) ennu thudangane. Polite aayirunnal aalukal help cheyyunthine oru sandhosham ulu. Let's find the way!",
@@ -494,15 +497,15 @@ export const MODULE_9: Module = {
           {
             moment: "You see a person you want to ask for directions. How do you start the conversation politely?",
             options: [
-              { text: "Entschuldigung, können Sie mir helfen?", isCorrect: true, response: "Exactly! Starting with 'Entschuldigung' is essential for politeness in Germany.", kuttanReaction: "Adipoli! Politeness level super level-il maintain cheythallo. You're ready to communicate! 🔥" },
-              { text: "He, wo ist der Bahnhof?", isCorrect: false, response: "Aiyyo! Too blunt. In Germany, 'Entschuldigung' is the key to getting a friendly response.", kuttanReaction: "Vite machane! 'Entschuldigung' illathe thudangiyar sariyaavoolla. Ithu fix cheytho! Try again! 😬" },
+              { text: "Entschuldigung, können Sie mir helfen?", isCorrect: true, response: "Exactly! Starting with 'Entschuldigung' is essential for politeness in Germany.", peerReaction: "Adipoli! Politeness level super level-il maintain cheythallo. You're ready to communicate! 🔥" },
+              { text: "He, wo ist der Bahnhof?", isCorrect: false, response: "Aiyyo! Too blunt. In Germany, 'Entschuldigung' is the key to getting a friendly response.", peerReaction: "Vite machane! 'Entschuldigung' illathe thudangiyar sariyaavoolla. Ithu fix cheytho! Try again! 😬" },
             ],
           },
           {
             moment: "The person says 'Gehen Sie rechts'. Which direction should you turn?",
             options: [
-              { text: "Right.", isCorrect: true, response: "Correct! 'rechts' = right.", kuttanReaction: "Superb! Direction logic perfect aayi handle cheythallo. Destination is near! ⭐" },
-              { text: "Left.", isCorrect: false, response: "No! 'links' is left. 'rechts' is right.", kuttanReaction: "Aiyyo! 'links' left, 'rechts' right. Marakkaruthu, machane! Try again! 🚫" },
+              { text: "Right.", isCorrect: true, response: "Correct! 'rechts' = right.", peerReaction: "Superb! Direction logic perfect aayi handle cheythallo. Destination is near! ⭐" },
+              { text: "Left.", isCorrect: false, response: "No! 'links' is left. 'rechts' is right.", peerReaction: "Aiyyo! 'links' left, 'rechts' right. Marakkaruthu, machane! Try again! 🚫" },
             ],
           },
         ],
@@ -628,15 +631,15 @@ export const MODULE_9: Module = {
       exercises: [
         { id: "ex9-3-2", type: "fill-blank", question: "Wie komme ich ___ Supermarkt? (to the — masculine Dativ)", options: ["zum", "zur", "zu dem", "bei dem"], correctAnswer: "zum", explanation: "'zu + dem' contracts to 'zum' for masculine and neuter nouns in Dativ. 'der Supermarkt' is masculine, so: zum Supermarkt.", xpReward: 10 },
         { id: "ex9-3-3", type: "matching", question: "A helpful local fires directions at you. Match the words you just heard:", options: ["geradeaus", "links", "rechts", "die Kreuzung", "die Ampel"], correctAnswer: ["straight ahead", "left", "right", "intersection", "traffic light"], explanation: "geradeaus, links, rechts are the action words; die Kreuzung and die Ampel are the landmarks they hang on. Catch these five and any direction makes sense.", xpReward: 15 },
-        { id: "ex9-3-4", type: "type-answer", question: "Stamps for Amma's letter — Kuttan needs the post office: 'Wie komme ich ___ Post?' (die Post — feminine). Type the missing word:", correctAnswer: "zur", explanation: "'zu + der' contracts to 'zur' for feminine nouns in Dativ. 'die Post' is feminine, so: zur Post.", xpReward: 15 },
-        { id: "ex9-3-5", type: "free-text", question: "Kuttan plays the helpful local in the class role-play. Give the directions in German — 'Go straight, then left at the traffic light.' (Gehen Sie…):", correctAnswer: "Gehen Sie geradeaus, dann links an der Ampel", explanation: "Sie-imperative: verb first (Gehen Sie), then the route. 'an der Ampel' is Dativ — the location where you turn.", xpReward: 30 },
-        { id: "ex9-3-6", type: "multiple-choice", question: "The local says the pharmacy is 'gegenüber dem Supermarkt'. Kuttan should look…", options: ["Opposite the supermarket", "Next to the supermarket", "Behind the supermarket", "Inside the supermarket"], correctAnswer: "Opposite the supermarket", explanation: "'gegenüber' means 'opposite' or 'across from'. It takes the Dativ case.", xpReward: 10 },
+        { id: "ex9-3-4", type: "type-answer", question: "Stamps for Amma's letter — Nivin needs the post office: 'Wie komme ich ___ Post?' (die Post — feminine). Type the missing word:", correctAnswer: "zur", explanation: "'zu + der' contracts to 'zur' for feminine nouns in Dativ. 'die Post' is feminine, so: zur Post.", xpReward: 15 },
+        { id: "ex9-3-5", type: "free-text", question: "Nivin plays the helpful local in the class role-play. Give the directions in German — 'Go straight, then left at the traffic light.' (Gehen Sie…):", correctAnswer: "Gehen Sie geradeaus, dann links an der Ampel", explanation: "Sie-imperative: verb first (Gehen Sie), then the route. 'an der Ampel' is Dativ — the location where you turn.", xpReward: 30 },
+        { id: "ex9-3-6", type: "multiple-choice", question: "The local says the pharmacy is 'gegenüber dem Supermarkt'. Nivin should look…", options: ["Opposite the supermarket", "Next to the supermarket", "Behind the supermarket", "Inside the supermarket"], correctAnswer: "Opposite the supermarket", explanation: "'gegenüber' means 'opposite' or 'across from'. It takes the Dativ case.", xpReward: 10 },
         { id: "ex9-3-7", type: "multiple-choice", question: "You want to ask politely for help with directions. What do you say first?", options: ["Entschuldigung, können Sie mir helfen?", "Hilfe! Wo ist der Bahnhof?", "Hey, wo ist der Bahnhof?", "Ich brauche den Bahnhof!"], correctAnswer: "Entschuldigung, können Sie mir helfen?", explanation: "Starting with 'Entschuldigung' (excuse me) and asking politely with 'können Sie mir helfen?' (can you help me?) is the standard polite approach in Germany.", xpReward: 10 },
         { id: "ex9-3-8", type: "type-answer", question: "The local points: 'Nehmen Sie die zweite Straße ___.' — second street on the RIGHT. Type the missing word:", correctAnswer: "rechts", explanation: "'Nehmen Sie die zweite Straße rechts' — take the second street on the right. The zweite/dritte + links/rechts pattern covers most directions you'll ever hear.", xpReward: 15 },
         {
           id: "ex9-3-9",
           type: "dictation",
-          question: "A tourist stops Kuttan near Marine Drive and asks one desperate question in German. Listen and type exactly what you hear.",
+          question: "A tourist stops Nivin near Marine Drive and asks one desperate question in German. Listen and type exactly what you hear.",
           correctAnswer: "Wo ist der Bahnhof",
           explanation: "The most essential traveller question in Germany — and in Hören, someone asks it in almost every dialogue.",
           xpReward: 25,
@@ -664,7 +667,7 @@ export const MODULE_9: Module = {
         {
           id: "ex9-3-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: giving directions, he barks 'Gehen geradeaus!' — the polite command needs its Sie! Say it right: 'Gehen Sie geradeaus.'",
+          question: "Repair Nivin's slip: giving directions, he barks 'Gehen geradeaus!' — the polite command needs its Sie! Say it right: 'Gehen Sie geradeaus.'",
           questionGerman: "Sprechen Sie laut: 'Gehen Sie geradeaus.'",
           correctAnswer: "Gehen Sie geradeaus",
           explanation: "The Sie-imperative is verb + Sie: Gehen Sie, Nehmen Sie, Kommen Sie. Dropping the Sie turns polite directions into drill-sergeant German — a real register error the exam hears instantly.",
@@ -694,42 +697,43 @@ export const MODULE_9: Module = {
       duration: "45 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
-          name: "Kuttan's Home, Thrissur — Frankfurt Arrival Rehearsal",
+          name: "Meera's Kerala Home Study Scene — Frankfurt Arrival Rehearsal",
           sceneType: "home",
           timeOfDay: "morning",
-          description: "Kuttan is still in Thrissur, watching his cousin's Frankfurt arrival video call and rehearsing the first airport steps before the real journey. The signs, passport control, baggage claim, and train station all become practice scenes — not a physical arrival yet.",
+          description: "Meera is at a home study desk in Kerala, watching a Frankfurt arrival video and rehearsing the first airport steps. The signs, passport control, baggage claim, and train station are practice scenes — not a claim about her destination or current address.",
         },
         narrative: {
           previousRecap: "You've successfully navigated the city directions. Now, let's look at the bigger picture — international travel!",
           currentObjective: "Handle airport procedures (passport control, baggage claim) and understand train station logistics (delays, platforms)",
           nextTeaser: "Next: Power Verbs! Let's learn to say what you 'can' and 'must' do!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Cousin video call-il Frankfurt airport kandappol manasilayi — landing oru separate scene aanu. Kochi-ye kalum valre big aanu ithu. Practice-il thanne 'Reisepass' (passport) ready aakkam.",
           "Luggage collector-inu 'Gepäckausgabe' ennu parayum. Athu vertical signs-il sradhikkanam.",
           "Pinne train station-il 'Verspätung' (delay) announcement kettal panic aavenda — Germans-inu athu oru common headache aanu. Platform-nu 'Gleis' ennu parayum. Let's find your train!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab9-4-1", encounterMoment: "On the video call, Kuttan sees the terminal: 'Der Flughafen ist riesig!' (The airport is huge!).", contextSentence: "Der Flughafen ist sehr groß." },
+          { vocabId: "vocab9-4-1", encounterMoment: "On the video call, Meera sees the terminal: 'Der Flughafen ist riesig!' (The airport is huge!).", contextSentence: "Der Flughafen ist sehr groß." },
           { vocabId: "vocab9-4-4", encounterMoment: "In the rehearsal, he asks: 'Wo ist mein Gepäck?' (Where is my luggage?).", contextSentence: "Mein Gepäck ist schwer." },
-          { vocabId: "vocab9-4-2", encounterMoment: "Frau Weber plays the officer: 'Ihren Reisepass, bitte.' (Your passport, please).", contextSentence: "Die Passkontrolle war schnell." },
+          { vocabId: "vocab9-4-2", encounterMoment: "Frau Fischer plays the officer: 'Ihren Reisepass, bitte.' (Your passport, please).", contextSentence: "Die Passkontrolle war schnell." },
           { vocabId: "vocab9-4-10", encounterMoment: "The mock board flashes red: 'Der Zug hat Verspätung.' (The train is delayed). Aiyyo!", contextSentence: "Der Zug hat zehn Minuten Verspätung." },
-          { vocabId: "vocab9-4-9", encounterMoment: "Kuttan reads the mock sign: 'Der Zug fährt auf Gleis 4.' (The train departs from platform 4).", contextSentence: "Der Zug fährt auf Gleis 3 ab." },
+          { vocabId: "vocab9-4-9", encounterMoment: "Meera reads the mock sign: 'Der Zug fährt auf Gleis 4.' (The train departs from platform 4).", contextSentence: "Der Zug fährt auf Gleis 3 ab." },
         ],
         decisionPoints: [
           {
             moment: "In the passport-control rehearsal, the officer says 'Ihren Reisepass, bitte.' What is your polite response?",
             options: [
-              { text: "Hier ist mein Reisepass.", isCorrect: true, response: "Exactly! Handing over the passport with a clear sentence is perfect.", kuttanReaction: "Adipoli! Confidence level super aanu. Passport check clear! 🔥" },
-              { text: "Was möchten Sie?", isCorrect: false, response: "Aiyyo! Too confrontational. They asked for your passport, so just give it to them!", kuttanReaction: "Vite machane! Asking 'what do you want' to a police officer is not recommended! Try again! 😬" },
+              { text: "Hier ist mein Reisepass.", isCorrect: true, response: "Exactly! Handing over the passport with a clear sentence is perfect.", peerReaction: "Adipoli! Confidence level super aanu. Passport check clear! 🔥" },
+              { text: "Was möchten Sie?", isCorrect: false, response: "Aiyyo! Too confrontational. They asked for your passport, so just give it to them!", peerReaction: "Vite machane! Asking 'what do you want' to a police officer is not recommended! Try again! 😬" },
             ],
           },
           {
             moment: "An announcement says 'Der Zug hat zehn Minuten Verspätung'. What does this mean?",
             options: [
-              { text: "The train is 10 minutes late.", isCorrect: true, response: "Correct! 'Verspätung' = delay. You'll have extra time for a coffee.", kuttanReaction: "Superb! Announcement logic correctly catch cheythallo. 10 mins wait cheyyam! ⭐" },
-              { text: "The train is on platform 10.", isCorrect: false, response: "No! 'Gleis' is platform. 'Verspätung' is delay.", kuttanReaction: "Aiyyo! 'Verspätung' kandaal timing-il problem undu ennanu artham. Try again! 🚫" },
+              { text: "The train is 10 minutes late.", isCorrect: true, response: "Correct! 'Verspätung' = delay. You'll have extra time for a coffee.", peerReaction: "Superb! Announcement logic correctly catch cheythallo. 10 mins wait cheyyam! ⭐" },
+              { text: "The train is on platform 10.", isCorrect: false, response: "No! 'Gleis' is platform. 'Verspätung' is delay.", peerReaction: "Aiyyo! 'Verspätung' kandaal timing-il problem undu ennanu artham. Try again! 🚫" },
             ],
           },
         ],
@@ -861,11 +865,11 @@ export const MODULE_9: Module = {
       ],
       exercises: [
         { id: "ex9-4-1", type: "multiple-choice", question: "How do you ask 'Which platform does the train to Berlin leave from?'", options: ["Auf welchem Gleis fährt der Zug nach Berlin?", "Wo ist der Zug nach Berlin?", "Wann fährt der Zug nach Berlin?", "Welcher Zug fährt nach Berlin?"], correctAnswer: "Auf welchem Gleis fährt der Zug nach Berlin?", explanation: "'Auf welchem Gleis' means 'on which platform'. 'Gleis' is the German word for platform/track at a train station.", xpReward: 10 },
-        { id: "ex9-4-2", type: "matching", question: "Kuttan lands at the imagined Frankfurt airport — five signs decide his next hour. Match each one to what it does:", options: ["die Passkontrolle", "der Zoll", "das Gepäck", "das Gleis", "die Verspätung"], correctAnswer: ["passport control", "customs", "luggage", "platform/track", "delay"], explanation: "Five signs that matter: Passkontrolle, Zoll, Gepäck, Gleis, Verspätung. You'll meet all five in your first hour in Germany.", xpReward: 15 },
-        { id: "ex9-4-3", type: "multiple-choice", question: "The imagined Frankfurt airport board has a column headed 'Abflug' — Kuttan's flight is in it. That column lists…", options: ["Departures", "Arrivals", "Gates", "Delays"], correctAnswer: "Departures", explanation: "'der Abflug' = departure (for flights): Ab (away/off) + Flug (flight). For trains it's 'die Abfahrt' instead.", xpReward: 10 },
+        { id: "ex9-4-2", type: "matching", question: "Meera lands at the imagined Frankfurt airport — five signs decide her next hour. Match each one to what it does:", options: ["die Passkontrolle", "der Zoll", "das Gepäck", "das Gleis", "die Verspätung"], correctAnswer: ["passport control", "customs", "luggage", "platform/track", "delay"], explanation: "Five signs that matter: Passkontrolle, Zoll, Gepäck, Gleis, Verspätung. You'll meet all five in your first hour in Germany.", xpReward: 15 },
+        { id: "ex9-4-3", type: "multiple-choice", question: "The imagined Frankfurt airport board has a column headed 'Abflug' — Meera's flight is in it. That column lists…", options: ["Departures", "Arrivals", "Gates", "Delays"], correctAnswer: "Departures", explanation: "'der Abflug' = departure (for flights): Ab (away/off) + Flug (flight). For trains it's 'die Abfahrt' instead.", xpReward: 10 },
         { id: "ex9-4-4", type: "fill-blank", question: "Der Zug hat 20 Minuten ___ . (delay)", options: ["Verspätung", "Ankunft", "Abfahrt", "Gepäck"], correctAnswer: "Verspätung", explanation: "'Verspätung' means delay. German trains having Verspätung is almost a national joke! 'Der Zug hat ... Minuten Verspätung' = The train is ... minutes late.", xpReward: 10 },
         { id: "ex9-4-5", type: "free-text", question: "Amma wants to know exactly when the cousin's flight lands. Type it in German — 'The flight arrives at 3 o'clock.' (ankommen is separable!):", correctAnswer: "Der Flug kommt um drei Uhr an", explanation: "ankommen is separable: kommt ... an. The prefix waits at the end of the sentence — even for flights.", xpReward: 30 },
-        { id: "ex9-4-6", type: "type-answer", question: "Off the plane, Kuttan follows everyone toward a sign: 'Gepäckausgabe'. Type in English where that sign leads:", correctAnswer: "Baggage claim", explanation: "'Gepäckausgabe' = Gepäck (luggage) + Ausgabe (handing out). It's where you collect your suitcase after a flight.", xpReward: 15 },
+        { id: "ex9-4-6", type: "type-answer", question: "Off the plane, Meera follows everyone toward a sign: 'Gepäckausgabe'. Type in English where that sign leads:", correctAnswer: "Baggage claim", explanation: "'Gepäckausgabe' = Gepäck (luggage) + Ausgabe (handing out). It's where you collect your suitcase after a flight.", xpReward: 15 },
         { id: "ex9-4-7", type: "type-answer", question: "Passport control. The officer holds out a hand: 'Ihren ___, bitte.' Type the missing word (passport):", correctAnswer: "Reisepass", explanation: "'der Reisepass' — at passport control the officer says 'Ihren Reisepass, bitte'. Have the word ready before they say it.", xpReward: 15 },
         {
           id: "ex9-4-9",
@@ -879,7 +883,7 @@ export const MODULE_9: Module = {
         {
           id: "ex9-4-10",
           type: "free-text",
-          question: "Role-play flip: Kuttan plays the passport officer, Priya the traveller. Say the officer's line — type in German: 'Your passport, please.':",
+          question: "Role-play flip: Meera plays the passport officer, Priya the traveller. Say the officer's line — type in German: 'Your passport, please.':",
           correctAnswer: "Ihren Reisepass, bitte",
           explanation: "'Ihren' — capital I for the formal your, and -en because 'Reisepass' is masculine accusative. Two letters, two rules.",
           xpReward: 30
@@ -898,7 +902,7 @@ export const MODULE_9: Module = {
         {
           id: "ex9-4-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: rushing for the connection, he says 'Ich muss umsteigen in Frankfurt.' The infinitive belongs at the END! Say it right: 'Ich muss in Frankfurt umsteigen.'",
+          question: "Repair Meera's slip: rushing for the connection, she says 'Ich muss umsteigen in Frankfurt.' The infinitive belongs at the END! Say it right: 'Ich muss in Frankfurt umsteigen.'",
           questionGerman: "Sprechen Sie laut: 'Ich muss in Frankfurt umsteigen.'",
           correctAnswer: "Ich muss in Frankfurt umsteigen",
           explanation: "Modal müssen takes slot 2 and umsteigen waits at the end — English word order ('I must change in Frankfurt') is exactly the trap. The exam scores this bracket hard.",
@@ -928,6 +932,7 @@ export const MODULE_9: Module = {
       duration: "60 min",
       xpReward: 180,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "WG Kitchen (Weekend Planning)",
           sceneType: "home",
@@ -939,7 +944,7 @@ export const MODULE_9: Module = {
           currentObjective: "Master all 6 modal verbs and understand the 'verb at the end' sentence structure",
           nextTeaser: "Module 9 complete! Next: Let's talk about Health! Doctor visits, body parts, and lifestyle!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Modal verbs German-il valare essential aanu. 'Can', 'Must', 'Want' — ithoke illathe nammalku onnum parayan pattoola.",
           "Main rule: Modal verb 2nd position-il aayirukkum, but actual action verb sentence-inte ETTAVUM END-ilekk pokum. 'Ich KANN Deutsch SPRECHEN.'",
           "Politeness context-il 'wollen' (want) kurachu rude aayirukkum, so 'möchten' (would like) use cheyyunthinaan nallathu. Let's plan that trip!",
@@ -955,15 +960,15 @@ export const MODULE_9: Module = {
           {
             moment: "You want to say 'I can speak German' (Ich / können / Deutsch / sprechen). Which word order is correct?",
             options: [
-              { text: "Ich kann Deutsch sprechen.", isCorrect: true, response: "Exactly! Modal verb follows the subject, and the main verb (sprechen) goes to the end.", kuttanReaction: "Adipoli! Sentence structure logic perfect aayi handle cheythallo. Rule noted! 🔥" },
-              { text: "Ich kann sprechen Deutsch.", isCorrect: false, response: "Aiyyo! In English, 'speak' comes after 'can'. But in German, it MUST go to the end of the sentence!", kuttanReaction: "Vite machane! Action verb-ine thalli end-ilekk vidanam. Ithu fix cheytho! Try again! 😬" },
+              { text: "Ich kann Deutsch sprechen.", isCorrect: true, response: "Exactly! Modal verb follows the subject, and the main verb (sprechen) goes to the end.", peerReaction: "Adipoli! Sentence structure logic perfect aayi handle cheythallo. Rule noted! 🔥" },
+              { text: "Ich kann sprechen Deutsch.", isCorrect: false, response: "Aiyyo! In English, 'speak' comes after 'can'. But in German, it MUST go to the end of the sentence!", peerReaction: "Vite machane! Action verb-ine thalli end-ilekk vidanam. Ithu fix cheytho! Try again! 😬" },
             ],
           },
           {
             moment: "You are at a ticket counter. Which modal verb is more polite to use for your request?",
             options: [
-              { text: "möchten (would like)", isCorrect: true, response: "Correct! 'Ich möchte...' is the standard polite way to ask for things.", kuttanReaction: "Superb! Politnes logic correct aayi pick cheythallo. 'Wollen' children use cheyyana demanding tone aanu. ⭐" },
-              { text: "wollen (want)", isCorrect: false, response: "No! 'Ich will...' sounds like a demand. In service situations, 'möchten' is much better.", kuttanReaction: "Aiyyo! 'möchten' uses politeness. 'wollen' kurachu rude aannu artham. Try again! 🚫" },
+              { text: "möchten (would like)", isCorrect: true, response: "Correct! 'Ich möchte...' is the standard polite way to ask for things.", peerReaction: "Superb! Politnes logic correct aayi pick cheythallo. 'Wollen' children use cheyyana demanding tone aanu. ⭐" },
+              { text: "wollen (want)", isCorrect: false, response: "No! 'Ich will...' sounds like a demand. In service situations, 'möchten' is much better.", peerReaction: "Aiyyo! 'möchten' uses politeness. 'wollen' kurachu rude aannu artham. Try again! 🚫" },
             ],
           },
         ],
@@ -1094,7 +1099,7 @@ export const MODULE_9: Module = {
         {
           id: "ex9-5-9",
           type: "dictation",
-          question: "Kuttan's proudest sentence yet, delivered to the Hamburg cousin mid-call. Listen and type exactly what you hear.",
+          question: "Nivin's proudest sentence yet, delivered to the Hamburg cousin mid-call. Listen and type exactly what you hear.",
           correctAnswer: "Ich kann Deutsch sprechen",
           explanation: "Modal verb in position 2, main verb at the end — and the sentence every A1 learner earns the right to say.",
           xpReward: 25,
@@ -1103,7 +1108,7 @@ export const MODULE_9: Module = {
         {
           id: "ex9-5-10",
           type: "free-text",
-          question: "Chaya break is over and Frau Weber is watching the door. Type Kuttan's exit line in German — 'I must go now.' (müssen, jetzt):",
+          question: "Chaya break is over and Frau Fischer is watching the door. Type Nivin's exit line in German — 'I must go now.' (müssen, jetzt):",
           correctAnswer: "Ich muss jetzt gehen",
           explanation: "'muss' holds slot 2, 'gehen' moves to the end — the modal bracket even applies to escaping the canteen.",
           xpReward: 30
@@ -1122,7 +1127,7 @@ export const MODULE_9: Module = {
         {
           id: "ex9-5-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: bragging to the cousin, he says 'Ich kann sprechen Deutsch.' The infinitive goes LAST! Say it right: 'Ich kann Deutsch sprechen.'",
+          question: "Repair Nivin's slip: bragging to the cousin, he says 'Ich kann sprechen Deutsch.' The infinitive goes LAST! Say it right: 'Ich kann Deutsch sprechen.'",
           questionGerman: "Sprechen Sie laut: 'Ich kann Deutsch sprechen.'",
           correctAnswer: "Ich kann Deutsch sprechen",
           explanation: "English order ('I can speak German') is the trap — German brackets it: kann … sprechen. Repair this one slip and every modal sentence you ever say improves.",

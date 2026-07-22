@@ -41,8 +41,8 @@ export default function Module1FirstMiniConversationPage() {
               sceneVisualVariant="ai-study"
               speakerName={practice.scene.speakerName}
               speakerLine={practice.scene.speakerLine}
-              learnerName="You"
-              learnerLine="Guten Tag, Frau Weber. Gut, danke."
+              learnerName="Nivin"
+              learnerLine="Guten Tag, Frau Fischer. Gut, danke."
               audioSrc={practice.scene.audioSrc}
               audioLabel="Your line"
               options={practice.repair.options}

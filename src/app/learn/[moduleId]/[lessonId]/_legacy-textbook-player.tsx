@@ -24,7 +24,7 @@ import { ALL_MODULES, getLessonById, getModuleById, type Lesson, type Exercise, 
 import { SPINE_SOURCE_MODULE_IDS } from '@/lib/spine-map';
 import { readModule1CheckpointResult } from '@/lib/spine';
 import { RichContentRenderer } from '@/components/learn/RichContentRenderer';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 type LessonSection = 'overview' | 'video' | 'vocabulary' | 'exercises' | 'complete';
 

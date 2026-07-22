@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ChevronRight, Lock, CheckCircle, Clock, Star, Play } from 'lucide-react';
 import { Card, Button, Badge } from '@/components/ui';
 import { JourneyMap } from '@/components/lesson';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { KeralaClassroomScene } from '@/components/course/KeralaClassroomScene';
 import { useGameStore } from '@/lib/store';
 import { getModuleById } from '@/lib/content/modules';
@@ -107,7 +107,7 @@ export default function ModulePage({ params }: { params: Promise<{ moduleId: str
   const heroDescription = isModule1
     ? module1Complete
       ? 'Examiner speaks. You answer.'
-      : 'Frau Weber speaks. You answer.'
+      : 'Frau Fischer speaks. You answer.'
     : isModule2
     ? module2SequenceComplete
       ? 'Price or phone number. Listen first.'
@@ -192,7 +192,7 @@ export default function ModulePage({ params }: { params: Promise<{ moduleId: str
                   transition={{ delay: 0.5 }}
                   className="mb-3 flex items-center gap-2"
                 >
-                  <Kuttan mood="happy" size="sm" entrance={false} />
+                  <Nivin mood="happy" size="sm" entrance={false} />
                   <span className="rounded-full border border-[#d4a520]/30 bg-[#d4a520]/10 px-3 py-1 text-xs font-medium text-[#d4a520]">
                     Guided A1 module
                   </span>

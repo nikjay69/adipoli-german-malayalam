@@ -14,7 +14,7 @@ interface BossIntroProps {
 
 /**
  * Dramatic boss battle introduction screen.
- * Screen darkens, boss name appears with fanfare, Kuttan warns you.
+ * Screen darkens, boss name appears with fanfare, Nivin warns you.
  */
 export function BossIntro({ boss, onStart }: BossIntroProps) {
   const [phase, setPhase] = useState<'darken' | 'reveal' | 'warn' | 'ready'>('darken');
@@ -94,7 +94,7 @@ export function BossIntro({ boss, onStart }: BossIntroProps) {
               </div>
 
               <CharacterGuide
-                messages={boss.kuttanWarning}
+                messages={boss.peerWarning}
                 mood="thinking"
                 size="sm"
               />

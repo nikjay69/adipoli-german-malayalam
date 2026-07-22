@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { useAuthStore } from '@/lib/auth-store';
 import { isSupabaseConfigured } from '@/lib/supabase';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 function CallbackHandler() {
   const router = useRouter();
@@ -72,7 +72,7 @@ function CallbackHandler() {
         {error ? (
           <>
             <div className="flex justify-center mb-4">
-              <Kuttan mood="sad" size="md" />
+              <Nivin mood="sad" size="md" />
             </div>
             <h2 className="text-lg font-bold text-[var(--foreground)] mb-2">Aiyyo, that didn&apos;t work</h2>
             <p className="text-sm text-[#c0392b] mb-2">{error}</p>
@@ -81,7 +81,7 @@ function CallbackHandler() {
         ) : (
           <>
             <div className="flex justify-center mb-4">
-              <Kuttan mood="thinking" size="md" />
+              <Nivin mood="thinking" size="md" />
             </div>
             <h2 className="text-lg font-bold gradient-text mb-1">Signing you in...</h2>
             <p className="text-sm text-[var(--foreground)]/60 mb-4">One sec, machaa.</p>
@@ -98,7 +98,7 @@ function CallbackFallback() {
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="text-center max-w-sm">
         <div className="flex justify-center mb-4">
-          <Kuttan mood="thinking" size="md" />
+          <Nivin mood="thinking" size="md" />
         </div>
         <h2 className="text-lg font-bold gradient-text mb-1">Signing you in...</h2>
         <p className="text-sm text-[var(--foreground)]/60 mb-4">One sec, machaa.</p>

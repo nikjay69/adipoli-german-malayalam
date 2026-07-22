@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { Clock, Calendar, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { Appu } from '@/components/character/Appu';
 import { Confetti } from '@/components/game/Confetti';
 import { feedbackCelebration } from '@/lib/feedback';
@@ -104,7 +104,7 @@ export default function OnboardingPage() {
               transition={{ type: 'spring', delay: 0.2 }}
               className="flex items-end gap-2 mb-8"
             >
-              <Kuttan mood="waving" size="lg" />
+              <Nivin mood="waving" size="lg" />
               <Appu mood="happy" size="sm" />
             </motion.div>
 
@@ -173,7 +173,7 @@ export default function OnboardingPage() {
               animate={{ y: 0, opacity: 1 }}
               className="mb-2"
             >
-              <Kuttan mood="thinking" size="sm" />
+              <Nivin mood="thinking" size="sm" />
             </motion.div>
 
             <motion.h2
@@ -303,7 +303,7 @@ export default function OnboardingPage() {
               transition={{ type: 'spring', delay: 0.1 }}
               className="flex items-end gap-2 mb-6"
             >
-              <Kuttan mood="excited" size="lg" />
+              <Nivin mood="excited" size="lg" />
               <Appu mood="celebrating" size="sm" />
             </motion.div>
 

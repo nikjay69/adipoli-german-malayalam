@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Mic, MicOff, Volume2, RefreshCw, Trophy, Flame, Star, Zap } from 'lucide-react';
 import { Card, Button } from '@/components/ui';
-import { Kuttan, SpeechBubble } from '@/components/character';
-import type { KuttanMood } from '@/components/character';
+import { Nivin, SpeechBubble } from '@/components/character';
+import type { NivinMood } from '@/components/character';
 import { useGameStore } from '@/lib/store';
 import { getAllVocabulary, type VocabItem } from '@/lib/content/modules';
 import { playVocabAudio, useGermanTTS } from '@/lib/audio';
@@ -61,8 +61,8 @@ function getSpeechRecognitionClass(): SpeechRecognitionConstructor | null {
   return window.SpeechRecognition || window.webkitSpeechRecognition || null;
 }
 
-// Kuttan reactions per score band — warm, never harsh
-function getReaction(score: number, streak: number, streak80: number): { mood: KuttanMood; message: string } {
+// Nivin reactions per score band — warm, never harsh
+function getReaction(score: number, streak: number, streak80: number): { mood: NivinMood; message: string } {
   if (score >= 90 && streak80 >= 5)
     return { mood: 'celebrating', message: `Adipoli machaa! ${streak80} clean in a row — Native-level!` };
   if (score >= 90 && streak >= 3)
@@ -126,9 +126,9 @@ export default function PronunciationPage() {
   const [xpEarned, setXpEarned] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
 
-  // --- kuttan ---
-  const [kuttanMood, setKuttanMood] = useState<KuttanMood>('waving');
-  const [kuttanMessage, setKuttanMessage] = useState('Ready to practice your pronunciation? Tap the mic and speak!');
+  // --- learner peer ---
+  const [peerMood, setNivinMood] = useState<NivinMood>('waving');
+  const [peerMessage, setPeerMessage] = useState('Ready to practice your pronunciation? Tap the mic and speak!');
   const [showBubble, setShowBubble] = useState(true);
 
   // --- playing audio ---
@@ -262,8 +262,8 @@ export default function PronunciationPage() {
       if (mode === 'free') {
         // Free mode: just show transcription, no scoring
         setResult({ heard, expected: '', score: -1 });
-        setKuttanMood('happy');
-        setKuttanMessage(`Nice! I heard: "${heard}". Keep practicing!`);
+        setNivinMood('happy');
+        setPeerMessage(`Nice! I heard: "${heard}". Keep practicing!`);
         setShowBubble(true);
         return;
       }
@@ -295,13 +295,13 @@ export default function PronunciationPage() {
         setXpEarned((p) => p + xp);
 
         const reaction = getReaction(score, newStreak, newStreak80);
-        setKuttanMood(reaction.mood);
-        setKuttanMessage(reaction.message);
+        setNivinMood(reaction.mood);
+        setPeerMessage(reaction.message);
       } else {
         setStreak(0);
         const reaction = getReaction(score, 0, newStreak80);
-        setKuttanMood(reaction.mood);
-        setKuttanMessage(reaction.message);
+        setNivinMood(reaction.mood);
+        setPeerMessage(reaction.message);
       }
 
       // Confetti on 90+ (micro-reward)
@@ -345,11 +345,11 @@ export default function PronunciationPage() {
       setInterimText('');
       setStreak(0);
       if (newMode === 'free') {
-        setKuttanMood('pointing');
-        setKuttanMessage('Free Speak mode! Say anything in German and I\'ll show you the transcription.');
+        setNivinMood('pointing');
+        setPeerMessage('Free Speak mode! Say anything in German and I\'ll show you the transcription.');
       } else {
-        setKuttanMood('waving');
-        setKuttanMessage(
+        setNivinMood('waving');
+        setPeerMessage(
           newMode === 'words'
             ? 'Tap the speaker to hear the word, then tap the mic and repeat it!'
             : 'Try the full sentence! Listen first, then give it a go!',
@@ -368,8 +368,8 @@ export default function PronunciationPage() {
   const finishSession = useCallback(() => {
     setSessionDone(true);
     incrementGamesPlayed();
-    setKuttanMood('celebrating');
-    setKuttanMessage('Great session! Come back tomorrow to keep your streak going!');
+    setNivinMood('celebrating');
+    setPeerMessage('Great session! Come back tomorrow to keep your streak going!');
     setShowBubble(true);
   }, [incrementGamesPlayed]);
 
@@ -442,15 +442,15 @@ export default function PronunciationPage() {
                 Session Complete!
               </h1>
 
-              {/* Kuttan celebration */}
+              {/* Nivin celebration */}
               <div className="flex flex-col items-center mb-4">
                 <SpeechBubble
-                  message={kuttanMessage}
+                  message={peerMessage}
                   visible={showBubble}
                   showTapHint={false}
                   position="top"
                 />
-                <Kuttan mood="celebrating" size="lg" />
+                <Nivin mood="celebrating" size="lg" />
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
@@ -483,8 +483,8 @@ export default function PronunciationPage() {
                     setBestStreak(0);
                     setResult(null);
                     pickNext();
-                    setKuttanMood('waving');
-                    setKuttanMessage('Let\'s go again! Tap the mic when ready.');
+                    setNivinMood('waving');
+                    setPeerMessage('Let\'s go again! Tap the mic when ready.');
                     setShowBubble(true);
                   }}
                   fullWidth
@@ -580,11 +580,11 @@ export default function PronunciationPage() {
         ))}
       </div>
 
-      {/* Kuttan Guide */}
+      {/* Nivin Guide */}
       <div className="flex items-end gap-3 mb-5">
-        <Kuttan mood={kuttanMood} size="sm" />
+        <Nivin mood={peerMood} size="sm" />
         <SpeechBubble
-          message={kuttanMessage}
+          message={peerMessage}
           visible={showBubble}
           onDismiss={() => setShowBubble(false)}
           showTapHint={false}
@@ -804,8 +804,8 @@ export default function PronunciationPage() {
           <Button
             onClick={() => {
               pickNext();
-              setKuttanMood('idle');
-              setKuttanMessage('New word! Listen and give it a try.');
+              setNivinMood('idle');
+              setPeerMessage('New word! Listen and give it a try.');
               setShowBubble(true);
             }}
             variant="secondary"

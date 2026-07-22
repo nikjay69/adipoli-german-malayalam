@@ -7,7 +7,7 @@ import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
 import { getDueCount } from '@/lib/srs';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { SkeletonGrid } from '@/components/ui/Skeleton';
 
 const practices = [
@@ -67,7 +67,7 @@ const practices = [
   },
   {
     id: 'chat',
-    name: 'Ask Kuttan',
+    name: 'Ask Nivin',
     icon: '💬',
     color: '#3b82f6',
     badge: 'AI',
@@ -107,14 +107,14 @@ export default function PracticePage() {
         </h1>
       </motion.div>
 
-      {/* Kuttan encouragement */}
+      {/* Nivin encouragement */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
         className="flex flex-col gap-2.5 items-center text-center md:flex-row md:text-left md:gap-2.5 game-card p-3.5 md:p-4 mb-2"
       >
-        <Kuttan mood="pointing" size="sm" entrance={false} />
+        <Nivin mood="pointing" size="sm" entrance={false} />
         <p className="text-xs text-[var(--foreground)]/60 leading-snug">
           {dueCount > 0
             ? `Machaa, ${dueCount} words due for review! Brain use cheyyuka! 🧠`

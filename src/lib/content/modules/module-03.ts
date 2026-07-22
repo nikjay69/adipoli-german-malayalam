@@ -25,18 +25,19 @@ export const MODULE_3: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Goethe Kochi classroom — mock supermarket checkout",
           sceneType: "shopping",
           timeOfDay: "afternoon",
-          description: "Frau Weber turns the classroom into a small checkout counter with price tags, coins, and a fast cashier role-play. Kuttan has to hear small numbers clearly before his mock customer loses patience. This is Kerala practice for a real German supermarket later.",
+          description: "Frau Fischer turns the classroom into a small checkout counter with price tags, coins, and a fast cashier role-play. Nivin has to hear small numbers clearly before his mock customer loses patience. This is Kerala practice for a real German supermarket later.",
         },
         narrative: {
-          previousRecap: "You've learned to introduce yourself. Now Kuttan starts using German for real-life numbers in Goethe Kochi practice.",
+          previousRecap: "You've learned to introduce yourself. Now Nivin starts using German for real-life numbers in Goethe Kochi practice.",
           currentObjective: "Understand prices and small numbers (0-20) in a fast-paced mock retail setting",
           nextTeaser: "Next: bigger prices in a bakery role-play — the 'one-and-twenty' reversal twist is coming.",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Germany-il Lidl/Aldi checkout line-il 'patience' kuravaanu. Cashier lightning speed-ile barcode scan cheyyu — speed level 100!",
           "Nammal total samyam mathramalla, 'Cent' vs 'Euro' price-um catch cheyyanam. Digital board-ile comma (,) nokkan marakkalle, athanu decimal separator.",
           "0-20 numbers simple aanu — English 'eleven' and 'twelve' pole 'elf' and 'zwölf' mathram oru special case. Let's clear this level!",
@@ -52,15 +53,15 @@ export const MODULE_3: Module = {
           {
             moment: "The screen says '4,50 €'. The cashier is looking at you. How do you prepare the money?",
             options: [
-              { text: "Four Euro and fifty cents.", isCorrect: true, response: "Exactly! You count out four Euros and two twenty-cent coins + one ten-cent coin. Pro level!", kuttanReaction: "Adipoli! 4,50 ennu digital board-il kandaal 'Vier Euro fünfzig' ennu vayikkaam. Comma decimal separator aano ennorkkane! 😉" },
-              { text: "Forty-five Euro.", isCorrect: false, response: "The cashier laughs gently: 'Nein, vier Euro fünfzig Cent, bitte!' That comma is a decimal, not a thousands separator!", kuttanReaction: "Aiyyo! 4,50 kandaal 45 aano? Decimal separator ivide comma aanu (,)! Pinne 45 Euro-inu oru paal-um bread-um kittillallo! Try again! 😬" },
+              { text: "Four Euro and fifty cents.", isCorrect: true, response: "Exactly! You count out four Euros and two twenty-cent coins + one ten-cent coin. Pro level!", peerReaction: "Adipoli! 4,50 ennu digital board-il kandaal 'Vier Euro fünfzig' ennu vayikkaam. Comma decimal separator aano ennorkkane! 😉" },
+              { text: "Forty-five Euro.", isCorrect: false, response: "The cashier laughs gently: 'Nein, vier Euro fünfzig Cent, bitte!' That comma is a decimal, not a thousands separator!", peerReaction: "Aiyyo! 4,50 kandaal 45 aano? Decimal separator ivide comma aanu (,)! Pinne 45 Euro-inu oru paal-um bread-um kittillallo! Try again! 😬" },
             ],
           },
           {
             moment: "You hear 'Zwölf' for the egg carton. Which number is that?",
             options: [
-              { text: "12", isCorrect: true, response: "Correct! 'Zwölf' is 12. You're starting to hear the difference!", kuttanReaction: "Super machane! 11 is 'elf', 12 is 'zwölf'. Ithu randum pattern-il varatha numbers aanu, so memorize cheyyanam. High-five! ✋" },
-              { text: "20", isCorrect: false, response: "Incorrect! 20 is 'zwanzig'. 'Zwölf' is lower, machane!", kuttanReaction: "Vite machane! 20 is 'zwanzig' (Z-sounding). 12 is 'zwölf' (Tsv-sounding). Confusion venal training koottaam! Try again! 🚫" },
+              { text: "12", isCorrect: true, response: "Correct! 'Zwölf' is 12. You're starting to hear the difference!", peerReaction: "Super machane! 11 is 'elf', 12 is 'zwölf'. Ithu randum pattern-il varatha numbers aanu, so memorize cheyyanam. High-five! ✋" },
+              { text: "20", isCorrect: false, response: "Incorrect! 20 is 'zwanzig'. 'Zwölf' is lower, machane!", peerReaction: "Vite machane! 20 is 'zwanzig' (Z-sounding). 12 is 'zwölf' (Tsv-sounding). Confusion venal training koottaam! Try again! 🚫" },
             ],
           },
         ],
@@ -184,12 +185,12 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-1",
           type: "type-answer",
-          question: "Frau Weber holds up a price tag at the mock checkout: '7 €'. Write the number she wants to hear, in German.",
+          question: "Frau Fischer holds up a price tag at the mock checkout: '7 €'. Write the number she wants to hear, in German.",
           correctAnswer: "sieben",
           explanation: "'Sieben' = 7. One of the first numbers to memorize!",
           xpReward: 15
         },
-        { id: "ex3-1-2", type: "multiple-choice", question: "Frau Weber calls across the mock checkout: 'Das macht zwölf Euro!' Which price tag is yours?", questionGerman: "Welche Zahl ist 'zwölf'?", options: ["12", "11", "20", "2"], correctAnswer: "12", explanation: "'Zwölf' = 12. It's irregular — just memorize it along with 'elf' (11)!", xpReward: 10 },
+        { id: "ex3-1-2", type: "multiple-choice", question: "Frau Fischer calls across the mock checkout: 'Das macht zwölf Euro!' Which price tag is yours?", questionGerman: "Welche Zahl ist 'zwölf'?", options: ["12", "11", "20", "2"], correctAnswer: "12", explanation: "'Zwölf' = 12. It's irregular — just memorize it along with 'elf' (11)!", xpReward: 10 },
         {
           id: "ex3-1-3",
           type: "fill-blank",
@@ -202,7 +203,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-4",
           type: "ordering",
-          question: "The number cards for the checkout game fell off Frau Weber's desk. Rebuild the row from smallest to largest:",
+          question: "The number cards for the checkout game fell off Frau Fischer's desk. Rebuild the row from smallest to largest:",
           options: ["neun", "drei", "sieben", "eins", "fünf"],
           correctAnswer: ["eins", "drei", "fünf", "sieben", "neun"],
           explanation: "eins (1), drei (3), fünf (5), sieben (7), neun (9) — all the odd numbers!",
@@ -237,7 +238,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-8",
           type: "free-text",
-          question: "Your bill at the mock checkout is 15 €. Beat Frau Weber to it — write 15 in German.",
+          question: "Your bill at the mock checkout is 15 €. Beat Frau Fischer to it — write 15 in German.",
           correctAnswer: "fünfzehn",
           explanation: "Fünf (5) + zehn (10) = fünfzehn (15). Just like English, except simpler!",
           xpReward: 25
@@ -246,7 +247,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-prod-speaking",
           type: "speaking",
-          question: "Checkout role-play: you are the cashier, Frau Weber is the customer. Tell her the total — say aloud: 'Das macht zwanzig Euro, bitte.'",
+          question: "Checkout role-play: you are the cashier, Frau Fischer is the customer. Tell her the total — say aloud: 'Das macht zwanzig Euro, bitte.'",
           questionGerman: "Sprechen Sie laut: 'Das macht zwanzig Euro, bitte.'",
           correctAnswer: "Das macht zwanzig Euro, bitte",
           explanation: "'Das macht ... Euro' is what you'll hear at every German till. Saying prices aloud locks the numbers in before the Hören paper tries to trick you.",
@@ -256,7 +257,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-1-spk2",
           type: "speaking",
-          question: "Frau Weber deals you three price tags: 3 €, 13 €, 19 €. Call each price aloud: 'drei Euro, dreizehn Euro, neunzehn Euro.'",
+          question: "Frau Fischer deals you three price tags: 3 €, 13 €, 19 €. Call each price aloud: 'drei Euro, dreizehn Euro, neunzehn Euro.'",
           questionGerman: "Sprechen Sie laut: 'drei Euro, dreizehn Euro, neunzehn Euro.'",
           correctAnswer: "drei Euro, dreizehn Euro, neunzehn Euro",
           explanation: "drei/dreizehn and the -zehn teens are the pairs the Goethe Hören loves to mix up. If your mouth knows the difference, your ear will too.",
@@ -393,18 +394,19 @@ export const MODULE_3: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Goethe Kochi courtyard — bakery counter role-play",
           sceneType: "cafe",
           timeOfDay: "morning",
-          description: "A bakery counter is set up after class with menu cards, mock Euros, and a strict time limit. Kuttan orders for himself and a classmate while the cashier calls out two-digit totals. The scene stays in Kerala, but the pressure feels like future Germany.",
+          description: "A bakery counter is set up after class with menu cards, mock Euros, and a strict time limit. Meera orders for herself and a classmate while the cashier calls out two-digit totals. The scene stays in Kerala, but the pressure feels like future Germany.",
         },
         narrative: {
-          previousRecap: "You've survived the mock supermarket. Now Kuttan must handle bigger prices without freezing.",
+          previousRecap: "You've survived the mock supermarket. Now Meera must handle bigger prices without freezing.",
           currentObjective: "Master the reversed number system (ones before tens) in a bakery-ordering role-play",
           nextTeaser: "Next: time and punctuality — the 'halb' trap awaits.",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! German numbers-inte logic oru bit weird aanu. English-il 'twenty-one' ennu parayumpo, German-il 'one-and-twenty' (einundzwanzig) ennu parayanam.",
           "Mirror image logic aanu — last digit first parayanam. Ithu thudiakkathil nalla confusion undakkum. But relax, once it clicks, it's actually fun!",
           "Bakery-il 24 Euro ennu parayumpo, mind-il 'four-and-twenty' (vierundzwanzig) ennu thonnikkanam. Let's practice this twist!",
@@ -420,15 +422,15 @@ export const MODULE_3: Module = {
           {
             moment: "The total is 32 Euro. The cashier says 'Zweiunddreißig Euro'. How do you interpret this?",
             options: [
-              { text: "Two-and-thirty (32)", isCorrect: true, response: "Exactly! Zwei (2) + und + dreißig (30) = 32. You've got the logic down!", kuttanReaction: "Kiraathakam machane! 'Zwei' then 'dreißig'. Reverse pattern perfectly catch cheythu. Gold star! ⭐" },
-              { text: "Twenty-three (23)", isCorrect: false, response: "Wait! That would be 'dreiundzwanzig'. 32 is 'zweiunddreißig'!", kuttanReaction: "Aiyyo! First digit unit aanu, second digit tens aanu. 32-inu 'zwei' mumpil varanam. Don't flip it again! 😬" },
+              { text: "Two-and-thirty (32)", isCorrect: true, response: "Exactly! Zwei (2) + und + dreißig (30) = 32. You've got the logic down!", peerReaction: "Kiraathakam machane! 'Zwei' then 'dreißig'. Reverse pattern perfectly catch cheythu. Gold star! ⭐" },
+              { text: "Twenty-three (23)", isCorrect: false, response: "Wait! That would be 'dreiundzwanzig'. 32 is 'zweiunddreißig'!", peerReaction: "Aiyyo! First digit unit aanu, second digit tens aanu. 32-inu 'zwei' mumpil varanam. Don't flip it again! 😬" },
             ],
           },
           {
             moment: "You want to buy 4 croissants. Each costs 1,20. Total is 4,80. Cashier says 'Vier Euro achtzig'. Which is 80?",
             options: [
-              { text: "achtzig", isCorrect: true, response: "Correct! 'Achtzig' is 80. 'Acht' (8) + 'zig' (tens suffix).", kuttanReaction: "Superb! 'zig' suffix kandaal tens aanennu urappichoro. 80 = achtzig. Correct aayi paranjallo! 🔥" },
-              { text: "achtzehn", isCorrect: false, response: "No! 'Achtzehn' is 18 (acht + zehn). 80 is 'achtzig'!", kuttanReaction: "Vite machane! 'zehn' end cheythaal teens, 'zig' end cheythaal tens. Confusion aayaruthe! Try again! 🚫" },
+              { text: "achtzig", isCorrect: true, response: "Correct! 'Achtzig' is 80. 'Acht' (8) + 'zig' (tens suffix).", peerReaction: "Superb! 'zig' suffix kandaal tens aanennu urappichoro. 80 = achtzig. Correct aayi paranjallo! 🔥" },
+              { text: "achtzehn", isCorrect: false, response: "No! 'Achtzehn' is 18 (acht + zehn). 80 is 'achtzig'!", peerReaction: "Vite machane! 'zehn' end cheythaal teens, 'zig' end cheythaal tens. Confusion aayaruthe! Try again! 🚫" },
             ],
           },
         ],
@@ -565,7 +567,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-2-prod-speaking",
           type: "speaking",
-          question: "After the bakery role-play, Frau Weber asks your age. Answer like a Goethe candidate — say aloud: 'Ich bin einundzwanzig Jahre alt.' (Use your real age once you can!)",
+          question: "After the bakery role-play, Frau Fischer asks your age. Answer like a Goethe candidate — say aloud: 'Ich bin einundzwanzig Jahre alt.' (Use your real age once you can!)",
           questionGerman: "Sprechen Sie laut: 'Ich bin einundzwanzig Jahre alt.'",
           correctAnswer: "Ich bin einundzwanzig Jahre alt",
           explanation: "Your age is guaranteed in Sprechen Teil 1. Saying the reversed number (ein-und-zwanzig) aloud now means no freezing in the exam room.",
@@ -667,18 +669,19 @@ export const MODULE_3: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Goethe Kochi library — German train schedule practice",
           sceneType: "shopping",
           timeOfDay: "afternoon",
-          description: "Kuttan studies a printed German train schedule in the Goethe Kochi library. A mock exam timer is running, and the 'halb' logic is spinning in his head. The goal is simple: read the time correctly before the next listening task starts.",
+          description: "Nivin studies a printed German train schedule in the Goethe Kochi library. A mock exam timer is running, and the 'halb' logic is spinning in his head. The goal is simple: read the time correctly before the next listening task starts.",
         },
         narrative: {
-          previousRecap: "You've mastered bigger prices in the bakery role-play. Now Kuttan faces the German clock.",
+          previousRecap: "You've mastered bigger prices in the bakery role-play. Now Nivin faces the German clock.",
           currentObjective: "Navigate the 24-hour clock and avoid the 'halb' time trap",
           nextTeaser: "Next: days of the week and calendar habits — the 'Mittwoch' rule is coming.",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Germany-il time parayunnathu oru logic puzzle poleyaanu. '3:30' ennu parayan 'half past three' ennu parayilla — avaru 'half to four' (halb vier) ennu parayum!",
           "Ithu kure perkk 'Termin' miss aakan ulla reason aanu. Always think about the NEXT hour when you hear 'halb'.",
           "Pinne, official schedules-il ellam 24-hour clock aanu. 15:00 kandaal athu 3 PM aanennu catch cheyyanam. Let's make sure we're pünktlich!",
@@ -694,15 +697,15 @@ export const MODULE_3: Module = {
           {
             moment: "Your friend says: 'Komm bitte um halb acht.' What time should you be there?",
             options: [
-              { text: "7:30", isCorrect: true, response: "Correct! 'Halb acht' = half before eight = 7:30. You pass the trap!", kuttanReaction: "Mass machane! Ithanu njan paranja 'halb' trap. 7:30-inu 'halb acht' ennu parayum. Confusion illaathe catch cheythallo! 🔥" },
-              { text: "8:30", isCorrect: false, response: "Aiyyo! That would be 'halb neun'. You're one hour late!", kuttanReaction: "Vite machane! German-il 'halb' parayumpo NEXT hour-iloottu aanu njan look cheyyunnathu. So 8:30 is NOT 'halb acht'. Try again! 😬" },
+              { text: "7:30", isCorrect: true, response: "Correct! 'Halb acht' = half before eight = 7:30. You pass the trap!", peerReaction: "Mass machane! Ithanu njan paranja 'halb' trap. 7:30-inu 'halb acht' ennu parayum. Confusion illaathe catch cheythallo! 🔥" },
+              { text: "8:30", isCorrect: false, response: "Aiyyo! That would be 'halb neun'. You're one hour late!", peerReaction: "Vite machane! German-il 'halb' parayumpo NEXT hour-iloottu aanu njan look cheyyunnathu. So 8:30 is NOT 'halb acht'. Try again! 😬" },
             ],
           },
           {
             moment: "You see '18:45' on the schedule. How do you say this informally?",
             options: [
-              { text: "Viertel vor sieben", isCorrect: true, response: "Exactly! Quarter before seven. You're thinking like a local now.", kuttanReaction: "Adipoli! 18:45 is 6:45 PM. So 'Viertel vor sieben' (quarter to 7) is perfect. Keep it up! 🎯" },
-              { text: "Viertel nach sechs", isCorrect: false, response: "No, that would be 6:15 (18:15). 18:45 is much later!", kuttanReaction: "Aiyyo! 'nach' is after, 'vor' is before. 6:45 is before 7! So it's 'vor sieben'. Try again! 🚫" },
+              { text: "Viertel vor sieben", isCorrect: true, response: "Exactly! Quarter before seven. You're thinking like a local now.", peerReaction: "Adipoli! 18:45 is 6:45 PM. So 'Viertel vor sieben' (quarter to 7) is perfect. Keep it up! 🎯" },
+              { text: "Viertel nach sechs", isCorrect: false, response: "No, that would be 6:15 (18:15). 18:45 is much later!", peerReaction: "Aiyyo! 'nach' is after, 'vor' is before. 6:45 is before 7! So it's 'vor sieben'. Try again! 🚫" },
             ],
           },
         ],
@@ -877,7 +880,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-3-6",
           type: "matching",
-          question: "Kuttan sticks a day-plan strip into his library notebook. Match each German time-of-day word to the part of his day:",
+          question: "Nivin sticks a day-plan strip into his library notebook. Match each German time-of-day word to the part of his day:",
           options: ["morgens → in the morning", "nachmittags → in the afternoon", "abends → in the evening", "pünktlich → on time"],
           correctAnswer: ["morgens → in the morning", "nachmittags → in the afternoon", "abends → in the evening", "pünktlich → on time"],
           explanation: "These time-of-day words help specify AM or PM when using the informal 12-hour clock.",
@@ -1006,42 +1009,43 @@ export const MODULE_3: Module = {
       duration: "45 min",
       xpReward: 120,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
-          name: "Kuttan's home study desk — cousin's Müllkalender video call",
+          name: "Meera's home study desk — cousin's Müllkalender video call",
           sceneType: "home",
           timeOfDay: "morning",
-          description: "Kuttan's cousin joins on video from Munich and shows a Müllkalender on screen. Kuttan is still at his desk in Thrissur, copying the days and months into his notebook. The German life detail stays useful, without pretending Kuttan already lives in a WG.",
+          description: "A video-call role-play shows a German Müllkalender on screen. Meera copies the days and months at a study desk in Kerala. The German life detail stays useful without fixing a destination or address for her.",
         },
         narrative: {
-          previousRecap: "You've read German times without missing the mock train. Now Kuttan uses a cousin video call to learn calendar words.",
+          previousRecap: "You've read German times without missing the mock train. Now Meera uses a cousin video call to learn calendar words.",
           currentObjective: "Learn the days of the week and months to manage your German schedule",
           nextTeaser: "Next: happy birthday! Time to learn dates and the verb 'haben'!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Germany-il 'Mülltrennung' (trash separation) oru religion poleyaanu. Athepole importance aanu 'collection days'-um.",
           "Nammal 'Mittwoch' (Wednesday) kandaal athu middle of the week aanennu catch cheyyanam. Pinne German week Montag (Monday) aanu thudangunnathu.",
           "Months names almost English pole thanneyaanu — 'März' (March) and 'Januar' (January) mathram care venam. Let's set our calendar!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab3-4-1", encounterMoment: "On the video call, Kuttan's cousin points to the calendar: 'Am Montag wird das Altpapier abgeholt.' Blue bin day!", contextSentence: "Am Montag ist Altpapier." },
-          { vocabId: "vocab3-4-3", encounterMoment: "The cousin warns: 'Vergiss Mittwoch nicht! Da kommt die graue Tonne.' Kuttan writes Mittwoch in his notebook.", contextSentence: "Mittwoch ist sehr wichtig." },
-          { vocabId: "vocab3-4-5", encounterMoment: "Kuttan marks Friday in his study calendar: 'Am Freitag haben wir keine Vorlesung.' No lectures on Friday!", contextSentence: "Freitag ist mein Lieblingstag." },
+          { vocabId: "vocab3-4-1", encounterMoment: "On the video call, Meera's cousin points to the calendar: 'Am Montag wird das Altpapier abgeholt.' Blue bin day!", contextSentence: "Am Montag ist Altpapier." },
+          { vocabId: "vocab3-4-3", encounterMoment: "The cousin warns: 'Vergiss Mittwoch nicht! Da kommt die graue Tonne.' Meera writes Mittwoch in her notebook.", contextSentence: "Mittwoch ist sehr wichtig." },
+          { vocabId: "vocab3-4-5", encounterMoment: "Meera marks Friday in her study calendar: 'Am Freitag haben wir keine Vorlesung.' No lectures on Friday!", contextSentence: "Freitag ist mein Lieblingstag." },
           { vocabId: "vocab3-4-8", encounterMoment: "The cousin says: 'Diesen Monat haben wir viel Müll.' This month we have a lot of trash.", contextSentence: "Ein Jahr hat zwölf Monate." },
-          { vocabId: "vocab3-4-11", encounterMoment: "Kuttan looks at the 'Winter' section of the calendar. 'Januar is real cold,' the cousin notes from Munich.", contextSentence: "Im Winter ist es kalt." },
+          { vocabId: "vocab3-4-11", encounterMoment: "Meera looks at the 'Winter' section of the calendar. 'Januar is real cold,' the cousin notes from Munich.", contextSentence: "Im Winter ist es kalt." },
         ],
         decisionPoints: [
           {
-            moment: "Frau Weber asks in class: 'Welcher Tag ist heute?' (What day is today?). It's the middle of the week. What do you say?",
+            moment: "Frau Fischer asks in class: 'Welcher Tag ist heute?' (What day is today?). It's the middle of the week. What do you say?",
             options: [
-              { text: "Heute ist Mittwoch.", isCorrect: true, response: "Exactly! 'Mittwoch' = Middle (Mitte) + Week (Woche). Logical alle?", kuttanReaction: "Correct machane! German-il Wednesday 'Mittwoch' aanu. Ithu oru bit unique name aanu, so carefully thiriayanam! 🎯" },
-              { text: "Heute ist Montag.", isCorrect: false, response: "Frau Weber shakes her head: 'Nein, Montag war vorgestern. Heute ist Mittwoch!'", kuttanReaction: "Aiyyo! Monday alla — Wednesday aanu. Calendar words exam listening-il varum. Try again! 😬" },
+              { text: "Heute ist Mittwoch.", isCorrect: true, response: "Exactly! 'Mittwoch' = Middle (Mitte) + Week (Woche). Logical alle?", peerReaction: "Correct machane! German-il Wednesday 'Mittwoch' aanu. Ithu oru bit unique name aanu, so carefully thiriayanam! 🎯" },
+              { text: "Heute ist Montag.", isCorrect: false, response: "Frau Fischer shakes her head: 'Nein, Montag war vorgestern. Heute ist Mittwoch!'", peerReaction: "Aiyyo! Monday alla — Wednesday aanu. Calendar words exam listening-il varum. Try again! 😬" },
             ],
           },
           {
             moment: "Which month in German sounds the most like 'March'?",
             options: [
-              { text: "März", isCorrect: true, response: "Correct! 'März' has the umlaut but the 'M-r-z' core is like 'March'.", kuttanReaction: "Adipoli! März is for March. Umlaut care venam — 'mairts' ennu parayanam. Gold star! ⭐" },
-              { text: "Mai", isCorrect: false, response: "No, 'Mai' is May! 'März' is the one for March.", kuttanReaction: "Vite machane! Confusion aayallo? Mai is May, März is March. Ithu randum different aanu! Try again! 🚫" },
+              { text: "März", isCorrect: true, response: "Correct! 'März' has the umlaut but the 'M-r-z' core is like 'March'.", peerReaction: "Adipoli! März is for March. Umlaut care venam — 'mairts' ennu parayanam. Gold star! ⭐" },
+              { text: "Mai", isCorrect: false, response: "No, 'Mai' is May! 'März' is the one for March.", peerReaction: "Vite machane! Confusion aayallo? Mai is May, März is March. Ithu randum different aanu! Try again! 🚫" },
             ],
           },
         ],
@@ -1187,7 +1191,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-4-spk2",
           type: "speaking",
-          question: "Repair Kuttan's mistake: he tells his cousin 'Ich habe im Montag Deutschkurs.' Days take 'am', not 'im'! Say the fixed sentence aloud: 'Ich habe am Montag Deutschkurs.'",
+          question: "Repair Meera's mistake: she tells her cousin 'Ich habe im Montag Deutschkurs.' Days take 'am', not 'im'! Say the fixed sentence aloud: 'Ich habe am Montag Deutschkurs.'",
           questionGerman: "Sprechen Sie laut: 'Ich habe am Montag Deutschkurs.'",
           correctAnswer: "Ich habe am Montag Deutschkurs",
           explanation: "'im' belongs to months (im Januar), 'am' to days (am Montag). Malayalam doesn't split these two, so drill the pair until it's automatic.",
@@ -1315,42 +1319,43 @@ export const MODULE_3: Module = {
       duration: "45 min",
       xpReward: 120,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
-          name: "Kuttan's home, Thrissur — family birthday calendar",
+          name: "Nivin's Kerala home study scene — family birthday calendar",
           sceneType: "home",
           timeOfDay: "evening",
-          description: "Kuttan sits with Amma's family calendar and writes birthdays in German. His cousin sends a voice note asking, 'Wann hast du Geburtstag?' The scene keeps the adult life skill — dates, birthdays, and forms — inside the Kerala A1 journey.",
+          description: "Nivin sits with Amma's family calendar and writes birthdays in German. His cousin sends a voice note asking, 'Wann hast du Geburtstag?' The scene keeps the adult life skill — dates, birthdays, and forms — inside the Kerala A1 journey.",
         },
         narrative: {
-          previousRecap: "You've learned German weekdays and months from the cousin's calendar. Now Kuttan uses dates for birthdays and forms.",
+          previousRecap: "You've learned German weekdays and months from the cousin's calendar. Now Nivin uses dates for birthdays and forms.",
           currentObjective: "Express dates correctly and use the essential verb 'haben'",
           nextTeaser: "Next: the final challenge! Scheduling a formal 'Termin' like a pro!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Birthdays in Germany are slightly different. Common sense rule: Never wish someone 'Happy Birthday' before the actual day — it's considered bad luck (Undaampori logic!).",
           "Date format nammude 'Tag.Monat.Jahr' (DD.MM.YYYY) thanneyaanu. So America-kkaare pole confuse aakenda.",
           "Pinne 'haben' verb. 'Ich habe... du hast...' Ithu 'sein' pole thanne super important aanu. Let's celebrate our progress!",
         ],
         vocabEncounters: [
-          { vocabId: "vocab3-5-1", encounterMoment: "The cousin's voice note asks: 'Wann hast du Geburtstag?' Kuttan answers with the month from the family calendar.", contextSentence: "Wann hast du Geburtstag?" },
-          { vocabId: "vocab3-5-2", encounterMoment: "Frau Weber checks a mock form: 'Welches Datum ist heute?' Kuttan needs to write it down correctly.", contextSentence: "Welches Datum ist heute?" },
-          { vocabId: "vocab3-5-3", encounterMoment: "Kuttan answers the birthday question: 'Ich habe im Januar Geburtstag.' He specifies the month with 'haben'.", contextSentence: "Ich habe im Januar Geburtstag." },
+          { vocabId: "vocab3-5-1", encounterMoment: "The cousin's voice note asks: 'Wann hast du Geburtstag?' Nivin answers with the month from the family calendar.", contextSentence: "Wann hast du Geburtstag?" },
+          { vocabId: "vocab3-5-2", encounterMoment: "Frau Fischer checks a mock form: 'Welches Datum ist heute?' Nivin needs to write it down correctly.", contextSentence: "Welches Datum ist heute?" },
+          { vocabId: "vocab3-5-3", encounterMoment: "Nivin answers the birthday question: 'Ich habe im Januar Geburtstag.' He specifies the month with 'haben'.", contextSentence: "Ich habe im Januar Geburtstag." },
           { vocabId: "vocab3-3-8", encounterMoment: "Amma adds a family note: 'Bitte pünktlich sein!' Even in Kerala practice, exact time matters.", contextSentence: "Pünktlich sein ist wichtig." },
-          { vocabId: "vocab3-5-4", encounterMoment: "Kuttan notes a German holiday in his notebook: 'Der erste Januar ist Neujahr.' The very first day of the year.", contextSentence: "Der erste Januar ist Neujahr." },
+          { vocabId: "vocab3-5-4", encounterMoment: "Nivin notes a German holiday in his notebook: 'Der erste Januar ist Neujahr.' The very first day of the year.", contextSentence: "Der erste Januar ist Neujahr." },
         ],
         decisionPoints: [
           {
             moment: "The cousin asks on voice note: 'Wann hast du Geburtstag?' Your birthday is on the 15th of August. How do you answer using the German date format?",
             options: [
-              { text: "Ich habe am fünfzehnten August Geburtstag.", isCorrect: true, response: "Perfect! You used the ordinal '-ten' ending and the correct month.", kuttanReaction: "Adipoli machane! 'fünfzehnte' becomes 'fünfzehnten' when you use 'am'. Real pro German vibe! 🎂" },
-              { text: "Ich bin August fünfzehn.", isCorrect: false, response: "The cousin laughs: 'Du BIST August? Und... August fünfzehn?' You're mixing English patterns, machane!", kuttanReaction: "Aiyyo! 'Ich habe' (I have) use cheyyeda! Pinne Month first parayalle — 'Tag.Monat' aanu rule. Try again! 😬" },
+              { text: "Ich habe am fünfzehnten August Geburtstag.", isCorrect: true, response: "Perfect! You used the ordinal '-ten' ending and the correct month.", peerReaction: "Adipoli machane! 'fünfzehnte' becomes 'fünfzehnten' when you use 'am'. Real pro German vibe! 🎂" },
+              { text: "Ich bin August fünfzehn.", isCorrect: false, response: "The cousin laughs: 'Du BIST August? Und... August fünfzehn?' You're mixing English patterns, machane!", peerReaction: "Aiyyo! 'Ich habe' (I have) use cheyyeda! Pinne Month first parayalle — 'Tag.Monat' aanu rule. Try again! 😬" },
             ],
           },
           {
             moment: "You want to say 'You have a cake'. Which conjugation of 'haben' is correct for 'du'?",
             options: [
-              { text: "Du hast einen Kuchen.", isCorrect: true, response: "Correct! 'Du hast' is the right form.", kuttanReaction: "Superb! 'Ich habe, du hast, er hat'. Pattern correctly catch cheythallo! Let's eat! 🍰" },
-              { text: "Du habst einen Kuchen.", isCorrect: false, response: "No, 'habst' is not a word. It's 'hast' — a bit irregular like 'bist'!", kuttanReaction: "Vite machane! 'haben' vowel-change pole small shortcut undu — it's 'hast', not 'habst'. Small mistake, big difference! Try again! 🚫" },
+              { text: "Du hast einen Kuchen.", isCorrect: true, response: "Correct! 'Du hast' is the right form.", peerReaction: "Superb! 'Ich habe, du hast, er hat'. Pattern correctly catch cheythallo! Let's eat! 🍰" },
+              { text: "Du habst einen Kuchen.", isCorrect: false, response: "No, 'habst' is not a word. It's 'hast' — a bit irregular like 'bist'!", peerReaction: "Vite machane! 'haben' vowel-change pole small shortcut undu — it's 'hast', not 'habst'. Small mistake, big difference! Try again! 🚫" },
             ],
           },
         ],
@@ -1425,7 +1430,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-1",
           type: "fill-blank",
-          question: "At Goethe Kochi, Kuttan fills in his birthday sentence for Frau Weber: Ich _____ am fünften März Geburtstag. (I have...)",
+          question: "At Goethe Kochi, Nivin fills in his birthday sentence for Frau Fischer: Ich _____ am fünften März Geburtstag. (I have...)",
           options: ["habe", "bin", "ist", "hat"],
           correctAnswer: "habe",
           explanation: "'Ich habe Geburtstag' = I have my birthday. 'Haben' with 'ich' = 'habe'.",
@@ -1434,7 +1439,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-2",
           type: "fill-blank",
-          question: "Frau Weber drills Kuttan before the birthday role-play: ich habe, du _____, er hat.",
+          question: "Frau Fischer drills Nivin before the birthday role-play: ich habe, du _____, er hat.",
           options: ["hast", "habe", "hat", "haben"],
           correctAnswer: "hast",
           explanation: "'Haben' conjugation: ich habe, du hast, er/sie/es hat.",
@@ -1443,7 +1448,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-3",
           type: "fill-blank",
-          question: "Kuttan reads the date on the Goethe Kochi classroom board: Heute ist der _____ Mai. (Today is the 3rd of May.)",
+          question: "Nivin reads the date on the Goethe Kochi classroom board: Heute ist der _____ Mai. (Today is the 3rd of May.)",
           options: ["dritte", "dreite", "drei", "dritten"],
           correctAnswer: "dritte",
           explanation: "'Dritte' = third. It's irregular — not 'dreite'. Used for dates: 'der dritte Mai' = the 3rd of May.",
@@ -1452,7 +1457,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-4",
           type: "fill-blank",
-          question: "At the Kerala birthday calendar activity, Priya asks Kuttan: Wann _____ du Geburtstag? — When is your birthday?",
+          question: "At the Kerala birthday calendar activity, Priya asks Nivin: Wann _____ du Geburtstag? — When is your birthday?",
           options: ["hast", "habe", "hat", "bist"],
           correctAnswer: "hast",
           explanation: "'Wann hast du Geburtstag?' uses 'du hast' (you have). German says 'you have birthday' not 'your birthday is'.",
@@ -1461,7 +1466,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-5",
           type: "matching",
-          question: "Frau Weber points to Kuttan's Goethe Kochi date cards. Match the ordinal numbers:",
+          question: "Frau Fischer points to Nivin's Goethe Kochi date cards. Match the ordinal numbers:",
           options: ["erste → first", "zweite → second", "dritte → third", "achte → eighth"],
           correctAnswer: ["erste → first", "zweite → second", "dritte → third", "achte → eighth"],
           explanation: "Erste, zweite, dritte, and achte are all irregular ordinal numbers in German.",
@@ -1498,7 +1503,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-5-spk2",
           type: "speaking",
-          question: "Repair time: Kuttan announces 'Ich habe am Juni Geburtstag.' Months take 'im', not 'am'! Say it right: 'Ich habe im Juni Geburtstag.'",
+          question: "Repair time: Nivin announces 'Ich habe am Juni Geburtstag.' Months take 'im', not 'am'! Say it right: 'Ich habe im Juni Geburtstag.'",
           questionGerman: "Sprechen Sie laut: 'Ich habe im Juni Geburtstag.'",
           correctAnswer: "Ich habe im Juni Geburtstag",
           explanation: "am Montag (day) but im Juni (month). One small word, one exam mark — and one confused examiner avoided.",
@@ -1572,18 +1577,19 @@ export const MODULE_3: Module = {
       duration: "45 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Goethe Kochi classroom — appointment desk role-play",
           sceneType: "office",
           timeOfDay: "morning",
-          description: "Frau Weber sets up a reception desk and gives Kuttan a mock appointment card. He has to ask for a Termin using the right day, time, and politeness. This prepares him for Germany without moving the A1 story out of Kerala.",
+          description: "Frau Fischer sets up a reception desk and gives Meera a mock appointment card. She has to ask for a Termin using the right day, time, and politeness. This prepares her for Germany without moving the A1 story out of Kerala.",
         },
         narrative: {
-          previousRecap: "You've practiced birthdays and dates. Now Kuttan has to combine days, times, and polite German in a formal appointment role-play.",
+          previousRecap: "You've practiced birthdays and dates. Now Meera has to combine days, times, and polite German in a formal appointment role-play.",
           currentObjective: "Schedule a professional meeting using specific time and date prepositions",
           nextTeaser: "Congratulations! Module 3 complete. Next: I am hungry! Time to learn about food and shopping!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Germany-il 'Termin' paranjaal athu oru holy thing poleyaanu. Without a Termin, you can't see a doctor, open a bank account, or sometimes even get a haircut!",
           "Ivide preposition care venam. Days-in 'am' (Am Montag), Time-in 'um' (Um zehn Uhr). Pinne 'von... bis' (from... to) duration parayan super aanu.",
           "Be polite, be pünktlich, and be clear. Let's get that appointment set! Ready alle?",
@@ -1599,15 +1605,15 @@ export const MODULE_3: Module = {
           {
             moment: "The receptionist offers: 'Dienstag um zehn Uhr oder Mittwoch um vierzehn Uhr?' Which one works for 'Tuesday at 10:00'?",
             options: [
-              { text: "Dienstag um zehn Uhr.", isCorrect: true, response: "Correct! She writes it down. 'Abgemacht! Dienstag um zehn.'", kuttanReaction: "Adipoli! Selasaicha (Tuesday) 10 mani. Correct aayi pick cheythallo! 'Dienstag' is Tuesday. 🎯" },
-              { text: "Mittwoch um vierzehn Uhr.", isCorrect: false, response: "Wait! That's Wednesday at 2 PM. You wanted Tuesday!", kuttanReaction: "Aiyyo! 'Mittwoch' is Wednesday, machane! Tuesday 'Dienstag' aanu. Day maari poyal doctor-ne kaanan pattilla! Try again! 😬" },
+              { text: "Dienstag um zehn Uhr.", isCorrect: true, response: "Correct! She writes it down. 'Abgemacht! Dienstag um zehn.'", peerReaction: "Adipoli! Selasaicha (Tuesday) 10 mani. Correct aayi pick cheythallo! 'Dienstag' is Tuesday. 🎯" },
+              { text: "Mittwoch um vierzehn Uhr.", isCorrect: false, response: "Wait! That's Wednesday at 2 PM. You wanted Tuesday!", peerReaction: "Aiyyo! 'Mittwoch' is Wednesday, machane! Tuesday 'Dienstag' aanu. Day maari poyal doctor-ne kaanan pattilla! Try again! 😬" },
             ],
           },
           {
             moment: "How do you say 'On Monday at three o'clock' using the correct prepositions?",
             options: [
-              { text: "Am Montag um drei Uhr.", isCorrect: true, response: "Perfect prepositions! 'Am' for days, 'um' for time.", kuttanReaction: "Mass machane! 'Am' and 'Um' pair perfectly catch cheythu. Ithanu basic grammar rules! Well done! 🔥" },
-              { text: "Um Montag am drei Uhr.", isCorrect: false, response: "No, you swapped them! 'Am' is for the day, 'um' is for the time.", kuttanReaction: "Vite machane! Prepositions maari poyi. 'Am' for Days (Monday), 'Um' for Time (3:00). Swap it back! 🚫" },
+              { text: "Am Montag um drei Uhr.", isCorrect: true, response: "Perfect prepositions! 'Am' for days, 'um' for time.", peerReaction: "Mass machane! 'Am' and 'Um' pair perfectly catch cheythu. Ithanu basic grammar rules! Well done! 🔥" },
+              { text: "Um Montag am drei Uhr.", isCorrect: false, response: "No, you swapped them! 'Am' is for the day, 'um' is for the time.", peerReaction: "Vite machane! Prepositions maari poyi. 'Am' for Days (Monday), 'Um' for Time (3:00). Swap it back! 🚫" },
             ],
           },
         ],
@@ -1747,7 +1753,7 @@ export const MODULE_3: Module = {
         {
           id: "ex3-6-prod-speaking",
           type: "speaking",
-          question: "Repair Kuttan's booking: he tells the receptionist 'Der Termin ist am zehn Uhr.' Clock times take 'um'! Say the fixed sentence aloud: 'Der Termin ist um zehn Uhr.'",
+          question: "Repair Meera's booking: she tells the receptionist 'Der Termin ist am zehn Uhr.' Clock times take 'um'! Say the fixed sentence aloud: 'Der Termin ist um zehn Uhr.'",
           questionGerman: "Sprechen Sie laut: 'Der Termin ist um zehn Uhr.'",
           correctAnswer: "Der Termin ist um zehn Uhr",
           explanation: "The trio to drill: am Montag (day), im Juni (month), um zehn Uhr (clock time). Mix them up and the Termin happens without you.",

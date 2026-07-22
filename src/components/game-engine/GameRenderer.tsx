@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight, BookOpen, Headphones, RotateCcw, Volume2, X } from 'lucide-react';
-import { KuttanImage, type KuttanMoodImage } from '@/components/character/KuttanImage';
+import { PeerImage } from '@/components/character/PeerImage';
+import type { NivinMoodImage } from '@/components/character/NivinImage';
 import { BubblePop, FreeTextInput, QuizShow, WordBank } from '@/components/exercise-games';
 import { Confetti, GameButton } from '@/components/game';
 import { SpeakButton } from '@/components/speaking';
@@ -108,7 +109,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
       feedbackCombo(nextCombo);
       setConfetti(true);
       window.setTimeout(() => setConfetti(false), 700);
-      setChoiceResult({ correct: true, response: choice.response, mood: choice.kuttanMood });
+      setChoiceResult({ correct: true, response: choice.response, mood: choice.peerMood });
       window.setTimeout(advance, 1100);
       return;
     }
@@ -117,7 +118,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
     else feedbackWrong();
     setCombo(0);
     setRepairCount((value) => value + 1);
-    setChoiceResult({ correct: false, response: choice.response, mood: choice.kuttanMood });
+    setChoiceResult({ correct: false, response: choice.response, mood: choice.peerMood });
   }, [advance, combo, countMomentOnce, moment]);
 
   useEffect(() => {
@@ -209,7 +210,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
 
             {moment.type === 'reaction' && (
               <div className="mx-auto flex max-w-md items-end gap-3">
-                <KuttanImage mood={moment.kuttan?.mood || 'happy'} size="sm" animate />
+                <PeerImage peer={moment.peer?.id ?? 'nivin'} mood={moment.peer?.mood || 'happy'} size="sm" animate />
                 <div className="rounded-2xl rounded-bl-sm border border-white/10 bg-black/55 px-4 py-3 backdrop-blur-xl">
                   <p className="text-sm font-bold text-[#d4a520]">{moment.dialogue?.text}</p>
                 </div>
@@ -284,8 +285,9 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
             {moment.type === 'dialogue' && moment.dialogue && (
               <div className="mx-auto max-w-md">
                 <div className="mb-4 flex items-end gap-3">
-                  <KuttanImage
-                    mood={choiceResult ? choiceResult.mood as KuttanMoodImage : moment.kuttan?.mood || 'thinking'}
+                  <PeerImage
+                    peer={moment.peer?.id ?? 'nivin'}
+                    mood={choiceResult ? choiceResult.mood as NivinMoodImage : moment.peer?.mood || 'thinking'}
                     size="sm"
                     animate
                   />
@@ -359,7 +361,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
               const vocabCount = moments.reduce((count, item) => count + (item.vocabList?.length || 0), 0);
               return (
                 <div className="mx-auto flex max-w-md flex-col items-center text-center">
-                  <KuttanImage mood="celebrating" size="xl" animate />
+                  <PeerImage peer={moment.peer?.id ?? 'nivin'} mood="celebrating" size="xl" animate />
                   <p className="mt-3 text-[11px] font-black uppercase tracking-[0.18em] text-[#d4a520]">Ability unlocked</p>
                   <h2 className="mt-1 text-3xl font-black text-white">Lesson proved.</h2>
                   <p className="mt-2 max-w-sm text-sm font-semibold leading-relaxed text-white/70">{moment.dialogue?.text}</p>

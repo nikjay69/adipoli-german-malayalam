@@ -40,7 +40,7 @@ Fail/recovery gate:
 
 Items:
 
-1. `Guten Morgen.` → expected safe reply: `Guten Morgen.` / `Guten Morgen, Frau Weber.`
+1. `Guten Morgen.` → expected safe reply: `Guten Morgen.` / `Guten Morgen, Frau Fischer.`
 2. `Guten Tag.` → `Guten Tag.`
 3. `Guten Abend.` → `Guten Abend.`
 4. `Auf Wiedersehen.` → `Auf Wiedersehen.`
@@ -59,7 +59,7 @@ Weakness tags:
 **Task:** Say aloud:
 
 ```text
-Guten Morgen, Frau Weber.
+Guten Morgen, Frau Fischer.
 Ich lerne Deutsch.
 Auf Wiedersehen.
 ```
@@ -153,7 +153,7 @@ Score booster, 15m:
 
 Must-do recovery, 10m:
 
-1. Repeat `Guten Morgen, Frau Weber.` 5 times.
+1. Repeat `Guten Morgen, Frau Fischer.` 5 times.
 2. Repeat `Ja. Ich lerne Deutsch.` 5 times.
 3. Self-record or say aloud once without looking.
 4. Retest with one teacher prompt.

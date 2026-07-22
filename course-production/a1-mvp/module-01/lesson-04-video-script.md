@@ -1,6 +1,6 @@
 # Module 1 · Lesson 04 Video Script — Formal Greetings by Time and Context
 
-Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs)
+Updated: 2026-06-10 (quality pass: honest length, Meera thread, recording specs)
 
 **Purpose:** Learners choose and answer safe greetings in formal A1 situations.
 
@@ -9,8 +9,8 @@ Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs
 **Recording spec (applies to every drill/pause in this script):**
 
 - Every practice pause: model audio → `[PAUSE 3s]` silence → model audio again. Writing pauses: `[PAUSE 15s]`.
-- All Frau Weber / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
-- Frau Weber appears in a video-call frame or at the Goethe Kochi desk. Kuttan and the learner are always physically in Kerala.
+- All Frau Fischer / model German lines are pre-rendered German audio (never browser SpeechSynthesis). Boss reacts to playback; he does not voice the German models.
+- Frau Fischer appears in a video-call frame or at the Goethe Kochi desk. Meera and the learner are in the Kerala practice setting.
 
 **Target length:** 20 minutes. Dense, no filler — every block earns its minutes.
 
@@ -20,15 +20,15 @@ Updated: 2026-06-10 (quality pass: honest length, Kuttan thread, recording specs
 
 ## 0:00–0:45 — Hook: one wrong greeting can feel awkward
 
-**Scene:** Goethe Kochi practice desk. Clock shows 9:00. Kuttan walks in; Frau Weber is at the desk.
+**Scene:** Goethe Kochi practice desk. Clock shows 9:00. Meera walks in; Frau Fischer is at the desk.
 
 **Audio / on-screen German (pre-rendered):**
 
-> Frau Weber: **Guten Morgen.**
+> Frau Fischer: **Guten Morgen.**
 
 **Practice pause:**
 
-> Reply aloud (as Kuttan): **Guten Morgen, Frau Weber.**
+> Reply aloud (as Meera): **Guten Morgen, Frau Fischer.**
 
 Model audio → `[PAUSE 3s]` → model audio again.
 
@@ -68,20 +68,20 @@ Model audio → `[PAUSE 3s]` → model audio again.
 
 ## 2:45–4:45 — Morning: `Guten Morgen`
 
-**Teaching point:** Use `Guten Morgen` in the morning. Reply with the same greeting. Add `Frau Weber` when addressing the teacher politely.
+**Teaching point:** Use `Guten Morgen` in the morning. Reply with the same greeting. Add `Frau Fischer` when addressing the teacher politely.
 
-**On-screen scene (Kuttan's 9 AM class in Kochi):**
+**On-screen scene (Meera's 9 AM class in Kochi):**
 
 ```text
 9:00 AM
-Frau Weber: Guten Morgen.
-Kuttan: Guten Morgen, Frau Weber.
+Frau Fischer: Guten Morgen.
+Meera: Guten Morgen, Frau Fischer.
 ```
 
 **Practice prompts (×2 each — prompt audio → `[PAUSE 3s]` → model answer audio):**
 
 1. Teacher at 8 AM: **Guten Morgen.** → **Guten Morgen.**
-2. Frau Weber at class start: **Guten Morgen.** → **Guten Morgen, Frau Weber.**
+2. Frau Fischer at class start: **Guten Morgen.** → **Guten Morgen, Frau Fischer.**
 3. Examiner morning slot: **Guten Morgen.** → **Guten Morgen.**
 
 ---
@@ -95,7 +95,7 @@ Kuttan: Guten Morgen, Frau Weber.
 ```text
 Goethe exam desk
 Examiner: Guten Tag.
-Kuttan: Guten Tag.
+Meera: Guten Tag.
 ```
 
 **Context sorting, on screen:**
@@ -133,7 +133,7 @@ Meeting at 7 PM: Gute Nacht. ❌
 
 [Boss explains in Malayalam/Manglish: Malayali learners sometimes translate “good night” as evening greeting. In German, be careful.]
 
-**Scene:** Kuttan arrives at his 7 PM evening batch in Kochi, almost says the wrong one.
+**Scene:** Meera arrives at her 7 PM evening batch in Kochi, almost says the wrong one.
 
 **Repair drill:**
 
@@ -166,32 +166,32 @@ Repeat ×3 (each: model audio → `[PAUSE 3s]` → model audio again):
 
 [Boss explains in Malayalam/Manglish: For A1 exam speaking, use the safer formal goodbye unless the scene is clearly casual.]
 
-**Dialogue (Kuttan leaving the Goethe Kochi desk):**
+**Dialogue (Meera leaving the Goethe Kochi desk):**
 
 ```text
-Frau Weber: Auf Wiedersehen.
-Kuttan: Auf Wiedersehen, Frau Weber.
+Frau Fischer: Auf Wiedersehen.
+Meera: Auf Wiedersehen, Frau Fischer.
 ```
 
 **Practice pause (×2):**
 
-> Say: **Auf Wiedersehen, Frau Weber.**
+> Say: **Auf Wiedersehen, Frau Fischer.**
 
 Model audio → `[PAUSE 3s]` → model audio again.
 
 ---
 
-## 12:45–17:45 — Eight prompts: one day in Kuttan's life
+## 12:45–17:45 — Eight prompts: one day in Meera's life
 
 **Frame:** One full day, morning to night, all in Kochi: 9 AM class → 2 PM Goethe Kochi mock → 7 PM evening batch → leaving.
 
-**Prompt modality (locked for recording):** Prompts 1–4 = audio prompts (Frau Weber voice, pre-rendered). Prompts 5–8 = text cards on screen.
+**Prompt modality (locked for recording):** Prompts 1–4 = audio prompts (Frau Fischer voice, pre-rendered). Prompts 5–8 = text cards on screen.
 
 **Instruction:** Listen to / read the situation. Say the greeting aloud. Each prompt: prompt → `[PAUSE 3s]` → model answer audio.
 
-**Audio prompts (Frau Weber voice):**
+**Audio prompts (Frau Fischer voice):**
 
-1. 9 AM, class in Kochi, teacher enters: → **Guten Morgen, Frau Weber.**
+1. 9 AM, class in Kochi, teacher enters: → **Guten Morgen, Frau Fischer.**
 2. 11 AM, leaving doctor reception: → **Auf Wiedersehen.**
 3. 2 PM, Goethe Kochi mock, examiner: → **Guten Tag.**
 4. 2 PM, Goethe Kochi office counter, unknown adult: → **Guten Tag.**
@@ -201,7 +201,7 @@ Model audio → `[PAUSE 3s]` → model audio again.
 5. 4 PM, friend waves across the street: **Hallo.** → **Hallo.**
 6. 4 PM, leaving friend: → **Tschüss.**
 7. 7 PM, evening batch starts: → **Guten Abend.**
-8. 9 PM, Frau Weber says goodbye: → **Auf Wiedersehen, Frau Weber.**
+8. 9 PM, Frau Fischer says goodbye: → **Auf Wiedersehen, Frau Fischer.**
 
 **Presenter:**
 
@@ -273,5 +273,5 @@ Next: politeness survival
 
 - Use clocks/scene cards instead of long explanation; the 8-prompt day needs one timeline graphic (9 AM → 9 PM, all Kochi).
 - Keep formal/casual distinction practical; no `du/Sie` grammar lecture yet.
-- Prompt modality is locked above: 1–4 audio (Frau Weber voice, pre-rendered), 5–8 text cards. Hören must start early.
-- All scenes are Kerala (Kochi class, Goethe Kochi desk); Frau Weber only at the desk or in a call frame.
+- Prompt modality is locked above: 1–4 audio (Frau Fischer voice, pre-rendered), 5–8 text cards. Hören must start early.
+- All scenes are Kerala (Kochi class, Goethe Kochi desk); Frau Fischer only at the desk or in a call frame.

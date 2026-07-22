@@ -67,9 +67,10 @@ function Module2FinalSelfIntroMissionContent() {
         {step === 1 && (
           <ConversationSceneStep
             title="Final prompt."
-            speakerName="Frau Weber"
+            speakerName="Frau Fischer"
             speakerLine="Stellen Sie sich bitte vor."
-            learnerName="You"
+            learnerName="Meera"
+            learnerPeer="meera"
             learnerLine="Guten Tag. Ich heiße …"
             audioSrc={audioSources.examiner}
             onFinished={() => setHeard(true)}
@@ -109,10 +110,10 @@ function Module2FinalSelfIntroMissionContent() {
             prompt="Hear it once. Say your version. Then fix the one exam trap."
             audioSrc={audioSources.modelFull}
             audioLabel="Full intro"
-            modelText="Guten Tag. Ich heiße Kuttan. Ich komme aus Kerala. Ich spreche Malayalam und Englisch."
+            modelText="Guten Tag. Ich heiße Meera. Ich komme aus Kerala. Ich spreche Malayalam und Englisch."
             options={[
               { id: 'mixed', title: 'Ich bin komme aus Kerala.', subtitle: 'English-transfer mistake.' },
-              { id: 'clean-verbs', title: 'Ich heiße Kuttan. Ich komme aus Kerala.', subtitle: 'One clean verb per sentence.' },
+              { id: 'clean-verbs', title: 'Ich heiße Meera. Ich komme aus Kerala.', subtitle: 'One clean verb per sentence.' },
             ]}
             value={repairChoice}
             onChange={setRepairChoice}

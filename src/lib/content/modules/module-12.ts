@@ -24,6 +24,7 @@ export const MODULE_12: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Main Park (Im Park)",
           sceneType: "station",
@@ -35,7 +36,7 @@ export const MODULE_12: Module = {
           currentObjective: "Describe your personal hobbies and express likes/dislikes using 'gern'",
           nextTeaser: "Next: The Weather! Let's see if we can handle a German winter!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! 'Freizeit' (free time) is sacred in Germany. People wait for the weekend to do what they love. Nammude main tool 'gern' (to like) aanu. 'Ich lese gern' (I like reading).",
           "Germany-yil 'Fußball' (football) is like a religion, similar to Cricket in Kerala. Oru 'Verein' (club) illathe keralam illa, ithengine undallo?",
           "Pinne 'Sport treiben' ennu parayumbol, regular physical activity ennu mean cheyyunnu — gym or jogging. Let's find out what everyone's doing!",
@@ -50,15 +51,15 @@ export const MODULE_12: Module = {
           {
             moment: "You want to say 'I like swimming'. Where do you place 'gern'?",
             options: [
-              { text: "Ich schwimme gern.", isCorrect: true, response: "Exactly! 'gern' goes after the verb.", kuttanReaction: "Adipoli! Word order logic perfectly capture cheythallo! 🔥" },
-              { text: "Ich gern schwimme.", isCorrect: false, response: "Aiyyo! In German, 'gern' cannot come before the verb in a standard sentence.", kuttanReaction: "Vite machane! Verb configuration sradhikkanne. Try again! 😬" },
+              { text: "Ich schwimme gern.", isCorrect: true, response: "Exactly! 'gern' goes after the verb.", peerReaction: "Adipoli! Word order logic perfectly capture cheythallo! 🔥" },
+              { text: "Ich gern schwimme.", isCorrect: false, response: "Aiyyo! In German, 'gern' cannot come before the verb in a standard sentence.", peerReaction: "Vite machane! Verb configuration sradhikkanne. Try again! 😬" },
             ],
           },
           {
             moment: "A German friend asks if you want to join a 'Cricket-Verein'. What are they inviting you to?",
             options: [
-              { text: "A formal Cricket club.", isCorrect: true, response: "Correct! 'Verein' is a registered club or association.", kuttanReaction: "Superb! German club culture correct aayi pick cheythallo! ⭐" },
-              { text: "A casual meeting in the park.", isCorrect: false, response: "No! A 'Verein' implies a formal structure with membership and regular play.", kuttanReaction: "Aiyyo! 'Verein' indicates a formal club. Try again! 🚫" },
+              { text: "A formal Cricket club.", isCorrect: true, response: "Correct! 'Verein' is a registered club or association.", peerReaction: "Superb! German club culture correct aayi pick cheythallo! ⭐" },
+              { text: "A casual meeting in the park.", isCorrect: false, response: "No! A 'Verein' implies a formal structure with membership and regular play.", peerReaction: "Aiyyo! 'Verein' indicates a formal club. Try again! 🚫" },
             ],
           },
         ],
@@ -189,7 +190,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-1",
           type: "fill-blank",
-          question: "At the Kerala park, Kuttan points to the football game. Complete: Ich spiele _____ Fußball. (I like playing football.)",
+          question: "At the Kerala park, Nivin points to the football game. Complete: Ich spiele _____ Fußball. (I like playing football.)",
           options: ["gern", "nicht", "gut", "viel"],
           correctAnswer: "gern",
           explanation: "'Gern' (gladly/with pleasure) is placed after the verb to express that you like doing something.",
@@ -198,7 +199,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-2",
           type: "multiple-choice",
-          question: "Kuttan is honest after a hostel cooking attempt. How do you say 'I don't like cooking' in German?",
+          question: "Nivin is honest after a hostel cooking attempt. How do you say 'I don't like cooking' in German?",
           options: ["Ich koche nicht gern.", "Ich koche gern nicht.", "Ich nicht koche gern.", "Ich gern koche nicht."],
           correctAnswer: "Ich koche nicht gern.",
           explanation: "'Nicht gern' goes after the verb: Ich koche nicht gern.",
@@ -216,7 +217,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-4",
           type: "multiple-choice",
-          question: "During Goethe Kochi speaking practice, Frau Weber asks: 'Treibst du Sport?' What does she mean?",
+          question: "During Goethe Kochi speaking practice, Frau Fischer asks: 'Treibst du Sport?' What does she mean?",
           options: ["Do you do sports?", "Do you play football?", "Do you like sports?", "Are you sporty?"],
           correctAnswer: "Do you do sports?",
           explanation: "'Sport treiben' is the idiomatic way to say 'engage in sports'. While you 'play' (spielen) football, you 'practice/do' (treiben) sports in general—like gym, swimming, or yoga.",
@@ -225,7 +226,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-5",
           type: "free-text",
-          question: "Headphones in, world out — Kuttan's default state. Type it in German: 'I like listening to music.' (hören, gern, die Musik):",
+          question: "Headphones in, world out — Nivin's default state. Type it in German: 'I like listening to music.' (hören, gern, die Musik):",
           correctAnswer: "Ich höre gern Musik",
           explanation: "Verb-Second Rule: Subject (Ich) + Verb (höre) + gern + Object (Musik). Grammatically, the 'gern' describes how you listen.",
           xpReward: 30
@@ -233,7 +234,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-6",
           type: "type-answer",
-          question: "Kuttan asks about your Sunday after class: 'Was machst du in deiner ___?' Type the compound word (free time):",
+          question: "Nivin asks about your Sunday after class: 'Was machst du in deiner ___?' Type the compound word (free time):",
           correctAnswer: "Freizeit",
           explanation: "Frei (free) + Zeit (time). Simple compound! In Germany, your 'Freizeit' is protected by law — work-life balance is a real thing there.",
           xpReward: 15
@@ -258,7 +259,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-10",
           type: "free-text",
-          question: "Turn the interrogation around on Kuttan — type in German: 'What is your hobby?' (informal du):",
+          question: "Turn the interrogation around on Nivin — type in German: 'What is your hobby?' (informal du):",
           correctAnswer: "Was ist dein Hobby",
           explanation: "'Was ist dein Hobby?' — the friendly version. To an examiner it would be 'Was ist Ihr Hobby?'",
           xpReward: 30
@@ -277,7 +278,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-1-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: at the pool he declares 'Ich schwimmen gern.' The ich-form needs its -e! Say it right: 'Ich schwimme gern.'",
+          question: "Repair Nivin's slip: at the pool he declares 'Ich schwimmen gern.' The ich-form needs its -e! Say it right: 'Ich schwimme gern.'",
           questionGerman: "Sprechen Sie laut: 'Ich schwimme gern.'",
           correctAnswer: "Ich schwimme gern",
           explanation: "ich schwimmE, du schwimmST, er schwimmT — dropping the ending and speaking in infinitives is the most audible beginner tell there is. One -e fixes it.",
@@ -307,6 +308,7 @@ export const MODULE_12: Module = {
       duration: "55 min",
       xpReward: 140,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "WG Balcony (Auf dem Balkon)",
           sceneType: "home",
@@ -318,7 +320,7 @@ export const MODULE_12: Module = {
           currentObjective: "Identify various weather conditions and seasons and describe the temperature",
           nextTeaser: "Next: Making plans! Let's see if the rain stops us from going out!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! German weather is legendary for being unpredictable. 'Es regnet' (it rains) is most common, but 'Es schneit' (it snows) is the real hero!",
           "Nammude seasons-um Germany-yile 'Jahreszeiten' (seasons) different aanu. Winter-il 0 degrees common aanu. Cold alert is real!",
           "Fun fact: Germans 30 degrees choodayirikumpol 'Es ist heiß!' (it is hot) ennu parayum. Malayalis-inu ithu normal climate aanu. Let's check the forecast!",
@@ -333,15 +335,15 @@ export const MODULE_12: Module = {
           {
             moment: "You see the first snow falling. How do you describe it in German?",
             options: [
-              { text: "Es schneit.", isCorrect: true, response: "Exactly! 'schneien' is the verb for snowing.", kuttanReaction: "Adipoli! Snow logic perfectly capture cheythallo! ❄️" },
-              { text: "Es regnet.", isCorrect: false, response: "Aiyyo! 'Regnen' is rain. Snow logic is 'schneien'.", kuttanReaction: "Vite machane! White powder snow aanu, rain alla. Try again! 😬" },
+              { text: "Es schneit.", isCorrect: true, response: "Exactly! 'schneien' is the verb for snowing.", peerReaction: "Adipoli! Snow logic perfectly capture cheythallo! ❄️" },
+              { text: "Es regnet.", isCorrect: false, response: "Aiyyo! 'Regnen' is rain. Snow logic is 'schneien'.", peerReaction: "Vite machane! White powder snow aanu, rain alla. Try again! 😬" },
             ],
           },
           {
             moment: "It's a hot July day, 32°C. How do you describe the temperature?",
             options: [
-              { text: "Es ist heiß.", isCorrect: true, response: "Correct! Even for a Malayali, 32°C in Germany feels hot because of the humidity and lack of AC.", kuttanReaction: "Superb! German summer logic correctly picked! ⭐" },
-              { text: "Es ist kalt.", isCorrect: false, response: "No! 'kalt' is for winter. 32°C is definitely not cold!", kuttanReaction: "Aiyyo! Kalt logic winter-inu vendi ulla thaannu. Try again! 🚫" },
+              { text: "Es ist heiß.", isCorrect: true, response: "Correct! Even for a Malayali, 32°C in Germany feels hot because of the humidity and lack of AC.", peerReaction: "Superb! German summer logic correctly picked! ⭐" },
+              { text: "Es ist kalt.", isCorrect: false, response: "No! 'kalt' is for winter. 32°C is definitely not cold!", peerReaction: "Aiyyo! Kalt logic winter-inu vendi ulla thaannu. Try again! 🚫" },
             ],
           },
         ],
@@ -467,7 +469,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-2-1",
           type: "multiple-choice",
-          question: "The monsoon hammers the Goethe Kochi roof mid-lesson. Frau Weber points at the window: 'Na, wie sagt man das auf Deutsch?' Which line is it?",
+          question: "The monsoon hammers the Goethe Kochi roof mid-lesson. Frau Fischer points at the window: 'Na, wie sagt man das auf Deutsch?' Which line is it?",
           options: ["Es regnet.", "Es schneit.", "Es ist sonnig.", "Es windet."],
           correctAnswer: "Es regnet.",
           explanation: "Weather uses the dummy subject 'Es' (it): 'Es regnet' = it rains. If any class on earth can feel this sentence, it's one in Kerala.",
@@ -476,7 +478,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-2-2",
           type: "type-answer",
-          question: "Kuttan sketches Kerala's two seasons versus Germany's four — Frühling, Sommer, Herbst, Winter — and notices they all share ONE article. Type it:",
+          question: "Meera sketches Kerala's two seasons versus Germany's four — Frühling, Sommer, Herbst, Winter — and notices they all share ONE article. Type it:",
           correctAnswer: "der",
           explanation: "All four seasons are MASCULINE: der Frühling, der Sommer, der Herbst, der Winter. Seasons are the kings of the year — always 'der'.",
           xpReward: 15
@@ -536,7 +538,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-2-10",
           type: "free-text",
-          question: "Kuttan ends the call smug: it's pouring in BOTH countries. Type his line in German — 'It is raining in Germany.':",
+          question: "Meera ends the call smug: it's pouring in BOTH countries. Type her line in German — 'It is raining in Germany.':",
           correctAnswer: "Es regnet in Deutschland",
           explanation: "'Es regnet' is the standard weather phrase, followed by the location. Same sky, same sentence shape.",
           xpReward: 30
@@ -555,7 +557,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-2-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: dreaming of German summers, he says 'Im Sommer ich schwimme gern.' Time word first means the verb comes NEXT, then ich! Say it right: 'Im Sommer schwimme ich gern.'",
+          question: "Repair Meera's slip: dreaming of German summers, she says 'Im Sommer ich schwimme gern.' Time word first means the verb comes NEXT, then ich! Say it right: 'Im Sommer schwimme ich gern.'",
           questionGerman: "Sprechen Sie laut: 'Im Sommer schwimme ich gern.'",
           correctAnswer: "Im Sommer schwimme ich gern",
           explanation: "Start with a time phrase and German flips subject and verb: Im Sommer SCHWIMME ICH. Forgetting the inversion is the #1 slip once sentences get ambitious — and Sprechen Teil 2 answers almost always start with a time word.",
@@ -588,6 +590,7 @@ export const MODULE_12: Module = {
       duration: "55 min",
       xpReward: 140,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "WG Kitchen (In der Küche)",
           sceneType: "home",
@@ -599,7 +602,7 @@ export const MODULE_12: Module = {
           currentObjective: "Suggest and respond to plans using 'Hast du Lust...?' and 'Wollen wir...?'",
           nextTeaser: "Next: Formal Invitations! Let's see how we handle a party invite!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Friends-ne invite cheyyaan 'Hast du Lust...?' (Have you desire / Do you feel like...?) is the most natural way. 'Hast du Lust, Pizza zu essen?'.",
           "Pinne 'Wollen wir...?' (Shall we...?) oru straight invitation aanu. Agreement-inu 'Klar!' or 'Ja, gern!' use cheyyaam.",
           "Sunday warning: Remember, shops and supermarkets Germany-yil Sunday closed aanu. So plan all your activities for Saturday! Let's get out there!",
@@ -614,15 +617,15 @@ export const MODULE_12: Module = {
           {
             moment: "Arjun asks 'Hast du Lust, ins Kino zu gehen?'. You really want to go. How do you respond?",
             options: [
-              { text: "Ja, gern! Wann denn?", isCorrect: true, response: "Exactly! 'Ja, gern' is a enthusiastic acceptance.", kuttanReaction: "Adipoli! Social logic perfectly capture cheythallo! 🔥" },
-              { text: "Nein, danke.", isCorrect: false, response: "Aiyyo! 'Nein, danke' is a polite no, but you wanted to go!", kuttanReaction: "Vite machane! Confused aano? Accept cheyyanne. Try again! 😬" },
+              { text: "Ja, gern! Wann denn?", isCorrect: true, response: "Exactly! 'Ja, gern' is a enthusiastic acceptance.", peerReaction: "Adipoli! Social logic perfectly capture cheythallo! 🔥" },
+              { text: "Nein, danke.", isCorrect: false, response: "Aiyyo! 'Nein, danke' is a polite no, but you wanted to go!", peerReaction: "Vite machane! Confused aano? Accept cheyyanne. Try again! 😬" },
             ],
           },
           {
             moment: "You want to suggest eating at a restaurant with 'Wollen'. Which is correct?",
             options: [
-              { text: "Wollen wir ins Restaurant gehen?", isCorrect: true, response: "Correct! 'Wollen wir' starts the question.", kuttanReaction: "Superb! Question structure correct aayi pick cheythallo. ⭐" },
-              { text: "Wir wollen ins Restaurant gehen?", isCorrect: false, response: "No! In a question, the verb 'Wollen' should come first.", kuttanReaction: "Aiyyo! Question logic marakkallae machane. Try again! 🚫" },
+              { text: "Wollen wir ins Restaurant gehen?", isCorrect: true, response: "Correct! 'Wollen wir' starts the question.", peerReaction: "Superb! Question structure correct aayi pick cheythallo. ⭐" },
+              { text: "Wir wollen ins Restaurant gehen?", isCorrect: false, response: "No! In a question, the verb 'Wollen' should come first.", peerReaction: "Aiyyo! Question logic marakkallae machane. Try again! 🚫" },
             ],
           },
         ],
@@ -742,7 +745,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-3-1",
           type: "multiple-choice",
-          question: "New Mohanlal release, and Kuttan wants company. Which German line actually invites Priya to the cinema?",
+          question: "New Mohanlal release, and Nivin wants company. Which German line actually invites Priya to the cinema?",
           options: ["Hast du Lust, ins Kino zu gehen?", "Willst du Kino?", "Gehst du Kino?", "Kino, ja oder nein?"],
           correctAnswer: "Hast du Lust, ins Kino zu gehen?",
           explanation: "The 'Lust-Structure': [Hast du Lust] + [Activity] + [zu + Infinitive]. This is the most natural way to invite someone for a fun activity.",
@@ -778,7 +781,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-3-6",
           type: "type-answer",
-          question: "Plan agreed — now the logistics. Kuttan texts: 'Um wie viel ___ treffen wir uns?' Type the missing word (the clock word):",
+          question: "Plan agreed — now the logistics. Nivin texts: 'Um wie viel ___ treffen wir uns?' Type the missing word (the clock word):",
           correctAnswer: "Uhr",
           explanation: "Clock time is always 'Uhr'. 'Um wie viel Uhr?' is the fixed phrase for 'At what time?'.",
           xpReward: 15
@@ -811,7 +814,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-3-10",
           type: "free-text",
-          question: "Kuttan counters the cinema plan with food, obviously. Type it in German — 'Shall we go to a restaurant?' (Wollen wir…):",
+          question: "Nivin counters the cinema plan with food, obviously. Type it in German — 'Shall we go to a restaurant?' (Wollen wir…):",
           correctAnswer: "Wollen wir ins Restaurant gehen",
           explanation: "'Wollen wir …?' proposes a plan; the verb 'gehen' waits at the end. Counter-proposals never sounded so grammatical.",
           xpReward: 30
@@ -830,7 +833,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-3-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: he invites Priya with 'Hast du Lust, ins Kino gehen?' The Lust-structure needs its zu! Say it right: 'Hast du Lust, ins Kino zu gehen?'",
+          question: "Repair Nivin's slip: he invites Priya with 'Hast du Lust, ins Kino gehen?' The Lust-structure needs its zu! Say it right: 'Hast du Lust, ins Kino zu gehen?'",
           questionGerman: "Sprechen Sie laut: 'Hast du Lust, ins Kino zu gehen?'",
           correctAnswer: "Hast du Lust, ins Kino zu gehen",
           explanation: "'Hast du Lust' always pulls 'zu + infinitive' behind it — dropping the zu is the classic invitation slip. Small word, scored structure.",
@@ -860,6 +863,7 @@ export const MODULE_12: Module = {
       duration: "55 min",
       xpReward: 160,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "WG Party (Die Einladung)",
           sceneType: "home",
@@ -871,7 +875,7 @@ export const MODULE_12: Module = {
           currentObjective: "Form 'weil' clauses correctly and express preference rankings using gern/lieber/am liebsten",
           nextTeaser: "Module 12 complete! You're now a social butterfly! Next: Module 13 - Media and Technology!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Invitations accept cheyyan 'Ich komme gern' or 'Ich bin dabei!' use cheyyaam. Very cool phrases!",
           "Ivide oru grammar twist undu — 'weil' (because). After 'weil', the conjugated verb eppozhum clause-ude END-il pokum. 'Ich komme, weil ich Zeit HABE'. Catch the logic?",
           "Pinne preferences parayaan 'gern', 'lieber', 'am liebsten' scale use cheyyuka. 'Ich esse gern Pizza, aber am liebsten Biryani!'. Nammude taste buds marakkalle!",
@@ -886,15 +890,15 @@ export const MODULE_12: Module = {
           {
             moment: "You want to say 'I am learning German because I want to work in Germany'. Where does 'möchte' go?",
             options: [
-              { text: "At the very end of the sentence.", isCorrect: true, response: "Exactly! In a 'weil' clause, the conjugated verb (möchte) goes to the end.", kuttanReaction: "Adipoli! Verb-final logic perfectly capture cheythallo! 🔥" },
-              { text: "Right after 'weil'.", isCorrect: false, response: "Aiyyo! In German, 'weil' kicks the verb to the very end of the clause.", kuttanReaction: "Vite machane! Grammar logic catch aayillya. Try again! 😬" },
+              { text: "At the very end of the sentence.", isCorrect: true, response: "Exactly! In a 'weil' clause, the conjugated verb (möchte) goes to the end.", peerReaction: "Adipoli! Verb-final logic perfectly capture cheythallo! 🔥" },
+              { text: "Right after 'weil'.", isCorrect: false, response: "Aiyyo! In German, 'weil' kicks the verb to the very end of the clause.", peerReaction: "Vite machane! Grammar logic catch aayillya. Try again! 😬" },
             ],
           },
           {
             moment: "You want to say you like Biryani the MOST. Which word do you use?",
             options: [
-              { text: "am liebsten.", isCorrect: true, response: "Correct! 'am liebsten' is the superlative form for likes.", kuttanReaction: "Superb! Taste bud logic correctly noted! ⭐" },
-              { text: "lieber.", isCorrect: false, response: "No! 'lieber' is for comparing two things. For the top choice, use 'am liebsten'.", kuttanReaction: "Aiyyo! 'lieber' comparison-u vendi ulla thaannu. Try again! 🚫" },
+              { text: "am liebsten.", isCorrect: true, response: "Correct! 'am liebsten' is the superlative form for likes.", peerReaction: "Superb! Taste bud logic correctly noted! ⭐" },
+              { text: "lieber.", isCorrect: false, response: "No! 'lieber' is for comparing two things. For the top choice, use 'am liebsten'.", peerReaction: "Aiyyo! 'lieber' comparison-u vendi ulla thaannu. Try again! 🚫" },
             ],
           },
         ],
@@ -1017,7 +1021,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-4-1",
           type: "multiple-choice",
-          question: "Arjun's WhatsApp invite ends with a flourish. Which German line tells Kuttan he's actually on the guest list?",
+          question: "Arjun's WhatsApp invite ends with a flourish. Which German line tells Meera she's actually on the guest list?",
           options: ["Du bist eingeladen!", "Du bist einladung!", "Du hast eingeladen!", "Du wirst einladen!"],
           correctAnswer: "Du bist eingeladen!",
           explanation: "Einladen (to invite) -> eingeladen (invited). Use the verb 'sein' (to be) for this state: 'Du BIST eingeladen'.",
@@ -1035,7 +1039,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-4-3",
           type: "matching",
-          question: "Kuttan ranks his chai loyalty on the German preference scale. Match each level:",
+          question: "Meera ranks her chai loyalty on the German preference scale. Match each level:",
           options: ["like (doing something)", "prefer", "like most of all"],
           correctAnswer: ["gern", "lieber", "am liebsten"],
           explanation: "The Gern-Scale: Gern (Like) -> Lieber (Better/Prefer) -> Am Liebsten (Best/Most).",
@@ -1053,7 +1057,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-4-6",
           type: "type-answer",
-          question: "Kuttan's honest talent review: 'Ich tanze gern, aber ich singe ___.' Type the missing word (prefer / like better):",
+          question: "Meera's honest talent review: 'Ich tanze gern, aber ich singe ___.' Type the missing word (prefer / like better):",
           correctAnswer: "lieber",
           explanation: "Use 'lieber' for comparisons: I like this, but I like that BETTER (lieber).",
           xpReward: 15
@@ -1069,7 +1073,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-4-8",
           type: "free-text",
-          question: "Kuttan's visa-essay line needs its ending. Type the weil-clause in German — 'because I want to study in Germany':",
+          question: "Meera's visa-essay line needs its ending. Type the weil-clause in German — 'because I want to study in Germany':",
           correctAnswer: "weil ich in Deutschland studieren möchte",
           explanation: "weil kicks the verb to the very END: weil ich in Deutschland studieren MÖCHTE. The one A1 clause where verb-second does not apply.",
           xpReward: 30
@@ -1094,7 +1098,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-4-11",
           type: "free-text",
-          question: "Coffee or chai? There was never a real contest. Type Kuttan's answer in German — 'I prefer (to drink) tea.' (lieber):",
+          question: "Coffee or chai? There was never a real contest. Type Meera's answer in German — 'I prefer (to drink) tea.' (lieber):",
           correctAnswer: "Ich trinke lieber Tee",
           explanation: "'lieber' after the verb expresses preference — the middle rung of the gern → lieber → am liebsten ladder.",
           xpReward: 30
@@ -1102,7 +1106,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-4-12",
           type: "free-text",
-          question: "Invited to a German home, Kuttan asks the question that makes every host smile. Type it — 'Should I bring something?' (Soll ich…, mitbringen):",
+          question: "Invited to a German home, Meera asks the question that makes every host smile. Type it — 'Should I bring something?' (Soll ich…, mitbringen):",
           correctAnswer: "Soll ich etwas mitbringen",
           explanation: "A very polite guest question — and mitbringen keeps its separable prefix attached because sollen already claimed position 2.",
           xpReward: 30
@@ -1121,7 +1125,7 @@ export const MODULE_12: Module = {
         {
           id: "ex12-4-spk2",
           type: "speaking",
-          question: "Repair Kuttan's slip: excusing himself, he says 'Ich kann nicht kommen, weil ich bin krank.' After weil, the verb goes LAST! Say it right: 'Ich kann nicht kommen, weil ich krank bin.'",
+          question: "Repair Meera's slip: excusing herself, she says 'Ich kann nicht kommen, weil ich bin krank.' After weil, the verb goes LAST! Say it right: 'Ich kann nicht kommen, weil ich krank bin.'",
           questionGerman: "Sprechen Sie laut: 'Ich kann nicht kommen, weil ich krank bin.'",
           correctAnswer: "Ich kann nicht kommen, weil ich krank bin",
           explanation: "'weil ich bin krank' is the single most famous German learner error in existence. weil banishes the verb to the end: weil ich krank BIN. Repair it aloud until the wrong version sounds broken.",

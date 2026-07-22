@@ -21,8 +21,8 @@ export type EncounterType =
 export interface Encounter {
   type: EncounterType;
   targetVocab: VocabItem;
-  /** Scene-setting text from Kuttan (Manglish) */
-  kuttanSays: string;
+  /** Scene-setting text from Nivin (Manglish) */
+  peerSays: string;
   /** The main prompt/question */
   prompt: string;
   /** Optional German context shown above the prompt */
@@ -50,9 +50,9 @@ export interface EncounterResult {
   responseTimeMs: number;
 }
 
-// ─── Kuttan's Manglish scene-setters ─────────────────────────
+// ─── Nivin's Manglish scene-setters ─────────────────────────
 
-const KUTTAN_SENTENCE_COMPLETE = [
+const PEER_SENTENCE_COMPLETE = [
   "Nee ithu complete cheyyano? Easy aanu! 💪",
   "Blank fill cheyyuka machane! You got this!",
   "One word missing... brain ON cheyyuka! 🧠",
@@ -60,7 +60,7 @@ const KUTTAN_SENTENCE_COMPLETE = [
   "Aah, oru word maathram missing! Nokkatte...",
 ];
 
-const KUTTAN_WHAT_DOES_IT_MEAN = [
+const PEER_WHAT_DOES_IT_MEAN = [
   "Ee German word ariyaamo? Think think! 🤔",
   "German word kandaal meaning para! Quick!",
   "Ith enthaa ennu nokkaam... 👀",
@@ -68,7 +68,7 @@ const KUTTAN_WHAT_DOES_IT_MEAN = [
   "Ee word last time padichathaa... ormayundo? 🧠",
 ];
 
-const KUTTAN_HOW_DO_YOU_SAY = [
+const PEER_HOW_DO_YOU_SAY = [
   "German-il engane parayum? Aalochichu nokk! 🇩🇪",
   "Ithinu German word enthaa? Come on! 💪",
   "English ariyaam, ippo German parayuka!",
@@ -76,7 +76,7 @@ const KUTTAN_HOW_DO_YOU_SAY = [
   "Reverse round! English → German. Nee ready aano?",
 ];
 
-const KUTTAN_SPOT_ERROR = [
+const PEER_SPOT_ERROR = [
   "Ivide oru thett und! Kandupidikk! 🔍",
   "Aiyyo! Someone made a mistake... find it!",
   "Error detective mode ON! Ethaanu wrong? 🕵️",
@@ -84,7 +84,7 @@ const KUTTAN_SPOT_ERROR = [
   "Sherlock mode activate cheyy! Wrong word und ivide 🔎",
 ];
 
-const KUTTAN_DIALOGUE = [
+const PEER_DIALOGUE = [
   "Real conversation! Blank fill cheyy machane! 🗣️",
   "Imagine you're in Germany... enthaa parayuka?",
   "Dialogue complete cheyyuka! You're doing great! 💬",
@@ -92,7 +92,7 @@ const KUTTAN_DIALOGUE = [
   "Nee Germany-il aanu... respond cheyy! 🇩🇪",
 ];
 
-const KUTTAN_CONTEXT_CLUE = [
+const PEER_CONTEXT_CLUE = [
   "Situation imagine cheyy... German word pick cheyy! 🎭",
   "Ee scene-il enthaa German-il parayuka?",
   "Context nokkiyal answer kittum! Think! 🤔",
@@ -146,7 +146,7 @@ function generateSentenceComplete(
   return {
     type: 'sentence-complete',
     targetVocab: target,
-    kuttanSays: pickRandom(KUTTAN_SENTENCE_COMPLETE),
+    peerSays: pickRandom(PEER_SENTENCE_COMPLETE),
     prompt: `Complete the sentence:`,
     contextGerman: blankSentence,
     options,
@@ -167,7 +167,7 @@ function generateWhatDoesItMean(
   return {
     type: 'what-does-it-mean',
     targetVocab: target,
-    kuttanSays: pickRandom(KUTTAN_WHAT_DOES_IT_MEAN),
+    peerSays: pickRandom(PEER_WHAT_DOES_IT_MEAN),
     prompt: `What does this mean?`,
     contextGerman: target.german,
     options,
@@ -188,7 +188,7 @@ function generateHowDoYouSay(
   return {
     type: 'how-do-you-say',
     targetVocab: target,
-    kuttanSays: pickRandom(KUTTAN_HOW_DO_YOU_SAY),
+    peerSays: pickRandom(PEER_HOW_DO_YOU_SAY),
     prompt: `How do you say "${target.english}" in German?`,
     options,
     correctIndex: options.indexOf(target.german),
@@ -221,7 +221,7 @@ function generateSpotTheError(
   return {
     type: 'spot-the-error',
     targetVocab: target,
-    kuttanSays: pickRandom(KUTTAN_SPOT_ERROR),
+    peerSays: pickRandom(PEER_SPOT_ERROR),
     prompt: `Something's wrong! Replace "${wrongWord.german}" with the right word:`,
     contextGerman: corruptedSentence,
     options,
@@ -259,7 +259,7 @@ function generateMiniDialogue(
   return {
     type: 'mini-dialogue',
     targetVocab: target,
-    kuttanSays: pickRandom(KUTTAN_DIALOGUE),
+    peerSays: pickRandom(PEER_DIALOGUE),
     prompt: dialogue.prompt,
     contextGerman: dialogue.setup,
     options,
@@ -288,7 +288,7 @@ function generateContextClue(
   return {
     type: 'context-clue',
     targetVocab: target,
-    kuttanSays: pickRandom(KUTTAN_CONTEXT_CLUE),
+    peerSays: pickRandom(PEER_CONTEXT_CLUE),
     prompt: pickRandom(situations),
     options,
     correctIndex: options.indexOf(target.german),
@@ -298,7 +298,7 @@ function generateContextClue(
 
 // ─── Type-It Generator (no options, user must type) ─────────
 
-const KUTTAN_TYPE_IT = [
+const PEER_TYPE_IT = [
   "Type cheyyuka machane! Keyboard ready aano? ⌨️",
   "Ithinte German type cheyyuka — no hints! 💪",
   "Options illa! German word type cheyy! 🧠",
@@ -310,7 +310,7 @@ function generateTypeIt(target: VocabItem, _pool: VocabItem[]): Encounter {
   return {
     type: 'type-it',
     targetVocab: target,
-    kuttanSays: pickRandom(KUTTAN_TYPE_IT),
+    peerSays: pickRandom(PEER_TYPE_IT),
     prompt: `Type the German word for "${target.english}"`,
     options: [], // No options — must type
     correctIndex: -1,
@@ -321,7 +321,7 @@ function generateTypeIt(target: VocabItem, _pool: VocabItem[]): Encounter {
 
 // ─── Listen-Type Generator (hear TTS, type what you heard) ──
 
-const KUTTAN_LISTEN_TYPE = [
+const PEER_LISTEN_TYPE = [
   "Kelkkuka, type cheyyuka! Ears + fingers combo! 👂⌨️",
   "Audio kelkku, German type cheyy! Dictation round! 🎧",
   "Ithokke kelkkaan ariyaamo? Type what you hear! 🔊",
@@ -333,7 +333,7 @@ function generateListenType(target: VocabItem, _pool: VocabItem[]): Encounter {
   return {
     type: 'listen-type',
     targetVocab: target,
-    kuttanSays: pickRandom(KUTTAN_LISTEN_TYPE),
+    peerSays: pickRandom(PEER_LISTEN_TYPE),
     prompt: 'Listen and type what you hear',
     contextGerman: '🔊 Tap to listen',
     options: [], // No options — must type after hearing

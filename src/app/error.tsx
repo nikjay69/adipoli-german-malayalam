@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 export default function Error({
   error,
@@ -31,7 +31,7 @@ export default function Error({
         className="relative text-center max-w-sm"
       >
         <div className="flex justify-center mb-4">
-          <Kuttan mood="thinking" size="lg" />
+          <Nivin mood="thinking" size="lg" />
         </div>
 
         <h2 className="text-2xl font-bold gradient-text mb-2">

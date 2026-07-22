@@ -5,7 +5,7 @@
   "accentColor": "#d4a520",
   "scriptLines": [
     {
-      "text": "Mission one: greet Frau Weber politely and sound calm from the first word.",
+      "text": "Mission one: greet Frau Fischer politely and sound calm from the first word.",
       "mood": "waving",
       "audioSrc": "audio/tts/v1-3-1/v1-3-1-line-0.mp3"
     },

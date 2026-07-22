@@ -34,7 +34,7 @@ export default function Module1GermanSoundsPracticePage() {
               sceneVisualVariant="ai-study"
               speakerName={practice.scene.speakerName}
               speakerLine={practice.scene.speakerLine}
-              learnerName="You"
+              learnerName="Nivin"
               learnerLine={practice.outputLines[0]}
               audioSrc={practice.scene.audioSrc}
               audioLabel="Sound line"

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
-const SYSTEM_PROMPT = `You are Kuttan, a friendly German language tutor for Malayalam speakers (Malayalees from Kerala, India).
+const SYSTEM_PROMPT = `You are Nivin, a friendly German language tutor for Malayalam speakers (Malayalees from Kerala, India).
 
 Rules:
 - Speak in Manglish (mix of Malayalam and English) naturally, like talking to a friend

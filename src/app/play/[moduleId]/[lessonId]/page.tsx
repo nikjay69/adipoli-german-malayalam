@@ -14,7 +14,7 @@ import { SceneBackground } from '@/components/visual';
 import { SwipeCards, WordScramble, WordBank, FallingWords, BubblePop, FreeTextInput } from '@/components/exercise-games';
 import { matchesAnswer } from '@/lib/answer-match';
 import { GameButton, ChoiceButton, Confetti, Celebration, ModuleComplete } from '@/components/game';
-import { CharacterGuide, KuttanSpeech, Kuttan, mapMoodToImage } from '@/components/character';
+import { CharacterGuide, NivinSpeech, Nivin, mapMoodToImage } from '@/components/character';
 import { VideoPlayer } from '@/components/media/VideoPlayer';
 import { getRandomMessage } from '@/lib/content/dialogue';
 import { getVideoScript } from '@/lib/content/video-scripts';
@@ -96,7 +96,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
   const [correctCount, setCorrectCount] = useState(0);
   const [totalAttempted, setTotalAttempted] = useState(0);
   const [showCelebration, setShowCelebration] = useState(false);
-  const [kuttanMsg, setKuttanMsg] = useState('');
+  const [peerMsg, setPeerMsg] = useState('');
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [showModuleComplete, setShowModuleComplete] = useState(false);
   const [lessonFailed, setLessonFailed] = useState(false);
@@ -217,7 +217,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
 
   useEffect(() => {
     if (mounted && step.type === 'intro') {
-      setKuttanMsg(getRandomMessage('lesson_start'));
+      setPeerMsg(getRandomMessage('lesson_start'));
     }
   }, [mounted, step.type]);
 
@@ -580,7 +580,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       setMaxCombo(prev => Math.max(prev, newCombo));
       setAnswerState('correct');
       setCorrectCount(prev => prev + 1);
-      setKuttanMsg(getRandomMessage('correct'));
+      setPeerMsg(getRandomMessage('correct'));
       feedbackCombo(newCombo);
       registerCorrect(firstTry, newCombo);
       setWrongAttempts(0);
@@ -595,7 +595,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
       setCombo(0);
       setWrongAttempts(prev => prev + 1);
       setAnswerState('incorrect');
-      setKuttanMsg(getRandomMessage('wrong'));
+      setPeerMsg(getRandomMessage('wrong'));
       setTimeout(() => goNext(), 2000);
     }
   };
@@ -861,8 +861,8 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               exit={{ opacity: 0, y: -15 }}
               className="flex-1 flex flex-col items-center justify-center text-center"
             >
-              <Kuttan mood="waving" size="md" />
-              <CharacterGuide messages={kuttanMsg} mood="excited" size="sm" />
+              <Nivin mood="waving" size="md" />
+              <CharacterGuide messages={peerMsg} mood="excited" size="sm" />
 
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -938,7 +938,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                 <CharacterGuide
                   messages={vocabAnswerState === 'correct' ? getRandomMessage('correct')
                     : vocabAnswerState === 'wrong' ? getRandomMessage('wrong')
-                    : vocabEncounter.kuttanSays}
+                    : vocabEncounter.peerSays}
                   mood={vocabAnswerState === 'correct' ? 'celebrating' : vocabAnswerState === 'wrong' ? 'sad' : 'thinking'}
                   size="sm"
                 />
@@ -998,6 +998,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
           {step.type === 'decision-point' && lesson.storyScene && lesson.storyScene.decisionPoints[step.index] && (
             <DecisionPoint
               decision={lesson.storyScene.decisionPoints[step.index]}
+              learnerOwner={lesson.storyScene.learnerOwner}
               onComplete={(wasCorrect) => {
                 if (wasCorrect) setCorrectCount(prev => prev + 1);
                 goNext();
@@ -1134,12 +1135,12 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               transition={{ type: 'spring', damping: 25 }}
               className="flex-1 flex flex-col"
             >
-              {/* Mini Kuttan prompt */}
+              {/* Mini Nivin prompt */}
               <div className="flex items-start gap-2 mb-4">
                 <CharacterGuide
                   messages={vocabAnswerState === 'correct' ? getRandomMessage('correct')
                     : vocabAnswerState === 'wrong' ? getRandomMessage('wrong')
-                    : vocabEncounter.kuttanSays}
+                    : vocabEncounter.peerSays}
                   mood={vocabAnswerState === 'correct' ? 'celebrating' : vocabAnswerState === 'wrong' ? 'sad' : 'thinking'}
                   size="sm"
                 />
@@ -1466,10 +1467,10 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
               transition={{ type: 'spring', damping: 25 }}
               className="flex-1 flex flex-col"
             >
-              {/* Kuttan feedback */}
+              {/* Nivin feedback */}
               <div className="flex justify-center mb-3">
                 <CharacterGuide
-                  messages={kuttanMsg || getRandomMessage('encourage')}
+                  messages={peerMsg || getRandomMessage('encourage')}
                   mood={answerState === 'correct' ? 'celebrating' : answerState === 'incorrect' ? 'sad' : 'thinking'}
                   size="sm"
                   showAppu={answerState === 'correct'}
@@ -1541,7 +1542,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                       setMaxCombo(prev => Math.max(prev, newCombo));
                       setCorrectCount(prev => prev + 1);
                       setAnswerState('correct');
-                      setKuttanMsg(getRandomMessage('correct'));
+                      setPeerMsg(getRandomMessage('correct'));
                       feedbackCombo(newCombo);
                       registerCorrect(firstTry, newCombo);
                       setWrongAttempts(0);
@@ -1554,7 +1555,7 @@ export default function PlayLesson({ params }: { params: Promise<{ moduleId: str
                       setCombo(0);
                       setWrongAttempts(prev => prev + 1);
                       setAnswerState('incorrect');
-                      setKuttanMsg(getRandomMessage('wrong'));
+                      setPeerMsg(getRandomMessage('wrong'));
                       setTimeout(() => goNext(), 1800);
                     }
                   };

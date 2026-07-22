@@ -1,3 +1,4 @@
+// greetFrauWeber is a persisted compatibility ID; learner-facing copy uses Frau Fischer.
 export type Module1MissionId = 'greetFrauWeber' | 'pleaseThanks' | 'politeExit' | 'firstMiniConversation';
 
 export type Module1MissionCard = {
@@ -24,8 +25,8 @@ export const module1MissionCards: Module1MissionCard[] = [
   {
     id: 'greetFrauWeber',
     missionNumber: 'Mission 1.1',
-    title: 'Greet Frau Weber without freezing',
-    output: 'Guten Morgen, Frau Weber. Ich lerne Deutsch.',
+    title: 'Greet Frau Fischer without freezing',
+    output: 'Guten Morgen, Frau Fischer. Ich lerne Deutsch.',
     proof: 'audio • answer aloud • quick repair',
     href: '/missions/module-1/greet-frau-weber',
     state: 'Start here',
@@ -82,7 +83,7 @@ export const module1MissionCards: Module1MissionCard[] = [
     id: 'firstMiniConversation',
     missionNumber: 'Mission 1.4',
     title: 'Run the first mini-conversation',
-    output: 'Guten Tag, Frau Weber. Gut, danke. Auf Wiedersehen.',
+    output: 'Guten Tag, Frau Fischer. Gut, danke. Auf Wiedersehen.',
     proof: 'audio • answer aloud • quick repair',
     href: '/missions/module-1/first-mini-conversation',
     state: 'Playable now',

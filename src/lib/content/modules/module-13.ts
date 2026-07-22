@@ -23,6 +23,7 @@ export const MODULE_13: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "WG Kitchen (In der Küche)",
           sceneType: "home",
@@ -34,7 +35,7 @@ export const MODULE_13: Module = {
           currentObjective: "Form 'haben' + past participle sentences and understand the 'ge-...-t' pattern",
           nextTeaser: "Next: Movement verbs! Let's see how 'sein' joins the past tense party!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Past tense German-il 'Perfekt' ennu parayum. Ithu nammude 'Kazhichu', 'Vannu' logic pole thanne aanu. Verb eppozhum sentence-inde end-il aayirikkum.",
           "Main tool 'haben' helper verb aanu. 'Ich habe...' + your activity. Most regular verbs stay simple: 'ge-' + stem + '-t'. 'gekocht' (cooked), 'gelernt' (learned).",
           "Remember the 'Sandwich Rule': Bread 1 (haben) is at Position 2. Bread 2 (Participle) is at the VERY END. Let's make a sandwich!",
@@ -49,15 +50,15 @@ export const MODULE_13: Module = {
           {
             moment: "You want to say 'I learned football'. Where do you place the word 'gespielt'?",
             options: [
-              { text: "At the very end of the sentence.", isCorrect: true, response: "Exactly! Bread 2 always stays at the end of the sandwich.", kuttanReaction: "Adipoli! Sandwich logic perfectly capture cheythallo! 🔥" },
-              { text: "Right after 'haben'.", isCorrect: false, response: "Aiyyo! In German Perfekt, the participle MUST sit at the end. Don't crowd the helper!", kuttanReaction: "Vite machane! Bread logic marakkallae. Try again! 😬" },
+              { text: "At the very end of the sentence.", isCorrect: true, response: "Exactly! Bread 2 always stays at the end of the sandwich.", peerReaction: "Adipoli! Sandwich logic perfectly capture cheythallo! 🔥" },
+              { text: "Right after 'haben'.", isCorrect: false, response: "Aiyyo! In German Perfekt, the participle MUST sit at the end. Don't crowd the helper!", peerReaction: "Vite machane! Bread logic marakkallae. Try again! 😬" },
             ],
           },
           {
             moment: "How do you conjugate 'haben' for the subject 'Er' (He)?",
             options: [
-              { text: "hat.", isCorrect: true, response: "Correct! Er hat, sie hat, es hat.", kuttanReaction: "Superb! Conjugation logic correctly picked! ⭐" },
-              { text: "hast.", isCorrect: false, response: "No! 'hast' is for 'Du'. For 'Er', we use 'hat'.", kuttanReaction: "Aiyyo! 'Du' logic and 'Er' logic separate aanu machane. Try again! 🚫" },
+              { text: "hat.", isCorrect: true, response: "Correct! Er hat, sie hat, es hat.", peerReaction: "Superb! Conjugation logic correctly picked! ⭐" },
+              { text: "hast.", isCorrect: false, response: "No! 'hast' is for 'Du'. For 'Er', we use 'hat'.", peerReaction: "Aiyyo! 'Du' logic and 'Er' logic separate aanu machane. Try again! 🚫" },
             ],
           },
         ],
@@ -187,7 +188,7 @@ export const MODULE_13: Module = {
         {
           id: "ex13-1-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Perfekt Tense with haben): 'Gestern habe ich Deutsch gelernt.'",
+          question: "Nivin practice: Say aloud for this lesson (Perfekt Tense with haben): 'Gestern habe ich Deutsch gelernt.'",
           questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
           correctAnswer: "Gestern habe ich Deutsch gelernt",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
@@ -215,6 +216,7 @@ export const MODULE_13: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Main Station (Am Bahnhof)",
           sceneType: "station",
@@ -226,7 +228,7 @@ export const MODULE_13: Module = {
           currentObjective: "Identify movement and change-of-state verbs that use 'sein' and form correct sentences",
           nextTeaser: "Next: Irregular verbs! Let's see what happens to 'essen' and 'trinken'!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Every past tense verb 'haben' use cheyyilla. If there is movement (Point A to Point B), you MUST use 'sein'. 'Ich bin gegangen', 'Ich bin gefahren'. Travel logic!",
           "Pinne oru special exception undu: 'bleiben' (to stay). Ivide movement illa, but still 'sein' thanne use cheyyanam. 'Ich bin zu Hause geblieben'. Don't ask why, just fix it in your mind!",
           "Sentence structure same aanu — helper verb in Pos 2, participle at the VERY END. Let's go!",
@@ -241,15 +243,15 @@ export const MODULE_13: Module = {
           {
             moment: "You want to say 'I went to Berlin'. Which helper verb do you use?",
             options: [
-              { text: "bin.", isCorrect: true, response: "Exactly! 'gehen' is movement, so use 'sein' (bin).", kuttanReaction: "Adipoli! Movement logic perfectly capture cheythallo! 🔥" },
-              { text: "habe.", isCorrect: false, response: "Aiyyo! 'haben' is for static activities. Movement verbs need 'sein'.", kuttanReaction: "Vite machane! Travel equals 'sein'. Try again! 😬" },
+              { text: "bin.", isCorrect: true, response: "Exactly! 'gehen' is movement, so use 'sein' (bin).", peerReaction: "Adipoli! Movement logic perfectly capture cheythallo! 🔥" },
+              { text: "habe.", isCorrect: false, response: "Aiyyo! 'haben' is for static activities. Movement verbs need 'sein'.", peerReaction: "Vite machane! Travel equals 'sein'. Try again! 😬" },
             ],
           },
           {
             moment: "You stayed at home all day. How do you say it correctly?",
             options: [
-              { text: "Ich bin zu Hause geblieben.", isCorrect: true, response: "Correct! 'bleiben' is the famous exception that uses 'sein'.", kuttanReaction: "Superb! Exception logic correctly picked! ⭐" },
-              { text: "Ich habe zu Hause geblieben.", isCorrect: false, response: "No! Even though you didn't move, 'bleiben' always takes 'sein'.", kuttanReaction: "Aiyyo! 'bleiben' exception marakkallae machane. Try again! 🚫" },
+              { text: "Ich bin zu Hause geblieben.", isCorrect: true, response: "Correct! 'bleiben' is the famous exception that uses 'sein'.", peerReaction: "Superb! Exception logic correctly picked! ⭐" },
+              { text: "Ich habe zu Hause geblieben.", isCorrect: false, response: "No! Even though you didn't move, 'bleiben' always takes 'sein'.", peerReaction: "Aiyyo! 'bleiben' exception marakkallae machane. Try again! 🚫" },
             ],
           },
         ],
@@ -377,7 +379,7 @@ export const MODULE_13: Module = {
         {
           id: "ex13-2-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Perfekt Tense with sein): 'Gestern habe ich Deutsch gelernt.'",
+          question: "Meera practice: Say aloud for this lesson (Perfekt Tense with sein): 'Gestern habe ich Deutsch gelernt.'",
           questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
           correctAnswer: "Gestern habe ich Deutsch gelernt",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
@@ -405,6 +407,7 @@ export const MODULE_13: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Local Restaurant (Im Restaurant)",
           sceneType: "restaurant",
@@ -416,7 +419,7 @@ export const MODULE_13: Module = {
           currentObjective: "Recognize irregular past participle patterns (ge-...-en) and use them correctly",
           nextTeaser: "Next: Telling your full weekend story! Let's put everything together!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Some verbs in German are a bit rebellious. They don't end in '-t' for the past tense. Instead, they end in '-en'.",
           "Main ones are eating and drinking — 'gegessen' and 'getrunken'. Vowel change sradhikkanne: 'trinken' becomes 'getrunken'. Musical vibe aanu!",
           "Pinne 'sehen' (see) stays simple: 'gesehen'. If you see a movie, 'Ich habe einen Film gesehen'. Let's master these rebels!",
@@ -431,15 +434,15 @@ export const MODULE_13: Module = {
           {
             moment: "You want to say 'I ate'. Which past participle is correct?",
             options: [
-              { text: "gegessen.", isCorrect: true, response: "Exactly! 'essen' becomes 'gegessen'.", kuttanReaction: "Adipoli! Irregular logic perfectly capture cheythallo! 🔥" },
-              { text: "geesst.", isCorrect: false, response: "Aiyyo! 'geesst' exists only in dreams. Use 'gegessen'.", kuttanReaction: "Vite machane! Rebels don't take '-t'. Try again! 😬" },
+              { text: "gegessen.", isCorrect: true, response: "Exactly! 'essen' becomes 'gegessen'.", peerReaction: "Adipoli! Irregular logic perfectly capture cheythallo! 🔥" },
+              { text: "geesst.", isCorrect: false, response: "Aiyyo! 'geesst' exists only in dreams. Use 'gegessen'.", peerReaction: "Vite machane! Rebels don't take '-t'. Try again! 😬" },
             ],
           },
           {
             moment: "You want to say 'I drank a coffee'. Where does 'getrunken' go?",
             options: [
-              { text: "At the very end of the clause.", isCorrect: true, response: "Correct! Even for irregulars, the sandwich rule applies.", kuttanReaction: "Superb! Sentence structure remains the same. ⭐" },
-              { text: "Right after 'hat'.", isCorrect: false, response: "No! Participle stays at the end, regular or irregular.", kuttanReaction: "Aiyyo! Position 2 is for the helper verb only. Try again! 🚫" },
+              { text: "At the very end of the clause.", isCorrect: true, response: "Correct! Even for irregulars, the sandwich rule applies.", peerReaction: "Superb! Sentence structure remains the same. ⭐" },
+              { text: "Right after 'hat'.", isCorrect: false, response: "No! Participle stays at the end, regular or irregular.", peerReaction: "Aiyyo! Position 2 is for the helper verb only. Try again! 🚫" },
             ],
           },
         ],
@@ -555,7 +558,7 @@ export const MODULE_13: Module = {
         {
           id: "ex13-3-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Irregular Past Participles): 'Gestern habe ich Deutsch gelernt.'",
+          question: "Nivin practice: Say aloud for this lesson (Irregular Past Participles): 'Gestern habe ich Deutsch gelernt.'",
           questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
           correctAnswer: "Gestern habe ich Deutsch gelernt",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
@@ -583,6 +586,7 @@ export const MODULE_13: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
           name: "Main Street (In der Stadt)",
           sceneType: "station",
@@ -594,7 +598,7 @@ export const MODULE_13: Module = {
           currentObjective: "Narrate a full weekend story using sequential connectors and correct past tense forms",
           nextTeaser: "Final Lesson: Time expressions! Let's see how to say 'two days ago'!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Narrative parayumpol order is important. 'Zuerst' (first) ennu vechu start cheyyuka. 'Zuerst habe ich gefrühstückt'.",
           "Pinne 'dann' (then) or 'danach' (after that) use cheythu flow maintain cheyyaam. Verb is always in Pos 2 if you start with these words!",
           "Story end cheyyan 'zum Schluss' (finally) use cheyyuka. Full flow set aakaam. Let's practice your weekend report!",
@@ -609,15 +613,15 @@ export const MODULE_13: Module = {
           {
             moment: "You want to start your story with 'At first'. Which word do you choose?",
             options: [
-              { text: "zuerst.", isCorrect: true, response: "Exactly! 'zuerst' is the standard way to begin a sequence.", kuttanReaction: "Adipoli! Connector logic perfectly capture cheythallo! 🔥" },
-              { text: "dann.", isCorrect: false, response: "Aiyyo! 'dann' usually follows 'zuerst'. Start with the first one!", kuttanReaction: "Vite machane! Sequence marakkallae. Try again! 😬" },
+              { text: "zuerst.", isCorrect: true, response: "Exactly! 'zuerst' is the standard way to begin a sequence.", peerReaction: "Adipoli! Connector logic perfectly capture cheythallo! 🔥" },
+              { text: "dann.", isCorrect: false, response: "Aiyyo! 'dann' usually follows 'zuerst'. Start with the first one!", peerReaction: "Vite machane! Sequence marakkallae. Try again! 😬" },
             ],
           },
           {
             moment: "If you start a sentence with 'Dann', where does the verb 'habe' go?",
             options: [
-              { text: "At position 2.", isCorrect: true, response: "Correct! The verb-second rule is non-negotiable.", kuttanReaction: "Superb! Sentence structure logic correctly noted! ⭐" },
-              { text: "At the end.", isCorrect: false, response: "No! Only the participle goes to the end. The helper verb stays in the second position.", kuttanReaction: "Aiyyo! Pos 2 is for the verb, Pos 1 can be 'Dann'. Try again! 🚫" },
+              { text: "At position 2.", isCorrect: true, response: "Correct! The verb-second rule is non-negotiable.", peerReaction: "Superb! Sentence structure logic correctly noted! ⭐" },
+              { text: "At the end.", isCorrect: false, response: "No! Only the participle goes to the end. The helper verb stays in the second position.", peerReaction: "Aiyyo! Pos 2 is for the verb, Pos 1 can be 'Dann'. Try again! 🚫" },
             ],
           },
         ],
@@ -690,7 +694,7 @@ export const MODULE_13: Module = {
         {
           id: "ex13-4-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Telling Stories — My Weekend): 'Gestern habe ich Deutsch gelernt.'",
+          question: "Meera practice: Say aloud for this lesson (Telling Stories — My Weekend): 'Gestern habe ich Deutsch gelernt.'",
           questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
           correctAnswer: "Gestern habe ich Deutsch gelernt",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",
@@ -718,6 +722,7 @@ export const MODULE_13: Module = {
       duration: "45 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Academic Office (Im Büro)",
           sceneType: "office",
@@ -729,7 +734,7 @@ export const MODULE_13: Module = {
           currentObjective: "Use time expressions like gestern, letzte Woche, and 'vor + Dativ' correctly",
           nextTeaser: "Module 13 complete! You're now a past tense storyteller! Next: Module 14 - Health and Body!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Time words are the salt of a story. Without them, it's just 'Ich habe gegessen'. Specifying 'Gestern' (yesterday) makes it real.",
           "Main tool 'vor' (ago). It takes the Dativ case. 'vor zwei Tagen' (two days ago). Notice the extra '-n' in 'Tagen'! Case logic alert!",
           "Pinne 'letzte Woche' (last week) vs 'letzten Monat' (last month) gender change sradhikkanne. Month is masculine, Week is feminine. Let's pin these dates!",
@@ -744,15 +749,15 @@ export const MODULE_13: Module = {
           {
             moment: "You want to say 'Three days ago'. Which structure is correct?",
             options: [
-              { text: "vor drei Tagen.", isCorrect: true, response: "Exactly! 'vor' + Number + Noun(+n for Dativ plural).", kuttanReaction: "Adipoli! Time-ago logic perfectly capture cheythallo! 🔥" },
-              { text: "drei Tage vor.", isCorrect: false, response: "Aiyyo! In German, the preposition 'vor' must come BEFORE the time unit.", kuttanReaction: "Vite machane! Word order marakkallae. Try again! 😬" },
+              { text: "vor drei Tagen.", isCorrect: true, response: "Exactly! 'vor' + Number + Noun(+n for Dativ plural).", peerReaction: "Adipoli! Time-ago logic perfectly capture cheythallo! 🔥" },
+              { text: "drei Tage vor.", isCorrect: false, response: "Aiyyo! In German, the preposition 'vor' must come BEFORE the time unit.", peerReaction: "Vite machane! Word order marakkallae. Try again! 😬" },
             ],
           },
           {
             moment: "You want to say 'Last month'. Which form of 'letzte' do you use for 'der Monat'?",
             options: [
-              { text: "letzten.", isCorrect: true, response: "Correct! Masculine time expressions take '-en' (letzten Monat).", kuttanReaction: "Superb! Gender logic correctly noted! ⭐" },
-              { text: "letzte.", isCorrect: false, response: "No! 'letzte' is for feminine (letzte Woche). Month is masculine.", kuttanReaction: "Aiyyo! Month logic sradhikkanne machane. Try again! 🚫" },
+              { text: "letzten.", isCorrect: true, response: "Correct! Masculine time expressions take '-en' (letzten Monat).", peerReaction: "Superb! Gender logic correctly noted! ⭐" },
+              { text: "letzte.", isCorrect: false, response: "No! 'letzte' is for feminine (letzte Woche). Month is masculine.", peerReaction: "Aiyyo! Month logic sradhikkanne machane. Try again! 🚫" },
             ],
           },
         ],
@@ -827,7 +832,7 @@ export const MODULE_13: Module = {
         {
           id: "ex13-5-prod-speaking",
           type: "speaking",
-          question: "Kuttan practice: Say aloud for this lesson (Time Expressions for the Past): 'Gestern habe ich Deutsch gelernt.'",
+          question: "Nivin practice: Say aloud for this lesson (Time Expressions for the Past): 'Gestern habe ich Deutsch gelernt.'",
           questionGerman: "Sprechen Sie laut: 'Gestern habe ich Deutsch gelernt.'",
           correctAnswer: "Gestern habe ich Deutsch gelernt",
           explanation: "Speaking practice turns recognition into exam-ready mouth memory. Short, clear A1 sentence first; speed later.",

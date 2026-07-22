@@ -1,62 +1,80 @@
-// Narrative arcs for A1.
-// A1 stays entirely in Kerala — the course ends with boarding a flight to Germany.
-// See docs/A1_STORY_BIBLE.md for the canonical story.
-// A2 will be the "arrival" arc; B1 the "thriving" arc.
+import type { LearnerPeerId } from '@/lib/cast';
 
 export interface NarrativeArc {
   moduleIds: number[];
   title: string;
   description: string;
-  kuttanState: string; // What Kuttan is feeling/doing in this part of the journey
+  peerStates: Record<LearnerPeerId, string>;
 }
 
 export const NARRATIVE_ARCS: NarrativeArc[] = [
   {
     moduleIds: [1, 2],
-    title: 'The Dream Begins',
-    description: 'Your cousin in Munich sends a WhatsApp: "Free university, machane!" You and Kuttan take the first step — the alphabet, the sounds, the first greeting. It all happens in Kerala.',
-    kuttanState: 'Nervous but hopeful, first days at Goethe-Institut Kochi',
+    title: 'The First German Moment',
+    description: 'Greetings and self-introduction move from recognition to a short spoken answer in the Goethe Kochi practice room.',
+    peerStates: {
+      nivin: 'Acts early, guesses, then repairs the line aloud.',
+      meera: 'Prepares carefully, then chooses the shortest correct opening.',
+    },
   },
   {
     moduleIds: [3, 4],
     title: 'Building the Basics',
-    description: 'Numbers, time, family. The real grammar starts. Articles (der/die/das) are maddening — but you stick with it. Amma and Achan are still skeptical.',
-    kuttanState: 'Wrestling with grammar, studying at Goethe Kochi library',
+    description: 'Numbers, time, family words, and articles become useful chunks instead of isolated rules.',
+    peerStates: {
+      nivin: 'Tests a first answer and listens for the correction.',
+      meera: 'Stops searching for a perfect sentence and uses one clear chunk.',
+    },
   },
   {
     moduleIds: [5, 6],
-    title: 'Talking About Your Day',
-    description: 'Food, drinks, routines. Video calls with the Munich cousin become practice sessions. You can now hold a short conversation.',
-    kuttanState: 'Practicing on WhatsApp voice notes, building confidence',
+    title: 'Talking About a Day',
+    description: 'Routine, food, and drink practice turns familiar Kerala scenes into clean A1 output.',
+    peerStates: {
+      nivin: 'Repairs word order without hiding the first attempt.',
+      meera: 'Builds a small answer before adding detail.',
+    },
   },
   {
     moduleIds: [7, 8],
-    title: 'Getting Ready for the Move',
-    description: 'Shopping, money, describing an apartment. Practical German for the life you\'re about to live — all rehearsed from Kerala.',
-    kuttanState: 'Mock-shopping in Kochi, saving euros in his head',
+    title: 'Everyday Practice',
+    description: 'Shopping and home-language tasks stay practical, with every destination detail treated as a role-play card rather than cast biography.',
+    peerStates: {
+      nivin: 'Uses the useful phrase first and adjusts after feedback.',
+      meera: 'Selects the exact phrase the situation needs.',
+    },
   },
   {
     moduleIds: [9, 10, 11, 12],
-    title: 'Speaking Well (and Nearly Quitting)',
-    description: 'Travel, health, work, hobbies. Full small-talk conversations. But burnout hits. A Malayali who\'s returned from Germany visits — one tough-love chat pulls you back in.',
-    kuttanState: 'Almost gave up. Found a second wind.',
+    title: 'Speaking Under Pressure',
+    description: 'Travel, health, work, and hobbies are rehearsed as editable scenarios using the learner’s true details where needed.',
+    peerStates: {
+      nivin: 'Keeps speaking through a mistake and performs the repair himself.',
+      meera: 'Moves before certainty and completes the answer herself.',
+    },
   },
   {
     moduleIds: [13, 14, 15, 16],
-    title: 'Visa Ready',
-    description: 'Past tense, formal German, letters. The paperwork beast. An embassy form gets rejected. Deadline panic. You push through.',
-    kuttanState: 'Refiling documents, prepping for the German consulate in Chennai',
+    title: 'Forms and Formal German',
+    description: 'Past tense, forms, and formal messages are practised with sample cards that never freeze a résumé for either peer.',
+    peerStates: {
+      nivin: 'Checks the evidence line after making a fast first attempt.',
+      meera: 'Uses the form’s required structure without over-writing.',
+    },
   },
   {
     moduleIds: [17, 18],
-    title: 'The Gate',
-    description: 'Everything has led to this. Sit for the Goethe A1. Pass. Say goodbye at Kochi airport. Board the flight. Watch Kerala disappear below the clouds.',
-    kuttanState: 'Exam morning to boarding announcement — the biggest two weeks of his life',
+    title: 'The A1 Gate',
+    description: 'Timed mock work brings listening, reading, writing, and speaking evidence together before the real exam.',
+    peerStates: {
+      nivin: 'Names the miss, repairs it aloud, and tries a fresh item.',
+      meera: 'Trusts the shortest correct answer and finishes within time.',
+    },
   },
 ];
 
 export function getArcForModule(moduleId: number): NarrativeArc | undefined {
-  return NARRATIVE_ARCS.find(arc => arc.moduleIds.includes(moduleId));
+  return NARRATIVE_ARCS.find((arc) => arc.moduleIds.includes(moduleId));
 }
 
 export function getModulePosition(moduleId: number): { arcTitle: string; isFirst: boolean; isLast: boolean } | undefined {

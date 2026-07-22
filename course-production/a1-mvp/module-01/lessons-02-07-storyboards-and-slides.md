@@ -12,7 +12,7 @@ Updated: 2026-06-02 15:20 CEST
 
 - Adult Malayali learner, Kerala home/classroom/Goethe Kochi practice context.
 - Warm but serious exam-prep mood.
-- Simple teacher/video-call frames for Frau Weber.
+- Simple teacher/video-call frames for Frau Fischer.
 - One German line or one tiny table at a time.
 - Phone-friendly crops: face + phrase card, not dense whiteboard.
 - Use clocks, reception desks, audio cards, and tiny dialogue bubbles to compress explanation.
@@ -94,7 +94,7 @@ Adult Malayali beginner at a Kerala home-study desk, opening a phone-first Goeth
 
 4. **German `w`**
    - Text: `German w ≈ English v`.
-   - Examples: `Frau Weber`, `Wasser`, `Auf Wiedersehen`.
+   - Examples: `Frau Fischer`, `Wasser`, `Auf Wiedersehen`.
 
 5. **German `v` chunk learning**
    - Table: `viel`, `Vater`, `Visum`, `Video`.
@@ -130,8 +130,8 @@ Premium adult educational illustration for a German pronunciation lesson for Mal
 ### Slide/scene sequence
 
 1. **9 AM teacher scene**
-   - Visual: clock 9:00, Frau Weber frame.
-   - Text: `Frau Weber: Guten Morgen.`
+   - Visual: clock 9:00, Frau Fischer frame.
+   - Text: `Frau Fischer: Guten Morgen.`
    - Learner reply appears after pause.
 
 2. **Safe greeting set**
@@ -165,7 +165,7 @@ Premium adult educational illustration for a German pronunciation lesson for Mal
 
 ### AI image prompt
 
-Adult-safe Goethe A1 practice scene in Kerala language classroom or reception, German teacher Frau Weber on a screen, simple clock/time cue and learner greeting response, premium clean educational illustration, no mascot, no fake readable text, not generic Germany stock, low clutter.
+Adult-safe Goethe A1 practice scene in Kerala language classroom or reception, German teacher Frau Fischer on a screen, simple clock/time cue and learner greeting response, premium clean educational illustration, no mascot, no fake readable text, not generic Germany stock, low clutter.
 
 ### Phone-friendly editing notes
 
@@ -184,7 +184,7 @@ Adult-safe Goethe A1 practice scene in Kerala language classroom or reception, G
    - Visual: learner at reception/exam desk.
 
 2. **`danke` card**
-   - Dialogue: `Frau Weber: Sehr gut.` → `You: Danke.`
+   - Dialogue: `Frau Fischer: Sehr gut.` → `You: Danke.`
 
 3. **`bitte` flexible card**
    - Three tiny rows: please / here you are / you’re welcome.
@@ -226,7 +226,7 @@ Premium illustration for adult Malayali Goethe A1 learner at a polite German pra
 ### Slide/scene sequence
 
 1. **Fast German problem**
-   - Frau Weber line appears blurred/fast visually.
+   - Frau Fischer line appears blurred/fast visually.
    - Learner uses `Noch einmal, bitte.`
 
 2. **Formal goodbye**
@@ -268,7 +268,7 @@ Adult Malayali beginner in a German video-call lesson, teacher speaks a little f
 ### Slide/scene sequence
 
 1. **First exchange hook**
-   - Frau Weber: `Guten Morgen.`
+   - Frau Fischer: `Guten Morgen.`
    - Learner reply revealed after pause.
 
 2. **Conversation map**
@@ -291,11 +291,11 @@ Adult Malayali beginner in a German video-call lesson, teacher speaks a little f
 
 6. **Thank and leave**
    - `Danke.`
-   - `Auf Wiedersehen, Frau Weber.`
+   - `Auf Wiedersehen, Frau Fischer.`
 
 7. **Full guided conversation**
    - Round 1: full subtitles.
-   - Round 2: only Frau Weber lines.
+   - Round 2: only Frau Fischer lines.
    - Round 3 optional: audio-only teacher prompts.
 
 8. **Module gate preview**
@@ -303,7 +303,7 @@ Adult Malayali beginner in a German video-call lesson, teacher speaks a little f
 
 ### AI image prompt
 
-Premium adult-safe illustration for a first German mini-conversation: Malayali adult learner in Kerala practicing with a German teacher Frau Weber on video call, one spoken line at a time, serious warm Goethe A1 course mood, subtle study desk and notebook, no mascot, no fake readable text, low clutter.
+Premium adult-safe illustration for a first German mini-conversation: Malayali adult learner in Kerala practicing with a German teacher Frau Fischer on video call, one spoken line at a time, serious warm Goethe A1 course mood, subtle study desk and notebook, no mascot, no fake readable text, low clutter.
 
 ### Phone-friendly editing notes
 

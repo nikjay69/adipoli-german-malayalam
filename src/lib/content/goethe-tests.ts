@@ -285,7 +285,7 @@ const test1: GoetheTest = {
       {
         id: 't1-l1-5',
         email_text:
-          'Hallo Frau Weber,\nder Termin am Dienstag um 10 Uhr ist leider nicht mehr frei. Können Sie am Mittwoch um 14 Uhr kommen? Bitte rufen Sie uns an.\nPraxis Dr. Schulz',
+          'Hallo Frau Fischer,\nder Termin am Dienstag um 10 Uhr ist leider nicht mehr frei. Können Sie am Mittwoch um 14 Uhr kommen? Bitte rufen Sie uns an.\nPraxis Dr. Schulz',
         question: 'Was ist das Problem?',
         options: [
           'Der Arzt ist krank.',

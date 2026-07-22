@@ -15,7 +15,7 @@ import {
   type Encounter,
   type EncounterResult,
 } from '@/lib/encounters';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 import { Appu } from '@/components/character/Appu';
 import { playVocabAudio } from '@/lib/audio';
 
@@ -69,7 +69,7 @@ export default function ReviewPage() {
   const [isCorrect, setIsCorrect] = useState(false);
   const [stats, setStats] = useState<SessionStats>({ total: 0, correct: 0, struggled: 0, missed: 0, xpEarned: 0 });
   const encounterStartTime = useRef<number>(Date.now());
-  const [kuttanMood, setKuttanMood] = useState<'thinking' | 'happy' | 'excited' | 'sad'>('thinking');
+  const [peerMood, setNivinMood] = useState<'thinking' | 'happy' | 'excited' | 'sad'>('thinking');
 
   // Build vocab lookup map once
   const allVocab = useMemo(() => getAllVocabulary(), []);
@@ -150,13 +150,13 @@ export default function ReviewPage() {
 
       if (firstTry && fast) {
         setFeedbackText(pickRandom(FEEDBACK_CORRECT_FAST));
-        setKuttanMood('excited');
+        setNivinMood('excited');
       } else if (firstTry) {
         setFeedbackText(pickRandom(FEEDBACK_CORRECT));
-        setKuttanMood('happy');
+        setNivinMood('happy');
       } else {
         setFeedbackText("Got it! " + encounter.explanation);
-        setKuttanMood('happy');
+        setNivinMood('happy');
       }
 
       // Derive SRS rating implicitly
@@ -193,7 +193,7 @@ export default function ReviewPage() {
       setSelectedOption(optionIndex);
       setWrongAttempts((prev) => prev + 1);
       setFeedbackText(pickRandom(FEEDBACK_WRONG));
-      setKuttanMood('sad');
+      setNivinMood('sad');
       setShowFeedback(true);
       setIsCorrect(false);
 
@@ -221,7 +221,7 @@ export default function ReviewPage() {
       setShowFeedback(false);
       setIsCorrect(false);
       setFeedbackText('');
-      setKuttanMood('thinking');
+      setNivinMood('thinking');
       encounterStartTime.current = Date.now();
     }
   }, [currentIndex, encounters.length, addXP, updateStreak]);
@@ -259,7 +259,7 @@ export default function ReviewPage() {
           className="flex flex-col items-center justify-center mt-12 text-center"
         >
           <div className="flex items-end gap-2 mb-6">
-            <Kuttan mood="happy" size="lg" />
+            <Nivin mood="happy" size="lg" />
             <Appu mood="sleeping" size="sm" />
           </div>
           <h2 className="text-xl font-bold mb-2">All caught up!</h2>
@@ -326,7 +326,7 @@ export default function ReviewPage() {
           {/* Celebration */}
           <div className="text-center mb-6">
             <div className="flex justify-center items-end gap-2 mb-4">
-              <Kuttan mood="celebrating" size="lg" />
+              <Nivin mood="celebrating" size="lg" />
               <Appu mood="happy" size="sm" />
             </div>
             <h2 className="text-2xl font-bold mb-1">Session Complete!</h2>
@@ -465,17 +465,17 @@ export default function ReviewPage() {
             transition={{ duration: 0.25 }}
             className="flex-1 flex flex-col"
           >
-            {/* Kuttan speech bubble */}
+            {/* Nivin speech bubble */}
             <div className="flex items-start gap-2.5 mb-4">
-              <Kuttan mood={kuttanMood} size="sm" entrance={false} />
+              <Nivin mood={peerMood} size="sm" entrance={false} />
               <motion.div
-                key={feedbackText || currentEncounter.kuttanSays}
+                key={feedbackText || currentEncounter.peerSays}
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="game-card px-3 py-2 flex-1"
               >
                 <p className="text-sm font-medium text-[var(--foreground)]/70 leading-snug">
-                  {showFeedback ? feedbackText : currentEncounter.kuttanSays}
+                  {showFeedback ? feedbackText : currentEncounter.peerSays}
                 </p>
               </motion.div>
             </div>

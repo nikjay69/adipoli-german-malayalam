@@ -124,7 +124,7 @@ const checkpoint2: SpineCheckpoint = {
         { id: 'cp2-s-intro', sectionId: 'sprechen', mode: 'speak', prompt: 'Say your full self-intro: Ich heiße ... Ich komme aus ... Ich wohne in ... Ich spreche ...', expected: 'Four lines without freezing, ~20 seconds.', points: 4, weaknessTags: ['sprechen:self_intro'], requiredForPass: true,
           task: { kind: 'production', action: 'say', question: 'The examiner nods at you. Deliver your full self-intro aloud — name, origin, home, languages — before you look at anything.', modelAnswer: 'Ich heiße Priya. Ich komme aus Indien. Ich wohne in Kochi. Ich spreche Malayalam, Englisch und ein bisschen Deutsch.', modelAudioUrl: '/audio/checkpoints/cp2-s-intro-model.mp3', criteria: ['All four lines said aloud', 'No freeze longer than a breath', 'Verb in second position every time'] } },
         { id: 'cp2-s-spell', sectionId: 'sprechen', mode: 'speak', prompt: 'Spell your name with German letter names.', expected: 'No English letter names slipping in.', points: 2, weaknessTags: ['sprechen:spelling'],
-          task: { kind: 'production', action: 'say', question: 'The examiner asks: "Wie schreibt man das?" Spell YOUR name aloud with German letter names.', modelAnswer: 'KUTTAN → Ka, U, Te, Te, A, En.', modelAudioUrl: '/audio/checkpoints/cp2-s-spell-model.mp3', criteria: ['German letter names only — no English "kay" or "you"', 'Every letter of your name, in order'] } },
+          task: { kind: 'production', action: 'say', question: 'The examiner asks: "Wie schreibt man das?" Spell YOUR name aloud with German letter names.', modelAnswer: 'Example: MEERA → Em, E, E, Er, A.', modelAudioUrl: '/audio/checkpoints/cp2-s-spell-model.mp3', criteria: ['German letter names only — no English letter names', 'Every letter of your name, in order'] } },
         { id: 'cp2-s-age', sectionId: 'sprechen', mode: 'speak', prompt: 'Answer: Wie alt sind Sie?', expected: 'Ich bin ... Jahre alt.', points: 2, weaknessTags: ['sprechen:question_answer', 'vocab:personal_info'],
           task: { kind: 'production', action: 'say', question: '"Wie alt sind Sie?" — answer aloud with your real age, full sentence.', modelAnswer: 'Ich bin dreiundzwanzig Jahre alt.', modelAudioUrl: '/audio/checkpoints/cp2-s-age-model.mp3', criteria: ['Full sentence: Ich bin ... Jahre alt', 'Your age said as a German number, not English'] } },
       ],
@@ -135,7 +135,7 @@ const checkpoint2: SpineCheckpoint = {
       instruction: 'Forms are Schreiben Teil 1. Every field label matters.',
       items: [
         { id: 'cp2-w-form', sectionId: 'schreiben', mode: 'write', prompt: 'Fill a mini-form: Vorname, Nachname, Land, Telefonnummer.', expected: 'Right data in the right field.', points: 2, weaknessTags: ['schreiben:form_fields', 'vocab:personal_info'],
-          task: { kind: 'choice', question: 'The form has fields: Vorname · Nachname · Land · Telefonnummer. Kuttan\'s full name is "Kuttan Menon". What goes in "Nachname"?', options: ['Menon', 'Kuttan', 'Kuttan Menon', 'Indien'], correctAnswer: 'Menon' } },
+          task: { kind: 'choice', question: 'The form has fields: Vorname · Nachname · Land · Telefonnummer. Nivin\'s full name is "Nivin Menon". What goes in "Nachname"?', options: ['Menon', 'Nivin', 'Nivin Menon', 'Indien'], correctAnswer: 'Menon' } },
         { id: 'cp2-w-date', sectionId: 'schreiben', mode: 'write', prompt: 'Write your birthday in German format.', expected: 'TT.MM.JJJJ, e.g. 07.11.2001.', points: 2, weaknessTags: ['schreiben:address_date_phone'],
           task: { kind: 'type', question: 'Write "7 November 2001" the way a German form wants it (TT.MM.JJJJ):', accepted: ['07.11.2001', '7.11.2001'], placeholder: 'TT.MM.JJJJ' } },
       ],
@@ -197,7 +197,7 @@ const checkpoint3: SpineCheckpoint = {
       instruction: 'Word order is scored in every written task.',
       items: [
         { id: 'cp3-w-routine', sectionId: 'schreiben', mode: 'write', prompt: 'Write 3 daily-routine sentences.', expected: 'Verb in second position in all three.', points: 2, weaknessTags: ['schreiben:word_order', 'grammar:verb_position'],
-          task: { kind: 'type', question: 'Kuttan wrote: "Ich um 7 Uhr aufstehe." — that word order fails the exam. Type the sentence correctly:', accepted: ['Ich stehe um 7 Uhr auf', 'Ich stehe um sieben Uhr auf'], placeholder: 'Ich …' } },
+          task: { kind: 'type', question: 'Nivin wrote: "Ich um 7 Uhr aufstehe." — that word order fails the exam. Type the sentence correctly:', accepted: ['Ich stehe um 7 Uhr auf', 'Ich stehe um sieben Uhr auf'], placeholder: 'Ich …' } },
       ],
     },
     {
@@ -356,7 +356,7 @@ const checkpoint6: SpineCheckpoint = {
       instruction: 'This is Schreiben Teil 2. All three points or it fails — write it for real.',
       items: [
         { id: 'cp6-w-message', sectionId: 'schreiben', mode: 'write', prompt: 'Write a ~30-word invitation covering: what, when, where.', expected: 'All 3 points present and understandable.', points: 4, weaknessTags: ['schreiben:three_points'], requiredForPass: true,
-          task: { kind: 'production', action: 'write', question: 'Write a ~30-word invitation to a friend. It MUST answer: what is happening, when, and where. Write it in the box before you look at the model.', modelAnswer: 'Liebe Anna, ich mache am Samstag eine Party bei mir zu Hause. Wir beginnen um 18 Uhr. Kommst du? Bitte antworte mir. Viele Grüße, Kuttan', criteria: ['Point 1: WHAT is happening', 'Point 2: WHEN it happens', 'Point 3: WHERE it happens', 'Roughly 30 words, understandable throughout'] } },
+          task: { kind: 'production', action: 'write', question: 'Write a ~30-word invitation to a friend. It MUST answer: what is happening, when, and where. Write it in the box before you look at the model.', modelAnswer: 'Liebe Anna, ich mache am Samstag eine Party bei mir zu Hause. Wir beginnen um 18 Uhr. Kommst du? Bitte antworte mir. Viele Grüße, Nivin', criteria: ['Point 1: WHAT is happening', 'Point 2: WHEN it happens', 'Point 3: WHERE it happens', 'Roughly 30 words, understandable throughout'] } },
         { id: 'cp6-w-frame', sectionId: 'schreiben', mode: 'write', prompt: 'Open and close correctly: Liebe/Lieber ... → Viele Grüße.', expected: 'Greeting + closing both present.', points: 2, weaknessTags: ['schreiben:greeting_closing'],
           task: { kind: 'choice', question: 'Which opening/closing pair is right for a message to a friend?', options: ['Liebe Anna, … Viele Grüße', 'Sehr geehrte Anna, … Hochachtungsvoll', 'Hey!! … Ende', 'Liebe Anna, … Mit freundlichen Grüßen, Herr K. Menon'], correctAnswer: 'Liebe Anna, … Viele Grüße' } },
       ],
@@ -415,7 +415,7 @@ const checkpoint7: SpineCheckpoint = {
       instruction: 'This is Schreiben Teil 1. Wrong field = zero, even with correct German.',
       items: [
         { id: 'cp7-w-form', sectionId: 'schreiben', mode: 'write', prompt: 'Fill a full form: Name, Adresse, Geburtsdatum, Staatsangehörigkeit, Unterschrift.', expected: 'Every field right, nothing swapped.', points: 4, weaknessTags: ['schreiben:form_fields', 'lesen:forms'], requiredForPass: true,
-          task: { kind: 'choice', question: 'The form field says "Staatsangehörigkeit". Kuttan is from India. What does he write?', options: ['indisch', 'Indien', 'Kochi, Indien', 'Malayalam'], correctAnswer: 'indisch' } },
+          task: { kind: 'choice', question: 'The form field says "Staatsangehörigkeit". Nivin is from India. What does he write?', options: ['indisch', 'Indien', 'Kochi, Indien', 'Malayalam'], correctAnswer: 'indisch' } },
         { id: 'cp7-w-audio-form', sectionId: 'schreiben', mode: 'write', prompt: 'Fill 2 form fields from spoken information.', expected: 'Both fields correct.', points: 2, weaknessTags: ['hoeren:audio_to_form'],
           task: { kind: 'type', question: 'Play the audio — a caller leaves their details. Type the phone number into the form:', accepted: ['01759932', '0175 9932', '0175 99 32'], audioUrl: '/audio/checkpoints/cp7-w-audio-form.mp3', placeholder: 'digits' } },
       ],
@@ -469,7 +469,7 @@ const checkpoint8: SpineCheckpoint = {
       instruction: 'Form + message under 20 minutes — write for real, then rubric-score.',
       items: [
         { id: 'cp8-w-mock', sectionId: 'schreiben', mode: 'write', prompt: 'Form filled + 30-word message with all 3 points, in 20m.', expected: 'Rubric ≥3/5, no missing point.', points: 3, weaknessTags: ['schreiben:three_points', 'schreiben:form_fields'],
-          task: { kind: 'production', action: 'write', question: 'Set a 20-minute timer. Write a ~30-word message to your teacher: you are ill, you cannot come today, ask for the homework. Write it in the box.', modelAnswer: 'Liebe Frau Weber, ich bin krank und kann heute nicht zum Kurs kommen. Können Sie mir bitte die Hausaufgaben schicken? Vielen Dank. Viele Grüße, Kuttan', criteria: ['Point 1: you are ill', 'Point 2: you cannot come', 'Point 3: you ask for the homework', 'Greeting + closing present, ~30 words, done inside 20 minutes'] } },
+          task: { kind: 'production', action: 'write', question: 'Set a 20-minute timer. Write a ~30-word message to your teacher: you are ill, you cannot come today, ask for the homework. Write it in the box.', modelAnswer: 'Liebe Frau Fischer, ich bin krank und kann heute nicht zum Kurs kommen. Können Sie mir bitte die Hausaufgaben schicken? Vielen Dank. Viele Grüße, Nivin', criteria: ['Point 1: you are ill', 'Point 2: you cannot come', 'Point 3: you ask for the homework', 'Greeting + closing present, ~30 words, done inside 20 minutes'] } },
       ],
     },
     {

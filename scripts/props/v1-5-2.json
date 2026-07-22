@@ -16,13 +16,13 @@
       "audioSrc": "audio/tts/v1-5-2/v1-5-2-line-1.mp3"
     },
     {
-      "text": "Stay formal with Frau Weber: Sie, Ihnen, and a calm voice.",
+      "text": "Stay formal with Frau Fischer: Sie, Ihnen, and a calm voice.",
       "mood": "happy",
       "audioSrc": "audio/tts/v1-5-2/v1-5-2-line-2.mp3"
     },
     {
-      "text": "Key phrase: 'Guten Tag, Frau Weber.' Say it once like an exam answer.",
-      "german": "Guten Tag, Frau Weber.",
+      "text": "Key phrase: 'Guten Tag, Frau Fischer.' Say it once like an exam answer.",
+      "german": "Guten Tag, Frau Fischer.",
       "mood": "celebrating",
       "audioSrc": "audio/tts/v1-5-2/v1-5-2-line-3.mp3"
     }

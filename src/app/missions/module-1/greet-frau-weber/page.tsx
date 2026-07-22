@@ -16,11 +16,11 @@ import {
   useMissionStepForQA,
 } from '@/app/missions/module-2/_components/MissionUI';
 import { module1MissionAudio, module1MissionById, writeCompletedModule1Mission } from '@/lib/missions/module1';
-import { module1AnswerFrauWeberPractice } from '@/lib/missions/module1Practice';
+import { module1AnswerFrauFischerPractice } from '@/lib/missions/module1Practice';
 
 const mission = module1MissionById.greetFrauWeber;
 const missionSteps = mission.steps;
-const practice = module1AnswerFrauWeberPractice;
+const practice = module1AnswerFrauFischerPractice;
 const audio = module1MissionAudio.greetFrauWeber;
 
 export default function Module1GreetingMissionPage() {
@@ -40,11 +40,11 @@ export default function Module1GreetingMissionPage() {
       <PremiumCard>
         {step === 0 && (
           <HearStep
-            title="Frau Weber walks in."
+            title="Frau Fischer walks in."
             instructions="Morning class at Goethe Kochi. Your teacher greets the room — listen to the German greeting set once, all the way through."
             heard={heard}
             onHeard={() => setHeard(true)}
-            audios={[{ src: audio.greetingSet, label: 'Frau Weber', turnCue: 'Just listen.' }]}
+            audios={[{ src: audio.greetingSet, label: 'Frau Fischer', turnCue: 'Just listen.' }]}
             cta={<>I heard it <ArrowRight className="h-5 w-5" /></>}
             onContinue={() => setStep(1)}
             continueDisabled={!heard}
@@ -57,7 +57,7 @@ export default function Module1GreetingMissionPage() {
             prompt="The whole class waits. Hear the model line once — then say it ALOUD. Really aloud; whisper-German doesn't survive exam day."
             audioSrc={audio.formalOpener}
             audioLabel="Your line"
-            modelText={<>Guten Morgen, Frau Weber. <span className="text-[#f1d27a]">Ich lerne Deutsch.</span></>}
+            modelText={<>Guten Morgen, Frau Fischer. <span className="text-[#f1d27a]">Ich lerne Deutsch.</span></>}
             turnCue={practice.scene.turnCue}
             cta={<>I said it aloud <ArrowRight className="h-5 w-5" /></>}
             onContinue={() => setStep(2)}
@@ -72,7 +72,7 @@ export default function Module1GreetingMissionPage() {
               sceneVisualVariant="ai-study"
               speakerName={practice.scene.speakerName}
               speakerLine={practice.scene.speakerLine}
-              learnerName="You"
+              learnerName="Nivin"
               learnerLine={practice.outputLines.join(' ')}
               audioSrc={practice.scene.audioSrc}
               audioLabel="Your line"
@@ -93,7 +93,7 @@ export default function Module1GreetingMissionPage() {
                   <div className="rounded-[1.5rem] border border-[#3fbf75]/25 bg-[#3fbf75]/12 p-5">
                     <p className="text-sm font-black text-[#bcf7d0]">First class win.</p>
                     <p className="mt-1 text-sm font-black text-[#bcf7d0]">You can now</p>
-                    <p className="mt-2 text-2xl font-black">“Guten Morgen, Frau Weber. Ich lerne Deutsch.”</p>
+                    <p className="mt-2 text-2xl font-black">“Guten Morgen, Frau Fischer. Ich lerne Deutsch.”</p>
                   </div>
                   <Module1NextMissionCard currentMissionId={mission.id} />
                 </div>

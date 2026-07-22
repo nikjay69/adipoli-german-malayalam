@@ -52,7 +52,7 @@
     "title": "Greetings for Real Life",
     "subtitle": "Module 1 \u00B7 Lesson 3 \u00B7 Part 1",
     "beats": [
-      { "text": "Mission one: greet Frau Weber politely and sound calm from the first word.", "mood": "waving" },
+      { "text": "Mission one: greet Frau Fischer politely and sound calm from the first word.", "mood": "waving" },
       { "text": "Four tools: Guten Morgen, Guten Tag, Guten Abend, Gute Nacht.", "german": "Guten Tag", "mood": "pointing" },
       { "text": "Bonus: Hallo works anytime. Tsch\u00FCss for goodbye. Safe defaults.", "mood": "happy" },
       { "text": "Try: Guten Tag! Wie geht es Ihnen? \u2014 the formal opener for any shop or office.", "german": "Wie geht es Ihnen?", "mood": "celebrating" }
@@ -134,8 +134,8 @@
     "beats": [
       { "text": "Dress rehearsal in Kerala: Goethe desk, bakery role-play, and a polite exit.", "mood": "waving" },
       { "text": "Three outputs: greet, ask softly, and close with Danke or Auf Wiedersehen.", "german": "Guten Tag · Danke · Auf Wiedersehen", "mood": "pointing" },
-      { "text": "Stay formal with Frau Weber: Sie, Ihnen, and a calm voice.", "mood": "happy" },
-      { "text": "Key phrase: 'Guten Tag, Frau Weber.' Say it once like an exam answer.", "german": "Guten Tag, Frau Weber.", "mood": "celebrating" }
+      { "text": "Stay formal with Frau Fischer: Sie, Ihnen, and a calm voice.", "mood": "happy" },
+      { "text": "Key phrase: 'Guten Tag, Frau Fischer.' Say it once like an exam answer.", "german": "Guten Tag, Frau Fischer.", "mood": "celebrating" }
     ],
     "vocabCards": [
       { "german": "Guten Tag", "english": "Good day", "malayalam": "nalla divasam", "pronunciation": "goo-ten tahk" },

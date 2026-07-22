@@ -3,7 +3,8 @@
 import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Volume2 } from 'lucide-react';
-import { KuttanImage, type KuttanMoodImage } from '@/components/character/KuttanImage';
+import { PeerImage } from '@/components/character/PeerImage';
+import type { NivinMoodImage } from '@/components/character/NivinImage';
 import { GameButton } from '@/components/game';
 import { ComboMeter } from '@/components/game/ComboMeter';
 import { Confetti } from '@/components/game';
@@ -15,7 +16,7 @@ import { feedbackCombo, feedbackComboBreak, feedbackWrong, feedbackCelebration }
 import { getSceneForModule } from '@/lib/audio/ambience';
 import type { AdventureMoment } from '@/lib/adventure-engine';
 import type { Exercise, VocabItem, Module, Lesson } from '@/lib/content/types';
-import { getKuttanReaction } from '@/lib/adventure-engine';
+import { getPeerReaction } from '@/lib/adventure-engine';
 import { generateEncounter, type Encounter } from '@/lib/encounters';
 
 interface AdventurePlayerProps {
@@ -52,6 +53,7 @@ export function AdventurePlayer({
   const moment = moments[currentIdx];
   const progress = ((currentIdx + 1) / moments.length) * 100;
   const sceneType = lesson.storyScene?.setting.sceneType || getSceneForModule(module.id);
+  const learnerOwner = lesson.storyScene?.learnerOwner ?? 'nivin';
   // Per-lesson painterly backdrop (pre-generated, DECISIONS #9); falls back to
   // the shared sceneType image if this lesson has no dedicated scene yet.
   const [sceneImage, setSceneImage] = useState(`/images/scenes/${lesson.id}.jpg`);
@@ -97,7 +99,7 @@ export function AdventurePlayer({
 
   if (!moment) return null;
 
-  const kMood: KuttanMoodImage = moment.kuttanMood || 'happy';
+  const kMood: NivinMoodImage = moment.peerMood || 'happy';
 
   return (
     <div className="min-h-screen flex flex-col safe-top safe-bottom relative">
@@ -130,7 +132,7 @@ export function AdventurePlayer({
             className="flex-1 flex flex-col">
 
             {/* ═══ INTRO ═══ */}
-            {moment.type === 'kuttan-intro' && (
+            {moment.type === 'peer-intro' && (
               <div className="flex-1 flex flex-col items-center justify-center">
                 {/* Scene image as background card */}
                 <div className="relative w-full max-w-sm h-36 rounded-2xl overflow-hidden mb-4">
@@ -141,12 +143,12 @@ export function AdventurePlayer({
                     <p className="text-white/50 text-[10px]">{lesson.titleGerman}</p>
                   </div>
                 </div>
-                {/* Kuttan PNG */}
+                {/* Nivin PNG */}
                 <motion.div animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 2.5 }}>
-                  <KuttanImage mood="waving" size="lg" animate={false} />
+                  <PeerImage peer={learnerOwner} mood="waving" size="lg" animate={false} />
                 </motion.div>
                 <p className="text-sm text-white/60 text-center mt-2 max-w-[250px]">
-                  {(moment.kuttanSays || '').slice(0, 60)}...
+                  {(moment.peerSays || '').slice(0, 60)}...
                 </p>
               </div>
             )}
@@ -154,10 +156,10 @@ export function AdventurePlayer({
             {/* ═══ VOCAB ENCOUNTER ═══ */}
             {moment.type === 'vocab-encounter' && moment.vocab && (
               <div className="flex-1 flex flex-col items-center justify-center">
-                {/* Kuttan reacting to the word */}
+                {/* Nivin reacting to the word */}
                 <div className="flex items-center gap-3 mb-3">
                   <motion.div animate={{ rotate: [0, -5, 5, 0] }} transition={{ duration: 0.5, delay: 0.3 }}>
-                    <KuttanImage mood="excited" size="sm" animate={false} />
+                    <PeerImage peer={learnerOwner} mood="excited" size="sm" animate={false} />
                   </motion.div>
                   <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}
                     className="bg-white/5 border border-white/10 rounded-2xl rounded-bl-sm px-3 py-1.5">
@@ -204,7 +206,7 @@ export function AdventurePlayer({
             {moment.type === 'quick-game' && vocabEncounter && (
               <div className="flex-1 flex flex-col items-center justify-center">
                 <div className="flex items-center gap-2 mb-3">
-                  <KuttanImage mood="excited" size="xs" animate={false} />
+                  <PeerImage peer={learnerOwner} mood="excited" size="xs" animate={false} />
                   <span className="text-xs font-bold text-[#d4a520]">Quick test! ⚡</span>
                 </div>
                 <div className="w-full max-w-sm">
@@ -222,12 +224,12 @@ export function AdventurePlayer({
               </div>
             )}
 
-            {/* ═══ KUTTAN CONFUSED ═══ */}
-            {moment.type === 'kuttan-confused' && (
+            {/* ═══ PEER CONFUSED ═══ */}
+            {moment.type === 'peer-confused' && (
               <div className="flex-1 flex flex-col items-center justify-center">
-                <KuttanImage mood="confused" size="md" animate={false} />
+                <PeerImage peer={learnerOwner} mood="confused" size="md" animate={false} />
                 <div className="bg-[#c0392b]/10 border border-[#c0392b]/20 rounded-xl px-4 py-2 mt-3 max-w-[280px]">
-                  <p className="text-sm text-white/70 text-center">{(moment.kuttanSays || '').slice(0, 80)}</p>
+                  <p className="text-sm text-white/70 text-center">{(moment.peerSays || '').slice(0, 80)}</p>
                 </div>
                 {moment.sceneText && (
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}
@@ -241,7 +243,7 @@ export function AdventurePlayer({
             {/* ═══ DECISION ═══ */}
             {moment.type === 'decision' && moment.decision && (
               <div className="flex-1 flex flex-col items-center justify-center">
-                <KuttanImage mood="thinking" size="sm" animate={false} />
+                <PeerImage peer={learnerOwner} mood="thinking" size="sm" animate={false} />
                 <p className="text-sm font-medium text-center mt-2 mb-3 max-w-[280px] leading-snug">
                   {moment.decision.moment.slice(0, 100)}
                 </p>
@@ -263,8 +265,8 @@ export function AdventurePlayer({
             {moment.type === 'exercise-game' && moment.exercise && (
               <div className="flex-1 flex flex-col justify-center">
                 <div className="flex items-center gap-2 mb-3 justify-center">
-                  <KuttanImage mood={kMood} size="xs" animate={false} />
-                  {moment.kuttanSays && <span className="text-[10px] text-white/40">{(moment.kuttanSays).slice(0, 40)}</span>}
+                  <PeerImage peer={learnerOwner} mood={kMood} size="xs" animate={false} />
+                  {moment.peerSays && <span className="text-[10px] text-white/40">{(moment.peerSays).slice(0, 40)}</span>}
                 </div>
                 <p className="text-sm font-bold text-center mb-3 max-w-sm mx-auto">{moment.exercise.question.slice(0, 120)}</p>
                 <div className="w-full max-w-sm mx-auto">
@@ -273,14 +275,14 @@ export function AdventurePlayer({
               </div>
             )}
 
-            {/* ═══ KUTTAN REACT / CELEBRATION ═══ */}
-            {(moment.type === 'kuttan-react' || moment.type === 'celebration') && (
+            {/* ═══ PEER REACT / CELEBRATION ═══ */}
+            {(moment.type === 'peer-react' || moment.type === 'celebration') && (
               <div className="flex-1 flex flex-col items-center justify-center">
                 <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 0.5 }}>
-                  <KuttanImage mood="celebrating" size="lg" animate={false} />
+                  <PeerImage peer={learnerOwner} mood="celebrating" size="lg" animate={false} />
                 </motion.div>
                 <p className="text-sm font-bold text-[#d4a520] text-center mt-3">
-                  {(moment.kuttanSays || '').slice(0, 50)}
+                  {(moment.peerSays || '').slice(0, 50)}
                 </p>
               </div>
             )}
@@ -289,7 +291,7 @@ export function AdventurePlayer({
             {moment.type === 'finale' && (
               <div className="flex-1 flex flex-col items-center justify-center">
                 <motion.div animate={{ y: [0, -8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-                  <KuttanImage mood="celebrating" size="xl" animate={false} />
+                  <PeerImage peer={learnerOwner} mood="celebrating" size="xl" animate={false} />
                 </motion.div>
                 <p className="text-xl font-black text-white mt-4">Adventure Complete! 🎉</p>
                 <p className="text-sm text-white/40 mt-1">{score}/{total} correct • {maxCombo}x max combo</p>
@@ -304,10 +306,10 @@ export function AdventurePlayer({
         <div className="px-4 pb-4 pt-2 relative z-10">
           <GameButton onClick={moment.type === 'finale' ? () => onComplete(score, total, maxCombo) : advance}
             fullWidth variant="primary">
-            {moment.type === 'kuttan-intro' ? "Let's go!" :
+            {moment.type === 'peer-intro' ? "Let's go!" :
              moment.type === 'finale' ? "Complete" :
              moment.type === 'celebration' ? "Keep going!" :
-             moment.type === 'kuttan-confused' ? "I know this!" : "Next"}
+             moment.type === 'peer-confused' ? "I know this!" : "Next"}
           </GameButton>
         </div>
       )}

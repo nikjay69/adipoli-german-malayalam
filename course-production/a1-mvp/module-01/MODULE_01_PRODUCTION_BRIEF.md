@@ -24,7 +24,7 @@ A learner finishes Module 1 able to:
 
 | # | Owned video lesson | Target length | Learner win | Main output |
 |---|---|---:|---|---|
-| 1 | Start listening: `Guten Morgen` | 25m | Hear + answer first German line | Say `Guten Morgen, Frau Weber.` |
+| 1 | Start listening: `Guten Morgen` | 25m | Hear + answer first German line | Say `Guten Morgen, Frau Fischer.` |
 | 2 | Why A1 matters for Malayalis | 25m | Understand the exam/course path | Say why they are learning in one sentence |
 | 3 | German sounds for Malayalam speakers | 45m | Pronounce `ch/sch/w/v/ä/ö/ü` | Shadow 10 sound lines |
 | 4 | Formal greetings | 35m | Choose greeting by time/context | Answer 8 greeting prompts |
@@ -36,7 +36,7 @@ Total Module 1 owned video target: **240 minutes**.
 
 ## Must-do path
 
-1. First scene: Frau Weber says `Guten Morgen`; learner answers aloud.
+1. First scene: Frau Fischer says `Guten Morgen`; learner answers aloud.
 2. Video 1: Boss explains the first greeting and why formal tone matters.
 3. Practice 1: learner shadows 5 greeting lines.
 4. Repair 1: learner fixes the wrong response: `Gute Nacht` vs `Guten Morgen`.
@@ -76,7 +76,7 @@ Phone first:
 
 - One visible action: `Play` or `Say it aloud`.
 - No long paragraph before audio.
-- Use subtitles only as support: `Frau Weber: Guten Morgen.`
+- Use subtitles only as support: `Frau Fischer: Guten Morgen.`
 - Speaking self-check is acceptable for MVP; recording/manual scoring can come later.
 - Hide global nav/search during focused lessons.
 

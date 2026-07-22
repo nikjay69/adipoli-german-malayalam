@@ -7,7 +7,7 @@ Updated: 2026-06-02 15:35 CEST
 This spec covers the currently wired Module 1 app practice sets:
 
 ```text
-Practice: answer Frau Weber
+Practice: answer Frau Fischer
 Route: /missions/module-1/greet-frau-weber
 Source lesson: Lesson 1 — Start listening: Guten Morgen
 
@@ -47,8 +47,8 @@ No games. No dashboard. No typing gate on the first beat.
 By the end of this practice set, the learner can do this without freezing:
 
 ```text
-Frau Weber: Guten Morgen.
-You: Guten Morgen, Frau Weber.
+Frau Fischer: Guten Morgen.
+You: Guten Morgen, Frau Fischer.
 You: Ich lerne Deutsch.
 ```
 
@@ -77,8 +77,8 @@ module1AnswerFrauWeberPractice
 It contains:
 
 - route: `/missions/module-1/greet-frau-weber`;
-- scene speaker line: `Frau Weber: Guten Morgen.`;
-- learner output lines: `Guten Morgen, Frau Weber.` and `Ich lerne Deutsch.`;
+- scene speaker line: `Frau Fischer: Guten Morgen.`;
+- learner output lines: `Guten Morgen, Frau Fischer.` and `Ich lerne Deutsch.`;
 - voice-first practice tasks;
 - repair choices;
 - closed mini-check items;
@@ -133,7 +133,7 @@ The Lesson 3 route imports this data and renders the sound micro-check/recovery 
 ### Step 1 — Hear
 
 - Show one two-person scene.
-- Frau Weber says: `Guten Morgen.`
+- Frau Fischer says: `Guten Morgen.`
 - Custom audio UI backed by real `<audio>`.
 - Repair choices stay hidden until audio finishes.
 
@@ -142,7 +142,7 @@ The Lesson 3 route imports this data and renders the sound micro-check/recovery 
 Learner says:
 
 ```text
-Guten Morgen, Frau Weber.
+Guten Morgen, Frau Fischer.
 ```
 
 This is self-marked in MVP. Do not require recording yet.
@@ -152,15 +152,15 @@ This is self-marked in MVP. Do not require recording yet.
 Show three choices only after the audio beat:
 
 ```text
-Gute Nacht, Frau Weber.
-Guten Morgen, Frau Weber.
-Tschüss, Frau Weber.
+Gute Nacht, Frau Fischer.
+Guten Morgen, Frau Fischer.
+Tschüss, Frau Fischer.
 ```
 
 Correct:
 
 ```text
-Guten Morgen, Frau Weber.
+Guten Morgen, Frau Fischer.
 ```
 
 Wrong-feedback rule:
@@ -175,7 +175,7 @@ After the correct choice, show one compact win:
 
 ```text
 You can now
-“Guten Morgen, Frau Weber. Ich lerne Deutsch.”
+“Guten Morgen, Frau Fischer. Ich lerne Deutsch.”
 ```
 
 Primary next card:
@@ -198,7 +198,7 @@ Items:
 
 | Mode | Prompt | Expected | Tags |
 |---|---|---|---|
-| speak | Frau Weber says: `Guten Morgen.` Say a safe reply. | `Guten Morgen, Frau Weber.` | `sprechen:greeting_reply`, `sprechen:formality` |
+| speak | Frau Fischer says: `Guten Morgen.` Say a safe reply. | `Guten Morgen, Frau Fischer.` | `sprechen:greeting_reply`, `sprechen:formality` |
 | choose | 9 AM teacher greeting: `Guten Morgen` or `Gute Nacht`? | `Guten Morgen` | `hoeren:greetings`, `vocab:greeting_set` |
 | write | Write: I am learning German. | `Ich lerne Deutsch.` | `schreiben:first_sentence` |
 
@@ -223,10 +223,10 @@ Implementation note: the current route implements the hear/say/repair/win beat a
 
 ### `sprechen:greeting_reply`
 
-- Do: repeat `Guten Morgen, Frau Weber.` and `Ja. Ich lerne Deutsch.` five times each.
+- Do: repeat `Guten Morgen, Frau Fischer.` and `Ja. Ich lerne Deutsch.` five times each.
 - Output: one spoken greeting exchange.
 - Time: 10m.
-- Retest: Frau Weber greets once; learner replies aloud.
+- Retest: Frau Fischer greets once; learner replies aloud.
 
 ### `schreiben:first_sentence`
 
@@ -481,7 +481,7 @@ It contains:
 - route: `/missions/module-1/first-mini-conversation`;
 - source lesson: Lesson 7 first mini-conversation;
 - real existing audio path: `/audio/tts/v1-3-1/v1-3-1-line-3.mp3`;
-- output set: `Guten Tag, Frau Weber. Gut, danke.` plus `Noch einmal, bitte. Auf Wiedersehen.`;
+- output set: `Guten Tag, Frau Fischer. Gut, danke.` plus `Noch einmal, bitte. Auf Wiedersehen.`;
 - mini-conversation trap: rough `Hey. Was?` vs formal answer vs bedtime wrong-context line;
 - closed micro-check items for answering, repeat request, and thank+leave;
 - exact recovery cards for `sprechen:question_answer`, `sprechen:request_phrase`, and `sprechen:formality`;
@@ -492,7 +492,7 @@ The new Module 1 `first-mini-conversation` route imports this shared data and re
 ### Required learner flow
 
 1. Play the existing `Guten Tag. Wie geht es Ihnen?` audio.
-2. Learner answers aloud: `Guten Tag, Frau Weber. Gut, danke.`.
+2. Learner answers aloud: `Guten Tag, Frau Fischer. Gut, danke.`.
 3. Learner avoids rough `Hey. Was?` and wrong-context `Gute Nacht`.
 4. Learner practises one part: answer question, ask repeat, or thank + leave.
 5. Show the closed first-conversation micro-check and exact recovery tasks.

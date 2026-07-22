@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { Mail, Lock, LogIn, Eye, EyeOff, AlertCircle, Info, Fingerprint } from 'lucide-react';
 import { useAuthStore, isSupabaseReady } from '@/lib/auth-store';
 import { startAuthentication } from '@simplewebauthn/browser';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -172,7 +172,7 @@ export default function LoginPage() {
         transition={{ duration: 0.5 }}
         className="relative w-full max-w-md"
       >
-        {/* Header with Kuttan */}
+        {/* Header with Nivin */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -180,7 +180,7 @@ export default function LoginPage() {
           className="text-center mb-6"
         >
           <div className="flex justify-center mb-3">
-            <Kuttan mood="waving" size="md" />
+            <Nivin mood="waving" size="md" />
           </div>
           <h1 className="text-3xl font-bold gradient-text mb-2">Welcome back, machaa!</h1>
           <p className="text-[var(--foreground)]/60 text-sm">

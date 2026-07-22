@@ -6,7 +6,7 @@ import { ArrowLeft, Printer, BookOpen, Copy, Check, List } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getModuleById, ALL_MODULES } from '@/lib/content/modules';
 import type { Module } from '@/lib/content/types';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 function CopyLine({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
@@ -248,14 +248,14 @@ export default function ScriptPage() {
         </div>
       </div>
 
-      {/* Kuttan hero — screen only */}
+      {/* Nivin hero — screen only */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         className="print:hidden max-w-3xl mx-auto px-4 pt-5"
       >
         <div className="game-card p-4 flex items-center gap-3 border border-[#d4a520]/20">
-          <Kuttan mood="thinking" size="sm" />
+          <Nivin mood="thinking" size="sm" />
           <div className="flex-1">
             <p className="text-sm font-semibold">Here&apos;s the full script, machaa.</p>
             <p className="text-xs text-[var(--foreground)]/60 leading-snug">

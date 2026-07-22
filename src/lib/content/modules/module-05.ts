@@ -28,18 +28,19 @@ export const MODULE_5: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
-          name: "Imagined: Kuttan's Desk (Home Office)",
+          name: "Imagined: Nivin's Desk (Home Office)",
           sceneType: "home",
           timeOfDay: "morning",
-          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. You're at your desk in the WG, surrounded by books and your laptop. Stefan walks in and asks what you're up to. 'Ich lerne Deutsch!' you say proudly. This desk is your battleground for mastering the German present tense. Every verb has a pattern, and you're about to crack it, machane!",
+          description: "Frau Fischer's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. You're at your desk in the WG, surrounded by books and your laptop. Stefan walks in and asks what you're up to. 'Ich lerne Deutsch!' you say proudly. This desk is your battleground for mastering the German present tense. Every verb has a pattern, and you're about to crack it, machane!",
         },
         narrative: {
           previousRecap: "You've successfully introduced your family. Now, let's learn how to describe everything you DO in Germany!",
           currentObjective: "Master the present tense conjugation of regular verbs and the 'ich/du/er' patterns",
           nextTeaser: "Next: rise and shine! Let's conquer the morning routine!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! German verbs are like building blocks. English-il 'I play, he plays' ennu mathram parayumbol, German-il ella pronoun-inum ending maarum.",
           "Formula simple aanu: Remove '-en' then add the code: ich -e, du -st, er -t. Logic catch cheythaal baaki ellam set aavum.",
           "Pinne 'arbeiten' pole stems '-t'/-d' ending kandaal additional '-e-' koodi care venam. Let's make our first German sentences!",
@@ -55,15 +56,15 @@ export const MODULE_5: Module = {
           {
             moment: "You want to say 'I play cricket' (spielen = to play). What is the correct form for 'ich'?",
             options: [
-              { text: "Ich spiele Cricket.", isCorrect: true, response: "Exactly! For 'ich', always add '-e' to the stem 'spiel-'. Perfect!", kuttanReaction: "Adipoli! 'Ich' kandaal '-e' venam. Ithu basic rule aanu, machane! 🎯" },
-              { text: "Ich spielt Cricket.", isCorrect: false, response: "Aiyyo! '-t' ending 'er/sie/es' (he/she/it) context-il mathram mathi. 'Ich' context-il '-e' venam!", kuttanReaction: "Vite machane! 'Ich' case-il ending '-e' aanu. Pattern correctly catch cheyyaam! 😬" },
+              { text: "Ich spiele Cricket.", isCorrect: true, response: "Exactly! For 'ich', always add '-e' to the stem 'spiel-'. Perfect!", peerReaction: "Adipoli! 'Ich' kandaal '-e' venam. Ithu basic rule aanu, machane! 🎯" },
+              { text: "Ich spielt Cricket.", isCorrect: false, response: "Aiyyo! '-t' ending 'er/sie/es' (he/she/it) context-il mathram mathi. 'Ich' context-il '-e' venam!", peerReaction: "Vite machane! 'Ich' case-il ending '-e' aanu. Pattern correctly catch cheyyaam! 😬" },
             ],
           },
           {
             moment: "Stefan is working today. How do you correctly say 'He works' (arbeiten = to work)?",
             options: [
-              { text: "Er arbeitet.", isCorrect: true, response: "Correct! The extra '-e-' is there because 'arbeit-' ends in 't'. Makes it readable!", kuttanReaction: "Superb! 'Arbeitt' ennu parayan preyanasam aanu, so 'arbeitet' ennu parayanam. Logical alle? ⭐" },
-              { text: "Er arbeitt.", isCorrect: false, response: "No, that's impossible to pronounce! German adds an extra '-e-' for verbs ending in 't' or 'd'.", kuttanReaction: "Aiyyo! Stem 't'-il finish cheythal additional '-e-' plus '-t' venam. 'Er arbeitet' is the king of work verbs! 🚫" },
+              { text: "Er arbeitet.", isCorrect: true, response: "Correct! The extra '-e-' is there because 'arbeit-' ends in 't'. Makes it readable!", peerReaction: "Superb! 'Arbeitt' ennu parayan preyanasam aanu, so 'arbeitet' ennu parayanam. Logical alle? ⭐" },
+              { text: "Er arbeitt.", isCorrect: false, response: "No, that's impossible to pronounce! German adds an extra '-e-' for verbs ending in 't' or 'd'.", peerReaction: "Aiyyo! Stem 't'-il finish cheythal additional '-e-' plus '-t' venam. 'Er arbeitet' is the king of work verbs! 🚫" },
             ],
           },
         ],
@@ -177,7 +178,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-1-1",
           type: "multiple-choice",
-          question: "Kuttan starts a verb journal at his desk. First entry — 'I play' in German:",
+          question: "Nivin starts a verb journal at his desk. First entry — 'I play' in German:",
           options: ["Ich spiele", "Ich spielst", "Ich spielen", "Ich spielt"],
           correctAnswer: "Ich spiele",
           explanation:
@@ -236,7 +237,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-1-8",
           type: "dictation",
-          question: "Kuttan records a line for his study log. Listen and type the sentence you hear.",
+          question: "Nivin records a line for his study log. Listen and type the sentence you hear.",
           correctAnswer: "Ich lerne Deutsch",
           explanation: "Wunderbar! You are doing exactly that right now. Remember to capitalize 'Deutsch' as it is a noun!",
           xpReward: 25,
@@ -264,7 +265,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-1-spk2",
           type: "speaking",
-          question: "Repair the classic: Kuttan writes 'Ich bin lerne Deutsch.' One verb too many! Say the clean sentence aloud: 'Ich lerne Deutsch.'",
+          question: "Repair the classic: Nivin writes 'Ich bin lerne Deutsch.' One verb too many! Say the clean sentence aloud: 'Ich lerne Deutsch.'",
           questionGerman: "Sprechen Sie laut: 'Ich lerne Deutsch.'",
           correctAnswer: "Ich lerne Deutsch",
           explanation: "English 'I am learning' tempts you into 'Ich bin lerne' — German uses ONE verb: Ich lerne. The #1 transfer error for Malayali learners, fixed for good.",
@@ -377,18 +378,19 @@ export const MODULE_5: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
-          name: "Kuttan's Home, Thrissur — Morning Routine Practice",
+          name: "Meera's Kerala Home Study Scene — Morning Routine Practice",
           sceneType: "home",
           timeOfDay: "morning",
-          description: "Kuttan is at home in Thrissur, trying to describe his real morning before Goethe Kochi class. Amma is making breakfast, the bathroom queue is familiar, and the goal is practical: say the whole routine in simple German before Germany becomes real.",
+          description: "Meera is at a home study desk in Kerala, building a sample morning routine before Goethe Kochi class. The goal is practical: say a routine in simple German without fixing personal biography as course canon.",
         },
         narrative: {
           previousRecap: "You've mastered the basic verb endings. Now, let's put them to work in your daily life!",
           currentObjective: "Sequence your morning actions using separable and reflexive verbs",
           nextTeaser: "Next: the boomerang verbs! Learn more about Trennbare Verben!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Morning routine Kerala-il thanne practice cheyyam. 'Ich stehe auf' (I get up) ennu parayumpo 'auf' end-il povan marakkaruthu.",
           "Nammal reflexive actions (duschen, Zähne putzen) and sequence words (zuerst, dann) use cheythu full routine parayaam.",
           "Separable verbs split aakumbol pre-fixed part boomerang pole land cheyyunnathu pichakamaayi orkkane! Let's start our day!",
@@ -402,17 +404,17 @@ export const MODULE_5: Module = {
         ],
         decisionPoints: [
           {
-            moment: "At home, Kuttan wants to say 'First I get up'. What is the correct German sentence?",
+            moment: "At home, Meera wants to say 'First I get up'. What is the correct German sentence?",
             options: [
-              { text: "Zuerst stehe ich auf.", isCorrect: true, response: "Exactly! In German, if 'Zuerst' is first, the verb 'stehe' comes second, and the prefix 'auf' goes to the end.", kuttanReaction: "Adipoli! Word order rules correctly catch cheythallo. 'auf' end-il poyathu makkalle point! 🔥" },
-              { text: "Zuerst ich stehe auf.", isCorrect: false, response: "Aiyyo! Verb MUST be in position 2. After 'Zuerst', the verb 'stehe' should come immediately.", kuttanReaction: "Vite machane! German logic-il verb position 2 is sacred. 'Zuerst stehe ich...' aanu right form. Try again! 😬" },
+              { text: "Zuerst stehe ich auf.", isCorrect: true, response: "Exactly! In German, if 'Zuerst' is first, the verb 'stehe' comes second, and the prefix 'auf' goes to the end.", peerReaction: "Adipoli! Word order rules correctly catch cheythallo. 'auf' end-il poyathu makkalle point! 🔥" },
+              { text: "Zuerst ich stehe auf.", isCorrect: false, response: "Aiyyo! Verb MUST be in position 2. After 'Zuerst', the verb 'stehe' should come immediately.", peerReaction: "Vite machane! German logic-il verb position 2 is sacred. 'Zuerst stehe ich...' aanu right form. Try again! 😬" },
             ],
           },
           {
             moment: "Which verb is reflexive (action you do to yourself) in the morning?",
             options: [
-              { text: "sich anziehen", isCorrect: true, response: "Correct! You dress yourself (mich anziehen). It uses a reflexive pronoun.", kuttanReaction: "Superb! 'Ich ziehe mich an'. Pronoun 'mich' refers back to 'ich'. Real pro German vibe! ⭐" },
-              { text: "frühstücken", isCorrect: false, response: "No, 'frühstücken' is a regular action. You don't 'breakfast yourself'!", kuttanReaction: "Aiyyo! Ithu normal regular verb aanu. Reflexive verbs-innu 'sich' (mich, dich) venam. Try again! 🚫" },
+              { text: "sich anziehen", isCorrect: true, response: "Correct! You dress yourself (mich anziehen). It uses a reflexive pronoun.", peerReaction: "Superb! 'Ich ziehe mich an'. Pronoun 'mich' refers back to 'ich'. Real pro German vibe! ⭐" },
+              { text: "frühstücken", isCorrect: false, response: "No, 'frühstücken' is a regular action. You don't 'breakfast yourself'!", peerReaction: "Aiyyo! Ithu normal regular verb aanu. Reflexive verbs-innu 'sich' (mich, dich) venam. Try again! 🚫" },
             ],
           },
         ],
@@ -532,7 +534,7 @@ export const MODULE_5: Module = {
           id: "ex5-2-1",
           type: "ordering",
           question:
-            "It's 6 AM in Thrissur and the mixie is already roaring. Put Kuttan's morning moves in order:",
+            "The sample morning starts at 6 AM. Put Meera's practice-card routine in order:",
           options: ["frühstücken", "aufstehen", "duschen", "Zähne putzen"],
           correctAnswer: ["aufstehen", "duschen", "Zähne putzen", "frühstücken"],
           explanation:
@@ -552,7 +554,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-2-3",
           type: "multiple-choice",
-          question: "Kuttan narrates his morning aloud: 'Ich frühstücke um 8 Uhr.' What is he telling you?",
+          question: "Meera narrates her morning aloud: 'Ich frühstücke um 8 Uhr.' What is she telling you?",
           options: [
             "I have breakfast at 8 o'clock",
             "I go to school at 8 o'clock",
@@ -567,7 +569,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-2-4",
           type: "multiple-choice",
-          question: "Kuttan chains his routine like a story: 'Zuerst dusche ich, ...' Which word continues it with 'then'?",
+          question: "Meera chains her routine like a story: 'Zuerst dusche ich, ...' Which word continues it with 'then'?",
           options: ["zuerst", "dann", "um", "immer"],
           correctAnswer: "dann",
           explanation:
@@ -587,7 +589,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-2-6",
           type: "matching",
-          question: "Kuttan mimes his morning routine on the video call and his cousin shouts the German. Match each action:",
+          question: "Meera mimes her morning routine on the video call and her cousin shouts the German. Match each action:",
           options: ["duschen", "Zähne putzen", "sich anziehen", "frühstücken"],
           correctAnswer: ["to shower", "to brush teeth", "to get dressed", "to have breakfast"],
           explanation: "duschen, Zähne putzen, sich anziehen, frühstücken — say each one aloud while you actually do it tomorrow morning. Routine + German = memory glue.",
@@ -596,7 +598,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-2-7",
           type: "dictation",
-          question: "Kuttan's recorded alarm voice note plays. Listen and type the sentence you hear.",
+          question: "Meera's recorded alarm voice note plays. Listen and type the sentence you hear.",
           correctAnswer: "Ich stehe um 7 Uhr auf",
           explanation: "Perfect! Did you hear how the prefix 'auf' comes at the very end? That's the separable verb rule!",
           xpReward: 25,
@@ -605,7 +607,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-2-8",
           type: "free-text",
-          question: "Toothbrush in hand, Kuttan texts the study group in German: 'I am brushing my teeth.' Write it.",
+          question: "Toothbrush in hand, Meera texts the study group in German: 'I am brushing my teeth.' Write it.",
           correctAnswer: "Ich putze mir die Zähne",
           explanation: "Correct! Note the reflexive 'mir' and the capitalization of 'Zähne'.",
           xpReward: 30
@@ -719,18 +721,19 @@ export const MODULE_5: Module = {
       duration: "60 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Imagined: Local Supermarket (Edeka/Rewe)",
           sceneType: "market",
           timeOfDay: "afternoon",
-          description: "Frau Weber's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. The aisles are filled with fresh produce, bread, and of course, a massive 'Pfand' machine for bottles. You're here to buy ingredients for a group dinner. To explain what you're doing, you need 'Trennbare Verben' — the verbs that split like a coconut, machane! One part stays with the subject, and the other flies to the end.",
+          description: "Frau Fischer's visualization drill at Goethe Kochi: eyes closed, you rehearse your future German life — every word of it in German. The aisles are filled with fresh produce, bread, and of course, a massive 'Pfand' machine for bottles. You're here to buy ingredients for a group dinner. To explain what you're doing, you need 'Trennbare Verben' — the verbs that split like a coconut, machane! One part stays with the subject, and the other flies to the end.",
         },
         narrative: {
           previousRecap: "You've survived the morning rush. now, let's head out and get some shopping done using the 'split' verbs!",
           currentObjective: "Correct placement of separable prefixes in statements and questions",
           nextTeaser: "Next: putting it all together! From dawn to dusk in German!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! German-il chila verbs undu, athu split cheyyaam. Same like how we split a coconut into two halves.",
           "Einkaufen (to shop) kandaal, 'Ich kaufe... ein' ennu parayanam. 'Ein' is the boomerang part. Athu sentence-inte extreme end-il poyale sense aavoo.",
           "Even questions-ilum ithu split aavum. Let's practice our shopping and splitting skills!",
@@ -746,15 +749,15 @@ export const MODULE_5: Module = {
           {
             moment: "How do you correctly say 'I am shopping now' in German?",
             options: [
-              { text: "Ich kaufe jetzt ein.", isCorrect: true, response: "Correct! The prefix 'ein' is at the very end. Perfect boomerang effect!", kuttanReaction: "Adipoli! 'ein' correct position-il land cheythallo. You're a natural with separable verbs! 🔥" },
-              { text: "Ich einkaufe jetzt.", isCorrect: false, response: "Aiyyo! In a main sentence, the prefix MUST split and go to the end. You can't keep it together!", kuttanReaction: "Vite machane! Split it up. 'Ich kaufe... ein' is the only way. Try again! 😬" },
+              { text: "Ich kaufe jetzt ein.", isCorrect: true, response: "Correct! The prefix 'ein' is at the very end. Perfect boomerang effect!", peerReaction: "Adipoli! 'ein' correct position-il land cheythallo. You're a natural with separable verbs! 🔥" },
+              { text: "Ich einkaufe jetzt.", isCorrect: false, response: "Aiyyo! In a main sentence, the prefix MUST split and go to the end. You can't keep it together!", peerReaction: "Vite machane! Split it up. 'Ich kaufe... ein' is the only way. Try again! 😬" },
             ],
           },
           {
             moment: "You want to ask Stefan: 'Are you calling Arjun?' (Arjun is your brother).",
             options: [
-              { text: "Rufst du Arjun an?", isCorrect: true, response: "Exactly! Even in questions, the prefix 'an' stays at the end. The verb 'rufst' moves to the front.", kuttanReaction: "Super machane! Question context-ilum 'an' loyalty end-il thanneyaanu. Well handled! ⭐" },
-              { text: "Anrufst du Arjun?", isCorrect: false, response: "No, 'an' doesn't stay with the verb in the front. It's a team player — it always moves to the back in main clauses.", kuttanReaction: "Aiyyo! 'An' split cheyyaan marakkaalle. 'Rufst du... an' is the correct form. Try again! 🚫" },
+              { text: "Rufst du Arjun an?", isCorrect: true, response: "Exactly! Even in questions, the prefix 'an' stays at the end. The verb 'rufst' moves to the front.", peerReaction: "Super machane! Question context-ilum 'an' loyalty end-il thanneyaanu. Well handled! ⭐" },
+              { text: "Anrufst du Arjun?", isCorrect: false, response: "No, 'an' doesn't stay with the verb in the front. It's a team player — it always moves to the back in main clauses.", peerReaction: "Aiyyo! 'An' split cheyyaan marakkaalle. 'Rufst du... an' is the correct form. Try again! 🚫" },
             ],
           },
         ],
@@ -916,7 +919,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-3-5",
           type: "matching",
-          question: "Kuttan plans his imaginary German Saturday: shop, tidy, TV, friends. Match each separable verb to its meaning:",
+          question: "Nivin plans his imaginary German Saturday: shop, tidy, TV, friends. Match each separable verb to its meaning:",
           options: ["aufräumen", "einkaufen", "fernsehen", "mitkommen"],
           correctAnswer: ["to tidy up", "to shop", "to watch TV", "to come along"],
           explanation: "All four are separable: auf|räumen, ein|kaufen, fern|sehen, mit|kommen. Spot the stressed prefix and you've spotted the split.",
@@ -1068,18 +1071,19 @@ export const MODULE_5: Module = {
       duration: "45 min",
       xpReward: 150,
       storyScene: {
+        learnerOwner: 'meera',
         setting: {
-          name: "Kuttan's Home, Thrissur — Night Review",
+          name: "Meera's Kerala Home Study Scene — Night Review",
           sceneType: "home",
           timeOfDay: "evening",
-          description: "The day is winding down in Thrissur. The TV is on low volume, Kuttan has his Goethe notebook open, and he is trying to narrate a full day from sunrise to bedtime in clean A1 German. This is the final challenge of Module 5 — one complete daily routine.",
+          description: "The study scene is winding down in Kerala. Meera has her Goethe notebook open and narrates a sample day from sunrise to bedtime in clean A1 German. This is the final challenge of Module 5 — one complete daily routine.",
         },
         narrative: {
           previousRecap: "You've survived the supermarket split and the morning rush. Now, let's bring it all together!",
           currentObjective: "Narrate a full day's routine using regular, separable, and reflexive verbs",
           nextTeaser: "Module 5 complete! Next: I am hungry! Time to learn about food and shopping!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Ithanu summary lesson. Morning muthal night vare ulla daily routine full German-il parayaam.",
           "Ivide nammal padicha ellam rules (verb endings, separable splits, reflexives) correctly handle cheyyaan makkalle!",
           "Goethe Kochi homework pole nammude common day share cheyyaam. Ready alle? Let's finish Module 5 in style!",
@@ -1095,15 +1099,15 @@ export const MODULE_5: Module = {
           {
             moment: "Which phrase correctly says 'I eat dinner' in German?",
             options: [
-              { text: "Ich esse zu Abend.", isCorrect: true, response: "Exactly! 'zu Abend essen' is the standard way to say dinner.", kuttanReaction: "Adipoli! 'Abend' is evening, so 'zu Abend essen' fits perfectly. Gold star! ⭐" },
-              { text: "Ich esse Abend.", isCorrect: false, response: "Aiyyo! You're missing the preposition 'zu'. It's always 'zu Mittag' or 'zu Abend' essen.", kuttanReaction: "Vite machane! Preposition venam ivide. 'Ich esse zu Abend' is the correct way. Try again! 😬" },
+              { text: "Ich esse zu Abend.", isCorrect: true, response: "Exactly! 'zu Abend essen' is the standard way to say dinner.", peerReaction: "Adipoli! 'Abend' is evening, so 'zu Abend essen' fits perfectly. Gold star! ⭐" },
+              { text: "Ich esse Abend.", isCorrect: false, response: "Aiyyo! You're missing the preposition 'zu'. It's always 'zu Mittag' or 'zu Abend' essen.", peerReaction: "Vite machane! Preposition venam ivide. 'Ich esse zu Abend' is the correct way. Try again! 😬" },
             ],
           },
           {
             moment: "How do you say 'I go to bed' using the correct German phrase?",
             options: [
-              { text: "Ich gehe ins Bett.", isCorrect: true, response: "Correct! 'ins' is a contraction of 'in das'.", kuttanReaction: "Superb! Module 5 successfully completed. Now, go get some rest! 🔥" },
-              { text: "Ich gehe zu Bett.", isCorrect: false, response: "Technically possible but 'ins Bett' is much more common in daily speech.", kuttanReaction: "Aiyyo! 'ins Bett' is the more natural way. Logic clear alle? Try it again! 🚫" },
+              { text: "Ich gehe ins Bett.", isCorrect: true, response: "Correct! 'ins' is a contraction of 'in das'.", peerReaction: "Superb! Module 5 successfully completed. Now, go get some rest! 🔥" },
+              { text: "Ich gehe zu Bett.", isCorrect: false, response: "Technically possible but 'ins Bett' is much more common in daily speech.", peerReaction: "Aiyyo! 'ins Bett' is the more natural way. Logic clear alle? Try it again! 🚫" },
             ],
           },
         ],
@@ -1175,7 +1179,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-4-1",
           type: "ordering",
-          question: "Night review: Kuttan replays his whole day before sleep. Put it back in order:",
+          question: "Night review: Meera replays her whole day before sleep. Put it back in order:",
           options: [
             "zu Abend essen",
             "frühstücken",
@@ -1207,7 +1211,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-4-3",
           type: "multiple-choice",
-          question: "In his night review Kuttan mutters: 'Ich esse zu Mittag.' What part of the day is he replaying?",
+          question: "In her night review Meera mutters: 'Ich esse zu Mittag.' What part of the day is she replaying?",
           options: [
             "I eat lunch",
             "I eat breakfast",
@@ -1248,7 +1252,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-4-6",
           type: "matching",
-          question: "Kuttan sorts his day into German time-of-day labels. Match them:",
+          question: "Meera sorts her day into German time-of-day labels. Match them:",
           options: ["morgens", "mittags", "nachmittags", "abends"],
           correctAnswer: ["in the morning", "at noon", "in the afternoon", "in the evening"],
           explanation: "morgens, mittags, nachmittags, abends — the -s ending means 'every morning/noon/afternoon/evening'. They're the glue of every routine story.",
@@ -1285,7 +1289,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-4-spk2",
           type: "speaking",
-          question: "Repair Kuttan's sleepy German: he mumbles 'Abends ich sehe fern.' Verb in position 2! Say it right: 'Abends sehe ich fern.'",
+          question: "Repair Meera's sleepy German: she mumbles 'Abends ich sehe fern.' Verb in position 2! Say it right: 'Abends sehe ich fern.'",
           questionGerman: "Sprechen Sie laut: 'Abends sehe ich fern.'",
           correctAnswer: "Abends sehe ich fern",
           explanation: "Start with a time word and the verb still claims position 2: Abends SEHE ich fern. The single most-tested word-order rule at A1.",
@@ -1380,18 +1384,19 @@ export const MODULE_5: Module = {
       duration: "45 min",
       xpReward: 200,
       storyScene: {
+        learnerOwner: 'nivin',
         setting: {
           name: "Goethe-Institut Kochi — Weekly Planner Practice",
           sceneType: "classroom",
           timeOfDay: "evening",
-          description: "Sunday evening study circle at Goethe Kochi. Frau Weber puts a weekly planner on the board. Everyone writes a realistic Kerala week — class, work, family, practice — in German. Kuttan's turn is next.",
+          description: "Sunday evening study circle at Goethe Kochi. Frau Fischer puts a weekly planner on the board. Everyone writes a realistic Kerala week — class, work, family, practice — in German. Nivin's turn is next.",
         },
         narrative: {
           previousRecap: "You can describe your full day in German. Now let's zoom out to the whole week.",
           currentObjective: "Plan and describe your weekly schedule in German",
           nextTeaser: "Next module: German food and restaurants — time to eat!",
         },
-        kuttanIntro: [
+        peerIntro: [
           "Machane! Goethe Kochi-il weekly planning practice aanu! Whiteboard-il ninte schedule ezhuthuka — German-il!",
           "Sunday evening = planning time! Classmates ellam avarude week plan cheythu. Ninte turn!",
           "Weekly schedule German-il parayaan padikkaam — Am Montag, Am Dienstag... Let's go!",
@@ -1400,7 +1405,7 @@ export const MODULE_5: Module = {
           { vocabId: "vocab5-5-1", encounterMoment: "The whiteboard header reads 'Montag' — Monday, the start of the German work week.", contextSentence: "Am Montag arbeite ich." },
           { vocabId: "vocab5-5-2", encounterMoment: "A classmate writes 'Dienstag: Sprachkurs' — Tuesday is language class day.", contextSentence: "Am Dienstag lerne ich Deutsch." },
           { vocabId: "vocab5-5-3", encounterMoment: "Another learner writes 'Mittwoch: Sport' — Wednesday is gym day for her.", contextSentence: "Am Mittwoch gehe ich zum Sport." },
-          { vocabId: "vocab5-5-4", encounterMoment: "Kuttan adds 'immer' next to cooking — he always cooks on Thursdays.", contextSentence: "Ich koche immer am Donnerstag." },
+          { vocabId: "vocab5-5-4", encounterMoment: "Nivin adds 'immer' next to cooking — he always cooks on Thursdays.", contextSentence: "Ich koche immer am Donnerstag." },
           { vocabId: "vocab5-5-5", encounterMoment: "'Manchmal' appears next to 'Kino' — sometimes the group goes to the movies.", contextSentence: "Manchmal gehen wir ins Kino." },
           { vocabId: "vocab5-5-6", encounterMoment: "The weekend section says 'Am Wochenende' in bold — sacred free time.", contextSentence: "Am Wochenende schlafe ich lange." },
         ],
@@ -1408,8 +1413,8 @@ export const MODULE_5: Module = {
           {
             moment: "Your classmate asks: 'Was machst du am Freitag?' — What do you do on Friday?",
             options: [
-              { text: "Am Freitag treffe ich Freunde!", isCorrect: true, response: "Everyone nods — Friday is friendship day. 'Wollen wir zusammen essen?' a classmate suggests.", kuttanReaction: "Perfect! Am + day + verb — nee structure manasilakki! 🎉" },
-              { text: "Freitag ich mache Party.", isCorrect: false, response: "Close! But the word order needs fixing. Your classmate gently corrects: 'Am Freitag mache ich Party.'", kuttanReaction: "Word order machane! German-il verb second position-il varanam. Am Freitag MACHE ICH..." },
+              { text: "Am Freitag treffe ich Freunde!", isCorrect: true, response: "Everyone nods — Friday is friendship day. 'Wollen wir zusammen essen?' a classmate suggests.", peerReaction: "Perfect! Am + day + verb — nee structure manasilakki! 🎉" },
+              { text: "Freitag ich mache Party.", isCorrect: false, response: "Close! But the word order needs fixing. Your classmate gently corrects: 'Am Freitag mache ich Party.'", peerReaction: "Word order machane! German-il verb second position-il varanam. Am Freitag MACHE ICH..." },
             ],
           },
         ],
@@ -1485,7 +1490,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-5-1",
           type: "ordering",
-          question: "Frau Weber hands out blank weekly planners. Write the days across the top, Monday first:",
+          question: "Frau Fischer hands out blank weekly planners. Write the days across the top, Monday first:",
           options: [
             "Freitag",
             "Mittwoch",
@@ -1520,7 +1525,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-5-3",
           type: "multiple-choice",
-          question: "Kuttan marks how often he cooks in his planner. Which German word means 'sometimes'?",
+          question: "Nivin marks how often he cooks in his planner. Which German word means 'sometimes'?",
           options: ["immer", "oft", "manchmal", "nie"],
           correctAnswer: "manchmal",
           explanation:
@@ -1531,7 +1536,7 @@ export const MODULE_5: Module = {
           id: "ex5-5-4",
           type: "ordering",
           question:
-            "Frau Weber draws a frequency ladder on the board. Order the adverbs from always down to never:",
+            "Frau Fischer draws a frequency ladder on the board. Order the adverbs from always down to never:",
           options: ["manchmal", "immer", "nie", "selten", "oft"],
           correctAnswer: ["immer", "oft", "manchmal", "selten", "nie"],
           explanation:
@@ -1552,7 +1557,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-5-6",
           type: "multiple-choice",
-          question: "Kuttan admits it to the whole class: he never cooks. How does he say 'I never cook'?",
+          question: "Nivin admits it to the whole class: he never cooks. How does he say 'I never cook'?",
           options: [
             "Ich koche nie.",
             "Ich nie koche.",
@@ -1585,7 +1590,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-5-9",
           type: "dictation",
-          question: "Frau Weber reads one planner entry aloud. Listen and type the sentence you hear.",
+          question: "Frau Fischer reads one planner entry aloud. Listen and type the sentence you hear.",
           correctAnswer: "Am Montag arbeite ich",
           explanation: "Perfect! On Monday = Am Montag. And don't forget the verb-second rule!",
           xpReward: 25,
@@ -1613,7 +1618,7 @@ export const MODULE_5: Module = {
         {
           id: "ex5-5-spk2",
           type: "speaking",
-          question: "Repair Kuttan's planner line: he reads out 'Am Samstag ich gehe einkaufen.' Verb second! Say it right: 'Am Samstag gehe ich einkaufen.'",
+          question: "Repair Nivin's planner line: he reads out 'Am Samstag ich gehe einkaufen.' Verb second! Say it right: 'Am Samstag gehe ich einkaufen.'",
           questionGerman: "Sprechen Sie laut: 'Am Samstag gehe ich einkaufen.'",
           correctAnswer: "Am Samstag gehe ich einkaufen",
           explanation: "After 'Am Samstag' the verb refuses to wait: gehe comes immediately, ich after. This inversion is the difference between a pass and 'understandable but wrong'.",

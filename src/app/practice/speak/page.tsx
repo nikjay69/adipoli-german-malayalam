@@ -188,9 +188,9 @@ function speakGerman(text: string): Promise<void> {
   });
 }
 
-// ─── Kuttan Reactions ───────────────────────────────────────────
+// ─── Nivin Reactions ───────────────────────────────────────────
 
-const KUTTAN_REACTIONS = {
+const PEER_REACTIONS = {
   perfect: [
     "Adipoli! Pronunciation spot on!",
     "Wunderbar! Native speaker material!",
@@ -232,8 +232,8 @@ const KUTTAN_REACTIONS = {
   ],
 };
 
-function getKuttanReaction(category: keyof typeof KUTTAN_REACTIONS): string {
-  const msgs = KUTTAN_REACTIONS[category];
+function getPeerReaction(category: keyof typeof PEER_REACTIONS): string {
+  const msgs = PEER_REACTIONS[category];
   return msgs[Math.floor(Math.random() * msgs.length)];
 }
 
@@ -294,9 +294,9 @@ export default function SpeakPracticePage() {
   const [phraseQueue, setPhraseQueue] = useState<Phrase[]>([]);
   const [missedPhrases, setMissedPhrases] = useState<Phrase[]>([]);
 
-  // Kuttan
-  const [kuttanMsg, setKuttanMsg] = useState('');
-  const [kuttanMood, setKuttanMood] = useState<'happy' | 'excited' | 'celebrating' | 'sad' | 'thinking' | 'pointing'>('happy');
+  // Nivin
+  const [peerMsg, setPeerMsg] = useState('');
+  const [peerMood, setNivinMood] = useState<'happy' | 'excited' | 'celebrating' | 'sad' | 'thinking' | 'pointing'>('happy');
 
   // Show exit confirm
   const [showExitConfirm, setShowExitConfirm] = useState(false);
@@ -350,8 +350,8 @@ export default function SpeakPracticePage() {
     setMissedPhrases([]);
     setCurrentPhrase(queue[0]);
     setPhase('listening_example');
-    setKuttanMsg(getKuttanReaction('listen'));
-    setKuttanMood('pointing');
+    setPeerMsg(getPeerReaction('listen'));
+    setNivinMood('pointing');
     setShowTranslation(false);
     setSpokenText('');
     setInterimText('');
@@ -389,8 +389,8 @@ export default function SpeakPracticePage() {
         setShowTranslation(true);
         setTimeout(() => {
           setPhase('waiting_to_speak');
-          setKuttanMsg(getKuttanReaction('your_turn'));
-          setKuttanMood('excited');
+          setPeerMsg(getPeerReaction('your_turn'));
+          setNivinMood('excited');
         }, 2000);
       }, 600);
       return () => clearTimeout(timer);
@@ -446,8 +446,8 @@ export default function SpeakPracticePage() {
       if (event.error === 'no-speech') {
         setSpokenText('');
         setPhase('waiting_to_speak');
-        setKuttanMsg("Onnum ketilla machaa! Try speaking louder.");
-        setKuttanMood('thinking');
+        setPeerMsg("Onnum ketilla machaa! Try speaking louder.");
+        setNivinMood('thinking');
       }
     };
 
@@ -473,8 +473,8 @@ export default function SpeakPracticePage() {
 
       if (!textToCheck) {
         setPhase('waiting_to_speak');
-        setKuttanMsg("Onnum ketilla! Mic button press cheythu try again.");
-        setKuttanMood('thinking');
+        setPeerMsg("Onnum ketilla! Mic button press cheythu try again.");
+        setNivinMood('thinking');
         return;
       }
 
@@ -485,22 +485,22 @@ export default function SpeakPracticePage() {
       let xp = 0;
       if (score === 100) {
         xp = 10;
-        setKuttanMsg(getKuttanReaction('perfect'));
-        setKuttanMood('celebrating');
+        setPeerMsg(getPeerReaction('perfect'));
+        setNivinMood('celebrating');
         setShowConfetti(true);
         setTimeout(() => setShowConfetti(false), 2000);
       } else if (score >= 70) {
         xp = 5;
-        setKuttanMsg(getKuttanReaction('good'));
-        setKuttanMood('happy');
+        setPeerMsg(getPeerReaction('good'));
+        setNivinMood('happy');
       } else if (score >= 40) {
         xp = 3;
-        setKuttanMsg(getKuttanReaction('partial'));
-        setKuttanMood('thinking');
+        setPeerMsg(getPeerReaction('partial'));
+        setNivinMood('thinking');
       } else {
         xp = 0;
-        setKuttanMsg(getKuttanReaction('miss'));
-        setKuttanMood('sad');
+        setPeerMsg(getPeerReaction('miss'));
+        setNivinMood('sad');
         // Lose a heart
         setHearts(prev => Math.max(0, prev - 1));
         // Add to missed phrases for spaced repetition
@@ -571,8 +571,8 @@ export default function SpeakPracticePage() {
     setSpokenText('');
     setInterimText('');
     setPhase('listening_example');
-    setKuttanMsg(getKuttanReaction('listen'));
-    setKuttanMood('pointing');
+    setPeerMsg(getPeerReaction('listen'));
+    setNivinMood('pointing');
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [round, hearts, missedPhrases, phraseQueue]);
 
@@ -764,7 +764,7 @@ export default function SpeakPracticePage() {
               </motion.button>
 
               <CharacterGuide
-                messages={getKuttanReaction('start')}
+                messages={getPeerReaction('start')}
                 mood="excited"
                 size="md"
               />
@@ -842,11 +842,11 @@ export default function SpeakPracticePage() {
               exit={{ opacity: 0, scale: 0.95 }}
               className="flex-1 flex flex-col items-center justify-center"
             >
-              {/* Kuttan */}
+              {/* Nivin */}
               <div className="mb-6">
                 <CharacterGuide
-                  messages={kuttanMsg}
-                  mood={kuttanMood as 'pointing'}
+                  messages={peerMsg}
+                  mood={peerMood as 'pointing'}
                   size="sm"
                 />
               </div>
@@ -917,11 +917,11 @@ export default function SpeakPracticePage() {
               exit={{ opacity: 0, x: -30 }}
               className="flex-1 flex flex-col items-center justify-center"
             >
-              {/* Kuttan */}
+              {/* Nivin */}
               <div className="mb-4">
                 <CharacterGuide
-                  messages={kuttanMsg}
-                  mood={kuttanMood as 'excited'}
+                  messages={peerMsg}
+                  mood={peerMood as 'excited'}
                   size="sm"
                 />
               </div>
@@ -1059,11 +1059,11 @@ export default function SpeakPracticePage() {
               exit={{ opacity: 0, scale: 0.9 }}
               className="flex-1 flex flex-col items-center justify-center"
             >
-              {/* Kuttan */}
+              {/* Nivin */}
               <div className="mb-4">
                 <CharacterGuide
-                  messages={kuttanMsg}
-                  mood={kuttanMood as 'celebrating'}
+                  messages={peerMsg}
+                  mood={peerMood as 'celebrating'}
                   size="sm"
                   showAppu={lastScore === 100}
                   appuMood="celebrating"

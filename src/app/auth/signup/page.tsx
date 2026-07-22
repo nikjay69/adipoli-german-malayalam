@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Lock, User, AtSign, UserPlus, Eye, EyeOff, AlertCircle, Info } from 'lucide-react';
 import { useAuthStore, isSupabaseReady } from '@/lib/auth-store';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 function getPasswordStrength(pw: string): { label: string; level: 0 | 1 | 2 | 3 } {
   if (pw.length === 0) return { label: '', level: 0 };
@@ -126,7 +126,7 @@ export default function SignupPage() {
           className="text-center"
         >
           <div className="flex justify-center mb-4">
-            <Kuttan mood="celebrating" size="lg" />
+            <Nivin mood="celebrating" size="lg" />
           </div>
           <h1 className="text-3xl font-bold gradient-text mb-2">Poli! You&apos;re in.</h1>
           <p className="text-[var(--foreground)]/60 text-sm">Let&apos;s go, machaa →</p>
@@ -159,7 +159,7 @@ export default function SignupPage() {
         transition={{ duration: 0.5 }}
         className="relative w-full max-w-md"
       >
-        {/* Header with Kuttan */}
+        {/* Header with Nivin */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -167,7 +167,7 @@ export default function SignupPage() {
           className="text-center mb-6"
         >
           <div className="flex justify-center mb-3">
-            <Kuttan mood="excited" size="md" />
+            <Nivin mood="excited" size="md" />
           </div>
           <h1 className="text-3xl font-bold gradient-text mb-2">Join the crew, machaa</h1>
           <p className="text-[var(--foreground)]/60 text-sm">

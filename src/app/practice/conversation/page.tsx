@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Volume2, Mic, MicOff, RotateCcw, Check, X, ChevronRight } from 'lucide-react';
 import { Confetti, XPGain } from '@/components/game';
 import { useGameStore } from '@/lib/store';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 // SpeechRecognition types declared globally in src/types/speech-recognition.d.ts
 
@@ -25,7 +25,7 @@ interface Scenario {
   icon: string;
   difficulty: 'Easy' | 'Medium' | 'Hard';
   sceneChip: string; // e.g. "🌴 Kerala cafe", "🥨 Berlin bakery"
-  reflection: string; // end-of-session Kuttan line
+  reflection: string; // end-of-session Nivin line
   turns: ScenarioTurn[];
 }
 
@@ -698,14 +698,14 @@ export default function ConversationPracticePage() {
               AI speaks German, you respond. No typing needed!
             </p>
 
-            {/* Kuttan guidance */}
+            {/* Nivin guidance */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="flex items-center gap-2.5 game-card px-3 py-2 mb-3"
             >
-              <Kuttan mood="happy" size="sm" entrance={false} />
+              <Nivin mood="happy" size="sm" entrance={false} />
               <p className="text-xs text-[var(--foreground)]/60 leading-snug">Real conversations make you fluent. Practice until it feels natural! 💬</p>
             </motion.div>
 
@@ -799,9 +799,9 @@ export default function ConversationPracticePage() {
                 >
                   {entry.role === 'ai' ? (
                     <div className="max-w-[85%] flex gap-2 items-end">
-                      {/* AI avatar — Kuttan */}
+                      {/* AI avatar — Nivin */}
                       <div className="flex-shrink-0">
-                        <Kuttan mood="happy" size="sm" entrance={false} />
+                        <Nivin mood="happy" size="sm" entrance={false} />
                       </div>
                       <div className="rounded-2xl rounded-bl-md bg-gradient-to-br from-[#d4a520]/25 to-[#d4a520]/10 border border-[#d4a520]/35 px-4 py-3 shadow-[0_2px_10px_rgba(212,165,32,0.15)]">
                         <p className="text-sm leading-relaxed">{entry.text}</p>
@@ -846,7 +846,7 @@ export default function ConversationPracticePage() {
                 </motion.div>
               ))}
 
-              {/* AI Speaking / Typing Indicator — Kuttan thinking */}
+              {/* AI Speaking / Typing Indicator — Nivin thinking */}
               {state === 'ai_speaking' && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
@@ -855,7 +855,7 @@ export default function ConversationPracticePage() {
                 >
                   <div className="flex gap-2 items-end">
                     <div className="flex-shrink-0">
-                      <Kuttan mood="thinking" size="sm" entrance={false} />
+                      <Nivin mood="thinking" size="sm" entrance={false} />
                     </div>
                     <div className="rounded-2xl bg-gradient-to-br from-[#d4a520]/25 to-[#d4a520]/10 border border-[#d4a520]/35 px-4 py-3">
                       <div className="flex items-center gap-2">
@@ -912,7 +912,7 @@ export default function ConversationPracticePage() {
               <div ref={chatEndRef} />
             </div>
 
-            {/* ─── Kuttan Coaching Between Turns ─────────── */}
+            {/* ─── Nivin Coaching Between Turns ─────────── */}
             <AnimatePresence>
               {feedback && (
                 <motion.div
@@ -926,7 +926,7 @@ export default function ConversationPracticePage() {
                   }`}
                 >
                   <div className="flex-shrink-0">
-                    <Kuttan
+                    <Nivin
                       mood={turnResult === 'correct' ? 'excited' : 'pointing'}
                       size="sm"
                       entrance={false}
@@ -936,7 +936,7 @@ export default function ConversationPracticePage() {
                     <p className="text-sm font-medium leading-snug">{feedback}</p>
                     {turnResult === 'retry' && selectedScenario && (
                       <p className="text-xs text-[var(--foreground)]/60 mt-1">
-                        <span className="text-[#d4a520] font-semibold">Kuttan&apos;s hint:</span>{' '}
+                        <span className="text-[#d4a520] font-semibold">Nivin&apos;s hint:</span>{' '}
                         {selectedScenario.turns[currentTurn].hint}
                       </p>
                     )}
@@ -1141,7 +1141,7 @@ export default function ConversationPracticePage() {
               </div>
             </motion.div>
 
-            {/* Kuttan Reflection — "you could actually do this in Germany" */}
+            {/* Nivin Reflection — "you could actually do this in Germany" */}
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -1149,7 +1149,7 @@ export default function ConversationPracticePage() {
               className="flex items-start gap-3 w-full max-w-xs mb-6 p-3 rounded-xl bg-gradient-to-br from-[#d4a520]/15 to-[#e94560]/10 border border-[#d4a520]/25"
             >
               <div className="flex-shrink-0">
-                <Kuttan mood="happy" size="sm" entrance={false} />
+                <Nivin mood="happy" size="sm" entrance={false} />
               </div>
               <p className="text-xs text-[var(--foreground)]/75 leading-relaxed pt-1">
                 {selectedScenario.reflection}

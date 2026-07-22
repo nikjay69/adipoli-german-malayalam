@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowLeft, Send, MessageCircle, Sparkles, Clock } from 'lucide-react';
-import { Kuttan } from '@/components/character/Kuttan';
+import { Nivin } from '@/components/character/Nivin';
 
 interface ChatMessage {
   id: string;
@@ -23,15 +23,15 @@ const SUGGESTED_QUESTIONS = [
 
 const SESSION_LIMIT = 20;
 
-const KUTTAN_GREETING =
-  "Hallo machaa! Njan Kuttan aanu, your German tutor. Ask me anything about German -- vocab, grammar, pronunciation, A1 tips, whatever! Let's start?";
+const PEER_GREETING =
+  "Hallo machaa! Njan Nivin aanu, your German tutor. Ask me anything about German -- vocab, grammar, pronunciation, A1 tips, whatever! Let's start?";
 
 export default function ChatPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: 'greeting',
       role: 'assistant',
-      text: KUTTAN_GREETING,
+      text: PEER_GREETING,
     },
   ]);
   const [input, setInput] = useState('');
@@ -84,7 +84,7 @@ export default function ChatPage() {
       }));
 
     // Include the greeting as the first assistant message for context
-    apiMessages.unshift({ role: 'assistant', text: KUTTAN_GREETING });
+    apiMessages.unshift({ role: 'assistant', text: PEER_GREETING });
 
     try {
       const res = await fetch('/api/chat', {
@@ -148,13 +148,13 @@ export default function ChatPage() {
           </Link>
           <div className="flex items-center gap-2.5 flex-1 min-w-0">
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#d4a520] to-[#b8891a] flex items-center justify-center text-lg flex-shrink-0">
-              <span role="img" aria-label="Kuttan">
+              <span role="img" aria-label="Nivin">
                 👦
               </span>
             </div>
             <div className="min-w-0">
               <h1 className="text-[#f5f0e8] font-bold text-base leading-tight truncate">
-                Ask Kuttan
+                Ask Nivin
               </h1>
               <p className="text-[#f5f0e8]/40 text-xs leading-tight">
                 Your German tutor
@@ -186,11 +186,11 @@ export default function ChatPage() {
                 msg.role === 'user' ? 'justify-end' : 'justify-start'
               }`}
             >
-              {/* Kuttan avatar - shown on every assistant message */}
+              {/* Nivin avatar - shown on every assistant message */}
               {msg.role === 'assistant' && (
                 <div className="flex-shrink-0 w-9 h-9 overflow-hidden flex items-center justify-center -mt-1">
                   <div className="scale-[0.45] origin-center">
-                    <Kuttan size="sm" mood="happy" entrance={false} />
+                    <Nivin size="sm" mood="happy" entrance={false} />
                   </div>
                 </div>
               )}
@@ -209,7 +209,7 @@ export default function ChatPage() {
           ))}
         </AnimatePresence>
 
-        {/* Typing indicator - Kuttan thinking */}
+        {/* Typing indicator - Nivin thinking */}
         {isLoading && (
           <motion.div
             initial={{ opacity: 0, y: 8 }}
@@ -218,7 +218,7 @@ export default function ChatPage() {
           >
             <div className="flex-shrink-0 w-9 h-9 overflow-hidden flex items-center justify-center -mt-1">
               <div className="scale-[0.45] origin-center">
-                <Kuttan size="sm" mood="thinking" entrance={false} />
+                <Nivin size="sm" mood="thinking" entrance={false} />
               </div>
             </div>
             <div className="bg-[#f5f0e8]/10 rounded-2xl rounded-bl-md px-4 py-3 border border-white/5">
@@ -302,7 +302,7 @@ export default function ChatPage() {
               </p>
               <p className="text-[#f5f0e8]/70 text-xs leading-relaxed">
                 You hit the {SESSION_LIMIT}-message limit. Refresh the page to
-                start a fresh chat with Kuttan.
+                start a fresh chat with Nivin.
               </p>
             </div>
           </motion.div>
@@ -353,7 +353,7 @@ export default function ChatPage() {
             placeholder={
               limitReached
                 ? 'Session limit reached'
-                : 'Ask Kuttan anything about German...'
+                : 'Ask Nivin anything about German...'
             }
             disabled={isLoading || limitReached}
             className="flex-1 bg-[#f5f0e8]/8 border border-white/10 focus:border-[#d4a520]/50 rounded-xl px-4 py-2.5 text-sm text-[#f5f0e8] placeholder-[#f5f0e8]/30 outline-none transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
