@@ -19,6 +19,12 @@ const activeModule: SpineModuleView = {
   milestone: 'Sprechen Teil 1 foundation',
   icon: '2',
   color: '#b2467f',
+  scene: {
+    src: '/images/scenes/hub-study-desk.jpg',
+    position: 'center 40%',
+    label: 'The study desk',
+  },
+  examTransfer: 'Builds your complete self-introduction, personal details, and form basics.',
   sourceModuleIds: [1],
   checkpointHref: '/course/2/checkpoint',
   blocks: [],

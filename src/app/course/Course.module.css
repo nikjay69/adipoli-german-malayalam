@@ -1,0 +1,773 @@
+.page {
+  z-index: 40;
+  min-height: 100%;
+  padding: 24px 0 calc(126px + env(safe-area-inset-bottom, 0px));
+  overflow-x: clip;
+}
+
+.shell {
+  display: grid;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  animation: quietRise 320ms var(--ag-ease-calm) both;
+}
+
+.kicker {
+  margin: 0 0 3px;
+  color: var(--ag-focus-light);
+  font: 700 11px/1.3 var(--ag-font-label);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  margin: 0;
+  color: var(--ag-forest-deep);
+  font: 500 clamp(28px, 4vw, 36px)/1.08 var(--ag-font-display);
+  letter-spacing: -0.025em;
+}
+
+.headerNote {
+  max-width: 31ch;
+  margin: 0 0 4px;
+  color: var(--ag-ink-muted-readable);
+  font: 500 13px/1.45 var(--ag-font-ui);
+  text-align: right;
+}
+
+.routeTrack {
+  position: relative;
+  min-height: 38px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--ag-forest-deep) 16%, transparent);
+  border-radius: 7px;
+  background: var(--ag-daylight-sunken);
+  color: var(--ag-ink-muted-readable);
+  isolation: isolate;
+}
+
+.routeFill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: -1;
+  min-width: 54px;
+  background: var(--ag-forest-deep);
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 100%, 0 100%);
+  transform-origin: left center;
+  transition: width var(--ag-motion-room-enter) var(--ag-ease-calm);
+  animation: routeDraw 360ms 70ms var(--ag-ease-calm) both;
+}
+
+.routeStart,
+.routeCurrent,
+.routeEnd {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font: 700 10px/1 var(--ag-font-label);
+  letter-spacing: 0.06em;
+}
+
+.routeStart {
+  left: 12px;
+  color: var(--ag-action-light);
+}
+
+.routeCurrent {
+  left: 23%;
+  color: var(--ag-focus-light);
+}
+
+.routeEnd {
+  right: 12px;
+  color: #7a725d;
+}
+
+.moduleGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.moduleCard {
+  --module-accent: var(--ag-forest-deep);
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--ag-forest-deep) 17%, transparent);
+  border-radius: var(--ag-radius-card);
+  background: var(--ag-white);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--ag-forest-deep) 6%, transparent);
+  animation: moduleArrive 360ms var(--ag-ease-calm) both;
+}
+
+.moduleCard:nth-child(2) {
+  animation-delay: 35ms;
+}
+
+.moduleCard:nth-child(3) {
+  animation-delay: 70ms;
+}
+
+.moduleCard:nth-child(4) {
+  animation-delay: 105ms;
+}
+
+.moduleCard:nth-child(5) {
+  animation-delay: 140ms;
+}
+
+.moduleCard:nth-child(6) {
+  animation-delay: 175ms;
+}
+
+.moduleCard:nth-child(7) {
+  animation-delay: 210ms;
+}
+
+.moduleCard:nth-child(8) {
+  animation-delay: 245ms;
+}
+
+.moduleCard[data-state="current"],
+.moduleCard[data-state="checkpoint"] {
+  border: 2px solid var(--ag-action);
+  box-shadow: 0 11px 28px color-mix(in srgb, var(--ag-action) 17%, transparent);
+}
+
+.moduleCard[data-state="recovery"] {
+  border: 2px solid var(--ag-recovery);
+  background: color-mix(in srgb, var(--ag-recovery) 7%, var(--ag-white));
+}
+
+.moduleCard[data-finale][data-state="read-ahead"] {
+  border-color: color-mix(in srgb, var(--ag-forest-deep) 18%, transparent);
+  background: linear-gradient(
+    180deg,
+    var(--ag-white),
+    color-mix(in srgb, var(--ag-action) 7%, var(--ag-daylight-canvas))
+  );
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--ag-forest-deep) 7%, transparent);
+}
+
+.moduleCard[data-finale][data-state="current"],
+.moduleCard[data-finale][data-state="checkpoint"],
+.moduleCard[data-finale][data-state="complete"] {
+  background: var(--ag-forest-deep);
+  box-shadow: 0 11px 28px color-mix(in srgb, var(--ag-forest-deep) 18%, transparent);
+}
+
+.moduleIdentity {
+  min-width: 0;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.scene {
+  position: relative;
+  display: block;
+  height: 104px;
+  overflow: hidden;
+  background: var(--ag-forest-mid);
+}
+
+.scene img {
+  transition: transform var(--ag-motion-room-enter) var(--ag-ease-calm);
+}
+
+.sceneVeil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(12, 24, 17, 0.25));
+}
+
+.moduleNumber {
+  position: absolute;
+  left: 12px;
+  bottom: 8px;
+  z-index: 2;
+  color: var(--ag-daylight-canvas);
+  font: 900 38px/1 var(--ag-font-ui);
+  text-shadow: 0 2px 9px rgba(0, 0, 0, 0.58);
+}
+
+.moduleCard[data-finale] .moduleNumber {
+  color: var(--ag-action-light);
+}
+
+.stateChip {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 7px;
+  border-radius: var(--ag-radius-chip);
+  background: rgba(0, 0, 0, 0.64);
+  color: var(--ag-daylight-canvas);
+  font: 700 9px/1 var(--ag-font-label);
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+}
+
+.stateChip svg {
+  width: 11px;
+  height: 11px;
+}
+
+.stateChip[data-state="complete"] {
+  background: var(--ag-success);
+}
+
+.stateChip[data-state="current"],
+.stateChip[data-state="checkpoint"] {
+  background: var(--ag-action);
+  color: var(--ag-forest-deepest);
+}
+
+.stateChip[data-state="recovery"] {
+  background: var(--ag-recovery);
+}
+
+.moduleCopy {
+  min-height: 86px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 24px 13px 13px;
+  border-top: 3px solid var(--module-accent);
+}
+
+.moduleCopy strong {
+  min-width: 0;
+  padding-left: 31px;
+  color: var(--ag-forest-deep);
+  font: 700 14px/1.2 var(--ag-font-ui);
+}
+
+.moduleCopy small {
+  color: var(--ag-ink-muted-readable);
+  font: 600 10px/1.35 var(--ag-font-label);
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.moduleCard[data-finale][data-state="current"] .moduleCopy strong,
+.moduleCard[data-finale][data-state="checkpoint"] .moduleCopy strong,
+.moduleCard[data-finale][data-state="complete"] .moduleCopy strong {
+  color: var(--ag-daylight-canvas);
+}
+
+.moduleCard[data-finale][data-state="current"] .moduleCopy small,
+.moduleCard[data-finale][data-state="checkpoint"] .moduleCopy small,
+.moduleCard[data-finale][data-state="complete"] .moduleCopy small {
+  color: var(--ag-room-muted);
+}
+
+.continueAction {
+  position: relative;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 12px 12px;
+  padding: 0 13px;
+  border-radius: var(--ag-radius-button);
+  background: var(--ag-forest-deep);
+  color: var(--ag-daylight-canvas);
+  font: 700 12px/1.2 var(--ag-font-ui);
+  text-decoration: none;
+}
+
+.moduleCard[data-finale] .continueAction {
+  background: var(--ag-action);
+  color: var(--ag-forest-deepest);
+}
+
+.cardAction svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
+
+.continueMark {
+  flex: none;
+  /* Owner-approved action-only experiment: the mark points right here; do not generalize to brand lockups. */
+  transform: rotate(90deg);
+  animation: markInvite 420ms 460ms var(--ag-ease-calm) both;
+}
+
+.continueMarkMobile {
+  display: none;
+}
+
+.continueAction::after {
+  position: absolute;
+  inset: -3px;
+  border: 1px solid color-mix(in srgb, var(--ag-action) 72%, transparent);
+  border-radius: inherit;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  animation: questRing 720ms 520ms ease-out both;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .moduleIdentity:hover .scene img {
+    transform: scale(1.03);
+  }
+}
+
+.cardAction {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  display: none;
+  align-items: center;
+  gap: 5px;
+  color: var(--ag-ink-muted-readable);
+  font: 700 10px/1 var(--ag-font-label);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.cardAction[data-recovery] {
+  color: var(--ag-recovery-readable);
+}
+
+.readiness {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.readiness > div {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 16px;
+  border: 1px solid color-mix(in srgb, var(--ag-forest-deep) 17%, transparent);
+  border-radius: 8px;
+}
+
+.readiness strong {
+  min-width: 42px;
+  color: var(--ag-forest-deep);
+  font: 900 20px/1 var(--ag-font-ui);
+}
+
+.readiness strong svg {
+  width: 20px;
+  height: 20px;
+}
+
+.readiness span {
+  color: var(--ag-ink);
+  font: 500 12px/1.35 var(--ag-font-ui);
+}
+
+.bridgeNote {
+  margin: -2px 0 0;
+  color: var(--ag-ink-muted-readable);
+  font: 500 12px/1.45 var(--ag-font-ui);
+  text-align: center;
+}
+
+.loading {
+  min-height: 75vh;
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.loading div {
+  border-radius: var(--ag-radius-card);
+  background: var(--ag-daylight-layer);
+  animation: calmPulse 1.4s ease-in-out infinite;
+}
+
+.loading div:first-child {
+  width: 52%;
+  height: 42px;
+}
+
+.loading div:nth-child(2) {
+  height: 38px;
+}
+
+.loading div:last-child {
+  height: 440px;
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: calc(118px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .shell {
+    gap: 12px;
+  }
+
+  .header {
+    display: block;
+  }
+
+  .header h1 {
+    font-size: 27px;
+  }
+
+  .headerNote {
+    display: none;
+  }
+
+  .routeTrack {
+    min-height: 31px;
+  }
+
+  .routeStart,
+  .routeCurrent,
+  .routeEnd {
+    font-size: 8.5px;
+  }
+
+  .routeStart {
+    left: 8px;
+  }
+
+  .routeCurrent {
+    left: 24%;
+  }
+
+  .routeEnd {
+    right: 8px;
+  }
+
+  .moduleGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .moduleCard,
+  .moduleCard[data-state="current"],
+  .moduleCard[data-state="checkpoint"],
+  .moduleCard[data-state="recovery"],
+  .moduleCard[data-finale] {
+    min-height: 68px;
+    overflow: visible;
+    border: 0;
+    border-top: 1px solid color-mix(in srgb, var(--ag-forest-deep) 13%, transparent);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .moduleCard[data-state="current"],
+  .moduleCard[data-state="checkpoint"],
+  .moduleCard[data-state="recovery"],
+  .moduleCard[data-finale] {
+    margin: 4px -10px;
+    padding-inline: 10px;
+    border-top-color: transparent;
+    border-radius: var(--ag-radius-card);
+  }
+
+  .moduleCard[data-state="current"],
+  .moduleCard[data-state="checkpoint"] {
+    background: var(--ag-forest-mid);
+  }
+
+  .moduleCard[data-state="recovery"] {
+    background: color-mix(in srgb, var(--ag-recovery) 10%, var(--ag-daylight-canvas));
+    box-shadow: inset 3px 0 0 var(--ag-recovery);
+  }
+
+  .moduleCard[data-finale][data-state="read-ahead"] {
+    background: color-mix(in srgb, var(--ag-action) 7%, var(--ag-daylight-canvas));
+    box-shadow: none;
+  }
+
+  .moduleCard[data-finale][data-state="current"],
+  .moduleCard[data-finale][data-state="checkpoint"],
+  .moduleCard[data-finale][data-state="complete"] {
+    background: var(--ag-forest-deep);
+    box-shadow: none;
+  }
+
+  .moduleIdentity {
+    min-height: 68px;
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+  }
+
+  .scene {
+    width: 56px;
+    height: 48px;
+    border-radius: var(--ag-radius-button);
+  }
+
+  .sceneVeil {
+    background: linear-gradient(180deg, transparent 28%, rgba(12, 24, 17, 0.38));
+  }
+
+  .moduleNumber {
+    left: 6px;
+    bottom: 3px;
+    font-size: 19px;
+  }
+
+  .stateChip {
+    display: none;
+  }
+
+  .moduleCopy {
+    min-height: 0;
+    gap: 3px;
+    padding: 0;
+    border: 0;
+  }
+
+  .moduleCopy strong,
+  .moduleCard[data-finale] .moduleCopy strong {
+    padding-left: 0;
+    padding-right: 62px;
+    color: var(--ag-forest-deep);
+    font-size: 14px;
+    line-height: 1.18;
+  }
+
+  .moduleCopy small,
+  .moduleCard[data-finale] .moduleCopy small {
+    padding-right: 70px;
+    color: var(--ag-ink-muted-readable);
+    font: 500 11.5px/1.3 var(--ag-font-ui);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .moduleCard[data-state="current"] .moduleCopy strong,
+  .moduleCard[data-state="checkpoint"] .moduleCopy strong,
+  .moduleCard[data-finale][data-state="current"] .moduleCopy strong,
+  .moduleCard[data-finale][data-state="checkpoint"] .moduleCopy strong,
+  .moduleCard[data-finale][data-state="complete"] .moduleCopy strong {
+    color: var(--ag-daylight-canvas);
+  }
+
+  .moduleCard[data-state="current"] .moduleCopy small,
+  .moduleCard[data-state="checkpoint"] .moduleCopy small,
+  .moduleCard[data-finale][data-state="current"] .moduleCopy small,
+  .moduleCard[data-finale][data-state="checkpoint"] .moduleCopy small,
+  .moduleCard[data-finale][data-state="complete"] .moduleCopy small {
+    color: var(--ag-room-muted);
+  }
+
+  .continueAction {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: var(--ag-action);
+    color: var(--ag-forest-deepest);
+  }
+
+  .continueAction span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .continueMarkDesktop {
+    display: none;
+  }
+
+  .continueMarkMobile {
+    display: block;
+  }
+
+  .cardAction {
+    top: 50%;
+    right: 4px;
+    bottom: auto;
+    display: flex;
+    transform: translateY(-50%);
+  }
+
+  .moduleCard[data-state="current"] .cardAction,
+  .moduleCard[data-state="checkpoint"] .cardAction,
+  .moduleCard[data-finale][data-state="current"] .cardAction,
+  .moduleCard[data-finale][data-state="checkpoint"] .cardAction,
+  .moduleCard[data-finale][data-state="complete"] .cardAction {
+    color: var(--ag-room-muted);
+  }
+
+  .readiness {
+    display: flex;
+    gap: 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: var(--ag-answer-sheet);
+  }
+
+  .readiness > div {
+    min-width: 0;
+    min-height: 0;
+    flex: 1;
+    display: block;
+    padding: 0 9px;
+    border: 0;
+    border-left: 1px solid color-mix(in srgb, var(--ag-forest-deep) 13%, transparent);
+    border-radius: 0;
+  }
+
+  .readiness > div:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .readiness strong {
+    min-width: 0;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 15px;
+  }
+
+  .readiness span {
+    display: block;
+    font-size: 10px;
+    line-height: 1.22;
+  }
+
+  .bridgeNote {
+    display: none;
+  }
+}
+
+@media (max-width: 359px) {
+  .header h1 {
+    font-size: 25px;
+  }
+
+  .moduleCopy strong {
+    font-size: 13px;
+  }
+
+  .moduleCopy small {
+    font-size: 10.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .moduleCard,
+  .routeFill,
+  .loading div,
+  .continueMark,
+  .continueAction::after {
+    transition: none;
+    animation: none;
+  }
+
+  .scene img {
+    transition: none;
+  }
+}
+
+@keyframes quietRise {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes routeDraw {
+  from {
+    transform: scaleX(0.18);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes moduleArrive {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes markInvite {
+  0%,
+  100% {
+    transform: translateX(0) rotate(90deg);
+  }
+
+  55% {
+    transform: translateX(3px) rotate(90deg);
+  }
+}
+
+@keyframes questRing {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  38% {
+    opacity: 0.68;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes calmPulse {
+  0%,
+  100% {
+    opacity: 0.62;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
