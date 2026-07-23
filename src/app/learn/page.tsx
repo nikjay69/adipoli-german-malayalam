@@ -1,31 +1,37 @@
 'use client';
 
-// Today screen — the command center (docs/LEARNER_JOURNEY.md).
-// One active card: the next required block on the 8-module spine.
-// Below it: recovery (only when a checkpoint was weak), the 5-min SRS review,
-// progress + skill bars, and the practice library behind a disclosure.
+// Today is the learner's only home: one recommended action, with quiet
+// evidence underneath. The composition follows the approved C3 state family.
 
-import { useState, useEffect, useMemo } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, ChevronDown, Lock, CheckCircle, RotateCcw, Sparkles } from 'lucide-react';
-import { KeralaClassroomScene } from '@/components/course/KeralaClassroomScene';
+import { useEffect, useMemo, useState } from 'react';
+import {
+  ArrowRight,
+  BookOpen,
+  Brain,
+  CheckCircle2,
+  Clock3,
+  RotateCcw,
+} from 'lucide-react';
 import { useGameStore } from '@/lib/store';
-import { ALL_MODULES } from '@/lib/content/modules';
-import { isModuleUnlocked, OPTIONAL_MODULE_IDS } from '@/lib/curriculum';
 import { getDueCount } from '@/lib/srs';
 import { readCompletedModule1Missions, type Module1MissionId } from '@/lib/missions/module1';
 import { type Module2MissionId } from '@/lib/missions/module2';
 import { readCompletedModule2Missions } from '@/app/missions/module-2/_components/MissionUI';
 import {
-  getSpineModules,
+  getActiveRecovery,
   getNextBlock,
   getSkillReadiness,
-  getActiveRecovery,
+  getSpineModules,
   readModule1CheckpointResult,
+  type ActiveRecovery,
   type Module1CheckpointStored,
+  type NextBlock,
   type SpineInputs,
 } from '@/lib/spine';
+import { buildTodayState, type TodayStateKind } from '@/lib/today-state';
+import styles from './Today.module.css';
 
 const SKILL_LABELS: Array<{ key: 'hoeren' | 'sprechen' | 'lesen' | 'schreiben'; label: string }> = [
   { key: 'hoeren', label: 'Hören' },
@@ -34,14 +40,44 @@ const SKILL_LABELS: Array<{ key: 'hoeren' | 'sprechen' | 'lesen' | 'schreiben'; 
   { key: 'schreiben', label: 'Schreiben' },
 ];
 
-function isLessonDone(completed: { lessonId: string }[], id: string) {
-  return completed.some((l) => l.lessonId === id);
-}
+const MODULE_SCENES: Record<number, { src: string; position: string }> = {
+  1: { src: '/images/scenes/hub-goethe-kochi-classroom.jpg', position: 'center 30%' },
+  2: { src: '/images/scenes/hub-study-desk.jpg', position: 'center 42%' },
+  3: { src: '/images/scenes/hub-thrissur-home.jpg', position: 'center 55%' },
+  4: { src: '/images/scenes/hub-chayakkada.jpg', position: 'center 58%' },
+  5: { src: '/images/scenes/hub-dream-platform.jpg', position: 'center 45%' },
+  6: { src: '/images/scenes/hub-video-call-wg.jpg', position: 'center 50%' },
+  7: { src: '/images/scenes/hub-amt-office.jpg', position: 'center 45%' },
+  8: { src: '/images/scenes/hub-exam-hall.jpg', position: 'center 42%' },
+};
+
+const TODAY_PREVIEW_STATES: TodayStateKind[] = [
+  'fresh',
+  'active',
+  'review-due',
+  'recovery',
+  'checkpoint',
+  'returning',
+  'complete',
+];
+
+const PREVIEW_RECOVERY: ActiveRecovery = {
+  moduleId: 1,
+  state: 'FAIL',
+  title: 'Greeting + adult register',
+  mustDo: ['Say the greeting aloud · 3 min', 'Repair du vs. Sie · 3 min'],
+  timeBoxMinutes: 6,
+  libraryHref: '/practice/speak',
+  libraryLabel: 'Start speaking repair',
+  retestHref: '/missions/module-1/checkpoint',
+};
 
 export default function TodayPage() {
   const { userProgress, updateStreak } = useGameStore();
   const [mounted, setMounted] = useState(false);
-  const [showLibrary, setShowLibrary] = useState(false);
+  const [previousActiveDate, setPreviousActiveDate] = useState('');
+  const [visitTimestamp, setVisitTimestamp] = useState(0);
+  const [previewKind, setPreviewKind] = useState<TodayStateKind | null>(null);
   const [m1Missions, setM1Missions] = useState<Module1MissionId[]>([]);
   const [m2Missions, setM2Missions] = useState<Module2MissionId[]>([]);
   const [m1Checkpoint, setM1Checkpoint] = useState<Module1CheckpointStored | null>(null);
@@ -53,9 +89,15 @@ export default function TodayPage() {
       setM1Checkpoint(readModule1CheckpointResult());
     };
     const timer = window.setTimeout(() => {
-      setMounted(true);
+      setPreviousActiveDate(useGameStore.getState().userProgress.lastActiveDate);
+      setVisitTimestamp(Date.now());
+      if (process.env.NODE_ENV === 'development') {
+        const requestedState = new URLSearchParams(window.location.search).get('todayState') as TodayStateKind | null;
+        setPreviewKind(requestedState && TODAY_PREVIEW_STATES.includes(requestedState) ? requestedState : null);
+      }
       refresh();
-      updateStreak(); // daily-visit streak used to be counted on the legacy dashboard home
+      setMounted(true);
+      updateStreak();
     }, 0);
     window.addEventListener('module1-mission-completed', refresh);
     window.addEventListener('module2-mission-completed', refresh);
@@ -77,239 +119,212 @@ export default function TodayPage() {
     module2MissionIds: m2Missions,
     module1Checkpoint: m1Checkpoint,
     mockResults: userProgress.mockResults || {},
-  }), [userProgress.completedLessons, userProgress.spineCheckpoints, userProgress.mockResults, m1Missions, m2Missions, m1Checkpoint]);
+  }), [
+    userProgress.completedLessons,
+    userProgress.spineCheckpoints,
+    userProgress.mockResults,
+    m1Missions,
+    m2Missions,
+    m1Checkpoint,
+  ]);
 
   const spineModules = useMemo(() => (mounted ? getSpineModules(inputs) : []), [mounted, inputs]);
   const next = useMemo(() => getNextBlock(spineModules), [spineModules]);
-  const skills = useMemo(() => getSkillReadiness(inputs), [inputs]);
   const recovery = useMemo(() => (mounted ? getActiveRecovery(inputs) : null), [mounted, inputs]);
+  const skills = useMemo(() => getSkillReadiness(inputs), [inputs]);
   const dueCards = mounted ? getDueCount(userProgress.srsCards || {}) : 0;
+  const completeCount = spineModules.filter((module) => module.status === 'complete').length;
+  const hasLearningEvidence = (
+    m1Missions.length
+    + m2Missions.length
+    + userProgress.completedLessons.length
+    + Object.keys(userProgress.spineCheckpoints || {}).length
+    + Object.keys(userProgress.mockResults || {}).length
+    + (m1Checkpoint ? 1 : 0)
+  ) > 0;
+  let stateNext = next;
+  let stateRecovery = recovery;
+  let stateDueCards = dueCards;
+  let stateHasLearningEvidence = hasLearningEvidence;
+  let stateLastActiveDate = previousActiveDate;
+  let stateCompleteCount = completeCount;
+  const visitDate = new Date(visitTimestamp);
+
+  if (previewKind && next) {
+    stateRecovery = previewKind === 'recovery' ? PREVIEW_RECOVERY : null;
+    stateDueCards = previewKind === 'review-due' ? 9 : previewKind === 'returning' ? 6 : 0;
+    stateHasLearningEvidence = previewKind !== 'fresh';
+    stateLastActiveDate = previewKind === 'returning'
+      ? new Date(visitTimestamp - (6 * 86_400_000)).toDateString()
+      : visitDate.toDateString();
+    if (previewKind === 'checkpoint') {
+      stateNext = {
+        module: next.module,
+        block: {
+          id: `preview-checkpoint-${next.module.id}`,
+          kind: 'checkpoint',
+          title: `Module ${next.module.id} checkpoint`,
+          href: next.module.checkpointHref,
+          duration: '20 min',
+          done: false,
+        },
+      } satisfies NextBlock;
+    }
+    if (previewKind === 'complete') {
+      stateNext = null;
+      stateCompleteCount = 8;
+    }
+  }
+
+  const activeModule = stateNext?.module ?? spineModules[spineModules.length - 1];
+  const todayState = buildTodayState({
+    next: stateNext,
+    recovery: stateRecovery,
+    dueCards: stateDueCards,
+    hasLearningEvidence: stateHasLearningEvidence,
+    lastActiveDate: stateLastActiveDate,
+    now: visitDate,
+  });
+  const sceneModuleId = stateRecovery?.moduleId ?? activeModule?.id ?? 8;
+  const scene = todayState.kind === 'checkpoint' || todayState.kind === 'complete'
+    ? MODULE_SCENES[8]
+    : todayState.kind === 'review-due'
+      ? MODULE_SCENES[2]
+      : MODULE_SCENES[sceneModuleId] ?? MODULE_SCENES[1];
+  const showScene = todayState.kind !== 'recovery';
+  const hasSkillEvidence = SKILL_LABELS.some(({ key }) => skills[key] > 0);
+  const requiredDone = activeModule?.requiredBlocksDone ?? 0;
+  const requiredTotal = activeModule?.requiredBlocksTotal ?? 0;
 
   if (!mounted) {
     return (
-      <div className="min-h-screen px-4 py-6">
-        <div className="mx-auto max-w-md animate-pulse">
-          <div className="mb-4 h-8 w-48 rounded bg-white/5" />
-          <div className="h-[60vh] rounded-3xl bg-white/5" />
+      <main id="main-content" className={`ag-foundation-shell ag-daylight ${styles.page}`}>
+        <div className={`ag-container ${styles.loading}`} aria-label="Loading Today">
+          <div />
+          <div />
+          <div />
         </div>
-      </div>
+      </main>
     );
   }
 
-  const completeCount = spineModules.filter((m) => m.status === 'complete').length;
-  const activeModule = next?.module ?? spineModules[spineModules.length - 1];
-  const hasSkillEvidence = SKILL_LABELS.some(({ key }) => skills[key] > 0);
-
-  const heroCta = next
-    ? next.block.kind === 'checkpoint'
-      ? 'Take the closed checkpoint'
-      : next.block.kind === 'mission'
-        ? 'Start listening'
-        : 'Start the lesson'
-    : 'Open the mock tests';
-
   return (
-    <div className="min-h-screen px-4 py-4 pb-32 md:px-8 md:py-8">
-      <div className="mx-auto max-w-md md:max-w-2xl">
-        {/* Hero: the one next action */}
-        <div className="overflow-hidden rounded-[1.75rem] border border-[#d4a520]/30 bg-gradient-to-br from-[#d4a520]/18 via-white/[0.04] to-[#e94560]/12 shadow-xl shadow-black/20">
-          <div className="grid gap-4 p-4 md:grid-cols-[minmax(0,1fr)_14rem] md:items-center md:p-5">
-            <div>
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[#d4a520]">
-                {next ? `Module ${next.module.id} · ${next.module.title}` : 'Spine complete'}
-              </p>
-              <h1 className="mt-1.5 text-3xl font-black leading-tight tracking-tight text-white md:text-4xl">
-                {next ? next.block.title : 'You finished the A1 path.'}
-              </h1>
-              <p className="mt-2 max-w-2xl text-sm font-semibold leading-snug text-white/72">
-                {next ? next.module.promise : 'Keep your edge: timed mocks until exam day.'}
-              </p>
-              <div className="mt-4">
-                <Link
-                  href={next ? next.block.href : '/tests'}
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#e94560] px-5 py-4 text-base font-black text-white shadow-lg shadow-[#e94560]/25 transition hover:bg-[#ff5a72]"
-                >
-                  {heroCta} <ChevronRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-            <div className="hidden md:block" aria-hidden="true">
-              <KeralaClassroomScene className="h-36 border-white/10 shadow-[0_18px_46px_-30px_rgba(0,0,0,0.9)]" />
-            </div>
-          </div>
-        </div>
+    <main id="main-content" className={`ag-foundation-shell ag-daylight ${styles.page}`} data-today-state={todayState.kind}>
+      <div className={`ag-container ${styles.shell}`}>
+        <header className={styles.intro}>
+          <p className={styles.kicker}>{todayState.kicker}</p>
+          <h1>{todayState.heading}</h1>
+        </header>
 
-        {/* Recovery — only after a weak/failed checkpoint */}
-        {recovery && (
-          <div className="mt-3 rounded-3xl border border-[#f1d27a]/25 bg-[#f1d27a]/8 p-4" data-testid="today-recovery-card">
-            <div className="flex items-center justify-between gap-2">
-              <p className="text-[11px] font-black uppercase tracking-[0.16em] text-[#f1d27a]">
-                Fix first · Module {recovery.moduleId} {recovery.state === 'FAIL' ? 'gate' : 'weak spot'}
-              </p>
-              <span className="text-[11px] font-bold text-white/45">{recovery.timeBoxMinutes}m</span>
-            </div>
-            <h2 className="mt-1 text-lg font-black leading-tight">{recovery.title}</h2>
-            <ol className="mt-2 space-y-1 text-sm font-semibold text-white/70">
-              {recovery.mustDo.slice(0, 3).map((task) => <li key={task}>- {task}</li>)}
-            </ol>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {recovery.libraryHref && (
-                <Link
-                  href={recovery.libraryHref}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-[#f1d27a] px-4 py-2 text-sm font-black text-[#162416] transition hover:bg-[#ffe394]"
-                >
-                  {recovery.libraryLabel ?? 'Start recovery'} <ChevronRight className="h-3.5 w-3.5" />
-                </Link>
-              )}
-              <Link
-                href={recovery.retestHref}
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-sm font-black text-white/75 transition hover:bg-white/10"
-              >
-                Retest <RotateCcw className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-          </div>
-        )}
-
-        {/* SRS — the daily 5 minutes */}
-        {dueCards > 0 && (
-          <Link href="/practice/review" className="group mt-3 block" data-testid="today-srs-card">
-            <div className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/5 p-4 transition hover:border-white/20">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#27ae60]/20 text-lg">
-                <Sparkles className="h-5 w-5 text-[#7ee2a8]" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="text-sm font-black">5-min review</div>
-                <div className="text-xs font-semibold text-white/50">{dueCards} {dueCards === 1 ? 'word is' : 'words are'} due today</div>
-              </div>
-              <ChevronRight className="h-4 w-4 shrink-0 text-white/30 transition-transform group-hover:translate-x-0.5" />
-            </div>
-          </Link>
-        )}
-
-        {/* Progress + skill bars */}
-        <div className="mt-3 rounded-3xl border border-white/10 bg-white/5 p-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="text-xs font-semibold text-white/50">Course progress</div>
-              <div className="text-sm font-black">
-                Module {activeModule?.id ?? 8} of 8 · {completeCount} complete
-              </div>
-            </div>
-            <Link
-              href="/course"
-              className="ag-touch-target inline-flex items-center gap-1 rounded-full border border-white/12 px-3 py-1.5 text-xs font-black text-white/70 transition hover:bg-white/10"
-            >
-              View path <ChevronRight className="h-3.5 w-3.5" />
+        <section className={styles.door} aria-labelledby="today-door-title" data-state={todayState.kind}>
+          {showScene ? (
+            <Image
+              src={scene.src}
+              alt=""
+              fill
+              priority
+              sizes="(max-width: 767px) calc(100vw - 40px), 560px"
+              style={{ objectFit: 'cover', objectPosition: scene.position }}
+            />
+          ) : null}
+          <div className={styles.doorVeil} aria-hidden="true" />
+          <span className={styles.moduleNumber} aria-hidden="true">{sceneModuleId}</span>
+          <div className={styles.doorContent}>
+            <p className={styles.doorLabel}>
+              {todayState.kind === 'recovery' ? <RotateCcw aria-hidden="true" /> : <Clock3 aria-hidden="true" />}
+              {todayState.doorLabel}
+            </p>
+            <h2 id="today-door-title">{todayState.doorTitle}</h2>
+            <p>{todayState.doorDescription}</p>
+            {todayState.kind === 'recovery' && stateRecovery ? (
+              <ol className={styles.recoveryTasks}>
+                {stateRecovery.mustDo.slice(0, 3).map((task) => <li key={task}>{task}</li>)}
+              </ol>
+            ) : null}
+            <Link href={todayState.primaryHref} className={styles.primaryAction}>
+              {todayState.primaryLabel} <ArrowRight aria-hidden="true" />
             </Link>
           </div>
+        </section>
 
-          <div className="mt-3 flex gap-1.5" aria-hidden="true">
-            {spineModules.map((m) => (
-              <div
-                key={m.id}
-                className={`h-1.5 flex-1 rounded-full ${
-                  m.status === 'complete' ? 'bg-[#27ae60]' : m.status === 'active' ? 'bg-[#d4a520]' : 'bg-white/10'
-                }`}
-              />
-            ))}
-          </div>
+        <div className={styles.supporting}>
+          {todayState.kind === 'fresh' && userProgress.hasSeenIntro ? (
+            <p className={styles.firstWin}>
+              <CheckCircle2 aria-hidden="true" />
+              Your first greeting is saved. This mission completes the classroom exchange.
+            </p>
+          ) : null}
 
-          <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5" data-testid="today-skill-bars">
-            {SKILL_LABELS.map(({ key, label }) => (
-              <div key={key}>
-                <div className="mb-1 flex items-center justify-between text-[11px] font-bold">
-                  <span className="text-white/60">{label}</span>
-                  <span className="text-white/40">{skills[key]}%</span>
-                </div>
-                <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
-                  <div
-                    className="h-full rounded-full bg-gradient-to-r from-[#d4a520] to-[#27ae60]"
-                    style={{ width: `${skills[key]}%` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-          {!hasSkillEvidence && (
-            <p className="mt-2 text-[11px] font-semibold text-white/35">Skill bars fill after your first checkpoint.</p>
-          )}
+          {todayState.secondaryHref && todayState.secondaryLabel ? (
+            <Link href={todayState.secondaryHref} className={styles.secondaryAction}>
+              <span>{todayState.secondaryLabel}</span>
+              <ArrowRight aria-hidden="true" />
+            </Link>
+          ) : null}
+
+          {stateDueCards > 0 && !['review-due', 'returning'].includes(todayState.kind) ? (
+            <Link href="/practice/review" className={styles.reviewRow} data-testid="today-srs-card">
+              <Brain aria-hidden="true" />
+              <span>
+                <strong>Review due · 5 min</strong>
+                <small>{stateDueCards} {stateDueCards === 1 ? 'card' : 'cards'}, weakest first</small>
+              </span>
+              <ArrowRight aria-hidden="true" />
+            </Link>
+          ) : null}
         </div>
 
-        {/* Practice library — secondary, behind a disclosure */}
-        <button
-          onClick={() => setShowLibrary((v) => !v)}
-          className="mt-4 flex w-full items-center justify-between rounded-xl px-2 py-2.5 text-sm text-white/50 transition hover:text-white/80"
-        >
-          <span className="font-semibold">Practice library (all lessons)</span>
-          <ChevronDown className={`h-4 w-4 transition-transform ${showLibrary ? 'rotate-180' : ''}`} />
-        </button>
-
-        <AnimatePresence>
-          {showLibrary && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden"
-            >
-              <p className="mb-2 px-2 text-[11px] font-semibold text-white/35">
-                Extra practice. Your required path lives on the course page — use these for recovery and review.
-              </p>
-              <div className="mb-2 grid grid-cols-3 gap-2 pb-4 md:grid-cols-6 md:gap-3">
-                {ALL_MODULES.map((m) => {
-                  const unlocked = isModuleUnlocked(m.id, userProgress.completedLessons, {
-                    spineCheckpoints: userProgress.spineCheckpoints || {},
-                    module1Passed: (m1Checkpoint?.state ?? 'FAIL') !== 'FAIL',
-                  });
-                  const done = m.lessons.filter((l) => isLessonDone(userProgress.completedLessons, l.id)).length;
-                  const pct = Math.round((done / m.lessons.length) * 100);
-                  const isComplete = pct === 100;
-                  const isOptional = OPTIONAL_MODULE_IDS.has(m.id);
-
-                  return (
-                    <Link
-                      key={m.id}
-                      href={unlocked ? `/learn/${m.id}` : '#'}
-                      className={`relative block ${!unlocked ? 'pointer-events-none' : ''}`}
-                    >
-                      <div
-                        className={`relative rounded-xl border p-2.5 text-left transition-all ${
-                          isComplete
-                            ? 'border-[#27ae60]/60 bg-[#27ae60]/5'
-                            : unlocked
-                              ? 'border-white/10 bg-white/5 hover:bg-white/10'
-                              : 'border-white/5 bg-white/2 opacity-40'
-                        }`}
-                      >
-                        <div className="mb-1 flex items-center justify-between">
-                          <span className="text-lg">
-                            {unlocked ? m.icon : (
-                              <span className="flex h-5 w-5 items-center justify-center rounded-md bg-white/5">
-                                <Lock className="h-3 w-3 opacity-60" />
-                              </span>
-                            )}
-                          </span>
-                          {isComplete && <CheckCircle className="h-3.5 w-3.5 text-[#27ae60]" />}
-                        </div>
-                        <div className="text-[10px] font-semibold opacity-70">M{m.id}</div>
-                        <div className="line-clamp-2 text-[11px] leading-tight opacity-70">{m.title}</div>
-                        {isOptional && <div className="mt-1 text-[9px] uppercase tracking-wider opacity-40">A1+ · after exam</div>}
-                        <div className="mt-1.5 h-0.5 overflow-hidden rounded-full bg-white/10">
-                          <div
-                            className="h-full rounded-full"
-                            style={{ width: `${pct}%`, background: isComplete ? '#27ae60' : (m.color || '#e94560') }}
-                          />
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                })}
+        <section className={styles.skills} aria-labelledby="today-skills-title" data-testid="today-skill-bars">
+          <div className={styles.sectionHeading}>
+            <h2 id="today-skills-title">Four skills</h2>
+            <Link href="/practice">Practice one</Link>
+          </div>
+          <div className={styles.skillGrid}>
+            {SKILL_LABELS.map(({ key, label }) => (
+              <div className={styles.skill} key={key}>
+                <div>
+                  <span>{label}</span>
+                  <strong>{skills[key]}</strong>
+                </div>
+                <span
+                  className={styles.skillTrack}
+                  role="progressbar"
+                  aria-label={`${label} readiness`}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={skills[key]}
+                >
+                  <span style={{ width: `${skills[key]}%` }} />
+                </span>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            ))}
+          </div>
+          <p>{hasSkillEvidence ? 'From checkpoint evidence, not clicks.' : 'Skill evidence appears after your first checkpoint.'}</p>
+        </section>
+
+        <section className={styles.route} aria-labelledby="today-route-title">
+          <div className={styles.sectionHeading}>
+            <h2 id="today-route-title">Your route</h2>
+            <Link href="/course" className="ag-touch-target">Open Course</Link>
+          </div>
+          <div
+            className={styles.routeTrack}
+            data-has-complete={stateCompleteCount > 0}
+            role="img"
+            aria-label={`${stateCompleteCount} of 8 modules complete. ${activeModule ? `Module ${activeModule.id} is current.` : 'Course path complete.'}`}
+          >
+            <span className={styles.routeComplete} style={{ width: `${(stateCompleteCount / 8) * 100}%` }} />
+            <span className={styles.routeStart}>
+              {stateCompleteCount > 0 ? <CheckCircle2 aria-hidden="true" /> : <BookOpen aria-hidden="true" />}
+              {stateCompleteCount}/8
+            </span>
+            <span className={styles.routeCurrent}>
+              {activeModule ? `Module ${activeModule.id} · ${requiredDone}/${requiredTotal}` : 'All flags sealed'}
+            </span>
+            <span className={styles.routeEnd}>A1 →</span>
+          </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }
