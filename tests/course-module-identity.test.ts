@@ -48,6 +48,10 @@ for (const state of ['complete', 'current', 'checkpoint', 'recovery', 'read-ahea
 assert.ok(coursePage.includes('Peek ahead freely. Gates only block doing.'), 'Course must explain guided-forward/open-backward behavior');
 assert.ok(coursePage.includes('href={`/course/${module.id}`}'), 'every flag must open the shared module template');
 assert.ok(coursePage.includes('data-finale={isFinale || undefined}'), 'Module 8 must keep its finale identity');
+assert.ok(
+  coursePage.includes('activeModule.requiredBlocksDone / activeModule.requiredBlocksTotal'),
+  'the route bar must advance with completed blocks inside the current module',
+);
 assert.ok(!coursePage.includes('opacity-60'), 'read-ahead modules must stay fully legible');
 assert.match(courseStyles, /grid-template-columns:\s*repeat\(4,\s*minmax\(0,\s*1fr\)\);/, 'desktop Course must preserve the approved four-flag row');
 assert.match(courseStyles, /\.page\s*\{[\s\S]*?z-index:\s*40;/, 'Course must sit below the fixed learner navigation');
@@ -61,11 +65,13 @@ assert.equal(
 );
 assert.match(
   courseStyles,
-  /\.moduleCard\[data-finale\]\[data-state="read-ahead"\]\s*\{[^}]*box-shadow:\s*inset 3px 0 0 var\(--ag-forest-deep\);/,
-  'the phone finale must retain its forest edge after the compact-list reset',
+  /\.moduleCard\[data-finale\]\[data-state="read-ahead"\]\s*\{[^}]*box-shadow:\s*none;/,
+  'the phone finale must stay softly distinct without a heavy enclosing border',
 );
 assert.match(courseStyles, /\.moduleCard\[data-finale\]\[data-state="current"\][\s\S]*?background:\s*var\(--ag-forest-deep\);/, 'the finale may become a full dark threshold when it is current');
 assert.ok(courseStyles.includes('@keyframes moduleArrive'), 'Course flags must have a restrained entry cue');
+assert.ok(courseStyles.includes('.routeFill::after'), 'the route bar must expose a moving gold progress marker');
+assert.ok(courseStyles.includes('@keyframes questRing'), 'the current quest action must have one restrained game-like cue');
 assert.ok(courseStyles.includes('@media (prefers-reduced-motion: reduce)'), 'Course motion must have a reduced-motion path');
 
 assert.ok(modulePage.includes('data-module-state={pageState}'), 'module state must be inspectable in browser evidence');

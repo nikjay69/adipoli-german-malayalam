@@ -80,7 +80,13 @@ export default function CoursePage() {
   const completeCount = modules.filter((module) => module.status === 'complete').length;
   const readyMocks = Object.values(inputs.mockResults).filter((result) => result.band === 'ready').length;
   const activeModule = next?.module ?? modules.find((module) => module.status === 'active') ?? modules[modules.length - 1];
-  const routePercent = Math.max(4, ((completeCount + (activeModule ? 0.34 : 0)) / 8) * 100);
+  const activeModuleFraction = activeModule?.requiredBlocksTotal
+    ? activeModule.requiredBlocksDone / activeModule.requiredBlocksTotal
+    : 0;
+  const routeUnits = completeCount === modules.length
+    ? modules.length
+    : completeCount + activeModuleFraction;
+  const routePercent = 16 + (Math.min(routeUnits / modules.length, 1) * 84);
 
   return (
     <main id="main-content" className={`ag-foundation-shell ag-daylight ${styles.page}`}>

@@ -64,6 +64,20 @@
   animation: routeDraw 360ms 70ms var(--ag-ease-calm) both;
 }
 
+.routeFill::after {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ag-action-light);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ag-action) 24%, transparent);
+  content: "";
+  transform: translateY(-50%);
+  animation: progressMarkerPop 520ms 140ms var(--ag-ease-calm) both;
+}
+
 .routeStart,
 .routeCurrent,
 .routeEnd {
@@ -147,15 +161,13 @@
 }
 
 .moduleCard[data-finale][data-state="read-ahead"] {
-  border-color: color-mix(in srgb, var(--ag-forest-deep) 72%, var(--ag-action));
+  border-color: color-mix(in srgb, var(--ag-forest-deep) 18%, transparent);
   background: linear-gradient(
     180deg,
     var(--ag-white),
     color-mix(in srgb, var(--ag-action) 7%, var(--ag-daylight-canvas))
   );
-  box-shadow:
-    inset 0 -3px 0 var(--ag-action),
-    0 8px 24px color-mix(in srgb, var(--ag-forest-deep) 8%, transparent);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--ag-forest-deep) 7%, transparent);
 }
 
 .moduleCard[data-finale][data-state="current"],
@@ -276,6 +288,7 @@
 }
 
 .continueAction {
+  position: relative;
   min-height: 44px;
   display: flex;
   align-items: center;
@@ -304,6 +317,17 @@
 
 .continueAction svg {
   animation: arrowInvite 420ms 460ms var(--ag-ease-calm) both;
+}
+
+.continueAction::after {
+  position: absolute;
+  inset: -3px;
+  border: 1px solid color-mix(in srgb, var(--ag-action) 72%, transparent);
+  border-radius: inherit;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  animation: questRing 720ms 520ms ease-out both;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -482,7 +506,7 @@
 
   .moduleCard[data-finale][data-state="read-ahead"] {
     background: color-mix(in srgb, var(--ag-action) 7%, var(--ag-daylight-canvas));
-    box-shadow: inset 3px 0 0 var(--ag-forest-deep);
+    box-shadow: none;
   }
 
   .moduleCard[data-finale][data-state="current"],
@@ -669,8 +693,10 @@
   .header,
   .moduleCard,
   .routeFill,
+  .routeFill::after,
   .loading div,
-  .continueAction svg {
+  .continueAction svg,
+  .continueAction::after {
     transition: none;
     animation: none;
   }
@@ -702,6 +728,18 @@
   }
 }
 
+@keyframes progressMarkerPop {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.45);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
 @keyframes moduleArrive {
   from {
     opacity: 0;
@@ -722,6 +760,22 @@
 
   55% {
     transform: translateX(3px);
+  }
+}
+
+@keyframes questRing {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  38% {
+    opacity: 0.68;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.12);
   }
 }
 
