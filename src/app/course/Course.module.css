@@ -64,20 +64,6 @@
   animation: routeDraw 360ms 70ms var(--ag-ease-calm) both;
 }
 
-.routeFill::after {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--ag-action-light);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ag-action) 24%, transparent);
-  content: "";
-  transform: translateY(-50%);
-  animation: progressMarkerPop 520ms 140ms var(--ag-ease-calm) both;
-}
-
 .routeStart,
 .routeCurrent,
 .routeEnd {
@@ -693,7 +679,6 @@
   .header,
   .moduleCard,
   .routeFill,
-  .routeFill::after,
   .loading div,
   .continueAction svg,
   .continueAction::after {
@@ -725,18 +710,6 @@
 
   to {
     transform: scaleX(1);
-  }
-}
-
-@keyframes progressMarkerPop {
-  from {
-    opacity: 0;
-    transform: translateY(-50%) scale(0.45);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(-50%) scale(1);
   }
 }
 
