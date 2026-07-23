@@ -2,7 +2,10 @@
   z-index: 0;
   isolation: auto;
   min-height: 100vh;
-  padding: 28px 0 132px;
+  padding: 28px 0 0;
+  /* Keep the full composition visible on a common phone viewport while
+     retaining 20px above the fixed nav and any real device safe area. */
+  padding-bottom: calc(120px + env(safe-area-inset-bottom, 0px));
   background:
     radial-gradient(circle at 14% 0%, rgb(212 165 32 / 8%), transparent 30rem),
     var(--ag-daylight-canvas);

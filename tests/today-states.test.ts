@@ -128,6 +128,11 @@ assert.ok(todayPage.includes('From checkpoint evidence, not clicks.'), 'skill ba
 assert.ok(todayPage.includes('Your first greeting is saved.'), 'post-onboarding Today must acknowledge the first win without falsely sealing the full mission');
 assert.ok(!todayPage.includes('Practice library (all lessons)'), 'Today must not expand into a legacy library dashboard');
 assert.ok(todayStyles.includes('min-height: 48px'), 'the dominant action must preserve a generous touch target');
+assert.match(
+  todayStyles,
+  /padding-bottom:\s*calc\(120px \+ env\(safe-area-inset-bottom,\s*0px\)\);/,
+  'Today must fit a common phone viewport while preserving fixed-nav and device-safe-area clearance',
+);
 assert.ok(todayStyles.includes('@media (prefers-reduced-motion: reduce)'), 'Today must respect reduced motion');
 
 console.log('today states: seven calm doors, priority law, safe return, and daylight shell verified');
