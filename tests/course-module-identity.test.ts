@@ -53,6 +53,11 @@ assert.ok(
   'the current Continue action must use approved high-contrast Triangle-A variants on dark and gold surfaces',
 );
 assert.ok(
+  courseStyles.includes('transform: rotate(90deg);') &&
+    courseStyles.includes('transform: translateX(3px) rotate(90deg);'),
+  'the owner-approved Continue-only Triangle-A experiment must point right while preserving its invitation motion',
+);
+assert.ok(
   courseStyles.includes('bottom: 8px;') && courseStyles.includes('bottom: 3px;'),
   'module numerals must remain fully visible on desktop scenes and phone thumbnails',
 );

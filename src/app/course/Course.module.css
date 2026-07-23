@@ -302,6 +302,8 @@
 
 .continueMark {
   flex: none;
+  /* Owner-approved action-only experiment: the mark points right here; do not generalize to brand lockups. */
+  transform: rotate(90deg);
   animation: markInvite 420ms 460ms var(--ag-ease-calm) both;
 }
 
@@ -735,11 +737,11 @@
 @keyframes markInvite {
   0%,
   100% {
-    transform: translateX(0);
+    transform: translateX(0) rotate(90deg);
   }
 
   55% {
-    transform: translateX(3px);
+    transform: translateX(3px) rotate(90deg);
   }
 }
 
