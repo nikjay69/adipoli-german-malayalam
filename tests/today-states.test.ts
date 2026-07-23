@@ -133,6 +133,11 @@ assert.match(
   /padding-bottom:\s*calc\(120px \+ env\(safe-area-inset-bottom,\s*0px\)\);/,
   'Today must fit a common phone viewport while preserving fixed-nav and device-safe-area clearance',
 );
+assert.match(
+  todayStyles,
+  /@media \(max-width:\s*559px\) and \(max-height:\s*780px\)[\s\S]*?padding-top:\s*16px;[\s\S]*?padding-bottom:\s*calc\(112px \+ env\(safe-area-inset-bottom,\s*0px\)\);[\s\S]*?min-height:\s*236px;/,
+  'Today must retain its full hierarchy in the shorter viewport left by iPhone browser chrome',
+);
 assert.ok(todayStyles.includes('@media (prefers-reduced-motion: reduce)'), 'Today must respect reduced motion');
 
 console.log('today states: seven calm doors, priority law, safe return, and daylight shell verified');

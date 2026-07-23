@@ -540,6 +540,30 @@
   }
 }
 
+/* iPhone browser chrome can leave roughly 746px of usable page height on a
+   430px-wide screen. Preserve the full Today hierarchy above the fixed nav
+   by tightening only the outer rhythm and photographic door. */
+@media (max-width: 559px) and (max-height: 780px) {
+  .page {
+    padding-top: 16px;
+    padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .shell {
+    gap: 12px;
+  }
+
+  .door,
+  .doorContent {
+    min-height: 236px;
+  }
+
+  .doorContent {
+    gap: 7px;
+    padding: 18px 20px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .primaryAction {
     transition: none;
