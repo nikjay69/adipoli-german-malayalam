@@ -191,7 +191,7 @@
 .moduleNumber {
   position: absolute;
   left: 12px;
-  bottom: -19px;
+  bottom: 8px;
   z-index: 2;
   color: var(--ag-daylight-canvas);
   font: 900 38px/1 var(--ag-font-ui);

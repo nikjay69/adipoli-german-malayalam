@@ -53,6 +53,10 @@ assert.ok(
   'the current Continue action must use approved high-contrast Triangle-A variants on dark and gold surfaces',
 );
 assert.ok(
+  courseStyles.includes('bottom: 8px;') && courseStyles.includes('bottom: 3px;'),
+  'module numerals must remain fully visible on desktop scenes and phone thumbnails',
+);
+assert.ok(
   coursePage.includes('activeModule.requiredBlocksDone / activeModule.requiredBlocksTotal'),
   'the route bar must advance with completed blocks inside the current module',
 );
