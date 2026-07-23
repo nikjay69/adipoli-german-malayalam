@@ -9,6 +9,7 @@ const foundation = read('src/styles/foundation.css');
 const globals = read('src/app/globals.css');
 const navigation = read('src/components/layout/Navigation.tsx');
 const course = read('src/app/course/page.tsx');
+const courseStyles = read('src/app/course/Course.module.css');
 const practice = read('src/app/practice/page.tsx');
 const testsHub = read('src/app/tests/page.tsx');
 const chat = read('src/app/practice/chat/page.tsx');
@@ -29,9 +30,10 @@ assert.match(
 );
 assert.match(navigation, /max-w-xl/, 'desktop navigation must stay visually bounded');
 assert.match(navigation, /aria-current=\{isActive \? 'page' : undefined\}/, 'active navigation must be announced');
-assert.match(course, /className=\{`min-w-0 rounded-3xl/, 'course cards must shrink inside the phone grid');
-assert.match(course, /mt-3 grid min-w-0/, 'course block grids must shrink inside their cards');
-assert.match(course, /className=\{`min-w-0 flex items-center/, 'course block links must not force card overflow');
+assert.match(course, /ag-foundation-shell ag-daylight/, 'Course must use the bounded daylight learner shell');
+assert.match(course, /className=\{styles\.moduleGrid\}/, 'Course must keep the eight flags inside one bounded grid');
+assert.match(courseStyles, /\.moduleCard\s*\{[\s\S]*?min-width:\s*0;/, 'course flags must shrink inside the phone layout');
+assert.match(courseStyles, /overflow-x:\s*clip;/, 'Course must not create horizontal phone scroll');
 
 for (const [path, source] of [
   ['learn', read('src/app/learn/page.tsx')],
