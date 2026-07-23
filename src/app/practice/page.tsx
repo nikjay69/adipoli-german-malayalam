@@ -98,7 +98,11 @@ export default function PracticePage() {
   return (
     <div className="min-h-screen px-3 py-3 safe-top safe-bottom max-w-2xl mx-auto">
       <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="flex items-center gap-2 mb-2">
-        <button onClick={() => router.push('/')} className="text-[var(--foreground)]/50 text-sm">
+        <button
+          onClick={() => router.push('/')}
+          aria-label="Back to home"
+          className="ag-touch-target text-[var(--foreground)]/50 text-sm"
+        >
           <ArrowLeft className="w-4 h-4" />
         </button>
         <h1 className="text-sm font-bold">
@@ -112,7 +116,7 @@ export default function PracticePage() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="flex flex-col gap-2.5 items-center text-center md:flex-row md:text-left md:gap-2.5 game-card p-3.5 md:p-4 mb-2"
+        className="game-card mb-2 flex items-center gap-2.5 p-3.5 text-left md:p-4"
       >
         <Nivin mood="pointing" size="sm" entrance={false} />
         <p className="text-xs text-[var(--foreground)]/60 leading-snug">

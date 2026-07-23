@@ -198,7 +198,7 @@ export default function TodayPage() {
             </div>
             <Link
               href="/course"
-              className="inline-flex items-center gap-1 rounded-full border border-white/12 px-3 py-1.5 text-xs font-black text-white/70 transition hover:bg-white/10"
+              className="ag-touch-target inline-flex items-center gap-1 rounded-full border border-white/12 px-3 py-1.5 text-xs font-black text-white/70 transition hover:bg-white/10"
             >
               View path <ChevronRight className="h-3.5 w-3.5" />
             </Link>

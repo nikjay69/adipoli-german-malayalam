@@ -590,7 +590,7 @@ export default function ConversationPracticePage() {
   if (!speechSupported || !micSupported) {
     return (
       <div className="min-h-screen px-4 py-6 safe-top safe-bottom">
-        <button onClick={() => router.back()} className="flex items-center gap-2 text-[var(--foreground)]/60 mb-6">
+        <button onClick={() => router.back()} className="ag-touch-target mb-6 flex items-center gap-2 text-[var(--foreground)]/60">
           <ArrowLeft className="w-5 h-5" />
           <span className="text-sm font-medium">Back</span>
         </button>
@@ -630,7 +630,8 @@ export default function ConversationPracticePage() {
       <div className="px-4 py-4 flex items-center gap-3">
         <button
           onClick={state === 'scenario_select' ? () => router.back() : resetToMenu}
-          className="flex items-center gap-2 text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors"
+          aria-label={state === 'scenario_select' ? 'Back to practice' : 'Back to scenarios'}
+          className="ag-touch-target flex items-center gap-2 text-[var(--foreground)]/60 transition-colors hover:text-[var(--foreground)]"
         >
           <ArrowLeft className="w-5 h-5" />
         </button>

@@ -127,7 +127,7 @@ export default function OnTheGoPage() {
 
       <div className="mx-auto max-w-2xl px-5 py-6 pb-40">
         <div className="mb-4 flex items-center justify-between">
-          <Link href="/" className="text-white/60 hover:text-white text-sm inline-flex items-center gap-1">
+          <Link href="/" className="ag-touch-target inline-flex items-center gap-1 text-sm text-white/60 hover:text-white">
             <ArrowLeft className="h-4 w-4" /> Home
           </Link>
           <div className="flex items-center gap-1 rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.15em] text-white/60">

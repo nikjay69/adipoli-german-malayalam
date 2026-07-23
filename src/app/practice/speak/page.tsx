@@ -690,7 +690,8 @@ export default function SpeakPracticePage() {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setShowExitConfirm(true)}
-              className="w-10 h-10 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
+              aria-label="Leave speaking practice"
+              className="ag-touch-target h-10 w-10 rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] flex items-center justify-center"
             >
               <X className="w-5 h-5 text-[var(--foreground)]/60" />
             </motion.button>
@@ -758,7 +759,8 @@ export default function SpeakPracticePage() {
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => router.push('/practice')}
-                className="absolute top-4 left-4 w-10 h-10 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] flex items-center justify-center"
+                aria-label="Back to practice"
+                className="ag-touch-target absolute left-4 top-4 h-10 w-10 rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] flex items-center justify-center"
               >
                 <ArrowLeft className="w-5 h-5 text-[var(--foreground)]/60" />
               </motion.button>

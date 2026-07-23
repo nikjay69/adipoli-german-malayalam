@@ -54,7 +54,7 @@ export function Navigation() {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 safe-bottom" aria-label="Main navigation">
-      <div className="mx-4 mb-4">
+      <div className="mx-auto mb-4 w-[calc(100%-2rem)] max-w-xl">
         <div className="bg-[#162416]/90 backdrop-blur-lg border border-[var(--foreground)]/8 rounded-2xl shadow-lg shadow-black/30">
           <div className="flex items-center justify-around py-2 px-2">
             {navItems.map((item) => {
@@ -66,7 +66,12 @@ export function Navigation() {
               const href = isProfileTab && !isLoggedIn && FEATURE_FLAGS.canCreateAccounts ? '/auth/login' : item.href;
 
               return (
-                <Link key={item.href} href={href} className="flex-1">
+                <Link
+                  key={item.href}
+                  href={href}
+                  aria-current={isActive ? 'page' : undefined}
+                  className="flex-1"
+                >
                   <motion.div
                     whileTap={{ scale: 0.9 }}
                     className={clsx(

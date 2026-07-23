@@ -581,7 +581,7 @@ function TestRunner({ testId }: { testId: string }) {
 
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <button onClick={() => router.push(gate ? '/course' : '/tests')} className="flex items-center gap-2 text-[var(--foreground)]/50 text-sm">
+        <button onClick={() => router.push(gate ? '/course' : '/tests')} className="ag-touch-target flex items-center gap-2 text-sm text-[var(--foreground)]/50">
           <ArrowLeft className="w-4 h-4" /> {gate ? 'Course' : 'Tests'}
         </button>
         {section !== 'overview' && section !== 'results' && !sectionIntro && (

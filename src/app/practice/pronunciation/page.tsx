@@ -393,7 +393,7 @@ export default function PronunciationPage() {
       <div className="px-4 py-6 max-w-2xl mx-auto">
         <button
           onClick={() => router.back()}
-          className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-6"
+          className="ag-touch-target mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
         >
           <ArrowLeft className="w-5 h-5" />
           <span>Back</span>
@@ -514,7 +514,7 @@ export default function PronunciationPage() {
       <div className="flex items-center justify-between mb-5">
         <button
           onClick={() => router.back()}
-          className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+          className="ag-touch-target flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
         >
           <ArrowLeft className="w-5 h-5" />
           <span>Back</span>
@@ -632,7 +632,7 @@ export default function PronunciationPage() {
                   whileHover={{ scale: 1.05 }}
                   onClick={handlePlayAudio}
                   disabled={isPlayingAudio}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  className={`ag-touch-target flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all ${
                     isPlayingAudio
                       ? 'bg-[#0f3460]/20 text-[#0f3460]'
                       : 'bg-[#0f3460] text-white hover:bg-[#1a4a80]'
@@ -663,6 +663,7 @@ export default function PronunciationPage() {
         <motion.button
           whileTap={{ scale: 0.92 }}
           onClick={isListening ? stopListening : startListening}
+          aria-label={isListening ? 'Stop listening' : 'Start listening'}
           className={`relative w-24 h-24 rounded-full flex items-center justify-center transition-all shadow-xl ${
             isListening
               ? 'bg-[#c0392b] animate-pulse-glow'

@@ -11,7 +11,7 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto">
       <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-        <button onClick={() => router.back()} className="flex items-center gap-2 text-[var(--foreground)]/50 mb-4 text-sm">
+        <button onClick={() => router.back()} className="ag-touch-target mb-4 flex items-center gap-2 text-sm text-[var(--foreground)]/50">
           <ArrowLeft className="w-4 h-4" /> Back
         </button>
         <div className="flex items-center gap-2 mb-1">

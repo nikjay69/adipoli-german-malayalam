@@ -106,7 +106,7 @@ export default function SpeakingSimulatorPage() {
   return (
     <div className="min-h-screen px-4 py-6 pb-32 text-white md:px-8">
       <div className="mx-auto max-w-md md:max-w-2xl">
-        <Link href="/practice" className="inline-flex items-center gap-2 text-sm font-bold text-white/50 hover:text-white/80">
+        <Link href="/practice" className="ag-touch-target inline-flex items-center gap-2 text-sm font-bold text-white/50 hover:text-white/80">
           <ArrowLeft className="h-4 w-4" /> Practice
         </Link>
 
@@ -129,7 +129,7 @@ export default function SpeakingSimulatorPage() {
                   key={t.id}
                   type="button"
                   onClick={() => setTestId(t.id)}
-                  className={`rounded-full border px-3 py-1.5 text-xs font-black transition ${
+                  className={`ag-touch-target rounded-full border px-3 py-1.5 text-xs font-black transition ${
                     t.id === testId ? 'border-[#f1d27a] bg-[#f1d27a]/15 text-[#f1d27a]' : 'border-white/12 text-white/55 hover:bg-white/8'
                   }`}
                 >

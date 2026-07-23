@@ -450,7 +450,7 @@ export default function VocabularyPage() {
             placeholder="Search modules…"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-full border border-white/10 bg-white/5 py-2 pl-9 pr-3 text-sm placeholder:opacity-40 focus:outline-none focus:ring-2 focus:ring-[#d4a520]/40"
+            className="min-h-11 w-full rounded-full border border-white/10 bg-white/5 py-2 pl-9 pr-3 text-base placeholder:opacity-40 focus:outline-none focus:ring-2 focus:ring-[#d4a520]/40 sm:text-sm"
           />
         </div>
 

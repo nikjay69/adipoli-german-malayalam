@@ -64,7 +64,7 @@ export default function CoursePage() {
         <h1 className="mt-1 text-3xl font-black leading-tight">8 modules to Goethe A1.</h1>
         <p className="mt-2 text-sm font-semibold text-white/60">{completeCount}/8 complete. Every module ends in a closed checkpoint.</p>
 
-        <div className="mt-5 grid gap-3">
+        <div className="mt-5 grid min-w-0 gap-3">
           {modules.map((module) => {
             const isActive = module.status === 'active';
             const isLocked = module.status === 'locked';
@@ -73,7 +73,7 @@ export default function CoursePage() {
             return (
               <section
                 key={module.id}
-                className={`rounded-3xl border p-4 transition ${
+                className={`min-w-0 rounded-3xl border p-4 transition ${
                   isActive
                     ? 'border-[#d4a520]/40 bg-white/[0.06] ring-1 ring-[#d4a520]/40'
                     : isComplete
@@ -115,21 +115,21 @@ export default function CoursePage() {
                     <p className="mt-1 text-[11px] font-black uppercase tracking-[0.14em] text-[#d4a520]/80">
                       Milestone: {module.milestone}
                     </p>
-                    <div className="mt-3 grid gap-1.5">
+                    <div className="mt-3 grid min-w-0 gap-1.5">
                       {module.blocks.map((block) => {
                         const isNext = next?.block.id === block.id;
                         return (
                           <Link
                             key={block.id}
                             href={block.href}
-                            className={`flex items-center gap-2.5 rounded-xl border px-3 py-2.5 transition ${
+                            className={`min-w-0 flex items-center gap-2.5 rounded-xl border px-3 py-2.5 transition ${
                               isNext
                                 ? 'border-[#d4a520]/55 bg-[#d4a520]/12'
                                 : 'border-white/8 bg-black/15 hover:border-white/20'
                             }`}
                           >
                             {blockIcon(block)}
-                            <span className={`min-w-0 flex-1 truncate text-sm font-bold ${block.done ? 'text-white/40 line-through' : 'text-white/85'}`}>
+                            <span className={`line-clamp-2 min-w-0 flex-1 text-sm font-bold leading-snug ${block.done ? 'text-white/40 line-through' : 'text-white/85'}`}>
                               {block.title}
                             </span>
                             {block.kind === 'checkpoint' && !block.done && (
