@@ -294,15 +294,15 @@
   color: var(--ag-forest-deepest);
 }
 
-.continueAction svg,
 .cardAction svg {
   width: 15px;
   height: 15px;
   flex: none;
 }
 
-.continueAction svg {
-  animation: arrowInvite 420ms 460ms var(--ag-ease-calm) both;
+.continueMark {
+  flex: none;
+  animation: markInvite 420ms 460ms var(--ag-ease-calm) both;
 }
 
 .continueAction::after {
@@ -598,11 +598,6 @@
     white-space: nowrap;
   }
 
-  .continueAction svg {
-    width: 18px;
-    height: 18px;
-  }
-
   .cardAction {
     top: 50%;
     right: 4px;
@@ -680,7 +675,7 @@
   .moduleCard,
   .routeFill,
   .loading div,
-  .continueAction svg,
+  .continueMark,
   .continueAction::after {
     transition: none;
     animation: none;
@@ -725,7 +720,7 @@
   }
 }
 
-@keyframes arrowInvite {
+@keyframes markInvite {
   0%,
   100% {
     transform: translateX(0);

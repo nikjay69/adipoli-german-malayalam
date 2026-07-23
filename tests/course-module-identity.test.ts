@@ -49,6 +49,10 @@ assert.ok(coursePage.includes('Peek ahead freely. Gates only block doing.'), 'Co
 assert.ok(coursePage.includes('href={`/course/${module.id}`}'), 'every flag must open the shared module template');
 assert.ok(coursePage.includes('data-finale={isFinale || undefined}'), 'Module 8 must keep its finale identity');
 assert.ok(
+  coursePage.includes('<BrandMark variant="mono-black" size={19} alt=""'),
+  'the current Continue action must use the approved upright mono-dark Triangle-A',
+);
+assert.ok(
   coursePage.includes('activeModule.requiredBlocksDone / activeModule.requiredBlocksTotal'),
   'the route bar must advance with completed blocks inside the current module',
 );

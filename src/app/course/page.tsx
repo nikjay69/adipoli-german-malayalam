@@ -11,6 +11,7 @@ import {
   LockKeyhole,
   RotateCcw,
 } from 'lucide-react';
+import { BrandMark } from '@/components/brand';
 import { type SpineModuleView } from '@/lib/spine';
 import { useSpineProgress } from '@/lib/use-spine-progress';
 import styles from './Course.module.css';
@@ -155,7 +156,7 @@ export default function CoursePage() {
                 {isNextModule && next ? (
                   <Link href={next.block.href} className={styles.continueAction}>
                     <span>Continue</span>
-                    <ArrowRight aria-hidden="true" />
+                    <BrandMark variant="mono-black" size={19} alt="" className={styles.continueMark} />
                   </Link>
                 ) : state === 'complete' ? (
                   <span className={styles.cardAction}>
