@@ -54,6 +54,11 @@ assert.match(courseStyles, /\.page\s*\{[\s\S]*?z-index:\s*40;/, 'Course must sit
 assert.match(courseStyles, /@media \(max-width:\s*767px\)[\s\S]*?\.moduleGrid\s*\{[\s\S]*?flex-direction:\s*column;/, 'phone Course must become the approved compact route list');
 assert.match(courseStyles, /padding-bottom:\s*calc\(118px \+ env\(safe-area-inset-bottom,\s*0px\)\);/, 'phone Course must clear the fixed navigation and safe area');
 assert.match(courseStyles, /\.moduleCard\[data-finale\]\[data-state="read-ahead"\]/, 'the locked finale must stay distinct without looking like a second current module');
+assert.equal(
+  courseStyles.match(/\.moduleCard\[data-finale\]\[data-state="read-ahead"\]\s*\{/g)?.length,
+  2,
+  'the locked finale treatment must be explicit on both desktop and phone',
+);
 assert.match(courseStyles, /\.moduleCard\[data-finale\]\[data-state="current"\][\s\S]*?background:\s*var\(--ag-forest-deep\);/, 'the finale may become a full dark threshold when it is current');
 assert.ok(courseStyles.includes('@keyframes moduleArrive'), 'Course flags must have a restrained entry cue');
 assert.ok(courseStyles.includes('@media (prefers-reduced-motion: reduce)'), 'Course motion must have a reduced-motion path');

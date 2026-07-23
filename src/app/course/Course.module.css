@@ -450,7 +450,7 @@
   .moduleCard[data-state="current"],
   .moduleCard[data-state="checkpoint"],
   .moduleCard[data-state="recovery"],
-  .moduleCard[data-finale][data-state="read-ahead"] {
+  .moduleCard[data-finale] {
     min-height: 68px;
     overflow: visible;
     border: 0;
@@ -463,7 +463,7 @@
   .moduleCard[data-state="current"],
   .moduleCard[data-state="checkpoint"],
   .moduleCard[data-state="recovery"],
-  .moduleCard[data-finale] {
+  .moduleCard[data-finale][data-state="read-ahead"] {
     margin: 4px -10px;
     padding-inline: 10px;
     border-top-color: transparent;
