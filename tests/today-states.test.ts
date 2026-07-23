@@ -135,8 +135,8 @@ assert.match(
 );
 assert.match(
   todayStyles,
-  /@media \(max-width:\s*559px\) and \(max-height:\s*780px\)[\s\S]*?padding-top:\s*16px;[\s\S]*?padding-bottom:\s*calc\(112px \+ env\(safe-area-inset-bottom,\s*0px\)\);[\s\S]*?min-height:\s*236px;/,
-  'Today must retain its full hierarchy in the shorter viewport left by iPhone browser chrome',
+  /@media \(max-width:\s*559px\) and \(max-height:\s*780px\)[\s\S]*?padding-top:\s*20px;[\s\S]*?padding-bottom:\s*calc\(112px \+ env\(safe-area-inset-bottom,\s*0px\)\);[\s\S]*?gap:\s*14px;[\s\S]*?min-height:\s*264px;/,
+  'Today must preserve premium hierarchy and breathing room below iPhone browser chrome',
 );
 assert.ok(todayStyles.includes('@media (prefers-reduced-motion: reduce)'), 'Today must respect reduced motion');
 
