@@ -47,12 +47,16 @@ for (const state of ['complete', 'current', 'checkpoint', 'recovery', 'read-ahea
 
 assert.ok(coursePage.includes('Peek ahead freely. Gates only block doing.'), 'Course must explain guided-forward/open-backward behavior');
 assert.ok(coursePage.includes('href={`/course/${module.id}`}'), 'every flag must open the shared module template');
-assert.ok(coursePage.includes('data-finale={isFinale || undefined}'), 'Module 8 must keep its dark finale treatment');
+assert.ok(coursePage.includes('data-finale={isFinale || undefined}'), 'Module 8 must keep its finale identity');
 assert.ok(!coursePage.includes('opacity-60'), 'read-ahead modules must stay fully legible');
 assert.match(courseStyles, /grid-template-columns:\s*repeat\(4,\s*minmax\(0,\s*1fr\)\);/, 'desktop Course must preserve the approved four-flag row');
 assert.match(courseStyles, /\.page\s*\{[\s\S]*?z-index:\s*40;/, 'Course must sit below the fixed learner navigation');
 assert.match(courseStyles, /@media \(max-width:\s*767px\)[\s\S]*?\.moduleGrid\s*\{[\s\S]*?flex-direction:\s*column;/, 'phone Course must become the approved compact route list');
 assert.match(courseStyles, /padding-bottom:\s*calc\(118px \+ env\(safe-area-inset-bottom,\s*0px\)\);/, 'phone Course must clear the fixed navigation and safe area');
+assert.match(courseStyles, /\.moduleCard\[data-finale\]\[data-state="read-ahead"\]/, 'the locked finale must stay distinct without looking like a second current module');
+assert.match(courseStyles, /\.moduleCard\[data-finale\]\[data-state="current"\][\s\S]*?background:\s*var\(--ag-forest-deep\);/, 'the finale may become a full dark threshold when it is current');
+assert.ok(courseStyles.includes('@keyframes moduleArrive'), 'Course flags must have a restrained entry cue');
+assert.ok(courseStyles.includes('@media (prefers-reduced-motion: reduce)'), 'Course motion must have a reduced-motion path');
 
 assert.ok(modulePage.includes('data-module-state={pageState}'), 'module state must be inspectable in browser evidence');
 assert.ok(modulePage.includes('Titles stay readable. The gate blocks doing, not curiosity.'), 'read-ahead must reveal titles without opening work');
@@ -63,6 +67,7 @@ assert.match(moduleStyles, /\.hero\s*\{[\s\S]*?background:\s*var\(--ag-forest-mi
 assert.match(moduleStyles, /\.page\s*\{[\s\S]*?z-index:\s*40;/, 'module pages must sit below the fixed learner navigation');
 assert.match(moduleStyles, /\.workingArea\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)\s*304px;/, 'desktop module pages must keep the path primary and evidence secondary');
 assert.match(moduleStyles, /@media \(max-width:\s*767px\)[\s\S]*?\.workingArea\s*\{[\s\S]*?flex-direction:\s*column;/, 'module pages must become a clear phone sequence');
+assert.ok(moduleStyles.includes('@keyframes heroSettle'), 'module thresholds must enter with calm scene motion');
 assert.ok(moduleStyles.includes('@media (prefers-reduced-motion: reduce)'), 'module pages must respect reduced motion');
 
 console.log('course module identity: eight scenes, one template, five explicit states, and guided-forward/open-backward verified');

@@ -15,6 +15,10 @@
   isolation: isolate;
 }
 
+.hero > img {
+  animation: heroSettle 520ms var(--ag-ease-calm) both;
+}
+
 .hero[data-finale] {
   min-height: 286px;
 }
@@ -72,6 +76,7 @@
   z-index: 2;
   display: grid;
   gap: 7px;
+  animation: quietRise 360ms 70ms var(--ag-ease-calm) both;
 }
 
 .sceneLabel {
@@ -151,6 +156,7 @@
   grid-template-columns: minmax(0, 1fr) 304px;
   gap: 42px;
   padding-top: 28px;
+  animation: quietRise 360ms 140ms var(--ag-ease-calm) both;
 }
 
 .path {
@@ -645,8 +651,33 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero > img,
+  .heroContent,
+  .workingArea,
   .loading div {
     animation: none;
+  }
+}
+
+@keyframes heroSettle {
+  from {
+    transform: scale(1.025);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes quietRise {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
