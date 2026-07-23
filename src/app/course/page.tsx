@@ -156,7 +156,18 @@ export default function CoursePage() {
                 {isNextModule && next ? (
                   <Link href={next.block.href} className={styles.continueAction}>
                     <span>Continue</span>
-                    <BrandMark variant="mono-black" size={19} alt="" className={styles.continueMark} />
+                    <BrandMark
+                      variant="reversed"
+                      size={19}
+                      alt=""
+                      className={`${styles.continueMark} ${styles.continueMarkDesktop}`}
+                    />
+                    <BrandMark
+                      variant="mono-black"
+                      size={19}
+                      alt=""
+                      className={`${styles.continueMark} ${styles.continueMarkMobile}`}
+                    />
                   </Link>
                 ) : state === 'complete' ? (
                   <span className={styles.cardAction}>

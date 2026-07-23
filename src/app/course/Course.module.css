@@ -305,6 +305,10 @@
   animation: markInvite 420ms 460ms var(--ag-ease-calm) both;
 }
 
+.continueMarkMobile {
+  display: none;
+}
+
 .continueAction::after {
   position: absolute;
   inset: -3px;
@@ -596,6 +600,14 @@
     overflow: hidden;
     clip: rect(0 0 0 0);
     white-space: nowrap;
+  }
+
+  .continueMarkDesktop {
+    display: none;
+  }
+
+  .continueMarkMobile {
+    display: block;
   }
 
   .cardAction {
