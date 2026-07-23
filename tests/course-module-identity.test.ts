@@ -59,6 +59,11 @@ assert.equal(
   2,
   'the locked finale treatment must be explicit on both desktop and phone',
 );
+assert.match(
+  courseStyles,
+  /\.moduleCard\[data-finale\]\[data-state="read-ahead"\]\s*\{[^}]*box-shadow:\s*inset 3px 0 0 var\(--ag-forest-deep\);/,
+  'the phone finale must retain its forest edge after the compact-list reset',
+);
 assert.match(courseStyles, /\.moduleCard\[data-finale\]\[data-state="current"\][\s\S]*?background:\s*var\(--ag-forest-deep\);/, 'the finale may become a full dark threshold when it is current');
 assert.ok(courseStyles.includes('@keyframes moduleArrive'), 'Course flags must have a restrained entry cue');
 assert.ok(courseStyles.includes('@media (prefers-reduced-motion: reduce)'), 'Course motion must have a reduced-motion path');

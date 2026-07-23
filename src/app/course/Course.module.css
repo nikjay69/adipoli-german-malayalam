@@ -463,7 +463,7 @@
   .moduleCard[data-state="current"],
   .moduleCard[data-state="checkpoint"],
   .moduleCard[data-state="recovery"],
-  .moduleCard[data-finale][data-state="read-ahead"] {
+  .moduleCard[data-finale] {
     margin: 4px -10px;
     padding-inline: 10px;
     border-top-color: transparent;
@@ -480,7 +480,7 @@
     box-shadow: inset 3px 0 0 var(--ag-recovery);
   }
 
-  .moduleCard[data-finale] {
+  .moduleCard[data-finale][data-state="read-ahead"] {
     background: color-mix(in srgb, var(--ag-action) 7%, var(--ag-daylight-canvas));
     box-shadow: inset 3px 0 0 var(--ag-forest-deep);
   }
