@@ -26,20 +26,114 @@ export type SpineModuleDef = {
   milestone: string;
   icon: string;
   color: string;
+  scene: {
+    src: string;
+    position: string;
+    label: string;
+  };
+  examTransfer: string;
   /** old content modules whose lessons are required blocks in this spine module */
   sourceModuleIds: number[];
   checkpointHref: string;
 };
 
 export const SPINE_MODULES: SpineModuleDef[] = [
-  { id: 1, title: 'First German moment', promise: 'Greet, thank, and survive your first classroom exchange.', milestone: 'First real conversation', icon: '👋', color: '#e94560', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[1], checkpointHref: '/missions/module-1/checkpoint' },
-  { id: 2, title: 'Identity, numbers, time', promise: 'Introduce yourself like a Goethe candidate. Catch numbers and times.', milestone: 'Sprechen Teil 1 foundation', icon: '🪪', color: '#d4a520', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[2], checkpointHref: '/course/2/checkpoint' },
-  { id: 3, title: 'People, home, daily life', promise: 'Talk about your family, your home, and your real day.', milestone: 'Daily-life speaking + reading', icon: '🏠', color: '#27ae60', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[3], checkpointHref: '/course/3/checkpoint' },
-  { id: 4, title: 'Food, shopping, money', promise: 'Order, buy, and understand prices without panic.', milestone: 'Mini-mock gate', icon: '🍛', color: '#f97316', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[4], checkpointHref: '/course/4/checkpoint' },
-  { id: 5, title: 'Travel, services, health', promise: 'Directions, tickets, appointments, and the doctor.', milestone: 'Schreiben Teil 1 forms', icon: '🚆', color: '#3b82f6', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[5], checkpointHref: '/course/5/checkpoint' },
-  { id: 6, title: 'Work, free time, messages', promise: 'Talk about your work and hobbies. Write the 30-word message.', milestone: 'Schreiben Teil 2 + half-mock gate', icon: '💼', color: '#a855f7', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[6], checkpointHref: '/course/6/checkpoint' },
-  { id: 7, title: 'Official Germany', promise: 'Forms, notices, and office German without fear.', milestone: 'Exam-level reading + full mock', icon: '📋', color: '#14b8a6', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[7], checkpointHref: '/course/7/checkpoint' },
-  { id: 8, title: 'Goethe A1 Bootcamp', promise: 'Timed mocks, the speaking simulation, and your 7-day plan.', milestone: 'Exam-ready', icon: '🎓', color: '#f1d27a', sourceModuleIds: SPINE_SOURCE_MODULE_IDS[8], checkpointHref: '/course/8/checkpoint' },
+  {
+    id: 1,
+    title: 'First German moment',
+    promise: 'Hear, greet, pronounce, and hold a tiny formal or informal exchange.',
+    milestone: 'First real conversation',
+    icon: '👋',
+    color: '#e94560',
+    scene: { src: '/images/scenes/hub-goethe-kochi-classroom.jpg', position: 'center 30%', label: 'The classroom · Goethe Kochi' },
+    examTransfer: 'Feeds the greeting tasks and every polite exchange with the examiner.',
+    sourceModuleIds: SPINE_SOURCE_MODULE_IDS[1],
+    checkpointHref: '/missions/module-1/checkpoint',
+  },
+  {
+    id: 2,
+    title: 'Identity, numbers, time',
+    promise: 'Introduce yourself, spell, and catch the numbers and times that matter.',
+    milestone: 'Sprechen Teil 1 foundation',
+    icon: '🪪',
+    color: '#b2467f',
+    scene: { src: '/images/scenes/hub-study-desk.jpg', position: 'center 40%', label: 'The study desk' },
+    examTransfer: 'Builds your complete self-introduction, personal details, and form basics.',
+    sourceModuleIds: SPINE_SOURCE_MODULE_IDS[2],
+    checkpointHref: '/course/2/checkpoint',
+  },
+  {
+    id: 3,
+    title: 'People, home, daily life',
+    promise: 'Talk about your family, your home, and a real present-tense day.',
+    milestone: 'Daily-life speaking + reading',
+    icon: '🏠',
+    color: '#7a8b2f',
+    scene: { src: '/images/scenes/hub-thrissur-home.jpg', position: 'center 55%', label: 'The home' },
+    examTransfer: 'Builds short everyday dialogues and the detail-reading they depend on.',
+    sourceModuleIds: SPINE_SOURCE_MODULE_IDS[3],
+    checkpointHref: '/course/3/checkpoint',
+  },
+  {
+    id: 4,
+    title: 'Food, shopping, money',
+    promise: 'Order, buy, ask prices, and say what you like without freezing.',
+    milestone: 'Mini-mock gate',
+    icon: '🍛',
+    color: '#f97316',
+    scene: { src: '/images/scenes/hub-chayakkada.jpg', position: 'center 58%', label: 'The chayakkada' },
+    examTransfer: 'Feeds W-question speaking, menu and ad reading, and the first mini-mock.',
+    sourceModuleIds: SPINE_SOURCE_MODULE_IDS[4],
+    checkpointHref: '/course/4/checkpoint',
+  },
+  {
+    id: 5,
+    title: 'Travel, services, health',
+    promise: 'Handle directions, tickets, announcements, appointments, and the doctor.',
+    milestone: 'Schreiben Teil 1 forms',
+    icon: '🚆',
+    color: '#3b82f6',
+    scene: { src: '/images/scenes/hub-dream-platform.jpg', position: 'center 45%', label: 'The dream platform' },
+    examTransfer: 'Builds announcement listening, service requests, and appointment forms.',
+    sourceModuleIds: SPINE_SOURCE_MODULE_IDS[5],
+    checkpointHref: '/course/5/checkpoint',
+  },
+  {
+    id: 6,
+    title: 'Work, study, free time, messages',
+    promise: 'Talk about work and hobbies, make plans, and write the 30-word message.',
+    milestone: 'Schreiben Teil 2 + half-mock gate',
+    icon: '💼',
+    color: '#a855f7',
+    scene: { src: '/images/scenes/hub-video-call-wg.jpg', position: 'center 50%', label: 'The video call' },
+    examTransfer: 'Builds the three-point message, topic-card speaking, and the half-mock.',
+    sourceModuleIds: SPINE_SOURCE_MODULE_IDS[6],
+    checkpointHref: '/course/6/checkpoint',
+  },
+  {
+    id: 7,
+    title: 'Official life and exam skills',
+    promise: 'Read forms, notices, ads, and office German with an exam strategy.',
+    milestone: 'Exam-level reading + full mock',
+    icon: '📋',
+    color: '#14b8a6',
+    scene: { src: '/images/scenes/hub-amt-office.jpg', position: 'center 45%', label: 'The Amt' },
+    examTransfer: 'Builds exam-level reading, audio-to-form transfer, and the full mock gate.',
+    sourceModuleIds: SPINE_SOURCE_MODULE_IDS[7],
+    checkpointHref: '/course/7/checkpoint',
+  },
+  {
+    id: 8,
+    title: 'Goethe A1 Bootcamp',
+    promise: 'Run timed mocks, the speaking simulation, and your final seven-day plan.',
+    milestone: 'Exam-ready',
+    icon: '🎓',
+    color: '#102018',
+    scene: { src: '/images/scenes/hub-exam-hall.jpg', position: 'center 42%', label: 'The exam hall · finale' },
+    examTransfer: 'Turns all four skills into timed, repeatable evidence that you are ready.',
+    sourceModuleIds: SPINE_SOURCE_MODULE_IDS[8],
+    checkpointHref: '/course/8/checkpoint',
+  },
 ];
 
 export type SpineBlock = {
