@@ -53,9 +53,11 @@ assert.ok(
   'the current Continue action must use approved high-contrast Triangle-A variants on dark and gold surfaces',
 );
 assert.ok(
-  courseStyles.includes('transform: rotate(90deg);') &&
-    courseStyles.includes('transform: translateX(3px) rotate(90deg);'),
-  'the owner-approved Continue-only Triangle-A experiment must point right while preserving its invitation motion',
+  courseStyles.includes('transform: translateX(2px) rotate(90deg);') &&
+    courseStyles.includes('animation: markInvite 3600ms 900ms var(--ag-ease-calm) infinite;') &&
+    courseStyles.includes('transform: translateX(5px) rotate(90deg);') &&
+    courseStyles.includes('justify-content: center;'),
+  'the owner-approved Continue-only Triangle-A must be optically centered and periodically invite forward motion',
 );
 assert.ok(
   courseStyles.includes('bottom: 8px;') && courseStyles.includes('bottom: 3px;'),

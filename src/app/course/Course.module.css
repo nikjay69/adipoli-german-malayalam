@@ -303,8 +303,8 @@
 .continueMark {
   flex: none;
   /* Owner-approved action-only experiment: the mark points right here; do not generalize to brand lockups. */
-  transform: rotate(90deg);
-  animation: markInvite 420ms 460ms var(--ag-ease-calm) both;
+  transform: translateX(2px) rotate(90deg);
+  animation: markInvite 3600ms 900ms var(--ag-ease-calm) infinite;
 }
 
 .continueMarkMobile {
@@ -587,6 +587,7 @@
     min-height: 44px;
     display: grid;
     place-items: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
     transform: translateY(-50%);
@@ -736,12 +737,17 @@
 
 @keyframes markInvite {
   0%,
+  70%,
   100% {
-    transform: translateX(0) rotate(90deg);
+    transform: translateX(2px) rotate(90deg);
   }
 
-  55% {
-    transform: translateX(3px) rotate(90deg);
+  78% {
+    transform: translateX(5px) rotate(90deg);
+  }
+
+  86% {
+    transform: translateX(2px) rotate(90deg);
   }
 }
 
