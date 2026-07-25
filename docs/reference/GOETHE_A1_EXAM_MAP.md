@@ -154,7 +154,7 @@ This is the theme-level audit. A separate machine-readable lemma ledger must rep
 
 | ID | Evidence at 2026-07-17 | Required closure |
 |---|---|---|
-| `G-01 Recovery orphans` | 51 tags emitted by current module checkpoints; 10 have no exact recovery card | 0 emitted tags without level-1 recovery + different level-2 recovery + two fresh retests |
+| `G-01 Recovery orphans` | **Closed 2026-07-25:** 60 unique tags are currently emitted (51 checkpoint tags + 9 mini-check-only tags); all 60 resolve to exact level-1 recovery, a materially different level-2 path, and two concrete fresh retests (120 total). `npm run qa` runs the coverage validator and fails on missing, stale, generic, duplicated, or invalid recovery data. | 0 emitted tags without level-1 recovery + different level-2 recovery + two fresh retests |
 | `G-02 Early foundation quality` | `47 PASS / 19 WEAK / 0 FAIL`; all 19 WEAK are in current spine M2/M3 sources | Clear every structural WEAK and obtain real Feel Rubric evidence before those scripts freeze |
 | `G-03 Video scripts` | M1 has seven structurally reviewed drafts; M2–M8 only outlines/reusable legacy source | Current 56-row script/recording inventory; each row mastery-frozen before recording |
 | `G-04 M1 freeze debt` | Legacy cast names remain; draft targets range 12–30 min against a 15–18 min target | Cast migration, exact German review, honest rebudget; cut/split overlong work and never pad a complete shorter lesson; mastery artifact match |

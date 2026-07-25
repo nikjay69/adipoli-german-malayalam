@@ -410,10 +410,25 @@ export function AdministeredCheckpoint({
               {recoveryCards.length > 0 ? <div className="mt-3 grid gap-3">{recoveryCards.map((card) => (
                 <article key={card.weaknessTag} className="rounded-2xl bg-black/18 p-4">
                   <h3 className="text-lg font-black">{card.title}</h3>
-                  <p className="mt-1 text-sm font-semibold text-[#bcf7d0]">{card.timeBoxMinutes}m · {card.output}</p>
+                  <p className="mt-1 text-sm font-semibold text-[#bcf7d0]">First repair · {card.method} · {card.timeBoxMinutes}m</p>
+                  <p className="mt-1 text-sm font-semibold text-white/64">{card.output}</p>
                   <ol className="mt-3 space-y-1 text-sm font-semibold text-white/68">{card.mustDo.map((task) => <li key={task}>- {task}</li>)}</ol>
-                  <p className="mt-3 text-sm font-semibold text-white/64">Retest: {card.retest}</p>
-                  <Link href={card.libraryHref} className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-[#f1d27a]/30 bg-[#f1d27a]/10 px-3 py-1.5 text-sm font-black text-[#f1d27a]">{card.libraryLabel} <ArrowRight className="h-3.5 w-3.5" /></Link>
+                  <Link href={card.libraryHref} className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-full border border-[#f1d27a]/30 bg-[#f1d27a]/10 px-4 py-2 text-sm font-black text-[#f1d27a]">{card.libraryLabel} <ArrowRight className="h-3.5 w-3.5" /></Link>
+                  <div className="mt-4 border-t border-white/10 pt-3">
+                    <p className="text-xs font-black uppercase tracking-[0.16em] text-white/48">Fresh retests</p>
+                    <ol className="mt-2 space-y-2 text-sm font-semibold text-white/68">
+                      {card.retests.map((retestItem, retestIndex) => (
+                        <li key={retestItem.id}><span className="text-[#f1d27a]">{retestIndex + 1}.</span> {retestItem.prompt}</li>
+                      ))}
+                    </ol>
+                  </div>
+                  <details className="mt-4 rounded-xl border border-white/10 bg-black/12 px-3 py-2.5">
+                    <summary className="min-h-11 cursor-pointer content-center text-sm font-black text-white/80">If it misses again · switch the method</summary>
+                    <p className="mt-2 text-sm font-semibold text-[#bcf7d0]">{card.level2.method} · {card.level2.timeBoxMinutes}m</p>
+                    <p className="mt-1 text-sm font-semibold text-white/64">{card.level2.output}</p>
+                    <ol className="mt-3 space-y-1 text-sm font-semibold text-white/68">{card.level2.mustDo.map((task) => <li key={task}>- {task}</li>)}</ol>
+                    <Link href={card.level2.libraryHref} className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm font-black text-white/84">{card.level2.libraryLabel} <ArrowRight className="h-3.5 w-3.5" /></Link>
+                  </details>
                 </article>
               ))}</div> : <p className="mt-3 text-lg font-black">{isFinal ? 'Nothing failed. You are exam-ready.' : 'Nothing failed. Clean pass.'}</p>}
             </div>

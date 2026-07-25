@@ -11,6 +11,10 @@
 
 import type { MockGateResult, SpineCheckpointResult } from '@/lib/store';
 import { simulatorRunDays } from '@/lib/simulator-runs';
+import {
+  recoveryPrescriptionsForTags,
+  type RecoveryPrescription,
+} from '@/lib/recovery-prescriptions';
 
 export type SkillSectionId = 'hoeren' | 'sprechen' | 'lesen' | 'schreiben' | 'grammarVocab';
 
@@ -56,24 +60,13 @@ export type CheckpointSection = {
   items: CheckpointItem[];
 };
 
-export type RecoveryCard = {
-  weaknessTag: string;
-  title: string;
-  mustDo: string[];
-  output: string;
-  timeBoxMinutes: number;
-  retest: string;
-  /** Where in the practice library this recovery happens */
-  libraryHref: string;
-  libraryLabel: string;
-};
+export type RecoveryCard = RecoveryPrescription;
 
 export type SpineCheckpoint = {
   moduleId: number;
   title: string;
   passRule: string;
   sections: CheckpointSection[];
-  recoveryCards: RecoveryCard[];
   /** Optional hard section floors. Falling below one makes the checkpoint FAIL. */
   sectionFloorForPass?: Partial<Record<SkillSectionId, number>>;
 };
@@ -154,14 +147,6 @@ const checkpoint2: SpineCheckpoint = {
       ],
     },
   ],
-  recoveryCards: [
-    { weaknessTag: 'hoeren:numbers', title: 'Hören — numbers', mustDo: ['Replay the numbers lesson audio, 8m.', 'Write 15 heard numbers.', 'Retest 8 phone numbers.'], output: '12/15 numbers written correctly.', timeBoxMinutes: 15, retest: 'Catch 8 phone numbers first time.', libraryHref: '/games/number-blitz', libraryLabel: 'Number Blitz drill' },
-    { weaknessTag: 'hoeren:time_dates', title: 'Hören — times and dates', mustDo: ['Replay the time lesson, 7m.', 'Catch 10 appointment times.', 'Retest 5 new appointments.'], output: '8/10 times caught.', timeBoxMinutes: 12, retest: 'Catch 5 appointment times including halb/Viertel.', libraryHref: '/learn/3', libraryLabel: 'Numbers & time lessons' },
-    { weaknessTag: 'sprechen:self_intro', title: 'Sprechen — self-intro', mustDo: ['Shadow the model intro, 5m.', 'Record your own 20-second intro.', 'Compare with the model once.'], output: 'One clean recorded self-intro.', timeBoxMinutes: 10, retest: 'Deliver the intro to a new prompt card.', libraryHref: '/missions/module-2/final-self-intro', libraryLabel: 'Final self-intro mission' },
-    { weaknessTag: 'sprechen:spelling', title: 'Sprechen — spelling', mustDo: ['Run the alphabet micro-drill.', 'Spell your name + email aloud.', 'Retest one unfamiliar name.'], output: 'Name spelled with German letters only.', timeBoxMinutes: 8, retest: 'Spell MENON and PRIYA without English letters.', libraryHref: '/missions/module-2/spell-name', libraryLabel: 'Spelling mission' },
-    { weaknessTag: 'schreiben:form_fields', title: 'Schreiben — form fields', mustDo: ['Fill 3 forms from data cards.', 'Check Vorname vs Nachname.', 'Retest one form.'], output: '2 forms with zero wrong fields.', timeBoxMinutes: 10, retest: 'Fill one new form error-free.', libraryHref: '/learn/2', libraryLabel: 'Personal info lessons' },
-    { weaknessTag: 'vocab:numbers_time', title: 'Vocab — numbers and time', mustDo: ['Review tagged number/time words with audio.', 'Active recall without looking.', 'Say 10 numbers and 5 times aloud.'], output: 'Instant recall of 0-100 pattern.', timeBoxMinutes: 12, retest: 'Mixed retest: hear → write → say.', libraryHref: '/practice/review', libraryLabel: '5-min SRS review' },
-  ],
 };
 
 const checkpoint3: SpineCheckpoint = {
@@ -213,14 +198,6 @@ const checkpoint3: SpineCheckpoint = {
           task: { kind: 'type', question: 'Complete the verb: "Du wohn__ in Kochi." Type the full verb form:', accepted: ['wohnst'], placeholder: 'wohn…' } },
       ],
     },
-  ],
-  recoveryCards: [
-    { weaknessTag: 'grammar:articles', title: 'Articles survival set', mustDo: ['Sort 20 high-frequency nouns by article.', 'Use 8 of them in sentences.', 'Retest 10 nouns.'], output: '8/10 articles right.', timeBoxMinutes: 12, retest: 'Article-sort 10 new A1 nouns.', libraryHref: '/games/article-blitz', libraryLabel: 'Article Blitz drill' },
-    { weaknessTag: 'grammar:possessives', title: 'mein/meine repair', mustDo: ['Repair 10 possessive mistakes.', 'Say 6 family sentences with mein/meine.', 'Retest 5 items.'], output: 'No mein/meine swaps.', timeBoxMinutes: 8, retest: 'Describe 3 family members correctly.', libraryHref: '/learn/4', libraryLabel: 'Family lessons' },
-    { weaknessTag: 'grammar:verb_ending', title: 'Verb endings', mustDo: ['Conjugate wohnen, lernen, arbeiten aloud.', 'Repair 10 wrong endings.', 'Use 5 in real sentences.'], output: 'ich/du/er endings automatic.', timeBoxMinutes: 10, retest: 'Conjugate 3 new regular verbs.', libraryHref: '/learn/5', libraryLabel: 'Daily routine lessons' },
-    { weaknessTag: 'grammar:verb_position', title: 'Verb in position 2', mustDo: ['Repair: Ich Deutsch lerne → Ich lerne Deutsch.', 'Write 5 personal sentences.', 'Say them aloud.'], output: 'Five verb-second sentences.', timeBoxMinutes: 10, retest: 'Write 3 routine sentences, verb second.', libraryHref: '/learn/5', libraryLabel: 'Daily routine lessons' },
-    { weaknessTag: 'vocab:family_home', title: 'Family & home words', mustDo: ['Review tagged words with audio.', 'Recall without looking.', 'Use 8 in spoken sentences.'], output: 'Family set recalled.', timeBoxMinutes: 12, retest: 'Mixed retest old/new.', libraryHref: '/practice/review', libraryLabel: '5-min SRS review' },
-    { weaknessTag: 'schreiben:word_order', title: 'Written word order', mustDo: ['Rebuild one model answer from chunks.', 'Write 5 A1 sentences with a checklist.', 'Self-score with the rubric.'], output: 'Five clean sentences.', timeBoxMinutes: 10, retest: 'Write a 3-sentence routine, verb second.', libraryHref: '/learn/5', libraryLabel: 'Daily routine lessons' },
   ],
 };
 
@@ -274,14 +251,6 @@ const checkpoint4: SpineCheckpoint = {
       ],
     },
   ],
-  recoveryCards: [
-    { weaknessTag: 'hoeren:prices', title: 'Price dictation', mustDo: ['Dictate 12 prices from lesson audio.', 'Check comma vs euro spoken order.', 'Retest 6 prices.'], output: '10/12 prices written.', timeBoxMinutes: 12, retest: 'Catch 6 new prices first time.', libraryHref: '/games/number-blitz', libraryLabel: 'Number Blitz drill' },
-    { weaknessTag: 'sprechen:request_phrase', title: 'Polite requests', mustDo: ['Shadow: Ich hätte gern ... / Ich nehme ...', 'Say 8 ordering sentences.', 'Retest 5 situation cards.'], output: 'Eight spoken orders.', timeBoxMinutes: 10, retest: 'Order food + ask price in one go.', libraryHref: '/games/sag-es', libraryLabel: 'Sag es! speaking drill' },
-    { weaknessTag: 'grammar:accusative_survival', title: 'einen/eine/ein repair', mustDo: ['Repair ein/eine/einen in 10 buying sentences.', 'Say 5 orders with the right form.', 'Retest 6 items.'], output: 'No accusative misses on common orders.', timeBoxMinutes: 10, retest: 'Order 3 items with correct articles.', libraryHref: '/learn/6', libraryLabel: 'Food & drink lessons' },
-    { weaknessTag: 'grammar:negation', title: 'nicht vs kein', mustDo: ['Sort 10 sentences into nicht/kein.', 'Write 4 own examples.', 'Say them aloud.'], output: 'Clean nicht/kein split.', timeBoxMinutes: 8, retest: 'Negate 5 new sentences correctly.', libraryHref: '/learn/6', libraryLabel: 'Food & drink lessons' },
-    { weaknessTag: 'lesen:ads', title: 'Ad scanning', mustDo: ['Underline need-words first.', 'Match 8 ads to needs.', 'Retest 4 ads.'], output: '7/8 ads matched.', timeBoxMinutes: 10, retest: 'Match 4 new ads in 5 minutes.', libraryHref: '/games/was-steht-da', libraryLabel: 'Was steht da? reading drill' },
-    { weaknessTag: 'vocab:food_shopping', title: 'Food & shopping words', mustDo: ['Review tagged words with audio.', 'Pick items from a shopping list.', 'Say one full order.'], output: 'Shopping set recalled.', timeBoxMinutes: 12, retest: 'Mixed retest with prices.', libraryHref: '/practice/review', libraryLabel: '5-min SRS review' },
-  ],
 };
 
 const checkpoint5: SpineCheckpoint = {
@@ -324,13 +293,6 @@ const checkpoint5: SpineCheckpoint = {
           task: { kind: 'choice', question: '"Können Sie mir helfen?" asks…', options: ['Can you help me? (polite)', 'Can I help you?', 'Do you need help?', 'Where is the help desk?'], correctAnswer: 'Can you help me? (polite)' } },
       ],
     },
-  ],
-  recoveryCards: [
-    { weaknessTag: 'hoeren:announcements', title: 'Announcement listening', mustDo: ['Listen to 6 slow announcements.', 'Write place/time/action for each.', 'Retest 3 new ones.'], output: 'Travel note filled 5/6.', timeBoxMinutes: 15, retest: 'Catch 3 new announcements first time.', libraryHref: '/learn/9', libraryLabel: 'Travel lessons' },
-    { weaknessTag: 'hoeren:audio_to_form', title: 'Audio to form', mustDo: ['Listen to 5 personal-info clips.', 'Fill the form fields.', 'Retest 2 new forms.'], output: '2 forms from audio, error-free.', timeBoxMinutes: 12, retest: 'Fill one new form from audio.', libraryHref: '/learn/9', libraryLabel: 'Travel lessons' },
-    { weaknessTag: 'grammar:modal_word_order', title: 'Modal word order', mustDo: ['Repair 10 modal sentences (second verb to the end).', 'Role-play one appointment request.', 'Retest 5 items.'], output: 'Modal pattern automatic.', timeBoxMinutes: 10, retest: 'Say 3 modal sentences correctly.', libraryHref: '/learn/10', libraryLabel: 'Health & appointments lessons' },
-    { weaknessTag: 'sprechen:request_phrase', title: 'Polite requests', mustDo: ['Shadow Können Sie ...? / Ich möchte ... / Bitte ...', 'Say 5 situation requests.', 'Retest 5 new cards.'], output: 'Five clean requests.', timeBoxMinutes: 10, retest: 'Handle doctor + station card aloud.', libraryHref: '/games/sag-es', libraryLabel: 'Sag es! speaking drill' },
-    { weaknessTag: 'vocab:travel_health', title: 'Travel & health words', mustDo: ['Review tagged words with audio.', 'Match picture/situation to phrase.', 'Say one request per situation.'], output: 'Travel/health set recalled.', timeBoxMinutes: 12, retest: 'Mixed retest with situations.', libraryHref: '/practice/review', libraryLabel: '5-min SRS review' },
   ],
 };
 
@@ -382,13 +344,6 @@ const checkpoint6: SpineCheckpoint = {
       ],
     },
   ],
-  recoveryCards: [
-    { weaknessTag: 'schreiben:three_points', title: 'Three-point message', mustDo: ['Mark the 3 required points in a model.', 'Write a 30-word SMS to a new prompt.', 'Self-score with the rubric.'], output: 'One message with all 3 points.', timeBoxMinutes: 12, retest: 'New prompt, all 3 points, ~30 words.', libraryHref: '/learn/12', libraryLabel: 'Messages lessons' },
-    { weaknessTag: 'schreiben:greeting_closing', title: 'Greeting and closing', mustDo: ['Copy 4 correct openings/closings.', 'Repair 6 wrong messages.', 'Retest one message.'], output: 'Frame automatic.', timeBoxMinutes: 8, retest: 'Write opening + closing from memory.', libraryHref: '/learn/12', libraryLabel: 'Messages lessons' },
-    { weaknessTag: 'sprechen:question_answer', title: 'Topic-card answers', mustDo: ['Drill 10 W-question cards.', 'Answer aloud in full sentences.', 'Retest 5 random cards.'], output: 'Ten spoken answers.', timeBoxMinutes: 12, retest: 'Answer 5 cards without preparation.', libraryHref: '/games/sag-es', libraryLabel: 'Sag es! speaking drill' },
-    { weaknessTag: 'lesen:emails', title: 'Message reading', mustDo: ['Answer who/when/where/action for 5 short messages.', 'Retest 3 messages.'], output: '4/5 messages decoded.', timeBoxMinutes: 10, retest: 'Decode 3 new messages in 6 minutes.', libraryHref: '/games/was-steht-da', libraryLabel: 'Was steht da? reading drill' },
-    { weaknessTag: 'vocab:work_hobbies', title: 'Work & hobby words', mustDo: ['Review tagged words with audio.', 'Recall without looking.', 'Say 6 sentences about your week.'], output: 'Work/hobby set recalled.', timeBoxMinutes: 12, retest: 'Mixed retest in sentences.', libraryHref: '/practice/review', libraryLabel: '5-min SRS review' },
-  ],
 };
 
 const checkpoint7: SpineCheckpoint = {
@@ -429,14 +384,6 @@ const checkpoint7: SpineCheckpoint = {
           task: { kind: 'production', action: 'say', question: 'At the Amt counter. Make BOTH requests aloud: an appointment, and a form.', modelAnswer: 'Ich möchte einen Termin. Ich brauche ein Formular.', modelAudioUrl: '/audio/checkpoints/cp7-s-office-model.mp3', criteria: ['Both requests said aloud', 'Polite register — Sie-world German', 'einen Termin / ein Formular articles right'] } },
       ],
     },
-  ],
-  recoveryCards: [
-    { weaknessTag: 'lesen:signs', title: 'Signs and notices', mustDo: ['Match 15 signs to situations.', 'Retest 5 signs in 5 minutes.'], output: '13/15 signs matched.', timeBoxMinutes: 12, retest: '5 new signs, 5 minutes.', libraryHref: '/games/was-steht-da', libraryLabel: 'Was steht da? reading drill' },
-    { weaknessTag: 'lesen:scanning', title: 'Scanning strategy', mustDo: ['Watch the scanning strategy clip.', 'One timed drill of the same type.', 'Retest with new text.'], output: 'Detail found before time runs out.', timeBoxMinutes: 10, retest: 'Timed scan, 4 ads, 5 minutes.', libraryHref: '/learn/17', libraryLabel: 'Exam reading lessons' },
-    { weaknessTag: 'lesen:forms', title: 'Form field labels', mustDo: ['Identify field labels in 4 forms.', 'Retest 1 complete form.'], output: 'No label confusion.', timeBoxMinutes: 8, retest: 'Label 8 fields without notes.', libraryHref: '/learn/14', libraryLabel: 'Official life lessons' },
-    { weaknessTag: 'schreiben:form_fields', title: 'Forms error-free', mustDo: ['Fill 3 forms from data cards.', 'Fill 1 form from audio.', 'Retest one form.'], output: '2 forms, zero missing fields.', timeBoxMinutes: 12, retest: 'One new form error-free.', libraryHref: '/learn/14', libraryLabel: 'Official life lessons' },
-    { weaknessTag: 'hoeren:audio_to_form', title: 'Audio to form', mustDo: ['Listen to 5 personal-info clips.', 'Fill the fields.', 'Retest 2 new forms.'], output: 'Audio transfer clean.', timeBoxMinutes: 12, retest: 'One new audio form.', libraryHref: '/learn/17', libraryLabel: 'Exam listening lessons' },
-    { weaknessTag: 'vocab:official_exam', title: 'Official vocabulary', mustDo: ['Review tagged official words with audio.', 'Fill forms/notices using the exact labels.', 'Retest mixed.'], output: 'Official set recalled.', timeBoxMinutes: 12, retest: 'Mixed retest with notices.', libraryHref: '/practice/review', libraryLabel: '5-min SRS review' },
   ],
 };
 
@@ -495,14 +442,6 @@ const checkpoint8: SpineCheckpoint = {
       ],
     },
   ],
-  recoveryCards: [
-    { weaknessTag: 'hoeren:dialogue_detail', title: 'Hören detail recovery', mustDo: ['Replay the failed Teil with transcript hidden.', 'One focused drill, 10-15 items.', 'Retest the same Teil type.'], output: 'Failed Teil ≥70%.', timeBoxMinutes: 15, retest: 'Retake only the weak Hören Teil.', libraryHref: '/tests', libraryLabel: 'Mock tests' },
-    { weaknessTag: 'lesen:scanning', title: 'Lesen timing recovery', mustDo: ['Scanning strategy clip.', 'One timed same-type drill.', 'Retest with new text.'], output: 'Section finished in time.', timeBoxMinutes: 12, retest: 'Retake only the weak Lesen Teil.', libraryHref: '/tests', libraryLabel: 'Mock tests' },
-    { weaknessTag: 'schreiben:three_points', title: 'Message under pressure', mustDo: ['Rebuild one model answer.', 'Write one new message, timed 10m.', 'Rubric self-score.'], output: 'Timed message ≥3/5.', timeBoxMinutes: 15, retest: 'New prompt, timed, all 3 points.', libraryHref: '/learn/18', libraryLabel: 'Exam writing lessons' },
-    { weaknessTag: 'sprechen:self_intro', title: 'Speaking simulation rerun', mustDo: ['Shadow the model intro.', 'Run Teil 1 aloud, recorded.', 'Compare with the model.'], output: 'Intro under 60 seconds.', timeBoxMinutes: 12, retest: 'Full Teil 1-3 rerun aloud.', libraryHref: '/missions/module-2/final-self-intro', libraryLabel: 'Self-intro mission' },
-    { weaknessTag: 'sprechen:fluency_pause', title: 'Fluency pass', mustDo: ['Shadow 10 model lines at full speed.', 'Re-run the weakest Teil aloud.', 'Record and listen once.'], output: 'Fewer frozen pauses.', timeBoxMinutes: 12, retest: 'One smooth full simulation.', libraryHref: '/games/sag-es', libraryLabel: 'Sag es! speaking drill' },
-    { weaknessTag: 'vocab:official_exam', title: 'Mock-driven review', mustDo: ['List every word you missed in the mock.', 'Review them with audio.', 'Use 8 in sentences.'], output: 'Personal gap list cleared.', timeBoxMinutes: 15, retest: 'Retake the weakest section.', libraryHref: '/practice/review', libraryLabel: '5-min SRS review' },
-  ],
 };
 
 export const SPINE_CHECKPOINTS: Record<number, SpineCheckpoint> = {
@@ -552,7 +491,9 @@ export function scoreSpineCheckpoint(checkpoint: SpineCheckpoint, passedItemIds:
       ? isFinal ? 'Close. One recovery, then re-run the mock.' : `Weak pass. Do one recovery, then start Module ${checkpoint.moduleId + 1}.`
       : 'Recovery gate. Fix the first weak spot, then retest.';
 
-  const firstRecovery = checkpoint.recoveryCards.find((card) => failedTags.includes(card.weaknessTag));
+  const firstRecovery = failedTags.length > 0
+    ? recoveryPrescriptionsForTags(failedTags)[0]
+    : undefined;
   const nextAction = state === 'PASS'
     ? isFinal ? 'Follow the final 7-day exam plan.' : `Start Module ${checkpoint.moduleId + 1}.`
     : firstRecovery
@@ -574,6 +515,8 @@ export function toSpineCheckpointResult(checkpoint: SpineCheckpoint, score: Chec
 }
 
 export function findRecoveryCards(checkpoint: SpineCheckpoint, failedTags: string[], max = 3): RecoveryCard[] {
-  const tagSet = new Set(failedTags);
-  return checkpoint.recoveryCards.filter((card) => tagSet.has(card.weaknessTag)).slice(0, max);
+  const emittedTags = new Set(
+    checkpoint.sections.flatMap((section) => section.items.flatMap((item) => item.weaknessTags)),
+  );
+  return recoveryPrescriptionsForTags(failedTags.filter((tag) => emittedTags.has(tag))).slice(0, max);
 }
