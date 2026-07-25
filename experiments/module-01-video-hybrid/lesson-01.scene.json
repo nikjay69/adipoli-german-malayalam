@@ -51,7 +51,7 @@
     {
       "id": "phrase-build",
       "engine": "hyperframes",
-      "engineVersion": "0.7.63",
+      "engineVersion": "0.7.71",
       "version": 1,
       "intent": "assemble a useful sentence from meaning-bearing word units",
       "sourceSceneId": "m1l1-phrase-build",
@@ -71,7 +71,7 @@
     {
       "id": "mistake-repair",
       "engine": "hyperframes",
-      "engineVersion": "0.7.63",
+      "engineVersion": "0.7.71",
       "version": 1,
       "intent": "replace a bedtime phrase with the safe evening greeting",
       "sourceSceneId": "m1l1-mistake-repair",

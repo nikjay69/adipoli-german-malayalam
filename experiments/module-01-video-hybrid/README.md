@@ -44,11 +44,11 @@ Run each server from its project directory and hand the Studio timeline URL to t
 
 ```powershell
 Push-Location experiments/v1-02-hyperframes/phrase-build
-npx --yes hyperframes@0.7.63 preview --port 3017
+npx --yes hyperframes@0.7.71 preview --port 3017
 Pop-Location
 
 Push-Location experiments/v1-02-hyperframes/mistake-repair
-npx --yes hyperframes@0.7.63 preview --port 3018
+npx --yes hyperframes@0.7.71 preview --port 3018
 Pop-Location
 ```
 
