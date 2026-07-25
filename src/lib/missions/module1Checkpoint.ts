@@ -6,6 +6,7 @@ import {
   type RecoveryCard,
   type SpineCheckpoint,
 } from '@/lib/spine-checkpoints';
+import { recoveryPrescriptionsForTags } from '@/lib/recovery-prescriptions';
 
 export type Module1CheckpointSectionId = 'hoeren' | 'sprechen' | 'lesen' | 'schreiben' | 'grammarVocab';
 
@@ -238,21 +239,13 @@ export const module1AdministeredCheckpoint: SpineCheckpoint = {
       ],
     },
   ],
-  recoveryCards: [
-    { weaknessTag: 'hoeren:greetings', title: 'Hear the greeting moment', mustDo: ['Replay the greeting set twice.', 'Write the three greetings in order.', 'Retest with audio hidden until play.'], output: '3/3 greetings caught.', timeBoxMinutes: 10, retest: 'Catch all three on the first play.', libraryHref: '/missions/module-1/greet-frau-weber?start=listen', libraryLabel: 'Greeting mission' },
-    { weaknessTag: 'hoeren:question_recognition', title: 'Catch the full classroom line', mustDo: ['Replay the formal opener.', 'Shadow it twice.', 'Retest the meaning.'], output: 'Full line understood.', timeBoxMinutes: 8, retest: 'Hear once and explain the line.', libraryHref: '/missions/module-1/first-mini-conversation?start=listen', libraryLabel: 'Mini-conversation mission' },
-    { weaknessTag: 'sprechen:greeting_reply', title: 'Reply without freezing', mustDo: ['Hear the model once.', 'Shadow it three times.', 'Record one clean reply.'], output: 'One complete spoken reply.', timeBoxMinutes: 10, retest: 'Full greeting without a long pause.', libraryHref: '/missions/module-1/greet-frau-weber?start=listen', libraryLabel: 'Greeting mission' },
-    { weaknessTag: 'sprechen:formality', title: 'Formal classroom German', mustDo: ['Practise Frau Fischer + Guten Morgen.', 'Practise Vielen Dank + Auf Wiedersehen.', 'Run one full exchange.'], output: 'Formal opening and exit.', timeBoxMinutes: 9, retest: 'Choose and say both formal lines.', libraryHref: '/missions/module-1/polite-exit?start=listen', libraryLabel: 'Polite exit mission' },
-    { weaknessTag: 'lesen:greeting_recognition', title: 'Read the greeting set', mustDo: ['Read five greeting cards.', 'Match each to time/person.', 'Retest two new situations.'], output: '5/5 situations matched.', timeBoxMinutes: 8, retest: 'Two unseen greeting situations.', libraryHref: '/practice/review', libraryLabel: '5-min review' },
-    { weaknessTag: 'schreiben:first_sentence', title: 'Write the first sentence', mustDo: ['Copy Ich lerne Deutsch once.', 'Cover it and write from memory twice.', 'Retest after five minutes.'], output: 'One clean sentence from memory.', timeBoxMinutes: 8, retest: 'Ich lerne Deutsch with capitals.', libraryHref: '/missions/module-1/first-mini-conversation?start=listen', libraryLabel: 'Mini-conversation mission' },
-    { weaknessTag: 'vocab:deutsch_vs_deutschland', title: 'Deutsch or Deutschland', mustDo: ['Say: Ich lerne Deutsch.', 'Say: Ich wohne in Deutschland.', 'Contrast both without notes.'], output: 'Language and country separated.', timeBoxMinutes: 6, retest: 'Choose the right word in two new lines.', libraryHref: '/practice/review', libraryLabel: '5-min review' },
-    { weaknessTag: 'grammar:formal_context', title: 'Choose the adult-safe line', mustDo: ['Sort teacher vs friend greetings.', 'Say both formal lines aloud.', 'Retest with one new person.'], output: 'Formal choice automatic.', timeBoxMinutes: 7, retest: 'Teacher, stranger, friend — 3/3.', libraryHref: '/missions/module-1/formal-greetings', libraryLabel: 'Formal greeting practice' },
-  ],
 };
 
 export const module1CheckpointSections = module1AdministeredCheckpoint.sections;
 export const module1CheckpointItems = module1CheckpointSections.flatMap((section) => section.items);
-export const module1CheckpointRecoveryCards = module1AdministeredCheckpoint.recoveryCards;
+export const module1CheckpointRecoveryCards = recoveryPrescriptionsForTags(
+  module1CheckpointItems.flatMap((item) => item.weaknessTags),
+);
 
 export function scoreModule1Checkpoint(passedItemIds: string[]): Module1CheckpointScore {
   const score = scoreSpineCheckpoint(module1AdministeredCheckpoint, passedItemIds);

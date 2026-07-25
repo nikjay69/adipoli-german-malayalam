@@ -1,3 +1,8 @@
+import {
+  recoveryPrescriptionsForTags,
+  type RecoveryPrescription,
+} from '@/lib/recovery-prescriptions';
+
 export type Module1PracticeItem = {
   id: string;
   task: string;
@@ -21,14 +26,7 @@ export type Module1MiniCheckItem = {
   weaknessTags: string[];
 };
 
-export type Module1RecoveryCard = {
-  weaknessTag: string;
-  learnerMessage: string;
-  mustDo: string[];
-  output: string;
-  timeBoxMinutes: number;
-  retest: string;
-};
+export type Module1RecoveryCard = RecoveryPrescription;
 
 export type Module1PracticeSet = {
   id: string;
@@ -133,32 +131,13 @@ export const module1AnswerFrauFischerPractice: Module1PracticeSet = {
       },
     ],
   },
-  recoveryCards: [
-    {
-      weaknessTag: 'hoeren:greetings',
-      learnerMessage: 'You missed the greeting moment.',
-      mustDo: ['Replay 10 greeting lines without subtitles.', 'Choose or say the response.', 'Retest 5 new lines.'],
-      output: '4/5 correct on the retest.',
-      timeBoxMinutes: 12,
-      retest: 'Hear five greetings; answer at least four correctly.',
-    },
-    {
-      weaknessTag: 'sprechen:greeting_reply',
-      learnerMessage: 'The reply did not come out yet.',
-      mustDo: ['Repeat Guten Morgen, Frau Fischer five times.', 'Repeat Ja. Ich lerne Deutsch five times.', 'Say one teacher exchange without looking.'],
-      output: 'One spoken greeting exchange.',
-      timeBoxMinutes: 10,
-      retest: 'Frau Fischer greets once; learner replies aloud.',
-    },
-    {
-      weaknessTag: 'schreiben:first_sentence',
-      learnerMessage: 'The first written sentence needs repair.',
-      mustDo: ['Copy Ich lerne Deutsch twice.', 'Hide it.', 'Type it once from memory.'],
-      output: 'One clean written sentence.',
-      timeBoxMinutes: 8,
-      retest: 'Write Ich lerne Deutsch from memory.',
-    },
-  ],
+  recoveryCards: recoveryPrescriptionsForTags([
+    'hoeren:greetings',
+    'sprechen:greeting_reply',
+    'sprechen:formality',
+    'vocab:greeting_set',
+    'schreiben:first_sentence',
+  ]),
   nextTask: 'Practice: Danke + Bitte',
 };
 
@@ -237,32 +216,11 @@ export const module1WhyA1Practice: Module1PracticeSet = {
       },
     ],
   },
-  recoveryCards: [
-    {
-      weaknessTag: 'sprechen:first_identity_line',
-      learnerMessage: 'The first German line did not come out yet.',
-      mustDo: ['Replay Ich lerne Deutsch three times.', 'Say Ich. Ich lerne. Ich lerne Deutsch.', 'Say the full line once without looking.'],
-      output: 'One clean spoken line.',
-      timeBoxMinutes: 8,
-      retest: 'Say Ich lerne Deutsch without looking.',
-    },
-    {
-      weaknessTag: 'planning:reason_unclear',
-      learnerMessage: 'The reason is still vague.',
-      mustDo: ['Choose one: A1 exam, family, Germany plan, work, confidence.', 'Say: I am learning German for ____.', 'Do not add another resource.'],
-      output: 'One chosen reason.',
-      timeBoxMinutes: 5,
-      retest: 'State the reason in one short sentence.',
-    },
-    {
-      weaknessTag: 'planning:path_confusion',
-      learnerMessage: 'The course path is not automatic yet.',
-      mustDo: ['Read Watch → Listen → Say → Check → Fix twice.', 'Hide it.', 'Say it once from memory.'],
-      output: 'Five-step path from memory.',
-      timeBoxMinutes: 4,
-      retest: 'Say the path in order without looking.',
-    },
-  ],
+  recoveryCards: recoveryPrescriptionsForTags([
+    'sprechen:first_identity_line',
+    'planning:reason_unclear',
+    'planning:path_confusion',
+  ]),
   nextTask: 'Next: train German sounds',
 };
 
@@ -341,32 +299,11 @@ export const module1GermanSoundsPractice: Module1PracticeSet = {
       },
     ],
   },
-  recoveryCards: [
-    {
-      weaknessTag: 'pronunciation:ch_sch',
-      learnerMessage: 'ch and sch are mixed.',
-      mustDo: ['Say ich five times softly.', 'Say schön five times with sh.', 'Alternate: ich — schön — ich — schön.'],
-      output: '8 slow contrasts.',
-      timeBoxMinutes: 10,
-      retest: 'Choose ich vs schön in five quick prompts.',
-    },
-    {
-      weaknessTag: 'pronunciation:w_v',
-      learnerMessage: 'German w still sounds English.',
-      mustDo: ['Say Weber with v-like w five times.', 'Say Wasser and Wiedersehen slowly.', 'Say Frau Fischer once.'],
-      output: 'Three v-like w words.',
-      timeBoxMinutes: 8,
-      retest: 'Say Frau Fischer and Auf Wiedersehen.',
-    },
-    {
-      weaknessTag: 'pronunciation:umlaut',
-      learnerMessage: 'Umlaut dots are being ignored.',
-      mustDo: ['Say schön slowly five times.', 'Say Tschüss slowly five times.', 'Mark ö/ü with your finger before saying.'],
-      output: 'Two umlaut words attempted.',
-      timeBoxMinutes: 8,
-      retest: 'Say schön and Tschüss without rushing.',
-    },
-  ],
+  recoveryCards: recoveryPrescriptionsForTags([
+    'pronunciation:ch_sch',
+    'pronunciation:w_v',
+    'pronunciation:umlaut',
+  ]),
   nextTask: 'Next: formal greetings',
 };
 
@@ -445,32 +382,12 @@ export const module1FormalGreetingsPractice: Module1PracticeSet = {
       },
     ],
   },
-  recoveryCards: [
-    {
-      weaknessTag: 'hoeren:greetings',
-      learnerMessage: 'Greeting and time are mixed.',
-      mustDo: ['Replay the three greeting lines.', 'Point to morning/day/evening as you hear them.', 'Choose the response without subtitles.'],
-      output: '3/3 time greetings correct.',
-      timeBoxMinutes: 10,
-      retest: 'Hear three greetings; choose the right context.',
-    },
-    {
-      weaknessTag: 'sprechen:formality',
-      learnerMessage: 'The formal safe default is not automatic.',
-      mustDo: ['Say Guten Tag five times.', 'Imagine teacher, office, examiner.', 'Answer each with Guten Tag.'],
-      output: 'Three formal replies aloud.',
-      timeBoxMinutes: 8,
-      retest: 'Teacher greets; learner replies Guten Tag.',
-    },
-    {
-      weaknessTag: 'vocab:gute_nacht_trap',
-      learnerMessage: 'Gute Nacht is used too early.',
-      mustDo: ['Read: Guten Abend = meeting in evening.', 'Read: Gute Nacht = going to sleep.', 'Sort six mini-contexts.'],
-      output: '6 context sorts.',
-      timeBoxMinutes: 8,
-      retest: 'Pick Guten Abend vs Gute Nacht in four contexts.',
-    },
-  ],
+  recoveryCards: recoveryPrescriptionsForTags([
+    'hoeren:greetings',
+    'vocab:greeting_set',
+    'sprechen:formality',
+    'vocab:gute_nacht_trap',
+  ]),
   nextTask: 'Next: Danke + Bitte',
 };
 
@@ -549,32 +466,12 @@ export const module1PolitenessPractice: Module1PracticeSet = {
       },
     ],
   },
-  recoveryCards: [
-    {
-      weaknessTag: 'vocab:bitte_danke_swap',
-      learnerMessage: 'Danke and Bitte are swapped.',
-      mustDo: ['After help: say Danke five times.', 'After someone says Danke: say Bitte five times.', 'Run five tiny help/thanks prompts.'],
-      output: '5/5 danke/bitte choices correct.',
-      timeBoxMinutes: 8,
-      retest: 'Choose Danke or Bitte in five situations.',
-    },
-    {
-      weaknessTag: 'sprechen:request_phrase',
-      learnerMessage: 'The repeat request is not automatic.',
-      mustDo: ['Say Noch einmal, bitte five times.', 'Say Langsam, bitte five times.', 'Pick repeat vs slow-down in four prompts.'],
-      output: '4/4 request choices correct.',
-      timeBoxMinutes: 8,
-      retest: 'Hear missed/too-fast prompts; choose the right request.',
-    },
-    {
-      weaknessTag: 'vocab:entschuldigung',
-      learnerMessage: 'Entschuldigung is still too heavy.',
-      mustDo: ['Chunk Ent-schul-di-gung three times.', 'Say Entschuldigung, bitte three times.', 'Use it before one repair phrase.'],
-      output: 'One polite repair line.',
-      timeBoxMinutes: 8,
-      retest: 'Say Entschuldigung, noch einmal, bitte.',
-    },
-  ],
+  recoveryCards: recoveryPrescriptionsForTags([
+    'vocab:bitte_danke_swap',
+    'sprechen:request_phrase',
+    'vocab:entschuldigung',
+    'sprechen:formality',
+  ]),
   nextTask: 'Next: polite exit',
 };
 
@@ -653,32 +550,11 @@ export const module1GoodbyeRepairPractice: Module1PracticeSet = {
       },
     ],
   },
-  recoveryCards: [
-    {
-      weaknessTag: 'vocab:formal_casual',
-      learnerMessage: 'Formal and casual goodbye are mixed.',
-      mustDo: ['Sort teacher/office/friend/classmate into formal or casual.', 'Say Auf Wiedersehen for formal contexts.', 'Say Tschüss only for friend/classmate.'],
-      output: '6/6 context choices correct.',
-      timeBoxMinutes: 8,
-      retest: 'Choose goodbye for six contexts.',
-    },
-    {
-      weaknessTag: 'sprechen:request_phrase',
-      learnerMessage: 'Repair phrase is not automatic yet.',
-      mustDo: ['Say Noch einmal, bitte five times.', 'Say Langsam, bitte five times.', 'Pick missed line vs too fast in four prompts.'],
-      output: '4/4 repair choices correct.',
-      timeBoxMinutes: 8,
-      retest: 'Choose repeat or slow-down in four prompts.',
-    },
-    {
-      weaknessTag: 'vocab:phone_goodbye',
-      learnerMessage: 'Phone goodbye appeared in a face-to-face scene.',
-      mustDo: ['Read: Auf Wiedersehen = safe face-to-face goodbye.', 'Read: Auf Wiederhören = phone goodbye.', 'Sort four face/phone contexts.'],
-      output: '4/4 face/phone choices correct.',
-      timeBoxMinutes: 6,
-      retest: 'Pick the goodbye for office vs phone call.',
-    },
-  ],
+  recoveryCards: recoveryPrescriptionsForTags([
+    'sprechen:formality',
+    'sprechen:request_phrase',
+    'hoeren:repair_need',
+  ]),
   nextTask: 'Next: first mini-conversation',
 };
 
@@ -757,32 +633,12 @@ export const module1FirstConversationPractice: Module1PracticeSet = {
       },
     ],
   },
-  recoveryCards: [
-    {
-      weaknessTag: 'sprechen:question_answer',
-      learnerMessage: 'The answer freezes after the greeting.',
-      mustDo: ['Replay the Frau Fischer question twice.', 'Say Gut, danke five times.', 'Run the greeting + answer once without looking.'],
-      output: 'One complete greeting-answer pair.',
-      timeBoxMinutes: 10,
-      retest: 'Hear the question once; answer within five seconds.',
-    },
-    {
-      weaknessTag: 'sprechen:request_phrase',
-      learnerMessage: 'The repair phrase is not ready.',
-      mustDo: ['Say Noch einmal, bitte five times.', 'Say Langsam, bitte five times.', 'Choose repeat vs slow-down in four prompts.'],
-      output: '4/4 repair prompts correct.',
-      timeBoxMinutes: 8,
-      retest: 'Ask for repeat after one missed line.',
-    },
-    {
-      weaknessTag: 'sprechen:formality',
-      learnerMessage: 'The tiny exchange is too casual.',
-      mustDo: ['Say Frau Fischer with the greeting five times.', 'Use Guten Tag for teacher/office/examiner.', 'Close with Auf Wiedersehen twice.'],
-      output: 'One formal mini-conversation.',
-      timeBoxMinutes: 8,
-      retest: 'Run greet → answer → thank → leave formally.',
-    },
-  ],
+  recoveryCards: recoveryPrescriptionsForTags([
+    'sprechen:question_answer',
+    'sprechen:request_phrase',
+    'vocab:goodbye_set',
+    'sprechen:formality',
+  ]),
   nextTask: 'Module 1 checkpoint',
 };
 
