@@ -12,12 +12,14 @@ import { playAudio, stopAudio } from '@/lib/audio';
 import { Nivin } from '@/components/character/Nivin';
 import { getMockGate, computeMockBand, MOCK_BAND_LABELS, type MockSection } from '@/lib/mocks';
 import { matchesAnswer } from '@/lib/answer-match';
+import { OFFICIAL_A1_CALIBRATION_VERSION } from '@/lib/official-a1-calibration';
 
 type Section = 'overview' | 'hoeren' | 'lesen' | 'schreiben' | 'sprechen' | 'results';
 type SectionIntro = 'hoeren-intro' | 'lesen-intro' | 'schreiben-intro' | 'sprechen-intro' | null;
 type Teil = 'teil1' | 'teil2' | 'teil3';
 
-// Section metadata for the real Goethe A1 exam
+// Section metadata for the current internal practice bank. The official-shape
+// audit is explicit in official-a1-calibration.ts; these mocks remain practice-only.
 const SECTION_META = {
   hoeren: {
     icon: '🎧',
@@ -120,7 +122,7 @@ function TestRunner({ testId }: { testId: string }) {
   const [schreibenSubmitted, setSchreibenSubmitted] = useState(false);
   const [schreibenTeil, setSchreibenTeil] = useState<'teil1' | 'teil2'>('teil1');
   const [isCheckingSchreiben, setIsCheckingSchreiben] = useState(false);
-  const [aiSchreibenFeedback, setAiSchreibenFeedback] = useState<{score: number, feedback: string, corrections: string[]} | null>(null);
+  const [aiSchreibenFeedback, setAiSchreibenFeedback] = useState<{score: number, feedback: string, corrections: string[], isCorrect?: boolean} | null>(null);
 
   // Sprechen state
   const [sprechenTeil, setSprechenTeil] = useState<'teil1' | 'teil2' | 'teil3'>('teil1');
@@ -132,6 +134,8 @@ function TestRunner({ testId }: { testId: string }) {
   const [currentSprechenItem, setCurrentSprechenItem] = useState(0);
   const [sprechenSubmitted, setSprechenSubmitted] = useState(false);
   const recognitionRef = useRef<any>(null);
+  const testStartedAtRef = useRef<number | null>(null);
+  const expiredSectionsRef = useRef<Set<string>>(new Set());
 
   // Score state
   const [sectionScores, setSectionScores] = useState({
@@ -148,6 +152,9 @@ function TestRunner({ testId }: { testId: string }) {
     if (section !== 'overview' && section !== 'results' && !sectionIntro && timeLeft > 0) {
       const t = setTimeout(() => setTimeLeft(p => p - 1), 1000);
       return () => clearTimeout(t);
+    }
+    if (section !== 'overview' && section !== 'results' && !sectionIntro && timeLeft === 0) {
+      expiredSectionsRef.current.add(section);
     }
   }, [section, timeLeft, sectionIntro]);
 
@@ -203,6 +210,7 @@ function TestRunner({ testId }: { testId: string }) {
   };
 
   const startSection = (s: Section) => {
+    if (testStartedAtRef.current === null) testStartedAtRef.current = Date.now();
     setSection(s);
     setTeil('teil1');
     setQuestionIndex(0);
@@ -435,6 +443,7 @@ function TestRunner({ testId }: { testId: string }) {
   };
 
   const finishTest = () => {
+    const completedAt = Date.now();
     const scores = {
       hoeren: calculateSectionScore('hoeren'),
       lesen: calculateSectionScore('lesen'),
@@ -462,7 +471,23 @@ function TestRunner({ testId }: { testId: string }) {
         percent,
         band: computeMockBand(percent, sectionPercents),
         sectionPercents,
-        savedAt: Date.now(),
+        savedAt: completedAt,
+        startedAt: testStartedAtRef.current ?? completedAt,
+        completedAt,
+        timed: expiredSectionsRef.current.size === 0,
+        closedBook: false,
+        expiredSections: Array.from(expiredSectionsRef.current),
+        officialCalibration: {
+          version: OFFICIAL_A1_CALIBRATION_VERSION,
+          status: 'practice-only',
+        },
+        writingEvidence: activeSections.includes('schreiben') ? {
+          formErrorFree: calculateSchreibenTeil1Score() === 5,
+          messageRubricScore: Math.round((calculateSchreibenScore() - calculateSchreibenTeil1Score()) / 2),
+          allContentPoints: aiSchreibenFeedback?.isCorrect === true,
+          reviewMethod: aiSchreibenFeedback ? 'ai-only' : 'unverified',
+          closedBook: false,
+        } : undefined,
       });
     }
   };
@@ -616,6 +641,16 @@ function TestRunner({ testId }: { testId: string }) {
               </p>
             </div>
 
+            {gate?.kind === 'full' && (
+              <Card className="mb-4 !border-[#b95b33]/25 !bg-[#b95b33]/8">
+                <p className="text-sm font-bold text-[#b95b33]">Practice-only mock</p>
+                <p className="mt-1 text-xs leading-relaxed text-[var(--foreground)]/55">
+                  This bank is useful practice, but its Hören and Lesen answer surfaces do not yet match all three current official adult sets.
+                  The score cannot award A1 Ready until that correction is complete.
+                </p>
+              </Card>
+            )}
+
             {/* Nivin pep-talk */}
             <motion.div
               initial={{ opacity: 0, x: -10 }}
@@ -629,7 +664,7 @@ function TestRunner({ testId }: { testId: string }) {
                   Breathe. You&apos;ve got this, machaa.
                 </p>
                 <p className="text-xs text-[var(--foreground)]/60 leading-snug">
-                  This is the real Goethe A1 format. Once you start, I&apos;ll stay quiet — just focus. See you at the results.
+                  This is a full four-section practice run. Once you start, I&apos;ll stay quiet — just focus. See you at the results.
                 </p>
               </div>
             </motion.div>
@@ -1345,7 +1380,7 @@ function TestRunner({ testId }: { testId: string }) {
               </p>
               <p className="text-[var(--foreground)]/60 text-sm px-2 leading-snug">
                 {passed
-                  ? 'Adipoli, machaa! That was the real Goethe A1 format and you cleared it. Kerala-to-Germany just got real.'
+                  ? 'Adipoli, machaa! You cleared this practice run. Keep moving — your next gate is closer.'
                   : 'Oru chinna setback, that\'s all. You need 36/60 to pass — you\'re close. Let\'s find your weakest part and fix it together.'}
               </p>
             </div>
@@ -1477,6 +1512,8 @@ function TestRunner({ testId }: { testId: string }) {
                 setSprechenCompleted({});
                 setSprechenSubmitted(false);
                 setSectionScores({ hoeren: 0, lesen: 0, schreiben: 0, sprechen: 0 });
+                testStartedAtRef.current = null;
+                expiredSectionsRef.current = new Set();
                 setSection('overview');
               }} fullWidth>
                 Try Again

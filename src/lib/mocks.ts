@@ -75,7 +75,7 @@ export function getMockGatesForModule(moduleId: number): MockGateDef[] {
 }
 
 // Result bands per docs/PRODUCT_VISION.md / A1_COURSE_ARCHITECTURE.md:
-// ready 70+ & no section <60 · exam-pass likely 60-69 & no section <45 ·
+// ready 75+ & no section <60 · exam-pass likely 60-74 & no section <45 ·
 // risky: one section <45 or 50-59 overall · not ready <50.
 export type MockBand = 'ready' | 'pass-likely' | 'risky' | 'not-ready';
 
@@ -83,7 +83,7 @@ export function computeMockBand(percent: number, sectionPercents: Record<string,
   const values = Object.values(sectionPercents);
   const min = values.length ? Math.min(...values) : 0;
   if (percent < 50) return 'not-ready';
-  if (percent >= 70 && min >= 60) return 'ready';
+  if (percent >= 75 && min >= 60) return 'ready';
   if (percent >= 60 && min >= 45) return 'pass-likely';
   return 'risky';
 }
