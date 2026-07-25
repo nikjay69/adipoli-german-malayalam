@@ -50,6 +50,23 @@ export interface MockGateResult {
   /** tested section -> percent 0-100 */
   sectionPercents: Record<string, number>;
   savedAt: number;
+  /** Readiness evidence is fail-closed: older results without these fields remain practice records. */
+  timed?: boolean;
+  closedBook?: boolean;
+  startedAt?: number;
+  completedAt?: number;
+  expiredSections?: string[];
+  officialCalibration?: {
+    version: string;
+    status: 'aligned' | 'practice-only';
+  };
+  writingEvidence?: {
+    formErrorFree: boolean;
+    messageRubricScore: number;
+    allContentPoints: boolean;
+    reviewMethod: 'self-rubric' | 'human' | 'ai-only' | 'unverified';
+    closedBook: boolean;
+  };
 }
 
 export interface UserProgress {
@@ -126,7 +143,7 @@ export const ACHIEVEMENTS_DATA: Achievement[] = [
   { id: 'streak_30', name: '30-Day Streak', description: 'Learn 30 days straight', icon: '⭐' },
   { id: 'vocab_300', name: '300 Words', description: 'Learn 300 vocabulary words', icon: '🧠' },
   { id: 'halfway', name: 'Halfway There', description: 'Complete 9 of 18 modules', icon: '⚡' },
-  { id: 'exam_ready', name: 'Exam Ready', description: 'Reach 60% readiness score', icon: '📝' },
+  { id: 'exam_ready', name: 'A1 Ready', description: 'Complete the full evidence-based A1 Ready gate', icon: '📝' },
 ];
 
 interface GameState {

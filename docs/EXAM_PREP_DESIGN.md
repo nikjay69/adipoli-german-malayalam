@@ -6,11 +6,16 @@ Status: **Source of truth.** Established 2026-06-11. Absorbs the test-and-recove
 
 Start Deutsch 1: Hören 3 Teile (~20m, 25P) · Lesen 3 Teile (~25m, 25P) · Schreiben 2 Teile (form + 30-word message, ~20m, 25P) · Sprechen 3 Teile (intro/word cards/requests, ~15m, 25P). Pass = 60/100. **8 internal full mocks already exist** in `src/lib/content/goethe-tests.ts` (~360 questions). They are substantial practice inventory, but they do not count as exam-realistic until calibrated against the current official adult specification and practice sets.
 
-Official calibration anchors (checked 2026-07-17):
+Official calibration anchors (checked 2026-07-25):
 
 - exam and competency overview: `https://www.goethe.de/de/spr/prf.html`
-- official adult A1 practice sets: `https://www.goethe.de/en/m/spr/prf/ueb/pa1.html`
+- official adult A1 practice-set index: `https://www.goethe.de/en/m/spr/prf/ueb/pa1.html`
+- current adult practice sets: [Modellsatz](https://www.goethe.de/pro/relaunch/prf/materialien/A1_sd1/sd_1_modellsatz.pdf), [Übungssatz 01](https://www.goethe.de/pro/relaunch/prf/materialien/A1_sd1/sd_1_uebungssatz01.pdf), and [Übungssatz 02](https://www.goethe.de/pro/relaunch/prf/materialien/A1_sd1/sd_1_uebungssatz02.pdf)
+- result rules: `https://www.goethe.de/de/m/spr/prf/pes/pas1.html` (100 points; 75 written + 25 spoken; pass from 60 when all sections are taken)
+- administration rules: `https://www.goethe.de/resources/files/pdf347/dfb-v1.pdf`
 - official adult Start Deutsch 1 Wortliste: `https://www.goethe.de/pro/relaunch/prf/sr/A1_SD1_Wortliste_02.pdf` (~650 entries; all passive, roughly half active at A1 according to its introduction)
+
+The current official task surfaces are also frozen in `src/lib/official-a1-calibration.ts`: Hören uses three-choice/twice, true-false/once, three-choice/twice across its three Teile; Lesen uses message true-false, two-source choice, and notice true-false; Schreiben uses a five-field form plus a roughly 30-word three-point message; Sprechen uses introduction, ask/give information, and request/respond.
 
 ## Per-skill training design
 
@@ -56,7 +61,7 @@ Retest items share the target tag and difficulty band but not the original wordi
 - Grammar: `grammar:verb_position` · `grammar:verb_ending` · `grammar:articles` · `grammar:accusative_survival` · `grammar:negation` · `grammar:modal_word_order` · `grammar:possessives` · `grammar:question_order` · `grammar:capitalisation_basics` · `grammar:formal_context`
 - Vocabulary: `vocab:module_core` · `vocab:greeting_set` · `vocab:first_sentence_chunks` · `vocab:deutsch_vs_deutschland` · `vocab:personal_info` · `vocab:numbers_time` · `vocab:family_home` · `vocab:food_shopping` · `vocab:travel_health` · `vocab:work_hobbies` · `vocab:official_exam`
 
-**Coverage law:** every tag emitted by a shipping checkpoint or mini-check must have an exact recovery card and at least two fresh retest variants. The 2026-07-17 audit found 10 emitted tags without an exact recovery: `grammar:capitalisation_basics`, `grammar:question_order`, `hoeren:question_words`, `lesen:time_price_detail`, `pronunciation:ch_sch`, `pronunciation:w_v`, `schreiben:address_date_phone`, `vocab:first_sentence_chunks`, `vocab:greeting_set`, `vocab:personal_info`. These are launch-blocking content gaps until closed and automatically checked.
+**Coverage law:** every tag emitted by a shipping checkpoint or mini-check must have an exact recovery card and at least two fresh retest variants. **Closed 2026-07-25:** the automated coverage validator finds 60 emitted tags, 0 orphans, and 120 concrete fresh retests. It runs in `npm run qa` and fails on missing, stale, generic, duplicated, or invalid recovery data.
 
 ## Scoring rubrics (manual scoring is acceptable; AI optional)
 
@@ -97,4 +102,4 @@ The app may say **A1 Ready** only when all conditions are true:
 - full Sprechen Teile 1–3 completed on two different days, each Teil ≥3/5, self-intro under 60 seconds;
 - readiness evidence was produced closed-book; no AI score is the sole gatekeeper.
 
-Before pilot, the internal mocks and scoring bands receive a documented comparison against the three current official adult practice sets. Material that is easier, differently shaped or ambiguously scored is corrected before the readiness label ships.
+The 2026-07-25 automated audit records all three current official adult practice sets and compares every internal mock's task surfaces. All eight internal mocks currently remain **practice-only**: their broad sections and item totals are useful, but Hören Teile 1–2 and Lesen Teile 1–2 do not yet use the official answer surfaces. Those records can never award **A1 Ready**. The task shapes, timing and evidence capture must be corrected and the audit status changed to `aligned` before any internal score can qualify.

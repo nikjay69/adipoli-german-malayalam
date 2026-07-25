@@ -88,7 +88,21 @@ export default function SpeakingSimulatorPage() {
     if (index >= cards.length - 1) {
       const passed = next.every((x) => x !== 'missed');
       if (!saved) {
-        writeSimulatorRun({ testId, date: Date.now(), verdicts: next, passed });
+        const value = (verdict: Verdict): number => verdict === 'clean' ? 5 : verdict === 'shaky' ? 3 : 0;
+        const teilScores = Object.fromEntries(([1, 2, 3] as const).map((teil) => {
+          const values = cards.flatMap((card, cardIndex) =>
+            card.teil === teil ? [value(next[cardIndex])] : []);
+          const average = values.length ? values.reduce((sum, score) => sum + score, 0) / values.length : 0;
+          return [String(teil), Math.round(average)];
+        })) as Record<'1' | '2' | '3', number>;
+        writeSimulatorRun({
+          testId,
+          date: Date.now(),
+          verdicts: next,
+          passed,
+          teilScores,
+          closedBook: true,
+        });
         setSaved(true);
       }
       setPhase('result');
@@ -223,7 +237,7 @@ export default function SpeakingSimulatorPage() {
             </div>
             <p className="mt-4 max-w-xl text-sm font-semibold leading-6 text-white/60">
               Run it again on a different day with a different set — the module 8 readiness bar wants the simulator done twice,
-              and the second run is where the freezes disappear.
+              The final A1 Ready gate also needs one continuous self-introduction timed under 60 seconds.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <button

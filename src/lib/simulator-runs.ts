@@ -8,6 +8,10 @@ export type SimulatorRun = {
   date: number;
   verdicts: SimulatorVerdict[];
   passed: boolean;
+  /** Optional until the simulator captures the continuous readiness proof. */
+  teilScores?: Record<'1' | '2' | '3', number>;
+  introSeconds?: number;
+  closedBook?: boolean;
 };
 
 const RUNS_KEY = 'adipoli-simulator-runs';
@@ -23,6 +27,7 @@ export function readSimulatorRuns(): SimulatorRun[] {
 export function writeSimulatorRun(run: SimulatorRun) {
   try {
     localStorage.setItem(RUNS_KEY, JSON.stringify([...readSimulatorRuns(), run]));
+    window.dispatchEvent(new CustomEvent('simulator-run-saved', { detail: run }));
   } catch {
     /* storage unavailable — the run still completes on screen */
   }
@@ -30,5 +35,9 @@ export function writeSimulatorRun(run: SimulatorRun) {
 
 /** Distinct calendar days with a completed simulator run on record. */
 export function simulatorRunDays(): number {
-  return new Set(readSimulatorRuns().map((r) => new Date(r.date).toDateString())).size;
+  return new Set(
+    readSimulatorRuns()
+      .filter((run) => run.passed)
+      .map((run) => new Date(run.date).toDateString()),
+  ).size;
 }

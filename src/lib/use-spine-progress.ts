@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { readCompletedModule2Missions } from '@/app/missions/module-2/_components/MissionUI';
 import { readCompletedModule1Missions, type Module1MissionId } from '@/lib/missions/module1';
 import { type Module2MissionId } from '@/lib/missions/module2';
+import { evaluateA1Readiness } from '@/lib/a1-readiness';
+import { readSimulatorRuns, type SimulatorRun } from '@/lib/simulator-runs';
 import {
   getActiveRecovery,
   getNextBlock,
@@ -20,12 +22,14 @@ export function useSpineProgress() {
   const [module1Missions, setModule1Missions] = useState<Module1MissionId[]>([]);
   const [module2Missions, setModule2Missions] = useState<Module2MissionId[]>([]);
   const [module1Checkpoint, setModule1Checkpoint] = useState<Module1CheckpointStored | null>(null);
+  const [simulatorRuns, setSimulatorRuns] = useState<SimulatorRun[]>([]);
 
   useEffect(() => {
     const refresh = () => {
       setModule1Missions(readCompletedModule1Missions());
       setModule2Missions(readCompletedModule2Missions());
       setModule1Checkpoint(readModule1CheckpointResult());
+      setSimulatorRuns(readSimulatorRuns());
     };
     const timer = window.setTimeout(() => {
       refresh();
@@ -35,12 +39,14 @@ export function useSpineProgress() {
     window.addEventListener('module1-mission-completed', refresh);
     window.addEventListener('module2-mission-completed', refresh);
     window.addEventListener('module1-checkpoint-scored', refresh);
+    window.addEventListener('simulator-run-saved', refresh);
     window.addEventListener('storage', refresh);
     return () => {
       window.clearTimeout(timer);
       window.removeEventListener('module1-mission-completed', refresh);
       window.removeEventListener('module2-mission-completed', refresh);
       window.removeEventListener('module1-checkpoint-scored', refresh);
+      window.removeEventListener('simulator-run-saved', refresh);
       window.removeEventListener('storage', refresh);
     };
   }, []);
@@ -64,6 +70,15 @@ export function useSpineProgress() {
   const modules = useMemo(() => (mounted ? getSpineModules(inputs) : []), [inputs, mounted]);
   const next = useMemo(() => getNextBlock(modules), [modules]);
   const recovery = useMemo(() => (mounted ? getActiveRecovery(inputs) : null), [inputs, mounted]);
+  const readiness = useMemo(
+    () => evaluateA1Readiness({
+      module1Checkpoint,
+      spineCheckpoints: userProgress.spineCheckpoints || {},
+      mockResults: userProgress.mockResults || {},
+      simulatorRuns,
+    }),
+    [module1Checkpoint, simulatorRuns, userProgress.mockResults, userProgress.spineCheckpoints],
+  );
 
   return {
     mounted,
@@ -71,5 +86,6 @@ export function useSpineProgress() {
     modules,
     next,
     recovery,
+    readiness,
   };
 }

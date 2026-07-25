@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
-  Check,
   CheckCircle2,
   Clock3,
   Eye,
@@ -64,7 +63,7 @@ function stateCopy(state: ModuleState, module: SpineModuleView, nextTitle?: stri
 }
 
 export default function CoursePage() {
-  const { mounted, inputs, modules, next } = useSpineProgress();
+  const { mounted, modules, next, readiness } = useSpineProgress();
 
   if (!mounted) {
     return (
@@ -79,7 +78,6 @@ export default function CoursePage() {
   }
 
   const completeCount = modules.filter((module) => module.status === 'complete').length;
-  const readyMocks = Object.values(inputs.mockResults).filter((result) => result.band === 'ready').length;
   const activeModule = next?.module ?? modules.find((module) => module.status === 'active') ?? modules[modules.length - 1];
   const activeModuleFraction = activeModule?.requiredBlocksTotal
     ? activeModule.requiredBlocksDone / activeModule.requiredBlocksTotal
@@ -191,19 +189,33 @@ export default function CoursePage() {
           })}
         </section>
 
-        <section className={styles.readiness} aria-label="A1 readiness evidence">
-          <div>
-            <strong>{completeCount}/8</strong>
-            <span>checkpoints passed</span>
+        <section className={styles.readiness} aria-label="A1 readiness evidence" data-ready={readiness.ready || undefined}>
+          <div className={styles.readinessLead}>
+            <p>Final evidence</p>
+            <strong>{readiness.label}</strong>
+            <span>
+              {readiness.ready
+                ? 'Every production and exam-proof gate is complete.'
+                : readiness.nextRequirement?.detail}
+            </span>
           </div>
-          <div>
-            <strong>{Math.min(readyMocks, 2)}/2</strong>
-            <span>timed mocks at 75%+</span>
+          <div className={styles.readinessMetrics}>
+            <div>
+              <strong>{readiness.cleanCheckpointCount}/8</strong>
+              <span>clean module gates</span>
+            </div>
+            <div>
+              <strong>{Math.min(readiness.qualifyingMockCount, 2)}/2</strong>
+              <span>qualifying mocks</span>
+            </div>
+            <div>
+              <strong>{Math.min(readiness.speakingDayCount, 2)}/2</strong>
+              <span>speaking days</span>
+            </div>
           </div>
-          <div>
-            <strong>{activeModule ? `M${activeModule.id}` : <Check aria-hidden="true" />}</strong>
-            <span>{activeModule ? 'current module' : 'route complete'}</span>
-          </div>
+          <p className={styles.readinessNote}>
+            Official calibration: <strong>practice-only</strong>. Current internal mocks help you train, but cannot certify A1 Ready yet.
+          </p>
         </section>
 
         <p className={styles.bridgeNote}>
