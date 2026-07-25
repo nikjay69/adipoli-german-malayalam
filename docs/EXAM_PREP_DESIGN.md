@@ -17,6 +17,18 @@ Official calibration anchors (checked 2026-07-25):
 
 The current official task surfaces are also frozen in `src/lib/official-a1-calibration.ts`: Hören uses three-choice/twice, true-false/once, three-choice/twice across its three Teile; Lesen uses message true-false, two-source choice, and notice true-false; Schreiben uses a five-field form plus a roughly 30-word three-point message; Sprechen uses introduction, ask/give information, and request/respond.
 
+## Official Wortliste and return ledger
+
+The current official adult PDF is frozen in `src/lib/wortliste-inventory.json`, with the typed course contract in `src/lib/wortliste.ts`. The source layout contains **637 counted main entries plus 59 indented, derivable secondary entries** (696 printed alphabetical rows). This reconciles the PDF's intentionally approximate “circa 650” statement without dropping the secondary rows.
+
+- Every printed row has a stable ID, source page, normalized lemma, passive course home and planned SRS ID. The source PDF stays linked rather than copying its full example-sentence corpus into the repo.
+- The **active target is 318 counted main entries**: half of 637 rounded down. It includes every current course-card match plus 39 named high-utility authoring targets. Derived entries remain passive rather than inflating the active denominator.
+- The ten official themes, one explicit cross-cutting function/exam-language bucket and all 13 official word groups are mapped to named `M1L1`–`M8L7` homes.
+- Existing coverage is not overstated: 302 printed rows resolve to real current vocabulary-card IDs; 230 more have current lesson evidence but still need a dedicated card; 164 need lesson authoring as well. Within the active target, 39 cards and six lesson insertions remain explicit script-freeze work.
+- Planned `wortliste:*` IDs are authoring references only. They are not inserted into the live SM-2 store until a complete learner-ready card exists, so the review UI never receives an unresolved ID.
+
+`src/lib/spiral-ledger.ts` separately maps all 56 outcome rows to real source lessons, real current vocabulary IDs and at least one named later return. `M8L7` returns to `exam-day-srs`; every other return points strictly forward in the spine. `npm run test:wortliste` validates both ledgers and writes the detailed gap/audit artifact to `scripts/output/3p-12-wortliste-spiral-ledger/audit.json`.
+
 ## Per-skill training design
 
 | Skill | Learner goal | MVP practice | Premium (later) | Feedback | Readiness check |

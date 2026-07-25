@@ -273,7 +273,20 @@ The owner approved and merged chunk `3p-09` in PR #20 after reviewing the real C
 
 **Why:** in this one labelled forward-action role, the rotated mark reads as a brand-owned arrow and improves the learner’s directional cue. Keeping the exception exact and documented preserves the stronger general rule: normal Triangle-A identity never rotates.
 
-## 31 · 2026-07-26 · One-time Full Product Closure Pass
+## 31 · 2026-07-25 · Official Wortliste denominator, active target and spiral ledger
+
+Chunk `3p-12` replaces the old hand-written “Goethe core” subset with a source-audited vocabulary and return contract before M2–M8 scripts freeze:
+
+1. **The official adult PDF is the lexical authority.** Pages 9–27 contain 637 counted main entries plus 59 indented, derivable secondary entries: 696 printed alphabetical rows in total. This reconciles the publication's intentionally approximate “circa 650” description and its rule that indented secondary entries are not counted; no printed row is discarded to force the approximate number.
+2. **The active denominator is fixed and reviewable.** The course targets 318 counted main entries for active availability—half of 637 rounded down. The selected set consists of every official main entry already matched to a current course vocabulary card plus 39 named high-utility authoring targets. The remaining main entries and all derived entries stay passive targets. Changing this selection is an intentional ledger change, not an incidental side effect of adding course content.
+3. **Coverage claims must separate evidence types.** Of 696 printed rows, 302 currently resolve to real vocabulary-card IDs, 230 have authored lesson evidence without a dedicated card, and 164 still require lesson authoring. The active slice contains 39 missing cards and six lesson insertions. These are script-freeze inputs, not grounds for a false “100% taught” claim.
+4. **Planned SRS IDs are not live learner IDs.** Every official row and all 13 word groups have a stable planned SRS ID and named course home, but a planned `wortliste:*` ID may enter the live SM-2 store only after a complete learner-ready card exists. Existing review screens continue to receive only resolvable current vocabulary IDs.
+5. **The 56-row spiral is now executable project memory.** Every `M1L1`–`M8L7` row maps to real source lessons, a non-empty set of real current vocabulary IDs and at least one strictly later named return. The final `M8L7` row continues to exam-day SRS. The validator runs in `npm run qa` and records the detailed active/passive authoring queue.
+6. **This is a data/mastery chunk, not a learner-page redesign.** No 18-module source file, SRS algorithm, readiness threshold or learner-facing layout changes here. Later script/lesson work consumes the named homes and authoring gaps one bounded row at a time.
+
+**Why:** the old subset could report reassuring percentages without representing the official inventory, while prose-only spiral mentions could drift during script production. A stable source ledger makes the denominator, active choice, real coverage, remaining debt and later returns independently checkable.
+
+## 32 · 2026-07-26 · One-time Full Product Closure Pass
 
 The owner explicitly approved one large Codex pass because ample Codex execution budget remains. This is a narrow, one-time cadence exception for chunk `3p-13`; it is not a return to unbounded autonomous product development.
 
