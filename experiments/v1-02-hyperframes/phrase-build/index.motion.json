@@ -1,0 +1,12 @@
+{
+  "duration": 11,
+  "assertions": [
+    {"kind": "appearsBy", "selector": "#pb-title", "bySec": 1.2},
+    {"kind": "before", "a": "#pb-title", "b": "#pb-token-ich"},
+    {"kind": "before", "a": "#pb-token-ich", "b": "#pb-say-cue"},
+    {"kind": "staysInFrame", "selector": "#pb-token-ich"},
+    {"kind": "staysInFrame", "selector": "#pb-token-lerne"},
+    {"kind": "staysInFrame", "selector": "#pb-token-deutsch"},
+    {"kind": "keepsMoving", "withinSelector": "#pb-root", "maxStaticSec": 2}
+  ]
+}

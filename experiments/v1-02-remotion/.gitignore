@@ -1,0 +1,6 @@
+node_modules/
+output/
+public/audio/
+public/fonts/
+public/inserts/
+public/staged-assets.json
