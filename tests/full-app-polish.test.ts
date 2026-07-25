@@ -17,6 +17,17 @@ const speak = read('src/app/practice/speak/page.tsx');
 const pronunciation = read('src/app/practice/pronunciation/page.tsx');
 const conversation = read('src/app/practice/conversation/page.tsx');
 const shadowing = read('src/app/practice/shadowing/page.tsx');
+const onboarding = read('src/app/onboarding/page.tsx');
+const profile = read('src/app/profile/page.tsx');
+const vocabulary = read('src/app/vocabulary/page.tsx');
+const plan = read('src/app/plan/page.tsx');
+const testRunner = read('src/app/tests/[testId]/page.tsx');
+const missionUi = read('src/app/missions/module-2/_components/MissionUI.tsx');
+const gameRenderer = read('src/components/game-engine/GameRenderer.tsx');
+const button = read('src/components/ui/Button.tsx');
+const practiceLayout = read('src/app/practice/layout.tsx');
+const scriptsLayout = read('src/app/scripts/layout.tsx');
+const scriptDetail = read('src/app/scripts/[moduleId]/page.tsx');
 
 assert.match(
   foundation,
@@ -34,6 +45,29 @@ assert.match(course, /ag-foundation-shell ag-daylight/, 'Course must use the bou
 assert.match(course, /className=\{styles\.moduleGrid\}/, 'Course must keep the eight flags inside one bounded grid');
 assert.match(courseStyles, /\.moduleCard\s*\{[\s\S]*?min-width:\s*0;/, 'course flags must shrink inside the phone layout');
 assert.match(courseStyles, /overflow-x:\s*clip;/, 'Course must not create horizontal phone scroll');
+assert.match(onboarding, /overflow-x-clip/, 'onboarding decoration must not create horizontal viewport scroll');
+assert.match(button, /min-h-11/, 'shared buttons must retain a 44px minimum height');
+assert.match(gameRenderer, /ag-touch-target[\s\S]*?aria-label="Leave lesson"/, 'lesson exit must expose a 44px touch target');
+assert.doesNotMatch(plan, /<Link href="\/profile">\s*<Button/, 'plan back action must not nest a button inside a link');
+assert.match(profile, /useSpineProgress/, 'profile progress must use the canonical eight-module spine');
+assert.doesNotMatch(profile, /ALL_MODULES/, 'profile must not expose the legacy 18-module library as the course path');
+assert.match(profile, /href=\{`\/course\/\$\{module\.id\}`\}/, 'profile module links must return to the canonical course path');
+
+for (const [path, source] of [
+  ['onboarding', onboarding],
+  ['practice routes', practiceLayout],
+  ['profile', profile],
+  ['vocabulary', vocabulary],
+  ['plan', plan],
+  ['tests', testsHub],
+  ['test runner', testRunner],
+  ['mission shell', missionUi],
+  ['lesson player', gameRenderer],
+  ['scripts routes', scriptsLayout],
+] as const) {
+  assert.match(source, /<main id="main-content"/, `${path} must expose the global skip-link target as its main landmark`);
+}
+assert.match(scriptDetail, /print-vocab-scroll/, 'script vocabulary tables must scroll inside their own mobile region');
 
 for (const [path, source] of [
   ['learn', read('src/app/learn/page.tsx')],

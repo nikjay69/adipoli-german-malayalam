@@ -20,8 +20,8 @@ function CopyLine({ text }: { text: string }) {
           setTimeout(() => setCopied(false), 1200);
         });
       }}
-      className="print:hidden opacity-40 hover:opacity-100 hover:text-[#d4a520] transition ml-1 inline-flex align-middle"
-      aria-label="Copy"
+      className="ag-touch-target print:hidden opacity-40 hover:opacity-100 hover:text-[#d4a520] transition ml-1 inline-flex items-center justify-center align-middle"
+      aria-label={`Copy ${text}`}
     >
       {copied ? <Check className="w-3 h-3 text-[#27ae60]" /> : <Copy className="w-3 h-3" />}
     </button>
@@ -104,35 +104,37 @@ function ModuleScript({ modules }: { modules: Module[] }) {
               {lesson.vocabulary.length > 0 && (
                 <div className="print-section">
                   <h4 className="print-section-title">📚 Vocabulary ({lesson.vocabulary.length} words)</h4>
-                  <table className="print-vocab-table">
-                    <thead>
-                      <tr>
-                        <th>German</th>
-                        <th>English</th>
-                        <th>Malayalam</th>
-                        <th>Pronunciation</th>
-                        <th>Example</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {lesson.vocabulary.map((vocab) => (
-                        <tr key={vocab.id}>
-                          <td className="print-vocab-german">
-                            {vocab.german}
-                            <CopyLine text={vocab.german} />
-                          </td>
-                          <td>{vocab.english}</td>
-                          <td className="print-vocab-malayalam">{vocab.malayalam}</td>
-                          <td className="print-vocab-pron">{vocab.pronunciation}</td>
-                          <td className="print-vocab-example">
-                            {vocab.example}
-                            <br />
-                            <span className="print-vocab-trans">{vocab.exampleTranslation}</span>
-                          </td>
+                  <div className="print-vocab-scroll" role="region" aria-label={`${lesson.title} vocabulary table`} tabIndex={0}>
+                    <table className="print-vocab-table">
+                      <thead>
+                        <tr>
+                          <th>German</th>
+                          <th>English</th>
+                          <th>Malayalam</th>
+                          <th>Pronunciation</th>
+                          <th>Example</th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        {lesson.vocabulary.map((vocab) => (
+                          <tr key={vocab.id}>
+                            <td className="print-vocab-german">
+                              {vocab.german}
+                              <CopyLine text={vocab.german} />
+                            </td>
+                            <td>{vocab.english}</td>
+                            <td className="print-vocab-malayalam">{vocab.malayalam}</td>
+                            <td className="print-vocab-pron">{vocab.pronunciation}</td>
+                            <td className="print-vocab-example">
+                              {vocab.example}
+                              <br />
+                              <span className="print-vocab-trans">{vocab.exampleTranslation}</span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               )}
 
@@ -235,13 +237,13 @@ export default function ScriptPage() {
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <button
             onClick={() => router.push('/scripts')}
-            className="flex items-center gap-2 text-[var(--foreground)]/50 text-sm"
+            className="ag-touch-target flex items-center gap-2 text-[var(--foreground)]/50 text-sm"
           >
             <ArrowLeft className="w-4 h-4" /> Scripts
           </button>
           <button
             onClick={handlePrint}
-            className="flex items-center gap-2 bg-[#d4a520] text-black px-4 py-2 rounded-lg font-bold text-sm hover:brightness-110 transition"
+            className="ag-touch-target flex items-center gap-2 bg-[#d4a520] text-black px-4 py-2 rounded-lg font-bold text-sm hover:brightness-110 transition"
           >
             <Printer className="w-4 h-4" /> Save as PDF
           </button>
@@ -277,7 +279,7 @@ export default function ScriptPage() {
                 <button
                   key={l.id}
                   onClick={() => scrollToLesson(l.id)}
-                  className="flex-shrink-0 text-[11px] px-2 py-1 rounded-full bg-[#d4a520]/10 text-[#d4a520] hover:bg-[#d4a520]/20 transition whitespace-nowrap"
+                  className="ag-touch-target flex-shrink-0 text-[11px] px-2 py-1 rounded-full bg-[#d4a520]/10 text-[#d4a520] hover:bg-[#d4a520]/20 transition whitespace-nowrap"
                 >
                   {isAll ? `M${m.id}·L${li + 1}` : `L${li + 1}`} {l.title.length > 18 ? l.title.slice(0, 18) + '…' : l.title}
                 </button>

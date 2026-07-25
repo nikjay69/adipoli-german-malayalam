@@ -262,7 +262,7 @@ export default function ReviewPage() {
             <Nivin mood="happy" size="lg" />
             <Appu mood="sleeping" size="sm" />
           </div>
-          <h2 className="text-xl font-bold mb-2">All caught up!</h2>
+          <h1 className="text-xl font-bold mb-2">All caught up!</h1>
           <p className="text-[var(--foreground)]/50 text-sm mb-1">
             No words need practice right now. Appu is napping.
           </p>
@@ -329,7 +329,7 @@ export default function ReviewPage() {
               <Nivin mood="celebrating" size="lg" />
               <Appu mood="happy" size="sm" />
             </div>
-            <h2 className="text-2xl font-bold mb-1">Session Complete!</h2>
+            <h1 className="text-2xl font-bold mb-1">Session Complete!</h1>
             <p className="text-[var(--foreground)]/40 text-sm">
               {accuracy >= 80 ? "Adipoli machane! You crushed it!" :
                accuracy >= 50 ? "Good effort! Getting stronger!" :
@@ -416,6 +416,7 @@ export default function ReviewPage() {
 
   return (
     <div className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto flex flex-col">
+      <h1 className="sr-only">Vocabulary Review</h1>
       {/* Header */}
       <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
         <div className="flex items-center justify-between mb-4">

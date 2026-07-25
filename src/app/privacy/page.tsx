@@ -9,7 +9,7 @@ export default function PrivacyPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto">
+    <main id="main-content" className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto">
       <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
         <button onClick={() => router.back()} className="ag-touch-target mb-4 flex items-center gap-2 text-sm text-[var(--foreground)]/50">
           <ArrowLeft className="w-4 h-4" /> Back
@@ -161,6 +161,6 @@ export default function PrivacyPage() {
       <div className="mt-6 pt-4 border-t border-[var(--foreground)]/10 text-center text-xs text-[var(--foreground)]/30">
         Adipoli German · Privacy Policy · March 2026
       </div>
-    </div>
+    </main>
   );
 }

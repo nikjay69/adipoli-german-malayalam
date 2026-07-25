@@ -24,7 +24,7 @@ export function Button({
   className = '',
   type = 'button',
 }: ButtonProps) {
-  const baseStyles = 'font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-2';
+  const baseStyles = 'min-h-11 font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-2';
 
   const variants = {
     primary: 'bg-[#d4a520] hover:bg-[#b8891a] text-[#1b2d1b] shadow-lg hover:shadow-xl',

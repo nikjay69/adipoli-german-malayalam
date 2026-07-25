@@ -553,7 +553,7 @@ export default function ShadowingPage() {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1a1a2e] to-[#0f3460] p-4">
         <div className="glass-card p-8 text-center max-w-md">
           <MicOff className="w-16 h-16 mx-auto mb-4 text-red-400" />
-          <h2 className="text-xl font-bold text-white mb-2">Browser Not Supported</h2>
+          <h1 className="text-xl font-bold text-white mb-2">Browser Not Supported</h1>
           <p className="text-white/60 mb-4">
             Shadowing requires speech recognition. Please use Chrome or Edge on desktop.
           </p>
@@ -588,7 +588,7 @@ export default function ShadowingPage() {
               <CharacterGuide mood="celebrating" messages={peerMsg} />
             </div>
 
-            <h2 className="text-2xl font-bold text-white mb-2">Session Complete!</h2>
+            <h1 className="text-2xl font-bold text-white mb-2">Session Complete!</h1>
             <p className="text-white/60 mb-6">Shadowing practice finished</p>
 
             <div className="grid grid-cols-3 gap-4 mb-6">
@@ -687,7 +687,7 @@ export default function ShadowingPage() {
               className="glass-card p-8 text-center"
             >
               <Headphones className="w-16 h-16 mx-auto mb-4 text-[#ff6b9d]" />
-              <h2 className="text-xl font-bold text-white mb-2">Shadowing Mode</h2>
+              <h1 className="text-xl font-bold text-white mb-2">Shadowing Mode</h1>
               <p className="text-white/60 mb-2 text-sm">
                 Listen to the German phrase, then <strong className="text-white">speak along</strong> almost simultaneously.
               </p>

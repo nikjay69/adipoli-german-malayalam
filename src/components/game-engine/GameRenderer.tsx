@@ -171,7 +171,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={onExit}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/45 backdrop-blur-md"
+          className="ag-touch-target flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/45 backdrop-blur-md"
           aria-label="Leave lesson"
         >
           <X className="h-4 w-4 text-white/75" />
@@ -188,7 +188,7 @@ export function GameRenderer({ moments, onComplete, onExit }: GameRendererProps)
         </span>
       </header>
 
-      <main className="relative z-10 flex min-h-0 flex-1 flex-col justify-end overflow-y-auto">
+      <main id="main-content" className="relative z-10 flex min-h-0 flex-1 flex-col justify-end overflow-y-auto">
         <AnimatePresence mode="wait">
           <motion.section
             key={moment.id}

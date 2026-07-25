@@ -525,14 +525,14 @@ function TestRunner({ testId }: { testId: string }) {
 
   if (!test) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-4">
+      <main id="main-content" className="min-h-screen flex flex-col items-center justify-center px-4">
         <p className="text-6xl mb-4">📝</p>
         <h1 className="text-xl font-bold mb-2">Test not found</h1>
         <p className="text-[var(--foreground)]/40 text-sm mb-4 text-center">
           This test doesn&apos;t exist or hasn&apos;t been created yet.
         </p>
         <Button onClick={() => router.push('/tests')}>Back to Tests</Button>
-      </div>
+      </main>
     );
   }
 
@@ -601,7 +601,7 @@ function TestRunner({ testId }: { testId: string }) {
   };
 
   return (
-    <div className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto">
+    <main id="main-content" className="min-h-screen px-4 py-6 safe-top safe-bottom max-w-2xl mx-auto">
       <Confetti isActive={section === 'results' && passed} duration={3000} />
 
       {/* Header */}
@@ -1525,7 +1525,7 @@ function TestRunner({ testId }: { testId: string }) {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </main>
   );
 }
 

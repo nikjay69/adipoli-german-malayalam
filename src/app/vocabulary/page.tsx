@@ -172,12 +172,12 @@ export default function VocabularyPage() {
 
   if (!mounted) {
     return (
-      <div className="px-4 py-6 max-w-4xl mx-auto">
+      <main id="main-content" className="px-4 py-6 max-w-4xl mx-auto">
         <div className="h-6 w-48 bg-[var(--foreground)]/8 rounded mb-4 animate-pulse" />
         <div className="game-card p-6 animate-pulse">
           <div className="h-32 bg-[var(--foreground)]/6 rounded-xl" />
         </div>
-      </div>
+      </main>
     );
   }
 
@@ -194,7 +194,7 @@ export default function VocabularyPage() {
     if (!encounter) {
       // All done
       return (
-        <div className="min-h-screen px-4 py-6 max-w-2xl mx-auto flex flex-col items-center justify-center text-center">
+        <main id="main-content" className="min-h-screen px-4 py-6 max-w-2xl mx-auto flex flex-col items-center justify-center text-center">
           <Nivin mood="celebrating" size="lg" />
           <h2 className="text-2xl font-bold mt-4 mb-2">Practice Complete!</h2>
           <p className="text-[var(--foreground)]/50 text-sm mb-4">
@@ -203,12 +203,12 @@ export default function VocabularyPage() {
           <button onClick={() => setMode('browse')} className="game-button text-sm">
             Back to Vocabulary
           </button>
-        </div>
+        </main>
       );
     }
 
     return (
-      <div className="min-h-screen px-4 py-6 max-w-2xl mx-auto flex flex-col">
+      <main id="main-content" className="min-h-screen px-4 py-6 max-w-2xl mx-auto flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <button
@@ -344,7 +344,7 @@ export default function VocabularyPage() {
             </motion.div>
           </AnimatePresence>
         </div>
-      </div>
+      </main>
     );
   }
 
@@ -357,7 +357,7 @@ export default function VocabularyPage() {
   });
 
   return (
-    <div className="min-h-screen px-4 py-4 md:px-8 md:py-8">
+    <main id="main-content" className="min-h-screen px-4 py-4 md:px-8 md:py-8">
       <div className="mx-auto max-w-md md:max-w-6xl">
         {/* Compact header */}
         <div className="mb-3 flex items-center justify-between md:mb-6">
@@ -509,6 +509,6 @@ export default function VocabularyPage() {
         </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
