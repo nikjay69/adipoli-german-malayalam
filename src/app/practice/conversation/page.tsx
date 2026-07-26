@@ -597,7 +597,7 @@ export default function ConversationPracticePage() {
 
         <div className="flex flex-col items-center justify-center mt-20 text-center px-6">
           <div className="text-6xl mb-6">🎙️</div>
-          <h2 className="text-xl font-bold mb-3">Browser Not Supported</h2>
+          <h1 className="text-xl font-bold mb-3">Browser Not Supported</h1>
           <p className="text-[var(--foreground)]/50 text-sm leading-relaxed max-w-sm">
             This feature requires Speech Recognition and Speech Synthesis APIs.
             Please use a modern browser like Chrome, Edge, or Safari on desktop.

@@ -57,10 +57,10 @@ export default function TestsPage() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen px-3 py-3">
+      <main id="main-content" className="min-h-screen px-3 py-3">
         <div className="h-5 w-40 bg-[var(--foreground)]/8 rounded mb-3 animate-pulse" />
         <SkeletonGrid count={8} />
-      </div>
+      </main>
     );
   }
 
@@ -81,7 +81,7 @@ export default function TestsPage() {
   };
 
   return (
-    <div className="min-h-screen px-3 py-3 safe-top safe-bottom max-w-2xl mx-auto">
+    <main id="main-content" className="min-h-screen px-3 py-3 safe-top safe-bottom max-w-2xl mx-auto">
       {/* Header — compact */}
       <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="flex items-center gap-2 mb-2">
         <button
@@ -168,6 +168,6 @@ export default function TestsPage() {
       <p className="text-center text-[var(--foreground)]/30 text-xs mt-3">
         Based on Goethe-Zertifikat A1: Start Deutsch 1
       </p>
-    </div>
+    </main>
   );
 }

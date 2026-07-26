@@ -258,6 +258,10 @@ async function main() {
   const weak = rows.filter((r) => r.verdict === 'WEAK');
   console.log(`lessons=${rows.length} PASS=${rows.length - weak.length - fail.length} WEAK=${weak.length} FAIL=${fail.length}`);
   console.log(`genericStems=${rows.reduce((n, r) => n + r.genericStems.length, 0)} mechanicalStems=${rows.reduce((n, r) => n + r.mechanicalStems.length, 0)} emptyExplanations=${rows.reduce((n, r) => n + r.emptyExplanations.length, 0)} noRepair=${rows.filter((r) => !r.hasMistakeRepair).length}`);
+  if (fail.length > 0) {
+    console.error(`Premium spine audit failed: ${fail.length} lesson${fail.length === 1 ? '' : 's'} broke the hard floor.`);
+    process.exitCode = 1;
+  }
 }
 
 main().catch((err) => {

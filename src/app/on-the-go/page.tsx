@@ -117,7 +117,7 @@ export default function OnTheGoPage() {
   const activeEp = EPISODES.find((e) => e.id === playingId);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0a1420] via-[#0d1a2e] to-[#0a1420]">
+    <main id="main-content" className="min-h-screen bg-gradient-to-br from-[#0a1420] via-[#0d1a2e] to-[#0a1420]">
       <audio
         ref={audioRef}
         onTimeUpdate={(e) => setCurrentTime((e.target as HTMLAudioElement).currentTime)}
@@ -314,6 +314,6 @@ export default function OnTheGoPage() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </main>
   );
 }

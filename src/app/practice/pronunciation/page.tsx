@@ -569,7 +569,7 @@ export default function PronunciationPage() {
           <button
             key={m}
             onClick={() => handleModeChange(m)}
-            className={`flex-1 py-2.5 px-3 rounded-xl text-sm font-semibold transition-all ${
+            className={`ag-touch-target flex-1 py-2.5 px-3 rounded-xl text-sm font-semibold transition-all ${
               mode === m
                 ? 'bg-[#e94560] text-white shadow-lg'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'

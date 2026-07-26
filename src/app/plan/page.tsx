@@ -55,7 +55,7 @@ export default function PlanPage() {
   };
 
   return (
-    <div className="px-4 py-6 max-w-5xl mx-auto pb-28 safe-top safe-bottom">
+    <main id="main-content" className="px-4 py-6 max-w-5xl mx-auto pb-28 safe-top safe-bottom">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -73,11 +73,12 @@ export default function PlanPage() {
               Your full German A1 roadmap. Every module, every milestone.
             </p>
           </div>
-          <Link href="/profile">
-            <Button variant="ghost" size="sm">
-              <ArrowLeft className="w-4 h-4" />
-              Back
-            </Button>
+          <Link
+            href="/profile"
+            className="ag-touch-target inline-flex items-center justify-center gap-2 rounded-xl bg-transparent px-3 py-1.5 text-sm font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back
           </Link>
         </div>
 
@@ -161,6 +162,6 @@ export default function PlanPage() {
           )}
         </Card>
       </motion.div>
-    </div>
+    </main>
   );
 }

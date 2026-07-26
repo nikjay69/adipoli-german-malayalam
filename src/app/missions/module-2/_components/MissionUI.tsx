@@ -466,7 +466,7 @@ export function MissionShell({
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className={clsx('min-h-screen overflow-hidden text-[#fff8ea]', isBlue ? 'bg-[#101b26]' : 'bg-[#102018]')}>
+    <main id="main-content" className={clsx('min-h-screen overflow-hidden text-[#fff8ea]', isBlue ? 'bg-[#101b26]' : 'bg-[#102018]')}>
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div
           className={clsx(
@@ -504,7 +504,7 @@ export function MissionShell({
           </motion.section>
         </AnimatePresence>
       </div>
-    </section>
+    </main>
   );
 }
 
@@ -738,7 +738,7 @@ export function RepairStep<T extends string>({
     <div className="grid gap-7 lg:grid-cols-[0.82fr_1fr] lg:items-center">
       <div>
         <ShieldCheck className="mb-4 h-11 w-11 text-[#f1d27a]" />
-        <h2 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h2>
+        <h1 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h1>
         <p
           className={clsx(
             hasSelectedRepair ? 'mt-3 text-sm leading-6 text-white/56' : 'sr-only'
@@ -825,7 +825,7 @@ export function HearStep({
     <div className="grid gap-5 lg:grid-cols-[0.9fr_1fr] lg:items-center lg:gap-7">
       <div>
         <Headphones className="mb-4 h-11 w-11 text-[#f1d27a]" />
-        <h2 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h2>
+        <h1 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h1>
         <p className="sr-only" data-testid="hear-step-instructions">{instructions}</p>
         <div className="sr-only" aria-live="polite">
           {audioStatusText}
@@ -914,7 +914,7 @@ export function ConversationSceneStep({
       data-typing-required="false"
     >
       <div>
-        <h2 className="text-3xl font-black leading-tight tracking-[-0.035em] sm:text-5xl">{title}</h2>
+        <h1 className="text-3xl font-black leading-tight tracking-[-0.035em] sm:text-5xl">{title}</h1>
         <p className="sr-only">Listen to the speaker, then answer aloud.</p>
         <div className="mt-5 overflow-hidden rounded-[1.55rem] border border-white/12 bg-black/18 p-3 sm:p-4">
           <MissionDialogueScene
@@ -1015,7 +1015,7 @@ export function ConversationRepairStep<T extends string>({
       data-typing-required="false"
     >
       <div>
-        {!hideTitle && <h2 className="text-3xl font-black leading-tight tracking-[-0.035em] sm:text-5xl">{title}</h2>}
+        <h1 className={hideTitle ? 'sr-only' : 'text-3xl font-black leading-tight tracking-[-0.035em] sm:text-5xl'}>{title}</h1>
         <p className="sr-only">Listen to the speaker, answer aloud, then fix one tiny trap.</p>
         <div className={clsx(!hideTitle && 'mt-5', 'overflow-hidden rounded-[1.55rem] border border-white/12 bg-black/18 p-3 sm:p-4')}>
           <MissionDialogueScene
@@ -1139,7 +1139,7 @@ export function RecognitionStep<T extends string>({
     <div className="grid gap-7 lg:grid-cols-[0.85fr_1fr] lg:items-start">
       <div>
         <div className="mb-4 text-[#f1d27a]">{icon}</div>
-        <h2 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h2>
+        <h1 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h1>
         <p className="sr-only" data-testid="recognition-prompt">{prompt}</p>
         {side && (
           <div className="mt-5 max-w-md" data-testid="recognition-scene-audio">
@@ -1208,7 +1208,7 @@ export function ReplyAloudStep({
     >
       <div>
         <Mic className="mb-4 h-11 w-11 text-[#f1d27a]" />
-        <h2 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h2>
+        <h1 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h1>
         <p className="mt-3 text-base leading-7 text-white/66">{prompt}</p>
       </div>
       <div className="rounded-[1.55rem] border border-[#f1d27a]/18 bg-[#f1d27a]/7 p-3 sm:p-4">
@@ -1283,7 +1283,7 @@ export function SpeakRepairStep<T extends string>({
     >
       <div data-testid="speak-repair-step">
         <Mic className="mb-4 h-11 w-11 text-[#f1d27a]" />
-        <h2 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h2>
+        <h1 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h1>
         <p className="sr-only" data-testid="speak-repair-prompt">{prompt}</p>
         <div className="mt-5 rounded-[1.55rem] border border-[#f1d27a]/18 bg-[#f1d27a]/7 p-3 sm:p-4">
           <NativeAudio
@@ -1384,7 +1384,7 @@ export function SpeakWriteStep({
     >
       <div data-testid="immersive-reply-step" data-model-audio-finished={modelAudioFinished ? 'true' : 'false'}>
         <Mic className="mb-4 h-11 w-11 text-[#f1d27a]" />
-        <h2 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h2>
+        <h1 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h1>
         <p className="sr-only" data-testid="speak-write-prompt">{prompt}</p>
         <div className="mt-5 rounded-[1.55rem] border border-[#f1d27a]/18 bg-[#f1d27a]/7 p-3 sm:p-4">
           <NativeAudio
@@ -1487,7 +1487,7 @@ export function TinyWriteStep({
     <div className="grid gap-6 lg:grid-cols-[0.75fr_1fr] lg:items-center" data-testid="tiny-write-step">
       <div>
         <PenLine className="mb-4 h-11 w-11 text-[#f1d27a]" />
-        <h2 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h2>
+        <h1 className="text-3xl font-black leading-tight sm:text-5xl">{title}</h1>
         {prompt && <p className="mt-3 text-base leading-7 text-white/66">{prompt}</p>}
       </div>
       <div>
@@ -1589,7 +1589,7 @@ export function MissionWinStep({
     <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
       <div>
         <Trophy className="mb-4 h-12 w-12 text-[#f1d27a]" />
-        <h2 className="text-4xl font-black leading-tight tracking-[-0.035em] sm:text-6xl">{title}</h2>
+        <h1 className="text-4xl font-black leading-tight tracking-[-0.035em] sm:text-6xl">{title}</h1>
         <p className="sr-only">{summary}</p>
         <div className="mt-7 rounded-[1.5rem] border border-[#3fbf75]/25 bg-[#3fbf75]/12 p-5">
           <p className="text-sm font-black text-[#bcf7d0]">You can now</p>
@@ -1676,7 +1676,7 @@ export function Module1MissionWinStep({
     <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
       <div>
         <Trophy className="mb-4 h-12 w-12 text-[#f1d27a]" />
-        <h2 className="text-4xl font-black leading-tight tracking-[-0.035em] sm:text-6xl">{title}</h2>
+        <h1 className="text-4xl font-black leading-tight tracking-[-0.035em] sm:text-6xl">{title}</h1>
         <p className="sr-only">{summary}</p>
         <div className="mt-7 rounded-[1.5rem] border border-[#3fbf75]/25 bg-[#3fbf75]/12 p-5">
           <p className="text-sm font-black text-[#bcf7d0]">You can now</p>

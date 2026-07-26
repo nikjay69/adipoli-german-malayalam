@@ -717,8 +717,16 @@ body {
 }
 
 /* Vocabulary Table */
+.print-vocab-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
 .print-vocab-table {
   width: 100%;
+  min-width: 30rem;
   font-size: 0.75rem;
   border-collapse: collapse;
   margin-top: 0.5rem;
@@ -841,6 +849,14 @@ body {
   body {
     font-size: 11pt;
     line-height: 1.4;
+  }
+
+  .print-vocab-scroll {
+    overflow: visible;
+  }
+
+  .print-vocab-table {
+    min-width: 0;
   }
 
   .print-cover {

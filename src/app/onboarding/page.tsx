@@ -58,22 +58,22 @@ export default function OnboardingPage() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <main id="main-content" className="min-h-screen flex items-center justify-center">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
           className="w-12 h-12 border-4 border-[#d4a520] border-t-transparent rounded-full"
         />
-      </div>
+      </main>
     );
   }
 
   return (
-    <div className="fixed inset-0 z-50 overflow-auto bg-[#102018] text-[#fff8ea]">
+    <main id="main-content" className="fixed inset-0 z-50 overflow-x-clip overflow-y-auto bg-[#102018] text-[#fff8ea]">
       {/* Warm Kerala-green backdrop — matches the mission shell (green/gold radials) */}
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(63,191,117,0.20),transparent_34%),radial-gradient(circle_at_82%_16%,rgba(241,210,122,0.18),transparent_30%),linear-gradient(135deg,#102018_0%,#17341f_42%,#0b1727_100%)]" />
-      <div className="pointer-events-none fixed -left-28 bottom-[-16rem] h-[34rem] w-[34rem] rounded-full bg-[#3fbf75]/18 blur-3xl" />
-      <div className="pointer-events-none fixed -right-28 top-20 h-[31rem] w-[31rem] rounded-full bg-[#d7b35a]/16 blur-3xl" />
+      <div className="pointer-events-none absolute -left-28 bottom-[-16rem] h-[34rem] w-[34rem] rounded-full bg-[#3fbf75]/18 blur-3xl" />
+      <div className="pointer-events-none absolute -right-28 top-20 h-[31rem] w-[31rem] rounded-full bg-[#d7b35a]/16 blur-3xl" />
       {/* Progress indicator */}
       <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex gap-2">
         {(['welcome', 'hours', 'ready'] as Step[]).map((s, i) => {
@@ -386,6 +386,6 @@ export default function OnboardingPage() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </main>
   );
 }

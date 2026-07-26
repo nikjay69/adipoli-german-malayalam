@@ -30,8 +30,8 @@ import { useGameStore, ACHIEVEMENTS_DATA } from '@/lib/store';
 import { Nivin } from '@/components/character/Nivin';
 import { StreakCalendar } from '@/components/ui/StreakCalendar';
 import { HOUR_OPTIONS, getEstimatedDays, getEstimatedCompletionDate, createStudyPlan } from '@/lib/study-plan';
-import { ALL_MODULES } from '@/lib/content/modules';
 import { getSkillReadiness, readModule1CheckpointResult, type Module1CheckpointStored } from '@/lib/spine';
+import { useSpineProgress } from '@/lib/use-spine-progress';
 import { useAuthStore } from '@/lib/auth-store';
 import { FEATURE_FLAGS, getAuthStatusMessage } from '@/lib/app-config';
 
@@ -39,6 +39,7 @@ export default function ProfilePage() {
   const router = useRouter();
   const { userProgress, resetProgress, setStudyPlan } = useGameStore();
   const { user, isLoggedIn, logout } = useAuthStore();
+  const spineProgress = useSpineProgress();
   const [mounted, setMounted] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
@@ -193,16 +194,23 @@ export default function ProfilePage() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <main id="main-content" className="min-h-screen flex items-center justify-center">
         <div className="animate-pulse">
           <div className="w-16 h-16 bg-gradient-to-br from-[#d4a520] to-[#27ae60] rounded-2xl" />
         </div>
-      </div>
+      </main>
     );
   }
 
-  const totalLessons = ALL_MODULES.reduce((acc, m) => acc + m.lessons.length, 0);
-  const completedLessons = userProgress.completedLessons.length;
+  const spineLessonBlocks = spineProgress.modules.flatMap((module) =>
+    module.blocks.filter((block) => block.kind === 'lesson')
+  );
+  const spineLessonIds = new Set(spineLessonBlocks.map((block) => block.id.replace(/^lesson-/, '')));
+  const canonicalCompletedLessons = userProgress.completedLessons.filter((lesson) =>
+    spineLessonIds.has(lesson.lessonId)
+  );
+  const totalLessons = spineLessonBlocks.length;
+  const completedLessons = canonicalCompletedLessons.length;
   const coursePercent = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
 
   const handleChangePace = (hours: number) => {
@@ -236,7 +244,7 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="px-4 py-4 max-w-5xl mx-auto md:px-8 md:py-8">
+    <main id="main-content" className="px-4 py-4 max-w-5xl mx-auto md:px-8 md:py-8">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -438,7 +446,7 @@ export default function ProfilePage() {
             </div>
             <button
               onClick={() => setShowPaceEditor(!showPaceEditor)}
-              className="text-xs text-[#d4a520] font-medium"
+              className="ag-touch-target text-xs text-[#d4a520] font-medium"
             >
               {showPaceEditor ? 'Cancel' : 'Change'}
             </button>
@@ -480,10 +488,10 @@ export default function ProfilePage() {
         </Card>
 
         {/* Activity Calendar */}
-        {userProgress.completedLessons.length > 0 && (
+        {canonicalCompletedLessons.length > 0 && (
           <Card padding="sm" className="mb-3">
             <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2">Activity</h3>
-            <StreakCalendar completedLessons={userProgress.completedLessons} />
+            <StreakCalendar completedLessons={canonicalCompletedLessons} />
           </Card>
         )}
 
@@ -496,19 +504,18 @@ export default function ProfilePage() {
             </span>
           </div>
           <div className="grid grid-cols-6 gap-1.5 md:grid-cols-9 md:gap-2">
-            {ALL_MODULES.map((module) => {
-              const completedModuleLessons = userProgress.completedLessons.filter((l) =>
-                module.lessons.some((ml) => ml.id === l.lessonId)
-              ).length;
-              const progress = (completedModuleLessons / module.lessons.length) * 100;
-              const isDone = progress === 100;
-              const hasStarted = progress > 0;
+            {spineProgress.modules.map((module) => {
+              const progress = module.requiredBlocksTotal > 0
+                ? (module.requiredBlocksDone / module.requiredBlocksTotal) * 100
+                : module.status === 'complete' ? 100 : 0;
+              const isDone = module.status === 'complete';
+              const hasStarted = module.requiredBlocksDone > 0;
               return (
                 <Link
                   key={module.id}
-                  href={`/learn/${module.id}`}
+                  href={`/course/${module.id}`}
                   title={`Module ${module.id}: ${module.title}`}
-                  className={`relative flex aspect-square flex-col items-center justify-center rounded-lg border text-center transition-all ${
+                  className={`ag-touch-target relative flex aspect-square flex-col items-center justify-center rounded-lg border text-center transition-all ${
                     isDone
                       ? 'border-emerald-400/40 bg-emerald-400/10 ring-2 ring-[#27ae60]/50 shadow-[0_0_12px_rgba(39,174,96,0.2)]'
                       : hasStarted
@@ -564,7 +571,7 @@ export default function ProfilePage() {
                   <Award className="w-5 h-5 text-[#d4a520]" />
                   A1 Exam Readiness
                 </h2>
-                <Link href="/course" className="inline-flex items-center gap-1 text-xs font-bold text-[var(--foreground)]/50 hover:text-[var(--foreground)]/80">
+                <Link href="/course" className="ag-touch-target inline-flex items-center gap-1 text-xs font-bold text-[var(--foreground)]/50 hover:text-[var(--foreground)]/80">
                   Course path <ArrowUpRight className="h-3 w-3" />
                 </Link>
               </div>
@@ -721,7 +728,7 @@ export default function ProfilePage() {
           <p className="text-xs text-[var(--foreground)]/50 mb-2.5">
             Download complete lesson scripts as PDF for offline study.
           </p>
-          <a href="/scripts" className="inline-flex items-center gap-2 bg-[#d4a520]/10 text-[#d4a520] px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-[#d4a520]/20 transition-colors">
+          <a href="/scripts" className="ag-touch-target inline-flex items-center gap-2 bg-[#d4a520]/10 text-[#d4a520] px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-[#d4a520]/20 transition-colors">
             <Download className="h-3.5 w-3.5" />
             View &amp; Download
           </a>
@@ -739,14 +746,14 @@ export default function ProfilePage() {
                 {!showLogoutConfirm ? (
                   <button
                     onClick={() => setShowLogoutConfirm(true)}
-                    className="flex w-full items-center gap-2 rounded-lg bg-orange-500/10 px-3 py-2 text-xs font-medium text-orange-400 hover:bg-orange-500/20 transition-colors"
+                    className="ag-touch-target flex w-full items-center gap-2 rounded-lg bg-orange-500/10 px-3 py-2 text-xs font-medium text-orange-400 hover:bg-orange-500/20 transition-colors"
                   >
                     <LogOut className="h-3.5 w-3.5" /> Log out
                   </button>
                 ) : (
                   <div className="flex gap-2">
-                    <button onClick={() => setShowLogoutConfirm(false)} className="flex-1 rounded-lg bg-white/5 px-3 py-2 text-xs text-[var(--foreground)]/60 hover:bg-white/10">Cancel</button>
-                    <button onClick={handleLogout} className="flex-1 rounded-lg bg-orange-500 px-3 py-2 text-xs font-medium text-white hover:bg-orange-600">Confirm logout</button>
+                    <button onClick={() => setShowLogoutConfirm(false)} className="ag-touch-target flex-1 rounded-lg bg-white/5 px-3 py-2 text-xs text-[var(--foreground)]/60 hover:bg-white/10">Cancel</button>
+                    <button onClick={handleLogout} className="ag-touch-target flex-1 rounded-lg bg-orange-500 px-3 py-2 text-xs font-medium text-white hover:bg-orange-600">Confirm logout</button>
                   </div>
                 )}
               </>
@@ -754,19 +761,19 @@ export default function ProfilePage() {
             {!showResetConfirm ? (
               <button
                 onClick={() => setShowResetConfirm(true)}
-                className="flex w-full items-center gap-2 rounded-lg bg-[#c0392b]/10 px-3 py-2 text-xs font-medium text-red-400 hover:bg-[#c0392b]/20 transition-colors"
+                className="ag-touch-target flex w-full items-center gap-2 rounded-lg bg-[#c0392b]/10 px-3 py-2 text-xs font-medium text-red-400 hover:bg-[#c0392b]/20 transition-colors"
               >
                 <RefreshCw className="h-3.5 w-3.5" /> Reset all progress
               </button>
             ) : (
               <div className="flex gap-2">
-                <button onClick={() => setShowResetConfirm(false)} className="flex-1 rounded-lg bg-white/5 px-3 py-2 text-xs text-[var(--foreground)]/60 hover:bg-white/10">Cancel</button>
-                <button onClick={handleReset} className="flex-1 rounded-lg bg-red-500 px-3 py-2 text-xs font-medium text-white hover:bg-red-600">Confirm reset</button>
+                <button onClick={() => setShowResetConfirm(false)} className="ag-touch-target flex-1 rounded-lg bg-white/5 px-3 py-2 text-xs text-[var(--foreground)]/60 hover:bg-white/10">Cancel</button>
+                <button onClick={handleReset} className="ag-touch-target flex-1 rounded-lg bg-red-500 px-3 py-2 text-xs font-medium text-white hover:bg-red-600">Confirm reset</button>
               </div>
             )}
           </div>
         </Card>
       </motion.div>
-    </div>
+    </main>
   );
 }

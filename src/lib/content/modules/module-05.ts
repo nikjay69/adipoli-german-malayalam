@@ -918,12 +918,14 @@ export const MODULE_5: Module = {
         },
         {
           id: "ex5-3-5",
-          type: "matching",
-          question: "Nivin plans his imaginary German Saturday: shop, tidy, TV, friends. Match each separable verb to its meaning:",
-          options: ["aufräumen", "einkaufen", "fernsehen", "mitkommen"],
-          correctAnswer: ["to tidy up", "to shop", "to watch TV", "to come along"],
-          explanation: "All four are separable: auf|räumen, ein|kaufen, fern|sehen, mit|kommen. Spot the stressed prefix and you've spotted the split.",
-          xpReward: 15
+          type: "free-text",
+          question: "Nivin sends Meera a voice note about his imaginary German Saturday. Write the two German sentences: 'I shop on Saturday. I tidy my room.' (einkaufen, aufräumen)",
+          correctAnswer: [
+            "Ich kaufe am Samstag ein. Ich räume mein Zimmer auf.",
+            "Am Samstag kaufe ich ein. Ich räume mein Zimmer auf."
+          ],
+          explanation: "Both verbs split in a main clause: ein|kaufen becomes 'kaufe ... ein' and auf|räumen becomes 'räume ... auf'. The conjugated verb stays near the subject; the prefix lands at the end.",
+          xpReward: 25
         },
         {
           id: "ex5-3-6",

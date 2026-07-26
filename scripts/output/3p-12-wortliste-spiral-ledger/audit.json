@@ -1,0 +1,2543 @@
+{
+  "chunk": "3p-12-wortliste-spiral-ledger",
+  "checkedOn": "2026-07-25",
+  "source": {
+    "title": "Start Deutsch 1 Wortliste",
+    "url": "https://www.goethe.de/pro/relaunch/prf/sr/A1_SD1_Wortliste_02.pdf",
+    "inventoryPages": "9-27",
+    "checkedOn": "2026-07-25",
+    "selectionRule": "318 counted main entries (half of 637, rounded down), comprising every current course SRS-card match plus 39 named high-utility authoring targets; derived entries remain passive."
+  },
+  "counts": {
+    "main": 637,
+    "derived": 59,
+    "allPrintedRows": 696,
+    "activeTarget": 318,
+    "currentCards": 302,
+    "srsAuthoringRequired": 394,
+    "themes": 11,
+    "wordGroups": 13,
+    "spiralRows": 56
+  },
+  "coverageCounts": {
+    "current-card": 302,
+    "lesson-evidence": 230,
+    "authoring-required": 164
+  },
+  "targetCounts": {
+    "active": 318,
+    "passive": 378
+  },
+  "themeCounts": {
+    "person": 45,
+    "wohnen": 28,
+    "umwelt": 13,
+    "reisen-verkehr": 32,
+    "essen-trinken": 35,
+    "einkaufen-gebrauchsartikel": 25,
+    "dienstleistungen": 31,
+    "erziehung-ausbildung-lernen": 26,
+    "arbeit-beruf": 11,
+    "freizeit-unterhaltung": 22,
+    "cross-cutting": 428
+  },
+  "activeSrsAuthoring": [
+    {
+      "id": "goethe-a1-0003",
+      "headword": "abfahren",
+      "homeLessonId": "M5L1",
+      "evidenceSourceLessonIds": []
+    },
+    {
+      "id": "goethe-a1-0006",
+      "headword": "abholen",
+      "homeLessonId": "M7L6",
+      "evidenceSourceLessonIds": [
+        "17-5"
+      ]
+    },
+    {
+      "id": "goethe-a1-0011",
+      "headword": "allein",
+      "homeLessonId": "M7L2",
+      "evidenceSourceLessonIds": [
+        "17-3"
+      ]
+    },
+    {
+      "id": "goethe-a1-0012",
+      "headword": "also",
+      "homeLessonId": "M1L1",
+      "evidenceSourceLessonIds": [
+        "1-3",
+        "2-1",
+        "2-2",
+        "2-3",
+        "3-4",
+        "4-1",
+        "4-3",
+        "4-4",
+        "5-2",
+        "6-1",
+        "7-1",
+        "7-2",
+        "8-1",
+        "8-2",
+        "11-2",
+        "11-3",
+        "13-2",
+        "13-3",
+        "14-4",
+        "15-1",
+        "15-2",
+        "16-4",
+        "17-3",
+        "17-6",
+        "18-3"
+      ]
+    },
+    {
+      "id": "goethe-a1-0022",
+      "headword": "ankommen",
+      "homeLessonId": "M5L3",
+      "evidenceSourceLessonIds": []
+    },
+    {
+      "id": "goethe-a1-0026",
+      "headword": "(sich) anmelden",
+      "homeLessonId": "M7L5",
+      "evidenceSourceLessonIds": [
+        "17-4"
+      ]
+    },
+    {
+      "id": "goethe-a1-0035",
+      "headword": "antworten",
+      "homeLessonId": "M1L1",
+      "evidenceSourceLessonIds": [
+        "1-3",
+        "17-3",
+        "17-6"
+      ]
+    },
+    {
+      "id": "goethe-a1-0040",
+      "headword": "der Apfel, -Ä",
+      "homeLessonId": "M4L3",
+      "evidenceSourceLessonIds": []
+    },
+    {
+      "id": "goethe-a1-0076",
+      "headword": "die Bäckerei",
+      "homeLessonId": "M1L1",
+      "evidenceSourceLessonIds": [
+        "1-3",
+        "1-4",
+        "6-5",
+        "16-2",
+        "16-5",
+        "17-3"
+      ]
+    },
+    {
+      "id": "goethe-a1-0077",
+      "headword": "das Bad",
+      "homeLessonId": "M2L6",
+      "evidenceSourceLessonIds": [
+        "3-5",
+        "5-4",
+        "8-3",
+        "10-1",
+        "10-2",
+        "14-3",
+        "16-5",
+        "17-4",
+        "17-5",
+        "17-6"
+      ]
+    },
+    {
+      "id": "goethe-a1-0084",
+      "headword": "die Banane, -n",
+      "homeLessonId": "M4L6",
+      "evidenceSourceLessonIds": [
+        "7-3"
+      ]
+    },
+    {
+      "id": "goethe-a1-0085",
+      "headword": "die Bank",
+      "homeLessonId": "M2L6",
+      "evidenceSourceLessonIds": [
+        "3-6",
+        "9-3",
+        "14-1",
+        "14-2",
+        "14-3"
+      ]
+    },
+    {
+      "id": "goethe-a1-0087",
+      "headword": "der Bauch",
+      "homeLessonId": "M5L6",
+      "evidenceSourceLessonIds": [
+        "10-1",
+        "10-2"
+      ]
+    },
+    {
+      "id": "goethe-a1-0090",
+      "headword": "bedeuten",
+      "homeLessonId": "M8L1",
+      "evidenceSourceLessonIds": []
+    },
+    {
+      "id": "goethe-a1-0092",
+      "headword": "bei",
+      "homeLessonId": "M1L1",
+      "evidenceSourceLessonIds": [
+        "1-3",
+        "2-3",
+        "2-5",
+        "3-3",
+        "4-5",
+        "5-1",
+        "9-3",
+        "11-1",
+        "11-5",
+        "14-2",
+        "14-3",
+        "14-4",
+        "16-1",
+        "17-2",
+        "17-3",
+        "17-4",
+        "17-6",
+        "18-2"
+      ]
+    },
+    {
+      "id": "goethe-a1-0093",
+      "headword": "beide",
+      "homeLessonId": "M2L1",
+      "evidenceSourceLessonIds": []
+    },
+    {
+      "id": "goethe-a1-0099",
+      "headword": "bekommen",
+      "homeLessonId": "M5L1",
+      "evidenceSourceLessonIds": [
+        "9-2",
+        "14-3",
+        "18-7"
+      ]
+    },
+    {
+      "id": "goethe-a1-0120",
+      "headword": "bleiben",
+      "homeLessonId": "M6L6",
+      "evidenceSourceLessonIds": [
+        "12-3",
+        "13-2",
+        "17-3",
+        "17-4"
+      ]
+    },
+    {
+      "id": "goethe-a1-0128",
+      "headword": "der Brief, -e",
+      "homeLessonId": "M7L3",
+      "evidenceSourceLessonIds": [
+        "13-3",
+        "14-2"
+      ]
+    },
+    {
+      "id": "goethe-a1-0129",
+      "headword": "die Briefmarke, -n",
+      "homeLessonId": "M7L3",
+      "evidenceSourceLessonIds": []
+    },
+    {
+      "id": "goethe-a1-0130",
+      "headword": "bringen",
+      "homeLessonId": "M1L1",
+      "evidenceSourceLessonIds": [
+        "1-1",
+        "1-3",
+        "1-5",
+        "1-6",
+        "2-1",
+        "11-4",
+        "14-2",
+        "17-5",
+        "17-6",
+        "18-2",
+        "18-5"
+      ]
+    },
+    {
+      "id": "goethe-a1-0145",
+      "headword": "da",
+      "homeLessonId": "M1L1",
+      "evidenceSourceLessonIds": [
+        "1-3",
+        "1-4",
+        "2-2",
+        "3-4",
+        "6-1",
+        "17-2",
+        "17-5",
+        "18-6",
+        "18-7"
+      ]
+    },
+    {
+      "id": "goethe-a1-0155",
+      "headword": "denn",
+      "homeLessonId": "M6L6",
+      "evidenceSourceLessonIds": [
+        "12-3",
+        "17-3"
+      ]
+    },
+    {
+      "id": "goethe-a1-0157",
+      "headword": "dich",
+      "homeLessonId": "M3L6",
+      "evidenceSourceLessonIds": [
+        "5-2",
+        "12-4",
+        "13-3",
+        "16-1",
+        "16-3",
+        "17-2",
+        "17-6",
+        "18-2"
+      ]
+    },
+    {
+      "id": "goethe-a1-0192",
+      "headword": "die E-Mail, -s",
+      "homeLessonId": "M1L4",
+      "evidenceSourceLessonIds": [
+        "1-6",
+        "11-3",
+        "11-5",
+        "14-1",
+        "17-4",
+        "17-5",
+        "17-6",
+        "18-2",
+        "18-6"
+      ]
+    },
+    {
+      "id": "goethe-a1-0199",
+      "headword": "er",
+      "homeLessonId": "M1L7",
+      "evidenceSourceLessonIds": [
+        "1-5",
+        "2-1",
+        "2-3",
+        "2-4",
+        "3-5",
+        "4-1",
+        "4-2",
+        "4-3",
+        "4-4",
+        "4-5",
+        "5-1",
+        "5-2",
+        "6-4",
+        "7-5",
+        "8-4",
+        "9-5",
+        "10-2",
+        "11-1",
+        "11-4",
+        "13-1",
+        "13-2",
+        "13-3",
+        "16-1",
+        "16-2",
+        "16-3",
+        "16-4",
+        "17-3",
+        "17-5",
+        "17-6",
+        "18-2",
+        "18-4"
+      ]
+    },
+    {
+      "id": "goethe-a1-0204",
+      "headword": "erzählen",
+      "homeLessonId": "M6L3",
+      "evidenceSourceLessonIds": [
+        "11-5",
+        "13-3"
+      ]
+    },
+    {
+      "id": "goethe-a1-0213",
+      "headword": "falsch",
+      "homeLessonId": "M5L5",
+      "evidenceSourceLessonIds": [
+        "10-3",
+        "15-3",
+        "17-1",
+        "17-2",
+        "17-5",
+        "17-6"
+      ]
+    },
+    {
+      "id": "goethe-a1-0224",
+      "headword": "fertig",
+      "homeLessonId": "M4L4",
+      "evidenceSourceLessonIds": [
+        "7-1",
+        "10-3"
+      ]
+    },
+    {
+      "id": "goethe-a1-0266",
+      "headword": "das Geld",
+      "homeLessonId": "M4L2",
+      "evidenceSourceLessonIds": [
+        "6-3",
+        "7-2",
+        "17-6"
+      ]
+    },
+    {
+      "id": "goethe-a1-0342",
+      "headword": "ja",
+      "homeLessonId": "M1L5",
+      "evidenceSourceLessonIds": [
+        "1-4",
+        "1-5",
+        "2-2",
+        "2-4",
+        "2-5",
+        "4-2",
+        "4-3",
+        "5-1",
+        "5-2",
+        "5-3",
+        "6-4",
+        "7-4",
+        "12-2",
+        "12-3",
+        "17-3",
+        "17-4",
+        "17-6",
+        "18-3",
+        "18-4",
+        "18-5",
+        "18-6"
+      ]
+    },
+    {
+      "id": "goethe-a1-0360",
+      "headword": "das Kind, -er",
+      "homeLessonId": "M3L1",
+      "evidenceSourceLessonIds": [
+        "4-1",
+        "4-2",
+        "4-3",
+        "4-4",
+        "10-2",
+        "11-3",
+        "14-4",
+        "15-4",
+        "16-1",
+        "16-4",
+        "17-5"
+      ]
+    },
+    {
+      "id": "goethe-a1-0423",
+      "headword": "man",
+      "homeLessonId": "M1L2",
+      "evidenceSourceLessonIds": [
+        "1-1",
+        "1-2",
+        "4-1",
+        "6-3",
+        "8-3",
+        "9-2",
+        "9-5",
+        "11-1",
+        "12-2",
+        "14-1",
+        "14-2",
+        "15-1",
+        "15-4",
+        "16-1",
+        "16-5",
+        "17-4",
+        "17-5"
+      ]
+    },
+    {
+      "id": "goethe-a1-0463",
+      "headword": "nur",
+      "homeLessonId": "M2L3",
+      "evidenceSourceLessonIds": [
+        "2-4",
+        "2-5",
+        "3-2",
+        "7-2",
+        "14-3",
+        "17-3",
+        "17-4",
+        "17-5",
+        "17-6",
+        "18-6"
+      ]
+    },
+    {
+      "id": "goethe-a1-0514",
+      "headword": "richtig",
+      "homeLessonId": "M1L1",
+      "evidenceSourceLessonIds": [
+        "1-2",
+        "1-3",
+        "1-6",
+        "3-2",
+        "8-4",
+        "17-1",
+        "17-2",
+        "17-4",
+        "17-5",
+        "17-6",
+        "18-4"
+      ]
+    },
+    {
+      "id": "goethe-a1-0540",
+      "headword": "schreiben",
+      "homeLessonId": "M1L4",
+      "evidenceSourceLessonIds": [
+        "1-4",
+        "1-6",
+        "2-1",
+        "3-6",
+        "8-4",
+        "11-3",
+        "13-3",
+        "14-4",
+        "16-5",
+        "17-1",
+        "17-4",
+        "17-5",
+        "17-6",
+        "18-1",
+        "18-2",
+        "18-4",
+        "18-5",
+        "18-6",
+        "18-7"
+      ]
+    },
+    {
+      "id": "goethe-a1-0563",
+      "headword": "so",
+      "homeLessonId": "M1L2",
+      "evidenceSourceLessonIds": [
+        "1-1",
+        "2-1",
+        "2-2",
+        "2-3",
+        "2-4",
+        "3-1",
+        "3-2",
+        "3-5",
+        "4-2",
+        "4-3",
+        "4-4",
+        "4-5",
+        "5-2",
+        "6-3",
+        "6-4",
+        "6-5",
+        "7-5",
+        "8-1",
+        "8-2",
+        "8-4",
+        "9-1",
+        "9-2",
+        "9-3",
+        "9-4",
+        "9-5",
+        "10-2",
+        "11-2",
+        "11-4",
+        "12-3",
+        "13-2",
+        "13-3",
+        "14-3",
+        "15-2",
+        "16-2",
+        "16-3",
+        "16-5",
+        "17-4",
+        "17-5",
+        "17-6",
+        "18-6"
+      ]
+    },
+    {
+      "id": "goethe-a1-0637",
+      "headword": "viel",
+      "homeLessonId": "M1L5",
+      "evidenceSourceLessonIds": [
+        "1-4",
+        "2-5",
+        "3-3",
+        "3-4",
+        "3-6",
+        "5-1",
+        "6-1",
+        "7-1",
+        "7-2",
+        "7-3",
+        "7-5",
+        "9-2",
+        "10-5",
+        "11-4",
+        "12-1",
+        "12-2",
+        "12-3",
+        "13-1",
+        "13-3",
+        "13-5",
+        "16-4",
+        "17-1",
+        "17-3",
+        "17-5",
+        "17-6",
+        "18-2",
+        "18-6",
+        "18-7"
+      ]
+    },
+    {
+      "id": "goethe-a1-0663",
+      "headword": "werden",
+      "homeLessonId": "M6L1",
+      "evidenceSourceLessonIds": [
+        "11-1",
+        "12-2",
+        "13-2",
+        "16-4",
+        "17-2",
+        "17-3",
+        "17-4",
+        "17-5",
+        "18-6"
+      ]
+    }
+  ],
+  "activeLessonAuthoring": [
+    {
+      "id": "goethe-a1-0003",
+      "headword": "abfahren",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M5L1",
+      "sourcePdfPage": 9
+    },
+    {
+      "id": "goethe-a1-0022",
+      "headword": "ankommen",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M5L3",
+      "sourcePdfPage": 9
+    },
+    {
+      "id": "goethe-a1-0040",
+      "headword": "der Apfel, -Ä",
+      "themeId": "essen-trinken",
+      "homeLessonId": "M4L3",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0090",
+      "headword": "bedeuten",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0093",
+      "headword": "beide",
+      "themeId": "person",
+      "homeLessonId": "M2L1",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0129",
+      "headword": "die Briefmarke, -n",
+      "themeId": "dienstleistungen",
+      "homeLessonId": "M7L3",
+      "sourcePdfPage": 12
+    }
+  ],
+  "passiveAuthoringGaps": [
+    {
+      "id": "goethe-a1-0003",
+      "headword": "abfahren",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M5L1",
+      "sourcePdfPage": 9
+    },
+    {
+      "id": "goethe-a1-0005",
+      "headword": "abgeben",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L5",
+      "sourcePdfPage": 9
+    },
+    {
+      "id": "goethe-a1-0018",
+      "headword": "ander-",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 9
+    },
+    {
+      "id": "goethe-a1-0021",
+      "headword": "anklicken",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 9
+    },
+    {
+      "id": "goethe-a1-0022",
+      "headword": "ankommen",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M5L3",
+      "sourcePdfPage": 9
+    },
+    {
+      "id": "goethe-a1-0024",
+      "headword": "ankreuzen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M5L4",
+      "sourcePdfPage": 9
+    },
+    {
+      "id": "goethe-a1-0030",
+      "headword": "der Anruf, -e",
+      "themeId": "dienstleistungen",
+      "homeLessonId": "M7L4",
+      "sourcePdfPage": 9
+    },
+    {
+      "id": "goethe-a1-0031",
+      "headword": "der Anruf-beantworter",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 9
+    },
+    {
+      "id": "goethe-a1-0033",
+      "headword": "der Anschluss",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M5L3",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0034",
+      "headword": "an sein",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0040",
+      "headword": "der Apfel, -Ä",
+      "themeId": "essen-trinken",
+      "homeLessonId": "M4L3",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0041",
+      "headword": "der Appetit",
+      "themeId": "essen-trinken",
+      "homeLessonId": "M4L2",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0044",
+      "headword": "arbeitslos",
+      "themeId": "arbeit-beruf",
+      "homeLessonId": "M6L1",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0045",
+      "headword": "der Arbeitsplatz, -ä, e",
+      "themeId": "arbeit-beruf",
+      "homeLessonId": "M2L3",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0051",
+      "headword": "aufhören",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0052",
+      "headword": "auf sein",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0057",
+      "headword": "der Ausflug",
+      "themeId": "freizeit-unterhaltung",
+      "homeLessonId": "M7L6",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0061",
+      "headword": "das Ausland",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0062",
+      "headword": "der Ausländer, -",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0063",
+      "headword": "ausländisch",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0064",
+      "headword": "ausmachen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0065",
+      "headword": "die Aussage, -n",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0066",
+      "headword": "aussehen",
+      "themeId": "person",
+      "homeLessonId": "M3L1",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0067",
+      "headword": "aus sein",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0068",
+      "headword": "aussteigen",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0070",
+      "headword": "(sich) ausziehen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0074",
+      "headword": "automatisch",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 10
+    },
+    {
+      "id": "goethe-a1-0075",
+      "headword": "das Baby, -s",
+      "themeId": "person",
+      "homeLessonId": "M2L1",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0078",
+      "headword": "baden",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M5L4",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0081",
+      "headword": "der Bahnsteig",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0088",
+      "headword": "der Baum, -ä, e",
+      "themeId": "umwelt",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0089",
+      "headword": "der Beamte, -n",
+      "themeId": "dienstleistungen",
+      "homeLessonId": "M7L4",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0090",
+      "headword": "bedeuten",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0093",
+      "headword": "beide",
+      "themeId": "person",
+      "homeLessonId": "M2L1",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0095",
+      "headword": "das Beispiel, -e",
+      "themeId": "erziehung-ausbildung-lernen",
+      "homeLessonId": "M6L1",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0096",
+      "headword": "zum Beispiel/z. B.",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0097",
+      "headword": "bekannt",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0098",
+      "headword": "der/die Bekannte, -n",
+      "themeId": "person",
+      "homeLessonId": "M2L7",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0102",
+      "headword": "besetzt",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0103",
+      "headword": "besichtigen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 11
+    },
+    {
+      "id": "goethe-a1-0113",
+      "headword": "die Birne, -n",
+      "themeId": "essen-trinken",
+      "homeLessonId": "M4L3",
+      "sourcePdfPage": 12
+    },
+    {
+      "id": "goethe-a1-0119",
+      "headword": "bitter",
+      "themeId": "essen-trinken",
+      "homeLessonId": "M4L1",
+      "sourcePdfPage": 12
+    },
+    {
+      "id": "goethe-a1-0121",
+      "headword": "der Bleistift, -e",
+      "themeId": "erziehung-ausbildung-lernen",
+      "homeLessonId": "M6L3",
+      "sourcePdfPage": 12
+    },
+    {
+      "id": "goethe-a1-0122",
+      "headword": "der Blick",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 12
+    },
+    {
+      "id": "goethe-a1-0124",
+      "headword": "der Bogen",
+      "themeId": "erziehung-ausbildung-lernen",
+      "homeLessonId": "M2L3",
+      "sourcePdfPage": 12
+    },
+    {
+      "id": "goethe-a1-0125",
+      "headword": "böse",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M2L7",
+      "sourcePdfPage": 12
+    },
+    {
+      "id": "goethe-a1-0127",
+      "headword": "breit",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 12
+    },
+    {
+      "id": "goethe-a1-0129",
+      "headword": "die Briefmarke, -n",
+      "themeId": "dienstleistungen",
+      "homeLessonId": "M7L3",
+      "sourcePdfPage": 12
+    },
+    {
+      "id": "goethe-a1-0141",
+      "headword": "die CD, -s",
+      "themeId": "freizeit-unterhaltung",
+      "homeLessonId": "M7L7",
+      "sourcePdfPage": 12
+    },
+    {
+      "id": "goethe-a1-0143",
+      "headword": "circa/ca.",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 12
+    },
+    {
+      "id": "goethe-a1-0146",
+      "headword": "die Dame, -n",
+      "themeId": "person",
+      "homeLessonId": "M2L2",
+      "sourcePdfPage": 12
+    },
+    {
+      "id": "goethe-a1-0147",
+      "headword": "daneben",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 13
+    },
+    {
+      "id": "goethe-a1-0158",
+      "headword": "dies-",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 13
+    },
+    {
+      "id": "goethe-a1-0160",
+      "headword": "die Disco",
+      "themeId": "freizeit-unterhaltung",
+      "homeLessonId": "M7L6",
+      "sourcePdfPage": 13
+    },
+    {
+      "id": "goethe-a1-0163",
+      "headword": "das Dorf, -ö, er",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 13
+    },
+    {
+      "id": "goethe-a1-0165",
+      "headword": "draußen",
+      "themeId": "umwelt",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 13
+    },
+    {
+      "id": "goethe-a1-0166",
+      "headword": "drucken",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 13
+    },
+    {
+      "id": "goethe-a1-0168",
+      "headword": "drücken",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 13
+    },
+    {
+      "id": "goethe-a1-0177",
+      "headword": "die Ehefrau, -en/",
+      "themeId": "person",
+      "homeLessonId": "M2L2",
+      "sourcePdfPage": 13
+    },
+    {
+      "id": "goethe-a1-0178",
+      "headword": "der Ehemann, ä, er",
+      "themeId": "person",
+      "homeLessonId": "M2L1",
+      "sourcePdfPage": 13
+    },
+    {
+      "id": "goethe-a1-0180",
+      "headword": "eilig",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M5L4",
+      "sourcePdfPage": 13
+    },
+    {
+      "id": "goethe-a1-0188",
+      "headword": "einsteigen",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 14
+    },
+    {
+      "id": "goethe-a1-0189",
+      "headword": "der Eintritt",
+      "themeId": "freizeit-unterhaltung",
+      "homeLessonId": "M6L4",
+      "sourcePdfPage": 14
+    },
+    {
+      "id": "goethe-a1-0195",
+      "headword": "enden",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M5L4",
+      "sourcePdfPage": 14
+    },
+    {
+      "id": "goethe-a1-0202",
+      "headword": "erlauben",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M2L7",
+      "sourcePdfPage": 14
+    },
+    {
+      "id": "goethe-a1-0210",
+      "headword": "der Fahrer",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M5L2",
+      "sourcePdfPage": 14
+    },
+    {
+      "id": "goethe-a1-0218",
+      "headword": "das Fax, -e",
+      "themeId": "dienstleistungen",
+      "homeLessonId": "M5L5",
+      "sourcePdfPage": 14
+    },
+    {
+      "id": "goethe-a1-0221",
+      "headword": "fehlen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 14
+    },
+    {
+      "id": "goethe-a1-0234",
+      "headword": "abfliegen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 15
+    },
+    {
+      "id": "goethe-a1-0239",
+      "headword": "das Foto, -s",
+      "themeId": "freizeit-unterhaltung",
+      "homeLessonId": "M6L6",
+      "sourcePdfPage": 15
+    },
+    {
+      "id": "goethe-a1-0245",
+      "headword": "fremd",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 15
+    },
+    {
+      "id": "goethe-a1-0248",
+      "headword": "früher",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M5L4",
+      "sourcePdfPage": 15
+    },
+    {
+      "id": "goethe-a1-0251",
+      "headword": "die Führung",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 15
+    },
+    {
+      "id": "goethe-a1-0256",
+      "headword": "der Gast, -ä, e",
+      "themeId": "freizeit-unterhaltung",
+      "homeLessonId": "M6L6",
+      "sourcePdfPage": 15
+    },
+    {
+      "id": "goethe-a1-0258",
+      "headword": "geboren",
+      "themeId": "person",
+      "homeLessonId": "M3L1",
+      "sourcePdfPage": 15
+    },
+    {
+      "id": "goethe-a1-0259",
+      "headword": "das Geburtsjahr",
+      "themeId": "person",
+      "homeLessonId": "M2L1",
+      "sourcePdfPage": 15
+    },
+    {
+      "id": "goethe-a1-0269",
+      "headword": "gerade",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0271",
+      "headword": "gern(e)",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0277",
+      "headword": "gestorben",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M5L4",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0279",
+      "headword": "das Gewicht",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0280",
+      "headword": "gewinnen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L5",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0282",
+      "headword": "glauben",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0286",
+      "headword": "glücklich",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0290",
+      "headword": "grillen",
+      "themeId": "freizeit-unterhaltung",
+      "homeLessonId": "M7L6",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0293",
+      "headword": "die Großeltern (pl.)",
+      "themeId": "person",
+      "homeLessonId": "M2L3",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0296",
+      "headword": "die Gruppe, -n",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0301",
+      "headword": "das Haar, -e",
+      "themeId": "person",
+      "homeLessonId": "M2L2",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0303",
+      "headword": "das Hähnchen, -",
+      "themeId": "essen-trinken",
+      "homeLessonId": "M4L2",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0304",
+      "headword": "die Halbpension",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L5",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0305",
+      "headword": "die Halle",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 16
+    },
+    {
+      "id": "goethe-a1-0307",
+      "headword": "halten",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M5L4",
+      "sourcePdfPage": 17
+    },
+    {
+      "id": "goethe-a1-0308",
+      "headword": "die Haltestelle",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M5L2",
+      "sourcePdfPage": 17
+    },
+    {
+      "id": "goethe-a1-0312",
+      "headword": "die Hausaufgabe,-n",
+      "themeId": "erziehung-ausbildung-lernen",
+      "homeLessonId": "M6L3",
+      "sourcePdfPage": 17
+    },
+    {
+      "id": "goethe-a1-0313",
+      "headword": "die Hausfrau, -en/",
+      "themeId": "person",
+      "homeLessonId": "M3L1",
+      "sourcePdfPage": 17
+    },
+    {
+      "id": "goethe-a1-0314",
+      "headword": "der Hausmann",
+      "themeId": "person",
+      "homeLessonId": "M2L1",
+      "sourcePdfPage": 17
+    },
+    {
+      "id": "goethe-a1-0316",
+      "headword": "heiraten",
+      "themeId": "person",
+      "homeLessonId": "M2L2",
+      "sourcePdfPage": 17
+    },
+    {
+      "id": "goethe-a1-0319",
+      "headword": "hell",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M5L4",
+      "sourcePdfPage": 17
+    },
+    {
+      "id": "goethe-a1-0329",
+      "headword": "die Hochzeit",
+      "themeId": "person",
+      "homeLessonId": "M7L1",
+      "sourcePdfPage": 17
+    },
+    {
+      "id": "goethe-a1-0336",
+      "headword": "ihr/ihm/ihn",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 17
+    },
+    {
+      "id": "goethe-a1-0344",
+      "headword": "jed-",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 18
+    },
+    {
+      "id": "goethe-a1-0347",
+      "headword": "der Jugendliche, -n",
+      "themeId": "person",
+      "homeLessonId": "M2L7",
+      "sourcePdfPage": 18
+    },
+    {
+      "id": "goethe-a1-0353",
+      "headword": "(Kredit)-Karte, -n",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 18
+    },
+    {
+      "id": "goethe-a1-0358",
+      "headword": "kennen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M2L7",
+      "sourcePdfPage": 18
+    },
+    {
+      "id": "goethe-a1-0359",
+      "headword": "kennenlernen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 18
+    },
+    {
+      "id": "goethe-a1-0361",
+      "headword": "der Kindergarten",
+      "themeId": "erziehung-ausbildung-lernen",
+      "homeLessonId": "M1L2",
+      "sourcePdfPage": 18
+    },
+    {
+      "id": "goethe-a1-0363",
+      "headword": "der Kiosk",
+      "themeId": "dienstleistungen",
+      "homeLessonId": "M5L5",
+      "sourcePdfPage": 18
+    },
+    {
+      "id": "goethe-a1-0377",
+      "headword": "kriegen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L5",
+      "sourcePdfPage": 18
+    },
+    {
+      "id": "goethe-a1-0382",
+      "headword": "kulturell",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0383",
+      "headword": "sich kümmern",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0387",
+      "headword": "lachen",
+      "themeId": "freizeit-unterhaltung",
+      "homeLessonId": "M6L5",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0397",
+      "headword": "die Lebens-mittel (pl.)",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M2L7",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0401",
+      "headword": "leicht",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M2L7",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0406",
+      "headword": "letzt-",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0407",
+      "headword": "die Leute (pl.)",
+      "themeId": "person",
+      "homeLessonId": "M3L2",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0409",
+      "headword": "lieb-",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0410",
+      "headword": "lieben",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M5L4",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0412",
+      "headword": "Lieblings-",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0413",
+      "headword": "das Lied, -er",
+      "themeId": "freizeit-unterhaltung",
+      "homeLessonId": "M6L5",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0416",
+      "headword": "der Lkw, -s",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M5L3",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0417",
+      "headword": "das Lokal",
+      "themeId": "essen-trinken",
+      "homeLessonId": "M4L2",
+      "sourcePdfPage": 19
+    },
+    {
+      "id": "goethe-a1-0426",
+      "headword": "die Maschine, -n",
+      "themeId": "einkaufen-gebrauchsartikel",
+      "homeLessonId": "M4L7",
+      "sourcePdfPage": 20
+    },
+    {
+      "id": "goethe-a1-0430",
+      "headword": "meist-",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 20
+    },
+    {
+      "id": "goethe-a1-0431",
+      "headword": "der Mensch, -en",
+      "themeId": "person",
+      "homeLessonId": "M2L3",
+      "sourcePdfPage": 20
+    },
+    {
+      "id": "goethe-a1-0438",
+      "headword": "mitmachen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M2L7",
+      "sourcePdfPage": 20
+    },
+    {
+      "id": "goethe-a1-0439",
+      "headword": "mitnehmen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 20
+    },
+    {
+      "id": "goethe-a1-0452",
+      "headword": "nächst-",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 20
+    },
+    {
+      "id": "goethe-a1-0465",
+      "headword": "oben",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 21
+    },
+    {
+      "id": "goethe-a1-0472",
+      "headword": "das Öl",
+      "themeId": "essen-trinken",
+      "homeLessonId": "M4L2",
+      "sourcePdfPage": 21
+    },
+    {
+      "id": "goethe-a1-0478",
+      "headword": "die Papiere (pl.)",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 21
+    },
+    {
+      "id": "goethe-a1-0480",
+      "headword": "die Partnerin, -nen",
+      "themeId": "person",
+      "homeLessonId": "M2L1",
+      "sourcePdfPage": 21
+    },
+    {
+      "id": "goethe-a1-0487",
+      "headword": "die Pommes frites (pl.)",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 21
+    },
+    {
+      "id": "goethe-a1-0490",
+      "headword": "das Praktikum",
+      "themeId": "erziehung-ausbildung-lernen",
+      "homeLessonId": "M2L3",
+      "sourcePdfPage": 21
+    },
+    {
+      "id": "goethe-a1-0494",
+      "headword": "der Prospekt, -e",
+      "themeId": "einkaufen-gebrauchsartikel",
+      "homeLessonId": "M4L4",
+      "sourcePdfPage": 21
+    },
+    {
+      "id": "goethe-a1-0498",
+      "headword": "Rad fahren",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 22
+    },
+    {
+      "id": "goethe-a1-0509",
+      "headword": "der Reiseführer",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M5L3",
+      "sourcePdfPage": 22
+    },
+    {
+      "id": "goethe-a1-0515",
+      "headword": "riechen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M2L7",
+      "sourcePdfPage": 22
+    },
+    {
+      "id": "goethe-a1-0520",
+      "headword": "der Salat",
+      "themeId": "essen-trinken",
+      "homeLessonId": "M4L3",
+      "sourcePdfPage": 22
+    },
+    {
+      "id": "goethe-a1-0525",
+      "headword": "scheinen",
+      "themeId": "umwelt",
+      "homeLessonId": "M7L5",
+      "sourcePdfPage": 22
+    },
+    {
+      "id": "goethe-a1-0528",
+      "headword": "der Schinken, –",
+      "themeId": "essen-trinken",
+      "homeLessonId": "M4L4",
+      "sourcePdfPage": 22
+    },
+    {
+      "id": "goethe-a1-0531",
+      "headword": "schließen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 22
+    },
+    {
+      "id": "goethe-a1-0541",
+      "headword": "der Schuh, -e",
+      "themeId": "einkaufen-gebrauchsartikel",
+      "homeLessonId": "M4L5",
+      "sourcePdfPage": 23
+    },
+    {
+      "id": "goethe-a1-0550",
+      "headword": "die Sehenswürdigkeit,",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M5L4",
+      "sourcePdfPage": 23
+    },
+    {
+      "id": "goethe-a1-0553",
+      "headword": "an sein",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 23
+    },
+    {
+      "id": "goethe-a1-0554",
+      "headword": "auf sein",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 23
+    },
+    {
+      "id": "goethe-a1-0555",
+      "headword": "weg sein",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M8L1",
+      "sourcePdfPage": 23
+    },
+    {
+      "id": "goethe-a1-0558",
+      "headword": "selbstständig",
+      "themeId": "arbeit-beruf",
+      "homeLessonId": "M6L1",
+      "sourcePdfPage": 23
+    },
+    {
+      "id": "goethe-a1-0603",
+      "headword": "die Toilette, -en",
+      "themeId": "wohnen",
+      "homeLessonId": "M3L4",
+      "sourcePdfPage": 24
+    },
+    {
+      "id": "goethe-a1-0604",
+      "headword": "die Tomate, -n",
+      "themeId": "essen-trinken",
+      "homeLessonId": "M4L4",
+      "sourcePdfPage": 24
+    },
+    {
+      "id": "goethe-a1-0605",
+      "headword": "tot",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 24
+    },
+    {
+      "id": "goethe-a1-0613",
+      "headword": "übernachten",
+      "themeId": "reisen-verkehr",
+      "homeLessonId": "M5L3",
+      "sourcePdfPage": 24
+    },
+    {
+      "id": "goethe-a1-0614",
+      "headword": "überweisen",
+      "themeId": "dienstleistungen",
+      "homeLessonId": "M7L3",
+      "sourcePdfPage": 24
+    },
+    {
+      "id": "goethe-a1-0617",
+      "headword": "umziehen",
+      "themeId": "wohnen",
+      "homeLessonId": "M3L5",
+      "sourcePdfPage": 24
+    },
+    {
+      "id": "goethe-a1-0623",
+      "headword": "unterschreiben",
+      "themeId": "dienstleistungen",
+      "homeLessonId": "M5L5",
+      "sourcePdfPage": 25
+    },
+    {
+      "id": "goethe-a1-0628",
+      "headword": "verdienen",
+      "themeId": "arbeit-beruf",
+      "homeLessonId": "M6L3",
+      "sourcePdfPage": 25
+    },
+    {
+      "id": "goethe-a1-0636",
+      "headword": "der Verwandte, -n",
+      "themeId": "person",
+      "homeLessonId": "M2L2",
+      "sourcePdfPage": 25
+    },
+    {
+      "id": "goethe-a1-0644",
+      "headword": "die Vorwahl",
+      "themeId": "dienstleistungen",
+      "homeLessonId": "M5L7",
+      "sourcePdfPage": 25
+    },
+    {
+      "id": "goethe-a1-0651",
+      "headword": "was für ein",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M5L4",
+      "sourcePdfPage": 25
+    },
+    {
+      "id": "goethe-a1-0654",
+      "headword": "weh tun",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L7",
+      "sourcePdfPage": 25
+    },
+    {
+      "id": "goethe-a1-0659",
+      "headword": "welch-",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 26
+    },
+    {
+      "id": "goethe-a1-0672",
+      "headword": "der Wind",
+      "themeId": "umwelt",
+      "homeLessonId": "M6L5",
+      "sourcePdfPage": 26
+    },
+    {
+      "id": "goethe-a1-0674",
+      "headword": "wissen",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 26
+    },
+    {
+      "id": "goethe-a1-0686",
+      "headword": "zurzeit",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M3L6",
+      "sourcePdfPage": 26
+    },
+    {
+      "id": "goethe-a1-0688",
+      "headword": "die Zigarette, -n",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M2L7",
+      "sourcePdfPage": 26
+    },
+    {
+      "id": "goethe-a1-0692",
+      "headword": "zufrieden",
+      "themeId": "cross-cutting",
+      "homeLessonId": "M1L6",
+      "sourcePdfPage": 27
+    }
+  ],
+  "spiralRows": [
+    {
+      "lessonId": "M1L1",
+      "sourceLessonIds": [
+        "1-3"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 52,
+      "laterReturns": [
+        "M2L1",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M1L2",
+      "sourceLessonIds": [
+        "1-1"
+      ],
+      "srsCardCount": 11,
+      "wortlisteHomeCount": 22,
+      "laterReturns": [
+        "M2L2",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M1L3",
+      "sourceLessonIds": [
+        "1-2"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 32,
+      "laterReturns": [
+        "M2L3",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M1L4",
+      "sourceLessonIds": [
+        "1-3",
+        "1-6"
+      ],
+      "srsCardCount": 20,
+      "wortlisteHomeCount": 24,
+      "laterReturns": [
+        "M2L4",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M1L5",
+      "sourceLessonIds": [
+        "1-4"
+      ],
+      "srsCardCount": 11,
+      "wortlisteHomeCount": 28,
+      "laterReturns": [
+        "M2L5",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M1L6",
+      "sourceLessonIds": [
+        "1-4"
+      ],
+      "srsCardCount": 11,
+      "wortlisteHomeCount": 18,
+      "laterReturns": [
+        "M2L6",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M1L7",
+      "sourceLessonIds": [
+        "1-5"
+      ],
+      "srsCardCount": 12,
+      "wortlisteHomeCount": 17,
+      "laterReturns": [
+        "M2L7",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M2L1",
+      "sourceLessonIds": [
+        "2-1"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 10,
+      "laterReturns": [
+        "M3L1",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M2L2",
+      "sourceLessonIds": [
+        "2-2"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 12,
+      "laterReturns": [
+        "M3L2",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M2L3",
+      "sourceLessonIds": [
+        "2-3",
+        "2-4"
+      ],
+      "srsCardCount": 20,
+      "wortlisteHomeCount": 18,
+      "laterReturns": [
+        "M3L3",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M2L4",
+      "sourceLessonIds": [
+        "3-1",
+        "3-2"
+      ],
+      "srsCardCount": 21,
+      "wortlisteHomeCount": 13,
+      "laterReturns": [
+        "M3L4",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M2L5",
+      "sourceLessonIds": [
+        "3-3",
+        "3-4"
+      ],
+      "srsCardCount": 20,
+      "wortlisteHomeCount": 10,
+      "laterReturns": [
+        "M3L5",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M2L6",
+      "sourceLessonIds": [
+        "3-5",
+        "3-6"
+      ],
+      "srsCardCount": 12,
+      "wortlisteHomeCount": 8,
+      "laterReturns": [
+        "M3L6",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M2L7",
+      "sourceLessonIds": [
+        "2-5"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 23,
+      "laterReturns": [
+        "M3L7",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M3L1",
+      "sourceLessonIds": [
+        "4-1",
+        "4-5"
+      ],
+      "srsCardCount": 21,
+      "wortlisteHomeCount": 17,
+      "laterReturns": [
+        "M4L1",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M3L2",
+      "sourceLessonIds": [
+        "4-2"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 1,
+      "laterReturns": [
+        "M4L2",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M3L3",
+      "sourceLessonIds": [
+        "4-4"
+      ],
+      "srsCardCount": 8,
+      "wortlisteHomeCount": 14,
+      "laterReturns": [
+        "M4L3",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M3L4",
+      "sourceLessonIds": [
+        "4-3"
+      ],
+      "srsCardCount": 8,
+      "wortlisteHomeCount": 6,
+      "laterReturns": [
+        "M4L4",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M3L5",
+      "sourceLessonIds": [
+        "8-1",
+        "8-2",
+        "8-3"
+      ],
+      "srsCardCount": 30,
+      "wortlisteHomeCount": 18,
+      "laterReturns": [
+        "M4L5",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M3L6",
+      "sourceLessonIds": [
+        "5-1",
+        "5-2"
+      ],
+      "srsCardCount": 18,
+      "wortlisteHomeCount": 29,
+      "laterReturns": [
+        "M4L6",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M3L7",
+      "sourceLessonIds": [
+        "5-3",
+        "5-4",
+        "5-5"
+      ],
+      "srsCardCount": 29,
+      "wortlisteHomeCount": 29,
+      "laterReturns": [
+        "M4L7",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M4L1",
+      "sourceLessonIds": [
+        "6-1",
+        "6-2"
+      ],
+      "srsCardCount": 20,
+      "wortlisteHomeCount": 13,
+      "laterReturns": [
+        "M5L1",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M4L2",
+      "sourceLessonIds": [
+        "6-3"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 7,
+      "laterReturns": [
+        "M5L2",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M4L3",
+      "sourceLessonIds": [
+        "6-4"
+      ],
+      "srsCardCount": 8,
+      "wortlisteHomeCount": 6,
+      "laterReturns": [
+        "M5L3",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M4L4",
+      "sourceLessonIds": [
+        "7-1"
+      ],
+      "srsCardCount": 8,
+      "wortlisteHomeCount": 6,
+      "laterReturns": [
+        "M5L4",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M4L5",
+      "sourceLessonIds": [
+        "7-2"
+      ],
+      "srsCardCount": 8,
+      "wortlisteHomeCount": 6,
+      "laterReturns": [
+        "M5L5",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M4L6",
+      "sourceLessonIds": [
+        "7-3",
+        "7-4",
+        "7-5"
+      ],
+      "srsCardCount": 28,
+      "wortlisteHomeCount": 11,
+      "laterReturns": [
+        "M5L6",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M4L7",
+      "sourceLessonIds": [
+        "6-5"
+      ],
+      "srsCardCount": 8,
+      "wortlisteHomeCount": 5,
+      "laterReturns": [
+        "M5L7",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M5L1",
+      "sourceLessonIds": [
+        "9-1",
+        "9-2"
+      ],
+      "srsCardCount": 20,
+      "wortlisteHomeCount": 17,
+      "laterReturns": [
+        "M6L1",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M5L2",
+      "sourceLessonIds": [
+        "9-3"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 9,
+      "laterReturns": [
+        "M6L2",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M5L3",
+      "sourceLessonIds": [
+        "9-4"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 13,
+      "laterReturns": [
+        "M6L3",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M5L4",
+      "sourceLessonIds": [
+        "9-5"
+      ],
+      "srsCardCount": 12,
+      "wortlisteHomeCount": 17,
+      "laterReturns": [
+        "M6L4",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M5L5",
+      "sourceLessonIds": [
+        "3-6",
+        "10-3"
+      ],
+      "srsCardCount": 16,
+      "wortlisteHomeCount": 9,
+      "laterReturns": [
+        "M6L5",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M5L6",
+      "sourceLessonIds": [
+        "10-1",
+        "10-2"
+      ],
+      "srsCardCount": 21,
+      "wortlisteHomeCount": 10,
+      "laterReturns": [
+        "M6L6",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M5L7",
+      "sourceLessonIds": [
+        "10-3",
+        "10-4",
+        "10-5"
+      ],
+      "srsCardCount": 28,
+      "wortlisteHomeCount": 5,
+      "laterReturns": [
+        "M6L7",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M6L1",
+      "sourceLessonIds": [
+        "11-1"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 5,
+      "laterReturns": [
+        "M7L1",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M6L2",
+      "sourceLessonIds": [
+        "11-2"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 4,
+      "laterReturns": [
+        "M7L2",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M6L3",
+      "sourceLessonIds": [
+        "11-4",
+        "11-5"
+      ],
+      "srsCardCount": 20,
+      "wortlisteHomeCount": 7,
+      "laterReturns": [
+        "M7L3",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M6L4",
+      "sourceLessonIds": [
+        "12-1"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 8,
+      "laterReturns": [
+        "M7L4",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M6L5",
+      "sourceLessonIds": [
+        "12-2"
+      ],
+      "srsCardCount": 13,
+      "wortlisteHomeCount": 8,
+      "laterReturns": [
+        "M7L5",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M6L6",
+      "sourceLessonIds": [
+        "12-3",
+        "12-4"
+      ],
+      "srsCardCount": 20,
+      "wortlisteHomeCount": 8,
+      "laterReturns": [
+        "M7L6",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M6L7",
+      "sourceLessonIds": [
+        "11-3",
+        "12-4"
+      ],
+      "srsCardCount": 20,
+      "wortlisteHomeCount": 2,
+      "laterReturns": [
+        "M7L7",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M7L1",
+      "sourceLessonIds": [
+        "14-1"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 13,
+      "laterReturns": [
+        "M8L1",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M7L2",
+      "sourceLessonIds": [
+        "14-1",
+        "17-2",
+        "17-3"
+      ],
+      "srsCardCount": 17,
+      "wortlisteHomeCount": 13,
+      "laterReturns": [
+        "M8L2",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M7L3",
+      "sourceLessonIds": [
+        "14-2"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 8,
+      "laterReturns": [
+        "M8L3",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M7L4",
+      "sourceLessonIds": [
+        "14-3"
+      ],
+      "srsCardCount": 10,
+      "wortlisteHomeCount": 4,
+      "laterReturns": [
+        "M8L4",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M7L5",
+      "sourceLessonIds": [
+        "17-4"
+      ],
+      "srsCardCount": 4,
+      "wortlisteHomeCount": 30,
+      "laterReturns": [
+        "M8L5",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M7L6",
+      "sourceLessonIds": [
+        "17-5"
+      ],
+      "srsCardCount": 3,
+      "wortlisteHomeCount": 13,
+      "laterReturns": [
+        "M8L6",
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M7L7",
+      "sourceLessonIds": [
+        "17-5"
+      ],
+      "srsCardCount": 3,
+      "wortlisteHomeCount": 1,
+      "laterReturns": [
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M8L1",
+      "sourceLessonIds": [
+        "17-1"
+      ],
+      "srsCardCount": 6,
+      "wortlisteHomeCount": 15,
+      "laterReturns": [
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M8L2",
+      "sourceLessonIds": [
+        "17-2",
+        "17-3",
+        "17-6"
+      ],
+      "srsCardCount": 13,
+      "wortlisteHomeCount": 10,
+      "laterReturns": [
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M8L3",
+      "sourceLessonIds": [
+        "17-4",
+        "17-5",
+        "17-6"
+      ],
+      "srsCardCount": 13,
+      "wortlisteHomeCount": 0,
+      "laterReturns": [
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M8L4",
+      "sourceLessonIds": [
+        "18-1",
+        "18-2"
+      ],
+      "srsCardCount": 9,
+      "wortlisteHomeCount": 4,
+      "laterReturns": [
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M8L5",
+      "sourceLessonIds": [
+        "18-3"
+      ],
+      "srsCardCount": 5,
+      "wortlisteHomeCount": 2,
+      "laterReturns": [
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M8L6",
+      "sourceLessonIds": [
+        "18-4",
+        "18-5"
+      ],
+      "srsCardCount": 8,
+      "wortlisteHomeCount": 5,
+      "laterReturns": [
+        "M8L7"
+      ]
+    },
+    {
+      "lessonId": "M8L7",
+      "sourceLessonIds": [
+        "18-6",
+        "18-7"
+      ],
+      "srsCardCount": 7,
+      "wortlisteHomeCount": 1,
+      "laterReturns": [
+        "exam-day-srs"
+      ]
+    }
+  ],
+  "checks": {
+    "officialRowsRepresented": true,
+    "activeTargetSelected": true,
+    "currentVocabIdsResolve": true,
+    "themesAndWordGroupsMapped": true,
+    "all56RowsHaveSrsCards": true,
+    "all56RowsHaveNamedLaterReturn": true
+  }
+}
