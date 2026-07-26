@@ -21,7 +21,8 @@
       .pb-scene-flag { position: absolute; left: 106px; top: 70px; display: flex; align-items: center; gap: 18px; z-index: 8; }
       .pb-flag-number { width: 54px; height: 44px; display: grid; place-items: center; border-radius: 4px; background: #D4A520; color: #0C1811; font: 800 22px/1 "Geist", sans-serif; }
       .pb-flag-copy { font: 700 21px/1 "Geist", sans-serif; letter-spacing: .09em; text-transform: uppercase; color: #56635A; }
-      .pb-brand { position: absolute; right: 106px; top: 82px; z-index: 8; font: 700 20px/1 "Geist", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #56635A; }
+      .pb-brand { position: absolute; right: 106px; top: 72px; z-index: 8; display: flex; align-items: center; gap: 13px; font: 700 17px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #56635A; }
+      .pb-brand img { width: 40px; height: 40px; display: block; }
 
       .pb-intro { position: absolute; left: 108px; top: 160px; z-index: 5; }
       .pb-kicker { font: 700 22px/1 "Geist Mono", monospace; letter-spacing: .11em; text-transform: uppercase; color: #8A5A2A; }
@@ -68,7 +69,7 @@
       <div data-hf-id="hf-hpyt" class="pb-horizon" data-layout-ignore=""></div>
 
       <div data-hf-id="hf-35lz" class="pb-scene-flag" id="pb-flag"><div data-hf-id="hf-xuv6" class="pb-flag-number">01</div><div data-hf-id="hf-2tvh" class="pb-flag-copy">Build the thought</div></div>
-      <div data-hf-id="hf-2ylv" class="pb-brand">Adipoli German · A1</div>
+      <div data-hf-id="hf-2ylv" class="pb-brand"><img data-hf-id="hf-j5ar" src="./assets/brand/mark-triangle.svg" alt="Adipoli German"><span data-hf-id="hf-otie">A1 · teaching insert</span></div>
       <div data-hf-id="hf-ey4v" class="pb-intro">
         <div data-hf-id="hf-kfh0" class="pb-kicker" id="pb-kicker">Meaning → one sentence</div>
         <div data-hf-id="hf-jxvz" id="pb-title">Build one thought.</div>
@@ -113,7 +114,7 @@
       tl.fromTo('#pb-guide', {scaleX: 0, opacity: 0}, {scaleX: 1, opacity: 1, duration: .72, ease: 'power2.out'}, .82);
 
       tl.fromTo('#pb-token-ich', {x: -170, y: 78, rotation: -7, opacity: 0}, {x: 0, y: 0, rotation: -2.5, opacity: 1, duration: .76, ease: 'power3.out'}, 1.0);
-      tl.fromTo('#pb-token-lerne', {x: 18, y: -125, rotation: 5, opacity: 0}, {x: 0, y: 0, rotation: 2.2, opacity: 1, duration: .84, ease: 'back.out(1.35)'}, 1.58);
+      tl.fromTo('#pb-token-lerne', {x: 18, y: -125, rotation: 5, opacity: 0}, {x: 0, y: 0, rotation: 2.2, opacity: 1, duration: .84, ease: 'power3.out'}, 1.58);
       tl.fromTo('#pb-token-deutsch', {x: 180, y: 82, rotation: -5, opacity: 0}, {x: 0, y: 0, rotation: -1.6, opacity: 1, duration: .78, ease: 'power3.out'}, 2.16);
 
       tl.to('#pb-token-ich', {rotation: 0, x: 38, duration: .88, ease: 'power2.inOut'}, 3.46);
@@ -128,7 +129,7 @@
       tl.to('#pb-phrase', {scale: .84, opacity: 0, duration: .42, ease: 'power2.in'}, 6.5);
       tl.to('#pb-guide', {opacity: 0, duration: .3, ease: 'power2.in'}, 6.42);
       tl.fromTo('#pb-say-cue', {x: -28, opacity: 0}, {x: 0, opacity: 1, duration: .55, ease: 'power3.out'}, 7.26);
-      tl.fromTo('#pb-spoken-sentence', {scale: .74, opacity: 0}, {scale: 1, opacity: 1, duration: .72, ease: 'back.out(1.4)'}, 7.04);
+      tl.fromTo('#pb-spoken-sentence', {scale: .74, opacity: 0}, {scale: 1, opacity: 1, duration: .72, ease: 'power3.out'}, 7.04);
       tl.to('#pb-spoken-line-path', {strokeDashoffset: 0, duration: .76, ease: 'power2.out'}, 7.68);
       tl.to('#pb-wave-1', {strokeDashoffset: 0, duration: .48, ease: 'power2.out'}, 8.0);
       tl.to('#pb-wave-2', {strokeDashoffset: 0, duration: .55, ease: 'power2.out'}, 8.34);

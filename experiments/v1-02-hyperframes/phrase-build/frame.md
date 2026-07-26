@@ -1,6 +1,6 @@
 ---
 title: "Adipoli German 2A · Phrase build"
-version: "0.2"
+version: "1.0"
 canvas:
   width: 1920
   height: 1080
@@ -19,9 +19,13 @@ colors:
   chai: "#8A5A2A"
   success: "#1F7A44"
 typography:
+  impact_and_wordmark: "Archivo"
   display_and_german: "Source Serif 4"
   ui: "Geist"
   labels: "Geist Mono"
+brand:
+  identifier: "approved Triangle-A SVG"
+  surface: "daylight"
 radius:
   flag: 4
   button: 6
@@ -32,10 +36,13 @@ motion:
   room_entry: "320ms calm"
   primary: "power3.out"
   secondary: "power2.out"
+  overshoot: "forbidden"
 ---
 
 # Scenes & Daylight
 
 Use the approved 2A grammar: daylight for orientation and explanation, warm paper fragments for meaning, and one full-width forest threshold for the spoken action. The three fragments must physically resolve into one sentence; the visual story is the transformation, not an interface around it. Gold belongs to the joining stroke and current action. German is the largest type.
 
-Avoid navigation bars, progress bars, side rails, repeated cards, tiny metadata, duplicate final sentences, stock arrows, and dashboard chrome. The scene flag orients once, then recedes.
+Use the approved flat Triangle-A as the brand identifier. Do not type a substitute wordmark or bake A1 into the mark.
+
+Avoid navigation bars, progress bars, side rails, repeated cards, tiny metadata, duplicate final sentences, stock arrows, dashboard chrome, and bouncy or cartoon overshoot. The scene flag orients once, then recedes.

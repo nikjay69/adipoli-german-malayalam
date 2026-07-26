@@ -1,6 +1,6 @@
 ---
 title: "Adipoli German 2A · Mistake repair"
-version: "0.2"
+version: "1.0"
 canvas:
   width: 1920
   height: 1080
@@ -22,9 +22,13 @@ colors:
   success_light: "#1F7A44"
   success: "#4FC07A"
 typography:
+  impact_and_wordmark: "Archivo"
   display_and_german: "Source Serif 4"
   ui: "Geist"
   labels: "Geist Mono"
+brand:
+  identifier: "approved reversed Triangle-A SVG"
+  surface: "deep forest"
 radius:
   flag: 4
   button: 6
@@ -35,10 +39,13 @@ motion:
   room_entry: "320ms calm"
   primary: "power3.out"
   secondary: "power2.out"
+  overshoot: "forbidden"
 ---
 
 # Scenes & Daylight
 
 This is a lived forest room at 19:00, not a quiz result screen. A coded streetlamp and lit doorway establish meeting context before any explanation. The learner's warm-paper speech strip is repaired in place; recovery orange marks the wrong bedtime phrase, one gold movement carries the correction, and success green confirms the reply. The tail contrasts meeting now with bedtime later on one answer-sheet ribbon.
 
-Avoid navigation bars, progress bars, nested feedback cards, clock widgets, stock arrows, scattered gold, tiny metadata, and generic dashboard chrome.
+Use the approved reversed Triangle-A as the brand identifier. Do not type a substitute wordmark or bake A1 into the mark.
+
+Avoid navigation bars, progress bars, nested feedback cards, clock widgets, stock arrows, scattered gold, tiny metadata, generic dashboard chrome, and bouncy or cartoon overshoot.

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "id": "2a-scenes-daylight-v0.1",
+  "status": "owner-approved",
+  "approvedDecision": 26,
+  "sourcePackage": {
+    "file": "# 2A Product System Completion (6).zip",
+    "sha256": "afeeec516489c4eb595c6777946957691988fd0ae3b2396445cfb32c89f535a1"
+  },
+  "brandManifest": {
+    "publicPath": "/brand/manifest.json",
+    "sha256": "2a4b272f077ea6978e1c965d89378d7ac604d5d3c1bab9ec0ec9579b63212597"
+  },
+  "approvedAssets": {
+    "daylightMark": {
+      "publicPath": "/brand/logo/mark-triangle.svg",
+      "sha256": "b65ee297ca6b73b6541988bdddd31f60904a9e2ccad32906462ada4e4dcea2e2"
+    },
+    "darkSurfaceMark": {
+      "publicPath": "/brand/logo/mark-triangle-reversed.svg",
+      "sha256": "469fa8dacaed09db8ba32fa63cf3c575cdc1045936531eff856cbce461f493cf"
+    },
+    "promoOpeningTitle": {
+      "repoPath": "marketing/adipoli-marketing-kit-v0.1/exports/promo/title.png",
+      "sha256": "46364e518506680fedcf0a75db94f5fbb0ba582ad8d860e4351f3724775bb85a"
+    }
+  },
+  "palette": {
+    "forest": "#102018",
+    "deepForest": "#0C1811",
+    "cream": "#F5F0E8",
+    "answerSheet": "#F7EAD0",
+    "gold": "#D4A520",
+    "lightGold": "#F1D27A",
+    "lightInk": "#3F4D44",
+    "success": "#1F7A44",
+    "recovery": "#E08A5E"
+  },
+  "typography": {
+    "impactAndWordmark": "Archivo",
+    "germanAndEditorial": "Source Serif 4",
+    "uiAndBody": "Geist",
+    "labels": "Geist Mono"
+  },
+  "sceneGrammar": {
+    "daylight": [
+      "orientation",
+      "planning",
+      "reading",
+      "results",
+      "recovery",
+      "sustained-learning-work"
+    ],
+    "forest": [
+      "cinematic-opening",
+      "first-german-moment",
+      "module-threshold",
+      "focused-listening",
+      "checkpoint",
+      "celebration"
+    ],
+    "rules": [
+      "one-focal-point",
+      "one-dominant-action",
+      "cream-answer-sheet-inside-dark-scenes",
+      "no-theme-toggle",
+      "no-pale-card-soup"
+    ]
+  },
+  "motion": {
+    "roomEntryMs": 320,
+    "primaryEase": "power3.out",
+    "secondaryEase": "power2.out",
+    "ambientEase": "sine.inOut",
+    "forbiddenEaseFragments": [
+      "back.",
+      "bounce.",
+      "elastic."
+    ],
+    "rules": [
+      "calm",
+      "finite",
+      "seek-safe",
+      "no-cartoon-overshoot",
+      "no-infinite-loops"
+    ]
+  },
+  "forbiddenFonts": [
+    "Oswald",
+    "EB Garamond",
+    "IBM Plex Mono"
+  ]
+}

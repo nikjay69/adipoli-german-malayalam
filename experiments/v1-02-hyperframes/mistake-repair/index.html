@@ -22,7 +22,8 @@
       .mr-scene-flag { position: absolute; left: 104px; top: 68px; display: flex; align-items: center; gap: 18px; z-index: 9; }
       .mr-flag-number { width: 54px; height: 44px; display: grid; place-items: center; border-radius: 4px; background: #D4A520; color: #0C1811; font: 800 22px/1 "Geist", sans-serif; }
       .mr-flag-copy { font: 700 21px/1 "Geist", sans-serif; letter-spacing: .09em; text-transform: uppercase; color: #C8D0C9; }
-      .mr-brand { position: absolute; right: 104px; top: 82px; z-index: 9; font: 700 20px/1 "Geist", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #8FA093; }
+      .mr-brand { position: absolute; right: 104px; top: 72px; z-index: 9; display: flex; align-items: center; gap: 13px; font: 700 17px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #8FA093; }
+      .mr-brand img { width: 40px; height: 40px; display: block; }
 
       .mr-intro { position: absolute; left: 104px; top: 158px; z-index: 7; }
       .mr-kicker { font: 700 22px/1 "Geist Mono", monospace; letter-spacing: .11em; text-transform: uppercase; color: #8FA093; }
@@ -81,7 +82,7 @@
       <div data-hf-id="hf-b6w4" class="mr-moon" data-layout-ignore=""></div>
 
       <div data-hf-id="hf-0jrp" class="mr-scene-flag" id="mr-flag"><div data-hf-id="hf-v5nw" class="mr-flag-number">02</div><div data-hf-id="hf-zr1x" class="mr-flag-copy">Repair in context</div></div>
-      <div data-hf-id="hf-2foa" class="mr-brand">Adipoli German · A1</div>
+      <div data-hf-id="hf-2foa" class="mr-brand"><img data-hf-id="hf-sadq" src="./assets/brand/mark-triangle-reversed.svg" alt="Adipoli German"><span data-hf-id="hf-otie">A1 · teaching insert</span></div>
       <div data-hf-id="hf-q1c8" class="mr-intro"><div data-hf-id="hf-eeng" class="mr-kicker" id="mr-kicker">Evening · meeting now</div><div data-hf-id="hf-l8g9" id="mr-title">Say hello at 19:00.</div></div>
 
       <div data-hf-id="hf-0ot5" class="mr-lamp" data-layout-ignore="">
@@ -99,7 +100,7 @@
 
       <div data-hf-id="hf-vft1" class="mr-dialogue-stage">
         <div data-hf-id="hf-lw6h" class="mr-speech-wrap">
-          <div data-hf-id="hf-218j" class="mr-speech" id="mr-wrong"><div data-hf-id="hf-pvc3" class="mr-speech-label">Bedtime phrase?</div><div data-hf-id="hf-xmfk" class="mr-speech-phrase">Gute Nacht?</div></div>
+          <div data-hf-id="hf-218j" class="mr-speech" id="mr-wrong" data-layout-allow-overlap=""><div data-hf-id="hf-pvc3" class="mr-speech-label">Bedtime phrase?</div><div data-hf-id="hf-xmfk" class="mr-speech-phrase">Gute Nacht?</div></div>
           <div data-hf-id="hf-f2ya" class="mr-speech" id="mr-right"><div data-hf-id="hf-ppbo" class="mr-speech-label">Meeting now · say hello</div><div data-hf-id="hf-byj0" class="mr-speech-phrase">Guten Abend!</div></div>
           <svg data-hf-id="hf-jbks" class="mr-strike-svg" viewBox="0 0 780 94" aria-hidden="true"><path data-hf-id="hf-db5r" id="mr-strike-path" d="M 8 62 C 212 16, 498 80, 770 31" /></svg>
         </div>
@@ -108,7 +109,7 @@
 
       <div data-hf-id="hf-wm3x" id="mr-reply">Guten Abend!</div>
 
-      <div data-hf-id="hf-4gnm" id="mr-rule-strip">
+      <div data-hf-id="hf-4gnm" id="mr-rule-strip" data-layout-allow-overflow="">
         <div data-hf-id="hf-8x4j" class="mr-rule-inner">
           <div data-hf-id="hf-u2g2" class="mr-rule-side" id="mr-meeting-rule">
             <div data-hf-id="hf-1g1r" class="mr-rule-icon mr-meeting-icon"><svg data-hf-id="hf-c818" viewBox="0 0 112 112" aria-hidden="true"><circle data-hf-id="hf-md4d" cx="32" cy="36" r="18" /><circle data-hf-id="hf-wcvs" cx="80" cy="36" r="18" /><path data-hf-id="hf-mq8x" d="M 8 101 C 12 70, 53 68, 56 101 M 56 101 C 59 68, 100 70, 104 101" /></svg></div>
@@ -141,16 +142,16 @@
       tl.fromTo('#mr-time', {x: -26, opacity: 0}, {x: 0, opacity: 1, duration: .52, ease: 'power3.out'}, .9);
       tl.fromTo('#mr-door', {x: 56, opacity: 0}, {x: 0, opacity: 1, duration: .8, ease: 'power3.out'}, .72);
 
-      tl.fromTo('#mr-wrong', {x: -130, y: 26, rotation: -3, opacity: 0}, {x: 0, y: 0, rotation: 0, opacity: 1, duration: .76, ease: 'back.out(1.35)'}, 1.62);
+      tl.fromTo('#mr-wrong', {x: -130, y: 26, rotation: -3, opacity: 0}, {x: 0, y: 0, rotation: 0, opacity: 1, duration: .76, ease: 'power3.out'}, 1.62);
       tl.to(strikePath, {strokeDashoffset: 0, duration: .68, ease: 'power2.out'}, 3.04);
       tl.fromTo('#mr-not-yet', {x: -18, opacity: 0}, {x: 0, opacity: 1, duration: .48, ease: 'power3.out'}, 3.42);
       tl.to('#mr-wrong', {x: -270, rotation: -5, scale: .78, opacity: 0, duration: .46, ease: 'power2.in'}, 4.24);
       tl.to('.mr-strike-svg', {opacity: 0, duration: .3, ease: 'power2.in'}, 4.2);
-      tl.fromTo('#mr-right', {scale: .72, opacity: 0}, {scale: 1, opacity: 1, duration: .68, ease: 'back.out(1.45)'}, 4.46);
+      tl.fromTo('#mr-right', {scale: .72, opacity: 0}, {scale: 1, opacity: 1, duration: .68, ease: 'power3.out'}, 4.72);
       tl.to('#mr-not-yet', {opacity: 0, y: -12, duration: .3, ease: 'power2.in'}, 4.36);
-      tl.to('#mr-door-glow', {opacity: .92, duration: .64, ease: 'power1.out'}, 4.56);
-      tl.fromTo('#mr-reply', {x: 34, y: -12, opacity: 0, scale: .88}, {x: 0, y: 0, opacity: 1, scale: 1, duration: .62, ease: 'back.out(1.35)'}, 5.72);
-      tl.to('#mr-right', {y: -24, duration: .62, ease: 'power2.inOut'}, 6.46);
+      tl.to('#mr-door-glow', {opacity: .92, duration: .64, ease: 'power1.out'}, 4.8);
+      tl.fromTo('#mr-reply', {x: 34, y: -12, opacity: 0, scale: .88}, {x: 0, y: 0, opacity: 1, scale: 1, duration: .62, ease: 'power3.out'}, 5.94);
+      tl.to('#mr-right', {y: -24, duration: .62, ease: 'power2.inOut'}, 6.52);
 
       tl.to('#mr-time', {opacity: 0, y: 12, duration: .34, ease: 'power2.in'}, 6.76);
       tl.fromTo('#mr-rule-strip', {y: 258, opacity: 0}, {y: 0, opacity: 1, duration: .78, ease: 'power3.inOut'}, 7.18);

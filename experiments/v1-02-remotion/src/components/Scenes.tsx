@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  Img,
   OffthreadVideo,
   interpolate,
   spring,
@@ -9,7 +10,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import type {LessonScene} from '../contract';
-import {stagedInsertPath} from '../contract';
+import {stagedInsertPath, stagedPromoOpeningPath} from '../contract';
 import {colors, fonts, clamp, easeOut} from '../theme';
 import {
   DaylightRoom,
@@ -62,9 +63,11 @@ const SceneFrame: React.FC<
 const HookScene: React.FC<SceneProps> = ({scene, sceneIndex}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const headline = entrance(frame, fps, 10);
-  const guide = entrance(frame, fps, 34);
-  const goldLine = interpolate(frame, [24, 120], [0, 560], clamp);
+  const headline = entrance(frame, fps, 32);
+  const guide = entrance(frame, fps, 52);
+  const goldLine = interpolate(frame, [42, 128], [0, 560], clamp);
+  const brandOpacity = interpolate(frame, [0, 30, 43], [1, 1, 0], clamp);
+  const brandScale = interpolate(frame, [0, 43], [1.012, 1], clamp);
   return (
     <SceneFrame scene={scene} sceneIndex={sceneIndex} tone="daylight">
       <div
@@ -138,6 +141,19 @@ const HookScene: React.FC<SceneProps> = ({scene, sceneIndex}) => {
           />
         </div>
       </div>
+      <AbsoluteFill
+        style={{
+          zIndex: 30,
+          opacity: brandOpacity,
+          transform: `scale(${brandScale})`,
+          transformOrigin: '50% 50%',
+        }}
+      >
+        <Img
+          src={staticFile(stagedPromoOpeningPath)}
+          style={{width: '100%', height: '100%', objectFit: 'cover'}}
+        />
+      </AbsoluteFill>
     </SceneFrame>
   );
 };
