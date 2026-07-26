@@ -22,7 +22,7 @@ Of these two trials, the owner prefers `phrase-build`. Carry forward its light i
 
 ## Fail-closed design gates
 
-`npm run test:video-pipeline` is part of root `npm run qa`. It verifies the real contract and also injects fifteen broken variants without mutating source. The gate must reject theme drift, a stale design-contract hash, lost owner approval, overshoot easing, a missing or stale Triangle-A, a legacy font, weakened/non-strict/unpinned HyperFrames checks, warning-only frame containment, divergent snapshot evidence, stale frozen font bytes, insert/scene timing drift, and audio placed outside its declared scene. Both insert checks sample tween boundaries, run 15 midpoint samples, fail closed on every warning, perform frame containment checks, verify motion sidecars, save matching deterministic snapshots, and audit WCAG contrast.
+`npm run test:video-pipeline` is part of root `npm run qa`. It verifies the real contract, injects fifteen broken variants without mutating source, and executes four approval/review bypass attempts while proving that render evidence remains unchanged. The gate must reject theme drift, a stale design-contract hash, lost owner approval, overshoot easing, a missing or stale Triangle-A, a legacy font, weakened/non-strict/unpinned HyperFrames checks, warning-only frame containment, divergent snapshot evidence, stale frozen font bytes, insert/scene timing drift, audio placed outside its declared scene, and any render lacking both explicit approval and a durable reference. Both insert checks sample tween boundaries, run 15 midpoint samples, fail closed on every warning, perform frame containment checks, verify motion sidecars, save matching deterministic snapshots, and audit WCAG contrast.
 
 ## Current gate
 

@@ -1,4 +1,5 @@
 import {createHash} from 'node:crypto';
+import {spawnSync} from 'node:child_process';
 import {readFile, stat} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -10,6 +11,7 @@ const repoRoot = path.resolve(here, '../..');
 const publicRoot = path.resolve(repoRoot, 'public');
 const brandManifestPath = path.resolve(publicRoot, 'brand/manifest.json');
 const fontLockPath = path.resolve(here, '../v1-02-remotion/font-assets.json');
+const finalizerPath = path.resolve(here, 'finalize.mjs');
 const errors = [];
 const fail = (message) => errors.push(message);
 const normalizedHash = (value) =>
@@ -585,6 +587,7 @@ for (const asset of assets.filter((candidate) => candidate.kind === 'audio')) {
 }
 
 let selfTestCount = 0;
+let approvalGateSelfTestCount = 0;
 if (process.argv.includes('--self-test')) {
   const expectFailure = (label, problems) => {
     selfTestCount += 1;
@@ -769,6 +772,59 @@ if (process.argv.includes('--self-test')) {
   } else {
     fail('gate self-test needs one audio placement fixture');
   }
+
+  const approvalArtifacts = [
+    ...inserts.map((insert) => path.resolve(here, insert.artifactPath)),
+    path.resolve(here, 'v1-02.insert-handoff.json'),
+    path.resolve(here, 'render-report.json'),
+    path.resolve(here, 'evidence/v1-m1-l1-proof-review.mp4'),
+    path.resolve(here, 'evidence/v1-m1-l1-proof-contact-sheet.jpg'),
+    path.resolve(here, '../v1-02-remotion/output/v1-m1-l1-proof.mp4'),
+  ];
+  const artifactState = async (filePath) => {
+    try {
+      const info = await stat(filePath);
+      return `${info.isFile()}:${info.size}:${info.mtimeMs}`;
+    } catch (error) {
+      if (error.code === 'ENOENT') return 'absent';
+      throw error;
+    }
+  };
+  const statesBefore = await Promise.all(approvalArtifacts.map(artifactState));
+  const expectCommandRejection = (args, expectedMessage) => {
+    approvalGateSelfTestCount += 1;
+    const result = spawnSync(process.execPath, [finalizerPath, ...args], {
+      cwd: repoRoot,
+      encoding: 'utf8',
+      windowsHide: true,
+    });
+    const output = `${result.stdout ?? ''}\n${result.stderr ?? ''}`;
+    if (result.status === 0) {
+      fail(`approval gate self-test unexpectedly accepted finalize.mjs ${args.join(' ')}`);
+    } else if (!output.includes(expectedMessage)) {
+      fail(`approval gate self-test returned the wrong rejection for finalize.mjs ${args.join(' ')}`);
+    }
+  };
+  expectCommandRejection(
+    ['render'],
+    'Explicit render approval and a durable reference are required.',
+  );
+  expectCommandRejection(
+    ['render', '--approved'],
+    'Explicit render approval and a durable reference are required.',
+  );
+  expectCommandRejection(
+    ['render', '--approval-reference=self-test'],
+    'Explicit render approval and a durable reference are required.',
+  );
+  expectCommandRejection(
+    ['review'],
+    'Visual review requires --result=PASS|WEAK|FAIL',
+  );
+  const statesAfter = await Promise.all(approvalArtifacts.map(artifactState));
+  if (JSON.stringify(statesAfter) !== JSON.stringify(statesBefore)) {
+    fail('approval gate self-test changed render or review artifacts');
+  }
 }
 
 if (errors.length > 0) {
@@ -783,5 +839,6 @@ console.log(`- inserts: exactly ${inserts.length} bounded silent HyperFrames tea
 console.log(`- insert sources: ${verifiedInsertSources}/${inserts.length} match duration, canvas, local-runtime, font/brand hashes, CLI/evidence pins, and artifact contracts`);
 console.log(`- design authority: ${designContract.id} owner-approved; Claude package, brand manifest, marks, and Archivo promo title match SHA-256`);
 if (selfTestCount > 0) console.log(`- failure injection: ${selfTestCount}/${selfTestCount} contract-drift and stale-asset cases rejected`);
+if (approvalGateSelfTestCount > 0) console.log(`- approval gate: ${approvalGateSelfTestCount}/${approvalGateSelfTestCount} render/review bypass cases rejected without artifact changes`);
 console.log(`- assets: ${assets.length} canonical files exist and match SHA-256; transcripts ${transcriptCount}/${assets.filter((asset) => asset.kind === 'audio').length}`);
 console.log(`- cast: renderer-independent roles only (${[...castRoles].join(', ')})`);
