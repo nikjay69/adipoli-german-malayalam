@@ -9,6 +9,7 @@ const designContractPath = path.join(here, 'design-contract.json');
 const repoRoot = path.resolve(here, '../..');
 const publicRoot = path.resolve(repoRoot, 'public');
 const brandManifestPath = path.resolve(publicRoot, 'brand/manifest.json');
+const fontLockPath = path.resolve(here, '../v1-02-remotion/font-assets.json');
 const errors = [];
 const fail = (message) => errors.push(message);
 const normalizedHash = (value) =>
@@ -25,6 +26,74 @@ const isInside = (root, candidate) => {
 const attributeValue = (tag, name) => {
   const match = tag.match(new RegExp(`\\b${name}=["']([^"']+)["']`));
   return match?.[1];
+};
+const expectedInsertContracts = new Map([
+  ['phrase-build', {
+    sourceSceneId: 'm1l1-phrase-build',
+    durationSeconds: 11,
+    durationFrames: 330,
+    backgroundContract: 'opaque-2a-daylight-to-forest',
+    brandAsset: 'daylightMark',
+    brandSelector: '.pb-brand',
+  }],
+  ['mistake-repair', {
+    sourceSceneId: 'm1l1-mistake-repair',
+    durationSeconds: 12,
+    durationFrames: 360,
+    backgroundContract: 'opaque-2a-forest-to-answer-sheet',
+    brandAsset: 'darkSurfaceMark',
+    brandSelector: '.mr-brand',
+  }],
+]);
+const expectedProtectedInset = {top: 68, right: 104, bottom: 72, left: 104};
+const expectedFrameCheck = 'severity=error;seek=.25,.5,.75;tol=2';
+const scriptAtTimes = (command) => {
+  if (typeof command !== 'string') return null;
+  const match = command.match(
+    /(?:^|\s)--at=(\d+(?:\.\d+)?(?:,\d+(?:\.\d+)?)*)\b/,
+  );
+  return match ? match[1].split(',').map(Number) : null;
+};
+const frameCheckValue = (command) => {
+  if (typeof command !== 'string') return null;
+  const match = command.match(/--frame-check=(?:"([^"]+)"|'([^']+)'|(\S+))/);
+  return match?.[1] ?? match?.[2] ?? match?.[3] ?? null;
+};
+const insertSceneProblems = ({insert, scenes}) => {
+  const problems = [];
+  const matches = scenes.filter((scene) => scene.insertId === insert.id);
+  if (matches.length !== 1) {
+    problems.push(`must be referenced by exactly one scene, received ${matches.length}`);
+    return problems;
+  }
+  const scene = matches[0];
+  if (scene.type !== 'teaching-insert') problems.push('must be used only by a teaching-insert scene');
+  if (scene.id !== insert.sourceSceneId) problems.push('sourceSceneId must equal its consuming scene id');
+  if (scene.durationSeconds !== insert.durationSeconds) problems.push('scene and insert seconds must match');
+  if (scene.durationFrames !== insert.durationFrames) problems.push('scene and insert frames must match');
+  return problems;
+};
+const audioPlacementProblems = ({placement, scenes, assets}) => {
+  const problems = [];
+  const asset = assets.get(placement.assetId);
+  if (!asset) {
+    problems.push(`references unknown asset ${placement.assetId}`);
+    return problems;
+  }
+  if (asset.kind !== 'audio') problems.push(`asset ${placement.assetId} is not audio`);
+  const scene = scenes.find(
+    (candidate) =>
+      placement.startFrame >= candidate.startFrame &&
+      placement.startFrame < candidate.startFrame + candidate.durationFrames,
+  );
+  if (!scene) {
+    problems.push('does not land inside a scene');
+    return problems;
+  }
+  if (!scene.assetIds?.includes(placement.assetId)) {
+    problems.push(`asset ${placement.assetId} is not declared by scene ${scene.id}`);
+  }
+  return problems;
 };
 const designBindingProblems = ({
   scene,
@@ -50,12 +119,16 @@ const designBindingProblems = ({
 const insertDesignProblems = ({
   insert,
   html,
+  motion,
   frameText,
   packageJson,
   brandAssetHash,
+  fontAssetHashes,
+  fontLock,
   design,
 }) => {
   const problems = [];
+  const expectedInsert = expectedInsertContracts.get(insert.id);
   const approvedBrand = design.approvedAssets?.[insert.brandAsset];
   if (!approvedBrand) {
     problems.push(`unknown design-contract brand asset ${insert.brandAsset}`);
@@ -78,11 +151,85 @@ const insertDesignProblems = ({
   }
   if (!/version:\s*["']1\.0["']/.test(frameText)) problems.push('frame.md must freeze element-system version 1.0');
   if (!/overshoot:\s*["']forbidden["']/.test(frameText)) problems.push('frame.md must explicitly forbid overshoot');
+  const assertions = Array.isArray(motion?.assertions) ? motion.assertions : [];
+  if (expectedInsert) {
+    const appearsBy = assertions.find(
+      (assertion) =>
+        assertion.kind === 'appearsBy' &&
+        assertion.selector === expectedInsert.brandSelector,
+    );
+    if (!appearsBy || !Number.isFinite(appearsBy.bySec) || appearsBy.bySec > 1.2) {
+      problems.push(`motion sidecar must reveal ${expectedInsert.brandSelector} by 1.2s`);
+    }
+    if (!assertions.some(
+      (assertion) =>
+        assertion.kind === 'staysInFrame' &&
+        assertion.selector === expectedInsert.brandSelector,
+    )) {
+      problems.push(`motion sidecar must keep ${expectedInsert.brandSelector} in frame`);
+    }
+  }
+  if (fontLock?.schemaVersion !== 1 || !Array.isArray(fontLock.fonts)) {
+    problems.push('font lock must use schemaVersion 1 with a fonts array');
+  } else {
+    for (const font of fontLock.fonts) {
+      if (path.basename(String(font.fileName ?? '')) !== font.fileName) {
+        problems.push(`font lock filename must be local: ${font.fileName}`);
+        continue;
+      }
+      const expectedHash = normalizedHash(font.sha256);
+      const actualHash = fontAssetHashes?.get(font.fileName) ?? null;
+      if (!expectedHash || actualHash !== expectedHash) {
+        problems.push(`font asset ${font.fileName} SHA-256 is stale`);
+      }
+      if (!html.includes(`./assets/fonts/${font.fileName}`)) {
+        problems.push(`must load frozen font asset ${font.fileName}`);
+      }
+      if (!html.includes(`font-family: "${font.family}"`)) {
+        problems.push(`must declare frozen font family ${font.family}`);
+      }
+    }
+  }
   const checkCommand = packageJson.scripts?.check;
   if (typeof checkCommand !== 'string') problems.push('package.json needs a check script');
   else {
     for (const required of ['--snapshots', '--samples=15', '--at-transitions', '--frame-check=']) {
       if (!checkCommand.includes(required)) problems.push(`check script must include ${required}`);
+    }
+    if (!/(?:^|\s)--strict(?:\s|$)/.test(checkCommand)) {
+      problems.push('check script must include supported warning gate --strict');
+    }
+    if (!checkCommand.includes(`hyperframes@${insert.engineVersion}`)) {
+      problems.push(`check script must pin HyperFrames ${insert.engineVersion}`);
+    }
+    if (frameCheckValue(checkCommand) !== expectedFrameCheck) {
+      problems.push(`check script frame-check must equal ${expectedFrameCheck}`);
+    }
+    const checkTimes = scriptAtTimes(checkCommand);
+    if (!checkTimes) {
+      problems.push('check script must declare deterministic --at evidence times');
+    } else {
+      if (checkTimes.length < 6) problems.push('check script must sample at least 6 evidence times');
+      if (checkTimes.some((time) => !Number.isFinite(time) || time <= 0 || time >= insert.durationSeconds)) {
+        problems.push('check script evidence times must stay inside the composition');
+      }
+      if (checkTimes.some((time, index) => index > 0 && time <= checkTimes[index - 1])) {
+        problems.push('check script evidence times must be strictly increasing');
+      }
+      if (checkTimes[0] > 1.2 || checkTimes.at(-1) < insert.durationSeconds - 1) {
+        problems.push('check script evidence times must cover the opening and closing beats');
+      }
+    }
+    const snapshotCommand = packageJson.scripts?.snapshot;
+    if (typeof snapshotCommand !== 'string') {
+      problems.push('package.json needs a snapshot script');
+    } else {
+      if (!snapshotCommand.includes(`hyperframes@${insert.engineVersion}`)) {
+        problems.push(`snapshot script must pin HyperFrames ${insert.engineVersion}`);
+      }
+      if (JSON.stringify(scriptAtTimes(snapshotCommand)) !== JSON.stringify(checkTimes)) {
+        problems.push('snapshot script evidence times must exactly match the checked evidence times');
+      }
     }
   }
   return problems;
@@ -91,17 +238,20 @@ const insertDesignProblems = ({
 let manifest;
 let designContract;
 let brandManifest;
+let fontLock;
 let designContractSha256;
 let brandManifestSha256;
 try {
-  const [manifestBytes, designBytes, brandManifestBytes] = await Promise.all([
+  const [manifestBytes, designBytes, brandManifestBytes, fontLockBytes] = await Promise.all([
     readFile(manifestPath),
     readFile(designContractPath),
     readFile(brandManifestPath),
+    readFile(fontLockPath),
   ]);
   manifest = JSON.parse(manifestBytes.toString('utf8'));
   designContract = JSON.parse(designBytes.toString('utf8'));
   brandManifest = JSON.parse(brandManifestBytes.toString('utf8'));
+  fontLock = JSON.parse(fontLockBytes.toString('utf8'));
   designContractSha256 = hashBytes(designBytes);
   brandManifestSha256 = hashBytes(brandManifestBytes);
 } catch (error) {
@@ -117,6 +267,24 @@ for (const problem of designBindingProblems({
   brandManifest,
   brandManifestSha256,
 })) fail(problem);
+if (fontLock.schemaVersion !== 1) fail('font lock schemaVersion must be 1');
+const lockedFonts = Array.isArray(fontLock.fonts) ? fontLock.fonts : [];
+if (lockedFonts.length !== 3) fail(`font lock must contain exactly 3 fonts, got ${lockedFonts.length}`);
+const lockedFontFamilies = new Set();
+for (const [index, font] of lockedFonts.entries()) {
+  const label = `fontLock.fonts[${index}]`;
+  if (!['Source Serif 4', 'Geist', 'Geist Mono'].includes(font.family)) {
+    fail(`${label} uses unexpected family ${font.family}`);
+  } else if (lockedFontFamilies.has(font.family)) {
+    fail(`${label} duplicates family ${font.family}`);
+  } else {
+    lockedFontFamilies.add(font.family);
+  }
+  if (path.basename(String(font.fileName ?? '')) !== font.fileName) {
+    fail(`${label} fileName must be a local basename`);
+  }
+  if (!normalizedHash(font.sha256)) fail(`${label} sha256 must be 64 hex characters`);
+}
 for (const [assetId, asset] of Object.entries(designContract.approvedAssets ?? {})) {
   let assetPath;
   if (asset.publicPath) {
@@ -156,6 +324,9 @@ if (manifest.fps !== 30) fail(`fps must be 30, got ${manifest.fps}`);
 if (manifest.durationSeconds !== 81) fail(`durationSeconds must be 81, got ${manifest.durationSeconds}`);
 if (manifest.durationFrames !== 2430) fail(`durationFrames must be 2430, got ${manifest.durationFrames}`);
 if (manifest.durationSeconds * manifest.fps !== manifest.durationFrames) fail('durationSeconds * fps must equal durationFrames');
+if (manifest.resolution?.width !== 1920 || manifest.resolution?.height !== 1080) {
+  fail(`resolution must be 1920x1080, got ${manifest.resolution?.width}x${manifest.resolution?.height}`);
+}
 
 const castRoles = new Set(Object.values(manifest.castRoles ?? {}));
 for (const required of ['owner-presenter', 'german-teacher', 'adult-learner']) {
@@ -166,15 +337,13 @@ const inserts = Array.isArray(manifest.inserts) ? manifest.inserts : [];
 if (inserts.length !== 2) fail(`expected exactly 2 HyperFrames inserts, got ${inserts.length}`);
 const insertIds = new Set();
 const insertEngineVersions = new Set();
-const expectedBackgroundContracts = new Map([
-  ['phrase-build', 'opaque-2a-daylight-to-forest'],
-  ['mistake-repair', 'opaque-2a-forest-to-answer-sheet'],
-]);
 const experimentsRoot = path.resolve(here, '..');
 let verifiedInsertSources = 0;
 const verifiedInsertFixtures = [];
 for (const [index, insert] of inserts.entries()) {
   const label = `insert[${index}]`;
+  const expectedInsert = expectedInsertContracts.get(insert.id);
+  if (!expectedInsert) fail(`${label} uses unexpected insert id ${insert.id}`);
   if (insert.engine !== 'hyperframes') fail(`${label} engine must be hyperframes`);
   if (!/^\d+\.\d+\.\d+$/.test(insert.engineVersion ?? '')) fail(`${label} engineVersion must be an exact semver pin`);
   else insertEngineVersions.add(insert.engineVersion);
@@ -184,13 +353,32 @@ for (const [index, insert] of inserts.entries()) {
   else insertIds.add(insert.id);
   if (!isPositiveInteger(insert.durationFrames)) fail(`${label} durationFrames must be a positive integer`);
   if (insert.durationSeconds * manifest.fps !== insert.durationFrames) fail(`${label} duration values disagree`);
+  if (expectedInsert && (
+    insert.durationSeconds !== expectedInsert.durationSeconds ||
+    insert.durationFrames !== expectedInsert.durationFrames
+  )) fail(`${label} duration must remain ${expectedInsert.durationSeconds}s / ${expectedInsert.durationFrames} frames`);
+  if (expectedInsert && insert.sourceSceneId !== expectedInsert.sourceSceneId) {
+    fail(`${label} sourceSceneId must remain ${expectedInsert.sourceSceneId}`);
+  }
   if (insert.audioContract !== 'silent') fail(`${label} must be silent; Remotion owns final audio`);
-  if (insert.backgroundContract !== expectedBackgroundContracts.get(insert.id)) fail(`${label} backgroundContract does not match its 2A scene grammar`);
+  if (expectedInsert && insert.backgroundContract !== expectedInsert.backgroundContract) fail(`${label} backgroundContract does not match its 2A scene grammar`);
+  if (expectedInsert && insert.brandAsset !== expectedInsert.brandAsset) {
+    fail(`${label} must use design asset ${expectedInsert.brandAsset}`);
+  }
   if (insert.alphaContract !== 'opaque') fail(`${label} alphaContract must be opaque`);
   if (insert.safeArea?.mode !== 'full-bleed' || insert.safeArea?.consumerOverlay !== 'none') fail(`${label} must declare full-bleed safe area with no consumer overlay`);
   const protectedInset = insert.safeArea?.protectedInsetPx;
   if (!protectedInset || !['top', 'right', 'bottom', 'left'].every((side) => Number.isInteger(protectedInset[side]) && protectedInset[side] >= 0)) fail(`${label} must declare non-negative integer protected insets`);
+  else if (!['top', 'right', 'bottom', 'left'].every(
+    (side) => protectedInset[side] === expectedProtectedInset[side],
+  )) fail(`${label} protected insets must stay ${JSON.stringify(expectedProtectedInset)}`);
   if (!String(insert.sourcePath ?? '').startsWith('../v1-02-hyperframes/')) fail(`${label} sourcePath must stay in the isolated HyperFrames proof`);
+  if (expectedInsert && insert.sourcePath !== `../v1-02-hyperframes/${insert.id}`) {
+    fail(`${label} sourcePath must resolve to its named project`);
+  }
+  if (expectedInsert && insert.artifactPath !== `../v1-02-hyperframes/${insert.id}/renders/${insert.id}-v${insert.version}.mp4`) {
+    fail(`${label} artifactPath must resolve to its versioned named render`);
+  }
 
   const sourceDir = path.resolve(here, String(insert.sourcePath ?? ''));
   const artifactPath = path.resolve(here, String(insert.artifactPath ?? ''));
@@ -235,20 +423,36 @@ for (const [index, insert] of inserts.entries()) {
     } catch (error) {
       fail(`${label} approved brand asset is missing (${error.code ?? error.message})`);
     }
+    const fontAssetHashes = new Map();
+    for (const font of lockedFonts) {
+      if (path.basename(String(font.fileName ?? '')) !== font.fileName) continue;
+      const fontAssetPath = path.resolve(sourceDir, 'assets/fonts', font.fileName);
+      try {
+        fontAssetHashes.set(font.fileName, await hashFile(fontAssetPath));
+      } catch (error) {
+        fail(`${label} frozen font asset ${font.fileName} is missing (${error.code ?? error.message})`);
+      }
+    }
     for (const problem of insertDesignProblems({
       insert,
       html,
+      motion,
       frameText,
       packageJson,
       brandAssetHash,
+      fontAssetHashes,
+      fontLock,
       design: designContract,
     })) fail(`${label} ${problem}`);
     verifiedInsertFixtures.push({
       insert,
       html,
+      motion,
       frameText,
       packageJson,
       brandAssetHash,
+      fontAssetHashes,
+      fontLock,
     });
 
     const artifactRelative = path.relative(sourceDir, artifactPath).replaceAll('\\', '/');
@@ -302,20 +506,30 @@ for (const [index, scene] of scenes.entries()) {
   if (typeof scene.teachingIntent !== 'string' || scene.teachingIntent.trim().length < 12) fail(`${label} needs a concrete teachingIntent`);
   if (typeof scene.caption !== 'string' || scene.caption.trim().length === 0) fail(`${label} needs a caption`);
   if (scene.type === 'teaching-insert' && !insertIds.has(scene.insertId)) fail(`${label} references unknown insert ${scene.insertId}`);
+  if (scene.type !== 'teaching-insert' && scene.insertId !== undefined) fail(`${label} may not declare insertId outside a teaching-insert scene`);
   expectedStartFrame += Number.isFinite(scene.durationFrames) ? scene.durationFrames : 0;
   expectedStartSeconds += Number.isFinite(scene.durationSeconds) ? scene.durationSeconds : 0;
 }
 if (expectedStartFrame !== manifest.durationFrames) fail(`scenes end at frame ${expectedStartFrame}, expected ${manifest.durationFrames}`);
 if (expectedStartSeconds !== manifest.durationSeconds) fail(`scenes end at ${expectedStartSeconds}s, expected ${manifest.durationSeconds}s`);
+for (const insert of inserts) {
+  for (const problem of insertSceneProblems({insert, scenes})) {
+    fail(`insert ${insert.id} ${problem}`);
+  }
+}
 
 const assets = Array.isArray(manifest.assets) ? manifest.assets : [];
 const assetIds = new Set();
+const assetById = new Map();
 let transcriptCount = 0;
 for (const [index, asset] of assets.entries()) {
   const label = `asset[${index}]`;
   if (typeof asset.id !== 'string' || asset.id.length === 0) fail(`${label} needs a non-empty id`);
   else if (assetIds.has(asset.id)) fail(`${label} duplicates id ${asset.id}`);
-  else assetIds.add(asset.id);
+  else {
+    assetIds.add(asset.id);
+    assetById.set(asset.id, asset);
+  }
   const publicPath = asset.publicPath;
   const canonical = typeof publicPath === 'string' && publicPath.startsWith('/') && !publicPath.includes('\\') && !publicPath.split('/').includes('..') && !publicPath.split('/').includes('.');
   if (!canonical) {
@@ -350,10 +564,24 @@ for (const [index, scene] of scenes.entries()) {
   else for (const assetId of scene.assetIds) if (!assetIds.has(assetId)) fail(`scene[${index}] references unknown asset ${assetId}`);
 }
 const placements = Array.isArray(manifest.audioPlacements) ? manifest.audioPlacements : [];
+const placementKeys = new Set();
+const placedAudioIds = new Set();
 for (const [index, placement] of placements.entries()) {
   if (!assetIds.has(placement.assetId)) fail(`audioPlacements[${index}] references unknown asset ${placement.assetId}`);
   if (placement.startSeconds * manifest.fps !== placement.startFrame) fail(`audioPlacements[${index}] seconds/frame values disagree`);
   if (placement.startFrame < 0 || placement.startFrame >= manifest.durationFrames) fail(`audioPlacements[${index}] falls outside the timeline`);
+  const placementKey = `${placement.assetId}@${placement.startFrame}`;
+  if (placementKeys.has(placementKey)) fail(`audioPlacements[${index}] duplicates ${placementKey}`);
+  placementKeys.add(placementKey);
+  placedAudioIds.add(placement.assetId);
+  for (const problem of audioPlacementProblems({
+    placement,
+    scenes,
+    assets: assetById,
+  })) fail(`audioPlacements[${index}] ${problem}`);
+}
+for (const asset of assets.filter((candidate) => candidate.kind === 'audio')) {
+  if (!placedAudioIds.has(asset.id)) fail(`audio asset ${asset.id} has no timeline placement`);
 }
 
 let selfTestCount = 0;
@@ -401,6 +629,7 @@ if (process.argv.includes('--self-test')) {
     fail('gate self-test needs one verified HyperFrames insert fixture');
   } else {
     const sourceInput = {...fixture, design: designContract};
+    const firstLockedFont = fontLock.fonts?.[0]?.fileName;
     expectFailure(
       'cartoon overshoot easing',
       insertDesignProblems({...sourceInput, html: `${fixture.html}\nback.out(1.4)`}),
@@ -436,6 +665,109 @@ if (process.argv.includes('--self-test')) {
         },
       }),
     );
+    expectFailure(
+      'non-strict HyperFrames check',
+      insertDesignProblems({
+        ...sourceInput,
+        packageJson: {
+          ...fixture.packageJson,
+          scripts: {
+            ...fixture.packageJson.scripts,
+            check: fixture.packageJson.scripts.check.replace('--strict', ''),
+          },
+        },
+      }),
+    );
+    expectFailure(
+      'warning-only frame containment',
+      insertDesignProblems({
+        ...sourceInput,
+        packageJson: {
+          ...fixture.packageJson,
+          scripts: {
+            ...fixture.packageJson.scripts,
+            check: fixture.packageJson.scripts.check.replace(
+              'severity=error',
+              'severity=warning',
+            ),
+          },
+        },
+      }),
+    );
+    expectFailure(
+      'unpinned HyperFrames check',
+      insertDesignProblems({
+        ...sourceInput,
+        packageJson: {
+          ...fixture.packageJson,
+          scripts: {
+            ...fixture.packageJson.scripts,
+            check: fixture.packageJson.scripts.check.replace(
+              `hyperframes@${fixture.insert.engineVersion}`,
+              'hyperframes@latest',
+            ),
+          },
+        },
+      }),
+    );
+    expectFailure(
+      'divergent snapshot evidence',
+      insertDesignProblems({
+        ...sourceInput,
+        packageJson: {
+          ...fixture.packageJson,
+          scripts: {
+            ...fixture.packageJson.scripts,
+            snapshot: fixture.packageJson.scripts.snapshot.replace(/--at=[^\s]+/, '--at=1.2,2.5'),
+          },
+        },
+      }),
+    );
+    if (firstLockedFont) {
+      const staleFontHashes = new Map(fixture.fontAssetHashes);
+      staleFontHashes.set(firstLockedFont, '0'.repeat(64));
+      expectFailure(
+        'stale frozen font bytes',
+        insertDesignProblems({...sourceInput, fontAssetHashes: staleFontHashes}),
+      );
+    } else {
+      fail('gate self-test needs one frozen font fixture');
+    }
+  }
+  const firstInsert = inserts[0];
+  if (firstInsert) {
+    expectFailure(
+      'insert-to-scene duration drift',
+      insertSceneProblems({
+        insert: firstInsert,
+        scenes: scenes.map((scene) =>
+          scene.insertId === firstInsert.id
+            ? {...scene, durationFrames: scene.durationFrames - 1}
+            : scene
+        ),
+      }),
+    );
+  } else {
+    fail('gate self-test needs one insert fixture');
+  }
+  const firstPlacement = placements[0];
+  if (firstPlacement) {
+    const wrongScene = scenes.find(
+      (scene) => !scene.assetIds?.includes(firstPlacement.assetId),
+    );
+    expectFailure(
+      'audio placement outside its declared scene',
+      audioPlacementProblems({
+        placement: {
+          ...firstPlacement,
+          startFrame: wrongScene?.startFrame ?? manifest.durationFrames,
+        },
+        scenes,
+        assets: assetById,
+      }),
+    );
+  } else {
+    fail('gate self-test needs one audio placement fixture');
   }
 }
 
@@ -448,7 +780,7 @@ if (errors.length > 0) {
 console.log(`PASS ${path.basename(manifestPath)}`);
 console.log(`- timeline: ${scenes.length} contiguous semantic scenes, ${manifest.durationSeconds}s / ${manifest.durationFrames} frames @ ${manifest.fps}fps`);
 console.log(`- inserts: exactly ${inserts.length} bounded silent HyperFrames teaching intents on ${[...insertEngineVersions][0]}`);
-console.log(`- insert sources: ${verifiedInsertSources}/${inserts.length} match duration, canvas, local-runtime, CLI-pin, and artifact contracts`);
+console.log(`- insert sources: ${verifiedInsertSources}/${inserts.length} match duration, canvas, local-runtime, font/brand hashes, CLI/evidence pins, and artifact contracts`);
 console.log(`- design authority: ${designContract.id} owner-approved; Claude package, brand manifest, marks, and Archivo promo title match SHA-256`);
 if (selfTestCount > 0) console.log(`- failure injection: ${selfTestCount}/${selfTestCount} contract-drift and stale-asset cases rejected`);
 console.log(`- assets: ${assets.length} canonical files exist and match SHA-256; transcripts ${transcriptCount}/${assets.filter((asset) => asset.kind === 'audio').length}`);
