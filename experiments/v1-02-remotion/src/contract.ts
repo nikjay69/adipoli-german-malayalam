@@ -1,4 +1,5 @@
 import rawSceneContract from '../../module-01-video-hybrid/lesson-01.scene.json';
+import rawDesignContract from '../../module-01-video-hybrid/design-contract.json';
 
 export type AudioAsset = {
   id: string;
@@ -20,6 +21,7 @@ export type HyperFramesInsert = {
   audioContract: 'silent';
   backgroundContract: string;
   alphaContract: 'opaque';
+  brandAsset: 'daylightMark' | 'darkSurfaceMark';
   safeArea: {
     mode: 'full-bleed';
     protectedInsetPx: {top: number; right: number; bottom: number; left: number};
@@ -59,6 +61,12 @@ export type SceneContract = {
   durationSeconds: number;
   durationFrames: number;
   resolution: {width: number; height: number};
+  designSystem: {
+    id: string;
+    status: 'owner-approved';
+    contractPath: './design-contract.json';
+    contractSha256: string;
+  };
   rendererTheme: string;
   castRoles: {
     presenter: 'owner-presenter';
@@ -76,6 +84,7 @@ export type SceneContract = {
 };
 
 export const sceneContract = rawSceneContract as SceneContract;
+export const designContract = rawDesignContract;
 
 const fail = (message: string): never => {
   throw new Error(`Invalid M1L1 scene contract: ${message}`);
@@ -83,8 +92,23 @@ const fail = (message: string): never => {
 
 const validateContract = (contract: SceneContract) => {
   if (contract.schemaVersion !== 2) fail('schemaVersion must be 2.');
-  if (!contract.rendererTheme.startsWith('2a-scenes-daylight')) {
-    fail(`rendererTheme must select the fixed 2A Scenes & Daylight family; received ${contract.rendererTheme}.`);
+  if (designContract.schemaVersion !== 1 || designContract.status !== 'owner-approved') {
+    fail('the frozen 2A design contract must be owner-approved schemaVersion 1.');
+  }
+  if (
+    contract.designSystem.id !== designContract.id ||
+    contract.rendererTheme !== designContract.id
+  ) {
+    fail(
+      `rendererTheme and scene designSystem must equal frozen design contract ${designContract.id}.`,
+    );
+  }
+  if (
+    contract.designSystem.status !== 'owner-approved' ||
+    contract.designSystem.contractPath !== './design-contract.json' ||
+    !/^[a-f0-9]{64}$/.test(contract.designSystem.contractSha256)
+  ) {
+    fail('scene designSystem binding is incomplete or not frozen by SHA-256.');
   }
   if (contract.durationFrames !== contract.durationSeconds * contract.fps) {
     fail('master duration seconds and frames disagree.');
@@ -174,3 +198,5 @@ export const stagedInsertPath = (insertId: string) => {
   if (!insertById.has(insertId)) fail(`unknown insert ${insertId}.`);
   return `inserts/${insertId}.mp4`;
 };
+
+export const stagedPromoOpeningPath = 'brand/promo-opening-title.png';

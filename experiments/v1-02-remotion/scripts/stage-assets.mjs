@@ -8,7 +8,9 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const repoRoot = resolve(projectRoot, '../..');
 const manifestPath = resolve(projectRoot, '../module-01-video-hybrid/lesson-01.scene.json');
 const manifestRoot = dirname(manifestPath);
+const designContractPath = resolve(manifestRoot, 'design-contract.json');
 const appPublicRoot = resolve(projectRoot, '../../public');
+const brandManifestPath = resolve(appPublicRoot, 'brand/manifest.json');
 const stagedPublicRoot = resolve(projectRoot, 'public');
 const handoffPath = resolve(manifestRoot, 'v1-02.insert-handoff.json');
 const fontLockPath = resolve(projectRoot, 'font-assets.json');
@@ -67,6 +69,8 @@ const copyAndVerify = async ({source, destination, expectedHash, label}) => {
 };
 
 const manifest = await readJson(manifestPath);
+const designContract = await readJson(designContractPath);
+const brandManifest = await readJson(brandManifestPath);
 const fontLock = await readJson(fontLockPath);
 if (!Array.isArray(manifest.assets) || !Array.isArray(manifest.inserts)) {
   throw new Error('The scene contract must declare assets[] and inserts[].');
@@ -77,10 +81,34 @@ if (!Array.isArray(fontLock.fonts) || fontLock.fonts.length !== 3) {
 if (manifest.inserts.length !== 2) {
   throw new Error(`Expected exactly two HyperFrames inserts; found ${manifest.inserts.length}.`);
 }
+requireExact(designContract.schemaVersion, 1, 'Design contract schemaVersion');
+requireExact(designContract.status, 'owner-approved', 'Design contract status');
+requireExact(manifest.designSystem?.id, designContract.id, 'Scene design-system id');
+requireExact(manifest.rendererTheme, designContract.id, 'Scene renderer theme');
+requireExact(
+  manifest.designSystem?.contractPath,
+  './design-contract.json',
+  'Scene design-contract path',
+);
+requireExact(
+  manifest.designSystem?.contractSha256,
+  await sha256(designContractPath),
+  'Scene design-contract SHA-256',
+);
+requireExact(
+  normalizedHash(brandManifest.source?.sha256),
+  normalizedHash(designContract.sourcePackage?.sha256),
+  'Approved package SHA-256 in brand manifest',
+);
+requireExact(
+  await sha256(brandManifestPath),
+  normalizedHash(designContract.brandManifest?.sha256),
+  'Approved brand-manifest SHA-256',
+);
 
 requireFile(handoffPath, 'Approved HyperFrames insert handoff');
 const handoff = await readJson(handoffPath);
-requireExact(handoff.schemaVersion, 1, 'Insert handoff schemaVersion');
+requireExact(handoff.schemaVersion, 2, 'Insert handoff schemaVersion');
 requireExact(handoff.approval?.status, 'approved', 'Insert handoff approval status');
 requireExact(
   handoff.approval?.surface,
@@ -102,6 +130,17 @@ requireExact(
   handoff.sceneContract?.sha256,
   await sha256(manifestPath),
   'Insert handoff scene-contract SHA-256',
+);
+requireExact(handoff.designSystem?.id, designContract.id, 'Insert handoff design-system id');
+requireExact(
+  handoff.designSystem?.contractSha256,
+  await sha256(designContractPath),
+  'Insert handoff design-contract SHA-256',
+);
+requireExact(
+  handoff.designSystem?.brandManifestSha256,
+  await sha256(brandManifestPath),
+  'Insert handoff brand-manifest SHA-256',
 );
 requireExact(handoff.rendererTheme, manifest.rendererTheme, 'Insert handoff renderer theme');
 requireExact(handoff.inserts?.length, manifest.inserts.length, 'Insert handoff artifact count');
@@ -140,6 +179,29 @@ for (const insert of manifest.inserts) {
   requireExact(entry.alphaContract, insert.alphaContract, `Insert ${insert.id} alpha contract`);
   requireDeepEqual(entry.safeArea, insert.safeArea, `Insert ${insert.id} safe area`);
   requireExact(entry.audioContract, 'silent-no-audio-stream', `Insert ${insert.id} audio contract`);
+  const approvedBrand = designContract.approvedAssets?.[insert.brandAsset];
+  if (!approvedBrand) throw new Error(`Insert ${insert.id} uses unknown brand asset ${insert.brandAsset}.`);
+  const brandSource = resolve(
+    sourceRoot,
+    'assets/brand',
+    String(approvedBrand.publicPath).split('/').pop(),
+  );
+  requireExact(entry.brandAsset?.id, insert.brandAsset, `Insert ${insert.id} brand asset id`);
+  requireExact(
+    entry.brandAsset?.path,
+    slash(relative(repoRoot, brandSource)),
+    `Insert ${insert.id} brand asset path`,
+  );
+  requireExact(
+    entry.brandAsset?.sha256,
+    normalizedHash(approvedBrand.sha256),
+    `Insert ${insert.id} brand asset approved hash`,
+  );
+  requireExact(
+    await sha256(brandSource),
+    normalizedHash(approvedBrand.sha256),
+    `Insert ${insert.id} brand asset source hash`,
+  );
   requireExact(entry.qc?.videoStreams, 1, `Insert ${insert.id} QC video stream count`);
   requireExact(entry.qc?.audioStreams, 0, `Insert ${insert.id} QC audio stream count`);
   requireExact(entry.qc?.codec, 'h264', `Insert ${insert.id} QC codec`);
@@ -151,6 +213,7 @@ for (const insert of manifest.inserts) {
     ['html', 'index.html'],
     ['motion', 'index.motion.json'],
     ['package', 'package.json'],
+    ['frame', 'frame.md'],
   ]) {
     const sourceHash = normalizedHash(entry.sourceSha256?.[key]);
     if (!sourceHash) throw new Error(`Insert ${insert.id} handoff has no valid ${key} source SHA-256.`);
@@ -164,19 +227,51 @@ for (const insert of manifest.inserts) {
 }
 
 const staged = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   sceneContract: relative(projectRoot, manifestPath).replaceAll('\\', '/'),
   sceneContractSha256: await sha256(manifestPath),
   rendererTheme: manifest.rendererTheme,
+  designSystem: {
+    id: designContract.id,
+    status: designContract.status,
+    contractPath: slash(relative(projectRoot, designContractPath)),
+    contractSha256: await sha256(designContractPath),
+    sourcePackageSha256: normalizedHash(designContract.sourcePackage.sha256),
+    brandManifestPath: slash(relative(projectRoot, brandManifestPath)),
+    brandManifestSha256: await sha256(brandManifestPath),
+  },
   insertHandoff: {
     path: slash(relative(projectRoot, handoffPath)),
     sha256: await sha256(handoffPath),
     approvalReference: handoff.approval.reference,
   },
   assets: [],
+  brandAssets: [],
   fonts: [],
   inserts: [],
 };
+
+const promoOpening = designContract.approvedAssets?.promoOpeningTitle;
+const promoSource = resolve(repoRoot, String(promoOpening?.repoPath ?? ''));
+assertInside(repoRoot, promoSource, 'Promo opening title');
+const promoExpectedHash = normalizedHash(promoOpening?.sha256);
+if (!promoExpectedHash) {
+  throw new Error('Approved promo opening title has no valid SHA-256.');
+}
+const promoStagedPath = 'brand/promo-opening-title.png';
+const promoDestination = resolve(stagedPublicRoot, promoStagedPath);
+assertInside(stagedPublicRoot, promoDestination, 'Staged promo opening title');
+const promoHashes = await copyAndVerify({
+  source: promoSource,
+  destination: promoDestination,
+  expectedHash: promoExpectedHash,
+  label: 'Approved Archivo promo opening title',
+});
+staged.brandAssets.push({
+  id: 'promo-opening-title',
+  stagedPath: promoStagedPath,
+  sha256: promoHashes.stagedHash,
+});
 
 for (const font of fontLock.fonts) {
   const source = resolve(projectRoot, font.sourcePath);
@@ -257,5 +352,5 @@ await writeFile(
 );
 
 console.log(
-  `Staged ${staged.fonts.length} frozen fonts, ${staged.assets.length} verified audio assets, and ${staged.inserts.length} frozen HyperFrames inserts.`,
+  `Staged ${staged.brandAssets.length} approved brand asset, ${staged.fonts.length} frozen fonts, ${staged.assets.length} verified audio assets, and ${staged.inserts.length} frozen HyperFrames inserts.`,
 );

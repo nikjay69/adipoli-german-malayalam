@@ -9,7 +9,13 @@
     "width": 1920,
     "height": 1080
   },
-  "rendererTheme": "2a-scenes-daylight-v0.1-trial",
+  "designSystem": {
+    "id": "2a-scenes-daylight-v0.1",
+    "status": "owner-approved",
+    "contractPath": "./design-contract.json",
+    "contractSha256": "925a04be5262299d948490c3f01eb080b2d8cb1448d800d9e5fd96b2e103f6cd"
+  },
+  "rendererTheme": "2a-scenes-daylight-v0.1",
   "castRoles": {
     "presenter": "owner-presenter",
     "teacher": "german-teacher",
@@ -51,7 +57,7 @@
     {
       "id": "phrase-build",
       "engine": "hyperframes",
-      "engineVersion": "0.7.71",
+      "engineVersion": "0.7.72",
       "version": 1,
       "intent": "assemble a useful sentence from meaning-bearing word units",
       "sourceSceneId": "m1l1-phrase-build",
@@ -60,6 +66,7 @@
       "audioContract": "silent",
       "backgroundContract": "opaque-2a-daylight-to-forest",
       "alphaContract": "opaque",
+      "brandAsset": "daylightMark",
       "safeArea": {
         "mode": "full-bleed",
         "protectedInsetPx": {"top": 68, "right": 104, "bottom": 72, "left": 104},
@@ -71,7 +78,7 @@
     {
       "id": "mistake-repair",
       "engine": "hyperframes",
-      "engineVersion": "0.7.71",
+      "engineVersion": "0.7.72",
       "version": 1,
       "intent": "replace a bedtime phrase with the safe evening greeting",
       "sourceSceneId": "m1l1-mistake-repair",
@@ -80,6 +87,7 @@
       "audioContract": "silent",
       "backgroundContract": "opaque-2a-forest-to-answer-sheet",
       "alphaContract": "opaque",
+      "brandAsset": "darkSurfaceMark",
       "safeArea": {
         "mode": "full-bleed",
         "protectedInsetPx": {"top": 68, "right": 104, "bottom": 72, "left": 104},

@@ -2,10 +2,13 @@
   "duration": 12,
   "assertions": [
     {"kind": "appearsBy", "selector": "#mr-title", "bySec": 1.2},
-    {"kind": "before", "a": "#mr-wrong", "b": "#mr-right"},
-    {"kind": "before", "a": "#mr-right", "b": "#mr-rule-strip"},
+    {"kind": "appearsBy", "selector": ".mr-brand", "bySec": 1.2},
+    {"kind": "before", "a": "#mr-wrong-wash", "b": "#mr-right-highlight"},
+    {"kind": "before", "a": "#mr-right-highlight", "b": "#mr-rule-strip"},
+    {"kind": "staysInFrame", "selector": "#mr-time-marker"},
     {"kind": "staysInFrame", "selector": "#mr-wrong"},
     {"kind": "staysInFrame", "selector": "#mr-right"},
+    {"kind": "staysInFrame", "selector": ".mr-brand"},
     {"kind": "keepsMoving", "withinSelector": "#mr-root", "maxStaticSec": 2}
   ]
 }

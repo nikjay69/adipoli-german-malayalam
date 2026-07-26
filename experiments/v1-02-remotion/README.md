@@ -1,6 +1,6 @@
-# V1-02 Remotion master — M1L1 trial
+# V1-03 2A Remotion master — M1L1 approval proof
 
-This isolated Remotion 4.0.448 project is the long-form assembler for the 81-second Module 1, Lesson 1 proof. The engine-neutral [`lesson-01.scene.json`](../module-01-video-hybrid/lesson-01.scene.json) owns all timing, exact captions, semantic cast roles, German-audio placement, resolution, and the two HyperFrames handoffs.
+This isolated Remotion 4.0.448 project is the long-form assembler for the 81-second Module 1, Lesson 1 proof. The engine-neutral [`lesson-01.scene.json`](../module-01-video-hybrid/lesson-01.scene.json) owns all timing, exact captions, semantic cast roles, German-audio placement, resolution, design-system binding, and the two HyperFrames handoffs. [`design-contract.json`](../module-01-video-hybrid/design-contract.json) freezes the approved 2A/Claude-package authority by checksum.
 
 ## Visual contract
 
@@ -10,11 +10,11 @@ The master uses the fixed **2A · Scenes & Daylight** language:
 - forest rooms: `#0C1811` through `#16281C`;
 - answer sheets: `#F7EAD0`, physical page edge, restrained shadow;
 - one dominant gold action: `#D4A520` / `#F1D27A`;
-- Source Serif 4 for display and German, Geist for UI, Geist Mono for scene flags;
+- the approved rasterized Archivo promo title for the opening brand beat, Source Serif 4 for display and German, Geist for UI, and Geist Mono for scene flags;
 - success and repair use the approved green and terracotta roles;
 - no tech grid, glass dashboard, generic card wall, or UI-chrome treatment.
 
-`rendererTheme` is read from the scene contract. Runtime validation requires the `2a-scenes-daylight` family; the retired neutral proof string is not embedded in this project.
+`rendererTheme` must exactly equal `2a-scenes-daylight-v0.1`; prefix matches and trial/candidate strings are rejected.
 
 ## Ownership boundary
 
@@ -35,12 +35,13 @@ npm run stage
 
 `scripts/stage-assets.mjs` performs a fail-closed handoff:
 
-- reads only assets declared by the shared scene contract;
+- reads only assets declared by the shared scene and design contracts;
 - rejects any source path that escapes its expected root;
 - verifies and stages the exact Source Serif 4, Geist, and Geist Mono files shared with the approved HyperFrames inserts;
+- verifies and stages the approved Archivo promo-opening PNG, preserving the exact wordmark typography that was owner-reviewed;
 - verifies every native-audio SHA-256 against the shared contract;
 - requires each frozen insert SHA-256 from either its manifest entry or `../module-01-video-hybrid/v1-02.insert-handoff.json`;
-- copies assets into this project's ignored `public/audio/` and `public/inserts/` folders;
+- copies assets into this project's ignored `public/audio/`, `public/brand/`, and `public/inserts/` folders;
 - hashes every copied file again and writes ignored `public/staged-assets.json` as the render receipt;
 - rejects any insert count other than two or any non-silent/non-HyperFrames insert.
 

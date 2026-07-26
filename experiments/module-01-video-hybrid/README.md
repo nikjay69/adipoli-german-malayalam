@@ -1,13 +1,14 @@
-# V1-02 Remotion + HyperFrames trial
+# V1-03 2A video system on the v1-02 hybrid proof
 
 This isolated 81-second M1L1 proof tests the production boundary selected for the course:
 
-- one semantic [`lesson-01.scene.json`](./lesson-01.scene.json) owns teaching intent, exact timing, captions, semantic cast roles, audio placement, and artifact paths;
+- one semantic [`lesson-01.scene.json`](./lesson-01.scene.json) owns teaching intent, exact timing, captions, semantic cast roles, audio placement, design binding, and artifact paths;
+- one frozen [`design-contract.json`](./design-contract.json) binds the renderer to the owner-approved Claude package SHA-256, canonical brand manifest, exact Triangle-A assets, approved Archivo promo opening, palette, type roles, scene grammar, and calm motion law;
 - HyperFrames code produces exactly two bounded, silent teaching videos: `phrase-build` (11 seconds) and `mistake-repair` (12 seconds);
 - Remotion owns the 2,430-frame master timeline and consumes both reviewed HyperFrames renders as frozen, checksummed media;
 - FFmpeg/ffprobe perform final decode, stream, duration, frame-count, and delivery checks.
 
-The visuals use the fixed **2A · Scenes & Daylight** language requested for this trial: warm daylight paper for orientation, deep-forest rooms for lived scenes, answer-sheet cream for response moments, one restrained gold action, Source Serif 4 + Geist + Geist Mono, and semantic success/recovery colour roles. The source is code-authored HTML/CSS/GSAP and TSX; Studio is only the review surface.
+The visuals use the approved **2A · Scenes & Daylight v0.1** language: warm daylight paper for orientation, deep-forest rooms for lived scenes, answer-sheet cream for response moments, one restrained gold action, Archivo for the frozen promo wordmark, Source Serif 4 for German/editorial text, Geist + Geist Mono for UI/labels, and semantic success/recovery colour roles. The approved Triangle-A identifies both inserts; typed substitute wordmarks are rejected. The source is code-authored HTML/CSS/GSAP and TSX; Studio is only the review surface.
 
 ## Owner production preference — 2026-07-18
 
@@ -17,9 +18,11 @@ Every future script and recording kit should distinguish `[PRESENTER]` from `[VI
 
 Prefer **daylight or answer-sheet surfaces** for explanatory, text-heavy, and tabular material because legibility and eye comfort come first. Use forest rooms selectively when a lived scene, threshold, or focused contrast gives darkness a teaching purpose; dark is an emphasis mode, not the default instructional canvas. Public/landing heroes, module thresholds, media stages, and brief immersive scene beats may be dark. Sustained learning work—explanations, grammar tables, choices, typing, checkpoint items, feedback, and recovery—defaults to warm daylight or a light answer sheet. A dark context may frame a light task, but a table, form, or more than one short line of reading belongs on light paper.
 
-This is an owner revision to the app-wide 2A candidate, whose current source-of-truth wording still assigns whole missions, listening flows, and checkpoints to forest rooms. The owning `3p-03` design-language chunk must narrow that page-mode map and add a long-session eye-comfort review rule before learner-facing implementation; this experiment records the preference but does not silently edit another chunk's contract.
+The owner's 2026-07-26 review rejected the first clean-but-decorative pass as boring and asked for tables, visualisation, and stronger study support. The revision therefore makes `phrase-build` a three-column sentence workbench (`WHO → ACTION → LANGUAGE`) and `mistake-repair` a daylight time/context decoder with a live 19:00 rail and a two-row usage table. Carry forward this standard: an insert must reveal a relationship, comparison, transformation, or memory rule that is genuinely easier to understand visually. Clean styling alone does not earn a cutaway.
 
-Of these two trials, the owner prefers `phrase-build`. Carry forward its light instructional surface, direct transformation, and clarity as directional evidence—not as a template every insert must copy. `mistake-repair` remains a useful secondary pattern for a lived scene and correction, but its dark staging should be used sparingly.
+## Fail-closed design gates
+
+`npm run test:video-pipeline` is part of root `npm run qa`. It verifies the real contract, injects fifteen broken variants without mutating source, and executes four approval/review bypass attempts while proving that render evidence remains unchanged. The gate must reject theme drift, a stale design-contract hash, lost owner approval, overshoot easing, a missing or stale Triangle-A, a legacy font, weakened/non-strict/unpinned HyperFrames checks, warning-only frame containment, divergent snapshot evidence, stale frozen font bytes, insert/scene timing drift, audio placed outside its declared scene, and any render lacking both explicit approval and a durable reference. Both insert checks sample tween boundaries, run 15 midpoint samples, fail closed on every warning, perform frame containment checks, verify motion sidecars, save matching deterministic snapshots, and audit WCAG contrast.
 
 ## Current gate
 
@@ -44,11 +47,11 @@ Run each server from its project directory and hand the Studio timeline URL to t
 
 ```powershell
 Push-Location experiments/v1-02-hyperframes/phrase-build
-npx --yes hyperframes@0.7.71 preview --port 3017
+npx --yes hyperframes@0.7.72 preview --port 3017
 Pop-Location
 
 Push-Location experiments/v1-02-hyperframes/mistake-repair
-npx --yes hyperframes@0.7.71 preview --port 3018
+npx --yes hyperframes@0.7.72 preview --port 3018
 Pop-Location
 ```
 
@@ -65,11 +68,11 @@ After approval, one command performs the following fail-closed sequence:
 2. render both HyperFrames videos at high quality, 1,920×1,080, 30 fps, with capture-readiness and every lint warning fail-closed;
 3. require H.264/yuv420p, exact decoded frame counts, expected duration, zero audio streams, and a clean full decode;
 4. write `v1-02.insert-handoff.json` with source hashes and frozen artifact SHA-256 values;
-5. stage and re-hash the frozen inserts, fonts, and native German audio in the Remotion project;
+5. stage and re-hash the frozen inserts, approved Archivo promo opening, fonts, and native German audio in the Remotion project;
 6. enumerate and render `V1M1L1Proof` through Remotion;
 7. require the 81-second master to contain exactly 2,430 H.264/yuv420p frames at 1,920×1,080/30 fps, one AAC audio stream, and a clean full decode;
 8. create a tracked ≤10 MB, 1,280×720 review proxy and an eight-scene midpoint contact sheet that includes the recap;
-9. rerun root `npm run qa` and write `render-report.json` with approval, tool versions, executed gates, checksums, staged receipts, media facts, and known weaknesses;
+9. rerun root `npm run qa` and write `render-report.json` with design/package/brand provenance, approval, tool versions, executed gates, checksums, staged receipts, media facts, and known weaknesses;
 10. stop at `technical-pass-visual-review-pending` until the MP4-derived contact sheet is inspected.
 
 After inspecting the generated contact sheet (and proxy where needed), record the evidence-backed visual result without changing media:

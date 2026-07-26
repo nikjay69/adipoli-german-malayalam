@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "npx --yes hyperframes@0.7.71 check --snapshots --at 1.2,2.5,4.5,6.9,8.7,10.4",
-    "snapshot": "npx --yes hyperframes@0.7.71 snapshot --at 1.2,2.5,4.5,6.9,8.7,10.4",
-    "render": "npx --yes hyperframes@0.7.71 render --quality high --fps 30 --no-best-effort --strict-all --output renders/phrase-build-v1.mp4"
+    "check": "npx --yes hyperframes@0.7.72 check --snapshots --samples=15 --at-transitions --strict --frame-check=\"severity=error;seek=.25,.5,.75;tol=2\" --at=1.2,2.5,4.5,6.9,8.7,10.4",
+    "snapshot": "npx --yes hyperframes@0.7.72 snapshot --at=1.2,2.5,4.5,6.9,8.7,10.4",
+    "render": "npx --yes hyperframes@0.7.72 render --quality high --fps 30 --no-best-effort --strict-all --output renders/phrase-build-v1.mp4"
   }
 }

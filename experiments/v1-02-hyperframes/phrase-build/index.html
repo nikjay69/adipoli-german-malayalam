@@ -14,126 +14,281 @@
       #pb-root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #F5F0E8; }
 
       .pb-daylight { position: absolute; inset: 0; background: #F5F0E8; }
-      .pb-sun-cast { position: absolute; width: 980px; height: 1420px; right: -290px; top: -390px; background: rgba(212,165,32,.085); transform: rotate(-17deg); }
-      .pb-sun-cast::after { content: ""; position: absolute; left: 290px; top: 0; width: 94px; height: 100%; background: rgba(245,240,232,.72); }
-      .pb-horizon { position: absolute; left: 0; right: 0; bottom: 256px; height: 2px; background: rgba(63,77,68,.16); }
+      .pb-paper-grain {
+        position: absolute;
+        inset: 0;
+        opacity: .32;
+        background:
+          repeating-linear-gradient(0deg, transparent 0 21px, rgba(63,77,68,.018) 21px 22px),
+          radial-gradient(circle at 88% 12%, rgba(212,165,32,.13), transparent 28%);
+      }
+      .pb-sun-cast { position: absolute; width: 940px; height: 1480px; right: -240px; top: -430px; background: rgba(212,165,32,.075); transform: rotate(-18deg); }
+      .pb-sun-cast::after { content: ""; position: absolute; left: 254px; top: 0; width: 82px; height: 100%; background: rgba(245,240,232,.7); }
 
-      .pb-scene-flag { position: absolute; left: 106px; top: 70px; display: flex; align-items: center; gap: 18px; z-index: 8; }
+      .pb-scene-flag { position: absolute; left: 104px; top: 68px; display: flex; align-items: center; gap: 18px; z-index: 10; }
       .pb-flag-number { width: 54px; height: 44px; display: grid; place-items: center; border-radius: 4px; background: #D4A520; color: #0C1811; font: 800 22px/1 "Geist", sans-serif; }
-      .pb-flag-copy { font: 700 21px/1 "Geist", sans-serif; letter-spacing: .09em; text-transform: uppercase; color: #56635A; }
-      .pb-brand { position: absolute; right: 106px; top: 82px; z-index: 8; font: 700 20px/1 "Geist", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #56635A; }
+      .pb-flag-copy { font: 700 20px/1 "Geist", sans-serif; letter-spacing: .09em; text-transform: uppercase; color: #56635A; }
+      .pb-brand { position: absolute; right: 104px; top: 70px; z-index: 10; display: flex; align-items: center; gap: 13px; font: 700 17px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #56635A; }
+      .pb-brand img { width: 40px; height: 40px; display: block; }
 
-      .pb-intro { position: absolute; left: 108px; top: 160px; z-index: 5; }
-      .pb-kicker { font: 700 22px/1 "Geist Mono", monospace; letter-spacing: .11em; text-transform: uppercase; color: #8A5A2A; }
-      #pb-title { margin-top: 17px; font: 600 84px/.94 "Source Serif 4", Georgia, serif; letter-spacing: -.04em; color: #3F4D44; }
+      .pb-intro { position: absolute; left: 104px; top: 152px; z-index: 7; }
+      .pb-kicker { font: 700 21px/1 "Geist Mono", monospace; letter-spacing: .11em; text-transform: uppercase; color: #8A5A2A; }
+      #pb-title { margin-top: 14px; font: 600 72px/.96 "Source Serif 4", Georgia, serif; letter-spacing: -.038em; color: #3F4D44; }
+      .pb-question { position: absolute; right: 104px; top: 184px; max-width: 520px; text-align: right; font: 600 25px/1.3 "Geist", sans-serif; color: #56635A; }
 
-      #pb-workspace { position: absolute; left: 94px; right: 94px; top: 318px; height: 470px; z-index: 4; }
-      .pb-guide-line { position: absolute; left: 120px; right: 120px; top: 258px; height: 3px; background: rgba(63,77,68,.18); transform-origin: left center; }
-      .pb-guide-line::before, .pb-guide-line::after { content: ""; position: absolute; top: -7px; width: 3px; height: 17px; background: rgba(63,77,68,.28); }
-      .pb-guide-line::before { left: 0; }
-      .pb-guide-line::after { right: 0; }
+      #pb-workspace { position: absolute; left: 104px; top: 300px; width: 1712px; height: 592px; z-index: 5; }
+      .pb-table {
+        position: absolute;
+        inset: 0;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #F7EAD0;
+        box-shadow: 0 24px 64px rgba(63,77,68,.11);
+      }
+      .pb-table::before { content: ""; position: absolute; inset: 0; border: 2px solid rgba(138,90,42,.27); border-radius: 14px; z-index: 8; pointer-events: none; }
+      .pb-table-lines { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 6; overflow: visible; pointer-events: none; }
+      .pb-table-lines path { fill: none; stroke: rgba(63,77,68,.24); stroke-width: 2; }
+      .pb-table-grid { position: absolute; inset: 0; display: grid; grid-template-columns: 30% 38% 32%; grid-template-rows: 92px 212px 126px 162px; z-index: 3; }
 
-      #pb-phrase { position: absolute; inset: 0; will-change: transform; }
-      .pb-token { position: absolute; top: 86px; height: 268px; padding: 40px 34px 22px; transform-origin: 50% 58%; will-change: transform, opacity; isolation: isolate; }
-      .pb-token-surface { position: absolute; inset: 0; z-index: -1; background: #F7EAD0; border: 2px solid rgba(138,90,42,.24); border-radius: 9px; box-shadow: 0 24px 58px rgba(63,77,68,.13); }
-      .pb-token::after { content: ""; position: absolute; left: 38px; right: 38px; bottom: 18px; z-index: 1; height: 2px; background: rgba(138,90,42,.22); }
-      .pb-word, .pb-meaning { position: relative; z-index: 2; display: block; }
-      .pb-word { font: 600 110px/.86 "Source Serif 4", Georgia, serif; letter-spacing: -.045em; color: #3F4D44; white-space: nowrap; }
-      .pb-meaning { margin-top: 44px; font: 700 21px/1 "Geist", sans-serif; letter-spacing: .08em; text-transform: uppercase; color: #56635A; }
-      #pb-token-ich { left: 128px; width: 340px; }
-      #pb-token-lerne { left: 512px; width: 450px; }
-      #pb-token-deutsch { left: 1002px; width: 590px; }
+      .pb-cell { position: relative; display: flex; align-items: center; min-width: 0; overflow: hidden; }
+      .pb-col-head { padding: 0 38px; gap: 18px; background: rgba(239,233,220,.62); }
+      .pb-step { width: 36px; height: 36px; flex: 0 0 36px; display: grid; place-items: center; border: 2px solid #D4A520; border-radius: 50%; color: #8A5A2A; font: 800 17px/1 "Geist Mono", monospace; }
+      .pb-role { font: 750 22px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #56635A; }
+      .pb-role-note { margin-left: auto; font: 650 18px/1 "Geist", sans-serif; color: #56635A; }
+
+      .pb-german-cell { padding: 26px 38px 32px; align-items: flex-end; }
+      .pb-cell-wash { position: absolute; inset: 0; z-index: 0; background: rgba(212,165,32,.17); transform: scaleX(0); transform-origin: left center; }
+      .pb-word { position: relative; z-index: 2; display: block; font: 650 106px/.84 "Source Serif 4", Georgia, serif; letter-spacing: -.045em; color: #3F4D44; white-space: nowrap; }
       #pb-token-deutsch .pb-word { color: #8A5A2A; }
+      .pb-word-index { position: absolute; right: 28px; top: 26px; z-index: 2; font: 700 18px/1 "Geist Mono", monospace; color: #56635A; }
 
-      #pb-join-label { position: absolute; left: 128px; top: 30px; font: 700 22px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #1F7A44; }
-      .pb-join-stroke { position: absolute; left: 124px; top: 324px; width: 1480px; height: 52px; overflow: visible; }
-      .pb-join-stroke path { fill: none; stroke: #D4A520; stroke-width: 7; stroke-linecap: round; }
+      .pb-meaning-cell { padding: 22px 38px; display: block; }
+      .pb-meaning-label { font: 700 17px/1 "Geist Mono", monospace; letter-spacing: .09em; text-transform: uppercase; color: #8A5A2A; }
+      .pb-meaning { margin-top: 14px; display: block; font: 650 31px/1 "Geist", sans-serif; color: #3F4D44; }
 
-      #pb-threshold { position: absolute; left: 0; right: 0; bottom: 0; height: 394px; z-index: 3; background: #0C1811; transform-origin: center bottom; overflow: hidden; }
-      #pb-threshold::before { content: ""; position: absolute; left: 92px; right: 92px; top: 36px; height: 2px; background: rgba(241,210,122,.28); }
-      #pb-threshold::after { content: ""; position: absolute; width: 560px; height: 560px; right: -160px; top: -120px; border: 3px solid rgba(241,210,122,.16); border-radius: 50%; }
-      .pb-say-cue { position: absolute; left: 108px; top: 86px; z-index: 2; }
-      .pb-say-label { font: 700 22px/1 "Geist Mono", monospace; letter-spacing: .11em; text-transform: uppercase; color: #F1D27A; }
-      #pb-spoken-sentence { position: absolute; left: 438px; top: 98px; z-index: 3; font: 700 126px/.94 "Source Serif 4", Georgia, serif; letter-spacing: -.045em; color: #F1D27A; white-space: nowrap; transform-origin: 45% 60%; }
-      .pb-spoken-line { position: absolute; left: 438px; top: 244px; width: 1080px; height: 42px; overflow: visible; z-index: 3; }
-      .pb-spoken-line path { fill: none; stroke: #D4A520; stroke-width: 7; stroke-linecap: round; }
-      .pb-wave { position: absolute; right: 112px; bottom: 78px; width: 220px; height: 120px; overflow: visible; z-index: 3; }
-      .pb-wave path { fill: none; stroke: #F1D27A; stroke-width: 5; stroke-linecap: round; opacity: .82; }
+      .pb-rule-cell { padding: 24px 38px; display: block; }
+      .pb-rule-label { font: 700 17px/1 "Geist Mono", monospace; letter-spacing: .09em; text-transform: uppercase; color: #56635A; }
+      .pb-rule-copy { margin-top: 15px; font: 600 26px/1.1 "Geist", sans-serif; color: #3F4D44; }
+      .pb-rule-copy strong { color: #1F7A44; font-weight: 750; }
+
+      .pb-order-rail { position: absolute; left: 38px; right: 38px; bottom: 25px; height: 40px; z-index: 9; }
+      .pb-order-rail svg { position: absolute; inset: 0; width: 100%; height: 40px; overflow: visible; }
+      .pb-order-rail path { fill: none; stroke: #D4A520; stroke-width: 6; stroke-linecap: round; }
+      .pb-order-dot { position: absolute; top: 12px; width: 16px; height: 16px; border: 4px solid #F7EAD0; border-radius: 50%; background: #D4A520; box-shadow: 0 0 0 2px #D4A520; }
+      .pb-order-dot-one { left: 14.2%; }
+      .pb-order-dot-two { left: 49.1%; }
+      .pb-order-dot-three { left: 83.5%; }
+
+      #pb-threshold {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 194px;
+        z-index: 12;
+        background: #0C1811;
+        overflow: hidden;
+        transform-origin: center bottom;
+      }
+      #pb-threshold::before { content: ""; position: absolute; left: 104px; right: 104px; top: 27px; height: 2px; background: rgba(241,210,122,.28); }
+      #pb-threshold::after { content: ""; position: absolute; width: 440px; height: 440px; right: -92px; top: -158px; border: 3px solid rgba(241,210,122,.14); border-radius: 50%; }
+      .pb-say-cue { position: absolute; left: 104px; top: 70px; z-index: 2; }
+      .pb-say-label { font: 700 20px/1 "Geist Mono", monospace; letter-spacing: .11em; text-transform: uppercase; color: #F1D27A; }
+      .pb-say-note { margin-top: 12px; font: 550 21px/1 "Geist", sans-serif; color: #C8D0C9; }
+      #pb-spoken-sentence { position: absolute; left: 522px; top: 55px; z-index: 3; font: 700 92px/.94 "Source Serif 4", Georgia, serif; letter-spacing: -.044em; color: #F1D27A; white-space: nowrap; transform-origin: 45% 60%; }
+      .pb-spoken-line { position: absolute; left: 522px; top: 147px; width: 990px; height: 28px; overflow: visible; z-index: 3; }
+      .pb-spoken-line path { fill: none; stroke: #D4A520; stroke-width: 6; stroke-linecap: round; }
+      .pb-breath { position: absolute; right: 112px; top: 73px; width: 170px; height: 62px; z-index: 4; display: flex; align-items: center; gap: 12px; }
+      .pb-breath span { display: block; width: 8px; border-radius: 4px; background: #F1D27A; opacity: .76; transform-origin: center bottom; }
+      .pb-breath span:nth-child(1), .pb-breath span:nth-child(7) { height: 18px; }
+      .pb-breath span:nth-child(2), .pb-breath span:nth-child(6) { height: 30px; }
+      .pb-breath span:nth-child(3), .pb-breath span:nth-child(5) { height: 46px; }
+      .pb-breath span:nth-child(4) { height: 58px; }
     </style>
   </head>
   <body>
-    <div data-hf-id="hf-qzcm" id="pb-root" data-composition-id="m1l1-phrase-build" data-width="1920" data-height="1080" data-start="0" data-duration="11">
-      <div data-hf-id="hf-hzrt" class="pb-daylight"></div>
-      <div data-hf-id="hf-j68w" class="pb-sun-cast" data-layout-ignore=""></div>
-      <div data-hf-id="hf-hpyt" class="pb-horizon" data-layout-ignore=""></div>
+    <div data-hf-id="hf-pb01" id="pb-root" data-composition-id="m1l1-phrase-build" data-width="1920" data-height="1080" data-start="0" data-duration="11">
+      <div data-hf-id="hf-pb02" class="pb-daylight"></div>
+      <div data-hf-id="hf-pb03" class="pb-paper-grain" data-layout-ignore=""></div>
+      <div data-hf-id="hf-pb04" class="pb-sun-cast" data-layout-ignore=""></div>
 
-      <div data-hf-id="hf-35lz" class="pb-scene-flag" id="pb-flag"><div data-hf-id="hf-xuv6" class="pb-flag-number">01</div><div data-hf-id="hf-2tvh" class="pb-flag-copy">Build the thought</div></div>
-      <div data-hf-id="hf-2ylv" class="pb-brand">Adipoli German · A1</div>
-      <div data-hf-id="hf-ey4v" class="pb-intro">
-        <div data-hf-id="hf-kfh0" class="pb-kicker" id="pb-kicker">Meaning → one sentence</div>
-        <div data-hf-id="hf-jxvz" id="pb-title">Build one thought.</div>
+      <div data-hf-id="hf-pb05" class="pb-scene-flag" id="pb-flag">
+        <div data-hf-id="hf-pb06" class="pb-flag-number">01</div>
+        <div data-hf-id="hf-pb07" class="pb-flag-copy">Sentence workbench</div>
+      </div>
+      <div data-hf-id="hf-pb08" class="pb-brand">
+        <img data-hf-id="hf-pb09" src="./assets/brand/mark-triangle.svg" alt="Adipoli German">
+        <span data-hf-id="hf-pb10">A1 · teaching insert</span>
       </div>
 
-      <div data-hf-id="hf-ar6v" id="pb-workspace">
-        <div data-hf-id="hf-81v6" class="pb-guide-line" id="pb-guide" data-layout-ignore=""></div>
-        <div data-hf-id="hf-ciy7" id="pb-phrase">
-          <div data-hf-id="hf-gijo" id="pb-join-label">One sentence</div>
-          <div data-hf-id="hf-uval" class="pb-token" id="pb-token-ich" data-layout-allow-occlusion=""><div data-hf-id="hf-cyr5" class="pb-token-surface" data-layout-ignore=""></div><span data-hf-id="hf-2i1k" class="pb-word">Ich</span><span data-hf-id="hf-okbd" class="pb-meaning">I · who</span></div>
-          <div data-hf-id="hf-xsqf" class="pb-token" id="pb-token-lerne" data-layout-allow-occlusion=""><div data-hf-id="hf-s6w5" class="pb-token-surface" data-layout-ignore=""></div><span data-hf-id="hf-nf2m" class="pb-word">lerne</span><span data-hf-id="hf-yeea" class="pb-meaning">learn · action</span></div>
-          <div data-hf-id="hf-mt1l" class="pb-token" id="pb-token-deutsch" data-layout-allow-occlusion=""><div data-hf-id="hf-tdt8" class="pb-token-surface" data-layout-ignore=""></div><span data-hf-id="hf-qm9u" class="pb-word">Deutsch.</span><span data-hf-id="hf-d88c" class="pb-meaning">German · language</span></div>
-          <svg data-hf-id="hf-mkuz" class="pb-join-stroke" viewBox="0 0 1480 52" aria-hidden="true"><path data-hf-id="hf-5ucq" id="pb-join-path" d="M 8 29 C 315 10, 760 47, 1470 19" /></svg>
+      <div data-hf-id="hf-pb11" class="pb-intro">
+        <div data-hf-id="hf-pb12" class="pb-kicker" id="pb-kicker">Word order · see the logic</div>
+        <div data-hf-id="hf-pb13" id="pb-title">Build the sentence.</div>
+      </div>
+      <div data-hf-id="hf-pb14" class="pb-question" id="pb-question">Each German word has one clear job.</div>
+
+      <div data-hf-id="hf-pb15" id="pb-workspace">
+        <div data-hf-id="hf-pb16" class="pb-table" id="pb-table">
+          <svg data-hf-id="hf-pb17" class="pb-table-lines" viewBox="0 0 1712 592" preserveAspectRatio="none" aria-hidden="true">
+            <path data-hf-id="hf-pb18" id="pb-line-v1" d="M 514 0 L 514 592" />
+            <path data-hf-id="hf-pb19" id="pb-line-v2" d="M 1165 0 L 1165 592" />
+            <path data-hf-id="hf-pb20" id="pb-line-h1" d="M 0 92 L 1712 92" />
+            <path data-hf-id="hf-pb21" id="pb-line-h2" d="M 0 304 L 1712 304" />
+            <path data-hf-id="hf-pb22" id="pb-line-h3" d="M 0 430 L 1712 430" />
+          </svg>
+
+          <div data-hf-id="hf-pb23" class="pb-table-grid">
+            <div data-hf-id="hf-pb24" class="pb-cell pb-col-head pb-role-one">
+              <span data-hf-id="hf-pb25" class="pb-step">1</span>
+              <span data-hf-id="hf-pb26" class="pb-role">Who?</span>
+              <span data-hf-id="hf-pb27" class="pb-role-note">subject</span>
+            </div>
+            <div data-hf-id="hf-pb28" class="pb-cell pb-col-head pb-role-two">
+              <span data-hf-id="hf-pb29" class="pb-step">2</span>
+              <span data-hf-id="hf-pb30" class="pb-role">Action?</span>
+              <span data-hf-id="hf-pb31" class="pb-role-note">verb</span>
+            </div>
+            <div data-hf-id="hf-pb32" class="pb-cell pb-col-head pb-role-three">
+              <span data-hf-id="hf-pb33" class="pb-step">3</span>
+              <span data-hf-id="hf-pb34" class="pb-role">What?</span>
+              <span data-hf-id="hf-pb35" class="pb-role-note">rest</span>
+            </div>
+
+            <div data-hf-id="hf-pb36" class="pb-cell pb-german-cell" id="pb-token-ich">
+              <span data-hf-id="hf-pb37" class="pb-cell-wash"></span>
+              <span data-hf-id="hf-pb38" class="pb-word">Ich</span>
+              <span data-hf-id="hf-pb39" class="pb-word-index">01</span>
+            </div>
+            <div data-hf-id="hf-pb40" class="pb-cell pb-german-cell" id="pb-token-lerne">
+              <span data-hf-id="hf-pb41" class="pb-cell-wash"></span>
+              <span data-hf-id="hf-pb42" class="pb-word">lerne</span>
+              <span data-hf-id="hf-pb43" class="pb-word-index">02</span>
+            </div>
+            <div data-hf-id="hf-pb44" class="pb-cell pb-german-cell" id="pb-token-deutsch">
+              <span data-hf-id="hf-pb45" class="pb-cell-wash"></span>
+              <span data-hf-id="hf-pb46" class="pb-word">Deutsch.</span>
+              <span data-hf-id="hf-pb47" class="pb-word-index">03</span>
+            </div>
+
+            <div data-hf-id="hf-pb48" class="pb-cell pb-meaning-cell pb-meaning-one">
+              <div data-hf-id="hf-pb49" class="pb-meaning-label">Meaning</div>
+              <span data-hf-id="hf-pb50" class="pb-meaning">I</span>
+            </div>
+            <div data-hf-id="hf-pb51" class="pb-cell pb-meaning-cell pb-meaning-two">
+              <div data-hf-id="hf-pb52" class="pb-meaning-label">Meaning</div>
+              <span data-hf-id="hf-pb53" class="pb-meaning">am learning</span>
+            </div>
+            <div data-hf-id="hf-pb54" class="pb-cell pb-meaning-cell pb-meaning-three">
+              <div data-hf-id="hf-pb55" class="pb-meaning-label">Meaning</div>
+              <span data-hf-id="hf-pb56" class="pb-meaning">German</span>
+            </div>
+
+            <div data-hf-id="hf-pb57" class="pb-cell pb-rule-cell pb-rule-one">
+              <div data-hf-id="hf-pb58" class="pb-rule-label">Position 1</div>
+              <div data-hf-id="hf-pb59" class="pb-rule-copy">Start with <strong data-hf-id="hf-th06">who</strong>.</div>
+            </div>
+            <div data-hf-id="hf-pb60" class="pb-cell pb-rule-cell pb-rule-two">
+              <div data-hf-id="hf-pb61" class="pb-rule-label">Position 2</div>
+              <div data-hf-id="hf-pb62" class="pb-rule-copy">The <strong data-hf-id="hf-acur">verb</strong> comes next.</div>
+            </div>
+            <div data-hf-id="hf-pb63" class="pb-cell pb-rule-cell pb-rule-three">
+              <div data-hf-id="hf-pb64" class="pb-rule-label">Position 3</div>
+              <div data-hf-id="hf-pb65" class="pb-rule-copy">Complete the thought.</div>
+            </div>
+          </div>
+
+          <div data-hf-id="hf-pb66" class="pb-order-rail">
+            <svg data-hf-id="hf-pb67" viewBox="0 0 1636 40" preserveAspectRatio="none" aria-hidden="true">
+              <path data-hf-id="hf-pb68" id="pb-order-path" d="M 10 20 L 1626 20" />
+            </svg>
+            <span data-hf-id="hf-pb69" class="pb-order-dot pb-order-dot-one"></span>
+            <span data-hf-id="hf-pb70" class="pb-order-dot pb-order-dot-two"></span>
+            <span data-hf-id="hf-pb71" class="pb-order-dot pb-order-dot-three"></span>
+          </div>
         </div>
       </div>
 
-      <div data-hf-id="hf-24ht" id="pb-threshold">
-        <div data-hf-id="hf-kx2q" class="pb-say-cue" id="pb-say-cue"><div data-hf-id="hf-yqlm" class="pb-say-label">Say it · one breath</div></div>
-        <div data-hf-id="hf-gxz8" id="pb-spoken-sentence">Ich lerne Deutsch.</div>
-        <svg data-hf-id="hf-qfow" class="pb-spoken-line" viewBox="0 0 1080 42" aria-hidden="true"><path data-hf-id="hf-dob1" id="pb-spoken-line-path" d="M 8 24 C 258 7, 694 38, 1070 18" /></svg>
-        <svg data-hf-id="hf-ouec" class="pb-wave" viewBox="0 0 220 120" aria-hidden="true">
-          <path data-hf-id="hf-wtco" id="pb-wave-1" d="M 16 60 C 52 24, 52 96, 88 60" />
-          <path data-hf-id="hf-v8hy" id="pb-wave-2" d="M 70 60 C 112 8, 112 112, 154 60" />
-          <path data-hf-id="hf-x54k" id="pb-wave-3" d="M 138 60 C 170 30, 170 90, 204 60" />
+      <div data-hf-id="hf-pb72" id="pb-threshold">
+        <div data-hf-id="hf-pb73" class="pb-say-cue" id="pb-say-cue">
+          <div data-hf-id="hf-pb74" class="pb-say-label">Now say the whole thought</div>
+          <div data-hf-id="hf-pb75" class="pb-say-note">one calm breath</div>
+        </div>
+        <div data-hf-id="hf-pb76" id="pb-spoken-sentence">Ich lerne Deutsch.</div>
+        <svg data-hf-id="hf-pb77" class="pb-spoken-line" viewBox="0 0 990 28" preserveAspectRatio="none" aria-hidden="true">
+          <path data-hf-id="hf-pb78" id="pb-spoken-line-path" d="M 6 16 C 248 5, 672 25, 984 12" />
         </svg>
+        <div data-hf-id="hf-pb79" class="pb-breath" id="pb-breath" aria-hidden="true">
+          <span data-hf-id="hf-pb80"></span><span data-hf-id="hf-pb81"></span><span data-hf-id="hf-pb82"></span><span data-hf-id="hf-pb83"></span><span data-hf-id="hf-pb84"></span><span data-hf-id="hf-pb85"></span><span data-hf-id="hf-pb86"></span>
+        </div>
       </div>
     </div>
+
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({paused: true});
-      const drawPaths = ['pb-join-path', 'pb-spoken-line-path', 'pb-wave-1', 'pb-wave-2', 'pb-wave-3'].map((id) => document.getElementById(id));
+      const drawPaths = [
+        'pb-line-v1',
+        'pb-line-v2',
+        'pb-line-h1',
+        'pb-line-h2',
+        'pb-line-h3',
+        'pb-order-path',
+        'pb-spoken-line-path',
+      ].map((id) => document.getElementById(id));
+
       drawPaths.forEach((path) => {
         const length = path.getTotalLength();
         path.style.strokeDasharray = String(length);
         path.style.strokeDashoffset = String(length);
       });
 
-      tl.fromTo('#pb-flag', {x: -36, opacity: 0}, {x: 0, opacity: 1, duration: .52, ease: 'power3.out'}, .12);
-      tl.fromTo('.pb-brand', {x: 30, opacity: 0}, {x: 0, opacity: 1, duration: .48, ease: 'power2.out'}, .2);
-      tl.fromTo('#pb-kicker', {y: 20, opacity: 0}, {y: 0, opacity: 1, duration: .46, ease: 'power2.out'}, .32);
-      tl.fromTo('#pb-title', {y: 34, opacity: 0}, {y: 0, opacity: 1, duration: .68, ease: 'power3.out'}, .48);
-      tl.fromTo('#pb-guide', {scaleX: 0, opacity: 0}, {scaleX: 1, opacity: 1, duration: .72, ease: 'power2.out'}, .82);
+      tl.fromTo('#pb-flag', {x: -32, opacity: 0}, {x: 0, opacity: 1, duration: .48, ease: 'power3.out'}, .1);
+      tl.fromTo('.pb-brand', {x: 26, opacity: 0}, {x: 0, opacity: 1, duration: .46, ease: 'power2.out'}, .18);
+      tl.fromTo('#pb-kicker', {y: 16, opacity: 0}, {y: 0, opacity: 1, duration: .42, ease: 'power2.out'}, .28);
+      tl.fromTo('#pb-title', {y: 28, opacity: 0}, {y: 0, opacity: 1, duration: .62, ease: 'power3.out'}, .4);
+      tl.fromTo('#pb-question', {x: 22, opacity: 0}, {x: 0, opacity: 1, duration: .5, ease: 'power2.out'}, .66);
+      tl.fromTo('#pb-table', {y: 44, opacity: 0}, {y: 0, opacity: 1, duration: .72, ease: 'power3.out'}, .72);
 
-      tl.fromTo('#pb-token-ich', {x: -170, y: 78, rotation: -7, opacity: 0}, {x: 0, y: 0, rotation: -2.5, opacity: 1, duration: .76, ease: 'power3.out'}, 1.0);
-      tl.fromTo('#pb-token-lerne', {x: 18, y: -125, rotation: 5, opacity: 0}, {x: 0, y: 0, rotation: 2.2, opacity: 1, duration: .84, ease: 'back.out(1.35)'}, 1.58);
-      tl.fromTo('#pb-token-deutsch', {x: 180, y: 82, rotation: -5, opacity: 0}, {x: 0, y: 0, rotation: -1.6, opacity: 1, duration: .78, ease: 'power3.out'}, 2.16);
+      tl.to('#pb-line-h1', {strokeDashoffset: 0, duration: .54, ease: 'power2.out'}, 1.08);
+      tl.to('#pb-line-h2', {strokeDashoffset: 0, duration: .58, ease: 'power2.out'}, 1.24);
+      tl.to('#pb-line-h3', {strokeDashoffset: 0, duration: .58, ease: 'power2.out'}, 1.4);
+      tl.to('#pb-line-v1', {strokeDashoffset: 0, duration: .64, ease: 'power2.out'}, 1.14);
+      tl.to('#pb-line-v2', {strokeDashoffset: 0, duration: .64, ease: 'power2.out'}, 1.34);
 
-      tl.to('#pb-token-ich', {rotation: 0, x: 38, duration: .88, ease: 'power2.inOut'}, 3.46);
-      tl.to('#pb-token-lerne', {rotation: 0, x: 2, duration: .88, ease: 'power2.inOut'}, 3.46);
-      tl.to('#pb-token-deutsch', {rotation: 0, x: -40, duration: .88, ease: 'power2.inOut'}, 3.46);
-      tl.to('.pb-token-surface', {opacity: 0, duration: .5, ease: 'power1.out'}, 4.18);
-      tl.to('.pb-meaning', {opacity: 0, y: -8, duration: .42, ease: 'power2.in'}, 4.2);
-      tl.fromTo('#pb-join-label', {x: -18, opacity: 0}, {x: 0, opacity: 1, duration: .48, ease: 'power3.out'}, 4.42);
-      tl.to('#pb-join-path', {strokeDashoffset: 0, duration: .82, ease: 'power2.out'}, 4.76);
+      tl.fromTo('.pb-col-head', {y: -18, opacity: 0}, {y: 0, opacity: 1, duration: .44, stagger: .16, ease: 'power2.out'}, 1.44);
+      tl.fromTo('#pb-token-ich .pb-word', {x: -54, opacity: 0}, {x: 0, opacity: 1, duration: .58, ease: 'power3.out'}, 2.0);
+      tl.fromTo('#pb-token-lerne .pb-word', {y: 38, opacity: 0}, {y: 0, opacity: 1, duration: .58, ease: 'power3.out'}, 2.36);
+      tl.fromTo('#pb-token-deutsch .pb-word', {x: 54, opacity: 0}, {x: 0, opacity: 1, duration: .58, ease: 'power3.out'}, 2.72);
+      tl.fromTo('.pb-word-index', {opacity: 0}, {opacity: 1, duration: .35, stagger: .13, ease: 'power1.out'}, 2.28);
+      tl.fromTo('.pb-meaning-cell', {y: 18, opacity: 0}, {y: 0, opacity: 1, duration: .44, stagger: .16, ease: 'power2.out'}, 3.08);
+      tl.fromTo('.pb-rule-cell', {y: 18, opacity: 0}, {y: 0, opacity: 1, duration: .44, stagger: .16, ease: 'power2.out'}, 3.72);
 
-      tl.fromTo('#pb-threshold', {scaleY: 0}, {scaleY: 1, duration: .78, ease: 'power3.inOut'}, 6.35);
-      tl.to('#pb-phrase', {scale: .84, opacity: 0, duration: .42, ease: 'power2.in'}, 6.5);
-      tl.to('#pb-guide', {opacity: 0, duration: .3, ease: 'power2.in'}, 6.42);
-      tl.fromTo('#pb-say-cue', {x: -28, opacity: 0}, {x: 0, opacity: 1, duration: .55, ease: 'power3.out'}, 7.26);
-      tl.fromTo('#pb-spoken-sentence', {scale: .74, opacity: 0}, {scale: 1, opacity: 1, duration: .72, ease: 'back.out(1.4)'}, 7.04);
-      tl.to('#pb-spoken-line-path', {strokeDashoffset: 0, duration: .76, ease: 'power2.out'}, 7.68);
-      tl.to('#pb-wave-1', {strokeDashoffset: 0, duration: .48, ease: 'power2.out'}, 8.0);
-      tl.to('#pb-wave-2', {strokeDashoffset: 0, duration: .55, ease: 'power2.out'}, 8.34);
-      tl.to('#pb-wave-3', {strokeDashoffset: 0, duration: .48, ease: 'power2.out'}, 8.72);
-      tl.fromTo('.pb-wave', {x: 12, opacity: .62}, {x: 0, opacity: 1, duration: .7, ease: 'sine.inOut'}, 9.32);
+      tl.addLabel('roleOne', 4.42);
+      tl.fromTo('#pb-token-ich .pb-cell-wash', {scaleX: 0}, {scaleX: 1, duration: .62, ease: 'power2.inOut'}, 'roleOne');
+      tl.to('.pb-role-one .pb-step', {backgroundColor: '#D4A520', color: '#0C1811', duration: .62, ease: 'power2.inOut'}, 'roleOne');
+      tl.to('#pb-token-ich .pb-cell-wash', {opacity: .38, duration: .28, ease: 'power1.out'}, 5.02);
+
+      tl.addLabel('roleTwo', 5.06);
+      tl.fromTo('#pb-token-lerne .pb-cell-wash', {scaleX: 0}, {scaleX: 1, duration: .62, ease: 'power2.inOut'}, 'roleTwo');
+      tl.to('.pb-role-two .pb-step', {backgroundColor: '#D4A520', color: '#0C1811', duration: .62, ease: 'power2.inOut'}, 'roleTwo');
+      tl.to('#pb-token-lerne .pb-cell-wash', {opacity: .38, duration: .28, ease: 'power1.out'}, 5.66);
+
+      tl.addLabel('roleThree', 5.7);
+      tl.fromTo('#pb-token-deutsch .pb-cell-wash', {scaleX: 0}, {scaleX: 1, duration: .62, ease: 'power2.inOut'}, 'roleThree');
+      tl.to('.pb-role-three .pb-step', {backgroundColor: '#D4A520', color: '#0C1811', duration: .62, ease: 'power2.inOut'}, 'roleThree');
+      tl.to('#pb-token-deutsch .pb-cell-wash', {opacity: .38, duration: .28, ease: 'power1.out'}, 6.3);
+      tl.to('#pb-order-path', {strokeDashoffset: 0, duration: .92, ease: 'power2.out'}, 6.18);
+      tl.fromTo('.pb-order-dot', {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: .34, stagger: .2, ease: 'power2.out'}, 6.44);
+
+      tl.fromTo('#pb-threshold', {scaleY: 0}, {scaleY: 1, duration: .72, ease: 'power3.inOut'}, 7.34);
+      tl.to('#pb-workspace', {y: -18, duration: .54, ease: 'power2.inOut'}, 7.46);
+      tl.fromTo('#pb-say-cue', {x: -24, opacity: 0}, {x: 0, opacity: 1, duration: .48, ease: 'power3.out'}, 8.02);
+      tl.fromTo('#pb-spoken-sentence', {y: 24, opacity: 0}, {y: 0, opacity: 1, duration: .62, ease: 'power3.out'}, 7.92);
+      tl.to('#pb-spoken-line-path', {strokeDashoffset: 0, duration: .72, ease: 'power2.out'}, 8.56);
+      tl.fromTo('#pb-breath span', {scaleY: .28, opacity: .32}, {scaleY: 1, opacity: .86, duration: .42, stagger: .055, ease: 'sine.inOut'}, 8.78);
+      tl.to('#pb-spoken-sentence', {scale: 1.025, duration: .42, ease: 'sine.inOut'}, 9.42);
+      tl.to('#pb-spoken-sentence', {scale: 1, duration: .42, ease: 'sine.inOut'}, 9.84);
+      tl.to('#pb-breath span', {scaleY: .62, duration: .52, stagger: {each: .045, from: 'center'}, ease: 'sine.inOut'}, 9.66);
 
       window.__timelines['m1l1-phrase-build'] = tl;
     </script>

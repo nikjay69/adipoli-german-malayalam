@@ -9,6 +9,8 @@ const contractRoot = path.dirname(fileURLToPath(import.meta.url));
 const experimentsRoot = path.resolve(contractRoot, '..');
 const repoRoot = path.resolve(experimentsRoot, '..');
 const manifestPath = path.resolve(contractRoot, 'lesson-01.scene.json');
+const designContractPath = path.resolve(contractRoot, 'design-contract.json');
+const brandManifestPath = path.resolve(repoRoot, 'public/brand/manifest.json');
 const handoffPath = path.resolve(contractRoot, 'v1-02.insert-handoff.json');
 const reportPath = path.resolve(contractRoot, 'render-report.json');
 const evidenceRoot = path.resolve(contractRoot, 'evidence');
@@ -405,6 +407,7 @@ const runPreflight = async ({runHyperFramesChecks, allowPartialArtifacts = false
   runNpm(['run', 'typecheck'], {cwd: remotionRoot});
 
   const manifest = await readManifest();
+  const designContract = await readJson(designContractPath);
   const inserts = insertState(manifest);
   if (runHyperFramesChecks) {
     for (const insert of inserts) verifyCurrentHyperFramesPin(insert);
@@ -423,6 +426,7 @@ const runPreflight = async ({runHyperFramesChecks, allowPartialArtifacts = false
   const remotionPackage = await readJson(remotionPackagePath);
   return {
     manifest,
+    designContract,
     inserts,
     toolchain: {
       node: process.versions.node,
@@ -434,7 +438,7 @@ const runPreflight = async ({runHyperFramesChecks, allowPartialArtifacts = false
   };
 };
 
-const buildInsertReport = async (manifest, insert) => {
+const buildInsertReport = async (manifest, designContract, insert) => {
   const media = await qcVideo({
     filePath: insert.artifactPathAbsolute,
     label: `HyperFrames insert ${insert.id}`,
@@ -460,6 +464,24 @@ const buildInsertReport = async (manifest, insert) => {
       html: await sha256(path.resolve(insert.projectRoot, 'index.html')),
       motion: await sha256(path.resolve(insert.projectRoot, 'index.motion.json')),
       package: await sha256(path.resolve(insert.projectRoot, 'package.json')),
+      frame: await sha256(path.resolve(insert.projectRoot, 'frame.md')),
+    },
+    brandAsset: {
+      id: insert.brandAsset,
+      path: relativeToRepo(
+        path.resolve(
+          insert.projectRoot,
+          'assets/brand',
+          path.basename(designContract.approvedAssets[insert.brandAsset].publicPath),
+        ),
+      ),
+      sha256: await sha256(
+        path.resolve(
+          insert.projectRoot,
+          'assets/brand',
+          path.basename(designContract.approvedAssets[insert.brandAsset].publicPath),
+        ),
+      ),
     },
     sha256: media.sha256,
     sizeBytes: media.sizeBytes,
@@ -476,8 +498,8 @@ const buildInsertReport = async (manifest, insert) => {
   };
 };
 
-const validateExistingHandoff = async (handoff, manifest, insertReports) => {
-  requireExact(handoff.schemaVersion, 1, 'insert handoff schemaVersion');
+const validateExistingHandoff = async (handoff, manifest, designContract, insertReports) => {
+  requireExact(handoff.schemaVersion, 2, 'insert handoff schemaVersion');
   requireExact(handoff.approval?.status, 'approved', 'insert handoff approval status');
   requireExact(
     handoff.approval?.surface,
@@ -488,6 +510,17 @@ const validateExistingHandoff = async (handoff, manifest, insertReports) => {
     handoff.sceneContract?.sha256,
     await sha256(manifestPath),
     'insert handoff scene contract hash',
+  );
+  requireExact(handoff.designSystem?.id, designContract.id, 'insert handoff design-system id');
+  requireExact(
+    handoff.designSystem?.contractSha256,
+    await sha256(designContractPath),
+    'insert handoff design-contract hash',
+  );
+  requireExact(
+    handoff.designSystem?.brandManifestSha256,
+    await sha256(brandManifestPath),
+    'insert handoff brand-manifest hash',
   );
   requireExact(handoff.inserts?.length, insertReports.length, 'insert handoff artifact count');
   for (const report of insertReports) {
@@ -501,15 +534,40 @@ const validateExistingHandoff = async (handoff, manifest, insertReports) => {
   }
 };
 
-const validateStagedReceipt = async (manifest, insertReports) => {
+const validateStagedReceipt = async (manifest, designContract, insertReports) => {
   const receipt = await readJson(stagedReceiptPath);
   const fontLock = await readJson(fontLockPath);
+  requireExact(receipt.schemaVersion, 2, 'staged receipt schemaVersion');
   requireExact(receipt.sceneContractSha256, await sha256(manifestPath), 'staged scene contract hash');
   requireExact(receipt.rendererTheme, manifest.rendererTheme, 'staged renderer theme');
+  requireExact(receipt.designSystem?.id, designContract.id, 'staged design-system id');
+  requireExact(
+    receipt.designSystem?.contractSha256,
+    await sha256(designContractPath),
+    'staged design-contract hash',
+  );
+  requireExact(
+    receipt.designSystem?.sourcePackageSha256,
+    String(designContract.sourcePackage.sha256).toLowerCase(),
+    'staged approved-package hash',
+  );
+  requireExact(
+    receipt.designSystem?.brandManifestSha256,
+    await sha256(brandManifestPath),
+    'staged brand-manifest hash',
+  );
   requireExact(receipt.insertHandoff?.sha256, await sha256(handoffPath), 'staged insert handoff hash');
   requireExact(receipt.fonts?.length, 3, 'staged font count');
   requireExact(receipt.assets?.length, 3, 'staged native-audio count');
+  requireExact(receipt.brandAssets?.length, 1, 'staged brand-asset count');
   requireExact(receipt.inserts?.length, 2, 'staged insert count');
+  const stagedPromo = receipt.brandAssets.find((asset) => asset.id === 'promo-opening-title');
+  if (!stagedPromo) fail('staged receipt is missing the approved promo opening title');
+  requireExact(
+    stagedPromo.sha256,
+    designContract.approvedAssets.promoOpeningTitle.sha256,
+    'staged promo opening title hash',
+  );
 
   for (const font of fontLock.fonts) {
     const staged = receipt.fonts.find((candidate) => candidate.family === font.family);
@@ -536,7 +594,13 @@ const validateStagedReceipt = async (manifest, insertReports) => {
     path: relativeToRepo(stagedReceiptPath),
     sha256: await sha256(stagedReceiptPath),
     sceneContractSha256: receipt.sceneContractSha256,
-    counts: {fonts: receipt.fonts.length, nativeAudio: receipt.assets.length, inserts: receipt.inserts.length},
+    designContractSha256: receipt.designSystem.contractSha256,
+    counts: {
+      brandAssets: receipt.brandAssets.length,
+      fonts: receipt.fonts.length,
+      nativeAudio: receipt.assets.length,
+      inserts: receipt.inserts.length,
+    },
     verification: 'pass',
   };
 };
@@ -551,7 +615,7 @@ const renderApproved = async () => {
     fail(`A render report already exists at ${relativeToRepo(reportPath)}; refusing a second finalization.`);
   }
 
-  const {manifest, inserts, toolchain} = await runPreflight({
+  const {manifest, designContract, inserts, toolchain} = await runPreflight({
     runHyperFramesChecks: true,
   });
   const hasFrozenHandoff = existsSync(handoffPath);
@@ -573,21 +637,30 @@ const renderApproved = async () => {
   const insertReports = [];
   for (const insert of inserts) {
     if (!hasFrozenHandoff) runNpm(['run', 'render'], {cwd: insert.projectRoot});
-    insertReports.push(await buildInsertReport(manifest, insert));
+    insertReports.push(await buildInsertReport(manifest, designContract, insert));
   }
 
   let handoff;
   if (existsSync(handoffPath)) {
     handoff = await readJson(handoffPath);
-    await validateExistingHandoff(handoff, manifest, insertReports);
+    await validateExistingHandoff(handoff, manifest, designContract, insertReports);
   } else {
     handoff = {
-      schemaVersion: 1,
+      schemaVersion: 2,
       frozenAt: new Date().toISOString(),
       approval: approvalReceipt,
       sceneContract: {
         path: relativeToRepo(manifestPath),
         sha256: await sha256(manifestPath),
+      },
+      designSystem: {
+        id: designContract.id,
+        status: designContract.status,
+        contractPath: relativeToRepo(designContractPath),
+        contractSha256: await sha256(designContractPath),
+        sourcePackageSha256: String(designContract.sourcePackage.sha256).toLowerCase(),
+        brandManifestPath: relativeToRepo(brandManifestPath),
+        brandManifestSha256: await sha256(brandManifestPath),
       },
       rendererTheme: manifest.rendererTheme,
       inserts: insertReports,
@@ -596,7 +669,7 @@ const renderApproved = async () => {
   }
 
   runNpm(['run', 'stage'], {cwd: remotionRoot});
-  const stagedReceipt = await validateStagedReceipt(manifest, insertReports);
+  const stagedReceipt = await validateStagedReceipt(manifest, designContract, insertReports);
   runNpm(['run', 'compositions'], {cwd: remotionRoot});
   runNpm(['run', 'render'], {cwd: remotionRoot});
 
@@ -687,7 +760,7 @@ const renderApproved = async () => {
       asset.transcript?.text?.trim(),
   ).length;
   const report = {
-    schemaVersion: 1,
+    schemaVersion: 2,
     completedAt: new Date().toISOString(),
     status: 'technical-pass-visual-review-pending',
     approval: handoff.approval,
@@ -699,6 +772,15 @@ const renderApproved = async () => {
       fps: manifest.fps,
       resolution: manifest.resolution,
       rendererTheme: manifest.rendererTheme,
+    },
+    designSystem: {
+      id: designContract.id,
+      status: designContract.status,
+      contractPath: relativeToRepo(designContractPath),
+      contractSha256: await sha256(designContractPath),
+      sourcePackageSha256: String(designContract.sourcePackage.sha256).toLowerCase(),
+      brandManifestPath: relativeToRepo(brandManifestPath),
+      brandManifestSha256: await sha256(brandManifestPath),
     },
     toolchain,
     gates: {

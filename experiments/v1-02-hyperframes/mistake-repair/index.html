@@ -9,157 +9,271 @@
       @font-face { font-family: "Geist"; src: url("./assets/fonts/geist-sans-variable.woff2") format("woff2"); font-style: normal; font-weight: 100 900; font-display: block; }
       @font-face { font-family: "Geist Mono"; src: url("./assets/fonts/geist-mono-variable.woff2") format("woff2"); font-style: normal; font-weight: 100 900; font-display: block; }
       * { box-sizing: border-box; }
-      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #0C1811; }
-      body { color: #C8D0C9; }
-      #mr-root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #0C1811; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #F5F0E8; }
+      body { color: #3F4D44; }
+      #mr-root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #F5F0E8; }
 
-      .mr-room { position: absolute; inset: 0; background: #0C1811; }
-      .mr-evening-haze { position: absolute; inset: 0; background: radial-gradient(circle at 76% 42%, rgba(241,210,122,.09), transparent 34%), radial-gradient(circle at 12% 12%, rgba(79,192,122,.055), transparent 25%); }
-      .mr-ground { position: absolute; left: 0; right: 0; bottom: 0; height: 258px; background: #102018; }
-      .mr-ground::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: rgba(143,160,147,.18); }
-      .mr-moon { position: absolute; right: 116px; top: 84px; width: 84px; height: 84px; border: 5px solid rgba(241,210,122,.7); border-top-color: transparent; border-right-color: transparent; border-radius: 50%; transform: rotate(-42deg); }
-
-      .mr-scene-flag { position: absolute; left: 104px; top: 68px; display: flex; align-items: center; gap: 18px; z-index: 9; }
+      .mr-daylight { position: absolute; inset: 0; background: #F5F0E8; }
+      .mr-paper-grain {
+        position: absolute;
+        inset: 132px 0 0;
+        opacity: .3;
+        background:
+          repeating-linear-gradient(0deg, transparent 0 23px, rgba(63,77,68,.018) 23px 24px),
+          radial-gradient(circle at 12% 24%, rgba(224,138,94,.085), transparent 30%);
+      }
+      .mr-topbar { position: absolute; left: 0; right: 0; top: 0; height: 132px; z-index: 2; background: #0C1811; }
+      .mr-topbar::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: #D4A520; }
+      .mr-scene-flag { position: absolute; left: 104px; top: 44px; display: flex; align-items: center; gap: 18px; z-index: 9; }
       .mr-flag-number { width: 54px; height: 44px; display: grid; place-items: center; border-radius: 4px; background: #D4A520; color: #0C1811; font: 800 22px/1 "Geist", sans-serif; }
-      .mr-flag-copy { font: 700 21px/1 "Geist", sans-serif; letter-spacing: .09em; text-transform: uppercase; color: #C8D0C9; }
-      .mr-brand { position: absolute; right: 104px; top: 82px; z-index: 9; font: 700 20px/1 "Geist", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #8FA093; }
+      .mr-flag-copy { font: 700 20px/1 "Geist", sans-serif; letter-spacing: .09em; text-transform: uppercase; color: #C8D0C9; }
+      .mr-brand { position: absolute; right: 104px; top: 45px; z-index: 9; display: flex; align-items: center; gap: 13px; font: 700 17px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #8FA093; }
+      .mr-brand img { width: 40px; height: 40px; display: block; }
 
-      .mr-intro { position: absolute; left: 104px; top: 158px; z-index: 7; }
-      .mr-kicker { font: 700 22px/1 "Geist Mono", monospace; letter-spacing: .11em; text-transform: uppercase; color: #8FA093; }
-      #mr-title { margin-top: 16px; max-width: 860px; font: 600 78px/.96 "Source Serif 4", Georgia, serif; letter-spacing: -.038em; color: #F1D27A; }
+      .mr-intro { position: absolute; left: 104px; top: 174px; z-index: 7; }
+      .mr-kicker { font: 700 21px/1 "Geist Mono", monospace; letter-spacing: .11em; text-transform: uppercase; color: #8A5A2A; }
+      #mr-title { margin-top: 13px; font: 600 68px/.96 "Source Serif 4", Georgia, serif; letter-spacing: -.038em; color: #3F4D44; }
+      .mr-question { position: absolute; right: 104px; top: 216px; max-width: 560px; text-align: right; font: 600 25px/1.3 "Geist", sans-serif; color: #56635A; }
 
-      .mr-lamp { position: absolute; left: 116px; bottom: 160px; width: 250px; height: 565px; z-index: 3; }
-      .mr-lamp svg { width: 100%; height: 100%; overflow: visible; }
-      .mr-lamp path { fill: none; stroke: #F1D27A; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
-      .mr-lamp-glow { position: absolute; left: 38px; top: 84px; width: 174px; height: 174px; border-radius: 50%; background: rgba(241,210,122,.12); box-shadow: 0 0 110px rgba(241,210,122,.18); }
-      .mr-time { position: absolute; left: 104px; bottom: 100px; z-index: 7; font: 700 30px/1 "Geist Mono", monospace; color: #F1D27A; }
-      .mr-time span { margin-left: 14px; font: 600 23px/1 "Geist", sans-serif; letter-spacing: .03em; color: #C8D0C9; }
+      .mr-time-panel { position: absolute; left: 104px; top: 310px; width: 1712px; height: 216px; z-index: 5; padding: 28px 42px; border-radius: 14px; background: #F7EAD0; box-shadow: 0 22px 58px rgba(63,77,68,.1); overflow: hidden; }
+      .mr-time-panel::before { content: ""; position: absolute; inset: 0; border: 2px solid rgba(138,90,42,.25); border-radius: 14px; pointer-events: none; }
+      .mr-time-caption { display: flex; align-items: baseline; justify-content: space-between; }
+      .mr-time-label { font: 700 18px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #56635A; }
+      #mr-time-readout { min-width: 106px; text-align: right; font: 800 30px/1 "Geist Mono", monospace; font-variant-numeric: tabular-nums; color: #8A5A2A; }
+      .mr-day-rail { position: absolute; left: 82px; right: 82px; top: 116px; height: 58px; }
+      .mr-day-rail svg { position: absolute; left: 0; top: 22px; width: 100%; height: 18px; overflow: visible; }
+      .mr-day-rail path { fill: none; stroke: rgba(63,77,68,.34); stroke-width: 4; stroke-linecap: round; }
+      .mr-day-tick { position: absolute; top: 12px; width: 2px; height: 34px; background: rgba(63,77,68,.34); }
+      .mr-day-tick::after { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); font: 700 15px/1 "Geist Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: #66756A; white-space: nowrap; }
+      .mr-tick-morning { left: 4%; }
+      .mr-tick-morning::after { content: "morning"; }
+      .mr-tick-noon { left: 37%; }
+      .mr-tick-noon::after { content: "noon"; }
+      .mr-tick-evening { left: 68%; }
+      .mr-tick-evening::after { content: "evening"; }
+      .mr-tick-bedtime { left: 94%; }
+      .mr-tick-bedtime::after { content: "bedtime"; }
+      #mr-time-marker { position: absolute; left: calc(4% - 17px); top: 0; width: 34px; height: 58px; }
+      .mr-marker-pin { position: absolute; left: 7px; top: 8px; width: 20px; height: 20px; border: 5px solid #F7EAD0; border-radius: 50%; background: #D4A520; box-shadow: 0 0 0 3px #8A5A2A; }
+      .mr-marker-stem { position: absolute; left: 16px; top: 30px; width: 3px; height: 28px; background: #8A5A2A; }
+      .mr-marker-glow { position: absolute; left: -13px; top: -12px; width: 60px; height: 60px; border-radius: 50%; background: rgba(212,165,32,.16); }
 
-      .mr-door { position: absolute; right: 112px; bottom: 178px; width: 388px; height: 690px; z-index: 3; background: #16281C; border: 3px solid rgba(143,160,147,.26); border-radius: 11px 11px 0 0; overflow: hidden; }
-      .mr-door-frame { position: absolute; inset: 28px 30px 0; border: 3px solid rgba(241,210,122,.34); border-bottom: 0; border-radius: 7px 7px 0 0; }
-      .mr-door-glow { position: absolute; left: 31px; right: 31px; top: 31px; bottom: 0; background: linear-gradient(180deg, rgba(241,210,122,.2), rgba(212,165,32,.075)); opacity: .42; }
-      .mr-person { position: absolute; left: 50%; bottom: 50px; width: 132px; height: 252px; transform: translateX(-50%); }
-      .mr-person-head { position: absolute; left: 38px; top: 0; width: 58px; height: 70px; border: 4px solid #C8D0C9; border-radius: 46% 46% 52% 52%; }
-      .mr-person-body { position: absolute; left: 4px; right: 4px; bottom: 0; height: 172px; border: 4px solid #C8D0C9; border-bottom: 0; border-radius: 68px 68px 0 0; }
-      .mr-door-label { position: absolute; left: 42px; top: 48px; font: 700 21px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #F1D27A; }
+      .mr-table { position: absolute; left: 104px; top: 560px; width: 1712px; height: 386px; z-index: 5; border-radius: 14px; overflow: hidden; background: #F7EAD0; box-shadow: 0 22px 58px rgba(63,77,68,.11); }
+      .mr-table::before { content: ""; position: absolute; inset: 0; border: 2px solid rgba(138,90,42,.25); border-radius: 14px; z-index: 10; pointer-events: none; }
+      .mr-table-lines { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 7; pointer-events: none; }
+      .mr-table-lines path { fill: none; stroke: rgba(63,77,68,.23); stroke-width: 2; }
+      .mr-table-grid { position: absolute; inset: 0; display: grid; grid-template-columns: 32% 34% 34%; grid-template-rows: 72px 142px 142px 30px; z-index: 3; }
+      .mr-cell { position: relative; min-width: 0; display: flex; align-items: center; overflow: hidden; padding: 0 34px; }
+      .mr-head { background: rgba(239,233,220,.62); font: 750 18px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #56635A; }
+      .mr-row-wash { position: absolute; left: 0; right: 0; height: 142px; z-index: 1; pointer-events: none; transform: scaleX(0); transform-origin: left center; }
+      #mr-wrong-wash { top: 214px; background: rgba(224,138,94,.18); }
+      #mr-right-wash { top: 72px; background: rgba(31,122,68,.13); }
+      .mr-situation { gap: 20px; }
+      .mr-situation-icon { width: 58px; height: 58px; flex: 0 0 58px; display: grid; place-items: center; border-radius: 50%; font: 800 25px/1 "Geist Mono", monospace; }
+      .mr-situation-now .mr-situation-icon { border: 3px solid #1F7A44; color: #1F7A44; }
+      .mr-situation-later .mr-situation-icon { border: 3px solid #8A5A2A; color: #8A5A2A; }
+      .mr-situation-label { font: 700 25px/1.15 "Geist", sans-serif; color: #3F4D44; }
+      .mr-situation-note { margin-top: 8px; font: 600 18px/1 "Geist", sans-serif; color: #3F4D44; }
+      .mr-phrase { font: 650 53px/.94 "Source Serif 4", Georgia, serif; letter-spacing: -.035em; color: #0C1811; white-space: nowrap; }
+      #mr-right { position: relative; display: inline-block; color: #0C1811; }
+      #mr-right-highlight { position: absolute; inset: 5px -8px 0; z-index: -1; border-radius: 4px; background: rgba(79,192,122,.24); transform: scaleX(0); transform-origin: left center; }
+      #mr-wrong { position: relative; display: inline-block; color: #8A5949; }
+      .mr-strike-svg { position: absolute; left: -8px; top: 48%; width: calc(100% + 16px); height: 28px; transform: translateY(-50%); overflow: visible; pointer-events: none; }
+      .mr-strike-svg path { fill: none; stroke: #E08A5E; stroke-width: 6; stroke-linecap: round; }
+      .mr-use { gap: 20px; }
+      .mr-use-mark { width: 44px; height: 44px; flex: 0 0 44px; display: grid; place-items: center; border-radius: 50%; font: 800 24px/1 "Geist", sans-serif; }
+      .mr-use-yes .mr-use-mark { background: #1F7A44; color: #F5F0E8; }
+      .mr-use-later .mr-use-mark { border: 3px solid #8A5A2A; color: #8A5A2A; }
+      .mr-use-copy { font: 700 22px/1.15 "Geist", sans-serif; color: #3F4D44; }
+      .mr-use-copy span { display: block; margin-top: 7px; font: 600 17px/1 "Geist Mono", monospace; color: #3F4D44; text-transform: uppercase; letter-spacing: .06em; }
 
-      .mr-dialogue-stage { position: absolute; left: 412px; top: 360px; width: 1000px; height: 450px; z-index: 8; }
-      .mr-speech-wrap { position: absolute; left: 0; top: 24px; width: 920px; height: 276px; }
-      .mr-speech { position: absolute; inset: 0; padding: 38px 64px 32px; background: #F7EAD0; border-radius: 14px 14px 14px 4px; color: #3F4D44; box-shadow: 0 30px 80px rgba(0,0,0,.25); transform-origin: 12% 82%; will-change: transform, opacity; }
-      .mr-speech::after { content: ""; position: absolute; left: 42px; bottom: -42px; border-style: solid; border-width: 44px 52px 0 0; border-color: #F7EAD0 transparent transparent transparent; }
-      .mr-speech-label { font: 700 22px/1 "Geist", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
-      .mr-speech-phrase { margin-top: 32px; font: 700 92px/.9 "Source Serif 4", Georgia, serif; letter-spacing: -.04em; white-space: nowrap; }
-      #mr-wrong { z-index: 1; color: #8A5949; opacity: 0; }
-      #mr-right { z-index: 2; opacity: 0; }
-      #mr-right .mr-speech-label { color: #1F7A44; }
-      #mr-right .mr-speech-phrase { color: #0C1811; }
-      .mr-strike-svg { position: absolute; left: 50px; top: 104px; width: 780px; height: 94px; z-index: 4; overflow: visible; }
-      .mr-strike-svg path { fill: none; stroke: #E08A5E; stroke-width: 9; stroke-linecap: round; }
-      #mr-not-yet { position: absolute; left: 120px; top: 306px; font: 700 24px/1 "Geist Mono", monospace; letter-spacing: .09em; text-transform: uppercase; color: #E08A5E; }
-
-      #mr-reply { position: absolute; right: 168px; top: 442px; z-index: 10; padding: 24px 34px 22px; background: #16281C; border: 3px solid #4FC07A; border-radius: 9px 9px 4px 9px; color: #C8D0C9; font: 600 38px/1 "Source Serif 4", Georgia, serif; box-shadow: 0 24px 60px rgba(0,0,0,.24); }
-      #mr-reply::after { content: ""; position: absolute; right: 28px; bottom: -25px; border-style: solid; border-width: 25px 0 0 32px; border-color: transparent transparent transparent #4FC07A; }
-
-      #mr-rule-strip { position: absolute; left: 0; right: 0; bottom: 0; height: 258px; z-index: 12; background: #F7EAD0; color: #3F4D44; border-top: 6px solid #D4A520; opacity: 0; }
-      .mr-rule-inner { height: 100%; margin: 0 104px; display: grid; grid-template-columns: 1fr 2px 1fr; align-items: center; gap: 68px; }
-      .mr-rule-divider { height: 132px; background: rgba(63,77,68,.2); }
-      .mr-rule-side { display: grid; grid-template-columns: 122px 1fr; align-items: center; gap: 34px; }
-      .mr-rule-icon { width: 112px; height: 112px; position: relative; }
-      .mr-rule-icon svg { width: 100%; height: 100%; overflow: visible; }
-      .mr-rule-icon path, .mr-rule-icon circle { fill: none; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
-      .mr-meeting-icon path, .mr-meeting-icon circle { stroke: #1F7A44; }
-      .mr-bed-icon path, .mr-bed-icon circle { stroke: #8A5A2A; }
-      .mr-rule-label { font: 700 22px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #56635A; }
-      .mr-rule-phrase { margin-top: 14px; font: 700 48px/1 "Source Serif 4", Georgia, serif; color: #0C1811; }
+      #mr-choice { position: absolute; left: 20px; top: 265px; z-index: 12; width: 12px; height: 42px; border-radius: 6px; background: #E08A5E; box-shadow: 0 0 0 5px rgba(224,138,94,.13); }
+      #mr-rule-strip { position: absolute; left: 104px; right: 104px; bottom: 46px; height: 54px; z-index: 13; display: flex; align-items: center; justify-content: center; gap: 18px; color: #3F4D44; }
+      .mr-rule-kicker { font: 750 17px/1 "Geist Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #8A5A2A; }
+      .mr-rule-copy { font: 650 27px/1 "Geist", sans-serif; }
+      .mr-rule-copy strong { color: #1F7A44; font-weight: 780; }
     </style>
   </head>
   <body>
-    <div data-hf-id="hf-q8zo" id="mr-root" data-composition-id="m1l1-mistake-repair" data-width="1920" data-height="1080" data-start="0" data-duration="12">
-      <div data-hf-id="hf-w5nj" class="mr-room"></div>
-      <div data-hf-id="hf-pd3o" class="mr-evening-haze" data-layout-ignore=""></div>
-      <div data-hf-id="hf-0u2z" class="mr-ground"></div>
-      <div data-hf-id="hf-b6w4" class="mr-moon" data-layout-ignore=""></div>
+    <div data-hf-id="hf-mr01" id="mr-root" data-composition-id="m1l1-mistake-repair" data-width="1920" data-height="1080" data-start="0" data-duration="12">
+      <div data-hf-id="hf-mr02" class="mr-daylight"></div>
+      <div data-hf-id="hf-mr03" class="mr-paper-grain" data-layout-ignore=""></div>
+      <div data-hf-id="hf-mr04" class="mr-topbar"></div>
 
-      <div data-hf-id="hf-0jrp" class="mr-scene-flag" id="mr-flag"><div data-hf-id="hf-v5nw" class="mr-flag-number">02</div><div data-hf-id="hf-zr1x" class="mr-flag-copy">Repair in context</div></div>
-      <div data-hf-id="hf-2foa" class="mr-brand">Adipoli German · A1</div>
-      <div data-hf-id="hf-q1c8" class="mr-intro"><div data-hf-id="hf-eeng" class="mr-kicker" id="mr-kicker">Evening · meeting now</div><div data-hf-id="hf-l8g9" id="mr-title">Say hello at 19:00.</div></div>
-
-      <div data-hf-id="hf-0ot5" class="mr-lamp" data-layout-ignore="">
-        <div data-hf-id="hf-12e2" class="mr-lamp-glow" id="mr-lamp-glow"></div>
-        <svg data-hf-id="hf-5uav" viewBox="0 0 250 565" aria-hidden="true"><path data-hf-id="hf-6ezt" id="mr-lamp-path" d="M 125 555 L 125 190 C 125 112, 176 82, 224 82 M 74 82 L 224 82 M 94 82 C 94 28, 204 28, 204 82" /></svg>
+      <div data-hf-id="hf-mr05" class="mr-scene-flag" id="mr-flag">
+        <div data-hf-id="hf-mr06" class="mr-flag-number">02</div>
+        <div data-hf-id="hf-mr07" class="mr-flag-copy">Context decoder</div>
       </div>
-      <div data-hf-id="hf-cw4k" class="mr-time" id="mr-time">19:00 <span data-hf-id="hf-9vx5">You meet Frau Fischer.</span></div>
-
-      <div data-hf-id="hf-ggeq" class="mr-door" id="mr-door">
-        <div data-hf-id="hf-6kh6" class="mr-door-glow" id="mr-door-glow"></div>
-        <div data-hf-id="hf-fx9m" class="mr-door-frame"></div>
-        <div data-hf-id="hf-ci8v" class="mr-door-label">Frau Fischer</div>
-        <div data-hf-id="hf-r6xt" class="mr-person"><div data-hf-id="hf-u1ak" class="mr-person-head"></div><div data-hf-id="hf-oqdm" class="mr-person-body"></div></div>
+      <div data-hf-id="hf-mr08" class="mr-brand">
+        <img data-hf-id="hf-mr09" src="./assets/brand/mark-triangle-reversed.svg" alt="Adipoli German">
+        <span data-hf-id="hf-mr10">A1 · teaching insert</span>
       </div>
 
-      <div data-hf-id="hf-vft1" class="mr-dialogue-stage">
-        <div data-hf-id="hf-lw6h" class="mr-speech-wrap">
-          <div data-hf-id="hf-218j" class="mr-speech" id="mr-wrong"><div data-hf-id="hf-pvc3" class="mr-speech-label">Bedtime phrase?</div><div data-hf-id="hf-xmfk" class="mr-speech-phrase">Gute Nacht?</div></div>
-          <div data-hf-id="hf-f2ya" class="mr-speech" id="mr-right"><div data-hf-id="hf-ppbo" class="mr-speech-label">Meeting now · say hello</div><div data-hf-id="hf-byj0" class="mr-speech-phrase">Guten Abend!</div></div>
-          <svg data-hf-id="hf-jbks" class="mr-strike-svg" viewBox="0 0 780 94" aria-hidden="true"><path data-hf-id="hf-db5r" id="mr-strike-path" d="M 8 62 C 212 16, 498 80, 770 31" /></svg>
+      <div data-hf-id="hf-mr11" class="mr-intro">
+        <div data-hf-id="hf-mr12" class="mr-kicker" id="mr-kicker">One clock · two situations</div>
+        <div data-hf-id="hf-mr13" id="mr-title">What do you say at 19:00?</div>
+      </div>
+      <div data-hf-id="hf-mr14" class="mr-question" id="mr-question">The time narrows the choice. The situation decides it.</div>
+
+      <div data-hf-id="hf-mr15" class="mr-time-panel" id="mr-time-panel">
+        <div data-hf-id="hf-mr16" class="mr-time-caption">
+          <span data-hf-id="hf-mr17" class="mr-time-label">Move through the day</span>
+          <span data-hf-id="hf-mr18" id="mr-time-readout">06:00</span>
         </div>
-        <div data-hf-id="hf-ojsr" id="mr-not-yet">Not bedtime · repair it</div>
-      </div>
-
-      <div data-hf-id="hf-wm3x" id="mr-reply">Guten Abend!</div>
-
-      <div data-hf-id="hf-4gnm" id="mr-rule-strip">
-        <div data-hf-id="hf-8x4j" class="mr-rule-inner">
-          <div data-hf-id="hf-u2g2" class="mr-rule-side" id="mr-meeting-rule">
-            <div data-hf-id="hf-1g1r" class="mr-rule-icon mr-meeting-icon"><svg data-hf-id="hf-c818" viewBox="0 0 112 112" aria-hidden="true"><circle data-hf-id="hf-md4d" cx="32" cy="36" r="18" /><circle data-hf-id="hf-wcvs" cx="80" cy="36" r="18" /><path data-hf-id="hf-mq8x" d="M 8 101 C 12 70, 53 68, 56 101 M 56 101 C 59 68, 100 70, 104 101" /></svg></div>
-            <div data-hf-id="hf-yeow"><div data-hf-id="hf-byj6" class="mr-rule-label">Meeting someone now</div><div data-hf-id="hf-o8gh" class="mr-rule-phrase">Guten Abend</div></div>
-          </div>
-          <div data-hf-id="hf-vaek" class="mr-rule-divider"></div>
-          <div data-hf-id="hf-q8sc" class="mr-rule-side" id="mr-bed-rule">
-            <div data-hf-id="hf-srhl" class="mr-rule-icon mr-bed-icon"><svg data-hf-id="hf-m9tw" viewBox="0 0 112 112" aria-hidden="true"><path data-hf-id="hf-cu2h" d="M 12 92 L 100 92 M 20 92 L 20 42 M 20 68 L 98 68 L 98 92 M 31 68 C 31 48, 56 48, 56 68" /><path data-hf-id="hf-1iij" d="M 78 22 C 60 28, 61 51, 83 55 C 64 64, 48 51, 50 34 C 53 17, 67 11, 78 22" /></svg></div>
-            <div data-hf-id="hf-y7yw"><div data-hf-id="hf-gvsr" class="mr-rule-label">Going to bed later</div><div data-hf-id="hf-m2tf" class="mr-rule-phrase">Gute Nacht</div></div>
+        <div data-hf-id="hf-mr19" class="mr-day-rail">
+          <svg data-hf-id="hf-mr20" viewBox="0 0 1548 18" preserveAspectRatio="none" aria-hidden="true">
+            <path data-hf-id="hf-mr21" id="mr-day-path" d="M 4 9 L 1544 9" />
+          </svg>
+          <span data-hf-id="hf-mr22" class="mr-day-tick mr-tick-morning"></span>
+          <span data-hf-id="hf-mr23" class="mr-day-tick mr-tick-noon"></span>
+          <span data-hf-id="hf-mr24" class="mr-day-tick mr-tick-evening"></span>
+          <span data-hf-id="hf-mr25" class="mr-day-tick mr-tick-bedtime"></span>
+          <div data-hf-id="hf-mr26" id="mr-time-marker" data-layout-allow-overlap="">
+            <span data-hf-id="hf-mr27" class="mr-marker-glow" id="mr-marker-glow"></span>
+            <span data-hf-id="hf-mr28" class="mr-marker-pin"></span>
+            <span data-hf-id="hf-mr29" class="mr-marker-stem"></span>
           </div>
         </div>
+      </div>
+
+      <div data-hf-id="hf-mr30" class="mr-table" id="mr-table">
+        <div data-hf-id="hf-mr31" class="mr-row-wash" id="mr-wrong-wash"></div>
+        <div data-hf-id="hf-mr32" class="mr-row-wash" id="mr-right-wash"></div>
+        <svg data-hf-id="hf-mr33" class="mr-table-lines" viewBox="0 0 1712 386" preserveAspectRatio="none" aria-hidden="true">
+          <path data-hf-id="hf-mr34" id="mr-line-v1" d="M 548 0 L 548 356" />
+          <path data-hf-id="hf-mr35" id="mr-line-v2" d="M 1130 0 L 1130 356" />
+          <path data-hf-id="hf-mr36" id="mr-line-h1" d="M 0 72 L 1712 72" />
+          <path data-hf-id="hf-mr37" id="mr-line-h2" d="M 0 214 L 1712 214" />
+          <path data-hf-id="hf-mr38" id="mr-line-h3" d="M 0 356 L 1712 356" />
+        </svg>
+
+        <div data-hf-id="hf-mr39" class="mr-table-grid">
+          <div data-hf-id="hf-mr40" class="mr-cell mr-head">Situation</div>
+          <div data-hf-id="hf-mr41" class="mr-cell mr-head">German phrase</div>
+          <div data-hf-id="hf-mr42" class="mr-cell mr-head">Use it when…</div>
+
+          <div data-hf-id="hf-mr43" class="mr-cell mr-situation mr-situation-now">
+            <span data-hf-id="hf-mr44" class="mr-situation-icon">19</span>
+            <div data-hf-id="hf-mr45">
+              <div data-hf-id="hf-mr46" class="mr-situation-label">Meeting Frau Fischer</div>
+              <div data-hf-id="hf-mr47" class="mr-situation-note">The interaction is starting.</div>
+            </div>
+          </div>
+          <div data-hf-id="hf-mr48" class="mr-cell mr-phrase">
+            <span data-hf-id="hf-mr49" id="mr-right">
+              <span data-hf-id="hf-mr50" id="mr-right-highlight"></span>
+              Guten Abend!
+            </span>
+          </div>
+          <div data-hf-id="hf-mr51" class="mr-cell mr-use mr-use-yes">
+            <span data-hf-id="hf-mr52" class="mr-use-mark">✓</span>
+            <div data-hf-id="hf-mr53" class="mr-use-copy">Greeting someone<span data-hf-id="hf-mr54">meeting now</span></div>
+          </div>
+
+          <div data-hf-id="hf-mr55" class="mr-cell mr-situation mr-situation-later">
+            <span data-hf-id="hf-mr56" class="mr-situation-icon">ZZ</span>
+            <div data-hf-id="hf-mr57">
+              <div data-hf-id="hf-mr58" class="mr-situation-label">Going to bed</div>
+              <div data-hf-id="hf-mr59" class="mr-situation-note">The interaction is ending.</div>
+            </div>
+          </div>
+          <div data-hf-id="hf-mr60" class="mr-cell mr-phrase">
+            <span data-hf-id="hf-mr61" id="mr-wrong">
+              <span data-hf-id="hf-mr61a" id="mr-wrong-copy">Gute Nacht?</span>
+              <svg data-hf-id="hf-mr62" class="mr-strike-svg" viewBox="0 0 340 28" preserveAspectRatio="none" aria-hidden="true">
+                <path data-hf-id="hf-mr63" id="mr-strike-path" d="M 4 19 C 98 4, 232 25, 336 9" />
+              </svg>
+            </span>
+          </div>
+          <div data-hf-id="hf-mr64" class="mr-cell mr-use mr-use-later">
+            <span data-hf-id="hf-mr65" class="mr-use-mark">→</span>
+            <div data-hf-id="hf-mr66" class="mr-use-copy">Ending the day<span data-hf-id="hf-mr67">bedtime later</span></div>
+          </div>
+        </div>
+        <div data-hf-id="hf-mr68" id="mr-choice" data-layout-allow-overlap=""></div>
+      </div>
+
+      <div data-hf-id="hf-mr69" id="mr-rule-strip">
+        <span data-hf-id="hf-mr70" class="mr-rule-kicker">Memory rule</span>
+        <span data-hf-id="hf-mr71" class="mr-rule-copy">The clock helps. <strong data-hf-id="hf-p772">The situation decides.</strong></span>
       </div>
     </div>
+
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({paused: true});
-      const lampPath = document.getElementById('mr-lamp-path');
-      const strikePath = document.getElementById('mr-strike-path');
-      [lampPath, strikePath].forEach((path) => {
+      const drawPaths = [
+        'mr-day-path',
+        'mr-line-v1',
+        'mr-line-v2',
+        'mr-line-h1',
+        'mr-line-h2',
+        'mr-line-h3',
+        'mr-strike-path',
+      ].map((id) => document.getElementById(id));
+
+      drawPaths.forEach((path) => {
         const length = path.getTotalLength();
         path.style.strokeDasharray = String(length);
         path.style.strokeDashoffset = String(length);
       });
 
-      tl.fromTo('#mr-flag', {x: -34, opacity: 0}, {x: 0, opacity: 1, duration: .52, ease: 'power3.out'}, .12);
-      tl.fromTo('.mr-brand', {x: 28, opacity: 0}, {x: 0, opacity: 1, duration: .46, ease: 'power2.out'}, .2);
-      tl.fromTo('#mr-kicker', {y: 18, opacity: 0}, {y: 0, opacity: 1, duration: .45, ease: 'power2.out'}, .34);
-      tl.fromTo('#mr-title', {y: 30, opacity: 0}, {y: 0, opacity: 1, duration: .68, ease: 'power3.out'}, .48);
-      tl.to(lampPath, {strokeDashoffset: 0, duration: .84, ease: 'power2.out'}, .42);
-      tl.fromTo('#mr-time', {x: -26, opacity: 0}, {x: 0, opacity: 1, duration: .52, ease: 'power3.out'}, .9);
-      tl.fromTo('#mr-door', {x: 56, opacity: 0}, {x: 0, opacity: 1, duration: .8, ease: 'power3.out'}, .72);
+      tl.fromTo('#mr-flag', {x: -32, opacity: 0}, {x: 0, opacity: 1, duration: .48, ease: 'power3.out'}, .1);
+      tl.fromTo('.mr-brand', {x: 26, opacity: 0}, {x: 0, opacity: 1, duration: .46, ease: 'power2.out'}, .18);
+      tl.fromTo('#mr-kicker', {y: 16, opacity: 0}, {y: 0, opacity: 1, duration: .42, ease: 'power2.out'}, .28);
+      tl.fromTo('#mr-title', {y: 28, opacity: 0}, {y: 0, opacity: 1, duration: .62, ease: 'power3.out'}, .4);
+      tl.fromTo('#mr-question', {x: 22, opacity: 0}, {x: 0, opacity: 1, duration: .5, ease: 'power2.out'}, .66);
+      tl.fromTo('#mr-time-panel', {y: 34, opacity: 0}, {y: 0, opacity: 1, duration: .68, ease: 'power3.out'}, .74);
+      tl.to('#mr-day-path', {strokeDashoffset: 0, duration: .76, ease: 'power2.out'}, 1.02);
+      tl.fromTo('.mr-day-tick', {scaleY: 0, opacity: 0}, {scaleY: 1, opacity: 1, duration: .36, stagger: .12, ease: 'power2.out'}, 1.3);
 
-      tl.fromTo('#mr-wrong', {x: -130, y: 26, rotation: -3, opacity: 0}, {x: 0, y: 0, rotation: 0, opacity: 1, duration: .76, ease: 'back.out(1.35)'}, 1.62);
-      tl.to(strikePath, {strokeDashoffset: 0, duration: .68, ease: 'power2.out'}, 3.04);
-      tl.fromTo('#mr-not-yet', {x: -18, opacity: 0}, {x: 0, opacity: 1, duration: .48, ease: 'power3.out'}, 3.42);
-      tl.to('#mr-wrong', {x: -270, rotation: -5, scale: .78, opacity: 0, duration: .46, ease: 'power2.in'}, 4.24);
-      tl.to('.mr-strike-svg', {opacity: 0, duration: .3, ease: 'power2.in'}, 4.2);
-      tl.fromTo('#mr-right', {scale: .72, opacity: 0}, {scale: 1, opacity: 1, duration: .68, ease: 'back.out(1.45)'}, 4.46);
-      tl.to('#mr-not-yet', {opacity: 0, y: -12, duration: .3, ease: 'power2.in'}, 4.36);
-      tl.to('#mr-door-glow', {opacity: .92, duration: .64, ease: 'power1.out'}, 4.56);
-      tl.fromTo('#mr-reply', {x: 34, y: -12, opacity: 0, scale: .88}, {x: 0, y: 0, opacity: 1, scale: 1, duration: .62, ease: 'back.out(1.35)'}, 5.72);
-      tl.to('#mr-right', {y: -24, duration: .62, ease: 'power2.inOut'}, 6.46);
+      const timeState = {hour: 6};
+      const timeReadout = document.getElementById('mr-time-readout');
+      tl.addLabel('scrubToEvening', 1.72);
+      tl.to(timeState, {
+        hour: 19,
+        duration: 1.45,
+        ease: 'power2.inOut',
+        onUpdate: () => {
+          timeReadout.textContent = `${String(Math.round(timeState.hour)).padStart(2, '0')}:00`;
+        },
+      }, 'scrubToEvening');
+      tl.to('#mr-time-marker', {x: 991, duration: 1.45, ease: 'power2.inOut'}, 'scrubToEvening');
+      tl.fromTo('#mr-marker-glow', {scale: .74, opacity: .38}, {scale: 1, opacity: 1, duration: .5, ease: 'sine.inOut'}, 3.12);
 
-      tl.to('#mr-time', {opacity: 0, y: 12, duration: .34, ease: 'power2.in'}, 6.76);
-      tl.fromTo('#mr-rule-strip', {y: 258, opacity: 0}, {y: 0, opacity: 1, duration: .78, ease: 'power3.inOut'}, 7.18);
-      tl.fromTo('#mr-meeting-rule', {x: -44, opacity: 0}, {x: 0, opacity: 1, duration: .58, ease: 'power3.out'}, 7.92);
-      tl.fromTo('#mr-bed-rule', {x: 44, opacity: 0}, {x: 0, opacity: 1, duration: .58, ease: 'power3.out'}, 8.54);
-      tl.fromTo('.mr-rule-divider', {scaleY: 0, opacity: 0}, {scaleY: 1, opacity: 1, duration: .48, ease: 'power2.out'}, 8.2);
-      tl.to('#mr-meeting-rule .mr-rule-phrase', {color: '#1F7A44', duration: .44, ease: 'power1.out'}, 9.34);
-      tl.to('#mr-bed-rule .mr-rule-phrase', {color: '#8A5A2A', duration: .44, ease: 'power1.out'}, 9.9);
-      tl.fromTo('#mr-lamp-glow', {scale: .96, opacity: .7}, {scale: 1.04, opacity: 1, duration: .72, ease: 'sine.inOut'}, 10.48);
+      tl.fromTo('#mr-table', {y: 42, opacity: 0}, {y: 0, opacity: 1, duration: .7, ease: 'power3.out'}, 2.72);
+      tl.to('#mr-line-h1', {strokeDashoffset: 0, duration: .5, ease: 'power2.out'}, 3.12);
+      tl.to('#mr-line-h2', {strokeDashoffset: 0, duration: .54, ease: 'power2.out'}, 3.26);
+      tl.to('#mr-line-h3', {strokeDashoffset: 0, duration: .54, ease: 'power2.out'}, 3.4);
+      tl.to('#mr-line-v1', {strokeDashoffset: 0, duration: .62, ease: 'power2.out'}, 3.16);
+      tl.to('#mr-line-v2', {strokeDashoffset: 0, duration: .62, ease: 'power2.out'}, 3.34);
+      tl.fromTo('.mr-head', {y: -14, opacity: 0}, {y: 0, opacity: 1, duration: .4, stagger: .1, ease: 'power2.out'}, 3.34);
+      tl.fromTo('.mr-table-grid .mr-cell:not(.mr-head)', {y: 15}, {y: 0, duration: .44, stagger: .07, ease: 'power2.out'}, 3.72);
+
+      tl.fromTo('#mr-wrong-wash', {scaleX: 0}, {scaleX: 1, duration: .62, ease: 'power2.inOut'}, 4.34);
+      tl.fromTo('#mr-choice', {opacity: 0, scaleY: .35}, {opacity: 1, scaleY: 1, duration: .38, ease: 'power2.out'}, 4.58);
+      tl.to('#mr-strike-path', {strokeDashoffset: 0, duration: .66, ease: 'power2.out'}, 4.96);
+
+      tl.addLabel('chooseContext', 5.84);
+      tl.to('#mr-choice', {y: -142, backgroundColor: '#1F7A44', boxShadow: '0 0 0 5px rgba(31,122,68,.13)', duration: .82, ease: 'power2.inOut'}, 'chooseContext');
+      tl.to('#mr-wrong-wash', {opacity: .25, duration: .82, ease: 'power2.inOut'}, 'chooseContext');
+      tl.fromTo('#mr-right-wash', {scaleX: 0}, {scaleX: 1, duration: .82, ease: 'power2.inOut'}, 'chooseContext');
+      tl.to('#mr-marker-glow', {backgroundColor: 'rgba(31,122,68,.18)', duration: .82, ease: 'power2.inOut'}, 'chooseContext');
+
+      tl.fromTo('#mr-right-highlight', {scaleX: 0}, {scaleX: 1, duration: .72, ease: 'power2.out'}, 6.76);
+      tl.fromTo('.mr-use-yes .mr-use-mark', {scale: .72}, {scale: 1, duration: .48, ease: 'power2.out'}, 7.02);
+      tl.to('#mr-wrong', {color: '#8A5949', duration: .42, ease: 'power1.out'}, 7.34);
+      tl.to('.mr-use-later .mr-use-mark', {borderColor: '#8A5A2A', duration: .42, ease: 'power1.out'}, 7.34);
+      tl.to('.mr-strike-svg', {opacity: 0, duration: .42, ease: 'power1.out'}, 7.34);
+      tl.set('#mr-wrong-copy', {textContent: 'Gute Nacht'}, 7.76);
+
+      tl.fromTo('#mr-rule-strip', {y: 18, opacity: 0}, {y: 0, opacity: 1, duration: .58, ease: 'power3.out'}, 8.06);
+      tl.to('#mr-right-highlight', {backgroundColor: 'rgba(79,192,122,.34)', duration: .5, ease: 'sine.inOut'}, 8.72);
+      tl.to('#mr-marker-glow', {scale: 1.12, opacity: .68, duration: .72, ease: 'sine.inOut'}, 9.18);
+      tl.to('#mr-marker-glow', {scale: .9, opacity: .4, duration: .72, ease: 'sine.inOut'}, 9.9);
+      tl.to('#mr-right', {color: '#1F7A44', duration: .48, ease: 'power1.out'}, 10.42);
+      tl.to('#mr-rule-strip strong', {color: '#0C1811', duration: .42, ease: 'sine.inOut'}, 10.72);
+      tl.to('#mr-rule-strip strong', {color: '#1F7A44', duration: .42, ease: 'sine.inOut'}, 11.14);
 
       window.__timelines['m1l1-mistake-repair'] = tl;
     </script>
