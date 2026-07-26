@@ -44,8 +44,8 @@ motion:
 
 # Scenes & Daylight
 
-This is a lived forest room at 19:00, not a quiz result screen. A coded streetlamp and lit doorway establish meeting context before any explanation. The learner's warm-paper speech strip is repaired in place; recovery orange marks the wrong bedtime phrase, one gold movement carries the correction, and success green confirms the reply. The tail contrasts meeting now with bedtime later on one answer-sheet ribbon.
+This is a daylight context-decoder, not a quiz result screen. A horizontal day rail makes `19:00` visible, then a two-row answer-sheet table compares the situations that decide between `Guten Abend` and `Gute Nacht`. Recovery orange briefly marks the tempting bedtime phrase; one gold movement carries attention to the actual context, and success green confirms the greeting. The tail leaves one reusable memory rule: the clock helps, but the situation decides.
 
 Use the approved reversed Triangle-A as the brand identifier. Do not type a substitute wordmark or bake A1 into the mark.
 
-Avoid navigation bars, progress bars, nested feedback cards, clock widgets, stock arrows, scattered gold, tiny metadata, generic dashboard chrome, and bouncy or cartoon overshoot.
+Avoid navigation bars, progress bars, nested feedback cards, decorative room scenery, stock arrows, scattered gold, tiny metadata, generic dashboard chrome, and bouncy or cartoon overshoot. The timeline and comparison table must do real explanatory work.

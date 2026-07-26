@@ -41,8 +41,8 @@ motion:
 
 # Scenes & Daylight
 
-Use the approved 2A grammar: daylight for orientation and explanation, warm paper fragments for meaning, and one full-width forest threshold for the spoken action. The three fragments must physically resolve into one sentence; the visual story is the transformation, not an interface around it. Gold belongs to the joining stroke and current action. German is the largest type.
+Use the approved 2A grammar as a sentence workbench: daylight for orientation, one warm answer-sheet table for explanation, and one forest output strip for the spoken action. The teaching visual must expose the reusable structure `WHO → ACTION → LANGUAGE`, map each meaning role to the exact German word, and then resolve the three columns into one sentence. Gold belongs to the active column, the joining rail, and the current action. German is the largest type.
 
 Use the approved flat Triangle-A as the brand identifier. Do not type a substitute wordmark or bake A1 into the mark.
 
-Avoid navigation bars, progress bars, side rails, repeated cards, tiny metadata, duplicate final sentences, stock arrows, dashboard chrome, and bouncy or cartoon overshoot. The scene flag orients once, then recedes.
+Avoid navigation bars, progress bars, scattered cards, tiny metadata, duplicate final sentences, stock arrows, dashboard chrome, and bouncy or cartoon overshoot. The table is a teaching diagram, not a dashboard. The scene flag orients once, then recedes.

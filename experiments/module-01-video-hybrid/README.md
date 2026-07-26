@@ -18,7 +18,7 @@ Every future script and recording kit should distinguish `[PRESENTER]` from `[VI
 
 Prefer **daylight or answer-sheet surfaces** for explanatory, text-heavy, and tabular material because legibility and eye comfort come first. Use forest rooms selectively when a lived scene, threshold, or focused contrast gives darkness a teaching purpose; dark is an emphasis mode, not the default instructional canvas. Public/landing heroes, module thresholds, media stages, and brief immersive scene beats may be dark. Sustained learning work—explanations, grammar tables, choices, typing, checkpoint items, feedback, and recovery—defaults to warm daylight or a light answer sheet. A dark context may frame a light task, but a table, form, or more than one short line of reading belongs on light paper.
 
-Of these two trials, the owner prefers `phrase-build`. Carry forward its light instructional surface, direct transformation, and clarity as directional evidence—not as a template every insert must copy. `mistake-repair` remains a useful secondary pattern for a lived scene and correction, but its dark staging should be used sparingly.
+The owner's 2026-07-26 review rejected the first clean-but-decorative pass as boring and asked for tables, visualisation, and stronger study support. The revision therefore makes `phrase-build` a three-column sentence workbench (`WHO → ACTION → LANGUAGE`) and `mistake-repair` a daylight time/context decoder with a live 19:00 rail and a two-row usage table. Carry forward this standard: an insert must reveal a relationship, comparison, transformation, or memory rule that is genuinely easier to understand visually. Clean styling alone does not earn a cutaway.
 
 ## Fail-closed design gates
 
@@ -47,11 +47,11 @@ Run each server from its project directory and hand the Studio timeline URL to t
 
 ```powershell
 Push-Location experiments/v1-02-hyperframes/phrase-build
-npx --yes hyperframes@0.7.71 preview --port 3017
+npx --yes hyperframes@0.7.72 preview --port 3017
 Pop-Location
 
 Push-Location experiments/v1-02-hyperframes/mistake-repair
-npx --yes hyperframes@0.7.71 preview --port 3018
+npx --yes hyperframes@0.7.72 preview --port 3018
 Pop-Location
 ```
 
